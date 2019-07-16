@@ -2,6 +2,20 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
+def getItemsFromPage(url):
+    urlResponse = requests.get(url)
+    soup = BeautifulSoup(urlResponse.text, 'html.parser')
+    itemURLs = []
+
+    rawItems = soup.find('table', {'class': 'ak-table'}).tbody.find_all('tr')
+
+    for item in rawItems:
+        item = 'https://www.dofus.com' + item.find('a')['href']
+        itemURLs.append(item)
+        print(item)
+
+    print(len(itemURLs))
+
 def getItemStats(url):
     urlResponse = requests.get(url)
     soup = BeautifulSoup(urlResponse.text, 'html.parser')
@@ -40,3 +54,6 @@ def getItemStats(url):
     item = {'name': name, 'lvl': lvl, 'image': image, 'stats': stats}
 
     return item
+
+
+getItemsFromPage('https://www.dofus.com/en/mmorpg/encyclopedia/weapons')
