@@ -7,14 +7,13 @@ def getItemsFromPage(url):
     soup = BeautifulSoup(urlResponse.text, 'html.parser')
     itemURLs = []
 
-    rawItems = soup.find('table', {'class': 'ak-table'}).tbody.find_all('tr')
+    itemTable = soup.find('table', {'class': 'ak-table'}).tbody.find_all('tr')
 
-    for item in rawItems:
+    for item in itemTable:
         item = 'https://www.dofus.com' + item.find('a')['href']
         itemURLs.append(item)
-        print(item)
 
-    print(len(itemURLs))
+    return itemURLs
 
 def getItemStats(url):
     urlResponse = requests.get(url)
@@ -55,5 +54,12 @@ def getItemStats(url):
 
     return item
 
+def __main__(lastPage):
+    items = []
 
-getItemsFromPage('https://www.dofus.com/en/mmorpg/encyclopedia/weapons')
+    for i in range(1, lastPage + 1):
+        url = 'https://www.dofus.com/en/mmorpg/encyclopedia/equipment?size=96&page=' + str(i)
+        # items = items + getItemsFromPage(url)
+
+lastPage = 32
+__main__(lastPage)
