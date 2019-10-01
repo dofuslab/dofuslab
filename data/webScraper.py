@@ -8,8 +8,9 @@ def getItemStats(url):
 
     # get and clean data
     name = soup.find('h1', attrs = {'class': 'ak-return-link'}).text.strip()
-    lvl = soup.find('div', attrs = {'class': 'ak-encyclo-detail-level col-xs-6 text-right'}).text[7:0]
+    lvl = soup.find('div', attrs = {'class': 'ak-encyclo-detail-level col-xs-6 text-right'}).text[7:]
     image = soup.find('img', attrs = {'class': 'img-maxresponsive'})["src"]
+    equipmentType = soup.find('div', attrs = {'class': 'ak-encyclo-detail-type col-xs-6'}).text[7:]
 
     rawStats = soup.find('div', {'class': 'ak-container ak-content-list ak-displaymode-col'})
     stats = {}
@@ -44,7 +45,7 @@ def getItemStats(url):
 
         stats[type] = {'description': description, 'maxStat': maxStat}
 
-    item = {'name': name, 'lvl': lvl, 'image': image, 'stats': stats}
+    item = {'name': name, 'equipment type': equipmentType, 'lvl': lvl, 'image': image, 'stats': stats}
 
     return item
 
