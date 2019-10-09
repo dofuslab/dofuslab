@@ -1,0 +1,11 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto';
+    font-size: 12pt;
+}
+
+ol, ul{
+    padding: 0;
+    list-style: none;
+} 

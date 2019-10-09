@@ -1,0 +1,32 @@
+header {
+  height: 50px;
+  margin: 0px;
+  overflow: hidden;
+  background-color: lightgrey;
+}
+
+header #home-button {
+  float: left;
+  height: 80%;
+  padding: none;
+  margin: none;
+  background-color: white;
+}
+
+header nav {
+  float: right;
+  height: 80%;
+  margin: none;
+}
+
+header nav ul {
+  text-align: center;
+  float: right;
+  margin: none;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-left: 2px;
+  margin-right: 2px;
+}
