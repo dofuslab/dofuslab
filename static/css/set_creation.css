@@ -5,6 +5,15 @@
   background-color: lightgrey;
 }
 
+.characteristic-line {
+  width: 90%;
+  height: 22px;
+}
+
+.characteristic-value {
+  float: right;
+}
+
 .middle-column {
   float: left;
   width: 40%;
@@ -33,7 +42,7 @@
 }
 
 .right-sidebar {
-  float: right;
+  float: left;
   width: 15%;
   margin: 5px;
   background-color: lightgrey;

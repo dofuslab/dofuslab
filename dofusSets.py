@@ -8,7 +8,7 @@ def home():
 
 @app.route('/create')
 def create():
-    return render_template('set.html', title='Set')
+    return render_template('set_creation.html', title='Set')
 
 if __name__ == '__main__':
     app.run(debug=True)
