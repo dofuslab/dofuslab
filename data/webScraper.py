@@ -21,7 +21,7 @@ def getItemStats(url):
         type = ""
         maxStat = ""
 
-        # check and adjust for the description type that substitutes "HP" for "initiative"
+        # check and adjust for the description typo that substitutes "HP" for "initiative"
         description = description.replace("HP", "Initiative")
 
         # check and adjust for values that have ranges and negative values
@@ -62,7 +62,7 @@ def getItemStats(url):
 
         conditions = {"conditionType": conditionType, "conditionLimitType": conditionLimitType, "conditionLimit": conditionLimit}
 
-    item = {'name': name, 'equipment type': equipmentType, 'lvl': lvl, 'image': image, 'stats': stats, 'conditions': conditions}
+    item = {'name': name, 'equipmentType': equipmentType, 'lvl': lvl, 'image': image, 'stats': stats, 'conditions': conditions}
 
     return item
 
@@ -80,7 +80,7 @@ def getItemsFromPage(url):
     return itemURLs
 
 def writeToFile(itemData):
-    with open('data.txt', 'w') as outfile:
+    with open('data.json', 'w') as outfile:
         json.dump(itemData, outfile)
 
 def __main__(lastPage):
