@@ -1,3 +1,10 @@
-const Home = () => <h1>Hello world!</h1>;
+import { NextPage } from 'next';
+import { SetBuilder } from '../components';
 
-export default Home;
+const Index: NextPage = () => (
+  <div className="App">
+    <SetBuilder />
+  </div>
+);
+
+export default Index;
