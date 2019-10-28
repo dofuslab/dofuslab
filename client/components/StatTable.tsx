@@ -5,7 +5,6 @@ import { jsx } from '@emotion/core';
 
 import List from 'antd/lib/list';
 import { modifiedStartCase } from '../common/utils';
-import { Stat } from '../common/types';
 
 interface IStatTable {
   name?: string;
@@ -16,8 +15,6 @@ interface IStat {
   stat: string;
   value?: number;
 }
-
-const data = [{ stat: 'Vitality', value: 60 }, { stat: 'AP', value: 12 }];
 
 const StatTable: React.FC<IStatTable> = props => {
   const stats = props.groups.map(group => Object.values(group)).flat();
