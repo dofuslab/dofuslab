@@ -28,7 +28,7 @@ const EquipmentSelector: React.FC<IEquipmentSelector> = props => {
   return (
     <ResponsiveGrid numColumns={[0, 0, 2, 2]}>
       {equipmentList.map(equipment => (
-        <Equipment equipment={equipment} />
+        <Equipment key={equipment.name} equipment={equipment} />
       ))}
     </ResponsiveGrid>
   );
