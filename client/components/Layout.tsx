@@ -12,12 +12,9 @@ interface LayoutProps {
 const Layout = (props: LayoutProps) => (
   <div
     css={{
-      // [mq[0]]: { maxWidth: 560 },
-      // [mq[1]]: { maxWidth: 720 },
-      // [mq[2]]: { maxWidth: 1080 },
-      // [mq[3]]: { maxWidth: 1200 },
       maxWidth: '100%',
-      margin: 20
+      margin: 20,
+      display: 'flex'
     }}
   >
     {props.children}

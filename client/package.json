@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.22",
+    "@emotion/styled": "^10.0.22",
     "@types/lodash": "^4.14.144",
     "@zeit/next-css": "^1.0.1",
     "antd": "^3.24.3",

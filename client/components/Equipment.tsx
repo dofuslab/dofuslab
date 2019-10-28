@@ -26,7 +26,11 @@ function isCustomStatLine(statLine: StatLine): statLine is CustomStatLine {
 
 const Equipment: React.FC<IEquipment> = props => {
   return (
-    <Card size="default" title={props.equipment.name} css={{ width: '100%' }}>
+    <Card
+      size="small"
+      title={props.equipment.name}
+      css={{ width: '100%', fontSize: '0.75rem' }}
+    >
       <ul css={{ paddingLeft: 15, marginBottom: 0 }}>
         {props.equipment.stats.map((statLine, idx) => {
           if (isCustomStatLine(statLine)) {
