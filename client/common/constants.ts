@@ -7,7 +7,8 @@ import {
   PrimaryStat,
   SecondaryStat,
   DamageStat,
-  ResistanceStat
+  ResistanceStat,
+  Stat
 } from './types';
 
 export const BREAKPOINTS = [600, 900, 1200, 1500];
@@ -88,12 +89,14 @@ Object.entries(EQUIPMENT_TYPE_TO_SLOT).forEach(([typeId, slotId]) => {
 
 export const CUSTOM_STAT = 'custom';
 
-export const STAT_GROUPS = [
-  { group: BasicStat },
-  { name: 'Primary characteristics', group: PrimaryStat },
-  { name: 'Secondary characteristics', group: SecondaryStat },
-  { name: 'Damage', group: DamageStat },
-  { name: 'Resistance', group: ResistanceStat }
+export const STAT_GROUPS: ReadonlyArray<{
+  name: string;
+  groups: ReadonlyArray<{ [key: string]: string }>;
+}> = [
+  { name: 'Primary characteristics', groups: [BasicStat, PrimaryStat] },
+  { name: 'Secondary characteristics', groups: [SecondaryStat] },
+  { name: 'Damage', groups: [DamageStat] },
+  { name: 'Resistance', groups: [ResistanceStat] }
 ];
 
 export const EQUIPMENT_SLOT_TO_TYPES = <

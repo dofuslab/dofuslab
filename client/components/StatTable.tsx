@@ -5,10 +5,11 @@ import { jsx } from '@emotion/core';
 
 import List from 'antd/lib/list';
 import { modifiedStartCase } from '../common/utils';
+import { Stat } from '../common/types';
 
 interface IStatTable {
   name?: string;
-  group: any;
+  groups: ReadonlyArray<{ [key: string]: string }>;
 }
 
 interface IStat {
@@ -18,22 +19,25 @@ interface IStat {
 
 const data = [{ stat: 'Vitality', value: 60 }, { stat: 'AP', value: 12 }];
 
-const StatTable: React.FC<IStatTable> = props => (
-  <List
-    itemLayout="horizontal"
-    size="small"
-    bordered
-    dataSource={Object.values(props.group).map(v => ({
-      stat: modifiedStartCase(v as string)
-    }))}
-    rowKey={(item: IStat) => item.stat}
-    renderItem={(item: IStat) => (
-      <List.Item>
-        <List.Item.Meta title={item.stat} />
-        <div>{item.value}</div>
-      </List.Item>
-    )}
-  />
-);
+const StatTable: React.FC<IStatTable> = props => {
+  const stats = props.groups.map(group => Object.values(group)).flat();
+  return (
+    <List
+      itemLayout="horizontal"
+      size="small"
+      bordered
+      dataSource={stats.map(v => ({
+        stat: modifiedStartCase(v as string)
+      }))}
+      rowKey={(item: IStat) => item.stat}
+      renderItem={(item: IStat) => (
+        <List.Item css={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div css={{ fontSize: '0.75rem' }}>{item.stat}</div>
+          <div css={{ fontSize: '0.75rem' }}>{item.value}</div>
+        </List.Item>
+      )}
+    />
+  );
+};
 
 export default StatTable;
