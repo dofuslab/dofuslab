@@ -48,21 +48,21 @@ class ItemScraper:
             # check and adjust for values that have ranges and negative values
             if "to" in description and "-" not in description:
                 arr = description.split(' ')
-                maxStat = arr[2].replace('%', '')
+                maxStat = int(arr[2].replace('%', ''))
                 del arr[0]
                 del arr[0]
                 del arr[0]
                 type = ' '.join(arr)
             elif "to" in description and "-" in description:
                 arr = description.split(" ")
-                maxStat = arr[0].replace("%", "")
+                maxStat = int(arr[0].replace("%", ""))
                 del arr[0]
                 del arr[0]
                 del arr[0]
                 type = ' '.join(arr)
             else:
                 arr = description.split(' ')
-                maxStat = arr[0].replace('%', '')
+                maxStat = int(arr[0].replace('%', ''))
                 del arr[0]
                 type = ' '.join(arr)
 
