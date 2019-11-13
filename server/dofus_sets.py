@@ -4,7 +4,7 @@ from flask_graphql import GraphQLView
 from schema import schema
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres+psycopg2://postgres:password@localhost:5432/dofus_sets'
 db = SQLAlchemy(app)
 
 @app.route('/')
