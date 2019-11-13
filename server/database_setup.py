@@ -16,7 +16,6 @@ if __name__ == '__main__':
     with open('database/data/sets.json', 'r') as file:
         data = json.load(file)
         for record in data:
-            print(record['items'])
             set = ModelSet(name=record['name'],
                            bonuses=record['bonuses'])
             base.db_session.add(set)
@@ -36,9 +35,11 @@ if __name__ == '__main__':
             base.db_session.add(item)
 
             # If this item belongs in a set, query the set and add the relationship to the record
-            # if record['set']:
-            #     set = record['set']
-
+            if record['set']:
+                set = record['set']
+                set_record = base.db_session.query(ModelSet).filter(ModelSet.name==set).first()
+                set_record.items.append(item)
+                base.db_session.merge(set_record)
 
         base.db_session.commit()
 
