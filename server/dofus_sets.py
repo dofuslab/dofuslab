@@ -7,13 +7,16 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres+psycopg2://postgres:password@localhost:5432/dofus_sets'
 db = SQLAlchemy(app)
 
+
 @app.route('/')
 def home():
     return render_template('home.html')
 
+
 @app.route('/create')
 def create():
     return render_template('set_creation.html', title='Set')
+
 
 app.add_url_rule(
     '/graphql', view_func=GraphQLView.as_view('graphql', schema=schema, graphiql=True)

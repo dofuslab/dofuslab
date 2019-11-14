@@ -5,25 +5,30 @@ from database.model_user import ModelUser
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 import graphene
 
+
 class Item(SQLAlchemyObjectType):
     class Meta:
         model = ModelItem
         interfaces = (graphene.relay.Node,)
+
 
 class Set(SQLAlchemyObjectType):
     class Meta:
         model = ModelSet
         interfaces = (graphene.relay.Node,)
 
+
 class CustomSet(SQLAlchemyObjectType):
     class Meta:
         model = ModelCustomSet
         interfaces = (graphene.relay.Node,)
 
+
 class User(SQLAlchemyObjectType):
     class Meta:
         model = ModelUser
         interfaces = (graphene.relay.Node,)
+
 
 class Query(graphene.ObjectType):
     node = graphene.relay.Node.Field()
@@ -35,5 +40,6 @@ class Query(graphene.ObjectType):
     all_custom_sets = SQLAlchemyConnectionField(CustomSet)
     user = graphene.relay.Node.Field(User)
     all_users = SQLAlchemyConnectionField(User)
+
 
 schema = graphene.Schema(query=Query)

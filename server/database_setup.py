@@ -37,7 +37,8 @@ if __name__ == '__main__':
             # If this item belongs in a set, query the set and add the relationship to the record
             if record['set']:
                 set = record['set']
-                set_record = base.db_session.query(ModelSet).filter(ModelSet.name==set).first()
+                set_record = base.db_session.query(
+                    ModelSet).filter(ModelSet.name == set).first()
                 set_record.items.append(item)
                 base.db_session.merge(set_record)
 

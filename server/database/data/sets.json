@@ -1,11 +1,7 @@
 [
   {
     "name": "Sinistrofu Set",
-    "items": [
-      "Sinistrofu Cloak",
-      "Sinistrofu Amulet",
-      "Sinistrofu Boots"
-    ],
+    "items": ["Sinistrofu Cloak", "Sinistrofu Amulet", "Sinistrofu Boots"],
     "bonuses": [
       {
         "item_count": 2,
