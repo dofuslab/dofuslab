@@ -1,5 +1,5 @@
 from .base import Base
-from sqlalchemy import Column, ForeignKey, Integer, String, PickleType
+from sqlalchemy import Column, ForeignKey, Integer, String, PickleType, DateTime
 from sqlalchemy.orm import relationship
 
 class ModelCustomSet(Base):
@@ -9,6 +9,7 @@ class ModelCustomSet(Base):
     name = Column('name', String)
     description = Column('description', String)
     owner_id = Column(Integer, ForeignKey('user.id'))
+    created_at = Column('creation_date', DateTime)
     level = Column('level', Integer)
     items = relationship('ModelItem')
     stat_distribution = Column('stat_distribution', PickleType)
