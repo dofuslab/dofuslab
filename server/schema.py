@@ -27,13 +27,12 @@ class User(SQLAlchemyObjectType):
 
 class Query(graphene.ObjectType):
     node = graphene.relay.Node.Field()
-    item = graphene.relay.Node.Field(Item)
-    all_items = SQLAlchemyConnectionField(Item)
-    set = graphene.relay.Node.Field(Set)
-    all_sets = SQLAlchemyConnectionField(Set)
-    custom_set = graphene.relay.Node.Field(CustomSet)
-    all_custom_sets = SQLAlchemyConnectionField(CustomSet)
     user = graphene.relay.Node.Field(User)
-    all_users = SQLAlchemyConnectionField(User)
+    item = graphene.relay.Node.Field(Item)
+    set = graphene.relay.Node.Field(Set)
+    custom_set = graphene.relay.Node.Field(CustomSet)
+
+    all_items = SQLAlchemyConnectionField(Item._meta.connection)
+    all_custom_sets = SQLAlchemyConnectionField(CustomSet._meta.connection)
 
 schema = graphene.Schema(query=Query)
