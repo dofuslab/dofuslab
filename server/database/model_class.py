@@ -1,6 +1,7 @@
 from .base import Base
 from sqlalchemy import Column, ForeignKey, Integer, String, PickleType
 
+
 class ModelClass(Base):
     __tablename__ = 'class'
 

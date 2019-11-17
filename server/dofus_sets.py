@@ -4,7 +4,9 @@ from flask_graphql import GraphQLView
 from schema import schema
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres+psycopg2://postgres:password@localhost:5432/dofus_sets'
+app.config[
+    'SQLALCHEMY_DATABASE_URI'
+] = 'postgres+psycopg2://postgres:password@localhost:5432/dofus_sets'
 db = SQLAlchemy(app)
 
 
@@ -19,7 +21,8 @@ def create():
 
 
 app.add_url_rule(
-    '/graphql', view_func=GraphQLView.as_view('graphql', schema=schema, graphiql=True)
+    '/graphql',
+    view_func=GraphQLView.as_view('graphql', schema=schema, graphiql=True),
 )
 
 

@@ -2,6 +2,7 @@ from .base import Base
 from sqlalchemy import Column, ForeignKey, Integer, String, PickleType
 from sqlalchemy.orm import relationship
 
+
 class ModelCustomSet(Base):
     __tablename__ = 'custom_set'
 
