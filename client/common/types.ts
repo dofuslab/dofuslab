@@ -1,3 +1,8 @@
+import { ApolloClient } from "apollo-boost";
+import { IncomingHttpHeaders } from "http";
+import { NextPageContext } from "next";
+import { AppContext } from "next/app";
+
 export enum EquipmentSlotId {
   Hat = 1,
   Cloak = 2,
@@ -38,16 +43,16 @@ export enum EquipmentTypeId {
 }
 
 export enum EquipmentSlotName {
-  Hat = 'Hat',
-  Cloak = 'Cloak',
-  Amulet = 'Amulet',
-  Ring = 'Ring',
-  Belt = 'Belt',
-  Boots = 'Boots',
-  Weapon = 'Weapon',
-  Shield = 'Shield',
-  Dofus = 'Dofus',
-  Pet = 'Pet'
+  Hat = "Hat",
+  Cloak = "Cloak",
+  Amulet = "Amulet",
+  Ring = "Ring",
+  Belt = "Belt",
+  Boots = "Boots",
+  Weapon = "Weapon",
+  Shield = "Shield",
+  Dofus = "Dofus",
+  Pet = "Pet"
 }
 
 export interface EquipmentSlot {
@@ -57,68 +62,68 @@ export interface EquipmentSlot {
 }
 
 export enum BasicStat {
-  Vitality = 'vitality',
-  AP = 'ap',
-  MP = 'mp',
-  Initiative = 'initiative',
-  Prospecting = 'prospecting',
-  Range = 'range',
-  Summons = 'summons'
+  Vitality = "vitality",
+  AP = "ap",
+  MP = "mp",
+  Initiative = "initiative",
+  Prospecting = "prospecting",
+  Range = "range",
+  Summons = "summons"
 }
 
 export enum PrimaryStat {
-  Wisdom = 'wisdom',
-  Strength = 'strength',
-  Intelligence = 'intelligence',
-  Chance = 'chance',
-  Agility = 'agility'
+  Wisdom = "wisdom",
+  Strength = "strength",
+  Intelligence = "intelligence",
+  Chance = "chance",
+  Agility = "agility"
 }
 
 export enum SecondaryStat {
-  APResistance = 'apResistance',
-  APReduction = 'apReduction',
-  MPResistance = 'mpResistance',
-  MPReduction = 'mpReduction',
-  CriticalHits = 'criticalHits',
-  Heals = 'heals',
-  Lock = 'lock',
-  Dodge = 'dodge'
+  APResistance = "apResistance",
+  APReduction = "apReduction",
+  MPResistance = "mpResistance",
+  MPReduction = "mpReduction",
+  CriticalHits = "criticalHits",
+  Heals = "heals",
+  Lock = "lock",
+  Dodge = "dodge"
 }
 
 export enum DamageStat {
-  PctFinalDamage = 'pctFinalDamage',
-  Power = 'power',
-  CriticalDamage = 'criticalDamage',
-  NeutralDamage = 'neutralDamage',
-  EarthDamage = 'earthDamage',
-  FireDamage = 'fireDamage',
-  WaterDamage = 'waterDamage',
-  AirDamage = 'airDamage',
-  Reflect = 'reflect',
-  TrapDamage = 'trapDamage',
-  TrapPower = 'trapPower',
-  PushbackDamage = 'pushbackDamage',
-  PctSpellDamage = 'pctSpellDamage',
-  PctWeaponDamage = 'pctWeaponDamage',
-  PctRangedDamage = 'pctRangedDamage',
-  PctMeleeDamage = 'pctMeleeDamage'
+  PctFinalDamage = "pctFinalDamage",
+  Power = "power",
+  CriticalDamage = "criticalDamage",
+  NeutralDamage = "neutralDamage",
+  EarthDamage = "earthDamage",
+  FireDamage = "fireDamage",
+  WaterDamage = "waterDamage",
+  AirDamage = "airDamage",
+  Reflect = "reflect",
+  TrapDamage = "trapDamage",
+  TrapPower = "trapPower",
+  PushbackDamage = "pushbackDamage",
+  PctSpellDamage = "pctSpellDamage",
+  PctWeaponDamage = "pctWeaponDamage",
+  PctRangedDamage = "pctRangedDamage",
+  PctMeleeDamage = "pctMeleeDamage"
 }
 
 export enum ResistanceStat {
-  NeutralResistance = 'neutralResistance',
-  PctNeutralResistance = 'pctNeutralResistance',
-  EarthResistance = 'EarthResistance',
-  PctEarthResistance = 'pctEarthResistance',
-  FireResistance = 'FireResistance',
-  PctFireResistance = 'pctFireResistance',
-  WaterResistance = 'waterResistance',
-  PctWaterResistance = 'pctWaterResistance',
-  AirResistance = 'airResistance',
-  PctAirResistance = 'pctAirResistance',
-  CriticalResistance = 'criticalResistance',
-  PushbackResistance = 'pushbackResistance',
-  PctRangedResistance = 'pctRangedResistance',
-  PctMeleeResistance = 'pctMeleeResistance'
+  NeutralResistance = "neutralResistance",
+  PctNeutralResistance = "pctNeutralResistance",
+  EarthResistance = "EarthResistance",
+  PctEarthResistance = "pctEarthResistance",
+  FireResistance = "FireResistance",
+  PctFireResistance = "pctFireResistance",
+  WaterResistance = "waterResistance",
+  PctWaterResistance = "pctWaterResistance",
+  AirResistance = "airResistance",
+  PctAirResistance = "pctAirResistance",
+  CriticalResistance = "criticalResistance",
+  PushbackResistance = "pushbackResistance",
+  PctRangedResistance = "pctRangedResistance",
+  PctMeleeResistance = "pctMeleeResistance"
 }
 
 export type Stat =

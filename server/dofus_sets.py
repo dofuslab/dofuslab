@@ -1,13 +1,23 @@
+from dotenv import load_dotenv
 from flask import Flask, escape, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_graphql import GraphQLView
+from flask_migrate import Migrate
 from schema import schema
+import os
+from database.base import Base
+
+load_dotenv()
+
+db_uri = os.getenv("DB_URI")
 
 app = Flask(__name__)
-app.config[
-    'SQLALCHEMY_DATABASE_URI'
-] = 'postgres+psycopg2://postgres:password@localhost:5432/dofus_sets'
+app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
+
+migrate = Migrate(app, Base)
 
 
 @app.route('/')
