@@ -46,7 +46,7 @@ class ItemScraper:
             # no set found for this item
             pass
         except:
-            print("Error ocurred")
+            print("Error ocurred finding set data")
 
         if set:
             set = set.text
@@ -113,7 +113,7 @@ class ItemScraper:
         raw_conditions = soup.find(
             'div', attrs={'class': 'ak-container ak-panel no-padding'}
         )
-        conditions = {}
+        conditions = []
 
         if raw_conditions:
             raw_conditions = (
@@ -122,15 +122,15 @@ class ItemScraper:
                 .strip()
                 .split(" ")
             )
-            condition_type = raw_conditions[0]
-            condition_limit_type = raw_conditions[1]
-            condition_limit = raw_conditions[2]
+            stat_type = raw_conditions[0]
+            condition_type = raw_conditions[1]
+            limit = int(raw_conditions[2])
 
-            conditions = {
-                "conditionType": condition_type,
-                "conditionLimitType": condition_limit_type,
-                "conditionLimit": condition_limit,
-            }
+            conditions.append({
+                "statType": stat_type,
+                "condition": condition_type,
+                "limit": limit,
+            })
 
         item = {
             'name': name,
@@ -140,7 +140,7 @@ class ItemScraper:
             'stats': stats,
             'customStats': custom_stats,
             'conditions': conditions,
-            'image_url': image,
+            'imageUrl': image
         }
 
         return item
@@ -327,7 +327,7 @@ items.append(ItemScraper.get_item_stats(c))
 ItemScraper.write_to_file(items)
 
 # items = []
-# item_test = 'https://www.dofus.com/en/mmorpg/encyclopedia/equipment/20358-death-defying'
+# item_test = 'https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15699-belteen'
 # items.append(ItemScraper.get_item_stats(item_test))
 # ItemScraper.write_to_file(items)
 

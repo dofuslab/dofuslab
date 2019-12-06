@@ -1,5 +1,9 @@
 from database.model_item import ModelItem
+from database.model_item_stats import ModelItemStats
+from database.model_item_conditions import ModelItemConditions
 from database.model_set import ModelSet
+from database.model_custom_set_stats import ModelCustomSetStats
+from database.model_custom_set_exos import ModelCustomSetExos
 from database.model_custom_set import ModelCustomSet
 from database.model_user import ModelUser
 from database import base
@@ -9,6 +13,7 @@ import json
 import sys
 
 if __name__ == '__main__':
+    print("Resetting database")
     base.Base.metadata.drop_all(base.engine)
     base.Base.metadata.create_all(base.engine)
 
@@ -16,8 +21,7 @@ if __name__ == '__main__':
     with open('database/data/sets.json', 'r') as file:
         data = json.load(file)
         for record in data:
-            set = ModelSet(name=record['name'],
-                           bonuses=record['bonuses'])
+            set = ModelSet(name=record['name'], bonuses=record['bonuses'])
             base.db_session.add(set)
         base.db_session.commit()
 
@@ -25,19 +29,43 @@ if __name__ == '__main__':
     with open('database/data/items.json', 'r') as file:
         data = json.load(file)
         for record in data:
-            item = ModelItem(name=record['name'],
-                             item_type=record['item_type'],
-                             level=record['level'],
-                             stats=record['stats'],
-                             conditions=record['conditions'],
-                             image_url=record['image_url'])
+            item = ModelItem(
+                name=record['name'],
+                item_type=record['itemType'],
+                level=record['level'],
+                image_url=record['imageUrl'],
+            )
+
+            for stat in record['stats']:
+                item_stat = ModelItemStats(
+                    stat = stat['stat'],
+                    min_value = stat['minStat'],
+                    max_value = stat['maxStat']
+                )
+                base.db_session.add(item_stat)
+                base.db_session.commit()
+                item.stats.append(item_stat)
+
+            for condition in record['conditions']:
+                item_condition = ModelItemConditions(
+                    stat_type = condition['statType'],
+                    condition_type = condition['condition'],
+                    limit = condition['limit']
+                )
+                base.db_session.add(item_condition)
+                base.db_session.commit()
+                item.conditions.append(item_condition)
 
             base.db_session.add(item)
 
             # If this item belongs in a set, query the set and add the relationship to the record
             if record['set']:
                 set = record['set']
-                set_record = base.db_session.query(ModelSet).filter(ModelSet.name==set).first()
+                set_record = (
+                    base.db_session.query(ModelSet)
+                    .filter(ModelSet.name == set)
+                    .first()
+                )
                 set_record.items.append(item)
                 base.db_session.merge(set_record)
 

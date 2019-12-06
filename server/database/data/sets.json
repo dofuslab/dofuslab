@@ -8,47 +8,38 @@
     ],
     "bonuses": [
       {
-        "item_count": 2,
-        "stats": [
+        "2": [
           {
             "stat": "Chance",
-            "description": "50 Chance",
-            "maxStat": "50"
+            "value": "50"
           },
           {
             "stat": "Critical Resistance",
-            "description": "15 Critical Resistance",
-            "maxStat": "15"
+            "value": "15"
           },
           {
             "stat": "Pushback Resistance",
-            "description": "30 Pushback Resistance",
-            "maxStat": "30"
+            "value": "30"
           }
         ]
       },
       {
-        "item_count": 3,
-        "stats": [
+        "3": [
           {
             "stat": "Chance",
-            "description": "50 Chance",
-            "maxStat": "50"
+            "value": "50"
           },
           {
             "stat": "Critical Resistance",
-            "description": "15 Critical Resistance",
-            "maxStat": "15"
+            "value": "15"
           },
           {
             "stat": "Pushback Resistance",
-            "description": "30 Pushback Resistance",
-            "maxStat": "30"
+            "value": "30"
           },
           {
             "stat": "AP",
-            "description": "1 AP",
-            "maxStat": "1"
+            "value": "1"
           }
         ]
       }

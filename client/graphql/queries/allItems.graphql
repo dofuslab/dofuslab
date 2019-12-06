@@ -1,0 +1,12 @@
+query AllItems {
+  allItems {
+    edges {
+      node {
+        id
+        name
+        stats
+        conditions
+      }
+    }
+  }
+}
