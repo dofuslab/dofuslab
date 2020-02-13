@@ -87,19 +87,40 @@ class CreateCustomSet(graphene.Mutation):
         )
 
         # Add associated items to the custom set
-        # modify to take in item objects
-        for item in items:
-            item_record = (
-                base.db_session.query(ModelItem)
-                .filter(ModelItem.name == item)
-                .first()
-            )
-            custom_set.items.append(item_record)
+        # Modify to take in item objects
+        if kwargs.get('items'):
+            items = kwargs.get('items')
+            for item in items:
+                item_record = (
+                    base.db_session.query(ModelItem)
+                    .filter(ModelItem.name == item)
+                    .first()
+                )
+                custom_set.items.append(item_record)
 
         # Create database entry for the stats then add to the custom set
-        set_stats = ModelCustomSetStats
-        custom_set.stats.append()
+        # discuss how exos will be implemented
+        if kwargs.get('stats'):
+            stats = kwargs.get('stats')
+            custom_set_stats = ModelCustomSetStats(
+                                    scrolled_vitality=stats.scrolled_vitality,
+                                    scrolled_wisdom=stats.scrolled_wisdom,
+                                    scrolled_strength=stats.scrolled_strength,
+                                    scrolled_intelligence=stats.scrolled_intelligence,
+                                    scrolled_chance=stats.scrolled_chance,
+                                    scrolled_agility=stats.scrolled_agility,
 
+                                    base_vitality=stats.base_vitality,
+                                    base_wisdom = stats.base_wisdom,
+                                    base_strength = stats.base_strength,
+                                    base_intelligence = stats.base_intelligence,
+                                    base_chance = stats.base_chance,
+                                    base_agility = stats.base_agility
+            )
+
+            base.db_session.add(custom_set_stats)
+            custom_set.stats = custom_set_stats
+            base.db_session.commit()
 
         base.db_session.add(custom_set)
         base.db_session.commit()
@@ -170,5 +191,6 @@ class Query(graphene.ObjectType):
 
 class Mutation(graphene.ObjectType):
     create_user = CreateUser.Field()
+    create_custom_set = CreateCustomSet.Field()
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
