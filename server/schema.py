@@ -66,7 +66,6 @@ class CustomSetExosInput(graphene.InputObjectType):
 
 class CreateCustomSet(graphene.Mutation):
     class Arguments:
-        # i can make an input type for all this if it makes it easier
         name = graphene.String()
         description = graphene.String()
         owner_id = graphene.ID() # figure out to query current user
@@ -79,16 +78,16 @@ class CreateCustomSet(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet)
 
-    #be able to add owner_id
     def mutate(self, into, **kwargs):
         custom_set = ModelCustomSet(
                         name=kwargs.get('name'),
                         description=kwargs.get('description'),
-                        created_at=kwargs.get('created_at'), #don't know if it's better to get time here or from front end.
+                        created_at=kwargs.get('created_at'),
                         level=kwargs.get('level'),
         )
 
         # Add associated items to the custom set
+        # modify to take in item objects
         for item in items:
             item_record = (
                 base.db_session.query(ModelItem)
@@ -98,15 +97,14 @@ class CreateCustomSet(graphene.Mutation):
             custom_set.items.append(item_record)
 
         # Create database entry for the stats then add to the custom set
+        set_stats = ModelCustomSetStats
         custom_set.stats.append()
 
 
+        base.db_session.add(custom_set)
+        base.db_session.commit()
 
-        # do i need to add and commit? resources im looking at dont do it
-        # base.db_session.add(custom_set)
-        # base.db_session.commit()
-
-        return CreateCustomSet(user=custom_set)
+        return CreateCustomSet(custom_set=custom_set)
 
 # class UpdateCustomSet(graphene.Mutation):
 #     pass
