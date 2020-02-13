@@ -3,3 +3,4 @@ venv/
 server/__pycache__/
 server/.vscode/
 server/.env
+server/database/__pycache__/
