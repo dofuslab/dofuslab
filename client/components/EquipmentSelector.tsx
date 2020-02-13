@@ -9,8 +9,8 @@ import { mq, EQUIPMENT_SLOT_TO_TYPES } from "../common/constants";
 import { EquipmentSlotId, Equipment as EquipmentType } from "../common/types";
 import { EQUIPMENT_LISTS } from "../common/data";
 import { ResponsiveGrid } from "../common/wrappers";
-import AllItemsQuery from "../graphql/queries/allItems.graphql";
-import { AllItems } from "../graphql/queries/__generated__/AllItems";
+import ItemsQuery from "../graphql/queries/items.graphql";
+import { items } from "../graphql/queries/__generated__/items";
 
 interface IEquipmentSelector {
   slotId: EquipmentSlotId;
@@ -19,7 +19,9 @@ interface IEquipmentSelector {
 const EquipmentSelector: React.FC<IEquipmentSelector> = props => {
   const equipmentTypes = EQUIPMENT_SLOT_TO_TYPES[props.slotId];
   const equipmentList: EquipmentType[] = [];
-  const { data } = useQuery<AllItems>(AllItemsQuery);
+  const { data } = useQuery<items>(ItemsQuery);
+
+  console.log(data);
 
   equipmentTypes
     .filter(equipmentType => !!EQUIPMENT_LISTS[equipmentType])
