@@ -68,7 +68,7 @@ class CreateCustomSet(graphene.Mutation):
     class Arguments:
         name = graphene.String()
         description = graphene.String()
-        owner_id = graphene.ID() # figure out to query current user
+        owner_username = graphene.String()
         created_at = graphene.types.datetime.DateTime()
         level = graphene.Int()
 
@@ -99,7 +99,6 @@ class CreateCustomSet(graphene.Mutation):
                 custom_set.items.append(item_record)
 
         # Create database entry for the stats then add to the custom set
-        # discuss how exos will be implemented
         if kwargs.get('stats'):
             stats = kwargs.get('stats')
             custom_set_stats = ModelCustomSetStats(
@@ -120,9 +119,27 @@ class CreateCustomSet(graphene.Mutation):
 
             base.db_session.add(custom_set_stats)
             custom_set.stats = custom_set_stats
-            base.db_session.commit()
+
+        if kwargs.get('exos'):
+            exos = kwargs.get('exos')
+            for exo in exos:
+                custom_set_exo = ModelCustomSetExos(
+                                    stat=exo.stat,
+                                    value=exo.value
+                )
+
+                base.db_session.add(custom_set_exo)
+                custom_set.exos.append(exo)
 
         base.db_session.add(custom_set)
+
+        current_user = (
+            base.db_session.query(ModelUser)
+            .filter(ModelUser.username == kwargs.get('owner_username'))
+            .first()
+        )
+        current_user.custom_sets.append(custom_set)
+
         base.db_session.commit()
 
         return CreateCustomSet(custom_set=custom_set)
@@ -186,8 +203,6 @@ class Query(graphene.ObjectType):
     def resolve_custom_set_by_uuid(self, info, uuid):
         query = CustomSet.get_query(info)
         return query.filter(uuid==uuid).first()
-
-    # Add resolver to query by item type
 
 class Mutation(graphene.ObjectType):
     create_user = CreateUser.Field()
