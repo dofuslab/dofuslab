@@ -251,8 +251,8 @@ class ClassScraper:
 
         class_table = (
             soup.find('div', attrs={'class': 'ak-content-sections'})
-            .find('div', attrs={'class': 'row'})
-            .find_all('div', attrs={'class': 'col-sm-6'})
+                .find('div', attrs={'class': 'row'})
+                .find_all('div', attrs={'class': 'col-sm-6'})
         )
 
         for some_class in class_table:
