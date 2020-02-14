@@ -16,4 +16,4 @@ class ModelCustomSetExos(Base):
     stat = Column('stat', String)
     value = Column('value', Integer)
 
-    custom_set_id = Column(UUID, ForeignKey('custom_set.uuid'))
+    custom_set_id = Column(UUID(as_uuid=True), ForeignKey('custom_set.uuid'))

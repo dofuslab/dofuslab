@@ -15,7 +15,7 @@ class ModelCustomSet(Base):
     )
     name = Column('name', String)
     description = Column('description', String)
-    owner_id = Column(UUID, ForeignKey('user.uuid'))
+    owner_id = Column(UUID(as_uuid=True), ForeignKey('user.uuid'))
     created_at = Column('creation_date', DateTime)
     level = Column('level', Integer)
     items = relationship('ModelItem')

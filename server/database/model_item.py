@@ -11,10 +11,10 @@ class ModelItem(Base):
             server_default=sqlalchemy.text("uuid_generate_v4()"), primary_key=True, nullable=False)
     name = Column('name', String, nullable=False)
     item_type = Column('itemType', String, nullable=False)
-    set_id = Column(UUID, ForeignKey('set.uuid'))
+    set_id = Column(UUID(as_uuid=True), ForeignKey('set.uuid'))
     level = Column('level', Integer, nullable=False)
     stats = relationship('ModelItemStats', backref='item')
     conditions = relationship('ModelItemConditions', backref='item')
     image_url = Column('imageUrl', String)
 
-    custom_set_id = Column(UUID, ForeignKey('custom_set.uuid'))
+    custom_set_id = Column(UUID(as_uuid=True), ForeignKey('custom_set.uuid'))

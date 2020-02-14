@@ -9,7 +9,7 @@ class ModelItemStats(Base):
 
     uuid = Column(UUID(as_uuid=True),
             server_default=sqlalchemy.text("uuid_generate_v4()"), primary_key=True)
-    item_id = Column(UUID, ForeignKey('item.uuid'))
+    item_id = Column(UUID(as_uuid=True), ForeignKey('item.uuid'))
     stat = Column('stat', String)
     min_value = Column('minValue', Integer)
     max_value = Column('maxValue', Integer)
