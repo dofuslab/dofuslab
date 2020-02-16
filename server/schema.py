@@ -8,6 +8,7 @@ from database.model_custom_set import ModelCustomSet
 from database.model_user import ModelUser
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from database import base
+import mutation_validation_utils as validation
 import graphene
 
 class Item(SQLAlchemyObjectType):
@@ -160,6 +161,8 @@ class CreateUser(graphene.Mutation):
     user = graphene.Field(User)
 
     def mutate(self, info, **kwargs):
+        validation.check_for_existing_user(kwargs.get('username'))
+
         user = ModelUser(
                 username=kwargs.get('username'),
                 email=kwargs.get('email')
