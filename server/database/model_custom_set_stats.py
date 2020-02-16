@@ -3,27 +3,28 @@ from .base import Base
 from sqlalchemy import Column, ForeignKey, Integer
 from sqlalchemy.dialects.postgresql import UUID
 
+
 class ModelCustomSetStats(Base):
     __tablename__ = 'custom_set_stats'
 
     uuid = Column(
-            UUID(as_uuid=True),
-            server_default=sqlalchemy.text("uuid_generate_v4()"),
-            primary_key=True,
-            nullable=False,
+        UUID(as_uuid=True),
+        server_default=sqlalchemy.text("uuid_generate_v4()"),
+        primary_key=True,
+        nullable=False,
     )
-    scrolled_vitality = Column('scrolledVitality', Integer)
-    scrolled_wisdom = Column('scrolledWisdom', Integer)
-    scrolled_strength = Column('scrolledStrength', Integer)
-    scrolled_intelligence = Column('scrolledIntelligence', Integer)
-    scrolled_chance = Column('scrolledChance', Integer)
-    scrolled_agility = Column('scrolledAgility', Integer)
+    scrolled_vitality = Column('scrolled_vitality', Integer)
+    scrolled_wisdom = Column('scrolled_wisdom', Integer)
+    scrolled_strength = Column('scrolled_strength', Integer)
+    scrolled_intelligence = Column('scrolled_intelligence', Integer)
+    scrolled_chance = Column('scrolled_chance', Integer)
+    scrolled_agility = Column('scrolled_agility', Integer)
 
-    base_vitality = Column('baseVitality', Integer)
-    base_wisdom = Column('baseWisdom', Integer)
-    base_strength = Column('baseStrength', Integer)
-    base_intelligence = Column('baseIntelligence', Integer)
-    base_chance = Column('baseChance', Integer)
-    base_agility = Column('baseAgility', Integer)
+    base_vitality = Column('base_vitality', Integer)
+    base_wisdom = Column('base_wisdom', Integer)
+    base_strength = Column('base_strength', Integer)
+    base_intelligence = Column('base_intelligence', Integer)
+    base_chance = Column('base_chance', Integer)
+    base_agility = Column('base_agility', Integer)
 
     custom_set_id = Column(UUID, ForeignKey('custom_set.uuid'))
