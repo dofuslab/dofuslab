@@ -4,8 +4,8 @@ from sqlalchemy import Column, ForeignKey, Integer
 from sqlalchemy.dialects.postgresql import UUID
 
 
-class ModelCustomSetStats(Base):
-    __tablename__ = 'custom_set_stats'
+class ModelCustomSetStat(Base):
+    __tablename__ = 'custom_set_stat'
 
     uuid = Column(
         UUID(as_uuid=True),

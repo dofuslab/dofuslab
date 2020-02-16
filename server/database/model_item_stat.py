@@ -5,8 +5,8 @@ from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
 
 
-class ModelItemStats(Base):
-    __tablename__ = 'item_stats'
+class ModelItemStat(Base):
+    __tablename__ = 'item_stat'
 
     uuid = Column(UUID(as_uuid=True),
                   server_default=sqlalchemy.text("uuid_generate_v4()"), primary_key=True)

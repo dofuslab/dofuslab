@@ -14,8 +14,8 @@ class ModelItem(Base):
     item_type = Column('item_type', String, nullable=False)
     set_id = Column(UUID(as_uuid=True), ForeignKey('set.uuid'))
     level = Column('level', Integer, nullable=False)
-    stats = relationship('ModelItemStats', backref='item')
-    conditions = relationship('ModelItemConditions', backref='item')
+    stats = relationship('ModelItemStat', backref='item')
+    conditions = relationship('ModelItemCondition', backref='item')
     image_url = Column('image_url', String)
 
     custom_set_id = Column(UUID(as_uuid=True), ForeignKey('custom_set.uuid'))
