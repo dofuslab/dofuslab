@@ -1,9 +1,9 @@
 from database.model_item import ModelItem
-from database.model_item_stats import ModelItemStats
-from database.model_item_conditions import ModelItemConditions
+from database.model_item_stat import ModelItemStats
+from database.model_item_condition import ModelItemCondition
 from database.model_set import ModelSet
-from database.model_custom_set_stats import ModelCustomSetStats
-from database.model_custom_set_exos import ModelCustomSetExos
+from database.model_custom_set_stat import ModelCustomSetStat
+from database.model_custom_set_exo import ModelCustomSetExo
 from database.model_custom_set import ModelCustomSet
 from database.model_user import ModelUser
 from database import base
@@ -38,9 +38,9 @@ if __name__ == '__main__':
 
             for stat in record['stats']:
                 item_stat = ModelItemStats(
-                    stat = stat['stat'],
-                    min_value = stat['minStat'],
-                    max_value = stat['maxStat']
+                    stat=stat['stat'],
+                    min_value=stat['minStat'],
+                    max_value=stat['maxStat']
                 )
                 base.db_session.add(item_stat)
                 base.db_session.commit()
@@ -48,9 +48,9 @@ if __name__ == '__main__':
 
             for condition in record['conditions']:
                 item_condition = ModelItemConditions(
-                    stat_type = condition['statType'],
-                    condition_type = condition['condition'],
-                    limit = condition['limit']
+                    stat_type=condition['statType'],
+                    condition_type=condition['condition'],
+                    limit=condition['limit']
                 )
                 base.db_session.add(item_condition)
                 base.db_session.commit()
