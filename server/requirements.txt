@@ -3,6 +3,7 @@ aniso8601==7.0.0
 appdirs==1.4.3
 astroid==2.3.3
 attrs==19.3.0
+autopep8==1.5
 beautifulsoup4==4.8.1
 bs4==0.0.1
 certifi==2019.9.11
@@ -26,9 +27,13 @@ Mako==1.1.0
 MarkupSafe==1.1.1
 mccabe==0.6.1
 pathspec==0.6.0
+pkg-resources==0.0.0
 promise==2.2.1
 psycopg2==2.8.4
+pycodestyle==2.5.0
 pylint==2.4.4
+pylint-flask==0.6
+pylint-plugin-utils==0.6
 python-dateutil==2.8.1
 python-dotenv==0.10.3
 python-editor==1.0.4
