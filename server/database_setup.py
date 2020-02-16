@@ -38,9 +38,9 @@ if __name__ == '__main__':
 
             for stat in record['stats']:
                 item_stat = ModelItemStats(
-                    stat = stat['stat'],
-                    min_value = stat['minStat'],
-                    max_value = stat['maxStat']
+                    stat=stat['stat'],
+                    min_value=stat['minStat'],
+                    max_value=stat['maxStat']
                 )
                 base.db_session.add(item_stat)
                 base.db_session.commit()
@@ -48,9 +48,9 @@ if __name__ == '__main__':
 
             for condition in record['conditions']:
                 item_condition = ModelItemConditions(
-                    stat_type = condition['statType'],
-                    condition_type = condition['condition'],
-                    limit = condition['limit']
+                    stat_type=condition['statType'],
+                    condition_type=condition['condition'],
+                    limit=condition['limit']
                 )
                 base.db_session.add(item_condition)
                 base.db_session.commit()
