@@ -1,5 +1,5 @@
 from database.model_item import ModelItem
-from database.model_item_stat import ModelItemStats
+from database.model_item_stat import ModelItemStat
 from database.model_item_condition import ModelItemCondition
 from database.model_set import ModelSet
 from database.model_custom_set_stat import ModelCustomSetStat
