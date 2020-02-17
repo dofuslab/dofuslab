@@ -27,7 +27,6 @@ Mako==1.1.0
 MarkupSafe==1.1.1
 mccabe==0.6.1
 pathspec==0.6.0
-pkg-resources==0.0.0
 promise==2.2.1
 psycopg2==2.8.4
 pycodestyle==2.5.0
