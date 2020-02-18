@@ -6,11 +6,63 @@ from database.model_custom_set_stat import ModelCustomSetStat
 from database.model_custom_set_exo import ModelCustomSetExo
 from database.model_custom_set import ModelCustomSet
 from database.model_user import ModelUser
-from database import base
+from database import base, enums
 from sqlalchemy.schema import MetaData
 import sqlalchemy
 import json
 import sys
+
+to_stat_enum = {
+    'Vitality': enums.Stat.VITALITY,
+    'AP': enums.Stat.AP,
+    'MP': enums.Stat.MP,
+    'Initiative': enums.Stat.INITIATIVE,
+    'Prospecting': enums.Stat.PROSPECTING,
+    'Range': enums.Stat.RANGE,
+    'Summons': enums.Stat.SUMMON,
+    'Wisdom': enums.Stat.WISDOM,
+    'Strength': enums.Stat.STRENGTH,
+    'Intelligence': enums.Stat.INTELLIGENCE,
+    'Chance': enums.Stat.CHANCE,
+    'Agility': enums.Stat.AGILITY,
+    'AP Parry': enums.Stat.AP_PARRY,
+    'AP Reduction': enums.Stat.AP_REDUCTION,
+    'MP Parry': enums.Stat.MP_PARRY,
+    'MP Reduction': enums.Stat.MP_REDUCTION,
+    'Critical': enums.Stat.CRITICAL,
+    'Heals': enums.Stat.HEALS,
+    'Lock': enums.Stat.LOCK,
+    'Dodge': enums.Stat.DODGE,
+    'Power': enums.Stat.POWER,
+    'Critical Damage': enums.Stat.CRITICAL_DAMAGE,
+    'Neutral Damage': enums.Stat.NEUTRAL_DAMAGE,
+    'Earth Damage': enums.Stat.EARTH_DAMAGE,
+    'Fire Damage': enums.Stat.FIRE_DAMAGE,
+    'Water Damage': enums.Stat.WATER_DAMAGE,
+    'Air Damage': enums.Stat.AIR_DAMAGE,
+    'Reflect': enums.Stat.REFLECT,
+    'Trap Damage': enums.Stat.TRAP_DAMAGE,
+    'Power (traps)': enums.Stat.TRAP_POWER,
+    'Pushback Damage': enums.Stat.PUSHBACK_DAMAGE,
+    '% Spell Damage': enums.Stat.PCT_SPELL_DAMAGE,
+    '% Weapon Damage': enums.Stat.PCT_WEAPON_DAMAGE,
+    '% Ranged Damage': enums.Stat.PCT_RANGED_DAMAGE,
+    '% Melee Damage': enums.Stat.PCT_MELEE_DAMAGE,
+    'Neutral Resistance': enums.Stat.NEUTRAL_RES,
+    '% Neutral Resistance': enums.Stat.PCT_NEUTRAL_RES,
+    'Earth Resistance': enums.Stat.EARTH_RES,
+    '% Earth Resistance': enums.Stat.PCT_EARTH_RES,
+    'Fire Resistance': enums.Stat.FIRE_RES,
+    '% Fire Resistance': enums.Stat.PCT_FIRE_RES,
+    'Water Resistance': enums.Stat.WATER_RES,
+    '% Water Resistance': enums.Stat.PCT_WATER_RES,
+    'Air Resistance': enums.Stat.AIR_RES,
+    '% Air Resistance': enums.Stat.PCT_AIR_RES,
+    'Critical Resistance': enums.Stat.CRITICAL_RES,
+    'Pushback Resistance': enums.Stat.PUSHBACK_RES,
+    '% Ranged Resistance': enums.Stat.PCT_RANGED_RES,
+    '% Melee Resistance': enums.Stat.PCT_MELEE_RES,
+}
 
 if __name__ == '__main__':
     print("Resetting database")
@@ -36,38 +88,41 @@ if __name__ == '__main__':
                 image_url=record['imageUrl'],
             )
 
-            for stat in record['stats']:
-                item_stat = ModelItemStats(
-                    stat=stat['stat'],
-                    min_value=stat['minStat'],
-                    max_value=stat['maxStat']
-                )
-                base.db_session.add(item_stat)
-                base.db_session.commit()
-                item.stats.append(item_stat)
+            try:
+                for stat in record['stats']:
+                    item_stat = ModelItemStat(
+                        stat=to_stat_enum[stat['stat']],
+                        min_value=stat['minStat'],
+                        max_value=stat['maxStat']
+                    )
+                    base.db_session.add(item_stat)
+                    base.db_session.commit()
+                    item.stats.append(item_stat)
 
-            for condition in record['conditions']:
-                item_condition = ModelItemConditions(
-                    stat_type=condition['statType'],
-                    condition_type=condition['condition'],
-                    limit=condition['limit']
-                )
-                base.db_session.add(item_condition)
-                base.db_session.commit()
-                item.conditions.append(item_condition)
+                for condition in record['conditions']:
+                    item_condition = ModelItemCondition(
+                        stat_type=condition['statType'],
+                        condition_type=condition['condition'],
+                        limit=condition['limit']
+                    )
+                    base.db_session.add(item_condition)
+                    base.db_session.commit()
+                    item.conditions.append(item_condition)
 
-            base.db_session.add(item)
+                base.db_session.add(item)
 
-            # If this item belongs in a set, query the set and add the relationship to the record
-            if record['set']:
-                set = record['set']
-                set_record = (
-                    base.db_session.query(ModelSet)
-                    .filter(ModelSet.name == set)
-                    .first()
-                )
-                set_record.items.append(item)
-                base.db_session.merge(set_record)
+                # If this item belongs in a set, query the set and add the relationship to the record
+                if record['set']:
+                    set = record['set']
+                    set_record = (
+                        base.db_session.query(ModelSet)
+                        .filter(ModelSet.name == set)
+                        .first()
+                    )
+                    set_record.items.append(item)
+                    base.db_session.merge(set_record)
+            except KeyError as err:
+                print('KeyError occurred:', err)
 
         base.db_session.commit()
 

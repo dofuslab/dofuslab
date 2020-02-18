@@ -8,14 +8,11 @@ from database.model_custom_set import ModelCustomSet
 from database.model_user import ModelUser
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from database import base
+from database.enums import Stat
 import mutation_validation_utils as validation
 import graphene
 
-
-class Item(SQLAlchemyObjectType):
-    class Meta:
-        model = ModelItem
-        interfaces = (graphene.relay.Node,)
+StatEnum = graphene.Enum.from_enum(Stat)
 
 
 class ItemStats(SQLAlchemyObjectType):
@@ -27,6 +24,15 @@ class ItemStats(SQLAlchemyObjectType):
 class ItemCondtions(SQLAlchemyObjectType):
     class Meta:
         model = ModelItemCondition
+        interfaces = (graphene.relay.Node,)
+
+
+class Item(SQLAlchemyObjectType):
+    stats = graphene.List(ItemStats)  # Use list instead of connection
+    conditions = graphene.List(ItemCondtions)
+
+    class Meta:
+        model = ModelItem
         interfaces = (graphene.relay.Node,)
 
 
@@ -71,7 +77,7 @@ class CustomSetStatsInput(graphene.InputObjectType):
 
 
 class CustomSetExosInput(graphene.InputObjectType):
-    stat = graphene.String()
+    stat = StatEnum
     value = graphene.Int()
 
 
@@ -135,8 +141,8 @@ class CreateCustomSet(graphene.Mutation):
             exos = kwargs.get('exos')
             for exo in exos:
                 custom_set_exo = ModelCustomSetExos(
-                                    stat=exo.stat,
-                                    value=exo.value
+                    stat=exo.stat,
+                    value=exo.value
                 )
 
                 base.db_session.add(custom_set_exo)
@@ -226,6 +232,7 @@ class Query(graphene.ObjectType):
     def resolve_custom_set_by_uuid(self, info, uuid):
         query = CustomSet.get_query(info)
         return query.filter(uuid == uuid).first()
+
 
 class Mutation(graphene.ObjectType):
     create_user = CreateUser.Field()

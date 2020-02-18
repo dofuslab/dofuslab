@@ -1,6 +1,10 @@
 query items {
   items {
-    uuid
     id
+    stats {
+      minValue
+      maxValue
+      stat
+    }
   }
 }
