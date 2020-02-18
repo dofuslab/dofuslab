@@ -6,7 +6,7 @@ from sqlalchemy.dialects.postgresql import UUID
 
 
 class ModelCustomSet(Base):
-    __tablename__ = 'custom_set'
+    __tablename__ = "custom_set"
 
     uuid = Column(
         UUID(as_uuid=True),
@@ -14,11 +14,11 @@ class ModelCustomSet(Base):
         primary_key=True,
         nullable=False,
     )
-    name = Column('name', String)
-    description = Column('description', String)
-    owner_id = Column(UUID(as_uuid=True), ForeignKey('user.uuid'))
-    created_at = Column('creation_date', DateTime)
-    level = Column('level', Integer)
-    items = relationship('ModelItem')
-    stats = relationship('ModelCustomSetStat',  cascade='all, delete-orphan')
-    exos = relationship('ModelCustomSetExo', cascade='all, delete-orphan')
+    name = Column("name", String)
+    description = Column("description", String)
+    owner_id = Column(UUID(as_uuid=True), ForeignKey("user.uuid"))
+    created_at = Column("creation_date", DateTime)
+    level = Column("level", Integer)
+    items = relationship("ModelItem")
+    stats = relationship("ModelCustomSetStat", cascade="all, delete-orphan")
+    exos = relationship("ModelCustomSetExo", cascade="all, delete-orphan")

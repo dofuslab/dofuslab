@@ -5,6 +5,7 @@ astroid==2.3.3
 attrs==19.3.0
 autopep8==1.5
 beautifulsoup4==4.8.1
+black==19.10b0
 bs4==0.0.1
 certifi==2019.9.11
 chardet==3.0.4
