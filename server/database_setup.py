@@ -88,6 +88,7 @@ if __name__ == '__main__':
                 image_url=record['imageUrl'],
             )
 
+            # Currently, stats that aren't in the Stat enum will cause a KeyError
             try:
                 for stat in record['stats']:
                     item_stat = ModelItemStat(
@@ -96,7 +97,6 @@ if __name__ == '__main__':
                         max_value=stat['maxStat']
                     )
                     base.db_session.add(item_stat)
-                    base.db_session.commit()
                     item.stats.append(item_stat)
 
                 for condition in record['conditions']:
@@ -106,7 +106,6 @@ if __name__ == '__main__':
                         limit=condition['limit']
                     )
                     base.db_session.add(item_condition)
-                    base.db_session.commit()
                     item.conditions.append(item_condition)
 
                 base.db_session.add(item)
