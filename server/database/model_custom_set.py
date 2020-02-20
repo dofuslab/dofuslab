@@ -20,5 +20,5 @@ class ModelCustomSet(Base):
     created_at = Column('creation_date', DateTime)
     level = Column('level', Integer)
     items = relationship('ModelItem')
-    stats = relationship('ModelCustomSetStat')
-    exos = relationship('ModelCustomSetExo')
+    stats = relationship('ModelCustomSetStat',  cascade='all, delete-orphan')
+    exos = relationship('ModelCustomSetExo', cascade='all, delete-orphan')
