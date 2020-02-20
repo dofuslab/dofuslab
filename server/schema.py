@@ -6,6 +6,7 @@ from database.model_custom_set_stat import ModelCustomSetStat
 from database.model_custom_set_exo import ModelCustomSetExo
 from database.model_custom_set import ModelCustomSet
 from database.model_user import ModelUser
+from database.model_item_slot import ModelItemSlot
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from database import base
 from database.enums import Stat

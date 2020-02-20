@@ -6,6 +6,7 @@ from database.model_custom_set_stat import ModelCustomSetStat
 from database.model_custom_set_exo import ModelCustomSetExo
 from database.model_custom_set import ModelCustomSet
 from database.model_user import ModelUser
+from database.model_item_slot import ModelItemSlot
 from database import base, enums
 from sqlalchemy.schema import MetaData
 import sqlalchemy

@@ -1,5 +1,6 @@
 import sqlalchemy
 from .base import Base
+from .enums import ItemTypeEnum
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.postgresql import UUID
@@ -15,7 +16,7 @@ class ModelItem(Base):
         nullable=False,
     )
     name = Column("name", String, nullable=False)
-    item_type = Column("item_type", String, nullable=False)
+    item_type = Column("item_type", ItemTypeEnum, nullable=False)
     set_id = Column(UUID(as_uuid=True), ForeignKey("set.uuid"))
     level = Column("level", Integer, nullable=False)
     stats = relationship("ModelItemStat", backref="item", cascade="all, delete-orphan")
@@ -23,5 +24,3 @@ class ModelItem(Base):
         "ModelItemCondition", backref="item", cascade="all, delete-orphan"
     )
     image_url = Column("image_url", String)
-
-    custom_set_id = Column(UUID(as_uuid=True), ForeignKey("custom_set.uuid"))

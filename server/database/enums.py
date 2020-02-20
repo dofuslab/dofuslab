@@ -91,3 +91,4 @@ class Element(Enum):
 
 
 StatEnum = sqlalchemy.Enum(Stat)
+ItemTypeEnum = sqlalchemy.Enum(ItemType)
