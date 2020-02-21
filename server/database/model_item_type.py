@@ -1,13 +1,13 @@
 import sqlalchemy
 from .base import Base
 from .item_type_slot_compat_table import item_type_slot_compat_table
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
 
-class ModelItemSlot(Base):
-    __tablename__ = "item_slot"
+class ModelItemType(Base):
+    __tablename__ = "item_type"
 
     uuid = Column(
         UUID(as_uuid=True),
@@ -16,9 +16,8 @@ class ModelItemSlot(Base):
         nullable=False,
     )
     name = Column("name", String, nullable=False)
-    item_types = relationship(
-        "ModelItemType",
-        secondary=item_type_slot_compat_table,
-        back_populates="eligible_item_slots",
+    eligible_item_slots = relationship(
+        "ModelItemSlot", secondary=item_type_slot_compat_table
     )
+    items = relationship("ModelItem", back_populates="item_type")
 

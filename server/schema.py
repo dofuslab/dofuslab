@@ -1,12 +1,13 @@
 from database.model_item_stat import ModelItemStat
 from database.model_item_condition import ModelItemCondition
+from database.model_item_type import ModelItemType
+from database.model_item_slot import ModelItemSlot
 from database.model_item import ModelItem
 from database.model_set import ModelSet
 from database.model_custom_set_stat import ModelCustomSetStat
 from database.model_custom_set_exo import ModelCustomSetExo
 from database.model_custom_set import ModelCustomSet
 from database.model_user import ModelUser
-from database.model_item_slot import ModelItemSlot
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from database import base
 from database.enums import Stat
@@ -25,6 +26,18 @@ class ItemStats(SQLAlchemyObjectType):
 class ItemCondtions(SQLAlchemyObjectType):
     class Meta:
         model = ModelItemCondition
+        interfaces = (graphene.relay.Node,)
+
+
+class ItemSlot(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelItemSlot
+        interfaces = (graphene.relay.Node,)
+
+
+class ItemType(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelItemType
         interfaces = (graphene.relay.Node,)
 
 

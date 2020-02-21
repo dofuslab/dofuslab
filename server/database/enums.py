@@ -55,33 +55,6 @@ class Stat(Enum):
     PCT_MELEE_RES = auto()
 
 
-class ItemType(Enum):
-    HAT = auto()
-    CLOAK = auto()
-    AMULET = auto()
-    RING = auto()
-    BELT = auto()
-    BOOTS = auto()
-    AXE = auto()
-    BOW = auto()
-    DAGGER = auto()
-    HAMMER = auto()
-    PICKAXE = auto()
-    SCYTHE = auto()
-    SHOVEL = auto()
-    STAFF = auto()
-    SWORD = auto()
-    TOOL = auto()
-    WAND = auto()
-    SHIELD = auto()
-    DOFUS = auto()
-    TROPHY = auto()
-    PRYSMARADITE = auto()
-    PET = auto()
-    PETSMOUNT = auto()
-    MOUNT = auto()
-
-
 class Element(Enum):
     NEUTRAL = auto()
     EARTH = auto()
@@ -91,4 +64,3 @@ class Element(Enum):
 
 
 StatEnum = sqlalchemy.Enum(Stat)
-ItemTypeEnum = sqlalchemy.Enum(ItemType)

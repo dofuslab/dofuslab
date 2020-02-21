@@ -18,5 +18,5 @@ custom_set_item_table = Table(
     ),
     Column("item_id", UUID(as_uuid=True), ForeignKey("item.uuid")),
     # Don't allow a set to have two entries with the same item slot
-    UniqueConstraint("item_slot_id", "custom_set_id"),
+    UniqueConstraint("item_slot_id", "custom_set_id", name="custom_set_item_slot"),
 )
