@@ -36,6 +36,8 @@ class ItemSlot(SQLAlchemyObjectType):
 
 
 class ItemType(SQLAlchemyObjectType):
+    eligible_item_slots = graphene.List(ItemSlot)  # Use list instead of connection
+
     class Meta:
         model = ModelItemType
         interfaces = (graphene.relay.Node,)
