@@ -5,10 +5,10 @@ from sqlalchemy.dialects.postgresql import UUID
 
 
 class ModelClass(Base):
-    __tablename__ = 'class'
+    __tablename__ = "class"
 
     id = Column(
-        'id',
+        "id",
         UUID(as_uuid=True),
         server_default=sqlalchemy.text("uuid_generate_v4()"),
         unique=True,
@@ -16,5 +16,5 @@ class ModelClass(Base):
         primary_key=True,
     )
 
-    name = Column('name', String, nullable=False)
-    spells = Column('spells', PickleType)
+    name = Column("name", String, nullable=False)
+    spells = Column("spells", PickleType)
