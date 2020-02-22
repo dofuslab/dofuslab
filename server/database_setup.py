@@ -86,13 +86,14 @@ if __name__ == "__main__":
     with open("database/data/item_slots.json", "r") as file:
         data = json.load(file)
         for record in data:
-            item_slot = ModelItemSlot(
-                name=record["name"]["en-US"],
-                item_types=[
-                    item_types[item_type_name] for item_type_name in record["types"]
-                ],
-            )
-            base.db_session.add(item_slot)
+            for _ in range(record.get("quantity", 1)):
+                item_slot = ModelItemSlot(
+                    name=record["name"]["en-US"],
+                    item_types=[
+                        item_types[item_type_name] for item_type_name in record["types"]
+                    ],
+                )
+                base.db_session.add(item_slot)
 
     base.db_session.commit()
 
