@@ -5,7 +5,7 @@ from database.model_item_type import ModelItemType
 from database.model_item_condition import ModelItemCondition
 from database.model_set import ModelSet
 from database.model_custom_set_stat import ModelCustomSetStat
-from database.model_custom_set_exo import ModelCustomSetExo
+from database.model_equipped_item_exo import ModelEquippedItemExo
 from database.model_custom_set import ModelCustomSet
 from database.model_user import ModelUser
 from database import base, enums

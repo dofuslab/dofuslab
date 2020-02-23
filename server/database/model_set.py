@@ -16,4 +16,4 @@ class ModelSet(Base):
     )
     name = Column("name", String, nullable=False)
     items = relationship("ModelItem")
-    bonuses = Column("bonuses", PickleType)
+    bonuses = relationship("ModelSetBonus")

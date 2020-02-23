@@ -1,6 +1,5 @@
 import sqlalchemy
 from .base import Base
-from .custom_set_item_table import custom_set_item_table
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.postgresql import UUID
@@ -17,9 +16,8 @@ class ModelCustomSet(Base):
     )
     name = Column("name", String)
     description = Column("description", String)
-    owner_id = Column(UUID(as_uuid=True), ForeignKey("user.uuid"))
+    owner_id = Column(UUID(as_uuid=True), ForeignKey("user.uuid"), index=True)
     created_at = Column("creation_date", DateTime)
     level = Column("level", Integer)
-    items = relationship("ModelItemSlot", secondary=custom_set_item_table)
+    equipped_items = relationship("ModelItemSlot", secondary="equipped_item")
     stats = relationship("ModelCustomSetStat", cascade="all, delete-orphan")
-    exos = relationship("ModelCustomSetExo", cascade="all, delete-orphan")

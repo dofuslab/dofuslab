@@ -1,5 +1,6 @@
 import sqlalchemy
 from .base import Base
+from .model_item_slot import ModelItemSlot
 from .item_type_slot_compat_table import item_type_slot_compat_table
 from sqlalchemy import Column, String, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID

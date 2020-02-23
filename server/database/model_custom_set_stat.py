@@ -27,4 +27,6 @@ class ModelCustomSetStat(Base):
     base_chance = Column("base_chance", Integer)
     base_agility = Column("base_agility", Integer)
 
-    custom_set_id = Column(UUID, ForeignKey("custom_set.uuid"))
+    custom_set_id = Column(
+        UUID, ForeignKey("custom_set.uuid"), nullable=False, index=True
+    )

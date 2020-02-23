@@ -13,8 +13,11 @@ class ModelItemStat(Base):
         UUID(as_uuid=True),
         server_default=sqlalchemy.text("uuid_generate_v4()"),
         primary_key=True,
+        nullable=False,
     )
-    item_id = Column(UUID(as_uuid=True), ForeignKey("item.uuid"))
+    item_id = Column(
+        UUID(as_uuid=True), ForeignKey("item.uuid"), nullable=False, index=True
+    )
     stat = Column("stat", StatEnum)
     min_value = Column("min_value", Integer)
     max_value = Column("max_value", Integer)
