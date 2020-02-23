@@ -4,6 +4,7 @@ from database.model_item_slot import ModelItemSlot
 from database.model_item_type import ModelItemType
 from database.model_item_condition import ModelItemCondition
 from database.model_set import ModelSet
+from database.model_set_bonus import ModelSetBonus
 from database.model_custom_set_stat import ModelCustomSetStat
 from database.model_equipped_item_exo import ModelEquippedItemExo
 from database.model_custom_set import ModelCustomSet
@@ -68,6 +69,7 @@ to_stat_enum = {
 
 if __name__ == "__main__":
     print("Resetting database")
+    base.Base.metadata.reflect(base.engine)
     base.Base.metadata.drop_all(base.engine)
     base.Base.metadata.create_all(base.engine)
 
@@ -100,8 +102,18 @@ if __name__ == "__main__":
     with open("database/data/sets.json", "r") as file:
         data = json.load(file)
         for record in data:
-            set = ModelSet(name=record["name"], bonuses=record["bonuses"])
-            base.db_session.add(set)
+            set_obj = ModelSet(name=record["name"])
+            base.db_session.add(set_obj)
+            for num_items in record["bonuses"]:
+                bonuses = record["bonuses"][num_items]
+                for bonus in bonuses:
+                    bonus_obj = ModelSetBonus(
+                        set_id=set_obj.uuid,
+                        num_items=int(num_items),
+                        stat=to_stat_enum[bonus["stat"]],
+                        value=int(bonus["value"]),
+                    )
+
         base.db_session.commit()
 
     print("Adding items to database")
@@ -128,9 +140,9 @@ if __name__ == "__main__":
 
                 for condition in record["conditions"]:
                     item_condition = ModelItemCondition(
-                        stat_type=condition["statType"],
-                        condition_type=condition["condition"],
-                        limit=condition["limit"],
+                        stat=to_stat_enum.get(condition.get("statType"), None),
+                        is_greater_than=condition.get("condition") == ">",
+                        limit=condition.get("limit", None),
                     )
                     base.db_session.add(item_condition)
                     item.conditions.append(item_condition)

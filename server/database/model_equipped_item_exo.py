@@ -1,6 +1,7 @@
 import sqlalchemy
 from .base import Base
 from .enums import StatEnum
+from .model_equipped_item import ModelEquippedItem
 from sqlalchemy import Column, Enum, ForeignKey, Integer, String
 from sqlalchemy.dialects.postgresql import UUID
 

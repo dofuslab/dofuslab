@@ -1,5 +1,6 @@
 import sqlalchemy
 from .base import Base
+from .model_set_bonus import ModelSetBonus
 from sqlalchemy import Column, ForeignKey, Integer, String, PickleType
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
@@ -15,5 +16,5 @@ class ModelSet(Base):
         primary_key=True,
     )
     name = Column("name", String, nullable=False)
-    items = relationship("ModelItem")
-    bonuses = relationship("ModelSetBonus")
+    items = relationship("ModelItem", cascade="all, delete-orphan")
+    bonuses = relationship("ModelSetBonus", passive_deletes=True)

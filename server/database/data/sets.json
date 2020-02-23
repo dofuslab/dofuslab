@@ -1,48 +1,49 @@
 [
   {
     "name": "Sinistrofu Set",
+    "items": ["Sinistrofu Cloak", "Sinistrofu Amulet", "Sinistrofu Boots"],
+    "bonuses": {
+      "2": [
+        { "stat": "Chance", "value": "50" },
+        { "stat": "Critical Resistance", "value": "15" },
+        { "stat": "Pushback Resistance", "value": "30" }
+      ],
+      "3": [
+        { "stat": "Chance", "value": "50" },
+        { "stat": "Critical Resistance", "value": "15" },
+        { "stat": "Pushback Resistance", "value": "30" },
+        { "stat": "AP", "value": "1" }
+      ]
+    }
+  },
+  {
+    "name": "Bleeding Heart Set",
     "items": [
-      "Sinistrofu Cloak",
-      "Sinistrofu Amulet",
-      "Sinistrofu Boots"
+      "Amulet Bleeding Heart",
+      "Boots Bleeding Heart",
+      "Cape Bleeding Heart"
     ],
-    "bonuses": [
-      {
-        "2": [
-          {
-            "stat": "Chance",
-            "value": "50"
-          },
-          {
-            "stat": "Critical Resistance",
-            "value": "15"
-          },
-          {
-            "stat": "Pushback Resistance",
-            "value": "30"
-          }
-        ]
-      },
-      {
-        "3": [
-          {
-            "stat": "Chance",
-            "value": "50"
-          },
-          {
-            "stat": "Critical Resistance",
-            "value": "15"
-          },
-          {
-            "stat": "Pushback Resistance",
-            "value": "30"
-          },
-          {
-            "stat": "AP",
-            "value": "1"
-          }
-        ]
-      }
-    ]
+    "bonuses": {
+      "2": [{ "stat": "Critical Damage", "value": "20" }],
+      "3": [
+        { "stat": "Critical Damage", "value": "20" },
+        { "stat": "AP", "value": "1" }
+      ]
+    }
+  },
+  {
+    "name": "Corruption Set",
+    "items": ["Corruption Ring", "Corruption Ring", "Corruption Brambelt"],
+    "bonuses": {
+      "2": [
+        { "stat": "Strength", "value": "50" },
+        { "stat": "Critical Damage", "value": "20" }
+      ],
+      "3": [
+        { "stat": "Strength", "value": "50" },
+        { "stat": "Critical Damage", "value": "20" },
+        { "stat": "Critical", "value": "7" }
+      ]
+    }
   }
 ]

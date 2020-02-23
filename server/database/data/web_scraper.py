@@ -101,9 +101,10 @@ class ItemScraper:
             stats.append({"stat": type, "minStat": min_stat, "maxStat": max_stat})
 
         # Retrive item conditions
-        raw_conditions = soup.find(
-            "div", attrs={"class": "ak-container ak-panel no-padding"}
-        )
+        raw_div = soup.find("div", attrs={"class": "ak-container ak-panel no-padding"})
+        raw_conditions = None
+        if raw_div and "Conditions" in raw_div.text:
+            raw_conditions = raw_div
         conditions = []
 
         if raw_conditions:
@@ -167,7 +168,7 @@ class SetScraper:
             item_name = " ".join(item_name)
             item_names.append(item_name)
 
-        all_bonuses = []
+        all_bonuses = {}
         raw_bonuses = soup.find_all("div", attrs={"class": "set-bonus-list"})
         for i in range(len(raw_bonuses)):
             stats = []
@@ -207,8 +208,7 @@ class SetScraper:
                 stats.append({"stat": type, "value": max_stat})
 
             item_count = 2 + i
-            bonus = {item_count: stats}
-            all_bonuses.append(bonus)
+            all_bonuses[item_count] = stats
 
         set = {"name": name, "items": item_names, "bonuses": all_bonuses}
 
@@ -293,21 +293,42 @@ def __main__():
 # ClassScraper.getClassUrls('https://www.dofus.com/en/mmorpg/encyclopedia/classes/6-ecaflip')
 
 
-items = []
-a = "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/14085-sinistrofu-cloak"
-b = "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/14086-sinistrofu-amulet"
-c = "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/14087-sinistrofu-boots"
-items.append(ItemScraper.get_item_stats(a))
-items.append(ItemScraper.get_item_stats(b))
-items.append(ItemScraper.get_item_stats(c))
-ItemScraper.write_to_file(items)
+urls = [
+    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/14085-sinistrofu-cloak",
+    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/14086-sinistrofu-amulet",
+    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/14087-sinistrofu-boots",
+    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/22205-corruption-ring",
+    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/22206-corruption-ring",
+    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/22209-corruption-brambelt",
+    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/19244-amulet-bleeding-heart",
+    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/19245-boots-bleeding-heart",
+    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/19246-cape-bleeding-heart",
+    "https://www.dofus.com/en/mmorpg/encyclopedia/weapons/20353-crocobur",
+    # "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/7754-ochre-dofus",
+    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/18000-koutoulou-mask",
+]
+
+# items = []
+# for url in urls:
+#     items.append(ItemScraper.get_item_stats(url))
+# # items.append(ItemScraper.get_item_stats(a))
+# # items.append(ItemScraper.get_item_stats(b))
+# # items.append(ItemScraper.get_item_stats(c))
+# ItemScraper.write_to_file(items)
 
 # items = []
 # item_test = 'https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15699-belteen'
 # items.append(ItemScraper.get_item_stats(item_test))
 # ItemScraper.write_to_file(items)
 
-# sets = []
-# url = 'https://www.dofus.com/en/mmorpg/encyclopedia/sets/275-sinistrofu-set'
-# sets.append(SetScraper.get_set_info(url))
-# SetScraper.write_to_file(sets)
+urls = [
+    "https://www.dofus.com/en/mmorpg/encyclopedia/sets/275-sinistrofu-set",
+    "https://www.dofus.com/en/mmorpg/encyclopedia/sets/445-bleeding-heart-set",
+    "https://www.dofus.com/en/mmorpg/encyclopedia/sets/477-corruption-set",
+]
+sets = []
+# # url = "https://www.dofus.com/en/mmorpg/encyclopedia/sets/477-corruption-set"
+
+for url in urls:
+    sets.append(SetScraper.get_set_info(url))
+SetScraper.write_to_file(sets)

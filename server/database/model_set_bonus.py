@@ -15,7 +15,10 @@ class ModelSetBonus(Base):
         primary_key=True,
     )
     set_id = Column(
-        UUID(as_uuid=True), ForeignKey("set.uuid"), nullable=False, index=True
+        UUID(as_uuid=True),
+        ForeignKey("set.uuid", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
     )
     num_items = Column("num_items", Integer, nullable=False)
     stat = Column("stat", StatEnum, nullable=False)
