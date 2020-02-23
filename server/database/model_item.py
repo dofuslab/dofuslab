@@ -23,6 +23,7 @@ class ModelItem(Base):
     )
     item_type = relationship(ModelItemType, back_populates="items")
     set_id = Column(UUID(as_uuid=True), ForeignKey("set.uuid"), index=True)
+    set = relationship("ModelSet")
     level = Column("level", Integer, nullable=False)
     stats = relationship(ModelItemStat, backref="item", cascade="all, delete-orphan")
     conditions = relationship(
