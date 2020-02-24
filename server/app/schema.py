@@ -201,6 +201,7 @@ class User(SQLAlchemyObjectType):
     class Meta:
         model = ModelUser
         interfaces = (graphene.relay.Node,)
+        only_fields = ("uuid", "id", "username", "email", "custom_sets")
 
 
 class RegisterUser(graphene.Mutation):
