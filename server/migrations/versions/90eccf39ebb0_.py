@@ -439,7 +439,7 @@ def downgrade():
         sa.ForeignKeyConstraint(
             ["custom_set_id"],
             ["custom_set.uuid"],
-            name="custom_set_item_custom_set_id_fkey",
+            name="custom_set_fk_item_custom_set_id_custom_set",
         ),
         sa.ForeignKeyConstraint(
             ["item_id"], ["item.uuid"], name="custom_set_item_item_id_fkey"

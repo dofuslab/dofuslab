@@ -13,8 +13,9 @@ from database.model_user import ModelUser
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from database import base
 from database.enums import Stat
-import mutation_validation_utils as validation
+import app.mutation_validation_utils as validation
 import graphene
+from graphql import GraphQLError
 
 StatEnum = graphene.Enum.from_enum(Stat)
 
@@ -202,22 +203,31 @@ class User(SQLAlchemyObjectType):
         interfaces = (graphene.relay.Node,)
 
 
-class CreateUser(graphene.Mutation):
+class RegisterUser(graphene.Mutation):
     class Arguments:
-        username = graphene.String()
-        email = graphene.String()
+        username = graphene.NonNull(graphene.String)
+        email = graphene.NonNull(graphene.String)
+        password = graphene.NonNull(graphene.String)
 
     user = graphene.Field(User)
 
     def mutate(self, info, **kwargs):
-        validation.check_for_existing_user(kwargs.get("username"))
+        username = kwargs.get("username")
+        email = kwargs.get("email")
+        password = kwargs.get("password")
+        validation.validate_registration(username, email, password)
+        try:
+            user = ModelUser(
+                username=username,
+                email=email,
+                password=ModelUser.generate_hash(password),
+            )
+            user.save_to_db()
+        except Exception as e:
+            print(e)
+            raise GraphQLError("An error occurred while registering.")
 
-        user = ModelUser(username=kwargs.get("username"), email=kwargs.get("email"))
-
-        base.db_session.add(user)
-        base.db_session.commit()
-
-        return CreateUser(user=user)
+        return RegisterUser(user=user)
 
 
 class Query(graphene.ObjectType):
@@ -262,7 +272,7 @@ class Query(graphene.ObjectType):
 
 
 class Mutation(graphene.ObjectType):
-    create_user = CreateUser.Field()
+    register_user = RegisterUser.Field()
     create_custom_set = CreateCustomSet.Field()
 
 
