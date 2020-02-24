@@ -308,18 +308,15 @@ urls = [
     "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/18000-koutoulou-mask",
 ]
 
-# items = []
-# for url in urls:
-#     items.append(ItemScraper.get_item_stats(url))
-# # items.append(ItemScraper.get_item_stats(a))
-# # items.append(ItemScraper.get_item_stats(b))
-# # items.append(ItemScraper.get_item_stats(c))
-# ItemScraper.write_to_file(items)
+items = []
+for url in urls:
+    items.append(ItemScraper.get_item_stats(url))
+ItemScraper.write_to_file(items)
 
-# items = []
-# item_test = 'https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15699-belteen'
-# items.append(ItemScraper.get_item_stats(item_test))
-# ItemScraper.write_to_file(items)
+items = []
+item_test = "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15699-belteen"
+items.append(ItemScraper.get_item_stats(item_test))
+ItemScraper.write_to_file(items)
 
 urls = [
     "https://www.dofus.com/en/mmorpg/encyclopedia/sets/275-sinistrofu-set",
@@ -327,7 +324,6 @@ urls = [
     "https://www.dofus.com/en/mmorpg/encyclopedia/sets/477-corruption-set",
 ]
 sets = []
-# # url = "https://www.dofus.com/en/mmorpg/encyclopedia/sets/477-corruption-set"
 
 for url in urls:
     sets.append(SetScraper.get_set_info(url))
