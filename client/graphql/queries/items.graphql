@@ -1,10 +1,16 @@
 query items {
   items {
     id
+    name
     stats {
       minValue
       maxValue
       stat
+    }
+    conditions {
+      stat
+      isGreaterThan
+      limit
     }
   }
 }

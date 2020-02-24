@@ -7,4 +7,10 @@ const Index: NextPage = () => (
   </div>
 );
 
+Index.getInitialProps = async () => {
+  return {
+    namespacesRequired: ["common"]
+  };
+};
+
 export default Index;
