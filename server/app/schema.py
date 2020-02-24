@@ -1,3 +1,11 @@
+from flask_jwt_extended import (
+    create_access_token,
+    create_refresh_token,
+    jwt_required,
+    jwt_refresh_token_required,
+    get_jwt_identity,
+    get_raw_jwt,
+)
 from database.model_item_stat import ModelItemStat
 from database.model_item_condition import ModelItemCondition
 from database.model_item_type import ModelItemType
@@ -128,6 +136,7 @@ class CreateCustomSet(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet)
 
+    @jwt_required
     def mutate(self, into, **kwargs):
         custom_set = ModelCustomSet(
             name=kwargs.get("name"),
@@ -193,11 +202,9 @@ class CreateCustomSet(graphene.Mutation):
         return CreateCustomSet(custom_set=custom_set)
 
 
-# class UpdateCustomSet(graphene.Mutation):
-#     pass
-
-
 class User(SQLAlchemyObjectType):
+    access_token = graphene.String(required=True)
+
     class Meta:
         model = ModelUser
         interfaces = (graphene.relay.Node,)
@@ -210,7 +217,8 @@ class RegisterUser(graphene.Mutation):
         email = graphene.NonNull(graphene.String)
         password = graphene.NonNull(graphene.String)
 
-    user = graphene.Field(User)
+    access_token = graphene.String(required=True)
+    refresh_token = graphene.String(required=True)
 
     def mutate(self, info, **kwargs):
         username = kwargs.get("username")
@@ -224,11 +232,35 @@ class RegisterUser(graphene.Mutation):
                 password=ModelUser.generate_hash(password),
             )
             user.save_to_db()
+            access_token = create_access_token(identity=username)
+            refresh_token = create_refresh_token(identity=username)
         except Exception as e:
             print(e)
             raise GraphQLError("An error occurred while registering.")
 
-        return RegisterUser(user=user)
+        return RegisterUser(access_token=access_token, refresh_token=refresh_token)
+
+
+class LoginUser(graphene.Mutation):
+    class Arguments:
+        email = graphene.String(required=True)
+        password = graphene.String(required=True)
+
+    access_token = graphene.String(required=True)
+    refresh_token = graphene.String(required=True)
+
+    def mutate(self, info, **kwargs):
+        email = kwargs.get("email")
+        password = kwargs.get("password")
+        user = ModelUser.find_by_email(email)
+        auth_error = GraphQLError("Invalid username or password.")
+        if not user:
+            raise auth_error
+        if not user.check_password(password):
+            raise auth_error
+        access_token = create_access_token(identity=username)
+        refresh_token = create_refresh_token(identity=username)
+        return LoginUser(access_token=access_token, refresh_token=refresh_token)
 
 
 class Query(graphene.ObjectType):
@@ -275,6 +307,7 @@ class Query(graphene.ObjectType):
 class Mutation(graphene.ObjectType):
     register_user = RegisterUser.Field()
     create_custom_set = CreateCustomSet.Field()
+    login_user = LoginUser.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
