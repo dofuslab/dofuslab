@@ -1,8 +1,3 @@
-import { ApolloClient } from "apollo-boost";
-import { IncomingHttpHeaders } from "http";
-import { NextPageContext } from "next";
-import { AppContext } from "next/app";
-
 export enum EquipmentSlotId {
   Hat = 1,
   Cloak = 2,

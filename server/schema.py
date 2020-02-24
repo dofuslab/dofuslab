@@ -46,8 +46,10 @@ class ItemType(SQLAlchemyObjectType):
 
 
 class Item(SQLAlchemyObjectType):
-    stats = graphene.List(ItemStats)  # Use list instead of connection
-    conditions = graphene.List(ItemCondtions)
+    stats = graphene.NonNull(
+        graphene.List(graphene.NonNull(ItemStats))  # Use list instead of connection
+    )
+    conditions = graphene.NonNull(graphene.List(graphene.NonNull(ItemCondtions)))
 
     class Meta:
         model = ModelItem
@@ -117,11 +119,11 @@ class CreateCustomSet(graphene.Mutation):
         description = graphene.String()
         owner_username = graphene.String()
         created_at = graphene.types.datetime.DateTime()
-        level = graphene.Int()
+        level = graphene.NonNull(graphene.Int)
 
-        items = graphene.List(graphene.String)
+        items = graphene.NonNull(graphene.List(graphene.String))
         stats = CustomSetStatsInput()
-        exos = graphene.List(CustomSetExosInput)
+        exos = graphene.NonNull(graphene.List(CustomSetExosInput))
 
     custom_set = graphene.Field(CustomSet)
 
@@ -220,7 +222,7 @@ class CreateUser(graphene.Mutation):
 
 class Query(graphene.ObjectType):
     # Get list of data
-    items = graphene.List(Item)
+    items = graphene.NonNull(graphene.List(graphene.NonNull(Item)))
 
     def resolve_items(self, info):
         query = Item.get_query(info)
