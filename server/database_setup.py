@@ -1,19 +1,21 @@
-from database.model_item import ModelItem
-from database.model_item_stat import ModelItemStat
-from database.model_item_slot import ModelItemSlot
-from database.model_item_type import ModelItemType
-from database.model_item_condition import ModelItemCondition
-from database.model_set import ModelSet
-from database.model_set_bonus import ModelSetBonus
-from database.model_custom_set_stat import ModelCustomSetStat
-from database.model_equipped_item_exo import ModelEquippedItemExo
-from database.model_custom_set import ModelCustomSet
-from database.model_user import ModelUser
-from database import base, enums
+from app.database.model_item import ModelItem
+from app.database.model_item_stat import ModelItemStat
+from app.database.model_item_slot import ModelItemSlot
+from app.database.model_item_type import ModelItemType
+from app.database.model_item_condition import ModelItemCondition
+from app.database.model_set import ModelSet
+from app.database.model_set_bonus import ModelSetBonus
+from app.database.model_custom_set_stat import ModelCustomSetStat
+from app.database.model_equipped_item_exo import ModelEquippedItemExo
+from app.database.model_custom_set import ModelCustomSet
+from app.database.model_user import ModelUser
+from app.database import base, enums
 from sqlalchemy.schema import MetaData
 import sqlalchemy
 import json
 import sys
+import os
+
 
 to_stat_enum = {
     "Vitality": enums.Stat.VITALITY,
@@ -76,7 +78,7 @@ if __name__ == "__main__":
     item_types = {}
 
     print("Adding item types to database")
-    with open("database/data/item_types.json", "r") as file:
+    with open(os.path.join(dirname, "app/database/data/item_types.json"), "r") as file:
         data = json.load(file)
         for record in data:
             item_type = ModelItemType(name=record["en-US"])
@@ -84,7 +86,7 @@ if __name__ == "__main__":
             item_types[record["en-US"]] = item_type
 
     print("Adding item slots to database")
-    with open("database/data/item_slots.json", "r") as file:
+    with open(os.path.join(dirname, "app/database/data/item_slots.json"), "r") as file:
         data = json.load(file)
         for record in data:
             for _ in range(record.get("quantity", 1)):
@@ -99,7 +101,7 @@ if __name__ == "__main__":
     base.db_session.commit()
 
     print("Adding sets to database")
-    with open("database/data/sets.json", "r") as file:
+    with open(os.path.join(dirname, "app/database/data/sets.json"), "r") as file:
         data = json.load(file)
         for record in data:
             set_obj = ModelSet(name=record["name"])
@@ -117,7 +119,7 @@ if __name__ == "__main__":
         base.db_session.commit()
 
     print("Adding items to database")
-    with open("database/data/items.json", "r") as file:
+    with open(os.path.join(dirname, "app/database/data/items.json"), "r") as file:
         data = json.load(file)
         for record in data:
             item = ModelItem(
