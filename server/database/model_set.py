@@ -1,7 +1,7 @@
 import sqlalchemy
 from .base import Base
 from .model_set_bonus import ModelSetBonus
-from sqlalchemy import Column, ForeignKey, Integer, String, PickleType
+from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from uuid import uuid4

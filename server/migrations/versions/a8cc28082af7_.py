@@ -83,7 +83,7 @@ def upgrade():
     op.add_column(
         "item", sa.Column("item_type_id", postgresql.UUID(as_uuid=True), nullable=True)
     )
-    op.drop_constraint("item_custom_set_id_fkey", "item", type_="foreignkey")
+    op.drop_constraint("fk_item_custom_set_id_custom_set", "item", type_="foreignkey")
     op.create_foreign_key(None, "item", "item_type", ["item_type_id"], ["uuid"])
     op.drop_column("item", "custom_set_id")
     op.drop_column("item", "item_type")
@@ -104,7 +104,11 @@ def downgrade():
     )
     op.drop_constraint(None, "item", type_="foreignkey")
     op.create_foreign_key(
-        "item_custom_set_id_fkey", "item", "custom_set", ["custom_set_id"], ["uuid"]
+        "fk_item_custom_set_id_custom_set",
+        "item",
+        "custom_set",
+        ["custom_set_id"],
+        ["uuid"],
     )
     op.drop_column("item", "item_type_id")
     op.drop_index(
