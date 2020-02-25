@@ -1,9 +1,13 @@
 from database.model_item_stat import ModelItemStat
 from database.model_item_condition import ModelItemCondition
+from database.model_item_type import ModelItemType
+from database.model_item_slot import ModelItemSlot
 from database.model_item import ModelItem
+from database.model_set_bonus import ModelSetBonus
 from database.model_set import ModelSet
 from database.model_custom_set_stat import ModelCustomSetStat
-from database.model_custom_set_exo import ModelCustomSetExo
+from database.model_equipped_item_exo import ModelEquippedItemExo
+from database.model_equipped_item import ModelEquippedItem
 from database.model_custom_set import ModelCustomSet
 from database.model_user import ModelUser
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
@@ -27,6 +31,20 @@ class ItemCondtions(SQLAlchemyObjectType):
         interfaces = (graphene.relay.Node,)
 
 
+class ItemSlot(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelItemSlot
+        interfaces = (graphene.relay.Node,)
+
+
+class ItemType(SQLAlchemyObjectType):
+    eligible_item_slots = graphene.List(ItemSlot)  # Use list instead of connection
+
+    class Meta:
+        model = ModelItemType
+        interfaces = (graphene.relay.Node,)
+
+
 class Item(SQLAlchemyObjectType):
     stats = graphene.List(ItemStats)  # Use list instead of connection
     conditions = graphene.List(ItemCondtions)
@@ -36,9 +54,27 @@ class Item(SQLAlchemyObjectType):
         interfaces = (graphene.relay.Node,)
 
 
+class SetBonus(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelSetBonus
+        interfaces = (graphene.relay.Node,)
+
+
 class Set(SQLAlchemyObjectType):
     class Meta:
         model = ModelSet
+        interfaces = (graphene.relay.Node,)
+
+
+class EquippedItemExo(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelEquippedItemExo
+        interfaces = (graphene.relay.Node,)
+
+
+class EquippedItem(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelEquippedItem
         interfaces = (graphene.relay.Node,)
 
 
@@ -51,12 +87,6 @@ class CustomSet(SQLAlchemyObjectType):
 class CustomSetStats(SQLAlchemyObjectType):
     class Meta:
         model = ModelCustomSetStat
-        interfaces = (graphene.relay.Node,)
-
-
-class CustomSetExos(SQLAlchemyObjectType):
-    class Meta:
-        model = ModelCustomSetExo
         interfaces = (graphene.relay.Node,)
 
 
@@ -139,9 +169,11 @@ class CreateCustomSet(graphene.Mutation):
         if kwargs.get("exos"):
             exos = kwargs.get("exos")
             for exo in exos:
-                custom_set_exo = ModelCustomSetExos(stat=exo.stat, value=exo.value)
+                equipped_item_exo = ModelEquippedItemExos(
+                    stat=exo.stat, value=exo.value
+                )
 
-                base.db_session.add(custom_set_exo)
+                base.db_session.add(equipped_item_exo)
                 custom_set.exos.append(exo)
 
         base.db_session.add(custom_set)

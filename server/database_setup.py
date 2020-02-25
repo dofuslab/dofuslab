@@ -1,9 +1,12 @@
 from database.model_item import ModelItem
 from database.model_item_stat import ModelItemStat
+from database.model_item_slot import ModelItemSlot
+from database.model_item_type import ModelItemType
 from database.model_item_condition import ModelItemCondition
 from database.model_set import ModelSet
+from database.model_set_bonus import ModelSetBonus
 from database.model_custom_set_stat import ModelCustomSetStat
-from database.model_custom_set_exo import ModelCustomSetExo
+from database.model_equipped_item_exo import ModelEquippedItemExo
 from database.model_custom_set import ModelCustomSet
 from database.model_user import ModelUser
 from database import base, enums
@@ -66,15 +69,51 @@ to_stat_enum = {
 
 if __name__ == "__main__":
     print("Resetting database")
+    base.Base.metadata.reflect(base.engine)
     base.Base.metadata.drop_all(base.engine)
     base.Base.metadata.create_all(base.engine)
+
+    item_types = {}
+
+    print("Adding item types to database")
+    with open("database/data/item_types.json", "r") as file:
+        data = json.load(file)
+        for record in data:
+            item_type = ModelItemType(name=record["en-US"])
+            base.db_session.add(item_type)
+            item_types[record["en-US"]] = item_type
+
+    print("Adding item slots to database")
+    with open("database/data/item_slots.json", "r") as file:
+        data = json.load(file)
+        for record in data:
+            for _ in range(record.get("quantity", 1)):
+                item_slot = ModelItemSlot(
+                    name=record["name"]["en-US"],
+                    item_types=[
+                        item_types[item_type_name] for item_type_name in record["types"]
+                    ],
+                )
+                base.db_session.add(item_slot)
+
+    base.db_session.commit()
 
     print("Adding sets to database")
     with open("database/data/sets.json", "r") as file:
         data = json.load(file)
         for record in data:
-            set = ModelSet(name=record["name"], bonuses=record["bonuses"])
-            base.db_session.add(set)
+            set_obj = ModelSet(name=record["name"])
+            base.db_session.add(set_obj)
+            for num_items in record["bonuses"]:
+                bonuses = record["bonuses"][num_items]
+                for bonus in bonuses:
+                    bonus_obj = ModelSetBonus(
+                        set_id=set_obj.uuid,
+                        num_items=int(num_items),
+                        stat=to_stat_enum[bonus["stat"]],
+                        value=int(bonus["value"]),
+                    )
+
         base.db_session.commit()
 
     print("Adding items to database")
@@ -83,7 +122,7 @@ if __name__ == "__main__":
         for record in data:
             item = ModelItem(
                 name=record["name"],
-                item_type=record["itemType"],
+                item_type=item_types[record["itemType"]],
                 level=record["level"],
                 image_url=record["imageUrl"],
             )
@@ -101,9 +140,9 @@ if __name__ == "__main__":
 
                 for condition in record["conditions"]:
                     item_condition = ModelItemCondition(
-                        stat_type=condition["statType"],
-                        condition_type=condition["condition"],
-                        limit=condition["limit"],
+                        stat=to_stat_enum.get(condition.get("statType"), None),
+                        is_greater_than=condition.get("condition") == ">",
+                        limit=condition.get("limit", None),
                     )
                     base.db_session.add(item_condition)
                     item.conditions.append(item_condition)
