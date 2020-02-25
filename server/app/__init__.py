@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_graphql import GraphQLView
 from flask_migrate import Migrate
 import os
-from database.base import Base
+from app.database.base import Base
 
 
 load_dotenv()

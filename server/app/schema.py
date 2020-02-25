@@ -6,21 +6,21 @@ from flask_jwt_extended import (
     get_jwt_identity,
     get_raw_jwt,
 )
-from database.model_item_stat import ModelItemStat
-from database.model_item_condition import ModelItemCondition
-from database.model_item_type import ModelItemType
-from database.model_item_slot import ModelItemSlot
-from database.model_item import ModelItem
-from database.model_set_bonus import ModelSetBonus
-from database.model_set import ModelSet
-from database.model_custom_set_stat import ModelCustomSetStat
-from database.model_equipped_item_exo import ModelEquippedItemExo
-from database.model_equipped_item import ModelEquippedItem
-from database.model_custom_set import ModelCustomSet
-from database.model_user import ModelUser
+from app.database.model_item_stat import ModelItemStat
+from app.database.model_item_condition import ModelItemCondition
+from app.database.model_item_type import ModelItemType
+from app.database.model_item_slot import ModelItemSlot
+from app.database.model_item import ModelItem
+from app.database.model_set_bonus import ModelSetBonus
+from app.database.model_set import ModelSet
+from app.database.model_custom_set_stat import ModelCustomSetStat
+from app.database.model_equipped_item_exo import ModelEquippedItemExo
+from app.database.model_equipped_item import ModelEquippedItem
+from app.database.model_custom_set import ModelCustomSet
+from app.database.model_user import ModelUser
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
-from database import base
-from database.enums import Stat
+from app.database import base
+from app.database.enums import Stat
 import app.mutation_validation_utils as validation
 import graphene
 from graphql import GraphQLError
