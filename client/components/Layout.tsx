@@ -7,16 +7,20 @@ import Menu from 'antd/lib/menu';
 
 import 'antd/dist/antd.css';
 import LoginModal from './LoginModal';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
+import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
 import currentUserQuery from '../graphql/queries/currentUser.graphql';
+import logoutMutation from '../graphql/mutations/logout.graphql';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 const Layout = (props: LayoutProps) => {
+  const client = useApolloClient();
   const { data } = useQuery<ICurrentUser>(currentUserQuery);
+  const [logout] = useMutation<ILogout>(logoutMutation);
   const [showLoginModal, setShowLoginModal] = React.useState(false);
   const openLoginModal = React.useCallback(() => {
     setShowLoginModal(true);
@@ -24,6 +28,15 @@ const Layout = (props: LayoutProps) => {
   const closeLoginModal = React.useCallback(() => {
     setShowLoginModal(false);
   }, []);
+  const logoutHandler = React.useCallback(async () => {
+    const { data } = await logout();
+    if (data?.logoutUser?.ok) {
+      client.writeQuery<ICurrentUser>({
+        query: currentUserQuery,
+        data: { currentUser: null },
+      });
+    }
+  }, [logout]);
 
   return (
     <AntdLayout>
@@ -40,15 +53,20 @@ const Layout = (props: LayoutProps) => {
           <Menu.Item key="2">nav 2</Menu.Item>
           <Menu.Item key="3">nav 3</Menu.Item>
 
-          <div css={{ marginLeft: 'auto', paddingLeft: 20, paddingRight: 20 }}>
+          <Menu.Item css={{ marginLeft: 'auto' }}>
             {data?.currentUser ? (
-              data.currentUser.username
+              <div>
+                {data.currentUser.username} |{' '}
+                <span key="logout" onClick={logoutHandler}>
+                  Logout
+                </span>
+              </div>
             ) : (
-              <a key="login" onClick={openLoginModal}>
+              <span key="login" onClick={openLoginModal}>
                 Login
-              </a>
+              </span>
             )}
-          </div>
+          </Menu.Item>
         </Menu>
       </AntdLayout.Header>
       <AntdLayout.Content css={{ margin: 20, display: 'flex' }}>

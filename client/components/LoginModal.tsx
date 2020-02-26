@@ -47,8 +47,10 @@ const LoginModal: React.FC<IProps> = ({ visible, onClose }) => {
         data: { currentUser: { ...data.loginUser.user } },
       });
       onClose();
+      setEmail('');
+      setPassword('');
     }
-  }, [login, onClose, client]);
+  }, [login, onClose, client, setEmail, setPassword]);
 
   return (
     <Modal
@@ -65,7 +67,7 @@ const LoginModal: React.FC<IProps> = ({ visible, onClose }) => {
     >
       <div
         css={{
-          width: 240,
+          width: 280,
           marginBottom: 20,
           display: 'flex',
           justifyContent: 'space-between',
@@ -74,7 +76,7 @@ const LoginModal: React.FC<IProps> = ({ visible, onClose }) => {
       >
         <div>Email</div>
         <Input
-          css={{ flex: '0 0 160px' }}
+          css={{ flex: '0 0 200px' }}
           value={email}
           onChange={onEmailChange}
           placeholder="Email"
@@ -82,7 +84,7 @@ const LoginModal: React.FC<IProps> = ({ visible, onClose }) => {
       </div>
       <div
         css={{
-          width: 240,
+          width: 280,
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
@@ -90,7 +92,7 @@ const LoginModal: React.FC<IProps> = ({ visible, onClose }) => {
       >
         <div>Password</div>
         <Input.Password
-          css={{ flex: '0 0 160px' }}
+          css={{ flex: '0 0 200px' }}
           value={password}
           onChange={onPasswordChange}
           placeholder="Password"

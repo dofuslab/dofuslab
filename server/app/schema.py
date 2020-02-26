@@ -16,7 +16,7 @@ from app.database.enums import Stat
 import app.mutation_validation_utils as validation
 import graphene
 from graphql import GraphQLError
-from flask_login import login_required, login_user, current_user
+from flask_login import login_required, login_user, current_user, logout_user
 
 StatEnum = graphene.Enum.from_enum(Stat)
 
@@ -210,6 +210,7 @@ class RegisterUser(graphene.Mutation):
         password = graphene.NonNull(graphene.String)
 
     user = graphene.Field(User)
+    ok = graphene.Boolean(required=True)
 
     def mutate(self, info, **kwargs):
         username = kwargs.get("username")
@@ -230,7 +231,7 @@ class RegisterUser(graphene.Mutation):
             print(e)
             raise GraphQLError("An error occurred while registering.")
 
-        return RegisterUser(user=user)
+        return RegisterUser(user=user, ok=True)
 
 
 class LoginUser(graphene.Mutation):
@@ -239,6 +240,7 @@ class LoginUser(graphene.Mutation):
         password = graphene.String(required=True)
 
     user = graphene.Field(User)
+    ok = graphene.Boolean(required=True)
 
     def mutate(self, info, **kwargs):
         if current_user.is_authenticated:
@@ -253,7 +255,16 @@ class LoginUser(graphene.Mutation):
             raise auth_error
         login_user(user)
 
-        return LoginUser(user=user)
+        return LoginUser(user=user, ok=True)
+
+
+class LogoutUser(graphene.Mutation):
+    ok = graphene.Boolean(required=True)
+
+    def mutate(self, info):
+        if current_user.is_authenticated:
+            logout_user()
+        return LogoutUser(ok=True)
 
 
 class Query(graphene.ObjectType):
@@ -308,6 +319,7 @@ class Mutation(graphene.ObjectType):
     register_user = RegisterUser.Field()
     create_custom_set = CreateCustomSet.Field()
     login_user = LoginUser.Field()
+    logout_user = LogoutUser.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
