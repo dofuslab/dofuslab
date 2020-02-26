@@ -1,5 +1,5 @@
-from database.model_user import ModelUser
-from database import base
+from app.database.model_user import ModelUser
+from app.database import base
 from graphql import GraphQLError
 import graphene
 import re
