@@ -16,6 +16,7 @@ import json
 import sys
 import os
 
+dirname = os.path.dirname(os.path.abspath(__file__))
 
 to_stat_enum = {
     "Vitality": enums.Stat.VITALITY,
