@@ -14,14 +14,16 @@ const EquippedItem: React.FC<IEquippedItem> = props => {
   return (
     <div
       css={{
-        border: '1px solid #e8e8e8',
+        background: 'white',
+        border: '1px solid #d9d9d9',
         width: 72,
         height: 72,
         margin: 8,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: '0.75rem'
+        fontSize: '0.75rem',
+        borderRadius: 4,
       }}
       {...props}
     >
