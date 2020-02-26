@@ -6,7 +6,7 @@ from sqlalchemy.dialects.postgresql import UUID
 
 
 class ModelCustomSetExo(Base):
-    __tablename__ = 'custom_set_exo'
+    __tablename__ = "custom_set_exo"
 
     uuid = Column(
         UUID(as_uuid=True),
@@ -15,7 +15,7 @@ class ModelCustomSetExo(Base):
         nullable=False,
     )
 
-    stat = Column('stat', StatEnum)
-    value = Column('value', Integer)
+    stat = Column("stat", StatEnum)
+    value = Column("value", Integer)
 
-    custom_set_id = Column(UUID(as_uuid=True), ForeignKey('custom_set.uuid'))
+    custom_set_id = Column(UUID(as_uuid=True), ForeignKey("custom_set.uuid"))

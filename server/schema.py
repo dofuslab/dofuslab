@@ -97,16 +97,16 @@ class CreateCustomSet(graphene.Mutation):
 
     def mutate(self, into, **kwargs):
         custom_set = ModelCustomSet(
-            name=kwargs.get('name'),
-            description=kwargs.get('description'),
-            created_at=kwargs.get('created_at'),
-            level=kwargs.get('level'),
+            name=kwargs.get("name"),
+            description=kwargs.get("description"),
+            created_at=kwargs.get("created_at"),
+            level=kwargs.get("level"),
         )
 
         # Add associated items to the custom set
         # Modify to take in item objects
-        if kwargs.get('items'):
-            items = kwargs.get('items')
+        if kwargs.get("items"):
+            items = kwargs.get("items")
             for item in items:
                 item_record = (
                     base.db_session.query(ModelItem)
@@ -116,8 +116,8 @@ class CreateCustomSet(graphene.Mutation):
                 custom_set.items.append(item_record)
 
         # Create database entry for the stats then add to the custom set
-        if kwargs.get('stats'):
-            stats = kwargs.get('stats')
+        if kwargs.get("stats"):
+            stats = kwargs.get("stats")
             custom_set_stats = ModelCustomSetStat(
                 scrolled_vitality=stats.scrolled_vitality,
                 scrolled_wisdom=stats.scrolled_wisdom,
@@ -125,25 +125,21 @@ class CreateCustomSet(graphene.Mutation):
                 scrolled_intelligence=stats.scrolled_intelligence,
                 scrolled_chance=stats.scrolled_chance,
                 scrolled_agility=stats.scrolled_agility,
-
                 base_vitality=stats.base_vitality,
                 base_wisdom=stats.base_wisdom,
                 base_strength=stats.base_strength,
                 base_intelligence=stats.base_intelligence,
                 base_chance=stats.base_chance,
-                base_agility=stats.base_agility
+                base_agility=stats.base_agility,
             )
 
             base.db_session.add(custom_set_stats)
             custom_set.stats = custom_set_stats
 
-        if kwargs.get('exos'):
-            exos = kwargs.get('exos')
+        if kwargs.get("exos"):
+            exos = kwargs.get("exos")
             for exo in exos:
-                custom_set_exo = ModelCustomSetExos(
-                    stat=exo.stat,
-                    value=exo.value
-                )
+                custom_set_exo = ModelCustomSetExos(stat=exo.stat, value=exo.value)
 
                 base.db_session.add(custom_set_exo)
                 custom_set.exos.append(exo)
@@ -152,7 +148,7 @@ class CreateCustomSet(graphene.Mutation):
 
         current_user = (
             base.db_session.query(ModelUser)
-            .filter(ModelUser.username == kwargs.get('owner_username'))
+            .filter(ModelUser.username == kwargs.get("owner_username"))
             .first()
         )
         current_user.custom_sets.append(custom_set)
@@ -160,6 +156,7 @@ class CreateCustomSet(graphene.Mutation):
         base.db_session.commit()
 
         return CreateCustomSet(custom_set=custom_set)
+
 
 # class UpdateCustomSet(graphene.Mutation):
 #     pass
@@ -179,12 +176,9 @@ class CreateUser(graphene.Mutation):
     user = graphene.Field(User)
 
     def mutate(self, info, **kwargs):
-        validation.check_for_existing_user(kwargs.get('username'))
+        validation.check_for_existing_user(kwargs.get("username"))
 
-        user = ModelUser(
-            username=kwargs.get('username'),
-            email=kwargs.get('email')
-        )
+        user = ModelUser(username=kwargs.get("username"), email=kwargs.get("email"))
 
         base.db_session.add(user)
         base.db_session.commit()
@@ -226,8 +220,7 @@ class Query(graphene.ObjectType):
         query = Set.get_query(info)
         return query.filter(uuid == uuid).first()
 
-    custom_set_by_uuid = graphene.Field(
-        CustomSet, uuid=graphene.String(required=True))
+    custom_set_by_uuid = graphene.Field(CustomSet, uuid=graphene.String(required=True))
 
     def resolve_custom_set_by_uuid(self, info, uuid):
         query = CustomSet.get_query(info)

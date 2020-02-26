@@ -13,97 +13,97 @@ import json
 import sys
 
 to_stat_enum = {
-    'Vitality': enums.Stat.VITALITY,
-    'AP': enums.Stat.AP,
-    'MP': enums.Stat.MP,
-    'Initiative': enums.Stat.INITIATIVE,
-    'Prospecting': enums.Stat.PROSPECTING,
-    'Range': enums.Stat.RANGE,
-    'Summons': enums.Stat.SUMMON,
-    'Wisdom': enums.Stat.WISDOM,
-    'Strength': enums.Stat.STRENGTH,
-    'Intelligence': enums.Stat.INTELLIGENCE,
-    'Chance': enums.Stat.CHANCE,
-    'Agility': enums.Stat.AGILITY,
-    'AP Parry': enums.Stat.AP_PARRY,
-    'AP Reduction': enums.Stat.AP_REDUCTION,
-    'MP Parry': enums.Stat.MP_PARRY,
-    'MP Reduction': enums.Stat.MP_REDUCTION,
-    'Critical': enums.Stat.CRITICAL,
-    'Heals': enums.Stat.HEALS,
-    'Lock': enums.Stat.LOCK,
-    'Dodge': enums.Stat.DODGE,
-    'Power': enums.Stat.POWER,
-    'Critical Damage': enums.Stat.CRITICAL_DAMAGE,
-    'Neutral Damage': enums.Stat.NEUTRAL_DAMAGE,
-    'Earth Damage': enums.Stat.EARTH_DAMAGE,
-    'Fire Damage': enums.Stat.FIRE_DAMAGE,
-    'Water Damage': enums.Stat.WATER_DAMAGE,
-    'Air Damage': enums.Stat.AIR_DAMAGE,
-    'Reflect': enums.Stat.REFLECT,
-    'Trap Damage': enums.Stat.TRAP_DAMAGE,
-    'Power (traps)': enums.Stat.TRAP_POWER,
-    'Pushback Damage': enums.Stat.PUSHBACK_DAMAGE,
-    '% Spell Damage': enums.Stat.PCT_SPELL_DAMAGE,
-    '% Weapon Damage': enums.Stat.PCT_WEAPON_DAMAGE,
-    '% Ranged Damage': enums.Stat.PCT_RANGED_DAMAGE,
-    '% Melee Damage': enums.Stat.PCT_MELEE_DAMAGE,
-    'Neutral Resistance': enums.Stat.NEUTRAL_RES,
-    '% Neutral Resistance': enums.Stat.PCT_NEUTRAL_RES,
-    'Earth Resistance': enums.Stat.EARTH_RES,
-    '% Earth Resistance': enums.Stat.PCT_EARTH_RES,
-    'Fire Resistance': enums.Stat.FIRE_RES,
-    '% Fire Resistance': enums.Stat.PCT_FIRE_RES,
-    'Water Resistance': enums.Stat.WATER_RES,
-    '% Water Resistance': enums.Stat.PCT_WATER_RES,
-    'Air Resistance': enums.Stat.AIR_RES,
-    '% Air Resistance': enums.Stat.PCT_AIR_RES,
-    'Critical Resistance': enums.Stat.CRITICAL_RES,
-    'Pushback Resistance': enums.Stat.PUSHBACK_RES,
-    '% Ranged Resistance': enums.Stat.PCT_RANGED_RES,
-    '% Melee Resistance': enums.Stat.PCT_MELEE_RES,
+    "Vitality": enums.Stat.VITALITY,
+    "AP": enums.Stat.AP,
+    "MP": enums.Stat.MP,
+    "Initiative": enums.Stat.INITIATIVE,
+    "Prospecting": enums.Stat.PROSPECTING,
+    "Range": enums.Stat.RANGE,
+    "Summons": enums.Stat.SUMMON,
+    "Wisdom": enums.Stat.WISDOM,
+    "Strength": enums.Stat.STRENGTH,
+    "Intelligence": enums.Stat.INTELLIGENCE,
+    "Chance": enums.Stat.CHANCE,
+    "Agility": enums.Stat.AGILITY,
+    "AP Parry": enums.Stat.AP_PARRY,
+    "AP Reduction": enums.Stat.AP_REDUCTION,
+    "MP Parry": enums.Stat.MP_PARRY,
+    "MP Reduction": enums.Stat.MP_REDUCTION,
+    "Critical": enums.Stat.CRITICAL,
+    "Heals": enums.Stat.HEALS,
+    "Lock": enums.Stat.LOCK,
+    "Dodge": enums.Stat.DODGE,
+    "Power": enums.Stat.POWER,
+    "Critical Damage": enums.Stat.CRITICAL_DAMAGE,
+    "Neutral Damage": enums.Stat.NEUTRAL_DAMAGE,
+    "Earth Damage": enums.Stat.EARTH_DAMAGE,
+    "Fire Damage": enums.Stat.FIRE_DAMAGE,
+    "Water Damage": enums.Stat.WATER_DAMAGE,
+    "Air Damage": enums.Stat.AIR_DAMAGE,
+    "Reflect": enums.Stat.REFLECT,
+    "Trap Damage": enums.Stat.TRAP_DAMAGE,
+    "Power (traps)": enums.Stat.TRAP_POWER,
+    "Pushback Damage": enums.Stat.PUSHBACK_DAMAGE,
+    "% Spell Damage": enums.Stat.PCT_SPELL_DAMAGE,
+    "% Weapon Damage": enums.Stat.PCT_WEAPON_DAMAGE,
+    "% Ranged Damage": enums.Stat.PCT_RANGED_DAMAGE,
+    "% Melee Damage": enums.Stat.PCT_MELEE_DAMAGE,
+    "Neutral Resistance": enums.Stat.NEUTRAL_RES,
+    "% Neutral Resistance": enums.Stat.PCT_NEUTRAL_RES,
+    "Earth Resistance": enums.Stat.EARTH_RES,
+    "% Earth Resistance": enums.Stat.PCT_EARTH_RES,
+    "Fire Resistance": enums.Stat.FIRE_RES,
+    "% Fire Resistance": enums.Stat.PCT_FIRE_RES,
+    "Water Resistance": enums.Stat.WATER_RES,
+    "% Water Resistance": enums.Stat.PCT_WATER_RES,
+    "Air Resistance": enums.Stat.AIR_RES,
+    "% Air Resistance": enums.Stat.PCT_AIR_RES,
+    "Critical Resistance": enums.Stat.CRITICAL_RES,
+    "Pushback Resistance": enums.Stat.PUSHBACK_RES,
+    "% Ranged Resistance": enums.Stat.PCT_RANGED_RES,
+    "% Melee Resistance": enums.Stat.PCT_MELEE_RES,
 }
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print("Resetting database")
     base.Base.metadata.drop_all(base.engine)
     base.Base.metadata.create_all(base.engine)
 
     print("Adding sets to database")
-    with open('database/data/sets.json', 'r') as file:
+    with open("database/data/sets.json", "r") as file:
         data = json.load(file)
         for record in data:
-            set = ModelSet(name=record['name'], bonuses=record['bonuses'])
+            set = ModelSet(bonuses=record["bonuses"])
             base.db_session.add(set)
         base.db_session.commit()
 
     print("Adding items to database")
-    with open('database/data/items.json', 'r') as file:
+    with open("database/data/items.json", "r") as file:
         data = json.load(file)
         for record in data:
             item = ModelItem(
-                name=record['name'],
-                item_type=record['itemType'],
-                level=record['level'],
-                image_url=record['imageUrl'],
+                # name=record['name'],
+                item_type=record["itemType"],
+                level=record["level"],
+                image_url=record["imageUrl"],
             )
 
             # Currently, stats that aren't in the Stat enum will cause a KeyError
             try:
-                for stat in record['stats']:
+                for stat in record["stats"]:
                     item_stat = ModelItemStat(
-                        stat=to_stat_enum[stat['stat']],
-                        min_value=stat['minStat'],
-                        max_value=stat['maxStat']
+                        stat=to_stat_enum[stat["stat"]],
+                        min_value=stat["minStat"],
+                        max_value=stat["maxStat"],
                     )
                     base.db_session.add(item_stat)
                     item.stats.append(item_stat)
 
-                for condition in record['conditions']:
+                for condition in record["conditions"]:
                     item_condition = ModelItemCondition(
-                        stat_type=condition['statType'],
-                        condition_type=condition['condition'],
-                        limit=condition['limit']
+                        stat_type=condition["statType"],
+                        condition_type=condition["condition"],
+                        limit=condition["limit"],
                     )
                     base.db_session.add(item_condition)
                     item.conditions.append(item_condition)
@@ -111,8 +111,8 @@ if __name__ == '__main__':
                 base.db_session.add(item)
 
                 # If this item belongs in a set, query the set and add the relationship to the record
-                if record['set']:
-                    set = record['set']
+                if record["set"]:
+                    set = record["set"]
                     set_record = (
                         base.db_session.query(ModelSet)
                         .filter(ModelSet.name == set)
@@ -121,7 +121,7 @@ if __name__ == '__main__':
                     set_record.items.append(item)
                     base.db_session.merge(set_record)
             except KeyError as err:
-                print('KeyError occurred:', err)
+                print("KeyError occurred:", err)
 
         base.db_session.commit()
 

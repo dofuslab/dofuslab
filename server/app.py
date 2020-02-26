@@ -12,29 +12,28 @@ load_dotenv()
 db_uri = os.getenv("DB_URI")
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
 
 migrate = Migrate(app, Base)
 
 
-@app.route('/')
+@app.route("/")
 def home():
-    return render_template('home.html')
+    return render_template("home.html")
 
 
-@app.route('/create')
+@app.route("/create")
 def create():
-    return render_template('set_creation.html', title='Set')
+    return render_template("set_creation.html", title="Set")
 
 
 app.add_url_rule(
-    '/graphql',
-    view_func=GraphQLView.as_view('graphql', schema=schema, graphiql=True),
+    "/graphql", view_func=GraphQLView.as_view("graphql", schema=schema, graphiql=True),
 )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
