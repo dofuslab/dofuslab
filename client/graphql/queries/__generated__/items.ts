@@ -10,7 +10,6 @@ import { Stat } from "./../../../__generated__/globalTypes";
 
 export interface items_items_stats {
   __typename: "ItemStats";
-  minValue: number | null;
   maxValue: number | null;
   stat: Stat | null;
 }

@@ -1,11 +1,3 @@
-from flask_jwt_extended import (
-    create_access_token,
-    create_refresh_token,
-    jwt_required,
-    jwt_refresh_token_required,
-    get_jwt_identity,
-    get_raw_jwt,
-)
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_condition import ModelItemCondition
 from app.database.model_item_type import ModelItemType
@@ -24,6 +16,7 @@ from app.database.enums import Stat
 import app.mutation_validation_utils as validation
 import graphene
 from graphql import GraphQLError
+from flask_login import login_required, login_user, current_user
 
 StatEnum = graphene.Enum.from_enum(Stat)
 
@@ -136,7 +129,6 @@ class CreateCustomSet(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet)
 
-    @jwt_required
     def mutate(self, into, **kwargs):
         custom_set = ModelCustomSet(
             name=kwargs.get("name"),
@@ -217,8 +209,7 @@ class RegisterUser(graphene.Mutation):
         email = graphene.NonNull(graphene.String)
         password = graphene.NonNull(graphene.String)
 
-    access_token = graphene.String(required=True)
-    refresh_token = graphene.String(required=True)
+    user = graphene.Field(User)
 
     def mutate(self, info, **kwargs):
         username = kwargs.get("username")
@@ -226,19 +217,20 @@ class RegisterUser(graphene.Mutation):
         password = kwargs.get("password")
         validation.validate_registration(username, email, password)
         try:
+            if current_user.is_authenticated:
+                raise GraphQLError("You are already logged in.")
             user = ModelUser(
                 username=username,
                 email=email,
                 password=ModelUser.generate_hash(password),
             )
             user.save_to_db()
-            access_token = create_access_token(identity=username)
-            refresh_token = create_refresh_token(identity=username)
+            login_user(user)
         except Exception as e:
             print(e)
             raise GraphQLError("An error occurred while registering.")
 
-        return RegisterUser(access_token=access_token, refresh_token=refresh_token)
+        return RegisterUser(user=user)
 
 
 class LoginUser(graphene.Mutation):
@@ -246,10 +238,11 @@ class LoginUser(graphene.Mutation):
         email = graphene.String(required=True)
         password = graphene.String(required=True)
 
-    access_token = graphene.String(required=True)
-    refresh_token = graphene.String(required=True)
+    user = graphene.Field(User)
 
     def mutate(self, info, **kwargs):
+        if current_user.is_authenticated:
+            raise GraphQLError("You are already logged in.")
         email = kwargs.get("email")
         password = kwargs.get("password")
         user = ModelUser.find_by_email(email)
@@ -258,12 +251,19 @@ class LoginUser(graphene.Mutation):
             raise auth_error
         if not user.check_password(password):
             raise auth_error
-        access_token = create_access_token(identity=username)
-        refresh_token = create_refresh_token(identity=username)
-        return LoginUser(access_token=access_token, refresh_token=refresh_token)
+        login_user(user)
+
+        return LoginUser(user=user)
 
 
 class Query(graphene.ObjectType):
+    current_user = graphene.Field(User)
+
+    def resolve_current_user(self, info):
+        if current_user.is_authenticated:
+            return current_user._get_current_object()
+        return None
+
     # Get list of data
     items = graphene.NonNull(graphene.List(graphene.NonNull(Item)))
 
