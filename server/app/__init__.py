@@ -21,7 +21,7 @@ app.config["SECRET_KEY"] = secret_key
 app.config["SESSION_COOKIE_DOMAIN"] = ".dev.localhost"
 app.config["REMEMBER_COOKIE_DOMAIN"] = ".dev.localhost"
 app.config["REMEMBER_COOKIE_PATH"] = "/"
-app.config["REMEMBER_COOKIE_DURATION"] = 60 * 60
+
 db = SQLAlchemy(app)
 CORS(
     app,

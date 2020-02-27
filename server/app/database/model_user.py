@@ -54,9 +54,3 @@ class ModelUser(UserMixin, Base):
 @login_manager.user_loader
 def user_loader(user_id):
     return ModelUser.find_by_id(user_id)
-
-
-@login_manager.request_loader
-def load_user_from_request(request):
-    print(request)
-    return None
