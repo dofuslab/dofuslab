@@ -18,8 +18,18 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SECRET_KEY"] = secret_key
+app.config["SESSION_COOKIE_DOMAIN"] = ".dev.localhost"
+app.config["REMEMBER_COOKIE_DOMAIN"] = ".dev.localhost"
+app.config["REMEMBER_COOKIE_PATH"] = "/"
+app.config["REMEMBER_COOKIE_DURATION"] = 60 * 60
 db = SQLAlchemy(app)
-CORS(app, resources={r"/*": {"origins": ["http://localhost:3000"]}})
+CORS(
+    app,
+    resources={
+        r"/*": {"origins": ["http://localhost:3000", "http://dev.localhost:3000"]}
+    },
+    supports_credentials=True,
+)
 
 bcrypt = Bcrypt(app)
 
@@ -36,4 +46,4 @@ app.add_url_rule(
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host=".dev.localhost")

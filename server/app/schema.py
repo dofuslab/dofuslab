@@ -253,7 +253,7 @@ class LoginUser(graphene.Mutation):
             raise auth_error
         if not user.check_password(password):
             raise auth_error
-        login_user(user)
+        login_user(user, remember=True)
 
         return LoginUser(user=user, ok=True)
 
