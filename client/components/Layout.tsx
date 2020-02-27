@@ -1,17 +1,19 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
+import { jsx, Global, css } from '@emotion/core';
 import AntdLayout from 'antd/lib/layout';
-import Menu from 'antd/lib/menu';
+import Button from 'antd/lib/button/button';
 
-import 'antd/dist/antd.css';
 import LoginModal from './LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
 import currentUserQuery from '../graphql/queries/currentUser.graphql';
 import logoutMutation from '../graphql/mutations/logout.graphql';
+import { BORDER_COLOR } from '../common/mixins';
+
+import 'antd/dist/antd.css';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -39,37 +41,47 @@ const Layout = (props: LayoutProps) => {
   }, [logout]);
 
   return (
-    <AntdLayout>
-      <AntdLayout.Header>
-        <Menu
-          mode="horizontal"
-          theme="dark"
-          css={{
-            lineHeight: '64px',
-            display: 'flex',
-          }}
-        >
-          <Menu.Item key="1">nav 1</Menu.Item>
-          <Menu.Item key="2">nav 2</Menu.Item>
-          <Menu.Item key="3">nav 3</Menu.Item>
+    <AntdLayout css={{ height: '100%' }}>
+      <Global
+        styles={css`
+          body {
+            height: 100vh;
+          }
 
-          <Menu.Item css={{ marginLeft: 'auto' }}>
-            {data?.currentUser ? (
-              <div>
-                {data.currentUser.username} |{' '}
-                <span key="logout" onClick={logoutHandler}>
-                  Logout
-                </span>
-              </div>
-            ) : (
-              <span key="login" onClick={openLoginModal}>
-                Login
-              </span>
-            )}
-          </Menu.Item>
-        </Menu>
+          #__next {
+            height: 100%;
+          }
+        `}
+      />
+      <AntdLayout.Header
+        css={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          background: 'white',
+          borderBottom: `1px solid ${BORDER_COLOR}`,
+          padding: '0 20px',
+        }}
+      >
+        <div>Dofus Sets</div>
+        <div>
+          {data?.currentUser ? (
+            <div>
+              Welcome, {data.currentUser.username}
+              <Button
+                key="logout"
+                onClick={logoutHandler}
+                css={{ marginLeft: 12 }}
+              >
+                Logout
+              </Button>
+            </div>
+          ) : (
+            <Button onClick={openLoginModal}>Login</Button>
+          )}
+        </div>
       </AntdLayout.Header>
-      <AntdLayout.Content css={{ margin: 20, display: 'flex' }}>
+
+      <AntdLayout.Content css={{ margin: '20px 0', display: 'flex' }}>
         {props.children}
       </AntdLayout.Content>
       <LoginModal visible={showLoginModal} onClose={closeLoginModal} />

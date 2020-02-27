@@ -7,10 +7,10 @@ import {
   PrimaryStat,
   SecondaryStat,
   DamageStat,
-  ResistanceStat
-} from "./types";
+  ResistanceStat,
+} from './types';
 
-export const BREAKPOINTS = [600, 900, 1200, 1500];
+export const BREAKPOINTS = [600, 900, 1200, 1600, 2000, 2400];
 
 export const mq = BREAKPOINTS.map(bp => `@media (min-width: ${bp}px)`);
 
@@ -18,7 +18,7 @@ const UNTYPED_EQUIPMENT_SLOTS: any = {};
 
 const EQUIPMENT_SLOT_QUANTITIES: { [key: number]: number } = {
   [EquipmentSlotId.Ring]: 2,
-  [EquipmentSlotId.Dofus]: 6
+  [EquipmentSlotId.Dofus]: 6,
 };
 
 // function isEquipmentSlotId(
@@ -33,13 +33,13 @@ const EQUIPMENT_SLOT_QUANTITIES: { [key: number]: number } = {
 Object.entries(EquipmentSlotId)
   // filter needed to remove reverse mappings generated from enums in TS,
   // e.g. { 1: "Hat" }
-  .filter(([name, id]) => typeof name === "string" && typeof id === "number")
+  .filter(([name, id]) => typeof name === 'string' && typeof id === 'number')
   .forEach(([name, id]) => {
     const typeSafeId = id as EquipmentSlotId;
     UNTYPED_EQUIPMENT_SLOTS[name] = {
       name,
       id: typeSafeId,
-      quantity: EQUIPMENT_SLOT_QUANTITIES[typeSafeId] || 1
+      quantity: EQUIPMENT_SLOT_QUANTITIES[typeSafeId] || 1,
     };
   });
 
@@ -72,7 +72,7 @@ export const EQUIPMENT_TYPE_TO_SLOT: {
   [EquipmentTypeId.Trophy]: EquipmentSlotId.Dofus,
   [EquipmentTypeId.Pet]: EquipmentSlotId.Pet,
   [EquipmentTypeId.Petsmount]: EquipmentSlotId.Pet,
-  [EquipmentTypeId.Mount]: EquipmentSlotId.Pet
+  [EquipmentTypeId.Mount]: EquipmentSlotId.Pet,
 };
 
 const UNTYPED_EQUIPMENT_SLOT_TO_TYPES: any = {};
@@ -86,16 +86,16 @@ Object.entries(EQUIPMENT_TYPE_TO_SLOT).forEach(([typeId, slotId]) => {
   }
 });
 
-export const CUSTOM_STAT = "custom";
+export const CUSTOM_STAT = 'custom';
 
 export const STAT_GROUPS: ReadonlyArray<{
   name: string;
   groups: ReadonlyArray<{ [key: string]: string }>;
 }> = [
-  { name: "Primary characteristics", groups: [BasicStat, PrimaryStat] },
-  { name: "Secondary characteristics", groups: [SecondaryStat] },
-  { name: "Damage", groups: [DamageStat] },
-  { name: "Resistance", groups: [ResistanceStat] }
+  { name: 'Primary characteristics', groups: [BasicStat, PrimaryStat] },
+  { name: 'Secondary characteristics', groups: [SecondaryStat] },
+  { name: 'Damage', groups: [DamageStat] },
+  { name: 'Resistance', groups: [ResistanceStat] },
 ];
 
 export const EQUIPMENT_SLOT_TO_TYPES = <

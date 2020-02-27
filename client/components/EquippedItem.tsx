@@ -5,6 +5,7 @@ import { jsx } from '@emotion/core';
 
 import { EquipmentSlotName } from '../common/types';
 import { EQUIPMENT_SLOTS } from '../common/constants';
+import { BORDER_COLOR } from '../common/mixins';
 
 interface IEquippedItem {
   type: EquipmentSlotName;
@@ -15,7 +16,7 @@ const EquippedItem: React.FC<IEquippedItem> = props => {
     <div
       css={{
         background: 'white',
-        border: '1px solid #d9d9d9',
+        border: `1px solid ${BORDER_COLOR}`,
         width: 72,
         height: 72,
         margin: 8,
