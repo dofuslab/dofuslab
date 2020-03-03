@@ -36,7 +36,10 @@ bcrypt = Bcrypt(app)
 login_manager = flask_login.LoginManager()
 login_manager.init_app(app)
 
-migrate = Migrate(app, Base)
+dirname = os.path.dirname(os.path.abspath(__file__))
+migration_dir = os.path.join(dirname, "migrations")
+
+migrate = Migrate(app, Base, directory=migration_dir)
 
 from app.schema import schema
 
