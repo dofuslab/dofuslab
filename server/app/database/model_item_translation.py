@@ -1,10 +1,11 @@
+import sqlalchemy
 from .base import Base
 from sqlalchemy import Column, ForeignKey, String
 from sqlalchemy.dialects.postgresql import UUID
 
 
-class ModelSetTranslations(Base):
-    __tablename__ = "set_translations"
+class ModelItemTranslation(Base):
+    __tablename__ = "item_translation"
 
     uuid = Column(
         UUID(as_uuid=True),
@@ -12,7 +13,7 @@ class ModelSetTranslations(Base):
         primary_key=True,
         nullable=False,
     )
-    set_id = Column(UUID(as_uuid=True), ForeignKey("set.id"), nullable=False)
+    item_id = Column(UUID(as_uuid=True), ForeignKey("item.uuid"), nullable=False)
     locale = Column("locale", String, nullable=False)
 
     name = Column("name", String, nullable=False)

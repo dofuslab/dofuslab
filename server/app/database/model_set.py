@@ -1,6 +1,7 @@
 import sqlalchemy
 from .base import Base
-from sqlalchemy import Column, ForeignKey, Integer, String, PickleType
+from .model_set_bonus import ModelSetBonus
+from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from uuid import uuid4
@@ -15,8 +16,6 @@ class ModelSet(Base):
         primary_key=True,
     )
     dofus_db_id = Column("dofus_db_id", String, nullable=False)
-    set_translations = relationship(
-        "ModelSetTranslations", backref="set", cascase="all, delete-orphan"
-    )
-    items = relationship("ModelItem")
-    bonuses = Column("bonuses", PickleType)
+    set_translation = relationship("ModelSetTranslation", cascade="all, delete-orphan")
+    items = relationship("ModelItem", cascade="all, delete-orphan")
+    bonuses = relationship("ModelSetBonus", passive_deletes=True)

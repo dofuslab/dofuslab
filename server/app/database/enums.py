@@ -25,6 +25,7 @@ class Stat(Enum):
     DODGE = auto()
     PCT_FINAL_DAMAGE = auto()
     POWER = auto()
+    DAMAGE = auto()
     CRITICAL_DAMAGE = auto()
     NEUTRAL_DAMAGE = auto()
     EARTH_DAMAGE = auto()
@@ -53,33 +54,7 @@ class Stat(Enum):
     PUSHBACK_RES = auto()
     PCT_RANGED_RES = auto()
     PCT_MELEE_RES = auto()
-
-
-class ItemType(Enum):
-    HAT = auto()
-    CLOAK = auto()
-    AMULET = auto()
-    RING = auto()
-    BELT = auto()
-    BOOTS = auto()
-    AXE = auto()
-    BOW = auto()
-    DAGGER = auto()
-    HAMMER = auto()
-    PICKAXE = auto()
-    SCYTHE = auto()
-    SHOVEL = auto()
-    STAFF = auto()
-    SWORD = auto()
-    TOOL = auto()
-    WAND = auto()
-    SHIELD = auto()
-    DOFUS = auto()
-    TROPHY = auto()
-    PRYSMARADITE = auto()
-    PET = auto()
-    PETSMOUNT = auto()
-    MOUNT = auto()
+    PODS = auto()
 
 
 class Element(Enum):

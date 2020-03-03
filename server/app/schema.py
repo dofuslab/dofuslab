@@ -1,16 +1,31 @@
-from database.model_item_stat import ModelItemStat
-from database.model_item_condition import ModelItemCondition
-from database.model_item import ModelItem
-from database.model_set import ModelSet
-from database.model_custom_set_stat import ModelCustomSetStat
-from database.model_custom_set_exo import ModelCustomSetExo
-from database.model_custom_set import ModelCustomSet
-from database.model_user import ModelUser
+from flask_jwt_extended import (
+    create_access_token,
+    create_refresh_token,
+    jwt_required,
+    jwt_refresh_token_required,
+    get_jwt_identity,
+    get_raw_jwt,
+)
+from app.database.model_item_stat import ModelItemStat
+from app.database.model_item_condition import ModelItemCondition
+from app.database.model_item_type import ModelItemType
+from app.database.model_item_slot import ModelItemSlot
+from app.database.model_item_translation import ModelItemTranslation
+from app.database.model_item import ModelItem
+from app.database.model_set_bonus import ModelSetBonus
+from app.database.model_set_translation import ModelSetTranslation
+from app.database.model_set import ModelSet
+from app.database.model_custom_set_stat import ModelCustomSetStat
+from app.database.model_equipped_item_exo import ModelEquippedItemExo
+from app.database.model_equipped_item import ModelEquippedItem
+from app.database.model_custom_set import ModelCustomSet
+from app.database.model_user import ModelUser
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
-from database import base
-from database.enums import Stat
-import mutation_validation_utils as validation
+from app.database import base
+from app.database.enums import Stat
+import app.mutation_validation_utils as validation
 import graphene
+from graphql import GraphQLError
 
 StatEnum = graphene.Enum.from_enum(Stat)
 
@@ -27,18 +42,70 @@ class ItemCondtions(SQLAlchemyObjectType):
         interfaces = (graphene.relay.Node,)
 
 
+class ItemSlot(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelItemSlot
+        interfaces = (graphene.relay.Node,)
+
+
+class ItemType(SQLAlchemyObjectType):
+    eligible_item_slots = graphene.List(ItemSlot)  # Use list instead of connection
+
+    class Meta:
+        model = ModelItemType
+        interfaces = (graphene.relay.Node,)
+
+
+class ItemTranslation(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelItemTranslation
+        interfaces = (graphene.relay.Node,)
+
+
 class Item(SQLAlchemyObjectType):
-    stats = graphene.List(ItemStats)  # Use list instead of connection
-    conditions = graphene.List(ItemCondtions)
+    stats = graphene.NonNull(
+        graphene.List(graphene.NonNull(ItemStats))  # Use list instead of connection
+    )
+    conditions = graphene.NonNull(graphene.List(graphene.NonNull(ItemCondtions)))
+    item_translations = graphene.NonNull(
+        graphene.List(graphene.NonNull(ItemTranslation))
+    )
 
     class Meta:
         model = ModelItem
         interfaces = (graphene.relay.Node,)
 
 
+class SetBonus(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelSetBonus
+        interfaces = (graphene.relay.Node,)
+
+
+class SetTranslation(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelSetTranslation
+        interfaces = (graphene.relay.Node,)
+
+
 class Set(SQLAlchemyObjectType):
+    bonuses = graphene.NonNull(graphene.List(graphene.NonNull(SetBonus)))
+    set_translation = graphene.NonNull(graphene.List(graphene.NonNull(SetTranslation)))
+
     class Meta:
         model = ModelSet
+        interfaces = (graphene.relay.Node,)
+
+
+class EquippedItemExo(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelEquippedItemExo
+        interfaces = (graphene.relay.Node,)
+
+
+class EquippedItem(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelEquippedItem
         interfaces = (graphene.relay.Node,)
 
 
@@ -51,12 +118,6 @@ class CustomSet(SQLAlchemyObjectType):
 class CustomSetStats(SQLAlchemyObjectType):
     class Meta:
         model = ModelCustomSetStat
-        interfaces = (graphene.relay.Node,)
-
-
-class CustomSetExos(SQLAlchemyObjectType):
-    class Meta:
-        model = ModelCustomSetExo
         interfaces = (graphene.relay.Node,)
 
 
@@ -87,14 +148,15 @@ class CreateCustomSet(graphene.Mutation):
         description = graphene.String()
         owner_username = graphene.String()
         created_at = graphene.types.datetime.DateTime()
-        level = graphene.Int()
+        level = graphene.NonNull(graphene.Int)
 
-        items = graphene.List(graphene.String)
+        items = graphene.NonNull(graphene.List(graphene.String))
         stats = CustomSetStatsInput()
-        exos = graphene.List(CustomSetExosInput)
+        exos = graphene.NonNull(graphene.List(CustomSetExosInput))
 
     custom_set = graphene.Field(CustomSet)
 
+    @jwt_required
     def mutate(self, into, **kwargs):
         custom_set = ModelCustomSet(
             name=kwargs.get("name"),
@@ -139,9 +201,11 @@ class CreateCustomSet(graphene.Mutation):
         if kwargs.get("exos"):
             exos = kwargs.get("exos")
             for exo in exos:
-                custom_set_exo = ModelCustomSetExos(stat=exo.stat, value=exo.value)
+                equipped_item_exo = ModelEquippedItemExos(
+                    stat=exo.stat, value=exo.value
+                )
 
-                base.db_session.add(custom_set_exo)
+                base.db_session.add(equipped_item_exo)
                 custom_set.exos.append(exo)
 
         base.db_session.add(custom_set)
@@ -158,40 +222,79 @@ class CreateCustomSet(graphene.Mutation):
         return CreateCustomSet(custom_set=custom_set)
 
 
-# class UpdateCustomSet(graphene.Mutation):
-#     pass
-
-
 class User(SQLAlchemyObjectType):
+    access_token = graphene.String(required=True)
+
     class Meta:
         model = ModelUser
         interfaces = (graphene.relay.Node,)
+        only_fields = ("uuid", "id", "username", "email", "custom_sets")
 
 
-class CreateUser(graphene.Mutation):
+class RegisterUser(graphene.Mutation):
     class Arguments:
-        username = graphene.String()
-        email = graphene.String()
+        username = graphene.NonNull(graphene.String)
+        email = graphene.NonNull(graphene.String)
+        password = graphene.NonNull(graphene.String)
 
-    user = graphene.Field(User)
+    access_token = graphene.String(required=True)
+    refresh_token = graphene.String(required=True)
 
     def mutate(self, info, **kwargs):
-        validation.check_for_existing_user(kwargs.get("username"))
+        username = kwargs.get("username")
+        email = kwargs.get("email")
+        password = kwargs.get("password")
+        validation.validate_registration(username, email, password)
+        try:
+            user = ModelUser(
+                username=username,
+                email=email,
+                password=ModelUser.generate_hash(password),
+            )
+            user.save_to_db()
+            access_token = create_access_token(identity=username)
+            refresh_token = create_refresh_token(identity=username)
+        except Exception as e:
+            print(e)
+            raise GraphQLError("An error occurred while registering.")
 
-        user = ModelUser(username=kwargs.get("username"), email=kwargs.get("email"))
+        return RegisterUser(access_token=access_token, refresh_token=refresh_token)
 
-        base.db_session.add(user)
-        base.db_session.commit()
 
-        return CreateUser(user=user)
+class LoginUser(graphene.Mutation):
+    class Arguments:
+        email = graphene.String(required=True)
+        password = graphene.String(required=True)
+
+    access_token = graphene.String(required=True)
+    refresh_token = graphene.String(required=True)
+
+    def mutate(self, info, **kwargs):
+        email = kwargs.get("email")
+        password = kwargs.get("password")
+        user = ModelUser.find_by_email(email)
+        auth_error = GraphQLError("Invalid username or password.")
+        if not user:
+            raise auth_error
+        if not user.check_password(password):
+            raise auth_error
+        access_token = create_access_token(identity=username)
+        refresh_token = create_refresh_token(identity=username)
+        return LoginUser(access_token=access_token, refresh_token=refresh_token)
 
 
 class Query(graphene.ObjectType):
     # Get list of data
-    items = graphene.List(Item)
+    items = graphene.NonNull(graphene.List(graphene.NonNull(Item)))
 
     def resolve_items(self, info):
         query = Item.get_query(info)
+        return query.all()
+
+    sets = graphene.NonNull(graphene.List(graphene.NonNull(Set)))
+
+    def resolve_sets(self, info):
+        query = Set.get_query(info)
         return query.all()
 
     custom_sets = graphene.List(CustomSet)
@@ -207,7 +310,6 @@ class Query(graphene.ObjectType):
         query = User.get_query(info)
         return query.filter(uuid == uuid).first()
 
-    # also query for set and return it
     item_by_uuid = graphene.Field(Item, uuid=graphene.String(required=True))
 
     def resolve_item_by_uuid(self, info, uuid):
@@ -228,8 +330,9 @@ class Query(graphene.ObjectType):
 
 
 class Mutation(graphene.ObjectType):
-    create_user = CreateUser.Field()
+    register_user = RegisterUser.Field()
     create_custom_set = CreateCustomSet.Field()
+    login_user = LoginUser.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
