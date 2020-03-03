@@ -4,13 +4,18 @@ appdirs==1.4.3
 astroid==2.3.3
 attrs==19.3.0
 autopep8==1.5
+bcrypt==3.1.7
 beautifulsoup4==4.8.1
+black==19.10b0
 bs4==0.0.1
 certifi==2019.9.11
+cffi==1.14.0
 chardet==3.0.4
 Click==7.0
 Flask==1.1.1
+Flask-Bcrypt==0.7.1
 Flask-GraphQL==2.0.0
+Flask-JWT-Extended==3.24.1
 Flask-Migrate==2.5.2
 Flask-SQLAlchemy==2.4.1
 graphene==2.1.8
@@ -30,6 +35,8 @@ pathspec==0.6.0
 promise==2.2.1
 psycopg2==2.8.4
 pycodestyle==2.5.0
+pycparser==2.19
+PyJWT==1.7.1
 pylint==2.4.4
 pylint-flask==0.6
 pylint-plugin-utils==0.6

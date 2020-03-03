@@ -7,9 +7,8 @@ import {
   PrimaryStat,
   SecondaryStat,
   DamageStat,
-  ResistanceStat,
-  Stat
-} from './types';
+  ResistanceStat
+} from "./types";
 
 export const BREAKPOINTS = [600, 900, 1200, 1500];
 
@@ -22,11 +21,11 @@ const EQUIPMENT_SLOT_QUANTITIES: { [key: number]: number } = {
   [EquipmentSlotId.Dofus]: 6
 };
 
-function isEquipmentSlotId(
-  id: EquipmentSlotId | string
-): id is EquipmentSlotId {
-  return typeof id === 'number';
-}
+// function isEquipmentSlotId(
+//   id: EquipmentSlotId | string
+// ): id is EquipmentSlotId {
+//   return typeof id === "number";
+// }
 
 // using ID enum and EQUIPMENT_SLOT_QUANTITIES, e.g. { Hat: 1, Weapon: 2 ...},
 // create object EQUIPMENT_SLOTS like { Hat: { id: 1, name: Hat, quantity: 1 } ...}
@@ -34,7 +33,7 @@ function isEquipmentSlotId(
 Object.entries(EquipmentSlotId)
   // filter needed to remove reverse mappings generated from enums in TS,
   // e.g. { 1: "Hat" }
-  .filter(([name, id]) => typeof name === 'string' && typeof id === 'number')
+  .filter(([name, id]) => typeof name === "string" && typeof id === "number")
   .forEach(([name, id]) => {
     const typeSafeId = id as EquipmentSlotId;
     UNTYPED_EQUIPMENT_SLOTS[name] = {
@@ -87,16 +86,16 @@ Object.entries(EQUIPMENT_TYPE_TO_SLOT).forEach(([typeId, slotId]) => {
   }
 });
 
-export const CUSTOM_STAT = 'custom';
+export const CUSTOM_STAT = "custom";
 
 export const STAT_GROUPS: ReadonlyArray<{
   name: string;
   groups: ReadonlyArray<{ [key: string]: string }>;
 }> = [
-  { name: 'Primary characteristics', groups: [BasicStat, PrimaryStat] },
-  { name: 'Secondary characteristics', groups: [SecondaryStat] },
-  { name: 'Damage', groups: [DamageStat] },
-  { name: 'Resistance', groups: [ResistanceStat] }
+  { name: "Primary characteristics", groups: [BasicStat, PrimaryStat] },
+  { name: "Secondary characteristics", groups: [SecondaryStat] },
+  { name: "Damage", groups: [DamageStat] },
+  { name: "Resistance", groups: [ResistanceStat] }
 ];
 
 export const EQUIPMENT_SLOT_TO_TYPES = <
