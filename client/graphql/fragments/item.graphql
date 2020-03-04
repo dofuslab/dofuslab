@@ -11,4 +11,10 @@ fragment item on Item {
     isGreaterThan
     limit
   }
+  itemType {
+    id
+    eligibleItemSlots {
+      id
+    }
+  }
 }

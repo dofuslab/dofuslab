@@ -13,18 +13,28 @@ export interface customSet_customSetById_equippedItems_slot {
   id: any;
 }
 
+export interface customSet_customSetById_equippedItems_item_stats {
+  __typename: "ItemStats";
+  maxValue: number | null;
+  stat: Stat | null;
+}
+
+export interface customSet_customSetById_equippedItems_item_conditions {
+  __typename: "ItemConditions";
+  stat: Stat | null;
+  isGreaterThan: boolean | null;
+  limit: number | null;
+}
+
+export interface customSet_customSetById_equippedItems_item_itemType_eligibleItemSlots {
+  __typename: "ItemSlot";
+  id: any;
+}
+
 export interface customSet_customSetById_equippedItems_item_itemType {
   __typename: "ItemType";
   id: any;
-  name: string;
-}
-
-export interface customSet_customSetById_equippedItems_item_stats {
-  __typename: "ItemStats";
-  id: any;
-  minValue: number | null;
-  maxValue: number | null;
-  stat: Stat | null;
+  eligibleItemSlots: customSet_customSetById_equippedItems_item_itemType_eligibleItemSlots[];
 }
 
 export interface customSet_customSetById_equippedItems_item {
@@ -32,8 +42,9 @@ export interface customSet_customSetById_equippedItems_item {
   id: any;
   name: string;
   imageUrl: string;
-  itemType: customSet_customSetById_equippedItems_item_itemType | null;
   stats: customSet_customSetById_equippedItems_item_stats[];
+  conditions: customSet_customSetById_equippedItems_item_conditions[];
+  itemType: customSet_customSetById_equippedItems_item_itemType;
 }
 
 export interface customSet_customSetById_equippedItems {

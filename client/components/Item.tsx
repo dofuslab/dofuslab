@@ -3,12 +3,7 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import Card from 'antd/lib/card';
-import { TFunction } from 'i18next';
-import { useTranslation } from 'react-i18next';
-import {
-  items_items,
-  items_items_stats,
-} from 'graphql/queries/__generated__/items';
+import { items_items } from 'graphql/queries/__generated__/items';
 import { BORDER_COLOR } from 'common/mixins';
 import { useMutation } from '@apollo/react-hooks';
 import {
@@ -17,30 +12,28 @@ import {
 } from 'graphql/mutations/__generated__/updateCustomSetItem';
 import UpdateCustomSetItemMutation from 'graphql/mutations/updateCustomSetItem.graphql';
 import { useRouter } from 'next/router';
+import { ItemStatsList } from 'common/wrappers';
 
 interface IItem {
   item: items_items;
 }
 
-function displayStats(t: TFunction, statLine: items_items_stats) {
-  const statName = t(statLine.stat as string);
-  return `${statLine.maxValue} ${statName}`;
-}
-
 const Item: React.FC<IItem> = ({ item }) => {
-  const { t } = useTranslation('stat');
   const router = useRouter();
   const { setId } = router.query;
+
   const [updateCustomSetItem] = useMutation<
     updateCustomSetItem,
     updateCustomSetItemVariables
   >(UpdateCustomSetItemMutation, {
-    variables: { customSetId: setId, itemId: item.id },
+    variables: {
+      customSetId: setId,
+      itemId: item.id,
+    },
   });
 
-  const onClick = React.useCallback(async () => {
-    const data = await updateCustomSetItem();
-    console.log(data);
+  const onClick = React.useCallback(() => {
+    updateCustomSetItem();
   }, [updateCustomSetItem]);
   return (
     <Card
@@ -55,11 +48,7 @@ const Item: React.FC<IItem> = ({ item }) => {
       }}
       onClick={onClick}
     >
-      <ul css={{ paddingLeft: 16, marginBottom: 0 }}>
-        {item.stats.map((statLine, idx) => {
-          return <li key={`stat-${idx}`}>{displayStats(t, statLine)}</li>;
-        })}
-      </ul>
+      <ItemStatsList item={item} css={{ paddingLeft: 16, marginBottom: 0 }} />
     </Card>
   );
 };

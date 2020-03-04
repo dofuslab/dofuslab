@@ -36,7 +36,7 @@ class ItemStats(SQLAlchemyObjectType):
         interfaces = (GlobalNode,)
 
 
-class ItemCondtions(SQLAlchemyObjectType):
+class ItemConditions(SQLAlchemyObjectType):
     class Meta:
         model = ModelItemCondition
         interfaces = (GlobalNode,)
@@ -49,7 +49,9 @@ class ItemSlot(SQLAlchemyObjectType):
 
 
 class ItemType(SQLAlchemyObjectType):
-    eligible_item_slots = graphene.List(ItemSlot)  # Use list instead of connection
+    eligible_item_slots = graphene.NonNull(
+        graphene.List(graphene.NonNull(ItemSlot))
+    )  # Use list instead of connection
 
     class Meta:
         model = ModelItemType
@@ -60,7 +62,8 @@ class Item(SQLAlchemyObjectType):
     stats = graphene.NonNull(
         graphene.List(graphene.NonNull(ItemStats))  # Use list instead of connection
     )
-    conditions = graphene.NonNull(graphene.List(graphene.NonNull(ItemCondtions)))
+    conditions = graphene.NonNull(graphene.List(graphene.NonNull(ItemConditions)))
+    item_type = graphene.NonNull(ItemType)
 
     class Meta:
         model = ModelItem

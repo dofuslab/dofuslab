@@ -39,17 +39,26 @@ class ModelUser(UserMixin, Base):
 
     @classmethod
     def find_by_id(cls, user_id):
-        return cls.query.filter_by(uuid=user_id).first()
+        with session_scope() as session:
+            return session.query(cls).filter_by(uuid=user_id).first()
 
     @classmethod
     def find_by_email(cls, email):
-        return cls.query.filter(func.upper(cls.email) == func.upper(email)).first()
+        with session_scope() as session:
+            return (
+                session.query(cls)
+                .filter(func.upper(cls.email) == func.upper(email))
+                .first()
+            )
 
     @classmethod
     def find_by_username(cls, username):
-        return cls.query.filter(
-            func.upper(cls.username) == func.upper(username)
-        ).first()
+        with session_scope() as session:
+            return (
+                session.query(cls)
+                .filter(func.upper(cls.username) == func.upper(username))
+                .first()
+            )
 
 
 @login_manager.user_loader

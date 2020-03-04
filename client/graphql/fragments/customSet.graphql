@@ -1,0 +1,15 @@
+#import "graphql/fragments/item.graphql"
+
+fragment customSet on CustomSet {
+  id
+  name
+  equippedItems {
+    id
+    slot {
+      id
+    }
+    item {
+      ...item
+    }
+  }
+}

@@ -2,9 +2,11 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
+import Popover from 'antd/lib/popover';
 
 import { BORDER_COLOR } from 'common/mixins';
 import { customSet_customSetById_equippedItems_item } from 'graphql/queries/__generated__/customSet';
+import { ItemStatsList } from 'common/wrappers';
 
 interface IEquippedItem {
   slotName: string;
@@ -16,7 +18,7 @@ const EquippedItem: React.FC<IEquippedItem> = ({
   item,
   ...restProps
 }) => {
-  return (
+  const itemDisplay = (
     <div
       css={{
         background: 'white',
@@ -38,6 +40,18 @@ const EquippedItem: React.FC<IEquippedItem> = ({
         slotName
       )}
     </div>
+  );
+
+  return item ? (
+    <Popover
+      placement="bottom"
+      title={item.name}
+      content={<ItemStatsList item={item} />}
+    >
+      {itemDisplay}
+    </Popover>
+  ) : (
+    itemDisplay
   );
 };
 
