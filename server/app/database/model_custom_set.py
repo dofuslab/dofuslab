@@ -64,7 +64,7 @@ class ModelCustomSet(Base):
             session.delete(equipped_item)
         elif item_id:
             equipped_item = ModelEquippedItem(
-                item_slot_id=item_slot_id, custom_set_id=self.uuid, item_id=item_id,
+                item_slot_id=item_slot.uuid, custom_set_id=self.uuid, item_id=item_id,
             )
             session.add(equipped_item)
         else:

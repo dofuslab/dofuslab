@@ -15,6 +15,7 @@ from app.database.base import Base, session_scope
 from app.database.enums import Stat
 import app.mutation_validation_utils as validation
 import graphene
+import uuid
 from graphql import GraphQLError
 from flask_login import login_required, login_user, current_user, logout_user
 
@@ -215,7 +216,7 @@ class UpdateCustomSetItem(graphene.Mutation):
     class Arguments:
         # if null, create new set
         custom_set_id = graphene.UUID()
-        item_slot_id = graphene.UUID(required=True)
+        item_slot_id = graphene.UUID()
         item_id = graphene.UUID()
 
     custom_set = graphene.Field(CustomSet, required=True)
@@ -322,32 +323,32 @@ class Query(graphene.ObjectType):
         return query.all()
 
     # Retrieve record by uuid
-    user_by_uuid = graphene.Field(User, uuid=graphene.String(required=True))
+    user_by_id = graphene.Field(User, id=graphene.UUID(required=True))
 
-    def resolve_user_by_uuid(self, info, uuid):
+    def resolve_user_by_id(self, info, id):
         query = User.get_query(info)
-        return query.filter(uuid == uuid).first()
+        return query.filter_by(uuid=id).one_or_none()
 
     # also query for set and return it
-    item_by_uuid = graphene.Field(Item, uuid=graphene.String(required=True))
+    item_by_id = graphene.Field(Item, id=graphene.UUID(required=True))
 
-    def resolve_item_by_uuid(self, info, uuid):
+    def resolve_item_by_id(self, info, id):
         query = Item.get_query(info)
-        return query.filter(uuid == uuid).first()
+        return query.filter_by(uuid=id).one_or_none()
 
-    set_by_uuid = graphene.Field(Set, uuid=graphene.String(required=True))
+    set_by_id = graphene.Field(Set, id=graphene.UUID(required=True))
 
-    def resolve_set_by_uuid(self, info, uuid):
+    def resolve_set_by_id(self, info, id):
         query = Set.get_query(info)
-        return query.filter(uuid == uuid).first()
+        return query.filter_by(uuid=id).one_or_none()
 
-    custom_set_by_uuid = graphene.Field(CustomSet, uuid=graphene.String(required=True))
+    custom_set_by_id = graphene.Field(CustomSet, id=graphene.UUID(required=True))
 
-    def resolve_custom_set_by_uuid(self, info, uuid):
+    def resolve_custom_set_by_id(self, info, id):
         query = CustomSet.get_query(info)
-        return query.filter(uuid == uuid).first()
+        return query.filter_by(uuid=id).one_or_none()
 
-    item_slots = graphene.List(ItemSlot)
+    item_slots = graphene.NonNull(graphene.List(graphene.NonNull(ItemSlot)))
 
     def resolve_item_slots(self, info):
         query = ItemSlot.get_query(info)

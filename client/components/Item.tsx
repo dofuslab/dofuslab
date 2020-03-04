@@ -8,8 +8,15 @@ import { useTranslation } from 'react-i18next';
 import {
   items_items,
   items_items_stats,
-} from '../graphql/queries/__generated__/items';
-import { BORDER_COLOR } from '../common/mixins';
+} from 'graphql/queries/__generated__/items';
+import { BORDER_COLOR } from 'common/mixins';
+import { useMutation } from '@apollo/react-hooks';
+import {
+  updateCustomSetItem,
+  updateCustomSetItemVariables,
+} from 'graphql/mutations/__generated__/updateCustomSetItem';
+import UpdateCustomSetItemMutation from 'graphql/mutations/updateCustomSetItem.graphql';
+import { useRouter } from 'next/router';
 
 interface IItem {
   item: items_items;
@@ -22,8 +29,22 @@ function displayStats(t: TFunction, statLine: items_items_stats) {
 
 const Item: React.FC<IItem> = ({ item }) => {
   const { t } = useTranslation('stat');
+  const router = useRouter();
+  const { setId } = router.query;
+  const [updateCustomSetItem] = useMutation<
+    updateCustomSetItem,
+    updateCustomSetItemVariables
+  >(UpdateCustomSetItemMutation, {
+    variables: { customSetId: setId, itemId: item.id },
+  });
+
+  const onClick = React.useCallback(async () => {
+    const data = await updateCustomSetItem();
+    console.log(data);
+  }, [updateCustomSetItem]);
   return (
     <Card
+      hoverable
       size="small"
       title={item.name}
       css={{
@@ -32,6 +53,7 @@ const Item: React.FC<IItem> = ({ item }) => {
         borderRadius: 4,
         border: `1px solid ${BORDER_COLOR}`,
       }}
+      onClick={onClick}
     >
       <ul css={{ paddingLeft: 16, marginBottom: 0 }}>
         {item.stats.map((statLine, idx) => {

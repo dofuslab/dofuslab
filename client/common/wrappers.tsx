@@ -26,4 +26,7 @@ export const ResponsiveGrid = styled.div<IResponsiveGrid>(({ numColumns }) => ({
   [mq[4]]: {
     gridTemplateColumns: `repeat(${numColumns[4]}, 1fr)`,
   },
+  [mq[5]]: {
+    gridTemplateColumns: `repeat(${numColumns[5]}, 1fr)`,
+  },
 }));

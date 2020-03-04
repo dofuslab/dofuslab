@@ -8,10 +8,7 @@
 
 export interface login_loginUser_user {
   __typename: "User";
-  /**
-   * The ID of the object.
-   */
-  id: string;
+  id: any;
   username: string;
 }
 

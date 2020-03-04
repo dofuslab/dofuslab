@@ -3,15 +3,15 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: currentUser
+// GraphQL query operation: itemSlots
 // ====================================================
 
-export interface currentUser_currentUser {
-  __typename: "User";
+export interface itemSlots_itemSlots {
+  __typename: "ItemSlot";
   id: any;
-  username: string;
+  name: string;
 }
 
-export interface currentUser {
-  currentUser: currentUser_currentUser | null;
+export interface itemSlots {
+  itemSlots: itemSlots_itemSlots[];
 }

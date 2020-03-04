@@ -23,10 +23,7 @@ export interface items_items_conditions {
 
 export interface items_items {
   __typename: "Item";
-  /**
-   * The ID of the object.
-   */
-  id: string;
+  id: any;
   name: string;
   stats: items_items_stats[];
   conditions: items_items_conditions[];

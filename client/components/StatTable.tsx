@@ -4,7 +4,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 
 import List from 'antd/lib/list';
-import { modifiedStartCase } from '../common/utils';
+import { modifiedStartCase } from 'common/utils';
 
 interface IStatTable {
   name?: string;

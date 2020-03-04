@@ -1,0 +1,6 @@
+query itemSlots {
+  itemSlots {
+    id
+    name
+  }
+}

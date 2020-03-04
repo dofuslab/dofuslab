@@ -1,0 +1,27 @@
+query customSet($id: UUID!) {
+  customSetById(id: $id) {
+    id
+    name
+    equippedItems {
+      id
+      slot {
+        id
+      }
+      item {
+        id
+        name
+        imageUrl
+        itemType {
+          id
+          name
+        }
+        stats {
+          id
+          minValue
+          maxValue
+          stat
+        }
+      }
+    }
+  }
+}

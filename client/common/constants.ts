@@ -92,10 +92,14 @@ export const STAT_GROUPS: ReadonlyArray<{
   name: string;
   groups: ReadonlyArray<{ [key: string]: string }>;
 }> = [
-  { name: 'Primary characteristics', groups: [BasicStat, PrimaryStat] },
-  { name: 'Secondary characteristics', groups: [SecondaryStat] },
-  { name: 'Damage', groups: [DamageStat] },
-  { name: 'Resistance', groups: [ResistanceStat] },
+  {
+    name: 'Primary characteristics',
+    groups: [BasicStat, PrimaryStat, DamageStat],
+  },
+  {
+    name: 'Secondary characteristics',
+    groups: [SecondaryStat, ResistanceStat],
+  },
 ];
 
 export const EQUIPMENT_SLOT_TO_TYPES = <

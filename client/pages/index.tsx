@@ -2,7 +2,7 @@
 
 import { jsx } from '@emotion/core';
 import { NextPage } from 'next';
-import { SetBuilder } from '../components';
+import { SetBuilder } from 'components';
 
 const Index: NextPage = () => (
   <div className="App" css={{ height: '100%' }}>

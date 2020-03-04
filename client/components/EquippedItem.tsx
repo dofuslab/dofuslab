@@ -3,15 +3,19 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 
-import { EquipmentSlotName } from '../common/types';
-import { EQUIPMENT_SLOTS } from '../common/constants';
-import { BORDER_COLOR } from '../common/mixins';
+import { BORDER_COLOR } from 'common/mixins';
+import { customSet_customSetById_equippedItems_item } from 'graphql/queries/__generated__/customSet';
 
 interface IEquippedItem {
-  type: EquipmentSlotName;
+  slotName: string;
+  item?: customSet_customSetById_equippedItems_item;
 }
 
-const EquippedItem: React.FC<IEquippedItem> = props => {
+const EquippedItem: React.FC<IEquippedItem> = ({
+  slotName,
+  item,
+  ...restProps
+}) => {
   return (
     <div
       css={{
@@ -26,9 +30,13 @@ const EquippedItem: React.FC<IEquippedItem> = props => {
         fontSize: '0.75rem',
         borderRadius: 4,
       }}
-      {...props}
+      {...restProps}
     >
-      {EQUIPMENT_SLOTS[props.type].name}
+      {item ? (
+        <img src={item.imageUrl} css={{ width: '100%', height: '100%' }} />
+      ) : (
+        slotName
+      )}
     </div>
   );
 };
