@@ -11,7 +11,7 @@ from app.database.model_equipped_item import ModelEquippedItem
 from app.database.model_custom_set import ModelCustomSet
 from app.database.model_user import ModelUser
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
-from app.database.base import Base, db_session
+from app.database.base import Base, session_scope
 from app.database.enums import Stat
 import app.mutation_validation_utils as validation
 import graphene
@@ -156,58 +156,57 @@ class CreateCustomSet(graphene.Mutation):
             created_at=kwargs.get("created_at"),
             level=kwargs.get("level"),
         )
+        with session_scope() as session:
+            # Add associated items to the custom set
+            # Modify to take in item objects
+            if kwargs.get("items"):
+                items = kwargs.get("items")
 
-        # Add associated items to the custom set
-        # Modify to take in item objects
-        if kwargs.get("items"):
-            items = kwargs.get("items")
-            for item in items:
-                item_record = (
-                    db_session.query(ModelItem).filter(ModelItem.name == item).first()
-                )
-                custom_set.items.append(item_record)
+                for item in items:
+                    item_record = (
+                        session.query(ModelItem).filter(ModelItem.name == item).first()
+                    )
+                    custom_set.items.append(item_record)
 
-        # Create database entry for the stats then add to the custom set
-        if kwargs.get("stats"):
-            stats = kwargs.get("stats")
-            custom_set_stats = ModelCustomSetStat(
-                scrolled_vitality=stats.scrolled_vitality,
-                scrolled_wisdom=stats.scrolled_wisdom,
-                scrolled_strength=stats.scrolled_strength,
-                scrolled_intelligence=stats.scrolled_intelligence,
-                scrolled_chance=stats.scrolled_chance,
-                scrolled_agility=stats.scrolled_agility,
-                base_vitality=stats.base_vitality,
-                base_wisdom=stats.base_wisdom,
-                base_strength=stats.base_strength,
-                base_intelligence=stats.base_intelligence,
-                base_chance=stats.base_chance,
-                base_agility=stats.base_agility,
-            )
-
-            db_session.add(custom_set_stats)
-            custom_set.stats = custom_set_stats
-
-        if kwargs.get("exos"):
-            exos = kwargs.get("exos")
-            for exo in exos:
-                equipped_item_exo = ModelEquippedItemExos(
-                    stat=exo.stat, value=exo.value
+            # Create database entry for the stats then add to the custom set
+            if kwargs.get("stats"):
+                stats = kwargs.get("stats")
+                custom_set_stats = ModelCustomSetStat(
+                    scrolled_vitality=stats.scrolled_vitality,
+                    scrolled_wisdom=stats.scrolled_wisdom,
+                    scrolled_strength=stats.scrolled_strength,
+                    scrolled_intelligence=stats.scrolled_intelligence,
+                    scrolled_chance=stats.scrolled_chance,
+                    scrolled_agility=stats.scrolled_agility,
+                    base_vitality=stats.base_vitality,
+                    base_wisdom=stats.base_wisdom,
+                    base_strength=stats.base_strength,
+                    base_intelligence=stats.base_intelligence,
+                    base_chance=stats.base_chance,
+                    base_agility=stats.base_agility,
                 )
 
-                db_session.add(equipped_item_exo)
-                custom_set.exos.append(exo)
+                session.add(custom_set_stats)
+                custom_set.stats = custom_set_stats
 
-        db_session.add(custom_set)
+            if kwargs.get("exos"):
+                exos = kwargs.get("exos")
+                for exo in exos:
+                    equipped_item_exo = ModelEquippedItemExos(
+                        stat=exo.stat, value=exo.value
+                    )
 
-        # current_user = (
-        #     db_session.query(ModelUser)
-        #     .filter(ModelUser.username == kwargs.get("owner_username"))
-        #     .first()
-        # )
-        # current_user.custom_sets.append(custom_set)
+                    session.add(equipped_item_exo)
+                    custom_set.exos.append(exo)
 
-        db_session.commit()
+            session.add(custom_set)
+
+            # current_user = (
+            #     db_session.query(ModelUser)
+            #     .filter(ModelUser.username == kwargs.get("owner_username"))
+            #     .first()
+            # )
+            # current_user.custom_sets.append(custom_set)
 
         return CreateCustomSet(custom_set=custom_set)
 
@@ -225,15 +224,15 @@ class UpdateCustomSetItem(graphene.Mutation):
         custom_set_id = kwargs.get("custom_set_id")
         item_slot_id = kwargs.get("item_slot_id")
         item_id = kwargs.get("item_id")
-        if custom_set_id:
-            custom_set = ModelCustomSet.query.get(custom_set_id)
-            if custom_set.owner_id != current_user.get_id():
-                raise GraphQLError("You don't have permission to edit that set.")
-        else:
-            custom_set = ModelCustomSet(owner_id=current_user.get_id())
-            db_session.add(custom_set)
-            db_session.commit()
-        custom_set.equip_item(item_id, item_slot_id)
+        with session_scope() as session:
+            if custom_set_id:
+                custom_set = ModelCustomSet.query.get(custom_set_id)
+                if custom_set.owner_id != current_user.get_id():
+                    raise GraphQLError("You don't have permission to edit that set.")
+            else:
+                custom_set = ModelCustomSet(owner_id=current_user.get_id())
+                session.add(custom_set)
+            custom_set.equip_item(session, item_id, item_slot_id)
 
         return UpdateCustomSetItem(custom_set=custom_set)
 
