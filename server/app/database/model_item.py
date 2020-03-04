@@ -17,7 +17,10 @@ class ModelItem(Base):
         primary_key=True,
         nullable=False,
     )
-    name = Column("name", String, nullable=False)
+    dofus_db_id = Column("dofus_db_id", String, nullable=False)
+    item_translations = relationship(
+        "ModelItemTranslation", backref="item", cascade="all, delete-orphan"
+    )
     item_type_id = Column(
         UUID(as_uuid=True), ForeignKey("item_type.uuid"), nullable=False, index=True
     )

@@ -25,4 +25,3 @@ class ModelEquippedItem(Base):
     item = relationship("ModelItem")
     slot = relationship("ModelItemSlot")
     exos = relationship("ModelEquippedItemExo")
-

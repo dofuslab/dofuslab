@@ -1,22 +1,104 @@
-import requests
-from bs4 import BeautifulSoup
+import csv
 import json
+import os
+import scraper_utils
+
+dirname = os.path.dirname(os.path.abspath(__file__))
 
 
 class ItemScraper:
-    def get_items_from_page(url):
-        url_response = requests.get(url)
-        soup = BeautifulSoup(url_response.text, "html.parser")
-        item_urls = []
+    def get_all_item_ids():
+        # get the last number for the paginated list of items
+        url = "https://www.dofus.com/en/mmorpg/encyclopedia/equipment?size=96"
+        soup = scraper_utils.get_soup(url)
+        page_data = soup.find("ul", {"class": "ak-pagination"}).find_all("li")
+        final_page_number = int(page_data[-1].find("a")["href"].split("=")[-1])
 
-        item_table = soup.find("table", {"class": "ak-table"}).tbody.find_all("tr")
+        # get all item ids from each page and write to csv
+        item_ids = []
+        for i in range(1, final_page_number + 1):
+            url = (
+                "https://www.dofus.com/en/mmorpg/encyclopedia/equipment?size=96&page="
+                + str(i)
+            )
+            soup = scraper_utils.get_soup(url)
+            item_table = soup.find("table", {"class": "ak-table"}).tbody.find_all("tr")
+            for item in item_table:
+                id = item.find("a")["href"].split("/")[-1].split("-")[0]
+                item_ids.append(id)
+            print("Finished page " + str(i))
 
-        for item in item_table:
-            item = "https://www.dofus.com" + item.find("a")["href"]
-            item_urls.append(item)
+        with open(os.path.join(dirname, "all_item_ids.csv"), "w") as file:
+            writer = csv.writer(file)
+            writer.writerow(item_ids)
 
-        return item_urls
+    def get_item_data(max_number_of_items):
+        # get all item ids from csv
+        all_item_ids = []
+        with open(os.path.join(dirname, "all_item_ids.csv"), "r") as csvfile:
+            data = csv.reader(csvfile, delimiter=",")
+            for row in data:
+                all_item_ids = row
 
+        # for each id in the csv, start scraping for that id's info
+        items = []
+        i = 0
+        for id in all_item_ids:
+            # early exit for now as to avoid scraping 2000+ items
+            if i == max_number_of_items:
+                break
+            i = i + 1
+
+            url = "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/" + id
+            soup = scraper_utils.get_soup(url)
+
+            names = scraper_utils.get_alternate_names(soup, url)
+            item_type = soup.find(
+                "div", attrs={"class": "ak-encyclo-detail-type col-xs-6"}
+            ).text[7:]
+            level = level = soup.find(
+                "div", attrs={"class": "ak-encyclo-detail-level col-xs-6 text-right"},
+            ).text[7:]
+            image = soup.find("img", attrs={"class": "img-maxresponsive"})["src"]
+            set = None
+            try:
+                set = (
+                    soup.find(
+                        "div", attrs={"class": "ak-container ak-panel-stack ak-glue"}
+                    )
+                    .find_all("div", attrs={"class": "ak-panel-title"})[3]
+                    .find("a")
+                )
+                set = set["href"].split("/")[-1].split("-")[0]
+            except:
+                # print("No set found for this item")
+                pass
+
+            all_stats = scraper_utils.get_stats(soup)
+            stats = all_stats[0]
+            custom_stats = all_stats[1]
+            conditions = scraper_utils.get_conditions(soup)
+
+            item = {
+                "dofusID": id,
+                "name": names,
+                "itemType": item_type,
+                "setID": set,
+                "level": int(level),
+                "stats": stats,
+                "customStats": custom_stats,
+                "conditions": conditions,
+                "imageUrl": image,
+            }
+
+            items.append(item)
+            print("Item " + str(i) + " complete")
+
+        with open(os.path.join(dirname, "items.json"), "w") as file:
+            print("Writing item data to file")
+            json.dump(items, file)
+
+    # In case you still want to search up specific items, I've left the old methods
     def get_item_stats(url):
         url_response = requests.get(url)
         soup = BeautifulSoup(url_response.text, "html.parser")
@@ -138,86 +220,61 @@ class ItemScraper:
 
 
 class SetScraper:
-    def get_sets_from_page(url):
-        url_response = requests.get(url)
-        soup = BeautifulSoup(url_response.text, "html.parser")
+    def get_all_set_ids():
+        # get the last number for the paginated list of items
+        url = "https://www.dofus.com/en/mmorpg/encyclopedia/sets?size=96"
+        soup = scraper_utils.get_soup(url)
+        page_data = soup.find("ul", {"class": "ak-pagination"}).find_all("li")
+        final_page_number = int(page_data[-1].find("a")["href"].split("=")[-1])
 
-        set_urls = []
+        # get all set ids from each page and write to csv
+        set_ids = []
+        for i in range(1, final_page_number + 1):
+            url = (
+                "https://www.dofus.com/en/mmorpg/encyclopedia/sets?size=96&page="
+                + str(i)
+            )
+            soup = scraper_utils.get_soup(url)
+            set_table = soup.find("table", {"class": "ak-table"}).tbody.find_all("tr")
+            for set in set_table:
+                id = set.find("a")["href"].split("/")[-1].split("-")[0]
+                set_ids.append(id)
+            print("Finished page " + str(i))
 
-        set_table = soup.find("table", {"class": "ak-table"}).tbody.find_all("tr")
-        for set in set_table:
-            set = "https://www.dofus.com" + set.find("a")["href"]
-            set_urls.append(set)
+        with open(os.path.join(dirname, "all_set_ids.csv"), "w") as file:
+            writer = csv.writer(file)
+            writer.writerow(set_ids)
 
-        return set_urls
+    def get_set_data(max_number_of_items):
+        # get all set ids from csvfile
+        all_set_ids = []
 
-    def get_set_info(url):
-        url_response = requests.get(url)
-        soup = BeautifulSoup(url_response.text, "html.parser")
+        with open(os.path.join(dirname, "all_set_ids.csv"), "r") as csvfile:
+            data = csv.reader(csvfile, delimiter=",")
+            for row in data:
+                all_set_ids = row
 
-        name = soup.find("h1", attrs={"class": "ak-return-link"}).text.strip()
+        # for each id in the csv, start scraping for that id's info
+        sets = []
+        i = 0
+        for id in all_set_ids:
+            if i == max_number_of_items:
+                break
+            i = i + 1
 
-        # extracting items may be extraneous. Review this segment
-        item_names = []
-        items = soup.find("div", attrs={"class": "ak-item-list-preview"}).find_all("a")
-        for item in items:
-            item_name = item["href"].split("-")
-            del item_name[0]
-            for i in range(len(item_name)):
-                item_name[i] = item_name[i].capitalize()
-            item_name = " ".join(item_name)
-            item_names.append(item_name)
+            url = "https://www.dofus.com/en/mmorpg/encyclopedia/sets/" + id
+            soup = scraper_utils.get_soup(url)
 
-        all_bonuses = {}
-        raw_bonuses = soup.find_all("div", attrs={"class": "set-bonus-list"})
-        for i in range(len(raw_bonuses)):
-            stats = []
-            bonuses = raw_bonuses[i].find_all("div", attrs={"class": "ak-title"})
-            for bonus in bonuses:
-                description = bonus.text.strip()
-                type = None
-                value = None
+            names = scraper_utils.get_alternate_names(soup, url)
+            bonuses = scraper_utils.get_bonuses(soup)
 
-                # check and adjust for the description typo that substitutes "HP" for "Initiative"
-                description = description.replace("HP", "Initiative")
+            set = {"id": id, "name": names, "bonuses": bonuses}
+            sets.append(set)
+            print("Set " + str(i) + " complete")
 
-                # check and adjust for values that have ranges and negative values
-                if "to" in description and "-" not in description:
-                    arr = description.split(" ")
-                    max_stat = arr[2].replace("%", "")
-                    del arr[0]
-                    del arr[0]
-                    del arr[0]
-                    type = " ".join(arr)
-                elif "to" in description and "-" in description:
-                    arr = description.split(" ")
-                    max_stat = arr[0].replace("%", "")
-                    del arr[0]
-                    del arr[0]
-                    del arr[0]
-                    type = " ".join(arr)
-                else:
-                    arr = description.split(" ")
-                    max_stat = arr[0].replace("%", "")
-                    del arr[0]
-                    type = " ".join(arr)
-
-                if "%" in description and "Critical" not in description:
-                    type = "% " + type
-
-                stats.append({"stat": type, "value": max_stat})
-
-            item_count = 2 + i
-            all_bonuses[item_count] = stats
-
-        set = {"name": name, "items": item_names, "bonuses": all_bonuses}
-
-        return set
-
-    def write_to_file(set_data):
-        print("writing set data to file")
-        with open("sets.json", "w") as outfile:
-            json.dump(set_data, outfile)
+        print("Writing set data to file")
+        with open(os.path.join(dirname, "sets.json"), "w") as file:
+            json.dump(sets, file)
 
 
 class ClassScraper:
@@ -271,60 +328,11 @@ class ClassScraper:
 
 
 def __main__():
-    items = []
-    item_data = []
+    # ItemScraper.get_all_item_ids()
+    # ItemScraper.get_item_data(10)
 
-    # get all item urls
-    for i in range(1, 2):
-        url = (
-            "https://www.dofus.com/en/mmorpg/encyclopedia/equipment?size=24&page="
-            + str(i)
-        )
-        items = items + ItemScraper.getItemsFromPage(url)
-
-    # get item data from each url
-    for url in items:
-        item = ItemScraper.get_item_stats(url)
-        item_data.append(item)
-
-    write_to_file(item_data)
+    # SetScraper.get_all_set_ids()
+    SetScraper.get_set_data(1000)
 
 
-# ClassScraper.getClassUrls('https://www.dofus.com/en/mmorpg/encyclopedia/classes/6-ecaflip')
-
-
-urls = [
-    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/14085-sinistrofu-cloak",
-    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/14086-sinistrofu-amulet",
-    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/14087-sinistrofu-boots",
-    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/22205-corruption-ring",
-    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/22206-corruption-ring",
-    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/22209-corruption-brambelt",
-    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/19244-amulet-bleeding-heart",
-    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/19245-boots-bleeding-heart",
-    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/19246-cape-bleeding-heart",
-    "https://www.dofus.com/en/mmorpg/encyclopedia/weapons/20353-crocobur",
-    # "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/7754-ochre-dofus",
-    "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/18000-koutoulou-mask",
-]
-
-items = []
-for url in urls:
-    items.append(ItemScraper.get_item_stats(url))
-ItemScraper.write_to_file(items)
-
-items = []
-item_test = "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/15699-belteen"
-items.append(ItemScraper.get_item_stats(item_test))
-ItemScraper.write_to_file(items)
-
-urls = [
-    "https://www.dofus.com/en/mmorpg/encyclopedia/sets/275-sinistrofu-set",
-    "https://www.dofus.com/en/mmorpg/encyclopedia/sets/445-bleeding-heart-set",
-    "https://www.dofus.com/en/mmorpg/encyclopedia/sets/477-corruption-set",
-]
-sets = []
-
-for url in urls:
-    sets.append(SetScraper.get_set_info(url))
-SetScraper.write_to_file(sets)
+__main__()

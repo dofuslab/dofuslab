@@ -28,4 +28,3 @@ class ModelItemType(Base):
         if not type:
             raise ValueError("Could not find type %s" % (name))
         return type.eligible_item_slots
-
