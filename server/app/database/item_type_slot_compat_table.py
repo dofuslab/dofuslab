@@ -20,7 +20,5 @@ item_type_slot_compat_table = Table(
         nullable=False,
         index=True,
     ),
-    UniqueConstraint(
-        "item_slot_id", "item_type_id", name="item_type_slot_compatibility"
-    ),
+    UniqueConstraint("item_slot_id", "item_type_id"),
 )

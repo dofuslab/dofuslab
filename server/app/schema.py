@@ -11,12 +11,20 @@ from app.database.model_equipped_item import ModelEquippedItem
 from app.database.model_custom_set import ModelCustomSet
 from app.database.model_user import ModelUser
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
-from app.database import base
+from app.database.base import Base, session_scope
 from app.database.enums import Stat
 import app.mutation_validation_utils as validation
 import graphene
 from graphql import GraphQLError
 from flask_login import login_required, login_user, current_user, logout_user
+
+
+class GlobalNode(graphene.Interface):
+    id = graphene.UUID(required=True)
+
+    def resolve_id(self, info):
+        return self.uuid
+
 
 StatEnum = graphene.Enum.from_enum(Stat)
 
@@ -24,19 +32,19 @@ StatEnum = graphene.Enum.from_enum(Stat)
 class ItemStats(SQLAlchemyObjectType):
     class Meta:
         model = ModelItemStat
-        interfaces = (graphene.relay.Node,)
+        interfaces = (GlobalNode,)
 
 
 class ItemCondtions(SQLAlchemyObjectType):
     class Meta:
         model = ModelItemCondition
-        interfaces = (graphene.relay.Node,)
+        interfaces = (GlobalNode,)
 
 
 class ItemSlot(SQLAlchemyObjectType):
     class Meta:
         model = ModelItemSlot
-        interfaces = (graphene.relay.Node,)
+        interfaces = (GlobalNode,)
 
 
 class ItemType(SQLAlchemyObjectType):
@@ -44,7 +52,7 @@ class ItemType(SQLAlchemyObjectType):
 
     class Meta:
         model = ModelItemType
-        interfaces = (graphene.relay.Node,)
+        interfaces = (GlobalNode,)
 
 
 class Item(SQLAlchemyObjectType):
@@ -55,43 +63,55 @@ class Item(SQLAlchemyObjectType):
 
     class Meta:
         model = ModelItem
-        interfaces = (graphene.relay.Node,)
+        interfaces = (GlobalNode,)
 
 
 class SetBonus(SQLAlchemyObjectType):
     class Meta:
         model = ModelSetBonus
-        interfaces = (graphene.relay.Node,)
+        interfaces = (GlobalNode,)
 
 
 class Set(SQLAlchemyObjectType):
     class Meta:
         model = ModelSet
-        interfaces = (graphene.relay.Node,)
+        interfaces = (GlobalNode,)
 
 
 class EquippedItemExo(SQLAlchemyObjectType):
     class Meta:
         model = ModelEquippedItemExo
-        interfaces = (graphene.relay.Node,)
+        interfaces = (GlobalNode,)
 
 
 class EquippedItem(SQLAlchemyObjectType):
     class Meta:
         model = ModelEquippedItem
-        interfaces = (graphene.relay.Node,)
+        interfaces = (GlobalNode,)
+        only_fields = ("id", "item", "slot", "exos")
 
 
 class CustomSet(SQLAlchemyObjectType):
+    equipped_items = graphene.NonNull(graphene.List(graphene.NonNull(EquippedItem)))
+
     class Meta:
         model = ModelCustomSet
-        interfaces = (graphene.relay.Node,)
+        interfaces = (GlobalNode,)
 
 
 class CustomSetStats(SQLAlchemyObjectType):
     class Meta:
         model = ModelCustomSetStat
-        interfaces = (graphene.relay.Node,)
+        interfaces = (GlobalNode,)
+
+
+class User(SQLAlchemyObjectType):
+    access_token = graphene.String(required=True)
+
+    class Meta:
+        model = ModelUser
+        interfaces = (GlobalNode,)
+        only_fields = ("id", "username", "email", "custom_sets")
 
 
 class CustomSetStatsInput(graphene.InputObjectType):
@@ -129,78 +149,92 @@ class CreateCustomSet(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet)
 
-    def mutate(self, into, **kwargs):
+    def mutate(self, info, **kwargs):
         custom_set = ModelCustomSet(
             name=kwargs.get("name"),
             description=kwargs.get("description"),
             created_at=kwargs.get("created_at"),
             level=kwargs.get("level"),
         )
+        with session_scope() as session:
+            # Add associated items to the custom set
+            # Modify to take in item objects
+            if kwargs.get("items"):
+                items = kwargs.get("items")
 
-        # Add associated items to the custom set
-        # Modify to take in item objects
-        if kwargs.get("items"):
-            items = kwargs.get("items")
-            for item in items:
-                item_record = (
-                    base.db_session.query(ModelItem)
-                    .filter(ModelItem.name == item)
-                    .first()
-                )
-                custom_set.items.append(item_record)
+                for item in items:
+                    item_record = (
+                        session.query(ModelItem).filter(ModelItem.name == item).first()
+                    )
+                    custom_set.items.append(item_record)
 
-        # Create database entry for the stats then add to the custom set
-        if kwargs.get("stats"):
-            stats = kwargs.get("stats")
-            custom_set_stats = ModelCustomSetStat(
-                scrolled_vitality=stats.scrolled_vitality,
-                scrolled_wisdom=stats.scrolled_wisdom,
-                scrolled_strength=stats.scrolled_strength,
-                scrolled_intelligence=stats.scrolled_intelligence,
-                scrolled_chance=stats.scrolled_chance,
-                scrolled_agility=stats.scrolled_agility,
-                base_vitality=stats.base_vitality,
-                base_wisdom=stats.base_wisdom,
-                base_strength=stats.base_strength,
-                base_intelligence=stats.base_intelligence,
-                base_chance=stats.base_chance,
-                base_agility=stats.base_agility,
-            )
-
-            base.db_session.add(custom_set_stats)
-            custom_set.stats = custom_set_stats
-
-        if kwargs.get("exos"):
-            exos = kwargs.get("exos")
-            for exo in exos:
-                equipped_item_exo = ModelEquippedItemExos(
-                    stat=exo.stat, value=exo.value
+            # Create database entry for the stats then add to the custom set
+            if kwargs.get("stats"):
+                stats = kwargs.get("stats")
+                custom_set_stats = ModelCustomSetStat(
+                    scrolled_vitality=stats.scrolled_vitality,
+                    scrolled_wisdom=stats.scrolled_wisdom,
+                    scrolled_strength=stats.scrolled_strength,
+                    scrolled_intelligence=stats.scrolled_intelligence,
+                    scrolled_chance=stats.scrolled_chance,
+                    scrolled_agility=stats.scrolled_agility,
+                    base_vitality=stats.base_vitality,
+                    base_wisdom=stats.base_wisdom,
+                    base_strength=stats.base_strength,
+                    base_intelligence=stats.base_intelligence,
+                    base_chance=stats.base_chance,
+                    base_agility=stats.base_agility,
                 )
 
-                base.db_session.add(equipped_item_exo)
-                custom_set.exos.append(exo)
+                session.add(custom_set_stats)
+                custom_set.stats = custom_set_stats
 
-        base.db_session.add(custom_set)
+            if kwargs.get("exos"):
+                exos = kwargs.get("exos")
+                for exo in exos:
+                    equipped_item_exo = ModelEquippedItemExos(
+                        stat=exo.stat, value=exo.value
+                    )
 
-        current_user = (
-            base.db_session.query(ModelUser)
-            .filter(ModelUser.username == kwargs.get("owner_username"))
-            .first()
-        )
-        current_user.custom_sets.append(custom_set)
+                    session.add(equipped_item_exo)
+                    custom_set.exos.append(exo)
 
-        base.db_session.commit()
+            session.add(custom_set)
+
+            # current_user = (
+            #     db_session.query(ModelUser)
+            #     .filter(ModelUser.username == kwargs.get("owner_username"))
+            #     .first()
+            # )
+            # current_user.custom_sets.append(custom_set)
 
         return CreateCustomSet(custom_set=custom_set)
 
 
-class User(SQLAlchemyObjectType):
-    access_token = graphene.String(required=True)
+class UpdateCustomSetItem(graphene.Mutation):
+    class Arguments:
+        # if null, create new set
+        custom_set_id = graphene.UUID()
+        item_slot_id = graphene.UUID(required=True)
+        item_id = graphene.UUID()
 
-    class Meta:
-        model = ModelUser
-        interfaces = (graphene.relay.Node,)
-        only_fields = ("uuid", "id", "username", "email", "custom_sets")
+    custom_set = graphene.Field(CustomSet, required=True)
+
+    def mutate(self, info, **kwargs):
+        custom_set_id = kwargs.get("custom_set_id")
+        item_slot_id = kwargs.get("item_slot_id")
+        item_id = kwargs.get("item_id")
+        with session_scope() as session:
+            if custom_set_id:
+                custom_set = ModelCustomSet.query.get(custom_set_id)
+                if custom_set.owner_id != current_user.get_id():
+                    raise GraphQLError("You don't have permission to edit that set.")
+            else:
+                custom_set = ModelCustomSet(owner_id=current_user.get_id())
+                session.add(custom_set)
+            custom_set.equip_item(session, item_id, item_slot_id)
+
+        return UpdateCustomSetItem(custom_set=custom_set)
 
 
 class RegisterUser(graphene.Mutation):
@@ -228,7 +262,6 @@ class RegisterUser(graphene.Mutation):
             user.save_to_db()
             login_user(user)
         except Exception as e:
-            print(e)
             raise GraphQLError("An error occurred while registering.")
 
         return RegisterUser(user=user, ok=True)
@@ -314,12 +347,19 @@ class Query(graphene.ObjectType):
         query = CustomSet.get_query(info)
         return query.filter(uuid == uuid).first()
 
+    item_slots = graphene.List(ItemSlot)
+
+    def resolve_item_slots(self, info):
+        query = ItemSlot.get_query(info)
+        return query.all()
+
 
 class Mutation(graphene.ObjectType):
     register_user = RegisterUser.Field()
     create_custom_set = CreateCustomSet.Field()
     login_user = LoginUser.Field()
     logout_user = LogoutUser.Field()
+    update_custom_set_item = UpdateCustomSetItem.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

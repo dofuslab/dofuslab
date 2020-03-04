@@ -1,5 +1,5 @@
 import sqlalchemy
-from .base import Base, db_session
+from .base import Base, session_scope
 from app import bcrypt, login_manager
 from sqlalchemy import Column, ForeignKey, Integer, String, LargeBinary, func
 from sqlalchemy.orm import relationship
@@ -22,8 +22,9 @@ class ModelUser(UserMixin, Base):
     custom_sets = relationship("ModelCustomSet", backref="user")
 
     def save_to_db(self):
-        db_session.add(self)
-        db_session.commit()
+        with session_scope() as session:
+            session.add(self)
+            session.commit()
 
     def check_password(self, candidate):
         return bcrypt.check_password_hash(self.password, candidate)

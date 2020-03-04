@@ -22,3 +22,10 @@ class ModelItemType(Base):
     )
     items = relationship("ModelItem", back_populates="item_type")
 
+    @classmethod
+    def get_slots_by_name(cls, name):
+        type = ModelItemType.query.filter_by(name=name).one_or_none()
+        if not type:
+            raise ValueError("Could not find type %s" % (name))
+        return type.eligible_item_slots
+

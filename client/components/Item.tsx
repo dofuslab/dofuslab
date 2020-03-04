@@ -20,12 +20,12 @@ function displayStats(t: TFunction, statLine: items_items_stats) {
   return `${statLine.maxValue} ${statName}`;
 }
 
-const Item: React.FC<IItem> = props => {
+const Item: React.FC<IItem> = ({ item }) => {
   const { t } = useTranslation('stat');
   return (
     <Card
       size="small"
-      title={props.item.name}
+      title={item.name}
       css={{
         width: '100%',
         fontSize: '0.75rem',
@@ -33,8 +33,8 @@ const Item: React.FC<IItem> = props => {
         border: `1px solid ${BORDER_COLOR}`,
       }}
     >
-      <ul css={{ paddingLeft: 15, marginBottom: 0 }}>
-        {props.item.stats.map((statLine, idx) => {
+      <ul css={{ paddingLeft: 16, marginBottom: 0 }}>
+        {item.stats.map((statLine, idx) => {
           return <li key={`stat-${idx}`}>{displayStats(t, statLine)}</li>;
         })}
       </ul>
