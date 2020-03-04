@@ -20,7 +20,7 @@ from flask_login import login_required, login_user, current_user, logout_user
 
 
 class GlobalNode(graphene.Interface):
-    id = graphene.ID(required=True)
+    id = graphene.UUID(required=True)
 
     def resolve_id(self, info):
         return self.uuid
@@ -215,11 +215,9 @@ class CreateCustomSet(graphene.Mutation):
 class UpdateCustomSetItem(graphene.Mutation):
     class Arguments:
         # if null, create new set
-        custom_set_id = graphene.ID()
-        # if null, place in first empty compatible slot or replace first
-        # compatible item
-        item_slot_id = graphene.ID()
-        item_id = graphene.ID(required=True)
+        custom_set_id = graphene.UUID()
+        item_slot_id = graphene.UUID(required=True)
+        item_id = graphene.UUID()
 
     custom_set = graphene.Field(CustomSet, required=True)
 
@@ -265,7 +263,6 @@ class RegisterUser(graphene.Mutation):
             user.save_to_db()
             login_user(user)
         except Exception as e:
-            print(e)
             raise GraphQLError("An error occurred while registering.")
 
         return RegisterUser(user=user, ok=True)
