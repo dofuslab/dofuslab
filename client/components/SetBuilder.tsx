@@ -20,6 +20,7 @@ import {
   customSet_customSetById_equippedItems_item,
 } from 'graphql/queries/__generated__/customSet';
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
+import SetMetadata from './SetMetadata';
 
 const EquipmentSlots = styled.div({
   display: 'flex',
@@ -58,6 +59,7 @@ const SetBuilder: React.FC = () => {
   return (
     <Layout>
       <EquipmentSlots>
+        <SetMetadata customSet={customSetData?.customSetById || undefined} />
         {data?.itemSlots.map(slot => (
           <EquippedItem
             slotName={slot.name}

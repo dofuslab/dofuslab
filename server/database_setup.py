@@ -1,3 +1,4 @@
+from app import db
 from app.database.model_item import ModelItem
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_slot import ModelItemSlot
@@ -83,7 +84,7 @@ if __name__ == "__main__":
         data = json.load(file)
         for record in data:
             item_type = ModelItemType(name=record["en-US"])
-            base.db_session.add(item_type)
+            db.session.add(item_type)
             item_types[record["en-US"]] = item_type
 
     print("Adding item slots to database")
@@ -97,16 +98,16 @@ if __name__ == "__main__":
                         item_types[item_type_name] for item_type_name in record["types"]
                     ],
                 )
-                base.db_session.add(item_slot)
+                db.session.add(item_slot)
 
-    base.db_session.commit()
+    db.session.commit()
 
     print("Adding sets to database")
     with open(os.path.join(dirname, "app/database/data/sets.json"), "r") as file:
         data = json.load(file)
         for record in data:
             set_obj = ModelSet(name=record["name"])
-            base.db_session.add(set_obj)
+            db.session.add(set_obj)
             for num_items in record["bonuses"]:
                 bonuses = record["bonuses"][num_items]
                 for bonus in bonuses:
@@ -117,7 +118,7 @@ if __name__ == "__main__":
                         value=int(bonus["value"]),
                     )
 
-        base.db_session.commit()
+        db.session.commit()
 
     print("Adding items to database")
     with open(os.path.join(dirname, "app/database/data/items.json"), "r") as file:
@@ -138,7 +139,7 @@ if __name__ == "__main__":
                         min_value=stat["minStat"],
                         max_value=stat["maxStat"],
                     )
-                    base.db_session.add(item_stat)
+                    db.session.add(item_stat)
                     item.stats.append(item_stat)
 
                 for condition in record["conditions"]:
@@ -147,25 +148,23 @@ if __name__ == "__main__":
                         is_greater_than=condition.get("condition") == ">",
                         limit=condition.get("limit", None),
                     )
-                    base.db_session.add(item_condition)
+                    db.session.add(item_condition)
                     item.conditions.append(item_condition)
 
-                base.db_session.add(item)
+                db.session.add(item)
 
                 # If this item belongs in a set, query the set and add the relationship to the record
                 if record["set"]:
                     set = record["set"]
                     set_record = (
-                        base.db_session.query(ModelSet)
-                        .filter(ModelSet.name == set)
-                        .first()
+                        db.session.query(ModelSet).filter(ModelSet.name == set).first()
                     )
                     set_record.items.append(item)
-                    base.db_session.merge(set_record)
+                    db.session.merge(set_record)
             except KeyError as err:
                 print("KeyError occurred:", err)
 
-        base.db_session.commit()
+        db.session.commit()
 
     # print('Inserting user data in database')
     # with open('database/data/users.json', 'r') as file:

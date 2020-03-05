@@ -230,6 +230,7 @@ class UpdateCustomSetItem(graphene.Mutation):
         item_id = kwargs.get("item_id")
         if custom_set_id:
             custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
+            print(current_user.get_id())
             if custom_set.owner_id != current_user.get_id():
                 raise GraphQLError("You don't have permission to edit that set.")
         else:
