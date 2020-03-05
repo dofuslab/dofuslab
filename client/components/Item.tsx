@@ -32,9 +32,12 @@ const Item: React.FC<IItem> = ({ item }) => {
     },
   });
 
-  const onClick = React.useCallback(() => {
-    updateCustomSetItem();
-  }, [updateCustomSetItem]);
+  const onClick = React.useCallback(async () => {
+    const { data } = await updateCustomSetItem();
+    if (data?.updateCustomSetItem?.customSet.id !== setId) {
+      router.replace(`/set/${data?.updateCustomSetItem?.customSet.id}`);
+    }
+  }, [updateCustomSetItem, setId]);
   return (
     <Card
       hoverable
