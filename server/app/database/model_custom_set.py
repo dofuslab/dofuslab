@@ -1,4 +1,5 @@
 import sqlalchemy
+from app import db
 from .base import Base
 from .model_item import ModelItem
 from .model_equipped_item import ModelEquippedItem
@@ -29,11 +30,11 @@ class ModelCustomSet(Base):
     )
     stats = relationship("ModelCustomSetStat", cascade="all, delete-orphan")
 
-    def find_empty_item_slot(self, session, item_type):
+    def find_empty_item_slot(self, item_type):
         eligible_item_slots = item_type.eligible_item_slots
         for item_slot in eligible_item_slots:
             equipped_item = (
-                session.query(ModelEquippedItem)
+                db.session.query(ModelEquippedItem)
                 .filter_by(custom_set_id=self.uuid, item_slot_id=item_slot.uuid)
                 .one_or_none()
             )
@@ -41,19 +42,19 @@ class ModelCustomSet(Base):
                 return item_slot
         return None
 
-    def equip_item(self, session, item_id, item_slot_id):
-        item = session.query(ModelItem).get(item_id)
+    def equip_item(self, item_id, item_slot_id):
+        item = db.session.query(ModelItem).get(item_id)
         if item_slot_id:
-            item_slot = session.query(ModelItemSlot).get(item_slot_id)
+            item_slot = db.session.query(ModelItemSlot).get(item_slot_id)
         else:
-            item_slot = self.find_empty_item_slot(session, item.item_type)
+            item_slot = self.find_empty_item_slot(item.item_type)
             if not item_slot and len(item.item_type.eligible_item_slots) > 1:
                 raise ValueError("There is no available item slot.")
             item_slot = item.item_type.eligible_item_slots[0]
         if item and item.item_type not in item_slot.item_types:
             raise ValueError("The item and item slot are incompatible.")
         equipped_item = (
-            session.query(ModelEquippedItem)
+            db.session.query(ModelEquippedItem)
             .filter_by(custom_set_id=self.uuid, item_slot_id=item_slot.uuid)
             .one_or_none()
         )
@@ -61,11 +62,11 @@ class ModelCustomSet(Base):
             equipped_item.item_id = item_id
         elif equipped_item:
             # if item_id is None, delete equipped item entry
-            session.delete(equipped_item)
+            db.session.delete(equipped_item)
         elif item_id:
             equipped_item = ModelEquippedItem(
                 item_slot_id=item_slot.uuid, custom_set_id=self.uuid, item_id=item_id,
             )
-            session.add(equipped_item)
+            db.session.add(equipped_item)
         else:
             raise ValueError("The object you are trying to delete does not exist.")

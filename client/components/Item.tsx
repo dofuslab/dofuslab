@@ -48,6 +48,10 @@ const Item: React.FC<IItem> = ({ item }) => {
       }}
       onClick={onClick}
     >
+      <img
+        src={item.imageUrl}
+        css={{ float: 'right', width: 72, height: 72 }}
+      />
       <ItemStatsList item={item} css={{ paddingLeft: 16, marginBottom: 0 }} />
     </Card>
   );

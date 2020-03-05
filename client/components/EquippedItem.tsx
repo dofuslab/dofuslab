@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import React from 'react';
-import { jsx } from '@emotion/core';
+import { jsx, ClassNames } from '@emotion/core';
 import Popover from 'antd/lib/popover';
 
 import { BORDER_COLOR } from 'common/mixins';
@@ -43,13 +43,20 @@ const EquippedItem: React.FC<IEquippedItem> = ({
   );
 
   return item ? (
-    <Popover
-      placement="bottom"
-      title={item.name}
-      content={<ItemStatsList item={item} />}
-    >
-      {itemDisplay}
-    </Popover>
+    <ClassNames>
+      {({ css }) => (
+        <Popover
+          placement="bottom"
+          title={item.name}
+          content={<ItemStatsList item={item} />}
+          overlayClassName={css({
+            ['.ant-popover-title']: { padding: '8px 16px' },
+          })}
+        >
+          {itemDisplay}
+        </Popover>
+      )}
+    </ClassNames>
   ) : (
     itemDisplay
   );

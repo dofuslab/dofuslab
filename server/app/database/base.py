@@ -40,5 +40,5 @@ def session_scope():
         session.close()
 
 
-db_session = scoped_session(sessionmaker(bind=engine, expire_on_commit=False))
-Base.query = db_session.query_property()
+# db_session = scoped_session(sessionmaker(bind=engine, expire_on_commit=False))
+# Base.query = db_session.query_property()
