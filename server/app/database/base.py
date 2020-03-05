@@ -21,24 +21,3 @@ convention = {
 metadata = MetaData(naming_convention=convention)
 Base = declarative_base(metadata=metadata)
 Base.metadata.bind = engine
-
-
-Session = sessionmaker(bind=engine)
-
-
-@contextmanager
-def session_scope():
-    """Provide a transactional scope around a series of operations."""
-    session = Session()
-    try:
-        yield session
-        session.commit()
-    except:
-        session.rollback()
-        raise
-    finally:
-        session.close()
-
-
-# db_session = scoped_session(sessionmaker(bind=engine, expire_on_commit=False))
-# Base.query = db_session.query_property()
