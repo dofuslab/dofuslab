@@ -333,6 +333,3 @@ def __main__():
 
     # SetScraper.get_all_set_ids()
     SetScraper.get_set_data(1000)
-
-
-__main__()
