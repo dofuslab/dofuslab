@@ -7,9 +7,9 @@ import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import {
   login as ILogin,
   loginVariables as ILoginVariables,
-} from '../graphql/mutations/__generated__/login';
-import loginMutation from '../graphql/mutations/login.graphql';
-import currentUserQuery from '../graphql/queries/currentUser.graphql';
+} from 'graphql/mutations/__generated__/login';
+import loginMutation from 'graphql/mutations/login.graphql';
+import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 
 interface IProps {

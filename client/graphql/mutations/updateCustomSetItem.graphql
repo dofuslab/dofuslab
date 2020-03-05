@@ -1,0 +1,17 @@
+#import "graphql/fragments/customSet.graphql"
+
+mutation updateCustomSetItem(
+  $itemSlotId: UUID
+  $customSetId: UUID
+  $itemId: UUID
+) {
+  updateCustomSetItem(
+    itemSlotId: $itemSlotId
+    customSetId: $customSetId
+    itemId: $itemId
+  ) {
+    customSet {
+      ...customSet
+    }
+  }
+}

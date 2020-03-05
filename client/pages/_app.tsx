@@ -1,6 +1,6 @@
 import App from 'next/app';
 import { ApolloProvider } from '@apollo/react-hooks';
-import withApollo from '../common/apollo';
+import withApollo from 'common/apollo';
 import { ApolloClient, NormalizedCacheObject } from 'apollo-boost';
 import { appWithTranslation } from '../i18n';
 

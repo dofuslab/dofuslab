@@ -1,5 +1,6 @@
 import sqlalchemy
-from .base import Base, session_scope
+from app import db
+from .base import Base
 from app import bcrypt, login_manager
 from sqlalchemy import Column, ForeignKey, Integer, String, LargeBinary, func
 from sqlalchemy.orm import relationship
@@ -22,9 +23,8 @@ class ModelUser(UserMixin, Base):
     custom_sets = relationship("ModelCustomSet", backref="user")
 
     def save_to_db(self):
-        with session_scope() as session:
-            session.add(self)
-            session.commit()
+        db.session.add(self)
+        db.session.commit()
 
     def check_password(self, candidate):
         return bcrypt.check_password_hash(self.password, candidate)
@@ -39,17 +39,23 @@ class ModelUser(UserMixin, Base):
 
     @classmethod
     def find_by_id(cls, user_id):
-        return cls.query.filter_by(uuid=user_id).first()
+        return db.session.query(cls).filter_by(uuid=user_id).first()
 
     @classmethod
     def find_by_email(cls, email):
-        return cls.query.filter(func.upper(cls.email) == func.upper(email)).first()
+        return (
+            db.session.query(cls)
+            .filter(func.upper(cls.email) == func.upper(email))
+            .first()
+        )
 
     @classmethod
     def find_by_username(cls, username):
-        return cls.query.filter(
-            func.upper(cls.username) == func.upper(username)
-        ).first()
+        return (
+            db.session.query(cls)
+            .filter(func.upper(cls.username) == func.upper(username))
+            .first()
+        )
 
 
 @login_manager.user_loader

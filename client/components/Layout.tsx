@@ -9,9 +9,9 @@ import LoginModal from './LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
-import currentUserQuery from '../graphql/queries/currentUser.graphql';
-import logoutMutation from '../graphql/mutations/logout.graphql';
-import { BORDER_COLOR } from '../common/mixins';
+import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import logoutMutation from 'graphql/mutations/logout.graphql';
+import { BORDER_COLOR } from 'common/mixins';
 
 import 'antd/dist/antd.css';
 
@@ -62,7 +62,7 @@ const Layout = (props: LayoutProps) => {
           padding: '0 20px',
         }}
       >
-        <div>Dofus Sets</div>
+        <div css={{ fontWeight: 500 }}>Dofus Sets</div>
         <div>
           {data?.currentUser ? (
             <div>
@@ -81,7 +81,9 @@ const Layout = (props: LayoutProps) => {
         </div>
       </AntdLayout.Header>
 
-      <AntdLayout.Content css={{ margin: '20px 0', display: 'flex' }}>
+      <AntdLayout.Content
+        css={{ marginTop: 12, display: 'flex', flexDirection: 'column' }}
+      >
         {props.children}
       </AntdLayout.Content>
       <LoginModal visible={showLoginModal} onClose={closeLoginModal} />

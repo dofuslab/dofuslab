@@ -1,3 +1,4 @@
+from app import db
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_condition import ModelItemCondition
 from app.database.model_item_type import ModelItemType
@@ -11,10 +12,11 @@ from app.database.model_equipped_item import ModelEquippedItem
 from app.database.model_custom_set import ModelCustomSet
 from app.database.model_user import ModelUser
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
-from app.database.base import Base, session_scope
+from app.database.base import Base
 from app.database.enums import Stat
 import app.mutation_validation_utils as validation
 import graphene
+import uuid
 from graphql import GraphQLError
 from flask_login import login_required, login_user, current_user, logout_user
 
@@ -35,7 +37,7 @@ class ItemStats(SQLAlchemyObjectType):
         interfaces = (GlobalNode,)
 
 
-class ItemCondtions(SQLAlchemyObjectType):
+class ItemConditions(SQLAlchemyObjectType):
     class Meta:
         model = ModelItemCondition
         interfaces = (GlobalNode,)
@@ -48,7 +50,9 @@ class ItemSlot(SQLAlchemyObjectType):
 
 
 class ItemType(SQLAlchemyObjectType):
-    eligible_item_slots = graphene.List(ItemSlot)  # Use list instead of connection
+    eligible_item_slots = graphene.NonNull(
+        graphene.List(graphene.NonNull(ItemSlot))
+    )  # Use list instead of connection
 
     class Meta:
         model = ModelItemType
@@ -59,7 +63,8 @@ class Item(SQLAlchemyObjectType):
     stats = graphene.NonNull(
         graphene.List(graphene.NonNull(ItemStats))  # Use list instead of connection
     )
-    conditions = graphene.NonNull(graphene.List(graphene.NonNull(ItemCondtions)))
+    conditions = graphene.NonNull(graphene.List(graphene.NonNull(ItemConditions)))
+    item_type = graphene.NonNull(ItemType)
 
     class Meta:
         model = ModelItem
@@ -91,17 +96,18 @@ class EquippedItem(SQLAlchemyObjectType):
         only_fields = ("id", "item", "slot", "exos")
 
 
-class CustomSet(SQLAlchemyObjectType):
-    equipped_items = graphene.NonNull(graphene.List(graphene.NonNull(EquippedItem)))
-
-    class Meta:
-        model = ModelCustomSet
-        interfaces = (GlobalNode,)
-
-
 class CustomSetStats(SQLAlchemyObjectType):
     class Meta:
         model = ModelCustomSetStat
+        interfaces = (GlobalNode,)
+
+
+class CustomSet(SQLAlchemyObjectType):
+    equipped_items = graphene.NonNull(graphene.List(graphene.NonNull(EquippedItem)))
+    stats = graphene.NonNull(CustomSetStats)
+
+    class Meta:
+        model = ModelCustomSet
         interfaces = (GlobalNode,)
 
 
@@ -156,17 +162,16 @@ class CreateCustomSet(graphene.Mutation):
             created_at=kwargs.get("created_at"),
             level=kwargs.get("level"),
         )
-        with session_scope() as session:
-            # Add associated items to the custom set
-            # Modify to take in item objects
-            if kwargs.get("items"):
-                items = kwargs.get("items")
+        # Add associated items to the custom set
+        # Modify to take in item objects
+        if kwargs.get("items"):
+            items = kwargs.get("items")
 
-                for item in items:
-                    item_record = (
-                        session.query(ModelItem).filter(ModelItem.name == item).first()
-                    )
-                    custom_set.items.append(item_record)
+            for item in items:
+                item_record = (
+                    db.session.query(ModelItem).filter(ModelItem.name == item).first()
+                )
+                custom_set.items.append(item_record)
 
             # Create database entry for the stats then add to the custom set
             if kwargs.get("stats"):
@@ -186,7 +191,7 @@ class CreateCustomSet(graphene.Mutation):
                     base_agility=stats.base_agility,
                 )
 
-                session.add(custom_set_stats)
+                db.session.add(custom_set_stats)
                 custom_set.stats = custom_set_stats
 
             if kwargs.get("exos"):
@@ -196,10 +201,10 @@ class CreateCustomSet(graphene.Mutation):
                         stat=exo.stat, value=exo.value
                     )
 
-                    session.add(equipped_item_exo)
+                    db.session.add(equipped_item_exo)
                     custom_set.exos.append(exo)
 
-            session.add(custom_set)
+            db.session.add(custom_set)
 
             # current_user = (
             #     db_session.query(ModelUser)
@@ -215,7 +220,7 @@ class UpdateCustomSetItem(graphene.Mutation):
     class Arguments:
         # if null, create new set
         custom_set_id = graphene.UUID()
-        item_slot_id = graphene.UUID(required=True)
+        item_slot_id = graphene.UUID()
         item_id = graphene.UUID()
 
     custom_set = graphene.Field(CustomSet, required=True)
@@ -224,15 +229,18 @@ class UpdateCustomSetItem(graphene.Mutation):
         custom_set_id = kwargs.get("custom_set_id")
         item_slot_id = kwargs.get("item_slot_id")
         item_id = kwargs.get("item_id")
-        with session_scope() as session:
-            if custom_set_id:
-                custom_set = ModelCustomSet.query.get(custom_set_id)
-                if custom_set.owner_id != current_user.get_id():
-                    raise GraphQLError("You don't have permission to edit that set.")
-            else:
-                custom_set = ModelCustomSet(owner_id=current_user.get_id())
-                session.add(custom_set)
-            custom_set.equip_item(session, item_id, item_slot_id)
+        if custom_set_id:
+            custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
+            if custom_set.owner_id != current_user.get_id():
+                raise GraphQLError("You don't have permission to edit that set.")
+        else:
+            custom_set = ModelCustomSet(owner_id=current_user.get_id())
+            db.session.add(custom_set)
+            db.session.flush()
+            custom_set_stat = ModelCustomSetStat(custom_set_id=custom_set.uuid)
+            db.session.add(custom_set_stat)
+        custom_set.equip_item(item_id, item_slot_id)
+        db.session.commit()
 
         return UpdateCustomSetItem(custom_set=custom_set)
 
@@ -312,46 +320,39 @@ class Query(graphene.ObjectType):
     items = graphene.NonNull(graphene.List(graphene.NonNull(Item)))
 
     def resolve_items(self, info):
-        query = Item.get_query(info)
-        return query.all()
+        return db.session.query(ModelItem).all()
 
     custom_sets = graphene.List(CustomSet)
 
     def resolve_custom_sets(self, info):
-        query = CustomSet.get_query(info)
-        return query.all()
+        return db.session.query(ModelCustomSet).all()
 
     # Retrieve record by uuid
-    user_by_uuid = graphene.Field(User, uuid=graphene.String(required=True))
+    user_by_id = graphene.Field(User, id=graphene.UUID(required=True))
 
-    def resolve_user_by_uuid(self, info, uuid):
-        query = User.get_query(info)
-        return query.filter(uuid == uuid).first()
+    def resolve_user_by_id(self, info, id):
+        return db.session.query(ModelUser).get(id)
 
     # also query for set and return it
-    item_by_uuid = graphene.Field(Item, uuid=graphene.String(required=True))
+    item_by_id = graphene.Field(Item, id=graphene.UUID(required=True))
 
-    def resolve_item_by_uuid(self, info, uuid):
-        query = Item.get_query(info)
-        return query.filter(uuid == uuid).first()
+    def resolve_item_by_id(self, info, id):
+        return db.session.query(ModelItem).get(id)
 
-    set_by_uuid = graphene.Field(Set, uuid=graphene.String(required=True))
+    set_by_id = graphene.Field(Set, id=graphene.UUID(required=True))
 
-    def resolve_set_by_uuid(self, info, uuid):
-        query = Set.get_query(info)
-        return query.filter(uuid == uuid).first()
+    def resolve_set_by_id(self, info, id):
+        return db.session.query(ModelSet).get(id)
 
-    custom_set_by_uuid = graphene.Field(CustomSet, uuid=graphene.String(required=True))
+    custom_set_by_id = graphene.Field(CustomSet, id=graphene.UUID(required=True))
 
-    def resolve_custom_set_by_uuid(self, info, uuid):
-        query = CustomSet.get_query(info)
-        return query.filter(uuid == uuid).first()
+    def resolve_custom_set_by_id(self, info, id):
+        return db.session.query(ModelCustomSet).get(id)
 
-    item_slots = graphene.List(ItemSlot)
+    item_slots = graphene.NonNull(graphene.List(graphene.NonNull(ItemSlot)))
 
     def resolve_item_slots(self, info):
-        query = ItemSlot.get_query(info)
-        return query.all()
+        return db.session.query(ModelItemSlot).all()
 
 
 class Mutation(graphene.ObjectType):

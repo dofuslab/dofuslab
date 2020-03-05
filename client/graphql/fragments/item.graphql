@@ -1,0 +1,20 @@
+fragment item on Item {
+  id
+  name
+  imageUrl
+  stats {
+    maxValue
+    stat
+  }
+  conditions {
+    stat
+    isGreaterThan
+    limit
+  }
+  itemType {
+    id
+    eligibleItemSlots {
+      id
+    }
+  }
+}
