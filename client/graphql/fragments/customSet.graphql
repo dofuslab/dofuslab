@@ -3,6 +3,7 @@
 fragment customSet on CustomSet {
   id
   name
+  level
   equippedItems {
     id
     slot {

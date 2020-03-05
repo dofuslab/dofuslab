@@ -58,6 +58,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet {
   __typename: "CustomSet";
   id: any;
   name: string | null;
+  level: number;
   equippedItems: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems[];
 }
 

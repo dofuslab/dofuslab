@@ -4,7 +4,8 @@ from .base import Base
 from .model_item import ModelItem
 from .model_equipped_item import ModelEquippedItem
 from .model_item_slot import ModelItemSlot
-from sqlalchemy import Column, ForeignKey, Integer, String, DateTime
+from .model_custom_set_stat import ModelCustomSetStat
+from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, text
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.postgresql import UUID
 from datetime import datetime
@@ -24,11 +25,16 @@ class ModelCustomSet(Base):
     owner_id = Column(UUID(as_uuid=True), ForeignKey("user.uuid"), index=True)
     created_at = Column("creation_date", DateTime, default=datetime.now)
     last_modified = Column("last_modified", DateTime, default=datetime.now, index=True)
-    level = Column("level", Integer)
+    level = Column("level", Integer, server_default=text("200"), nullable=False)
     equipped_items = relationship(
         "ModelEquippedItem", backref="custom_set", lazy="dynamic"
     )
-    stats = relationship("ModelCustomSetStat", cascade="all, delete-orphan")
+    stats = relationship(
+        "ModelCustomSetStat",
+        uselist=False,
+        cascade="all, delete-orphan",
+        backref="custom_set",
+    )
 
     def find_empty_item_slot(self, item_type):
         eligible_item_slots = item_type.eligible_item_slots

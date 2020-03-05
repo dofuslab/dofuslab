@@ -96,17 +96,18 @@ class EquippedItem(SQLAlchemyObjectType):
         only_fields = ("id", "item", "slot", "exos")
 
 
-class CustomSet(SQLAlchemyObjectType):
-    equipped_items = graphene.NonNull(graphene.List(graphene.NonNull(EquippedItem)))
-
-    class Meta:
-        model = ModelCustomSet
-        interfaces = (GlobalNode,)
-
-
 class CustomSetStats(SQLAlchemyObjectType):
     class Meta:
         model = ModelCustomSetStat
+        interfaces = (GlobalNode,)
+
+
+class CustomSet(SQLAlchemyObjectType):
+    equipped_items = graphene.NonNull(graphene.List(graphene.NonNull(EquippedItem)))
+    stats = graphene.NonNull(CustomSetStats)
+
+    class Meta:
+        model = ModelCustomSet
         interfaces = (GlobalNode,)
 
 
@@ -235,6 +236,9 @@ class UpdateCustomSetItem(graphene.Mutation):
         else:
             custom_set = ModelCustomSet(owner_id=current_user.get_id())
             db.session.add(custom_set)
+            db.session.flush()
+            custom_set_stat = ModelCustomSetStat(custom_set_id=custom_set.uuid)
+            db.session.add(custom_set_stat)
         custom_set.equip_item(item_id, item_slot_id)
         db.session.commit()
 

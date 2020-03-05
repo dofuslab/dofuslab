@@ -62,7 +62,7 @@ const Layout = (props: LayoutProps) => {
           padding: '0 20px',
         }}
       >
-        <div>Dofus Sets</div>
+        <div css={{ fontWeight: 500 }}>Dofus Sets</div>
         <div>
           {data?.currentUser ? (
             <div>

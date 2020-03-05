@@ -1,7 +1,11 @@
 #import "graphql/fragments/customSet.graphql"
+#import "graphql/fragments/baseStats.graphql"
 
 query customSet($id: UUID!) {
   customSetById(id: $id) {
     ...customSet
+    stats {
+      ...baseStats
+    }
   }
 }

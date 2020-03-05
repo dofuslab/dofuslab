@@ -16,9 +16,10 @@ import { ItemStatsList } from 'common/wrappers';
 
 interface IItem {
   item: items_items;
+  selectedItemSlotId: string | null;
 }
 
-const Item: React.FC<IItem> = ({ item }) => {
+const Item: React.FC<IItem> = ({ item, selectedItemSlotId }) => {
   const router = useRouter();
   const { setId } = router.query;
 
@@ -29,6 +30,7 @@ const Item: React.FC<IItem> = ({ item }) => {
     variables: {
       customSetId: setId,
       itemId: item.id,
+      itemSlotId: selectedItemSlotId,
     },
   });
 

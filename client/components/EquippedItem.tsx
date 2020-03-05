@@ -7,17 +7,27 @@ import Popover from 'antd/lib/popover';
 import { BORDER_COLOR } from 'common/mixins';
 import { customSet_customSetById_equippedItems_item } from 'graphql/queries/__generated__/customSet';
 import { ItemStatsList } from 'common/wrappers';
+import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 
 interface IEquippedItem {
-  slotName: string;
+  slot: itemSlots_itemSlots;
   item?: customSet_customSetById_equippedItems_item;
+  selectItemSlot: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 const EquippedItem: React.FC<IEquippedItem> = ({
-  slotName,
+  slot,
   item,
+  selectItemSlot,
   ...restProps
 }) => {
+  const onClick = React.useCallback(
+    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+      e.nativeEvent.stopPropagation();
+      selectItemSlot(slot.id);
+    },
+    [selectItemSlot, slot],
+  );
   const itemDisplay = (
     <div
       css={{
@@ -31,13 +41,15 @@ const EquippedItem: React.FC<IEquippedItem> = ({
         alignItems: 'center',
         fontSize: '0.75rem',
         borderRadius: 4,
+        cursor: 'pointer',
       }}
+      onClick={onClick}
       {...restProps}
     >
       {item ? (
-        <img src={item.imageUrl} css={{ width: '100%', height: '100%' }} />
+        <img src={item.imageUrl} css={{ width: 72, height: 72 }} />
       ) : (
-        slotName
+        slot.name
       )}
     </div>
   );

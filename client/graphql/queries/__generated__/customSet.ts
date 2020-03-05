@@ -58,6 +58,7 @@ export interface customSet_customSetById {
   __typename: "CustomSet";
   id: any;
   name: string | null;
+  level: number;
   equippedItems: customSet_customSetById_equippedItems[];
 }
 

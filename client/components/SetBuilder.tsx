@@ -5,6 +5,7 @@ import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
+import Input from 'antd/lib/input';
 
 import { STAT_GROUPS, mq } from 'common/constants';
 import ItemSelector from './ItemSelector';
@@ -20,7 +21,6 @@ import {
   customSet_customSetById_equippedItems_item,
 } from 'graphql/queries/__generated__/customSet';
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
-import SetMetadata from './SetMetadata';
 
 const EquipmentSlots = styled.div({
   display: 'flex',
@@ -31,18 +31,18 @@ const EquipmentSlots = styled.div({
 const OptionalSecondPane = styled.div({
   display: 'none',
   marginTop: 12,
-  marginLeft: 20,
+  padding: '0 20px',
   [mq[1]]: {
     display: 'block',
     flex: 1,
   },
   overflow: 'auto',
-  paddingRight: 20,
 });
 
 const SetBuilder: React.FC = () => {
   const router = useRouter();
   const { setId } = router.query;
+
   const { data } = useQuery<itemSlots>(ItemSlotsQuery);
   const { data: customSetData } = useQuery<customSet, customSetVariables>(
     CustomSetQuery,
@@ -56,15 +56,61 @@ const SetBuilder: React.FC = () => {
       {},
     ) ?? {};
 
+  const [selectedItemSlotId, selectItemSlot] = React.useState<string | null>(
+    null,
+  );
+
+  React.useEffect(() => {
+    const onClickBody = () => {
+      selectItemSlot(null);
+    };
+    window.addEventListener('click', onClickBody);
+    return () => {
+      window.removeEventListener('click', onClickBody);
+    };
+  }, []);
+
+  const [isEditing, setIsEditing] = React.useState(false);
+
   return (
     <Layout>
+      <div
+        css={{
+          margin: '8px 20px',
+          display: 'flex',
+          alignItems: 'baseline',
+          flex: '0 0 40px',
+        }}
+      >
+        {isEditing ? (
+          <Input css={{ fontSize: '1.5rem', fontWeight: 500, width: 240 }} />
+        ) : (
+          <div
+            css={{ fontSize: '1.5rem', fontWeight: 500, maxWidth: 400 }}
+            onClick={() => {
+              setIsEditing(true);
+            }}
+          >
+            {customSetData?.customSetById?.name || 'Untitled'}
+          </div>
+        )}
+
+        <div css={{ marginLeft: 20 }}>
+          Level {customSetData?.customSetById?.level}
+        </div>
+      </div>
       <EquipmentSlots>
-        <SetMetadata customSet={customSetData?.customSetById || undefined} />
         {data?.itemSlots.map(slot => (
           <EquippedItem
-            slotName={slot.name}
+            slot={slot}
             key={slot.id}
             item={itemsBySlotId[slot.id]}
+            css={() =>
+              selectedItemSlotId === slot.id
+                ? { border: '2px solid #aaa', background: '#eee' }
+                : {}
+            }
+            selectItemSlot={selectItemSlot}
           />
         ))}
       </EquipmentSlots>
@@ -87,7 +133,7 @@ const SetBuilder: React.FC = () => {
           </ResponsiveGrid>
         </div>
         <OptionalSecondPane>
-          <ItemSelector />
+          <ItemSelector selectedItemSlotId={selectedItemSlotId} />
         </OptionalSecondPane>
       </div>
     </Layout>
