@@ -2,41 +2,42 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
+import { useTranslation } from 'react-i18next';
 
 import List from 'antd/lib/list';
-import { modifiedStartCase } from 'common/utils';
+import { StatGroup } from 'common/types';
+import { customSet } from 'graphql/fragments/__generated__/customSet';
+import { sumStatsFromCustomSet } from 'common/constants';
 
 interface IStatTable {
-  name?: string;
-  groups: ReadonlyArray<{ [key: string]: string }>;
+  group: StatGroup;
+  customSet?: customSet | null;
 }
 
-interface IStat {
-  stat: string;
-  value?: number;
-}
-
-const StatTable: React.FC<IStatTable> = props => {
-  const stats = props.groups.map(group => Object.values(group)).flat();
+const StatTable: React.FC<IStatTable> = ({ group, customSet }) => {
+  const { t } = useTranslation('stat');
   return (
     <List
       css={{ background: 'white' }}
       itemLayout="horizontal"
       size="small"
       bordered
-      dataSource={stats.map(v => ({
-        stat: modifiedStartCase(v as string),
-      }))}
-      rowKey={(item: IStat) => item.stat}
-      renderItem={(item: IStat) => (
+      dataSource={group}
+      rowKey={item => item.stat}
+      renderItem={item => (
         <List.Item
           css={{
             display: 'flex',
             justifyContent: 'space-between',
           }}
         >
-          <div css={{ fontSize: '0.75rem' }}>{item.stat}</div>
-          <div css={{ fontSize: '0.75rem' }}>{item.value}</div>
+          <div css={{ fontSize: '0.75rem' }}>{t(item.stat)}</div>
+          <div css={{ fontSize: '0.75rem' }}>
+            {customSet &&
+              (item.customCalculateValue
+                ? item.customCalculateValue(customSet)
+                : sumStatsFromCustomSet(customSet, item.stat))}
+          </div>
         </List.Item>
       )}
     />

@@ -54,12 +54,30 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
   item: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item | null;
 }
 
+export interface updateCustomSetItem_updateCustomSetItem_customSet_stats {
+  __typename: "CustomSetStats";
+  id: any;
+  baseVitality: number;
+  baseWisdom: number;
+  baseStrength: number;
+  baseIntelligence: number;
+  baseChance: number;
+  baseAgility: number;
+  scrolledVitality: number;
+  scrolledWisdom: number;
+  scrolledStrength: number;
+  scrolledIntelligence: number;
+  scrolledChance: number;
+  scrolledAgility: number;
+}
+
 export interface updateCustomSetItem_updateCustomSetItem_customSet {
   __typename: "CustomSet";
   id: any;
   name: string | null;
   level: number;
   equippedItems: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems[];
+  stats: updateCustomSetItem_updateCustomSetItem_customSet_stats;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem {

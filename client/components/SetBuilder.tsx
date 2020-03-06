@@ -127,8 +127,12 @@ const SetBuilder: React.FC = () => {
             numColumns={[2, 2, 2, 2, 2, 2]}
             css={{ margin: '12px 0 20px' }}
           >
-            {STAT_GROUPS.map(({ name, groups }) => (
-              <StatTable key={name} name={name} groups={groups} />
+            {STAT_GROUPS.map((group, idx) => (
+              <StatTable
+                key={idx}
+                group={group}
+                customSet={customSetData?.customSetById}
+              />
             ))}
           </ResponsiveGrid>
         </div>

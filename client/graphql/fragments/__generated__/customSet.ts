@@ -54,10 +54,28 @@ export interface customSet_equippedItems {
   item: customSet_equippedItems_item | null;
 }
 
+export interface customSet_stats {
+  __typename: "CustomSetStats";
+  id: any;
+  baseVitality: number;
+  baseWisdom: number;
+  baseStrength: number;
+  baseIntelligence: number;
+  baseChance: number;
+  baseAgility: number;
+  scrolledVitality: number;
+  scrolledWisdom: number;
+  scrolledStrength: number;
+  scrolledIntelligence: number;
+  scrolledChance: number;
+  scrolledAgility: number;
+}
+
 export interface customSet {
   __typename: "CustomSet";
   id: any;
   name: string | null;
   level: number;
   equippedItems: customSet_equippedItems[];
+  stats: customSet_stats;
 }
