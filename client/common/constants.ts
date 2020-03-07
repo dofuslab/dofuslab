@@ -1,177 +1,113 @@
 import { StatGroup } from './types';
 import { Stat } from '__generated__/globalTypes';
-import {
-  customSet,
-  customSet_stats,
-} from 'graphql/fragments/__generated__/customSet';
 
 export const BREAKPOINTS = [600, 900, 1200, 1600, 2000, 2400];
 
 export const mq = BREAKPOINTS.map(bp => `@media (min-width: ${bp}px)`);
 
-export const CUSTOM_STAT = 'custom';
-
-const getBaseStat = (stats: customSet_stats, stat: Stat) => {
-  switch (stat) {
-    case Stat.VITALITY:
-      return stats.baseVitality;
-    case Stat.WISDOM:
-      return stats.baseWisdom;
-    case Stat.STRENGTH:
-      return stats.baseStrength;
-    case Stat.INTELLIGENCE:
-      return stats.baseIntelligence;
-    case Stat.CHANCE:
-      return stats.baseChance;
-    case Stat.AGILITY:
-      return stats.baseAgility;
-    default:
-      throw new Error(`${stat} is not a base stat!`);
-  }
-};
-
-const getScrolledStat = (stats: customSet_stats, stat: Stat) => {
-  switch (stat) {
-    case Stat.VITALITY:
-      return stats.scrolledVitality;
-    case Stat.WISDOM:
-      return stats.scrolledWisdom;
-    case Stat.STRENGTH:
-      return stats.scrolledStrength;
-    case Stat.INTELLIGENCE:
-      return stats.scrolledIntelligence;
-    case Stat.CHANCE:
-      return stats.scrolledChance;
-    case Stat.AGILITY:
-      return stats.scrolledAgility;
-    default:
-      throw new Error(`${stat} is not a base stat!`);
-  }
-};
-
-export const sumStatsFromCustomSet = (customSet: customSet, stat: string) =>
-  customSet.equippedItems.reduce((acc, curr) => {
-    const statValue = (curr.item?.stats ?? []).find(
-      statLine => statLine.stat === stat,
-    );
-    return acc + (statValue?.maxValue ?? 0);
-  }, 0);
-
-const statCalcGenerator = (stat: Stat) => (customSet: customSet) =>
-  getBaseStat(customSet.stats, stat) +
-  getScrolledStat(customSet.stats, stat) +
-  sumStatsFromCustomSet(customSet, stat);
-
 export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
   [
     {
       stat: 'HP',
-      customCalculateValue: (customSet: customSet) =>
-        50 + customSet.level * 5 + statCalcGenerator(Stat.VITALITY)(customSet),
+      customCalculateValue: (statsFromCustomSet, customSet) =>
+        50 + customSet.level * 5 + statsFromCustomSet[Stat.VITALITY],
     },
     {
       stat: Stat.AP,
-      customCalculateValue: (customSet: customSet) =>
-        (customSet.level >= 100 ? 7 : 6) +
-        sumStatsFromCustomSet(customSet, Stat.AP),
+      customCalculateValue: (statsFromCustomSet, customSet) =>
+        (customSet.level >= 100 ? 7 : 6) + statsFromCustomSet[Stat.AP],
     },
     {
       stat: Stat.MP,
-      customCalculateValue: (customSet: customSet) =>
-        3 + sumStatsFromCustomSet(customSet, Stat.MP),
+      customCalculateValue: statsFromCustomSet =>
+        3 + statsFromCustomSet[Stat.MP],
     },
     {
       stat: Stat.RANGE,
     },
     {
       stat: Stat.INITIATIVE,
-      customCalculateValue: (customSet: customSet) =>
-        statCalcGenerator(Stat.STRENGTH)(customSet) +
-        statCalcGenerator(Stat.INTELLIGENCE)(customSet) +
-        statCalcGenerator(Stat.CHANCE)(customSet) +
-        statCalcGenerator(Stat.AGILITY)(customSet) +
-        sumStatsFromCustomSet(customSet, Stat.INITIATIVE),
+      customCalculateValue: statsFromCustomSet =>
+        statsFromCustomSet[Stat.STRENGTH] +
+        statsFromCustomSet[Stat.INTELLIGENCE] +
+        statsFromCustomSet[Stat.CHANCE] +
+        statsFromCustomSet[Stat.AGILITY] +
+        statsFromCustomSet[Stat.INITIATIVE],
     },
     {
       stat: Stat.CRITICAL,
     },
     {
       stat: Stat.SUMMON,
-      customCalculateValue: (customSet: customSet) =>
-        1 + sumStatsFromCustomSet(customSet, Stat.SUMMON),
+      customCalculateValue: statsFromCustomSet =>
+        1 + statsFromCustomSet[Stat.SUMMON],
     },
     {
       stat: Stat.HEALS,
     },
     {
       stat: Stat.PROSPECTING,
-      customCalculateValue: (customSet: customSet) =>
+      customCalculateValue: statsFromCustomSet =>
         100 +
-        Math.floor(statCalcGenerator(Stat.CHANCE)(customSet) / 10) +
-        sumStatsFromCustomSet(customSet, Stat.PROSPECTING),
+        Math.floor(statsFromCustomSet[Stat.CHANCE] / 10) +
+        statsFromCustomSet[Stat.PROSPECTING],
     },
     {
       stat: Stat.VITALITY,
-      customCalculateValue: statCalcGenerator(Stat.VITALITY),
     },
     {
       stat: Stat.WISDOM,
-      customCalculateValue: statCalcGenerator(Stat.WISDOM),
     },
     {
       stat: Stat.STRENGTH,
-      customCalculateValue: statCalcGenerator(Stat.STRENGTH),
     },
     {
       stat: Stat.INTELLIGENCE,
-      customCalculateValue: statCalcGenerator(Stat.INTELLIGENCE),
     },
     {
       stat: Stat.CHANCE,
-      customCalculateValue: statCalcGenerator(Stat.CHANCE),
     },
     {
       stat: Stat.AGILITY,
-      customCalculateValue: statCalcGenerator(Stat.AGILITY),
     },
     {
       stat: Stat.POWER,
     },
     {
       stat: Stat.DODGE,
-      customCalculateValue: customSet =>
-        Math.floor(statCalcGenerator(Stat.AGILITY)(customSet) / 10) +
-        sumStatsFromCustomSet(customSet, Stat.DODGE),
+      customCalculateValue: statsFromCustomSet =>
+        Math.floor(statsFromCustomSet[Stat.AGILITY] / 10) +
+        statsFromCustomSet[Stat.DODGE],
     },
     {
       stat: Stat.LOCK,
-      customCalculateValue: customSet =>
-        Math.floor(statCalcGenerator(Stat.AGILITY)(customSet) / 10) +
-        sumStatsFromCustomSet(customSet, Stat.LOCK),
+      customCalculateValue: statsFromCustomSet =>
+        Math.floor(statsFromCustomSet[Stat.AGILITY] / 10) +
+        statsFromCustomSet[Stat.LOCK],
     },
     {
       stat: Stat.AP_PARRY,
-      customCalculateValue: customSet =>
-        Math.floor(statCalcGenerator(Stat.WISDOM)(customSet) / 10) +
-        sumStatsFromCustomSet(customSet, Stat.AP_PARRY),
+      customCalculateValue: statsFromCustomSet =>
+        Math.floor(statsFromCustomSet[Stat.WISDOM] / 10) +
+        statsFromCustomSet[Stat.AP_PARRY],
     },
     {
       stat: Stat.AP_REDUCTION,
-      customCalculateValue: customSet =>
-        Math.floor(statCalcGenerator(Stat.WISDOM)(customSet) / 10) +
-        sumStatsFromCustomSet(customSet, Stat.AP_REDUCTION),
+      customCalculateValue: statsFromCustomSet =>
+        Math.floor(statsFromCustomSet[Stat.WISDOM] / 10) +
+        statsFromCustomSet[Stat.AP_REDUCTION],
     },
     {
       stat: Stat.MP_PARRY,
-      customCalculateValue: customSet =>
-        Math.floor(statCalcGenerator(Stat.WISDOM)(customSet) / 10) +
-        sumStatsFromCustomSet(customSet, Stat.MP_PARRY),
+      customCalculateValue: statsFromCustomSet =>
+        Math.floor(statsFromCustomSet[Stat.WISDOM] / 10) +
+        statsFromCustomSet[Stat.MP_PARRY],
     },
     {
       stat: Stat.MP_REDUCTION,
-      customCalculateValue: customSet =>
-        Math.floor(statCalcGenerator(Stat.WISDOM)(customSet) / 10) +
-        sumStatsFromCustomSet(customSet, Stat.MP_REDUCTION),
+      customCalculateValue: statsFromCustomSet =>
+        Math.floor(statsFromCustomSet[Stat.WISDOM] / 10) +
+        statsFromCustomSet[Stat.MP_REDUCTION],
     },
     {
       stat: Stat.TRAP_DAMAGE,

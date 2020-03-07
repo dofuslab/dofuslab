@@ -5,16 +5,21 @@ import { jsx } from '@emotion/core';
 import { useTranslation } from 'react-i18next';
 
 import List from 'antd/lib/list';
-import { StatGroup } from 'common/types';
+import { StatGroup, StatsFromCustomSet } from 'common/types';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { sumStatsFromCustomSet } from 'common/constants';
+import { Stat } from '__generated__/globalTypes';
 
 interface IStatTable {
   group: StatGroup;
+  statsFromCustomSet: StatsFromCustomSet | null;
   customSet?: customSet | null;
 }
 
-const StatTable: React.FC<IStatTable> = ({ group, customSet }) => {
+const StatTable: React.FC<IStatTable> = ({
+  group,
+  statsFromCustomSet,
+  customSet,
+}) => {
   const { t } = useTranslation('stat');
   return (
     <List
@@ -33,10 +38,12 @@ const StatTable: React.FC<IStatTable> = ({ group, customSet }) => {
         >
           <div css={{ fontSize: '0.75rem' }}>{t(item.stat)}</div>
           <div css={{ fontSize: '0.75rem' }}>
-            {customSet &&
+            {(statsFromCustomSet &&
+              customSet &&
               (item.customCalculateValue
-                ? item.customCalculateValue(customSet)
-                : sumStatsFromCustomSet(customSet, item.stat))}
+                ? item.customCalculateValue(statsFromCustomSet, customSet)
+                : statsFromCustomSet[item.stat as Stat])) ||
+              0}
           </div>
         </List.Item>
       )}

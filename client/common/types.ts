@@ -1,6 +1,5 @@
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-
-export type StatCalculator = (customSet: customSet) => number;
+import { Stat } from '__generated__/globalTypes';
 
 export type StatWithCalculatedValue = {
   stat: string;
@@ -8,3 +7,12 @@ export type StatWithCalculatedValue = {
 };
 
 export type StatGroup = Array<StatWithCalculatedValue>;
+
+export type StatsFromCustomSet = {
+  [x in Stat]: number;
+};
+
+export type StatCalculator = (
+  statsFromCustomSet: StatsFromCustomSet,
+  customSet: customSet,
+) => number;

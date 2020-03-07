@@ -21,6 +21,7 @@ import {
   customSet_customSetById_equippedItems_item,
 } from 'graphql/queries/__generated__/customSet';
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
+import { getStatsFromCustomSet } from 'common/utils';
 
 const EquipmentSlots = styled.div({
   display: 'flex',
@@ -69,6 +70,11 @@ const SetBuilder: React.FC = () => {
       window.removeEventListener('click', onClickBody);
     };
   }, []);
+
+  const statsFromCustomSet = React.useMemo(
+    () => getStatsFromCustomSet(customSetData?.customSetById),
+    [customSetData],
+  );
 
   const [isEditing, setIsEditing] = React.useState(false);
 
@@ -131,6 +137,7 @@ const SetBuilder: React.FC = () => {
               <StatTable
                 key={idx}
                 group={group}
+                statsFromCustomSet={statsFromCustomSet}
                 customSet={customSetData?.customSetById}
               />
             ))}
