@@ -12,6 +12,9 @@ const handle = app.getRequestHandler();
   await nextI18next.initPromise;
   await express()
     .use(nextI18NextMiddleware(nextI18next))
+    .get('/set/:id', (req, res) =>
+      app.render(req, res, '/index', { id: req.params.id }),
+    )
     .get('*', (req, res) => handle(req, res))
     .listen(port);
   console.log(`> Ready on http://localhost:${port}`); // eslint-disable-line no-console

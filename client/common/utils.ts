@@ -3,8 +3,7 @@ import {
   customSet,
 } from 'graphql/fragments/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
-import { StatsFromCustomSet } from './types';
-import { item_set } from 'graphql/fragments/__generated__/item';
+import { StatsFromCustomSet, SetCounter } from './types';
 
 const getBaseStat = (stats: customSet_stats, stat: Stat) => {
   switch (stat) {
@@ -117,9 +116,7 @@ const mergeStatObjs = (...statObjs: ReadonlyArray<{ [key: string]: number }>) =>
   }, {} as StatsFromCustomSet);
 
 export const getBonusesFromCustomSet = (customSet: customSet) => {
-  const sets: {
-    [key: string]: { count: number; set: item_set };
-  } = {};
+  const sets: SetCounter = {};
 
   for (const equippedItem of customSet.equippedItems) {
     const { item } = equippedItem;
@@ -134,5 +131,16 @@ export const getBonusesFromCustomSet = (customSet: customSet) => {
     }
   }
 
-  return sets;
+  const filteredSets = Object.entries(sets)
+    .filter(([_, setObj]) => {
+      return !!setObj.set.bonuses.filter(
+        ({ numItems }) => numItems === setObj.count,
+      ).length;
+    })
+    .reduce((obj, [setId, setWithCount]) => {
+      obj[setId] = setWithCount;
+      return obj;
+    }, {} as SetCounter);
+
+  return filteredSets;
 };

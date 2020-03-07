@@ -1,4 +1,5 @@
 import { customSet } from 'graphql/fragments/__generated__/customSet';
+import { item_set } from 'graphql/fragments/__generated__/item';
 
 export type StatWithCalculatedValue = {
   stat: string;
@@ -15,3 +16,7 @@ export type StatCalculator = (
   statsFromCustomSet: StatsFromCustomSet,
   customSet: customSet,
 ) => number;
+
+export type SetCounter = {
+  [key: string]: { count: number; set: item_set };
+};

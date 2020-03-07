@@ -22,10 +22,14 @@ const BonusStats: React.FC<IProps> = ({ setBonuses }) => {
   const { t } = useTranslation('stat');
   return (
     <Popover
+      placement="bottom"
       content={
         <div css={{ fontSize: '0.75rem' }}>
-          {Object.values(setBonuses).map(
-            ({ count, set: { id, name, bonuses } }) => {
+          {Object.values(setBonuses)
+            .sort(({ set: { name: name1 } }, { set: { name: name2 } }) =>
+              name1.localeCompare(name2),
+            )
+            .map(({ count, set: { id, name, bonuses } }) => {
               const filteredBonuses = bonuses.filter(
                 bonus => bonus.numItems === count,
               );
@@ -44,8 +48,7 @@ const BonusStats: React.FC<IProps> = ({ setBonuses }) => {
                   </ul>
                 </div>
               );
-            },
-          )}
+            })}
         </div>
       }
     >

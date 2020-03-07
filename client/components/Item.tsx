@@ -21,7 +21,7 @@ interface IItem {
 
 const Item: React.FC<IItem> = ({ item, selectedItemSlotId }) => {
   const router = useRouter();
-  const { setId } = router.query;
+  const { id: setId } = router.query;
 
   const [updateCustomSetItem] = useMutation<
     updateCustomSetItem,
@@ -37,7 +37,13 @@ const Item: React.FC<IItem> = ({ item, selectedItemSlotId }) => {
   const onClick = React.useCallback(async () => {
     const { data } = await updateCustomSetItem();
     if (data?.updateCustomSetItem?.customSet.id !== setId) {
-      router.replace(`/set/${data?.updateCustomSetItem?.customSet.id}`);
+      router.replace(
+        `/?id=${data?.updateCustomSetItem?.customSet.id}`,
+        `/set/${data?.updateCustomSetItem?.customSet.id}`,
+        {
+          shallow: true,
+        },
+      );
     }
   }, [updateCustomSetItem, setId]);
   return (

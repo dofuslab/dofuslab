@@ -322,7 +322,6 @@ class Query(graphene.ObjectType):
     items = graphene.NonNull(graphene.List(graphene.NonNull(Item)))
 
     def resolve_items(self, info):
-        print(info.context.headers)
         return db.session.query(ModelItem).all()
 
     custom_sets = graphene.List(CustomSet)

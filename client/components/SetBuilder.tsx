@@ -43,13 +43,14 @@ const OptionalSecondPane = styled.div({
 
 const SetBuilder: React.FC = () => {
   const router = useRouter();
-  const { setId } = router.query;
+  const { id: setId } = router.query;
 
   const { data } = useQuery<itemSlots>(ItemSlotsQuery);
   const { data: customSetData } = useQuery<customSet, customSetVariables>(
     CustomSetQuery,
     { variables: { id: setId }, skip: !setId },
   );
+
   const itemsBySlotId: {
     [key: string]: customSet_customSetById_equippedItems_item;
   } =
@@ -79,7 +80,7 @@ const SetBuilder: React.FC = () => {
 
   const setBonuses = customSetData?.customSetById
     ? getBonusesFromCustomSet(customSetData.customSetById)
-    : null;
+    : {};
 
   const [isEditing, setIsEditing] = React.useState(false);
 
@@ -124,7 +125,9 @@ const SetBuilder: React.FC = () => {
             selectItemSlot={selectItemSlot}
           />
         ))}
-        {setBonuses && <BonusStats setBonuses={setBonuses} />}
+        {!!Object.keys(setBonuses).length && (
+          <BonusStats setBonuses={setBonuses} />
+        )}
       </EquipmentSlots>
       <div
         css={{
