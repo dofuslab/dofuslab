@@ -43,6 +43,7 @@ export interface items_items_set_bonuses {
 export interface items_items_set {
   __typename: "Set";
   id: any;
+  name: string;
   bonuses: items_items_set_bonuses[];
 }
 

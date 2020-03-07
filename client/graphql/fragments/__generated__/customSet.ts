@@ -48,6 +48,7 @@ export interface customSet_equippedItems_item_set_bonuses {
 export interface customSet_equippedItems_item_set {
   __typename: "Set";
   id: any;
+  name: string;
   bonuses: customSet_equippedItems_item_set_bonuses[];
 }
 

@@ -19,6 +19,7 @@ fragment item on Item {
   }
   set {
     id
+    name
     bonuses {
       id
       numItems

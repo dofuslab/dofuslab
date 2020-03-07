@@ -48,6 +48,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set {
   __typename: "Set";
   id: any;
+  name: string;
   bonuses: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set_bonuses[];
 }
 

@@ -4,7 +4,7 @@ import React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
 import Popover from 'antd/lib/popover';
 
-import { BORDER_COLOR } from 'common/mixins';
+import { itemBox } from 'common/mixins';
 import { customSet_customSetById_equippedItems_item } from 'graphql/queries/__generated__/customSet';
 import { ItemStatsList } from 'common/wrappers';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
@@ -29,23 +29,7 @@ const EquippedItem: React.FC<IEquippedItem> = ({
     [selectItemSlot, slot],
   );
   const itemDisplay = (
-    <div
-      css={{
-        background: 'white',
-        border: `1px solid ${BORDER_COLOR}`,
-        width: 72,
-        height: 72,
-        margin: 8,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: '0.75rem',
-        borderRadius: 4,
-        cursor: 'pointer',
-      }}
-      onClick={onClick}
-      {...restProps}
-    >
+    <div css={itemBox} onClick={onClick} {...restProps}>
       {item ? (
         <img src={item.imageUrl} css={{ width: 72, height: 72 }} />
       ) : (

@@ -21,7 +21,8 @@ import {
   customSet_customSetById_equippedItems_item,
 } from 'graphql/queries/__generated__/customSet';
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
-import { getStatsFromCustomSet } from 'common/utils';
+import { getStatsFromCustomSet, getBonusesFromCustomSet } from 'common/utils';
+import BonusStats from './BonusStats';
 
 const EquipmentSlots = styled.div({
   display: 'flex',
@@ -76,6 +77,10 @@ const SetBuilder: React.FC = () => {
     [customSetData],
   );
 
+  const setBonuses = customSetData?.customSetById
+    ? getBonusesFromCustomSet(customSetData.customSetById)
+    : null;
+
   const [isEditing, setIsEditing] = React.useState(false);
 
   return (
@@ -119,6 +124,7 @@ const SetBuilder: React.FC = () => {
             selectItemSlot={selectItemSlot}
           />
         ))}
+        {setBonuses && <BonusStats setBonuses={setBonuses} />}
       </EquipmentSlots>
       <div
         css={{

@@ -4,7 +4,7 @@ import {
 } from 'graphql/fragments/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
 import { StatsFromCustomSet } from './types';
-import { item_set_bonuses } from 'graphql/fragments/__generated__/item';
+import { item_set } from 'graphql/fragments/__generated__/item';
 
 const getBaseStat = (stats: customSet_stats, stat: Stat) => {
   switch (stat) {
@@ -85,7 +85,19 @@ export const getStatsFromCustomSet = (customSet?: customSet | null) => {
     }
   });
 
-  return mergeStatObjs(getBonusesFromCustomSet(customSet), statsFromCustomSet);
+  const sets = getBonusesFromCustomSet(customSet);
+
+  const statsFromSetBonuses = mergeStatObjs(
+    ...Object.values(sets).map(({ count, set: { bonuses } }) =>
+      mergeStatObjs(
+        ...bonuses
+          .filter(bonus => bonus.numItems === count)
+          .map(({ stat, value }) => ({ [stat]: value })),
+      ),
+    ),
+  );
+
+  return mergeStatObjs(statsFromSetBonuses, statsFromCustomSet);
 };
 
 const mergeStatObjs = (...statObjs: ReadonlyArray<{ [key: string]: number }>) =>
@@ -106,7 +118,7 @@ const mergeStatObjs = (...statObjs: ReadonlyArray<{ [key: string]: number }>) =>
 
 export const getBonusesFromCustomSet = (customSet: customSet) => {
   const sets: {
-    [key: string]: { count: number; bonuses: ReadonlyArray<item_set_bonuses> };
+    [key: string]: { count: number; set: item_set };
   } = {};
 
   for (const equippedItem of customSet.equippedItems) {
@@ -118,17 +130,9 @@ export const getBonusesFromCustomSet = (customSet: customSet) => {
       const setObj = sets[set.id];
       sets[set.id] = setObj
         ? { ...setObj, count: setObj.count + 1 }
-        : { bonuses: set.bonuses, count: 1 };
+        : { set, count: 1 };
     }
   }
 
-  return mergeStatObjs(
-    ...Object.values(sets).map(({ count, bonuses }) =>
-      mergeStatObjs(
-        ...bonuses
-          .filter(bonus => bonus.numItems === count)
-          .map(({ stat, value }) => ({ [stat]: value })),
-      ),
-    ),
-  );
+  return sets;
 };
