@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next';
 import List from 'antd/lib/list';
 import { StatGroup, StatsFromCustomSet } from 'common/types';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { Stat } from '__generated__/globalTypes';
 
 interface IStatTable {
   group: StatGroup;
@@ -42,7 +41,7 @@ const StatTable: React.FC<IStatTable> = ({
               customSet &&
               (item.customCalculateValue
                 ? item.customCalculateValue(statsFromCustomSet, customSet)
-                : statsFromCustomSet[item.stat as Stat])) ||
+                : statsFromCustomSet[item.stat])) ||
               0}
           </div>
         </List.Item>

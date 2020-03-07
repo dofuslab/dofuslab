@@ -37,6 +37,20 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
   eligibleItemSlots: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_itemType_eligibleItemSlots[];
 }
 
+export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set_bonuses {
+  __typename: "SetBonus";
+  id: any;
+  numItems: number;
+  stat: Stat;
+  value: number;
+}
+
+export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set {
+  __typename: "Set";
+  id: any;
+  bonuses: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set_bonuses[];
+}
+
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item {
   __typename: "Item";
   id: any;
@@ -45,6 +59,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
   stats: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_stats[];
   conditions: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_conditions[];
   itemType: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_itemType;
+  set: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set | null;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems {

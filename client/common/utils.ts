@@ -4,6 +4,7 @@ import {
 } from 'graphql/fragments/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
 import { StatsFromCustomSet } from './types';
+import { item_set_bonuses } from 'graphql/fragments/__generated__/item';
 
 const getBaseStat = (stats: customSet_stats, stat: Stat) => {
   switch (stat) {
@@ -47,6 +48,7 @@ export const getStatsFromCustomSet = (customSet?: customSet | null) => {
   if (!customSet) {
     return null;
   }
+
   const statsFromCustomSet: StatsFromCustomSet = customSet.equippedItems.reduce(
     (acc, { item }) => {
       const accCopy = { ...acc };
@@ -62,7 +64,7 @@ export const getStatsFromCustomSet = (customSet?: customSet | null) => {
       });
       return accCopy;
     },
-    {} as { [key in keyof typeof Stat]: number },
+    {} as StatsFromCustomSet,
   );
 
   [
@@ -83,5 +85,50 @@ export const getStatsFromCustomSet = (customSet?: customSet | null) => {
     }
   });
 
-  return statsFromCustomSet;
+  return mergeStatObjs(getBonusesFromCustomSet(customSet), statsFromCustomSet);
+};
+
+const mergeStatObjs = (...statObjs: ReadonlyArray<{ [key: string]: number }>) =>
+  statObjs.reduce((acc, statObj) => {
+    Object.entries(statObj).forEach(([stat, value]) => {
+      const asStat = stat as Stat;
+      if (!asStat) {
+        throw new Error(`${stat} is not a valid stat!`);
+      }
+      if (acc[asStat]) {
+        acc[asStat] += value;
+      } else {
+        acc[asStat] = value;
+      }
+    });
+    return acc;
+  }, {} as StatsFromCustomSet);
+
+export const getBonusesFromCustomSet = (customSet: customSet) => {
+  const sets: {
+    [key: string]: { count: number; bonuses: ReadonlyArray<item_set_bonuses> };
+  } = {};
+
+  for (const equippedItem of customSet.equippedItems) {
+    const { item } = equippedItem;
+    if (!item) continue;
+
+    const { set } = item;
+    if (set) {
+      const setObj = sets[set.id];
+      sets[set.id] = setObj
+        ? { ...setObj, count: setObj.count + 1 }
+        : { bonuses: set.bonuses, count: 1 };
+    }
+  }
+
+  return mergeStatObjs(
+    ...Object.values(sets).map(({ count, bonuses }) =>
+      mergeStatObjs(
+        ...bonuses
+          .filter(bonus => bonus.numItems === count)
+          .map(({ stat, value }) => ({ [stat]: value })),
+      ),
+    ),
+  );
 };

@@ -32,6 +32,20 @@ export interface items_items_itemType {
   eligibleItemSlots: items_items_itemType_eligibleItemSlots[];
 }
 
+export interface items_items_set_bonuses {
+  __typename: "SetBonus";
+  id: any;
+  numItems: number;
+  stat: Stat;
+  value: number;
+}
+
+export interface items_items_set {
+  __typename: "Set";
+  id: any;
+  bonuses: items_items_set_bonuses[];
+}
+
 export interface items_items {
   __typename: "Item";
   id: any;
@@ -40,6 +54,7 @@ export interface items_items {
   stats: items_items_stats[];
   conditions: items_items_conditions[];
   itemType: items_items_itemType;
+  set: items_items_set | null;
 }
 
 export interface items {

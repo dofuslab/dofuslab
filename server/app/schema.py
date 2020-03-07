@@ -78,6 +78,8 @@ class SetBonus(SQLAlchemyObjectType):
 
 
 class Set(SQLAlchemyObjectType):
+    bonuses = graphene.NonNull(graphene.List(graphene.NonNull(SetBonus)))
+
     class Meta:
         model = ModelSet
         interfaces = (GlobalNode,)
@@ -320,6 +322,7 @@ class Query(graphene.ObjectType):
     items = graphene.NonNull(graphene.List(graphene.NonNull(Item)))
 
     def resolve_items(self, info):
+        print(info.context.headers)
         return db.session.query(ModelItem).all()
 
     custom_sets = graphene.List(CustomSet)

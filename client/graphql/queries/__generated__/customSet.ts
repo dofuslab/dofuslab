@@ -37,6 +37,20 @@ export interface customSet_customSetById_equippedItems_item_itemType {
   eligibleItemSlots: customSet_customSetById_equippedItems_item_itemType_eligibleItemSlots[];
 }
 
+export interface customSet_customSetById_equippedItems_item_set_bonuses {
+  __typename: "SetBonus";
+  id: any;
+  numItems: number;
+  stat: Stat;
+  value: number;
+}
+
+export interface customSet_customSetById_equippedItems_item_set {
+  __typename: "Set";
+  id: any;
+  bonuses: customSet_customSetById_equippedItems_item_set_bonuses[];
+}
+
 export interface customSet_customSetById_equippedItems_item {
   __typename: "Item";
   id: any;
@@ -45,6 +59,7 @@ export interface customSet_customSetById_equippedItems_item {
   stats: customSet_customSetById_equippedItems_item_stats[];
   conditions: customSet_customSetById_equippedItems_item_conditions[];
   itemType: customSet_customSetById_equippedItems_item_itemType;
+  set: customSet_customSetById_equippedItems_item_set | null;
 }
 
 export interface customSet_customSetById_equippedItems {

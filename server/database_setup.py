@@ -108,6 +108,7 @@ if __name__ == "__main__":
         for record in data:
             set_obj = ModelSet(name=record["name"])
             db.session.add(set_obj)
+            db.session.flush()
             for num_items in record["bonuses"]:
                 bonuses = record["bonuses"][num_items]
                 for bonus in bonuses:
@@ -117,6 +118,7 @@ if __name__ == "__main__":
                         stat=to_stat_enum[bonus["stat"]],
                         value=int(bonus["value"]),
                     )
+                    db.session.add(bonus_obj)
 
         db.session.commit()
 
