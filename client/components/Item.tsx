@@ -61,7 +61,7 @@ const Item: React.FC<IItem> = ({
         );
       }
     }
-  }, [updateCustomSetItem, setId, customSet, item]);
+  }, [updateCustomSetItem, setId, customSet, item, selectedItemSlotId]);
 
   const { t } = useTranslation('stat');
 

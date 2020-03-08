@@ -36,27 +36,10 @@ class ModelCustomSet(Base):
         backref="custom_set",
     )
 
-    def find_empty_item_slot(self, item_type):
-        eligible_item_slots = item_type.eligible_item_slots
-        for item_slot in eligible_item_slots:
-            equipped_item = (
-                db.session.query(ModelEquippedItem)
-                .filter_by(custom_set_id=self.uuid, item_slot_id=item_slot.uuid)
-                .one_or_none()
-            )
-            if not equipped_item:
-                return item_slot
-        return None
-
     def equip_item(self, item_id, item_slot_id):
         item = db.session.query(ModelItem).get(item_id)
-        if item_slot_id:
-            item_slot = db.session.query(ModelItemSlot).get(item_slot_id)
-        else:
-            item_slot = self.find_empty_item_slot(item.item_type)
-            if not item_slot and len(item.item_type.eligible_item_slots) > 1:
-                raise ValueError("There is no available item slot.")
-            item_slot = item.item_type.eligible_item_slots[0]
+        item_slot = db.session.query(ModelItemSlot).get(item_slot_id)
+
         if item and item.item_type not in item_slot.item_types:
             raise ValueError("The item and item slot are incompatible.")
         equipped_item = (

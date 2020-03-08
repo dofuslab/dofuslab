@@ -3,8 +3,9 @@
 import React from 'react';
 import { jsx, css } from '@emotion/core';
 import Card from 'antd/lib/card';
+import Tooltip from 'antd/lib/tooltip';
 import { useMutation } from '@apollo/react-hooks';
-import { DeleteOutlined } from '@ant-design/icons';
+import { DeleteOutlined, ToolOutlined } from '@ant-design/icons';
 
 import { useTranslation } from 'i18n';
 import { selected, itemCardStyle } from 'common/mixins';
@@ -57,7 +58,14 @@ const CurrentlyEquippedItem: React.FC<IProps> = ({
         ...itemCardStyle,
         ...selected,
       })}
-      actions={[<DeleteOutlined onClick={onClick} />]}
+      actions={[
+        <Tooltip title={t('MAGE')}>
+          <ToolOutlined />
+        </Tooltip>,
+        <Tooltip title={t('DELETE')}>
+          <DeleteOutlined onClick={onClick} />
+        </Tooltip>,
+      ]}
     >
       <img
         src={item.imageUrl}
