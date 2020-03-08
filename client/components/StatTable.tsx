@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'i18n';
 
 import List from 'antd/lib/list';
 import { StatGroup, StatsFromCustomSet } from 'common/types';

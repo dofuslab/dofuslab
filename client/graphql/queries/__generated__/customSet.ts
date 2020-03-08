@@ -66,8 +66,8 @@ export interface customSet_customSetById_equippedItems_item {
 export interface customSet_customSetById_equippedItems {
   __typename: "EquippedItem";
   id: any;
-  slot: customSet_customSetById_equippedItems_slot | null;
-  item: customSet_customSetById_equippedItems_item | null;
+  slot: customSet_customSetById_equippedItems_slot;
+  item: customSet_customSetById_equippedItems_item;
 }
 
 export interface customSet_customSetById_stats {

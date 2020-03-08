@@ -12,7 +12,7 @@ const Index: NextPage = () => (
 
 Index.getInitialProps = async () => {
   return {
-    namespacesRequired: ['common'],
+    namespacesRequired: ['common', 'stat'],
   };
 };
 

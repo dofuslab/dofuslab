@@ -4,6 +4,7 @@ import {
 } from 'graphql/fragments/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
 import { StatsFromCustomSet, SetCounter } from './types';
+import { item_itemType } from 'graphql/fragments/__generated__/item';
 
 const getBaseStat = (stats: customSet_stats, stat: Stat) => {
   switch (stat) {
@@ -143,4 +144,24 @@ export const getBonusesFromCustomSet = (customSet: customSet) => {
     }, {} as SetCounter);
 
   return filteredSets;
+};
+
+export const findEmptyOrOnlySlotId = (
+  itemType: item_itemType,
+  customSet?: customSet | null,
+) => {
+  if (!customSet || itemType.eligibleItemSlots.length === 1)
+    return itemType.eligibleItemSlots[0].id;
+  const occupiedSlotsSet = customSet.equippedItems.reduce((set, curr) => {
+    set.add(curr.slot.id);
+    return set;
+  }, new Set<string>());
+
+  for (const slot of itemType.eligibleItemSlots) {
+    if (!occupiedSlotsSet.has(slot.id)) {
+      return slot.id;
+    }
+  }
+
+  return null;
 };

@@ -153,7 +153,10 @@ const SetBuilder: React.FC = () => {
           </ResponsiveGrid>
         </div>
         <OptionalSecondPane>
-          <ItemSelector selectedItemSlotId={selectedItemSlotId} />
+          <ItemSelector
+            selectedItemSlotId={selectedItemSlotId}
+            customSet={customSetData?.customSetById}
+          />
         </OptionalSecondPane>
       </div>
     </Layout>

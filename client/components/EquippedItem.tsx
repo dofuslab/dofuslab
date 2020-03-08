@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import React from 'react';
-import { jsx, ClassNames } from '@emotion/core';
+import { jsx, ClassNames, css } from '@emotion/core';
 import Popover from 'antd/lib/popover';
 
 import { itemBox } from 'common/mixins';
@@ -29,7 +29,7 @@ const EquippedItem: React.FC<IEquippedItem> = ({
     [selectItemSlot, slot],
   );
   const itemDisplay = (
-    <div css={itemBox} onClick={onClick} {...restProps}>
+    <div css={css(itemBox)} onClick={onClick} {...restProps}>
       {item ? (
         <img src={item.imageUrl} css={{ width: 72, height: 72 }} />
       ) : (

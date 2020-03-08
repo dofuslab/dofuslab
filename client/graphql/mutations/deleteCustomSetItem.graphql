@@ -1,0 +1,9 @@
+#import "graphql/fragments/customSet.graphql"
+
+mutation deleteCustomSetItem($itemSlotId: UUID!, $customSetId: UUID!) {
+  deleteCustomSetItem(itemSlotId: $itemSlotId, customSetId: $customSetId) {
+    customSet {
+      ...customSet
+    }
+  }
+}

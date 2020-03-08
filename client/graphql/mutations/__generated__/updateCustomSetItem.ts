@@ -66,8 +66,8 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems {
   __typename: "EquippedItem";
   id: any;
-  slot: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_slot | null;
-  item: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item | null;
+  slot: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_slot;
+  item: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_stats {
@@ -106,7 +106,7 @@ export interface updateCustomSetItem {
 }
 
 export interface updateCustomSetItemVariables {
-  itemSlotId?: any | null;
+  itemSlotId: any;
   customSetId?: any | null;
   itemId?: any | null;
 }
