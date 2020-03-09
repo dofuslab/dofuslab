@@ -16,7 +16,7 @@ export const gray13 = '#000000';
 
 export const BORDER_COLOR = gray5;
 
-export const ITEM_BOX_WIDTH = 72;
+export const ITEM_BOX_WIDTH = 100;
 
 export const itemBoxDimensions = {
   width: ITEM_BOX_WIDTH,
