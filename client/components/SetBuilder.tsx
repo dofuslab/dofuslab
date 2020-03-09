@@ -64,10 +64,10 @@ const SetBuilder: React.FC = () => {
           display: 'flex',
         }}
       >
-        <div css={{ flex: '0 1 600px', overflow: 'auto' }}>
+        <div css={{ flex: '0 1 600px', overflow: 'auto', marginTop: 12 }}>
           <ResponsiveGrid
             numColumns={[2, 2, 2, 2, 2, 2]}
-            css={{ margin: '12px 0 20px' }}
+            css={{ marginBottom: 20 }}
           >
             {STAT_GROUPS.map((group, idx) => (
               <StatTable
