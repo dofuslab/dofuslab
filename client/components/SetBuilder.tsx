@@ -64,7 +64,7 @@ const SetBuilder: React.FC = () => {
           display: 'flex',
         }}
       >
-        <div css={{ flex: '0 1 600px', overflow: 'auto', marginTop: 12 }}>
+        <div css={{ flex: '0 1 584px', overflow: 'auto', marginTop: 12 }}>
           <ResponsiveGrid
             numColumns={[2, 2, 2, 2, 2, 2]}
             css={{ marginBottom: 20 }}
