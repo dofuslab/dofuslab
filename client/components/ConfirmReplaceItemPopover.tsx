@@ -60,6 +60,9 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
                     .map(slot => slot.id)
                     .includes(equippedItem.slot.id),
                 )
+                .sort((item1, item2) =>
+                  item1.slot.id.localeCompare(item2.slot.id),
+                )
                 .map(equippedItem => (
                   <div
                     css={{
