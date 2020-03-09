@@ -1,10 +1,19 @@
+import { useCallback } from 'react';
+import { useMutation } from '@apollo/react-hooks';
+import { useRouter } from 'next/router';
+
 import {
   customSet_stats,
   customSet,
 } from 'graphql/fragments/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
 import { StatsFromCustomSet, SetCounter } from './types';
-import { item_itemType } from 'graphql/fragments/__generated__/item';
+import { item_itemType, item } from 'graphql/fragments/__generated__/item';
+import {
+  updateCustomSetItem,
+  updateCustomSetItemVariables,
+} from 'graphql/mutations/__generated__/updateCustomSetItem';
+import UpdateCustomSetItemMutation from 'graphql/mutations/updateCustomSetItem.graphql';
 
 const getBaseStat = (stats: customSet_stats, stat: Stat) => {
   switch (stat) {
@@ -164,4 +173,81 @@ export const findEmptyOrOnlySlotId = (
   }
 
   return null;
+};
+
+export const useEquipItemMutation = (
+  item: item,
+  customSet?: customSet | null,
+) => {
+  const router = useRouter();
+  const { id: setId } = router.query;
+
+  const [updateCustomSetItem] = useMutation<
+    updateCustomSetItem,
+    updateCustomSetItemVariables
+  >(UpdateCustomSetItemMutation, {
+    optimisticResponse: customSet
+      ? ({ itemSlotId }) => {
+          const { equippedItems: oldEquippedItems } = customSet;
+
+          const equippedItems = [...oldEquippedItems];
+
+          const oldEquippedItemIdx = oldEquippedItems.findIndex(
+            equippedItem => equippedItem.slot.id === itemSlotId,
+          );
+
+          if (oldEquippedItemIdx > -1) {
+            const oldEquippedItem = equippedItems[oldEquippedItemIdx];
+
+            equippedItems.splice(oldEquippedItemIdx, 1, {
+              ...oldEquippedItem,
+              item,
+            });
+          } else {
+            equippedItems.push({
+              id: '0',
+              slot: { id: itemSlotId, __typename: 'ItemSlot' },
+              item,
+              __typename: 'EquippedItem',
+            });
+          }
+
+          return {
+            updateCustomSetItem: {
+              customSet: {
+                ...customSet,
+                equippedItems,
+              },
+              __typename: 'UpdateCustomSetItem',
+            },
+          };
+        }
+      : undefined,
+  });
+
+  const onClick = useCallback(
+    async (itemSlotId?: string) => {
+      if (!itemSlotId) return;
+      const { data } = await updateCustomSetItem({
+        variables: {
+          customSetId: setId,
+          itemId: item.id,
+          itemSlotId,
+        },
+      });
+
+      if (data?.updateCustomSetItem?.customSet.id !== setId) {
+        router.replace(
+          `/?id=${data?.updateCustomSetItem?.customSet.id}`,
+          `/set/${data?.updateCustomSetItem?.customSet.id}`,
+          {
+            shallow: true,
+          },
+        );
+      }
+    },
+    [updateCustomSetItem, setId, item],
+  );
+
+  return onClick;
 };

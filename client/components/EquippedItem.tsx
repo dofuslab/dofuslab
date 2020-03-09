@@ -1,13 +1,12 @@
 /** @jsx jsx */
 
 import React from 'react';
-import { jsx, ClassNames, css } from '@emotion/core';
-import Popover from 'antd/lib/popover';
+import { jsx, css } from '@emotion/core';
 
 import { itemBox } from 'common/mixins';
 import { customSet_customSetById_equippedItems_item } from 'graphql/queries/__generated__/customSet';
-import { ItemStatsList } from 'common/wrappers';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
+import ItemWithStats from './ItemWithStats';
 
 interface IEquippedItem {
   slot: itemSlots_itemSlots;
@@ -28,33 +27,11 @@ const EquippedItem: React.FC<IEquippedItem> = ({
     },
     [selectItemSlot, slot],
   );
-  const itemDisplay = (
-    <div css={css(itemBox)} onClick={onClick} {...restProps}>
-      {item ? (
-        <img src={item.imageUrl} css={{ width: 72, height: 72 }} />
-      ) : (
-        slot.name
-      )}
-    </div>
-  );
 
-  return item ? (
-    <ClassNames>
-      {({ css }) => (
-        <Popover
-          placement="bottom"
-          title={item.name}
-          content={<ItemStatsList item={item} />}
-          overlayClassName={css({
-            ['.ant-popover-title']: { padding: '8px 16px' },
-          })}
-        >
-          {itemDisplay}
-        </Popover>
-      )}
-    </ClassNames>
-  ) : (
-    itemDisplay
+  return (
+    <div css={css(itemBox)} onClick={onClick} {...restProps}>
+      {item ? <ItemWithStats item={item} /> : slot.name}
+    </div>
   );
 };
 

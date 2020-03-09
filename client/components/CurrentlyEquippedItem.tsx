@@ -8,7 +8,7 @@ import { useMutation } from '@apollo/react-hooks';
 import { DeleteOutlined, ToolOutlined } from '@ant-design/icons';
 
 import { useTranslation } from 'i18n';
-import { selected, itemCardStyle } from 'common/mixins';
+import { selected, itemCardStyle, itemBoxDimensions } from 'common/mixins';
 import { ItemStatsList, Badge, TruncatableText } from 'common/wrappers';
 import { item } from 'graphql/fragments/__generated__/item';
 import DeleteCustomSetItemMutation from 'graphql/mutations/deleteCustomSetItem.graphql';
@@ -67,10 +67,7 @@ const CurrentlyEquippedItem: React.FC<IProps> = ({
         </Tooltip>,
       ]}
     >
-      <img
-        src={item.imageUrl}
-        css={{ float: 'right', width: 72, height: 72 }}
-      />
+      <img src={item.imageUrl} css={{ float: 'right', ...itemBoxDimensions }} />
       <ItemStatsList item={item} css={{ paddingLeft: 16, marginBottom: 0 }} />
     </Card>
   );

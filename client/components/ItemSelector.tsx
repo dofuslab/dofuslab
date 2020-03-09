@@ -4,7 +4,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 
-import Item from './Item';
+import ItemCard from './ItemCard';
 import { ResponsiveGrid } from 'common/wrappers';
 import ItemsQuery from 'graphql/queries/items.graphql';
 import { items } from 'graphql/queries/__generated__/items';
@@ -19,6 +19,8 @@ interface IProps {
 const ItemSelector: React.FC<IProps> = ({ selectedItemSlotId, customSet }) => {
   const { data } = useQuery<items>(ItemsQuery);
 
+  const responsiveGridRef = React.useRef<HTMLDivElement | null>(null);
+
   if (!data || !data.items) return null;
 
   const selectedEquippedItem =
@@ -29,7 +31,11 @@ const ItemSelector: React.FC<IProps> = ({ selectedItemSlotId, customSet }) => {
       : null;
 
   return (
-    <ResponsiveGrid numColumns={[1, 1, 2, 3, 4, 5]} css={{ marginBottom: 20 }}>
+    <ResponsiveGrid
+      numColumns={[1, 1, 2, 3, 4, 5]}
+      css={{ marginBottom: 20, position: 'relative' }}
+      ref={responsiveGridRef}
+    >
       {selectedEquippedItem && (
         <CurrentlyEquippedItem
           item={selectedEquippedItem}
@@ -46,12 +52,13 @@ const ItemSelector: React.FC<IProps> = ({ selectedItemSlotId, customSet }) => {
             ),
         )
         .map(item => (
-          <Item
+          <ItemCard
             key={item.id}
             item={item}
             selectedItemSlotId={selectedItemSlotId}
             selectedEquippedItem={selectedEquippedItem}
             customSet={customSet}
+            responsiveGridRef={responsiveGridRef}
           />
         ))}
     </ResponsiveGrid>

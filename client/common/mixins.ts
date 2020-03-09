@@ -16,6 +16,13 @@ export const gray13 = '#000000';
 
 export const BORDER_COLOR = gray5;
 
+export const ITEM_BOX_WIDTH = 72;
+
+export const itemBoxDimensions = {
+  width: ITEM_BOX_WIDTH,
+  height: ITEM_BOX_WIDTH,
+};
+
 export const ellipsis = css({
   overflow: 'hidden',
   textOverflow: 'ellipsis',
@@ -25,8 +32,8 @@ export const ellipsis = css({
 export const itemBox = {
   background: 'white',
   border: `1px solid ${BORDER_COLOR}`,
-  width: 72,
-  height: 72,
+  width: ITEM_BOX_WIDTH,
+  height: ITEM_BOX_WIDTH,
   margin: 8,
   display: 'flex',
   justifyContent: 'center',
@@ -46,4 +53,8 @@ export const itemCardStyle = {
   fontSize: '0.75rem',
   borderRadius: 4,
   minWidth: 0,
+};
+
+export const popoverTitleStyle = {
+  ['.ant-popover-title']: { padding: '8px 16px' },
 };
