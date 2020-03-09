@@ -5,64 +5,63 @@ import Modal from 'antd/lib/modal';
 import Input from 'antd/lib/input';
 import Form from 'antd/lib/form';
 import Button from 'antd/lib/button';
-import Checkbox from 'antd/lib/checkbox';
-import Divider from 'antd/lib/divider';
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
-import {
-  login as ILogin,
-  loginVariables as ILoginVariables,
-} from 'graphql/mutations/__generated__/login';
-import loginMutation from 'graphql/mutations/login.graphql';
+import registerMutation from 'graphql/mutations/register.graphql';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { useTranslation, Trans } from 'i18n';
+import {
+  register,
+  registerVariables,
+} from 'graphql/mutations/__generated__/register';
+import Divider from 'antd/lib/divider';
 
 interface IProps {
   visible: boolean;
   onClose: () => void;
-  openSignUpModal: () => void;
+  openLoginModal: () => void;
 }
 
-const LoginModal: React.FC<IProps> = ({
+const SignUpModal: React.FC<IProps> = ({
   visible,
   onClose,
-  openSignUpModal,
+  openLoginModal,
 }) => {
   const { t } = useTranslation(['auth', 'common']);
   const [form] = Form.useForm();
 
   const client = useApolloClient();
-  const [login, { loading }] = useMutation<ILogin, ILoginVariables>(
-    loginMutation,
+  const [register, { loading }] = useMutation<register, registerVariables>(
+    registerMutation,
   );
   const handleOk = React.useCallback(async () => {
     const values = await form.validateFields();
 
-    const { data } = await login({
+    const { data } = await register({
       variables: {
         email: values.email,
         password: values.password,
-        remember: values.remember,
+        username: values.username,
       },
     });
     form.resetFields();
-    if (data?.loginUser?.user) {
+    if (data?.registerUser?.user) {
       client.writeQuery<ICurrentUser>({
         query: currentUserQuery,
-        data: { currentUser: { ...data.loginUser.user } },
+        data: { currentUser: { ...data.registerUser.user } },
       });
       onClose();
     }
-  }, [login, onClose, client, form]);
+  }, [register, onClose, client, form]);
 
-  const onSignUp = React.useCallback(() => {
+  const onLogin = React.useCallback(() => {
     onClose();
-    openSignUpModal();
-  }, [onClose, openSignUpModal]);
+    openLoginModal();
+  }, [onClose, openLoginModal]);
 
   return (
     <Modal
-      title="Login"
+      title="Sign up"
       visible={visible}
       onCancel={onClose}
       bodyStyle={{
@@ -75,20 +74,20 @@ const LoginModal: React.FC<IProps> = ({
           {t('common:CANCEL')}
         </Button>,
         <Button
-          form="login-form"
+          form="sign-up-form"
           key="submit"
           htmlType="submit"
           type="primary"
           loading={loading}
         >
-          {t('LOGIN')}
+          {t('SIGN_UP')}
         </Button>,
       ]}
     >
       <Form
         form={form}
-        name="login"
-        id="login-form"
+        name="sign-up"
+        id="sign-up-form"
         initialValues={{ remember: true }}
         onFinish={handleOk}
         labelCol={{ span: 8 }}
@@ -110,6 +109,20 @@ const LoginModal: React.FC<IProps> = ({
           <Input placeholder={t('EMAIL')} />
         </Form.Item>
         <Form.Item
+          name="username"
+          label={t('USERNAME')}
+          rules={[
+            { required: true, message: t('VALIDATION.USERNAME_REQUIRED') },
+            {
+              pattern: /^(?=.{3,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/,
+              message: t('VALIDATION.USERNAME_RULES'),
+            },
+          ]}
+          validateTrigger={'onSubmit'}
+        >
+          <Input placeholder={t('USERNAME')} maxLength={20} />
+        </Form.Item>
+        <Form.Item
           name="password"
           label={t('PASSWORD')}
           validateTrigger={'onSubmit'}
@@ -124,23 +137,15 @@ const LoginModal: React.FC<IProps> = ({
         >
           <Input.Password placeholder={t('PASSWORD')} />
         </Form.Item>
-        <Form.Item
-          name="remember"
-          wrapperCol={{ span: 24 }}
-          css={{ textAlign: 'center', marginBottom: 0 }}
-          valuePropName={'checked'}
-        >
-          <Checkbox defaultChecked={false}>{t('REMEMBER_ME')}</Checkbox>
-        </Form.Item>
       </Form>
       <Divider />
       <div>
         <Trans i18nKey="NO_ACCOUNT">
-          Don't have an account? <a onClick={onSignUp}>Sign up here.</a>
+          Already have an account? <a onClick={onLogin}>Login here.</a>
         </Trans>
       </div>
     </Modal>
   );
 };
 
-export default LoginModal;
+export default SignUpModal;

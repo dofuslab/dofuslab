@@ -301,6 +301,7 @@ class LoginUser(graphene.Mutation):
     class Arguments:
         email = graphene.String(required=True)
         password = graphene.String(required=True)
+        remember = graphene.Boolean(required=True)
 
     user = graphene.Field(User)
     ok = graphene.Boolean(required=True)
@@ -310,13 +311,14 @@ class LoginUser(graphene.Mutation):
             raise GraphQLError("You are already logged in.")
         email = kwargs.get("email")
         password = kwargs.get("password")
+        remember = kwargs.get("remember")
         user = ModelUser.find_by_email(email)
         auth_error = GraphQLError("Invalid username or password.")
         if not user:
             raise auth_error
         if not user.check_password(password):
             raise auth_error
-        login_user(user, remember=True)
+        login_user(user, remember=remember)
 
         return LoginUser(user=user, ok=True)
 

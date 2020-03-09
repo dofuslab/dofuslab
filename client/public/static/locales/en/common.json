@@ -3,13 +3,6 @@
   "DELETE": "Delete",
   "EQUIPPED": "Equipped",
   "LEVEL": "Level",
-  "LOGIN": "Login",
   "MAGE": "Mage",
-  "SELECT_ITEM_TO_REPLACE": "Select item to replace",
-  "VALIDATION": {
-    "EMAIL_REQUIRED": "Email required",
-    "PASSWORD_REQUIRED": "Password required",
-    "PASSWORD_RULES": "Minimum 8 characters, at least one lowercase letter, uppercase letter, number, and symbol",
-    "VALID_EMAIL": "Please enter a valid email."
-  }
+  "SELECT_ITEM_TO_REPLACE": "Select item to replace"
 }
