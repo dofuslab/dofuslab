@@ -37,6 +37,21 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
   eligibleItemSlots: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_itemType_eligibleItemSlots[];
 }
 
+export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set_bonuses {
+  __typename: "SetBonus";
+  id: any;
+  numItems: number;
+  stat: Stat;
+  value: number;
+}
+
+export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set {
+  __typename: "Set";
+  id: any;
+  name: string;
+  bonuses: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set_bonuses[];
+}
+
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item {
   __typename: "Item";
   id: any;
@@ -45,13 +60,31 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
   stats: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_stats[];
   conditions: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_conditions[];
   itemType: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_itemType;
+  set: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set | null;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems {
   __typename: "EquippedItem";
   id: any;
-  slot: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_slot | null;
-  item: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item | null;
+  slot: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_slot;
+  item: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item;
+}
+
+export interface updateCustomSetItem_updateCustomSetItem_customSet_stats {
+  __typename: "CustomSetStats";
+  id: any;
+  baseVitality: number;
+  baseWisdom: number;
+  baseStrength: number;
+  baseIntelligence: number;
+  baseChance: number;
+  baseAgility: number;
+  scrolledVitality: number;
+  scrolledWisdom: number;
+  scrolledStrength: number;
+  scrolledIntelligence: number;
+  scrolledChance: number;
+  scrolledAgility: number;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet {
@@ -60,6 +93,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet {
   name: string | null;
   level: number;
   equippedItems: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems[];
+  stats: updateCustomSetItem_updateCustomSetItem_customSet_stats;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem {
@@ -72,7 +106,7 @@ export interface updateCustomSetItem {
 }
 
 export interface updateCustomSetItemVariables {
-  itemSlotId?: any | null;
+  itemSlotId: any;
   customSetId?: any | null;
   itemId?: any | null;
 }

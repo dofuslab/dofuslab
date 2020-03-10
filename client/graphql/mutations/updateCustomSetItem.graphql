@@ -1,7 +1,7 @@
 #import "graphql/fragments/customSet.graphql"
 
 mutation updateCustomSetItem(
-  $itemSlotId: UUID
+  $itemSlotId: UUID!
   $customSetId: UUID
   $itemId: UUID
 ) {

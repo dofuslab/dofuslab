@@ -37,6 +37,21 @@ export interface customSet_equippedItems_item_itemType {
   eligibleItemSlots: customSet_equippedItems_item_itemType_eligibleItemSlots[];
 }
 
+export interface customSet_equippedItems_item_set_bonuses {
+  __typename: "SetBonus";
+  id: any;
+  numItems: number;
+  stat: Stat;
+  value: number;
+}
+
+export interface customSet_equippedItems_item_set {
+  __typename: "Set";
+  id: any;
+  name: string;
+  bonuses: customSet_equippedItems_item_set_bonuses[];
+}
+
 export interface customSet_equippedItems_item {
   __typename: "Item";
   id: any;
@@ -45,13 +60,31 @@ export interface customSet_equippedItems_item {
   stats: customSet_equippedItems_item_stats[];
   conditions: customSet_equippedItems_item_conditions[];
   itemType: customSet_equippedItems_item_itemType;
+  set: customSet_equippedItems_item_set | null;
 }
 
 export interface customSet_equippedItems {
   __typename: "EquippedItem";
   id: any;
-  slot: customSet_equippedItems_slot | null;
-  item: customSet_equippedItems_item | null;
+  slot: customSet_equippedItems_slot;
+  item: customSet_equippedItems_item;
+}
+
+export interface customSet_stats {
+  __typename: "CustomSetStats";
+  id: any;
+  baseVitality: number;
+  baseWisdom: number;
+  baseStrength: number;
+  baseIntelligence: number;
+  baseChance: number;
+  baseAgility: number;
+  scrolledVitality: number;
+  scrolledWisdom: number;
+  scrolledStrength: number;
+  scrolledIntelligence: number;
+  scrolledChance: number;
+  scrolledAgility: number;
 }
 
 export interface customSet {
@@ -60,4 +93,5 @@ export interface customSet {
   name: string | null;
   level: number;
   equippedItems: customSet_equippedItems[];
+  stats: customSet_stats;
 }

@@ -1,3 +1,4 @@
+#import "graphql/fragments/baseStats.graphql"
 #import "graphql/fragments/item.graphql"
 
 fragment customSet on CustomSet {
@@ -12,5 +13,8 @@ fragment customSet on CustomSet {
     item {
       ...item
     }
+  }
+  stats {
+    ...baseStats
   }
 }

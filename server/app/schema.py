@@ -78,6 +78,8 @@ class SetBonus(SQLAlchemyObjectType):
 
 
 class Set(SQLAlchemyObjectType):
+    bonuses = graphene.NonNull(graphene.List(graphene.NonNull(SetBonus)))
+
     class Meta:
         model = ModelSet
         interfaces = (GlobalNode,)
@@ -90,6 +92,9 @@ class EquippedItemExo(SQLAlchemyObjectType):
 
 
 class EquippedItem(SQLAlchemyObjectType):
+    item = graphene.NonNull(Item)
+    slot = graphene.NonNull(ItemSlot)
+
     class Meta:
         model = ModelEquippedItem
         interfaces = (GlobalNode,)
@@ -220,7 +225,7 @@ class UpdateCustomSetItem(graphene.Mutation):
     class Arguments:
         # if null, create new set
         custom_set_id = graphene.UUID()
-        item_slot_id = graphene.UUID()
+        item_slot_id = graphene.UUID(required=True)
         item_id = graphene.UUID()
 
     custom_set = graphene.Field(CustomSet, required=True)
@@ -243,6 +248,23 @@ class UpdateCustomSetItem(graphene.Mutation):
         db.session.commit()
 
         return UpdateCustomSetItem(custom_set=custom_set)
+
+
+class DeleteCustomSetItem(graphene.Mutation):
+    class Arguments:
+        custom_set_id = graphene.UUID(required=True)
+        item_slot_id = graphene.UUID(required=True)
+
+    custom_set = graphene.Field(CustomSet, required=True)
+
+    def mutate(self, info, **kwargs):
+        custom_set_id = kwargs.get("custom_set_id")
+        item_slot_id = kwargs.get("item_slot_id")
+        custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
+        custom_set.unequip_item(item_slot_id)
+        db.session.commit()
+
+        return DeleteCustomSetItem(custom_set=custom_set)
 
 
 class RegisterUser(graphene.Mutation):
@@ -279,6 +301,7 @@ class LoginUser(graphene.Mutation):
     class Arguments:
         email = graphene.String(required=True)
         password = graphene.String(required=True)
+        remember = graphene.Boolean(required=True)
 
     user = graphene.Field(User)
     ok = graphene.Boolean(required=True)
@@ -288,13 +311,14 @@ class LoginUser(graphene.Mutation):
             raise GraphQLError("You are already logged in.")
         email = kwargs.get("email")
         password = kwargs.get("password")
+        remember = kwargs.get("remember")
         user = ModelUser.find_by_email(email)
         auth_error = GraphQLError("Invalid username or password.")
         if not user:
             raise auth_error
         if not user.check_password(password):
             raise auth_error
-        login_user(user, remember=True)
+        login_user(user, remember=remember)
 
         return LoginUser(user=user, ok=True)
 
@@ -361,6 +385,7 @@ class Mutation(graphene.ObjectType):
     login_user = LoginUser.Field()
     logout_user = LogoutUser.Field()
     update_custom_set_item = UpdateCustomSetItem.Field()
+    delete_custom_set_item = DeleteCustomSetItem.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

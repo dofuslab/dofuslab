@@ -1,3 +1,8 @@
 {
-  "SAVE": "Save"
+  "CANCEL": "Cancel",
+  "DELETE": "Delete",
+  "EQUIPPED": "Equipped",
+  "LEVEL": "Level",
+  "MAGE": "Mage",
+  "SELECT_ITEM_TO_REPLACE": "Select item to replace"
 }

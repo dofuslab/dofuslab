@@ -3,12 +3,13 @@
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { mq } from './constants';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'i18n';
 import { TFunction } from 'next-i18next';
 import {
   items_items_stats,
   items_items,
 } from 'graphql/queries/__generated__/items';
+import { gray7, ellipsis } from './mixins';
 
 interface IResponsiveGrid {
   readonly numColumns: ReadonlyArray<number>;
@@ -66,3 +67,29 @@ export const ItemStatsList: React.FC<IITemsStatsList> = ({
     </ul>
   );
 };
+
+export const Badge: React.FC = ({ children }) => (
+  <span
+    css={{
+      background: gray7,
+      color: 'white',
+      textTransform: 'uppercase',
+      fontSize: '0.75em',
+      fontWeight: 500,
+      padding: '2px 4px',
+      borderRadius: 4,
+      marginLeft: 8,
+    }}
+  >
+    {children}
+  </span>
+);
+
+export const TruncatableText: React.FC = ({ children }) => (
+  <span
+    css={ellipsis}
+    title={typeof children === 'string' ? children : undefined}
+  >
+    {children}
+  </span>
+);

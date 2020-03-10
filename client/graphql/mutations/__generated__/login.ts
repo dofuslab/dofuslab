@@ -24,4 +24,5 @@ export interface login {
 export interface loginVariables {
   email: string;
   password: string;
+  remember: boolean;
 }
