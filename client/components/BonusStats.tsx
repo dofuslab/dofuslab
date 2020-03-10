@@ -1,13 +1,13 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import { jsx, css } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import { EllipsisOutlined } from '@ant-design/icons';
 import Popover from 'antd/lib/popover';
 import { useTranslation } from 'i18n';
 
 import { item_set } from 'graphql/fragments/__generated__/item';
-import { itemBox } from 'common/mixins';
+import { itemImageBox, itemBox } from 'common/mixins';
 
 interface IProps {
   setBonuses: {
@@ -52,8 +52,10 @@ const BonusStats: React.FC<IProps> = ({ setBonuses }) => {
         </div>
       }
     >
-      <div css={css(itemBox)}>
-        <EllipsisOutlined />
+      <div css={itemBox}>
+        <div css={itemImageBox}>
+          <EllipsisOutlined />
+        </div>
       </div>
     </Popover>
   );

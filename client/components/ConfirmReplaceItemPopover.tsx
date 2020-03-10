@@ -7,7 +7,7 @@ import Popover from 'antd/lib/popover';
 import { item } from 'graphql/fragments/__generated__/item';
 // import { useTranslation } from 'i18n';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { itemBox, selected, popoverTitleStyle } from 'common/mixins';
+import { itemBox, popoverTitleStyle } from 'common/mixins';
 import ItemWithStats from './ItemWithStats';
 import { useEquipItemMutation } from 'common/utils';
 
@@ -65,17 +65,15 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
                 )
                 .map(equippedItem => (
                   <div
-                    css={{
-                      ...itemBox,
-                      ...(equippedItem.slot.id === selectedItemSlotId
-                        ? selected
-                        : {}),
-                    }}
+                    css={itemBox}
                     key={equippedItem.id}
                     data-slot-id={equippedItem.slot.id}
                     onClick={onSlotSelect}
                   >
-                    <ItemWithStats item={equippedItem.item} />
+                    <ItemWithStats
+                      item={equippedItem.item}
+                      selected={equippedItem.slot.id === selectedItemSlotId}
+                    />
                   </div>
                 ))}
             </div>

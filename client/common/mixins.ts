@@ -1,5 +1,7 @@
 import { css } from '@emotion/core';
 
+export const shadow = '0 2px 8px rgba(0, 0, 0, 0.15)';
+
 export const gray1 = '#ffffff';
 export const gray2 = '#fafafa';
 export const gray3 = '#f5f5f5';
@@ -23,6 +25,33 @@ export const itemBoxDimensions = {
   height: ITEM_BOX_WIDTH,
 };
 
+export const itemImageBox = {
+  width: ITEM_BOX_WIDTH,
+  height: ITEM_BOX_WIDTH,
+  position: 'relative' as 'relative',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  fontSize: '0.75rem',
+  borderRadius: 4,
+  cursor: 'pointer',
+  border: `1px solid ${BORDER_COLOR}`,
+  ['&:hover::before']: {
+    opacity: 1,
+  },
+  ['&::before']: {
+    content: "''",
+    boxShadow: shadow,
+    opacity: 0,
+    transition: 'opacity 0.3s',
+    position: 'absolute' as 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+  },
+};
+
 export const ellipsis = css({
   overflow: 'hidden',
   textOverflow: 'ellipsis',
@@ -31,16 +60,10 @@ export const ellipsis = css({
 
 export const itemBox = {
   background: 'white',
-  border: `1px solid ${BORDER_COLOR}`,
+
   width: ITEM_BOX_WIDTH,
   height: ITEM_BOX_WIDTH,
   margin: 8,
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  fontSize: '0.75rem',
-  borderRadius: 4,
-  cursor: 'pointer',
 };
 
 export const selected = {
