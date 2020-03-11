@@ -60,6 +60,10 @@ export interface items_items_edges {
 export interface items_items_pageInfo {
   __typename: "PageInfo";
   /**
+   * When paginating forwards, are there more items?
+   */
+  hasNextPage: boolean;
+  /**
    * When paginating forwards, the cursor to continue.
    */
   endCursor: string | null;

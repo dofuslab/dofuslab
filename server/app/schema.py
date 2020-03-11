@@ -385,7 +385,14 @@ class Query(graphene.ObjectType):
     items = relay.ConnectionField(graphene.NonNull(ItemConnection))
 
     def resolve_items(self, info, **kwargs):
-        return db.session.query(ModelItem).all()
+        locale = info.context.headers.get("Accept-Language")[:2]
+        return (
+            db.session.query(ModelItem)
+            .join(ModelItemTranslation)
+            .filter_by(locale=locale)
+            .order_by(ModelItem.level.desc(), ModelItemTranslation.name.asc())
+            .all()
+        )
 
     sets = graphene.NonNull(graphene.List(graphene.NonNull(Set)))
 

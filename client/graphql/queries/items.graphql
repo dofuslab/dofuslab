@@ -8,6 +8,7 @@ query items($first: Int!, $after: String) {
       }
     }
     pageInfo {
+      hasNextPage
       endCursor
     }
   }

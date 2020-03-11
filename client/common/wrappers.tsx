@@ -2,42 +2,19 @@
 
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import { mq } from './constants';
 import { useTranslation } from 'i18n';
 import { TFunction } from 'next-i18next';
 import { items_items_edges_node_stats } from 'graphql/queries/__generated__/items';
-import { gray7, ellipsis } from './mixins';
+import { gray7, ellipsis, getResponsiveGridStyle } from './mixins';
 import { item } from 'graphql/fragments/__generated__/item';
 
 interface IResponsiveGrid {
   readonly numColumns: ReadonlyArray<number>;
 }
 
-export const ResponsiveGrid = styled.div<IResponsiveGrid>(({ numColumns }) => ({
-  display: 'grid',
-  width: '100%',
-  gridTemplateColumns: '1fr',
-  columnGap: 20,
-  rowGap: 20,
-  [mq[0]]: {
-    gridTemplateColumns: `repeat(${numColumns[0]}, 1fr)`,
-  },
-  [mq[1]]: {
-    gridTemplateColumns: `repeat(${numColumns[1]}, 1fr)`,
-  },
-  [mq[2]]: {
-    gridTemplateColumns: `repeat(${numColumns[2]}, 1fr)`,
-  },
-  [mq[3]]: {
-    gridTemplateColumns: `repeat(${numColumns[3]}, 1fr)`,
-  },
-  [mq[4]]: {
-    gridTemplateColumns: `repeat(${numColumns[4]}, 1fr)`,
-  },
-  [mq[5]]: {
-    gridTemplateColumns: `repeat(${numColumns[5]}, 1fr)`,
-  },
-}));
+export const ResponsiveGrid = styled.div<IResponsiveGrid>(({ numColumns }) =>
+  getResponsiveGridStyle(numColumns),
+);
 
 function displayStats(t: TFunction, statLine: items_items_edges_node_stats) {
   const statName = t(statLine.stat as string);
