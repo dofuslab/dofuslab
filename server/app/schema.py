@@ -20,7 +20,6 @@ import graphene
 import uuid
 from graphql import GraphQLError
 from flask_login import login_required, login_user, current_user, logout_user
-from sqlalchemy.dialects.postgresql import UUID
 
 
 class GlobalNode(graphene.Interface):
@@ -55,23 +54,18 @@ class ItemType(SQLAlchemyObjectType):
         interfaces = (GlobalNode,)
 
 
-class ItemTranslation(SQLAlchemyObjectType):
-    class Meta:
-        model = ModelItemTranslation
-        interfaces = (GlobalNode,)
-
-
 class Item(SQLAlchemyObjectType):
     stats = graphene.NonNull(graphene.List(graphene.NonNull(ItemStats)))
-    translations_by_locale = graphene.Field(ItemTranslation)
+    name = graphene.String(required=True)
 
-    def resolve_translations_by_locale(self, info):
+    def resolve_name(self, info):
         locale = info.context.headers.get("Accept-Language")[:2]
-        query = ItemTranslation.get_query(info)
+        query = db.session.query(ModelItemTranslation)
         return (
             query.filter(ModelItemTranslation.locale == locale)
             .filter(ModelItemTranslation.item_id == self.uuid)
-            .first()
+            .one()
+            .name
         )
 
     class Meta:
@@ -85,23 +79,18 @@ class SetBonus(SQLAlchemyObjectType):
         interfaces = (GlobalNode,)
 
 
-class SetTranslation(SQLAlchemyObjectType):
-    class Meta:
-        model = ModelSetTranslation
-        interfaces = (GlobalNode,)
-
-
 class Set(SQLAlchemyObjectType):
     bonuses = graphene.NonNull(graphene.List(graphene.NonNull(SetBonus)))
-    translations_by_locale = graphene.Field(SetTranslation)
+    name = graphene.String(required=True)
 
-    def resolve_translations_by_locale(self, info):
+    def resolve_name(self, info):
         locale = info.context.headers.get("Accept-Language")[:2]
-        query = SetTranslation.get_query(info)
+        query = db.session.query(ModelSetTranslation)
         return (
             query.filter(ModelSetTranslation.locale == locale)
-            .filter(ModelSetTranslation.item_id == self.uuid)
-            .first()
+            .filter(ModelSetTranslation.set_id == self.uuid)
+            .one()
+            .name
         )
 
     class Meta:
@@ -370,11 +359,10 @@ class Query(graphene.ObjectType):
     def resolve_items(self, info):
         return db.session.query(ModelItem).all()
 
-    # not sure if we'll end up using this but could be useful
     sets = graphene.NonNull(graphene.List(graphene.NonNull(Set)))
 
     def resolve_sets(self, info):
-        query = Set.get_query(info)
+        query = db.session.query(ModelSet)
         return query.all()
 
     custom_sets = graphene.List(CustomSet)
@@ -388,7 +376,7 @@ class Query(graphene.ObjectType):
     def resolve_user_by_id(self, info, id):
         return db.session.query(ModelUser).get(id)
 
-    item_by_uuid = graphene.Field(Item, uuid=graphene.String(required=True))
+    item_by_id = graphene.Field(Item, id=graphene.UUID(required=True))
 
     def resolve_item_by_id(self, info, id):
         return db.session.query(ModelItem).get(id)

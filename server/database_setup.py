@@ -110,13 +110,13 @@ if __name__ == "__main__":
         data = json.load(file)
         for record in data:
             set_obj = ModelSet(dofus_db_id=record["id"])
-            base.db_session.add(set_obj)
+            db.session.add(set_obj)
 
             for locale in record["name"]:
                 set_translation = ModelSetTranslation(
                     set_id=set_obj.uuid, locale=locale, name=record["name"][locale]
                 )
-                base.db_session.add(set_translation)
+                db.session.add(set_translation)
                 set_obj.set_translation.append(set_translation)
 
             for num_items in record["bonuses"]:
@@ -130,7 +130,7 @@ if __name__ == "__main__":
                         bonus_obj.value = bonus["value"]
                     else:
                         bonus_obj.alt_stat = bonus["altStat"]
-                    base.db_session.add(bonus_obj)
+                    db.session.add(bonus_obj)
                     set_obj.bonuses.append(bonus_obj)
 
         db.session.commit()
@@ -159,7 +159,7 @@ if __name__ == "__main__":
                 item_translations = ModelItemTranslation(
                     item_id=item.uuid, locale=locale, name=record["name"][locale],
                 )
-                base.db_session.add(item_translations)
+                db.session.add(item_translations)
                 item.item_translations.append(item_translations)
 
             # Currently, stats that aren't in the Stat enum will cause a KeyError
@@ -173,13 +173,13 @@ if __name__ == "__main__":
                     db.session.add(item_stat)
                     item.stats.append(item_stat)
 
-                base.db_session.add(item)
+                db.session.add(item)
 
                 # If this item belongs in a set, query the set and add the relationship to the record
                 if record["setID"]:
                     set = record["setID"]
                     set_record = (
-                        base.db_session.query(ModelSet)
+                        db.session.query(ModelSet)
                         .filter(ModelSet.dofus_db_id == set)
                         .first()
                     )
@@ -188,4 +188,4 @@ if __name__ == "__main__":
             except KeyError as err:
                 print("KeyError occurred:", err)
 
-        base.db_session.commit()
+        db.session.commit()

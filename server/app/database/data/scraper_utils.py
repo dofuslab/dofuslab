@@ -181,25 +181,13 @@ def get_bonuses(soup):
             value = None
             alt_stat = None
 
-            # In cases we have non-traditional stats, we take the description raw
-            # and place it under altStat
-            n_stats = (
-                "following",
-                "Aura",
-                "Title",
-                "no longer requires",
-                "on the spell",
-                "linear",
-                "Reduces",
-                "Increases",
-                "modifiable",
-                "bonus",
-                "speech",
-                "temporary",
-                "emote",
-            )
-            if any(x in description for x in n_stats):
-                print(description)
+            if (
+                re.search(
+                    r"(\d+%?\s(?:{})$)|(?:^Reflects\s\d)".format(joined_stats),
+                    description,
+                )
+                == None
+            ):
                 alt_stat = description
 
                 stats.append(
