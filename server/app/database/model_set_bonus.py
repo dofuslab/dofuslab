@@ -22,6 +22,6 @@ class ModelSetBonus(Base):
         index=True,
     )
     num_items = Column("num_items", Integer, nullable=False)
-    stat = Column("stat", StatEnum)
+    stat = Column("stat", StatEnum, index=True)
     value = Column("value", Integer)
     alt_stat = Column("alt_stat", String)

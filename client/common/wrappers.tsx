@@ -5,11 +5,9 @@ import styled from '@emotion/styled';
 import { mq } from './constants';
 import { useTranslation } from 'i18n';
 import { TFunction } from 'next-i18next';
-import {
-  items_items_stats,
-  items_items,
-} from 'graphql/queries/__generated__/items';
+import { items_items_edges_node_stats } from 'graphql/queries/__generated__/items';
 import { gray7, ellipsis } from './mixins';
+import { item } from 'graphql/fragments/__generated__/item';
 
 interface IResponsiveGrid {
   readonly numColumns: ReadonlyArray<number>;
@@ -41,13 +39,13 @@ export const ResponsiveGrid = styled.div<IResponsiveGrid>(({ numColumns }) => ({
   },
 }));
 
-function displayStats(t: TFunction, statLine: items_items_stats) {
+function displayStats(t: TFunction, statLine: items_items_edges_node_stats) {
   const statName = t(statLine.stat as string);
   return `${statLine.maxValue} ${statName}`;
 }
 
 interface IITemsStatsList {
-  readonly item: items_items;
+  readonly item: item;
   readonly className?: string;
 }
 

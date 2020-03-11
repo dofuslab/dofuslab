@@ -14,13 +14,6 @@ export interface items_items_edges_node_stats {
   stat: Stat | null;
 }
 
-export interface items_items_edges_node_conditions {
-  __typename: "ItemConditions";
-  stat: Stat | null;
-  isGreaterThan: boolean | null;
-  limit: number | null;
-}
-
 export interface items_items_edges_node_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
@@ -36,8 +29,9 @@ export interface items_items_edges_node_set_bonuses {
   __typename: "SetBonus";
   id: any;
   numItems: number;
-  stat: Stat;
-  value: number;
+  stat: Stat | null;
+  value: number | null;
+  altStat: string | null;
 }
 
 export interface items_items_edges_node_set {
@@ -53,7 +47,7 @@ export interface items_items_edges_node {
   name: string;
   imageUrl: string;
   stats: items_items_edges_node_stats[];
-  conditions: items_items_edges_node_conditions[];
+  conditions: any | null;
   itemType: items_items_edges_node_itemType;
   set: items_items_edges_node_set | null;
 }

@@ -78,6 +78,7 @@ class ItemType(SQLAlchemyObjectType):
 
 class Item(SQLAlchemyObjectType):
     stats = graphene.NonNull(graphene.List(graphene.NonNull(ItemStats)))
+    item_type = graphene.NonNull(ItemType)
     name = graphene.String(required=True)
 
     def resolve_name(self, info):

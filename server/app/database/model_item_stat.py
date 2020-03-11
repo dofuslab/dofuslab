@@ -18,7 +18,7 @@ class ModelItemStat(Base):
     item_id = Column(
         UUID(as_uuid=True), ForeignKey("item.uuid"), nullable=False, index=True
     )
-    stat = Column("stat", StatEnum)
+    stat = Column("stat", StatEnum, index=True)
     min_value = Column("min_value", Integer)
     max_value = Column("max_value", Integer)
     alt_stat = Column("alt_stat", String)

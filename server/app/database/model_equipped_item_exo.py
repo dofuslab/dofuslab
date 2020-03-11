@@ -2,7 +2,7 @@ import sqlalchemy
 from .base import Base
 from .enums import StatEnum
 from .model_equipped_item import ModelEquippedItem
-from sqlalchemy import Column, Enum, ForeignKey, Integer, String
+from sqlalchemy import Column, Enum, ForeignKey, Integer, String, UniqueConstraint
 from sqlalchemy.dialects.postgresql import UUID
 
 
@@ -18,8 +18,9 @@ class ModelEquippedItemExo(Base):
 
     stat = Column("stat", StatEnum, nullable=False)
     value = Column("value", Integer, nullable=False)
-    num_items = Column("num_items", Integer, nullable=False, index=True)
 
     equipped_item_id = Column(
         UUID(as_uuid=True), ForeignKey("equipped_item.uuid"), index=True
     )
+
+    __table_args__ = (UniqueConstraint("equipped_item_id", "stat"),)

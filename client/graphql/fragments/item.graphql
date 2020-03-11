@@ -6,11 +6,7 @@ fragment item on Item {
     maxValue
     stat
   }
-  conditions {
-    stat
-    isGreaterThan
-    limit
-  }
+  conditions
   itemType {
     id
     eligibleItemSlots {
@@ -25,6 +21,7 @@ fragment item on Item {
       numItems
       stat
       value
+      altStat
     }
   }
 }

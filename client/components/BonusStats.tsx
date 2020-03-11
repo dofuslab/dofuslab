@@ -42,7 +42,9 @@ const BonusStats: React.FC<IProps> = ({ setBonuses }) => {
                   <ul css={{ paddingInlineStart: '16px' }}>
                     {filteredBonuses.map(bonus => (
                       <li key={bonus.id}>
-                        {bonus.value} {t(bonus.stat)}
+                        {!!bonus.value && !!bonus.stat
+                          ? `${bonus.value} ${t(bonus.stat)}`
+                          : bonus.altStat}
                       </li>
                     ))}
                   </ul>

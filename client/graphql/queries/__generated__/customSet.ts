@@ -19,13 +19,6 @@ export interface customSet_customSetById_equippedItems_item_stats {
   stat: Stat | null;
 }
 
-export interface customSet_customSetById_equippedItems_item_conditions {
-  __typename: "ItemConditions";
-  stat: Stat | null;
-  isGreaterThan: boolean | null;
-  limit: number | null;
-}
-
 export interface customSet_customSetById_equippedItems_item_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
@@ -41,8 +34,9 @@ export interface customSet_customSetById_equippedItems_item_set_bonuses {
   __typename: "SetBonus";
   id: any;
   numItems: number;
-  stat: Stat;
-  value: number;
+  stat: Stat | null;
+  value: number | null;
+  altStat: string | null;
 }
 
 export interface customSet_customSetById_equippedItems_item_set {
@@ -58,7 +52,7 @@ export interface customSet_customSetById_equippedItems_item {
   name: string;
   imageUrl: string;
   stats: customSet_customSetById_equippedItems_item_stats[];
-  conditions: customSet_customSetById_equippedItems_item_conditions[];
+  conditions: any | null;
   itemType: customSet_customSetById_equippedItems_item_itemType;
   set: customSet_customSetById_equippedItems_item_set | null;
 }

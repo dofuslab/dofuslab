@@ -19,13 +19,6 @@ export interface deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems
   stat: Stat | null;
 }
 
-export interface deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems_item_conditions {
-  __typename: "ItemConditions";
-  stat: Stat | null;
-  isGreaterThan: boolean | null;
-  limit: number | null;
-}
-
 export interface deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems_item_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
@@ -41,8 +34,9 @@ export interface deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems
   __typename: "SetBonus";
   id: any;
   numItems: number;
-  stat: Stat;
-  value: number;
+  stat: Stat | null;
+  value: number | null;
+  altStat: string | null;
 }
 
 export interface deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems_item_set {
@@ -58,7 +52,7 @@ export interface deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems
   name: string;
   imageUrl: string;
   stats: deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems_item_stats[];
-  conditions: deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems_item_conditions[];
+  conditions: any | null;
   itemType: deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems_item_itemType;
   set: deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems_item_set | null;
 }
