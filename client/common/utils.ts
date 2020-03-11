@@ -100,8 +100,10 @@ export const getStatsFromCustomSet = (customSet?: customSet | null) => {
     ...Object.values(sets).map(({ count, set: { bonuses } }) =>
       mergeStatObjs(
         ...bonuses
-          .filter(bonus => bonus.numItems === count)
-          .map(({ stat, value }) => ({ [stat]: value })),
+          .filter(
+            bonus => bonus.numItems === count && !!bonus.stat && !!bonus.value,
+          )
+          .map(({ stat, value }) => ({ [stat!]: value! })),
       ),
     ),
   );

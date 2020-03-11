@@ -14,13 +14,6 @@ export interface item_stats {
   stat: Stat | null;
 }
 
-export interface item_conditions {
-  __typename: "ItemConditions";
-  stat: Stat | null;
-  isGreaterThan: boolean | null;
-  limit: number | null;
-}
-
 export interface item_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
@@ -36,8 +29,9 @@ export interface item_set_bonuses {
   __typename: "SetBonus";
   id: any;
   numItems: number;
-  stat: Stat;
-  value: number;
+  stat: Stat | null;
+  value: number | null;
+  altStat: string | null;
 }
 
 export interface item_set {
@@ -53,7 +47,7 @@ export interface item {
   name: string;
   imageUrl: string;
   stats: item_stats[];
-  conditions: item_conditions[];
+  conditions: any | null;
   itemType: item_itemType;
   set: item_set | null;
 }

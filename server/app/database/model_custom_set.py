@@ -20,7 +20,7 @@ class ModelCustomSet(Base):
         primary_key=True,
         nullable=False,
     )
-    name = Column("name", String)
+    name = Column("name", String, index=True)
     description = Column("description", String)
     owner_id = Column(UUID(as_uuid=True), ForeignKey("user.uuid"), index=True)
     created_at = Column("creation_date", DateTime, default=datetime.now)

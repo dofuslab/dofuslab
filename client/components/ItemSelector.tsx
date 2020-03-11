@@ -7,7 +7,7 @@ import { useQuery } from '@apollo/react-hooks';
 import ItemCard from './ItemCard';
 import { ResponsiveGrid } from 'common/wrappers';
 import ItemsQuery from 'graphql/queries/items.graphql';
-import { items } from 'graphql/queries/__generated__/items';
+import { items, itemsVariables } from 'graphql/queries/__generated__/items';
 import CurrentlyEquippedItem from './CurrentlyEquippedItem';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 
@@ -17,7 +17,9 @@ interface IProps {
 }
 
 const ItemSelector: React.FC<IProps> = ({ selectedItemSlotId, customSet }) => {
-  const { data } = useQuery<items>(ItemsQuery);
+  const { data } = useQuery<items, itemsVariables>(ItemsQuery, {
+    variables: { first: 24 },
+  });
 
   const responsiveGridRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -43,7 +45,8 @@ const ItemSelector: React.FC<IProps> = ({ selectedItemSlotId, customSet }) => {
           customSetId={customSet!.id}
         />
       )}
-      {data.items
+      {data.items.edges
+        .map(edge => edge.node)
         .filter(
           item =>
             !selectedItemSlotId ||
