@@ -208,8 +208,8 @@ class CustomSetStatsInput(graphene.InputObjectType):
 
 
 class CustomSetExosInput(graphene.InputObjectType):
-    stat = StatEnum
-    value = graphene.Int()
+    stat = graphene.NonNull(StatEnum)
+    value = graphene.Int(required=True)
 
 
 class CreateCustomSet(graphene.Mutation):
@@ -314,6 +314,32 @@ class UpdateCustomSetItem(graphene.Mutation):
         db.session.commit()
 
         return UpdateCustomSetItem(custom_set=custom_set)
+
+
+# class MageEquippedItem(graphene.Mutation):
+#     class Arguments:
+#         equipped_item_id = graphene.UUID(required=True)
+#         stats = graphene.NonNull(graphene.List(graphene.NonNull(CustomSetExosInput)))
+
+#     equipped_item = graphene.Field(EquippedItem, required=True)
+
+#     def mutate(self, info, **kwargs):
+#         equipped_item_id = kwargs.get("equipped_item_id")
+#         stats = kwargs.get("stats")
+#         equipped_item = db.session.query(ModelEquippedItem).get(equipped_item_id)
+#         db.session.query(ModelEquippedItemExo).filter_by(
+#             equipped_item_id=equipped_item_id
+#         ).delete(synchronize_session=False)
+#         exo_models = map(
+#             lambda stat_line: ModelEquippedItemExo(
+#                 stat=stat_line.stat, value=value, equipped_item_id=equipped_item_id
+#             ),
+#             stats,
+#         )
+#         db.session.add_all(stats)
+#         db.session.commit()
+
+#         return MageEquippedItem(equipped_item=equipped_item)
 
 
 class DeleteCustomSetItem(graphene.Mutation):
@@ -506,6 +532,7 @@ class Mutation(graphene.ObjectType):
     logout_user = LogoutUser.Field()
     update_custom_set_item = UpdateCustomSetItem.Field()
     delete_custom_set_item = DeleteCustomSetItem.Field()
+    # mage_equipped_item = MageEquippedItem.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
