@@ -13,6 +13,7 @@ class ModelSetBonus(Base):
         UUID(as_uuid=True),
         server_default=sqlalchemy.text("uuid_generate_v4()"),
         primary_key=True,
+        nullable=False,
     )
     set_id = Column(
         UUID(as_uuid=True),
@@ -21,5 +22,6 @@ class ModelSetBonus(Base):
         index=True,
     )
     num_items = Column("num_items", Integer, nullable=False)
-    stat = Column("stat", StatEnum, nullable=False)
-    value = Column("max_value", Integer, nullable=False)
+    stat = Column("stat", StatEnum)
+    value = Column("value", Integer)
+    alt_stat = Column("alt_stat", String)

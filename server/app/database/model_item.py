@@ -2,8 +2,7 @@ import sqlalchemy
 from .base import Base
 from .model_item_type import ModelItemType
 from .model_item_stat import ModelItemStat
-from .model_item_condition import ModelItemCondition
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer, String, JSON
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.postgresql import UUID
 
@@ -17,7 +16,10 @@ class ModelItem(Base):
         primary_key=True,
         nullable=False,
     )
-    name = Column("name", String, nullable=False)
+    dofus_db_id = Column("dofus_db_id", String, nullable=False)
+    item_translations = relationship(
+        "ModelItemTranslation", backref="item", cascade="all, delete-orphan"
+    )
     item_type_id = Column(
         UUID(as_uuid=True), ForeignKey("item_type.uuid"), nullable=False, index=True
     )
@@ -26,7 +28,5 @@ class ModelItem(Base):
     set = relationship("ModelSet")
     level = Column("level", Integer, nullable=False)
     stats = relationship(ModelItemStat, backref="item", cascade="all, delete-orphan")
-    conditions = relationship(
-        ModelItemCondition, backref="item", cascade="all, delete-orphan"
-    )
+    conditions = Column("condtions", JSON)
     image_url = Column("image_url", String, nullable=False)

@@ -15,6 +15,7 @@ class ModelSet(Base):
         server_default=sqlalchemy.text("uuid_generate_v4()"),
         primary_key=True,
     )
-    name = Column("name", String, nullable=False)
+    dofus_db_id = Column("dofus_db_id", String, nullable=False)
+    set_translation = relationship("ModelSetTranslation", cascade="all, delete-orphan")
     items = relationship("ModelItem", cascade="all, delete-orphan")
     bonuses = relationship("ModelSetBonus", passive_deletes=True)

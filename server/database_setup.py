@@ -3,9 +3,10 @@ from app.database.model_item import ModelItem
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_slot import ModelItemSlot
 from app.database.model_item_type import ModelItemType
-from app.database.model_item_condition import ModelItemCondition
+from app.database.model_item_translation import ModelItemTranslation
 from app.database.model_set import ModelSet
 from app.database.model_set_bonus import ModelSetBonus
+from app.database.model_set_translation import ModelSetTranslation
 from app.database.model_custom_set_stat import ModelCustomSetStat
 from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_custom_set import ModelCustomSet
@@ -41,6 +42,7 @@ to_stat_enum = {
     "Lock": enums.Stat.LOCK,
     "Dodge": enums.Stat.DODGE,
     "Power": enums.Stat.POWER,
+    "Damage": enums.Stat.DAMAGE,
     "Critical Damage": enums.Stat.CRITICAL_DAMAGE,
     "Neutral Damage": enums.Stat.NEUTRAL_DAMAGE,
     "Earth Damage": enums.Stat.EARTH_DAMAGE,
@@ -69,6 +71,7 @@ to_stat_enum = {
     "Pushback Resistance": enums.Stat.PUSHBACK_RES,
     "% Ranged Resistance": enums.Stat.PCT_RANGED_RES,
     "% Melee Resistance": enums.Stat.PCT_MELEE_RES,
+    "pods": enums.Stat.PODS,
 }
 
 if __name__ == "__main__":
@@ -106,19 +109,29 @@ if __name__ == "__main__":
     with open(os.path.join(dirname, "app/database/data/sets.json"), "r") as file:
         data = json.load(file)
         for record in data:
-            set_obj = ModelSet(name=record["name"])
+            set_obj = ModelSet(dofus_db_id=record["id"])
             db.session.add(set_obj)
-            db.session.flush()
+
+            for locale in record["name"]:
+                set_translation = ModelSetTranslation(
+                    set_id=set_obj.uuid, locale=locale, name=record["name"][locale]
+                )
+                db.session.add(set_translation)
+                set_obj.set_translation.append(set_translation)
+
             for num_items in record["bonuses"]:
                 bonuses = record["bonuses"][num_items]
                 for bonus in bonuses:
                     bonus_obj = ModelSetBonus(
-                        set_id=set_obj.uuid,
-                        num_items=int(num_items),
-                        stat=to_stat_enum[bonus["stat"]],
-                        value=int(bonus["value"]),
+                        set_id=set_obj.uuid, num_items=int(num_items),
                     )
+                    if bonus["stat"]:
+                        bonus_obj.stat = to_stat_enum[bonus["stat"]]
+                        bonus_obj.value = bonus["value"]
+                    else:
+                        bonus_obj.alt_stat = bonus["altStat"]
                     db.session.add(bonus_obj)
+                    set_obj.bonuses.append(bonus_obj)
 
         db.session.commit()
 
@@ -126,12 +139,28 @@ if __name__ == "__main__":
     with open(os.path.join(dirname, "app/database/data/items.json"), "r") as file:
         data = json.load(file)
         for record in data:
+            if record["itemType"] == "Living object":
+                continue
+
             item = ModelItem(
-                name=record["name"],
+                dofus_db_id=record["dofusID"],
                 item_type=item_types[record["itemType"]],
                 level=record["level"],
                 image_url=record["imageUrl"],
             )
+
+            conditions = {
+                "conditions": record["conditions"]["conditions"],
+                "customConditions": record["conditions"]["custom_conditions"],
+            }
+            item.conditions = conditions
+
+            for locale in record["name"]:
+                item_translations = ModelItemTranslation(
+                    item_id=item.uuid, locale=locale, name=record["name"][locale],
+                )
+                db.session.add(item_translations)
+                item.item_translations.append(item_translations)
 
             # Currently, stats that aren't in the Stat enum will cause a KeyError
             try:
@@ -144,22 +173,15 @@ if __name__ == "__main__":
                     db.session.add(item_stat)
                     item.stats.append(item_stat)
 
-                for condition in record["conditions"]:
-                    item_condition = ModelItemCondition(
-                        stat=to_stat_enum.get(condition.get("statType"), None),
-                        is_greater_than=condition.get("condition") == ">",
-                        limit=condition.get("limit", None),
-                    )
-                    db.session.add(item_condition)
-                    item.conditions.append(item_condition)
-
                 db.session.add(item)
 
                 # If this item belongs in a set, query the set and add the relationship to the record
-                if record["set"]:
-                    set = record["set"]
+                if record["setID"]:
+                    set = record["setID"]
                     set_record = (
-                        db.session.query(ModelSet).filter(ModelSet.name == set).first()
+                        db.session.query(ModelSet)
+                        .filter(ModelSet.dofus_db_id == set)
+                        .first()
                     )
                     set_record.items.append(item)
                     db.session.merge(set_record)
@@ -167,11 +189,3 @@ if __name__ == "__main__":
                 print("KeyError occurred:", err)
 
         db.session.commit()
-
-    # print('Inserting user data in database')
-    # with open('database/data/users.json', 'r') as file:
-    #     data = literal_eval(file.read())
-    #     for record in data:
-    #         user = ModelUser(**record)
-    #         base.db_session.add(user)
-    #     base.db_session.commit()

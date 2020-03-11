@@ -21,3 +21,4 @@ class ModelItemStat(Base):
     stat = Column("stat", StatEnum)
     min_value = Column("min_value", Integer)
     max_value = Column("max_value", Integer)
+    alt_stat = Column("alt_stat", String)

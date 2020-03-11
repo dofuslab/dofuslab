@@ -42,6 +42,7 @@ def upgrade():
         "DODGE",
         "PCT_FINAL_DAMAGE",
         "POWER",
+        "DAMAGE",
         "CRITICAL_DAMAGE",
         "NEUTRAL_DAMAGE",
         "EARTH_DAMAGE",
@@ -70,6 +71,7 @@ def upgrade():
         "PUSHBACK_RES",
         "PCT_RANGED_RES",
         "PCT_MELEE_RES",
+        "PODS",
         name="stat",
     )
     stat_pg_enum = postgresql.ENUM(
@@ -95,6 +97,7 @@ def upgrade():
         "DODGE",
         "PCT_FINAL_DAMAGE",
         "POWER",
+        "DAMAGE",
         "CRITICAL_DAMAGE",
         "NEUTRAL_DAMAGE",
         "EARTH_DAMAGE",
@@ -123,6 +126,7 @@ def upgrade():
         "PUSHBACK_RES",
         "PCT_RANGED_RES",
         "PCT_MELEE_RES",
+        "PODS",
         name="stat",
     )
     stat_pg_enum.create(op.get_bind())
@@ -168,6 +172,7 @@ def downgrade():
         "DODGE",
         "PCT_FINAL_DAMAGE",
         "POWER",
+        "DAMAGE",
         "CRITICAL_DAMAGE",
         "NEUTRAL_DAMAGE",
         "EARTH_DAMAGE",
@@ -196,6 +201,7 @@ def downgrade():
         "PUSHBACK_RES",
         "PCT_RANGED_RES",
         "PCT_MELEE_RES",
+        "PODS",
         name="stat",
     )
 
@@ -227,6 +233,7 @@ def downgrade():
         "DODGE",
         "PCT_FINAL_DAMAGE",
         "POWER",
+        "DAMAGE",
         "CRITICAL_DAMAGE",
         "NEUTRAL_DAMAGE",
         "EARTH_DAMAGE",
@@ -255,6 +262,7 @@ def downgrade():
         "PUSHBACK_RES",
         "PCT_RANGED_RES",
         "PCT_MELEE_RES",
+        "PODS",
         name="stat",
     )
     stat_pg_enum.drop(op.get_bind())
