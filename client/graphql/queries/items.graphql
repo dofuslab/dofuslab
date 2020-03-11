@@ -1,7 +1,14 @@
 #import "graphql/fragments/item.graphql"
 
-query items {
-  items {
-    ...item
+query items($first: Int!, $after: String) {
+  items(first: $first, after: $after) {
+    edges {
+      node {
+        ...item
+      }
+    }
+    pageInfo {
+      endCursor
+    }
   }
 }

@@ -12,6 +12,7 @@ from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_equipped_item import ModelEquippedItem
 from app.database.model_custom_set import ModelCustomSet
 from app.database.model_user import ModelUser
+from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from app.database.base import Base
 from app.database.enums import Stat
@@ -27,6 +28,27 @@ class GlobalNode(graphene.Interface):
 
     def resolve_id(self, info):
         return self.uuid
+
+
+# https://github.com/graphql-python/graphene/issues/968#issuecomment-537328256
+class NonNullConnection(relay.Connection, abstract=True):
+    @classmethod
+    def __init_subclass_with_meta__(cls, node, **kwargs):
+        if not hasattr(cls, "Edge"):
+            _node = node
+
+            class EdgeBase(graphene.ObjectType, name=f"{node._meta.name}Edge"):
+                cursor = graphene.String(required=True)
+                node = graphene.Field(_node, required=True)
+
+            setattr(cls, "Edge", EdgeBase)
+
+        if not hasattr(cls, "edges"):
+            setattr(
+                cls, "edges", graphene.List(graphene.NonNull(cls.Edge), required=True)
+            )
+
+        super(NonNullConnection, cls).__init_subclass_with_meta__(node=_node, **kwargs)
 
 
 StatEnum = graphene.Enum.from_enum(Stat)
@@ -71,6 +93,11 @@ class Item(SQLAlchemyObjectType):
     class Meta:
         model = ModelItem
         interfaces = (GlobalNode,)
+
+
+class ItemConnection(NonNullConnection):
+    class Meta:
+        node = Item
 
 
 class SetBonus(SQLAlchemyObjectType):
@@ -354,9 +381,9 @@ class Query(graphene.ObjectType):
         return None
 
     # Get list of data
-    items = graphene.NonNull(graphene.List(graphene.NonNull(Item)))
+    items = relay.ConnectionField(graphene.NonNull(ItemConnection))
 
-    def resolve_items(self, info):
+    def resolve_items(self, info, **kwargs):
         return db.session.query(ModelItem).all()
 
     sets = graphene.NonNull(graphene.List(graphene.NonNull(Set)))
