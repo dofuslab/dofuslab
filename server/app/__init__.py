@@ -14,13 +14,19 @@ load_dotenv()
 db_uri = os.getenv("DB_URI")
 secret_key = os.getenv("SECRET_KEY")
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="/static")
 app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SECRET_KEY"] = secret_key
 app.config["SESSION_COOKIE_DOMAIN"] = ".dev.localhost"
 app.config["REMEMBER_COOKIE_DOMAIN"] = ".dev.localhost"
 app.config["REMEMBER_COOKIE_PATH"] = "/"
+
+
+@app.route("/items.json")
+def send_items():
+    return app.send_static_file("items.json")
+
 
 db = SQLAlchemy(app)
 CORS(

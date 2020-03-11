@@ -7,6 +7,17 @@ import { appWithTranslation } from '../i18n';
 class DofusSetsApp extends App<{
   apolloClient: ApolloClient<NormalizedCacheObject>;
 }> {
+  async componentDidMount() {
+    if ('serviceWorker' in navigator) {
+      try {
+        await navigator.serviceWorker.register('/sw.js');
+      } catch (err) {
+        console.error('Service worker registration failed', err);
+      }
+    } else {
+      console.log('Service worker not supported');
+    }
+  }
   render() {
     const { Component, pageProps, apolloClient } = this.props;
 
