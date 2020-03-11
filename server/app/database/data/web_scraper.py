@@ -48,11 +48,22 @@ class ItemScraper:
             if i == max_number_of_items:
                 break
             i = i + 1
+            # if i < 1800:
+            #     continue
 
             url = "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/" + id
             soup = scraper_utils.get_soup(url)
 
-            names = scraper_utils.get_alternate_names(soup, url)
+            if (
+                soup.find("div", attrs={"class": "ak-encyclo-detail-type col-xs-6"})
+                == None
+            ):
+                print("---- Item 404'd, skipping item (id: {}) ----".format(id))
+                # TODO: add logic to track and handle these id's
+
+                continue
+
+            names = scraper_utils.get_alternate_names(soup)
             item_type = soup.find(
                 "div", attrs={"class": "ak-encyclo-detail-type col-xs-6"}
             ).text[7:]
@@ -74,7 +85,7 @@ class ItemScraper:
                 # print("No set found for this item")
                 pass
 
-            all_stats = scraper_utils.get_stats(soup)
+            all_stats = scraper_utils.get_stats(soup, id)
             stats = all_stats[0]
             custom_stats = all_stats[1]
             conditions = scraper_utils.get_conditions(soup)
@@ -219,6 +230,15 @@ class ItemScraper:
             json.dump(item_data, outfile)
 
 
+class WeaponScraper:
+    def test_conditions():
+        link = "https://www.dofus.com/en/mmorpg/encyclopedia/weapons/14166-sepulchral-sceptre"
+        soup = scraper_utils.get_soup(link)
+
+        conditions = scraper_utils.get_conditions(soup)
+        print(conditions)
+
+
 class SetScraper:
     def get_all_set_ids():
         # get the last number for the paginated list of items
@@ -265,7 +285,7 @@ class SetScraper:
             url = "https://www.dofus.com/en/mmorpg/encyclopedia/sets/" + id
             soup = scraper_utils.get_soup(url)
 
-            names = scraper_utils.get_alternate_names(soup, url)
+            names = scraper_utils.get_alternate_names(soup)
             bonuses = scraper_utils.get_bonuses(soup)
 
             set = {"id": id, "name": names, "bonuses": bonuses}
@@ -327,9 +347,11 @@ class ClassScraper:
         return {"name": name, "spells": spells}
 
 
-def __main__():
+if __name__ == "__main__":
     # ItemScraper.get_all_item_ids()
-    # ItemScraper.get_item_data(10)
+    ItemScraper.get_item_data(3000)
 
     # SetScraper.get_all_set_ids()
-    SetScraper.get_set_data(1000)
+    # SetScraper.get_set_data(1000)
+
+    # WeaponScraper.test_conditions()
