@@ -1,6 +1,5 @@
 from app import db
 from app.database.model_item_stat import ModelItemStat
-from app.database.model_item_condition import ModelItemCondition
 from app.database.model_item_type import ModelItemType
 from app.database.model_item_slot import ModelItemSlot
 from app.database.model_item_translation import ModelItemTranslation
@@ -21,6 +20,7 @@ import graphene
 import uuid
 from graphql import GraphQLError
 from flask_login import login_required, login_user, current_user, logout_user
+from sqlalchemy.dialects.postgresql import UUID
 
 
 class GlobalNode(graphene.Interface):
@@ -36,12 +36,6 @@ StatEnum = graphene.Enum.from_enum(Stat)
 class ItemStats(SQLAlchemyObjectType):
     class Meta:
         model = ModelItemStat
-        interfaces = (GlobalNode,)
-
-
-class ItemConditions(SQLAlchemyObjectType):
-    class Meta:
-        model = ModelItemCondition
         interfaces = (GlobalNode,)
 
 
@@ -68,13 +62,17 @@ class ItemTranslation(SQLAlchemyObjectType):
 
 
 class Item(SQLAlchemyObjectType):
-    stats = graphene.NonNull(
-        graphene.List(graphene.NonNull(ItemStats))  # Use list instead of connection
-    )
-    conditions = graphene.NonNull(graphene.List(graphene.NonNull(ItemCondtions)))
-    item_translations = graphene.NonNull(
-        graphene.List(graphene.NonNull(ItemTranslation))
-    )
+    stats = graphene.NonNull(graphene.List(graphene.NonNull(ItemStats)))
+    translations_by_locale = graphene.Field(ItemTranslation)
+
+    def resolve_translations_by_locale(self, info):
+        locale = info.context.headers.get("Accept-Language")[:2]
+        query = ItemTranslation.get_query(info)
+        return (
+            query.filter(ModelItemTranslation.locale == locale)
+            .filter(ModelItemTranslation.item_id == self.uuid)
+            .first()
+        )
 
     class Meta:
         model = ModelItem
@@ -95,7 +93,16 @@ class SetTranslation(SQLAlchemyObjectType):
 
 class Set(SQLAlchemyObjectType):
     bonuses = graphene.NonNull(graphene.List(graphene.NonNull(SetBonus)))
-    set_translation = graphene.NonNull(graphene.List(graphene.NonNull(SetTranslation)))
+    translations_by_locale = graphene.Field(SetTranslation)
+
+    def resolve_translations_by_locale(self, info):
+        locale = info.context.headers.get("Accept-Language")[:2]
+        query = SetTranslation.get_query(info)
+        return (
+            query.filter(ModelSetTranslation.locale == locale)
+            .filter(ModelSetTranslation.item_id == self.uuid)
+            .first()
+        )
 
     class Meta:
         model = ModelSet

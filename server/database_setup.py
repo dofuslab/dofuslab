@@ -3,7 +3,6 @@ from app.database.model_item import ModelItem
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_slot import ModelItemSlot
 from app.database.model_item_type import ModelItemType
-from app.database.model_item_condition import ModelItemCondition
 from app.database.model_item_translation import ModelItemTranslation
 from app.database.model_set import ModelSet
 from app.database.model_set_bonus import ModelSetBonus
@@ -140,12 +139,21 @@ if __name__ == "__main__":
     with open(os.path.join(dirname, "app/database/data/items.json"), "r") as file:
         data = json.load(file)
         for record in data:
+            if record["itemType"] == "Living object":
+                continue
+
             item = ModelItem(
                 dofus_db_id=record["dofusID"],
                 item_type=item_types[record["itemType"]],
                 level=record["level"],
                 image_url=record["imageUrl"],
             )
+
+            conditions = {
+                "conditions": record["conditions"]["conditions"],
+                "customConditions": record["conditions"]["custom_conditions"],
+            }
+            item.conditions = conditions
 
             for locale in record["name"]:
                 item_translations = ModelItemTranslation(
@@ -165,16 +173,7 @@ if __name__ == "__main__":
                     db.session.add(item_stat)
                     item.stats.append(item_stat)
 
-                for condition in record["conditions"]:
-                    item_condition = ModelItemCondition(
-                        stat=to_stat_enum.get(condition.get("statType"), None),
-                        is_greater_than=condition.get("condition") == ">",
-                        limit=condition.get("limit", None),
-                    )
-                    db.session.add(item_condition)
-                    item.conditions.append(item_condition)
-
-                db.session.add(item)
+                base.db_session.add(item)
 
                 # If this item belongs in a set, query the set and add the relationship to the record
                 if record["setID"]:
