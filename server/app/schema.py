@@ -21,6 +21,15 @@ import graphene
 import uuid
 from graphql import GraphQLError
 from flask_login import login_required, login_user, current_user, logout_user
+from functools import lru_cache
+from sqlalchemy import func
+
+# workaround from https://github.com/graphql-python/graphene-sqlalchemy/issues/211
+# without this workaround, graphene complains that there are multiple
+# types with the same name when using the same enum in different places
+# i.e. AssertionError:
+# Found different types with the same name in the schema: Stat, Stat.
+graphene.Enum.from_enum = lru_cache(maxsize=None)(graphene.Enum.from_enum)
 
 
 class GlobalNode(graphene.Interface):
@@ -373,6 +382,13 @@ class LogoutUser(graphene.Mutation):
         return LogoutUser(ok=True)
 
 
+class ItemFilters(graphene.InputObjectType):
+    stat = graphene.NonNull(graphene.List(StatEnum))
+    max_level = graphene.Int()
+    search = graphene.String()
+    item_type_ids = graphene.NonNull(graphene.List(graphene.UUID))
+
+
 class Query(graphene.ObjectType):
     current_user = graphene.Field(User)
 
@@ -382,17 +398,39 @@ class Query(graphene.ObjectType):
         return None
 
     # Get list of data
-    items = relay.ConnectionField(graphene.NonNull(ItemConnection))
+    items = relay.ConnectionField(
+        graphene.NonNull(ItemConnection), filters=graphene.Argument(ItemFilters)
+    )
 
     def resolve_items(self, info, **kwargs):
         locale = info.context.headers.get("Accept-Language")[:2]
-        return (
+        filters = kwargs.get("filters")
+        items_query = (
             db.session.query(ModelItem)
             .join(ModelItemTranslation)
             .filter_by(locale=locale)
-            .order_by(ModelItem.level.desc(), ModelItemTranslation.name.asc())
-            .all()
         )
+        if filters:
+            if filters.stat:
+                stat_names = set(map(lambda x: Stat(x).name, filters.stat))
+                items_query = items_query.join(ModelItemStat).filter(
+                    ModelItemStat.stat.in_(stat_names)
+                )
+            if filters.max_level:
+                items_query = items_query.filter(ModelItem.level < filters.max_level)
+            if filters.search:
+                items_query = items_query.filter(
+                    func.upper(ModelItemTranslation.name).contains(
+                        func.upper(filters.search.strip())
+                    )
+                )
+            if filters.item_type_ids:
+                items_query = items_query.filter(
+                    ModelItem.item_type_id.in_(filters.item_type_ids)
+                )
+        return items_query.order_by(
+            ModelItem.level.desc(), ModelItemTranslation.name.asc()
+        ).all()
 
     sets = graphene.NonNull(graphene.List(graphene.NonNull(Set)))
 
