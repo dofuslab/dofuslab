@@ -12,6 +12,7 @@ from flask_cors import CORS
 load_dotenv()
 
 db_uri = os.getenv("DATABASE_URL") or os.getenv("DB_URI")
+print("DB_URI:", db_uri)
 secret_key = os.getenv("SECRET_KEY")
 
 app = Flask(__name__)
