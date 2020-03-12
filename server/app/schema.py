@@ -423,7 +423,9 @@ class Query(graphene.ObjectType):
                         ModelItemStat.item_id,
                         func.count(ModelItemStat.uuid).label("num_stats_matched"),
                     )
-                    .filter(ModelItemStat.stat.in_(stat_names))
+                    .filter(
+                        ModelItemStat.stat.in_(stat_names), ModelItemStat.max_value > 0
+                    )
                     .group_by(ModelItemStat.item_id)
                     .subquery()
                 )
