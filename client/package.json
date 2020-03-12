@@ -9,7 +9,8 @@
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node .build/server",
     "type-check": "tsc",
-    "apollo-codegen": "apollo client:codegen --target typescript --endpoint=http://localhost:5000/graphql"
+    "apollo-codegen": "apollo client:codegen --target typescript --endpoint=http://localhost:5000/graphql",
+    "publish-heroku": "cd ../ && git subtree push --prefix client heroku-client master || true"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
