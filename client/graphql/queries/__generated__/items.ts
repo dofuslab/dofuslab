@@ -12,6 +12,7 @@ export interface items_items_edges_node_stats {
   __typename: "ItemStats";
   maxValue: number | null;
   stat: Stat | null;
+  altStat: string | null;
 }
 
 export interface items_items_edges_node_itemType_eligibleItemSlots {
@@ -45,6 +46,7 @@ export interface items_items_edges_node {
   __typename: "Item";
   id: any;
   name: string;
+  level: number;
   imageUrl: string;
   stats: items_items_edges_node_stats[];
   conditions: any | null;

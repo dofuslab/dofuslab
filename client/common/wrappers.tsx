@@ -17,6 +17,9 @@ export const ResponsiveGrid = styled.div<IResponsiveGrid>(({ numColumns }) =>
 );
 
 function displayStats(t: TFunction, statLine: items_items_edges_node_stats) {
+  if (statLine.altStat) {
+    return statLine.altStat;
+  }
   const statName = t(statLine.stat as string);
   return `${statLine.maxValue} ${statName}`;
 }
@@ -43,7 +46,7 @@ export const ItemStatsList: React.FC<IITemsStatsList> = ({
   );
 };
 
-export const Badge: React.FC = ({ children }) => (
+export const Badge: React.FC = ({ children, ...restProps }) => (
   <span
     css={{
       background: gray7,
@@ -55,6 +58,7 @@ export const Badge: React.FC = ({ children }) => (
       borderRadius: 4,
       marginLeft: 8,
     }}
+    {...restProps}
   >
     {children}
   </span>

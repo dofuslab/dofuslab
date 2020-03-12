@@ -17,6 +17,7 @@ export interface customSet_customSetById_equippedItems_item_stats {
   __typename: "ItemStats";
   maxValue: number | null;
   stat: Stat | null;
+  altStat: string | null;
 }
 
 export interface customSet_customSetById_equippedItems_item_itemType_eligibleItemSlots {
@@ -50,6 +51,7 @@ export interface customSet_customSetById_equippedItems_item {
   __typename: "Item";
   id: any;
   name: string;
+  level: number;
   imageUrl: string;
   stats: customSet_customSetById_equippedItems_item_stats[];
   conditions: any | null;

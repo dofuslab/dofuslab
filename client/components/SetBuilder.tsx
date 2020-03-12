@@ -36,13 +36,15 @@ const SetBuilder: React.FC = () => {
   ] = React.useState<itemSlots_itemSlots | null>(null);
 
   React.useEffect(() => {
-    const onClickBody = () => {
-      selectItemSlot(null);
-    };
-    window.addEventListener('click', onClickBody);
-    return () => {
-      window.removeEventListener('click', onClickBody);
-    };
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.keyCode === 27) {
+        selectItemSlot(null);
+      }
+    }
+    if (document) {
+      document.addEventListener('keydown', onKeyDown);
+    }
+    return () => document && document.removeEventListener('keydown', onKeyDown);
   }, []);
 
   const statsFromCustomSet = React.useMemo(
@@ -94,6 +96,7 @@ const SetBuilder: React.FC = () => {
           }}
         >
           <ItemSelector
+            key={`selected-item-slot-${selectedItemSlot?.id}`}
             selectedItemSlot={selectedItemSlot}
             customSet={customSetData?.customSetById}
           />

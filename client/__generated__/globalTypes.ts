@@ -65,10 +65,10 @@ export enum Stat {
 }
 
 export interface ItemFilters {
-  stats: (Stat | null)[];
-  maxLevel?: number | null;
+  stats: Stat[];
+  maxLevel: number;
   search: string;
-  itemTypeIds: (any | null)[];
+  itemTypeIds: any[];
 }
 
 //==============================================================

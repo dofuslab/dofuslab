@@ -3,6 +3,10 @@ import { mq } from './constants';
 
 export const shadow = '0 2px 8px rgba(0, 0, 0, 0.15)';
 
+export const blue1 = '#e6f7ff';
+export const blue3 = '#91d5ff';
+export const blue8 = '#0050b3';
+
 export const gray1 = '#ffffff';
 export const gray2 = '#fafafa';
 export const gray3 = '#f5f5f5';

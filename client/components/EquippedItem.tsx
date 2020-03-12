@@ -27,10 +27,13 @@ const EquippedItem: React.FC<IEquippedItem> = ({
   const onClick = React.useCallback(
     (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       e.nativeEvent.stopPropagation();
-      console.log(slot);
-      selectItemSlot(slot);
+      if (selected) {
+        selectItemSlot(null);
+      } else {
+        selectItemSlot(slot);
+      }
     },
-    [selectItemSlot, slot],
+    [selectItemSlot, slot, selected],
   );
 
   return (

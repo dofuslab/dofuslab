@@ -1,6 +1,7 @@
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { item_set } from 'graphql/fragments/__generated__/item';
 import { Stat } from '__generated__/globalTypes';
+import { CheckboxValueType } from 'antd/lib/checkbox/Group';
 
 export type StatWithCalculatedValue = {
   stat: string;
@@ -26,4 +27,4 @@ export type FilterAction =
   | { type: 'SEARCH'; search: string }
   | { type: 'MAX_LEVEL'; maxLevel: number }
   | { type: 'STATS'; stats: Array<Stat> }
-  | { type: 'ITEM_TYPE_IDS'; itemTypeIds: Array<string> };
+  | { type: 'ITEM_TYPE_IDS'; itemTypeIds: Array<CheckboxValueType> };
