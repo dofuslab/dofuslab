@@ -1330,6 +1330,14 @@
     ts-node "^8"
     tslib "^1"
 
+"@essentials/request-timeout@^1.0.1":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@essentials/request-timeout/-/request-timeout-1.0.2.tgz#0fcb7d7ec186fcfc5f32685968407a2d51d6443d"
+  integrity sha512-P4pM8z1J9Ifj9SanjHyIuzV+AF/Ry6Coxm6foyza3aiDsweHME3t5sRrKv0ohpsmQLrmgt8XLlwFLPoAYLpq2Q==
+  dependencies:
+    performance-now "^2.1.0"
+    raf "^3.4.1"
+
 "@next/polyfill-nomodule@9.2.2":
   version "9.2.2"
   resolved "https://registry.yarnpkg.com/@next/polyfill-nomodule/-/polyfill-nomodule-9.2.2.tgz#2687d5b64ba053b247700f057f083dfd392ee52e"
@@ -1466,6 +1474,13 @@
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@oclif/screen/-/screen-1.0.4.tgz#b740f68609dfae8aa71c3a6cab15d816407ba493"
   integrity sha512-60CHpq+eqnTxLZQ4PGHYNwUX572hgpMHGPtTWMjdTMsAvlm69lZV/4ly6O3sAYkomo4NggGcomrDpBe34rxUqw==
+
+"@react-hook/debounce@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@react-hook/debounce/-/debounce-1.0.11.tgz#a8d1deec0d1757768a6ccc702c2edfb92447442f"
+  integrity sha512-FGLzLV2W7qnh2ehSGezao1wkdsMHhN00pYt8IuN/RLFhwd0YDwseEI6pM5ZGjf5lVsALvBaBMKriQ0Wm4UUA5A==
+  dependencies:
+    "@essentials/request-timeout" "^1.0.1"
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"

@@ -64,6 +64,13 @@ export enum Stat {
   WISDOM = "WISDOM",
 }
 
+export interface ItemFilters {
+  stats: (Stat | null)[];
+  maxLevel?: number | null;
+  search: string;
+  itemTypeIds: (any | null)[];
+}
+
 //==============================================================
 // END Enums and Input Objects
 //==============================================================

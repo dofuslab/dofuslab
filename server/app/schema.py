@@ -383,9 +383,9 @@ class LogoutUser(graphene.Mutation):
 
 
 class ItemFilters(graphene.InputObjectType):
-    stat = graphene.NonNull(graphene.List(StatEnum))
+    stats = graphene.NonNull(graphene.List(StatEnum))
     max_level = graphene.Int()
-    search = graphene.String()
+    search = graphene.String(required=True)
     item_type_ids = graphene.NonNull(graphene.List(graphene.UUID))
 
 
@@ -411,11 +411,25 @@ class Query(graphene.ObjectType):
             .filter_by(locale=locale)
         )
         if filters:
-            if filters.stat:
-                stat_names = set(map(lambda x: Stat(x).name, filters.stat))
-                items_query = items_query.join(ModelItemStat).filter(
-                    ModelItemStat.stat.in_(stat_names)
+            search = filters.search.strip()
+            if filters.stats:
+                items_query = items_query.join(ModelItemStat)
+                stat_names = set(map(lambda x: Stat(x).name, filters.stats))
+                stat_sq = (
+                    db.session.query(
+                        ModelItemStat,
+                        func.count(ModelItemStat.uuid).label("num_stats_matched"),
+                    )
+                    .filter(ModelItemStat.stat.in_(stat_names))
+                    .group_by(ModelItemStat.item_id)
+                    .subquery()
                 )
+                items_query = items_query.outerjoin(
+                    stat_sq, ModelItem.uuid == stat_sq.c.item_id
+                ).filter(stat_sq.c.num_stats_matched == len(stat_names))
+                print(items_query)
+                # items_query = items_query.filter(ModelItemStat.stat.in_(stat_names))
+
             if filters.max_level:
                 items_query = items_query.filter(ModelItem.level < filters.max_level)
             if filters.search:

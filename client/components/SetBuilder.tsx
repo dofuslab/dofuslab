@@ -19,6 +19,7 @@ import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import { getStatsFromCustomSet } from 'common/utils';
 import SetHeader from './SetHeader';
 import EquipmentSlots from './EquipmentSlots';
+import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 
 const SetBuilder: React.FC = () => {
   const router = useRouter();
@@ -29,9 +30,10 @@ const SetBuilder: React.FC = () => {
     { variables: { id: setId }, skip: !setId },
   );
 
-  const [selectedItemSlotId, selectItemSlot] = React.useState<string | null>(
-    null,
-  );
+  const [
+    selectedItemSlot,
+    selectItemSlot,
+  ] = React.useState<itemSlots_itemSlots | null>(null);
 
   React.useEffect(() => {
     const onClickBody = () => {
@@ -54,7 +56,7 @@ const SetBuilder: React.FC = () => {
       <EquipmentSlots
         customSet={customSetData?.customSetById}
         selectItemSlot={selectItemSlot}
-        selectedItemSlotId={selectedItemSlotId}
+        selectedItemSlotId={selectedItemSlot?.id ?? null}
       />
       <div
         css={{
@@ -92,7 +94,7 @@ const SetBuilder: React.FC = () => {
           }}
         >
           <ItemSelector
-            selectedItemSlotId={selectedItemSlotId}
+            selectedItemSlot={selectedItemSlot}
             customSet={customSetData?.customSetById}
           />
         </div>

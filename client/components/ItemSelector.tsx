@@ -6,7 +6,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { Waypoint } from 'react-waypoint';
 import Card from 'antd/lib/card';
 import Skeleton from 'antd/lib/skeleton';
-import { debounce } from 'lodash';
+import { useDebounceCallback } from '@react-hook/debounce';
 
 import ItemCard from './ItemCard';
 import { ResponsiveGrid } from 'common/wrappers';
@@ -15,19 +15,44 @@ import { items, itemsVariables } from 'graphql/queries/__generated__/items';
 import CurrentlyEquippedItem from './CurrentlyEquippedItem';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { itemCardStyle, BORDER_COLOR } from 'common/mixins';
+import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
+import { ItemFilters } from '__generated__/globalTypes';
+import ItemSelectorFilters from './ItemSelectorFilters';
+import { FilterAction } from 'common/types';
 
 const PAGE_SIZE = 24;
 
 const BOTTOM_OFFSET = -1200;
 
 interface IProps {
-  selectedItemSlotId: string | null;
+  selectedItemSlot: itemSlots_itemSlots | null;
   customSet?: customSet | null;
 }
 
-const ItemSelector: React.FC<IProps> = ({ selectedItemSlotId, customSet }) => {
+const reducer = (state: ItemFilters, action: FilterAction) => {
+  switch (action.type) {
+    case 'SEARCH':
+      return { ...state, search: action.search };
+    case 'MAX_LEVEL':
+      return { ...state, maxLevel: action.maxLevel };
+    case 'STATS':
+      return { ...state, stats: action.stats };
+    case 'ITEM_TYPE_IDS':
+      return { ...state, itemTypeIds: action.itemTypeIds };
+    default:
+      throw new Error('Invalid action type');
+  }
+};
+
+const ItemSelector: React.FC<IProps> = ({ selectedItemSlot, customSet }) => {
+  const [filters, dispatch] = React.useReducer(reducer, {
+    stats: [],
+    maxLevel: null,
+    search: '',
+    itemTypeIds: [],
+  });
   const { data, fetchMore } = useQuery<items, itemsVariables>(ItemsQuery, {
-    variables: { first: PAGE_SIZE },
+    variables: { first: PAGE_SIZE, filters },
   });
 
   const endCursorRef = React.useRef<string | null>(null);
@@ -65,7 +90,7 @@ const ItemSelector: React.FC<IProps> = ({ selectedItemSlotId, customSet }) => {
 
   const [numLoadersToRender, setNumLoadersToRender] = React.useState(4);
 
-  const calcLoaders = debounce(() => {
+  const calcColumns = React.useCallback(() => {
     const NUM_COLUMNS = getComputedStyle(
       responsiveGridRef.current!,
     ).gridTemplateColumns.split(' ').length;
@@ -73,7 +98,9 @@ const ItemSelector: React.FC<IProps> = ({ selectedItemSlotId, customSet }) => {
     setNumLoadersToRender(
       NUM_COLUMNS - ((data?.items.edges.length ?? 0) % NUM_COLUMNS),
     );
-  }, 300);
+  }, [responsiveGridRef, data, setNumLoadersToRender]);
+
+  const calcLoaders = useDebounceCallback(calcColumns, 300);
 
   React.useEffect(calcLoaders, [data]);
 
@@ -87,9 +114,9 @@ const ItemSelector: React.FC<IProps> = ({ selectedItemSlotId, customSet }) => {
   if (!data || !data.items) return null;
 
   const selectedEquippedItem =
-    customSet && selectedItemSlotId
+    customSet && selectedItemSlot
       ? customSet.equippedItems.find(
-          item => item.slot.id === selectedItemSlotId,
+          item => item.slot.id === selectedItemSlot.id,
         )?.item
       : null;
 
@@ -99,27 +126,26 @@ const ItemSelector: React.FC<IProps> = ({ selectedItemSlotId, customSet }) => {
       css={{ marginBottom: 20, position: 'relative' }}
       ref={responsiveGridRef}
     >
+      <ItemSelectorFilters
+        key={`filters-level${customSet?.level}`}
+        filters={filters}
+        dispatch={dispatch}
+        customSetLevel={customSet?.level || null}
+      />
       {selectedEquippedItem && (
         <CurrentlyEquippedItem
           item={selectedEquippedItem}
-          selectedItemSlotId={selectedItemSlotId!}
+          selectedItemSlotId={selectedItemSlot!.id}
           customSetId={customSet!.id}
         />
       )}
       {data.items.edges
         .map(edge => edge.node)
-        .filter(
-          item =>
-            !selectedItemSlotId ||
-            item.itemType.eligibleItemSlots.some(
-              slot => slot.id === selectedItemSlotId,
-            ),
-        )
         .map(item => (
           <ItemCard
             key={item.id}
             item={item}
-            selectedItemSlotId={selectedItemSlotId}
+            selectedItemSlotId={selectedItemSlot?.id ?? null}
             selectedEquippedItem={selectedEquippedItem}
             customSet={customSet}
             responsiveGridRef={responsiveGridRef}

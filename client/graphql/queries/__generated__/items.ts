@@ -2,7 +2,7 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { Stat } from "./../../../__generated__/globalTypes";
+import { ItemFilters, Stat } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: items
@@ -85,4 +85,5 @@ export interface items {
 export interface itemsVariables {
   first: number;
   after?: string | null;
+  filters: ItemFilters;
 }
