@@ -1,10 +1,10 @@
 import re
 from app import app, db
 from app.database import base
-from database.model_item_translation import ModelItemTranslation
-from database.model_set_translation import ModelSetTranslation
-from database.model_set import ModelSet
-from database.model_item import ModelItem
+from app.database.model_item_translation import ModelItemTranslation
+from app.database.model_set_translation import ModelSetTranslation
+from app.database.model_set import ModelSet
+from app.database.model_item import ModelItem
 
 url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/"
 
