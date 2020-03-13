@@ -4,6 +4,8 @@
     "module": "commonjs",
     "outDir": ".build",
     "target": "es2017",
+    "isolatedModules": false,
+    "noEmit": false,
     "lib": ["es2017"]
   },
   "include": ["next.config.js", "server/**/*.ts"]

@@ -7,7 +7,7 @@ import os
 
 load_dotenv()
 
-db_uri = os.getenv("DB_URI")
+db_uri = os.getenv("DATABASE_URL")
 engine = create_engine(db_uri, convert_unicode=True)
 
 convention = {

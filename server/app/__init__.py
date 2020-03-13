@@ -11,7 +11,7 @@ from flask_cors import CORS
 
 load_dotenv()
 
-db_uri = os.getenv("DB_URI")
+db_uri = os.getenv("DATABASE_URL")
 secret_key = os.getenv("SECRET_KEY")
 
 app = Flask(__name__)
@@ -26,7 +26,13 @@ db = SQLAlchemy(app)
 CORS(
     app,
     resources={
-        r"/*": {"origins": ["http://localhost:3000", "http://dev.localhost:3000"]}
+        r"/*": {
+            "origins": [
+                "http://localhost:3000",
+                "http://dev.localhost:3000",
+                "https://dofus-lab.herokuapp.com",
+            ]
+        }
     },
     supports_credentials=True,
 )
