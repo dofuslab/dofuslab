@@ -25,7 +25,7 @@ const ItemWithStats: React.FC<IProps> = ({ item, selected }) => {
         <Popover
           placement="bottom"
           title={item.name}
-          content={<ItemStatsList item={item} />}
+          content={item.stats.length > 0 && <ItemStatsList item={item} />}
           overlayClassName={css(popoverTitleStyle)}
         >
           <div

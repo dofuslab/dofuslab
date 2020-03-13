@@ -19,6 +19,7 @@ import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import { getStatsFromCustomSet } from 'common/utils';
 import SetHeader from './SetHeader';
 import EquipmentSlots from './EquipmentSlots';
+import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 
 const SetBuilder: React.FC = () => {
   const router = useRouter();
@@ -29,18 +30,21 @@ const SetBuilder: React.FC = () => {
     { variables: { id: setId }, skip: !setId },
   );
 
-  const [selectedItemSlotId, selectItemSlot] = React.useState<string | null>(
-    null,
-  );
+  const [
+    selectedItemSlot,
+    selectItemSlot,
+  ] = React.useState<itemSlots_itemSlots | null>(null);
 
   React.useEffect(() => {
-    const onClickBody = () => {
-      selectItemSlot(null);
-    };
-    window.addEventListener('click', onClickBody);
-    return () => {
-      window.removeEventListener('click', onClickBody);
-    };
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.keyCode === 27) {
+        selectItemSlot(null);
+      }
+    }
+    if (document) {
+      document.addEventListener('keydown', onKeyDown);
+    }
+    return () => document && document.removeEventListener('keydown', onKeyDown);
   }, []);
 
   const statsFromCustomSet = React.useMemo(
@@ -54,7 +58,7 @@ const SetBuilder: React.FC = () => {
       <EquipmentSlots
         customSet={customSetData?.customSetById}
         selectItemSlot={selectItemSlot}
-        selectedItemSlotId={selectedItemSlotId}
+        selectedItemSlotId={selectedItemSlot?.id ?? null}
       />
       <div
         css={{
@@ -92,7 +96,8 @@ const SetBuilder: React.FC = () => {
           }}
         >
           <ItemSelector
-            selectedItemSlotId={selectedItemSlotId}
+            key={`selected-item-slot-${selectedItemSlot?.id}`}
+            selectedItemSlot={selectedItemSlot}
             customSet={customSetData?.customSetById}
           />
         </div>

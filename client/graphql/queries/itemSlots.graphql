@@ -2,5 +2,9 @@ query itemSlots {
   itemSlots {
     id
     name
+    itemTypes {
+      id
+      name
+    }
   }
 }

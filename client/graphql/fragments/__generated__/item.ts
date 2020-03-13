@@ -12,6 +12,7 @@ export interface item_stats {
   __typename: "ItemStats";
   maxValue: number | null;
   stat: Stat | null;
+  altStat: string | null;
 }
 
 export interface item_itemType_eligibleItemSlots {
@@ -45,6 +46,7 @@ export interface item {
   __typename: "Item";
   id: any;
   name: string;
+  level: number;
   imageUrl: string;
   stats: item_stats[];
   conditions: any | null;

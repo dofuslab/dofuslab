@@ -1,6 +1,11 @@
 import { css } from '@emotion/core';
+import { mq } from './constants';
 
 export const shadow = '0 2px 8px rgba(0, 0, 0, 0.15)';
+
+export const blue1 = '#e6f7ff';
+export const blue3 = '#91d5ff';
+export const blue8 = '#0050b3';
 
 export const gray1 = '#ffffff';
 export const gray2 = '#fafafa';
@@ -81,3 +86,29 @@ export const itemCardStyle = {
 export const popoverTitleStyle = {
   ['.ant-popover-title']: { padding: '8px 16px' },
 };
+
+export const getResponsiveGridStyle = (numColumns: ReadonlyArray<number>) => ({
+  display: 'grid',
+  width: '100%',
+  gridTemplateColumns: '1fr',
+  columnGap: 20,
+  rowGap: 20,
+  [mq[0]]: {
+    gridTemplateColumns: `repeat(${numColumns[0]}, 1fr)`,
+  },
+  [mq[1]]: {
+    gridTemplateColumns: `repeat(${numColumns[1]}, 1fr)`,
+  },
+  [mq[2]]: {
+    gridTemplateColumns: `repeat(${numColumns[2]}, 1fr)`,
+  },
+  [mq[3]]: {
+    gridTemplateColumns: `repeat(${numColumns[3]}, 1fr)`,
+  },
+  [mq[4]]: {
+    gridTemplateColumns: `repeat(${numColumns[4]}, 1fr)`,
+  },
+  [mq[5]]: {
+    gridTemplateColumns: `repeat(${numColumns[5]}, 1fr)`,
+  },
+});

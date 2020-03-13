@@ -1,10 +1,12 @@
 fragment item on Item {
   id
   name
+  level
   imageUrl
   stats {
     maxValue
     stat
+    altStat
   }
   conditions
   itemType {

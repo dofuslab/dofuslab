@@ -19,7 +19,7 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
         margin: '8px 20px',
         display: 'flex',
         alignItems: 'baseline',
-        flex: '0 0 40px',
+        flex: '0 0 48px',
       }}
     >
       {isEditing ? (

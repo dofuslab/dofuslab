@@ -17,6 +17,7 @@ export interface deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems
   __typename: "ItemStats";
   maxValue: number | null;
   stat: Stat | null;
+  altStat: string | null;
 }
 
 export interface deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems_item_itemType_eligibleItemSlots {
@@ -50,6 +51,7 @@ export interface deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems
   __typename: "Item";
   id: any;
   name: string;
+  level: number;
   imageUrl: string;
   stats: deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems_item_stats[];
   conditions: any | null;

@@ -1,13 +1,14 @@
 #import "graphql/fragments/item.graphql"
 
-query items($first: Int!, $after: String) {
-  items(first: $first, after: $after) {
+query items($first: Int!, $after: String, $filters: ItemFilters!) {
+  items(first: $first, after: $after, filters: $filters) {
     edges {
       node {
         ...item
       }
     }
     pageInfo {
+      hasNextPage
       endCursor
     }
   }

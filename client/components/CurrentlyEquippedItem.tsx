@@ -57,6 +57,11 @@ const CurrentlyEquippedItem: React.FC<IProps> = ({
       css={css({
         ...itemCardStyle,
         ...selected,
+        display: 'flex',
+        flexDirection: 'column',
+        ['.ant-card-body']: {
+          flex: '1',
+        },
       })}
       actions={[
         <Tooltip title={t('MAGE')}>

@@ -5,7 +5,10 @@ import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
+import {
+  itemSlots,
+  itemSlots_itemSlots,
+} from 'graphql/queries/__generated__/itemSlots';
 import { customSet_customSetById_equippedItems_item } from 'graphql/queries/__generated__/customSet';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 
@@ -15,7 +18,9 @@ import BonusStats from './BonusStats';
 
 interface IProps {
   customSet?: customSet | null;
-  selectItemSlot: React.Dispatch<React.SetStateAction<string | null>>;
+  selectItemSlot: React.Dispatch<
+    React.SetStateAction<itemSlots_itemSlots | null>
+  >;
   selectedItemSlotId: string | null;
 }
 

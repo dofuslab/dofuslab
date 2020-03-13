@@ -22,6 +22,7 @@
   "DODGE": "Dodge",
   "PCT_FINAL_DAMAGE": "% Final Damage",
   "POWER": "Power",
+  "DAMAGE": "Damage",
   "CRITICAL_DAMAGE": "Critical Damage",
   "NEUTRAL_DAMAGE": "Neutral Damage",
   "EARTH_DAMAGE": "Earth Damage",
@@ -49,5 +50,6 @@
   "CRITICAL_RES": "Critical Resistance",
   "PUSHBACK_RES": "Pushback Resistance",
   "PCT_RANGED_RES": "% Ranged Resistance",
-  "PCT_MELEE_RES": "% Melee Resistance"
+  "PCT_MELEE_RES": "% Melee Resistance",
+  "PODS": "Pods"
 }

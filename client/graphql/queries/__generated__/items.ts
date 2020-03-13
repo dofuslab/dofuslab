@@ -2,7 +2,7 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { Stat } from "./../../../__generated__/globalTypes";
+import { ItemFilters, Stat } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: items
@@ -12,6 +12,7 @@ export interface items_items_edges_node_stats {
   __typename: "ItemStats";
   maxValue: number | null;
   stat: Stat | null;
+  altStat: string | null;
 }
 
 export interface items_items_edges_node_itemType_eligibleItemSlots {
@@ -45,6 +46,7 @@ export interface items_items_edges_node {
   __typename: "Item";
   id: any;
   name: string;
+  level: number;
   imageUrl: string;
   stats: items_items_edges_node_stats[];
   conditions: any | null;
@@ -59,6 +61,10 @@ export interface items_items_edges {
 
 export interface items_items_pageInfo {
   __typename: "PageInfo";
+  /**
+   * When paginating forwards, are there more items?
+   */
+  hasNextPage: boolean;
   /**
    * When paginating forwards, the cursor to continue.
    */
@@ -81,4 +87,5 @@ export interface items {
 export interface itemsVariables {
   first: number;
   after?: string | null;
+  filters: ItemFilters;
 }
