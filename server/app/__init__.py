@@ -26,7 +26,13 @@ db = SQLAlchemy(app)
 CORS(
     app,
     resources={
-        r"/*": {"origins": ["http://localhost:3000", "http://dev.localhost:3000"]}
+        r"/*": {
+            "origins": [
+                "http://localhost:3000",
+                "http://dev.localhost:3000",
+                "https://dofus-lab.herokuapp.com",
+            ]
+        }
     },
     supports_credentials=True,
 )
