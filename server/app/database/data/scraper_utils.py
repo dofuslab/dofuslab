@@ -1,57 +1,89 @@
 import requests
 import re
+import unicodedata
 from bs4 import BeautifulSoup
 
-all_stats = [
-    "Vitality",
-    "AP",
-    "MP",
-    "Initiative",
-    "Prospecting",
-    "Range",
-    "Summons",
-    "Wisdom",
-    "Strength",
-    "Intelligence",
-    "Chance",
-    "Agility",
-    "AP Parry",
-    "AP Reduction",
-    "MP Parry",
-    "MP Reduction",
-    "Critical",
-    "Heals",
-    "Lock",
-    "Dodge",
-    "Power",
-    "Damage",
-    "Critical Damage",
-    "Neutral Damage",
-    "Earth Damage",
-    "Fire Damage",
-    "Water Damage",
-    "Air Damage",
-    "Reflect",
-    "Trap Damage",
-    "Power \(traps\)",
-    "Pushback Damage",
-    "Spell Damage",
-    "Weapon Damage",
-    "Ranged Damage",
-    "Melee Damage",
-    "Neutral Resistance",
-    "Earth Resistance",
-    "Fire Resistance",
-    "Water Resistance",
-    "Air Resistance",
-    "Critical Resistance",
-    "Pushback Resistance",
-    "Ranged Resistance",
-    "Melee Resistance",
-    "pods",
-]
 
-joined_stats = "|".join(all_stats)
+class Constants:
+    all_stats = "|".join(
+        [
+            "Vitality",
+            "AP",
+            "MP",
+            "Initiative",
+            "Prospecting",
+            "Range",
+            "Summons",
+            "Wisdom",
+            "Strength",
+            "Intelligence",
+            "Chance",
+            "Agility",
+            "AP Parry",
+            "AP Reduction",
+            "MP Parry",
+            "MP Reduction",
+            "Critical",
+            "Heals",
+            "Lock",
+            "Dodge",
+            "Power",
+            "Damage",
+            "Critical Damage",
+            "Neutral Damage",
+            "Earth Damage",
+            "Fire Damage",
+            "Water Damage",
+            "Air Damage",
+            "Reflect",
+            "Trap Damage",
+            "Power \(traps\)",
+            "Pushback Damage",
+            "Spell Damage",
+            "Weapon Damage",
+            "Ranged Damage",
+            "Melee Damage",
+            "Neutral Resistance",
+            "Earth Resistance",
+            "Fire Resistance",
+            "Water Resistance",
+            "Air Resistance",
+            "Critical Resistance",
+            "Pushback Resistance",
+            "Ranged Resistance",
+            "Melee Resistance",
+            "pods",
+        ]
+    )
+    all_weapon_effects = "|".join(
+        [
+            "Neutral damage",
+            "Earth damage",
+            "Fire damage",
+            "Water damage",
+            "Air damage",
+            "Neutral steal",
+            "Earth steal",
+            "Fire steal",
+            "Water steal",
+            "Air steal",
+            "HP restored",
+        ]
+    )
+
+    weapon_types = [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Hammer",
+        "Pickaxe",
+        "Scythe",
+        "Shovel",
+        "Staff",
+        "Sword",
+        "Tool",
+        "Wand",
+    ]
 
 
 def get_soup(url):
@@ -89,15 +121,15 @@ def get_stats(soup, id):
 
     if has_stats == False:
         # print("Item (id: {}) does not have stats".format(id))
-        return ([], [])
+        return ([], [], [])
 
     raw_stats = soup.find(
         "div", {"class": "ak-container ak-content-list ak-displaymode-col"}
     )
     stats = []
     custom_stats = []
+    damage_stats = []
 
-    print(id)
     if raw_stats:
         for stat in raw_stats:
             description = stat.find_next("div", {"class": "ak-title"}).text.strip()
@@ -115,9 +147,50 @@ def get_stats(soup, id):
             min_stat = None
             max_stat = None
 
+            if re.search(
+                r"\d+ \((?:{})\)".format(Constants.all_weapon_effects), description
+            ):
+                # print("--------- Found a weapon effect ---------")
+                if "to" in description:
+                    arr = description.replace("(", "").strip(")").split(" ")
+                    type = " ".join(arr[3:])
+                    min_stat = int(arr[0])
+                    max_stat = int(arr[2])
+                else:
+                    arr = description.replace("(", "").strip(")").split(" ")
+                    type = " ".join(arr[1:])
+                    max_stat = int(arr[0])
+
+                damage_stats.append(
+                    {"stat": type, "minStat": min_stat, "maxStat": max_stat,}
+                )
+
+                continue
+
+            if re.search(r"(?:-\d to \d|-\d) (?:AP|MP)", description):
+                # print("--------- Found a weapon effect ---------")
+                if "to" in description:
+                    arr = description.split(" ")
+                    type = arr[3]
+                    min_stat = int(arr[0])
+                    if "-" in arr[2]:
+                        max_stat = int(arr[2])
+                    else:
+                        max_stat = int("-" + arr[2])
+                else:
+                    arr = description.split(" ")
+                    type = arr[1]
+                    max_stat = int(arr[0])
+
+                damage_stats.append(
+                    {"stat": type, "minStat": min_stat, "maxStat": max_stat,}
+                )
+
+                continue
+
             if (
                 re.search(
-                    r"(\d+%?\s(?:{})$)|(?:^Reflects\s\d)".format(joined_stats),
+                    r"(\d+%?\s(?:{})$)|(?:^Reflects\s\d)".format(Constants.all_stats),
                     description,
                 )
                 == None
@@ -166,7 +239,7 @@ def get_stats(soup, id):
                 {"stat": type, "minStat": min_stat, "maxStat": max_stat,}
             )
 
-    return (stats, custom_stats)
+    return (stats, custom_stats, damage_stats)
 
 
 def get_bonuses(soup):
@@ -183,7 +256,7 @@ def get_bonuses(soup):
 
             if (
                 re.search(
-                    r"(\d+%?\s(?:{})$)|(?:^Reflects\s\d)".format(joined_stats),
+                    r"(\d+%?\s(?:{})$)|(?:^Reflects\s\d)".format(Constants.all_stats),
                     description,
                 )
                 == None
@@ -236,7 +309,16 @@ def get_bonuses(soup):
     return all_bonuses
 
 
-def get_conditions(soup):
+def get_conditions(soup, item_type):
+    has_conditions = False
+    conditions_soup = soup.find_all("div", class_="ak-panel-title")
+    for subsection in conditions_soup:
+        if "Conditions" in subsection.text:
+            has_conditions = True
+
+    if has_conditions == False:
+        return {"conditions": {}, "customConditions": []}
+
     non_standard_conditions_en = ["months", "day(s)"]
     non_standard_conditions_fr = []
     non_standard_conditions_de = []
@@ -253,9 +335,30 @@ def get_conditions(soup):
         + non_standard_conditions_pt
     )
 
-    raw_conditions = soup.find(
-        "div", attrs={"class": "ak-container ak-panel no-padding"}
-    )
+    raw_conditions = None
+
+    if item_type in [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Hammer",
+        "Pickaxe",
+        "Scythe",
+        "Shovel",
+        "Staff",
+        "Sword",
+        "Tool",
+        "Wand",
+        "Soul stone",
+    ]:
+        raw_conditions = soup.find_all(
+            "div", attrs={"class": "ak-container ak-panel no-padding"}
+        )[1]
+    else:
+        raw_conditions = soup.find(
+            "div", attrs={"class": "ak-container ak-panel no-padding"}
+        )
+
     conditions = {}
     custom_conditions = []
 
@@ -264,6 +367,11 @@ def get_conditions(soup):
             raw_conditions.text.strip().strip("Conditions").strip().split("\n")
         )
 
+        i = 0
+        while i < len(raw_conditions):
+            raw_conditions[i] = unicodedata.normalize("NFKD", raw_conditions[i]).strip()
+            i = i + 1
+
         current_operator = None
 
         i = 0
@@ -271,13 +379,14 @@ def get_conditions(soup):
             # logic for custom conditions
             if (
                 re.search(
-                    r"(?:^\()|(?:^\))|(?:(?:{}) (?:<|>) \d+)".format(joined_stats),
+                    r"(?:^\()|(?:^\))|(?:(?:{}) (?:<|>) \d+)".format(
+                        Constants.all_stats
+                    ),
                     raw_conditions[i],
                 )
                 == None
             ):
                 condition = raw_conditions[i].strip(" and")
-                print(condition)
                 custom_conditions.append(condition)
                 i = i + 1
 
@@ -519,33 +628,89 @@ def get_conditions(soup):
 
                     i = i + 2
 
-    # if raw_conditions:
-    #     raw_conditions = (
-    #         raw_conditions.text.strip().strip("Conditions").strip().split("\n")
-    #     )
-    #     for unparsed_condition in raw_conditions:
-    #         if "<" not in unparsed_condition and ">" not in unparsed_condition:
-    #             condition = unparsed_condition.strip(" and")
-    #             print(condition)
-    #             custom_conditions.append(condition)
-    #         elif "Alignment" in unparsed_condition or "Lvl" in unparsed_condition:
-    #             condition = unparsed_condition.strip(" and")
-    #             print(condition)
-    #             custom_conditions.append(condition)
-    #         else:
-    #             condition = unparsed_condition.strip(" and").split(" ")
-    #             stat_type = condition[0]
-    #             condition_type = condition[1]
-    #             limit = int(condition[2])
-    #
-    #             conditions.append(
-    #                 {
-    #                     "statType": stat_type,
-    #                     "condition": condition_type,
-    #                     "limit": limit,
-    #                 }
-    #             )
-
     all_conditions = {"conditions": conditions, "customConditions": custom_conditions}
 
     return all_conditions
+
+
+def get_weapon_stats(soup):
+    ap_cost = int(
+        (
+            soup.find("div", {"class": "ak-container ak-panel no-padding"})
+            .find("span", {"class": "ak-title-info"})
+            .text
+        ).split(" ")[0]
+    )
+    uses_per_turn = int(
+        (
+            soup.find("div", {"class": "ak-container ak-panel no-padding"})
+            .find("span", {"class": "ak-title-info"})
+            .text
+        )
+        .replace("(", "")
+        .replace(")", "")
+        .split(" ")[1]
+    )
+    range = (
+        soup.find("div", {"class": "ak-container ak-panel no-padding"})
+        .find_all("div", {"class", "ak-list-element"})[1]
+        .find("span", {"class": "ak-title-info"})
+        .text
+    )
+    min_range = None
+    max_range = None
+    if "to" in range:
+        arr = range.split(" ")
+        min_range = int(arr[0])
+        max_range = int(arr[2])
+    else:
+        max_range = int(range)
+    base_crit_chance = int(
+        (
+            soup.find("div", {"class": "ak-container ak-panel no-padding"})
+            .find_all("div", {"class", "ak-list-element"})[2]
+            .find("span", {"class": "ak-title-info"})
+            .text
+        )
+        .split(" ")[0]
+        .split("/")[1]
+    )
+    crit_bonus_damage = 0
+    # if base_crit_chance != 0:
+    #     crit_bonus_damage = int(
+    #         (
+    #             soup.find("div", {"class": "ak-container ak-panel no-padding"})
+    #             .find_all("div", {"class", "ak-list-element"})[2]
+    #             .find("span", {"class": "ak-title-info"})
+    #             .text
+    #         )
+    #         .split(" ")[1]
+    #         .replace("+", "")
+    #         .replace("(", "")
+    #         .replace(")", "")
+    #     )
+
+    crit_info = (
+        soup.find("div", {"class": "ak-container ak-panel no-padding"})
+        .find_all("div", {"class", "ak-list-element"})[2]
+        .find("span", {"class": "ak-title-info"})
+        .text
+    )
+
+    base_crit_chance = int(crit_info.split(" ")[0].split("/")[1])
+    crit_bonus_damage = 0
+    if len(crit_info.split(" ")) > 1:
+        crit_bonus_damage = int(
+            crit_info.split(" ")[1].replace("+", "").replace("(", "").replace(")", "")
+        )
+
+    weapon_stat = {
+        "apCost": ap_cost,
+        "usesPerTurn": uses_per_turn,
+        "minRange": min_range,
+        "maxRange": max_range,
+        "baseCritChance": base_crit_chance,
+        "critBonusDamage": crit_bonus_damage,
+    }
+
+    return weapon_stat

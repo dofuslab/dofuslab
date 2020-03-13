@@ -3,6 +3,8 @@ from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_type import ModelItemType
 from app.database.model_item_slot import ModelItemSlot
 from app.database.model_item_translation import ModelItemTranslation
+from app.database.model_weapon_effect import ModelWeaponEffect
+from app.database.model_weapon_stat import ModelWeaponStat
 from app.database.model_item import ModelItem
 from app.database.model_set_bonus import ModelSetBonus
 from app.database.model_set_translation import ModelSetTranslation
@@ -15,7 +17,7 @@ from app.database.model_user import ModelUser
 from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from app.database.base import Base
-from app.database.enums import Stat
+from app.database.enums import Stat, Effect
 import app.mutation_validation_utils as validation
 import graphene
 import uuid
@@ -61,6 +63,7 @@ class NonNullConnection(relay.Connection, abstract=True):
 
 
 StatEnum = graphene.Enum.from_enum(Stat)
+EffectEnum = graphene.Enum.from_enum(Effect)
 
 
 class ItemStats(SQLAlchemyObjectType):
@@ -79,12 +82,22 @@ class ItemSlot(SQLAlchemyObjectType):
 
 
 class ItemType(SQLAlchemyObjectType):
-    eligible_item_slots = graphene.NonNull(
-        graphene.List(graphene.NonNull(ItemSlot))
-    )  # Use list instead of connection
+    eligible_item_slots = graphene.NonNull(graphene.List(graphene.NonNull(ItemSlot)))
 
     class Meta:
         model = ModelItemType
+        interfaces = (GlobalNode,)
+
+
+class WeaponEffect(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelWeaponEffect
+        interfaces = (GlobalNode,)
+
+
+class WeaponStat(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelWeaponStat
         interfaces = (GlobalNode,)
 
 
