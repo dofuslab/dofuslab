@@ -102,7 +102,7 @@ const ItemSelectorFilters: React.FC<IProps> = ({
           css={{
             display: 'flex',
             marginBottom: 16,
-            [mq[2]]: { marginBottom: 0 },
+            [mq[2]]: { marginBottom: 0, maxWidth: 360 },
             flex: '1',
           }}
         >
@@ -122,7 +122,7 @@ const ItemSelectorFilters: React.FC<IProps> = ({
           css={{
             gridColumn: '1 / -1',
             flex: '1',
-            [mq[2]]: { marginLeft: 16 },
+            [mq[2]]: { marginLeft: 16, maxWidth: 320 },
           }}
           placeholder="Stats (e.g. AP, Pods, Prospecting)"
           value={stats}
@@ -148,9 +148,9 @@ const ItemSelectorFilters: React.FC<IProps> = ({
             gridColumn: '1 / -1',
             display: 'flex',
             flexWrap: 'wrap',
-            justifyContent: 'space-between',
+            justifyContent: 'flex-start',
             ['.ant-checkbox-group-item']: {
-              flex: '1 1 120px',
+              flex: '0 1 120px',
               minWidth: 0,
               ['&:last-child']: {
                 marginRight: 8,
