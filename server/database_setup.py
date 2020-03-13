@@ -4,6 +4,8 @@ from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_slot import ModelItemSlot
 from app.database.model_item_type import ModelItemType
 from app.database.model_item_translation import ModelItemTranslation
+from app.database.model_weapon_effect import ModelWeaponEffect
+from app.database.model_weapon_stat import ModelWeaponStat
 from app.database.model_set import ModelSet
 from app.database.model_set_bonus import ModelSetBonus
 from app.database.model_set_translation import ModelSetTranslation
@@ -72,6 +74,22 @@ to_stat_enum = {
     "% Ranged Resistance": enums.Stat.PCT_RANGED_RES,
     "% Melee Resistance": enums.Stat.PCT_MELEE_RES,
     "pods": enums.Stat.PODS,
+}
+
+to_effect_enum = {
+    "Neutral damage": enums.Effect.NEUTRAL_DAMAGE,
+    "Earth damage": enums.Effect.EARTH_DAMAGE,
+    "Fire damage": enums.Effect.FIRE_DAMAGE,
+    "Water damage": enums.Effect.WATER_DAMAGE,
+    "Air damage": enums.Effect.AIR_DAMAGE,
+    "Neutral steal": enums.Effect.NEUTRAL_STEAL,
+    "Earth steal": enums.Effect.EARTH_STEAL,
+    "Fire steal": enums.Effect.FIRE_STEAL,
+    "Water steal": enums.Effect.WATER_STEAL,
+    "Air steal": enums.Effect.AIR_STEAL,
+    "AP": enums.Effect.AP,
+    "MP": enums.Effect.MP,
+    "HP restored": enums.Effect.HP_RESTORED,
 }
 
 if __name__ == "__main__":
@@ -162,7 +180,6 @@ if __name__ == "__main__":
                 db.session.add(item_translations)
                 item.item_translations.append(item_translations)
 
-            # Currently, stats that aren't in the Stat enum will cause a KeyError
             try:
                 for stat in record["stats"]:
                     item_stat = ModelItemStat(
@@ -187,5 +204,75 @@ if __name__ == "__main__":
                     db.session.merge(set_record)
             except KeyError as err:
                 print("KeyError occurred:", err)
+
+        db.session.commit()
+
+    print("Adding weapons to database")
+    with open(os.path.join(dirname, "app/database/data/weapons.json"), "r") as file:
+        data = json.load(file)
+        for record in data:
+            item = ModelItem(
+                dofus_db_id=record["dofusID"],
+                item_type=item_types[record["itemType"]],
+                level=record["level"],
+                image_url=record["imageUrl"],
+            )
+
+            conditions = {
+                "conditions": record["conditions"]["conditions"],
+                "customConditions": record["conditions"]["customConditions"],
+            }
+            item.conditions = conditions
+
+            for locale in record["name"]:
+                item_translations = ModelItemTranslation(
+                    item_id=item.uuid, locale=locale, name=record["name"][locale],
+                )
+                db.session.add(item_translations)
+                item.item_translations.append(item_translations)
+
+            try:
+                for stat in record["stats"]:
+                    item_stat = ModelItemStat(
+                        stat=to_stat_enum[stat["stat"]],
+                        min_value=stat["minStat"],
+                        max_value=stat["maxStat"],
+                    )
+                    db.session.add(item_stat)
+                    item.stats.append(item_stat)
+
+                db.session.add(item)
+
+                # If this item belongs in a set, query the set and add the relationship to the record
+                if record["setID"]:
+                    set = record["setID"]
+                    set_record = (
+                        db.session.query(ModelSet)
+                        .filter(ModelSet.dofus_db_id == set)
+                        .first()
+                    )
+                    set_record.items.append(item)
+                    db.session.merge(set_record)
+            except KeyError as err:
+                print("KeyError occurred:", err)
+
+            weapon_stat = ModelWeaponStat(
+                ap_cost=record["weaponStats"]["apCost"],
+                uses_per_turn=record["weaponStats"]["usesPerTurn"],
+                min_range=record["weaponStats"]["minRange"],
+                max_range=record["weaponStats"]["maxRange"],
+                base_crit_chance=record["weaponStats"]["baseCritChance"],
+                crit_bonus_damage=record["weaponStats"]["critBonusDamage"],
+            )
+
+            for effect in record["weaponStats"]["weapon_effects"]:
+                weapon_effects = ModelWeaponEffect(
+                    effect_type=to_effect_enum[effect["stat"]],
+                    min_damage=effect["minStat"],
+                    max_damage=effect["maxStat"],
+                )
+                weapon_stat.weapon_effects.append(weapon_effects)
+
+            item.weapon_stats.append(weapon_stat)
 
         db.session.commit()

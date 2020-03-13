@@ -57,12 +57,21 @@ class Stat(Enum):
     PODS = auto()
 
 
-class Element(Enum):
-    NEUTRAL = auto()
-    EARTH = auto()
-    FIRE = auto()
-    WATER = auto()
-    AIR = auto()
+class Effect(Enum):
+    NEUTRAL_DAMAGE = auto()
+    EARTH_DAMAGE = auto()
+    FIRE_DAMAGE = auto()
+    WATER_DAMAGE = auto()
+    AIR_DAMAGE = auto()
+    NEUTRAL_STEAL = auto()
+    EARTH_STEAL = auto()
+    FIRE_STEAL = auto()
+    WATER_STEAL = auto()
+    AIR_STEAL = auto()
+    AP = auto()
+    MP = auto()
+    HP_RESTORED = auto()
 
 
 StatEnum = sqlalchemy.Enum(Stat)
+EffectEnum = sqlalchemy.Enum(Effect)

@@ -67,7 +67,7 @@ class ItemScraper:
             item_type = soup.find(
                 "div", attrs={"class": "ak-encyclo-detail-type col-xs-6"}
             ).text[7:]
-            level = level = soup.find(
+            level = soup.find(
                 "div", attrs={"class": "ak-encyclo-detail-level col-xs-6 text-right"},
             ).text[7:]
             image = soup.find("img", attrs={"class": "img-maxresponsive"})["src"]
@@ -88,7 +88,7 @@ class ItemScraper:
             all_stats = scraper_utils.get_stats(soup, id)
             stats = all_stats[0]
             custom_stats = all_stats[1]
-            conditions = scraper_utils.get_conditions(soup)
+            conditions = scraper_utils.get_conditions(soup, item_type)
 
             item = {
                 "dofusID": id,
@@ -103,7 +103,7 @@ class ItemScraper:
             }
 
             items.append(item)
-            print("Item " + str(i) + " complete")
+            print("Item " + str(i) + " (id: {}) complete".format(id))
 
         with open(os.path.join(dirname, "items.json"), "w") as file:
             print("Writing item data to file")
@@ -231,12 +231,111 @@ class ItemScraper:
 
 
 class WeaponScraper:
-    def test_conditions():
-        link = "https://www.dofus.com/en/mmorpg/encyclopedia/weapons/14166-sepulchral-sceptre"
+    def get_all_weapon_ids():
+        link = "https://www.dofus.com/en/mmorpg/encyclopedia/weapons?size=96"
         soup = scraper_utils.get_soup(link)
 
-        conditions = scraper_utils.get_conditions(soup)
-        print(conditions)
+        page_data = soup.find("ul", {"class": "ak-pagination"}).find_all("li")
+        final_page_number = int(page_data[-1].find("a")["href"].split("=")[-1])
+
+        weapon_ids = []
+        for i in range(1, final_page_number + 1):
+            url = (
+                "https://www.dofus.com/en/mmorpg/encyclopedia/weapons?size=96&page="
+                + str(i)
+            )
+            soup = scraper_utils.get_soup(url)
+            weapon_table = soup.find(
+                "table", {"class": "ak-table ak-responsivetable"}
+            ).tbody.find_all("tr")
+            for weapon in weapon_table:
+                id = weapon.find("a")["href"].split("/")[-1].split("-")[0]
+                weapon_ids.append(id)
+            print("Finished page " + str(i))
+
+        with open(os.path.join(dirname, "all_weapon_ids.csv"), "w") as file:
+            writer = csv.writer(file)
+            writer.writerow(weapon_ids)
+
+    def get_weapon_data(max_number_of_items):
+        all_weapon_ids = []
+
+        with open(os.path.join(dirname, "all_weapon_ids.csv"), "r") as csvfile:
+            data = csv.reader(csvfile, delimiter=",")
+            for row in data:
+                all_weapon_ids = row
+
+        weapons = []
+        i = 0
+        for id in all_weapon_ids:
+            if i == max_number_of_items:
+                break
+            # if int(id) != 9718:
+            #     continue
+            i = i + 1
+
+            url = "https://www.dofus.com/en/mmorpg/encyclopedia/weapons/" + id
+            soup = scraper_utils.get_soup(url)
+
+            if (
+                soup.find("div", attrs={"class": "ak-encyclo-detail-type col-xs-6"})
+                == None
+            ):
+                print("---- Item 404'd, skipping item (id: {}) ----".format(id))
+                # TODO: add logic to track and handle these id's
+
+                continue
+
+            names = scraper_utils.get_alternate_names(soup)
+            item_type = soup.find(
+                "div", attrs={"class": "ak-encyclo-detail-type col-xs-6"}
+            ).text[7:]
+            level = soup.find(
+                "div", attrs={"class": "ak-encyclo-detail-level col-xs-6 text-right"},
+            ).text[7:]
+            image = soup.find("img", attrs={"class": "img-maxresponsive"})["src"]
+            set = None
+            try:
+                set = (
+                    soup.find(
+                        "div", attrs={"class": "ak-container ak-panel-stack ak-glue"}
+                    )
+                    .find_all("div", attrs={"class": "ak-panel-title"})[-1]
+                    .find("a")
+                )
+
+                set = set["href"].split("/")[-1].split("-")[0]
+            except:
+                # print("No set found for this item")
+                pass
+
+            all_stats = scraper_utils.get_stats(soup, id)
+            stats = all_stats[0]
+            custom_stats = all_stats[1]
+            conditions = scraper_utils.get_conditions(soup, item_type)
+
+            weapon_stats = scraper_utils.get_weapon_stats(soup)
+            weapon_stats["weapon_effects"] = all_stats[2]
+
+            weapon = {
+                "dofusID": id,
+                "name": names,
+                "itemType": item_type,
+                "level": int(level),
+                "setID": set,
+                "stats": stats,
+                "weaponStats": weapon_stats,
+                "customStats": custom_stats,
+                "conditions": conditions,
+                "imageUrl": image,
+            }
+
+            weapons.append(weapon)
+            print("Item " + str(i) + " (id: {}) complete".format(id))
+
+        with open(os.path.join(dirname, "weapons.json"), "w") as file:
+            print("Writing weapon data to file")
+            json.dump(weapons, file)
 
 
 class SetScraper:
@@ -349,9 +448,10 @@ class ClassScraper:
 
 if __name__ == "__main__":
     # ItemScraper.get_all_item_ids()
-    ItemScraper.get_item_data(3000)
+    # ItemScraper.get_item_data(3000)
 
     # SetScraper.get_all_set_ids()
     # SetScraper.get_set_data(1000)
 
-    # WeaponScraper.test_conditions()
+    # WeaponScraper.get_all_weapon_ids()
+    WeaponScraper.get_weapon_data(1000)

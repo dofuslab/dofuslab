@@ -28,5 +28,8 @@ class ModelItem(Base):
     set = relationship("ModelSet")
     level = Column("level", Integer, nullable=False)
     stats = relationship(ModelItemStat, backref="item", cascade="all, delete-orphan")
-    conditions = Column("condtions", JSON)
+    weapon_stats = relationship(
+        "ModelWeaponStat", backref="item", cascade="all, delete-orphan"
+    )
+    conditions = Column("conditions", JSON)
     image_url = Column("image_url", String, nullable=False)
