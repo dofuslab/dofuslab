@@ -63,12 +63,13 @@ const ItemSelector: React.FC<IProps> = ({
     search: '',
     itemTypeIds: selectedItemSlot?.itemTypes.map(type => type.id) || [],
   });
-  const { data, loading, fetchMore } = useQuery<items, itemsVariables>(
-    ItemsQuery,
-    {
-      variables: { first: PAGE_SIZE, filters },
-    },
-  );
+  const { data, loading, fetchMore, networkStatus } = useQuery<
+    items,
+    itemsVariables
+  >(ItemsQuery, {
+    variables: { first: PAGE_SIZE, filters },
+    notifyOnNetworkStatusChange: true,
+  });
 
   const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);
   const itemSlots = itemSlotsData?.itemSlots;
@@ -166,8 +167,7 @@ const ItemSelector: React.FC<IProps> = ({
           customSetId={customSet!.id}
         />
       )}
-      {!loading &&
-        data &&
+      {data &&
         data.items.edges
           .map(edge => edge.node)
           .map(item => (
@@ -196,7 +196,11 @@ const ItemSelector: React.FC<IProps> = ({
               <Skeleton loading title active paragraph={{ rows: 8 }}></Skeleton>
             </Card>
           ))}
-      <Waypoint onEnter={onLoadMore} bottomOffset={BOTTOM_OFFSET} />
+      <Waypoint
+        key={networkStatus}
+        onEnter={onLoadMore}
+        bottomOffset={BOTTOM_OFFSET}
+      />
     </ResponsiveGrid>
   );
 };
