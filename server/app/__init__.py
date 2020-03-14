@@ -31,6 +31,7 @@ CORS(
                 "http://localhost:3000",
                 "http://dev.localhost:3000",
                 "https://dofus-lab.herokuapp.com",
+                "https://dofuslab.io",
             ]
         }
     },
@@ -50,7 +51,8 @@ migrate = Migrate(app, Base, directory=migration_dir)
 from app.schema import schema
 
 app.add_url_rule(
-    "/graphql", view_func=GraphQLView.as_view("graphql", schema=schema, graphiql=True),
+    "/api/graphql",
+    view_func=GraphQLView.as_view("graphql", schema=schema, graphiql=True),
 )
 
 

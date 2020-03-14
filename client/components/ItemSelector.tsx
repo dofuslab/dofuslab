@@ -32,6 +32,9 @@ const BOTTOM_OFFSET = -1200;
 interface IProps {
   selectedItemSlot: itemSlots_itemSlots | null;
   customSet?: customSet | null;
+  selectItemSlot: React.Dispatch<
+    React.SetStateAction<itemSlots_itemSlots | null>
+  >;
 }
 
 const reducer = (state: ItemFilters, action: FilterAction) => {
@@ -49,7 +52,11 @@ const reducer = (state: ItemFilters, action: FilterAction) => {
   }
 };
 
-const ItemSelector: React.FC<IProps> = ({ selectedItemSlot, customSet }) => {
+const ItemSelector: React.FC<IProps> = ({
+  selectedItemSlot,
+  customSet,
+  selectItemSlot,
+}) => {
   const [filters, dispatch] = React.useReducer(reducer, {
     stats: [],
     maxLevel: 200,
@@ -173,6 +180,7 @@ const ItemSelector: React.FC<IProps> = ({ selectedItemSlot, customSet }) => {
               selectedEquippedItem={selectedEquippedItem}
               customSet={customSet}
               responsiveGridRef={responsiveGridRef}
+              selectItemSlot={selectItemSlot}
             />
           ))}
       {(loading || data?.items.pageInfo.hasNextPage) &&

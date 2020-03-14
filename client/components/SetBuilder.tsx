@@ -99,6 +99,7 @@ const SetBuilder: React.FC = () => {
             key={`selected-item-slot-${selectedItemSlot?.id}`}
             selectedItemSlot={selectedItemSlot}
             customSet={customSetData?.customSetById}
+            selectItemSlot={selectItemSlot}
           />
         </div>
       </div>

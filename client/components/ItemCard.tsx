@@ -10,6 +10,7 @@ import { BORDER_COLOR, itemCardStyle, itemBoxDimensions } from 'common/mixins';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { findEmptyOrOnlySlotId, useEquipItemMutation } from 'common/utils';
 import ConfirmReplaceItemPopover from './ConfirmReplaceItemPopover';
+import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 
 interface IProps {
   item: item;
@@ -17,6 +18,9 @@ interface IProps {
   selectedEquippedItem?: item | null;
   customSet?: customSet | null;
   responsiveGridRef: React.MutableRefObject<HTMLDivElement | null>;
+  selectItemSlot: React.Dispatch<
+    React.SetStateAction<itemSlots_itemSlots | null>
+  >;
 }
 
 const ItemCard: React.FC<IProps> = ({
@@ -25,6 +29,7 @@ const ItemCard: React.FC<IProps> = ({
   selectedEquippedItem,
   customSet,
   responsiveGridRef,
+  selectItemSlot,
 }) => {
   const itemSlotId =
     selectedItemSlotId || findEmptyOrOnlySlotId(item.itemType, customSet);
@@ -34,8 +39,9 @@ const ItemCard: React.FC<IProps> = ({
   const onClick = React.useCallback(async () => {
     if (itemSlotId) {
       await mutate(itemSlotId);
+      selectItemSlot(null);
     }
-  }, [item, itemSlotId, mutate]);
+  }, [item, itemSlotId, mutate, selectItemSlot]);
 
   const { t } = useTranslation('stat');
 
