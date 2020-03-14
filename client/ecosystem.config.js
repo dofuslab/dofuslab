@@ -23,7 +23,7 @@ module.exports = {
       host: '134.209.168.215',
       ref: 'origin/master',
       repo: 'git@github.com:samlee405/dofus-lab.git',
-      path: '~/dofus-lab/client',
+      path: '/var/www/production',
       'post-deploy':
         'yarn && pm2 reload ecosystem.config.js --env production && pm2 save',
     },
