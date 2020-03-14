@@ -21,7 +21,7 @@ interface IProps {
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 
-console.log(GRAPHQL_URI);
+console.log(process.env.GRAPHQL_URI);
 
 function create(initialState: any, headers: IncomingHttpHeaders) {
   return new ApolloClient<NormalizedCacheObject>({
