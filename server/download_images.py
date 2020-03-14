@@ -3,7 +3,7 @@ import re
 import requests
 import shutil
 from app import db
-from database.model_item import ModelItem
+from app.database.model_item import ModelItem
 
 dirname = os.path.dirname(os.path.abspath(__file__))
 
