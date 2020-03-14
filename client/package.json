@@ -10,7 +10,9 @@
     "start": "NODE_ENV=production node .build/server",
     "type-check": "tsc",
     "apollo-codegen": "apollo client:codegen --target typescript --endpoint=http://localhost:5000/graphql",
-    "publish-heroku": "cd ../ && git subtree push --prefix client heroku-client master || true"
+    "publish-heroku": "cd ../ && git subtree push --prefix client heroku-client master || true",
+    "deploy-production": "pm2 deploy ecosystem.config.js production --force",
+    "reload-production": "pm2 deploy ecosystem.config.js production exec 'pm2 reload app'"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
