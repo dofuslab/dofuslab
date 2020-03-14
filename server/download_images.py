@@ -7,7 +7,7 @@ from database.model_item import ModelItem
 
 dirname = os.path.dirname(os.path.abspath(__file__))
 
-folder = os.path.join(dirname, "images")
+folder = os.path.join(dirname, "static", "images")
 
 image_urls = db.session.query(ModelItem.image_url).all()
 

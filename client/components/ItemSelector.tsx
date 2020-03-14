@@ -137,8 +137,6 @@ const ItemSelector: React.FC<IProps> = ({
         )?.item
       : null;
 
-  console.log(numLoadersToRender);
-
   return (
     <ResponsiveGrid
       numColumns={[1, 1, 2, 3, 4, 5]}
