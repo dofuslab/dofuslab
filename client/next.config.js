@@ -4,6 +4,9 @@ const path = require('path');
 require('dotenv').config();
 
 module.exports = withCSS({
+  env: {
+    GRAPHQL_URI: process.env.GRAPHQL_URI,
+  },
   webpack: config => {
     config.module.rules.push({
       test: /\.(graphql|gql)$/,
