@@ -4,37 +4,110 @@ import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
 import Popover from 'antd/lib/popover';
 
-import { item } from 'graphql/fragments/__generated__/item';
 import { ItemStatsList } from 'common/wrappers';
 import {
-  itemBoxDimensions,
   popoverTitleStyle,
   itemImageBox,
   selected as selectedBox,
+  itemImageDimensions,
 } from 'common/mixins';
+import {
+  customSet_equippedItems,
+  customSet,
+} from 'graphql/fragments/__generated__/customSet';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagic, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { useDeleteItemMutation } from 'common/utils';
+
+const wrapperStyles = {
+  position: 'absolute' as 'absolute',
+  right: 6,
+  top: 6,
+  fontSize: '0.75rem',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: 4,
+  margin: -4,
+  transition: '0.3s opacity',
+  opacity: 0,
+};
 
 interface IProps {
-  item: item;
+  equippedItem: customSet_equippedItems;
   selected: boolean;
+  deletable: boolean;
+  customSet: customSet;
 }
 
-const ItemWithStats: React.FC<IProps> = ({ item, selected }) => {
+const ItemWithStats: React.FC<IProps> = ({
+  equippedItem,
+  selected,
+  deletable,
+  customSet,
+}) => {
+  const deleteItem = useDeleteItemMutation(equippedItem.slot.id, customSet);
+  const onDelete = React.useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      e.stopPropagation();
+      deleteItem && deleteItem();
+    },
+    [deleteItem],
+  );
   return (
     <ClassNames>
-      {({ css }) => (
-        <Popover
-          placement="bottom"
-          title={item.name}
-          content={item.stats.length > 0 && <ItemStatsList item={item} />}
-          overlayClassName={css(popoverTitleStyle)}
-        >
-          <div
-            css={selected ? { ...itemImageBox, ...selectedBox } : itemImageBox}
+      {({ css }) => {
+        const wrapperClass = css(wrapperStyles);
+        return (
+          <Popover
+            placement="bottom"
+            title={equippedItem.item.name}
+            content={
+              equippedItem.item.stats.length > 0 && (
+                <ItemStatsList
+                  item={equippedItem.item}
+                  exos={equippedItem.exos}
+                />
+              )
+            }
+            overlayClassName={css(popoverTitleStyle)}
           >
-            <img src={item.imageUrl} css={itemBoxDimensions} />
-          </div>
-        </Popover>
-      )}
+            <div
+              css={{
+                ...itemImageBox,
+                ...(selected && { ...selectedBox }),
+                ['&:hover']: {
+                  [`.${wrapperClass}`]: {
+                    opacity: 0.3,
+                    ['&:hover']: {
+                      opacity: 1,
+                    },
+                  },
+                },
+              }}
+            >
+              <img src={equippedItem.item.imageUrl} css={itemImageDimensions} />
+              {equippedItem.exos.length > 0 && (
+                <FontAwesomeIcon
+                  icon={faMagic}
+                  css={{
+                    position: 'absolute',
+                    left: 6,
+                    bottom: 6,
+                    fontSize: '0.75rem',
+                    opacity: 0.3,
+                  }}
+                />
+              )}
+              {deletable && (
+                <div className={wrapperClass} onClick={onDelete}>
+                  <FontAwesomeIcon icon={faTimes} />
+                </div>
+              )}
+            </div>
+          </Popover>
+        );
+      }}
     </ClassNames>
   );
 };

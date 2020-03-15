@@ -1,5 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
+// @generated
 // This file was automatically generated and should not be edited.
 
 import { Stat } from "./../../../__generated__/globalTypes";
@@ -59,11 +60,19 @@ export interface customSet_equippedItems_item {
   set: customSet_equippedItems_item_set | null;
 }
 
+export interface customSet_equippedItems_exos {
+  __typename: "EquippedItemExo";
+  id: any;
+  stat: Stat;
+  value: number;
+}
+
 export interface customSet_equippedItems {
   __typename: "EquippedItem";
   id: any;
   slot: customSet_equippedItems_slot;
   item: customSet_equippedItems_item;
+  exos: customSet_equippedItems_exos[];
 }
 
 export interface customSet_stats {
@@ -83,6 +92,12 @@ export interface customSet_stats {
   scrolledAgility: number;
 }
 
+export interface customSet_owner {
+  __typename: "User";
+  id: any;
+  username: string;
+}
+
 export interface customSet {
   __typename: "CustomSet";
   id: any;
@@ -90,4 +105,5 @@ export interface customSet {
   level: number;
   equippedItems: customSet_equippedItems[];
   stats: customSet_stats;
+  owner: customSet_owner | null;
 }

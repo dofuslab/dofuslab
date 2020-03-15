@@ -66,4 +66,5 @@ class ModelCustomSet(Base):
             .filter_by(custom_set_id=self.uuid, item_slot_id=item_slot_id)
             .one_or_none()
         )
-        db.session.delete(equipped_item)
+        if equipped_item:
+            db.session.delete(equipped_item)

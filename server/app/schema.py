@@ -160,6 +160,7 @@ class EquippedItemExo(SQLAlchemyObjectType):
 class EquippedItem(SQLAlchemyObjectType):
     item = graphene.NonNull(Item)
     slot = graphene.NonNull(ItemSlot)
+    exos = graphene.NonNull(graphene.List(graphene.NonNull(EquippedItemExo)))
 
     class Meta:
         model = ModelEquippedItem
@@ -227,7 +228,7 @@ class UpdateCustomSetItem(graphene.Mutation):
         item_id = kwargs.get("item_id")
         if custom_set_id:
             custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
-            if custom_set.owner_id != current_user.get_id():
+            if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
                 raise GraphQLError("You don't have permission to edit that set.")
         else:
             custom_set = ModelCustomSet(owner_id=current_user.get_id())
@@ -252,6 +253,11 @@ class MageEquippedItem(graphene.Mutation):
         equipped_item_id = kwargs.get("equipped_item_id")
         stats = kwargs.get("stats")
         equipped_item = db.session.query(ModelEquippedItem).get(equipped_item_id)
+        if (
+            equipped_item.custom_set.owner_id
+            and equipped_item.custom_set.owner_id != current_user.get_id()
+        ):
+            raise GraphQLError("You don't have permission to edit that set.")
         db.session.query(ModelEquippedItemExo).filter_by(
             equipped_item_id=equipped_item_id
         ).delete(synchronize_session=False)
@@ -261,10 +267,49 @@ class MageEquippedItem(graphene.Mutation):
             ),
             stats,
         )
-        db.session.add_all(stats)
+        if stats:
+            db.session.add_all(stats)
         db.session.commit()
 
         return MageEquippedItem(equipped_item=equipped_item)
+
+
+# used for exo shortcuts for AP, MP, range
+class SetEquippedItemExo(graphene.Mutation):
+    class Arguments:
+        equipped_item_id = graphene.UUID(required=True)
+        stat = graphene.NonNull(StatEnum)
+        has_stat = graphene.Boolean(required=True)  # True if adding, False if removing
+
+    equipped_item = graphene.Field(EquippedItem, required=True)
+
+    def mutate(self, info, **kwargs):
+        equipped_item_id = kwargs.get("equipped_item_id")
+        stat = Stat(kwargs.get("stat"))
+        has_stat = kwargs.get("has_stat")
+        equipped_item = db.session.query(ModelEquippedItem).get(equipped_item_id)
+        if (
+            equipped_item.custom_set.owner_id
+            and equipped_item.custom_set.owner_id != current_user.get_id()
+        ):
+            raise GraphQLError("You don't have permission to edit that set.")
+        if stat != Stat.AP and stat != Stat.MP and stat != Stat.RANGE:
+            raise GraphQLError("Invalid stat to set exo")
+        exo_obj = (
+            db.session.query(ModelEquippedItemExo)
+            .filter_by(equipped_item_id=equipped_item_id, stat=stat)
+            .one_or_none()
+        )
+        if not exo_obj and has_stat:
+            exo_obj = ModelEquippedItemExo(
+                stat=stat, value=1, equipped_item_id=equipped_item_id
+            )
+            db.session.add(exo_obj)
+        if exo_obj and not has_stat:
+            db.session.delete(exo_obj)
+        db.session.commit()
+
+        return SetEquippedItemExo(equipped_item=equipped_item)
 
 
 class DeleteCustomSetItem(graphene.Mutation):
@@ -278,6 +323,8 @@ class DeleteCustomSetItem(graphene.Mutation):
         custom_set_id = kwargs.get("custom_set_id")
         item_slot_id = kwargs.get("item_slot_id")
         custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
+        if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
+            raise GraphQLError("You don't have permission to edit that set.")
         custom_set.unequip_item(item_slot_id)
         db.session.commit()
 
@@ -457,6 +504,7 @@ class Mutation(graphene.ObjectType):
     update_custom_set_item = UpdateCustomSetItem.Field()
     delete_custom_set_item = DeleteCustomSetItem.Field()
     mage_equipped_item = MageEquippedItem.Field()
+    set_equipped_item_exo = SetEquippedItemExo.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

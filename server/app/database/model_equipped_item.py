@@ -24,4 +24,4 @@ class ModelEquippedItem(Base):
     item_id = Column(UUID(as_uuid=True), ForeignKey("item.uuid"))
     item = relationship("ModelItem")
     slot = relationship("ModelItemSlot")
-    exos = relationship("ModelEquippedItemExo")
+    exos = relationship("ModelEquippedItemExo", cascade="all, delete-orphan")

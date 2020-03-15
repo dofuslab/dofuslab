@@ -1,5 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
+// @generated
 // This file was automatically generated and should not be edited.
 
 import { Stat } from "./../../../__generated__/globalTypes";
@@ -59,11 +60,19 @@ export interface customSet_customSetById_equippedItems_item {
   set: customSet_customSetById_equippedItems_item_set | null;
 }
 
+export interface customSet_customSetById_equippedItems_exos {
+  __typename: "EquippedItemExo";
+  id: any;
+  stat: Stat;
+  value: number;
+}
+
 export interface customSet_customSetById_equippedItems {
   __typename: "EquippedItem";
   id: any;
   slot: customSet_customSetById_equippedItems_slot;
   item: customSet_customSetById_equippedItems_item;
+  exos: customSet_customSetById_equippedItems_exos[];
 }
 
 export interface customSet_customSetById_stats {
@@ -83,6 +92,12 @@ export interface customSet_customSetById_stats {
   scrolledAgility: number;
 }
 
+export interface customSet_customSetById_owner {
+  __typename: "User";
+  id: any;
+  username: string;
+}
+
 export interface customSet_customSetById {
   __typename: "CustomSet";
   id: any;
@@ -90,6 +105,7 @@ export interface customSet_customSetById {
   level: number;
   equippedItems: customSet_customSetById_equippedItems[];
   stats: customSet_customSetById_stats;
+  owner: customSet_customSetById_owner | null;
 }
 
 export interface customSet {

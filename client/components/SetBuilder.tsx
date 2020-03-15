@@ -30,6 +30,11 @@ const SetBuilder: React.FC = () => {
     { variables: { id: setId }, skip: !setId },
   );
 
+  const customSetItemIds = new Set<string>();
+  (customSetData?.customSetById?.equippedItems ?? []).forEach(equippedItem =>
+    customSetItemIds.add(equippedItem.item.id),
+  );
+
   const [
     selectedItemSlot,
     selectItemSlot,
@@ -100,6 +105,7 @@ const SetBuilder: React.FC = () => {
             selectedItemSlot={selectedItemSlot}
             customSet={customSetData?.customSetById}
             selectItemSlot={selectItemSlot}
+            customSetItemIds={customSetItemIds}
           />
         </div>
       </div>

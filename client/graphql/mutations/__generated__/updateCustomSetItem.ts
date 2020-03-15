@@ -1,5 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
+// @generated
 // This file was automatically generated and should not be edited.
 
 import { Stat } from "./../../../__generated__/globalTypes";
@@ -59,11 +60,19 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
   set: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set | null;
 }
 
+export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_exos {
+  __typename: "EquippedItemExo";
+  id: any;
+  stat: Stat;
+  value: number;
+}
+
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems {
   __typename: "EquippedItem";
   id: any;
   slot: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_slot;
   item: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item;
+  exos: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_exos[];
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_stats {
@@ -83,6 +92,12 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_stats {
   scrolledAgility: number;
 }
 
+export interface updateCustomSetItem_updateCustomSetItem_customSet_owner {
+  __typename: "User";
+  id: any;
+  username: string;
+}
+
 export interface updateCustomSetItem_updateCustomSetItem_customSet {
   __typename: "CustomSet";
   id: any;
@@ -90,6 +105,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet {
   level: number;
   equippedItems: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems[];
   stats: updateCustomSetItem_updateCustomSetItem_customSet_stats;
+  owner: updateCustomSetItem_updateCustomSetItem_customSet_owner | null;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem {
