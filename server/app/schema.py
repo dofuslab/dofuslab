@@ -212,81 +212,6 @@ class CustomSetExosInput(graphene.InputObjectType):
     value = graphene.Int(required=True)
 
 
-class CreateCustomSet(graphene.Mutation):
-    class Arguments:
-        name = graphene.String()
-        description = graphene.String()
-        owner_username = graphene.String()
-        created_at = graphene.types.datetime.DateTime()
-        level = graphene.NonNull(graphene.Int)
-
-        items = graphene.NonNull(graphene.List(graphene.String))
-        stats = CustomSetStatsInput()
-        exos = graphene.NonNull(graphene.List(CustomSetExosInput))
-
-    custom_set = graphene.Field(CustomSet)
-
-    def mutate(self, info, **kwargs):
-        custom_set = ModelCustomSet(
-            name=kwargs.get("name"),
-            description=kwargs.get("description"),
-            created_at=kwargs.get("created_at"),
-            level=kwargs.get("level"),
-        )
-        # Add associated items to the custom set
-        # Modify to take in item objects
-        if kwargs.get("items"):
-            items = kwargs.get("items")
-
-            for item in items:
-                item_record = (
-                    db.session.query(ModelItem).filter(ModelItem.name == item).first()
-                )
-                custom_set.items.append(item_record)
-
-            # Create database entry for the stats then add to the custom set
-            if kwargs.get("stats"):
-                stats = kwargs.get("stats")
-                custom_set_stats = ModelCustomSetStat(
-                    scrolled_vitality=stats.scrolled_vitality,
-                    scrolled_wisdom=stats.scrolled_wisdom,
-                    scrolled_strength=stats.scrolled_strength,
-                    scrolled_intelligence=stats.scrolled_intelligence,
-                    scrolled_chance=stats.scrolled_chance,
-                    scrolled_agility=stats.scrolled_agility,
-                    base_vitality=stats.base_vitality,
-                    base_wisdom=stats.base_wisdom,
-                    base_strength=stats.base_strength,
-                    base_intelligence=stats.base_intelligence,
-                    base_chance=stats.base_chance,
-                    base_agility=stats.base_agility,
-                )
-
-                db.session.add(custom_set_stats)
-                custom_set.stats = custom_set_stats
-
-            if kwargs.get("exos"):
-                exos = kwargs.get("exos")
-                for exo in exos:
-                    equipped_item_exo = ModelEquippedItemExos(
-                        stat=exo.stat, value=exo.value
-                    )
-
-                    db.session.add(equipped_item_exo)
-                    custom_set.exos.append(exo)
-
-            db.session.add(custom_set)
-
-            # current_user = (
-            #     db_session.query(ModelUser)
-            #     .filter(ModelUser.username == kwargs.get("owner_username"))
-            #     .first()
-            # )
-            # current_user.custom_sets.append(custom_set)
-
-        return CreateCustomSet(custom_set=custom_set)
-
-
 class UpdateCustomSetItem(graphene.Mutation):
     class Arguments:
         # if null, create new set
@@ -316,30 +241,30 @@ class UpdateCustomSetItem(graphene.Mutation):
         return UpdateCustomSetItem(custom_set=custom_set)
 
 
-# class MageEquippedItem(graphene.Mutation):
-#     class Arguments:
-#         equipped_item_id = graphene.UUID(required=True)
-#         stats = graphene.NonNull(graphene.List(graphene.NonNull(CustomSetExosInput)))
+class MageEquippedItem(graphene.Mutation):
+    class Arguments:
+        equipped_item_id = graphene.UUID(required=True)
+        stats = graphene.NonNull(graphene.List(graphene.NonNull(CustomSetExosInput)))
 
-#     equipped_item = graphene.Field(EquippedItem, required=True)
+    equipped_item = graphene.Field(EquippedItem, required=True)
 
-#     def mutate(self, info, **kwargs):
-#         equipped_item_id = kwargs.get("equipped_item_id")
-#         stats = kwargs.get("stats")
-#         equipped_item = db.session.query(ModelEquippedItem).get(equipped_item_id)
-#         db.session.query(ModelEquippedItemExo).filter_by(
-#             equipped_item_id=equipped_item_id
-#         ).delete(synchronize_session=False)
-#         exo_models = map(
-#             lambda stat_line: ModelEquippedItemExo(
-#                 stat=stat_line.stat, value=value, equipped_item_id=equipped_item_id
-#             ),
-#             stats,
-#         )
-#         db.session.add_all(stats)
-#         db.session.commit()
+    def mutate(self, info, **kwargs):
+        equipped_item_id = kwargs.get("equipped_item_id")
+        stats = kwargs.get("stats")
+        equipped_item = db.session.query(ModelEquippedItem).get(equipped_item_id)
+        db.session.query(ModelEquippedItemExo).filter_by(
+            equipped_item_id=equipped_item_id
+        ).delete(synchronize_session=False)
+        exo_models = map(
+            lambda stat_line: ModelEquippedItemExo(
+                stat=stat_line.stat, value=value, equipped_item_id=equipped_item_id
+            ),
+            stats,
+        )
+        db.session.add_all(stats)
+        db.session.commit()
 
-#         return MageEquippedItem(equipped_item=equipped_item)
+        return MageEquippedItem(equipped_item=equipped_item)
 
 
 class DeleteCustomSetItem(graphene.Mutation):
@@ -527,12 +452,11 @@ class Query(graphene.ObjectType):
 
 class Mutation(graphene.ObjectType):
     register_user = RegisterUser.Field()
-    create_custom_set = CreateCustomSet.Field()
     login_user = LoginUser.Field()
     logout_user = LogoutUser.Field()
     update_custom_set_item = UpdateCustomSetItem.Field()
     delete_custom_set_item = DeleteCustomSetItem.Field()
-    # mage_equipped_item = MageEquippedItem.Field()
+    mage_equipped_item = MageEquippedItem.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
