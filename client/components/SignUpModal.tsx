@@ -119,7 +119,7 @@ const SignUpModal: React.FC<IProps> = ({
           rules={[
             { required: true, message: t('VALIDATION.USERNAME_REQUIRED') },
             {
-              pattern: /^(?=.{3,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/,
+              pattern: /^(?=[a-zA-Z0-9._]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/,
               message: t('VALIDATION.USERNAME_RULES'),
             },
           ]}
