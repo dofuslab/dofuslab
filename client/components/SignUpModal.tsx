@@ -92,7 +92,12 @@ const SignUpModal: React.FC<IProps> = ({
         onFinish={handleOk}
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}
-        css={{ width: '70%' }}
+        css={{
+          width: '88%',
+          ['.ant-form-item-explain, .ant-form-item-extra']: {
+            margin: '4px 0',
+          },
+        }}
       >
         <Form.Item
           name="email"
@@ -132,6 +137,26 @@ const SignUpModal: React.FC<IProps> = ({
               pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,50}$/,
               message: t('VALIDATION.PASSWORD_RULES'),
             },
+          ]}
+          css={{ marginTop: 16 }}
+        >
+          <Input.Password placeholder={t('PASSWORD')} />
+        </Form.Item>
+        <Form.Item
+          name="confirm-password"
+          label={t('CONFIRM_PASSWORD')}
+          dependencies={['password']}
+          validateTrigger={'onSubmit'}
+          rules={[
+            { required: true, message: t('VALIDATION.PASSWORD_REQUIRED') },
+            ({ getFieldValue }) => ({
+              validator: async (_, value) => {
+                if (!value || getFieldValue('password') === value) {
+                  return;
+                }
+                throw new Error(t('VALIDATION.PASSWORDS_DO_NOT_MATCH'));
+              },
+            }),
           ]}
           css={{ marginTop: 16 }}
         >
