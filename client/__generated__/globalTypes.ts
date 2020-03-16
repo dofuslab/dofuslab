@@ -1,5 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
+// @generated
 // This file was automatically generated and should not be edited.
 
 //==============================================================
@@ -62,6 +63,11 @@ export enum Stat {
   WATER_DAMAGE = "WATER_DAMAGE",
   WATER_RES = "WATER_RES",
   WISDOM = "WISDOM",
+}
+
+export interface CustomSetExosInput {
+  stat: Stat;
+  value: number;
 }
 
 export interface ItemFilters {

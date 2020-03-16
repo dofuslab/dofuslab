@@ -1,19 +1,36 @@
 import { useCallback } from 'react';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
+import { ApolloClient } from 'apollo-boost';
+import notification from 'antd/lib/notification';
+import { cloneDeep } from 'lodash';
 
 import {
   customSet_stats,
   customSet,
 } from 'graphql/fragments/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
-import { StatsFromCustomSet, SetCounter } from './types';
+import {
+  StatsFromCustomSet,
+  SetCounter,
+  OriginalStatLine,
+  ExoStatLine,
+} from './types';
 import { item_itemType, item } from 'graphql/fragments/__generated__/item';
 import {
   updateCustomSetItem,
   updateCustomSetItemVariables,
 } from 'graphql/mutations/__generated__/updateCustomSetItem';
 import UpdateCustomSetItemMutation from 'graphql/mutations/updateCustomSetItem.graphql';
+import {
+  deleteCustomSetItem,
+  deleteCustomSetItemVariables,
+} from 'graphql/mutations/__generated__/deleteCustomSetItem';
+import DeleteCustomSetItemMutation from 'graphql/mutations/deleteCustomSetItem.graphql';
+import { currentUser } from 'graphql/queries/__generated__/currentUser';
+import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
+import { TFunction } from 'next-i18next';
+import { useTranslation } from 'i18n';
 
 const getBaseStat = (stats: customSet_stats, stat: Stat) => {
   switch (stat) {
@@ -53,13 +70,47 @@ const getScrolledStat = (stats: customSet_stats, stat: Stat) => {
   }
 };
 
+export const getStatsMaps = (
+  originalStats: ReadonlyArray<OriginalStatLine>,
+  exos: ReadonlyArray<ExoStatLine>,
+) => {
+  const statsMap: {
+    [key: string]: { value: number; maged: boolean };
+  } = originalStats.reduce(
+    (acc, { stat, maxValue }) =>
+      stat ? { ...acc, [stat]: { value: maxValue, maged: false } } : acc,
+    {},
+  );
+
+  const originalStatsMap = cloneDeep(statsMap);
+
+  let exoStatsMap: { [key: string]: number } = {};
+
+  if (exos) {
+    exoStatsMap = exos.reduce(
+      (acc, { stat, value }) => ({ ...acc, [stat]: value }),
+      {},
+    );
+
+    Object.entries(exoStatsMap).forEach(([stat, value]) => {
+      if (statsMap[stat]) {
+        statsMap[stat].value += value;
+        statsMap[stat].maged = true;
+        delete exoStatsMap[stat];
+      }
+    });
+  }
+
+  return { statsMap, exoStatsMap, originalStatsMap };
+};
+
 export const getStatsFromCustomSet = (customSet?: customSet | null) => {
   if (!customSet) {
     return null;
   }
 
   const statsFromCustomSet: StatsFromCustomSet = customSet.equippedItems.reduce(
-    (acc, { item }) => {
+    (acc, { item, exos }) => {
       const accCopy = { ...acc };
       item?.stats.forEach(statLine => {
         if (!statLine.stat || !statLine.maxValue) {
@@ -69,6 +120,13 @@ export const getStatsFromCustomSet = (customSet?: customSet | null) => {
           accCopy[statLine.stat] += statLine.maxValue;
         } else {
           accCopy[statLine.stat] = statLine.maxValue;
+        }
+      });
+      exos.forEach(statLine => {
+        if (accCopy[statLine.stat]) {
+          accCopy[statLine.stat] += statLine.value;
+        } else {
+          accCopy[statLine.stat] = statLine.value;
         }
       });
       return accCopy;
@@ -177,6 +235,27 @@ export const findEmptyOrOnlySlotId = (
   return null;
 };
 
+export const checkAuthentication = async (
+  client: ApolloClient<object>,
+  t: TFunction,
+  customSet?: customSet | null,
+) => {
+  const { data } = await client.query<currentUser>({ query: CurrentUserQuery });
+  if (
+    !customSet ||
+    !customSet.owner ||
+    customSet.owner.id === data?.currentUser?.id
+  ) {
+    return true;
+  }
+  notification.error({
+    message: t('ERROR'),
+    description: t('NO_PERMISSION'),
+    style: { fontSize: '0.75rem' },
+  });
+  return false;
+};
+
 export const useEquipItemMutation = (
   item: item,
   customSet?: customSet | null,
@@ -208,6 +287,7 @@ export const useEquipItemMutation = (
           } else {
             equippedItems.push({
               id: '0',
+              exos: [],
               slot: { id: itemSlotId, __typename: 'ItemSlot' },
               item,
               __typename: 'EquippedItem',
@@ -227,9 +307,15 @@ export const useEquipItemMutation = (
       : undefined,
   });
 
+  const client = useApolloClient();
+
+  const { t } = useTranslation('common');
+
   const onClick = useCallback(
     async (itemSlotId?: string) => {
       if (!itemSlotId) return;
+      const ok = await checkAuthentication(client, t, customSet);
+      if (!ok) return;
       const { data } = await updateCustomSetItem({
         variables: {
           customSetId: setId,
@@ -252,4 +338,43 @@ export const useEquipItemMutation = (
   );
 
   return onClick;
+};
+
+export const useDeleteItemMutation = (
+  itemSlotId: string,
+  customSet: customSet,
+) => {
+  const [mutate] = useMutation<
+    deleteCustomSetItem,
+    deleteCustomSetItemVariables
+  >(DeleteCustomSetItemMutation, {
+    variables: { itemSlotId, customSetId: customSet.id },
+    optimisticResponse: ({ itemSlotId: slotId }) => ({
+      deleteCustomSetItem: {
+        customSet: {
+          id: customSet.id,
+          equippedItems: [
+            ...customSet.equippedItems
+              .filter(equippedItem => equippedItem.slot.id !== slotId)
+              .map(({ id }) => ({
+                id,
+                __typename: 'EquippedItem' as 'EquippedItem',
+              })),
+          ],
+          __typename: 'CustomSet',
+        },
+        __typename: 'DeleteCustomSetItem',
+      },
+    }),
+  });
+
+  const client = useApolloClient();
+  const { t } = useTranslation('common');
+
+  const onDelete = useCallback(async () => {
+    const ok = await checkAuthentication(client, t, customSet);
+    if (!ok) return null;
+    return mutate();
+  }, [mutate]);
+  return onDelete;
 };

@@ -13,8 +13,17 @@ fragment customSet on CustomSet {
     item {
       ...item
     }
+    exos {
+      id
+      stat
+      value
+    }
   }
   stats {
     ...baseStats
+  }
+  owner {
+    id
+    username
   }
 }

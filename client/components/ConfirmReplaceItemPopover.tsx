@@ -5,7 +5,7 @@ import { jsx, ClassNames } from '@emotion/core';
 import Popover from 'antd/lib/popover';
 
 import { item } from 'graphql/fragments/__generated__/item';
-// import { useTranslation } from 'i18n';
+import { useTranslation } from 'i18n';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { itemBox, popoverTitleStyle } from 'common/mixins';
 import ItemWithStats from './ItemWithStats';
@@ -23,7 +23,7 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
   children,
   responsiveGridRef,
 }) => {
-  //   const { t } = useTranslation('common');
+  const { t } = useTranslation('common');
   const [selectedItemSlotId, setSelectedItemSlotId] = React.useState<
     string | null
   >(null);
@@ -71,14 +71,16 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
                     onClick={onSlotSelect}
                   >
                     <ItemWithStats
-                      item={equippedItem.item}
+                      equippedItem={equippedItem}
                       selected={equippedItem.slot.id === selectedItemSlotId}
+                      deletable={false}
+                      customSet={customSet}
                     />
                   </div>
                 ))}
             </div>
           }
-          title="Select item to replace"
+          title={t('SELECT_ITEM_TO_REPLACE')}
           visible={visible}
           onVisibleChange={setIsVisible}
           trigger="click"

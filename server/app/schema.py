@@ -160,6 +160,7 @@ class EquippedItemExo(SQLAlchemyObjectType):
 class EquippedItem(SQLAlchemyObjectType):
     item = graphene.NonNull(Item)
     slot = graphene.NonNull(ItemSlot)
+    exos = graphene.NonNull(graphene.List(graphene.NonNull(EquippedItemExo)))
 
     class Meta:
         model = ModelEquippedItem
@@ -208,83 +209,43 @@ class CustomSetStatsInput(graphene.InputObjectType):
 
 
 class CustomSetExosInput(graphene.InputObjectType):
-    stat = StatEnum
-    value = graphene.Int()
+    stat = graphene.NonNull(StatEnum)
+    value = graphene.Int(required=True)
 
 
-class CreateCustomSet(graphene.Mutation):
+class EditCustomSetMetadata(graphene.Mutation):
     class Arguments:
+        custom_set_id = graphene.UUID()
         name = graphene.String()
-        description = graphene.String()
-        owner_username = graphene.String()
-        created_at = graphene.types.datetime.DateTime()
-        level = graphene.NonNull(graphene.Int)
+        level = graphene.Int(required=True)
 
-        items = graphene.NonNull(graphene.List(graphene.String))
-        stats = CustomSetStatsInput()
-        exos = graphene.NonNull(graphene.List(CustomSetExosInput))
-
-    custom_set = graphene.Field(CustomSet)
+    custom_set = graphene.Field(CustomSet, required=True)
 
     def mutate(self, info, **kwargs):
-        custom_set = ModelCustomSet(
-            name=kwargs.get("name"),
-            description=kwargs.get("description"),
-            created_at=kwargs.get("created_at"),
-            level=kwargs.get("level"),
-        )
-        # Add associated items to the custom set
-        # Modify to take in item objects
-        if kwargs.get("items"):
-            items = kwargs.get("items")
-
-            for item in items:
-                item_record = (
-                    db.session.query(ModelItem).filter(ModelItem.name == item).first()
-                )
-                custom_set.items.append(item_record)
-
-            # Create database entry for the stats then add to the custom set
-            if kwargs.get("stats"):
-                stats = kwargs.get("stats")
-                custom_set_stats = ModelCustomSetStat(
-                    scrolled_vitality=stats.scrolled_vitality,
-                    scrolled_wisdom=stats.scrolled_wisdom,
-                    scrolled_strength=stats.scrolled_strength,
-                    scrolled_intelligence=stats.scrolled_intelligence,
-                    scrolled_chance=stats.scrolled_chance,
-                    scrolled_agility=stats.scrolled_agility,
-                    base_vitality=stats.base_vitality,
-                    base_wisdom=stats.base_wisdom,
-                    base_strength=stats.base_strength,
-                    base_intelligence=stats.base_intelligence,
-                    base_chance=stats.base_chance,
-                    base_agility=stats.base_agility,
-                )
-
-                db.session.add(custom_set_stats)
-                custom_set.stats = custom_set_stats
-
-            if kwargs.get("exos"):
-                exos = kwargs.get("exos")
-                for exo in exos:
-                    equipped_item_exo = ModelEquippedItemExos(
-                        stat=exo.stat, value=exo.value
-                    )
-
-                    db.session.add(equipped_item_exo)
-                    custom_set.exos.append(exo)
-
+        custom_set_id = kwargs.get("custom_set_id")
+        name = kwargs.get("name")
+        level = kwargs.get("level")
+        if len(name) > 50:
+            raise GraphQLError("The set name is too long.")
+        if level < 1 or level > 200:
+            raise GraphQLError("Invalid set level (must be 1-200).")
+        if custom_set_id:
+            custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
+            if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
+                raise GraphQLError("You don't have permission to edit that set.")
+            custom_set.name = name
+            custom_set.level = level
+        else:
+            custom_set = ModelCustomSet(
+                owner_id=current_user.get_id(), name=name, level=level
+            )
             db.session.add(custom_set)
+            db.session.flush()
+            custom_set_stat = ModelCustomSetStat(custom_set_id=custom_set.uuid)
+            db.session.add(custom_set_stat)
+        db.session.commit()
 
-            # current_user = (
-            #     db_session.query(ModelUser)
-            #     .filter(ModelUser.username == kwargs.get("owner_username"))
-            #     .first()
-            # )
-            # current_user.custom_sets.append(custom_set)
-
-        return CreateCustomSet(custom_set=custom_set)
+        return EditCustomSetMetadata(custom_set=custom_set)
 
 
 class UpdateCustomSetItem(graphene.Mutation):
@@ -302,7 +263,7 @@ class UpdateCustomSetItem(graphene.Mutation):
         item_id = kwargs.get("item_id")
         if custom_set_id:
             custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
-            if custom_set.owner_id != current_user.get_id():
+            if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
                 raise GraphQLError("You don't have permission to edit that set.")
         else:
             custom_set = ModelCustomSet(owner_id=current_user.get_id())
@@ -316,6 +277,78 @@ class UpdateCustomSetItem(graphene.Mutation):
         return UpdateCustomSetItem(custom_set=custom_set)
 
 
+class MageEquippedItem(graphene.Mutation):
+    class Arguments:
+        equipped_item_id = graphene.UUID(required=True)
+        stats = graphene.NonNull(graphene.List(graphene.NonNull(CustomSetExosInput)))
+
+    equipped_item = graphene.Field(EquippedItem, required=True)
+
+    def mutate(self, info, **kwargs):
+        equipped_item_id = kwargs.get("equipped_item_id")
+        stats = kwargs.get("stats")
+        equipped_item = db.session.query(ModelEquippedItem).get(equipped_item_id)
+        if (
+            equipped_item.custom_set.owner_id
+            and equipped_item.custom_set.owner_id != current_user.get_id()
+        ):
+            raise GraphQLError("You don't have permission to edit that set.")
+        db.session.query(ModelEquippedItemExo).filter_by(
+            equipped_item_id=equipped_item_id
+        ).delete(synchronize_session=False)
+        exo_models = map(
+            lambda stat_line: ModelEquippedItemExo(
+                stat=Stat(stat_line.stat),
+                value=stat_line.value,
+                equipped_item_id=equipped_item_id,
+            ),
+            stats,
+        )
+        if stats:
+            db.session.add_all(exo_models)
+        db.session.commit()
+
+        return MageEquippedItem(equipped_item=equipped_item)
+
+
+# used for exo shortcuts for AP, MP, range
+class SetEquippedItemExo(graphene.Mutation):
+    class Arguments:
+        equipped_item_id = graphene.UUID(required=True)
+        stat = graphene.NonNull(StatEnum)
+        has_stat = graphene.Boolean(required=True)  # True if adding, False if removing
+
+    equipped_item = graphene.Field(EquippedItem, required=True)
+
+    def mutate(self, info, **kwargs):
+        equipped_item_id = kwargs.get("equipped_item_id")
+        stat = Stat(kwargs.get("stat"))
+        has_stat = kwargs.get("has_stat")
+        equipped_item = db.session.query(ModelEquippedItem).get(equipped_item_id)
+        if (
+            equipped_item.custom_set.owner_id
+            and equipped_item.custom_set.owner_id != current_user.get_id()
+        ):
+            raise GraphQLError("You don't have permission to edit that set.")
+        if stat != Stat.AP and stat != Stat.MP and stat != Stat.RANGE:
+            raise GraphQLError("Invalid stat to set exo")
+        exo_obj = (
+            db.session.query(ModelEquippedItemExo)
+            .filter_by(equipped_item_id=equipped_item_id, stat=stat)
+            .one_or_none()
+        )
+        if not exo_obj and has_stat:
+            exo_obj = ModelEquippedItemExo(
+                stat=stat, value=1, equipped_item_id=equipped_item_id
+            )
+            db.session.add(exo_obj)
+        if exo_obj and not has_stat:
+            db.session.delete(exo_obj)
+        db.session.commit()
+
+        return SetEquippedItemExo(equipped_item=equipped_item)
+
+
 class DeleteCustomSetItem(graphene.Mutation):
     class Arguments:
         custom_set_id = graphene.UUID(required=True)
@@ -327,6 +360,8 @@ class DeleteCustomSetItem(graphene.Mutation):
         custom_set_id = kwargs.get("custom_set_id")
         item_slot_id = kwargs.get("item_slot_id")
         custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
+        if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
+            raise GraphQLError("You don't have permission to edit that set.")
         custom_set.unequip_item(item_slot_id)
         db.session.commit()
 
@@ -501,11 +536,13 @@ class Query(graphene.ObjectType):
 
 class Mutation(graphene.ObjectType):
     register_user = RegisterUser.Field()
-    create_custom_set = CreateCustomSet.Field()
     login_user = LoginUser.Field()
     logout_user = LogoutUser.Field()
     update_custom_set_item = UpdateCustomSetItem.Field()
     delete_custom_set_item = DeleteCustomSetItem.Field()
+    mage_equipped_item = MageEquippedItem.Field()
+    set_equipped_item_exo = SetEquippedItemExo.Field()
+    edit_custom_set_metadata = EditCustomSetMetadata.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

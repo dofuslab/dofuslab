@@ -15,7 +15,7 @@ import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 interface IProps {
   item: item;
   selectedItemSlotId: string | null;
-  selectedEquippedItem?: item | null;
+  customSetItemIds: Set<string>;
   customSet?: customSet | null;
   responsiveGridRef: React.MutableRefObject<HTMLDivElement | null>;
   selectItemSlot: React.Dispatch<
@@ -26,7 +26,7 @@ interface IProps {
 const ItemCard: React.FC<IProps> = ({
   item,
   selectedItemSlotId,
-  selectedEquippedItem,
+  customSetItemIds,
   customSet,
   responsiveGridRef,
   selectItemSlot,
@@ -38,8 +38,8 @@ const ItemCard: React.FC<IProps> = ({
 
   const onClick = React.useCallback(async () => {
     if (itemSlotId) {
-      await mutate(itemSlotId);
       selectItemSlot(null);
+      await mutate(itemSlotId);
     }
   }, [item, itemSlotId, mutate, selectItemSlot]);
 
@@ -52,9 +52,7 @@ const ItemCard: React.FC<IProps> = ({
       title={
         <div css={{ display: 'flex', alignItems: 'center' }}>
           <TruncatableText>{item.name}</TruncatableText>
-          {selectedEquippedItem?.id === item.id && (
-            <Badge>{t('EQUIPPED')}</Badge>
-          )}
+          {customSetItemIds.has(item.id) && <Badge>{t('EQUIPPED')}</Badge>}
         </div>
       }
       css={{

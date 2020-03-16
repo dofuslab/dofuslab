@@ -3,10 +3,9 @@
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { useTranslation } from 'i18n';
-import { TFunction } from 'next-i18next';
-import { items_items_edges_node_stats } from 'graphql/queries/__generated__/items';
-import { gray7, ellipsis, getResponsiveGridStyle } from './mixins';
+import { gray7, ellipsis, getResponsiveGridStyle, blue6 } from './mixins';
 import { item } from 'graphql/fragments/__generated__/item';
+import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/customSet';
 
 interface IResponsiveGrid {
   readonly numColumns: ReadonlyArray<number>;
@@ -16,33 +15,75 @@ export const ResponsiveGrid = styled.div<IResponsiveGrid>(({ numColumns }) =>
   getResponsiveGridStyle(numColumns),
 );
 
-function displayStats(t: TFunction, statLine: items_items_edges_node_stats) {
-  if (statLine.altStat) {
-    return statLine.altStat;
-  }
-  const statName = t(statLine.stat as string);
-  return `${statLine.maxValue} ${statName}`;
-}
-
 interface IITemsStatsList {
   readonly item: item;
   readonly className?: string;
+  readonly exos?: ReadonlyArray<customSet_equippedItems_exos> | null;
 }
 
 export const ItemStatsList: React.FC<IITemsStatsList> = ({
   item,
   className,
+  exos,
 }) => {
   const { t } = useTranslation('stat');
+
+  const statsMap: {
+    [key: string]: { value: number; maged: boolean };
+  } = item.stats.reduce(
+    (acc, { stat, maxValue }) =>
+      stat ? { ...acc, [stat]: { value: maxValue, maged: false } } : acc,
+    {},
+  );
+
+  let exoStatsMap: { [key: string]: number } = {};
+
+  if (exos) {
+    exoStatsMap = exos.reduce(
+      (acc, { stat, value }) => ({ ...acc, [stat]: value }),
+      {},
+    );
+
+    Object.entries(exoStatsMap).forEach(([stat, value]) => {
+      if (statsMap[stat]) {
+        statsMap[stat].value += value;
+        statsMap[stat].maged = true;
+        delete exoStatsMap[stat];
+      }
+    });
+  }
+
   return (
-    <ul
-      className={className}
-      css={{ paddingInlineStart: 16, fontSize: '0.75rem' }}
-    >
-      {item.stats.map((statLine, idx) => {
-        return <li key={`stat-${idx}`}>{displayStats(t, statLine)}</li>;
-      })}
-    </ul>
+    <>
+      <ul
+        className={className}
+        css={{ paddingInlineStart: 16, fontSize: '0.75rem' }}
+      >
+        {item.stats.map((statLine, idx) => (
+          <li
+            key={`stat-${idx}`}
+            css={{
+              color:
+                statLine.stat && statsMap[statLine.stat].maged
+                  ? blue6
+                  : 'inherit',
+            }}
+          >
+            {statLine.stat
+              ? `${statsMap[statLine.stat].value} ${t(statLine.stat)}`
+              : statLine.altStat}
+          </li>
+        ))}
+        {exos &&
+          exos
+            .filter(({ stat }) => !!exoStatsMap[stat])
+            .map(({ stat, value }) => (
+              <li key={`exo-${stat}`} css={{ color: blue6 }}>
+                {value} {t(stat)}
+              </li>
+            ))}
+      </ul>
+    </>
   );
 };
 

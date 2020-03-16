@@ -20,7 +20,7 @@ class ModelUser(UserMixin, Base):
     username = Column("username", String(120), unique=True, nullable=False)
     email = Column("email", String(320), unique=True, nullable=False)
     password = Column("password", LargeBinary(120), nullable=False)
-    custom_sets = relationship("ModelCustomSet", backref="user")
+    custom_sets = relationship("ModelCustomSet", backref="owner")
 
     def save_to_db(self):
         db.session.add(self)

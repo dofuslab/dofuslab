@@ -30,6 +30,11 @@ const SetBuilder: React.FC = () => {
     { variables: { id: setId }, skip: !setId },
   );
 
+  const customSetItemIds = new Set<string>();
+  (customSetData?.customSetById?.equippedItems ?? []).forEach(equippedItem =>
+    customSetItemIds.add(equippedItem.item.id),
+  );
+
   const [
     selectedItemSlot,
     selectItemSlot,
@@ -84,6 +89,7 @@ const SetBuilder: React.FC = () => {
           </ResponsiveGrid>
         </div>
         <div
+          key={`div-${selectedItemSlot?.id}`} // re-render so div loses scroll position on selectedItemSlot change
           css={{
             display: 'none',
             marginTop: 12,
@@ -92,14 +98,15 @@ const SetBuilder: React.FC = () => {
               display: 'block',
               flex: 1,
             },
-            overflow: 'auto',
+            overflowY: 'scroll',
           }}
         >
           <ItemSelector
-            key={`selected-item-slot-${selectedItemSlot?.id}`}
+            key={`selected-item-slot-${selectedItemSlot?.id}-level-${customSetData?.customSetById?.level}`}
             selectedItemSlot={selectedItemSlot}
             customSet={customSetData?.customSetById}
             selectItemSlot={selectItemSlot}
+            customSetItemIds={customSetItemIds}
           />
         </div>
       </div>

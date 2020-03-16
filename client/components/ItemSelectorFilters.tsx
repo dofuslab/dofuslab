@@ -20,7 +20,7 @@ interface IProps {
   filters: ItemFilters;
   dispatch: React.Dispatch<FilterAction>;
   customSetLevel: number | null;
-  itemTypes: ReadonlyArray<itemSlots_itemSlots_itemTypes>;
+  itemTypes: Array<itemSlots_itemSlots_itemTypes>;
 }
 
 const ItemSelectorFilters: React.FC<IProps> = ({
@@ -140,10 +140,12 @@ const ItemSelectorFilters: React.FC<IProps> = ({
         <CheckboxGroup
           value={itemTypeIds}
           onChange={onChangeItemTypeIds}
-          options={itemTypes.map(type => ({
-            label: type.name,
-            value: type.id,
-          }))}
+          options={itemTypes
+            .sort((t1, t2) => t1.name.localeCompare(t2.name))
+            .map(type => ({
+              label: type.name,
+              value: type.id,
+            }))}
           css={{
             gridColumn: '1 / -1',
             display: 'flex',

@@ -1,0 +1,15 @@
+mutation mageEquippedItem(
+  $stats: [CustomSetExosInput!]!
+  $equippedItemId: UUID!
+) {
+  mageEquippedItem(equippedItemId: $equippedItemId, stats: $stats) {
+    equippedItem {
+      id
+      exos {
+        id
+        stat
+        value
+      }
+    }
+  }
+}
