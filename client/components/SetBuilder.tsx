@@ -89,6 +89,7 @@ const SetBuilder: React.FC = () => {
           </ResponsiveGrid>
         </div>
         <div
+          key={`div-${selectedItemSlot?.id}`} // re-render so div loses scroll position on selectedItemSlot change
           css={{
             display: 'none',
             marginTop: 12,
