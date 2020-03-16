@@ -26,7 +26,7 @@ module.exports = {
       repo: 'git@github.com:samlee405/dofus-lab.git',
       path: '/var/www/production',
       'post-deploy':
-        'yarn && yarn build && pm2 reload client/ecosystem.config.js --env production && pm2 save',
+        'cd client && yarn && yarn build && pm2 reload ecosystem.config.js --env production && pm2 save',
     },
   },
 };
