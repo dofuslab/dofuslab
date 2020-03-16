@@ -29,6 +29,7 @@ const ItemSelectorFilters: React.FC<IProps> = ({
   customSetLevel,
   itemTypes,
 }) => {
+  console.log(customSetLevel);
   const { t } = useTranslation(['common', 'stat']);
   const [search, setSearch] = React.useState('');
   const [maxLevel, setMaxLevel] = React.useState(customSetLevel || 200);

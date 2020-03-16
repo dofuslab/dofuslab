@@ -213,6 +213,41 @@ class CustomSetExosInput(graphene.InputObjectType):
     value = graphene.Int(required=True)
 
 
+class EditCustomSetMetadata(graphene.Mutation):
+    class Arguments:
+        custom_set_id = graphene.UUID()
+        name = graphene.String()
+        level = graphene.Int(required=True)
+
+    custom_set = graphene.Field(CustomSet, required=True)
+
+    def mutate(self, info, **kwargs):
+        custom_set_id = kwargs.get("custom_set_id")
+        name = kwargs.get("name")
+        level = kwargs.get("level")
+        if len(name) > 50:
+            raise GraphQLError("The set name is too long.")
+        if level < 1 or level > 200:
+            raise GraphQLError("Invalid set level (must be 1-200).")
+        if custom_set_id:
+            custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
+            if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
+                raise GraphQLError("You don't have permission to edit that set.")
+            custom_set.name = name
+            custom_set.level = level
+        else:
+            custom_set = ModelCustomSet(
+                owner_id=current_user.get_id(), name=name, level=level
+            )
+            db.session.add(custom_set)
+            db.session.flush()
+            custom_set_stat = ModelCustomSetStat(custom_set_id=custom_set.uuid)
+            db.session.add(custom_set_stat)
+        db.session.commit()
+
+        return EditCustomSetMetadata(custom_set=custom_set)
+
+
 class UpdateCustomSetItem(graphene.Mutation):
     class Arguments:
         # if null, create new set
@@ -507,6 +542,7 @@ class Mutation(graphene.ObjectType):
     delete_custom_set_item = DeleteCustomSetItem.Field()
     mage_equipped_item = MageEquippedItem.Field()
     set_equipped_item_exo = SetEquippedItemExo.Field()
+    edit_custom_set_metadata = EditCustomSetMetadata.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

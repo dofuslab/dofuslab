@@ -61,7 +61,7 @@ const ItemSelector: React.FC<IProps> = ({
 }) => {
   const [filters, dispatch] = React.useReducer(reducer, {
     stats: [],
-    maxLevel: 200,
+    maxLevel: customSet?.level || 200,
     search: '',
     itemTypeIds: selectedItemSlot?.itemTypes.map(type => type.id) || [],
   });
@@ -148,7 +148,7 @@ const ItemSelector: React.FC<IProps> = ({
     >
       {itemSlots && (
         <ItemSelectorFilters
-          key={`filters-level${customSet?.level}`}
+          key={`filters-level-${customSet?.level}`}
           filters={filters}
           dispatch={dispatch}
           customSetLevel={customSet?.level || null}

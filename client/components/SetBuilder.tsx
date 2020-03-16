@@ -57,6 +57,8 @@ const SetBuilder: React.FC = () => {
     [customSetData],
   );
 
+  console.log(customSetData?.customSetById);
+
   return (
     <Layout>
       <SetHeader customSet={customSetData?.customSetById} />
@@ -102,7 +104,7 @@ const SetBuilder: React.FC = () => {
           }}
         >
           <ItemSelector
-            key={`selected-item-slot-${selectedItemSlot?.id}`}
+            key={`selected-item-slot-${selectedItemSlot?.id}-level-${customSetData?.customSetById?.level}`}
             selectedItemSlot={selectedItemSlot}
             customSet={customSetData?.customSetById}
             selectItemSlot={selectItemSlot}
