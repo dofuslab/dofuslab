@@ -19,13 +19,14 @@ module.exports = {
 
   deploy: {
     production: {
+      key: '/home/jeremy/.ssh/id_rsa.pub',
       user: 'jeremy',
       host: '134.209.168.215',
       ref: 'origin/master',
       repo: 'git@github.com:samlee405/dofus-lab.git',
       path: '/var/www/production',
       'post-deploy':
-        'yarn && pm2 reload ecosystem.config.js --env production && pm2 save',
+        'yarn && yarn build && pm2 reload client/ecosystem.config.js --env production && pm2 save',
     },
   },
 };
