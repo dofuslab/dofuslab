@@ -1,3 +1,4 @@
+from app import db
 from enum import auto, Enum
 import sqlalchemy
 

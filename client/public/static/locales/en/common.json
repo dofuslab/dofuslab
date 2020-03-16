@@ -2,7 +2,10 @@
   "CANCEL": "Cancel",
   "DELETE": "Delete",
   "EQUIPPED": "Equipped",
+  "ERROR": "Error",
   "LEVEL": "Level",
-  "MAGE": "Mage",
-  "SELECT_ITEM_TO_REPLACE": "Select item to replace"
+  "NO_PERMISSION": "You don't have permission to do that.",
+  "OK": "OK",
+  "SELECT_ITEM_TO_REPLACE": "Select item to replace",
+  "UNTITLED": "Untitled"
 }

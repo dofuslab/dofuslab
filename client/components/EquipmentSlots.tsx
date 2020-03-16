@@ -9,7 +9,7 @@ import {
   itemSlots,
   itemSlots_itemSlots,
 } from 'graphql/queries/__generated__/itemSlots';
-import { customSet_customSetById_equippedItems_item } from 'graphql/queries/__generated__/customSet';
+import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 
 import EquippedItem from './EquippedItem';
@@ -32,11 +32,11 @@ const EquipmentSlots: React.FC<IProps> = ({
   const { data } = useQuery<itemSlots>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
 
-  const itemsBySlotId: {
-    [key: string]: customSet_customSetById_equippedItems_item;
+  const equippedItemsBySlotId: {
+    [key: string]: customSet_customSetById_equippedItems;
   } =
     customSet?.equippedItems.reduce(
-      (acc, curr) => ({ ...acc, [curr.slot?.id]: curr.item }),
+      (acc, curr) => ({ ...acc, [curr.slot?.id]: curr }),
       {},
     ) ?? {};
 
@@ -54,9 +54,10 @@ const EquipmentSlots: React.FC<IProps> = ({
         <EquippedItem
           slot={slot}
           key={slot.id}
-          item={itemsBySlotId[slot.id]}
+          equippedItem={equippedItemsBySlotId[slot.id]}
           selected={selectedItemSlotId === slot.id}
           selectItemSlot={selectItemSlot}
+          customSet={customSet}
         />
       ))}
       {!!Object.keys(setBonuses).length && (

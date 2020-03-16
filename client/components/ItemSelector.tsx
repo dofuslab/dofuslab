@@ -35,6 +35,7 @@ interface IProps {
   selectItemSlot: React.Dispatch<
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
+  customSetItemIds: Set<string>;
 }
 
 const reducer = (state: ItemFilters, action: FilterAction) => {
@@ -56,10 +57,11 @@ const ItemSelector: React.FC<IProps> = ({
   selectedItemSlot,
   customSet,
   selectItemSlot,
+  customSetItemIds,
 }) => {
   const [filters, dispatch] = React.useReducer(reducer, {
     stats: [],
-    maxLevel: 200,
+    maxLevel: customSet?.level || 200,
     search: '',
     itemTypeIds: selectedItemSlot?.itemTypes.map(type => type.id) || [],
   });
@@ -135,7 +137,7 @@ const ItemSelector: React.FC<IProps> = ({
     customSet && selectedItemSlot
       ? customSet.equippedItems.find(
           item => item.slot.id === selectedItemSlot.id,
-        )?.item
+        ) || null
       : null;
 
   return (
@@ -146,7 +148,7 @@ const ItemSelector: React.FC<IProps> = ({
     >
       {itemSlots && (
         <ItemSelectorFilters
-          key={`filters-level${customSet?.level}`}
+          key={`filters-level-${customSet?.level}`}
           filters={filters}
           dispatch={dispatch}
           customSetLevel={customSet?.level || null}
@@ -162,9 +164,9 @@ const ItemSelector: React.FC<IProps> = ({
       )}
       {selectedEquippedItem && (
         <CurrentlyEquippedItem
-          item={selectedEquippedItem}
+          equippedItem={selectedEquippedItem}
           selectedItemSlotId={selectedItemSlot!.id}
-          customSetId={customSet!.id}
+          customSet={customSet!}
         />
       )}
       {data &&
@@ -175,7 +177,7 @@ const ItemSelector: React.FC<IProps> = ({
               key={item.id}
               item={item}
               selectedItemSlotId={selectedItemSlot?.id ?? null}
-              selectedEquippedItem={selectedEquippedItem}
+              customSetItemIds={customSetItemIds}
               customSet={customSet}
               responsiveGridRef={responsiveGridRef}
               selectItemSlot={selectItemSlot}

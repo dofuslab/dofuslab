@@ -1,10 +1,10 @@
-import { css } from '@emotion/core';
 import { mq } from './constants';
 
 export const shadow = '0 2px 8px rgba(0, 0, 0, 0.15)';
 
 export const blue1 = '#e6f7ff';
 export const blue3 = '#91d5ff';
+export const blue6 = '#1890ff';
 export const blue8 = '#0050b3';
 
 export const gray1 = '#ffffff';
@@ -28,6 +28,11 @@ export const ITEM_BOX_WIDTH = 84;
 export const itemBoxDimensions = {
   width: ITEM_BOX_WIDTH,
   height: ITEM_BOX_WIDTH,
+};
+
+export const itemImageDimensions = {
+  width: 72,
+  height: 72,
 };
 
 export const itemImageBox = {
@@ -57,11 +62,11 @@ export const itemImageBox = {
   },
 };
 
-export const ellipsis = css({
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  whiteSpace: 'nowrap',
-});
+export const ellipsis = {
+  overflow: 'hidden' as 'hidden',
+  textOverflow: 'ellipsis' as 'ellipsis',
+  whiteSpace: 'nowrap' as 'nowrap',
+};
 
 export const itemBox = {
   background: 'white',
