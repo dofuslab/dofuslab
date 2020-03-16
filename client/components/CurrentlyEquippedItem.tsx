@@ -197,6 +197,7 @@ const CurrentlyEquippedItem: React.FC<IProps> = ({
         equippedItem={equippedItem}
         closeMageModal={closeMageModal}
         key={`${equippedItem.id}-${equippedItem.item.id}-${equippedItem.exos.length}`}
+        customSet={customSet}
       />
     </>
   );

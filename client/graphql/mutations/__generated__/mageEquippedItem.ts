@@ -32,6 +32,6 @@ export interface mageEquippedItem {
 }
 
 export interface mageEquippedItemVariables {
-  stats?: CustomSetExosInput[] | null;
-  equippedItemId: string;
+  stats: CustomSetExosInput[];
+  equippedItemId: any;
 }

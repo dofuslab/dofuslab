@@ -7,7 +7,7 @@ import Select from 'antd/lib/select';
 import Divider from 'antd/lib/divider';
 
 import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
-import { getStatsMaps } from 'common/utils';
+import { getStatsMaps, checkAuthentication } from 'common/utils';
 import { Stat } from '__generated__/globalTypes';
 import { MageAction } from 'common/types';
 import { useTranslation } from 'i18n';
@@ -15,12 +15,13 @@ import MageInputNumber from './MageInputNumber';
 import { blue6 } from 'common/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faRedo } from '@fortawesome/free-solid-svg-icons';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import {
   mageEquippedItem,
   mageEquippedItemVariables,
 } from 'graphql/mutations/__generated__/mageEquippedItem';
 import MageEquippedItemMutation from 'graphql/mutations/mageEquippedItem.graphql';
+import { customSet } from 'graphql/fragments/__generated__/customSet';
 
 const { Option } = Select;
 
@@ -28,6 +29,7 @@ interface IProps {
   visible: boolean;
   equippedItem: customSet_customSetById_equippedItems;
   closeMageModal: () => void;
+  customSet: customSet;
 }
 
 interface StatLine {
@@ -115,6 +117,7 @@ const MageModal: React.FC<IProps> = ({
   visible,
   equippedItem,
   closeMageModal,
+  customSet,
 }) => {
   const { statsMap, exoStatsMap, originalStatsMap } = getStatsMaps(
     equippedItem.item.stats,
@@ -143,6 +146,19 @@ const MageModal: React.FC<IProps> = ({
         equippedItemId: equippedItem.id,
         stats: calcStatsDiff(originalStatsMap, statsState),
       },
+      optimisticResponse: ({ stats }) => ({
+        mageEquippedItem: {
+          equippedItem: {
+            ...equippedItem,
+            exos: stats.map((line, idx) => ({
+              ...line,
+              id: `exo-${idx}`,
+              __typename: 'EquippedItemExo',
+            })),
+          },
+          __typename: 'MageEquippedItem',
+        },
+      }),
     },
   );
 
@@ -164,9 +180,14 @@ const MageModal: React.FC<IProps> = ({
     [dispatch],
   );
 
-  const onOk = React.useCallback(() => {
+  const client = useApolloClient();
+
+  const onOk = React.useCallback(async () => {
+    const ok = checkAuthentication(client, t, customSet);
+    if (!ok) return;
     mutate();
-  }, []);
+    closeMageModal();
+  }, [mutate, closeMageModal, client, t, customSet]);
 
   return (
     <Modal
