@@ -31,6 +31,7 @@ import {
   setEquippedItemExoVariables,
 } from 'graphql/mutations/__generated__/setEquippedItemExo';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
+import MageModal from './MageModal';
 
 const quickMageStats = [
   {
@@ -113,6 +114,14 @@ const CurrentlyEquippedItem: React.FC<IProps> = ({
     [quickExo, equippedItem, client, customSet, t],
   );
 
+  const [mageModalVisible, setMageModalVisible] = React.useState(false);
+  const openMageModal = React.useCallback(() => {
+    setMageModalVisible(true);
+  }, [setMageModalVisible]);
+  const closeMageModal = React.useCallback(() => {
+    setMageModalVisible(false);
+  }, [setMageModalVisible]);
+
   const quickMageMenu = quickMageStats.map(({ stat, faIcon }) => {
     const hasExo = equippedItem.exos.some(
       ({ stat: exoStat }) => stat === exoStat,
@@ -138,50 +147,58 @@ const CurrentlyEquippedItem: React.FC<IProps> = ({
   });
 
   return (
-    <Card
-      size="small"
-      title={
-        <div css={{ display: 'flex', alignItems: 'center' }}>
-          <TruncatableText>{equippedItem.item.name}</TruncatableText>{' '}
-          <Badge>{t('EQUIPPED')}</Badge>
-        </div>
-      }
-      css={css({
-        ...itemCardStyle,
-        ...selected,
-        display: 'flex',
-        flexDirection: 'column',
-        ['.ant-card-body']: {
-          flex: '1',
-        },
-      })}
-      actions={[
-        ...quickMageMenu,
-        <Tooltip
-          title={t('MAGE', { ns: 'mage' })}
-          align={{ offset: [0, ACTION_PADDING] }}
-        >
-          <div css={actionWrapper}>
-            <FontAwesomeIcon icon={faMagic} />
+    <>
+      <Card
+        size="small"
+        title={
+          <div css={{ display: 'flex', alignItems: 'center' }}>
+            <TruncatableText>{equippedItem.item.name}</TruncatableText>{' '}
+            <Badge>{t('EQUIPPED')}</Badge>
           </div>
-        </Tooltip>,
-        <Tooltip title={t('DELETE')} align={{ offset: [0, ACTION_PADDING] }}>
-          <div css={actionWrapper} onClick={onDelete}>
-            <FontAwesomeIcon icon={faTrashAlt} onClick={onDelete} />
-          </div>
-        </Tooltip>,
-      ]}
-    >
-      <img
-        src={equippedItem.item.imageUrl}
-        css={{ float: 'right', ...itemBoxDimensions }}
+        }
+        css={css({
+          ...itemCardStyle,
+          ...selected,
+          display: 'flex',
+          flexDirection: 'column',
+          ['.ant-card-body']: {
+            flex: '1',
+          },
+        })}
+        actions={[
+          ...quickMageMenu,
+          <Tooltip
+            title={t('MAGE', { ns: 'mage' })}
+            align={{ offset: [0, ACTION_PADDING] }}
+          >
+            <div css={actionWrapper} onClick={openMageModal}>
+              <FontAwesomeIcon icon={faMagic} />
+            </div>
+          </Tooltip>,
+          <Tooltip title={t('DELETE')} align={{ offset: [0, ACTION_PADDING] }}>
+            <div css={actionWrapper} onClick={onDelete}>
+              <FontAwesomeIcon icon={faTrashAlt} onClick={onDelete} />
+            </div>
+          </Tooltip>,
+        ]}
+      >
+        <img
+          src={equippedItem.item.imageUrl}
+          css={{ float: 'right', ...itemBoxDimensions }}
+        />
+        <ItemStatsList
+          item={equippedItem.item}
+          css={{ paddingLeft: 16, marginBottom: 0 }}
+          exos={equippedItem.exos}
+        />
+      </Card>
+      <MageModal
+        visible={mageModalVisible}
+        equippedItem={equippedItem}
+        closeMageModal={closeMageModal}
+        key={`${equippedItem.id}-${equippedItem.item.id}-${equippedItem.exos.length}`}
       />
-      <ItemStatsList
-        item={equippedItem.item}
-        css={{ paddingLeft: 16, marginBottom: 0 }}
-        exos={equippedItem.exos}
-      />
-    </Card>
+    </>
   );
 };
 

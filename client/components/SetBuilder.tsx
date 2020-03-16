@@ -97,7 +97,7 @@ const SetBuilder: React.FC = () => {
               display: 'block',
               flex: 1,
             },
-            overflow: 'auto',
+            overflowY: 'scroll',
           }}
         >
           <ItemSelector

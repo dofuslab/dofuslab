@@ -263,12 +263,14 @@ class MageEquippedItem(graphene.Mutation):
         ).delete(synchronize_session=False)
         exo_models = map(
             lambda stat_line: ModelEquippedItemExo(
-                stat=stat_line.stat, value=value, equipped_item_id=equipped_item_id
+                stat=Stat(stat_line.stat),
+                value=stat_line.value,
+                equipped_item_id=equipped_item_id,
             ),
             stats,
         )
         if stats:
-            db.session.add_all(stats)
+            db.session.add_all(exo_models)
         db.session.commit()
 
         return MageEquippedItem(equipped_item=equipped_item)

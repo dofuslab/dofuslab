@@ -3,13 +3,19 @@ import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
 import { ApolloClient } from 'apollo-boost';
 import notification from 'antd/lib/notification';
+import { cloneDeep } from 'lodash';
 
 import {
   customSet_stats,
   customSet,
 } from 'graphql/fragments/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
-import { StatsFromCustomSet, SetCounter } from './types';
+import {
+  StatsFromCustomSet,
+  SetCounter,
+  OriginalStatLine,
+  ExoStatLine,
+} from './types';
 import { item_itemType, item } from 'graphql/fragments/__generated__/item';
 import {
   updateCustomSetItem,
@@ -62,6 +68,40 @@ const getScrolledStat = (stats: customSet_stats, stat: Stat) => {
     default:
       throw new Error(`${stat} is not a base stat!`);
   }
+};
+
+export const getStatsMaps = (
+  originalStats: ReadonlyArray<OriginalStatLine>,
+  exos: ReadonlyArray<ExoStatLine>,
+) => {
+  const statsMap: {
+    [key: string]: { value: number; maged: boolean };
+  } = originalStats.reduce(
+    (acc, { stat, maxValue }) =>
+      stat ? { ...acc, [stat]: { value: maxValue, maged: false } } : acc,
+    {},
+  );
+
+  const originalStatsMap = cloneDeep(statsMap);
+
+  let exoStatsMap: { [key: string]: number } = {};
+
+  if (exos) {
+    exoStatsMap = exos.reduce(
+      (acc, { stat, value }) => ({ ...acc, [stat]: value }),
+      {},
+    );
+
+    Object.entries(exoStatsMap).forEach(([stat, value]) => {
+      if (statsMap[stat]) {
+        statsMap[stat].value += value;
+        statsMap[stat].maged = true;
+        delete exoStatsMap[stat];
+      }
+    });
+  }
+
+  return { statsMap, exoStatsMap, originalStatsMap };
 };
 
 export const getStatsFromCustomSet = (customSet?: customSet | null) => {
@@ -208,7 +248,11 @@ export const checkAuthentication = async (
   ) {
     return true;
   }
-  notification.error({ message: t('ERROR'), description: t('NO_PERMISSION') });
+  notification.error({
+    message: t('ERROR'),
+    description: t('NO_PERMISSION'),
+    style: { fontSize: '0.75rem' },
+  });
   return false;
 };
 

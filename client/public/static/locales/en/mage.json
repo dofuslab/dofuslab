@@ -1,5 +1,7 @@
 {
   "EXO": "{{stat}} exo",
   "MAGE": "Mage",
-  "REMOVE_EXO": "Remove {{stat}} exo"
+  "MAGE_MODAL_TITLE": "Maging {{itemName}}",
+  "REMOVE_EXO": "Remove {{stat}} exo",
+  "RESET_TO_ORIGINAL": "Reset to original stats"
 }

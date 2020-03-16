@@ -28,3 +28,20 @@ export type FilterAction =
   | { type: 'MAX_LEVEL'; maxLevel: number }
   | { type: 'STATS'; stats: Array<Stat> }
   | { type: 'ITEM_TYPE_IDS'; itemTypeIds: Array<CheckboxValueType> };
+
+export type MageAction =
+  | { type: 'ADD'; stat: Stat }
+  | { type: 'REMOVE'; stat: Stat }
+  | { type: 'EDIT'; isExo: boolean; stat: Stat; value: number }
+  | { type: 'RESET'; originalStatsMap: { [key: string]: { value: number } } };
+
+export interface OriginalStatLine {
+  stat: Stat | null;
+  maxValue?: number | null;
+  value?: number;
+}
+
+export interface ExoStatLine {
+  stat: Stat;
+  value: number;
+}

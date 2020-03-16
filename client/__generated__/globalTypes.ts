@@ -65,6 +65,11 @@ export enum Stat {
   WISDOM = "WISDOM",
 }
 
+export interface CustomSetExosInput {
+  stat: Stat;
+  value: number;
+}
+
 export interface ItemFilters {
   stats: Stat[];
   maxLevel: number;
