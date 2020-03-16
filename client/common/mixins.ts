@@ -1,4 +1,3 @@
-import { css } from '@emotion/core';
 import { mq } from './constants';
 
 export const shadow = '0 2px 8px rgba(0, 0, 0, 0.15)';
@@ -63,11 +62,11 @@ export const itemImageBox = {
   },
 };
 
-export const ellipsis = css({
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  whiteSpace: 'nowrap',
-});
+export const ellipsis = {
+  overflow: 'hidden' as 'hidden',
+  textOverflow: 'ellipsis' as 'ellipsis',
+  whiteSpace: 'nowrap' as 'nowrap',
+};
 
 export const itemBox = {
   background: 'white',

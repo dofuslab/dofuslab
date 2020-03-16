@@ -19,6 +19,7 @@ import {
 import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetdata.graphql';
 import { checkAuthentication } from 'common/utils';
 import { useRouter } from 'next/router';
+import { ellipsis } from 'common/mixins';
 
 interface IProps {
   customSet?: customSet | null;
@@ -77,7 +78,6 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
       customSetId: customSet?.id,
     },
     optimisticResponse: ({ name, level }) => {
-      console.log('optimisticResponse', name, level);
       const optimisticCustomSet: editCustomSetMetadata_editCustomSetMetadata_customSet = {
         id: 'custom-set-0',
         ...customSet,
@@ -159,9 +159,17 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
           css={{ fontSize: '1.5rem', fontWeight: 500, width: 240 }}
           value={metadataState.name}
           onChange={onEditName}
+          maxLength={50}
         />
       ) : (
-        <div css={{ fontSize: '1.5rem', fontWeight: 500, maxWidth: 400 }}>
+        <div
+          css={{
+            ...ellipsis,
+            fontSize: '1.5rem',
+            fontWeight: 500,
+            maxWidth: 400,
+          }}
+        >
           {customSet?.name || t('UNTITLED')}
         </div>
       )}

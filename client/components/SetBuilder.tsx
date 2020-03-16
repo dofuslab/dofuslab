@@ -57,8 +57,6 @@ const SetBuilder: React.FC = () => {
     [customSetData],
   );
 
-  console.log(customSetData?.customSetById);
-
   return (
     <Layout>
       <SetHeader customSet={customSetData?.customSetById} />
