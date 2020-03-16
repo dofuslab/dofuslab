@@ -13,6 +13,7 @@ module.exports = {
       },
       env_production: {
         NODE_ENV: 'production',
+        GRAPHQL_URI: 'https://dofuslab.io/api/graphql',
       },
     },
   ],
