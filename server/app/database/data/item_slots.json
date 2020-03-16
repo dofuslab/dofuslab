@@ -1,64 +1,77 @@
 [
-    {
-        "name": {
-            "en-US": "Hat"
-        },
-        "types": ["Hat"]
+  {
+    "name": {
+      "en-US": "Hat"
     },
-    {
-        "name": {
-            "en-US": "Cloak"
-        },
-        "types": ["Backpack", "Cloak"]
+    "types": ["Hat"]
+  },
+  {
+    "name": {
+      "en-US": "Cloak"
     },
-    {
-        "name": {
-            "en-US": "Amulet"
-        },
-        "types": ["Amulet"]
+    "types": ["Backpack", "Cloak"]
+  },
+  {
+    "name": {
+      "en-US": "Amulet"
     },
-    {
-        "name": {
-            "en-US": "Ring"
-        },
-        "types": ["Ring"],
-        "quantity": 2
+    "types": ["Amulet"]
+  },
+  {
+    "name": {
+      "en-US": "Ring"
     },
-    {
-        "name": {
-            "en-US": "Belt"
-        },
-        "types": ["Belt"]
+    "types": ["Ring"],
+    "quantity": 2
+  },
+  {
+    "name": {
+      "en-US": "Belt"
     },
-    {
-        "name": {
-            "en-US": "Boots"
-        },
-        "types": ["Boots"]
+    "types": ["Belt"]
+  },
+  {
+    "name": {
+      "en-US": "Boots"
     },
-    {
-        "name": {
-            "en-US": "Weapon"
-        },
-        "types": ["Axe", "Bow", "Dagger", "Hammer", "Pickaxe", "Scythe", "Shovel", "Staff", "Sword", "Tool", "Wand"]
+    "types": ["Boots"]
+  },
+  {
+    "name": {
+      "en-US": "Weapon"
     },
-    {
-        "name": {
-            "en-US": "Shield"
-        },
-        "types": ["Shield"]
+    "types": [
+      "Axe",
+      "Bow",
+      "Dagger",
+      "Hammer",
+      "Pickaxe",
+      "Scythe",
+      "Shovel",
+      "Staff",
+      "Sword",
+      "Tool",
+      "Wand",
+      "Soul stone"
+    ]
+  },
+  {
+    "name": {
+      "en-US": "Shield"
     },
-    {
-        "name": {
-            "en-US": "Dofus"
-        },
-        "types": ["Dofus", "Trophy", "Prysmaradite"],
-        "quantity": 6
+    "types": ["Shield"]
+  },
+  {
+    "name": {
+      "en-US": "Dofus"
     },
-    {
-        "name": {
-            "en-US": "Pet"
-        },
-        "types": ["Pet", "Petsmount", "Mount"]
-    }
+    "types": ["Dofus", "Trophy", "Prysmaradite"],
+    "quantity": 6
+  },
+  {
+    "name": {
+      "en-US": "Pet"
+    },
+    "types": ["Pet", "Petsmount", "Mount"]
+  }
 ]
