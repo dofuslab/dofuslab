@@ -28,6 +28,9 @@ module.exports = {
       path: '/var/www/production',
       'post-deploy':
         'cd client && yarn && yarn build && pm2 reload ecosystem.config.js --env production && pm2 save',
+      env: {
+        GRAPHQL_URI: 'https://dofuslab.io/api/graphql',
+      },
     },
   },
 };
