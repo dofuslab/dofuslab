@@ -61,7 +61,16 @@ const ItemWithStats: React.FC<IProps> = ({
         return (
           <Popover
             placement="bottom"
-            title={equippedItem.item.name}
+            title={
+              <div css={{ display: 'flex', alignItems: 'baseline' }}>
+                <div>{equippedItem.item.name}</div>
+                <div
+                  css={{ marginLeft: 8, fontWeight: 400, fontSize: '0.75rem' }}
+                >
+                  Lvl. {equippedItem.item.level}
+                </div>
+              </div>
+            }
             content={
               equippedItem.item.stats.length > 0 && (
                 <ItemStatsList

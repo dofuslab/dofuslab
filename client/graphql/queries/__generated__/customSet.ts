@@ -29,6 +29,7 @@ export interface customSet_customSetById_equippedItems_item_itemType_eligibleIte
 export interface customSet_customSetById_equippedItems_item_itemType {
   __typename: "ItemType";
   id: any;
+  name: string;
   eligibleItemSlots: customSet_customSetById_equippedItems_item_itemType_eligibleItemSlots[];
 }
 

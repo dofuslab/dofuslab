@@ -24,6 +24,7 @@ export interface item_itemType_eligibleItemSlots {
 export interface item_itemType {
   __typename: "ItemType";
   id: any;
+  name: string;
   eligibleItemSlots: item_itemType_eligibleItemSlots[];
 }
 

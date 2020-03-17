@@ -15,8 +15,8 @@ export type StatsFromCustomSet = {
 };
 
 export type StatCalculator = (
-  statsFromCustomSet: StatsFromCustomSet,
-  customSet: customSet,
+  statsFromCustomSet: StatsFromCustomSet | null,
+  customSet?: customSet | null,
 ) => number;
 
 export type SetCounter = {

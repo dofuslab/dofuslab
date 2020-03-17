@@ -142,7 +142,7 @@ const ItemSelector: React.FC<IProps> = ({
 
   return (
     <ResponsiveGrid
-      numColumns={[1, 1, 2, 3, 4, 5]}
+      numColumns={[1, 2, 2, 3, 4, 5, 6]}
       css={{ marginBottom: 20, position: 'relative' }}
       ref={responsiveGridRef}
     >
