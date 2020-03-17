@@ -15,6 +15,7 @@ import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import EquippedItem from './EquippedItem';
 import { getBonusesFromCustomSet } from 'common/utils';
 import BonusStats from './BonusStats';
+import { mq } from 'common/constants';
 
 interface IProps {
   customSet?: customSet | null;
@@ -47,7 +48,10 @@ const EquipmentSlots: React.FC<IProps> = ({
       css={{
         display: 'flex',
         flexWrap: 'wrap',
-        margin: '0 12px',
+        margin: '0 8px',
+        [mq[4]]: {
+          margin: '0 12px',
+        },
       }}
     >
       {itemSlots?.map(slot => (

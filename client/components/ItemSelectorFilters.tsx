@@ -114,7 +114,7 @@ const ItemSelectorFilters: React.FC<IProps> = ({
             type="number"
             max={200}
             min={1}
-            css={{ marginLeft: 16 }}
+            css={{ marginLeft: 12, [mq[4]]: { marginLeft: 16 } }}
           />
         </div>
         <Select
@@ -122,14 +122,15 @@ const ItemSelectorFilters: React.FC<IProps> = ({
           css={{
             gridColumn: '1 / -1',
             flex: '1',
-            [mq[2]]: { marginLeft: 16, maxWidth: 320 },
+            [mq[2]]: { marginLeft: 12, maxWidth: 320 },
+            [mq[4]]: { marginLeft: 16 },
           }}
           placeholder="Stats (e.g. AP, Pods, Prospecting)"
           value={stats}
           onChange={onChangeStats}
         >
           {Object.values(Stat).map(stat => (
-            <Option key={stat} value={stat}>
+            <Option key={stat} value={t(stat, { ns: 'stat' })!}>
               {t(stat, { ns: 'stat' })}
             </Option>
           ))}
@@ -152,9 +153,11 @@ const ItemSelectorFilters: React.FC<IProps> = ({
             flexWrap: 'wrap',
             justifyContent: 'flex-start',
             ['.ant-checkbox-group-item']: {
+              fontSize: '0.75rem',
               flex: '0 1 120px',
               minWidth: 0,
-              ['&:last-child']: {
+              marginTop: 4,
+              ['&:last-of-type']: {
                 marginRight: 8,
               },
             },

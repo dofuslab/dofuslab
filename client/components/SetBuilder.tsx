@@ -21,6 +21,13 @@ import SetHeader from './SetHeader';
 import EquipmentSlots from './EquipmentSlots';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 
+const topMarginStyle = {
+  marginTop: 8,
+  [mq[4]]: {
+    marginTop: 12,
+  },
+};
+
 const SetBuilder: React.FC = () => {
   const router = useRouter();
   const { id: setId } = router.query;
@@ -69,22 +76,37 @@ const SetBuilder: React.FC = () => {
         css={{
           flex: '1 1 auto',
           overflowX: 'hidden',
-          paddingLeft: 20,
+          paddingLeft: 14,
           display: 'flex',
+          [mq[4]]: {
+            paddingLeft: 20,
+          },
         }}
       >
-        <div css={{ flex: '0 1 584px', overflow: 'auto', marginTop: 12 }}>
+        <div
+          css={{
+            flex: '1 1 282px',
+            [mq[0]]: { flex: '0 1 282px' },
+            [mq[2]]: { flex: '0 1 576px' },
+            overflow: 'auto',
+            ...topMarginStyle,
+          }}
+        >
           <ResponsiveGrid
-            numColumns={[2, 2, 2, 2, 2, 2]}
+            numColumns={[1, 1, 2, 2, 2, 2, 2]}
             css={{ marginBottom: 20 }}
           >
-            {STAT_GROUPS.map((group, idx) => (
-              <StatTable
-                key={idx}
-                group={group}
-                statsFromCustomSet={statsFromCustomSet}
-                customSet={customSetData?.customSetById}
-              />
+            {STAT_GROUPS.map((groups, i) => (
+              <div>
+                {groups.map((group, j) => (
+                  <StatTable
+                    key={`stat-table-${i}-${j}`}
+                    group={group}
+                    statsFromCustomSet={statsFromCustomSet}
+                    customSet={customSetData?.customSetById}
+                  />
+                ))}
+              </div>
             ))}
           </ResponsiveGrid>
         </div>
@@ -92,13 +114,17 @@ const SetBuilder: React.FC = () => {
           key={`div-${selectedItemSlot?.id}`} // re-render so div loses scroll position on selectedItemSlot change
           css={{
             display: 'none',
-            marginTop: 12,
-            padding: '0 20px',
-            [mq[1]]: {
+            padding: '0 14px',
+            [mq[0]]: {
               display: 'block',
               flex: 1,
             },
             overflowY: 'scroll',
+            ...topMarginStyle,
+            [mq[4]]: {
+              padding: '0 20px',
+              ...(topMarginStyle[mq[4]] as {}),
+            },
           }}
         >
           <ItemSelector

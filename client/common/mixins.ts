@@ -24,20 +24,36 @@ export const gray13 = '#000000';
 export const BORDER_COLOR = gray5;
 
 export const ITEM_BOX_WIDTH = 84;
+export const ITEM_BOX_WIDTH_SMALL = 72;
+
+export const ITEM_IMAGE_WIDTH = 72;
+export const ITEM_IMAGE_WIDTH_SMALL = 60;
 
 export const itemBoxDimensions = {
-  width: ITEM_BOX_WIDTH,
-  height: ITEM_BOX_WIDTH,
+  width: ITEM_BOX_WIDTH_SMALL,
+  height: ITEM_BOX_WIDTH_SMALL,
+  [mq[4]]: {
+    width: ITEM_BOX_WIDTH,
+    height: ITEM_BOX_WIDTH,
+  },
 };
 
 export const itemImageDimensions = {
-  width: 72,
-  height: 72,
+  width: ITEM_IMAGE_WIDTH_SMALL,
+  height: ITEM_IMAGE_WIDTH_SMALL,
+  [mq[4]]: {
+    width: ITEM_IMAGE_WIDTH,
+    height: ITEM_IMAGE_WIDTH,
+  },
 };
 
 export const itemImageBox = {
-  width: ITEM_BOX_WIDTH,
-  height: ITEM_BOX_WIDTH,
+  width: ITEM_BOX_WIDTH_SMALL,
+  height: ITEM_BOX_WIDTH_SMALL,
+  [mq[4]]: {
+    width: ITEM_BOX_WIDTH,
+    height: ITEM_BOX_WIDTH,
+  },
   position: 'relative' as 'relative',
   display: 'flex',
   justifyContent: 'center',
@@ -70,10 +86,12 @@ export const ellipsis = {
 
 export const itemBox = {
   background: 'white',
-
-  width: ITEM_BOX_WIDTH,
-  height: ITEM_BOX_WIDTH,
-  margin: 8,
+  margin: 4,
+  ...itemBoxDimensions,
+  [mq[4]]: {
+    margin: 8,
+    ...(itemBoxDimensions[mq[4]] as {}),
+  },
 };
 
 export const selected = {
@@ -96,8 +114,8 @@ export const getResponsiveGridStyle = (numColumns: ReadonlyArray<number>) => ({
   display: 'grid',
   width: '100%',
   gridTemplateColumns: '1fr',
-  columnGap: 20,
-  rowGap: 20,
+  columnGap: 12,
+  rowGap: 12,
   [mq[0]]: {
     gridTemplateColumns: `repeat(${numColumns[0]}, 1fr)`,
   },
@@ -109,6 +127,8 @@ export const getResponsiveGridStyle = (numColumns: ReadonlyArray<number>) => ({
   },
   [mq[3]]: {
     gridTemplateColumns: `repeat(${numColumns[3]}, 1fr)`,
+    columnGap: 20,
+    rowGap: 20,
   },
   [mq[4]]: {
     gridTemplateColumns: `repeat(${numColumns[4]}, 1fr)`,

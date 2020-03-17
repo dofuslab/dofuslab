@@ -282,7 +282,7 @@ const MageModal: React.FC<IProps> = ({
               {Object.values(Stat).map(stat => (
                 <Option
                   key={`option-${stat}`}
-                  value={stat}
+                  value={t(stat, { ns: 'stat' })!}
                   disabled={statsSet.has(stat)}
                   className={css({
                     ['.ant-select-item-option-content']: {
