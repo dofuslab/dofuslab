@@ -24,6 +24,7 @@ export interface items_items_edges_node_itemType_eligibleItemSlots {
 export interface items_items_edges_node_itemType {
   __typename: "ItemType";
   id: any;
+  name: string;
   eligibleItemSlots: items_items_edges_node_itemType_eligibleItemSlots[];
 }
 

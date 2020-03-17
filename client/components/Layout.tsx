@@ -73,7 +73,7 @@ const Layout = (props: LayoutProps) => {
           padding: '0 20px',
         }}
       >
-        <div css={{ fontWeight: 500 }}>Dofus Lab</div>
+        <div css={{ fontWeight: 500 }}>DofusLab</div>
         <div>
           {data?.currentUser ? (
             <div>

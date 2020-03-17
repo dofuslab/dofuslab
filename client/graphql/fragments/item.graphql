@@ -11,6 +11,7 @@ fragment item on Item {
   conditions
   itemType {
     id
+    name
     eligibleItemSlots {
       id
     }

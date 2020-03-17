@@ -43,7 +43,7 @@ const ItemCard: React.FC<IProps> = ({
     }
   }, [item, itemSlotId, mutate, selectItemSlot]);
 
-  const { t } = useTranslation('stat');
+  const { t } = useTranslation(['stat', 'common']);
 
   const card = (
     <Card
@@ -52,7 +52,14 @@ const ItemCard: React.FC<IProps> = ({
       title={
         <div css={{ display: 'flex', alignItems: 'center' }}>
           <TruncatableText>{item.name}</TruncatableText>
-          {customSetItemIds.has(item.id) && <Badge>{t('EQUIPPED')}</Badge>}
+          {customSetItemIds.has(item.id) && (
+            <Badge css={{ marginRight: 4 }}>{t('EQUIPPED')}</Badge>
+          )}
+          <div
+            css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}
+          >
+            {t('LEVEL_ABBREVIATION', { ns: 'common' })} {item.level}
+          </div>
         </div>
       }
       css={{

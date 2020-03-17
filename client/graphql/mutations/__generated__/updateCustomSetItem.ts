@@ -29,6 +29,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_itemType {
   __typename: "ItemType";
   id: any;
+  name: string;
   eligibleItemSlots: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_itemType_eligibleItemSlots[];
 }
 
