@@ -48,6 +48,13 @@ const reducer = (state: ItemFilters, action: FilterAction) => {
       return { ...state, stats: action.stats };
     case 'ITEM_TYPE_IDS':
       return { ...state, itemTypeIds: action.itemTypeIds };
+    case 'RESET':
+      return {
+        search: '',
+        stats: [],
+        maxLevel: action.maxLevel,
+        itemTypeIds: [],
+      };
     default:
       throw new Error('Invalid action type');
   }
@@ -63,13 +70,20 @@ const ItemSelector: React.FC<IProps> = ({
     stats: [],
     maxLevel: customSet?.level || 200,
     search: '',
-    itemTypeIds: selectedItemSlot?.itemTypes.map(type => type.id) || [],
+    itemTypeIds: [],
   });
+  const queryFilters = {
+    ...filters,
+    itemTypeIds:
+      selectedItemSlot && filters.itemTypeIds.length === 0
+        ? selectedItemSlot.itemTypes.map(type => type.id)
+        : filters.itemTypeIds,
+  };
   const { data, loading, fetchMore, networkStatus } = useQuery<
     items,
     itemsVariables
   >(ItemsQuery, {
-    variables: { first: PAGE_SIZE, filters },
+    variables: { first: PAGE_SIZE, filters: queryFilters },
     notifyOnNetworkStatusChange: true,
   });
 

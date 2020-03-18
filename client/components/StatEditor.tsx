@@ -1,0 +1,333 @@
+/** @jsx jsx */
+
+import React from 'react';
+import { jsx } from '@emotion/core';
+
+import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
+import { Stat } from '__generated__/globalTypes';
+import { useTranslation } from 'i18n';
+import { customSet } from 'graphql/fragments/__generated__/customSet';
+import InputNumber from 'antd/lib/input-number';
+import Button from 'antd/lib/button';
+import { BORDER_COLOR, gray3, red6, gray7 } from 'common/mixins';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRedo } from '@fortawesome/free-solid-svg-icons';
+import { useDebounceCallback } from '@react-hook/debounce';
+import { useMutation, useApolloClient } from '@apollo/react-hooks';
+import {
+  editCustomSetStats,
+  editCustomSetStatsVariables,
+} from 'graphql/mutations/__generated__/editCustomSetStats';
+import editCustomSetStatsMutation from 'graphql/mutations/editCustomSetStats.graphql';
+import { checkAuthentication } from 'common/utils';
+
+interface IProps {
+  customSet?: customSet | null;
+}
+
+const baseStats = [
+  'baseVitality',
+  'baseWisdom',
+  'baseStrength',
+  'baseIntelligence',
+  'baseChance',
+  'baseAgility',
+] as const;
+
+const scrolledStats = [
+  'scrolledVitality',
+  'scrolledWisdom',
+  'scrolledStrength',
+  'scrolledIntelligence',
+  'scrolledChance',
+  'scrolledAgility',
+] as const;
+
+const stats = [...baseStats, ...scrolledStats] as const;
+
+type BaseStatKey = typeof baseStats[number];
+
+type StatKey = typeof stats[number];
+
+type StatState = {
+  [key in StatKey]: number;
+};
+
+type StatStateAction =
+  | { type: 'edit'; stat: StatKey; value: number }
+  | { type: 'reset' }
+  | { type: 'scrollAll' };
+
+const defaultInitialState = {
+  baseVitality: 0,
+  baseWisdom: 0,
+  baseStrength: 0,
+  baseIntelligence: 0,
+  baseChance: 0,
+  baseAgility: 0,
+  scrolledVitality: 0,
+  scrolledWisdom: 0,
+  scrolledStrength: 0,
+  scrolledIntelligence: 0,
+  scrolledChance: 0,
+  scrolledAgility: 0,
+};
+
+const statDisplayArray = [
+  {
+    stat: Stat.VITALITY,
+    baseKey: 'baseVitality' as 'baseVitality',
+    scrolledKey: 'scrolledVitality' as 'scrolledVitality',
+  },
+  {
+    stat: Stat.WISDOM,
+    baseKey: 'baseWisdom' as 'baseWisdom',
+    scrolledKey: 'scrolledWisdom' as 'scrolledWisdom',
+  },
+  {
+    stat: Stat.STRENGTH,
+    baseKey: 'baseStrength' as 'baseStrength',
+    scrolledKey: 'scrolledStrength' as 'scrolledStrength',
+  },
+  {
+    stat: Stat.INTELLIGENCE,
+    baseKey: 'baseIntelligence' as 'baseIntelligence',
+    scrolledKey: 'scrolledIntelligence' as 'scrolledIntelligence',
+  },
+  {
+    stat: Stat.CHANCE,
+    baseKey: 'baseChance' as 'baseChance',
+    scrolledKey: 'scrolledChance' as 'scrolledChance',
+  },
+  {
+    stat: Stat.AGILITY,
+    baseKey: 'baseAgility' as 'baseAgility',
+    scrolledKey: 'scrolledAgility' as 'scrolledAgility',
+  },
+];
+
+const reducer = (state: StatState, action: StatStateAction) => {
+  switch (action.type) {
+    case 'edit':
+      return { ...state, [action.stat]: action.value } as StatState;
+    case 'reset':
+      return defaultInitialState;
+    case 'scrollAll':
+      return scrolledStats.reduce(
+        (acc, scrolledStatKey) => ({ ...acc, [scrolledStatKey]: 100 }),
+        state,
+      );
+    default:
+      throw new Error('Invalid action type');
+  }
+};
+
+const calcPointCost = (value: number, statKey: BaseStatKey) => {
+  if (statKey === 'baseVitality') {
+    return value;
+  } else if (statKey === 'baseWisdom') {
+    return value * 3;
+  }
+  let numPoints = 0;
+  let remainingValue = value;
+  while (remainingValue > 0) {
+    const modifier = Math.floor((remainingValue - 1) / 100) + 1;
+    const numStats = ((remainingValue - 1) % 100) + 1;
+    remainingValue -= numStats;
+    numPoints += modifier * numStats;
+  }
+  return numPoints;
+};
+
+const getInputNumberStyle = (baseKey: string, title: string) => ({
+  fontSize: '0.75rem',
+  maxWidth: '100%',
+  display: 'flex',
+  alignItems: 'center',
+  position: 'relative' as 'relative',
+  ...(baseKey === 'baseVitality' && {
+    ['&::before']: {
+      position: 'absolute' as 'absolute',
+      content: `"${title}"`,
+      top: -30,
+      left: 0,
+      height: 24,
+      width: '100%',
+      background: gray7,
+      color: 'white',
+      opacity: 0.8,
+      borderRadius: '4px',
+      padding: '0 4px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      pointerEvents: 'none' as 'none',
+    },
+  }),
+});
+
+const StatEditor: React.FC<IProps> = ({ customSet }) => {
+  const initialState = customSet?.stats
+    ? {
+        baseVitality: customSet.stats.baseVitality,
+        baseWisdom: customSet.stats.baseWisdom,
+        baseStrength: customSet.stats.baseStrength,
+        baseIntelligence: customSet.stats.baseIntelligence,
+        baseChance: customSet.stats.baseChance,
+        baseAgility: customSet.stats.baseAgility,
+        scrolledVitality: customSet.stats.scrolledVitality,
+        scrolledWisdom: customSet.stats.scrolledWisdom,
+        scrolledStrength: customSet.stats.scrolledStrength,
+        scrolledIntelligence: customSet.stats.scrolledIntelligence,
+        scrolledChance: customSet.stats.scrolledChance,
+        scrolledAgility: customSet.stats.scrolledAgility,
+      }
+    : defaultInitialState;
+  const [statState, dispatch] = React.useReducer(reducer, initialState);
+
+  const [debouncedStatState, dispatchToDebounce] = React.useReducer(
+    reducer,
+    initialState,
+  );
+
+  const [mutate] = useMutation<editCustomSetStats, editCustomSetStatsVariables>(
+    editCustomSetStatsMutation,
+    { variables: { customSetId: customSet?.id, stats: debouncedStatState } },
+  );
+
+  const remainingPoints = baseStats.reduce(
+    (acc, statKey) => (acc -= calcPointCost(statState[statKey], statKey)),
+    ((customSet?.level ?? 200) - 1) * 5,
+  );
+
+  const { t } = useTranslation(['common', 'stat']);
+
+  const scrollAll = React.useCallback(() => {
+    dispatch({ type: 'scrollAll' });
+    dispatchToDebounce({ type: 'scrollAll' });
+  }, [dispatch]);
+
+  const reset = React.useCallback(() => {
+    dispatch({ type: 'reset' });
+    dispatchToDebounce({ type: 'reset' });
+  }, [dispatch]);
+
+  const editToDebounce = React.useCallback(
+    (statKey: StatKey, value: number) => {
+      dispatchToDebounce({ type: 'edit', stat: statKey, value });
+    },
+    [dispatchToDebounce],
+  );
+
+  const debouncedEdit = useDebounceCallback(editToDebounce, DEBOUNCE_INTERVAL);
+
+  const client = useApolloClient();
+
+  React.useEffect(() => {
+    const checkAndMutate = async () => {
+      const ok = await checkAuthentication(client, t, customSet);
+      if (!ok) return;
+      mutate();
+    };
+
+    checkAndMutate();
+  }, [mutate, debouncedStatState, client, t, customSet]);
+
+  return (
+    <div
+      css={{
+        gridArea: '3 / 1 / 4 / 2',
+        marginTop: 16,
+        [mq[2]]: {
+          gridArea: '2 / 1 / 3 / 2',
+          marginTop: 0,
+        },
+        display: 'grid',
+        gridTemplateColumns: '1fr 60px 60px',
+        gridGap: 4,
+        gridAutoRows: 26,
+        fontSize: '0.75rem',
+        justifySelf: 'stretch',
+        background: 'white',
+        borderRadius: 4,
+        padding: 4,
+        border: `1px solid ${BORDER_COLOR}`,
+      }}
+    >
+      {statDisplayArray.map(({ stat, baseKey, scrolledKey }) => (
+        <React.Fragment key={`stat-editor-${stat}`}>
+          <div
+            css={{
+              fontSize: '0.75rem',
+              display: 'flex',
+              justifyContent: 'flex-end',
+              alignItems: 'center',
+              marginRight: 8,
+            }}
+          >
+            {t(stat, { ns: 'stat' })}
+          </div>
+          <InputNumber
+            value={statState[baseKey]}
+            max={999}
+            min={0}
+            size="small"
+            css={getInputNumberStyle(baseKey, t('BASE'))}
+            onChange={(value?: number) => {
+              if (value === undefined) return;
+              dispatch({ type: 'edit', stat: baseKey, value });
+              debouncedEdit(baseKey, value);
+            }}
+          />
+          <InputNumber
+            value={statState[scrolledKey]}
+            max={100}
+            min={0}
+            size="small"
+            css={getInputNumberStyle(baseKey, t('SCROLLED'))}
+            onChange={(value?: number) => {
+              if (value === undefined) return;
+              dispatch({ type: 'edit', stat: scrolledKey, value });
+              debouncedEdit(scrolledKey, value);
+            }}
+          />
+        </React.Fragment>
+      ))}
+      <Button
+        css={{
+          fontSize: '0.75rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifySelf: 'end',
+          padding: '4px 8px',
+          maxHeight: '100%',
+        }}
+        onClick={reset}
+      >
+        <FontAwesomeIcon icon={faRedo} css={{ marginRight: 8 }} />
+        {t('RESET_ALL')}
+      </Button>
+      <div
+        css={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontWeight: 500,
+          background: gray3,
+          borderRadius: 4,
+          color: remainingPoints < 0 ? red6 : 'inherit',
+        }}
+      >
+        {remainingPoints}
+      </div>
+      <Button
+        css={{ fontSize: '0.75rem', maxHeight: '100%' }}
+        onClick={scrollAll}
+      >
+        100
+      </Button>
+    </div>
+  );
+};
+
+export default StatEditor;

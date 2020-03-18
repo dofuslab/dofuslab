@@ -145,6 +145,7 @@ export const getStatsFromCustomSet = (customSet?: customSet | null) => {
     const baseStats =
       getBaseStat(customSet.stats, primaryStat) +
       getScrolledStat(customSet.stats, primaryStat);
+
     if (statsFromCustomSet[primaryStat]) {
       statsFromCustomSet[primaryStat] += baseStats;
     } else {
@@ -286,7 +287,7 @@ export const useEquipItemMutation = (
             });
           } else {
             equippedItems.push({
-              id: '0',
+              id: 'equipped-item-0',
               exos: [],
               slot: { id: itemSlotId, __typename: 'ItemSlot' },
               item,

@@ -70,6 +70,21 @@ export interface CustomSetExosInput {
   value: number;
 }
 
+export interface CustomSetStatsInput {
+  scrolledVitality: number;
+  scrolledWisdom: number;
+  scrolledStrength: number;
+  scrolledIntelligence: number;
+  scrolledChance: number;
+  scrolledAgility: number;
+  baseVitality: number;
+  baseWisdom: number;
+  baseStrength: number;
+  baseIntelligence: number;
+  baseChance: number;
+  baseAgility: number;
+}
+
 export interface ItemFilters {
   stats: Stat[];
   maxLevel: number;

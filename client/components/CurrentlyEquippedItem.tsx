@@ -154,6 +154,11 @@ const CurrentlyEquippedItem: React.FC<IProps> = ({
           <div css={{ display: 'flex', alignItems: 'center' }}>
             <TruncatableText>{equippedItem.item.name}</TruncatableText>{' '}
             <Badge>{t('EQUIPPED')}</Badge>
+            <div
+              css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}
+            >
+              {t('LEVEL_ABBREVIATION')} {equippedItem.item.level}
+            </div>
           </div>
         }
         css={css({

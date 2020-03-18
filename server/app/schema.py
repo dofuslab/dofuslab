@@ -193,24 +193,75 @@ class User(SQLAlchemyObjectType):
 
 
 class CustomSetStatsInput(graphene.InputObjectType):
-    scrolled_vitality = graphene.Int()
-    scrolled_wisdom = graphene.Int()
-    scrolled_strength = graphene.Int()
-    scrolled_intelligence = graphene.Int()
-    scrolled_chance = graphene.Int()
-    scrolled_agility = graphene.Int()
+    scrolled_vitality = graphene.Int(required=True)
+    scrolled_wisdom = graphene.Int(required=True)
+    scrolled_strength = graphene.Int(required=True)
+    scrolled_intelligence = graphene.Int(required=True)
+    scrolled_chance = graphene.Int(required=True)
+    scrolled_agility = graphene.Int(required=True)
 
-    base_vitality = graphene.Int()
-    base_wisdom = graphene.Int()
-    base_strength = graphene.Int()
-    base_intelligence = graphene.Int()
-    base_chance = graphene.Int()
-    base_agility = graphene.Int()
+    base_vitality = graphene.Int(required=True)
+    base_wisdom = graphene.Int(required=True)
+    base_strength = graphene.Int(required=True)
+    base_intelligence = graphene.Int(required=True)
+    base_chance = graphene.Int(required=True)
+    base_agility = graphene.Int(required=True)
 
 
 class CustomSetExosInput(graphene.InputObjectType):
     stat = graphene.NonNull(StatEnum)
     value = graphene.Int(required=True)
+
+
+base_stat_list = [
+    "base_vitality",
+    "base_wisdom",
+    "base_strength",
+    "base_intelligence",
+    "base_chance",
+    "base_agility",
+]
+scrolled_stat_list = [
+    "scrolled_vitality",
+    "scrolled_wisdom",
+    "scrolled_strength",
+    "scrolled_intelligence",
+    "scrolled_chance",
+    "scrolled_agility",
+]
+
+
+class EditCustomSetStats(graphene.Mutation):
+    class Arguments:
+        custom_set_id = graphene.UUID()
+        stats = graphene.NonNull(CustomSetStatsInput)
+
+    custom_set = graphene.Field(CustomSet, required=True)
+
+    def mutate(self, info, **kwargs):
+        custom_set_id = kwargs.get("custom_set_id")
+        stats = kwargs.get("stats")
+        for base_stat in base_stat_list:
+            if stats[base_stat] < 0 or stats[base_stat] > 999:
+                raise GraphQLError("Invalid value for stat.")
+        for scrolled_stat in scrolled_stat_list:
+            if stats[scrolled_stat] < 0 or stats[scrolled_stat] > 100:
+                raise GraphQLError("Invalid value for stat.")
+        if custom_set_id:
+            custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
+            if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
+                raise GraphQLError("You don't have permission to edit that set.")
+            for stat in base_stat_list + scrolled_stat_list:
+                setattr(custom_set.stats, stat, stats[stat])
+        else:
+            custom_set = ModelCustomSet(owner_id=current_user.get_id())
+            db.session.add(custom_set)
+            db.session.flush()
+            custom_set_stat = ModelCustomSetStat(custom_set_id=custom_set.uuid, **stats)
+            db.session.add(custom_set_stat)
+        db.session.commit()
+
+        return EditCustomSetStats(custom_set=custom_set)
 
 
 class EditCustomSetMetadata(graphene.Mutation):
@@ -543,6 +594,7 @@ class Mutation(graphene.ObjectType):
     mage_equipped_item = MageEquippedItem.Field()
     set_equipped_item_exo = SetEquippedItemExo.Field()
     edit_custom_set_metadata = EditCustomSetMetadata.Field()
+    edit_custom_set_stats = EditCustomSetStats.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
