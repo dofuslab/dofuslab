@@ -7,7 +7,6 @@ import { useTranslation } from 'i18n';
 import List from 'antd/lib/list';
 import { StatGroup, StatsFromCustomSet } from 'common/types';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-// import Input from 'antd/lib/input';
 
 interface IStatTable {
   group: StatGroup;
