@@ -3,8 +3,12 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import withApollo from 'common/apollo';
 import { ApolloClient, NormalizedCacheObject } from 'apollo-boost';
 import { appWithTranslation } from '../i18n';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import 'antd/dist/antd.min.css';
+
+config.autoAddCss = false;
 
 class DofusSetsApp extends App<{
   apolloClient: ApolloClient<NormalizedCacheObject>;
