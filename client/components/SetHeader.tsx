@@ -10,6 +10,7 @@ import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
+import Form from 'antd/lib/form';
 
 import { useTranslation } from 'i18n';
 import {
@@ -72,29 +73,7 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
   const [mutate] = useMutation<
     editCustomSetMetadata,
     editCustomSetMetadataVariables
-  >(EditCustomSetMetadataMutation, {
-    variables: {
-      name: metadataState.name,
-      level: metadataState.level,
-      customSetId: customSet?.id,
-    },
-    optimisticResponse: ({ name, level }) => {
-      const optimisticCustomSet: editCustomSetMetadata_editCustomSetMetadata_customSet = {
-        id: 'custom-set-0',
-        ...customSet,
-        name: name || null,
-        level,
-        __typename: 'CustomSet',
-      };
-
-      return {
-        editCustomSetMetadata: {
-          customSet: optimisticCustomSet,
-          __typename: 'EditCustomSetMetadata',
-        },
-      };
-    },
-  });
+  >(EditCustomSetMetadataMutation);
 
   const onStartEdit = React.useCallback(() => {
     dispatch({ type: 'START_EDIT', originalState });
@@ -104,47 +83,58 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
     dispatch({ type: 'STOP_EDIT' });
   }, [dispatch]);
 
-  const onEditName = React.useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch({ type: 'EDIT_NAME', name: e.currentTarget.value });
-    },
-    [dispatch],
-  );
-
-  const onEditLevel = React.useCallback(
-    (level: number | undefined) => {
-      if (level) {
-        dispatch({ type: 'EDIT_LEVEL', level });
-      }
-    },
-    [dispatch],
-  );
-
   const client = useApolloClient();
 
-  const onConfirm = React.useCallback(async () => {
-    const ok = await checkAuthentication(client, t, customSet);
-    if (!ok) return;
-    dispatch({ type: 'STOP_EDIT' });
-    const { data } = await mutate();
-    if (data?.editCustomSetMetadata?.customSet.id !== customSet?.id) {
-      router.replace(
-        `/?id=${data?.editCustomSetMetadata?.customSet.id}`,
-        `/set/${data?.editCustomSetMetadata?.customSet.id}`,
-        {
-          shallow: true,
+  const handleOk = React.useCallback(
+    async values => {
+      const ok = await checkAuthentication(client, t, customSet);
+      if (!ok) return;
+      dispatch({ type: 'STOP_EDIT' });
+      const { data } = await mutate({
+        variables: {
+          name: values.name,
+          level: values.level,
+          customSetId: customSet?.id,
         },
-      );
-    }
-  }, [
-    client,
-    t,
-    customSet,
-    customSet?.name,
-    customSet?.level,
-    router,
-    metadataState,
-  ]);
+        optimisticResponse: ({ name, level }: any) => {
+          const optimisticCustomSet: editCustomSetMetadata_editCustomSetMetadata_customSet = {
+            id: 'custom-set-0',
+            ...customSet,
+            name: name || null,
+            level,
+            __typename: 'CustomSet',
+          };
+
+          return {
+            editCustomSetMetadata: {
+              customSet: optimisticCustomSet,
+              __typename: 'EditCustomSetMetadata',
+            },
+          };
+        },
+      });
+      if (data?.editCustomSetMetadata?.customSet.id !== customSet?.id) {
+        router.replace(
+          `/?id=${data?.editCustomSetMetadata?.customSet.id}`,
+          `/set/${data?.editCustomSetMetadata?.customSet.id}`,
+          {
+            shallow: true,
+          },
+        );
+      }
+    },
+    [
+      client,
+      t,
+      customSet,
+      customSet?.name,
+      customSet?.level,
+      router,
+      metadataState,
+    ],
+  );
+
+  const [form] = Form.useForm();
 
   return (
     <div
@@ -158,55 +148,70 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
         flex: '0 0 48px',
       }}
     >
-      {metadataState.isEditing ? (
-        <Input
-          css={{ fontSize: '1.5rem', fontWeight: 500, width: 240 }}
-          value={metadataState.name}
-          onChange={onEditName}
-          maxLength={50}
-        />
-      ) : (
-        <div
-          css={{
-            ...ellipsis,
-            fontSize: '1.5rem',
-            fontWeight: 500,
-            maxWidth: 400,
-          }}
-        >
-          {customSet?.name || t('UNTITLED')}
-        </div>
-      )}
-
-      <div css={{ marginLeft: 20 }}>
+      <Form
+        form={form}
+        name="header"
+        id="header-form"
+        onFinish={handleOk}
+        layout="inline"
+        css={{ display: 'flex', alignItems: 'baseline' }}
+        initialValues={{
+          name: customSet?.name || '',
+          level: customSet?.level || 200,
+        }}
+      >
+        {metadataState.isEditing ? (
+          <Form.Item name="name">
+            <Input
+              css={{
+                fontSize: '1.5rem',
+                fontWeight: 500,
+                width: 240,
+              }}
+              maxLength={50}
+            />
+          </Form.Item>
+        ) : (
+          <div
+            css={{
+              ...ellipsis,
+              fontSize: '1.5rem',
+              fontWeight: 500,
+              maxWidth: 400,
+              marginRight: 20,
+            }}
+          >
+            {customSet?.name || t('UNTITLED')}
+          </div>
+        )}
         {t('LEVEL')}{' '}
         {metadataState.isEditing ? (
-          <InputNumber
-            css={{ marginLeft: 8 }}
-            type="number"
-            max={200}
-            min={1}
-            value={metadataState.level}
-            onChange={onEditLevel}
-          />
+          <Form.Item name="level" css={{ display: 'inline-flex' }}>
+            <InputNumber
+              css={{ marginLeft: 8 }}
+              type="number"
+              max={200}
+              min={1}
+            />
+          </Form.Item>
         ) : (
           customSet?.level ?? 200
         )}
-      </div>
-      {metadataState.isEditing ? (
-        <>
-          <Button css={{ marginLeft: 12 }} onClick={onConfirm}>
-            {t('OK')}
-          </Button>
-          <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
-            {t('CANCEL')}
-          </Button>
-        </>
-      ) : (
-        <a css={{ marginLeft: 12 }}>
-          <FontAwesomeIcon icon={faPencilAlt} onClick={onStartEdit} />
-        </a>
-      )}
+        {metadataState.isEditing ? (
+          <>
+            <Button css={{ marginLeft: 12 }} type="primary" htmlType="submit">
+              {t('OK')}
+            </Button>
+            <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
+              {t('CANCEL')}
+            </Button>
+          </>
+        ) : (
+          <a css={{ marginLeft: 12 }}>
+            <FontAwesomeIcon icon={faPencilAlt} onClick={onStartEdit} />
+          </a>
+        )}
+      </Form>
     </div>
   );
 };
