@@ -4,6 +4,8 @@ import withApollo from 'common/apollo';
 import { ApolloClient, NormalizedCacheObject } from 'apollo-boost';
 import { appWithTranslation } from '../i18n';
 
+import 'antd/dist/antd.min.css';
+
 class DofusSetsApp extends App<{
   apolloClient: ApolloClient<NormalizedCacheObject>;
 }> {
