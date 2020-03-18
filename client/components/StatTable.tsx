@@ -7,7 +7,6 @@ import { useTranslation } from 'i18n';
 import List from 'antd/lib/list';
 import { StatGroup, StatsFromCustomSet } from 'common/types';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { mq } from 'common/constants';
 
 interface IStatTable {
   group: StatGroup;
@@ -25,12 +24,6 @@ const StatTable: React.FC<IStatTable> = ({
     <List
       css={{
         background: 'white',
-        [':not(:first-of-type)']: {
-          marginTop: 12,
-          [mq[4]]: {
-            marginTop: 20,
-          },
-        },
         borderRadius: 4,
       }}
       itemLayout="horizontal"
@@ -43,11 +36,17 @@ const StatTable: React.FC<IStatTable> = ({
           css={{
             display: 'flex',
             justifyContent: 'space-between',
+            ['&.ant-list-item']: {
+              paddingTop: 6,
+              paddingBottom: 6,
+            },
           }}
         >
           <div css={{ fontSize: '0.75rem' }}>{t(item.stat)}</div>
           <div css={{ fontSize: '0.75rem' }}>
-            {item.customCalculateValue
+            {item.customDisplay
+              ? item.customDisplay(statsFromCustomSet, customSet)
+              : item.customCalculateValue
               ? item.customCalculateValue(statsFromCustomSet, customSet)
               : statsFromCustomSet
               ? statsFromCustomSet[item.stat] || 0

@@ -21,6 +21,9 @@ export const gray11 = '#1f1f1f';
 export const gray12 = '#141414';
 export const gray13 = '#000000';
 
+export const red6 = '#f5222d';
+export const red8 = '#a8071a';
+
 export const BORDER_COLOR = gray5;
 
 export const ITEM_BOX_WIDTH = 84;
@@ -127,13 +130,16 @@ export const getResponsiveGridStyle = (numColumns: ReadonlyArray<number>) => ({
   },
   [mq[3]]: {
     gridTemplateColumns: `repeat(${numColumns[3]}, 1fr)`,
-    columnGap: 20,
-    rowGap: 20,
   },
   [mq[4]]: {
     gridTemplateColumns: `repeat(${numColumns[4]}, 1fr)`,
+    columnGap: 20,
+    rowGap: 20,
   },
   [mq[5]]: {
     gridTemplateColumns: `repeat(${numColumns[5]}, 1fr)`,
+  },
+  [mq[6]]: {
+    gridTemplateColumns: `repeat(${numColumns[6]}, 1fr)`,
   },
 });

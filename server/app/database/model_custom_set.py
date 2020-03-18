@@ -3,6 +3,7 @@ from app import db
 from .base import Base
 from .model_item import ModelItem
 from .model_equipped_item import ModelEquippedItem
+from .model_equipped_item_exo import ModelEquippedItemExo
 from .model_item_slot import ModelItemSlot
 from .model_custom_set_stat import ModelCustomSetStat
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, text
@@ -49,6 +50,9 @@ class ModelCustomSet(Base):
         )
         if equipped_item and item_id:
             equipped_item.item_id = item_id
+            db.session.query(ModelEquippedItemExo).filter_by(
+                equipped_item_id=equipped_item.uuid
+            ).delete()
         elif equipped_item:
             # if item_id is None, delete equipped item entry
             db.session.delete(equipped_item)

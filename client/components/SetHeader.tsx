@@ -9,6 +9,7 @@ import InputNumber from 'antd/lib/input-number';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+import { useRouter } from 'next/router';
 
 import { useTranslation } from 'i18n';
 import {
@@ -18,8 +19,8 @@ import {
 } from 'graphql/mutations/__generated__/editCustomSetMetadata';
 import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetdata.graphql';
 import { checkAuthentication } from 'common/utils';
-import { useRouter } from 'next/router';
 import { ellipsis } from 'common/mixins';
+import { mq } from 'common/constants';
 
 interface IProps {
   customSet?: customSet | null;
@@ -148,7 +149,10 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
   return (
     <div
       css={{
-        margin: '4px 20px',
+        margin: '4px 14px',
+        [mq[4]]: {
+          margin: '4px 20px',
+        },
         display: 'flex',
         alignItems: 'baseline',
         flex: '0 0 48px',

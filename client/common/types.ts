@@ -6,6 +6,10 @@ import { CheckboxValueType } from 'antd/lib/checkbox/Group';
 export type StatWithCalculatedValue = {
   stat: string;
   customCalculateValue?: StatCalculator;
+  customDisplay?: (
+    statsFromCustomSet: StatsFromCustomSet | null,
+    customSet?: customSet | null,
+  ) => string;
 };
 
 export type StatGroup = Array<StatWithCalculatedValue>;
@@ -27,7 +31,8 @@ export type FilterAction =
   | { type: 'SEARCH'; search: string }
   | { type: 'MAX_LEVEL'; maxLevel: number }
   | { type: 'STATS'; stats: Array<Stat> }
-  | { type: 'ITEM_TYPE_IDS'; itemTypeIds: Array<CheckboxValueType> };
+  | { type: 'ITEM_TYPE_IDS'; itemTypeIds: Array<CheckboxValueType> }
+  | { type: 'RESET'; maxLevel: number };
 
 export type MageAction =
   | { type: 'ADD'; stat: Stat }

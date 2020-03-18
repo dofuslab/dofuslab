@@ -20,6 +20,7 @@ import { getStatsFromCustomSet } from 'common/utils';
 import SetHeader from './SetHeader';
 import EquipmentSlots from './EquipmentSlots';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
+import StatEditor from './StatEditor';
 
 const topMarginStyle = {
   marginTop: 8,
@@ -96,18 +97,15 @@ const SetBuilder: React.FC = () => {
             numColumns={[1, 1, 2, 2, 2, 2, 2]}
             css={{ marginBottom: 20 }}
           >
-            {STAT_GROUPS.map((groups, i) => (
-              <div>
-                {groups.map((group, j) => (
-                  <StatTable
-                    key={`stat-table-${i}-${j}`}
-                    group={group}
-                    statsFromCustomSet={statsFromCustomSet}
-                    customSet={customSetData?.customSetById}
-                  />
-                ))}
-              </div>
+            {STAT_GROUPS.map((group, i) => (
+              <StatTable
+                key={`stat-table-${i}`}
+                group={group}
+                statsFromCustomSet={statsFromCustomSet}
+                customSet={customSetData?.customSetById}
+              />
             ))}
+            <StatEditor customSet={customSetData?.customSetById} />
           </ResponsiveGrid>
         </div>
         <div
