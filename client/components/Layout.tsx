@@ -13,8 +13,6 @@ import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import logoutMutation from 'graphql/mutations/logout.graphql';
 import { BORDER_COLOR, gray8 } from 'common/mixins';
 
-import 'antd/dist/antd.css';
-
 import { useTranslation } from 'i18n';
 import SignUpModal from './SignUpModal';
 
