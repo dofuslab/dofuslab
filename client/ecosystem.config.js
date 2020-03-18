@@ -23,7 +23,7 @@ module.exports = {
       key: '/home/jeremy/.ssh/id_rsa.pub',
       user: 'jeremy',
       host: '134.209.168.215',
-      ref: 'origin/master',
+      ref: 'origin/optimize_css',
       repo: 'git@github.com:samlee405/dofus-lab.git',
       path: '/var/www/production',
       'post-deploy':
