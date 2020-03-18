@@ -64,7 +64,7 @@ const EquippedItemWithStats: React.FC<IProps> = ({
         const wrapperClass = css(wrapperStyles);
         return (
           <Popover
-            placement="bottom"
+            placement="bottomLeft"
             title={
               <div css={{ display: 'flex', alignItems: 'baseline' }}>
                 <div>{equippedItem.item.name}</div>
