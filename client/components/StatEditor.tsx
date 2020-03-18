@@ -186,14 +186,9 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
     : defaultInitialState;
   const [statState, dispatch] = React.useReducer(reducer, initialState);
 
-  const [debouncedStatState, dispatchToDebounce] = React.useReducer(
-    reducer,
-    initialState,
-  );
-
   const [mutate] = useMutation<editCustomSetStats, editCustomSetStatsVariables>(
     editCustomSetStatsMutation,
-    { variables: { customSetId: customSet?.id, stats: debouncedStatState } },
+    { variables: { customSetId: customSet?.id, stats: statState } },
   );
 
   const remainingPoints = baseStats.reduce(
@@ -205,45 +200,37 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
 
   const scrollAll = React.useCallback(() => {
     dispatch({ type: 'scrollAll' });
-    dispatchToDebounce({ type: 'scrollAll' });
+    checkAndMutate();
   }, [dispatch]);
 
   const reset = React.useCallback(() => {
     dispatch({ type: 'reset' });
-    dispatchToDebounce({ type: 'reset' });
+    checkAndMutate();
   }, [dispatch]);
-
-  const editToDebounce = React.useCallback(
-    (statKey: StatKey, value: number) => {
-      dispatchToDebounce({ type: 'edit', stat: statKey, value });
-    },
-    [dispatchToDebounce],
-  );
-
-  const debouncedEdit = useDebounceCallback(editToDebounce, DEBOUNCE_INTERVAL);
 
   const client = useApolloClient();
 
   const router = useRouter();
 
-  React.useEffect(() => {
-    const checkAndMutate = async () => {
-      const ok = await checkAuthentication(client, t, customSet);
-      if (!ok) return;
-      const { data } = await mutate();
-      if (data?.editCustomSetStats?.customSet.id !== customSet?.id) {
-        router.replace(
-          `/?id=${data?.editCustomSetStats?.customSet.id}`,
-          `/set/${data?.editCustomSetStats?.customSet.id}`,
-          {
-            shallow: true,
-          },
-        );
-      }
-    };
+  const checkAndMutate = React.useCallback(async () => {
+    const ok = await checkAuthentication(client, t, customSet);
+    if (!ok) return;
+    const { data } = await mutate();
+    if (data?.editCustomSetStats?.customSet.id !== customSet?.id) {
+      router.replace(
+        `/?id=${data?.editCustomSetStats?.customSet.id}`,
+        `/set/${data?.editCustomSetStats?.customSet.id}`,
+        {
+          shallow: true,
+        },
+      );
+    }
+  }, [mutate, router]);
 
-    checkAndMutate();
-  }, [mutate, debouncedStatState, client, t, customSet, router]);
+  const debouncedCheckAndMutate = useDebounceCallback(
+    checkAndMutate,
+    DEBOUNCE_INTERVAL,
+  );
 
   return (
     <div
@@ -288,7 +275,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
             onChange={(value?: number) => {
               if (value === undefined) return;
               dispatch({ type: 'edit', stat: baseKey, value });
-              debouncedEdit(baseKey, value);
+              debouncedCheckAndMutate();
             }}
           />
           <InputNumber
@@ -300,7 +287,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
             onChange={(value?: number) => {
               if (value === undefined) return;
               dispatch({ type: 'edit', stat: scrolledKey, value });
-              debouncedEdit(scrolledKey, value);
+              debouncedCheckAndMutate();
             }}
           />
         </React.Fragment>
