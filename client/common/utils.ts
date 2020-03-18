@@ -197,8 +197,8 @@ export const getBonusesFromCustomSet = (customSet: customSet) => {
     if (set) {
       const setObj = sets[set.id];
       sets[set.id] = setObj
-        ? { ...setObj, count: setObj.count + 1 }
-        : { set, count: 1 };
+        ? { ...setObj, count: setObj.count + 1, items: [...setObj.items, item] }
+        : { set, count: 1, items: [equippedItem.item] };
     }
   }
 

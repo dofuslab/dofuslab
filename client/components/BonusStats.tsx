@@ -1,65 +1,91 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
-import { EllipsisOutlined } from '@ant-design/icons';
+import { jsx, ClassNames } from '@emotion/core';
 import Popover from 'antd/lib/popover';
 import { useTranslation } from 'i18n';
 
-import { item_set } from 'graphql/fragments/__generated__/item';
-import { itemImageBox, itemBox } from 'common/mixins';
+import { BORDER_COLOR, popoverTitleStyle } from 'common/mixins';
+import { customSet } from 'graphql/fragments/__generated__/customSet';
+import { getBonusesFromCustomSet } from 'common/utils';
 
 interface IProps {
-  setBonuses: {
-    [key: string]: {
-      count: number;
-      set: item_set;
-    };
-  };
+  customSet: customSet;
 }
 
-const BonusStats: React.FC<IProps> = ({ setBonuses }) => {
-  const { t } = useTranslation('stat');
+const BonusStats: React.FC<IProps> = ({ customSet }) => {
+  const { t } = useTranslation(['stat', 'common']);
+  const setBonuses = customSet ? getBonusesFromCustomSet(customSet) : {};
   return (
-    <Popover
-      placement="bottom"
-      content={
-        <div css={{ fontSize: '0.75rem' }}>
-          {Object.values(setBonuses)
+    <div css={{ display: 'flex', marginLeft: 8 }}>
+      <ClassNames>
+        {({ css }) =>
+          Object.values(setBonuses)
             .sort(({ set: { name: name1 } }, { set: { name: name2 } }) =>
               name1.localeCompare(name2),
             )
-            .map(({ count, set: { id, name, bonuses } }) => {
+            .map(({ count, set: { id, name, bonuses }, items }) => {
               const filteredBonuses = bonuses.filter(
                 bonus => bonus.numItems === count,
               );
               return (
-                <div key={id}>
-                  <div css={{ fontWeight: 500 }}>
-                    <strong>{name}</strong>
-                  </div>
-                  <div>{count} items</div>
-                  <ul css={{ paddingInlineStart: '16px' }}>
-                    {filteredBonuses.map(bonus => (
-                      <li key={bonus.id}>
-                        {!!bonus.value && !!bonus.stat
-                          ? `${bonus.value} ${t(bonus.stat)}`
-                          : bonus.altStat}
-                      </li>
+                <Popover
+                  key={id}
+                  overlayClassName={css(popoverTitleStyle)}
+                  title={
+                    <div css={{ display: 'flex', alignItems: 'baseline' }}>
+                      <div>{name}</div>
+                    </div>
+                  }
+                  content={
+                    <div>
+                      <div css={{ fontSize: '0.75rem', fontWeight: 500 }}>
+                        {t('NUM_ITEMS', { ns: 'common', num: count })}
+                      </div>
+                      <ul css={{ paddingInlineStart: '16px', marginTop: 8 }}>
+                        {filteredBonuses.map(bonus => (
+                          <li key={bonus.id} css={{ fontSize: '0.75rem' }}>
+                            {!!bonus.value && !!bonus.stat
+                              ? `${bonus.value} ${t(bonus.stat)}`
+                              : bonus.altStat}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  }
+                >
+                  <div
+                    css={{
+                      display: 'flex',
+                      background: 'white',
+                      borderRadius: 4,
+                      border: `1px solid ${BORDER_COLOR}`,
+                      marginLeft: 12,
+                      padding: 4,
+                    }}
+                  >
+                    {items.map(item => (
+                      <div
+                        key={`set-bonus-item-${item.id}`}
+                        css={{
+                          width: 40,
+                          height: 40,
+                          [':not:first-of-type']: { marginLeft: 4 },
+                        }}
+                      >
+                        <img
+                          src={item.imageUrl}
+                          css={{ maxWidth: '100%', maxHeight: '100%' }}
+                        />
+                      </div>
                     ))}
-                  </ul>
-                </div>
+                  </div>
+                </Popover>
               );
-            })}
-        </div>
-      }
-    >
-      <div css={itemBox}>
-        <div css={itemImageBox}>
-          <EllipsisOutlined />
-        </div>
-      </div>
-    </Popover>
+            })
+        }
+      </ClassNames>
+    </div>
   );
 };
 

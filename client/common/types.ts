@@ -1,5 +1,5 @@
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { item_set } from 'graphql/fragments/__generated__/item';
+import { item_set, item } from 'graphql/fragments/__generated__/item';
 import { Stat } from '__generated__/globalTypes';
 import { CheckboxValueType } from 'antd/lib/checkbox/Group';
 
@@ -24,7 +24,7 @@ export type StatCalculator = (
 ) => number;
 
 export type SetCounter = {
-  [key: string]: { count: number; set: item_set };
+  [key: string]: { count: number; set: item_set; items: Array<item> };
 };
 
 export type FilterAction =

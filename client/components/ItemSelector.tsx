@@ -13,7 +13,6 @@ import ItemCard from './ItemCard';
 import { ResponsiveGrid } from 'common/wrappers';
 import ItemsQuery from 'graphql/queries/items.graphql';
 import { items, itemsVariables } from 'graphql/queries/__generated__/items';
-import CurrentlyEquippedItem from './CurrentlyEquippedItem';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { itemCardStyle, BORDER_COLOR } from 'common/mixins';
 import {
@@ -147,13 +146,6 @@ const ItemSelector: React.FC<IProps> = ({
     };
   }, [data]);
 
-  const selectedEquippedItem =
-    customSet && selectedItemSlot
-      ? customSet.equippedItems.find(
-          item => item.slot.id === selectedItemSlot.id,
-        ) || null
-      : null;
-
   return (
     <ResponsiveGrid
       numColumns={[1, 2, 2, 3, 4, 5, 6]}
@@ -174,13 +166,6 @@ const ItemSelector: React.FC<IProps> = ({
               .flatMap(slot => slot.itemTypes),
             isEqual,
           )}
-        />
-      )}
-      {selectedEquippedItem && (
-        <CurrentlyEquippedItem
-          equippedItem={selectedEquippedItem}
-          selectedItemSlotId={selectedItemSlot!.id}
-          customSet={customSet!}
         />
       )}
       {data &&
@@ -209,7 +194,7 @@ const ItemSelector: React.FC<IProps> = ({
                 border: `1px solid ${BORDER_COLOR}`,
               }}
             >
-              <Skeleton loading title active paragraph={{ rows: 8 }}></Skeleton>
+              <Skeleton loading title active paragraph={{ rows: 6 }}></Skeleton>
             </Card>
           ))}
       <Waypoint

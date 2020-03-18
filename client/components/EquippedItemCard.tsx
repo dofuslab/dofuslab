@@ -15,14 +15,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { useTranslation } from 'i18n';
-import {
-  selected,
-  itemCardStyle,
-  itemBoxDimensions,
-  blue6,
-} from 'common/mixins';
+import { itemCardStyle, blue6 } from 'common/mixins';
 import { useDeleteItemMutation, checkAuthentication } from 'common/utils';
-import { ItemStatsList, Badge, TruncatableText } from 'common/wrappers';
+import { ItemStatsList } from 'common/wrappers';
 import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
 import setEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.graphql';
@@ -31,7 +26,6 @@ import {
   setEquippedItemExoVariables,
 } from 'graphql/mutations/__generated__/setEquippedItemExo';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import MageModal from './MageModal';
 
 const quickMageStats = [
   {
@@ -59,18 +53,20 @@ const actionWrapper = {
 
 interface IProps {
   equippedItem: customSet_customSetById_equippedItems;
-  selectedItemSlotId: string;
+  itemSlotId: string;
   customSet: customSet;
+  openMageModal: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
-const CurrentlyEquippedItem: React.FC<IProps> = ({
+const EquippedItemCard: React.FC<IProps> = ({
   equippedItem,
-  selectedItemSlotId,
+  itemSlotId,
   customSet,
+  openMageModal,
 }) => {
   const { t } = useTranslation(['common', 'mage', 'stat']);
 
-  const deleteItem = useDeleteItemMutation(selectedItemSlotId, customSet);
+  const deleteItem = useDeleteItemMutation(itemSlotId, customSet);
 
   const [quickExo] = useMutation<
     setEquippedItemExo,
@@ -100,6 +96,7 @@ const CurrentlyEquippedItem: React.FC<IProps> = ({
 
   const onQuickMage = React.useCallback(
     async (e: React.MouseEvent<HTMLDivElement>) => {
+      e.stopPropagation();
       const { stat: statToExo } = e.currentTarget.dataset;
       const ok = await checkAuthentication(client, t, customSet);
       if (!ok) return;
@@ -114,14 +111,6 @@ const CurrentlyEquippedItem: React.FC<IProps> = ({
     [quickExo, equippedItem, client, customSet, t],
   );
 
-  const [mageModalVisible, setMageModalVisible] = React.useState(false);
-  const openMageModal = React.useCallback(() => {
-    setMageModalVisible(true);
-  }, [setMageModalVisible]);
-  const closeMageModal = React.useCallback(() => {
-    setMageModalVisible(false);
-  }, [setMageModalVisible]);
-
   const quickMageMenu = quickMageStats.map(({ stat, faIcon }) => {
     const hasExo = equippedItem.exos.some(
       ({ stat: exoStat }) => stat === exoStat,
@@ -133,7 +122,8 @@ const CurrentlyEquippedItem: React.FC<IProps> = ({
           ns: 'mage',
           stat: t(stat, { ns: 'stat' }),
         })}
-        align={{ offset: [0, ACTION_PADDING] }}
+        align={{ offset: [0, -ACTION_PADDING] }}
+        placement="bottom"
       >
         <div
           css={{ color: hasExo ? blue6 : 'inherit', ...actionWrapper }}
@@ -147,65 +137,48 @@ const CurrentlyEquippedItem: React.FC<IProps> = ({
   });
 
   return (
-    <>
-      <Card
-        size="small"
-        title={
-          <div css={{ display: 'flex', alignItems: 'center' }}>
-            <TruncatableText>{equippedItem.item.name}</TruncatableText>{' '}
-            <Badge>{t('EQUIPPED')}</Badge>
-            <div
-              css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}
-            >
-              {t('LEVEL_ABBREVIATION')} {equippedItem.item.level}
-            </div>
+    <Card
+      size="small"
+      css={css({
+        ...itemCardStyle,
+        display: 'flex',
+        flexDirection: 'column',
+        ['.ant-card-body']: {
+          flex: '1',
+        },
+        border: 'none',
+        borderRadius: 4,
+        minWidth: 256,
+      })}
+      actions={[
+        ...quickMageMenu,
+        <Tooltip
+          title={t('MAGE', { ns: 'mage' })}
+          align={{ offset: [0, -ACTION_PADDING] }}
+          placement="bottom"
+        >
+          <div css={actionWrapper} onClick={openMageModal}>
+            <FontAwesomeIcon icon={faMagic} />
           </div>
-        }
-        css={css({
-          ...itemCardStyle,
-          ...selected,
-          display: 'flex',
-          flexDirection: 'column',
-          ['.ant-card-body']: {
-            flex: '1',
-          },
-        })}
-        actions={[
-          ...quickMageMenu,
-          <Tooltip
-            title={t('MAGE', { ns: 'mage' })}
-            align={{ offset: [0, ACTION_PADDING] }}
-          >
-            <div css={actionWrapper} onClick={openMageModal}>
-              <FontAwesomeIcon icon={faMagic} />
-            </div>
-          </Tooltip>,
-          <Tooltip title={t('DELETE')} align={{ offset: [0, ACTION_PADDING] }}>
-            <div css={actionWrapper} onClick={onDelete}>
-              <FontAwesomeIcon icon={faTrashAlt} onClick={onDelete} />
-            </div>
-          </Tooltip>,
-        ]}
-      >
-        <img
-          src={equippedItem.item.imageUrl}
-          css={{ float: 'right', ...itemBoxDimensions }}
-        />
-        <ItemStatsList
-          item={equippedItem.item}
-          css={{ paddingLeft: 16, marginBottom: 0 }}
-          exos={equippedItem.exos}
-        />
-      </Card>
-      <MageModal
-        visible={mageModalVisible}
-        equippedItem={equippedItem}
-        closeMageModal={closeMageModal}
-        key={`${equippedItem.id}-${equippedItem.item.id}-${equippedItem.exos.length}`}
-        customSet={customSet}
+        </Tooltip>,
+        <Tooltip
+          title={t('DELETE')}
+          align={{ offset: [0, -ACTION_PADDING] }}
+          placement="bottom"
+        >
+          <div css={actionWrapper} onClick={onDelete}>
+            <FontAwesomeIcon icon={faTrashAlt} onClick={onDelete} />
+          </div>
+        </Tooltip>,
+      ]}
+    >
+      <ItemStatsList
+        item={equippedItem.item}
+        css={{ paddingLeft: 16, marginBottom: 0 }}
+        exos={equippedItem.exos}
       />
-    </>
+    </Card>
   );
 };
 
-export default CurrentlyEquippedItem;
+export default EquippedItemCard;

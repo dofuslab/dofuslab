@@ -28,7 +28,7 @@ const { Option } = Select;
 interface IProps {
   visible: boolean;
   equippedItem: customSet_customSetById_equippedItems;
-  closeMageModal: () => void;
+  closeMageModal: (e: React.MouseEvent<HTMLElement>) => void;
   customSet: customSet;
 }
 
@@ -182,30 +182,35 @@ const MageModal: React.FC<IProps> = ({
 
   const client = useApolloClient();
 
-  const onOk = React.useCallback(async () => {
-    const ok = checkAuthentication(client, t, customSet);
-    if (!ok) return;
-    mutate();
-    closeMageModal();
-  }, [mutate, closeMageModal, client, t, customSet]);
+  const onOk = React.useCallback(
+    async (e: React.MouseEvent<HTMLElement>) => {
+      e.stopPropagation();
+      const ok = checkAuthentication(client, t, customSet);
+      if (!ok) return;
+      mutate();
+      closeMageModal(e);
+    },
+    [mutate, closeMageModal, client, t, customSet],
+  );
 
   return (
-    <Modal
-      visible={visible}
-      title={t('MAGE_MODAL_TITLE', {
-        ns: 'mage',
-        itemName: equippedItem.item.name,
-      })}
-      bodyStyle={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-      onCancel={closeMageModal}
-      onOk={onOk}
-    >
-      <ClassNames>
-        {({ css }) => (
+    <ClassNames>
+      {({ css }) => (
+        <Modal
+          visible={visible}
+          title={t('MAGE_MODAL_TITLE', {
+            ns: 'mage',
+            itemName: equippedItem.item.name,
+          })}
+          bodyStyle={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+          onCancel={closeMageModal}
+          onOk={onOk}
+          zIndex={1031} // higher than popover (1030)
+        >
           <div
             css={{
               fontSize: '0.75rem',
@@ -308,9 +313,9 @@ const MageModal: React.FC<IProps> = ({
               </a>
             </div>
           </div>
-        )}
-      </ClassNames>
-    </Modal>
+        </Modal>
+      )}
+    </ClassNames>
   );
 };
 

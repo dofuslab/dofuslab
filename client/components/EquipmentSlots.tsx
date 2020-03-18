@@ -13,8 +13,6 @@ import { customSet_customSetById_equippedItems } from 'graphql/queries/__generat
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 
 import EquippedItem from './EquippedItem';
-import { getBonusesFromCustomSet } from 'common/utils';
-import BonusStats from './BonusStats';
 import { mq } from 'common/constants';
 
 interface IProps {
@@ -41,8 +39,6 @@ const EquipmentSlots: React.FC<IProps> = ({
       {},
     ) ?? {};
 
-  const setBonuses = customSet ? getBonusesFromCustomSet(customSet) : {};
-
   return (
     <div
       css={{
@@ -64,9 +60,6 @@ const EquipmentSlots: React.FC<IProps> = ({
           customSet={customSet}
         />
       ))}
-      {!!Object.keys(setBonuses).length && (
-        <BonusStats setBonuses={setBonuses} />
-      )}
     </div>
   );
 };

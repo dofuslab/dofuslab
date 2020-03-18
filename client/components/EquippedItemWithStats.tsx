@@ -4,7 +4,6 @@ import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
 import Popover from 'antd/lib/popover';
 
-import { ItemStatsList } from 'common/wrappers';
 import {
   popoverTitleStyle,
   itemImageBox,
@@ -19,6 +18,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagic, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useDeleteItemMutation } from 'common/utils';
 import { useTranslation } from 'i18n';
+import EquippedItemCard from './EquippedItemCard';
 
 const wrapperStyles = {
   position: 'absolute' as 'absolute',
@@ -37,15 +37,17 @@ const wrapperStyles = {
 interface IProps {
   equippedItem: customSet_equippedItems;
   selected: boolean;
-  deletable: boolean;
   customSet: customSet;
+  itemSlotId: string;
+  openMageModal: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
-const ItemWithStats: React.FC<IProps> = ({
+const EquippedItemWithStats: React.FC<IProps> = ({
   equippedItem,
   selected,
-  deletable,
   customSet,
+  itemSlotId,
+  openMageModal,
 }) => {
   const deleteItem = useDeleteItemMutation(equippedItem.slot.id, customSet);
   const onDelete = React.useCallback(
@@ -74,14 +76,17 @@ const ItemWithStats: React.FC<IProps> = ({
               </div>
             }
             content={
-              equippedItem.item.stats.length > 0 && (
-                <ItemStatsList
-                  item={equippedItem.item}
-                  exos={equippedItem.exos}
-                />
-              )
+              <EquippedItemCard
+                equippedItem={equippedItem}
+                itemSlotId={itemSlotId}
+                customSet={customSet}
+                openMageModal={openMageModal}
+              />
             }
-            overlayClassName={css(popoverTitleStyle)}
+            overlayClassName={css({
+              ...popoverTitleStyle,
+              ['.ant-popover-inner-content']: { padding: 0 },
+            })}
           >
             <div
               css={{
@@ -110,11 +115,9 @@ const ItemWithStats: React.FC<IProps> = ({
                   }}
                 />
               )}
-              {deletable && (
-                <div className={wrapperClass} onClick={onDelete}>
-                  <FontAwesomeIcon icon={faTimes} />
-                </div>
-              )}
+              <div className={wrapperClass} onClick={onDelete}>
+                <FontAwesomeIcon icon={faTimes} />
+              </div>
             </div>
           </Popover>
         );
@@ -123,4 +126,4 @@ const ItemWithStats: React.FC<IProps> = ({
   );
 };
 
-export default ItemWithStats;
+export default EquippedItemWithStats;
