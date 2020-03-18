@@ -20,6 +20,7 @@ import {
 } from 'graphql/mutations/__generated__/editCustomSetStats';
 import editCustomSetStatsMutation from 'graphql/mutations/editCustomSetStats.graphql';
 import { checkAuthentication } from 'common/utils';
+import { useRouter } from 'next/router';
 
 interface IProps {
   customSet?: customSet | null;
@@ -223,15 +224,26 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
 
   const client = useApolloClient();
 
+  const router = useRouter();
+
   React.useEffect(() => {
     const checkAndMutate = async () => {
       const ok = await checkAuthentication(client, t, customSet);
       if (!ok) return;
-      mutate();
+      const { data } = await mutate();
+      if (data?.editCustomSetStats?.customSet.id !== customSet?.id) {
+        router.replace(
+          `/?id=${data?.editCustomSetStats?.customSet.id}`,
+          `/set/${data?.editCustomSetStats?.customSet.id}`,
+          {
+            shallow: true,
+          },
+        );
+      }
     };
 
     checkAndMutate();
-  }, [mutate, debouncedStatState, client, t, customSet]);
+  }, [mutate, debouncedStatState, client, t, customSet, router]);
 
   return (
     <div

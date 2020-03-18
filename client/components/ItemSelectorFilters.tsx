@@ -181,7 +181,11 @@ const ItemSelectorFilters: React.FC<IProps> = ({
             )}
           </ClassNames>
           <Button
-            css={{ fontSize: '0.75rem', marginLeft: 20 }}
+            css={{
+              fontSize: '0.75rem',
+              marginLeft: 12,
+              [mq[4]]: { marginLeft: 20 },
+            }}
             onClick={onResetFilters}
           >
             <FontAwesomeIcon icon={faRedo} css={{ marginRight: 8 }} />
