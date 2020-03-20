@@ -1,0 +1,6638 @@
+[
+  {
+    "dofusID": "12541",
+    "name": {
+      "en": "Madreggon",
+      "fr": "Dragouf",
+      "de": "Dracstar",
+      "es": "Dragrillado",
+      "it": "Dragopazzo",
+      "pt": "Dragoloko"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 100,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only and",
+          "Know the emote"
+        ],
+        "fr": [
+          "Etre abonné et",
+          "Connaître l'attitude Super-héros"
+        ],
+        "de": [
+          "Abonniert sein und",
+          "Emote kennen"
+        ],
+        "es": [
+          "Estar abonado y",
+          "Conocer la actitud"
+        ],
+        "it": [
+          "Essere abbonato e",
+          "Conoscere l'emote"
+        ],
+        "pt": [
+          "Ser assinante e",
+          "Conhecer o emote"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121000.png"
+  },
+  {
+    "dofusID": "11950",
+    "name": {
+      "en": "Kanigloopy",
+      "fr": "Kanigloups",
+      "de": "Kanitubby",
+      "es": "Kaniglúps",
+      "it": "Kanigloops",
+      "pt": "Kaniglups"
+    },
+    "itemType": "Pet",
+    "setID": "267",
+    "level": 80,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18073.png"
+  },
+  {
+    "dofusID": "11955",
+    "name": {
+      "en": "Bulbisou",
+      "fr": "Bulbisou",
+      "de": "Bulbikuss",
+      "es": "Bulbesor",
+      "it": "Bulbacino",
+      "pt": "Bulbitoca"
+    },
+    "itemType": "Pet",
+    "setID": "268",
+    "level": 80,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18074.png"
+  },
+  {
+    "dofusID": "11971",
+    "name": {
+      "en": "Teddybearbarian",
+      "fr": "Bisouglours",
+      "de": "Gummibarbär",
+      "es": "Besosete",
+      "it": "Bacinmielorso",
+      "pt": "Amiglurso"
+    },
+    "itemType": "Pet",
+    "setID": "266",
+    "level": 80,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18076.png"
+  },
+  {
+    "dofusID": "11966",
+    "name": {
+      "en": "Brockheart",
+      "fr": "Blérodoudou",
+      "de": "Daxchibäre",
+      "es": "Tejaluche",
+      "it": "Tassolottolo",
+      "pt": "Texofo"
+    },
+    "itemType": "Pet",
+    "setID": "269",
+    "level": 80,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18075.png"
+  },
+  {
+    "dofusID": "9594",
+    "name": {
+      "en": "The Godfather's Gobtubby",
+      "fr": "Bouloute du Parrain",
+      "de": "Fresskügelchen des Paten",
+      "es": "Boluto del padrino",
+      "it": "Palladineve del Padrino",
+      "pt": "Boloto do Padrinho"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18046.png"
+  },
+  {
+    "dofusID": "10106",
+    "name": {
+      "en": "Vampyrina",
+      "fr": "Vampyrette",
+      "de": "Vampyrella",
+      "es": "Vampyrilla",
+      "it": "Vampyretta",
+      "pt": "Vampyrina"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18053.png"
+  },
+  {
+    "dofusID": "10544",
+    "name": {
+      "en": "Jellufo",
+      "fr": "Gelutin",
+      "de": "Gelutine",
+      "es": "Gelutín",
+      "it": "Gellufo",
+      "pt": "Jellufo"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18055.png"
+  },
+  {
+    "dofusID": "11015",
+    "name": {
+      "en": "Gupin",
+      "fr": "Gupin",
+      "de": "Gnupi",
+      "es": "Gupin",
+      "it": "Gupin",
+      "pt": "Gupin"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18067.png"
+  },
+  {
+    "dofusID": "12009",
+    "name": {
+      "en": "Platypus",
+      "fr": "Platypus",
+      "de": "Platypus",
+      "es": "Orni",
+      "it": "Ornitorinco",
+      "pt": "Ornito"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18077.png"
+  },
+  {
+    "dofusID": "13603",
+    "name": {
+      "en": "Razorbuck",
+      "fr": "Balafreux",
+      "de": "Schreckschmiss",
+      "es": "Suskrofa",
+      "it": "Sfregiorrendo",
+      "pt": "Cicatorpe"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121004.png"
+  },
+  {
+    "dofusID": "14854",
+    "name": {
+      "en": "Brulay",
+      "fr": "Brûlih",
+      "de": "Reuef",
+      "es": "Hardo",
+      "it": "Kwak Scirocco",
+      "pt": "Kema"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121008.png"
+  },
+  {
+    "dofusID": "15243",
+    "name": {
+      "en": "Drhexler",
+      "fr": "Phorror",
+      "de": "Griesbrabbel",
+      "es": "Perforror",
+      "it": "Talporrore",
+      "pt": "Perforror"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121010.png"
+  },
+  {
+    "dofusID": "15978",
+    "name": {
+      "en": "Blokus",
+      "fr": "Blokus",
+      "de": "Blokus-Pokus",
+      "es": "Blokus",
+      "it": "Blocco",
+      "pt": "Blokus"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18104.png"
+  },
+  {
+    "dofusID": "16116",
+    "name": {
+      "en": "Eliom",
+      "fr": "Eliôme",
+      "de": "Eliotöffelchen",
+      "es": "Selotasma",
+      "it": "Eliotasma",
+      "pt": "Eliotasma"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18105.png"
+  },
+  {
+    "dofusID": "18088",
+    "name": {
+      "en": "Skrot",
+      "fr": "Kougnard",
+      "de": "Klötmuus",
+      "es": "Mortiélago",
+      "it": "Svampirello",
+      "pt": "Katomor"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121014.png"
+  },
+  {
+    "dofusID": "19044",
+    "name": {
+      "en": "Alabaster Skrot",
+      "fr": "Kougnard Albâtre",
+      "de": "Alabaster-Klötmuus",
+      "es": "Mortiélago alabastrado",
+      "it": "Svampirello Alabastro",
+      "pt": "Katomor de Alabastro"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121019.png"
+  },
+  {
+    "dofusID": "9619",
+    "name": {
+      "en": "Tiwabbit Wosungwee",
+      "fr": "Tiwabbit Kiafin",
+      "de": "Tiwabbit Ischungrig",
+      "es": "Pekewabbit hambriento",
+      "it": "Piccolo Wabbit Keafam",
+      "pt": "Pekewabbit Kofome"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18051.png"
+  },
+  {
+    "dofusID": "13465",
+    "name": {
+      "en": "Boarhog",
+      "fr": "Sakochère",
+      "de": "Hauknotscha",
+      "es": "Sakóquero",
+      "it": "Zainghialocero",
+      "pt": "Javóquero"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121003.png"
+  },
+  {
+    "dofusID": "13679",
+    "name": {
+      "en": "Toucantankerous",
+      "fr": "Toukancre",
+      "de": "Tukanix",
+      "es": "Tukankón",
+      "it": "Tucaos",
+      "pt": "Tukaos"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18092.png"
+  },
+  {
+    "dofusID": "14833",
+    "name": {
+      "en": "Sirocco",
+      "fr": "Siroko",
+      "de": "Schirocko",
+      "es": "Siroko",
+      "it": "Kwak Libeccio",
+      "pt": "Siroko"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121005.png"
+  },
+  {
+    "dofusID": "14838",
+    "name": {
+      "en": "Dehluge",
+      "fr": "Dehluge",
+      "de": "Ressaw",
+      "es": "Xaparón",
+      "it": "Kwak Diluvio",
+      "pt": "Alagah"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121006.png"
+  },
+  {
+    "dofusID": "17023",
+    "name": {
+      "en": "Bontick",
+      "fr": "Bontique",
+      "de": "Bontecke",
+      "es": "Bontapata",
+      "it": "Bonzecca",
+      "pt": "Bontarrapato"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18109.png"
+  },
+  {
+    "dofusID": "17028",
+    "name": {
+      "en": "Brakarina",
+      "fr": "Brâkarien",
+      "de": "Brâkmilbe",
+      "es": "Brakmákaro",
+      "it": "Brakaro",
+      "pt": "Brákaro"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18110.png"
+  },
+  {
+    "dofusID": "18626",
+    "name": {
+      "en": "Dauge",
+      "fr": "Dauge",
+      "de": "Dotsch",
+      "es": "Dog",
+      "it": "Doggy",
+      "pt": "Dógui"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18120.png"
+  },
+  {
+    "dofusID": "19286",
+    "name": {
+      "en": "Gobbalator",
+      "fr": "Bouftor",
+      "de": "Frestor",
+      "es": "Jalacástor",
+      "it": "Pappacastore",
+      "pt": "Pacastor"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121021.png"
+  },
+  {
+    "dofusID": "19531",
+    "name": {
+      "en": "Molekound",
+      "fr": "Molosk",
+      "de": "Molocher",
+      "es": "Molocán",
+      "it": "Molocco",
+      "pt": "Molosk"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18147.png"
+  },
+  {
+    "dofusID": "8151",
+    "name": {
+      "en": "Gobtubby",
+      "fr": "Bouloute",
+      "de": "Fresskügelchen",
+      "es": "Boluto",
+      "it": "Palladineve",
+      "pt": "Boloto"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18035.png"
+  },
+  {
+    "dofusID": "9620",
+    "name": {
+      "en": "Miniminotot",
+      "fr": "Miniminotot",
+      "de": "Miniminotot",
+      "es": "Miniminotot",
+      "it": "Miniminotot",
+      "pt": "Miniminotot"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18049.png"
+  },
+  {
+    "dofusID": "9623",
+    "name": {
+      "en": "Crocodyl",
+      "fr": "Crocodaille",
+      "de": "Crocodyll",
+      "es": "Cocodrail",
+      "it": "Coccodrail",
+      "pt": "Crocodyl"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18047.png"
+  },
+  {
+    "dofusID": "15110",
+    "name": {
+      "en": "Bowzai",
+      "fr": "Chachyène",
+      "de": "Maunzyäne",
+      "es": "Miaumiena",
+      "it": "Sciakiena",
+      "pt": "Miawyena"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18094.png"
+  },
+  {
+    "dofusID": "19139",
+    "name": {
+      "en": "Thing",
+      "fr": "La Chose",
+      "de": "Das Ding",
+      "es": "Cosa",
+      "it": "Cosa",
+      "pt": "Mãozinha"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18139.png"
+  },
+  {
+    "dofusID": "19291",
+    "name": {
+      "en": "Gobbalux",
+      "fr": "Bouflux",
+      "de": "Freslux",
+      "es": "Jalapólux",
+      "it": "Pappolluce",
+      "pt": "Papólux"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121022.png"
+  },
+  {
+    "dofusID": "6978",
+    "name": {
+      "en": "Peki Peki",
+      "fr": "Péki",
+      "de": "Péki",
+      "es": "Peki",
+      "it": "Peki",
+      "pt": "Peki"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18012.png"
+  },
+  {
+    "dofusID": "7518",
+    "name": {
+      "en": "Ghast",
+      "fr": "Fotome",
+      "de": "Phantöffelchen",
+      "es": "Fotasma",
+      "it": "Fotasma",
+      "pt": "Fotasma"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18013.png"
+  },
+  {
+    "dofusID": "13182",
+    "name": {
+      "en": "Karmeleon",
+      "fr": "Kramkram",
+      "de": "Chamcham",
+      "es": "Kramkram",
+      "it": "Kramkram",
+      "pt": "Kramkram"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121002.png"
+  },
+  {
+    "dofusID": "14827",
+    "name": {
+      "en": "Kwyness",
+      "fr": "Kwaltess",
+      "de": "Kwackoheit",
+      "es": "Kwalteza",
+      "it": "Re Kwak",
+      "pt": "Kwalteza"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121009.png"
+  },
+  {
+    "dofusID": "15254",
+    "name": {
+      "en": "Drhellbert",
+      "fr": "Phortiche",
+      "de": "Grieskribbel",
+      "es": "Perforábil",
+      "it": "Talprospero",
+      "pt": "Perfofo"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18097.png"
+  },
+  {
+    "dofusID": "15469",
+    "name": {
+      "en": "Homlett",
+      "fr": "Homlett",
+      "de": "Homlet",
+      "es": "Jamlet",
+      "it": "Tescamleto",
+      "pt": "Homlett"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18099.png"
+  },
+  {
+    "dofusID": "12133",
+    "name": {
+      "en": "Solid Plissken",
+      "fr": "Serpète",
+      "de": "Schlingelchen",
+      "es": "Serpeta",
+      "it": "Serpino",
+      "pt": "Serpeta"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18079.png"
+  },
+  {
+    "dofusID": "12177",
+    "name": {
+      "en": "Tofume",
+      "fr": "Tofüm",
+      "de": "Tofuzius",
+      "es": "Tofuma",
+      "it": "Malefico Piccolo Tofu",
+      "pt": "Tofuma"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18078.png"
+  },
+  {
+    "dofusID": "12963",
+    "name": {
+      "en": "Slayhound",
+      "fr": "Hurledent",
+      "de": "Schreizahn",
+      "es": "Dekarbón",
+      "it": "Tempestoso",
+      "pt": "Metiodent"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121001.png"
+  },
+  {
+    "dofusID": "14848",
+    "name": {
+      "en": "Kompost",
+      "fr": "Kompost",
+      "de": "Kompost",
+      "es": "Kompost",
+      "it": "Kwak Frana",
+      "pt": "Oduba"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121007.png"
+  },
+  {
+    "dofusID": "16295",
+    "name": {
+      "en": "Mastostroke",
+      "fr": "Moumoute",
+      "de": "Wuschel",
+      "es": "Peluso",
+      "it": "Maodente",
+      "pt": "Juba"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18108.png"
+  },
+  {
+    "dofusID": "17379",
+    "name": {
+      "en": "Groogler",
+      "fr": "Titard",
+      "de": "Quappler",
+      "es": "Pekenacuajo",
+      "it": "Gruglo",
+      "pt": "Girinim"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18113.png"
+  },
+  {
+    "dofusID": "17833",
+    "name": {
+      "en": "Ratcham",
+      "fr": "Titcham",
+      "de": "Ratzchen",
+      "es": "Pekatcham",
+      "it": "Ticham",
+      "pt": "Ticham"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18117.png"
+  },
+  {
+    "dofusID": "1748",
+    "name": {
+      "en": "Wabbit",
+      "fr": "Wabbit",
+      "de": "Wabbit",
+      "es": "Wabbit",
+      "it": "Wabbit",
+      "pt": "Wabbit"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18007.png"
+  },
+  {
+    "dofusID": "7523",
+    "name": {
+      "en": "Ginger Bow Meowette",
+      "fr": "Chachatte Rousse",
+      "de": "Rote Maunzmiez",
+      "es": "Miaumiau pelirroja",
+      "it": "Maomicina Rossa",
+      "pt": "Miawa ruiva"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18040.png"
+  },
+  {
+    "dofusID": "8561",
+    "name": {
+      "en": "Pandawa Cub",
+      "fr": "Bébé Pandawa",
+      "de": "Pandawa-Baby",
+      "es": "Bebé pandawa",
+      "it": "Bebé Pandawa",
+      "pt": "Bebê Pandawa"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18042.png"
+  },
+  {
+    "dofusID": "8677",
+    "name": {
+      "en": "Ross",
+      "fr": "Ross",
+      "de": "Surr",
+      "es": "Ross",
+      "it": "Ross",
+      "pt": "Ross"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18044.png"
+  },
+  {
+    "dofusID": "10865",
+    "name": {
+      "en": "Tofrazzle",
+      "fr": "Tofoudre",
+      "de": "Blitzofu",
+      "es": "Tofucilazo",
+      "it": "Tofulmine",
+      "pt": "Tofulminado"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18060.png"
+  },
+  {
+    "dofusID": "11765",
+    "name": {
+      "en": "Cromigmite",
+      "fr": "Cromeugnon",
+      "de": "Cromagnum",
+      "es": "Cromiñoncito",
+      "it": "Cromognomo",
+      "pt": "Cromignomo"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18068.png"
+  },
+  {
+    "dofusID": "11858",
+    "name": {
+      "en": "Plump Tofurby",
+      "fr": "Gwo Tofu Ventripotent",
+      "de": "Gepolsterter Tofurby",
+      "es": "Gwan tofu gowdinflón",
+      "it": "Gwo Tofu Panzeton",
+      "pt": "Tofu Panceps Gowdo"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18072.png"
+  },
+  {
+    "dofusID": "13099",
+    "name": {
+      "en": "Plop",
+      "fr": "Ploup",
+      "de": "Suptoko",
+      "es": "Pulp",
+      "it": "Plup",
+      "pt": "Pulp"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18086.png"
+  },
+  {
+    "dofusID": "13667",
+    "name": {
+      "en": "Bulbutting",
+      "fr": "Bulbouture",
+      "de": "Bulbistecklim",
+      "es": "Bulbeskeje",
+      "it": "Bulbimba",
+      "pt": "Bulbenxerta"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18089.png"
+  },
+  {
+    "dofusID": "15249",
+    "name": {
+      "en": "Snoofle",
+      "fr": "Snouffle",
+      "de": "Schnuffel",
+      "es": "Snoofle",
+      "it": "Annusatore",
+      "pt": "Snufle"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18098.png"
+  },
+  {
+    "dofusID": "2074",
+    "name": {
+      "en": "Fire Bwak",
+      "fr": "Bwak de Feu",
+      "de": "Feuer-Bwack",
+      "es": "Bwak de fuego",
+      "it": "Bwak di Fuoco",
+      "pt": "Bwak de Fogo"
+    },
+    "itemType": "Pet",
+    "setID": "2",
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18003.png"
+  },
+  {
+    "dofusID": "2077",
+    "name": {
+      "en": "Earth Bwak",
+      "fr": "Bwak de Terre",
+      "de": "Erd-Bwack",
+      "es": "Bwak de tierra",
+      "it": "Bwak di Terra",
+      "pt": "Bwak de Terra"
+    },
+    "itemType": "Pet",
+    "setID": "14",
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18005.png"
+  },
+  {
+    "dofusID": "7414",
+    "name": {
+      "en": "Little White Bow Meow",
+      "fr": "Petit Chacha Blanc",
+      "de": "Kleine weiße Maunzmiez",
+      "es": "Pequeño miaumiau blanco",
+      "it": "Piccolo Maomao Bianco",
+      "pt": "Pequeno Miaw Branco"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18009.png"
+  },
+  {
+    "dofusID": "7524",
+    "name": {
+      "en": "Tabby Bow Meow",
+      "fr": "Chacha Tigré",
+      "de": "Getigerte Maunzmiez",
+      "es": "Miaumiau atigrado",
+      "it": "Maomao Tigrato",
+      "pt": "Miaw tigrado"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18041.png"
+  },
+  {
+    "dofusID": "7703",
+    "name": {
+      "en": "Baby Crowdzilla",
+      "fr": "Vilain Petit Corbac",
+      "de": "Kleiner böser Rabling",
+      "es": "Cuerbokito Feo",
+      "it": "Cattivo Piccolo Cuervoc",
+      "pt": "Corvoquinho Feio"
+    },
+    "itemType": "Pet",
+    "setID": "8",
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18018.png"
+  },
+  {
+    "dofusID": "7710",
+    "name": {
+      "en": "Pink Piwin",
+      "fr": "Pioute rose",
+      "de": "Rosa Piepmatz",
+      "es": "Piotín rosa",
+      "it": "Pìut Rosa",
+      "pt": "Piuta Rosa"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18024.png"
+  },
+  {
+    "dofusID": "7711",
+    "name": {
+      "en": "Red Piwin",
+      "fr": "Pioute rouge",
+      "de": "Roter Piepmatz",
+      "es": "Piotín rojo",
+      "it": "Pìut Rosso",
+      "pt": "Piuta Vermelho"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18025.png"
+  },
+  {
+    "dofusID": "7911",
+    "name": {
+      "en": "Bloody Koalak",
+      "fr": "Koalak Sanguin",
+      "de": "Blutrünstiger Koalak",
+      "es": "Koalak sanguíneo",
+      "it": "Koalak Sanguigno",
+      "pt": "Koalak Sanguíneo"
+    },
+    "itemType": "Pet",
+    "setID": "46",
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18030.png"
+  },
+  {
+    "dofusID": "8693",
+    "name": {
+      "en": "Feanor",
+      "fr": "Fëanor",
+      "de": "Felidan",
+      "es": "Feanor",
+      "it": "Feanor",
+      "pt": "Feanor"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18045.png"
+  },
+  {
+    "dofusID": "10107",
+    "name": {
+      "en": "Borbat",
+      "fr": "Chauffe-souris",
+      "de": "Fleddermaus",
+      "es": "Murciego",
+      "it": "Pipì-Strello",
+      "pt": "Borcego"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18054.png"
+  },
+  {
+    "dofusID": "10802",
+    "name": {
+      "en": "Golden Dragoone",
+      "fr": "Dragoune Dorée",
+      "de": "Goldener Dragooner",
+      "es": "Dragún dorado",
+      "it": "Dragona Dorata",
+      "pt": "Draguna Dourada"
+    },
+    "itemType": "Pet",
+    "setID": "151",
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18057.png"
+  },
+  {
+    "dofusID": "10864",
+    "name": {
+      "en": "Smush",
+      "fr": "Meuch",
+      "de": "Pfefferling",
+      "es": "Miscaludo",
+      "it": "Fuuung Fuuung",
+      "pt": "Coguzim"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18059.png"
+  },
+  {
+    "dofusID": "11011",
+    "name": {
+      "en": "Brindled Minifoux",
+      "fr": "Tifoux Tigré",
+      "de": "Gescheckter Minifux",
+      "es": "Pekefux atigrado",
+      "it": "Tifux Tigrato",
+      "pt": "Pekefox Tigrado"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18063.png"
+  },
+  {
+    "dofusID": "11012",
+    "name": {
+      "en": "Brindled Bow Wow",
+      "fr": "Chienchien Tigré",
+      "de": "Gescheckter Schnuffwuff",
+      "es": "Wauwau atigrado",
+      "it": "Baubau Tigrato",
+      "pt": "Awaw malhado"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18064.png"
+  },
+  {
+    "dofusID": "11013",
+    "name": {
+      "en": "Black Quaquack",
+      "fr": "Kouin-Kouin Noir",
+      "de": "Schwarzes Quark-Quak",
+      "es": "Kuakuá negro",
+      "it": "Quaquà Nero",
+      "pt": "Quaquá negro"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18065.png"
+  },
+  {
+    "dofusID": "11771",
+    "name": {
+      "en": "Jellifrost",
+      "fr": "Médugivre",
+      "de": "Frostquall",
+      "es": "Fridusa",
+      "it": "Ghiaccedusa",
+      "pt": "Gelusa"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18069.png"
+  },
+  {
+    "dofusID": "12982",
+    "name": {
+      "en": "Mouselet",
+      "fr": "Sourisette",
+      "de": "Pima-Daumaus",
+      "es": "Raratontilla",
+      "it": "Topolinottina",
+      "pt": "Ratazete"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18082.png"
+  },
+  {
+    "dofusID": "14545",
+    "name": {
+      "en": "Fosfor",
+      "fr": "Fosfo",
+      "de": "Fosfo",
+      "es": "Fosfo",
+      "it": "Fosfo",
+      "pt": "Fosfo"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/164020.png"
+  },
+  {
+    "dofusID": "16276",
+    "name": {
+      "en": "Bloalak",
+      "fr": "Bloalak",
+      "de": "Bloalak",
+      "es": "Bloalak",
+      "it": "Blualak",
+      "pt": "Bloalak"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18107.png"
+  },
+  {
+    "dofusID": "17511",
+    "name": {
+      "en": "Minikron",
+      "fr": "Minikrone",
+      "de": "Miniainkhürn",
+      "es": "Minikornio",
+      "it": "Minicorno",
+      "pt": "Minikrônio"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18114.png"
+  },
+  {
+    "dofusID": "2075",
+    "name": {
+      "en": "Water Bwak",
+      "fr": "Bwak d'Eau",
+      "de": "Wasser-Bwack",
+      "es": "Bwak de agua",
+      "it": "Bwak di Acqua",
+      "pt": "Bwak de Água"
+    },
+    "itemType": "Pet",
+    "setID": "13",
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18002.png"
+  },
+  {
+    "dofusID": "6717",
+    "name": {
+      "en": "Black Bow Wow",
+      "fr": "Chienchien Noir",
+      "de": "Schwarzer SchnuffWuff",
+      "es": "Wauwau negro",
+      "it": "Baubau Nero",
+      "pt": "Awaw Negro"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18010.png"
+  },
+  {
+    "dofusID": "7519",
+    "name": {
+      "en": "Pink Dragoone",
+      "fr": "Dragoune Rose",
+      "de": "Rosa Dragooner",
+      "es": "Dragún rosa",
+      "it": "Dragona Rosa",
+      "pt": "Draguna Rosa"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18014.png"
+  },
+  {
+    "dofusID": "7522",
+    "name": {
+      "en": "Minimino",
+      "fr": "Minimino",
+      "de": "Minimino",
+      "es": "Minimino",
+      "it": "Minimino",
+      "pt": "Minimino"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18021.png"
+  },
+  {
+    "dofusID": "7705",
+    "name": {
+      "en": "Leopardo",
+      "fr": "Léopardo",
+      "de": "Feuerfux",
+      "es": "Leopardo",
+      "it": "Leopardo",
+      "pt": "Leopardo"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18027.png"
+  },
+  {
+    "dofusID": "7706",
+    "name": {
+      "en": "Bilby",
+      "fr": "Bilby",
+      "de": "Bilby",
+      "es": "Bilby",
+      "it": "Bilby",
+      "pt": "Bilby"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18043.png"
+  },
+  {
+    "dofusID": "7892",
+    "name": {
+      "en": "Willy Peninzias",
+      "fr": "Willy le Relou",
+      "de": "Willy Wirrwolf",
+      "es": "Willy, el Plasta",
+      "it": "Willy il Rompi",
+      "pt": "Willy, o Mala"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18029.png"
+  },
+  {
+    "dofusID": "8211",
+    "name": {
+      "en": "Pingoku",
+      "fr": "Walk",
+      "de": "Ping",
+      "es": "Walk",
+      "it": "Walk",
+      "pt": "Walk"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18038.png"
+  },
+  {
+    "dofusID": "9624",
+    "name": {
+      "en": "Black Dragoone",
+      "fr": "Dragoune Noire",
+      "de": "Schwarzer Dragooner",
+      "es": "Dragún negro",
+      "it": "Dragona Nera",
+      "pt": "Draguna Negra"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18048.png"
+  },
+  {
+    "dofusID": "9785",
+    "name": {
+      "en": "Rushu's Shushu",
+      "fr": "Shushu de Rushu",
+      "de": "Shushu von Rushu",
+      "es": "Fab'huritu de Rushu",
+      "it": "Shushu di Rushu",
+      "pt": "Shushu de Rushu"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18052.png"
+  },
+  {
+    "dofusID": "11104",
+    "name": {
+      "en": "Improved Quaquack",
+      "fr": "Kouin-Kouin amélioré",
+      "de": "Verbesserter Quark-Quak",
+      "es": "Kuakuá mejorado",
+      "it": "Quaquà Migliorato",
+      "pt": "Quaquá melhorado"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18008.png"
+  },
+  {
+    "dofusID": "11777",
+    "name": {
+      "en": "Cromagmunk",
+      "fr": "Écumouth",
+      "de": "Skratsmut",
+      "es": "Ardilla de las nieves",
+      "it": "Scoiattobuk",
+      "pt": "Eskimute"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18070.png"
+  },
+  {
+    "dofusID": "12975",
+    "name": {
+      "en": "Frozen Tofu",
+      "fr": "Tofu Givré",
+      "de": "Frost-Tofu",
+      "es": "Tofu helado",
+      "it": "Tofu Gelato",
+      "pt": "Tofu Congelado"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18081.png"
+  },
+  {
+    "dofusID": "12988",
+    "name": {
+      "en": "Scarakiri",
+      "fr": "Scarakiri",
+      "de": "Scarakiri",
+      "es": "Escarakiri",
+      "it": "Scarakiri",
+      "pt": "Scarakiri"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18083.png"
+  },
+  {
+    "dofusID": "12994",
+    "name": {
+      "en": "Grauler",
+      "fr": "Rauleur",
+      "de": "Rolfi Mopsi",
+      "es": "Kejicón",
+      "it": "Rauletto",
+      "pt": "Raulor"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18084.png"
+  },
+  {
+    "dofusID": "13071",
+    "name": {
+      "en": "Mekrab",
+      "fr": "Mékrabe",
+      "de": "Mechkrabb",
+      "es": "Mekrangrejo",
+      "it": "Meccranchio",
+      "pt": "Mekaranguejo"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18087.png"
+  },
+  {
+    "dofusID": "13673",
+    "name": {
+      "en": "Snailmate",
+      "fr": "Kokulte",
+      "de": "Schnelmyst",
+      "es": "Lokulto",
+      "it": "Kaskrastuni",
+      "pt": "Kokulto"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18091.png"
+  },
+  {
+    "dofusID": "14433",
+    "name": {
+      "en": "Tubskito",
+      "fr": "Boskito",
+      "de": "Boskito",
+      "es": "Moskitorro",
+      "it": "Bomboskito",
+      "pt": "Boskito"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18093.png"
+  },
+  {
+    "dofusID": "1728",
+    "name": {
+      "en": "Bow Meow",
+      "fr": "Chacha",
+      "de": "Maunzmiez",
+      "es": "Miaumiau",
+      "it": "Maomao",
+      "pt": "Miaw"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18001.png"
+  },
+  {
+    "dofusID": "2076",
+    "name": {
+      "en": "Air Bwak",
+      "fr": "Bwak d'Air",
+      "de": "Luft-Bwack",
+      "es": "Bwak de aire",
+      "it": "Bwak di Aria",
+      "pt": "Bwak de Ar"
+    },
+    "itemType": "Pet",
+    "setID": "15",
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18004.png"
+  },
+  {
+    "dofusID": "6718",
+    "name": {
+      "en": "White Bow Meow",
+      "fr": "Chacha Blanc",
+      "de": "Weiße Maunzmiez",
+      "es": "Miaumiau blanco",
+      "it": "Maomao Bianco",
+      "pt": "Miaw branco"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18009.png"
+  },
+  {
+    "dofusID": "7712",
+    "name": {
+      "en": "Green Piwin",
+      "fr": "Pioute vert",
+      "de": "Grüner Piepmatz",
+      "es": "Piotín verde",
+      "it": "Pìut Verde",
+      "pt": "Piuta Verde"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18026.png"
+  },
+  {
+    "dofusID": "7891",
+    "name": {
+      "en": "Mini Wa",
+      "fr": "Mini Wa",
+      "de": "Mini Wa",
+      "es": "Mini wey",
+      "it": "Mini We",
+      "pt": "Mini Wei"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18028.png"
+  },
+  {
+    "dofusID": "8155",
+    "name": {
+      "en": "Minifoux",
+      "fr": "Tifoux",
+      "de": "Minifux",
+      "es": "Pekefux",
+      "it": "Tifux",
+      "pt": "Pekefox"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18037.png"
+  },
+  {
+    "dofusID": "9617",
+    "name": {
+      "en": "Angora Bow Meow",
+      "fr": "Chacha Angora",
+      "de": "Angora Maunzmiez",
+      "es": "Miaumiau de Angora",
+      "it": "Maomao Angora",
+      "pt": "Miaw angorá"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18050.png"
+  },
+  {
+    "dofusID": "10863",
+    "name": {
+      "en": "Tarzantula",
+      "fr": "Raknaille",
+      "de": "Arachnaille",
+      "es": "Araknuza",
+      "it": "Sgarbarakne",
+      "pt": "Tarzântula"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18058.png"
+  },
+  {
+    "dofusID": "11783",
+    "name": {
+      "en": "Snowfoux",
+      "fr": "Givrefoux",
+      "de": "Eisfux",
+      "es": "Gélifux",
+      "it": "Ghiacciopaz",
+      "pt": "Gelifox"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18071.png"
+  },
+  {
+    "dofusID": "13000",
+    "name": {
+      "en": "Moowitty",
+      "fr": "Meulourd",
+      "de": "SchmuWulf",
+      "es": "Lubesado",
+      "it": "Muulupesante",
+      "pt": "Mulerdo"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18085.png"
+  },
+  {
+    "dofusID": "15133",
+    "name": {
+      "en": "Black Tiwabbit",
+      "fr": "Black Tiwabbit",
+      "de": "Black Tiwabbit",
+      "es": "Black pekewabbit",
+      "it": "Piccolo Wabbit Newo",
+      "pt": "Black Pekewabbit"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18096.png"
+  },
+  {
+    "dofusID": "15607",
+    "name": {
+      "en": "Tatouh",
+      "fr": "Tatouf",
+      "de": "Eutatu",
+      "es": "Armadinho",
+      "it": "Sonidillo",
+      "pt": "Tubola"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18100.png"
+  },
+  {
+    "dofusID": "16122",
+    "name": {
+      "en": "Friendrake",
+      "fr": "Drakopin",
+      "de": "Drakumpel",
+      "es": "Drakolega",
+      "it": "Dragamico",
+      "pt": "Drakomparsa"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18106.png"
+  },
+  {
+    "dofusID": "16269",
+    "name": {
+      "en": "Tanuk",
+      "fr": "Tanuk",
+      "de": "Tanuk",
+      "es": "Tanuk",
+      "it": "Tanuk",
+      "pt": "Tanuk"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18111.png"
+  },
+  {
+    "dofusID": "17813",
+    "name": {
+      "en": "Glub",
+      "fr": "Glub",
+      "de": "Blub",
+      "es": "Glub",
+      "it": "Glub",
+      "pt": "Glub"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18118.png"
+  },
+  {
+    "dofusID": "1711",
+    "name": {
+      "en": "Bow Wow",
+      "fr": "Chienchien",
+      "de": "SchnuffWuff",
+      "es": "Wauwau",
+      "it": "Baubau",
+      "pt": "Awaw"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18006.png"
+  },
+  {
+    "dofusID": "6604",
+    "name": {
+      "en": "Quaquack",
+      "fr": "Kouin-Kouin",
+      "de": "Quark-Quak",
+      "es": "Kuakuá",
+      "it": "Quaquà",
+      "pt": "Quaquá"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18008.png"
+  },
+  {
+    "dofusID": "6716",
+    "name": {
+      "en": "Nomoon",
+      "fr": "Nomoon",
+      "de": "Nomoon",
+      "es": "Nomoon",
+      "it": "Nomoon",
+      "pt": "Nomoon"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18011.png"
+  },
+  {
+    "dofusID": "7415",
+    "name": {
+      "en": "Little Black Bow Wow",
+      "fr": "Petit Chienchien Noir",
+      "de": "Kleiner schwarzer Schnuffwuff",
+      "es": "Pequeño wauwau negro",
+      "it": "Piccolo Baubau Nero",
+      "pt": "Pequeno Awaw Negro"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18010.png"
+  },
+  {
+    "dofusID": "7520",
+    "name": {
+      "en": "Croum",
+      "fr": "Croum",
+      "de": "Croum",
+      "es": "Crum",
+      "it": "Crum",
+      "pt": "Crum"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18015.png"
+  },
+  {
+    "dofusID": "7704",
+    "name": {
+      "en": "Mischievous Squirrel",
+      "fr": "Écureuil Chenapan",
+      "de": "Wuseliges Eichhörnchen",
+      "es": "Ardilla pilla",
+      "it": "Scoiattolo Furfante",
+      "pt": "Esquilo Travesso"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18016.png"
+  },
+  {
+    "dofusID": "7707",
+    "name": {
+      "en": "Young Wild Boar",
+      "fr": "Marcassin",
+      "de": "Frischling",
+      "es": "Cochino jabato",
+      "it": "Cinghialetto",
+      "pt": "Javalino"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18020.png"
+  },
+  {
+    "dofusID": "7708",
+    "name": {
+      "en": "Blue Piwin",
+      "fr": "Pioute bleu",
+      "de": "Blauer Piepmatz",
+      "es": "Piotín azul",
+      "it": "Pìut Blu",
+      "pt": "Piuta Azul"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18019.png"
+  },
+  {
+    "dofusID": "7709",
+    "name": {
+      "en": "Yellow Piwin",
+      "fr": "Pioute jaune",
+      "de": "Gelber Piepmatz",
+      "es": "Piotín amarillo",
+      "it": "Pìut Giallo",
+      "pt": "Piuta Amarela"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18023.png"
+  },
+  {
+    "dofusID": "7713",
+    "name": {
+      "en": "Purple Piwin",
+      "fr": "Pioute violet",
+      "de": "Violetter Piepmatz",
+      "es": "Piotín violeta",
+      "it": "Pìut Viola",
+      "pt": "Piuta Violeta"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18022.png"
+  },
+  {
+    "dofusID": "7714",
+    "name": {
+      "en": "Atooin",
+      "fr": "Atouin",
+      "de": "Krötschild",
+      "es": "Tortuga",
+      "it": "Atuin",
+      "pt": "Atuin"
+    },
+    "itemType": "Pet",
+    "setID": "9",
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18017.png"
+  },
+  {
+    "dofusID": "8000",
+    "name": {
+      "en": "Bworky",
+      "fr": "Bworky",
+      "de": "Bworky",
+      "es": "Bworky",
+      "it": "Bworky",
+      "pt": "Bworky"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18031.png"
+  },
+  {
+    "dofusID": "8153",
+    "name": {
+      "en": "Treechster",
+      "fr": "Abra Kadabra",
+      "de": "Astaknydasta",
+      "es": "Abra kadabra",
+      "it": "Arbre Magic",
+      "pt": "Abra Kadabra"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18034.png"
+  },
+  {
+    "dofusID": "8154",
+    "name": {
+      "en": "El Scarador",
+      "fr": "El Scarador",
+      "de": "El Scarador",
+      "es": "Escarador",
+      "it": "El Scarador",
+      "pt": "El Scarador"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18036.png"
+  },
+  {
+    "dofusID": "10657",
+    "name": {
+      "en": "Ogrine Seeker",
+      "fr": "Chercheur d'Ogrines",
+      "de": "Ogrinenjäger",
+      "es": "Buscador de ogrinas",
+      "it": "Cercatore di Ogrin",
+      "pt": "Caçador de Ogrinas"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18056.png"
+  },
+  {
+    "dofusID": "10866",
+    "name": {
+      "en": "Sting",
+      "fr": "Pykur",
+      "de": "Prespieks",
+      "es": "Otazo",
+      "it": "Prespina",
+      "pt": "Pikada"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18061.png"
+  },
+  {
+    "dofusID": "10985",
+    "name": {
+      "en": "Snow Bow Meow",
+      "fr": "Chacha des Glaces",
+      "de": "Eismaunzmiez",
+      "es": "Miaumiau de las nieves",
+      "it": "Maomao dei Ghiacci",
+      "pt": "Miaw do gelo"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18062.png"
+  },
+  {
+    "dofusID": "11014",
+    "name": {
+      "en": "Stone-washed Borbat",
+      "fr": "Chauffe-souris Délavée",
+      "de": "Ausgebleichte Fleddermaus",
+      "es": "Murciego pálido",
+      "it": "Pipì-Strello Slavato",
+      "pt": "Borcego desbotado"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18066.png"
+  },
+  {
+    "dofusID": "13230",
+    "name": {
+      "en": "Krolimea",
+      "fr": "Kroliméa",
+      "de": "Krolimea",
+      "es": "Kolimira",
+      "it": "Krolimera",
+      "pt": "Krolimera"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only and",
+          "Know the emote"
+        ],
+        "fr": [
+          "Etre abonné et",
+          "Connaître l'attitude Salut Vulkain"
+        ],
+        "de": [
+          "Abonniert sein und",
+          "Emote kennen"
+        ],
+        "es": [
+          "Estar abonado y",
+          "Conocer la actitud"
+        ],
+        "it": [
+          "Essere abbonato e",
+          "Conoscere l'emote"
+        ],
+        "pt": [
+          "Ser assinante e",
+          "Conhecer o emote"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18088.png"
+  },
+  {
+    "dofusID": "13661",
+    "name": {
+      "en": "Snickermite",
+      "fr": "Kafarce",
+      "de": "Schlabbernack",
+      "es": "Kraxiste",
+      "it": "Puljaz",
+      "pt": "Kafarsa"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18090.png"
+  },
+  {
+    "dofusID": "17700",
+    "name": {
+      "en": "Maulleycat",
+      "fr": "Chaperlipopette",
+      "de": "Wuschelmaunz",
+      "es": "Maullino",
+      "it": "Perdincigatto",
+      "pt": "Gatzgrila"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18115.png"
+  },
+  {
+    "dofusID": "17795",
+    "name": {
+      "en": "Kerubaby",
+      "fr": "Tirubim",
+      "de": "Tirubim",
+      "es": "Kerubebé",
+      "it": "Tirubim",
+      "pt": "Tirubim"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18116.png"
+  }
+]

@@ -338,3 +338,113 @@ if __name__ == "__main__":
             item.weapon_stats.append(weapon_stat)
 
         db.session.commit()
+
+    print("Adding pets to database")
+    with open(os.path.join(dirname, "app/database/data/pets.json"), "r") as file:
+        data = json.load(file)
+        for record in data:
+            item = ModelItem(
+                dofus_db_id=record["dofusID"],
+                item_type=item_types[record["itemType"]],
+                level=record["level"],
+                image_url=record["imageUrl"],
+            )
+
+            conditions = {
+                "conditions": record["conditions"]["conditions"],
+                "customConditions": record["conditions"]["customConditions"],
+            }
+            item.conditions = conditions
+
+            for locale in record["name"]:
+                item_translations = ModelItemTranslation(
+                    item_id=item.uuid, locale=locale, name=record["name"][locale],
+                )
+                db.session.add(item_translations)
+                item.item_translations.append(item_translations)
+
+            try:
+                i = 0
+                for stat in record["stats"]:
+                    item_stat = ModelItemStat(
+                        stat=to_stat_enum[stat["stat"]],
+                        min_value=stat["minStat"],
+                        max_value=stat["maxStat"],
+                        order=i,
+                    )
+                    db.session.add(item_stat)
+                    item.stats.append(item_stat)
+                    i = i + 1
+                if record["customStats"] != {}:
+                    item_stat = ModelItemStat(order=i)
+                    for locale in record["customStats"]:
+                        stat_translation = ModelItemStatTranslation(
+                            item_stat_id=item_stat.uuid, locale=locale
+                        )
+                        for custom_stat in record["customStats"][locale]:
+                            item_custom_stat = ModelItemCustomStat(
+                                item_stat_translation_id=stat_translation.uuid,
+                                custom_stat=custom_stat,
+                            )
+                            db.session.add(item_custom_stat)
+                            stat_translation.custom_stats.append(item_custom_stat)
+
+                        db.session.add(stat_translation)
+                        item_stat.item_stat_translation.append(stat_translation)
+
+                    item.stats.append(item_stat)
+
+                db.session.add(item)
+
+                # If this item belongs in a set, query the set and add the relationship to the record
+                if record["setID"]:
+                    set = record["setID"]
+                    set_record = (
+                        db.session.query(ModelSet)
+                        .filter(ModelSet.dofus_db_id == set)
+                        .first()
+                    )
+                    set_record.items.append(item)
+                    db.session.merge(set_record)
+            except KeyError as err:
+                print("KeyError occurred:", err)
+
+        db.session.commit()
+
+    print("Adding mounts to database")
+    with open(os.path.join(dirname, "app/database/data/mounts.json"), "r") as file:
+        data = json.load(file)
+        for record in data:
+            item = ModelItem(
+                dofus_db_id=record["dofusID"],
+                item_type=item_types[record["itemType"]],
+                level=record["level"],
+                image_url=record["imageUrl"],
+            )
+
+            for locale in record["name"]:
+                item_translations = ModelItemTranslation(
+                    item_id=item.uuid, locale=locale, name=record["name"][locale],
+                )
+                db.session.add(item_translations)
+                item.item_translations.append(item_translations)
+
+            try:
+                i = 0
+                for stat in record["stats"]:
+                    item_stat = ModelItemStat(
+                        stat=to_stat_enum[stat["stat"]],
+                        min_value=stat["minStat"],
+                        max_value=stat["maxStat"],
+                        order=i,
+                    )
+                    db.session.add(item_stat)
+                    item.stats.append(item_stat)
+                    i = i + 1
+
+                db.session.add(item)
+
+            except KeyError as err:
+                print("KeyError occurred:", err)
+
+        db.session.commit()
