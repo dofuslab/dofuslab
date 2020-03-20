@@ -19,10 +19,9 @@ import {
   itemSlots_itemSlots,
   itemSlots,
 } from 'graphql/queries/__generated__/itemSlots';
-import { ItemFilters } from '__generated__/globalTypes';
-import ItemSelectorFilters from './ItemSelectorFilters';
-import { FilterAction } from 'common/types';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import ItemTypeFilter from './ItemTypeFilter';
+import { SharedFilters } from 'common/types';
 
 const PAGE_SIZE = 24;
 
@@ -35,48 +34,23 @@ interface IProps {
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
   customSetItemIds: Set<string>;
+  filters: SharedFilters;
 }
-
-const reducer = (state: ItemFilters, action: FilterAction) => {
-  switch (action.type) {
-    case 'SEARCH':
-      return { ...state, search: action.search };
-    case 'MAX_LEVEL':
-      return { ...state, maxLevel: action.maxLevel };
-    case 'STATS':
-      return { ...state, stats: action.stats };
-    case 'ITEM_TYPE_IDS':
-      return { ...state, itemTypeIds: action.itemTypeIds };
-    case 'RESET':
-      return {
-        search: '',
-        stats: [],
-        maxLevel: action.maxLevel,
-        itemTypeIds: [],
-      };
-    default:
-      throw new Error('Invalid action type');
-  }
-};
 
 const ItemSelector: React.FC<IProps> = ({
   selectedItemSlot,
   customSet,
   selectItemSlot,
   customSetItemIds,
+  filters,
 }) => {
-  const [filters, dispatch] = React.useReducer(reducer, {
-    stats: [],
-    maxLevel: customSet?.level || 200,
-    search: '',
-    itemTypeIds: [],
-  });
+  const [itemTypeIds, setItemTypeIds] = React.useState<Array<string>>([]);
   const queryFilters = {
     ...filters,
     itemTypeIds:
-      selectedItemSlot && filters.itemTypeIds.length === 0
+      selectedItemSlot && itemTypeIds.length === 0
         ? selectedItemSlot.itemTypes.map(type => type.id)
-        : filters.itemTypeIds,
+        : itemTypeIds,
   };
   const { data, loading, fetchMore, networkStatus } = useQuery<
     items,
@@ -91,7 +65,8 @@ const ItemSelector: React.FC<IProps> = ({
 
   const endCursorRef = React.useRef<string | null>(null);
 
-  const onLoadMore = React.useCallback(() => {
+  const onLoadMore = React.useCallback(async () => {
+    console.log('onLoadMore');
     if (
       !data ||
       !data.items.pageInfo.hasNextPage ||
@@ -101,23 +76,25 @@ const ItemSelector: React.FC<IProps> = ({
     }
 
     endCursorRef.current = data.items.pageInfo.endCursor;
-
-    return fetchMore({
-      variables: { after: data.items.pageInfo.endCursor },
-      updateQuery: (prevData, { fetchMoreResult }) => {
-        if (!fetchMoreResult) {
-          return prevData;
-        }
-        return {
-          ...prevData,
-          items: {
-            ...prevData.items,
-            edges: [...prevData.items.edges, ...fetchMoreResult.items.edges],
-            pageInfo: fetchMoreResult.items.pageInfo,
-          },
-        };
-      },
-    });
+    try {
+      const fetchMoreResult = await fetchMore({
+        variables: { after: data.items.pageInfo.endCursor },
+        updateQuery: (prevData, { fetchMoreResult }) => {
+          if (!fetchMoreResult) {
+            return prevData;
+          }
+          return {
+            ...prevData,
+            items: {
+              ...prevData.items,
+              edges: [...prevData.items.edges, ...fetchMoreResult.items.edges],
+              pageInfo: fetchMoreResult.items.pageInfo,
+            },
+          };
+        },
+      });
+      return fetchMoreResult;
+    } catch (e) {}
   }, [data]);
 
   const responsiveGridRef = React.useRef<HTMLDivElement | null>(null);
@@ -153,11 +130,9 @@ const ItemSelector: React.FC<IProps> = ({
       ref={responsiveGridRef}
     >
       {itemSlots && (
-        <ItemSelectorFilters
-          key={`filters-level-${customSet?.level}`}
-          filters={filters}
-          dispatch={dispatch}
-          customSetLevel={customSet?.level || null}
+        <ItemTypeFilter
+          setItemTypeIds={setItemTypeIds}
+          itemTypeIds={itemTypeIds}
           itemTypes={uniqWith(
             itemSlots
               .filter(

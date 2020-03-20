@@ -37,6 +37,39 @@ class ModelCustomSet(Base):
         backref="custom_set",
     )
 
+    def empty_or_first_item_slot(self, item_type):
+        eligible_item_slots = item_type.eligible_item_slots
+        for item_slot in eligible_item_slots:
+            equipped_item = (
+                db.session.query(ModelEquippedItem)
+                .filter_by(custom_set_id=self.uuid, item_slot_id=item_slot.uuid)
+                .one_or_none()
+            )
+            if not equipped_item:
+                return item_slot
+        return eligible_item_slots[0]
+
+    def equip_set(self, set_obj):
+        counts = {}
+        for item in set_obj.items:
+            slot_idx = counts.get(item.item_type.uuid, 0)
+            counts[item.item_type.uuid] = slot_idx + 1
+            item_slot = item.item_type.eligible_item_slots[slot_idx]
+            equipped_item = (
+                db.session.query(ModelEquippedItem)
+                .filter_by(custom_set_id=self.uuid, item_slot_id=item_slot.uuid)
+                .one_or_none()
+            )
+            if equipped_item:
+                equipped_item.change_item(item.uuid)
+            else:
+                equipped_item = ModelEquippedItem(
+                    item_slot_id=item_slot.uuid,
+                    custom_set_id=self.uuid,
+                    item_id=item.uuid,
+                )
+                db.session.add(equipped_item)
+
     def equip_item(self, item_id, item_slot_id):
         item = db.session.query(ModelItem).get(item_id)
         item_slot = db.session.query(ModelItemSlot).get(item_slot_id)

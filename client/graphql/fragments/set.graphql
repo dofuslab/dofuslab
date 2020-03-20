@@ -1,0 +1,11 @@
+fragment set on Set {
+  id
+  name
+  bonuses {
+    id
+    numItems
+    stat
+    value
+    altStat
+  }
+}

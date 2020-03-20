@@ -6,7 +6,6 @@ import { useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
 
 import { STAT_GROUPS, mq } from 'common/constants';
-import ItemSelector from './ItemSelector';
 import Layout from './Layout';
 import StatTable from './StatTable';
 import { ResponsiveGrid } from 'common/wrappers';
@@ -21,13 +20,8 @@ import SetHeader from './SetHeader';
 import EquipmentSlots from './EquipmentSlots';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import StatEditor from './StatEditor';
-
-const topMarginStyle = {
-  marginTop: 8,
-  [mq[4]]: {
-    marginTop: 12,
-  },
-};
+import { topMarginStyle } from 'common/mixins';
+import Selector from './Selector';
 
 const SetBuilder: React.FC = () => {
   const router = useRouter();
@@ -36,11 +30,6 @@ const SetBuilder: React.FC = () => {
   const { data: customSetData } = useQuery<customSet, customSetVariables>(
     CustomSetQuery,
     { variables: { id: setId }, skip: !setId },
-  );
-
-  const customSetItemIds = new Set<string>();
-  (customSetData?.customSetById?.equippedItems ?? []).forEach(equippedItem =>
-    customSetItemIds.add(equippedItem.item.id),
   );
 
   const [
@@ -108,31 +97,11 @@ const SetBuilder: React.FC = () => {
             <StatEditor customSet={customSetData?.customSetById} />
           </ResponsiveGrid>
         </div>
-        <div
-          key={`div-${selectedItemSlot?.id}`} // re-render so div loses scroll position on selectedItemSlot change
-          css={{
-            display: 'none',
-            padding: '0 14px',
-            [mq[0]]: {
-              display: 'block',
-              flex: 1,
-            },
-            overflowY: 'scroll',
-            ...topMarginStyle,
-            [mq[4]]: {
-              padding: '0 20px',
-              ...(topMarginStyle[mq[4]] as {}),
-            },
-          }}
-        >
-          <ItemSelector
-            key={`selected-item-slot-${selectedItemSlot?.id}-level-${customSetData?.customSetById?.level}`}
-            selectedItemSlot={selectedItemSlot}
-            customSet={customSetData?.customSetById}
-            selectItemSlot={selectItemSlot}
-            customSetItemIds={customSetItemIds}
-          />
-        </div>
+        <Selector
+          customSet={customSetData?.customSetById}
+          selectItemSlot={selectItemSlot}
+          selectedItemSlot={selectedItemSlot}
+        />
       </div>
     </Layout>
   );

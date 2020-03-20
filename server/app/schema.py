@@ -136,6 +136,7 @@ class SetBonus(SQLAlchemyObjectType):
 
 
 class Set(SQLAlchemyObjectType):
+    items = graphene.NonNull(graphene.List(graphene.NonNull(Item)))
     bonuses = graphene.NonNull(graphene.List(graphene.NonNull(SetBonus)))
     name = graphene.String(required=True)
 
@@ -336,6 +337,33 @@ class UpdateCustomSetItem(graphene.Mutation):
         db.session.commit()
 
         return UpdateCustomSetItem(custom_set=custom_set)
+
+
+class EquipSet(graphene.Mutation):
+    class Arguments:
+        custom_set_id = graphene.UUID()
+        set_id = graphene.UUID(required=True)
+
+    custom_set = graphene.Field(CustomSet, required=True)
+
+    def mutate(self, info, **kwargs):
+        custom_set_id = kwargs.get("custom_set_id")
+        set_id = kwargs.get("set_id")
+        if custom_set_id:
+            custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
+            if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
+                raise GraphQLError("You don't have permission to edit that set.")
+        else:
+            custom_set = ModelCustomSet(owner_id=current_user.get_id())
+            db.session.add(custom_set)
+            db.session.flush()
+            custom_set_stat = ModelCustomSetStat(custom_set_id=custom_set.uuid)
+            db.session.add(custom_set_stat)
+        set_obj = db.session.query(ModelSet).get(set_id)
+        custom_set.equip_set(set_obj)
+        db.session.commit()
+
+        return EquipSet(custom_set=custom_set)
 
 
 class MageEquippedItem(graphene.Mutation):
@@ -553,8 +581,8 @@ class Query(graphene.ObjectType):
                 items_query = items_query.filter(ModelItem.level <= filters.max_level)
             if filters.search:
                 items_query = (
-                    items_query.join(ModelSet)
-                    .join(ModelSetTranslation)
+                    items_query.join(ModelSet, isouter=True)
+                    .join(ModelSetTranslation, isouter=True)
                     .filter(
                         func.upper(ModelItemTranslation.name).contains(
                             func.upper(filters.search.strip())
@@ -679,6 +707,7 @@ class Mutation(graphene.ObjectType):
     set_equipped_item_exo = SetEquippedItemExo.Field()
     edit_custom_set_metadata = EditCustomSetMetadata.Field()
     edit_custom_set_stats = EditCustomSetStats.Field()
+    equip_set = EquipSet.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

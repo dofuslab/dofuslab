@@ -2,12 +2,10 @@
 
 import * as React from 'react';
 import Input from 'antd/lib/input';
-import InputNumber from 'antd/lib/input-number';
 import Select from 'antd/lib/select';
 import CheckboxGroup, { CheckboxValueType } from 'antd/lib/checkbox/Group';
 import { jsx, ClassNames } from '@emotion/core';
 import { useDebounceCallback } from '@react-hook/debounce';
-import Button from 'antd/lib/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRedo } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,6 +14,7 @@ import { FilterAction } from 'common/types';
 import { DEBOUNCE_INTERVAL, mq } from 'common/constants';
 import { useTranslation } from 'i18n';
 import { itemSlots_itemSlots_itemTypes } from 'graphql/queries/__generated__/itemSlots';
+import SelectorFilters from './SelectorFilters';
 
 const { Search } = Input;
 const { Option } = Select;
@@ -99,101 +98,15 @@ const ItemSelectorFilters: React.FC<IProps> = ({
 
   return (
     <>
-      <div
-        css={{
-          gridColumn: '1 / -1',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'stretch',
-          [mq[2]]: {
-            flexDirection: 'row',
-          },
-        }}
-      >
-        <div
-          css={{
-            display: 'flex',
-            marginBottom: 16,
-            [mq[2]]: { marginBottom: 0, maxWidth: 360 },
-            flex: '1',
-          }}
-        >
-          <Search
-            placeholder="Search"
-            value={search}
-            onChange={onSearch}
-            css={{ ['.ant-input']: { fontSize: '0.75rem' } }}
-          />
-          <InputNumber
-            placeholder={t('LEVEL')}
-            value={maxLevel}
-            onChange={onChangeMaxLevel}
-            type="number"
-            max={200}
-            min={1}
-            css={{
-              marginLeft: 12,
-              [mq[4]]: { marginLeft: 16 },
-              fontSize: '0.75rem',
-            }}
-          />
-        </div>
-        <div
-          css={{
-            gridColumn: '1 / -1',
-            display: 'flex',
-            flex: '1',
-            [mq[2]]: { marginLeft: 12, maxWidth: 420 },
-            [mq[4]]: { marginLeft: 16 },
-          }}
-        >
-          <ClassNames>
-            {({ css }) => (
-              <Select
-                mode="multiple"
-                css={{
-                  fontSize: '0.75rem',
-                  flex: '1',
-                }}
-                placeholder="Stats (e.g. AP, Pods, Prospecting)"
-                value={stats.map(stat => ({
-                  label: t(stat, { ns: 'stat' }),
-                  key: stat,
-                  value: stat,
-                }))}
-                onChange={onChangeStats}
-                dropdownClassName={css({
-                  ['.ant-select-item']: { fontSize: '0.75rem' },
-                })}
-                filterOption={(input, option) =>
-                  (option?.children as string)
-                    .toLocaleUpperCase()
-                    .includes(input.toLocaleUpperCase())
-                }
-                labelInValue
-              >
-                {Object.values(Stat).map(stat => (
-                  <Option key={stat} value={stat}>
-                    {t(stat, { ns: 'stat' })}
-                  </Option>
-                ))}
-              </Select>
-            )}
-          </ClassNames>
-          <Button
-            css={{
-              fontSize: '0.75rem',
-              marginLeft: 12,
-              [mq[4]]: { marginLeft: 20 },
-            }}
-            onClick={onResetFilters}
-          >
-            <FontAwesomeIcon icon={faRedo} css={{ marginRight: 8 }} />
-            {t('RESET_ALL_FILTERS')}
-          </Button>
-        </div>
-      </div>
-
+      <SelectorFilters
+        search={search}
+        onSearch={onSearch}
+        maxLevel={maxLevel}
+        onChangeMaxLevel={onChangeMaxLevel}
+        stats={stats}
+        onChangeStats={onChangeStats}
+        onResetFilters={onResetFilters}
+      />
       {itemTypes.length > 1 && (
         <CheckboxGroup
           value={itemTypeIds}

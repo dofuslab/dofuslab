@@ -143,3 +143,10 @@ export const getResponsiveGridStyle = (numColumns: ReadonlyArray<number>) => ({
     gridTemplateColumns: `repeat(${numColumns[6]}, 1fr)`,
   },
 });
+
+export const topMarginStyle = {
+  marginTop: 8,
+  [mq[4]]: {
+    marginTop: 12,
+  },
+};

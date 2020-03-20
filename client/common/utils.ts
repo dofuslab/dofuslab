@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { ApolloClient } from 'apollo-boost';
 import notification from 'antd/lib/notification';
 import { cloneDeep } from 'lodash';
+import { TFunction } from 'next-i18next';
 
 import {
   customSet_stats,
@@ -22,6 +23,7 @@ import {
   updateCustomSetItemVariables,
 } from 'graphql/mutations/__generated__/updateCustomSetItem';
 import UpdateCustomSetItemMutation from 'graphql/mutations/updateCustomSetItem.graphql';
+import EquipSetMutation from 'graphql/mutations/equipSet.graphql';
 import {
   deleteCustomSetItem,
   deleteCustomSetItemVariables,
@@ -29,8 +31,12 @@ import {
 import DeleteCustomSetItemMutation from 'graphql/mutations/deleteCustomSetItem.graphql';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
-import { TFunction } from 'next-i18next';
 import { useTranslation } from 'i18n';
+import {
+  equipSet,
+  equipSetVariables,
+} from 'graphql/mutations/__generated__/equipSet';
+import { sets_sets_edges_node } from 'graphql/queries/__generated__/sets';
 
 const getBaseStat = (stats: customSet_stats, stat: Stat) => {
   switch (stat) {
@@ -337,6 +343,46 @@ export const useEquipItemMutation = (
     },
     [updateCustomSetItem, setId, item],
   );
+
+  return onClick;
+};
+
+export const useEquipSetMutation = (
+  set: sets_sets_edges_node,
+  customSet?: customSet | null,
+) => {
+  const router = useRouter();
+  const { id: setId } = router.query;
+
+  const [equipSet] = useMutation<equipSet, equipSetVariables>(
+    EquipSetMutation,
+    {
+      variables: {
+        setId: set.id,
+        customSetId: customSet?.id,
+      },
+    },
+  );
+
+  const client = useApolloClient();
+
+  const { t } = useTranslation('common');
+
+  const onClick = useCallback(async () => {
+    const ok = await checkAuthentication(client, t, customSet);
+    if (!ok) return;
+    const { data } = await equipSet();
+
+    if (data?.equipSet?.customSet.id !== setId) {
+      router.replace(
+        `/?id=${data?.equipSet?.customSet.id}`,
+        `/set/${data?.equipSet?.customSet.id}`,
+        {
+          shallow: true,
+        },
+      );
+    }
+  }, [equipSet, setId]);
 
   return onClick;
 };
