@@ -5,6 +5,7 @@ import { ApolloClient } from 'apollo-boost';
 import notification from 'antd/lib/notification';
 import { cloneDeep } from 'lodash';
 import { TFunction } from 'next-i18next';
+import CustomSetFragment from 'graphql/fragments/customSet.graphql';
 
 import {
   customSet_stats,
@@ -425,3 +426,19 @@ export const useDeleteItemMutation = (
   }, [mutate]);
   return onDelete;
 };
+
+export const useCustomSet = (customSetId: string | null) => {
+  const client = useApolloClient();
+  if (!customSetId) return null;
+  return getCustomSet(client, customSetId);
+};
+
+export const getCustomSet = (
+  client: ApolloClient<object>,
+  customSetId: string,
+) =>
+  client.readFragment<customSet>({
+    id: `CustomSet:${customSetId}`,
+    fragment: CustomSetFragment,
+    fragmentName: 'customSet',
+  });

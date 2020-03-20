@@ -56,6 +56,7 @@ interface IProps {
   itemSlotId: string;
   customSet: customSet;
   openMageModal: (e: React.MouseEvent<HTMLElement>) => void;
+  stopPropagationCallback: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
 const EquippedItemCard: React.FC<IProps> = ({
@@ -63,6 +64,7 @@ const EquippedItemCard: React.FC<IProps> = ({
   itemSlotId,
   customSet,
   openMageModal,
+  stopPropagationCallback,
 }) => {
   const { t } = useTranslation(['common', 'mage', 'stat']);
 
@@ -96,7 +98,6 @@ const EquippedItemCard: React.FC<IProps> = ({
 
   const onQuickMage = React.useCallback(
     async (e: React.MouseEvent<HTMLDivElement>) => {
-      e.stopPropagation();
       const { stat: statToExo } = e.currentTarget.dataset;
       const ok = await checkAuthentication(client, t, customSet);
       if (!ok) return;
@@ -171,6 +172,7 @@ const EquippedItemCard: React.FC<IProps> = ({
           </div>
         </Tooltip>,
       ]}
+      onClick={stopPropagationCallback}
     >
       <ItemStatsList
         item={equippedItem.item}

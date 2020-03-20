@@ -7,15 +7,16 @@ import { useTranslation } from 'i18n';
 import { TruncatableText, SetBonuses } from 'common/wrappers';
 import { sets_sets_edges_node } from 'graphql/queries/__generated__/sets';
 import { itemCardStyle, BORDER_COLOR } from 'common/mixins';
-import { useEquipSetMutation } from 'common/utils';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
+import { useEquipSetMutation, useCustomSet } from 'common/utils';
 
 interface IProps {
   set: sets_sets_edges_node;
-  customSet?: customSet | null;
+  customSetId: string | null;
 }
 
-const SetCard: React.FC<IProps> = ({ set, customSet }) => {
+const SetCard: React.FC<IProps> = ({ set, customSetId }) => {
+  const customSet = useCustomSet(customSetId);
+
   const { t } = useTranslation(['stat', 'common']);
   const onClick = useEquipSetMutation(set, customSet);
   const maxSetBonusItems = set.bonuses.reduce(
@@ -81,4 +82,4 @@ const SetCard: React.FC<IProps> = ({ set, customSet }) => {
   );
 };
 
-export default SetCard;
+export default React.memo(SetCard);

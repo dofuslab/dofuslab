@@ -50,8 +50,15 @@ const EquippedItemWithStats: React.FC<IProps> = ({
   openMageModal,
 }) => {
   const deleteItem = useDeleteItemMutation(equippedItem.slot.id, customSet);
+  const stopPropagationCallback = React.useCallback(
+    (e: React.MouseEvent<HTMLElement>) => {
+      // prevent selection of item slot
+      e.stopPropagation();
+    },
+    [],
+  );
   const onDelete = React.useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
+    (e: React.MouseEvent<HTMLElement>) => {
       e.stopPropagation();
       deleteItem && deleteItem();
     },
@@ -66,7 +73,10 @@ const EquippedItemWithStats: React.FC<IProps> = ({
           <Popover
             placement="bottomLeft"
             title={
-              <div css={{ display: 'flex', alignItems: 'baseline' }}>
+              <div
+                css={{ display: 'flex', alignItems: 'baseline' }}
+                onClick={stopPropagationCallback}
+              >
                 <div>{equippedItem.item.name}</div>
                 <div
                   css={{ marginLeft: 8, fontWeight: 400, fontSize: '0.75rem' }}
@@ -81,6 +91,7 @@ const EquippedItemWithStats: React.FC<IProps> = ({
                 itemSlotId={itemSlotId}
                 customSet={customSet}
                 openMageModal={openMageModal}
+                stopPropagationCallback={stopPropagationCallback}
               />
             }
             overlayClassName={css({

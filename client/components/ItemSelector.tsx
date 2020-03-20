@@ -150,8 +150,8 @@ const ItemSelector: React.FC<IProps> = ({
               key={item.id}
               item={item}
               selectedItemSlotId={selectedItemSlot?.id ?? null}
-              customSetItemIds={customSetItemIds}
-              customSet={customSet}
+              equipped={customSetItemIds.has(item.id)}
+              customSetId={customSet?.id ?? null}
               responsiveGridRef={responsiveGridRef}
               selectItemSlot={selectItemSlot}
             />

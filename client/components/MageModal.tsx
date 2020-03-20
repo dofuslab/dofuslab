@@ -7,7 +7,7 @@ import Select from 'antd/lib/select';
 import Divider from 'antd/lib/divider';
 
 import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
-import { getStatsMaps, checkAuthentication } from 'common/utils';
+import { getStatsMaps, checkAuthentication, useCustomSet } from 'common/utils';
 import { Stat } from '__generated__/globalTypes';
 import { MageAction } from 'common/types';
 import { useTranslation } from 'i18n';
@@ -21,7 +21,6 @@ import {
   mageEquippedItemVariables,
 } from 'graphql/mutations/__generated__/mageEquippedItem';
 import MageEquippedItemMutation from 'graphql/mutations/mageEquippedItem.graphql';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 
 const { Option } = Select;
 
@@ -29,7 +28,7 @@ interface IProps {
   visible: boolean;
   equippedItem: customSet_customSetById_equippedItems;
   closeMageModal: (e: React.MouseEvent<HTMLElement>) => void;
-  customSet: customSet;
+  customSetId: string;
 }
 
 interface StatLine {
@@ -117,7 +116,7 @@ const MageModal: React.FC<IProps> = ({
   visible,
   equippedItem,
   closeMageModal,
-  customSet,
+  customSetId,
 }) => {
   const { statsMap, exoStatsMap, originalStatsMap } = getStatsMaps(
     equippedItem.item.stats,
@@ -181,6 +180,7 @@ const MageModal: React.FC<IProps> = ({
   );
 
   const client = useApolloClient();
+  const customSet = useCustomSet(customSetId);
 
   const onOk = React.useCallback(
     async (e: React.MouseEvent<HTMLElement>) => {

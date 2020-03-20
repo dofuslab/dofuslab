@@ -7,30 +7,35 @@ import { useTranslation } from 'i18n';
 import { ItemStatsList, TruncatableText, Badge } from 'common/wrappers';
 import { item } from 'graphql/fragments/__generated__/item';
 import { BORDER_COLOR, itemCardStyle, itemBoxDimensions } from 'common/mixins';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { findEmptyOrOnlySlotId, useEquipItemMutation } from 'common/utils';
+import {
+  findEmptyOrOnlySlotId,
+  useEquipItemMutation,
+  useCustomSet,
+} from 'common/utils';
 import ConfirmReplaceItemPopover from './ConfirmReplaceItemPopover';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 
 interface IProps {
   item: item;
   selectedItemSlotId: string | null;
-  customSetItemIds: Set<string>;
-  customSet?: customSet | null;
+  customSetId: string | null;
   responsiveGridRef: React.MutableRefObject<HTMLDivElement | null>;
   selectItemSlot: React.Dispatch<
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
+  equipped: boolean;
 }
 
 const ItemCard: React.FC<IProps> = ({
   item,
   selectedItemSlotId,
-  customSetItemIds,
-  customSet,
+  customSetId,
   responsiveGridRef,
   selectItemSlot,
+  equipped,
 }) => {
+  const customSet = useCustomSet(customSetId);
+
   const itemSlotId =
     selectedItemSlotId || findEmptyOrOnlySlotId(item.itemType, customSet);
 
@@ -52,9 +57,7 @@ const ItemCard: React.FC<IProps> = ({
       title={
         <div css={{ display: 'flex', alignItems: 'center' }}>
           <TruncatableText>{item.name}</TruncatableText>
-          {customSetItemIds.has(item.id) && (
-            <Badge css={{ marginRight: 4 }}>{t('EQUIPPED')}</Badge>
-          )}
+          {equipped && <Badge css={{ marginRight: 4 }}>{t('EQUIPPED')}</Badge>}
           <div
             css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}
           >

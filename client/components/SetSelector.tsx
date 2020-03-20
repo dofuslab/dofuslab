@@ -100,7 +100,13 @@ const SetSelector: React.FC<IProps> = ({ customSet, filters }) => {
       {data &&
         data.sets.edges
           .map(edge => edge.node)
-          .map(set => <SetCard key={set.id} set={set} customSet={customSet} />)}
+          .map(set => (
+            <SetCard
+              key={set.id}
+              set={set}
+              customSetId={customSet?.id ?? null}
+            />
+          ))}
       {(loading || data?.sets.pageInfo.hasNextPage) &&
         Array(loading ? numLoadersToRender * 2 : numLoadersToRender)
           .fill(null)
