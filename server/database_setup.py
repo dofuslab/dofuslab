@@ -1,6 +1,8 @@
 from app import db
 from app.database.model_item import ModelItem
 from app.database.model_item_stat import ModelItemStat
+from app.database.model_item_stat_translation import ModelItemStatTranslation
+from app.database.model_item_custom_stat import ModelItemCustomStat
 from app.database.model_item_slot import ModelItemSlot
 from app.database.model_item_type import ModelItemType
 from app.database.model_item_translation import ModelItemTranslation
@@ -8,7 +10,10 @@ from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_weapon_stat import ModelWeaponStat
 from app.database.model_set import ModelSet
 from app.database.model_set_bonus import ModelSetBonus
+from app.database.model_set_bonus_translation import ModelSetBonusTranslation
+from app.database.model_set_custom_bonus import ModelSetCustomBonus
 from app.database.model_set_translation import ModelSetTranslation
+from app.database.model_set_custom_bonus import ModelSetCustomBonus
 from app.database.model_custom_set_stat import ModelCustomSetStat
 from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_custom_set import ModelCustomSet
@@ -118,6 +123,7 @@ if __name__ == "__main__":
                     item_types=[
                         item_types[item_type_name] for item_type_name in record["types"]
                     ],
+                    order=record["order"],
                 )
                 db.session.add(item_slot)
 
@@ -147,7 +153,21 @@ if __name__ == "__main__":
                         bonus_obj.stat = to_stat_enum[bonus["stat"]]
                         bonus_obj.value = bonus["value"]
                     else:
-                        bonus_obj.alt_stat = bonus["altStat"]
+                        for locale in bonus["altStat"]:
+                            bonus_translation = ModelSetBonusTranslation(
+                                set_translation_id=bonus_obj.uuid, locale=locale
+                            )
+                            for custom_bonus in bonus["altStat"][locale]:
+                                custom_bonus_obj = ModelSetCustomBonus(
+                                    set_bonus_translation_id=bonus_translation.uuid,
+                                    custom_stat=custom_bonus,
+                                )
+                                db.session.add(custom_bonus_obj)
+                                bonus_translation.custom_bonus.append(custom_bonus_obj)
+
+                            db.session.add(bonus_translation)
+                            bonus_obj.set_bonus_translation.append(bonus_translation)
+
                     db.session.add(bonus_obj)
                     set_obj.bonuses.append(bonus_obj)
 
@@ -169,7 +189,7 @@ if __name__ == "__main__":
 
             conditions = {
                 "conditions": record["conditions"]["conditions"],
-                "customConditions": record["conditions"]["custom_conditions"],
+                "customConditions": record["conditions"]["customConditions"],
             }
             item.conditions = conditions
 
@@ -181,13 +201,34 @@ if __name__ == "__main__":
                 item.item_translations.append(item_translations)
 
             try:
+                i = 0
                 for stat in record["stats"]:
                     item_stat = ModelItemStat(
                         stat=to_stat_enum[stat["stat"]],
                         min_value=stat["minStat"],
                         max_value=stat["maxStat"],
+                        order=i,
                     )
                     db.session.add(item_stat)
+                    item.stats.append(item_stat)
+                    i = i + 1
+                if record["customStats"] != {}:
+                    item_stat = ModelItemStat(order=i)
+                    for locale in record["customStats"]:
+                        stat_translation = ModelItemStatTranslation(
+                            item_stat_id=item_stat.uuid, locale=locale
+                        )
+                        for custom_stat in record["customStats"][locale]:
+                            item_custom_stat = ModelItemCustomStat(
+                                item_stat_translation_id=stat_translation.uuid,
+                                custom_stat=custom_stat,
+                            )
+                            db.session.add(item_custom_stat)
+                            stat_translation.custom_stats.append(item_custom_stat)
+
+                        db.session.add(stat_translation)
+                        item_stat.item_stat_translation.append(stat_translation)
+
                     item.stats.append(item_stat)
 
                 db.session.add(item)
@@ -232,13 +273,34 @@ if __name__ == "__main__":
                 item.item_translations.append(item_translations)
 
             try:
+                i = 0
                 for stat in record["stats"]:
                     item_stat = ModelItemStat(
                         stat=to_stat_enum[stat["stat"]],
                         min_value=stat["minStat"],
                         max_value=stat["maxStat"],
+                        order=i,
                     )
                     db.session.add(item_stat)
+                    item.stats.append(item_stat)
+                    i = i + 1
+                if record["customStats"] != {}:
+                    item_stat = ModelItemStat(order=i)
+                    for locale in record["customStats"]:
+                        stat_translation = ModelItemStatTranslation(
+                            item_stat_id=item_stat.uuid, locale=locale
+                        )
+                        for custom_stat in record["customStats"][locale]:
+                            item_custom_stat = ModelItemCustomStat(
+                                item_stat_translation_id=stat_translation.uuid,
+                                custom_stat=custom_stat,
+                            )
+                            db.session.add(item_custom_stat)
+                            stat_translation.custom_stats.append(item_custom_stat)
+
+                        db.session.add(stat_translation)
+                        item_stat.item_stat_translation.append(stat_translation)
+
                     item.stats.append(item_stat)
 
                 db.session.add(item)

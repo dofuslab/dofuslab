@@ -92,45 +92,54 @@ def get_soup(url):
     return soup
 
 
-def get_alternate_names(soup):
-    alt_links = {}
-    raw_links = soup.find("head").find_all("link", {"rel": "alternate"})
-    for link in raw_links:
+def get_all_localized_soup(url):
+    soup = get_soup(url)
+
+    all_soups = {}
+
+    all_links = {}
+    unparsed_links = soup.find("head").find_all("link", {"rel": "alternate"})
+    for link in unparsed_links:
         link = link["href"]
         if "dofus" in link:
-            alt_links[link.split("/")[3]] = link
+            all_links[link.split("/")[3]] = link
 
+    all_soups["en"] = soup
+    for key, value in all_links.items():
+        soup = get_soup(value)
+        all_soups[key] = soup
+
+    return all_soups
+
+
+def get_alternate_names(all_soups):
     names = {}
-    names["en"] = soup.find("h1", attrs={"class": "ak-return-link"}).text.strip()
-    for key, value in alt_links.items():
-        # temporarily using just fr
-        if "fr" in key:
-            alt_soup = get_soup(value)
-            name = alt_soup.find("h1", attrs={"class": "ak-return-link"}).text.strip()
-            names[key] = name
+    for key, value in all_soups.items():
+        name = value.find("h1", attrs={"class": "ak-return-link"}).text.strip()
+        names[key] = name
 
     return names
 
 
-def get_stats(soup, id):
+def get_stats(all_soups):
     has_stats = False
-    stats_soup = soup.find_all("div", class_="ak-panel-title")
+    stats_soup = all_soups["en"].find_all("div", class_="ak-panel-title")
     for subsection in stats_soup:
         if "Effects" in subsection.text:
             has_stats = True
 
     if has_stats == False:
-        # print("Item (id: {}) does not have stats".format(id))
         return ([], [], [])
 
-    raw_stats = soup.find(
+    raw_stats = all_soups["en"].find(
         "div", {"class": "ak-container ak-content-list ak-displaymode-col"}
     )
     stats = []
-    custom_stats = []
+    custom_stats = {}
     damage_stats = []
 
     if raw_stats:
+        i = 0
         for stat in raw_stats:
             description = stat.find_next("div", {"class": "ak-title"}).text.strip()
 
@@ -140,7 +149,28 @@ def get_stats(soup, id):
             # char count analysis to separate the 2. This will need testing
             # or refactoring at a later time
             if len(description) > 40:
-                custom_stats.append(description)
+                custom_stats = {
+                    "en": [],
+                    "fr": [],
+                    "de": [],
+                    "es": [],
+                    "it": [],
+                    "pt": [],
+                }
+                for key, value in all_soups.items():
+                    custom_stat = (
+                        value.find(
+                            "div",
+                            {
+                                "class": "ak-container ak-content-list ak-displaymode-col"
+                            },
+                        )
+                        .find_all("div", {"class": "ak-title"})[i]
+                        .text.strip()
+                    )
+                    custom_stats[key].append(custom_stat)
+
+                i = i + 1
                 continue
 
             type = None
@@ -165,6 +195,7 @@ def get_stats(soup, id):
                     {"stat": type, "minStat": min_stat, "maxStat": max_stat,}
                 )
 
+                i = i + 1
                 continue
 
             if re.search(r"(?:-\d to \d|-\d) (?:AP|MP)", description):
@@ -186,6 +217,7 @@ def get_stats(soup, id):
                     {"stat": type, "minStat": min_stat, "maxStat": max_stat,}
                 )
 
+                i = i + 1
                 continue
 
             if (
@@ -195,8 +227,29 @@ def get_stats(soup, id):
                 )
                 == None
             ):
-                custom_stats.append(description)
+                if custom_stats == {}:
+                    custom_stats = {
+                        "en": [],
+                        "fr": [],
+                        "de": [],
+                        "es": [],
+                        "it": [],
+                        "pt": [],
+                    }
+                for key, value in all_soups.items():
+                    custom_stat = (
+                        value.find(
+                            "div",
+                            {
+                                "class": "ak-container ak-content-list ak-displaymode-col"
+                            },
+                        )
+                        .find_all("div", {"class": "ak-title"})[i]
+                        .text.strip()
+                    )
+                    custom_stats[key].append(custom_stat)
 
+                i = i + 1
                 continue
 
             # In all other cases, we create the stat as normal
@@ -239,15 +292,18 @@ def get_stats(soup, id):
                 {"stat": type, "minStat": min_stat, "maxStat": max_stat,}
             )
 
+            i = i + 1
+
     return (stats, custom_stats, damage_stats)
 
 
-def get_bonuses(soup):
+def get_bonuses(all_soups):
     all_bonuses = {}
-    raw_bonuses = soup.find_all("div", attrs={"class": "set-bonus-list"})
+    raw_bonuses = all_soups["en"].find_all("div", attrs={"class": "set-bonus-list"})
     for i in range(len(raw_bonuses)):
         stats = []
         bonuses = raw_bonuses[i].find_all("div", attrs={"class": "ak-title"})
+        j = 0
         for bonus in bonuses:
             description = bonus.text.strip()
             type = None
@@ -261,12 +317,20 @@ def get_bonuses(soup):
                 )
                 == None
             ):
-                alt_stat = description
+                alt_stat = {"en": [], "fr": [], "de": [], "es": [], "it": [], "pt": []}
+                for key, soup in all_soups.items():
+                    custom_stat = (
+                        soup.find_all("div", attrs={"class": "set-bonus-list"})[i]
+                        .find_all("div", attrs={"class": "ak-title"})[j]
+                        .text.strip()
+                    )
+                    alt_stat[key].append(custom_stat)
 
                 stats.append(
                     {"stat": type, "value": value, "altStat": alt_stat,}
                 )
 
+                j = j + 1
                 continue
 
             # In all other cases, we create the stat as normal
@@ -303,41 +367,29 @@ def get_bonuses(soup):
 
             stats.append({"stat": type, "value": max_stat, "altStat": alt_stat})
 
+            j = j + 1
+
         item_count = 2 + i
         all_bonuses[item_count] = stats
 
     return all_bonuses
 
 
-def get_conditions(soup, item_type):
+def get_conditions(all_soups, item_type):
     has_conditions = False
-    conditions_soup = soup.find_all("div", class_="ak-panel-title")
+    conditions_soup = all_soups["en"].find_all("div", class_="ak-panel-title")
     for subsection in conditions_soup:
         if "Conditions" in subsection.text:
             has_conditions = True
 
     if has_conditions == False:
-        return {"conditions": {}, "customConditions": []}
+        return {"conditions": {}, "customConditions": {}}
 
-    non_standard_conditions_en = ["months", "day(s)"]
-    non_standard_conditions_fr = []
-    non_standard_conditions_de = []
-    non_standard_conditions_es = []
-    non_standard_conditions_it = []
-    non_standard_conditions_pt = []
-
-    all_non_standard_conditions = (
-        non_standard_conditions_en
-        + non_standard_conditions_fr
-        + non_standard_conditions_de
-        + non_standard_conditions_es
-        + non_standard_conditions_it
-        + non_standard_conditions_pt
-    )
+    non_standard_conditions = ["months", "day(s)"]
 
     raw_conditions = None
 
-    if item_type in [
+    weapons = [
         "Axe",
         "Bow",
         "Dagger",
@@ -350,17 +402,18 @@ def get_conditions(soup, item_type):
         "Tool",
         "Wand",
         "Soul stone",
-    ]:
-        raw_conditions = soup.find_all(
+    ]
+    if item_type in weapons:
+        raw_conditions = all_soups["en"].find_all(
             "div", attrs={"class": "ak-container ak-panel no-padding"}
         )[1]
     else:
-        raw_conditions = soup.find(
+        raw_conditions = all_soups["en"].find(
             "div", attrs={"class": "ak-container ak-panel no-padding"}
         )
 
     conditions = {}
-    custom_conditions = []
+    custom_conditions = {}
 
     if raw_conditions:
         raw_conditions = (
@@ -386,8 +439,45 @@ def get_conditions(soup, item_type):
                 )
                 == None
             ):
-                condition = raw_conditions[i].strip(" and")
-                custom_conditions.append(condition)
+                # condition = raw_conditions[i].strip(" and")
+                # custom_conditions.append(condition)
+
+                if custom_conditions == {}:
+                    custom_conditions = {
+                        "en": [],
+                        "fr": [],
+                        "de": [],
+                        "es": [],
+                        "it": [],
+                        "pt": [],
+                    }
+                for key, value in all_soups.items():
+                    custom_stat = None
+                    if item_type in weapons:
+                        custom_stat = (
+                            value.find_all(
+                                "div",
+                                attrs={"class": "ak-container ak-panel no-padding"},
+                            )[1]
+                            .find("div", {"class": "ak-title"})
+                            .text.strip()
+                            .split("\n")
+                        )[i]
+                        custom_stat = unicodedata.normalize("NFKD", custom_stat).strip()
+                    else:
+                        custom_stat = (
+                            value.find(
+                                "div",
+                                attrs={"class": "ak-container ak-panel no-padding"},
+                            )
+                            .find("div", {"class": "ak-title"})
+                            .text.strip()
+                            .split("\n")
+                        )[i]
+                        custom_stat = unicodedata.normalize("NFKD", custom_stat).strip()
+
+                    custom_conditions[key].append(custom_stat)
+
                 i = i + 1
 
             # logic for normal conditions
@@ -398,7 +488,6 @@ def get_conditions(soup, item_type):
                         current_operator = "or"
                         if "or" in conditions.keys():
                             condition = raw_conditions[i].strip(" or").split(" ")
-                            print(condition)
                             stat = condition[0]
                             operator = condition[1]
                             value = int(condition[2])
@@ -504,15 +593,65 @@ def get_conditions(soup, item_type):
                     nested_conditions = {}
                     inner_operator = None
                     i = i + 1
-                    while ")" not in raw_conditions[i]:
+                    while i < len(raw_conditions) and all(
+                        end not in raw_conditions[i] for end in [") and", ") or"]
+                    ):
+                        if ")" in raw_conditions[i] and "s)" not in raw_conditions[i]:
+                            i = i + 1
+                            continue
+
                         if any(
                             invalid in raw_conditions[i]
-                            for invalid in all_non_standard_conditions
+                            for invalid in non_standard_conditions
                         ):
-                            condition = (
-                                raw_conditions[i].strip().strip(" and").strip(" or")
-                            )
-                            custom_conditions.append(condition)
+                            # condition = raw_conditions[i]
+                            # print(condition)
+                            # custom_conditions.append(condition)
+
+                            if custom_conditions == {}:
+                                custom_conditions = {
+                                    "en": [],
+                                    "fr": [],
+                                    "de": [],
+                                    "es": [],
+                                    "it": [],
+                                    "pt": [],
+                                }
+
+                            for key, value in all_soups.items():
+                                custom_stat = None
+                                if item_type in weapons:
+                                    custom_stat = (
+                                        value.find_all(
+                                            "div",
+                                            attrs={
+                                                "class": "ak-container ak-panel no-padding"
+                                            },
+                                        )[1]
+                                        .text.strip()
+                                        .split("\n")
+                                    )[i]
+                                    custom_stat = unicodedata.normalize(
+                                        "NFKD", custom_stat
+                                    ).strip()
+                                else:
+                                    custom_stat = (
+                                        value.find(
+                                            "div",
+                                            {
+                                                "class": "ak-container ak-panel no-padding"
+                                            },
+                                        )
+                                        .find("div", {"class": "ak-title"})
+                                        .text.strip()
+                                        .split("\n")
+                                    )[i]
+                                    custom_stat = unicodedata.normalize(
+                                        "NFKD", custom_stat
+                                    ).strip()
+
+                                custom_conditions[key].append(custom_stat)
+
                             i = i + 1
                             continue
 
@@ -665,30 +804,6 @@ def get_weapon_stats(soup):
         max_range = int(arr[2])
     else:
         max_range = int(range)
-    base_crit_chance = int(
-        (
-            soup.find("div", {"class": "ak-container ak-panel no-padding"})
-            .find_all("div", {"class", "ak-list-element"})[2]
-            .find("span", {"class": "ak-title-info"})
-            .text
-        )
-        .split(" ")[0]
-        .split("/")[1]
-    )
-    crit_bonus_damage = 0
-    # if base_crit_chance != 0:
-    #     crit_bonus_damage = int(
-    #         (
-    #             soup.find("div", {"class": "ak-container ak-panel no-padding"})
-    #             .find_all("div", {"class", "ak-list-element"})[2]
-    #             .find("span", {"class": "ak-title-info"})
-    #             .text
-    #         )
-    #         .split(" ")[1]
-    #         .replace("+", "")
-    #         .replace("(", "")
-    #         .replace(")", "")
-    #     )
 
     crit_info = (
         soup.find("div", {"class": "ak-container ak-panel no-padding"})

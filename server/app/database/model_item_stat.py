@@ -3,6 +3,7 @@ from .base import Base
 from .enums import StatEnum
 from sqlalchemy import Column, String, Integer, ForeignKey, text, Enum
 from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.orm import relationship
 from uuid import uuid4
 
 
@@ -16,9 +17,15 @@ class ModelItemStat(Base):
         nullable=False,
     )
     item_id = Column(
-        UUID(as_uuid=True), ForeignKey("item.uuid"), nullable=False, index=True
+        UUID(as_uuid=True),
+        ForeignKey("item.uuid", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
     )
     stat = Column("stat", StatEnum, index=True)
     min_value = Column("min_value", Integer)
     max_value = Column("max_value", Integer)
-    alt_stat = Column("alt_stat", String)
+    item_stat_translation = relationship(
+        "ModelItemStatTranslation", backref="item_stat", cascade="all, delete-orphan"
+    )
+    order = Column("order", Integer, nullable=False)

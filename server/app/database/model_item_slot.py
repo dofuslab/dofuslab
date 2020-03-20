@@ -1,7 +1,7 @@
 import sqlalchemy
 from .base import Base
 from .item_type_slot_compat_table import item_type_slot_compat_table
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, Integer
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
@@ -21,4 +21,4 @@ class ModelItemSlot(Base):
         secondary=item_type_slot_compat_table,
         back_populates="eligible_item_slots",
     )
-
+    order = Column("order", Integer, nullable=False)

@@ -27,7 +27,7 @@ class ModelItem(Base):
     set_id = Column(UUID(as_uuid=True), ForeignKey("set.uuid"), index=True)
     set = relationship("ModelSet")
     level = Column("level", Integer, nullable=False)
-    stats = relationship(ModelItemStat, backref="item", cascade="all, delete-orphan")
+    stats = relationship("ModelItemStat", backref="item", cascade="all, delete-orphan")
     weapon_stats = relationship(
         "ModelWeaponStat", backref="item", cascade="all, delete-orphan"
     )
