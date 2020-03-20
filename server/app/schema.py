@@ -133,7 +133,9 @@ class Item(SQLAlchemyObjectType):
     name = graphene.String(required=True)
 
     def resolve_name(self, info):
-        locale = info.context.headers.get("Accept-Language")[:2]
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
         query = db.session.query(ModelItemTranslation)
         return (
             query.filter(ModelItemTranslation.locale == locale)
@@ -193,7 +195,9 @@ class Set(SQLAlchemyObjectType):
     name = graphene.String(required=True)
 
     def resolve_name(self, info):
-        locale = info.context.headers.get("Accept-Language")[:2]
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
         query = db.session.query(ModelSetTranslation)
         return (
             query.filter(ModelSetTranslation.locale == locale)
@@ -561,7 +565,9 @@ class Query(graphene.ObjectType):
     )
 
     def resolve_items(self, info, **kwargs):
-        locale = info.context.headers.get("Accept-Language")[:2]
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
         filters = kwargs.get("filters")
         items_query = (
             db.session.query(ModelItem)
