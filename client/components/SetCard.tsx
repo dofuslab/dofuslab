@@ -60,6 +60,7 @@ const SetCard: React.FC<IProps> = ({ set, customSet }) => {
           {set.items.map(item => (
             <img
               src={item?.imageUrl}
+              key={`item-${item.id}`}
               css={{
                 width: 60,
                 height: 60,

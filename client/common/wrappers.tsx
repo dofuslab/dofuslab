@@ -2,6 +2,7 @@
 
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
+import BackTop from 'antd/lib/back-top';
 import { useTranslation } from 'i18n';
 import {
   gray7,
@@ -158,3 +159,7 @@ export const SetBonuses: React.FC<{
     </ul>
   </div>
 );
+
+export const BackTopWrapper: React.FC<{ target: () => HTMLElement }> = ({
+  target,
+}) => <BackTop target={target} />;

@@ -66,7 +66,6 @@ const ItemSelector: React.FC<IProps> = ({
   const endCursorRef = React.useRef<string | null>(null);
 
   const onLoadMore = React.useCallback(async () => {
-    console.log('onLoadMore');
     if (
       !data ||
       !data.items.pageInfo.hasNextPage ||

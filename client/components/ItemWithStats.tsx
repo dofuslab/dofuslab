@@ -64,7 +64,13 @@ const ItemWithStats: React.FC<IProps> = ({
           <Popover
             placement="bottom"
             title={
-              <div css={{ display: 'flex', alignItems: 'baseline' }}>
+              <div
+                css={{
+                  display: 'flex',
+                  alignItems: 'baseline',
+                  justifyContent: 'space-between',
+                }}
+              >
                 <div>{equippedItem.item.name}</div>
                 <div
                   css={{ marginLeft: 8, fontWeight: 400, fontSize: '0.75rem' }}
