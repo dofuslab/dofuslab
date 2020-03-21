@@ -3,7 +3,7 @@
 import React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
 import Modal from 'antd/lib/modal';
-import Select from 'antd/lib/select';
+import Select, { LabeledValue } from 'antd/lib/select';
 import Divider from 'antd/lib/divider';
 
 import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
@@ -173,8 +173,8 @@ const MageModal: React.FC<IProps> = ({
   const { t } = useTranslation(['stat', 'mage']);
 
   const onAddStat = React.useCallback(
-    ({ value }: { value: Stat }) => {
-      dispatch({ type: 'ADD', stat: value });
+    ({ value }: LabeledValue) => {
+      dispatch({ type: 'ADD', stat: value as Stat });
     },
     [dispatch],
   );
