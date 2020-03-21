@@ -7,19 +7,13 @@ import { useTranslation } from 'i18n';
 import { ItemStatsList, TruncatableText, Badge } from 'common/wrappers';
 import { item } from 'graphql/fragments/__generated__/item';
 import { BORDER_COLOR, itemCardStyle, itemBoxDimensions } from 'common/mixins';
-import {
-  findEmptyOrOnlySlotId,
-  useEquipItemMutation,
-  useCustomSet,
-} from 'common/utils';
-import ConfirmReplaceItemPopover from './ConfirmReplaceItemPopover';
+import { useEquipItemMutation, useCustomSet } from 'common/utils';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 
 interface IProps {
   item: item;
-  selectedItemSlotId: string | null;
+  itemSlotId: string | null;
   customSetId: string | null;
-  responsiveGridRef: React.MutableRefObject<HTMLDivElement | null>;
   selectItemSlot: React.Dispatch<
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
@@ -28,16 +22,12 @@ interface IProps {
 
 const ItemCard: React.FC<IProps> = ({
   item,
-  selectedItemSlotId,
+  itemSlotId,
   customSetId,
-  responsiveGridRef,
   selectItemSlot,
   equipped,
 }) => {
   const customSet = useCustomSet(customSetId);
-
-  const itemSlotId =
-    selectedItemSlotId || findEmptyOrOnlySlotId(item.itemType, customSet);
 
   const mutate = useEquipItemMutation(item, customSet);
 
@@ -46,11 +36,11 @@ const ItemCard: React.FC<IProps> = ({
       selectItemSlot(null);
       await mutate(itemSlotId);
     }
-  }, [item, itemSlotId, mutate, selectItemSlot]);
+  }, [item, itemSlotId, customSet, mutate, selectItemSlot]);
 
   const { t } = useTranslation(['stat', 'common']);
 
-  const card = (
+  return (
     <Card
       hoverable
       size="small"
@@ -77,18 +67,6 @@ const ItemCard: React.FC<IProps> = ({
       <img src={item.imageUrl} css={{ float: 'right', ...itemBoxDimensions }} />
       <ItemStatsList item={item} css={{ paddingLeft: 16, marginBottom: 0 }} />
     </Card>
-  );
-
-  return itemSlotId || !customSet ? (
-    card
-  ) : (
-    <ConfirmReplaceItemPopover
-      item={item}
-      customSet={customSet}
-      responsiveGridRef={responsiveGridRef}
-    >
-      {card}
-    </ConfirmReplaceItemPopover>
   );
 };
 

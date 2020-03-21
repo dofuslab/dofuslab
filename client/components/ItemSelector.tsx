@@ -22,6 +22,8 @@ import {
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import ItemTypeFilter from './ItemTypeFilter';
 import { SharedFilters } from 'common/types';
+import { findEmptyOrOnlySlotId } from 'common/utils';
+import ConfirmReplaceItemPopover from './ConfirmReplaceItemPopover';
 
 const PAGE_SIZE = 24;
 
@@ -145,17 +147,33 @@ const ItemSelector: React.FC<IProps> = ({
       {data &&
         data.items.edges
           .map(edge => edge.node)
-          .map(item => (
-            <ItemCard
-              key={item.id}
-              item={item}
-              selectedItemSlotId={selectedItemSlot?.id ?? null}
-              equipped={customSetItemIds.has(item.id)}
-              customSetId={customSet?.id ?? null}
-              responsiveGridRef={responsiveGridRef}
-              selectItemSlot={selectItemSlot}
-            />
-          ))}
+          .map(item => {
+            const itemSlotId =
+              selectedItemSlot?.id ||
+              findEmptyOrOnlySlotId(item.itemType, customSet);
+            const card = (
+              <ItemCard
+                key={`item-card-${item.id}`}
+                item={item}
+                itemSlotId={itemSlotId}
+                equipped={customSetItemIds.has(item.id)}
+                customSetId={customSet?.id ?? null}
+                selectItemSlot={selectItemSlot}
+              />
+            );
+            return itemSlotId || !customSet ? (
+              card
+            ) : (
+              <ConfirmReplaceItemPopover
+                key={`confirm-replace-item-popover-${item.id}`}
+                item={item}
+                customSet={customSet}
+                responsiveGridRef={responsiveGridRef}
+              >
+                {card}
+              </ConfirmReplaceItemPopover>
+            );
+          })}
       {(loading || data?.items.pageInfo.hasNextPage) &&
         Array(loading ? numLoadersToRender * 2 : numLoadersToRender)
           .fill(null)

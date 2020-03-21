@@ -52,6 +52,7 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
                 display: 'flex',
                 flexWrap: 'wrap',
                 justifyContent: 'space-around',
+                maxWidth: 240,
               }}
             >
               {customSet.equippedItems
@@ -86,7 +87,7 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
           trigger="click"
           overlayClassName={css(popoverTitleStyle)}
         >
-          <>{children}</>
+          <div css={{ height: '100%' }}>{children}</div>
         </Popover>
       )}
     </ClassNames>
