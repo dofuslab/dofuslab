@@ -173,8 +173,8 @@ const MageModal: React.FC<IProps> = ({
   const { t } = useTranslation(['stat', 'mage']);
 
   const onAddStat = React.useCallback(
-    (stat: Stat) => {
-      dispatch({ type: 'ADD', stat });
+    ({ value }: { value: Stat }) => {
+      dispatch({ type: 'ADD', stat: value });
     },
     [dispatch],
   );
@@ -223,7 +223,7 @@ const MageModal: React.FC<IProps> = ({
             {statsState.originalStats.map(statLine => (
               <div
                 key={`original-${statLine.stat}`}
-                css={{ position: 'relative' }}
+                css={{ position: 'relative', paddingRight: 12 }}
               >
                 <div
                   css={deleteStatWrapper}
@@ -282,12 +282,18 @@ const MageModal: React.FC<IProps> = ({
               autoClearSearchValue
               showSearch
               onSelect={onAddStat}
-              css={{ fontSize: '0.75rem', width: '80%' }}
+              css={{ fontSize: '0.75rem', width: '100%' }}
+              labelInValue
+              filterOption={(input, option) =>
+                (option?.children as string)
+                  .toLocaleUpperCase()
+                  .includes(input.toLocaleUpperCase())
+              }
             >
               {Object.values(Stat).map(stat => (
                 <Option
-                  key={`option-${stat}`}
-                  value={t(stat, { ns: 'stat' })!}
+                  key={stat}
+                  value={stat}
                   disabled={statsSet.has(stat)}
                   className={css({
                     ['.ant-select-item-option-content']: {
