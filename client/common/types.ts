@@ -1,7 +1,6 @@
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { item_set, item } from 'graphql/fragments/__generated__/item';
 import { Stat, ItemFilters } from '__generated__/globalTypes';
-import { CheckboxValueType } from 'antd/lib/checkbox/Group';
 
 export type StatWithCalculatedValue = {
   stat: string;
