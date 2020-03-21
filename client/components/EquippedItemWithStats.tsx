@@ -74,7 +74,11 @@ const EquippedItemWithStats: React.FC<IProps> = ({
             placement="bottomLeft"
             title={
               <div
-                css={{ display: 'flex', alignItems: 'baseline' }}
+                css={{
+                  display: 'flex',
+                  alignItems: 'baseline',
+                  justifyContent: 'space-between',
+                }}
                 onClick={stopPropagationCallback}
               >
                 <div>{equippedItem.item.name}</div>
