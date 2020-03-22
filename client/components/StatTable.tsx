@@ -55,8 +55,15 @@ const StatTable: React.FC<IStatTable> = ({
                   ? item.icon.backgroundPositionY + 1
                   : undefined,
                 marginRight: 6,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
-            ></div>
+            >
+              {item.svgIcon && (
+                <img src={item.svgIcon} css={{ height: '80%', width: '80%' }} />
+              )}
+            </div>
             <div css={{ fontSize: '0.75rem' }}>{t(item.stat)}</div>
           </div>
           <div css={{ fontSize: '0.75rem' }}>

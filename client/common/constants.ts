@@ -290,15 +290,23 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
     },
     {
       stat: Stat.PCT_MELEE_DAMAGE,
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Melee+Damage.svg',
     },
     {
       stat: Stat.PCT_RANGED_DAMAGE,
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Ranged+Damage.svg',
     },
     {
       stat: Stat.PCT_WEAPON_DAMAGE,
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Weapon+Damage.svg',
     },
     {
       stat: Stat.PCT_SPELL_DAMAGE,
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Spell+Damage.svg',
     },
   ],
   [
@@ -312,9 +320,13 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
     },
     {
       stat: Stat.PCT_MELEE_RES,
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Melee+Resistance.svg',
     },
     {
       stat: Stat.PCT_RANGED_RES,
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Ranged+Resistance.svg',
     },
   ],
 ];

@@ -9,6 +9,7 @@ export type StatWithCalculatedValue = {
     backgroundPositionX: number;
     backgroundPositionY: number;
   };
+  svgIcon?: string;
 };
 
 export type StatGroup = Array<StatWithCalculatedValue>;
