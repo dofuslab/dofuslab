@@ -19,6 +19,4 @@ class ModelItemStatTranslation(Base):
     )
     locale = Column("locale", String, nullable=False, index=True)
 
-    custom_stats = relationship(
-        "ModelItemCustomStat", backref="item", cascade="all, delete-orphan"
-    )
+    custom_stat = Column("custom_stat", String, nullable=False)

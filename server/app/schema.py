@@ -1,5 +1,4 @@
 from app import db
-from app.database.model_item_custom_stat import ModelItemCustomStat
 from app.database.model_item_stat_translation import ModelItemStatTranslation
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_type import ModelItemType
@@ -8,7 +7,6 @@ from app.database.model_item_translation import ModelItemTranslation
 from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_weapon_stat import ModelWeaponStat
 from app.database.model_item import ModelItem
-from app.database.model_set_custom_bonus import ModelSetCustomBonus
 from app.database.model_set_bonus_translation import ModelSetBonusTranslation
 from app.database.model_set_bonus import ModelSetBonus
 from app.database.model_set_translation import ModelSetTranslation
@@ -80,18 +78,13 @@ class ItemStat(SQLAlchemyObjectType):
         )
 
         query = (
-            db.session.query(ModelItemCustomStat)
-            .join(ModelItemStatTranslation)
+            db.session.query(ModelItemStatTranslation)
             .filter(ModelItemStatTranslation.locale == locale)
             .filter(ModelItemStatTranslation.item_stat_id == self.uuid)
             .all()
         )
 
-        bonus_list = []
-        for bonus in query:
-            bonus_list.append(bonus.custom_stat)
-
-        return bonus_list
+        return [translation.custom_stat for translation in query]
 
     class Meta:
         model = ModelItemStat
@@ -171,18 +164,13 @@ class SetBonus(SQLAlchemyObjectType):
         )
 
         query = (
-            db.session.query(ModelSetCustomBonus)
-            .join(ModelSetBonusTranslation)
+            db.session.query(ModelSetBonusTranslation)
             .filter(ModelSetBonusTranslation.locale == locale)
-            .filter(ModelSetBonusTranslation.set_translation_id == self.uuid)
+            .filter(ModelSetBonusTranslation.set_bonus_id == self.uuid)
             .all()
         )
 
-        bonus_list = []
-        for bonus in query:
-            bonus_list.append(bonus.custom_stat)
-
-        return bonus_list
+        return [translation.custom_stat for translation in query]
 
     class Meta:
         model = ModelSetBonus

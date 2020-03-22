@@ -2,7 +2,6 @@ from app import db
 from app.database.model_item import ModelItem
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_stat_translation import ModelItemStatTranslation
-from app.database.model_item_custom_stat import ModelItemCustomStat
 from app.database.model_item_slot import ModelItemSlot
 from app.database.model_item_type import ModelItemType
 from app.database.model_item_translation import ModelItemTranslation
@@ -11,10 +10,7 @@ from app.database.model_weapon_stat import ModelWeaponStat
 from app.database.model_set import ModelSet
 from app.database.model_set_bonus import ModelSetBonus
 from app.database.model_set_bonus_translation import ModelSetBonusTranslation
-from app.database.model_set_custom_bonus import ModelSetCustomBonus
 from app.database.model_set_translation import ModelSetTranslation
-from app.database.model_set_custom_bonus import ModelSetCustomBonus
-from app.database.model_custom_set_stat import ModelCustomSetStat
 from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_custom_set import ModelCustomSet
 from app.database.model_user import ModelUser
@@ -154,19 +150,16 @@ if __name__ == "__main__":
                         bonus_obj.value = bonus["value"]
                     else:
                         for locale in bonus["altStat"]:
-                            bonus_translation = ModelSetBonusTranslation(
-                                set_translation_id=bonus_obj.uuid, locale=locale
-                            )
                             for custom_bonus in bonus["altStat"][locale]:
-                                custom_bonus_obj = ModelSetCustomBonus(
-                                    set_bonus_translation_id=bonus_translation.uuid,
+                                bonus_translation = ModelSetBonusTranslation(
+                                    set_bonus_id=bonus_obj.uuid,
+                                    locale=locale,
                                     custom_stat=custom_bonus,
                                 )
-                                db.session.add(custom_bonus_obj)
-                                bonus_translation.custom_bonus.append(custom_bonus_obj)
-
-                            db.session.add(bonus_translation)
-                            bonus_obj.set_bonus_translation.append(bonus_translation)
+                                db.session.add(bonus_translation)
+                                bonus_obj.set_bonus_translation.append(
+                                    bonus_translation
+                                )
 
                     db.session.add(bonus_obj)
                     set_obj.bonuses.append(bonus_obj)
@@ -215,19 +208,14 @@ if __name__ == "__main__":
                 if record["customStats"] != {}:
                     item_stat = ModelItemStat(order=i)
                     for locale in record["customStats"]:
-                        stat_translation = ModelItemStatTranslation(
-                            item_stat_id=item_stat.uuid, locale=locale
-                        )
                         for custom_stat in record["customStats"][locale]:
-                            item_custom_stat = ModelItemCustomStat(
-                                item_stat_translation_id=stat_translation.uuid,
+                            stat_translation = ModelItemStatTranslation(
+                                item_stat_id=item_stat.uuid,
+                                locale=locale,
                                 custom_stat=custom_stat,
                             )
-                            db.session.add(item_custom_stat)
-                            stat_translation.custom_stats.append(item_custom_stat)
-
-                        db.session.add(stat_translation)
-                        item_stat.item_stat_translation.append(stat_translation)
+                            db.session.add(stat_translation)
+                            item_stat.item_stat_translation.append(stat_translation)
 
                     item.stats.append(item_stat)
 
@@ -287,19 +275,14 @@ if __name__ == "__main__":
                 if record["customStats"] != {}:
                     item_stat = ModelItemStat(order=i)
                     for locale in record["customStats"]:
-                        stat_translation = ModelItemStatTranslation(
-                            item_stat_id=item_stat.uuid, locale=locale
-                        )
                         for custom_stat in record["customStats"][locale]:
-                            item_custom_stat = ModelItemCustomStat(
-                                item_stat_translation_id=stat_translation.uuid,
+                            stat_translation = ModelItemStatTranslation(
+                                item_stat_id=item_stat.uuid,
+                                locale=locale,
                                 custom_stat=custom_stat,
                             )
-                            db.session.add(item_custom_stat)
-                            stat_translation.custom_stats.append(item_custom_stat)
-
-                        db.session.add(stat_translation)
-                        item_stat.item_stat_translation.append(stat_translation)
+                            db.session.add(stat_translation)
+                            item_stat.item_stat_translation.append(stat_translation)
 
                     item.stats.append(item_stat)
 
@@ -323,9 +306,15 @@ if __name__ == "__main__":
                 uses_per_turn=record["weaponStats"]["usesPerTurn"],
                 min_range=record["weaponStats"]["minRange"],
                 max_range=record["weaponStats"]["maxRange"],
-                base_crit_chance=record["weaponStats"]["baseCritChance"],
-                crit_bonus_damage=record["weaponStats"]["critBonusDamage"],
             )
+
+            if record["weaponStats"]["baseCritChance"] > 0:
+                weapon_stat.base_crit_chance = (
+                    record["weaponStats"]["baseCritChance"],
+                )
+                weapon_stat.crit_bonus_damage = (
+                    record["weaponStats"]["critBonusDamage"],
+                )
 
             for effect in record["weaponStats"]["weapon_effects"]:
                 weapon_effects = ModelWeaponEffect(
@@ -335,7 +324,7 @@ if __name__ == "__main__":
                 )
                 weapon_stat.weapon_effects.append(weapon_effects)
 
-            item.weapon_stats.append(weapon_stat)
+            item.weapon_stats = weapon_stat
 
         db.session.commit()
 
@@ -410,7 +399,7 @@ if __name__ == "__main__":
                 print("KeyError occurred:", err)
 
         db.session.commit()
-
+    #
     print("Adding mounts to database")
     with open(os.path.join(dirname, "app/database/data/mounts.json"), "r") as file:
         data = json.load(file)

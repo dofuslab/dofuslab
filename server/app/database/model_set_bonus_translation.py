@@ -14,12 +14,11 @@ class ModelSetBonusTranslation(Base):
         primary_key=True,
         nullable=False,
     )
-    set_translation_id = Column(
+    set_bonus_id = Column(
         UUID(as_uuid=True),
         ForeignKey("set_bonus.uuid", ondelete="CASCADE"),
         nullable=False,
     )
     locale = Column("locale", String, nullable=False)
-    custom_bonus = relationship(
-        "ModelSetCustomBonus", backref="item", cascade="all, delete-orphan"
-    )
+
+    custom_stat = Column("custom_stat", String, nullable=False)
