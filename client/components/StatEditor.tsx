@@ -153,7 +153,7 @@ const getInputNumberStyle = (baseKey: string, title: string) => ({
       left: 0,
       top: -42,
       height: 36,
-      [mq[0]]: {
+      [mq[1]]: {
         top: -30,
         height: 24,
       },
@@ -245,8 +245,13 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
         gridAutoRows: 42,
         gridTemplateColumns: '1fr 80px 80px',
         [mq[0]]: {
-          gridTemplateColumns: '1fr 60px 60px',
+          gridAutoRows: 36,
+          gridArea: '2 / 1 / 3 / 2',
+          marginTop: 0,
+        },
+        [mq[1]]: {
           gridAutoRows: 30,
+          gridArea: '3 / 1 / 4 / 2',
           marginTop: 16,
         },
         [mq[2]]: {

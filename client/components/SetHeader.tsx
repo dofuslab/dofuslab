@@ -21,9 +21,8 @@ import {
 import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetdata.graphql';
 import { checkAuthentication } from 'common/utils';
 import { ellipsis } from 'common/mixins';
-import { mq, BREAKPOINTS } from 'common/constants';
+import { mq } from 'common/constants';
 import BonusStats from './BonusStats';
-import { useMediaQuery } from 'react-responsive';
 
 interface IProps {
   customSet?: customSet | null;
@@ -137,19 +136,17 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
   );
 
   const [form] = Form.useForm();
-  const isNotMobile = useMediaQuery({
-    query: `(min-device-width: ${BREAKPOINTS[0]}px)`,
-  });
 
   return (
     <div
       css={{
         display: 'flex',
         alignItems: 'center',
-        flex: '0 0 52px',
+        flex: '0 0 96px',
         margin: '12px 4px',
-        [mq[0]]: {
+        [mq[1]]: {
           margin: '4px 14px',
+          flex: '0 0 52px',
         },
         [mq[4]]: {
           margin: '4px 20px',
@@ -161,12 +158,19 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
         name="header"
         id="header-form"
         onFinish={handleOk}
-        layout={isNotMobile ? 'inline' : 'vertical'}
+        layout={'inline'}
         css={{
           display: 'flex',
           flexDirection: 'column',
-          [mq[0]]: { flexDirection: 'row', alignItems: 'baseline' },
+          [mq[1]]: { flexDirection: 'row', alignItems: 'baseline' },
           width: '100%',
+          '&.ant-form-inline .ant-form-item': {
+            marginRight: 0,
+
+            [mq[1]]: {
+              marginRight: 16,
+            },
+          },
         }}
         initialValues={{
           name: customSet?.name || '',
@@ -179,7 +183,7 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
               css={{
                 fontSize: '1.2rem',
                 fontWeight: 500,
-                [mq[0]]: {
+                [mq[1]]: {
                   fontSize: '1.5rem',
                   width: 240,
                 },
@@ -193,7 +197,7 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
               ...ellipsis,
               fontSize: '1.2rem',
               fontWeight: 500,
-              [mq[0]]: {
+              [mq[1]]: {
                 fontSize: '1.5rem',
                 maxWidth: 400,
               },
@@ -206,33 +210,38 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
         <div
           css={{
             display: 'flex',
-            justifyContent: 'space-between',
             fontSize: '0.75rem',
-            alignItems: 'baseline',
+            alignItems: 'center',
+            marginTop: 8,
+            [mq[1]]: {
+              marginTop: 0,
+            },
           }}
         >
-          {t('LEVEL')}{' '}
+          <div css={{ display: 'flex', alignItems: 'center' }}>
+            {t('LEVEL')}{' '}
+            {metadataState.isEditing ? (
+              <Form.Item name="level" css={{ display: 'inline-flex' }}>
+                <InputNumber
+                  css={{ marginLeft: 8 }}
+                  type="number"
+                  max={200}
+                  min={1}
+                />
+              </Form.Item>
+            ) : (
+              customSet?.level ?? 200
+            )}
+          </div>
           {metadataState.isEditing ? (
-            <Form.Item name="level" css={{ display: 'inline-flex' }}>
-              <InputNumber
-                css={{ marginLeft: 8 }}
-                type="number"
-                max={200}
-                min={1}
-              />
-            </Form.Item>
-          ) : (
-            customSet?.level ?? 200
-          )}
-          {metadataState.isEditing ? (
-            <>
+            <div css={{ marginLeft: 'auto' }}>
               <Button css={{ marginLeft: 12 }} type="primary" htmlType="submit">
                 {t('OK')}
               </Button>
               <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
                 {t('CANCEL')}
               </Button>
-            </>
+            </div>
           ) : (
             <a css={{ marginLeft: 12 }}>
               <FontAwesomeIcon icon={faPencilAlt} onClick={onStartEdit} />

@@ -57,12 +57,13 @@ const Layout = (props: LayoutProps) => {
           html {
             font-size: 24px;
           }
-          ${mq[0]} {
+          ${mq[1]} {
             html {
               font-size: 18px;
             }
             body {
               height: 100vh;
+              font-size: 0.8rem;
             }
 
             #__next {
@@ -78,7 +79,7 @@ const Layout = (props: LayoutProps) => {
           background: 'white',
           borderBottom: `1px solid ${BORDER_COLOR}`,
           padding: '0 12px',
-          [mq[0]]: {
+          [mq[1]]: {
             padding: '0 20px',
           },
         }}
@@ -121,7 +122,7 @@ const Layout = (props: LayoutProps) => {
           flexDirection: 'column',
           paddingLeft: 8,
           paddingRight: 8,
-          [mq[0]]: { padding: 0 },
+          [mq[1]]: { padding: 0 },
         }}
       >
         {props.children}

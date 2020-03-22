@@ -49,6 +49,7 @@ const actionWrapper = {
   padding: ACTION_PADDING,
   transition: 'color 0.3s',
   [':hover']: { color: blue6 },
+  fontSize: '0.8rem',
 };
 
 interface IProps {
@@ -150,6 +151,7 @@ const EquippedItemCard: React.FC<IProps> = ({
         border: 'none',
         borderRadius: 4,
         minWidth: 256,
+        overflow: 'hidden',
       })}
       actions={[
         ...quickMageMenu,

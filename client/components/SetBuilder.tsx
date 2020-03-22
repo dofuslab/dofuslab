@@ -56,7 +56,7 @@ const SetBuilder: React.FC = () => {
   );
 
   const isNotMobile = useMediaQuery({
-    query: `(min-device-width: ${BREAKPOINTS[0]}px)`,
+    query: `(min-device-width: ${BREAKPOINTS[1]}px)`,
   });
 
   return (
@@ -72,7 +72,7 @@ const SetBuilder: React.FC = () => {
           flex: '1 1 auto',
           overflowX: 'hidden',
           display: 'flex',
-          [mq[0]]: {
+          [mq[1]]: {
             paddingLeft: 14,
           },
           [mq[4]]: {
@@ -83,14 +83,15 @@ const SetBuilder: React.FC = () => {
         <div
           css={{
             flex: '1 1 282px',
-            [mq[0]]: { flex: '0 1 282px' },
-            [mq[2]]: { flex: '0 1 576px' },
+
             overflow: 'auto',
             ...topMarginStyle,
+            [mq[1]]: { flex: '0 1 282px', ...(topMarginStyle[mq[1]] as {}) },
+            [mq[2]]: { flex: '0 1 576px' },
           }}
         >
           <ResponsiveGrid
-            numColumns={[1, 1, 2, 2, 2, 2, 2]}
+            numColumns={[2, 1, 2, 2, 2, 2, 2]}
             css={{ marginBottom: 20 }}
           >
             {STAT_GROUPS.map((group, i) => (

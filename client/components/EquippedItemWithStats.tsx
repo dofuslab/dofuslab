@@ -19,6 +19,7 @@ import { faMagic, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useDeleteItemMutation } from 'common/utils';
 import { useTranslation } from 'i18n';
 import EquippedItemCard from './EquippedItemCard';
+import { mq } from 'common/constants';
 
 const wrapperStyles = {
   position: 'absolute' as 'absolute',
@@ -78,12 +79,18 @@ const EquippedItemWithStats: React.FC<IProps> = ({
                   display: 'flex',
                   alignItems: 'baseline',
                   justifyContent: 'space-between',
+                  fontSize: '0.75rem',
                 }}
                 onClick={stopPropagationCallback}
               >
                 <div>{equippedItem.item.name}</div>
                 <div
-                  css={{ marginLeft: 8, fontWeight: 400, fontSize: '0.75rem' }}
+                  css={{
+                    marginLeft: 16,
+                    [mq[1]]: { marginLeft: 8 },
+                    fontWeight: 400,
+                    fontSize: '0.75rem',
+                  }}
                 >
                   {t('LEVEL_ABBREVIATION')} {equippedItem.item.level}
                 </div>

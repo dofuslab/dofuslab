@@ -21,6 +21,7 @@ import {
   mageEquippedItemVariables,
 } from 'graphql/mutations/__generated__/mageEquippedItem';
 import MageEquippedItemMutation from 'graphql/mutations/mageEquippedItem.graphql';
+import { mq } from 'common/constants';
 
 const { Option } = Select;
 
@@ -198,10 +199,14 @@ const MageModal: React.FC<IProps> = ({
       {({ css }) => (
         <Modal
           visible={visible}
-          title={t('MAGE_MODAL_TITLE', {
-            ns: 'mage',
-            itemName: equippedItem.item.name,
-          })}
+          title={
+            <div css={{ fontSize: '0.8rem' }}>
+              {t('MAGE_MODAL_TITLE', {
+                ns: 'mage',
+                itemName: equippedItem.item.name,
+              })}
+            </div>
+          }
           bodyStyle={{
             display: 'flex',
             flexDirection: 'column',
@@ -215,7 +220,12 @@ const MageModal: React.FC<IProps> = ({
             css={{
               fontSize: '0.75rem',
               display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
+              gridTemplateColumns: '1fr',
+              gridTemplateRows: 'auto',
+              [mq[1]]: {
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gridTemplateRows: 'none',
+              },
               gridRowGap: 4,
               gridColumnGap: 8,
             }}
@@ -223,7 +233,13 @@ const MageModal: React.FC<IProps> = ({
             {statsState.originalStats.map(statLine => (
               <div
                 key={`original-${statLine.stat}`}
-                css={{ position: 'relative', paddingRight: 12 }}
+                css={{
+                  position: 'relative',
+                  display: 'flex',
+                  alignItems: 'center',
+                  height: 42,
+                  [mq[1]]: { paddingRight: 12 },
+                }}
               >
                 <div
                   css={deleteStatWrapper}

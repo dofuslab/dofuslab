@@ -19,7 +19,7 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
   const { t } = useTranslation(['stat', 'common']);
   const setBonuses = customSet ? getBonusesFromCustomSet(customSet) : {};
   return (
-    <div css={{ display: 'none', [mq[0]]: { display: 'flex', marginLeft: 8 } }}>
+    <div css={{ display: 'none', [mq[1]]: { display: 'flex', marginLeft: 8 } }}>
       <ClassNames>
         {({ css }) =>
           Object.values(setBonuses)

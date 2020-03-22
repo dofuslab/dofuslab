@@ -66,12 +66,14 @@ const Selector: React.FC<IProps> = ({
         css={{
           display: 'none',
           padding: '0 14px',
-          [mq[0]]: {
-            display: 'block',
-            flex: 1,
-          },
+
           overflowY: 'scroll',
           ...topMarginStyle,
+          [mq[1]]: {
+            display: 'block',
+            flex: 1,
+            ...(topMarginStyle[mq[1]] as {}),
+          },
           [mq[4]]: {
             padding: '0 20px',
             ...(topMarginStyle[mq[4]] as {}),

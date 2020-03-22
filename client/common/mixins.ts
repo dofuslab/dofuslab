@@ -35,7 +35,7 @@ export const ITEM_IMAGE_WIDTH_SMALL = 60;
 export const itemBoxDimensions = {
   width: '100%',
   height: 'auto',
-  [mq[0]]: {
+  [mq[1]]: {
     width: ITEM_BOX_WIDTH_SMALL,
     height: ITEM_BOX_WIDTH_SMALL,
   },
@@ -48,7 +48,7 @@ export const itemBoxDimensions = {
 export const itemImageDimensions = {
   width: '80%',
   height: 'auto',
-  [mq[0]]: {
+  [mq[1]]: {
     width: ITEM_IMAGE_WIDTH_SMALL,
     height: ITEM_IMAGE_WIDTH_SMALL,
   },
@@ -64,7 +64,7 @@ export const itemImageBox = {
   height: '100%',
   top: 0,
   left: 0,
-  [mq[0]]: {
+  [mq[1]]: {
     width: ITEM_BOX_WIDTH_SMALL,
     height: ITEM_BOX_WIDTH_SMALL,
     position: 'relative' as 'relative',
@@ -108,11 +108,11 @@ export const itemBox = {
   position: 'relative' as 'relative',
 
   ...itemBoxDimensions,
-  [mq[0]]: {
+  [mq[1]]: {
     margin: 4,
     paddingTop: 0,
     position: 'static' as 'static',
-    ...(itemBoxDimensions[mq[0]] as {}),
+    ...(itemBoxDimensions[mq[1]] as {}),
   },
   [mq[4]]: {
     margin: 8,
@@ -169,7 +169,10 @@ export const getResponsiveGridStyle = (numColumns: ReadonlyArray<number>) => ({
 });
 
 export const topMarginStyle = {
-  marginTop: 8,
+  marginTop: 12,
+  [mq[1]]: {
+    marginTop: 8,
+  },
   [mq[4]]: {
     marginTop: 12,
   },
