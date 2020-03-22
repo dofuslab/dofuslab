@@ -79,4 +79,4 @@ const StatTable: React.FC<IStatTable> = ({
   );
 };
 
-export default StatTable;
+export default React.memo(StatTable);

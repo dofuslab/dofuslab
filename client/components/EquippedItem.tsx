@@ -6,9 +6,11 @@ import { jsx } from '@emotion/core';
 import { itemBox, itemImageBox, selected as selectedBox } from 'common/mixins';
 import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
+import {
+  customSet,
+  customSet_equippedItems,
+} from 'graphql/fragments/__generated__/customSet';
 import EquippedItemWithStats from './EquippedItemWithStats';
-import MageModal from './MageModal';
 
 interface IEquippedItem {
   slot: itemSlots_itemSlots;
@@ -18,6 +20,7 @@ interface IEquippedItem {
   >;
   customSet?: customSet | null;
   selected: boolean;
+  openMageModal: (equippedItem: customSet_equippedItems) => void;
 }
 
 const EquippedItem: React.FC<IEquippedItem> = ({
@@ -26,6 +29,7 @@ const EquippedItem: React.FC<IEquippedItem> = ({
   selectItemSlot,
   selected,
   customSet,
+  openMageModal,
   ...restProps
 }) => {
   const onClick = React.useCallback(() => {
@@ -35,22 +39,6 @@ const EquippedItem: React.FC<IEquippedItem> = ({
       selectItemSlot(slot);
     }
   }, [selectItemSlot, slot, selected]);
-
-  const [mageModalVisible, setMageModalVisible] = React.useState(false);
-  const openMageModal = React.useCallback(
-    (e: React.MouseEvent<HTMLElement>) => {
-      e.stopPropagation();
-      setMageModalVisible(true);
-    },
-    [setMageModalVisible],
-  );
-  const closeMageModal = React.useCallback(
-    (e: React.MouseEvent<HTMLElement>) => {
-      e.stopPropagation();
-      setMageModalVisible(false);
-    },
-    [setMageModalVisible],
-  );
 
   return (
     <>
@@ -69,17 +57,8 @@ const EquippedItem: React.FC<IEquippedItem> = ({
           </div>
         )}
       </div>
-      {customSet && equippedItem && (
-        <MageModal
-          visible={mageModalVisible}
-          equippedItem={equippedItem}
-          closeMageModal={closeMageModal}
-          key={`${equippedItem.id}-${equippedItem.item.id}-${equippedItem.exos.length}`}
-          customSetId={customSet.id}
-        />
-      )}
     </>
   );
 };
 
-export default EquippedItem;
+export default React.memo(EquippedItem);

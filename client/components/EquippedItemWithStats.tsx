@@ -40,7 +40,7 @@ interface IProps {
   selected: boolean;
   customSet: customSet;
   itemSlotId: string;
-  openMageModal: (e: React.MouseEvent<HTMLElement>) => void;
+  openMageModal: (equippedItem: customSet_equippedItems) => void;
 }
 
 const EquippedItemWithStats: React.FC<IProps> = ({

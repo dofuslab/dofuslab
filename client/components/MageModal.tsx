@@ -45,7 +45,7 @@ interface MageState {
 const deleteStatWrapper = {
   position: 'absolute' as 'absolute',
   left: -24,
-  top: -2,
+  top: 3,
   padding: 8,
   opacity: 0.3,
   transition: 'opacity 0.3s',
@@ -227,7 +227,7 @@ const MageModal: React.FC<IProps> = ({
                 gridTemplateRows: 'none',
               },
               gridRowGap: 4,
-              gridColumnGap: 8,
+              gridColumnGap: 12,
             }}
           >
             {statsState.originalStats.map(statLine => (

@@ -4,7 +4,10 @@ import * as React from 'react';
 import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 
-import { customSet } from 'graphql/fragments/__generated__/customSet';
+import {
+  customSet,
+  customSet_equippedItems,
+} from 'graphql/fragments/__generated__/customSet';
 import {
   itemSlots,
   itemSlots_itemSlots,
@@ -14,6 +17,7 @@ import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 
 import EquippedItem from './EquippedItem';
 import { mq } from 'common/constants';
+import MageModal from './MageModal';
 
 interface IProps {
   customSet?: customSet | null;
@@ -38,6 +42,22 @@ const EquipmentSlots: React.FC<IProps> = ({
       (acc, curr) => ({ ...acc, [curr.slot?.id]: curr }),
       {},
     ) ?? {};
+
+  const [mageModalVisible, setMageModalVisible] = React.useState(false);
+  const [
+    equippedItem,
+    setEquippedItem,
+  ] = React.useState<customSet_equippedItems | null>(null);
+  const openMageModal = React.useCallback(
+    equippedItem => {
+      setEquippedItem(equippedItem);
+      setMageModalVisible(true);
+    },
+    [setMageModalVisible],
+  );
+  const closeMageModal = React.useCallback(() => {
+    setMageModalVisible(false);
+  }, [setMageModalVisible]);
 
   return (
     <div
@@ -66,8 +86,18 @@ const EquipmentSlots: React.FC<IProps> = ({
           selected={selectedItemSlotId === slot.id}
           selectItemSlot={selectItemSlot}
           customSet={customSet}
+          openMageModal={openMageModal}
         />
       ))}
+      {customSet && equippedItem && (
+        <MageModal
+          visible={mageModalVisible}
+          equippedItem={equippedItem}
+          closeMageModal={closeMageModal}
+          key={`${equippedItem.id}-${equippedItem.item.id}-${equippedItem.exos.length}`}
+          customSetId={customSet.id}
+        />
+      )}
     </div>
   );
 };

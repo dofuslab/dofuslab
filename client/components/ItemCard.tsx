@@ -72,4 +72,4 @@ const ItemCard: React.FC<IProps> = ({
   );
 };
 
-export default ItemCard;
+export default React.memo(ItemCard);

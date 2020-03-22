@@ -56,7 +56,7 @@ interface IProps {
   equippedItem: customSet_customSetById_equippedItems;
   itemSlotId: string;
   customSet: customSet;
-  openMageModal: (e: React.MouseEvent<HTMLElement>) => void;
+  openMageModal: (equippedItem: customSet_customSetById_equippedItems) => void;
   stopPropagationCallback: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
@@ -138,6 +138,10 @@ const EquippedItemCard: React.FC<IProps> = ({
     );
   });
 
+  const onMageClick = React.useCallback(() => {
+    openMageModal(equippedItem);
+  }, [openMageModal, equippedItem]);
+
   return (
     <Card
       size="small"
@@ -160,7 +164,7 @@ const EquippedItemCard: React.FC<IProps> = ({
           align={{ offset: [0, -ACTION_PADDING] }}
           placement="bottom"
         >
-          <div css={actionWrapper} onClick={openMageModal}>
+          <div css={actionWrapper} onClick={onMageClick}>
             <FontAwesomeIcon icon={faMagic} />
           </div>
         </Tooltip>,
