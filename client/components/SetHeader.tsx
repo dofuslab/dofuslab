@@ -21,8 +21,9 @@ import {
 import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetdata.graphql';
 import { checkAuthentication } from 'common/utils';
 import { ellipsis } from 'common/mixins';
-import { mq } from 'common/constants';
+import { mq, BREAKPOINTS } from 'common/constants';
 import BonusStats from './BonusStats';
+import { useMediaQuery } from 'react-responsive';
 
 interface IProps {
   customSet?: customSet | null;
@@ -136,17 +137,23 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
   );
 
   const [form] = Form.useForm();
+  const isNotMobile = useMediaQuery({
+    query: `(min-device-width: ${BREAKPOINTS[0]}px)`,
+  });
 
   return (
     <div
       css={{
-        margin: '4px 14px',
-        [mq[4]]: {
-          margin: '4px 20px',
-        },
         display: 'flex',
         alignItems: 'baseline',
         flex: '0 0 48px',
+        margin: '12px 4px',
+        [mq[0]]: {
+          margin: '4px 14px',
+        },
+        [mq[4]]: {
+          margin: '4px 20px',
+        },
       }}
     >
       <Form
@@ -154,8 +161,13 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
         name="header"
         id="header-form"
         onFinish={handleOk}
-        layout="inline"
-        css={{ display: 'flex', alignItems: 'baseline' }}
+        layout={isNotMobile ? 'inline' : 'vertical'}
+        css={{
+          display: 'flex',
+          flexDirection: 'column',
+          [mq[0]]: { flexDirection: 'row', alignItems: 'baseline' },
+          width: '100%',
+        }}
         initialValues={{
           name: customSet?.name || '',
           level: customSet?.level || 200,
@@ -165,9 +177,12 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
           <Form.Item name="name">
             <Input
               css={{
-                fontSize: '1.5rem',
+                fontSize: '1.2rem',
                 fontWeight: 500,
-                width: 240,
+                [mq[0]]: {
+                  fontSize: '1.5rem',
+                  width: 240,
+                },
               }}
               maxLength={50}
             />
@@ -176,42 +191,53 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
           <div
             css={{
               ...ellipsis,
-              fontSize: '1.5rem',
+              fontSize: '1.2rem',
               fontWeight: 500,
-              maxWidth: 400,
+              [mq[0]]: {
+                fontSize: '1.5rem',
+                maxWidth: 400,
+              },
               marginRight: 20,
             }}
           >
             {customSet?.name || t('UNTITLED')}
           </div>
         )}
-        {t('LEVEL')}{' '}
-        {metadataState.isEditing ? (
-          <Form.Item name="level" css={{ display: 'inline-flex' }}>
-            <InputNumber
-              css={{ marginLeft: 8 }}
-              type="number"
-              max={200}
-              min={1}
-            />
-          </Form.Item>
-        ) : (
-          customSet?.level ?? 200
-        )}
-        {metadataState.isEditing ? (
-          <>
-            <Button css={{ marginLeft: 12 }} type="primary" htmlType="submit">
-              {t('OK')}
-            </Button>
-            <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
-              {t('CANCEL')}
-            </Button>
-          </>
-        ) : (
-          <a css={{ marginLeft: 12 }}>
-            <FontAwesomeIcon icon={faPencilAlt} onClick={onStartEdit} />
-          </a>
-        )}
+        <div
+          css={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            fontSize: '0.75rem',
+          }}
+        >
+          {t('LEVEL')}{' '}
+          {metadataState.isEditing ? (
+            <Form.Item name="level" css={{ display: 'inline-flex' }}>
+              <InputNumber
+                css={{ marginLeft: 8 }}
+                type="number"
+                max={200}
+                min={1}
+              />
+            </Form.Item>
+          ) : (
+            customSet?.level ?? 200
+          )}
+          {metadataState.isEditing ? (
+            <>
+              <Button css={{ marginLeft: 12 }} type="primary" htmlType="submit">
+                {t('OK')}
+              </Button>
+              <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
+                {t('CANCEL')}
+              </Button>
+            </>
+          ) : (
+            <a css={{ marginLeft: 12 }}>
+              <FontAwesomeIcon icon={faPencilAlt} onClick={onStartEdit} />
+            </a>
+          )}
+        </div>
       </Form>
       {customSet && <BonusStats customSet={customSet} />}
     </div>

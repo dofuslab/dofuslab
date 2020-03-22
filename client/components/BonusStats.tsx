@@ -9,6 +9,7 @@ import { BORDER_COLOR, popoverTitleStyle } from 'common/mixins';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getBonusesFromCustomSet } from 'common/utils';
 import { SetBonuses } from 'common/wrappers';
+import { mq } from 'common/constants';
 
 interface IProps {
   customSet: customSet;
@@ -18,7 +19,7 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
   const { t } = useTranslation(['stat', 'common']);
   const setBonuses = customSet ? getBonusesFromCustomSet(customSet) : {};
   return (
-    <div css={{ display: 'flex', marginLeft: 8 }}>
+    <div css={{ display: 'none', [mq[0]]: { display: 'flex', marginLeft: 8 } }}>
       <ClassNames>
         {({ css }) =>
           Object.values(setBonuses)

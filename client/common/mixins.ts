@@ -33,8 +33,12 @@ export const ITEM_IMAGE_WIDTH = 72;
 export const ITEM_IMAGE_WIDTH_SMALL = 60;
 
 export const itemBoxDimensions = {
-  width: ITEM_BOX_WIDTH_SMALL,
-  height: ITEM_BOX_WIDTH_SMALL,
+  width: '100%',
+  height: 'auto',
+  [mq[0]]: {
+    width: ITEM_BOX_WIDTH_SMALL,
+    height: ITEM_BOX_WIDTH_SMALL,
+  },
   [mq[4]]: {
     width: ITEM_BOX_WIDTH,
     height: ITEM_BOX_WIDTH,
@@ -42,8 +46,12 @@ export const itemBoxDimensions = {
 };
 
 export const itemImageDimensions = {
-  width: ITEM_IMAGE_WIDTH_SMALL,
-  height: ITEM_IMAGE_WIDTH_SMALL,
+  width: '80%',
+  height: 'auto',
+  [mq[0]]: {
+    width: ITEM_IMAGE_WIDTH_SMALL,
+    height: ITEM_IMAGE_WIDTH_SMALL,
+  },
   [mq[4]]: {
     width: ITEM_IMAGE_WIDTH,
     height: ITEM_IMAGE_WIDTH,
@@ -51,13 +59,20 @@ export const itemImageDimensions = {
 };
 
 export const itemImageBox = {
-  width: ITEM_BOX_WIDTH_SMALL,
-  height: ITEM_BOX_WIDTH_SMALL,
+  position: 'absolute' as 'absolute',
+  width: '100%',
+  height: '100%',
+  top: 0,
+  left: 0,
+  [mq[0]]: {
+    width: ITEM_BOX_WIDTH_SMALL,
+    height: ITEM_BOX_WIDTH_SMALL,
+    position: 'relative' as 'relative',
+  },
   [mq[4]]: {
     width: ITEM_BOX_WIDTH,
     height: ITEM_BOX_WIDTH,
   },
-  position: 'relative' as 'relative',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -89,8 +104,16 @@ export const ellipsis = {
 
 export const itemBox = {
   background: 'white',
-  margin: 4,
+  paddingTop: '100%',
+  position: 'relative' as 'relative',
+
   ...itemBoxDimensions,
+  [mq[0]]: {
+    margin: 4,
+    paddingTop: 0,
+    position: 'static' as 'static',
+    ...(itemBoxDimensions[mq[0]] as {}),
+  },
   [mq[4]]: {
     margin: 8,
     ...(itemBoxDimensions[mq[4]] as {}),

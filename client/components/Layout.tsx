@@ -15,6 +15,7 @@ import { BORDER_COLOR, gray8 } from 'common/mixins';
 
 import { useTranslation } from 'i18n';
 import SignUpModal from './SignUpModal';
+import { mq } from 'common/constants';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -53,12 +54,20 @@ const Layout = (props: LayoutProps) => {
     <AntdLayout css={{ height: '100%' }}>
       <Global
         styles={css`
-          body {
-            height: 100vh;
+          html {
+            font-size: 24px;
           }
+          ${mq[0]} {
+            html {
+              font-size: 18px;
+            }
+            body {
+              height: 100vh;
+            }
 
-          #__next {
-            height: 100%;
+            #__next {
+              height: 100%;
+            }
           }
         `}
       />
@@ -68,7 +77,10 @@ const Layout = (props: LayoutProps) => {
           justifyContent: 'space-between',
           background: 'white',
           borderBottom: `1px solid ${BORDER_COLOR}`,
-          padding: '0 20px',
+          padding: '0 12px',
+          [mq[0]]: {
+            padding: '0 20px',
+          },
         }}
       >
         <div css={{ fontWeight: 500 }}>DofusLab</div>
@@ -103,7 +115,14 @@ const Layout = (props: LayoutProps) => {
       </AntdLayout.Header>
 
       <AntdLayout.Content
-        css={{ marginTop: 12, display: 'flex', flexDirection: 'column' }}
+        css={{
+          marginTop: 12,
+          display: 'flex',
+          flexDirection: 'column',
+          paddingLeft: 8,
+          paddingRight: 8,
+          [mq[0]]: { padding: 0 },
+        }}
       >
         {props.children}
       </AntdLayout.Content>

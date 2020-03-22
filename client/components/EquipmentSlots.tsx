@@ -42,9 +42,14 @@ const EquipmentSlots: React.FC<IProps> = ({
   return (
     <div
       css={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        margin: '0 8px',
+        display: 'grid',
+        gridGap: 8,
+        gridTemplateColumns: '1fr 1fr 1fr',
+        [mq[0]]: {
+          display: 'flex',
+          flexWrap: 'wrap',
+          margin: '0 8px',
+        },
         [mq[4]]: {
           margin: '0 12px',
         },
