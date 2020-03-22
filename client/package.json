@@ -42,7 +42,6 @@
     "next-with-apollo": "^4.3.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-responsive": "^8.0.3",
     "react-waypoint": "^9.0.2",
     "webpack": "^4.42.0"
   },
@@ -52,7 +51,6 @@
     "@babel/plugin-proposal-optional-chaining": "^7.8.3",
     "@types/node": "^12.11.7",
     "@types/react": "^16.9.11",
-    "@types/react-responsive": "^8.0.2",
     "@typescript-eslint/eslint-plugin": "^2.5.0",
     "@typescript-eslint/parser": "^2.5.0",
     "@zeit/next-less": "^1.0.1",

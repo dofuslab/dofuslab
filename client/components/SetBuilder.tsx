@@ -4,9 +4,8 @@ import * as React from 'react';
 import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
-import { useMediaQuery } from 'react-responsive';
 
-import { STAT_GROUPS, mq, BREAKPOINTS } from 'common/constants';
+import { STAT_GROUPS, mq } from 'common/constants';
 import Layout from './Layout';
 import StatTable from './StatTable';
 import { ResponsiveGrid } from 'common/wrappers';
@@ -55,10 +54,6 @@ const SetBuilder: React.FC = () => {
     [customSetData],
   );
 
-  const isNotMobile = useMediaQuery({
-    query: `(min-device-width: ${BREAKPOINTS[1]}px)`,
-  });
-
   return (
     <Layout>
       <SetHeader customSet={customSetData?.customSetById} />
@@ -105,14 +100,12 @@ const SetBuilder: React.FC = () => {
             <StatEditor customSet={customSetData?.customSetById} />
           </ResponsiveGrid>
         </div>
-        {isNotMobile && (
-          <Selector
-            key={`selected-item-slot-${selectedItemSlot?.id}-level-${customSetData?.customSetById?.level}`}
-            customSet={customSetData?.customSetById}
-            selectItemSlot={selectItemSlot}
-            selectedItemSlot={selectedItemSlot}
-          />
-        )}
+        <Selector
+          key={`selected-item-slot-${selectedItemSlot?.id}-level-${customSetData?.customSetById?.level}`}
+          customSet={customSetData?.customSetById}
+          selectItemSlot={selectItemSlot}
+          selectedItemSlot={selectedItemSlot}
+        />
       </div>
     </Layout>
   );
