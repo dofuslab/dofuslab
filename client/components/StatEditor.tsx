@@ -86,6 +86,16 @@ const statDisplayArray = [
     scrolledKey: 'scrolledWisdom' as 'scrolledWisdom',
   },
   {
+    stat: Stat.AGILITY,
+    baseKey: 'baseAgility' as 'baseAgility',
+    scrolledKey: 'scrolledAgility' as 'scrolledAgility',
+  },
+  {
+    stat: Stat.CHANCE,
+    baseKey: 'baseChance' as 'baseChance',
+    scrolledKey: 'scrolledChance' as 'scrolledChance',
+  },
+  {
     stat: Stat.STRENGTH,
     baseKey: 'baseStrength' as 'baseStrength',
     scrolledKey: 'scrolledStrength' as 'scrolledStrength',
@@ -94,16 +104,6 @@ const statDisplayArray = [
     stat: Stat.INTELLIGENCE,
     baseKey: 'baseIntelligence' as 'baseIntelligence',
     scrolledKey: 'scrolledIntelligence' as 'scrolledIntelligence',
-  },
-  {
-    stat: Stat.CHANCE,
-    baseKey: 'baseChance' as 'baseChance',
-    scrolledKey: 'scrolledChance' as 'scrolledChance',
-  },
-  {
-    stat: Stat.AGILITY,
-    baseKey: 'baseAgility' as 'baseAgility',
-    scrolledKey: 'scrolledAgility' as 'scrolledAgility',
   },
 ];
 
@@ -244,7 +244,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
         display: 'grid',
         gridTemplateColumns: '1fr 60px 60px',
         gridGap: 4,
-        gridAutoRows: 26,
+        gridAutoRows: 30,
         fontSize: '0.75rem',
         justifySelf: 'stretch',
         background: 'white',

@@ -5,10 +5,10 @@ import { Stat, ItemFilters } from '__generated__/globalTypes';
 export type StatWithCalculatedValue = {
   stat: string;
   customCalculateValue?: StatCalculator;
-  customDisplay?: (
-    statsFromCustomSet: StatsFromCustomSet | null,
-    customSet?: customSet | null,
-  ) => string;
+  icon?: {
+    backgroundPositionX: number;
+    backgroundPositionY: number;
+  };
 };
 
 export type StatGroup = Array<StatWithCalculatedValue>;
