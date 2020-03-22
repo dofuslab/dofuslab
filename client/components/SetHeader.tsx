@@ -145,8 +145,8 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
     <div
       css={{
         display: 'flex',
-        alignItems: 'baseline',
-        flex: '0 0 48px',
+        alignItems: 'center',
+        flex: '0 0 52px',
         margin: '12px 4px',
         [mq[0]]: {
           margin: '4px 14px',
@@ -208,6 +208,7 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
             display: 'flex',
             justifyContent: 'space-between',
             fontSize: '0.75rem',
+            alignItems: 'baseline',
           }}
         >
           {t('LEVEL')}{' '}
