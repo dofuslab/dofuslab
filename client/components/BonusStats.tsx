@@ -42,6 +42,7 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
                   content={
                     <SetBonuses count={count} bonuses={filteredBonuses} t={t} />
                   }
+                  placement="bottomLeft"
                 >
                   <div
                     css={{
