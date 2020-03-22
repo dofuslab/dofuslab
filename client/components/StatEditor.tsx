@@ -241,10 +241,6 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
       css={{
         gridArea: '3 / 1 / 4 / 2',
         marginTop: 24,
-        [mq[2]]: {
-          gridArea: '2 / 1 / 3 / 2',
-          marginTop: 0,
-        },
         display: 'grid',
         gridAutoRows: 42,
         gridTemplateColumns: '1fr 80px 80px',
@@ -252,6 +248,10 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
           gridTemplateColumns: '1fr 60px 60px',
           gridAutoRows: 30,
           marginTop: 16,
+        },
+        [mq[2]]: {
+          gridArea: '2 / 1 / 3 / 2',
+          marginTop: 0,
         },
         gridGap: 4,
 
