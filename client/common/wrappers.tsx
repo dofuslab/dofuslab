@@ -117,10 +117,11 @@ export const Badge: React.FC = ({ children, ...restProps }) => (
   </span>
 );
 
-export const TruncatableText: React.FC = ({ children }) => (
+export const TruncatableText: React.FC = ({ children, ...restProps }) => (
   <span
     css={ellipsis}
     title={typeof children === 'string' ? children : undefined}
+    {...restProps}
   >
     {children}
   </span>

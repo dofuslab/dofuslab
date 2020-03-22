@@ -46,7 +46,9 @@ const ItemCard: React.FC<IProps> = ({
       size="small"
       title={
         <div css={{ display: 'flex', alignItems: 'center' }}>
-          <TruncatableText>{item.name}</TruncatableText>
+          <TruncatableText css={{ marginRight: 8 }}>
+            {item.name}
+          </TruncatableText>
           {equipped && <Badge css={{ marginRight: 4 }}>{t('EQUIPPED')}</Badge>}
           <div
             css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}
