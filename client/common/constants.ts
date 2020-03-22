@@ -20,24 +20,27 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
         50 +
         (customSet?.level ?? 200) * 5 +
         (statsFromCustomSet ? statsFromCustomSet[Stat.VITALITY] || 0 : 0),
-      icon: { backgroundPositionX: -97, backgroundPositionY: -919 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Health_Point.svg',
     },
     {
       stat: Stat.AP,
       customCalculateValue: (statsFromCustomSet, customSet) =>
         ((customSet?.level ?? 200) >= 100 ? 7 : 6) +
         (statsFromCustomSet ? statsFromCustomSet[Stat.AP] || 0 : 0),
-      icon: { backgroundPositionX: -97, backgroundPositionY: -243 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Action_Point.svg',
     },
     {
       stat: Stat.MP,
       customCalculateValue: statsFromCustomSet =>
         3 + (statsFromCustomSet ? statsFromCustomSet[Stat.MP] || 0 : 0),
-      icon: { backgroundPositionX: -97, backgroundPositionY: -52 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Movement_Point.svg',
     },
     {
       stat: Stat.RANGE,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -128 },
+      svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Range.svg',
     },
   ],
   [
@@ -51,21 +54,23 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
             getStatWithDefault(statsFromCustomSet, Stat.AGILITY) +
             getStatWithDefault(statsFromCustomSet, Stat.INITIATIVE)
           : 0,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -205 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Initiative.svg',
     },
     {
       stat: Stat.CRITICAL,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -589 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Critical_Hit.svg',
     },
     {
       stat: Stat.SUMMON,
       customCalculateValue: statsFromCustomSet =>
         1 + (statsFromCustomSet ? statsFromCustomSet[Stat.SUMMON] || 0 : 0),
-      icon: { backgroundPositionX: -97, backgroundPositionY: -507 },
+      svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Summon.svg',
     },
     {
       stat: Stat.HEALS,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -966 },
+      svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Heals.svg',
     },
     {
       stat: Stat.PROSPECTING,
@@ -76,37 +81,41 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
               getStatWithDefault(statsFromCustomSet, Stat.CHANCE) / 10,
             ) + getStatWithDefault(statsFromCustomSet, Stat.PROSPECTING)
           : 0),
-      icon: { backgroundPositionX: -97, backgroundPositionY: -279 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Prospecting.svg',
     },
   ],
   [
     {
       stat: Stat.VITALITY,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -319 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Vitality.svg',
     },
     {
       stat: Stat.WISDOM,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -358 },
+      svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Wisdom.svg',
     },
     {
       stat: Stat.AGILITY,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -167 },
+      svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Agility.svg',
     },
     {
       stat: Stat.CHANCE,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -89 },
+      svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Chance.svg',
     },
     {
       stat: Stat.STRENGTH,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -432 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Strength.svg',
     },
     {
       stat: Stat.INTELLIGENCE,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -394 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Intelligence.svg',
     },
     {
       stat: Stat.POWER,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -1108 },
+      svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Power.svg',
     },
   ],
   [
@@ -118,7 +127,7 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
               getStatWithDefault(statsFromCustomSet, Stat.AGILITY) / 10,
             ) + getStatWithDefault(statsFromCustomSet, Stat.DODGE)
           : 0,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -468 },
+      svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Dodge.svg',
     },
     {
       stat: Stat.LOCK,
@@ -128,7 +137,7 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
               getStatWithDefault(statsFromCustomSet, Stat.AGILITY) / 10,
             ) + getStatWithDefault(statsFromCustomSet, Stat.LOCK)
           : 0,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -545 },
+      svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Lock.svg',
     },
   ],
   [
@@ -140,7 +149,8 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
               getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10,
             ) + getStatWithDefault(statsFromCustomSet, Stat.AP_PARRY)
           : 0,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -1064 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/AP_Parry.svg',
     },
     {
       stat: Stat.AP_REDUCTION,
@@ -150,7 +160,8 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
               getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10,
             ) + getStatWithDefault(statsFromCustomSet, Stat.AP_REDUCTION)
           : 0,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -1297 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/AP_Reduction.svg',
     },
     {
       stat: Stat.MP_PARRY,
@@ -160,7 +171,8 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
               getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10,
             ) + getStatWithDefault(statsFromCustomSet, Stat.MP_PARRY)
           : 0,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -1016 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/MP_Parry.svg',
     },
     {
       stat: Stat.MP_REDUCTION,
@@ -170,7 +182,8 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
               getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10,
             ) + getStatWithDefault(statsFromCustomSet, Stat.MP_REDUCTION)
           : 0,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -1340 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/MP_Reduction.svg',
     },
   ],
   [
@@ -181,11 +194,12 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
           ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
             getStatWithDefault(statsFromCustomSet, Stat.NEUTRAL_DAMAGE)
           : 0,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -15 },
+      svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Neutral.svg',
     },
     {
       stat: Stat.EARTH_DAMAGE,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -432 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Strength.svg',
       customCalculateValue: statsFromCustomSet =>
         statsFromCustomSet
           ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
@@ -194,7 +208,8 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
     },
     {
       stat: Stat.FIRE_DAMAGE,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -394 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Intelligence.svg',
       customCalculateValue: statsFromCustomSet =>
         statsFromCustomSet
           ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
@@ -203,7 +218,7 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
     },
     {
       stat: Stat.WATER_DAMAGE,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -87 },
+      svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Chance.svg',
       customCalculateValue: statsFromCustomSet =>
         statsFromCustomSet
           ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
@@ -212,7 +227,7 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
     },
     {
       stat: Stat.AIR_DAMAGE,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -167 },
+      svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Agility.svg',
       customCalculateValue: statsFromCustomSet =>
         statsFromCustomSet
           ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
@@ -223,110 +238,126 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
   [
     {
       stat: Stat.PCT_NEUTRAL_RES,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -15 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Neutral_square.svg',
     },
     {
       stat: Stat.PCT_EARTH_RES,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -432 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Earth_square.svg',
     },
     {
       stat: Stat.PCT_FIRE_RES,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -394 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Fire_square.svg',
     },
     {
       stat: Stat.PCT_WATER_RES,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -87 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Water_square.svg',
     },
     {
       stat: Stat.PCT_AIR_RES,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -167 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Air_square.svg',
     },
   ],
   [
     {
       stat: Stat.TRAP_DAMAGE,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -712 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Trap_Damage.svg',
     },
     {
       stat: Stat.TRAP_POWER,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -673 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Trap_Power.svg',
     },
     {
       stat: Stat.REFLECT,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -791 },
+      svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Reflect.svg',
     },
   ],
   [
     {
       stat: Stat.NEUTRAL_RES,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -15 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Neutral_square.svg',
     },
     {
       stat: Stat.EARTH_RES,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -432 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Earth_square.svg',
     },
     {
       stat: Stat.FIRE_RES,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -394 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Fire_square.svg',
     },
     {
       stat: Stat.WATER_RES,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -87 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Water_square.svg',
     },
     {
       stat: Stat.AIR_RES,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -167 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Air_square.svg',
     },
   ],
 
   [
     {
       stat: Stat.CRITICAL_DAMAGE,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -1248 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Critical_Damage.svg',
     },
     {
       stat: Stat.PUSHBACK_DAMAGE,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -872 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Pushback_Damage.svg',
     },
     {
       stat: Stat.PCT_MELEE_DAMAGE,
       svgIcon:
-        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Melee+Damage.svg',
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Melee_Damage.svg',
     },
     {
       stat: Stat.PCT_RANGED_DAMAGE,
       svgIcon:
-        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Ranged+Damage.svg',
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Ranged_Damage.svg',
     },
     {
       stat: Stat.PCT_WEAPON_DAMAGE,
       svgIcon:
-        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Weapon+Damage.svg',
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Weapon_Damage.svg',
     },
     {
       stat: Stat.PCT_SPELL_DAMAGE,
       svgIcon:
-        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Spell+Damage.svg',
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Spell_Damage.svg',
     },
   ],
   [
     {
       stat: Stat.CRITICAL_RES,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -1202 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Critical_Resistance.svg',
     },
     {
       stat: Stat.PUSHBACK_RES,
-      icon: { backgroundPositionX: -97, backgroundPositionY: -872 },
+      svgIcon:
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Pushback_Resistance.svg',
     },
     {
       stat: Stat.PCT_MELEE_RES,
       svgIcon:
-        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Melee+Resistance.svg',
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Melee_Resistance.svg',
     },
     {
       stat: Stat.PCT_RANGED_RES,
       svgIcon:
-        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Ranged+Resistance.svg',
+        'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Ranged_Resistance.svg',
     },
   ],
 ];
