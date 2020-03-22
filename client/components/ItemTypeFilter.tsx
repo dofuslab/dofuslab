@@ -21,7 +21,7 @@ const ItemTypeFilter: React.FC<IProps> = ({
       setItemTypeIds(newItemTypeIds as Array<string>),
     [setItemTypeIds],
   );
-  if (itemTypes.length < 1) {
+  if (itemTypes.length <= 1) {
     return null;
   }
   return (
