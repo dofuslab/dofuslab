@@ -681,7 +681,7 @@ class Query(graphene.ObjectType):
     def resolve_item_by_id(self, info, id):
         return db.session.query(ModelItem).get(id)
 
-    set_by_id = graphene.Field(Set, id=graphene.UUID(required=True))
+    set_by_id = graphene.Field(Set, id=graphene.UUID(required=True), required=True)
 
     def resolve_set_by_id(self, info, id):
         return db.session.query(ModelSet).get(id)

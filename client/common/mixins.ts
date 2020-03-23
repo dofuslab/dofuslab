@@ -134,7 +134,7 @@ export const itemCardStyle = {
 };
 
 export const popoverTitleStyle = {
-  ['.ant-popover-title']: { padding: '8px 16px' },
+  ['.ant-popover-title']: { padding: '8px 12px' },
 };
 
 export const getResponsiveGridStyle = (numColumns: ReadonlyArray<number>) => ({

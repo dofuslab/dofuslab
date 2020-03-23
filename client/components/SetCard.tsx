@@ -18,7 +18,7 @@ const SetCard: React.FC<IProps> = ({ set, customSetId }) => {
   const customSet = useCustomSet(customSetId);
 
   const { t } = useTranslation(['stat', 'common']);
-  const onClick = useEquipSetMutation(set, customSet);
+  const [onClick] = useEquipSetMutation(set.id, customSet);
   const maxSetBonusItems = set.bonuses.reduce(
     (currMax, bonus) => Math.max(currMax, bonus.numItems),
     0,

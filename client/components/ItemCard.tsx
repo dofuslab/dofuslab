@@ -2,13 +2,10 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import Card from 'antd/lib/card';
-import { useTranslation } from 'i18n';
-import { ItemStatsList, TruncatableText, Badge } from 'common/wrappers';
-import { item } from 'graphql/fragments/__generated__/item';
-import { BORDER_COLOR, itemCardStyle, itemBoxDimensions } from 'common/mixins';
+import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { useEquipItemMutation, useCustomSet } from 'common/utils';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
+import BasicItemCard from './BasicItemCard';
 
 interface IProps {
   item: item;
@@ -18,6 +15,7 @@ interface IProps {
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
   equipped: boolean;
+  openSetModal: (set: item_set) => void;
 }
 
 const ItemCard: React.FC<IProps> = ({
@@ -26,6 +24,7 @@ const ItemCard: React.FC<IProps> = ({
   customSetId,
   selectItemSlot,
   equipped,
+  openSetModal,
 }) => {
   const customSet = useCustomSet(customSetId);
 
@@ -38,37 +37,13 @@ const ItemCard: React.FC<IProps> = ({
     }
   }, [item, itemSlotId, customSet, mutate, selectItemSlot]);
 
-  const { t } = useTranslation(['stat', 'common']);
-
   return (
-    <Card
-      hoverable
-      size="small"
-      title={
-        <div css={{ display: 'flex', alignItems: 'center' }}>
-          <TruncatableText css={{ marginRight: 8 }}>
-            {item.name}
-          </TruncatableText>
-          {equipped && <Badge css={{ marginRight: 4 }}>{t('EQUIPPED')}</Badge>}
-          <div
-            css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}
-          >
-            {t('LEVEL_ABBREVIATION', { ns: 'common' })} {item.level}
-          </div>
-        </div>
-      }
-      css={{
-        ...itemCardStyle,
-        [':hover']: {
-          border: `1px solid ${BORDER_COLOR}`,
-        },
-        border: `1px solid ${BORDER_COLOR}`,
-      }}
+    <BasicItemCard
+      item={item}
+      equipped={equipped}
+      openSetModal={openSetModal}
       onClick={onClick}
-    >
-      <img src={item.imageUrl} css={{ float: 'right', ...itemBoxDimensions }} />
-      <ItemStatsList item={item} css={{ paddingLeft: 16, marginBottom: 0 }} />
-    </Card>
+    />
   );
 };
 

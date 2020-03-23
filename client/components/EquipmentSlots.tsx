@@ -18,6 +18,8 @@ import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import EquippedItem from './EquippedItem';
 import { mq } from 'common/constants';
 import MageModal from './MageModal';
+import { useSetModal } from 'common/utils';
+import SetModal from './SetModal';
 
 interface IProps {
   customSet?: customSet | null;
@@ -59,6 +61,13 @@ const EquipmentSlots: React.FC<IProps> = ({
     setMageModalVisible(false);
   }, [setMageModalVisible]);
 
+  const {
+    setModalVisible,
+    selectedSet,
+    openSetModal,
+    closeSetModal,
+  } = useSetModal();
+
   return (
     <div
       css={{
@@ -87,6 +96,7 @@ const EquipmentSlots: React.FC<IProps> = ({
           selectItemSlot={selectItemSlot}
           customSet={customSet}
           openMageModal={openMageModal}
+          openSetModal={openSetModal}
         />
       ))}
       {customSet && equippedItem && (
@@ -96,6 +106,14 @@ const EquipmentSlots: React.FC<IProps> = ({
           closeMageModal={closeMageModal}
           key={`${equippedItem.id}-${equippedItem.item.id}-${equippedItem.exos.length}`}
           customSetId={customSet.id}
+        />
+      )}
+      {selectedSet && (
+        <SetModal
+          setId={selectedSet.id}
+          setName={selectedSet.name}
+          visible={setModalVisible}
+          onCancel={closeSetModal}
         />
       )}
     </div>

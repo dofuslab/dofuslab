@@ -24,6 +24,8 @@ import ItemTypeFilter from './ItemTypeFilter';
 import { SharedFilters } from 'common/types';
 import { findEmptyOrOnlySlotId } from 'common/utils';
 import ConfirmReplaceItemPopover from './ConfirmReplaceItemPopover';
+import { item_set } from 'graphql/fragments/__generated__/item';
+import SetModal from './SetModal';
 
 const PAGE_SIZE = 24;
 
@@ -124,6 +126,21 @@ const ItemSelector: React.FC<IProps> = ({
     };
   }, [data]);
 
+  const [setModalVisible, setSetModalVisible] = React.useState(false);
+  const [selectedSet, setSelectedSet] = React.useState<item_set | null>(null);
+
+  const openSetModal = React.useCallback(
+    (set: item_set) => {
+      setSelectedSet(set);
+      setSetModalVisible(true);
+    },
+    [setSelectedSet, setSetModalVisible],
+  );
+
+  const closeSetModal = React.useCallback(() => {
+    setSetModalVisible(false);
+  }, [setSetModalVisible]);
+
   return (
     <ResponsiveGrid
       numColumns={[1, 2, 2, 3, 4, 5, 6]}
@@ -159,6 +176,7 @@ const ItemSelector: React.FC<IProps> = ({
                 equipped={customSetItemIds.has(item.id)}
                 customSetId={customSet?.id ?? null}
                 selectItemSlot={selectItemSlot}
+                openSetModal={openSetModal}
               />
             );
             return itemSlotId || !customSet ? (
@@ -194,6 +212,15 @@ const ItemSelector: React.FC<IProps> = ({
         onEnter={onLoadMore}
         bottomOffset={BOTTOM_OFFSET}
       />
+      {selectedSet && (
+        <SetModal
+          setId={selectedSet.id}
+          setName={selectedSet.name}
+          visible={setModalVisible}
+          onCancel={closeSetModal}
+          customSet={customSet}
+        />
+      )}
     </ResponsiveGrid>
   );
 };

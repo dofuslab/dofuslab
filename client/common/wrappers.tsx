@@ -3,17 +3,13 @@
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import BackTop from 'antd/lib/back-top';
-import { useTranslation } from 'i18n';
 import {
   gray7,
   ellipsis,
   getResponsiveGridStyle,
-  blue6,
   itemCardStyle,
   BORDER_COLOR,
 } from './mixins';
-import { item } from 'graphql/fragments/__generated__/item';
-import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/customSet';
 import Card from 'antd/lib/card';
 import Skeleton from 'antd/lib/skeleton';
 import { set_bonuses } from 'graphql/fragments/__generated__/set';
@@ -26,78 +22,6 @@ interface IResponsiveGrid {
 export const ResponsiveGrid = styled.div<IResponsiveGrid>(({ numColumns }) =>
   getResponsiveGridStyle(numColumns),
 );
-
-interface IITemsStatsList {
-  readonly item: item;
-  readonly className?: string;
-  readonly exos?: ReadonlyArray<customSet_equippedItems_exos> | null;
-}
-
-export const ItemStatsList: React.FC<IITemsStatsList> = ({
-  item,
-  className,
-  exos,
-}) => {
-  const { t } = useTranslation('stat');
-
-  const statsMap: {
-    [key: string]: { value: number; maged: boolean };
-  } = item.stats.reduce(
-    (acc, { stat, maxValue }) =>
-      stat ? { ...acc, [stat]: { value: maxValue, maged: false } } : acc,
-    {},
-  );
-
-  let exoStatsMap: { [key: string]: number } = {};
-
-  if (exos) {
-    exoStatsMap = exos.reduce(
-      (acc, { stat, value }) => ({ ...acc, [stat]: value }),
-      {},
-    );
-
-    Object.entries(exoStatsMap).forEach(([stat, value]) => {
-      if (statsMap[stat]) {
-        statsMap[stat].value += value;
-        statsMap[stat].maged = true;
-        delete exoStatsMap[stat];
-      }
-    });
-  }
-
-  return (
-    <>
-      <ul
-        className={className}
-        css={{ paddingInlineStart: 16, fontSize: '0.75rem' }}
-      >
-        {item.stats.map((statLine, idx) => (
-          <li
-            key={`stat-${idx}`}
-            css={{
-              color:
-                statLine.stat && statsMap[statLine.stat].maged
-                  ? blue6
-                  : 'inherit',
-            }}
-          >
-            {statLine.stat
-              ? `${statsMap[statLine.stat].value} ${t(statLine.stat)}`
-              : statLine.altStat}
-          </li>
-        ))}
-        {exos &&
-          exos
-            .filter(({ stat }) => !!exoStatsMap[stat])
-            .map(({ stat, value }) => (
-              <li key={`exo-${stat}`} css={{ color: blue6 }}>
-                {value} {t(stat)}
-              </li>
-            ))}
-      </ul>
-    </>
-  );
-};
 
 export const Badge: React.FC = ({ children, ...restProps }) => (
   <span
@@ -144,8 +68,9 @@ export const SetBonuses: React.FC<{
   bonuses: Array<set_bonuses>;
   count: number;
   t: TFunction;
-}> = ({ bonuses, count, t }) => (
-  <div>
+  className?: string;
+}> = ({ bonuses, count, t, className }) => (
+  <div className={className}>
     <div css={{ fontSize: '0.75rem', fontWeight: 500 }}>
       {t('NUM_ITEMS', { ns: 'common', num: count })}
     </div>

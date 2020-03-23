@@ -17,7 +17,6 @@ import {
 import { useTranslation } from 'i18n';
 import { itemCardStyle, blue6 } from 'common/mixins';
 import { useDeleteItemMutation, checkAuthentication } from 'common/utils';
-import { ItemStatsList } from 'common/wrappers';
 import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
 import setEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.graphql';
@@ -26,6 +25,8 @@ import {
   setEquippedItemExoVariables,
 } from 'graphql/mutations/__generated__/setEquippedItemExo';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
+import ItemStatsList from './ItemStatsList';
+import { item_set } from 'graphql/fragments/__generated__/item';
 
 const quickMageStats = [
   {
@@ -58,6 +59,7 @@ interface IProps {
   customSet: customSet;
   openMageModal: (equippedItem: customSet_customSetById_equippedItems) => void;
   stopPropagationCallback: (e: React.MouseEvent<HTMLElement>) => void;
+  openSetModal: (set: item_set) => void;
 }
 
 const EquippedItemCard: React.FC<IProps> = ({
@@ -66,6 +68,7 @@ const EquippedItemCard: React.FC<IProps> = ({
   customSet,
   openMageModal,
   stopPropagationCallback,
+  openSetModal,
 }) => {
   const { t } = useTranslation(['common', 'mage', 'stat']);
 
@@ -184,6 +187,7 @@ const EquippedItemCard: React.FC<IProps> = ({
         item={equippedItem.item}
         css={{ paddingLeft: 16, marginBottom: 0 }}
         exos={equippedItem.exos}
+        openSetModal={openSetModal}
       />
     </Card>
   );

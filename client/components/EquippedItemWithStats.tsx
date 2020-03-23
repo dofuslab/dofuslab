@@ -20,6 +20,7 @@ import { useDeleteItemMutation } from 'common/utils';
 import { useTranslation } from 'i18n';
 import EquippedItemCard from './EquippedItemCard';
 import { mq } from 'common/constants';
+import { item_set } from 'graphql/fragments/__generated__/item';
 
 const wrapperStyles = {
   position: 'absolute' as 'absolute',
@@ -41,6 +42,7 @@ interface IProps {
   customSet: customSet;
   itemSlotId: string;
   openMageModal: (equippedItem: customSet_equippedItems) => void;
+  openSetModal: (set: item_set) => void;
 }
 
 const EquippedItemWithStats: React.FC<IProps> = ({
@@ -49,6 +51,7 @@ const EquippedItemWithStats: React.FC<IProps> = ({
   customSet,
   itemSlotId,
   openMageModal,
+  openSetModal,
 }) => {
   const deleteItem = useDeleteItemMutation(equippedItem.slot.id, customSet);
   const stopPropagationCallback = React.useCallback(
@@ -102,6 +105,7 @@ const EquippedItemWithStats: React.FC<IProps> = ({
                 itemSlotId={itemSlotId}
                 customSet={customSet}
                 openMageModal={openMageModal}
+                openSetModal={openSetModal}
                 stopPropagationCallback={stopPropagationCallback}
               />
             }

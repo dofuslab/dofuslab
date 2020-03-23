@@ -1,7 +1,7 @@
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
-import { ApolloClient } from 'apollo-boost';
+import { ApolloClient, ApolloError } from 'apollo-boost';
 import notification from 'antd/lib/notification';
 import { cloneDeep } from 'lodash';
 import { TFunction } from 'next-i18next';
@@ -18,7 +18,11 @@ import {
   OriginalStatLine,
   ExoStatLine,
 } from './types';
-import { item_itemType, item } from 'graphql/fragments/__generated__/item';
+import {
+  item_itemType,
+  item,
+  item_set,
+} from 'graphql/fragments/__generated__/item';
 import {
   updateCustomSetItem,
   updateCustomSetItemVariables,
@@ -37,7 +41,6 @@ import {
   equipSet,
   equipSetVariables,
 } from 'graphql/mutations/__generated__/equipSet';
-import { sets_sets_edges_node } from 'graphql/queries/__generated__/sets';
 
 const getBaseStat = (stats: customSet_stats, stat: Stat) => {
   switch (stat) {
@@ -349,21 +352,24 @@ export const useEquipItemMutation = (
 };
 
 export const useEquipSetMutation = (
-  set: sets_sets_edges_node,
+  setId: string,
   customSet?: customSet | null,
-) => {
+): [
+  () => Promise<void>,
+  { data?: equipSet; loading: boolean; error?: ApolloError },
+] => {
   const router = useRouter();
-  const { id: setId } = router.query;
+  const { id: routerSetId } = router.query;
 
-  const [equipSet] = useMutation<equipSet, equipSetVariables>(
-    EquipSetMutation,
-    {
-      variables: {
-        setId: set.id,
-        customSetId: customSet?.id,
-      },
+  const [equipSet, { data, loading, error }] = useMutation<
+    equipSet,
+    equipSetVariables
+  >(EquipSetMutation, {
+    variables: {
+      setId,
+      customSetId: customSet?.id,
     },
-  );
+  });
 
   const client = useApolloClient();
 
@@ -372,20 +378,24 @@ export const useEquipSetMutation = (
   const onClick = useCallback(async () => {
     const ok = await checkAuthentication(client, t, customSet);
     if (!ok) return;
-    const { data } = await equipSet();
+    try {
+      const { data: resultData } = await equipSet();
 
-    if (data?.equipSet?.customSet.id !== setId) {
-      router.replace(
-        `/?id=${data?.equipSet?.customSet.id}`,
-        `/set/${data?.equipSet?.customSet.id}`,
-        {
-          shallow: true,
-        },
-      );
+      if (resultData?.equipSet?.customSet.id !== routerSetId) {
+        router.replace(
+          `/?id=${resultData?.equipSet?.customSet.id}`,
+          `/set/${resultData?.equipSet?.customSet.id}`,
+          {
+            shallow: true,
+          },
+        );
+      }
+    } catch (e) {
+      notification.error(e);
     }
-  }, [equipSet, setId]);
+  }, [equipSet, routerSetId, router]);
 
-  return onClick;
+  return [onClick, { data, loading, error }];
 };
 
 export const useDeleteItemMutation = (
@@ -442,3 +452,22 @@ export const getCustomSet = (
     fragment: CustomSetFragment,
     fragmentName: 'customSet',
   });
+
+export const useSetModal = () => {
+  const [setModalVisible, setSetModalVisible] = React.useState(false);
+  const [selectedSet, setSelectedSet] = React.useState<item_set | null>(null);
+
+  const openSetModal = React.useCallback(
+    (set: item_set) => {
+      setSelectedSet(set);
+      setSetModalVisible(true);
+    },
+    [setSelectedSet, setSetModalVisible],
+  );
+
+  const closeSetModal = React.useCallback(() => {
+    setSetModalVisible(false);
+  }, [setSetModalVisible]);
+
+  return { setModalVisible, selectedSet, openSetModal, closeSetModal };
+};
