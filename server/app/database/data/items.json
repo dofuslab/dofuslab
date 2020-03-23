@@ -123933,5 +123933,415 @@
       "customConditions": {}
     },
     "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/217009"
+  },
+  {
+    "dofusID": "19595",
+    "name": {
+      "en": "Scapu Helm",
+      "fr": "Heaume Oplate",
+      "de": "Breitschulterhelm",
+      "es": "Yelmo Moplato",
+      "it": "Elmo Scapola",
+      "pt": "Elmo Plata"
+    },
+    "itemType": "Hat",
+    "setID": null,
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {
+        "and": [
+          {
+            "stat": "AP",
+            "operator": "<",
+            "value": 12
+          }
+        ]
+      },
+      "customConditions": {}
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/16538.png"
+  },
+  {
+    "dofusID": "19263",
+    "name": {
+      "en": "Ilyzaelle Shield",
+      "fr": "Bouclier d'Ilyzaelle",
+      "de": "Ilyzaelles Schild",
+      "es": "Escudo de Ilyzaelle",
+      "it": "Scudo di Ilyzaelle",
+      "pt": "Escudo de Ilyzaelle"
+    },
+    "itemType": "Shield",
+    "setID": "450",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Melee Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Weapon Damage",
+        "minStat": null,
+        "maxStat": -15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/82181.png"
+  },
+  {
+    "dofusID": "13641",
+    "name": {
+      "en": "Nomarow's Helmet",
+      "fr": "Coiffe de Padgref",
+      "de": "Helm des Knöchernen Marks",
+      "es": "Gorro de Noai Aludem",
+      "it": "Copricapo di Padgref",
+      "pt": "Chapéu de Nondome"
+    },
+    "itemType": "Hat",
+    "setID": "260",
+    "level": 198,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Heals",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Water Resistance",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
+        "stat": "Lock",
+        "minStat": -10,
+        "maxStat": -7
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/16349.png"
+  },
+  {
+    "dofusID": "16267",
+    "name": {
+      "en": "Major Air Devastator",
+      "fr": "Dévastateur Air majeur",
+      "de": "Großer Luft-Zerstörer",
+      "es": "Asolador de aire mayor",
+      "it": "Devastatore Aria Maggiore",
+      "pt": "Devastador de Ar maior"
+    },
+    "itemType": "Trophy",
+    "setID": null,
+    "level": 150,
+    "stats": [
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 20
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151222.png"
+  },
+  {
+    "dofusID": "6712",
+    "name": {
+      "en": "Horn Cape",
+      "fr": "Cape Hucine",
+      "de": "Cape Huzina",
+      "es": "Capa Huchina",
+      "it": "Mantello Uccino",
+      "pt": "Capa de Chifre"
+    },
+    "itemType": "Cloak",
+    "setID": null,
+    "level": 71,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 71,
+        "maxStat": 100
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Summons",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 6,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 6,
+        "maxStat": 10
+      },
+      {
+        "stat": "Agility",
+        "minStat": -200,
+        "maxStat": -101
+      },
+      {
+        "stat": "Chance",
+        "minStat": -200,
+        "maxStat": -101
+      },
+      {
+        "stat": "Strength",
+        "minStat": -200,
+        "maxStat": -101
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": -200,
+        "maxStat": -101
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/17082.png"
+  },
+  {
+    "dofusID": "2531",
+    "name": {
+      "en": "Caracap",
+      "fr": "Caracoiffe",
+      "de": "Carachoud",
+      "es": "Caparasombrero",
+      "it": "Caracapo",
+      "pt": "Carachapeú"
+    },
+    "itemType": "Hat",
+    "setID": "9",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 1,
+        "maxStat": 80
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/16048.png"
+  },
+  {
+    "dofusID": "8629",
+    "name": {
+      "en": "Hat Tsokey",
+      "fr": "Chapeau Grave",
+      "de": "Alles-wird-gut-Hut",
+      "es": "Multricornio",
+      "it": "Cappello Niente",
+      "pt": "Chapéu Tsokey"
+    },
+    "itemType": "Hat",
+    "setID": "89",
+    "level": 40,
+    "stats": [],
+    "customStats": {
+      "en": [
+        "Increases the Pitfall spell's maximum range by 1"
+      ],
+      "fr": [
+        "Augmente la portée maximale du sort Chausse-Trappe de 1"
+      ],
+      "de": [
+        "Erhöht die maximale Reichweite des Zauberspruchs Fußangeln um 1."
+      ],
+      "es": [
+        "Aumenta en 1 el alcance máximo del hechizo Abrojo."
+      ],
+      "it": [
+        "Aumenta la Portata massima dell'incantesimo Piede di Corvo di 1"
+      ],
+      "pt": [
+        "Aumenta o alcance máximo do feitiço Estrepe em 1"
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/16179.png"
   }
 ]

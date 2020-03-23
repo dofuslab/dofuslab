@@ -57610,5 +57610,149 @@
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/83015.png"
+  },
+  {
+    "dofusID": "18018",
+    "name": {
+      "en": "Hammerture",
+      "fr": "Marteau R'ture",
+      "de": "Kwaalhammer",
+      "es": "Martillo Martirio",
+      "it": "Martortura",
+      "pt": "Martelo martírio"
+    },
+    "itemType": "Hammer",
+    "level": 200,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 400
+      },
+      {
+        "stat": "Strength",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 20,
+      "critBonusDamage": 20,
+      "weapon_effects": [
+        {
+          "stat": "Neutral damage",
+          "minStat": 52,
+          "maxStat": 60
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/7738.png"
+  },
+  {
+    "dofusID": "6524",
+    "name": {
+      "en": "Savage Root",
+      "fr": "Racine Sauvageonne",
+      "de": "Sauvages Wurzel",
+      "es": "Raíz del plantón salvaje",
+      "it": "Radice Scorbutica",
+      "pt": "Raiz Selvagem"
+    },
+    "itemType": "Staff",
+    "level": 54,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 30,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        {
+          "stat": "Neutral damage",
+          "minStat": 3,
+          "maxStat": 4
+        },
+        {
+          "stat": "Neutral steal",
+          "minStat": 1,
+          "maxStat": 2
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/4041.png"
   }
 ]
