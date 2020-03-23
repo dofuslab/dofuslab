@@ -181,12 +181,14 @@ if __name__ == "__main__":
             )
 
             conditions = {
-                "conditions": record["conditions"]["conditions"],
-                "customConditions": record["conditions"]["customConditions"],
+                "conditions": record["conditions"].get("conditions", None),
+                "customConditions": record["conditions"].get("customConditions", None),
             }
             item.conditions = conditions
 
             for locale in record["name"]:
+                if record["name"][locale] == None:
+                    continue
                 item_translations = ModelItemTranslation(
                     item_id=item.uuid, locale=locale, name=record["name"][locale],
                 )
@@ -195,7 +197,7 @@ if __name__ == "__main__":
 
             try:
                 i = 0
-                for stat in record["stats"]:
+                for stat in record.get("stats", []):
                     item_stat = ModelItemStat(
                         stat=to_stat_enum[stat["stat"]],
                         min_value=stat["minStat"],
@@ -222,7 +224,7 @@ if __name__ == "__main__":
                 db.session.add(item)
 
                 # If this item belongs in a set, query the set and add the relationship to the record
-                if record["setID"]:
+                if record.get("setID", None):
                     set = record["setID"]
                     set_record = (
                         db.session.query(ModelSet)
