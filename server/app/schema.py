@@ -1,5 +1,5 @@
 from app import db
-from app import supported_languages
+from app.database.model_item_stat_translation import ModelItemStatTranslation
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_type import ModelItemType
 from app.database.model_item_slot import ModelItemSlot
@@ -7,6 +7,7 @@ from app.database.model_item_translation import ModelItemTranslation
 from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_weapon_stat import ModelWeaponStat
 from app.database.model_item import ModelItem
+from app.database.model_set_bonus_translation import ModelSetBonusTranslation
 from app.database.model_set_bonus import ModelSetBonus
 from app.database.model_set_translation import ModelSetTranslation
 from app.database.model_set import ModelSet
@@ -19,6 +20,7 @@ from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from app.database.base import Base
 from app.database.enums import Stat, Effect
+from app import supported_languages
 import app.mutation_validation_utils as validation
 import graphene
 import uuid
@@ -67,7 +69,23 @@ StatEnum = graphene.Enum.from_enum(Stat)
 EffectEnum = graphene.Enum.from_enum(Effect)
 
 
-class ItemStats(SQLAlchemyObjectType):
+class ItemStat(SQLAlchemyObjectType):
+    custom_stats = graphene.List(graphene.NonNull(graphene.String))
+
+    def resolve_custom_stats(self, info):
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+
+        query = (
+            db.session.query(ModelItemStatTranslation)
+            .filter(ModelItemStatTranslation.locale == locale)
+            .filter(ModelItemStatTranslation.item_stat_id == self.uuid)
+            .all()
+        )
+
+        return [translation.custom_stat for translation in query]
+
     class Meta:
         model = ModelItemStat
         interfaces = (GlobalNode,)
@@ -103,7 +121,7 @@ class WeaponStat(SQLAlchemyObjectType):
 
 
 class Item(SQLAlchemyObjectType):
-    stats = graphene.NonNull(graphene.List(graphene.NonNull(ItemStats)))
+    stats = graphene.NonNull(graphene.List(graphene.NonNull(ItemStat)))
     item_type = graphene.NonNull(ItemType)
     name = graphene.String(required=True)
 
@@ -119,6 +137,14 @@ class Item(SQLAlchemyObjectType):
             .name
         )
 
+    def resolve_stats(self, info):
+        query = (
+            db.session.query(ModelItemStat)
+            .filter(ModelItemStat.item_id == self.uuid)
+            .order_by(ModelItemStat.order)
+        )
+        return query
+
     class Meta:
         model = ModelItem
         interfaces = (GlobalNode,)
@@ -130,6 +156,22 @@ class ItemConnection(NonNullConnection):
 
 
 class SetBonus(SQLAlchemyObjectType):
+    custom_stats = graphene.List(graphene.String)
+
+    def resolve_custom_stats(self, info):
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+
+        query = (
+            db.session.query(ModelSetBonusTranslation)
+            .filter(ModelSetBonusTranslation.locale == locale)
+            .filter(ModelSetBonusTranslation.set_bonus_id == self.uuid)
+            .all()
+        )
+
+        return [translation.custom_stat for translation in query]
+
     class Meta:
         model = ModelSetBonus
         interfaces = (GlobalNode,)
@@ -694,7 +736,7 @@ class Query(graphene.ObjectType):
     item_slots = graphene.NonNull(graphene.List(graphene.NonNull(ItemSlot)))
 
     def resolve_item_slots(self, info):
-        return db.session.query(ModelItemSlot).all()
+        return db.session.query(ModelItemSlot).order_by(ModelItemSlot.order).all()
 
 
 class Mutation(graphene.ObjectType):

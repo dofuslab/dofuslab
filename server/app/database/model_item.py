@@ -3,7 +3,7 @@ from .base import Base
 from .model_item_type import ModelItemType
 from .model_item_stat import ModelItemStat
 from sqlalchemy import Column, ForeignKey, Integer, String, JSON
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, backref
 from sqlalchemy.dialects.postgresql import UUID
 
 
@@ -27,9 +27,12 @@ class ModelItem(Base):
     set_id = Column(UUID(as_uuid=True), ForeignKey("set.uuid"), index=True)
     set = relationship("ModelSet")
     level = Column("level", Integer, nullable=False)
-    stats = relationship(ModelItemStat, backref="item", cascade="all, delete-orphan")
+    stats = relationship("ModelItemStat", backref="item", cascade="all, delete-orphan")
     weapon_stats = relationship(
-        "ModelWeaponStat", backref="item", cascade="all, delete-orphan"
+        "ModelWeaponStat",
+        uselist=False,
+        back_populates="item",
+        cascade="all, delete-orphan",
     )
     conditions = Column("conditions", JSON)
     image_url = Column("image_url", String, nullable=False)

@@ -15,8 +15,8 @@ class ModelWeaponStat(Base):
         nullable=False,
     )
 
-    # add additional arguments
     item_id = Column(UUID(as_uuid=True), ForeignKey("item.uuid"), nullable=False)
+    item = relationship("ModelItem", back_populates="weapon_stats")
     weapon_effects = relationship(
         "ModelWeaponEffect", backref="weapon_stat", cascade="all, delete-orphan"
     )
@@ -24,5 +24,5 @@ class ModelWeaponStat(Base):
     uses_per_turn = Column("uses_per_turn", Integer, nullable=False)
     min_range = Column("min_range", Integer)
     max_range = Column("max_range", Integer, nullable=False)
-    base_crit_chance = Column("base_crit_chance", Integer, nullable=False)
-    crit_bonus_damage = Column("crit_bonus_damage", Integer, nullable=False)
+    base_crit_chance = Column("base_crit_chance", Integer)
+    crit_bonus_damage = Column("crit_bonus_damage", Integer)

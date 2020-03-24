@@ -1,6 +1,7 @@
 from app import db
 from app.database.model_item import ModelItem
 from app.database.model_item_stat import ModelItemStat
+from app.database.model_item_stat_translation import ModelItemStatTranslation
 from app.database.model_item_slot import ModelItemSlot
 from app.database.model_item_type import ModelItemType
 from app.database.model_item_translation import ModelItemTranslation
@@ -8,8 +9,8 @@ from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_weapon_stat import ModelWeaponStat
 from app.database.model_set import ModelSet
 from app.database.model_set_bonus import ModelSetBonus
+from app.database.model_set_bonus_translation import ModelSetBonusTranslation
 from app.database.model_set_translation import ModelSetTranslation
-from app.database.model_custom_set_stat import ModelCustomSetStat
 from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_custom_set import ModelCustomSet
 from app.database.model_user import ModelUser
@@ -111,6 +112,7 @@ if __name__ == "__main__":
     print("Adding item slots to database")
     with open(os.path.join(dirname, "app/database/data/item_slots.json"), "r") as file:
         data = json.load(file)
+        i = 0
         for record in data:
             for _ in range(record.get("quantity", 1)):
                 item_slot = ModelItemSlot(
@@ -118,8 +120,10 @@ if __name__ == "__main__":
                     item_types=[
                         item_types[item_type_name] for item_type_name in record["types"]
                     ],
+                    order=i,
                 )
                 db.session.add(item_slot)
+                i = i + 1
 
     db.session.commit()
 
@@ -147,7 +151,18 @@ if __name__ == "__main__":
                         bonus_obj.stat = to_stat_enum[bonus["stat"]]
                         bonus_obj.value = bonus["value"]
                     else:
-                        bonus_obj.alt_stat = bonus["altStat"]
+                        for locale in bonus["altStat"]:
+                            for custom_bonus in bonus["altStat"][locale]:
+                                bonus_translation = ModelSetBonusTranslation(
+                                    set_bonus_id=bonus_obj.uuid,
+                                    locale=locale,
+                                    custom_stat=custom_bonus,
+                                )
+                                db.session.add(bonus_translation)
+                                bonus_obj.set_bonus_translation.append(
+                                    bonus_translation
+                                )
+
                     db.session.add(bonus_obj)
                     set_obj.bonuses.append(bonus_obj)
 
@@ -168,12 +183,14 @@ if __name__ == "__main__":
             )
 
             conditions = {
-                "conditions": record["conditions"]["conditions"],
-                "customConditions": record["conditions"]["custom_conditions"],
+                "conditions": record["conditions"].get("conditions", None),
+                "customConditions": record["conditions"].get("customConditions", None),
             }
             item.conditions = conditions
 
             for locale in record["name"]:
+                if record["name"][locale] == None:
+                    continue
                 item_translations = ModelItemTranslation(
                     item_id=item.uuid, locale=locale, name=record["name"][locale],
                 )
@@ -181,19 +198,35 @@ if __name__ == "__main__":
                 item.item_translations.append(item_translations)
 
             try:
-                for stat in record["stats"]:
+                i = 0
+                for stat in record.get("stats", []):
                     item_stat = ModelItemStat(
                         stat=to_stat_enum[stat["stat"]],
                         min_value=stat["minStat"],
                         max_value=stat["maxStat"],
+                        order=i,
                     )
                     db.session.add(item_stat)
+                    item.stats.append(item_stat)
+                    i = i + 1
+                if record["customStats"] != {}:
+                    item_stat = ModelItemStat(order=i)
+                    for locale in record["customStats"]:
+                        for custom_stat in record["customStats"][locale]:
+                            stat_translation = ModelItemStatTranslation(
+                                item_stat_id=item_stat.uuid,
+                                locale=locale,
+                                custom_stat=custom_stat,
+                            )
+                            db.session.add(stat_translation)
+                            item_stat.item_stat_translation.append(stat_translation)
+
                     item.stats.append(item_stat)
 
                 db.session.add(item)
 
                 # If this item belongs in a set, query the set and add the relationship to the record
-                if record["setID"]:
+                if record.get("setID", None):
                     set = record["setID"]
                     set_record = (
                         db.session.query(ModelSet)
@@ -232,13 +265,29 @@ if __name__ == "__main__":
                 item.item_translations.append(item_translations)
 
             try:
+                i = 0
                 for stat in record["stats"]:
                     item_stat = ModelItemStat(
                         stat=to_stat_enum[stat["stat"]],
                         min_value=stat["minStat"],
                         max_value=stat["maxStat"],
+                        order=i,
                     )
                     db.session.add(item_stat)
+                    item.stats.append(item_stat)
+                    i = i + 1
+                if record["customStats"] != {}:
+                    item_stat = ModelItemStat(order=i)
+                    for locale in record["customStats"]:
+                        for custom_stat in record["customStats"][locale]:
+                            stat_translation = ModelItemStatTranslation(
+                                item_stat_id=item_stat.uuid,
+                                locale=locale,
+                                custom_stat=custom_stat,
+                            )
+                            db.session.add(stat_translation)
+                            item_stat.item_stat_translation.append(stat_translation)
+
                     item.stats.append(item_stat)
 
                 db.session.add(item)
@@ -261,9 +310,15 @@ if __name__ == "__main__":
                 uses_per_turn=record["weaponStats"]["usesPerTurn"],
                 min_range=record["weaponStats"]["minRange"],
                 max_range=record["weaponStats"]["maxRange"],
-                base_crit_chance=record["weaponStats"]["baseCritChance"],
-                crit_bonus_damage=record["weaponStats"]["critBonusDamage"],
             )
+
+            if record["weaponStats"]["baseCritChance"] > 0:
+                weapon_stat.base_crit_chance = (
+                    record["weaponStats"]["baseCritChance"],
+                )
+                weapon_stat.crit_bonus_damage = (
+                    record["weaponStats"]["critBonusDamage"],
+                )
 
             for effect in record["weaponStats"]["weapon_effects"]:
                 weapon_effects = ModelWeaponEffect(
@@ -273,6 +328,116 @@ if __name__ == "__main__":
                 )
                 weapon_stat.weapon_effects.append(weapon_effects)
 
-            item.weapon_stats.append(weapon_stat)
+            item.weapon_stats = weapon_stat
+
+        db.session.commit()
+
+    print("Adding pets to database")
+    with open(os.path.join(dirname, "app/database/data/pets.json"), "r") as file:
+        data = json.load(file)
+        for record in data:
+            item = ModelItem(
+                dofus_db_id=record["dofusID"],
+                item_type=item_types[record["itemType"]],
+                level=record["level"],
+                image_url=record["imageUrl"],
+            )
+
+            conditions = {
+                "conditions": record["conditions"]["conditions"],
+                "customConditions": record["conditions"]["customConditions"],
+            }
+            item.conditions = conditions
+
+            for locale in record["name"]:
+                item_translations = ModelItemTranslation(
+                    item_id=item.uuid, locale=locale, name=record["name"][locale],
+                )
+                db.session.add(item_translations)
+                item.item_translations.append(item_translations)
+
+            try:
+                i = 0
+                for stat in record["stats"]:
+                    item_stat = ModelItemStat(
+                        stat=to_stat_enum[stat["stat"]],
+                        min_value=stat["minStat"],
+                        max_value=stat["maxStat"],
+                        order=i,
+                    )
+                    db.session.add(item_stat)
+                    item.stats.append(item_stat)
+                    i = i + 1
+                if record["customStats"] != {}:
+                    item_stat = ModelItemStat(order=i)
+                    for locale in record["customStats"]:
+                        stat_translation = ModelItemStatTranslation(
+                            item_stat_id=item_stat.uuid, locale=locale
+                        )
+                        for custom_stat in record["customStats"][locale]:
+                            item_custom_stat = ModelItemCustomStat(
+                                item_stat_translation_id=stat_translation.uuid,
+                                custom_stat=custom_stat,
+                            )
+                            db.session.add(item_custom_stat)
+                            stat_translation.custom_stats.append(item_custom_stat)
+
+                        db.session.add(stat_translation)
+                        item_stat.item_stat_translation.append(stat_translation)
+
+                    item.stats.append(item_stat)
+
+                db.session.add(item)
+
+                # If this item belongs in a set, query the set and add the relationship to the record
+                if record["setID"]:
+                    set = record["setID"]
+                    set_record = (
+                        db.session.query(ModelSet)
+                        .filter(ModelSet.dofus_db_id == set)
+                        .first()
+                    )
+                    set_record.items.append(item)
+                    db.session.merge(set_record)
+            except KeyError as err:
+                print("KeyError occurred:", err)
+
+        db.session.commit()
+    #
+    print("Adding mounts to database")
+    with open(os.path.join(dirname, "app/database/data/mounts.json"), "r") as file:
+        data = json.load(file)
+        for record in data:
+            item = ModelItem(
+                dofus_db_id=record["dofusID"],
+                item_type=item_types[record["itemType"]],
+                level=record["level"],
+                image_url=record["imageUrl"],
+            )
+
+            for locale in record["name"]:
+                item_translations = ModelItemTranslation(
+                    item_id=item.uuid, locale=locale, name=record["name"][locale],
+                )
+                db.session.add(item_translations)
+                item.item_translations.append(item_translations)
+
+            try:
+                i = 0
+                for stat in record["stats"]:
+                    item_stat = ModelItemStat(
+                        stat=to_stat_enum[stat["stat"]],
+                        min_value=stat["minStat"],
+                        max_value=stat["maxStat"],
+                        order=i,
+                    )
+                    db.session.add(item_stat)
+                    item.stats.append(item_stat)
+                    i = i + 1
+
+                db.session.add(item)
+
+            except KeyError as err:
+                print("KeyError occurred:", err)
 
         db.session.commit()

@@ -24,7 +24,7 @@ app.config["SESSION_COOKIE_DOMAIN"] = session_cookie_domain
 app.config["REMEMBER_COOKIE_DOMAIN"] = remember_cookie_domain
 app.config["REMEMBER_COOKIE_PATH"] = "/"
 
-supported_languages = ["en", "fr"]
+supported_languages = ["en", "fr", "pt", "it", "de", "es"]
 
 db = SQLAlchemy(app)
 CORS(
