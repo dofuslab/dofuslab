@@ -70,7 +70,7 @@ EffectEnum = graphene.Enum.from_enum(Effect)
 
 
 class ItemStat(SQLAlchemyObjectType):
-    custom_stats = graphene.List(graphene.String)
+    custom_stats = graphene.List(graphene.NonNull(graphene.String))
 
     def resolve_custom_stats(self, info):
         locale = info.context.accept_languages.best_match(
