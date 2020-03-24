@@ -86,6 +86,16 @@ const statDisplayArray = [
     scrolledKey: 'scrolledWisdom' as 'scrolledWisdom',
   },
   {
+    stat: Stat.AGILITY,
+    baseKey: 'baseAgility' as 'baseAgility',
+    scrolledKey: 'scrolledAgility' as 'scrolledAgility',
+  },
+  {
+    stat: Stat.CHANCE,
+    baseKey: 'baseChance' as 'baseChance',
+    scrolledKey: 'scrolledChance' as 'scrolledChance',
+  },
+  {
     stat: Stat.STRENGTH,
     baseKey: 'baseStrength' as 'baseStrength',
     scrolledKey: 'scrolledStrength' as 'scrolledStrength',
@@ -94,16 +104,6 @@ const statDisplayArray = [
     stat: Stat.INTELLIGENCE,
     baseKey: 'baseIntelligence' as 'baseIntelligence',
     scrolledKey: 'scrolledIntelligence' as 'scrolledIntelligence',
-  },
-  {
-    stat: Stat.CHANCE,
-    baseKey: 'baseChance' as 'baseChance',
-    scrolledKey: 'scrolledChance' as 'scrolledChance',
-  },
-  {
-    stat: Stat.AGILITY,
-    baseKey: 'baseAgility' as 'baseAgility',
-    scrolledKey: 'scrolledAgility' as 'scrolledAgility',
   },
 ];
 
@@ -150,9 +150,13 @@ const getInputNumberStyle = (baseKey: string, title: string) => ({
     ['&::before']: {
       position: 'absolute' as 'absolute',
       content: `"${title}"`,
-      top: -30,
       left: 0,
-      height: 24,
+      top: -42,
+      height: 36,
+      [mq[1]]: {
+        top: -30,
+        height: 24,
+      },
       width: '100%',
       background: gray7,
       color: 'white',
@@ -236,15 +240,26 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
     <div
       css={{
         gridArea: '3 / 1 / 4 / 2',
-        marginTop: 16,
+        marginTop: 24,
+        display: 'grid',
+        gridAutoRows: 42,
+        gridTemplateColumns: '1fr 80px 80px',
+        [mq[0]]: {
+          gridAutoRows: 36,
+          gridArea: '2 / 1 / 3 / 2',
+          marginTop: 0,
+        },
+        [mq[1]]: {
+          gridAutoRows: 30,
+          gridArea: '3 / 1 / 4 / 2',
+          marginTop: 16,
+        },
         [mq[2]]: {
           gridArea: '2 / 1 / 3 / 2',
           marginTop: 0,
         },
-        display: 'grid',
-        gridTemplateColumns: '1fr 60px 60px',
         gridGap: 4,
-        gridAutoRows: 26,
+
         fontSize: '0.75rem',
         justifySelf: 'stretch',
         background: 'white',
@@ -299,7 +314,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
           alignItems: 'center',
           justifySelf: 'end',
           padding: '4px 8px',
-          maxHeight: '100%',
+          height: '100%',
         }}
         onClick={reset}
       >
@@ -319,10 +334,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
       >
         {remainingPoints}
       </div>
-      <Button
-        css={{ fontSize: '0.75rem', maxHeight: '100%' }}
-        onClick={scrollAll}
-      >
+      <Button css={{ fontSize: '0.75rem', height: '100%' }} onClick={scrollAll}>
         100
       </Button>
     </div>

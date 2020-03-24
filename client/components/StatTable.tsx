@@ -37,16 +37,37 @@ const StatTable: React.FC<IStatTable> = ({
             display: 'flex',
             justifyContent: 'space-between',
             ['&.ant-list-item']: {
-              paddingTop: 6,
-              paddingBottom: 6,
+              padding: '6px 16px 6px 8px !important',
             },
+            alignItems: 'center',
           }}
         >
-          <div css={{ fontSize: '0.75rem' }}>{t(item.stat)}</div>
+          <div css={{ display: 'flex', alignItems: 'center' }}>
+            <div
+              css={{
+                background: item.icon
+                  ? 'url(https://dofus-lab.s3.us-east-2.amazonaws.com/sprite.png)'
+                  : 'none',
+                height: 22,
+                width: 22,
+                backgroundPositionX: item.icon?.backgroundPositionX,
+                backgroundPositionY: item.icon?.backgroundPositionY
+                  ? item.icon.backgroundPositionY + 1
+                  : undefined,
+                marginRight: 6,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              {item.svgIcon && (
+                <img src={item.svgIcon} css={{ height: '80%', width: '80%' }} />
+              )}
+            </div>
+            <div css={{ fontSize: '0.75rem' }}>{t(item.stat)}</div>
+          </div>
           <div css={{ fontSize: '0.75rem' }}>
-            {item.customDisplay
-              ? item.customDisplay(statsFromCustomSet, customSet)
-              : item.customCalculateValue
+            {item.customCalculateValue
               ? item.customCalculateValue(statsFromCustomSet, customSet)
               : statsFromCustomSet
               ? statsFromCustomSet[item.stat] || 0
@@ -58,4 +79,4 @@ const StatTable: React.FC<IStatTable> = ({
   );
 };
 
-export default StatTable;
+export default React.memo(StatTable);

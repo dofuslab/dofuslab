@@ -19,10 +19,13 @@ import {
   itemSlots_itemSlots,
   itemSlots,
 } from 'graphql/queries/__generated__/itemSlots';
-import { ItemFilters } from '__generated__/globalTypes';
-import ItemSelectorFilters from './ItemSelectorFilters';
-import { FilterAction } from 'common/types';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import ItemTypeFilter from './ItemTypeFilter';
+import { SharedFilters } from 'common/types';
+import { findEmptyOrOnlySlotId } from 'common/utils';
+import ConfirmReplaceItemPopover from './ConfirmReplaceItemPopover';
+import { item_set } from 'graphql/fragments/__generated__/item';
+import SetModal from './SetModal';
 
 const PAGE_SIZE = 24;
 
@@ -35,48 +38,25 @@ interface IProps {
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
   customSetItemIds: Set<string>;
+  filters: SharedFilters;
+  closeSelector: () => void;
 }
-
-const reducer = (state: ItemFilters, action: FilterAction) => {
-  switch (action.type) {
-    case 'SEARCH':
-      return { ...state, search: action.search };
-    case 'MAX_LEVEL':
-      return { ...state, maxLevel: action.maxLevel };
-    case 'STATS':
-      return { ...state, stats: action.stats };
-    case 'ITEM_TYPE_IDS':
-      return { ...state, itemTypeIds: action.itemTypeIds };
-    case 'RESET':
-      return {
-        search: '',
-        stats: [],
-        maxLevel: action.maxLevel,
-        itemTypeIds: [],
-      };
-    default:
-      throw new Error('Invalid action type');
-  }
-};
 
 const ItemSelector: React.FC<IProps> = ({
   selectedItemSlot,
   customSet,
   selectItemSlot,
   customSetItemIds,
+  filters,
+  closeSelector,
 }) => {
-  const [filters, dispatch] = React.useReducer(reducer, {
-    stats: [],
-    maxLevel: customSet?.level || 200,
-    search: '',
-    itemTypeIds: [],
-  });
+  const [itemTypeIds, setItemTypeIds] = React.useState<Array<string>>([]);
   const queryFilters = {
     ...filters,
     itemTypeIds:
-      selectedItemSlot && filters.itemTypeIds.length === 0
+      selectedItemSlot && itemTypeIds.length === 0
         ? selectedItemSlot.itemTypes.map(type => type.id)
-        : filters.itemTypeIds,
+        : itemTypeIds,
   };
   const { data, loading, fetchMore, networkStatus } = useQuery<
     items,
@@ -91,7 +71,7 @@ const ItemSelector: React.FC<IProps> = ({
 
   const endCursorRef = React.useRef<string | null>(null);
 
-  const onLoadMore = React.useCallback(() => {
+  const onLoadMore = React.useCallback(async () => {
     if (
       !data ||
       !data.items.pageInfo.hasNextPage ||
@@ -101,23 +81,25 @@ const ItemSelector: React.FC<IProps> = ({
     }
 
     endCursorRef.current = data.items.pageInfo.endCursor;
-
-    return fetchMore({
-      variables: { after: data.items.pageInfo.endCursor },
-      updateQuery: (prevData, { fetchMoreResult }) => {
-        if (!fetchMoreResult) {
-          return prevData;
-        }
-        return {
-          ...prevData,
-          items: {
-            ...prevData.items,
-            edges: [...prevData.items.edges, ...fetchMoreResult.items.edges],
-            pageInfo: fetchMoreResult.items.pageInfo,
-          },
-        };
-      },
-    });
+    try {
+      const fetchMoreResult = await fetchMore({
+        variables: { after: data.items.pageInfo.endCursor },
+        updateQuery: (prevData, { fetchMoreResult }) => {
+          if (!fetchMoreResult) {
+            return prevData;
+          }
+          return {
+            ...prevData,
+            items: {
+              ...prevData.items,
+              edges: [...prevData.items.edges, ...fetchMoreResult.items.edges],
+              pageInfo: fetchMoreResult.items.pageInfo,
+            },
+          };
+        },
+      });
+      return fetchMoreResult;
+    } catch (e) {}
   }, [data]);
 
   const responsiveGridRef = React.useRef<HTMLDivElement | null>(null);
@@ -146,6 +128,23 @@ const ItemSelector: React.FC<IProps> = ({
     };
   }, [data]);
 
+  const [setModalVisible, setSetModalVisible] = React.useState(false);
+  const [selectedSet, setSelectedSet] = React.useState<item_set | null>(null);
+
+  const openSetModal = React.useCallback(
+    (set: item_set) => {
+      setSelectedSet(set);
+      setSetModalVisible(true);
+    },
+    [setSelectedSet, setSetModalVisible],
+  );
+
+  const closeSetModal = React.useCallback(() => {
+    setSetModalVisible(false);
+  }, [setSetModalVisible]);
+
+  console.log(data?.items.edges.length);
+
   return (
     <ResponsiveGrid
       numColumns={[1, 2, 2, 3, 4, 5, 6]}
@@ -153,11 +152,9 @@ const ItemSelector: React.FC<IProps> = ({
       ref={responsiveGridRef}
     >
       {itemSlots && (
-        <ItemSelectorFilters
-          key={`filters-level-${customSet?.level}`}
-          filters={filters}
-          dispatch={dispatch}
-          customSetLevel={customSet?.level || null}
+        <ItemTypeFilter
+          setItemTypeIds={setItemTypeIds}
+          itemTypeIds={itemTypeIds}
           itemTypes={uniqWith(
             itemSlots
               .filter(
@@ -171,17 +168,35 @@ const ItemSelector: React.FC<IProps> = ({
       {data &&
         data.items.edges
           .map(edge => edge.node)
-          .map(item => (
-            <ItemCard
-              key={item.id}
-              item={item}
-              selectedItemSlotId={selectedItemSlot?.id ?? null}
-              customSetItemIds={customSetItemIds}
-              customSet={customSet}
-              responsiveGridRef={responsiveGridRef}
-              selectItemSlot={selectItemSlot}
-            />
-          ))}
+          .map(item => {
+            const itemSlotId =
+              selectedItemSlot?.id ||
+              findEmptyOrOnlySlotId(item.itemType, customSet);
+            const card = (
+              <ItemCard
+                key={`item-card-${item.id}`}
+                item={item}
+                itemSlotId={itemSlotId}
+                equipped={customSetItemIds.has(item.id)}
+                customSetId={customSet?.id ?? null}
+                selectItemSlot={selectItemSlot}
+                openSetModal={openSetModal}
+                closeSelector={closeSelector}
+              />
+            );
+            return itemSlotId || !customSet ? (
+              card
+            ) : (
+              <ConfirmReplaceItemPopover
+                key={`confirm-replace-item-popover-${item.id}`}
+                item={item}
+                customSet={customSet}
+                responsiveGridRef={responsiveGridRef}
+              >
+                {card}
+              </ConfirmReplaceItemPopover>
+            );
+          })}
       {(loading || data?.items.pageInfo.hasNextPage) &&
         Array(loading ? numLoadersToRender * 2 : numLoadersToRender)
           .fill(null)
@@ -202,6 +217,15 @@ const ItemSelector: React.FC<IProps> = ({
         onEnter={onLoadMore}
         bottomOffset={BOTTOM_OFFSET}
       />
+      {selectedSet && (
+        <SetModal
+          setId={selectedSet.id}
+          setName={selectedSet.name}
+          visible={setModalVisible}
+          onCancel={closeSetModal}
+          customSet={customSet}
+        />
+      )}
     </ResponsiveGrid>
   );
 };

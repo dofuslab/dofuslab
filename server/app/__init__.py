@@ -13,13 +13,15 @@ load_dotenv()
 
 db_uri = os.getenv("DATABASE_URL")
 secret_key = os.getenv("SECRET_KEY")
+session_cookie_domain = os.getenv("SESSION_COOKIE_DOMAIN")
+remember_cookie_domain = os.getenv("REMEMBER_COOKIE_DOMAIN")
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SECRET_KEY"] = secret_key
-app.config["SESSION_COOKIE_DOMAIN"] = ".dev.localhost"
-app.config["REMEMBER_COOKIE_DOMAIN"] = ".dev.localhost"
+app.config["SESSION_COOKIE_DOMAIN"] = session_cookie_domain
+app.config["REMEMBER_COOKIE_DOMAIN"] = remember_cookie_domain
 app.config["REMEMBER_COOKIE_PATH"] = "/"
 
 supported_languages = ["en", "fr", "pt", "it", "de", "es"]

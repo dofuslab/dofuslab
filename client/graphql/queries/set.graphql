@@ -1,0 +1,11 @@
+#import "graphql/fragments/set.graphql"
+#import "graphql/fragments/item.graphql"
+
+query set($id: UUID!) {
+  setById(id: $id) {
+    ...set
+    items {
+      ...item
+    }
+  }
+}

@@ -27,7 +27,7 @@ import uuid
 from graphql import GraphQLError
 from flask_login import login_required, login_user, current_user, logout_user
 from functools import lru_cache
-from sqlalchemy import func
+from sqlalchemy import func, distinct
 
 # workaround from https://github.com/graphql-python/graphene-sqlalchemy/issues/211
 # without this workaround, graphene complains that there are multiple
@@ -178,7 +178,7 @@ class SetBonus(SQLAlchemyObjectType):
 
 
 class Set(SQLAlchemyObjectType):
-    # maybe add resolver to specify the exact bonus for the provided num of items
+    items = graphene.NonNull(graphene.List(graphene.NonNull(Item)))
     bonuses = graphene.NonNull(graphene.List(graphene.NonNull(SetBonus)))
     name = graphene.String(required=True)
 
@@ -197,6 +197,11 @@ class Set(SQLAlchemyObjectType):
     class Meta:
         model = ModelSet
         interfaces = (GlobalNode,)
+
+
+class SetConnection(NonNullConnection):
+    class Meta:
+        node = Set
 
 
 class EquippedItemExo(SQLAlchemyObjectType):
@@ -376,6 +381,33 @@ class UpdateCustomSetItem(graphene.Mutation):
         return UpdateCustomSetItem(custom_set=custom_set)
 
 
+class EquipSet(graphene.Mutation):
+    class Arguments:
+        custom_set_id = graphene.UUID()
+        set_id = graphene.UUID(required=True)
+
+    custom_set = graphene.Field(CustomSet, required=True)
+
+    def mutate(self, info, **kwargs):
+        custom_set_id = kwargs.get("custom_set_id")
+        set_id = kwargs.get("set_id")
+        if custom_set_id:
+            custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
+            if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
+                raise GraphQLError("You don't have permission to edit that set.")
+        else:
+            custom_set = ModelCustomSet(owner_id=current_user.get_id())
+            db.session.add(custom_set)
+            db.session.flush()
+            custom_set_stat = ModelCustomSetStat(custom_set_id=custom_set.uuid)
+            db.session.add(custom_set_stat)
+        set_obj = db.session.query(ModelSet).get(set_id)
+        custom_set.equip_set(set_obj)
+        db.session.commit()
+
+        return EquipSet(custom_set=custom_set)
+
+
 class MageEquippedItem(graphene.Mutation):
     class Arguments:
         equipped_item_id = graphene.UUID(required=True)
@@ -539,6 +571,12 @@ class ItemFilters(graphene.InputObjectType):
     item_type_ids = graphene.NonNull(graphene.List(graphene.NonNull(graphene.UUID)))
 
 
+class SetFilters(graphene.InputObjectType):
+    stats = graphene.NonNull(graphene.List(graphene.NonNull(StatEnum)))
+    max_level = graphene.NonNull(graphene.Int)
+    search = graphene.String(required=True)
+
+
 class Query(graphene.ObjectType):
     current_user = graphene.Field(User)
 
@@ -584,9 +622,16 @@ class Query(graphene.ObjectType):
             if filters.max_level:
                 items_query = items_query.filter(ModelItem.level <= filters.max_level)
             if filters.search:
-                items_query = items_query.filter(
-                    func.upper(ModelItemTranslation.name).contains(
-                        func.upper(filters.search.strip())
+                items_query = (
+                    items_query.join(ModelSet, isouter=True)
+                    .join(ModelSetTranslation, isouter=True)
+                    .filter(
+                        func.upper(ModelItemTranslation.name).contains(
+                            func.upper(filters.search.strip())
+                        )
+                        | func.upper(ModelSetTranslation.name).contains(
+                            func.upper(filters.search.strip())
+                        )
                     )
                 )
             if filters.item_type_ids:
@@ -597,11 +642,70 @@ class Query(graphene.ObjectType):
             ModelItem.level.desc(), ModelItemTranslation.name.asc()
         ).all()
 
-    sets = graphene.NonNull(graphene.List(graphene.NonNull(Set)))
+    sets = relay.ConnectionField(
+        graphene.NonNull(SetConnection), filters=graphene.Argument(SetFilters)
+    )
 
-    def resolve_sets(self, info):
-        query = db.session.query(ModelSet)
-        return query.all()
+    def resolve_sets(self, info, **kwargs):
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+        filters = kwargs.get("filters")
+        set_query = (
+            db.session.query(ModelSet)
+            .join(ModelSetTranslation)
+            .filter_by(locale=locale)
+        )
+
+        level_sq = (
+            db.session.query(ModelItem.set_id, func.max(ModelItem.level).label("level"))
+            .group_by(ModelItem.set_id)
+            .subquery()
+        )
+        set_query = set_query.join(level_sq, ModelSet.uuid == level_sq.c.set_id)
+
+        if filters:
+            search = filters.search.strip()
+            if filters.stats:
+                set_query = set_query.join(ModelSetBonus)
+                stat_names = set(map(lambda x: Stat(x).name, filters.stats))
+                stat_sq = (
+                    db.session.query(ModelSetBonus.set_id, ModelSetBonus.stat)
+                    .group_by(ModelSetBonus.set_id, ModelSetBonus.stat)
+                    .filter(ModelSetBonus.stat.in_(stat_names), ModelSetBonus.value > 0)
+                ).subquery()
+                bonus_sq = (
+                    db.session.query(
+                        ModelSetBonus.set_id,
+                        func.count(distinct(stat_sq.c.stat)).label("num_stats_matched"),
+                    )
+                    .join(stat_sq, ModelSetBonus.set_id == stat_sq.c.set_id)
+                    .group_by(ModelSetBonus.set_id)
+                    .subquery()
+                )
+                set_query = set_query.join(
+                    bonus_sq, ModelSet.uuid == bonus_sq.c.set_id
+                ).filter(bonus_sq.c.num_stats_matched == len(stat_names))
+            if filters.max_level:
+                set_query = set_query.filter(level_sq.c.level <= filters.max_level)
+            if filters.search:
+                set_query = (
+                    set_query.join(ModelItem)
+                    .join(ModelItemTranslation)
+                    .filter(
+                        func.upper(ModelSetTranslation.name).contains(
+                            func.upper(filters.search.strip())
+                        )
+                        | func.upper(ModelItemTranslation.name).contains(
+                            func.upper(filters.search.strip())
+                        )
+                    )
+                    .group_by(ModelSet.uuid, level_sq.c.level, ModelSetTranslation.name)
+                )
+
+        return set_query.order_by(
+            level_sq.c.level.desc(), ModelSetTranslation.name.asc()
+        ).all()
 
     custom_sets = graphene.List(CustomSet)
 
@@ -619,7 +723,7 @@ class Query(graphene.ObjectType):
     def resolve_item_by_id(self, info, id):
         return db.session.query(ModelItem).get(id)
 
-    set_by_id = graphene.Field(Set, id=graphene.UUID(required=True))
+    set_by_id = graphene.Field(Set, id=graphene.UUID(required=True), required=True)
 
     def resolve_set_by_id(self, info, id):
         return db.session.query(ModelSet).get(id)
@@ -645,6 +749,7 @@ class Mutation(graphene.ObjectType):
     set_equipped_item_exo = SetEquippedItemExo.Field()
     edit_custom_set_metadata = EditCustomSetMetadata.Field()
     edit_custom_set_stats = EditCustomSetStats.Field()
+    equip_set = EquipSet.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

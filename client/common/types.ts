@@ -1,15 +1,15 @@
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { item_set, item } from 'graphql/fragments/__generated__/item';
-import { Stat } from '__generated__/globalTypes';
-import { CheckboxValueType } from 'antd/lib/checkbox/Group';
+import { Stat, ItemFilters } from '__generated__/globalTypes';
 
 export type StatWithCalculatedValue = {
   stat: string;
   customCalculateValue?: StatCalculator;
-  customDisplay?: (
-    statsFromCustomSet: StatsFromCustomSet | null,
-    customSet?: customSet | null,
-  ) => string;
+  icon?: {
+    backgroundPositionX: number;
+    backgroundPositionY: number;
+  };
+  svgIcon?: string;
 };
 
 export type StatGroup = Array<StatWithCalculatedValue>;
@@ -27,11 +27,10 @@ export type SetCounter = {
   [key: string]: { count: number; set: item_set; items: Array<item> };
 };
 
-export type FilterAction =
+export type SharedFilterAction =
   | { type: 'SEARCH'; search: string }
   | { type: 'MAX_LEVEL'; maxLevel: number }
   | { type: 'STATS'; stats: Array<Stat> }
-  | { type: 'ITEM_TYPE_IDS'; itemTypeIds: Array<CheckboxValueType> }
   | { type: 'RESET'; maxLevel: number };
 
 export type MageAction =
@@ -50,3 +49,5 @@ export interface ExoStatLine {
   stat: Stat;
   value: number;
 }
+
+export type SharedFilters = Omit<ItemFilters, 'itemTypeIds'>;
