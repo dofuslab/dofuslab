@@ -6,6 +6,6 @@ fragment set on Set {
     numItems
     stat
     value
-    altStat
+    customStats
   }
 }

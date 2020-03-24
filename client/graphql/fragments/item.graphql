@@ -6,7 +6,7 @@ fragment item on Item {
   stats {
     maxValue
     stat
-    altStat
+    customStats
   }
   conditions
   itemType {
@@ -24,7 +24,7 @@ fragment item on Item {
       numItems
       stat
       value
-      altStat
+      customStats
     }
   }
 }

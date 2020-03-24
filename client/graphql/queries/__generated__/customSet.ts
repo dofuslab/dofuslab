@@ -15,10 +15,10 @@ export interface customSet_customSetById_equippedItems_slot {
 }
 
 export interface customSet_customSetById_equippedItems_item_stats {
-  __typename: "ItemStats";
+  __typename: "ItemStat";
   maxValue: number | null;
   stat: Stat | null;
-  altStat: string | null;
+  customStats: string[] | null;
 }
 
 export interface customSet_customSetById_equippedItems_item_itemType_eligibleItemSlots {
@@ -39,7 +39,7 @@ export interface customSet_customSetById_equippedItems_item_set_bonuses {
   numItems: number;
   stat: Stat | null;
   value: number | null;
-  altStat: string | null;
+  customStats: (string | null)[] | null;
 }
 
 export interface customSet_customSetById_equippedItems_item_set {

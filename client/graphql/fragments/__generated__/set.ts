@@ -15,7 +15,7 @@ export interface set_bonuses {
   numItems: number;
   stat: Stat | null;
   value: number | null;
-  altStat: string | null;
+  customStats: (string | null)[] | null;
 }
 
 export interface set {
