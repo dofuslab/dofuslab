@@ -121,7 +121,7 @@ class WeaponStat(SQLAlchemyObjectType):
 
 
 class Item(SQLAlchemyObjectType):
-    stats = graphene.List(ItemStat)
+    stats = graphene.NonNull(graphene.List(graphene.NonNull(ItemStat)))
     item_type = graphene.NonNull(ItemType)
     name = graphene.String(required=True)
 

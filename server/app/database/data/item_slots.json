@@ -4,21 +4,18 @@
             "en-US": "Hat", "fr-FR": "Chapeau", "de": "Hut", "es": "Sombrero", "it": "Cappello", "pt": "Chapéu"
         },
         "types": ["Hat"],
-        "order": 1
     },
     {
         "name": {
             "en-US": "Cloak", "fr-FR": "Cape", "de": "Umhang", "es": "Capa", "it": "Mantello", "pt": "Capa"
         },
         "types": ["Backpack", "Cloak"],
-        "order": 2
     },
     {
         "name": {
             "en-US": "Amulet", "fr-FR": "Amulette", "de": "Amulett", "es": "Amuleto", "it": "Amuleto", "pt": "Amuleto"
         },
         "types": ["Amulet"],
-        "order": 3
     },
     {
         "name": {
@@ -26,35 +23,30 @@
         },
         "types": ["Ring"],
         "quantity": 2,
-        "order": 4
     },
     {
         "name": {
             "en-US": "Belt", "fr-FR": "Ceinture", "de": "Gürtel", "es": "Cinturón", "it": "Cintura", "pt": "Cinto"
         },
         "types": ["Belt"],
-        "order": 5
     },
     {
         "name": {
             "en-US": "Boots", "fr-FR": "Bottes", "de": "Stiefel", "es": "Bota", "it": "Stivali", "pt": "Botas"
         },
         "types": ["Boots"],
-        "order": 6
     },
     {
         "name": {
             "en-US": "Weapon", "fr-FR": "Arme", "de": "Waffe", "es": "Arma", "it": "Arma", "pt": "Arma"
         },
         "types": ["Axe", "Bow", "Dagger", "Hammer", "Pickaxe", "Scythe", "Shovel", "Staff", "Sword", "Tool", "Wand"],
-        "order": 7
     },
     {
         "name": {
             "en-US": "Shield", "fr-FR": "Bouclier", "de": "Schild", "es": "Escudo", "it": "Scudo", "pt": "Escudo"
         },
         "types": ["Shield"],
-        "order": 8
     },
     {
         "name": {
@@ -62,13 +54,11 @@
         },
         "types": ["Dofus", "Trophy", "Prysmaradite"],
         "quantity": 6,
-        "order": 9
     },
     {
         "name": {
             "en-US": "Pet", "fr-FR": "Familier", "de": "Vertrauter", "es": "Mascota", "it": "Famiglio", "pt": "Mascote"
         },
         "types": ["Pet", "Petsmount", "Mount"],
-        "order": 10
     }
 ]

@@ -112,6 +112,7 @@ if __name__ == "__main__":
     print("Adding item slots to database")
     with open(os.path.join(dirname, "app/database/data/item_slots.json"), "r") as file:
         data = json.load(file)
+        i = 0
         for record in data:
             for _ in range(record.get("quantity", 1)):
                 item_slot = ModelItemSlot(
@@ -119,9 +120,10 @@ if __name__ == "__main__":
                     item_types=[
                         item_types[item_type_name] for item_type_name in record["types"]
                     ],
-                    order=record["order"],
+                    order=i,
                 )
                 db.session.add(item_slot)
+                i = i + 1
 
     db.session.commit()
 
