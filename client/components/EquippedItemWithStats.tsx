@@ -19,6 +19,8 @@ import { faMagic, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useDeleteItemMutation } from 'common/utils';
 import { useTranslation } from 'i18n';
 import EquippedItemCard from './EquippedItemCard';
+import { mq } from 'common/constants';
+import { item_set } from 'graphql/fragments/__generated__/item';
 
 const wrapperStyles = {
   position: 'absolute' as 'absolute',
@@ -39,7 +41,8 @@ interface IProps {
   selected: boolean;
   customSet: customSet;
   itemSlotId: string;
-  openMageModal: (e: React.MouseEvent<HTMLElement>) => void;
+  openMageModal: (equippedItem: customSet_equippedItems) => void;
+  openSetModal: (set: item_set) => void;
 }
 
 const EquippedItemWithStats: React.FC<IProps> = ({
@@ -48,10 +51,18 @@ const EquippedItemWithStats: React.FC<IProps> = ({
   customSet,
   itemSlotId,
   openMageModal,
+  openSetModal,
 }) => {
   const deleteItem = useDeleteItemMutation(equippedItem.slot.id, customSet);
+  const stopPropagationCallback = React.useCallback(
+    (e: React.MouseEvent<HTMLElement>) => {
+      // prevent selection of item slot
+      e.stopPropagation();
+    },
+    [],
+  );
   const onDelete = React.useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
+    (e: React.MouseEvent<HTMLElement>) => {
       e.stopPropagation();
       deleteItem && deleteItem();
     },
@@ -66,10 +77,23 @@ const EquippedItemWithStats: React.FC<IProps> = ({
           <Popover
             placement="bottomLeft"
             title={
-              <div css={{ display: 'flex', alignItems: 'baseline' }}>
+              <div
+                css={{
+                  display: 'flex',
+                  alignItems: 'baseline',
+                  justifyContent: 'space-between',
+                  fontSize: '0.75rem',
+                }}
+                onClick={stopPropagationCallback}
+              >
                 <div>{equippedItem.item.name}</div>
                 <div
-                  css={{ marginLeft: 8, fontWeight: 400, fontSize: '0.75rem' }}
+                  css={{
+                    marginLeft: 16,
+                    [mq[1]]: { marginLeft: 8 },
+                    fontWeight: 400,
+                    fontSize: '0.75rem',
+                  }}
                 >
                   {t('LEVEL_ABBREVIATION')} {equippedItem.item.level}
                 </div>
@@ -81,6 +105,8 @@ const EquippedItemWithStats: React.FC<IProps> = ({
                 itemSlotId={itemSlotId}
                 customSet={customSet}
                 openMageModal={openMageModal}
+                openSetModal={openSetModal}
+                stopPropagationCallback={stopPropagationCallback}
               />
             }
             overlayClassName={css({

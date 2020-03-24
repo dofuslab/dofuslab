@@ -1,0 +1,9 @@
+#import "graphql/fragments/customSet.graphql"
+
+mutation equipSet($customSetId: UUID, $setId: UUID!) {
+  equipSet(customSetId: $customSetId, setId: $setId) {
+    customSet {
+      ...customSet
+    }
+  }
+}

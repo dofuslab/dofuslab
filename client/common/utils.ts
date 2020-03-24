@@ -1,9 +1,11 @@
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
-import { ApolloClient } from 'apollo-boost';
+import { ApolloClient, ApolloError } from 'apollo-boost';
 import notification from 'antd/lib/notification';
 import { cloneDeep } from 'lodash';
+import { TFunction } from 'next-i18next';
+import CustomSetFragment from 'graphql/fragments/customSet.graphql';
 
 import {
   customSet_stats,
@@ -16,12 +18,17 @@ import {
   OriginalStatLine,
   ExoStatLine,
 } from './types';
-import { item_itemType, item } from 'graphql/fragments/__generated__/item';
+import {
+  item_itemType,
+  item,
+  item_set,
+} from 'graphql/fragments/__generated__/item';
 import {
   updateCustomSetItem,
   updateCustomSetItemVariables,
 } from 'graphql/mutations/__generated__/updateCustomSetItem';
 import UpdateCustomSetItemMutation from 'graphql/mutations/updateCustomSetItem.graphql';
+import EquipSetMutation from 'graphql/mutations/equipSet.graphql';
 import {
   deleteCustomSetItem,
   deleteCustomSetItemVariables,
@@ -29,8 +36,11 @@ import {
 import DeleteCustomSetItemMutation from 'graphql/mutations/deleteCustomSetItem.graphql';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
-import { TFunction } from 'next-i18next';
 import { useTranslation } from 'i18n';
+import {
+  equipSet,
+  equipSetVariables,
+} from 'graphql/mutations/__generated__/equipSet';
 
 const getBaseStat = (stats: customSet_stats, stat: Stat) => {
   switch (stat) {
@@ -341,6 +351,53 @@ export const useEquipItemMutation = (
   return onClick;
 };
 
+export const useEquipSetMutation = (
+  setId: string,
+  customSet?: customSet | null,
+): [
+  () => Promise<void>,
+  { data?: equipSet; loading: boolean; error?: ApolloError },
+] => {
+  const router = useRouter();
+  const { id: routerSetId } = router.query;
+
+  const [equipSet, { data, loading, error }] = useMutation<
+    equipSet,
+    equipSetVariables
+  >(EquipSetMutation, {
+    variables: {
+      setId,
+      customSetId: customSet?.id,
+    },
+  });
+
+  const client = useApolloClient();
+
+  const { t } = useTranslation('common');
+
+  const onClick = useCallback(async () => {
+    const ok = await checkAuthentication(client, t, customSet);
+    if (!ok) return;
+    try {
+      const { data: resultData } = await equipSet();
+
+      if (resultData?.equipSet?.customSet.id !== routerSetId) {
+        router.replace(
+          `/?id=${resultData?.equipSet?.customSet.id}`,
+          `/set/${resultData?.equipSet?.customSet.id}`,
+          {
+            shallow: true,
+          },
+        );
+      }
+    } catch (e) {
+      notification.error(e);
+    }
+  }, [equipSet, routerSetId, router]);
+
+  return [onClick, { data, loading, error }];
+};
+
 export const useDeleteItemMutation = (
   itemSlotId: string,
   customSet: customSet,
@@ -378,4 +435,39 @@ export const useDeleteItemMutation = (
     return mutate();
   }, [mutate]);
   return onDelete;
+};
+
+export const useCustomSet = (customSetId: string | null) => {
+  const client = useApolloClient();
+  if (!customSetId) return null;
+  return getCustomSet(client, customSetId);
+};
+
+export const getCustomSet = (
+  client: ApolloClient<object>,
+  customSetId: string,
+) =>
+  client.readFragment<customSet>({
+    id: `CustomSet:${customSetId}`,
+    fragment: CustomSetFragment,
+    fragmentName: 'customSet',
+  });
+
+export const useSetModal = () => {
+  const [setModalVisible, setSetModalVisible] = React.useState(false);
+  const [selectedSet, setSelectedSet] = React.useState<item_set | null>(null);
+
+  const openSetModal = React.useCallback(
+    (set: item_set) => {
+      setSelectedSet(set);
+      setSetModalVisible(true);
+    },
+    [setSelectedSet, setSetModalVisible],
+  );
+
+  const closeSetModal = React.useCallback(() => {
+    setSetModalVisible(false);
+  }, [setSetModalVisible]);
+
+  return { setModalVisible, selectedSet, openSetModal, closeSetModal };
 };

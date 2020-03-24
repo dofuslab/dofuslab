@@ -8,6 +8,8 @@ import { useTranslation } from 'i18n';
 import { BORDER_COLOR, popoverTitleStyle } from 'common/mixins';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getBonusesFromCustomSet } from 'common/utils';
+import { SetBonuses } from 'common/wrappers';
+import { mq } from 'common/constants';
 
 interface IProps {
   customSet: customSet;
@@ -17,7 +19,7 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
   const { t } = useTranslation(['stat', 'common']);
   const setBonuses = customSet ? getBonusesFromCustomSet(customSet) : {};
   return (
-    <div css={{ display: 'flex', marginLeft: 8 }}>
+    <div css={{ display: 'none', [mq[1]]: { display: 'flex', marginLeft: 8 } }}>
       <ClassNames>
         {({ css }) =>
           Object.values(setBonuses)
@@ -38,21 +40,9 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
                     </div>
                   }
                   content={
-                    <div>
-                      <div css={{ fontSize: '0.75rem', fontWeight: 500 }}>
-                        {t('NUM_ITEMS', { ns: 'common', num: count })}
-                      </div>
-                      <ul css={{ paddingInlineStart: '16px', marginTop: 8 }}>
-                        {filteredBonuses.map(bonus => (
-                          <li key={bonus.id} css={{ fontSize: '0.75rem' }}>
-                            {!!bonus.value && !!bonus.stat
-                              ? `${bonus.value} ${t(bonus.stat)}`
-                              : bonus.altStat}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <SetBonuses count={count} bonuses={filteredBonuses} t={t} />
                   }
+                  placement="bottomLeft"
                 >
                   <div
                     css={{
@@ -61,7 +51,7 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
                       borderRadius: 4,
                       border: `1px solid ${BORDER_COLOR}`,
                       marginLeft: 12,
-                      padding: 4,
+                      padding: '4px 8px',
                     }}
                   >
                     {items.map(item => (

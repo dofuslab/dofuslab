@@ -140,13 +140,17 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
   return (
     <div
       css={{
-        margin: '4px 14px',
+        display: 'flex',
+        alignItems: 'center',
+        flex: '0 0 96px',
+        margin: '12px 4px',
+        [mq[1]]: {
+          margin: '4px 14px',
+          flex: '0 0 52px',
+        },
         [mq[4]]: {
           margin: '4px 20px',
         },
-        display: 'flex',
-        alignItems: 'baseline',
-        flex: '0 0 48px',
       }}
     >
       <Form
@@ -154,8 +158,20 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
         name="header"
         id="header-form"
         onFinish={handleOk}
-        layout="inline"
-        css={{ display: 'flex', alignItems: 'baseline' }}
+        layout={'inline'}
+        css={{
+          display: 'flex',
+          flexDirection: 'column',
+          [mq[1]]: { flexDirection: 'row', alignItems: 'baseline' },
+          width: '100%',
+          '&.ant-form-inline .ant-form-item': {
+            marginRight: 0,
+
+            [mq[1]]: {
+              marginRight: 16,
+            },
+          },
+        }}
         initialValues={{
           name: customSet?.name || '',
           level: customSet?.level || 200,
@@ -165,9 +181,12 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
           <Form.Item name="name">
             <Input
               css={{
-                fontSize: '1.5rem',
+                fontSize: '1.2rem',
                 fontWeight: 500,
-                width: 240,
+                [mq[1]]: {
+                  fontSize: '1.5rem',
+                  width: 240,
+                },
               }}
               maxLength={50}
             />
@@ -176,42 +195,59 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
           <div
             css={{
               ...ellipsis,
-              fontSize: '1.5rem',
+              fontSize: '1.2rem',
               fontWeight: 500,
-              maxWidth: 400,
+              [mq[1]]: {
+                fontSize: '1.5rem',
+                maxWidth: 400,
+              },
               marginRight: 20,
             }}
           >
             {customSet?.name || t('UNTITLED')}
           </div>
         )}
-        {t('LEVEL')}{' '}
-        {metadataState.isEditing ? (
-          <Form.Item name="level" css={{ display: 'inline-flex' }}>
-            <InputNumber
-              css={{ marginLeft: 8 }}
-              type="number"
-              max={200}
-              min={1}
-            />
-          </Form.Item>
-        ) : (
-          customSet?.level ?? 200
-        )}
-        {metadataState.isEditing ? (
-          <>
-            <Button css={{ marginLeft: 12 }} type="primary" htmlType="submit">
-              {t('OK')}
-            </Button>
-            <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
-              {t('CANCEL')}
-            </Button>
-          </>
-        ) : (
-          <a css={{ marginLeft: 12 }}>
-            <FontAwesomeIcon icon={faPencilAlt} onClick={onStartEdit} />
-          </a>
-        )}
+        <div
+          css={{
+            display: 'flex',
+            fontSize: '0.75rem',
+            alignItems: 'center',
+            marginTop: 8,
+            [mq[1]]: {
+              marginTop: 0,
+            },
+          }}
+        >
+          <div css={{ display: 'flex', alignItems: 'center' }}>
+            {t('LEVEL')}{' '}
+            {metadataState.isEditing ? (
+              <Form.Item name="level" css={{ display: 'inline-flex' }}>
+                <InputNumber
+                  css={{ marginLeft: 8 }}
+                  type="number"
+                  max={200}
+                  min={1}
+                />
+              </Form.Item>
+            ) : (
+              customSet?.level ?? 200
+            )}
+          </div>
+          {metadataState.isEditing ? (
+            <div css={{ marginLeft: 'auto' }}>
+              <Button css={{ marginLeft: 12 }} type="primary" htmlType="submit">
+                {t('OK')}
+              </Button>
+              <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
+                {t('CANCEL')}
+              </Button>
+            </div>
+          ) : (
+            <a css={{ marginLeft: 12 }}>
+              <FontAwesomeIcon icon={faPencilAlt} onClick={onStartEdit} />
+            </a>
+          )}
+        </div>
       </Form>
       {customSet && <BonusStats customSet={customSet} />}
     </div>

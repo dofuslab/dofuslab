@@ -1,5 +1,7 @@
+from app import db
 import sqlalchemy
 from .base import Base
+from .model_equipped_item_exo import ModelEquippedItemExo
 from sqlalchemy import Column, ForeignKey, Table, UniqueConstraint
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
@@ -25,3 +27,9 @@ class ModelEquippedItem(Base):
     item = relationship("ModelItem")
     slot = relationship("ModelItemSlot")
     exos = relationship("ModelEquippedItemExo", cascade="all, delete-orphan")
+
+    def change_item(self, item_id):
+        self.item_id = item_id
+        db.session.query(ModelEquippedItemExo).filter_by(
+            equipped_item_id=self.uuid
+        ).delete()

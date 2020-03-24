@@ -10,6 +10,7 @@ import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { itemBox, popoverTitleStyle } from 'common/mixins';
 import ItemWithStats from './ItemWithStats';
 import { useEquipItemMutation } from 'common/utils';
+import { mq } from 'common/constants';
 
 interface IProps {
   item: item;
@@ -52,6 +53,8 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
                 display: 'flex',
                 flexWrap: 'wrap',
                 justifyContent: 'space-around',
+                maxWidth: 240,
+                [mq[4]]: { maxWidth: 300 },
               }}
             >
               {customSet.equippedItems
@@ -86,7 +89,7 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
           trigger="click"
           overlayClassName={css(popoverTitleStyle)}
         >
-          <>{children}</>
+          <div css={{ height: '100%' }}>{children}</div>
         </Popover>
       )}
     </ClassNames>

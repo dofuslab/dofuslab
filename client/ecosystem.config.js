@@ -32,5 +32,18 @@ module.exports = {
         GRAPHQL_URI: 'https://dofuslab.io/api/graphql',
       },
     },
+    branch: {
+      key: '/home/jeremy/.ssh/id_rsa.pub',
+      user: 'jeremy',
+      host: '134.209.168.215',
+      ref: process.env.DEPLOY_BRANCH,
+      repo: 'git@github.com:samlee405/dofus-lab.git',
+      path: '/var/www/production',
+      'post-deploy':
+        'cd client && yarn && yarn build && pm2 reload ecosystem.config.js --env branch && pm2 save',
+      env: {
+        GRAPHQL_URI: 'https://dofuslab.io/api/graphql',
+      },
+    },
   },
 };

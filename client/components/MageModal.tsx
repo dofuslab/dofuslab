@@ -3,11 +3,11 @@
 import React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
 import Modal from 'antd/lib/modal';
-import Select from 'antd/lib/select';
+import Select, { LabeledValue } from 'antd/lib/select';
 import Divider from 'antd/lib/divider';
 
 import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
-import { getStatsMaps, checkAuthentication } from 'common/utils';
+import { getStatsMaps, checkAuthentication, useCustomSet } from 'common/utils';
 import { Stat } from '__generated__/globalTypes';
 import { MageAction } from 'common/types';
 import { useTranslation } from 'i18n';
@@ -21,7 +21,7 @@ import {
   mageEquippedItemVariables,
 } from 'graphql/mutations/__generated__/mageEquippedItem';
 import MageEquippedItemMutation from 'graphql/mutations/mageEquippedItem.graphql';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
+import { mq } from 'common/constants';
 
 const { Option } = Select;
 
@@ -29,7 +29,7 @@ interface IProps {
   visible: boolean;
   equippedItem: customSet_customSetById_equippedItems;
   closeMageModal: (e: React.MouseEvent<HTMLElement>) => void;
-  customSet: customSet;
+  customSetId: string;
 }
 
 interface StatLine {
@@ -45,7 +45,7 @@ interface MageState {
 const deleteStatWrapper = {
   position: 'absolute' as 'absolute',
   left: -24,
-  top: -2,
+  top: 3,
   padding: 8,
   opacity: 0.3,
   transition: 'opacity 0.3s',
@@ -117,7 +117,7 @@ const MageModal: React.FC<IProps> = ({
   visible,
   equippedItem,
   closeMageModal,
-  customSet,
+  customSetId,
 }) => {
   const { statsMap, exoStatsMap, originalStatsMap } = getStatsMaps(
     equippedItem.item.stats,
@@ -174,13 +174,14 @@ const MageModal: React.FC<IProps> = ({
   const { t } = useTranslation(['stat', 'mage']);
 
   const onAddStat = React.useCallback(
-    (stat: Stat) => {
-      dispatch({ type: 'ADD', stat });
+    ({ value }: LabeledValue) => {
+      dispatch({ type: 'ADD', stat: value as Stat });
     },
     [dispatch],
   );
 
   const client = useApolloClient();
+  const customSet = useCustomSet(customSetId);
 
   const onOk = React.useCallback(
     async (e: React.MouseEvent<HTMLElement>) => {
@@ -198,10 +199,14 @@ const MageModal: React.FC<IProps> = ({
       {({ css }) => (
         <Modal
           visible={visible}
-          title={t('MAGE_MODAL_TITLE', {
-            ns: 'mage',
-            itemName: equippedItem.item.name,
-          })}
+          title={
+            <div css={{ fontSize: '0.8rem' }}>
+              {t('MAGE_MODAL_TITLE', {
+                ns: 'mage',
+                itemName: equippedItem.item.name,
+              })}
+            </div>
+          }
           bodyStyle={{
             display: 'flex',
             flexDirection: 'column',
@@ -215,15 +220,26 @@ const MageModal: React.FC<IProps> = ({
             css={{
               fontSize: '0.75rem',
               display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
+              gridTemplateColumns: '1fr',
+              gridTemplateRows: 'auto',
+              [mq[1]]: {
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gridTemplateRows: 'none',
+              },
               gridRowGap: 4,
-              gridColumnGap: 8,
+              gridColumnGap: 12,
             }}
           >
             {statsState.originalStats.map(statLine => (
               <div
                 key={`original-${statLine.stat}`}
-                css={{ position: 'relative' }}
+                css={{
+                  position: 'relative',
+                  display: 'flex',
+                  alignItems: 'center',
+                  height: 42,
+                  [mq[1]]: { paddingRight: 12 },
+                }}
               >
                 <div
                   css={deleteStatWrapper}
@@ -282,12 +298,18 @@ const MageModal: React.FC<IProps> = ({
               autoClearSearchValue
               showSearch
               onSelect={onAddStat}
-              css={{ fontSize: '0.75rem', width: '80%' }}
+              css={{ fontSize: '0.75rem', width: '100%' }}
+              labelInValue
+              filterOption={(input, option) =>
+                (option?.children as string)
+                  .toLocaleUpperCase()
+                  .includes(input.toLocaleUpperCase())
+              }
             >
               {Object.values(Stat).map(stat => (
                 <Option
-                  key={`option-${stat}`}
-                  value={t(stat, { ns: 'stat' })!}
+                  key={stat}
+                  value={stat}
                   disabled={statsSet.has(stat)}
                   className={css({
                     ['.ant-select-item-option-content']: {

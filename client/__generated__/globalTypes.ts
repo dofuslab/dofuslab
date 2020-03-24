@@ -92,6 +92,12 @@ export interface ItemFilters {
   itemTypeIds: any[];
 }
 
+export interface SetFilters {
+  stats: Stat[];
+  maxLevel: number;
+  search: string;
+}
+
 //==============================================================
 // END Enums and Input Objects
 //==============================================================

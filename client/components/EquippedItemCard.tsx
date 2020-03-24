@@ -17,7 +17,6 @@ import {
 import { useTranslation } from 'i18n';
 import { itemCardStyle, blue6 } from 'common/mixins';
 import { useDeleteItemMutation, checkAuthentication } from 'common/utils';
-import { ItemStatsList } from 'common/wrappers';
 import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
 import setEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.graphql';
@@ -26,6 +25,8 @@ import {
   setEquippedItemExoVariables,
 } from 'graphql/mutations/__generated__/setEquippedItemExo';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
+import ItemStatsList from './ItemStatsList';
+import { item_set } from 'graphql/fragments/__generated__/item';
 
 const quickMageStats = [
   {
@@ -49,13 +50,16 @@ const actionWrapper = {
   padding: ACTION_PADDING,
   transition: 'color 0.3s',
   [':hover']: { color: blue6 },
+  fontSize: '0.8rem',
 };
 
 interface IProps {
   equippedItem: customSet_customSetById_equippedItems;
   itemSlotId: string;
   customSet: customSet;
-  openMageModal: (e: React.MouseEvent<HTMLElement>) => void;
+  openMageModal: (equippedItem: customSet_customSetById_equippedItems) => void;
+  stopPropagationCallback: (e: React.MouseEvent<HTMLElement>) => void;
+  openSetModal: (set: item_set) => void;
 }
 
 const EquippedItemCard: React.FC<IProps> = ({
@@ -63,6 +67,8 @@ const EquippedItemCard: React.FC<IProps> = ({
   itemSlotId,
   customSet,
   openMageModal,
+  stopPropagationCallback,
+  openSetModal,
 }) => {
   const { t } = useTranslation(['common', 'mage', 'stat']);
 
@@ -96,7 +102,6 @@ const EquippedItemCard: React.FC<IProps> = ({
 
   const onQuickMage = React.useCallback(
     async (e: React.MouseEvent<HTMLDivElement>) => {
-      e.stopPropagation();
       const { stat: statToExo } = e.currentTarget.dataset;
       const ok = await checkAuthentication(client, t, customSet);
       if (!ok) return;
@@ -136,6 +141,10 @@ const EquippedItemCard: React.FC<IProps> = ({
     );
   });
 
+  const onMageClick = React.useCallback(() => {
+    openMageModal(equippedItem);
+  }, [openMageModal, equippedItem]);
+
   return (
     <Card
       size="small"
@@ -149,6 +158,7 @@ const EquippedItemCard: React.FC<IProps> = ({
         border: 'none',
         borderRadius: 4,
         minWidth: 256,
+        overflow: 'hidden',
       })}
       actions={[
         ...quickMageMenu,
@@ -157,7 +167,7 @@ const EquippedItemCard: React.FC<IProps> = ({
           align={{ offset: [0, -ACTION_PADDING] }}
           placement="bottom"
         >
-          <div css={actionWrapper} onClick={openMageModal}>
+          <div css={actionWrapper} onClick={onMageClick}>
             <FontAwesomeIcon icon={faMagic} />
           </div>
         </Tooltip>,
@@ -171,11 +181,13 @@ const EquippedItemCard: React.FC<IProps> = ({
           </div>
         </Tooltip>,
       ]}
+      onClick={stopPropagationCallback}
     >
       <ItemStatsList
         item={equippedItem.item}
         css={{ paddingLeft: 16, marginBottom: 0 }}
         exos={equippedItem.exos}
+        openSetModal={openSetModal}
       />
     </Card>
   );
