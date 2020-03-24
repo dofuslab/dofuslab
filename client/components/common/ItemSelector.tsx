@@ -21,11 +21,12 @@ import {
 } from 'graphql/queries/__generated__/itemSlots';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import ItemTypeFilter from './ItemTypeFilter';
-import { SharedFilters } from 'common/types';
+import { SharedFilters, MobileScreen } from 'common/types';
 import { findEmptyOrOnlySlotId } from 'common/utils';
-import ConfirmReplaceItemPopover from './ConfirmReplaceItemPopover';
+import ConfirmReplaceItemPopover from '../desktop/ConfirmReplaceItemPopover';
 import { item_set } from 'graphql/fragments/__generated__/item';
 import SetModal from './SetModal';
+import { mq } from 'common/constants';
 
 const PAGE_SIZE = 24;
 
@@ -39,7 +40,8 @@ interface IProps {
   >;
   customSetItemIds: Set<string>;
   filters: SharedFilters;
-  closeSelector: () => void;
+  setMobileScreen?: React.Dispatch<React.SetStateAction<MobileScreen>>;
+  windowNode?: Window | null;
 }
 
 const ItemSelector: React.FC<IProps> = ({
@@ -48,7 +50,8 @@ const ItemSelector: React.FC<IProps> = ({
   selectItemSlot,
   customSetItemIds,
   filters,
-  closeSelector,
+  setMobileScreen,
+  windowNode,
 }) => {
   const [itemTypeIds, setItemTypeIds] = React.useState<Array<string>>([]);
   const queryFilters = {
@@ -143,12 +146,15 @@ const ItemSelector: React.FC<IProps> = ({
     setSetModalVisible(false);
   }, [setSetModalVisible]);
 
-  console.log(data?.items.edges.length);
-
   return (
     <ResponsiveGrid
-      numColumns={[1, 2, 2, 3, 4, 5, 6]}
-      css={{ marginBottom: 20, position: 'relative' }}
+      numColumns={[2, 2, 2, 3, 4, 5, 6]}
+      css={{
+        marginBottom: 20,
+        position: 'relative',
+        gridGap: 20,
+        [mq[1]]: { gridGap: 12 },
+      }}
       ref={responsiveGridRef}
     >
       {itemSlots && (
@@ -181,7 +187,7 @@ const ItemSelector: React.FC<IProps> = ({
                 customSetId={customSet?.id ?? null}
                 selectItemSlot={selectItemSlot}
                 openSetModal={openSetModal}
-                closeSelector={closeSelector}
+                setMobileScreen={setMobileScreen}
               />
             );
             return itemSlotId || !customSet ? (
@@ -216,6 +222,7 @@ const ItemSelector: React.FC<IProps> = ({
         key={networkStatus}
         onEnter={onLoadMore}
         bottomOffset={BOTTOM_OFFSET}
+        scrollableAncestor={windowNode || undefined}
       />
       {selectedSet && (
         <SetModal

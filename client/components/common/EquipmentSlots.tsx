@@ -20,6 +20,7 @@ import { mq } from 'common/constants';
 import MageModal from './MageModal';
 import { useSetModal } from 'common/utils';
 import SetModal from './SetModal';
+import { MobileScreen } from 'common/types';
 
 interface IProps {
   customSet?: customSet | null;
@@ -27,14 +28,14 @@ interface IProps {
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
   selectedItemSlotId: string | null;
-  openSelector: () => void;
+  setMobileScreen?: React.Dispatch<React.SetStateAction<MobileScreen>>;
 }
 
 const EquipmentSlots: React.FC<IProps> = ({
   customSet,
   selectItemSlot,
   selectedItemSlotId,
-  openSelector,
+  setMobileScreen,
 }) => {
   const { data } = useQuery<itemSlots>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
@@ -99,7 +100,7 @@ const EquipmentSlots: React.FC<IProps> = ({
           customSet={customSet}
           openMageModal={openMageModal}
           openSetModal={openSetModal}
-          openSelector={openSelector}
+          setMobileScreen={setMobileScreen}
         />
       ))}
       {customSet && equippedItem && (

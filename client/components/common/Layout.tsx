@@ -16,6 +16,7 @@ import { BORDER_COLOR, gray8 } from 'common/mixins';
 import { useTranslation } from 'i18n';
 import SignUpModal from './SignUpModal';
 import { mq } from 'common/constants';
+import { Media } from './Media';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -51,11 +52,14 @@ const Layout = (props: LayoutProps) => {
   }, [logout]);
 
   return (
-    <AntdLayout css={{ height: '100%' }}>
+    <AntdLayout css={{ height: '100%', minHeight: '100vh' }}>
       <Global
         styles={css`
           html {
             font-size: 21px;
+          }
+          body {
+            height: auto;
           }
           ${mq[1]} {
             html {
@@ -79,6 +83,7 @@ const Layout = (props: LayoutProps) => {
           background: 'white',
           borderBottom: `1px solid ${BORDER_COLOR}`,
           padding: '0 12px',
+          fontSize: '0.8rem',
           [mq[1]]: {
             padding: '0 20px',
           },
@@ -102,14 +107,39 @@ const Layout = (props: LayoutProps) => {
               <Button
                 onClick={openLoginModal}
                 type="link"
-                css={{ padding: 0, color: gray8 }}
+                css={{
+                  padding: 0,
+                  color: gray8,
+                  fontSize: '0.75rem',
+                  [mq[1]]: { fontSize: 'inherit' },
+                }}
               >
                 {t('LOGIN')}
               </Button>
-              <span css={{ margin: '0 12px' }}>or</span>
-              <Button onClick={openSignUpModal} type="default">
-                {t('SIGN_UP')}
-              </Button>
+              <span
+                css={{
+                  margin: '0 12px',
+                  fontSize: '0.75rem',
+                  [mq[1]]: { fontSize: 'inherit' },
+                }}
+              >
+                or
+              </span>
+              <Media greaterThanOrEqual="xs" css={{ display: 'inline' }}>
+                <Button onClick={openSignUpModal} type="default">
+                  {t('SIGN_UP')}
+                </Button>
+              </Media>
+              <Media lessThan="xs" css={{ display: 'inline' }}>
+                <Button
+                  onClick={openSignUpModal}
+                  type="default"
+                  css={{ fontSize: '0.75rem' }}
+                  size="large"
+                >
+                  {t('SIGN_UP')}
+                </Button>
+              </Media>
             </div>
           )}
         </div>

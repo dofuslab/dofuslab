@@ -4,6 +4,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import CheckboxGroup, { CheckboxValueType } from 'antd/lib/checkbox/Group';
 import { itemSlots_itemSlots_itemTypes } from 'graphql/queries/__generated__/itemSlots';
+import { mq } from 'common/constants';
 
 interface IProps {
   itemTypes: Array<itemSlots_itemSlots_itemTypes>;
@@ -40,7 +41,10 @@ const ItemTypeFilter: React.FC<IProps> = ({
         flexWrap: 'wrap',
         justifyContent: 'flex-start',
         ['.ant-checkbox-group-item']: {
-          flex: '0 1 120px',
+          flex: '0 1 144px',
+          [mq[1]]: {
+            flexBasis: '120px',
+          },
           minWidth: 0,
           marginTop: 4,
           fontSize: '0.75rem',

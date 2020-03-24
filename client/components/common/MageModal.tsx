@@ -273,6 +273,7 @@ const MageModal: React.FC<IProps> = ({
                     css={{
                       color: blue6,
                       position: 'relative',
+                      display: 'flex',
                     }}
                   >
                     <div

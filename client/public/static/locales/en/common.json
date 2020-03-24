@@ -1,4 +1,5 @@
 {
+  "BACK": "Back",
   "BASE": "Base",
   "CANCEL": "Cancel",
   "DELETE": "Delete",
@@ -6,6 +7,7 @@
   "EQUIPPED": "Equipped",
   "ERROR": "Error",
   "ERROR_OCCURRED": "An error occurred. Please try again.",
+  "ITEMS": "Items",
   "LEVEL": "Level",
   "LEVEL_ABBREVIATION": "Lvl.",
   "NO_PERMISSION": "You don't have permission to do that.",
@@ -15,6 +17,7 @@
   "RESET_ALL_FILTERS": "Reset all filters",
   "SCROLLED": "Scrolled",
   "SELECT_ITEM_TO_REPLACE": "Select item to replace",
+  "SETS": "Sets",
   "UNTITLED": "Untitled",
   "VIEW_ITEMS": "View items",
   "VIEW_SETS": "View sets"

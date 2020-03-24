@@ -12,10 +12,11 @@ import {
   faMagic,
   faTrashAlt,
   faStar,
+  faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { useTranslation } from 'i18n';
-import { itemCardStyle, blue6 } from 'common/mixins';
+import { itemCardStyle, blue6, BORDER_COLOR } from 'common/mixins';
 import { useDeleteItemMutation, checkAuthentication } from 'common/utils';
 import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
@@ -25,8 +26,11 @@ import {
   setEquippedItemExoVariables,
 } from 'graphql/mutations/__generated__/setEquippedItemExo';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import ItemStatsList from './ItemStatsList';
+import ItemStatsList from '../common/ItemStatsList';
 import { item_set } from 'graphql/fragments/__generated__/item';
+import { MobileScreen, mobileScreenTypes } from 'common/types';
+import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
+import { TruncatableText } from 'common/wrappers';
 
 const quickMageStats = [
   {
@@ -58,8 +62,11 @@ interface IProps {
   itemSlotId: string;
   customSet: customSet;
   openMageModal: (equippedItem: customSet_customSetById_equippedItems) => void;
-  stopPropagationCallback: (e: React.MouseEvent<HTMLElement>) => void;
   openSetModal: (set: item_set) => void;
+  setMobileScreen?: React.Dispatch<React.SetStateAction<MobileScreen>>;
+  selectItemSlot?: React.Dispatch<
+    React.SetStateAction<itemSlots_itemSlots | null>
+  >;
 }
 
 const EquippedItemCard: React.FC<IProps> = ({
@@ -67,8 +74,9 @@ const EquippedItemCard: React.FC<IProps> = ({
   itemSlotId,
   customSet,
   openMageModal,
-  stopPropagationCallback,
   openSetModal,
+  setMobileScreen,
+  selectItemSlot,
 }) => {
   const { t } = useTranslation(['common', 'mage', 'stat']);
 
@@ -96,7 +104,9 @@ const EquippedItemCard: React.FC<IProps> = ({
 
   const onDelete = React.useCallback(() => {
     deleteItem();
-  }, [deleteItem]);
+    setMobileScreen && setMobileScreen(mobileScreenTypes.HOME);
+    selectItemSlot && selectItemSlot(null);
+  }, [deleteItem, setMobileScreen, selectItemSlot]);
 
   const client = useApolloClient();
 
@@ -145,51 +155,78 @@ const EquippedItemCard: React.FC<IProps> = ({
     openMageModal(equippedItem);
   }, [openMageModal, equippedItem]);
 
+  const onBackClick = React.useCallback(() => {
+    setMobileScreen && setMobileScreen(mobileScreenTypes.HOME);
+    selectItemSlot && selectItemSlot(null);
+  }, [setMobileScreen, selectItemSlot]);
+
   return (
-    <Card
-      size="small"
-      css={css({
-        ...itemCardStyle,
-        display: 'flex',
-        flexDirection: 'column',
-        ['.ant-card-body']: {
-          flex: '1',
-        },
-        border: 'none',
-        borderRadius: 4,
-        minWidth: 256,
-        overflow: 'hidden',
-      })}
-      actions={[
-        ...quickMageMenu,
-        <Tooltip
-          title={t('MAGE', { ns: 'mage' })}
-          align={{ offset: [0, -ACTION_PADDING] }}
-          placement="bottom"
-        >
-          <div css={actionWrapper} onClick={onMageClick}>
-            <FontAwesomeIcon icon={faMagic} />
+    <div css={{ padding: '0 12px', marginTop: 12 }}>
+      <div
+        onClick={onBackClick}
+        css={{ fontSize: '1rem', display: 'flex', justifyContent: 'flex-end' }}
+      >
+        <FontAwesomeIcon icon={faTimes} />
+      </div>
+      <Card
+        size="small"
+        title={
+          <div css={{ display: 'flex', alignItems: 'center' }}>
+            <TruncatableText css={{ marginRight: 8, fontSize: '0.8rem' }}>
+              {equippedItem.item.name}
+            </TruncatableText>
+            <div
+              css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}
+            >
+              {t('LEVEL_ABBREVIATION', { ns: 'common' })}{' '}
+              {equippedItem.item.level}
+            </div>
           </div>
-        </Tooltip>,
-        <Tooltip
-          title={t('DELETE')}
-          align={{ offset: [0, -ACTION_PADDING] }}
-          placement="bottom"
-        >
-          <div css={actionWrapper} onClick={onDelete}>
-            <FontAwesomeIcon icon={faTrashAlt} onClick={onDelete} />
-          </div>
-        </Tooltip>,
-      ]}
-      onClick={stopPropagationCallback}
-    >
-      <ItemStatsList
-        item={equippedItem.item}
-        css={{ paddingLeft: 16, marginBottom: 0 }}
-        exos={equippedItem.exos}
-        openSetModal={openSetModal}
-      />
-    </Card>
+        }
+        css={css({
+          ...itemCardStyle,
+          marginTop: 20,
+          display: 'flex',
+          flexDirection: 'column',
+          ['.ant-card-body']: {
+            flex: '1',
+          },
+          border: `1px solid ${BORDER_COLOR}`,
+          borderRadius: 4,
+          minWidth: 256,
+          overflow: 'hidden',
+        })}
+        actions={[
+          ...quickMageMenu,
+          <Tooltip
+            title={t('MAGE', { ns: 'mage' })}
+            align={{ offset: [0, -ACTION_PADDING] }}
+            placement="bottom"
+          >
+            <div css={actionWrapper} onClick={onMageClick}>
+              <FontAwesomeIcon icon={faMagic} />
+            </div>
+          </Tooltip>,
+          <Tooltip
+            title={t('DELETE')}
+            align={{ offset: [0, -ACTION_PADDING] }}
+            placement="bottom"
+          >
+            <div css={actionWrapper} onClick={onDelete}>
+              <FontAwesomeIcon icon={faTrashAlt} onClick={onDelete} />
+            </div>
+          </Tooltip>,
+        ]}
+      >
+        <ItemStatsList
+          item={equippedItem.item}
+          css={{ paddingLeft: 16, marginBottom: 0 }}
+          exos={equippedItem.exos}
+          openSetModal={openSetModal}
+          showImg
+        />
+      </Card>
+    </div>
   );
 };
 

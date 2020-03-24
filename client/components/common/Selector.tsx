@@ -2,7 +2,12 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { SharedFilters, SharedFilterAction } from 'common/types';
+import {
+  SharedFilters,
+  SharedFilterAction,
+  MobileScreen,
+  mobileScreenTypes,
+} from 'common/types';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { topMarginStyle } from 'common/mixins';
@@ -11,8 +16,6 @@ import ItemSelector from './ItemSelector';
 import { mq } from 'common/constants';
 import SetSelector from './SetSelector';
 import BackTop from 'antd/lib/back-top';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const reducer = (state: SharedFilters, action: SharedFilterAction) => {
   switch (action.type) {
@@ -39,16 +42,18 @@ interface IProps {
   selectItemSlot: React.Dispatch<
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
-  selectorVisible: boolean;
-  closeSelector: () => void;
+  showSets?: boolean;
+  setMobileScreen?: React.Dispatch<React.SetStateAction<MobileScreen>>;
+  windowNode?: Window | null;
 }
 
 const Selector: React.FC<IProps> = ({
   customSet,
   selectedItemSlot,
   selectItemSlot,
-  selectorVisible,
-  closeSelector,
+  showSets,
+  setMobileScreen,
+  windowNode,
 }) => {
   const [filters, dispatch] = React.useReducer(reducer, {
     stats: [],
@@ -56,7 +61,7 @@ const Selector: React.FC<IProps> = ({
     search: '',
   });
 
-  const [showSets, setShowSets] = React.useState(false);
+  const [showSetsState, setShowSetsState] = React.useState(showSets || false);
 
   const customSetItemIds = new Set<string>();
   (customSet?.equippedItems ?? []).forEach(equippedItem =>
@@ -65,29 +70,21 @@ const Selector: React.FC<IProps> = ({
 
   const selectorDivRef = React.useRef<HTMLDivElement>(null);
 
+  const goHomeMobile = React.useCallback(() => {
+    setMobileScreen && setMobileScreen(mobileScreenTypes.HOME);
+    selectItemSlot(null);
+  }, [setMobileScreen]);
+
   return (
     <>
       <div
         key={`div-${selectedItemSlot?.id}`} // re-render so div loses scroll position on selectedItemSlot change
         css={{
-          display: selectorVisible ? 'block' : 'none',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          bottom: 0,
-          right: 0,
-          padding: '0 14px',
-          overflowY: 'scroll',
+          padding: '0 12px',
           ...topMarginStyle,
-          background: 'white',
           [mq[1]]: {
-            background: 'none',
-            top: 'auto',
-            left: 'auto',
-            bottom: 'auto',
-            right: 'auto',
-            position: 'static',
-            display: 'block',
+            padding: '0 14px',
+            overflowY: 'scroll',
             flex: 1,
             ...(topMarginStyle[mq[1]] as {}),
           },
@@ -98,27 +95,23 @@ const Selector: React.FC<IProps> = ({
         }}
         ref={selectorDivRef}
       >
-        <div
-          onClick={closeSelector}
-          css={{
-            position: 'absolute',
-            top: 100,
-            right: 100,
-            [mq[1]]: { display: 'none' },
-          }}
-        >
-          <FontAwesomeIcon icon={faTimes} />
-        </div>
         <SelectorFilters
           key={`filters-level-${customSet?.level}`}
           filters={filters}
           dispatch={dispatch}
           customSetLevel={customSet?.level || null}
-          showSets={showSets}
-          setShowSets={setShowSets}
+          showSets={showSetsState}
+          setShowSets={setShowSetsState}
+          goHomeMobile={goHomeMobile}
         />
-        {showSets ? (
-          <SetSelector customSet={customSet} filters={filters} />
+        {showSetsState ? (
+          <SetSelector
+            customSet={customSet}
+            filters={filters}
+            setMobileScreen={setMobileScreen}
+            windowNode={windowNode}
+            selectItemSlot={selectItemSlot}
+          />
         ) : (
           <ItemSelector
             key={`selected-item-slot-${selectedItemSlot?.id}-level-${customSet?.level}`}
@@ -127,7 +120,8 @@ const Selector: React.FC<IProps> = ({
             selectItemSlot={selectItemSlot}
             customSetItemIds={customSetItemIds}
             filters={filters}
-            closeSelector={closeSelector}
+            setMobileScreen={setMobileScreen}
+            windowNode={windowNode}
           />
         )}
       </div>

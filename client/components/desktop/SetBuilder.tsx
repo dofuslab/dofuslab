@@ -1,13 +1,13 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import { jsx, Global, css } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
 
 import { STAT_GROUPS, mq } from 'common/constants';
-import Layout from './Layout';
-import StatTable from './StatTable';
+import Layout from '../common/Layout';
+import StatTable from '../common/StatTable';
 import { ResponsiveGrid } from 'common/wrappers';
 
 import {
@@ -16,12 +16,12 @@ import {
 } from 'graphql/queries/__generated__/customSet';
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import { getStatsFromCustomSet } from 'common/utils';
-import SetHeader from './SetHeader';
-import EquipmentSlots from './EquipmentSlots';
+import SetHeader from '../common/SetHeader';
+import EquipmentSlots from '../common/EquipmentSlots';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import StatEditor from './StatEditor';
+import StatEditor from '../common/StatEditor';
 import { topMarginStyle } from 'common/mixins';
-import Selector from './Selector';
+import Selector from '../common/Selector';
 
 const SetBuilder: React.FC = () => {
   const router = useRouter();
@@ -54,34 +54,13 @@ const SetBuilder: React.FC = () => {
     [customSetData],
   );
 
-  const [selectorVisible, setSelectorVisible] = React.useState(false);
-
-  const openSelector = React.useCallback(() => {
-    setSelectorVisible(true);
-  }, [setSelectorVisible]);
-
-  const closeSelector = React.useCallback(() => {
-    setSelectorVisible(false);
-  }, [setSelectorVisible]);
-
   return (
     <Layout>
-      <Global
-        styles={css`
-          body {
-            overflow: ${selectorVisible ? 'hidden' : 'auto'};
-            ${mq[1]}: {
-              overflow: hidden;
-            };
-          }
-        `}
-      />
       <SetHeader customSet={customSetData?.customSetById} />
       <EquipmentSlots
         customSet={customSetData?.customSetById}
         selectItemSlot={selectItemSlot}
         selectedItemSlotId={selectedItemSlot?.id ?? null}
-        openSelector={openSelector}
       />
       <div
         css={{
@@ -126,8 +105,6 @@ const SetBuilder: React.FC = () => {
           customSet={customSetData?.customSetById}
           selectItemSlot={selectItemSlot}
           selectedItemSlot={selectedItemSlot}
-          selectorVisible={selectorVisible}
-          closeSelector={closeSelector}
         />
       </div>
     </Layout>

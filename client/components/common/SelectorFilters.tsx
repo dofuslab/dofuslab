@@ -11,7 +11,12 @@ import Button from 'antd/lib/button';
 import Switch from 'antd/lib/switch';
 import { useTranslation } from 'i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRedo, faCubes, faCube } from '@fortawesome/free-solid-svg-icons';
+import {
+  faRedo,
+  faCubes,
+  faCube,
+  faTimes,
+} from '@fortawesome/free-solid-svg-icons';
 import { SharedFilterAction, SharedFilters } from 'common/types';
 import { useDebounceCallback } from '@react-hook/debounce';
 import Tooltip from 'antd/lib/tooltip';
@@ -24,7 +29,7 @@ interface IProps {
   customSetLevel: number | null;
   showSets: boolean;
   setShowSets: React.Dispatch<React.SetStateAction<boolean>>;
-  // selectorDivRef: React.MutableRefObject<HTMLDivElement | null>;
+  goHomeMobile?: () => void;
 }
 
 const SelectorFilters: React.FC<IProps> = ({
@@ -33,7 +38,7 @@ const SelectorFilters: React.FC<IProps> = ({
   customSetLevel,
   showSets,
   setShowSets,
-  // selectorDivRef,
+  goHomeMobile,
 }) => {
   const [search, setSearch] = React.useState('');
   const [maxLevel, setMaxLevel] = React.useState(customSetLevel || 200);
@@ -100,7 +105,10 @@ const SelectorFilters: React.FC<IProps> = ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'stretch',
-        marginBottom: 12,
+        marginBottom: 32,
+        [mq[1]]: {
+          marginBottom: 12,
+        },
         [mq[2]]: {
           flexDirection: 'row',
         },
@@ -112,41 +120,82 @@ const SelectorFilters: React.FC<IProps> = ({
       <div
         css={{
           display: 'flex',
-          marginBottom: 16,
+          marginBottom: 12,
+          flexDirection: 'column',
+          [mq[1]]: { flex: 1, flexDirection: 'row' },
           [mq[2]]: { marginBottom: 0, maxWidth: 360 },
-          flex: '1',
-          alignItems: 'center',
+          alignItems: 'stretch',
         }}
       >
-        <Tooltip title={t(showSets ? 'VIEW_ITEMS' : 'VIEW_SETS')}>
-          <Switch
-            checkedChildren={<FontAwesomeIcon icon={faCubes} />}
-            unCheckedChildren={<FontAwesomeIcon icon={faCube} />}
-            css={{ marginRight: 20 }}
-            checked={showSets}
-            onChange={setShowSets}
-          />
-        </Tooltip>
-        <Search
-          placeholder="Search"
-          value={search}
-          onChange={onSearch}
-          css={{ ['.ant-input']: { fontSize: '0.75rem' } }}
-        />
-        <InputNumber
-          placeholder={t('LEVEL')}
-          value={maxLevel}
-          onChange={onChangeMaxLevel}
-          type="number"
-          max={200}
-          min={1}
+        <div
           css={{
-            alignSelf: 'stretch',
-            marginLeft: 12,
-            [mq[4]]: { marginLeft: 16 },
+            display: 'flex',
             fontSize: '0.75rem',
+            alignItems: 'center',
+            height: 36,
+            justifyContent: 'space-between',
+            [mq[1]]: {
+              height: 'auto',
+            },
           }}
-        />
+        >
+          <div css={{ display: 'flex', alignItems: 'center' }}>
+            <span css={{ [mq[1]]: { display: 'none' } }}>{t('ITEMS')}</span>
+            <Tooltip title={t(showSets ? 'VIEW_ITEMS' : 'VIEW_SETS')}>
+              <Switch
+                checkedChildren={<FontAwesomeIcon icon={faCubes} />}
+                unCheckedChildren={<FontAwesomeIcon icon={faCube} />}
+                css={{ margin: '0 12px', [mq[1]]: { margin: '0 20px 0 0' } }}
+                checked={showSets}
+                onChange={setShowSets}
+              />
+            </Tooltip>
+            <span css={{ [mq[1]]: { display: 'none' } }}>{t('SETS')}</span>
+          </div>
+          <FontAwesomeIcon
+            css={{
+              fontSize: '1rem',
+              cursor: 'pointer',
+              [mq[1]]: { display: 'none' },
+            }}
+            icon={faTimes}
+            onClick={goHomeMobile}
+          />
+        </div>
+        <div
+          css={{
+            display: 'flex',
+            flex: '0 0 42px',
+            marginTop: 12,
+            [mq[1]]: { flex: '1', marginTop: 0 },
+          }}
+        >
+          <Search
+            placeholder="Search"
+            value={search}
+            onChange={onSearch}
+            css={{
+              '.ant-input': { fontSize: '0.75rem' },
+              '.ant-input-suffix': { display: 'flex', alignItems: 'center' },
+            }}
+          />
+          <InputNumber
+            placeholder={t('LEVEL')}
+            value={maxLevel}
+            onChange={onChangeMaxLevel}
+            type="number"
+            max={200}
+            min={1}
+            css={{
+              alignSelf: 'stretch',
+              marginLeft: 12,
+              [mq[4]]: { marginLeft: 16 },
+              fontSize: '0.75rem',
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          />
+        </div>
       </div>
       <div
         css={{
@@ -154,7 +203,8 @@ const SelectorFilters: React.FC<IProps> = ({
           display: 'flex',
           flex: '1',
           flexDirection: 'column',
-          [mq[2]]: { flexDirection: 'row', marginLeft: 12, maxWidth: 420 },
+          [mq[1]]: { flexDirection: 'row' },
+          [mq[2]]: { marginLeft: 12, maxWidth: 420 },
           [mq[4]]: { marginLeft: 16 },
         }}
       >
@@ -166,6 +216,13 @@ const SelectorFilters: React.FC<IProps> = ({
               css={{
                 fontSize: '0.75rem',
                 flex: '1',
+                height: 42,
+                [mq[1]]: {
+                  height: 'auto',
+                },
+                '.ant-select-selector': {
+                  height: '100%',
+                },
               }}
               placeholder="Stats (e.g. AP, Pods, Prospecting)"
               value={stats.map(stat => ({
@@ -197,7 +254,7 @@ const SelectorFilters: React.FC<IProps> = ({
             fontSize: '0.75rem',
             marginTop: 12,
             height: 42,
-            [mq[2]]: {
+            [mq[1]]: {
               marginTop: 0,
               marginLeft: 12,
               height: 'auto',

@@ -22,7 +22,7 @@ import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetdat
 import { checkAuthentication } from 'common/utils';
 import { ellipsis } from 'common/mixins';
 import { mq } from 'common/constants';
-import BonusStats from './BonusStats';
+import BonusStats from '../desktop/BonusStats';
 
 interface IProps {
   customSet?: customSet | null;

@@ -79,7 +79,7 @@ export const SetBonuses: React.FC<{
         <li key={bonus.id} css={{ fontSize: '0.75rem' }}>
           {!!bonus.value && !!bonus.stat
             ? `${bonus.value} ${t(bonus.stat, { ns: 'stat' })}`
-            : bonus.altStat}
+            : bonus.customStats}
         </li>
       ))}
     </ul>

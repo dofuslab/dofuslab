@@ -12,7 +12,7 @@ import {
 } from 'graphql/queries/__generated__/set';
 import setQuery from 'graphql/queries/set.graphql';
 import { useTranslation } from 'i18n';
-import BasicItemWithStats from './BasicItemWithStats';
+import BasicItemWithStats from '../desktop/BasicItemWithStats';
 import Divider from 'antd/lib/divider';
 import { SetBonuses } from 'common/wrappers';
 import { gray2, itemBox } from 'common/mixins';

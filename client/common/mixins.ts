@@ -1,4 +1,4 @@
-import { mq } from './constants';
+import { mq, BREAKPOINTS } from './constants';
 
 export const shadow = '0 2px 8px rgba(0, 0, 0, 0.15)';
 
@@ -138,36 +138,42 @@ export const popoverTitleStyle = {
   ['.ant-popover-title']: { padding: '8px 12px' },
 };
 
-export const getResponsiveGridStyle = (numColumns: ReadonlyArray<number>) => ({
-  display: 'grid',
-  width: '100%',
-  gridTemplateColumns: '1fr',
-  columnGap: 12,
-  rowGap: 12,
-  [mq[0]]: {
-    gridTemplateColumns: `repeat(${numColumns[0]}, 1fr)`,
-  },
-  [mq[1]]: {
-    gridTemplateColumns: `repeat(${numColumns[1]}, 1fr)`,
-  },
-  [mq[2]]: {
-    gridTemplateColumns: `repeat(${numColumns[2]}, 1fr)`,
-  },
-  [mq[3]]: {
-    gridTemplateColumns: `repeat(${numColumns[3]}, 1fr)`,
-  },
-  [mq[4]]: {
-    gridTemplateColumns: `repeat(${numColumns[4]}, 1fr)`,
-    columnGap: 20,
-    rowGap: 20,
-  },
-  [mq[5]]: {
-    gridTemplateColumns: `repeat(${numColumns[5]}, 1fr)`,
-  },
-  [mq[6]]: {
-    gridTemplateColumns: `repeat(${numColumns[6]}, 1fr)`,
-  },
-});
+export const getResponsiveGridStyle = (numColumns: ReadonlyArray<number>) => {
+  const numColumnsCopy = [...numColumns];
+  while (numColumnsCopy.length < BREAKPOINTS.length) {
+    numColumnsCopy.push(numColumnsCopy[numColumnsCopy.length - 1]);
+  }
+  return {
+    display: 'grid',
+    width: '100%',
+    gridTemplateColumns: '1fr',
+    columnGap: 12,
+    rowGap: 12,
+    [mq[0]]: {
+      gridTemplateColumns: `repeat(${numColumns[0]}, 1fr)`,
+    },
+    [mq[1]]: {
+      gridTemplateColumns: `repeat(${numColumns[1]}, 1fr)`,
+    },
+    [mq[2]]: {
+      gridTemplateColumns: `repeat(${numColumns[2]}, 1fr)`,
+    },
+    [mq[3]]: {
+      gridTemplateColumns: `repeat(${numColumns[3]}, 1fr)`,
+    },
+    [mq[4]]: {
+      gridTemplateColumns: `repeat(${numColumns[4]}, 1fr)`,
+      columnGap: 20,
+      rowGap: 20,
+    },
+    [mq[5]]: {
+      gridTemplateColumns: `repeat(${numColumns[5]}, 1fr)`,
+    },
+    [mq[6]]: {
+      gridTemplateColumns: `repeat(${numColumns[6]}, 1fr)`,
+    },
+  };
+};
 
 export const topMarginStyle = {
   marginTop: 12,
