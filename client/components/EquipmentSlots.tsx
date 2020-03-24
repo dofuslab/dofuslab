@@ -27,12 +27,14 @@ interface IProps {
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
   selectedItemSlotId: string | null;
+  openSelector: () => void;
 }
 
 const EquipmentSlots: React.FC<IProps> = ({
   customSet,
   selectItemSlot,
   selectedItemSlotId,
+  openSelector,
 }) => {
   const { data } = useQuery<itemSlots>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
@@ -97,6 +99,7 @@ const EquipmentSlots: React.FC<IProps> = ({
           customSet={customSet}
           openMageModal={openMageModal}
           openSetModal={openSetModal}
+          openSelector={openSelector}
         />
       ))}
       {customSet && equippedItem && (

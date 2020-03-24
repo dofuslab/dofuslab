@@ -59,7 +59,7 @@ const ItemStatsList: React.FC<IProps> = ({
     <div>
       {item.set && (
         <div
-          css={{ marginBottom: 12 }}
+          css={{ marginBottom: 12, fontSize: '0.75rem' }}
           onClick={(e: React.MouseEvent<HTMLDivElement>) => {
             e.stopPropagation();
           }}
@@ -103,4 +103,4 @@ const ItemStatsList: React.FC<IProps> = ({
   );
 };
 
-export default ItemStatsList;
+export default React.memo(ItemStatsList);

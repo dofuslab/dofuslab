@@ -16,6 +16,7 @@ interface IProps {
   >;
   equipped: boolean;
   openSetModal: (set: item_set) => void;
+  closeSelector: () => void;
 }
 
 const ItemCard: React.FC<IProps> = ({
@@ -25,6 +26,7 @@ const ItemCard: React.FC<IProps> = ({
   selectItemSlot,
   equipped,
   openSetModal,
+  closeSelector,
 }) => {
   const customSet = useCustomSet(customSetId);
 
@@ -34,6 +36,7 @@ const ItemCard: React.FC<IProps> = ({
     if (itemSlotId) {
       selectItemSlot(null);
       await mutate(itemSlotId);
+      closeSelector();
     }
   }, [item, itemSlotId, customSet, mutate, selectItemSlot]);
 

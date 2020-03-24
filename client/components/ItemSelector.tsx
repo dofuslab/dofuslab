@@ -39,6 +39,7 @@ interface IProps {
   >;
   customSetItemIds: Set<string>;
   filters: SharedFilters;
+  closeSelector: () => void;
 }
 
 const ItemSelector: React.FC<IProps> = ({
@@ -47,6 +48,7 @@ const ItemSelector: React.FC<IProps> = ({
   selectItemSlot,
   customSetItemIds,
   filters,
+  closeSelector,
 }) => {
   const [itemTypeIds, setItemTypeIds] = React.useState<Array<string>>([]);
   const queryFilters = {
@@ -141,6 +143,8 @@ const ItemSelector: React.FC<IProps> = ({
     setSetModalVisible(false);
   }, [setSetModalVisible]);
 
+  console.log(data?.items.edges.length);
+
   return (
     <ResponsiveGrid
       numColumns={[1, 2, 2, 3, 4, 5, 6]}
@@ -177,6 +181,7 @@ const ItemSelector: React.FC<IProps> = ({
                 customSetId={customSet?.id ?? null}
                 selectItemSlot={selectItemSlot}
                 openSetModal={openSetModal}
+                closeSelector={closeSelector}
               />
             );
             return itemSlotId || !customSet ? (

@@ -55,7 +55,7 @@ const Layout = (props: LayoutProps) => {
       <Global
         styles={css`
           html {
-            font-size: 24px;
+            font-size: 21px;
           }
           ${mq[1]} {
             html {

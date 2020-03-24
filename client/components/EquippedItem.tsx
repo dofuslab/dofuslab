@@ -23,6 +23,7 @@ interface IEquippedItem {
   selected: boolean;
   openMageModal: (equippedItem: customSet_equippedItems) => void;
   openSetModal: (set: item_set) => void;
+  openSelector: () => void;
 }
 
 const EquippedItem: React.FC<IEquippedItem> = ({
@@ -33,6 +34,7 @@ const EquippedItem: React.FC<IEquippedItem> = ({
   customSet,
   openMageModal,
   openSetModal,
+  openSelector,
   ...restProps
 }) => {
   const onClick = React.useCallback(() => {
@@ -41,7 +43,8 @@ const EquippedItem: React.FC<IEquippedItem> = ({
     } else {
       selectItemSlot(slot);
     }
-  }, [selectItemSlot, slot, selected]);
+    openSelector();
+  }, [selectItemSlot, slot, selected, openSelector]);
 
   return (
     <>

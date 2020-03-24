@@ -106,6 +106,7 @@ export const itemBox = {
   background: 'white',
   paddingTop: '100%',
   position: 'relative' as 'relative',
+  borderRadius: 4,
 
   ...itemBoxDimensions,
   [mq[1]]: {

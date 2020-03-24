@@ -49,7 +49,10 @@ const BasicItemCard: React.FC<IProps> = ({
       }}
       onClick={onClick}
     >
-      <img src={item.imageUrl} css={{ float: 'right', ...itemBoxDimensions }} />
+      <img
+        src={item.imageUrl}
+        css={{ ...itemBoxDimensions, float: 'right', maxWidth: 120 }}
+      />
       <ItemStatsList
         item={item}
         css={{ paddingLeft: 16, marginBottom: 0 }}

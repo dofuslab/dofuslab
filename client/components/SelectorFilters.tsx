@@ -24,6 +24,7 @@ interface IProps {
   customSetLevel: number | null;
   showSets: boolean;
   setShowSets: React.Dispatch<React.SetStateAction<boolean>>;
+  // selectorDivRef: React.MutableRefObject<HTMLDivElement | null>;
 }
 
 const SelectorFilters: React.FC<IProps> = ({
@@ -32,6 +33,7 @@ const SelectorFilters: React.FC<IProps> = ({
   customSetLevel,
   showSets,
   setShowSets,
+  // selectorDivRef,
 }) => {
   const [search, setSearch] = React.useState('');
   const [maxLevel, setMaxLevel] = React.useState(customSetLevel || 200);
@@ -139,6 +141,7 @@ const SelectorFilters: React.FC<IProps> = ({
           max={200}
           min={1}
           css={{
+            alignSelf: 'stretch',
             marginLeft: 12,
             [mq[4]]: { marginLeft: 16 },
             fontSize: '0.75rem',
@@ -150,13 +153,15 @@ const SelectorFilters: React.FC<IProps> = ({
           gridColumn: '1 / -1',
           display: 'flex',
           flex: '1',
-          [mq[2]]: { marginLeft: 12, maxWidth: 420 },
+          flexDirection: 'column',
+          [mq[2]]: { flexDirection: 'row', marginLeft: 12, maxWidth: 420 },
           [mq[4]]: { marginLeft: 16 },
         }}
       >
         <ClassNames>
           {({ css }) => (
             <Select
+              getPopupContainer={(node: HTMLElement) => node.parentElement!}
               mode="multiple"
               css={{
                 fontSize: '0.75rem',
@@ -190,7 +195,13 @@ const SelectorFilters: React.FC<IProps> = ({
         <Button
           css={{
             fontSize: '0.75rem',
-            marginLeft: 12,
+            marginTop: 12,
+            height: 42,
+            [mq[2]]: {
+              marginTop: 0,
+              marginLeft: 12,
+              height: 'auto',
+            },
             [mq[4]]: { marginLeft: 20 },
           }}
           onClick={onResetFilters}
