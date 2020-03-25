@@ -159,6 +159,7 @@ const Selector: React.FC<IProps> = ({
             customSetItemIds={customSetItemIds}
             filters={filters}
             isMobile={isMobile}
+            selectItemSlot={selectItemSlot}
           />
         )}
       </div>

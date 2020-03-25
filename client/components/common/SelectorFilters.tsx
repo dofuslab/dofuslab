@@ -103,9 +103,7 @@ const SelectorFilters: React.FC<IProps> = ({
         alignItems: 'stretch',
         [mq[2]]: {
           flexDirection: 'row',
-        },
-        [mq[4]]: {
-          marginBottom: 20,
+          marginBottom: 8,
         },
       }}
     >

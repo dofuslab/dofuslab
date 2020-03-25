@@ -163,11 +163,14 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
         css={{
           display: 'flex',
           flexDirection: 'column',
-          [mq[1]]: { flexDirection: 'row', alignItems: 'baseline' },
           width: '100%',
+          [mq[1]]: {
+            width: 'auto',
+            flexDirection: 'row',
+            alignItems: 'baseline',
+          },
           '&.ant-form-inline .ant-form-item': {
             marginRight: 0,
-
             [mq[1]]: {
               marginRight: 16,
             },

@@ -27,7 +27,7 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
       css={{
         marginTop: 12,
         display: 'flex',
-        [mq[1]]: { marginLeft: 8, marginTop: 0 },
+        [mq[1]]: { marginLeft: 20, marginTop: 0 },
       }}
     >
       <ClassNames>
@@ -58,7 +58,7 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
                   content={
                     <SetBonuses count={count} bonuses={filteredBonuses} t={t} />
                   }
-                  placement="bottomLeft"
+                  placement="bottom"
                 >
                   <div
                     css={{
@@ -79,11 +79,9 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
                         <div
                           key={`set-bonus-item-${item.id}`}
                           css={{
-                            width: 80,
-                            height: 80,
+                            width: 40,
+                            height: 40,
                             [mq[1]]: {
-                              width: 40,
-                              height: 40,
                               [':not:first-of-type']: { marginLeft: 4 },
                             },
                           }}

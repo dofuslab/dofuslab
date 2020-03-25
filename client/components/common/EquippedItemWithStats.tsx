@@ -22,7 +22,6 @@ import EquippedItemCard from '../desktop/EquippedItemCard';
 import { mq } from 'common/constants';
 import { item_set } from 'graphql/fragments/__generated__/item';
 import { Media } from 'components/common/Media';
-import { MobileScreen, mobileScreenTypes } from 'common/types';
 
 const wrapperStyles = {
   position: 'absolute' as 'absolute',
@@ -49,7 +48,6 @@ interface IProps {
   itemSlotId: string;
   openMageModal: (equippedItem: customSet_equippedItems) => void;
   openSetModal: (set: item_set) => void;
-  setMobileScreen?: React.Dispatch<React.SetStateAction<MobileScreen>>;
 }
 
 const EquippedItemWithStats: React.FC<IProps> = ({
@@ -59,7 +57,6 @@ const EquippedItemWithStats: React.FC<IProps> = ({
   itemSlotId,
   openMageModal,
   openSetModal,
-  setMobileScreen,
 }) => {
   const deleteItem = useDeleteItemMutation(equippedItem.slot.id, customSet);
   const stopPropagationCallback = React.useCallback(
@@ -73,9 +70,8 @@ const EquippedItemWithStats: React.FC<IProps> = ({
     (e: React.MouseEvent<HTMLElement>) => {
       e.stopPropagation();
       deleteItem && deleteItem();
-      setMobileScreen && setMobileScreen(mobileScreenTypes.HOME);
     },
-    [deleteItem, setMobileScreen],
+    [deleteItem],
   );
   const { t } = useTranslation('common');
 
@@ -164,6 +160,7 @@ const EquippedItemWithStats: React.FC<IProps> = ({
                 overlayClassName={css({
                   ...popoverTitleStyle,
                   ['.ant-popover-inner-content']: { padding: 0 },
+                  maxWidth: 288,
                 })}
               >
                 <div>{content}</div>
