@@ -8,9 +8,7 @@
       "it": "Cappello",
       "pt": "Chapéu"
     },
-    "types": [
-      "Hat"
-    ]
+    "types": ["Hat"]
   },
   {
     "name": {
@@ -21,10 +19,7 @@
       "it": "Mantello",
       "pt": "Capa"
     },
-    "types": [
-      "Backpack",
-      "Cloak"
-    ]
+    "types": ["Backpack", "Cloak"]
   },
   {
     "name": {
@@ -35,9 +30,7 @@
       "it": "Amuleto",
       "pt": "Amuleto"
     },
-    "types": [
-      "Amulet"
-    ]
+    "types": ["Amulet"]
   },
   {
     "name": {
@@ -48,9 +41,7 @@
       "it": "Anello",
       "pt": "Anel"
     },
-    "types": [
-      "Ring"
-    ],
+    "types": ["Ring"],
     "quantity": 2
   },
   {
@@ -62,9 +53,7 @@
       "it": "Cintura",
       "pt": "Cinto"
     },
-    "types": [
-      "Belt"
-    ]
+    "types": ["Belt"]
   },
   {
     "name": {
@@ -75,9 +64,7 @@
       "it": "Stivali",
       "pt": "Botas"
     },
-    "types": [
-      "Boots"
-    ]
+    "types": ["Boots"]
   },
   {
     "name": {
@@ -111,9 +98,7 @@
       "it": "Scudo",
       "pt": "Escudo"
     },
-    "types": [
-      "Shield"
-    ]
+    "types": ["Shield"]
   },
   {
     "name": {
@@ -124,11 +109,7 @@
       "it": "Dofus",
       "pt": "Dofus"
     },
-    "types": [
-      "Dofus",
-      "Trophy",
-      "Prysmaradite"
-    ],
+    "types": ["Dofus", "Trophy", "Prysmaradite"],
     "quantity": 6
   },
   {
@@ -140,10 +121,6 @@
       "it": "Famiglio",
       "pt": "Mascote"
     },
-    "types": [
-      "Pet",
-      "Petsmount",
-      "Mount"
-    ]
+    "types": ["Pet", "Petsmount", "Mount"]
   }
 ]
