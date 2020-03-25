@@ -16,6 +16,7 @@ import loginMutation from 'graphql/mutations/login.graphql';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { useTranslation, Trans } from 'i18n';
+import { mq } from 'common/constants';
 
 interface IProps {
   visible: boolean;
@@ -62,7 +63,7 @@ const LoginModal: React.FC<IProps> = ({
 
   return (
     <Modal
-      title="Login"
+      title={<div css={{ fontSize: '0.8rem' }}>{t('LOGIN')}</div>}
       visible={visible}
       onCancel={onClose}
       bodyStyle={{
@@ -71,7 +72,12 @@ const LoginModal: React.FC<IProps> = ({
         alignItems: 'center',
       }}
       footer={[
-        <Button key="cancel" type="default" onClick={onClose}>
+        <Button
+          key="cancel"
+          type="default"
+          onClick={onClose}
+          css={{ fontSize: '0.75rem' }}
+        >
           {t('common:CANCEL')}
         </Button>,
         <Button
@@ -80,6 +86,7 @@ const LoginModal: React.FC<IProps> = ({
           htmlType="submit"
           type="primary"
           loading={loading}
+          css={{ fontSize: '0.75rem' }}
         >
           {t('LOGIN')}
         </Button>,
@@ -93,11 +100,11 @@ const LoginModal: React.FC<IProps> = ({
         onFinish={handleOk}
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}
-        css={{ width: '70%' }}
+        css={{ [mq[1]]: { width: '70%' } }}
       >
         <Form.Item
           name="email"
-          label={t('EMAIL')}
+          label={<span css={{ fontSize: '0.75rem' }}>{t('EMAIL')}</span>}
           rules={[
             { required: true, message: t('VALIDATION.EMAIL_REQUIRED') },
             {
@@ -107,11 +114,11 @@ const LoginModal: React.FC<IProps> = ({
           ]}
           validateTrigger={'onSubmit'}
         >
-          <Input placeholder={t('EMAIL')} />
+          <Input placeholder={t('EMAIL')} css={{ fontSize: '0.75rem' }} />
         </Form.Item>
         <Form.Item
           name="password"
-          label={t('PASSWORD')}
+          label={<span css={{ fontSize: '0.75rem' }}>{t('PASSWORD')}</span>}
           validateTrigger={'onSubmit'}
           rules={[
             { required: true, message: t('VALIDATION.PASSWORD_REQUIRED') },
@@ -122,7 +129,10 @@ const LoginModal: React.FC<IProps> = ({
           ]}
           css={{ marginTop: 16 }}
         >
-          <Input.Password placeholder={t('PASSWORD')} />
+          <Input.Password
+            placeholder={t('PASSWORD')}
+            css={{ '.ant-input': { fontSize: '0.75rem' } }}
+          />
         </Form.Item>
         <Form.Item
           name="remember"
@@ -130,11 +140,13 @@ const LoginModal: React.FC<IProps> = ({
           css={{ textAlign: 'center', marginBottom: 0 }}
           valuePropName={'checked'}
         >
-          <Checkbox defaultChecked={false}>{t('REMEMBER_ME')}</Checkbox>
+          <Checkbox defaultChecked={false}>
+            <span css={{ fontSize: '0.75rem' }}>{t('REMEMBER_ME')}</span>
+          </Checkbox>
         </Form.Item>
       </Form>
       <Divider />
-      <div>
+      <div css={{ fontSize: '0.75rem' }}>
         <Trans i18nKey="NO_ACCOUNT">
           Don't have an account? <a onClick={onSignUp}>Sign up here.</a>
         </Trans>

@@ -133,13 +133,14 @@ const SetModal: React.FC<IProps> = ({
 
   return (
     <Modal
-      title={setName}
+      title={<div css={{ fontSize: '0.8rem' }}>{setName}</div>}
       visible={visible}
       onCancel={onCancel}
       zIndex={1031}
       confirmLoading={mutationLoading}
       onOk={onOk}
-      okText={t('EQUIP_SET')}
+      okText={<span css={{ fontSize: '0.75rem' }}>{t('EQUIP_SET')}</span>}
+      cancelText={<span css={{ fontSize: '0.75rem' }}>{t('CANCEL')}</span>}
     >
       {bodyContent}
     </Modal>

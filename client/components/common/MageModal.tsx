@@ -214,7 +214,7 @@ const MageModal: React.FC<IProps> = ({
           }}
           onCancel={closeMageModal}
           onOk={onOk}
-          zIndex={1031} // higher than popover (1030)
+          zIndex={1061} // higher than popover (1030) and tooltip (1060)
         >
           <div
             css={{
