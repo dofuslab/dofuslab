@@ -10,10 +10,10 @@ import { Stat } from "./../../../__generated__/globalTypes";
 // ====================================================
 
 export interface item_stats {
-  __typename: "ItemStats";
+  __typename: "ItemStat";
   maxValue: number | null;
   stat: Stat | null;
-  altStat: string | null;
+  customStat: string | null;
 }
 
 export interface item_itemType_eligibleItemSlots {
@@ -34,7 +34,7 @@ export interface item_set_bonuses {
   numItems: number;
   stat: Stat | null;
   value: number | null;
-  altStat: string | null;
+  customStat: string | null;
 }
 
 export interface item_set {

@@ -222,7 +222,10 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
     const { data } = await mutate();
     if (data?.editCustomSetStats?.customSet.id !== customSet?.id) {
       router.replace(
-        `/?id=${data?.editCustomSetStats?.customSet.id}`,
+        {
+          pathname: '/',
+          query: { customSetId: data?.editCustomSetStats?.customSet.id },
+        },
         `/set/${data?.editCustomSetStats?.customSet.id}`,
         {
           shallow: true,

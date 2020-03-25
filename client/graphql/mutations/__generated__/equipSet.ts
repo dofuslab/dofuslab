@@ -12,13 +12,14 @@ import { Stat } from "./../../../__generated__/globalTypes";
 export interface equipSet_equipSet_customSet_equippedItems_slot {
   __typename: "ItemSlot";
   id: any;
+  order: number;
 }
 
 export interface equipSet_equipSet_customSet_equippedItems_item_stats {
-  __typename: "ItemStats";
+  __typename: "ItemStat";
   maxValue: number | null;
   stat: Stat | null;
-  altStat: string | null;
+  customStat: string | null;
 }
 
 export interface equipSet_equipSet_customSet_equippedItems_item_itemType_eligibleItemSlots {
@@ -39,7 +40,7 @@ export interface equipSet_equipSet_customSet_equippedItems_item_set_bonuses {
   numItems: number;
   stat: Stat | null;
   value: number | null;
-  altStat: string | null;
+  customStat: string | null;
 }
 
 export interface equipSet_equipSet_customSet_equippedItems_item_set {

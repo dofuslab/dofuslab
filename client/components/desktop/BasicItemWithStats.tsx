@@ -14,7 +14,7 @@ import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/cu
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagic, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'i18n';
-import ItemStatsList from './ItemStatsList';
+import ItemStatsList from '../common/ItemStatsList';
 import { item } from 'graphql/fragments/__generated__/item';
 
 const wrapperStyles = {

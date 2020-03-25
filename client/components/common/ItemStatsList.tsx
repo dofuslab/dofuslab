@@ -13,6 +13,7 @@ interface IProps {
   readonly exos?: ReadonlyArray<customSet_equippedItems_exos> | null;
   readonly hideSet?: boolean;
   readonly openSetModal?: (set: item_set) => void;
+  readonly showImg?: boolean;
 }
 
 const ItemStatsList: React.FC<IProps> = ({
@@ -20,6 +21,7 @@ const ItemStatsList: React.FC<IProps> = ({
   className,
   exos,
   openSetModal,
+  showImg,
 }) => {
   const { t } = useTranslation('stat');
 
@@ -71,6 +73,9 @@ const ItemStatsList: React.FC<IProps> = ({
           )}
         </div>
       )}
+      {showImg && (
+        <img src={item.imageUrl} css={{ float: 'right', maxWidth: 84 }} />
+      )}
       <ul
         className={className}
         css={{ paddingInlineStart: 16, fontSize: '0.75rem' }}
@@ -87,7 +92,7 @@ const ItemStatsList: React.FC<IProps> = ({
           >
             {statLine.stat
               ? `${statsMap[statLine.stat].value} ${t(statLine.stat)}`
-              : statLine.altStat}
+              : statLine.customStat}
           </li>
         ))}
         {exos &&

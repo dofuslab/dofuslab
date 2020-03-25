@@ -2,9 +2,13 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
+import { useQuery } from '@apollo/react-hooks';
 import { SharedFilters, SharedFilterAction } from 'common/types';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
+import {
+  itemSlots_itemSlots,
+  itemSlots,
+} from 'graphql/queries/__generated__/itemSlots';
 import { topMarginStyle } from 'common/mixins';
 import SelectorFilters from './SelectorFilters';
 import ItemSelector from './ItemSelector';
@@ -12,7 +16,12 @@ import { mq } from 'common/constants';
 import SetSelector from './SetSelector';
 import BackTop from 'antd/lib/back-top';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faRedo } from '@fortawesome/free-solid-svg-icons';
+import Button from 'antd/lib/button';
+import { useTranslation } from 'i18n';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import ItemTypeFilter from './ItemTypeFilter';
+import { uniqWith, isEqual } from 'lodash';
 
 const reducer = (state: SharedFilters, action: SharedFilterAction) => {
   switch (action.type) {
@@ -36,19 +45,19 @@ const reducer = (state: SharedFilters, action: SharedFilterAction) => {
 interface IProps {
   customSet?: customSet | null;
   selectedItemSlot: itemSlots_itemSlots | null;
-  selectItemSlot: React.Dispatch<
+  selectItemSlot?: React.Dispatch<
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
-  selectorVisible: boolean;
-  closeSelector: () => void;
+  showSets?: boolean;
+  isMobile?: boolean;
 }
 
 const Selector: React.FC<IProps> = ({
   customSet,
   selectedItemSlot,
   selectItemSlot,
-  selectorVisible,
-  closeSelector,
+  showSets,
+  isMobile,
 }) => {
   const [filters, dispatch] = React.useReducer(reducer, {
     stats: [],
@@ -56,7 +65,12 @@ const Selector: React.FC<IProps> = ({
     search: '',
   });
 
-  const [showSets, setShowSets] = React.useState(false);
+  const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);
+  const itemSlots = itemSlotsData?.itemSlots;
+
+  const [itemTypeIds, setItemTypeIds] = React.useState<Set<string>>(new Set());
+
+  const [showSetsState, setShowSetsState] = React.useState(showSets || false);
 
   const customSetItemIds = new Set<string>();
   (customSet?.equippedItems ?? []).forEach(equippedItem =>
@@ -65,29 +79,23 @@ const Selector: React.FC<IProps> = ({
 
   const selectorDivRef = React.useRef<HTMLDivElement>(null);
 
+  const onReset = React.useCallback(() => {
+    dispatch({ type: 'RESET', maxLevel: customSet?.level || 200 });
+    setItemTypeIds(new Set());
+  }, [dispatch, customSet]);
+
+  const { t } = useTranslation('common');
+
   return (
     <>
       <div
         key={`div-${selectedItemSlot?.id}`} // re-render so div loses scroll position on selectedItemSlot change
         css={{
-          display: selectorVisible ? 'block' : 'none',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          bottom: 0,
-          right: 0,
-          padding: '0 14px',
-          overflowY: 'scroll',
+          padding: '0 12px',
           ...topMarginStyle,
-          background: 'white',
           [mq[1]]: {
-            background: 'none',
-            top: 'auto',
-            left: 'auto',
-            bottom: 'auto',
-            right: 'auto',
-            position: 'static',
-            display: 'block',
+            padding: '0 14px',
+            overflowY: 'scroll',
             flex: 1,
             ...(topMarginStyle[mq[1]] as {}),
           },
@@ -98,36 +106,60 @@ const Selector: React.FC<IProps> = ({
         }}
         ref={selectorDivRef}
       >
-        <div
-          onClick={closeSelector}
-          css={{
-            position: 'absolute',
-            top: 100,
-            right: 100,
-            [mq[1]]: { display: 'none' },
-          }}
-        >
-          <FontAwesomeIcon icon={faTimes} />
-        </div>
         <SelectorFilters
           key={`filters-level-${customSet?.level}`}
           filters={filters}
           dispatch={dispatch}
           customSetLevel={customSet?.level || null}
-          showSets={showSets}
-          setShowSets={setShowSets}
+          showSets={showSetsState}
+          setShowSets={setShowSetsState}
         />
-        {showSets ? (
-          <SetSelector customSet={customSet} filters={filters} />
+        {itemSlots && !showSetsState && (
+          <ItemTypeFilter
+            setItemTypeIds={setItemTypeIds}
+            itemTypeIds={itemTypeIds}
+            itemTypes={uniqWith(
+              itemSlots
+                .filter(
+                  slot => !selectedItemSlot || selectedItemSlot.id === slot.id,
+                )
+                .flatMap(slot => slot.itemTypes),
+              isEqual,
+            )}
+          />
+        )}
+        <Button
+          css={{
+            fontSize: '0.75rem',
+            margin: '12px 0',
+            height: 42,
+            [mq[1]]: {
+              height: 'auto',
+            },
+            [mq[4]]: { marginTop: '20px 0' },
+          }}
+          onClick={onReset}
+        >
+          <FontAwesomeIcon icon={faRedo} css={{ marginRight: 8 }} />
+          {t('RESET_ALL_FILTERS')}
+        </Button>
+        {showSetsState ? (
+          <SetSelector
+            customSet={customSet}
+            filters={filters}
+            selectItemSlot={selectItemSlot}
+            isMobile={isMobile}
+          />
         ) : (
           <ItemSelector
             key={`selected-item-slot-${selectedItemSlot?.id}-level-${customSet?.level}`}
+            itemTypeIds={itemTypeIds}
             selectedItemSlot={selectedItemSlot}
             customSet={customSet}
-            selectItemSlot={selectItemSlot}
             customSetItemIds={customSetItemIds}
             filters={filters}
-            closeSelector={closeSelector}
+            isMobile={isMobile}
+            selectItemSlot={selectItemSlot}
           />
         )}
       </div>

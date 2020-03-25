@@ -1,11 +1,12 @@
 import React, { useCallback } from 'react';
-import { useMutation, useApolloClient } from '@apollo/react-hooks';
+import { useMutation, useApolloClient, useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
 import { ApolloClient, ApolloError } from 'apollo-boost';
 import notification from 'antd/lib/notification';
 import { cloneDeep } from 'lodash';
 import { TFunction } from 'next-i18next';
 import CustomSetFragment from 'graphql/fragments/customSet.graphql';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 
 import {
   customSet_stats,
@@ -41,6 +42,10 @@ import {
   equipSet,
   equipSetVariables,
 } from 'graphql/mutations/__generated__/equipSet';
+import {
+  itemSlots,
+  itemSlots_itemSlots,
+} from 'graphql/queries/__generated__/itemSlots';
 
 const getBaseStat = (stats: customSet_stats, stat: Stat) => {
   switch (stat) {
@@ -272,50 +277,57 @@ export const useEquipItemMutation = (
   customSet?: customSet | null,
 ) => {
   const router = useRouter();
-  const { id: setId } = router.query;
+  const { customSetId } = router.query;
+
+  const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);
 
   const [updateCustomSetItem] = useMutation<
     updateCustomSetItem,
     updateCustomSetItemVariables
   >(UpdateCustomSetItemMutation, {
-    optimisticResponse: customSet
-      ? ({ itemSlotId }) => {
-          const { equippedItems: oldEquippedItems } = customSet;
+    optimisticResponse:
+      customSet && itemSlotsData
+        ? ({ itemSlotId }) => {
+            const { equippedItems: oldEquippedItems } = customSet;
 
-          const equippedItems = [...oldEquippedItems];
+            const equippedItems = [...oldEquippedItems];
 
-          const oldEquippedItemIdx = oldEquippedItems.findIndex(
-            equippedItem => equippedItem.slot.id === itemSlotId,
-          );
+            const oldEquippedItemIdx = oldEquippedItems.findIndex(
+              equippedItem => equippedItem.slot.id === itemSlotId,
+            );
 
-          if (oldEquippedItemIdx > -1) {
-            const oldEquippedItem = equippedItems[oldEquippedItemIdx];
+            const slot = itemSlotsData.itemSlots.find(
+              slot => slot.id === itemSlotId,
+            ) as itemSlots_itemSlots;
 
-            equippedItems.splice(oldEquippedItemIdx, 1, {
-              ...oldEquippedItem,
-              item,
-            });
-          } else {
-            equippedItems.push({
-              id: 'equipped-item-0',
-              exos: [],
-              slot: { id: itemSlotId, __typename: 'ItemSlot' },
-              item,
-              __typename: 'EquippedItem',
-            });
-          }
+            if (oldEquippedItemIdx > -1) {
+              const oldEquippedItem = equippedItems[oldEquippedItemIdx];
 
-          return {
-            updateCustomSetItem: {
-              customSet: {
-                ...customSet,
-                equippedItems,
+              equippedItems.splice(oldEquippedItemIdx, 1, {
+                ...oldEquippedItem,
+                item,
+              });
+            } else {
+              equippedItems.push({
+                id: 'equipped-item-0',
+                exos: [],
+                slot,
+                item,
+                __typename: 'EquippedItem',
+              });
+            }
+
+            return {
+              updateCustomSetItem: {
+                customSet: {
+                  ...customSet,
+                  equippedItems,
+                },
+                __typename: 'UpdateCustomSetItem',
               },
-              __typename: 'UpdateCustomSetItem',
-            },
-          };
-        }
-      : undefined,
+            };
+          }
+        : undefined,
   });
 
   const client = useApolloClient();
@@ -329,23 +341,29 @@ export const useEquipItemMutation = (
       if (!ok) return;
       const { data } = await updateCustomSetItem({
         variables: {
-          customSetId: setId,
+          customSetId,
           itemId: item.id,
           itemSlotId,
         },
       });
 
-      if (data?.updateCustomSetItem?.customSet.id !== setId) {
+      if (
+        data?.updateCustomSetItem &&
+        data.updateCustomSetItem.customSet.id !== customSetId
+      ) {
         router.replace(
-          `/?id=${data?.updateCustomSetItem?.customSet.id}`,
-          `/set/${data?.updateCustomSetItem?.customSet.id}`,
+          {
+            pathname: '/',
+            query: { customSetId: data.updateCustomSetItem.customSet.id },
+          },
+          `/set/${data.updateCustomSetItem.customSet.id}`,
           {
             shallow: true,
           },
         );
       }
     },
-    [updateCustomSetItem, setId, item],
+    [updateCustomSetItem, customSetId, item],
   );
 
   return onClick;
@@ -359,7 +377,7 @@ export const useEquipSetMutation = (
   { data?: equipSet; loading: boolean; error?: ApolloError },
 ] => {
   const router = useRouter();
-  const { id: routerSetId } = router.query;
+  const { customSetId: routerSetId } = router.query;
 
   const [equipSet, { data, loading, error }] = useMutation<
     equipSet,
@@ -383,7 +401,10 @@ export const useEquipSetMutation = (
 
       if (resultData?.equipSet?.customSet.id !== routerSetId) {
         router.replace(
-          `/?id=${resultData?.equipSet?.customSet.id}`,
+          {
+            pathname: '/',
+            query: { customSetId: resultData?.equipSet?.customSet.id },
+          },
           `/set/${resultData?.equipSet?.customSet.id}`,
           {
             shallow: true,

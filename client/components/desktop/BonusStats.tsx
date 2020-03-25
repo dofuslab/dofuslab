@@ -17,9 +17,21 @@ interface IProps {
 
 const BonusStats: React.FC<IProps> = ({ customSet }) => {
   const { t } = useTranslation(['stat', 'common']);
-  const setBonuses = customSet ? getBonusesFromCustomSet(customSet) : {};
+  const setBonuses = getBonusesFromCustomSet(customSet);
+  const itemOrder = customSet.equippedItems.reduce(
+    (acc, curr) => ({ ...acc, [curr.item.id]: curr.slot.order }),
+    {},
+  ) as { [key: string]: number };
   return (
-    <div css={{ display: 'none', [mq[1]]: { display: 'flex', marginLeft: 8 } }}>
+    <div
+      css={{
+        marginTop: 12,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        [mq[1]]: { marginLeft: 20, marginTop: 0, flexDirection: 'row' },
+      }}
+    >
       <ClassNames>
         {({ css }) =>
           Object.values(setBonuses)
@@ -35,7 +47,13 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
                   key={id}
                   overlayClassName={css(popoverTitleStyle)}
                   title={
-                    <div css={{ display: 'flex', alignItems: 'baseline' }}>
+                    <div
+                      css={{
+                        display: 'flex',
+                        alignItems: 'baseline',
+                        fontSize: '0.8rem',
+                      }}
+                    >
                       <div>{name}</div>
                     </div>
                   }
@@ -50,25 +68,35 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
                       background: 'white',
                       borderRadius: 4,
                       border: `1px solid ${BORDER_COLOR}`,
-                      marginLeft: 12,
                       padding: '4px 8px',
+                      ':not(:first-of-type)': {
+                        marginTop: 12,
+                        [mq[1]]: {
+                          marginTop: 0,
+                          marginLeft: 12,
+                        },
+                      },
                     }}
                   >
-                    {items.map(item => (
-                      <div
-                        key={`set-bonus-item-${item.id}`}
-                        css={{
-                          width: 40,
-                          height: 40,
-                          [':not:first-of-type']: { marginLeft: 4 },
-                        }}
-                      >
-                        <img
-                          src={item.imageUrl}
-                          css={{ maxWidth: '100%', maxHeight: '100%' }}
-                        />
-                      </div>
-                    ))}
+                    {[...items]
+                      .sort((i, j) => itemOrder[i.id] - itemOrder[j.id])
+                      .map(item => (
+                        <div
+                          key={`set-bonus-item-${item.id}`}
+                          css={{
+                            width: 40,
+                            height: 40,
+                            [mq[1]]: {
+                              [':not:first-of-type']: { marginLeft: 4 },
+                            },
+                          }}
+                        >
+                          <img
+                            src={item.imageUrl}
+                            css={{ maxWidth: '100%', maxHeight: '100%' }}
+                          />
+                        </div>
+                      ))}
                   </div>
                 </Popover>
               );

@@ -2,15 +2,16 @@ import App from 'next/app';
 import { ApolloProvider } from '@apollo/react-hooks';
 import withApollo from 'common/apollo';
 import { ApolloClient, NormalizedCacheObject } from 'apollo-boost';
-import { appWithTranslation } from '../i18n';
 import { config } from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css';
+import { MediaContextProvider } from 'components/common/Media';
 
+import { appWithTranslation } from '../i18n';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'antd/dist/antd.min.css';
 
 config.autoAddCss = false;
 
-class DofusSetsApp extends App<{
+class DofusLabApp extends App<{
   apolloClient: ApolloClient<NormalizedCacheObject>;
 }> {
   render() {
@@ -18,10 +19,12 @@ class DofusSetsApp extends App<{
 
     return (
       <ApolloProvider client={apolloClient}>
-        <Component {...pageProps} />
+        <MediaContextProvider>
+          <Component {...pageProps} />
+        </MediaContextProvider>
       </ApolloProvider>
     );
   }
 }
 
-export default withApollo(appWithTranslation(DofusSetsApp));
+export default withApollo(appWithTranslation(DofusLabApp));

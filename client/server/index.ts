@@ -12,8 +12,14 @@ const handle = app.getRequestHandler();
   await nextI18next.initPromise;
   await express()
     .use(nextI18NextMiddleware(nextI18next))
-    .get('/set/:id', (req, res) =>
-      app.render(req, res, '/index', { id: req.params.id }),
+    .get('/set/:customSetId', (req, res) =>
+      app.render(req, res, '/index', { customSetId: req.params.customSetId }),
+    )
+    .get('/equip/:itemSlotId/:customSetId', (req, res) =>
+      app.render(req, res, '/equip/[itemSlotId]/index', {
+        itemSlotId: req.params.itemSlotId,
+        customSetId: req.params.customSetId,
+      }),
     )
     .get('*', (req, res) => handle(req, res))
     .listen(port);
