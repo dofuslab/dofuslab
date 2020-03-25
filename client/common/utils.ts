@@ -337,7 +337,7 @@ export const useEquipItemMutation = (
 
       if (data?.updateCustomSetItem?.customSet.id !== customSetId) {
         router.replace(
-          `/?id=${data?.updateCustomSetItem?.customSet.id}`,
+          `/?customSetId=${data?.updateCustomSetItem?.customSet.id}`,
           `/set/${data?.updateCustomSetItem?.customSet.id}`,
           {
             shallow: true,
@@ -383,7 +383,7 @@ export const useEquipSetMutation = (
 
       if (resultData?.equipSet?.customSet.id !== routerSetId) {
         router.replace(
-          `/?id=${resultData?.equipSet?.customSet.id}`,
+          `/?customSetId=${resultData?.equipSet?.customSet.id}`,
           `/set/${resultData?.equipSet?.customSet.id}`,
           {
             shallow: true,

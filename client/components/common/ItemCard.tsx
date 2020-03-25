@@ -38,7 +38,7 @@ const ItemCard: React.FC<IProps> = ({
   const onClick = React.useCallback(async () => {
     if (itemSlotId) {
       selectItemSlot && selectItemSlot(null);
-      if (isMobile) {
+      if (isMobile && customSetId) {
         router.push(`/set/${customSetId}`);
       }
       await mutate(itemSlotId);

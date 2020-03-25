@@ -116,7 +116,7 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
       });
       if (data?.editCustomSetMetadata?.customSet.id !== customSet?.id) {
         router.replace(
-          `/?id=${data?.editCustomSetMetadata?.customSet.id}`,
+          `/?customSetId=${data?.editCustomSetMetadata?.customSet.id}`,
           `/set/${data?.editCustomSetMetadata?.customSet.id}`,
           {
             shallow: true,

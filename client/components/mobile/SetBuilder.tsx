@@ -19,14 +19,10 @@ const SetBuilder: React.FC = () => {
   const router = useRouter();
   const { customSetId } = router.query;
 
-  console.log(customSetId);
-
-  const { data: customSetData, error, loading } = useQuery<
-    customSet,
-    customSetVariables
-  >(CustomSetQuery, { variables: { id: customSetId }, skip: !customSetId });
-
-  console.log(customSetData, error, loading);
+  const { data: customSetData } = useQuery<customSet, customSetVariables>(
+    CustomSetQuery,
+    { variables: { id: customSetId }, skip: !customSetId },
+  );
 
   const [
     selectedItemSlot,

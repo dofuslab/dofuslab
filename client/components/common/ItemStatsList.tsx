@@ -92,7 +92,7 @@ const ItemStatsList: React.FC<IProps> = ({
           >
             {statLine.stat
               ? `${statsMap[statLine.stat].value} ${t(statLine.stat)}`
-              : statLine.customStats}
+              : statLine.customStat}
           </li>
         ))}
         {exos &&
