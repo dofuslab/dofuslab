@@ -12,6 +12,7 @@ import { Stat } from "./../../../__generated__/globalTypes";
 export interface customSet_customSetById_equippedItems_slot {
   __typename: "ItemSlot";
   id: any;
+  order: number;
 }
 
 export interface customSet_customSetById_equippedItems_item_stats {

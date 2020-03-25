@@ -12,6 +12,7 @@ import { topMarginStyle } from 'common/mixins';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getStatsFromCustomSet } from 'common/utils';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
+import BonusStats from 'components/desktop/BonusStats';
 
 interface IProps {
   customSet?: customSet | null;
@@ -33,12 +34,13 @@ const Home: React.FC<IProps> = ({
 
   return (
     <>
-      <SetHeader customSet={customSet} />
+      <SetHeader customSet={customSet} isMobile />
       <EquipmentSlots
         customSet={customSet}
         selectItemSlot={selectItemSlot}
         selectedItemSlotId={selectedItemSlot?.id ?? null}
       />
+      {customSet && <BonusStats customSet={customSet} />}
       <div
         css={{
           flex: '1 1 auto',

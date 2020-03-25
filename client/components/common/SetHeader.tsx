@@ -26,6 +26,7 @@ import BonusStats from '../desktop/BonusStats';
 
 interface IProps {
   customSet?: customSet | null;
+  isMobile?: boolean;
 }
 
 interface CustomSetMetadata {
@@ -59,7 +60,7 @@ const reducer = (state: CustomSetMetadata, action: CustomSetMetdataAction) => {
   }
 };
 
-const SetHeader: React.FC<IProps> = ({ customSet }) => {
+const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
   const originalState = {
     isEditing: false,
     name: customSet?.name || '',
@@ -249,7 +250,7 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
           )}
         </div>
       </Form>
-      {customSet && <BonusStats customSet={customSet} />}
+      {customSet && !isMobile && <BonusStats customSet={customSet} />}
     </div>
   );
 };

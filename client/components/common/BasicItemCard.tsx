@@ -51,7 +51,13 @@ const BasicItemCard: React.FC<IProps> = ({
     >
       <img
         src={item.imageUrl}
-        css={{ ...itemBoxDimensions, float: 'right', maxWidth: 96 }}
+        css={{
+          ...itemBoxDimensions,
+          float: 'right',
+          maxWidth: 96,
+          marginLeft: 12,
+          marginBottom: 12,
+        }}
       />
       <ItemStatsList
         item={item}

@@ -2,6 +2,7 @@ query itemSlots {
   itemSlots {
     id
     name
+    order
     itemTypes {
       id
       name
