@@ -73,13 +73,6 @@ class ItemStat(SQLAlchemyObjectType):
     custom_stat = graphene.String()
 
     def resolve_custom_stat(self, info):
-        # query = (
-        #     db.session.query(ModelItemStatTranslation)
-        #     .filter(ModelItemStatTranslation.item_stat_id == self.uuid)
-        #     .one()
-        # )
-        #
-        # return query.custom_stat
         locale = info.context.accept_languages.best_match(
             supported_languages, default="en"
         )
@@ -145,17 +138,6 @@ class Item(SQLAlchemyObjectType):
         )
 
     def resolve_stats(self, info):
-        # locale = info.context.accept_languages.best_match(
-        #     supported_languages, default="en"
-        # )
-        # query = (
-        #     db.session.query(ModelItemStat)
-        #     .join(ModelItemStatTranslation)
-        #     .filter(ModelItemStat.item_id == self.uuid)
-        #     .filter(ModelItemStatTranslation.locale == locale)
-        #     .order_by(ModelItemStat.order)
-        # )
-        # return query
         query = db.session.query(ModelItemStat).filter(
             ModelItemStat.item_id == self.uuid
         )
