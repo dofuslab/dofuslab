@@ -18,7 +18,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
   __typename: "ItemStat";
   maxValue: number | null;
   stat: Stat | null;
-  customStats: string[] | null;
+  customStat: string | null;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_itemType_eligibleItemSlots {
@@ -39,7 +39,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
   numItems: number;
   stat: Stat | null;
   value: number | null;
-  customStats: (string | null)[] | null;
+  customStat: string | null;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set {

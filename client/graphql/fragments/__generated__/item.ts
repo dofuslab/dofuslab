@@ -13,7 +13,7 @@ export interface item_stats {
   __typename: "ItemStat";
   maxValue: number | null;
   stat: Stat | null;
-  customStats: string[] | null;
+  customStat: string | null;
 }
 
 export interface item_itemType_eligibleItemSlots {
@@ -34,7 +34,7 @@ export interface item_set_bonuses {
   numItems: number;
   stat: Stat | null;
   value: number | null;
-  customStats: (string | null)[] | null;
+  customStat: string | null;
 }
 
 export interface item_set {

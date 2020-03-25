@@ -13,7 +13,7 @@ export interface items_items_edges_node_stats {
   __typename: "ItemStat";
   maxValue: number | null;
   stat: Stat | null;
-  customStats: string[] | null;
+  customStat: string | null;
 }
 
 export interface items_items_edges_node_itemType_eligibleItemSlots {
@@ -34,7 +34,7 @@ export interface items_items_edges_node_set_bonuses {
   numItems: number;
   stat: Stat | null;
   value: number | null;
-  customStats: (string | null)[] | null;
+  customStat: string | null;
 }
 
 export interface items_items_edges_node_set {

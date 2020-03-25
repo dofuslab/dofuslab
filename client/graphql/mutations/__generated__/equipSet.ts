@@ -18,7 +18,7 @@ export interface equipSet_equipSet_customSet_equippedItems_item_stats {
   __typename: "ItemStat";
   maxValue: number | null;
   stat: Stat | null;
-  customStats: string[] | null;
+  customStat: string | null;
 }
 
 export interface equipSet_equipSet_customSet_equippedItems_item_itemType_eligibleItemSlots {
@@ -39,7 +39,7 @@ export interface equipSet_equipSet_customSet_equippedItems_item_set_bonuses {
   numItems: number;
   stat: Stat | null;
   value: number | null;
-  customStats: (string | null)[] | null;
+  customStat: string | null;
 }
 
 export interface equipSet_equipSet_customSet_equippedItems_item_set {

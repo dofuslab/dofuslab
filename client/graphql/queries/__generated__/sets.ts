@@ -15,14 +15,14 @@ export interface sets_sets_edges_node_bonuses {
   numItems: number;
   stat: Stat | null;
   value: number | null;
-  customStats: (string | null)[] | null;
+  customStat: string | null;
 }
 
 export interface sets_sets_edges_node_items_stats {
   __typename: "ItemStat";
   maxValue: number | null;
   stat: Stat | null;
-  customStats: string[] | null;
+  customStat: string | null;
 }
 
 export interface sets_sets_edges_node_items_itemType_eligibleItemSlots {
@@ -43,7 +43,7 @@ export interface sets_sets_edges_node_items_set_bonuses {
   numItems: number;
   stat: Stat | null;
   value: number | null;
-  customStats: (string | null)[] | null;
+  customStat: string | null;
 }
 
 export interface sets_sets_edges_node_items_set {
