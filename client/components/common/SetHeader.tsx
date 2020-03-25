@@ -22,10 +22,11 @@ import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetdat
 import { checkAuthentication } from 'common/utils';
 import { ellipsis } from 'common/mixins';
 import { mq } from 'common/constants';
-import BonusStats from './BonusStats';
+import BonusStats from '../desktop/BonusStats';
 
 interface IProps {
   customSet?: customSet | null;
+  isMobile?: boolean;
 }
 
 interface CustomSetMetadata {
@@ -59,7 +60,7 @@ const reducer = (state: CustomSetMetadata, action: CustomSetMetdataAction) => {
   }
 };
 
-const SetHeader: React.FC<IProps> = ({ customSet }) => {
+const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
   const originalState = {
     isEditing: false,
     name: customSet?.name || '',
@@ -116,7 +117,7 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
       });
       if (data?.editCustomSetMetadata?.customSet.id !== customSet?.id) {
         router.replace(
-          `/?id=${data?.editCustomSetMetadata?.customSet.id}`,
+          `/?customSetId=${data?.editCustomSetMetadata?.customSet.id}`,
           `/set/${data?.editCustomSetMetadata?.customSet.id}`,
           {
             shallow: true,
@@ -249,7 +250,7 @@ const SetHeader: React.FC<IProps> = ({ customSet }) => {
           )}
         </div>
       </Form>
-      {customSet && <BonusStats customSet={customSet} />}
+      {customSet && !isMobile && <BonusStats customSet={customSet} />}
     </div>
   );
 };

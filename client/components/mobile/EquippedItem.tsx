@@ -10,58 +10,50 @@ import {
   customSet,
   customSet_equippedItems,
 } from 'graphql/fragments/__generated__/customSet';
-import EquippedItemWithStats from './EquippedItemWithStats';
+import EquippedItemWithStats from '../common/EquippedItemWithStats';
 import { item_set } from 'graphql/fragments/__generated__/item';
+import Link from 'next/link';
 
-interface IEquippedItem {
+interface IProps {
   slot: itemSlots_itemSlots;
   equippedItem?: customSet_customSetById_equippedItems;
-  selectItemSlot: React.Dispatch<
-    React.SetStateAction<itemSlots_itemSlots | null>
-  >;
   customSet?: customSet | null;
   selected: boolean;
   openMageModal: (equippedItem: customSet_equippedItems) => void;
   openSetModal: (set: item_set) => void;
-  openSelector: () => void;
 }
 
-const EquippedItem: React.FC<IEquippedItem> = ({
+const EquippedItem: React.FC<IProps> = ({
   slot,
   equippedItem,
-  selectItemSlot,
   selected,
   customSet,
   openMageModal,
   openSetModal,
-  openSelector,
   ...restProps
 }) => {
-  const onClick = React.useCallback(() => {
-    if (selected) {
-      selectItemSlot(null);
-    } else {
-      selectItemSlot(slot);
-    }
-    openSelector();
-  }, [selectItemSlot, slot, selected, openSelector]);
-
   return (
     <>
-      <div css={itemBox} onClick={onClick} {...restProps}>
+      <div css={itemBox} {...restProps}>
         {equippedItem ? (
-          <EquippedItemWithStats
-            equippedItem={equippedItem}
-            selected={selected}
-            customSet={customSet!}
-            itemSlotId={slot.id}
-            openMageModal={openMageModal}
-            openSetModal={openSetModal}
-          />
+          <Link href={`/set/${customSet!.id}/${equippedItem.id}`}>
+            <div>
+              <EquippedItemWithStats
+                equippedItem={equippedItem}
+                selected={selected}
+                customSet={customSet!}
+                itemSlotId={slot.id}
+                openMageModal={openMageModal}
+                openSetModal={openSetModal}
+              />
+            </div>
+          </Link>
         ) : (
-          <div css={{ ...itemImageBox, ...(selected ? selectedBox : {}) }}>
-            {slot.name}
-          </div>
+          <Link href={`/equip/${slot.id}/${customSet ? customSet.id : ''}`}>
+            <div css={{ ...itemImageBox, ...(selected ? selectedBox : {}) }}>
+              {slot.name}
+            </div>
+          </Link>
         )}
       </div>
     </>

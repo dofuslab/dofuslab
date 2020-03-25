@@ -12,7 +12,7 @@ import {
 } from 'graphql/queries/__generated__/set';
 import setQuery from 'graphql/queries/set.graphql';
 import { useTranslation } from 'i18n';
-import BasicItemWithStats from './BasicItemWithStats';
+import BasicItemWithStats from '../desktop/BasicItemWithStats';
 import Divider from 'antd/lib/divider';
 import { SetBonuses } from 'common/wrappers';
 import { gray2, itemBox } from 'common/mixins';
@@ -20,6 +20,7 @@ import Skeleton from 'antd/lib/skeleton';
 import { mq } from 'common/constants';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useEquipSetMutation } from 'common/utils';
+import { useRouter } from 'next/router';
 
 interface IProps {
   setId: string;
@@ -27,6 +28,7 @@ interface IProps {
   visible: boolean;
   onCancel: () => void;
   customSet?: customSet | null;
+  isMobile?: boolean;
 }
 
 const SetModal: React.FC<IProps> = ({
@@ -35,6 +37,7 @@ const SetModal: React.FC<IProps> = ({
   visible,
   onCancel,
   customSet,
+  isMobile,
 }) => {
   const { data, loading, error } = useQuery<set, setVariables>(setQuery, {
     variables: { id: setId },
@@ -47,10 +50,15 @@ const SetModal: React.FC<IProps> = ({
 
   const { t } = useTranslation('common');
 
+  const router = useRouter();
+
   const onOk = React.useCallback(async () => {
     await mutate();
     onCancel();
-  }, [mutate, onCancel]);
+    if (isMobile && customSet) {
+      router.push(`/set/${customSet.id}`);
+    }
+  }, [mutate, onCancel, router, customSet, isMobile]);
 
   let bodyContent = null;
 
@@ -125,13 +133,14 @@ const SetModal: React.FC<IProps> = ({
 
   return (
     <Modal
-      title={setName}
+      title={<div css={{ fontSize: '0.8rem' }}>{setName}</div>}
       visible={visible}
       onCancel={onCancel}
       zIndex={1031}
       confirmLoading={mutationLoading}
       onOk={onOk}
-      okText={t('EQUIP_SET')}
+      okText={<span css={{ fontSize: '0.75rem' }}>{t('EQUIP_SET')}</span>}
+      cancelText={<span css={{ fontSize: '0.75rem' }}>{t('CANCEL')}</span>}
     >
       {bodyContent}
     </Modal>

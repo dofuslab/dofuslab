@@ -25,7 +25,7 @@ import {
   setEquippedItemExoVariables,
 } from 'graphql/mutations/__generated__/setEquippedItemExo';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import ItemStatsList from './ItemStatsList';
+import ItemStatsList from '../common/ItemStatsList';
 import { item_set } from 'graphql/fragments/__generated__/item';
 
 const quickMageStats = [
@@ -58,7 +58,7 @@ interface IProps {
   itemSlotId: string;
   customSet: customSet;
   openMageModal: (equippedItem: customSet_customSetById_equippedItems) => void;
-  stopPropagationCallback: (e: React.MouseEvent<HTMLElement>) => void;
+  stopPropagationCallback?: (e: React.MouseEvent<HTMLElement>) => void;
   openSetModal: (set: item_set) => void;
 }
 
@@ -188,6 +188,7 @@ const EquippedItemCard: React.FC<IProps> = ({
         css={{ paddingLeft: 16, marginBottom: 0 }}
         exos={equippedItem.exos}
         openSetModal={openSetModal}
+        showImg={false}
       />
     </Card>
   );

@@ -51,3 +51,17 @@ export interface ExoStatLine {
 }
 
 export type SharedFilters = Omit<ItemFilters, 'itemTypeIds'>;
+
+const mobileScreenTypesArr = [
+  'HOME',
+  'EQUIPPED_ITEM',
+  'ITEM_SELECTOR',
+  'SET_SELECTOR',
+] as const;
+
+export type MobileScreen = typeof mobileScreenTypesArr[number];
+
+export const mobileScreenTypes = mobileScreenTypesArr.reduce(
+  (acc, curr) => ({ ...acc, [curr]: curr }),
+  {},
+) as { [key in MobileScreen]: MobileScreen };

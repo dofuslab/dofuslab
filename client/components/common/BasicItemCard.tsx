@@ -29,7 +29,7 @@ const BasicItemCard: React.FC<IProps> = ({
       size="small"
       title={
         <div css={{ display: 'flex', alignItems: 'center' }}>
-          <TruncatableText css={{ marginRight: 8 }}>
+          <TruncatableText css={{ marginRight: 8, fontSize: '0.8rem' }}>
             {item.name}
           </TruncatableText>
           {equipped && <Badge css={{ marginRight: 4 }}>{t('EQUIPPED')}</Badge>}
@@ -51,7 +51,13 @@ const BasicItemCard: React.FC<IProps> = ({
     >
       <img
         src={item.imageUrl}
-        css={{ ...itemBoxDimensions, float: 'right', maxWidth: 120 }}
+        css={{
+          ...itemBoxDimensions,
+          float: 'right',
+          maxWidth: 96,
+          marginLeft: 12,
+          marginBottom: 12,
+        }}
       />
       <ItemStatsList
         item={item}

@@ -8,13 +8,25 @@ import { TruncatableText, SetBonuses } from 'common/wrappers';
 import { sets_sets_edges_node } from 'graphql/queries/__generated__/sets';
 import { itemCardStyle, BORDER_COLOR } from 'common/mixins';
 import { useEquipSetMutation, useCustomSet } from 'common/utils';
+import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
+import { mq } from 'common/constants';
+import { useRouter } from 'next/router';
 
 interface IProps {
   set: sets_sets_edges_node;
   customSetId: string | null;
+  selectItemSlot?: React.Dispatch<
+    React.SetStateAction<itemSlots_itemSlots | null>
+  >;
+  isMobile?: boolean;
 }
 
-const SetCard: React.FC<IProps> = ({ set, customSetId }) => {
+const SetCard: React.FC<IProps> = ({
+  set,
+  customSetId,
+  selectItemSlot,
+  isMobile,
+}) => {
   const customSet = useCustomSet(customSetId);
 
   const { t } = useTranslation(['stat', 'common']);
@@ -23,14 +35,26 @@ const SetCard: React.FC<IProps> = ({ set, customSetId }) => {
     (currMax, bonus) => Math.max(currMax, bonus.numItems),
     0,
   );
+  const router = useRouter();
+
+  const onEquipSet = React.useCallback(() => {
+    onClick();
+    selectItemSlot && selectItemSlot(null);
+    if (isMobile && customSet) {
+      router.push(`/set/${customSet.id}`);
+    }
+  }, [onClick, router, customSet]);
+
   return (
     <Card
       hoverable
       size="small"
-      onClick={onClick}
+      onClick={onEquipSet}
       title={
         <div css={{ display: 'flex', alignItems: 'center' }}>
-          <TruncatableText>{set.name}</TruncatableText>
+          <TruncatableText css={{ fontSize: '0.8rem' }}>
+            {set.name}
+          </TruncatableText>
           <div
             css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}
           >
@@ -63,8 +87,12 @@ const SetCard: React.FC<IProps> = ({ set, customSetId }) => {
               src={item?.imageUrl}
               key={`item-${item.id}`}
               css={{
-                width: 60,
-                height: 60,
+                width: 84,
+                height: 84,
+                [mq[1]]: {
+                  width: 60,
+                  height: 60,
+                },
                 [':not:first-of-type']: { marginLeft: 12 },
               }}
             />

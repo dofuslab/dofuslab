@@ -61,7 +61,7 @@ const SignUpModal: React.FC<IProps> = ({
 
   return (
     <Modal
-      title="Sign up"
+      title={<div css={{ fontSize: '0.8rem' }}>{t('SIGN_UP')}</div>}
       visible={visible}
       onCancel={onClose}
       bodyStyle={{
@@ -70,7 +70,12 @@ const SignUpModal: React.FC<IProps> = ({
         alignItems: 'center',
       }}
       footer={[
-        <Button key="cancel" type="default" onClick={onClose}>
+        <Button
+          key="cancel"
+          type="default"
+          onClick={onClose}
+          css={{ fontSize: '0.75rem' }}
+        >
           {t('common:CANCEL')}
         </Button>,
         <Button
@@ -79,6 +84,7 @@ const SignUpModal: React.FC<IProps> = ({
           htmlType="submit"
           type="primary"
           loading={loading}
+          css={{ fontSize: '0.75rem' }}
         >
           {t('SIGN_UP')}
         </Button>,
@@ -101,7 +107,7 @@ const SignUpModal: React.FC<IProps> = ({
       >
         <Form.Item
           name="email"
-          label={t('EMAIL')}
+          label={<span css={{ fontSize: '0.75rem' }}>{t('EMAIL')}</span>}
           rules={[
             { required: true, message: t('VALIDATION.EMAIL_REQUIRED') },
             {
@@ -111,11 +117,11 @@ const SignUpModal: React.FC<IProps> = ({
           ]}
           validateTrigger={'onSubmit'}
         >
-          <Input placeholder={t('EMAIL')} />
+          <Input css={{ fontSize: '0.75rem' }} placeholder={t('EMAIL')} />
         </Form.Item>
         <Form.Item
           name="username"
-          label={t('USERNAME')}
+          label={<span css={{ fontSize: '0.75rem' }}>{t('USERNAME')}</span>}
           rules={[
             { required: true, message: t('VALIDATION.USERNAME_REQUIRED') },
             {
@@ -125,11 +131,15 @@ const SignUpModal: React.FC<IProps> = ({
           ]}
           validateTrigger={'onSubmit'}
         >
-          <Input placeholder={t('USERNAME')} maxLength={20} />
+          <Input
+            css={{ fontSize: '0.75rem' }}
+            placeholder={t('USERNAME')}
+            maxLength={20}
+          />
         </Form.Item>
         <Form.Item
           name="password"
-          label={t('PASSWORD')}
+          label={<span css={{ fontSize: '0.75rem' }}>{t('PASSWORD')}</span>}
           validateTrigger={'onSubmit'}
           rules={[
             { required: true, message: t('VALIDATION.PASSWORD_REQUIRED') },
@@ -140,11 +150,16 @@ const SignUpModal: React.FC<IProps> = ({
           ]}
           css={{ marginTop: 16 }}
         >
-          <Input.Password placeholder={t('PASSWORD')} />
+          <Input.Password
+            css={{ '.ant-input': { fontSize: '0.75rem' } }}
+            placeholder={t('PASSWORD')}
+          />
         </Form.Item>
         <Form.Item
           name="confirm-password"
-          label={t('CONFIRM_PASSWORD')}
+          label={
+            <span css={{ fontSize: '0.75rem' }}>{t('CONFIRM_PASSWORD')}</span>
+          }
           dependencies={['password']}
           validateTrigger={'onSubmit'}
           rules={[
@@ -160,11 +175,14 @@ const SignUpModal: React.FC<IProps> = ({
           ]}
           css={{ marginTop: 16 }}
         >
-          <Input.Password placeholder={t('PASSWORD')} />
+          <Input.Password
+            css={{ '.ant-input': { fontSize: '0.75rem' } }}
+            placeholder={t('PASSWORD')}
+          />
         </Form.Item>
       </Form>
       <Divider />
-      <div>
+      <div css={{ fontSize: '0.75rem' }}>
         <Trans i18nKey="NO_ACCOUNT">
           Already have an account? <a onClick={onLogin}>Login here.</a>
         </Trans>

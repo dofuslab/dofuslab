@@ -7,7 +7,6 @@ import { Waypoint } from 'react-waypoint';
 import Card from 'antd/lib/card';
 import Skeleton from 'antd/lib/skeleton';
 import { useDebounceCallback } from '@react-hook/debounce';
-import { uniqWith, isEqual } from 'lodash';
 
 import ItemCard from './ItemCard';
 import { ResponsiveGrid } from 'common/wrappers';
@@ -15,17 +14,13 @@ import ItemsQuery from 'graphql/queries/items.graphql';
 import { items, itemsVariables } from 'graphql/queries/__generated__/items';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { itemCardStyle, BORDER_COLOR } from 'common/mixins';
-import {
-  itemSlots_itemSlots,
-  itemSlots,
-} from 'graphql/queries/__generated__/itemSlots';
-import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
-import ItemTypeFilter from './ItemTypeFilter';
+import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { SharedFilters } from 'common/types';
 import { findEmptyOrOnlySlotId } from 'common/utils';
-import ConfirmReplaceItemPopover from './ConfirmReplaceItemPopover';
+import ConfirmReplaceItemPopover from '../desktop/ConfirmReplaceItemPopover';
 import { item_set } from 'graphql/fragments/__generated__/item';
 import SetModal from './SetModal';
+import { mq } from 'common/constants';
 
 const PAGE_SIZE = 24;
 
@@ -34,12 +29,13 @@ const BOTTOM_OFFSET = -1200;
 interface IProps {
   selectedItemSlot: itemSlots_itemSlots | null;
   customSet?: customSet | null;
-  selectItemSlot: React.Dispatch<
+  selectItemSlot?: React.Dispatch<
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
   customSetItemIds: Set<string>;
   filters: SharedFilters;
-  closeSelector: () => void;
+  itemTypeIds: Set<string>;
+  isMobile?: boolean;
 }
 
 const ItemSelector: React.FC<IProps> = ({
@@ -48,15 +44,16 @@ const ItemSelector: React.FC<IProps> = ({
   selectItemSlot,
   customSetItemIds,
   filters,
-  closeSelector,
+  itemTypeIds,
+  isMobile,
 }) => {
-  const [itemTypeIds, setItemTypeIds] = React.useState<Array<string>>([]);
+  const itemTypeIdsArr = Array.from(itemTypeIds);
   const queryFilters = {
     ...filters,
     itemTypeIds:
-      selectedItemSlot && itemTypeIds.length === 0
+      selectedItemSlot && itemTypeIdsArr.length === 0
         ? selectedItemSlot.itemTypes.map(type => type.id)
-        : itemTypeIds,
+        : itemTypeIdsArr,
   };
   const { data, loading, fetchMore, networkStatus } = useQuery<
     items,
@@ -65,9 +62,6 @@ const ItemSelector: React.FC<IProps> = ({
     variables: { first: PAGE_SIZE, filters: queryFilters },
     notifyOnNetworkStatusChange: true,
   });
-
-  const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);
-  const itemSlots = itemSlotsData?.itemSlots;
 
   const endCursorRef = React.useRef<string | null>(null);
 
@@ -143,28 +137,17 @@ const ItemSelector: React.FC<IProps> = ({
     setSetModalVisible(false);
   }, [setSetModalVisible]);
 
-  console.log(data?.items.edges.length);
-
   return (
     <ResponsiveGrid
-      numColumns={[1, 2, 2, 3, 4, 5, 6]}
-      css={{ marginBottom: 20, position: 'relative' }}
+      numColumns={[2, 2, 2, 3, 4, 5, 6]}
+      css={{
+        marginBottom: 20,
+        position: 'relative',
+        gridGap: 20,
+        [mq[1]]: { gridGap: 12 },
+      }}
       ref={responsiveGridRef}
     >
-      {itemSlots && (
-        <ItemTypeFilter
-          setItemTypeIds={setItemTypeIds}
-          itemTypeIds={itemTypeIds}
-          itemTypes={uniqWith(
-            itemSlots
-              .filter(
-                slot => !selectedItemSlot || selectedItemSlot.id === slot.id,
-              )
-              .flatMap(slot => slot.itemTypes),
-            isEqual,
-          )}
-        />
-      )}
       {data &&
         data.items.edges
           .map(edge => edge.node)
@@ -181,7 +164,7 @@ const ItemSelector: React.FC<IProps> = ({
                 customSetId={customSet?.id ?? null}
                 selectItemSlot={selectItemSlot}
                 openSetModal={openSetModal}
-                closeSelector={closeSelector}
+                isMobile={isMobile}
               />
             );
             return itemSlotId || !customSet ? (
@@ -224,6 +207,7 @@ const ItemSelector: React.FC<IProps> = ({
           visible={setModalVisible}
           onCancel={closeSetModal}
           customSet={customSet}
+          isMobile={isMobile}
         />
       )}
     </ResponsiveGrid>
