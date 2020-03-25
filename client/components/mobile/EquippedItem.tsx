@@ -36,7 +36,10 @@ const EquippedItem: React.FC<IProps> = ({
     <>
       <div css={itemBox} {...restProps}>
         {equippedItem ? (
-          <Link href={`/set/${customSet!.id}/${equippedItem.id}`}>
+          <Link
+            href="/set/[customSetId]/[equippedItemId]"
+            as={`/set/${customSet!.id}/${equippedItem.id}`}
+          >
             <div>
               <EquippedItemWithStats
                 equippedItem={equippedItem}
@@ -49,7 +52,13 @@ const EquippedItem: React.FC<IProps> = ({
             </div>
           </Link>
         ) : (
-          <Link href={`/equip/${slot.id}/${customSet ? customSet.id : ''}`}>
+          <Link
+            href={{
+              pathname: '/equip/[itemSlotId]',
+              query: { itemSlotId: slot.id, customSetId: customSet?.id },
+            }}
+            as={`/equip/${slot.id}/${customSet ? customSet.id : ''}`}
+          >
             <div css={{ ...itemImageBox, ...(selected ? selectedBox : {}) }}>
               {slot.name}
             </div>

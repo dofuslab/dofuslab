@@ -43,6 +43,7 @@ const ItemTypeFilter: React.FC<IProps> = ({
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'flex-start',
+        marginTop: 8,
         ['.ant-checkbox-group-item']: {
           flex: '0 1 144px',
           [mq[1]]: {

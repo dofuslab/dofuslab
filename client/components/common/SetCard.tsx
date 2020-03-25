@@ -10,7 +10,7 @@ import { itemCardStyle, BORDER_COLOR } from 'common/mixins';
 import { useEquipSetMutation, useCustomSet } from 'common/utils';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { mq } from 'common/constants';
-import { useRouter } from 'next/router';
+import Router from 'next/router';
 
 interface IProps {
   set: sets_sets_edges_node;
@@ -35,15 +35,17 @@ const SetCard: React.FC<IProps> = ({
     (currMax, bonus) => Math.max(currMax, bonus.numItems),
     0,
   );
-  const router = useRouter();
 
   const onEquipSet = React.useCallback(() => {
     onClick();
     selectItemSlot && selectItemSlot(null);
     if (isMobile && customSet) {
-      router.push(`/set/${customSet.id}`);
+      Router.push(
+        { pathname: '/index', query: { customSetId } },
+        customSetId ? `/set/${customSetId}` : '/',
+      );
     }
-  }, [onClick, router, customSet]);
+  }, [onClick, customSet]);
 
   return (
     <Card
