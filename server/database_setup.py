@@ -181,6 +181,7 @@ if __name__ == "__main__":
                 level=record["level"],
                 image_url=record["imageUrl"],
             )
+            db.session.add(item)
 
             conditions = {
                 "conditions": record["conditions"].get("conditions", None),
@@ -192,7 +193,7 @@ if __name__ == "__main__":
                 if record["name"][locale] == None:
                     continue
                 item_translations = ModelItemTranslation(
-                    item_id=item.uuid, locale=locale, name=record["name"][locale],
+                    locale=locale, name=record["name"][locale],
                 )
                 db.session.add(item_translations)
                 item.item_translations.append(item_translations)
@@ -209,10 +210,14 @@ if __name__ == "__main__":
                     db.session.add(item_stat)
                     item.stats.append(item_stat)
                     i = i + 1
-                if record["customStats"] != {}:
-                    item_stat = ModelItemStat(order=i)
-                    for locale in record["customStats"]:
-                        for custom_stat in record["customStats"][locale]:
+
+                if record["customStats"] != {} and record["customStats"] != []:
+                    num_of_stats = len(record["customStats"]["en"])
+
+                    for j in range(num_of_stats):
+                        item_stat = ModelItemStat(order=i)
+                        for locale in record["customStats"]:
+                            custom_stat = record["customStats"][locale][j]
                             stat_translation = ModelItemStatTranslation(
                                 item_stat_id=item_stat.uuid,
                                 locale=locale,
@@ -221,9 +226,9 @@ if __name__ == "__main__":
                             db.session.add(stat_translation)
                             item_stat.item_stat_translation.append(stat_translation)
 
-                    item.stats.append(item_stat)
-
-                db.session.add(item)
+                        db.session.add(item_stat)
+                        item.stats.append(item_stat)
+                        i = i + 1
 
                 # If this item belongs in a set, query the set and add the relationship to the record
                 if record.get("setID", None):
@@ -250,6 +255,7 @@ if __name__ == "__main__":
                 level=record["level"],
                 image_url=record["imageUrl"],
             )
+            db.session.add(item)
 
             conditions = {
                 "conditions": record["conditions"]["conditions"],
@@ -276,10 +282,13 @@ if __name__ == "__main__":
                     db.session.add(item_stat)
                     item.stats.append(item_stat)
                     i = i + 1
-                if record["customStats"] != {}:
-                    item_stat = ModelItemStat(order=i)
-                    for locale in record["customStats"]:
-                        for custom_stat in record["customStats"][locale]:
+                if record["customStats"] != {} and record["customStats"] != []:
+                    num_of_stats = len(record["customStats"]["en"])
+
+                    for j in range(num_of_stats):
+                        item_stat = ModelItemStat(order=i)
+                        for locale in record["customStats"]:
+                            custom_stat = record["customStats"][locale][j]
                             stat_translation = ModelItemStatTranslation(
                                 item_stat_id=item_stat.uuid,
                                 locale=locale,
@@ -288,9 +297,9 @@ if __name__ == "__main__":
                             db.session.add(stat_translation)
                             item_stat.item_stat_translation.append(stat_translation)
 
-                    item.stats.append(item_stat)
-
-                db.session.add(item)
+                        db.session.add(item_stat)
+                        item.stats.append(item_stat)
+                        i = i + 1
 
                 # If this item belongs in a set, query the set and add the relationship to the record
                 if record["setID"]:
@@ -342,6 +351,7 @@ if __name__ == "__main__":
                 level=record["level"],
                 image_url=record["imageUrl"],
             )
+            db.session.add(item)
 
             conditions = {
                 "conditions": record["conditions"]["conditions"],
@@ -368,26 +378,24 @@ if __name__ == "__main__":
                     db.session.add(item_stat)
                     item.stats.append(item_stat)
                     i = i + 1
-                if record["customStats"] != {}:
-                    item_stat = ModelItemStat(order=i)
-                    for locale in record["customStats"]:
-                        stat_translation = ModelItemStatTranslation(
-                            item_stat_id=item_stat.uuid, locale=locale
-                        )
-                        for custom_stat in record["customStats"][locale]:
-                            item_custom_stat = ModelItemCustomStat(
-                                item_stat_translation_id=stat_translation.uuid,
+                if record["customStats"] != {} and record["customStats"] != []:
+                    num_of_stats = len(record["customStats"]["en"])
+
+                    for j in range(num_of_stats):
+                        item_stat = ModelItemStat(order=i)
+                        for locale in record["customStats"]:
+                            custom_stat = record["customStats"][locale][j]
+                            stat_translation = ModelItemStatTranslation(
+                                item_stat_id=item_stat.uuid,
+                                locale=locale,
                                 custom_stat=custom_stat,
                             )
-                            db.session.add(item_custom_stat)
-                            stat_translation.custom_stats.append(item_custom_stat)
+                            db.session.add(stat_translation)
+                            item_stat.item_stat_translation.append(stat_translation)
 
-                        db.session.add(stat_translation)
-                        item_stat.item_stat_translation.append(stat_translation)
-
-                    item.stats.append(item_stat)
-
-                db.session.add(item)
+                        db.session.add(item_stat)
+                        item.stats.append(item_stat)
+                        i = i + 1
 
                 # If this item belongs in a set, query the set and add the relationship to the record
                 if record["setID"]:
