@@ -15,7 +15,6 @@ def update_item_urls_in_db():
     mappings = []
 
     for item in db.session.query(ModelItem):
-        print(item.image_url)
         info = {
             "uuid": item.uuid,
             "image_url": url_base + re.search("\d+\.png", item.image_url)[0],
