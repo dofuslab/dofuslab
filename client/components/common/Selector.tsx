@@ -2,20 +2,26 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import {
-  SharedFilters,
-  SharedFilterAction,
-  MobileScreen,
-  mobileScreenTypes,
-} from 'common/types';
+import { useQuery } from '@apollo/react-hooks';
+import { SharedFilters, SharedFilterAction } from 'common/types';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
+import {
+  itemSlots_itemSlots,
+  itemSlots,
+} from 'graphql/queries/__generated__/itemSlots';
 import { topMarginStyle } from 'common/mixins';
 import SelectorFilters from './SelectorFilters';
 import ItemSelector from './ItemSelector';
 import { mq } from 'common/constants';
 import SetSelector from './SetSelector';
 import BackTop from 'antd/lib/back-top';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRedo } from '@fortawesome/free-solid-svg-icons';
+import Button from 'antd/lib/button';
+import { useTranslation } from 'i18n';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import ItemTypeFilter from './ItemTypeFilter';
+import { uniqWith, isEqual } from 'lodash';
 
 const reducer = (state: SharedFilters, action: SharedFilterAction) => {
   switch (action.type) {
@@ -39,11 +45,10 @@ const reducer = (state: SharedFilters, action: SharedFilterAction) => {
 interface IProps {
   customSet?: customSet | null;
   selectedItemSlot: itemSlots_itemSlots | null;
-  selectItemSlot: React.Dispatch<
+  selectItemSlot?: React.Dispatch<
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
   showSets?: boolean;
-  setMobileScreen?: React.Dispatch<React.SetStateAction<MobileScreen>>;
   windowNode?: Window | null;
 }
 
@@ -52,7 +57,6 @@ const Selector: React.FC<IProps> = ({
   selectedItemSlot,
   selectItemSlot,
   showSets,
-  setMobileScreen,
   windowNode,
 }) => {
   const [filters, dispatch] = React.useReducer(reducer, {
@@ -60,6 +64,11 @@ const Selector: React.FC<IProps> = ({
     maxLevel: customSet?.level || 200,
     search: '',
   });
+
+  const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);
+  const itemSlots = itemSlotsData?.itemSlots;
+
+  const [itemTypeIds, setItemTypeIds] = React.useState<Set<string>>(new Set());
 
   const [showSetsState, setShowSetsState] = React.useState(showSets || false);
 
@@ -70,10 +79,12 @@ const Selector: React.FC<IProps> = ({
 
   const selectorDivRef = React.useRef<HTMLDivElement>(null);
 
-  const goHomeMobile = React.useCallback(() => {
-    setMobileScreen && setMobileScreen(mobileScreenTypes.HOME);
-    selectItemSlot(null);
-  }, [setMobileScreen]);
+  const onReset = React.useCallback(() => {
+    dispatch({ type: 'RESET', maxLevel: customSet?.level || 200 });
+    setItemTypeIds(new Set());
+  }, [dispatch, customSet]);
+
+  const { t } = useTranslation('common');
 
   return (
     <>
@@ -102,25 +113,51 @@ const Selector: React.FC<IProps> = ({
           customSetLevel={customSet?.level || null}
           showSets={showSetsState}
           setShowSets={setShowSetsState}
-          goHomeMobile={goHomeMobile}
         />
+        {itemSlots && !showSets && (
+          <ItemTypeFilter
+            setItemTypeIds={setItemTypeIds}
+            itemTypeIds={itemTypeIds}
+            itemTypes={uniqWith(
+              itemSlots
+                .filter(
+                  slot => !selectedItemSlot || selectedItemSlot.id === slot.id,
+                )
+                .flatMap(slot => slot.itemTypes),
+              isEqual,
+            )}
+          />
+        )}
+        <Button
+          css={{
+            fontSize: '0.75rem',
+            margin: '12px 0',
+            height: 42,
+            [mq[1]]: {
+              height: 'auto',
+            },
+            [mq[4]]: { marginTop: '20px 0' },
+          }}
+          onClick={onReset}
+        >
+          <FontAwesomeIcon icon={faRedo} css={{ marginRight: 8 }} />
+          {t('RESET_ALL_FILTERS')}
+        </Button>
         {showSetsState ? (
           <SetSelector
             customSet={customSet}
             filters={filters}
-            setMobileScreen={setMobileScreen}
             windowNode={windowNode}
             selectItemSlot={selectItemSlot}
           />
         ) : (
           <ItemSelector
             key={`selected-item-slot-${selectedItemSlot?.id}-level-${customSet?.level}`}
+            itemTypeIds={itemTypeIds}
             selectedItemSlot={selectedItemSlot}
             customSet={customSet}
-            selectItemSlot={selectItemSlot}
             customSetItemIds={customSetItemIds}
             filters={filters}
-            setMobileScreen={setMobileScreen}
             windowNode={windowNode}
           />
         )}

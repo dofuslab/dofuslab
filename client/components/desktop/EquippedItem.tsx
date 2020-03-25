@@ -10,9 +10,8 @@ import {
   customSet,
   customSet_equippedItems,
 } from 'graphql/fragments/__generated__/customSet';
-import EquippedItemWithStats from './EquippedItemWithStats';
+import EquippedItemWithStats from '../common/EquippedItemWithStats';
 import { item_set } from 'graphql/fragments/__generated__/item';
-import { MobileScreen, mobileScreenTypes } from 'common/types';
 
 interface IProps {
   slot: itemSlots_itemSlots;
@@ -24,7 +23,6 @@ interface IProps {
   selected: boolean;
   openMageModal: (equippedItem: customSet_equippedItems) => void;
   openSetModal: (set: item_set) => void;
-  setMobileScreen?: React.Dispatch<React.SetStateAction<MobileScreen>>;
 }
 
 const EquippedItem: React.FC<IProps> = ({
@@ -35,7 +33,6 @@ const EquippedItem: React.FC<IProps> = ({
   customSet,
   openMageModal,
   openSetModal,
-  setMobileScreen,
   ...restProps
 }) => {
   const onClick = React.useCallback(() => {
@@ -44,14 +41,7 @@ const EquippedItem: React.FC<IProps> = ({
     } else {
       selectItemSlot(slot);
     }
-    if (setMobileScreen) {
-      if (equippedItem) {
-        setMobileScreen(mobileScreenTypes.EQUIPPED_ITEM);
-      } else {
-        setMobileScreen(mobileScreenTypes.ITEM_SELECTOR);
-      }
-    }
-  }, [selectItemSlot, slot, selected, setMobileScreen, equippedItem]);
+  }, [selectItemSlot, slot, selected, equippedItem]);
 
   return (
     <>
@@ -64,7 +54,6 @@ const EquippedItem: React.FC<IProps> = ({
             itemSlotId={slot.id}
             openMageModal={openMageModal}
             openSetModal={openSetModal}
-            setMobileScreen={setMobileScreen}
           />
         ) : (
           <div css={{ ...itemImageBox, ...(selected ? selectedBox : {}) }}>

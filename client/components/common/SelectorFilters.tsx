@@ -12,14 +12,16 @@ import Switch from 'antd/lib/switch';
 import { useTranslation } from 'i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faRedo,
   faCubes,
   faCube,
-  faTimes,
+  faArrowLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import { SharedFilterAction, SharedFilters } from 'common/types';
 import { useDebounceCallback } from '@react-hook/debounce';
 import Tooltip from 'antd/lib/tooltip';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { Media } from './Media';
 
 const { Option } = Select;
 
@@ -29,7 +31,6 @@ interface IProps {
   customSetLevel: number | null;
   showSets: boolean;
   setShowSets: React.Dispatch<React.SetStateAction<boolean>>;
-  goHomeMobile?: () => void;
 }
 
 const SelectorFilters: React.FC<IProps> = ({
@@ -38,8 +39,9 @@ const SelectorFilters: React.FC<IProps> = ({
   customSetLevel,
   showSets,
   setShowSets,
-  goHomeMobile,
 }) => {
+  const router = useRouter();
+  const { customSetId } = router.query;
   const [search, setSearch] = React.useState('');
   const [maxLevel, setMaxLevel] = React.useState(customSetLevel || 200);
   const handleSearchChange = React.useCallback(
@@ -91,12 +93,6 @@ const SelectorFilters: React.FC<IProps> = ({
     [dispatch],
   );
 
-  const onResetFilters = React.useCallback(() => {
-    setSearch('');
-    setMaxLevel(customSetLevel || 200);
-    dispatch({ type: 'RESET', maxLevel: customSetLevel || 200 });
-  }, [dispatch, setMaxLevel, setSearch]);
-
   const { t } = useTranslation(['common', 'stat']);
 
   return (
@@ -139,6 +135,14 @@ const SelectorFilters: React.FC<IProps> = ({
             },
           }}
         >
+          <Media lessThan="xs">
+            <Link href={customSetId ? `/set/${customSetId}` : '/'}>
+              <Button size="large">
+                <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
+                {t('BACK')}
+              </Button>
+            </Link>
+          </Media>
           <div css={{ display: 'flex', alignItems: 'center' }}>
             <span css={{ [mq[1]]: { display: 'none' } }}>{t('ITEMS')}</span>
             <Tooltip title={t(showSets ? 'VIEW_ITEMS' : 'VIEW_SETS')}>
@@ -152,15 +156,6 @@ const SelectorFilters: React.FC<IProps> = ({
             </Tooltip>
             <span css={{ [mq[1]]: { display: 'none' } }}>{t('SETS')}</span>
           </div>
-          <FontAwesomeIcon
-            css={{
-              fontSize: '1rem',
-              cursor: 'pointer',
-              [mq[1]]: { display: 'none' },
-            }}
-            icon={faTimes}
-            onClick={goHomeMobile}
-          />
         </div>
         <div
           css={{
@@ -249,23 +244,6 @@ const SelectorFilters: React.FC<IProps> = ({
             </Select>
           )}
         </ClassNames>
-        <Button
-          css={{
-            fontSize: '0.75rem',
-            marginTop: 12,
-            height: 42,
-            [mq[1]]: {
-              marginTop: 0,
-              marginLeft: 12,
-              height: 'auto',
-            },
-            [mq[4]]: { marginLeft: 20 },
-          }}
-          onClick={onResetFilters}
-        >
-          <FontAwesomeIcon icon={faRedo} css={{ marginRight: 8 }} />
-          {t('RESET_ALL_FILTERS')}
-        </Button>
       </div>
     </div>
   );

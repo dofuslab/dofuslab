@@ -7,7 +7,6 @@ import { Waypoint } from 'react-waypoint';
 import Card from 'antd/lib/card';
 import Skeleton from 'antd/lib/skeleton';
 import { useDebounceCallback } from '@react-hook/debounce';
-import { uniqWith, isEqual } from 'lodash';
 
 import ItemCard from './ItemCard';
 import { ResponsiveGrid } from 'common/wrappers';
@@ -15,13 +14,8 @@ import ItemsQuery from 'graphql/queries/items.graphql';
 import { items, itemsVariables } from 'graphql/queries/__generated__/items';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { itemCardStyle, BORDER_COLOR } from 'common/mixins';
-import {
-  itemSlots_itemSlots,
-  itemSlots,
-} from 'graphql/queries/__generated__/itemSlots';
-import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
-import ItemTypeFilter from './ItemTypeFilter';
-import { SharedFilters, MobileScreen } from 'common/types';
+import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
+import { SharedFilters } from 'common/types';
 import { findEmptyOrOnlySlotId } from 'common/utils';
 import ConfirmReplaceItemPopover from '../desktop/ConfirmReplaceItemPopover';
 import { item_set } from 'graphql/fragments/__generated__/item';
@@ -35,13 +29,13 @@ const BOTTOM_OFFSET = -1200;
 interface IProps {
   selectedItemSlot: itemSlots_itemSlots | null;
   customSet?: customSet | null;
-  selectItemSlot: React.Dispatch<
+  selectItemSlot?: React.Dispatch<
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
   customSetItemIds: Set<string>;
   filters: SharedFilters;
-  setMobileScreen?: React.Dispatch<React.SetStateAction<MobileScreen>>;
   windowNode?: Window | null;
+  itemTypeIds: Set<string>;
 }
 
 const ItemSelector: React.FC<IProps> = ({
@@ -50,16 +44,16 @@ const ItemSelector: React.FC<IProps> = ({
   selectItemSlot,
   customSetItemIds,
   filters,
-  setMobileScreen,
   windowNode,
+  itemTypeIds,
 }) => {
-  const [itemTypeIds, setItemTypeIds] = React.useState<Array<string>>([]);
+  const itemTypeIdsArr = Array.from(itemTypeIds);
   const queryFilters = {
     ...filters,
     itemTypeIds:
-      selectedItemSlot && itemTypeIds.length === 0
+      selectedItemSlot && itemTypeIdsArr.length === 0
         ? selectedItemSlot.itemTypes.map(type => type.id)
-        : itemTypeIds,
+        : itemTypeIdsArr,
   };
   const { data, loading, fetchMore, networkStatus } = useQuery<
     items,
@@ -68,9 +62,6 @@ const ItemSelector: React.FC<IProps> = ({
     variables: { first: PAGE_SIZE, filters: queryFilters },
     notifyOnNetworkStatusChange: true,
   });
-
-  const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);
-  const itemSlots = itemSlotsData?.itemSlots;
 
   const endCursorRef = React.useRef<string | null>(null);
 
@@ -157,20 +148,6 @@ const ItemSelector: React.FC<IProps> = ({
       }}
       ref={responsiveGridRef}
     >
-      {itemSlots && (
-        <ItemTypeFilter
-          setItemTypeIds={setItemTypeIds}
-          itemTypeIds={itemTypeIds}
-          itemTypes={uniqWith(
-            itemSlots
-              .filter(
-                slot => !selectedItemSlot || selectedItemSlot.id === slot.id,
-              )
-              .flatMap(slot => slot.itemTypes),
-            isEqual,
-          )}
-        />
-      )}
       {data &&
         data.items.edges
           .map(edge => edge.node)
@@ -187,7 +164,6 @@ const ItemSelector: React.FC<IProps> = ({
                 customSetId={customSet?.id ?? null}
                 selectItemSlot={selectItemSlot}
                 openSetModal={openSetModal}
-                setMobileScreen={setMobileScreen}
               />
             );
             return itemSlotId || !customSet ? (

@@ -15,12 +15,13 @@ import {
 import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 
-import EquippedItem from './EquippedItem';
+import DesktopEquippedItem from '../desktop/EquippedItem';
+import MobileEquippedItem from '../mobile/EquippedItem';
 import { mq } from 'common/constants';
 import MageModal from './MageModal';
 import { useSetModal } from 'common/utils';
 import SetModal from './SetModal';
-import { MobileScreen } from 'common/types';
+import { Media } from './Media';
 
 interface IProps {
   customSet?: customSet | null;
@@ -28,14 +29,12 @@ interface IProps {
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
   selectedItemSlotId: string | null;
-  setMobileScreen?: React.Dispatch<React.SetStateAction<MobileScreen>>;
 }
 
 const EquipmentSlots: React.FC<IProps> = ({
   customSet,
   selectItemSlot,
   selectedItemSlotId,
-  setMobileScreen,
 }) => {
   const { data } = useQuery<itemSlots>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
@@ -91,17 +90,31 @@ const EquipmentSlots: React.FC<IProps> = ({
       }}
     >
       {itemSlots?.map(slot => (
-        <EquippedItem
-          slot={slot}
-          key={slot.id}
-          equippedItem={equippedItemsBySlotId[slot.id]}
-          selected={selectedItemSlotId === slot.id}
-          selectItemSlot={selectItemSlot}
-          customSet={customSet}
-          openMageModal={openMageModal}
-          openSetModal={openSetModal}
-          setMobileScreen={setMobileScreen}
-        />
+        <React.Fragment key={slot.id}>
+          <Media lessThan="xs">
+            <MobileEquippedItem
+              slot={slot}
+              key={slot.id}
+              equippedItem={equippedItemsBySlotId[slot.id]}
+              selected={selectedItemSlotId === slot.id}
+              customSet={customSet}
+              openMageModal={openMageModal}
+              openSetModal={openSetModal}
+            />
+          </Media>
+          <Media greaterThanOrEqual="xs">
+            <DesktopEquippedItem
+              slot={slot}
+              key={slot.id}
+              equippedItem={equippedItemsBySlotId[slot.id]}
+              selected={selectedItemSlotId === slot.id}
+              selectItemSlot={selectItemSlot}
+              customSet={customSet}
+              openMageModal={openMageModal}
+              openSetModal={openSetModal}
+            />
+          </Media>
+        </React.Fragment>
       ))}
       {customSet && equippedItem && (
         <MageModal

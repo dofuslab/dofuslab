@@ -125,7 +125,6 @@ const EquippedItemWithStats: React.FC<IProps> = ({
       <Media greaterThanOrEqual="xs">
         <ClassNames>
           {({ css }) => {
-            console.log('hey');
             return (
               <Popover
                 placement="bottomLeft"

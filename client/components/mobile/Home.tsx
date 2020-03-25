@@ -12,7 +12,6 @@ import { topMarginStyle } from 'common/mixins';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getStatsFromCustomSet } from 'common/utils';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import { MobileScreen } from 'common/types';
 
 interface IProps {
   customSet?: customSet | null;
@@ -20,14 +19,12 @@ interface IProps {
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
   selectedItemSlot: itemSlots_itemSlots | null;
-  setMobileScreen: React.Dispatch<React.SetStateAction<MobileScreen>>;
 }
 
 const Home: React.FC<IProps> = ({
   customSet,
   selectItemSlot,
   selectedItemSlot,
-  setMobileScreen,
 }) => {
   const statsFromCustomSet = React.useMemo(
     () => getStatsFromCustomSet(customSet),
@@ -41,7 +38,6 @@ const Home: React.FC<IProps> = ({
         customSet={customSet}
         selectItemSlot={selectItemSlot}
         selectedItemSlotId={selectedItemSlot?.id ?? null}
-        setMobileScreen={setMobileScreen}
       />
       <div
         css={{

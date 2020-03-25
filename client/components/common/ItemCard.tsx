@@ -6,18 +6,16 @@ import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { useEquipItemMutation, useCustomSet } from 'common/utils';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import BasicItemCard from './BasicItemCard';
-import { MobileScreen, mobileScreenTypes } from 'common/types';
 
 interface IProps {
   item: item;
   itemSlotId: string | null;
   customSetId: string | null;
-  selectItemSlot: React.Dispatch<
+  selectItemSlot?: React.Dispatch<
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
   equipped: boolean;
   openSetModal: (set: item_set) => void;
-  setMobileScreen?: React.Dispatch<React.SetStateAction<MobileScreen>>;
 }
 
 const ItemCard: React.FC<IProps> = ({
@@ -27,7 +25,6 @@ const ItemCard: React.FC<IProps> = ({
   selectItemSlot,
   equipped,
   openSetModal,
-  setMobileScreen,
 }) => {
   const customSet = useCustomSet(customSetId);
 
@@ -35,8 +32,7 @@ const ItemCard: React.FC<IProps> = ({
 
   const onClick = React.useCallback(async () => {
     if (itemSlotId) {
-      selectItemSlot(null);
-      setMobileScreen && setMobileScreen(mobileScreenTypes.HOME);
+      selectItemSlot && selectItemSlot(null);
       await mutate(itemSlotId);
     }
   }, [item, itemSlotId, customSet, mutate, selectItemSlot]);
