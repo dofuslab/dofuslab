@@ -91,6 +91,8 @@ const EquippedItemPage: NextPage = () => {
           setId={selectedSet.id}
           setName={selectedSet.name}
           onCancel={closeSetModal}
+          customSet={customSet}
+          isMobile
         />
       )}
     </Layout>

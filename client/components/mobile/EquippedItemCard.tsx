@@ -12,7 +12,7 @@ import {
   faMagic,
   faTrashAlt,
   faStar,
-  faTimes,
+  faArrowLeft,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { useTranslation } from 'i18n';
@@ -28,9 +28,11 @@ import {
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import ItemStatsList from '../common/ItemStatsList';
 import { item_set } from 'graphql/fragments/__generated__/item';
-import { MobileScreen, mobileScreenTypes } from 'common/types';
-import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { TruncatableText } from 'common/wrappers';
+import { useRouter } from 'next/router';
+import { Media } from 'components/common/Media';
+import Link from 'next/link';
+import Button from 'antd/lib/button';
 
 const quickMageStats = [
   {
@@ -63,10 +65,6 @@ interface IProps {
   customSet: customSet;
   openMageModal: (equippedItem: customSet_customSetById_equippedItems) => void;
   openSetModal: (set: item_set) => void;
-  setMobileScreen?: React.Dispatch<React.SetStateAction<MobileScreen>>;
-  selectItemSlot?: React.Dispatch<
-    React.SetStateAction<itemSlots_itemSlots | null>
-  >;
 }
 
 const EquippedItemCard: React.FC<IProps> = ({
@@ -75,10 +73,10 @@ const EquippedItemCard: React.FC<IProps> = ({
   customSet,
   openMageModal,
   openSetModal,
-  setMobileScreen,
-  selectItemSlot,
 }) => {
   const { t } = useTranslation(['common', 'mage', 'stat']);
+
+  const router = useRouter();
 
   const deleteItem = useDeleteItemMutation(itemSlotId, customSet);
 
@@ -104,9 +102,8 @@ const EquippedItemCard: React.FC<IProps> = ({
 
   const onDelete = React.useCallback(() => {
     deleteItem();
-    setMobileScreen && setMobileScreen(mobileScreenTypes.HOME);
-    selectItemSlot && selectItemSlot(null);
-  }, [deleteItem, setMobileScreen, selectItemSlot]);
+    router.push(`/set/${customSet.id}`);
+  }, [deleteItem, customSet]);
 
   const client = useApolloClient();
 
@@ -155,19 +152,16 @@ const EquippedItemCard: React.FC<IProps> = ({
     openMageModal(equippedItem);
   }, [openMageModal, equippedItem]);
 
-  const onBackClick = React.useCallback(() => {
-    setMobileScreen && setMobileScreen(mobileScreenTypes.HOME);
-    selectItemSlot && selectItemSlot(null);
-  }, [setMobileScreen, selectItemSlot]);
-
   return (
     <div css={{ padding: '0 12px', marginTop: 12 }}>
-      <div
-        onClick={onBackClick}
-        css={{ fontSize: '1rem', display: 'flex', justifyContent: 'flex-end' }}
-      >
-        <FontAwesomeIcon icon={faTimes} />
-      </div>
+      <Media lessThan="xs">
+        <Link href={customSet ? `/set/${customSet.id}` : '/'}>
+          <Button size="large">
+            <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
+            {t('BACK')}
+          </Button>
+        </Link>
+      </Media>
       <Card
         size="small"
         title={

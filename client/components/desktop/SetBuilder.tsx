@@ -25,11 +25,11 @@ import Selector from '../common/Selector';
 
 const SetBuilder: React.FC = () => {
   const router = useRouter();
-  const { id: setId } = router.query;
+  const { customSetId } = router.query;
 
   const { data: customSetData } = useQuery<customSet, customSetVariables>(
     CustomSetQuery,
-    { variables: { id: setId }, skip: !setId },
+    { variables: { id: customSetId }, skip: !customSetId },
   );
 
   const [

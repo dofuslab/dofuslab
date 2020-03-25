@@ -9,7 +9,7 @@ import { useDebounceCallback } from '@react-hook/debounce';
 import { ResponsiveGrid, CardSkeleton } from 'common/wrappers';
 import SetQuery from 'graphql/queries/sets.graphql';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { SharedFilters, MobileScreen } from 'common/types';
+import { SharedFilters } from 'common/types';
 import { sets, setsVariables } from 'graphql/queries/__generated__/sets';
 import SetCard from './SetCard';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
@@ -22,19 +22,17 @@ const BOTTOM_OFFSET = -1200;
 interface IProps {
   customSet?: customSet | null;
   filters: SharedFilters;
-  setMobileScreen?: React.Dispatch<React.SetStateAction<MobileScreen>>;
-  windowNode?: Window | null;
   selectItemSlot?: React.Dispatch<
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
+  isMobile?: boolean;
 }
 
 const SetSelector: React.FC<IProps> = ({
   customSet,
   filters,
-  setMobileScreen,
-  windowNode,
   selectItemSlot,
+  isMobile,
 }) => {
   const { data, loading, fetchMore, networkStatus } = useQuery<
     sets,
@@ -123,8 +121,8 @@ const SetSelector: React.FC<IProps> = ({
               key={set.id}
               set={set}
               customSetId={customSet?.id ?? null}
-              setMobileScreen={setMobileScreen}
               selectItemSlot={selectItemSlot}
+              isMobile={isMobile}
             />
           ))}
       {(loading || data?.sets.pageInfo.hasNextPage) &&
@@ -135,7 +133,6 @@ const SetSelector: React.FC<IProps> = ({
         key={networkStatus}
         onEnter={onLoadMore}
         bottomOffset={BOTTOM_OFFSET}
-        scrollableAncestor={windowNode || undefined}
       />
     </ResponsiveGrid>
   );

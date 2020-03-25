@@ -17,12 +17,16 @@ import Home from './Home';
 
 const SetBuilder: React.FC = () => {
   const router = useRouter();
-  const { id: setId } = router.query;
+  const { customSetId } = router.query;
 
-  const { data: customSetData } = useQuery<customSet, customSetVariables>(
-    CustomSetQuery,
-    { variables: { id: setId }, skip: !setId },
-  );
+  console.log(customSetId);
+
+  const { data: customSetData, error, loading } = useQuery<
+    customSet,
+    customSetVariables
+  >(CustomSetQuery, { variables: { id: customSetId }, skip: !customSetId });
+
+  console.log(customSetData, error, loading);
 
   const [
     selectedItemSlot,

@@ -29,12 +29,14 @@ interface IProps {
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
   selectedItemSlotId: string | null;
+  isMobile?: boolean;
 }
 
 const EquipmentSlots: React.FC<IProps> = ({
   customSet,
   selectItemSlot,
   selectedItemSlotId,
+  isMobile,
 }) => {
   const { data } = useQuery<itemSlots>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
@@ -131,6 +133,8 @@ const EquipmentSlots: React.FC<IProps> = ({
           setName={selectedSet.name}
           visible={setModalVisible}
           onCancel={closeSetModal}
+          customSet={customSet}
+          isMobile={isMobile}
         />
       )}
     </div>

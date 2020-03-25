@@ -49,7 +49,7 @@ interface IProps {
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
   showSets?: boolean;
-  windowNode?: Window | null;
+  isMobile?: boolean;
 }
 
 const Selector: React.FC<IProps> = ({
@@ -57,7 +57,7 @@ const Selector: React.FC<IProps> = ({
   selectedItemSlot,
   selectItemSlot,
   showSets,
-  windowNode,
+  isMobile,
 }) => {
   const [filters, dispatch] = React.useReducer(reducer, {
     stats: [],
@@ -147,8 +147,8 @@ const Selector: React.FC<IProps> = ({
           <SetSelector
             customSet={customSet}
             filters={filters}
-            windowNode={windowNode}
             selectItemSlot={selectItemSlot}
+            isMobile={isMobile}
           />
         ) : (
           <ItemSelector
@@ -158,7 +158,7 @@ const Selector: React.FC<IProps> = ({
             customSet={customSet}
             customSetItemIds={customSetItemIds}
             filters={filters}
-            windowNode={windowNode}
+            isMobile={isMobile}
           />
         )}
       </div>

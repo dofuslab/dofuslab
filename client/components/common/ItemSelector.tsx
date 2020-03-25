@@ -34,8 +34,8 @@ interface IProps {
   >;
   customSetItemIds: Set<string>;
   filters: SharedFilters;
-  windowNode?: Window | null;
   itemTypeIds: Set<string>;
+  isMobile?: boolean;
 }
 
 const ItemSelector: React.FC<IProps> = ({
@@ -44,8 +44,8 @@ const ItemSelector: React.FC<IProps> = ({
   selectItemSlot,
   customSetItemIds,
   filters,
-  windowNode,
   itemTypeIds,
+  isMobile,
 }) => {
   const itemTypeIdsArr = Array.from(itemTypeIds);
   const queryFilters = {
@@ -164,6 +164,7 @@ const ItemSelector: React.FC<IProps> = ({
                 customSetId={customSet?.id ?? null}
                 selectItemSlot={selectItemSlot}
                 openSetModal={openSetModal}
+                isMobile={isMobile}
               />
             );
             return itemSlotId || !customSet ? (
@@ -198,7 +199,6 @@ const ItemSelector: React.FC<IProps> = ({
         key={networkStatus}
         onEnter={onLoadMore}
         bottomOffset={BOTTOM_OFFSET}
-        scrollableAncestor={windowNode || undefined}
       />
       {selectedSet && (
         <SetModal
@@ -207,6 +207,7 @@ const ItemSelector: React.FC<IProps> = ({
           visible={setModalVisible}
           onCancel={closeSetModal}
           customSet={customSet}
+          isMobile={isMobile}
         />
       )}
     </ResponsiveGrid>

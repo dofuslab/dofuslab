@@ -8,24 +8,24 @@ import { TruncatableText, SetBonuses } from 'common/wrappers';
 import { sets_sets_edges_node } from 'graphql/queries/__generated__/sets';
 import { itemCardStyle, BORDER_COLOR } from 'common/mixins';
 import { useEquipSetMutation, useCustomSet } from 'common/utils';
-import { MobileScreen, mobileScreenTypes } from 'common/types';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { mq } from 'common/constants';
+import { useRouter } from 'next/router';
 
 interface IProps {
   set: sets_sets_edges_node;
   customSetId: string | null;
-  setMobileScreen?: React.Dispatch<React.SetStateAction<MobileScreen>>;
   selectItemSlot?: React.Dispatch<
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
+  isMobile?: boolean;
 }
 
 const SetCard: React.FC<IProps> = ({
   set,
   customSetId,
-  setMobileScreen,
   selectItemSlot,
+  isMobile,
 }) => {
   const customSet = useCustomSet(customSetId);
 
@@ -35,12 +35,15 @@ const SetCard: React.FC<IProps> = ({
     (currMax, bonus) => Math.max(currMax, bonus.numItems),
     0,
   );
+  const router = useRouter();
 
   const onEquipSet = React.useCallback(() => {
     onClick();
-    setMobileScreen && setMobileScreen(mobileScreenTypes.HOME);
     selectItemSlot && selectItemSlot(null);
-  }, [setMobileScreen, onClick]);
+    if (isMobile && customSet) {
+      router.push(`/set/${customSet.id}`);
+    }
+  }, [onClick, router, customSet]);
 
   return (
     <Card

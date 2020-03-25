@@ -272,7 +272,7 @@ export const useEquipItemMutation = (
   customSet?: customSet | null,
 ) => {
   const router = useRouter();
-  const { id: setId } = router.query;
+  const { customSetId } = router.query;
 
   const [updateCustomSetItem] = useMutation<
     updateCustomSetItem,
@@ -329,13 +329,13 @@ export const useEquipItemMutation = (
       if (!ok) return;
       const { data } = await updateCustomSetItem({
         variables: {
-          customSetId: setId,
+          customSetId,
           itemId: item.id,
           itemSlotId,
         },
       });
 
-      if (data?.updateCustomSetItem?.customSet.id !== setId) {
+      if (data?.updateCustomSetItem?.customSet.id !== customSetId) {
         router.replace(
           `/?id=${data?.updateCustomSetItem?.customSet.id}`,
           `/set/${data?.updateCustomSetItem?.customSet.id}`,
@@ -345,7 +345,7 @@ export const useEquipItemMutation = (
         );
       }
     },
-    [updateCustomSetItem, setId, item],
+    [updateCustomSetItem, customSetId, item],
   );
 
   return onClick;
@@ -359,7 +359,7 @@ export const useEquipSetMutation = (
   { data?: equipSet; loading: boolean; error?: ApolloError },
 ] => {
   const router = useRouter();
-  const { id: routerSetId } = router.query;
+  const { customSetId: routerSetId } = router.query;
 
   const [equipSet, { data, loading, error }] = useMutation<
     equipSet,

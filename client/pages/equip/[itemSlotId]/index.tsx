@@ -48,6 +48,7 @@ const EquipPage: NextPage = () => {
         customSet={customSet}
         selectedItemSlot={itemSlot}
         showSets={false}
+        isMobile
       />
     </Layout>
   );
