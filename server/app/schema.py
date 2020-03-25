@@ -70,21 +70,16 @@ EffectEnum = graphene.Enum.from_enum(Effect)
 
 
 class ItemStat(SQLAlchemyObjectType):
-    custom_stats = graphene.List(graphene.NonNull(graphene.String))
+    custom_stat = graphene.String()
 
-    def resolve_custom_stats(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
-
+    def resolve_custom_stat(self, info):
         query = (
             db.session.query(ModelItemStatTranslation)
-            .filter(ModelItemStatTranslation.locale == locale)
             .filter(ModelItemStatTranslation.item_stat_id == self.uuid)
-            .all()
+            .one()
         )
 
-        return [translation.custom_stat for translation in query]
+        return query.custom_stat
 
     class Meta:
         model = ModelItemStat
@@ -138,9 +133,14 @@ class Item(SQLAlchemyObjectType):
         )
 
     def resolve_stats(self, info):
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
         query = (
             db.session.query(ModelItemStat)
+            .join(ModelItemStatTranslation)
             .filter(ModelItemStat.item_id == self.uuid)
+            .filter(ModelItemStatTranslation.locale == locale)
             .order_by(ModelItemStat.order)
         )
         return query
@@ -156,21 +156,21 @@ class ItemConnection(NonNullConnection):
 
 
 class SetBonus(SQLAlchemyObjectType):
-    custom_stats = graphene.List(graphene.String)
+    custom_stat = graphene.String()
 
-    def resolve_custom_stats(self, info):
+    def resolve_custom_stat(self, info):
         locale = info.context.accept_languages.best_match(
             supported_languages, default="en"
         )
-
         query = (
             db.session.query(ModelSetBonusTranslation)
-            .filter(ModelSetBonusTranslation.locale == locale)
             .filter(ModelSetBonusTranslation.set_bonus_id == self.uuid)
-            .all()
+            .filter(ModelSetBonusTranslation.locale == locale)
+            .one_or_none()
         )
 
-        return [translation.custom_stat for translation in query]
+        if query:
+            return query.custom_stat
 
     class Meta:
         model = ModelSetBonus
@@ -193,6 +193,21 @@ class Set(SQLAlchemyObjectType):
             .one()
             .name
         )
+
+    def resolve_bonuses(self, info):
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+        # query = (
+        #     db.session.query(ModelSetBonus)
+        #     .join(ModelSetBonusTranslation)
+        #     .filter(ModelSetBonus.set_id == self.uuid)
+        #     .filter(ModelSetTranslation.locale == locale)
+        # )
+        query = db.session.query(ModelSetBonus).filter(
+            ModelSetBonus.set_id == self.uuid
+        )
+        return query
 
     class Meta:
         model = ModelSet
