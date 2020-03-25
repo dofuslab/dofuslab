@@ -123053,12 +123053,7 @@
     "customStats": {
       "en": [
         "The bearer becomes invisible (1 turn) at the start of their first round"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123081,12 +123076,7 @@
     "customStats": {
       "en": [
         "The bear gains the Gravity state as long as they have not suffered any damage"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123109,12 +123099,7 @@
     "customStats": {
       "en": [
         "At the end of their first turn, the bearer reduces damage by 20% (1 turn) for each enemy within 2 cells"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123137,12 +123122,7 @@
     "customStats": {
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 9 cells away and loses 2 AP (2 turns) per enemy within 9 cells"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123165,12 +123145,7 @@
     "customStats": {
       "en": [
         "Heals 100% of the enemy damage suffered until the end of the first turn"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123193,12 +123168,7 @@
     "customStats": {
       "en": [
         "The bearer gains 300 Power (1 turn) if they suffer an enemy hit before playing"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123221,12 +123191,7 @@
     "customStats": {
       "en": [
         "The bearer gains +4 AP for their first round but also loses 4 MP"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123249,12 +123214,7 @@
     "customStats": {
       "en": [
         "The bearer gains 4 AP for 1 turn but inflicts -50% damage"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123277,12 +123237,7 @@
     "customStats": {
       "en": [
         "The bearer gains 100% of their current health in shield points for their first round"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123305,12 +123260,7 @@
     "customStats": {
       "en": [
         "The bearer gains 50 Critial for 1 turn"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123333,12 +123283,7 @@
     "customStats": {
       "en": [
         "At the end of their first turn, the bearer reduces damage by 5% (3 turns) for each enemy within 2 cells"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123361,12 +123306,7 @@
     "customStats": {
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 15 cells away"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123389,12 +123329,7 @@
     "customStats": {
       "en": [
         "Heals 15% of the enemy damage suffered until the end of the third turn"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123417,12 +123352,7 @@
     "customStats": {
       "en": [
         "The bearer reduces damage suffered by 80% before playing"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123445,12 +123375,7 @@
     "customStats": {
       "en": [
         "The bearer gains 100 Power (3 turns) if they suffer an enemy hit before playing"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123473,12 +123398,7 @@
     "customStats": {
       "en": [
         "The bearer gains 100% of their level in shield points (infinite) for each opponent (excluding summons) that plays before them"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123501,12 +123421,7 @@
     "customStats": {
       "en": [
         "The bearer gains 250 MP Parry before playing, then 50 MP Parry for 1 turn"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123529,12 +123444,7 @@
     "customStats": {
       "en": [
         "The bearer gains +2 AP for their first round"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123557,12 +123467,7 @@
     "customStats": {
       "en": [
         "The bearer gains 1 AP for 3 turns but inflicts -10% damage"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123585,12 +123490,7 @@
     "customStats": {
       "en": [
         "The bearer gains 25% of their current health in shield points for their first three rounds"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123613,12 +123513,7 @@
     "customStats": {
       "en": [
         "Reduces the duration of active effects on the bearer by 5 at the start of their first round"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123641,12 +123536,7 @@
     "customStats": {
       "en": [
         "At the start of their first round, the bearer gains 200% of their level in shield (infinite) for each enemy within 2 cells"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123669,12 +123559,7 @@
     "customStats": {
       "en": [
         "At the end of their first turn, the bearer reduces damage by 10% (2 turns) for each enemy within 2 cells"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123697,12 +123582,7 @@
     "customStats": {
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 12 cells away and loses 1 AP (2 turns) per enemy within 12 cells"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123725,12 +123605,7 @@
     "customStats": {
       "en": [
         "Heals 30% of enemy damage suffered until the end of the second turn"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123753,12 +123628,7 @@
     "customStats": {
       "en": [
         "The bearer gains 200 Power (2 turns) if they suffer an enemy hit before playing"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123781,12 +123651,7 @@
     "customStats": {
       "en": [
         "The bearer gains +3 AP for their first round but also loses 2 MP"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123809,12 +123674,7 @@
     "customStats": {
       "en": [
         "The bearer gains 2 AP for 2 turns but inflicts -20% damage"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123837,12 +123697,7 @@
     "customStats": {
       "en": [
         "The bearer gains 50% of their current health in shield points for their first two rounds"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123865,12 +123720,7 @@
     "customStats": {
       "en": [
         "The bearer gains 20 Critical for 2 turns"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123893,12 +123743,7 @@
     "customStats": {
       "en": [
         "The bearer gains 250 AP Parry before playing, then 50 AP Parry for 1 turn"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123921,12 +123766,7 @@
     "customStats": {
       "en": [
         "The bearer gains 8 Critical for 3 turns"
-      ],
-      "fr": [],
-      "de": [],
-      "es": [],
-      "it": [],
-      "pt": []
+      ]
     },
     "conditions": {
       "conditions": {},

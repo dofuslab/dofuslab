@@ -73,13 +73,25 @@ class ItemStat(SQLAlchemyObjectType):
     custom_stat = graphene.String()
 
     def resolve_custom_stat(self, info):
+        # query = (
+        #     db.session.query(ModelItemStatTranslation)
+        #     .filter(ModelItemStatTranslation.item_stat_id == self.uuid)
+        #     .one()
+        # )
+        #
+        # return query.custom_stat
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
         query = (
             db.session.query(ModelItemStatTranslation)
             .filter(ModelItemStatTranslation.item_stat_id == self.uuid)
-            .one()
+            .filter(ModelItemStatTranslation.locale == locale)
+            .one_or_none()
         )
 
-        return query.custom_stat
+        if query:
+            return query.custom_stat
 
     class Meta:
         model = ModelItemStat
@@ -133,15 +145,19 @@ class Item(SQLAlchemyObjectType):
         )
 
     def resolve_stats(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
-        query = (
-            db.session.query(ModelItemStat)
-            .join(ModelItemStatTranslation)
-            .filter(ModelItemStat.item_id == self.uuid)
-            .filter(ModelItemStatTranslation.locale == locale)
-            .order_by(ModelItemStat.order)
+        # locale = info.context.accept_languages.best_match(
+        #     supported_languages, default="en"
+        # )
+        # query = (
+        #     db.session.query(ModelItemStat)
+        #     .join(ModelItemStatTranslation)
+        #     .filter(ModelItemStat.item_id == self.uuid)
+        #     .filter(ModelItemStatTranslation.locale == locale)
+        #     .order_by(ModelItemStat.order)
+        # )
+        # return query
+        query = db.session.query(ModelItemStat).filter(
+            ModelItemStat.item_id == self.uuid
         )
         return query
 
@@ -195,15 +211,6 @@ class Set(SQLAlchemyObjectType):
         )
 
     def resolve_bonuses(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
-        # query = (
-        #     db.session.query(ModelSetBonus)
-        #     .join(ModelSetBonusTranslation)
-        #     .filter(ModelSetBonus.set_id == self.uuid)
-        #     .filter(ModelSetTranslation.locale == locale)
-        # )
         query = db.session.query(ModelSetBonus).filter(
             ModelSetBonus.set_id == self.uuid
         )

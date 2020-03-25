@@ -211,10 +211,13 @@ if __name__ == "__main__":
                     item.stats.append(item_stat)
                     i = i + 1
 
-                if record["customStats"] != {}:
-                    for locale in record["customStats"]:
-                        for custom_stat in record["customStats"][locale]:
-                            item_stat = ModelItemStat(order=i)
+                if record["customStats"] != {} and record["customStats"] != []:
+                    num_of_stats = len(record["customStats"]["en"])
+
+                    for j in range(num_of_stats):
+                        item_stat = ModelItemStat(order=i)
+                        for locale in record["customStats"]:
+                            custom_stat = record["customStats"][locale][j]
                             stat_translation = ModelItemStatTranslation(
                                 item_stat_id=item_stat.uuid,
                                 locale=locale,
@@ -222,9 +225,10 @@ if __name__ == "__main__":
                             )
                             db.session.add(stat_translation)
                             item_stat.item_stat_translation.append(stat_translation)
-                            db.session.add(item_stat)
-                            item.stats.append(item_stat)
-                            i = i + 1
+
+                        db.session.add(item_stat)
+                        item.stats.append(item_stat)
+                        i = i + 1
 
                 # If this item belongs in a set, query the set and add the relationship to the record
                 if record.get("setID", None):
@@ -278,10 +282,13 @@ if __name__ == "__main__":
                     db.session.add(item_stat)
                     item.stats.append(item_stat)
                     i = i + 1
-                if record["customStats"] != {}:
-                    for locale in record["customStats"]:
-                        for custom_stat in record["customStats"][locale]:
-                            item_stat = ModelItemStat(order=i)
+                if record["customStats"] != {} and record["customStats"] != []:
+                    num_of_stats = len(record["customStats"]["en"])
+
+                    for j in range(num_of_stats):
+                        item_stat = ModelItemStat(order=i)
+                        for locale in record["customStats"]:
+                            custom_stat = record["customStats"][locale][j]
                             stat_translation = ModelItemStatTranslation(
                                 item_stat_id=item_stat.uuid,
                                 locale=locale,
@@ -289,9 +296,10 @@ if __name__ == "__main__":
                             )
                             db.session.add(stat_translation)
                             item_stat.item_stat_translation.append(stat_translation)
-                            db.session.add(item_stat)
-                            item.stats.append(item_stat)
-                            i = i + 1
+
+                        db.session.add(item_stat)
+                        item.stats.append(item_stat)
+                        i = i + 1
 
                 # If this item belongs in a set, query the set and add the relationship to the record
                 if record["setID"]:
@@ -370,10 +378,13 @@ if __name__ == "__main__":
                     db.session.add(item_stat)
                     item.stats.append(item_stat)
                     i = i + 1
-                if record["customStats"] != {}:
-                    for locale in record["customStats"]:
-                        for custom_stat in record["customStats"][locale]:
-                            item_stat = ModelItemStat(order=i)
+                if record["customStats"] != {} and record["customStats"] != []:
+                    num_of_stats = len(record["customStats"]["en"])
+
+                    for j in range(num_of_stats):
+                        item_stat = ModelItemStat(order=i)
+                        for locale in record["customStats"]:
+                            custom_stat = record["customStats"][locale][j]
                             stat_translation = ModelItemStatTranslation(
                                 item_stat_id=item_stat.uuid,
                                 locale=locale,
@@ -381,9 +392,10 @@ if __name__ == "__main__":
                             )
                             db.session.add(stat_translation)
                             item_stat.item_stat_translation.append(stat_translation)
-                            db.session.add(item_stat)
-                            item.stats.append(item_stat)
-                            i = i + 1
+
+                        db.session.add(item_stat)
+                        item.stats.append(item_stat)
+                        i = i + 1
 
                 # If this item belongs in a set, query the set and add the relationship to the record
                 if record["setID"]:
