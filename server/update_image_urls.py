@@ -31,19 +31,16 @@ def add_prysmaradite_image_urls():
     base_url = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/"
 
     data = None
-    with open(
-        os.path.join(dirname, "app/database/data/prysmaradites.json"), "r"
-    ) as file:
+    with open(os.path.join(dirname, "app/database/data/items.json"), "r") as file:
         data = json.load(file)
         for record in data:
-            record["imageUrl"] = base_url + record["dofusID"] + ".png"
+            if record["itemType"] == "Prysmaradite":
+                record["imageUrl"] = base_url + record["dofusID"] + ".png"
 
-    with open(
-        os.path.join(dirname, "app/database/data/prysmaradites.json"), "w"
-    ) as file:
+    with open(os.path.join(dirname, "app/database/data/items.json"), "w") as file:
         json.dump(data, file)
 
 
 if __name__ == "__main__":
-    update_item_urls_in_db()
     # add_prysmaradite_image_urls()
+    update_item_urls_in_db()
