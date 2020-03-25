@@ -1,64 +1,149 @@
 [
-    {
-        "name": {
-            "en-US": "Hat", "fr-FR": "Chapeau", "de": "Hut", "es": "Sombrero", "it": "Cappello", "pt": "Chapéu"
-        },
-        "types": ["Hat"],
+  {
+    "name": {
+      "en-US": "Hat",
+      "fr-FR": "Chapeau",
+      "de": "Hut",
+      "es": "Sombrero",
+      "it": "Cappello",
+      "pt": "Chapéu"
     },
-    {
-        "name": {
-            "en-US": "Cloak", "fr-FR": "Cape", "de": "Umhang", "es": "Capa", "it": "Mantello", "pt": "Capa"
-        },
-        "types": ["Backpack", "Cloak"],
+    "types": [
+      "Hat"
+    ]
+  },
+  {
+    "name": {
+      "en-US": "Cloak",
+      "fr-FR": "Cape",
+      "de": "Umhang",
+      "es": "Capa",
+      "it": "Mantello",
+      "pt": "Capa"
     },
-    {
-        "name": {
-            "en-US": "Amulet", "fr-FR": "Amulette", "de": "Amulett", "es": "Amuleto", "it": "Amuleto", "pt": "Amuleto"
-        },
-        "types": ["Amulet"],
+    "types": [
+      "Backpack",
+      "Cloak"
+    ]
+  },
+  {
+    "name": {
+      "en-US": "Amulet",
+      "fr-FR": "Amulette",
+      "de": "Amulett",
+      "es": "Amuleto",
+      "it": "Amuleto",
+      "pt": "Amuleto"
     },
-    {
-        "name": {
-            "en-US": "Ring", "fr-FR": "Anneau", "de": "Ring", "es": "Anillo", "it": "Anello", "pt": "Anel"
-        },
-        "types": ["Ring"],
-        "quantity": 2,
+    "types": [
+      "Amulet"
+    ]
+  },
+  {
+    "name": {
+      "en-US": "Ring",
+      "fr-FR": "Anneau",
+      "de": "Ring",
+      "es": "Anillo",
+      "it": "Anello",
+      "pt": "Anel"
     },
-    {
-        "name": {
-            "en-US": "Belt", "fr-FR": "Ceinture", "de": "Gürtel", "es": "Cinturón", "it": "Cintura", "pt": "Cinto"
-        },
-        "types": ["Belt"],
+    "types": [
+      "Ring"
+    ],
+    "quantity": 2
+  },
+  {
+    "name": {
+      "en-US": "Belt",
+      "fr-FR": "Ceinture",
+      "de": "Gürtel",
+      "es": "Cinturón",
+      "it": "Cintura",
+      "pt": "Cinto"
     },
-    {
-        "name": {
-            "en-US": "Boots", "fr-FR": "Bottes", "de": "Stiefel", "es": "Bota", "it": "Stivali", "pt": "Botas"
-        },
-        "types": ["Boots"],
+    "types": [
+      "Belt"
+    ]
+  },
+  {
+    "name": {
+      "en-US": "Boots",
+      "fr-FR": "Bottes",
+      "de": "Stiefel",
+      "es": "Bota",
+      "it": "Stivali",
+      "pt": "Botas"
     },
-    {
-        "name": {
-            "en-US": "Weapon", "fr-FR": "Arme", "de": "Waffe", "es": "Arma", "it": "Arma", "pt": "Arma"
-        },
-        "types": ["Axe", "Bow", "Dagger", "Hammer", "Pickaxe", "Scythe", "Shovel", "Staff", "Sword", "Tool", "Wand"],
+    "types": [
+      "Boots"
+    ]
+  },
+  {
+    "name": {
+      "en-US": "Weapon",
+      "fr-FR": "Arme",
+      "de": "Waffe",
+      "es": "Arma",
+      "it": "Arma",
+      "pt": "Arma"
     },
-    {
-        "name": {
-            "en-US": "Shield", "fr-FR": "Bouclier", "de": "Schild", "es": "Escudo", "it": "Scudo", "pt": "Escudo"
-        },
-        "types": ["Shield"],
+    "types": [
+      "Axe",
+      "Bow",
+      "Dagger",
+      "Hammer",
+      "Pickaxe",
+      "Scythe",
+      "Shovel",
+      "Staff",
+      "Sword",
+      "Tool",
+      "Wand"
+    ]
+  },
+  {
+    "name": {
+      "en-US": "Shield",
+      "fr-FR": "Bouclier",
+      "de": "Schild",
+      "es": "Escudo",
+      "it": "Scudo",
+      "pt": "Escudo"
     },
-    {
-        "name": {
-            "en-US": "Dofus", "fr-FR": "Dofus", "de": "Dofus", "es": "Dofus", "it": "Dofus", "pt": "Dofus"
-        },
-        "types": ["Dofus", "Trophy", "Prysmaradite"],
-        "quantity": 6,
+    "types": [
+      "Shield"
+    ]
+  },
+  {
+    "name": {
+      "en-US": "Dofus",
+      "fr-FR": "Dofus",
+      "de": "Dofus",
+      "es": "Dofus",
+      "it": "Dofus",
+      "pt": "Dofus"
     },
-    {
-        "name": {
-            "en-US": "Pet", "fr-FR": "Familier", "de": "Vertrauter", "es": "Mascota", "it": "Famiglio", "pt": "Mascote"
-        },
-        "types": ["Pet", "Petsmount", "Mount"],
-    }
+    "types": [
+      "Dofus",
+      "Trophy",
+      "Prysmaradite"
+    ],
+    "quantity": 6
+  },
+  {
+    "name": {
+      "en-US": "Pet",
+      "fr-FR": "Familier",
+      "de": "Vertrauter",
+      "es": "Mascota",
+      "it": "Famiglio",
+      "pt": "Mascote"
+    },
+    "types": [
+      "Pet",
+      "Petsmount",
+      "Mount"
+    ]
+  }
 ]
