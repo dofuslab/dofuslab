@@ -103,7 +103,6 @@ const SelectorFilters: React.FC<IProps> = ({
         alignItems: 'stretch',
         [mq[2]]: {
           flexDirection: 'row',
-          marginBottom: 8,
         },
       }}
     >
@@ -130,7 +129,10 @@ const SelectorFilters: React.FC<IProps> = ({
           }}
         >
           <Media lessThan="xs">
-            <Link href={customSetId ? `/set/${customSetId}` : '/'}>
+            <Link
+              href={{ pathname: '/index', query: { customSetId } }}
+              as={customSetId ? `/set/${customSetId}` : '/'}
+            >
               <Button size="large">
                 <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
                 {t('BACK')}

@@ -114,7 +114,7 @@ const Selector: React.FC<IProps> = ({
           showSets={showSetsState}
           setShowSets={setShowSetsState}
         />
-        {itemSlots && !showSets && (
+        {itemSlots && !showSetsState && (
           <ItemTypeFilter
             setItemTypeIds={setItemTypeIds}
             itemTypeIds={itemTypeIds}

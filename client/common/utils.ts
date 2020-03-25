@@ -347,10 +347,16 @@ export const useEquipItemMutation = (
         },
       });
 
-      if (data?.updateCustomSetItem?.customSet.id !== customSetId) {
+      if (
+        data?.updateCustomSetItem &&
+        data.updateCustomSetItem.customSet.id !== customSetId
+      ) {
         router.replace(
-          `/?customSetId=${data?.updateCustomSetItem?.customSet.id}`,
-          `/set/${data?.updateCustomSetItem?.customSet.id}`,
+          {
+            pathname: '/',
+            query: { customSetId: data.updateCustomSetItem.customSet.id },
+          },
+          `/set/${data.updateCustomSetItem.customSet.id}`,
           {
             shallow: true,
           },
@@ -395,7 +401,10 @@ export const useEquipSetMutation = (
 
       if (resultData?.equipSet?.customSet.id !== routerSetId) {
         router.replace(
-          `/?customSetId=${resultData?.equipSet?.customSet.id}`,
+          {
+            pathname: '/',
+            query: { customSetId: resultData?.equipSet?.customSet.id },
+          },
           `/set/${resultData?.equipSet?.customSet.id}`,
           {
             shallow: true,

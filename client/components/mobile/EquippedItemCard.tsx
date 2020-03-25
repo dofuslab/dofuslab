@@ -29,7 +29,7 @@ import { customSet } from 'graphql/fragments/__generated__/customSet';
 import ItemStatsList from '../common/ItemStatsList';
 import { item_set } from 'graphql/fragments/__generated__/item';
 import { TruncatableText } from 'common/wrappers';
-import { useRouter } from 'next/router';
+import Router from 'next/router';
 import { Media } from 'components/common/Media';
 import Link from 'next/link';
 import Button from 'antd/lib/button';
@@ -76,8 +76,6 @@ const EquippedItemCard: React.FC<IProps> = ({
 }) => {
   const { t } = useTranslation(['common', 'mage', 'stat']);
 
-  const router = useRouter();
-
   const deleteItem = useDeleteItemMutation(itemSlotId, customSet);
 
   const [quickExo] = useMutation<
@@ -102,7 +100,10 @@ const EquippedItemCard: React.FC<IProps> = ({
 
   const onDelete = React.useCallback(() => {
     deleteItem();
-    router.push(`/set/${customSet.id}`);
+    Router.push(
+      { pathname: '/index', query: { customSetId: customSet.id } },
+      customSet ? `/set/${customSet.id}` : '/',
+    );
   }, [deleteItem, customSet]);
 
   const client = useApolloClient();
@@ -155,7 +156,10 @@ const EquippedItemCard: React.FC<IProps> = ({
   return (
     <div css={{ padding: '0 12px', marginTop: 12 }}>
       <Media lessThan="xs">
-        <Link href={customSet ? `/set/${customSet.id}` : '/'}>
+        <Link
+          href={{ pathname: '/index', query: { customSetId: customSet.id } }}
+          as={customSet ? `/set/${customSet.id}` : '/'}
+        >
           <Button size="large">
             <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
             {t('BACK')}

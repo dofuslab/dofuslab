@@ -6,7 +6,7 @@ import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { useEquipItemMutation, useCustomSet } from 'common/utils';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import BasicItemCard from './BasicItemCard';
-import { useRouter } from 'next/router';
+import Router from 'next/router';
 
 interface IProps {
   item: item;
@@ -33,17 +33,18 @@ const ItemCard: React.FC<IProps> = ({
 
   const mutate = useEquipItemMutation(item, customSet);
 
-  const router = useRouter();
-
   const onClick = React.useCallback(async () => {
     if (itemSlotId) {
       selectItemSlot && selectItemSlot(null);
       if (isMobile && customSetId) {
-        router.push(`/set/${customSetId}`);
+        Router.push(
+          { pathname: '/index', query: { customSetId } },
+          customSetId ? `/set/${customSetId}` : '/',
+        );
       }
       await mutate(itemSlotId);
     }
-  }, [item, itemSlotId, customSet, mutate, selectItemSlot, router, isMobile]);
+  }, [item, itemSlotId, customSet, mutate, selectItemSlot, isMobile]);
 
   return (
     <BasicItemCard
