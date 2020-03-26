@@ -312,7 +312,9 @@ export const useEquipItemMutation = (item: item) => {
   const router = useRouter();
   const { customSetId: routerCustomSetId } = router.query;
 
-  const customSetId: string | null = String(routerCustomSetId) || null;
+  const customSetId: string | null = routerCustomSetId
+    ? String(routerCustomSetId)
+    : null;
 
   const client = useApolloClient();
 
