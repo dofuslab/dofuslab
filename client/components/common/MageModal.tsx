@@ -306,6 +306,7 @@ const MageModal: React.FC<IProps> = ({
                   .toLocaleUpperCase()
                   .includes(input.toLocaleUpperCase())
               }
+              dropdownClassName={css({ zIndex: 1062 })} // higher than modal (1061)
             >
               {Object.values(Stat).map(stat => (
                 <Option
