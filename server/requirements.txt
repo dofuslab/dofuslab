@@ -18,6 +18,7 @@ Flask-Cors==3.0.8
 Flask-GraphQL==2.0.0
 Flask-Login==0.5.0
 Flask-Migrate==2.5.2
+Flask-Session==0.3.1
 Flask-SQLAlchemy==2.4.1
 graphene==2.1.8
 graphene-sqlalchemy==2.2.2
@@ -45,6 +46,7 @@ pylint-plugin-utils==0.6
 python-dateutil==2.8.1
 python-dotenv==0.10.3
 python-editor==1.0.4
+redis==3.4.1
 regex==2019.11.1
 requests==2.22.0
 Rx==1.6.1
