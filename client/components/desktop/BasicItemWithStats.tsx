@@ -55,7 +55,8 @@ const BasicItemWithStats: React.FC<IProps> = ({
         const wrapperClass = css(wrapperStyles);
         return (
           <Popover
-            placement="bottom"
+            placement="right"
+            getPopupContainer={triggerNode => triggerNode.parentElement!}
             title={
               <div
                 css={{
@@ -64,7 +65,7 @@ const BasicItemWithStats: React.FC<IProps> = ({
                   justifyContent: 'space-between',
                 }}
               >
-                <div>{item.name}</div>
+                <div css={{ fontSize: '0.8rem' }}>{item.name}</div>
                 <div
                   css={{ marginLeft: 8, fontWeight: 400, fontSize: '0.75rem' }}
                 >

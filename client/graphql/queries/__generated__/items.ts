@@ -19,6 +19,7 @@ export interface items_items_edges_node_stats {
 export interface items_items_edges_node_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  order: number;
 }
 
 export interface items_items_edges_node_itemType {

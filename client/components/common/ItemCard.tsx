@@ -3,10 +3,15 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { item, item_set } from 'graphql/fragments/__generated__/item';
-import { useEquipItemMutation, useCustomSet } from 'common/utils';
-import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
+import { useEquipItemMutation } from 'common/utils';
+import {
+  itemSlots_itemSlots,
+  itemSlots,
+} from 'graphql/queries/__generated__/itemSlots';
 import BasicItemCard from './BasicItemCard';
 import Router from 'next/router';
+import { useApolloClient } from '@apollo/react-hooks';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 
 interface IProps {
   item: item;
@@ -18,6 +23,7 @@ interface IProps {
   equipped: boolean;
   openSetModal: (set: item_set) => void;
   isMobile?: boolean;
+  nextSlotId: string | null;
 }
 
 const ItemCard: React.FC<IProps> = ({
@@ -28,23 +34,38 @@ const ItemCard: React.FC<IProps> = ({
   equipped,
   openSetModal,
   isMobile,
+  nextSlotId,
 }) => {
-  const customSet = useCustomSet(customSetId);
+  const mutate = useEquipItemMutation(item);
 
-  const mutate = useEquipItemMutation(item, customSet);
+  const client = useApolloClient();
 
-  const onClick = React.useCallback(async () => {
+  const onClick = React.useCallback(() => {
     if (itemSlotId) {
-      selectItemSlot && selectItemSlot(null);
+      const slots = client.readQuery<itemSlots>({ query: ItemSlotsQuery });
+      let nextSlot = null;
+      if (nextSlotId && slots) {
+        nextSlot = slots.itemSlots.find(slot => slot.id === nextSlotId) || null;
+      }
+      selectItemSlot && selectItemSlot(nextSlot);
       if (isMobile && customSetId) {
         Router.push(
           { pathname: '/index', query: { customSetId } },
           customSetId ? `/set/${customSetId}` : '/',
         );
       }
-      await mutate(itemSlotId);
+      mutate(itemSlotId);
     }
-  }, [item, itemSlotId, customSet, mutate, selectItemSlot, isMobile]);
+  }, [
+    item,
+    itemSlotId,
+    customSetId,
+    mutate,
+    selectItemSlot,
+    isMobile,
+    client,
+    nextSlotId,
+  ]);
 
   return (
     <BasicItemCard
