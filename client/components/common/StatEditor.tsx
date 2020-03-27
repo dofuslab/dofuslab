@@ -290,6 +290,12 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
             min={0}
             size="small"
             css={getInputNumberStyle(baseKey, t('BASE'))}
+            onFocus={e => {
+              e.currentTarget.setSelectionRange(
+                0,
+                String(statState[baseKey]).length,
+              );
+            }}
             onChange={(value?: number) => {
               if (value === undefined) return;
               dispatch({ type: 'edit', stat: baseKey, value });
@@ -302,6 +308,12 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
             min={0}
             size="small"
             css={getInputNumberStyle(baseKey, t('SCROLLED'))}
+            onFocus={e => {
+              e.currentTarget.setSelectionRange(
+                0,
+                String(statState[baseKey]).length,
+              );
+            }}
             onChange={(value?: number) => {
               if (value === undefined) return;
               dispatch({ type: 'edit', stat: scrolledKey, value });

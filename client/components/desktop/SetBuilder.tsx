@@ -5,7 +5,7 @@ import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
 
-import { STAT_GROUPS, mq } from 'common/constants';
+import { STAT_GROUPS, mq, SEARCH_BAR_ID } from 'common/constants';
 import Layout from '../common/Layout';
 import StatTable from '../common/StatTable';
 import { ResponsiveGrid } from 'common/wrappers';
@@ -40,6 +40,7 @@ const SetBuilder: React.FC = () => {
   React.useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
       if (e.keyCode === 27) {
+        // escape key
         selectItemSlot(null);
       }
     }
@@ -48,6 +49,13 @@ const SetBuilder: React.FC = () => {
     }
     return () => document && document.removeEventListener('keydown', onKeyDown);
   }, []);
+
+  React.useEffect(() => {
+    const searchBar = document.getElementById(SEARCH_BAR_ID);
+    if (searchBar) {
+      searchBar.focus();
+    }
+  }, [selectedItemSlot]);
 
   const statsFromCustomSet = React.useMemo(
     () => getStatsFromCustomSet(customSetData?.customSetById),

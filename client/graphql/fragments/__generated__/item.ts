@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat } from "./../../../__generated__/globalTypes";
+import { Stat, Effect } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL fragment: item
@@ -14,6 +14,26 @@ export interface item_stats {
   maxValue: number | null;
   stat: Stat | null;
   customStat: string | null;
+}
+
+export interface item_weaponStats_weaponEffects {
+  __typename: "WeaponEffect";
+  id: any;
+  minDamage: number | null;
+  maxDamage: number;
+  effectType: Effect;
+}
+
+export interface item_weaponStats {
+  __typename: "WeaponStat";
+  id: any;
+  apCost: number;
+  usesPerTurn: number;
+  minRange: number | null;
+  maxRange: number;
+  baseCritChance: number | null;
+  critBonusDamage: number | null;
+  weaponEffects: item_weaponStats_weaponEffects[];
 }
 
 export interface item_itemType_eligibleItemSlots {
@@ -52,6 +72,7 @@ export interface item {
   level: number;
   imageUrl: string;
   stats: item_stats[];
+  weaponStats: item_weaponStats | null;
   conditions: any | null;
   itemType: item_itemType;
   set: item_set | null;

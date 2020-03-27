@@ -141,6 +141,7 @@ const ItemSelector: React.FC<IProps> = ({
     <ResponsiveGrid
       numColumns={[2, 2, 2, 3, 4, 5, 6]}
       css={{
+        marginTop: 12,
         marginBottom: 20,
         position: 'relative',
         gridGap: 20,

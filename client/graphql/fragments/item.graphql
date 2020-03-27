@@ -8,6 +8,21 @@ fragment item on Item {
     stat
     customStat
   }
+  weaponStats {
+    id
+    apCost
+    usesPerTurn
+    minRange
+    maxRange
+    baseCritChance
+    critBonusDamage
+    weaponEffects {
+      id
+      minDamage
+      maxDamage
+      effectType
+    }
+  }
   conditions
   itemType {
     id

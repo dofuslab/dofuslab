@@ -6,6 +6,7 @@ import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
 import { blue6 } from 'common/mixins';
+import { Effect } from '__generated__/globalTypes';
 
 interface IProps {
   readonly item: item;
@@ -16,6 +17,32 @@ interface IProps {
   readonly showImg?: boolean;
 }
 
+const weaponEffectToIconUrl = (effect: Effect) => {
+  switch (effect) {
+    case Effect.AIR_DAMAGE:
+    case Effect.AIR_STEAL:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Agility.svg';
+    case Effect.EARTH_DAMAGE:
+    case Effect.EARTH_STEAL:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Strength.svg';
+    case Effect.FIRE_DAMAGE:
+    case Effect.FIRE_STEAL:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Intelligence.svg';
+    case Effect.NEUTRAL_DAMAGE:
+    case Effect.NEUTRAL_STEAL:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Neutral.svg';
+    case Effect.WATER_DAMAGE:
+    case Effect.WATER_STEAL:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Chance.svg';
+    case Effect.AP:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Action_Point.svg';
+    case Effect.MP:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Movement_Point.svg';
+    case Effect.HP_RESTORED:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Health_Point.svg';
+  }
+};
+
 const ItemStatsList: React.FC<IProps> = ({
   item,
   className,
@@ -23,7 +50,7 @@ const ItemStatsList: React.FC<IProps> = ({
   openSetModal,
   showImg,
 }) => {
-  const { t } = useTranslation('stat');
+  const { t } = useTranslation(['stat', 'weapon_stat']);
 
   const statsMap: {
     [key: string]: { value: number; maged: boolean };
@@ -76,6 +103,21 @@ const ItemStatsList: React.FC<IProps> = ({
       {showImg && (
         <img src={item.imageUrl} css={{ float: 'right', maxWidth: 84 }} />
       )}
+      <div css={{ marginBottom: 12 }}>
+        {item.weaponStats?.weaponEffects.map(effect => (
+          <div
+            key={`weapon-effect-${effect.id}`}
+            css={{ display: 'flex', alignItems: 'center' }}
+          >
+            <img
+              src={weaponEffectToIconUrl(effect.effectType)}
+              css={{ height: 16, width: 16, marginRight: 8 }}
+            />
+            {effect.minDamage ? `${effect.minDamage}-` : ''}
+            {effect.maxDamage} {t(effect.effectType, { ns: 'weapon_stat' })}
+          </div>
+        ))}
+      </div>
       <ul
         className={className}
         css={{ paddingInlineStart: 16, fontSize: '0.75rem' }}

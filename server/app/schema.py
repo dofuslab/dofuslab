@@ -117,6 +117,8 @@ class WeaponEffect(SQLAlchemyObjectType):
 
 
 class WeaponStat(SQLAlchemyObjectType):
+    weapon_effects = graphene.NonNull(graphene.List(graphene.NonNull(WeaponEffect)))
+
     class Meta:
         model = ModelWeaponStat
         interfaces = (GlobalNode,)

@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat } from "./../../../__generated__/globalTypes";
+import { Stat, Effect } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: customSet
@@ -20,6 +20,26 @@ export interface customSet_customSetById_equippedItems_item_stats {
   maxValue: number | null;
   stat: Stat | null;
   customStat: string | null;
+}
+
+export interface customSet_customSetById_equippedItems_item_weaponStats_weaponEffects {
+  __typename: "WeaponEffect";
+  id: any;
+  minDamage: number | null;
+  maxDamage: number;
+  effectType: Effect;
+}
+
+export interface customSet_customSetById_equippedItems_item_weaponStats {
+  __typename: "WeaponStat";
+  id: any;
+  apCost: number;
+  usesPerTurn: number;
+  minRange: number | null;
+  maxRange: number;
+  baseCritChance: number | null;
+  critBonusDamage: number | null;
+  weaponEffects: customSet_customSetById_equippedItems_item_weaponStats_weaponEffects[];
 }
 
 export interface customSet_customSetById_equippedItems_item_itemType_eligibleItemSlots {
@@ -58,6 +78,7 @@ export interface customSet_customSetById_equippedItems_item {
   level: number;
   imageUrl: string;
   stats: customSet_customSetById_equippedItems_item_stats[];
+  weaponStats: customSet_customSetById_equippedItems_item_weaponStats | null;
   conditions: any | null;
   itemType: customSet_customSetById_equippedItems_item_itemType;
   set: customSet_customSetById_equippedItems_item_set | null;

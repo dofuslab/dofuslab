@@ -27,7 +27,7 @@ const Index: NextPage = () => (
 
 Index.getInitialProps = async () => {
   return {
-    namespacesRequired: ['common', 'stat', 'auth'],
+    namespacesRequired: ['common', 'stat', 'auth', 'weapon_stat'],
   };
 };
 

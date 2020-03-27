@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
 import { Stat } from '__generated__/globalTypes';
-import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
+import { mq, DEBOUNCE_INTERVAL, SEARCH_BAR_ID } from 'common/constants';
 import Search from 'antd/lib/input/Search';
 import InputNumber from 'antd/lib/input-number';
 import Select from 'antd/lib/select';
@@ -22,6 +22,7 @@ import Tooltip from 'antd/lib/tooltip';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Media } from './Media';
+import ResetAllButton from './ResetAllButton';
 
 const { Option } = Select;
 
@@ -31,6 +32,7 @@ interface IProps {
   customSetLevel: number | null;
   showSets: boolean;
   setShowSets: React.Dispatch<React.SetStateAction<boolean>>;
+  onReset: () => void;
 }
 
 const SelectorFilters: React.FC<IProps> = ({
@@ -39,6 +41,7 @@ const SelectorFilters: React.FC<IProps> = ({
   customSetLevel,
   showSets,
   setShowSets,
+  onReset,
 }) => {
   const router = useRouter();
   const { customSetId } = router.query;
@@ -112,7 +115,7 @@ const SelectorFilters: React.FC<IProps> = ({
           marginBottom: 12,
           flexDirection: 'column',
           [mq[1]]: { flex: 1, flexDirection: 'row' },
-          [mq[2]]: { marginBottom: 0, maxWidth: 360 },
+          [mq[2]]: { marginBottom: 0, maxWidth: 480 },
           alignItems: 'stretch',
         }}
       >
@@ -162,7 +165,8 @@ const SelectorFilters: React.FC<IProps> = ({
           }}
         >
           <Search
-            placeholder="Search"
+            id={SEARCH_BAR_ID}
+            placeholder={t('SEARCH')}
             value={search}
             onChange={onSearch}
             css={{
@@ -195,7 +199,7 @@ const SelectorFilters: React.FC<IProps> = ({
           flex: '1',
           flexDirection: 'column',
           [mq[1]]: { flexDirection: 'row' },
-          [mq[2]]: { marginLeft: 12, maxWidth: 420 },
+          [mq[2]]: { marginLeft: 12, maxWidth: 360 },
           [mq[4]]: { marginLeft: 16 },
         }}
       >
@@ -206,7 +210,7 @@ const SelectorFilters: React.FC<IProps> = ({
               mode="multiple"
               css={{
                 fontSize: '0.75rem',
-                flex: '1',
+                flex: '1 1 0%',
                 height: 42,
                 [mq[1]]: {
                   height: 'auto',
@@ -215,7 +219,7 @@ const SelectorFilters: React.FC<IProps> = ({
                   height: '100%',
                 },
               }}
-              placeholder="Stats (e.g. AP, Pods, Prospecting)"
+              placeholder={t('STATS_PLACEHOLDER')}
               value={stats.map(stat => ({
                 label: t(stat, { ns: 'stat' }),
                 key: stat,
@@ -240,6 +244,13 @@ const SelectorFilters: React.FC<IProps> = ({
             </Select>
           )}
         </ClassNames>
+        <ResetAllButton
+          onReset={onReset}
+          css={{
+            display: 'none',
+            [mq[1]]: { display: 'block', margin: '0 0 0 12px' },
+          }}
+        />
       </div>
     </div>
   );

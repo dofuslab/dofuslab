@@ -1,0 +1,18 @@
+{
+  "NEUTRAL_DAMAGE": "Neutral damage",
+  "EARTH_DAMAGE": "Earth damage",
+  "FIRE_DAMAGE": "Fire damage",
+  "WATER_DAMAGE": "Water damage",
+  "AIR_DAMAGE": "Air damage",
+  "NEUTRAL_STEAL": "Neutral steal",
+  "EARTH_STEAL": "Earth steal",
+  "FIRE_STEAL": "Fire steal",
+  "WATER_STEAL": "Water steal",
+  "AIR_STEAL": "Air steal",
+  "AP": "AP (target)",
+  "MP": "MP (target)",
+  "HP_RESTORED": "HP restored",
+  "DOES_NOT_CRIT": "Does not crit",
+  "USES_PER_TURN": "{{count}} use/turn",
+  "USES_PER_TURN_plural": "{{count}} uses/turn"
+}
