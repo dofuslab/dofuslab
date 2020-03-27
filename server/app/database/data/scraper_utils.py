@@ -106,8 +106,8 @@ def get_all_localized_soup(url):
 
     all_soups["en"] = soup
     for key, value in all_links.items():
-        # if key == "pt" or key == "it" or key == "es":
-        #     continue
+        if key == "pt" or key == "it" or key == "es" or key == "de":
+            continue
         soup = get_soup(value)
         all_soups[key] = soup
 
