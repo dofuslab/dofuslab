@@ -8,7 +8,6 @@ import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { useTranslation } from 'i18n';
 import { itemCardStyle, BORDER_COLOR, itemBoxDimensions } from 'common/mixins';
 import ItemStatsList from './ItemStatsList';
-import { Stat } from '__generated__/globalTypes';
 
 interface IProps {
   item: item;
@@ -53,7 +52,6 @@ const BasicItemCard: React.FC<IProps> = ({
       <div
         css={{
           float: 'right',
-          maxWidth: 96,
           marginLeft: 12,
           textAlign: 'right',
         }}
@@ -65,30 +63,6 @@ const BasicItemCard: React.FC<IProps> = ({
             marginBottom: 12,
           }}
         />
-        {item.weaponStats && (
-          <div css={{ marginRight: 8 }}>
-            <div>
-              {item.weaponStats?.apCost} {t(Stat.AP, { ns: 'stat' })}
-            </div>
-            <div>
-              {!!item.weaponStats.minRange && `${item.weaponStats.minRange}-`}
-              {item.weaponStats.maxRange} {t(Stat.RANGE, { ns: 'stat' })}
-            </div>
-            <div>
-              {item.weaponStats.baseCritChance
-                ? `${item.weaponStats.baseCritChance} ${t(Stat.CRITICAL, {
-                    ns: 'stat',
-                  })} (+${item.weaponStats.critBonusDamage})`
-                : t('DOES_NOT_CRIT', { ns: 'weapon_stat' })}
-            </div>
-            <div>
-              {t('USES_PER_TURN', {
-                ns: 'weapon_stat',
-                count: item.weaponStats.usesPerTurn,
-              })}{' '}
-            </div>
-          </div>
-        )}
       </div>
       <ItemStatsList
         item={item}

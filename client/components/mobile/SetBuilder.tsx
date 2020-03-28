@@ -2,28 +2,16 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import { useQuery } from '@apollo/react-hooks';
-import { useRouter } from 'next/router';
-
 import Layout from '../common/Layout';
-
-import {
-  customSet,
-  customSetVariables,
-} from 'graphql/queries/__generated__/customSet';
-import CustomSetQuery from 'graphql/queries/customSet.graphql';
+import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import Home from './Home';
 
-const SetBuilder: React.FC = () => {
-  const router = useRouter();
-  const { customSetId } = router.query;
+interface IProps {
+  customSet: customSet | null;
+}
 
-  const { data: customSetData } = useQuery<customSet, customSetVariables>(
-    CustomSetQuery,
-    { variables: { id: customSetId }, skip: !customSetId },
-  );
-
+const SetBuilder: React.FC<IProps> = ({ customSet }) => {
   const [
     selectedItemSlot,
     selectItemSlot,
@@ -32,7 +20,7 @@ const SetBuilder: React.FC = () => {
   return (
     <Layout>
       <Home
-        customSet={customSetData?.customSetById}
+        customSet={customSet}
         selectItemSlot={selectItemSlot}
         selectedItemSlot={selectedItemSlot}
       />

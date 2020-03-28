@@ -2,19 +2,13 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import { useQuery } from '@apollo/react-hooks';
-import { useRouter } from 'next/router';
 
 import { STAT_GROUPS, mq, SEARCH_BAR_ID } from 'common/constants';
 import Layout from '../common/Layout';
 import StatTable from '../common/StatTable';
 import { ResponsiveGrid } from 'common/wrappers';
 
-import {
-  customSet,
-  customSetVariables,
-} from 'graphql/queries/__generated__/customSet';
-import CustomSetQuery from 'graphql/queries/customSet.graphql';
+import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getStatsFromCustomSet } from 'common/utils';
 import SetHeader from '../common/SetHeader';
 import EquipmentSlots from '../common/EquipmentSlots';
@@ -23,15 +17,11 @@ import StatEditor from '../common/StatEditor';
 import { topMarginStyle } from 'common/mixins';
 import Selector from '../common/Selector';
 
-const SetBuilder: React.FC = () => {
-  const router = useRouter();
-  const { customSetId } = router.query;
+interface IProps {
+  customSet: customSet | null;
+}
 
-  const { data: customSetData } = useQuery<customSet, customSetVariables>(
-    CustomSetQuery,
-    { variables: { id: customSetId }, skip: !customSetId },
-  );
-
+const SetBuilder: React.FC<IProps> = ({ customSet }) => {
   const [
     selectedItemSlot,
     selectItemSlot,
@@ -58,15 +48,15 @@ const SetBuilder: React.FC = () => {
   }, [selectedItemSlot]);
 
   const statsFromCustomSet = React.useMemo(
-    () => getStatsFromCustomSet(customSetData?.customSetById),
-    [customSetData],
+    () => getStatsFromCustomSet(customSet),
+    [customSet],
   );
 
   return (
     <Layout>
-      <SetHeader customSet={customSetData?.customSetById} />
+      <SetHeader customSet={customSet} />
       <EquipmentSlots
-        customSet={customSetData?.customSetById}
+        customSet={customSet}
         selectItemSlot={selectItemSlot}
         selectedItemSlotId={selectedItemSlot?.id ?? null}
       />
@@ -102,15 +92,15 @@ const SetBuilder: React.FC = () => {
                 key={`stat-table-${i}`}
                 group={group}
                 statsFromCustomSet={statsFromCustomSet}
-                customSet={customSetData?.customSetById}
+                customSet={customSet}
               />
             ))}
-            <StatEditor customSet={customSetData?.customSetById} />
+            <StatEditor customSet={customSet} />
           </ResponsiveGrid>
         </div>
         <Selector
-          key={`selected-item-slot-${selectedItemSlot?.id}-level-${customSetData?.customSetById?.level}`}
-          customSet={customSetData?.customSetById}
+          key={`selected-item-slot-${selectedItemSlot?.id}-level-${customSet?.level}`}
+          customSet={customSet}
           selectItemSlot={selectItemSlot}
           selectedItemSlot={selectedItemSlot}
         />

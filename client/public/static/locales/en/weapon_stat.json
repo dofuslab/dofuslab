@@ -13,6 +13,6 @@
   "MP": "MP (target)",
   "HP_RESTORED": "HP restored",
   "DOES_NOT_CRIT": "Does not crit",
-  "USES_PER_TURN": "{{count}} use/turn",
-  "USES_PER_TURN_plural": "{{count}} uses/turn"
+  "USES_PER_TURN": "{{count}}\u00A0use/turn",
+  "USES_PER_TURN_plural": "{{count}}\u00A0uses/turn"
 }

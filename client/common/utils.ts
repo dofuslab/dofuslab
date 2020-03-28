@@ -333,6 +333,8 @@ export const useEquipItemMutation = (item: item) => {
 
             const equippedItems = [...oldEquippedItems];
 
+            console.log(equippedItems);
+
             const oldEquippedItemIdx = oldEquippedItems.findIndex(
               equippedItem => equippedItem.slot.id === itemSlotId,
             );
@@ -508,11 +510,14 @@ export const getCustomSet = (
   client: ApolloClient<object>,
   customSetId: string,
 ) => {
-  const customSet = client.readFragment<customSet>({
-    id: `CustomSet:${customSetId}`,
-    fragment: CustomSetFragment,
-    fragmentName: 'customSet',
-  });
+  const customSet = client.readFragment<customSet>(
+    {
+      id: `CustomSet:${customSetId}`,
+      fragment: CustomSetFragment,
+      fragmentName: 'customSet',
+    },
+    true,
+  );
 
   if (!customSet) {
     throw new Error(`Could not find custom set with id ${customSetId}`);

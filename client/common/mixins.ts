@@ -130,6 +130,7 @@ export const itemCardStyle = {
   fontSize: '0.75rem',
   borderRadius: 4,
   minWidth: 0,
+  flex: 1,
 };
 
 export const popoverTitleStyle = {

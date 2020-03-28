@@ -89,7 +89,7 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
           trigger="click"
           overlayClassName={css(popoverTitleStyle)}
         >
-          <div css={{ height: '100%' }}>{children}</div>
+          <div css={{ display: 'flex' }}>{children}</div>
         </Popover>
       )}
     </ClassNames>
