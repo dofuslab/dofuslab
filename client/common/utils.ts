@@ -333,8 +333,6 @@ export const useEquipItemMutation = (item: item) => {
 
             const equippedItems = [...oldEquippedItems];
 
-            console.log(equippedItems);
-
             const oldEquippedItemIdx = oldEquippedItems.findIndex(
               equippedItem => equippedItem.slot.id === itemSlotId,
             );
