@@ -12,4 +12,9 @@ server/database/__pycache__/
 server/migrations/__pycache__/
 server/migrations/versions/__pycache__/
 server/static/
+
+# Run 
 server/messages.pot
+
+# Redis dump
+server/dump.rdb
