@@ -20,14 +20,14 @@ const Index: NextPage = () => {
   const router = useRouter();
   const { customSetId } = router.query;
 
-  const { data: customSetData } = useQuery<customSet, customSetVariables>(
-    CustomSetQuery,
-    { variables: { id: customSetId }, skip: !customSetId },
-  );
+  const { data: customSetData, loading } = useQuery<
+    customSet,
+    customSetVariables
+  >(CustomSetQuery, { variables: { id: customSetId }, skip: !customSetId });
 
   const customSet = customSetData?.customSetById || null;
 
-  if (customSetId && !customSet) {
+  if (customSetId && !customSet && !loading) {
     return <ErrorPage statusCode={404} />;
   }
 

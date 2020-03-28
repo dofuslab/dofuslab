@@ -130,6 +130,8 @@ export interface customSet_customSetById {
   equippedItems: customSet_customSetById_equippedItems[];
   stats: customSet_customSetById_stats;
   owner: customSet_customSetById_owner | null;
+  createdAt: any | null;
+  lastModified: any | null;
 }
 
 export interface customSet {

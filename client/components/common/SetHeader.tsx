@@ -23,6 +23,8 @@ import { checkAuthentication } from 'common/utils';
 import { ellipsis } from 'common/mixins';
 import { mq } from 'common/constants';
 import BonusStats from '../desktop/BonusStats';
+import Tooltip from 'antd/lib/tooltip';
+import moment from 'moment';
 
 interface IProps {
   customSet?: customSet | null;
@@ -141,6 +143,113 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
 
   const [form] = Form.useForm();
 
+  const formElement = (
+    <Form
+      form={form}
+      name="header"
+      id="header-form"
+      onFinish={handleOk}
+      layout={'inline'}
+      css={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        [mq[1]]: {
+          width: 'auto',
+          flexDirection: 'row',
+          alignItems: 'baseline',
+        },
+        '&.ant-form-inline .ant-form-item': {
+          marginRight: 0,
+          [mq[1]]: {
+            marginRight: 16,
+          },
+        },
+      }}
+      initialValues={{
+        name: customSet?.name || '',
+        level: customSet?.level || 200,
+      }}
+    >
+      {metadataState.isEditing ? (
+        <Form.Item name="name">
+          <Input
+            css={{
+              fontSize: '1.2rem',
+              fontWeight: 500,
+              [mq[1]]: {
+                fontSize: '1.5rem',
+                width: 240,
+              },
+            }}
+            maxLength={50}
+          />
+        </Form.Item>
+      ) : (
+        <div
+          css={{
+            ...ellipsis,
+            fontSize: '1.2rem',
+            fontWeight: 500,
+            [mq[1]]: {
+              fontSize: '1.5rem',
+              maxWidth: 400,
+            },
+            marginRight: 20,
+            cursor: 'pointer',
+          }}
+          onClick={onStartEdit}
+        >
+          {customSet?.name || t('UNTITLED')}
+        </div>
+      )}
+      <div
+        css={{
+          display: 'flex',
+          fontSize: '0.75rem',
+          alignItems: 'center',
+          marginTop: 8,
+          [mq[1]]: {
+            marginTop: 0,
+          },
+        }}
+      >
+        <div
+          css={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
+          onClick={onStartEdit}
+        >
+          {t('LEVEL')}{' '}
+          {metadataState.isEditing ? (
+            <Form.Item name="level" css={{ display: 'inline-flex' }}>
+              <InputNumber
+                css={{ marginLeft: 8 }}
+                type="number"
+                max={200}
+                min={1}
+              />
+            </Form.Item>
+          ) : (
+            customSet?.level ?? 200
+          )}
+        </div>
+        {metadataState.isEditing ? (
+          <div css={{ marginLeft: 'auto' }}>
+            <Button css={{ marginLeft: 12 }} type="primary" htmlType="submit">
+              {t('OK')}
+            </Button>
+            <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
+              {t('CANCEL')}
+            </Button>
+          </div>
+        ) : (
+          <a css={{ marginLeft: 12 }}>
+            <FontAwesomeIcon icon={faPencilAlt} onClick={onStartEdit} />
+          </a>
+        )}
+      </div>
+    </Form>
+  );
+
   return (
     <div
       css={{
@@ -157,111 +266,33 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
         },
       }}
     >
-      <Form
-        form={form}
-        name="header"
-        id="header-form"
-        onFinish={handleOk}
-        layout={'inline'}
-        css={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '100%',
-          cursor: 'pointer',
-          [mq[1]]: {
-            width: 'auto',
-            flexDirection: 'row',
-            alignItems: 'baseline',
-          },
-          '&.ant-form-inline .ant-form-item': {
-            marginRight: 0,
-            [mq[1]]: {
-              marginRight: 16,
-            },
-          },
-        }}
-        initialValues={{
-          name: customSet?.name || '',
-          level: customSet?.level || 200,
-        }}
-      >
-        {metadataState.isEditing ? (
-          <Form.Item name="name">
-            <Input
+      {customSet && !metadataState.isEditing ? (
+        <Tooltip
+          overlayStyle={{ maxWidth: 360 }}
+          title={
+            <div
               css={{
-                fontSize: '1.2rem',
-                fontWeight: 500,
-                [mq[1]]: {
-                  fontSize: '1.5rem',
-                  width: 240,
-                },
+                display: 'grid',
+                gridTemplateColumns: 'auto auto',
+                gridColumnGap: 12,
               }}
-              maxLength={50}
-            />
-          </Form.Item>
-        ) : (
-          <div
-            css={{
-              ...ellipsis,
-              fontSize: '1.2rem',
-              fontWeight: 500,
-              [mq[1]]: {
-                fontSize: '1.5rem',
-                maxWidth: 400,
-              },
-              marginRight: 20,
-              cursor: 'pointer',
-            }}
-            onClick={onStartEdit}
-          >
-            {customSet?.name || t('UNTITLED')}
-          </div>
-        )}
-        <div
-          css={{
-            display: 'flex',
-            fontSize: '0.75rem',
-            alignItems: 'center',
-            marginTop: 8,
-            [mq[1]]: {
-              marginTop: 0,
-            },
-          }}
-        >
-          <div
-            css={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
-            onClick={onStartEdit}
-          >
-            {t('LEVEL')}{' '}
-            {metadataState.isEditing ? (
-              <Form.Item name="level" css={{ display: 'inline-flex' }}>
-                <InputNumber
-                  css={{ marginLeft: 8 }}
-                  type="number"
-                  max={200}
-                  min={1}
-                />
-              </Form.Item>
-            ) : (
-              customSet?.level ?? 200
-            )}
-          </div>
-          {metadataState.isEditing ? (
-            <div css={{ marginLeft: 'auto' }}>
-              <Button css={{ marginLeft: 12 }} type="primary" htmlType="submit">
-                {t('OK')}
-              </Button>
-              <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
-                {t('CANCEL')}
-              </Button>
+            >
+              <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
+              <div>{customSet.owner?.username ?? t('ANONYMOUS')}</div>
+              <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
+              <div>{moment(customSet.createdAt).format('lll')}</div>
+              <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
+              <div>{moment(customSet.lastModified).format('lll')}</div>
             </div>
-          ) : (
-            <a css={{ marginLeft: 12 }}>
-              <FontAwesomeIcon icon={faPencilAlt} onClick={onStartEdit} />
-            </a>
-          )}
-        </div>
-      </Form>
+          }
+          placement="bottomLeft"
+        >
+          {formElement}
+        </Tooltip>
+      ) : (
+        formElement
+      )}
+
       {customSet && !isMobile && <BonusStats customSet={customSet} />}
     </div>
   );

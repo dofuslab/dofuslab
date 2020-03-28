@@ -6,7 +6,7 @@ from .model_equipped_item import ModelEquippedItem
 from .model_equipped_item_exo import ModelEquippedItemExo
 from .model_item_slot import ModelItemSlot
 from .model_custom_set_stat import ModelCustomSetStat
-from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, text
+from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, text, func
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.postgresql import UUID
 from datetime import datetime
@@ -25,7 +25,13 @@ class ModelCustomSet(Base):
     description = Column("description", String)
     owner_id = Column(UUID(as_uuid=True), ForeignKey("user.uuid"), index=True)
     created_at = Column("creation_date", DateTime, default=datetime.now)
-    last_modified = Column("last_modified", DateTime, default=datetime.now, index=True)
+    last_modified = Column(
+        "last_modified",
+        DateTime,
+        default=datetime.now,
+        index=True,
+        server_onupdate=func.now(),
+    )
     level = Column("level", Integer, server_default=text("200"), nullable=False)
     equipped_items = relationship(
         "ModelEquippedItem", backref="custom_set", lazy="dynamic"

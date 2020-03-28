@@ -27,4 +27,6 @@ fragment customSet on CustomSet {
     id
     username
   }
+  createdAt
+  lastModified
 }

@@ -130,6 +130,8 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet {
   equippedItems: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems[];
   stats: updateCustomSetItem_updateCustomSetItem_customSet_stats;
   owner: updateCustomSetItem_updateCustomSetItem_customSet_owner | null;
+  createdAt: any | null;
+  lastModified: any | null;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem {
