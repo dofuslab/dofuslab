@@ -27,6 +27,7 @@ import graphene
 import uuid
 from graphql import GraphQLError
 from flask import session
+from flask_babel import _
 from flask_login import login_required, login_user, current_user, logout_user
 from functools import lru_cache
 from sqlalchemy import func, distinct
@@ -304,10 +305,10 @@ class EditCustomSetStats(graphene.Mutation):
         stats = kwargs.get("stats")
         for base_stat in base_stat_list:
             if stats[base_stat] < 0 or stats[base_stat] > 999:
-                raise GraphQLError("Invalid value for stat.")
+                raise GraphQLError(_("Invalid stat value."))
         for scrolled_stat in scrolled_stat_list:
             if stats[scrolled_stat] < 0 or stats[scrolled_stat] > 100:
-                raise GraphQLError("Invalid value for stat.")
+                raise GraphQLError(_("Invalid stat value."))
         custom_set = get_or_create_custom_set(custom_set_id)
         for stat in base_stat_list + scrolled_stat_list:
             setattr(custom_set.stats, stat, stats[stat])
@@ -329,9 +330,9 @@ class EditCustomSetMetadata(graphene.Mutation):
         name = kwargs.get("name")
         level = kwargs.get("level")
         if len(name) > 50:
-            raise GraphQLError("The set name is too long.")
+            raise GraphQLError(_("The set name is too long."))
         if level < 1 or level > 200:
-            raise GraphQLError("Invalid set level (must be 1-200).")
+            raise GraphQLError(_("Invalid set level (must be 1-200)."))
         custom_set = get_or_create_custom_set(custom_set_id)
         custom_set.name = name
         custom_set.level = level
@@ -393,7 +394,7 @@ class MageEquippedItem(graphene.Mutation):
             equipped_item.custom_set.owner_id
             and equipped_item.custom_set.owner_id != current_user.get_id()
         ):
-            raise GraphQLError("You don't have permission to edit that set.")
+            raise GraphQLError(_("You don't have permission to edit that set."))
         db.session.query(ModelEquippedItemExo).filter_by(
             equipped_item_id=equipped_item_id
         ).delete(synchronize_session=False)
@@ -430,9 +431,9 @@ class SetEquippedItemExo(graphene.Mutation):
             equipped_item.custom_set.owner_id
             and equipped_item.custom_set.owner_id != current_user.get_id()
         ):
-            raise GraphQLError("You don't have permission to edit that set.")
+            raise GraphQLError(_("You don't have permission to edit that set."))
         if stat != Stat.AP and stat != Stat.MP and stat != Stat.RANGE:
-            raise GraphQLError("Invalid stat to set exo")
+            raise GraphQLError(_("Invalid stat to set exo."))
         exo_obj = (
             db.session.query(ModelEquippedItemExo)
             .filter_by(equipped_item_id=equipped_item_id, stat=stat)
@@ -462,7 +463,7 @@ class DeleteCustomSetItem(graphene.Mutation):
         item_slot_id = kwargs.get("item_slot_id")
         custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
         if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
-            raise GraphQLError("You don't have permission to edit that set.")
+            raise GraphQLError(_("You don't have permission to edit that set."))
         custom_set.unequip_item(item_slot_id)
         db.session.commit()
 
@@ -485,7 +486,7 @@ class RegisterUser(graphene.Mutation):
         validation.validate_registration(username, email, password)
         try:
             if current_user.is_authenticated:
-                raise GraphQLError("You are already logged in.")
+                raise GraphQLError(_("You are already logged in."))
             user = ModelUser(
                 username=username,
                 email=email,
@@ -495,7 +496,7 @@ class RegisterUser(graphene.Mutation):
             login_user(user)
             save_custom_sets()
         except Exception as e:
-            raise GraphQLError("An error occurred while registering.")
+            raise GraphQLError(_("An error occurred while registering."))
 
         return RegisterUser(user=user, ok=True)
 
@@ -511,12 +512,12 @@ class LoginUser(graphene.Mutation):
 
     def mutate(self, info, **kwargs):
         if current_user.is_authenticated:
-            raise GraphQLError("You are already logged in.")
+            raise GraphQLError(_("You are already logged in."))
         email = kwargs.get("email")
         password = kwargs.get("password")
         remember = kwargs.get("remember")
         user = ModelUser.find_by_email(email)
-        auth_error = GraphQLError("Invalid username or password.")
+        auth_error = GraphQLError(_("Invalid username or password."))
         if not user:
             raise auth_error
         if not user.check_password(password):

@@ -12,3 +12,4 @@ server/database/__pycache__/
 server/migrations/__pycache__/
 server/migrations/versions/__pycache__/
 server/static/
+server/messages.pot
