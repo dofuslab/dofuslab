@@ -4,7 +4,7 @@ import * as React from 'react';
 import { jsx } from '@emotion/core';
 
 import { STAT_GROUPS, mq, SEARCH_BAR_ID } from 'common/constants';
-import Layout from '../common/Layout';
+import Layout from './Layout';
 import StatTable from '../common/StatTable';
 import { ResponsiveGrid } from 'common/wrappers';
 
@@ -34,10 +34,8 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
         selectItemSlot(null);
       }
     }
-    if (document) {
-      document.addEventListener('keydown', onKeyDown);
-    }
-    return () => document && document.removeEventListener('keydown', onKeyDown);
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
   }, []);
 
   React.useEffect(() => {

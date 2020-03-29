@@ -56,7 +56,7 @@ const SetModal: React.FC<IProps> = ({
     if (isMobile && customSet) {
       Router.push(
         { pathname: '/index', query: { customSetId: customSet.id } },
-        customSet ? `/set/${customSet.id}` : '/',
+        customSet ? `/build/${customSet.id}` : '/',
       );
     }
   }, [mutate, onCancel, customSet, isMobile]);

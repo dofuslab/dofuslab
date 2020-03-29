@@ -396,7 +396,7 @@ export const useEquipItemMutation = (item: item) => {
             pathname: '/',
             query: { customSetId: data.updateCustomSetItem.customSet.id },
           },
-          `/set/${data.updateCustomSetItem.customSet.id}`,
+          `/build/${data.updateCustomSetItem.customSet.id}`,
           {
             shallow: true,
           },
@@ -444,7 +444,7 @@ export const useEquipSetMutation = (
           pathname: '/',
           query: { customSetId: resultData?.equipSet?.customSet.id },
         },
-        `/set/${resultData?.equipSet?.customSet.id}`,
+        `/build/${resultData?.equipSet?.customSet.id}`,
         {
           shallow: true,
         },

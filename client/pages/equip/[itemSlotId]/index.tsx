@@ -15,7 +15,7 @@ import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import ErrorPage from 'pages/_error';
-import Layout from 'components/common/Layout';
+import Layout from 'components/mobile/Layout';
 
 const EquipPage: NextPage = () => {
   const router = useRouter();

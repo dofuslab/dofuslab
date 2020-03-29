@@ -12,7 +12,7 @@ const handle = app.getRequestHandler();
   await nextI18next.initPromise;
   await express()
     .use(nextI18NextMiddleware(nextI18next))
-    .get('/set/:customSetId', (req, res) =>
+    .get('/build/:customSetId', (req, res) =>
       app.render(req, res, '/index', { customSetId: req.params.customSetId }),
     )
     .get('/equip/:itemSlotId/:customSetId', (req, res) =>

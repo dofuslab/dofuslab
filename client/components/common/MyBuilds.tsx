@@ -109,7 +109,7 @@ const MyBuilds: React.FC = () => {
           pathname: '/',
           query: { customSetId: resultData?.createCustomSet?.customSet.id },
         },
-        `/set/${resultData?.createCustomSet?.customSet.id}`,
+        `/build/${resultData?.createCustomSet?.customSet.id}`,
         {
           shallow: true,
         },
@@ -158,7 +158,7 @@ const MyBuilds: React.FC = () => {
   }, [myBuilds]);
 
   return (
-    <div css={{ [mq[1]]: { marginTop: 36 } }}>
+    <div css={{ marginBottom: 20, [mq[1]]: { marginTop: 36 } }}>
       <div css={{ display: 'flex' }}>
         <Button
           type="primary"
@@ -174,12 +174,16 @@ const MyBuilds: React.FC = () => {
           </span>
           {t('NEW_BUILD')}
         </Button>
-        <Input css={{ marginLeft: 20, flex: 1 }} onChange={onSearch} />
+        <Input
+          css={{ marginLeft: 20, flex: 1 }}
+          onChange={onSearch}
+          placeholder={t('SEARCH')}
+        />
       </div>
       {myBuilds?.currentUser?.customSets.edges.map(({ node }) => (
         <Link
           href={{ pathname: '/index', query: { customSetId: node.id } }}
-          as={`/set/${node.id}`}
+          as={`/build/${node.id}`}
           key={node.id}
         >
           <Card
@@ -221,7 +225,7 @@ const MyBuilds: React.FC = () => {
       {!queryLoading &&
         myBuilds?.currentUser?.customSets.edges.length === 0 && (
           <div css={{ color: gray6, marginTop: 20, fontStyle: 'italic' }}>
-            No builds matched "{search}"
+            {t('NO_BUILDS_MATCHED', { search })}
           </div>
         )}
       {(queryLoading ||

@@ -102,7 +102,7 @@ const EquippedItemCard: React.FC<IProps> = ({
     deleteItem();
     Router.push(
       { pathname: '/index', query: { customSetId: customSet.id } },
-      customSet ? `/set/${customSet.id}` : '/',
+      customSet ? `/build/${customSet.id}` : '/',
     );
   }, [deleteItem, customSet]);
 
@@ -158,7 +158,7 @@ const EquippedItemCard: React.FC<IProps> = ({
       <Media lessThan="xs">
         <Link
           href={{ pathname: '/index', query: { customSetId: customSet.id } }}
-          as={customSet ? `/set/${customSet.id}` : '/'}
+          as={customSet ? `/build/${customSet.id}` : '/'}
         >
           <Button size="large">
             <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />

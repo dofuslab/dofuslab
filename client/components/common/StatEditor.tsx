@@ -226,7 +226,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
           pathname: '/',
           query: { customSetId: data?.editCustomSetStats?.customSet.id },
         },
-        `/set/${data?.editCustomSetStats?.customSet.id}`,
+        `/build/${data?.editCustomSetStats?.customSet.id}`,
         {
           shallow: true,
         },

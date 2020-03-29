@@ -123,7 +123,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
             pathname: '/',
             query: { customSetId: data?.editCustomSetMetadata?.customSet.id },
           },
-          `/set/${data?.editCustomSetMetadata?.customSet.id}`,
+          `/build/${data?.editCustomSetMetadata?.customSet.id}`,
           {
             shallow: true,
           },

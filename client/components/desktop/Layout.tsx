@@ -6,7 +6,7 @@ import AntdLayout from 'antd/lib/layout';
 import Button from 'antd/lib/button/button';
 import Drawer from 'antd/lib/drawer';
 
-import LoginModal from './LoginModal';
+import LoginModal from '../common/LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
@@ -15,10 +15,8 @@ import logoutMutation from 'graphql/mutations/logout.graphql';
 import { BORDER_COLOR, gray8 } from 'common/mixins';
 
 import { useTranslation } from 'i18n';
-import SignUpModal from './SignUpModal';
-import { mq } from 'common/constants';
-import { Media } from './Media';
-import MyBuilds from './MyBuilds';
+import SignUpModal from '../common/SignUpModal';
+import MyBuilds from '../common/MyBuilds';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -67,23 +65,14 @@ const Layout = (props: LayoutProps) => {
       <Global
         styles={css`
           html {
-            font-size: 21px;
+            font-size: 18px;
           }
           body {
-            height: auto;
+            height: 100vh;
+            font-size: 0.8rem;
           }
-          ${mq[1]} {
-            html {
-              font-size: 18px;
-            }
-            body {
-              height: 100vh;
-              font-size: 0.8rem;
-            }
-
-            #__next {
-              height: 100%;
-            }
+          #__next {
+            height: 100%;
           }
         `}
       />
@@ -93,31 +82,28 @@ const Layout = (props: LayoutProps) => {
           justifyContent: 'space-between',
           background: 'white',
           borderBottom: `1px solid ${BORDER_COLOR}`,
-          padding: '0 12px',
+          padding: '0 20px',
           fontSize: '0.8rem',
-          [mq[1]]: {
-            padding: '0 20px',
-          },
         }}
       >
         <div css={{ fontWeight: 500 }}>DofusLab</div>
         <div>
           {data?.currentUser ? (
             <div>
-              {t('WELCOME_MESSAGE', { displayName: data.currentUser.username })}
-              <Media greaterThanOrEqual="xs" css={{ display: 'inline' }}>
-                <Button onClick={openDrawer} css={{ marginLeft: 12 }}>
-                  {t('MY_BUILDS', { ns: 'common' })}
-                </Button>
-                <Drawer
-                  visible={drawerVisible}
-                  closable
-                  onClose={closeDrawer}
-                  width={480}
-                >
-                  <MyBuilds />
-                </Drawer>
-              </Media>
+              {t('WELCOME_MESSAGE', {
+                displayName: data.currentUser.username,
+              })}
+              <Button onClick={openDrawer} css={{ marginLeft: 12 }}>
+                {t('MY_BUILDS', { ns: 'common' })}
+              </Button>
+              <Drawer
+                visible={drawerVisible}
+                closable
+                onClose={closeDrawer}
+                width={480}
+              >
+                <MyBuilds />
+              </Drawer>
               <Button
                 key="logout"
                 onClick={logoutHandler}
@@ -134,8 +120,6 @@ const Layout = (props: LayoutProps) => {
                 css={{
                   padding: 0,
                   color: gray8,
-                  fontSize: '0.75rem',
-                  [mq[1]]: { fontSize: 'inherit' },
                 }}
               >
                 {t('LOGIN')}
@@ -143,27 +127,21 @@ const Layout = (props: LayoutProps) => {
               <span
                 css={{
                   margin: '0 12px',
-                  fontSize: '0.75rem',
-                  [mq[1]]: { fontSize: 'inherit' },
                 }}
               >
                 {t('OR', { ns: 'common' })}
               </span>
-              <Media greaterThanOrEqual="xs" css={{ display: 'inline' }}>
-                <Button onClick={openSignUpModal} type="default">
-                  {t('SIGN_UP')}
-                </Button>
-              </Media>
-              <Media lessThan="xs" css={{ display: 'inline' }}>
-                <Button
-                  onClick={openSignUpModal}
-                  type="default"
-                  css={{ fontSize: '0.75rem' }}
-                  size="large"
-                >
-                  {t('SIGN_UP')}
-                </Button>
-              </Media>
+              <Button onClick={openSignUpModal} type="default">
+                {t('SIGN_UP')}
+              </Button>
+              <Button
+                onClick={openSignUpModal}
+                type="default"
+                css={{ fontSize: '0.75rem' }}
+                size="large"
+              >
+                {t('SIGN_UP')}
+              </Button>
             </div>
           )}
         </div>
@@ -174,9 +152,7 @@ const Layout = (props: LayoutProps) => {
           marginTop: 12,
           display: 'flex',
           flexDirection: 'column',
-          paddingLeft: 8,
-          paddingRight: 8,
-          [mq[1]]: { padding: 0 },
+          padding: 0,
         }}
       >
         {props.children}

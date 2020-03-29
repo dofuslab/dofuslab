@@ -6,7 +6,12 @@ import Card from 'antd/lib/card';
 import { CardTitleWithLevel } from 'common/wrappers';
 import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { useTranslation } from 'i18n';
-import { itemCardStyle, BORDER_COLOR, itemBoxDimensions } from 'common/mixins';
+import {
+  itemCardStyle,
+  BORDER_COLOR,
+  itemBoxDimensions,
+  ITEM_BOX_WIDTH,
+} from 'common/mixins';
 import ItemStatsList from './ItemStatsList';
 
 interface IProps {
@@ -56,6 +61,7 @@ const BasicItemCard: React.FC<IProps> = ({
           css={{
             ...itemBoxDimensions,
             marginBottom: 12,
+            maxWidth: ITEM_BOX_WIDTH,
           }}
         />
       </div>

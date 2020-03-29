@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import Layout from '../common/Layout';
+import Layout from './Layout';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import Home from './Home';

@@ -42,7 +42,7 @@ const SetCard: React.FC<IProps> = ({
     if (isMobile && customSet) {
       Router.push(
         { pathname: '/index', query: { customSetId } },
-        customSetId ? `/set/${customSetId}` : '/',
+        customSetId ? `/build/${customSetId}` : '/',
       );
     }
   }, [onClick, customSet]);

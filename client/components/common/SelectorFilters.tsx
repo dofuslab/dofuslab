@@ -134,7 +134,7 @@ const SelectorFilters: React.FC<IProps> = ({
           <Media lessThan="xs">
             <Link
               href={{ pathname: '/index', query: { customSetId } }}
-              as={customSetId ? `/set/${customSetId}` : '/'}
+              as={customSetId ? `/build/${customSetId}` : '/'}
             >
               <Button size="large">
                 <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
