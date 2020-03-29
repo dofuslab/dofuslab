@@ -582,7 +582,7 @@ class PetScraper:
                 if "is part of the" in div.text:
                     set = div.find("a")["href"].split("/")[-1].split("-")[0]
                     break
-            all_stats = scraper_utils.get_pet_stats()
+            all_stats = scraper_utils.get_pet_stats(id)
             stats = all_stats[0]
             custom_stats = all_stats[1]
             conditions = scraper_utils.get_conditions(all_soups, item_type)
@@ -1166,10 +1166,11 @@ if __name__ == "__main__":
     # WeaponScraper.get_data_for_ids(["18018", "6524"])
 
     # PetScraper.get_all_pet_ids()
-    # PetScraper.get_all_pet_data(1000)
+    PetScraper.get_all_pet_data(1000)
+    arr = ["14827", "14848", "8211"]
 
     # MountScraper.get_all_mount_ids()
     # MountScraper.get_all_mount_data(3000)
 
-    class_scraper = ClassScraper()
-    class_scraper.get_info_for_all_classes()
+    # class_scraper = ClassScraper()
+    # class_scraper.get_info_for_all_classes()

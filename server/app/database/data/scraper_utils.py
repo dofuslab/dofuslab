@@ -377,7 +377,7 @@ def get_bonuses(all_soups):
     return all_bonuses
 
 
-def get_pet_stats():
+def get_pet_stats(id):
     headers = {
         "accept": "text/html, */*; q=0.01",
         "accept-encoding": "gzip, deflate, br",
@@ -391,7 +391,7 @@ def get_pet_stats():
         "x-requested-with": "XMLHttpRequest",
     }
     data = {"level": "100", "_pjax": ".ak-item-details-container"}
-    url = "https://www.dofus.com/en/mmorpg/encyclopedia/pets/12541"
+    url = "https://www.dofus.com/en/mmorpg/encyclopedia/pets/" + id
     response = requests.post(url, data=data, headers=headers)
     soup = BeautifulSoup(response.text, "html.parser")
 

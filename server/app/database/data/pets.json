@@ -71,14 +71,14 @@
     "level": 80,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Chance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Water Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 20
       }
     ],
     "customStats": {},
@@ -122,14 +122,14 @@
     "level": 80,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Strength",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Earth Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 20
       }
     ],
     "customStats": {},
@@ -173,14 +173,14 @@
     "level": 80,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Intelligence",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Fire Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 20
       }
     ],
     "customStats": {},
@@ -224,14 +224,14 @@
     "level": 80,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Agility",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Air Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 20
       }
     ],
     "customStats": {},
@@ -275,17 +275,17 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "AP Parry",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 30
       }
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -326,14 +326,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "Dodge",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 30
       }
     ],
     "customStats": {},
@@ -377,14 +377,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "Pushback Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 60
       }
     ],
     "customStats": {},
@@ -428,14 +428,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "% Neutral Resistance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 10
       }
     ],
     "customStats": {},
@@ -479,14 +479,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "Lock",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 30
       }
     ],
     "customStats": {},
@@ -511,14 +511,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Pushback Damage",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 100
       },
       {
-        "stat": "Summons",
+        "stat": "MP",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 1
       }
     ],
     "customStats": {},
@@ -562,17 +562,12 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Intelligence",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 160
       }
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -613,17 +608,17 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Critical",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 10
       },
       {
-        "stat": "Summons",
+        "stat": "MP",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 1
       }
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -664,14 +659,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "MP Reduction",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 40
       },
       {
-        "stat": "Summons",
+        "stat": "Lock",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -715,14 +710,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "% Fire Resistance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 10
       }
     ],
     "customStats": {},
@@ -766,14 +761,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Initiative",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 2000
       },
       {
-        "stat": "Summons",
+        "stat": "AP",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 1
       }
     ],
     "customStats": {},
@@ -822,9 +817,9 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "Critical Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 40
       }
     ],
     "customStats": {},
@@ -868,14 +863,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Air Resistance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 80
       },
       {
-        "stat": "Summons",
+        "stat": "Power",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -919,14 +914,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Critical Damage",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 50
       },
       {
-        "stat": "Summons",
+        "stat": "AP",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 1
       }
     ],
     "customStats": {},
@@ -970,14 +965,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Earth Resistance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 80
       },
       {
-        "stat": "Summons",
+        "stat": "Power",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -1021,17 +1016,12 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Agility",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 160
       }
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -1072,17 +1062,12 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Chance",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 160
       }
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -1123,14 +1108,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "Critical Resistance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -1174,14 +1159,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "Pushback Resistance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -1225,14 +1210,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "% Water Resistance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 10
       }
     ],
     "customStats": {},
@@ -1276,14 +1261,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Critical Resistance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 100
       },
       {
-        "stat": "Summons",
+        "stat": "Pushback Resistance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 100
       }
     ],
     "customStats": {},
@@ -1327,14 +1312,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "Critical Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 30
       }
     ],
     "customStats": {},
@@ -1378,14 +1363,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "AP Parry",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 30
       }
     ],
     "customStats": {},
@@ -1429,14 +1414,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Water Resistance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 80
       },
       {
-        "stat": "Summons",
+        "stat": "Power",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -1480,14 +1465,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Fire Resistance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 80
       },
       {
-        "stat": "Summons",
+        "stat": "Power",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -1531,14 +1516,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
-        "minStat": null,
-        "maxStat": 70
-      },
-      {
         "stat": "Summons",
         "minStat": null,
         "maxStat": 2
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
       }
     ],
     "customStats": {},
@@ -1582,14 +1567,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "% Air Resistance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 10
       }
     ],
     "customStats": {},
@@ -1633,14 +1618,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Critical Damage",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 50
       },
       {
-        "stat": "Summons",
+        "stat": "Pushback Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 80
       }
     ],
     "customStats": {},
@@ -1684,14 +1669,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "Pushback Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 60
       }
     ],
     "customStats": {},
@@ -1735,14 +1720,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "Dodge",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 30
       }
     ],
     "customStats": {},
@@ -1788,15 +1773,35 @@
       {
         "stat": "Power",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 50
       },
       {
-        "stat": "Summons",
+        "stat": "% Neutral Resistance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 5
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 5
       }
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -1823,57 +1828,6 @@
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121002.png"
   },
   {
-    "dofusID": "14827",
-    "name": {
-      "en": "Kwyness",
-      "fr": "Kwaltess",
-      "de": "Kwackoheit",
-      "es": "Kwalteza",
-      "it": "Re Kwak",
-      "pt": "Kwalteza"
-    },
-    "itemType": "Petsmount",
-    "setID": null,
-    "level": 60,
-    "stats": [
-      {
-        "stat": "Power",
-        "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
-      }
-    ],
-    "customStats": {},
-    "conditions": {
-      "conditions": {},
-      "customConditions": {
-        "en": [
-          "Subscribers only"
-        ],
-        "fr": [
-          "Etre abonné"
-        ],
-        "de": [
-          "Abonniert sein"
-        ],
-        "es": [
-          "Estar abonado"
-        ],
-        "it": [
-          "Essere abbonato"
-        ],
-        "pt": [
-          "Ser assinante"
-        ]
-      }
-    },
-    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121009.png"
-  },
-  {
     "dofusID": "15254",
     "name": {
       "en": "Drhellbert",
@@ -1888,12 +1842,12 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "MP",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 1
       },
       {
-        "stat": "Summons",
+        "stat": "Range",
         "minStat": null,
         "maxStat": 2
       }
@@ -1939,14 +1893,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "MP Parry",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 30
       }
     ],
     "customStats": {},
@@ -1990,14 +1944,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Neutral Resistance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 80
       },
       {
-        "stat": "Summons",
+        "stat": "Power",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -2041,14 +1995,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "Critical Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 30
       }
     ],
     "customStats": {},
@@ -2092,14 +2046,9 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Prospecting",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 120
       }
     ],
     "customStats": {},
@@ -2129,57 +2078,6 @@
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121001.png"
   },
   {
-    "dofusID": "14848",
-    "name": {
-      "en": "Kompost",
-      "fr": "Kompost",
-      "de": "Kompost",
-      "es": "Kompost",
-      "it": "Kwak Frana",
-      "pt": "Oduba"
-    },
-    "itemType": "Petsmount",
-    "setID": null,
-    "level": 60,
-    "stats": [
-      {
-        "stat": "Power",
-        "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
-      }
-    ],
-    "customStats": {},
-    "conditions": {
-      "conditions": {},
-      "customConditions": {
-        "en": [
-          "Subscribers only"
-        ],
-        "fr": [
-          "Etre abonné"
-        ],
-        "de": [
-          "Abonniert sein"
-        ],
-        "es": [
-          "Estar abonado"
-        ],
-        "it": [
-          "Essere abbonato"
-        ],
-        "pt": [
-          "Ser assinante"
-        ]
-      }
-    },
-    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121007.png"
-  },
-  {
     "dofusID": "16295",
     "name": {
       "en": "Mastostroke",
@@ -2194,14 +2092,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "AP Parry",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 30
       }
     ],
     "customStats": {},
@@ -2245,14 +2143,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "% Earth Resistance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 10
       }
     ],
     "customStats": {},
@@ -2296,14 +2194,14 @@
     "level": 60,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 400
       },
       {
-        "stat": "Summons",
+        "stat": "MP Parry",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 30
       }
     ],
     "customStats": {},
@@ -2352,9 +2250,9 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "Critical Resistance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 100
       }
     ],
     "customStats": {},
@@ -2398,17 +2296,12 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 15
       },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
-      }
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {}
@@ -2430,17 +2323,17 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Strength",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Chance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 120
       }
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -2481,17 +2374,17 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Heals",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 50
       },
       {
-        "stat": "Summons",
+        "stat": "AP Reduction",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 40
       }
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -2532,17 +2425,17 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Agility",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Pushback Damage",
         "minStat": null,
-        "maxStat": 2
-      }
+        "maxStat": 80
+      },
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -2583,14 +2476,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Intelligence",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Strength",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 120
       }
     ],
     "customStats": {},
@@ -2639,9 +2532,9 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "MP Reduction",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 40
       }
     ],
     "customStats": {},
@@ -2685,14 +2578,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Heals",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 50
       },
       {
-        "stat": "Summons",
+        "stat": "MP Parry",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -2736,14 +2629,9 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "pods",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 2000
       }
     ],
     "customStats": {},
@@ -2787,14 +2675,9 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Prospecting",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 120
       }
     ],
     "customStats": {},
@@ -2838,14 +2721,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "% Fire Resistance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 25
       },
       {
-        "stat": "Summons",
+        "stat": "Power",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -2889,14 +2772,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "% Earth Resistance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 25
       },
       {
-        "stat": "Summons",
+        "stat": "Power",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -2940,14 +2823,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Initiative",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 2000
       },
       {
-        "stat": "Summons",
+        "stat": "AP Parry",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -2996,12 +2879,12 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "Pusback Resistance",
         "minStat": null,
-        "maxStat": 2
-      }
+        "maxStat": 100
+      },
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -3042,14 +2925,9 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Prospecting",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 120
       }
     ],
     "customStats": {},
@@ -3098,12 +2976,12 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "Range",
         "minStat": null,
         "maxStat": 2
-      }
+      },
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -3144,17 +3022,17 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Intelligence",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Critical Damage",
         "minStat": null,
-        "maxStat": 2
-      }
+        "maxStat": 40
+      },
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -3200,9 +3078,9 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "AP Reduction",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 40
       }
     ],
     "customStats": {},
@@ -3248,12 +3126,12 @@
       {
         "stat": "Power",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 50
       },
       {
-        "stat": "Summons",
+        "stat": "AP",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 1
       }
     ],
     "customStats": {},
@@ -3297,14 +3175,9 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "pods",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 2000
       }
     ],
     "customStats": {},
@@ -3348,12 +3221,12 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "AP Parry",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 40
       },
       {
-        "stat": "Summons",
+        "stat": "Range",
         "minStat": null,
         "maxStat": 2
       }
@@ -3399,17 +3272,17 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Heals",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 50
       },
       {
-        "stat": "Summons",
+        "stat": "Dodge",
         "minStat": null,
-        "maxStat": 2
-      }
+        "maxStat": 50
+      },
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -3450,14 +3323,9 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Prospecting",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 120
       }
     ],
     "customStats": {},
@@ -3501,14 +3369,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "AP Parry",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 50
       },
       {
-        "stat": "Summons",
+        "stat": "AP",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 1
       }
     ],
     "customStats": {},
@@ -3552,14 +3420,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "AP Reduction",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 40
       },
       {
-        "stat": "Summons",
+        "stat": "Dodge",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -3603,14 +3471,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Heals",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 50
       },
       {
-        "stat": "Summons",
+        "stat": "MP Reduction",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 40
       }
     ],
     "customStats": {},
@@ -3654,12 +3522,12 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Initiative",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 2000
       },
       {
-        "stat": "Summons",
+        "stat": "Range",
         "minStat": null,
         "maxStat": 2
       }
@@ -3705,14 +3573,9 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "pods",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 2000
       }
     ],
     "customStats": {},
@@ -3756,14 +3619,9 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Prospecting",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 120
       }
     ],
     "customStats": {},
@@ -3807,9 +3665,9 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "MP Parry",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 40
       },
       {
         "stat": "Summons",
@@ -3858,14 +3716,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "% Water Resistance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 25
       },
       {
-        "stat": "Summons",
+        "stat": "Power",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -3909,17 +3767,12 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 15
       },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
-      }
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -3960,14 +3813,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "AP Reduction",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 40
       },
       {
-        "stat": "Summons",
+        "stat": "Dodge",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -4016,9 +3869,9 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "AP Reduction",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 40
       }
     ],
     "customStats": {},
@@ -4067,12 +3920,12 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "MP Reduction",
         "minStat": null,
-        "maxStat": 2
-      }
+        "maxStat": 40
+      },
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -4113,14 +3966,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Heals",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 50
       },
       {
-        "stat": "Summons",
+        "stat": "Lock",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -4164,14 +4017,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Intelligence",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Agility",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 120
       }
     ],
     "customStats": {},
@@ -4201,57 +4054,6 @@
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18029.png"
   },
   {
-    "dofusID": "8211",
-    "name": {
-      "en": "Pingoku",
-      "fr": "Walk",
-      "de": "Ping",
-      "es": "Walk",
-      "it": "Walk",
-      "pt": "Walk"
-    },
-    "itemType": "Pet",
-    "setID": null,
-    "level": 1,
-    "stats": [
-      {
-        "stat": "Power",
-        "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
-      }
-    ],
-    "customStats": {},
-    "conditions": {
-      "conditions": {},
-      "customConditions": {
-        "en": [
-          "Subscribers only"
-        ],
-        "fr": [
-          "Etre abonné"
-        ],
-        "de": [
-          "Abonniert sein"
-        ],
-        "es": [
-          "Estar abonado"
-        ],
-        "it": [
-          "Essere abbonato"
-        ],
-        "pt": [
-          "Ser assinante"
-        ]
-      }
-    },
-    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18038.png"
-  },
-  {
     "dofusID": "9624",
     "name": {
       "en": "Black Dragoone",
@@ -4271,9 +4073,9 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "MP Parry",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -4317,9 +4119,9 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Initiative",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 2000
       },
       {
         "stat": "Summons",
@@ -4368,17 +4170,17 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Prospecting",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 22
       },
       {
-        "stat": "Summons",
+        "stat": "Initiative",
         "minStat": null,
-        "maxStat": 2
-      }
+        "maxStat": 220
+      },
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -4419,14 +4221,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Chance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Pushback Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 80
       }
     ],
     "customStats": {},
@@ -4470,14 +4272,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Initiative",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 2000
       },
       {
-        "stat": "Summons",
+        "stat": "Dodge",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -4521,14 +4323,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Intelligence",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Pushback Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 80
       }
     ],
     "customStats": {},
@@ -4577,9 +4379,9 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "AP Parry",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -4623,14 +4425,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Strength",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Agility",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 120
       }
     ],
     "customStats": {},
@@ -4674,14 +4476,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Critical",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 15
       },
       {
-        "stat": "Summons",
+        "stat": "Critical Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 40
       }
     ],
     "customStats": {},
@@ -4730,9 +4532,9 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "AP Reduction",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 40
       }
     ],
     "customStats": {},
@@ -4781,9 +4583,9 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "Dodge",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 40
       }
     ],
     "customStats": {},
@@ -4827,14 +4629,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "% Air Resistance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 25
       },
       {
-        "stat": "Summons",
+        "stat": "Power",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -4878,17 +4680,12 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Vitality",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 15
       },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
-      }
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -4929,17 +4726,17 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Strength",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Critical Damage",
         "minStat": null,
-        "maxStat": 2
-      }
+        "maxStat": 40
+      },
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -4980,17 +4777,17 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Chance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Agility",
         "minStat": null,
-        "maxStat": 2
-      }
+        "maxStat": 120
+      },
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -5031,14 +4828,9 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Prospecting",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 120
       }
     ],
     "customStats": {},
@@ -5087,12 +4879,12 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "Critical Damage",
         "minStat": null,
-        "maxStat": 2
-      }
+        "maxStat": 40
+      },
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -5133,17 +4925,17 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "AP Parry",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 40
       },
       {
-        "stat": "Summons",
+        "stat": "Critical Resistance",
         "minStat": null,
-        "maxStat": 2
-      }
+        "maxStat": 100
+      },
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -5184,14 +4976,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Initiative",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 2000
       },
       {
-        "stat": "Summons",
+        "stat": "Lock",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -5235,14 +5027,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "MP Parry",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 40
       },
       {
-        "stat": "Summons",
+        "stat": "Critical Resistance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 100
       }
     ],
     "customStats": {},
@@ -5286,14 +5078,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Strength",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Pushback Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 80
       }
     ],
     "customStats": {},
@@ -5337,14 +5129,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Pushback Damage",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 100
       },
       {
-        "stat": "Summons",
+        "stat": "Critical Resistance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 100
       }
     ],
     "customStats": {},
@@ -5388,14 +5180,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "AP Reduction",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 40
       },
       {
-        "stat": "Summons",
+        "stat": "Lock",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -5439,14 +5231,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "MP Parry",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 50
       },
       {
-        "stat": "Summons",
+        "stat": "AP",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 1
       }
     ],
     "customStats": {},
@@ -5490,14 +5282,9 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Prospecting",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 120
       }
     ],
     "customStats": {},
@@ -5541,17 +5328,12 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Wisdom",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 20
       },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
-      }
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {}
@@ -5573,17 +5355,17 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Prospecting",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 20
       },
       {
-        "stat": "Summons",
+        "stat": "Initiative",
         "minStat": null,
-        "maxStat": 2
-      }
+        "maxStat": 200
+      },
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -5624,14 +5406,9 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Prospecting",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 120
       }
     ],
     "customStats": {},
@@ -5680,9 +5457,9 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "Pushback Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 80
       }
     ],
     "customStats": {},
@@ -5726,14 +5503,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "% Neutral Resistance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 25
       },
       {
-        "stat": "Summons",
+        "stat": "Power",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -5782,9 +5559,9 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "Dodge",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 40
       }
     ],
     "customStats": {},
@@ -5833,9 +5610,9 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "Lock",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 40
       }
     ],
     "customStats": {},
@@ -5879,17 +5656,17 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Chance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Critical Damage",
         "minStat": null,
-        "maxStat": 2
-      }
+        "maxStat": 40
+      },
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -5930,17 +5707,17 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Agility",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
       {
-        "stat": "Summons",
+        "stat": "Range",
         "minStat": null,
-        "maxStat": 2
-      }
+        "maxStat": 40
+      },
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -5989,9 +5766,9 @@
         "stat": "Summons",
         "minStat": null,
         "maxStat": 2
-      }
+      },
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -6032,14 +5809,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Heals",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 50
       },
       {
-        "stat": "Summons",
+        "stat": "AP Parry",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -6083,14 +5860,9 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "pods",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 2000
       }
     ],
     "customStats": {},
@@ -6139,9 +5911,9 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "MP Parry",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -6185,14 +5957,34 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "% Fire Resistance",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 5
       },
       {
-        "stat": "Summons",
+        "stat": "% Water Resistance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 5
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 50
       }
     ],
     "customStats": {},
@@ -6241,9 +6033,9 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "Pushback Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 80
       }
     ],
     "customStats": {},
@@ -6287,17 +6079,12 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Prospecting",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 120
       },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
-      }
     ],
-    "customStats": {},
+    "customStats": [],
     "conditions": {
       "conditions": {},
       "customConditions": {
@@ -6338,14 +6125,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Critical",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 15
       },
       {
-        "stat": "Summons",
+        "stat": "Pushback Resistance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 100
       }
     ],
     "customStats": {},
@@ -6389,14 +6176,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Critical Damage",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 50
       },
       {
-        "stat": "Summons",
+        "stat": "Pushback Resistance",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 100
       }
     ],
     "customStats": {},
@@ -6445,7 +6232,7 @@
         "maxStat": 70
       },
       {
-        "stat": "Summons",
+        "stat": "Range",
         "minStat": null,
         "maxStat": 2
       }
@@ -6497,14 +6284,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Critical",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 15
       },
       {
-        "stat": "Summons",
+        "stat": "Pushback Damage",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 80
       }
     ],
     "customStats": {},
@@ -6548,14 +6335,14 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Initiative",
         "minStat": null,
-        "maxStat": 70
+        "maxStat": 2000
       },
       {
-        "stat": "Summons",
+        "stat": "Critical",
         "minStat": null,
-        "maxStat": 2
+        "maxStat": 15
       }
     ],
     "customStats": {},
@@ -6599,14 +6386,9 @@
     "level": 1,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "pods",
         "minStat": null,
-        "maxStat": 70
-      },
-      {
-        "stat": "Summons",
-        "minStat": null,
-        "maxStat": 2
+        "maxStat": 2000
       }
     ],
     "customStats": {},
