@@ -245,8 +245,31 @@ class CustomSet(SQLAlchemyObjectType):
         interfaces = (GlobalNode,)
 
 
+class CustomSetConnection(NonNullConnection):
+    class Meta:
+        node = CustomSet
+
+
 class User(SQLAlchemyObjectType):
-    access_token = graphene.String(required=True)
+    custom_sets = relay.ConnectionField(
+        graphene.NonNull(CustomSetConnection), search=graphene.Argument(graphene.String)
+    )
+
+    def resolve_custom_sets(self, info, **kwargs):
+        search = kwargs.get("search")
+        query = (
+            db.session.query(ModelCustomSet)
+            .filter_by(owner_id=self.uuid)
+            .order_by(ModelCustomSet.last_modified.desc())
+        )
+
+        if search:
+            search = search.strip()
+            query = query.filter(
+                func.upper(ModelCustomSet.name).contains(func.upper(search.strip()))
+            )
+
+        return query.all()
 
     class Meta:
         model = ModelUser
@@ -291,6 +314,16 @@ scrolled_stat_list = [
     "scrolled_chance",
     "scrolled_agility",
 ]
+
+
+class CreateCustomSet(graphene.Mutation):
+    custom_set = graphene.Field(CustomSet, required=True)
+
+    def mutate(self, info, **kwargs):
+        custom_set = get_or_create_custom_set(None)
+        db.session.commit()
+
+        return CreateCustomSet(custom_set=custom_set)
 
 
 class EditCustomSetStats(graphene.Mutation):
@@ -722,6 +755,7 @@ class Mutation(graphene.ObjectType):
     edit_custom_set_metadata = EditCustomSetMetadata.Field()
     edit_custom_set_stats = EditCustomSetStats.Field()
     equip_set = EquipSet.Field()
+    create_custom_set = CreateCustomSet.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

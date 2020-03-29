@@ -1,0 +1,29 @@
+query myCustomSets($first: Int!, $after: String, $search: String) {
+  currentUser {
+    id
+    customSets(first: $first, after: $after, search: $search) {
+      edges {
+        node {
+          id
+          name
+          level
+          equippedItems {
+            id
+            slot {
+              id
+              order
+            }
+            item {
+              id
+              imageUrl
+            }
+          }
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+}

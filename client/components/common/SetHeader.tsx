@@ -251,50 +251,73 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
   );
 
   return (
-    <div
-      css={{
-        display: 'flex',
-        alignItems: 'center',
-        flex: '0 0 96px',
-        margin: '12px 4px',
-        [mq[1]]: {
-          margin: '4px 14px',
-          flex: '0 0 52px',
-        },
-        [mq[4]]: {
-          margin: '4px 20px',
-        },
-      }}
-    >
-      {customSet && !metadataState.isEditing ? (
-        <Tooltip
-          overlayStyle={{ maxWidth: 360 }}
-          title={
-            <div
-              css={{
-                display: 'grid',
-                gridTemplateColumns: 'auto auto',
-                gridColumnGap: 12,
-              }}
-            >
-              <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
-              <div>{customSet.owner?.username ?? t('ANONYMOUS')}</div>
-              <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-              <div>{moment(customSet.createdAt).format('lll')}</div>
-              <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-              <div>{moment(customSet.lastModified).format('lll')}</div>
+    <>
+      <div
+        css={{
+          display: 'flex',
+          alignItems: 'center',
+          flex: '0 0 96px',
+          margin: '12px 4px',
+          [mq[1]]: {
+            margin: '4px 14px',
+            flex: '0 0 52px',
+          },
+          [mq[4]]: {
+            margin: '4px 20px',
+          },
+        }}
+      >
+        {customSet && !metadataState.isEditing && !isMobile ? (
+          <Tooltip
+            overlayStyle={{ maxWidth: 360 }}
+            title={
+              <div
+                css={{
+                  display: 'grid',
+                  gridTemplateColumns: 'auto auto',
+                  gridColumnGap: 12,
+                }}
+              >
+                <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
+                <div>{customSet.owner?.username ?? t('ANONYMOUS')}</div>
+                <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
+                <div>{moment(customSet.createdAt).format('lll')}</div>
+                <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
+                <div>{moment(customSet.lastModified).format('lll')}</div>
+              </div>
+            }
+            placement="bottomLeft"
+          >
+            {formElement}
+          </Tooltip>
+        ) : (
+          formElement
+        )}
+        {customSet && !isMobile && <BonusStats customSet={customSet} />}
+      </div>
+      {customSet && isMobile && (
+        <div css={{ marginBottom: 20, fontSize: '0.75rem' }}>
+          <div css={{ display: 'flex' }}>
+            <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
+            <div css={{ marginLeft: 8 }}>
+              {customSet.owner?.username ?? t('ANONYMOUS')}
             </div>
-          }
-          placement="bottomLeft"
-        >
-          {formElement}
-        </Tooltip>
-      ) : (
-        formElement
+          </div>
+          <div css={{ display: 'flex' }}>
+            <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
+            <div css={{ marginLeft: 8 }}>
+              {moment(customSet.createdAt).format('lll')}
+            </div>
+          </div>
+          <div css={{ display: 'flex' }}>
+            <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
+            <div css={{ marginLeft: 8 }}>
+              {moment(customSet.lastModified).format('lll')}
+            </div>
+          </div>
+        </div>
       )}
-
-      {customSet && !isMobile && <BonusStats customSet={customSet} />}
-    </div>
+    </>
   );
 };
 

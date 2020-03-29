@@ -122,7 +122,8 @@ export const itemBox = {
 };
 
 export const selected = {
-  border: `2px solid ${gray6}`,
+  border: '1px solid transparent' /* remove the border's colour */,
+  boxShadow: `0 0 0 2px ${gray6}` /* emulate the border */,
   background: gray2,
 };
 

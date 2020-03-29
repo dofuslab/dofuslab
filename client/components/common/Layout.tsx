@@ -4,6 +4,7 @@ import * as React from 'react';
 import { jsx, Global, css } from '@emotion/core';
 import AntdLayout from 'antd/lib/layout';
 import Button from 'antd/lib/button/button';
+import Drawer from 'antd/lib/drawer';
 
 import LoginModal from './LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
@@ -17,13 +18,14 @@ import { useTranslation } from 'i18n';
 import SignUpModal from './SignUpModal';
 import { mq } from 'common/constants';
 import { Media } from './Media';
+import MyBuilds from './MyBuilds';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 const Layout = (props: LayoutProps) => {
-  const { t } = useTranslation('auth');
+  const { t } = useTranslation(['auth', 'common']);
   const client = useApolloClient();
   const { data } = useQuery<ICurrentUser>(currentUserQuery);
   const [logout] = useMutation<ILogout>(logoutMutation);
@@ -50,6 +52,15 @@ const Layout = (props: LayoutProps) => {
       });
     }
   }, [logout]);
+
+  const [drawerVisible, setDrawerVisible] = React.useState(false);
+
+  const openDrawer = React.useCallback(() => {
+    setDrawerVisible(true);
+  }, [setDrawerVisible]);
+  const closeDrawer = React.useCallback(() => {
+    setDrawerVisible(false);
+  }, [setDrawerVisible]);
 
   return (
     <AntdLayout css={{ height: '100%', minHeight: '100vh' }}>
@@ -93,7 +104,20 @@ const Layout = (props: LayoutProps) => {
         <div>
           {data?.currentUser ? (
             <div>
-              {t('WELCOME_MESSAGE', { username: data.currentUser.username })}
+              {t('WELCOME_MESSAGE', { displayName: data.currentUser.username })}
+              <Media greaterThanOrEqual="xs" css={{ display: 'inline' }}>
+                <Button onClick={openDrawer} css={{ marginLeft: 12 }}>
+                  {t('MY_BUILDS', { ns: 'common' })}
+                </Button>
+                <Drawer
+                  visible={drawerVisible}
+                  closable
+                  onClose={closeDrawer}
+                  width={480}
+                >
+                  <MyBuilds />
+                </Drawer>
+              </Media>
               <Button
                 key="logout"
                 onClick={logoutHandler}
@@ -123,7 +147,7 @@ const Layout = (props: LayoutProps) => {
                   [mq[1]]: { fontSize: 'inherit' },
                 }}
               >
-                or
+                {t('OR', { ns: 'common' })}
               </span>
               <Media greaterThanOrEqual="xs" css={{ display: 'inline' }}>
                 <Button onClick={openSignUpModal} type="default">
@@ -157,6 +181,7 @@ const Layout = (props: LayoutProps) => {
       >
         {props.children}
       </AntdLayout.Content>
+
       <LoginModal
         visible={showLoginModal}
         onClose={closeLoginModal}

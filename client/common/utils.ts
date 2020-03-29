@@ -436,23 +436,19 @@ export const useEquipSetMutation = (
   const onClick = useCallback(async () => {
     const ok = await checkAuthentication(client, t, customSet);
     if (!ok) return;
-    try {
-      const { data: resultData } = await equipSet();
+    const { data: resultData } = await equipSet();
 
-      if (resultData?.equipSet?.customSet.id !== routerSetId) {
-        router.replace(
-          {
-            pathname: '/',
-            query: { customSetId: resultData?.equipSet?.customSet.id },
-          },
-          `/set/${resultData?.equipSet?.customSet.id}`,
-          {
-            shallow: true,
-          },
-        );
-      }
-    } catch (e) {
-      notification.error(e);
+    if (resultData?.equipSet?.customSet.id !== routerSetId) {
+      router.replace(
+        {
+          pathname: '/',
+          query: { customSetId: resultData?.equipSet?.customSet.id },
+        },
+        `/set/${resultData?.equipSet?.customSet.id}`,
+        {
+          shallow: true,
+        },
+      );
     }
   }, [equipSet, routerSetId, router]);
 

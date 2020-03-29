@@ -3,7 +3,7 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import Card from 'antd/lib/card';
-import { TruncatableText, Badge } from 'common/wrappers';
+import { CardTitleWithLevel } from 'common/wrappers';
 import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { useTranslation } from 'i18n';
 import { itemCardStyle, BORDER_COLOR, itemBoxDimensions } from 'common/mixins';
@@ -28,17 +28,12 @@ const BasicItemCard: React.FC<IProps> = ({
       hoverable={!!onClick}
       size="small"
       title={
-        <div css={{ display: 'flex', alignItems: 'center' }}>
-          <TruncatableText css={{ marginRight: 8, fontSize: '0.8rem' }}>
-            {item.name}
-          </TruncatableText>
-          {equipped && <Badge css={{ marginRight: 4 }}>{t('EQUIPPED')}</Badge>}
-          <div
-            css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}
-          >
-            {t('LEVEL_ABBREVIATION', { ns: 'common' })} {item.level}
-          </div>
-        </div>
+        <CardTitleWithLevel
+          title={item.name}
+          showBadge={equipped}
+          badgeContent={t('EQUIPPED')}
+          level={item.level}
+        />
       }
       css={{
         ...itemCardStyle,

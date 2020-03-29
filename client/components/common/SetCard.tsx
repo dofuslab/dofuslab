@@ -4,7 +4,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import Card from 'antd/lib/card';
 import { useTranslation } from 'i18n';
-import { TruncatableText, SetBonuses } from 'common/wrappers';
+import { SetBonuses, CardTitleWithLevel } from 'common/wrappers';
 import { sets_sets_edges_node } from 'graphql/queries/__generated__/sets';
 import { itemCardStyle, BORDER_COLOR } from 'common/mixins';
 import { useEquipSetMutation, useCustomSet } from 'common/utils';
@@ -53,20 +53,13 @@ const SetCard: React.FC<IProps> = ({
       size="small"
       onClick={onEquipSet}
       title={
-        <div css={{ display: 'flex', alignItems: 'center' }}>
-          <TruncatableText css={{ fontSize: '0.8rem' }}>
-            {set.name}
-          </TruncatableText>
-          <div
-            css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}
-          >
-            {t('LEVEL_ABBREVIATION', { ns: 'common' })}{' '}
-            {set.items?.reduce(
-              (currentMax, item) => Math.max(item?.level || 0, currentMax),
-              0,
-            )}
-          </div>
-        </div>
+        <CardTitleWithLevel
+          title={set.name}
+          level={set.items?.reduce(
+            (currentMax, item) => Math.max(item?.level || 0, currentMax),
+            0,
+          )}
+        />
       }
       css={{
         ...itemCardStyle,
