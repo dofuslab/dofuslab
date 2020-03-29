@@ -17,6 +17,7 @@ import { BORDER_COLOR, gray8 } from 'common/mixins';
 import { useTranslation } from 'i18n';
 import SignUpModal from '../common/SignUpModal';
 import MyBuilds from '../common/MyBuilds';
+import Link from 'next/link';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -86,7 +87,9 @@ const Layout = (props: LayoutProps) => {
           fontSize: '0.8rem',
         }}
       >
-        <div css={{ fontWeight: 500 }}>DofusLab</div>
+        <Link href="/" as="/">
+          <div css={{ fontWeight: 500 }}>DofusLab</div>
+        </Link>
         <div>
           {data?.currentUser ? (
             <div>

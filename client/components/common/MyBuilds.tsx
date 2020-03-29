@@ -74,27 +74,32 @@ const MyBuilds: React.FC = () => {
     const { data: resultData } = await mutate({
       update: (_, { data }) => {
         if (!data?.createCustomSet) return;
-        const myBuildsCopy: myCustomSets | undefined = myBuilds && {
-          currentUser: myBuilds.currentUser && {
-            ...myBuilds.currentUser,
+        const oldData = client.readQuery<myCustomSets, myCustomSetsVariables>({
+          query: myCustomSetsQuery,
+          variables: { first: PAGE_SIZE, search: '' },
+        });
+
+        const newData: myCustomSets | null = oldData && {
+          currentUser: oldData.currentUser && {
+            ...oldData.currentUser,
             customSets: {
-              ...myBuilds.currentUser.customSets,
+              ...oldData.currentUser.customSets,
               edges: [
                 {
                   node: data.createCustomSet.customSet,
                   __typename: 'CustomSetEdge',
                 },
-                ...myBuilds.currentUser.customSets.edges,
+                ...oldData.currentUser.customSets.edges,
               ],
             },
           },
         };
 
-        if (myBuildsCopy) {
+        if (newData) {
           client.writeQuery<myCustomSets, myCustomSetsVariables>({
-            data: myBuildsCopy,
+            data: newData,
             query: myCustomSetsQuery,
-            variables: { first: PAGE_SIZE, search },
+            variables: { first: PAGE_SIZE, search: '' },
           });
         }
       },
@@ -115,7 +120,7 @@ const MyBuilds: React.FC = () => {
         },
       );
     }
-  }, [customSetId, mutate, router, myBuilds, client, search]);
+  }, [customSetId, mutate, router, myBuilds, client]);
 
   const { t } = useTranslation('common');
 
