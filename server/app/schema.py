@@ -336,12 +336,6 @@ class Class(SQLAlchemyObjectType):
             .name
         )
 
-    def resolve_spell_variant_pairs(self, info):
-        query = db.session.query(ModelSpellVariantPair).filter(
-            ModelSpellVariantPair.class_id == self.uuid
-        )
-        return query
-
     class Meta:
         model = ModelClass
         interfaces = (GlobalNode,)
