@@ -99,7 +99,7 @@ export const CardTitleWithLevel: React.FC<{
 }> = ({ title, level, showBadge, badgeContent }) => {
   const { t } = useTranslation('common');
   return (
-    <div css={{ display: 'flex', alignItems: 'center' }}>
+    <div css={{ display: 'flex', alignItems: 'center', marginRight: 4 }}>
       <TruncatableText css={{ fontSize: '0.8rem' }}>{title}</TruncatableText>
       {showBadge && <Badge css={{ marginRight: 4 }}>{badgeContent}</Badge>}
       {level && (

@@ -45,35 +45,41 @@ const weaponEffectToIconUrl = (effect: Effect) => {
 };
 
 const renderConditions = (conditionsObj: any, depth = 0) => {
-  if (!conditionsObj || Object.keys(conditionsObj).length === 0) {
-    return null;
-  }
-  if (conditionsObj.stat) {
-    return `${conditionsObj.stat}\u00A0${conditionsObj.operator}\u00A0${conditionsObj.value}`;
-  }
-  if (conditionsObj.and && conditionsObj.and.length === 1) {
-    const condition = conditionsObj.and[0];
-    return `${condition.stat} ${condition.operator} ${condition.value}`;
-  } else if (conditionsObj.or && conditionsObj.or.length === 1) {
-    const condition = conditionsObj.or[0];
-    return `${condition.stat} ${condition.operator} ${condition.value}`;
+  try {
+    if (!conditionsObj || Object.keys(conditionsObj).length === 0) {
+      return null;
+    }
+    if (conditionsObj.stat) {
+      return `${conditionsObj.stat}\u00A0${conditionsObj.operator}\u00A0${conditionsObj.value}`;
+    }
+    if (conditionsObj.and && conditionsObj.and.length === 1) {
+      const condition = conditionsObj.and[0];
+      return `${condition.stat} ${condition.operator} ${condition.value}`;
+    } else if (conditionsObj.or && conditionsObj.or.length === 1) {
+      const condition = conditionsObj.or[0];
+      return `${condition.stat} ${condition.operator} ${condition.value}`;
+    }
+
+    if (conditionsObj.and) {
+      const result = conditionsObj.and
+        .map((nestedObj: any) => renderConditions(nestedObj, depth + 1))
+        .join(' and ');
+      return depth > 0 ? `(${result})` : result;
+    }
+
+    if (conditionsObj.or) {
+      const result = conditionsObj.or
+        .map((nestedObj: any) => renderConditions(nestedObj, depth + 1))
+        .join(' or ');
+      return depth > 0 ? `(${result})` : result;
+    }
+    throw new Error('Unknown conditions object');
+  } catch (e) {
+    console.error('Error parsing conditions object:', e);
+    console.log(conditionsObj);
   }
 
-  if (conditionsObj.and) {
-    const result = conditionsObj.and
-      .map((nestedObj: any) => renderConditions(nestedObj, depth + 1))
-      .join(' and ');
-    return depth > 0 ? `(${result})` : result;
-  }
-
-  if (conditionsObj.or) {
-    const result = conditionsObj.or
-      .map((nestedObj: any) => renderConditions(nestedObj, depth + 1))
-      .join(' or ');
-    return depth > 0 ? `(${result})` : result;
-  }
-
-  throw new Error('Unknown conditions object');
+  return null;
 };
 
 const ItemStatsList: React.FC<IProps> = ({
