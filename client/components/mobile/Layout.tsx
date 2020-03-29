@@ -19,11 +19,7 @@ import { BORDER_COLOR, gray8 } from 'common/mixins';
 import { useTranslation } from 'i18n';
 import SignUpModal from '../common/SignUpModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faPlus,
-  faTshirt,
-  faDoorOpen,
-} from '@fortawesome/free-solid-svg-icons';
+import { faTshirt, faDoorOpen } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 
 interface LayoutProps {
@@ -68,14 +64,6 @@ const Layout = (props: LayoutProps) => {
 
   const menu = (
     <Menu>
-      <Menu.Item key="CREATE_NEW_BUILD" css={{ padding: '8px 12px' }}>
-        <a css={{ fontSize: '0.75rem' }}>
-          <span css={iconWrapper}>
-            <FontAwesomeIcon icon={faPlus} />
-          </span>
-          {t('CREATE_NEW_BUILD', { ns: 'common' })}
-        </a>
-      </Menu.Item>
       <Menu.Item key="MY_BUILDS" css={{ padding: '8px 12px' }}>
         <Link href="/my-builds" as="/my-builds">
           <a css={{ fontSize: '0.75rem' }}>
@@ -120,7 +108,9 @@ const Layout = (props: LayoutProps) => {
           fontSize: '0.8rem',
         }}
       >
-        <div css={{ fontWeight: 500 }}>DofusLab</div>
+        <Link href="/" as="/">
+          <div css={{ fontWeight: 500 }}>DofusLab</div>
+        </Link>
         <div>
           {data?.currentUser ? (
             <div>
