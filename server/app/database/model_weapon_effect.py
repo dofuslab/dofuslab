@@ -2,7 +2,7 @@ import sqlalchemy
 from .base import Base
 from sqlalchemy import Column, Integer, Enum, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID
-from .enums import EffectEnum
+from .enums import WeaponEffectEnum
 
 
 class ModelWeaponEffect(Base):
@@ -18,6 +18,6 @@ class ModelWeaponEffect(Base):
     weapon_stat_id = Column(
         UUID(as_uuid=True), ForeignKey("weapon_stat.uuid"), nullable=False
     )
-    effect_type = Column("effect_type", EffectEnum, nullable=False)
+    effect_type = Column("effect_type", WeaponEffectEnum, nullable=False)
     min_damage = Column("min_damage", Integer)
     max_damage = Column("max_damage", Integer, nullable=False)

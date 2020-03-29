@@ -58,7 +58,7 @@ class Stat(Enum):
     PODS = auto()
 
 
-class Effect(Enum):
+class WeaponEffectTypes(Enum):
     NEUTRAL_DAMAGE = auto()
     EARTH_DAMAGE = auto()
     FIRE_DAMAGE = auto()
@@ -74,5 +74,24 @@ class Effect(Enum):
     HP_RESTORED = auto()
 
 
+class SpellEffectTypes(Enum):
+    NEUTRAL_DAMAGE = auto()
+    EARTH_DAMAGE = auto()
+    FIRE_DAMAGE = auto()
+    WATER_DAMAGE = auto()
+    AIR_DAMAGE = auto()
+    NEUTRAL_STEAL = auto()
+    EARTH_STEAL = auto()
+    FIRE_STEAL = auto()
+    WATER_STEAL = auto()
+    AIR_STEAL = auto()
+    AP = auto()
+    MP = auto()
+    HP_RESTORED = auto()
+    SHIELD = auto()
+    PUSHBACK_DAMAGE = auto()
+
+
 StatEnum = sqlalchemy.Enum(Stat)
-EffectEnum = sqlalchemy.Enum(Effect)
+WeaponEffectEnum = sqlalchemy.Enum(WeaponEffectTypes)
+SpellEffectEnum = sqlalchemy.Enum(SpellEffectTypes)

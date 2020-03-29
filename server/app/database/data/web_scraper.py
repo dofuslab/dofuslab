@@ -920,8 +920,14 @@ class ClassScraper:
                         if re.search(
                             r"\d+ \((?:{})\)".format(spell_effects), spell_stat
                         ):
+                            spell_stat = re.sub(r"\s\(\d turns\)", "", spell_stat)
                             if re.search(r"\d to \d", spell_stat):
-                                arr = spell_stat.replace("(", "").strip(")").split(" ")
+                                arr = (
+                                    spell_stat.replace("(", "")
+                                    .strip(")")
+                                    .strip()
+                                    .split(" ")
+                                )
                                 type = " ".join(arr[3:])
                                 min_stat = int(arr[0])
                                 max_stat = int(arr[2])
@@ -945,6 +951,14 @@ class ClassScraper:
                             elif "Pushes back" in spell_stat:
                                 type = "Pushback damage"
                                 max_stat = spell_stat.split(" ")[2]
+
+                            normal_effects["modifiableEffect"].append(
+                                {
+                                    "stat": type,
+                                    "minStat": min_stat,
+                                    "maxStat": max_stat,
+                                }
+                            )
                             i = i + 1
                         else:
                             if normal_effects["customEffect"] == {}:
@@ -996,6 +1010,7 @@ class ClassScraper:
                             if re.search(
                                 r"\d+ \((?:{})\)".format(spell_effects), spell_stat
                             ):
+                                spell_stat = re.sub(r"\s\(\d turns\)", "", spell_stat)
                                 if re.search(r"\d to \d", spell_stat):
                                     arr = (
                                         spell_stat.replace("(", "")
@@ -1031,6 +1046,14 @@ class ClassScraper:
                                 elif "Pushes back" in spell_stat:
                                     type = "Pushback damage"
                                     max_stat = spell_stat.split(" ")[2]
+
+                                critical_effects["modifiableEffect"].append(
+                                    {
+                                        "stat": type,
+                                        "minStat": min_stat,
+                                        "maxStat": max_stat,
+                                    }
+                                )
                                 i = i + 1
                             else:
                                 if critical_effects["customEffect"] == {}:
@@ -1103,18 +1126,18 @@ class ClassScraper:
 
     def get_info_for_all_classes(self):
         all_urls = [
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/1-feca",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/2-osamodas",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/3-enutrof",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/4-sram",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/5-xelor",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/6-ecaflip",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/7-eniripsa",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/8-iop",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/9-cra",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/10-sadida",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/11-sacrier",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/12-pandawa",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/1-feca",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/2-osamodas",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/3-enutrof",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/4-sram",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/5-xelor",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/6-ecaflip",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/7-eniripsa",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/8-iop",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/9-cra",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/10-sadida",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/11-sacrier",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/12-pandawa",
             "https://www.dofus.com/en/mmorpg/encyclopedia/classes/13-rogue",
             "https://www.dofus.com/en/mmorpg/encyclopedia/classes/14-masqueraider",
             "https://www.dofus.com/en/mmorpg/encyclopedia/classes/15-foggernaut",
@@ -1123,8 +1146,8 @@ class ClassScraper:
             "https://www.dofus.com/en/mmorpg/encyclopedia/classes/18-ouginak",
         ]
 
-        with open(os.path.join(dirname, "spells.json"), "w") as file:
-            json.dump([], file)
+        # with open(os.path.join(dirname, "spells.json"), "w") as file:
+        #     json.dump([], file)
 
         for url in all_urls:
             self.get_info_for_class(url)
