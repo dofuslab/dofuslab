@@ -147,12 +147,6 @@ class Item(SQLAlchemyObjectType):
             .name
         )
 
-    def resolve_stats(self, info):
-        query = db.session.query(ModelItemStat).filter(
-            ModelItemStat.item_id == self.uuid
-        )
-        return query
-
     class Meta:
         model = ModelItem
         interfaces = (GlobalNode,)
@@ -201,12 +195,6 @@ class Set(SQLAlchemyObjectType):
             .one()
             .name
         )
-
-    def resolve_bonuses(self, info):
-        query = db.session.query(ModelSetBonus).filter(
-            ModelSetBonus.set_id == self.uuid
-        )
-        return query
 
     class Meta:
         model = ModelSet
