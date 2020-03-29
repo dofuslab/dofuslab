@@ -100,22 +100,23 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
           level: values.level,
           customSetId: customSet?.id,
         },
-        optimisticResponse: ({ name, level }: any) => {
-          const optimisticCustomSet: editCustomSetMetadata_editCustomSetMetadata_customSet = {
-            id: 'custom-set-0',
-            ...customSet,
-            name: name || null,
-            level,
-            __typename: 'CustomSet',
-          };
+        optimisticResponse: customSet
+          ? ({ name, level }: any) => {
+              const optimisticCustomSet: editCustomSetMetadata_editCustomSetMetadata_customSet = {
+                ...customSet,
+                name: name || null,
+                level,
+                __typename: 'CustomSet',
+              };
 
-          return {
-            editCustomSetMetadata: {
-              customSet: optimisticCustomSet,
-              __typename: 'EditCustomSetMetadata',
-            },
-          };
-        },
+              return {
+                editCustomSetMetadata: {
+                  customSet: optimisticCustomSet,
+                  __typename: 'EditCustomSetMetadata',
+                },
+              };
+            }
+          : undefined,
       });
       if (data?.editCustomSetMetadata?.customSet.id !== customSet?.id) {
         router.replace(

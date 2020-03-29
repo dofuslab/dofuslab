@@ -20,6 +20,8 @@ export interface sets_sets_edges_node_bonuses {
 
 export interface sets_sets_edges_node_items_stats {
   __typename: "ItemStat";
+  id: any;
+  order: number;
   maxValue: number | null;
   stat: Stat | null;
   customStat: string | null;

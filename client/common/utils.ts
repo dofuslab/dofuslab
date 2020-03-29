@@ -468,6 +468,7 @@ export const useDeleteItemMutation = (
       deleteCustomSetItem: {
         customSet: {
           id: customSet.id,
+          lastModified: Date.now(),
           equippedItems: [
             ...customSet.equippedItems
               .filter(equippedItem => equippedItem.slot.id !== slotId)

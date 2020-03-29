@@ -20,6 +20,8 @@ export interface set_setById_bonuses {
 
 export interface set_setById_items_stats {
   __typename: "ItemStat";
+  id: any;
+  order: number;
   maxValue: number | null;
   stat: Stat | null;
   customStat: string | null;

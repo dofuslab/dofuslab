@@ -17,6 +17,8 @@ export interface customSet_customSetById_equippedItems_slot {
 
 export interface customSet_customSetById_equippedItems_item_stats {
   __typename: "ItemStat";
+  id: any;
+  order: number;
   maxValue: number | null;
   stat: Stat | null;
   customStat: string | null;

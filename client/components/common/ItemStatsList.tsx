@@ -168,21 +168,23 @@ const ItemStatsList: React.FC<IProps> = ({
         className={className}
         css={{ paddingInlineStart: 16, fontSize: '0.75rem' }}
       >
-        {item.stats.map((statLine, idx) => (
-          <li
-            key={`stat-${idx}`}
-            css={{
-              color:
-                statLine.stat && statsMap[statLine.stat].maged
-                  ? blue6
-                  : 'inherit',
-            }}
-          >
-            {statLine.stat
-              ? `${statsMap[statLine.stat].value} ${t(statLine.stat)}`
-              : statLine.customStat}
-          </li>
-        ))}
+        {item.stats
+          .sort(({ order: i }, { order: j }) => i - j)
+          .map((statLine, idx) => (
+            <li
+              key={`stat-${idx}`}
+              css={{
+                color:
+                  statLine.stat && statsMap[statLine.stat].maged
+                    ? blue6
+                    : 'inherit',
+              }}
+            >
+              {statLine.stat
+                ? `${statsMap[statLine.stat].value} ${t(statLine.stat)}`
+                : statLine.customStat}
+            </li>
+          ))}
         {exos &&
           exos
             .filter(({ stat }) => !!exoStatsMap[stat])

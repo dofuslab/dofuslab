@@ -15,6 +15,7 @@ export interface deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems
 export interface deleteCustomSetItem_deleteCustomSetItem_customSet {
   __typename: "CustomSet";
   id: any;
+  lastModified: any | null;
   equippedItems: deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems[];
 }
 

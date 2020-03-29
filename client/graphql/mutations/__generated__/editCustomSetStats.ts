@@ -29,6 +29,7 @@ export interface editCustomSetStats_editCustomSetStats_customSet_stats {
 export interface editCustomSetStats_editCustomSetStats_customSet {
   __typename: "CustomSet";
   id: any;
+  lastModified: any | null;
   stats: editCustomSetStats_editCustomSetStats_customSet_stats;
 }
 

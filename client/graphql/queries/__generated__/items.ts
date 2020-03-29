@@ -11,6 +11,8 @@ import { ItemFilters, Stat, Effect } from "./../../../__generated__/globalTypes"
 
 export interface items_items_edges_node_stats {
   __typename: "ItemStat";
+  id: any;
+  order: number;
   maxValue: number | null;
   stat: Stat | null;
   customStat: string | null;

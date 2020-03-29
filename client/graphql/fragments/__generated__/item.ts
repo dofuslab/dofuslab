@@ -11,6 +11,8 @@ import { Stat, Effect } from "./../../../__generated__/globalTypes";
 
 export interface item_stats {
   __typename: "ItemStat";
+  id: any;
+  order: number;
   maxValue: number | null;
   stat: Stat | null;
   customStat: string | null;

@@ -17,6 +17,8 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_stats {
   __typename: "ItemStat";
+  id: any;
+  order: number;
   maxValue: number | null;
   stat: Stat | null;
   customStat: string | null;
