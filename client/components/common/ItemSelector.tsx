@@ -16,7 +16,7 @@ import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { itemCardStyle, BORDER_COLOR } from 'common/mixins';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { SharedFilters } from 'common/types';
-import { findEmptyOrOnlySlotId } from 'common/utils';
+import { findEmptyOrOnlySlotId, findNextEmptySlotId } from 'common/utils';
 import ConfirmReplaceItemPopover from '../desktop/ConfirmReplaceItemPopover';
 import { item_set } from 'graphql/fragments/__generated__/item';
 import SetModal from './SetModal';
@@ -155,6 +155,13 @@ const ItemSelector: React.FC<IProps> = ({
             const itemSlotId =
               selectedItemSlot?.id ||
               findEmptyOrOnlySlotId(item.itemType, customSet);
+            const nextSlotId = selectedItemSlot
+              ? findNextEmptySlotId(
+                  item.itemType,
+                  selectedItemSlot.id,
+                  customSet,
+                )
+              : null;
             const card = (
               <ItemCard
                 key={`item-card-${item.id}`}
@@ -165,6 +172,7 @@ const ItemSelector: React.FC<IProps> = ({
                 selectItemSlot={selectItemSlot}
                 openSetModal={openSetModal}
                 isMobile={isMobile}
+                nextSlotId={nextSlotId}
               />
             );
             return itemSlotId || !customSet ? (

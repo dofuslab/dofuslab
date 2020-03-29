@@ -31,7 +31,7 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
 
   const [visible, setIsVisible] = React.useState(false);
 
-  const mutate = useEquipItemMutation(item, customSet);
+  const mutate = useEquipItemMutation(item);
 
   const onSlotSelect = React.useCallback(
     async (e: React.MouseEvent<HTMLDivElement>) => {

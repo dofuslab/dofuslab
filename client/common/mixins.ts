@@ -127,8 +127,6 @@ export const selected = {
 };
 
 export const itemCardStyle = {
-  width: '100%',
-  height: '100%',
   fontSize: '0.75rem',
   borderRadius: 4,
   minWidth: 0,

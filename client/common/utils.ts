@@ -231,24 +231,60 @@ export const getBonusesFromCustomSet = (customSet: customSet) => {
   return filteredSets;
 };
 
-export const findEmptyOrOnlySlotId = (
+export const findNextEmptySlotId = (
   itemType: item_itemType,
+  currentSlotId: string,
   customSet?: customSet | null,
 ) => {
-  if (!customSet || itemType.eligibleItemSlots.length === 1)
-    return itemType.eligibleItemSlots[0].id;
+  const eligibleItemSlots = [...itemType.eligibleItemSlots].sort(
+    (i, j) => i.order - j.order,
+  );
+  if (!customSet) {
+    return eligibleItemSlots.find(slot => slot.id !== currentSlotId) || null;
+  }
   const occupiedSlotsSet = customSet.equippedItems.reduce((set, curr) => {
     set.add(curr.slot.id);
     return set;
   }, new Set<string>());
+  for (const slot of eligibleItemSlots) {
+    if (!occupiedSlotsSet.has(slot.id) && slot.id !== currentSlotId) {
+      return slot.id;
+    }
+  }
+  return null;
+};
 
-  for (const slot of itemType.eligibleItemSlots) {
+export const findEmptySlotId = (
+  itemType: item_itemType,
+  customSet?: customSet | null,
+) => {
+  const eligibleItemSlots = [...itemType.eligibleItemSlots].sort(
+    (i, j) => i.order - j.order,
+  );
+  if (!customSet) {
+    return eligibleItemSlots[0].id;
+  }
+  const occupiedSlotsSet = customSet.equippedItems.reduce((set, curr) => {
+    set.add(curr.slot.id);
+    return set;
+  }, new Set<string>());
+  for (const slot of eligibleItemSlots) {
     if (!occupiedSlotsSet.has(slot.id)) {
       return slot.id;
     }
   }
-
   return null;
+};
+
+export const findEmptyOrOnlySlotId = (
+  itemType: item_itemType,
+  customSet?: customSet | null,
+) => {
+  const eligibleItemSlots = [...itemType.eligibleItemSlots].sort(
+    (i, j) => i.order - j.order,
+  );
+  if (eligibleItemSlots.length === 1) return eligibleItemSlots[0].id;
+  return findEmptySlotId(itemType, customSet);
 };
 
 export const checkAuthentication = async (
@@ -272,12 +308,15 @@ export const checkAuthentication = async (
   return false;
 };
 
-export const useEquipItemMutation = (
-  item: item,
-  customSet?: customSet | null,
-) => {
+export const useEquipItemMutation = (item: item) => {
   const router = useRouter();
-  const { customSetId } = router.query;
+  const { customSetId: routerCustomSetId } = router.query;
+
+  const customSetId: string | null = routerCustomSetId
+    ? String(routerCustomSetId)
+    : null;
+
+  const client = useApolloClient();
 
   const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);
 
@@ -286,8 +325,10 @@ export const useEquipItemMutation = (
     updateCustomSetItemVariables
   >(UpdateCustomSetItemMutation, {
     optimisticResponse:
-      customSet && itemSlotsData
+      customSetId && itemSlotsData
         ? ({ itemSlotId }) => {
+            const customSet = getCustomSet(client, customSetId)!;
+
             const { equippedItems: oldEquippedItems } = customSet;
 
             const equippedItems = [...oldEquippedItems];
@@ -309,7 +350,7 @@ export const useEquipItemMutation = (
               });
             } else {
               equippedItems.push({
-                id: 'equipped-item-0',
+                id: `equipped-item-${slot.id}`,
                 exos: [],
                 slot,
                 item,
@@ -330,13 +371,12 @@ export const useEquipItemMutation = (
         : undefined,
   });
 
-  const client = useApolloClient();
-
   const { t } = useTranslation('common');
 
   const onClick = useCallback(
     async (itemSlotId?: string) => {
       if (!itemSlotId) return;
+      const customSet = customSetId ? getCustomSet(client, customSetId) : null;
       const ok = await checkAuthentication(client, t, customSet);
       if (!ok) return;
       const { data } = await updateCustomSetItem({
@@ -467,12 +507,19 @@ export const useCustomSet = (customSetId: string | null) => {
 export const getCustomSet = (
   client: ApolloClient<object>,
   customSetId: string,
-) =>
-  client.readFragment<customSet>({
+) => {
+  const customSet = client.readFragment<customSet>({
     id: `CustomSet:${customSetId}`,
     fragment: CustomSetFragment,
     fragmentName: 'customSet',
   });
+
+  if (!customSet) {
+    throw new Error(`Could not find custom set with id ${customSetId}`);
+  }
+
+  return customSet;
+};
 
 export const useSetModal = () => {
   const [setModalVisible, setSetModalVisible] = React.useState(false);

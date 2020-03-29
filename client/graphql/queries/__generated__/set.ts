@@ -28,6 +28,7 @@ export interface set_setById_items_stats {
 export interface set_setById_items_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  order: number;
 }
 
 export interface set_setById_items_itemType {

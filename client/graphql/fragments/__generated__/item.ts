@@ -19,6 +19,7 @@ export interface item_stats {
 export interface item_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  order: number;
 }
 
 export interface item_itemType {
