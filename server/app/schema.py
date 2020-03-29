@@ -31,6 +31,7 @@ from flask_babel import _
 from flask_login import login_required, login_user, current_user, logout_user
 from functools import lru_cache
 from sqlalchemy import func, distinct
+from datetime import datetime
 
 # workaround from https://github.com/graphql-python/graphene-sqlalchemy/issues/211
 # without this workaround, graphene complains that there are multiple
@@ -441,6 +442,7 @@ class MageEquippedItem(graphene.Mutation):
         )
         if stats:
             db.session.add_all(exo_models)
+        equipped_item.custom_set.last_modified = datetime.now()
         db.session.commit()
 
         return MageEquippedItem(equipped_item=equipped_item)
@@ -479,6 +481,7 @@ class SetEquippedItemExo(graphene.Mutation):
             db.session.add(exo_obj)
         if exo_obj and not has_stat:
             db.session.delete(exo_obj)
+        equipped_item.custom_set.last_modified = datetime.now()
         db.session.commit()
 
         return SetEquippedItemExo(equipped_item=equipped_item)

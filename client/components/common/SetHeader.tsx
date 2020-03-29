@@ -145,9 +145,10 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
 
   const formElement = (
     <Form
+      key={`form-${customSet?.id}`}
       form={form}
       name="header"
-      id="header-form"
+      id={isMobile ? 'header-form-mobile' : 'header-form'}
       onFinish={handleOk}
       layout={'inline'}
       css={{

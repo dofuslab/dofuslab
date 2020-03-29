@@ -94,7 +94,7 @@ const MyBuilds: React.FC = () => {
           client.writeQuery<myCustomSets, myCustomSetsVariables>({
             data: myBuildsCopy,
             query: myCustomSetsQuery,
-            variables: { first: PAGE_SIZE },
+            variables: { first: PAGE_SIZE, search },
           });
         }
       },
@@ -115,7 +115,7 @@ const MyBuilds: React.FC = () => {
         },
       );
     }
-  }, [customSetId, mutate, router, myBuilds, client]);
+  }, [customSetId, mutate, router, myBuilds, client, search]);
 
   const { t } = useTranslation('common');
 
@@ -132,7 +132,10 @@ const MyBuilds: React.FC = () => {
 
     endCursorRef.current = myBuilds.currentUser.customSets.pageInfo.endCursor;
     const fetchMoreResult = await fetchMore({
-      variables: { after: myBuilds.currentUser.customSets.pageInfo.endCursor },
+      variables: {
+        after: myBuilds.currentUser.customSets.pageInfo.endCursor,
+        search,
+      },
       updateQuery: (prevData, { fetchMoreResult }) => {
         if (!fetchMoreResult?.currentUser) {
           return prevData;
@@ -151,11 +154,12 @@ const MyBuilds: React.FC = () => {
             },
           },
         };
+
         return myBuildsCopy;
       },
     });
     return fetchMoreResult;
-  }, [myBuilds]);
+  }, [myBuilds, search]);
 
   return (
     <div css={{ marginBottom: 20, [mq[1]]: { marginTop: 36 } }}>
@@ -164,6 +168,7 @@ const MyBuilds: React.FC = () => {
           type="primary"
           onClick={onCreate}
           disabled={queryLoading || createLoading}
+          css={{ fontSize: '0.75rem' }}
         >
           <span css={{ marginRight: 12 }}>
             {createLoading ? (
@@ -175,7 +180,7 @@ const MyBuilds: React.FC = () => {
           {t('NEW_BUILD')}
         </Button>
         <Input
-          css={{ marginLeft: 20, flex: 1 }}
+          css={{ marginLeft: 20, flex: 1, fontSize: '0.75rem' }}
           onChange={onSearch}
           placeholder={t('SEARCH')}
         />

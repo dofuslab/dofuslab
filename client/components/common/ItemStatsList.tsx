@@ -206,7 +206,7 @@ const ItemStatsList: React.FC<IProps> = ({
           </div>
         </>
       )}
-      {Object.keys(conditions.conditions || {}).length > 0 && (
+      {conditions && Object.keys(conditions.conditions || {}).length > 0 && (
         <>
           <Divider css={{ margin: '12px 0' }} />
           <div>{renderConditions(conditions.conditions)}</div>
