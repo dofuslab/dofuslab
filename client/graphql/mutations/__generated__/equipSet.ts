@@ -25,6 +25,7 @@ export interface equipSet_equipSet_customSet_equippedItems_item_stats {
 export interface equipSet_equipSet_customSet_equippedItems_item_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  order: number;
 }
 
 export interface equipSet_equipSet_customSet_equippedItems_item_itemType {

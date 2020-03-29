@@ -24,6 +24,7 @@ from app.database.model_spell import ModelSpell
 from app.database.model_spell_variant_pair import ModelSpellVariantPair
 from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_class import ModelClass
+from app.utils import get_or_create_custom_set, save_custom_sets
 from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from app.database.base import Base
@@ -33,6 +34,7 @@ import app.mutation_validation_utils as validation
 import graphene
 import uuid
 from graphql import GraphQLError
+from flask import session
 from flask_login import login_required, login_user, current_user, logout_user
 from functools import lru_cache
 from sqlalchemy import func, distinct
@@ -432,18 +434,9 @@ class EditCustomSetStats(graphene.Mutation):
         for scrolled_stat in scrolled_stat_list:
             if stats[scrolled_stat] < 0 or stats[scrolled_stat] > 100:
                 raise GraphQLError("Invalid value for stat.")
-        if custom_set_id:
-            custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
-            if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
-                raise GraphQLError("You don't have permission to edit that set.")
-            for stat in base_stat_list + scrolled_stat_list:
-                setattr(custom_set.stats, stat, stats[stat])
-        else:
-            custom_set = ModelCustomSet(owner_id=current_user.get_id())
-            db.session.add(custom_set)
-            db.session.flush()
-            custom_set_stat = ModelCustomSetStat(custom_set_id=custom_set.uuid, **stats)
-            db.session.add(custom_set_stat)
+        custom_set = get_or_create_custom_set(custom_set_id)
+        for stat in base_stat_list + scrolled_stat_list:
+            setattr(custom_set.stats, stat, stats[stat])
         db.session.commit()
 
         return EditCustomSetStats(custom_set=custom_set)
@@ -465,20 +458,9 @@ class EditCustomSetMetadata(graphene.Mutation):
             raise GraphQLError("The set name is too long.")
         if level < 1 or level > 200:
             raise GraphQLError("Invalid set level (must be 1-200).")
-        if custom_set_id:
-            custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
-            if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
-                raise GraphQLError("You don't have permission to edit that set.")
-            custom_set.name = name
-            custom_set.level = level
-        else:
-            custom_set = ModelCustomSet(
-                owner_id=current_user.get_id(), name=name, level=level
-            )
-            db.session.add(custom_set)
-            db.session.flush()
-            custom_set_stat = ModelCustomSetStat(custom_set_id=custom_set.uuid)
-            db.session.add(custom_set_stat)
+        custom_set = get_or_create_custom_set(custom_set_id)
+        custom_set.name = name
+        custom_set.level = level
         db.session.commit()
 
         return EditCustomSetMetadata(custom_set=custom_set)
@@ -497,16 +479,7 @@ class UpdateCustomSetItem(graphene.Mutation):
         custom_set_id = kwargs.get("custom_set_id")
         item_slot_id = kwargs.get("item_slot_id")
         item_id = kwargs.get("item_id")
-        if custom_set_id:
-            custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
-            if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
-                raise GraphQLError("You don't have permission to edit that set.")
-        else:
-            custom_set = ModelCustomSet(owner_id=current_user.get_id())
-            db.session.add(custom_set)
-            db.session.flush()
-            custom_set_stat = ModelCustomSetStat(custom_set_id=custom_set.uuid)
-            db.session.add(custom_set_stat)
+        custom_set = get_or_create_custom_set(custom_set_id)
         custom_set.equip_item(item_id, item_slot_id)
         db.session.commit()
 
@@ -523,16 +496,7 @@ class EquipSet(graphene.Mutation):
     def mutate(self, info, **kwargs):
         custom_set_id = kwargs.get("custom_set_id")
         set_id = kwargs.get("set_id")
-        if custom_set_id:
-            custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
-            if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
-                raise GraphQLError("You don't have permission to edit that set.")
-        else:
-            custom_set = ModelCustomSet(owner_id=current_user.get_id())
-            db.session.add(custom_set)
-            db.session.flush()
-            custom_set_stat = ModelCustomSetStat(custom_set_id=custom_set.uuid)
-            db.session.add(custom_set_stat)
+        custom_set = get_or_create_custom_set(custom_set_id)
         set_obj = db.session.query(ModelSet).get(set_id)
         custom_set.equip_set(set_obj)
         db.session.commit()
@@ -655,6 +619,7 @@ class RegisterUser(graphene.Mutation):
             )
             user.save_to_db()
             login_user(user)
+            save_custom_sets()
         except Exception as e:
             raise GraphQLError("An error occurred while registering.")
 
@@ -683,7 +648,7 @@ class LoginUser(graphene.Mutation):
         if not user.check_password(password):
             raise auth_error
         login_user(user, remember=remember)
-
+        save_custom_sets()
         return LoginUser(user=user, ok=True)
 
 

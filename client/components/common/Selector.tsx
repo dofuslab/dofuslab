@@ -96,6 +96,7 @@ const Selector: React.FC<IProps> = ({
           [mq[1]]: {
             padding: '0 14px',
             overflowY: 'scroll',
+            overflowAnchor: 'none',
             flex: 1,
             ...(topMarginStyle[mq[1]] as {}),
           },

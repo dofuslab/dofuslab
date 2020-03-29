@@ -25,6 +25,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  order: number;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_itemType {

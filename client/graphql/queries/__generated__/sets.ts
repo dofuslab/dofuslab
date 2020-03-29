@@ -28,6 +28,7 @@ export interface sets_sets_edges_node_items_stats {
 export interface sets_sets_edges_node_items_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  order: number;
 }
 
 export interface sets_sets_edges_node_items_itemType {

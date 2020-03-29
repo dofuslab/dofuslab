@@ -167,6 +167,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
           display: 'flex',
           flexDirection: 'column',
           width: '100%',
+          cursor: 'pointer',
           [mq[1]]: {
             width: 'auto',
             flexDirection: 'row',
@@ -209,7 +210,9 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
                 maxWidth: 400,
               },
               marginRight: 20,
+              cursor: 'pointer',
             }}
+            onClick={onStartEdit}
           >
             {customSet?.name || t('UNTITLED')}
           </div>
@@ -225,7 +228,10 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
             },
           }}
         >
-          <div css={{ display: 'flex', alignItems: 'center' }}>
+          <div
+            css={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
+            onClick={onStartEdit}
+          >
             {t('LEVEL')}{' '}
             {metadataState.isEditing ? (
               <Form.Item name="level" css={{ display: 'inline-flex' }}>
