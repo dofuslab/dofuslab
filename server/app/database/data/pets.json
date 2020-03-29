@@ -2299,7 +2299,7 @@
         "stat": "Vitality",
         "minStat": null,
         "maxStat": 15
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -2433,7 +2433,7 @@
         "stat": "Pushback Damage",
         "minStat": null,
         "maxStat": 80
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -2882,7 +2882,7 @@
         "stat": "Pusback Resistance",
         "minStat": null,
         "maxStat": 100
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -2979,7 +2979,7 @@
         "stat": "Range",
         "minStat": null,
         "maxStat": 2
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -3030,7 +3030,7 @@
         "stat": "Critical Damage",
         "minStat": null,
         "maxStat": 40
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -3280,7 +3280,7 @@
         "stat": "Dodge",
         "minStat": null,
         "maxStat": 50
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -3770,7 +3770,7 @@
         "stat": "Vitality",
         "minStat": null,
         "maxStat": 15
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -3923,7 +3923,7 @@
         "stat": "MP Reduction",
         "minStat": null,
         "maxStat": 40
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -4178,7 +4178,7 @@
         "stat": "Initiative",
         "minStat": null,
         "maxStat": 220
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -4683,7 +4683,7 @@
         "stat": "Vitality",
         "minStat": null,
         "maxStat": 15
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -4734,7 +4734,7 @@
         "stat": "Critical Damage",
         "minStat": null,
         "maxStat": 40
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -4785,7 +4785,7 @@
         "stat": "Agility",
         "minStat": null,
         "maxStat": 120
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -4882,7 +4882,7 @@
         "stat": "Critical Damage",
         "minStat": null,
         "maxStat": 40
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -4933,7 +4933,7 @@
         "stat": "Critical Resistance",
         "minStat": null,
         "maxStat": 100
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -5331,7 +5331,7 @@
         "stat": "Wisdom",
         "minStat": null,
         "maxStat": 20
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -5363,7 +5363,7 @@
         "stat": "Initiative",
         "minStat": null,
         "maxStat": 200
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -5664,7 +5664,7 @@
         "stat": "Critical Damage",
         "minStat": null,
         "maxStat": 40
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -5715,7 +5715,7 @@
         "stat": "Range",
         "minStat": null,
         "maxStat": 40
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -5766,7 +5766,7 @@
         "stat": "Summons",
         "minStat": null,
         "maxStat": 2
-      },
+      }
     ],
     "customStats": [],
     "conditions": {
@@ -6082,7 +6082,7 @@
         "stat": "Prospecting",
         "minStat": null,
         "maxStat": 120
-      },
+      }
     ],
     "customStats": [],
     "conditions": {

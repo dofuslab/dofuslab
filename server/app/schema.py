@@ -283,13 +283,6 @@ class SpellStats(SQLAlchemyObjectType):
         if query:
             return query.aoe_type
 
-    def resolve_spell_effects(self, info):
-        query = db.session.query(ModelSpellEffect).filter(
-            ModelSpellEffect.spell_stat_id == self.uuid
-        )
-
-        return query
-
     class Meta:
         model = ModelSpellStats
         interfaces = (GlobalNode,)
@@ -324,13 +317,6 @@ class Spell(SQLAlchemyObjectType):
             .description
         )
 
-    def resolve_spell_stats(self, info):
-        query = db.session.query(ModelSpellStats).filter(
-            ModelSpellStats.spell_id == self.uuid
-        )
-
-        return query
-
     class Meta:
         model = ModelSpell
         interfaces = (GlobalNode,)
@@ -338,12 +324,6 @@ class Spell(SQLAlchemyObjectType):
 
 class SpellVariantPair(SQLAlchemyObjectType):
     spells = graphene.NonNull(graphene.List(graphene.NonNull(Spell)))
-
-    def resolve_spells(self, info):
-        query = db.session.query(ModelSpell).filter(
-            ModelSpell.spell_variant_pair_id == self.uuid
-        )
-        return query
 
     class Meta:
         model = ModelSpellVariantPair
