@@ -137,14 +137,6 @@ const Layout = (props: LayoutProps) => {
               <Button onClick={openSignUpModal} type="default">
                 {t('SIGN_UP')}
               </Button>
-              <Button
-                onClick={openSignUpModal}
-                type="default"
-                css={{ fontSize: '0.75rem' }}
-                size="large"
-              >
-                {t('SIGN_UP')}
-              </Button>
             </div>
           )}
         </div>
