@@ -86,42 +86,42 @@ to_stat_enum = {
 }
 
 to_effect_enum = {
-    "Neutral damage": enums.WeaponEffectTypes.NEUTRAL_DAMAGE,
-    "Earth damage": enums.WeaponEffectTypes.EARTH_DAMAGE,
-    "Fire damage": enums.WeaponEffectTypes.FIRE_DAMAGE,
-    "Water damage": enums.WeaponEffectTypes.WATER_DAMAGE,
-    "Air damage": enums.WeaponEffectTypes.AIR_DAMAGE,
-    "Neutral steal": enums.WeaponEffectTypes.NEUTRAL_STEAL,
-    "Earth steal": enums.WeaponEffectTypes.EARTH_STEAL,
-    "Fire steal": enums.WeaponEffectTypes.FIRE_STEAL,
-    "Water steal": enums.WeaponEffectTypes.WATER_STEAL,
-    "Air steal": enums.WeaponEffectTypes.AIR_STEAL,
-    "AP": enums.WeaponEffectTypes.AP,
-    "MP": enums.WeaponEffectTypes.MP,
-    "HP restored": enums.WeaponEffectTypes.HP_RESTORED,
+    "Neutral damage": enums.WeaponEffectType.NEUTRAL_DAMAGE,
+    "Earth damage": enums.WeaponEffectType.EARTH_DAMAGE,
+    "Fire damage": enums.WeaponEffectType.FIRE_DAMAGE,
+    "Water damage": enums.WeaponEffectType.WATER_DAMAGE,
+    "Air damage": enums.WeaponEffectType.AIR_DAMAGE,
+    "Neutral steal": enums.WeaponEffectType.NEUTRAL_STEAL,
+    "Earth steal": enums.WeaponEffectType.EARTH_STEAL,
+    "Fire steal": enums.WeaponEffectType.FIRE_STEAL,
+    "Water steal": enums.WeaponEffectType.WATER_STEAL,
+    "Air steal": enums.WeaponEffectType.AIR_STEAL,
+    "AP": enums.WeaponEffectType.AP,
+    "MP": enums.WeaponEffectType.MP,
+    "HP restored": enums.WeaponEffectType.HP_RESTORED,
 }
 
 to_spell_enum = {
-    "Neutral damage": enums.SpellEffectTypes.NEUTRAL_DAMAGE,
-    "Earth damage": enums.SpellEffectTypes.EARTH_DAMAGE,
-    "Fire damage": enums.SpellEffectTypes.FIRE_DAMAGE,
-    "Water damage": enums.SpellEffectTypes.WATER_DAMAGE,
-    "Air damage": enums.SpellEffectTypes.AIR_DAMAGE,
-    "Neutral steal": enums.SpellEffectTypes.NEUTRAL_STEAL,
-    "Earth steal": enums.SpellEffectTypes.EARTH_STEAL,
-    "Fire steal": enums.SpellEffectTypes.FIRE_STEAL,
-    "Water steal": enums.SpellEffectTypes.WATER_STEAL,
-    "Air steal": enums.SpellEffectTypes.AIR_STEAL,
-    "HP restored": enums.SpellEffectTypes.HP_RESTORED,
-    "Shield": enums.SpellEffectTypes.SHIELD,
-    "Pushback damage": enums.SpellEffectTypes.PUSHBACK_DAMAGE,
+    "Neutral damage": enums.SpellEffectType.NEUTRAL_DAMAGE,
+    "Earth damage": enums.SpellEffectType.EARTH_DAMAGE,
+    "Fire damage": enums.SpellEffectType.FIRE_DAMAGE,
+    "Water damage": enums.SpellEffectType.WATER_DAMAGE,
+    "Air damage": enums.SpellEffectType.AIR_DAMAGE,
+    "Neutral steal": enums.SpellEffectType.NEUTRAL_STEAL,
+    "Earth steal": enums.SpellEffectType.EARTH_STEAL,
+    "Fire steal": enums.SpellEffectType.FIRE_STEAL,
+    "Water steal": enums.SpellEffectType.WATER_STEAL,
+    "Air steal": enums.SpellEffectType.AIR_STEAL,
+    "HP restored": enums.SpellEffectType.HP_RESTORED,
+    "Shield": enums.SpellEffectType.SHIELD,
+    "Pushback damage": enums.SpellEffectType.PUSHBACK_DAMAGE,
 }
 
 if __name__ == "__main__":
-    print("Resetting database")
-    base.Base.metadata.reflect(base.engine)
-    base.Base.metadata.drop_all(base.engine)
-    base.Base.metadata.create_all(base.engine)
+    # print("Resetting database")
+    # base.Base.metadata.reflect(base.engine)
+    # base.Base.metadata.drop_all(base.engine)
+    # base.Base.metadata.create_all(base.engine)
 
     item_types = {}
 
