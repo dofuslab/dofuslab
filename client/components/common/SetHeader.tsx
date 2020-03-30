@@ -283,7 +283,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
                 <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
                 <div>{customSet.owner?.username ?? t('ANONYMOUS')}</div>
                 <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-                <div>{moment(customSet.createdAt).format('lll')}</div>
+                <div>{moment(customSet.creationDate).format('lll')}</div>
                 <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
                 <div>{moment(customSet.lastModified).format('lll')}</div>
               </div>
@@ -308,7 +308,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
           <div css={{ display: 'flex' }}>
             <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
             <div css={{ marginLeft: 8 }}>
-              {moment(customSet.createdAt).format('lll')}
+              {moment(customSet.creationDate).format('lll')}
             </div>
           </div>
           <div css={{ display: 'flex' }}>

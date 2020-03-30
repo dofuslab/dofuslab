@@ -6,7 +6,7 @@ import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
 import { blue6 } from 'common/mixins';
-import { Effect, Stat } from '__generated__/globalTypes';
+import { Stat, WeaponEffectTypes } from '__generated__/globalTypes';
 import Divider from 'antd/lib/divider';
 
 interface IProps {
@@ -18,28 +18,28 @@ interface IProps {
   readonly showImg?: boolean;
 }
 
-const weaponEffectToIconUrl = (effect: Effect) => {
+const weaponEffectToIconUrl = (effect: WeaponEffectTypes) => {
   switch (effect) {
-    case Effect.AIR_DAMAGE:
-    case Effect.AIR_STEAL:
+    case WeaponEffectTypes.AIR_DAMAGE:
+    case WeaponEffectTypes.AIR_STEAL:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Agility.svg';
-    case Effect.EARTH_DAMAGE:
-    case Effect.EARTH_STEAL:
+    case WeaponEffectTypes.EARTH_DAMAGE:
+    case WeaponEffectTypes.EARTH_STEAL:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Strength.svg';
-    case Effect.FIRE_DAMAGE:
-    case Effect.FIRE_STEAL:
+    case WeaponEffectTypes.FIRE_DAMAGE:
+    case WeaponEffectTypes.FIRE_STEAL:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Intelligence.svg';
-    case Effect.NEUTRAL_DAMAGE:
-    case Effect.NEUTRAL_STEAL:
+    case WeaponEffectTypes.NEUTRAL_DAMAGE:
+    case WeaponEffectTypes.NEUTRAL_STEAL:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Neutral.svg';
-    case Effect.WATER_DAMAGE:
-    case Effect.WATER_STEAL:
+    case WeaponEffectTypes.WATER_DAMAGE:
+    case WeaponEffectTypes.WATER_STEAL:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Chance.svg';
-    case Effect.AP:
+    case WeaponEffectTypes.AP:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Action_Point.svg';
-    case Effect.MP:
+    case WeaponEffectTypes.MP:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Movement_Point.svg';
-    case Effect.HP_RESTORED:
+    case WeaponEffectTypes.HP_RESTORED:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Health_Point.svg';
   }
 };
