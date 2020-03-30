@@ -23,6 +23,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.9",
+    "@next/bundle-analyzer": "^9.3.2",
     "@react-hook/debounce": "^1.0.11",
     "@zeit/next-css": "^1.0.1",
     "antd": "^4.0.4",

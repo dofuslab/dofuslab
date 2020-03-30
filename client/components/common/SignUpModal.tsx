@@ -120,7 +120,7 @@ const SignUpModal: React.FC<IProps> = ({
           <Input css={{ fontSize: '0.75rem' }} placeholder={t('EMAIL')} />
         </Form.Item>
         <Form.Item
-          name="display-name"
+          name="username"
           label={<span css={{ fontSize: '0.75rem' }}>{t('DISPLAY_NAME')}</span>}
           rules={[
             { required: true, message: t('VALIDATION.DISPLAY_NAME_REQUIRED') },
