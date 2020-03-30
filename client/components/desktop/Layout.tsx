@@ -88,7 +88,7 @@ const Layout = (props: LayoutProps) => {
         }}
       >
         <Link href="/" as="/">
-          <div css={{ fontWeight: 500 }}>DofusLab</div>
+          <div css={{ fontWeight: 500, cursor: 'pointer' }}>DofusLab</div>
         </Link>
         <div>
           {data?.currentUser ? (
