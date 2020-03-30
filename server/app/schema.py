@@ -1,4 +1,4 @@
-from app import db
+from app import db, supported_languages, r
 from app.database.model_item_stat_translation import ModelItemStatTranslation
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_type import ModelItemType
@@ -24,12 +24,12 @@ from app.database.model_spell import ModelSpell
 from app.database.model_spell_variant_pair import ModelSpellVariantPair
 from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_class import ModelClass
+from app.tasks import send_email
 from app.utils import get_or_create_custom_set, save_custom_sets
 from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from app.database.base import Base
 from app.database.enums import Stat, WeaponEffectType
-from app import supported_languages
 import app.mutation_validation_utils as validation
 import graphene
 import uuid
@@ -40,6 +40,7 @@ from flask_login import login_required, login_user, current_user, logout_user
 from functools import lru_cache
 from sqlalchemy import func, distinct
 from datetime import datetime
+from rq import Queue
 
 # workaround from https://github.com/graphql-python/graphene-sqlalchemy/issues/211
 # without this workaround, graphene complains that there are multiple
@@ -619,6 +620,9 @@ class RegisterUser(graphene.Mutation):
                 password=ModelUser.generate_hash(password),
             )
             user.save_to_db()
+            with r:
+                q = Queue()
+                q.enqueue(send_email, user.email)
             login_user(user)
             save_custom_sets()
         except Exception as e:
