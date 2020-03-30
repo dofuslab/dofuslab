@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat, Effect } from "./../../../__generated__/globalTypes";
+import { Stat, WeaponEffectTypes } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: updateCustomSetItem
@@ -29,7 +29,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
   id: any;
   minDamage: number | null;
   maxDamage: number;
-  effectType: Effect;
+  effectType: WeaponEffectTypes;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_weaponStats {
@@ -132,7 +132,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet {
   equippedItems: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems[];
   stats: updateCustomSetItem_updateCustomSetItem_customSet_stats;
   owner: updateCustomSetItem_updateCustomSetItem_customSet_owner | null;
-  createdAt: any | null;
+  creationDate: any | null;
   lastModified: any | null;
 }
 

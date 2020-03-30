@@ -8,11 +8,14 @@ Babel==2.8.0
 bcrypt==3.1.7
 beautifulsoup4==4.8.1
 black==19.10b0
+boto3==1.12.31
+botocore==1.15.31
 bs4==0.0.1
 certifi==2019.9.11
 cffi==1.14.0
 chardet==3.0.4
 Click==7.0
+docutils==0.15.2
 Flask==1.1.1
 Flask-Babel==1.0.0
 Flask-Bcrypt==0.7.1
@@ -32,6 +35,7 @@ idna==2.8
 isort==4.3.21
 itsdangerous==1.1.0
 Jinja2==2.10.3
+jmespath==0.9.5
 lazy-object-proxy==1.4.3
 Mako==1.1.0
 MarkupSafe==1.1.1
@@ -53,6 +57,7 @@ redis==3.4.1
 regex==2019.11.1
 requests==2.22.0
 Rx==1.6.1
+s3transfer==0.3.3
 singledispatch==3.4.0.3
 six==1.13.0
 soupsieve==1.9.5

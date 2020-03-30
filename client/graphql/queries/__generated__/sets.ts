@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { SetFilters, Stat, Effect } from "./../../../__generated__/globalTypes";
+import { SetFilters, Stat, WeaponEffectTypes } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: sets
@@ -32,7 +32,7 @@ export interface sets_sets_edges_node_items_weaponStats_weaponEffects {
   id: any;
   minDamage: number | null;
   maxDamage: number;
-  effectType: Effect;
+  effectType: WeaponEffectTypes;
 }
 
 export interface sets_sets_edges_node_items_weaponStats {

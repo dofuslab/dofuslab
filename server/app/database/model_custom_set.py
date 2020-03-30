@@ -24,7 +24,7 @@ class ModelCustomSet(Base):
     name = Column("name", String, index=True)
     description = Column("description", String)
     owner_id = Column(UUID(as_uuid=True), ForeignKey("user.uuid"), index=True)
-    created_at = Column("creation_date", DateTime, default=datetime.now)
+    creation_date = Column("creation_date", DateTime, default=datetime.now)
     last_modified = Column(
         "last_modified",
         DateTime,

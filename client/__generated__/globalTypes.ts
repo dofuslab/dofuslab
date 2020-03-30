@@ -10,25 +10,6 @@
 /**
  * An enumeration.
  */
-export enum Effect {
-  AIR_DAMAGE = "AIR_DAMAGE",
-  AIR_STEAL = "AIR_STEAL",
-  AP = "AP",
-  EARTH_DAMAGE = "EARTH_DAMAGE",
-  EARTH_STEAL = "EARTH_STEAL",
-  FIRE_DAMAGE = "FIRE_DAMAGE",
-  FIRE_STEAL = "FIRE_STEAL",
-  HP_RESTORED = "HP_RESTORED",
-  MP = "MP",
-  NEUTRAL_DAMAGE = "NEUTRAL_DAMAGE",
-  NEUTRAL_STEAL = "NEUTRAL_STEAL",
-  WATER_DAMAGE = "WATER_DAMAGE",
-  WATER_STEAL = "WATER_STEAL",
-}
-
-/**
- * An enumeration.
- */
 export enum Stat {
   AGILITY = "AGILITY",
   AIR_DAMAGE = "AIR_DAMAGE",
@@ -82,6 +63,25 @@ export enum Stat {
   WATER_DAMAGE = "WATER_DAMAGE",
   WATER_RES = "WATER_RES",
   WISDOM = "WISDOM",
+}
+
+/**
+ * An enumeration.
+ */
+export enum WeaponEffectTypes {
+  AIR_DAMAGE = "AIR_DAMAGE",
+  AIR_STEAL = "AIR_STEAL",
+  AP = "AP",
+  EARTH_DAMAGE = "EARTH_DAMAGE",
+  EARTH_STEAL = "EARTH_STEAL",
+  FIRE_DAMAGE = "FIRE_DAMAGE",
+  FIRE_STEAL = "FIRE_STEAL",
+  HP_RESTORED = "HP_RESTORED",
+  MP = "MP",
+  NEUTRAL_DAMAGE = "NEUTRAL_DAMAGE",
+  NEUTRAL_STEAL = "NEUTRAL_STEAL",
+  WATER_DAMAGE = "WATER_DAMAGE",
+  WATER_STEAL = "WATER_STEAL",
 }
 
 export interface CustomSetExosInput {

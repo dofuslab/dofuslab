@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat, Effect } from "./../../../__generated__/globalTypes";
+import { Stat, WeaponEffectTypes } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL fragment: item
@@ -23,7 +23,7 @@ export interface item_weaponStats_weaponEffects {
   id: any;
   minDamage: number | null;
   maxDamage: number;
-  effectType: Effect;
+  effectType: WeaponEffectTypes;
 }
 
 export interface item_weaponStats {

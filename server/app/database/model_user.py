@@ -2,11 +2,12 @@ import sqlalchemy
 from app import db
 from .base import Base
 from app import bcrypt, login_manager
-from sqlalchemy import Column, ForeignKey, Integer, String, LargeBinary, func
+from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, LargeBinary, func
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
 from flask_login import UserMixin
+from datetime import datetime
 
 
 class ModelUser(UserMixin, Base):
@@ -21,6 +22,7 @@ class ModelUser(UserMixin, Base):
     email = Column("email", String(320), unique=True, nullable=False)
     password = Column("password", LargeBinary(120), nullable=False)
     custom_sets = relationship("ModelCustomSet", backref="owner")
+    creation_date = Column("creation_date", DateTime, default=datetime.now)
 
     def save_to_db(self):
         db.session.add(self)
