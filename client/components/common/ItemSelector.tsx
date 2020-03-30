@@ -143,6 +143,7 @@ const ItemSelector: React.FC<IProps> = ({
         marginBottom: 20,
         position: 'relative',
         gridGap: 20,
+        minWidth: 0,
         [mq[1]]: { gridGap: 12 },
       }}
       ref={responsiveGridRef}
