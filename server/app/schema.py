@@ -28,7 +28,7 @@ from app.utils import get_or_create_custom_set, save_custom_sets
 from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from app.database.base import Base
-from app.database.enums import Stat, WeaponEffectTypes
+from app.database.enums import Stat, WeaponEffectType
 from app import supported_languages
 import app.mutation_validation_utils as validation
 import graphene
@@ -78,7 +78,7 @@ class NonNullConnection(relay.Connection, abstract=True):
 
 
 StatEnum = graphene.Enum.from_enum(Stat)
-EffectEnum = graphene.Enum.from_enum(WeaponEffectTypes)
+EffectEnum = graphene.Enum.from_enum(WeaponEffectType)
 
 
 class ItemStat(SQLAlchemyObjectType):

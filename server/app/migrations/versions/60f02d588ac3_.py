@@ -154,7 +154,7 @@ def upgrade():
         sa.Column("spell_stat_id", postgresql.UUID(as_uuid=True), nullable=False),
         sa.Column(
             "effect_type",
-            postgresql.ENUM(
+            sa.Enum(
                 "NEUTRAL_DAMAGE",
                 "EARTH_DAMAGE",
                 "FIRE_DAMAGE",
@@ -170,8 +170,7 @@ def upgrade():
                 "HP_RESTORED",
                 "SHIELD",
                 "PUSHBACK_DAMAGE",
-                name="spelleffecttypes",
-                create_type=False,
+                name="spell_effect_type",
             ),
             nullable=False,
         ),
