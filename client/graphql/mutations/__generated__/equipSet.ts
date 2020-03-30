@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat } from "./../../../__generated__/globalTypes";
+import { Stat, Effect } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: equipSet
@@ -17,9 +17,31 @@ export interface equipSet_equipSet_customSet_equippedItems_slot {
 
 export interface equipSet_equipSet_customSet_equippedItems_item_stats {
   __typename: "ItemStat";
+  id: any;
+  order: number;
   maxValue: number | null;
   stat: Stat | null;
   customStat: string | null;
+}
+
+export interface equipSet_equipSet_customSet_equippedItems_item_weaponStats_weaponEffects {
+  __typename: "WeaponEffect";
+  id: any;
+  minDamage: number | null;
+  maxDamage: number;
+  effectType: Effect;
+}
+
+export interface equipSet_equipSet_customSet_equippedItems_item_weaponStats {
+  __typename: "WeaponStat";
+  id: any;
+  apCost: number;
+  usesPerTurn: number;
+  minRange: number | null;
+  maxRange: number;
+  baseCritChance: number | null;
+  critBonusDamage: number | null;
+  weaponEffects: equipSet_equipSet_customSet_equippedItems_item_weaponStats_weaponEffects[];
 }
 
 export interface equipSet_equipSet_customSet_equippedItems_item_itemType_eligibleItemSlots {
@@ -58,6 +80,7 @@ export interface equipSet_equipSet_customSet_equippedItems_item {
   level: number;
   imageUrl: string;
   stats: equipSet_equipSet_customSet_equippedItems_item_stats[];
+  weaponStats: equipSet_equipSet_customSet_equippedItems_item_weaponStats | null;
   conditions: any | null;
   itemType: equipSet_equipSet_customSet_equippedItems_item_itemType;
   set: equipSet_equipSet_customSet_equippedItems_item_set | null;
@@ -109,6 +132,8 @@ export interface equipSet_equipSet_customSet {
   equippedItems: equipSet_equipSet_customSet_equippedItems[];
   stats: equipSet_equipSet_customSet_stats;
   owner: equipSet_equipSet_customSet_owner | null;
+  createdAt: any | null;
+  lastModified: any | null;
 }
 
 export interface equipSet_equipSet {

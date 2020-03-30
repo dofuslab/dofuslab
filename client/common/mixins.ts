@@ -122,7 +122,8 @@ export const itemBox = {
 };
 
 export const selected = {
-  border: `2px solid ${gray6}`,
+  border: '1px solid transparent' /* remove the border's colour */,
+  boxShadow: `0 0 0 2px ${gray6}` /* emulate the border */,
   background: gray2,
 };
 
@@ -130,6 +131,7 @@ export const itemCardStyle = {
   fontSize: '0.75rem',
   borderRadius: 4,
   minWidth: 0,
+  flex: 1,
 };
 
 export const popoverTitleStyle = {

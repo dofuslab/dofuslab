@@ -23,6 +23,8 @@ import { checkAuthentication } from 'common/utils';
 import { ellipsis } from 'common/mixins';
 import { mq } from 'common/constants';
 import BonusStats from '../desktop/BonusStats';
+import Tooltip from 'antd/lib/tooltip';
+import moment from 'moment';
 
 interface IProps {
   customSet?: customSet | null;
@@ -98,22 +100,23 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
           level: values.level,
           customSetId: customSet?.id,
         },
-        optimisticResponse: ({ name, level }: any) => {
-          const optimisticCustomSet: editCustomSetMetadata_editCustomSetMetadata_customSet = {
-            id: 'custom-set-0',
-            ...customSet,
-            name: name || null,
-            level,
-            __typename: 'CustomSet',
-          };
+        optimisticResponse: customSet
+          ? ({ name, level }: any) => {
+              const optimisticCustomSet: editCustomSetMetadata_editCustomSetMetadata_customSet = {
+                ...customSet,
+                name: name || null,
+                level,
+                __typename: 'CustomSet',
+              };
 
-          return {
-            editCustomSetMetadata: {
-              customSet: optimisticCustomSet,
-              __typename: 'EditCustomSetMetadata',
-            },
-          };
-        },
+              return {
+                editCustomSetMetadata: {
+                  customSet: optimisticCustomSet,
+                  __typename: 'EditCustomSetMetadata',
+                },
+              };
+            }
+          : undefined,
       });
       if (data?.editCustomSetMetadata?.customSet.id !== customSet?.id) {
         router.replace(
@@ -121,7 +124,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
             pathname: '/',
             query: { customSetId: data?.editCustomSetMetadata?.customSet.id },
           },
-          `/set/${data?.editCustomSetMetadata?.customSet.id}`,
+          `/build/${data?.editCustomSetMetadata?.customSet.id}`,
           {
             shallow: true,
           },
@@ -141,129 +144,182 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
 
   const [form] = Form.useForm();
 
-  return (
-    <div
+  const formElement = (
+    <Form
+      key={`form-${customSet?.id}`}
+      form={form}
+      name="header"
+      id={isMobile ? 'header-form-mobile' : 'header-form'}
+      onFinish={handleOk}
+      layout={'inline'}
       css={{
         display: 'flex',
-        alignItems: 'center',
-        flex: '0 0 96px',
-        margin: '12px 4px',
+        flexDirection: 'column',
+        width: '100%',
         [mq[1]]: {
-          margin: '4px 14px',
-          flex: '0 0 52px',
+          width: 'auto',
+          flexDirection: 'row',
+          alignItems: 'baseline',
         },
-        [mq[4]]: {
-          margin: '4px 20px',
+        '&.ant-form-inline .ant-form-item': {
+          marginRight: 0,
+          [mq[1]]: {
+            marginRight: 16,
+          },
         },
       }}
+      initialValues={{
+        name: customSet?.name || '',
+        level: customSet?.level || 200,
+      }}
     >
-      <Form
-        form={form}
-        name="header"
-        id="header-form"
-        onFinish={handleOk}
-        layout={'inline'}
-        css={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '100%',
-          cursor: 'pointer',
-          [mq[1]]: {
-            width: 'auto',
-            flexDirection: 'row',
-            alignItems: 'baseline',
-          },
-          '&.ant-form-inline .ant-form-item': {
-            marginRight: 0,
-            [mq[1]]: {
-              marginRight: 16,
-            },
-          },
-        }}
-        initialValues={{
-          name: customSet?.name || '',
-          level: customSet?.level || 200,
-        }}
-      >
-        {metadataState.isEditing ? (
-          <Form.Item name="name">
-            <Input
-              css={{
-                fontSize: '1.2rem',
-                fontWeight: 500,
-                [mq[1]]: {
-                  fontSize: '1.5rem',
-                  width: 240,
-                },
-              }}
-              maxLength={50}
-            />
-          </Form.Item>
-        ) : (
-          <div
+      {metadataState.isEditing ? (
+        <Form.Item name="name">
+          <Input
             css={{
-              ...ellipsis,
               fontSize: '1.2rem',
               fontWeight: 500,
               [mq[1]]: {
                 fontSize: '1.5rem',
-                maxWidth: 400,
+                width: 240,
               },
-              marginRight: 20,
-              cursor: 'pointer',
             }}
-            onClick={onStartEdit}
-          >
-            {customSet?.name || t('UNTITLED')}
-          </div>
-        )}
+            maxLength={50}
+          />
+        </Form.Item>
+      ) : (
         <div
           css={{
-            display: 'flex',
-            fontSize: '0.75rem',
-            alignItems: 'center',
-            marginTop: 8,
+            ...ellipsis,
+            fontSize: '1.2rem',
+            fontWeight: 500,
             [mq[1]]: {
-              marginTop: 0,
+              fontSize: '1.5rem',
+              maxWidth: 400,
             },
+            marginRight: 20,
+            cursor: 'pointer',
           }}
+          onClick={onStartEdit}
         >
-          <div
-            css={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
-            onClick={onStartEdit}
-          >
-            {t('LEVEL')}{' '}
-            {metadataState.isEditing ? (
-              <Form.Item name="level" css={{ display: 'inline-flex' }}>
-                <InputNumber
-                  css={{ marginLeft: 8 }}
-                  type="number"
-                  max={200}
-                  min={1}
-                />
-              </Form.Item>
-            ) : (
-              customSet?.level ?? 200
-            )}
-          </div>
+          {customSet?.name || t('UNTITLED')}
+        </div>
+      )}
+      <div
+        css={{
+          display: 'flex',
+          fontSize: '0.75rem',
+          alignItems: 'center',
+          marginTop: 8,
+          [mq[1]]: {
+            marginTop: 0,
+          },
+        }}
+      >
+        <div
+          css={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
+          onClick={onStartEdit}
+        >
+          {t('LEVEL')}{' '}
           {metadataState.isEditing ? (
-            <div css={{ marginLeft: 'auto' }}>
-              <Button css={{ marginLeft: 12 }} type="primary" htmlType="submit">
-                {t('OK')}
-              </Button>
-              <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
-                {t('CANCEL')}
-              </Button>
-            </div>
+            <Form.Item name="level" css={{ display: 'inline-flex' }}>
+              <InputNumber
+                css={{ marginLeft: 8 }}
+                type="number"
+                max={200}
+                min={1}
+              />
+            </Form.Item>
           ) : (
-            <a css={{ marginLeft: 12 }}>
-              <FontAwesomeIcon icon={faPencilAlt} onClick={onStartEdit} />
-            </a>
+            customSet?.level ?? 200
           )}
         </div>
-      </Form>
-      {customSet && !isMobile && <BonusStats customSet={customSet} />}
-    </div>
+        {metadataState.isEditing ? (
+          <div css={{ marginLeft: 'auto' }}>
+            <Button css={{ marginLeft: 12 }} type="primary" htmlType="submit">
+              {t('OK')}
+            </Button>
+            <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
+              {t('CANCEL')}
+            </Button>
+          </div>
+        ) : (
+          <a css={{ marginLeft: 12 }}>
+            <FontAwesomeIcon icon={faPencilAlt} onClick={onStartEdit} />
+          </a>
+        )}
+      </div>
+    </Form>
+  );
+
+  return (
+    <>
+      <div
+        css={{
+          display: 'flex',
+          alignItems: 'center',
+          flex: '0 0 96px',
+          margin: '12px 4px',
+          [mq[1]]: {
+            margin: '4px 14px',
+            flex: '0 0 52px',
+          },
+          [mq[4]]: {
+            margin: '4px 20px',
+          },
+        }}
+      >
+        {customSet && !metadataState.isEditing && !isMobile ? (
+          <Tooltip
+            overlayStyle={{ maxWidth: 360 }}
+            title={
+              <div
+                css={{
+                  display: 'grid',
+                  gridTemplateColumns: 'auto auto',
+                  gridColumnGap: 12,
+                }}
+              >
+                <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
+                <div>{customSet.owner?.username ?? t('ANONYMOUS')}</div>
+                <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
+                <div>{moment(customSet.createdAt).format('lll')}</div>
+                <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
+                <div>{moment(customSet.lastModified).format('lll')}</div>
+              </div>
+            }
+            placement="bottomLeft"
+          >
+            {formElement}
+          </Tooltip>
+        ) : (
+          formElement
+        )}
+        {customSet && !isMobile && <BonusStats customSet={customSet} />}
+      </div>
+      {customSet && isMobile && (
+        <div css={{ marginBottom: 20, fontSize: '0.75rem' }}>
+          <div css={{ display: 'flex' }}>
+            <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
+            <div css={{ marginLeft: 8 }}>
+              {customSet.owner?.username ?? t('ANONYMOUS')}
+            </div>
+          </div>
+          <div css={{ display: 'flex' }}>
+            <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
+            <div css={{ marginLeft: 8 }}>
+              {moment(customSet.createdAt).format('lll')}
+            </div>
+          </div>
+          <div css={{ display: 'flex' }}>
+            <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
+            <div css={{ marginLeft: 8 }}>
+              {moment(customSet.lastModified).format('lll')}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { NextPage } from 'next';
 
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
-import Layout from 'components/common/Layout';
+import Layout from 'components/mobile/Layout';
 import { useRouter } from 'next/router';
 import { customSet } from 'graphql/queries/__generated__/customSet';
 import { customSetVariables } from 'graphql/queries/__generated__/customSet';
@@ -101,7 +101,7 @@ const EquippedItemPage: NextPage = () => {
 
 EquippedItemPage.getInitialProps = async () => {
   return {
-    namespacesRequired: ['common', 'stat', 'auth'],
+    namespacesRequired: ['common', 'stat', 'auth', 'weapon_stat'],
   };
 };
 

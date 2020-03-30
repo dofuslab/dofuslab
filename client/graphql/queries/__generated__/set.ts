@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat } from "./../../../__generated__/globalTypes";
+import { Stat, Effect } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: set
@@ -20,9 +20,31 @@ export interface set_setById_bonuses {
 
 export interface set_setById_items_stats {
   __typename: "ItemStat";
+  id: any;
+  order: number;
   maxValue: number | null;
   stat: Stat | null;
   customStat: string | null;
+}
+
+export interface set_setById_items_weaponStats_weaponEffects {
+  __typename: "WeaponEffect";
+  id: any;
+  minDamage: number | null;
+  maxDamage: number;
+  effectType: Effect;
+}
+
+export interface set_setById_items_weaponStats {
+  __typename: "WeaponStat";
+  id: any;
+  apCost: number;
+  usesPerTurn: number;
+  minRange: number | null;
+  maxRange: number;
+  baseCritChance: number | null;
+  critBonusDamage: number | null;
+  weaponEffects: set_setById_items_weaponStats_weaponEffects[];
 }
 
 export interface set_setById_items_itemType_eligibleItemSlots {
@@ -61,6 +83,7 @@ export interface set_setById_items {
   level: number;
   imageUrl: string;
   stats: set_setById_items_stats[];
+  weaponStats: set_setById_items_weaponStats | null;
   conditions: any | null;
   itemType: set_setById_items_itemType;
   set: set_setById_items_set | null;

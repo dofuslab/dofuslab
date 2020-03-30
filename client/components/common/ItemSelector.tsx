@@ -75,25 +75,23 @@ const ItemSelector: React.FC<IProps> = ({
     }
 
     endCursorRef.current = data.items.pageInfo.endCursor;
-    try {
-      const fetchMoreResult = await fetchMore({
-        variables: { after: data.items.pageInfo.endCursor },
-        updateQuery: (prevData, { fetchMoreResult }) => {
-          if (!fetchMoreResult) {
-            return prevData;
-          }
-          return {
-            ...prevData,
-            items: {
-              ...prevData.items,
-              edges: [...prevData.items.edges, ...fetchMoreResult.items.edges],
-              pageInfo: fetchMoreResult.items.pageInfo,
-            },
-          };
-        },
-      });
-      return fetchMoreResult;
-    } catch (e) {}
+    const fetchMoreResult = await fetchMore({
+      variables: { after: data.items.pageInfo.endCursor },
+      updateQuery: (prevData, { fetchMoreResult }) => {
+        if (!fetchMoreResult) {
+          return prevData;
+        }
+        return {
+          ...prevData,
+          items: {
+            ...prevData.items,
+            edges: [...prevData.items.edges, ...fetchMoreResult.items.edges],
+            pageInfo: fetchMoreResult.items.pageInfo,
+          },
+        };
+      },
+    });
+    return fetchMoreResult;
   }, [data]);
 
   const responsiveGridRef = React.useRef<HTMLDivElement | null>(null);
@@ -141,6 +139,7 @@ const ItemSelector: React.FC<IProps> = ({
     <ResponsiveGrid
       numColumns={[2, 2, 2, 3, 4, 5, 6]}
       css={{
+        marginTop: 12,
         marginBottom: 20,
         position: 'relative',
         gridGap: 20,

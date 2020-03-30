@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat } from "./../../../__generated__/globalTypes";
+import { Stat, Effect } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: updateCustomSetItem
@@ -17,9 +17,31 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_stats {
   __typename: "ItemStat";
+  id: any;
+  order: number;
   maxValue: number | null;
   stat: Stat | null;
   customStat: string | null;
+}
+
+export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_weaponStats_weaponEffects {
+  __typename: "WeaponEffect";
+  id: any;
+  minDamage: number | null;
+  maxDamage: number;
+  effectType: Effect;
+}
+
+export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_weaponStats {
+  __typename: "WeaponStat";
+  id: any;
+  apCost: number;
+  usesPerTurn: number;
+  minRange: number | null;
+  maxRange: number;
+  baseCritChance: number | null;
+  critBonusDamage: number | null;
+  weaponEffects: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_weaponStats_weaponEffects[];
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_itemType_eligibleItemSlots {
@@ -58,6 +80,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
   level: number;
   imageUrl: string;
   stats: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_stats[];
+  weaponStats: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_weaponStats | null;
   conditions: any | null;
   itemType: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_itemType;
   set: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set | null;
@@ -109,6 +132,8 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet {
   equippedItems: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems[];
   stats: updateCustomSetItem_updateCustomSetItem_customSet_stats;
   owner: updateCustomSetItem_updateCustomSetItem_customSet_owner | null;
+  createdAt: any | null;
+  lastModified: any | null;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem {

@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 from flask import Flask, escape, request, session
 from flask_session import Session
+from flask_babel import Babel
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 from flask_graphql import GraphQLView
@@ -54,6 +55,8 @@ CORS(
     },
     supports_credentials=True,
 )
+
+babel = Babel(app)
 
 bcrypt = Bcrypt(app)
 

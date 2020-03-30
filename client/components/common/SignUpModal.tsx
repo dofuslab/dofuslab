@@ -120,20 +120,20 @@ const SignUpModal: React.FC<IProps> = ({
           <Input css={{ fontSize: '0.75rem' }} placeholder={t('EMAIL')} />
         </Form.Item>
         <Form.Item
-          name="username"
-          label={<span css={{ fontSize: '0.75rem' }}>{t('USERNAME')}</span>}
+          name="display-name"
+          label={<span css={{ fontSize: '0.75rem' }}>{t('DISPLAY_NAME')}</span>}
           rules={[
-            { required: true, message: t('VALIDATION.USERNAME_REQUIRED') },
+            { required: true, message: t('VALIDATION.DISPLAY_NAME_REQUIRED') },
             {
               pattern: /^(?=[a-zA-Z0-9._]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/,
-              message: t('VALIDATION.USERNAME_RULES'),
+              message: t('VALIDATION.DISPLAY_NAME_RULES'),
             },
           ]}
           validateTrigger={'onSubmit'}
         >
           <Input
             css={{ fontSize: '0.75rem' }}
-            placeholder={t('USERNAME')}
+            placeholder={t('DISPLAY_NAME')}
             maxLength={20}
           />
         </Form.Item>

@@ -51,7 +51,7 @@ const ItemCard: React.FC<IProps> = ({
       if (isMobile && customSetId) {
         Router.push(
           { pathname: '/index', query: { customSetId } },
-          customSetId ? `/set/${customSetId}` : '/',
+          customSetId ? `/build/${customSetId}` : '/',
         );
       }
       mutate(itemSlotId);

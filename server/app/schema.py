@@ -27,9 +27,11 @@ import graphene
 import uuid
 from graphql import GraphQLError
 from flask import session
+from flask_babel import _
 from flask_login import login_required, login_user, current_user, logout_user
 from functools import lru_cache
 from sqlalchemy import func, distinct
+from datetime import datetime
 
 # workaround from https://github.com/graphql-python/graphene-sqlalchemy/issues/211
 # without this workaround, graphene complains that there are multiple
@@ -117,6 +119,8 @@ class WeaponEffect(SQLAlchemyObjectType):
 
 
 class WeaponStat(SQLAlchemyObjectType):
+    weapon_effects = graphene.NonNull(graphene.List(graphene.NonNull(WeaponEffect)))
+
     class Meta:
         model = ModelWeaponStat
         interfaces = (GlobalNode,)
@@ -242,8 +246,31 @@ class CustomSet(SQLAlchemyObjectType):
         interfaces = (GlobalNode,)
 
 
+class CustomSetConnection(NonNullConnection):
+    class Meta:
+        node = CustomSet
+
+
 class User(SQLAlchemyObjectType):
-    access_token = graphene.String(required=True)
+    custom_sets = relay.ConnectionField(
+        graphene.NonNull(CustomSetConnection), search=graphene.Argument(graphene.String)
+    )
+
+    def resolve_custom_sets(self, info, **kwargs):
+        search = kwargs.get("search")
+        query = (
+            db.session.query(ModelCustomSet)
+            .filter_by(owner_id=self.uuid)
+            .order_by(ModelCustomSet.last_modified.desc())
+        )
+
+        if search:
+            search = search.strip()
+            query = query.filter(
+                func.upper(ModelCustomSet.name).contains(func.upper(search.strip()))
+            )
+
+        return query.all()
 
     class Meta:
         model = ModelUser
@@ -290,6 +317,16 @@ scrolled_stat_list = [
 ]
 
 
+class CreateCustomSet(graphene.Mutation):
+    custom_set = graphene.Field(CustomSet, required=True)
+
+    def mutate(self, info, **kwargs):
+        custom_set = get_or_create_custom_set(None)
+        db.session.commit()
+
+        return CreateCustomSet(custom_set=custom_set)
+
+
 class EditCustomSetStats(graphene.Mutation):
     class Arguments:
         custom_set_id = graphene.UUID()
@@ -302,10 +339,10 @@ class EditCustomSetStats(graphene.Mutation):
         stats = kwargs.get("stats")
         for base_stat in base_stat_list:
             if stats[base_stat] < 0 or stats[base_stat] > 999:
-                raise GraphQLError("Invalid value for stat.")
+                raise GraphQLError(_("Invalid stat value."))
         for scrolled_stat in scrolled_stat_list:
             if stats[scrolled_stat] < 0 or stats[scrolled_stat] > 100:
-                raise GraphQLError("Invalid value for stat.")
+                raise GraphQLError(_("Invalid stat value."))
         custom_set = get_or_create_custom_set(custom_set_id)
         for stat in base_stat_list + scrolled_stat_list:
             setattr(custom_set.stats, stat, stats[stat])
@@ -327,9 +364,9 @@ class EditCustomSetMetadata(graphene.Mutation):
         name = kwargs.get("name")
         level = kwargs.get("level")
         if len(name) > 50:
-            raise GraphQLError("The set name is too long.")
+            raise GraphQLError(_("The set name is too long."))
         if level < 1 or level > 200:
-            raise GraphQLError("Invalid set level (must be 1-200).")
+            raise GraphQLError(_("Invalid set level (must be 1-200)."))
         custom_set = get_or_create_custom_set(custom_set_id)
         custom_set.name = name
         custom_set.level = level
@@ -391,7 +428,7 @@ class MageEquippedItem(graphene.Mutation):
             equipped_item.custom_set.owner_id
             and equipped_item.custom_set.owner_id != current_user.get_id()
         ):
-            raise GraphQLError("You don't have permission to edit that set.")
+            raise GraphQLError(_("You don't have permission to edit that set."))
         db.session.query(ModelEquippedItemExo).filter_by(
             equipped_item_id=equipped_item_id
         ).delete(synchronize_session=False)
@@ -405,6 +442,7 @@ class MageEquippedItem(graphene.Mutation):
         )
         if stats:
             db.session.add_all(exo_models)
+        equipped_item.custom_set.last_modified = datetime.now()
         db.session.commit()
 
         return MageEquippedItem(equipped_item=equipped_item)
@@ -428,9 +466,9 @@ class SetEquippedItemExo(graphene.Mutation):
             equipped_item.custom_set.owner_id
             and equipped_item.custom_set.owner_id != current_user.get_id()
         ):
-            raise GraphQLError("You don't have permission to edit that set.")
+            raise GraphQLError(_("You don't have permission to edit that set."))
         if stat != Stat.AP and stat != Stat.MP and stat != Stat.RANGE:
-            raise GraphQLError("Invalid stat to set exo")
+            raise GraphQLError(_("Invalid stat to set exo."))
         exo_obj = (
             db.session.query(ModelEquippedItemExo)
             .filter_by(equipped_item_id=equipped_item_id, stat=stat)
@@ -443,6 +481,7 @@ class SetEquippedItemExo(graphene.Mutation):
             db.session.add(exo_obj)
         if exo_obj and not has_stat:
             db.session.delete(exo_obj)
+        equipped_item.custom_set.last_modified = datetime.now()
         db.session.commit()
 
         return SetEquippedItemExo(equipped_item=equipped_item)
@@ -460,7 +499,7 @@ class DeleteCustomSetItem(graphene.Mutation):
         item_slot_id = kwargs.get("item_slot_id")
         custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
         if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
-            raise GraphQLError("You don't have permission to edit that set.")
+            raise GraphQLError(_("You don't have permission to edit that set."))
         custom_set.unequip_item(item_slot_id)
         db.session.commit()
 
@@ -483,7 +522,7 @@ class RegisterUser(graphene.Mutation):
         validation.validate_registration(username, email, password)
         try:
             if current_user.is_authenticated:
-                raise GraphQLError("You are already logged in.")
+                raise GraphQLError(_("You are already logged in."))
             user = ModelUser(
                 username=username,
                 email=email,
@@ -493,7 +532,7 @@ class RegisterUser(graphene.Mutation):
             login_user(user)
             save_custom_sets()
         except Exception as e:
-            raise GraphQLError("An error occurred while registering.")
+            raise GraphQLError(_("An error occurred while registering."))
 
         return RegisterUser(user=user, ok=True)
 
@@ -509,12 +548,12 @@ class LoginUser(graphene.Mutation):
 
     def mutate(self, info, **kwargs):
         if current_user.is_authenticated:
-            raise GraphQLError("You are already logged in.")
+            raise GraphQLError(_("You are already logged in."))
         email = kwargs.get("email")
         password = kwargs.get("password")
         remember = kwargs.get("remember")
         user = ModelUser.find_by_email(email)
-        auth_error = GraphQLError("Invalid username or password.")
+        auth_error = GraphQLError(_("Invalid username or password."))
         if not user:
             raise auth_error
         if not user.check_password(password):
@@ -719,6 +758,7 @@ class Mutation(graphene.ObjectType):
     edit_custom_set_metadata = EditCustomSetMetadata.Field()
     edit_custom_set_stats = EditCustomSetStats.Field()
     equip_set = EquipSet.Field()
+    create_custom_set = CreateCustomSet.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

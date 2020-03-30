@@ -4,9 +4,26 @@ fragment item on Item {
   level
   imageUrl
   stats {
+    id
+    order
     maxValue
     stat
     customStat
+  }
+  weaponStats {
+    id
+    apCost
+    usesPerTurn
+    minRange
+    maxRange
+    baseCritChance
+    critBonusDamage
+    weaponEffects {
+      id
+      minDamage
+      maxDamage
+      effectType
+    }
   }
   conditions
   itemType {

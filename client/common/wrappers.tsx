@@ -14,6 +14,7 @@ import Card from 'antd/lib/card';
 import Skeleton from 'antd/lib/skeleton';
 import { set_bonuses } from 'graphql/fragments/__generated__/set';
 import { TFunction } from 'next-i18next';
+import { useTranslation } from 'i18n';
 
 interface IResponsiveGrid {
   readonly numColumns: ReadonlyArray<number>;
@@ -89,3 +90,23 @@ export const SetBonuses: React.FC<{
 export const BackTopWrapper: React.FC<{ target: () => HTMLElement }> = ({
   target,
 }) => <BackTop target={target} />;
+
+export const CardTitleWithLevel: React.FC<{
+  title: string;
+  showBadge?: boolean;
+  badgeContent?: React.ReactNode;
+  level?: number;
+}> = ({ title, level, showBadge, badgeContent }) => {
+  const { t } = useTranslation('common');
+  return (
+    <div css={{ display: 'flex', alignItems: 'center', marginRight: 4 }}>
+      <TruncatableText css={{ fontSize: '0.8rem' }}>{title}</TruncatableText>
+      {showBadge && <Badge css={{ marginRight: 4 }}>{badgeContent}</Badge>}
+      {level && (
+        <div css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}>
+          {t('LEVEL_ABBREVIATION', { ns: 'common' })} {level}
+        </div>
+      )}
+    </div>
+  );
+};

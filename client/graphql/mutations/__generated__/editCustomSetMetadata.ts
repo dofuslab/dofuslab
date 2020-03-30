@@ -12,6 +12,7 @@ export interface editCustomSetMetadata_editCustomSetMetadata_customSet {
   id: any;
   name: string | null;
   level: number;
+  lastModified: any | null;
 }
 
 export interface editCustomSetMetadata_editCustomSetMetadata {

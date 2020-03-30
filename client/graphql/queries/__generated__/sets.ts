@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { SetFilters, Stat } from "./../../../__generated__/globalTypes";
+import { SetFilters, Stat, Effect } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: sets
@@ -20,9 +20,31 @@ export interface sets_sets_edges_node_bonuses {
 
 export interface sets_sets_edges_node_items_stats {
   __typename: "ItemStat";
+  id: any;
+  order: number;
   maxValue: number | null;
   stat: Stat | null;
   customStat: string | null;
+}
+
+export interface sets_sets_edges_node_items_weaponStats_weaponEffects {
+  __typename: "WeaponEffect";
+  id: any;
+  minDamage: number | null;
+  maxDamage: number;
+  effectType: Effect;
+}
+
+export interface sets_sets_edges_node_items_weaponStats {
+  __typename: "WeaponStat";
+  id: any;
+  apCost: number;
+  usesPerTurn: number;
+  minRange: number | null;
+  maxRange: number;
+  baseCritChance: number | null;
+  critBonusDamage: number | null;
+  weaponEffects: sets_sets_edges_node_items_weaponStats_weaponEffects[];
 }
 
 export interface sets_sets_edges_node_items_itemType_eligibleItemSlots {
@@ -61,6 +83,7 @@ export interface sets_sets_edges_node_items {
   level: number;
   imageUrl: string;
   stats: sets_sets_edges_node_items_stats[];
+  weaponStats: sets_sets_edges_node_items_weaponStats | null;
   conditions: any | null;
   itemType: sets_sets_edges_node_items_itemType;
   set: sets_sets_edges_node_items_set | null;

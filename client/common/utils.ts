@@ -396,7 +396,7 @@ export const useEquipItemMutation = (item: item) => {
             pathname: '/',
             query: { customSetId: data.updateCustomSetItem.customSet.id },
           },
-          `/set/${data.updateCustomSetItem.customSet.id}`,
+          `/build/${data.updateCustomSetItem.customSet.id}`,
           {
             shallow: true,
           },
@@ -436,23 +436,19 @@ export const useEquipSetMutation = (
   const onClick = useCallback(async () => {
     const ok = await checkAuthentication(client, t, customSet);
     if (!ok) return;
-    try {
-      const { data: resultData } = await equipSet();
+    const { data: resultData } = await equipSet();
 
-      if (resultData?.equipSet?.customSet.id !== routerSetId) {
-        router.replace(
-          {
-            pathname: '/',
-            query: { customSetId: resultData?.equipSet?.customSet.id },
-          },
-          `/set/${resultData?.equipSet?.customSet.id}`,
-          {
-            shallow: true,
-          },
-        );
-      }
-    } catch (e) {
-      notification.error(e);
+    if (resultData?.equipSet?.customSet.id !== routerSetId) {
+      router.replace(
+        {
+          pathname: '/',
+          query: { customSetId: resultData?.equipSet?.customSet.id },
+        },
+        `/build/${resultData?.equipSet?.customSet.id}`,
+        {
+          shallow: true,
+        },
+      );
     }
   }, [equipSet, routerSetId, router]);
 
@@ -472,6 +468,7 @@ export const useDeleteItemMutation = (
       deleteCustomSetItem: {
         customSet: {
           id: customSet.id,
+          lastModified: Date.now(),
           equippedItems: [
             ...customSet.equippedItems
               .filter(equippedItem => equippedItem.slot.id !== slotId)
@@ -508,11 +505,14 @@ export const getCustomSet = (
   client: ApolloClient<object>,
   customSetId: string,
 ) => {
-  const customSet = client.readFragment<customSet>({
-    id: `CustomSet:${customSetId}`,
-    fragment: CustomSetFragment,
-    fragmentName: 'customSet',
-  });
+  const customSet = client.readFragment<customSet>(
+    {
+      id: `CustomSet:${customSetId}`,
+      fragment: CustomSetFragment,
+      fragmentName: 'customSet',
+    },
+    true,
+  );
 
   if (!customSet) {
     throw new Error(`Could not find custom set with id ${customSetId}`);

@@ -3,10 +3,15 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import Card from 'antd/lib/card';
-import { TruncatableText, Badge } from 'common/wrappers';
+import { CardTitleWithLevel } from 'common/wrappers';
 import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { useTranslation } from 'i18n';
-import { itemCardStyle, BORDER_COLOR, itemBoxDimensions } from 'common/mixins';
+import {
+  itemCardStyle,
+  BORDER_COLOR,
+  itemBoxDimensions,
+  ITEM_BOX_WIDTH,
+} from 'common/mixins';
 import ItemStatsList from './ItemStatsList';
 
 interface IProps {
@@ -22,23 +27,18 @@ const BasicItemCard: React.FC<IProps> = ({
   openSetModal,
   onClick,
 }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation(['common', 'stat', 'weapon_stat']);
   return (
     <Card
       hoverable={!!onClick}
       size="small"
       title={
-        <div css={{ display: 'flex', alignItems: 'center' }}>
-          <TruncatableText css={{ marginRight: 8, fontSize: '0.8rem' }}>
-            {item.name}
-          </TruncatableText>
-          {equipped && <Badge css={{ marginRight: 4 }}>{t('EQUIPPED')}</Badge>}
-          <div
-            css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}
-          >
-            {t('LEVEL_ABBREVIATION', { ns: 'common' })} {item.level}
-          </div>
-        </div>
+        <CardTitleWithLevel
+          title={item.name}
+          showBadge={equipped}
+          badgeContent={t('EQUIPPED')}
+          level={item.level}
+        />
       }
       css={{
         ...itemCardStyle,
@@ -49,16 +49,22 @@ const BasicItemCard: React.FC<IProps> = ({
       }}
       onClick={onClick}
     >
-      <img
-        src={item.imageUrl}
+      <div
         css={{
-          ...itemBoxDimensions,
           float: 'right',
-          maxWidth: 96,
           marginLeft: 12,
-          marginBottom: 12,
+          textAlign: 'right',
         }}
-      />
+      >
+        <img
+          src={item.imageUrl}
+          css={{
+            ...itemBoxDimensions,
+            marginBottom: 12,
+            maxWidth: ITEM_BOX_WIDTH,
+          }}
+        />
+      </div>
       <ItemStatsList
         item={item}
         css={{ paddingLeft: 16, marginBottom: 0 }}

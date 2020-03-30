@@ -15,13 +15,10 @@ import ItemSelector from './ItemSelector';
 import { mq } from 'common/constants';
 import SetSelector from './SetSelector';
 import BackTop from 'antd/lib/back-top';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRedo } from '@fortawesome/free-solid-svg-icons';
-import Button from 'antd/lib/button';
-import { useTranslation } from 'i18n';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import ItemTypeFilter from './ItemTypeFilter';
 import { uniqWith, isEqual } from 'lodash';
+import ResetAllButton from './ResetAllButton';
 
 const reducer = (state: SharedFilters, action: SharedFilterAction) => {
   switch (action.type) {
@@ -84,8 +81,6 @@ const Selector: React.FC<IProps> = ({
     setItemTypeIds(new Set());
   }, [dispatch, customSet]);
 
-  const { t } = useTranslation('common');
-
   return (
     <>
       <div
@@ -114,6 +109,7 @@ const Selector: React.FC<IProps> = ({
           customSetLevel={customSet?.level || null}
           showSets={showSetsState}
           setShowSets={setShowSetsState}
+          onReset={onReset}
         />
         {itemSlots && !showSetsState && (
           <ItemTypeFilter
@@ -129,21 +125,10 @@ const Selector: React.FC<IProps> = ({
             )}
           />
         )}
-        <Button
-          css={{
-            fontSize: '0.75rem',
-            margin: '12px 0',
-            height: 42,
-            [mq[1]]: {
-              height: 'auto',
-            },
-            [mq[4]]: { marginTop: '20px 0' },
-          }}
-          onClick={onReset}
-        >
-          <FontAwesomeIcon icon={faRedo} css={{ marginRight: 8 }} />
-          {t('RESET_ALL_FILTERS')}
-        </Button>
+        <ResetAllButton
+          css={{ [mq[1]]: { display: 'none' } }}
+          onReset={onReset}
+        />
         {showSetsState ? (
           <SetSelector
             customSet={customSet}
