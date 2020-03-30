@@ -16,11 +16,19 @@ from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_equipped_item import ModelEquippedItem
 from app.database.model_custom_set import ModelCustomSet
 from app.database.model_user import ModelUser
+from app.database.model_spell_effect import ModelSpellEffect
+from app.database.model_spell_stat_translation import ModelSpellStatTranslation
+from app.database.model_spell_stats import ModelSpellStats
+from app.database.model_spell_translation import ModelSpellTranslation
+from app.database.model_spell import ModelSpell
+from app.database.model_spell_variant_pair import ModelSpellVariantPair
+from app.database.model_class_translation import ModelClassTranslation
+from app.database.model_class import ModelClass
 from app.utils import get_or_create_custom_set, save_custom_sets
 from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from app.database.base import Base
-from app.database.enums import Stat, Effect
+from app.database.enums import Stat, WeaponEffectTypes
 from app import supported_languages
 import app.mutation_validation_utils as validation
 import graphene
@@ -70,7 +78,7 @@ class NonNullConnection(relay.Connection, abstract=True):
 
 
 StatEnum = graphene.Enum.from_enum(Stat)
-EffectEnum = graphene.Enum.from_enum(Effect)
+EffectEnum = graphene.Enum.from_enum(WeaponEffectTypes)
 
 
 class ItemStat(SQLAlchemyObjectType):
@@ -143,12 +151,6 @@ class Item(SQLAlchemyObjectType):
             .name
         )
 
-    def resolve_stats(self, info):
-        query = db.session.query(ModelItemStat).filter(
-            ModelItemStat.item_id == self.uuid
-        )
-        return query
-
     class Meta:
         model = ModelItem
         interfaces = (GlobalNode,)
@@ -197,12 +199,6 @@ class Set(SQLAlchemyObjectType):
             .one()
             .name
         )
-
-    def resolve_bonuses(self, info):
-        query = db.session.query(ModelSetBonus).filter(
-            ModelSetBonus.set_id == self.uuid
-        )
-        return query
 
     class Meta:
         model = ModelSet
@@ -276,6 +272,100 @@ class User(SQLAlchemyObjectType):
         model = ModelUser
         interfaces = (GlobalNode,)
         only_fields = ("id", "username", "email", "custom_sets")
+
+
+class SpellEffects(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelSpellEffect
+        interfaces = (GlobalNode,)
+
+
+class SpellStats(SQLAlchemyObjectType):
+    aoe = graphene.String()
+    spell_effects = graphene.NonNull(graphene.List(graphene.NonNull(SpellEffects)))
+
+    def resolve_aoe(self, info):
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+        query = (
+            db.session.query(ModelSpellStatTranslation)
+            .filter(ModelSpellStatTranslation.locale == locale)
+            .filter(ModelSpellStatTranslation.spell_stat_id == self.uuid)
+            .one_or_none()
+        )
+
+        if query:
+            return query.aoe_type
+
+    class Meta:
+        model = ModelSpellStats
+        interfaces = (GlobalNode,)
+
+
+class Spell(SQLAlchemyObjectType):
+    name = graphene.String(required=True)
+    description = graphene.String(required=True)
+    spell_stats = graphene.NonNull(graphene.List(graphene.NonNull(SpellStats)))
+
+    def resolve_name(self, info):
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+        query = db.session.query(ModelSpellTranslation)
+        return (
+            query.filter(ModelSpellTranslation.locale == locale)
+            .filter(ModelSpellTranslation.spell_id == self.uuid)
+            .one()
+            .name
+        )
+
+    def resolve_description(self, info):
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+        query = db.session.query(ModelSpellTranslation)
+        return (
+            query.filter(ModelSpellTranslation.locale == locale)
+            .filter(ModelSpellTranslation.spell_id == self.uuid)
+            .one()
+            .description
+        )
+
+    class Meta:
+        model = ModelSpell
+        interfaces = (GlobalNode,)
+
+
+class SpellVariantPair(SQLAlchemyObjectType):
+    spells = graphene.NonNull(graphene.List(graphene.NonNull(Spell)))
+
+    class Meta:
+        model = ModelSpellVariantPair
+        interfaces = (GlobalNode,)
+
+
+class Class(SQLAlchemyObjectType):
+    name = graphene.String(required=True)
+    spell_variant_pairs = graphene.NonNull(
+        graphene.List(graphene.NonNull(SpellVariantPair))
+    )
+
+    def resolve_name(self, info):
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+        query = db.session.query(ModelClassTranslation)
+        return (
+            query.filter(ModelClassTranslation.locale == locale)
+            .filter(ModelClassTranslation.class_id == self.uuid)
+            .one()
+            .name
+        )
+
+    class Meta:
+        model = ModelClass
+        interfaces = (GlobalNode,)
 
 
 class CustomSetStatsInput(graphene.InputObjectType):
@@ -720,7 +810,17 @@ class Query(graphene.ObjectType):
     def resolve_custom_sets(self, info):
         return db.session.query(ModelCustomSet).all()
 
+    classes = graphene.List(Class)
+
+    def resolve_classes(self, info):
+        return db.session.query(ModelClass).all()
+
     # Retrieve record by uuid
+    class_by_id = graphene.Field(Class, id=graphene.UUID(required=True))
+
+    def resolve_class_by_id(self, info, id):
+        return db.session.query(ModelClass).get(id)
+
     user_by_id = graphene.Field(User, id=graphene.UUID(required=True))
 
     def resolve_user_by_id(self, info, id):

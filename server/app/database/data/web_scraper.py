@@ -2,6 +2,7 @@ import csv
 import json
 import os
 import scraper_utils
+import re
 
 dirname = os.path.dirname(os.path.abspath(__file__))
 
@@ -581,7 +582,7 @@ class PetScraper:
                 if "is part of the" in div.text:
                     set = div.find("a")["href"].split("/")[-1].split("-")[0]
                     break
-            all_stats = scraper_utils.get_pet_stats()
+            all_stats = scraper_utils.get_pet_stats(id)
             stats = all_stats[0]
             custom_stats = all_stats[1]
             conditions = scraper_utils.get_conditions(all_soups, item_type)
@@ -702,33 +703,20 @@ class MountScraper:
 
 
 class ClassScraper:
-    def get_classes_from_page():
-        url_response = requests.get(
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes"
-        )
-        soup = BeautifulSoup(url_response.text, "html.parser")
+    def get_info_for_class(self, url):
+        soup = scraper_utils.get_soup(url)
+        class_name = "".join(url.split("-")[-1:]).capitalize()
 
-        class_urls = []
+        class_names = {}
+        class_names["en"] = class_name
+        raw_names = soup.find("head").find_all("link", {"rel": "alternate"})
+        for name in raw_names:
+            name = name["href"]
+            if "dofus" in name:
+                class_names[name.split("/")[3]] = name.split("-")[-1].capitalize()
 
-        class_table = (
-            soup.find("div", attrs={"class": "ak-content-sections"})
-            .find("div", attrs={"class": "row"})
-            .find_all("div", attrs={"class": "col-sm-6"})
-        )
+        print("Getting spells for {}".format(class_name))
 
-        for some_class in class_table:
-            class_urls.append(
-                "https://www.dofus.com"
-                + some_class.find("div", attrs={"class": "ak-breed-section"}).a["href"]
-            )
-
-        return class_urls
-
-    def get_class_info(url):
-        url_response = requests.get(url)
-        soup = BeautifulSoup(url_response.text, "html.parser")
-
-        name = "".join(url.split("-")[-1:]).capitalize()
         spells = []
 
         # get spell urls from class page
@@ -742,31 +730,447 @@ class ClassScraper:
             raw_variants = spell.find_all("div", attrs={"class": "ak-list-block"})
 
             for variant in raw_variants:
-                variant_urls.append(variant.a["href"])
+                id = variant.a["href"].split("=")[1].split("&")[0]
+                variant_urls.append(id)
 
             spell_urls.append(variant_urls)
 
         # get spell data
+        base_spell_url = (
+            "https://www.dofus.com/en/mmorpg/encyclopedia/spells/details?id="
+        )
+        num_spells = 1
+        for spell_pair in spell_urls:
+            variant = []
+            for spell_id in spell_pair:
+                spell_data = {}
+                spell_url = base_spell_url + spell_id + "&level=1&selector=1"
+                all_soups = scraper_utils.get_all_localized_soup(spell_url)
 
-        return {"name": name, "spells": spells}
+                spell_names = {}
+                for key, value in all_soups.items():
+                    spell_info = value.find(
+                        "h2", {"class": "ak-spell-name"}
+                    ).text.split("\n")
+                    spell_names[key] = spell_info[1]
+
+                spell_description = {}
+                for key, value in all_soups.items():
+                    description = value.find(
+                        "span", {"class": "ak-spell-description"}
+                    ).text.replace("\n", " ")
+                    spell_description[key] = description
+
+                image_url = (
+                    all_soups["en"]
+                    .find("div", {"class": "ak-spell-details-illu"})
+                    .find("img")["src"]
+                )
+
+                levels = (
+                    all_soups["en"]
+                    .find(
+                        "div",
+                        {"class": "ak-spell-details-level-selector ak-ajaxloader"},
+                    )
+                    .find_all("a")
+                )
+                effects = []
+                for i in range(1, len(levels) + 1):
+                    level = levels[i - 1].text
+                    url_for_level = base_spell_url + spell_id + "&level=" + str(i)
+                    soups_for_level = scraper_utils.get_all_localized_soup(
+                        url_for_level
+                    )
+
+                    ap_cost = (
+                        soups_for_level["en"]
+                        .find("h2", {"class", "ak-spell-name"})
+                        .text.split("\n")[-1]
+                        .split("/")[1]
+                        .strip("AP")
+                        .strip()
+                    )
+
+                    spell_range = {"minRange": None, "maxRange": None}
+                    raw_range = (
+                        soups_for_level["en"]
+                        .find("h2", {"class", "ak-spell-name"})
+                        .text.split("\n")[-1]
+                        .split("/")[0]
+                    )
+                    if "-" in raw_range:
+                        ranges = re.findall(r"\d+", raw_range)
+                        spell_range["minRange"] = int(ranges[0])
+                        spell_range["maxRange"] = int(ranges[1])
+                    else:
+                        ranges = re.findall(r"\d+", raw_range)
+                        spell_range["minRange"] = 0
+                        spell_range["maxRange"] = int(ranges[0])
+
+                    raw_characteristics = soups_for_level["en"].find(
+                        "div", {"class": "ak-spell-details-other clearfix"}
+                    )
+                    stat_types = raw_characteristics.find_all(
+                        "div", {"class": "ak-title"}
+                    )
+                    stat_values = raw_characteristics.find_all(
+                        "div", {"class": "ak-aside"}
+                    )
+
+                    cooldown = None
+                    crit_rate = None
+                    casts_per_player = None
+                    casts_per_turn = None
+                    need_los = None
+                    modifiable_range = None
+                    is_linear = None
+                    needs_free_cell = None
+                    aoe_type = None
+
+                    for j in range(len(stat_types)):
+                        stat_type = stat_types[j].text.strip()
+                        if "Probability of Critical Hit" in stat_type:
+                            crit_rate = stat_values[j].text.strip().replace("%", "")
+                        elif "Casts per turn" in stat_type:
+                            casts_per_turn = stat_values[j].text.strip()
+                        elif "Casts per player per turn" in stat_type:
+                            casts_per_player = stat_values[j].text.strip()
+                        elif "Modifiable range" in stat_type:
+                            if stat_values[j].text.strip() == "Yes":
+                                modifiable_range = True
+                            else:
+                                modifiable_range = False
+                        elif "Line of sight" in stat_type:
+                            if stat_values[j].text.strip() == "Yes":
+                                need_los = True
+                            else:
+                                need_los = False
+                        elif "Cast in a straight line only" in stat_type:
+                            if stat_values[j].text.strip() == "Yes":
+                                is_linear = True
+                            else:
+                                is_linear = False
+                        elif "Free cells" in stat_type:
+                            if stat_values[j].text.strip() == "Yes":
+                                needs_free_cell = True
+                            else:
+                                needs_free_cell = False
+                        elif "Turns between two casts" in stat_type:
+                            cooldown = stat_values[j].text.strip()
+                        elif "Area of Effect" in stat_type:
+                            aoe_type = {
+                                "en": None,
+                                "fr": None,
+                                "de": None,
+                                "es": None,
+                                "it": None,
+                                "pt": None,
+                            }
+                            for key, value in soups_for_level.items():
+                                aoe_type[key] = (
+                                    value.find(
+                                        "div",
+                                        {"class": "ak-spell-details-other clearfix"},
+                                    )
+                                    .find("div", {"class": "ak-text"})
+                                    .text
+                                )
+                        else:
+                            print("Other characteristic found: {}".format(stat_type))
+
+                    spell_effects = "|".join(
+                        [
+                            "Neutral damage",
+                            "Earth damage",
+                            "Fire damage",
+                            "Water damage",
+                            "Air damage",
+                            "Neutral steal",
+                            "Earth steal",
+                            "Fire steal",
+                            "Water steal",
+                            "Air steal",
+                            "HP restored",
+                        ]
+                    )
+
+                    spell_effects_2 = "|".join(["level to shield", "Pushes back",])
+
+                    normal_effects = {"modifiableEffect": [], "customEffect": {}}
+                    spell_stats = (
+                        soups_for_level["en"]
+                        .find(
+                            "div",
+                            {
+                                "class": "ak-container ak-content-list ak-displaymode-col"
+                            },
+                        )
+                        .find_all("div", {"class", "ak-title"})
+                    )
+
+                    i = 0
+                    for spell_stat in spell_stats:
+                        spell_stat = spell_stat.text.strip()
+
+                        type = None
+                        min_stat = None
+                        max_stat = None
+
+                        if re.search(
+                            r"\d+ \((?:{})\)".format(spell_effects), spell_stat
+                        ):
+                            spell_stat = re.sub(r"\s\(\d turns\)", "", spell_stat)
+                            if re.search(r"\d to \d", spell_stat):
+                                arr = (
+                                    spell_stat.replace("(", "")
+                                    .strip(")")
+                                    .strip()
+                                    .split(" ")
+                                )
+                                type = " ".join(arr[3:])
+                                min_stat = int(arr[0])
+                                max_stat = int(arr[2])
+                            else:
+                                arr = spell_stat.replace("(", "").strip(")").split(" ")
+                                type = " ".join(arr[1:])
+                                max_stat = int(arr[0])
+
+                            normal_effects["modifiableEffect"].append(
+                                {
+                                    "stat": type,
+                                    "minStat": min_stat,
+                                    "maxStat": max_stat,
+                                }
+                            )
+                            i = i + 1
+                        elif re.search(r"(?:{})".format(spell_effects_2), spell_stat):
+                            if "shield" in spell_stat:
+                                type = "Shield"
+                                max_stat = spell_stat.split(" ")[0].strip("%")
+                            elif "Pushes back" in spell_stat:
+                                type = "Pushback damage"
+                                max_stat = spell_stat.split(" ")[2]
+
+                            normal_effects["modifiableEffect"].append(
+                                {
+                                    "stat": type,
+                                    "minStat": min_stat,
+                                    "maxStat": max_stat,
+                                }
+                            )
+                            i = i + 1
+                        else:
+                            if normal_effects["customEffect"] == {}:
+                                normal_effects["customEffect"] = {
+                                    "en": [],
+                                    "fr": [],
+                                    "de": [],
+                                    "es": [],
+                                    "it": [],
+                                    "pt": [],
+                                }
+
+                            for key, value in soups_for_level.items():
+                                custom_effect = (
+                                    value.find(
+                                        "div",
+                                        {
+                                            "class": "ak-container ak-content-list ak-displaymode-col"
+                                        },
+                                    )
+                                    .find_all("div", {"class", "ak-title"})[i]
+                                    .text.strip()
+                                )
+                                normal_effects["customEffect"][key].append(
+                                    custom_effect
+                                )
+
+                            i = i + 1
+
+                    critical_effects = {}
+                    spell_stats = soups_for_level["en"].find_all(
+                        "div",
+                        {"class": "ak-container ak-content-list ak-displaymode-col"},
+                    )
+                    if len(spell_stats) > 2:
+                        critical_effects = {"modifiableEffect": [], "customEffect": {}}
+                        spell_stats = spell_stats[1].find_all(
+                            "div", {"class", "ak-title"}
+                        )
+
+                        i = 0
+                        for spell_stat in spell_stats:
+                            spell_stat = spell_stat.text.strip()
+
+                            type = None
+                            min_stat = None
+                            max_stat = None
+
+                            if re.search(
+                                r"\d+ \((?:{})\)".format(spell_effects), spell_stat
+                            ):
+                                spell_stat = re.sub(r"\s\(\d turns\)", "", spell_stat)
+                                if re.search(r"\d to \d", spell_stat):
+                                    arr = (
+                                        spell_stat.replace("(", "")
+                                        .strip(")")
+                                        .split(" ")
+                                    )
+                                    type = " ".join(arr[3:])
+                                    min_stat = int(arr[0])
+                                    max_stat = int(arr[2])
+                                else:
+                                    arr = (
+                                        spell_stat.replace("(", "")
+                                        .strip(")")
+                                        .split(" ")
+                                    )
+                                    type = " ".join(arr[1:])
+                                    max_stat = int(arr[0])
+
+                                critical_effects["modifiableEffect"].append(
+                                    {
+                                        "stat": type,
+                                        "minStat": min_stat,
+                                        "maxStat": max_stat,
+                                    }
+                                )
+                                i = i + 1
+                            elif re.search(
+                                r"(?:{})".format(spell_effects_2), spell_stat
+                            ):
+                                if "shield" in spell_stat:
+                                    type = "Shield"
+                                    max_stat = spell_stat.split(" ")[0].strip("%")
+                                elif "Pushes back" in spell_stat:
+                                    type = "Pushback damage"
+                                    max_stat = spell_stat.split(" ")[2]
+
+                                critical_effects["modifiableEffect"].append(
+                                    {
+                                        "stat": type,
+                                        "minStat": min_stat,
+                                        "maxStat": max_stat,
+                                    }
+                                )
+                                i = i + 1
+                            else:
+                                if critical_effects["customEffect"] == {}:
+                                    critical_effects["customEffect"] = {
+                                        "en": [],
+                                        "fr": [],
+                                        "de": [],
+                                        "es": [],
+                                        "it": [],
+                                        "pt": [],
+                                    }
+
+                                for key, value in soups_for_level.items():
+                                    custom_effect = (
+                                        value.find_all(
+                                            "div",
+                                            {
+                                                "class": "ak-container ak-content-list ak-displaymode-col"
+                                            },
+                                        )[1]
+                                        .find_all("div", {"class", "ak-title"})[i]
+                                        .text.strip()
+                                    )
+                                    critical_effects["customEffect"][key].append(
+                                        custom_effect
+                                    )
+
+                                i = i + 1
+
+                    effect = {
+                        "level": level,
+                        "apCost": ap_cost,
+                        "cooldown": cooldown,
+                        "baseCritRate": crit_rate,
+                        "castsPerPlayer": casts_per_player,
+                        "castsPerTurn": casts_per_turn,
+                        "needLos": need_los,
+                        "modifiableRange": modifiable_range,
+                        "isLinear": is_linear,
+                        "needsFreeCell": needs_free_cell,
+                        "aoeType": aoe_type,
+                        "spellRange": spell_range,
+                        "normalEffects": normal_effects,
+                        "criticalEffects": critical_effects,
+                    }
+                    effects.append(effect)
+
+                spell_data["name"] = spell_names
+                spell_data["description"] = spell_description
+                spell_data["imageUrl"] = image_url
+                spell_data["effects"] = effects
+
+                variant.append(spell_data)
+
+                print("Spell " + str(num_spells) + " finished. ID: {}".format(spell_id))
+                num_spells = num_spells + 1
+
+            spells.append(variant)
+
+        class_info = {"names": class_names, "spells": spells}
+        all_class_info = None
+
+        with open(os.path.join(dirname, "spells.json"), "r") as json_file:
+            all_class_info = json.load(json_file)
+            all_class_info.append(class_info)
+
+        with open(os.path.join(dirname, "spells.json"), "w") as file:
+            print("Writing spell data to file")
+            json.dump(all_class_info, file)
+
+    def get_info_for_all_classes(self):
+        all_urls = [
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/1-feca",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/2-osamodas",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/3-enutrof",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/4-sram",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/5-xelor",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/6-ecaflip",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/7-eniripsa",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/8-iop",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/9-cra",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/10-sadida",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/11-sacrier",
+            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/12-pandawa",
+            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/13-rogue",
+            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/14-masqueraider",
+            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/15-foggernaut",
+            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/16-eliotrope",
+            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/17-huppermage",
+            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/18-ouginak",
+        ]
+
+        # with open(os.path.join(dirname, "spells.json"), "w") as file:
+        #     json.dump([], file)
+
+        for url in all_urls:
+            self.get_info_for_class(url)
 
 
 if __name__ == "__main__":
     # ItemScraper.get_all_item_ids()
     # ItemScraper.get_all_item_data(3000)
-    # ItemScraper.get_data_for_ids(
-    #     ["19595", "19263", "13641", "16267", "6712", "2531", "8629"]
-    # )
+    # ItemScraper.get_data_for_ids(["19985", "6760"])
 
     # SetScraper.get_all_set_ids()
     # SetScraper.get_set_data(1000)
 
     # WeaponScraper.get_all_weapon_ids()
     # WeaponScraper.get_weapon_data(1000)
-    WeaponScraper.get_data_for_ids(["18018", "6524"])
+    # WeaponScraper.get_data_for_ids(["18018", "6524"])
 
     # PetScraper.get_all_pet_ids()
-    # PetScraper.get_all_pet_data(1000)
+    PetScraper.get_all_pet_data(1000)
+    arr = ["14827", "14848", "8211"]
 
     # MountScraper.get_all_mount_ids()
     # MountScraper.get_all_mount_data(3000)
+
+    # class_scraper = ClassScraper()
+    # class_scraper.get_info_for_all_classes()

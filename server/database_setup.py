@@ -14,6 +14,14 @@ from app.database.model_set_translation import ModelSetTranslation
 from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_custom_set import ModelCustomSet
 from app.database.model_user import ModelUser
+from app.database.model_class import ModelClass
+from app.database.model_class_translation import ModelClassTranslation
+from app.database.model_spell_variant_pair import ModelSpellVariantPair
+from app.database.model_spell import ModelSpell
+from app.database.model_spell_translation import ModelSpellTranslation
+from app.database.model_spell_stats import ModelSpellStats
+from app.database.model_spell_stat_translation import ModelSpellStatTranslation
+from app.database.model_spell_effect import ModelSpellEffect
 from app.database import base, enums
 from sqlalchemy.schema import MetaData
 import sqlalchemy
@@ -78,19 +86,35 @@ to_stat_enum = {
 }
 
 to_effect_enum = {
-    "Neutral damage": enums.Effect.NEUTRAL_DAMAGE,
-    "Earth damage": enums.Effect.EARTH_DAMAGE,
-    "Fire damage": enums.Effect.FIRE_DAMAGE,
-    "Water damage": enums.Effect.WATER_DAMAGE,
-    "Air damage": enums.Effect.AIR_DAMAGE,
-    "Neutral steal": enums.Effect.NEUTRAL_STEAL,
-    "Earth steal": enums.Effect.EARTH_STEAL,
-    "Fire steal": enums.Effect.FIRE_STEAL,
-    "Water steal": enums.Effect.WATER_STEAL,
-    "Air steal": enums.Effect.AIR_STEAL,
-    "AP": enums.Effect.AP,
-    "MP": enums.Effect.MP,
-    "HP restored": enums.Effect.HP_RESTORED,
+    "Neutral damage": enums.WeaponEffectTypes.NEUTRAL_DAMAGE,
+    "Earth damage": enums.WeaponEffectTypes.EARTH_DAMAGE,
+    "Fire damage": enums.WeaponEffectTypes.FIRE_DAMAGE,
+    "Water damage": enums.WeaponEffectTypes.WATER_DAMAGE,
+    "Air damage": enums.WeaponEffectTypes.AIR_DAMAGE,
+    "Neutral steal": enums.WeaponEffectTypes.NEUTRAL_STEAL,
+    "Earth steal": enums.WeaponEffectTypes.EARTH_STEAL,
+    "Fire steal": enums.WeaponEffectTypes.FIRE_STEAL,
+    "Water steal": enums.WeaponEffectTypes.WATER_STEAL,
+    "Air steal": enums.WeaponEffectTypes.AIR_STEAL,
+    "AP": enums.WeaponEffectTypes.AP,
+    "MP": enums.WeaponEffectTypes.MP,
+    "HP restored": enums.WeaponEffectTypes.HP_RESTORED,
+}
+
+to_spell_enum = {
+    "Neutral damage": enums.SpellEffectTypes.NEUTRAL_DAMAGE,
+    "Earth damage": enums.SpellEffectTypes.EARTH_DAMAGE,
+    "Fire damage": enums.SpellEffectTypes.FIRE_DAMAGE,
+    "Water damage": enums.SpellEffectTypes.WATER_DAMAGE,
+    "Air damage": enums.SpellEffectTypes.AIR_DAMAGE,
+    "Neutral steal": enums.SpellEffectTypes.NEUTRAL_STEAL,
+    "Earth steal": enums.SpellEffectTypes.EARTH_STEAL,
+    "Fire steal": enums.SpellEffectTypes.FIRE_STEAL,
+    "Water steal": enums.SpellEffectTypes.WATER_STEAL,
+    "Air steal": enums.SpellEffectTypes.AIR_STEAL,
+    "HP restored": enums.SpellEffectTypes.HP_RESTORED,
+    "Shield": enums.SpellEffectTypes.SHIELD,
+    "Pushback damage": enums.SpellEffectTypes.PUSHBACK_DAMAGE,
 }
 
 if __name__ == "__main__":
@@ -447,5 +471,103 @@ if __name__ == "__main__":
 
             except KeyError as err:
                 print("KeyError occurred:", err)
+
+        db.session.commit()
+
+    print("Adding classes to database")
+    with open(os.path.join(dirname, "app/database/data/spells.json"), "r") as file:
+        data = json.load(file)
+        for record in data:
+            class_object = ModelClass()
+
+            for locale in record["names"]:
+                class_translation = ModelClassTranslation(
+                    class_id=class_object.uuid,
+                    locale=locale,
+                    name=record["names"][locale],
+                )
+                db.session.add(class_translation)
+                class_object.name.append(class_translation)
+
+            for spell_pair in record["spells"]:
+                spell_pair_object = ModelSpellVariantPair(class_id=class_object.uuid)
+                for spell in spell_pair:
+                    spell_object = ModelSpell(
+                        spell_variant_pair_id=spell_pair_object.uuid,
+                        image_url=spell["imageUrl"],
+                    )
+                    for locale in spell["name"]:
+                        spell_translation = ModelSpellTranslation(
+                            spell_id=spell_object.uuid,
+                            locale=locale,
+                            name=spell["name"][locale],
+                            description=spell["description"][locale],
+                        )
+                        db.session.add(spell_translation)
+                        spell_object.spell_translation.append(spell_translation)
+
+                    for level in spell["effects"]:
+                        spell_stat = ModelSpellStats(
+                            level=level["level"],
+                            ap_cost=level["apCost"],
+                            cooldown=level["cooldown"],
+                            base_crit_chance=level["baseCritRate"],
+                            casts_per_turn=level["castsPerTurn"],
+                            casts_per_target=level["castsPerPlayer"],
+                            needs_los=level["needLos"],
+                            has_modifiable_range=level["modifiableRange"],
+                            is_linear=level["isLinear"],
+                            needs_free_cell=level["needsFreeCell"],
+                            min_range=level["spellRange"]["minRange"],
+                            max_range=level["spellRange"]["maxRange"],
+                        )
+
+                        if level["aoeType"]:
+                            for locale in level["aoeType"]:
+                                spell_stat_translation = ModelSpellStatTranslation(
+                                    spell_stat_id=spell_stat.uuid,
+                                    locale=locale,
+                                    aoe_type=level["aoeType"][locale],
+                                )
+                                db.session.add(spell_stat_translation)
+                                spell_stat.spell_stat_translation.append(
+                                    spell_stat_translation
+                                )
+
+                        for i in range(len(level["normalEffects"]["modifiableEffect"])):
+                            spell_effect = ModelSpellEffect(
+                                spell_stat_id=spell_stat.uuid,
+                                effect_type=to_spell_enum[
+                                    level["normalEffects"]["modifiableEffect"][i][
+                                        "stat"
+                                    ]
+                                ],
+                                min_damage=level["normalEffects"]["modifiableEffect"][
+                                    i
+                                ]["minStat"],
+                                max_damage=level["normalEffects"]["modifiableEffect"][
+                                    i
+                                ]["maxStat"],
+                            )
+
+                            if level["criticalEffects"].get("modifiableEffect", None):
+                                spell_effect.crit_min_damage = level["criticalEffects"][
+                                    "modifiableEffect"
+                                ][i]["minStat"]
+                                spell_effect.crit_max_damage = level["criticalEffects"][
+                                    "modifiableEffect"
+                                ][i]["maxStat"]
+
+                            db.session.add(spell_effect)
+                            spell_stat.spell_effects.append(spell_effect)
+
+                        db.session.add(spell_stat)
+                        spell_object.spell_stats.append(spell_stat)
+
+                    db.session.add(spell_object)
+                    spell_pair_object.spells.append(spell_object)
+
+                db.session.add(spell_pair_object)
+                class_object.spell_variant_pair.append(spell_pair_object)
 
         db.session.commit()
