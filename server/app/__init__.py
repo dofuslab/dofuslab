@@ -1,11 +1,13 @@
 from dotenv import load_dotenv
 from flask import Flask, escape, request, session
 from flask_session import Session
-from flask_babel import Babel
+from flask_babel import Babel, _, ngettext
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 from flask_graphql import GraphQLView
 from flask_migrate import Migrate
+from flask_limiter_graphQL_support import Limiter
+from flask_limiter_graphQL_support.util import get_remote_address
 import os
 from app.database.base import Base
 import flask_login
@@ -70,8 +72,12 @@ migration_dir = os.path.join(dirname, "migrations")
 migrate = Migrate(app, Base, directory=migration_dir)
 
 template_env = Environment(
-    loader=FileSystemLoader("%s/templates/" % os.path.dirname(__file__))
+    loader=FileSystemLoader("%s/templates/" % os.path.dirname(__file__)),
+    extensions=["jinja2.ext.i18n"],
 )
+template_env.install_gettext_callables(gettext=_, ngettext=ngettext)
+
+limiter = Limiter(app, key_func=get_remote_address)
 
 from app.schema import schema
 

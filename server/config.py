@@ -23,3 +23,7 @@ class Config:
     SESSION_REDIS = redis_connection
 
     QUEUES = queues
+
+    RATELIMIT_STORAGE_URL = "redis://{}:{}".format(
+        environ.get("REDIS_HOST"), environ.get("REDIS_PORT")
+    )

@@ -3,6 +3,8 @@ mutation login($email: String!, $password: String!, $remember: Boolean!) {
     user {
       id
       username
+      email
+      verified
     }
   }
 }

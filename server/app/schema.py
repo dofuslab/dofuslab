@@ -1,4 +1,4 @@
-from app import db, supported_languages, q, session_scope, template_env
+from app import db, supported_languages, q, session_scope, template_env, limiter
 from app.database.model_item_stat_translation import ModelItemStatTranslation
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_type import ModelItemType
@@ -25,7 +25,7 @@ from app.database.model_spell_variant_pair import ModelSpellVariantPair
 from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_class import ModelClass
 from app.tasks import send_email
-from app.utils import get_or_create_custom_set, save_custom_sets, save_to_db
+from app.utils import get_or_create_custom_set, save_custom_sets, anonymous_or_verified
 from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from app.database.base import Base
@@ -274,10 +274,16 @@ class User(SQLAlchemyObjectType):
 
             return query.all()
 
+    def resolve_email(self, info, **kwargs):
+        with session_scope() as db_session:
+            if self.uuid != current_user.get_id():
+                raise GraphQLError(_("You are not authorized to make this request."))
+            return self.email
+
     class Meta:
         model = ModelUser
         interfaces = (GlobalNode,)
-        only_fields = ("id", "username", "email", "custom_sets")
+        only_fields = ("id", "username", "email", "custom_sets", "verified")
 
 
 class SpellEffects(SQLAlchemyObjectType):
@@ -420,6 +426,7 @@ scrolled_stat_list = [
 class CreateCustomSet(graphene.Mutation):
     custom_set = graphene.Field(CustomSet, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope():
             custom_set = get_or_create_custom_set(None)
@@ -434,6 +441,7 @@ class EditCustomSetStats(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope():
             custom_set_id = kwargs.get("custom_set_id")
@@ -459,6 +467,7 @@ class EditCustomSetMetadata(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope():
             custom_set_id = kwargs.get("custom_set_id")
@@ -484,6 +493,7 @@ class UpdateCustomSetItem(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope():
             custom_set_id = kwargs.get("custom_set_id")
@@ -502,6 +512,7 @@ class EquipSet(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
             custom_set_id = kwargs.get("custom_set_id")
@@ -520,6 +531,7 @@ class MageEquippedItem(graphene.Mutation):
 
     equipped_item = graphene.Field(EquippedItem, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
             equipped_item_id = kwargs.get("equipped_item_id")
@@ -557,6 +569,7 @@ class SetEquippedItemExo(graphene.Mutation):
 
     equipped_item = graphene.Field(EquippedItem, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
             equipped_item_id = kwargs.get("equipped_item_id")
@@ -594,6 +607,7 @@ class DeleteCustomSetItem(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
             custom_set_id = kwargs.get("custom_set_id")
@@ -632,7 +646,7 @@ class RegisterUser(graphene.Mutation):
                 token = encode_token(user.email)
                 verify_url = generate_url("verify_email.verify_email", token)
                 template = template_env.get_template("verify_email.html")
-                content = template.render(verify_url=verify_url)
+                content = template.render(display_name=username, verify_url=verify_url)
                 q.enqueue(send_email, user.email, content)
                 db_session.add(user)
                 db_session.flush()
@@ -677,6 +691,33 @@ class LogoutUser(graphene.Mutation):
         if current_user.is_authenticated:
             logout_user()
         return LogoutUser(ok=True)
+
+
+class ResendVerificationEmail(graphene.Mutation):
+    ok = graphene.Boolean(required=True)
+
+    @limiter.limit(
+        "1/minute", error_message=_("Please wait a minute before trying again.")
+    )
+    @limiter.limit(
+        "5/hour",
+        error_message=_(
+            "You have sent too many verification emails. Please wait awhile before trying again."
+        ),
+    )
+    def mutate(self, info):
+        with session_scope() as db_session:
+            user = current_user._get_current_object()
+            if not current_user.is_authenticated:
+                raise GraphQLError(_("You must be signed in to do that."))
+            if user.verified:
+                raise GraphQLError(_("Your account is already verified."))
+            token = encode_token(user.email)
+            verify_url = generate_url("verify_email.verify_email", token)
+            template = template_env.get_template("verify_email.html")
+            content = template.render(display_name=user.username, verify_url=verify_url)
+            q.enqueue(send_email, user.email, content)
+            return ResendVerificationEmail(ok=True)
 
 
 class ItemFilters(graphene.InputObjectType):
@@ -897,6 +938,7 @@ class Mutation(graphene.ObjectType):
     edit_custom_set_stats = EditCustomSetStats.Field()
     equip_set = EquipSet.Field()
     create_custom_set = CreateCustomSet.Field()
+    resend_verification_email = ResendVerificationEmail.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

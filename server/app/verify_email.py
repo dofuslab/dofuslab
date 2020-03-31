@@ -1,7 +1,6 @@
-from app import app, db
+from app import app, session_scope
 from app.database.model_user import ModelUser
 from app.verify_email_utils import decode_token
-from app.utils import save_to_db
 from flask import flash, redirect, Blueprint
 import os
 

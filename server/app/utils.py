@@ -41,3 +41,17 @@ def save_custom_sets():
             }
             mappings.append(info)
         db_session.bulk_update_mappings(ModelCustomSet, mappings)
+
+
+def anonymous_or_verified(func):
+    def wrapper(*args, **kwargs):
+        if (
+            current_user.is_authenticated
+            and not current_user._get_current_object().verified
+        ):
+            raise GraphQLError(
+                _("Please verify your account to continue using DofusLab.")
+            )
+        return func(*args, **kwargs)
+
+    return wrapper

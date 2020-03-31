@@ -5,6 +5,9 @@ import { useRouter } from 'next/router';
 import notification from 'antd/lib/notification';
 import { useTranslation } from 'i18n';
 import { cloneDeep } from 'lodash';
+import { useQuery } from '@apollo/react-hooks';
+import { currentUser } from 'graphql/queries/__generated__/currentUser';
+import currentUserQuery from 'graphql/queries/currentUser.graphql';
 
 type StatusObj = {
   type: 'info' | 'success' | 'warn' | 'error';
@@ -41,6 +44,7 @@ const StatusChecker: React.FC = () => {
   const router = useRouter();
   const { query } = router;
   const { t } = useTranslation('status');
+  const { data } = useQuery<currentUser>(currentUserQuery);
 
   const processQueryEntry = React.useCallback(
     (statusType: string, statusValue: string) => {
@@ -59,6 +63,10 @@ const StatusChecker: React.FC = () => {
   );
 
   React.useEffect(() => {
+    if (data?.currentUser && !data.currentUser.verified) {
+      router.replace('/verify-email');
+      return;
+    }
     const newQuery = cloneDeep(query);
     Object.entries(query).forEach(([statusType, statusValue]) => {
       if (typeof statusValue === 'string') {
@@ -84,7 +92,7 @@ const StatusChecker: React.FC = () => {
       },
       { shallow: true },
     );
-  }, []);
+  }, [data]);
   return null;
 };
 

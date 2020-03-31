@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ItemFilters, Stat, WeaponEffectTypes } from "./../../../__generated__/globalTypes";
+import { ItemFilters, Stat, WeaponEffectType } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: items
@@ -23,7 +23,7 @@ export interface items_items_edges_node_weaponStats_weaponEffects {
   id: any;
   minDamage: number | null;
   maxDamage: number;
-  effectType: WeaponEffectTypes;
+  effectType: WeaponEffectType;
 }
 
 export interface items_items_edges_node_weaponStats {

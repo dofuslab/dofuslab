@@ -65,17 +65,21 @@ const Layout = (props: LayoutProps) => {
 
   const menu = (
     <Menu>
-      <Menu.Item key="MY_BUILDS" css={{ padding: '8px 12px' }}>
-        <Link href="/my-builds" as="/my-builds">
-          <a css={{ fontSize: '0.75rem' }}>
-            <span css={iconWrapper}>
-              <FontAwesomeIcon icon={faTshirt} />
-            </span>
-            {t('MY_BUILDS', { ns: 'common' })}
-          </a>
-        </Link>
-      </Menu.Item>
-      <Menu.Divider />
+      {data?.currentUser?.verified && (
+        <>
+          <Menu.Item key="MY_BUILDS" css={{ padding: '8px 12px' }}>
+            <Link href="/my-builds" as="/my-builds">
+              <a css={{ fontSize: '0.75rem' }}>
+                <span css={iconWrapper}>
+                  <FontAwesomeIcon icon={faTshirt} />
+                </span>
+                {t('MY_BUILDS', { ns: 'common' })}
+              </a>
+            </Link>
+          </Menu.Item>
+          <Menu.Divider />
+        </>
+      )}
       <Menu.Item key="LOGOUT" css={{ padding: '8px 12px' }}>
         <a css={{ fontSize: '0.75rem' }} onClick={logoutHandler}>
           <span css={iconWrapper}>

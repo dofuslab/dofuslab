@@ -11,6 +11,8 @@ export interface login_loginUser_user {
   __typename: "User";
   id: any;
   username: string;
+  email: string;
+  verified: boolean;
 }
 
 export interface login_loginUser {

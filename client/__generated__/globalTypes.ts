@@ -68,7 +68,7 @@ export enum Stat {
 /**
  * An enumeration.
  */
-export enum WeaponEffectTypes {
+export enum WeaponEffectType {
   AIR_DAMAGE = "AIR_DAMAGE",
   AIR_STEAL = "AIR_STEAL",
   AP = "AP",

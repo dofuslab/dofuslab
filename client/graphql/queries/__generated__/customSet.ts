@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat, WeaponEffectTypes } from "./../../../__generated__/globalTypes";
+import { Stat, WeaponEffectType } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: customSet
@@ -29,7 +29,7 @@ export interface customSet_customSetById_equippedItems_item_weaponStats_weaponEf
   id: any;
   minDamage: number | null;
   maxDamage: number;
-  effectType: WeaponEffectTypes;
+  effectType: WeaponEffectType;
 }
 
 export interface customSet_customSetById_equippedItems_item_weaponStats {

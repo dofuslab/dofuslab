@@ -101,17 +101,22 @@ const Layout = (props: LayoutProps) => {
               {t('WELCOME_MESSAGE', {
                 displayName: data.currentUser.username,
               })}
-              <Button onClick={openDrawer} css={{ marginLeft: 12 }}>
-                {t('MY_BUILDS', { ns: 'common' })}
-              </Button>
-              <Drawer
-                visible={drawerVisible}
-                closable
-                onClose={closeDrawer}
-                width={480}
-              >
-                <MyBuilds />
-              </Drawer>
+              {data.currentUser.verified && (
+                <>
+                  <Button onClick={openDrawer} css={{ marginLeft: 12 }}>
+                    {t('MY_BUILDS', { ns: 'common' })}
+                  </Button>
+
+                  <Drawer
+                    visible={drawerVisible}
+                    closable
+                    onClose={closeDrawer}
+                    width={480}
+                  >
+                    <MyBuilds />
+                  </Drawer>
+                </>
+              )}
               <Button
                 key="logout"
                 onClick={logoutHandler}

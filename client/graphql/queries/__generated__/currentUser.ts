@@ -11,6 +11,8 @@ export interface currentUser_currentUser {
   __typename: "User";
   id: any;
   username: string;
+  email: string;
+  verified: boolean;
 }
 
 export interface currentUser {
