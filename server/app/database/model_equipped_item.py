@@ -1,4 +1,4 @@
-from app import db
+from app import session_scope
 import sqlalchemy
 from .base import Base
 from .model_equipped_item_exo import ModelEquippedItemExo
@@ -29,7 +29,8 @@ class ModelEquippedItem(Base):
     exos = relationship("ModelEquippedItemExo", cascade="all, delete-orphan")
 
     def change_item(self, item_id):
-        self.item_id = item_id
-        db.session.query(ModelEquippedItemExo).filter_by(
-            equipped_item_id=self.uuid
-        ).delete()
+        with session_scope() as db_session:
+            self.item_id = item_id
+            db_session.query(ModelEquippedItemExo).filter_by(
+                equipped_item_id=self.uuid
+            ).delete()

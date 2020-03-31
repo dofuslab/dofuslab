@@ -24,6 +24,7 @@ from app.database.model_spell_stat_translation import ModelSpellStatTranslation
 from app.database.model_spell_effect import ModelSpellEffect
 from app.database import base, enums
 from sqlalchemy.schema import MetaData
+from worker import redis_connection
 import sqlalchemy
 import json
 import sys
@@ -118,10 +119,11 @@ to_spell_enum = {
 }
 
 if __name__ == "__main__":
-    # print("Resetting database")
-    # base.Base.metadata.reflect(base.engine)
-    # base.Base.metadata.drop_all(base.engine)
-    # base.Base.metadata.create_all(base.engine)
+    print("Resetting database")
+    base.Base.metadata.reflect(base.engine)
+    base.Base.metadata.drop_all(base.engine)
+    base.Base.metadata.create_all(base.engine)
+    redis_connection.flushall()
 
     item_types = {}
 

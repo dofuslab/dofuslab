@@ -11,32 +11,18 @@ from app.database.base import Base
 import flask_login
 from flask_cors import CORS
 import redis
+from worker import redis_connection
+from rq import Queue
+from jinja2 import Environment, FileSystemLoader
+
 
 load_dotenv()
 
-
-db_uri = os.getenv("DATABASE_URL")
-secret_key = os.getenv("SECRET_KEY")
-session_cookie_domain = os.getenv("SESSION_COOKIE_DOMAIN")
-remember_cookie_domain = os.getenv("REMEMBER_COOKIE_DOMAIN")
-session_cookie_secure = bool(os.getenv("SESSION_COOKIE_SECURE"))
-redis_host = os.getenv("REDIS_HOST")
-redis_port = os.getenv("REDIS_PORT")
-session_redis = os.getenv("SESSION_REDIS")
-
-r = redis.Redis(host=redis_host, port=int(redis_port), db=0)
-
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["SECRET_KEY"] = secret_key
-app.config["SESSION_COOKIE_DOMAIN"] = session_cookie_domain
-app.config["SESSION_COOKIE_SECURE"] = session_cookie_secure
-app.config["REMEMBER_COOKIE_DOMAIN"] = remember_cookie_domain
-app.config["REMEMBER_COOKIE_PATH"] = "/"
-app.config["SESSION_TYPE"] = "redis"
-app.config["SESSION_REDIS"] = r
+app.config.from_object("config.Config")
+Session(app)
 
+q = Queue(connection=redis_connection)
 
 supported_languages = ["en", "fr", "pt", "it", "de", "es"]
 
@@ -56,6 +42,21 @@ CORS(
     supports_credentials=True,
 )
 
+from contextlib import contextmanager
+
+
+@contextmanager
+def session_scope():
+    """Provide a transactional scope around a series of operations."""
+    session = db.session
+    try:
+        yield session
+        session.commit()
+    except:
+        session.rollback()
+        raise
+
+
 babel = Babel(app)
 
 bcrypt = Bcrypt(app)
@@ -68,6 +69,10 @@ migration_dir = os.path.join(dirname, "migrations")
 
 migrate = Migrate(app, Base, directory=migration_dir)
 
+template_env = Environment(
+    loader=FileSystemLoader("%s/templates/" % os.path.dirname(__file__))
+)
+
 from app.schema import schema
 
 app.add_url_rule(
@@ -78,7 +83,6 @@ app.add_url_rule(
 from app.verify_email import verify_email_blueprint
 
 app.register_blueprint(verify_email_blueprint)
-
 
 if __name__ == "__main__":
     app.run(debug=True, host=".dev.localhost")

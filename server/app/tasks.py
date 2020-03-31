@@ -1,12 +1,27 @@
 import time
+import boto3
+import os
 
 from app import db
 from app.database.model_user import ModelUser
 
 
-def send_email(email):
-    time.sleep(10)  # simulate long-running process
-    user = db.session.query(ModelUser).filter_by(email=email).one_or_none()
-    user.email_sent = True
-    db.session.commit()
-    return True
+def send_email(email, content):
+    with session_scope() as db_session:
+        ses = boto3.client(
+            "ses",
+            region_name=os.getenv("SES_REGION"),
+            aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
+            aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
+        )
+        ses.send_email(
+            Source=os.getenv("SES_EMAIL_SOURCE"),
+            Destination={"ToAddresses": [email]},
+            Message={
+                "Subject": {"Data": "Confirm your account"},
+                "Body": {"Html": {"Data": content}},
+            },
+        )
+        user = db_session.query(ModelUser).filter_by(email=email).one()
+        user.email_sent = True
+        return True
