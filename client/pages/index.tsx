@@ -52,7 +52,14 @@ const Index: NextPage = () => {
 
 Index.getInitialProps = async () => {
   return {
-    namespacesRequired: ['common', 'stat', 'auth', 'weapon_stat'],
+    namespacesRequired: [
+      'common',
+      'stat',
+      'auth',
+      'weapon_stat',
+      'status',
+      'mage',
+    ],
   };
 };
 

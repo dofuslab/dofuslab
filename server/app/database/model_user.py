@@ -37,10 +37,6 @@ class ModelUser(UserMixin, Base):
     )
     verified = Column("verified", Boolean, nullable=False, default=False, index=True)
 
-    def save_to_db(self):
-        db.session.add(self)
-        db.session.commit()
-
     def check_password(self, candidate):
         return bcrypt.check_password_hash(self.password, candidate)
 

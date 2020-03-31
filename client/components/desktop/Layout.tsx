@@ -19,6 +19,7 @@ import SignUpModal from '../common/SignUpModal';
 import MyBuilds from '../common/MyBuilds';
 import Link from 'next/link';
 import { mq } from 'common/constants';
+import StatusChecker from 'components/common/StatusChecker';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -80,6 +81,7 @@ const Layout = (props: LayoutProps) => {
           }
         `}
       />
+      <StatusChecker />
       <AntdLayout.Header
         css={{
           display: 'flex',

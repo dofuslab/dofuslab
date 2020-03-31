@@ -619,12 +619,12 @@ class RegisterUser(graphene.Mutation):
                 email=email,
                 password=ModelUser.generate_hash(password),
             )
-            user.save_to_db()
-            with r:
-                q = Queue()
-                q.enqueue(send_email, user.email)
+            q = Queue(connection=r)
+            q.enqueue(send_email, user.email)
+            db.session.add(user)
             login_user(user)
             save_custom_sets()
+            db.session.commit()
         except Exception as e:
             raise GraphQLError(_("An error occurred while registering."))
 

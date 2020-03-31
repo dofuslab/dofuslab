@@ -21,6 +21,7 @@ import SignUpModal from '../common/SignUpModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTshirt, faDoorOpen } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import StatusChecker from 'components/common/StatusChecker';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -95,6 +96,7 @@ const Layout = (props: LayoutProps) => {
           }
         `}
       />
+      <StatusChecker />
       <AntdLayout.Header
         css={{
           display: 'flex',
