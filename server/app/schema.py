@@ -86,19 +86,18 @@ class ItemStat(SQLAlchemyObjectType):
     custom_stat = graphene.String()
 
     def resolve_custom_stat(self, info):
-        with session_scope() as db_session:
-            locale = info.context.accept_languages.best_match(
-                supported_languages, default="en"
-            )
-            query = (
-                db_session.query(ModelItemStatTranslation)
-                .filter(ModelItemStatTranslation.item_stat_id == self.uuid)
-                .filter(ModelItemStatTranslation.locale == locale)
-                .one_or_none()
-            )
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+        query = (
+            db.session.query(ModelItemStatTranslation)
+            .filter(ModelItemStatTranslation.item_stat_id == self.uuid)
+            .filter(ModelItemStatTranslation.locale == locale)
+            .one_or_none()
+        )
 
-            if query:
-                return query.custom_stat
+        if query:
+            return query.custom_stat
 
     class Meta:
         model = ModelItemStat
@@ -142,17 +141,16 @@ class Item(SQLAlchemyObjectType):
     name = graphene.String(required=True)
 
     def resolve_name(self, info):
-        with session_scope() as db_session:
-            locale = info.context.accept_languages.best_match(
-                supported_languages, default="en"
-            )
-            query = db_session.query(ModelItemTranslation)
-            return (
-                query.filter(ModelItemTranslation.locale == locale)
-                .filter(ModelItemTranslation.item_id == self.uuid)
-                .one()
-                .name
-            )
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+        query = db.session.query(ModelItemTranslation)
+        return (
+            query.filter(ModelItemTranslation.locale == locale)
+            .filter(ModelItemTranslation.item_id == self.uuid)
+            .one()
+            .name
+        )
 
     class Meta:
         model = ModelItem
@@ -168,16 +166,15 @@ class SetBonus(SQLAlchemyObjectType):
     custom_stat = graphene.String()
 
     def resolve_custom_stat(self, info):
-        with session_scope() as db_session:
-            locale = info.context.accept_languages.best_match(
-                supported_languages, default="en"
-            )
-            query = (
-                db_session.query(ModelSetBonusTranslation)
-                .filter(ModelSetBonusTranslation.set_bonus_id == self.uuid)
-                .filter(ModelSetBonusTranslation.locale == locale)
-                .one_or_none()
-            )
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+        query = (
+            db.session.query(ModelSetBonusTranslation)
+            .filter(ModelSetBonusTranslation.set_bonus_id == self.uuid)
+            .filter(ModelSetBonusTranslation.locale == locale)
+            .one_or_none()
+        )
 
         if query:
             return query.custom_stat
@@ -193,17 +190,16 @@ class Set(SQLAlchemyObjectType):
     name = graphene.String(required=True)
 
     def resolve_name(self, info):
-        with session_scope() as db_session:
-            locale = info.context.accept_languages.best_match(
-                supported_languages, default="en"
-            )
-            query = db_session.query(ModelSetTranslation)
-            return (
-                query.filter(ModelSetTranslation.locale == locale)
-                .filter(ModelSetTranslation.set_id == self.uuid)
-                .one()
-                .name
-            )
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+        query = db.session.query(ModelSetTranslation)
+        return (
+            query.filter(ModelSetTranslation.locale == locale)
+            .filter(ModelSetTranslation.set_id == self.uuid)
+            .one()
+            .name
+        )
 
     class Meta:
         model = ModelSet
@@ -258,27 +254,25 @@ class User(SQLAlchemyObjectType):
     )
 
     def resolve_custom_sets(self, info, **kwargs):
-        with session_scope() as db_session:
-            search = kwargs.get("search")
-            query = (
-                db_session.query(ModelCustomSet)
-                .filter_by(owner_id=self.uuid)
-                .order_by(ModelCustomSet.last_modified.desc())
+        search = kwargs.get("search")
+        query = (
+            db.session.query(ModelCustomSet)
+            .filter_by(owner_id=self.uuid)
+            .order_by(ModelCustomSet.last_modified.desc())
+        )
+
+        if search:
+            search = search.strip()
+            query = query.filter(
+                func.upper(ModelCustomSet.name).contains(func.upper(search.strip()))
             )
 
-            if search:
-                search = search.strip()
-                query = query.filter(
-                    func.upper(ModelCustomSet.name).contains(func.upper(search.strip()))
-                )
-
-            return query.all()
+        return query.all()
 
     def resolve_email(self, info, **kwargs):
-        with session_scope() as db_session:
-            if self.uuid != current_user.get_id():
-                raise GraphQLError(_("You are not authorized to make this request."))
-            return self.email
+        if self.uuid != current_user.get_id():
+            raise GraphQLError(_("You are not authorized to make this request."))
+        return self.email
 
     class Meta:
         model = ModelUser
@@ -297,19 +291,18 @@ class SpellStats(SQLAlchemyObjectType):
     spell_effects = graphene.NonNull(graphene.List(graphene.NonNull(SpellEffects)))
 
     def resolve_aoe(self, info):
-        with session_scope() as db_session:
-            locale = info.context.accept_languages.best_match(
-                supported_languages, default="en"
-            )
-            query = (
-                db_session.query(ModelSpellStatTranslation)
-                .filter(ModelSpellStatTranslation.locale == locale)
-                .filter(ModelSpellStatTranslation.spell_stat_id == self.uuid)
-                .one_or_none()
-            )
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+        query = (
+            db.session.query(ModelSpellStatTranslation)
+            .filter(ModelSpellStatTranslation.locale == locale)
+            .filter(ModelSpellStatTranslation.spell_stat_id == self.uuid)
+            .one_or_none()
+        )
 
-            if query:
-                return query.aoe_type
+        if query:
+            return query.aoe_type
 
     class Meta:
         model = ModelSpellStats
@@ -322,30 +315,28 @@ class Spell(SQLAlchemyObjectType):
     spell_stats = graphene.NonNull(graphene.List(graphene.NonNull(SpellStats)))
 
     def resolve_name(self, info):
-        with session_scope() as db_session:
-            locale = info.context.accept_languages.best_match(
-                supported_languages, default="en"
-            )
-            query = db_session.query(ModelSpellTranslation)
-            return (
-                query.filter(ModelSpellTranslation.locale == locale)
-                .filter(ModelSpellTranslation.spell_id == self.uuid)
-                .one()
-                .name
-            )
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+        query = db.session.query(ModelSpellTranslation)
+        return (
+            query.filter(ModelSpellTranslation.locale == locale)
+            .filter(ModelSpellTranslation.spell_id == self.uuid)
+            .one()
+            .name
+        )
 
     def resolve_description(self, info):
-        with session_scope() as db_session:
-            locale = info.context.accept_languages.best_match(
-                supported_languages, default="en"
-            )
-            query = db_session.query(ModelSpellTranslation)
-            return (
-                query.filter(ModelSpellTranslation.locale == locale)
-                .filter(ModelSpellTranslation.spell_id == self.uuid)
-                .one()
-                .description
-            )
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+        query = db.session.query(ModelSpellTranslation)
+        return (
+            query.filter(ModelSpellTranslation.locale == locale)
+            .filter(ModelSpellTranslation.spell_id == self.uuid)
+            .one()
+            .description
+        )
 
     class Meta:
         model = ModelSpell
@@ -367,17 +358,16 @@ class Class(SQLAlchemyObjectType):
     )
 
     def resolve_name(self, info):
-        with session_scope() as db_session:
-            locale = info.context.accept_languages.best_match(
-                supported_languages, default="en"
-            )
-            query = db_session.query(ModelClassTranslation)
-            return (
-                query.filter(ModelClassTranslation.locale == locale)
-                .filter(ModelClassTranslation.class_id == self.uuid)
-                .one()
-                .name
-            )
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+        query = db.session.query(ModelClassTranslation)
+        return (
+            query.filter(ModelClassTranslation.locale == locale)
+            .filter(ModelClassTranslation.class_id == self.uuid)
+            .one()
+            .name
+        )
 
     class Meta:
         model = ModelClass
@@ -747,60 +737,56 @@ class Query(graphene.ObjectType):
     )
 
     def resolve_items(self, info, **kwargs):
-        with session_scope() as db_session:
-            locale = info.context.accept_languages.best_match(
-                supported_languages, default="en"
-            )
-            filters = kwargs.get("filters")
-            items_query = (
-                db_session.query(ModelItem)
-                .join(ModelItemTranslation)
-                .filter_by(locale=locale)
-            )
-            if filters:
-                search = filters.search.strip()
-                if filters.stats:
-                    items_query = items_query.join(ModelItemStat)
-                    stat_names = set(map(lambda x: Stat(x).name, filters.stats))
-                    stat_sq = (
-                        db_session.query(
-                            ModelItemStat.item_id,
-                            func.count(ModelItemStat.uuid).label("num_stats_matched"),
-                        )
-                        .filter(
-                            ModelItemStat.stat.in_(stat_names),
-                            ModelItemStat.max_value > 0,
-                        )
-                        .group_by(ModelItemStat.item_id)
-                        .subquery()
+        locale = info.context.accept_languages.best_match(
+            supported_languages, default="en"
+        )
+        filters = kwargs.get("filters")
+        items_query = (
+            db.session.query(ModelItem)
+            .join(ModelItemTranslation)
+            .filter_by(locale=locale)
+        )
+        if filters:
+            search = filters.search.strip()
+            if filters.stats:
+                items_query = items_query.join(ModelItemStat)
+                stat_names = set(map(lambda x: Stat(x).name, filters.stats))
+                stat_sq = (
+                    db.session.query(
+                        ModelItemStat.item_id,
+                        func.count(ModelItemStat.uuid).label("num_stats_matched"),
                     )
-                    items_query = items_query.join(
-                        stat_sq, ModelItem.uuid == stat_sq.c.item_id
-                    ).filter(stat_sq.c.num_stats_matched == len(stat_names))
-                if filters.max_level:
-                    items_query = items_query.filter(
-                        ModelItem.level <= filters.max_level
+                    .filter(
+                        ModelItemStat.stat.in_(stat_names), ModelItemStat.max_value > 0,
                     )
-                if filters.search:
-                    items_query = (
-                        items_query.join(ModelSet, isouter=True)
-                        .join(ModelSetTranslation, isouter=True)
-                        .filter(
-                            func.upper(ModelItemTranslation.name).contains(
-                                func.upper(filters.search.strip())
-                            )
-                            | func.upper(ModelSetTranslation.name).contains(
-                                func.upper(filters.search.strip())
-                            )
+                    .group_by(ModelItemStat.item_id)
+                    .subquery()
+                )
+                items_query = items_query.join(
+                    stat_sq, ModelItem.uuid == stat_sq.c.item_id
+                ).filter(stat_sq.c.num_stats_matched == len(stat_names))
+            if filters.max_level:
+                items_query = items_query.filter(ModelItem.level <= filters.max_level)
+            if filters.search:
+                items_query = (
+                    items_query.join(ModelSet, isouter=True)
+                    .join(ModelSetTranslation, isouter=True)
+                    .filter(
+                        func.upper(ModelItemTranslation.name).contains(
+                            func.upper(filters.search.strip())
+                        )
+                        | func.upper(ModelSetTranslation.name).contains(
+                            func.upper(filters.search.strip())
                         )
                     )
-                if filters.item_type_ids:
-                    items_query = items_query.filter(
-                        ModelItem.item_type_id.in_(filters.item_type_ids)
-                    )
-            return items_query.order_by(
-                ModelItem.level.desc(), ModelItemTranslation.name.asc()
-            ).all()
+                )
+            if filters.item_type_ids:
+                items_query = items_query.filter(
+                    ModelItem.item_type_id.in_(filters.item_type_ids)
+                )
+        return items_query.order_by(
+            ModelItem.level.desc(), ModelItemTranslation.name.asc()
+        ).all()
 
     sets = relay.ConnectionField(
         graphene.NonNull(SetConnection), filters=graphene.Argument(SetFilters)
@@ -879,51 +865,43 @@ class Query(graphene.ObjectType):
     custom_sets = graphene.List(CustomSet)
 
     def resolve_custom_sets(self, info):
-        with session_scope() as db_session:
-            return db_session.query(ModelCustomSet).all()
+        return db.session.query(ModelCustomSet).all()
 
     classes = graphene.List(Class)
 
     def resolve_classes(self, info):
-        with session_scope() as db_session:
-            return db_session.query(ModelClass).all()
+        return db.session.query(ModelClass).all()
 
     # Retrieve record by uuid
     class_by_id = graphene.Field(Class, id=graphene.UUID(required=True))
 
     def resolve_class_by_id(self, info, id):
-        with session_scope() as db_session:
-            return db_session.query(ModelClass).get(id)
+        return db.session.query(ModelClass).get(id)
 
     user_by_id = graphene.Field(User, id=graphene.UUID(required=True))
 
     def resolve_user_by_id(self, info, id):
-        with session_scope() as db_session:
-            return db_session.query(ModelUser).get(id)
+        return db.session.query(ModelUser).get(id)
 
     item_by_id = graphene.Field(Item, id=graphene.UUID(required=True))
 
     def resolve_item_by_id(self, info, id):
-        with session_scope() as db_session:
-            return db_session.query(ModelItem).get(id)
+        return db.session.query(ModelItem).get(id)
 
     set_by_id = graphene.Field(Set, id=graphene.UUID(required=True), required=True)
 
     def resolve_set_by_id(self, info, id):
-        with session_scope() as db_session:
-            return db_session.query(ModelSet).get(id)
+        return db.session.query(ModelSet).get(id)
 
     custom_set_by_id = graphene.Field(CustomSet, id=graphene.UUID(required=True))
 
     def resolve_custom_set_by_id(self, info, id):
-        with session_scope() as db_session:
-            return db_session.query(ModelCustomSet).get(id)
+        return db.session.query(ModelCustomSet).get(id)
 
     item_slots = graphene.NonNull(graphene.List(graphene.NonNull(ItemSlot)))
 
     def resolve_item_slots(self, info):
-        with session_scope() as db_session:
-            return db_session.query(ModelItemSlot).order_by(ModelItemSlot.order).all()
+        return db.session.query(ModelItemSlot).order_by(ModelItemSlot.order).all()
 
 
 class Mutation(graphene.ObjectType):

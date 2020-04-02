@@ -1,5 +1,5 @@
 import sqlalchemy
-from app import session_scope
+from app import db
 from .base import Base
 from app import bcrypt, login_manager
 from sqlalchemy import (
@@ -50,26 +50,23 @@ class ModelUser(UserMixin, Base):
 
     @classmethod
     def find_by_id(cls, user_id):
-        with session_scope() as db_session:
-            return db_session.query(cls).filter_by(uuid=user_id).first()
+        return db.session.query(cls).filter_by(uuid=user_id).first()
 
     @classmethod
     def find_by_email(cls, email):
-        with session_scope() as db_session:
-            return (
-                db_session.query(cls)
-                .filter(func.upper(cls.email) == func.upper(email))
-                .first()
-            )
+        return (
+            db.session.query(cls)
+            .filter(func.upper(cls.email) == func.upper(email))
+            .first()
+        )
 
     @classmethod
     def find_by_username(cls, username):
-        with session_scope() as db_session:
-            return (
-                db_session.query(cls)
-                .filter(func.upper(cls.username) == func.upper(username))
-                .first()
-            )
+        return (
+            db.session.query(cls)
+            .filter(func.upper(cls.username) == func.upper(username))
+            .first()
+        )
 
 
 @login_manager.user_loader
