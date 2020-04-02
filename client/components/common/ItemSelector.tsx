@@ -62,6 +62,8 @@ const ItemSelector: React.FC<IProps> = ({
     notifyOnNetworkStatusChange: true,
   });
 
+  console.log('data', data, loading, networkStatus);
+
   const endCursorRef = React.useRef<string | null>(null);
 
   const onLoadMore = React.useCallback(async () => {
@@ -172,11 +174,6 @@ const ItemSelector: React.FC<IProps> = ({
               </ConfirmReplaceItemPopover>
             );
           })}
-      <Waypoint
-        key={networkStatus}
-        onEnter={onLoadMore}
-        bottomOffset={BOTTOM_OFFSET}
-      />
       {(loading || data?.items.pageInfo.hasNextPage) &&
         Array(PAGE_SIZE)
           .fill(null)
@@ -192,7 +189,11 @@ const ItemSelector: React.FC<IProps> = ({
               <Skeleton loading title active paragraph={{ rows: 6 }}></Skeleton>
             </Card>
           ))}
-
+      <Waypoint
+        key={networkStatus}
+        onEnter={onLoadMore}
+        bottomOffset={BOTTOM_OFFSET}
+      />
       {selectedSet && (
         <SetModal
           setId={selectedSet.id}

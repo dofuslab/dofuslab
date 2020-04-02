@@ -101,15 +101,15 @@ const SetSelector: React.FC<IProps> = ({
               isMobile={isMobile}
             />
           ))}
+      {(loading || data?.sets.pageInfo.hasNextPage) &&
+        Array(PAGE_SIZE)
+          .fill(null)
+          .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)}
       <Waypoint
         key={networkStatus}
         onEnter={onLoadMore}
         bottomOffset={BOTTOM_OFFSET}
       />
-      {(loading || data?.sets.pageInfo.hasNextPage) &&
-        Array(PAGE_SIZE)
-          .fill(null)
-          .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)}
     </ResponsiveGrid>
   );
 };
