@@ -33,12 +33,8 @@ const SetSelector: React.FC<IProps> = ({
   selectItemSlot,
   isMobile,
 }) => {
-  const { data, loading, fetchMore, networkStatus } = useQuery<
-    sets,
-    setsVariables
-  >(SetQuery, {
+  const { data, loading, fetchMore } = useQuery<sets, setsVariables>(SetQuery, {
     variables: { first: PAGE_SIZE, filters },
-    notifyOnNetworkStatusChange: true,
   });
 
   const endCursorRef = React.useRef<string | null>(null);
@@ -106,7 +102,7 @@ const SetSelector: React.FC<IProps> = ({
           .fill(null)
           .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)}
       <Waypoint
-        key={networkStatus}
+        key={String(loading)}
         onEnter={onLoadMore}
         bottomOffset={BOTTOM_OFFSET}
       />

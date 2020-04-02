@@ -59,7 +59,6 @@ const ItemSelector: React.FC<IProps> = ({
     itemsVariables
   >(ItemsQuery, {
     variables: { first: PAGE_SIZE, filters: queryFilters },
-    notifyOnNetworkStatusChange: true,
   });
 
   console.log('data', data, loading, networkStatus);
@@ -190,7 +189,7 @@ const ItemSelector: React.FC<IProps> = ({
             </Card>
           ))}
       <Waypoint
-        key={networkStatus}
+        key={String(loading)}
         onEnter={onLoadMore}
         bottomOffset={BOTTOM_OFFSET}
       />
