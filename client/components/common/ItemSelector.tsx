@@ -54,12 +54,12 @@ const ItemSelector: React.FC<IProps> = ({
         ? selectedItemSlot.itemTypes.map(type => type.id)
         : itemTypeIdsArr,
   };
-  const { data, loading, fetchMore, networkStatus } = useQuery<
-    items,
-    itemsVariables
-  >(ItemsQuery, {
-    variables: { first: PAGE_SIZE, filters: queryFilters },
-  });
+  const { data, loading, fetchMore } = useQuery<items, itemsVariables>(
+    ItemsQuery,
+    {
+      variables: { first: PAGE_SIZE, filters: queryFilters },
+    },
+  );
 
   const endCursorRef = React.useRef<string | null>(null);
 
