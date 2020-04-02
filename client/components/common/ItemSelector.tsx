@@ -6,7 +6,6 @@ import { useQuery } from '@apollo/react-hooks';
 import { Waypoint } from 'react-waypoint';
 import Card from 'antd/lib/card';
 import Skeleton from 'antd/lib/skeleton';
-import { useDebounceCallback } from '@react-hook/debounce';
 
 import ItemCard from './ItemCard';
 import { ResponsiveGrid } from 'common/wrappers';
@@ -78,9 +77,18 @@ const ItemSelector: React.FC<IProps> = ({
     const fetchMoreResult = await fetchMore({
       variables: { after: data.items.pageInfo.endCursor },
       updateQuery: (prevData, { fetchMoreResult }) => {
+        console.log('fetchMoreResult', fetchMoreResult);
         if (!fetchMoreResult) {
           return prevData;
         }
+        console.log('returned', {
+          ...prevData,
+          items: {
+            ...prevData.items,
+            edges: [...prevData.items.edges, ...fetchMoreResult.items.edges],
+            pageInfo: fetchMoreResult.items.pageInfo,
+          },
+        });
         return {
           ...prevData,
           items: {
@@ -95,30 +103,6 @@ const ItemSelector: React.FC<IProps> = ({
   }, [data]);
 
   const responsiveGridRef = React.useRef<HTMLDivElement | null>(null);
-
-  const [numLoadersToRender, setNumLoadersToRender] = React.useState(4);
-
-  const calcColumns = React.useCallback(() => {
-    if (!responsiveGridRef.current) return;
-    const NUM_COLUMNS = getComputedStyle(
-      responsiveGridRef.current,
-    ).gridTemplateColumns.split(' ').length;
-
-    setNumLoadersToRender(
-      2 * NUM_COLUMNS - ((data?.items.edges.length ?? 0) % NUM_COLUMNS),
-    );
-  }, [responsiveGridRef, data, setNumLoadersToRender]);
-
-  const calcLoaders = useDebounceCallback(calcColumns, 300);
-
-  React.useEffect(calcLoaders, [data]);
-
-  React.useEffect(() => {
-    window.addEventListener('resize', calcLoaders);
-    return () => {
-      window.removeEventListener('resize', calcLoaders);
-    };
-  }, [data]);
 
   const [setModalVisible, setSetModalVisible] = React.useState(false);
   const [selectedSet, setSelectedSet] = React.useState<item_set | null>(null);
@@ -188,8 +172,13 @@ const ItemSelector: React.FC<IProps> = ({
               </ConfirmReplaceItemPopover>
             );
           })}
+      <Waypoint
+        key={networkStatus}
+        onEnter={onLoadMore}
+        bottomOffset={BOTTOM_OFFSET}
+      />
       {(loading || data?.items.pageInfo.hasNextPage) &&
-        Array(loading ? numLoadersToRender * 2 : numLoadersToRender)
+        Array(PAGE_SIZE)
           .fill(null)
           .map((_, idx) => (
             <Card
@@ -203,11 +192,7 @@ const ItemSelector: React.FC<IProps> = ({
               <Skeleton loading title active paragraph={{ rows: 6 }}></Skeleton>
             </Card>
           ))}
-      <Waypoint
-        key={networkStatus}
-        onEnter={onLoadMore}
-        bottomOffset={BOTTOM_OFFSET}
-      />
+
       {selectedSet && (
         <SetModal
           setId={selectedSet.id}

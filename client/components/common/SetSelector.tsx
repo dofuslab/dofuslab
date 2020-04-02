@@ -4,7 +4,6 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 import { Waypoint } from 'react-waypoint';
-import { useDebounceCallback } from '@react-hook/debounce';
 
 import { ResponsiveGrid, CardSkeleton } from 'common/wrappers';
 import SetQuery from 'graphql/queries/sets.graphql';
@@ -78,30 +77,6 @@ const SetSelector: React.FC<IProps> = ({
 
   const responsiveGridRef = React.useRef<HTMLDivElement | null>(null);
 
-  const [numLoadersToRender, setNumLoadersToRender] = React.useState(4);
-
-  const calcColumns = React.useCallback(() => {
-    if (!responsiveGridRef.current) return;
-    const NUM_COLUMNS = getComputedStyle(
-      responsiveGridRef.current,
-    ).gridTemplateColumns.split(' ').length;
-
-    setNumLoadersToRender(
-      2 * NUM_COLUMNS - ((data?.sets.edges.length ?? 0) % NUM_COLUMNS),
-    );
-  }, [responsiveGridRef, data, setNumLoadersToRender]);
-
-  const calcLoaders = useDebounceCallback(calcColumns, 300);
-
-  React.useEffect(calcLoaders, [data]);
-
-  React.useEffect(() => {
-    window.addEventListener('resize', calcLoaders);
-    return () => {
-      window.removeEventListener('resize', calcLoaders);
-    };
-  }, [data]);
-
   return (
     <ResponsiveGrid
       numColumns={[2, 2, 2, 3, 4, 5, 6]}
@@ -126,15 +101,15 @@ const SetSelector: React.FC<IProps> = ({
               isMobile={isMobile}
             />
           ))}
-      {(loading || data?.sets.pageInfo.hasNextPage) &&
-        Array(loading ? numLoadersToRender * 2 : numLoadersToRender)
-          .fill(null)
-          .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)}
       <Waypoint
         key={networkStatus}
         onEnter={onLoadMore}
         bottomOffset={BOTTOM_OFFSET}
       />
+      {(loading || data?.sets.pageInfo.hasNextPage) &&
+        Array(PAGE_SIZE)
+          .fill(null)
+          .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)}
     </ResponsiveGrid>
   );
 };
