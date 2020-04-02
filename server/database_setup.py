@@ -119,11 +119,11 @@ to_spell_enum = {
 }
 
 if __name__ == "__main__":
-    print("Resetting database")
-    base.Base.metadata.reflect(base.engine)
-    base.Base.metadata.drop_all(base.engine)
-    base.Base.metadata.create_all(base.engine)
-    redis_connection.flushall()
+    # print("Resetting database")
+    # base.Base.metadata.reflect(base.engine)
+    # base.Base.metadata.drop_all(base.engine)
+    # base.Base.metadata.create_all(base.engine)
+    # redis_connection.flushall()
 
     item_types = {}
 
