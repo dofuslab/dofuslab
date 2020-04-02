@@ -61,8 +61,6 @@ const ItemSelector: React.FC<IProps> = ({
     variables: { first: PAGE_SIZE, filters: queryFilters },
   });
 
-  console.log('data', data, loading, networkStatus);
-
   const endCursorRef = React.useRef<string | null>(null);
 
   const onLoadMore = React.useCallback(async () => {
@@ -78,18 +76,9 @@ const ItemSelector: React.FC<IProps> = ({
     const fetchMoreResult = await fetchMore({
       variables: { after: data.items.pageInfo.endCursor },
       updateQuery: (prevData, { fetchMoreResult }) => {
-        console.log('fetchMoreResult', fetchMoreResult);
         if (!fetchMoreResult) {
           return prevData;
         }
-        console.log('returned', {
-          ...prevData,
-          items: {
-            ...prevData.items,
-            edges: [...prevData.items.edges, ...fetchMoreResult.items.edges],
-            pageInfo: fetchMoreResult.items.pageInfo,
-          },
-        });
         return {
           ...prevData,
           items: {
