@@ -42,6 +42,14 @@ interface MageState {
   exos: Array<StatLine>;
 }
 
+const statLineCss = {
+  position: 'relative' as 'relative',
+  display: 'flex',
+  alignItems: 'center',
+  height: 42,
+  [mq[1]]: { paddingRight: 12 },
+};
+
 const deleteStatWrapper = {
   position: 'absolute' as 'absolute',
   left: -24,
@@ -231,16 +239,7 @@ const MageModal: React.FC<IProps> = ({
             }}
           >
             {statsState.originalStats.map(statLine => (
-              <div
-                key={`original-${statLine.stat}`}
-                css={{
-                  position: 'relative',
-                  display: 'flex',
-                  alignItems: 'center',
-                  height: 42,
-                  [mq[1]]: { paddingRight: 12 },
-                }}
-              >
+              <div key={`original-${statLine.stat}`} css={statLineCss}>
                 <div
                   css={deleteStatWrapper}
                   onClick={() => {
@@ -270,11 +269,7 @@ const MageModal: React.FC<IProps> = ({
                 return (
                   <div
                     key={`exo-${statLine.stat}`}
-                    css={{
-                      color: blue6,
-                      position: 'relative',
-                      display: 'flex',
-                    }}
+                    css={{ ...statLineCss, color: blue6 }}
                   >
                     <div
                       css={deleteStatWrapper}
@@ -294,37 +289,39 @@ const MageModal: React.FC<IProps> = ({
                   </div>
                 );
               })}
+            <div css={{ display: 'flex', height: 42, alignItems: 'center' }}>
+              <Select
+                size="large"
+                autoClearSearchValue
+                showSearch
+                onSelect={onAddStat}
+                css={{ fontSize: '0.75rem', width: '100%' }}
+                labelInValue
+                filterOption={(input, option) =>
+                  (option?.children as string)
+                    .toLocaleUpperCase()
+                    .includes(input.toLocaleUpperCase())
+                }
+                dropdownClassName={css({ zIndex: 1062 })} // higher than modal (1061)
+              >
+                {Object.values(Stat).map(stat => (
+                  <Option
+                    key={stat}
+                    value={stat}
+                    disabled={statsSet.has(stat)}
+                    className={css({
+                      ['.ant-select-item-option-content']: {
+                        fontSize: '0.75rem',
+                      },
+                    })}
+                  >
+                    {t(stat, { ns: 'stat' })}
+                  </Option>
+                ))}
+              </Select>
+            </div>
 
-            <Select
-              autoClearSearchValue
-              showSearch
-              onSelect={onAddStat}
-              css={{ fontSize: '0.75rem', width: '100%' }}
-              labelInValue
-              filterOption={(input, option) =>
-                (option?.children as string)
-                  .toLocaleUpperCase()
-                  .includes(input.toLocaleUpperCase())
-              }
-              dropdownClassName={css({ zIndex: 1062 })} // higher than modal (1061)
-            >
-              {Object.values(Stat).map(stat => (
-                <Option
-                  key={stat}
-                  value={stat}
-                  disabled={statsSet.has(stat)}
-                  className={css({
-                    ['.ant-select-item-option-content']: {
-                      fontSize: '0.75rem',
-                    },
-                  })}
-                >
-                  {t(stat, { ns: 'stat' })}
-                </Option>
-              ))}
-            </Select>
-
-            <div css={{ display: 'flex', alignItems: 'center', height: 32 }}>
+            <div css={{ display: 'flex', alignItems: 'center' }}>
               <a
                 onClick={() => {
                   dispatch({ type: 'RESET', originalStatsMap });

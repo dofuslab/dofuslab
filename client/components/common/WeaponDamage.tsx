@@ -14,6 +14,7 @@ import {
   getStatsFromCustomSet,
   weaponEffectToIconUrl,
   calcHeal,
+  getStatWithDefault,
 } from 'common/utils';
 import { StatsFromCustomSet, ICalcDamageInput } from 'common/types';
 import { Stat, WeaponEffectType } from '__generated__/globalTypes';
@@ -106,7 +107,8 @@ const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
   const damageTypeKey = rangedOnly ? 'ranged' : 'melee';
   const critRate =
     typeof weaponStats.baseCritChance === 'number'
-      ? statsFromCustomSet[Stat.CRITICAL] + weaponStats.baseCritChance
+      ? getStatWithDefault(statsFromCustomSet, Stat.CRITICAL) +
+        weaponStats.baseCritChance
       : null;
 
   const weaponEffectSummaries: Array<TEffectLine> = weaponStats.weaponEffects.map(
@@ -277,7 +279,7 @@ const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
                   src={weaponEffectToIconUrl(effect.type)}
                   css={{ height: 16, width: 16, marginRight: 8 }}
                 />
-                {effect.nonCrit.min !== null && `${effect.nonCrit.min} - `}
+                {effect.nonCrit.min !== null && `${effect.nonCrit.min}-`}
                 {effect.nonCrit.max}
               </div>
               {effect.crit && (
@@ -291,7 +293,7 @@ const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
                     src={weaponEffectToIconUrl(effect.type)}
                     css={{ height: 16, width: 16, marginRight: 8 }}
                   />
-                  {effect.crit.min !== null && `${effect.crit.min} - `}
+                  {effect.crit.min !== null && `${effect.crit.min}-`}
                   {effect.crit.max}
                 </div>
               )}

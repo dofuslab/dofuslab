@@ -594,7 +594,9 @@ export const calcDamage = (
   let multiplierValue =
     getStatWithDefault(stats, multiplierType) +
     getStatWithDefault(stats, Stat.POWER);
-  let damageValue = getStatWithDefault(stats, damageType);
+  let damageValue =
+    getStatWithDefault(stats, damageType) +
+    getStatWithDefault(stats, Stat.DAMAGE);
   if (damageTypeInput.isTrap) {
     multiplierValue += getStatWithDefault(stats, Stat.TRAP_POWER);
     damageValue += getStatWithDefault(stats, Stat.TRAP_DAMAGE);
@@ -605,15 +607,16 @@ export const calcDamage = (
   if (damageTypeInput.isWeapon) {
     multiplierValue += weaponSkillPower || 0;
   }
-  let calculatedDamage = Math.floor(
+  const calculatedDamage = Math.floor(
     baseDamage * (1 + multiplierValue / 100) + damageValue,
   );
   let finalDamageMod = 0;
   if (damageTypeInput.isWeapon) {
     finalDamageMod += getStatWithDefault(stats, Stat.PCT_WEAPON_DAMAGE);
   } else {
-    finalDamageMod += getStatWithDefault(stats, Stat.PCT_WEAPON_DAMAGE);
+    finalDamageMod += getStatWithDefault(stats, Stat.PCT_SPELL_DAMAGE);
   }
+
   return {
     melee: Math.floor(
       calculatedDamage *
@@ -638,7 +641,7 @@ export const calcHeal = (
   const multiplierValue =
     getStatWithDefault(stats, Stat.INTELLIGENCE) + (weaponSkillPower || 0);
   const flatBonus = getStatWithDefault(stats, Stat.HEALS);
-  return Math.floor(baseHeal * ((1 + multiplierValue) / 100) + flatBonus);
+  return Math.floor(baseHeal * (1 + multiplierValue / 100) + flatBonus);
 };
 
 export const weaponEffectToIconUrl = (effect: WeaponEffectType) => {
