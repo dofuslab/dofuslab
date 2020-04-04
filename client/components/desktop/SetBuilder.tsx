@@ -16,6 +16,8 @@ import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import StatEditor from '../common/StatEditor';
 import { topMarginStyle } from 'common/mixins';
 import Selector from '../common/Selector';
+import BasicItemCard from 'components/common/BasicItemCard';
+import WeaponDamage from 'components/common/WeaponDamage';
 
 interface IProps {
   customSet: customSet | null;
@@ -48,6 +50,10 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
   const statsFromCustomSet = React.useMemo(
     () => getStatsFromCustomSet(customSet),
     [customSet],
+  );
+
+  const weapon = customSet?.equippedItems.find(
+    equippedItem => !!equippedItem.item.weaponStats,
   );
 
   return (
@@ -93,7 +99,16 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
                 customSet={customSet}
               />
             ))}
-            <StatEditor customSet={customSet} />
+            <StatEditor key={customSet?.id} customSet={customSet} />
+            {weapon && customSet && weapon.item.weaponStats && (
+              <>
+                <BasicItemCard item={weapon.item} showOnlyWeaponStats />
+                <WeaponDamage
+                  weaponStats={weapon.item.weaponStats}
+                  customSet={customSet}
+                />
+              </>
+            )}
           </ResponsiveGrid>
         </div>
         <Selector

@@ -12,7 +12,13 @@
   "AP": "AP (target)",
   "MP": "MP (target)",
   "HP_RESTORED": "HP restored",
+  "CRIT_WITH_PERCENTAGE": "Crit ({{percentage}}%)",
   "DOES_NOT_CRIT": "Does not crit",
+  "NON_CRIT": "Non-crit",
   "USES_PER_TURN": "{{count}}\u00A0use/turn",
-  "USES_PER_TURN_plural": "{{count}}\u00A0uses/turn"
+  "USES_PER_TURN_plural": "{{count}}\u00A0uses/turn",
+  "NO_WEAPON_SKILL": "No Weapon Skill",
+  "WEAPON_SKILL": "Weapon Skill",
+  "AVERAGE_DAMAGE": "Average damage",
+  "AVERAGE_HEAL": "Average heal"
 }

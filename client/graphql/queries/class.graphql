@@ -1,0 +1,30 @@
+query class($id: UUID!) {
+  classById(id: $id) {
+    id
+    name
+    spellVariantPairs {
+      id
+      spells {
+        spellStats {
+          id
+          spell {
+            id
+            name
+            description
+            imageUrl
+          }
+          level
+          spellId
+          spellEffects {
+            id
+            minDamage
+            maxDamage
+            critMinDamage
+            critMaxDamage
+            effectType
+          }
+        }
+      }
+    }
+  }
+}

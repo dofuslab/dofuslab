@@ -29,7 +29,7 @@ from app.utils import get_or_create_custom_set, save_custom_sets, anonymous_or_v
 from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from app.database.base import Base
-from app.database.enums import Stat, WeaponEffectType
+from app.database.enums import Stat, WeaponEffectType, SpellEffectType
 from app.verify_email_utils import encode_token, generate_url
 import app.mutation_validation_utils as validation
 import graphene
@@ -79,7 +79,8 @@ class NonNullConnection(relay.Connection, abstract=True):
 
 
 StatEnum = graphene.Enum.from_enum(Stat)
-EffectEnum = graphene.Enum.from_enum(WeaponEffectType)
+WeaponEffectEnum = graphene.Enum.from_enum(WeaponEffectType)
+SpellEffectEnum = graphene.Enum.from_enum(SpellEffectType)
 
 
 class ItemStat(SQLAlchemyObjectType):

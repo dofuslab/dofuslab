@@ -19,6 +19,7 @@ interface IProps {
   equipped?: boolean;
   openSetModal?: (set: item_set) => void;
   onClick?: () => void;
+  showOnlyWeaponStats?: boolean;
 }
 
 const BasicItemCard: React.FC<IProps> = ({
@@ -26,6 +27,7 @@ const BasicItemCard: React.FC<IProps> = ({
   equipped,
   openSetModal,
   onClick,
+  showOnlyWeaponStats,
 }) => {
   const { t } = useTranslation(['common', 'stat', 'weapon_stat']);
   return (
@@ -69,6 +71,7 @@ const BasicItemCard: React.FC<IProps> = ({
         item={item}
         css={{ paddingLeft: 16, marginBottom: 0 }}
         openSetModal={openSetModal}
+        showOnlyWeaponStats={showOnlyWeaponStats}
       />
     </Card>
   );

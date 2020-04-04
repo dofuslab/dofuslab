@@ -65,3 +65,9 @@ export const mobileScreenTypes = mobileScreenTypesArr.reduce(
   (acc, curr) => ({ ...acc, [curr]: curr }),
   {},
 ) as { [key in MobileScreen]: MobileScreen };
+
+export interface ICalcDamageInput {
+  isCrit?: boolean;
+  isTrap?: boolean;
+  isWeapon?: boolean;
+}

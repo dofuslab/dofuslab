@@ -12,12 +12,17 @@ import {
   customSet_stats,
   customSet,
 } from 'graphql/fragments/__generated__/customSet';
-import { Stat } from '__generated__/globalTypes';
+import {
+  Stat,
+  WeaponEffectType,
+  SpellEffectType,
+} from '__generated__/globalTypes';
 import {
   StatsFromCustomSet,
   SetCounter,
   OriginalStatLine,
   ExoStatLine,
+  ICalcDamageInput,
 } from './types';
 import {
   item_itemType,
@@ -538,4 +543,126 @@ export const useSetModal = () => {
   }, [setSetModalVisible]);
 
   return { setModalVisible, selectedSet, openSetModal, closeSetModal };
+};
+
+export const getStatWithDefault = (
+  statsFromCustomSet: StatsFromCustomSet,
+  stat: Stat,
+) => statsFromCustomSet[stat] || 0;
+
+const getStats = (effectType: WeaponEffectType | SpellEffectType) => {
+  switch (effectType) {
+    case WeaponEffectType.AIR_DAMAGE:
+    case WeaponEffectType.AIR_STEAL:
+    case SpellEffectType.AIR_DAMAGE:
+    case SpellEffectType.AIR_STEAL:
+      return { multiplier: Stat.AGILITY, damage: Stat.AIR_DAMAGE };
+    case WeaponEffectType.EARTH_DAMAGE:
+    case WeaponEffectType.EARTH_STEAL:
+    case SpellEffectType.EARTH_DAMAGE:
+    case SpellEffectType.EARTH_STEAL:
+      return { multiplier: Stat.STRENGTH, damage: Stat.EARTH_DAMAGE };
+    case WeaponEffectType.FIRE_DAMAGE:
+    case WeaponEffectType.FIRE_STEAL:
+    case SpellEffectType.FIRE_DAMAGE:
+    case SpellEffectType.FIRE_STEAL:
+      return { multiplier: Stat.INTELLIGENCE, damage: Stat.FIRE_DAMAGE };
+    case WeaponEffectType.NEUTRAL_DAMAGE:
+    case WeaponEffectType.NEUTRAL_STEAL:
+    case SpellEffectType.NEUTRAL_DAMAGE:
+    case SpellEffectType.NEUTRAL_STEAL:
+      return { multiplier: Stat.STRENGTH, damage: Stat.NEUTRAL_DAMAGE };
+    case WeaponEffectType.WATER_DAMAGE:
+    case WeaponEffectType.WATER_STEAL:
+    case SpellEffectType.WATER_DAMAGE:
+    case SpellEffectType.WATER_STEAL:
+      return { multiplier: Stat.CHANCE, damage: Stat.WATER_DAMAGE };
+    default:
+      throw new Error('Improper effectType passed to getStats');
+  }
+};
+
+export const calcDamage = (
+  baseDamage: number,
+  effectType: WeaponEffectType | SpellEffectType,
+  stats: StatsFromCustomSet,
+  damageTypeInput: ICalcDamageInput,
+  weaponSkillPower?: number,
+) => {
+  const statTypes = getStats(effectType);
+  const { multiplier: multiplierType, damage: damageType } = statTypes;
+  let multiplierValue =
+    getStatWithDefault(stats, multiplierType) +
+    getStatWithDefault(stats, Stat.POWER);
+  let damageValue = getStatWithDefault(stats, damageType);
+  if (damageTypeInput.isTrap) {
+    multiplierValue += getStatWithDefault(stats, Stat.TRAP_POWER);
+    damageValue += getStatWithDefault(stats, Stat.TRAP_DAMAGE);
+  }
+  if (damageTypeInput.isCrit) {
+    damageValue += getStatWithDefault(stats, Stat.CRITICAL_DAMAGE);
+  }
+  if (damageTypeInput.isWeapon) {
+    multiplierValue += weaponSkillPower || 0;
+  }
+  let calculatedDamage = Math.floor(
+    baseDamage * (1 + multiplierValue / 100) + damageValue,
+  );
+  let finalDamageMod = 0;
+  if (damageTypeInput.isWeapon) {
+    finalDamageMod += getStatWithDefault(stats, Stat.PCT_WEAPON_DAMAGE);
+  } else {
+    finalDamageMod += getStatWithDefault(stats, Stat.PCT_WEAPON_DAMAGE);
+  }
+  return {
+    melee: Math.floor(
+      calculatedDamage *
+        (1 +
+          (finalDamageMod + getStatWithDefault(stats, Stat.PCT_MELEE_DAMAGE)) /
+            100),
+    ),
+    ranged: Math.floor(
+      calculatedDamage *
+        (1 +
+          (finalDamageMod + getStatWithDefault(stats, Stat.PCT_RANGED_DAMAGE)) /
+            100),
+    ),
+  };
+};
+
+export const calcHeal = (
+  baseHeal: number,
+  stats: StatsFromCustomSet,
+  weaponSkillPower?: number,
+) => {
+  const multiplierValue =
+    getStatWithDefault(stats, Stat.INTELLIGENCE) + (weaponSkillPower || 0);
+  const flatBonus = getStatWithDefault(stats, Stat.HEALS);
+  return Math.floor(baseHeal * ((1 + multiplierValue) / 100) + flatBonus);
+};
+
+export const weaponEffectToIconUrl = (effect: WeaponEffectType) => {
+  switch (effect) {
+    case WeaponEffectType.AIR_DAMAGE:
+    case WeaponEffectType.AIR_STEAL:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Agility.svg';
+    case WeaponEffectType.EARTH_DAMAGE:
+    case WeaponEffectType.EARTH_STEAL:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Strength.svg';
+    case WeaponEffectType.FIRE_DAMAGE:
+    case WeaponEffectType.FIRE_STEAL:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Intelligence.svg';
+    case WeaponEffectType.NEUTRAL_DAMAGE:
+    case WeaponEffectType.NEUTRAL_STEAL:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Neutral.svg';
+    case WeaponEffectType.WATER_DAMAGE:
+    case WeaponEffectType.WATER_STEAL:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Chance.svg';
+    case WeaponEffectType.AP:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Action_Point.svg';
+    case WeaponEffectType.MP:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Movement_Point.svg';
+    case WeaponEffectType.HP_RESTORED:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Health_Point.svg';
+  }
 };
