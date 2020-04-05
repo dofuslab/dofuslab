@@ -868,7 +868,7 @@ class Query(graphene.ObjectType):
     def resolve_custom_sets(self, info):
         return db.session.query(ModelCustomSet).all()
 
-    classes = graphene.List(Class)
+    classes = graphene.NonNull(graphene.List(graphene.NonNull(Class)))
 
     def resolve_classes(self, info):
         return db.session.query(ModelClass).all()

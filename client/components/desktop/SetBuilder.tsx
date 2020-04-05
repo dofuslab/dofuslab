@@ -7,6 +7,7 @@ import { STAT_GROUPS, mq, SEARCH_BAR_ID } from 'common/constants';
 import Layout from './Layout';
 import StatTable from '../common/StatTable';
 import { ResponsiveGrid } from 'common/wrappers';
+import Select from 'antd/lib/select';
 
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getStatsFromCustomSet } from 'common/utils';
@@ -18,6 +19,11 @@ import { topMarginStyle } from 'common/mixins';
 import Selector from '../common/Selector';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
+import { useQuery } from '@apollo/react-hooks';
+import { classes } from 'graphql/queries/__generated__/classes';
+import classesQuery from 'graphql/queries/classes.graphql';
+
+const { Option } = Select;
 
 interface IProps {
   customSet: customSet | null;
@@ -28,6 +34,8 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
     selectedItemSlot,
     selectItemSlot,
   ] = React.useState<itemSlots_itemSlots | null>(null);
+
+  const { data } = useQuery<classes>(classesQuery);
 
   React.useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
@@ -108,6 +116,26 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
                   customSet={customSet}
                 />
               </>
+            )}
+            {data && (
+              <Select
+                css={{ gridColumn: '1 / -1' }}
+                showSearch
+                labelInValue
+                filterOption={(input, option) =>
+                  (option?.children as string)
+                    .toLocaleUpperCase()
+                    .includes(input.toLocaleUpperCase())
+                }
+              >
+                {[...data.classes]
+                  .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
+                  .map(dofusClass => (
+                    <Option key={dofusClass.id} value={dofusClass.id}>
+                      {dofusClass.name}
+                    </Option>
+                  ))}
+              </Select>
             )}
           </ResponsiveGrid>
         </div>

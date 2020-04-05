@@ -14,5 +14,5 @@ export interface classes_classes {
 }
 
 export interface classes {
-  classes: (classes_classes | null)[] | null;
+  classes: classes_classes[];
 }

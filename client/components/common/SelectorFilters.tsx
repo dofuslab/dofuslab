@@ -249,6 +249,7 @@ const SelectorFilters: React.FC<IProps> = ({
           css={{
             display: 'none',
             [mq[1]]: { display: 'block', margin: '0 0 0 12px' },
+            [mq[4]]: { marginLeft: 20 },
           }}
         />
       </div>
