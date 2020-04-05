@@ -37,7 +37,7 @@ const EquippedItem: React.FC<IProps> = ({
       <div css={itemBox} {...restProps}>
         {equippedItem ? (
           <Link
-            href="/set/[customSetId]/[equippedItemId]"
+            href="/build/[customSetId]/[equippedItemId]"
             as={`/build/${customSet!.id}/${equippedItem.id}`}
           >
             <div>
