@@ -233,11 +233,13 @@ const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
       }}
     >
       <Radio.Group value={weaponSkillPower} onChange={onWeaponSkillChange}>
-        <Radio value={0}>{t('NO_WEAPON_SKILL')}</Radio>
-        <Radio value={300}>
+        <Radio value={0} css={{ fontSize: '0.75rem' }}>
+          {t('NO_WEAPON_SKILL')}
+        </Radio>
+        <Radio value={300} css={{ fontSize: '0.75rem' }}>
           {t('WEAPON_SKILL')} (300 {t('POWER', { ns: 'stat' })})
         </Radio>
-        <Radio value={350}>
+        <Radio value={350} css={{ fontSize: '0.75rem' }}>
           {t('WEAPON_SKILL')} (350 {t('POWER', { ns: 'stat' })})
         </Radio>
       </Radio.Group>
