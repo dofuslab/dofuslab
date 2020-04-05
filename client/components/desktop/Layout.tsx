@@ -18,6 +18,7 @@ import { useTranslation } from 'i18n';
 import SignUpModal from '../common/SignUpModal';
 import MyBuilds from '../common/MyBuilds';
 import Link from 'next/link';
+import { mq } from 'common/constants';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -69,7 +70,9 @@ const Layout = (props: LayoutProps) => {
             font-size: 18px;
           }
           body {
-            height: 100vh;
+            ${mq[1]} {
+              height: 100vh;
+            }
             font-size: 0.8rem;
           }
           #__next {

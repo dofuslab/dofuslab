@@ -136,7 +136,7 @@ const SelectorFilters: React.FC<IProps> = ({
               href={{ pathname: '/index', query: { customSetId } }}
               as={customSetId ? `/build/${customSetId}` : '/'}
             >
-              <Button size="large">
+              <Button size="large" css={{ fontSize: '0.75rem' }}>
                 <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
                 {t('BACK')}
               </Button>

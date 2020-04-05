@@ -90,9 +90,6 @@ const Layout = (props: LayoutProps) => {
     <AntdLayout css={{ height: '100%', minHeight: '100vh' }}>
       <Global
         styles={css`
-          html {
-            font-size: 21px;
-          }
           body {
             height: auto;
           }
