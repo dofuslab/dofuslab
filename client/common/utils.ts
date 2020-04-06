@@ -547,9 +547,9 @@ export const useSetModal = () => {
 };
 
 export const getStatWithDefault = (
-  statsFromCustomSet: StatsFromCustomSet,
+  statsFromCustomSet: StatsFromCustomSet | null,
   stat: Stat,
-) => statsFromCustomSet[stat] || 0;
+) => (statsFromCustomSet ? statsFromCustomSet[stat] || 0 : 0);
 
 const getStats = (effectType: WeaponEffectType | SpellEffectType) => {
   switch (effectType) {
@@ -586,7 +586,7 @@ const getStats = (effectType: WeaponEffectType | SpellEffectType) => {
 export const calcDamage = (
   baseDamage: number,
   effectType: WeaponEffectType | SpellEffectType,
-  stats: StatsFromCustomSet,
+  stats: StatsFromCustomSet | null,
   damageTypeInput: ICalcDamageInput,
   weaponSkillPower?: number,
 ) => {
@@ -637,14 +637,14 @@ export const calcDamage = (
 export const calcPushbackDamage = (
   numSquaresPushed: number,
   level: number,
-  stats: StatsFromCustomSet,
+  stats: StatsFromCustomSet | null,
 ) =>
   (level / 2 + (getStatWithDefault(stats, Stat.PUSHBACK_DAMAGE) + 32)) *
   (numSquaresPushed / 4);
 
 export const calcHeal = (
   baseHeal: number,
-  stats: StatsFromCustomSet,
+  stats: StatsFromCustomSet | null,
   weaponSkillPower?: number,
 ) => {
   const multiplierValue =
@@ -745,7 +745,7 @@ export const calcEffect = (
   baseDamage: number,
   effectType: WeaponEffectType | SpellEffectType,
   level: number,
-  stats: StatsFromCustomSet,
+  stats: StatsFromCustomSet | null,
   damageTypeInput: ICalcDamageInput,
   damageTypeKey: 'melee' | 'ranged',
   weaponSkillPower?: number,

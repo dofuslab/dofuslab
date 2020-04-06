@@ -15,6 +15,7 @@ import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import BonusStats from 'components/desktop/BonusStats';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
+import ClassSpells from 'components/common/ClassSpells';
 
 interface IProps {
   customSet?: customSet | null;
@@ -80,6 +81,10 @@ const Home: React.FC<IProps> = ({
                 />
               </>
             )}
+            <ClassSpells
+              key={`${customSet?.id}-${customSet?.level}`}
+              customSet={customSet}
+            />
           </ResponsiveGrid>
         </div>
       </div>

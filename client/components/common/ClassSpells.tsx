@@ -68,12 +68,16 @@ const ClassSpells: React.FC<IProps> = ({ customSet }) => {
         }
         value={selectedClassId}
         onChange={(value: string) => {
-          const newQuery = { ...query, class: idToName?.[value] };
+          const newQuery: { [key: string]: string | string[] } = {
+            ...query,
+            ...(idToName && { class: idToName?.[value] }),
+          };
+          const { customSetId, ...restNewQuery } = newQuery;
           router.replace(
             { pathname: router.pathname, query: newQuery },
             {
               pathname: router.asPath.substring(0, router.asPath.indexOf('?')),
-              query: { class: idToName?.[value] },
+              query: restNewQuery,
             },
           );
         }}
@@ -87,11 +91,11 @@ const ClassSpells: React.FC<IProps> = ({ customSet }) => {
             </Option>
           ))}
       </Select>
-      {spellsList &&
+      {spellsList ? (
         spellsList.map(spell => (
           <SpellCard key={spell.id} spell={spell} customSet={customSet} />
-        ))}
-      {!selectedClassId && (
+        ))
+      ) : (
         <div
           css={{
             height: 180,
@@ -106,7 +110,7 @@ const ClassSpells: React.FC<IProps> = ({ customSet }) => {
             marginBottom: 60,
           }}
         >
-          Select a class to see its spells.
+          {t('SELECT_CLASS_DETAILED')}
         </div>
       )}
     </>

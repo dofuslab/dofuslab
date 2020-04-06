@@ -19,11 +19,11 @@ import Tooltip from 'antd/lib/tooltip';
 import { useTranslation } from 'i18n';
 import {
   getStatWithDefault,
-  getStatsFromCustomSet,
   getSimpleEffect,
   calcEffect,
+  getStatsFromCustomSet,
 } from 'common/utils';
-import { StatsFromCustomSet, TEffectLine } from 'common/types';
+import { TEffectLine } from 'common/types';
 import { Stat } from '__generated__/globalTypes';
 import Divider from 'antd/lib/divider';
 import Switch from 'antd/lib/switch';
@@ -53,9 +53,7 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
     spellLevelIdx,
   );
 
-  const statsFromCustomSet = getStatsFromCustomSet(
-    customSet,
-  ) as StatsFromCustomSet;
+  const statsFromCustomSet = getStatsFromCustomSet(customSet);
 
   const spellStats:
     | classById_classById_spellVariantPairs_spells_spellStats
@@ -65,7 +63,7 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
   const meleeOnly = !spellStats?.maxRange || spellStats?.maxRange <= 1;
 
   const [showRanged, setShowRanged] = React.useState(
-    meleeOnly
+    meleeOnly || !statsFromCustomSet
       ? false
       : getStatWithDefault(statsFromCustomSet, Stat.PCT_RANGED_DAMAGE) >=
           getStatWithDefault(statsFromCustomSet, Stat.PCT_MELEE_DAMAGE),
@@ -244,7 +242,7 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
                   marginBottom: 8,
                 }}
               >
-                <span css={{ [mq[1]]: { display: 'none', marginRight: 8 } }}>
+                <span css={{ marginRight: 8, [mq[1]]: { display: 'none' } }}>
                   {t('MELEE')}
                 </span>
                 <Media lessThan="xs">{toggleSwitch}</Media>
@@ -256,7 +254,7 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
                     {toggleSwitch}
                   </Tooltip>
                 </Media>
-                <span css={{ [mq[1]]: { display: 'none', marginLeft: 8 } }}>
+                <span css={{ marginLeft: 8, [mq[1]]: { display: 'none' } }}>
                   {t('RANGED')}
                 </span>
               </div>
