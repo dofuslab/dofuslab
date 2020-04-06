@@ -23,6 +23,17 @@ export interface classById_classById_spellVariantPairs_spells_spellStats {
   __typename: "SpellStats";
   id: any;
   level: number;
+  apCost: number;
+  castsPerTurn: number | null;
+  castsPerTarget: number | null;
+  cooldown: number | null;
+  isLinear: boolean;
+  needsLos: boolean;
+  needsFreeCell: boolean;
+  baseCritChance: number | null;
+  minRange: number | null;
+  maxRange: number | null;
+  hasModifiableRange: boolean;
   spellEffects: classById_classById_spellVariantPairs_spells_spellStats_spellEffects[];
 }
 

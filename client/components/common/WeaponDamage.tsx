@@ -4,20 +4,23 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import Card from 'antd/lib/card';
 import Radio, { RadioChangeEvent } from 'antd/lib/radio';
-import { CardTitleWithLevel } from 'common/wrappers';
+import {
+  CardTitleWithLevel,
+  damageHeaderStyle,
+  EffectLine,
+} from 'common/wrappers';
 // import { useTranslation } from 'i18n';
 import { itemCardStyle, BORDER_COLOR, gray2, gray6 } from 'common/mixins';
 import { item_weaponStats } from 'graphql/fragments/__generated__/item';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import {
-  calcDamage,
   getStatsFromCustomSet,
-  weaponEffectToIconUrl,
-  calcHeal,
   getStatWithDefault,
+  getSimpleEffect,
+  calcEffect,
 } from 'common/utils';
-import { StatsFromCustomSet, ICalcDamageInput } from 'common/types';
-import { Stat, WeaponEffectType } from '__generated__/globalTypes';
+import { StatsFromCustomSet, TEffectLine } from 'common/types';
+import { Stat } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
 import Divider from 'antd/lib/divider';
 
@@ -25,69 +28,6 @@ interface IProps {
   weaponStats: item_weaponStats;
   customSet: customSet;
 }
-
-type TSimpleEffect = 'damage' | 'heal' | 'other';
-
-type TEffectMinMax = { min: number | null; max: number };
-
-type TEffectLine = {
-  id: string;
-  type: WeaponEffectType;
-  nonCrit: TEffectMinMax;
-  crit: TEffectMinMax | null;
-};
-
-const headerStyle = {
-  fontWeight: 500,
-  marginBottom: 4,
-};
-
-const getSimpleEffect: (
-  effectType: WeaponEffectType,
-) => TSimpleEffect = effectType => {
-  switch (effectType) {
-    case WeaponEffectType.AIR_DAMAGE:
-    case WeaponEffectType.AIR_STEAL:
-    case WeaponEffectType.EARTH_DAMAGE:
-    case WeaponEffectType.EARTH_STEAL:
-    case WeaponEffectType.FIRE_DAMAGE:
-    case WeaponEffectType.FIRE_STEAL:
-    case WeaponEffectType.WATER_DAMAGE:
-    case WeaponEffectType.WATER_STEAL:
-    case WeaponEffectType.NEUTRAL_DAMAGE:
-    case WeaponEffectType.NEUTRAL_STEAL:
-      return 'damage';
-    case WeaponEffectType.HP_RESTORED:
-      return 'heal';
-    case WeaponEffectType.AP:
-    case WeaponEffectType.MP:
-      return 'other';
-  }
-};
-
-const calcEffect = (
-  baseDamage: number,
-  effectType: WeaponEffectType,
-  stats: StatsFromCustomSet,
-  damageTypeInput: ICalcDamageInput,
-  damageTypeKey: 'melee' | 'ranged',
-  weaponSkillPower?: number,
-) => {
-  const simpleEffect = getSimpleEffect(effectType);
-
-  if (simpleEffect === 'heal') {
-    return calcHeal(baseDamage, stats, weaponSkillPower);
-  } else if (simpleEffect === 'damage') {
-    return calcDamage(
-      baseDamage,
-      effectType,
-      stats,
-      damageTypeInput,
-      weaponSkillPower,
-    )[damageTypeKey];
-  }
-  return baseDamage;
-};
 
 const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
   const { t } = useTranslation(['weapon_spell_effect', 'stat']);
@@ -121,6 +61,7 @@ const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
             ? calcEffect(
                 minDamage,
                 effectType,
+                customSet.level,
                 statsFromCustomSet,
                 { isWeapon: true },
                 damageTypeKey,
@@ -130,11 +71,13 @@ const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
           max: calcEffect(
             maxDamage,
             effectType,
+            customSet.level,
             statsFromCustomSet,
             { isWeapon: true },
             damageTypeKey,
             weaponSkillPower,
           ),
+          baseMax: maxDamage,
         },
         crit:
           weaponStats.baseCritChance === null ||
@@ -144,10 +87,12 @@ const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
                 min: minDamage
                   ? calcEffect(
                       minDamage +
-                        (getSimpleEffect(effectType) === 'other'
+                        (getSimpleEffect(effectType) === 'damage' ||
+                        getSimpleEffect(effectType) === 'heal'
                           ? 0
                           : weaponStats.critBonusDamage),
                       effectType,
+                      customSet.level,
                       statsFromCustomSet,
                       { isWeapon: true, isCrit: true },
                       damageTypeKey,
@@ -156,15 +101,23 @@ const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
                   : null,
                 max: calcEffect(
                   maxDamage +
-                    (getSimpleEffect(effectType) === 'other'
+                    (getSimpleEffect(effectType) === 'damage' ||
+                    getSimpleEffect(effectType) === 'heal'
                       ? 0
                       : weaponStats.critBonusDamage),
                   effectType,
+                  customSet.level,
                   statsFromCustomSet,
                   { isWeapon: true, isCrit: true },
                   damageTypeKey,
                   weaponSkillPower,
                 ),
+                baseMax:
+                  maxDamage +
+                  (getSimpleEffect(effectType) === 'damage' ||
+                  getSimpleEffect(effectType) === 'heal'
+                    ? 0
+                    : weaponStats.critBonusDamage),
               },
       };
     },
@@ -245,9 +198,9 @@ const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
       </Radio.Group>
       <Divider css={{ margin: '12px 0' }} />
       <div css={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-        <div css={headerStyle}>{t('NON_CRIT')}</div>
+        <div css={damageHeaderStyle}>{t('NON_CRIT')}</div>
         {weaponStats.baseCritChance ? (
-          <div css={headerStyle}>
+          <div css={damageHeaderStyle}>
             {t('CRIT_WITH_PERCENTAGE', {
               percentage: critRate,
             })}
@@ -271,33 +224,19 @@ const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
         {weaponEffectSummaries.map(effect => {
           return (
             <React.Fragment key={effect.id}>
-              <div
-                css={{
-                  display: 'flex',
-                  alignItems: 'center',
-                }}
-              >
-                <img
-                  src={weaponEffectToIconUrl(effect.type)}
-                  css={{ height: 16, width: 16, marginRight: 8 }}
+              <EffectLine
+                min={effect.nonCrit.min}
+                max={effect.nonCrit.max}
+                effectType={effect.type}
+                baseMax={effect.nonCrit.baseMax}
+              />
+              {!!effect.crit && (
+                <EffectLine
+                  min={effect.crit.min}
+                  max={effect.crit.max}
+                  effectType={effect.type}
+                  baseMax={effect.crit.baseMax}
                 />
-                {effect.nonCrit.min !== null && `${effect.nonCrit.min}-`}
-                {effect.nonCrit.max}
-              </div>
-              {effect.crit && (
-                <div
-                  css={{
-                    display: 'flex',
-                    alignItems: 'center',
-                  }}
-                >
-                  <img
-                    src={weaponEffectToIconUrl(effect.type)}
-                    css={{ height: 16, width: 16, marginRight: 8 }}
-                  />
-                  {effect.crit.min !== null && `${effect.crit.min}-`}
-                  {effect.crit.max}
-                </div>
               )}
             </React.Fragment>
           );

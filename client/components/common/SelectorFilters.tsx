@@ -148,7 +148,11 @@ const SelectorFilters: React.FC<IProps> = ({
               <Switch
                 checkedChildren={<FontAwesomeIcon icon={faCubes} />}
                 unCheckedChildren={<FontAwesomeIcon icon={faCube} />}
-                css={{ margin: '0 12px', [mq[1]]: { margin: '0 20px 0 0' } }}
+                css={{
+                  margin: '0 12px',
+                  [mq[1]]: { margin: '0 20px 0 0' },
+                  background: 'rgba(0, 0, 0, .25)',
+                }}
                 checked={showSets}
                 onChange={setShowSets}
               />

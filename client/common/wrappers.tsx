@@ -15,6 +15,12 @@ import Skeleton from 'antd/lib/skeleton';
 import { set_bonuses } from 'graphql/fragments/__generated__/set';
 import { TFunction } from 'next-i18next';
 import { useTranslation } from 'i18n';
+import {
+  WeaponEffectType,
+  SpellEffectType,
+  Stat,
+} from '__generated__/globalTypes';
+import { effectToIconUrl, getSimpleEffect } from './utils';
 
 interface IResponsiveGrid {
   readonly numColumns: ReadonlyArray<number>;
@@ -113,6 +119,55 @@ export const CardTitleWithLevel: React.FC<{
           {rightAlignedContent}
         </div>
       )}
+    </div>
+  );
+};
+
+export const damageHeaderStyle = {
+  fontWeight: 500,
+  marginBottom: 4,
+};
+
+export const EffectLine: React.FC<{
+  min: number | null;
+  max: number;
+  effectType: WeaponEffectType | SpellEffectType;
+  baseMax: number;
+}> = ({ min, max, effectType, baseMax }) => {
+  const { t } = useTranslation(['stat', 'weapon_spell_effect']);
+  let content = null;
+  switch (getSimpleEffect(effectType)) {
+    case 'damage':
+    case 'heal':
+      content = `${min !== null ? `${min}-` : ''}${max}`;
+      break;
+    case 'pushback_damage':
+      content = `${max} (${t('CELL', {
+        count: baseMax,
+        ns: 'weapon_spell_effect',
+      })})`;
+      break;
+    case 'shield':
+      content = max;
+      break;
+    case 'ap':
+      content = `${max} ${t(Stat.AP)}`;
+      break;
+    case 'mp':
+      content = `${max} ${t(Stat.MP)}`;
+  }
+  return (
+    <div
+      css={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <img
+        src={effectToIconUrl(effectType)}
+        css={{ height: 16, width: 16, marginRight: 8 }}
+      />
+      {content}
     </div>
   );
 };

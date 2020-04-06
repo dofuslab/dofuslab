@@ -23,6 +23,7 @@ import {
   OriginalStatLine,
   ExoStatLine,
   ICalcDamageInput,
+  TSimpleEffect,
 } from './types';
 import {
   item_itemType,
@@ -633,6 +634,14 @@ export const calcDamage = (
   };
 };
 
+export const calcPushbackDamage = (
+  numSquaresPushed: number,
+  level: number,
+  stats: StatsFromCustomSet,
+) =>
+  (level / 2 + (getStatWithDefault(stats, Stat.PUSHBACK_DAMAGE) + 32)) *
+  (numSquaresPushed / 4);
+
 export const calcHeal = (
   baseHeal: number,
   stats: StatsFromCustomSet,
@@ -644,28 +653,119 @@ export const calcHeal = (
   return Math.floor(baseHeal * (1 + multiplierValue / 100) + flatBonus);
 };
 
-export const weaponEffectToIconUrl = (effect: WeaponEffectType) => {
+export const calcShield = (baseShield: number, level: number) => {
+  return Math.floor((baseShield / 100) * level);
+};
+
+export const effectToIconUrl = (effect: WeaponEffectType | SpellEffectType) => {
   switch (effect) {
     case WeaponEffectType.AIR_DAMAGE:
     case WeaponEffectType.AIR_STEAL:
+    case SpellEffectType.AIR_DAMAGE:
+    case SpellEffectType.AIR_STEAL:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Agility.svg';
     case WeaponEffectType.EARTH_DAMAGE:
     case WeaponEffectType.EARTH_STEAL:
+    case SpellEffectType.EARTH_DAMAGE:
+    case SpellEffectType.EARTH_STEAL:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Strength.svg';
     case WeaponEffectType.FIRE_DAMAGE:
     case WeaponEffectType.FIRE_STEAL:
+    case SpellEffectType.FIRE_DAMAGE:
+    case SpellEffectType.FIRE_STEAL:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Intelligence.svg';
     case WeaponEffectType.NEUTRAL_DAMAGE:
     case WeaponEffectType.NEUTRAL_STEAL:
+    case SpellEffectType.NEUTRAL_DAMAGE:
+    case SpellEffectType.NEUTRAL_STEAL:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Neutral.svg';
     case WeaponEffectType.WATER_DAMAGE:
     case WeaponEffectType.WATER_STEAL:
+    case SpellEffectType.WATER_DAMAGE:
+    case SpellEffectType.WATER_STEAL:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Chance.svg';
     case WeaponEffectType.AP:
+    case SpellEffectType.AP:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Action_Point.svg';
     case WeaponEffectType.MP:
+    case SpellEffectType.MP:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Movement_Point.svg';
     case WeaponEffectType.HP_RESTORED:
+    case SpellEffectType.HP_RESTORED:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Health_Point.svg';
+    case SpellEffectType.SHIELD:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Shield_Point.svg';
+    case SpellEffectType.PUSHBACK_DAMAGE:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Pushback_Damage.svg';
   }
+};
+
+export const getSimpleEffect: (
+  effectType: WeaponEffectType | SpellEffectType,
+) => TSimpleEffect = effectType => {
+  switch (effectType) {
+    case WeaponEffectType.AIR_DAMAGE:
+    case WeaponEffectType.AIR_STEAL:
+    case WeaponEffectType.EARTH_DAMAGE:
+    case WeaponEffectType.EARTH_STEAL:
+    case WeaponEffectType.FIRE_DAMAGE:
+    case WeaponEffectType.FIRE_STEAL:
+    case WeaponEffectType.WATER_DAMAGE:
+    case WeaponEffectType.WATER_STEAL:
+    case WeaponEffectType.NEUTRAL_DAMAGE:
+    case WeaponEffectType.NEUTRAL_STEAL:
+    case SpellEffectType.AIR_DAMAGE:
+    case SpellEffectType.AIR_STEAL:
+    case SpellEffectType.EARTH_DAMAGE:
+    case SpellEffectType.EARTH_STEAL:
+    case SpellEffectType.FIRE_DAMAGE:
+    case SpellEffectType.FIRE_STEAL:
+    case SpellEffectType.WATER_DAMAGE:
+    case SpellEffectType.WATER_STEAL:
+    case SpellEffectType.NEUTRAL_DAMAGE:
+    case SpellEffectType.NEUTRAL_STEAL:
+      return 'damage';
+    case WeaponEffectType.HP_RESTORED:
+    case SpellEffectType.HP_RESTORED:
+      return 'heal';
+    case SpellEffectType.PUSHBACK_DAMAGE:
+      return 'pushback_damage';
+    case SpellEffectType.SHIELD:
+      return 'shield';
+    case WeaponEffectType.AP:
+    case SpellEffectType.AP:
+      return 'ap';
+    case WeaponEffectType.MP:
+    case SpellEffectType.MP:
+      return 'mp';
+  }
+};
+
+export const calcEffect = (
+  baseDamage: number,
+  effectType: WeaponEffectType | SpellEffectType,
+  level: number,
+  stats: StatsFromCustomSet,
+  damageTypeInput: ICalcDamageInput,
+  damageTypeKey: 'melee' | 'ranged',
+  weaponSkillPower?: number,
+) => {
+  const simpleEffect = getSimpleEffect(effectType);
+
+  if (simpleEffect === 'heal') {
+    return calcHeal(baseDamage, stats, weaponSkillPower);
+  } else if (simpleEffect === 'pushback_damage') {
+    return calcPushbackDamage(baseDamage, level, stats);
+  } else if (simpleEffect === 'damage') {
+    return calcDamage(
+      baseDamage,
+      effectType,
+      stats,
+      damageTypeInput,
+      weaponSkillPower,
+    )[damageTypeKey];
+  } else if (simpleEffect === 'shield') {
+    return calcShield(baseDamage, level);
+  }
+  return baseDamage;
 };

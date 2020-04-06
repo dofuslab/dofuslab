@@ -7,7 +7,6 @@ import { STAT_GROUPS, mq, SEARCH_BAR_ID } from 'common/constants';
 import Layout from './Layout';
 import StatTable from '../common/StatTable';
 import { ResponsiveGrid } from 'common/wrappers';
-import Select from 'antd/lib/select';
 
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getStatsFromCustomSet } from 'common/utils';
@@ -20,8 +19,6 @@ import Selector from '../common/Selector';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
-
-const { Option } = Select;
 
 interface IProps {
   customSet: customSet | null;

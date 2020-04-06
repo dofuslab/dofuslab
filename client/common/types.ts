@@ -1,6 +1,11 @@
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { item_set, item } from 'graphql/fragments/__generated__/item';
-import { Stat, ItemFilters } from '__generated__/globalTypes';
+import {
+  Stat,
+  ItemFilters,
+  WeaponEffectType,
+  SpellEffectType,
+} from '__generated__/globalTypes';
 
 export type StatWithCalculatedValue = {
   stat: string;
@@ -71,3 +76,20 @@ export interface ICalcDamageInput {
   isTrap?: boolean;
   isWeapon?: boolean;
 }
+
+export type TSimpleEffect =
+  | 'damage'
+  | 'pushback_damage'
+  | 'heal'
+  | 'shield'
+  | 'ap'
+  | 'mp';
+
+type TEffectMinMax = { min: number | null; max: number; baseMax: number };
+
+export type TEffectLine = {
+  id: string;
+  type: WeaponEffectType | SpellEffectType;
+  nonCrit: TEffectMinMax;
+  crit: TEffectMinMax | null;
+};

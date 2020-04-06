@@ -15,7 +15,6 @@ import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import BonusStats from 'components/desktop/BonusStats';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
-import Select from 'antd/lib/select';
 
 interface IProps {
   customSet?: customSet | null;

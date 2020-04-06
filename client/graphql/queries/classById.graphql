@@ -12,6 +12,17 @@ query classById($id: UUID!) {
         spellStats {
           id
           level
+          apCost
+          castsPerTurn
+          castsPerTarget
+          cooldown
+          isLinear
+          needsLos
+          needsFreeCell
+          baseCritChance
+          minRange
+          maxRange
+          hasModifiableRange
           spellEffects {
             id
             minDamage

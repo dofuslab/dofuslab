@@ -8,7 +8,7 @@ import { useTranslation } from 'i18n';
 import { blue6 } from 'common/mixins';
 import { Stat } from '__generated__/globalTypes';
 import Divider from 'antd/lib/divider';
-import { weaponEffectToIconUrl } from 'common/utils';
+import { effectToIconUrl } from 'common/utils';
 
 interface IProps {
   readonly item: item;
@@ -129,7 +129,7 @@ const ItemStatsList: React.FC<IProps> = ({
                 css={{ display: 'flex', alignItems: 'center' }}
               >
                 <img
-                  src={weaponEffectToIconUrl(effect.effectType)}
+                  src={effectToIconUrl(effect.effectType)}
                   css={{ height: 16, width: 16, marginRight: 8 }}
                 />
                 {effect.minDamage ? `${effect.minDamage}-` : ''}
@@ -186,7 +186,7 @@ const ItemStatsList: React.FC<IProps> = ({
                 })}\u00A0(+${item.weaponStats.critBonusDamage})`
               : t('DOES_NOT_CRIT', { ns: 'weapon_spell_effect' })}{' '}
             •{' '}
-            {t('USES_PER_TURN', {
+            {t('USE_PER_TURN', {
               ns: 'weapon_spell_effect',
               count: item.weaponStats.usesPerTurn,
             })}{' '}
