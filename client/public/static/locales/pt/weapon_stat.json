@@ -1,0 +1,18 @@
+{
+  "NEUTRAL_DAMAGE": "danos neutros",
+  "EARTH_DAMAGE": "danos de terra",
+  "FIRE_DAMAGE": "danos de fogo",
+  "WATER_DAMAGE": "danos de água",
+  "AIR_DAMAGE": "danos de ar",
+  "NEUTRAL_STEAL": "roubo neutro",
+  "EARTH_STEAL": "roubo de terra",
+  "FIRE_STEAL": "roubo de fogo",
+  "WATER_STEAL": "roubo de água",
+  "AIR_STEAL": "roubo de ar",
+  "AP": "PA (alvo)",
+  "MP": "PM (alvo)",
+  "HP_RESTORED": "PV curado",
+  "DOES_NOT_CRIT": "Não crita",
+  "USES_PER_TURN": "{{count}}\u00A0uso por turno",
+  "USES_PER_TURN_plural": "{{count}}\u00A0usos por turno"
+}
