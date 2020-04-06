@@ -196,7 +196,6 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
     }
 
     if (spellStats.castsPerTurn) {
-      console.log(spellStats.castsPerTurn);
       spellCharacteristics.push(
         t('CAST_PER_TURN', { count: spellStats.castsPerTurn }),
       );
@@ -228,7 +227,11 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
           {spell.description
             .split('•')
             .map((chunk, idx) =>
-              idx === 0 ? <div>{chunk}</div> : <li>{`• ${chunk}`}</li>,
+              idx === 0 ? (
+                <div key={idx}>{chunk}</div>
+              ) : (
+                <li key={idx}>{`• ${chunk}`}</li>
+              ),
             )}
         </div>
         {spellStats.spellEffects.length > 0 && (

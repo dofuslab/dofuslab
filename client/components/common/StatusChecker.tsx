@@ -89,6 +89,7 @@ const StatusChecker: React.FC = () => {
       { pathname: router.pathname, query: newQuery },
       {
         pathname: router.asPath.substring(0, router.asPath.indexOf('?')),
+        query: { class: newQuery.class },
       },
       { shallow: true },
     );
