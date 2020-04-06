@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
+import Tabs from 'antd/lib/tabs';
 
 import { STAT_GROUPS, mq, SEARCH_BAR_ID } from 'common/constants';
 import Layout from './Layout';
@@ -14,11 +15,14 @@ import SetHeader from '../common/SetHeader';
 import EquipmentSlots from '../common/EquipmentSlots';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import StatEditor from '../common/StatEditor';
-import { topMarginStyle } from 'common/mixins';
+import { topMarginStyle, BORDER_COLOR } from 'common/mixins';
 import Selector from '../common/Selector';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
+import { useTranslation } from 'i18n';
+
+const { TabPane } = Tabs;
 
 interface IProps {
   customSet: customSet | null;
@@ -57,6 +61,8 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
     equippedItem => !!equippedItem.item.weaponStats,
   );
 
+  const { t } = useTranslation('common');
+
   return (
     <Layout>
       <SetHeader customSet={customSet} />
@@ -84,37 +90,57 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
 
             overflow: 'auto',
             ...topMarginStyle,
-            [mq[1]]: { flex: '0 1 288px', ...(topMarginStyle[mq[1]] as {}) },
+            [mq[1]]: {
+              flex: '0 1 288px',
+              paddingRight: 12,
+              ...(topMarginStyle[mq[1]] as {}),
+            },
             [mq[2]]: { flex: '0 1 576px' },
           }}
         >
-          <ResponsiveGrid
-            numColumns={[2, 1, 2, 2, 2, 2, 2]}
-            css={{ marginBottom: 20 }}
+          <Tabs
+            defaultActiveKey="characteristics"
+            css={{
+              '.ant-tabs-bar': { borderBottom: `1px solid ${BORDER_COLOR}` },
+            }}
           >
-            {STAT_GROUPS.map((group, i) => (
-              <StatTable
-                key={`stat-table-${i}`}
-                group={group}
-                statsFromCustomSet={statsFromCustomSet}
-                customSet={customSet}
-              />
-            ))}
-            <StatEditor key={customSet?.id} customSet={customSet} />
-            {weapon && customSet && weapon.item.weaponStats && (
-              <>
-                <BasicItemCard item={weapon.item} showOnlyWeaponStats />
-                <WeaponDamage
-                  weaponStats={weapon.item.weaponStats}
+            <TabPane tab={t('CHARACTERISTICS')} key="characteristics">
+              <ResponsiveGrid
+                numColumns={[2, 1, 2, 2, 2, 2, 2]}
+                css={{ marginBottom: 20 }}
+              >
+                {STAT_GROUPS.map((group, i) => (
+                  <StatTable
+                    key={`stat-table-${i}`}
+                    group={group}
+                    statsFromCustomSet={statsFromCustomSet}
+                    customSet={customSet}
+                  />
+                ))}
+                <StatEditor key={customSet?.id} customSet={customSet} />
+              </ResponsiveGrid>
+            </TabPane>
+            <TabPane tab={t('WEAPON_AND_SPELLS')} key="weapon-and-spells">
+              <ResponsiveGrid
+                numColumns={[2, 1, 2, 2, 2, 2, 2]}
+                css={{ marginBottom: 20 }}
+              >
+                {weapon && customSet && weapon.item.weaponStats && (
+                  <>
+                    <BasicItemCard item={weapon.item} showOnlyWeaponStats />
+                    <WeaponDamage
+                      weaponStats={weapon.item.weaponStats}
+                      customSet={customSet}
+                    />
+                  </>
+                )}
+                <ClassSpells
+                  key={`${customSet?.id}-${customSet?.level}`}
                   customSet={customSet}
                 />
-              </>
-            )}
-            <ClassSpells
-              key={`${customSet?.id}-${customSet?.level}`}
-              customSet={customSet}
-            />
-          </ResponsiveGrid>
+              </ResponsiveGrid>
+            </TabPane>
+          </Tabs>
         </div>
         <Selector
           key={`selected-item-slot-${selectedItemSlot?.name}-level-${customSet?.level}`}

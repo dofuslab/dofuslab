@@ -18,7 +18,8 @@ import {
 } from 'graphql/queries/__generated__/classById';
 import classByIdQuery from 'graphql/queries/classById.graphql';
 import SpellCard from './SpellCard';
-import { gray6, gray4 } from 'common/mixins';
+import { gray6 } from 'common/mixins';
+import Spin from 'antd/lib/spin';
 
 const { Option } = Select;
 
@@ -29,7 +30,7 @@ interface IProps {
 const ClassSpells: React.FC<IProps> = ({ customSet }) => {
   const router = useRouter();
   const { query } = router;
-  const { data } = useQuery<classes>(classesQuery);
+  const { data, loading } = useQuery<classes>(classesQuery);
   const { t } = useTranslation('common');
 
   const nameToId = data?.classes.reduce((acc, { id, name }) => {
@@ -45,10 +46,13 @@ const ClassSpells: React.FC<IProps> = ({ customSet }) => {
     : query.class;
   const selectedClassId = nameToId?.[selectedClassName] || undefined;
 
-  const { data: classData } = useQuery<classById, classByIdVariables>(
-    classByIdQuery,
-    { variables: { id: selectedClassId }, skip: !selectedClassId },
-  );
+  const { data: classData, loading: classDataLoading } = useQuery<
+    classById,
+    classByIdVariables
+  >(classByIdQuery, {
+    variables: { id: selectedClassId },
+    skip: !selectedClassId,
+  });
 
   const spellsList = classData?.classById?.spellVariantPairs.reduce(
     (acc, curr) => [...acc, ...curr.spells],
@@ -91,30 +95,40 @@ const ClassSpells: React.FC<IProps> = ({ customSet }) => {
             </Option>
           ))}
       </Select>
-      {spellsList ? (
+      {!classDataLoading && spellsList ? (
         spellsList.map(spell => (
           <SpellCard key={spell.id} spell={spell} customSet={customSet} />
         ))
       ) : (
         <div
           css={{
-            height: 180,
+            height: 360,
             gridColumn: '1 / -1',
-            background: gray4,
-            borderRadius: 4,
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
             color: gray6,
             fontWeight: 500,
-            marginBottom: 60,
+            marginBottom: 320,
           }}
         >
-          {t('SELECT_CLASS_DETAILED')}
+          {classDataLoading ? <Spin /> : t('SELECT_CLASS_DETAILED')}
         </div>
       )}
     </>
-  ) : null;
+  ) : (
+    <div
+      css={{
+        height: 360,
+        marginBottom: 320,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      {loading && <Spin />}
+    </div>
+  );
 };
 
 export default ClassSpells;

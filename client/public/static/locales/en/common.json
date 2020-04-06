@@ -4,6 +4,7 @@
   "BACK": "Back",
   "BASE": "Base",
   "CANCEL": "Cancel",
+  "CHARACTERISTICS": "Characteristics",
   "CREATE_NEW_BUILD": "Create new build",
   "CREATED": "Created",
   "DELETE": "Delete",
@@ -35,5 +36,6 @@
   "STATS_PLACEHOLDER": "Stats (e.g. AP, Pods, Prospecting)",
   "UNTITLED": "Untitled",
   "VIEW_ITEMS": "View items",
-  "VIEW_SETS": "View sets"
+  "VIEW_SETS": "View sets",
+  "WEAPON_AND_SPELLS": "Weapon and spells"
 }
