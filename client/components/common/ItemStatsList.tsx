@@ -65,7 +65,7 @@ const ItemStatsList: React.FC<IProps> = ({
   showImg,
   showOnlyWeaponStats,
 }) => {
-  const { t } = useTranslation(['stat', 'weapon_stat']);
+  const { t } = useTranslation(['stat', 'weapon_spell_effect']);
 
   const statsMap: {
     [key: string]: { value: number; maged: boolean };
@@ -133,7 +133,8 @@ const ItemStatsList: React.FC<IProps> = ({
                   css={{ height: 16, width: 16, marginRight: 8 }}
                 />
                 {effect.minDamage ? `${effect.minDamage}-` : ''}
-                {effect.maxDamage} {t(effect.effectType, { ns: 'weapon_stat' })}
+                {effect.maxDamage}{' '}
+                {t(effect.effectType, { ns: 'weapon_spell_effect' })}
               </div>
             ))}
           </div>
@@ -183,10 +184,10 @@ const ItemStatsList: React.FC<IProps> = ({
               ? `${item.weaponStats.baseCritChance} ${t(Stat.CRITICAL, {
                   ns: 'stat',
                 })}\u00A0(+${item.weaponStats.critBonusDamage})`
-              : t('DOES_NOT_CRIT', { ns: 'weapon_stat' })}{' '}
+              : t('DOES_NOT_CRIT', { ns: 'weapon_spell_effect' })}{' '}
             •{' '}
             {t('USES_PER_TURN', {
-              ns: 'weapon_stat',
+              ns: 'weapon_spell_effect',
               count: item.weaponStats.usesPerTurn,
             })}{' '}
           </div>

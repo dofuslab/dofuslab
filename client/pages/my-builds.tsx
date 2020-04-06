@@ -32,14 +32,7 @@ const MyBuildsPage: NextPage = () => {
 
 MyBuildsPage.getInitialProps = async () => {
   return {
-    namespacesRequired: [
-      'common',
-      'stat',
-      'auth',
-      'weapon_stat',
-      'status',
-      'mage',
-    ],
+    namespacesRequired: ['common', 'auth', 'status'],
   };
 };
 

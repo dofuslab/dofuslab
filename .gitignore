@@ -17,4 +17,4 @@ server/static/
 server/messages.pot
 
 # Redis dump
-server/dump.rdb
+**/dump.rdb

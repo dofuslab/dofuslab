@@ -1,20 +1,17 @@
-query class($id: UUID!) {
+query classById($id: UUID!) {
   classById(id: $id) {
     id
     name
     spellVariantPairs {
       id
       spells {
+        id
+        name
+        description
+        imageUrl
         spellStats {
           id
-          spell {
-            id
-            name
-            description
-            imageUrl
-          }
           level
-          spellId
           spellEffects {
             id
             minDamage

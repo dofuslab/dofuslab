@@ -90,7 +90,7 @@ const calcEffect = (
 };
 
 const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
-  const { t } = useTranslation(['weapon_stat', 'stat']);
+  const { t } = useTranslation(['weapon_spell_effect', 'stat']);
   const [weaponSkillPower, setWeaponSkillPower] = React.useState(300);
   const statsFromCustomSet = getStatsFromCustomSet(
     customSet,
@@ -223,7 +223,7 @@ const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
   return (
     <Card
       size="small"
-      title={<CardTitleWithLevel title="Weapon Damage" />}
+      title={<CardTitleWithLevel title={t('WEAPON_DAMAGE')} />}
       css={{
         ...itemCardStyle,
         [':hover']: {

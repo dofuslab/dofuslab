@@ -29,7 +29,7 @@ const BasicItemCard: React.FC<IProps> = ({
   onClick,
   showOnlyWeaponStats,
 }) => {
-  const { t } = useTranslation(['common', 'stat', 'weapon_stat']);
+  const { t } = useTranslation(['common', 'stat', 'weapon_spell_effect']);
   return (
     <Card
       hoverable={!!onClick}

@@ -19,9 +19,7 @@ import { topMarginStyle } from 'common/mixins';
 import Selector from '../common/Selector';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
-import { useQuery } from '@apollo/react-hooks';
-import { classes } from 'graphql/queries/__generated__/classes';
-import classesQuery from 'graphql/queries/classes.graphql';
+import ClassSpells from 'components/common/ClassSpells';
 
 const { Option } = Select;
 
@@ -34,8 +32,6 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
     selectedItemSlot,
     selectItemSlot,
   ] = React.useState<itemSlots_itemSlots | null>(null);
-
-  const { data } = useQuery<classes>(classesQuery);
 
   React.useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
@@ -117,26 +113,10 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
                 />
               </>
             )}
-            {data && (
-              <Select
-                css={{ gridColumn: '1 / -1' }}
-                showSearch
-                labelInValue
-                filterOption={(input, option) =>
-                  (option?.children as string)
-                    .toLocaleUpperCase()
-                    .includes(input.toLocaleUpperCase())
-                }
-              >
-                {[...data.classes]
-                  .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
-                  .map(dofusClass => (
-                    <Option key={dofusClass.id} value={dofusClass.id}>
-                      {dofusClass.name}
-                    </Option>
-                  ))}
-              </Select>
-            )}
+            <ClassSpells
+              key={`${customSet?.id}-${customSet?.level}`}
+              customSet={customSet}
+            />
           </ResponsiveGrid>
         </div>
         <Selector

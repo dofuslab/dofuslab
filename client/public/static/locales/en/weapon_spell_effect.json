@@ -1,4 +1,5 @@
 {
+  "AVAILABLE_AT_LEVEL": "Available at level {{level}}",
   "NEUTRAL_DAMAGE": "Neutral damage",
   "EARTH_DAMAGE": "Earth damage",
   "FIRE_DAMAGE": "Fire damage",
@@ -18,6 +19,7 @@
   "USES_PER_TURN": "{{count}}\u00A0use/turn",
   "USES_PER_TURN_plural": "{{count}}\u00A0uses/turn",
   "NO_WEAPON_SKILL": "No Weapon Skill",
+  "WEAPON_DAMAGE": "Weapon damage",
   "WEAPON_SKILL": "Weapon Skill",
   "AVERAGE_DAMAGE": "Average damage",
   "AVERAGE_HEAL": "Average heal"

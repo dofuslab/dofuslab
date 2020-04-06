@@ -105,7 +105,7 @@ EquippedItemPage.getInitialProps = async () => {
       'common',
       'stat',
       'auth',
-      'weapon_stat',
+      'weapon_spell_effect',
       'status',
       'mage',
     ],

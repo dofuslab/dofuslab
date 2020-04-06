@@ -96,7 +96,8 @@ export const CardTitleWithLevel: React.FC<{
   showBadge?: boolean;
   badgeContent?: React.ReactNode;
   level?: number;
-}> = ({ title, level, showBadge, badgeContent }) => {
+  rightAlignedContent?: React.ReactNode;
+}> = ({ title, level, showBadge, badgeContent, rightAlignedContent }) => {
   const { t } = useTranslation('common');
   return (
     <div css={{ display: 'flex', alignItems: 'center', marginRight: 4 }}>
@@ -105,6 +106,11 @@ export const CardTitleWithLevel: React.FC<{
       {level && (
         <div css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}>
           {t('LEVEL_ABBREVIATION', { ns: 'common' })} {level}
+        </div>
+      )}
+      {rightAlignedContent && (
+        <div css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}>
+          {rightAlignedContent}
         </div>
       )}
     </div>
