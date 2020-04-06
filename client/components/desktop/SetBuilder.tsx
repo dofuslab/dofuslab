@@ -117,7 +117,7 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
           </ResponsiveGrid>
         </div>
         <Selector
-          key={`selected-item-slot-${selectedItemSlot?.id}-level-${customSet?.level}`}
+          key={`selected-item-slot-${selectedItemSlot?.name}-level-${customSet?.level}`}
           customSet={customSet}
           selectItemSlot={selectItemSlot}
           selectedItemSlot={selectedItemSlot}
