@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "EXO": "__STRING_NOT_TRANSLATED__",
   "MAGE": "__STRING_NOT_TRANSLATED__",
   "MAGE_MODAL_TITLE": "__STRING_NOT_TRANSLATED__",
@@ -6,3 +7,11 @@
   "REMOVE_EXO": "__STRING_NOT_TRANSLATED__",
   "RESET_TO_ORIGINAL": "__STRING_NOT_TRANSLATED__"
 }
+=======
+  "EXO": "Exo {{stat}}",
+  "MAGE": "Magear",
+  "MAGE_MODAL_TITLE": "Mageando {{itemName}}",
+  "REMOVE_EXO": "Remover Exo {{stat}}",
+  "RESET_TO_ORIGINAL": "Resetar para stats originais"
+}
+>>>>>>> Part of translation done. Started testing translation
