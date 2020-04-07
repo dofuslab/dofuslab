@@ -95,18 +95,19 @@ const EquippedItemWithStats: React.FC<IProps> = ({
             }}
           >
             <img src={equippedItem.item.imageUrl} css={itemImageDimensions} />
-            {equippedItem.exos.length > 0 && (
-              <FontAwesomeIcon
-                icon={faMagic}
-                css={{
-                  position: 'absolute',
-                  left: 6,
-                  bottom: 6,
-                  fontSize: '0.75rem',
-                  opacity: 0.3,
-                }}
-              />
-            )}
+            {equippedItem.exos.length > 0 ||
+              (equippedItem.weaponElementMage && (
+                <FontAwesomeIcon
+                  icon={faMagic}
+                  css={{
+                    position: 'absolute',
+                    left: 6,
+                    bottom: 6,
+                    fontSize: '0.75rem',
+                    opacity: 0.3,
+                  }}
+                />
+              ))}
             <div className={wrapperClass} onClick={onDelete}>
               <FontAwesomeIcon icon={faTimes} />
             </div>

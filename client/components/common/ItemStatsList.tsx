@@ -6,9 +6,9 @@ import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
 import { blue6 } from 'common/mixins';
-import { Stat } from '__generated__/globalTypes';
+import { Stat, WeaponElementMage } from '__generated__/globalTypes';
 import Divider from 'antd/lib/divider';
-import { effectToIconUrl } from 'common/utils';
+import { WeaponEffectsList } from 'common/wrappers';
 
 interface IProps {
   readonly item: item;
@@ -18,6 +18,7 @@ interface IProps {
   readonly openSetModal?: (set: item_set) => void;
   readonly showImg?: boolean;
   readonly showOnlyWeaponStats?: boolean;
+  readonly weaponElementMage?: WeaponElementMage | null;
 }
 
 const renderConditions = (conditionsObj: any, depth = 0) => {
@@ -64,6 +65,7 @@ const ItemStatsList: React.FC<IProps> = ({
   openSetModal,
   showImg,
   showOnlyWeaponStats,
+  weaponElementMage,
 }) => {
   const { t } = useTranslation(['stat', 'weapon_spell_effect']);
 
@@ -122,22 +124,11 @@ const ItemStatsList: React.FC<IProps> = ({
       )}
       {item.weaponStats && (
         <>
-          <div css={{ marginBottom: showImg ? 12 : 0 }}>
-            {item.weaponStats.weaponEffects.map(effect => (
-              <div
-                key={`weapon-effect-${effect.id}`}
-                css={{ display: 'flex', alignItems: 'center' }}
-              >
-                <img
-                  src={effectToIconUrl(effect.effectType)}
-                  css={{ height: 16, width: 16, marginRight: 8 }}
-                />
-                {effect.minDamage ? `${effect.minDamage}-` : ''}
-                {effect.maxDamage}{' '}
-                {t(effect.effectType, { ns: 'weapon_spell_effect' })}
-              </div>
-            ))}
-          </div>
+          <WeaponEffectsList
+            weaponStats={item.weaponStats}
+            css={{ marginBottom: showImg ? 12 : 0 }}
+            elementMage={weaponElementMage}
+          />
           <Divider css={{ margin: '12px 0' }} />
         </>
       )}

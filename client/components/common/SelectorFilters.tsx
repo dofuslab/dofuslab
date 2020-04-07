@@ -96,6 +96,11 @@ const SelectorFilters: React.FC<IProps> = ({
     [dispatch],
   );
 
+  const onResetAll = React.useCallback(() => {
+    onReset();
+    setSearch('');
+  }, [onReset]);
+
   const { t } = useTranslation(['common', 'stat']);
 
   return (
@@ -249,7 +254,7 @@ const SelectorFilters: React.FC<IProps> = ({
           )}
         </ClassNames>
         <ResetAllButton
-          onReset={onReset}
+          onReset={onResetAll}
           css={{
             display: 'none',
             [mq[1]]: { display: 'block', margin: '0 0 0 12px' },

@@ -92,10 +92,15 @@ const Home: React.FC<IProps> = ({
               <ResponsiveGrid numColumns={[2]} css={{ marginBottom: 20 }}>
                 {weapon && customSet && weapon.item.weaponStats && (
                   <>
-                    <BasicItemCard item={weapon.item} showOnlyWeaponStats />
+                    <BasicItemCard
+                      item={weapon.item}
+                      showOnlyWeaponStats
+                      weaponElementMage={weapon.weaponElementMage}
+                    />
                     <WeaponDamage
                       weaponStats={weapon.item.weaponStats}
                       customSet={customSet}
+                      weaponElementMage={weapon.weaponElementMage}
                     />
                   </>
                 )}

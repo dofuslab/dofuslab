@@ -29,7 +29,12 @@ from app.utils import get_or_create_custom_set, save_custom_sets, anonymous_or_v
 from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from app.database.base import Base
-from app.database.enums import Stat, WeaponEffectType, SpellEffectType
+from app.database.enums import (
+    Stat,
+    WeaponEffectType,
+    SpellEffectType,
+    WeaponElementMage,
+)
 from app.verify_email_utils import encode_token, generate_url
 import app.mutation_validation_utils as validation
 import graphene
@@ -81,6 +86,7 @@ class NonNullConnection(relay.Connection, abstract=True):
 StatEnum = graphene.Enum.from_enum(Stat)
 WeaponEffectEnum = graphene.Enum.from_enum(WeaponEffectType)
 SpellEffectEnum = graphene.Enum.from_enum(SpellEffectType)
+WeaponElementMageEnum = graphene.Enum.from_enum(WeaponElementMage)
 
 
 class ItemStat(SQLAlchemyObjectType):
@@ -226,7 +232,7 @@ class EquippedItem(SQLAlchemyObjectType):
     class Meta:
         model = ModelEquippedItem
         interfaces = (GlobalNode,)
-        only_fields = ("id", "item", "slot", "exos")
+        only_fields = ("id", "item", "slot", "exos", "weapon_element_mage")
 
 
 class CustomSetStats(SQLAlchemyObjectType):
@@ -519,6 +525,7 @@ class MageEquippedItem(graphene.Mutation):
     class Arguments:
         equipped_item_id = graphene.UUID(required=True)
         stats = graphene.NonNull(graphene.List(graphene.NonNull(CustomSetExosInput)))
+        weapon_element_mage = graphene.Argument(WeaponElementMageEnum)
 
     equipped_item = graphene.Field(EquippedItem, required=True)
 
@@ -526,6 +533,7 @@ class MageEquippedItem(graphene.Mutation):
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
             equipped_item_id = kwargs.get("equipped_item_id")
+            weapon_element_mage = kwargs.get("weapon_element_mage")
             stats = kwargs.get("stats")
             equipped_item = db_session.query(ModelEquippedItem).get(equipped_item_id)
             if (
@@ -546,6 +554,9 @@ class MageEquippedItem(graphene.Mutation):
             )
             if stats:
                 db_session.add_all(exo_models)
+            if weapon_element_mage and equipped_item.slot.name != "Weapon":
+                raise GraphQLError(_("Invalid element mage on non-weapon item."))
+            equipped_item.weapon_element_mage = WeaponElementMage(weapon_element_mage)
             equipped_item.custom_set.last_modified = datetime.now()
 
         return MageEquippedItem(equipped_item=equipped_item)

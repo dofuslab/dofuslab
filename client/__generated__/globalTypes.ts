@@ -105,6 +105,24 @@ export enum WeaponEffectType {
   WATER_STEAL = "WATER_STEAL",
 }
 
+/**
+ * An enumeration.
+ */
+export enum WeaponElementMage {
+  AIR_50 = "AIR_50",
+  AIR_68 = "AIR_68",
+  AIR_85 = "AIR_85",
+  EARTH_50 = "EARTH_50",
+  EARTH_68 = "EARTH_68",
+  EARTH_85 = "EARTH_85",
+  FIRE_50 = "FIRE_50",
+  FIRE_68 = "FIRE_68",
+  FIRE_85 = "FIRE_85",
+  WATER_50 = "WATER_50",
+  WATER_68 = "WATER_68",
+  WATER_85 = "WATER_85",
+}
+
 export interface CustomSetExosInput {
   stat: Stat;
   value: number;

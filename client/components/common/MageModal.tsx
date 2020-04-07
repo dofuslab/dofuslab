@@ -5,10 +5,17 @@ import { jsx, ClassNames } from '@emotion/core';
 import Modal from 'antd/lib/modal';
 import Select, { LabeledValue } from 'antd/lib/select';
 import Divider from 'antd/lib/divider';
+import Button from 'antd/lib/button/button';
 
 import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
-import { getStatsMaps, checkAuthentication, useCustomSet } from 'common/utils';
-import { Stat } from '__generated__/globalTypes';
+import {
+  getStatsMaps,
+  checkAuthentication,
+  useCustomSet,
+  effectToIconUrl,
+  elementMageToWeaponEffect,
+} from 'common/utils';
+import { Stat, WeaponElementMage } from '__generated__/globalTypes';
 import { MageAction } from 'common/types';
 import { useTranslation } from 'i18n';
 import MageInputNumber from './MageInputNumber';
@@ -22,6 +29,7 @@ import {
 } from 'graphql/mutations/__generated__/mageEquippedItem';
 import MageEquippedItemMutation from 'graphql/mutations/mageEquippedItem.graphql';
 import { mq } from 'common/constants';
+import { WeaponEffectsList, TruncatableText } from 'common/wrappers';
 
 const { Option } = Select;
 
@@ -47,7 +55,8 @@ const statLineCss = {
   display: 'flex',
   alignItems: 'center',
   height: 42,
-  [mq[1]]: { paddingRight: 12 },
+  marginLeft: 24,
+  minWidth: 0,
 };
 
 const deleteStatWrapper = {
@@ -147,12 +156,17 @@ const MageModal: React.FC<IProps> = ({
       })),
   });
 
+  const [weaponElementMage, setWeaponElementMage] = React.useState<
+    WeaponElementMage | undefined
+  >();
+
   const [mutate] = useMutation<mageEquippedItem, mageEquippedItemVariables>(
     MageEquippedItemMutation,
     {
       variables: {
         equippedItemId: equippedItem.id,
         stats: calcStatsDiff(originalStatsMap, statsState),
+        weaponElementMage,
       },
       optimisticResponse: ({ stats }) => ({
         mageEquippedItem: {
@@ -179,7 +193,7 @@ const MageModal: React.FC<IProps> = ({
   statsState.originalStats.forEach(({ stat }) => statsSet.add(stat));
   statsState.exos.forEach(({ stat }) => statsSet.add(stat));
 
-  const { t } = useTranslation(['stat', 'mage']);
+  const { t } = useTranslation(['stat', 'mage', 'weapon_spell_effect']);
 
   const onAddStat = React.useCallback(
     ({ value }: LabeledValue) => {
@@ -224,6 +238,54 @@ const MageModal: React.FC<IProps> = ({
           onOk={onOk}
           zIndex={1061} // higher than popover (1030) and tooltip (1060)
         >
+          {equippedItem.item.weaponStats && (
+            <>
+              <div
+                css={{
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1fr',
+                  alignSelf: 'stretch',
+                }}
+              >
+                <WeaponEffectsList
+                  css={{ marginLeft: 24 }}
+                  weaponStats={equippedItem.item.weaponStats}
+                  innerDivStyle={{ marginBottom: 8 }}
+                  elementMage={weaponElementMage}
+                />
+                <div css={{ position: 'relative', marginLeft: 24 }}>
+                  <div
+                    css={deleteStatWrapper}
+                    onClick={() => {
+                      setWeaponElementMage(undefined);
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faTimes} />
+                  </div>
+                  <Select<WeaponElementMage>
+                    size="large"
+                    value={weaponElementMage}
+                    onChange={setWeaponElementMage}
+                    dropdownClassName={css({ zIndex: 1062 })}
+                    css={{ width: '100%', fontSize: '0.75rem' }}
+                  >
+                    {Object.values(WeaponElementMage).map(v => (
+                      <Option key={v} value={v}>
+                        <div css={{ display: 'flex', alignItems: 'center' }}>
+                          <img
+                            src={effectToIconUrl(elementMageToWeaponEffect(v))}
+                            css={{ width: 16, marginRight: 8 }}
+                          />{' '}
+                          {t(v, { ns: 'weapon_spell_effect' })}
+                        </div>
+                      </Option>
+                    ))}
+                  </Select>
+                </div>
+              </div>
+              <Divider css={{ margin: '12px 0' }} />
+            </>
+          )}
           <div
             css={{
               fontSize: '0.75rem',
@@ -259,7 +321,10 @@ const MageModal: React.FC<IProps> = ({
                   dispatch={dispatch}
                   isExo={false}
                 />
-                / {originalStatsMap[statLine.stat].value} {t(statLine.stat)}
+                /{' '}
+                <TruncatableText>
+                  {originalStatsMap[statLine.stat].value} {t(statLine.stat)}
+                </TruncatableText>
               </div>
             ))}
             <Divider css={{ gridColumn: '1 / -1' }} />
@@ -320,18 +385,20 @@ const MageModal: React.FC<IProps> = ({
                 ))}
               </Select>
             </div>
-
             <div css={{ display: 'flex', alignItems: 'center' }}>
-              <a
+              <Button
+                size="large"
+                css={{ fontSize: '0.75rem' }}
                 onClick={() => {
                   dispatch({ type: 'RESET', originalStatsMap });
+                  setWeaponElementMage(undefined);
                 }}
               >
                 <FontAwesomeIcon icon={faRedo} />
                 <span css={{ marginLeft: 8 }}>
                   {t('RESET_TO_ORIGINAL', { ns: 'mage' })}
                 </span>
-              </a>
+              </Button>
             </div>
           </div>
         </Modal>

@@ -13,6 +13,7 @@ import {
   ITEM_BOX_WIDTH,
 } from 'common/mixins';
 import ItemStatsList from './ItemStatsList';
+import { WeaponElementMage } from '__generated__/globalTypes';
 
 interface IProps {
   item: item;
@@ -20,6 +21,7 @@ interface IProps {
   openSetModal?: (set: item_set) => void;
   onClick?: () => void;
   showOnlyWeaponStats?: boolean;
+  weaponElementMage?: WeaponElementMage | null;
 }
 
 const BasicItemCard: React.FC<IProps> = ({
@@ -28,6 +30,7 @@ const BasicItemCard: React.FC<IProps> = ({
   openSetModal,
   onClick,
   showOnlyWeaponStats,
+  weaponElementMage,
 }) => {
   const { t } = useTranslation(['common', 'stat', 'weapon_spell_effect']);
   return (
@@ -72,6 +75,7 @@ const BasicItemCard: React.FC<IProps> = ({
         css={{ paddingLeft: 16, marginBottom: 0 }}
         openSetModal={openSetModal}
         showOnlyWeaponStats={showOnlyWeaponStats}
+        weaponElementMage={weaponElementMage}
       />
     </Card>
   );

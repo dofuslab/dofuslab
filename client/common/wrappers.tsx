@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { jsx } from '@emotion/core';
+import { jsx, CSSObject } from '@emotion/core';
 import styled from '@emotion/styled';
 import BackTop from 'antd/lib/back-top';
 import {
@@ -9,6 +9,7 @@ import {
   getResponsiveGridStyle,
   itemCardStyle,
   BORDER_COLOR,
+  blue6,
 } from './mixins';
 import Card from 'antd/lib/card';
 import Skeleton from 'antd/lib/skeleton';
@@ -19,8 +20,15 @@ import {
   WeaponEffectType,
   SpellEffectType,
   Stat,
+  WeaponElementMage,
 } from '__generated__/globalTypes';
-import { effectToIconUrl, getSimpleEffect } from './utils';
+import {
+  effectToIconUrl,
+  getSimpleEffect,
+  elementMageToWeaponEffect,
+  calcElementMage,
+} from './utils';
+import { item_weaponStats } from 'graphql/fragments/__generated__/item';
 
 interface IResponsiveGrid {
   readonly numColumns: ReadonlyArray<number>;
@@ -168,6 +176,56 @@ export const EffectLine: React.FC<{
         css={{ height: 16, width: 16, marginRight: 8 }}
       />
       {content}
+    </div>
+  );
+};
+
+export const WeaponEffectsList: React.FC<{
+  weaponStats: item_weaponStats;
+  className?: string;
+  innerDivStyle?: CSSObject;
+  elementMage?: WeaponElementMage | null;
+}> = ({ weaponStats, className, innerDivStyle, elementMage }) => {
+  const { t } = useTranslation('weapon_spell_effect');
+  return (
+    <div className={className}>
+      {weaponStats.weaponEffects.map(effect => {
+        let { effectType, minDamage, maxDamage } = effect;
+
+        if (elementMage && effectType === WeaponEffectType.NEUTRAL_DAMAGE) {
+          ({ minDamage, maxDamage } = calcElementMage(
+            elementMage,
+            minDamage || maxDamage,
+            maxDamage,
+          ));
+
+          effectType = elementMageToWeaponEffect(elementMage);
+        }
+
+        return (
+          <div
+            key={`weapon-effect-${effect.id}`}
+            css={{ display: 'flex', alignItems: 'center', ...innerDivStyle }}
+          >
+            <img
+              src={effectToIconUrl(effectType)}
+              css={{ height: 16, width: 16, marginRight: 8 }}
+            />
+            <div
+              css={{
+                color:
+                  elementMage &&
+                  effect.effectType === WeaponEffectType.NEUTRAL_DAMAGE
+                    ? blue6
+                    : 'inherit',
+              }}
+            >
+              {minDamage !== null ? `${minDamage}-` : ''}
+              {maxDamage} {t(effectType)}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

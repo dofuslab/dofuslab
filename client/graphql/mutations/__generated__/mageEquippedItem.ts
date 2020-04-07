@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { CustomSetExosInput, Stat } from "./../../../__generated__/globalTypes";
+import { CustomSetExosInput, WeaponElementMage, Stat } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: mageEquippedItem
@@ -20,6 +20,7 @@ export interface mageEquippedItem_mageEquippedItem_equippedItem {
   __typename: "EquippedItem";
   id: any;
   exos: mageEquippedItem_mageEquippedItem_equippedItem_exos[];
+  weaponElementMage: WeaponElementMage | null;
 }
 
 export interface mageEquippedItem_mageEquippedItem {
@@ -34,4 +35,5 @@ export interface mageEquippedItem {
 export interface mageEquippedItemVariables {
   stats: CustomSetExosInput[];
   equippedItemId: any;
+  weaponElementMage?: WeaponElementMage | null;
 }

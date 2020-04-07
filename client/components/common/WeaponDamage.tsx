@@ -18,18 +18,29 @@ import {
   getStatWithDefault,
   getSimpleEffect,
   calcEffect,
+  calcElementMage,
+  elementMageToWeaponEffect,
 } from 'common/utils';
 import { StatsFromCustomSet, TEffectLine } from 'common/types';
-import { Stat } from '__generated__/globalTypes';
+import {
+  Stat,
+  WeaponElementMage,
+  WeaponEffectType,
+} from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
 import Divider from 'antd/lib/divider';
 
 interface IProps {
   weaponStats: item_weaponStats;
   customSet: customSet;
+  weaponElementMage: WeaponElementMage | null;
 }
 
-const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
+const WeaponDamage: React.FC<IProps> = ({
+  weaponStats,
+  customSet,
+  weaponElementMage,
+}) => {
   const { t } = useTranslation(['weapon_spell_effect', 'stat']);
   const [weaponSkillPower, setWeaponSkillPower] = React.useState(300);
   const statsFromCustomSet = getStatsFromCustomSet(
@@ -53,14 +64,25 @@ const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
 
   const weaponEffectSummaries: Array<TEffectLine> = weaponStats.weaponEffects.map(
     ({ minDamage, maxDamage, effectType, id }) => {
+      let min = minDamage,
+        max = maxDamage,
+        type = effectType;
+      if (type === WeaponEffectType.NEUTRAL_DAMAGE && weaponElementMage) {
+        ({ minDamage: min, maxDamage: max } = calcElementMage(
+          weaponElementMage,
+          min || max,
+          max,
+        ));
+        type = elementMageToWeaponEffect(weaponElementMage);
+      }
       return {
         id,
-        type: effectType,
+        type,
         nonCrit: {
-          min: minDamage
+          min: min
             ? calcEffect(
-                minDamage,
-                effectType,
+                min,
+                type,
                 customSet.level,
                 statsFromCustomSet,
                 { isWeapon: true },
@@ -69,29 +91,29 @@ const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
               )
             : null,
           max: calcEffect(
-            maxDamage,
-            effectType,
+            max,
+            type,
             customSet.level,
             statsFromCustomSet,
             { isWeapon: true },
             damageTypeKey,
             weaponSkillPower,
           ),
-          baseMax: maxDamage,
+          baseMax: max,
         },
         crit:
           weaponStats.baseCritChance === null ||
           weaponStats.critBonusDamage === null
             ? null
             : {
-                min: minDamage
+                min: min
                   ? calcEffect(
-                      minDamage +
-                        (getSimpleEffect(effectType) === 'damage' ||
-                        getSimpleEffect(effectType) === 'heal'
+                      min +
+                        (getSimpleEffect(type) === 'damage' ||
+                        getSimpleEffect(type) === 'heal'
                           ? 0
                           : weaponStats.critBonusDamage),
-                      effectType,
+                      type,
                       customSet.level,
                       statsFromCustomSet,
                       { isWeapon: true, isCrit: true },
@@ -100,12 +122,12 @@ const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
                     )
                   : null,
                 max: calcEffect(
-                  maxDamage +
-                    (getSimpleEffect(effectType) === 'damage' ||
-                    getSimpleEffect(effectType) === 'heal'
+                  max +
+                    (getSimpleEffect(type) === 'damage' ||
+                    getSimpleEffect(type) === 'heal'
                       ? 0
                       : weaponStats.critBonusDamage),
-                  effectType,
+                  type,
                   customSet.level,
                   statsFromCustomSet,
                   { isWeapon: true, isCrit: true },
@@ -113,9 +135,9 @@ const WeaponDamage: React.FC<IProps> = ({ weaponStats, customSet }) => {
                   weaponSkillPower,
                 ),
                 baseMax:
-                  maxDamage +
-                  (getSimpleEffect(effectType) === 'damage' ||
-                  getSimpleEffect(effectType) === 'heal'
+                  max +
+                  (getSimpleEffect(type) === 'damage' ||
+                  getSimpleEffect(type) === 'heal'
                     ? 0
                     : weaponStats.critBonusDamage),
               },

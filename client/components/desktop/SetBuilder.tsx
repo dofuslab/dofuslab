@@ -50,7 +50,7 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
     if (searchBar) {
       searchBar.focus();
     }
-  }, [selectedItemSlot]);
+  }, [selectedItemSlot?.name]);
 
   const statsFromCustomSet = React.useMemo(
     () => getStatsFromCustomSet(customSet),
@@ -127,10 +127,15 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
               >
                 {weapon && customSet && weapon.item.weaponStats && (
                   <>
-                    <BasicItemCard item={weapon.item} showOnlyWeaponStats />
+                    <BasicItemCard
+                      item={weapon.item}
+                      showOnlyWeaponStats
+                      weaponElementMage={weapon.weaponElementMage}
+                    />
                     <WeaponDamage
                       weaponStats={weapon.item.weaponStats}
                       customSet={customSet}
+                      weaponElementMage={weapon.weaponElementMage}
                     />
                   </>
                 )}
