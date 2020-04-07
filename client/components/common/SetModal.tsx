@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import React from 'react';
-import _ from 'lodash';
+import { groupBy } from 'lodash';
 import { jsx } from '@emotion/core';
 import Modal from 'antd/lib/modal';
 import { useQuery } from '@apollo/react-hooks';
@@ -107,7 +107,7 @@ const SetModal: React.FC<IProps> = ({
           }}
         >
           {Object.entries(
-            _.groupBy(
+            groupBy(
               data.setById.bonuses,
               (bonus: set_setById_bonuses) => bonus.numItems,
             ),

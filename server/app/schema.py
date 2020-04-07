@@ -1,4 +1,4 @@
-from app import db
+from app import db, supported_languages, q, session_scope, template_env, limiter
 from app.database.model_item_stat_translation import ModelItemStatTranslation
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_type import ModelItemType
@@ -24,17 +24,18 @@ from app.database.model_spell import ModelSpell
 from app.database.model_spell_variant_pair import ModelSpellVariantPair
 from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_class import ModelClass
-from app.utils import get_or_create_custom_set, save_custom_sets
+from app.tasks import send_email
+from app.utils import get_or_create_custom_set, save_custom_sets, anonymous_or_verified
 from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from app.database.base import Base
 from app.database.enums import Stat, WeaponEffectType
-from app import supported_languages
+from app.verify_email_utils import encode_token, generate_url
 import app.mutation_validation_utils as validation
 import graphene
 import uuid
 from graphql import GraphQLError
-from flask import session
+from flask import session, render_template
 from flask_babel import _
 from flask_login import login_required, login_user, current_user, logout_user
 from functools import lru_cache
@@ -268,10 +269,15 @@ class User(SQLAlchemyObjectType):
 
         return query.all()
 
+    def resolve_email(self, info, **kwargs):
+        if self.uuid != current_user.get_id():
+            raise GraphQLError(_("You are not authorized to make this request."))
+        return self.email
+
     class Meta:
         model = ModelUser
         interfaces = (GlobalNode,)
-        only_fields = ("id", "username", "email", "custom_sets")
+        only_fields = ("id", "username", "email", "custom_sets", "verified")
 
 
 class SpellEffects(SQLAlchemyObjectType):
@@ -410,9 +416,10 @@ scrolled_stat_list = [
 class CreateCustomSet(graphene.Mutation):
     custom_set = graphene.Field(CustomSet, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
-        custom_set = get_or_create_custom_set(None)
-        db.session.commit()
+        with session_scope():
+            custom_set = get_or_create_custom_set(None)
 
         return CreateCustomSet(custom_set=custom_set)
 
@@ -424,19 +431,20 @@ class EditCustomSetStats(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
-        custom_set_id = kwargs.get("custom_set_id")
-        stats = kwargs.get("stats")
-        for base_stat in base_stat_list:
-            if stats[base_stat] < 0 or stats[base_stat] > 999:
-                raise GraphQLError(_("Invalid stat value."))
-        for scrolled_stat in scrolled_stat_list:
-            if stats[scrolled_stat] < 0 or stats[scrolled_stat] > 100:
-                raise GraphQLError(_("Invalid stat value."))
-        custom_set = get_or_create_custom_set(custom_set_id)
-        for stat in base_stat_list + scrolled_stat_list:
-            setattr(custom_set.stats, stat, stats[stat])
-        db.session.commit()
+        with session_scope():
+            custom_set_id = kwargs.get("custom_set_id")
+            stats = kwargs.get("stats")
+            for base_stat in base_stat_list:
+                if stats[base_stat] < 0 or stats[base_stat] > 999:
+                    raise GraphQLError(_("Invalid stat value."))
+            for scrolled_stat in scrolled_stat_list:
+                if stats[scrolled_stat] < 0 or stats[scrolled_stat] > 100:
+                    raise GraphQLError(_("Invalid stat value."))
+            custom_set = get_or_create_custom_set(custom_set_id)
+            for stat in base_stat_list + scrolled_stat_list:
+                setattr(custom_set.stats, stat, stats[stat])
 
         return EditCustomSetStats(custom_set=custom_set)
 
@@ -449,18 +457,19 @@ class EditCustomSetMetadata(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
-        custom_set_id = kwargs.get("custom_set_id")
-        name = kwargs.get("name")
-        level = kwargs.get("level")
-        if len(name) > 50:
-            raise GraphQLError(_("The set name is too long."))
-        if level < 1 or level > 200:
-            raise GraphQLError(_("Invalid set level (must be 1-200)."))
-        custom_set = get_or_create_custom_set(custom_set_id)
-        custom_set.name = name
-        custom_set.level = level
-        db.session.commit()
+        with session_scope():
+            custom_set_id = kwargs.get("custom_set_id")
+            name = kwargs.get("name")
+            level = kwargs.get("level")
+            if len(name) > 50:
+                raise GraphQLError(_("The set name is too long."))
+            if level < 1 or level > 200:
+                raise GraphQLError(_("Invalid set level (must be 1-200)."))
+            custom_set = get_or_create_custom_set(custom_set_id)
+            custom_set.name = name
+            custom_set.level = level
 
         return EditCustomSetMetadata(custom_set=custom_set)
 
@@ -474,13 +483,14 @@ class UpdateCustomSetItem(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
-        custom_set_id = kwargs.get("custom_set_id")
-        item_slot_id = kwargs.get("item_slot_id")
-        item_id = kwargs.get("item_id")
-        custom_set = get_or_create_custom_set(custom_set_id)
-        custom_set.equip_item(item_id, item_slot_id)
-        db.session.commit()
+        with session_scope():
+            custom_set_id = kwargs.get("custom_set_id")
+            item_slot_id = kwargs.get("item_slot_id")
+            item_id = kwargs.get("item_id")
+            custom_set = get_or_create_custom_set(custom_set_id)
+            custom_set.equip_item(item_id, item_slot_id)
 
         return UpdateCustomSetItem(custom_set=custom_set)
 
@@ -492,13 +502,14 @@ class EquipSet(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
-        custom_set_id = kwargs.get("custom_set_id")
-        set_id = kwargs.get("set_id")
-        custom_set = get_or_create_custom_set(custom_set_id)
-        set_obj = db.session.query(ModelSet).get(set_id)
-        custom_set.equip_set(set_obj)
-        db.session.commit()
+        with session_scope() as db_session:
+            custom_set_id = kwargs.get("custom_set_id")
+            set_id = kwargs.get("set_id")
+            custom_set = get_or_create_custom_set(custom_set_id)
+            set_obj = db_session.query(ModelSet).get(set_id)
+            custom_set.equip_set(set_obj)
 
         return EquipSet(custom_set=custom_set)
 
@@ -510,30 +521,31 @@ class MageEquippedItem(graphene.Mutation):
 
     equipped_item = graphene.Field(EquippedItem, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
-        equipped_item_id = kwargs.get("equipped_item_id")
-        stats = kwargs.get("stats")
-        equipped_item = db.session.query(ModelEquippedItem).get(equipped_item_id)
-        if (
-            equipped_item.custom_set.owner_id
-            and equipped_item.custom_set.owner_id != current_user.get_id()
-        ):
-            raise GraphQLError(_("You don't have permission to edit that set."))
-        db.session.query(ModelEquippedItemExo).filter_by(
-            equipped_item_id=equipped_item_id
-        ).delete(synchronize_session=False)
-        exo_models = map(
-            lambda stat_line: ModelEquippedItemExo(
-                stat=Stat(stat_line.stat),
-                value=stat_line.value,
-                equipped_item_id=equipped_item_id,
-            ),
-            stats,
-        )
-        if stats:
-            db.session.add_all(exo_models)
-        equipped_item.custom_set.last_modified = datetime.now()
-        db.session.commit()
+        with session_scope() as db_session:
+            equipped_item_id = kwargs.get("equipped_item_id")
+            stats = kwargs.get("stats")
+            equipped_item = db_session.query(ModelEquippedItem).get(equipped_item_id)
+            if (
+                equipped_item.custom_set.owner_id
+                and equipped_item.custom_set.owner_id != current_user.get_id()
+            ):
+                raise GraphQLError(_("You don't have permission to edit that set."))
+            db_session.query(ModelEquippedItemExo).filter_by(
+                equipped_item_id=equipped_item_id
+            ).delete(synchronize_session=False)
+            exo_models = map(
+                lambda stat_line: ModelEquippedItemExo(
+                    stat=Stat(stat_line.stat),
+                    value=stat_line.value,
+                    equipped_item_id=equipped_item_id,
+                ),
+                stats,
+            )
+            if stats:
+                db_session.add_all(exo_models)
+            equipped_item.custom_set.last_modified = datetime.now()
 
         return MageEquippedItem(equipped_item=equipped_item)
 
@@ -547,32 +559,33 @@ class SetEquippedItemExo(graphene.Mutation):
 
     equipped_item = graphene.Field(EquippedItem, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
-        equipped_item_id = kwargs.get("equipped_item_id")
-        stat = Stat(kwargs.get("stat"))
-        has_stat = kwargs.get("has_stat")
-        equipped_item = db.session.query(ModelEquippedItem).get(equipped_item_id)
-        if (
-            equipped_item.custom_set.owner_id
-            and equipped_item.custom_set.owner_id != current_user.get_id()
-        ):
-            raise GraphQLError(_("You don't have permission to edit that set."))
-        if stat != Stat.AP and stat != Stat.MP and stat != Stat.RANGE:
-            raise GraphQLError(_("Invalid stat to set exo."))
-        exo_obj = (
-            db.session.query(ModelEquippedItemExo)
-            .filter_by(equipped_item_id=equipped_item_id, stat=stat)
-            .one_or_none()
-        )
-        if not exo_obj and has_stat:
-            exo_obj = ModelEquippedItemExo(
-                stat=stat, value=1, equipped_item_id=equipped_item_id
+        with session_scope() as db_session:
+            equipped_item_id = kwargs.get("equipped_item_id")
+            stat = Stat(kwargs.get("stat"))
+            has_stat = kwargs.get("has_stat")
+            equipped_item = db_session.query(ModelEquippedItem).get(equipped_item_id)
+            if (
+                equipped_item.custom_set.owner_id
+                and equipped_item.custom_set.owner_id != current_user.get_id()
+            ):
+                raise GraphQLError(_("You don't have permission to edit that set."))
+            if stat != Stat.AP and stat != Stat.MP and stat != Stat.RANGE:
+                raise GraphQLError(_("Invalid stat to set exo."))
+            exo_obj = (
+                db_session.query(ModelEquippedItemExo)
+                .filter_by(equipped_item_id=equipped_item_id, stat=stat)
+                .one_or_none()
             )
-            db.session.add(exo_obj)
-        if exo_obj and not has_stat:
-            db.session.delete(exo_obj)
-        equipped_item.custom_set.last_modified = datetime.now()
-        db.session.commit()
+            if not exo_obj and has_stat:
+                exo_obj = ModelEquippedItemExo(
+                    stat=stat, value=1, equipped_item_id=equipped_item_id
+                )
+                db_session.add(exo_obj)
+            if exo_obj and not has_stat:
+                db_session.delete(exo_obj)
+            equipped_item.custom_set.last_modified = datetime.now()
 
         return SetEquippedItemExo(equipped_item=equipped_item)
 
@@ -584,14 +597,15 @@ class DeleteCustomSetItem(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
+    @anonymous_or_verified
     def mutate(self, info, **kwargs):
-        custom_set_id = kwargs.get("custom_set_id")
-        item_slot_id = kwargs.get("item_slot_id")
-        custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
-        if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
-            raise GraphQLError(_("You don't have permission to edit that set."))
-        custom_set.unequip_item(item_slot_id)
-        db.session.commit()
+        with session_scope() as db_session:
+            custom_set_id = kwargs.get("custom_set_id")
+            item_slot_id = kwargs.get("item_slot_id")
+            custom_set = db_session.query(ModelCustomSet).get(custom_set_id)
+            if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
+                raise GraphQLError(_("You don't have permission to edit that set."))
+            custom_set.unequip_item(item_slot_id)
 
         return DeleteCustomSetItem(custom_set=custom_set)
 
@@ -606,23 +620,30 @@ class RegisterUser(graphene.Mutation):
     ok = graphene.Boolean(required=True)
 
     def mutate(self, info, **kwargs):
-        username = kwargs.get("username")
-        email = kwargs.get("email")
-        password = kwargs.get("password")
-        validation.validate_registration(username, email, password)
-        try:
-            if current_user.is_authenticated:
-                raise GraphQLError(_("You are already logged in."))
-            user = ModelUser(
-                username=username,
-                email=email,
-                password=ModelUser.generate_hash(password),
-            )
-            user.save_to_db()
-            login_user(user)
-            save_custom_sets()
-        except Exception as e:
-            raise GraphQLError(_("An error occurred while registering."))
+        with session_scope() as db_session:
+            username = kwargs.get("username")
+            email = kwargs.get("email")
+            password = kwargs.get("password")
+            validation.validate_registration(username, email, password)
+            try:
+                if current_user.is_authenticated:
+                    raise GraphQLError(_("You are already logged in."))
+                user = ModelUser(
+                    username=username,
+                    email=email,
+                    password=ModelUser.generate_hash(password),
+                )
+                token = encode_token(user.email)
+                verify_url = generate_url("verify_email.verify_email", token)
+                template = template_env.get_template("verify_email.html")
+                content = template.render(display_name=username, verify_url=verify_url)
+                q.enqueue(send_email, user.email, content)
+                db_session.add(user)
+                db_session.flush()
+                login_user(user)
+                save_custom_sets()
+            except Exception as e:
+                raise GraphQLError(_("An error occurred while registering."))
 
         return RegisterUser(user=user, ok=True)
 
@@ -660,6 +681,33 @@ class LogoutUser(graphene.Mutation):
         if current_user.is_authenticated:
             logout_user()
         return LogoutUser(ok=True)
+
+
+class ResendVerificationEmail(graphene.Mutation):
+    ok = graphene.Boolean(required=True)
+
+    @limiter.limit(
+        "1/minute", error_message=_("Please wait a minute before trying again.")
+    )
+    @limiter.limit(
+        "5/hour",
+        error_message=_(
+            "You have sent too many verification emails. Please wait awhile before trying again."
+        ),
+    )
+    def mutate(self, info):
+        with session_scope() as db_session:
+            user = current_user._get_current_object()
+            if not current_user.is_authenticated:
+                raise GraphQLError(_("You must be signed in to do that."))
+            if user.verified:
+                raise GraphQLError(_("Your account is already verified."))
+            token = encode_token(user.email)
+            verify_url = generate_url("verify_email.verify_email", token)
+            template = template_env.get_template("verify_email.html")
+            content = template.render(display_name=user.username, verify_url=verify_url)
+            q.enqueue(send_email, user.email, content)
+            return ResendVerificationEmail(ok=True)
 
 
 class ItemFilters(graphene.InputObjectType):
@@ -709,7 +757,7 @@ class Query(graphene.ObjectType):
                         func.count(ModelItemStat.uuid).label("num_stats_matched"),
                     )
                     .filter(
-                        ModelItemStat.stat.in_(stat_names), ModelItemStat.max_value > 0
+                        ModelItemStat.stat.in_(stat_names), ModelItemStat.max_value > 0,
                     )
                     .group_by(ModelItemStat.item_id)
                     .subquery()
@@ -745,65 +793,74 @@ class Query(graphene.ObjectType):
     )
 
     def resolve_sets(self, info, **kwargs):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
-        filters = kwargs.get("filters")
-        set_query = (
-            db.session.query(ModelSet)
-            .join(ModelSetTranslation)
-            .filter_by(locale=locale)
-        )
+        with session_scope() as db_session:
+            locale = info.context.accept_languages.best_match(
+                supported_languages, default="en"
+            )
+            filters = kwargs.get("filters")
+            set_query = (
+                db_session.query(ModelSet)
+                .join(ModelSetTranslation)
+                .filter_by(locale=locale)
+            )
 
-        level_sq = (
-            db.session.query(ModelItem.set_id, func.max(ModelItem.level).label("level"))
-            .group_by(ModelItem.set_id)
-            .subquery()
-        )
-        set_query = set_query.join(level_sq, ModelSet.uuid == level_sq.c.set_id)
-
-        if filters:
-            search = filters.search.strip()
-            if filters.stats:
-                set_query = set_query.join(ModelSetBonus)
-                stat_names = set(map(lambda x: Stat(x).name, filters.stats))
-                stat_sq = (
-                    db.session.query(ModelSetBonus.set_id, ModelSetBonus.stat)
-                    .group_by(ModelSetBonus.set_id, ModelSetBonus.stat)
-                    .filter(ModelSetBonus.stat.in_(stat_names), ModelSetBonus.value > 0)
-                ).subquery()
-                bonus_sq = (
-                    db.session.query(
-                        ModelSetBonus.set_id,
-                        func.count(distinct(stat_sq.c.stat)).label("num_stats_matched"),
-                    )
-                    .join(stat_sq, ModelSetBonus.set_id == stat_sq.c.set_id)
-                    .group_by(ModelSetBonus.set_id)
-                    .subquery()
+            level_sq = (
+                db_session.query(
+                    ModelItem.set_id, func.max(ModelItem.level).label("level")
                 )
-                set_query = set_query.join(
-                    bonus_sq, ModelSet.uuid == bonus_sq.c.set_id
-                ).filter(bonus_sq.c.num_stats_matched == len(stat_names))
-            if filters.max_level:
-                set_query = set_query.filter(level_sq.c.level <= filters.max_level)
-            if filters.search:
-                set_query = (
-                    set_query.join(ModelItem)
-                    .join(ModelItemTranslation)
-                    .filter(
-                        func.upper(ModelSetTranslation.name).contains(
-                            func.upper(filters.search.strip())
+                .group_by(ModelItem.set_id)
+                .subquery()
+            )
+            set_query = set_query.join(level_sq, ModelSet.uuid == level_sq.c.set_id)
+
+            if filters:
+                search = filters.search.strip()
+                if filters.stats:
+                    set_query = set_query.join(ModelSetBonus)
+                    stat_names = set(map(lambda x: Stat(x).name, filters.stats))
+                    stat_sq = (
+                        db_session.query(ModelSetBonus.set_id, ModelSetBonus.stat)
+                        .group_by(ModelSetBonus.set_id, ModelSetBonus.stat)
+                        .filter(
+                            ModelSetBonus.stat.in_(stat_names), ModelSetBonus.value > 0
                         )
-                        | func.upper(ModelItemTranslation.name).contains(
-                            func.upper(filters.search.strip())
+                    ).subquery()
+                    bonus_sq = (
+                        db_session.query(
+                            ModelSetBonus.set_id,
+                            func.count(distinct(stat_sq.c.stat)).label(
+                                "num_stats_matched"
+                            ),
+                        )
+                        .join(stat_sq, ModelSetBonus.set_id == stat_sq.c.set_id)
+                        .group_by(ModelSetBonus.set_id)
+                        .subquery()
+                    )
+                    set_query = set_query.join(
+                        bonus_sq, ModelSet.uuid == bonus_sq.c.set_id
+                    ).filter(bonus_sq.c.num_stats_matched == len(stat_names))
+                if filters.max_level:
+                    set_query = set_query.filter(level_sq.c.level <= filters.max_level)
+                if filters.search:
+                    set_query = (
+                        set_query.join(ModelItem)
+                        .join(ModelItemTranslation)
+                        .filter(
+                            func.upper(ModelSetTranslation.name).contains(
+                                func.upper(filters.search.strip())
+                            )
+                            | func.upper(ModelItemTranslation.name).contains(
+                                func.upper(filters.search.strip())
+                            )
+                        )
+                        .group_by(
+                            ModelSet.uuid, level_sq.c.level, ModelSetTranslation.name
                         )
                     )
-                    .group_by(ModelSet.uuid, level_sq.c.level, ModelSetTranslation.name)
-                )
 
-        return set_query.order_by(
-            level_sq.c.level.desc(), ModelSetTranslation.name.asc()
-        ).all()
+            return set_query.order_by(
+                level_sq.c.level.desc(), ModelSetTranslation.name.asc()
+            ).all()
 
     custom_sets = graphene.List(CustomSet)
 
@@ -859,6 +916,7 @@ class Mutation(graphene.ObjectType):
     edit_custom_set_stats = EditCustomSetStats.Field()
     equip_set = EquipSet.Field()
     create_custom_set = CreateCustomSet.Field()
+    resend_verification_email = ResendVerificationEmail.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

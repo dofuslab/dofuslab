@@ -19,6 +19,7 @@ import SignUpModal from '../common/SignUpModal';
 import MyBuilds from '../common/MyBuilds';
 import Link from 'next/link';
 import { mq } from 'common/constants';
+import StatusChecker from 'components/common/StatusChecker';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -80,6 +81,7 @@ const Layout = (props: LayoutProps) => {
           }
         `}
       />
+      <StatusChecker />
       <AntdLayout.Header
         css={{
           display: 'flex',
@@ -99,17 +101,22 @@ const Layout = (props: LayoutProps) => {
               {t('WELCOME_MESSAGE', {
                 displayName: data.currentUser.username,
               })}
-              <Button onClick={openDrawer} css={{ marginLeft: 12 }}>
-                {t('MY_BUILDS', { ns: 'common' })}
-              </Button>
-              <Drawer
-                visible={drawerVisible}
-                closable
-                onClose={closeDrawer}
-                width={480}
-              >
-                <MyBuilds />
-              </Drawer>
+              {data.currentUser.verified && (
+                <>
+                  <Button onClick={openDrawer} css={{ marginLeft: 12 }}>
+                    {t('MY_BUILDS', { ns: 'common' })}
+                  </Button>
+
+                  <Drawer
+                    visible={drawerVisible}
+                    closable
+                    onClose={closeDrawer}
+                    width={480}
+                  >
+                    <MyBuilds />
+                  </Drawer>
+                </>
+              )}
               <Button
                 key="logout"
                 onClick={logoutHandler}

@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+  </head>
+  <body>
+    <div id="content">
+      <p>{{ _("Hey {}".format(display_name)) }},</p>
+      <p>
+        {{ _("Thanks for signing up for DofusLab. Please follow the link to
+        activate your account.") }}
+      </p>
+      <a href="{{ verify_url }}">{{ verify_url }}</a>
+      <p>{{ _("Cheers!") }}<br />{{ _("- The DofusLab team") }}</p>
+    </div>
+  </body>
+</html>

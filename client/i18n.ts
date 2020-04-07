@@ -6,8 +6,6 @@ const NextI18NextInstance = new NextI18Next({
   otherLanguages: ['fr', 'de', 'pt', 'it', 'es'],
   interpolation: {
     format: (value, format) => {
-      console.log(value);
-      console.log(value instanceof Date);
       if (value instanceof Date) {
         return moment(value).format(format || 'll');
       }

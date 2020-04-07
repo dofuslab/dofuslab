@@ -2,11 +2,21 @@ import sqlalchemy
 from app import db
 from .base import Base
 from app import bcrypt, login_manager
-from sqlalchemy import Column, ForeignKey, Integer, String, LargeBinary, func
+from sqlalchemy import (
+    Column,
+    ForeignKey,
+    Integer,
+    String,
+    DateTime,
+    LargeBinary,
+    Boolean,
+    func,
+)
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
 from flask_login import UserMixin
+from datetime import datetime
 
 
 class ModelUser(UserMixin, Base):
@@ -17,14 +27,15 @@ class ModelUser(UserMixin, Base):
         server_default=sqlalchemy.text("uuid_generate_v4()"),
         primary_key=True,
     )
-    username = Column("username", String(120), unique=True, nullable=False)
-    email = Column("email", String(320), unique=True, nullable=False)
+    username = Column("username", String(120), unique=True, nullable=False, index=True)
+    email = Column("email", String(320), unique=True, nullable=False, index=True)
     password = Column("password", LargeBinary(120), nullable=False)
     custom_sets = relationship("ModelCustomSet", backref="owner")
-
-    def save_to_db(self):
-        db.session.add(self)
-        db.session.commit()
+    creation_date = Column("creation_date", DateTime, default=datetime.now)
+    verification_email_sent = Column(
+        "verification_email_sent", Boolean, nullable=False, default=False
+    )
+    verified = Column("verified", Boolean, nullable=False, default=False, index=True)
 
     def check_password(self, candidate):
         return bcrypt.check_password_hash(self.password, candidate)

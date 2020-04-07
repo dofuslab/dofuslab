@@ -6,7 +6,7 @@ import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
 import { blue6 } from 'common/mixins';
-import { Effect, Stat } from '__generated__/globalTypes';
+import { Stat, WeaponEffectType } from '__generated__/globalTypes';
 import Divider from 'antd/lib/divider';
 
 interface IProps {
@@ -18,28 +18,28 @@ interface IProps {
   readonly showImg?: boolean;
 }
 
-const weaponEffectToIconUrl = (effect: Effect) => {
+const weaponEffectToIconUrl = (effect: WeaponEffectType) => {
   switch (effect) {
-    case Effect.AIR_DAMAGE:
-    case Effect.AIR_STEAL:
+    case WeaponEffectType.AIR_DAMAGE:
+    case WeaponEffectType.AIR_STEAL:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Agility.svg';
-    case Effect.EARTH_DAMAGE:
-    case Effect.EARTH_STEAL:
+    case WeaponEffectType.EARTH_DAMAGE:
+    case WeaponEffectType.EARTH_STEAL:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Strength.svg';
-    case Effect.FIRE_DAMAGE:
-    case Effect.FIRE_STEAL:
+    case WeaponEffectType.FIRE_DAMAGE:
+    case WeaponEffectType.FIRE_STEAL:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Intelligence.svg';
-    case Effect.NEUTRAL_DAMAGE:
-    case Effect.NEUTRAL_STEAL:
+    case WeaponEffectType.NEUTRAL_DAMAGE:
+    case WeaponEffectType.NEUTRAL_STEAL:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Neutral.svg';
-    case Effect.WATER_DAMAGE:
-    case Effect.WATER_STEAL:
+    case WeaponEffectType.WATER_DAMAGE:
+    case WeaponEffectType.WATER_STEAL:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Chance.svg';
-    case Effect.AP:
+    case WeaponEffectType.AP:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Action_Point.svg';
-    case Effect.MP:
+    case WeaponEffectType.MP:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Movement_Point.svg';
-    case Effect.HP_RESTORED:
+    case WeaponEffectType.HP_RESTORED:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Health_Point.svg';
   }
 };
@@ -76,7 +76,6 @@ const renderConditions = (conditionsObj: any, depth = 0) => {
     throw new Error('Unknown conditions object');
   } catch (e) {
     console.error('Error parsing conditions object:', e);
-    console.log(conditionsObj);
   }
 
   return null;

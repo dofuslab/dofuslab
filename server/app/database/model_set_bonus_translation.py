@@ -17,7 +17,8 @@ class ModelSetBonusTranslation(Base):
         UUID(as_uuid=True),
         ForeignKey("set_bonus.uuid", ondelete="CASCADE"),
         nullable=False,
+        index=True,
     )
-    locale = Column("locale", String, nullable=False)
+    locale = Column("locale", String, nullable=False, index=True)
 
     custom_stat = Column("custom_stat", String, nullable=False)

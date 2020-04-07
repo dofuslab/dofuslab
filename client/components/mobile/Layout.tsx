@@ -21,6 +21,7 @@ import SignUpModal from '../common/SignUpModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTshirt, faDoorOpen } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import StatusChecker from 'components/common/StatusChecker';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -64,17 +65,21 @@ const Layout = (props: LayoutProps) => {
 
   const menu = (
     <Menu>
-      <Menu.Item key="MY_BUILDS" css={{ padding: '8px 12px' }}>
-        <Link href="/my-builds" as="/my-builds">
-          <a css={{ fontSize: '0.75rem' }}>
-            <span css={iconWrapper}>
-              <FontAwesomeIcon icon={faTshirt} />
-            </span>
-            {t('MY_BUILDS', { ns: 'common' })}
-          </a>
-        </Link>
-      </Menu.Item>
-      <Menu.Divider />
+      {data?.currentUser?.verified && (
+        <>
+          <Menu.Item key="MY_BUILDS" css={{ padding: '8px 12px' }}>
+            <Link href="/my-builds" as="/my-builds">
+              <a css={{ fontSize: '0.75rem' }}>
+                <span css={iconWrapper}>
+                  <FontAwesomeIcon icon={faTshirt} />
+                </span>
+                {t('MY_BUILDS', { ns: 'common' })}
+              </a>
+            </Link>
+          </Menu.Item>
+          <Menu.Divider />
+        </>
+      )}
       <Menu.Item key="LOGOUT" css={{ padding: '8px 12px' }}>
         <a css={{ fontSize: '0.75rem' }} onClick={logoutHandler}>
           <span css={iconWrapper}>
@@ -95,6 +100,7 @@ const Layout = (props: LayoutProps) => {
           }
         `}
       />
+      <StatusChecker />
       <AntdLayout.Header
         css={{
           display: 'flex',
