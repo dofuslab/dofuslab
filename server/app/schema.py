@@ -556,7 +556,9 @@ class MageEquippedItem(graphene.Mutation):
                 db_session.add_all(exo_models)
             if weapon_element_mage and equipped_item.slot.name != "Weapon":
                 raise GraphQLError(_("Invalid element mage on non-weapon item."))
-            equipped_item.weapon_element_mage = WeaponElementMage(weapon_element_mage)
+            equipped_item.weapon_element_mage = (
+                WeaponElementMage(weapon_element_mage) if weapon_element_mage else None
+            )
             equipped_item.custom_set.last_modified = datetime.now()
 
         return MageEquippedItem(equipped_item=equipped_item)

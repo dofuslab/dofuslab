@@ -56,11 +56,12 @@ const WeaponDamage: React.FC<IProps> = ({
 
   const rangedOnly = weaponStats.minRange && weaponStats.minRange > 1;
   const damageTypeKey = rangedOnly ? 'ranged' : 'melee';
-  const critRate =
+  let critRate =
     typeof weaponStats.baseCritChance === 'number'
       ? getStatWithDefault(statsFromCustomSet, Stat.CRITICAL) +
         weaponStats.baseCritChance
       : null;
+  critRate = critRate === null ? null : Math.min(Math.max(critRate, 0), 100);
 
   const weaponEffectSummaries: Array<TEffectLine> = weaponStats.weaponEffects.map(
     ({ minDamage, maxDamage, effectType, id }) => {

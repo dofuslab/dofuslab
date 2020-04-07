@@ -153,11 +153,12 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
       },
     );
 
-    const critRate =
+    let critRate =
       typeof spellStats.baseCritChance === 'number'
         ? getStatWithDefault(statsFromCustomSet, Stat.CRITICAL) +
           spellStats?.baseCritChance
         : null;
+    critRate = critRate === null ? null : Math.min(Math.max(critRate, 0), 100);
 
     const spellCharacteristics = [
       `${spellStats.apCost}\u00A0${t('AP', { ns: 'stat' })}`,
