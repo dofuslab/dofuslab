@@ -20,37 +20,55 @@ msgstr ""
 
 #: app/mutation_validation_utils.py:18
 msgid "The email you entered is invalid."
-msgstr ""
+msgstr "O email digitado não é válido."
 
 #: app/mutation_validation_utils.py:21
 msgid "There already exists a user with that email."
-msgstr ""
+msgstr "Já existe um usuário com esse email."
 
 #: app/mutation_validation_utils.py:28
 msgid "The display name you entered is invalid."
-msgstr ""
+msgstr "O nome de usuário que você digitou não é válido."
 
 #: app/mutation_validation_utils.py:31
 msgid "There already exists a user with that display name."
-msgstr ""
+msgstr "Esse nome de usuário já está em uso."
 
 #: app/mutation_validation_utils.py:39
 msgid ""
 "Passwords must have a minimum of 8 characters, at least one lowercase "
 "letter, one uppercase letter, and one number."
-msgstr ""
+msgstr "Senhas devem ter, no mínimo, 8 caracteres. Pelo menos uma letra maiúscula,"
+ "uma minúscula e um número."
 
 #: app/schema.py:359 app/schema.py:366
 msgid "You are not authorized to make this request."
 msgstr ""
 
-#: app/schema.py:686
+#: app/schema.py:456 app/schema.py:459
+msgid "Invalid stat value."
+msgstr "Valor de stat inválido."
+
+#: app/schema.py:482
+msgid "The set name is too long."
+msgstr "O nome do set é muito longo."
+
+#: app/schema.py:484
+msgid "Invalid set level (must be 1-200)."
+msgstr "O nível do set é inválido (deve ser entre 1 e 200)"
+
+#: app/schema.py:581
 msgid "Invalid element mage on non-weapon item."
 msgstr ""
 
-#: app/schema.py:713
+#: app/schema.py:397 app/schema.py:434 app/schema.py:466 app/utils.py:15
+#: app/utils.py:17
+msgid "You don't have permission to edit that set."
+msgstr "Você não tem permissão para editar esse set."
+
+#: app/schema.py:608
 msgid "Invalid stat to set exo."
-msgstr ""
+msgstr "Stat inválido para o exo"
 
 #: app/schema.py:763
 #, python-format
@@ -63,7 +81,7 @@ msgstr ""
 
 #: app/schema.py:887 app/schema.py:927 app/schema.py:1063 app/schema.py:1090
 msgid "You are already logged in."
-msgstr ""
+msgstr "Você já está logado."
 
 #: app/schema.py:906 app/schema.py:977
 msgid "Verify your DofusLab account"
@@ -71,11 +89,11 @@ msgstr ""
 
 #: app/schema.py:911
 msgid "An error occurred while registering."
-msgstr ""
+msgstr "Ocorreu um erro durante o cadastro."
 
 #: app/schema.py:932
 msgid "Invalid username or password."
-msgstr ""
+msgstr "Nome de Usuário ou senha inválidos."
 
 #: app/schema.py:957 app/schema.py:1053
 msgid "Please wait a minute before trying again."
