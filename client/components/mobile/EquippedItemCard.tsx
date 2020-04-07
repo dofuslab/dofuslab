@@ -160,11 +160,8 @@ const EquippedItemCard: React.FC<IProps> = ({
           href={{ pathname: '/index', query: { customSetId: customSet.id } }}
           as={customSet ? `/build/${customSet.id}` : '/'}
         >
-          <Button size="large" css={{}}>
-            <FontAwesomeIcon
-              icon={faArrowLeft}
-              css={{ marginRight: 12, fontSize: '0.75rem' }}
-            />
+          <Button size="large" css={{ fontSize: '0.75rem' }}>
+            <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
             {t('BACK')}
           </Button>
         </Link>

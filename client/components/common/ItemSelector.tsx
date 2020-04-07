@@ -163,7 +163,7 @@ const ItemSelector: React.FC<IProps> = ({
             );
           })}
       {(loading || data?.items.pageInfo.hasNextPage) &&
-        Array(PAGE_SIZE)
+        Array(isMobile ? 2 : 12)
           .fill(null)
           .map((_, idx) => (
             <Card
