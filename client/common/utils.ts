@@ -613,25 +613,27 @@ export const calcDamage = (
   const calculatedDamage = Math.floor(
     baseDamage * (1 + multiplierValue / 100) + damageValue,
   );
-  let finalDamageMod = 0;
+
+  let finalDamageMod =
+    1 + getStatWithDefault(stats, Stat.PCT_FINAL_DAMAGE) / 100;
   if (damageTypeInput.isWeapon) {
-    finalDamageMod += getStatWithDefault(stats, Stat.PCT_WEAPON_DAMAGE);
+    finalDamageMod *=
+      1 + getStatWithDefault(stats, Stat.PCT_WEAPON_DAMAGE) / 100;
   } else {
-    finalDamageMod += getStatWithDefault(stats, Stat.PCT_SPELL_DAMAGE);
+    finalDamageMod *=
+      1 + getStatWithDefault(stats, Stat.PCT_SPELL_DAMAGE) / 100;
   }
 
   return {
     melee: Math.floor(
       calculatedDamage *
-        (1 +
-          (finalDamageMod + getStatWithDefault(stats, Stat.PCT_MELEE_DAMAGE)) /
-            100),
+        (finalDamageMod *
+          (1 + getStatWithDefault(stats, Stat.PCT_MELEE_DAMAGE) / 100)),
     ),
     ranged: Math.floor(
       calculatedDamage *
-        (1 +
-          (finalDamageMod + getStatWithDefault(stats, Stat.PCT_RANGED_DAMAGE)) /
-            100),
+        (finalDamageMod *
+          (1 + getStatWithDefault(stats, Stat.PCT_RANGED_DAMAGE) / 100)),
     ),
   };
 };

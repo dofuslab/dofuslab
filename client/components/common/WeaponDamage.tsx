@@ -112,8 +112,8 @@ const WeaponDamage: React.FC<IProps> = ({
                       min +
                         (getSimpleEffect(type) === 'damage' ||
                         getSimpleEffect(type) === 'heal'
-                          ? 0
-                          : weaponStats.critBonusDamage),
+                          ? weaponStats.critBonusDamage
+                          : 0),
                       type,
                       customSet.level,
                       statsFromCustomSet,
@@ -126,8 +126,8 @@ const WeaponDamage: React.FC<IProps> = ({
                   max +
                     (getSimpleEffect(type) === 'damage' ||
                     getSimpleEffect(type) === 'heal'
-                      ? 0
-                      : weaponStats.critBonusDamage),
+                      ? weaponStats.critBonusDamage
+                      : 0),
                   type,
                   customSet.level,
                   statsFromCustomSet,
