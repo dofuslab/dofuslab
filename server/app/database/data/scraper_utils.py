@@ -224,7 +224,9 @@ def get_stats(all_soups):
 
             if (
                 re.search(
-                    r"(\d+%?\s(?:{})$)|(?:^Reflects\s\d)".format(Constants.all_stats),
+                    r"(\d+\s?%?\s(?:{})$)|(?:^Reflects\s\d)".format(
+                        Constants.all_stats
+                    ),
                     description,
                 )
                 == None
@@ -282,6 +284,7 @@ def get_stats(all_soups):
                 del arr[0]
                 type = " ".join(arr)
             else:
+                description = description.replace(" %", "%")
                 arr = description.split(" ")
                 max_stat = int(arr[0].replace("%", ""))
                 del arr[0]

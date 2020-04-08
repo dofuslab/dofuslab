@@ -648,8 +648,10 @@ class MountScraper:
             if i == max_number_of_items:
                 break
             i = i + 1
-            # if int(id) != 2077:
-            #     continue
+
+            wild_mount_ids = [1, 6, 74, 167, 168, 169, 170, 171]
+            if int(id) in wild_mount_ids:
+                continue
 
             url = "https://www.dofus.com/en/mmorpg/encyclopedia/mounts/" + id
             all_soups = scraper_utils.get_all_localized_soup(url)
@@ -1166,11 +1168,11 @@ if __name__ == "__main__":
     # WeaponScraper.get_data_for_ids(["18018", "6524"])
 
     # PetScraper.get_all_pet_ids()
-    PetScraper.get_all_pet_data(1000)
-    arr = ["14827", "14848", "8211"]
+    # PetScraper.get_all_pet_data(1000)
+    # arr = ["14827", "14848", "8211"]
 
     # MountScraper.get_all_mount_ids()
-    # MountScraper.get_all_mount_data(3000)
+    MountScraper.get_all_mount_data(3000)
 
     # class_scraper = ClassScraper()
     # class_scraper.get_info_for_all_classes()
