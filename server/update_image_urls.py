@@ -59,7 +59,37 @@ def add_prysmaradite_image_urls():
         json.dump(data, file)
 
 
+def add_rhineetle_image_urls():
+    dirname = os.path.dirname(os.path.abspath(__file__))
+    base_url = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/"
+
+    data = None
+    with open(os.path.join(dirname, "app/database/data/rhineetles.json"), "r") as file:
+        data = json.load(file)
+        for record in data:
+            record["imageUrl"] = base_url + record["dofusID"] + ".png"
+
+    with open(os.path.join(dirname, "app/database/data/rhineetles.json"), "w") as file:
+        json.dump(data, file)
+
+
+def add_mount_image_urls():
+    dirname = os.path.dirname(os.path.abspath(__file__))
+    base_url = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/"
+
+    data = None
+    with open(os.path.join(dirname, "app/database/data/mounts.json"), "r") as file:
+        data = json.load(file)
+        for record in data:
+            record["imageUrl"] = base_url + record["dofusID"] + ".png"
+
+    with open(os.path.join(dirname, "app/database/data/mounts.json"), "w") as file:
+        json.dump(data, file)
+
+
 if __name__ == "__main__":
     # add_prysmaradite_image_urls()
+    # add_rhineetle_image_urls()
+    # add_mount_image_urls()
     update_item_urls_in_db()
     update_spell_urls_in_db()

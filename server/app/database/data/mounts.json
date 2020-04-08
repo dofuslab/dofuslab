@@ -29,7 +29,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363737323034352c323d31343432333130302c333d31343432333130302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/41.png"
   },
   {
     "dofusID": "34",
@@ -61,7 +61,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363737323034352c323d313234353138342c333d313234353138342c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/34.png"
   },
   {
     "dofusID": "35",
@@ -85,29 +85,15 @@
         "stat": "Initiative",
         "minStat": null,
         "maxStat": 1000
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Critical"
-      ],
-      "fr": [
-        "8 % Critique"
-      ],
-      "de": [
-        "8 % KT"
-      ],
-      "es": [
-        "8 % crítico"
-      ],
-      "it": [
-        "8 % CC"
-      ],
-      "pt": [
-        "8 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363737323034352c323d333332393333302c333d333332393333302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/35.png"
   },
   {
     "dofusID": "162",
@@ -139,7 +125,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31343230373631322c333d31343230373631322c323d323635303635397c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/162.png"
   },
   {
     "dofusID": "38",
@@ -171,7 +157,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363737323034352c323d31363734373532302c333d31363734373532302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/38.png"
   },
   {
     "dofusID": "33",
@@ -203,7 +189,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363737323034352c323d31363736363732302c333d31363736363732302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/33.png"
   },
   {
     "dofusID": "36",
@@ -235,7 +221,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363737323034352c323d343931353333302c333d343931353333302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/36.png"
   },
   {
     "dofusID": "37",
@@ -267,7 +253,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363737323034352c323d31363737373230302c333d31363737373230302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/37.png"
   },
   {
     "dofusID": "138",
@@ -299,7 +285,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31363235303835332c333d31363235303835332c323d31343230373631327c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/138.png"
   },
   {
     "dofusID": "40",
@@ -331,7 +317,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363737323034352c323d31353835393935342c333d31353835393935342c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/40.png"
   },
   {
     "dofusID": "39",
@@ -363,7 +349,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363737323034352c323d343235313835362c333d343235313835362c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/39.png"
   },
   {
     "dofusID": "20",
@@ -390,7 +376,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363737323034352c323d31363737323034352c333d31363330313832352c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/20.png"
   },
   {
     "dofusID": "96",
@@ -417,7 +403,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31343230373631322c333d31343230373631322c323d31343230373631327c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/96.png"
   },
   {
     "dofusID": "88",
@@ -433,56 +419,38 @@
     "level": 60,
     "stats": [
       {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
         "stat": "Power",
         "minStat": null,
         "maxStat": 50
       }
     ],
-    "customStats": {
-      "en": [
-        "5 % Air Resistance",
-        "5 % Water Resistance",
-        "5 % Fire Resistance",
-        "5 % Earth Resistance",
-        "5 % Neutral Resistance"
-      ],
-      "fr": [
-        "5 % Résistance Air",
-        "5 % Résistance Eau",
-        "5 % Résistance Feu",
-        "5 % Résistance Terre",
-        "5 % Résistance Neutre"
-      ],
-      "de": [
-        "5 % Luftresistenz",
-        "5 % Wasserresistenz",
-        "5 % Feuerresistenz",
-        "5 % Erdresistenz",
-        "5 % Neutralresistenz"
-      ],
-      "es": [
-        "5 % resistencia al aire",
-        "5 % resistencia al agua",
-        "5 % resistencia al fuego",
-        "5 % resistencia a la tierra",
-        "5 % resistencia neutral"
-      ],
-      "it": [
-        "5 % Resistenza Aria",
-        "5 % Resistenza Acqua",
-        "5 % Resistenza Fuoco",
-        "5 % Resistenza Terra",
-        "5 % Resistenza Neutro"
-      ],
-      "pt": [
-        "5 % resistência ao ar",
-        "5 % resistência à água",
-        "5 % resistência ao fogo",
-        "5 % resistência à terra",
-        "5 % resistência neutra"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c313234377c313d234646413433332c323d233732324231392c333d233742343833352c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/88.png"
   },
   {
     "dofusID": "117",
@@ -506,29 +474,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Earth Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Terre"
-      ],
-      "de": [
-        "8 % Erdresistenz"
-      ],
-      "es": [
-        "8 % resistencia a la tierra"
-      ],
-      "it": [
-        "8 % Resistenza Terra"
-      ],
-      "pt": [
-        "8 % resistência à terra"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31343230373631322c333d31343230373631322c323d373031393535357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/117.png"
   },
   {
     "dofusID": "156",
@@ -552,29 +506,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Earth Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Terre"
-      ],
-      "de": [
-        "8 % Erdresistenz"
-      ],
-      "es": [
-        "8 % resistencia a la tierra"
-      ],
-      "it": [
-        "8 % Resistenza Terra"
-      ],
-      "pt": [
-        "8 % resistência à terra"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d323635303635392c333d323635303635392c323d373031393535357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/156.png"
   },
   {
     "dofusID": "71",
@@ -606,7 +546,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343432333130302c323d31363734373532302c333d31363734373532302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/71.png"
   },
   {
     "dofusID": "122",
@@ -630,29 +570,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Earth Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Terre"
-      ],
-      "de": [
-        "8 % Erdresistenz"
-      ],
-      "es": [
-        "8 % resistencia a la tierra"
-      ],
-      "it": [
-        "8 % Resistenza Terra"
-      ],
-      "pt": [
-        "8 % resistência à terra"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31363235303835332c333d31363235303835332c323d373031393535357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/122.png"
   },
   {
     "dofusID": "19",
@@ -679,7 +605,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343432333130302c323d31343432333130302c333d31363330313832352c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/19.png"
   },
   {
     "dofusID": "93",
@@ -698,29 +624,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 16
       }
     ],
-    "customStats": {
-      "en": [
-        "16 % Earth Resistance"
-      ],
-      "fr": [
-        "16 % Résistance Terre"
-      ],
-      "de": [
-        "16 % Erdresistenz"
-      ],
-      "es": [
-        "16 % resistencia a la tierra"
-      ],
-      "it": [
-        "16 % Resistenza Terra"
-      ],
-      "pt": [
-        "16 % resistência à terra"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d373031393535352c333d373031393535352c323d373031393535357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/93.png"
   },
   {
     "dofusID": "120",
@@ -744,29 +656,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Air Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Air"
-      ],
-      "de": [
-        "8 % Luftresistenz"
-      ],
-      "es": [
-        "8 % resistencia al aire"
-      ],
-      "it": [
-        "8 % Resistenza Aria"
-      ],
-      "pt": [
-        "8 % resistência ao ar"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31343230373631322c333d31343230373631322c323d313730383033367c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/120.png"
   },
   {
     "dofusID": "54",
@@ -798,7 +696,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343432333130302c323d313234353138342c333d313234353138342c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/54.png"
   },
   {
     "dofusID": "103",
@@ -817,35 +715,20 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Earth Resistance",
-        "8 % Air Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Terre",
-        "8 % Résistance Air"
-      ],
-      "de": [
-        "8 % Erdresistenz",
-        "8 % Luftresistenz"
-      ],
-      "es": [
-        "8 % resistencia a la tierra",
-        "8 % resistencia al aire"
-      ],
-      "it": [
-        "8 % Resistenza Terra",
-        "8 % Resistenza Aria"
-      ],
-      "pt": [
-        "8 % resistência à terra",
-        "8 % resistência ao ar"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d313730383033362c333d313730383033362c323d373031393535357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/103.png"
   },
   {
     "dofusID": "50",
@@ -869,29 +752,15 @@
         "stat": "Vitality",
         "minStat": null,
         "maxStat": 300
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Critical"
-      ],
-      "fr": [
-        "8 % Critique"
-      ],
-      "de": [
-        "8 % KT"
-      ],
-      "es": [
-        "8 % crítico"
-      ],
-      "it": [
-        "8 % CC"
-      ],
-      "pt": [
-        "8 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d313234353138342c323d333332393333302c333d333332393333302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/50.png"
   },
   {
     "dofusID": "159",
@@ -915,29 +784,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Air Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Air"
-      ],
-      "de": [
-        "8 % Luftresistenz"
-      ],
-      "es": [
-        "8 % resistencia al aire"
-      ],
-      "it": [
-        "8 % Resistenza Aria"
-      ],
-      "pt": [
-        "8 % resistência ao ar"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d313730383033362c333d313730383033362c323d323635303635397c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/159.png"
   },
   {
     "dofusID": "12",
@@ -969,7 +824,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363734373532302c323d313730333933362c333d313737343038342c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/12.png"
   },
   {
     "dofusID": "51",
@@ -1001,7 +856,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d343931353333302c323d313234353138342c333d313234353138342c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/51.png"
   },
   {
     "dofusID": "109",
@@ -1020,35 +875,20 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Water Resistance",
-        "8 % Air Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Eau",
-        "8 % Résistance Air"
-      ],
-      "de": [
-        "8 % Wasserresistenz",
-        "8 % Luftresistenz"
-      ],
-      "es": [
-        "8 % resistencia al agua",
-        "8 % resistencia al aire"
-      ],
-      "it": [
-        "8 % Resistenza Acqua",
-        "8 % Resistenza Aria"
-      ],
-      "pt": [
-        "8 % resistência à água",
-        "8 % resistência ao ar"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d313730383033362c333d313730383033362c323d373730303432377c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/109.png"
   },
   {
     "dofusID": "9",
@@ -1080,7 +920,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d313138323939322c323d31363737373230302c333d31363737373230302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/9.png"
   },
   {
     "dofusID": "125",
@@ -1104,29 +944,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Air Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Air"
-      ],
-      "de": [
-        "8 % Luftresistenz"
-      ],
-      "es": [
-        "8 % resistencia al aire"
-      ],
-      "it": [
-        "8 % Resistenza Aria"
-      ],
-      "pt": [
-        "8 % resistência ao ar"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d313730383033362c333d313730383033362c323d31363235303835337c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/125.png"
   },
   {
     "dofusID": "53",
@@ -1158,7 +984,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31353835393935342c323d302c333d302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/53.png"
   },
   {
     "dofusID": "107",
@@ -1177,35 +1003,20 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Fire Resistance",
-        "8 % Air Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Feu",
-        "8 % Résistance Air"
-      ],
-      "de": [
-        "8 % Feuerresistenz",
-        "8 % Luftresistenz"
-      ],
-      "es": [
-        "8 % resistencia al fuego",
-        "8 % resistencia al aire"
-      ],
-      "it": [
-        "8 % Resistenza Fuoco",
-        "8 % Resistenza Aria"
-      ],
-      "pt": [
-        "8 % resistência ao fogo",
-        "8 % resistência ao ar"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d313730383033362c333d313730383033362c323d31343331353733347c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/107.png"
   },
   {
     "dofusID": "52",
@@ -1237,7 +1048,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d313234353138342c323d343235313835362c333d343235313835362c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/52.png"
   },
   {
     "dofusID": "3",
@@ -1264,7 +1075,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d313234353138342c323d3339333231362c333d313234353138342c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/3.png"
   },
   {
     "dofusID": "91",
@@ -1283,29 +1094,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 16
       }
     ],
-    "customStats": {
-      "en": [
-        "16 % Air Resistance"
-      ],
-      "fr": [
-        "16 % Résistance Air"
-      ],
-      "de": [
-        "16 % Luftresistenz"
-      ],
-      "es": [
-        "16 % resistencia al aire"
-      ],
-      "it": [
-        "16 % Resistenza Aria"
-      ],
-      "pt": [
-        "16 % resistência ao ar"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d313730383033362c333d313730383033362c323d313730383033367c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/91.png"
   },
   {
     "dofusID": "60",
@@ -1326,32 +1123,18 @@
         "maxStat": 70
       },
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 8
+      },
+      {
         "stat": "Vitality",
         "minStat": null,
         "maxStat": 300
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Critical"
-      ],
-      "fr": [
-        "8 % Critique"
-      ],
-      "de": [
-        "8 % KT"
-      ],
-      "es": [
-        "8 % crítico"
-      ],
-      "it": [
-        "8 % CC"
-      ],
-      "pt": [
-        "8 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d333332393333302c323d31343432333130302c333d31343432333130302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/60.png"
   },
   {
     "dofusID": "57",
@@ -1367,6 +1150,11 @@
     "level": 60,
     "stats": [
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 8
+      },
+      {
         "stat": "Vitality",
         "minStat": null,
         "maxStat": 300
@@ -1377,27 +1165,8 @@
         "maxStat": 35
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Critical"
-      ],
-      "fr": [
-        "8 % Critique"
-      ],
-      "de": [
-        "8 % KT"
-      ],
-      "es": [
-        "8 % crítico"
-      ],
-      "it": [
-        "8 % CC"
-      ],
-      "pt": [
-        "8 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d333332393333302c323d31363734373532302c333d31363734373532302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/57.png"
   },
   {
     "dofusID": "55",
@@ -1418,32 +1187,18 @@
         "maxStat": 70
       },
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 8
+      },
+      {
         "stat": "Vitality",
         "minStat": null,
         "maxStat": 300
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Critical"
-      ],
-      "fr": [
-        "8 % Critique"
-      ],
-      "de": [
-        "8 % KT"
-      ],
-      "es": [
-        "8 % crítico"
-      ],
-      "it": [
-        "8 % CC"
-      ],
-      "pt": [
-        "8 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d333332393333302c323d343931353333302c333d343931353333302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/55.png"
   },
   {
     "dofusID": "56",
@@ -1464,32 +1219,18 @@
         "maxStat": 50
       },
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 8
+      },
+      {
         "stat": "Vitality",
         "minStat": null,
         "maxStat": 300
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Critical"
-      ],
-      "fr": [
-        "8 % Critique"
-      ],
-      "de": [
-        "8 % KT"
-      ],
-      "es": [
-        "8 % crítico"
-      ],
-      "it": [
-        "8 % CC"
-      ],
-      "pt": [
-        "8 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d333332393333302c323d31363737373230302c333d31363737373230302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/56.png"
   },
   {
     "dofusID": "59",
@@ -1510,32 +1251,18 @@
         "maxStat": 70
       },
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 8
+      },
+      {
         "stat": "Vitality",
         "minStat": null,
         "maxStat": 300
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Critical"
-      ],
-      "fr": [
-        "8 % Critique"
-      ],
-      "de": [
-        "8 % KT"
-      ],
-      "es": [
-        "8 % crítico"
-      ],
-      "it": [
-        "8 % CC"
-      ],
-      "pt": [
-        "8 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d333332393333302c323d31353835393935342c333d31353835393935342c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/59.png"
   },
   {
     "dofusID": "58",
@@ -1556,32 +1283,18 @@
         "maxStat": 60
       },
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 8
+      },
+      {
         "stat": "Vitality",
         "minStat": null,
         "maxStat": 300
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Critical"
-      ],
-      "fr": [
-        "8 % Critique"
-      ],
-      "de": [
-        "8 % KT"
-      ],
-      "es": [
-        "8 % crítico"
-      ],
-      "it": [
-        "8 % CC"
-      ],
-      "pt": [
-        "8 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d333332393333302c323d343235313835362c333d343235313835362c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/58.png"
   },
   {
     "dofusID": "21",
@@ -1600,29 +1313,15 @@
         "stat": "Vitality",
         "minStat": null,
         "maxStat": 300
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 12
       }
     ],
-    "customStats": {
-      "en": [
-        "12 % Critical"
-      ],
-      "fr": [
-        "12 % Critique"
-      ],
-      "de": [
-        "12 % KT"
-      ],
-      "es": [
-        "12 % crítico"
-      ],
-      "it": [
-        "12 % CC"
-      ],
-      "pt": [
-        "12 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d333332393333302c323d333332393333302c333d31363330313832352c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/21.png"
   },
   {
     "dofusID": "100",
@@ -1649,7 +1348,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d323635303635392c333d323635303635392c323d323635303635397c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/100.png"
   },
   {
     "dofusID": "89",
@@ -1690,7 +1389,7 @@
         "10 Reflete danos"
       ]
     },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b313832347c7c313d31343837373939372c323d31333137333533352c333d31343537353839327c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/89.png"
   },
   {
     "dofusID": "116",
@@ -1722,7 +1421,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31323637333238302c333d31323637333238302c323d31343230373631327c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/116.png"
   },
   {
     "dofusID": "111",
@@ -1746,29 +1445,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Earth Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Terre"
-      ],
-      "de": [
-        "8 % Erdresistenz"
-      ],
-      "es": [
-        "8 % resistencia a la tierra"
-      ],
-      "it": [
-        "8 % Resistenza Terra"
-      ],
-      "pt": [
-        "8 % resistência à terra"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d373031393535352c333d373031393535352c323d31323637333238307c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/111.png"
   },
   {
     "dofusID": "114",
@@ -1792,29 +1477,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Air Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Air"
-      ],
-      "de": [
-        "8 % Luftresistenz"
-      ],
-      "es": [
-        "8 % resistencia al aire"
-      ],
-      "it": [
-        "8 % Resistenza Aria"
-      ],
-      "pt": [
-        "8 % resistência ao ar"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d313730383033362c333d313730383033362c323d31323637333238307c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/114.png"
   },
   {
     "dofusID": "161",
@@ -1846,7 +1517,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31323637333238302c333d31323637333238302c323d323635303635397c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/161.png"
   },
   {
     "dofusID": "115",
@@ -1878,7 +1549,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31323637333238302c333d31323637333238302c323d31353131383539327c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/115.png"
   },
   {
     "dofusID": "113",
@@ -1902,29 +1573,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Water Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Eau"
-      ],
-      "de": [
-        "8 % Wasserresistenz"
-      ],
-      "es": [
-        "8 % resistencia al agua"
-      ],
-      "it": [
-        "8 % Resistenza Acqua"
-      ],
-      "pt": [
-        "8 % resistência à água"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d373730303432372c333d373730303432372c323d31323637333238307c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/113.png"
   },
   {
     "dofusID": "127",
@@ -1956,7 +1613,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31323637333238302c333d31323637333238302c323d31363235303835337c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/127.png"
   },
   {
     "dofusID": "112",
@@ -1980,29 +1637,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Fire Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Feu"
-      ],
-      "de": [
-        "8 % Feuerresistenz"
-      ],
-      "es": [
-        "8 % resistencia al fuego"
-      ],
-      "it": [
-        "8 % Resistenza Fuoco"
-      ],
-      "pt": [
-        "8 % resistência ao fogo"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31323637333238302c333d31323637333238302c323d31343331353733347c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/112.png"
   },
   {
     "dofusID": "10",
@@ -2029,7 +1672,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363734373532302c323d31363734373532302c333d31363330313832352c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/10.png"
   },
   {
     "dofusID": "95",
@@ -2056,7 +1699,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31323637333238302c333d31323637333238302c323d31323637333238307c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/95.png"
   },
   {
     "dofusID": "121",
@@ -2088,7 +1731,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31353131383539322c333d31353131383539322c323d31343230373631327c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/121.png"
   },
   {
     "dofusID": "49",
@@ -2120,7 +1763,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363736363732302c323d31343432333130302c333d31343432333130302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/49.png"
   },
   {
     "dofusID": "101",
@@ -2144,29 +1787,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Earth Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Terre"
-      ],
-      "de": [
-        "8 % Erdresistenz"
-      ],
-      "es": [
-        "8 % resistencia a la tierra"
-      ],
-      "it": [
-        "8 % Resistenza Terra"
-      ],
-      "pt": [
-        "8 % resistência à terra"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d373031393535352c333d373031393535352c323d31353131383539327c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/101.png"
   },
   {
     "dofusID": "42",
@@ -2198,7 +1827,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d313234353138342c323d31363736363732302c333d31363736363732302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/42.png"
   },
   {
     "dofusID": "110",
@@ -2222,29 +1851,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Air Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Air"
-      ],
-      "de": [
-        "8 % Luftresistenz"
-      ],
-      "es": [
-        "8 % resistencia al aire"
-      ],
-      "it": [
-        "8 % Resistenza Aria"
-      ],
-      "pt": [
-        "8 % resistência ao ar"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31353131383539322c333d31353131383539322c323d313730383033367c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/110.png"
   },
   {
     "dofusID": "43",
@@ -2265,32 +1880,18 @@
         "maxStat": 300
       },
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 8
+      },
+      {
         "stat": "Summons",
         "minStat": null,
         "maxStat": 1
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Critical"
-      ],
-      "fr": [
-        "8 % Critique"
-      ],
-      "de": [
-        "8 % KT"
-      ],
-      "es": [
-        "8 % crítico"
-      ],
-      "it": [
-        "8 % CC"
-      ],
-      "pt": [
-        "8 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363736363732302c323d333332393333302c333d333332393333302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/43.png"
   },
   {
     "dofusID": "160",
@@ -2322,7 +1923,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d323635303635392c333d323635303635392c323d31353131383539327c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/160.png"
   },
   {
     "dofusID": "46",
@@ -2354,7 +1955,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363736363732302c323d31363734373532302c333d31363734373532302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/46.png"
   },
   {
     "dofusID": "44",
@@ -2386,7 +1987,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363736363732302c323d343931353333302c333d343931353333302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/44.png"
   },
   {
     "dofusID": "108",
@@ -2410,29 +2011,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Water Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Eau"
-      ],
-      "de": [
-        "8 % Wasserresistenz"
-      ],
-      "es": [
-        "8 % resistencia al agua"
-      ],
-      "it": [
-        "8 % Resistenza Acqua"
-      ],
-      "pt": [
-        "8 % resistência à água"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d373730303432372c333d373730303432372c323d31353131383539327c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/108.png"
   },
   {
     "dofusID": "45",
@@ -2464,7 +2051,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363736363732302c323d31363737373230302c333d31363737373230302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/45.png"
   },
   {
     "dofusID": "126",
@@ -2496,7 +2083,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31363235303835332c333d31363235303835332c323d31353131383539327c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/126.png"
   },
   {
     "dofusID": "48",
@@ -2528,7 +2115,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363736363732302c323d31353835393935342c333d31353835393935342c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/48.png"
   },
   {
     "dofusID": "105",
@@ -2552,29 +2139,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Fire Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Feu"
-      ],
-      "de": [
-        "8 % Feuerresistenz"
-      ],
-      "es": [
-        "8 % resistencia al fuego"
-      ],
-      "it": [
-        "8 % Resistenza Fuoco"
-      ],
-      "pt": [
-        "8 % resistência ao fogo"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31343331353733342c333d31343331353733342c323d31353131383539327c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/105.png"
   },
   {
     "dofusID": "47",
@@ -2606,7 +2179,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363736363732302c323d343235313835362c333d343235313835362c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/47.png"
   },
   {
     "dofusID": "18",
@@ -2633,7 +2206,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363736363732302c323d31363736363732302c333d31363736363732302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/18.png"
   },
   {
     "dofusID": "94",
@@ -2660,7 +2233,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31353131383539322c333d31353131383539322c323d31353131383539327c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/94.png"
   },
   {
     "dofusID": "119",
@@ -2684,29 +2257,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Water Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Eau"
-      ],
-      "de": [
-        "8 % Wasserresistenz"
-      ],
-      "es": [
-        "8 % resistencia al agua"
-      ],
-      "it": [
-        "8 % Resistenza Acqua"
-      ],
-      "pt": [
-        "8 % resistência à água"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d373730303432372c333d373730303432372c323d31343230373631327c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/119.png"
   },
   {
     "dofusID": "65",
@@ -2738,7 +2297,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343432333130302c323d343931353333302c333d343931353333302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/65.png"
   },
   {
     "dofusID": "102",
@@ -2757,35 +2316,20 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Earth Resistance",
-        "8 % Water Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Terre",
-        "8 % Résistance Eau"
-      ],
-      "de": [
-        "8 % Erdresistenz",
-        "8 % Wasserresistenz"
-      ],
-      "es": [
-        "8 % resistencia a la tierra",
-        "8 % resistencia al agua"
-      ],
-      "it": [
-        "8 % Resistenza Terra",
-        "8 % Resistenza Acqua"
-      ],
-      "pt": [
-        "8 % resistência à terra",
-        "8 % resistência à água"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d373031393535352c333d373031393535352c323d373730303432377c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/102.png"
   },
   {
     "dofusID": "158",
@@ -2809,29 +2353,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Water Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Eau"
-      ],
-      "de": [
-        "8 % Wasserresistenz"
-      ],
-      "es": [
-        "8 % resistencia al agua"
-      ],
-      "it": [
-        "8 % Resistenza Acqua"
-      ],
-      "pt": [
-        "8 % resistência à água"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d323635303635392c333d323635303635392c323d373730303432377c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/158.png"
   },
   {
     "dofusID": "62",
@@ -2863,7 +2393,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d343931353333302c323d31363734373532302c333d31363734373532302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/62.png"
   },
   {
     "dofusID": "61",
@@ -2895,7 +2425,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d343931353333302c323d31363737373230302c333d31363737373230302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/61.png"
   },
   {
     "dofusID": "124",
@@ -2919,29 +2449,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Water Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Eau"
-      ],
-      "de": [
-        "8 % Wasserresistenz"
-      ],
-      "es": [
-        "8 % resistencia al agua"
-      ],
-      "it": [
-        "8 % Resistenza Acqua"
-      ],
-      "pt": [
-        "8 % resistência à água"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31363235303835332c333d31363235303835332c323d373730303432377c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/124.png"
   },
   {
     "dofusID": "64",
@@ -2973,7 +2489,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d343931353333302c323d31353835393935342c333d31353835393935342c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/64.png"
   },
   {
     "dofusID": "106",
@@ -2992,35 +2508,20 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Fire Resistance",
-        "8 % Water Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Feu",
-        "8 % Résistance Eau"
-      ],
-      "de": [
-        "8 % Feuerresistenz",
-        "8 % Wasserresistenz"
-      ],
-      "es": [
-        "8 % resistencia al fuego",
-        "8 % resistencia al agua"
-      ],
-      "it": [
-        "8 % Resistenza Fuoco",
-        "8 % Resistenza Acqua"
-      ],
-      "pt": [
-        "8 % resistência ao fogo",
-        "8 % resistência à água"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d373730303432372c333d373730303432372c323d31343331353733347c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/106.png"
   },
   {
     "dofusID": "63",
@@ -3052,7 +2553,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d343931353333302c323d343235313835362c333d343235313835362c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/63.png"
   },
   {
     "dofusID": "17",
@@ -3079,7 +2580,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d343931353333302c323d343931353333302c333d31363330313832352c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/17.png"
   },
   {
     "dofusID": "92",
@@ -3098,29 +2599,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 16
       }
     ],
-    "customStats": {
-      "en": [
-        "16 % Water Resistance"
-      ],
-      "fr": [
-        "16 % Résistance Eau"
-      ],
-      "de": [
-        "16 % Wasserresistenz"
-      ],
-      "es": [
-        "16 % resistencia al agua"
-      ],
-      "it": [
-        "16 % Resistenza Acqua"
-      ],
-      "pt": [
-        "16 % resistência à água"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d373730303432372c333d373730303432372c323d373730303432377c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/92.png"
   },
   {
     "dofusID": "68",
@@ -3152,7 +2639,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343432333130302c323d31363737373230302c333d31363737373230302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/68.png"
   },
   {
     "dofusID": "163",
@@ -3184,7 +2671,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d323635303635392c333d323635303635392c323d31363235303835337c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/163.png"
   },
   {
     "dofusID": "11",
@@ -3216,7 +2703,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363734373532302c323d31363737373230302c333d31363737373230302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/11.png"
   },
   {
     "dofusID": "67",
@@ -3248,7 +2735,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363737373230302c323d31363733313335352c333d31363731313931302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/67.png"
   },
   {
     "dofusID": "66",
@@ -3280,7 +2767,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363737373230302c323d343235313835362c333d343235313835362c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/66.png"
   },
   {
     "dofusID": "16",
@@ -3307,7 +2794,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363737373230302c323d31363737373230302c333d31363737373230302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/16.png"
   },
   {
     "dofusID": "97",
@@ -3334,7 +2821,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31363235303835332c333d31363235303835332c323d31363235303835337c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/97.png"
   },
   {
     "dofusID": "118",
@@ -3358,29 +2845,15 @@
         "stat": "Dodge",
         "minStat": null,
         "maxStat": 30
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Fire Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Feu"
-      ],
-      "de": [
-        "8 % Feuerresistenz"
-      ],
-      "es": [
-        "8 % resistencia al fuego"
-      ],
-      "it": [
-        "8 % Resistenza Fuoco"
-      ],
-      "pt": [
-        "8 % resistência ao fogo"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31343331353733342c333d31343331353733342c323d31343230373631327c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/118.png"
   },
   {
     "dofusID": "76",
@@ -3412,7 +2885,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343331353733342c323d31343432333130302c333d31343432333130302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/76.png"
   },
   {
     "dofusID": "104",
@@ -3431,35 +2904,20 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Fire Resistance",
-        "8 % Earth Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Feu",
-        "8 % Résistance Terre"
-      ],
-      "de": [
-        "8 % Feuerresistenz",
-        "8 % Erdresistenz"
-      ],
-      "es": [
-        "8 % resistencia al fuego",
-        "8 % resistencia a la tierra"
-      ],
-      "it": [
-        "8 % Resistenza Fuoco",
-        "8 % Resistenza Terra"
-      ],
-      "pt": [
-        "8 % resistência ao fogo",
-        "8 % resistência à terra"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31343331353733342c333d31343331353733342c323d373031393535357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/104.png"
   },
   {
     "dofusID": "157",
@@ -3483,29 +2941,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Fire Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Feu"
-      ],
-      "de": [
-        "8 % Feuerresistenz"
-      ],
-      "es": [
-        "8 % resistencia al fuego"
-      ],
-      "it": [
-        "8 % Resistenza Fuoco"
-      ],
-      "pt": [
-        "8 % resistência ao fogo"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d323635303635392c333d323635303635392c323d31343331353733347c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/157.png"
   },
   {
     "dofusID": "70",
@@ -3537,7 +2981,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343331353733342c323d31363734373532302c333d31363734373532302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/70.png"
   },
   {
     "dofusID": "123",
@@ -3561,29 +3005,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Fire Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Feu"
-      ],
-      "de": [
-        "8 % Feuerresistenz"
-      ],
-      "es": [
-        "8 % resistencia al fuego"
-      ],
-      "it": [
-        "8 % Resistenza Fuoco"
-      ],
-      "pt": [
-        "8 % resistência ao fogo"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31363235303835332c333d31363235303835332c323d31343331353733347c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/123.png"
   },
   {
     "dofusID": "22",
@@ -3610,7 +3040,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31353835393935342c333d31363737373230302c323d31353835393935342c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/22.png"
   },
   {
     "dofusID": "90",
@@ -3629,29 +3059,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 16
       }
     ],
-    "customStats": {
-      "en": [
-        "16 % Fire Resistance"
-      ],
-      "fr": [
-        "16 % Résistance Feu"
-      ],
-      "de": [
-        "16 % Feuerresistenz"
-      ],
-      "es": [
-        "16 % resistencia al fuego"
-      ],
-      "it": [
-        "16 % Resistenza Fuoco"
-      ],
-      "pt": [
-        "16 % resistência ao fogo"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31343331353733342c333d31343331353733342c323d31343331353733347c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/90.png"
   },
   {
     "dofusID": "77",
@@ -3683,7 +3099,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343532343633372c323d31363737323034352c333d31363737323034352c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/77.png"
   },
   {
     "dofusID": "152",
@@ -3699,6 +3115,11 @@
     "level": 60,
     "stats": [
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
         "stat": "Dodge",
         "minStat": null,
         "maxStat": 30
@@ -3709,27 +3130,8 @@
         "maxStat": 1
       }
     ],
-    "customStats": {
-      "en": [
-        "6 % Critical"
-      ],
-      "fr": [
-        "6 % Critique"
-      ],
-      "de": [
-        "6 % KT"
-      ],
-      "es": [
-        "6 % crítico"
-      ],
-      "it": [
-        "6 % CC"
-      ],
-      "pt": [
-        "6 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31343230373631322c333d31343230373631322c323d363638343832357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/152.png"
   },
   {
     "dofusID": "87",
@@ -3761,7 +3163,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343532343633372c323d31343432333130302c333d31343432333130302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/87.png"
   },
   {
     "dofusID": "146",
@@ -3777,38 +3179,23 @@
     "level": 60,
     "stats": [
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "6 % Critical",
-        "8 % Earth Resistance"
-      ],
-      "fr": [
-        "6 % Critique",
-        "8 % Résistance Terre"
-      ],
-      "de": [
-        "6 % KT",
-        "8 % Erdresistenz"
-      ],
-      "es": [
-        "6 % crítico",
-        "8 % resistencia a la tierra"
-      ],
-      "it": [
-        "6 % CC",
-        "8 % Resistenza Terra"
-      ],
-      "pt": [
-        "6 % de crítico",
-        "8 % resistência à terra"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d363638343832352c333d363638343832352c323d373031393535357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/146.png"
   },
   {
     "dofusID": "79",
@@ -3840,7 +3227,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343532343633372c323d313234353138342c333d313234353138342c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/79.png"
   },
   {
     "dofusID": "149",
@@ -3856,38 +3243,23 @@
     "level": 60,
     "stats": [
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "6 % Critical",
-        "8 % Air Resistance"
-      ],
-      "fr": [
-        "6 % Critique",
-        "8 % Résistance Air"
-      ],
-      "de": [
-        "6 % KT",
-        "8 % Luftresistenz"
-      ],
-      "es": [
-        "6 % crítico",
-        "8 % resistencia al aire"
-      ],
-      "it": [
-        "6 % CC",
-        "8 % Resistenza Aria"
-      ],
-      "pt": [
-        "6 % de crítico",
-        "8 % resistência ao ar"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d313730383033362c333d313730383033362c323d363638343832357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/149.png"
   },
   {
     "dofusID": "80",
@@ -3911,29 +3283,15 @@
         "stat": "Vitality",
         "minStat": null,
         "maxStat": 300
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Critical"
-      ],
-      "fr": [
-        "8 % Critique"
-      ],
-      "de": [
-        "8 % KT"
-      ],
-      "es": [
-        "8 % crítico"
-      ],
-      "it": [
-        "8 % CC"
-      ],
-      "pt": [
-        "8 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343532343633372c323d333332393333302c333d333332393333302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/80.png"
   },
   {
     "dofusID": "155",
@@ -3949,6 +3307,11 @@
     "level": 60,
     "stats": [
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
         "stat": "Critical Damage",
         "minStat": null,
         "maxStat": 20
@@ -3959,27 +3322,8 @@
         "maxStat": 1
       }
     ],
-    "customStats": {
-      "en": [
-        "6 % Critical"
-      ],
-      "fr": [
-        "6 % Critique"
-      ],
-      "de": [
-        "6 % KT"
-      ],
-      "es": [
-        "6 % crítico"
-      ],
-      "it": [
-        "6 % CC"
-      ],
-      "pt": [
-        "6 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d323635303635392c333d323635303635392c323d363638343832357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/155.png"
   },
   {
     "dofusID": "84",
@@ -4011,7 +3355,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343532343633372c323d31363734373532302c333d31363734373532302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/84.png"
   },
   {
     "dofusID": "151",
@@ -4027,6 +3371,11 @@
     "level": 60,
     "stats": [
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
         "stat": "Lock",
         "minStat": null,
         "maxStat": 30
@@ -4037,27 +3386,8 @@
         "maxStat": 1
       }
     ],
-    "customStats": {
-      "en": [
-        "6 % Critical"
-      ],
-      "fr": [
-        "6 % Critique"
-      ],
-      "de": [
-        "6 % KT"
-      ],
-      "es": [
-        "6 % crítico"
-      ],
-      "it": [
-        "6 % CC"
-      ],
-      "pt": [
-        "6 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31323637333238302c333d31323637333238302c323d363638343832357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/151.png"
   },
   {
     "dofusID": "78",
@@ -4089,7 +3419,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343532343633372c323d31363736363732302c333d31363736363732302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/78.png"
   },
   {
     "dofusID": "150",
@@ -4110,32 +3440,18 @@
         "maxStat": 40
       },
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
       }
     ],
-    "customStats": {
-      "en": [
-        "6 % Critical"
-      ],
-      "fr": [
-        "6 % Critique"
-      ],
-      "de": [
-        "6 % KT"
-      ],
-      "es": [
-        "6 % crítico"
-      ],
-      "it": [
-        "6 % CC"
-      ],
-      "pt": [
-        "6 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d363638343832352c333d363638343832352c323d31353131383539327c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/150.png"
   },
   {
     "dofusID": "82",
@@ -4167,7 +3483,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343532343633372c323d343931353333302c333d343931353333302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/82.png"
   },
   {
     "dofusID": "148",
@@ -4183,38 +3499,23 @@
     "level": 60,
     "stats": [
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "6 % Critical",
-        "8 % Water Resistance"
-      ],
-      "fr": [
-        "6 % Critique",
-        "8 % Résistance Eau"
-      ],
-      "de": [
-        "6 % KT",
-        "8 % Wasserresistenz"
-      ],
-      "es": [
-        "6 % crítico",
-        "8 % resistencia al agua"
-      ],
-      "it": [
-        "6 % CC",
-        "8 % Resistenza Acqua"
-      ],
-      "pt": [
-        "6 % de crítico",
-        "8 % resistência à água"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d363638343832352c333d363638343832352c323d373730303432377c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/148.png"
   },
   {
     "dofusID": "83",
@@ -4246,7 +3547,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343532343633372c323d31363737373230302c333d31363737373230302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/83.png"
   },
   {
     "dofusID": "153",
@@ -4267,32 +3568,18 @@
         "maxStat": 30
       },
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
       }
     ],
-    "customStats": {
-      "en": [
-        "6 % Critical"
-      ],
-      "fr": [
-        "6 % Critique"
-      ],
-      "de": [
-        "6 % KT"
-      ],
-      "es": [
-        "6 % crítico"
-      ],
-      "it": [
-        "6 % CC"
-      ],
-      "pt": [
-        "6 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31363235303835332c333d31363235303835332c323d363638343832357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/153.png"
   },
   {
     "dofusID": "86",
@@ -4324,7 +3611,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343532343633372c323d31353835393935342c333d31353835393935342c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/86.png"
   },
   {
     "dofusID": "147",
@@ -4340,38 +3627,23 @@
     "level": 60,
     "stats": [
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "6 % Critical",
-        "8 % Fire Resistance"
-      ],
-      "fr": [
-        "6 % Critique",
-        "8 % Résistance Feu"
-      ],
-      "de": [
-        "6 % KT",
-        "8 % Feuerresistenz"
-      ],
-      "es": [
-        "6 % crítico",
-        "8 % resistencia al fuego"
-      ],
-      "it": [
-        "6 % CC",
-        "8 % Resistenza Fuoco"
-      ],
-      "pt": [
-        "6 % de crítico",
-        "8 % resistência ao fogo"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d363638343832352c333d363638343832352c323d31343331353733347c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/147.png"
   },
   {
     "dofusID": "85",
@@ -4403,7 +3675,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343532343633372c323d343235313835362c333d343235313835362c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/85.png"
   },
   {
     "dofusID": "154",
@@ -4424,32 +3696,18 @@
         "maxStat": 30
       },
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
       }
     ],
-    "customStats": {
-      "en": [
-        "6 % Critical"
-      ],
-      "fr": [
-        "6 % Critique"
-      ],
-      "de": [
-        "6 % KT"
-      ],
-      "es": [
-        "6 % crítico"
-      ],
-      "it": [
-        "6 % CC"
-      ],
-      "pt": [
-        "6 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d363638343832352c333d363638343832352c323d323630353831357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/154.png"
   },
   {
     "dofusID": "23",
@@ -4476,7 +3734,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343532343633372c323d31343532343633372c333d31363330313832352c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/23.png"
   },
   {
     "dofusID": "99",
@@ -4492,32 +3750,18 @@
     "level": 60,
     "stats": [
       {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 10
+      },
+      {
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
       }
     ],
-    "customStats": {
-      "en": [
-        "10 % Critical"
-      ],
-      "fr": [
-        "10 % Critique"
-      ],
-      "de": [
-        "10 % KT"
-      ],
-      "es": [
-        "10 % crítico"
-      ],
-      "it": [
-        "10 % CC"
-      ],
-      "pt": [
-        "10 % de crítico"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d363638343832352c333d363638343832352c323d363638343832357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/99.png"
   },
   {
     "dofusID": "144",
@@ -4549,7 +3793,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d323630353831352c333d323630353831352c323d31343230373631327c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/144.png"
   },
   {
     "dofusID": "73",
@@ -4581,7 +3825,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31343432333130302c323d343235313835362c333d343235313835362c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/73.png"
   },
   {
     "dofusID": "140",
@@ -4605,29 +3849,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Earth Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Terre"
-      ],
-      "de": [
-        "8 % Erdresistenz"
-      ],
-      "es": [
-        "8 % resistencia a la tierra"
-      ],
-      "it": [
-        "8 % Resistenza Terra"
-      ],
-      "pt": [
-        "8 % resistência à terra"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d373031393535352c333d373031393535352c323d323630353831357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/140.png"
   },
   {
     "dofusID": "142",
@@ -4651,29 +3881,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Air Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Air"
-      ],
-      "de": [
-        "8 % Luftresistenz"
-      ],
-      "es": [
-        "8 % resistencia al aire"
-      ],
-      "it": [
-        "8 % Resistenza Aria"
-      ],
-      "pt": [
-        "8 % resistência ao ar"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d313730383033362c333d313730383033362c323d323630353831357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/142.png"
   },
   {
     "dofusID": "164",
@@ -4705,7 +3921,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d323635303635392c333d323635303635392c323d323630353831357c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/164.png"
   },
   {
     "dofusID": "69",
@@ -4737,7 +3953,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d343235313835362c323d31363734373532302c333d31363734373532302c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/69.png"
   },
   {
     "dofusID": "143",
@@ -4769,7 +3985,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d323630353831352c333d323630353831352c323d31323637333238307c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/143.png"
   },
   {
     "dofusID": "145",
@@ -4801,7 +4017,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31353131383539322c333d31353131383539322c323d323630353831357c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/145.png"
   },
   {
     "dofusID": "141",
@@ -4825,29 +4041,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Water Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Eau"
-      ],
-      "de": [
-        "8 % Wasserresistenz"
-      ],
-      "es": [
-        "8 % resistencia al agua"
-      ],
-      "it": [
-        "8 % Resistenza Acqua"
-      ],
-      "pt": [
-        "8 % resistência à água"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d373730303432372c333d373730303432372c323d323630353831357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/141.png"
   },
   {
     "dofusID": "139",
@@ -4879,7 +4081,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31363235303835332c333d31363235303835332c323d323630353831357c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/139.png"
   },
   {
     "dofusID": "72",
@@ -4911,7 +4113,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31353835393935342c323d343235313835362c333d343235313835362c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/72.png"
   },
   {
     "dofusID": "165",
@@ -4935,29 +4137,15 @@
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 8
       }
     ],
-    "customStats": {
-      "en": [
-        "8 % Fire Resistance"
-      ],
-      "fr": [
-        "8 % Résistance Feu"
-      ],
-      "de": [
-        "8 % Feuerresistenz"
-      ],
-      "es": [
-        "8 % resistencia al fuego"
-      ],
-      "it": [
-        "8 % Resistenza Fuoco"
-      ],
-      "pt": [
-        "8 % resistência ao fogo"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31343331353733342c333d31343331353733342c323d323630353831357c3131357d/full/1/200_200-10.png"
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/165.png"
   },
   {
     "dofusID": "15",
@@ -4984,7 +4172,7 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d343235313835362c323d343235313835362c333d31363330313832352c343d373735383931357c3132307d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/15.png"
   },
   {
     "dofusID": "98",
@@ -5011,210 +4199,6 @@
       }
     ],
     "customStats": {},
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d323630353831352c333d323630353831352c323d323630353831357c3131357d/full/1/200_200-10.png"
-  },
-  {
-    "dofusID": "1",
-    "name": {
-      "en": "Wild Almond Dragoturkey",
-      "fr": "Dragodinde Amande Sauvage",
-      "de": "Wilder Mandel-Dracotruter",
-      "es": "Dragopavo almendrado salvaje",
-      "it": "Dragacchino Mandorla Selvaggio",
-      "pt": "Dragoperu amêndoa selvagem"
-    },
-    "itemType": "Mount",
-    "level": 60,
-    "stats": [],
-    "customStats": [],
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363737323034352c323d31363737323034352c333d31363737323034352c343d373735383931357c3132307d/full/1/200_200-10.png"
-  },
-  {
-    "dofusID": "168",
-    "name": {
-      "en": "Wild Crimson Seemyool",
-      "fr": "Muldo Pourpre Sauvage",
-      "de": "Wilder Purpur-Seequagga",
-      "es": "Mulagua púrpura salvaje",
-      "it": "Acquavallo Porpora Selvaggio",
-      "pt": "Marmula púrpura selvagem"
-    },
-    "itemType": "Mount",
-    "level": 60,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "22 % Fire Resistance"
-      ],
-      "fr": [
-        "22 % Résistance Feu"
-      ],
-      "de": [
-        "22 % Feuerresistenz"
-      ],
-      "es": [
-        "22 % resistencia al fuego"
-      ],
-      "it": [
-        "22 % Resistenza Fuoco"
-      ],
-      "pt": [
-        "22 % resistência ao fogo"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d373031393535352c333d373031393535352c323d373031393535357c3131357d/full/1/200_200-10.png"
-  },
-  {
-    "dofusID": "170",
-    "name": {
-      "en": "Wild Ebony Seemyool",
-      "fr": "Muldo Ebène Sauvage",
-      "de": "Wilder Ebenholz-Seequagga",
-      "es": "Mulagua ébano salvaje",
-      "it": "Acquavallo Ebano Selvaggio",
-      "pt": "Marmula ébano selvagem"
-    },
-    "itemType": "Mount",
-    "level": 60,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "22 % Air Resistance"
-      ],
-      "fr": [
-        "22 % Résistance Air"
-      ],
-      "de": [
-        "22 % Luftresistenz"
-      ],
-      "es": [
-        "22 % resistencia al aire"
-      ],
-      "it": [
-        "22 % Resistenza Aria"
-      ],
-      "pt": [
-        "22 % resistência ao ar"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d313730383033362c333d313730383033362c323d313730383033367c3131357d/full/1/200_200-10.png"
-  },
-  {
-    "dofusID": "6",
-    "name": {
-      "en": "Wild Ginger Dragoturkey",
-      "fr": "Dragodinde Rousse Sauvage",
-      "de": "Wilder roter Dracotruter",
-      "es": "Dragopavo pelirrojo salvaje",
-      "it": "Dragacchino Rosso Selvaggio",
-      "pt": "Dragoperu ruivo selvagem"
-    },
-    "itemType": "Mount",
-    "level": 60,
-    "stats": [],
-    "customStats": [],
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363734373532302c323d31363734373532302c333d31363734373532302c343d373735383931357c3132307d/full/1/200_200-10.png"
-  },
-  {
-    "dofusID": "74",
-    "name": {
-      "en": "Wild Golden Dragoturkey",
-      "fr": "Dragodinde Dorée Sauvage",
-      "de": "Wilder, goldener Dracotruter",
-      "es": "Dragopavo dorado salvaje",
-      "it": "Dragacchino Dorato Selvaggio",
-      "pt": "Dragoperu dourado selvagem"
-    },
-    "itemType": "Mount",
-    "level": 60,
-    "stats": [],
-    "customStats": [],
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b3633397c7c313d31363736363732302c323d31363736363732302c333d31363736363732302c343d373735383931357c3132307d/full/1/200_200-10.png"
-  },
-  {
-    "dofusID": "167",
-    "name": {
-      "en": "Wild Golden Seemyool",
-      "fr": "Muldo Doré Sauvage",
-      "de": "Wilder Gold-Seequagga",
-      "es": "Mulagua dorada salvaje",
-      "it": "Acquavallo Dorato Selvaggio",
-      "pt": "Marmula dourada selvagem"
-    },
-    "itemType": "Mount",
-    "level": 60,
-    "stats": [],
-    "customStats": [],
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31353131383539322c333d31353131383539322c323d31353131383539327c3131357d/full/1/200_200-10.png"
-  },
-  {
-    "dofusID": "169",
-    "name": {
-      "en": "Wild Indigo Seemyool",
-      "fr": "Muldo Indigo Sauvage",
-      "de": "Wilder Indigo-Seequagga",
-      "es": "Mulagua índigo salvaje",
-      "it": "Acquavallo Indaco Selvaggio",
-      "pt": "Marmula índigo selvagem"
-    },
-    "itemType": "Mount",
-    "level": 60,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "22 % Water Resistance"
-      ],
-      "fr": [
-        "22 % Résistance Eau"
-      ],
-      "de": [
-        "22 % Wasserresistenz"
-      ],
-      "es": [
-        "22 % resistencia al agua"
-      ],
-      "it": [
-        "22 % Resistenza Acqua"
-      ],
-      "pt": [
-        "22 % resistência à água"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d373730303432372c333d373730303432372c323d373730303432377c3131357d/full/1/200_200-10.png"
-  },
-  {
-    "dofusID": "171",
-    "name": {
-      "en": "Wild Orchid Seemyool",
-      "fr": "Muldo Orchidée Sauvage",
-      "de": "Wilder Orchideen-Seequagga",
-      "es": "Mulagua orquídea salvaje",
-      "it": "Acquavallo Orchidea Selvaggio",
-      "pt": "Marmula orquídea selvagem"
-    },
-    "itemType": "Mount",
-    "level": 60,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "22 % Fire Resistance"
-      ],
-      "fr": [
-        "22 % Résistance Feu"
-      ],
-      "de": [
-        "22 % Feuerresistenz"
-      ],
-      "es": [
-        "22 % resistencia al fuego"
-      ],
-      "it": [
-        "22 % Resistenza Fuoco"
-      ],
-      "pt": [
-        "22 % resistência ao fogo"
-      ]
-    },
-    "imageUrl": "https://static.ankama.com/dofus/renderer/look/7b333538387c7c313d31343331353733342c333d31343331353733342c323d31343331353733347c3131357d/full/1/200_200-10.png"
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/98.png"
   }
 ]

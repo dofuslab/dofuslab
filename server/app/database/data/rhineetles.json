@@ -1,0 +1,3175 @@
+[
+  {
+    "dofusID": "197",
+    "name": {
+      "en": "Almond and Crimson Rhineetle",
+      "fr": "Volkorne Amande et Pourpre"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/197.png"
+  },
+  {
+    "dofusID": "200",
+    "name": {
+      "en": "Almond and Ebony Rhineetle",
+      "fr": "Volkorne Amande et Ebène"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/200.png"
+  },
+  {
+    "dofusID": "201",
+    "name": {
+      "en": "Almond and Ginger Rhineetle",
+      "fr": "Volkorne Amande et Roux"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/201.png"
+  },
+  {
+    "dofusID": "199",
+    "name": {
+      "en": "Almond and Indigo Rhineetle",
+      "fr": "Volkorne Amande et Indigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/199.png"
+  },
+  {
+    "dofusID": "202",
+    "name": {
+      "en": "Almond and Ivory Rhineetle",
+      "fr": "Volkorne Amande et Ivoire"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/202.png"
+  },
+  {
+    "dofusID": "198",
+    "name": {
+      "en": "Almond and Orchid Rhineetle",
+      "fr": "Volkorne Amande et Orchidée"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/198.png"
+  },
+  {
+    "dofusID": "203",
+    "name": {
+      "en": "Almond and Turquoise Rhineetle",
+      "fr": "Volkorne Amande et Turquoise"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/203.png"
+  },
+  {
+    "dofusID": "181",
+    "name": {
+      "en": "Almond Rhineetle",
+      "fr": "Volkorne Amande"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 80
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/181.png"
+  },
+  {
+    "dofusID": "280",
+    "name": {
+      "en": "Amethyst and Almond Rhineetle",
+      "fr": "Volkorne Améthyste et Amande"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/280.png"
+  },
+  {
+    "dofusID": "276",
+    "name": {
+      "en": "Amethyst and Crimson Rhineetle",
+      "fr": "Volkorne Améthyste et Pourpre"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/276.png"
+  },
+  {
+    "dofusID": "279",
+    "name": {
+      "en": "Amethyst and Ebony Rhineetle",
+      "fr": "Volkorne Améthyste et Ebène"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/279.png"
+  },
+  {
+    "dofusID": "285",
+    "name": {
+      "en": "Amethyst and Emerald Rhineetle",
+      "fr": "Volkorne Améthyste et Emeraude"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/285.png"
+  },
+  {
+    "dofusID": "281",
+    "name": {
+      "en": "Amethyst and Ginger Rhineetle",
+      "fr": "Volkorne Améthyste et Roux"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/281.png"
+  },
+  {
+    "dofusID": "286",
+    "name": {
+      "en": "Amethyst and Golden Rhineetle",
+      "fr": "Volkorne Améthyste et Doré"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/286.png"
+  },
+  {
+    "dofusID": "278",
+    "name": {
+      "en": "Amethyst and Indigo Rhineetle",
+      "fr": "Volkorne Améthyste et Indigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/278.png"
+  },
+  {
+    "dofusID": "282",
+    "name": {
+      "en": "Amethyst and Ivory Rhineetle",
+      "fr": "Volkorne Améthyste et Ivoire"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/282.png"
+  },
+  {
+    "dofusID": "277",
+    "name": {
+      "en": "Amethyst and Orchid Rhineetle",
+      "fr": "Volkorne Améthyste et Orchidée"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/277.png"
+  },
+  {
+    "dofusID": "284",
+    "name": {
+      "en": "Amethyst and Plum Rhineetle",
+      "fr": "Volkorne Améthyste et Prune"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/284.png"
+  },
+  {
+    "dofusID": "283",
+    "name": {
+      "en": "Amethyst and Turquoise Rhineetle",
+      "fr": "Volkorne Améthyste et Turquoise"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/283.png"
+  },
+  {
+    "dofusID": "190",
+    "name": {
+      "en": "Amethyst Rhineetle",
+      "fr": "Volkorne Améthyste"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 12
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/190.png"
+  },
+  {
+    "dofusID": "193",
+    "name": {
+      "en": "Crimson and Ebony Rhineetle",
+      "fr": "Volkorne Pourpre et Ebène"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/193.png"
+  },
+  {
+    "dofusID": "192",
+    "name": {
+      "en": "Crimson and Indigo Rhineetle",
+      "fr": "Volkorne Pourpre et Indigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/192.png"
+  },
+  {
+    "dofusID": "191",
+    "name": {
+      "en": "Crimson and Orchid Rhineetle",
+      "fr": "Volkorne Pourpre et Orchidée"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/191.png"
+  },
+  {
+    "dofusID": "178",
+    "name": {
+      "en": "Crimson Rhineetle",
+      "fr": "Volkorne Pourpre"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/178.png"
+  },
+  {
+    "dofusID": "177",
+    "name": {
+      "en": "Ebony Rhineetle",
+      "fr": "Volkorne Ebène"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/177.png"
+  },
+  {
+    "dofusID": "230",
+    "name": {
+      "en": "Emerald and Almond Rhineetle",
+      "fr": "Volkorne Emeraude et Amande"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/230.png"
+  },
+  {
+    "dofusID": "226",
+    "name": {
+      "en": "Emerald and Crimson Rhineetle",
+      "fr": "Volkorne Emeraude et Pourpre"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/226.png"
+  },
+  {
+    "dofusID": "229",
+    "name": {
+      "en": "Emerald and Ebony Rhineetle",
+      "fr": "Volkorne Emeraude et Ebène"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/229.png"
+  },
+  {
+    "dofusID": "231",
+    "name": {
+      "en": "Emerald and Ginger Rhineetle",
+      "fr": "Volkorne Emeraude et Roux"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/231.png"
+  },
+  {
+    "dofusID": "228",
+    "name": {
+      "en": "Emerald and Indigo Rhineetle",
+      "fr": "Volkorne Emeraude et Indigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/228.png"
+  },
+  {
+    "dofusID": "233",
+    "name": {
+      "en": "Emerald and Ivory Rhineetle",
+      "fr": "Volkorne Emeraude et Ivoire"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/233.png"
+  },
+  {
+    "dofusID": "227",
+    "name": {
+      "en": "Emerald and Orchid Rhineetle",
+      "fr": "Volkorne Emeraude et Orchidée"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/227.png"
+  },
+  {
+    "dofusID": "234",
+    "name": {
+      "en": "Emerald and Turquoise Rhineetle",
+      "fr": "Volkorne Emeraude et Turquoise"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/234.png"
+  },
+  {
+    "dofusID": "185",
+    "name": {
+      "en": "Emerald Rhineetle",
+      "fr": "Volkorne Emeraude"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 7
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/185.png"
+  },
+  {
+    "dofusID": "204",
+    "name": {
+      "en": "Ginger and Crimson Rhineetle",
+      "fr": "Volkorne Roux et Pourpre"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/204.png"
+  },
+  {
+    "dofusID": "207",
+    "name": {
+      "en": "Ginger and Ebony Rhineetle",
+      "fr": "Volkorne Roux et Ebène"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/207.png"
+  },
+  {
+    "dofusID": "206",
+    "name": {
+      "en": "Ginger and Indigo Rhineetle",
+      "fr": "Volkorne Roux et Indigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/206.png"
+  },
+  {
+    "dofusID": "208",
+    "name": {
+      "en": "Ginger and Ivory Rhineetle",
+      "fr": "Volkorne Roux et Ivoire"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/208.png"
+  },
+  {
+    "dofusID": "205",
+    "name": {
+      "en": "Ginger and Orchid Rhineetle",
+      "fr": "Volkorne Roux et Orchidée"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/205.png"
+  },
+  {
+    "dofusID": "209",
+    "name": {
+      "en": "Ginger and Turquoise Rhineetle",
+      "fr": "Volkorne Roux et Turquoise"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/209.png"
+  },
+  {
+    "dofusID": "180",
+    "name": {
+      "en": "Ginger Rhineetle",
+      "fr": "Volkorne Roux"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/180.png"
+  },
+  {
+    "dofusID": "292",
+    "name": {
+      "en": "Golden and Almond Rhineetle",
+      "fr": "Volkorne Doré et Amande"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/292.png"
+  },
+  {
+    "dofusID": "235",
+    "name": {
+      "en": "Golden and Crimson Rhineetle",
+      "fr": "Volkorne Doré et Pourpre"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/235.png"
+  },
+  {
+    "dofusID": "238",
+    "name": {
+      "en": "Golden and Ebony Rhineetle",
+      "fr": "Volkorne Doré et Ebène"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/238.png"
+  },
+  {
+    "dofusID": "296",
+    "name": {
+      "en": "Golden and Emerald Rhineetle",
+      "fr": "Volkorne Doré et Emeraude"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/296.png"
+  },
+  {
+    "dofusID": "291",
+    "name": {
+      "en": "Golden and Ginger Rhineetle",
+      "fr": "Volkorne Doré et Roux"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/291.png"
+  },
+  {
+    "dofusID": "237",
+    "name": {
+      "en": "Golden and Indigo Rhineetle",
+      "fr": "Volkorne Doré et Indigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/237.png"
+  },
+  {
+    "dofusID": "293",
+    "name": {
+      "en": "Golden and Ivory Rhineetle",
+      "fr": "Volkorne Doré et Ivoire"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/293.png"
+  },
+  {
+    "dofusID": "236",
+    "name": {
+      "en": "Golden and Orchid Rhineetle",
+      "fr": "Volkorne Doré et Orchidée"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/236.png"
+  },
+  {
+    "dofusID": "295",
+    "name": {
+      "en": "Golden and Plum Rhineetle",
+      "fr": "Volkorne Doré et Prune"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/295.png"
+  },
+  {
+    "dofusID": "294",
+    "name": {
+      "en": "Golden and Turquoise Rhineetle",
+      "fr": "Volkorne Doré et Turquoise"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/294.png"
+  },
+  {
+    "dofusID": "186",
+    "name": {
+      "en": "Golden Rhineetle",
+      "fr": "Volkorne Doré"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 150
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/186.png"
+  },
+  {
+    "dofusID": "196",
+    "name": {
+      "en": "Indigo and Ebony Rhineetle",
+      "fr": "Volkorne Indigo et Ebène"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/196.png"
+  },
+  {
+    "dofusID": "176",
+    "name": {
+      "en": "Indigo Rhineetle",
+      "fr": "Volkorne Indigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/176.png"
+  },
+  {
+    "dofusID": "210",
+    "name": {
+      "en": "Ivory and Crimson Rhineetle",
+      "fr": "Volkorne Ivoire et Pourpre"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/210.png"
+  },
+  {
+    "dofusID": "213",
+    "name": {
+      "en": "Ivory and Ebony Rhineetle",
+      "fr": "Volkorne Ivoire et Ebène"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/213.png"
+  },
+  {
+    "dofusID": "212",
+    "name": {
+      "en": "Ivory and Indigo Rhineetle",
+      "fr": "Volkorne Ivoire et Indigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/212.png"
+  },
+  {
+    "dofusID": "211",
+    "name": {
+      "en": "Ivory and Orchid Rhineetle",
+      "fr": "Volkorne Ivoire et Orchidée"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/211.png"
+  },
+  {
+    "dofusID": "214",
+    "name": {
+      "en": "Ivory and Turquoise Rhineetle",
+      "fr": "Volkorne Ivoire et Turquoise"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/214.png"
+  },
+  {
+    "dofusID": "182",
+    "name": {
+      "en": "Ivory Rhineetle",
+      "fr": "Volkorne Ivoire"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 30
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/182.png"
+  },
+  {
+    "dofusID": "243",
+    "name": {
+      "en": "Jade and Almond Rhineetle",
+      "fr": "Volkorne Jade et Amande"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/243.png"
+  },
+  {
+    "dofusID": "252",
+    "name": {
+      "en": "Jade and Amethyst Rhineetle",
+      "fr": "Volkorne Jade et Améthyste"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/252.png"
+  },
+  {
+    "dofusID": "239",
+    "name": {
+      "en": "Jade and Crimson Rhineetle",
+      "fr": "Volkorne Jade et Pourpre"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/239.png"
+  },
+  {
+    "dofusID": "242",
+    "name": {
+      "en": "Jade and Ebony Rhineetle",
+      "fr": "Volkorne Jade et Ebène"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/242.png"
+  },
+  {
+    "dofusID": "248",
+    "name": {
+      "en": "Jade and Emerald Rhineetle",
+      "fr": "Volkorne Jade et Emeraude"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/248.png"
+  },
+  {
+    "dofusID": "244",
+    "name": {
+      "en": "Jade and Ginger Rhineetle",
+      "fr": "Volkorne Jade et Roux"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/244.png"
+  },
+  {
+    "dofusID": "249",
+    "name": {
+      "en": "Jade and Golden Rhineetle",
+      "fr": "Volkorne Jade et Doré"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/249.png"
+  },
+  {
+    "dofusID": "241",
+    "name": {
+      "en": "Jade and Indigo Rhineetle",
+      "fr": "Volkorne Jade et Indigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/241.png"
+  },
+  {
+    "dofusID": "245",
+    "name": {
+      "en": "Jade and Ivory Rhineetle",
+      "fr": "Volkorne Jade et Ivoire"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/245.png"
+  },
+  {
+    "dofusID": "240",
+    "name": {
+      "en": "Jade and Orchid Rhineetle",
+      "fr": "Volkorne Jade et Orchidée"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/240.png"
+  },
+  {
+    "dofusID": "247",
+    "name": {
+      "en": "Jade and Plum Rhineetle",
+      "fr": "Volkorne Jade et Prune"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/247.png"
+  },
+  {
+    "dofusID": "250",
+    "name": {
+      "en": "Jade and Ruby Rhineetle",
+      "fr": "Volkorne Jade et Rubis"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/250.png"
+  },
+  {
+    "dofusID": "251",
+    "name": {
+      "en": "Jade and Sapphire Rhineetle",
+      "fr": "Volkorne Jade et Saphir"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/251.png"
+  },
+  {
+    "dofusID": "246",
+    "name": {
+      "en": "Jade and Turquoise Rhineetle",
+      "fr": "Volkorne Jade et Turquoise"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/246.png"
+  },
+  {
+    "dofusID": "187",
+    "name": {
+      "en": "Jade Rhineetle",
+      "fr": "Volkorne Jade"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 12
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/187.png"
+  },
+  {
+    "dofusID": "195",
+    "name": {
+      "en": "Orchid and Ebony Rhineetle",
+      "fr": "Volkorne Orchidée et Ebène"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/195.png"
+  },
+  {
+    "dofusID": "194",
+    "name": {
+      "en": "Orchid and Indigo Rhineetle",
+      "fr": "Volkorne Orchidée et Indigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/194.png"
+  },
+  {
+    "dofusID": "179",
+    "name": {
+      "en": "Orchid Rhineetle",
+      "fr": "Volkorne Orchidée"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/179.png"
+  },
+  {
+    "dofusID": "223",
+    "name": {
+      "en": "Plum and Almond Rhineetle",
+      "fr": "Volkorne Prune et Amande"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/223.png"
+  },
+  {
+    "dofusID": "219",
+    "name": {
+      "en": "Plum and Crimson Rhineetle",
+      "fr": "Volkorne Prune et Pourpre"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/219.png"
+  },
+  {
+    "dofusID": "222",
+    "name": {
+      "en": "Plum and Ebony Rhineetle",
+      "fr": "Volkorne Prune et Ebène"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/222.png"
+  },
+  {
+    "dofusID": "225",
+    "name": {
+      "en": "Plum and Emerald Rhineetle",
+      "fr": "Volkorne Prune et Emeraude"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/225.png"
+  },
+  {
+    "dofusID": "287",
+    "name": {
+      "en": "Plum and Ginger Rhineetle",
+      "fr": "Volkorne Prune et Roux"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/287.png"
+  },
+  {
+    "dofusID": "221",
+    "name": {
+      "en": "Plum and Indigo Rhineetle",
+      "fr": "Volkorne Prune et Indigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/221.png"
+  },
+  {
+    "dofusID": "288",
+    "name": {
+      "en": "Plum and Ivory Rhineetle",
+      "fr": "Volkorne Prune et Ivoire"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/288.png"
+  },
+  {
+    "dofusID": "220",
+    "name": {
+      "en": "Plum and Orchid Rhineetle",
+      "fr": "Volkorne Prune et Orchidée"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/220.png"
+  },
+  {
+    "dofusID": "224",
+    "name": {
+      "en": "Plum and Turquoise Rhineetle",
+      "fr": "Volkorne Prune et Turquoise"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/224.png"
+  },
+  {
+    "dofusID": "184",
+    "name": {
+      "en": "Plum Rhineetle",
+      "fr": "Volkorne Prune"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/184.png"
+  },
+  {
+    "dofusID": "257",
+    "name": {
+      "en": "Ruby and Almond Rhineetle",
+      "fr": "Volkorne Rubis et Amande"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/257.png"
+  },
+  {
+    "dofusID": "290",
+    "name": {
+      "en": "Ruby and Amethyst Rhineetle",
+      "fr": "Volkorne Prune et Améthyste"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/290.png"
+  },
+  {
+    "dofusID": "253",
+    "name": {
+      "en": "Ruby and Crimson Rhineetle",
+      "fr": "Volkorne Rubis et Pourpre"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/253.png"
+  },
+  {
+    "dofusID": "256",
+    "name": {
+      "en": "Ruby and Ebony Rhineetle",
+      "fr": "Volkorne Rubis et Ebène"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/256.png"
+  },
+  {
+    "dofusID": "262",
+    "name": {
+      "en": "Ruby and Emerald Rhineetle",
+      "fr": "Volkorne Rubis et Emeraude"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/262.png"
+  },
+  {
+    "dofusID": "258",
+    "name": {
+      "en": "Ruby and Ginger Rhineetle",
+      "fr": "Volkorne Rubis et Roux"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/258.png"
+  },
+  {
+    "dofusID": "263",
+    "name": {
+      "en": "Ruby and Golden Rhineetle",
+      "fr": "Volkorne Rubis et Doré"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/263.png"
+  },
+  {
+    "dofusID": "255",
+    "name": {
+      "en": "Ruby and Indigo Rhineetle",
+      "fr": "Volkorne Rubis et Indigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/255.png"
+  },
+  {
+    "dofusID": "259",
+    "name": {
+      "en": "Ruby and Ivory Rhineetle",
+      "fr": "Volkorne Rubis et Ivoire"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/259.png"
+  },
+  {
+    "dofusID": "254",
+    "name": {
+      "en": "Ruby and Orchid Rhineetle",
+      "fr": "Volkorne Rubis et Orchidée"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/254.png"
+  },
+  {
+    "dofusID": "261",
+    "name": {
+      "en": "Ruby and Plum Rhineetle",
+      "fr": "Volkorne Rubis et Prune"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/261.png"
+  },
+  {
+    "dofusID": "289",
+    "name": {
+      "en": "Ruby and Sapphire Rhineetle",
+      "fr": "Volkorne Rubis et Saphir"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/289.png"
+  },
+  {
+    "dofusID": "260",
+    "name": {
+      "en": "Ruby and Turquoise Rhineetle",
+      "fr": "Volkorne Rubis et Turquoise"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/260.png"
+  },
+  {
+    "dofusID": "188",
+    "name": {
+      "en": "Ruby Rhineetle",
+      "fr": "Volkorne Rubis"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 12
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/188.png"
+  },
+  {
+    "dofusID": "268",
+    "name": {
+      "en": "Sapphire and Almond Rhineetle",
+      "fr": "Volkorne Saphir et Amande"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/268.png"
+  },
+  {
+    "dofusID": "275",
+    "name": {
+      "en": "Sapphire and Amethyst Rhineetle",
+      "fr": "Volkorne Saphir et Améthyste"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/275.png"
+  },
+  {
+    "dofusID": "269",
+    "name": {
+      "en": "Sapphire and Ginger Rhineetle",
+      "fr": "Volkorne Saphir et Roux"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/269.png"
+  },
+  {
+    "dofusID": "274",
+    "name": {
+      "en": "Sapphire and Golden Rhineetle",
+      "fr": "Volkorne Saphir et Doré"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/274.png"
+  },
+  {
+    "dofusID": "266",
+    "name": {
+      "en": "Sapphire and Indigo Rhineetle",
+      "fr": "Volkorne Saphir et Indigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/266.png"
+  },
+  {
+    "dofusID": "270",
+    "name": {
+      "en": "Sapphire and Ivory Rhineetle",
+      "fr": "Volkorne Saphir et Ivoire"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/270.png"
+  },
+  {
+    "dofusID": "272",
+    "name": {
+      "en": "Sapphire and Plum Rhineetle",
+      "fr": "Volkorne Saphir et Prune"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/272.png"
+  },
+  {
+    "dofusID": "271",
+    "name": {
+      "en": "Sapphire and Turquoise Rhineetle",
+      "fr": "Volkorne Saphir et Turquoise"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/271.png"
+  },
+  {
+    "dofusID": "189",
+    "name": {
+      "en": "Sapphire Rhineetle",
+      "fr": "Volkorne Saphir"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 12
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/189.png"
+  },
+  {
+    "dofusID": "215",
+    "name": {
+      "en": "Turquoise and Crimson Rhineetle",
+      "fr": "Volkorne Turquoise et Pourpre"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/215.png"
+  },
+  {
+    "dofusID": "218",
+    "name": {
+      "en": "Turquoise and Ebony Rhineetle",
+      "fr": "Volkorne Turquoise et Ebène"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/218.png"
+  },
+  {
+    "dofusID": "217",
+    "name": {
+      "en": "Turquoise and Indigo Rhineetle",
+      "fr": "Volkorne Turquoise et Indigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/217.png"
+  },
+  {
+    "dofusID": "216",
+    "name": {
+      "en": "Turquoise and Orchid Rhineetle",
+      "fr": "Volkorne Turquoise et Orchidée"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/216.png"
+  },
+  {
+    "dofusID": "183",
+    "name": {
+      "en": "Turquoise Rhineetle",
+      "fr": "Volkorne Turquoise"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 30
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/183.png"
+  }
+]

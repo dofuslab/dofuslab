@@ -3,7 +3,7 @@
     "dofusID": "217029",
     "name": {
       "en": "Disaprys",
-      "fr": null,
+      "fr": "Prysmaru",
       "de": null,
       "es": null,
       "it": null,
@@ -14,6 +14,9 @@
     "customStats": {
       "en": [
         "The bearer becomes invisible (1 turn) at the start of their first round"
+      ],
+      "fr": [
+        "Le porteur devient invisible (1 tour) au début de son premier tour de jeu"
       ]
     },
     "conditions": {
@@ -26,7 +29,7 @@
     "dofusID": "217035",
     "name": {
       "en": "Gravprysy",
-      "fr": null,
+      "fr": "Prysantor",
       "de": null,
       "es": null,
       "it": null,
@@ -37,6 +40,9 @@
     "customStats": {
       "en": [
         "The bear gains the Gravity state as long as they have not suffered any damage"
+      ],
+      "fr": [
+        "Le porteur gagne l'état Pesanteur tant qu'il n'a pas subi de dommages"
       ]
     },
     "conditions": {
@@ -49,7 +55,7 @@
     "dofusID": "217028",
     "name": {
       "en": "Iridescent Pryank",
-      "fr": null,
+      "fr": "Telprys Iridescente",
       "de": null,
       "es": null,
       "it": null,
@@ -60,6 +66,9 @@
     "customStats": {
       "en": [
         "At the end of their first turn, the bearer reduces damage by 20% (1 turn) for each enemy within 2 cells"
+      ],
+      "fr": [
+        "À la fin de son premier tour, le porteur réduit les dommages de 20% (1 tour) pour chaque ennemi à 2 cases ou moins"
       ]
     },
     "conditions": {
@@ -72,7 +81,7 @@
     "dofusID": "217017",
     "name": {
       "en": "Iridescent Prycapture",
-      "fr": null,
+      "fr": "Ratrapry Irdescente",
       "de": null,
       "es": null,
       "it": null,
@@ -83,6 +92,9 @@
     "customStats": {
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 9 cells away and loses 2 AP (2 turns) per enemy within 9 cells"
+      ],
+      "fr": [
+        "Le porteur gagne 1 PM (2 tours) par ennemi à plus de cases et perd 2 PA (2 tours) par ennemi à 9 cases ou moins"
       ]
     },
     "conditions": {
@@ -95,7 +107,7 @@
     "dofusID": "217020",
     "name": {
       "en": "Iridescent Prygenerate",
-      "fr": null,
+      "fr": "Prygen Iridescente",
       "de": null,
       "es": null,
       "it": null,
@@ -106,6 +118,9 @@
     "customStats": {
       "en": [
         "Heals 100% of the enemy damage suffered until the end of the first turn"
+      ],
+      "fr": [
+        "Soigne 100% des dommages ennemis subis jusqu'à la fin du premier tour"
       ]
     },
     "conditions": {
@@ -118,7 +133,7 @@
     "dofusID": "217014",
     "name": {
       "en": "Iridescent Pryndsight",
-      "fr": null,
+      "fr": "Aprykou Iridescente",
       "de": null,
       "es": null,
       "it": null,
@@ -129,6 +144,9 @@
     "customStats": {
       "en": [
         "The bearer gains 300 Power (1 turn) if they suffer an enemy hit before playing"
+      ],
+      "fr": [
+        "Le porteur gagne 300 Puissance (1 tour) si un coup ennemi est reçu avant d'avoir joué"
       ]
     },
     "conditions": {
@@ -141,7 +159,7 @@
     "dofusID": "217023",
     "name": {
       "en": "Iridescent Prysipitate",
-      "fr": null,
+      "fr": "Prycipithon Iridescente",
       "de": null,
       "es": null,
       "it": null,
@@ -152,6 +170,9 @@
     "customStats": {
       "en": [
         "The bearer gains +4 AP for their first round but also loses 4 MP"
+      ],
+      "fr": [
+        "Le porteur gagne +4 PA pendant son premier tour mais aussi -4 PM"
       ]
     },
     "conditions": {
@@ -164,7 +185,7 @@
     "dofusID": "217008",
     "name": {
       "en": "Iridescent Pryssure",
-      "fr": null,
+      "fr": "Pryssion Iridescente",
       "de": null,
       "es": null,
       "it": null,
@@ -175,6 +196,9 @@
     "customStats": {
       "en": [
         "The bearer gains 4 AP for 1 turn but inflicts -50% damage"
+      ],
+      "fr": [
+        "Le porteur gagne 4 PA pendant 1 tour mais occasionne -50% de dommages"
       ]
     },
     "conditions": {
@@ -187,7 +211,7 @@
     "dofusID": "217002",
     "name": {
       "en": "Iridescent Prytekt",
-      "fr": null,
+      "fr": "Prytek Iridescente",
       "de": null,
       "es": null,
       "it": null,
@@ -198,6 +222,9 @@
     "customStats": {
       "en": [
         "The bearer gains 100% of their current health in shield points for their first round"
+      ],
+      "fr": [
+        "Le porteur gagne 100% de sa vie actuelle en points de bouclier pendant son premier tour de jeu"
       ]
     },
     "conditions": {
@@ -210,7 +237,7 @@
     "dofusID": "217011",
     "name": {
       "en": "Iridescent Surpryz",
-      "fr": null,
+      "fr": "Surpryz Iridescente",
       "de": null,
       "es": null,
       "it": null,
@@ -221,6 +248,9 @@
     "customStats": {
       "en": [
         "The bearer gains 50 Critial for 1 turn"
+      ],
+      "fr": [
+        "Le porteur gagne 50 Critique pendant 1 tour"
       ]
     },
     "conditions": {
@@ -233,7 +263,7 @@
     "dofusID": "217026",
     "name": {
       "en": "Pryank",
-      "fr": null,
+      "fr": "Telprys",
       "de": null,
       "es": null,
       "it": null,
@@ -244,6 +274,9 @@
     "customStats": {
       "en": [
         "At the end of their first turn, the bearer reduces damage by 5% (3 turns) for each enemy within 2 cells"
+      ],
+      "fr": [
+        "À la fin de son premier tour, le porteur réduit les dommages de 5% (3 tours) pour chaque ennemi à cases ou moins"
       ]
     },
     "conditions": {
@@ -256,7 +289,7 @@
     "dofusID": "217015",
     "name": {
       "en": "Prycapture",
-      "fr": null,
+      "fr": "Ratrapry",
       "de": null,
       "es": null,
       "it": null,
@@ -267,6 +300,9 @@
     "customStats": {
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 15 cells away"
+      ],
+      "fr": [
+        "Le porteur gagne 1 PM (2 tours) par ennemi à plus de 15 cases"
       ]
     },
     "conditions": {
@@ -279,7 +315,7 @@
     "dofusID": "217018",
     "name": {
       "en": "Prygenerate",
-      "fr": null,
+      "fr": "Prygen",
       "de": null,
       "es": null,
       "it": null,
@@ -290,6 +326,9 @@
     "customStats": {
       "en": [
         "Heals 15% of the enemy damage suffered until the end of the third turn"
+      ],
+      "fr": [
+        "Soigne 15% des dommages ennemis subis jusqu'à la fin du troisième tour"
       ]
     },
     "conditions": {
@@ -302,7 +341,7 @@
     "dofusID": "217034",
     "name": {
       "en": "Prymune",
-      "fr": null,
+      "fr": "Prymune",
       "de": null,
       "es": null,
       "it": null,
@@ -313,6 +352,9 @@
     "customStats": {
       "en": [
         "The bearer reduces damage suffered by 80% before playing"
+      ],
+      "fr": [
+        "Le porteur réduit les dommages subis de 80% avant d'avoir joué"
       ]
     },
     "conditions": {
@@ -325,7 +367,7 @@
     "dofusID": "217012",
     "name": {
       "en": "Pryndsight",
-      "fr": null,
+      "fr": "Aprykou",
       "de": null,
       "es": null,
       "it": null,
@@ -336,6 +378,9 @@
     "customStats": {
       "en": [
         "The bearer gains 100 Power (3 turns) if they suffer an enemy hit before playing"
+      ],
+      "fr": [
+        "Le porteur gagne 100 Puissance (3 tours) si un coup ennemi est reçu avant d'avoir joué"
       ]
     },
     "conditions": {
@@ -348,7 +393,7 @@
     "dofusID": "217032",
     "name": {
       "en": "Pryshield",
-      "fr": null,
+      "fr": "Aprybou",
       "de": null,
       "es": null,
       "it": null,
@@ -359,6 +404,9 @@
     "customStats": {
       "en": [
         "The bearer gains 100% of their level in shield points (infinite) for each opponent (excluding summons) that plays before them"
+      ],
+      "fr": [
+        "Le porteur gagne 100% de son niveau en points de bouclier (infini) pour chaque adversaire (hors invocation) que joue avant lui"
       ]
     },
     "conditions": {
@@ -371,7 +419,7 @@
     "dofusID": "217025",
     "name": {
       "en": "Prysical",
-      "fr": null,
+      "fr": "Korprys",
       "de": null,
       "es": null,
       "it": null,
@@ -382,6 +430,9 @@
     "customStats": {
       "en": [
         "The bearer gains 250 MP Parry before playing, then 50 MP Parry for 1 turn"
+      ],
+      "fr": [
+        "Le porteur gagne 250 Esquive PM avant d'avoir joué, puis 50 Esquive PM pendant 1 tour"
       ]
     },
     "conditions": {
@@ -394,7 +445,7 @@
     "dofusID": "217021",
     "name": {
       "en": "Prysipitate",
-      "fr": null,
+      "fr": "Prycipithon",
       "de": null,
       "es": null,
       "it": null,
@@ -405,6 +456,9 @@
     "customStats": {
       "en": [
         "The bearer gains +2 AP for their first round"
+      ],
+      "fr": [
+        "Le porteur gagne +2 PA pendant son premier tour de jeu"
       ]
     },
     "conditions": {
@@ -417,7 +471,7 @@
     "dofusID": "217006",
     "name": {
       "en": "Pryssure",
-      "fr": null,
+      "fr": "Pryssion",
       "de": null,
       "es": null,
       "it": null,
@@ -428,6 +482,9 @@
     "customStats": {
       "en": [
         "The bearer gains 1 AP for 3 turns but inflicts -10% damage"
+      ],
+      "fr": [
+        "Le porteur gagne 1 PA pendant 3 tours mais occasionne -10% de dommages"
       ]
     },
     "conditions": {
@@ -440,7 +497,7 @@
     "dofusID": "217000",
     "name": {
       "en": "Prytekt",
-      "fr": null,
+      "fr": "Prytek",
       "de": null,
       "es": null,
       "it": null,
@@ -451,6 +508,9 @@
     "customStats": {
       "en": [
         "The bearer gains 25% of their current health in shield points for their first three rounds"
+      ],
+      "fr": [
+        "Le porteur gagne 25% de sa vie actuelle en points de bouclier pendant ses trois premiers tours de jeu"
       ]
     },
     "conditions": {
@@ -463,7 +523,7 @@
     "dofusID": "217030",
     "name": {
       "en": "Prywitchment",
-      "fr": null,
+      "fr": "Prysmenvout",
       "de": null,
       "es": null,
       "it": null,
@@ -473,7 +533,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "Reduces the duration of active effects on the bearer by 5 at the start of their first round"
+        "Reduces the duration of active effects on the bearer by 4 at the start of their first round"
+      ],
+      "fr": [
+        "Réduit de 4 la durée des effects actifs sur le porteur au début de son premier tour de jeu"
       ]
     },
     "conditions": {
@@ -486,7 +549,7 @@
     "dofusID": "217033",
     "name": {
       "en": "Pryximity",
-      "fr": null,
+      "fr": "Pryximite",
       "de": null,
       "es": null,
       "it": null,
@@ -497,6 +560,9 @@
     "customStats": {
       "en": [
         "At the start of their first round, the bearer gains 200% of their level in shield (infinite) for each enemy within 2 cells"
+      ],
+      "fr": [
+        "Au début de son premier tour de jeu, le porteur gagne 200% de son niveau en bouclier (infini) pour chaque ennemi à 2 cases ou moins"
       ]
     },
     "conditions": {
@@ -509,7 +575,7 @@
     "dofusID": "217027",
     "name": {
       "en": "Shiny Pryank",
-      "fr": null,
+      "fr": "Teleprys Brillante",
       "de": null,
       "es": null,
       "it": null,
@@ -520,6 +586,9 @@
     "customStats": {
       "en": [
         "At the end of their first turn, the bearer reduces damage by 10% (2 turns) for each enemy within 2 cells"
+      ],
+      "fr": [
+        "À la fin de son premier tour, le porteur réduit les dommages de 10% (2 tours) pour chque ennemi à 2 cases ou moins"
       ]
     },
     "conditions": {
@@ -532,7 +601,7 @@
     "dofusID": "217016",
     "name": {
       "en": "Shiny Prycapture",
-      "fr": null,
+      "fr": "Ratrapry Brillante",
       "de": null,
       "es": null,
       "it": null,
@@ -543,6 +612,9 @@
     "customStats": {
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 12 cells away and loses 1 AP (2 turns) per enemy within 12 cells"
+      ],
+      "fr": [
+        "Le porteur gagne 1 PM (2 tours) par ennemi à plus de 12 cases et perd 1 PA (2 tours) par ennemi à 12 cases ou moins"
       ]
     },
     "conditions": {
@@ -555,7 +627,7 @@
     "dofusID": "217019",
     "name": {
       "en": "Shiny Prygenerate",
-      "fr": null,
+      "fr": "Prygen Brillante",
       "de": null,
       "es": null,
       "it": null,
@@ -566,6 +638,9 @@
     "customStats": {
       "en": [
         "Heals 30% of enemy damage suffered until the end of the second turn"
+      ],
+      "fr": [
+        "Soigne 30% de dommages ennemis subis jusqu'à la fin du deuxième tour"
       ]
     },
     "conditions": {
@@ -578,7 +653,7 @@
     "dofusID": "217013",
     "name": {
       "en": "Shiny Pryndsight",
-      "fr": null,
+      "fr": "Aprykou Brillante",
       "de": null,
       "es": null,
       "it": null,
@@ -589,6 +664,9 @@
     "customStats": {
       "en": [
         "The bearer gains 200 Power (2 turns) if they suffer an enemy hit before playing"
+      ],
+      "fr": [
+        "Le porteur gagne 200 Puissance (2 tours) si un coup ennemi est reçu avant d'avoir joué"
       ]
     },
     "conditions": {
@@ -601,7 +679,7 @@
     "dofusID": "217022",
     "name": {
       "en": "Shiny Prysipitate",
-      "fr": null,
+      "fr": "Pricipithon Brillante",
       "de": null,
       "es": null,
       "it": null,
@@ -612,6 +690,9 @@
     "customStats": {
       "en": [
         "The bearer gains +3 AP for their first round but also loses 2 MP"
+      ],
+      "fr": [
+        "Le porteur gagne +3 PA pendant son premier tour mais aussi -2 PM"
       ]
     },
     "conditions": {
@@ -624,7 +705,7 @@
     "dofusID": "217007",
     "name": {
       "en": "Shiny Pryssure",
-      "fr": null,
+      "fr": "Pryssion Brillante",
       "de": null,
       "es": null,
       "it": null,
@@ -635,6 +716,9 @@
     "customStats": {
       "en": [
         "The bearer gains 2 AP for 2 turns but inflicts -20% damage"
+      ],
+      "fr": [
+        "Le porteur gagne 2 PA pendant 2 tours mais occasionne -20% de dommages"
       ]
     },
     "conditions": {
@@ -647,7 +731,7 @@
     "dofusID": "217001",
     "name": {
       "en": "Shiny Prytekt",
-      "fr": null,
+      "fr": "Pytek Brillante",
       "de": null,
       "es": null,
       "it": null,
@@ -658,6 +742,9 @@
     "customStats": {
       "en": [
         "The bearer gains 50% of their current health in shield points for their first two rounds"
+      ],
+      "fr": [
+        "Le porteur gagne 50% de sa vie actuelle en points de bouclier pendant ses deux premiers tours de jeu"
       ]
     },
     "conditions": {
@@ -670,7 +757,7 @@
     "dofusID": "217010",
     "name": {
       "en": "Shiny Surpryz",
-      "fr": null,
+      "fr": "Surpryz Brillante",
       "de": null,
       "es": null,
       "it": null,
@@ -681,6 +768,9 @@
     "customStats": {
       "en": [
         "The bearer gains 20 Critical for 2 turns"
+      ],
+      "fr": [
+        "Le porteur gagne 20 Critique pendant 2 tours"
       ]
     },
     "conditions": {
@@ -693,7 +783,7 @@
     "dofusID": "217024",
     "name": {
       "en": "Spryritual",
-      "fr": null,
+      "fr": "Espryt",
       "de": null,
       "es": null,
       "it": null,
@@ -704,6 +794,9 @@
     "customStats": {
       "en": [
         "The bearer gains 250 AP Parry before playing, then 50 AP Parry for 1 turn"
+      ],
+      "fr": [
+        "Le porteur gagne 250 Esquive PA avant d'avoir joué, puis 50 Esquive PA pendant 1 tour"
       ]
     },
     "conditions": {
@@ -716,7 +809,7 @@
     "dofusID": "217009",
     "name": {
       "en": "Surpryz",
-      "fr": null,
+      "fr": "Surpryz",
       "de": null,
       "es": null,
       "it": null,
@@ -727,6 +820,9 @@
     "customStats": {
       "en": [
         "The bearer gains 8 Critical for 3 turns"
+      ],
+      "fr": [
+        "Le porteur gagne 8 Critique pendant 3 tours"
       ]
     },
     "conditions": {
