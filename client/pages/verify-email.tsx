@@ -27,6 +27,8 @@ const VerifyEmailPage: NextPage = () => {
     mutate();
   }, [mutate]);
 
+  const email = data?.currentUser?.email;
+
   React.useEffect(() => {
     if (data?.currentUser?.verified) {
       router.replace('/', {
@@ -60,7 +62,7 @@ const VerifyEmailPage: NextPage = () => {
           <img src="https://dofus-lab.s3.us-east-2.amazonaws.com/item/18191.png" />
         </div>
         <div css={{ fontSize: '16px', marginBottom: 20 }}>
-          {t('VERIFICATION_MESSAGE', { email: data?.currentUser?.email })}
+          {t('VERIFICATION_MESSAGE', { email })}
         </div>
         <Button size="large" onClick={onClick}>
           {t('RESEND_VERIFICATION_EMAIL')}

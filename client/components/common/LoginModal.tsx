@@ -78,7 +78,7 @@ const LoginModal: React.FC<IProps> = ({
           onClick={onClose}
           css={{ fontSize: '0.75rem' }}
         >
-          {t('common:CANCEL')}
+          {t('CANCEL', { ns: 'common' })}
         </Button>,
         <Button
           form="login-form"
@@ -147,7 +147,7 @@ const LoginModal: React.FC<IProps> = ({
       </Form>
       <Divider />
       <div css={{ fontSize: '0.75rem' }}>
-        <Trans i18nKey="NO_ACCOUNT">
+        <Trans i18nKey="auth:NO_ACCOUNT_SIGNUP">
           Don't have an account? <a onClick={onSignUp}>Sign up here.</a>
         </Trans>
       </div>
