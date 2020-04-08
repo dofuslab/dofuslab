@@ -15,7 +15,11 @@ import {
   effectToIconUrl,
   elementMageToWeaponEffect,
 } from 'common/utils';
-import { Stat, WeaponElementMage } from '__generated__/globalTypes';
+import {
+  Stat,
+  WeaponElementMage,
+  WeaponEffectType,
+} from '__generated__/globalTypes';
 import { MageAction } from 'common/types';
 import { useTranslation } from 'i18n';
 import MageInputNumber from './MageInputNumber';
@@ -216,6 +220,10 @@ const MageModal: React.FC<IProps> = ({
     [mutate, closeMageModal, client, t, customSet],
   );
 
+  const hasNeutralDamage = equippedItem.item.weaponStats?.weaponEffects.some(
+    ({ effectType }) => effectType === WeaponEffectType.NEUTRAL_DAMAGE,
+  );
+
   return (
     <ClassNames>
       {({ css }) => (
@@ -253,35 +261,41 @@ const MageModal: React.FC<IProps> = ({
                   innerDivStyle={{ marginBottom: 8 }}
                   elementMage={weaponElementMage}
                 />
-                <div css={{ position: 'relative', marginLeft: 24 }}>
-                  <div
-                    css={deleteStatWrapper}
-                    onClick={() => {
-                      setWeaponElementMage(undefined);
-                    }}
-                  >
-                    <FontAwesomeIcon icon={faTimes} />
+                {hasNeutralDamage && (
+                  <div css={{ position: 'relative', marginLeft: 24 }}>
+                    <div
+                      css={deleteStatWrapper}
+                      onClick={() => {
+                        setWeaponElementMage(undefined);
+                      }}
+                    >
+                      <FontAwesomeIcon icon={faTimes} />
+                    </div>
+                    <Select<WeaponElementMage>
+                      size="large"
+                      value={weaponElementMage}
+                      onChange={setWeaponElementMage}
+                      dropdownClassName={css({ zIndex: 1062 })}
+                      css={{ width: '100%', fontSize: '0.75rem' }}
+                    >
+                      {Object.values(WeaponElementMage).map(v => (
+                        <Option key={v} value={v}>
+                          <div css={{ display: 'flex', alignItems: 'center' }}>
+                            <img
+                              src={effectToIconUrl(
+                                elementMageToWeaponEffect(v),
+                              )}
+                              css={{ width: 16, marginRight: 8 }}
+                            />{' '}
+                            {t(`WEAPON_ELEMENT_MAGE.${v}`, {
+                              ns: 'weapon_spell_effect',
+                            })}
+                          </div>
+                        </Option>
+                      ))}
+                    </Select>
                   </div>
-                  <Select<WeaponElementMage>
-                    size="large"
-                    value={weaponElementMage}
-                    onChange={setWeaponElementMage}
-                    dropdownClassName={css({ zIndex: 1062 })}
-                    css={{ width: '100%', fontSize: '0.75rem' }}
-                  >
-                    {Object.values(WeaponElementMage).map(v => (
-                      <Option key={v} value={v}>
-                        <div css={{ display: 'flex', alignItems: 'center' }}>
-                          <img
-                            src={effectToIconUrl(elementMageToWeaponEffect(v))}
-                            css={{ width: 16, marginRight: 8 }}
-                          />{' '}
-                          {t(v, { ns: 'weapon_spell_effect' })}
-                        </div>
-                      </Option>
-                    ))}
-                  </Select>
-                </div>
+                )}
               </div>
               <Divider css={{ margin: '12px 0' }} />
             </>
@@ -354,7 +368,14 @@ const MageModal: React.FC<IProps> = ({
                   </div>
                 );
               })}
-            <div css={{ display: 'flex', height: 42, alignItems: 'center' }}>
+            <div
+              css={{
+                display: 'flex',
+                height: 42,
+                alignItems: 'center',
+                marginLeft: 24,
+              }}
+            >
               <Select
                 size="large"
                 autoClearSearchValue
@@ -385,7 +406,9 @@ const MageModal: React.FC<IProps> = ({
                 ))}
               </Select>
             </div>
-            <div css={{ display: 'flex', alignItems: 'center' }}>
+            <div
+              css={{ display: 'flex', alignItems: 'center', marginLeft: 24 }}
+            >
               <Button
                 size="large"
                 css={{ fontSize: '0.75rem' }}

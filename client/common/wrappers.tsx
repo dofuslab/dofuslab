@@ -221,7 +221,7 @@ export const WeaponEffectsList: React.FC<{
               }}
             >
               {minDamage !== null ? `${minDamage}-` : ''}
-              {maxDamage} {t(effectType)}
+              {maxDamage} {t(`EFFECT_TYPE.${effectType}`)}
             </div>
           </div>
         );
