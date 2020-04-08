@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import Tabs from 'antd/lib/tabs';
+import { Tabs } from 'antd';
 
 import { STAT_GROUPS, mq, SEARCH_BAR_ID } from 'common/constants';
 import Layout from './Layout';

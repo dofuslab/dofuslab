@@ -7,7 +7,8 @@ import { MediaContextProvider } from 'components/common/Media';
 
 import { appWithTranslation } from '../i18n';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import 'antd/dist/antd.min.css';
+// import 'antd/dist/antd.min.css';
+// import 'antd/dist/antd.dark.min.css';
 
 config.autoAddCss = false;
 

@@ -2,10 +2,8 @@
 
 import React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
-import Modal from 'antd/lib/modal';
-import Select, { LabeledValue } from 'antd/lib/select';
-import Divider from 'antd/lib/divider';
-import Button from 'antd/lib/button/button';
+import { Modal, Select, Divider, Button } from 'antd';
+import { LabeledValue } from 'antd/lib/select';
 
 import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
 import {

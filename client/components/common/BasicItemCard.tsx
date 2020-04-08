@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import Card from 'antd/lib/card';
+import { Card } from 'antd';
 import { CardTitleWithLevel } from 'common/wrappers';
 import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { useTranslation } from 'i18n';

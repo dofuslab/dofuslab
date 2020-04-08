@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
-import Popover from 'antd/lib/popover';
+import { Popover } from 'antd';
 
 import { item } from 'graphql/fragments/__generated__/item';
 import { useTranslation } from 'i18n';

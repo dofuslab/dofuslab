@@ -4,8 +4,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 import { Waypoint } from 'react-waypoint';
-import Card from 'antd/lib/card';
-import Skeleton from 'antd/lib/skeleton';
+import { Card, Skeleton } from 'antd';
 
 import ItemCard from './ItemCard';
 import { ResponsiveGrid } from 'common/wrappers';
@@ -90,7 +89,7 @@ const ItemSelector: React.FC<IProps> = ({
       },
     });
     return fetchMoreResult;
-  }, [data]);
+  }, [data, loading]);
 
   const responsiveGridRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -178,7 +177,7 @@ const ItemSelector: React.FC<IProps> = ({
             </Card>
           ))}
       <Waypoint
-        key={String(loading)}
+        key={data?.items.pageInfo.endCursor || 'null'}
         onEnter={onLoadMore}
         bottomOffset={BOTTOM_OFFSET}
       />

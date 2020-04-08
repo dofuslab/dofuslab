@@ -3,8 +3,10 @@
 import React from 'react';
 import { groupBy } from 'lodash';
 import { jsx } from '@emotion/core';
-import Modal from 'antd/lib/modal';
+import { Modal, Divider, Skeleton } from 'antd';
 import { useQuery } from '@apollo/react-hooks';
+import Router from 'next/router';
+
 import {
   set,
   setVariables,
@@ -13,14 +15,11 @@ import {
 import setQuery from 'graphql/queries/set.graphql';
 import { useTranslation } from 'i18n';
 import BasicItemWithStats from '../desktop/BasicItemWithStats';
-import Divider from 'antd/lib/divider';
 import { SetBonuses } from 'common/wrappers';
 import { gray2, itemBox } from 'common/mixins';
-import Skeleton from 'antd/lib/skeleton';
 import { mq } from 'common/constants';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useEquipSetMutation } from 'common/utils';
-import Router from 'next/router';
 
 interface IProps {
   setId: string;

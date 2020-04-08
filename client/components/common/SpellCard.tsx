@@ -6,7 +6,9 @@ import {
   classById_classById_spellVariantPairs_spells,
   classById_classById_spellVariantPairs_spells_spellStats,
 } from 'graphql/queries/__generated__/classById';
-import Card from 'antd/lib/card';
+import { Card, Radio, Tooltip, Divider, Switch } from 'antd';
+import { RadioChangeEvent } from 'antd/lib/radio';
+
 import {
   CardTitleWithLevel,
   damageHeaderStyle,
@@ -14,8 +16,6 @@ import {
 } from 'common/wrappers';
 import { itemCardStyle, BORDER_COLOR, gray2, gray6 } from 'common/mixins';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import Radio, { RadioChangeEvent } from 'antd/lib/radio';
-import Tooltip from 'antd/lib/tooltip';
 import { useTranslation } from 'i18n';
 import {
   getStatWithDefault,
@@ -25,8 +25,6 @@ import {
 } from 'common/utils';
 import { TEffectLine } from 'common/types';
 import { Stat } from '__generated__/globalTypes';
-import Divider from 'antd/lib/divider';
-import Switch from 'antd/lib/switch';
 import { mq } from 'common/constants';
 import { Media } from './Media';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

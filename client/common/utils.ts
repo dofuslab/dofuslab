@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { useMutation, useApolloClient, useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
 import { ApolloClient, ApolloError } from 'apollo-boost';
-import notification from 'antd/lib/notification';
+import { notification } from 'antd';
 import { cloneDeep } from 'lodash';
 import { TFunction } from 'next-i18next';
 import CustomSetFragment from 'graphql/fragments/customSet.graphql';

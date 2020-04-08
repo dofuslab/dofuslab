@@ -9,21 +9,18 @@ import {
   myCustomSetsVariables,
 } from 'graphql/queries/__generated__/myCustomSets';
 import myCustomSetsQuery from 'graphql/queries/myCustomSets.graphql';
-import Card from 'antd/lib/card';
+import { Button, Card, Input, Skeleton } from 'antd';
 import { useTranslation } from 'i18n';
 import { itemCardStyle, selected, gray6, BORDER_COLOR } from 'common/mixins';
 import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
 import Link from 'next/link';
 import { CardTitleWithLevel } from 'common/wrappers';
 import { useRouter } from 'next/router';
-import Button from 'antd/lib/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { createCustomSet } from 'graphql/mutations/__generated__/createCustomSet';
 import createCustomSetMutation from 'graphql/mutations/createCustomSet.graphql';
-import Skeleton from 'antd/lib/skeleton';
 import { Waypoint } from 'react-waypoint';
-import Input from 'antd/lib/input';
 import { useDebounceCallback } from '@react-hook/debounce';
 
 const PAGE_SIZE = 10;

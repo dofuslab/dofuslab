@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { jsx, css } from '@emotion/core';
-import Card from 'antd/lib/card';
-import Tooltip from 'antd/lib/tooltip';
+import { Card, Tooltip } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {

@@ -9,7 +9,7 @@ import { mediaStyles } from 'components/common/Media';
 import Head from 'next/head';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { useRouter } from 'next/router';
-import Button from 'antd/lib/button';
+import { Button } from 'antd';
 import { useTranslation } from 'i18n';
 import { resendVerificationEmail } from 'graphql/mutations/__generated__/resendVerificationEmail';
 import resendVerificationEmailMutation from 'graphql/mutations/resendVerificationEmail.graphql';

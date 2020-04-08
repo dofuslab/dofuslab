@@ -7,7 +7,7 @@ import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/cu
 import { useTranslation } from 'i18n';
 import { blue6 } from 'common/mixins';
 import { Stat, WeaponElementMage } from '__generated__/globalTypes';
-import Divider from 'antd/lib/divider';
+import { Divider } from 'antd';
 import { WeaponEffectsList } from 'common/wrappers';
 
 interface IProps {
