@@ -1,1 +1,16 @@
-{}
+{
+  "VERIFY_EMAIL": {
+    "ALREADY_VERIFIED": {
+      "DESCRIPTION": "__STRING_NOT_TRANSLATED__",
+      "TITLE": "__STRING_NOT_TRANSLATED__"
+    },
+    "INVALID": {
+      "DESCRIPTION": "__STRING_NOT_TRANSLATED__",
+      "TITLE": "__STRING_NOT_TRANSLATED__"
+    },
+    "SUCCESS": {
+      "DESCRIPTION": "__STRING_NOT_TRANSLATED__",
+      "TITLE": "__STRING_NOT_TRANSLATED__"
+    }
+  }
+}
