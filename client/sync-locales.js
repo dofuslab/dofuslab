@@ -22,17 +22,16 @@ const replaceValues = obj => {
 const sortFileKeys = (localeDirPath, file, isBase) => {
   const filePath = path.join(localeDirPath, file);
   const raw = fs.readFileSync(filePath);
-  const parsed = JSON.parse(raw.toString());
-  const sorted = sortKeys(parsed, { deep: true });
-  let result = sorted;
+  let parsed = JSON.parse(raw.toString());
   if (isBase) {
-    const copy = cloneDeep(sorted);
+    const copy = cloneDeep(parsed);
     replaceValues(copy);
     baseTranslations[file] = copy;
   } else {
-    result = merge(baseTranslations[file], result);
+    parsed = merge(baseTranslations[file], parsed);
   }
-  const data = JSON.stringify(result, null, 2);
+  const sorted = sortKeys(parsed, { deep: true });
+  const data = JSON.stringify(sorted, null, 2);
   fs.writeFileSync(filePath, data);
 };
 
