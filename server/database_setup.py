@@ -570,6 +570,6 @@ if __name__ == "__main__":
                     spell_pair_object.spells.append(spell_object)
 
                 db.session.add(spell_pair_object)
-                class_object.spell_variant_pair.append(spell_pair_object)
+                class_object.spell_variant_pairs.append(spell_pair_object)
 
         db.session.commit()
