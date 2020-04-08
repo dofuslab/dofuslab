@@ -1,5 +1,10 @@
-var fs = require('fs');
-var chalk = require('chalk');
+const fs = require('fs');
+const chalk = require('chalk');
+const typescript = require('typescript');
+const path = require('path');
+
+// https://github.com/i18next/i18next-scanner/issues/142#issuecomment-610640269
+const DEFAULT_NS = 'ALL_NAMESPACES_DO_NOT_USE';
 
 module.exports = {
   input: [
@@ -16,22 +21,11 @@ module.exports = {
     },
     trans: {
       component: 'Trans',
-      i18nKey: 'i18nKey',
-      defaultsKey: 'defaults',
-      extensions: ['.js', '.jsx'],
-      fallbackKey: function(ns, value) {
-        return value;
-      },
-      acorn: {
-        ecmaVersion: 10, // defaults to 10
-        sourceType: 'module', // defaults to 'module'
-        // Check out https://github.com/acornjs/acorn/tree/master/acorn#interface for additional options
-      },
     },
     lngs: ['en', 'es', 'de', 'fr', 'it', 'pt'],
     ns: ['auth', 'common', 'mage', 'stat', 'status', 'weapon_spell_effect'],
     defaultLng: 'en',
-    defaultNs: 'common',
+    defaultNs: DEFAULT_NS,
     defaultValue: '__STRING_NOT_TRANSLATED__',
     resource: {
       loadPath: 'public/static/locales/{{lng}}/{{ns}}.json',
@@ -49,30 +43,56 @@ module.exports = {
   transform: function customTransform(file, enc, done) {
     'use strict';
     const parser = this.parser;
-    const content = fs.readFileSync(file.path, enc);
-    let count = 0;
+    const { base, ext } = path.parse(file.path);
 
-    parser.parseFuncFromString(
-      content,
-      { list: ['i18next._', 'i18next.__'] },
-      (key, options) => {
-        parser.set(
-          key,
-          Object.assign({}, options, {
-            nsSeparator: false,
-            keySeparator: false,
-          }),
-        );
+    if (['.ts', '.tsx'].includes(ext) && !base.includes('.d.ts')) {
+      const content = fs.readFileSync(file.path, enc);
+      let ns;
+      const match = content.match(/useTranslation\(.+\)/);
+      if (match) ns = match[0].split(/(\'|\")/)[2];
+      let count = 0;
+
+      const { outputText } = typescript.transpileModule(content, {
+        compilerOptions: {
+          target: 'es2018',
+        },
+        fileName: path.basename(file.path),
+      });
+
+      parser.parseFuncFromString(outputText, { list: ['t'] }, function(
+        key,
+        options,
+      ) {
+        parser.set(key, {
+          ns: ns ? ns : DEFAULT_NS,
+          nsSeparator: false,
+          keySeparator: '.',
+          ...options,
+        });
         ++count;
-      },
-    );
-
-    if (count > 0) {
-      console.log(
-        `i18next-scanner: count=${chalk.cyan(count)}, file=${chalk.yellow(
-          JSON.stringify(file.relative),
-        )}`,
+      });
+      parser.parseTransFromString(
+        outputText,
+        { component: 'Trans', i18nKey: 'i18nKey' },
+        function(key, options) {
+          parser.set(
+            key.split(':')[1],
+            Object.assign({}, options, {
+              ns: key.split(':')[0],
+              nsSeparator: false,
+              keySeparator: '.',
+            }),
+          );
+          ++count;
+        },
       );
+      if (count > 0) {
+        console.log(
+          `i18next-scanner: count=${chalk.cyan(count)}, file=${chalk.yellow(
+            JSON.stringify(file.relative),
+          )}`,
+        );
+      }
     }
 
     done();
