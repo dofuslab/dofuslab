@@ -4,11 +4,7 @@ import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
 import { Stat } from '__generated__/globalTypes';
 import { mq, DEBOUNCE_INTERVAL, SEARCH_BAR_ID } from 'common/constants';
-import Search from 'antd/lib/input/Search';
-import InputNumber from 'antd/lib/input-number';
-import Select from 'antd/lib/select';
-import Button from 'antd/lib/button';
-import Switch from 'antd/lib/switch';
+import { Select, Input, InputNumber, Button, Switch, Tooltip } from 'antd';
 import { useTranslation } from 'i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -18,12 +14,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { SharedFilterAction, SharedFilters } from 'common/types';
 import { useDebounceCallback } from '@react-hook/debounce';
-import Tooltip from 'antd/lib/tooltip';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Media } from './Media';
 import ResetAllButton from './ResetAllButton';
 
+const { Search } = Input;
 const { Option } = Select;
 
 interface IProps {

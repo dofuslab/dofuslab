@@ -1,5 +1,6 @@
 const withCSS = require('@zeit/next-css');
 const withLess = require('@zeit/next-less');
+const darkTheme = require('@ant-design/dark-theme');
 const webpack = require('webpack');
 const path = require('path');
 require('dotenv').config();
@@ -18,7 +19,10 @@ module.exports = withBundleAnalyzer(
       env: {
         GRAPHQL_URI: process.env.GRAPHQL_URI,
       },
-      lessLoaderOptions: { javascriptEnabled: true },
+      lessLoaderOptions: {
+        modifyVars: darkTheme,
+        javascriptEnabled: true,
+      },
       webpack: config => {
         config.module.rules.push({
           test: /\.(graphql|gql)$/,

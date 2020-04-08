@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import Card from 'antd/lib/card';
+import { Card } from 'antd';
 import { useTranslation } from 'i18n';
 import { SetBonuses, CardTitleWithLevel } from 'common/wrappers';
 import { sets_sets_edges_node } from 'graphql/queries/__generated__/sets';

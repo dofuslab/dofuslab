@@ -2,7 +2,7 @@
 
 import { jsx, CSSObject } from '@emotion/core';
 import styled from '@emotion/styled';
-import BackTop from 'antd/lib/back-top';
+import { BackTop } from 'antd';
 import {
   gray7,
   ellipsis,
@@ -11,8 +11,8 @@ import {
   BORDER_COLOR,
   blue6,
 } from './mixins';
-import Card from 'antd/lib/card';
-import Skeleton from 'antd/lib/skeleton';
+import { Card } from 'antd';
+import { Skeleton } from 'antd';
 import { set_bonuses } from 'graphql/fragments/__generated__/set';
 import { TFunction } from 'next-i18next';
 import { useTranslation } from 'i18n';

@@ -6,7 +6,7 @@ import ApolloClient, {
 } from 'apollo-boost';
 import { NextPage, NextPageContext } from 'next';
 import Head from 'next/head';
-import Notification from 'antd/lib/notification';
+import { notification } from 'antd';
 import { IncomingHttpHeaders } from 'http';
 import fetch from 'isomorphic-unfetch';
 import { AppContext } from 'next/app';
@@ -31,11 +31,11 @@ function create(initialState: any, headers: IncomingHttpHeaders) {
     fetch,
     onError: ({ graphQLErrors, networkError }) => {
       if (networkError) {
-        Notification.error({ message: networkError.message });
+        notification.error({ message: networkError.message });
       }
       if (graphQLErrors) {
         graphQLErrors.forEach(({ message }) => {
-          Notification.error({ message });
+          notification.error({ message });
         });
       }
     },

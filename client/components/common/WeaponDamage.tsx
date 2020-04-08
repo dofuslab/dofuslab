@@ -2,14 +2,13 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import Card from 'antd/lib/card';
-import Radio, { RadioChangeEvent } from 'antd/lib/radio';
+import { Card, Divider, Radio } from 'antd';
+import { RadioChangeEvent } from 'antd/lib/radio';
 import {
   CardTitleWithLevel,
   damageHeaderStyle,
   EffectLine,
 } from 'common/wrappers';
-// import { useTranslation } from 'i18n';
 import { itemCardStyle, BORDER_COLOR, gray2, gray6 } from 'common/mixins';
 import { item_weaponStats } from 'graphql/fragments/__generated__/item';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
@@ -28,7 +27,6 @@ import {
   WeaponEffectType,
 } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
-import Divider from 'antd/lib/divider';
 
 interface IProps {
   weaponStats: item_weaponStats;

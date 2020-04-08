@@ -2,10 +2,7 @@
 
 import * as React from 'react';
 import { jsx, Global, css } from '@emotion/core';
-import AntdLayout from 'antd/lib/layout';
-import Button from 'antd/lib/button/button';
-import Menu from 'antd/lib/menu';
-import Dropdown from 'antd/lib/dropdown';
+import { Layout as AntdLayout, Button, Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 
 import LoginModal from '../common/LoginModal';

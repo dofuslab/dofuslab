@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import Button from 'antd/lib/button';
+import { Button } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from 'i18n';
 import { faRedo } from '@fortawesome/free-solid-svg-icons';

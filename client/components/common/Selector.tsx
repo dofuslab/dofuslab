@@ -3,6 +3,8 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
+import { BackTop } from 'antd';
+
 import { SharedFilters, SharedFilterAction } from 'common/types';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import {
@@ -14,7 +16,6 @@ import SelectorFilters from './SelectorFilters';
 import ItemSelector from './ItemSelector';
 import { mq } from 'common/constants';
 import SetSelector from './SetSelector';
-import BackTop from 'antd/lib/back-top';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import ItemTypeFilter from './ItemTypeFilter';
 import { uniqWith, isEqual } from 'lodash';

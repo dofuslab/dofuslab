@@ -1,10 +1,8 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx } from '@emotion/core';
-import Modal from 'antd/lib/modal';
-import Input from 'antd/lib/input';
-import Form from 'antd/lib/form';
-import Button from 'antd/lib/button';
+import { Button, Divider, Form, Input, Modal } from 'antd';
+
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import registerMutation from 'graphql/mutations/register.graphql';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
@@ -14,7 +12,6 @@ import {
   register,
   registerVariables,
 } from 'graphql/mutations/__generated__/register';
-import Divider from 'antd/lib/divider';
 
 interface IProps {
   visible: boolean;

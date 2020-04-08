@@ -2,16 +2,14 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import Input from 'antd/lib/input';
+import { Button, Input, InputNumber, Form, Tooltip } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
-import Button from 'antd/lib/button';
-import InputNumber from 'antd/lib/input-number';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
-import Form from 'antd/lib/form';
+import moment from 'moment';
 
+import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
 import {
   editCustomSetMetadata,
@@ -23,8 +21,6 @@ import { checkAuthentication } from 'common/utils';
 import { ellipsis } from 'common/mixins';
 import { mq } from 'common/constants';
 import BonusStats from '../desktop/BonusStats';
-import Tooltip from 'antd/lib/tooltip';
-import moment from 'moment';
 
 interface IProps {
   customSet?: customSet | null;

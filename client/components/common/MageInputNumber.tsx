@@ -1,5 +1,5 @@
 import React from 'react';
-import InputNumber from 'antd/lib/input-number';
+import { InputNumber } from 'antd';
 import { Stat } from '__generated__/globalTypes';
 import { MageAction } from 'common/types';
 import { ClassNames } from '@emotion/core';

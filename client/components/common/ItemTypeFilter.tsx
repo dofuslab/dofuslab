@@ -4,7 +4,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { itemSlots_itemSlots_itemTypes } from 'graphql/queries/__generated__/itemSlots';
 import { mq } from 'common/constants';
-import Checkbox from 'antd/lib/checkbox';
+import { Checkbox } from 'antd';
 import { CheckboxValueType } from 'antd/lib/checkbox/Group';
 
 const { Group: CheckboxGroup } = Checkbox;

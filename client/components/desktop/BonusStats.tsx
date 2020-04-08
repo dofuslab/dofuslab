@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
-import Popover from 'antd/lib/popover';
+import { Popover } from 'antd';
 import { useTranslation } from 'i18n';
 
 import { BORDER_COLOR, popoverTitleStyle } from 'common/mixins';

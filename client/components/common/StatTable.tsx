@@ -3,8 +3,8 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { useTranslation } from 'i18n';
+import { List } from 'antd';
 
-import List from 'antd/lib/list';
 import { StatGroup, StatsFromCustomSet } from 'common/types';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 

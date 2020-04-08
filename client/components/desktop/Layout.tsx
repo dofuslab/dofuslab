@@ -2,9 +2,7 @@
 
 import * as React from 'react';
 import { jsx, Global, css } from '@emotion/core';
-import AntdLayout from 'antd/lib/layout';
-import Button from 'antd/lib/button/button';
-import Drawer from 'antd/lib/drawer';
+import { Layout as AntdLayout, Button, Drawer } from 'antd';
 
 import LoginModal from '../common/LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';

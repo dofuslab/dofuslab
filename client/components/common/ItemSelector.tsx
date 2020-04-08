@@ -4,8 +4,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 import { Waypoint } from 'react-waypoint';
-import Card from 'antd/lib/card';
-import Skeleton from 'antd/lib/skeleton';
+import { Card, Skeleton } from 'antd';
 
 import ItemCard from './ItemCard';
 import { ResponsiveGrid } from 'common/wrappers';

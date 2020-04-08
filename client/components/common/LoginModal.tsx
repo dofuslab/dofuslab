@@ -1,12 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx } from '@emotion/core';
-import Modal from 'antd/lib/modal';
-import Input from 'antd/lib/input';
-import Form from 'antd/lib/form';
-import Button from 'antd/lib/button';
-import Checkbox from 'antd/lib/checkbox';
-import Divider from 'antd/lib/divider';
+import { Modal, Input, Form, Button, Checkbox, Divider } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import {
   login as ILogin,

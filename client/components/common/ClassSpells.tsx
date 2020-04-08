@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { jsx } from '@emotion/core';
 
-import Select from 'antd/lib/select';
+import { Select, Spin } from 'antd';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/react-hooks';
 
@@ -19,7 +19,6 @@ import {
 import classByIdQuery from 'graphql/queries/classById.graphql';
 import SpellCard from './SpellCard';
 import { gray6 } from 'common/mixins';
-import Spin from 'antd/lib/spin';
 
 const { Option } = Select;
 

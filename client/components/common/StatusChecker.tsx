@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useRouter } from 'next/router';
-import notification from 'antd/lib/notification';
+import { notification } from 'antd';
 import { useTranslation } from 'i18n';
 import { cloneDeep } from 'lodash';
 import { useQuery } from '@apollo/react-hooks';
