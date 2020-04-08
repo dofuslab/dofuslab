@@ -64,7 +64,9 @@ const StatTable: React.FC<IStatTable> = ({
                 <img src={item.svgIcon} css={{ height: '80%', width: '80%' }} />
               )}
             </div>
-            <div css={{ fontSize: '0.75rem' }}>{t(item.stat)}</div>
+            <div css={{ fontSize: '0.75rem' }}>
+              {t([`STAT_TABLE.${item.stat}`, item.stat])}
+            </div>
           </div>
           <div css={{ fontSize: '0.75rem' }}>
             {item.customCalculateValue
