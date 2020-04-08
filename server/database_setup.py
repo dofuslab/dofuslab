@@ -476,6 +476,43 @@ if __name__ == "__main__":
 
         db.session.commit()
 
+    with open(os.path.join(dirname, "app/database/data/rhineetles.json"), "r") as file:
+        data = json.load(file)
+        for record in data:
+            item = ModelItem(
+                dofus_db_id=record["dofusID"],
+                item_type=item_types[record["itemType"]],
+                level=record["level"],
+                image_url=record["imageUrl"],
+            )
+
+            for locale in record["name"]:
+                item_translations = ModelItemTranslation(
+                    item_id=item.uuid, locale=locale, name=record["name"][locale],
+                )
+                db.session.add(item_translations)
+                item.item_translations.append(item_translations)
+
+            try:
+                i = 0
+                for stat in record["stats"]:
+                    item_stat = ModelItemStat(
+                        stat=to_stat_enum[stat["stat"]],
+                        min_value=stat["minStat"],
+                        max_value=stat["maxStat"],
+                        order=i,
+                    )
+                    db.session.add(item_stat)
+                    item.stats.append(item_stat)
+                    i = i + 1
+
+                db.session.add(item)
+
+            except KeyError as err:
+                print("KeyError occurred:", err)
+
+        db.session.commit()
+
     print("Adding classes to database")
     with open(os.path.join(dirname, "app/database/data/spells.json"), "r") as file:
         data = json.load(file)
@@ -570,6 +607,6 @@ if __name__ == "__main__":
                     spell_pair_object.spells.append(spell_object)
 
                 db.session.add(spell_pair_object)
-                class_object.spell_variant_pair.append(spell_pair_object)
+                class_object.spell_variant_pairs.append(spell_pair_object)
 
         db.session.commit()
