@@ -1,8 +1,10 @@
 {
   "ANONYMOUS": "Anonymous",
+  "AVAILABLE_AT_LEVEL": "Available at level {{level}}",
   "BACK": "Back",
   "BASE": "Base",
   "CANCEL": "Cancel",
+  "CHARACTERISTICS": "Characteristics",
   "CREATE_NEW_BUILD": "Create new build",
   "CREATED": "Created",
   "DELETE": "Delete",
@@ -27,10 +29,13 @@
   "RESET_ALL_FILTERS": "Reset all filters",
   "SCROLLED": "Scrolled",
   "SEARCH": "Search",
+  "SELECT_CLASS": "Select class",
+  "SELECT_CLASS_DETAILED": "Select a class to see its spells.",
   "SELECT_ITEM_TO_REPLACE": "Select item to replace",
   "SETS": "Sets",
   "STATS_PLACEHOLDER": "Stats (e.g. AP, Pods, Prospecting)",
   "UNTITLED": "Untitled",
   "VIEW_ITEMS": "View items",
-  "VIEW_SETS": "View sets"
+  "VIEW_SETS": "View sets",
+  "WEAPON_AND_SPELLS": "Weapon and spells"
 }

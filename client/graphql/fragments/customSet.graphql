@@ -19,6 +19,7 @@ fragment customSet on CustomSet {
       stat
       value
     }
+    weaponElementMage
   }
   stats {
     ...baseStats

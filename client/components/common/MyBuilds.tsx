@@ -204,7 +204,6 @@ const MyBuilds: React.FC = () => {
                 level={node.level}
               />
             }
-            key={node.id}
             size="small"
             css={{
               ...itemCardStyle,
@@ -221,8 +220,12 @@ const MyBuilds: React.FC = () => {
             {node.equippedItems.length > 0 ? (
               node.equippedItems
                 .sort(({ slot: { order: i } }, { slot: { order: j } }) => i - j)
-                .map(({ item }) => (
-                  <img key={item.id} src={item.imageUrl} css={{ width: 40 }} />
+                .map(({ id, item }) => (
+                  <img
+                    key={`equipped-item-${id}`}
+                    src={item.imageUrl}
+                    css={{ width: 40 }}
+                  />
                 ))
             ) : (
               <div css={{ fontStyle: 'italic', color: gray6 }}>

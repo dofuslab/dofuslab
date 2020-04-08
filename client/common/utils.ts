@@ -12,12 +12,19 @@ import {
   customSet_stats,
   customSet,
 } from 'graphql/fragments/__generated__/customSet';
-import { Stat } from '__generated__/globalTypes';
+import {
+  Stat,
+  WeaponEffectType,
+  SpellEffectType,
+  WeaponElementMage,
+} from '__generated__/globalTypes';
 import {
   StatsFromCustomSet,
   SetCounter,
   OriginalStatLine,
   ExoStatLine,
+  ICalcDamageInput,
+  TSimpleEffect,
 } from './types';
 import {
   item_itemType,
@@ -354,6 +361,7 @@ export const useEquipItemMutation = (item: item) => {
                 exos: [],
                 slot,
                 item,
+                weaponElementMage: null,
                 __typename: 'EquippedItem',
               });
             }
@@ -538,4 +546,285 @@ export const useSetModal = () => {
   }, [setSetModalVisible]);
 
   return { setModalVisible, selectedSet, openSetModal, closeSetModal };
+};
+
+export const getStatWithDefault = (
+  statsFromCustomSet: StatsFromCustomSet | null,
+  stat: Stat,
+) => (statsFromCustomSet ? statsFromCustomSet[stat] || 0 : 0);
+
+const getStats = (effectType: WeaponEffectType | SpellEffectType) => {
+  switch (effectType) {
+    case WeaponEffectType.AIR_DAMAGE:
+    case WeaponEffectType.AIR_STEAL:
+    case SpellEffectType.AIR_DAMAGE:
+    case SpellEffectType.AIR_STEAL:
+      return { multiplier: Stat.AGILITY, damage: Stat.AIR_DAMAGE };
+    case WeaponEffectType.EARTH_DAMAGE:
+    case WeaponEffectType.EARTH_STEAL:
+    case SpellEffectType.EARTH_DAMAGE:
+    case SpellEffectType.EARTH_STEAL:
+      return { multiplier: Stat.STRENGTH, damage: Stat.EARTH_DAMAGE };
+    case WeaponEffectType.FIRE_DAMAGE:
+    case WeaponEffectType.FIRE_STEAL:
+    case SpellEffectType.FIRE_DAMAGE:
+    case SpellEffectType.FIRE_STEAL:
+      return { multiplier: Stat.INTELLIGENCE, damage: Stat.FIRE_DAMAGE };
+    case WeaponEffectType.NEUTRAL_DAMAGE:
+    case WeaponEffectType.NEUTRAL_STEAL:
+    case SpellEffectType.NEUTRAL_DAMAGE:
+    case SpellEffectType.NEUTRAL_STEAL:
+      return { multiplier: Stat.STRENGTH, damage: Stat.NEUTRAL_DAMAGE };
+    case WeaponEffectType.WATER_DAMAGE:
+    case WeaponEffectType.WATER_STEAL:
+    case SpellEffectType.WATER_DAMAGE:
+    case SpellEffectType.WATER_STEAL:
+      return { multiplier: Stat.CHANCE, damage: Stat.WATER_DAMAGE };
+    default:
+      throw new Error('Improper effectType passed to getStats');
+  }
+};
+
+export const calcDamage = (
+  baseDamage: number,
+  effectType: WeaponEffectType | SpellEffectType,
+  stats: StatsFromCustomSet | null,
+  damageTypeInput: ICalcDamageInput,
+  weaponSkillPower?: number,
+) => {
+  const statTypes = getStats(effectType);
+  const { multiplier: multiplierType, damage: damageType } = statTypes;
+  let multiplierValue =
+    getStatWithDefault(stats, multiplierType) +
+    getStatWithDefault(stats, Stat.POWER);
+  let damageValue =
+    getStatWithDefault(stats, damageType) +
+    getStatWithDefault(stats, Stat.DAMAGE);
+  if (damageTypeInput.isTrap) {
+    multiplierValue += getStatWithDefault(stats, Stat.TRAP_POWER);
+    damageValue += getStatWithDefault(stats, Stat.TRAP_DAMAGE);
+  }
+  if (damageTypeInput.isCrit) {
+    damageValue += getStatWithDefault(stats, Stat.CRITICAL_DAMAGE);
+  }
+  if (damageTypeInput.isWeapon) {
+    multiplierValue += weaponSkillPower || 0;
+  }
+  const calculatedDamage = Math.floor(
+    baseDamage * (1 + multiplierValue / 100) + damageValue,
+  );
+
+  let finalDamageMod =
+    1 + getStatWithDefault(stats, Stat.PCT_FINAL_DAMAGE) / 100;
+  if (damageTypeInput.isWeapon) {
+    finalDamageMod *=
+      1 + getStatWithDefault(stats, Stat.PCT_WEAPON_DAMAGE) / 100;
+  } else {
+    finalDamageMod *=
+      1 + getStatWithDefault(stats, Stat.PCT_SPELL_DAMAGE) / 100;
+  }
+
+  return {
+    melee: Math.floor(
+      calculatedDamage *
+        (finalDamageMod *
+          (1 + getStatWithDefault(stats, Stat.PCT_MELEE_DAMAGE) / 100)),
+    ),
+    ranged: Math.floor(
+      calculatedDamage *
+        (finalDamageMod *
+          (1 + getStatWithDefault(stats, Stat.PCT_RANGED_DAMAGE) / 100)),
+    ),
+  };
+};
+
+export const calcPushbackDamage = (
+  numSquaresPushed: number,
+  level: number,
+  stats: StatsFromCustomSet | null,
+) =>
+  (level / 2 + (getStatWithDefault(stats, Stat.PUSHBACK_DAMAGE) + 32)) *
+  (numSquaresPushed / 4);
+
+export const calcHeal = (
+  baseHeal: number,
+  stats: StatsFromCustomSet | null,
+  weaponSkillPower?: number,
+) => {
+  const multiplierValue =
+    getStatWithDefault(stats, Stat.INTELLIGENCE) + (weaponSkillPower || 0);
+  const flatBonus = getStatWithDefault(stats, Stat.HEALS);
+  return Math.floor(baseHeal * (1 + multiplierValue / 100) + flatBonus);
+};
+
+export const calcShield = (baseShield: number, level: number) => {
+  return Math.floor((baseShield / 100) * level);
+};
+
+export const effectToIconUrl = (effect: WeaponEffectType | SpellEffectType) => {
+  switch (effect) {
+    case WeaponEffectType.AIR_DAMAGE:
+    case WeaponEffectType.AIR_STEAL:
+    case SpellEffectType.AIR_DAMAGE:
+    case SpellEffectType.AIR_STEAL:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Agility.svg';
+    case WeaponEffectType.EARTH_DAMAGE:
+    case WeaponEffectType.EARTH_STEAL:
+    case SpellEffectType.EARTH_DAMAGE:
+    case SpellEffectType.EARTH_STEAL:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Strength.svg';
+    case WeaponEffectType.FIRE_DAMAGE:
+    case WeaponEffectType.FIRE_STEAL:
+    case SpellEffectType.FIRE_DAMAGE:
+    case SpellEffectType.FIRE_STEAL:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Intelligence.svg';
+    case WeaponEffectType.NEUTRAL_DAMAGE:
+    case WeaponEffectType.NEUTRAL_STEAL:
+    case SpellEffectType.NEUTRAL_DAMAGE:
+    case SpellEffectType.NEUTRAL_STEAL:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Neutral.svg';
+    case WeaponEffectType.WATER_DAMAGE:
+    case WeaponEffectType.WATER_STEAL:
+    case SpellEffectType.WATER_DAMAGE:
+    case SpellEffectType.WATER_STEAL:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Chance.svg';
+    case WeaponEffectType.AP:
+    case SpellEffectType.AP:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Action_Point.svg';
+    case WeaponEffectType.MP:
+    case SpellEffectType.MP:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Movement_Point.svg';
+    case WeaponEffectType.HP_RESTORED:
+    case SpellEffectType.HP_RESTORED:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Health_Point.svg';
+    case SpellEffectType.SHIELD:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Shield_Point.svg';
+    case SpellEffectType.PUSHBACK_DAMAGE:
+      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Pushback_Damage.svg';
+  }
+};
+
+export const getSimpleEffect: (
+  effectType: WeaponEffectType | SpellEffectType,
+) => TSimpleEffect = effectType => {
+  switch (effectType) {
+    case WeaponEffectType.AIR_DAMAGE:
+    case WeaponEffectType.AIR_STEAL:
+    case WeaponEffectType.EARTH_DAMAGE:
+    case WeaponEffectType.EARTH_STEAL:
+    case WeaponEffectType.FIRE_DAMAGE:
+    case WeaponEffectType.FIRE_STEAL:
+    case WeaponEffectType.WATER_DAMAGE:
+    case WeaponEffectType.WATER_STEAL:
+    case WeaponEffectType.NEUTRAL_DAMAGE:
+    case WeaponEffectType.NEUTRAL_STEAL:
+    case SpellEffectType.AIR_DAMAGE:
+    case SpellEffectType.AIR_STEAL:
+    case SpellEffectType.EARTH_DAMAGE:
+    case SpellEffectType.EARTH_STEAL:
+    case SpellEffectType.FIRE_DAMAGE:
+    case SpellEffectType.FIRE_STEAL:
+    case SpellEffectType.WATER_DAMAGE:
+    case SpellEffectType.WATER_STEAL:
+    case SpellEffectType.NEUTRAL_DAMAGE:
+    case SpellEffectType.NEUTRAL_STEAL:
+      return 'damage';
+    case WeaponEffectType.HP_RESTORED:
+    case SpellEffectType.HP_RESTORED:
+      return 'heal';
+    case SpellEffectType.PUSHBACK_DAMAGE:
+      return 'pushback_damage';
+    case SpellEffectType.SHIELD:
+      return 'shield';
+    case WeaponEffectType.AP:
+    case SpellEffectType.AP:
+      return 'ap';
+    case WeaponEffectType.MP:
+    case SpellEffectType.MP:
+      return 'mp';
+  }
+};
+
+export const calcEffect = (
+  baseDamage: number,
+  effectType: WeaponEffectType | SpellEffectType,
+  level: number,
+  stats: StatsFromCustomSet | null,
+  damageTypeInput: ICalcDamageInput,
+  damageTypeKey: 'melee' | 'ranged',
+  weaponSkillPower?: number,
+) => {
+  const simpleEffect = getSimpleEffect(effectType);
+
+  if (simpleEffect === 'heal') {
+    return calcHeal(baseDamage, stats, weaponSkillPower);
+  } else if (simpleEffect === 'pushback_damage') {
+    return calcPushbackDamage(baseDamage, level, stats);
+  } else if (simpleEffect === 'damage') {
+    return calcDamage(
+      baseDamage,
+      effectType,
+      stats,
+      damageTypeInput,
+      weaponSkillPower,
+    )[damageTypeKey];
+  } else if (simpleEffect === 'shield') {
+    return calcShield(baseDamage, level);
+  }
+  return baseDamage;
+};
+
+export const elementMageToWeaponEffect = (elementMage: WeaponElementMage) => {
+  switch (elementMage) {
+    case WeaponElementMage.EARTH_50:
+    case WeaponElementMage.EARTH_68:
+    case WeaponElementMage.EARTH_85:
+      return WeaponEffectType.EARTH_DAMAGE;
+    case WeaponElementMage.FIRE_50:
+    case WeaponElementMage.FIRE_68:
+    case WeaponElementMage.FIRE_85:
+      return WeaponEffectType.FIRE_DAMAGE;
+    case WeaponElementMage.WATER_50:
+    case WeaponElementMage.WATER_68:
+    case WeaponElementMage.WATER_85:
+      return WeaponEffectType.WATER_DAMAGE;
+    case WeaponElementMage.AIR_50:
+    case WeaponElementMage.AIR_68:
+    case WeaponElementMage.AIR_85:
+      return WeaponEffectType.AIR_DAMAGE;
+  }
+};
+
+export const calcElementMage = (
+  elementMage: WeaponElementMage,
+  baseMin: number,
+  baseMax: number,
+) => {
+  let multiplier = 1;
+  switch (elementMage) {
+    case WeaponElementMage.EARTH_50:
+    case WeaponElementMage.FIRE_50:
+    case WeaponElementMage.WATER_50:
+    case WeaponElementMage.AIR_50:
+      multiplier = 0.5;
+      break;
+    case WeaponElementMage.EARTH_68:
+    case WeaponElementMage.FIRE_68:
+    case WeaponElementMage.WATER_68:
+    case WeaponElementMage.AIR_68:
+      multiplier = 0.68;
+      break;
+    case WeaponElementMage.EARTH_85:
+    case WeaponElementMage.FIRE_85:
+    case WeaponElementMage.WATER_85:
+    case WeaponElementMage.AIR_85:
+      multiplier = 0.85;
+  }
+  const calcDamageBase = Math.floor((baseMin - 1) * multiplier);
+  const diff = Math.floor((baseMax - baseMin + 1) * multiplier);
+
+  return {
+    minDamage: diff === 1 ? null : calcDamageBase + 1,
+    maxDamage: calcDamageBase + diff,
+  };
 };

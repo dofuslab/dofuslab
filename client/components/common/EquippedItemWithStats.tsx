@@ -95,7 +95,8 @@ const EquippedItemWithStats: React.FC<IProps> = ({
             }}
           >
             <img src={equippedItem.item.imageUrl} css={itemImageDimensions} />
-            {equippedItem.exos.length > 0 && (
+            {(equippedItem.exos.length > 0 ||
+              equippedItem.weaponElementMage) && (
               <FontAwesomeIcon
                 icon={faMagic}
                 css={{

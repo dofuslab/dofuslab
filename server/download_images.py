@@ -4,12 +4,14 @@ import requests
 import shutil
 from app import db
 from app.database.model_item import ModelItem
+from app.database.model_spell import ModelSpell
 
 dirname = os.path.dirname(os.path.abspath(__file__))
 
-folder = os.path.join(dirname, "static", "images")
+folder = os.path.join(dirname, "static", "images", "spells")
 
-image_urls = db.session.query(ModelItem.image_url).all()
+# image_urls = db.session.query(ModelItem.image_url).all()
+image_urls = db.session.query(ModelSpell.image_url).all()
 
 for num, (image_url,) in enumerate(image_urls, start=1):
     r = requests.get(image_url, stream=True)

@@ -10,6 +10,27 @@
 /**
  * An enumeration.
  */
+export enum SpellEffectType {
+  AIR_DAMAGE = "AIR_DAMAGE",
+  AIR_STEAL = "AIR_STEAL",
+  AP = "AP",
+  EARTH_DAMAGE = "EARTH_DAMAGE",
+  EARTH_STEAL = "EARTH_STEAL",
+  FIRE_DAMAGE = "FIRE_DAMAGE",
+  FIRE_STEAL = "FIRE_STEAL",
+  HP_RESTORED = "HP_RESTORED",
+  MP = "MP",
+  NEUTRAL_DAMAGE = "NEUTRAL_DAMAGE",
+  NEUTRAL_STEAL = "NEUTRAL_STEAL",
+  PUSHBACK_DAMAGE = "PUSHBACK_DAMAGE",
+  SHIELD = "SHIELD",
+  WATER_DAMAGE = "WATER_DAMAGE",
+  WATER_STEAL = "WATER_STEAL",
+}
+
+/**
+ * An enumeration.
+ */
 export enum Stat {
   AGILITY = "AGILITY",
   AIR_DAMAGE = "AIR_DAMAGE",
@@ -82,6 +103,24 @@ export enum WeaponEffectType {
   NEUTRAL_STEAL = "NEUTRAL_STEAL",
   WATER_DAMAGE = "WATER_DAMAGE",
   WATER_STEAL = "WATER_STEAL",
+}
+
+/**
+ * An enumeration.
+ */
+export enum WeaponElementMage {
+  AIR_50 = "AIR_50",
+  AIR_68 = "AIR_68",
+  AIR_85 = "AIR_85",
+  EARTH_50 = "EARTH_50",
+  EARTH_68 = "EARTH_68",
+  EARTH_85 = "EARTH_85",
+  FIRE_50 = "FIRE_50",
+  FIRE_68 = "FIRE_68",
+  FIRE_85 = "FIRE_85",
+  WATER_50 = "WATER_50",
+  WATER_68 = "WATER_68",
+  WATER_85 = "WATER_85",
 }
 
 export interface CustomSetExosInput {

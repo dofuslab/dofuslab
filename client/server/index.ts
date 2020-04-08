@@ -13,12 +13,16 @@ const handle = app.getRequestHandler();
   await express()
     .use(nextI18NextMiddleware(nextI18next))
     .get('/build/:customSetId', (req, res) =>
-      app.render(req, res, '/index', { customSetId: req.params.customSetId }),
+      app.render(req, res, '/index', {
+        customSetId: req.params.customSetId,
+        ...req.query,
+      }),
     )
     .get('/equip/:itemSlotId/:customSetId', (req, res) =>
       app.render(req, res, '/equip/[itemSlotId]/index', {
         itemSlotId: req.params.itemSlotId,
         customSetId: req.params.customSetId,
+        ...req.query,
       }),
     )
     .get('*', (req, res) => handle(req, res))

@@ -84,7 +84,7 @@ const Selector: React.FC<IProps> = ({
   return (
     <>
       <div
-        key={`div-${selectedItemSlot?.id}`} // re-render so div loses scroll position on selectedItemSlot change
+        key={`div-${selectedItemSlot?.name}`} // re-render so div loses scroll position on selectedItemSlot change
         css={{
           padding: '0 12px',
           ...topMarginStyle,
@@ -138,7 +138,7 @@ const Selector: React.FC<IProps> = ({
           />
         ) : (
           <ItemSelector
-            key={`selected-item-slot-${selectedItemSlot?.id}-level-${customSet?.level}`}
+            key={`selected-item-slot-${selectedItemSlot?.name}-level-${customSet?.level}`}
             itemTypeIds={itemTypeIds}
             selectedItemSlot={selectedItemSlot}
             customSet={customSet}

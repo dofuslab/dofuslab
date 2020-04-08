@@ -85,10 +85,12 @@ const StatusChecker: React.FC = () => {
         });
       }
     });
+    const { customSetId, ...restQuery } = newQuery;
     router.replace(
       { pathname: router.pathname, query: newQuery },
       {
         pathname: router.asPath.substring(0, router.asPath.indexOf('?')),
+        query: restQuery,
       },
       { shallow: true },
     );

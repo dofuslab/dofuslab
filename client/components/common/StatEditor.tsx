@@ -297,7 +297,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
               );
             }}
             onChange={(value?: number) => {
-              if (value === undefined) return;
+              if (typeof value !== 'number') return;
               dispatch({ type: 'edit', stat: baseKey, value });
               debouncedCheckAndMutate();
             }}
@@ -315,7 +315,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
               );
             }}
             onChange={(value?: number) => {
-              if (value === undefined) return;
+              if (typeof value !== 'number') return;
               dispatch({ type: 'edit', stat: scrolledKey, value });
               debouncedCheckAndMutate();
             }}
