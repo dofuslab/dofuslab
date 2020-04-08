@@ -36281,7 +36281,11 @@
     "customStats": [],
     "conditions": {
       "conditions": {},
-      "customConditions": {}
+      "customConditions": {
+        "en": [
+          "At the start of the caster's turn, if they have less than 20% HP, they gare healed 40% HP and gain 20% final damage for the current turn. This effect can only be played once per fight."
+        ]
+      }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/23027.png"
   },
@@ -36471,11 +36475,41 @@
     "itemType": "Dofus",
     "setID": null,
     "level": 180,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "Neutral Resistance",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Earth Resistance",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Fire Resistance",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Water Resistance",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Air Resistance",
+        "minStat": null,
+        "maxStat": 40
+      }
+    ],
     "customStats": [],
     "conditions": {
       "conditions": {},
-      "customConditions": {}
+      "customConditions": {
+        "en": [
+          "At the end of the turn, damage from the next attack suffered is reduced by 50%."
+        ]
+      }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/23011.png"
   },
@@ -36585,11 +36619,21 @@
     "itemType": "Dofus",
     "setID": null,
     "level": 180,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": 40
+      }
+    ],
     "customStats": [],
     "conditions": {
       "conditions": {},
-      "customConditions": {}
+      "customConditions": {
+        "en": [
+          "Generates 1 first charge at the start of the turn, 1 second charge upon inflicting close-combat damage, and 1 third charge upon inflicting ranged damage.\n\nOnce 5 charges are reached, the next attack consumes the charges and applies a poison to the target for 3 turns.\n\n Each charge gives a 2% final damage inflicted bonus."
+        ]
+      }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/23007.png"
   },
