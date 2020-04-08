@@ -1353,7 +1353,7 @@ class DataAdjustment:
             "pods": "PODS",
         }
 
-        files = ["weapons.json"]
+        files = ["weapons.json", "items.json"]
         for file in files:
             data = None
             with open(os.path.join(dirname, file), "r") as json_file:
