@@ -39,10 +39,10 @@ const MageInputNumber: React.FC<IProps> = ({
           className={css({
             marginRight: 8,
             fontSize: '0.75rem',
-            width: 60,
             height: '100%',
             display: 'flex',
             alignItems: 'center',
+            flex: '0 0 60px',
           })}
           {...restProps}
         />

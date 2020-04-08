@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { jsx } from '@emotion/core';
+import { jsx, CSSObject } from '@emotion/core';
 import styled from '@emotion/styled';
 import BackTop from 'antd/lib/back-top';
 import {
@@ -9,12 +9,26 @@ import {
   getResponsiveGridStyle,
   itemCardStyle,
   BORDER_COLOR,
+  blue6,
 } from './mixins';
 import Card from 'antd/lib/card';
 import Skeleton from 'antd/lib/skeleton';
 import { set_bonuses } from 'graphql/fragments/__generated__/set';
 import { TFunction } from 'next-i18next';
 import { useTranslation } from 'i18n';
+import {
+  WeaponEffectType,
+  SpellEffectType,
+  Stat,
+  WeaponElementMage,
+} from '__generated__/globalTypes';
+import {
+  effectToIconUrl,
+  getSimpleEffect,
+  elementMageToWeaponEffect,
+  calcElementMage,
+} from './utils';
+import { item_weaponStats } from 'graphql/fragments/__generated__/item';
 
 interface IResponsiveGrid {
   readonly numColumns: ReadonlyArray<number>;
@@ -96,7 +110,8 @@ export const CardTitleWithLevel: React.FC<{
   showBadge?: boolean;
   badgeContent?: React.ReactNode;
   level?: number;
-}> = ({ title, level, showBadge, badgeContent }) => {
+  rightAlignedContent?: React.ReactNode;
+}> = ({ title, level, showBadge, badgeContent, rightAlignedContent }) => {
   const { t } = useTranslation('common');
   return (
     <div css={{ display: 'flex', alignItems: 'center', marginRight: 4 }}>
@@ -107,6 +122,110 @@ export const CardTitleWithLevel: React.FC<{
           {t('LEVEL_ABBREVIATION', { ns: 'common' })} {level}
         </div>
       )}
+      {rightAlignedContent && (
+        <div css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}>
+          {rightAlignedContent}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export const damageHeaderStyle = {
+  fontWeight: 500,
+  marginBottom: 4,
+};
+
+export const EffectLine: React.FC<{
+  min: number | null;
+  max: number;
+  effectType: WeaponEffectType | SpellEffectType;
+  baseMax: number;
+}> = ({ min, max, effectType, baseMax }) => {
+  const { t } = useTranslation(['stat', 'weapon_spell_effect']);
+  let content = null;
+  switch (getSimpleEffect(effectType)) {
+    case 'damage':
+    case 'heal':
+      content = `${min !== null ? `${min}-` : ''}${max}`;
+      break;
+    case 'pushback_damage':
+      content = `${max} (${t('CELL', {
+        count: baseMax,
+        ns: 'weapon_spell_effect',
+      })})`;
+      break;
+    case 'shield':
+      content = max;
+      break;
+    case 'ap':
+      content = `${max} ${t(Stat.AP)}`;
+      break;
+    case 'mp':
+      content = `${max} ${t(Stat.MP)}`;
+  }
+  return (
+    <div
+      css={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <img
+        src={effectToIconUrl(effectType)}
+        css={{ height: 16, width: 16, marginRight: 8 }}
+      />
+      {content}
+    </div>
+  );
+};
+
+export const WeaponEffectsList: React.FC<{
+  weaponStats: item_weaponStats;
+  className?: string;
+  innerDivStyle?: CSSObject;
+  elementMage?: WeaponElementMage | null;
+}> = ({ weaponStats, className, innerDivStyle, elementMage }) => {
+  const { t } = useTranslation('weapon_spell_effect');
+  return (
+    <div className={className}>
+      {weaponStats.weaponEffects.map(effect => {
+        let { effectType, minDamage, maxDamage } = effect;
+
+        if (elementMage && effectType === WeaponEffectType.NEUTRAL_DAMAGE) {
+          ({ minDamage, maxDamage } = calcElementMage(
+            elementMage,
+            minDamage || maxDamage,
+            maxDamage,
+          ));
+
+          effectType = elementMageToWeaponEffect(elementMage);
+        }
+
+        return (
+          <div
+            key={`weapon-effect-${effect.id}`}
+            css={{ display: 'flex', alignItems: 'center', ...innerDivStyle }}
+          >
+            <img
+              src={effectToIconUrl(effectType)}
+              css={{ height: 16, width: 16, marginRight: 8 }}
+            />
+            <div
+              css={{
+                color:
+                  elementMage &&
+                  effect.effectType === WeaponEffectType.NEUTRAL_DAMAGE
+                    ? blue6
+                    : 'inherit',
+              }}
+            >
+              {minDamage !== null ? `${minDamage}-` : ''}
+              {maxDamage} {t(effectType)}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

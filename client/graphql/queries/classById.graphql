@@ -1,0 +1,38 @@
+query classById($id: UUID!) {
+  classById(id: $id) {
+    id
+    name
+    spellVariantPairs {
+      id
+      spells {
+        id
+        name
+        description
+        imageUrl
+        spellStats {
+          id
+          level
+          apCost
+          castsPerTurn
+          castsPerTarget
+          cooldown
+          isLinear
+          needsLos
+          needsFreeCell
+          baseCritChance
+          minRange
+          maxRange
+          hasModifiableRange
+          spellEffects {
+            id
+            minDamage
+            maxDamage
+            critMinDamage
+            critMaxDamage
+            effectType
+          }
+        }
+      }
+    }
+  }
+}

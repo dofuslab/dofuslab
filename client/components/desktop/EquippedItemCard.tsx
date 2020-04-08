@@ -189,6 +189,7 @@ const EquippedItemCard: React.FC<IProps> = ({
         exos={equippedItem.exos}
         openSetModal={openSetModal}
         showImg={false}
+        weaponElementMage={equippedItem.weaponElementMage}
       />
     </Card>
   );

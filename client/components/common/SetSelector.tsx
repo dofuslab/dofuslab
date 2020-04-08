@@ -98,7 +98,7 @@ const SetSelector: React.FC<IProps> = ({
             />
           ))}
       {(loading || data?.sets.pageInfo.hasNextPage) &&
-        Array(PAGE_SIZE)
+        Array(isMobile ? 2 : 12)
           .fill(null)
           .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)}
       <Waypoint

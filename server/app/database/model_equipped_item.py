@@ -1,6 +1,7 @@
 from app import session_scope
 import sqlalchemy
 from .base import Base
+from .enums import WeaponElementMageEnum
 from .model_equipped_item_exo import ModelEquippedItemExo
 from sqlalchemy import Column, ForeignKey, Table, UniqueConstraint
 from sqlalchemy.dialects.postgresql import UUID
@@ -27,6 +28,7 @@ class ModelEquippedItem(Base):
     item = relationship("ModelItem")
     slot = relationship("ModelItemSlot")
     exos = relationship("ModelEquippedItemExo", cascade="all, delete-orphan")
+    weapon_element_mage = Column("weapon_element_mage", WeaponElementMageEnum)
 
     def change_item(self, item_id):
         with session_scope() as db_session:

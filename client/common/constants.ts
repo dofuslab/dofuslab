@@ -1,16 +1,12 @@
-import { StatGroup, StatsFromCustomSet } from './types';
+import { StatGroup } from './types';
 import { Stat } from '__generated__/globalTypes';
+import { getStatWithDefault } from './utils';
 
 export const DEBOUNCE_INTERVAL = 300;
 
 export const BREAKPOINTS = [600, 900, 1200, 1450, 1650, 1900, 2100];
 
 export const mq = BREAKPOINTS.map(bp => `@media (min-width: ${bp}px)`);
-
-const getStatWithDefault = (
-  statsFromCustomSet: StatsFromCustomSet,
-  stat: Stat,
-) => statsFromCustomSet[stat] || 0;
 
 export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
   [

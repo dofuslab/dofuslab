@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat, WeaponEffectType } from "./../../../__generated__/globalTypes";
+import { Stat, WeaponEffectType, WeaponElementMage } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: createCustomSet
@@ -99,6 +99,7 @@ export interface createCustomSet_createCustomSet_customSet_equippedItems {
   slot: createCustomSet_createCustomSet_customSet_equippedItems_slot;
   item: createCustomSet_createCustomSet_customSet_equippedItems_item;
   exos: createCustomSet_createCustomSet_customSet_equippedItems_exos[];
+  weaponElementMage: WeaponElementMage | null;
 }
 
 export interface createCustomSet_createCustomSet_customSet_stats {

@@ -6,8 +6,9 @@ import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
 import { blue6 } from 'common/mixins';
-import { Stat, WeaponEffectType } from '__generated__/globalTypes';
+import { Stat, WeaponElementMage } from '__generated__/globalTypes';
 import Divider from 'antd/lib/divider';
+import { WeaponEffectsList } from 'common/wrappers';
 
 interface IProps {
   readonly item: item;
@@ -16,33 +17,9 @@ interface IProps {
   readonly hideSet?: boolean;
   readonly openSetModal?: (set: item_set) => void;
   readonly showImg?: boolean;
+  readonly showOnlyWeaponStats?: boolean;
+  readonly weaponElementMage?: WeaponElementMage | null;
 }
-
-const weaponEffectToIconUrl = (effect: WeaponEffectType) => {
-  switch (effect) {
-    case WeaponEffectType.AIR_DAMAGE:
-    case WeaponEffectType.AIR_STEAL:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Agility.svg';
-    case WeaponEffectType.EARTH_DAMAGE:
-    case WeaponEffectType.EARTH_STEAL:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Strength.svg';
-    case WeaponEffectType.FIRE_DAMAGE:
-    case WeaponEffectType.FIRE_STEAL:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Intelligence.svg';
-    case WeaponEffectType.NEUTRAL_DAMAGE:
-    case WeaponEffectType.NEUTRAL_STEAL:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Neutral.svg';
-    case WeaponEffectType.WATER_DAMAGE:
-    case WeaponEffectType.WATER_STEAL:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Chance.svg';
-    case WeaponEffectType.AP:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Action_Point.svg';
-    case WeaponEffectType.MP:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Movement_Point.svg';
-    case WeaponEffectType.HP_RESTORED:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Health_Point.svg';
-  }
-};
 
 const renderConditions = (conditionsObj: any, depth = 0) => {
   try {
@@ -87,8 +64,10 @@ const ItemStatsList: React.FC<IProps> = ({
   exos,
   openSetModal,
   showImg,
+  showOnlyWeaponStats,
+  weaponElementMage,
 }) => {
-  const { t } = useTranslation(['stat', 'weapon_stat']);
+  const { t } = useTranslation(['stat', 'weapon_spell_effect']);
 
   const statsMap: {
     [key: string]: { value: number; maged: boolean };
@@ -145,57 +124,49 @@ const ItemStatsList: React.FC<IProps> = ({
       )}
       {item.weaponStats && (
         <>
-          <div css={{ marginBottom: showImg ? 12 : 0 }}>
-            {item.weaponStats.weaponEffects.map(effect => (
-              <div
-                key={`weapon-effect-${effect.id}`}
-                css={{ display: 'flex', alignItems: 'center' }}
-              >
-                <img
-                  src={weaponEffectToIconUrl(effect.effectType)}
-                  css={{ height: 16, width: 16, marginRight: 8 }}
-                />
-                {effect.minDamage ? `${effect.minDamage}-` : ''}
-                {effect.maxDamage} {t(effect.effectType, { ns: 'weapon_stat' })}
-              </div>
-            ))}
-          </div>
+          <WeaponEffectsList
+            weaponStats={item.weaponStats}
+            css={{ marginBottom: showImg ? 12 : 0 }}
+            elementMage={weaponElementMage}
+          />
           <Divider css={{ margin: '12px 0' }} />
         </>
       )}
-      <ul
-        className={className}
-        css={{ paddingInlineStart: 16, fontSize: '0.75rem' }}
-      >
-        {item.stats
-          .sort(({ order: i }, { order: j }) => i - j)
-          .map((statLine, idx) => (
-            <li
-              key={`stat-${idx}`}
-              css={{
-                color:
-                  statLine.stat && statsMap[statLine.stat].maged
-                    ? blue6
-                    : 'inherit',
-              }}
-            >
-              {statLine.stat
-                ? `${statsMap[statLine.stat].value} ${t(statLine.stat)}`
-                : statLine.customStat}
-            </li>
-          ))}
-        {exos &&
-          exos
-            .filter(({ stat }) => !!exoStatsMap[stat])
-            .map(({ stat, value }) => (
-              <li key={`exo-${stat}`} css={{ color: blue6 }}>
-                {value} {t(stat)}
+      {!showOnlyWeaponStats && (
+        <ul
+          className={className}
+          css={{ paddingInlineStart: 16, fontSize: '0.75rem' }}
+        >
+          {item.stats
+            .sort(({ order: i }, { order: j }) => i - j)
+            .map((statLine, idx) => (
+              <li
+                key={`stat-${idx}`}
+                css={{
+                  color:
+                    statLine.stat && statsMap[statLine.stat].maged
+                      ? blue6
+                      : 'inherit',
+                }}
+              >
+                {statLine.stat
+                  ? `${statsMap[statLine.stat].value} ${t(statLine.stat)}`
+                  : statLine.customStat}
               </li>
             ))}
-      </ul>
+          {exos &&
+            exos
+              .filter(({ stat }) => !!exoStatsMap[stat])
+              .map(({ stat, value }) => (
+                <li key={`exo-${stat}`} css={{ color: blue6 }}>
+                  {value} {t(stat)}
+                </li>
+              ))}
+        </ul>
+      )}
       {item.weaponStats && (
         <>
-          <Divider css={{ margin: '12px 0' }} />
+          {!showOnlyWeaponStats && <Divider css={{ margin: '12px 0' }} />}
           <div>
             {item.weaponStats.apCost}&nbsp;{t(Stat.AP, { ns: 'stat' })} •{' '}
             {!!item.weaponStats.minRange && `${item.weaponStats.minRange}-`}
@@ -204,10 +175,10 @@ const ItemStatsList: React.FC<IProps> = ({
               ? `${item.weaponStats.baseCritChance} ${t(Stat.CRITICAL, {
                   ns: 'stat',
                 })}\u00A0(+${item.weaponStats.critBonusDamage})`
-              : t('DOES_NOT_CRIT', { ns: 'weapon_stat' })}{' '}
+              : t('DOES_NOT_CRIT', { ns: 'weapon_spell_effect' })}{' '}
             •{' '}
-            {t('USES_PER_TURN', {
-              ns: 'weapon_stat',
+            {t('USE_PER_TURN', {
+              ns: 'weapon_spell_effect',
               count: item.weaponStats.usesPerTurn,
             })}{' '}
           </div>

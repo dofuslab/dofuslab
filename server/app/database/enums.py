@@ -92,6 +92,22 @@ class SpellEffectType(Enum):
     PUSHBACK_DAMAGE = auto()
 
 
+class WeaponElementMage(Enum):
+    EARTH_85 = auto()
+    EARTH_68 = auto()
+    EARTH_50 = auto()
+    FIRE_85 = auto()
+    FIRE_68 = auto()
+    FIRE_50 = auto()
+    WATER_85 = auto()
+    WATER_68 = auto()
+    WATER_50 = auto()
+    AIR_85 = auto()
+    AIR_68 = auto()
+    AIR_50 = auto()
+
+
 StatEnum = sqlalchemy.Enum(Stat)
 WeaponEffectEnum = sqlalchemy.Enum(WeaponEffectType)
 SpellEffectEnum = sqlalchemy.Enum(SpellEffectType)
+WeaponElementMageEnum = sqlalchemy.Enum(WeaponElementMage)
