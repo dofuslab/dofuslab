@@ -102,7 +102,7 @@ const SetSelector: React.FC<IProps> = ({
           .fill(null)
           .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)}
       <Waypoint
-        key={String(loading)}
+        key={data?.sets.pageInfo.endCursor || 'null'}
         onEnter={onLoadMore}
         bottomOffset={BOTTOM_OFFSET}
       />

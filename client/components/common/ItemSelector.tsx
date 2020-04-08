@@ -89,7 +89,7 @@ const ItemSelector: React.FC<IProps> = ({
       },
     });
     return fetchMoreResult;
-  }, [data]);
+  }, [data, loading]);
 
   const responsiveGridRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -177,7 +177,7 @@ const ItemSelector: React.FC<IProps> = ({
             </Card>
           ))}
       <Waypoint
-        key={String(loading)}
+        key={data?.items.pageInfo.endCursor || 'null'}
         onEnter={onLoadMore}
         bottomOffset={BOTTOM_OFFSET}
       />
