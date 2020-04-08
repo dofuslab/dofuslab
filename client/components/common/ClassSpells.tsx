@@ -119,6 +119,7 @@ const ClassSpells: React.FC<IProps> = ({ customSet }) => {
   ) : (
     <div
       css={{
+        gridColumn: '1 / -1',
         height: 360,
         marginBottom: 320,
         display: 'flex',
