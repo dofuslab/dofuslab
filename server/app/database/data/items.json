@@ -22811,17 +22811,17 @@
       "conditions": {
         "and": [
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": "<",
             "value": 560
           },
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": "<",
             "value": 560
           },
           {
-            "stat": "Agility",
+            "stat": "AGILITY",
             "operator": "<",
             "value": 560
           }
@@ -31539,7 +31539,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": "<",
             "value": 600
           }
@@ -33108,7 +33108,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": "<",
             "value": 600
           }
@@ -33471,7 +33471,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Agility",
+            "stat": "AGILITY",
             "operator": "<",
             "value": 600
           }
@@ -33772,7 +33772,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": "<",
             "value": 600
           }
@@ -33924,7 +33924,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": "<",
             "value": 600
           }
@@ -34567,7 +34567,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": "<",
             "value": 600
           }
@@ -34945,7 +34945,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": "<",
             "value": 600
           }
@@ -41438,22 +41438,22 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": ">",
             "value": 250
           },
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": ">",
             "value": 250
           },
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": ">",
             "value": 250
           },
           {
-            "stat": "Agility",
+            "stat": "AGILITY",
             "operator": ">",
             "value": 250
           }
@@ -44761,7 +44761,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Agility",
+            "stat": "AGILITY",
             "operator": ">",
             "value": 140
           }
@@ -58051,22 +58051,22 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": ">",
             "value": 200
           },
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": ">",
             "value": 200
           },
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": ">",
             "value": 200
           },
           {
-            "stat": "Agility",
+            "stat": "AGILITY",
             "operator": ">",
             "value": 200
           }
@@ -74547,7 +74547,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": ">",
             "value": 90
           }
@@ -82173,12 +82173,12 @@
       "conditions": {
         "and": [
           {
-            "stat": "Wisdom",
+            "stat": "WISDOM",
             "operator": ">",
             "value": 30
           },
           {
-            "stat": "Vitality",
+            "stat": "VITALITY",
             "operator": ">",
             "value": 50
           }
@@ -82933,7 +82933,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": ">",
             "value": 90
           }
@@ -95036,7 +95036,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": ">",
             "value": 90
           }
@@ -102488,7 +102488,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": ">",
             "value": 49
           }
@@ -103038,7 +103038,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Agility",
+            "stat": "AGILITY",
             "operator": ">",
             "value": 50
           }
@@ -106304,7 +106304,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": ">",
             "value": 59
           }
@@ -106848,7 +106848,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": ">",
             "value": 50
           }
@@ -107133,7 +107133,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": ">",
             "value": 30
           }
@@ -107942,7 +107942,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Wisdom",
+            "stat": "WISDOM",
             "operator": ">",
             "value": 49
           }
@@ -108315,7 +108315,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Wisdom",
+            "stat": "WISDOM",
             "operator": ">",
             "value": 49
           }
@@ -108853,7 +108853,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Vitality",
+            "stat": "VITALITY",
             "operator": ">",
             "value": 119
           }
@@ -112334,12 +112334,12 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": "<",
             "value": 40
           },
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": ">",
             "value": 80
           }
@@ -113020,12 +113020,12 @@
       "conditions": {
         "and": [
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": "<",
             "value": 100
           },
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": "<",
             "value": 100
           }
@@ -113768,7 +113768,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": ">",
             "value": 10
           }
