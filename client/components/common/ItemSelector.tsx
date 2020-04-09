@@ -122,6 +122,7 @@ const ItemSelector: React.FC<IProps> = ({
       ref={responsiveGridRef}
     >
       {data &&
+        !loading &&
         data.items.edges
           .map(edge => edge.node)
           .map(item => {
@@ -162,7 +163,7 @@ const ItemSelector: React.FC<IProps> = ({
             );
           })}
       {(loading || data?.items.pageInfo.hasNextPage) &&
-        Array(isMobile ? 2 : 12)
+        Array(isMobile ? 2 : 24)
           .fill(null)
           .map((_, idx) => (
             <Card

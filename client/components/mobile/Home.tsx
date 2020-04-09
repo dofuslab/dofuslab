@@ -64,7 +64,7 @@ const Home: React.FC<IProps> = ({
       >
         <div
           css={{
-            flex: '1 1 288px',
+            flex: '1 1 296px',
             overflow: 'auto',
             ...topMarginStyle,
           }}

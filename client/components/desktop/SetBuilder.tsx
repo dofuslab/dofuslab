@@ -86,15 +86,10 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
       >
         <div
           css={{
-            flex: '1 1 282px',
-
             overflow: 'auto',
-            ...topMarginStyle,
-            [mq[1]]: {
-              flex: '0 1 288px',
-              paddingRight: 12,
-              ...(topMarginStyle[mq[1]] as {}),
-            },
+            flex: '0 1 296px',
+            paddingRight: 12,
+            ...(topMarginStyle[mq[1]] as {}),
             [mq[2]]: { flex: '0 1 576px' },
           }}
         >

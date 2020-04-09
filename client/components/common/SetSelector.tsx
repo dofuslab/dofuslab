@@ -86,6 +86,7 @@ const SetSelector: React.FC<IProps> = ({
       ref={responsiveGridRef}
     >
       {data &&
+        !loading &&
         data.sets.edges
           .map(edge => edge.node)
           .map(set => (
@@ -98,7 +99,7 @@ const SetSelector: React.FC<IProps> = ({
             />
           ))}
       {(loading || data?.sets.pageInfo.hasNextPage) &&
-        Array(isMobile ? 2 : 12)
+        Array(isMobile ? 2 : 24)
           .fill(null)
           .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)}
       <Waypoint
