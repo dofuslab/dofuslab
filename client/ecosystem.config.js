@@ -14,6 +14,7 @@ module.exports = {
       env_production: {
         NODE_ENV: 'production',
         GRAPHQL_URI: 'https://dofuslab.io/api/graphql',
+        GA_TRACKING_ID: 'UA-104212417-3',
       },
     },
   ],
