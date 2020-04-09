@@ -4,12 +4,13 @@ import withApollo from 'common/apollo';
 import { ApolloClient, NormalizedCacheObject } from 'apollo-boost';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { MediaContextProvider } from 'components/common/Media';
+import Router from 'next/router';
 
 import { appWithTranslation } from '../i18n';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-// import 'antd/dist/antd.min.css';
-// import 'antd/dist/antd.dark.min.css';
+import * as gtag from '../gtag';
 
+Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 config.autoAddCss = false;
 
 class DofusLabApp extends App<{

@@ -1,6 +1,5 @@
 const withCSS = require('@zeit/next-css');
 const withLess = require('@zeit/next-less');
-const darkTheme = require('@ant-design/dark-theme');
 const webpack = require('webpack');
 const path = require('path');
 require('dotenv').config();
@@ -18,9 +17,9 @@ module.exports = withBundleAnalyzer(
     withCSS({
       env: {
         GRAPHQL_URI: process.env.GRAPHQL_URI,
+        GA_TRACKING_ID: process.env.GA_TRACKING_ID,
       },
       lessLoaderOptions: {
-        modifyVars: darkTheme,
         javascriptEnabled: true,
       },
       webpack: (config, { isServer }) => {

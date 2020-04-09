@@ -1469,6 +1469,11 @@
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
 
+"@types/gtag.js@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@types/gtag.js/-/gtag.js-0.0.3.tgz#bbc414030b2143fc7874260ab825aac82c42928e"
+  integrity sha512-iRF/4Q3G1t0OTNMjK52tpGSQPgEsYzWQL1IdVXt9BywK6MUK3ypB7LaoEQa8sW9gPXENoU1xAyCxqJhMkB2rCA==
+
 "@types/json-schema@^7.0.3":
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.4.tgz#38fd73ddfd9b55abb1e1b2ed578cb55bd7b7d339"
