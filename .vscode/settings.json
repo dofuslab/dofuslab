@@ -1,5 +1,5 @@
 {
-  "python.pythonPath": "venv/bin/python3",
+  "python.pythonPath": "/home/jeremy/dofus-lab/venv/bin/python3",
   "python.linting.pylintArgs": ["--load-plugins", "pylint-flask"],
   "python.formatting.provider": "black"
 }

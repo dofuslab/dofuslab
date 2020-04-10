@@ -48,6 +48,7 @@
     "null-loader": "^3.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-flag-kit": "^0.3.1",
     "react-waypoint": "^9.0.2",
     "webpack": "^4.42.0"
   },

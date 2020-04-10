@@ -2,7 +2,8 @@
 
 import * as React from 'react';
 import { jsx, Global, css } from '@emotion/core';
-import { Layout as AntdLayout, Button, Drawer } from 'antd';
+import { Layout as AntdLayout, Button, Drawer, Select } from 'antd';
+import { FlagIcon } from 'react-flag-kit';
 
 import LoginModal from '../common/LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
@@ -12,7 +13,7 @@ import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import logoutMutation from 'graphql/mutations/logout.graphql';
 import { BORDER_COLOR, gray8 } from 'common/mixins';
 
-import { useTranslation } from 'i18n';
+import { useTranslation, LANGUAGES, langToFlagCode } from 'i18n';
 import SignUpModal from '../common/SignUpModal';
 import MyBuilds from '../common/MyBuilds';
 import Link from 'next/link';
@@ -23,8 +24,10 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
+const { Option } = Select;
+
 const Layout = (props: LayoutProps) => {
-  const { t } = useTranslation(['auth', 'common']);
+  const { t, i18n } = useTranslation(['auth', 'common']);
   const client = useApolloClient();
   const { data } = useQuery<ICurrentUser>(currentUserQuery);
   const [logout] = useMutation<ILogout>(logoutMutation);
@@ -93,7 +96,21 @@ const Layout = (props: LayoutProps) => {
         <Link href="/" as="/">
           <div css={{ fontWeight: 500, cursor: 'pointer' }}>DofusLab</div>
         </Link>
-        <div>
+        <div css={{ display: 'flex', alignItems: 'center' }}>
+          <Select
+            value={i18n.language}
+            onSelect={lang => i18n.changeLanguage(lang)}
+            css={{ marginRight: 16 }}
+          >
+            {LANGUAGES.map(lang => (
+              <Option key={lang} value={lang}>
+                <div css={{ display: 'flex', alignItems: 'center' }}>
+                  <FlagIcon code={langToFlagCode(lang)} size={20} />
+                  <div css={{ marginLeft: 8 }}>{lang}</div>
+                </div>
+              </Option>
+            ))}
+          </Select>
           {data?.currentUser ? (
             <div>
               {t('WELCOME_MESSAGE', {
@@ -104,7 +121,6 @@ const Layout = (props: LayoutProps) => {
                   <Button onClick={openDrawer} css={{ marginLeft: 12 }}>
                     {t('MY_BUILDS', { ns: 'common' })}
                   </Button>
-
                   <Drawer
                     visible={drawerVisible}
                     closable
