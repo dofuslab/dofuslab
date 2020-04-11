@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-31 02:48-0700\n"
+"POT-Creation-Date: 2020-04-11 13:45-0700\n"
 "PO-Revision-Date: 2020-03-27 23:06-0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -40,83 +40,153 @@ msgid ""
 "letter, one uppercase letter, and one number."
 msgstr ""
 
-#: app/schema.py:280
+#: app/schema.py:283
 msgid "You are not authorized to make this request."
 msgstr ""
 
-#: app/schema.py:451 app/schema.py:454
+#: app/schema.py:442 app/schema.py:445
 msgid "Invalid stat value."
 msgstr ""
 
-#: app/schema.py:477
+#: app/schema.py:468
 msgid "The set name is too long."
 msgstr ""
 
-#: app/schema.py:479
+#: app/schema.py:470
 msgid "Invalid set level (must be 1-200)."
 msgstr ""
 
-#: app/schema.py:544 app/schema.py:583 app/schema.py:617 app/utils.py:17
-#: app/utils.py:19
+#: app/schema.py:537 app/schema.py:581 app/schema.py:616 app/schema.py:618
+#: app/utils.py:17 app/utils.py:19
 msgid "You don't have permission to edit that set."
 msgstr ""
 
-#: app/schema.py:585
+#: app/schema.py:552
+msgid "Invalid element mage on non-weapon item."
+msgstr ""
+
+#: app/schema.py:583
 msgid "Invalid stat to set exo."
 msgstr ""
 
-#: app/schema.py:640 app/schema.py:672
+#: app/schema.py:641 app/schema.py:676 app/schema.py:794 app/schema.py:821
 msgid "You are already logged in."
 msgstr ""
 
-#: app/schema.py:656
+#: app/schema.py:655 app/schema.py:725
+msgid "Verify your DofusLab account"
+msgstr ""
+
+#: app/schema.py:660
 msgid "An error occurred while registering."
 msgstr ""
 
-#: app/schema.py:677
+#: app/schema.py:681
 msgid "Invalid username or password."
 msgstr ""
 
-#: app/schema.py:700
+#: app/schema.py:705 app/schema.py:784
 msgid "Please wait a minute before trying again."
 msgstr ""
 
-#: app/schema.py:704
+#: app/schema.py:709
 msgid ""
 "You have sent too many verification emails. Please wait awhile before "
 "trying again."
 msgstr ""
 
-#: app/schema.py:712
+#: app/schema.py:717
 msgid "You must be signed in to do that."
 msgstr ""
 
-#: app/schema.py:714
+#: app/schema.py:719
 msgid "Your account is already verified."
 msgstr ""
 
-#: app/tasks.py:22
-msgid "Confirm your DofusLab account"
+#: app/schema.py:739
+msgid "Received unsupported locale."
 msgstr ""
 
-#: app/utils.py:53
+#: app/schema.py:758
+msgid "You are not logged in."
+msgstr ""
+
+#: app/schema.py:762
+msgid "Incorrect password."
+msgstr ""
+
+#: app/schema.py:770 app/schema.py:840
+msgid "You must enter a password different from your current one."
+msgstr ""
+
+#: app/schema.py:788
+msgid ""
+"You have sent too many password request emails. Please wait awhile before"
+" trying again."
+msgstr ""
+
+#: app/schema.py:797
+msgid "We could not find an account with that email."
+msgstr ""
+
+#: app/schema.py:801
+msgid "Please verify your email first."
+msgstr ""
+
+#: app/schema.py:808
+msgid "Reset your DofusLab password"
+msgstr ""
+
+#: app/schema.py:826 app/schema.py:834
+msgid "The link is invalid or expired. Please request a new one."
+msgstr ""
+
+#: app/utils.py:56
 msgid "Please verify your account to continue using DofusLab."
 msgstr ""
 
-#: app/templates/verify_email.html:4
+#: app/templates/reset_password.html:10
 msgid ""
-"Thanks for signing up for DofusLab. Please follow the link to activate\n"
-"    your account."
+"We just received a request to reset your password. Follow the link\n"
+"        below to reset it."
 msgstr ""
 
-#: app/templates/verify_email.html:8
+#: app/templates/reset_password.html:14
+msgid "If this wasn't you, please ignore this message."
+msgstr ""
+
+#: app/templates/reset_password.html:16
+msgid "Thanks for using DofusLab!"
+msgstr ""
+
+#: app/templates/reset_password.html:16
+msgid "The DofusLab team"
+msgstr ""
+
+#: app/templates/verify_email.html:10
+msgid ""
+"Thanks for signing up for DofusLab. Please follow the link to\n"
+"        activate your account."
+msgstr ""
+
+#: app/templates/verify_email.html:14
 msgid "Cheers!"
 msgstr ""
 
-#: app/templates/verify_email.html:8
+#: app/templates/verify_email.html:14
 msgid "- The DofusLab team"
 msgstr ""
 
 #~ msgid "Hey %(display_name),"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Thanks for signing up for DofusLab. "
+#~ "Please follow the link to activate\n"
+#~ ""
+#~ "    your account."
+#~ msgstr ""
+
+#~ msgid "Confirm your DofusLab account"
 #~ msgstr ""
 

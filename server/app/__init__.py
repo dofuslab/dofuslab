@@ -10,7 +10,7 @@ from flask_limiter_graphQL_support import Limiter
 from flask_limiter_graphQL_support.util import get_remote_address
 import os
 from app.database.base import Base
-import flask_login
+from flask_login import LoginManager, current_user
 from flask_cors import CORS
 import redis
 from worker import redis_connection
@@ -30,7 +30,11 @@ Session(app)
 
 q = Queue(connection=redis_connection)
 
-supported_languages = ["en", "fr", "pt", "it", "de", "es"]
+base_url = os.getenv("HOME_PAGE")
+reset_password_salt = "reset-password-salt"
+
+# supported_languages = ["en", "fr", "pt", "it", "de", "es"]
+supported_languages = ["en"]
 
 db = SQLAlchemy(app)
 CORS(
@@ -54,20 +58,33 @@ from contextlib import contextmanager
 @contextmanager
 def session_scope():
     """Provide a transactional scope around a series of operations."""
-    session = db.session
+    db_session = db.session
     try:
-        yield session
-        session.commit()
+        yield db_session
+        db_session.commit()
     except:
-        session.rollback()
+        db_session.rollback()
         raise
 
 
 babel = Babel(app)
 
+
+@babel.localeselector
+def get_locale():
+    # if a user is logged in, use the locale from the user settings
+    if current_user.is_authenticated:
+        user = current_user._get_current_object()
+        return user.locale
+    locale = session.get("locale")
+    if locale:
+        return locale
+    return request.accept_languages.best_match(supported_languages)
+
+
 bcrypt = Bcrypt(app)
 
-login_manager = flask_login.LoginManager()
+login_manager = LoginManager()
 login_manager.init_app(app)
 
 dirname = os.path.dirname(os.path.abspath(__file__))

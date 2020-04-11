@@ -19,8 +19,8 @@ from flask_login import UserMixin
 from datetime import datetime
 
 
-class ModelUser(UserMixin, Base):
-    __tablename__ = "user"
+class ModelUserAccount(UserMixin, Base):
+    __tablename__ = "user_account"
 
     uuid = Column(
         UUID(as_uuid=True),
@@ -36,6 +36,7 @@ class ModelUser(UserMixin, Base):
         "verification_email_sent", Boolean, nullable=False, default=False
     )
     verified = Column("verified", Boolean, nullable=False, default=False, index=True)
+    locale = Column("locale", String, nullable=False)
 
     def check_password(self, candidate):
         return bcrypt.check_password_hash(self.password, candidate)
@@ -71,4 +72,4 @@ class ModelUser(UserMixin, Base):
 
 @login_manager.user_loader
 def user_loader(user_id):
-    return ModelUser.find_by_id(user_id)
+    return ModelUserAccount.find_by_id(user_id)

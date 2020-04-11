@@ -40,7 +40,10 @@ def save_custom_sets():
                 "owner_id": current_user.get_id(),
             }
             mappings.append(info)
-        db_session.bulk_update_mappings(ModelCustomSet, mappings)
+        try:
+            db_session.bulk_update_mappings(ModelCustomSet, mappings)
+        except Exception as e:
+            print("Error occurred saving custom sets:", e)
 
 
 def anonymous_or_verified(func):

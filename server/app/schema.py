@@ -1,4 +1,13 @@
-from app import db, supported_languages, q, session_scope, template_env, limiter
+from app import (
+    db,
+    supported_languages,
+    q,
+    session_scope,
+    template_env,
+    limiter,
+    base_url,
+    reset_password_salt,
+)
 from app.database.model_item_stat_translation import ModelItemStatTranslation
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_type import ModelItemType
@@ -15,7 +24,7 @@ from app.database.model_custom_set_stat import ModelCustomSetStat
 from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_equipped_item import ModelEquippedItem
 from app.database.model_custom_set import ModelCustomSet
-from app.database.model_user import ModelUser
+from app.database.model_user import ModelUserAccount
 from app.database.model_spell_effect import ModelSpellEffect
 from app.database.model_spell_stat_translation import ModelSpellStatTranslation
 from app.database.model_spell_stats import ModelSpellStats
@@ -26,6 +35,7 @@ from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_class import ModelClass
 from app.tasks import send_email
 from app.utils import get_or_create_custom_set, save_custom_sets, anonymous_or_verified
+from app.verify_email import verify_email_salt
 from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from app.database.base import Base
@@ -35,13 +45,13 @@ from app.database.enums import (
     SpellEffectType,
     WeaponElementMage,
 )
-from app.verify_email_utils import encode_token, generate_url
+from app.token_utils import decode_token, encode_token, generate_url
 import app.mutation_validation_utils as validation
 import graphene
 import uuid
 from graphql import GraphQLError
 from flask import session, render_template
-from flask_babel import _
+from flask_babel import _, get_locale, refresh
 from flask_login import login_required, login_user, current_user, logout_user
 from functools import lru_cache
 from sqlalchemy import func, distinct
@@ -93,9 +103,7 @@ class ItemStat(SQLAlchemyObjectType):
     custom_stat = graphene.String()
 
     def resolve_custom_stat(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = (
             db.session.query(ModelItemStatTranslation)
             .filter(ModelItemStatTranslation.item_stat_id == self.uuid)
@@ -148,9 +156,7 @@ class Item(SQLAlchemyObjectType):
     name = graphene.String(required=True)
 
     def resolve_name(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = db.session.query(ModelItemTranslation)
         return (
             query.filter(ModelItemTranslation.locale == locale)
@@ -173,9 +179,7 @@ class SetBonus(SQLAlchemyObjectType):
     custom_stat = graphene.String()
 
     def resolve_custom_stat(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = (
             db.session.query(ModelSetBonusTranslation)
             .filter(ModelSetBonusTranslation.set_bonus_id == self.uuid)
@@ -197,9 +201,7 @@ class Set(SQLAlchemyObjectType):
     name = graphene.String(required=True)
 
     def resolve_name(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = db.session.query(ModelSetTranslation)
         return (
             query.filter(ModelSetTranslation.locale == locale)
@@ -282,7 +284,7 @@ class User(SQLAlchemyObjectType):
         return self.email
 
     class Meta:
-        model = ModelUser
+        model = ModelUserAccount
         interfaces = (GlobalNode,)
         only_fields = ("id", "username", "email", "custom_sets", "verified")
 
@@ -298,9 +300,7 @@ class SpellStats(SQLAlchemyObjectType):
     spell_effects = graphene.NonNull(graphene.List(graphene.NonNull(SpellEffects)))
 
     def resolve_aoe(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = (
             db.session.query(ModelSpellStatTranslation)
             .filter(ModelSpellStatTranslation.locale == locale)
@@ -322,9 +322,7 @@ class Spell(SQLAlchemyObjectType):
     spell_stats = graphene.NonNull(graphene.List(graphene.NonNull(SpellStats)))
 
     def resolve_name(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = db.session.query(ModelSpellTranslation)
         return (
             query.filter(ModelSpellTranslation.locale == locale)
@@ -334,9 +332,7 @@ class Spell(SQLAlchemyObjectType):
         )
 
     def resolve_description(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = db.session.query(ModelSpellTranslation)
         return (
             query.filter(ModelSpellTranslation.locale == locale)
@@ -365,9 +361,7 @@ class Class(SQLAlchemyObjectType):
     )
 
     def resolve_name(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = db.session.query(ModelClassTranslation)
         return (
             query.filter(ModelClassTranslation.locale == locale)
@@ -645,18 +639,21 @@ class RegisterUser(graphene.Mutation):
             try:
                 if current_user.is_authenticated:
                     raise GraphQLError(_("You are already logged in."))
-                user = ModelUser(
+                user = ModelUserAccount(
                     username=username,
                     email=email,
-                    password=ModelUser.generate_hash(password),
+                    password=ModelUserAccount.generate_hash(password),
+                    locale=str(get_locale()),
                 )
-                token = encode_token(user.email)
+                token = encode_token(user.email, verify_email_salt)
                 verify_url = generate_url("verify_email.verify_email", token)
                 template = template_env.get_template("verify_email.html")
                 content = template.render(display_name=username, verify_url=verify_url)
-                q.enqueue(send_email, user.email, content)
                 db_session.add(user)
                 db_session.flush()
+                q.enqueue(
+                    send_email, user.email, _("Verify your DofusLab account"), content
+                )
                 login_user(user)
                 save_custom_sets()
             except Exception as e:
@@ -680,13 +677,14 @@ class LoginUser(graphene.Mutation):
         email = kwargs.get("email")
         password = kwargs.get("password")
         remember = kwargs.get("remember")
-        user = ModelUser.find_by_email(email)
+        user = ModelUserAccount.find_by_email(email)
         auth_error = GraphQLError(_("Invalid username or password."))
         if not user:
             raise auth_error
         if not user.check_password(password):
             raise auth_error
         login_user(user, remember=remember)
+        refresh()
         save_custom_sets()
         return LoginUser(user=user, ok=True)
 
@@ -719,12 +717,131 @@ class ResendVerificationEmail(graphene.Mutation):
                 raise GraphQLError(_("You must be signed in to do that."))
             if user.verified:
                 raise GraphQLError(_("Your account is already verified."))
-            token = encode_token(user.email)
+            token = encode_token(user.email, verify_email_salt)
             verify_url = generate_url("verify_email.verify_email", token)
             template = template_env.get_template("verify_email.html")
             content = template.render(display_name=user.username, verify_url=verify_url)
-            q.enqueue(send_email, user.email, content)
+            q.enqueue(
+                send_email, user.email, _("Verify your DofusLab account"), content
+            )
             return ResendVerificationEmail(ok=True)
+
+
+class ChangeLocale(graphene.Mutation):
+    class Arguments:
+        locale = graphene.String(required=True)
+
+    ok = graphene.Boolean(required=True)
+
+    def mutate(self, info, **kwargs):
+        locale = kwargs.get("locale")
+        if not locale in supported_languages:
+            raise GraphQLError(_("Received unsupported locale."))
+        with session_scope() as db_session:
+            user = current_user._get_current_object()
+            if current_user.is_authenticated:
+                user.locale = locale
+            session["locale"] = locale
+            refresh()
+            return ChangeLocale(ok=True)
+
+
+class ChangePassword(graphene.Mutation):
+    class Arguments:
+        old_password = graphene.String(required=True)
+        new_password = graphene.String(required=True)
+
+    ok = graphene.Boolean(required=True)
+
+    def mutate(self, info, **kwargs):
+        if not current_user.is_authenticated:
+            raise GraphQLError(_("You are not logged in."))
+        old_password = kwargs.get("old_password")
+        new_password = kwargs.get("new_password")
+        user = current_user._get_current_object()
+        auth_error = GraphQLError(_("Incorrect password."))
+        if not user:
+            raise auth_error
+        if not user.check_password(old_password):
+            raise auth_error
+        validation.validate_password(new_password)
+        if old_password == new_password:
+            raise GraphQLError(
+                _("You must enter a password different from your current one.")
+            )
+        with session_scope() as db_session:
+            user.password = ModelUserAccount.generate_hash(new_password)
+            return ChangePassword(ok=True)
+
+
+class RequestPasswordReset(graphene.Mutation):
+    class Arguments:
+        email = graphene.String(required=True)
+
+    ok = graphene.Boolean(required=True)
+
+    @limiter.limit(
+        "1/minute", error_message=_("Please wait a minute before trying again.")
+    )
+    @limiter.limit(
+        "5/hour",
+        error_message=_(
+            "You have sent too many password request emails. Please wait awhile before trying again."
+        ),
+    )
+    def mutate(self, info, **kwargs):
+        if current_user.is_authenticated:
+            raise GraphQLError(_("You are already logged in."))
+        email = kwargs.get("email")
+        user = ModelUserAccount.find_by_email(email)
+        auth_error = GraphQLError(_("We could not find an account with that email."))
+        if not user:
+            raise auth_error
+        if not user.verified:
+            raise GraphQLError(_("Please verify your email first."))
+        token = encode_token(user.email, reset_password_salt)
+        reset_password_url = "{}reset-password?token={}".format(base_url, token)
+        template = template_env.get_template("reset_password.html")
+        content = template.render(
+            display_name=user.username, reset_password_url=reset_password_url
+        )
+        q.enqueue(send_email, user.email, _("Reset your DofusLab password"), content)
+        return RequestPasswordReset(ok=True)
+
+
+class ResetPassword(graphene.Mutation):
+    class Arguments:
+        token = graphene.String(required=True)
+        password = graphene.String(required=True)
+
+    ok = graphene.Boolean(required=True)
+
+    def mutate(self, info, **kwargs):
+        if current_user.is_authenticated:
+            raise GraphQLError(_("You are already logged in."))
+        token = kwargs.get("token")
+        password = kwargs.get("password")
+        email = decode_token(token, reset_password_salt)
+        invalid_token_error = GraphQLError(
+            _("The link is invalid or expired. Please request a new one.")
+        )
+        if not email:
+            raise invalid_token_error
+        user = ModelUserAccount.find_by_email(email)
+
+        if not user:
+            raise GraphQLError(
+                _("The link is invalid or expired. Please request a new one.")
+            )
+
+        validation.validate_password(password)
+        if user.check_password(password):
+            raise GraphQLError(
+                _("You must enter a password different from your current one.")
+            )
+        with session_scope() as db_session:
+            user.password = ModelUserAccount.generate_hash(password)
+            return ResetPassword(ok=True)
 
 
 class ItemFilters(graphene.InputObjectType):
@@ -754,9 +871,7 @@ class Query(graphene.ObjectType):
     )
 
     def resolve_items(self, info, **kwargs):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         filters = kwargs.get("filters")
         items_query = (
             db.session.query(ModelItem)
@@ -811,9 +926,7 @@ class Query(graphene.ObjectType):
 
     def resolve_sets(self, info, **kwargs):
         with session_scope() as db_session:
-            locale = info.context.accept_languages.best_match(
-                supported_languages, default="en"
-            )
+            locale = str(get_locale())
             filters = kwargs.get("filters")
             set_query = (
                 db_session.query(ModelSet)
@@ -898,7 +1011,7 @@ class Query(graphene.ObjectType):
     user_by_id = graphene.Field(User, id=graphene.UUID(required=True))
 
     def resolve_user_by_id(self, info, id):
-        return db.session.query(ModelUser).get(id)
+        return db.session.query(ModelUserAccount).get(id)
 
     item_by_id = graphene.Field(Item, id=graphene.UUID(required=True))
 
@@ -920,6 +1033,11 @@ class Query(graphene.ObjectType):
     def resolve_item_slots(self, info):
         return db.session.query(ModelItemSlot).order_by(ModelItemSlot.order).all()
 
+    locale = graphene.NonNull(graphene.String)
+
+    def resolve_locale(self, info):
+        return str(get_locale())
+
 
 class Mutation(graphene.ObjectType):
     register_user = RegisterUser.Field()
@@ -934,6 +1052,10 @@ class Mutation(graphene.ObjectType):
     equip_set = EquipSet.Field()
     create_custom_set = CreateCustomSet.Field()
     resend_verification_email = ResendVerificationEmail.Field()
+    change_locale = ChangeLocale.Field()
+    change_password = ChangePassword.Field()
+    request_password_reset = RequestPasswordReset.Field()
+    reset_password = ResetPassword.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

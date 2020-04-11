@@ -1,0 +1,5 @@
+mutation changeLocale($locale: String!) {
+  changeLocale(locale: $locale) {
+    ok
+  }
+}
