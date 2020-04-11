@@ -780,6 +780,15 @@ class RequestPasswordReset(graphene.Mutation):
 
     ok = graphene.Boolean(required=True)
 
+    @limiter.limit(
+        "1/minute", error_message=_("Please wait a minute before trying again.")
+    )
+    @limiter.limit(
+        "5/hour",
+        error_message=_(
+            "You have sent too many password request emails. Please wait awhile before trying again."
+        ),
+    )
     def mutate(self, info, **kwargs):
         if current_user.is_authenticated:
             raise GraphQLError(_("You are already logged in."))
