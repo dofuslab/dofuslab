@@ -36278,14 +36278,14 @@
     "setID": null,
     "level": 180,
     "stats": [],
-    "customStats": [],
+    "customStats": {
+      "en": [
+        "At the start of the caster's turn, if they have less than 20% HP, they gare healed 40% HP and gain 20% final damage for the current turn. This effect can only be played once per fight."
+      ]
+    },
     "conditions": {
       "conditions": {},
-      "customConditions": {
-        "en": [
-          "At the start of the caster's turn, if they have less than 20% HP, they gare healed 40% HP and gain 20% final damage for the current turn. This effect can only be played once per fight."
-        ]
-      }
+      "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/23027.png"
   },
@@ -36502,14 +36502,14 @@
         "maxStat": 40
       }
     ],
-    "customStats": [],
+    "customStats": {
+      "en": [
+        "At the end of the turn, damage from the next attack suffered is reduced by 50%."
+      ]
+    },
     "conditions": {
       "conditions": {},
-      "customConditions": {
-        "en": [
-          "At the end of the turn, damage from the next attack suffered is reduced by 50%."
-        ]
-      }
+      "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/23011.png"
   },
@@ -36626,14 +36626,14 @@
         "maxStat": 40
       }
     ],
-    "customStats": [],
+    "customStats": {
+      "en": [
+        "Generates 1 first charge at the start of the turn, 1 second charge upon inflicting close-combat damage, and 1 third charge upon inflicting ranged damage.\n\nOnce 5 charges are reached, the next attack consumes the charges and applies a poison to the target for 3 turns.\n\n Each charge gives a 2% final damage inflicted bonus."
+      ]
+    },
     "conditions": {
       "conditions": {},
-      "customConditions": {
-        "en": [
-          "Generates 1 first charge at the start of the turn, 1 second charge upon inflicting close-combat damage, and 1 third charge upon inflicting ranged damage.\n\nOnce 5 charges are reached, the next attack consumes the charges and applies a poison to the target for 3 turns.\n\n Each charge gives a 2% final damage inflicted bonus."
-        ]
-      }
+      "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/23007.png"
   },
