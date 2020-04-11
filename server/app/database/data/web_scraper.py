@@ -1277,7 +1277,7 @@ class DataAdjustment:
                     {"stat": "Water Resistance", "minStat": None, "maxStat": 40},
                     {"stat": "Air Resistance", "minStat": None, "maxStat": 40},
                 ]
-                data[i]["conditions"]["customConditions"]["en"] = [
+                data[i]["customStats"]["en"] = [
                     "At the end of the turn, damage from the next attack suffered is reduced by 50%."
                 ]
             # Ebony Dofus
@@ -1285,12 +1285,12 @@ class DataAdjustment:
                 data[i]["stats"] = [
                     {"stat": "Dodge", "minStat": None, "maxStat": 40},
                 ]
-                data[i]["conditions"]["customConditions"]["en"] = [
+                data[i]["customStats"]["en"] = [
                     "Generates 1 first charge at the start of the turn, 1 second charge upon inflicting close-combat damage, and 1 third charge upon inflicting ranged damage.\n\nOnce 5 charges are reached, the next attack consumes the charges and applies a poison to the target for 3 turns.\n\n Each charge gives a 2% final damage inflicted bonus."
                 ]
             # Sparkling Silver Dofus
             elif data[i]["dofusID"] == "20286":
-                data[i]["conditions"]["customConditions"]["en"] = [
+                data[i]["customStats"]["en"] = [
                     "At the start of the caster's turn, if they have less than 20% HP, they gare healed 40% HP and gain 20% final damage for the current turn. This effect can only be played once per fight."
                 ]
 
@@ -1406,5 +1406,5 @@ if __name__ == "__main__":
     # class_scraper.get_info_for_all_classes()
 
     # DataAdjustment.add_missing_trophy_conditions()
-    # DataAdjustment.add_missing_item_details()
-    DataAdjustment.change_condition_case()
+    DataAdjustment.add_missing_item_details()
+    # DataAdjustment.change_condition_case()
