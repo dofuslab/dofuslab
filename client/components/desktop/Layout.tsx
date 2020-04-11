@@ -3,7 +3,6 @@
 import * as React from 'react';
 import { jsx, Global, css } from '@emotion/core';
 import { Layout as AntdLayout, Button, Drawer, Select } from 'antd';
-// import { FlagIcon } from 'react-flag-kit';
 
 import LoginModal from '../common/LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';

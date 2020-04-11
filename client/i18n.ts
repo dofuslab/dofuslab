@@ -10,25 +10,7 @@ export type TLanguage = typeof LANGUAGES[number];
 const NextI18NextInstance = new NextI18Next({
   defaultLanguage: 'en',
   otherLanguages: ['fr', 'de', 'pt', 'it', 'es'],
-  // otherLanguages: ['en-us'],
 });
-
-export const langToFlagCode = (language: TLanguage) => {
-  switch (language) {
-    case 'en':
-      return 'US';
-    case 'fr':
-      return 'FR';
-    case 'de':
-      return 'DE';
-    case 'pt':
-      return 'BR';
-    case 'it':
-      return 'IT';
-    case 'es':
-      return 'ES';
-  }
-};
 
 export const langToFullName = (language: TLanguage) => {
   switch (language) {
