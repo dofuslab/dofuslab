@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-31 02:48-0700\n"
+"POT-Creation-Date: 2020-04-10 22:13-0700\n"
 "PO-Revision-Date: 2020-03-27 23:06-0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt\n"
@@ -40,83 +40,98 @@ msgid ""
 "letter, one uppercase letter, and one number."
 msgstr ""
 
-#: app/schema.py:280
+#: app/schema.py:273
 msgid "You are not authorized to make this request."
 msgstr ""
 
-#: app/schema.py:451 app/schema.py:454
+#: app/schema.py:432 app/schema.py:435
 msgid "Invalid stat value."
 msgstr ""
 
-#: app/schema.py:477
+#: app/schema.py:458
 msgid "The set name is too long."
 msgstr ""
 
-#: app/schema.py:479
+#: app/schema.py:460
 msgid "Invalid set level (must be 1-200)."
 msgstr ""
 
-#: app/schema.py:544 app/schema.py:583 app/schema.py:617 app/utils.py:17
-#: app/utils.py:19
+#: app/schema.py:527 app/schema.py:571 app/schema.py:606 app/schema.py:608
+#: app/utils.py:17 app/utils.py:19
 msgid "You don't have permission to edit that set."
 msgstr ""
 
-#: app/schema.py:585
+#: app/schema.py:542
+msgid "Invalid element mage on non-weapon item."
+msgstr ""
+
+#: app/schema.py:573
 msgid "Invalid stat to set exo."
 msgstr ""
 
-#: app/schema.py:640 app/schema.py:672
+#: app/schema.py:631 app/schema.py:664
 msgid "You are already logged in."
 msgstr ""
 
-#: app/schema.py:656
+#: app/schema.py:648
 msgid "An error occurred while registering."
 msgstr ""
 
-#: app/schema.py:677
+#: app/schema.py:669
 msgid "Invalid username or password."
 msgstr ""
 
-#: app/schema.py:700
+#: app/schema.py:693
 msgid "Please wait a minute before trying again."
 msgstr ""
 
-#: app/schema.py:704
+#: app/schema.py:697
 msgid ""
 "You have sent too many verification emails. Please wait awhile before "
 "trying again."
 msgstr ""
 
-#: app/schema.py:712
+#: app/schema.py:705
 msgid "You must be signed in to do that."
 msgstr ""
 
-#: app/schema.py:714
+#: app/schema.py:707
 msgid "Your account is already verified."
+msgstr ""
+
+#: app/schema.py:725
+msgid "Received unsupported locale."
 msgstr ""
 
 #: app/tasks.py:22
 msgid "Confirm your DofusLab account"
 msgstr ""
 
-#: app/utils.py:53
+#: app/utils.py:56
 msgid "Please verify your account to continue using DofusLab."
 msgstr ""
 
-#: app/templates/verify_email.html:4
+#: app/templates/verify_email.html:10
 msgid ""
-"Thanks for signing up for DofusLab. Please follow the link to activate\n"
-"    your account."
+"Thanks for signing up for DofusLab. Please follow the link to\n"
+"        activate your account."
 msgstr ""
 
-#: app/templates/verify_email.html:8
+#: app/templates/verify_email.html:14
 msgid "Cheers!"
 msgstr ""
 
-#: app/templates/verify_email.html:8
+#: app/templates/verify_email.html:14
 msgid "- The DofusLab team"
 msgstr ""
 
 #~ msgid "Hey %(display_name),"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Thanks for signing up for DofusLab. "
+#~ "Please follow the link to activate\n"
+#~ ""
+#~ "    your account."
 #~ msgstr ""
 
