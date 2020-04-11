@@ -23,6 +23,7 @@ import {
   faHome,
   faSignInAlt,
   faUserPlus,
+  faKey,
 } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import StatusChecker from 'components/common/StatusChecker';
@@ -32,6 +33,7 @@ import {
 } from 'graphql/mutations/__generated__/changeLocale';
 import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 import { useRouter } from 'next/router';
+import ChangePasswordModal from 'components/common/ChangePasswordModal';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -78,6 +80,14 @@ const Layout = (props: LayoutProps) => {
   }, []);
   const closeSignUpModal = React.useCallback(() => {
     setShowSignUpModal(false);
+  }, []);
+
+  const [showPasswordModal, setShowPasswordModal] = React.useState(false);
+  const openPasswordModal = React.useCallback(() => {
+    setShowPasswordModal(true);
+  }, []);
+  const closePasswordModal = React.useCallback(() => {
+    setShowPasswordModal(false);
   }, []);
 
   const logoutHandler = React.useCallback(async () => {
@@ -146,9 +156,8 @@ const Layout = (props: LayoutProps) => {
                 fontWeight: 500,
               }}
             >
-              {t('WELCOME_MESSAGE', {
-                displayName: data.currentUser.username,
-              })}
+              {t('WELCOME')}
+              {data.currentUser.username}
             </div>
           )}
           <Menu
@@ -214,6 +223,15 @@ const Layout = (props: LayoutProps) => {
               </Menu.Item>
             )}
 
+            {data?.currentUser && <Menu.Divider />}
+            {data?.currentUser && (
+              <Menu.Item key="change-password" onClick={openPasswordModal}>
+                <span css={iconWrapper}>
+                  <FontAwesomeIcon icon={faKey} />
+                </span>
+                {t('CHANGE_PASSWORD')}
+              </Menu.Item>
+            )}
             <Menu.Divider />
             <SubMenu
               key="language"
@@ -271,6 +289,10 @@ const Layout = (props: LayoutProps) => {
         visible={showSignUpModal}
         onClose={closeSignUpModal}
         openLoginModal={openLoginModal}
+      />
+      <ChangePasswordModal
+        visible={showPasswordModal}
+        onClose={closePasswordModal}
       />
     </AntdLayout>
   );
