@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from flask import Flask, escape, request, session, g
+from flask import Flask, escape, request, session
 from flask_session import Session
 from flask_babel import Babel, _, ngettext
 from flask_bcrypt import Bcrypt
@@ -30,7 +30,8 @@ Session(app)
 
 q = Queue(connection=redis_connection)
 
-supported_languages = ["en", "fr", "pt", "it", "de", "es"]
+# supported_languages = ["en", "fr", "pt", "it", "de", "es"]
+supported_languages = ["en"]
 
 db = SQLAlchemy(app)
 CORS(
