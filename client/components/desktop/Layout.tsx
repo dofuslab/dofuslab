@@ -10,6 +10,7 @@ import {
   Dropdown,
   Menu,
 } from 'antd';
+import { useRouter } from 'next/router';
 
 import LoginModal from '../common/LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
@@ -48,6 +49,7 @@ const Layout = (props: LayoutProps) => {
   const [changeLocaleMutate] = useMutation<changeLocale, changeLocaleVariables>(
     changeLocaleMutation,
   );
+  const router = useRouter();
 
   const [showLoginModal, setShowLoginModal] = React.useState(false);
   const openLoginModal = React.useCallback(() => {
@@ -80,8 +82,9 @@ const Layout = (props: LayoutProps) => {
         query: currentUserQuery,
         data: { currentUser: null },
       });
+      router.push('/');
     }
-  }, [logout]);
+  }, [logout, router]);
 
   const changeLocaleHandler = React.useCallback(
     (locale: string) => {

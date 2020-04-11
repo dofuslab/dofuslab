@@ -7,7 +7,7 @@ from app.database.model_user import ModelUserAccount
 from flask_babel import _
 
 
-def send_email(email, content):
+def send_email(email, subject, content):
     with session_scope() as db_session:
         ses = boto3.client(
             "ses",
@@ -19,7 +19,7 @@ def send_email(email, content):
             Source=os.getenv("SES_EMAIL_SOURCE"),
             Destination={"ToAddresses": [email]},
             Message={
-                "Subject": {"Data": _("Confirm your DofusLab account")},
+                "Subject": {"Data": subject},
                 "Body": {"Html": {"Data": content}},
             },
         )

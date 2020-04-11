@@ -1,4 +1,13 @@
-from app import db, supported_languages, q, session_scope, template_env, limiter
+from app import (
+    db,
+    supported_languages,
+    q,
+    session_scope,
+    template_env,
+    limiter,
+    base_url,
+    reset_password_salt,
+)
 from app.database.model_item_stat_translation import ModelItemStatTranslation
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_type import ModelItemType
@@ -26,6 +35,7 @@ from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_class import ModelClass
 from app.tasks import send_email
 from app.utils import get_or_create_custom_set, save_custom_sets, anonymous_or_verified
+from app.verify_email import verify_email_salt
 from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from app.database.base import Base
@@ -35,7 +45,7 @@ from app.database.enums import (
     SpellEffectType,
     WeaponElementMage,
 )
-from app.verify_email_utils import encode_token, generate_url
+from app.token_utils import decode_token, encode_token, generate_url
 import app.mutation_validation_utils as validation
 import graphene
 import uuid
@@ -635,13 +645,15 @@ class RegisterUser(graphene.Mutation):
                     password=ModelUserAccount.generate_hash(password),
                     locale=str(get_locale()),
                 )
-                token = encode_token(user.email)
+                token = encode_token(user.email, verify_email_salt)
                 verify_url = generate_url("verify_email.verify_email", token)
                 template = template_env.get_template("verify_email.html")
                 content = template.render(display_name=username, verify_url=verify_url)
                 db_session.add(user)
                 db_session.flush()
-                q.enqueue(send_email, user.email, content)
+                q.enqueue(
+                    send_email, user.email, _("Verify your DofusLab account"), content
+                )
                 login_user(user)
                 save_custom_sets()
             except Exception as e:
@@ -705,11 +717,13 @@ class ResendVerificationEmail(graphene.Mutation):
                 raise GraphQLError(_("You must be signed in to do that."))
             if user.verified:
                 raise GraphQLError(_("Your account is already verified."))
-            token = encode_token(user.email)
+            token = encode_token(user.email, verify_email_salt)
             verify_url = generate_url("verify_email.verify_email", token)
             template = template_env.get_template("verify_email.html")
             content = template.render(display_name=user.username, verify_url=verify_url)
-            q.enqueue(send_email, user.email, content)
+            q.enqueue(
+                send_email, user.email, _("Verify your DofusLab account"), content
+            )
             return ResendVerificationEmail(ok=True)
 
 
@@ -758,6 +772,67 @@ class ChangePassword(graphene.Mutation):
         with session_scope() as db_session:
             user.password = ModelUserAccount.generate_hash(new_password)
             return ChangePassword(ok=True)
+
+
+class RequestPasswordReset(graphene.Mutation):
+    class Arguments:
+        email = graphene.String(required=True)
+
+    ok = graphene.Boolean(required=True)
+
+    def mutate(self, info, **kwargs):
+        if current_user.is_authenticated:
+            raise GraphQLError(_("You are already logged in."))
+        email = kwargs.get("email")
+        user = ModelUserAccount.find_by_email(email)
+        auth_error = GraphQLError(_("We could not find an account with that email."))
+        if not user:
+            raise auth_error
+        if not user.verified:
+            raise GraphQLError(_("Please verify your email first."))
+        token = encode_token(user.email, reset_password_salt)
+        reset_password_url = "{}reset-password?token={}".format(base_url, token)
+        template = template_env.get_template("reset_password.html")
+        content = template.render(
+            display_name=user.username, reset_password_url=reset_password_url
+        )
+        q.enqueue(send_email, user.email, _("Reset your DofusLab password"), content)
+        return RequestPasswordReset(ok=True)
+
+
+class ResetPassword(graphene.Mutation):
+    class Arguments:
+        token = graphene.String(required=True)
+        password = graphene.String(required=True)
+
+    ok = graphene.Boolean(required=True)
+
+    def mutate(self, info, **kwargs):
+        if current_user.is_authenticated:
+            raise GraphQLError(_("You are already logged in."))
+        token = kwargs.get("token")
+        password = kwargs.get("password")
+        email = decode_token(token, reset_password_salt)
+        invalid_token_error = GraphQLError(
+            _("The link is invalid or expired. Please request a new one.")
+        )
+        if not email:
+            raise invalid_token_error
+        user = ModelUserAccount.find_by_email(email)
+
+        if not user:
+            raise GraphQLError(
+                _("The link is invalid or expired. Please request a new one.")
+            )
+
+        validation.validate_password(password)
+        if user.check_password(password):
+            raise GraphQLError(
+                _("You must enter a password different from your current one.")
+            )
+        with session_scope() as db_session:
+            user.password = ModelUserAccount.generate_hash(password)
+            return ResetPassword(ok=True)
 
 
 class ItemFilters(graphene.InputObjectType):
@@ -970,6 +1045,8 @@ class Mutation(graphene.ObjectType):
     resend_verification_email = ResendVerificationEmail.Field()
     change_locale = ChangeLocale.Field()
     change_password = ChangePassword.Field()
+    request_password_reset = RequestPasswordReset.Field()
+    reset_password = ResetPassword.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

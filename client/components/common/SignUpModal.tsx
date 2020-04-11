@@ -153,7 +153,7 @@ const SignUpModal: React.FC<IProps> = ({
           />
         </Form.Item>
         <Form.Item
-          name="confirm-password"
+          name="confirmPassword"
           label={
             <span css={{ fontSize: '0.75rem' }}>{t('CONFIRM_PASSWORD')}</span>
           }

@@ -17,6 +17,21 @@ type StatusObj = {
 };
 
 const statusMap = {
+  reset_password: {
+    messageKey: 'RESET_PASSWORD',
+    already_logged_in: {
+      type: 'info',
+      messageKey: 'ALREADY_LOGGED_IN',
+    },
+    success: {
+      type: 'success',
+      messageKey: 'SUCCESS',
+    },
+    invalid: {
+      type: 'error',
+      messageKey: 'INVALID',
+    },
+  },
   verify_email: {
     messageKey: 'VERIFY_EMAIL',
     already_verified: {

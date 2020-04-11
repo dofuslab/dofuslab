@@ -93,7 +93,7 @@ const ChangePasswordModal: React.FC<IProps> = ({ visible, onClose }) => {
           label={<span css={{ fontSize: '0.75rem' }}>{t('OLD_PASSWORD')}</span>}
           validateTrigger={'onSubmit'}
           rules={[
-            { required: true, message: t('VALIDATION.FIELD_REQUIRED') },
+            { required: true, message: t('VALIDATION.REQUIRED_FIELD') },
             {
               pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,50}$/,
               message: t('VALIDATION.PASSWORD_RULES'),
@@ -111,7 +111,7 @@ const ChangePasswordModal: React.FC<IProps> = ({ visible, onClose }) => {
           label={<span css={{ fontSize: '0.75rem' }}>{t('NEW_PASSWORD')}</span>}
           validateTrigger={'onSubmit'}
           rules={[
-            { required: true, message: t('VALIDATION.FIELD_REQUIRED') },
+            { required: true, message: t('VALIDATION.REQUIRED_FIELD') },
             {
               pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,50}$/,
               message: t('VALIDATION.PASSWORD_RULES'),
@@ -129,10 +129,10 @@ const ChangePasswordModal: React.FC<IProps> = ({ visible, onClose }) => {
           label={
             <span css={{ fontSize: '0.75rem' }}>{t('CONFIRM_PASSWORD')}</span>
           }
-          dependencies={['password']}
+          dependencies={['newPassword']}
           validateTrigger={'onSubmit'}
           rules={[
-            { required: true, message: t('VALIDATION.FIELD_REQUIRED') },
+            { required: true, message: t('VALIDATION.REQUIRED_FIELD') },
             ({ getFieldValue }) => ({
               validator: async (_, value) => {
                 if (!value || getFieldValue('newPassword') === value) {
