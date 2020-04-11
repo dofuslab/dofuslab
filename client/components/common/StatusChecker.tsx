@@ -5,9 +5,11 @@ import { useRouter } from 'next/router';
 import { notification } from 'antd';
 import { useTranslation } from 'i18n';
 import { cloneDeep } from 'lodash';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery, useApolloClient } from '@apollo/react-hooks';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import { locale } from 'graphql/queries/__generated__/locale';
+import localeQuery from 'graphql/queries/locale.graphql';
 
 type StatusObj = {
   type: 'info' | 'success' | 'warn' | 'error';
@@ -43,8 +45,10 @@ function isStatusObj(value: string | StatusObj): value is StatusObj {
 const StatusChecker: React.FC = () => {
   const router = useRouter();
   const { query } = router;
-  const { t } = useTranslation('status');
+  const { t, i18n } = useTranslation('status');
+  const client = useApolloClient();
   const { data } = useQuery<currentUser>(currentUserQuery);
+  const { data: localeData } = useQuery<locale>(localeQuery);
 
   const processQueryEntry = React.useCallback(
     (statusType: string, statusValue: string) => {
@@ -95,6 +99,14 @@ const StatusChecker: React.FC = () => {
       { shallow: true },
     );
   }, [data]);
+
+  React.useEffect(() => {
+    if (localeData?.locale) {
+      i18n.changeLanguage(localeData?.locale);
+      client.resetStore();
+    }
+  }, [localeData, client, i18n]);
+
   return null;
 };
 

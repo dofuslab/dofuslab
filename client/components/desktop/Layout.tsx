@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { jsx, Global, css } from '@emotion/core';
 import { Layout as AntdLayout, Button, Drawer, Select } from 'antd';
-import { FlagIcon } from 'react-flag-kit';
+// import { FlagIcon } from 'react-flag-kit';
 
 import LoginModal from '../common/LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
@@ -13,12 +13,17 @@ import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import logoutMutation from 'graphql/mutations/logout.graphql';
 import { BORDER_COLOR, gray8 } from 'common/mixins';
 
-import { useTranslation, LANGUAGES, langToFlagCode } from 'i18n';
+import { useTranslation, LANGUAGES } from 'i18n';
 import SignUpModal from '../common/SignUpModal';
 import MyBuilds from '../common/MyBuilds';
 import Link from 'next/link';
 import { mq } from 'common/constants';
 import StatusChecker from 'components/common/StatusChecker';
+import {
+  changeLocale,
+  changeLocaleVariables,
+} from 'graphql/mutations/__generated__/changeLocale';
+import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -31,6 +36,10 @@ const Layout = (props: LayoutProps) => {
   const client = useApolloClient();
   const { data } = useQuery<ICurrentUser>(currentUserQuery);
   const [logout] = useMutation<ILogout>(logoutMutation);
+  const [changeLocaleMutate] = useMutation<changeLocale, changeLocaleVariables>(
+    changeLocaleMutation,
+  );
+
   const [showLoginModal, setShowLoginModal] = React.useState(false);
   const openLoginModal = React.useCallback(() => {
     setShowLoginModal(true);
@@ -38,6 +47,7 @@ const Layout = (props: LayoutProps) => {
   const closeLoginModal = React.useCallback(() => {
     setShowLoginModal(false);
   }, []);
+
   const [showSignUpModal, setShowSignUpModal] = React.useState(false);
   const openSignUpModal = React.useCallback(() => {
     setShowSignUpModal(true);
@@ -45,6 +55,7 @@ const Layout = (props: LayoutProps) => {
   const closeSignUpModal = React.useCallback(() => {
     setShowSignUpModal(false);
   }, []);
+
   const logoutHandler = React.useCallback(async () => {
     const { data } = await logout();
     if (data?.logoutUser?.ok) {
@@ -54,6 +65,15 @@ const Layout = (props: LayoutProps) => {
       });
     }
   }, [logout]);
+
+  const changeLocaleHandler = React.useCallback(
+    (locale: string) => {
+      changeLocaleMutate({ variables: { locale } });
+      i18n.changeLanguage(locale);
+      client.resetStore();
+    },
+    [changeLocaleMutate, i18n, client],
+  );
 
   const [drawerVisible, setDrawerVisible] = React.useState(false);
 
@@ -97,16 +117,24 @@ const Layout = (props: LayoutProps) => {
           <div css={{ fontWeight: 500, cursor: 'pointer' }}>DofusLab</div>
         </Link>
         <div css={{ display: 'flex', alignItems: 'center' }}>
-          <Select
+          <Select<string>
             value={i18n.language}
-            onSelect={lang => i18n.changeLanguage(lang)}
+            onSelect={changeLocaleHandler}
             css={{ marginRight: 16 }}
           >
             {LANGUAGES.map(lang => (
               <Option key={lang} value={lang}>
                 <div css={{ display: 'flex', alignItems: 'center' }}>
-                  <FlagIcon code={langToFlagCode(lang)} size={20} />
-                  <div css={{ marginLeft: 8 }}>{lang}</div>
+                  <div
+                    css={{
+                      fontVariant: 'small-caps',
+                      fontSize: '0.8rem',
+                      fontWeight: 500,
+                      marginTop: -2,
+                    }}
+                  >
+                    {lang}
+                  </div>
                 </div>
               </Option>
             ))}

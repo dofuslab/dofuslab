@@ -12,6 +12,7 @@ import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { useTranslation, Trans } from 'i18n';
 import { mq } from 'common/constants';
+import localeQuery from 'graphql/queries/locale.graphql';
 
 interface IProps {
   visible: boolean;
@@ -30,6 +31,7 @@ const LoginModal: React.FC<IProps> = ({
   const client = useApolloClient();
   const [login, { loading }] = useMutation<ILogin, ILoginVariables>(
     loginMutation,
+    { refetchQueries: [{ query: localeQuery }] },
   );
   const handleOk = React.useCallback(async () => {
     const values = await form.validateFields();

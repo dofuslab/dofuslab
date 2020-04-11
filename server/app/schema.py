@@ -15,7 +15,7 @@ from app.database.model_custom_set_stat import ModelCustomSetStat
 from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_equipped_item import ModelEquippedItem
 from app.database.model_custom_set import ModelCustomSet
-from app.database.model_user import ModelUser
+from app.database.model_user import ModelUserAccount
 from app.database.model_spell_effect import ModelSpellEffect
 from app.database.model_spell_stat_translation import ModelSpellStatTranslation
 from app.database.model_spell_stats import ModelSpellStats
@@ -41,7 +41,7 @@ import graphene
 import uuid
 from graphql import GraphQLError
 from flask import session, render_template
-from flask_babel import _
+from flask_babel import _, get_locale, refresh
 from flask_login import login_required, login_user, current_user, logout_user
 from functools import lru_cache
 from sqlalchemy import func, distinct
@@ -93,9 +93,7 @@ class ItemStat(SQLAlchemyObjectType):
     custom_stat = graphene.String()
 
     def resolve_custom_stat(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = (
             db.session.query(ModelItemStatTranslation)
             .filter(ModelItemStatTranslation.item_stat_id == self.uuid)
@@ -148,9 +146,7 @@ class Item(SQLAlchemyObjectType):
     name = graphene.String(required=True)
 
     def resolve_name(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = db.session.query(ModelItemTranslation)
         return (
             query.filter(ModelItemTranslation.locale == locale)
@@ -173,9 +169,7 @@ class SetBonus(SQLAlchemyObjectType):
     custom_stat = graphene.String()
 
     def resolve_custom_stat(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = (
             db.session.query(ModelSetBonusTranslation)
             .filter(ModelSetBonusTranslation.set_bonus_id == self.uuid)
@@ -197,9 +191,7 @@ class Set(SQLAlchemyObjectType):
     name = graphene.String(required=True)
 
     def resolve_name(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = db.session.query(ModelSetTranslation)
         return (
             query.filter(ModelSetTranslation.locale == locale)
@@ -282,7 +274,7 @@ class User(SQLAlchemyObjectType):
         return self.email
 
     class Meta:
-        model = ModelUser
+        model = ModelUserAccount
         interfaces = (GlobalNode,)
         only_fields = ("id", "username", "email", "custom_sets", "verified")
 
@@ -298,9 +290,7 @@ class SpellStats(SQLAlchemyObjectType):
     spell_effects = graphene.NonNull(graphene.List(graphene.NonNull(SpellEffects)))
 
     def resolve_aoe(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = (
             db.session.query(ModelSpellStatTranslation)
             .filter(ModelSpellStatTranslation.locale == locale)
@@ -322,9 +312,7 @@ class Spell(SQLAlchemyObjectType):
     spell_stats = graphene.NonNull(graphene.List(graphene.NonNull(SpellStats)))
 
     def resolve_name(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = db.session.query(ModelSpellTranslation)
         return (
             query.filter(ModelSpellTranslation.locale == locale)
@@ -334,9 +322,7 @@ class Spell(SQLAlchemyObjectType):
         )
 
     def resolve_description(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = db.session.query(ModelSpellTranslation)
         return (
             query.filter(ModelSpellTranslation.locale == locale)
@@ -365,9 +351,7 @@ class Class(SQLAlchemyObjectType):
     )
 
     def resolve_name(self, info):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         query = db.session.query(ModelClassTranslation)
         return (
             query.filter(ModelClassTranslation.locale == locale)
@@ -645,18 +629,19 @@ class RegisterUser(graphene.Mutation):
             try:
                 if current_user.is_authenticated:
                     raise GraphQLError(_("You are already logged in."))
-                user = ModelUser(
+                user = ModelUserAccount(
                     username=username,
                     email=email,
-                    password=ModelUser.generate_hash(password),
+                    password=ModelUserAccount.generate_hash(password),
+                    locale=str(get_locale()),
                 )
                 token = encode_token(user.email)
                 verify_url = generate_url("verify_email.verify_email", token)
                 template = template_env.get_template("verify_email.html")
                 content = template.render(display_name=username, verify_url=verify_url)
-                q.enqueue(send_email, user.email, content)
                 db_session.add(user)
                 db_session.flush()
+                q.enqueue(send_email, user.email, content)
                 login_user(user)
                 save_custom_sets()
             except Exception as e:
@@ -680,13 +665,14 @@ class LoginUser(graphene.Mutation):
         email = kwargs.get("email")
         password = kwargs.get("password")
         remember = kwargs.get("remember")
-        user = ModelUser.find_by_email(email)
+        user = ModelUserAccount.find_by_email(email)
         auth_error = GraphQLError(_("Invalid username or password."))
         if not user:
             raise auth_error
         if not user.check_password(password):
             raise auth_error
         login_user(user, remember=remember)
+        refresh()
         save_custom_sets()
         return LoginUser(user=user, ok=True)
 
@@ -727,6 +713,25 @@ class ResendVerificationEmail(graphene.Mutation):
             return ResendVerificationEmail(ok=True)
 
 
+class ChangeLocale(graphene.Mutation):
+    class Arguments:
+        locale = graphene.String(required=True)
+
+    ok = graphene.Boolean(required=True)
+
+    def mutate(self, info, **kwargs):
+        locale = kwargs.get("locale")
+        if not locale in supported_languages:
+            raise GraphQLError(_("Received unsupported locale."))
+        with session_scope() as db_session:
+            user = current_user._get_current_object()
+            if current_user.is_authenticated:
+                user.locale = locale
+            session["locale"] = locale
+            refresh()
+            return ChangeLocale(ok=True)
+
+
 class ItemFilters(graphene.InputObjectType):
     stats = graphene.NonNull(graphene.List(graphene.NonNull(StatEnum)))
     max_level = graphene.NonNull(graphene.Int)
@@ -754,9 +759,7 @@ class Query(graphene.ObjectType):
     )
 
     def resolve_items(self, info, **kwargs):
-        locale = info.context.accept_languages.best_match(
-            supported_languages, default="en"
-        )
+        locale = str(get_locale())
         filters = kwargs.get("filters")
         items_query = (
             db.session.query(ModelItem)
@@ -811,9 +814,7 @@ class Query(graphene.ObjectType):
 
     def resolve_sets(self, info, **kwargs):
         with session_scope() as db_session:
-            locale = info.context.accept_languages.best_match(
-                supported_languages, default="en"
-            )
+            locale = str(get_locale())
             filters = kwargs.get("filters")
             set_query = (
                 db_session.query(ModelSet)
@@ -898,7 +899,7 @@ class Query(graphene.ObjectType):
     user_by_id = graphene.Field(User, id=graphene.UUID(required=True))
 
     def resolve_user_by_id(self, info, id):
-        return db.session.query(ModelUser).get(id)
+        return db.session.query(ModelUserAccount).get(id)
 
     item_by_id = graphene.Field(Item, id=graphene.UUID(required=True))
 
@@ -920,6 +921,11 @@ class Query(graphene.ObjectType):
     def resolve_item_slots(self, info):
         return db.session.query(ModelItemSlot).order_by(ModelItemSlot.order).all()
 
+    locale = graphene.NonNull(graphene.String)
+
+    def resolve_locale(self, info):
+        return str(get_locale())
+
 
 class Mutation(graphene.ObjectType):
     register_user = RegisterUser.Field()
@@ -934,6 +940,7 @@ class Mutation(graphene.ObjectType):
     equip_set = EquipSet.Field()
     create_custom_set = CreateCustomSet.Field()
     resend_verification_email = ResendVerificationEmail.Field()
+    change_locale = ChangeLocale.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

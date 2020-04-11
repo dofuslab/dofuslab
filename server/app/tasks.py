@@ -3,7 +3,7 @@ import boto3
 import os
 
 from app import session_scope
-from app.database.model_user import ModelUser
+from app.database.model_user import ModelUserAccount
 from flask_babel import _
 
 
@@ -23,6 +23,6 @@ def send_email(email, content):
                 "Body": {"Html": {"Data": content}},
             },
         )
-        user = db_session.query(ModelUser).filter_by(email=email).one()
+        user = db_session.query(ModelUserAccount).filter_by(email=email).one()
         user.email_sent = True
         return True

@@ -22,11 +22,28 @@ export const langToFlagCode = (language: TLanguage) => {
     case 'de':
       return 'DE';
     case 'pt':
-      return 'PT';
+      return 'BR';
     case 'it':
       return 'IT';
     case 'es':
       return 'ES';
+  }
+};
+
+export const langToFullName = (language: TLanguage) => {
+  switch (language) {
+    case 'en':
+      return 'English';
+    case 'fr':
+      return 'Français';
+    case 'de':
+      return 'Deutsch';
+    case 'pt':
+      return 'Português';
+    case 'it':
+      return 'Italiano';
+    case 'es':
+      return 'Español';
   }
 };
 

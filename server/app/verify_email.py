@@ -1,5 +1,5 @@
 from app import app, session_scope
-from app.database.model_user import ModelUser
+from app.database.model_user import ModelUserAccount
 from app.verify_email_utils import decode_token
 from flask import flash, redirect, Blueprint
 import os
@@ -16,7 +16,7 @@ def verify_email(token):
         email = decode_token(token)
         if not email:
             return redirect(REDIRECT_URL_FORMAT.format(REDIRECT_URL, "invalid"))
-        user = db_session.query(ModelUser).filter_by(email=email).one()
+        user = db_session.query(ModelUserAccount).filter_by(email=email).one()
         if user.verified:
             return redirect(
                 REDIRECT_URL_FORMAT.format(REDIRECT_URL, "already_verified")

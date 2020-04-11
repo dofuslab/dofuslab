@@ -13,7 +13,7 @@ from app.database.model_set_bonus_translation import ModelSetBonusTranslation
 from app.database.model_set_translation import ModelSetTranslation
 from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_custom_set import ModelCustomSet
-from app.database.model_user import ModelUser
+from app.database.model_user import ModelUserAccount
 from app.database.model_class import ModelClass
 from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_spell_variant_pair import ModelSpellVariantPair
