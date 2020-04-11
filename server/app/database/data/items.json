@@ -22811,17 +22811,17 @@
       "conditions": {
         "and": [
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": "<",
             "value": 560
           },
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": "<",
             "value": 560
           },
           {
-            "stat": "Agility",
+            "stat": "AGILITY",
             "operator": "<",
             "value": 560
           }
@@ -31539,7 +31539,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": "<",
             "value": 600
           }
@@ -33108,7 +33108,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": "<",
             "value": 600
           }
@@ -33471,7 +33471,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Agility",
+            "stat": "AGILITY",
             "operator": "<",
             "value": 600
           }
@@ -33772,7 +33772,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": "<",
             "value": 600
           }
@@ -33924,7 +33924,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": "<",
             "value": 600
           }
@@ -34567,7 +34567,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": "<",
             "value": 600
           }
@@ -34945,7 +34945,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": "<",
             "value": 600
           }
@@ -36281,7 +36281,11 @@
     "customStats": [],
     "conditions": {
       "conditions": {},
-      "customConditions": {}
+      "customConditions": {
+        "en": [
+          "At the start of the caster's turn, if they have less than 20% HP, they gare healed 40% HP and gain 20% final damage for the current turn. This effect can only be played once per fight."
+        ]
+      }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/23027.png"
   },
@@ -36471,11 +36475,41 @@
     "itemType": "Dofus",
     "setID": null,
     "level": 180,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "Neutral Resistance",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Earth Resistance",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Fire Resistance",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Water Resistance",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Air Resistance",
+        "minStat": null,
+        "maxStat": 40
+      }
+    ],
     "customStats": [],
     "conditions": {
       "conditions": {},
-      "customConditions": {}
+      "customConditions": {
+        "en": [
+          "At the end of the turn, damage from the next attack suffered is reduced by 50%."
+        ]
+      }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/23011.png"
   },
@@ -36585,11 +36619,21 @@
     "itemType": "Dofus",
     "setID": null,
     "level": 180,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": 40
+      }
+    ],
     "customStats": [],
     "conditions": {
       "conditions": {},
-      "customConditions": {}
+      "customConditions": {
+        "en": [
+          "Generates 1 first charge at the start of the turn, 1 second charge upon inflicting close-combat damage, and 1 third charge upon inflicting ranged damage.\n\nOnce 5 charges are reached, the next attack consumes the charges and applies a poison to the target for 3 turns.\n\n Each charge gives a 2% final damage inflicted bonus."
+        ]
+      }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/23007.png"
   },
@@ -41394,22 +41438,22 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": ">",
             "value": 250
           },
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": ">",
             "value": 250
           },
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": ">",
             "value": 250
           },
           {
-            "stat": "Agility",
+            "stat": "AGILITY",
             "operator": ">",
             "value": 250
           }
@@ -44717,7 +44761,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Agility",
+            "stat": "AGILITY",
             "operator": ">",
             "value": 140
           }
@@ -47074,7 +47118,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151171.png"
@@ -47101,7 +47153,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151180.png"
@@ -47128,7 +47188,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151252.png"
@@ -47155,7 +47223,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151240.png"
@@ -47182,7 +47258,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151204.png"
@@ -47692,7 +47776,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151111.png"
@@ -47786,7 +47878,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151183.png"
@@ -47840,7 +47940,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151216.png"
@@ -47867,7 +47975,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151222.png"
@@ -47894,7 +48010,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151201.png"
@@ -47921,7 +48045,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151210.png"
@@ -47948,7 +48080,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151237.png"
@@ -48550,7 +48690,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151195.png"
@@ -48577,7 +48725,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151174.png"
@@ -48604,7 +48760,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151177.png"
@@ -48631,7 +48795,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151198.png"
@@ -48658,7 +48830,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151234.png"
@@ -49440,7 +49620,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151189.png"
@@ -49467,7 +49655,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151219.png"
@@ -49494,7 +49690,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151213.png"
@@ -49521,7 +49725,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151207.png"
@@ -49548,7 +49760,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151259.png"
@@ -50258,7 +50478,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151192.png"
@@ -50285,7 +50513,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151249.png"
@@ -50312,7 +50548,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151231.png"
@@ -50339,7 +50583,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151228.png"
@@ -50366,7 +50618,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151246.png"
@@ -50393,7 +50653,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151243.png"
@@ -57783,22 +58051,22 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": ">",
             "value": 200
           },
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": ">",
             "value": 200
           },
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": ">",
             "value": 200
           },
           {
-            "stat": "Agility",
+            "stat": "AGILITY",
             "operator": ">",
             "value": 200
           }
@@ -67399,7 +67667,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151194.png"
@@ -67426,7 +67702,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151173.png"
@@ -67453,7 +67737,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151248.png"
@@ -67480,7 +67772,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151215.png"
@@ -67507,7 +67807,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151197.png"
@@ -67534,7 +67842,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151209.png"
@@ -67561,7 +67877,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151206.png"
@@ -67588,7 +67912,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151245.png"
@@ -67615,7 +67947,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151236.png"
@@ -67642,7 +67982,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151242.png"
@@ -68375,7 +68723,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151212.png"
@@ -68402,7 +68758,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151230.png"
@@ -68429,7 +68793,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151251.png"
@@ -68456,7 +68828,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151233.png"
@@ -68488,7 +68868,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151254.png"
@@ -68814,7 +69202,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151059.png"
@@ -69122,7 +69518,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151182.png"
@@ -69149,7 +69553,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151176.png"
@@ -69176,7 +69588,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151203.png"
@@ -70023,7 +70443,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151170.png"
@@ -70050,7 +70478,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151200.png"
@@ -70077,7 +70513,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151227.png"
@@ -70104,7 +70548,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151239.png"
@@ -70136,7 +70588,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151257.png"
@@ -70163,7 +70623,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151260.png"
@@ -70829,7 +71297,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151191.png"
@@ -70856,7 +71332,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151188.png"
@@ -70883,7 +71367,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151179.png"
@@ -70910,7 +71402,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151218.png"
@@ -70937,7 +71437,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151221.png"
@@ -74039,7 +74547,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": ">",
             "value": 90
           }
@@ -81665,12 +82173,12 @@
       "conditions": {
         "and": [
           {
-            "stat": "Wisdom",
+            "stat": "WISDOM",
             "operator": ">",
             "value": 30
           },
           {
-            "stat": "Vitality",
+            "stat": "VITALITY",
             "operator": ">",
             "value": 50
           }
@@ -82425,7 +82933,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": ">",
             "value": 90
           }
@@ -90439,7 +90947,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151181.png"
@@ -90466,7 +90982,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151172.png"
@@ -90493,7 +91017,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151211.png"
@@ -90520,7 +91052,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151199.png"
@@ -90547,7 +91087,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151250.png"
@@ -91355,7 +91903,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151187.png"
@@ -91382,7 +91938,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151178.png"
@@ -91409,7 +91973,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151175.png"
@@ -91463,7 +92035,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151223.png"
@@ -91490,7 +92070,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151196.png"
@@ -91517,7 +92105,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151244.png"
@@ -92229,7 +92825,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151190.png"
@@ -92256,7 +92860,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151217.png"
@@ -92283,7 +92895,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151214.png"
@@ -92310,7 +92930,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151229.png"
@@ -92337,7 +92965,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151226.png"
@@ -92364,7 +93000,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151238.png"
@@ -92391,7 +93035,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151235.png"
@@ -92418,7 +93070,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151241.png"
@@ -93158,7 +93818,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151169.png"
@@ -93185,7 +93853,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151208.png"
@@ -93212,7 +93888,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151264.png"
@@ -93239,7 +93923,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151261.png"
@@ -93874,7 +94566,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151193.png"
@@ -93901,7 +94601,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151220.png"
@@ -93928,7 +94636,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151205.png"
@@ -93955,7 +94671,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151232.png"
@@ -93982,7 +94706,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {},
+      "conditions": {
+        "and": [
+          {
+            "stat": "SET_BONUS",
+            "operator": "<",
+            "value": 2
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/151202.png"
@@ -94304,7 +95036,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": ">",
             "value": 90
           }
@@ -101756,7 +102488,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": ">",
             "value": 49
           }
@@ -102306,7 +103038,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Agility",
+            "stat": "AGILITY",
             "operator": ">",
             "value": 50
           }
@@ -105572,7 +106304,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": ">",
             "value": 59
           }
@@ -106116,7 +106848,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": ">",
             "value": 50
           }
@@ -106401,7 +107133,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": ">",
             "value": 30
           }
@@ -107210,7 +107942,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Wisdom",
+            "stat": "WISDOM",
             "operator": ">",
             "value": 49
           }
@@ -107583,7 +108315,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Wisdom",
+            "stat": "WISDOM",
             "operator": ">",
             "value": 49
           }
@@ -108121,7 +108853,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Vitality",
+            "stat": "VITALITY",
             "operator": ">",
             "value": 119
           }
@@ -111602,12 +112334,12 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": "<",
             "value": 40
           },
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": ">",
             "value": 80
           }
@@ -112288,12 +113020,12 @@
       "conditions": {
         "and": [
           {
-            "stat": "Intelligence",
+            "stat": "INTELLIGENCE",
             "operator": "<",
             "value": 100
           },
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": "<",
             "value": 100
           }
@@ -113036,7 +113768,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Chance",
+            "stat": "CHANCE",
             "operator": ">",
             "value": 10
           }
