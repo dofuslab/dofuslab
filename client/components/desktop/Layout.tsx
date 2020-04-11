@@ -2,7 +2,14 @@
 
 import * as React from 'react';
 import { jsx, Global, css } from '@emotion/core';
-import { Layout as AntdLayout, Button, Drawer, Select } from 'antd';
+import {
+  Layout as AntdLayout,
+  Button,
+  Drawer,
+  Select,
+  Dropdown,
+  Menu,
+} from 'antd';
 
 import LoginModal from '../common/LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
@@ -23,6 +30,9 @@ import {
   changeLocaleVariables,
 } from 'graphql/mutations/__generated__/changeLocale';
 import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
+import ChangePasswordModal from 'components/common/ChangePasswordModal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faKey } from '@fortawesome/free-solid-svg-icons';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -55,6 +65,14 @@ const Layout = (props: LayoutProps) => {
     setShowSignUpModal(false);
   }, []);
 
+  const [showPasswordModal, setShowPasswordModal] = React.useState(false);
+  const openPasswordModal = React.useCallback(() => {
+    setShowPasswordModal(true);
+  }, []);
+  const closePasswordModal = React.useCallback(() => {
+    setShowPasswordModal(false);
+  }, []);
+
   const logoutHandler = React.useCallback(async () => {
     const { data } = await logout();
     if (data?.logoutUser?.ok) {
@@ -82,6 +100,31 @@ const Layout = (props: LayoutProps) => {
   const closeDrawer = React.useCallback(() => {
     setDrawerVisible(false);
   }, [setDrawerVisible]);
+
+  const langSelect = (
+    <Select<string>
+      value={i18n.language}
+      onSelect={changeLocaleHandler}
+      css={{ marginLeft: 12 }}
+    >
+      {LANGUAGES.map(lang => (
+        <Option key={lang} value={lang}>
+          <div css={{ display: 'flex', alignItems: 'center' }}>
+            <div
+              css={{
+                fontVariant: 'small-caps',
+                fontSize: '0.8rem',
+                fontWeight: 500,
+                marginTop: -2,
+              }}
+            >
+              {lang}
+            </div>
+          </div>
+        </Option>
+      ))}
+    </Select>
+  );
 
   return (
     <AntdLayout css={{ height: '100%', minHeight: '100vh' }}>
@@ -116,36 +159,28 @@ const Layout = (props: LayoutProps) => {
           <div css={{ fontWeight: 500, cursor: 'pointer' }}>DofusLab</div>
         </Link>
         <div css={{ display: 'flex', alignItems: 'center' }}>
-          <Select<string>
-            value={i18n.language}
-            onSelect={changeLocaleHandler}
-            css={{ marginRight: 16 }}
-          >
-            {LANGUAGES.map(lang => (
-              <Option key={lang} value={lang}>
-                <div css={{ display: 'flex', alignItems: 'center' }}>
-                  <div
-                    css={{
-                      fontVariant: 'small-caps',
-                      fontSize: '0.8rem',
-                      fontWeight: 500,
-                      marginTop: -2,
-                    }}
-                  >
-                    {lang}
-                  </div>
-                </div>
-              </Option>
-            ))}
-          </Select>
           {data?.currentUser ? (
             <div>
-              {t('WELCOME_MESSAGE', {
-                displayName: data.currentUser.username,
-              })}
+              {t('WELCOME')}
+              <Dropdown
+                overlay={
+                  <Menu>
+                    <Menu.Item
+                      key="change-password"
+                      onClick={openPasswordModal}
+                    >
+                      <FontAwesomeIcon icon={faKey} css={{ marginRight: 8 }} />
+                      {t('CHANGE_PASSWORD')}
+                    </Menu.Item>
+                  </Menu>
+                }
+              >
+                <a onClick={openPasswordModal}>{data.currentUser.username}</a>
+              </Dropdown>
+              {langSelect}
               {data.currentUser.verified && (
                 <>
-                  <Button onClick={openDrawer} css={{ marginLeft: 12 }}>
+                  <Button onClick={openDrawer} css={{ marginLeft: 16 }}>
                     {t('MY_BUILDS', { ns: 'common' })}
                   </Button>
                   <Drawer
@@ -167,20 +202,22 @@ const Layout = (props: LayoutProps) => {
               </Button>
             </div>
           ) : (
-            <div>
+            <div css={{ display: 'flex', alignItems: 'center' }}>
+              {langSelect}
               <Button
                 onClick={openLoginModal}
                 type="link"
                 css={{
                   padding: 0,
                   color: gray8,
+                  marginLeft: 16,
                 }}
               >
                 {t('LOGIN')}
               </Button>
               <span
                 css={{
-                  margin: '0 12px',
+                  margin: '-2px 12px 0',
                 }}
               >
                 {t('OR', { ns: 'common' })}
@@ -213,6 +250,10 @@ const Layout = (props: LayoutProps) => {
         visible={showSignUpModal}
         onClose={closeSignUpModal}
         openLoginModal={openLoginModal}
+      />
+      <ChangePasswordModal
+        visible={showPasswordModal}
+        onClose={closePasswordModal}
       />
     </AntdLayout>
   );

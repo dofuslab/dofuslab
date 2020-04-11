@@ -732,6 +732,34 @@ class ChangeLocale(graphene.Mutation):
             return ChangeLocale(ok=True)
 
 
+class ChangePassword(graphene.Mutation):
+    class Arguments:
+        old_password = graphene.String(required=True)
+        new_password = graphene.String(required=True)
+
+    ok = graphene.Boolean(required=True)
+
+    def mutate(self, info, **kwargs):
+        if not current_user.is_authenticated:
+            raise GraphQLError(_("You are not logged in."))
+        old_password = kwargs.get("old_password")
+        new_password = kwargs.get("new_password")
+        user = current_user._get_current_object()
+        auth_error = GraphQLError(_("Incorrect password."))
+        if not user:
+            raise auth_error
+        if not user.check_password(old_password):
+            raise auth_error
+        validation.validate_password(new_password)
+        if old_password == new_password:
+            raise GraphQLError(
+                _("You must enter a password different from your current one.")
+            )
+        with session_scope() as db_session:
+            user.password = ModelUserAccount.generate_hash(new_password)
+            return ChangePassword(ok=True)
+
+
 class ItemFilters(graphene.InputObjectType):
     stats = graphene.NonNull(graphene.List(graphene.NonNull(StatEnum)))
     max_level = graphene.NonNull(graphene.Int)
@@ -941,6 +969,7 @@ class Mutation(graphene.ObjectType):
     create_custom_set = CreateCustomSet.Field()
     resend_verification_email = ResendVerificationEmail.Field()
     change_locale = ChangeLocale.Field()
+    change_password = ChangePassword.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

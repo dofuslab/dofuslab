@@ -58,7 +58,7 @@ const SignUpModal: React.FC<IProps> = ({
 
   return (
     <Modal
-      title={<div css={{ fontSize: '0.8rem' }}>{t('SIGN_UP')}</div>}
+      title={<div css={{ fontSize: '0.9rem' }}>{t('SIGN_UP')}</div>}
       visible={visible}
       onCancel={onClose}
       bodyStyle={{

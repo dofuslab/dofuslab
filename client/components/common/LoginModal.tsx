@@ -60,7 +60,7 @@ const LoginModal: React.FC<IProps> = ({
 
   return (
     <Modal
-      title={<div css={{ fontSize: '0.8rem' }}>{t('LOGIN')}</div>}
+      title={<div css={{ fontSize: '0.9rem' }}>{t('LOGIN')}</div>}
       visible={visible}
       onCancel={onClose}
       bodyStyle={{
