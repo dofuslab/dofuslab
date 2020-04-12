@@ -31,6 +31,7 @@ import { TruncatableText } from 'common/wrappers';
 import Router from 'next/router';
 import { Media } from 'components/common/Media';
 import Link from 'next/link';
+import { IError } from 'common/types';
 
 const quickMageStats = [
   {
@@ -63,6 +64,7 @@ interface IProps {
   customSet: customSet;
   openMageModal: (equippedItem: customSet_customSetById_equippedItems) => void;
   openSetModal: (set: item_set) => void;
+  errors?: Array<IError>;
 }
 
 const EquippedItemCard: React.FC<IProps> = ({
@@ -71,6 +73,7 @@ const EquippedItemCard: React.FC<IProps> = ({
   customSet,
   openMageModal,
   openSetModal,
+  errors,
 }) => {
   const { t } = useTranslation(['common', 'mage', 'stat']);
 
@@ -220,6 +223,7 @@ const EquippedItemCard: React.FC<IProps> = ({
           exos={equippedItem.exos}
           openSetModal={openSetModal}
           showImg
+          errors={errors}
         />
       </Card>
     </div>

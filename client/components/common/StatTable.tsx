@@ -7,6 +7,7 @@ import { List } from 'antd';
 
 import { StatGroup, StatsFromCustomSet } from 'common/types';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
+import { statCalculators } from 'common/utils';
 
 interface IStatTable {
   group: StatGroup;
@@ -69,8 +70,8 @@ const StatTable: React.FC<IStatTable> = ({
             </div>
           </div>
           <div css={{ fontSize: '0.75rem' }}>
-            {item.customCalculateValue
-              ? item.customCalculateValue(statsFromCustomSet, customSet)
+            {statCalculators[item.stat]
+              ? statCalculators[item.stat](statsFromCustomSet, customSet)
               : statsFromCustomSet
               ? statsFromCustomSet[item.stat] || 0
               : 0}

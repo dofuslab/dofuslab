@@ -19,36 +19,13 @@ import {
   editCustomSetStatsVariables,
 } from 'graphql/mutations/__generated__/editCustomSetStats';
 import editCustomSetStatsMutation from 'graphql/mutations/editCustomSetStats.graphql';
-import { checkAuthentication } from 'common/utils';
+import { checkAuthentication, calcPointCost } from 'common/utils';
 import { useRouter } from 'next/router';
+import { StatKey, scrolledStats, baseStats } from 'common/types';
 
 interface IProps {
   customSet?: customSet | null;
 }
-
-const baseStats = [
-  'baseVitality',
-  'baseWisdom',
-  'baseStrength',
-  'baseIntelligence',
-  'baseChance',
-  'baseAgility',
-] as const;
-
-const scrolledStats = [
-  'scrolledVitality',
-  'scrolledWisdom',
-  'scrolledStrength',
-  'scrolledIntelligence',
-  'scrolledChance',
-  'scrolledAgility',
-] as const;
-
-const stats = [...baseStats, ...scrolledStats] as const;
-
-type BaseStatKey = typeof baseStats[number];
-
-type StatKey = typeof stats[number];
 
 type StatState = {
   [key in StatKey]: number;
@@ -121,23 +98,6 @@ const reducer = (state: StatState, action: StatStateAction) => {
     default:
       throw new Error('Invalid action type');
   }
-};
-
-const calcPointCost = (value: number, statKey: BaseStatKey) => {
-  if (statKey === 'baseVitality') {
-    return value;
-  } else if (statKey === 'baseWisdom') {
-    return value * 3;
-  }
-  let numPoints = 0;
-  let remainingValue = value;
-  while (remainingValue > 0) {
-    const modifier = Math.floor((remainingValue - 1) / 100) + 1;
-    const numStats = ((remainingValue - 1) % 100) + 1;
-    remainingValue -= numStats;
-    numPoints += modifier * numStats;
-  }
-  return numPoints;
 };
 
 const getInputNumberStyle = (baseKey: string, title: string) => ({

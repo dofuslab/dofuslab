@@ -12,6 +12,7 @@ import {
 } from 'graphql/fragments/__generated__/customSet';
 import EquippedItemWithStats from '../common/EquippedItemWithStats';
 import { item_set } from 'graphql/fragments/__generated__/item';
+import { IError } from 'common/types';
 
 interface IProps {
   slot: itemSlots_itemSlots;
@@ -23,6 +24,7 @@ interface IProps {
   selected: boolean;
   openMageModal: (equippedItem: customSet_equippedItems) => void;
   openSetModal: (set: item_set) => void;
+  errors?: Array<IError>;
 }
 
 const EquippedItem: React.FC<IProps> = ({
@@ -33,6 +35,7 @@ const EquippedItem: React.FC<IProps> = ({
   customSet,
   openMageModal,
   openSetModal,
+  errors,
   ...restProps
 }) => {
   const onClick = React.useCallback(() => {
@@ -54,6 +57,7 @@ const EquippedItem: React.FC<IProps> = ({
             itemSlotId={slot.id}
             openMageModal={openMageModal}
             openSetModal={openSetModal}
+            errors={errors}
           />
         ) : (
           <div css={{ ...itemImageBox, ...(selected ? selectedBox : {}) }}>

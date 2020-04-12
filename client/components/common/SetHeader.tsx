@@ -21,10 +21,13 @@ import { checkAuthentication } from 'common/utils';
 import { ellipsis } from 'common/mixins';
 import { mq } from 'common/constants';
 import BonusStats from '../desktop/BonusStats';
+import BuildErrors from './BuildErrors';
+import { IError } from 'common/types';
 
 interface IProps {
   customSet?: customSet | null;
   isMobile?: boolean;
+  errors: Array<IError>;
 }
 
 interface CustomSetMetadata {
@@ -58,7 +61,7 @@ const reducer = (state: CustomSetMetadata, action: CustomSetMetdataAction) => {
   }
 };
 
-const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
+const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
   const originalState = {
     isEditing: false,
     name: customSet?.name || '',
@@ -292,28 +295,34 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile }) => {
           formElement
         )}
         {customSet && !isMobile && <BonusStats customSet={customSet} />}
+        {customSet && !isMobile && (
+          <BuildErrors customSet={customSet} errors={errors} />
+        )}
       </div>
       {customSet && isMobile && (
-        <div css={{ marginBottom: 20, fontSize: '0.75rem' }}>
-          <div css={{ display: 'flex' }}>
-            <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
-            <div css={{ marginLeft: 8 }}>
-              {customSet.owner?.username ?? t('ANONYMOUS')}
+        <>
+          <div css={{ marginBottom: 20, fontSize: '0.75rem' }}>
+            <div css={{ display: 'flex' }}>
+              <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
+              <div css={{ marginLeft: 8 }}>
+                {customSet.owner?.username ?? t('ANONYMOUS')}
+              </div>
+            </div>
+            <div css={{ display: 'flex' }}>
+              <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
+              <div css={{ marginLeft: 8 }}>
+                {moment(customSet.creationDate).format('lll')}
+              </div>
+            </div>
+            <div css={{ display: 'flex' }}>
+              <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
+              <div css={{ marginLeft: 8 }}>
+                {moment(customSet.lastModified).format('lll')}
+              </div>
             </div>
           </div>
-          <div css={{ display: 'flex' }}>
-            <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-            <div css={{ marginLeft: 8 }}>
-              {moment(customSet.creationDate).format('lll')}
-            </div>
-          </div>
-          <div css={{ display: 'flex' }}>
-            <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-            <div css={{ marginLeft: 8 }}>
-              {moment(customSet.lastModified).format('lll')}
-            </div>
-          </div>
-        </div>
+          <BuildErrors customSet={customSet} errors={errors} isMobile />
+        </>
       )}
     </>
   );
