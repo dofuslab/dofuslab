@@ -929,6 +929,10 @@ function isLeafCondition(
   );
 }
 
+const getDefaultStatCalculator = (stat: Stat) => (
+  statsFromCustomSet: StatsFromCustomSet,
+) => getStatWithDefault(statsFromCustomSet, stat);
+
 const evaluateLeafCondition = (
   customSet: customSet,
   statsFromCustomSet: StatsFromCustomSet,
@@ -947,7 +951,8 @@ const evaluateLeafCondition = (
     }
   } else {
     const statCalculator =
-      statCalculators[condition.stat] || getStatWithDefault;
+      statCalculators[condition.stat] ||
+      getDefaultStatCalculator(condition.stat);
     const value = statCalculator(statsFromCustomSet, customSet);
     if (condition.operator === '<') {
       return value < condition.value;
