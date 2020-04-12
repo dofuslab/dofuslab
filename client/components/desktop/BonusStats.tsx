@@ -22,6 +22,7 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
     (acc, curr) => ({ ...acc, [curr.item.id]: curr.slot.order }),
     {},
   ) as { [key: string]: number };
+
   return (
     <div
       css={{

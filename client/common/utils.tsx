@@ -213,10 +213,7 @@ const mergeStatObjs = (...statObjs: ReadonlyArray<{ [key: string]: number }>) =>
     return acc;
   }, {} as StatsFromCustomSet);
 
-export const getBonusesFromCustomSet = (
-  customSet: customSet,
-  skipFilter?: boolean,
-) => {
+export const getBonusesFromCustomSet = (customSet: customSet) => {
   const sets: SetCounter = {};
 
   for (const equippedItem of customSet.equippedItems) {
@@ -236,13 +233,9 @@ export const getBonusesFromCustomSet = (
     }
   }
 
-  const filteredSets = skipFilter
-    ? Object.entries(sets)
-    : Object.entries(sets).filter(([_, setObj]) => {
-        return !!setObj.set.bonuses.filter(
-          ({ numItems }) => numItems === setObj.count,
-        ).length;
-      });
+  const filteredSets = Object.entries(sets).filter(
+    ([_, setObj]) => setObj.count > 1,
+  );
 
   const result = filteredSets.reduce((obj, [setId, setWithCount]) => {
     obj[setId] = setWithCount;
@@ -942,7 +935,7 @@ const evaluateLeafCondition = (
   condition: TCondition,
 ) => {
   if (condition.stat === 'SET_BONUS') {
-    const setBonuses = getBonusesFromCustomSet(customSet, true);
+    const setBonuses = getBonusesFromCustomSet(customSet);
     const numberBonuses = Object.values(setBonuses).reduce(
       (acc, v) => acc + v.count - 1,
       0,
@@ -1066,7 +1059,7 @@ export const getErrors = (
     reason: 'CONDITION_NOT_MET',
   }));
 
-  const groupedBySet = getBonusesFromCustomSet(customSet, true);
+  const groupedBySet = getBonusesFromCustomSet(customSet);
 
   Object.values(groupedBySet).forEach(setObj => {
     const groupByItemId = groupBy(

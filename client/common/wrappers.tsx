@@ -10,6 +10,7 @@ import {
   itemCardStyle,
   BORDER_COLOR,
   blue6,
+  gray6,
 } from './mixins';
 import { Card } from 'antd';
 import { Skeleton } from 'antd';
@@ -89,15 +90,21 @@ export const SetBonuses: React.FC<{
     <div css={{ fontSize: '0.75rem', fontWeight: 500 }}>
       {t('NUM_ITEMS', { ns: 'common', num: count })}
     </div>
-    <ul css={{ paddingInlineStart: '16px', marginTop: 8 }}>
-      {bonuses.map(bonus => (
-        <li key={bonus.id} css={{ fontSize: '0.75rem' }}>
-          {!!bonus.value && !!bonus.stat
-            ? `${bonus.value} ${t(bonus.stat, { ns: 'stat' })}`
-            : bonus.customStat}
-        </li>
-      ))}
-    </ul>
+    {bonuses.length ? (
+      <ul css={{ paddingInlineStart: '16px', marginTop: 8 }}>
+        {bonuses.map(bonus => (
+          <li key={bonus.id} css={{ fontSize: '0.75rem' }}>
+            {!!bonus.value && !!bonus.stat
+              ? `${bonus.value} ${t(bonus.stat, { ns: 'stat' })}`
+              : bonus.customStat}
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <div css={{ color: gray6, fontStyle: 'italic' }}>
+        {t('NO_BONUS', { ns: 'common' })}
+      </div>
+    )}
   </div>
 );
 
