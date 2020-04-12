@@ -275,6 +275,7 @@ const Layout = (props: LayoutProps) => {
           flexDirection: 'column',
           paddingLeft: 8,
           paddingRight: 8,
+          overflowAnchor: 'none',
         }}
       >
         {props.children}
