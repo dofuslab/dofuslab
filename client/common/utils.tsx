@@ -946,10 +946,9 @@ const evaluateLeafCondition = (
       return numberBonuses > condition.value;
     }
   } else {
-    const value = statCalculators[condition.stat](
-      statsFromCustomSet,
-      customSet,
-    );
+    const statCalculator =
+      statCalculators[condition.stat] || getStatWithDefault;
+    const value = statCalculator(statsFromCustomSet, customSet);
     if (condition.operator === '<') {
       return value < condition.value;
     } else if (condition.operator === '>') {
