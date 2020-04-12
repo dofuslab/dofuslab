@@ -1,5 +1,8 @@
-import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { item_set, item } from 'graphql/fragments/__generated__/item';
+import {
+  customSet,
+  customSet_equippedItems,
+} from 'graphql/fragments/__generated__/customSet';
+import { item_set } from 'graphql/fragments/__generated__/item';
 import {
   Stat,
   ItemFilters,
@@ -9,7 +12,6 @@ import {
 
 export type StatWithCalculatedValue = {
   stat: string;
-  customCalculateValue?: StatCalculator;
   icon?: {
     backgroundPositionX: number;
     backgroundPositionY: number;
@@ -29,7 +31,11 @@ export type StatCalculator = (
 ) => number;
 
 export type SetCounter = {
-  [key: string]: { count: number; set: item_set; items: Array<item> };
+  [key: string]: {
+    count: number;
+    set: item_set;
+    equippedItems: Array<customSet_equippedItems>;
+  };
 };
 
 export type SharedFilterAction =
@@ -93,3 +99,52 @@ export type TEffectLine = {
   nonCrit: TEffectMinMax;
   crit: TEffectMinMax | null;
 };
+
+export type TCondition = {
+  stat: Stat | 'SET_BONUS';
+  operator: '>' | '<';
+  value: number;
+};
+
+export type TConditionObj =
+  | {
+      and?: Array<TConditionObj>;
+      or?: Array<TConditionObj>;
+    }
+  | TCondition;
+
+export type TEvaluatedConditionObj =
+  | {
+      and?: Array<TEvaluatedConditionObj>;
+      or?: Array<TEvaluatedConditionObj>;
+    }
+  | boolean;
+
+export const baseStats = [
+  'baseVitality',
+  'baseWisdom',
+  'baseStrength',
+  'baseIntelligence',
+  'baseChance',
+  'baseAgility',
+] as const;
+
+export const scrolledStats = [
+  'scrolledVitality',
+  'scrolledWisdom',
+  'scrolledStrength',
+  'scrolledIntelligence',
+  'scrolledChance',
+  'scrolledAgility',
+] as const;
+
+export const stats = [...baseStats, ...scrolledStats] as const;
+
+export type BaseStatKey = typeof baseStats[number];
+
+export type StatKey = typeof stats[number];
+
+export interface IError {
+  equippedItem: customSet_equippedItems;
+  reason: string;
+}

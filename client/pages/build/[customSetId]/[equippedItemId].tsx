@@ -14,6 +14,8 @@ import MageModal from 'components/common/MageModal';
 import SetModal from 'components/common/SetModal';
 import { mediaStyles } from 'components/common/Media';
 import Head from 'next/head';
+import { getErrors, getStatsFromCustomSet } from 'common/utils';
+import { IError } from 'common/types';
 
 const EquippedItemPage: NextPage = () => {
   const router = useRouter();
@@ -62,6 +64,18 @@ const EquippedItemPage: NextPage = () => {
     return <ErrorPage statusCode={404} />;
   }
 
+  const statsFromCustomSet = getStatsFromCustomSet(customSet);
+
+  let errors: Array<IError> = [];
+
+  if (statsFromCustomSet) {
+    errors = getErrors(customSet, statsFromCustomSet);
+  }
+
+  const equippedItemErrors = errors.filter(
+    ({ equippedItem: ei }) => ei.id === equippedItem?.id,
+  );
+
   return (
     <Layout>
       <Head>
@@ -77,6 +91,7 @@ const EquippedItemPage: NextPage = () => {
         itemSlotId={equippedItem.slot.id}
         openSetModal={openSetModal}
         openMageModal={openMageModal}
+        errors={equippedItemErrors}
       />
       <MageModal
         visible={mageModalVisible}

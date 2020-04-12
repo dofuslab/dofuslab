@@ -3,7 +3,7 @@ import { useMutation, useApolloClient, useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
 import { ApolloClient, ApolloError } from 'apollo-boost';
 import { notification } from 'antd';
-import { cloneDeep } from 'lodash';
+import { cloneDeep, groupBy } from 'lodash';
 import { TFunction } from 'next-i18next';
 import CustomSetFragment from 'graphql/fragments/customSet.graphql';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
@@ -11,6 +11,7 @@ import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import {
   customSet_stats,
   customSet,
+  customSet_equippedItems,
 } from 'graphql/fragments/__generated__/customSet';
 import {
   Stat,
@@ -25,6 +26,10 @@ import {
   ExoStatLine,
   ICalcDamageInput,
   TSimpleEffect,
+  TCondition,
+  TConditionObj,
+  StatCalculator,
+  BaseStatKey,
 } from './types';
 import {
   item_itemType,
@@ -44,7 +49,7 @@ import {
 import DeleteCustomSetItemMutation from 'graphql/mutations/deleteCustomSetItem.graphql';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
-import { useTranslation } from 'i18n';
+import { useTranslation, Trans } from 'i18n';
 import {
   equipSet,
   equipSetVariables,
@@ -208,7 +213,10 @@ const mergeStatObjs = (...statObjs: ReadonlyArray<{ [key: string]: number }>) =>
     return acc;
   }, {} as StatsFromCustomSet);
 
-export const getBonusesFromCustomSet = (customSet: customSet) => {
+export const getBonusesFromCustomSet = (
+  customSet: customSet,
+  skipFilter?: boolean,
+) => {
   const sets: SetCounter = {};
 
   for (const equippedItem of customSet.equippedItems) {
@@ -219,23 +227,29 @@ export const getBonusesFromCustomSet = (customSet: customSet) => {
     if (set) {
       const setObj = sets[set.id];
       sets[set.id] = setObj
-        ? { ...setObj, count: setObj.count + 1, items: [...setObj.items, item] }
-        : { set, count: 1, items: [equippedItem.item] };
+        ? {
+            ...setObj,
+            count: setObj.count + 1,
+            equippedItems: [...setObj.equippedItems, equippedItem],
+          }
+        : { set, count: 1, equippedItems: [equippedItem] };
     }
   }
 
-  const filteredSets = Object.entries(sets)
-    .filter(([_, setObj]) => {
-      return !!setObj.set.bonuses.filter(
-        ({ numItems }) => numItems === setObj.count,
-      ).length;
-    })
-    .reduce((obj, [setId, setWithCount]) => {
-      obj[setId] = setWithCount;
-      return obj;
-    }, {} as SetCounter);
+  const filteredSets = skipFilter
+    ? Object.entries(sets)
+    : Object.entries(sets).filter(([_, setObj]) => {
+        return !!setObj.set.bonuses.filter(
+          ({ numItems }) => numItems === setObj.count,
+        ).length;
+      });
 
-  return filteredSets;
+  const result = filteredSets.reduce((obj, [setId, setWithCount]) => {
+    obj[setId] = setWithCount;
+    return obj;
+  }, {} as SetCounter);
+
+  return result;
 };
 
 export const findNextEmptySlotId = (
@@ -827,4 +841,286 @@ export const calcElementMage = (
     minDamage: diff === 1 ? null : calcDamageBase + 1,
     maxDamage: calcDamageBase + diff,
   };
+};
+
+export const statCalculators: { [key: string]: StatCalculator } = {
+  HP: (statsFromCustomSet, customSet) =>
+    50 +
+    (customSet?.level ?? 200) * 5 +
+    (statsFromCustomSet ? statsFromCustomSet[Stat.VITALITY] || 0 : 0),
+  [Stat.AP]: (statsFromCustomSet, customSet) =>
+    ((customSet?.level ?? 200) >= 100 ? 7 : 6) +
+    getStatWithDefault(statsFromCustomSet, Stat.AP),
+  [Stat.MP]: statsFromCustomSet =>
+    3 + getStatWithDefault(statsFromCustomSet, Stat.MP),
+  [Stat.INITIATIVE]: statsFromCustomSet =>
+    statsFromCustomSet
+      ? getStatWithDefault(statsFromCustomSet, Stat.STRENGTH) +
+        getStatWithDefault(statsFromCustomSet, Stat.INTELLIGENCE) +
+        getStatWithDefault(statsFromCustomSet, Stat.CHANCE) +
+        getStatWithDefault(statsFromCustomSet, Stat.AGILITY) +
+        getStatWithDefault(statsFromCustomSet, Stat.INITIATIVE)
+      : 0,
+  [Stat.SUMMON]: statsFromCustomSet =>
+    1 + getStatWithDefault(statsFromCustomSet, Stat.SUMMON),
+  [Stat.PROSPECTING]: statsFromCustomSet =>
+    100 +
+    (statsFromCustomSet
+      ? Math.floor(getStatWithDefault(statsFromCustomSet, Stat.CHANCE) / 10) +
+        getStatWithDefault(statsFromCustomSet, Stat.PROSPECTING)
+      : 0),
+  [Stat.DODGE]: statsFromCustomSet =>
+    statsFromCustomSet
+      ? Math.floor(getStatWithDefault(statsFromCustomSet, Stat.AGILITY) / 10) +
+        getStatWithDefault(statsFromCustomSet, Stat.DODGE)
+      : 0,
+  [Stat.LOCK]: statsFromCustomSet =>
+    statsFromCustomSet
+      ? Math.floor(getStatWithDefault(statsFromCustomSet, Stat.AGILITY) / 10) +
+        getStatWithDefault(statsFromCustomSet, Stat.LOCK)
+      : 0,
+  [Stat.AP_PARRY]: statsFromCustomSet =>
+    statsFromCustomSet
+      ? Math.floor(getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10) +
+        getStatWithDefault(statsFromCustomSet, Stat.AP_PARRY)
+      : 0,
+  [Stat.AP_REDUCTION]: statsFromCustomSet =>
+    statsFromCustomSet
+      ? Math.floor(getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10) +
+        getStatWithDefault(statsFromCustomSet, Stat.AP_REDUCTION)
+      : 0,
+  [Stat.MP_PARRY]: statsFromCustomSet =>
+    statsFromCustomSet
+      ? Math.floor(getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10) +
+        getStatWithDefault(statsFromCustomSet, Stat.MP_PARRY)
+      : 0,
+  [Stat.MP_REDUCTION]: statsFromCustomSet =>
+    statsFromCustomSet
+      ? Math.floor(getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10) +
+        getStatWithDefault(statsFromCustomSet, Stat.MP_REDUCTION)
+      : 0,
+  [Stat.NEUTRAL_DAMAGE]: statsFromCustomSet =>
+    statsFromCustomSet
+      ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
+        getStatWithDefault(statsFromCustomSet, Stat.NEUTRAL_DAMAGE)
+      : 0,
+  [Stat.EARTH_DAMAGE]: statsFromCustomSet =>
+    statsFromCustomSet
+      ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
+        getStatWithDefault(statsFromCustomSet, Stat.EARTH_DAMAGE)
+      : 0,
+  [Stat.FIRE_DAMAGE]: statsFromCustomSet =>
+    statsFromCustomSet
+      ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
+        getStatWithDefault(statsFromCustomSet, Stat.FIRE_DAMAGE)
+      : 0,
+  [Stat.WATER_DAMAGE]: statsFromCustomSet =>
+    statsFromCustomSet
+      ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
+        getStatWithDefault(statsFromCustomSet, Stat.WATER_DAMAGE)
+      : 0,
+  [Stat.AIR_DAMAGE]: statsFromCustomSet =>
+    statsFromCustomSet
+      ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
+        getStatWithDefault(statsFromCustomSet, Stat.AIR_DAMAGE)
+      : 0,
+};
+
+function isLeafCondition(
+  conditionObj: TConditionObj,
+): conditionObj is TCondition {
+  return !!(
+    (conditionObj as TCondition).operator &&
+    (conditionObj as TCondition).stat &&
+    (conditionObj as TCondition).value
+  );
+}
+
+const evaluateLeafCondition = (
+  customSet: customSet,
+  statsFromCustomSet: StatsFromCustomSet,
+  condition: TCondition,
+) => {
+  if (condition.stat === 'SET_BONUS') {
+    const setBonuses = getBonusesFromCustomSet(customSet, true);
+    const numberBonuses = Object.values(setBonuses).reduce(
+      (acc, v) => acc + v.count - 1,
+      0,
+    );
+    if (condition.operator === '<') {
+      return numberBonuses < condition.value;
+    } else if (condition.operator === '>') {
+      return numberBonuses > condition.value;
+    }
+  } else {
+    const value = statCalculators[condition.stat](
+      statsFromCustomSet,
+      customSet,
+    );
+    if (condition.operator === '<') {
+      return value < condition.value;
+    } else if (condition.operator === '>') {
+      return value > condition.value;
+    }
+  }
+  console.error('Unable to parse condition', condition);
+  return true;
+};
+
+const traverseConditions = (
+  customSet: customSet,
+  statsFromCustomSet: StatsFromCustomSet,
+  conditionsObj: TConditionObj,
+): boolean => {
+  if (isLeafCondition(conditionsObj)) {
+    return evaluateLeafCondition(customSet, statsFromCustomSet, conditionsObj);
+  } else if (conditionsObj.and) {
+    return conditionsObj.and.every(obj =>
+      traverseConditions(customSet, statsFromCustomSet, obj),
+    );
+  } else if (conditionsObj.or) {
+    return conditionsObj.or.some(obj =>
+      traverseConditions(customSet, statsFromCustomSet, obj),
+    );
+  }
+  console.error('Unable to parse condition', conditionsObj);
+  return true;
+};
+
+export const checkConditions = (
+  customSet: customSet | null,
+  statsFromCustomSet?: StatsFromCustomSet | null,
+) => {
+  let customSetStats = statsFromCustomSet
+    ? statsFromCustomSet
+    : getStatsFromCustomSet(customSet);
+
+  if (!customSet || !customSetStats) {
+    return [];
+  }
+
+  const failingItems: Array<customSet_equippedItems> = [];
+
+  customSet.equippedItems.forEach(equippedItem => {
+    const parsed = JSON.parse(equippedItem.item.conditions);
+    if (parsed && parsed.conditions && Object.keys(parsed.conditions).length) {
+      const conditionsObj = parsed.conditions;
+      const pass = traverseConditions(
+        customSet,
+        customSetStats!,
+        conditionsObj,
+      );
+      if (!pass) {
+        failingItems.push(equippedItem);
+      }
+    }
+  });
+
+  return failingItems;
+};
+
+export const calcPointCost = (value: number, statKey: BaseStatKey) => {
+  if (statKey === 'baseVitality') {
+    return value;
+  } else if (statKey === 'baseWisdom') {
+    return value * 3;
+  }
+  let numPoints = 0;
+  let remainingValue = value;
+  while (remainingValue > 0) {
+    const modifier = Math.floor((remainingValue - 1) / 100) + 1;
+    const numStats = ((remainingValue - 1) % 100) + 1;
+    remainingValue -= numStats;
+    numPoints += modifier * numStats;
+  }
+  return numPoints;
+};
+
+const findMultipleExoErrors = (customSet: customSet, stat: Stat) => {
+  const equippedItemsWithExo = customSet.equippedItems.filter(equippedItem =>
+    equippedItem.exos.some(
+      ({ stat: exoStat, value }) => exoStat === stat && value > 0,
+    ),
+  );
+
+  const totalValueExo = equippedItemsWithExo.reduce(
+    (acc, { exos }) => acc + (exos.find(exo => exo.stat === stat)?.value ?? 0),
+    0,
+  );
+
+  if (totalValueExo > 1) {
+    return equippedItemsWithExo;
+  }
+
+  return [];
+};
+
+export const getErrors = (
+  customSet: customSet,
+  statsFromCustomSet: StatsFromCustomSet,
+) => {
+  const failingItems = checkConditions(customSet, statsFromCustomSet);
+
+  const errors = failingItems.map(equippedItem => ({
+    equippedItem,
+    reason: 'CONDITION_NOT_MET',
+  }));
+
+  const groupedBySet = getBonusesFromCustomSet(customSet, true);
+
+  Object.values(groupedBySet).forEach(setObj => {
+    const groupByItemId = groupBy(
+      setObj.equippedItems,
+      equippedItem => equippedItem.item.id,
+    );
+    const dupes = Object.values(groupByItemId).filter(arr => arr.length > 1);
+    dupes.forEach(dupe => {
+      dupe.forEach(equippedItem =>
+        errors.push({ equippedItem, reason: 'DUPLICATE_ITEM_IN_SET' }),
+      );
+    });
+  });
+
+  errors.push(
+    ...findMultipleExoErrors(customSet, Stat.AP).map(equippedItem => ({
+      equippedItem,
+      reason: 'MULTIPLE_AP_EXO',
+    })),
+  );
+
+  errors.push(
+    ...findMultipleExoErrors(customSet, Stat.MP).map(equippedItem => ({
+      equippedItem,
+      reason: 'MULTIPLE_MP_EXO',
+    })),
+  );
+
+  errors.push(
+    ...findMultipleExoErrors(customSet, Stat.RANGE).map(equippedItem => ({
+      equippedItem,
+      reason: 'MULTIPLE_RANGE_EXO',
+    })),
+  );
+
+  return errors;
+};
+
+export const renderErrors = (
+  reason: string,
+  t: TFunction,
+  equippedItem?: customSet_equippedItems,
+  includeItemName?: boolean,
+) => {
+  if (reason === 'CONDITION_NOT_MET' && equippedItem && includeItemName) {
+    return (
+      <li key={`equipped-item-${equippedItem.id}-${reason}`}>
+        <Trans ns="common" key="CONDITION_NOT_MET_WITH_ITEM">
+          The conditions for the item{' '}
+          <strong css={{ fontWeight: 500 }}>{equippedItem.item.name}</strong>{' '}
+          have not been met.
+        </Trans>
+      </li>
+    );
+  }
+  return <li key={`generic-${reason}`}>{t(reason, { ns: 'common' })}</li>;
 };

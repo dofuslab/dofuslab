@@ -1,6 +1,5 @@
 import { StatGroup } from './types';
 import { Stat } from '__generated__/globalTypes';
-import { getStatWithDefault } from './utils';
 
 export const DEBOUNCE_INTERVAL = 300;
 
@@ -12,25 +11,16 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
   [
     {
       stat: 'HP',
-      customCalculateValue: (statsFromCustomSet, customSet) =>
-        50 +
-        (customSet?.level ?? 200) * 5 +
-        (statsFromCustomSet ? statsFromCustomSet[Stat.VITALITY] || 0 : 0),
       svgIcon:
         'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Health_Point.svg',
     },
     {
       stat: Stat.AP,
-      customCalculateValue: (statsFromCustomSet, customSet) =>
-        ((customSet?.level ?? 200) >= 100 ? 7 : 6) +
-        (statsFromCustomSet ? statsFromCustomSet[Stat.AP] || 0 : 0),
       svgIcon:
         'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Action_Point.svg',
     },
     {
       stat: Stat.MP,
-      customCalculateValue: statsFromCustomSet =>
-        3 + (statsFromCustomSet ? statsFromCustomSet[Stat.MP] || 0 : 0),
       svgIcon:
         'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Movement_Point.svg',
     },
@@ -42,14 +32,6 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
   [
     {
       stat: Stat.INITIATIVE,
-      customCalculateValue: statsFromCustomSet =>
-        statsFromCustomSet
-          ? getStatWithDefault(statsFromCustomSet, Stat.STRENGTH) +
-            getStatWithDefault(statsFromCustomSet, Stat.INTELLIGENCE) +
-            getStatWithDefault(statsFromCustomSet, Stat.CHANCE) +
-            getStatWithDefault(statsFromCustomSet, Stat.AGILITY) +
-            getStatWithDefault(statsFromCustomSet, Stat.INITIATIVE)
-          : 0,
       svgIcon:
         'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Initiative.svg',
     },
@@ -60,8 +42,6 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
     },
     {
       stat: Stat.SUMMON,
-      customCalculateValue: statsFromCustomSet =>
-        1 + (statsFromCustomSet ? statsFromCustomSet[Stat.SUMMON] || 0 : 0),
       svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Summon.svg',
     },
     {
@@ -70,13 +50,6 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
     },
     {
       stat: Stat.PROSPECTING,
-      customCalculateValue: statsFromCustomSet =>
-        100 +
-        (statsFromCustomSet
-          ? Math.floor(
-              getStatWithDefault(statsFromCustomSet, Stat.CHANCE) / 10,
-            ) + getStatWithDefault(statsFromCustomSet, Stat.PROSPECTING)
-          : 0),
       svgIcon:
         'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Prospecting.svg',
     },
@@ -117,67 +90,31 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
   [
     {
       stat: Stat.DODGE,
-      customCalculateValue: statsFromCustomSet =>
-        statsFromCustomSet
-          ? Math.floor(
-              getStatWithDefault(statsFromCustomSet, Stat.AGILITY) / 10,
-            ) + getStatWithDefault(statsFromCustomSet, Stat.DODGE)
-          : 0,
       svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Dodge.svg',
     },
     {
       stat: Stat.LOCK,
-      customCalculateValue: statsFromCustomSet =>
-        statsFromCustomSet
-          ? Math.floor(
-              getStatWithDefault(statsFromCustomSet, Stat.AGILITY) / 10,
-            ) + getStatWithDefault(statsFromCustomSet, Stat.LOCK)
-          : 0,
       svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Lock.svg',
     },
   ],
   [
     {
       stat: Stat.AP_PARRY,
-      customCalculateValue: statsFromCustomSet =>
-        statsFromCustomSet
-          ? Math.floor(
-              getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10,
-            ) + getStatWithDefault(statsFromCustomSet, Stat.AP_PARRY)
-          : 0,
       svgIcon:
         'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/AP_Parry.svg',
     },
     {
       stat: Stat.AP_REDUCTION,
-      customCalculateValue: statsFromCustomSet =>
-        statsFromCustomSet
-          ? Math.floor(
-              getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10,
-            ) + getStatWithDefault(statsFromCustomSet, Stat.AP_REDUCTION)
-          : 0,
       svgIcon:
         'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/AP_Reduction.svg',
     },
     {
       stat: Stat.MP_PARRY,
-      customCalculateValue: statsFromCustomSet =>
-        statsFromCustomSet
-          ? Math.floor(
-              getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10,
-            ) + getStatWithDefault(statsFromCustomSet, Stat.MP_PARRY)
-          : 0,
       svgIcon:
         'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/MP_Parry.svg',
     },
     {
       stat: Stat.MP_REDUCTION,
-      customCalculateValue: statsFromCustomSet =>
-        statsFromCustomSet
-          ? Math.floor(
-              getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10,
-            ) + getStatWithDefault(statsFromCustomSet, Stat.MP_REDUCTION)
-          : 0,
       svgIcon:
         'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/MP_Reduction.svg',
     },
@@ -185,50 +122,25 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
   [
     {
       stat: Stat.NEUTRAL_DAMAGE,
-      customCalculateValue: statsFromCustomSet =>
-        statsFromCustomSet
-          ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
-            getStatWithDefault(statsFromCustomSet, Stat.NEUTRAL_DAMAGE)
-          : 0,
       svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Neutral.svg',
     },
     {
       stat: Stat.EARTH_DAMAGE,
       svgIcon:
         'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Strength.svg',
-      customCalculateValue: statsFromCustomSet =>
-        statsFromCustomSet
-          ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
-            getStatWithDefault(statsFromCustomSet, Stat.EARTH_DAMAGE)
-          : 0,
     },
     {
       stat: Stat.FIRE_DAMAGE,
       svgIcon:
         'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Intelligence.svg',
-      customCalculateValue: statsFromCustomSet =>
-        statsFromCustomSet
-          ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
-            getStatWithDefault(statsFromCustomSet, Stat.FIRE_DAMAGE)
-          : 0,
     },
     {
       stat: Stat.WATER_DAMAGE,
       svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Chance.svg',
-      customCalculateValue: statsFromCustomSet =>
-        statsFromCustomSet
-          ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
-            getStatWithDefault(statsFromCustomSet, Stat.WATER_DAMAGE)
-          : 0,
     },
     {
       stat: Stat.AIR_DAMAGE,
       svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Agility.svg',
-      customCalculateValue: statsFromCustomSet =>
-        statsFromCustomSet
-          ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
-            getStatWithDefault(statsFromCustomSet, Stat.AIR_DAMAGE)
-          : 0,
     },
   ],
   [

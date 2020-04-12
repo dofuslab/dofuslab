@@ -9,6 +9,9 @@ import { blue6 } from 'common/mixins';
 import { Stat, WeaponElementMage } from '__generated__/globalTypes';
 import { Divider } from 'antd';
 import { WeaponEffectsList } from 'common/wrappers';
+import { TFunction } from 'next-i18next';
+import { IError } from 'common/types';
+import { renderErrors } from 'common/utils';
 
 interface IProps {
   readonly item: item;
@@ -19,35 +22,38 @@ interface IProps {
   readonly showImg?: boolean;
   readonly showOnlyWeaponStats?: boolean;
   readonly weaponElementMage?: WeaponElementMage | null;
+  readonly errors?: Array<IError>;
 }
 
-const renderConditions = (conditionsObj: any, depth = 0) => {
+const renderConditions = (conditionsObj: any, t: TFunction, depth = 0) => {
   try {
     if (!conditionsObj || Object.keys(conditionsObj).length === 0) {
       return null;
     }
     if (conditionsObj.stat) {
-      return `${conditionsObj.stat}\u00A0${conditionsObj.operator}\u00A0${conditionsObj.value}`;
+      return `${t(conditionsObj.stat)}\u00A0${conditionsObj.operator}\u00A0${
+        conditionsObj.value
+      }`;
     }
     if (conditionsObj.and && conditionsObj.and.length === 1) {
       const condition = conditionsObj.and[0];
-      return `${condition.stat} ${condition.operator} ${condition.value}`;
+      return `${t(condition.stat)} ${condition.operator} ${condition.value}`;
     } else if (conditionsObj.or && conditionsObj.or.length === 1) {
       const condition = conditionsObj.or[0];
-      return `${condition.stat} ${condition.operator} ${condition.value}`;
+      return `${t(condition.stat)} ${condition.operator} ${condition.value}`;
     }
 
     if (conditionsObj.and) {
       const result = conditionsObj.and
-        .map((nestedObj: any) => renderConditions(nestedObj, depth + 1))
-        .join(' and ');
+        .map((nestedObj: any) => renderConditions(nestedObj, t, depth + 1))
+        .join(` ${t('CONDITIONS.AND')} `);
       return depth > 0 ? `(${result})` : result;
     }
 
     if (conditionsObj.or) {
       const result = conditionsObj.or
-        .map((nestedObj: any) => renderConditions(nestedObj, depth + 1))
-        .join(' or ');
+        .map((nestedObj: any) => renderConditions(nestedObj, t, depth + 1))
+        .join(` ${t('CONDITIONS.OR')} `);
       return depth > 0 ? `(${result})` : result;
     }
     throw new Error('Unknown conditions object');
@@ -66,8 +72,9 @@ const ItemStatsList: React.FC<IProps> = ({
   showImg,
   showOnlyWeaponStats,
   weaponElementMage,
+  errors,
 }) => {
-  const { t } = useTranslation(['stat', 'weapon_spell_effect']);
+  const { t } = useTranslation(['stat', 'weapon_spell_effect', 'common']);
 
   const statsMap: {
     [key: string]: { value: number; maged: boolean };
@@ -187,7 +194,17 @@ const ItemStatsList: React.FC<IProps> = ({
       {conditions && Object.keys(conditions.conditions || {}).length > 0 && (
         <>
           <Divider css={{ margin: '12px 0' }} />
-          <div>{renderConditions(conditions.conditions)}</div>
+          <div>{renderConditions(conditions.conditions, t)}</div>
+        </>
+      )}
+      {errors && errors.length > 0 && (
+        <>
+          <Divider css={{ margin: '12px 0' }} />
+          <ul css={{ margin: 0, paddingInlineStart: 16, fontSize: '0.75rem' }}>
+            {errors.map(({ reason, equippedItem }) =>
+              renderErrors(reason, t, equippedItem),
+            )}
+          </ul>
         </>
       )}
     </div>

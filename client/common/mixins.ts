@@ -2,6 +2,8 @@ import { mq, BREAKPOINTS } from './constants';
 
 export const shadow = '0 2px 8px rgba(0, 0, 0, 0.15)';
 
+export const gold5 = '#ffc53d';
+
 export const blue1 = '#e6f7ff';
 export const blue3 = '#91d5ff';
 export const blue6 = '#1890ff';

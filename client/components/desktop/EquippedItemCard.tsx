@@ -26,6 +26,7 @@ import {
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import ItemStatsList from '../common/ItemStatsList';
 import { item_set } from 'graphql/fragments/__generated__/item';
+import { IError } from 'common/types';
 
 const quickMageStats = [
   {
@@ -59,6 +60,7 @@ interface IProps {
   openMageModal: (equippedItem: customSet_customSetById_equippedItems) => void;
   stopPropagationCallback?: (e: React.MouseEvent<HTMLElement>) => void;
   openSetModal: (set: item_set) => void;
+  errors?: Array<IError>;
 }
 
 const EquippedItemCard: React.FC<IProps> = ({
@@ -68,6 +70,7 @@ const EquippedItemCard: React.FC<IProps> = ({
   openMageModal,
   stopPropagationCallback,
   openSetModal,
+  errors,
 }) => {
   const { t } = useTranslation(['common', 'mage', 'stat']);
 
@@ -189,6 +192,7 @@ const EquippedItemCard: React.FC<IProps> = ({
         openSetModal={openSetModal}
         showImg={false}
         weaponElementMage={equippedItem.weaponElementMage}
+        errors={errors}
       />
     </Card>
   );

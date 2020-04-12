@@ -10,7 +10,7 @@ import StatTable from '../common/StatTable';
 import { ResponsiveGrid } from 'common/wrappers';
 
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { getStatsFromCustomSet } from 'common/utils';
+import { getStatsFromCustomSet, getErrors } from 'common/utils';
 import SetHeader from '../common/SetHeader';
 import EquipmentSlots from '../common/EquipmentSlots';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
@@ -21,6 +21,7 @@ import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
 import { useTranslation } from 'i18n';
+import { IError } from 'common/types';
 
 const { TabPane } = Tabs;
 
@@ -61,15 +62,22 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
     equippedItem => !!equippedItem.item.weaponStats,
   );
 
+  let errors: Array<IError> = [];
+
+  if (customSet && statsFromCustomSet) {
+    errors = getErrors(customSet, statsFromCustomSet);
+  }
+
   const { t } = useTranslation('common');
 
   return (
     <Layout>
-      <SetHeader customSet={customSet} />
+      <SetHeader customSet={customSet} errors={errors} />
       <EquipmentSlots
         customSet={customSet}
         selectItemSlot={selectItemSlot}
         selectedItemSlotId={selectedItemSlot?.id ?? null}
+        errors={errors}
       />
       <div
         css={{
@@ -153,4 +161,4 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
   );
 };
 
-export default SetBuilder;
+export default React.memo(SetBuilder);

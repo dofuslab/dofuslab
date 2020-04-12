@@ -22,6 +22,8 @@ import MageModal from './MageModal';
 import { useSetModal } from 'common/utils';
 import SetModal from './SetModal';
 import { Media } from './Media';
+import { IError } from 'common/types';
+import { groupBy } from 'lodash';
 
 interface IProps {
   customSet?: customSet | null;
@@ -30,6 +32,7 @@ interface IProps {
   >;
   selectedItemSlotId: string | null;
   isMobile?: boolean;
+  errors: Array<IError>;
 }
 
 const EquipmentSlots: React.FC<IProps> = ({
@@ -37,6 +40,7 @@ const EquipmentSlots: React.FC<IProps> = ({
   selectItemSlot,
   selectedItemSlotId,
   isMobile,
+  errors,
 }) => {
   const { data } = useQuery<itemSlots>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
@@ -72,6 +76,8 @@ const EquipmentSlots: React.FC<IProps> = ({
     closeSetModal,
   } = useSetModal();
 
+  const groupedErrors = groupBy(errors, ({ equippedItem }) => equippedItem.id);
+
   return (
     <div
       css={{
@@ -92,33 +98,41 @@ const EquipmentSlots: React.FC<IProps> = ({
         },
       }}
     >
-      {itemSlots?.map(slot => (
-        <React.Fragment key={slot.id}>
-          <Media lessThan="xs">
-            <MobileEquippedItem
-              slot={slot}
-              key={slot.id}
-              equippedItem={equippedItemsBySlotId[slot.id]}
-              selected={selectedItemSlotId === slot.id}
-              customSet={customSet}
-              openMageModal={openMageModal}
-              openSetModal={openSetModal}
-            />
-          </Media>
-          <Media greaterThanOrEqual="xs">
-            <DesktopEquippedItem
-              slot={slot}
-              key={slot.id}
-              equippedItem={equippedItemsBySlotId[slot.id]}
-              selected={selectedItemSlotId === slot.id}
-              selectItemSlot={selectItemSlot}
-              customSet={customSet}
-              openMageModal={openMageModal}
-              openSetModal={openSetModal}
-            />
-          </Media>
-        </React.Fragment>
-      ))}
+      {itemSlots?.map(slot => {
+        const equippedItem: customSet_equippedItems | undefined =
+          equippedItemsBySlotId[slot.id];
+        const equippedItemErrors: Array<IError> | undefined =
+          groupedErrors[equippedItem?.id];
+        return (
+          <React.Fragment key={slot.id}>
+            <Media lessThan="xs">
+              <MobileEquippedItem
+                slot={slot}
+                key={slot.id}
+                equippedItem={equippedItem}
+                selected={selectedItemSlotId === slot.id}
+                customSet={customSet}
+                openMageModal={openMageModal}
+                openSetModal={openSetModal}
+                errors={equippedItemErrors}
+              />
+            </Media>
+            <Media greaterThanOrEqual="xs">
+              <DesktopEquippedItem
+                slot={slot}
+                key={slot.id}
+                equippedItem={equippedItem}
+                selected={selectedItemSlotId === slot.id}
+                selectItemSlot={selectItemSlot}
+                customSet={customSet}
+                openMageModal={openMageModal}
+                openSetModal={openSetModal}
+                errors={equippedItemErrors}
+              />
+            </Media>
+          </React.Fragment>
+        );
+      })}
       {customSet && equippedItem && (
         <MageModal
           visible={mageModalVisible}

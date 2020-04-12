@@ -12,18 +12,19 @@ import EquipmentSlots from '../common/EquipmentSlots';
 import StatEditor from '../common/StatEditor';
 import { topMarginStyle, BORDER_COLOR } from 'common/mixins';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { getStatsFromCustomSet } from 'common/utils';
+import { getStatsFromCustomSet, getErrors } from 'common/utils';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import BonusStats from 'components/desktop/BonusStats';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
 import { useTranslation } from 'i18n';
+import { IError } from 'common/types';
 
 const { TabPane } = Tabs;
 
 interface IProps {
-  customSet?: customSet | null;
+  customSet: customSet | null;
   selectItemSlot: React.Dispatch<
     React.SetStateAction<itemSlots_itemSlots | null>
   >;
@@ -44,15 +45,21 @@ const Home: React.FC<IProps> = ({
     equippedItem => !!equippedItem.item.weaponStats,
   );
 
+  let errors: Array<IError> = [];
+
+  if (customSet && statsFromCustomSet) {
+    errors = getErrors(customSet, statsFromCustomSet);
+  }
   const { t } = useTranslation('common');
 
   return (
     <>
-      <SetHeader customSet={customSet} isMobile />
+      <SetHeader customSet={customSet} errors={errors} isMobile />
       <EquipmentSlots
         customSet={customSet}
         selectItemSlot={selectItemSlot}
         selectedItemSlotId={selectedItemSlot?.id ?? null}
+        errors={errors}
       />
       {customSet && <BonusStats customSet={customSet} />}
       <div

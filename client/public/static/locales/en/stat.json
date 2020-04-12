@@ -6,6 +6,10 @@
   "AP_PARRY": "AP Parry",
   "AP_REDUCTION": "AP Reduction",
   "CHANCE": "Chance",
+  "CONDITIONS": {
+    "AND": "and",
+    "OR": "or"
+  },
   "CRITICAL": "% Critical",
   "CRITICAL_DAMAGE": "Critical Damage",
   "CRITICAL_RES": "Critical Resistance",
@@ -44,6 +48,7 @@
   "PUSHBACK_RES": "Pushback Resistance",
   "RANGE": "Range",
   "REFLECT": "Reflect",
+  "SET_BONUS": "Set bonus",
   "STRENGTH": "Strength",
   "SUMMON": "Summons",
   "TRAP_DAMAGE": "Trap Damage",

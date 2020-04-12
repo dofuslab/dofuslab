@@ -9,19 +9,25 @@ import {
   itemImageBox,
   selected as selectedBox,
   itemImageDimensions,
+  gold5,
 } from 'common/mixins';
 import {
   customSet_equippedItems,
   customSet,
 } from 'graphql/fragments/__generated__/customSet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagic, faTimes } from '@fortawesome/free-solid-svg-icons';
+import {
+  faMagic,
+  faTimes,
+  faExclamationTriangle,
+} from '@fortawesome/free-solid-svg-icons';
 import { useDeleteItemMutation } from 'common/utils';
 import { useTranslation } from 'i18n';
 import EquippedItemCard from '../desktop/EquippedItemCard';
 import { mq } from 'common/constants';
 import { item_set } from 'graphql/fragments/__generated__/item';
 import { Media } from 'components/common/Media';
+import { IError } from 'common/types';
 
 const wrapperStyles = {
   position: 'absolute' as 'absolute',
@@ -48,6 +54,7 @@ interface IProps {
   itemSlotId: string;
   openMageModal: (equippedItem: customSet_equippedItems) => void;
   openSetModal: (set: item_set) => void;
+  errors?: Array<IError>;
 }
 
 const EquippedItemWithStats: React.FC<IProps> = ({
@@ -57,6 +64,7 @@ const EquippedItemWithStats: React.FC<IProps> = ({
   itemSlotId,
   openMageModal,
   openSetModal,
+  errors,
 }) => {
   const deleteItem = useDeleteItemMutation(equippedItem.slot.id, customSet);
   const stopPropagationCallback = React.useCallback(
@@ -108,6 +116,18 @@ const EquippedItemWithStats: React.FC<IProps> = ({
                 }}
               />
             )}
+            {errors?.length && (
+              <FontAwesomeIcon
+                icon={faExclamationTriangle}
+                css={{
+                  position: 'absolute',
+                  left: 6,
+                  top: 6,
+                  fontSize: '0.75rem',
+                  color: gold5,
+                }}
+              />
+            )}
             <div className={wrapperClass} onClick={onDelete}>
               <FontAwesomeIcon icon={faTimes} />
             </div>
@@ -156,6 +176,7 @@ const EquippedItemWithStats: React.FC<IProps> = ({
                     openMageModal={openMageModal}
                     openSetModal={openSetModal}
                     stopPropagationCallback={stopPropagationCallback}
+                    errors={errors}
                   />
                 }
                 overlayClassName={css({

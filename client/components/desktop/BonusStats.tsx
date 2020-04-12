@@ -38,7 +38,7 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
             .sort(({ set: { name: name1 } }, { set: { name: name2 } }) =>
               name1.localeCompare(name2),
             )
-            .map(({ count, set: { id, name, bonuses }, items }) => {
+            .map(({ count, set: { id, name, bonuses }, equippedItems }) => {
               const filteredBonuses = bonuses.filter(
                 bonus => bonus.numItems === count,
               );
@@ -78,11 +78,11 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
                       },
                     }}
                   >
-                    {[...items]
+                    {[...equippedItems]
                       .sort((i, j) => itemOrder[i.id] - itemOrder[j.id])
-                      .map(item => (
+                      .map(equippedItem => (
                         <div
-                          key={`set-bonus-item-${item.id}`}
+                          key={`set-bonus-item-${equippedItem.id}`}
                           css={{
                             width: 40,
                             height: 40,
@@ -92,7 +92,7 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
                           }}
                         >
                           <img
-                            src={item.imageUrl}
+                            src={equippedItem.item.imageUrl}
                             css={{ maxWidth: '100%', maxHeight: '100%' }}
                           />
                         </div>
