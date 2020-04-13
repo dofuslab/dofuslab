@@ -359,6 +359,7 @@ class Class(SQLAlchemyObjectType):
     spell_variant_pairs = graphene.NonNull(
         graphene.List(graphene.NonNull(SpellVariantPair))
     )
+    all_names = graphene.NonNull(graphene.List(graphene.NonNull(graphene.String)))
 
     def resolve_name(self, info):
         locale = str(get_locale())
@@ -368,6 +369,15 @@ class Class(SQLAlchemyObjectType):
             .filter(ModelClassTranslation.class_id == self.uuid)
             .one()
             .name
+        )
+
+    def resolve_all_names(self, info):
+        query = db.session.query(ModelClassTranslation)
+        return set(
+            map(
+                lambda x: x.name,
+                query.filter(ModelClassTranslation.class_id == self.uuid).all(),
+            )
         )
 
     class Meta:

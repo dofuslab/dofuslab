@@ -32,8 +32,12 @@ const ClassSpells: React.FC<IProps> = ({ customSet }) => {
   const { data, loading } = useQuery<classes>(classesQuery);
   const { t } = useTranslation('common');
 
-  const nameToId = data?.classes.reduce((acc, { id, name }) => {
-    return { ...acc, [name]: id };
+  const nameToId = data?.classes.reduce((acc, { id, allNames }) => {
+    const obj = { ...acc };
+    allNames.forEach(className => {
+      obj[className] = id;
+    });
+    return obj;
   }, {} as { [key: string]: string });
 
   const idToName = data?.classes.reduce((acc, { id, name }) => {

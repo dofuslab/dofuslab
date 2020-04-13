@@ -11,6 +11,7 @@ export interface classes_classes {
   __typename: "Class";
   id: any;
   name: string;
+  allNames: string[];
 }
 
 export interface classes {
