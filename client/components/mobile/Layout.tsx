@@ -132,7 +132,12 @@ const Layout = (props: LayoutProps) => {
         }}
       >
         <Link href="/" as="/">
-          <div css={{ fontWeight: 500 }}>DofusLab</div>
+          <div css={{ fontWeight: 500 }}>
+            <img
+              src="https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg"
+              css={{ width: 120 }}
+            />
+          </div>
         </Link>
         <Button onClick={openDrawer} size="large" css={{ fontSize: '0.9rem' }}>
           <MenuOutlined />

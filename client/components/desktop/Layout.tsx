@@ -159,7 +159,12 @@ const Layout = (props: LayoutProps) => {
         }}
       >
         <Link href="/" as="/">
-          <div css={{ fontWeight: 500, cursor: 'pointer' }}>DofusLab</div>
+          <div css={{ fontWeight: 500, cursor: 'pointer' }}>
+            <img
+              src="https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg"
+              css={{ width: 120 }}
+            />
+          </div>
         </Link>
         <div css={{ display: 'flex', alignItems: 'center' }}>
           {data?.currentUser ? (
