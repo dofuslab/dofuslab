@@ -11,6 +11,7 @@ import {
   Menu,
 } from 'antd';
 import { useRouter } from 'next/router';
+import { useTheme } from 'emotion-theming';
 
 import LoginModal from '../common/LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
@@ -18,7 +19,6 @@ import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/curre
 import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import logoutMutation from 'graphql/mutations/logout.graphql';
-import { BORDER_COLOR, gray8 } from 'common/mixins';
 
 import { useTranslation, LANGUAGES } from 'i18n';
 import SignUpModal from '../common/SignUpModal';
@@ -34,6 +34,7 @@ import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faKey } from '@fortawesome/free-solid-svg-icons';
+import { TTheme, LIGHT_THEME_NAME } from 'common/themes';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -129,6 +130,8 @@ const Layout = (props: LayoutProps) => {
     </Select>
   );
 
+  const theme = useTheme<TTheme>();
+
   return (
     <AntdLayout css={{ height: '100%', minHeight: '100vh' }}>
       <Global
@@ -152,8 +155,8 @@ const Layout = (props: LayoutProps) => {
         css={{
           display: 'flex',
           justifyContent: 'space-between',
-          background: 'white',
-          borderBottom: `1px solid ${BORDER_COLOR}`,
+          background: theme.header?.background,
+          borderBottom: `1px solid ${theme.border?.default}`,
           padding: '0 20px',
           fontSize: '0.8rem',
         }}
@@ -161,7 +164,11 @@ const Layout = (props: LayoutProps) => {
         <Link href="/" as="/">
           <div css={{ fontWeight: 500, cursor: 'pointer' }}>
             <img
-              src="https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg"
+              src={
+                theme.name === LIGHT_THEME_NAME
+                  ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg'
+                  : 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark.svg'
+              }
               css={{ width: 120 }}
             />
           </div>
@@ -217,7 +224,7 @@ const Layout = (props: LayoutProps) => {
                 type="link"
                 css={{
                   padding: 0,
-                  color: gray8,
+                  color: theme.text?.link?.default,
                   marginLeft: 16,
                 }}
               >

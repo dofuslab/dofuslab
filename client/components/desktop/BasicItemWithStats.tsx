@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
 import { Popover } from 'antd';
+import { useTheme } from 'emotion-theming';
 
 import {
   popoverTitleStyle,
@@ -16,6 +17,7 @@ import { faMagic, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'i18n';
 import ItemStatsList from '../common/ItemStatsList';
 import { item } from 'graphql/fragments/__generated__/item';
+import { TTheme } from 'common/themes';
 
 const wrapperStyles = {
   position: 'absolute' as 'absolute',
@@ -49,6 +51,7 @@ const BasicItemWithStats: React.FC<IProps> = ({
   overlayCSS,
 }) => {
   const { t } = useTranslation('common');
+  const theme = useTheme<TTheme>();
   return (
     <ClassNames>
       {({ css }) => {
@@ -80,7 +83,7 @@ const BasicItemWithStats: React.FC<IProps> = ({
           >
             <div
               css={{
-                ...itemImageBox,
+                ...itemImageBox(theme),
                 ...(selected && { ...selectedBox }),
                 ['&:hover']: {
                   [`.${wrapperClass}`]: {

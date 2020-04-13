@@ -4,8 +4,10 @@ import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
 import { Popover } from 'antd';
 import { useTranslation } from 'i18n';
+import { useTheme } from 'emotion-theming';
 
-import { BORDER_COLOR, popoverTitleStyle } from 'common/mixins';
+import { TTheme } from 'common/themes';
+import { popoverTitleStyle } from 'common/mixins';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getBonusesFromCustomSet } from 'common/utils';
 import { SetBonuses } from 'common/wrappers';
@@ -22,6 +24,8 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
     (acc, curr) => ({ ...acc, [curr.item.id]: curr.slot.order }),
     {},
   ) as { [key: string]: number };
+
+  const theme = useTheme<TTheme>();
 
   return (
     <div
@@ -66,9 +70,9 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
                   <div
                     css={{
                       display: 'flex',
-                      background: 'white',
+                      background: theme.layer?.background,
                       borderRadius: 4,
-                      border: `1px solid ${BORDER_COLOR}`,
+                      border: `1px solid ${theme.border?.default}`,
                       padding: '4px 8px',
                       ':not(:first-of-type)': {
                         marginTop: 12,

@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { jsx } from '@emotion/core';
 import { Tabs } from 'antd';
+import { useTheme } from 'emotion-theming';
 
 import { STAT_GROUPS, mq, SEARCH_BAR_ID } from 'common/constants';
 import Layout from './Layout';
@@ -15,13 +16,14 @@ import SetHeader from '../common/SetHeader';
 import EquipmentSlots from '../common/EquipmentSlots';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import StatEditor from '../common/StatEditor';
-import { topMarginStyle, BORDER_COLOR } from 'common/mixins';
+import { topMarginStyle } from 'common/mixins';
 import Selector from '../common/Selector';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
 import { useTranslation } from 'i18n';
 import { IError } from 'common/types';
+import { TTheme } from 'common/themes';
 
 const { TabPane } = Tabs;
 
@@ -70,6 +72,8 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
 
   const { t } = useTranslation('common');
 
+  const theme = useTheme<TTheme>();
+
   return (
     <Layout>
       <SetHeader customSet={customSet} errors={errors} />
@@ -104,7 +108,9 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
           <Tabs
             defaultActiveKey="characteristics"
             css={{
-              '.ant-tabs-bar': { borderBottom: `1px solid ${BORDER_COLOR}` },
+              '.ant-tabs-bar': {
+                borderBottom: `1px solid ${theme.border?.default}`,
+              },
             }}
           >
             <TabPane tab={t('CHARACTERISTICS')} key="characteristics">

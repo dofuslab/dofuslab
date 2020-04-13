@@ -13,9 +13,11 @@ import {
   faStar,
   faArrowLeft,
 } from '@fortawesome/free-solid-svg-icons';
+import { useTheme } from 'emotion-theming';
 
+import { TTheme } from 'common/themes';
 import { useTranslation } from 'i18n';
-import { itemCardStyle, blue6, BORDER_COLOR } from 'common/mixins';
+import { itemCardStyle, blue6 } from 'common/mixins';
 import { useDeleteItemMutation, checkAuthentication } from 'common/utils';
 import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
@@ -154,6 +156,8 @@ const EquippedItemCard: React.FC<IProps> = ({
     openMageModal(equippedItem);
   }, [openMageModal, equippedItem]);
 
+  const theme = useTheme<TTheme>();
+
   return (
     <div css={{ padding: '0 12px', marginTop: 12 }}>
       <Media lessThan="xs">
@@ -190,7 +194,7 @@ const EquippedItemCard: React.FC<IProps> = ({
           ['.ant-card-body']: {
             flex: '1',
           },
-          border: `1px solid ${BORDER_COLOR}`,
+          border: `1px solid ${theme.border?.default}`,
           borderRadius: 4,
           minWidth: 256,
           overflow: 'hidden',
