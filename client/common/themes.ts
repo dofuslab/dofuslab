@@ -2,13 +2,14 @@ import {
   gray5,
   gray8,
   gray9,
-  gray10,
   gray7,
   gray3,
   gray2,
   gray6,
   gray11,
   gray4,
+  gray12,
+  gray10,
 } from './mixins';
 
 export const DARK_THEME_NAME = 'DARK';
@@ -16,6 +17,9 @@ export const LIGHT_THEME_NAME = 'LIGHT';
 
 export type TTheme = {
   name: string;
+  body?: {
+    background: string;
+  };
   header?: {
     background?: string;
   };
@@ -57,6 +61,9 @@ export type TTheme = {
   backTop?: {
     background?: string;
     hoverBackground?: string;
+  };
+  card?: {
+    background?: string;
   };
 };
 
@@ -106,15 +113,21 @@ const darkColors = {
 
 export const darkTheme: TTheme = {
   name: DARK_THEME_NAME,
+  body: {
+    background: gray12,
+  },
   text: {
     default: darkColors.defaultText,
   },
   border: {
-    default: gray9,
-    selected: gray8,
+    default: gray10,
+    selected: gray9,
   },
   layer: {
-    background: gray10,
+    background: gray11,
+  },
+  header: {
+    background: gray11,
   },
   statEditor: {
     categoryBackground: gray9,
@@ -140,5 +153,8 @@ export const darkTheme: TTheme = {
   backTop: {
     background: 'rgba(255, 255, 255, 0.2)',
     hoverBackground: 'rgba(255, 255, 255, 0.3)',
+  },
+  card: {
+    background: gray11,
   },
 };

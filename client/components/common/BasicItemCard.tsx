@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { Card } from 'antd';
 import { CardTitleWithLevel } from 'common/wrappers';
 import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { useTranslation } from 'i18n';
@@ -15,6 +14,7 @@ import {
 import ItemStatsList from './ItemStatsList';
 import { WeaponElementMage } from '__generated__/globalTypes';
 import { TTheme } from 'common/themes';
+import Card from 'components/common/Card';
 
 interface IProps {
   item: item;

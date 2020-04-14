@@ -10,7 +10,6 @@ import {
   blue6,
   gray6,
 } from './mixins';
-import { Card } from 'antd';
 import { Skeleton } from 'antd';
 import { set_bonuses } from 'graphql/fragments/__generated__/set';
 import { TFunction } from 'next-i18next';
@@ -29,6 +28,7 @@ import {
 } from './utils';
 import { item_weaponStats } from 'graphql/fragments/__generated__/item';
 import { TTheme } from './themes';
+import Card from 'components/common/Card';
 
 interface IResponsiveGrid {
   readonly numColumns: ReadonlyArray<number>;

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { Card } from 'antd';
 import { useTheme } from 'emotion-theming';
 
 import { TTheme } from 'common/themes';
@@ -14,6 +13,7 @@ import { useEquipSetMutation, useCustomSet } from 'common/utils';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { mq } from 'common/constants';
 import Router from 'next/router';
+import Card from 'components/common/Card';
 
 interface IProps {
   set: sets_sets_edges_node;
