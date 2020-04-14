@@ -17,7 +17,7 @@ import { faMagic, faTimes } from '@fortawesome/free-solid-svg-icons';
 import ItemStatsList from '../common/ItemStatsList';
 import { item } from 'graphql/fragments/__generated__/item';
 import { TTheme } from 'common/themes';
-import { CardTitleWithLevel } from 'common/wrappers';
+import { CardTitleWithLevel, BrokenImagePlaceholder } from 'common/wrappers';
 
 const wrapperStyles = {
   position: 'absolute' as 'absolute',
@@ -51,6 +51,8 @@ const BasicItemWithStats: React.FC<IProps> = ({
   overlayCSS,
 }) => {
   const theme = useTheme<TTheme>();
+  const [brokenImage, setBrokenImage] = React.useState(false);
+
   return (
     <ClassNames>
       {({ css }) => {
@@ -83,7 +85,19 @@ const BasicItemWithStats: React.FC<IProps> = ({
                 },
               }}
             >
-              <img src={item.imageUrl} css={itemImageDimensions} />
+              {brokenImage ? (
+                <BrokenImagePlaceholder
+                  css={{ ...itemImageDimensions, fontSize: '1.2rem' }}
+                />
+              ) : (
+                <img
+                  src={item.imageUrl}
+                  css={itemImageDimensions}
+                  onError={() => {
+                    setBrokenImage(true);
+                  }}
+                />
+              )}
               {(exos?.length ?? 0) > 0 && (
                 <FontAwesomeIcon
                   icon={faMagic}

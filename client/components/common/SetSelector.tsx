@@ -14,7 +14,7 @@ import SetCard from './SetCard';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { mq } from 'common/constants';
 
-const PAGE_SIZE = 24;
+const PAGE_SIZE = 12;
 
 const BOTTOM_OFFSET = -1200;
 
@@ -99,7 +99,7 @@ const SetSelector: React.FC<IProps> = ({
             />
           ))}
       {(loading || data?.sets.pageInfo.hasNextPage) &&
-        Array(isMobile ? 2 : 24)
+        Array(isMobile ? 2 : PAGE_SIZE)
           .fill(null)
           .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)}
       <Waypoint

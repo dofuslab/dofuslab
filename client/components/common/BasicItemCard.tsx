@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { CardTitleWithLevel } from 'common/wrappers';
+import { CardTitleWithLevel, BrokenImagePlaceholder } from 'common/wrappers';
 import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { useTranslation } from 'i18n';
 import { useTheme } from 'emotion-theming';
@@ -35,6 +35,7 @@ const BasicItemCard: React.FC<IProps> = ({
 }) => {
   const { t } = useTranslation(['common', 'stat', 'weapon_spell_effect']);
   const theme = useTheme<TTheme>();
+  const [brokenImage, setBrokenImage] = React.useState(false);
   return (
     <Card
       hoverable={!!onClick}
@@ -63,14 +64,28 @@ const BasicItemCard: React.FC<IProps> = ({
           textAlign: 'right',
         }}
       >
-        <img
-          src={item.imageUrl}
-          css={{
-            ...itemBoxDimensions,
-            marginBottom: 12,
-            maxWidth: ITEM_BOX_WIDTH,
-          }}
-        />
+        {brokenImage ? (
+          <BrokenImagePlaceholder
+            css={{
+              ...itemBoxDimensions,
+              marginBottom: 12,
+              maxWidth: ITEM_BOX_WIDTH,
+              fontSize: '1.2rem',
+            }}
+          />
+        ) : (
+          <img
+            src={item.imageUrl}
+            css={{
+              ...itemBoxDimensions,
+              marginBottom: 12,
+              maxWidth: ITEM_BOX_WIDTH,
+            }}
+            onError={() => {
+              setBrokenImage(true);
+            }}
+          />
+        )}
       </div>
       <ItemStatsList
         item={item}

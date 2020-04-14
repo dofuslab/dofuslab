@@ -17,7 +17,7 @@ import { useTranslation } from 'i18n';
 import { itemCardStyle, selected, gray6 } from 'common/mixins';
 import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
 import Link from 'next/link';
-import { CardTitleWithLevel } from 'common/wrappers';
+import { CardTitleWithLevel, BrokenImagePlaceholder } from 'common/wrappers';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -169,6 +169,8 @@ const MyBuilds: React.FC = () => {
 
   const theme = useTheme<TTheme>();
 
+  const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
+
   return (
     <div css={{ marginBottom: 20, [mq[1]]: { marginTop: 36 } }}>
       <div css={{ display: 'flex' }}>
@@ -223,13 +225,22 @@ const MyBuilds: React.FC = () => {
             {node.equippedItems.length > 0 ? (
               node.equippedItems
                 .sort(({ slot: { order: i } }, { slot: { order: j } }) => i - j)
-                .map(({ id, item }) => (
-                  <img
-                    key={`equipped-item-${id}`}
-                    src={item.imageUrl}
-                    css={{ width: 40 }}
-                  />
-                ))
+                .map(({ id, item }) =>
+                  brokenImages.includes(id) ? (
+                    <BrokenImagePlaceholder
+                      css={{ width: 40, height: 40, display: 'inline-flex' }}
+                    />
+                  ) : (
+                    <img
+                      key={`equipped-item-${id}`}
+                      src={item.imageUrl}
+                      css={{ width: 40 }}
+                      onError={() => {
+                        setBrokenImages(prev => [...prev, id]);
+                      }}
+                    />
+                  ),
+                )
             ) : (
               <div css={{ fontStyle: 'italic', color: gray6 }}>
                 {t('NO_ITEMS_EQUIPPED')}

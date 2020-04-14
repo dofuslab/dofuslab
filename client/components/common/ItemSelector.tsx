@@ -168,7 +168,7 @@ const ItemSelector: React.FC<IProps> = ({
             );
           })}
       {(loading || data?.items.pageInfo.hasNextPage) &&
-        Array(isMobile ? 2 : 24)
+        Array(isMobile ? 2 : 12)
           .fill(null)
           .map((_, idx) => (
             <Card

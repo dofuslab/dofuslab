@@ -712,10 +712,10 @@ class ResendVerificationEmail(graphene.Mutation):
     ok = graphene.Boolean(required=True)
 
     @limiter.limit(
-        "1/minute", error_message=_("Please wait a minute before trying again.")
+        "2/minute", error_message=_("Please wait a minute before trying again.")
     )
     @limiter.limit(
-        "5/hour",
+        "10/hour",
         error_message=_(
             "You have sent too many verification emails. Please wait awhile before trying again."
         ),
@@ -791,10 +791,10 @@ class RequestPasswordReset(graphene.Mutation):
     ok = graphene.Boolean(required=True)
 
     @limiter.limit(
-        "1/minute", error_message=_("Please wait a minute before trying again.")
+        "2/minute", error_message=_("Please wait a minute before trying again.")
     )
     @limiter.limit(
-        "5/hour",
+        "10/hour",
         error_message=_(
             "You have sent too many password request emails. Please wait awhile before trying again."
         ),

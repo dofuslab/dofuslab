@@ -25,6 +25,7 @@ export type TTheme = {
   };
   text?: {
     default?: string;
+    light?: string;
     link?: {
       default?: string;
     };
@@ -35,7 +36,7 @@ export type TTheme = {
   };
   layer?: {
     background?: string;
-    selectedBackground?: string;
+    backgroundLight?: string;
   };
   statEditor?: {
     categoryBackground?: string;
@@ -73,6 +74,7 @@ export const lightTheme: TTheme = {
     link: {
       default: gray8,
     },
+    light: gray6,
   },
   border: {
     default: gray5,
@@ -118,6 +120,7 @@ export const darkTheme: TTheme = {
   },
   text: {
     default: darkColors.defaultText,
+    light: gray8,
   },
   border: {
     default: gray10,
@@ -125,6 +128,7 @@ export const darkTheme: TTheme = {
   },
   layer: {
     background: gray11,
+    backgroundLight: gray10,
   },
   header: {
     background: gray11,
