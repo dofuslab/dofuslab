@@ -3,9 +3,9 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
-import { Waypoint } from 'react-waypoint';
+import InfiniteScroll from 'react-infinite-scroller';
 
-import { ResponsiveGrid, CardSkeleton } from 'common/wrappers';
+import { CardSkeleton } from 'common/wrappers';
 import SetQuery from 'graphql/queries/sets.graphql';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { SharedFilters } from 'common/types';
@@ -13,10 +13,11 @@ import { sets, setsVariables } from 'graphql/queries/__generated__/sets';
 import SetCard from './SetCard';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { mq } from 'common/constants';
+import { getResponsiveGridStyle } from 'common/mixins';
 
 const PAGE_SIZE = 12;
 
-const BOTTOM_OFFSET = -600;
+const THRESHOLD = 600;
 
 interface IProps {
   customSet?: customSet | null;
@@ -37,25 +38,20 @@ const SetSelector: React.FC<IProps> = ({
     variables: { first: PAGE_SIZE, filters },
   });
 
-  const endCursorRef = React.useRef<string | null>(null);
-
   const onLoadMore = React.useCallback(async () => {
-    if (
-      !data ||
-      !data.sets.pageInfo.hasNextPage ||
-      endCursorRef.current === data.sets.pageInfo.endCursor
-    ) {
+    if (!data || !data.sets.pageInfo.hasNextPage) {
       return () => {};
     }
-
-    endCursorRef.current = data.sets.pageInfo.endCursor;
 
     try {
       const fetchMoreResult = await fetchMore({
         variables: { after: data.sets.pageInfo.endCursor },
         updateQuery: (prevData, { fetchMoreResult }) => {
-          if (!fetchMoreResult || !prevData) {
-            endCursorRef.current = null;
+          if (
+            !fetchMoreResult ||
+            fetchMoreResult.sets.pageInfo.endCursor ===
+              prevData.sets.pageInfo.endCursor
+          ) {
             return prevData;
           }
           return {
@@ -72,49 +68,43 @@ const SetSelector: React.FC<IProps> = ({
     } catch (e) {}
   }, [data]);
 
-  const responsiveGridRef = React.useRef<HTMLDivElement | null>(null);
-
-  React.useEffect(() => {
-    if (!data) {
-      endCursorRef.current = null;
-    }
-  }, [data]);
-
   return (
-    <ResponsiveGrid
-      numColumns={[2, 2, 2, 3, 4, 5, 6]}
+    <InfiniteScroll
+      hasMore={data?.sets.pageInfo.hasNextPage}
+      loader={
+        <React.Fragment key={'frag'}>
+          {Array(isMobile ? 2 : loading ? 24 : 12)
+            .fill(null)
+            .map((_, idx) => (
+              <CardSkeleton key={`card-skeleton-${idx}`} />
+            ))}
+        </React.Fragment>
+      }
+      loadMore={onLoadMore}
       css={{
+        ...getResponsiveGridStyle([2, 2, 2, 3, 4, 5, 6]),
         marginTop: 12,
         marginBottom: 20,
         position: 'relative',
         gridGap: 20,
+        minWidth: 0,
         [mq[1]]: { gridGap: 12 },
       }}
-      ref={responsiveGridRef}
+      useWindow={false}
+      threshold={THRESHOLD}
     >
-      {data &&
-        !loading &&
-        data.sets.edges
-          .map(edge => edge.node)
-          .map(set => (
-            <SetCard
-              key={set.id}
-              set={set}
-              customSetId={customSet?.id ?? null}
-              selectItemSlot={selectItemSlot}
-              isMobile={isMobile}
-            />
-          ))}
-      {(loading || data?.sets.pageInfo.hasNextPage) &&
-        Array(isMobile ? 2 : loading ? 24 : PAGE_SIZE)
-          .fill(null)
-          .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)}
-      <Waypoint
-        key={data?.sets.pageInfo.endCursor || 'null'}
-        onEnter={onLoadMore}
-        bottomOffset={BOTTOM_OFFSET}
-      />
-    </ResponsiveGrid>
+      {(data?.sets.edges ?? [])
+        .map(edge => edge.node)
+        .map(set => (
+          <SetCard
+            key={set.id}
+            set={set}
+            customSetId={customSet?.id ?? null}
+            selectItemSlot={selectItemSlot}
+            isMobile={isMobile}
+          />
+        ))}
+    </InfiniteScroll>
   );
 };
 

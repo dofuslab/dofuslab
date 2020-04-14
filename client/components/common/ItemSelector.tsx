@@ -3,17 +3,13 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
-import { Waypoint } from 'react-waypoint';
-import { Skeleton } from 'antd';
-import { useTheme } from 'emotion-theming';
+import InfiniteScroll from 'react-infinite-scroller';
 
-import { TTheme } from 'common/themes';
 import ItemCard from './ItemCard';
-import { ResponsiveGrid } from 'common/wrappers';
 import ItemsQuery from 'graphql/queries/items.graphql';
 import { items, itemsVariables } from 'graphql/queries/__generated__/items';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { itemCardStyle } from 'common/mixins';
+import { getResponsiveGridStyle } from 'common/mixins';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { SharedFilters } from 'common/types';
 import { findEmptyOrOnlySlotId, findNextEmptySlotId } from 'common/utils';
@@ -21,11 +17,11 @@ import ConfirmReplaceItemPopover from '../desktop/ConfirmReplaceItemPopover';
 import { item_set } from 'graphql/fragments/__generated__/item';
 import SetModal from './SetModal';
 import { mq } from 'common/constants';
-import Card from 'components/common/Card';
+import { CardSkeleton } from 'common/wrappers';
 
 const PAGE_SIZE = 24;
 
-const BOTTOM_OFFSET = -600;
+const THRESHOLD = 600;
 
 interface IProps {
   selectedItemSlot: itemSlots_itemSlots | null;
@@ -63,24 +59,19 @@ const ItemSelector: React.FC<IProps> = ({
     },
   );
 
-  const endCursorRef = React.useRef<string | null>(null);
-
   const onLoadMore = React.useCallback(async () => {
-    if (
-      !data ||
-      !data.items.pageInfo.hasNextPage ||
-      endCursorRef.current === data.items.pageInfo.endCursor
-    ) {
+    if (!data || !data.items.pageInfo.hasNextPage) {
       return () => {};
     }
 
-    endCursorRef.current = data.items.pageInfo.endCursor;
     const fetchMoreResult = await fetchMore({
       variables: { after: data.items.pageInfo.endCursor },
       updateQuery: (prevData, { fetchMoreResult }) => {
-        if (!fetchMoreResult || !prevData) {
-          // allow the user to try again
-          endCursorRef.current = null;
+        if (
+          !fetchMoreResult ||
+          fetchMoreResult.items.pageInfo.endCursor ===
+            prevData.items.pageInfo.endCursor
+        ) {
           return prevData;
         }
         return {
@@ -95,8 +86,6 @@ const ItemSelector: React.FC<IProps> = ({
     });
     return fetchMoreResult;
   }, [data, loading]);
-
-  const responsiveGridRef = React.useRef<HTMLDivElement | null>(null);
 
   const [setModalVisible, setSetModalVisible] = React.useState(false);
   const [selectedSet, setSelectedSet] = React.useState<item_set | null>(null);
@@ -113,18 +102,21 @@ const ItemSelector: React.FC<IProps> = ({
     setSetModalVisible(false);
   }, [setSetModalVisible]);
 
-  const theme = useTheme<TTheme>();
-
-  React.useEffect(() => {
-    if (!data) {
-      endCursorRef.current = null;
-    }
-  }, [data]);
-
   return (
-    <ResponsiveGrid
-      numColumns={[2, 2, 2, 3, 4, 5, 6]}
+    <InfiniteScroll
+      hasMore={data?.items.pageInfo.hasNextPage}
+      loader={
+        <React.Fragment key={'frag'}>
+          {Array(isMobile ? 2 : 12)
+            .fill(null)
+            .map((_, idx) => (
+              <CardSkeleton key={`card-skeleton-${idx}`} />
+            ))}
+        </React.Fragment>
+      }
+      loadMore={onLoadMore}
       css={{
+        ...getResponsiveGridStyle([2, 2, 2, 3, 4, 5, 6]),
         marginTop: 12,
         marginBottom: 20,
         position: 'relative',
@@ -132,69 +124,50 @@ const ItemSelector: React.FC<IProps> = ({
         minWidth: 0,
         [mq[1]]: { gridGap: 12 },
       }}
-      ref={responsiveGridRef}
+      useWindow={false}
+      threshold={THRESHOLD}
     >
-      {data &&
-        !loading &&
-        data.items.edges
-          .map(edge => edge.node)
-          .map(item => {
-            const itemSlotId =
-              selectedItemSlot?.id ||
-              findEmptyOrOnlySlotId(item.itemType, customSet);
-            const nextSlotId = selectedItemSlot
-              ? findNextEmptySlotId(
-                  item.itemType,
-                  selectedItemSlot.id,
-                  customSet,
-                )
-              : null;
-            const card = (
-              <ItemCard
-                key={`item-card-${item.id}`}
-                item={item}
-                itemSlotId={itemSlotId}
-                equipped={customSetItemIds.has(item.id)}
-                customSetId={customSet?.id ?? null}
-                selectItemSlot={selectItemSlot}
-                openSetModal={openSetModal}
-                isMobile={isMobile}
-                nextSlotId={nextSlotId}
-              />
-            );
-            return itemSlotId || !customSet ? (
-              card
-            ) : (
-              <ConfirmReplaceItemPopover
-                key={`confirm-replace-item-popover-${item.id}`}
-                item={item}
-                customSet={customSet}
-                responsiveGridRef={responsiveGridRef}
-              >
-                {card}
-              </ConfirmReplaceItemPopover>
-            );
-          })}
-      {(loading || data?.items.pageInfo.hasNextPage) &&
-        Array(isMobile ? 2 : loading ? 24 : 12)
-          .fill(null)
-          .map((_, idx) => (
-            <Card
-              key={`card-${idx}`}
-              size="small"
-              css={{
-                ...itemCardStyle,
-                border: `1px solid ${theme.border?.default}`,
-              }}
+      {(data?.items.edges ?? [])
+        .map(edge => edge.node)
+        .map(item => {
+          const itemSlotId =
+            selectedItemSlot?.id ||
+            findEmptyOrOnlySlotId(item.itemType, customSet);
+          const nextSlotId = selectedItemSlot
+            ? findNextEmptySlotId(item.itemType, selectedItemSlot.id, customSet)
+            : null;
+          const card = (
+            <ItemCard
+              key={`item-card-${item.id}`}
+              item={item}
+              itemSlotId={itemSlotId}
+              equipped={customSetItemIds.has(item.id)}
+              customSetId={customSet?.id ?? null}
+              selectItemSlot={selectItemSlot}
+              openSetModal={openSetModal}
+              isMobile={isMobile}
+              nextSlotId={nextSlotId}
+            />
+          );
+          return itemSlotId || !customSet ? (
+            card
+          ) : (
+            <ConfirmReplaceItemPopover
+              key={`confirm-replace-item-popover-${item.id}`}
+              item={item}
+              customSet={customSet}
             >
-              <Skeleton loading title active paragraph={{ rows: 6 }}></Skeleton>
-            </Card>
-          ))}
-      <Waypoint
-        key={data?.items.pageInfo.endCursor || 'null'}
-        onEnter={onLoadMore}
-        bottomOffset={BOTTOM_OFFSET}
-      />
+              {card}
+            </ConfirmReplaceItemPopover>
+          );
+        })}
+
+      {loading &&
+        !data &&
+        Array(isMobile ? 2 : 24)
+          .fill(null)
+          .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)}
+
       {selectedSet && (
         <SetModal
           setId={selectedSet.id}
@@ -205,7 +178,7 @@ const ItemSelector: React.FC<IProps> = ({
           isMobile={isMobile}
         />
       )}
-    </ResponsiveGrid>
+    </InfiniteScroll>
   );
 };
 

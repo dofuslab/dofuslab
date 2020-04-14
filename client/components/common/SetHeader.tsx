@@ -282,9 +282,17 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
                 <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
                 <div>{customSet.owner?.username ?? t('ANONYMOUS')}</div>
                 <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-                <div>{moment(customSet.creationDate).format('lll')}</div>
+                <div>
+                  {moment(customSet.creationDate)
+                    .local()
+                    .format('lll')}
+                </div>
                 <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-                <div>{moment(customSet.lastModified).format('lll')}</div>
+                <div>
+                  {moment(customSet.lastModified)
+                    .local()
+                    .format('lll')}
+                </div>
               </div>
             }
             placement="bottomLeft"
@@ -311,13 +319,17 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
             <div css={{ display: 'flex' }}>
               <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
               <div css={{ marginLeft: 8 }}>
-                {moment(customSet.creationDate).format('lll')}
+                {moment(customSet.creationDate)
+                  .local()
+                  .format('lll')}
               </div>
             </div>
             <div css={{ display: 'flex' }}>
               <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
               <div css={{ marginLeft: 8 }}>
-                {moment(customSet.lastModified).format('lll')}
+                {moment(customSet.lastModified)
+                  .local()
+                  .format('lll')}
               </div>
             </div>
           </div>
