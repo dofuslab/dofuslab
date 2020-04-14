@@ -20,6 +20,11 @@ module.exports = withBundleAnalyzer(
         GA_TRACKING_ID: process.env.GA_TRACKING_ID,
       },
       lessLoaderOptions: {
+        modifyVars: {
+          hack: `true; @import "${require.resolve(
+            './styles/dark-mode.less',
+          )}";`,
+        },
         javascriptEnabled: true,
       },
       webpack: (config, { isServer }) => {
