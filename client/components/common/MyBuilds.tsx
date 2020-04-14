@@ -213,9 +213,9 @@ const MyBuilds: React.FC = () => {
               marginTop: 20,
               ':hover': {
                 border: `1px solid ${theme.border?.default}`,
-                ...(node.id === customSetId && selected),
+                ...(node.id === customSetId && selected(theme)),
               },
-              ...(node.id === customSetId && selected),
+              ...(node.id === customSetId && selected(theme)),
               transition: 'all 0.3s ease-in-out',
             }}
           >

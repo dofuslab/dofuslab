@@ -5,15 +5,15 @@ import { ApolloClient, NormalizedCacheObject } from 'apollo-boost';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { MediaContextProvider } from 'components/common/Media';
 import Router from 'next/router';
-// import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic';
 import { ThemeProvider } from 'emotion-theming';
 
 import { appWithTranslation } from '../i18n';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import * as gtag from '../gtag';
-import { lightTheme } from 'common/themes';
+import { darkTheme } from 'common/themes';
 
-// import '../styles/dark-mode.less';
+dynamic(() => import('../styles/dark-mode.less'));
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 config.autoAddCss = false;
@@ -22,7 +22,7 @@ class DofusLabApp extends App<{
   apolloClient: ApolloClient<NormalizedCacheObject>;
 }> {
   state = {
-    theme: lightTheme,
+    theme: darkTheme,
   };
 
   // dynamic seems to load the CSS unconditionally

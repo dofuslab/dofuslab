@@ -65,7 +65,10 @@ const EquippedItem: React.FC<IProps> = ({
           />
         ) : (
           <div
-            css={{ ...itemImageBox(theme), ...(selected ? selectedBox : {}) }}
+            css={{
+              ...itemImageBox(theme),
+              ...(selected ? selectedBox(theme) : {}),
+            }}
           >
             {slot.name}
           </div>

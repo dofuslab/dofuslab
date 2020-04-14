@@ -122,11 +122,11 @@ export const itemBox = (theme: TTheme) => ({
   },
 });
 
-export const selected = {
+export const selected = (theme: TTheme) => ({
   border: '1px solid transparent' /* remove the border's colour */,
-  boxShadow: `0 0 0 2px ${gray6}` /* emulate the border */,
-  background: gray2,
-};
+  boxShadow: `0 0 0 2px ${theme.border?.selected}` /* emulate the border */,
+  background: theme.layer?.background,
+});
 
 export const itemCardStyle = {
   fontSize: '0.75rem',

@@ -84,7 +84,7 @@ const BasicItemWithStats: React.FC<IProps> = ({
             <div
               css={{
                 ...itemImageBox(theme),
-                ...(selected && { ...selectedBox }),
+                ...(selected && { ...selectedBox(theme) }),
                 ['&:hover']: {
                   [`.${wrapperClass}`]: {
                     opacity: 0.3,

@@ -27,9 +27,11 @@ export type TTheme = {
   };
   border?: {
     default?: string;
+    selected?: string;
   };
   layer?: {
     background?: string;
+    selectedBackground?: string;
   };
   statEditor?: {
     categoryBackground?: string;
@@ -60,6 +62,7 @@ export const lightTheme: TTheme = {
   },
   border: {
     default: gray5,
+    selected: gray6,
   },
   layer: {
     background: 'white',
@@ -98,9 +101,11 @@ export const darkTheme: TTheme = {
   },
   border: {
     default: gray9,
+    selected: gray8,
   },
   layer: {
     background: gray10,
+    selectedBackground: gray9,
   },
   statEditor: {
     categoryBackground: gray9,
