@@ -54,6 +54,10 @@ export type TTheme = {
   switch?: {
     background?: string;
   };
+  backTop?: {
+    background?: string;
+    hoverBackground?: string;
+  };
 };
 
 export const lightTheme: TTheme = {
@@ -132,5 +136,9 @@ export const darkTheme: TTheme = {
   },
   switch: {
     background: 'rgba(255, 255, 255, 0.3)',
+  },
+  backTop: {
+    background: 'rgba(255, 255, 255, 0.2)',
+    hoverBackground: 'rgba(255, 255, 255, 0.3)',
   },
 };
