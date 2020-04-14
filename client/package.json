@@ -49,7 +49,7 @@
     "null-loader": "^3.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-waypoint": "^9.0.2",
+    "react-infinite-scroller": "^1.2.4",
     "webpack": "^4.42.0"
   },
   "devDependencies": {
@@ -61,6 +61,7 @@
     "@types/lodash": "^4.14.149",
     "@types/node": "^12.11.7",
     "@types/react": "^16.9.11",
+    "@types/react-infinite-scroller": "^1.2.1",
     "@typescript-eslint/eslint-plugin": "^2.5.0",
     "@typescript-eslint/parser": "^2.5.0",
     "@zeit/next-less": "^1.0.1",

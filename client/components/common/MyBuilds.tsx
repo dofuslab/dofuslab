@@ -5,6 +5,7 @@ import { jsx } from '@emotion/core';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
 import { LoadingOutlined } from '@ant-design/icons';
 import { useTheme } from 'emotion-theming';
+import InfiniteScroll from 'react-infinite-scroller';
 
 import { TTheme } from 'common/themes';
 import {
@@ -12,23 +13,26 @@ import {
   myCustomSetsVariables,
 } from 'graphql/queries/__generated__/myCustomSets';
 import myCustomSetsQuery from 'graphql/queries/myCustomSets.graphql';
-import { Button, Input, Skeleton } from 'antd';
+import { Button, Input } from 'antd';
 import { useTranslation } from 'i18n';
-import { itemCardStyle, selected, gray6 } from 'common/mixins';
+import { itemCardStyle, selected } from 'common/mixins';
 import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
 import Link from 'next/link';
-import { CardTitleWithLevel, BrokenImagePlaceholder } from 'common/wrappers';
+import {
+  CardTitleWithLevel,
+  BrokenImagePlaceholder,
+  CardSkeleton,
+} from 'common/wrappers';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { createCustomSet } from 'graphql/mutations/__generated__/createCustomSet';
 import createCustomSetMutation from 'graphql/mutations/createCustomSet.graphql';
-import { Waypoint } from 'react-waypoint';
 import { useDebounceCallback } from '@react-hook/debounce';
 import Card from 'components/common/Card';
 
 const PAGE_SIZE = 10;
-const BOTTOM_OFFSET = -1200;
+const THRESHOLD = 600;
 
 const MyBuilds: React.FC = () => {
   const [search, setSearch] = React.useState('');
@@ -53,12 +57,10 @@ const MyBuilds: React.FC = () => {
     [debouncedSearch, setSearch],
   );
 
-  const {
-    data: myBuilds,
-    loading: queryLoading,
-    networkStatus,
-    fetchMore,
-  } = useQuery<myCustomSets, myCustomSetsVariables>(myCustomSetsQuery, {
+  const { data: myBuilds, loading: queryLoading, fetchMore } = useQuery<
+    myCustomSets,
+    myCustomSetsVariables
+  >(myCustomSetsQuery, {
     variables: { first: PAGE_SIZE, search },
   });
 
@@ -125,18 +127,12 @@ const MyBuilds: React.FC = () => {
 
   const { t } = useTranslation('common');
 
-  const endCursorRef = React.useRef<string | null>(null);
-
   const onLoadMore = React.useCallback(async () => {
-    if (
-      !myBuilds?.currentUser?.customSets.pageInfo.hasNextPage ||
-      endCursorRef.current ===
-        myBuilds.currentUser.customSets.pageInfo.endCursor
-    ) {
+    console.log(myBuilds);
+    if (!myBuilds?.currentUser?.customSets.pageInfo.hasNextPage) {
       return () => {};
     }
 
-    endCursorRef.current = myBuilds.currentUser.customSets.pageInfo.endCursor;
     const fetchMoreResult = await fetchMore({
       variables: {
         after: myBuilds.currentUser.customSets.pageInfo.endCursor,
@@ -172,7 +168,26 @@ const MyBuilds: React.FC = () => {
   const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
 
   return (
-    <div css={{ marginBottom: 20, [mq[1]]: { marginTop: 36 } }}>
+    <InfiniteScroll
+      hasMore={myBuilds?.currentUser?.customSets.pageInfo.hasNextPage}
+      loadMore={onLoadMore}
+      useWindow={false}
+      threshold={THRESHOLD}
+      css={{ marginBottom: 20, [mq[1]]: { marginTop: 36 } }}
+      loader={
+        <React.Fragment key={'frag'}>
+          {Array(4)
+            .fill(null)
+            .map((_, idx) => (
+              <CardSkeleton
+                key={`card-skeleton-${idx}`}
+                numRows={2}
+                css={{ marginTop: 20 }}
+              />
+            ))}
+        </React.Fragment>
+      }
+    >
       <div css={{ display: 'flex' }}>
         <Button
           type="primary"
@@ -201,83 +216,85 @@ const MyBuilds: React.FC = () => {
           as={`/build/${node.id}`}
           key={node.id}
         >
-          <Card
-            hoverable
-            title={
-              <CardTitleWithLevel
-                title={node.name || t('UNTITLED')}
-                level={node.level}
-              />
-            }
-            size="small"
-            css={{
-              ...itemCardStyle,
-              border: `1px solid ${theme.border?.default}`,
-              marginTop: 20,
-              ':hover': {
-                border: `1px solid ${theme.border?.default}`,
-                ...(node.id === customSetId && selected(theme)),
-              },
-              ...(node.id === customSetId && selected(theme)),
-              transition: 'all 0.3s ease-in-out',
-            }}
-          >
-            {node.equippedItems.length > 0 ? (
-              node.equippedItems
-                .sort(({ slot: { order: i } }, { slot: { order: j } }) => i - j)
-                .map(({ id, item }) =>
-                  brokenImages.includes(id) ? (
-                    <BrokenImagePlaceholder
-                      css={{ width: 40, height: 40, display: 'inline-flex' }}
-                    />
-                  ) : (
-                    <img
-                      key={`equipped-item-${id}`}
-                      src={item.imageUrl}
-                      css={{ width: 40 }}
-                      onError={() => {
-                        setBrokenImages(prev => [...prev, id]);
-                      }}
-                    />
-                  ),
-                )
-            ) : (
-              <div css={{ fontStyle: 'italic', color: gray6 }}>
-                {t('NO_ITEMS_EQUIPPED')}
-              </div>
-            )}
-          </Card>
-        </Link>
-      ))}
-      {!queryLoading &&
-        myBuilds?.currentUser?.customSets.edges.length === 0 && (
-          <div css={{ color: gray6, marginTop: 20, fontStyle: 'italic' }}>
-            {t('NO_BUILDS_MATCHED', { search })}
-          </div>
-        )}
-      {(queryLoading ||
-        myBuilds?.currentUser?.customSets.pageInfo.hasNextPage) &&
-        Array(PAGE_SIZE)
-          .fill(null)
-          .map((_, idx) => (
+          <div>
             <Card
-              key={`card-${idx}`}
+              hoverable
+              title={
+                <CardTitleWithLevel
+                  title={node.name || t('UNTITLED')}
+                  level={node.level}
+                />
+              }
               size="small"
               css={{
                 ...itemCardStyle,
-                marginTop: 20,
                 border: `1px solid ${theme.border?.default}`,
+                marginTop: 20,
+                ':hover': {
+                  border: `1px solid ${theme.border?.default}`,
+                  ...(node.id === customSetId && selected(theme)),
+                },
+                ...(node.id === customSetId && selected(theme)),
+                transition: 'all 0.3s ease-in-out',
               }}
             >
-              <Skeleton loading title active paragraph={{ rows: 2 }}></Skeleton>
+              {node.equippedItems.length > 0 ? (
+                node.equippedItems
+                  .sort(
+                    ({ slot: { order: i } }, { slot: { order: j } }) => i - j,
+                  )
+                  .map(({ id, item }) =>
+                    brokenImages.includes(id) ? (
+                      <BrokenImagePlaceholder
+                        key={`broken-image-${id}`}
+                        css={{
+                          width: 40,
+                          height: 40,
+                          display: 'inline-flex',
+                        }}
+                      />
+                    ) : (
+                      <img
+                        key={`equipped-item-${id}`}
+                        src={item.imageUrl}
+                        css={{ width: 40 }}
+                        onError={() => {
+                          setBrokenImages(prev => [...prev, id]);
+                        }}
+                      />
+                    ),
+                  )
+              ) : (
+                <div css={{ fontStyle: 'italic', color: theme.text?.light }}>
+                  {t('NO_ITEMS_EQUIPPED')}
+                </div>
+              )}
             </Card>
+          </div>
+        </Link>
+      ))}
+      {!queryLoading && myBuilds?.currentUser?.customSets.edges.length === 0 && (
+        <div
+          css={{
+            color: theme.text?.light,
+            marginTop: 20,
+            fontStyle: 'italic',
+          }}
+        >
+          {t('NO_BUILDS_MATCHED', { search })}
+        </div>
+      )}
+      {queryLoading &&
+        Array(10)
+          .fill(null)
+          .map((_, idx) => (
+            <CardSkeleton
+              key={`card-${idx}`}
+              css={{ marginTop: 20 }}
+              numRows={2}
+            />
           ))}
-      <Waypoint
-        key={networkStatus}
-        onEnter={onLoadMore}
-        bottomOffset={BOTTOM_OFFSET}
-      />
-    </div>
+    </InfiniteScroll>
   );
 };
 

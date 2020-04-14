@@ -15,14 +15,12 @@ import { mq } from 'common/constants';
 interface IProps {
   item: item;
   customSet: customSet;
-  responsiveGridRef: React.MutableRefObject<HTMLDivElement | null>;
 }
 
 const ConfirmReplaceItemPopover: React.FC<IProps> = ({
   item,
   customSet,
   children,
-  responsiveGridRef,
 }) => {
   const { t } = useTranslation('common');
   const [selectedItemSlotId, setSelectedItemSlotId] = React.useState<
@@ -45,7 +43,7 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
     <ClassNames>
       {({ css }) => (
         <Popover
-          getPopupContainer={() => responsiveGridRef.current || document.body}
+          getPopupContainer={node => node.parentElement!}
           content={
             <div
               css={{
