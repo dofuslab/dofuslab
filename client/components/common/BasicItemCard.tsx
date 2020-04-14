@@ -71,6 +71,8 @@ const BasicItemCard: React.FC<IProps> = ({
               marginBottom: 12,
               maxWidth: ITEM_BOX_WIDTH,
               fontSize: '1.2rem',
+              minWidth: 60,
+              minHeight: 60,
             }}
           />
         ) : (
