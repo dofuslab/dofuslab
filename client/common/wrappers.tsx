@@ -131,12 +131,26 @@ export const CardTitleWithLevel: React.FC<{
       <TruncatableText css={{ fontSize: '0.8rem' }}>{title}</TruncatableText>
       {showBadge && <Badge css={{ marginRight: 4 }}>{badgeContent}</Badge>}
       {level && (
-        <div css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}>
+        <div
+          css={{
+            fontSize: '0.75rem',
+            fontWeight: 400,
+            marginLeft: 'auto',
+            whiteSpace: 'nowrap',
+          }}
+        >
           {t('LEVEL_ABBREVIATION', { ns: 'common' })} {level}
         </div>
       )}
       {rightAlignedContent && (
-        <div css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}>
+        <div
+          css={{
+            fontSize: '0.75rem',
+            fontWeight: 400,
+            marginLeft: 'auto',
+            whiteSpace: 'nowrap',
+          }}
+        >
           {rightAlignedContent}
         </div>
       )}
