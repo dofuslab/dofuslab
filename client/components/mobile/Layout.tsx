@@ -34,7 +34,7 @@ import {
 import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 import { useRouter } from 'next/router';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
-import { TTheme } from 'common/themes';
+import { TTheme, LIGHT_THEME_NAME } from 'common/themes';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -137,7 +137,11 @@ const Layout = (props: LayoutProps) => {
         <Link href="/" as="/">
           <div css={{ fontWeight: 500 }}>
             <img
-              src="https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg"
+              src={
+                theme.name === LIGHT_THEME_NAME
+                  ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg'
+                  : 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark.svg'
+              }
               css={{ width: 120 }}
             />
           </div>

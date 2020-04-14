@@ -296,7 +296,7 @@ class SpellEffects(SQLAlchemyObjectType):
 
 
 class SpellStats(SQLAlchemyObjectType):
-    aoe = graphene.String()R
+    aoe = graphene.String()
     spell_effects = graphene.NonNull(graphene.List(graphene.NonNull(SpellEffects)))
 
     def resolve_aoe(self, info):
