@@ -93,6 +93,7 @@ const SetSelector: React.FC<IProps> = ({
       useWindow={false}
       threshold={THRESHOLD}
     >
+<<<<<<< HEAD
       {loading
         ? Array(isMobile ? 2 : 24)
             .fill(null)
@@ -109,6 +110,31 @@ const SetSelector: React.FC<IProps> = ({
               />
             ))}
     </InfiniteScroll>
+=======
+      {data &&
+        !loading &&
+        data.sets.edges
+          .map(edge => edge.node)
+          .map(set => (
+            <SetCard
+              key={set.id}
+              set={set}
+              customSetId={customSet?.id ?? null}
+              selectItemSlot={selectItemSlot}
+              isMobile={isMobile}
+            />
+          ))}
+      {(loading || data?.sets.pageInfo.hasNextPage) &&
+        Array(isMobile ? 2 : loading ? 24 : PAGE_SIZE)
+          .fill(null)
+          .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)}
+      <Waypoint
+        key={data?.sets.pageInfo.endCursor || 'null'}
+        onEnter={onLoadMore}
+        bottomOffset={BOTTOM_OFFSET}
+      />
+    </ResponsiveGrid>
+>>>>>>> Change number of loaders based on whether is first load
   );
 };
 
