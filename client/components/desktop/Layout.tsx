@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import { jsx, Global, css } from '@emotion/core';
+import { jsx, Global } from '@emotion/core';
 import {
   Layout as AntdLayout,
   Button,
@@ -135,20 +135,58 @@ const Layout = (props: LayoutProps) => {
   return (
     <AntdLayout css={{ height: '100%', minHeight: '100vh' }}>
       <Global
-        styles={css`
-          html {
-            font-size: 18px;
-          }
-          body {
-            ${mq[1]} {
-              height: 100vh;
-            }
-            font-size: 0.8rem;
-          }
-          #__next {
-            height: 100%;
-          }
-        `}
+        styles={{
+          html: {
+            fontSize: 18,
+          },
+          body: {
+            [mq[1]]: {
+              height: '100vh',
+            },
+            fontSize: '0.8rem',
+            msScrollbarFaceColor: theme.scrollbar?.background,
+            msScrollbarBaseColor: theme.scrollbar?.background,
+            msScrollbar3dlightColor: theme.scrollbar?.background,
+            msScrollbarHighlightColor: theme.scrollbar?.background,
+            msScrollbarTrackColor: theme.scrollbar?.trackBackground,
+            msScrollbarArrowColor: theme.scrollbar?.trackBackground,
+            msScrollbarShadowColor: theme.scrollbar?.background,
+            msScrollbarDarkshadowColor: theme.scrollbar?.background,
+          },
+          '#__next': {
+            height: '100%',
+          },
+          '&::-webkit-scrollbar': {
+            width: 12,
+            height: 3,
+
+            '&-button': {
+              backgroundColor: theme.scrollbar?.background,
+              '&:decrement': {
+                borderBottom: `1px solid ${theme.scrollbar?.buttonBorder}`,
+              },
+              '&:increment': {
+                borderTop: `1px solid ${theme.scrollbar?.buttonBorder}`,
+              },
+            },
+
+            '&-track': {
+              backgroundColor: theme.scrollbar?.background,
+              '&-piece': {
+                backgroundColor: theme.scrollbar?.trackBackground,
+              },
+            },
+
+            '&-thumb': {
+              height: 50,
+              backgroundColor: theme.scrollbar?.background,
+            },
+
+            '&-corner': {
+              backgroundColor: theme.scrollbar?.background,
+            },
+          },
+        }}
       />
       <StatusChecker />
       <AntdLayout.Header

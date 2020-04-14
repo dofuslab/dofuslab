@@ -7,6 +7,8 @@ import {
   gray3,
   gray2,
   gray6,
+  gray11,
+  gray4,
 } from './mixins';
 
 export const DARK_THEME_NAME = 'DARK';
@@ -42,6 +44,11 @@ export type TTheme = {
   badge?: {
     background?: string;
   };
+  scrollbar?: {
+    trackBackground?: string;
+    buttonBorder?: string;
+    background?: string;
+  };
 };
 
 export const lightTheme: TTheme = {
@@ -73,11 +80,15 @@ export const lightTheme: TTheme = {
   badge: {
     background: gray7,
   },
+  scrollbar: {
+    background: gray5,
+    trackBackground: gray4,
+    buttonBorder: 'rgba(0, 0, 0, 0.15)',
+  },
 };
 
 const darkColors = {
   defaultText: 'rgba(255, 255, 255, 0.65)',
-  popoverBackground: '#1f1f1f',
 };
 
 export const darkTheme: TTheme = {
@@ -103,5 +114,10 @@ export const darkTheme: TTheme = {
   },
   badge: {
     background: gray9,
+  },
+  scrollbar: {
+    background: gray9,
+    trackBackground: gray11,
+    buttonBorder: 'rgba(255, 255, 255, 0.3)',
   },
 };
