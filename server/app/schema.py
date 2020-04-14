@@ -10,7 +10,9 @@ from app import (
 )
 from app.database.model_item_stat_translation import ModelItemStatTranslation
 from app.database.model_item_stat import ModelItemStat
+from app.database.model_item_type_translation import ModelItemTypeTranslation
 from app.database.model_item_type import ModelItemType
+from app.database.model_item_slot_translation import ModelItemSlotTranslation
 from app.database.model_item_slot import ModelItemSlot
 from app.database.model_item_translation import ModelItemTranslation
 from app.database.model_weapon_effect import ModelWeaponEffect
@@ -122,6 +124,17 @@ class ItemStat(SQLAlchemyObjectType):
 class ItemSlot(SQLAlchemyObjectType):
     # https://github.com/graphql-python/graphene/issues/110
     item_types = graphene.NonNull(graphene.List(graphene.NonNull(lambda: ItemType)))
+    name = graphene.String(required=True)
+
+    def resolve_name(self, info):
+        locale = str(get_locale())
+        query = db.session.query(ModelItemSlotTranslation)
+        return (
+            query.filter(ModelItemSlotTranslation.locale == locale)
+            .filter(ModelItemSlotTranslation.item_slot_id == self.uuid)
+            .one()
+            .name
+        )
 
     class Meta:
         model = ModelItemSlot
@@ -130,6 +143,17 @@ class ItemSlot(SQLAlchemyObjectType):
 
 class ItemType(SQLAlchemyObjectType):
     eligible_item_slots = graphene.NonNull(graphene.List(graphene.NonNull(ItemSlot)))
+    name = graphene.String(required=True)
+
+    def resolve_name(self, info):
+        locale = str(get_locale())
+        query = db.session.query(ModelItemTypeTranslation)
+        return (
+            query.filter(ModelItemTypeTranslation.locale == locale)
+            .filter(ModelItemTypeTranslation.item_type_id == self.uuid)
+            .one()
+            .name
+        )
 
     class Meta:
         model = ModelItemType

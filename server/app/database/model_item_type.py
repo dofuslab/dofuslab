@@ -16,11 +16,13 @@ class ModelItemType(Base):
         primary_key=True,
         nullable=False,
     )
-    name = Column("name", String, nullable=False)
     eligible_item_slots = relationship(
         "ModelItemSlot", secondary=item_type_slot_compat_table
     )
     items = relationship("ModelItem", back_populates="item_type")
+    item_type_translation = relationship(
+        "ModelItemTypeTranslation", backref="item_type", cascade="all, delete-orphan"
+    )
 
     @classmethod
     def get_slots_by_name(cls, name):
