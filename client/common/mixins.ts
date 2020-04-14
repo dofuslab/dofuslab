@@ -128,6 +128,11 @@ export const selected = (theme: TTheme) => ({
   background: theme.layer?.background,
 });
 
+export const primarySelected = (theme: TTheme) => ({
+  boxShadow: `0 0 0 2px ${theme.border?.primarySelected}` /* emulate the border */,
+  background: theme.layer?.background,
+});
+
 export const itemCardStyle = {
   fontSize: '0.75rem',
   borderRadius: 4,

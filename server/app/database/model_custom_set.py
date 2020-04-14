@@ -57,9 +57,12 @@ class ModelCustomSet(Base):
             return eligible_item_slots[0]
 
     def equip_set(self, set_obj):
+        self.equip_items(set_obj.items)
+
+    def equip_items(self, items):
         with session_scope() as session:
             counts = {}
-            for item in set_obj.items:
+            for item in items:
                 slot_idx = counts.get(item.item_type.uuid, 0)
                 counts[item.item_type.uuid] = slot_idx + 1
                 item_slot = item.item_type.eligible_item_slots[slot_idx]

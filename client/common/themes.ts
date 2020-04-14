@@ -10,6 +10,7 @@ import {
   gray4,
   gray12,
   gray10,
+  blue6,
 } from './mixins';
 
 export const DARK_THEME_NAME = 'DARK';
@@ -33,6 +34,7 @@ export type TTheme = {
   border?: {
     default?: string;
     selected?: string;
+    primarySelected?: string;
   };
   layer?: {
     background?: string;
@@ -79,6 +81,7 @@ export const lightTheme: TTheme = {
   border: {
     default: gray5,
     selected: gray6,
+    primarySelected: blue6,
   },
   layer: {
     background: 'white',
@@ -125,6 +128,7 @@ export const darkTheme: TTheme = {
   border: {
     default: gray10,
     selected: gray9,
+    primarySelected: blue6,
   },
   layer: {
     background: gray11,

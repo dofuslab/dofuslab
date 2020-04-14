@@ -18,10 +18,10 @@ import setQuery from 'graphql/queries/set.graphql';
 import { useTranslation } from 'i18n';
 import BasicItemWithStats from '../desktop/BasicItemWithStats';
 import { SetBonuses } from 'common/wrappers';
-import { itemBox } from 'common/mixins';
+import { itemBox, primarySelected } from 'common/mixins';
 import { mq } from 'common/constants';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { useEquipSetMutation } from 'common/utils';
+import { useEquipItemsMutation } from 'common/utils';
 
 interface IProps {
   setId: string;
@@ -44,13 +44,14 @@ const SetModal: React.FC<IProps> = ({
     variables: { id: setId },
   });
 
-  const [mutate, { loading: mutationLoading }] = useEquipSetMutation(
-    setId,
-    customSet,
-  );
-
   const { t } = useTranslation('common');
   const theme = useTheme<TTheme>();
+  const [itemIds, setItemIds] = React.useState<Array<string>>([]);
+
+  const [mutate, { loading: mutationLoading }] = useEquipItemsMutation(
+    itemIds,
+    customSet,
+  );
 
   const onOk = React.useCallback(async () => {
     await mutate();
@@ -62,6 +63,12 @@ const SetModal: React.FC<IProps> = ({
       );
     }
   }, [mutate, onCancel, customSet, isMobile]);
+
+  React.useEffect(() => {
+    if (data && !loading) {
+      setItemIds(data.setById.items.map(item => item.id));
+    }
+  }, [data, loading]);
 
   let bodyContent = null;
 
@@ -87,8 +94,21 @@ const SetModal: React.FC<IProps> = ({
                 justifyContent: 'center',
                 alignItems: 'center',
               }}
+              onClick={() => {
+                setItemIds(prev => {
+                  if (prev.includes(item.id)) {
+                    return prev.filter(itemId => itemId !== item.id);
+                  }
+                  return [...prev, item.id];
+                });
+              }}
             >
-              <div css={{ ...itemBox(theme) }}>
+              <div
+                css={{
+                  ...itemBox(theme),
+                  ...(itemIds.includes(item.id) && primarySelected(theme)),
+                }}
+              >
                 <BasicItemWithStats item={item} overlayCSS={{ zIndex: 1032 }} />
               </div>
             </div>
@@ -139,7 +159,12 @@ const SetModal: React.FC<IProps> = ({
       zIndex={1031}
       confirmLoading={mutationLoading}
       onOk={onOk}
-      okText={<span css={{ fontSize: '0.75rem' }}>{t('EQUIP_SET')}</span>}
+      okButtonProps={{ disabled: !itemIds.length }}
+      okText={
+        <span css={{ fontSize: '0.75rem' }}>
+          {t('EQUIP_ITEMS', { count: itemIds.length })}
+        </span>
+      }
       cancelText={<span css={{ fontSize: '0.75rem' }}>{t('CANCEL')}</span>}
     >
       {bodyContent}
