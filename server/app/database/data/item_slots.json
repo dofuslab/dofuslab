@@ -1,8 +1,8 @@
 [
   {
     "name": {
-      "en-US": "Hat",
-      "fr-FR": "Chapeau",
+      "en": "Hat",
+      "fr": "Chapeau",
       "de": "Hut",
       "es": "Sombrero",
       "it": "Cappello",
@@ -12,8 +12,8 @@
   },
   {
     "name": {
-      "en-US": "Cloak",
-      "fr-FR": "Cape",
+      "en": "Cloak",
+      "fr": "Cape",
       "de": "Umhang",
       "es": "Capa",
       "it": "Mantello",
@@ -23,8 +23,8 @@
   },
   {
     "name": {
-      "en-US": "Amulet",
-      "fr-FR": "Amulette",
+      "en": "Amulet",
+      "fr": "Amulette",
       "de": "Amulett",
       "es": "Amuleto",
       "it": "Amuleto",
@@ -34,8 +34,8 @@
   },
   {
     "name": {
-      "en-US": "Ring",
-      "fr-FR": "Anneau",
+      "en": "Ring",
+      "fr": "Anneau",
       "de": "Ring",
       "es": "Anillo",
       "it": "Anello",
@@ -46,8 +46,8 @@
   },
   {
     "name": {
-      "en-US": "Belt",
-      "fr-FR": "Ceinture",
+      "en": "Belt",
+      "fr": "Ceinture",
       "de": "Gürtel",
       "es": "Cinturón",
       "it": "Cintura",
@@ -57,8 +57,8 @@
   },
   {
     "name": {
-      "en-US": "Boots",
-      "fr-FR": "Bottes",
+      "en": "Boots",
+      "fr": "Bottes",
       "de": "Stiefel",
       "es": "Bota",
       "it": "Stivali",
@@ -68,8 +68,8 @@
   },
   {
     "name": {
-      "en-US": "Weapon",
-      "fr-FR": "Arme",
+      "en": "Weapon",
+      "fr": "Arme",
       "de": "Waffe",
       "es": "Arma",
       "it": "Arma",
@@ -92,8 +92,8 @@
   },
   {
     "name": {
-      "en-US": "Shield",
-      "fr-FR": "Bouclier",
+      "en": "Shield",
+      "fr": "Bouclier",
       "de": "Schild",
       "es": "Escudo",
       "it": "Scudo",
@@ -103,8 +103,8 @@
   },
   {
     "name": {
-      "en-US": "Dofus",
-      "fr-FR": "Dofus",
+      "en": "Dofus",
+      "fr": "Dofus",
       "de": "Dofus",
       "es": "Dofus",
       "it": "Dofus",
@@ -115,8 +115,8 @@
   },
   {
     "name": {
-      "en-US": "Pet",
-      "fr-FR": "Familier",
+      "en": "Pet",
+      "fr": "Familier",
       "de": "Vertrauter",
       "es": "Mascota",
       "it": "Famiglio",
