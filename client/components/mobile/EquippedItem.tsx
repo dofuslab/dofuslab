@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
+import { useTheme } from 'emotion-theming';
 
 import { itemBox, itemImageBox, selected as selectedBox } from 'common/mixins';
 import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
@@ -14,6 +15,7 @@ import EquippedItemWithStats from '../common/EquippedItemWithStats';
 import { item_set } from 'graphql/fragments/__generated__/item';
 import Link from 'next/link';
 import { IError } from 'common/types';
+import { TTheme } from 'common/themes';
 
 interface IProps {
   slot: itemSlots_itemSlots;
@@ -35,6 +37,8 @@ const EquippedItem: React.FC<IProps> = ({
   errors,
   ...restProps
 }) => {
+  const theme = useTheme<TTheme>();
+
   return (
     <>
       <div css={itemBox} {...restProps}>
@@ -63,7 +67,12 @@ const EquippedItem: React.FC<IProps> = ({
             }}
             as={`/equip/${slot.id}/${customSet ? customSet.id : ''}`}
           >
-            <div css={{ ...itemImageBox, ...(selected ? selectedBox : {}) }}>
+            <div
+              css={{
+                ...itemImageBox(theme),
+                ...(selected ? selectedBox(theme) : {}),
+              }}
+            >
               {slot.name}
             </div>
           </Link>

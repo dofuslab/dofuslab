@@ -4,7 +4,9 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { useTranslation } from 'i18n';
 import { List } from 'antd';
+import { useTheme } from 'emotion-theming';
 
+import { TTheme } from 'common/themes';
 import { StatGroup, StatsFromCustomSet } from 'common/types';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { statCalculators } from 'common/utils';
@@ -21,10 +23,11 @@ const StatTable: React.FC<IStatTable> = ({
   customSet,
 }) => {
   const { t } = useTranslation('stat');
+  const theme = useTheme<TTheme>();
   return (
     <List
       css={{
-        background: 'white',
+        background: theme.layer?.background,
         borderRadius: 4,
       }}
       itemLayout="horizontal"
