@@ -12,7 +12,7 @@ import {
   myCustomSetsVariables,
 } from 'graphql/queries/__generated__/myCustomSets';
 import myCustomSetsQuery from 'graphql/queries/myCustomSets.graphql';
-import { Button, Card, Input, Skeleton } from 'antd';
+import { Button, Input, Skeleton } from 'antd';
 import { useTranslation } from 'i18n';
 import { itemCardStyle, selected, gray6 } from 'common/mixins';
 import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
@@ -25,6 +25,7 @@ import { createCustomSet } from 'graphql/mutations/__generated__/createCustomSet
 import createCustomSetMutation from 'graphql/mutations/createCustomSet.graphql';
 import { Waypoint } from 'react-waypoint';
 import { useDebounceCallback } from '@react-hook/debounce';
+import Card from 'components/common/Card';
 
 const PAGE_SIZE = 10;
 const BOTTOM_OFFSET = -1200;

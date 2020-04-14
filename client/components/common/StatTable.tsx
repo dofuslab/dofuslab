@@ -28,6 +28,7 @@ const StatTable: React.FC<IStatTable> = ({
     <List
       css={{
         background: theme.layer?.background,
+        border: theme.border?.default,
         borderRadius: 4,
       }}
       itemLayout="horizontal"

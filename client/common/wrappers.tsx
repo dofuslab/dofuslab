@@ -2,7 +2,6 @@
 
 import { jsx, CSSObject } from '@emotion/core';
 import styled from '@emotion/styled';
-import { BackTop } from 'antd';
 import { useTheme } from 'emotion-theming';
 import {
   ellipsis,
@@ -11,7 +10,6 @@ import {
   blue6,
   gray6,
 } from './mixins';
-import { Card } from 'antd';
 import { Skeleton } from 'antd';
 import { set_bonuses } from 'graphql/fragments/__generated__/set';
 import { TFunction } from 'next-i18next';
@@ -30,6 +28,7 @@ import {
 } from './utils';
 import { item_weaponStats } from 'graphql/fragments/__generated__/item';
 import { TTheme } from './themes';
+import Card from 'components/common/Card';
 
 interface IResponsiveGrid {
   readonly numColumns: ReadonlyArray<number>;
@@ -113,10 +112,6 @@ export const SetBonuses: React.FC<{
     )}
   </div>
 );
-
-export const BackTopWrapper: React.FC<{ target: () => HTMLElement }> = ({
-  target,
-}) => <BackTop target={target} />;
 
 export const CardTitleWithLevel: React.FC<{
   title: string;

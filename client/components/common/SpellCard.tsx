@@ -6,7 +6,7 @@ import {
   classById_classById_spellVariantPairs_spells,
   classById_classById_spellVariantPairs_spells_spellStats,
 } from 'graphql/queries/__generated__/classById';
-import { Card, Radio, Tooltip, Divider, Switch } from 'antd';
+import { Radio, Tooltip, Divider, Switch } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
 import { useTheme } from 'emotion-theming';
 
@@ -34,6 +34,7 @@ import {
   faFistRaised,
   faPeopleArrows,
 } from '@fortawesome/free-solid-svg-icons';
+import Card from 'components/common/Card';
 
 interface IProps {
   customSet?: customSet | null;

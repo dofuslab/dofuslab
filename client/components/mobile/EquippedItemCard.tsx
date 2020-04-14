@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { jsx, css } from '@emotion/core';
-import { Card, Button, Tooltip } from 'antd';
+import { Button, Tooltip } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -34,6 +34,7 @@ import Router from 'next/router';
 import { Media } from 'components/common/Media';
 import Link from 'next/link';
 import { IError } from 'common/types';
+import Card from 'components/common/Card';
 
 const quickMageStats = [
   {

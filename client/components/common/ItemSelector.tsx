@@ -4,7 +4,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 import { Waypoint } from 'react-waypoint';
-import { Card, Skeleton } from 'antd';
+import { Skeleton } from 'antd';
 import { useTheme } from 'emotion-theming';
 
 import { TTheme } from 'common/themes';
@@ -21,6 +21,7 @@ import ConfirmReplaceItemPopover from '../desktop/ConfirmReplaceItemPopover';
 import { item_set } from 'graphql/fragments/__generated__/item';
 import SetModal from './SetModal';
 import { mq } from 'common/constants';
+import Card from 'components/common/Card';
 
 const PAGE_SIZE = 24;
 

@@ -133,13 +133,20 @@ const Layout = (props: LayoutProps) => {
   const theme = useTheme<TTheme>();
 
   return (
-    <AntdLayout css={{ height: '100%', minHeight: '100vh' }}>
+    <AntdLayout
+      css={{
+        height: '100%',
+        minHeight: '100vh',
+        backgroundColor: theme.body?.background,
+      }}
+    >
       <Global
         styles={{
           html: {
             fontSize: 18,
           },
           body: {
+            backgroundColor: theme.body?.background,
             [mq[1]]: {
               height: '100vh',
             },

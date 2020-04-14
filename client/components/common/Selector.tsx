@@ -4,7 +4,9 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 import { BackTop } from 'antd';
+import { useTheme } from 'emotion-theming';
 
+import { TTheme } from 'common/themes';
 import { SharedFilters, SharedFilterAction } from 'common/types';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import {
@@ -82,6 +84,8 @@ const Selector: React.FC<IProps> = ({
     setItemTypeIds(new Set());
   }, [dispatch, customSet]);
 
+  const theme = useTheme<TTheme>();
+
   return (
     <>
       <div
@@ -150,7 +154,15 @@ const Selector: React.FC<IProps> = ({
           />
         )}
       </div>
-      <BackTop target={() => selectorDivRef.current!} />
+      <BackTop
+        target={() => selectorDivRef.current!}
+        css={{
+          '.ant-back-top-content': {
+            backgroundColor: theme.backTop?.background,
+            '&:hover': { backgroundColor: theme.backTop?.hoverBackground },
+          },
+        }}
+      />
     </>
   );
 };

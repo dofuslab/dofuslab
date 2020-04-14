@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { Card, Divider, Radio } from 'antd';
+import { Divider, Radio } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
 import { useTheme } from 'emotion-theming';
 
@@ -30,6 +30,7 @@ import {
   WeaponEffectType,
 } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
+import Card from 'components/common/Card';
 
 interface IProps {
   weaponStats: item_weaponStats;
