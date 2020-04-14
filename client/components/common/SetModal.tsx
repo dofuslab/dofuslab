@@ -6,9 +6,7 @@ import { jsx } from '@emotion/core';
 import { Modal, Divider, Skeleton } from 'antd';
 import { useQuery } from '@apollo/react-hooks';
 import Router from 'next/router';
-import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
 import {
   set,
   setVariables,
@@ -18,7 +16,7 @@ import setQuery from 'graphql/queries/set.graphql';
 import { useTranslation } from 'i18n';
 import BasicItemWithStats from '../desktop/BasicItemWithStats';
 import { SetBonuses } from 'common/wrappers';
-import { itemBox } from 'common/mixins';
+import { gray2, itemBox } from 'common/mixins';
 import { mq } from 'common/constants';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useEquipSetMutation } from 'common/utils';
@@ -50,7 +48,6 @@ const SetModal: React.FC<IProps> = ({
   );
 
   const { t } = useTranslation('common');
-  const theme = useTheme<TTheme>();
 
   const onOk = React.useCallback(async () => {
     await mutate();
@@ -91,7 +88,7 @@ const SetModal: React.FC<IProps> = ({
                 alignItems: 'center',
               }}
             >
-              <div css={{ ...itemBox(theme) }}>
+              <div css={{ ...itemBox }}>
                 <BasicItemWithStats item={item} overlayCSS={{ zIndex: 1032 }} />
               </div>
             </div>
@@ -123,7 +120,7 @@ const SetModal: React.FC<IProps> = ({
                 bonuses={bonuses}
                 css={{
                   flex: '0 0 144px',
-                  background: theme.layer?.background,
+                  background: gray2,
                   borderRadius: 4,
                   padding: 12,
                 }}

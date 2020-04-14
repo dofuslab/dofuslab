@@ -2,17 +2,15 @@
 
 import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
-import { useTheme } from 'emotion-theming';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { Popover } from 'antd';
 import { useTranslation } from 'i18n';
-import { popoverTitleStyle, gold5 } from 'common/mixins';
+import { popoverTitleStyle, gold5, BORDER_COLOR } from 'common/mixins';
 import { baseStats, scrolledStats, IError } from 'common/types';
 import { calcPointCost, renderErrors } from 'common/utils';
 import { groupBy } from 'lodash';
-import { TTheme } from 'common/themes';
 
 interface IProps {
   customSet: customSet;
@@ -22,7 +20,6 @@ interface IProps {
 
 const BuildErrors: React.FC<IProps> = ({ customSet, errors, isMobile }) => {
   const { t } = useTranslation(['common']);
-  const theme = useTheme<TTheme>();
 
   const groupedErrors = groupBy(errors, ({ reason }) => reason);
 
@@ -77,7 +74,7 @@ const BuildErrors: React.FC<IProps> = ({ customSet, errors, isMobile }) => {
         flexDirection: 'column',
         background: 'white',
         borderRadius: 4,
-        border: `1px solid ${theme.border?.default}`,
+        border: `1px solid ${BORDER_COLOR}`,
         padding: 8,
       }}
     >

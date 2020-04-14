@@ -3,13 +3,10 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { Card } from 'antd';
-import { useTheme } from 'emotion-theming';
-
-import { TTheme } from 'common/themes';
 import { useTranslation } from 'i18n';
 import { SetBonuses, CardTitleWithLevel } from 'common/wrappers';
 import { sets_sets_edges_node } from 'graphql/queries/__generated__/sets';
-import { itemCardStyle } from 'common/mixins';
+import { itemCardStyle, BORDER_COLOR } from 'common/mixins';
 import { useEquipSetMutation, useCustomSet } from 'common/utils';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { mq } from 'common/constants';
@@ -50,8 +47,6 @@ const SetCard: React.FC<IProps> = ({
     }
   }, [onClick, customSet]);
 
-  const theme = useTheme<TTheme>();
-
   return (
     <Card
       hoverable
@@ -69,9 +64,9 @@ const SetCard: React.FC<IProps> = ({
       css={{
         ...itemCardStyle,
         [':hover']: {
-          border: `1px solid ${theme.border?.default}`,
+          border: `1px solid ${BORDER_COLOR}`,
         },
-        border: `1px solid ${theme.border?.default}`,
+        border: `1px solid ${BORDER_COLOR}`,
       }}
     >
       <div>

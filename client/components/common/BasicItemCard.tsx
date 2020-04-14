@@ -6,15 +6,14 @@ import { Card } from 'antd';
 import { CardTitleWithLevel } from 'common/wrappers';
 import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { useTranslation } from 'i18n';
-import { useTheme } from 'emotion-theming';
 import {
   itemCardStyle,
+  BORDER_COLOR,
   itemBoxDimensions,
   ITEM_BOX_WIDTH,
 } from 'common/mixins';
 import ItemStatsList from './ItemStatsList';
 import { WeaponElementMage } from '__generated__/globalTypes';
-import { TTheme } from 'common/themes';
 
 interface IProps {
   item: item;
@@ -34,7 +33,6 @@ const BasicItemCard: React.FC<IProps> = ({
   weaponElementMage,
 }) => {
   const { t } = useTranslation(['common', 'stat', 'weapon_spell_effect']);
-  const theme = useTheme<TTheme>();
   return (
     <Card
       hoverable={!!onClick}
@@ -50,9 +48,9 @@ const BasicItemCard: React.FC<IProps> = ({
       css={{
         ...itemCardStyle,
         [':hover']: {
-          border: `1px solid ${theme.border?.default}`,
+          border: `1px solid ${BORDER_COLOR}`,
         },
-        border: `1px solid ${theme.border?.default}`,
+        border: `1px solid ${BORDER_COLOR}`,
       }}
       onClick={onClick}
     >

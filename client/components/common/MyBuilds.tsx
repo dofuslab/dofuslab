@@ -4,9 +4,6 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
 import { LoadingOutlined } from '@ant-design/icons';
-import { useTheme } from 'emotion-theming';
-
-import { TTheme } from 'common/themes';
 import {
   myCustomSets,
   myCustomSetsVariables,
@@ -14,7 +11,7 @@ import {
 import myCustomSetsQuery from 'graphql/queries/myCustomSets.graphql';
 import { Button, Card, Input, Skeleton } from 'antd';
 import { useTranslation } from 'i18n';
-import { itemCardStyle, selected, gray6 } from 'common/mixins';
+import { itemCardStyle, selected, gray6, BORDER_COLOR } from 'common/mixins';
 import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
 import Link from 'next/link';
 import { CardTitleWithLevel } from 'common/wrappers';
@@ -166,8 +163,6 @@ const MyBuilds: React.FC = () => {
     return fetchMoreResult;
   }, [myBuilds, search]);
 
-  const theme = useTheme<TTheme>();
-
   return (
     <div css={{ marginBottom: 20, [mq[1]]: { marginTop: 36 } }}>
       <div css={{ display: 'flex' }}>
@@ -209,13 +204,13 @@ const MyBuilds: React.FC = () => {
             size="small"
             css={{
               ...itemCardStyle,
-              border: `1px solid ${theme.border?.default}`,
+              border: `1px solid ${BORDER_COLOR}`,
               marginTop: 20,
               ':hover': {
-                border: `1px solid ${theme.border?.default}`,
-                ...(node.id === customSetId && selected(theme)),
+                border: `1px solid ${BORDER_COLOR}`,
+                ...(node.id === customSetId && selected),
               },
-              ...(node.id === customSetId && selected(theme)),
+              ...(node.id === customSetId && selected),
               transition: 'all 0.3s ease-in-out',
             }}
           >
@@ -254,7 +249,7 @@ const MyBuilds: React.FC = () => {
               css={{
                 ...itemCardStyle,
                 marginTop: 20,
-                border: `1px solid ${theme.border?.default}`,
+                border: `1px solid ${BORDER_COLOR}`,
               }}
             >
               <Skeleton loading title active paragraph={{ rows: 2 }}></Skeleton>
