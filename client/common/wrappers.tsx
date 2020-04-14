@@ -3,12 +3,11 @@
 import { jsx, CSSObject } from '@emotion/core';
 import styled from '@emotion/styled';
 import { BackTop } from 'antd';
+import { useTheme } from 'emotion-theming';
 import {
-  gray7,
   ellipsis,
   getResponsiveGridStyle,
   itemCardStyle,
-  BORDER_COLOR,
   blue6,
   gray6,
 } from './mixins';
@@ -30,6 +29,7 @@ import {
   calcElementMage,
 } from './utils';
 import { item_weaponStats } from 'graphql/fragments/__generated__/item';
+import { TTheme } from './themes';
 
 interface IResponsiveGrid {
   readonly numColumns: ReadonlyArray<number>;
@@ -39,23 +39,26 @@ export const ResponsiveGrid = styled.div<IResponsiveGrid>(({ numColumns }) =>
   getResponsiveGridStyle(numColumns),
 );
 
-export const Badge: React.FC = ({ children, ...restProps }) => (
-  <span
-    css={{
-      background: gray7,
-      color: 'white',
-      textTransform: 'uppercase',
-      fontSize: '0.75em',
-      fontWeight: 500,
-      padding: '2px 4px',
-      borderRadius: 4,
-      marginLeft: 8,
-    }}
-    {...restProps}
-  >
-    {children}
-  </span>
-);
+export const Badge: React.FC = ({ children, ...restProps }) => {
+  const theme = useTheme<TTheme>();
+  return (
+    <span
+      css={{
+        background: theme.badge?.background,
+        color: 'white',
+        textTransform: 'uppercase',
+        fontSize: '0.75em',
+        fontWeight: 500,
+        padding: '2px 4px',
+        borderRadius: 4,
+        marginLeft: 8,
+      }}
+      {...restProps}
+    >
+      {children}
+    </span>
+  );
+};
 
 export const TruncatableText: React.FC = ({ children, ...restProps }) => (
   <span
@@ -67,18 +70,21 @@ export const TruncatableText: React.FC = ({ children, ...restProps }) => (
   </span>
 );
 
-export const CardSkeleton: React.FC = props => (
-  <Card
-    size="small"
-    css={{
-      ...itemCardStyle,
-      border: `1px solid ${BORDER_COLOR}`,
-    }}
-    {...props}
-  >
-    <Skeleton loading title active paragraph={{ rows: 6 }}></Skeleton>
-  </Card>
-);
+export const CardSkeleton: React.FC = props => {
+  const theme = useTheme<TTheme>();
+  return (
+    <Card
+      size="small"
+      css={{
+        ...itemCardStyle,
+        border: `1px solid ${theme.border?.default}`,
+      }}
+      {...props}
+    >
+      <Skeleton loading title active paragraph={{ rows: 6 }}></Skeleton>
+    </Card>
+  );
+};
 
 export const SetBonuses: React.FC<{
   bonuses: Array<set_bonuses>;
@@ -125,12 +131,26 @@ export const CardTitleWithLevel: React.FC<{
       <TruncatableText css={{ fontSize: '0.8rem' }}>{title}</TruncatableText>
       {showBadge && <Badge css={{ marginRight: 4 }}>{badgeContent}</Badge>}
       {level && (
-        <div css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}>
+        <div
+          css={{
+            fontSize: '0.75rem',
+            fontWeight: 400,
+            marginLeft: 'auto',
+            whiteSpace: 'nowrap',
+          }}
+        >
           {t('LEVEL_ABBREVIATION', { ns: 'common' })} {level}
         </div>
       )}
       {rightAlignedContent && (
-        <div css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}>
+        <div
+          css={{
+            fontSize: '0.75rem',
+            fontWeight: 400,
+            marginLeft: 'auto',
+            whiteSpace: 'nowrap',
+          }}
+        >
           {rightAlignedContent}
         </div>
       )}

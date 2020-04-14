@@ -3,14 +3,16 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { Tabs } from 'antd';
+import { useTheme } from 'emotion-theming';
 
+import { TTheme } from 'common/themes';
 import { STAT_GROUPS } from 'common/constants';
 import StatTable from '../common/StatTable';
 import { ResponsiveGrid } from 'common/wrappers';
 import SetHeader from '../common/SetHeader';
 import EquipmentSlots from '../common/EquipmentSlots';
 import StatEditor from '../common/StatEditor';
-import { topMarginStyle, BORDER_COLOR } from 'common/mixins';
+import { topMarginStyle } from 'common/mixins';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getStatsFromCustomSet, getErrors } from 'common/utils';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
@@ -52,6 +54,8 @@ const Home: React.FC<IProps> = ({
   }
   const { t } = useTranslation('common');
 
+  const theme = useTheme<TTheme>();
+
   return (
     <>
       <SetHeader customSet={customSet} errors={errors} isMobile />
@@ -79,7 +83,9 @@ const Home: React.FC<IProps> = ({
           <Tabs
             defaultActiveKey="characteristics"
             css={{
-              '.ant-tabs-bar': { borderBottom: `1px solid ${BORDER_COLOR}` },
+              '.ant-tabs-bar': {
+                borderBottom: `1px solid ${theme.border?.default}`,
+              },
             }}
           >
             <TabPane tab={t('CHARACTERISTICS')} key="characteristics">

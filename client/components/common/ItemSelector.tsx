@@ -5,13 +5,15 @@ import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 import { Waypoint } from 'react-waypoint';
 import { Card, Skeleton } from 'antd';
+import { useTheme } from 'emotion-theming';
 
+import { TTheme } from 'common/themes';
 import ItemCard from './ItemCard';
 import { ResponsiveGrid } from 'common/wrappers';
 import ItemsQuery from 'graphql/queries/items.graphql';
 import { items, itemsVariables } from 'graphql/queries/__generated__/items';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { itemCardStyle, BORDER_COLOR } from 'common/mixins';
+import { itemCardStyle } from 'common/mixins';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { SharedFilters } from 'common/types';
 import { findEmptyOrOnlySlotId, findNextEmptySlotId } from 'common/utils';
@@ -108,6 +110,8 @@ const ItemSelector: React.FC<IProps> = ({
     setSetModalVisible(false);
   }, [setSetModalVisible]);
 
+  const theme = useTheme<TTheme>();
+
   return (
     <ResponsiveGrid
       numColumns={[2, 2, 2, 3, 4, 5, 6]}
@@ -171,7 +175,7 @@ const ItemSelector: React.FC<IProps> = ({
               size="small"
               css={{
                 ...itemCardStyle,
-                border: `1px solid ${BORDER_COLOR}`,
+                border: `1px solid ${theme.border?.default}`,
               }}
             >
               <Skeleton loading title active paragraph={{ rows: 6 }}></Skeleton>

@@ -4,12 +4,15 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { Card, Divider, Radio } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
+import { useTheme } from 'emotion-theming';
+
+import { TTheme } from 'common/themes';
 import {
   CardTitleWithLevel,
   damageHeaderStyle,
   EffectLine,
 } from 'common/wrappers';
-import { itemCardStyle, BORDER_COLOR, gray2, gray6 } from 'common/mixins';
+import { itemCardStyle } from 'common/mixins';
 import { item_weaponStats } from 'graphql/fragments/__generated__/item';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import {
@@ -194,6 +197,8 @@ const WeaponDamage: React.FC<IProps> = ({
         averageNonCritHeal * (1 - critRate / 100)
       : averageNonCritHeal;
 
+  const theme = useTheme<TTheme>();
+
   return (
     <Card
       size="small"
@@ -201,9 +206,9 @@ const WeaponDamage: React.FC<IProps> = ({
       css={{
         ...itemCardStyle,
         [':hover']: {
-          border: `1px solid ${BORDER_COLOR}`,
+          border: `1px solid ${theme.border?.default}`,
         },
-        border: `1px solid ${BORDER_COLOR}`,
+        border: `1px solid ${theme.border?.default}`,
       }}
     >
       <Radio.Group value={weaponSkillPower} onChange={onWeaponSkillChange}>
@@ -230,12 +235,12 @@ const WeaponDamage: React.FC<IProps> = ({
           <div
             css={{
               gridArea: `1 / 2 / ${weaponStats.weaponEffects.length + 2} / -1`,
-              background: gray2,
+              background: theme.damage?.nonCrit?.background,
               borderRadius: 4,
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              color: gray6,
+              color: theme.damage?.nonCrit?.color,
               fontWeight: 500,
             }}
           >

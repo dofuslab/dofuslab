@@ -2,6 +2,7 @@ const withCSS = require('@zeit/next-css');
 const withLess = require('@zeit/next-less');
 const webpack = require('webpack');
 const path = require('path');
+const darkTheme = require('@ant-design/dark-theme').default;
 require('dotenv').config();
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
@@ -21,6 +22,7 @@ module.exports = withBundleAnalyzer(
       },
       lessLoaderOptions: {
         javascriptEnabled: true,
+        modifyVars: darkTheme,
       },
       webpack: (config, { isServer }) => {
         if (isServer) {
