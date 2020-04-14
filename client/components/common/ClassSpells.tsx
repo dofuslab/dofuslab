@@ -6,6 +6,7 @@ import { jsx } from '@emotion/core';
 import { Select, Spin } from 'antd';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/react-hooks';
+import { useTheme } from 'emotion-theming';
 
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
@@ -18,7 +19,7 @@ import {
 } from 'graphql/queries/__generated__/classById';
 import classByIdQuery from 'graphql/queries/classById.graphql';
 import SpellCard from './SpellCard';
-import { gray6 } from 'common/mixins';
+import { TTheme } from 'common/themes';
 
 const { Option } = Select;
 
@@ -31,6 +32,7 @@ const ClassSpells: React.FC<IProps> = ({ customSet }) => {
   const { query } = router;
   const { data, loading } = useQuery<classes>(classesQuery);
   const { t } = useTranslation('common');
+  const theme = useTheme<TTheme>();
 
   const nameToId = data?.classes.reduce((acc, { id, allNames }) => {
     const obj = { ...acc };
@@ -110,7 +112,7 @@ const ClassSpells: React.FC<IProps> = ({ customSet }) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            color: gray6,
+            color: theme.text?.light,
             fontWeight: 500,
             marginBottom: 320,
           }}

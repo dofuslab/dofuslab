@@ -10,7 +10,7 @@ import { TTheme } from 'common/themes';
 import { popoverTitleStyle } from 'common/mixins';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getBonusesFromCustomSet } from 'common/utils';
-import { SetBonuses } from 'common/wrappers';
+import { SetBonuses, BrokenImagePlaceholder } from 'common/wrappers';
 import { mq } from 'common/constants';
 
 interface IProps {
@@ -26,6 +26,8 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
   ) as { [key: string]: number };
 
   const theme = useTheme<TTheme>();
+
+  const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
 
   return (
     <div
@@ -50,7 +52,10 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
               return (
                 <Popover
                   key={id}
-                  overlayClassName={css(popoverTitleStyle)}
+                  overlayClassName={css({
+                    ...popoverTitleStyle,
+                    maxWidth: 288,
+                  })}
                   title={
                     <div
                       css={{
@@ -96,10 +101,22 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
                             },
                           }}
                         >
-                          <img
-                            src={equippedItem.item.imageUrl}
-                            css={{ maxWidth: '100%', maxHeight: '100%' }}
-                          />
+                          {brokenImages.includes(equippedItem.id) ? (
+                            <BrokenImagePlaceholder
+                              css={{ width: '100%', height: '100%' }}
+                            />
+                          ) : (
+                            <img
+                              src={equippedItem.item.imageUrl}
+                              css={{ maxWidth: '100%', maxHeight: '100%' }}
+                              onError={() => {
+                                setBrokenImages(prev => [
+                                  ...prev,
+                                  equippedItem.id,
+                                ]);
+                              }}
+                            />
+                          )}
                         </div>
                       ))}
                   </div>

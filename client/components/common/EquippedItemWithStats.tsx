@@ -30,6 +30,7 @@ import { item_set } from 'graphql/fragments/__generated__/item';
 import { Media } from 'components/common/Media';
 import { IError } from 'common/types';
 import { TTheme } from 'common/themes';
+import { BrokenImagePlaceholder } from 'common/wrappers';
 
 const wrapperStyles = {
   position: 'absolute' as 'absolute',
@@ -85,6 +86,7 @@ const EquippedItemWithStats: React.FC<IProps> = ({
   );
   const { t } = useTranslation('common');
   const theme = useTheme<TTheme>();
+  const [brokenImage, setBrokenImage] = React.useState(false);
 
   const content = (
     <ClassNames>
@@ -105,7 +107,17 @@ const EquippedItemWithStats: React.FC<IProps> = ({
               },
             }}
           >
-            <img src={equippedItem.item.imageUrl} css={itemImageDimensions} />
+            {brokenImage ? (
+              <BrokenImagePlaceholder
+                css={{ ...itemImageDimensions, fontSize: '1.2rem' }}
+              />
+            ) : (
+              <img
+                src={equippedItem.item.imageUrl}
+                css={itemImageDimensions}
+                onError={() => setBrokenImage(true)}
+              />
+            )}
             {(equippedItem.exos.length > 0 ||
               equippedItem.weaponElementMage) && (
               <FontAwesomeIcon

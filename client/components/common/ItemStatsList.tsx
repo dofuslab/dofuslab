@@ -8,7 +8,7 @@ import { useTranslation } from 'i18n';
 import { blue6 } from 'common/mixins';
 import { Stat, WeaponElementMage } from '__generated__/globalTypes';
 import { Divider } from 'antd';
-import { WeaponEffectsList } from 'common/wrappers';
+import { WeaponEffectsList, BrokenImagePlaceholder } from 'common/wrappers';
 import { TFunction } from 'next-i18next';
 import { IError } from 'common/types';
 import { renderErrors } from 'common/utils';
@@ -110,6 +110,8 @@ const ItemStatsList: React.FC<IProps> = ({
 
   const conditions = JSON.parse(item.conditions);
 
+  const [brokenImage, setBrokenImage] = React.useState(false);
+
   return (
     <div>
       {item.set && (
@@ -126,9 +128,20 @@ const ItemStatsList: React.FC<IProps> = ({
           )}
         </div>
       )}
-      {showImg && (
-        <img src={item.imageUrl} css={{ float: 'right', maxWidth: 84 }} />
-      )}
+      {showImg &&
+        (brokenImage ? (
+          <BrokenImagePlaceholder
+            css={{ float: 'right', maxWidth: 84, fontSize: '1.2rem' }}
+          />
+        ) : (
+          <img
+            src={item.imageUrl}
+            css={{ float: 'right', maxWidth: 84 }}
+            onError={() => {
+              setBrokenImage(true);
+            }}
+          />
+        ))}
       {item.weaponStats && (
         <>
           <WeaponEffectsList

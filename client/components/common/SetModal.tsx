@@ -123,7 +123,7 @@ const SetModal: React.FC<IProps> = ({
                 bonuses={bonuses}
                 css={{
                   flex: '0 0 144px',
-                  background: theme.layer?.background,
+                  background: theme.layer?.backgroundLight,
                   borderRadius: 4,
                   padding: 12,
                 }}

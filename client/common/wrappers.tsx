@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { jsx, CSSObject } from '@emotion/core';
+import { jsx, CSSObject, ClassNames } from '@emotion/core';
 import styled from '@emotion/styled';
 import { useTheme } from 'emotion-theming';
 import {
@@ -29,6 +29,8 @@ import {
 import { item_weaponStats } from 'graphql/fragments/__generated__/item';
 import { TTheme } from './themes';
 import Card from 'components/common/Card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCube } from '@fortawesome/free-solid-svg-icons';
 
 interface IResponsiveGrid {
   readonly numColumns: ReadonlyArray<number>;
@@ -251,3 +253,26 @@ export const WeaponEffectsList: React.FC<{
     </div>
   );
 };
+
+export const BrokenImagePlaceholder: React.FC<React.HTMLAttributes<
+  HTMLDivElement
+>> = ({ className, ...restProps }) => (
+  <ClassNames>
+    {({ css, cx }) => (
+      <div
+        className={cx(
+          css({
+            color: 'rgba(255, 255, 255, 0.2)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }),
+          className,
+        )}
+        {...(restProps as any)}
+      >
+        <FontAwesomeIcon icon={faCube} />
+      </div>
+    )}
+  </ClassNames>
+);

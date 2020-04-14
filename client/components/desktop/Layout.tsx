@@ -109,7 +109,7 @@ const Layout = (props: LayoutProps) => {
     <Select<string>
       value={i18n.language}
       onSelect={changeLocaleHandler}
-      css={{ marginLeft: 12 }}
+      css={{ '&.ant-select': { marginLeft: 12 } }}
     >
       {LANGUAGES.map(lang => (
         <Option key={lang} value={lang}>
