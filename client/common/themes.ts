@@ -51,6 +51,9 @@ export type TTheme = {
     buttonBorder?: string;
     background?: string;
   };
+  switch?: {
+    background?: string;
+  };
 };
 
 export const lightTheme: TTheme = {
@@ -88,6 +91,9 @@ export const lightTheme: TTheme = {
     trackBackground: gray4,
     buttonBorder: 'rgba(0, 0, 0, 0.15)',
   },
+  switch: {
+    background: 'rgba(0, 0, 0, 0.25)',
+  },
 };
 
 const darkColors = {
@@ -105,7 +111,6 @@ export const darkTheme: TTheme = {
   },
   layer: {
     background: gray10,
-    selectedBackground: gray9,
   },
   statEditor: {
     categoryBackground: gray9,
@@ -124,5 +129,8 @@ export const darkTheme: TTheme = {
     background: gray9,
     trackBackground: gray11,
     buttonBorder: 'rgba(255, 255, 255, 0.3)',
+  },
+  switch: {
+    background: 'rgba(255, 255, 255, 0.3)',
   },
 };

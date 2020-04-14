@@ -58,7 +58,7 @@ const BasicItemWithStats: React.FC<IProps> = ({
         const wrapperClass = css(wrapperStyles);
         return (
           <Popover
-            placement="right"
+            placement="bottom"
             getPopupContainer={triggerNode => triggerNode.parentElement!}
             title={
               <div
@@ -79,7 +79,11 @@ const BasicItemWithStats: React.FC<IProps> = ({
             content={
               item.stats.length > 0 && <ItemStatsList item={item} exos={exos} />
             }
-            overlayClassName={css({ ...popoverTitleStyle, ...overlayCSS })}
+            overlayClassName={css({
+              ...popoverTitleStyle,
+              ...overlayCSS,
+              width: 240,
+            })}
           >
             <div
               css={{

@@ -16,7 +16,7 @@ import {
   damageHeaderStyle,
   EffectLine,
 } from 'common/wrappers';
-import { itemCardStyle, gray2, gray6 } from 'common/mixins';
+import { itemCardStyle } from 'common/mixins';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
 import {
@@ -211,7 +211,7 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
         checked={showRanged}
         onChange={setShowRanged}
         css={{
-          background: 'rgba(0, 0, 0, .25)',
+          background: theme.switch?.background,
         }}
         checkedChildren={<FontAwesomeIcon icon={faPeopleArrows} />}
         unCheckedChildren={<FontAwesomeIcon icon={faFistRaised} />}
@@ -275,12 +275,12 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
                   css={{
                     gridArea: `1 / 2 / ${spellStats.spellEffects.length +
                       2} / -1`,
-                    background: gray2,
+                    background: theme.damage?.nonCrit?.background,
                     borderRadius: 4,
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    color: gray6,
+                    color: theme.damage?.nonCrit?.color,
                     fontWeight: 500,
                   }}
                 >

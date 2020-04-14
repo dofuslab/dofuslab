@@ -5,19 +5,22 @@ import { jsx, ClassNames } from '@emotion/core';
 import { Stat } from '__generated__/globalTypes';
 import { mq, DEBOUNCE_INTERVAL, SEARCH_BAR_ID } from 'common/constants';
 import { Select, Input, InputNumber, Button, Switch, Tooltip } from 'antd';
-import { useTranslation } from 'i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import {
   faCubes,
   faCube,
   faArrowLeft,
 } from '@fortawesome/free-solid-svg-icons';
-import { SharedFilterAction, SharedFilters } from 'common/types';
 import { useDebounceCallback } from '@react-hook/debounce';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useTheme } from 'emotion-theming';
+
+import { TTheme } from 'common/themes';
+import { SharedFilterAction, SharedFilters } from 'common/types';
 import { Media } from './Media';
 import ResetAllButton from './ResetAllButton';
+import { useTranslation } from 'i18n';
 
 const { Search } = Input;
 const { Option } = Select;
@@ -99,6 +102,8 @@ const SelectorFilters: React.FC<IProps> = ({
 
   const { t } = useTranslation(['common', 'stat']);
 
+  const theme = useTheme<TTheme>();
+
   return (
     <div
       css={{
@@ -152,7 +157,7 @@ const SelectorFilters: React.FC<IProps> = ({
                 css={{
                   margin: '0 12px',
                   [mq[1]]: { margin: '0 20px 0 0' },
-                  background: 'rgba(0, 0, 0, .25)',
+                  background: theme.switch?.background,
                 }}
                 checked={showSets}
                 onChange={setShowSets}
