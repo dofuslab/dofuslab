@@ -11,6 +11,7 @@ import {
   gray12,
   gray10,
   blue6,
+  red8,
 } from './mixins';
 
 export const DARK_THEME_NAME = 'DARK';
@@ -30,6 +31,7 @@ export type TTheme = {
     link?: {
       default?: string;
     };
+    danger?: string;
   };
   border?: {
     default?: string;
@@ -77,6 +79,7 @@ export const lightTheme: TTheme = {
       default: gray8,
     },
     light: gray6,
+    danger: red8,
   },
   border: {
     default: gray5,
@@ -124,6 +127,7 @@ export const darkTheme: TTheme = {
   text: {
     default: darkColors.defaultText,
     light: gray8,
+    danger: red8,
   },
   border: {
     default: gray10,

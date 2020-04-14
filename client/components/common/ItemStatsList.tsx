@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
+import { useTheme } from 'emotion-theming';
 import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
@@ -12,6 +13,7 @@ import { WeaponEffectsList, BrokenImagePlaceholder } from 'common/wrappers';
 import { TFunction } from 'next-i18next';
 import { IError } from 'common/types';
 import { renderErrors } from 'common/utils';
+import { TTheme } from 'common/themes';
 
 interface IProps {
   readonly item: item;
@@ -75,6 +77,7 @@ const ItemStatsList: React.FC<IProps> = ({
   errors,
 }) => {
   const { t } = useTranslation(['stat', 'weapon_spell_effect', 'common']);
+  const theme = useTheme<TTheme>();
 
   const statsMap: {
     [key: string]: { value: number; maged: boolean };
@@ -166,6 +169,8 @@ const ItemStatsList: React.FC<IProps> = ({
                   color:
                     statLine.stat && statsMap[statLine.stat].maged
                       ? blue6
+                      : statLine.maxValue && statLine.maxValue < 0
+                      ? theme.text?.danger
                       : 'inherit',
                 }}
               >
