@@ -16,7 +16,7 @@ import { mq } from 'common/constants';
 
 const PAGE_SIZE = 12;
 
-const BOTTOM_OFFSET = -1200;
+const BOTTOM_OFFSET = -600;
 
 interface IProps {
   customSet?: customSet | null;
@@ -54,7 +54,8 @@ const SetSelector: React.FC<IProps> = ({
       const fetchMoreResult = await fetchMore({
         variables: { after: data.sets.pageInfo.endCursor },
         updateQuery: (prevData, { fetchMoreResult }) => {
-          if (!fetchMoreResult) {
+          if (!fetchMoreResult || !prevData) {
+            endCursorRef.current = null;
             return prevData;
           }
           return {
@@ -72,6 +73,12 @@ const SetSelector: React.FC<IProps> = ({
   }, [data]);
 
   const responsiveGridRef = React.useRef<HTMLDivElement | null>(null);
+
+  React.useEffect(() => {
+    if (!data) {
+      endCursorRef.current = null;
+    }
+  }, [data]);
 
   return (
     <ResponsiveGrid
@@ -99,7 +106,7 @@ const SetSelector: React.FC<IProps> = ({
             />
           ))}
       {(loading || data?.sets.pageInfo.hasNextPage) &&
-        Array(isMobile ? 2 : PAGE_SIZE)
+        Array(isMobile ? 2 : loading ? 24 : PAGE_SIZE)
           .fill(null)
           .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)}
       <Waypoint

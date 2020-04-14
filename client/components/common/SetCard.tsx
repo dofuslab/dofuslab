@@ -6,7 +6,11 @@ import { useTheme } from 'emotion-theming';
 
 import { TTheme } from 'common/themes';
 import { useTranslation } from 'i18n';
-import { SetBonuses, CardTitleWithLevel } from 'common/wrappers';
+import {
+  SetBonuses,
+  CardTitleWithLevel,
+  BrokenImagePlaceholder,
+} from 'common/wrappers';
 import { sets_sets_edges_node } from 'graphql/queries/__generated__/sets';
 import { itemCardStyle } from 'common/mixins';
 import { useEquipSetMutation, useCustomSet } from 'common/utils';
@@ -52,6 +56,8 @@ const SetCard: React.FC<IProps> = ({
 
   const theme = useTheme<TTheme>();
 
+  const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
+
   return (
     <Card
       hoverable
@@ -82,21 +88,39 @@ const SetCard: React.FC<IProps> = ({
             margin: '0px auto 12px',
           }}
         >
-          {set.items.map(item => (
-            <img
-              src={item?.imageUrl}
-              key={`item-${item.id}`}
-              css={{
-                width: 84,
-                height: 84,
-                [mq[1]]: {
-                  width: 60,
-                  height: 60,
-                },
-                [':not:first-of-type']: { marginLeft: 12 },
-              }}
-            />
-          ))}
+          {set.items.map(item =>
+            brokenImages.includes(item.id) ? (
+              <BrokenImagePlaceholder
+                key={`item-${item.id}`}
+                css={{
+                  width: 84,
+                  height: 84,
+                  [mq[1]]: {
+                    width: 60,
+                    height: 60,
+                  },
+                  [':not:first-of-type']: { marginLeft: 12 },
+                }}
+              />
+            ) : (
+              <img
+                src={item?.imageUrl}
+                key={`item-${item.id}`}
+                css={{
+                  width: 84,
+                  height: 84,
+                  [mq[1]]: {
+                    width: 60,
+                    height: 60,
+                  },
+                  [':not:first-of-type']: { marginLeft: 12 },
+                }}
+                onError={() => {
+                  setBrokenImages(prev => [...prev, item.id]);
+                }}
+              />
+            ),
+          )}
         </div>
         <SetBonuses
           bonuses={set.bonuses.filter(
