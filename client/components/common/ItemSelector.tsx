@@ -25,7 +25,7 @@ import Card from 'components/common/Card';
 
 const PAGE_SIZE = 24;
 
-const BOTTOM_OFFSET = -1200;
+const BOTTOM_OFFSET = -600;
 
 interface IProps {
   selectedItemSlot: itemSlots_itemSlots | null;
@@ -78,7 +78,9 @@ const ItemSelector: React.FC<IProps> = ({
     const fetchMoreResult = await fetchMore({
       variables: { after: data.items.pageInfo.endCursor },
       updateQuery: (prevData, { fetchMoreResult }) => {
-        if (!fetchMoreResult) {
+        if (!fetchMoreResult || !prevData) {
+          // allow the user to try again
+          endCursorRef.current = null;
           return prevData;
         }
         return {
@@ -112,6 +114,12 @@ const ItemSelector: React.FC<IProps> = ({
   }, [setSetModalVisible]);
 
   const theme = useTheme<TTheme>();
+
+  React.useEffect(() => {
+    if (!data) {
+      endCursorRef.current = null;
+    }
+  }, [data]);
 
   return (
     <ResponsiveGrid
@@ -168,7 +176,7 @@ const ItemSelector: React.FC<IProps> = ({
             );
           })}
       {(loading || data?.items.pageInfo.hasNextPage) &&
-        Array(isMobile ? 2 : 12)
+        Array(isMobile ? 2 : loading ? 24 : 12)
           .fill(null)
           .map((_, idx) => (
             <Card
