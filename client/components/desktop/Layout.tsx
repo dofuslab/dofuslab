@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import { jsx, Global } from '@emotion/core';
+import { jsx, Global, css } from '@emotion/core';
 import {
   Layout as AntdLayout,
   Button,
@@ -11,7 +11,6 @@ import {
   Menu,
 } from 'antd';
 import { useRouter } from 'next/router';
-import { useTheme } from 'emotion-theming';
 
 import LoginModal from '../common/LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
@@ -19,6 +18,7 @@ import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/curre
 import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import logoutMutation from 'graphql/mutations/logout.graphql';
+import { BORDER_COLOR, gray8 } from 'common/mixins';
 
 import { useTranslation, LANGUAGES } from 'i18n';
 import SignUpModal from '../common/SignUpModal';
@@ -34,7 +34,6 @@ import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faKey } from '@fortawesome/free-solid-svg-icons';
-import { TTheme, LIGHT_THEME_NAME } from 'common/themes';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -130,71 +129,31 @@ const Layout = (props: LayoutProps) => {
     </Select>
   );
 
-  const theme = useTheme<TTheme>();
-
   return (
     <AntdLayout css={{ height: '100%', minHeight: '100vh' }}>
       <Global
-        styles={{
-          html: {
-            fontSize: 18,
-          },
-          body: {
-            [mq[1]]: {
-              height: '100vh',
-            },
-            fontSize: '0.8rem',
-            msScrollbarFaceColor: theme.scrollbar?.background,
-            msScrollbarBaseColor: theme.scrollbar?.background,
-            msScrollbar3dlightColor: theme.scrollbar?.background,
-            msScrollbarHighlightColor: theme.scrollbar?.background,
-            msScrollbarTrackColor: theme.scrollbar?.trackBackground,
-            msScrollbarArrowColor: theme.scrollbar?.trackBackground,
-            msScrollbarShadowColor: theme.scrollbar?.background,
-            msScrollbarDarkshadowColor: theme.scrollbar?.background,
-          },
-          '#__next': {
-            height: '100%',
-          },
-          '&::-webkit-scrollbar': {
-            width: 12,
-            height: 3,
-
-            '&-button': {
-              backgroundColor: theme.scrollbar?.background,
-              '&:decrement': {
-                borderBottom: `1px solid ${theme.scrollbar?.buttonBorder}`,
-              },
-              '&:increment': {
-                borderTop: `1px solid ${theme.scrollbar?.buttonBorder}`,
-              },
-            },
-
-            '&-track': {
-              backgroundColor: theme.scrollbar?.background,
-              '&-piece': {
-                backgroundColor: theme.scrollbar?.trackBackground,
-              },
-            },
-
-            '&-thumb': {
-              height: 50,
-              backgroundColor: theme.scrollbar?.background,
-            },
-
-            '&-corner': {
-              backgroundColor: theme.scrollbar?.background,
-            },
-          },
-        }}
+        styles={css`
+          html {
+            font-size: 18px;
+          }
+          body {
+            ${mq[1]} {
+              height: 100vh;
+            }
+            font-size: 0.8rem;
+          }
+          #__next {
+            height: 100%;
+          }
+        `}
       />
       <StatusChecker />
       <AntdLayout.Header
         css={{
           display: 'flex',
           justifyContent: 'space-between',
-          background: theme.header?.background,
-          borderBottom: `1px solid ${theme.border?.default}`,
+          background: 'white',
+          borderBottom: `1px solid ${BORDER_COLOR}`,
           padding: '0 20px',
           fontSize: '0.8rem',
         }}
@@ -202,11 +161,7 @@ const Layout = (props: LayoutProps) => {
         <Link href="/" as="/">
           <div css={{ fontWeight: 500, cursor: 'pointer' }}>
             <img
-              src={
-                theme.name === LIGHT_THEME_NAME
-                  ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg'
-                  : 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark.svg'
-              }
+              src="https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg"
               css={{ width: 120 }}
             />
           </div>
@@ -262,7 +217,7 @@ const Layout = (props: LayoutProps) => {
                 type="link"
                 css={{
                   padding: 0,
-                  color: theme.text?.link?.default,
+                  color: gray8,
                   marginLeft: 16,
                 }}
               >

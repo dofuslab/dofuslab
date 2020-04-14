@@ -4,7 +4,6 @@ import * as React from 'react';
 import { jsx, Global, css } from '@emotion/core';
 import { Layout as AntdLayout, Button, Menu, Drawer } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
-import { useTheme } from 'emotion-theming';
 
 import LoginModal from '../common/LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
@@ -12,6 +11,7 @@ import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/curre
 import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import logoutMutation from 'graphql/mutations/logout.graphql';
+import { BORDER_COLOR } from 'common/mixins';
 
 import { useTranslation, LANGUAGES, langToFullName } from 'i18n';
 import SignUpModal from '../common/SignUpModal';
@@ -34,7 +34,6 @@ import {
 import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 import { useRouter } from 'next/router';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
-import { TTheme } from 'common/themes';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -111,8 +110,6 @@ const Layout = (props: LayoutProps) => {
     [changeLocaleMutate, i18n, client],
   );
 
-  const theme = useTheme<TTheme>();
-
   return (
     <AntdLayout css={{ height: '100%', minHeight: '100vh' }}>
       <Global
@@ -128,8 +125,8 @@ const Layout = (props: LayoutProps) => {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          background: theme.header?.background,
-          borderBottom: `1px solid ${theme.border?.default}`,
+          background: 'white',
+          borderBottom: `1px solid ${BORDER_COLOR}`,
           padding: '0 12px',
           fontSize: '0.8rem',
         }}

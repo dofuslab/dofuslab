@@ -1,5 +1,4 @@
 import { mq, BREAKPOINTS } from './constants';
-import { TTheme } from './themes';
 
 export const shadow = '0 2px 8px rgba(0, 0, 0, 0.15)';
 
@@ -26,6 +25,8 @@ export const gray13 = '#000000';
 
 export const red6 = '#f5222d';
 export const red8 = '#a8071a';
+
+export const BORDER_COLOR = gray5;
 
 export const ITEM_BOX_WIDTH = 84;
 export const ITEM_BOX_WIDTH_SMALL = 72;
@@ -59,7 +60,7 @@ export const itemImageDimensions = {
   },
 };
 
-export const itemImageBox = (theme: TTheme) => ({
+export const itemImageBox = {
   position: 'absolute' as 'absolute',
   width: '100%',
   height: '100%',
@@ -80,7 +81,7 @@ export const itemImageBox = (theme: TTheme) => ({
   fontSize: '0.75rem',
   borderRadius: 4,
   cursor: 'pointer',
-  border: `1px solid ${theme.border?.default}`,
+  border: `1px solid ${BORDER_COLOR}`,
   ['&:hover::before']: {
     opacity: 1,
   },
@@ -95,7 +96,7 @@ export const itemImageBox = (theme: TTheme) => ({
     bottom: 0,
     left: 0,
   },
-});
+};
 
 export const ellipsis = {
   overflow: 'hidden' as 'hidden',
@@ -103,8 +104,8 @@ export const ellipsis = {
   whiteSpace: 'nowrap' as 'nowrap',
 };
 
-export const itemBox = (theme: TTheme) => ({
-  background: theme.layer?.background,
+export const itemBox = {
+  background: 'white',
   paddingTop: '100%',
   position: 'relative' as 'relative',
   borderRadius: 4,
@@ -120,13 +121,13 @@ export const itemBox = (theme: TTheme) => ({
     margin: 8,
     ...(itemBoxDimensions[mq[4]] as {}),
   },
-});
+};
 
-export const selected = (theme: TTheme) => ({
+export const selected = {
   border: '1px solid transparent' /* remove the border's colour */,
-  boxShadow: `0 0 0 2px ${theme.border?.selected}` /* emulate the border */,
-  background: theme.layer?.background,
-});
+  boxShadow: `0 0 0 2px ${gray6}` /* emulate the border */,
+  background: gray2,
+};
 
 export const itemCardStyle = {
   fontSize: '0.75rem',

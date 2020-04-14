@@ -2,16 +2,14 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
 import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
 import { Stat } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { InputNumber } from 'antd';
 import { Button } from 'antd';
-import { red6 } from 'common/mixins';
+import { BORDER_COLOR, gray3, red6, gray7 } from 'common/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRedo } from '@fortawesome/free-solid-svg-icons';
 import { useDebounceCallback } from '@react-hook/debounce';
@@ -102,11 +100,7 @@ const reducer = (state: StatState, action: StatStateAction) => {
   }
 };
 
-const getInputNumberStyle = (
-  baseKey: string,
-  title: string,
-  theme: TTheme,
-) => ({
+const getInputNumberStyle = (baseKey: string, title: string) => ({
   fontSize: '0.75rem',
   maxWidth: '100%',
   display: 'flex',
@@ -124,7 +118,7 @@ const getInputNumberStyle = (
         height: 24,
       },
       width: '100%',
-      background: theme.statEditor?.categoryBackground,
+      background: gray7,
       color: 'white',
       opacity: 0.8,
       borderRadius: '4px',
@@ -205,8 +199,6 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
     DEBOUNCE_INTERVAL,
   );
 
-  const theme = useTheme<TTheme>();
-
   return (
     <div
       css={{
@@ -233,10 +225,10 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
 
         fontSize: '0.75rem',
         justifySelf: 'stretch',
-        background: theme.layer?.background,
+        background: 'white',
         borderRadius: 4,
         padding: 4,
-        border: `1px solid ${theme.border?.default}`,
+        border: `1px solid ${BORDER_COLOR}`,
       }}
     >
       {statDisplayArray.map(({ stat, baseKey, scrolledKey }) => (
@@ -257,7 +249,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
             max={999}
             min={0}
             size="small"
-            css={getInputNumberStyle(baseKey, t('BASE'), theme)}
+            css={getInputNumberStyle(baseKey, t('BASE'))}
             onFocus={e => {
               e.currentTarget.setSelectionRange(
                 0,
@@ -275,7 +267,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
             max={100}
             min={0}
             size="small"
-            css={getInputNumberStyle(baseKey, t('SCROLLED'), theme)}
+            css={getInputNumberStyle(baseKey, t('SCROLLED'))}
             onFocus={e => {
               e.currentTarget.setSelectionRange(
                 0,
@@ -310,7 +302,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
           justifyContent: 'center',
           alignItems: 'center',
           fontWeight: 500,
-          background: theme.statEditor?.remainingPointsBackground,
+          background: gray3,
           borderRadius: 4,
           color: remainingPoints < 0 ? red6 : 'inherit',
         }}
