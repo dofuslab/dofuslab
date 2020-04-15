@@ -97,8 +97,8 @@ const RequestPasswordResetPage: NextPage = () => {
           id="reset-password-form"
           initialValues={{ remember: true }}
           onFinish={onClick}
-          labelCol={{ span: 8 }}
-          wrapperCol={{ span: 16 }}
+          labelCol={{ span: 12 }}
+          wrapperCol={{ span: 12 }}
           css={{
             [mq[0]]: {
               width: 480,

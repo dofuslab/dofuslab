@@ -34,7 +34,7 @@ base_url = os.getenv("HOME_PAGE")
 reset_password_salt = "reset-password-salt"
 
 # supported_languages = ["en", "fr", "pt", "it", "de", "es"]
-supported_languages = ["en"]
+supported_languages = ["en", "fr"]
 
 db = SQLAlchemy(app)
 CORS(
