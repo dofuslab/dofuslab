@@ -75,7 +75,7 @@ msgstr "Tu es déjà connecté."
 
 #: app/schema.py:655 app/schema.py:725
 msgid "Verify your DofusLab account"
-msgstr "Vérifie ton compte DofusLab."
+msgstr "Vérifie ton compte DofusLab"
 
 #: app/schema.py:660
 msgid "An error occurred while registering."
