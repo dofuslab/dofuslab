@@ -24,6 +24,7 @@ export const gray11 = '#1f1f1f';
 export const gray12 = '#141414';
 export const gray13 = '#000000';
 
+export const red5 = '#ff4d4f';
 export const red6 = '#f5222d';
 export const red8 = '#a8071a';
 

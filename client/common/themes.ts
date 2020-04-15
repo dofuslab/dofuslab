@@ -12,6 +12,7 @@ import {
   gray10,
   blue6,
   red8,
+  red5,
 } from './mixins';
 
 export const DARK_THEME_NAME = 'DARK';
@@ -127,7 +128,7 @@ export const darkTheme: TTheme = {
   text: {
     default: darkColors.defaultText,
     light: gray8,
-    danger: red8,
+    danger: red5,
   },
   border: {
     default: gray10,
