@@ -1,7 +1,7 @@
 {
   "VERIFY_EMAIL": {
     "ALREADY_VERIFIED": {
-      "DESCRIPTION": "Votre compte est déjà vérifié. Aucune action supplémentaire n'est nécessaire.",
+      "DESCRIPTION": "Ton compte est déjà vérifié. Aucune action supplémentaire n'est nécessaire.",
       "TITLE": "Allez-y!"
     },
     "INVALID": {
@@ -9,7 +9,7 @@
       "TITLE": "URL invalide"
     },
     "SUCCESS": {
-      "DESCRIPTION": "Votre compte a été vérifié avec succès. Merci!",
+      "DESCRIPTION": "Ton compte a été vérifié avec succès. Merci!",
       "TITLE": "Succès"
     }
   }

@@ -113,7 +113,7 @@ msgstr "Tu n'es pas connecté."
 
 #: app/schema.py:762
 msgid "Incorrect password."
-msgstr "Mot de passe Incorrect."
+msgstr "Mot de passe incorrect."
 
 #: app/schema.py:770 app/schema.py:840
 msgid "You must enter a password different from your current one."
@@ -123,7 +123,7 @@ msgstr "Il faut saisir un mot de passe différent du mot de passe actuel."
 msgid ""
 "You have sent too many password request emails. Please wait awhile before"
 " trying again."
-msgstr "Trop de demandes de réinitialisation du mot de passe envoyés. Veuillez patienter avant de réessayer."
+msgstr "Trop de demandes de réinitialisation du mot de passe envoyées. Veuillez patienter avant de réessayer."
 
 #: app/schema.py:797
 msgid "We could not find an account with that email."
@@ -185,7 +185,7 @@ msgstr "- L'équipe DofusLab"
 #~ "Please follow the link to activate\n"
 #~ ""
 #~ "    your account."
-#~ msgstr "Merci de t'être inscrit susr DofusLab. Clique sur le lien pour activer ton compte."
+#~ msgstr "Merci de t'être inscrit sur DofusLab. Clique sur le lien pour activer ton compte."
 
 #~ msgid "Confirm your DofusLab account"
 #~ msgstr "Confirmer son compte DofusLab"
