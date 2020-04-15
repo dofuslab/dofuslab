@@ -79,10 +79,10 @@ const ChangePasswordModal: React.FC<IProps> = ({ visible, onClose }) => {
         id="change-password-form"
         initialValues={{ remember: true }}
         onFinish={handleOk}
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
+        labelCol={{ span: 10 }}
+        wrapperCol={{ span: 14 }}
         css={{
-          width: '88%',
+          width: '100%',
           ['.ant-form-item-explain, .ant-form-item-extra']: {
             margin: '4px 0',
           },

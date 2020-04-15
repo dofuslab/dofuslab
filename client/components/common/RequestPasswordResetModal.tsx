@@ -82,8 +82,8 @@ const RequestPasswordResetModal: React.FC<IProps> = ({ visible, onClose }) => {
         id="request-password-reset-form"
         initialValues={{ remember: true }}
         onFinish={handleOk}
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
+        labelCol={{ span: 12 }}
+        wrapperCol={{ span: 12 }}
         css={{ [mq[1]]: { width: '70%' } }}
       >
         <Form.Item

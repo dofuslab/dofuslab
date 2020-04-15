@@ -1,16 +1,16 @@
 {
   "VERIFY_EMAIL": {
     "ALREADY_VERIFIED": {
-      "DESCRIPTION": "__STRING_NOT_TRANSLATED__",
-      "TITLE": "__STRING_NOT_TRANSLATED__"
+      "DESCRIPTION": "Ton compte est déjà vérifié. Aucune action supplémentaire n'est nécessaire.",
+      "TITLE": "Allez-y!"
     },
     "INVALID": {
-      "DESCRIPTION": "__STRING_NOT_TRANSLATED__",
-      "TITLE": "__STRING_NOT_TRANSLATED__"
+      "DESCRIPTION": "Le lien de vérification est invalide ou a expiré.",
+      "TITLE": "URL invalide"
     },
     "SUCCESS": {
-      "DESCRIPTION": "__STRING_NOT_TRANSLATED__",
-      "TITLE": "__STRING_NOT_TRANSLATED__"
+      "DESCRIPTION": "Ton compte a été vérifié avec succès. Merci!",
+      "TITLE": "Succès"
     }
   }
 }
