@@ -11,7 +11,7 @@
   "CREATE_NEW_BUILD": "Créer un nouveau build",
   "DELETE": "Supprimer",
   "DUPLICATE_ITEM_IN_SET": "Tu as équipé plusieurs fois le même item d'une panoplie.",
-  "EQUIPPED": "Panoplie équipée",
+  "EQUIPPED": "Equipée",
   "EQUIP_SET": "Equipper la panoplie",
   "ERROR": "Erreur",
   "ERROR_OCCURRED": "Une erreur est survenue. Veuillez réessayer.",
@@ -37,9 +37,9 @@
   "OK": "OK",
   "OR": "ou",
   "OWNER": "Propriétaire",
-  "RESET_ALL": "Tout réinitialiser",
+  "RESET_ALL": "Réinitialiser",
   "RESET_ALL_FILTERS": "Réinitialiser tous les filtres",
-  "SCROLLED": "Parchotage",
+  "SCROLLED": "Parcho",
   "SEARCH": "Recherche",
   "SELECT_CLASS": "Choisir une classe",
   "SELECT_CLASS_DETAILED": "Choisir une classe pour voir ses sorts.",
@@ -49,5 +49,5 @@
   "UNTITLED": "Sans titre",
   "VIEW_ITEMS": "Voir les objets",
   "VIEW_SETS": "Voir les panoplies",
-  "WEAPON_AND_SPELLS": "Armes et sorts"
+  "WEAPON_AND_SPELLS": "Arme et sorts"
 }

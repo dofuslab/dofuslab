@@ -209,7 +209,7 @@ const SelectorFilters: React.FC<IProps> = ({
           flex: '1',
           flexDirection: 'column',
           [mq[1]]: { flexDirection: 'row' },
-          [mq[2]]: { marginLeft: 12, maxWidth: 360 },
+          [mq[2]]: { marginLeft: 12, maxWidth: 420 },
           [mq[4]]: { marginLeft: 16 },
         }}
       >

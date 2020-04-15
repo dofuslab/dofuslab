@@ -214,7 +214,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
         marginTop: 24,
         display: 'grid',
         gridAutoRows: 42,
-        gridTemplateColumns: '1fr 80px 80px',
+        gridTemplateColumns: '1fr 60px 60px',
         [mq[0]]: {
           gridAutoRows: 36,
           gridArea: '2 / 1 / 3 / 2',
