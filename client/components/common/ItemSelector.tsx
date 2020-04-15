@@ -127,46 +127,48 @@ const ItemSelector: React.FC<IProps> = ({
       useWindow={false}
       threshold={THRESHOLD}
     >
-      {(data?.items.edges ?? [])
-        .map(edge => edge.node)
-        .map(item => {
-          const itemSlotId =
-            selectedItemSlot?.id ||
-            findEmptyOrOnlySlotId(item.itemType, customSet);
-          const nextSlotId = selectedItemSlot
-            ? findNextEmptySlotId(item.itemType, selectedItemSlot.id, customSet)
-            : null;
-          const card = (
-            <ItemCard
-              key={`item-card-${item.id}`}
-              item={item}
-              itemSlotId={itemSlotId}
-              equipped={customSetItemIds.has(item.id)}
-              customSetId={customSet?.id ?? null}
-              selectItemSlot={selectItemSlot}
-              openSetModal={openSetModal}
-              isMobile={isMobile}
-              nextSlotId={nextSlotId}
-            />
-          );
-          return itemSlotId || !customSet ? (
-            card
-          ) : (
-            <ConfirmReplaceItemPopover
-              key={`confirm-replace-item-popover-${item.id}`}
-              item={item}
-              customSet={customSet}
-            >
-              {card}
-            </ConfirmReplaceItemPopover>
-          );
-        })}
-
-      {loading &&
-        !data &&
-        Array(isMobile ? 2 : 24)
-          .fill(null)
-          .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)}
+      {loading
+        ? Array(isMobile ? 2 : 24)
+            .fill(null)
+            .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)
+        : (data?.items.edges ?? [])
+            .map(edge => edge.node)
+            .map(item => {
+              const itemSlotId =
+                selectedItemSlot?.id ||
+                findEmptyOrOnlySlotId(item.itemType, customSet);
+              const nextSlotId = selectedItemSlot
+                ? findNextEmptySlotId(
+                    item.itemType,
+                    selectedItemSlot.id,
+                    customSet,
+                  )
+                : null;
+              const card = (
+                <ItemCard
+                  key={`item-card-${item.id}`}
+                  item={item}
+                  itemSlotId={itemSlotId}
+                  equipped={customSetItemIds.has(item.id)}
+                  customSetId={customSet?.id ?? null}
+                  selectItemSlot={selectItemSlot}
+                  openSetModal={openSetModal}
+                  isMobile={isMobile}
+                  nextSlotId={nextSlotId}
+                />
+              );
+              return itemSlotId || !customSet ? (
+                card
+              ) : (
+                <ConfirmReplaceItemPopover
+                  key={`confirm-replace-item-popover-${item.id}`}
+                  item={item}
+                  customSet={customSet}
+                >
+                  {card}
+                </ConfirmReplaceItemPopover>
+              );
+            })}
 
       {selectedSet && (
         <SetModal

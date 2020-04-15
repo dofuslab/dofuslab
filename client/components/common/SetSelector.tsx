@@ -93,17 +93,21 @@ const SetSelector: React.FC<IProps> = ({
       useWindow={false}
       threshold={THRESHOLD}
     >
-      {(data?.sets.edges ?? [])
-        .map(edge => edge.node)
-        .map(set => (
-          <SetCard
-            key={set.id}
-            set={set}
-            customSetId={customSet?.id ?? null}
-            selectItemSlot={selectItemSlot}
-            isMobile={isMobile}
-          />
-        ))}
+      {loading
+        ? Array(isMobile ? 2 : 24)
+            .fill(null)
+            .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)
+        : (data?.sets.edges ?? [])
+            .map(edge => edge.node)
+            .map(set => (
+              <SetCard
+                key={set.id}
+                set={set}
+                customSetId={customSet?.id ?? null}
+                selectItemSlot={selectItemSlot}
+                isMobile={isMobile}
+              />
+            ))}
     </InfiniteScroll>
   );
 };
