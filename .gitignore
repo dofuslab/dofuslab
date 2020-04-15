@@ -12,6 +12,7 @@ server/database/__pycache__/
 server/migrations/__pycache__/
 server/migrations/versions/__pycache__/
 server/static/
+server/app/translations/*/LC_MESSAGES/messages.mo
 
 # Run 
 server/messages.pot
