@@ -88,10 +88,10 @@ const Layout = (props: LayoutProps) => {
   }, [logout, router]);
 
   const changeLocaleHandler = React.useCallback(
-    (locale: string) => {
-      changeLocaleMutate({ variables: { locale } });
+    async (locale: string) => {
       i18n.changeLanguage(locale);
-      client.resetStore();
+      await changeLocaleMutate({ variables: { locale } });
+      await client.resetStore();
     },
     [changeLocaleMutate, i18n, client],
   );
