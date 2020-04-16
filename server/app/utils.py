@@ -6,6 +6,7 @@ from flask import session
 from flask_babel import _
 from graphql import GraphQLError
 from flask_login import current_user
+from sqlalchemy import update
 
 
 def get_or_create_custom_set(custom_set_id):
@@ -32,18 +33,15 @@ def get_or_create_custom_set(custom_set_id):
 
 def save_custom_sets():
     with session_scope() as db_session:
-        owned_custom_sets = session.get("owned_custom_sets") or []
-        mappings = []
-        for custom_set_id in owned_custom_sets:
-            info = {
-                "uuid": custom_set_id,
-                "owner_id": current_user.get_id(),
-            }
-            mappings.append(info)
-        try:
-            db_session.bulk_update_mappings(ModelCustomSet, mappings)
-        except Exception as e:
-            print("Error occurred saving custom sets:", e)
+        owned_custom_sets = session.get("owned_custom_sets")
+        if owned_custom_sets:
+            db_session.query(ModelCustomSet).filter(
+                ModelCustomSet.uuid.in_(owned_custom_sets)
+            ).update(
+                {ModelCustomSet.owner_id: current_user.get_id()},
+                synchronize_session="fetch",
+            )
+            session["owned_custom_sets"] = []
 
 
 def anonymous_or_verified(func):
