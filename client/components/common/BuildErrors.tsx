@@ -75,7 +75,7 @@ const BuildErrors: React.FC<IProps> = ({ customSet, errors, isMobile }) => {
         display: 'flex',
         alignItems: 'flex-start',
         flexDirection: 'column',
-        background: 'white',
+        background: theme.layer?.background,
         borderRadius: 4,
         border: `1px solid ${theme.border?.default}`,
         padding: 8,

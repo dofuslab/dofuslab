@@ -122,6 +122,7 @@ const SignUpModal: React.FC<IProps> = ({
           rules={[
             { required: true, message: t('VALIDATION.DISPLAY_NAME_REQUIRED') },
             {
+              // https://stackoverflow.com/questions/12018245/regular-expression-to-validate-username
               pattern: /^(?=[a-zA-Z0-9._]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/,
               message: t('VALIDATION.DISPLAY_NAME_RULES'),
             },

@@ -14,6 +14,7 @@ import { useTranslation } from 'i18n';
 import { resendVerificationEmail } from 'graphql/mutations/__generated__/resendVerificationEmail';
 import resendVerificationEmailMutation from 'graphql/mutations/resendVerificationEmail.graphql';
 import CommonLayout from 'components/common/CommonLayout';
+import { mq } from 'common/constants';
 
 const VerifyEmailPage: NextPage = () => {
   const { data } = useQuery<currentUser>(currentUserQuery);
@@ -52,7 +53,10 @@ const VerifyEmailPage: NextPage = () => {
       </Head>
       <div
         css={{
-          margin: '100px auto 60px auto',
+          margin: '20px auto 60px auto',
+          [mq[1]]: {
+            margin: '100px auto 60px auto',
+          },
           maxWidth: 400,
           textAlign: 'center',
         }}

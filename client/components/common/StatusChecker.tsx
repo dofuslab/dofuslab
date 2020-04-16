@@ -116,7 +116,7 @@ const StatusChecker: React.FC = () => {
   }, [data]);
 
   React.useEffect(() => {
-    if (localeData?.locale) {
+    if (localeData?.locale && localeData.locale !== i18n.language) {
       i18n.changeLanguage(localeData?.locale);
       client.resetStore();
     }

@@ -128,7 +128,6 @@ const MyBuilds: React.FC = () => {
   const { t } = useTranslation('common');
 
   const onLoadMore = React.useCallback(async () => {
-    console.log(myBuilds);
     if (!myBuilds?.currentUser?.customSets.pageInfo.hasNextPage) {
       return () => {};
     }

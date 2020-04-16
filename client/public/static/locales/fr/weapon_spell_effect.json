@@ -32,7 +32,7 @@
   "MODIFIABLE": "Modifiable",
   "NON_CRIT": "Sans CC",
   "NO_LOS": "Pas besoin de ligne de vue",
-  "NO_WEAPON_SKILL": "Sans Maîtrise de l'arme",
+  "NO_WEAPON_SKILL": "Sans Maîtrise d'arme",
   "RANGED": "A distance",
   "UNAVAILABLE_SPELL": "Ce sort est disponible au niveau {{level}}.",
   "USE_PER_TURN": "{{count}} utilisation par tour",
@@ -52,5 +52,5 @@
     "WATER_68": "Eau 68%",
     "WATER_85": "Eau 85%"
   },
-  "WEAPON_SKILL": "Maîtrise de l'arme"
+  "WEAPON_SKILL": "Maîtrise d'arme"
 }
