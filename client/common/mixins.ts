@@ -31,9 +31,6 @@ export const red8 = '#a8071a';
 export const ITEM_BOX_WIDTH = 84;
 export const ITEM_BOX_WIDTH_SMALL = 72;
 
-export const ITEM_IMAGE_WIDTH = 72;
-export const ITEM_IMAGE_WIDTH_SMALL = 60;
-
 export const itemBoxDimensions = {
   width: '100%',
   height: 'auto',
@@ -50,13 +47,6 @@ export const itemBoxDimensions = {
 export const itemImageDimensions = {
   width: '80%',
   height: 'auto',
-  // [mq[1]]: {
-  //   width: '80%',
-  // },
-  // [mq[4]]: {
-  //   width: ITEM_IMAGE_WIDTH,
-  //   height: ITEM_IMAGE_WIDTH,
-  // },
 };
 
 export const itemImageBox = (theme: TTheme) => ({
