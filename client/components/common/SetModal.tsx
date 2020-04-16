@@ -74,12 +74,9 @@ const SetModal: React.FC<IProps> = ({
       <div>
         <div
           css={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            [mq[0]]: {
-              gridTemplateColumns: 'repeat(5, 1fr)',
-            },
-            gridGap: 12,
+            display: 'flex',
+            flexWrap: 'wrap',
+            margin: -8,
           }}
         >
           {data.setById.items.map(item => (
