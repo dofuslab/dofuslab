@@ -64,6 +64,7 @@ export type TTheme = {
   };
   switch?: {
     background?: string;
+    button?: string;
   };
   backTop?: {
     background?: string;
@@ -164,7 +165,8 @@ export const darkTheme: TTheme = {
     buttonBorder: 'rgba(255, 255, 255, 0.3)',
   },
   switch: {
-    background: 'rgba(255, 255, 255, 0.3)',
+    background: 'rgba(255, 255, 255, 0.2)',
+    button: 'rgba(255, 255, 255, 0.8)',
   },
   backTop: {
     background: 'rgba(255, 255, 255, 0.2)',

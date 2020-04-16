@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import { Button, Input, InputNumber, Form, Tooltip } from 'antd';
+import { Button, Input, InputNumber, Form } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
@@ -23,6 +23,7 @@ import { mq } from 'common/constants';
 import BonusStats from '../desktop/BonusStats';
 import BuildErrors from './BuildErrors';
 import { IError } from 'common/types';
+import Tooltip from 'components/common/Tooltip';
 
 interface IProps {
   customSet?: customSet | null;

@@ -6,7 +6,7 @@ import {
   classById_classById_spellVariantPairs_spells,
   classById_classById_spellVariantPairs_spells_spellStats,
 } from 'graphql/queries/__generated__/classById';
-import { Radio, Tooltip, Divider, Switch } from 'antd';
+import { Radio, Divider, Switch } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
 import { useTheme } from 'emotion-theming';
 
@@ -35,6 +35,7 @@ import {
   faPeopleArrows,
 } from '@fortawesome/free-solid-svg-icons';
 import Card from 'components/common/Card';
+import Tooltip from 'components/common/Tooltip';
 
 interface IProps {
   customSet?: customSet | null;
@@ -213,6 +214,12 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
         onChange={setShowRanged}
         css={{
           background: theme.switch?.background,
+          '.ant-switch-inner': {
+            color: theme.text?.default,
+          },
+          '&::after': {
+            background: theme.switch?.button,
+          },
         }}
         checkedChildren={<FontAwesomeIcon icon={faPeopleArrows} />}
         unCheckedChildren={<FontAwesomeIcon icon={faFistRaised} />}

@@ -1,10 +1,10 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import { jsx, ClassNames } from '@emotion/core';
+import { ClassNames, jsx } from '@emotion/core';
 import { Stat } from '__generated__/globalTypes';
 import { mq, DEBOUNCE_INTERVAL, SEARCH_BAR_ID } from 'common/constants';
-import { Select, Input, InputNumber, Button, Switch, Tooltip } from 'antd';
+import { Select, Input, InputNumber, Button, Switch } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -21,6 +21,7 @@ import { SharedFilterAction, SharedFilters } from 'common/types';
 import { Media } from './Media';
 import ResetAllButton from './ResetAllButton';
 import { useTranslation } from 'i18n';
+import Tooltip from 'components/common/Tooltip';
 
 const { Search } = Input;
 const { Option } = Select;
@@ -158,6 +159,12 @@ const SelectorFilters: React.FC<IProps> = ({
                   margin: '0 12px',
                   [mq[1]]: { margin: '0 20px 0 0' },
                   background: theme.switch?.background,
+                  '.ant-switch-inner': {
+                    color: theme.text?.default,
+                  },
+                  '&::after': {
+                    background: theme.switch?.button,
+                  },
                 }}
                 checked={showSets}
                 onChange={setShowSets}

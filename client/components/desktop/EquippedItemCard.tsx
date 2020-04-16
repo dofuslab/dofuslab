@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { jsx, css } from '@emotion/core';
-import { Tooltip } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -28,6 +27,7 @@ import ItemStatsList from '../common/ItemStatsList';
 import { item_set } from 'graphql/fragments/__generated__/item';
 import { IError } from 'common/types';
 import Card from 'components/common/Card';
+import Tooltip from 'components/common/Tooltip';
 
 const quickMageStats = [
   {
