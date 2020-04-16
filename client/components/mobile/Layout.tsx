@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import { jsx, Global, css } from '@emotion/core';
+import { jsx, Global } from '@emotion/core';
 import { Layout as AntdLayout, Button, Menu, Drawer } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import { useTheme } from 'emotion-theming';
@@ -116,11 +116,14 @@ const Layout = (props: LayoutProps) => {
   return (
     <AntdLayout css={{ height: '100%', minHeight: '100vh' }}>
       <Global
-        styles={css`
-          body {
-            height: auto;
-          }
-        `}
+        styles={{
+          html: {
+            fontSize: 18,
+          },
+          body: {
+            height: 'auto',
+          },
+        }}
       />
       <StatusChecker />
       <AntdLayout.Header
