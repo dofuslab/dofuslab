@@ -20,7 +20,7 @@ import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import logoutMutation from 'graphql/mutations/logout.graphql';
 
-import { useTranslation, LANGUAGES } from 'i18n';
+import { useTranslation, LANGUAGES, langToFullName } from 'i18n';
 import SignUpModal from '../common/SignUpModal';
 import MyBuilds from '../common/MyBuilds';
 import Link from 'next/link';
@@ -114,16 +114,7 @@ const Layout = (props: LayoutProps) => {
       {LANGUAGES.map(lang => (
         <Option key={lang} value={lang}>
           <div css={{ display: 'flex', alignItems: 'center' }}>
-            <div
-              css={{
-                fontVariant: 'small-caps',
-                fontSize: '0.8rem',
-                fontWeight: 500,
-                marginTop: -2,
-              }}
-            >
-              {lang}
-            </div>
+            {langToFullName(lang)}
           </div>
         </Option>
       ))}

@@ -33,6 +33,7 @@ export type TTheme = {
       default?: string;
     };
     danger?: string;
+    primary?: string;
   };
   border?: {
     default?: string;
@@ -81,6 +82,7 @@ export const lightTheme: TTheme = {
     },
     light: gray6,
     danger: red8,
+    primary: blue6,
   },
   border: {
     default: gray5,
@@ -129,6 +131,7 @@ export const darkTheme: TTheme = {
     default: darkColors.defaultText,
     light: gray8,
     danger: red5,
+    primary: blue6,
   },
   border: {
     default: gray10,
