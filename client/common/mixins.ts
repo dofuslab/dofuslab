@@ -38,26 +38,25 @@ export const itemBoxDimensions = {
   width: '100%',
   height: 'auto',
   [mq[1]]: {
-    width: ITEM_BOX_WIDTH_SMALL,
-    height: ITEM_BOX_WIDTH_SMALL,
+    maxWidth: ITEM_BOX_WIDTH_SMALL,
+    maxHeight: ITEM_BOX_WIDTH_SMALL,
   },
   [mq[4]]: {
-    width: ITEM_BOX_WIDTH,
-    height: ITEM_BOX_WIDTH,
+    maxWidth: ITEM_BOX_WIDTH,
+    maxHeight: ITEM_BOX_WIDTH,
   },
 };
 
 export const itemImageDimensions = {
   width: '80%',
   height: 'auto',
-  [mq[1]]: {
-    width: ITEM_IMAGE_WIDTH_SMALL,
-    height: ITEM_IMAGE_WIDTH_SMALL,
-  },
-  [mq[4]]: {
-    width: ITEM_IMAGE_WIDTH,
-    height: ITEM_IMAGE_WIDTH,
-  },
+  // [mq[1]]: {
+  //   width: '80%',
+  // },
+  // [mq[4]]: {
+  //   width: ITEM_IMAGE_WIDTH,
+  //   height: ITEM_IMAGE_WIDTH,
+  // },
 };
 
 export const itemImageBox = (theme: TTheme) => ({
@@ -67,13 +66,13 @@ export const itemImageBox = (theme: TTheme) => ({
   top: 0,
   left: 0,
   [mq[1]]: {
-    width: ITEM_BOX_WIDTH_SMALL,
-    height: ITEM_BOX_WIDTH_SMALL,
+    maxWidth: ITEM_BOX_WIDTH_SMALL,
+    maxHeight: ITEM_BOX_WIDTH_SMALL,
     position: 'relative' as 'relative',
   },
   [mq[4]]: {
-    width: ITEM_BOX_WIDTH,
-    height: ITEM_BOX_WIDTH,
+    maxWidth: ITEM_BOX_WIDTH,
+    maxHeight: ITEM_BOX_WIDTH,
   },
   display: 'flex',
   justifyContent: 'center',
@@ -95,6 +94,11 @@ export const itemImageBox = (theme: TTheme) => ({
     right: 0,
     bottom: 0,
     left: 0,
+  },
+  '&::after': {
+    content: "''",
+    display: 'block',
+    paddingBottom: '100%',
   },
 });
 

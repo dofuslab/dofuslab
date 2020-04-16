@@ -12,6 +12,8 @@
   "DELETE": "Supprimer",
   "DUPLICATE_ITEM_IN_SET": "Tu as équipé plusieurs fois le même item d'une panoplie.",
   "EQUIPPED": "Equipée",
+  "EQUIP_ITEMS": "Equipper {{count}} objet",
+  "EQUIP_ITEMS_plural": "Equipper {{count}} objets",
   "EQUIP_SET": "Equipper la panoplie",
   "ERROR": "Erreur",
   "ERROR_OCCURRED": "Une erreur est survenue. Veuillez réessayer.",

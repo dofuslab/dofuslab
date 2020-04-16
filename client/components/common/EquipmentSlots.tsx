@@ -90,8 +90,8 @@ const EquipmentSlots: React.FC<IProps> = ({
         },
         [mq[1]]: {
           display: 'flex',
-          flexWrap: 'wrap',
           margin: '0 8px',
+          gap: 0,
         },
         [mq[4]]: {
           margin: '0 12px',
@@ -117,7 +117,15 @@ const EquipmentSlots: React.FC<IProps> = ({
                 errors={equippedItemErrors}
               />
             </Media>
-            <Media greaterThanOrEqual="xs">
+            <Media
+              greaterThanOrEqual="xs"
+              css={{
+                flex: '1 1 0',
+                minWidth: 0,
+                maxWidth: 80,
+                [mq[4]]: { maxWidth: 100 },
+              }}
+            >
               <DesktopEquippedItem
                 slot={slot}
                 key={slot.id}
