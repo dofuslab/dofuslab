@@ -525,6 +525,25 @@ class EquipSet(graphene.Mutation):
         return EquipSet(custom_set=custom_set)
 
 
+class EquipMultipleItems(graphene.Mutation):
+    class Arguments:
+        custom_set_id = graphene.UUID()
+        item_ids = graphene.NonNull(graphene.List(graphene.NonNull(graphene.UUID)))
+
+    custom_set = graphene.Field(CustomSet, required=True)
+
+    @anonymous_or_verified
+    def mutate(self, info, **kwargs):
+        with session_scope() as db_session:
+            custom_set_id = kwargs.get("custom_set_id")
+            item_ids = kwargs.get("item_ids")
+            custom_set = get_or_create_custom_set(custom_set_id)
+            items = db_session.query(ModelItem).filter(ModelItem.uuid.in_(item_ids))
+            custom_set.equip_items(items)
+
+        return EquipMultipleItems(custom_set=custom_set)
+
+
 class MageEquippedItem(graphene.Mutation):
     class Arguments:
         equipped_item_id = graphene.UUID(required=True)
@@ -1060,6 +1079,7 @@ class Mutation(graphene.ObjectType):
     edit_custom_set_metadata = EditCustomSetMetadata.Field()
     edit_custom_set_stats = EditCustomSetStats.Field()
     equip_set = EquipSet.Field()
+    equip_multiple_items = EquipMultipleItems.Field()
     create_custom_set = CreateCustomSet.Field()
     resend_verification_email = ResendVerificationEmail.Field()
     change_locale = ChangeLocale.Field()

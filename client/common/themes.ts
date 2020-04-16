@@ -10,6 +10,9 @@ import {
   gray4,
   gray12,
   gray10,
+  blue6,
+  red8,
+  red5,
 } from './mixins';
 
 export const DARK_THEME_NAME = 'DARK';
@@ -29,10 +32,13 @@ export type TTheme = {
     link?: {
       default?: string;
     };
+    danger?: string;
+    primary?: string;
   };
   border?: {
     default?: string;
     selected?: string;
+    primarySelected?: string;
   };
   layer?: {
     background?: string;
@@ -75,10 +81,13 @@ export const lightTheme: TTheme = {
       default: gray8,
     },
     light: gray6,
+    danger: red8,
+    primary: blue6,
   },
   border: {
     default: gray5,
     selected: gray6,
+    primarySelected: blue6,
   },
   layer: {
     background: 'white',
@@ -121,10 +130,13 @@ export const darkTheme: TTheme = {
   text: {
     default: darkColors.defaultText,
     light: gray8,
+    danger: red5,
+    primary: blue6,
   },
   border: {
     default: gray10,
     selected: gray9,
+    primarySelected: blue6,
   },
   layer: {
     background: gray11,

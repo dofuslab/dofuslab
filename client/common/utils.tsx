@@ -58,6 +58,11 @@ import {
   itemSlots,
   itemSlots_itemSlots,
 } from 'graphql/queries/__generated__/itemSlots';
+import {
+  equipItems,
+  equipItemsVariables,
+} from 'graphql/mutations/__generated__/equipItems';
+import EquipItemsMutation from 'graphql/mutations/equipItems.graphql';
 
 const getBaseStat = (stats: customSet_stats, stat: Stat) => {
   switch (stat) {
@@ -422,6 +427,52 @@ export const useEquipItemMutation = (item: item) => {
   );
 
   return onClick;
+};
+
+export const useEquipItemsMutation = (
+  itemIds: Array<string>,
+  customSet?: customSet | null,
+): [
+  () => Promise<void>,
+  { data?: equipItems; loading: boolean; error?: ApolloError },
+] => {
+  const router = useRouter();
+  const { customSetId: routerSetId } = router.query;
+
+  const [equipItems, { data, loading, error }] = useMutation<
+    equipItems,
+    equipItemsVariables
+  >(EquipItemsMutation, {
+    variables: {
+      itemIds,
+      customSetId: customSet?.id,
+    },
+  });
+
+  const client = useApolloClient();
+
+  const { t } = useTranslation('common');
+
+  const onClick = useCallback(async () => {
+    const ok = await checkAuthentication(client, t, customSet);
+    if (!ok) return;
+    const { data: resultData } = await equipItems();
+
+    if (resultData?.equipMultipleItems?.customSet.id !== routerSetId) {
+      router.replace(
+        {
+          pathname: '/',
+          query: { customSetId: resultData?.equipMultipleItems?.customSet.id },
+        },
+        `/build/${resultData?.equipMultipleItems?.customSet.id}`,
+        {
+          shallow: true,
+        },
+      );
+    }
+  }, [equipItems, routerSetId, router]);
+
+  return [onClick, { data, loading, error }];
 };
 
 export const useEquipSetMutation = (

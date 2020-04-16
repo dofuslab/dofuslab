@@ -2,16 +2,17 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
+import { useTheme } from 'emotion-theming';
 import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
-import { blue6 } from 'common/mixins';
 import { Stat, WeaponElementMage } from '__generated__/globalTypes';
 import { Divider } from 'antd';
 import { WeaponEffectsList, BrokenImagePlaceholder } from 'common/wrappers';
 import { TFunction } from 'next-i18next';
 import { IError } from 'common/types';
 import { renderErrors } from 'common/utils';
+import { TTheme } from 'common/themes';
 
 interface IProps {
   readonly item: item;
@@ -75,6 +76,7 @@ const ItemStatsList: React.FC<IProps> = ({
   errors,
 }) => {
   const { t } = useTranslation(['stat', 'weapon_spell_effect', 'common']);
+  const theme = useTheme<TTheme>();
 
   const statsMap: {
     [key: string]: { value: number; maged: boolean };
@@ -160,26 +162,31 @@ const ItemStatsList: React.FC<IProps> = ({
           {item.stats
             .sort(({ order: i }, { order: j }) => i - j)
             .map((statLine, idx) => (
-              <li
-                key={`stat-${idx}`}
-                css={{
-                  color:
-                    statLine.stat && statsMap[statLine.stat].maged
-                      ? blue6
-                      : 'inherit',
-                }}
-              >
-                {statLine.stat
-                  ? `${statsMap[statLine.stat].value} ${t(statLine.stat)}`
-                  : statLine.customStat}
+              <li key={`stat-${idx}`}>
+                <span
+                  css={{
+                    color:
+                      statLine.stat && statsMap[statLine.stat].maged
+                        ? theme.text?.primary
+                        : statLine.maxValue && statLine.maxValue < 0
+                        ? theme.text?.danger
+                        : 'inherit',
+                  }}
+                >
+                  {statLine.stat
+                    ? `${statsMap[statLine.stat].value} ${t(statLine.stat)}`
+                    : statLine.customStat}
+                </span>
               </li>
             ))}
           {exos &&
             exos
               .filter(({ stat }) => !!exoStatsMap[stat])
               .map(({ stat, value }) => (
-                <li key={`exo-${stat}`} css={{ color: blue6 }}>
-                  {value} {t(stat)}
+                <li key={`exo-${stat}`}>
+                  <span css={{ color: theme.text?.primary }}>
+                    {value} {t(stat)}
+                  </span>
                 </li>
               ))}
         </ul>

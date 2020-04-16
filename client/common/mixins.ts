@@ -24,39 +24,29 @@ export const gray11 = '#1f1f1f';
 export const gray12 = '#141414';
 export const gray13 = '#000000';
 
+export const red5 = '#ff4d4f';
 export const red6 = '#f5222d';
 export const red8 = '#a8071a';
 
 export const ITEM_BOX_WIDTH = 84;
 export const ITEM_BOX_WIDTH_SMALL = 72;
 
-export const ITEM_IMAGE_WIDTH = 72;
-export const ITEM_IMAGE_WIDTH_SMALL = 60;
-
 export const itemBoxDimensions = {
   width: '100%',
   height: 'auto',
   [mq[1]]: {
-    width: ITEM_BOX_WIDTH_SMALL,
-    height: ITEM_BOX_WIDTH_SMALL,
+    maxWidth: ITEM_BOX_WIDTH_SMALL,
+    maxHeight: ITEM_BOX_WIDTH_SMALL,
   },
   [mq[4]]: {
-    width: ITEM_BOX_WIDTH,
-    height: ITEM_BOX_WIDTH,
+    maxWidth: ITEM_BOX_WIDTH,
+    maxHeight: ITEM_BOX_WIDTH,
   },
 };
 
 export const itemImageDimensions = {
   width: '80%',
   height: 'auto',
-  [mq[1]]: {
-    width: ITEM_IMAGE_WIDTH_SMALL,
-    height: ITEM_IMAGE_WIDTH_SMALL,
-  },
-  [mq[4]]: {
-    width: ITEM_IMAGE_WIDTH,
-    height: ITEM_IMAGE_WIDTH,
-  },
 };
 
 export const itemImageBox = (theme: TTheme) => ({
@@ -66,13 +56,13 @@ export const itemImageBox = (theme: TTheme) => ({
   top: 0,
   left: 0,
   [mq[1]]: {
-    width: ITEM_BOX_WIDTH_SMALL,
-    height: ITEM_BOX_WIDTH_SMALL,
+    maxWidth: ITEM_BOX_WIDTH_SMALL,
+    maxHeight: ITEM_BOX_WIDTH_SMALL,
     position: 'relative' as 'relative',
   },
   [mq[4]]: {
-    width: ITEM_BOX_WIDTH,
-    height: ITEM_BOX_WIDTH,
+    maxWidth: ITEM_BOX_WIDTH,
+    maxHeight: ITEM_BOX_WIDTH,
   },
   display: 'flex',
   justifyContent: 'center',
@@ -94,6 +84,11 @@ export const itemImageBox = (theme: TTheme) => ({
     right: 0,
     bottom: 0,
     left: 0,
+  },
+  '&::after': {
+    content: "''",
+    display: 'block',
+    paddingBottom: '100%',
   },
 });
 
@@ -123,8 +118,14 @@ export const itemBox = (theme: TTheme) => ({
 });
 
 export const selected = (theme: TTheme) => ({
-  border: '1px solid transparent' /* remove the border's colour */,
-  boxShadow: `0 0 0 2px ${theme.border?.selected}` /* emulate the border */,
+  border: '1px solid transparent', // fake border
+  boxShadow: `0 0 0 2px ${theme.border?.selected}`, // border
+  background: theme.layer?.background,
+  zIndex: 1, // so "border" appears above other elements
+});
+
+export const primarySelected = (theme: TTheme) => ({
+  boxShadow: `0 0 0 2px ${theme.border?.primarySelected}`, // renders as border
   background: theme.layer?.background,
 });
 

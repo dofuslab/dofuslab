@@ -263,7 +263,13 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
                 </span>
               </div>
             )}
-            <div css={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+            <div
+              css={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gridColumnGap: 8,
+              }}
+            >
               <div css={damageHeaderStyle}>{t('NON_CRIT')}</div>
               {spellStats.baseCritChance ? (
                 <div css={damageHeaderStyle}>
@@ -283,6 +289,8 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
                     alignItems: 'center',
                     color: theme.damage?.nonCrit?.color,
                     fontWeight: 500,
+                    padding: 8,
+                    textAlign: 'center',
                   }}
                 >
                   {t('DOES_NOT_CRIT')}

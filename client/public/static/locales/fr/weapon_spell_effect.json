@@ -10,7 +10,7 @@
   "CELL_plural": "{{count}} cellules",
   "COOLDOWN": "Intervalle de relance: {{count}} tour",
   "COOLDOWN_plural": "Intervalle de relance: {{count}} tours",
-  "CRIT_WITH_PERCENTAGE": "Chance de coup critique: {{percentage}}%",
+  "CRIT_WITH_PERCENTAGE": "CC ({{percentage}})%",
   "DOES_NOT_CRIT": "Pas de coup critique",
   "EFFECT_TYPE": {
     "AIR_DAMAGE": "Dommage air",
@@ -30,7 +30,7 @@
   "LINEAR": "Linéaire",
   "MELEE": "Mélée",
   "MODIFIABLE": "Modifiable",
-  "NON_CRIT": "Pas de coup critique",
+  "NON_CRIT": "Sans CC",
   "NO_LOS": "Pas besoin de ligne de vue",
   "NO_WEAPON_SKILL": "Sans Maîtrise de l'arme",
   "RANGED": "A distance",
