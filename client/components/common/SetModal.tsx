@@ -82,8 +82,6 @@ const SetModal: React.FC<IProps> = ({
         <div
           css={{
             display: 'flex',
-            flexWrap: 'wrap',
-            margin: -8,
           }}
         >
           {data.setById.items.map(item => (
@@ -93,6 +91,11 @@ const SetModal: React.FC<IProps> = ({
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                maxWidth: 80,
+                flex: '1 1 0',
+                '&:not(:last-of-type)': {
+                  marginRight: 4,
+                },
               }}
               onClick={() => {
                 setItemIds(prev => {
