@@ -118,13 +118,14 @@ export const itemBox = (theme: TTheme) => ({
 });
 
 export const selected = (theme: TTheme) => ({
-  border: '1px solid transparent' /* remove the border's colour */,
-  boxShadow: `0 0 0 2px ${theme.border?.selected}` /* emulate the border */,
+  border: '1px solid transparent', // fake border
+  boxShadow: `0 0 0 2px ${theme.border?.selected}`, // border
   background: theme.layer?.background,
+  zIndex: 1, // so "border" appears above other elements
 });
 
 export const primarySelected = (theme: TTheme) => ({
-  boxShadow: `0 0 0 2px ${theme.border?.primarySelected}` /* emulate the border */,
+  boxShadow: `0 0 0 2px ${theme.border?.primarySelected}`, // renders as border
   background: theme.layer?.background,
 });
 
