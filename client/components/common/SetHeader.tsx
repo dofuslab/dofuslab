@@ -212,7 +212,8 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
           alignItems: 'center',
           marginTop: 8,
           [mq[1]]: {
-            marginTop: 0,
+            // space in case div needs to wrap
+            margin: '4px 0',
           },
         }}
       >
