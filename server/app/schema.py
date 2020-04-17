@@ -646,6 +646,41 @@ class DeleteCustomSetItem(graphene.Mutation):
         return DeleteCustomSetItem(custom_set=custom_set)
 
 
+class CopyCustomSet(graphene.Mutation):
+    class Arguments:
+        custom_set_id = graphene.UUID(required=True)
+
+    custom_set = graphene.Field(CustomSet, required=True)
+
+    @anonymous_or_verified
+    def mutate(self, info, **kwargs):
+        custom_set_id = kwargs.get("custom_set_id")
+        with session_scope() as db_session:
+            old_custom_set = db_session.query(ModelCustomSet).get(custom_set_id)
+            custom_set = get_or_create_custom_set(None)
+            custom_set.level = old_custom_set.level
+            for stat in base_stat_list + scrolled_stat_list:
+                setattr(custom_set.stats, stat, getattr(old_custom_set.stats, stat))
+            for old_equipped_item in old_custom_set.equipped_items:
+                equipped_item = ModelEquippedItem(
+                    custom_set_id=custom_set.uuid,
+                    item_slot_id=old_equipped_item.item_slot_id,
+                    item_id=old_equipped_item.item_id,
+                    weapon_element_mage=old_equipped_item.weapon_element_mage,
+                )
+                db_session.add(equipped_item)
+                db_session.flush()
+                for old_exo in old_equipped_item.exos:
+                    exo = ModelEquippedItemExo(
+                        stat=old_exo.stat,
+                        value=old_exo.value,
+                        equipped_item_id=equipped_item.uuid,
+                    )
+                    db_session.add(exo)
+
+        return CopyCustomSet(custom_set=custom_set)
+
+
 class RegisterUser(graphene.Mutation):
     class Arguments:
         username = graphene.NonNull(graphene.String)
@@ -1078,6 +1113,7 @@ class Mutation(graphene.ObjectType):
     change_password = ChangePassword.Field()
     request_password_reset = RequestPasswordReset.Field()
     reset_password = ResetPassword.Field()
+    copy_custom_set = CopyCustomSet.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
