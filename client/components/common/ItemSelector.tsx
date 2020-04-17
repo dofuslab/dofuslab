@@ -17,7 +17,7 @@ import ConfirmReplaceItemPopover from '../desktop/ConfirmReplaceItemPopover';
 import { item_set } from 'graphql/fragments/__generated__/item';
 import SetModal from './SetModal';
 import { mq } from 'common/constants';
-import { CardSkeleton } from 'common/wrappers';
+import SkeletonCardsLoader from './SkeletonCardsLoader';
 
 const PAGE_SIZE = 24;
 
@@ -105,15 +105,7 @@ const ItemSelector: React.FC<IProps> = ({
   return (
     <InfiniteScroll
       hasMore={data?.items.pageInfo.hasNextPage}
-      loader={
-        <React.Fragment key={'frag'}>
-          {Array(isMobile ? 2 : 12)
-            .fill(null)
-            .map((_, idx) => (
-              <CardSkeleton key={`card-skeleton-${idx}`} />
-            ))}
-        </React.Fragment>
-      }
+      loader={<SkeletonCardsLoader key="loader" />}
       loadMore={onLoadMore}
       css={{
         ...getResponsiveGridStyle([2, 2, 2, 3, 4, 5, 6]),
@@ -127,48 +119,48 @@ const ItemSelector: React.FC<IProps> = ({
       useWindow={false}
       threshold={THRESHOLD}
     >
-      {loading
-        ? Array(isMobile ? 2 : 24)
-            .fill(null)
-            .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)
-        : (data?.items.edges ?? [])
-            .map(edge => edge.node)
-            .map(item => {
-              const itemSlotId =
-                selectedItemSlot?.id ||
-                findEmptyOrOnlySlotId(item.itemType, customSet);
-              const nextSlotId = selectedItemSlot
-                ? findNextEmptySlotId(
-                    item.itemType,
-                    selectedItemSlot.id,
-                    customSet,
-                  )
-                : null;
-              const card = (
-                <ItemCard
-                  key={`item-card-${item.id}`}
-                  item={item}
-                  itemSlotId={itemSlotId}
-                  equipped={customSetItemIds.has(item.id)}
-                  customSetId={customSet?.id ?? null}
-                  selectItemSlot={selectItemSlot}
-                  openSetModal={openSetModal}
-                  isMobile={isMobile}
-                  nextSlotId={nextSlotId}
-                />
-              );
-              return itemSlotId || !customSet ? (
-                card
-              ) : (
-                <ConfirmReplaceItemPopover
-                  key={`confirm-replace-item-popover-${item.id}`}
-                  item={item}
-                  customSet={customSet}
-                >
-                  {card}
-                </ConfirmReplaceItemPopover>
-              );
-            })}
+      {loading ? (
+        <SkeletonCardsLoader key="loader" multiplier={2} />
+      ) : (
+        (data?.items.edges ?? [])
+          .map(edge => edge.node)
+          .map(item => {
+            const itemSlotId =
+              selectedItemSlot?.id ||
+              findEmptyOrOnlySlotId(item.itemType, customSet);
+            const nextSlotId = selectedItemSlot
+              ? findNextEmptySlotId(
+                  item.itemType,
+                  selectedItemSlot.id,
+                  customSet,
+                )
+              : null;
+            const card = (
+              <ItemCard
+                key={`item-card-${item.id}`}
+                item={item}
+                itemSlotId={itemSlotId}
+                equipped={customSetItemIds.has(item.id)}
+                customSetId={customSet?.id ?? null}
+                selectItemSlot={selectItemSlot}
+                openSetModal={openSetModal}
+                isMobile={isMobile}
+                nextSlotId={nextSlotId}
+              />
+            );
+            return itemSlotId || !customSet ? (
+              card
+            ) : (
+              <ConfirmReplaceItemPopover
+                key={`confirm-replace-item-popover-${item.id}`}
+                item={item}
+                customSet={customSet}
+              >
+                {card}
+              </ConfirmReplaceItemPopover>
+            );
+          })
+      )}
 
       {selectedSet && (
         <SetModal

@@ -15,6 +15,8 @@ import { mq } from 'common/constants';
 import SetModal from 'components/common/SetModal';
 import { item_set } from 'graphql/fragments/__generated__/item';
 
+const DISPLAY_ITEM_LIMIT = 3;
+
 interface IProps {
   customSet: customSet;
 }
@@ -23,7 +25,7 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
   const { t } = useTranslation(['stat', 'common']);
   const setBonuses = getBonusesFromCustomSet(customSet);
   const itemOrder = customSet.equippedItems.reduce(
-    (acc, curr) => ({ ...acc, [curr.item.id]: curr.slot.order }),
+    (acc, curr) => ({ ...acc, [curr.id]: curr.slot.order }),
     {},
   ) as { [key: string]: number };
 
@@ -144,7 +146,32 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
                               />
                             )}
                           </div>
-                        ))}
+                        ))
+                        .filter((_, idx) =>
+                          equippedItems.length - DISPLAY_ITEM_LIMIT > 1
+                            ? idx < DISPLAY_ITEM_LIMIT
+                            : idx < DISPLAY_ITEM_LIMIT + 1,
+                        )}
+                      {equippedItems.length > DISPLAY_ITEM_LIMIT + 1 && (
+                        <div
+                          key={'truncated-set'}
+                          css={{
+                            width: 40,
+                            height: 40,
+                            fontSize: '1rem',
+                            fontWeight: 500,
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            color: theme.text?.light,
+                            [mq[1]]: {
+                              [':not:first-of-type']: { marginLeft: 4 },
+                            },
+                          }}
+                        >
+                          +{equippedItems.length - DISPLAY_ITEM_LIMIT}
+                        </div>
+                      )}
                     </div>
                   </Popover>
                 );

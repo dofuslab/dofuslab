@@ -74,27 +74,34 @@ export const TruncatableText: React.FC = ({ children, ...restProps }) => (
   </span>
 );
 
-export const CardSkeleton: React.FC<{ numRows?: number }> = ({
-  numRows,
-  ...restProps
-}) => {
+export const CardSkeleton: React.FC<{
+  numRows?: number;
+  className?: string;
+}> = ({ numRows, className, ...restProps }) => {
   const theme = useTheme<TTheme>();
   return (
-    <Card
-      size="small"
-      css={{
-        ...itemCardStyle,
-        border: `1px solid ${theme.border?.default}`,
-      }}
-      {...restProps}
-    >
-      <Skeleton
-        loading
-        title
-        active
-        paragraph={{ rows: numRows || 6 }}
-      ></Skeleton>
-    </Card>
+    <ClassNames>
+      {({ css, cx }) => (
+        <Card
+          size="small"
+          className={cx(
+            css({
+              ...itemCardStyle,
+              border: `1px solid ${theme.border?.default}`,
+            }),
+            className,
+          )}
+          {...restProps}
+        >
+          <Skeleton
+            loading
+            title
+            active
+            paragraph={{ rows: numRows || 6 }}
+          ></Skeleton>
+        </Card>
+      )}
+    </ClassNames>
   );
 };
 
