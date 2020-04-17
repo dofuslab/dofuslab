@@ -18,7 +18,10 @@ class ModelWeaponStat(Base):
     item_id = Column(UUID(as_uuid=True), ForeignKey("item.uuid"), nullable=False)
     item = relationship("ModelItem", back_populates="weapon_stats")
     weapon_effects = relationship(
-        "ModelWeaponEffect", backref="weapon_stat", cascade="all, delete-orphan"
+        "ModelWeaponEffect",
+        backref="weapon_stat",
+        cascade="all, delete-orphan",
+        lazy="subquery",
     )
     ap_cost = Column("ap_cost", Integer, nullable=False)
     uses_per_turn = Column("uses_per_turn", Integer, nullable=False)

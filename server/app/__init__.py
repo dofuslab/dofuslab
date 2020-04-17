@@ -3,6 +3,7 @@ from flask import Flask, escape, request, session
 from flask_session import Session
 from flask_babel import Babel, _, ngettext
 from flask_bcrypt import Bcrypt
+from flask_caching import Cache
 from flask_sqlalchemy import SQLAlchemy
 from flask_graphql import GraphQLView
 from flask_migrate import Migrate
@@ -17,10 +18,10 @@ from worker import redis_connection
 from rq import Queue
 from jinja2 import Environment, FileSystemLoader
 
-# import logging
+import logging
 
-# logging.basicConfig()
-# logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
+logging.basicConfig()
+logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
 
 load_dotenv()
 
@@ -62,6 +63,7 @@ def session_scope():
     try:
         yield db_session
         db_session.commit()
+        db_session.expunge_all()
     except:
         db_session.rollback()
         raise
@@ -99,6 +101,8 @@ template_env = Environment(
 template_env.install_gettext_callables(gettext=_, ngettext=ngettext)
 
 limiter = Limiter(app, key_func=get_remote_address)
+
+cache = Cache(app)
 
 from app.schema import schema
 

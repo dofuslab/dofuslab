@@ -18,7 +18,7 @@ class ModelItemType(Base):
     )
     name = Column("name", String, nullable=False)
     eligible_item_slots = relationship(
-        "ModelItemSlot", secondary=item_type_slot_compat_table
+        "ModelItemSlot", secondary=item_type_slot_compat_table, lazy="subquery"
     )
     items = relationship("ModelItem", back_populates="item_type")
 

@@ -34,7 +34,12 @@ from app.database.model_spell_variant_pair import ModelSpellVariantPair
 from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_class import ModelClass
 from app.tasks import send_email
-from app.utils import get_or_create_custom_set, save_custom_sets, anonymous_or_verified
+from app.utils import (
+    get_or_create_custom_set,
+    save_custom_sets,
+    anonymous_or_verified,
+    get_items,
+)
 from app.verify_email import verify_email_salt
 from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
@@ -902,52 +907,8 @@ class Query(graphene.ObjectType):
     def resolve_items(self, info, **kwargs):
         locale = str(get_locale())
         filters = kwargs.get("filters")
-        items_query = (
-            db.session.query(ModelItem)
-            .join(ModelItemTranslation)
-            .filter_by(locale=locale)
-        )
-        if filters:
-            search = filters.search.strip()
-            if filters.stats:
-                items_query = items_query.join(ModelItemStat)
-                stat_names = set(map(lambda x: Stat(x).name, filters.stats))
-                stat_sq = (
-                    db.session.query(
-                        ModelItemStat.item_id,
-                        func.count(ModelItemStat.uuid).label("num_stats_matched"),
-                    )
-                    .filter(
-                        ModelItemStat.stat.in_(stat_names), ModelItemStat.max_value > 0,
-                    )
-                    .group_by(ModelItemStat.item_id)
-                    .subquery()
-                )
-                items_query = items_query.join(
-                    stat_sq, ModelItem.uuid == stat_sq.c.item_id
-                ).filter(stat_sq.c.num_stats_matched == len(stat_names))
-            if filters.max_level:
-                items_query = items_query.filter(ModelItem.level <= filters.max_level)
-            if filters.search:
-                items_query = (
-                    items_query.join(ModelSet, isouter=True)
-                    .join(ModelSetTranslation, isouter=True)
-                    .filter(
-                        func.upper(ModelItemTranslation.name).contains(
-                            func.upper(filters.search.strip())
-                        )
-                        | func.upper(ModelSetTranslation.name).contains(
-                            func.upper(filters.search.strip())
-                        )
-                    )
-                )
-            if filters.item_type_ids:
-                items_query = items_query.filter(
-                    ModelItem.item_type_id.in_(filters.item_type_ids)
-                )
-        return items_query.order_by(
-            ModelItem.level.desc(), ModelItemTranslation.name.asc()
-        ).all()
+
+        return get_items(locale, filters)
 
     sets = relay.ConnectionField(
         graphene.NonNull(SetConnection), filters=graphene.Argument(SetFilters)
