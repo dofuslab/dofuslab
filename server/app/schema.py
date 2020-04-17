@@ -55,7 +55,7 @@ import app.mutation_validation_utils as validation
 import graphene
 import uuid
 from graphql import GraphQLError
-from flask import session, render_template
+from flask import session, render_template, g
 from flask_babel import _, get_locale, refresh
 from flask_login import login_required, login_user, current_user, logout_user
 from functools import lru_cache
@@ -108,16 +108,7 @@ class ItemStat(SQLAlchemyObjectType):
     custom_stat = graphene.String()
 
     def resolve_custom_stat(self, info):
-        locale = str(get_locale())
-        query = (
-            db.session.query(ModelItemStatTranslation)
-            .filter(ModelItemStatTranslation.item_stat_id == self.uuid)
-            .filter(ModelItemStatTranslation.locale == locale)
-            .one_or_none()
-        )
-
-        if query:
-            return query.custom_stat
+        return g.dataloaders.get("item_stat_translation_loader").load(self.uuid)
 
     class Meta:
         model = ModelItemStat
@@ -150,6 +141,9 @@ class WeaponEffect(SQLAlchemyObjectType):
 class WeaponStat(SQLAlchemyObjectType):
     weapon_effects = graphene.NonNull(graphene.List(graphene.NonNull(WeaponEffect)))
 
+    def resolve_weapon_effects(self, info):
+        return g.dataloaders.get("weapon_effect_loader").load(self.uuid)
+
     class Meta:
         model = ModelWeaponStat
         interfaces = (GlobalNode,)
@@ -157,18 +151,28 @@ class WeaponStat(SQLAlchemyObjectType):
 
 class Item(SQLAlchemyObjectType):
     stats = graphene.NonNull(graphene.List(graphene.NonNull(ItemStat)))
+
+    def resolve_stats(self, info):
+        return g.dataloaders.get("item_stats_loader").load(self.uuid)
+
     item_type = graphene.NonNull(ItemType)
     name = graphene.String(required=True)
 
     def resolve_name(self, info):
-        locale = str(get_locale())
-        query = db.session.query(ModelItemTranslation)
-        return (
-            query.filter(ModelItemTranslation.locale == locale)
-            .filter(ModelItemTranslation.item_id == self.uuid)
-            .one()
-            .name
-        )
+        return g.dataloaders.get("item_name_loader").load(self.uuid)
+
+    # https://github.com/graphql-python/graphene/issues/110#issuecomment-366515268
+    set = graphene.Field(lambda: Set)
+
+    def resolve_set(self, info):
+        if not self.set_id:
+            return None
+        return g.dataloaders.get("set_loader").load(self.set_id)
+
+    weapon_stat = graphene.Field(lambda: WeaponStat)
+
+    def resolve_weapon_stat(self, info):
+        return g.dataloaders.get("weapon_stat_loader").load(self.uuid)
 
     class Meta:
         model = ModelItem
@@ -184,16 +188,7 @@ class SetBonus(SQLAlchemyObjectType):
     custom_stat = graphene.String()
 
     def resolve_custom_stat(self, info):
-        locale = str(get_locale())
-        query = (
-            db.session.query(ModelSetBonusTranslation)
-            .filter(ModelSetBonusTranslation.set_bonus_id == self.uuid)
-            .filter(ModelSetBonusTranslation.locale == locale)
-            .one_or_none()
-        )
-
-        if query:
-            return query.custom_stat
+        return g.dataloaders.get("set_bonus_translation_loader").load(self.uuid)
 
     class Meta:
         model = ModelSetBonus
@@ -203,17 +198,14 @@ class SetBonus(SQLAlchemyObjectType):
 class Set(SQLAlchemyObjectType):
     items = graphene.NonNull(graphene.List(graphene.NonNull(Item)))
     bonuses = graphene.NonNull(graphene.List(graphene.NonNull(SetBonus)))
+
+    def resolve_bonuses(self, info):
+        return g.dataloaders.get("set_bonus_loader").load(self.uuid)
+
     name = graphene.String(required=True)
 
     def resolve_name(self, info):
-        locale = str(get_locale())
-        query = db.session.query(ModelSetTranslation)
-        return (
-            query.filter(ModelSetTranslation.locale == locale)
-            .filter(ModelSetTranslation.set_id == self.uuid)
-            .one()
-            .name
-        )
+        return g.dataloaders.get("set_translation_loader").load(self.uuid)
 
     class Meta:
         model = ModelSet
