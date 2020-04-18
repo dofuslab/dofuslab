@@ -14,7 +14,10 @@ class ModelItemTranslation(Base):
         nullable=False,
     )
     item_id = Column(
-        UUID(as_uuid=True), ForeignKey("item.uuid"), nullable=False, index=True
+        UUID(as_uuid=True),
+        ForeignKey("item.uuid", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
     )
     locale = Column("locale", String, nullable=False, index=True)
 

@@ -23,7 +23,7 @@ from app.database.model_set import ModelSet
 from app.database.model_custom_set_stat import ModelCustomSetStat
 from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_equipped_item import ModelEquippedItem
-from app.database.model_custom_set import ModelCustomSet
+from app.database.model_custom_set import ModelCustomSet, MAX_NAME_LENGTH
 from app.database.model_user import ModelUserAccount
 from app.database.model_spell_effect import ModelSpellEffect
 from app.database.model_spell_stat_translation import ModelSpellStatTranslation
@@ -38,6 +38,7 @@ from app.utils import (
     get_or_create_custom_set,
     save_custom_sets,
     anonymous_or_verified,
+    check_owner,
 )
 from app.verify_email import verify_email_salt
 from graphene import relay
@@ -470,7 +471,7 @@ class EditCustomSetMetadata(graphene.Mutation):
             custom_set_id = kwargs.get("custom_set_id")
             name = kwargs.get("name")
             level = kwargs.get("level")
-            if len(name) > 50:
+            if len(name) > MAX_NAME_LENGTH:
                 raise GraphQLError(_("The set name is too long."))
             if level < 1 or level > 200:
                 raise GraphQLError(_("Invalid set level (must be 1-200)."))
@@ -555,11 +556,7 @@ class MageEquippedItem(graphene.Mutation):
             weapon_element_mage = kwargs.get("weapon_element_mage")
             stats = kwargs.get("stats")
             equipped_item = db_session.query(ModelEquippedItem).get(equipped_item_id)
-            if (
-                equipped_item.custom_set.owner_id
-                and equipped_item.custom_set.owner_id != current_user.get_id()
-            ):
-                raise GraphQLError(_("You don't have permission to edit that set."))
+            check_owner(equipped_item.custom_set)
             db_session.query(ModelEquippedItemExo).filter_by(
                 equipped_item_id=equipped_item_id
             ).delete(synchronize_session=False)
@@ -599,11 +596,7 @@ class SetEquippedItemExo(graphene.Mutation):
             stat = Stat(kwargs.get("stat"))
             has_stat = kwargs.get("has_stat")
             equipped_item = db_session.query(ModelEquippedItem).get(equipped_item_id)
-            if (
-                equipped_item.custom_set.owner_id
-                and equipped_item.custom_set.owner_id != current_user.get_id()
-            ):
-                raise GraphQLError(_("You don't have permission to edit that set."))
+            check_owner(equipped_item.custom_set)
             if stat != Stat.AP and stat != Stat.MP and stat != Stat.RANGE:
                 raise GraphQLError(_("Invalid stat to set exo."))
             exo_obj = (
@@ -636,11 +629,7 @@ class DeleteCustomSetItem(graphene.Mutation):
             custom_set_id = kwargs.get("custom_set_id")
             item_slot_id = kwargs.get("item_slot_id")
             custom_set = db_session.query(ModelCustomSet).get(custom_set_id)
-            owned_custom_sets = session.get("owned_custom_sets") or []
-            if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
-                raise GraphQLError(_("You don't have permission to edit that set."))
-            elif not custom_set.owner_id and custom_set.uuid not in owned_custom_sets:
-                raise GraphQLError(_("You don't have permission to edit that set."))
+            check_owner(custom_set)
             custom_set.unequip_item(item_slot_id)
 
         return DeleteCustomSetItem(custom_set=custom_set)
@@ -658,7 +647,13 @@ class CopyCustomSet(graphene.Mutation):
         with session_scope() as db_session:
             old_custom_set = db_session.query(ModelCustomSet).get(custom_set_id)
             custom_set = get_or_create_custom_set(None, db_session)
+            custom_set.name = (
+                _("%(old_name)s copy", old_name=old_custom_set.name)[:MAX_NAME_LENGTH]
+                if old_custom_set.name
+                else _("Copy")
+            )
             custom_set.level = old_custom_set.level
+            custom_set.parent_custom_set_id = old_custom_set.uuid
             for stat in base_stat_list + scrolled_stat_list:
                 setattr(custom_set.stats, stat, getattr(old_custom_set.stats, stat))
             for old_equipped_item in old_custom_set.equipped_items:
@@ -679,6 +674,48 @@ class CopyCustomSet(graphene.Mutation):
                     db_session.add(exo)
 
         return CopyCustomSet(custom_set=custom_set)
+
+
+class RestartCustomSet(graphene.Mutation):
+    class Arguments:
+        custom_set_id = graphene.UUID(required=True)
+        should_reset_stats = graphene.Boolean(required=True)
+
+    custom_set = graphene.Field(CustomSet, required=True)
+
+    @anonymous_or_verified
+    def mutate(self, info, **kwargs):
+        custom_set_id = kwargs.get("custom_set_id")
+        should_reset_stats = kwargs.get("should_reset_stats")
+        with session_scope() as db_session:
+            custom_set = db_session.query(ModelCustomSet).get(custom_set_id)
+            check_owner(custom_set)
+            db_session.query(ModelEquippedItem).filter_by(
+                custom_set_id=custom_set_id
+            ).delete()
+            if should_reset_stats:
+                for stat in base_stat_list + scrolled_stat_list:
+                    setattr(custom_set.stats, stat, 0)
+            custom_set.last_modified = datetime.now()
+
+        return RestartCustomSet(custom_set=custom_set)
+
+
+class DeleteCustomSet(graphene.Mutation):
+    class Arguments:
+        custom_set_id = graphene.UUID(required=True)
+
+    ok = graphene.Boolean(required=True)
+
+    @anonymous_or_verified
+    def mutate(self, info, **kwargs):
+        custom_set_id = kwargs.get("custom_set_id")
+        with session_scope() as db_session:
+            custom_set = db_session.query(ModelCustomSet).get(custom_set_id)
+            check_owner(custom_set)
+            db_session.delete(custom_set)
+
+        return DeleteCustomSet(ok=True)
 
 
 class RegisterUser(graphene.Mutation):
@@ -1114,6 +1151,8 @@ class Mutation(graphene.ObjectType):
     request_password_reset = RequestPasswordReset.Field()
     reset_password = ResetPassword.Field()
     copy_custom_set = CopyCustomSet.Field()
+    restart_custom_set = RestartCustomSet.Field()
+    delete_custom_set = DeleteCustomSet.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useMutation, useApolloClient, useQuery } from '@apollo/react-hooks';
-import { useRouter } from 'next/router';
+import { useRouter, NextRouter } from 'next/router';
 import { ApolloClient, ApolloError } from 'apollo-boost';
 import { notification } from 'antd';
 import { cloneDeep, groupBy } from 'lodash';
@@ -63,6 +63,24 @@ import {
   equipItemsVariables,
 } from 'graphql/mutations/__generated__/equipItems';
 import EquipItemsMutation from 'graphql/mutations/equipItems.graphql';
+
+export const navigateToNewCustomSet = (
+  router: NextRouter,
+  customSetId: string,
+) => {
+  if (customSetId !== router.query.customSetId) {
+    router.replace(
+      {
+        pathname: '/',
+        query: { customSetId },
+      },
+      `/build/${customSetId}`,
+      {
+        shallow: true,
+      },
+    );
+  }
+};
 
 const getBaseStat = (stats: customSet_stats, stat: Stat) => {
   switch (stat) {
@@ -407,20 +425,8 @@ export const useEquipItemMutation = (item: item) => {
         },
       });
 
-      if (
-        data?.updateCustomSetItem &&
-        data.updateCustomSetItem.customSet.id !== customSetId
-      ) {
-        router.replace(
-          {
-            pathname: '/',
-            query: { customSetId: data.updateCustomSetItem.customSet.id },
-          },
-          `/build/${data.updateCustomSetItem.customSet.id}`,
-          {
-            shallow: true,
-          },
-        );
+      if (data?.updateCustomSetItem) {
+        navigateToNewCustomSet(router, data.updateCustomSetItem.customSet.id);
       }
     },
     [updateCustomSetItem, customSetId, item],
@@ -458,16 +464,10 @@ export const useEquipItemsMutation = (
     if (!ok) return;
     const { data: resultData } = await equipItems();
 
-    if (resultData?.equipMultipleItems?.customSet.id !== routerSetId) {
-      router.replace(
-        {
-          pathname: '/',
-          query: { customSetId: resultData?.equipMultipleItems?.customSet.id },
-        },
-        `/build/${resultData?.equipMultipleItems?.customSet.id}`,
-        {
-          shallow: true,
-        },
+    if (resultData?.equipMultipleItems?.customSet) {
+      navigateToNewCustomSet(
+        router,
+        resultData.equipMultipleItems.customSet.id,
       );
     }
   }, [equipItems, routerSetId, router]);
@@ -504,17 +504,8 @@ export const useEquipSetMutation = (
     if (!ok) return;
     const { data: resultData } = await equipSet();
 
-    if (resultData?.equipSet?.customSet.id !== routerSetId) {
-      router.replace(
-        {
-          pathname: '/',
-          query: { customSetId: resultData?.equipSet?.customSet.id },
-        },
-        `/build/${resultData?.equipSet?.customSet.id}`,
-        {
-          shallow: true,
-        },
-      );
+    if (resultData?.equipSet) {
+      navigateToNewCustomSet(router, resultData.equipSet.customSet.id);
     }
   }, [equipSet, routerSetId, router]);
 

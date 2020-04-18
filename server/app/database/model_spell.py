@@ -17,7 +17,7 @@ class ModelSpell(Base):
     )
     spell_variant_pair_id = Column(
         UUID(as_uuid=True),
-        ForeignKey("spell_variant_pair.uuid"),
+        ForeignKey("spell_variant_pair.uuid", ondelete="CASCADE"),
         nullable=False,
         index=True,
     )

@@ -21,7 +21,11 @@ import {
   editCustomSetStatsVariables,
 } from 'graphql/mutations/__generated__/editCustomSetStats';
 import editCustomSetStatsMutation from 'graphql/mutations/editCustomSetStats.graphql';
-import { checkAuthentication, calcPointCost } from 'common/utils';
+import {
+  checkAuthentication,
+  calcPointCost,
+  navigateToNewCustomSet,
+} from 'common/utils';
 import { useRouter } from 'next/router';
 import { StatKey, scrolledStats, baseStats } from 'common/types';
 
@@ -186,17 +190,8 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
     const ok = await checkAuthentication(client, t, customSet);
     if (!ok) return;
     const { data } = await mutate();
-    if (data?.editCustomSetStats?.customSet.id !== customSet?.id) {
-      router.replace(
-        {
-          pathname: '/',
-          query: { customSetId: data?.editCustomSetStats?.customSet.id },
-        },
-        `/build/${data?.editCustomSetStats?.customSet.id}`,
-        {
-          shallow: true,
-        },
-      );
+    if (data?.editCustomSetStats?.customSet) {
+      navigateToNewCustomSet(router, data?.editCustomSetStats.customSet.id);
     }
   }, [mutate, router]);
 

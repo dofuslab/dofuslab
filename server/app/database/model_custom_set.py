@@ -12,6 +12,9 @@ from sqlalchemy.dialects.postgresql import UUID
 from datetime import datetime
 
 
+MAX_NAME_LENGTH = 50
+
+
 class ModelCustomSet(Base):
     __tablename__ = "custom_set"
 
@@ -21,7 +24,7 @@ class ModelCustomSet(Base):
         primary_key=True,
         nullable=False,
     )
-    name = Column("name", String, index=True)
+    name = Column("name", String(MAX_NAME_LENGTH), index=True)
     description = Column("description", String)
     owner_id = Column(UUID(as_uuid=True), ForeignKey("user_account.uuid"), index=True)
     creation_date = Column("creation_date", DateTime, default=datetime.now)
@@ -34,7 +37,10 @@ class ModelCustomSet(Base):
     )
     level = Column("level", Integer, server_default=text("200"), nullable=False)
     equipped_items = relationship(
-        "ModelEquippedItem", backref="custom_set", lazy="dynamic"
+        "ModelEquippedItem",
+        backref="custom_set",
+        lazy="dynamic",
+        cascade="all, delete-orphan",
     )
     stats = relationship(
         "ModelCustomSetStat",
@@ -42,6 +48,13 @@ class ModelCustomSet(Base):
         cascade="all, delete-orphan",
         backref="custom_set",
     )
+    parent_custom_set_id = Column(
+        UUID(as_uuid=True), ForeignKey("custom_set.uuid"), index=True
+    )
+    parent_custom_set = relationship(
+        "ModelCustomSet", back_populates="children_custom_sets"
+    )
+    children_custom_sets = relationship("ModelCustomSet")
 
     def empty_or_first_item_slot(self, item_type):
         eligible_item_slots = item_type.eligible_item_slots

@@ -1,0 +1,9 @@
+#import "graphql/fragments/customSet.graphql"
+
+mutation copyCustomSet($customSetId: UUID!) {
+  copyCustomSet(customSetId: $customSetId) {
+    customSet {
+      ...customSet
+    }
+  }
+}

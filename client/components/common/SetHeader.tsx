@@ -17,13 +17,14 @@ import {
   editCustomSetMetadata_editCustomSetMetadata_customSet,
 } from 'graphql/mutations/__generated__/editCustomSetMetadata';
 import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetdata.graphql';
-import { checkAuthentication } from 'common/utils';
+import { checkAuthentication, navigateToNewCustomSet } from 'common/utils';
 import { ellipsis } from 'common/mixins';
 import { mq } from 'common/constants';
 import BonusStats from '../desktop/BonusStats';
 import BuildErrors from './BuildErrors';
 import { IError } from 'common/types';
 import { TimeWrapper } from 'common/wrappers';
+import BuildActions from './BuildActions';
 
 interface IProps {
   customSet?: customSet | null;
@@ -118,17 +119,9 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
             }
           : undefined,
       });
-      if (data?.editCustomSetMetadata?.customSet.id !== customSet?.id) {
-        router.replace(
-          {
-            pathname: '/',
-            query: { customSetId: data?.editCustomSetMetadata?.customSet.id },
-          },
-          `/build/${data?.editCustomSetMetadata?.customSet.id}`,
-          {
-            shallow: true,
-          },
-        );
+
+      if (data?.editCustomSetMetadata?.customSet) {
+        navigateToNewCustomSet(router, data.editCustomSetMetadata.customSet.id);
       }
     },
     [
@@ -159,12 +152,17 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
         [mq[1]]: {
           width: 'auto',
           flexDirection: 'row',
-          alignItems: 'baseline',
+          alignItems: 'center',
+          minWidth: 200,
+          flex: '2 1 0',
+          maxWidth: 480,
         },
         '&.ant-form-inline .ant-form-item': {
           marginRight: 0,
           [mq[1]]: {
             marginRight: 16,
+            minWidth: 0,
+            flex: '1 1 0',
           },
         },
       }}
@@ -176,12 +174,15 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
       {metadataState.isEditing ? (
         <Form.Item name="name">
           <Input
+            key={`input-${customSet?.id}`}
             css={{
               fontSize: '1.2rem',
               fontWeight: 500,
               [mq[1]]: {
+                flex: '1 1 0',
                 fontSize: '1.5rem',
                 width: 240,
+                maxWidth: '100%',
               },
             }}
             maxLength={50}
@@ -193,7 +194,9 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
             ...ellipsis,
             fontSize: '1.2rem',
             fontWeight: 500,
+            maxWidth: '100%',
             [mq[1]]: {
+              flex: '1 1 0',
               fontSize: '1.5rem',
               maxWidth: 400,
             },
@@ -215,6 +218,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
             // space in case div needs to wrap
             margin: '4px 0',
           },
+          flex: '0 0 auto',
         }}
       >
         <div
@@ -237,7 +241,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
         </div>
         {metadataState.isEditing ? (
           <div css={{ marginLeft: 'auto' }}>
-            <Button css={{ marginLeft: 12 }} type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit">
               {t('OK')}
             </Button>
             <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
@@ -262,11 +266,14 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
           flex: '0 0 96px',
           margin: '12px 4px',
           [mq[1]]: {
-            margin: '4px 14px',
+            overflowX: 'hidden',
+            alignItems: 'stretch',
+            margin: '4px 0px',
+            padding: '0px 14px',
             flex: '0 0 52px',
           },
           [mq[4]]: {
-            margin: '4px 20px',
+            padding: '0px 20px',
           },
         }}
       >
@@ -305,6 +312,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
         ) : (
           formElement
         )}
+        {customSet && !isMobile && <BuildActions customSet={customSet} />}
         {customSet && !isMobile && <BonusStats customSet={customSet} />}
         {customSet && !isMobile && (
           <BuildErrors customSet={customSet} errors={errors} />

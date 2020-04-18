@@ -54,3 +54,11 @@ def anonymous_or_verified(func):
         return func(*args, **kwargs)
 
     return wrapper
+
+
+def check_owner(custom_set):
+    owned_custom_sets = session.get("owned_custom_sets") or []
+    if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
+        raise GraphQLError(_("You don't have permission to edit that set."))
+    elif not custom_set.owner_id and custom_set.uuid not in owned_custom_sets:
+        raise GraphQLError(_("You don't have permission to edit that set."))

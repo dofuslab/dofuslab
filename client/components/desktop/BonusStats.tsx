@@ -55,7 +55,14 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start',
-        [mq[1]]: { marginLeft: 20, marginTop: 0, flexDirection: 'row' },
+        [mq[1]]: {
+          marginLeft: 20,
+          marginTop: 0,
+          flexDirection: 'row',
+          flex: '0 3 auto',
+          flexWrap: 'wrap',
+          overflowY: 'auto',
+        },
       }}
     >
       <ClassNames>

@@ -14,7 +14,9 @@ class ModelSpellStats(Base):
         primary_key=True,
         nullable=False,
     )
-    spell_id = Column(UUID(as_uuid=True), ForeignKey("spell.uuid"), nullable=False)
+    spell_id = Column(
+        UUID(as_uuid=True), ForeignKey("spell.uuid", ondelete="CASCADE"), nullable=False
+    )
 
     spell_stat_translation = relationship(
         "ModelSpellStatTranslation",

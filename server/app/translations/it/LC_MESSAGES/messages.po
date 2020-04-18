@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-11 13:45-0700\n"
+"POT-Creation-Date: 2020-04-18 16:02-0700\n"
 "PO-Revision-Date: 2020-03-27 23:06-0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: it\n"
@@ -40,108 +40,116 @@ msgid ""
 "letter, one uppercase letter, and one number."
 msgstr ""
 
-#: app/schema.py:283
+#: app/schema.py:280
 msgid "You are not authorized to make this request."
 msgstr ""
 
-#: app/schema.py:442 app/schema.py:445
+#: app/schema.py:449 app/schema.py:452
 msgid "Invalid stat value."
 msgstr ""
 
-#: app/schema.py:468
+#: app/schema.py:475
 msgid "The set name is too long."
 msgstr ""
 
-#: app/schema.py:470
+#: app/schema.py:477
 msgid "Invalid set level (must be 1-200)."
 msgstr ""
 
-#: app/schema.py:537 app/schema.py:581 app/schema.py:616 app/schema.py:618
-#: app/utils.py:17 app/utils.py:19
-msgid "You don't have permission to edit that set."
-msgstr ""
-
-#: app/schema.py:552
+#: app/schema.py:574
 msgid "Invalid element mage on non-weapon item."
 msgstr ""
 
-#: app/schema.py:583
+#: app/schema.py:601
 msgid "Invalid stat to set exo."
 msgstr ""
 
-#: app/schema.py:641 app/schema.py:676 app/schema.py:794 app/schema.py:821
+#: app/schema.py:651
+#, python-format
+msgid "%(old_name)s copy"
+msgstr ""
+
+#: app/schema.py:653
+msgid "Copy"
+msgstr ""
+
+#: app/schema.py:738 app/schema.py:773 app/schema.py:892 app/schema.py:919
 msgid "You are already logged in."
 msgstr ""
 
-#: app/schema.py:655 app/schema.py:725
+#: app/schema.py:752 app/schema.py:823
 msgid "Verify your DofusLab account"
 msgstr ""
 
-#: app/schema.py:660
+#: app/schema.py:757
 msgid "An error occurred while registering."
 msgstr ""
 
-#: app/schema.py:681
+#: app/schema.py:778
 msgid "Invalid username or password."
 msgstr ""
 
-#: app/schema.py:705 app/schema.py:784
+#: app/schema.py:803 app/schema.py:882
 msgid "Please wait a minute before trying again."
 msgstr ""
 
-#: app/schema.py:709
+#: app/schema.py:807
 msgid ""
 "You have sent too many verification emails. Please wait awhile before "
 "trying again."
 msgstr ""
 
-#: app/schema.py:717
+#: app/schema.py:815
 msgid "You must be signed in to do that."
 msgstr ""
 
-#: app/schema.py:719
+#: app/schema.py:817
 msgid "Your account is already verified."
 msgstr ""
 
-#: app/schema.py:739
+#: app/schema.py:837
 msgid "Received unsupported locale."
 msgstr ""
 
-#: app/schema.py:758
+#: app/schema.py:856
 msgid "You are not logged in."
 msgstr ""
 
-#: app/schema.py:762
+#: app/schema.py:860
 msgid "Incorrect password."
 msgstr ""
 
-#: app/schema.py:770 app/schema.py:840
+#: app/schema.py:868 app/schema.py:938
 msgid "You must enter a password different from your current one."
 msgstr ""
 
-#: app/schema.py:788
+#: app/schema.py:886
 msgid ""
 "You have sent too many password request emails. Please wait awhile before"
 " trying again."
 msgstr ""
 
-#: app/schema.py:797
+#: app/schema.py:895
 msgid "We could not find an account with that email."
 msgstr ""
 
-#: app/schema.py:801
+#: app/schema.py:899
 msgid "Please verify your email first."
 msgstr ""
 
-#: app/schema.py:808
+#: app/schema.py:906
 msgid "Reset your DofusLab password"
 msgstr ""
 
-#: app/schema.py:826 app/schema.py:834
+#: app/schema.py:924 app/schema.py:932
 msgid "The link is invalid or expired. Please request a new one."
 msgstr ""
 
-#: app/utils.py:56
+#: app/utils.py:17 app/utils.py:19 app/utils.py:62 app/utils.py:64
+msgid "You don't have permission to edit that set."
+msgstr ""
+
+#: app/utils.py:52
 msgid "Please verify your account to continue using DofusLab."
 msgstr ""
 
@@ -188,5 +196,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Confirm your DofusLab account"
+#~ msgstr ""
+
+#~ msgid "copy"
 #~ msgstr ""
 

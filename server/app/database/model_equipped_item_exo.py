@@ -19,7 +19,9 @@ class ModelEquippedItemExo(Base):
     value = Column("value", Integer, nullable=False)
 
     equipped_item_id = Column(
-        UUID(as_uuid=True), ForeignKey("equipped_item.uuid"), index=True
+        UUID(as_uuid=True),
+        ForeignKey("equipped_item.uuid", ondelete="CASCADE"),
+        index=True,
     )
 
     __table_args__ = (UniqueConstraint("equipped_item_id", "stat"),)

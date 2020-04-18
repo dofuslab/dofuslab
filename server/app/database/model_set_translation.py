@@ -15,7 +15,10 @@ class ModelSetTranslation(Base):
         nullable=False,
     )
     set_id = Column(
-        UUID(as_uuid=True), ForeignKey("set.uuid"), nullable=False, index=True
+        UUID(as_uuid=True),
+        ForeignKey("set.uuid", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
     )
     locale = Column("locale", String, nullable=False, index=True)
 

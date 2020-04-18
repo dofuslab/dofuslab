@@ -9,14 +9,14 @@ item_type_slot_compat_table = Table(
     Column(
         "item_slot_id",
         UUID(as_uuid=True),
-        ForeignKey("item_slot.uuid"),
+        ForeignKey("item_slot.uuid", ondelete="CASCADE"),
         nullable=False,
         index=True,
     ),
     Column(
         "item_type_id",
         UUID(as_uuid=True),
-        ForeignKey("item_type.uuid"),
+        ForeignKey("item_type.uuid", ondelete="CASCADE"),
         nullable=False,
         index=True,
     ),

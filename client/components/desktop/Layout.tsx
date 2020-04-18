@@ -176,7 +176,7 @@ const Layout = (props: LayoutProps) => {
             },
 
             '&-thumb': {
-              height: 50,
+              height: 20,
               backgroundColor: theme.scrollbar?.background,
             },
 

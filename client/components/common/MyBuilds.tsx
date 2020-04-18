@@ -30,6 +30,7 @@ import { createCustomSet } from 'graphql/mutations/__generated__/createCustomSet
 import createCustomSetMutation from 'graphql/mutations/createCustomSet.graphql';
 import { useDebounceCallback } from '@react-hook/debounce';
 import Card from 'components/common/Card';
+import { navigateToNewCustomSet } from 'common/utils';
 
 const PAGE_SIZE = 10;
 const THRESHOLD = 600;
@@ -114,20 +115,8 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
       },
     });
 
-    if (
-      resultData?.createCustomSet?.customSet &&
-      resultData.createCustomSet.customSet.id !== customSetId
-    ) {
-      router.replace(
-        {
-          pathname: '/',
-          query: { customSetId: resultData?.createCustomSet?.customSet.id },
-        },
-        `/build/${resultData?.createCustomSet?.customSet.id}`,
-        {
-          shallow: true,
-        },
-      );
+    if (resultData?.createCustomSet?.customSet) {
+      navigateToNewCustomSet(router, resultData.createCustomSet.customSet.id);
     }
   }, [customSetId, mutate, router, myBuilds, client, onClose]);
 
