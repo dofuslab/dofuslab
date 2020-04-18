@@ -440,7 +440,7 @@ class EditCustomSetStats(graphene.Mutation):
 
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
-        with session_scope():
+        with session_scope() as db_session:
             custom_set_id = kwargs.get("custom_set_id")
             stats = kwargs.get("stats")
             for base_stat in base_stat_list:
@@ -710,7 +710,8 @@ class LoginUser(graphene.Mutation):
             raise auth_error
         login_user(user, remember=remember)
         refresh()
-        save_custom_sets(db_session)
+        with session_scope() as db_session:
+            save_custom_sets(db_session)
         return LoginUser(user=user, ok=True)
 
 
@@ -762,7 +763,7 @@ class ChangeLocale(graphene.Mutation):
         locale = kwargs.get("locale")
         if not locale in supported_languages:
             raise GraphQLError(_("Received unsupported locale."))
-        with session_scope() as db_session:
+        with session_scope():
             user = current_user._get_current_object()
             if current_user.is_authenticated:
                 user.locale = locale
@@ -794,7 +795,7 @@ class ChangePassword(graphene.Mutation):
             raise GraphQLError(
                 _("You must enter a password different from your current one.")
             )
-        with session_scope() as db_session:
+        with session_scope():
             user.password = ModelUserAccount.generate_hash(new_password)
             return ChangePassword(ok=True)
 
