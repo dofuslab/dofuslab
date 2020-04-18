@@ -18,10 +18,10 @@ from rq import Queue
 from jinja2 import Environment, FileSystemLoader
 from dogpile.cache import make_region
 
-import logging
+# import logging
 
-logging.basicConfig()
-logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
+# logging.basicConfig()
+# logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
 
 load_dotenv()
 
