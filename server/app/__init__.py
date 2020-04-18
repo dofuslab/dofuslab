@@ -18,10 +18,10 @@ from worker import redis_connection
 from rq import Queue
 from jinja2 import Environment, FileSystemLoader
 
-import logging
+# import logging
 
-logging.basicConfig()
-logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
+# logging.basicConfig()
+# logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
 
 load_dotenv()
 
