@@ -466,7 +466,7 @@ class EditCustomSetMetadata(graphene.Mutation):
 
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
-        with session_scope():
+        with session_scope() as db_session:
             custom_set_id = kwargs.get("custom_set_id")
             name = kwargs.get("name")
             level = kwargs.get("level")
