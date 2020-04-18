@@ -3,7 +3,6 @@ from flask import Flask, escape, request, session, g
 from flask_session import Session
 from flask_babel import Babel, _, ngettext
 from flask_bcrypt import Bcrypt
-from flask_caching import Cache
 from flask_sqlalchemy import SQLAlchemy
 from flask_graphql import GraphQLView
 from flask_migrate import Migrate
@@ -19,10 +18,10 @@ from rq import Queue
 from jinja2 import Environment, FileSystemLoader
 from dogpile.cache import make_region
 
-# import logging
+import logging
 
-# logging.basicConfig()
-# logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
+logging.basicConfig()
+logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
 
 load_dotenv()
 
@@ -103,9 +102,7 @@ template_env.install_gettext_callables(gettext=_, ngettext=ngettext)
 
 limiter = Limiter(app, key_func=get_remote_address)
 
-cache = Cache(app)
-
-region = make_region().configure(
+cache_region = make_region().configure(
     "dogpile.cache.redis",
     arguments={
         "host": os.environ.get("REDIS_HOST"),

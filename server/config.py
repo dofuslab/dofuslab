@@ -29,9 +29,3 @@ class Config:
     QUEUES = queues
 
     RATELIMIT_STORAGE_URL = "redis://{}:{}".format(REDIS_HOST, REDIS_PORT)
-
-    CACHE_TYPE = "redis"  # Flask-Caching related configs
-    CACHE_KEY_PREFIX = "cache:"
-    CACHE_REDIS_HOST = REDIS_HOST
-    CACHE_REDIS_PORT = REDIS_PORT
-    CACHE_DEFAULT_TIMEOUT = 60 * 60  # one hour

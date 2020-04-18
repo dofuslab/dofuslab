@@ -1,4 +1,4 @@
-from app import db, cache
+from app import db, cache_region
 from collections import defaultdict
 from promise import Promise
 from promise.dataloader import DataLoader
@@ -15,7 +15,7 @@ from app.database.model_weapon_effect import ModelWeaponEffect
 from flask_babel import get_locale
 
 
-@cache.memoize()
+@cache_region.cache_on_arguments()
 def load_item_stats(item_ids):
     stats_by_item_id = defaultdict(list)
     for stats_list in db.session.query(ModelItemStat).filter(
@@ -30,7 +30,7 @@ class ItemStatsLoader(DataLoader):
         return load_item_stats(item_ids)
 
 
-@cache.memoize()
+@cache_region.cache_on_arguments()
 def load_item_stat_translations(item_stat_ids):
     locale = str(get_locale())
     translation_by_stat_id = defaultdict(list)
@@ -53,7 +53,7 @@ class ItemStatTranslationLoader(DataLoader):
         return load_item_stat_translations(item_stat_ids)
 
 
-@cache.memoize()
+@cache_region.cache_on_arguments()
 def load_item_names(item_ids):
     locale = str(get_locale())
     name_by_item_id = {}
@@ -71,7 +71,7 @@ class ItemNameLoader(DataLoader):
         return load_item_names(item_ids)
 
 
-@cache.memoize()
+@cache_region.cache_on_arguments()
 def load_sets(set_ids):
     sets = {
         item_set.uuid: item_set
@@ -85,7 +85,7 @@ class SetLoader(DataLoader):
         return load_sets(set_ids)
 
 
-@cache.memoize()
+@cache_region.cache_on_arguments()
 def load_set_bonuses(set_ids):
     bonuses_by_set_id = defaultdict(list)
     for bonus in db.session.query(ModelSetBonus).filter(
@@ -100,7 +100,7 @@ class SetBonusLoader(DataLoader):
         return load_set_bonuses(set_ids)
 
 
-@cache.memoize()
+@cache_region.cache_on_arguments()
 def load_set_bonus_translations(set_bonus_ids):
     locale = str(get_locale())
     translation_by_bonus_id = {}
@@ -123,7 +123,7 @@ class SetBonusTranslationLoader(DataLoader):
         return load_set_bonus_translations(set_bonus_ids)
 
 
-@cache.memoize()
+@cache_region.cache_on_arguments()
 def load_set_translations(set_ids):
     locale = str(get_locale())
     translation_by_set_id = {}
@@ -143,7 +143,7 @@ class SetTranslationLoader(DataLoader):
         return load_set_translations(set_ids)
 
 
-@cache.memoize()
+@cache_region.cache_on_arguments()
 def load_weapon_stats(item_ids):
     weapon_stat_by_item_id = {}
     for stat in db.session.query(ModelWeaponStat).filter(
@@ -160,7 +160,7 @@ class WeaponStatLoader(DataLoader):
         return load_weapon_stats(item_ids)
 
 
-@cache.memoize()
+@cache_region.cache_on_arguments()
 def load_weapon_effects(weapon_stat_ids):
     effect_by_stat_id = defaultdict(list)
     for effect in db.session.query(ModelWeaponEffect).filter(

@@ -21,7 +21,6 @@ dogpile.cache==0.9.0
 Flask==1.1.1
 Flask-Babel==1.0.0
 Flask-Bcrypt==0.7.1
-Flask-Caching==1.8.0
 Flask-Cors==3.0.8
 Flask-GraphQL==2.0.0
 Flask-Limiter-graphQL-support==0.1.5
