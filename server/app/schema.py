@@ -657,7 +657,7 @@ class CopyCustomSet(graphene.Mutation):
         custom_set_id = kwargs.get("custom_set_id")
         with session_scope() as db_session:
             old_custom_set = db_session.query(ModelCustomSet).get(custom_set_id)
-            custom_set = get_or_create_custom_set(None)
+            custom_set = get_or_create_custom_set(None, db_session)
             custom_set.level = old_custom_set.level
             for stat in base_stat_list + scrolled_stat_list:
                 setattr(custom_set.stats, stat, getattr(old_custom_set.stats, stat))
