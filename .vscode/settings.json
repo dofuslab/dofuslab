@@ -1,5 +1,5 @@
 {
-  "python.pythonPath": "venv/bin/python",
+  "python.pythonPath": "venv/bin/python3",
   "python.linting.pylintArgs": ["--load-plugins", "pylint-flask"],
   "python.formatting.provider": "black"
 }
