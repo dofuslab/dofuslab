@@ -17,6 +17,7 @@ import redis
 from worker import redis_connection
 from rq import Queue
 from jinja2 import Environment, FileSystemLoader
+from dogpile.cache import make_region
 
 # import logging
 
@@ -103,6 +104,17 @@ template_env.install_gettext_callables(gettext=_, ngettext=ngettext)
 limiter = Limiter(app, key_func=get_remote_address)
 
 cache = Cache(app)
+
+region = make_region().configure(
+    "dogpile.cache.redis",
+    arguments={
+        "host": os.environ.get("REDIS_HOST"),
+        "port": os.environ.get("REDIS_PORT"),
+        "redis_expiration_time": 60 * 60 * 2,  # 2 hours
+        "distributed_lock": True,
+        "thread_local_lock": False,
+    },
+)
 
 from app.schema import schema
 from app.loaders import (
