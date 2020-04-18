@@ -78,7 +78,7 @@ export const itemImageBox = (theme: TTheme) => ({
     content: "''",
     boxShadow: shadow,
     opacity: 0,
-    transition: 'opacity 0.3s',
+    transition: 'opacity 0.3s ease-in-out',
     position: 'absolute' as 'absolute',
     top: 0,
     right: 0,
@@ -89,6 +89,15 @@ export const itemImageBox = (theme: TTheme) => ({
     content: "''",
     display: 'block',
     paddingBottom: '100%',
+    position: 'absolute' as 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    opacity: 0,
+    boxShadow: `0 0 0 2px ${theme.border?.primarySelected}`, // border
+    transition: 'opacity 0.3s ease-in-out',
+    borderRadius: 4,
   },
 });
 
@@ -119,9 +128,12 @@ export const itemBox = (theme: TTheme) => ({
 
 export const selected = (theme: TTheme) => ({
   border: '1px solid transparent', // fake border
-  boxShadow: `0 0 0 2px ${theme.border?.selected}`, // border
   background: theme.layer?.background,
   zIndex: 1, // so "border" appears above other elements
+
+  '&::after': {
+    opacity: 1,
+  },
 });
 
 export const primarySelected = (theme: TTheme) => ({

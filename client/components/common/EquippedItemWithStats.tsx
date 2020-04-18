@@ -42,7 +42,7 @@ const wrapperStyles = {
   alignItems: 'center',
   padding: 4,
   margin: -4,
-  transition: '0.3s opacity',
+  transition: 'opacity 0.3s ease-in-out',
   opacity: 0.3,
   [mq[1]]: {
     fontSize: '0.75rem',

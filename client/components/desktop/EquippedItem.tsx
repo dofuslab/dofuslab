@@ -67,7 +67,15 @@ const EquippedItem: React.FC<IProps> = ({
           <div
             css={{
               ...itemImageBox(theme),
-              ...(selected ? selectedBox(theme) : {}),
+              ...(selected
+                ? {
+                    ...selectedBox(theme),
+                    '&::after': {
+                      ...itemImageBox(theme)['&::after'],
+                      ...selectedBox(theme)['&::after'],
+                    },
+                  }
+                : {}),
               '&:hover > img': {
                 opacity: 0.45,
               },

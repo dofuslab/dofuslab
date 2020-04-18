@@ -67,7 +67,7 @@ const deleteStatWrapper = {
   top: 3,
   padding: 8,
   opacity: 0.3,
-  transition: 'opacity 0.3s',
+  transition: 'opacity 0.3s ease-in-out',
   cursor: 'pointer',
   ['&:hover']: {
     opacity: 1,
