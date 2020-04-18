@@ -240,7 +240,7 @@ const Layout = (props: LayoutProps) => {
                     onClose={closeDrawer}
                     width={480}
                   >
-                    <MyBuilds />
+                    <MyBuilds onClose={closeDrawer} />
                   </Drawer>
                 </>
               )}

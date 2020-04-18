@@ -34,7 +34,11 @@ import Card from 'components/common/Card';
 const PAGE_SIZE = 10;
 const THRESHOLD = 600;
 
-const MyBuilds: React.FC = () => {
+interface IProps {
+  onClose?: () => void;
+}
+
+const MyBuilds: React.FC<IProps> = ({ onClose }) => {
   const [search, setSearch] = React.useState('');
 
   const handleSearchChange = React.useCallback(
@@ -104,6 +108,8 @@ const MyBuilds: React.FC = () => {
             query: myCustomSetsQuery,
             variables: { first: PAGE_SIZE, search: '' },
           });
+
+          onClose && onClose();
         }
       },
     });
@@ -123,7 +129,7 @@ const MyBuilds: React.FC = () => {
         },
       );
     }
-  }, [customSetId, mutate, router, myBuilds, client]);
+  }, [customSetId, mutate, router, myBuilds, client, onClose]);
 
   const { t } = useTranslation('common');
 
@@ -217,6 +223,7 @@ const MyBuilds: React.FC = () => {
         >
           <div>
             <Card
+              onClick={onClose}
               hoverable
               title={
                 <CardTitleWithLevel
