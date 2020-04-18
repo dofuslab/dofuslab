@@ -18,7 +18,7 @@ import setQuery from 'graphql/queries/set.graphql';
 import { useTranslation } from 'i18n';
 import BasicItemWithStats from '../desktop/BasicItemWithStats';
 import { SetBonuses } from 'common/wrappers';
-import { itemBox, primarySelected } from 'common/mixins';
+import { itemBox } from 'common/mixins';
 import { mq } from 'common/constants';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useEquipItemsMutation } from 'common/utils';
@@ -109,10 +109,13 @@ const SetModal: React.FC<IProps> = ({
               <div
                 css={{
                   ...itemBox(theme),
-                  ...(itemIds.includes(item.id) && primarySelected(theme)),
                 }}
               >
-                <BasicItemWithStats item={item} overlayCSS={{ zIndex: 1032 }} />
+                <BasicItemWithStats
+                  item={item}
+                  overlayCSS={{ zIndex: 1032 }}
+                  selected={itemIds.includes(item.id)}
+                />
               </div>
             </div>
           ))}
