@@ -63,7 +63,6 @@ def session_scope():
     try:
         yield db_session
         db_session.commit()
-        db_session.expunge_all()
     except:
         db_session.rollback()
         raise

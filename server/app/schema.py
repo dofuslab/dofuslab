@@ -425,8 +425,8 @@ class CreateCustomSet(graphene.Mutation):
 
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
-        with session_scope():
-            custom_set = get_or_create_custom_set(None)
+        with session_scope() as db_session:
+            custom_set = get_or_create_custom_set(None, db_session)
 
         return CreateCustomSet(custom_set=custom_set)
 
@@ -449,7 +449,7 @@ class EditCustomSetStats(graphene.Mutation):
             for scrolled_stat in scrolled_stat_list:
                 if stats[scrolled_stat] < 0 or stats[scrolled_stat] > 100:
                     raise GraphQLError(_("Invalid stat value."))
-            custom_set = get_or_create_custom_set(custom_set_id)
+            custom_set = get_or_create_custom_set(custom_set_id, db_session)
             for stat in base_stat_list + scrolled_stat_list:
                 setattr(custom_set.stats, stat, stats[stat])
 
@@ -474,7 +474,7 @@ class EditCustomSetMetadata(graphene.Mutation):
                 raise GraphQLError(_("The set name is too long."))
             if level < 1 or level > 200:
                 raise GraphQLError(_("Invalid set level (must be 1-200)."))
-            custom_set = get_or_create_custom_set(custom_set_id)
+            custom_set = get_or_create_custom_set(custom_set_id, db_session)
             custom_set.name = name
             custom_set.level = level
 
@@ -492,12 +492,12 @@ class UpdateCustomSetItem(graphene.Mutation):
 
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
-        with session_scope():
+        with session_scope() as db_session:
             custom_set_id = kwargs.get("custom_set_id")
             item_slot_id = kwargs.get("item_slot_id")
             item_id = kwargs.get("item_id")
-            custom_set = get_or_create_custom_set(custom_set_id)
-            custom_set.equip_item(item_id, item_slot_id)
+            custom_set = get_or_create_custom_set(custom_set_id, db_session)
+            custom_set.equip_item(item_id, item_slot_id, db_session)
 
         return UpdateCustomSetItem(custom_set=custom_set)
 
@@ -514,9 +514,9 @@ class EquipSet(graphene.Mutation):
         with session_scope() as db_session:
             custom_set_id = kwargs.get("custom_set_id")
             set_id = kwargs.get("set_id")
-            custom_set = get_or_create_custom_set(custom_set_id)
+            custom_set = get_or_create_custom_set(custom_set_id, db_session)
             set_obj = db_session.query(ModelSet).get(set_id)
-            custom_set.equip_set(set_obj)
+            custom_set.equip_set(set_obj, db_session)
 
         return EquipSet(custom_set=custom_set)
 
@@ -533,9 +533,9 @@ class EquipMultipleItems(graphene.Mutation):
         with session_scope() as db_session:
             custom_set_id = kwargs.get("custom_set_id")
             item_ids = kwargs.get("item_ids")
-            custom_set = get_or_create_custom_set(custom_set_id)
+            custom_set = get_or_create_custom_set(custom_set_id, db_session)
             items = db_session.query(ModelItem).filter(ModelItem.uuid.in_(item_ids))
-            custom_set.equip_items(items)
+            custom_set.equip_items(items, db_session)
 
         return EquipMultipleItems(custom_set=custom_set)
 
@@ -680,7 +680,7 @@ class RegisterUser(graphene.Mutation):
                     send_email, user.email, _("Verify your DofusLab account"), content
                 )
                 login_user(user)
-                save_custom_sets()
+                save_custom_sets(db_session)
             except Exception as e:
                 raise GraphQLError(_("An error occurred while registering."))
 
@@ -710,7 +710,7 @@ class LoginUser(graphene.Mutation):
             raise auth_error
         login_user(user, remember=remember)
         refresh()
-        save_custom_sets()
+        save_custom_sets(db_session)
         return LoginUser(user=user, ok=True)
 
 
