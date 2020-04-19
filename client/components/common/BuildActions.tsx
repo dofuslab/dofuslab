@@ -209,6 +209,7 @@ const BuildActions: React.FC<IProps> = ({ customSet }) => {
         confirmLoading={restartLoading}
         okType="danger"
         okText={t('OK')}
+        cancelText={t('CANCEL')}
       >
         <div>{t('CONFIRM_RESTART_BUILD')}</div>
         <Divider />
