@@ -77,7 +77,7 @@ const EquippedItem: React.FC<IProps> = ({
                 src={slot.imageUrl}
                 css={{
                   maxWidth: '100%',
-                  opacity: selected ? 0.65 : 0.3,
+                  opacity: selected ? 0.75 : 0.4,
                   transition: 'all 0.3s',
                 }}
               />
