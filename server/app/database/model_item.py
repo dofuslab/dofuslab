@@ -23,16 +23,19 @@ class ModelItem(Base):
     item_type_id = Column(
         UUID(as_uuid=True), ForeignKey("item_type.uuid"), nullable=False, index=True
     )
-    item_type = relationship(ModelItemType, back_populates="items")
+    item_type = relationship(ModelItemType, back_populates="items", lazy="subquery")
     set_id = Column(UUID(as_uuid=True), ForeignKey("set.uuid"), index=True)
-    set = relationship("ModelSet")
+    set = relationship("ModelSet", lazy="subquery")
     level = Column("level", Integer, nullable=False)
-    stats = relationship("ModelItemStat", backref="item", cascade="all, delete-orphan")
+    stats = relationship(
+        "ModelItemStat", backref="item", cascade="all, delete-orphan", lazy="subquery"
+    )
     weapon_stats = relationship(
         "ModelWeaponStat",
         uselist=False,
         back_populates="item",
         cascade="all, delete-orphan",
+        lazy="subquery",
     )
     conditions = Column("conditions", JSON)
     image_url = Column("image_url", String, nullable=False)

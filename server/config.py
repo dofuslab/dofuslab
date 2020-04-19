@@ -4,6 +4,10 @@ import redis
 from worker import redis_connection, queues
 
 
+REDIS_HOST = environ.get("REDIS_HOST")
+REDIS_PORT = environ.get("REDIS_PORT")
+
+
 class Config:
     """Set Flask configuration vars from .env file."""
 
@@ -24,6 +28,4 @@ class Config:
 
     QUEUES = queues
 
-    RATELIMIT_STORAGE_URL = "redis://{}:{}".format(
-        environ.get("REDIS_HOST"), environ.get("REDIS_PORT")
-    )
+    RATELIMIT_STORAGE_URL = "redis://{}:{}".format(REDIS_HOST, REDIS_PORT)

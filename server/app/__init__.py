@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from flask import Flask, escape, request, session
+from flask import Flask, escape, request, session, g
 from flask_session import Session
 from flask_babel import Babel, _, ngettext
 from flask_bcrypt import Bcrypt
@@ -16,6 +16,7 @@ import redis
 from worker import redis_connection
 from rq import Queue
 from jinja2 import Environment, FileSystemLoader
+from dogpile.cache import make_region
 
 # import logging
 
@@ -100,12 +101,56 @@ template_env.install_gettext_callables(gettext=_, ngettext=ngettext)
 
 limiter = Limiter(app, key_func=get_remote_address)
 
+cache_region = make_region().configure(
+    "dogpile.cache.redis",
+    arguments={
+        "host": os.environ.get("REDIS_HOST"),
+        "port": os.environ.get("REDIS_PORT"),
+        "redis_expiration_time": 60 * 60 * 2,  # 2 hours
+        "distributed_lock": True,
+        "thread_local_lock": False,
+    },
+)
+
 from app.schema import schema
+from app.loaders import (
+    ItemNameLoader,
+    ItemStatsLoader,
+    ItemStatTranslationLoader,
+    SetLoader,
+    SetBonusLoader,
+    SetBonusTranslationLoader,
+    SetTranslationLoader,
+    WeaponEffectLoader,
+    WeaponStatLoader,
+)
+
+
+@app.before_request
+def construct_dataloaders():
+    g.dataloaders = {
+        "item_name_loader": ItemNameLoader(),
+        "item_stats_loader": ItemStatsLoader(),
+        "item_stat_translation_loader": ItemStatTranslationLoader(),
+        "set_loader": SetLoader(),
+        "set_bonus_loader": SetBonusLoader(),
+        "set_bonus_translation_loader": SetBonusTranslationLoader(),
+        "set_translation_loader": SetTranslationLoader(),
+        "weapon_stat_loader": WeaponStatLoader(),
+        "weapon_effect_loader": WeaponEffectLoader(),
+    }
+
 
 app.add_url_rule(
     "/api/graphql",
     view_func=GraphQLView.as_view("graphql", schema=schema, graphiql=True),
 )
+
+
+@app.teardown_appcontext
+def teardown_dataloaders(_):
+    g.pop("dataloaders", None)
+
 
 from app.verify_email import verify_email_blueprint
 

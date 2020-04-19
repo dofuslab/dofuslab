@@ -15,7 +15,9 @@ certifi==2019.9.11
 cffi==1.14.0
 chardet==3.0.4
 Click==7.0
+decorator==4.4.2
 docutils==0.15.2
+dogpile.cache==0.9.0
 Flask==1.1.1
 Flask-Babel==1.0.0
 Flask-Bcrypt==0.7.1
