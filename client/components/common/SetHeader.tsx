@@ -156,6 +156,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
           minWidth: 200,
           flex: '2 1 0',
           maxWidth: 480,
+          flexWrap: 'nowrap',
         },
         '&.ant-form-inline .ant-form-item': {
           marginRight: 0,
@@ -196,7 +197,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
             fontWeight: 500,
             maxWidth: '100%',
             [mq[1]]: {
-              flex: '1 1 0',
+              flex: '0 1 auto',
               fontSize: '1.5rem',
               maxWidth: 400,
             },

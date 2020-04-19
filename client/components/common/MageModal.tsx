@@ -227,14 +227,10 @@ const MageModal: React.FC<IProps> = ({
       {({ css }) => (
         <Modal
           visible={visible}
-          title={
-            <div css={{ fontSize: '0.8rem' }}>
-              {t('MAGE_MODAL_TITLE', {
-                ns: 'mage',
-                itemName: equippedItem.item.name,
-              })}
-            </div>
-          }
+          title={t('MAGE_MODAL_TITLE', {
+            ns: 'mage',
+            itemName: equippedItem.item.name,
+          })}
           bodyStyle={{
             display: 'flex',
             flexDirection: 'column',

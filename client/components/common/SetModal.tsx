@@ -159,7 +159,7 @@ const SetModal: React.FC<IProps> = ({
 
   return (
     <Modal
-      title={<div css={{ fontSize: '0.9rem' }}>{setName}</div>}
+      title={setName}
       visible={visible}
       onCancel={onCancel}
       zIndex={1031}

@@ -43,7 +43,7 @@ const ChangePasswordModal: React.FC<IProps> = ({ visible, onClose }) => {
 
   return (
     <Modal
-      title={<div css={{ fontSize: '0.9rem' }}>{t('CHANGE_PASSWORD')}</div>}
+      title={t('CHANGE_PASSWORD')}
       visible={visible}
       onCancel={onClose}
       bodyStyle={{

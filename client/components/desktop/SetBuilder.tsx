@@ -126,7 +126,7 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
                     customSet={customSet}
                   />
                 ))}
-                <StatEditor key={customSet?.id} customSet={customSet} />
+                <StatEditor key={customSet?.stats.id} customSet={customSet} />
               </ResponsiveGrid>
             </TabPane>
             <TabPane tab={t('WEAPON_AND_SPELLS')} key="weapon-and-spells">

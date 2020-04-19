@@ -694,8 +694,9 @@ class RestartCustomSet(graphene.Mutation):
                 custom_set_id=custom_set_id
             ).delete()
             if should_reset_stats:
-                for stat in base_stat_list + scrolled_stat_list:
-                    setattr(custom_set.stats, stat, 0)
+                db_session.delete(custom_set.stats)
+                custom_set_stat = ModelCustomSetStat(custom_set_id=custom_set.uuid)
+                db_session.add(custom_set_stat)
             custom_set.last_modified = datetime.now()
 
         return RestartCustomSet(custom_set=custom_set)
