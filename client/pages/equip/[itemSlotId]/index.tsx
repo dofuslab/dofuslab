@@ -21,8 +21,10 @@ const EquipPage: NextPage = () => {
   const router = useRouter();
   const { itemSlotId, customSetId } = router.query;
 
-  const { data } = useQuery<itemSlots>(ItemSlotsQuery);
+  const { data, loading, error } = useQuery<itemSlots>(ItemSlotsQuery);
   const itemSlot = data?.itemSlots.find(slot => slot.id === itemSlotId);
+
+  console.log(data, loading, error);
 
   const { data: customSetData } = useQuery<customSet, customSetVariables>(
     CustomSetQuery,

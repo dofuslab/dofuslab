@@ -194,3 +194,13 @@ export const topMarginStyle = {
     marginTop: 12,
   },
 };
+
+export const switchStyle = (theme: TTheme, showPrimary?: boolean) => ({
+  background: showPrimary ? undefined : theme.switch?.background,
+  '.ant-switch-inner': {
+    color: theme.text?.default,
+  },
+  '&::after': {
+    background: theme.switch?.button,
+  },
+});
