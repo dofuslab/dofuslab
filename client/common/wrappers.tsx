@@ -288,7 +288,7 @@ export const BrokenImagePlaceholder: React.FC<React.HTMLAttributes<
   </ClassNames>
 );
 
-const TimeWrapper: React.FC<{ date: any }> = ({ date }) => (
+export const TimeWrapper: React.FC<{ date: any }> = ({ date }) => (
   <div>
     {moment(date)
       .local()

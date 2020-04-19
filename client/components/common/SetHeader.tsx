@@ -7,7 +7,7 @@ import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
-import moment from 'moment';
+import NoSSR from 'react-no-ssr';
 
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
@@ -23,7 +23,7 @@ import { mq } from 'common/constants';
 import BonusStats from '../desktop/BonusStats';
 import BuildErrors from './BuildErrors';
 import { IError } from 'common/types';
-import { TimeWrapperNoSSR } from 'common/wrappers';
+import { TimeWrapper } from 'common/wrappers';
 
 interface IProps {
   customSet?: customSet | null;
@@ -288,9 +288,13 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
                 <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
                 <div>{customSet.owner?.username ?? t('ANONYMOUS')}</div>
                 <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-                <TimeWrapperNoSSR date={customSet.creationDate} />
+                <NoSSR>
+                  <TimeWrapper date={customSet.creationDate} />
+                </NoSSR>
                 <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-                <TimeWrapperNoSSR date={customSet.lastModified} />
+                <NoSSR>
+                  <TimeWrapper date={customSet.lastModified} />
+                </NoSSR>
               </div>
             }
             placement="bottomLeft"
@@ -317,17 +321,17 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
             <div css={{ display: 'flex' }}>
               <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
               <div css={{ marginLeft: 8 }}>
-                {moment(customSet.creationDate)
-                  .local()
-                  .format('lll')}
+                <NoSSR>
+                  <TimeWrapper date={customSet.creationDate} />
+                </NoSSR>
               </div>
             </div>
             <div css={{ display: 'flex' }}>
               <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
               <div css={{ marginLeft: 8 }}>
-                {moment(customSet.lastModified)
-                  .local()
-                  .format('lll')}
+                <NoSSR>
+                  <TimeWrapper date={customSet.creationDate} />
+                </NoSSR>
               </div>
             </div>
           </div>
