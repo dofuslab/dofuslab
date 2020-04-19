@@ -69,7 +69,7 @@ const EquippedItem: React.FC<IProps> = ({
               ...itemImageBox(theme),
               ...(selected ? selectedBox(theme) : {}),
               '&:hover > img': {
-                opacity: 0.45,
+                opacity: 0.65,
               },
             }}
           >
@@ -77,7 +77,7 @@ const EquippedItem: React.FC<IProps> = ({
               src={slot.imageUrl}
               css={{
                 maxWidth: '100%',
-                opacity: selected ? 0.45 : 0.2,
+                opacity: selected ? 0.65 : 0.3,
                 transition: 'all 0.3s',
               }}
             />

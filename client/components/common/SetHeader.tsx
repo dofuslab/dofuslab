@@ -154,7 +154,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
           flexDirection: 'row',
           alignItems: 'center',
           minWidth: 200,
-          flex: '2 1 0',
+          flex: '0 1 auto',
           maxWidth: 480,
           flexWrap: 'nowrap',
         },
@@ -345,6 +345,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
               </div>
             </div>
           </div>
+          <BuildActions customSet={customSet} />
           <BuildErrors customSet={customSet} errors={errors} isMobile />
         </>
       )}

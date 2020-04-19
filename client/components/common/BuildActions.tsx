@@ -98,7 +98,35 @@ const BuildActions: React.FC<IProps> = ({ customSet }) => {
     refetchQueries: () => ['myCustomSets'],
   });
 
-  const onCopy = React.useCallback(async () => {
+  const linkTextareaRef = React.useRef<HTMLTextAreaElement | null>(null);
+
+  const onCopyLink = async () => {
+    const url = window.location.href;
+    try {
+      if (navigator.clipboard) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        if (!linkTextareaRef.current) {
+          return;
+        }
+        linkTextareaRef.current.value = url;
+        linkTextareaRef.current.focus();
+        linkTextareaRef.current.select();
+        document.execCommand('copy');
+      }
+      notification.success({
+        message: t('SUCCESS'),
+        description: t('COPY_LINK_SUCCESS'),
+      });
+    } catch (e) {
+      notification.error({
+        message: t('ERROR'),
+        description: t('ERROR_OCCURRED'),
+      });
+    }
+  };
+
+  const onCopyBuild = React.useCallback(async () => {
     const { data } = await copyMutate();
     if (data?.copyCustomSet) {
       navigateToNewCustomSet(router, data.copyCustomSet.customSet.id);
@@ -119,6 +147,10 @@ const BuildActions: React.FC<IProps> = ({ customSet }) => {
     closeDeleteModal();
     if (data?.deleteCustomSet?.ok) {
       router.push('/', '/', { shallow: true });
+      notification.success({
+        message: t('SUCCESS'),
+        description: t('DELETE_BUILD_SUCCESS'),
+      });
     }
   }, [deleteMutate]);
 
@@ -127,16 +159,28 @@ const BuildActions: React.FC<IProps> = ({ customSet }) => {
   return (
     <div
       css={{
-        marginLeft: 12,
-        display: 'flex',
-        alignItems: 'center',
+        marginBottom: 12,
+        [mq[1]]: {
+          marginBottom: 0,
+          marginLeft: 12,
+          display: 'flex',
+          alignItems: 'center',
+        },
         [mq[4]]: { marginLeft: 20 },
       }}
     >
+      <textarea
+        css={{ display: 'none' }}
+        id="clipboard-link"
+        ref={linkTextareaRef}
+      />
       <Dropdown
         overlay={
           <Menu>
-            <Menu.Item key="copy" onClick={onCopy} disabled={anyLoading}>
+            <Menu.Item key="copy-link" onClick={onCopyLink}>
+              {t('COPY_LINK')}
+            </Menu.Item>
+            <Menu.Item key="copy" onClick={onCopyBuild} disabled={anyLoading}>
               {copyLoading && <LoadingOutlined css={{ marginRight: 8 }} />}
               {t('COPY_BUILD')}
             </Menu.Item>
