@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import { Button, Input, InputNumber, Form } from 'antd';
+import { Button, Input, InputNumber, Form, Popover } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
@@ -23,7 +23,7 @@ import { mq } from 'common/constants';
 import BonusStats from '../desktop/BonusStats';
 import BuildErrors from './BuildErrors';
 import { IError } from 'common/types';
-import Tooltip from 'components/common/Tooltip';
+import { TimeWrapperNoSSR } from 'common/wrappers';
 
 interface IProps {
   customSet?: customSet | null;
@@ -270,9 +270,14 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
         }}
       >
         {customSet && !metadataState.isEditing && !isMobile ? (
-          <Tooltip
+          <Popover
             overlayStyle={{ maxWidth: 360 }}
             title={
+              <div css={{ fontWeight: 500, overflowWrap: 'break-word' }}>
+                {customSet.name}
+              </div>
+            }
+            content={
               <div
                 css={{
                   display: 'grid',
@@ -283,23 +288,15 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
                 <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
                 <div>{customSet.owner?.username ?? t('ANONYMOUS')}</div>
                 <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-                <div>
-                  {moment(customSet.creationDate)
-                    .local()
-                    .format('lll')}
-                </div>
+                <TimeWrapperNoSSR date={customSet.creationDate} />
                 <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-                <div>
-                  {moment(customSet.lastModified)
-                    .local()
-                    .format('lll')}
-                </div>
+                <TimeWrapperNoSSR date={customSet.lastModified} />
               </div>
             }
             placement="bottomLeft"
           >
             {formElement}
-          </Tooltip>
+          </Popover>
         ) : (
           formElement
         )}
