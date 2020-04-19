@@ -314,7 +314,9 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
           formElement
         )}
         {customSet && !isMobile && <BuildActions customSet={customSet} />}
-        {customSet && !isMobile && <BonusStats customSet={customSet} />}
+        {customSet && !isMobile && (
+          <BonusStats customSet={customSet} isMobile={false} />
+        )}
         {customSet && !isMobile && (
           <BuildErrors customSet={customSet} errors={errors} />
         )}

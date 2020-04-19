@@ -19,9 +19,10 @@ const DISPLAY_ITEM_LIMIT = 3;
 
 interface IProps {
   customSet: customSet;
+  isMobile: boolean;
 }
 
-const BonusStats: React.FC<IProps> = ({ customSet }) => {
+const BonusStats: React.FC<IProps> = ({ customSet, isMobile }) => {
   const { t } = useTranslation(['stat', 'common']);
   const setBonuses = getBonusesFromCustomSet(customSet);
   const itemOrder = customSet.equippedItems.reduce(
@@ -51,13 +52,12 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
   return (
     <div
       css={{
-        marginTop: 12,
         display: 'flex',
-        flexDirection: 'column',
         alignItems: 'flex-start',
+        flexWrap: 'wrap',
+        margin: '18px -6px -6px',
         [mq[1]]: {
-          marginLeft: 20,
-          marginTop: 0,
+          margin: '0 0 0 20px',
           flexDirection: 'row',
           flex: '0 3 auto',
           flexWrap: 'wrap',
@@ -111,10 +111,12 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
                         border: `1px solid ${theme.border?.default}`,
                         padding: '4px 8px',
                         cursor: 'pointer',
+                        margin: 6,
+                        [mq[1]]: {
+                          margin: 0,
+                        },
                         ':not(:first-of-type)': {
-                          marginTop: 12,
                           [mq[1]]: {
-                            marginTop: 0,
                             marginLeft: 12,
                           },
                         },
@@ -186,7 +188,7 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
             )
         }
       </ClassNames>
-      {selectedSet && (
+      {selectedSet && !isMobile && (
         <SetModal
           setId={selectedSet?.id}
           setName={selectedSet?.name}
