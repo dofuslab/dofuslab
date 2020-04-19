@@ -16,7 +16,9 @@ class ModelWeaponEffect(Base):
     )
 
     weapon_stat_id = Column(
-        UUID(as_uuid=True), ForeignKey("weapon_stat.uuid"), nullable=False
+        UUID(as_uuid=True),
+        ForeignKey("weapon_stat.uuid", ondelete="CASCADE"),
+        nullable=False,
     )
     effect_type = Column("effect_type", WeaponEffectEnum, nullable=False)
     min_damage = Column("min_damage", Integer)

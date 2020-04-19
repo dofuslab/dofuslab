@@ -49,7 +49,7 @@ const ACTION_PADDING = 12;
 const actionWrapper = {
   margin: -ACTION_PADDING,
   padding: ACTION_PADDING,
-  transition: 'color 0.3s',
+  transition: 'color 0.3s ease-in-out',
   [':hover']: { color: blue6 },
   fontSize: '0.8rem',
 };

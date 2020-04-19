@@ -19,6 +19,7 @@ export interface itemSlots_itemSlots {
   name: string;
   order: number;
   itemTypes: itemSlots_itemSlots_itemTypes[];
+  imageUrl: string;
 }
 
 export interface itemSlots {

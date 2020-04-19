@@ -96,7 +96,8 @@ const BuildErrors: React.FC<IProps> = ({ customSet, errors, isMobile }) => {
       css={{
         marginLeft: 20,
         marginTop: 0,
-        flexDirection: 'row',
+        display: 'flex',
+        alignItems: 'center',
       }}
     >
       <ClassNames>

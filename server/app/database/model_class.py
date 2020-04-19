@@ -19,7 +19,6 @@ class ModelClass(Base):
     name = relationship(
         "ModelClassTranslation", backref="class", cascade="all, delete-orphan"
     )
-    # image_url = Column("imageUrl", String)
     spell_variant_pairs = relationship(
         "ModelSpellVariantPair", backref="class", cascade="all, delete-orphan"
     )

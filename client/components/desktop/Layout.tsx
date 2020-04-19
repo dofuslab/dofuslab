@@ -176,7 +176,7 @@ const Layout = (props: LayoutProps) => {
             },
 
             '&-thumb': {
-              height: 50,
+              height: 20,
               backgroundColor: theme.scrollbar?.background,
             },
 
@@ -240,7 +240,7 @@ const Layout = (props: LayoutProps) => {
                     onClose={closeDrawer}
                     width={480}
                   >
-                    <MyBuilds />
+                    <MyBuilds onClose={closeDrawer} />
                   </Drawer>
                 </>
               )}

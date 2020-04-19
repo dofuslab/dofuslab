@@ -16,7 +16,9 @@ class ModelSpellEffect(Base):
     )
 
     spell_stat_id = Column(
-        UUID(as_uuid=True), ForeignKey("spell_stats.uuid"), nullable=False
+        UUID(as_uuid=True),
+        ForeignKey("spell_stats.uuid", ondelete="CASCADE"),
+        nullable=False,
     )
     effect_type = Column("effect_type", SpellEffectEnum, nullable=False)
     min_damage = Column("min_damage", Integer)

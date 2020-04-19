@@ -15,15 +15,18 @@ import { mq } from 'common/constants';
 import SetModal from 'components/common/SetModal';
 import { item_set } from 'graphql/fragments/__generated__/item';
 
+const DISPLAY_ITEM_LIMIT = 3;
+
 interface IProps {
   customSet: customSet;
+  isMobile: boolean;
 }
 
-const BonusStats: React.FC<IProps> = ({ customSet }) => {
+const BonusStats: React.FC<IProps> = ({ customSet, isMobile }) => {
   const { t } = useTranslation(['stat', 'common']);
   const setBonuses = getBonusesFromCustomSet(customSet);
   const itemOrder = customSet.equippedItems.reduce(
-    (acc, curr) => ({ ...acc, [curr.item.id]: curr.slot.order }),
+    (acc, curr) => ({ ...acc, [curr.id]: curr.slot.order }),
     {},
   ) as { [key: string]: number };
 
@@ -49,11 +52,17 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
   return (
     <div
       css={{
-        marginTop: 12,
         display: 'flex',
-        flexDirection: 'column',
         alignItems: 'flex-start',
-        [mq[1]]: { marginLeft: 20, marginTop: 0, flexDirection: 'row' },
+        flexWrap: 'wrap',
+        margin: '18px -6px -6px',
+        [mq[1]]: {
+          margin: '0 0 0 20px',
+          flexDirection: 'row',
+          flex: '0 3 auto',
+          flexWrap: 'wrap',
+          overflowY: 'auto',
+        },
       }}
     >
       <ClassNames>
@@ -102,10 +111,12 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
                         border: `1px solid ${theme.border?.default}`,
                         padding: '4px 8px',
                         cursor: 'pointer',
+                        margin: 6,
+                        [mq[1]]: {
+                          margin: 0,
+                        },
                         ':not(:first-of-type)': {
-                          marginTop: 12,
                           [mq[1]]: {
-                            marginTop: 0,
                             marginLeft: 12,
                           },
                         },
@@ -144,7 +155,32 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
                               />
                             )}
                           </div>
-                        ))}
+                        ))
+                        .filter((_, idx) =>
+                          equippedItems.length - DISPLAY_ITEM_LIMIT > 1
+                            ? idx < DISPLAY_ITEM_LIMIT
+                            : idx < DISPLAY_ITEM_LIMIT + 1,
+                        )}
+                      {equippedItems.length > DISPLAY_ITEM_LIMIT + 1 && (
+                        <div
+                          key={'truncated-set'}
+                          css={{
+                            width: 40,
+                            height: 40,
+                            fontSize: '1rem',
+                            fontWeight: 500,
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            color: theme.text?.light,
+                            [mq[1]]: {
+                              [':not:first-of-type']: { marginLeft: 4 },
+                            },
+                          }}
+                        >
+                          +{equippedItems.length - DISPLAY_ITEM_LIMIT}
+                        </div>
+                      )}
                     </div>
                   </Popover>
                 );
@@ -152,7 +188,7 @@ const BonusStats: React.FC<IProps> = ({ customSet }) => {
             )
         }
       </ClassNames>
-      {selectedSet && (
+      {selectedSet && !isMobile && (
         <SetModal
           setId={selectedSet?.id}
           setName={selectedSet?.name}

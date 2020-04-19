@@ -19,12 +19,18 @@ class ModelEquippedItem(Base):
         nullable=False,
     )
     item_slot_id = Column(
-        UUID(as_uuid=True), ForeignKey("item_slot.uuid"), nullable=False, index=True,
+        UUID(as_uuid=True),
+        ForeignKey("item_slot.uuid", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
     )
     custom_set_id = Column(
-        UUID(as_uuid=True), ForeignKey("custom_set.uuid"), nullable=False, index=True,
+        UUID(as_uuid=True),
+        ForeignKey("custom_set.uuid", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
     )
-    item_id = Column(UUID(as_uuid=True), ForeignKey("item.uuid"))
+    item_id = Column(UUID(as_uuid=True), ForeignKey("item.uuid", ondelete="CASCADE"))
     item = relationship("ModelItem")
     slot = relationship("ModelItemSlot")
     exos = relationship("ModelEquippedItemExo", cascade="all, delete-orphan")

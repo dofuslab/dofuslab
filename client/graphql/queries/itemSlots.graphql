@@ -7,5 +7,6 @@ query itemSlots {
       id
       name
     }
+    imageUrl
   }
 }

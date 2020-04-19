@@ -52,5 +52,8 @@ class ModelCustomSetStat(Base):
     )
 
     custom_set_id = Column(
-        UUID(as_uuid=True), ForeignKey("custom_set.uuid"), nullable=False, index=True
+        UUID(as_uuid=True),
+        ForeignKey("custom_set.uuid", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
     )

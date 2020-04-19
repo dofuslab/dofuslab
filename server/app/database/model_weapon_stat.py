@@ -15,7 +15,9 @@ class ModelWeaponStat(Base):
         nullable=False,
     )
 
-    item_id = Column(UUID(as_uuid=True), ForeignKey("item.uuid"), nullable=False)
+    item_id = Column(
+        UUID(as_uuid=True), ForeignKey("item.uuid", ondelete="CASCADE"), nullable=False
+    )
     item = relationship("ModelItem", back_populates="weapon_stats")
     weapon_effects = relationship(
         "ModelWeaponEffect",

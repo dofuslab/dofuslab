@@ -67,7 +67,7 @@ const deleteStatWrapper = {
   top: 3,
   padding: 8,
   opacity: 0.3,
-  transition: 'opacity 0.3s',
+  transition: 'opacity 0.3s ease-in-out',
   cursor: 'pointer',
   ['&:hover']: {
     opacity: 1,
@@ -227,14 +227,10 @@ const MageModal: React.FC<IProps> = ({
       {({ css }) => (
         <Modal
           visible={visible}
-          title={
-            <div css={{ fontSize: '0.8rem' }}>
-              {t('MAGE_MODAL_TITLE', {
-                ns: 'mage',
-                itemName: equippedItem.item.name,
-              })}
-            </div>
-          }
+          title={t('MAGE_MODAL_TITLE', {
+            ns: 'mage',
+            itemName: equippedItem.item.name,
+          })}
           bodyStyle={{
             display: 'flex',
             flexDirection: 'column',

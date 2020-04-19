@@ -65,7 +65,7 @@ const Home: React.FC<IProps> = ({
         selectedItemSlotId={selectedItemSlot?.id ?? null}
         errors={errors}
       />
-      {customSet && <BonusStats customSet={customSet} />}
+      {customSet && <BonusStats customSet={customSet} isMobile />}
       <div
         css={{
           flex: '1 1 auto',

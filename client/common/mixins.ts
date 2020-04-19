@@ -55,6 +55,7 @@ export const itemImageBox = (theme: TTheme) => ({
   height: '100%',
   top: 0,
   left: 0,
+  transition: 'all 0.3s ease-in-out',
   [mq[1]]: {
     maxWidth: ITEM_BOX_WIDTH_SMALL,
     maxHeight: ITEM_BOX_WIDTH_SMALL,
@@ -119,9 +120,16 @@ export const itemBox = (theme: TTheme) => ({
 
 export const selected = (theme: TTheme) => ({
   border: '1px solid transparent', // fake border
-  boxShadow: `0 0 0 2px ${theme.border?.selected}`, // border
   background: theme.layer?.background,
   zIndex: 1, // so "border" appears above other elements
+  boxShadow: `0 0 0 2px ${theme.border?.primarySelected}`, // border
+
+  '&::after': {
+    content: "''",
+    paddingBottom: '100%',
+    borderRadius: 4,
+    opacity: 1,
+  },
 });
 
 export const primarySelected = (theme: TTheme) => ({
@@ -186,3 +194,13 @@ export const topMarginStyle = {
     marginTop: 12,
   },
 };
+
+export const switchStyle = (theme: TTheme, showPrimary?: boolean) => ({
+  background: showPrimary ? undefined : theme.switch?.background,
+  '.ant-switch-inner': {
+    color: theme.text?.default,
+  },
+  '&::after': {
+    background: theme.switch?.button,
+  },
+});

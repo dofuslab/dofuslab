@@ -1,0 +1,12 @@
+#import "graphql/fragments/customSet.graphql"
+
+mutation restartCustomSet($customSetId: UUID!, $shouldResetStats: Boolean!) {
+  restartCustomSet(
+    customSetId: $customSetId
+    shouldResetStats: $shouldResetStats
+  ) {
+    customSet {
+      ...customSet
+    }
+  }
+}

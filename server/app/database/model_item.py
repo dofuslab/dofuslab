@@ -21,10 +21,15 @@ class ModelItem(Base):
         "ModelItemTranslation", backref="item", cascade="all, delete-orphan"
     )
     item_type_id = Column(
-        UUID(as_uuid=True), ForeignKey("item_type.uuid"), nullable=False, index=True
+        UUID(as_uuid=True),
+        ForeignKey("item_type.uuid", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
     )
     item_type = relationship(ModelItemType, back_populates="items", lazy="subquery")
-    set_id = Column(UUID(as_uuid=True), ForeignKey("set.uuid"), index=True)
+    set_id = Column(
+        UUID(as_uuid=True), ForeignKey("set.uuid", ondelete="CASCADE"), index=True
+    )
     set = relationship("ModelSet", lazy="subquery")
     level = Column("level", Integer, nullable=False)
     stats = relationship(

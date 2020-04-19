@@ -22,3 +22,4 @@ class ModelItemSlot(Base):
         back_populates="eligible_item_slots",
     )
     order = Column("order", Integer, nullable=False)
+    image_url = Column("image_url", String, nullable=False)

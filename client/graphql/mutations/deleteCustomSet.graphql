@@ -1,0 +1,5 @@
+mutation deleteCustomSet($customSetId: UUID!) {
+  deleteCustomSet(customSetId: $customSetId) {
+    ok
+  }
+}
