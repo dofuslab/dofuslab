@@ -7,6 +7,7 @@ import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
+import NoSSR from 'react-no-ssr';
 
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
@@ -298,29 +299,31 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
                 <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
                 <div>{customSet.owner?.username ?? t('ANONYMOUS')}</div>
                 <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-                <div>
-                  {creationDate.toLocaleDateString(undefined, {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })}{' '}
-                  {creationDate.toLocaleTimeString(undefined, {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                  })}
-                </div>
-                <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-                <div>
-                  {modifiedDate.toLocaleDateString(undefined, {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })}{' '}
-                  {modifiedDate.toLocaleTimeString(undefined, {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                  })}
-                </div>
+                <NoSSR>
+                  <div>
+                    {creationDate.toLocaleDateString(undefined, {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}{' '}
+                    {creationDate.toLocaleTimeString(undefined, {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })}
+                  </div>
+                  <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
+                  <div>
+                    {modifiedDate.toLocaleDateString(undefined, {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}{' '}
+                    {modifiedDate.toLocaleTimeString(undefined, {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })}
+                  </div>
+                </NoSSR>
               </div>
             }
             placement="bottomLeft"
@@ -347,34 +350,36 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
                 {customSet.owner?.username ?? t('ANONYMOUS')}
               </div>
             </div>
-            <div css={{ display: 'flex' }}>
-              <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-              <div css={{ marginLeft: 8 }}>
-                {creationDate.toLocaleDateString(undefined, {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}{' '}
-                {creationDate.toLocaleTimeString(undefined, {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                })}
+            <NoSSR>
+              <div css={{ display: 'flex' }}>
+                <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
+                <div css={{ marginLeft: 8 }}>
+                  {creationDate.toLocaleDateString(undefined, {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric',
+                  })}{' '}
+                  {creationDate.toLocaleTimeString(undefined, {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  })}
+                </div>
               </div>
-            </div>
-            <div css={{ display: 'flex' }}>
-              <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-              <div css={{ marginLeft: 8 }}>
-                {modifiedDate.toLocaleDateString(undefined, {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}{' '}
-                {modifiedDate.toLocaleTimeString(undefined, {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                })}
+              <div css={{ display: 'flex' }}>
+                <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
+                <div css={{ marginLeft: 8 }}>
+                  {modifiedDate.toLocaleDateString(undefined, {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric',
+                  })}{' '}
+                  {modifiedDate.toLocaleTimeString(undefined, {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  })}
+                </div>
               </div>
-            </div>
+            </NoSSR>
           </div>
           <BuildActions customSet={customSet} />
           <BuildErrors customSet={customSet} errors={errors} isMobile />
