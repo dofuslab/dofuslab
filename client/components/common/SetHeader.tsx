@@ -7,7 +7,6 @@ import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
-import NoSSR from 'react-no-ssr';
 
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
@@ -23,7 +22,6 @@ import { mq } from 'common/constants';
 import BonusStats from '../desktop/BonusStats';
 import BuildErrors from './BuildErrors';
 import { IError } from 'common/types';
-import { TimeWrapper } from 'common/wrappers';
 import BuildActions from './BuildActions';
 
 interface IProps {
@@ -258,6 +256,9 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
     </Form>
   );
 
+  const creationDate = new Date(customSet?.creationDate);
+  const modifiedDate = new Date(customSet?.lastModified);
+
   return (
     <>
       <div
@@ -297,13 +298,29 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
                 <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
                 <div>{customSet.owner?.username ?? t('ANONYMOUS')}</div>
                 <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-                <NoSSR>
-                  <TimeWrapper date={customSet.creationDate} />
-                </NoSSR>
+                <div>
+                  {creationDate.toLocaleDateString(undefined, {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric',
+                  })}{' '}
+                  {creationDate.toLocaleTimeString(undefined, {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  })}
+                </div>
                 <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-                <NoSSR>
-                  <TimeWrapper date={customSet.lastModified} />
-                </NoSSR>
+                <div>
+                  {modifiedDate.toLocaleDateString(undefined, {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric',
+                  })}{' '}
+                  {modifiedDate.toLocaleTimeString(undefined, {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  })}
+                </div>
               </div>
             }
             placement="bottomLeft"
@@ -333,17 +350,29 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
             <div css={{ display: 'flex' }}>
               <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
               <div css={{ marginLeft: 8 }}>
-                <NoSSR>
-                  <TimeWrapper date={customSet.creationDate} />
-                </NoSSR>
+                {creationDate.toLocaleDateString(undefined, {
+                  month: 'short',
+                  day: 'numeric',
+                  year: 'numeric',
+                })}{' '}
+                {creationDate.toLocaleTimeString(undefined, {
+                  hour: '2-digit',
+                  minute: '2-digit',
+                })}
               </div>
             </div>
             <div css={{ display: 'flex' }}>
               <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
               <div css={{ marginLeft: 8 }}>
-                <NoSSR>
-                  <TimeWrapper date={customSet.creationDate} />
-                </NoSSR>
+                {modifiedDate.toLocaleDateString(undefined, {
+                  month: 'short',
+                  day: 'numeric',
+                  year: 'numeric',
+                })}{' '}
+                {modifiedDate.toLocaleTimeString(undefined, {
+                  hour: '2-digit',
+                  minute: '2-digit',
+                })}
               </div>
             </div>
           </div>
