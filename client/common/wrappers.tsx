@@ -3,7 +3,6 @@
 import { jsx, CSSObject, ClassNames } from '@emotion/core';
 import styled from '@emotion/styled';
 import { useTheme } from 'emotion-theming';
-import dynamic from 'next/dynamic';
 
 import {
   ellipsis,
@@ -33,7 +32,6 @@ import { TTheme } from './themes';
 import Card from 'components/common/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCube } from '@fortawesome/free-solid-svg-icons';
-import moment from 'moment';
 
 interface IResponsiveGrid {
   readonly numColumns: ReadonlyArray<number>;
@@ -294,15 +292,3 @@ export const BrokenImagePlaceholder: React.FC<React.HTMLAttributes<
     )}
   </ClassNames>
 );
-
-export const TimeWrapper: React.FC<{ date: any }> = ({ date }) => (
-  <div>
-    {moment(date)
-      .local()
-      .format('lll')}
-  </div>
-);
-
-export const TimeWrapperNoSSR = dynamic(() => Promise.resolve(TimeWrapper), {
-  ssr: false,
-});
