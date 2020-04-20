@@ -10,6 +10,7 @@ import {
   itemImageBox,
   selected as selectedBox,
   itemImageDimensions,
+  popoverShadow,
 } from 'common/mixins';
 import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/customSet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -52,6 +53,7 @@ const BasicItemWithStats: React.FC<IProps> = ({
 }) => {
   const theme = useTheme<TTheme>();
   const [brokenImage, setBrokenImage] = React.useState(false);
+  const contentRef = React.useRef<HTMLDivElement | null>(null);
 
   return (
     <ClassNames>
@@ -68,8 +70,18 @@ const BasicItemWithStats: React.FC<IProps> = ({
             overlayClassName={css({
               ...popoverTitleStyle,
               ...overlayCSS,
+              '.ant-popover-content': {
+                maxHeight: contentRef.current
+                  ? `calc(100vh - ${contentRef.current.offsetTop +
+                      contentRef.current.offsetHeight +
+                      20}px)`
+                  : undefined,
+                overflow: 'auto',
+              },
+              boxShadow: popoverShadow,
               width: 240,
             })}
+            autoAdjustOverflow={false}
           >
             <div
               css={{
@@ -84,6 +96,7 @@ const BasicItemWithStats: React.FC<IProps> = ({
                   },
                 },
               }}
+              ref={contentRef}
             >
               {brokenImage ? (
                 <BrokenImagePlaceholder

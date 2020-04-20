@@ -11,6 +11,7 @@ import {
   selected as selectedBox,
   itemImageDimensions,
   gold5,
+  popoverShadow,
 } from 'common/mixins';
 import {
   customSet_equippedItems,
@@ -87,6 +88,7 @@ const EquippedItemWithStats: React.FC<IProps> = ({
   const { t } = useTranslation('common');
   const theme = useTheme<TTheme>();
   const [brokenImage, setBrokenImage] = React.useState(false);
+  const contentRef = React.useRef<HTMLDivElement | null>(null);
 
   const content = (
     <ClassNames>
@@ -94,6 +96,7 @@ const EquippedItemWithStats: React.FC<IProps> = ({
         const wrapperClass = css(wrapperStyles);
         return (
           <div
+            ref={contentRef}
             css={{
               ...itemImageBox(theme),
               ...(selected && { ...selectedBox(theme) }),
@@ -196,9 +199,19 @@ const EquippedItemWithStats: React.FC<IProps> = ({
                 }
                 overlayClassName={css({
                   ...popoverTitleStyle,
-                  ['.ant-popover-inner-content']: { padding: 0 },
+                  '.ant-popover-content': {
+                    maxHeight: contentRef.current
+                      ? `calc(100vh - ${contentRef.current.offsetTop +
+                          contentRef.current.offsetHeight +
+                          20}px)`
+                      : undefined,
+                    overflow: 'auto',
+                  },
+                  '.ant-popover-inner-content': { padding: 0 },
+                  boxShadow: popoverShadow,
                   maxWidth: 288,
                 })}
+                autoAdjustOverflow={false}
               >
                 <div>{content}</div>
               </Popover>
