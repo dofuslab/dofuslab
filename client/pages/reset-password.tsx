@@ -19,6 +19,7 @@ import resetPasswordMutation from 'graphql/mutations/resetPassword.graphql';
 import CommonLayout from 'components/common/CommonLayout';
 import ErrorPage from 'pages/_error';
 import { mq } from 'common/constants';
+import { getTitle } from 'common/utils';
 
 const RequestPasswordResetPage: NextPage = () => {
   const { data } = useQuery<currentUser>(currentUserQuery);
@@ -78,7 +79,7 @@ const RequestPasswordResetPage: NextPage = () => {
           type="text/css"
           dangerouslySetInnerHTML={{ __html: mediaStyles }}
         />
-        <title>DofusLab.io</title>
+        <title>{getTitle(t('CHANGE_PASSWORD'))}</title>
       </Head>
       <div
         css={{

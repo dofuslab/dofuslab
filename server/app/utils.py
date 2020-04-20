@@ -17,7 +17,7 @@ def get_or_create_custom_set(custom_set_id, db_session):
             raise GraphQLError(_("You don't have permission to edit that set."))
         elif not custom_set.owner_id and custom_set.uuid not in owned_custom_sets:
             raise GraphQLError(_("You don't have permission to edit that set."))
-        custom_set.last_modified = datetime.now()
+        custom_set.last_modified = datetime.utcnow()
     else:
         custom_set = ModelCustomSet(owner_id=current_user.get_id())
         db_session.add(custom_set)

@@ -14,8 +14,9 @@ import MageModal from 'components/common/MageModal';
 import SetModal from 'components/common/SetModal';
 import { mediaStyles } from 'components/common/Media';
 import Head from 'next/head';
-import { getErrors, getStatsFromCustomSet } from 'common/utils';
+import { getErrors, getStatsFromCustomSet, getTitle } from 'common/utils';
 import { IError } from 'common/types';
+import { useTranslation } from 'i18n';
 
 const EquippedItemPage: NextPage = () => {
   const router = useRouter();
@@ -50,6 +51,8 @@ const EquippedItemPage: NextPage = () => {
     setMageModalVisible(false);
   }, [setMageModalVisible]);
 
+  const { t } = useTranslation('common');
+
   const customSet = customSetData?.customSetById;
 
   if (!customSet) {
@@ -83,7 +86,9 @@ const EquippedItemPage: NextPage = () => {
           type="text/css"
           dangerouslySetInnerHTML={{ __html: mediaStyles }}
         />
-        <title>DofusLab.io</title>
+        <title>
+          {getTitle(customSet ? customSet.name || t('UNTITLED') : null)}
+        </title>
       </Head>
       <EquippedItemCard
         equippedItem={equippedItem}

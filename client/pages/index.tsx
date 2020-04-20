@@ -15,10 +15,14 @@ import {
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
 import ErrorPage from './_error';
+import { getTitle } from 'common/utils';
+import { useTranslation } from 'i18n';
 
 const Index: NextPage = () => {
   const router = useRouter();
   const { customSetId } = router.query;
+
+  const { t } = useTranslation('common');
 
   const { data: customSetData, loading } = useQuery<
     customSet,
@@ -38,7 +42,9 @@ const Index: NextPage = () => {
           type="text/css"
           dangerouslySetInnerHTML={{ __html: mediaStyles }}
         />
-        <title>DofusLab.io</title>
+        <title>
+          {getTitle(customSet ? customSet.name || t('UNTITLED') : null)}
+        </title>
       </Head>
       <Media lessThan="xs">
         <MobileSetBuilder customSet={customSet} />

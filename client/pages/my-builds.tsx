@@ -9,9 +9,12 @@ import { mediaStyles } from 'components/common/Media';
 import Head from 'next/head';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import MyBuilds from 'components/common/MyBuilds';
+import { useTranslation } from 'i18n';
+import { getTitle } from 'common/utils';
 
 const MyBuildsPage: NextPage = () => {
   const { data } = useQuery<currentUser>(currentUserQuery);
+  const { t } = useTranslation('common');
   const router = useRouter();
   if (!data?.currentUser) {
     router.push('/');
@@ -24,7 +27,7 @@ const MyBuildsPage: NextPage = () => {
           type="text/css"
           dangerouslySetInnerHTML={{ __html: mediaStyles }}
         />
-        <title>DofusLab.io</title>
+        <title>{getTitle(t('MY_BUILDS'))}</title>
       </Head>
       <MyBuilds />
     </Layout>

@@ -53,6 +53,7 @@ from app.database.enums import (
 from app.token_utils import decode_token, encode_token, generate_url
 import app.mutation_validation_utils as validation
 import graphene
+import pytz
 import uuid
 from graphql import GraphQLError
 from flask import session, render_template, g
@@ -243,6 +244,12 @@ class CustomSetStats(SQLAlchemyObjectType):
 class CustomSet(SQLAlchemyObjectType):
     equipped_items = graphene.NonNull(graphene.List(graphene.NonNull(EquippedItem)))
     stats = graphene.NonNull(CustomSetStats)
+
+    def resolve_creation_date(self, info):
+        return pytz.utc.localize(self.creation_date)
+
+    def resolve_last_modified(self, info):
+        return pytz.utc.localize(self.last_modified)
 
     class Meta:
         model = ModelCustomSet
@@ -575,7 +582,7 @@ class MageEquippedItem(graphene.Mutation):
             equipped_item.weapon_element_mage = (
                 WeaponElementMage(weapon_element_mage) if weapon_element_mage else None
             )
-            equipped_item.custom_set.last_modified = datetime.now()
+            equipped_item.custom_set.last_modified = datetime.utcnow()
 
         return MageEquippedItem(equipped_item=equipped_item)
 
@@ -611,7 +618,7 @@ class SetEquippedItemExo(graphene.Mutation):
                 db_session.add(exo_obj)
             if exo_obj and not has_stat:
                 db_session.delete(exo_obj)
-            equipped_item.custom_set.last_modified = datetime.now()
+            equipped_item.custom_set.last_modified = datetime.utcnow()
 
         return SetEquippedItemExo(equipped_item=equipped_item)
 
@@ -697,7 +704,7 @@ class RestartCustomSet(graphene.Mutation):
                 db_session.delete(custom_set.stats)
                 custom_set_stat = ModelCustomSetStat(custom_set_id=custom_set.uuid)
                 db_session.add(custom_set_stat)
-            custom_set.last_modified = datetime.now()
+            custom_set.last_modified = datetime.utcnow()
 
         return RestartCustomSet(custom_set=custom_set)
 

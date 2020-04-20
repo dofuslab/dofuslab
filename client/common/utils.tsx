@@ -1163,3 +1163,10 @@ export const renderErrors = (
   }
   return <li key={`generic-${reason}`}>{t(reason, { ns: 'common' })}</li>;
 };
+
+export const getTitle = (title?: string | null) => {
+  if (!title) {
+    return 'DofusLab.io';
+  }
+  return `${title} - DofusLab.io`;
+};

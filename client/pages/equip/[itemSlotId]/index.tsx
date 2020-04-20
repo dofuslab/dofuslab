@@ -16,15 +16,14 @@ import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import ErrorPage from 'pages/_error';
 import Layout from 'components/mobile/Layout';
+import { getTitle } from 'common/utils';
 
 const EquipPage: NextPage = () => {
   const router = useRouter();
   const { itemSlotId, customSetId } = router.query;
 
-  const { data, loading, error } = useQuery<itemSlots>(ItemSlotsQuery);
+  const { data } = useQuery<itemSlots>(ItemSlotsQuery);
   const itemSlot = data?.itemSlots.find(slot => slot.id === itemSlotId);
-
-  console.log(data, loading, error);
 
   const { data: customSetData } = useQuery<customSet, customSetVariables>(
     CustomSetQuery,
@@ -44,7 +43,7 @@ const EquipPage: NextPage = () => {
           type="text/css"
           dangerouslySetInnerHTML={{ __html: mediaStyles }}
         />
-        <title>DofusLab.io</title>
+        <title>{getTitle(customSetData?.customSetById?.name)}</title>
       </Head>
       <Selector
         customSet={customSet}

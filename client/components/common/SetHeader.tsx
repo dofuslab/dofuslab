@@ -284,7 +284,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
             overlayStyle={{ maxWidth: 360 }}
             title={
               <div css={{ fontWeight: 500, overflowWrap: 'break-word' }}>
-                {customSet.name}
+                {customSet.name || t('UNTITLED')}
               </div>
             }
             content={
