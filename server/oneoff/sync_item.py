@@ -4,6 +4,7 @@ from app import session_scope
 from app.database.model_item import ModelItem
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_translation import ModelItemTranslation
+from app.database.model_item_type import ModelItemType
 from oneoff.database_setup import to_stat_enum
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -12,9 +13,20 @@ allowed_file_names = ["items", "mounts", "pets"]
 
 
 def create_item(db_session, record):
+    print("Loading item types...")
+    item_types = {}
+    with open(os.path.join(app_root, "app/database/data/item_types.json"), "r") as file:
+        data = json.load(file)
+        for item_type_record in data:
+            item_type = (
+                db_session.query(ModelItemType)
+                .filter_by(name=item_type_record["en-US"])
+                .one()
+            )
+            item_types[item_type_record["en-US"]] = item_type
     item = ModelItem(
         dofus_db_id=record["dofusID"],
-        item_type=item_types[record["itemType"]],
+        item_type_id=item_types[record["itemType"]].uuid,
         level=record["level"],
         image_url=record["imageUrl"],
     )
@@ -33,13 +45,13 @@ def create_item_stats(db_session, record, item):
     i = 0
     for stat in record["stats"]:
         item_stat = ModelItemStat(
+            item_id=item.uuid,
             stat=to_stat_enum[stat["stat"]],
             min_value=stat["minStat"],
             max_value=stat["maxStat"],
             order=i,
         )
         db_session.add(item_stat)
-        item.stats.append(item_stat)
         i = i + 1
 
 
@@ -95,7 +107,7 @@ def sync_item():
                         print("Item stats successfully updated")
                     else:
                         should_create_response = input(
-                            "Item does not exist in database. Would you like to create it? (Y/n)"
+                            "Item does not exist in database. Would you like to create it? (Y/n): "
                         )
                         if should_create_response == "Y":
                             create_item(db_session, record)
