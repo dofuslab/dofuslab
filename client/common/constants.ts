@@ -271,3 +271,5 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
 ];
 
 export const SEARCH_BAR_ID = 'search-bar';
+
+export const DISCORD_SERVER_LINK = 'https://discord.gg/S4TvSfa';

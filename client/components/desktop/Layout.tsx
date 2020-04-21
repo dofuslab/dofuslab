@@ -9,6 +9,7 @@ import {
   Select,
   Dropdown,
   Menu,
+  Divider,
 } from 'antd';
 import { useRouter } from 'next/router';
 import { useTheme } from 'emotion-theming';
@@ -24,7 +25,7 @@ import { useTranslation, LANGUAGES, langToFullName } from 'i18n';
 import SignUpModal from '../common/SignUpModal';
 import MyBuilds from '../common/MyBuilds';
 import Link from 'next/link';
-import { mq } from 'common/constants';
+import { mq, DISCORD_SERVER_LINK } from 'common/constants';
 import StatusChecker from 'components/common/StatusChecker';
 import {
   changeLocale,
@@ -278,6 +279,22 @@ const Layout = (props: LayoutProps) => {
               </Button>
             </div>
           )}
+          <Divider type="vertical" css={{ margin: '0 8px 0 12px' }} />
+          <a href={DISCORD_SERVER_LINK} target="_blank">
+            <img
+              src={
+                theme.name === LIGHT_THEME_NAME
+                  ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/Discord-Logo%2BWordmark-Black.svg'
+                  : 'https://dofus-lab.s3.us-east-2.amazonaws.com/Discord-Logo%2BWordmark-White.svg'
+              }
+              css={{
+                width: 96,
+                opacity: 0.45,
+                transition: '0.3s opacity ease-in-out',
+                '&:hover': { opacity: 0.9 },
+              }}
+            />
+          </a>
         </div>
       </AntdLayout.Header>
 
