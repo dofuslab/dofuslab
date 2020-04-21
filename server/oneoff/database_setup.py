@@ -32,7 +32,7 @@ import json
 import sys
 import os
 
-dirname = os.path.dirname(os.path.abspath(__file__))
+app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 to_stat_enum = {
     "Vitality": enums.Stat.VITALITY,
@@ -131,7 +131,7 @@ if __name__ == "__main__":
     item_types = {}
 
     print("Adding item types to database")
-    with open(os.path.join(dirname, "app/database/data/item_types.json"), "r") as file:
+    with open(os.path.join(app_root, "app/database/data/item_types.json"), "r") as file:
         data = json.load(file)
         for record in data:
             item_type = ModelItemType()
@@ -148,7 +148,7 @@ if __name__ == "__main__":
     db.session.commit()
 
     print("Adding item slots to database")
-    with open(os.path.join(dirname, "app/database/data/item_slots.json"), "r") as file:
+    with open(os.path.join(app_root, "app/database/data/item_slots.json"), "r") as file:
         data = json.load(file)
         i = 0
         for record in data:
@@ -175,7 +175,7 @@ if __name__ == "__main__":
     db.session.commit()
 
     print("Adding sets to database")
-    with open(os.path.join(dirname, "app/database/data/sets.json"), "r") as file:
+    with open(os.path.join(app_root, "app/database/data/sets.json"), "r") as file:
         data = json.load(file)
         for record in data:
             set_obj = ModelSet(dofus_db_id=record["id"])
@@ -216,7 +216,7 @@ if __name__ == "__main__":
         db.session.commit()
 
     print("Adding items to database")
-    with open(os.path.join(dirname, "app/database/data/items.json"), "r") as file:
+    with open(os.path.join(app_root, "app/database/data/items.json"), "r") as file:
         data = json.load(file)
         for record in data:
             if record["itemType"] == "Living object":
@@ -293,7 +293,7 @@ if __name__ == "__main__":
         db.session.commit()
 
     print("Adding weapons to database")
-    with open(os.path.join(dirname, "app/database/data/weapons.json"), "r") as file:
+    with open(os.path.join(app_root, "app/database/data/weapons.json"), "r") as file:
         data = json.load(file)
         for record in data:
             item = ModelItem(
@@ -389,7 +389,7 @@ if __name__ == "__main__":
         db.session.commit()
 
     print("Adding pets to database")
-    with open(os.path.join(dirname, "app/database/data/pets.json"), "r") as file:
+    with open(os.path.join(app_root, "app/database/data/pets.json"), "r") as file:
         data = json.load(file)
         for record in data:
             item = ModelItem(
@@ -460,7 +460,7 @@ if __name__ == "__main__":
         db.session.commit()
     #
     print("Adding mounts to database")
-    with open(os.path.join(dirname, "app/database/data/mounts.json"), "r") as file:
+    with open(os.path.join(app_root, "app/database/data/mounts.json"), "r") as file:
         data = json.load(file)
         for record in data:
             item = ModelItem(
@@ -497,7 +497,7 @@ if __name__ == "__main__":
 
         db.session.commit()
 
-    with open(os.path.join(dirname, "app/database/data/rhineetles.json"), "r") as file:
+    with open(os.path.join(app_root, "app/database/data/rhineetles.json"), "r") as file:
         data = json.load(file)
         for record in data:
             item = ModelItem(
@@ -535,7 +535,7 @@ if __name__ == "__main__":
         db.session.commit()
 
     print("Adding classes to database")
-    with open(os.path.join(dirname, "app/database/data/spells.json"), "r") as file:
+    with open(os.path.join(app_root, "app/database/data/spells.json"), "r") as file:
         data = json.load(file)
         for record in data:
             class_object = ModelClass()
