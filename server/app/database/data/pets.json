@@ -28,12 +28,30 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only and", "Know the emote"],
-        "fr": ["Etre abonné et", "Connaître l'attitude Super-héros"],
-        "de": ["Abonniert sein und", "Emote kennen"],
-        "es": ["Estar abonado y", "Conocer la actitud"],
-        "it": ["Essere abbonato e", "Conoscere l'emote"],
-        "pt": ["Ser assinante e", "Conhecer o emote"]
+        "en": [
+          "Subscribers only and",
+          "Know the emote"
+        ],
+        "fr": [
+          "Etre abonné et",
+          "Connaître l'attitude Super-héros"
+        ],
+        "de": [
+          "Abonniert sein und",
+          "Emote kennen"
+        ],
+        "es": [
+          "Estar abonado y",
+          "Conocer la actitud"
+        ],
+        "it": [
+          "Essere abbonato e",
+          "Conoscere l'emote"
+        ],
+        "pt": [
+          "Ser assinante e",
+          "Conhecer o emote"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121000.png"
@@ -67,12 +85,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18073.png"
@@ -106,12 +136,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18074.png"
@@ -145,12 +187,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18076.png"
@@ -184,12 +238,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18075.png"
@@ -223,12 +289,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18046.png"
@@ -262,12 +340,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18053.png"
@@ -301,12 +391,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18055.png"
@@ -340,12 +442,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18067.png"
@@ -411,12 +525,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121004.png"
@@ -445,12 +571,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121008.png"
@@ -484,12 +622,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121010.png"
@@ -523,12 +673,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18104.png"
@@ -562,12 +724,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18105.png"
@@ -601,12 +775,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121014.png"
@@ -640,12 +826,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121019.png"
@@ -679,12 +877,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18051.png"
@@ -718,12 +928,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121003.png"
@@ -757,12 +979,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18092.png"
@@ -791,12 +1025,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121005.png"
@@ -825,12 +1071,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121006.png"
@@ -864,12 +1122,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18109.png"
@@ -903,12 +1173,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18110.png"
@@ -942,12 +1224,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18120.png"
@@ -981,12 +1275,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121021.png"
@@ -1020,12 +1326,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18147.png"
@@ -1059,12 +1377,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18035.png"
@@ -1098,12 +1428,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18049.png"
@@ -1137,12 +1479,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18047.png"
@@ -1176,12 +1530,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18094.png"
@@ -1215,12 +1581,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18139.png"
@@ -1254,12 +1632,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121022.png"
@@ -1293,12 +1683,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18012.png"
@@ -1332,12 +1734,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18013.png"
@@ -1391,12 +1805,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121002.png"
@@ -1430,12 +1856,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18097.png"
@@ -1469,12 +1907,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18099.png"
@@ -1508,12 +1958,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18079.png"
@@ -1547,12 +2009,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18078.png"
@@ -1581,12 +2055,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121001.png"
@@ -1620,12 +2106,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18108.png"
@@ -1659,12 +2157,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18113.png"
@@ -1698,12 +2208,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18117.png"
@@ -1737,12 +2259,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18007.png"
@@ -1803,12 +2337,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18042.png"
@@ -1842,12 +2388,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18044.png"
@@ -1881,12 +2439,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18060.png"
@@ -1920,12 +2490,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18068.png"
@@ -1959,12 +2541,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18072.png"
@@ -1998,12 +2592,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18086.png"
@@ -2032,12 +2638,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18089.png"
@@ -2066,12 +2684,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18098.png"
@@ -2105,12 +2735,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18003.png"
@@ -2144,12 +2786,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18005.png"
@@ -2183,12 +2837,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18009.png"
@@ -2222,12 +2888,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18041.png"
@@ -2256,12 +2934,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18018.png"
@@ -2295,12 +2985,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18024.png"
@@ -2334,12 +3036,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18025.png"
@@ -2373,12 +3087,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18030.png"
@@ -2412,12 +3138,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18045.png"
@@ -2446,12 +3184,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18054.png"
@@ -2485,12 +3235,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18057.png"
@@ -2524,12 +3286,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18059.png"
@@ -2558,12 +3332,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18063.png"
@@ -2597,12 +3383,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18064.png"
@@ -2636,12 +3434,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18065.png"
@@ -2675,12 +3485,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18069.png"
@@ -2714,12 +3536,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18082.png"
@@ -2748,12 +3582,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/164020.png"
@@ -2782,12 +3628,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18107.png"
@@ -2821,12 +3679,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18114.png"
@@ -2860,12 +3730,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18002.png"
@@ -2894,12 +3776,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18010.png"
@@ -2933,12 +3827,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18014.png"
@@ -2972,12 +3878,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18021.png"
@@ -3011,12 +3929,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18027.png"
@@ -3050,12 +3980,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18043.png"
@@ -3089,12 +4031,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18029.png"
@@ -3128,12 +4082,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18048.png"
@@ -3167,12 +4133,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18052.png"
@@ -3206,12 +4184,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18008.png"
@@ -3245,12 +4235,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18070.png"
@@ -3284,12 +4286,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18081.png"
@@ -3323,12 +4337,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18083.png"
@@ -3362,12 +4388,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18084.png"
@@ -3401,12 +4439,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18087.png"
@@ -3440,12 +4490,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18091.png"
@@ -3479,12 +4541,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18093.png"
@@ -3518,12 +4592,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18001.png"
@@ -3557,12 +4643,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18004.png"
@@ -3591,12 +4689,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18009.png"
@@ -3630,12 +4740,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18026.png"
@@ -3669,12 +4791,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18028.png"
@@ -3703,12 +4837,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18037.png"
@@ -3742,12 +4888,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18050.png"
@@ -3781,12 +4939,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18058.png"
@@ -3820,12 +4990,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18071.png"
@@ -3859,12 +5041,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18085.png"
@@ -3898,12 +5092,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18096.png"
@@ -3937,12 +5143,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18100.png"
@@ -3976,12 +5194,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18106.png"
@@ -4015,12 +5245,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18111.png"
@@ -4049,12 +5291,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18118.png"
@@ -4115,12 +5369,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18008.png"
@@ -4149,12 +5415,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18011.png"
@@ -4188,12 +5466,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18010.png"
@@ -4227,12 +5517,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18015.png"
@@ -4266,12 +5568,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18016.png"
@@ -4305,12 +5619,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18020.png"
@@ -4344,12 +5670,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18019.png"
@@ -4374,7 +5712,7 @@
         "maxStat": 120
       },
       {
-        "stat": "Range",
+        "stat": "Critical Damage",
         "minStat": null,
         "maxStat": 40
       }
@@ -4383,12 +5721,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18023.png"
@@ -4422,12 +5772,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18022.png"
@@ -4461,12 +5823,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18017.png"
@@ -4495,12 +5869,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18031.png"
@@ -4534,12 +5920,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18034.png"
@@ -4593,12 +5991,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18036.png"
@@ -4632,12 +6042,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18056.png"
@@ -4666,12 +6088,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18061.png"
@@ -4705,12 +6139,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18062.png"
@@ -4744,12 +6190,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18066.png"
@@ -4783,12 +6241,30 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only and", "Know the emote"],
-        "fr": ["Etre abonné et", "Connaître l'attitude Salut Vulkain"],
-        "de": ["Abonniert sein und", "Emote kennen"],
-        "es": ["Estar abonado y", "Conocer la actitud"],
-        "it": ["Essere abbonato e", "Conoscere l'emote"],
-        "pt": ["Ser assinante e", "Conhecer o emote"]
+        "en": [
+          "Subscribers only and",
+          "Know the emote"
+        ],
+        "fr": [
+          "Etre abonné et",
+          "Connaître l'attitude Salut Vulkain"
+        ],
+        "de": [
+          "Abonniert sein und",
+          "Emote kennen"
+        ],
+        "es": [
+          "Estar abonado y",
+          "Conocer la actitud"
+        ],
+        "it": [
+          "Essere abbonato e",
+          "Conoscere l'emote"
+        ],
+        "pt": [
+          "Ser assinante e",
+          "Conhecer o emote"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18088.png"
@@ -4822,12 +6298,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18090.png"
@@ -4861,12 +6349,24 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18115.png"
@@ -4895,14 +6395,174 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18116.png"
+  },
+  {
+    "dofusID": "14827",
+    "name": {
+      "en": "Kwyness",
+      "fr": "Kwaltess",
+      "de": "Kwackoheit",
+      "es": "Kwalteza",
+      "it": "Re Kwak",
+      "pt": "Kwalteza"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": null,
+        "maxStat": 25
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": [],
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121009.png"
+  },
+  {
+    "dofusID": "14848",
+    "name": {
+      "en": "Kompost",
+      "fr": "Kompost",
+      "de": "Kompost",
+      "es": "Kompost",
+      "it": "Kwak Frana",
+      "pt": "Oduba"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 160
+      }
+    ],
+    "customStats": [],
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/121007.png"
+  },
+  {
+    "dofusID": "8211",
+    "name": {
+      "en": "Pingoku",
+      "fr": "Walk",
+      "de": "Ping",
+      "es": "Walk",
+      "it": "Walk",
+      "pt": "Walk"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 120
+      },
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 120
+      }
+    ],
+    "customStats": [],
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": [
+          "Subscribers only"
+        ],
+        "fr": [
+          "Etre abonné"
+        ],
+        "de": [
+          "Abonniert sein"
+        ],
+        "es": [
+          "Estar abonado"
+        ],
+        "it": [
+          "Essere abbonato"
+        ],
+        "pt": [
+          "Ser assinante"
+        ]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/18038.png"
   }
 ]
