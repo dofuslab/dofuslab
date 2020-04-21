@@ -104,5 +104,3 @@ def sync_item():
 
 if __name__ == "__main__":
     sync_item()
-
-# with open(os.path.join(app_root, "app/database/data/pets.json"), "r") as file:
