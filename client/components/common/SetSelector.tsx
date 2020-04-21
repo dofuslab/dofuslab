@@ -5,7 +5,6 @@ import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 import InfiniteScroll from 'react-infinite-scroller';
 
-import { CardSkeleton } from 'common/wrappers';
 import SetQuery from 'graphql/queries/sets.graphql';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { SharedFilters } from 'common/types';
@@ -14,6 +13,7 @@ import SetCard from './SetCard';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { mq } from 'common/constants';
 import { getResponsiveGridStyle } from 'common/mixins';
+import SkeletonCardsLoader from './SkeletonCardsLoader';
 
 const PAGE_SIZE = 12;
 
@@ -72,13 +72,7 @@ const SetSelector: React.FC<IProps> = ({
     <InfiniteScroll
       hasMore={data?.sets.pageInfo.hasNextPage}
       loader={
-        <React.Fragment key={'frag'}>
-          {Array(isMobile ? 2 : loading ? 24 : 12)
-            .fill(null)
-            .map((_, idx) => (
-              <CardSkeleton key={`card-skeleton-${idx}`} />
-            ))}
-        </React.Fragment>
+        <SkeletonCardsLoader key="loader" length={data?.sets.edges.length} />
       }
       loadMore={onLoadMore}
       css={{
@@ -93,21 +87,25 @@ const SetSelector: React.FC<IProps> = ({
       useWindow={false}
       threshold={THRESHOLD}
     >
-      {loading
-        ? Array(isMobile ? 2 : 24)
-            .fill(null)
-            .map((_, idx) => <CardSkeleton key={`card-skeleton-${idx}`} />)
-        : (data?.sets.edges ?? [])
-            .map(edge => edge.node)
-            .map(set => (
-              <SetCard
-                key={set.id}
-                set={set}
-                customSetId={customSet?.id ?? null}
-                selectItemSlot={selectItemSlot}
-                isMobile={isMobile}
-              />
-            ))}
+      {loading ? (
+        <SkeletonCardsLoader
+          key="initial-loader"
+          multiplier={2}
+          length={data?.sets.edges.length}
+        />
+      ) : (
+        (data?.sets.edges ?? [])
+          .map(edge => edge.node)
+          .map(set => (
+            <SetCard
+              key={set.id}
+              set={set}
+              customSetId={customSet?.id ?? null}
+              selectItemSlot={selectItemSlot}
+              isMobile={isMobile}
+            />
+          ))
+      )}
     </InfiniteScroll>
   );
 };

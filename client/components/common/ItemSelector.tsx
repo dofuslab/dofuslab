@@ -105,7 +105,9 @@ const ItemSelector: React.FC<IProps> = ({
   return (
     <InfiniteScroll
       hasMore={data?.items.pageInfo.hasNextPage}
-      loader={<SkeletonCardsLoader key="loader" />}
+      loader={
+        <SkeletonCardsLoader key="loader" length={data?.items.edges.length} />
+      }
       loadMore={onLoadMore}
       css={{
         ...getResponsiveGridStyle([2, 2, 2, 3, 4, 5, 6]),
@@ -120,7 +122,7 @@ const ItemSelector: React.FC<IProps> = ({
       threshold={THRESHOLD}
     >
       {loading ? (
-        <SkeletonCardsLoader key="loader" multiplier={2} />
+        <SkeletonCardsLoader key="initial-loader" multiplier={2} />
       ) : (
         (data?.items.edges ?? [])
           .map(edge => edge.node)

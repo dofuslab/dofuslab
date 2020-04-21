@@ -4,10 +4,12 @@ import { Media } from './Media';
 
 interface IProps {
   multiplier?: number;
+  length?: number;
 }
 
-const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier }) => {
+const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
   let mult = multiplier || 1;
+  let mod = (length || 0) % 5;
   return (
     <React.Fragment key={'frag'}>
       <Media lessThan="xs">
@@ -83,7 +85,7 @@ const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier }) => {
       <Media at="xl">
         {mediaClassNames => (
           <>
-            {Array(10 * mult)
+            {Array(10 * mult - mod)
               .fill(null)
               .map((_, idx) => (
                 <CardSkeleton
