@@ -39,6 +39,7 @@ export type TTheme = {
     default?: string;
     selected?: string;
     primarySelected?: string;
+    light?: string;
   };
   layer?: {
     background?: string;
@@ -138,6 +139,7 @@ export const darkTheme: TTheme = {
     default: gray10,
     selected: gray9,
     primarySelected: blue6,
+    light: '#303030',
   },
   layer: {
     background: gray11,

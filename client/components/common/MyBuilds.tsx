@@ -223,14 +223,17 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
               size="small"
               css={{
                 ...itemCardStyle,
-                border: `1px solid ${theme.border?.default}`,
+                border: `1px solid ${theme.border?.light}`,
                 marginTop: 20,
                 ':hover': {
-                  border: `1px solid ${theme.border?.default}`,
+                  border: `1px solid ${theme.border?.light}`,
                   ...(node.id === customSetId && selected(theme)),
                 },
                 ...(node.id === customSetId && selected(theme)),
                 transition: 'all 0.3s ease-in-out',
+                '&.ant-card': {
+                  background: theme.layer?.backgroundLight,
+                },
               }}
             >
               {node.equippedItems.length > 0 ? (
