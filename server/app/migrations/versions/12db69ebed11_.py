@@ -54,8 +54,6 @@ def upgrade():
         conn = op.get_bind()
 
         for record in data:
-            # type_query = db.session.query(ModelItemType).filter_by(name=record["en"])
-
             res = conn.execute(
                 "select * from item_type where item_type.name = '{}'".format(
                     record["en"]
@@ -70,11 +68,8 @@ def upgrade():
                     item_type_id=results[0][0], locale=locale, name=record[locale]
                 )
                 session.add(translation)
-                # type_query.item_type_translation.append(translation)
 
         session.commit()
-
-    print("____FINISHED ITEM TYPES______")
 
     op.create_table(
         "item_slot_translation",
@@ -101,10 +96,6 @@ def upgrade():
         i = 0
         for record in data:
             for _ in range(record.get("quantity", 1)):
-                # slot_query = db.session.query(ModelItemSlot).filter_by(
-                #     name=record["name"]["en"], order=i
-                # )
-
                 conn = op.get_bind()
                 res = conn.execute(
                     "select * from item_slot where item_slot.name = '{}' and item_slot.order = '{}'".format(
@@ -122,7 +113,6 @@ def upgrade():
                         name=record["name"][locale],
                     )
                     session.add(translation)
-                    # slot_query.item_slot_translation.append(translation)
                 i = i + 1
         session.commit()
 
@@ -139,31 +129,42 @@ def downgrade():
     )
 
     session = Session(bind=op.get_bind())
+    conn = op.get_bind()
 
     all_types = session.query(ModelItemType).all()
     for type in all_types:
-        en_translation = session.query(ModelItemTypeTranslation).filter_by(
-            locale="en", item_type_id=type.uuid
+        en_translation = (
+            session.query(ModelItemTypeTranslation)
+            .filter_by(locale="en", item_type_id=type.uuid)
+            .one()
         )
-        type.name = en_translation.name
-
-    session.commit()
+        conn.execute(
+            "UPDATE item_type SET name='{}' WHERE uuid='{}'".format(
+                en_translation.name, en_translation.item_type_id
+            )
+        )
 
     op.alter_column("item_type", "name", nullable=False)
 
+    print("____FINISHED ITEM TYPES______")
+
     op.add_column(
         "item_slot",
-        sa.Column("name", sa.VARCHAR(), autoincrement=False, nullable=False),
+        sa.Column("name", sa.VARCHAR(), autoincrement=False, nullable=True),
     )
 
     all_slots = session.query(ModelItemSlot).all()
     for slot in all_slots:
-        en_translation = session.query(ModelItemSlotTranslation).filter_by(
-            locale="en", item_slot_id=slot.uuid
+        en_translation = (
+            session.query(ModelItemSlotTranslation)
+            .filter_by(locale="en", item_slot_id=slot.uuid)
+            .one()
         )
-        slot.name = en_translation.name
-
-    session.commit()
+        conn.execute(
+            "UPDATE item_slot SET name='{}' WHERE uuid='{}'".format(
+                en_translation.name, en_translation.item_slot_id
+            )
+        )
 
     op.alter_column("item_slot", "name", nullable=False)
 
