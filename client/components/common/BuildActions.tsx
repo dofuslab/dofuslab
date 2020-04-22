@@ -41,9 +41,10 @@ import { CheckboxChangeEvent } from 'antd/lib/checkbox';
 
 interface IProps {
   customSet: customSet;
+  isMobile: boolean;
 }
 
-const BuildActions: React.FC<IProps> = ({ customSet }) => {
+const BuildActions: React.FC<IProps> = ({ customSet, isMobile }) => {
   const { t } = useTranslation('common');
   const theme = useTheme<TTheme>();
   const [copyMutate, { loading: copyLoading }] = useMutation<
@@ -175,6 +176,7 @@ const BuildActions: React.FC<IProps> = ({ customSet }) => {
         ref={linkTextareaRef}
       />
       <Dropdown
+        trigger={isMobile ? ['click'] : ['hover']}
         overlay={
           <Menu>
             <Menu.Item key="copy-link" onClick={onCopyLink}>
