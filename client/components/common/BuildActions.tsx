@@ -29,15 +29,11 @@ import {
   restartCustomSetVariables,
 } from 'graphql/mutations/__generated__/restartCustomSet';
 import restartCustomSetMutation from 'graphql/mutations/restartCustomSet.graphql';
-import {
-  deleteCustomSet,
-  deleteCustomSetVariables,
-} from 'graphql/mutations/__generated__/deleteCustomSet';
-import deleteCustomSetMutation from 'graphql/mutations/deleteCustomSet.graphql';
 import { navigateToNewCustomSet } from 'common/utils';
 
 import { mq } from 'common/constants';
 import { CheckboxChangeEvent } from 'antd/lib/checkbox';
+import DeleteCustomSetModal from './DeleteCustomSetModal';
 
 interface IProps {
   customSet: customSet;
@@ -91,14 +87,6 @@ const BuildActions: React.FC<IProps> = ({ customSet, isMobile }) => {
     variables: { customSetId: customSet.id, shouldResetStats },
   });
 
-  const [deleteMutate, { loading: deleteLoading }] = useMutation<
-    deleteCustomSet,
-    deleteCustomSetVariables
-  >(deleteCustomSetMutation, {
-    variables: { customSetId: customSet.id },
-    refetchQueries: () => ['myCustomSets'],
-  });
-
   const linkTextareaRef = React.useRef<HTMLTextAreaElement | null>(null);
 
   const onCopyLink = async () => {
@@ -142,18 +130,6 @@ const BuildActions: React.FC<IProps> = ({ customSet, isMobile }) => {
     await restartMutate();
     closeRestartModal();
   }, [restartMutate]);
-
-  const onDelete = React.useCallback(async () => {
-    const { data } = await deleteMutate();
-    closeDeleteModal();
-    if (data?.deleteCustomSet?.ok) {
-      router.push('/', '/', { shallow: true });
-      notification.success({
-        message: t('SUCCESS'),
-        description: t('DELETE_BUILD_SUCCESS'),
-      });
-    }
-  }, [deleteMutate]);
 
   const anyLoading = copyLoading || restartLoading;
 
@@ -224,18 +200,11 @@ const BuildActions: React.FC<IProps> = ({ customSet, isMobile }) => {
           </Checkbox>
         </div>
       </Modal>
-
-      <Modal
-        visible={deleteModalVisible}
-        title={t('DELETE_BUILD')}
-        onOk={onDelete}
+      <DeleteCustomSetModal
+        customSetId={customSet.id}
         onCancel={closeDeleteModal}
-        confirmLoading={deleteLoading}
-        okType="danger"
-        okText={t('DELETE')}
-      >
-        <div>{t('CONFIRM_DELETE_BUILD')}</div>
-      </Modal>
+        visible={deleteModalVisible}
+      />
     </div>
   );
 };

@@ -137,23 +137,38 @@ export const CardTitleWithLevel: React.FC<{
   badgeContent?: React.ReactNode;
   level?: number;
   rightAlignedContent?: React.ReactNode;
-}> = ({ title, level, showBadge, badgeContent, rightAlignedContent }) => {
+  levelClassName?: string;
+}> = ({
+  title,
+  level,
+  showBadge,
+  badgeContent,
+  rightAlignedContent,
+  levelClassName,
+}) => {
   const { t } = useTranslation('common');
   return (
     <div css={{ display: 'flex', alignItems: 'center', marginRight: 4 }}>
       <TruncatableText css={{ fontSize: '0.8rem' }}>{title}</TruncatableText>
       {showBadge && <Badge css={{ marginRight: 4 }}>{badgeContent}</Badge>}
       {level && (
-        <div
-          css={{
-            fontSize: '0.75rem',
-            fontWeight: 400,
-            marginLeft: 'auto',
-            whiteSpace: 'nowrap',
-          }}
-        >
-          {t('LEVEL_ABBREVIATION', { ns: 'common' })} {level}
-        </div>
+        <ClassNames>
+          {({ css, cx }) => (
+            <div
+              className={cx(
+                css({
+                  fontSize: '0.75rem',
+                  fontWeight: 400,
+                  marginLeft: 'auto',
+                  whiteSpace: 'nowrap',
+                }),
+                levelClassName,
+              )}
+            >
+              {t('LEVEL_ABBREVIATION', { ns: 'common' })} {level}
+            </div>
+          )}
+        </ClassNames>
       )}
       {rightAlignedContent && (
         <div

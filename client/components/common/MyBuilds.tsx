@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import React from 'react';
-import { jsx } from '@emotion/core';
+import { jsx, ClassNames } from '@emotion/core';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
 import { LoadingOutlined } from '@ant-design/icons';
 import { useTheme } from 'emotion-theming';
@@ -25,12 +25,13 @@ import {
 } from 'common/wrappers';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { createCustomSet } from 'graphql/mutations/__generated__/createCustomSet';
 import createCustomSetMutation from 'graphql/mutations/createCustomSet.graphql';
 import { useDebounceCallback } from '@react-hook/debounce';
 import Card from 'components/common/Card';
 import { navigateToNewCustomSet } from 'common/utils';
+import DeleteCustomSetModal from './DeleteCustomSetModal';
 
 const PAGE_SIZE = 10;
 const THRESHOLD = 600;
@@ -160,6 +161,14 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
   const theme = useTheme<TTheme>();
 
   const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
+  const [deleteModalVisible, setDeleteModalVisible] = React.useState(false);
+  const [customSetIdToDelete, setCustomSetIdToDelete] = React.useState<
+    string | null
+  >(null);
+
+  const closeDeleteModal = React.useCallback(() => {
+    setDeleteModalVisible(false);
+  }, []);
 
   return (
     <InfiniteScroll
@@ -182,6 +191,13 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
         </React.Fragment>
       }
     >
+      {customSetIdToDelete && (
+        <DeleteCustomSetModal
+          customSetId={customSetIdToDelete}
+          visible={deleteModalVisible}
+          onCancel={closeDeleteModal}
+        />
+      )}
       <div css={{ display: 'flex' }}>
         <Button
           type="primary"
@@ -215,10 +231,33 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
               onClick={onClose}
               hoverable
               title={
-                <CardTitleWithLevel
-                  title={node.name || t('UNTITLED')}
-                  level={node.level}
-                />
+                <ClassNames>
+                  {({ css }) => (
+                    <CardTitleWithLevel
+                      title={node.name || t('UNTITLED')}
+                      level={node.level}
+                      levelClassName={css({ marginLeft: 8 })}
+                      rightAlignedContent={
+                        <div
+                          css={{
+                            padding: '0px 4px 0px 8px',
+                            marginLeft: 4,
+                            opacity: 0.3,
+                            transition: '0.3s opacity ease-in-out',
+                            '&:hover': { opacity: 1 },
+                          }}
+                          onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+                            e.stopPropagation();
+                            setCustomSetIdToDelete(node.id);
+                            setDeleteModalVisible(true);
+                          }}
+                        >
+                          <FontAwesomeIcon icon={faTrashAlt} />
+                        </div>
+                      }
+                    />
+                  )}
+                </ClassNames>
               }
               size="small"
               css={{

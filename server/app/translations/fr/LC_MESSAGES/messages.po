@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-18 16:02-0700\n"
+"POT-Creation-Date: 2020-04-22 13:26-0700\n"
 "PO-Revision-Date: 2020-03-27 23:05-0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -42,60 +42,60 @@ msgstr ""
 "Le mot de passe doit avoir au minimum une longueur de 8 caractères, dont "
 "au moins une lettre minuscule, une lettre majuscule et un chiffre."
 
-#: app/schema.py:280
+#: app/schema.py:287
 msgid "You are not authorized to make this request."
 msgstr "Tu n'as pas la permission d'effectuer cette requête."
 
-#: app/schema.py:449 app/schema.py:452
+#: app/schema.py:456 app/schema.py:459
 msgid "Invalid stat value."
 msgstr "Stat invalide."
 
-#: app/schema.py:475
+#: app/schema.py:482
 msgid "The set name is too long."
 msgstr "Le nom est trop long."
 
-#: app/schema.py:477
+#: app/schema.py:484
 msgid "Invalid set level (must be 1-200)."
 msgstr "Le niveau de la panoplie est invalide (doit être compris entre 1 et 200)."
 
-#: app/schema.py:574
+#: app/schema.py:581
 msgid "Invalid element mage on non-weapon item."
 msgstr "Forgemagie Impossible sur cet objet."
 
-#: app/schema.py:601
+#: app/schema.py:608
 msgid "Invalid stat to set exo."
 msgstr "Forgemagie impossible."
 
-#: app/schema.py:651
+#: app/schema.py:658
 #, python-format
 msgid "%(old_name)s copy"
 msgstr "Copie de %(old_name)s"
 
-#: app/schema.py:653
+#: app/schema.py:660
 msgid "Copy"
 msgstr "Copie"
 
-#: app/schema.py:738 app/schema.py:773 app/schema.py:892 app/schema.py:919
+#: app/schema.py:746 app/schema.py:781 app/schema.py:900 app/schema.py:927
 msgid "You are already logged in."
 msgstr "Tu es déjà connecté."
 
-#: app/schema.py:752 app/schema.py:823
+#: app/schema.py:760 app/schema.py:831
 msgid "Verify your DofusLab account"
 msgstr "Vérifie ton compte DofusLab"
 
-#: app/schema.py:757
+#: app/schema.py:765
 msgid "An error occurred while registering."
 msgstr "Une erreur est survenue pendant l'inscription."
 
-#: app/schema.py:778
+#: app/schema.py:786
 msgid "Invalid username or password."
 msgstr "Nom d'utilisateur ou mot de passe invalide."
 
-#: app/schema.py:803 app/schema.py:882
+#: app/schema.py:811 app/schema.py:890
 msgid "Please wait a minute before trying again."
 msgstr "Veuillez attendre une minute avant de réessayer."
 
-#: app/schema.py:807
+#: app/schema.py:815
 msgid ""
 "You have sent too many verification emails. Please wait awhile before "
 "trying again."
@@ -103,31 +103,31 @@ msgstr ""
 "Trop de mails de vérification envoyés. Veuillez patienter avant de "
 "réessayer."
 
-#: app/schema.py:815
+#: app/schema.py:823
 msgid "You must be signed in to do that."
 msgstr "Il faut être connecté pour faire cela."
 
-#: app/schema.py:817
+#: app/schema.py:825
 msgid "Your account is already verified."
 msgstr "Ce compte est déjà vérifié."
 
-#: app/schema.py:837
+#: app/schema.py:845
 msgid "Received unsupported locale."
 msgstr "Langage non supporté."
 
-#: app/schema.py:856
+#: app/schema.py:864
 msgid "You are not logged in."
 msgstr "Tu n'es pas connecté."
 
-#: app/schema.py:860
+#: app/schema.py:868
 msgid "Incorrect password."
 msgstr "Mot de passe incorrect."
 
-#: app/schema.py:868 app/schema.py:938
+#: app/schema.py:876 app/schema.py:946
 msgid "You must enter a password different from your current one."
 msgstr "Il faut saisir un mot de passe différent du mot de passe actuel."
 
-#: app/schema.py:886
+#: app/schema.py:894
 msgid ""
 "You have sent too many password request emails. Please wait awhile before"
 " trying again."
@@ -135,29 +135,33 @@ msgstr ""
 "Trop de demandes de réinitialisation du mot de passe envoyées. Veuillez "
 "patienter avant de réessayer."
 
-#: app/schema.py:895
+#: app/schema.py:903
 msgid "We could not find an account with that email."
 msgstr "Impossible de trouver le compte correspondant à cette adresse mail."
 
-#: app/schema.py:899
+#: app/schema.py:907
 msgid "Please verify your email first."
 msgstr "Veuillez d'abord vérifier votre adresse mail."
 
-#: app/schema.py:906
+#: app/schema.py:914
 msgid "Reset your DofusLab password"
 msgstr "Réinitialiser son mot de passe DofusLab"
 
-#: app/schema.py:924 app/schema.py:932
+#: app/schema.py:932 app/schema.py:940
 msgid "The link is invalid or expired. Please request a new one."
 msgstr "Le lien est invalide ou expiré. Veuillez en générer un nouveau."
 
-#: app/utils.py:17 app/utils.py:19 app/utils.py:62 app/utils.py:64
-msgid "You don't have permission to edit that set."
-msgstr "Tu n'as pas la permission de modifier cette panoplie."
+#: app/utils.py:17 app/utils.py:19 app/utils.py:64 app/utils.py:66
+msgid "You don't have permission to edit that build."
+msgstr "Tu n'as pas la permission de modifier cet ensemble."
 
 #: app/utils.py:52
 msgid "Please verify your account to continue using DofusLab."
 msgstr "Veuillez vérifier votre compte afin de continuer à utiliser DofusLab."
+
+#: app/utils.py:61
+msgid "That build does not exist."
+msgstr "Cet ensemble n'existe pas."
 
 #: app/templates/reset_password.html:10
 msgid ""
@@ -213,4 +217,7 @@ msgstr "- L'équipe DofusLab"
 
 #~ msgid "copy"
 #~ msgstr ""
+
+#~ msgid "You don't have permission to edit that set."
+#~ msgstr "Tu n'as pas la permission de modifier cette panoplie."
 

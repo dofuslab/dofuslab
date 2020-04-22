@@ -100,10 +100,10 @@ const EquippedItemWithStats: React.FC<IProps> = ({
             css={{
               ...itemImageBox(theme),
               ...(selected && { ...selectedBox(theme) }),
-              ['&:hover']: {
+              '&:hover': {
                 [`.${wrapperClass}`]: {
                   opacity: 0.3,
-                  ['&:hover']: {
+                  '&:hover': {
                     opacity: 1,
                   },
                 },

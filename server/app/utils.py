@@ -14,9 +14,9 @@ def get_or_create_custom_set(custom_set_id, db_session):
     if custom_set_id:
         custom_set = db_session.query(ModelCustomSet).get(custom_set_id)
         if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
-            raise GraphQLError(_("You don't have permission to edit that set."))
+            raise GraphQLError(_("You don't have permission to edit that build."))
         elif not custom_set.owner_id and custom_set.uuid not in owned_custom_sets:
-            raise GraphQLError(_("You don't have permission to edit that set."))
+            raise GraphQLError(_("You don't have permission to edit that build."))
         custom_set.last_modified = datetime.utcnow()
     else:
         custom_set = ModelCustomSet(owner_id=current_user.get_id())
@@ -57,8 +57,10 @@ def anonymous_or_verified(func):
 
 
 def check_owner(custom_set):
+    if not custom_set:
+        raise GraphQLError(_("That build does not exist."))
     owned_custom_sets = session.get("owned_custom_sets") or []
     if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
-        raise GraphQLError(_("You don't have permission to edit that set."))
+        raise GraphQLError(_("You don't have permission to edit that build."))
     elif not custom_set.owner_id and custom_set.uuid not in owned_custom_sets:
-        raise GraphQLError(_("You don't have permission to edit that set."))
+        raise GraphQLError(_("You don't have permission to edit that build."))
