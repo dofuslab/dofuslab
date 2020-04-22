@@ -122,9 +122,9 @@ to_spell_enum = {
 
 if __name__ == "__main__":
     print("Resetting database")
-    base.Base.metadata.reflect(base.engine)
-    base.Base.metadata.drop_all(base.engine)
-    base.Base.metadata.create_all(base.engine)
+    # base.Base.metadata.reflect(base.engine)
+    # base.Base.metadata.drop_all(base.engine)
+    # base.Base.metadata.create_all(base.engine)
     redis_connection.flushall()
 
     item_types = {}
@@ -132,7 +132,6 @@ if __name__ == "__main__":
     print("Adding item types to database")
     with open(os.path.join(dirname, "app/database/data/item_types.json"), "r") as file:
         data = json.load(file)
-        all_item_types = db.session.query(ModelItemType).all()
         for record in data:
             item_type = ModelItemType()
             for locale in record:
