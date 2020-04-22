@@ -135,12 +135,7 @@ const Selector: React.FC<IProps> = ({
           onReset={onReset}
         />
         {showSetsState ? (
-          <SetSelector
-            customSet={customSet}
-            filters={filters}
-            selectItemSlot={selectItemSlot}
-            isMobile={isMobile}
-          />
+          <SetSelector filters={filters} />
         ) : (
           <ItemSelector
             key={`selected-item-slot-${selectedItemSlot?.name}-level-${customSet?.level}`}

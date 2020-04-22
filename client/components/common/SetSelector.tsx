@@ -6,37 +6,48 @@ import { useQuery } from '@apollo/react-hooks';
 import InfiniteScroll from 'react-infinite-scroller';
 
 import SetQuery from 'graphql/queries/sets.graphql';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { SharedFilters } from 'common/types';
-import { sets, setsVariables } from 'graphql/queries/__generated__/sets';
+import {
+  sets,
+  setsVariables,
+  sets_sets_edges_node,
+} from 'graphql/queries/__generated__/sets';
 import SetCard from './SetCard';
-import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { mq } from 'common/constants';
 import { getResponsiveGridStyle } from 'common/mixins';
 import SkeletonCardsLoader from './SkeletonCardsLoader';
+import SetModal from './SetModal';
 
 const PAGE_SIZE = 12;
 
 const THRESHOLD = 600;
 
 interface IProps {
-  customSet?: customSet | null;
   filters: SharedFilters;
-  selectItemSlot?: React.Dispatch<
-    React.SetStateAction<itemSlots_itemSlots | null>
-  >;
-  isMobile?: boolean;
 }
 
-const SetSelector: React.FC<IProps> = ({
-  customSet,
-  filters,
-  selectItemSlot,
-  isMobile,
-}) => {
+const SetSelector: React.FC<IProps> = ({ filters }) => {
   const { data, loading, fetchMore } = useQuery<sets, setsVariables>(SetQuery, {
     variables: { first: PAGE_SIZE, filters },
   });
+
+  const [
+    selectedSet,
+    setSelectedSet,
+  ] = React.useState<sets_sets_edges_node | null>(null);
+  const [setModalVisible, setSetModalVisible] = React.useState(false);
+
+  const openSetModal = React.useCallback(
+    (selectedSet: sets_sets_edges_node) => {
+      setSelectedSet(selectedSet);
+      setSetModalVisible(true);
+    },
+    [],
+  );
+
+  const closeSetModal = React.useCallback(() => {
+    setSetModalVisible(false);
+  }, []);
 
   const onLoadMore = React.useCallback(async () => {
     if (!data || !data.sets.pageInfo.hasNextPage) {
@@ -96,15 +107,15 @@ const SetSelector: React.FC<IProps> = ({
       ) : (
         (data?.sets.edges ?? [])
           .map(edge => edge.node)
-          .map(set => (
-            <SetCard
-              key={set.id}
-              set={set}
-              customSetId={customSet?.id ?? null}
-              selectItemSlot={selectItemSlot}
-              isMobile={isMobile}
-            />
-          ))
+          .map(set => <SetCard key={set.id} set={set} onClick={openSetModal} />)
+      )}
+      {selectedSet && (
+        <SetModal
+          setId={selectedSet.id}
+          setName={selectedSet.name}
+          onCancel={closeSetModal}
+          visible={setModalVisible}
+        />
       )}
     </InfiniteScroll>
   );
