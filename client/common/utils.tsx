@@ -361,6 +361,7 @@ export const useEquipItemMutation = (item: item) => {
     updateCustomSetItem,
     updateCustomSetItemVariables
   >(UpdateCustomSetItemMutation, {
+    refetchQueries: () => ['myCustomSets'],
     optimisticResponse:
       customSetId && itemSlotsData
         ? ({ itemSlotId }) => {
@@ -453,6 +454,7 @@ export const useEquipItemsMutation = (
       itemIds,
       customSetId: customSet?.id,
     },
+    refetchQueries: () => ['myCustomSets'],
   });
 
   const client = useApolloClient();
@@ -493,6 +495,7 @@ export const useEquipSetMutation = (
       setId,
       customSetId: customSet?.id,
     },
+    refetchQueries: () => ['myCustomSets'],
   });
 
   const client = useApolloClient();

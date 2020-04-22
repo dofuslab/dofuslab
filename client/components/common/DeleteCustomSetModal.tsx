@@ -39,7 +39,6 @@ const DeleteCustomSetModal: React.FC<IProps> = ({
     const { data } = await deleteMutate();
     onCancel();
     if (data?.deleteCustomSet?.ok) {
-      console.log(customSetId, router.query.customSetId);
       if (customSetId === router.query.customSetId) {
         router.push('/', '/', { shallow: true });
       }

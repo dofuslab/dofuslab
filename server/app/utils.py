@@ -1,4 +1,4 @@
-from app import db, session_scope, cache_region
+from app import db, session_scope, cache_region, limiter
 from app.database.model_custom_set import ModelCustomSet
 from app.database.model_custom_set_stat import ModelCustomSetStat
 from datetime import datetime
@@ -9,6 +9,7 @@ from flask_login import current_user
 from sqlalchemy import update
 
 
+@limiter.limit("3/second", error_message=_("Please wait a moment before trying again."))
 def get_or_create_custom_set(custom_set_id, db_session):
     owned_custom_sets = session.get("owned_custom_sets") or []
     if custom_set_id:

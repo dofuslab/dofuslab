@@ -76,7 +76,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
   const [mutate] = useMutation<
     editCustomSetMetadata,
     editCustomSetMetadataVariables
-  >(EditCustomSetMetadataMutation);
+  >(EditCustomSetMetadataMutation, { refetchQueries: () => ['myCustomSets'] });
 
   const onStartEdit = React.useCallback(() => {
     dispatch({ type: 'START_EDIT', originalState });

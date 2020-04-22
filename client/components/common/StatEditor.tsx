@@ -162,7 +162,10 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
 
   const [mutate] = useMutation<editCustomSetStats, editCustomSetStatsVariables>(
     editCustomSetStatsMutation,
-    { variables: { customSetId: customSet?.id, stats: statState } },
+    {
+      variables: { customSetId: customSet?.id, stats: statState },
+      refetchQueries: () => ['myCustomSets'],
+    },
   );
 
   const remainingPoints = baseStats.reduce(

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-22 13:26-0700\n"
+"POT-Creation-Date: 2020-04-22 13:51-0700\n"
 "PO-Revision-Date: 2020-03-27 23:05-0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -145,15 +145,19 @@ msgstr ""
 msgid "The link is invalid or expired. Please request a new one."
 msgstr ""
 
-#: app/utils.py:17 app/utils.py:19 app/utils.py:64 app/utils.py:66
+#: app/utils.py:12
+msgid "Please wait a moment before trying again."
+msgstr ""
+
+#: app/utils.py:18 app/utils.py:20 app/utils.py:65 app/utils.py:67
 msgid "You don't have permission to edit that build."
 msgstr ""
 
-#: app/utils.py:52
+#: app/utils.py:53
 msgid "Please verify your account to continue using DofusLab."
 msgstr ""
 
-#: app/utils.py:61
+#: app/utils.py:62
 msgid "That build does not exist."
 msgstr ""
 
