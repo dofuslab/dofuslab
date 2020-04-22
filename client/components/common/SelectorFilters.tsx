@@ -253,11 +253,19 @@ const SelectorFilters: React.FC<IProps> = ({
               }
               labelInValue
             >
-              {Object.values(Stat).map(stat => (
-                <Option key={stat} value={stat}>
-                  {t(stat, { ns: 'stat' })}
-                </Option>
-              ))}
+              {Object.values(Stat)
+                .sort((s1, s2) =>
+                  t(s1, { ns: 'stat' }).localeCompare(
+                    t(s2, { ns: 'stat' }),
+                    undefined,
+                    { ignorePunctuation: true },
+                  ),
+                )
+                .map(stat => (
+                  <Option key={stat} value={stat}>
+                    {t(stat, { ns: 'stat' })}
+                  </Option>
+                ))}
             </Select>
           )}
         </ClassNames>

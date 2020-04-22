@@ -384,20 +384,28 @@ const MageModal: React.FC<IProps> = ({
                 }
                 dropdownClassName={css({ zIndex: 1062 })} // higher than modal (1061)
               >
-                {Object.values(Stat).map(stat => (
-                  <Option
-                    key={stat}
-                    value={stat}
-                    disabled={statsSet.has(stat)}
-                    className={css({
-                      ['.ant-select-item-option-content']: {
-                        fontSize: '0.75rem',
-                      },
-                    })}
-                  >
-                    {t(stat, { ns: 'stat' })}
-                  </Option>
-                ))}
+                {Object.values(Stat)
+                  .sort((s1, s2) =>
+                    t(s1, { ns: 'stat' }).localeCompare(
+                      t(s2, { ns: 'stat' }),
+                      undefined,
+                      { ignorePunctuation: true },
+                    ),
+                  )
+                  .map(stat => (
+                    <Option
+                      key={stat}
+                      value={stat}
+                      disabled={statsSet.has(stat)}
+                      className={css({
+                        ['.ant-select-item-option-content']: {
+                          fontSize: '0.75rem',
+                        },
+                      })}
+                    >
+                      {t(stat, { ns: 'stat' })}
+                    </Option>
+                  ))}
               </Select>
             </div>
             <div
