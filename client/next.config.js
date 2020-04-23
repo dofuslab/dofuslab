@@ -13,6 +13,8 @@ if (typeof require !== 'undefined') {
   require.extensions['.less'] = file => {};
 }
 
+console.log('GRAPHQL_URI', process.env.GRAPHQL_URI);
+
 module.exports = withBundleAnalyzer(
   withLess(
     withCSS({
