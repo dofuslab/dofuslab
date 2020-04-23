@@ -37,10 +37,7 @@ class ModelCustomSet(Base):
     )
     level = Column("level", Integer, server_default=text("200"), nullable=False)
     equipped_items = relationship(
-        "ModelEquippedItem",
-        backref="custom_set",
-        lazy="dynamic",
-        cascade="all, delete-orphan",
+        "ModelEquippedItem", backref="custom_set", cascade="all, delete-orphan",
     )
     stats = relationship(
         "ModelCustomSetStat",

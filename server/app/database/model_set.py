@@ -18,4 +18,4 @@ class ModelSet(Base):
     dofus_db_id = Column("dofus_db_id", String, nullable=False)
     set_translation = relationship("ModelSetTranslation", cascade="all, delete-orphan")
     items = relationship("ModelItem", cascade="all, delete-orphan")
-    bonuses = relationship("ModelSetBonus", passive_deletes=True, lazy="subquery")
+    bonuses = relationship("ModelSetBonus", passive_deletes=True)

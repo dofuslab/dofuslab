@@ -18,7 +18,7 @@ class ModelItem(Base):
     )
     dofus_db_id = Column("dofus_db_id", String, nullable=False)
     item_translations = relationship(
-        "ModelItemTranslation", backref="item", cascade="all, delete-orphan"
+        "ModelItemTranslation", backref="item", cascade="all, delete-orphan",
     )
     item_type_id = Column(
         UUID(as_uuid=True),
@@ -26,21 +26,18 @@ class ModelItem(Base):
         nullable=False,
         index=True,
     )
-    item_type = relationship(ModelItemType, back_populates="items", lazy="subquery")
+    item_type = relationship(ModelItemType, back_populates="items")
     set_id = Column(
         UUID(as_uuid=True), ForeignKey("set.uuid", ondelete="CASCADE"), index=True
     )
-    set = relationship("ModelSet", lazy="subquery")
-    level = Column("level", Integer, nullable=False)
-    stats = relationship(
-        "ModelItemStat", backref="item", cascade="all, delete-orphan", lazy="subquery"
-    )
+    set = relationship("ModelSet")
+    level = Column("level", Integer, nullable=False, index=True)
+    stats = relationship("ModelItemStat", backref="item", cascade="all, delete-orphan")
     weapon_stats = relationship(
         "ModelWeaponStat",
         uselist=False,
         back_populates="item",
         cascade="all, delete-orphan",
-        lazy="subquery",
     )
     conditions = Column("conditions", JSON)
     image_url = Column("image_url", String, nullable=False)
