@@ -1024,6 +1024,7 @@ class Query(graphene.ObjectType):
                 items_query = items_query.filter(
                     ModelItem.item_type_id.in_(filters.item_type_ids)
                 )
+
         return items_query.order_by(
             ModelItem.level.desc(), ModelItemTranslation.name.asc()
         ).all()
