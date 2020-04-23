@@ -104,8 +104,7 @@ limiter = Limiter(app, key_func=get_remote_address)
 cache_region = make_region().configure(
     "dogpile.cache.redis",
     arguments={
-        "host": os.environ.get("REDIS_HOST"),
-        "port": os.environ.get("REDIS_PORT"),
+        "url": os.environ.get("REDIS_URL"),
         "redis_expiration_time": 60 * 60 * 2,  # 2 hours
         "distributed_lock": True,
         "thread_local_lock": False,
