@@ -61,7 +61,6 @@ from flask_babel import _, get_locale, refresh
 from flask_login import login_required, login_user, current_user, logout_user
 from functools import lru_cache
 from sqlalchemy import func, distinct
-from sqlalchemy.orm import contains_eager
 from datetime import datetime
 
 # workaround from https://github.com/graphql-python/graphene-sqlalchemy/issues/211
@@ -1026,11 +1025,9 @@ class Query(graphene.ObjectType):
                     ModelItem.item_type_id.in_(filters.item_type_ids)
                 )
 
-        return (
-            items_query
-            # items_query.options(contains_eager(ModelItem.stats))
-            .order_by(ModelItem.level.desc(), ModelItemTranslation.name.asc()).all()
-        )
+        return items_query.order_by(
+            ModelItem.level.desc(), ModelItemTranslation.name.asc()
+        ).all()
 
     sets = relay.ConnectionField(
         graphene.NonNull(SetConnection), filters=graphene.Argument(SetFilters)
