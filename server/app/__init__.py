@@ -45,6 +45,7 @@ CORS(
             "origins": [
                 "http://localhost:3000",
                 "http://dev.localhost:3000",
+                "http://dofus-lab.herokuapp.com",
                 "https://dofus-lab.herokuapp.com",
                 "https://dofuslab.io",
             ]
