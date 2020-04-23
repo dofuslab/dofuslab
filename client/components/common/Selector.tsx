@@ -5,6 +5,8 @@ import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 import { BackTop } from 'antd';
 import { useTheme } from 'emotion-theming';
+import uniqWith from 'lodash/uniqWith';
+import isEqual from 'lodash/isEqual';
 
 import { TTheme } from 'common/themes';
 import { SharedFilters, SharedFilterAction } from 'common/types';
@@ -20,7 +22,6 @@ import { mq } from 'common/constants';
 import SetSelector from './SetSelector';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import ItemTypeFilter from './ItemTypeFilter';
-import { uniqWith, isEqual } from 'lodash';
 import ResetAllButton from './ResetAllButton';
 
 const reducer = (state: SharedFilters, action: SharedFilterAction) => {

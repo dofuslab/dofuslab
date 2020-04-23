@@ -11,7 +11,7 @@ import { useTranslation } from 'i18n';
 import { popoverTitleStyle, gold5 } from 'common/mixins';
 import { baseStats, scrolledStats, IError } from 'common/types';
 import { calcPointCost, renderErrors } from 'common/utils';
-import { groupBy } from 'lodash';
+import groupBy from 'lodash/groupBy';
 import { TTheme } from 'common/themes';
 
 interface IProps {

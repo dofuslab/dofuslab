@@ -3,9 +3,10 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { notification } from 'antd';
-import { useTranslation } from 'i18n';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 import { useQuery, useApolloClient } from '@apollo/react-hooks';
+
+import { useTranslation } from 'i18n';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { locale } from 'graphql/queries/__generated__/locale';

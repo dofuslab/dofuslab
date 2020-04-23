@@ -1,12 +1,12 @@
 /** @jsx jsx */
 
 import React from 'react';
-import { groupBy } from 'lodash';
 import { jsx } from '@emotion/core';
 import { Modal, Divider, Skeleton } from 'antd';
 import { useQuery } from '@apollo/react-hooks';
 import Router from 'next/router';
 import { useTheme } from 'emotion-theming';
+import groupBy from 'lodash/groupBy';
 
 import { TTheme } from 'common/themes';
 import {

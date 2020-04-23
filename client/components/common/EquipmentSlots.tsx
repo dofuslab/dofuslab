@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
+import groupBy from 'lodash/groupBy';
 
 import {
   customSet,
@@ -23,7 +24,6 @@ import { useSetModal } from 'common/utils';
 import SetModal from './SetModal';
 import { Media } from './Media';
 import { IError } from 'common/types';
-import { groupBy } from 'lodash';
 
 interface IProps {
   customSet?: customSet | null;

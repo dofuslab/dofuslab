@@ -1,7 +1,8 @@
 import sortKeys from 'sort-keys';
 import fs from 'fs';
 import path from 'path';
-import { cloneDeep, merge } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
+import merge from 'lodash/merge';
 
 const LOCALES_PATH = 'public/static/locales';
 const BASE_LOCALE = 'en';
