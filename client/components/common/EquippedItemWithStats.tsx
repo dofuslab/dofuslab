@@ -211,7 +211,7 @@ const EquippedItemWithStats: React.FC<IProps> = ({
                   boxShadow: popoverShadow,
                   maxWidth: 288,
                 })}
-                autoAdjustOverflow={false}
+                autoAdjustOverflow={{ adjustX: 1, adjustY: 0 }}
               >
                 <div>{content}</div>
               </Popover>
