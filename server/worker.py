@@ -1,6 +1,6 @@
 import redis
 from urllib.parse import urlparse
-from rq import Connection, Worker
+from rq import Connection, Worker, Queue
 from dotenv import load_dotenv
 import os
 
@@ -16,5 +16,5 @@ redis_connection = redis.Redis(
 
 if __name__ == "__main__":
     with Connection(redis_connection):
-        worker = Worker(queues)
+        worker = Worker(map(Queue, queues))
         worker.work()
