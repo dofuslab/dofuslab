@@ -31,6 +31,7 @@ import sys
 import os
 
 dirname = os.path.dirname(os.path.abspath(__file__))
+url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/icons/{}.svg"
 
 to_stat_enum = {
     "Vitality": enums.Stat.VITALITY,
@@ -147,6 +148,7 @@ if __name__ == "__main__":
                         item_types[item_type_name] for item_type_name in record["types"]
                     ],
                     order=i,
+                    image_url=url_base.format(record["name"]["en-US"]),
                 )
                 db.session.add(item_slot)
                 i = i + 1
