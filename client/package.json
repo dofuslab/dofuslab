@@ -12,7 +12,6 @@
     "apollo-codegen": "apollo client:codegen --target typescript --endpoint=http://localhost:5000/api/graphql",
     "publish-heroku": "cd ../ && git subtree push --prefix client heroku-client master || true",
     "deploy-production": "pm2 deploy ecosystem.config.js production --force",
-    "prestart": "next build",
     "reload-production": "pm2 deploy ecosystem.config.js production exec 'pm2 reload app'",
     "sync-i18n": "ts-node --project tsconfig.server.json sync-locales",
     "scan-i18n": "npx i18next-scanner"
