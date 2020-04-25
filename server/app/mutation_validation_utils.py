@@ -33,7 +33,7 @@ def validate_username(username):
 
 def validate_password(password):
     # regex from https://stackoverflow.com/questions/5859632/regular-expression-for-password-validation
-    regex = re.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,50}$")
+    regex = re.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$")
     if not regex.fullmatch(password):
         raise GraphQLError(
             _(

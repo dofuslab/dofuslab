@@ -12,6 +12,12 @@ import {
   register,
   registerVariables,
 } from 'graphql/mutations/__generated__/register';
+import {
+  PASSWORD_REGEX,
+  DISPLAY_NAME_REGEX,
+  CONSECUTIVE_SEPARATOR_REGEX,
+  VALID_START_END_REGEX,
+} from 'common/constants';
 
 interface IProps {
   visible: boolean;
@@ -122,9 +128,16 @@ const SignUpModal: React.FC<IProps> = ({
           rules={[
             { required: true, message: t('VALIDATION.DISPLAY_NAME_REQUIRED') },
             {
-              // https://stackoverflow.com/questions/12018245/regular-expression-to-validate-username
-              pattern: /^(?=[a-zA-Z0-9._]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/,
+              pattern: DISPLAY_NAME_REGEX,
               message: t('VALIDATION.DISPLAY_NAME_RULES'),
+            },
+            {
+              pattern: CONSECUTIVE_SEPARATOR_REGEX,
+              message: t('VALIDATION.CONSECUTIVE_SEPARATOR_RULE'),
+            },
+            {
+              pattern: VALID_START_END_REGEX,
+              message: t('VALIDATION.START_END_RULE'),
             },
           ]}
           validateTrigger={'onSubmit'}
@@ -142,7 +155,7 @@ const SignUpModal: React.FC<IProps> = ({
           rules={[
             { required: true, message: t('VALIDATION.PASSWORD_REQUIRED') },
             {
-              pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,50}$/,
+              pattern: PASSWORD_REGEX,
               message: t('VALIDATION.PASSWORD_RULES'),
             },
           ]}

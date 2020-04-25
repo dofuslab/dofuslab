@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import { jsx, Global } from '@emotion/core';
+import { jsx, Global, ClassNames } from '@emotion/core';
 import { Layout as AntdLayout, Button, Menu, Drawer } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import { useTheme } from 'emotion-theming';
@@ -24,7 +24,9 @@ import {
   faSignInAlt,
   faUserPlus,
   faKey,
+  faMugHot,
 } from '@fortawesome/free-solid-svg-icons';
+import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 import StatusChecker from 'components/common/StatusChecker';
 import {
@@ -35,6 +37,12 @@ import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 import { useRouter } from 'next/router';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
 import { TTheme, LIGHT_THEME_NAME } from 'common/themes';
+import {
+  DISCORD_SERVER_LINK,
+  GITHUB_REPO_LINK,
+  BUY_ME_COFFEE_LINK,
+} from 'common/constants';
+import { TFunction } from 'next-i18next';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -48,6 +56,36 @@ const iconWrapper = {
   textAlign: 'center' as 'center',
   display: 'inline-block',
 };
+
+const random = Math.random();
+
+const getDonateElement = (t: TFunction) =>
+  random < 0.98 ? (
+    <>
+      <span css={iconWrapper}>
+        <FontAwesomeIcon icon={faMugHot} />
+      </span>
+      {t('BUY_US_COFFEE', { ns: 'common' })}
+    </>
+  ) : (
+    <ClassNames>
+      {({ css, cx }) => (
+        <>
+          <span
+            className={cx(
+              'twicon-tapioca',
+              css(iconWrapper),
+              css({
+                fontSize: '1.25rem',
+                transform: 'translateY(2px)',
+              }),
+            )}
+          />
+          {t('BUY_US_BUBBLE_TEA', { ns: 'common' })}
+        </>
+      )}
+    </ClassNames>
+  );
 
 const Layout = (props: LayoutProps) => {
   const { t, i18n } = useTranslation(['auth', 'common']);
@@ -179,9 +217,6 @@ const Layout = (props: LayoutProps) => {
             mode="inline"
             css={{
               border: 'none',
-              '.ant-menu-item-divider': {
-                margin: 0,
-              },
               '.ant-menu-item, .ant-menu-submenu-title, .ant-menu-item:not(:last-child)': {
                 fontSize: '0.8rem',
                 margin: 0,
@@ -192,7 +227,6 @@ const Layout = (props: LayoutProps) => {
               },
             }}
           >
-            {data?.currentUser && <Menu.Divider />}
             <Menu.Item key="home">
               <Link href="/" as="/">
                 <div css={{ display: 'flex' }}>
@@ -203,8 +237,6 @@ const Layout = (props: LayoutProps) => {
                 </div>
               </Link>
             </Menu.Item>
-
-            <Menu.Divider />
 
             {data?.currentUser && data.currentUser.verified && (
               <Menu.Item key="my-builds">
@@ -228,7 +260,6 @@ const Layout = (props: LayoutProps) => {
               </Menu.Item>
             )}
 
-            {!data?.currentUser && <Menu.Divider />}
             {!data?.currentUser && (
               <Menu.Item key="signup" onClick={openSignUpModal}>
                 <span css={iconWrapper}>
@@ -238,7 +269,6 @@ const Layout = (props: LayoutProps) => {
               </Menu.Item>
             )}
 
-            {data?.currentUser && <Menu.Divider />}
             {data?.currentUser && (
               <Menu.Item key="change-password" onClick={openPasswordModal}>
                 <span css={iconWrapper}>
@@ -247,7 +277,6 @@ const Layout = (props: LayoutProps) => {
                 {t('CHANGE_PASSWORD')}
               </Menu.Item>
             )}
-            <Menu.Divider />
             <SubMenu
               key="language"
               title={
@@ -270,7 +299,6 @@ const Layout = (props: LayoutProps) => {
                 </Menu.Item>
               ))}
             </SubMenu>
-            <Menu.Divider />
             {data?.currentUser && (
               <Menu.Item key="logout" onClick={logoutHandler}>
                 <span css={iconWrapper}>
@@ -279,6 +307,30 @@ const Layout = (props: LayoutProps) => {
                 {t('LOGOUT')}
               </Menu.Item>
             )}
+            <Menu.Divider
+              css={{ '&.ant-menu-item-divider': { margin: '4px 0' } }}
+            />
+            <Menu.Item>
+              <a href={DISCORD_SERVER_LINK} target="_blank">
+                <span css={iconWrapper}>
+                  <FontAwesomeIcon icon={faDiscord} />
+                </span>
+                {t('JOIN_US_DISCORD', { ns: 'common' })}
+              </a>
+            </Menu.Item>
+            <Menu.Item>
+              <a href={GITHUB_REPO_LINK} target="_blank">
+                <span css={iconWrapper}>
+                  <FontAwesomeIcon icon={faGithub} />
+                </span>
+                {t('CONTRIBUTE_GITHUB', { ns: 'common' })}
+              </a>
+            </Menu.Item>
+            <Menu.Item>
+              <a href={BUY_ME_COFFEE_LINK} target="_blank">
+                {getDonateElement(t)}
+              </a>
+            </Menu.Item>
           </Menu>
         </Drawer>
       </AntdLayout.Header>

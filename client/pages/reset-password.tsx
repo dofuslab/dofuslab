@@ -18,7 +18,7 @@ import {
 import resetPasswordMutation from 'graphql/mutations/resetPassword.graphql';
 import CommonLayout from 'components/common/CommonLayout';
 import ErrorPage from 'pages/_error';
-import { mq } from 'common/constants';
+import { mq, PASSWORD_REGEX } from 'common/constants';
 import { getTitle } from 'common/utils';
 
 const RequestPasswordResetPage: NextPage = () => {
@@ -118,7 +118,7 @@ const RequestPasswordResetPage: NextPage = () => {
             rules={[
               { required: true, message: t('VALIDATION.REQUIRED_FIELD') },
               {
-                pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,50}$/,
+                pattern: PASSWORD_REGEX,
                 message: t('VALIDATION.PASSWORD_RULES'),
               },
             ]}

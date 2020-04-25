@@ -29,7 +29,7 @@ class ModelUserAccount(UserMixin, Base):
     )
     username = Column("username", String(120), unique=True, nullable=False, index=True)
     email = Column("email", String(320), unique=True, nullable=False, index=True)
-    password = Column("password", LargeBinary(120), nullable=False)
+    password = Column("password", LargeBinary, nullable=False)
     custom_sets = relationship("ModelCustomSet", backref="owner")
     creation_date = Column("creation_date", DateTime, default=datetime.now)
     verification_email_sent = Column(

@@ -10,6 +10,7 @@ import {
   changePasswordVariables,
 } from 'graphql/mutations/__generated__/changePassword';
 import changePasswordMutation from 'graphql/mutations/changePassword.graphql';
+import { PASSWORD_REGEX } from 'common/constants';
 
 interface IProps {
   visible: boolean;
@@ -95,7 +96,7 @@ const ChangePasswordModal: React.FC<IProps> = ({ visible, onClose }) => {
           rules={[
             { required: true, message: t('VALIDATION.REQUIRED_FIELD') },
             {
-              pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,50}$/,
+              pattern: PASSWORD_REGEX,
               message: t('VALIDATION.PASSWORD_RULES'),
             },
           ]}
@@ -113,7 +114,7 @@ const ChangePasswordModal: React.FC<IProps> = ({ visible, onClose }) => {
           rules={[
             { required: true, message: t('VALIDATION.REQUIRED_FIELD') },
             {
-              pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,50}$/,
+              pattern: PASSWORD_REGEX,
               message: t('VALIDATION.PASSWORD_RULES'),
             },
           ]}
