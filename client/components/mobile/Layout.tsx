@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import { jsx, Global } from '@emotion/core';
+import { jsx, Global, ClassNames } from '@emotion/core';
 import { Layout as AntdLayout, Button, Menu, Drawer } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import { useTheme } from 'emotion-theming';
@@ -42,6 +42,7 @@ import {
   GITHUB_REPO_LINK,
   BUY_ME_COFFEE_LINK,
 } from 'common/constants';
+import { TFunction } from 'next-i18next';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -55,6 +56,36 @@ const iconWrapper = {
   textAlign: 'center' as 'center',
   display: 'inline-block',
 };
+
+const random = Math.random();
+
+const getDonateElement = (t: TFunction) =>
+  random < 0.01 ? (
+    <>
+      <span css={iconWrapper}>
+        <FontAwesomeIcon icon={faMugHot} />
+      </span>
+      {t('BUY_US_COFFEE', { ns: 'common' })}
+    </>
+  ) : (
+    <ClassNames>
+      {({ css, cx }) => (
+        <>
+          <span
+            className={cx(
+              'twicon-tapioca',
+              css(iconWrapper),
+              css({
+                fontSize: '1.75rem',
+                transform: 'translate(-2px, 1px)',
+              }),
+            )}
+          />
+          {t('BUY_US_BUBBLE_TEA', { ns: 'common' })}
+        </>
+      )}
+    </ClassNames>
+  );
 
 const Layout = (props: LayoutProps) => {
   const { t, i18n } = useTranslation(['auth', 'common']);
@@ -297,10 +328,7 @@ const Layout = (props: LayoutProps) => {
             </Menu.Item>
             <Menu.Item>
               <a href={BUY_ME_COFFEE_LINK} target="_blank">
-                <span css={iconWrapper}>
-                  <FontAwesomeIcon icon={faMugHot} />
-                </span>
-                {t('BUY_US_COFFEE', { ns: 'common' })}
+                {getDonateElement(t)}
               </a>
             </Menu.Item>
           </Menu>

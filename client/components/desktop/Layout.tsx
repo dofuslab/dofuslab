@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import { jsx, Global } from '@emotion/core';
+import { jsx, Global, ClassNames } from '@emotion/core';
 import {
   Layout as AntdLayout,
   Button,
@@ -43,12 +43,45 @@ import { faKey, faMugHot } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { TTheme, LIGHT_THEME_NAME } from 'common/themes';
 import Tooltip from 'components/common/Tooltip';
+import { TFunction } from 'next-i18next';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 const { Option } = Select;
+
+const random = Math.random();
+
+const getDonateElement = (t: TFunction) =>
+  random < 0.98 ? (
+    <Tooltip
+      placement="bottomLeft"
+      title={t('BUY_US_COFFEE', { ns: 'common' })}
+    >
+      <FontAwesomeIcon icon={faMugHot} />
+    </Tooltip>
+  ) : (
+    <ClassNames>
+      {({ css, cx }) => (
+        <Tooltip
+          placement="bottomLeft"
+          align={{ offset: [0, -1] }}
+          title={t('BUY_US_BUBBLE_TEA', { ns: 'common' })}
+        >
+          <div
+            className={cx(
+              'twicon-tapioca',
+              css({
+                fontSize: '1.75rem',
+                transform: 'translate(-2px, 1px)',
+              }),
+            )}
+          />
+        </Tooltip>
+      )}
+    </ClassNames>
+  );
 
 const Layout = (props: LayoutProps) => {
   const { t, i18n } = useTranslation(['auth', 'common']);
@@ -290,7 +323,14 @@ const Layout = (props: LayoutProps) => {
           <div
             css={{
               marginLeft: 4,
-              '> *': { marginRight: 12, fontSize: '1.2rem' },
+              display: 'flex',
+              alignItems: 'center',
+              '> *': {
+                fontSize: '1.2rem',
+                '&:not(:last-of-type)': {
+                  marginRight: 12,
+                },
+              },
             }}
           >
             <a href={DISCORD_SERVER_LINK} target="_blank">
@@ -314,7 +354,7 @@ const Layout = (props: LayoutProps) => {
                 placement="bottomLeft"
                 title={t('BUY_US_COFFEE', { ns: 'common' })}
               >
-                <FontAwesomeIcon icon={faMugHot} />
+                {getDonateElement(t)}
               </Tooltip>
             </a>
           </div>

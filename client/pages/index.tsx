@@ -45,36 +45,6 @@ const Index: NextPage = () => {
         <title>
           {getTitle(customSet ? customSet.name || t('UNTITLED') : null)}
         </title>
-        <meta name="title" content="DofusLab" />
-        <meta
-          name="description"
-          lang="en"
-          content="Experiment with your equipment at DofusLab, the open-source set builder for the MMORPG Dofus."
-        />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dofuslab.io/" />
-        <meta property="og:title" content="DofusLab" />
-        <meta
-          property="og:description"
-          content="Experiment with your equipment at DofusLab, the open-source set builder for the MMORPG Dofus."
-        />
-        <meta
-          property="og:image"
-          content="https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark_Filled_BG_1200x628.png"
-        />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://dofuslab.io/" />
-        <meta property="twitter:title" content="DofusLab" />
-        <meta
-          property="twitter:description"
-          content="Experiment with your equipment at DofusLab, the open-source set builder for the MMORPG Dofus."
-        />
-        <meta
-          property="twitter:image"
-          content="https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark_Filled_BG_1200x628.png"
-        />
       </Head>
       <Media lessThan="xs">
         <MobileSetBuilder customSet={customSet} />
