@@ -120,7 +120,6 @@ to_spell_enum = {
     "Pushback damage": enums.SpellEffectType.PUSHBACK_DAMAGE,
 }
 
-from app.database.model_equipped_item import ModelEquippedItem
 
 if __name__ == "__main__":
     # print("Resetting database")
