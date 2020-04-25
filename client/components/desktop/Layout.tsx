@@ -53,7 +53,7 @@ interface LayoutProps {
 const { Option } = Select;
 
 const getDonateElement = (t: TFunction) => {
-  return Math.random() < 0.5 ? (
+  return Math.random() < 0.98 ? (
     <Tooltip
       placement="bottomLeft"
       title={t('BUY_US_COFFEE', { ns: 'common' })}
