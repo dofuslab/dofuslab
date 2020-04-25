@@ -25,7 +25,12 @@ import { useTranslation, LANGUAGES, langToFullName } from 'i18n';
 import SignUpModal from '../common/SignUpModal';
 import MyBuilds from '../common/MyBuilds';
 import Link from 'next/link';
-import { mq, DISCORD_SERVER_LINK } from 'common/constants';
+import {
+  mq,
+  DISCORD_SERVER_LINK,
+  GITHUB_REPO_LINK,
+  BUY_ME_COFFEE_LINK,
+} from 'common/constants';
 import StatusChecker from 'components/common/StatusChecker';
 import {
   changeLocale,
@@ -34,8 +39,10 @@ import {
 import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faKey } from '@fortawesome/free-solid-svg-icons';
+import { faKey, faMugHot } from '@fortawesome/free-solid-svg-icons';
+import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { TTheme, LIGHT_THEME_NAME } from 'common/themes';
+import Tooltip from 'components/common/Tooltip';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -280,21 +287,37 @@ const Layout = (props: LayoutProps) => {
             </div>
           )}
           <Divider type="vertical" css={{ margin: '0 8px 0 12px' }} />
-          <a href={DISCORD_SERVER_LINK} target="_blank">
-            <img
-              src={
-                theme.name === LIGHT_THEME_NAME
-                  ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/Discord-Logo%2BWordmark-Black.svg'
-                  : 'https://dofus-lab.s3.us-east-2.amazonaws.com/Discord-Logo%2BWordmark-White.svg'
-              }
-              css={{
-                width: 96,
-                opacity: 0.45,
-                transition: '0.3s opacity ease-in-out',
-                '&:hover': { opacity: 0.9 },
-              }}
-            />
-          </a>
+          <div
+            css={{
+              marginLeft: 4,
+              '> *': { marginRight: 12, fontSize: '1.2rem' },
+            }}
+          >
+            <a href={DISCORD_SERVER_LINK} target="_blank">
+              <Tooltip
+                placement="bottomLeft"
+                title={t('JOIN_US_DISCORD', { ns: 'common' })}
+              >
+                <FontAwesomeIcon icon={faDiscord} />
+              </Tooltip>
+            </a>
+            <a href={GITHUB_REPO_LINK} target="_blank">
+              <Tooltip
+                placement="bottomLeft"
+                title={t('CONTRIBUTE_GITHUB', { ns: 'common' })}
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </Tooltip>
+            </a>
+            <a href={BUY_ME_COFFEE_LINK} target="_blank">
+              <Tooltip
+                placement="bottomLeft"
+                title={t('BUY_US_COFFEE', { ns: 'common' })}
+              >
+                <FontAwesomeIcon icon={faMugHot} />
+              </Tooltip>
+            </a>
+          </div>
         </div>
       </AntdLayout.Header>
 

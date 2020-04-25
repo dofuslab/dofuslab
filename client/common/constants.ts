@@ -273,3 +273,5 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
 export const SEARCH_BAR_ID = 'search-bar';
 
 export const DISCORD_SERVER_LINK = 'https://discord.gg/S4TvSfa';
+export const GITHUB_REPO_LINK = 'https://github.com/samlee405/dofus-lab';
+export const BUY_ME_COFFEE_LINK = 'https://www.buymeacoffee.com/dofuslab';
