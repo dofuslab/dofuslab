@@ -327,13 +327,11 @@ const Layout = (props: LayoutProps) => {
                 {t('CONTRIBUTE_GITHUB', { ns: 'common' })}
               </a>
             </Menu.Item>
-            <NoSSR>
-              <Menu.Item>
-                <a href={BUY_ME_COFFEE_LINK} target="_blank">
-                  {getDonateElement(t)}
-                </a>
-              </Menu.Item>
-            </NoSSR>
+            <Menu.Item>
+              <a href={BUY_ME_COFFEE_LINK} target="_blank">
+                <NoSSR>{getDonateElement(t)}</NoSSR>
+              </a>
+            </Menu.Item>
           </Menu>
         </Drawer>
       </AntdLayout.Header>
