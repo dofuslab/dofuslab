@@ -14,10 +14,9 @@ import MageModal from 'components/common/MageModal';
 import SetModal from 'components/common/SetModal';
 import { mediaStyles } from 'components/common/Media';
 import Head from 'next/head';
-import { getErrors, getStatsFromCustomSet, getTitle } from 'common/utils';
+import { getErrors, getStatsFromCustomSet } from 'common/utils';
 import { IError } from 'common/types';
-import { useTranslation } from 'i18n';
-import { TitleAndMetaTags, CustomSetHead } from 'common/wrappers';
+import { CustomSetHead } from 'common/wrappers';
 
 const EquippedItemPage: NextPage = () => {
   const router = useRouter();
@@ -51,8 +50,6 @@ const EquippedItemPage: NextPage = () => {
   const closeMageModal = React.useCallback(() => {
     setMageModalVisible(false);
   }, [setMageModalVisible]);
-
-  const { t } = useTranslation('common');
 
   const customSet = customSetData?.customSetById;
 
