@@ -76,8 +76,8 @@ const getDonateElement = (t: TFunction) =>
               'twicon-tapioca',
               css(iconWrapper),
               css({
-                fontSize: '1.75rem',
-                transform: 'translate(-2px, 1px)',
+                fontSize: '1.25rem',
+                transform: 'translateY(2px)',
               }),
             )}
           />
