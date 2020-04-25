@@ -5,6 +5,9 @@ import { jsx, Global, ClassNames } from '@emotion/core';
 import { Layout as AntdLayout, Button, Menu, Drawer } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import { useTheme } from 'emotion-theming';
+import NoSSR from 'react-no-ssr';
+import { useRouter } from 'next/router';
+import { TFunction } from 'next-i18next';
 
 import LoginModal from '../common/LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
@@ -34,7 +37,6 @@ import {
   changeLocaleVariables,
 } from 'graphql/mutations/__generated__/changeLocale';
 import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
-import { useRouter } from 'next/router';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
 import { TTheme, LIGHT_THEME_NAME } from 'common/themes';
 import {
@@ -42,7 +44,6 @@ import {
   GITHUB_REPO_LINK,
   BUY_ME_COFFEE_LINK,
 } from 'common/constants';
-import { TFunction } from 'next-i18next';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -326,11 +327,13 @@ const Layout = (props: LayoutProps) => {
                 {t('CONTRIBUTE_GITHUB', { ns: 'common' })}
               </a>
             </Menu.Item>
-            <Menu.Item>
-              <a href={BUY_ME_COFFEE_LINK} target="_blank">
-                {getDonateElement(t)}
-              </a>
-            </Menu.Item>
+            <NoSSR>
+              <Menu.Item>
+                <a href={BUY_ME_COFFEE_LINK} target="_blank">
+                  {getDonateElement(t)}
+                </a>
+              </Menu.Item>
+            </NoSSR>
           </Menu>
         </Drawer>
       </AntdLayout.Header>

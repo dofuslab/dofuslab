@@ -20,11 +20,16 @@ import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/curre
 import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import logoutMutation from 'graphql/mutations/logout.graphql';
+import NoSSR from 'react-no-ssr';
+import Link from 'next/link';
+import { TFunction } from 'next-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faKey, faMugHot } from '@fortawesome/free-solid-svg-icons';
+import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { useTranslation, LANGUAGES, langToFullName } from 'i18n';
 import SignUpModal from '../common/SignUpModal';
 import MyBuilds from '../common/MyBuilds';
-import Link from 'next/link';
 import {
   mq,
   DISCORD_SERVER_LINK,
@@ -38,12 +43,8 @@ import {
 } from 'graphql/mutations/__generated__/changeLocale';
 import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faKey, faMugHot } from '@fortawesome/free-solid-svg-icons';
-import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { TTheme, LIGHT_THEME_NAME } from 'common/themes';
 import Tooltip from 'components/common/Tooltip';
-import { TFunction } from 'next-i18next';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -51,10 +52,8 @@ interface LayoutProps {
 
 const { Option } = Select;
 
-const random = Math.random();
-
-const getDonateElement = (t: TFunction) =>
-  random < 0.98 ? (
+const getDonateElement = (t: TFunction) => {
+  return Math.random() < 0.5 ? (
     <Tooltip
       placement="bottomLeft"
       title={t('BUY_US_COFFEE', { ns: 'common' })}
@@ -82,6 +81,7 @@ const getDonateElement = (t: TFunction) =>
       )}
     </ClassNames>
   );
+};
 
 const Layout = (props: LayoutProps) => {
   const { t, i18n } = useTranslation(['auth', 'common']);
@@ -349,14 +349,17 @@ const Layout = (props: LayoutProps) => {
                 <FontAwesomeIcon icon={faGithub} />
               </Tooltip>
             </a>
-            <a href={BUY_ME_COFFEE_LINK} target="_blank">
-              <Tooltip
-                placement="bottomLeft"
-                title={t('BUY_US_COFFEE', { ns: 'common' })}
-              >
-                {getDonateElement(t)}
-              </Tooltip>
-            </a>
+            {/* disable SSR to render based on Math.random() */}
+            <NoSSR>
+              <a href={BUY_ME_COFFEE_LINK} target="_blank">
+                <Tooltip
+                  placement="bottomLeft"
+                  title={t('BUY_US_COFFEE', { ns: 'common' })}
+                >
+                  {getDonateElement(t)}
+                </Tooltip>
+              </a>
+            </NoSSR>
           </div>
         </div>
       </AntdLayout.Header>
