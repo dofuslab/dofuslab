@@ -275,3 +275,8 @@ export const SEARCH_BAR_ID = 'search-bar';
 export const DISCORD_SERVER_LINK = 'https://discord.gg/S4TvSfa';
 export const GITHUB_REPO_LINK = 'https://github.com/samlee405/dofus-lab';
 export const BUY_ME_COFFEE_LINK = 'https://www.buymeacoffee.com/dofuslab';
+
+export const EMAIL_REGEX = /[^@]+@[^@]+\.[^@]+/;
+// https://stackoverflow.com/questions/12018245/regular-expression-to-validate-username
+export const DISPLAY_NAME_REGEX = /^(?=[a-zA-Z0-9._]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
+export const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;

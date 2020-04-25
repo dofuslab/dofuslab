@@ -11,7 +11,7 @@ import loginMutation from 'graphql/mutations/login.graphql';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { useTranslation, Trans } from 'i18n';
-import { mq } from 'common/constants';
+import { mq, PASSWORD_REGEX, EMAIL_REGEX } from 'common/constants';
 import localeQuery from 'graphql/queries/locale.graphql';
 import RequestPasswordResetModal from './RequestPasswordResetModal';
 
@@ -120,7 +120,7 @@ const LoginModal: React.FC<IProps> = ({
             rules={[
               { required: true, message: t('VALIDATION.EMAIL_REQUIRED') },
               {
-                pattern: /[^@]+@[^@]+\.[^@]+/,
+                pattern: EMAIL_REGEX,
                 message: t('VALIDATION.VALID_EMAIL'),
               },
             ]}
@@ -135,7 +135,7 @@ const LoginModal: React.FC<IProps> = ({
             rules={[
               { required: true, message: t('VALIDATION.PASSWORD_REQUIRED') },
               {
-                pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,50}$/,
+                pattern: PASSWORD_REGEX,
                 message: t('VALIDATION.PASSWORD_RULES'),
               },
             ]}
