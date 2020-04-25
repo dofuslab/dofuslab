@@ -16,7 +16,7 @@ import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import ErrorPage from 'pages/_error';
 import Layout from 'components/mobile/Layout';
-import { getTitle } from 'common/utils';
+import { CustomSetHead } from 'common/wrappers';
 
 const EquipPage: NextPage = () => {
   const router = useRouter();
@@ -43,8 +43,8 @@ const EquipPage: NextPage = () => {
           type="text/css"
           dangerouslySetInnerHTML={{ __html: mediaStyles }}
         />
-        <title>{getTitle(customSetData?.customSetById?.name)}</title>
       </Head>
+      <CustomSetHead customSet={customSet} />
       <Selector
         customSet={customSet}
         selectedItemSlot={itemSlot}

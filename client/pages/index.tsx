@@ -15,14 +15,11 @@ import {
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
 import ErrorPage from './_error';
-import { getTitle } from 'common/utils';
-import { useTranslation } from 'i18n';
+import { CustomSetHead } from 'common/wrappers';
 
 const Index: NextPage = () => {
   const router = useRouter();
   const { customSetId } = router.query;
-
-  const { t } = useTranslation('common');
 
   const { data: customSetData, loading } = useQuery<
     customSet,
@@ -42,10 +39,8 @@ const Index: NextPage = () => {
           type="text/css"
           dangerouslySetInnerHTML={{ __html: mediaStyles }}
         />
-        <title>
-          {getTitle(customSet ? customSet.name || t('UNTITLED') : null)}
-        </title>
       </Head>
+      <CustomSetHead customSet={customSet} />
       <Media lessThan="xs">
         <MobileSetBuilder customSet={customSet} />
       </Media>

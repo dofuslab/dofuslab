@@ -282,3 +282,6 @@ export const DISPLAY_NAME_REGEX = /^(?=[a-zA-Z0-9._]{3,20}$).*$/;
 export const CONSECUTIVE_SEPARATOR_REGEX = /^(?!.*?[._]{2})[a-zA-Z0-9_.]+$/;
 export const VALID_START_END_REGEX = /^(?![_.]).*(?<![_.]$)$/;
 export const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+export const META_DESCRIPTION =
+  'Experiment with your equipment at DofusLab, the open-source set builder for the MMORPG Dofus.';
