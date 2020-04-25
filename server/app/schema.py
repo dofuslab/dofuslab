@@ -586,7 +586,7 @@ class MageEquippedItem(graphene.Mutation):
             equipped_item_id = kwargs.get("equipped_item_id")
             weapon_element_mage = kwargs.get("weapon_element_mage")
             stats = kwargs.get("stats")
-            equiped_item = db_session.query(ModelEquippedItem).get(equipped_item_id)
+            equipped_item = db_session.query(ModelEquippedItem).get(equipped_item_id)
             check_owner(equipped_item.custom_set)
             db_session.query(ModelEquippedItemExo).filter_by(
                 equipped_item_id=equipped_item_id
