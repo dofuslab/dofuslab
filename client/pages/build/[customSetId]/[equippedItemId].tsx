@@ -17,6 +17,7 @@ import Head from 'next/head';
 import { getErrors, getStatsFromCustomSet, getTitle } from 'common/utils';
 import { IError } from 'common/types';
 import { useTranslation } from 'i18n';
+import { TitleAndMetaTags, CustomSetHead } from 'common/wrappers';
 
 const EquippedItemPage: NextPage = () => {
   const router = useRouter();
@@ -86,10 +87,8 @@ const EquippedItemPage: NextPage = () => {
           type="text/css"
           dangerouslySetInnerHTML={{ __html: mediaStyles }}
         />
-        <title>
-          {getTitle(customSet ? customSet.name || t('UNTITLED') : null)}
-        </title>
       </Head>
+      <CustomSetHead customSet={customSet} />
       <EquippedItemCard
         equippedItem={equippedItem}
         customSet={customSet}

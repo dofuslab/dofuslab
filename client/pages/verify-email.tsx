@@ -49,7 +49,7 @@ const VerifyEmailPage: NextPage = () => {
           type="text/css"
           dangerouslySetInnerHTML={{ __html: mediaStyles }}
         />
-        <title>DofusLab.io</title>
+        <title>DofusLab</title>
       </Head>
       <div
         css={{

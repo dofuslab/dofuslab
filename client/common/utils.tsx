@@ -64,6 +64,7 @@ import {
   equipItemsVariables,
 } from 'graphql/mutations/__generated__/equipItems';
 import EquipItemsMutation from 'graphql/mutations/equipItems.graphql';
+import { META_DESCRIPTION } from './constants';
 
 export const navigateToNewCustomSet = (
   router: NextRouter,
@@ -1170,7 +1171,28 @@ export const renderErrors = (
 
 export const getTitle = (title?: string | null) => {
   if (!title) {
-    return 'DofusLab.io';
+    return 'DofusLab';
   }
-  return `${title} - DofusLab.io`;
+  return `${title} - DofusLab`;
+};
+
+export const getCustomSetMetaDescription = (customSet?: customSet | null) => {
+  if (!customSet) {
+    return META_DESCRIPTION;
+  }
+  if (customSet.owner && customSet.name) {
+    return `View ${customSet.owner.username}'s build ${customSet.name} on DofusLab, the open-source set builder for the MMORPG Dofus.`;
+  } else if (customSet.owner) {
+    return `View ${customSet.owner.username}'s untitled build on DofusLab, the open-source set builder for the MMORPG Dofus.`;
+  } else if (customSet.name) {
+    return `View the build ${customSet.name} on DofusLab, the open-source set builder for the MMORPG Dofus.`;
+  }
+  return 'View this untitled build on DofusLab, the open-source set builder for the MMORPG Dofus';
+};
+
+export const getCanonicalUrl = (customSet?: customSet | null) => {
+  if (customSet) {
+    return `https://dofuslab.io/build/${customSet.id}`;
+  }
+  return 'https://dofuslab.io';
 };

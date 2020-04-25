@@ -3,6 +3,7 @@
 import { jsx, CSSObject, ClassNames } from '@emotion/core';
 import styled from '@emotion/styled';
 import { useTheme } from 'emotion-theming';
+import Head from 'next/head';
 
 import {
   ellipsis,
@@ -26,12 +27,16 @@ import {
   getSimpleEffect,
   elementMageToWeaponEffect,
   calcElementMage,
+  getTitle,
+  getCustomSetMetaDescription,
+  getCanonicalUrl,
 } from './utils';
 import { item_weaponStats } from 'graphql/fragments/__generated__/item';
 import { TTheme } from './themes';
 import Card from 'components/common/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCube } from '@fortawesome/free-solid-svg-icons';
+import { customSet } from 'graphql/fragments/__generated__/customSet';
 
 interface IResponsiveGrid {
   readonly numColumns: ReadonlyArray<number>;
@@ -307,3 +312,47 @@ export const BrokenImagePlaceholder: React.FC<React.HTMLAttributes<
     )}
   </ClassNames>
 );
+
+export const CustomSetHead: React.FC<{ customSet?: customSet | null }> = ({
+  customSet,
+}) => {
+  const { t } = useTranslation('common');
+
+  return (
+    <Head>
+      <title>
+        {getTitle(customSet ? customSet.name || t('UNTITLED') : null)}
+      </title>
+
+      <meta
+        name="title"
+        content={getTitle(customSet ? customSet.name || t('UNTITLED') : null)}
+      />
+      <meta
+        name="description"
+        lang="en"
+        content={getCustomSetMetaDescription(customSet)}
+      />
+
+      <meta
+        property="og:title"
+        content={getTitle(customSet ? customSet.name || t('UNTITLED') : null)}
+      />
+      <meta
+        property="og:description"
+        content={getCustomSetMetaDescription(customSet)}
+      />
+      <meta property="og:url" content={getCanonicalUrl(customSet)} />
+
+      <meta
+        property="twitter:title"
+        content={getTitle(customSet ? customSet.name || t('UNTITLED') : null)}
+      />
+      <meta
+        property="twitter:description"
+        content={getCustomSetMetaDescription(customSet)}
+      />
+      <meta property="twitter:url" content={getCanonicalUrl(customSet)} />
+    </Head>
+  );
+};
