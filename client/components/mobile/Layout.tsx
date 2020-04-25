@@ -60,7 +60,7 @@ const iconWrapper = {
 const random = Math.random();
 
 const getDonateElement = (t: TFunction) =>
-  random < 0.01 ? (
+  random < 0.98 ? (
     <>
       <span css={iconWrapper}>
         <FontAwesomeIcon icon={faMugHot} />
