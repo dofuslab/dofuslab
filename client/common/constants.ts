@@ -278,5 +278,7 @@ export const BUY_ME_COFFEE_LINK = 'https://www.buymeacoffee.com/dofuslab';
 
 export const EMAIL_REGEX = /[^@]+@[^@]+\.[^@]+/;
 // https://stackoverflow.com/questions/12018245/regular-expression-to-validate-username
-export const DISPLAY_NAME_REGEX = /^(?=[a-zA-Z0-9._]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
+export const DISPLAY_NAME_REGEX = /^(?=[a-zA-Z0-9._]{3,20}$).*$/;
+export const CONSECUTIVE_SEPARATOR_REGEX = /^(?!.*?[._]{2})[a-zA-Z0-9_.]+$/;
+export const VALID_START_END_REGEX = /^(?![_.]).*(?<![_.]$)$/;
 export const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;

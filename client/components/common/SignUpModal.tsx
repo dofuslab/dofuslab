@@ -12,7 +12,12 @@ import {
   register,
   registerVariables,
 } from 'graphql/mutations/__generated__/register';
-import { PASSWORD_REGEX, DISPLAY_NAME_REGEX } from 'common/constants';
+import {
+  PASSWORD_REGEX,
+  DISPLAY_NAME_REGEX,
+  CONSECUTIVE_SEPARATOR_REGEX,
+  VALID_START_END_REGEX,
+} from 'common/constants';
 
 interface IProps {
   visible: boolean;
@@ -125,6 +130,14 @@ const SignUpModal: React.FC<IProps> = ({
             {
               pattern: DISPLAY_NAME_REGEX,
               message: t('VALIDATION.DISPLAY_NAME_RULES'),
+            },
+            {
+              pattern: CONSECUTIVE_SEPARATOR_REGEX,
+              message: t('VALIDATION.CONSECUTIVE_SEPARATOR_RULE'),
+            },
+            {
+              pattern: VALID_START_END_REGEX,
+              message: t('VALIDATION.START_END_RULE'),
             },
           ]}
           validateTrigger={'onSubmit'}
