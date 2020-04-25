@@ -120,8 +120,10 @@ to_spell_enum = {
     "Pushback damage": enums.SpellEffectType.PUSHBACK_DAMAGE,
 }
 
+from app.database.model_equipped_item import ModelEquippedItem
+
 if __name__ == "__main__":
-    print("Resetting database")
+    # print("Resetting database")
     # base.Base.metadata.reflect(base.engine)
     # base.Base.metadata.drop_all(base.engine)
     # base.Base.metadata.create_all(base.engine)
@@ -139,7 +141,6 @@ if __name__ == "__main__":
                     item_type_id=item_type.uuid, locale=locale, name=record[locale]
                 )
                 db.session.add(translation)
-                item_type.item_type_translation.append(translation)
             db.session.add(item_type)
 
             item_types[record["en"]] = item_type
@@ -155,6 +156,7 @@ if __name__ == "__main__":
                         item_types[item_type_name] for item_type_name in record["types"]
                     ],
                     order=i,
+                    image_url="",
                 )
                 for locale in record["name"]:
                     translation = ModelItemSlotTranslation(
@@ -163,7 +165,6 @@ if __name__ == "__main__":
                         name=record["name"][locale],
                     )
                     db.session.add(translation)
-                    item_slot.item_slot_translation.append(translation)
                 db.session.add(item_slot)
                 i = i + 1
 
