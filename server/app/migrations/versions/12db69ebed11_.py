@@ -61,9 +61,9 @@ def upgrade():
             )
             results = res.fetchall()
 
-            print(results)
-
             for locale in record:
+                if len(results) == 0:
+                    break
                 translation = ModelItemTypeTranslation(
                     item_type_id=results[0][0], locale=locale, name=record[locale]
                 )
@@ -104,9 +104,9 @@ def upgrade():
                 )
                 results = res.fetchall()
 
-                print(results)
-
                 for locale in record["name"]:
+                    if len(results) == 0:
+                        break
                     translation = ModelItemSlotTranslation(
                         item_slot_id=results[0][0],
                         locale=locale,
@@ -145,8 +145,6 @@ def downgrade():
         )
 
     op.alter_column("item_type", "name", nullable=False)
-
-    print("____FINISHED ITEM TYPES______")
 
     op.add_column(
         "item_slot",
