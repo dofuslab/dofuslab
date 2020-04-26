@@ -3,7 +3,9 @@ from app.database.model_item import ModelItem
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_stat_translation import ModelItemStatTranslation
 from app.database.model_item_slot import ModelItemSlot
+from app.database.model_item_slot_translation import ModelItemSlotTranslation
 from app.database.model_item_type import ModelItemType
+from app.database.model_item_type_translation import ModelItemTypeTranslation
 from app.database.model_item_translation import ModelItemTranslation
 from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_weapon_stat import ModelWeaponStat
@@ -118,12 +120,13 @@ to_spell_enum = {
     "Pushback damage": enums.SpellEffectType.PUSHBACK_DAMAGE,
 }
 
+
 if __name__ == "__main__":
     # print("Resetting database")
     # base.Base.metadata.reflect(base.engine)
     # base.Base.metadata.drop_all(base.engine)
     # base.Base.metadata.create_all(base.engine)
-    # redis_connection.flushall()
+    redis_connection.flushall()
 
     item_types = {}
 
@@ -131,9 +134,18 @@ if __name__ == "__main__":
     with open(os.path.join(dirname, "app/database/data/item_types.json"), "r") as file:
         data = json.load(file)
         for record in data:
-            item_type = ModelItemType(name=record["en-US"])
+            item_type = ModelItemType()
             db.session.add(item_type)
-            item_types[record["en-US"]] = item_type
+            db.session.flush()
+            for locale in record:
+                translation = ModelItemTypeTranslation(
+                    item_type_id=item_type.uuid, locale=locale, name=record[locale]
+                )
+                db.session.add(translation)
+
+            item_types[record["en"]] = item_type
+
+    db.session.commit()
 
     print("Adding item slots to database")
     with open(os.path.join(dirname, "app/database/data/item_slots.json"), "r") as file:
@@ -142,13 +154,22 @@ if __name__ == "__main__":
         for record in data:
             for _ in range(record.get("quantity", 1)):
                 item_slot = ModelItemSlot(
-                    name=record["name"]["en-US"],
                     item_types=[
                         item_types[item_type_name] for item_type_name in record["types"]
                     ],
                     order=i,
+                    image_url="",
                 )
                 db.session.add(item_slot)
+                db.session.flush()
+                for locale in record["name"]:
+                    translation = ModelItemSlotTranslation(
+                        item_slot_id=item_slot.uuid,
+                        locale=locale,
+                        name=record["name"][locale],
+                    )
+                    db.session.add(translation)
+
                 i = i + 1
 
     db.session.commit()

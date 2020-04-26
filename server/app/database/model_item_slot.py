@@ -15,11 +15,14 @@ class ModelItemSlot(Base):
         primary_key=True,
         nullable=False,
     )
-    name = Column("name", String, nullable=False)
     item_types = relationship(
         "ModelItemType",
         secondary=item_type_slot_compat_table,
         back_populates="eligible_item_slots",
     )
     order = Column("order", Integer, nullable=False)
+
     image_url = Column("image_url", String, nullable=False)
+    item_slot_translation = relationship(
+        "ModelItemSlotTranslation", backref="item_slot", cascade="all, delete-orphan"
+    )
