@@ -20,7 +20,7 @@ dirname = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file
 
 # revision identifiers, used by Alembic.
 revision = "12db69ebed11"
-down_revision = "47c0338ee9ff"
+down_revision = "bc6df2e88154"
 branch_labels = None
 depends_on = None
 
