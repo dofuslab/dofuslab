@@ -1125,6 +1125,31 @@ export const getErrors = (
     });
   });
 
+  const dofusesAndTrophies = groupBy(
+    customSet.equippedItems.filter(({ slot }) => slot.name === 'Dofus'),
+    equippedItem => equippedItem.item.id,
+  );
+
+  const prysmaradites: Array<customSet_equippedItems> = [];
+
+  Object.values(dofusesAndTrophies).forEach(arr => {
+    arr.forEach(equippedItem => {
+      if (equippedItem.item.itemType.name === 'Prysmaradite') {
+        prysmaradites.push(equippedItem);
+      }
+
+      if (arr.length > 1) {
+        errors.push({ equippedItem, reason: 'DUPLICATE_DOFUS_OR_TROPHY' });
+      }
+    });
+  });
+
+  if (prysmaradites.length > 1) {
+    prysmaradites.forEach(prysma => {
+      errors.push({ equippedItem: prysma, reason: 'MULTIPLE_PRYSMARADITES' });
+    });
+  }
+
   errors.push(
     ...findMultipleExoErrors(customSet, Stat.AP).map(equippedItem => ({
       equippedItem,
