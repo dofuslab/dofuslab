@@ -1,6 +1,6 @@
 import sqlalchemy
 from .base import Base
-from sqlalchemy import Column, String, ForeignKey
+from sqlalchemy import Column, String, ForeignKey, UniqueConstraint
 from sqlalchemy.dialects.postgresql import UUID
 
 
@@ -22,3 +22,5 @@ class ModelSpellTranslation(Base):
 
     name = Column("name", String, nullable=False)
     description = Column("description", String, nullable=False)
+
+    __table_args__ = (UniqueConstraint("spell_id", "locale"),)

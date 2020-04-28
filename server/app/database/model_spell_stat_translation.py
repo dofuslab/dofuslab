@@ -1,6 +1,6 @@
 import sqlalchemy
 from .base import Base
-from sqlalchemy import Column, String, ForeignKey
+from sqlalchemy import Column, String, ForeignKey, UniqueConstraint
 from sqlalchemy.dialects.postgresql import UUID
 
 
@@ -21,3 +21,5 @@ class ModelSpellStatTranslation(Base):
     locale = Column("locale", String, nullable=False)
 
     aoe_type = Column("aoe_type", String)
+
+    __table_args__ = (UniqueConstraint("spell_stat_id", "locale"),)

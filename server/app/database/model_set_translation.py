@@ -1,6 +1,6 @@
 import sqlalchemy
 from .base import Base
-from sqlalchemy import Column, ForeignKey, String, text
+from sqlalchemy import Column, ForeignKey, String, UniqueConstraint
 from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
 
@@ -23,3 +23,5 @@ class ModelSetTranslation(Base):
     locale = Column("locale", String, nullable=False, index=True)
 
     name = Column("name", String, nullable=False, index=True)
+
+    __table_args__ = (UniqueConstraint("set_id", "locale"),)
