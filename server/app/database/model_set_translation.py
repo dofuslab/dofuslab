@@ -1,6 +1,6 @@
 import sqlalchemy
 from .base import Base
-from sqlalchemy import Column, ForeignKey, String, UniqueConstraint
+from sqlalchemy import Column, ForeignKey, String, Index
 from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
 
@@ -15,13 +15,10 @@ class ModelSetTranslation(Base):
         nullable=False,
     )
     set_id = Column(
-        UUID(as_uuid=True),
-        ForeignKey("set.uuid", ondelete="CASCADE"),
-        nullable=False,
-        index=True,
+        UUID(as_uuid=True), ForeignKey("set.uuid", ondelete="CASCADE"), nullable=False,
     )
-    locale = Column("locale", String, nullable=False, index=True)
+    locale = Column("locale", String, nullable=False)
 
-    name = Column("name", String, nullable=False, index=True)
+    name = Column("name", String, nullable=False)
 
-    __table_args__ = (UniqueConstraint("set_id", "locale"),)
+    __table_args__ = (Index("set_id", "locale", "name"),)

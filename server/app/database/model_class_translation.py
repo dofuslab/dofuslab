@@ -1,6 +1,6 @@
 import sqlalchemy
 from .base import Base
-from sqlalchemy import Column, ForeignKey, String, UniqueConstraint
+from sqlalchemy import Column, ForeignKey, String, Index
 from sqlalchemy.dialects.postgresql import UUID
 
 
@@ -18,10 +18,9 @@ class ModelClassTranslation(Base):
         UUID(as_uuid=True),
         ForeignKey("class.uuid", ondelete="CASCADE"),
         nullable=False,
-        index=True,
     )
     locale = Column("locale", String, nullable=False)
 
     name = Column("name", String, nullable=False)
 
-    __table_args__ = (UniqueConstraint("class_id", "locale"),)
+    __table_args__ = (Index("class_id", "locale"),)

@@ -1,6 +1,6 @@
 import sqlalchemy
 from .base import Base
-from sqlalchemy import Column, ForeignKey, String, UniqueConstraint
+from sqlalchemy import Column, ForeignKey, String, Index
 from sqlalchemy.dialects.postgresql import UUID
 
 
@@ -17,10 +17,9 @@ class ModelItemStatTranslation(Base):
         UUID(as_uuid=True),
         ForeignKey("item_stat.uuid", ondelete="CASCADE"),
         nullable=False,
-        index=True,
     )
-    locale = Column("locale", String, nullable=False, index=True)
+    locale = Column("locale", String, nullable=False)
 
     custom_stat = Column("custom_stat", String, nullable=False)
 
-    __table_args__ = (UniqueConstraint("item_stat_id", "locale"),)
+    __table_args__ = (Index("item_stat_id", "locale"),)
