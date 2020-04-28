@@ -183,45 +183,18 @@ def sync_item():
         should_prompt_item = True
         while should_prompt_item:
             item_name = input(
-                "Enter item name, e.g. 'Yellow Piwin', or type 'update all' to update all items in file: "
+                "Enter item name, e.g. 'Yellow Piwin', type 'update all' to update all items in file, or 'q' to quit: "
             )
+            if item_name == "q":
+                return
             with session_scope() as db_session:
                 if item_name == "update all":
+                    should_prompt_item = False
                     for record in data:
                         update_or_create_item(db_session, record["name"]["en"], record)
                 elif item_name in name_to_record_map:
                     record = name_to_record_map[item_name]
-                    should_prompt_item = False
                     update_or_create_item(db_session, item_name, record)
-                    # translations = (
-                    #     db_session.query(ModelItemTranslation)
-                    #     .filter(
-                    #         ModelItemTranslation.locale == "en",
-                    #         ModelItemTranslation.name == item_name,
-                    #     )
-                    #     .all()
-                    # )
-                    # if len(translations) > 1:
-                    #     print(
-                    #         "Error: Multiple items with that name exist in the database"
-                    #     )
-                    # elif len(translations) == 1:
-                    #     print("Item already exists in database. Updating item...")
-                    #     item = translations[0].item
-                    #     create_item_translations(db_session, record, item)
-                    #     print("Item translations successfully updated")
-                    #     db_session.query(ModelItemStat).filter_by(
-                    #         item_id=item.uuid
-                    #     ).delete()
-                    #     create_item_stats(db_session, record, item)
-                    #     print("Item stats successfully updated")
-                    # else:
-                    #     should_create_response = input(
-                    #         "Item does not exist in database. Would you like to create it? (Y/n): "
-                    #     )
-                    #     if should_create_response == "Y":
-                    #         create_item(db_session, record)
-                    #         print("Item successfully created")
 
 
 if __name__ == "__main__":
