@@ -6,6 +6,7 @@ from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_stat_translation import ModelItemStatTranslation
 from app.database.model_item_translation import ModelItemTranslation
 from app.database.model_item_type import ModelItemType
+from app.database.model_item_type_translation import ModelItemTypeTranslation
 from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_weapon_stat import ModelWeaponStat
 from oneoff.database_setup import to_stat_enum
@@ -60,9 +61,10 @@ def create_item(db_session, record):
         data = json.load(file)
         for item_type_record in data:
             item_type = (
-                db_session.query(ModelItemType)
-                .filter_by(name=item_type_record["en"])
+                db_session.query(ModelItemTypeTranslation)
+                .filter_by(locale="en", name=item_type_record["en"])
                 .one()
+                .item_type
             )
             item_types[item_type_record["en"]] = item_type
     item = ModelItem(
