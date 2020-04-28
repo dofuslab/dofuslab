@@ -44,7 +44,7 @@ const reducer = (state: SharedFilters, action: SharedFilterAction) => {
 };
 
 interface IProps {
-  customSet?: customSet | null;
+  customSet: customSet | null;
   selectedItemSlot: itemSlots_itemSlots | null;
   selectItemSlot?: React.Dispatch<
     React.SetStateAction<itemSlots_itemSlots | null>
@@ -136,7 +136,7 @@ const Selector: React.FC<IProps> = ({
           onReset={onReset}
         />
         {showSetsState ? (
-          <SetSelector filters={filters} />
+          <SetSelector filters={filters} customSet={customSet} />
         ) : (
           <ItemSelector
             key={`selected-item-slot-${selectedItemSlot?.name}-level-${customSet?.level}`}
