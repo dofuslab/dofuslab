@@ -1,6 +1,6 @@
 import sqlalchemy
 from .base import Base
-from sqlalchemy import Column, ForeignKey, String
+from sqlalchemy import Column, ForeignKey, String, Index
 from sqlalchemy.dialects.postgresql import UUID
 
 
@@ -20,3 +20,5 @@ class ModelItemTypeTranslation(Base):
     locale = Column("locale", String, nullable=False)
 
     name = Column("name", String, nullable=False)
+
+    __table_args__ = (Index("item_type_id", "locale"),)

@@ -1,6 +1,6 @@
 import sqlalchemy
 from .base import Base
-from sqlalchemy import Column, ForeignKey, String
+from sqlalchemy import Column, ForeignKey, String, Index
 from sqlalchemy.dialects.postgresql import UUID
 
 
@@ -14,11 +14,10 @@ class ModelItemTranslation(Base):
         nullable=False,
     )
     item_id = Column(
-        UUID(as_uuid=True),
-        ForeignKey("item.uuid", ondelete="CASCADE"),
-        nullable=False,
-        index=True,
+        UUID(as_uuid=True), ForeignKey("item.uuid", ondelete="CASCADE"), nullable=False,
     )
-    locale = Column("locale", String, nullable=False, index=True)
+    locale = Column("locale", String, nullable=False)
 
     name = Column("name", String, nullable=False, index=True)
+
+    __table_args__ = (Index("item_id", "locale", "name"),)

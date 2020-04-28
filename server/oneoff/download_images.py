@@ -6,9 +6,9 @@ from app import db
 from app.database.model_item import ModelItem
 from app.database.model_spell import ModelSpell
 
-dirname = os.path.dirname(os.path.abspath(__file__))
+app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-folder = os.path.join(dirname, "static", "images", "spells")
+folder = os.path.join(app_root, "static", "images", "spells")
 
 # image_urls = db.session.query(ModelItem.image_url).all()
 image_urls = db.session.query(ModelSpell.image_url).all()
