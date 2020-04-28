@@ -23,7 +23,7 @@ def update_or_create_item(db_session, item_name, record):
         )
         .all()
     )
-    print(translations)
+    print(translations[0].uuid)
     if len(translations) > 1:
         print("Error: Multiple items with that name exist in the database")
     elif len(translations) == 1:
@@ -89,14 +89,15 @@ def create_item_stats(db_session, record, item):
         num_of_stats = len(record["customStats"]["en"])
 
         for j in range(num_of_stats):
-            item_stat = ModelItemStat(order=i + j)
+            item_stat = ModelItemStat(order=i + j, item_id=item.uuid)
+            db_session.add(item_stat)
+            db_session.flush()
             for locale in record["customStats"]:
                 custom_stat = record["customStats"][locale][j]
                 stat_translation = ModelItemStatTranslation(
                     item_stat_id=item_stat.uuid, locale=locale, custom_stat=custom_stat,
                 )
                 db_session.add(stat_translation)
-            db_session.add(item_stat)
 
 
 def create_item_translations(db_session, record, item):
