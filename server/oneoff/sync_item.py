@@ -61,10 +61,10 @@ def create_item(db_session, record):
         for item_type_record in data:
             item_type = (
                 db_session.query(ModelItemType)
-                .filter_by(name=item_type_record["en-US"])
+                .filter_by(name=item_type_record["en"])
                 .one()
             )
-            item_types[item_type_record["en-US"]] = item_type
+            item_types[item_type_record["en"]] = item_type
     item = ModelItem(
         dofus_db_id=record["dofusID"],
         item_type_id=item_types[record["itemType"]].uuid,
