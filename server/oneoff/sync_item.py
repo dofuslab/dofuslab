@@ -6,11 +6,14 @@ from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_stat_translation import ModelItemStatTranslation
 from app.database.model_item_translation import ModelItemTranslation
 from app.database.model_item_type import ModelItemType
+from app.database.model_weapon_effect import ModelWeaponEffect
+from app.database.model_weapon_stat import ModelWeaponStat
 from oneoff.database_setup import to_stat_enum
+from oneoff.database_setup import to_effect_enum
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-allowed_file_names = ["items", "mounts", "pets", "prysmaradites"]
+allowed_file_names = ["items", "mounts", "pets", "prysmaradites", "weapons"]
 languages = ["en", "fr", "pt", "it", "es", "de"]
 
 
@@ -34,6 +37,14 @@ def update_or_create_item(db_session, item_name, record):
         db_session.query(ModelItemStat).filter_by(item_id=item.uuid).delete()
         create_item_stats(db_session, record, item)
         print("Item stats successfully updated")
+        conditions = {
+            "conditions": record["conditions"].get("conditions", None),
+            "customConditions": record["conditions"].get("customConditions", None),
+        }
+        print("Item conditions successfully updated")
+        if "weaponStats" in record:
+            create_weapon_stat(db_session, record, item)
+        print("Item weapon stats successfully updated")
     else:
         should_create_response = input(
             "Item does not exist in database. Would you like to create it? (Y/n): "
@@ -61,6 +72,11 @@ def create_item(db_session, record):
         level=record["level"],
         image_url=record["imageUrl"],
     )
+    conditions = {
+        "conditions": record["conditions"].get("conditions", None),
+        "customConditions": record["conditions"].get("customConditions", None),
+    }
+    item.conditions = conditions
     db_session.add(item)
     db_session.flush()
 
@@ -70,6 +86,7 @@ def create_item(db_session, record):
         )
         db_session.add(item_translations)
     create_item_stats(db_session, record, item)
+    create_weapon_stat(db_session, record, item)
 
 
 def create_item_stats(db_session, record, item):
@@ -101,16 +118,43 @@ def create_item_stats(db_session, record, item):
 
 
 def create_item_translations(db_session, record, item):
+    db_session.query(ModelItemTranslation).filter_by(item_id=item.uuid).delete()
     for locale in languages:
-        if record["name"][locale] and not (
-            db_session.query(ModelItemTranslation)
-            .filter_by(item_id=item.uuid, locale=locale, name=record["name"][locale])
-            .first()
-        ):
+        if record["name"][locale]:
             item_translation = ModelItemTranslation(
                 item_id=item.uuid, locale=locale, name=record["name"][locale]
             )
             db_session.add(item_translation)
+
+
+def create_weapon_stat(db_session, record, item):
+    if not "weaponStats" in record:
+        return
+    db_session.query(ModelWeaponStat).filter_by(item_id=item.uuid).delete()
+
+    weapon_stat = ModelWeaponStat(
+        item_id=item.uuid,
+        ap_cost=record["weaponStats"]["apCost"],
+        uses_per_turn=record["weaponStats"]["usesPerTurn"],
+        min_range=record["weaponStats"]["minRange"],
+        max_range=record["weaponStats"]["maxRange"],
+    )
+
+    if record["weaponStats"]["baseCritChance"] > 0:
+        weapon_stat.base_crit_chance = (record["weaponStats"]["baseCritChance"],)
+        weapon_stat.crit_bonus_damage = (record["weaponStats"]["critBonusDamage"],)
+
+    db_session.add(weapon_stat)
+    db_session.flush()
+
+    for effect in record["weaponStats"]["weapon_effects"]:
+        weapon_effects = ModelWeaponEffect(
+            weapon_stat_id=weapon_stat.uuid,
+            effect_type=to_effect_enum[effect["stat"]],
+            min_damage=effect["minStat"],
+            max_damage=effect["maxStat"],
+        )
+        db_session.add(weapon_effects)
 
 
 def sync_item():
