@@ -274,7 +274,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
             onFocus={e => {
               e.currentTarget.setSelectionRange(
                 0,
-                String(statState[baseKey]).length,
+                e.currentTarget.value.length,
               );
             }}
             onChange={(value?: number) => {
@@ -292,7 +292,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
             onFocus={e => {
               e.currentTarget.setSelectionRange(
                 0,
-                String(statState[baseKey]).length,
+                e.currentTarget.value.length,
               );
             }}
             onChange={(value?: number) => {
