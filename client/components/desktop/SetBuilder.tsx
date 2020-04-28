@@ -49,11 +49,14 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
   }, []);
 
   React.useEffect(() => {
-    const searchBar = document.getElementById(SEARCH_BAR_ID);
+    const searchBar = document.getElementById(
+      SEARCH_BAR_ID,
+    ) as HTMLInputElement;
     if (searchBar) {
       searchBar.focus();
+      searchBar.setSelectionRange(0, searchBar.value.length);
     }
-  }, [selectedItemSlot?.name]);
+  }, [selectedItemSlot?.id]);
 
   const statsFromCustomSet = React.useMemo(
     () => getStatsFromCustomSet(customSet),
