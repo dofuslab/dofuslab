@@ -46302,6 +46302,11 @@
         "maxStat": 1
       },
       {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": -1
+      },
+      {
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
@@ -46372,6 +46377,11 @@
         "stat": "AP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": -1
       },
       {
         "stat": "Initiative",
@@ -57313,6 +57323,11 @@
         "stat": "Agility",
         "minStat": 46,
         "maxStat": 60
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": -1
       },
       {
         "stat": "MP",
@@ -69871,6 +69886,11 @@
         "stat": "AP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": -1
       }
     ],
     "customStats": {},
@@ -122685,7 +122705,18 @@
     "itemType": "Boots",
     "setID": null,
     "level": 1,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": -1
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": -1
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {},
