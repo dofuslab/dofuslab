@@ -26,7 +26,6 @@ def update_or_create_item(db_session, item_name, record):
         )
         .all()
     )
-    print(translations[0].uuid)
     if len(translations) > 1:
         print("Error: Multiple items with that name exist in the database")
     elif len(translations) == 1:
