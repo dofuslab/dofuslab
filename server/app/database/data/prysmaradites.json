@@ -13,10 +13,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer becomes invisible (1 turn) at the start of their first round"
+        "The bearer becomes invisible (1 turn) at the start of their first round."
       ],
       "fr": [
-        "Le porteur devient invisible (1 tour) au début de son premier tour de jeu"
+        "Le porteur devient invisible (1 tour) au début de son premier tour de jeu."
       ]
     },
     "conditions": {
@@ -39,10 +39,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bear gains the Gravity state as long as they have not suffered any damage"
+        "The bearer gains the Gravity state as long as they have not suffered any damage."
       ],
       "fr": [
-        "Le porteur gagne l'état Pesanteur tant qu'il n'a pas subi de dommages"
+        "Le porteur gagne l'état Pesanteur tant qu'il n'a pas subi de dommages."
       ]
     },
     "conditions": {
@@ -65,10 +65,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "At the end of their first turn, the bearer reduces damage by 20% (1 turn) for each enemy within 2 cells"
+        "At the end of their first turn, the bearer reduces damage by 20% (1 turn) for each enemy within 2 cells."
       ],
       "fr": [
-        "À la fin de son premier tour, le porteur réduit les dommages de 20% (1 tour) pour chaque ennemi à 2 cases ou moins"
+        "À la fin de son premier tour, le porteur réduit les dommages de 20% (1 tour) pour chaque ennemi à 2 cases ou moins."
       ]
     },
     "conditions": {
@@ -91,10 +91,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 1 MP (2 turns) per enemy more than 9 cells away and loses 2 AP (2 turns) per enemy within 9 cells"
+        "The bearer gains 1 MP (2 turns) per enemy more than 9 cells away and loses 2 AP (2 turns) per enemy within 9 cells."
       ],
       "fr": [
-        "Le porteur gagne 1 PM (2 tours) par ennemi à plus de cases et perd 2 PA (2 tours) par ennemi à 9 cases ou moins"
+        "Le porteur gagne 1 PM (2 tours) par ennemi à plus de cases et perd 2 PA (2 tours) par ennemi à 9 cases ou moins."
       ]
     },
     "conditions": {
@@ -117,10 +117,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "Heals 100% of the enemy damage suffered until the end of the first turn"
+        "Heals 100% of the enemy damage suffered until the end of the first turn."
       ],
       "fr": [
-        "Soigne 100% des dommages ennemis subis jusqu'à la fin du premier tour"
+        "Soigne 100% des dommages ennemis subis jusqu'à la fin du premier tour."
       ]
     },
     "conditions": {
@@ -143,10 +143,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 300 Power (1 turn) if they suffer an enemy hit before playing"
+        "The bearer gains 300 Power (1 turn) if they suffer an enemy hit before playing."
       ],
       "fr": [
-        "Le porteur gagne 300 Puissance (1 tour) si un coup ennemi est reçu avant d'avoir joué"
+        "Le porteur gagne 300 Puissance (1 tour) si un coup ennemi est reçu avant d'avoir joué."
       ]
     },
     "conditions": {
@@ -169,10 +169,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains +4 AP for their first round but also loses 4 MP"
+        "The bearer gains +4 AP for their first round but also loses 4 MP."
       ],
       "fr": [
-        "Le porteur gagne +4 PA pendant son premier tour mais aussi -4 PM"
+        "Le porteur gagne +4 PA pendant son premier tour mais aussi -4 PM."
       ]
     },
     "conditions": {
@@ -194,11 +194,9 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains 4 AP for 1 turn but inflicts -50% damage"
-      ],
+      "en": ["The bearer gains 4 AP for 1 turn but inflicts -50% damage."],
       "fr": [
-        "Le porteur gagne 4 PA pendant 1 tour mais occasionne -50% de dommages"
+        "Le porteur gagne 4 PA pendant 1 tour mais occasionne -50% de dommages."
       ]
     },
     "conditions": {
@@ -221,10 +219,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 100% of their current health in shield points for their first round"
+        "The bearer gains 100% of their current health in shield points for their first round."
       ],
       "fr": [
-        "Le porteur gagne 100% de sa vie actuelle en points de bouclier pendant son premier tour de jeu"
+        "Le porteur gagne 100% de sa vie actuelle en points de bouclier pendant son premier tour de jeu."
       ]
     },
     "conditions": {
@@ -246,12 +244,8 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains 50 Critial for 1 turn"
-      ],
-      "fr": [
-        "Le porteur gagne 50 Critique pendant 1 tour"
-      ]
+      "en": ["The bearer gains 50 Critial for 1 turn."],
+      "fr": ["Le porteur gagne 50 Critique pendant 1 tour."]
     },
     "conditions": {
       "conditions": {},
@@ -273,10 +267,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "At the end of their first turn, the bearer reduces damage by 5% (3 turns) for each enemy within 2 cells"
+        "At the end of their first turn, the bearer reduces damage by 5% (3 turns) for each enemy within 2 cells."
       ],
       "fr": [
-        "À la fin de son premier tour, le porteur réduit les dommages de 5% (3 tours) pour chaque ennemi à cases ou moins"
+        "À la fin de son premier tour, le porteur réduit les dommages de 5% (3 tours) pour chaque ennemi à cases ou moins."
       ]
     },
     "conditions": {
@@ -299,11 +293,9 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 1 MP (2 turns) per enemy more than 15 cells away"
+        "The bearer gains 1 MP (2 turns) per enemy more than 15 cells away."
       ],
-      "fr": [
-        "Le porteur gagne 1 PM (2 tours) par ennemi à plus de 15 cases"
-      ]
+      "fr": ["Le porteur gagne 1 PM (2 tours) par ennemi à plus de 15 cases."]
     },
     "conditions": {
       "conditions": {},
@@ -325,10 +317,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "Heals 15% of the enemy damage suffered until the end of the third turn"
+        "Heals 15% of the enemy damage suffered until the end of the third turn."
       ],
       "fr": [
-        "Soigne 15% des dommages ennemis subis jusqu'à la fin du troisième tour"
+        "Soigne 15% des dommages ennemis subis jusqu'à la fin du troisième tour."
       ]
     },
     "conditions": {
@@ -350,12 +342,8 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer reduces damage suffered by 80% before playing"
-      ],
-      "fr": [
-        "Le porteur réduit les dommages subis de 80% avant d'avoir joué"
-      ]
+      "en": ["The bearer reduces damage suffered by 80% before playing."],
+      "fr": ["Le porteur réduit les dommages subis de 80% avant d'avoir joué."]
     },
     "conditions": {
       "conditions": {},
@@ -377,10 +365,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 100 Power (3 turns) if they suffer an enemy hit before playing"
+        "The bearer gains 100 Power (3 turns) if they suffer an enemy hit before playing."
       ],
       "fr": [
-        "Le porteur gagne 100 Puissance (3 tours) si un coup ennemi est reçu avant d'avoir joué"
+        "Le porteur gagne 100 Puissance (3 tours) si un coup ennemi est reçu avant d'avoir joué."
       ]
     },
     "conditions": {
@@ -403,10 +391,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 100% of their level in shield points (infinite) for each opponent (excluding summons) that plays before them"
+        "The bearer gains 100% of their level in shield points (infinite) for each opponent (excluding summons) that plays before them."
       ],
       "fr": [
-        "Le porteur gagne 100% de son niveau en points de bouclier (infini) pour chaque adversaire (hors invocation) que joue avant lui"
+        "Le porteur gagne 100% de son niveau en points de bouclier (infini) pour chaque adversaire (hors invocation) que joue avant lui."
       ]
     },
     "conditions": {
@@ -429,10 +417,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 250 MP Parry before playing, then 50 MP Parry for 1 turn"
+        "The bearer gains 250 MP Parry before playing, then 50 MP Parry for 1 turn."
       ],
       "fr": [
-        "Le porteur gagne 250 Esquive PM avant d'avoir joué, puis 50 Esquive PM pendant 1 tour"
+        "Le porteur gagne 250 Esquive PM avant d'avoir joué, puis 50 Esquive PM pendant 1 tour."
       ]
     },
     "conditions": {
@@ -454,12 +442,8 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains +2 AP for their first round"
-      ],
-      "fr": [
-        "Le porteur gagne +2 PA pendant son premier tour de jeu"
-      ]
+      "en": ["The bearer gains +2 AP for their first round."],
+      "fr": ["Le porteur gagne +2 PA pendant son premier tour de jeu."]
     },
     "conditions": {
       "conditions": {},
@@ -480,11 +464,9 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains 1 AP for 3 turns but inflicts -10% damage"
-      ],
+      "en": ["The bearer gains 1 AP for 3 turns but inflicts -10% damage."],
       "fr": [
-        "Le porteur gagne 1 PA pendant 3 tours mais occasionne -10% de dommages"
+        "Le porteur gagne 1 PA pendant 3 tours mais occasionne -10% de dommages."
       ]
     },
     "conditions": {
@@ -507,10 +489,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 25% of their current health in shield points for their first three rounds"
+        "The bearer gains 25% of their current health in shield points for their first three rounds."
       ],
       "fr": [
-        "Le porteur gagne 25% de sa vie actuelle en points de bouclier pendant ses trois premiers tours de jeu"
+        "Le porteur gagne 25% de sa vie actuelle en points de bouclier pendant ses trois premiers tours de jeu."
       ]
     },
     "conditions": {
@@ -533,10 +515,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "Reduces the duration of active effects on the bearer by 4 at the start of their first round"
+        "Reduces the duration of active effects on the bearer by 4 at the start of their first round."
       ],
       "fr": [
-        "Réduit de 4 la durée des effects actifs sur le porteur au début de son premier tour de jeu"
+        "Réduit de 4 la durée des effects actifs sur le porteur au début de son premier tour de jeu."
       ]
     },
     "conditions": {
@@ -559,10 +541,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "At the start of their first round, the bearer gains 200% of their level in shield (infinite) for each enemy within 2 cells"
+        "At the start of their first round, the bearer gains 200% of their level in shield (infinite) for each enemy within 2 cells."
       ],
       "fr": [
-        "Au début de son premier tour de jeu, le porteur gagne 200% de son niveau en bouclier (infini) pour chaque ennemi à 2 cases ou moins"
+        "Au début de son premier tour de jeu, le porteur gagne 200% de son niveau en bouclier (infini) pour chaque ennemi à 2 cases ou moins."
       ]
     },
     "conditions": {
@@ -585,10 +567,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "At the end of their first turn, the bearer reduces damage by 10% (2 turns) for each enemy within 2 cells"
+        "At the end of their first turn, the bearer reduces damage by 10% (2 turns) for each enemy within 2 cells."
       ],
       "fr": [
-        "À la fin de son premier tour, le porteur réduit les dommages de 10% (2 tours) pour chque ennemi à 2 cases ou moins"
+        "À la fin de son premier tour, le porteur réduit les dommages de 10% (2 tours) pour chque ennemi à 2 cases ou moins."
       ]
     },
     "conditions": {
@@ -611,10 +593,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 1 MP (2 turns) per enemy more than 12 cells away and loses 1 AP (2 turns) per enemy within 12 cells"
+        "The bearer gains 1 MP (2 turns) per enemy more than 12 cells away and loses 1 AP (2 turns) per enemy within 12 cells."
       ],
       "fr": [
-        "Le porteur gagne 1 PM (2 tours) par ennemi à plus de 12 cases et perd 1 PA (2 tours) par ennemi à 12 cases ou moins"
+        "Le porteur gagne 1 PM (2 tours) par ennemi à plus de 12 cases et perd 1 PA (2 tours) par ennemi à 12 cases ou moins."
       ]
     },
     "conditions": {
@@ -637,10 +619,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "Heals 30% of enemy damage suffered until the end of the second turn"
+        "Heals 30% of enemy damage suffered until the end of the second turn."
       ],
       "fr": [
-        "Soigne 30% de dommages ennemis subis jusqu'à la fin du deuxième tour"
+        "Soigne 30% de dommages ennemis subis jusqu'à la fin du deuxième tour."
       ]
     },
     "conditions": {
@@ -663,10 +645,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 200 Power (2 turns) if they suffer an enemy hit before playing"
+        "The bearer gains 200 Power (2 turns) if they suffer an enemy hit before playing."
       ],
       "fr": [
-        "Le porteur gagne 200 Puissance (2 tours) si un coup ennemi est reçu avant d'avoir joué"
+        "Le porteur gagne 200 Puissance (2 tours) si un coup ennemi est reçu avant d'avoir joué."
       ]
     },
     "conditions": {
@@ -689,10 +671,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains +3 AP for their first round but also loses 2 MP"
+        "The bearer gains +3 AP for their first round but also loses 2 MP."
       ],
       "fr": [
-        "Le porteur gagne +3 PA pendant son premier tour mais aussi -2 PM"
+        "Le porteur gagne +3 PA pendant son premier tour mais aussi -2 PM."
       ]
     },
     "conditions": {
@@ -714,11 +696,9 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains 2 AP for 2 turns but inflicts -20% damage"
-      ],
+      "en": ["The bearer gains 2 AP for 2 turns but inflicts -20% damage."],
       "fr": [
-        "Le porteur gagne 2 PA pendant 2 tours mais occasionne -20% de dommages"
+        "Le porteur gagne 2 PA pendant 2 tours mais occasionne -20% de dommages."
       ]
     },
     "conditions": {
@@ -741,10 +721,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 50% of their current health in shield points for their first two rounds"
+        "The bearer gains 50% of their current health in shield points for their first two rounds."
       ],
       "fr": [
-        "Le porteur gagne 50% de sa vie actuelle en points de bouclier pendant ses deux premiers tours de jeu"
+        "Le porteur gagne 50% de sa vie actuelle en points de bouclier pendant ses deux premiers tours de jeu."
       ]
     },
     "conditions": {
@@ -766,12 +746,8 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains 20 Critical for 2 turns"
-      ],
-      "fr": [
-        "Le porteur gagne 20 Critique pendant 2 tours"
-      ]
+      "en": ["The bearer gains 20 Critical for 2 turns."],
+      "fr": ["Le porteur gagne 20 Critique pendant 2 tours."]
     },
     "conditions": {
       "conditions": {},
@@ -793,10 +769,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 250 AP Parry before playing, then 50 AP Parry for 1 turn"
+        "The bearer gains 250 AP Parry before playing, then 50 AP Parry for 1 turn."
       ],
       "fr": [
-        "Le porteur gagne 250 Esquive PA avant d'avoir joué, puis 50 Esquive PA pendant 1 tour"
+        "Le porteur gagne 250 Esquive PA avant d'avoir joué, puis 50 Esquive PA pendant 1 tour."
       ]
     },
     "conditions": {
@@ -818,12 +794,8 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains 8 Critical for 3 turns"
-      ],
-      "fr": [
-        "Le porteur gagne 8 Critique pendant 3 tours"
-      ]
+      "en": ["The bearer gains 8 Critical for 3 turns."],
+      "fr": ["Le porteur gagne 8 Critique pendant 3 tours."]
     },
     "conditions": {
       "conditions": {},
