@@ -30,7 +30,7 @@ const EquipPage: NextPage = () => {
     { variables: { id: customSetId }, skip: !customSetId },
   );
 
-  const customSet = customSetData?.customSetById;
+  const customSet = customSetData?.customSetById ?? null;
 
   if (!itemSlot) {
     return <ErrorPage statusCode={404} />;

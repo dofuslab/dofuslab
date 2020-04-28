@@ -17,6 +17,7 @@ import { mq } from 'common/constants';
 import { getResponsiveGridStyle } from 'common/mixins';
 import SkeletonCardsLoader from './SkeletonCardsLoader';
 import SetModal from './SetModal';
+import { customSet } from 'graphql/fragments/__generated__/customSet';
 
 const PAGE_SIZE = 12;
 
@@ -24,9 +25,10 @@ const THRESHOLD = 600;
 
 interface IProps {
   filters: SharedFilters;
+  customSet: customSet | null;
 }
 
-const SetSelector: React.FC<IProps> = ({ filters }) => {
+const SetSelector: React.FC<IProps> = ({ filters, customSet }) => {
   const { data, loading, fetchMore } = useQuery<sets, setsVariables>(SetQuery, {
     variables: { first: PAGE_SIZE, filters },
   });
@@ -115,6 +117,7 @@ const SetSelector: React.FC<IProps> = ({ filters }) => {
           setName={selectedSet.name}
           onCancel={closeSetModal}
           visible={setModalVisible}
+          customSet={customSet}
         />
       )}
     </InfiniteScroll>

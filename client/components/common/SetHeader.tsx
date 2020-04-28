@@ -78,13 +78,16 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
     editCustomSetMetadataVariables
   >(EditCustomSetMetadataMutation, { refetchQueries: () => ['myCustomSets'] });
 
+  const [form] = Form.useForm();
+
   const onStartEdit = React.useCallback(() => {
     dispatch({ type: 'START_EDIT', originalState });
   }, [dispatch, customSet?.name, customSet?.level]);
 
   const onStopEdit = React.useCallback(() => {
     dispatch({ type: 'STOP_EDIT' });
-  }, [dispatch]);
+    form.resetFields();
+  }, [dispatch, form]);
 
   const client = useApolloClient();
 
@@ -132,8 +135,6 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
       metadataState,
     ],
   );
-
-  const [form] = Form.useForm();
 
   const formElement = (
     <Form

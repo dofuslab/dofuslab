@@ -103,12 +103,16 @@ const ItemStatsList: React.FC<IProps> = ({
     });
   }
 
-  const onOpenModal = React.useCallback(() => {
-    if (!item.set || !openSetModal) {
-      return;
-    }
-    openSetModal(item.set);
-  }, [openSetModal, item]);
+  const onOpenModal = React.useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.stopPropagation();
+      if (!item.set || !openSetModal) {
+        return;
+      }
+      openSetModal(item.set);
+    },
+    [openSetModal, item],
+  );
 
   const conditions = JSON.parse(item.conditions);
 
@@ -117,12 +121,7 @@ const ItemStatsList: React.FC<IProps> = ({
   return (
     <div>
       {item.set && (
-        <div
-          css={{ marginBottom: 12, fontSize: '0.75rem' }}
-          onClick={(e: React.MouseEvent<HTMLDivElement>) => {
-            e.stopPropagation();
-          }}
-        >
+        <div css={{ marginBottom: 12, fontSize: '0.75rem' }}>
           {openSetModal ? (
             <a onClick={onOpenModal}>{item.set.name}</a>
           ) : (
