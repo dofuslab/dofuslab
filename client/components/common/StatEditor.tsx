@@ -40,6 +40,7 @@ type StatState = {
 type StatStateAction =
   | { type: 'edit'; stat: StatKey; value: number }
   | { type: 'reset' }
+  | { type: 'resetScroll' }
   | { type: 'scrollAll' };
 
 const defaultInitialState = {
@@ -96,6 +97,11 @@ const reducer = (state: StatState, action: StatStateAction) => {
       return { ...state, [action.stat]: action.value } as StatState;
     case 'reset':
       return defaultInitialState;
+    case 'resetScroll':
+      return scrolledStats.reduce(
+        (acc, scrolledStatKey) => ({ ...acc, [scrolledStatKey]: 0 }),
+        state,
+      );
     case 'scrollAll':
       return scrolledStats.reduce(
         (acc, scrolledStatKey) => ({ ...acc, [scrolledStatKey]: 100 }),
@@ -175,16 +181,6 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
 
   const { t } = useTranslation(['common', 'stat']);
 
-  const scrollAll = React.useCallback(() => {
-    dispatch({ type: 'scrollAll' });
-    checkAndMutate();
-  }, [dispatch]);
-
-  const reset = React.useCallback(() => {
-    dispatch({ type: 'reset' });
-    checkAndMutate();
-  }, [dispatch]);
-
   const client = useApolloClient();
 
   const router = useRouter();
@@ -203,7 +199,26 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
     DEBOUNCE_INTERVAL,
   );
 
+  const scrollAll = React.useCallback(() => {
+    dispatch({ type: 'scrollAll' });
+    checkAndMutate();
+  }, [dispatch, checkAndMutate]);
+
+  const resetScroll = React.useCallback(() => {
+    dispatch({ type: 'resetScroll' });
+    checkAndMutate();
+  }, [dispatch, checkAndMutate]);
+
+  const reset = React.useCallback(() => {
+    dispatch({ type: 'reset' });
+    checkAndMutate();
+  }, [dispatch, checkAndMutate]);
+
   const theme = useTheme<TTheme>();
+
+  const display100 = scrolledStats.some(
+    scrolledStat => statState[scrolledStat] < 100,
+  );
 
   return (
     <div
@@ -315,8 +330,11 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
       >
         {remainingPoints}
       </div>
-      <Button css={{ fontSize: '0.75rem', height: '100%' }} onClick={scrollAll}>
-        100
+      <Button
+        css={{ fontSize: '0.75rem', height: '100%' }}
+        onClick={display100 ? scrollAll : resetScroll}
+      >
+        {display100 ? 100 : 0}
       </Button>
     </div>
   );
