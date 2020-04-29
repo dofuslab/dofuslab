@@ -32,26 +32,21 @@ Session(app)
 q = Queue(connection=redis_connection)
 
 base_url = os.getenv("HOME_PAGE")
+flask_env = os.getenv("FLASK_ENV")
 reset_password_salt = "reset-password-salt"
 
 # supported_languages = ["en", "fr", "pt", "it", "de", "es"]
 supported_languages = ["en", "fr"]
 
+origins = []
+if flask_env == "development":
+    origins = ["http://localhost:3000", "http://dev.localhost:3000"]
+elif flask_env == "production":
+    origins = ["https://www.dofuslab.io", "https://dofuslab.io"]
+
 db = SQLAlchemy(app)
 CORS(
-    app,
-    resources={
-        r"/*": {
-            "origins": [
-                "http://localhost:3000",
-                "http://dev.localhost:3000",
-                "https://dofus-lab.herokuapp.com",
-                "https://www.dofuslab.io",
-                "https://dofuslab.io",
-            ]
-        }
-    },
-    supports_credentials=True,
+    app, resources={r"/*": {"origins": origins}}, supports_credentials=True,
 )
 
 from contextlib import contextmanager
@@ -144,7 +139,9 @@ def construct_dataloaders():
 
 app.add_url_rule(
     "/api/graphql",
-    view_func=GraphQLView.as_view("graphql", schema=schema, graphiql=True),
+    view_func=GraphQLView.as_view(
+        "graphql", schema=schema, graphiql=flask_env == "development"
+    ),
 )
 
 
