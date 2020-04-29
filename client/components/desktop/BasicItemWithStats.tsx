@@ -81,7 +81,7 @@ const BasicItemWithStats: React.FC<IProps> = ({
               boxShadow: popoverShadow,
               width: 240,
             })}
-            autoAdjustOverflow={false}
+            autoAdjustOverflow={{ adjustX: 1, adjustY: 0 }}
           >
             <div
               css={{

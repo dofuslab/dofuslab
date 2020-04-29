@@ -102,6 +102,7 @@ const BonusStats: React.FC<IProps> = ({ customSet, isMobile }) => {
                       />
                     }
                     placement="bottomLeft"
+                    trigger={isMobile ? 'click' : 'hover'}
                   >
                     <div
                       css={{
