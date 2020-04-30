@@ -40490,8 +40490,8 @@
       },
       {
         "stat": "Reflect",
-        "minStat": null,
-        "maxStat": null
+        "minStat": 11,
+        "maxStat": 25
       },
       {
         "stat": "Chance",
