@@ -37,10 +37,12 @@ def update_or_create_item(db_session, item_name, record):
         db_session.query(ModelItemStat).filter_by(item_id=item.uuid).delete()
         create_item_stats(db_session, record, item)
         print("Item stats successfully updated")
-        conditions = {
-            "conditions": record["conditions"].get("conditions", None),
-            "customConditions": record["conditions"].get("customConditions", None),
-        }
+        if "conditions" in record:
+            conditions = {
+                "conditions": record["conditions"].get("conditions", {}),
+                "customConditions": record["conditions"].get("customConditions", {}),
+            }
+            item.conditions = conditions
         print("Item conditions successfully updated")
         if "weaponStats" in record:
             create_weapon_stat(db_session, record, item)
@@ -73,11 +75,12 @@ def create_item(db_session, record):
         level=record["level"],
         image_url=record["imageUrl"],
     )
-    conditions = {
-        "conditions": record["conditions"].get("conditions", None),
-        "customConditions": record["conditions"].get("customConditions", None),
-    }
-    item.conditions = conditions
+    if "conditions" in record:
+        conditions = {
+            "conditions": record["conditions"].get("conditions", {}),
+            "customConditions": record["conditions"].get("customConditions", {}),
+        }
+        item.conditions = conditions
     db_session.add(item)
     db_session.flush()
 
