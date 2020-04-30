@@ -1367,28 +1367,14 @@
         "stat": "Vitality",
         "minStat": null,
         "maxStat": 100
+      },
+      {
+        "stat": "Reflect",
+        "minStat": null,
+        "maxStat": 10
       }
     ],
-    "customStats": {
-      "en": [
-        "10 Reflects damage"
-      ],
-      "fr": [
-        "10 Renvoie dommages"
-      ],
-      "de": [
-        "10 Wirft Schaden zurück"
-      ],
-      "es": [
-        "10 Reenvía daños"
-      ],
-      "it": [
-        "10 Rinvia danni"
-      ],
-      "pt": [
-        "10 Reflete danos"
-      ]
-    },
+    "customStats": {},
     "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/89.png"
   },
   {
