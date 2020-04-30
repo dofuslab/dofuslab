@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-06-20 17:32-0700\n"
+"POT-Creation-Date: 2020-04-30 11:51-0700\n"
 "PO-Revision-Date: 2020-03-27 23:06-0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt\n"
@@ -38,116 +38,112 @@ msgstr "Esse nome de usuário já está em uso."
 msgid ""
 "Passwords must have a minimum of 8 characters, at least one lowercase "
 "letter, one uppercase letter, and one number."
-msgstr "Senhas devem ter, no mínimo, 8 caracteres. Pelo menos uma letra maiúscula,"
- "uma minúscula e um número."
+msgstr ""
+"Senhas devem ter, no mínimo, 8 caracteres. Pelo menos uma letra "
+"maiúscula,uma minúscula e um número."
 
-#: app/schema.py:359 app/schema.py:366
+#: app/schema.py:311
 msgid "You are not authorized to make this request."
 msgstr ""
 
-#: app/schema.py:456 app/schema.py:459
+#: app/schema.py:480 app/schema.py:483
 msgid "Invalid stat value."
 msgstr "Valor de stat inválido."
 
-#: app/schema.py:482
+#: app/schema.py:506
 msgid "The set name is too long."
 msgstr "O nome do set é muito longo."
 
-#: app/schema.py:484
+#: app/schema.py:508
 msgid "Invalid set level (must be 1-200)."
 msgstr "O nível do set é inválido (deve ser entre 1 e 200)"
 
-#: app/schema.py:581
+#: app/schema.py:614
 msgid "Invalid element mage on non-weapon item."
 msgstr ""
 
-#: app/schema.py:397 app/schema.py:434 app/schema.py:466 app/utils.py:15
-#: app/utils.py:17
-msgid "You don't have permission to edit that set."
-msgstr "Você não tem permissão para editar esse set."
-
-#: app/schema.py:608
+#: app/schema.py:641
 msgid "Invalid stat to set exo."
 msgstr "Stat inválido para o exo"
 
-#: app/schema.py:763
+#: app/schema.py:691
 #, python-format
 msgid "%(old_name)s copy"
 msgstr ""
 
-#: app/schema.py:765
+#: app/schema.py:693
 msgid "Copy"
 msgstr ""
 
-#: app/schema.py:887 app/schema.py:927 app/schema.py:1063 app/schema.py:1090
+#: app/schema.py:779 app/schema.py:814 app/schema.py:933 app/schema.py:960
 msgid "You are already logged in."
 msgstr "Você já está logado."
 
-#: app/schema.py:906 app/schema.py:977
+#: app/schema.py:793 app/schema.py:864
 msgid "Verify your DofusLab account"
 msgstr ""
 
-#: app/schema.py:911
+#: app/schema.py:798
 msgid "An error occurred while registering."
 msgstr "Ocorreu um erro durante o cadastro."
 
-#: app/schema.py:932
+#: app/schema.py:819
 msgid "Invalid username or password."
 msgstr "Nome de Usuário ou senha inválidos."
 
-#: app/schema.py:957 app/schema.py:1053
+#: app/schema.py:844 app/schema.py:923
 msgid "Please wait a minute before trying again."
 msgstr ""
 
-#: app/schema.py:961
+#: app/schema.py:848
 msgid ""
 "You have sent too many verification emails. Please wait awhile before "
 "trying again."
 msgstr ""
 
-#: app/schema.py:969
+#: app/schema.py:856
 msgid "You must be signed in to do that."
 msgstr ""
 
-#: app/schema.py:971
+#: app/schema.py:858
 msgid "Your account is already verified."
 msgstr ""
 
-#: app/schema.py:991
+#: app/schema.py:878
 msgid "Received unsupported locale."
 msgstr ""
 
-#: app/schema.py:1027 app/schema.py:1125 app/utils.py:80
+#: app/schema.py:897
 msgid "You are not logged in."
 msgstr ""
 
-#: app/schema.py:1031
+#: app/schema.py:901
 msgid "Incorrect password."
 msgstr ""
 
-#: app/schema.py:1039 app/schema.py:1109
+#: app/schema.py:909 app/schema.py:979
 msgid "You must enter a password different from your current one."
 msgstr ""
 
-#: app/schema.py:1057
+#: app/schema.py:927
 msgid ""
 "You have sent too many password request emails. Please wait awhile before"
 " trying again."
 msgstr ""
 
-#: app/schema.py:1066
+#: app/schema.py:936
 msgid "We could not find an account with that email."
 msgstr ""
 
-#: app/schema.py:1070
+#: app/schema.py:940
 msgid "Please verify your email first."
 msgstr ""
 
-#: app/schema.py:1077
+#: app/schema.py:947
 msgid "Reset your DofusLab password"
 msgstr ""
 
-#: app/schema.py:1095 app/schema.py:1103
+#: app/schema.py:965 app/schema.py:973
 msgid "The link is invalid or expired. Please request a new one."
 msgstr ""
 
@@ -233,4 +229,5 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "You don't have permission to edit that set."
-#~ msgstr ""
+#~ msgstr "Você não tem permissão para editar esse set."
+
