@@ -38,35 +38,31 @@ msgstr "Esse nome de usuário já está em uso."
 msgid ""
 "Passwords must have a minimum of 8 characters, at least one lowercase "
 "letter, one uppercase letter, and one number."
-msgstr "Senhas devem ter, no mínimo, 8 caracteres. Pelo menos uma letra maiúscula,"
- "uma minúscula e um número."
+msgstr ""
+"Senhas devem ter, no mínimo, 8 caracteres. Pelo menos uma letra "
+"maiúscula,uma minúscula e um número."
 
 #: app/schema.py:359 app/schema.py:366
 msgid "You are not authorized to make this request."
 msgstr ""
 
-#: app/schema.py:456 app/schema.py:459
+#: app/schema.py:480 app/schema.py:483
 msgid "Invalid stat value."
 msgstr "Valor de stat inválido."
 
-#: app/schema.py:482
+#: app/schema.py:506
 msgid "The set name is too long."
 msgstr "O nome do set é muito longo."
 
-#: app/schema.py:484
+#: app/schema.py:508
 msgid "Invalid set level (must be 1-200)."
 msgstr "O nível do set é inválido (deve ser entre 1 e 200)"
 
-#: app/schema.py:581
+#: app/schema.py:614
 msgid "Invalid element mage on non-weapon item."
 msgstr ""
 
-#: app/schema.py:397 app/schema.py:434 app/schema.py:466 app/utils.py:15
-#: app/utils.py:17
-msgid "You don't have permission to edit that set."
-msgstr "Você não tem permissão para editar esse set."
-
-#: app/schema.py:608
+#: app/schema.py:641
 msgid "Invalid stat to set exo."
 msgstr "Stat inválido para o exo"
 
@@ -233,4 +229,5 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "You don't have permission to edit that set."
-#~ msgstr ""
+#~ msgstr "Você não tem permissão para editar esse set."
+
