@@ -82,11 +82,11 @@ const EquipmentSlots: React.FC<IProps> = ({
     <div
       css={{
         display: 'grid',
-        gridGap: 12,
-        gridTemplateColumns: '1fr 1fr 1fr',
+        gridGap: 8,
+        gridTemplateColumns: '1fr 1fr 1fr 1fr',
         flexShrink: 0,
         [mq[0]]: {
-          gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr',
+          gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr',
         },
         [mq[1]]: {
           display: 'flex',
