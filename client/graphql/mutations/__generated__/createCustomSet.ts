@@ -55,6 +55,7 @@ export interface createCustomSet_createCustomSet_customSet_equippedItems_item_it
   __typename: "ItemType";
   id: any;
   name: string;
+  enName: string;
   eligibleItemSlots: createCustomSet_createCustomSet_customSet_equippedItems_item_itemType_eligibleItemSlots[];
 }
 

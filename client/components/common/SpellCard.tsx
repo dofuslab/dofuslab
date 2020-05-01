@@ -6,7 +6,7 @@ import {
   classById_classById_spellVariantPairs_spells,
   classById_classById_spellVariantPairs_spells_spellStats,
 } from 'graphql/queries/__generated__/classById';
-import { Radio, Divider, Switch } from 'antd';
+import { Radio, Divider } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
 import { useTheme } from 'emotion-theming';
 
@@ -15,6 +15,7 @@ import {
   CardTitleWithLevel,
   damageHeaderStyle,
   EffectLine,
+  DamageTypeToggle,
 } from 'common/wrappers';
 import { itemCardStyle } from 'common/mixins';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
@@ -24,16 +25,10 @@ import {
   getSimpleEffect,
   calcEffect,
   getStatsFromCustomSet,
+  getInitialRangedState,
 } from 'common/utils';
 import { TEffectLine } from 'common/types';
 import { Stat } from '__generated__/globalTypes';
-import { mq } from 'common/constants';
-import { Media } from './Media';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faFistRaised,
-  faPeopleArrows,
-} from '@fortawesome/free-solid-svg-icons';
 import Card from 'components/common/Card';
 import Tooltip from 'components/common/Tooltip';
 
@@ -61,22 +56,12 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
     | classById_classById_spellVariantPairs_spells_spellStats
     | undefined = spell.spellStats[selectedSpellLevelIdx];
 
-  const rangedOnly = spellStats?.minRange && spellStats?.minRange > 1;
+  const rangedOnly = !!spellStats?.minRange && spellStats?.minRange > 1;
   const meleeOnly = !spellStats?.maxRange || spellStats?.maxRange <= 1;
 
-  let initialShowRanged = false;
-
-  if (rangedOnly) {
-    initialShowRanged = true;
-  } else if (meleeOnly) {
-    initialShowRanged = false;
-  } else if (statsFromCustomSet) {
-    initialShowRanged =
-      getStatWithDefault(statsFromCustomSet, Stat.PCT_RANGED_DAMAGE) >=
-      getStatWithDefault(statsFromCustomSet, Stat.PCT_MELEE_DAMAGE);
-  }
-
-  const [showRanged, setShowRanged] = React.useState(initialShowRanged);
+  const [showRanged, setShowRanged] = React.useState(
+    getInitialRangedState(meleeOnly, rangedOnly, statsFromCustomSet),
+  );
 
   const damageTypeKey = showRanged ? 'ranged' : 'melee';
 
@@ -215,24 +200,6 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
       spellCharacteristics.push(t('COOLDOWN', { count: spellStats.cooldown }));
     }
 
-    const toggleSwitch = (
-      <Switch
-        checked={showRanged}
-        onChange={setShowRanged}
-        css={{
-          background: theme.switch?.background,
-          '.ant-switch-inner': {
-            color: theme.text?.default,
-          },
-          '&::after': {
-            background: theme.switch?.button,
-          },
-        }}
-        checkedChildren={<FontAwesomeIcon icon={faPeopleArrows} />}
-        unCheckedChildren={<FontAwesomeIcon icon={faFistRaised} />}
-      />
-    );
-
     content = (
       <>
         <div>
@@ -254,28 +221,10 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
           <>
             <Divider css={{ margin: '12px 0' }} />
             {showToggle && (
-              <div
-                css={{
-                  display: 'flex',
-                  marginBottom: 8,
-                }}
-              >
-                <span css={{ marginRight: 8, [mq[1]]: { display: 'none' } }}>
-                  {t('MELEE')}
-                </span>
-                <Media lessThan="xs">{toggleSwitch}</Media>
-                <Media greaterThanOrEqual="xs">
-                  <Tooltip
-                    title={showRanged ? t('RANGED') : t('MELEE')}
-                    getPopupContainer={element => element.parentElement!}
-                  >
-                    {toggleSwitch}
-                  </Tooltip>
-                </Media>
-                <span css={{ marginLeft: 8, [mq[1]]: { display: 'none' } }}>
-                  {t('RANGED')}
-                </span>
-              </div>
+              <DamageTypeToggle
+                setShowRanged={setShowRanged}
+                showRanged={showRanged}
+              />
             )}
             <div
               css={{

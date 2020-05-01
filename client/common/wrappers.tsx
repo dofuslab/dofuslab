@@ -12,7 +12,7 @@ import {
   blue6,
   gray6,
 } from './mixins';
-import { Skeleton } from 'antd';
+import { Skeleton, Switch } from 'antd';
 import { set_bonuses } from 'graphql/fragments/__generated__/set';
 import { TFunction } from 'next-i18next';
 import { useTranslation } from 'i18n';
@@ -35,8 +35,15 @@ import { item_weaponStats } from 'graphql/fragments/__generated__/item';
 import { TTheme } from './themes';
 import Card from 'components/common/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCube } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCube,
+  faPeopleArrows,
+  faFistRaised,
+} from '@fortawesome/free-solid-svg-icons';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
+import { mq } from './constants';
+import Tooltip from 'components/common/Tooltip';
+import { Media } from 'components/common/Media';
 
 interface IResponsiveGrid {
   readonly numColumns: ReadonlyArray<number>;
@@ -354,5 +361,56 @@ export const CustomSetHead: React.FC<{ customSet?: customSet | null }> = ({
       />
       <meta property="twitter:url" content={getCanonicalUrl(customSet)} />
     </Head>
+  );
+};
+
+export const DamageTypeToggle: React.FC<{
+  readonly showRanged: boolean;
+  readonly setShowRanged: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ showRanged, setShowRanged }) => {
+  const { t } = useTranslation('weapon_spell_effect');
+  const theme = useTheme<TTheme>();
+
+  const toggleSwitch = (
+    <Switch
+      checked={showRanged}
+      onChange={setShowRanged}
+      css={{
+        background: theme.switch?.background,
+        '.ant-switch-inner': {
+          color: theme.text?.default,
+        },
+        '&::after': {
+          background: theme.switch?.button,
+        },
+      }}
+      checkedChildren={<FontAwesomeIcon icon={faPeopleArrows} />}
+      unCheckedChildren={<FontAwesomeIcon icon={faFistRaised} />}
+    />
+  );
+
+  return (
+    <div
+      css={{
+        display: 'flex',
+        marginBottom: 8,
+      }}
+    >
+      <span css={{ marginRight: 8, [mq[1]]: { display: 'none' } }}>
+        {t('MELEE')}
+      </span>
+      <Media lessThan="xs">{toggleSwitch}</Media>
+      <Media greaterThanOrEqual="xs">
+        <Tooltip
+          title={showRanged ? t('RANGED') : t('MELEE')}
+          getPopupContainer={element => element.parentElement!}
+        >
+          {toggleSwitch}
+        </Tooltip>
+      </Media>
+      <span css={{ marginLeft: 8, [mq[1]]: { display: 'none' } }}>
+        {t('RANGED')}
+      </span>
+    </div>
   );
 };
