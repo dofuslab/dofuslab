@@ -10,7 +10,7 @@
   "CHARACTERISTICS": "Characteristics",
   "CLEAR_STATS": "Reset base and scrolled stats to 0",
   "CONDITION_NOT_MET": "The conditions for this item have not been met.",
-  "CONDITION_NOT_MET_WITH_ITEM": "The conditions for the item <1>{{itemName}}</1> have not been met.",
+  "CONDITION_NOT_MET_WITH_ITEM": "The conditions for the item <2>{{itemName}}</2> have not been met.",
   "CONFIRM_DELETE_BUILD": "Are you sure you want to delete this build?",
   "CONFIRM_RESTART_BUILD": "Restarting your build will remove all the items and maged stats from this build. Are you sure?",
   "CONTRIBUTE_GITHUB": "Contribute on GitHub",
