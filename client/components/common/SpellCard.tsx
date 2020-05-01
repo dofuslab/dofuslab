@@ -64,12 +64,19 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
   const rangedOnly = spellStats?.minRange && spellStats?.minRange > 1;
   const meleeOnly = !spellStats?.maxRange || spellStats?.maxRange <= 1;
 
-  const [showRanged, setShowRanged] = React.useState(
-    meleeOnly || !statsFromCustomSet
-      ? false
-      : getStatWithDefault(statsFromCustomSet, Stat.PCT_RANGED_DAMAGE) >=
-          getStatWithDefault(statsFromCustomSet, Stat.PCT_MELEE_DAMAGE),
-  );
+  let initialShowRanged = false;
+
+  if (rangedOnly) {
+    initialShowRanged = true;
+  } else if (meleeOnly) {
+    initialShowRanged = false;
+  } else if (statsFromCustomSet) {
+    initialShowRanged =
+      getStatWithDefault(statsFromCustomSet, Stat.PCT_RANGED_DAMAGE) >=
+      getStatWithDefault(statsFromCustomSet, Stat.PCT_MELEE_DAMAGE);
+  }
+
+  const [showRanged, setShowRanged] = React.useState(initialShowRanged);
 
   const damageTypeKey = showRanged ? 'ranged' : 'melee';
 
