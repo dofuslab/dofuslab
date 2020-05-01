@@ -1,6 +1,6 @@
 {
   "ACTIONS": "Ações",
-  "ANONYMOUS": "Anónimo",
+  "ANONYMOUS": "Anônimo",
   "AVAILABLE_AT_LEVEL": "Disponível no nível {{level}}",
   "BACK": "Voltar",
   "BASE": "Base",
@@ -43,8 +43,8 @@
   "MULTIPLE_MP_EXO": "Você tem vários exos PM.",
   "MULTIPLE_PRYSMARADITES": "Você tem vários prismaraditas equipados.",
   "MULTIPLE_RANGE_EXO": "Você tem vários exos de alcance.",
-  "MY_BUILDS": "Os meus builds",
-  "NEW_BUILD": "Novo build",
+  "MY_BUILDS": "Minhas builds",
+  "NEW_BUILD": "Nova build",
   "NO_BONUS": "Nenhum bônus de conjunto encontrado",
   "NO_BUILDS_MATCHED": "Nenhuma build encontrada \"{{search}}\"",
   "NO_ITEMS_EQUIPPED": "Nenhum item equipado",
