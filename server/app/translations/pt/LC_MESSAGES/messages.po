@@ -20,60 +20,60 @@ msgstr ""
 
 #: app/mutation_validation_utils.py:18
 msgid "The email you entered is invalid."
-msgstr "O email digitado não é válido."
+msgstr "O email que você digitou é inválido."
 
 #: app/mutation_validation_utils.py:21
 msgid "There already exists a user with that email."
-msgstr "Já existe um usuário com esse email."
+msgstr "Já existe um utilizador com esse email."
 
 #: app/mutation_validation_utils.py:28
 msgid "The display name you entered is invalid."
-msgstr "O nome de usuário que você digitou não é válido."
+msgstr "O nome de exibição que você digitou é inválido."
 
 #: app/mutation_validation_utils.py:31
 msgid "There already exists a user with that display name."
-msgstr "Esse nome de usuário já está em uso."
+msgstr "Já existe um utilizador com esse nome de exibição."
 
 #: app/mutation_validation_utils.py:39
 msgid ""
 "Passwords must have a minimum of 8 characters, at least one lowercase "
 "letter, one uppercase letter, and one number."
 msgstr ""
-"Senhas devem ter, no mínimo, 8 caracteres. Pelo menos uma letra "
-"maiúscula,uma minúscula e um número."
+"As senhas devem ter no mínimo 8 caracteres, pelo menos uma letra minúscula "
+"uma letra maiúscula e um número."
 
 #: app/schema.py:359 app/schema.py:366
 msgid "You are not authorized to make this request."
-msgstr ""
+msgstr "Você não está autorizado a fazer este pedido."
 
-#: app/schema.py:480 app/schema.py:483
+#: app/schema.py:456 app/schema.py:459
 msgid "Invalid stat value."
-msgstr "Valor de stat inválido."
+msgstr "Valor de característica inválido."
 
-#: app/schema.py:506
+#: app/schema.py:482
 msgid "The set name is too long."
-msgstr "O nome do set é muito longo."
+msgstr "O nome do conjunto é muito longo."
 
-#: app/schema.py:508
+#: app/schema.py:484
 msgid "Invalid set level (must be 1-200)."
-msgstr "O nível do set é inválido (deve ser entre 1 e 200)"
+msgstr "Nível de conjunto inválido (deve ser de 1 a 200)."
 
-#: app/schema.py:614
+#: app/schema.py:581
 msgid "Invalid element mage on non-weapon item."
-msgstr ""
+msgstr "Mage de elemento inválido no item que não é arma."
 
-#: app/schema.py:641
+#: app/schema.py:608
 msgid "Invalid stat to set exo."
-msgstr "Stat inválido para o exo"
+msgstr "Característica inválida para definir exo."
 
 #: app/schema.py:763
 #, python-format
 msgid "%(old_name)s copy"
-msgstr ""
+msgstr "Cópia de %(old_name)"
 
 #: app/schema.py:765
 msgid "Copy"
-msgstr ""
+msgstr "Cópia"
 
 #: app/schema.py:887 app/schema.py:927 app/schema.py:1063 app/schema.py:1090
 msgid "You are already logged in."
@@ -81,87 +81,91 @@ msgstr "Você já está logado."
 
 #: app/schema.py:906 app/schema.py:977
 msgid "Verify your DofusLab account"
-msgstr ""
+msgstr "Verifique a sua conta DofusLab"
 
 #: app/schema.py:911
 msgid "An error occurred while registering."
-msgstr "Ocorreu um erro durante o cadastro."
+msgstr "Ocorreu um erro ao registar a sua conta."
 
 #: app/schema.py:932
 msgid "Invalid username or password."
-msgstr "Nome de Usuário ou senha inválidos."
+msgstr "nome de utilizador ou senha inválidos."
 
 #: app/schema.py:957 app/schema.py:1053
 msgid "Please wait a minute before trying again."
-msgstr ""
+msgstr "Aguarde um minuto antes de tentar novamente."
 
 #: app/schema.py:961
 msgid ""
 "You have sent too many verification emails. Please wait awhile before "
 "trying again."
 msgstr ""
+"Você enviou muitos e-mails de verificação. Aguarde um pouco antes "
+"de tentar novamente."
 
 #: app/schema.py:969
 msgid "You must be signed in to do that."
-msgstr ""
+msgstr "Você deve estar logado para fazer isso."
 
 #: app/schema.py:971
 msgid "Your account is already verified."
-msgstr ""
+msgstr "Sua conta já está verificada."
 
 #: app/schema.py:991
 msgid "Received unsupported locale."
-msgstr ""
+msgstr "Código do idioma recebido não suportado."
 
 #: app/schema.py:1027 app/schema.py:1125 app/utils.py:80
 msgid "You are not logged in."
-msgstr ""
+msgstr "Você não está logado."
 
 #: app/schema.py:1031
 msgid "Incorrect password."
-msgstr ""
+msgstr "Senha incorreta."
 
 #: app/schema.py:1039 app/schema.py:1109
 msgid "You must enter a password different from your current one."
-msgstr ""
+msgstr "Você deve inserir uma senha diferente da senha atual."
 
 #: app/schema.py:1057
 msgid ""
 "You have sent too many password request emails. Please wait awhile before"
 " trying again."
 msgstr ""
+"Você enviou muitos e-mails de solicitação de senha. Aguarde um pouco antes"
+" de tentar novamente."
 
 #: app/schema.py:1066
 msgid "We could not find an account with that email."
-msgstr ""
+msgstr "Não encontramos uma conta com esse e-mail."
 
 #: app/schema.py:1070
 msgid "Please verify your email first."
-msgstr ""
+msgstr "Por favor verifique seu e-mail primeiro."
 
 #: app/schema.py:1077
 msgid "Reset your DofusLab password"
-msgstr ""
+msgstr "Redefina sua senha do DofusLab"
 
 #: app/schema.py:1095 app/schema.py:1103
 msgid "The link is invalid or expired. Please request a new one."
-msgstr ""
+msgstr "O link é inválido ou expirou. Por favor solicite um novo."
 
 #: app/utils.py:29
 msgid "Please wait a moment before trying again."
-msgstr ""
+msgstr "Aguarde um momento antes de tentar novamente."
 
 #: app/utils.py:35 app/utils.py:37 app/utils.py:98 app/utils.py:100
 msgid "You don't have permission to edit that build."
-msgstr ""
+msgstr "Você não tem permissão para editar essa build."
 
 #: app/utils.py:70 app/utils.py:86
 msgid "Please verify your account to continue using DofusLab."
-msgstr ""
+msgstr "Por favor verifique sua conta para continuar usando o DofusLab"
 
 #: app/utils.py:95
 msgid "That build does not exist."
-msgstr ""
+msgstr "Essa build não existe."
 
 #: app/utils.py:106 app/utils.py:109
 msgid "Invalid stat value."
@@ -185,32 +189,36 @@ msgid ""
 "We just received a request to reset your password. Follow the link\n"
 "        below to reset it."
 msgstr ""
+"Acabamos de receber uma solicitação para redefinir sua senha. Siga o link\n"
+"        abaixo para redefini-lo."
 
 #: app/templates/reset_password.html:14
 msgid "If this wasn't you, please ignore this message."
-msgstr ""
+msgstr "Se não foi você, por favor ignore esta mensagem."
 
 #: app/templates/reset_password.html:16
 msgid "Thanks for using DofusLab!"
-msgstr ""
+msgstr "Obrigado por usar o DofusLab!"
 
 #: app/templates/reset_password.html:16
 msgid "The DofusLab team"
-msgstr ""
+msgstr "A equipe DofusLab"
 
 #: app/templates/verify_email.html:10
 msgid ""
 "Thanks for signing up for DofusLab. Please follow the link to\n"
 "        activate your account."
 msgstr ""
+"Obrigado por se registar no DofusLab. Por favor, siga o link para\n"
+"        ativar sua conta."
 
 #: app/templates/verify_email.html:14
 msgid "Cheers!"
-msgstr ""
+msgstr "Obrigado!"
 
 #: app/templates/verify_email.html:14
 msgid "- The DofusLab team"
-msgstr ""
+msgstr "- A equipe DofusLab"
 
 #~ msgid "Hey %(display_name),"
 #~ msgstr ""
@@ -229,5 +237,5 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "You don't have permission to edit that set."
-#~ msgstr "Você não tem permissão para editar esse set."
+#~ msgstr ""
 
