@@ -4,7 +4,7 @@
   "AIR_RES": "Résistance Air",
   "AP": "PA",
   "AP_PARRY": "Esquive PA",
-  "AP_REDUCTION": "Réduction PA",
+  "AP_REDUCTION": "Retrait PA",
   "CHANCE": "Chance",
   "CONDITIONS": {
     "AND": "et",
@@ -26,7 +26,7 @@
   "LOCK": "Tacle",
   "MP": "PM",
   "MP_PARRY": "Esquive PM",
-  "MP_REDUCTION": "Réduction PM",
+  "MP_REDUCTION": "Retrait PM",
   "NEUTRAL_DAMAGE": "Dommage Neutre",
   "NEUTRAL_RES": "Résistance Neutre",
   "PCT_AIR_RES": "% Résistance Air",
