@@ -55,6 +55,7 @@ interface Props {
   openMageModal: (equippedItem: EquippedItem) => void;
   openSetModal: (set: ItemSet) => void;
   errors?: Array<BuildError>;
+  className?: string;
 }
 
 const EquippedItemWithStats: React.FC<Props> = ({
@@ -65,6 +66,7 @@ const EquippedItemWithStats: React.FC<Props> = ({
   openMageModal,
   openSetModal,
   errors,
+  className,
 }) => {
   const deleteItem = useDeleteItemMutation(equippedItem.slot.id, customSet);
   const stopPropagationCallback = React.useCallback(
@@ -91,23 +93,28 @@ const EquippedItemWithStats: React.FC<Props> = ({
 
   const content = (
     <ClassNames>
-      {({ css }) => {
+      {({ css, cx }) => {
         const wrapperClass = css(wrapperStyles);
         return (
           <div
             ref={contentRef}
-            css={{
-              ...itemImageBox(theme),
-              ...(selected && { ...selectedBox(theme) }),
-              '&:hover': {
-                [`.${wrapperClass}`]: {
-                  opacity: 0.3,
+            className={cx(
+              css(
+                itemImageBox(theme),
+                css(selected ? selectedBox(theme) : {}),
+                css({
                   '&:hover': {
-                    opacity: 1,
+                    [`.${wrapperClass}`]: {
+                      opacity: 0.3,
+                      '&:hover': {
+                        opacity: 1,
+                      },
+                    },
                   },
-                },
-              },
-            }}
+                }),
+              ),
+              className,
+            )}
           >
             {brokenImage ? (
               <BrokenImagePlaceholder

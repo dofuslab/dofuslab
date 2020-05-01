@@ -1,12 +1,12 @@
 /** @jsx jsx */
 
 import React from 'react';
-import { jsx } from '@emotion/core';
+import { jsx, ClassNames } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
 
 import { itemBox, itemImageBox, selected as selectedBox } from 'common/mixins';
-import { BuildError, Theme } from 'common/types';
 
+import { Theme, BuildError } from 'common/types';
 import {
   ItemSlot,
   EquippedItem as EquippedItemType,
@@ -23,6 +23,7 @@ interface Props {
   selected: boolean;
   openMageModal: (equippedItem: EquippedItemType) => void;
   openSetModal: (set: ItemSet) => void;
+  className?: string;
   errors?: Array<BuildError>;
 }
 
@@ -35,6 +36,7 @@ const EquippedItem: React.FC<Props> = ({
   openMageModal,
   openSetModal,
   errors,
+  className,
 }) => {
   const onClick = React.useCallback(() => {
     if (selected) {
@@ -47,41 +49,45 @@ const EquippedItem: React.FC<Props> = ({
   const theme = useTheme<Theme>();
 
   return (
-    <>
-      <div css={itemBox} onClick={onClick}>
-        {customSet && equippedItem ? (
-          <EquippedItemWithStats
-            equippedItem={equippedItem}
-            selected={selected}
-            customSet={customSet}
-            itemSlotId={slot.id}
-            openMageModal={openMageModal}
-            openSetModal={openSetModal}
-            errors={errors}
-          />
-        ) : (
-          <div
-            css={{
-              ...itemImageBox(theme),
-              ...(selected ? selectedBox(theme) : {}),
-              '&:hover > img': {
-                opacity: 0.65,
-              },
-            }}
-          >
-            <img
-              src={slot.imageUrl}
-              css={{
-                maxWidth: '100%',
-                opacity: selected ? 0.75 : 0.4,
-                transition: 'all 0.3s',
-              }}
-              alt={slot.name}
+    <ClassNames>
+      {({ css, cx }) => (
+        <div className={cx(css(itemBox(theme)), className)} onClick={onClick}>
+          {equippedItem && customSet ? (
+            <EquippedItemWithStats
+              equippedItem={equippedItem}
+              selected={selected}
+              customSet={customSet}
+              itemSlotId={slot.id}
+              openMageModal={openMageModal}
+              openSetModal={openSetModal}
+              errors={errors}
             />
-          </div>
-        )}
-      </div>
-    </>
+          ) : (
+            <div
+              className={cx(
+                css(itemImageBox(theme)),
+                selected ? css(selectedBox(theme)) : undefined,
+                css({
+                  '&:hover > img': {
+                    opacity: 0.65,
+                  },
+                }),
+              )}
+            >
+              <img
+                src={slot.imageUrl}
+                css={{
+                  maxWidth: '100%',
+                  opacity: selected ? 0.75 : 0.4,
+                  transition: 'all 0.3s',
+                }}
+                alt={slot.name}
+              />
+            </div>
+          )}
+        </div>
+      )}
+    </ClassNames>
   );
 };
 

@@ -16,6 +16,7 @@ import {
 } from 'graphql/queries/__generated__/customSet';
 import { CustomSetHead } from 'common/wrappers';
 import ErrorPage from './_error';
+// import ClassicSetBuilder from 'components/desktop/ClassicSetBuilder';
 
 const Index: NextPage = () => {
   const router = useRouter();
@@ -47,6 +48,7 @@ const Index: NextPage = () => {
       </Media>
       <Media greaterThanOrEqual="xs" css={{ height: '100%' }}>
         <DesktopSetBuilder customSet={customSet} />
+        {/* <ClassicSetBuilder customSet={customSet} /> */}
       </Media>
     </div>
   );

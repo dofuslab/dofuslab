@@ -107,13 +107,11 @@ export const itemBox = (theme: Theme) => ({
 
   ...itemBoxDimensions,
   [mq[1]]: {
-    margin: 4,
     paddingTop: 0,
     position: 'static' as 'static',
     ...(itemBoxDimensions[mq[1]] as {}),
   },
   [mq[4]]: {
-    margin: 8,
     ...(itemBoxDimensions[mq[4]] as {}),
   },
 });

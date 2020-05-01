@@ -5,18 +5,16 @@ import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 import groupBy from 'lodash/groupBy';
 
-import { itemSlots as ItemSlots } from 'graphql/queries/__generated__/itemSlots';
+import { itemSlots as ItemSlotsQueryType } from 'graphql/queries/__generated__/itemSlots';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 
 import { mq } from 'common/constants';
 import { useSetModal } from 'common/utils';
 import { BuildError } from 'common/types';
-import { EquippedItem, CustomSet, ItemSlot } from 'common/type-aliases';
-import DesktopEquippedItem from '../desktop/EquippedItem';
-import MobileEquippedItem from '../mobile/EquippedItem';
-import MageModal from './MageModal';
-import SetModal from './SetModal';
-import { Media } from './Media';
+import { ItemSlot, CustomSet, EquippedItem } from 'common/type-aliases';
+import DesktopEquippedItem from './EquippedItem';
+import MageModal from '../common/MageModal';
+import SetModal from '../common/SetModal';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -26,14 +24,14 @@ interface Props {
   errors: Array<BuildError>;
 }
 
-const EquipmentSlots: React.FC<Props> = ({
+const ClassicEquipmentSlots: React.FC<Props> = ({
   customSet,
   selectItemSlot,
   selectedItemSlotId,
   isMobile,
   errors,
 }) => {
-  const { data } = useQuery<ItemSlots>(ItemSlotsQuery);
+  const { data } = useQuery<ItemSlotsQueryType>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
 
   const equippedItemsBySlotId: {
@@ -72,20 +70,14 @@ const EquipmentSlots: React.FC<Props> = ({
     <div
       css={{
         display: 'grid',
-        gridGap: 8,
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        flexShrink: 0,
-        [mq[0]]: {
-          gridTemplateColumns: 'repeat(8, 1fr)',
-        },
-        [mq[1]]: {
-          display: 'flex',
-          margin: '4px 8px',
-          gap: 0,
-        },
+        gridGap: 12,
+        gridTemplateColumns: 'repeat(6, 72px)',
+        gridTemplateRows: 'repeat(6, 72px)',
         [mq[4]]: {
-          margin: '8px 12px',
+          gridTemplateColumns: 'repeat(6, 84px)',
+          gridTemplateRows: 'repeat(6, 84px)',
         },
+        flexShrink: 0,
       }}
     >
       {itemSlots?.map((slot) => {
@@ -93,42 +85,26 @@ const EquipmentSlots: React.FC<Props> = ({
         const equippedItemErrors: Array<BuildError> | undefined =
           groupedErrors[ei?.id];
         return (
-          <React.Fragment key={slot.id}>
-            <Media lessThan="xs">
-              <MobileEquippedItem
-                slot={slot}
-                key={slot.id}
-                equippedItem={ei}
-                selected={selectedItemSlotId === slot.id}
-                customSet={customSet}
-                openMageModal={openMageModal}
-                openSetModal={openSetModal}
-                errors={equippedItemErrors}
-              />
-            </Media>
-            <Media
-              greaterThanOrEqual="xs"
-              css={{
-                flex: '1 1 0',
-                minWidth: 0,
-                maxWidth: 80,
-                [mq[4]]: { maxWidth: 100 },
-              }}
-            >
-              <DesktopEquippedItem
-                slot={slot}
-                key={slot.id}
-                equippedItem={ei}
-                selected={selectedItemSlotId === slot.id}
-                selectItemSlot={selectItemSlot}
-                customSet={customSet}
-                openMageModal={openMageModal}
-                openSetModal={openSetModal}
-                errors={equippedItemErrors}
-                css={{ marginLeft: 4, [mq[4]]: { marginLeft: 8 } }}
-              />
-            </Media>
-          </React.Fragment>
+          <div
+            css={{
+              flex: '1 1 0',
+              minWidth: 0,
+              maxWidth: 80,
+              [mq[4]]: { maxWidth: 100 },
+            }}
+          >
+            <DesktopEquippedItem
+              slot={slot}
+              key={slot.id}
+              equippedItem={ei}
+              selected={selectedItemSlotId === slot.id}
+              selectItemSlot={selectItemSlot}
+              customSet={customSet}
+              openMageModal={openMageModal}
+              openSetModal={openSetModal}
+              errors={equippedItemErrors}
+            />
+          </div>
         );
       })}
       {customSet && equippedItem && (
@@ -154,4 +130,4 @@ const EquipmentSlots: React.FC<Props> = ({
   );
 };
 
-export default EquipmentSlots;
+export default ClassicEquipmentSlots;
