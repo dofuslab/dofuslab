@@ -8,8 +8,8 @@
   "CAST_PER_TURN_plural": "{{count}} lançamentos/turno",
   "CELL": "{{count}} célula",
   "CELL_plural": "{{count}} células",
-  "COOLDOWN": "Intrevalo de relançamento: {{count}} turno",
-  "COOLDOWN_plural": "Intrevalo de relançamento: {{count}} turnos",
+  "COOLDOWN": "Intervalo de relançamento: {{count}} turno",
+  "COOLDOWN_plural": "Intervalo de relançamento: {{count}} turnos",
   "CRIT_WITH_PERCENTAGE": "Crítico ({{percentage}}%)",
   "DOES_NOT_CRIT": "Não dá crítico",
   "EFFECT_TYPE": {
