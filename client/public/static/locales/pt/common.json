@@ -10,7 +10,7 @@
   "CHARACTERISTICS": "Características",
   "CLEAR_STATS": "Redefina as características base e scroladas para 0",
   "CONDITION_NOT_MET": "As condições para este item não foram cumpridas.",
-  "CONDITION_NOT_MET_WITH_ITEM": "As condições para o item <1>{{itemName}}</1> não foram cumpridas.",
+  "CONDITION_NOT_MET_WITH_ITEM": "As condições para o item <2>{{itemName}}</2> não foram cumpridas.",
   "CONFIRM_DELETE_BUILD": "Tem certeza de que deseja apagar esta build?",
   "CONFIRM_RESTART_BUILD": "Reiniciar seu build removerá todos os itens e características mageadas dessa build. Você tem certeza?",
   "CONTRIBUTE_GITHUB": "Contribua no Github",
