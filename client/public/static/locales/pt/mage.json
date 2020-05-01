@@ -1,8 +1,8 @@
 {
-  "EXO": "Exo {{stat}}",
-  "MAGE": "Magear",
+  "EXO": "{{stat}} exo",
+  "MAGE": "Mage",
   "MAGE_MODAL_TITLE": "Mageando {{itemName}}",
-  "MORE_MAGING_OPTIONS": "__STRING_NOT_TRANSLATED__",
-  "REMOVE_EXO": "Remover Exo {{stat}}",
-  "RESET_TO_ORIGINAL": "Resetar para stats originais"
+  "MORE_MAGING_OPTIONS": "Mais opções de mage",
+  "REMOVE_EXO": "Remover {{stat}} exo",
+  "RESET_TO_ORIGINAL": "Redefinir para características originais"
 }
