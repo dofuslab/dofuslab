@@ -1183,9 +1183,11 @@ export const renderErrors = (
   if (reason === 'CONDITION_NOT_MET' && equippedItem && includeItemName) {
     return (
       <li key={`equipped-item-${equippedItem.id}-${reason}`}>
-        <Trans ns="common" key="CONDITION_NOT_MET_WITH_ITEM">
+        <Trans i18nKey="common:CONDITION_NOT_MET_WITH_ITEM">
           The conditions for the item{' '}
-          <strong css={{ fontWeight: 500 }}>{equippedItem.item.name}</strong>{' '}
+          <strong css={{ fontWeight: 500 }}>
+            {{ itemName: equippedItem.item.name }}
+          </strong>{' '}
           have not been met.
         </Trans>
       </li>

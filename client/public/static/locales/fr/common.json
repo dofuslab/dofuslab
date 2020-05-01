@@ -10,7 +10,7 @@
   "CHARACTERISTICS": "Caractéristiques",
   "CLEAR_STATS": "Réinitialiser les points de caractéristiques",
   "CONDITION_NOT_MET": "Les conditions pour équiper cet item ne sont pas vérifiées.",
-  "CONDITION_NOT_MET_WITH_ITEM": "Les conditions pour équiper l'item <1>{{itemName}}</1> ne sont pas vérifiées.",
+  "CONDITION_NOT_MET_WITH_ITEM": "Les conditions pour équiper l'item <2>{{itemName}}</2> ne sont pas vérifiées.",
   "CONFIRM_DELETE_BUILD": "Veux-tu vraiment supprimer cet ensemble?",
   "CONFIRM_RESTART_BUILD": "Réinitialiser l'ensemble enlèvera tous les items ainsi que la forgemagie. En es-tu sûr?",
   "CONTRIBUTE_GITHUB": "Contribuer sur GitHub",
