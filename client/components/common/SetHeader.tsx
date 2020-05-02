@@ -186,6 +186,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
               },
             }}
             maxLength={50}
+            defaultValue={customSet?.name ?? ''}
           />
         </Form.Item>
       ) : (
@@ -233,6 +234,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
                 type="number"
                 max={200}
                 min={1}
+                defaultValue={customSet?.level ?? 200}
               />
             </Form.Item>
           ) : (
