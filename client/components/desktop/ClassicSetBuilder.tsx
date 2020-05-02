@@ -67,48 +67,66 @@ const ClassicSetBuilder: React.FC<IProps> = ({ customSet }) => {
 
   return (
     <Layout>
-      <SetHeader customSet={customSet} errors={errors} />
-      <div css={{ display: 'flex', alignItems: 'flex-start' }}>
-        <ResponsiveGrid numColumns={[2, 1, 2, 2, 2, 2, 2]}>
-          {STAT_GROUPS.map((group, i) => (
-            <StatTable
-              key={`stat-table-${i}`}
-              group={group}
-              statsFromCustomSet={statsFromCustomSet}
+      <div
+        css={{
+          display: 'flex',
+          flexDirection: 'column',
+          maxWidth: 1740,
+          width: '100%',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        }}
+      >
+        <SetHeader customSet={customSet} errors={errors} />
+        <div css={{ display: 'flex', alignItems: 'flex-start', marginTop: 8 }}>
+          <ResponsiveGrid
+            numColumns={[2, 1, 1, 2, 2, 2, 2]}
+            css={{ margin: '0 36px 48px 12px', flex: '1 1 0' }}
+          >
+            {STAT_GROUPS.map((group, i) => (
+              <StatTable
+                key={`stat-table-${i}`}
+                group={group}
+                statsFromCustomSet={statsFromCustomSet}
+                customSet={customSet}
+              />
+            ))}
+            <StatEditor key={customSet?.stats.id} customSet={customSet} />
+          </ResponsiveGrid>
+          <ClassicEquipmentSlots
+            customSet={customSet}
+            selectItemSlot={selectItemSlot}
+            selectedItemSlotId={selectedItemSlot?.id ?? null}
+            errors={errors}
+          />
+          <ResponsiveGrid
+            numColumns={[2, 1, 1, 2, 2, 2, 2]}
+            css={{
+              marginBottom: 20,
+              margin: '0 12px 48px 36px',
+              flex: '1 1 0',
+            }}
+          >
+            {weapon && customSet && weapon.item.weaponStats && (
+              <>
+                <BasicItemCard
+                  item={weapon.item}
+                  showOnlyWeaponStats
+                  weaponElementMage={weapon.weaponElementMage}
+                />
+                <WeaponDamage
+                  weaponStats={weapon.item.weaponStats}
+                  customSet={customSet}
+                  weaponElementMage={weapon.weaponElementMage}
+                />
+              </>
+            )}
+            <ClassSpells
+              key={`${customSet?.id}-${customSet?.level}`}
               customSet={customSet}
             />
-          ))}
-          <StatEditor key={customSet?.stats.id} customSet={customSet} />
-        </ResponsiveGrid>
-        <ClassicEquipmentSlots
-          customSet={customSet}
-          selectItemSlot={selectItemSlot}
-          selectedItemSlotId={selectedItemSlot?.id ?? null}
-          errors={errors}
-        />
-        <ResponsiveGrid
-          numColumns={[2, 1, 2, 2, 2, 2, 2]}
-          css={{ marginBottom: 20 }}
-        >
-          {weapon && customSet && weapon.item.weaponStats && (
-            <>
-              <BasicItemCard
-                item={weapon.item}
-                showOnlyWeaponStats
-                weaponElementMage={weapon.weaponElementMage}
-              />
-              <WeaponDamage
-                weaponStats={weapon.item.weaponStats}
-                customSet={customSet}
-                weaponElementMage={weapon.weaponElementMage}
-              />
-            </>
-          )}
-          <ClassSpells
-            key={`${customSet?.id}-${customSet?.level}`}
-            customSet={customSet}
-          />
-        </ResponsiveGrid>
+          </ResponsiveGrid>
+        </div>
       </div>
     </Layout>
   );

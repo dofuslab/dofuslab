@@ -6,7 +6,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/react-hooks';
 
-import DesktopSetBuilder from 'components/desktop/SetBuilder';
+// import DesktopSetBuilder from 'components/desktop/SetBuilder';
 import MobileSetBuilder from 'components/mobile/SetBuilder';
 import { mediaStyles, Media } from 'components/common/Media';
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
@@ -15,8 +15,8 @@ import {
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
 import { CustomSetHead } from 'common/wrappers';
+import ClassicSetBuilder from 'components/desktop/ClassicSetBuilder';
 import ErrorPage from './_error';
-// import ClassicSetBuilder from 'components/desktop/ClassicSetBuilder';
 
 const Index: NextPage = () => {
   const router = useRouter();
@@ -47,8 +47,8 @@ const Index: NextPage = () => {
         <MobileSetBuilder customSet={customSet} />
       </Media>
       <Media greaterThanOrEqual="xs" css={{ height: '100%' }}>
-        <DesktopSetBuilder customSet={customSet} />
-        {/* <ClassicSetBuilder customSet={customSet} /> */}
+        {/* <DesktopSetBuilder customSet={customSet} /> */}
+        <ClassicSetBuilder customSet={customSet} />
       </Media>
     </div>
   );
