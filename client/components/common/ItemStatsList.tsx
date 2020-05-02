@@ -75,7 +75,7 @@ const ItemStatsList: React.FC<IProps> = ({
   weaponElementMage,
   errors,
 }) => {
-  const { t } = useTranslation(['stat', 'weapon_spell_effect', 'common']);
+  const { t, i18n } = useTranslation(['stat', 'weapon_spell_effect', 'common']);
   const theme = useTheme<TTheme>();
 
   const statsMap: {
@@ -210,12 +210,23 @@ const ItemStatsList: React.FC<IProps> = ({
           </div>
         </>
       )}
-      {conditions && Object.keys(conditions.conditions || {}).length > 0 && (
-        <>
-          <Divider css={{ margin: '12px 0' }} />
-          <div>{renderConditions(conditions.conditions, t)}</div>
-        </>
-      )}
+      {conditions &&
+        (Object.keys(conditions.conditions || {}).length > 0 ||
+          Object.keys(conditions.customConditions || {}).length > 0) && (
+          <>
+            <Divider css={{ margin: '12px 0' }} />
+            {Object.keys(conditions.conditions || {}).length > 0 && (
+              <div>{renderConditions(conditions.conditions, t)}</div>
+            )}
+            {Object.keys(conditions.customConditions || {}).length > 0 && (
+              <div>
+                {conditions.customConditions?.[i18n.language]?.join(
+                  ` ${t('CONDITIONS.AND')} `,
+                )}
+              </div>
+            )}
+          </>
+        )}
       {errors && errors.length > 0 && (
         <>
           <Divider css={{ margin: '12px 0' }} />
