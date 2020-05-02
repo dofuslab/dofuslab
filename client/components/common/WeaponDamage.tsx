@@ -11,6 +11,7 @@ import {
   CardTitleWithLevel,
   damageHeaderStyle,
   EffectLine,
+  DamageTypeToggle,
 } from 'common/wrappers';
 import { itemCardStyle } from 'common/mixins';
 import { item_weaponStats } from 'graphql/fragments/__generated__/item';
@@ -22,6 +23,7 @@ import {
   calcEffect,
   calcElementMage,
   elementMageToWeaponEffect,
+  getInitialRangedState,
 } from 'common/utils';
 import { StatsFromCustomSet, TEffectLine } from 'common/types';
 import {
@@ -56,8 +58,20 @@ const WeaponDamage: React.FC<IProps> = ({
     [setWeaponSkillPower],
   );
 
-  const rangedOnly = weaponStats.minRange && weaponStats.minRange > 1;
-  const damageTypeKey = rangedOnly ? 'ranged' : 'melee';
+  const rangedOnly = !!weaponStats.minRange && weaponStats.minRange > 1;
+  const meleeOnly =
+    !rangedOnly &&
+    !customSet.equippedItems.some(
+      equippedItem => equippedItem.item.itemType.enName === 'Axe',
+    );
+
+  const showToggle = !rangedOnly && !meleeOnly;
+
+  const [showRanged, setShowRanged] = React.useState(
+    getInitialRangedState(meleeOnly, rangedOnly, statsFromCustomSet),
+  );
+
+  const damageTypeKey = showRanged ? 'ranged' : 'melee';
   let critRate =
     typeof weaponStats.baseCritChance === 'number'
       ? getStatWithDefault(statsFromCustomSet, Stat.CRITICAL) +
@@ -224,6 +238,12 @@ const WeaponDamage: React.FC<IProps> = ({
         </Radio>
       </Radio.Group>
       <Divider css={{ margin: '12px 0' }} />
+      {showToggle && (
+        <DamageTypeToggle
+          setShowRanged={setShowRanged}
+          showRanged={showRanged}
+        />
+      )}
       <div css={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
         <div css={damageHeaderStyle}>{t('NON_CRIT')}</div>
         {weaponStats.baseCritChance ? (

@@ -55,6 +55,7 @@ export interface customSet_equippedItems_item_itemType {
   __typename: "ItemType";
   id: any;
   name: string;
+  enName: string;
   eligibleItemSlots: customSet_equippedItems_item_itemType_eligibleItemSlots[];
 }
 

@@ -57,6 +57,7 @@ export interface set_setById_items_itemType {
   __typename: "ItemType";
   id: any;
   name: string;
+  enName: string;
   eligibleItemSlots: set_setById_items_itemType_eligibleItemSlots[];
 }
 

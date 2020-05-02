@@ -1223,3 +1223,21 @@ export const getCanonicalUrl = (customSet?: customSet | null) => {
   }
   return 'https://dofuslab.io';
 };
+
+export const getInitialRangedState = (
+  meleeOnly: boolean,
+  rangedOnly: boolean,
+  statsFromCustomSet: StatsFromCustomSet | null,
+) => {
+  let initialShowRanged = false;
+  if (rangedOnly) {
+    initialShowRanged = true;
+  } else if (meleeOnly) {
+    initialShowRanged = false;
+  } else if (statsFromCustomSet) {
+    initialShowRanged =
+      getStatWithDefault(statsFromCustomSet, Stat.PCT_RANGED_DAMAGE) >=
+      getStatWithDefault(statsFromCustomSet, Stat.PCT_MELEE_DAMAGE);
+  }
+  return initialShowRanged;
+};

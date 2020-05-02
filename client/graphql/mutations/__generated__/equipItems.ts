@@ -12,6 +12,7 @@ import { Stat, WeaponEffectType, WeaponElementMage } from "./../../../__generate
 export interface equipItems_equipMultipleItems_customSet_equippedItems_slot {
   __typename: "ItemSlot";
   id: any;
+  name: string;
   order: number;
 }
 
@@ -54,6 +55,7 @@ export interface equipItems_equipMultipleItems_customSet_equippedItems_item_item
   __typename: "ItemType";
   id: any;
   name: string;
+  enName: string;
   eligibleItemSlots: equipItems_equipMultipleItems_customSet_equippedItems_item_itemType_eligibleItemSlots[];
 }
 

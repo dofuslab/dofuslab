@@ -141,12 +141,22 @@ class ItemSlot(SQLAlchemyObjectType):
 class ItemType(SQLAlchemyObjectType):
     eligible_item_slots = graphene.NonNull(graphene.List(graphene.NonNull(ItemSlot)))
     name = graphene.String(required=True)
+    en_name = graphene.String(required=True)
 
     def resolve_name(self, info):
         locale = str(get_locale())
         query = db.session.query(ModelItemTypeTranslation)
         return (
             query.filter(ModelItemTypeTranslation.locale == locale)
+            .filter(ModelItemTypeTranslation.item_type_id == self.uuid)
+            .one()
+            .name
+        )
+
+    def resolve_en_name(self, info):
+        query = db.session.query(ModelItemTypeTranslation)
+        return (
+            query.filter(ModelItemTypeTranslation.locale == "en")
             .filter(ModelItemTypeTranslation.item_type_id == self.uuid)
             .one()
             .name
