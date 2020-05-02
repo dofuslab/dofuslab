@@ -553,7 +553,7 @@ export const useDeleteItemMutation = (
     const ok = await checkAuthentication(client, t, customSet);
     if (!ok) return null;
     return mutate();
-  }, [mutate]);
+  }, [mutate, customSet]);
   return onDelete;
 };
 
