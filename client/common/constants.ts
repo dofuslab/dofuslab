@@ -185,6 +185,10 @@ export const STAT_GROUPS: ReadonlyArray<StatGroup> = [
       stat: Stat.REFLECT,
       svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Reflect.svg',
     },
+    {
+      stat: Stat.PODS,
+      svgIcon: 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Pods.svg',
+    },
   ],
   [
     {
