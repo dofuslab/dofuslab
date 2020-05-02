@@ -965,7 +965,7 @@ export const statCalculators: { [key: string]: StatCalculator } = {
         getStatWithDefault(statsFromCustomSet, Stat.AIR_DAMAGE)
       : 0,
   [Stat.PODS]: (statsFromCustomSet) =>
-    100 +
+    1000 +
     getStatWithDefault(statsFromCustomSet, Stat.PODS) +
     (getStatWithDefault(statsFromCustomSet, Stat.STRENGTH) * 5),
 };
