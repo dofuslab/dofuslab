@@ -21,7 +21,7 @@ $ cp client/.env.dist client/.env && cp server/.env.dist server/.env
 ```bash
 # Start postgres and redis
 $ postgres -D /usr/local/var/postgres
-# DOES ANYONE KNOW HOW TO START REDIS WITHOUT BREW?
+$ redis-server
 
 # WITH HOMEBREW https://github.com/Homebrew/brew
 # Start postgres and redis
