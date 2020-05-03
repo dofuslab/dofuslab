@@ -24,7 +24,7 @@ msgstr "O email que você digitou é inválido."
 
 #: app/mutation_validation_utils.py:21
 msgid "There already exists a user with that email."
-msgstr "Já existe um utilizador com esse email."
+msgstr "Já existe um usuário com esse email."
 
 #: app/mutation_validation_utils.py:28
 msgid "The display name you entered is invalid."
@@ -32,7 +32,7 @@ msgstr "O nome de exibição que você digitou é inválido."
 
 #: app/mutation_validation_utils.py:31
 msgid "There already exists a user with that display name."
-msgstr "Já existe um utilizador com esse nome de exibição."
+msgstr "Já existe um usuário com esse nome de exibição."
 
 #: app/mutation_validation_utils.py:39
 msgid ""
@@ -89,7 +89,7 @@ msgstr "Ocorreu um erro ao registar a sua conta."
 
 #: app/schema.py:786
 msgid "Invalid username or password."
-msgstr "nome de utilizador ou senha inválidos."
+msgstr "nome de usuário ou senha inválidos."
 
 #: app/schema.py:811 app/schema.py:890
 msgid "Please wait a minute before trying again."
