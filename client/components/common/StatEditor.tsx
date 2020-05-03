@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import React from 'react';
-import { jsx } from '@emotion/core';
+import { jsx, ClassNames } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
 
 import { Theme, StatKey, scrolledStats, baseStats } from 'common/types';
@@ -26,11 +26,11 @@ import {
   navigateToNewCustomSet,
 } from 'common/utils';
 import { useRouter } from 'next/router';
-
 import { CustomSet } from 'common/type-aliases';
 
 interface Props {
   customSet?: CustomSet | null;
+  className?: string;
 }
 
 type StatState = {
@@ -143,7 +143,7 @@ const getInputNumberStyle = (baseKey: string, title: string, theme: Theme) => ({
   }),
 });
 
-const StatEditor: React.FC<Props> = ({ customSet }) => {
+const StatEditor: React.FC<Props> = ({ customSet, className }) => {
   const initialState = customSet?.stats
     ? {
         baseVitality: customSet.stats.baseVitality,
@@ -217,122 +217,129 @@ const StatEditor: React.FC<Props> = ({ customSet }) => {
   );
 
   return (
-    <div
-      css={{
-        gridArea: '3 / 1 / 4 / 2',
-        marginTop: 24,
-        display: 'grid',
-        gridAutoRows: 42,
-        gridTemplateColumns: '1fr 60px 60px',
-        [mq[0]]: {
-          gridAutoRows: 36,
-          gridArea: '2 / 1 / 3 / 2',
-          marginTop: 0,
-        },
-        [mq[1]]: {
-          gridAutoRows: 30,
-          gridArea: '3 / 1 / 4 / 2',
-          marginTop: 16,
-        },
-        [mq[2]]: {
-          gridArea: '2 / 1 / 3 / 2',
-          marginTop: 0,
-        },
-        gridGap: 4,
+    <ClassNames>
+      {({ css, cx }) => (
+        <div
+          css={cx(
+            css({
+              gridArea: '3 / 1 / 4 / 2',
+              marginTop: 24,
+              display: 'grid',
+              gridAutoRows: 42,
+              gridTemplateColumns: '1fr 60px 60px',
+              [mq[0]]: {
+                gridAutoRows: 36,
+                gridArea: '2 / 1 / 3 / 2',
+                marginTop: 0,
+              },
+              [mq[1]]: {
+                gridAutoRows: 30,
+                gridArea: '3 / 1 / 4 / 2',
+                marginTop: 16,
+              },
+              [mq[2]]: {
+                gridArea: '2 / 1 / 3 / 2',
+                marginTop: 0,
+              },
+              gridGap: 4,
 
-        fontSize: '0.75rem',
-        justifySelf: 'stretch',
-        background: theme.layer?.background,
-        borderRadius: 4,
-        padding: 4,
-        border: `1px solid ${theme.border?.default}`,
-      }}
-    >
-      {statDisplayArray.map(({ stat, baseKey, scrolledKey }) => (
-        <React.Fragment key={`stat-editor-${stat}`}>
-          <div
+              fontSize: '0.75rem',
+              justifySelf: 'stretch',
+              background: theme.layer?.background,
+              borderRadius: 4,
+              padding: 4,
+              border: `1px solid ${theme.border?.default}`,
+            }),
+            className,
+          )}
+        >
+          {statDisplayArray.map(({ stat, baseKey, scrolledKey }) => (
+            <React.Fragment key={`stat-editor-${stat}`}>
+              <div
+                css={{
+                  fontSize: '0.75rem',
+                  display: 'flex',
+                  justifyContent: 'flex-end',
+                  alignItems: 'center',
+                  marginRight: 8,
+                }}
+              >
+                {t(stat, { ns: 'stat' })}
+              </div>
+              <InputNumber
+                value={statState[baseKey]}
+                max={999}
+                min={0}
+                size="small"
+                css={getInputNumberStyle(baseKey, t('BASE'), theme)}
+                onFocus={(e) => {
+                  e.currentTarget.setSelectionRange(
+                    0,
+                    e.currentTarget.value.length,
+                  );
+                }}
+                onChange={(value?: number) => {
+                  if (typeof value !== 'number') return;
+                  dispatch({ type: 'edit', stat: baseKey, value });
+                  debouncedCheckAndMutate();
+                }}
+              />
+              <InputNumber
+                value={statState[scrolledKey]}
+                max={100}
+                min={0}
+                size="small"
+                css={getInputNumberStyle(baseKey, t('SCROLLED'), theme)}
+                onFocus={(e) => {
+                  e.currentTarget.setSelectionRange(
+                    0,
+                    e.currentTarget.value.length,
+                  );
+                }}
+                onChange={(value?: number) => {
+                  if (typeof value !== 'number') return;
+                  dispatch({ type: 'edit', stat: scrolledKey, value });
+                  debouncedCheckAndMutate();
+                }}
+              />
+            </React.Fragment>
+          ))}
+          <Button
             css={{
               fontSize: '0.75rem',
               display: 'flex',
-              justifyContent: 'flex-end',
               alignItems: 'center',
-              marginRight: 8,
+              justifySelf: 'end',
+              padding: '4px 8px',
+              height: '100%',
+            }}
+            onClick={reset}
+          >
+            <FontAwesomeIcon icon={faRedo} css={{ marginRight: 8 }} />
+            {t('RESET_ALL')}
+          </Button>
+          <div
+            css={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              fontWeight: 500,
+              background: theme.statEditor?.remainingPointsBackground,
+              borderRadius: 4,
+              color: remainingPoints < 0 ? red6 : 'inherit',
             }}
           >
-            {t(stat, { ns: 'stat' })}
+            {remainingPoints}
           </div>
-          <InputNumber
-            value={statState[baseKey]}
-            max={999}
-            min={0}
-            size="small"
-            css={getInputNumberStyle(baseKey, t('BASE'), theme)}
-            onFocus={(e) => {
-              e.currentTarget.setSelectionRange(
-                0,
-                e.currentTarget.value.length,
-              );
-            }}
-            onChange={(value?: number) => {
-              if (typeof value !== 'number') return;
-              dispatch({ type: 'edit', stat: baseKey, value });
-              debouncedCheckAndMutate();
-            }}
-          />
-          <InputNumber
-            value={statState[scrolledKey]}
-            max={100}
-            min={0}
-            size="small"
-            css={getInputNumberStyle(baseKey, t('SCROLLED'), theme)}
-            onFocus={(e) => {
-              e.currentTarget.setSelectionRange(
-                0,
-                e.currentTarget.value.length,
-              );
-            }}
-            onChange={(value?: number) => {
-              if (typeof value !== 'number') return;
-              dispatch({ type: 'edit', stat: scrolledKey, value });
-              debouncedCheckAndMutate();
-            }}
-          />
-        </React.Fragment>
-      ))}
-      <Button
-        css={{
-          fontSize: '0.75rem',
-          display: 'flex',
-          alignItems: 'center',
-          justifySelf: 'end',
-          padding: '4px 8px',
-          height: '100%',
-        }}
-        onClick={reset}
-      >
-        <FontAwesomeIcon icon={faRedo} css={{ marginRight: 8 }} />
-        {t('RESET_ALL')}
-      </Button>
-      <div
-        css={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontWeight: 500,
-          background: theme.statEditor?.remainingPointsBackground,
-          borderRadius: 4,
-          color: remainingPoints < 0 ? red6 : 'inherit',
-        }}
-      >
-        {remainingPoints}
-      </div>
-      <Button
-        css={{ fontSize: '0.75rem', height: '100%' }}
-        onClick={display100 ? scrollAll : resetScroll}
-      >
-        {display100 ? 100 : 0}
-      </Button>
-    </div>
+          <Button
+            css={{ fontSize: '0.75rem', height: '100%' }}
+            onClick={display100 ? scrollAll : resetScroll}
+          >
+            {display100 ? 100 : 0}
+          </Button>
+        </div>
+      )}
+    </ClassNames>
   );
 };
 

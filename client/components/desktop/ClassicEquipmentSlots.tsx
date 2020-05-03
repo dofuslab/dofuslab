@@ -86,6 +86,7 @@ const ClassicEquipmentSlots: React.FC<Props> = ({
           groupedErrors[ei?.id];
         return (
           <div
+            key={`slot-${slot.id}`}
             css={{
               flex: '1 1 0',
               minWidth: 0,

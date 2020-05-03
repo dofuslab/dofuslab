@@ -2,22 +2,29 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
+import { Tabs } from 'antd';
 
-import { STAT_GROUPS, SEARCH_BAR_ID } from 'common/constants';
+import { SEARCH_BAR_ID, mq } from 'common/constants';
 import Layout from './Layout';
-import StatTable from '../common/StatTable';
-import { ResponsiveGrid } from 'common/wrappers';
 
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getStatsFromCustomSet, getErrors } from 'common/utils';
 import SetHeader from '../common/SetHeader';
 import ClassicEquipmentSlots from './ClassicEquipmentSlots';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import StatEditor from '../common/StatEditor';
+import { IError } from 'common/types';
+import ClassicLeftColumnStats from './ClassicLeftColumnStats';
+import StatTable from 'components/common/StatTable';
+import { Stat } from '__generated__/globalTypes';
+import ClassicRightColumnStats from './ClassicRightColumnStats';
+import { useTheme } from 'emotion-theming';
+import { TTheme } from 'common/themes';
+import { useTranslation } from 'i18n';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
-import ClassSpells from 'components/common/ClassSpells';
-import { IError } from 'common/types';
+import ClassicClassSpells from 'components/desktop/ClassicClassSpells';
+
+const { TabPane } = Tabs;
 
 interface IProps {
   customSet: customSet | null;
@@ -55,6 +62,10 @@ const ClassicSetBuilder: React.FC<IProps> = ({ customSet }) => {
     [customSet],
   );
 
+  const theme = useTheme<TTheme>();
+
+  const { t } = useTranslation();
+
   const weapon = customSet?.equippedItems.find(
     equippedItem => !!equippedItem.item.weaponStats,
   );
@@ -71,62 +82,98 @@ const ClassicSetBuilder: React.FC<IProps> = ({ customSet }) => {
         css={{
           display: 'flex',
           flexDirection: 'column',
-          maxWidth: 1740,
-          width: '100%',
           marginLeft: 'auto',
           marginRight: 'auto',
         }}
       >
         <SetHeader customSet={customSet} errors={errors} />
-        <div css={{ display: 'flex', alignItems: 'flex-start', marginTop: 8 }}>
-          <ResponsiveGrid
-            numColumns={[2, 1, 1, 2, 2, 2, 2]}
-            css={{ margin: '0 36px 48px 12px', flex: '1 1 0' }}
-          >
-            {STAT_GROUPS.map((group, i) => (
-              <StatTable
-                key={`stat-table-${i}`}
-                group={group}
-                statsFromCustomSet={statsFromCustomSet}
-                customSet={customSet}
-              />
-            ))}
-            <StatEditor key={customSet?.stats.id} customSet={customSet} />
-          </ResponsiveGrid>
-          <ClassicEquipmentSlots
-            customSet={customSet}
-            selectItemSlot={selectItemSlot}
-            selectedItemSlotId={selectedItemSlot?.id ?? null}
-            errors={errors}
-          />
-          <ResponsiveGrid
-            numColumns={[2, 1, 1, 2, 2, 2, 2]}
-            css={{
-              marginBottom: 20,
-              margin: '0 12px 48px 36px',
-              flex: '1 1 0',
-            }}
-          >
-            {weapon && customSet && weapon.item.weaponStats && (
-              <>
-                <BasicItemCard
-                  item={weapon.item}
-                  showOnlyWeaponStats
-                  weaponElementMage={weapon.weaponElementMage}
-                />
-                <WeaponDamage
-                  weaponStats={weapon.item.weaponStats}
+        <Tabs
+          defaultActiveKey="characteristics"
+          css={{
+            maxWidth: 1124,
+            '.ant-tabs-nav-scroll': { textAlign: 'center' },
+            '.ant-tabs-bar': {
+              borderBottom: `1px solid ${theme.border?.default}`,
+            },
+          }}
+        >
+          <TabPane tab={t('CHARACTERISTICS')} key="characteristics">
+            <div
+              css={{ display: 'flex', alignItems: 'flex-start', marginTop: 8 }}
+            >
+              <ClassicLeftColumnStats customSet={customSet} />
+              <div>
+                <ClassicEquipmentSlots
                   customSet={customSet}
-                  weaponElementMage={weapon.weaponElementMage}
+                  selectItemSlot={selectItemSlot}
+                  selectedItemSlotId={selectedItemSlot?.id ?? null}
+                  errors={errors}
                 />
-              </>
-            )}
-            <ClassSpells
+                <div css={{ display: 'flex' }}>
+                  <StatTable
+                    group={[
+                      Stat.PCT_NEUTRAL_RES,
+                      Stat.PCT_EARTH_RES,
+                      Stat.PCT_FIRE_RES,
+                      Stat.PCT_WATER_RES,
+                      Stat.PCT_AIR_RES,
+                    ]}
+                    statsFromCustomSet={statsFromCustomSet}
+                    customSet={customSet}
+                    css={{
+                      flex: '1 1 0',
+                      marginRight: 12,
+                      [mq[4]]: { marginRight: 20 },
+                    }}
+                  />
+                  <StatTable
+                    group={[
+                      Stat.NEUTRAL_RES,
+                      Stat.EARTH_RES,
+                      Stat.FIRE_RES,
+                      Stat.WATER_RES,
+                      Stat.AIR_RES,
+                    ]}
+                    statsFromCustomSet={statsFromCustomSet}
+                    customSet={customSet}
+                    css={{ flex: '1 1 0' }}
+                  />
+                </div>
+              </div>
+              <ClassicRightColumnStats customSet={customSet} />
+            </div>
+          </TabPane>
+          <TabPane tab={t('WEAPON_AND_SPELLS')} key="weapon-and-spells">
+            <div
+              css={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gridGap: 12,
+                [mq[4]]: { gridGap: 20 },
+              }}
+            >
+              {weapon && customSet && weapon.item.weaponStats && (
+                <>
+                  <BasicItemCard
+                    item={weapon.item}
+                    showOnlyWeaponStats
+                    weaponElementMage={weapon.weaponElementMage}
+                  />
+                  <WeaponDamage
+                    weaponStats={weapon.item.weaponStats}
+                    customSet={customSet}
+                    weaponElementMage={weapon.weaponElementMage}
+                  />
+                  <div />
+                </>
+              )}
+            </div>
+            <ClassicClassSpells
               key={`${customSet?.id}-${customSet?.level}`}
               customSet={customSet}
             />
-          </ResponsiveGrid>
-        </div>
+          </TabPane>
+        </Tabs>
       </div>
     </Layout>
   );

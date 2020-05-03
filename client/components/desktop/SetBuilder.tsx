@@ -5,7 +5,7 @@ import { jsx } from '@emotion/core';
 import { Tabs } from 'antd';
 import { useTheme } from 'emotion-theming';
 
-import { STAT_GROUPS, mq, SEARCH_BAR_ID } from 'common/constants';
+import { mq, SEARCH_BAR_ID } from 'common/constants';
 import { ResponsiveGrid } from 'common/wrappers';
 
 import { getStatsFromCustomSet, getErrors } from 'common/utils';
@@ -15,7 +15,7 @@ import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
 import { useTranslation } from 'i18n';
 import { BuildError, Theme } from 'common/types';
-
+import { Stat } from '__generated__/globalTypes';
 import { ItemSlot, CustomSet } from 'common/type-aliases';
 import Selector from '../common/Selector';
 import StatEditor from '../common/StatEditor';
@@ -25,6 +25,59 @@ import StatTable from '../common/StatTable';
 import Layout from './Layout';
 
 const { TabPane } = Tabs;
+
+const statGroups = [
+  ['HP', Stat.AP, Stat.MP, Stat.RANGE],
+  [Stat.INITIATIVE, Stat.CRITICAL, Stat.SUMMON, Stat.HEALS, Stat.PROSPECTING],
+  [
+    Stat.VITALITY,
+    Stat.WISDOM,
+    Stat.AGILITY,
+    Stat.CHANCE,
+    Stat.STRENGTH,
+    Stat.INTELLIGENCE,
+    Stat.POWER,
+  ],
+  [Stat.DODGE, Stat.LOCK],
+  [Stat.AP_PARRY, Stat.AP_REDUCTION, Stat.MP_PARRY, Stat.MP_REDUCTION],
+  [
+    Stat.NEUTRAL_DAMAGE,
+    Stat.EARTH_DAMAGE,
+    Stat.FIRE_DAMAGE,
+    Stat.WATER_DAMAGE,
+    Stat.AIR_DAMAGE,
+  ],
+  [
+    Stat.PCT_NEUTRAL_RES,
+    Stat.PCT_EARTH_RES,
+    Stat.PCT_FIRE_RES,
+    Stat.PCT_WATER_RES,
+    Stat.PCT_AIR_RES,
+  ],
+  [Stat.TRAP_DAMAGE, Stat.TRAP_POWER, Stat.REFLECT, Stat.PODS],
+  [
+    Stat.NEUTRAL_RES,
+    Stat.EARTH_RES,
+    Stat.FIRE_RES,
+    Stat.WATER_RES,
+    Stat.AIR_RES,
+  ],
+
+  [
+    Stat.CRITICAL_DAMAGE,
+    Stat.PUSHBACK_DAMAGE,
+    Stat.PCT_MELEE_DAMAGE,
+    Stat.PCT_RANGED_DAMAGE,
+    Stat.PCT_WEAPON_DAMAGE,
+    Stat.PCT_SPELL_DAMAGE,
+  ],
+  [
+    Stat.CRITICAL_RES,
+    Stat.PUSHBACK_RES,
+    Stat.PCT_MELEE_RES,
+    Stat.PCT_RANGED_RES,
+  ],
+];
 
 interface Props {
   customSet: CustomSet | null;
@@ -119,9 +172,9 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                 numColumns={[2, 1, 2, 2, 2, 2, 2]}
                 css={{ marginBottom: 20 }}
               >
-                {STAT_GROUPS.map((group) => (
+                {statGroups.map((group) => (
                   <StatTable
-                    key={`stat-table-${group[0].stat}`}
+                    key={`stat-table-${group[0]}`}
                     group={group}
                     statsFromCustomSet={statsFromCustomSet}
                     customSet={customSet}
