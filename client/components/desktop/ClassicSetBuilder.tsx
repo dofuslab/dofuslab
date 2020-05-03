@@ -23,6 +23,7 @@ import { useTranslation } from 'i18n';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassicClassSpells from 'components/desktop/ClassicClassSpells';
+import ClassicClassSelector from './ClassicClassSelector';
 
 const { TabPane } = Tabs;
 
@@ -84,14 +85,19 @@ const ClassicSetBuilder: React.FC<IProps> = ({ customSet }) => {
           flexDirection: 'column',
           marginLeft: 'auto',
           marginRight: 'auto',
+          padding: '0 12px',
         }}
       >
         <SetHeader customSet={customSet} errors={errors} />
         <Tabs
           defaultActiveKey="characteristics"
           css={{
-            maxWidth: 1124,
-            '.ant-tabs-nav-scroll': { textAlign: 'center' },
+            width: '100%',
+            maxWidth: 1036,
+            [mq[4]]: {
+              maxWidth: 1124,
+            },
+            '& > .ant-tabs .ant-tabs-nav-scroll': { textAlign: 'center' },
             '.ant-tabs-bar': {
               borderBottom: `1px solid ${theme.border?.default}`,
             },
@@ -143,17 +149,23 @@ const ClassicSetBuilder: React.FC<IProps> = ({ customSet }) => {
               <ClassicRightColumnStats customSet={customSet} />
             </div>
           </TabPane>
-          <TabPane tab={t('WEAPON_AND_SPELLS')} key="weapon-and-spells">
+          <TabPane
+            tab={t('WEAPON_AND_SPELLS')}
+            key="weapon-and-spells"
+            forceRender
+          >
             <div
               css={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(3, 1fr)',
                 gridGap: 12,
                 [mq[4]]: { gridGap: 20 },
+                marginBottom: 60,
               }}
             >
               {weapon && customSet && weapon.item.weaponStats && (
                 <>
+                  <ClassicClassSelector />
                   <BasicItemCard
                     item={weapon.item}
                     showOnlyWeaponStats
@@ -164,14 +176,13 @@ const ClassicSetBuilder: React.FC<IProps> = ({ customSet }) => {
                     customSet={customSet}
                     weaponElementMage={weapon.weaponElementMage}
                   />
-                  <div />
                 </>
               )}
+              <ClassicClassSpells
+                key={`${customSet?.id}-${customSet?.level}`}
+                customSet={customSet}
+              />
             </div>
-            <ClassicClassSpells
-              key={`${customSet?.id}-${customSet?.level}`}
-              customSet={customSet}
-            />
           </TabPane>
         </Tabs>
       </div>

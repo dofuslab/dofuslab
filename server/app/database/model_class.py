@@ -22,3 +22,4 @@ class ModelClass(Base):
     spell_variant_pairs = relationship(
         "ModelSpellVariantPair", backref="class", cascade="all, delete-orphan"
     )
+    image_url = Column("image_url", String, nullable=False)

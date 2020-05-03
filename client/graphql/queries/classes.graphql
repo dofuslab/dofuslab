@@ -3,5 +3,6 @@ query classes {
     id
     name
     allNames
+    imageUrl
   }
 }

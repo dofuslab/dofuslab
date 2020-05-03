@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
+import { jsx, ClassNames } from '@emotion/core';
 import { Button, Input, InputNumber, Form, Popover } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -27,6 +27,7 @@ interface Props {
   customSet?: CustomSet | null;
   isMobile?: boolean;
   errors: Array<BuildError>;
+  className?: string;
 }
 
 interface CustomSetMetadata {
@@ -60,7 +61,12 @@ const reducer = (state: CustomSetMetadata, action: CustomSetMetdataAction) => {
   }
 };
 
-const SetHeader: React.FC<Props> = ({ customSet, isMobile, errors }) => {
+const SetHeader: React.FC<Props> = ({
+  customSet,
+  isMobile,
+  errors,
+  className,
+}) => {
   const originalState = {
     isEditing: false,
     name: customSet?.name || '',
@@ -263,129 +269,132 @@ const SetHeader: React.FC<Props> = ({ customSet, isMobile, errors }) => {
   const modifiedDate = new Date(customSet?.lastModified);
 
   return (
-    <>
-      <div
-        css={{
-          display: 'flex',
-          alignItems: 'center',
-          flex: '0 0 96px',
-          margin: '12px 4px',
-          [mq[1]]: {
-            overflowX: 'hidden',
-            alignItems: 'stretch',
-            margin: '4px 0px',
-            padding: '0px 14px',
-            flex: '0 0 52px',
-          },
-          [mq[4]]: {
-            padding: '0px 20px',
-          },
-        }}
-      >
-        {customSet && !metadataState.isEditing && !isMobile ? (
-          <Popover
-            overlayStyle={{ maxWidth: 360 }}
-            title={
-              <div css={{ fontWeight: 500, overflowWrap: 'break-word' }}>
-                {customSet.name || t('UNTITLED')}
-              </div>
-            }
-            content={
-              <div
-                css={{
-                  display: 'grid',
-                  gridTemplateColumns: 'auto auto',
-                  gridColumnGap: 12,
-                }}
-              >
-                <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
-                <div>{customSet.owner?.username ?? t('ANONYMOUS')}</div>
-                <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-                <div>
-                  {creationDate.toLocaleDateString(undefined, {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })}{' '}
-                  {creationDate.toLocaleTimeString(undefined, {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                  })}
-                </div>
-                <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-                <div>
-                  {modifiedDate.toLocaleDateString(undefined, {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })}{' '}
-                  {modifiedDate.toLocaleTimeString(undefined, {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                  })}
-                </div>
-              </div>
-            }
-            placement="bottomLeft"
-          >
-            {formElement}
-          </Popover>
-        ) : (
-          formElement
-        )}
-        {customSet && !isMobile && (
-          <BuildActions customSet={customSet} isMobile={false} />
-        )}
-        {customSet && !isMobile && (
-          <BonusStats customSet={customSet} isMobile={false} />
-        )}
-        {customSet && !isMobile && (
-          <BuildErrors customSet={customSet} errors={errors} />
-        )}
-      </div>
-      {customSet && isMobile && (
+    <ClassNames>
+      {({ css, cx }) => (
         <>
-          <div css={{ marginBottom: 20, fontSize: '0.75rem' }}>
-            <div css={{ display: 'flex' }}>
-              <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
-              <div css={{ marginLeft: 8 }}>
-                {customSet.owner?.username ?? t('ANONYMOUS')}
-              </div>
-            </div>
-            <div css={{ display: 'flex' }}>
-              <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-              <div css={{ marginLeft: 8 }}>
-                {creationDate.toLocaleDateString(undefined, {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}{' '}
-                {creationDate.toLocaleTimeString(undefined, {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                })}
-              </div>
-            </div>
-            <div css={{ display: 'flex' }}>
-              <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-              <div css={{ marginLeft: 8 }}>
-                {modifiedDate.toLocaleDateString(undefined, {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}{' '}
-                {modifiedDate.toLocaleTimeString(undefined, {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                })}
-              </div>
-            </div>
+          <div
+            css={cx(
+              css({
+                display: 'flex',
+                alignItems: 'center',
+                flex: '0 0 96px',
+                margin: '12px 4px',
+                [mq[1]]: {
+                  overflowX: 'hidden',
+                  alignItems: 'stretch',
+                  margin: '4px 0px',
+                  flex: '0 0 52px',
+                },
+              }),
+              className,
+            )}
+          >
+            {customSet && !metadataState.isEditing && !isMobile ? (
+              <Popover
+                overlayStyle={{ maxWidth: 360 }}
+                title={
+                  <div css={{ fontWeight: 500, overflowWrap: 'break-word' }}>
+                    {customSet.name || t('UNTITLED')}
+                  </div>
+                }
+                content={
+                  <div
+                    css={{
+                      display: 'grid',
+                      gridTemplateColumns: 'auto auto',
+                      gridColumnGap: 12,
+                    }}
+                  >
+                    <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
+                    <div>{customSet.owner?.username ?? t('ANONYMOUS')}</div>
+                    <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
+                    <div>
+                      {creationDate.toLocaleDateString(undefined, {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric',
+                      })}{' '}
+                      {creationDate.toLocaleTimeString(undefined, {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </div>
+                    <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
+                    <div>
+                      {modifiedDate.toLocaleDateString(undefined, {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric',
+                      })}{' '}
+                      {modifiedDate.toLocaleTimeString(undefined, {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </div>
+                  </div>
+                }
+                placement="bottomLeft"
+              >
+                {formElement}
+              </Popover>
+            ) : (
+              formElement
+            )}
+            {customSet && !isMobile && (
+              <BuildActions customSet={customSet} isMobile={false} />
+            )}
+            {customSet && !isMobile && (
+              <BonusStats customSet={customSet} isMobile={false} />
+            )}
+            {customSet && !isMobile && (
+              <BuildErrors customSet={customSet} errors={errors} />
+            )}
           </div>
-          <BuildActions customSet={customSet} isMobile />
-          <BuildErrors customSet={customSet} errors={errors} isMobile />
+          {customSet && isMobile && (
+            <>
+              <div css={{ marginBottom: 20, fontSize: '0.75rem' }}>
+                <div css={{ display: 'flex' }}>
+                  <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
+                  <div css={{ marginLeft: 8 }}>
+                    {customSet.owner?.username ?? t('ANONYMOUS')}
+                  </div>
+                </div>
+                <div css={{ display: 'flex' }}>
+                  <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
+                  <div css={{ marginLeft: 8 }}>
+                    {creationDate.toLocaleDateString(undefined, {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}{' '}
+                    {creationDate.toLocaleTimeString(undefined, {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })}
+                  </div>
+                </div>
+                <div css={{ display: 'flex' }}>
+                  <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
+                  <div css={{ marginLeft: 8 }}>
+                    {modifiedDate.toLocaleDateString(undefined, {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}{' '}
+                    {modifiedDate.toLocaleTimeString(undefined, {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })}
+                  </div>
+                </div>
+              </div>
+              <BuildActions customSet={customSet} isMobile />
+              <BuildErrors customSet={customSet} errors={errors} isMobile />
+            </>
+          )}
         </>
       )}
-    </>
+    </ClassNames>
   );
 };
 

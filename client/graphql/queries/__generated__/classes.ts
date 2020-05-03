@@ -12,6 +12,7 @@ export interface classes_classes {
   id: any;
   name: string;
   allNames: string[];
+  imageUrl: string;
 }
 
 export interface classes {

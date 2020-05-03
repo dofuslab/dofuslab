@@ -71,13 +71,13 @@ const ClassicEquipmentSlots: React.FC<Props> = ({
       css={{
         display: 'grid',
         gridGap: 12,
-        gridTemplateColumns: 'repeat(6, 72px)',
-        gridTemplateRows: 'repeat(6, 72px)',
-        [mq[4]]: {
-          gridTemplateColumns: 'repeat(6, 84px)',
-          gridTemplateRows: 'repeat(6, 84px)',
-        },
-        flexShrink: 0,
+        gridTemplateColumns: 'repeat(6, 1fr)',
+        gridTemplateRows: 'repeat(6, 1fr)',
+        // [mq[4]]: {
+        //   gridTemplateColumns: 'repeat(6, 84px)',
+        //   gridTemplateRows: 'repeat(6, 84px)',
+        // },
+        width: '100%',
       }}
     >
       {itemSlots?.map((slot) => {

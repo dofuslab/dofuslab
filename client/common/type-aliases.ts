@@ -18,6 +18,7 @@ import {
   item_weaponStats as WeaponStats,
   item_itemType as ItemTypeWithSlots,
 } from 'graphql/fragments/__generated__/item';
+import { classes_classes as Class } from 'graphql/queries/__generated__/classes';
 
 export type { set as ItemSet } from 'graphql/fragments/__generated__/set';
 export type { item as Item } from 'graphql/fragments/__generated__/item';
@@ -34,4 +35,5 @@ export type {
   WeaponStats,
   Stats,
   ItemTypeWithSlots,
+  Class,
 };

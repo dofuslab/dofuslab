@@ -60,6 +60,7 @@ import {
   ItemSlot,
   ItemTypeWithSlots,
   EquippedItem,
+  Class,
 } from './type-aliases';
 
 export const navigateToNewCustomSet = (
@@ -1262,4 +1263,29 @@ export const getInitialRangedState = (
       getStatWithDefault(statsFromCustomSet, Stat.PCT_MELEE_DAMAGE);
   }
   return initialShowRanged;
+};
+
+export const onSelectClass = (
+  classes: Array<Class>,
+  selectedClass: string,
+  router: NextRouter,
+) => {
+  const idToName = classes.reduce((acc, { id, name }) => {
+    return { ...acc, [id]: name };
+  }, {} as { [key: string]: string });
+
+  const { query } = router;
+
+  const newQuery: { [key: string]: string | string[] } = {
+    ...query,
+    ...(idToName && { class: idToName?.[selectedClass] }),
+  };
+  const { customSetId, ...restNewQuery } = newQuery;
+  router.replace(
+    { pathname: router.pathname, query: newQuery },
+    {
+      pathname: router.asPath.substring(0, router.asPath.indexOf('?')),
+      query: restNewQuery,
+    },
+  );
 };
