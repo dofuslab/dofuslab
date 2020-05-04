@@ -142,7 +142,7 @@ const SelectorFilters: React.FC<Props> = ({
           {shouldShowBack && (
             <Link
               href={{ pathname: '/index', query: { customSetId } }}
-              as={customSetId ? `/build/${customSetId}` : '/'}
+              as={customSetId ? `/build/${customSetId}/` : '/'}
               passHref
             >
               <a>

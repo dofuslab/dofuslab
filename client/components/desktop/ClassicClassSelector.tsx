@@ -73,7 +73,7 @@ const ClassicClassSelector: React.FC = () => {
                     }}
                     as={
                       query.customSetId
-                        ? `/build/${query.customSetId}?class=${dofusClass.name}`
+                        ? `/build/${query.customSetId}/?class=${dofusClass.name}`
                         : `/?class=${dofusClass.name}`
                     }
                     shallow

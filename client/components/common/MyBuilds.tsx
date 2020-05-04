@@ -228,7 +228,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
       {myBuilds?.currentUser?.customSets.edges.map(({ node }) => (
         <Link
           href={{ pathname: '/index', query: { customSetId: node.id } }}
-          as={`/build/${node.id}`}
+          as={`/build/${node.id}/`}
           key={node.id}
         >
           <div>

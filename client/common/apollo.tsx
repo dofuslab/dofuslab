@@ -32,10 +32,8 @@ function create(initialState: any, headers: IncomingHttpHeaders) {
     headers,
     fetch,
     onError: ({ graphQLErrors, networkError }) => {
-      if (networkError) {
-        if (process.browser) {
-          notification.error({ message: networkError.message });
-        }
+      if (networkError && process.browser) {
+        notification.error({ message: networkError.message });
       }
       if (graphQLErrors) {
         graphQLErrors.forEach(({ message }) => {

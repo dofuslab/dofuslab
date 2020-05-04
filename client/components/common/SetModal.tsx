@@ -57,10 +57,10 @@ const SetModal: React.FC<Props> = ({
     if (shouldRedirect && customSet) {
       router.push(
         {
-          pathname: '/index',
+          pathname: '/',
           query: { customSetId: customSet.id, class: query.class },
         },
-        customSet ? `/build/${customSet.id}` : '/',
+        customSet ? `/build/${customSet.id}/` : '/',
       );
     }
   }, [mutate, onCancel, customSet, shouldRedirect, router]);

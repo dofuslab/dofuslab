@@ -34,7 +34,7 @@ const EquipPage: NextPage = () => {
         const { itemSlotId: oldItemSlotId, ...restQuery } = router.query;
         router.push(
           { pathname: '/', query: restQuery },
-          customSetId ? `/build/${customSetId}` : '/',
+          customSetId ? `/build/${customSetId}/` : '/',
         );
       }
     },

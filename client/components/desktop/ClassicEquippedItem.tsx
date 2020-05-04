@@ -45,14 +45,17 @@ const ClassicEquippedItem: React.FC<Props> = ({
       {({ css, cx }) => (
         <Link
           href={{
-            pathname: '/equip/[itemSlotId]',
+            pathname: '/equip/[itemSlotId]/',
             query: {
               ...query,
               itemSlotId: slot.id,
               customSetId: customSet?.id,
             },
           }}
-          as={`/equip/${slot.id}/${customSet ? customSet.id : ''}`}
+          as={{
+            pathname: `/equip/${slot.id}/${customSet ? customSet.id : ''}`,
+            query: query.class ? { class: query.class } : undefined,
+          }}
         >
           <div className={cx(css(itemBox(theme)), className)}>
             {equippedItem && customSet ? (
