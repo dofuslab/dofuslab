@@ -11,8 +11,8 @@ import { useQuery, useApolloClient } from '@apollo/react-hooks';
 import { useTranslation } from 'i18n';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
-import { locale } from 'graphql/queries/__generated__/locale';
-import localeQuery from 'graphql/queries/locale.graphql';
+import sessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
+import { sessionSettings } from 'graphql/queries/__generated__/sessionSettings';
 
 type StatusObj = {
   type: 'info' | 'success' | 'warn' | 'error';
@@ -68,7 +68,9 @@ const StatusChecker: React.FC = () => {
   const { t, i18n } = useTranslation('status');
   const client = useApolloClient();
   const { data } = useQuery<currentUser>(currentUserQuery);
-  const { data: localeData } = useQuery<locale>(localeQuery);
+  const { data: settingsData } = useQuery<sessionSettings>(
+    sessionSettingsQuery,
+  );
 
   const processQueryEntry = React.useCallback(
     (statusType: string, statusValue: string) => {
@@ -121,11 +123,11 @@ const StatusChecker: React.FC = () => {
   }, [data]);
 
   React.useEffect(() => {
-    if (localeData?.locale && localeData.locale !== i18n.language) {
-      i18n.changeLanguage(localeData?.locale);
+    if (settingsData?.locale && settingsData.locale !== i18n.language) {
+      i18n.changeLanguage(settingsData?.locale);
       client.resetStore();
     }
-  }, [localeData, client, i18n]);
+  }, [settingsData, client, i18n]);
 
   return null;
 };

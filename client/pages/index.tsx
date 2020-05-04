@@ -1,12 +1,10 @@
 /** @jsx jsx */
 
-import React from 'react';
 import { jsx } from '@emotion/core';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/react-hooks';
-import Lockr from 'lockr';
 
 import DesktopSetBuilder from 'components/desktop/SetBuilder';
 import MobileSetBuilder from 'components/mobile/SetBuilder';
@@ -18,24 +16,12 @@ import {
 } from 'graphql/queries/__generated__/customSet';
 import { CustomSetHead } from 'common/wrappers';
 import ClassicSetBuilder from 'components/desktop/ClassicSetBuilder';
-import { ClassicContext } from 'common/utils';
-import { IS_CLASSIC_STORAGE_KEY } from 'common/constants';
+import { ClassicContext, useClassic } from 'common/utils';
 import ErrorPage from './_error';
 
 const Index: NextPage = () => {
   const router = useRouter();
   const { customSetId } = router.query;
-
-  const [isClassic, setIsClassic] = React.useState<boolean>(false);
-
-  React.useEffect(() => {
-    setIsClassic(Lockr.get(IS_CLASSIC_STORAGE_KEY));
-  }, []);
-
-  const onIsClassicChange = React.useCallback((value: boolean) => {
-    setIsClassic(value);
-    Lockr.set(IS_CLASSIC_STORAGE_KEY, value);
-  }, []);
 
   const { data: customSetData, loading } = useQuery<
     CustomSetQueryType,
@@ -44,12 +30,14 @@ const Index: NextPage = () => {
 
   const customSet = customSetData?.customSetById || null;
 
+  const [isClassic, setIsClassic] = useClassic();
+
   if (customSetId && !customSet && !loading) {
     return <ErrorPage statusCode={404} />;
   }
 
   return (
-    <ClassicContext.Provider value={[isClassic, onIsClassicChange]}>
+    <ClassicContext.Provider value={[isClassic, setIsClassic]}>
       <div className="App" css={{ height: '100%' }}>
         <Head>
           <style

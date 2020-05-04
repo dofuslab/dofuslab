@@ -900,10 +900,27 @@ class ChangeLocale(graphene.Mutation):
         with session_scope():
             user = current_user._get_current_object()
             if current_user.is_authenticated:
-                user.locale = locale
+                user.settings.locale = locale
             session["locale"] = locale
             refresh()
             return ChangeLocale(ok=True)
+
+
+class ChangeClassic(graphene.Mutation):
+    class Arguments:
+        classic = graphene.Boolean(required=True)
+
+    ok = graphene.Boolean(required=True)
+
+    def mutate(self, info, **kwargs):
+        with session_scope():
+            user = current_user._get_current_object()
+            classic = kwargs.get("classic")
+            if current_user.is_authenticated:
+                user.settings.classic = classic
+            session["classic"] = classic
+            refresh()
+            return ChangeClassic(ok=True)
 
 
 class ChangePassword(graphene.Mutation):
@@ -1194,6 +1211,13 @@ class Query(graphene.ObjectType):
     def resolve_locale(self, info):
         return str(get_locale())
 
+    classic = graphene.NonNull(graphene.Boolean)
+
+    def resolve_classic(self, info):
+        if current_user.is_authenticated:
+            return current_user.settings.classic
+        return session.get("classic", False)
+
 
 class Mutation(graphene.ObjectType):
     register_user = RegisterUser.Field()
@@ -1210,6 +1234,7 @@ class Mutation(graphene.ObjectType):
     create_custom_set = CreateCustomSet.Field()
     resend_verification_email = ResendVerificationEmail.Field()
     change_locale = ChangeLocale.Field()
+    change_classic = ChangeClassic.Field()
     change_password = ChangePassword.Field()
     request_password_reset = RequestPasswordReset.Field()
     reset_password = ResetPassword.Field()

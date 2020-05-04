@@ -17,6 +17,7 @@ from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
 from flask_login import UserMixin
 from datetime import datetime
+from .model_user_setting import ModelUserSetting
 
 
 class ModelUserAccount(UserMixin, Base):
@@ -31,12 +32,12 @@ class ModelUserAccount(UserMixin, Base):
     email = Column("email", String(320), unique=True, nullable=False, index=True)
     password = Column("password", LargeBinary, nullable=False)
     custom_sets = relationship("ModelCustomSet", backref="owner")
+    settings = relationship("ModelUserSetting", backref="user", uselist=False)
     creation_date = Column("creation_date", DateTime, default=datetime.now)
     verification_email_sent = Column(
         "verification_email_sent", Boolean, nullable=False, default=False
     )
     verified = Column("verified", Boolean, nullable=False, default=False, index=True)
-    locale = Column("locale", String, nullable=False)
 
     def check_password(self, candidate):
         return bcrypt.check_password_hash(self.password, candidate)

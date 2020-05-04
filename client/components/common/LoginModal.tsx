@@ -12,7 +12,7 @@ import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { useTranslation, Trans } from 'i18n';
 import { mq, PASSWORD_REGEX, EMAIL_REGEX } from 'common/constants';
-import localeQuery from 'graphql/queries/locale.graphql';
+import sessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
 import RequestPasswordResetModal from './RequestPasswordResetModal';
 
 interface Props {
@@ -28,7 +28,7 @@ const LoginModal: React.FC<Props> = ({ visible, onClose, openSignUpModal }) => {
   const client = useApolloClient();
   const [login, { loading }] = useMutation<ILogin, ILoginVariables>(
     loginMutation,
-    { refetchQueries: [{ query: localeQuery }] },
+    { refetchQueries: [{ query: sessionSettingsQuery }] },
   );
 
   const handleOk = React.useCallback(async () => {

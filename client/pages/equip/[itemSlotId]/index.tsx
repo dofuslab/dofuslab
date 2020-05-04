@@ -1,5 +1,6 @@
 /** @jsx jsx */
 
+import React from 'react';
 import { jsx } from '@emotion/core';
 import { NextPage } from 'next';
 import Head from 'next/head';
@@ -18,10 +19,27 @@ import ErrorPage from 'pages/_error';
 import MobileLayout from 'components/mobile/Layout';
 import DesktopLayout from 'components/desktop/Layout';
 import { CustomSetHead } from 'common/wrappers';
+import { ClassicContext, useClassic } from 'common/utils';
 
 const EquipPage: NextPage = () => {
   const router = useRouter();
   const { itemSlotId, customSetId } = router.query;
+
+  const [isClassic, setIsClassic] = useClassic();
+
+  const onIsClassicChange = React.useCallback(
+    (value: boolean) => {
+      setIsClassic(value);
+      if (!value) {
+        const { itemSlotId: oldItemSlotId, ...restQuery } = router.query;
+        router.push(
+          { pathname: '/', query: restQuery },
+          customSetId ? `/build/${customSetId}` : '/',
+        );
+      }
+    },
+    [router],
+  );
 
   const { data } = useQuery<itemSlots>(ItemSlotsQuery);
   const itemSlot = data?.itemSlots.find((slot) => slot.id === itemSlotId);
@@ -58,22 +76,24 @@ const EquipPage: NextPage = () => {
         </MobileLayout>
       </Media>
       <Media greaterThanOrEqual="xs">
-        <DesktopLayout>
-          <Head>
-            <style
-              type="text/css"
-              // eslint-disable-next-line react/no-danger
-              dangerouslySetInnerHTML={{ __html: mediaStyles }}
+        <ClassicContext.Provider value={[isClassic, onIsClassicChange]}>
+          <DesktopLayout>
+            <Head>
+              <style
+                type="text/css"
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={{ __html: mediaStyles }}
+              />
+            </Head>
+            <CustomSetHead customSet={customSet} />
+            <Selector
+              customSet={customSet}
+              selectedItemSlot={itemSlot}
+              showSets={false}
+              isClassic
             />
-          </Head>
-          <CustomSetHead customSet={customSet} />
-          <Selector
-            customSet={customSet}
-            selectedItemSlot={itemSlot}
-            showSets={false}
-            isClassic
-          />
-        </DesktopLayout>
+          </DesktopLayout>
+        </ClassicContext.Provider>
       </Media>
     </>
   );

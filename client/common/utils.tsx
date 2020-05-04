@@ -8,6 +8,7 @@ import groupBy from 'lodash/groupBy';
 import { TFunction } from 'next-i18next';
 import CustomSetFragment from 'graphql/fragments/customSet.graphql';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import Lockr from 'lockr';
 
 import {
   Stat,
@@ -39,6 +40,13 @@ import {
   equipItemsVariables,
 } from 'graphql/mutations/__generated__/equipItems';
 import EquipItemsMutation from 'graphql/mutations/equipItems.graphql';
+import { sessionSettings } from 'graphql/queries/__generated__/sessionSettings';
+import sessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
+import {
+  changeClassic,
+  changeClassicVariables,
+} from 'graphql/mutations/__generated__/changeClassic';
+import changeClassicMutation from 'graphql/mutations/changeClassic.graphql';
 import {
   StatsFromCustomSet,
   SetCounter,
@@ -51,7 +59,7 @@ import {
   StatCalculator,
   BaseStatKey,
 } from './types';
-import { META_DESCRIPTION } from './constants';
+import { META_DESCRIPTION, IS_CLASSIC_STORAGE_KEY } from './constants';
 import {
   CustomSet,
   Stats,
@@ -1298,3 +1306,44 @@ export const ClassicContext = React.createContext<
     // no-op
   },
 ]);
+
+export const useClassic = () => {
+  const { data: sessionSettingsData } = useQuery<sessionSettings>(
+    sessionSettingsQuery,
+  );
+
+  const [mutate] = useMutation<changeClassic, changeClassicVariables>(
+    changeClassicMutation,
+  );
+
+  const [isClassic, setIsClassic] = React.useState<boolean>(
+    sessionSettingsData?.classic ?? false,
+  );
+
+  React.useEffect(() => {
+    let classic = Lockr.get<boolean | null>(IS_CLASSIC_STORAGE_KEY, null);
+    if (classic === null) {
+      classic = sessionSettingsData?.classic ?? null;
+    }
+    setIsClassic(classic || false);
+  }, []);
+
+  const client = useApolloClient();
+
+  const onIsClassicChange = React.useCallback(
+    (value: boolean) => {
+      setIsClassic(value);
+      Lockr.set(IS_CLASSIC_STORAGE_KEY, value);
+      mutate({ variables: { classic: value } });
+      if (sessionSettingsData) {
+        client.writeQuery<sessionSettings>({
+          query: sessionSettingsQuery,
+          data: { ...sessionSettingsData, classic: value },
+        });
+      }
+    },
+    [client, sessionSettingsData, mutate],
+  );
+
+  return [isClassic, onIsClassicChange] as const;
+};

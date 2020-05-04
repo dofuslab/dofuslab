@@ -28,6 +28,9 @@ interface Props {
   errors: Array<BuildError>;
 }
 
+const NO_CLASS_IMG =
+  'https://dofus-lab.s3.us-east-2.amazonaws.com/class/sprite/No_Class.png';
+
 const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
   const { data } = useQuery<ItemSlotsQueryType>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
@@ -143,22 +146,20 @@ const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
             <BonusStats customSet={customSet} isMobile={false} isClassic />
           )}
         </div>
-        {selectedClass && (
-          <div
-            css={{
-              flex: '1 1 0',
-              display: 'flex',
-              alignItems: 'center',
-              margin: '24px 0',
-            }}
-          >
-            <img
-              src={selectedClass?.maleSpriteImageUrl}
-              css={{ maxHeight: '100%', maxWidth: '100%' }}
-              alt={selectedClass?.name}
-            />
-          </div>
-        )}
+        <div
+          css={{
+            flex: '1 1 0',
+            display: 'flex',
+            alignItems: 'center',
+            margin: '24px 0',
+            minWidth: 0,
+            background: `transparent url('${
+              selectedClass ? selectedClass.maleSpriteImageUrl : NO_CLASS_IMG
+            }') no-repeat scroll center center`,
+            backgroundSize: 'contain',
+            alignSelf: 'stretch',
+          }}
+        />
       </div>
       {customSet && equippedItem && (
         <MageModal

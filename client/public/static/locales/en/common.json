@@ -34,6 +34,7 @@
   "INVALID_CHARACTERISTIC_POINTS": "Invalid characteristic point allocation.",
   "INVALID_SCROLLED_CHARACTERISTICS": "Invalid scrolled characteristic points.",
   "ITEMS": "Items",
+  "ITEM_EQUIPPED": "{{itemName}} equipped",
   "JOIN_US_DISCORD": "Join us on Discord",
   "LANGUAGE": "Language",
   "LAST_MODIFIED": "Last modified",

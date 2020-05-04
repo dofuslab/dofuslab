@@ -8,6 +8,8 @@ import { useRouter } from 'next/router';
 import { useApolloClient } from '@apollo/react-hooks';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { ItemSlot, ItemSet, Item } from 'common/type-aliases';
+import { notification } from 'antd';
+import { useTranslation } from 'i18n';
 import BasicItemCard from './BasicItemCard';
 
 interface Props {
@@ -32,7 +34,7 @@ const ItemCard: React.FC<Props> = ({
   nextSlotId,
 }) => {
   const mutate = useEquipItemMutation(item);
-
+  const { t } = useTranslation('common');
   const client = useApolloClient();
 
   const router = useRouter();
@@ -62,6 +64,10 @@ const ItemCard: React.FC<Props> = ({
             },
             `/equip/${nextSlot.id}/${customSetId}`,
           );
+          notification.success({
+            message: t('SUCCESS'),
+            description: t('ITEM_EQUIPPED', { itemName: item.name }),
+          });
         } else {
           router.push(
             { pathname: '/index', query: { customSetId, class: query.class } },
