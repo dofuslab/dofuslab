@@ -71,17 +71,22 @@ const ClassicClassSelector: React.FC = () => {
                       pathname: '/',
                       query: { ...query, class: dofusClass.name },
                     }}
-                    as={`/build/${
-                      query.customSetId ? `${query.customSetId}` : ''
-                    }?class=${dofusClass.name}`}
+                    as={
+                      query.customSetId
+                        ? `/build/${query.customSetId}?class=${dofusClass.name}`
+                        : `/?class=${dofusClass.name}`
+                    }
                     shallow
+                    passHref
                   >
-                    <img
-                      src={dofusClass.faceImageUrl}
-                      css={{
-                        width: '100%',
-                      }}
-                    />
+                    <a>
+                      <img
+                        src={dofusClass.faceImageUrl}
+                        css={{
+                          width: '100%',
+                        }}
+                      />
+                    </a>
                   </Link>
                 </div>
               </Tooltip>
