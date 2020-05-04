@@ -62,7 +62,7 @@ const ItemCard: React.FC<Props> = ({
                 customSetId,
               },
             },
-            `/equip/${nextSlot.id}/${customSetId}`,
+            `/equip/${nextSlot.id}/${customSetId}/`,
           );
           notification.success({
             message: t('SUCCESS'),
@@ -71,7 +71,7 @@ const ItemCard: React.FC<Props> = ({
         } else {
           router.push(
             { pathname: '/index', query: { customSetId, class: query.class } },
-            customSetId ? `/build/${customSetId}` : '/',
+            customSetId ? `/build/${customSetId}/` : '/',
           );
         }
       }
