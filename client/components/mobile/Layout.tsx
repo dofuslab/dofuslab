@@ -158,7 +158,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Global
         styles={{
           html: {
-            fontSize: 18,
+            fontSize: 22,
           },
           body: {
             height: 'auto',
