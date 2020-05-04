@@ -1,6 +1,7 @@
 query itemSlots {
   itemSlots {
     id
+    enName
     name
     order
     itemTypes {

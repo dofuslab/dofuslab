@@ -3,6 +3,8 @@ query classes {
     id
     name
     allNames
-    imageUrl
+    faceImageUrl
+    maleSpriteImageUrl
+    femaleSpriteImageUrl
   }
 }

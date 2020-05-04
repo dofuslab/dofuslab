@@ -147,7 +147,7 @@ const EquipmentSlots: React.FC<Props> = ({
           visible={setModalVisible}
           onCancel={closeSetModal}
           customSet={customSet}
-          isMobile={isMobile}
+          shouldRedirect={isMobile}
         />
       )}
     </div>

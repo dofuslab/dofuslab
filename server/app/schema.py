@@ -133,6 +133,17 @@ class ItemSlot(SQLAlchemyObjectType):
             .name
         )
 
+    en_name = graphene.String(required=True)
+
+    def resolve_en_name(self, info):
+        query = db.session.query(ModelItemSlotTranslation)
+        return (
+            query.filter(ModelItemSlotTranslation.locale == "en")
+            .filter(ModelItemSlotTranslation.item_slot_id == self.uuid)
+            .one()
+            .name
+        )
+
     class Meta:
         model = ModelItemSlot
         interfaces = (GlobalNode,)

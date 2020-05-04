@@ -112,7 +112,7 @@ const EquippedItemPage: NextPage = () => {
           setName={selectedSet.name}
           onCancel={closeSetModal}
           customSet={customSet}
-          isMobile
+          shouldRedirect
         />
       )}
     </Layout>

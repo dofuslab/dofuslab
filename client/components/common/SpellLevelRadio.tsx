@@ -10,6 +10,7 @@ interface IProps {
   selectedSpellLevelIdx: number;
   onChange: (e: RadioChangeEvent) => void;
   spellLevelIdx: number;
+  className?: string;
 }
 
 const SpellLevelRadio: React.FC<IProps> = ({
@@ -17,10 +18,16 @@ const SpellLevelRadio: React.FC<IProps> = ({
   selectedSpellLevelIdx,
   onChange,
   spellLevelIdx,
+  className,
 }) => {
   const { t } = useTranslation('weapon_spell_effect');
   return (
-    <Radio.Group value={selectedSpellLevelIdx} onChange={onChange} size="small">
+    <Radio.Group
+      value={selectedSpellLevelIdx}
+      onChange={onChange}
+      size="small"
+      className={className}
+    >
       {Array(spell.spellStats.length)
         .fill(null)
         .map((_, idx) => {

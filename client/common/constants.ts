@@ -173,3 +173,8 @@ export const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
 
 export const META_DESCRIPTION =
   'Experiment with your equipment at DofusLab, the open-source set builder for the MMORPG Dofus.';
+
+export const getSelectorNumCols = (isClassic?: boolean) =>
+  isClassic ? [2, 3, 4, 5, 6, 7, 8] : [2, 2, 2, 3, 4, 5, 6];
+
+export const IS_CLASSIC_STORAGE_KEY = 'isClassic';

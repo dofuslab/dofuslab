@@ -12,9 +12,13 @@ import { mq } from 'common/constants';
 import { useSetModal } from 'common/utils';
 import { BuildError } from 'common/types';
 import { ItemSlot, CustomSet, EquippedItem } from 'common/type-aliases';
-import DesktopEquippedItem from './EquippedItem';
+import { useRouter } from 'next/router';
+import { classes } from 'graphql/queries/__generated__/classes';
+import classesQuery from 'graphql/queries/classes.graphql';
 import MageModal from '../common/MageModal';
 import SetModal from '../common/SetModal';
+import BonusStats from './BonusStats';
+import ClassicEquippedItem from './ClassicEquippedItem';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -24,15 +28,20 @@ interface Props {
   errors: Array<BuildError>;
 }
 
-const ClassicEquipmentSlots: React.FC<Props> = ({
-  customSet,
-  selectItemSlot,
-  selectedItemSlotId,
-  isMobile,
-  errors,
-}) => {
+const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
   const { data } = useQuery<ItemSlotsQueryType>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
+
+  const router = useRouter();
+  const { query } = router;
+
+  const { data: classesData } = useQuery<classes>(classesQuery);
+  const selectedClassName = Array.isArray(query.class)
+    ? query.class[0]
+    : query.class;
+  const selectedClass = classesData?.classes.find((c) =>
+    c.allNames.includes(selectedClassName),
+  );
 
   const equippedItemsBySlotId: {
     [key: string]: EquippedItem;
@@ -66,6 +75,11 @@ const ClassicEquipmentSlots: React.FC<Props> = ({
 
   const groupedErrors = groupBy(errors, ({ equippedItem: ei }) => ei.id);
 
+  const sortedItemSlots = itemSlots
+    ? [...itemSlots].sort((s1, s2) => s1.order - s2.order)
+    : [];
+  const slotCounter: { [key: string]: number } = {};
+
   return (
     <div
       css={{
@@ -73,33 +87,38 @@ const ClassicEquipmentSlots: React.FC<Props> = ({
         gridGap: 12,
         gridTemplateColumns: 'repeat(6, 1fr)',
         gridTemplateRows: 'repeat(6, 1fr)',
-        // [mq[4]]: {
-        //   gridTemplateColumns: 'repeat(6, 84px)',
-        //   gridTemplateRows: 'repeat(6, 84px)',
-        // },
+        gridTemplateAreas: `
+          "Amulet Character Character Character Character Hat"
+          "Ring Character Character Character Character Cloak"
+          "Ring2 Character Character Character Character Belt"
+          "Weapon Character Character Character Character Boots"
+          "Shield Character Character Character Character Pet"
+          "Dofus Dofus2 Dofus3 Dofus4 Dofus5 Dofus6"
+        `,
         width: '100%',
       }}
     >
-      {itemSlots?.map((slot) => {
+      {sortedItemSlots.map((slot) => {
         const ei: EquippedItem | undefined = equippedItemsBySlotId[slot.id];
         const equippedItemErrors: Array<BuildError> | undefined =
           groupedErrors[ei?.id];
+        const count = slotCounter[slot.enName];
+        slotCounter[slot.enName] = count ? count + 1 : 1;
+
         return (
           <div
             key={`slot-${slot.id}`}
             css={{
-              flex: '1 1 0',
               minWidth: 0,
-              maxWidth: 80,
-              [mq[4]]: { maxWidth: 100 },
+              gridArea: `${slot.enName}${
+                count ? slotCounter[slot.enName] : ''
+              }`,
             }}
           >
-            <DesktopEquippedItem
+            <ClassicEquippedItem
               slot={slot}
               key={slot.id}
               equippedItem={ei}
-              selected={selectedItemSlotId === slot.id}
-              selectItemSlot={selectItemSlot}
               customSet={customSet}
               openMageModal={openMageModal}
               openSetModal={openSetModal}
@@ -108,6 +127,39 @@ const ClassicEquipmentSlots: React.FC<Props> = ({
           </div>
         );
       })}
+      <div
+        css={{
+          gridArea: 'Character',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        <div
+          css={{ flex: '0 0 120px', maxWidth: 320, [mq[4]]: { maxWidth: 360 } }}
+        >
+          {customSet && (
+            <BonusStats customSet={customSet} isMobile={false} isClassic />
+          )}
+        </div>
+        {selectedClass && (
+          <div
+            css={{
+              flex: '1 1 0',
+              display: 'flex',
+              alignItems: 'center',
+              margin: '24px 0',
+            }}
+          >
+            <img
+              src={selectedClass?.maleSpriteImageUrl}
+              css={{ maxHeight: '100%', maxWidth: '100%' }}
+              alt={selectedClass?.name}
+            />
+          </div>
+        )}
+      </div>
       {customSet && equippedItem && (
         <MageModal
           visible={mageModalVisible}
@@ -124,7 +176,6 @@ const ClassicEquipmentSlots: React.FC<Props> = ({
           visible={setModalVisible}
           onCancel={closeSetModal}
           customSet={customSet}
-          isMobile={isMobile}
         />
       )}
     </div>

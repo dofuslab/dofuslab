@@ -165,11 +165,14 @@ const EquippedItemCard: React.FC<Props> = ({
         <Link
           href={{ pathname: '/index', query: { customSetId: customSet.id } }}
           as={customSet ? `/build/${customSet.id}` : '/'}
+          passHref
         >
-          <Button size="large" css={{ fontSize: '0.75rem' }}>
-            <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
-            {t('BACK')}
-          </Button>
+          <a>
+            <Button size="large" css={{ fontSize: '0.75rem' }}>
+              <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
+              {t('BACK')}
+            </Button>
+          </a>
         </Link>
       </Media>
       <Card
@@ -238,8 +241,11 @@ const EquippedItemCard: React.FC<Props> = ({
             },
           }}
           as={`/equip/${equippedItem.slot.id}/${customSet ? customSet.id : ''}`}
+          passHref
         >
-          <Button>{t('REPLACE')}</Button>
+          <a>
+            <Button>{t('REPLACE')}</Button>
+          </a>
         </Link>
         <Button onClick={onDelete} css={{ marginLeft: 12 }}>
           {t('DELETE')}

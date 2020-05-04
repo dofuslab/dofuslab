@@ -14,6 +14,7 @@ import { Card } from 'antd';
 import { itemCardStyle } from 'common/mixins';
 import { useTheme } from 'emotion-theming';
 import { TTheme } from 'common/themes';
+import { useTranslation } from 'i18n';
 
 const ClassicClassSelector: React.FC = () => {
   const router = useRouter();
@@ -25,6 +26,7 @@ const ClassicClassSelector: React.FC = () => {
     : query.class;
 
   const theme = useTheme<TTheme>();
+  const { t } = useTranslation('common');
 
   return (
     <Card
@@ -37,6 +39,7 @@ const ClassicClassSelector: React.FC = () => {
         border: `1px solid ${theme.border?.default}`,
         background: theme.layer?.background,
       }}
+      title={t('SELECT_CLASS')}
     >
       {data ? (
         <div
@@ -44,16 +47,13 @@ const ClassicClassSelector: React.FC = () => {
             display: 'grid',
             gridTemplateColumns: 'repeat(5, 1fr)',
             minHeight: 288,
+            gridGap: 16,
           }}
         >
           {[...data.classes]
             .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
             .map(dofusClass => (
-              <Tooltip
-                key={dofusClass.id}
-                title={dofusClass.name}
-                align={{ offset: [0, 12] }}
-              >
+              <Tooltip key={dofusClass.id} title={dofusClass.name}>
                 <div
                   css={{
                     cursor: 'pointer',
@@ -77,7 +77,7 @@ const ClassicClassSelector: React.FC = () => {
                     shallow
                   >
                     <img
-                      src={dofusClass.imageUrl}
+                      src={dofusClass.faceImageUrl}
                       css={{
                         width: '100%',
                       }}

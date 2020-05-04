@@ -4,14 +4,13 @@ import * as React from 'react';
 import { jsx } from '@emotion/core';
 import { Tabs } from 'antd';
 
-import { SEARCH_BAR_ID, mq } from 'common/constants';
+import { mq } from 'common/constants';
 import Layout from './Layout';
 
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getStatsFromCustomSet, getErrors } from 'common/utils';
 import SetHeader from '../common/SetHeader';
 import ClassicEquipmentSlots from './ClassicEquipmentSlots';
-import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { IError } from 'common/types';
 import ClassicLeftColumnStats from './ClassicLeftColumnStats';
 import StatTable from 'components/common/StatTable';
@@ -32,32 +31,6 @@ interface IProps {
 }
 
 const ClassicSetBuilder: React.FC<IProps> = ({ customSet }) => {
-  const [
-    selectedItemSlot,
-    selectItemSlot,
-  ] = React.useState<itemSlots_itemSlots | null>(null);
-
-  React.useEffect(() => {
-    function onKeyDown(e: KeyboardEvent) {
-      if (e.keyCode === 27) {
-        // escape key
-        selectItemSlot(null);
-      }
-    }
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
-  }, []);
-
-  React.useEffect(() => {
-    const searchBar = document.getElementById(
-      SEARCH_BAR_ID,
-    ) as HTMLInputElement;
-    if (searchBar) {
-      searchBar.focus();
-      searchBar.setSelectionRange(0, searchBar.value.length);
-    }
-  }, [selectedItemSlot?.id]);
-
   const statsFromCustomSet = React.useMemo(
     () => getStatsFromCustomSet(customSet),
     [customSet],
@@ -88,7 +61,7 @@ const ClassicSetBuilder: React.FC<IProps> = ({ customSet }) => {
           padding: '0 12px',
         }}
       >
-        <SetHeader customSet={customSet} errors={errors} />
+        <SetHeader customSet={customSet} errors={errors} isClassic />
         <Tabs
           defaultActiveKey="characteristics"
           css={{
@@ -108,14 +81,15 @@ const ClassicSetBuilder: React.FC<IProps> = ({ customSet }) => {
               css={{ display: 'flex', alignItems: 'flex-start', marginTop: 8 }}
             >
               <ClassicLeftColumnStats customSet={customSet} />
-              <div>
-                <ClassicEquipmentSlots
-                  customSet={customSet}
-                  selectItemSlot={selectItemSlot}
-                  selectedItemSlotId={selectedItemSlot?.id ?? null}
-                  errors={errors}
-                />
-                <div css={{ display: 'flex' }}>
+              <div css={{ flex: '1 1 auto' }}>
+                <ClassicEquipmentSlots customSet={customSet} errors={errors} />
+                <div
+                  css={{
+                    display: 'flex',
+                    marginTop: 12,
+                    [mq[4]]: { marginTop: 20 },
+                  }}
+                >
                   <StatTable
                     group={[
                       Stat.PCT_NEUTRAL_RES,
@@ -163,9 +137,9 @@ const ClassicSetBuilder: React.FC<IProps> = ({ customSet }) => {
                 marginBottom: 60,
               }}
             >
+              <ClassicClassSelector />
               {weapon && customSet && weapon.item.weaponStats && (
                 <>
-                  <ClassicClassSelector />
                   <BasicItemCard
                     item={weapon.item}
                     showOnlyWeaponStats

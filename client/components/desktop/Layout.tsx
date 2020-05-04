@@ -10,6 +10,7 @@ import {
   Dropdown,
   Menu,
   Divider,
+  Switch,
 } from 'antd';
 import { useRouter } from 'next/router';
 import { useTheme } from 'emotion-theming';
@@ -42,6 +43,8 @@ import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
 import { LIGHT_THEME_NAME } from 'common/themes';
 import Tooltip from 'components/common/Tooltip';
+import { switchStyle } from 'common/mixins';
+import { ClassicContext } from 'common/utils';
 import { Theme } from 'common/types';
 import MyBuilds from '../common/MyBuilds';
 import SignUpModal from '../common/SignUpModal';
@@ -165,6 +168,20 @@ const Layout = ({ children }: LayoutProps) => {
 
   const theme = useTheme<Theme>();
 
+  const classicSwitch = (
+    <ClassicContext.Consumer>
+      {([isClassic, setIsClassic]) => (
+        <Tooltip title={t('DOFUSLAB_CLASSIC', { ns: 'common' })}>
+          <Switch
+            css={{ ...switchStyle(theme, true), marginLeft: 12 }}
+            checked={isClassic}
+            onChange={setIsClassic}
+          />
+        </Tooltip>
+      )}
+    </ClassicContext.Consumer>
+  );
+
   return (
     <AntdLayout
       css={{
@@ -239,19 +256,22 @@ const Layout = ({ children }: LayoutProps) => {
           fontSize: '0.8rem',
         }}
       >
-        <Link href="/" as="/">
-          <div css={{ fontWeight: 500, cursor: 'pointer' }}>
-            <img
-              src={
-                theme.name === LIGHT_THEME_NAME
-                  ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg'
-                  : 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark.svg'
-              }
-              css={{ width: 120 }}
-              alt="DofusLab"
-            />
-          </div>
-        </Link>
+        <div css={{ display: 'flex', alignItems: 'center' }}>
+          <Link href="/" as="/">
+            <div css={{ fontWeight: 500, cursor: 'pointer' }}>
+              <img
+                src={
+                  theme.name === LIGHT_THEME_NAME
+                    ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg'
+                    : 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark.svg'
+                }
+                css={{ width: 120 }}
+                alt="DofusLab"
+              />
+            </div>
+          </Link>
+          {classicSwitch}
+        </div>
         <div css={{ display: 'flex', alignItems: 'center' }}>
           {data?.currentUser ? (
             <div>

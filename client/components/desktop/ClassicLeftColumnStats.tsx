@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
+import { jsx, ClassNames } from '@emotion/core';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import StatTable from 'components/common/StatTable';
 import { Stat } from '__generated__/globalTypes';
@@ -24,7 +24,7 @@ const ClassicLeftColumnStats: React.FC<IProps> = ({ customSet }) => {
   return (
     <div
       css={{
-        width: 260,
+        flex: '0 2 260px',
         display: 'flex',
         flexDirection: 'column',
         marginRight: 12,
@@ -47,7 +47,14 @@ const ClassicLeftColumnStats: React.FC<IProps> = ({ customSet }) => {
         customSet={customSet}
         css={margin}
       />
-      <StatEditor customSet={customSet} css={margin} />
+      <ClassNames>
+        {({ css, cx }) => (
+          <StatEditor
+            customSet={customSet}
+            css={cx(css(margin), css({ [mq[2]]: { marginTop: 16 } }))}
+          />
+        )}
+      </ClassNames>
       <StatTable
         group={[Stat.DODGE, Stat.LOCK]}
         statsFromCustomSet={statsFromCustomSet}

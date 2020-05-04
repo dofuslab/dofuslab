@@ -16,6 +16,7 @@ export interface itemSlots_itemSlots_itemTypes {
 export interface itemSlots_itemSlots {
   __typename: "ItemSlot";
   id: any;
+  enName: string;
   name: string;
   order: number;
   itemTypes: itemSlots_itemSlots_itemTypes[];

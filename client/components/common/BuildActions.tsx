@@ -38,9 +38,10 @@ import DeleteCustomSetModal from './DeleteCustomSetModal';
 interface Props {
   customSet: CustomSet;
   isMobile: boolean;
+  isClassic?: boolean;
 }
 
-const BuildActions: React.FC<Props> = ({ customSet, isMobile }) => {
+const BuildActions: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
   const { t } = useTranslation('common');
   const theme = useTheme<Theme>();
   const [copyMutate, { loading: copyLoading }] = useMutation<
@@ -139,11 +140,11 @@ const BuildActions: React.FC<Props> = ({ customSet, isMobile }) => {
         marginBottom: 12,
         [mq[1]]: {
           marginBottom: 0,
-          marginLeft: 12,
+          marginLeft: isClassic ? 'auto' : 12,
           display: 'flex',
           alignItems: 'center',
         },
-        [mq[4]]: { marginLeft: 20 },
+        [mq[4]]: { marginLeft: isClassic ? 'auto' : 20 },
       }}
     >
       <textarea
@@ -153,6 +154,7 @@ const BuildActions: React.FC<Props> = ({ customSet, isMobile }) => {
       />
       <Dropdown
         trigger={isMobile ? ['click'] : ['hover']}
+        placement={isClassic ? 'bottomRight' : 'bottomLeft'}
         overlay={
           <Menu>
             <Menu.Item key="copy-link" onClick={onCopyLink}>

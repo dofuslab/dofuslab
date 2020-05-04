@@ -226,16 +226,14 @@ const WeaponDamage: React.FC<Props> = ({
       }}
     >
       <Radio.Group value={weaponSkillPower} onChange={onWeaponSkillChange}>
-        <Radio value={0} css={{ fontSize: '0.75rem' }}>
+        <Radio value={0} css={{ fontSize: '0.75rem', display: 'block' }}>
           {t('NO_WEAPON_SKILL')}
         </Radio>
-        <Radio value={300} css={{ fontSize: '0.75rem' }}>
-          {t('WEAPON_SKILL')} (300
-          {t('POWER', { ns: 'stat' })})
+        <Radio value={300} css={{ fontSize: '0.75rem', display: 'block' }}>
+          {t('WEAPON_SKILL')} (300 {t('POWER', { ns: 'stat' })})
         </Radio>
-        <Radio value={350} css={{ fontSize: '0.75rem' }}>
-          {t('WEAPON_SKILL')} (350
-          {t('POWER', { ns: 'stat' })})
+        <Radio value={350} css={{ fontSize: '0.75rem', display: 'block' }}>
+          {t('WEAPON_SKILL')} (350 {t('POWER', { ns: 'stat' })})
         </Radio>
       </Radio.Group>
       <Divider css={{ margin: '12px 0' }} />

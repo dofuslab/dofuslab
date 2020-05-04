@@ -84,6 +84,7 @@ const SpellVariantPairCard: React.FC<IProps> = ({
           onChange={onLevelChange}
           spellLevelIdx={spellLevelIdx}
           spell={spell}
+          css={{ marginLeft: 8 }}
         />
       }
       onTabChange={onTabChange}

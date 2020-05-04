@@ -109,7 +109,7 @@ const StatusChecker: React.FC = () => {
         });
       }
     });
-    const { customSetId, ...restQuery } = newQuery;
+    const { customSetId, itemSlotId, equippedItemId, ...restQuery } = newQuery;
     router.replace(
       { pathname: router.pathname, query: newQuery },
       {
@@ -127,7 +127,6 @@ const StatusChecker: React.FC = () => {
     }
   }, [localeData, client, i18n]);
 
-  // return <Html lang={i18n.language} />;
   return null;
 };
 

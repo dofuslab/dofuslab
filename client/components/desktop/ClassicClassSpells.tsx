@@ -11,7 +11,6 @@ import { useTheme } from 'emotion-theming';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { useTranslation } from 'i18n';
 import {
   classById,
   classByIdVariables,
@@ -29,7 +28,6 @@ const ClassicClassSpells: React.FC<IProps> = ({ customSet }) => {
   const router = useRouter();
   const { query } = router;
   const { data } = useQuery<classes>(classesQuery);
-  const { t } = useTranslation('common');
   const theme = useTheme<TTheme>();
 
   const nameToId = data?.classes.reduce((acc, { id, allNames }) => {
@@ -65,12 +63,13 @@ const ClassicClassSpells: React.FC<IProps> = ({ customSet }) => {
               customSet={customSet}
             />
           ))
-        : classDataLoading
-        ? Array(22)
+        : classDataLoading &&
+          Array(22)
             .fill(null)
-            .map(_ => (
+            .map((_, idx) => (
               <Card
                 size="small"
+                key={idx}
                 css={{
                   ...itemCardStyle,
                   border: `1px solid ${theme.border?.default}`,
@@ -79,8 +78,7 @@ const ClassicClassSpells: React.FC<IProps> = ({ customSet }) => {
               >
                 <Skeleton loading title active paragraph={{ rows: 6 }} />
               </Card>
-            ))
-        : t('SELECT_CLASS_DETAILED')}
+            ))}
     </>
   ) : null;
 };

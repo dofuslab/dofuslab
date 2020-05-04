@@ -19,9 +19,10 @@ const DISPLAY_ITEM_LIMIT = 3;
 interface Props {
   customSet: CustomSet;
   isMobile: boolean;
+  isClassic?: boolean;
 }
 
-const BonusStats: React.FC<Props> = ({ customSet, isMobile }) => {
+const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
   const { t } = useTranslation(['stat', 'common']);
   const setBonuses = getBonusesFromCustomSet(customSet);
   const itemOrder = customSet.equippedItems.reduce(
@@ -55,13 +56,20 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile }) => {
         alignItems: 'flex-start',
         flexWrap: 'wrap',
         margin: '18px -6px -6px',
-        [mq[1]]: {
-          margin: '0 0 0 20px',
-          flexDirection: 'row',
-          flex: '0 3 auto',
-          flexWrap: 'wrap',
-          overflowY: 'auto',
-        },
+        [mq[1]]: isClassic
+          ? {
+              flexDirection: 'row',
+              flexWrap: 'wrap',
+              margin: -4,
+              justifyContent: 'center',
+            }
+          : {
+              margin: '0 0 0 20px',
+              flexDirection: 'row',
+              flex: '0 3 auto',
+              flexWrap: 'wrap',
+              overflowY: 'auto',
+            },
       }}
     >
       <ClassNames>
@@ -112,14 +120,14 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile }) => {
                         padding: '4px 8px',
                         cursor: 'pointer',
                         margin: 6,
-                        [mq[1]]: {
-                          margin: 0,
-                        },
-                        ':not(:first-of-type)': {
-                          [mq[1]]: {
-                            marginLeft: 12,
-                          },
-                        },
+                        [mq[1]]: isClassic
+                          ? { margin: 4 }
+                          : {
+                              margin: 0,
+                              '&:not(:first-of-type)': {
+                                marginLeft: 12,
+                              },
+                            },
                       }}
                       onClick={() => {
                         openSetModal(set);
@@ -196,7 +204,7 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile }) => {
           visible={setModalVisible}
           onCancel={closeSetModal}
           customSet={customSet}
-          isMobile={false}
+          shouldRedirect={false}
         />
       )}
     </div>

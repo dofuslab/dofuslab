@@ -4,7 +4,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { Modal, Divider, Skeleton } from 'antd';
 import { useQuery } from '@apollo/react-hooks';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { useTheme } from 'emotion-theming';
 import groupBy from 'lodash/groupBy';
 
@@ -25,7 +25,7 @@ interface Props {
   visible: boolean;
   onCancel: () => void;
   customSet?: CustomSet | null;
-  isMobile?: boolean;
+  shouldRedirect?: boolean;
 }
 
 const SetModal: React.FC<Props> = ({
@@ -34,12 +34,14 @@ const SetModal: React.FC<Props> = ({
   visible,
   onCancel,
   customSet,
-  isMobile,
+  shouldRedirect,
 }) => {
   const { data, loading, error } = useQuery<set, setVariables>(setQuery, {
     variables: { id: setId },
   });
 
+  const router = useRouter();
+  const { query } = router;
   const { t } = useTranslation('common');
   const theme = useTheme<Theme>();
   const [itemIds, setItemIds] = React.useState<Array<string>>([]);
@@ -52,13 +54,16 @@ const SetModal: React.FC<Props> = ({
   const onOk = React.useCallback(async () => {
     await mutate();
     onCancel();
-    if (isMobile && customSet) {
-      Router.push(
-        { pathname: '/index', query: { customSetId: customSet.id } },
+    if (shouldRedirect && customSet) {
+      router.push(
+        {
+          pathname: '/index',
+          query: { customSetId: customSet.id, class: query.class },
+        },
         customSet ? `/build/${customSet.id}` : '/',
       );
     }
-  }, [mutate, onCancel, customSet, isMobile]);
+  }, [mutate, onCancel, customSet, shouldRedirect, router]);
 
   React.useEffect(() => {
     if (data && !loading) {

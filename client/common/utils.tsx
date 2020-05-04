@@ -1289,3 +1289,12 @@ export const onSelectClass = (
     },
   );
 };
+
+export const ClassicContext = React.createContext<
+  [boolean, (v: boolean) => void]
+>([
+  false,
+  () => {
+    // no-op
+  },
+]);

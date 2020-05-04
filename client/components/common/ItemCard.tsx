@@ -4,7 +4,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { useEquipItemMutation } from 'common/utils';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { useApolloClient } from '@apollo/react-hooks';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { ItemSlot, ItemSet, Item } from 'common/type-aliases';
@@ -17,7 +17,7 @@ interface Props {
   selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
   equipped: boolean;
   openSetModal: (set: ItemSet) => void;
-  isMobile?: boolean;
+  shouldRedirect?: boolean;
   nextSlotId: string | null;
 }
 
@@ -28,12 +28,15 @@ const ItemCard: React.FC<Props> = ({
   selectItemSlot,
   equipped,
   openSetModal,
-  isMobile,
+  shouldRedirect,
   nextSlotId,
 }) => {
   const mutate = useEquipItemMutation(item);
 
   const client = useApolloClient();
+
+  const router = useRouter();
+  const { query } = router;
 
   const onClick = React.useCallback(() => {
     if (itemSlotId) {
@@ -46,11 +49,25 @@ const ItemCard: React.FC<Props> = ({
       if (selectItemSlot) {
         selectItemSlot(nextSlot);
       }
-      if (isMobile && customSetId) {
-        Router.push(
-          { pathname: '/index', query: { customSetId } },
-          customSetId ? `/build/${customSetId}` : '/',
-        );
+      if (shouldRedirect && customSetId) {
+        if (nextSlot) {
+          router.replace(
+            {
+              pathname: '/equip/[itemSlotId]',
+              query: {
+                ...query,
+                itemSlotId: nextSlot.id,
+                customSetId,
+              },
+            },
+            `/equip/${nextSlot.id}/${customSetId}`,
+          );
+        } else {
+          router.push(
+            { pathname: '/index', query: { customSetId, class: query.class } },
+            customSetId ? `/build/${customSetId}` : '/',
+          );
+        }
       }
       mutate(itemSlotId);
     }
@@ -60,9 +77,10 @@ const ItemCard: React.FC<Props> = ({
     customSetId,
     mutate,
     selectItemSlot,
-    isMobile,
+    shouldRedirect,
     client,
     nextSlotId,
+    router,
   ]);
 
   return (

@@ -27,6 +27,7 @@ interface Props {
   customSet?: CustomSet | null;
   isMobile?: boolean;
   errors: Array<BuildError>;
+  isClassic?: boolean;
   className?: string;
 }
 
@@ -63,6 +64,7 @@ const reducer = (state: CustomSetMetadata, action: CustomSetMetdataAction) => {
 
 const SetHeader: React.FC<Props> = ({
   customSet,
+  isClassic,
   isMobile,
   errors,
   className,
@@ -340,14 +342,18 @@ const SetHeader: React.FC<Props> = ({
             ) : (
               formElement
             )}
-            {customSet && !isMobile && (
-              <BuildActions customSet={customSet} isMobile={false} />
-            )}
-            {customSet && !isMobile && (
+            {customSet && !isMobile && !isClassic && (
               <BonusStats customSet={customSet} isMobile={false} />
             )}
             {customSet && !isMobile && (
               <BuildErrors customSet={customSet} errors={errors} />
+            )}
+            {customSet && !isMobile && (
+              <BuildActions
+                customSet={customSet}
+                isMobile={false}
+                isClassic={isClassic}
+              />
             )}
           </div>
           {customSet && isMobile && (

@@ -23,7 +23,7 @@ const ClassicRightColumnStats: React.FC<IProps> = ({ customSet }) => {
   return (
     <div
       css={{
-        width: 260,
+        flex: '0 2 260px',
         display: 'flex',
         flexDirection: 'column',
         marginLeft: 12,
@@ -32,7 +32,6 @@ const ClassicRightColumnStats: React.FC<IProps> = ({ customSet }) => {
     >
       <StatTable
         group={[
-          'HP',
           Stat.VITALITY,
           Stat.WISDOM,
           Stat.AGILITY,

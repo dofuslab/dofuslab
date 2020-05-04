@@ -20,7 +20,6 @@ import { Theme, SharedFilterAction, SharedFilters } from 'common/types';
 
 import { useTranslation } from 'i18n';
 import Tooltip from 'components/common/Tooltip';
-import { Media } from './Media';
 import ResetAllButton from './ResetAllButton';
 
 const { Search } = Input;
@@ -33,6 +32,7 @@ interface Props {
   showSets: boolean;
   setShowSets: React.Dispatch<React.SetStateAction<boolean>>;
   onReset: () => void;
+  shouldShowBack?: boolean;
 }
 
 const SelectorFilters: React.FC<Props> = ({
@@ -42,6 +42,7 @@ const SelectorFilters: React.FC<Props> = ({
   showSets,
   setShowSets,
   onReset,
+  shouldShowBack,
 }) => {
   const router = useRouter();
   const { customSetId } = router.query;
@@ -129,26 +130,35 @@ const SelectorFilters: React.FC<Props> = ({
         <div
           css={{
             display: 'flex',
-            fontSize: '0.75rem',
             alignItems: 'center',
             height: 36,
+            fontSize: '0.75rem',
             justifyContent: 'space-between',
             [mq[1]]: {
               height: 'auto',
             },
           }}
         >
-          <Media lessThan="xs">
+          {shouldShowBack && (
             <Link
               href={{ pathname: '/index', query: { customSetId } }}
               as={customSetId ? `/build/${customSetId}` : '/'}
+              passHref
             >
-              <Button size="large" css={{ fontSize: '0.75rem' }}>
-                <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
-                {t('BACK')}
-              </Button>
+              <a>
+                <Button
+                  size="large"
+                  css={{ fontSize: '0.75rem', [mq[1]]: { marginRight: 20 } }}
+                >
+                  <FontAwesomeIcon
+                    icon={faArrowLeft}
+                    css={{ marginRight: 12 }}
+                  />
+                  {t('BACK')}
+                </Button>
+              </a>
             </Link>
-          </Media>
+          )}
           <div css={{ display: 'flex', alignItems: 'center' }}>
             <span css={{ [mq[1]]: { display: 'none' } }}>{t('ITEMS')}</span>
             <Tooltip title={t(showSets ? 'VIEW_ITEMS' : 'VIEW_SETS')}>
@@ -182,7 +192,7 @@ const SelectorFilters: React.FC<Props> = ({
           }}
         >
           <Search
-            id={SEARCH_BAR_ID}
+            id={showSets ? 'sets-search' : SEARCH_BAR_ID}
             placeholder={t('SEARCH')}
             value={search}
             onChange={onSearch}

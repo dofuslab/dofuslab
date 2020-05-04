@@ -10,11 +10,12 @@ import { items, itemsVariables } from 'graphql/queries/__generated__/items';
 import { getResponsiveGridStyle } from 'common/mixins';
 import { SharedFilters } from 'common/types';
 import { findEmptyOrOnlySlotId, findNextEmptySlotId } from 'common/utils';
-import { mq } from 'common/constants';
+import { mq, getSelectorNumCols } from 'common/constants';
 import { ItemSlot, CustomSet, ItemSet } from 'common/type-aliases';
 import ConfirmReplaceItemPopover from '../desktop/ConfirmReplaceItemPopover';
 import SetModal from './SetModal';
 import ItemCard from './ItemCard';
+
 import SkeletonCardsLoader from './SkeletonCardsLoader';
 
 const PAGE_SIZE = 24;
@@ -29,6 +30,7 @@ interface Props {
   filters: SharedFilters;
   itemTypeIds: Set<string>;
   isMobile?: boolean;
+  isClassic?: boolean;
 }
 
 const ItemSelector: React.FC<Props> = ({
@@ -39,6 +41,7 @@ const ItemSelector: React.FC<Props> = ({
   filters,
   itemTypeIds,
   isMobile,
+  isClassic,
 }) => {
   const itemTypeIdsArr = Array.from(itemTypeIds);
   const queryFilters = {
@@ -103,11 +106,15 @@ const ItemSelector: React.FC<Props> = ({
     <InfiniteScroll
       hasMore={data?.items.pageInfo.hasNextPage}
       loader={
-        <SkeletonCardsLoader key="loader" length={data?.items.edges.length} />
+        <SkeletonCardsLoader
+          key="loader"
+          length={data?.items.edges.length}
+          isClassic
+        />
       }
       loadMore={onLoadMore}
       css={{
-        ...getResponsiveGridStyle([2, 2, 2, 3, 4, 5, 6]),
+        ...getResponsiveGridStyle(getSelectorNumCols(isClassic)),
         marginTop: 12,
         marginBottom: 20,
         position: 'relative',
@@ -115,11 +122,11 @@ const ItemSelector: React.FC<Props> = ({
         minWidth: 0,
         [mq[1]]: { gridGap: 12 },
       }}
-      useWindow={false}
+      useWindow={isMobile || isClassic}
       threshold={THRESHOLD}
     >
       {loading ? (
-        <SkeletonCardsLoader key="initial-loader" multiplier={2} />
+        <SkeletonCardsLoader key="initial-loader" multiplier={2} isClassic />
       ) : (
         (data?.items.edges ?? [])
           .map((edge) => edge.node)
@@ -143,7 +150,7 @@ const ItemSelector: React.FC<Props> = ({
                 customSetId={customSet?.id ?? null}
                 selectItemSlot={selectItemSlot}
                 openSetModal={openSetModal}
-                isMobile={isMobile}
+                shouldRedirect={isMobile || isClassic}
                 nextSlotId={nextSlotId}
               />
             );
@@ -168,7 +175,7 @@ const ItemSelector: React.FC<Props> = ({
           visible={setModalVisible}
           onCancel={closeSetModal}
           customSet={customSet}
-          isMobile={isMobile}
+          shouldRedirect={isMobile || isClassic}
         />
       )}
     </InfiniteScroll>
