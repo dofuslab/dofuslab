@@ -33,6 +33,7 @@ from app.database.model_spell_stats import ModelSpellStats
 from app.database.model_spell_translation import ModelSpellTranslation
 from app.database.model_spell import ModelSpell
 from app.database.model_spell_variant_pair import ModelSpellVariantPair
+from app.database.model_user_setting import ModelUserSetting
 from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_class import ModelClass
 from app.tasks import send_email
@@ -802,7 +803,6 @@ class RegisterUser(graphene.Mutation):
                     username=username,
                     email=email,
                     password=ModelUserAccount.generate_hash(password),
-                    locale=str(get_locale()),
                 )
                 token = encode_token(user.email, verify_email_salt)
                 verify_url = generate_url("verify_email.verify_email", token)
@@ -810,6 +810,12 @@ class RegisterUser(graphene.Mutation):
                 content = template.render(display_name=username, verify_url=verify_url)
                 db_session.add(user)
                 db_session.flush()
+                user_setting = ModelUserSetting(
+                    locale=str(get_locale()),
+                    classic=session.get("classic", False),
+                    user_id=user.uuid,
+                )
+                db_session.add(user_setting)
                 q.enqueue(
                     send_email, user.email, _("Verify your DofusLab account"), content
                 )
