@@ -7,6 +7,7 @@ import {
 import {
   classById_classById_spellVariantPairs_spells as Spell,
   classById_classById_spellVariantPairs_spells_spellStats as SpellStats,
+  classById_classById_spellVariantPairs as SpellVariantPair,
 } from 'graphql/queries/__generated__/classById';
 import {
   itemSlots_itemSlots as ItemSlot,
@@ -36,4 +37,5 @@ export type {
   Stats,
   ItemTypeWithSlots,
   Class,
+  SpellVariantPair,
 };

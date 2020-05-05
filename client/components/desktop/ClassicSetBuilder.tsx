@@ -5,46 +5,45 @@ import { jsx } from '@emotion/core';
 import { Tabs } from 'antd';
 
 import { mq } from 'common/constants';
-import Layout from './Layout';
 
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getStatsFromCustomSet, getErrors } from 'common/utils';
-import SetHeader from '../common/SetHeader';
-import ClassicEquipmentSlots from './ClassicEquipmentSlots';
-import { IError } from 'common/types';
-import ClassicLeftColumnStats from './ClassicLeftColumnStats';
+import { BuildError, Theme } from 'common/types';
 import StatTable from 'components/common/StatTable';
 import { Stat } from '__generated__/globalTypes';
-import ClassicRightColumnStats from './ClassicRightColumnStats';
 import { useTheme } from 'emotion-theming';
-import { TTheme } from 'common/themes';
 import { useTranslation } from 'i18n';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassicClassSpells from 'components/desktop/ClassicClassSpells';
+import { CustomSet } from 'common/type-aliases';
+import ClassicRightColumnStats from './ClassicRightColumnStats';
+import ClassicLeftColumnStats from './ClassicLeftColumnStats';
+import ClassicEquipmentSlots from './ClassicEquipmentSlots';
+import SetHeader from '../common/SetHeader';
+import Layout from './Layout';
 import ClassicClassSelector from './ClassicClassSelector';
 
 const { TabPane } = Tabs;
 
-interface IProps {
-  customSet: customSet | null;
+interface Props {
+  customSet: CustomSet | null;
 }
 
-const ClassicSetBuilder: React.FC<IProps> = ({ customSet }) => {
+const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
   const statsFromCustomSet = React.useMemo(
     () => getStatsFromCustomSet(customSet),
     [customSet],
   );
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   const { t } = useTranslation();
 
   const weapon = customSet?.equippedItems.find(
-    equippedItem => !!equippedItem.item.weaponStats,
+    (equippedItem) => !!equippedItem.item.weaponStats,
   );
 
-  let errors: Array<IError> = [];
+  let errors: Array<BuildError> = [];
 
   if (customSet && statsFromCustomSet) {
     errors = getErrors(customSet, statsFromCustomSet);

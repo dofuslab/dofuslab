@@ -10,29 +10,29 @@ import { useTheme } from 'emotion-theming';
 
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import {
   classById,
   classByIdVariables,
 } from 'graphql/queries/__generated__/classById';
 import classByIdQuery from 'graphql/queries/classById.graphql';
-import { TTheme } from 'common/themes';
-import SpellVariantPairCard from './SpellVariantPairCard';
 import { itemCardStyle } from 'common/mixins';
+import { Theme } from 'common/types';
+import { CustomSet } from 'common/type-aliases';
+import SpellVariantPairCard from './SpellVariantPairCard';
 
-interface IProps {
-  customSet?: customSet | null;
+interface Props {
+  customSet?: CustomSet | null;
 }
 
-const ClassicClassSpells: React.FC<IProps> = ({ customSet }) => {
+const ClassicClassSpells: React.FC<Props> = ({ customSet }) => {
   const router = useRouter();
   const { query } = router;
   const { data } = useQuery<classes>(classesQuery);
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   const nameToId = data?.classes.reduce((acc, { id, allNames }) => {
     const obj = { ...acc };
-    allNames.forEach(className => {
+    allNames.forEach((className) => {
       obj[className] = id;
     });
     return obj;
@@ -56,7 +56,7 @@ const ClassicClassSpells: React.FC<IProps> = ({ customSet }) => {
   return data ? (
     <>
       {!classDataLoading && spellVariantPairs
-        ? spellVariantPairs.map(pair => (
+        ? spellVariantPairs.map((pair) => (
             <SpellVariantPairCard
               key={pair.id}
               spellVariantPair={pair}
@@ -69,6 +69,7 @@ const ClassicClassSpells: React.FC<IProps> = ({ customSet }) => {
             .map((_, idx) => (
               <Card
                 size="small"
+                // eslint-disable-next-line react/no-array-index-key
                 key={idx}
                 css={{
                   ...itemCardStyle,

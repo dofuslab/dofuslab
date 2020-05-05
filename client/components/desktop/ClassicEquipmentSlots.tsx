@@ -11,7 +11,7 @@ import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { mq } from 'common/constants';
 import { useSetModal } from 'common/utils';
 import { BuildError } from 'common/types';
-import { ItemSlot, CustomSet, EquippedItem } from 'common/type-aliases';
+import { CustomSet, EquippedItem } from 'common/type-aliases';
 import { useRouter } from 'next/router';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
@@ -22,8 +22,6 @@ import ClassicEquippedItem from './ClassicEquippedItem';
 
 interface Props {
   customSet?: CustomSet | null;
-  selectItemSlot: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
-  selectedItemSlotId: string | null;
   isMobile?: boolean;
   errors: Array<BuildError>;
 }

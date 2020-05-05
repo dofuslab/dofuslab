@@ -13,8 +13,8 @@ import Link from 'next/link';
 import { Card } from 'antd';
 import { itemCardStyle } from 'common/mixins';
 import { useTheme } from 'emotion-theming';
-import { TTheme } from 'common/themes';
 import { useTranslation } from 'i18n';
+import { Theme } from 'common/types';
 
 const ClassicClassSelector: React.FC = () => {
   const router = useRouter();
@@ -25,7 +25,7 @@ const ClassicClassSelector: React.FC = () => {
     ? query.class[0]
     : query.class;
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
   const { t } = useTranslation('common');
 
   return (
@@ -33,7 +33,7 @@ const ClassicClassSelector: React.FC = () => {
       size="small"
       css={{
         ...itemCardStyle,
-        [':hover']: {
+        ':hover': {
           border: `1px solid ${theme.border?.default}`,
         },
         border: `1px solid ${theme.border?.default}`,
@@ -52,7 +52,7 @@ const ClassicClassSelector: React.FC = () => {
         >
           {[...data.classes]
             .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
-            .map(dofusClass => (
+            .map((dofusClass) => (
               <Tooltip key={dofusClass.id} title={dofusClass.name}>
                 <div
                   css={{
@@ -85,6 +85,7 @@ const ClassicClassSelector: React.FC = () => {
                         css={{
                           width: '100%',
                         }}
+                        alt={dofusClass.name}
                       />
                     </a>
                   </Link>

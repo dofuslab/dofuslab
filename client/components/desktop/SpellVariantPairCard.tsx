@@ -2,29 +2,23 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import {
-  classById_classById_spellVariantPairs,
-  classById_classById_spellVariantPairs_spells,
-} from 'graphql/queries/__generated__/classById';
+
 import { RadioChangeEvent } from 'antd/lib/radio';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
 import { itemCardStyle } from 'common/mixins';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import Card from 'components/common/Card';
-import SpellCardContent from '../common/SpellCardContent';
 import SpellLevelRadio from 'components/common/SpellLevelRadio';
+import { CustomSet, Spell, SpellVariantPair } from 'common/type-aliases';
+import { Theme } from 'common/types';
+import SpellCardContent from '../common/SpellCardContent';
 
-interface IProps {
-  customSet?: customSet | null;
-  spellVariantPair: classById_classById_spellVariantPairs;
+interface Props {
+  customSet?: CustomSet | null;
+  spellVariantPair: SpellVariantPair;
 }
 
-const getSpellLevelIdx = (
-  spell: classById_classById_spellVariantPairs_spells,
-  customSetLevel: number,
-) =>
+const getSpellLevelIdx = (spell: Spell, customSetLevel: number) =>
   spell.spellStats.reduce((max, curr, idx) => {
     if (curr.level <= customSetLevel) {
       return idx;
@@ -32,14 +26,17 @@ const getSpellLevelIdx = (
     return max;
   }, -1);
 
-const SpellVariantPairCard: React.FC<IProps> = ({
+const SpellVariantPairCard: React.FC<Props> = ({
   spellVariantPair,
   customSet,
 }) => {
+  const theme = useTheme<Theme>();
+
   const [selectedSpellId, setSelectedSpellId] = React.useState<string>(
     spellVariantPair.spells[0].id,
   );
   const customSetLevel = customSet?.level || 200;
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const spell = spellVariantPair.spells.find(
     ({ id }) => id === selectedSpellId,
   )!;
@@ -48,7 +45,7 @@ const SpellVariantPairCard: React.FC<IProps> = ({
     spellLevelIdx,
   );
 
-  const tabList = spellVariantPair.spells.map(currSpell => ({
+  const tabList = spellVariantPair.spells.map((currSpell) => ({
     key: currSpell.id,
     tab: currSpell.name,
   }));
@@ -56,6 +53,7 @@ const SpellVariantPairCard: React.FC<IProps> = ({
   const onTabChange = React.useCallback(
     (key: string) => {
       setSelectedSpellId(key);
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const newSelectedSpell = spellVariantPair.spells.find(
         ({ id }) => id === key,
       )!;
@@ -70,8 +68,6 @@ const SpellVariantPairCard: React.FC<IProps> = ({
     },
     [selectSpellLevelIdx],
   );
-
-  const theme = useTheme<TTheme>();
 
   return (
     <Card
@@ -90,7 +86,7 @@ const SpellVariantPairCard: React.FC<IProps> = ({
       onTabChange={onTabChange}
       css={{
         ...itemCardStyle,
-        [':hover']: {
+        ':hover': {
           border: `1px solid ${theme.border?.default}`,
         },
         border: `1px solid ${theme.border?.default}`,

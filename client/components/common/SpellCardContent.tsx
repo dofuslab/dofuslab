@@ -2,20 +2,14 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import {
-  classById_classById_spellVariantPairs_spells,
-  classById_classById_spellVariantPairs_spells_spellStats,
-} from 'graphql/queries/__generated__/classById';
 import { Divider } from 'antd';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
 import {
   damageHeaderStyle,
   EffectLine,
   DamageTypeToggle,
 } from 'common/wrappers';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
 import {
   getStatWithDefault,
@@ -24,16 +18,17 @@ import {
   getStatsFromCustomSet,
   getInitialRangedState,
 } from 'common/utils';
-import { TEffectLine } from 'common/types';
+import { TEffectLine, Theme } from 'common/types';
 import { Stat } from '__generated__/globalTypes';
+import { CustomSet, Spell, SpellStats } from 'common/type-aliases';
 
-interface IProps {
-  customSet?: customSet | null;
-  spell: classById_classById_spellVariantPairs_spells;
+interface Props {
+  customSet?: CustomSet | null;
+  spell: Spell;
   selectedSpellLevelIdx: number;
 }
 
-const SpellCardContent: React.FC<IProps> = ({
+const SpellCardContent: React.FC<Props> = ({
   spell,
   customSet,
   selectedSpellLevelIdx,
@@ -43,9 +38,8 @@ const SpellCardContent: React.FC<IProps> = ({
 
   const statsFromCustomSet = getStatsFromCustomSet(customSet);
 
-  const spellStats:
-    | classById_classById_spellVariantPairs_spells_spellStats
-    | undefined = spell.spellStats[selectedSpellLevelIdx];
+  const spellStats: SpellStats | undefined =
+    spell.spellStats[selectedSpellLevelIdx];
 
   const rangedOnly = !!spellStats?.minRange && spellStats?.minRange > 1;
   const meleeOnly = !spellStats?.maxRange || spellStats?.maxRange <= 1;
@@ -60,12 +54,12 @@ const SpellCardContent: React.FC<IProps> = ({
     !rangedOnly &&
     !meleeOnly &&
     spellStats.spellEffects.some(
-      effect => getSimpleEffect(effect.effectType) === 'damage',
+      (effect) => getSimpleEffect(effect.effectType) === 'damage',
     );
 
   let content = null;
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   if (!spellStats) {
     content = (
@@ -190,16 +184,17 @@ const SpellCardContent: React.FC<IProps> = ({
           <img
             src={spell.imageUrl}
             css={{ float: 'right', width: 40, marginLeft: 8, marginBottom: 8 }}
+            alt={spell.name}
           />
-          {spell.description
-            .split('•')
-            .map((chunk, idx) =>
-              idx === 0 ? (
-                <div key={idx}>{chunk}</div>
-              ) : (
-                <li key={idx}>{`• ${chunk}`}</li>
-              ),
-            )}
+          {spell.description.split('•').map((chunk, idx) =>
+            idx === 0 ? (
+              /* eslint-disable react/no-array-index-key */
+              <div key={idx}>{chunk}</div>
+            ) : (
+              <li key={idx}>{`• ${chunk}`}</li>
+              /* eslint-enable react/no-array-index-key */
+            ),
+          )}
         </div>
         {spellStats.spellEffects.length > 0 && (
           <>
@@ -227,8 +222,9 @@ const SpellCardContent: React.FC<IProps> = ({
               ) : (
                 <div
                   css={{
-                    gridArea: `1 / 2 / ${spellStats.spellEffects.length +
-                      2} / -1`,
+                    gridArea: `1 / 2 / ${
+                      spellStats.spellEffects.length + 2
+                    } / -1`,
                     background: theme.damage?.nonCrit?.background,
                     borderRadius: 4,
                     display: 'flex',
@@ -243,7 +239,7 @@ const SpellCardContent: React.FC<IProps> = ({
                   {t('DOES_NOT_CRIT')}
                 </div>
               )}
-              {spellEffectSummaries.map(effect => {
+              {spellEffectSummaries.map((effect) => {
                 return (
                   <React.Fragment key={effect.id}>
                     <EffectLine
