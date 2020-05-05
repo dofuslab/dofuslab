@@ -108,7 +108,7 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
                         t={t}
                       />
                     }
-                    placement="bottomLeft"
+                    placement={isClassic ? 'bottom' : 'bottomLeft'}
                     trigger={isMobile ? 'click' : 'hover'}
                   >
                     <div
