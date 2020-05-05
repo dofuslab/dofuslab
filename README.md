@@ -2,7 +2,7 @@
 
 DofusLab is an open source set builder for players of the French MMO [Dofus](https://www.dofus.com/). It lets you experiment with your equipment.
 
-Written in Javascript using [TypeScript](https://www.typescriptlang.org/) and Python 3.
+Written using [TypeScript](https://www.typescriptlang.org/) and Python 3.
 
 Please come give us a try at https://dofuslab.io!
 
