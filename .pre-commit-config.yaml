@@ -23,6 +23,8 @@ repos:
     rev: v7.0.0-rc.0
     hooks:
       - id: eslint
+        types: [file]
+        files: \.[t|j]sx?$
         additional_dependencies:
           [
             '@typescript-eslint/eslint-plugin@2.31.0',
@@ -37,5 +39,6 @@ repos:
             'eslint-plugin-prettier@3.1.3',
             'eslint-plugin-react@7.19.0',
             'eslint-plugin-react-hooks@4.0.0',
+            'react@16.11.0',
             'typescript@3.8.3',
           ]
