@@ -121,7 +121,7 @@ $ yarn apollo-codegen
 
 ## i18n
 
-To add any new user-facing strings client-side, add the key in the EN locale files first (`/client/public/static/locales/en/*`). 
+To add any new user-facing strings client-side, add the key in the EN locale files first (`/client/public/static/locales/en/*`).
 
 #### Merge the new key into the other locales
 ```bash

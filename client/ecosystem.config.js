@@ -11,6 +11,7 @@ module.exports = {
       env: {
         NODE_ENV: 'development',
       },
+      // eslint-disable-next-line
       env_production: {
         NODE_ENV: 'production',
         GRAPHQL_URI: 'https://dofuslab.io/api/graphql',
