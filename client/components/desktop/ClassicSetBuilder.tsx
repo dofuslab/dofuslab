@@ -70,7 +70,7 @@ const ClassicSetBuilder: React.FC<IProps> = ({ customSet }) => {
             [mq[4]]: {
               maxWidth: 1124,
             },
-            '& > .ant-tabs .ant-tabs-nav-scroll': { textAlign: 'center' },
+            '&.ant-tabs > .ant-tabs-bar': { textAlign: 'center' },
             '.ant-tabs-bar': {
               borderBottom: `1px solid ${theme.border?.default}`,
             },
