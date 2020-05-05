@@ -19,3 +19,5 @@ server/messages.pot
 
 # Redis dump
 **/dump.rdb
+
+node_modules/

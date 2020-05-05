@@ -19,17 +19,6 @@
     "sync-i18n": "ts-node --project tsconfig.server.json sync-locales",
     "scan-i18n": "npx i18next-scanner"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "./src/*.{js,jsx,ts,tsx}": [
-      "npx prettier --write pages/**/*.tsx pages/**/*.tsx common/**/*.ts common/**/*.tsx",
-      "eslint pages/**/*.tsx pages/**/*.tsx common/**/*.ts common/**/*.tsx --fix-dry-run"
-    ]
-  },
   "dependencies": {
     "@ant-design/dark-theme": "^2.0.1",
     "@ant-design/icons": "^4.1.0",
@@ -85,20 +74,8 @@
     "@zeit/next-less": "^1.0.1",
     "babel-plugin-inline-import": "^3.0.0",
     "chalk": "^4.0.0",
-    "eslint": "^6.6.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-import-resolver-typescript": "^2.0.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-json": "^2.0.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.3",
-    "eslint-plugin-react": "^7.16.0",
-    "eslint-plugin-react-hooks": "^4.0.0",
-    "husky": "^4.2.5",
     "i18next-scanner": "^2.11.0",
     "nodemon": "^2.0.2",
-    "prettier": "^2.0.5",
     "sort-keys": "^4.0.0",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.2"
