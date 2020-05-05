@@ -32,12 +32,12 @@ import { Stat } from '__generated__/globalTypes';
 import Card from 'components/common/Card';
 import Tooltip from 'components/common/Tooltip';
 
-interface IProps {
+interface Props {
   customSet?: customSet | null;
   spell: classById_classById_spellVariantPairs_spells;
 }
 
-const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
+const SpellCard: React.FC<Props> = ({ spell, customSet }) => {
   const { t } = useTranslation(['weapon_spell_effect', 'stat']);
   const customSetLevel = customSet?.level || 200;
   const spellLevelIdx = spell.spellStats.reduce((max, curr, idx) => {
@@ -53,8 +53,8 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
   const statsFromCustomSet = getStatsFromCustomSet(customSet);
 
   const spellStats:
-    | classById_classById_spellVariantPairs_spells_spellStats
-    | undefined = spell.spellStats[selectedSpellLevelIdx];
+  | classById_classById_spellVariantPairs_spells_spellStats
+  | undefined = spell.spellStats[selectedSpellLevelIdx];
 
   const rangedOnly = !!spellStats?.minRange && spellStats?.minRange > 1;
   const meleeOnly = !spellStats?.maxRange || spellStats?.maxRange <= 1;
@@ -65,10 +65,9 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
 
   const damageTypeKey = showRanged ? 'ranged' : 'melee';
 
-  const showToggle =
-    !rangedOnly &&
-    !meleeOnly &&
-    spellStats.spellEffects.some(
+  const showToggle = !rangedOnly
+    && !meleeOnly
+    && spellStats.spellEffects.some(
       (effect) => getSimpleEffect(effect.effectType) === 'damage',
     );
 
@@ -96,64 +95,61 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
         id,
         critMinDamage,
         critMaxDamage,
-      }) => {
-        return {
-          id,
-          type: effectType,
-          nonCrit: {
-            min: minDamage
-              ? calcEffect(
-                  minDamage,
-                  effectType,
-                  customSetLevel,
-                  statsFromCustomSet,
-                  {},
-                  damageTypeKey,
-                )
-              : null,
-            max: calcEffect(
-              maxDamage,
+      }) => ({
+        id,
+        type: effectType,
+        nonCrit: {
+          min: minDamage
+            ? calcEffect(
+              minDamage,
               effectType,
               customSetLevel,
               statsFromCustomSet,
               {},
               damageTypeKey,
-            ),
-            baseMax: maxDamage,
-          },
-          crit:
+            )
+            : null,
+          max: calcEffect(
+            maxDamage,
+            effectType,
+            customSetLevel,
+            statsFromCustomSet,
+            {},
+            damageTypeKey,
+          ),
+          baseMax: maxDamage,
+        },
+        crit:
             spellStats.baseCritChance === null || !critMaxDamage
               ? null
               : {
-                  min: critMinDamage
-                    ? calcEffect(
-                        critMinDamage,
-                        effectType,
-                        customSetLevel,
-                        statsFromCustomSet,
-                        { isCrit: true },
-                        damageTypeKey,
-                      )
-                    : null,
-                  max: calcEffect(
-                    critMaxDamage,
+                min: critMinDamage
+                  ? calcEffect(
+                    critMinDamage,
                     effectType,
                     customSetLevel,
                     statsFromCustomSet,
                     { isCrit: true },
                     damageTypeKey,
-                  ),
-                  baseMax: critMaxDamage,
-                },
-        };
-      },
+                  )
+                  : null,
+                max: calcEffect(
+                  critMaxDamage,
+                  effectType,
+                  customSetLevel,
+                  statsFromCustomSet,
+                  { isCrit: true },
+                  damageTypeKey,
+                ),
+                baseMax: critMaxDamage,
+              },
+      }),
     );
 
-    let critRate =
-      typeof spellStats.baseCritChance === 'number'
-        ? getStatWithDefault(statsFromCustomSet, Stat.CRITICAL) +
-          spellStats?.baseCritChance
-        : null;
+    let critRate = typeof spellStats.baseCritChance === 'number'
+      ? getStatWithDefault(statsFromCustomSet, Stat.CRITICAL)
+          + spellStats?.baseCritChance
+      : null;
     critRate = critRate === null ? null : Math.min(Math.max(critRate, 0), 100);
 
     const spellCharacteristics = [
@@ -164,8 +160,8 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
       let rangeString = `${
         spellStats.minRange && spellStats.minRange !== spellStats.maxRange
           ? `${spellStats.minRange}-${spellStats.maxRange}\u00A0${t('RANGE', {
-              ns: 'stat',
-            })}`
+            ns: 'stat',
+          })}`
           : `${spellStats.maxRange}\u00A0${t('RANGE', { ns: 'stat' })}`
       }`;
 
@@ -205,17 +201,17 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
         <div>
           <img
             src={spell.imageUrl}
-            css={{ float: 'right', width: 40, marginLeft: 8, marginBottom: 8 }}
+            css={{
+              float: 'right', width: 40, marginLeft: 8, marginBottom: 8,
+            }}
           />
           {spell.description
             .split('•')
-            .map((chunk, idx) =>
-              idx === 0 ? (
-                <div key={idx}>{chunk}</div>
-              ) : (
-                <li key={idx}>{`• ${chunk}`}</li>
-              ),
-            )}
+            .map((chunk, idx) => (idx === 0 ? (
+              <div key={idx}>{chunk}</div>
+            ) : (
+              <li key={idx}>{`• ${chunk}`}</li>
+            )))}
         </div>
         {spellStats.spellEffects.length > 0 && (
           <>
@@ -260,26 +256,24 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
                   {t('DOES_NOT_CRIT')}
                 </div>
               )}
-              {spellEffectSummaries.map((effect) => {
-                return (
-                  <React.Fragment key={effect.id}>
+              {spellEffectSummaries.map((effect) => (
+                <React.Fragment key={effect.id}>
+                  <EffectLine
+                    min={effect.nonCrit.min}
+                    max={effect.nonCrit.max}
+                    effectType={effect.type}
+                    baseMax={effect.nonCrit.baseMax}
+                  />
+                  {!!effect.crit && (
                     <EffectLine
-                      min={effect.nonCrit.min}
-                      max={effect.nonCrit.max}
+                      min={effect.crit.min}
+                      max={effect.crit.max}
                       effectType={effect.type}
-                      baseMax={effect.nonCrit.baseMax}
+                      baseMax={effect.crit.baseMax}
                     />
-                    {!!effect.crit && (
-                      <EffectLine
-                        min={effect.crit.min}
-                        max={effect.crit.max}
-                        effectType={effect.type}
-                        baseMax={effect.crit.baseMax}
-                      />
-                    )}
-                  </React.Fragment>
-                );
-              })}
+                  )}
+                </React.Fragment>
+              ))}
             </div>
           </>
         )}
@@ -293,10 +287,10 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
     <Card
       key={spell.id}
       size="small"
-      title={
+      title={(
         <CardTitleWithLevel
           title={spell.name}
-          rightAlignedContent={
+          rightAlignedContent={(
             <Radio.Group
               value={selectedSpellLevelIdx}
               onChange={onChange}
@@ -329,12 +323,12 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
                   );
                 })}
             </Radio.Group>
-          }
+          )}
         />
-      }
+      )}
       css={{
         ...itemCardStyle,
-        [':hover']: {
+        ':hover': {
           border: `1px solid ${theme.border?.default}`,
         },
         border: `1px solid ${theme.border?.default}`,

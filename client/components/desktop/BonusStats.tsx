@@ -17,12 +17,12 @@ import { item_set } from 'graphql/fragments/__generated__/item';
 
 const DISPLAY_ITEM_LIMIT = 3;
 
-interface IProps {
+interface Props {
   customSet: customSet;
   isMobile: boolean;
 }
 
-const BonusStats: React.FC<IProps> = ({ customSet, isMobile }) => {
+const BonusStats: React.FC<Props> = ({ customSet, isMobile }) => {
   const { t } = useTranslation(['stat', 'common']);
   const setBonuses = getBonusesFromCustomSet(customSet);
   const itemOrder = customSet.equippedItems.reduce(
@@ -66,128 +66,125 @@ const BonusStats: React.FC<IProps> = ({ customSet, isMobile }) => {
       }}
     >
       <ClassNames>
-        {({ css }) =>
-          Object.values(setBonuses)
-            .sort(({ set: { name: name1 } }, { set: { name: name2 } }) =>
-              name1.localeCompare(name2),
-            )
-            .map(
-              ({ count, set, set: { id, name, bonuses }, equippedItems }) => {
-                const filteredBonuses = bonuses.filter(
-                  (bonus) => bonus.numItems === count,
-                );
-                return (
-                  <Popover
-                    key={id}
-                    overlayClassName={css({
-                      ...popoverTitleStyle,
-                      maxWidth: 288,
-                    })}
-                    title={
-                      <div
-                        css={{
-                          display: 'flex',
-                          alignItems: 'baseline',
-                          fontSize: '0.8rem',
-                        }}
-                      >
-                        <div>{name}</div>
-                      </div>
-                    }
-                    content={
-                      <SetBonuses
-                        count={count}
-                        bonuses={filteredBonuses}
-                        t={t}
-                      />
-                    }
-                    placement="bottomLeft"
-                    trigger={isMobile ? 'click' : 'hover'}
-                  >
+        {({ css }) => Object.values(setBonuses)
+          .sort(({ set: { name: name1 } }, { set: { name: name2 } }) => name1.localeCompare(name2))
+          .map(
+            ({
+              count, set, set: { id, name, bonuses }, equippedItems,
+            }) => {
+              const filteredBonuses = bonuses.filter(
+                (bonus) => bonus.numItems === count,
+              );
+              return (
+                <Popover
+                  key={id}
+                  overlayClassName={css({
+                    ...popoverTitleStyle,
+                    maxWidth: 288,
+                  })}
+                  title={(
                     <div
                       css={{
                         display: 'flex',
-                        background: theme.layer?.background,
-                        borderRadius: 4,
-                        border: `1px solid ${theme.border?.default}`,
-                        padding: '4px 8px',
-                        cursor: 'pointer',
-                        margin: 6,
-                        [mq[1]]: {
-                          margin: 0,
-                        },
-                        ':not(:first-of-type)': {
-                          [mq[1]]: {
-                            marginLeft: 12,
-                          },
-                        },
-                      }}
-                      onClick={() => {
-                        openSetModal(set);
+                        alignItems: 'baseline',
+                        fontSize: '0.8rem',
                       }}
                     >
-                      {[...equippedItems]
-                        .sort((i, j) => itemOrder[i.id] - itemOrder[j.id])
-                        .map((equippedItem) => (
-                          <div
-                            key={`set-bonus-item-${equippedItem.id}`}
-                            css={{
-                              width: 40,
-                              height: 40,
-                              [mq[1]]: {
-                                [':not:first-of-type']: { marginLeft: 4 },
-                              },
-                            }}
-                          >
-                            {brokenImages.includes(equippedItem.id) ? (
-                              <BrokenImagePlaceholder
-                                css={{ width: '100%', height: '100%' }}
-                              />
-                            ) : (
-                              <img
-                                src={equippedItem.item.imageUrl}
-                                css={{ maxWidth: '100%', maxHeight: '100%' }}
-                                onError={() => {
-                                  setBrokenImages((prev) => [
-                                    ...prev,
-                                    equippedItem.id,
-                                  ]);
-                                }}
-                              />
-                            )}
-                          </div>
-                        ))
-                        .filter((_, idx) =>
-                          equippedItems.length - DISPLAY_ITEM_LIMIT > 1
-                            ? idx < DISPLAY_ITEM_LIMIT
-                            : idx < DISPLAY_ITEM_LIMIT + 1,
-                        )}
-                      {equippedItems.length > DISPLAY_ITEM_LIMIT + 1 && (
+                      <div>{name}</div>
+                    </div>
+                  )}
+                  content={(
+                    <SetBonuses
+                      count={count}
+                      bonuses={filteredBonuses}
+                      t={t}
+                    />
+                  )}
+                  placement="bottomLeft"
+                  trigger={isMobile ? 'click' : 'hover'}
+                >
+                  <div
+                    css={{
+                      display: 'flex',
+                      background: theme.layer?.background,
+                      borderRadius: 4,
+                      border: `1px solid ${theme.border?.default}`,
+                      padding: '4px 8px',
+                      cursor: 'pointer',
+                      margin: 6,
+                      [mq[1]]: {
+                        margin: 0,
+                      },
+                      ':not(:first-of-type)': {
+                        [mq[1]]: {
+                          marginLeft: 12,
+                        },
+                      },
+                    }}
+                    onClick={() => {
+                      openSetModal(set);
+                    }}
+                  >
+                    {[...equippedItems]
+                      .sort((i, j) => itemOrder[i.id] - itemOrder[j.id])
+                      .map((equippedItem) => (
                         <div
-                          key={'truncated-set'}
+                          key={`set-bonus-item-${equippedItem.id}`}
                           css={{
                             width: 40,
                             height: 40,
-                            fontSize: '1rem',
-                            fontWeight: 500,
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            color: theme.text?.light,
                             [mq[1]]: {
-                              [':not:first-of-type']: { marginLeft: 4 },
+                              ':not:first-of-type': { marginLeft: 4 },
                             },
                           }}
                         >
-                          +{equippedItems.length - DISPLAY_ITEM_LIMIT}
+                          {brokenImages.includes(equippedItem.id) ? (
+                            <BrokenImagePlaceholder
+                              css={{ width: '100%', height: '100%' }}
+                            />
+                          ) : (
+                            <img
+                              src={equippedItem.item.imageUrl}
+                              css={{ maxWidth: '100%', maxHeight: '100%' }}
+                              onError={() => {
+                                setBrokenImages((prev) => [
+                                  ...prev,
+                                  equippedItem.id,
+                                ]);
+                              }}
+                            />
+                          )}
                         </div>
-                      )}
-                    </div>
-                  </Popover>
-                );
-              },
-            )
-        }
+                      ))
+                      .filter((_, idx) => (equippedItems.length - DISPLAY_ITEM_LIMIT > 1
+                        ? idx < DISPLAY_ITEM_LIMIT
+                        : idx < DISPLAY_ITEM_LIMIT + 1))}
+                    {equippedItems.length > DISPLAY_ITEM_LIMIT + 1 && (
+                      <div
+                        key="truncated-set"
+                        css={{
+                          width: 40,
+                          height: 40,
+                          fontSize: '1rem',
+                          fontWeight: 500,
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          color: theme.text?.light,
+                          [mq[1]]: {
+                            ':not:first-of-type': { marginLeft: 4 },
+                          },
+                        }}
+                      >
+                        +
+                        {equippedItems.length - DISPLAY_ITEM_LIMIT}
+                      </div>
+                    )}
+                  </div>
+                </Popover>
+              );
+            },
+          )}
       </ClassNames>
       {selectedSet && !isMobile && (
         <SetModal

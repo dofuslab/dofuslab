@@ -2,16 +2,16 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import Layout from './Layout';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
+import Layout from './Layout';
 import Home from './Home';
 
-interface IProps {
+interface Props {
   customSet: customSet | null;
 }
 
-const SetBuilder: React.FC<IProps> = ({ customSet }) => {
+const SetBuilder: React.FC<Props> = ({ customSet }) => {
   const [
     selectedItemSlot,
     selectItemSlot,

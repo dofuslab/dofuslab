@@ -1,7 +1,17 @@
 {
-  "extends": ["airbnb", "plugin:@typescript-eslint/recommended"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "prettier/@typescript-eslint"
+  ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "prettier"],
+  "plugins": ["@typescript-eslint"],
   "settings": {
     "import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx"] },
     "import/resolver": { "typescript": {} }
@@ -10,8 +20,13 @@
     {
       "files": ["*.js"],
       "rules": {
-        "@typescript-eslint/no-var-requires": "off",
-        "@typescript-eslint/explicit-function-return-type": "off"
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    },
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+        "react/prop-types": "off"
       }
     }
   ],
@@ -20,10 +35,31 @@
       2,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
     ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "mjs": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
     "import/no-extraneous-dependencies": [
       2,
       { "devDependencies": ["**/test.tsx", "**/test.ts"] }
     ],
-    "@typescript-eslint/indent": [2, 2]
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/camelcase": [
+      "error",
+      {
+        "ignoreImports": true
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "ignoreRestSiblings": true }
+    ]
   }
 }

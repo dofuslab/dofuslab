@@ -7,11 +7,7 @@ import { useTheme } from 'emotion-theming';
 
 import { TTheme } from 'common/themes';
 import { STAT_GROUPS } from 'common/constants';
-import StatTable from '../common/StatTable';
 import { ResponsiveGrid } from 'common/wrappers';
-import SetHeader from '../common/SetHeader';
-import EquipmentSlots from '../common/EquipmentSlots';
-import StatEditor from '../common/StatEditor';
 import { topMarginStyle } from 'common/mixins';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getStatsFromCustomSet, getErrors } from 'common/utils';
@@ -21,19 +17,23 @@ import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
 import { useTranslation } from 'i18n';
-import { IError } from 'common/types';
+import { BuildError } from 'common/types';
+import StatEditor from '../common/StatEditor';
+import EquipmentSlots from '../common/EquipmentSlots';
+import SetHeader from '../common/SetHeader';
+import StatTable from '../common/StatTable';
 
 const { TabPane } = Tabs;
 
-interface IProps {
+interface Props {
   customSet: customSet | null;
   selectItemSlot: React.Dispatch<
-    React.SetStateAction<itemSlots_itemSlots | null>
+  React.SetStateAction<itemSlots_itemSlots | null>
   >;
   selectedItemSlot: itemSlots_itemSlots | null;
 }
 
-const Home: React.FC<IProps> = ({
+const Home: React.FC<Props> = ({
   customSet,
   selectItemSlot,
   selectedItemSlot,
@@ -47,7 +47,7 @@ const Home: React.FC<IProps> = ({
     (equippedItem) => !!equippedItem.item.weaponStats,
   );
 
-  let errors: Array<IError> = [];
+  let errors: Array<BuildError> = [];
 
   if (customSet && statsFromCustomSet) {
     errors = getErrors(customSet, statsFromCustomSet);

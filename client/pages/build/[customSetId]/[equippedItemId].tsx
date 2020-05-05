@@ -5,8 +5,11 @@ import { NextPage } from 'next';
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import Layout from 'components/mobile/Layout';
 import { useRouter } from 'next/router';
-import { customSet } from 'graphql/queries/__generated__/customSet';
-import { customSetVariables } from 'graphql/queries/__generated__/customSet';
+import {
+  customSet,
+  customSetVariables,
+} from 'graphql/queries/__generated__/customSet';
+
 import EquippedItemCard from 'components/mobile/EquippedItemCard';
 import ErrorPage from 'pages/_error';
 import { item_set } from 'graphql/fragments/__generated__/item';
@@ -15,7 +18,7 @@ import SetModal from 'components/common/SetModal';
 import { mediaStyles } from 'components/common/Media';
 import Head from 'next/head';
 import { getErrors, getStatsFromCustomSet } from 'common/utils';
-import { IError } from 'common/types';
+import { BuildError } from 'common/types';
 import { CustomSetHead } from 'common/wrappers';
 
 const EquippedItemPage: NextPage = () => {
@@ -67,7 +70,7 @@ const EquippedItemPage: NextPage = () => {
 
   const statsFromCustomSet = getStatsFromCustomSet(customSet);
 
-  let errors: Array<IError> = [];
+  let errors: Array<BuildError> = [];
 
   if (statsFromCustomSet) {
     errors = getErrors(customSet, statsFromCustomSet);

@@ -1,3 +1,4 @@
+/* eslint-disable */
 const fs = require('fs');
 const chalk = require('chalk');
 const typescript = require('typescript');
@@ -62,19 +63,15 @@ module.exports = {
         fileName: path.basename(file.path),
       });
 
-      parser.parseFuncFromString(
-        outputText,
-        { list: ['t'] },
-        (key, options) => {
-          parser.set(key, {
-            ns: ns || DEFAULT_NS,
-            nsSeparator: false,
-            keySeparator: '.',
-            ...options,
-          });
-          count += 1;
-        },
-      );
+      parser.parseFuncFromString(outputText, { list: ['t'] }, (key, options) => {
+        parser.set(key, {
+          ns: ns || DEFAULT_NS,
+          nsSeparator: false,
+          keySeparator: '.',
+          ...options,
+        });
+        count += 1;
+      });
       parser.parseTransFromString(
         outputText,
         { component: 'Trans', i18nKey: 'i18nKey' },

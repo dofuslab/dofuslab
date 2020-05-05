@@ -10,11 +10,11 @@ import { Stat, WeaponElementMage } from '__generated__/globalTypes';
 import { Divider } from 'antd';
 import { WeaponEffectsList, BrokenImagePlaceholder } from 'common/wrappers';
 import { TFunction } from 'next-i18next';
-import { IError } from 'common/types';
+import { BuildError } from 'common/types';
 import { renderErrors } from 'common/utils';
 import { TTheme } from 'common/themes';
 
-interface IProps {
+interface Props {
   readonly item: item;
   readonly className?: string;
   readonly exos?: ReadonlyArray<customSet_equippedItems_exos> | null;
@@ -23,7 +23,7 @@ interface IProps {
   readonly showImg?: boolean;
   readonly showOnlyWeaponStats?: boolean;
   readonly weaponElementMage?: WeaponElementMage | null;
-  readonly errors?: Array<IError>;
+  readonly errors?: Array<BuildError>;
 }
 
 const renderConditions = (conditionsObj: any, t: TFunction, depth = 0) => {
@@ -39,7 +39,8 @@ const renderConditions = (conditionsObj: any, t: TFunction, depth = 0) => {
     if (conditionsObj.and && conditionsObj.and.length === 1) {
       const condition = conditionsObj.and[0];
       return `${t(condition.stat)} ${condition.operator} ${condition.value}`;
-    } else if (conditionsObj.or && conditionsObj.or.length === 1) {
+    }
+    if (conditionsObj.or && conditionsObj.or.length === 1) {
       const condition = conditionsObj.or[0];
       return `${t(condition.stat)} ${condition.operator} ${condition.value}`;
     }
@@ -65,7 +66,7 @@ const renderConditions = (conditionsObj: any, t: TFunction, depth = 0) => {
   return null;
 };
 
-const ItemStatsList: React.FC<IProps> = ({
+const ItemStatsList: React.FC<Props> = ({
   item,
   className,
   exos,
@@ -168,8 +169,8 @@ const ItemStatsList: React.FC<IProps> = ({
                       statLine.stat && statsMap[statLine.stat].maged
                         ? theme.text?.primary
                         : statLine.maxValue && statLine.maxValue < 0
-                        ? theme.text?.danger
-                        : 'inherit',
+                          ? theme.text?.danger
+                          : 'inherit',
                   }}
                 >
                   {statLine.stat
@@ -184,7 +185,9 @@ const ItemStatsList: React.FC<IProps> = ({
               .map(({ stat, value }) => (
                 <li key={`exo-${stat}`}>
                   <span css={{ color: theme.text?.primary }}>
-                    {value} {t(stat)}
+                    {value}
+                    {' '}
+                    {t(stat)}
                   </span>
                 </li>
               ))}
@@ -194,19 +197,32 @@ const ItemStatsList: React.FC<IProps> = ({
         <>
           {!showOnlyWeaponStats && <Divider css={{ margin: '12px 0' }} />}
           <div>
-            {item.weaponStats.apCost}&nbsp;{t(Stat.AP, { ns: 'stat' })} •{' '}
+            {item.weaponStats.apCost}
+            &nbsp;
+            {t(Stat.AP, { ns: 'stat' })}
+            {' '}
+            •
+            {' '}
             {!!item.weaponStats.minRange && `${item.weaponStats.minRange}-`}
-            {item.weaponStats.maxRange}&nbsp;{t(Stat.RANGE, { ns: 'stat' })} •{' '}
+            {item.weaponStats.maxRange}
+            &nbsp;
+            {t(Stat.RANGE, { ns: 'stat' })}
+            {' '}
+            •
+            {' '}
             {item.weaponStats.baseCritChance
               ? `${item.weaponStats.baseCritChance} ${t(Stat.CRITICAL, {
-                  ns: 'stat',
-                })}\u00A0(+${item.weaponStats.critBonusDamage})`
-              : t('DOES_NOT_CRIT', { ns: 'weapon_spell_effect' })}{' '}
-            •{' '}
+                ns: 'stat',
+              })}\u00A0(+${item.weaponStats.critBonusDamage})`
+              : t('DOES_NOT_CRIT', { ns: 'weapon_spell_effect' })}
+            {' '}
+            •
+            {' '}
             {t('USE_PER_TURN', {
               ns: 'weapon_spell_effect',
               count: item.weaponStats.usesPerTurn,
-            })}{' '}
+            })}
+            {' '}
           </div>
         </>
       )}
@@ -214,19 +230,19 @@ const ItemStatsList: React.FC<IProps> = ({
         (Object.keys(conditions.conditions || {}).length > 0 ||
           Object.keys(conditions.customConditions || {}).length > 0) && (
           <>
-            <Divider css={{ margin: '12px 0' }} />
-            {Object.keys(conditions.conditions || {}).length > 0 && (
-              <div>{renderConditions(conditions.conditions, t)}</div>
-            )}
-            {Object.keys(conditions.customConditions || {}).length > 0 && (
-              <div>
-                {conditions.customConditions?.[i18n.language]?.join(
+          <Divider css={{ margin: '12px 0' }} />
+          {Object.keys(conditions.conditions || {}).length > 0 && (
+            <div>{renderConditions(conditions.conditions, t)}</div>
+          )}
+          {Object.keys(conditions.customConditions || {}).length > 0 && (
+            <div>
+              {conditions.customConditions?.[i18n.language]?.join(
                   ` ${t('CONDITIONS.AND')} `,
                 )}
-              </div>
-            )}
-          </>
-        )}
+            </div>
+          )}
+        </>
+      )}
       {errors && errors.length > 0 && (
         <>
           <Divider css={{ margin: '12px 0' }} />

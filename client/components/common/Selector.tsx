@@ -16,11 +16,11 @@ import {
   itemSlots,
 } from 'graphql/queries/__generated__/itemSlots';
 import { topMarginStyle } from 'common/mixins';
+import { mq } from 'common/constants';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import SelectorFilters from './SelectorFilters';
 import ItemSelector from './ItemSelector';
-import { mq } from 'common/constants';
 import SetSelector from './SetSelector';
-import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import ItemTypeFilter from './ItemTypeFilter';
 import ResetAllButton from './ResetAllButton';
 
@@ -43,17 +43,17 @@ const reducer = (state: SharedFilters, action: SharedFilterAction) => {
   }
 };
 
-interface IProps {
+interface Props {
   customSet: customSet | null;
   selectedItemSlot: itemSlots_itemSlots | null;
   selectItemSlot?: React.Dispatch<
-    React.SetStateAction<itemSlots_itemSlots | null>
+  React.SetStateAction<itemSlots_itemSlots | null>
   >;
   showSets?: boolean;
   isMobile?: boolean;
 }
 
-const Selector: React.FC<IProps> = ({
+const Selector: React.FC<Props> = ({
   customSet,
   selectedItemSlot,
   selectItemSlot,
@@ -74,9 +74,7 @@ const Selector: React.FC<IProps> = ({
   const [showSetsState, setShowSetsState] = React.useState(showSets || false);
 
   const customSetItemIds = new Set<string>();
-  (customSet?.equippedItems ?? []).forEach((equippedItem) =>
-    customSetItemIds.add(equippedItem.item.id),
-  );
+  (customSet?.equippedItems ?? []).forEach((equippedItem) => customSetItemIds.add(equippedItem.item.id));
 
   const selectorDivRef = React.useRef<HTMLDivElement>(null);
 
@@ -124,8 +122,7 @@ const Selector: React.FC<IProps> = ({
             itemTypes={uniqWith(
               itemSlots
                 .filter(
-                  (slot) =>
-                    !selectedItemSlot || selectedItemSlot.id === slot.id,
+                  (slot) => !selectedItemSlot || selectedItemSlot.id === slot.id,
                 )
                 .flatMap((slot) => slot.itemTypes),
               isEqual,

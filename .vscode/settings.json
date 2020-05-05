@@ -4,6 +4,7 @@
   "python.formatting.provider": "black",
   "eslint.workingDirectories": ["./client"],
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  }
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

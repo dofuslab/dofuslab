@@ -19,15 +19,15 @@ import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetdat
 import { checkAuthentication, navigateToNewCustomSet } from 'common/utils';
 import { ellipsis } from 'common/mixins';
 import { mq } from 'common/constants';
+import { BuildError } from 'common/types';
 import BonusStats from '../desktop/BonusStats';
 import BuildErrors from './BuildErrors';
-import { IError } from 'common/types';
 import BuildActions from './BuildActions';
 
-interface IProps {
+interface Props {
   customSet?: customSet | null;
   isMobile?: boolean;
-  errors: Array<IError>;
+  errors: Array<BuildError>;
 }
 
 interface CustomSetMetadata {
@@ -61,7 +61,7 @@ const reducer = (state: CustomSetMetadata, action: CustomSetMetdataAction) => {
   }
 };
 
-const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
+const SetHeader: React.FC<Props> = ({ customSet, isMobile, errors }) => {
   const originalState = {
     isEditing: false,
     name: customSet?.name || '',
@@ -74,8 +74,8 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
 
   const { t } = useTranslation('common');
   const [mutate] = useMutation<
-    editCustomSetMetadata,
-    editCustomSetMetadataVariables
+  editCustomSetMetadata,
+  editCustomSetMetadataVariables
   >(EditCustomSetMetadataMutation, { refetchQueries: () => ['myCustomSets'] });
 
   const [form] = Form.useForm();
@@ -104,20 +104,20 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
         },
         optimisticResponse: customSet
           ? ({ name, level }: any) => {
-              const optimisticCustomSet: editCustomSetMetadata_editCustomSetMetadata_customSet = {
-                ...customSet,
-                name: name || null,
-                level,
-                __typename: 'CustomSet',
-              };
+            const optimisticCustomSet: editCustomSetMetadata_editCustomSetMetadata_customSet = {
+              ...customSet,
+              name: name || null,
+              level,
+              __typename: 'CustomSet',
+            };
 
-              return {
-                editCustomSetMetadata: {
-                  customSet: optimisticCustomSet,
-                  __typename: 'EditCustomSetMetadata',
-                },
-              };
-            }
+            return {
+              editCustomSetMetadata: {
+                customSet: optimisticCustomSet,
+                __typename: 'EditCustomSetMetadata',
+              },
+            };
+          }
           : undefined,
       });
 
@@ -143,7 +143,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
       name="header"
       id={isMobile ? 'header-form-mobile' : 'header-form'}
       onFinish={handleOk}
-      layout={'inline'}
+      layout="inline"
       css={{
         display: 'flex',
         flexDirection: 'column',
@@ -226,7 +226,8 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
           css={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
           onClick={onStartEdit}
         >
-          {t('LEVEL')}{' '}
+          {t('LEVEL')}
+          {' '}
           {metadataState.isEditing ? (
             <Form.Item name="level" css={{ display: 'inline-flex' }}>
               <InputNumber
@@ -285,12 +286,12 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
         {customSet && !metadataState.isEditing && !isMobile ? (
           <Popover
             overlayStyle={{ maxWidth: 360 }}
-            title={
+            title={(
               <div css={{ fontWeight: 500, overflowWrap: 'break-word' }}>
                 {customSet.name || t('UNTITLED')}
               </div>
-            }
-            content={
+            )}
+            content={(
               <div
                 css={{
                   display: 'grid',
@@ -306,7 +307,8 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
                     month: 'short',
                     day: 'numeric',
                     year: 'numeric',
-                  })}{' '}
+                  })}
+                  {' '}
                   {creationDate.toLocaleTimeString(undefined, {
                     hour: '2-digit',
                     minute: '2-digit',
@@ -318,14 +320,15 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
                     month: 'short',
                     day: 'numeric',
                     year: 'numeric',
-                  })}{' '}
+                  })}
+                  {' '}
                   {modifiedDate.toLocaleTimeString(undefined, {
                     hour: '2-digit',
                     minute: '2-digit',
                   })}
                 </div>
               </div>
-            }
+            )}
             placement="bottomLeft"
           >
             {formElement}
@@ -359,7 +362,8 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
                   month: 'short',
                   day: 'numeric',
                   year: 'numeric',
-                })}{' '}
+                })}
+                {' '}
                 {creationDate.toLocaleTimeString(undefined, {
                   hour: '2-digit',
                   minute: '2-digit',
@@ -373,7 +377,8 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
                   month: 'short',
                   day: 'numeric',
                   year: 'numeric',
-                })}{' '}
+                })}
+                {' '}
                 {modifiedDate.toLocaleTimeString(undefined, {
                   hour: '2-digit',
                   minute: '2-digit',

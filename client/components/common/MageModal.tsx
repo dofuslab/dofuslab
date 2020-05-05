@@ -2,7 +2,9 @@
 
 import React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
-import { Modal, Select, Divider, Button } from 'antd';
+import {
+  Modal, Select, Divider, Button,
+} from 'antd';
 import { LabeledValue } from 'antd/lib/select';
 
 import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
@@ -20,7 +22,6 @@ import {
 } from '__generated__/globalTypes';
 import { MageAction } from 'common/types';
 import { useTranslation } from 'i18n';
-import MageInputNumber from './MageInputNumber';
 import { blue6 } from 'common/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faRedo } from '@fortawesome/free-solid-svg-icons';
@@ -32,10 +33,11 @@ import {
 import MageEquippedItemMutation from 'graphql/mutations/mageEquippedItem.graphql';
 import { mq } from 'common/constants';
 import { WeaponEffectsList, TruncatableText } from 'common/wrappers';
+import MageInputNumber from './MageInputNumber';
 
 const { Option } = Select;
 
-interface IProps {
+interface Props {
   visible: boolean;
   equippedItem: customSet_customSetById_equippedItems;
   closeMageModal: (e: React.MouseEvent<HTMLElement>) => void;
@@ -69,7 +71,7 @@ const deleteStatWrapper = {
   opacity: 0.3,
   transition: 'opacity 0.3s ease-in-out',
   cursor: 'pointer',
-  ['&:hover']: {
+  '&:hover': {
     opacity: 1,
   },
 };
@@ -79,8 +81,8 @@ const reducer = (state: MageState, action: MageAction) => {
   switch (action.type) {
     case 'ADD':
       if (
-        state.exos.some(({ stat }) => action.stat === stat) ||
-        state.originalStats.some(({ stat }) => action.stat === stat)
+        state.exos.some(({ stat }) => action.stat === stat)
+        || state.originalStats.some(({ stat }) => action.stat === stat)
       ) {
         return state;
       }
@@ -132,7 +134,7 @@ const calcStatsDiff = (
   ...statsState.exos,
 ];
 
-const MageModal: React.FC<IProps> = ({
+const MageModal: React.FC<Props> = ({
   visible,
   equippedItem,
   closeMageModal,
@@ -159,7 +161,7 @@ const MageModal: React.FC<IProps> = ({
   });
 
   const [weaponElementMage, setWeaponElementMage] = React.useState<
-    WeaponElementMage | undefined
+  WeaponElementMage | undefined
   >();
 
   const [mutate] = useMutation<mageEquippedItem, mageEquippedItemVariables>(
@@ -280,7 +282,8 @@ const MageModal: React.FC<IProps> = ({
                                 elementMageToWeaponEffect(v),
                               )}
                               css={{ width: 16, marginRight: 8 }}
-                            />{' '}
+                            />
+                            {' '}
                             {t(`WEAPON_ELEMENT_MAGE.${v}`, {
                               ns: 'weapon_spell_effect',
                             })}
@@ -329,39 +332,40 @@ const MageModal: React.FC<IProps> = ({
                   dispatch={dispatch}
                   isExo={false}
                 />
-                /{' '}
+                /
+                {' '}
                 <TruncatableText>
-                  {originalStatsMap[statLine.stat].value} {t(statLine.stat)}
+                  {originalStatsMap[statLine.stat].value}
+                  {' '}
+                  {t(statLine.stat)}
                 </TruncatableText>
               </div>
             ))}
             <Divider css={{ gridColumn: '1 / -1' }} />
             {statsState.exos
               .filter(({ stat }) => tempExoStatsMap[stat] !== undefined)
-              .map((statLine) => {
-                return (
+              .map((statLine) => (
+                <div
+                  key={`exo-${statLine.stat}`}
+                  css={{ ...statLineCss, color: blue6 }}
+                >
                   <div
-                    key={`exo-${statLine.stat}`}
-                    css={{ ...statLineCss, color: blue6 }}
+                    css={deleteStatWrapper}
+                    onClick={() => {
+                      dispatch({ type: 'REMOVE', stat: statLine.stat });
+                    }}
                   >
-                    <div
-                      css={deleteStatWrapper}
-                      onClick={() => {
-                        dispatch({ type: 'REMOVE', stat: statLine.stat });
-                      }}
-                    >
-                      <FontAwesomeIcon icon={faTimes} />
-                    </div>
-                    <MageInputNumber
-                      value={statLine.value}
-                      stat={statLine.stat}
-                      dispatch={dispatch}
-                      isExo={true}
-                    />
-                    {t(statLine.stat)}
+                    <FontAwesomeIcon icon={faTimes} />
                   </div>
-                );
-              })}
+                  <MageInputNumber
+                    value={statLine.value}
+                    stat={statLine.stat}
+                    dispatch={dispatch}
+                    isExo
+                  />
+                  {t(statLine.stat)}
+                </div>
+              ))}
             <div
               css={{
                 display: 'flex',
@@ -377,28 +381,24 @@ const MageModal: React.FC<IProps> = ({
                 onSelect={onAddStat}
                 css={{ fontSize: '0.75rem', width: '100%' }}
                 labelInValue
-                filterOption={(input, option) =>
-                  (option?.children as string)
-                    .toLocaleUpperCase()
-                    .includes(input.toLocaleUpperCase())
-                }
+                filterOption={(input, option) => (option?.children as string)
+                  .toLocaleUpperCase()
+                  .includes(input.toLocaleUpperCase())}
                 dropdownClassName={css({ zIndex: 1062 })} // higher than modal (1061)
               >
                 {Object.values(Stat)
-                  .sort((s1, s2) =>
-                    t(s1, { ns: 'stat' }).localeCompare(
-                      t(s2, { ns: 'stat' }),
-                      undefined,
-                      { ignorePunctuation: true },
-                    ),
-                  )
+                  .sort((s1, s2) => t(s1, { ns: 'stat' }).localeCompare(
+                    t(s2, { ns: 'stat' }),
+                    undefined,
+                    { ignorePunctuation: true },
+                  ))
                   .map((stat) => (
                     <Option
                       key={stat}
                       value={stat}
                       disabled={statsSet.has(stat)}
                       className={css({
-                        ['.ant-select-item-option-content']: {
+                        '.ant-select-item-option-content': {
                           fontSize: '0.75rem',
                         },
                       })}

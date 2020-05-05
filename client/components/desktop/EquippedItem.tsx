@@ -11,25 +11,25 @@ import {
   customSet,
   customSet_equippedItems,
 } from 'graphql/fragments/__generated__/customSet';
-import EquippedItemWithStats from '../common/EquippedItemWithStats';
 import { item_set } from 'graphql/fragments/__generated__/item';
-import { IError } from 'common/types';
+import { BuildError } from 'common/types';
 import { TTheme } from 'common/themes';
+import EquippedItemWithStats from '../common/EquippedItemWithStats';
 
-interface IProps {
+interface Props {
   slot: itemSlots_itemSlots;
   equippedItem?: customSet_customSetById_equippedItems;
   selectItemSlot: React.Dispatch<
-    React.SetStateAction<itemSlots_itemSlots | null>
+  React.SetStateAction<itemSlots_itemSlots | null>
   >;
   customSet?: customSet | null;
   selected: boolean;
   openMageModal: (equippedItem: customSet_equippedItems) => void;
   openSetModal: (set: item_set) => void;
-  errors?: Array<IError>;
+  errors?: Array<BuildError>;
 }
 
-const EquippedItem: React.FC<IProps> = ({
+const EquippedItem: React.FC<Props> = ({
   slot,
   equippedItem,
   selectItemSlot,

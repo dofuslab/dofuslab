@@ -2,16 +2,16 @@ import React from 'react';
 import { CardSkeleton } from 'common/wrappers';
 import { Media } from './Media';
 
-interface IProps {
+interface Props {
   multiplier?: number;
   length?: number;
 }
 
-const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
-  let mult = multiplier || 1;
-  let mod = (length || 0) % 5;
+const SkeletonCardsLoader: React.FC<Props> = ({ multiplier, length }) => {
+  const mult = multiplier || 1;
+  const mod = (length || 0) % 5;
   return (
-    <React.Fragment key={'frag'}>
+    <React.Fragment key="frag">
       <Media lessThan="xs">
         {(mediaClassNames) => (
           <>

@@ -16,12 +16,12 @@ import { itemCardStyle } from 'common/mixins';
 import { mq } from 'common/constants';
 import Card from 'components/common/Card';
 
-interface IProps {
+interface Props {
   set: sets_sets_edges_node;
   onClick: (set: sets_sets_edges_node) => void;
 }
 
-const SetCard: React.FC<IProps> = ({ set, onClick }) => {
+const SetCard: React.FC<Props> = ({ set, onClick }) => {
   const { t } = useTranslation(['stat', 'common']);
   const maxSetBonusItems = set.bonuses.reduce(
     (currMax, bonus) => Math.max(currMax, bonus.numItems),
@@ -42,7 +42,7 @@ const SetCard: React.FC<IProps> = ({ set, onClick }) => {
         hoverable
         size="small"
         onClick={openSetModal}
-        title={
+        title={(
           <CardTitleWithLevel
             title={set.name}
             level={set.items?.reduce(
@@ -50,7 +50,7 @@ const SetCard: React.FC<IProps> = ({ set, onClick }) => {
               0,
             )}
           />
-        }
+        )}
         css={{
           ...itemCardStyle,
           ':hover': {
@@ -67,39 +67,37 @@ const SetCard: React.FC<IProps> = ({ set, onClick }) => {
               margin: '0px auto 12px',
             }}
           >
-            {set.items.map((item) =>
-              brokenImages.includes(item.id) ? (
-                <BrokenImagePlaceholder
-                  key={`item-${item.id}`}
-                  css={{
-                    width: 84,
-                    height: 84,
-                    [mq[1]]: {
-                      width: 60,
-                      height: 60,
-                    },
-                    [':not:first-of-type']: { marginLeft: 12 },
-                  }}
-                />
-              ) : (
-                <img
-                  src={item?.imageUrl}
-                  key={`item-${item.id}`}
-                  css={{
-                    width: 84,
-                    height: 84,
-                    [mq[1]]: {
-                      width: 60,
-                      height: 60,
-                    },
-                    [':not:first-of-type']: { marginLeft: 12 },
-                  }}
-                  onError={() => {
-                    setBrokenImages((prev) => [...prev, item.id]);
-                  }}
-                />
-              ),
-            )}
+            {set.items.map((item) => (brokenImages.includes(item.id) ? (
+              <BrokenImagePlaceholder
+                key={`item-${item.id}`}
+                css={{
+                  width: 84,
+                  height: 84,
+                  [mq[1]]: {
+                    width: 60,
+                    height: 60,
+                  },
+                  ':not:first-of-type': { marginLeft: 12 },
+                }}
+              />
+            ) : (
+              <img
+                src={item?.imageUrl}
+                key={`item-${item.id}`}
+                css={{
+                  width: 84,
+                  height: 84,
+                  [mq[1]]: {
+                    width: 60,
+                    height: 60,
+                  },
+                  ':not:first-of-type': { marginLeft: 12 },
+                }}
+                onError={() => {
+                  setBrokenImages((prev) => [...prev, item.id]);
+                }}
+              />
+            )))}
           </div>
           <SetBonuses
             bonuses={set.bonuses.filter(

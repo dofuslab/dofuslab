@@ -15,7 +15,7 @@ interface ExtendedAppContext extends AppContext {
   ctx: NextPageContext & { apolloClient: ApolloClient<NormalizedCacheObject> };
 }
 
-interface IProps {
+interface Props {
   apolloState: any;
   headers: IncomingHttpHeaders;
 }
@@ -54,53 +54,53 @@ const initApollo = (initialState: any, headers: IncomingHttpHeaders) => {
   return apolloClient;
 };
 
-export default (App: NextPage<any>) => {
-  return class withApollo extends React.Component<IProps> {
-    static displayName = `withApollo(${App.displayName})`;
-    static defaultProps = { apolloState: {} };
-    static async getInitialProps(ctx: ExtendedAppContext) {
-      const {
-        AppTree,
-        ctx: { req, res },
-      } = ctx;
+export default (App: NextPage<any>) => class withApollo extends React.Component<Props> {
+  static displayName = `withApollo(${App.displayName})`;
 
-      const headers = req ? req.headers : {};
-      const apollo = initApollo({}, headers);
-      ctx.ctx.apolloClient = apollo;
+  static defaultProps = { apolloState: {} };
 
-      let pageProps = {};
-      if (App.getInitialProps) {
-        try {
-          pageProps = await App.getInitialProps(ctx as any);
-        } catch (err) {
-          console.error(err);
-        }
+  static async getInitialProps(ctx: ExtendedAppContext) {
+    const {
+      AppTree,
+      ctx: { req, res },
+    } = ctx;
+
+    const headers = req ? req.headers : {};
+    const apollo = initApollo({}, headers);
+    ctx.ctx.apolloClient = apollo;
+
+    let pageProps = {};
+    if (App.getInitialProps) {
+      try {
+        pageProps = await App.getInitialProps(ctx as any);
+      } catch (err) {
+        console.error(err);
       }
-      if (res && res.finished) {
-        return {};
-      }
-      if (typeof window === 'undefined') {
-        try {
-          await getDataFromTree(
-            <AppTree pageProps={pageProps} apolloClient={apollo} />,
-          );
-        } catch (err) {
-          console.error('Error while running `getDataFromTree`', err);
-        }
-        Head.rewind();
-      }
-      const apolloState = apollo.cache.extract();
-      return {
-        ...pageProps,
-        headers,
-        apolloState,
-      };
     }
-
-    apolloClient = initApollo(this.props.apolloState, this.props.headers);
-
-    render() {
-      return <App apolloClient={this.apolloClient} {...this.props} />;
+    if (res && res.finished) {
+      return {};
     }
-  };
+    if (typeof window === 'undefined') {
+      try {
+        await getDataFromTree(
+          <AppTree pageProps={pageProps} apolloClient={apollo} />,
+        );
+      } catch (err) {
+        console.error('Error while running `getDataFromTree`', err);
+      }
+      Head.rewind();
+    }
+    const apolloState = apollo.cache.extract();
+    return {
+      ...pageProps,
+      headers,
+      apolloState,
+    };
+  }
+
+  apolloClient = initApollo(this.props.apolloState, this.props.headers);
+
+  render() {
+    return <App apolloClient={this.apolloClient} {...this.props} />;
+  }
 };

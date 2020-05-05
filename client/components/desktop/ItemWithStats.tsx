@@ -10,14 +10,14 @@ import {
 import { useDeleteItemMutation } from 'common/utils';
 import BasicItemWithStats from './BasicItemWithStats';
 
-interface IProps {
+interface Props {
   equippedItem: customSet_equippedItems;
   selected: boolean;
   deletable: boolean;
   customSet: customSet;
 }
 
-const ItemWithStats: React.FC<IProps> = ({
+const ItemWithStats: React.FC<Props> = ({
   equippedItem,
   selected,
   deletable,

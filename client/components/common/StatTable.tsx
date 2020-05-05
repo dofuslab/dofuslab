@@ -41,7 +41,7 @@ const StatTable: React.FC<IStatTable> = ({
           css={{
             display: 'flex',
             justifyContent: 'space-between',
-            ['&.ant-list-item']: {
+            '&.ant-list-item': {
               padding: '6px 16px 6px 8px !important',
             },
             alignItems: 'center',
@@ -77,8 +77,8 @@ const StatTable: React.FC<IStatTable> = ({
             {statCalculators[item.stat]
               ? statCalculators[item.stat](statsFromCustomSet, customSet)
               : statsFromCustomSet
-              ? statsFromCustomSet[item.stat] || 0
-              : 0}
+                ? statsFromCustomSet[item.stat] || 0
+                : 0}
           </div>
         </List.Item>
       )}

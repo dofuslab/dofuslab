@@ -1,14 +1,10 @@
 import {
-  customSet,
-  customSet_equippedItems,
-} from 'graphql/fragments/__generated__/customSet';
-import { item_set } from 'graphql/fragments/__generated__/item';
-import {
   Stat,
   ItemFilters,
   WeaponEffectType,
   SpellEffectType,
 } from '__generated__/globalTypes';
+import { ItemSet, EquippedItem, CustomSet } from './type-aliases';
 
 export type StatWithCalculatedValue = {
   stat: string;
@@ -27,14 +23,14 @@ export type StatsFromCustomSet = {
 
 export type StatCalculator = (
   statsFromCustomSet: StatsFromCustomSet | null,
-  customSet?: customSet | null,
+  customSet?: CustomSet | null,
 ) => number;
 
 export type SetCounter = {
   [key: string]: {
     count: number;
-    set: item_set;
-    equippedItems: Array<customSet_equippedItems>;
+    set: ItemSet;
+    equippedItems: Array<EquippedItem>;
   };
 };
 
@@ -77,7 +73,7 @@ export const mobileScreenTypes = mobileScreenTypesArr.reduce(
   {},
 ) as { [key in MobileScreen]: MobileScreen };
 
-export interface ICalcDamageInput {
+export interface CalcDamageInput {
   isCrit?: boolean;
   isTrap?: boolean;
   isWeapon?: boolean;
@@ -108,16 +104,16 @@ export type TCondition = {
 
 export type TConditionObj =
   | {
-      and?: Array<TConditionObj>;
-      or?: Array<TConditionObj>;
-    }
+    and?: Array<TConditionObj>;
+    or?: Array<TConditionObj>;
+  }
   | TCondition;
 
 export type TEvaluatedConditionObj =
   | {
-      and?: Array<TEvaluatedConditionObj>;
-      or?: Array<TEvaluatedConditionObj>;
-    }
+    and?: Array<TEvaluatedConditionObj>;
+    or?: Array<TEvaluatedConditionObj>;
+  }
   | boolean;
 
 export const baseStats = [
@@ -144,7 +140,7 @@ export type BaseStatKey = typeof baseStats[number];
 
 export type StatKey = typeof stats[number];
 
-export interface IError {
-  equippedItem: customSet_equippedItems;
+export interface BuildError {
+  equippedItem: EquippedItem;
   reason: string;
 }

@@ -6,32 +6,32 @@ import { Tabs } from 'antd';
 import { useTheme } from 'emotion-theming';
 
 import { STAT_GROUPS, mq, SEARCH_BAR_ID } from 'common/constants';
-import Layout from './Layout';
-import StatTable from '../common/StatTable';
 import { ResponsiveGrid } from 'common/wrappers';
 
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getStatsFromCustomSet, getErrors } from 'common/utils';
-import SetHeader from '../common/SetHeader';
-import EquipmentSlots from '../common/EquipmentSlots';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import StatEditor from '../common/StatEditor';
 import { topMarginStyle } from 'common/mixins';
-import Selector from '../common/Selector';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
 import { useTranslation } from 'i18n';
-import { IError } from 'common/types';
+import { BuildError } from 'common/types';
 import { TTheme } from 'common/themes';
+import Selector from '../common/Selector';
+import StatEditor from '../common/StatEditor';
+import EquipmentSlots from '../common/EquipmentSlots';
+import SetHeader from '../common/SetHeader';
+import StatTable from '../common/StatTable';
+import Layout from './Layout';
 
 const { TabPane } = Tabs;
 
-interface IProps {
+interface Props {
   customSet: customSet | null;
 }
 
-const SetBuilder: React.FC<IProps> = ({ customSet }) => {
+const SetBuilder: React.FC<Props> = ({ customSet }) => {
   const [
     selectedItemSlot,
     selectItemSlot,
@@ -67,7 +67,7 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
     (equippedItem) => !!equippedItem.item.weaponStats,
   );
 
-  let errors: Array<IError> = [];
+  let errors: Array<BuildError> = [];
 
   if (customSet && statsFromCustomSet) {
     errors = getErrors(customSet, statsFromCustomSet);

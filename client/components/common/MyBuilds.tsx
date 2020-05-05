@@ -36,11 +36,11 @@ import DeleteCustomSetModal from './DeleteCustomSetModal';
 const PAGE_SIZE = 10;
 const THRESHOLD = 600;
 
-interface IProps {
+interface Props {
   onClose?: () => void;
 }
 
-const MyBuilds: React.FC<IProps> = ({ onClose }) => {
+const MyBuilds: React.FC<Props> = ({ onClose }) => {
   const [search, setSearch] = React.useState('');
 
   const handleSearchChange = React.useCallback(
@@ -64,8 +64,8 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
   );
 
   const { data: myBuilds, loading: queryLoading, fetchMore } = useQuery<
-    myCustomSets,
-    myCustomSetsVariables
+  myCustomSets,
+  myCustomSetsVariables
   >(myCustomSetsQuery, {
     variables: { first: PAGE_SIZE, search },
   });
@@ -163,7 +163,7 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
   const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
   const [deleteModalVisible, setDeleteModalVisible] = React.useState(false);
   const [customSetIdToDelete, setCustomSetIdToDelete] = React.useState<
-    string | null
+  string | null
   >(null);
 
   const closeDeleteModal = React.useCallback(() => {
@@ -177,8 +177,8 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
       useWindow={false}
       threshold={THRESHOLD}
       css={{ marginBottom: 20, [mq[1]]: { marginTop: 36 } }}
-      loader={
-        <React.Fragment key={'frag'}>
+      loader={(
+        <React.Fragment key="frag">
           {Array(4)
             .fill(null)
             .map((_, idx) => (
@@ -189,7 +189,7 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
               />
             ))}
         </React.Fragment>
-      }
+      )}
     >
       {customSetIdToDelete && (
         <DeleteCustomSetModal
@@ -230,14 +230,14 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
             <Card
               onClick={onClose}
               hoverable
-              title={
+              title={(
                 <ClassNames>
                   {({ css }) => (
                     <CardTitleWithLevel
                       title={node.name || t('UNTITLED')}
                       level={node.level}
                       levelClassName={css({ marginLeft: 8 })}
-                      rightAlignedContent={
+                      rightAlignedContent={(
                         <div
                           css={{
                             padding: '0px 4px 0px 8px',
@@ -254,11 +254,11 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
                         >
                           <FontAwesomeIcon icon={faTrashAlt} />
                         </div>
-                      }
+                      )}
                     />
                   )}
                 </ClassNames>
-              }
+              )}
               size="small"
               css={{
                 ...itemCardStyle,
@@ -280,27 +280,25 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
                   .sort(
                     ({ slot: { order: i } }, { slot: { order: j } }) => i - j,
                   )
-                  .map(({ id, item }) =>
-                    brokenImages.includes(id) ? (
-                      <BrokenImagePlaceholder
-                        key={`broken-image-${id}`}
-                        css={{
-                          width: 40,
-                          height: 40,
-                          display: 'inline-flex',
-                        }}
-                      />
-                    ) : (
-                      <img
-                        key={`equipped-item-${id}`}
-                        src={item.imageUrl}
-                        css={{ width: 40 }}
-                        onError={() => {
-                          setBrokenImages((prev) => [...prev, id]);
-                        }}
-                      />
-                    ),
-                  )
+                  .map(({ id, item }) => (brokenImages.includes(id) ? (
+                    <BrokenImagePlaceholder
+                      key={`broken-image-${id}`}
+                      css={{
+                        width: 40,
+                        height: 40,
+                        display: 'inline-flex',
+                      }}
+                    />
+                  ) : (
+                    <img
+                      key={`equipped-item-${id}`}
+                      src={item.imageUrl}
+                      css={{ width: 40 }}
+                      onError={() => {
+                        setBrokenImages((prev) => [...prev, id]);
+                      }}
+                    />
+                  )))
               ) : (
                 <div css={{ fontStyle: 'italic', color: theme.text?.light }}>
                   {t('NO_ITEMS_EQUIPPED')}
@@ -321,8 +319,8 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
           {t('NO_BUILDS_MATCHED', { search })}
         </div>
       )}
-      {queryLoading &&
-        Array(10)
+      {queryLoading
+        && Array(10)
           .fill(null)
           .map((_, idx) => (
             <CardSkeleton

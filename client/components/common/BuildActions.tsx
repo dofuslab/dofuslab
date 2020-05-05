@@ -7,7 +7,7 @@ import { useTheme } from 'emotion-theming';
 import { useRouter } from 'next/router';
 
 import { TTheme } from 'common/themes';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
+import { customSet as CustomSet } from 'graphql/fragments/__generated__/customSet';
 import {
   Button,
   Dropdown,
@@ -35,12 +35,12 @@ import { mq } from 'common/constants';
 import { CheckboxChangeEvent } from 'antd/lib/checkbox';
 import DeleteCustomSetModal from './DeleteCustomSetModal';
 
-interface IProps {
-  customSet: customSet;
+interface Props {
+  customSet: CustomSet;
   isMobile: boolean;
 }
 
-const BuildActions: React.FC<IProps> = ({ customSet, isMobile }) => {
+const BuildActions: React.FC<Props> = ({ customSet, isMobile }) => {
   const { t } = useTranslation('common');
   const theme = useTheme<TTheme>();
   const [copyMutate, { loading: copyLoading }] = useMutation<

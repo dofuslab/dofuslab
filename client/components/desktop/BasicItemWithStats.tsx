@@ -15,10 +15,10 @@ import {
 import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/customSet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagic, faTimes } from '@fortawesome/free-solid-svg-icons';
-import ItemStatsList from '../common/ItemStatsList';
 import { item } from 'graphql/fragments/__generated__/item';
 import { TTheme } from 'common/themes';
 import { CardTitleWithLevel, BrokenImagePlaceholder } from 'common/wrappers';
+import ItemStatsList from '../common/ItemStatsList';
 
 const wrapperStyles = {
   position: 'absolute' as 'absolute',
@@ -34,7 +34,7 @@ const wrapperStyles = {
   opacity: 0,
 };
 
-interface IProps {
+interface Props {
   item: item;
   exos?: Array<customSet_equippedItems_exos>;
   deletable?: boolean;
@@ -43,7 +43,7 @@ interface IProps {
   overlayCSS?: React.CSSProperties;
 }
 
-const BasicItemWithStats: React.FC<IProps> = ({
+const BasicItemWithStats: React.FC<Props> = ({
   item,
   exos,
   deletable,
@@ -73,10 +73,10 @@ const BasicItemWithStats: React.FC<IProps> = ({
               '.ant-popover-content': {
                 maxHeight: contentRef.current
                   ? `calc(100vh - ${
-                      contentRef.current.offsetTop +
-                      contentRef.current.offsetHeight +
-                      20
-                    }px)`
+                    contentRef.current.offsetTop
+                      + contentRef.current.offsetHeight
+                      + 20
+                  }px)`
                   : undefined,
                 overflow: 'auto',
               },
@@ -89,10 +89,10 @@ const BasicItemWithStats: React.FC<IProps> = ({
               css={{
                 ...itemImageBox(theme),
                 ...(selected && { ...selectedBox(theme) }),
-                ['&:hover']: {
+                '&:hover': {
                   [`.${wrapperClass}`]: {
                     opacity: 0.3,
-                    ['&:hover']: {
+                    '&:hover': {
                       opacity: 1,
                     },
                   },

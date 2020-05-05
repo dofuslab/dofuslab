@@ -4,7 +4,7 @@ import { Stat } from '__generated__/globalTypes';
 import { MageAction } from 'common/types';
 import { ClassNames } from '@emotion/core';
 
-interface IProps {
+interface Props {
   stat: Stat;
   value: number;
   dispatch: React.Dispatch<MageAction>;
@@ -13,7 +13,7 @@ interface IProps {
 
 const MAX = 9999;
 
-const MageInputNumber: React.FC<IProps> = ({
+const MageInputNumber: React.FC<Props> = ({
   stat,
   value,
   dispatch,
@@ -22,7 +22,9 @@ const MageInputNumber: React.FC<IProps> = ({
 }) => {
   const onChange = React.useCallback(
     (v?: number) => {
-      dispatch({ type: 'EDIT', stat, value: v || 0, isExo });
+      dispatch({
+        type: 'EDIT', stat, value: v || 0, isExo,
+      });
     },
     [dispatch, stat, value],
   );

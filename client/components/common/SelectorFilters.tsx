@@ -4,7 +4,9 @@ import * as React from 'react';
 import { ClassNames, jsx } from '@emotion/core';
 import { Stat } from '__generated__/globalTypes';
 import { mq, DEBOUNCE_INTERVAL, SEARCH_BAR_ID } from 'common/constants';
-import { Select, Input, InputNumber, Button, Switch } from 'antd';
+import {
+  Select, Input, InputNumber, Button, Switch,
+} from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -18,15 +20,15 @@ import { useTheme } from 'emotion-theming';
 
 import { TTheme } from 'common/themes';
 import { SharedFilterAction, SharedFilters } from 'common/types';
-import { Media } from './Media';
-import ResetAllButton from './ResetAllButton';
 import { useTranslation } from 'i18n';
 import Tooltip from 'components/common/Tooltip';
+import { Media } from './Media';
+import ResetAllButton from './ResetAllButton';
 
 const { Search } = Input;
 const { Option } = Select;
 
-interface IProps {
+interface Props {
   filters: SharedFilters;
   dispatch: React.Dispatch<SharedFilterAction>;
   customSetLevel: number | null;
@@ -35,7 +37,7 @@ interface IProps {
   onReset: () => void;
 }
 
-const SelectorFilters: React.FC<IProps> = ({
+const SelectorFilters: React.FC<Props> = ({
   filters: { stats },
   dispatch,
   customSetLevel,
@@ -244,23 +246,19 @@ const SelectorFilters: React.FC<IProps> = ({
               }))}
               onChange={onChangeStats}
               dropdownClassName={css({
-                ['.ant-select-item']: { fontSize: '0.75rem' },
+                '.ant-select-item': { fontSize: '0.75rem' },
               })}
-              filterOption={(input, option) =>
-                (option?.children as string)
-                  .toLocaleUpperCase()
-                  .includes(input.toLocaleUpperCase())
-              }
+              filterOption={(input, option) => (option?.children as string)
+                .toLocaleUpperCase()
+                .includes(input.toLocaleUpperCase())}
               labelInValue
             >
               {Object.values(Stat)
-                .sort((s1, s2) =>
-                  t(s1, { ns: 'stat' }).localeCompare(
-                    t(s2, { ns: 'stat' }),
-                    undefined,
-                    { ignorePunctuation: true },
-                  ),
-                )
+                .sort((s1, s2) => t(s1, { ns: 'stat' }).localeCompare(
+                  t(s2, { ns: 'stat' }),
+                  undefined,
+                  { ignorePunctuation: true },
+                ))
                 .map((stat) => (
                   <Option key={stat} value={stat}>
                     {t(stat, { ns: 'stat' })}

@@ -3,24 +3,24 @@
 import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { Popover } from 'antd';
 import { useTranslation } from 'i18n';
 import { popoverTitleStyle, gold5 } from 'common/mixins';
-import { baseStats, scrolledStats, IError } from 'common/types';
+import { baseStats, scrolledStats, BuildError } from 'common/types';
 import { calcPointCost, renderErrors } from 'common/utils';
 import groupBy from 'lodash/groupBy';
 import { TTheme } from 'common/themes';
+import { CustomSet } from 'common/type-aliases';
 
-interface IProps {
-  customSet: customSet;
-  errors: Array<IError>;
+interface Props {
+  customSet: CustomSet;
+  errors: Array<BuildError>;
   isMobile?: boolean;
 }
 
-const BuildErrors: React.FC<IProps> = ({ customSet, errors, isMobile }) => {
+const BuildErrors: React.FC<Props> = ({ customSet, errors, isMobile }) => {
   const { t } = useTranslation(['common']);
   const theme = useTheme<TTheme>();
 
@@ -30,8 +30,8 @@ const BuildErrors: React.FC<IProps> = ({ customSet, errors, isMobile }) => {
 
   Object.entries(groupedErrors).forEach(([reason, arr]) => {
     if (reason === 'CONDITION_NOT_MET') {
-      arr.forEach(({ equippedItem, reason }) => {
-        errorNodes.push(renderErrors(reason, t, equippedItem, true));
+      arr.forEach(({ equippedItem, reason: r }) => {
+        errorNodes.push(renderErrors(r, t, equippedItem, true));
       });
     } else {
       errorNodes.push(renderErrors(reason, t));
@@ -39,7 +39,7 @@ const BuildErrors: React.FC<IProps> = ({ customSet, errors, isMobile }) => {
   });
 
   const remainingPoints = baseStats.reduce(
-    (acc, statKey) => (acc -= calcPointCost(customSet.stats[statKey], statKey)),
+    (acc, statKey) => acc - calcPointCost(customSet.stats[statKey], statKey),
     ((customSet?.level ?? 200) - 1) * 5,
   );
 

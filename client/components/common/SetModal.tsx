@@ -16,14 +16,14 @@ import {
 } from 'graphql/queries/__generated__/set';
 import setQuery from 'graphql/queries/set.graphql';
 import { useTranslation } from 'i18n';
-import BasicItemWithStats from '../desktop/BasicItemWithStats';
 import { SetBonuses } from 'common/wrappers';
 import { itemBox } from 'common/mixins';
 import { mq } from 'common/constants';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useEquipItemsMutation } from 'common/utils';
+import BasicItemWithStats from '../desktop/BasicItemWithStats';
 
-interface IProps {
+interface Props {
   setId: string;
   setName: string;
   visible: boolean;
@@ -32,7 +32,7 @@ interface IProps {
   isMobile?: boolean;
 }
 
-const SetModal: React.FC<IProps> = ({
+const SetModal: React.FC<Props> = ({
   setId,
   setName,
   visible,
@@ -166,11 +166,11 @@ const SetModal: React.FC<IProps> = ({
       confirmLoading={mutationLoading}
       onOk={onOk}
       okButtonProps={{ disabled: !itemIds.length }}
-      okText={
+      okText={(
         <span css={{ fontSize: '0.75rem' }}>
           {t('EQUIP_ITEMS', { count: itemIds.length })}
         </span>
-      }
+      )}
       cancelText={<span css={{ fontSize: '0.75rem' }}>{t('CANCEL')}</span>}
     >
       {bodyContent}

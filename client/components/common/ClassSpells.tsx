@@ -10,24 +10,23 @@ import { useTheme } from 'emotion-theming';
 
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
 import {
   classById,
   classByIdVariables,
-  classById_classById_spellVariantPairs_spells,
 } from 'graphql/queries/__generated__/classById';
 import classByIdQuery from 'graphql/queries/classById.graphql';
-import SpellCard from './SpellCard';
 import { TTheme } from 'common/themes';
+import { CustomSet, Spell } from 'common/type-aliases';
+import SpellCard from './SpellCard';
 
 const { Option } = Select;
 
-interface IProps {
-  customSet?: customSet | null;
+interface Props {
+  customSet?: CustomSet | null;
 }
 
-const ClassSpells: React.FC<IProps> = ({ customSet }) => {
+const ClassSpells: React.FC<Props> = ({ customSet }) => {
   const router = useRouter();
   const { query } = router;
   const { data, loading } = useQuery<classes>(classesQuery);
@@ -42,9 +41,10 @@ const ClassSpells: React.FC<IProps> = ({ customSet }) => {
     return obj;
   }, {} as { [key: string]: string });
 
-  const idToName = data?.classes.reduce((acc, { id, name }) => {
-    return { ...acc, [id]: name };
-  }, {} as { [key: string]: string });
+  const idToName = data?.classes.reduce(
+    (acc, { id, name }) => ({ ...acc, [id]: name }),
+    {} as { [key: string]: string },
+  );
 
   const selectedClassName = Array.isArray(query.class)
     ? query.class[0]
@@ -61,13 +61,18 @@ const ClassSpells: React.FC<IProps> = ({ customSet }) => {
 
   const spellsList = classData?.classById?.spellVariantPairs.reduce(
     (acc, curr) => [...acc, ...curr.spells],
-    [] as Array<classById_classById_spellVariantPairs_spells>,
+    [] as Array<Spell>,
   );
 
   return data ? (
     <>
       <Select<string>
-        getPopupContainer={(node: HTMLElement) => node.parentElement!}
+        getPopupContainer={(node: HTMLElement) => {
+          if (node.parentElement) {
+            return node.parentElement;
+          }
+          return document.body;
+        }}
         css={{ gridColumn: '1 / -1' }}
         showSearch
         filterOption={(input, option) =>

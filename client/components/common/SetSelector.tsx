@@ -12,23 +12,23 @@ import {
   setsVariables,
   sets_sets_edges_node,
 } from 'graphql/queries/__generated__/sets';
-import SetCard from './SetCard';
 import { mq } from 'common/constants';
 import { getResponsiveGridStyle } from 'common/mixins';
+import { customSet } from 'graphql/fragments/__generated__/customSet';
+import SetCard from './SetCard';
 import SkeletonCardsLoader from './SkeletonCardsLoader';
 import SetModal from './SetModal';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 
 const PAGE_SIZE = 12;
 
 const THRESHOLD = 600;
 
-interface IProps {
+interface Props {
   filters: SharedFilters;
   customSet: customSet | null;
 }
 
-const SetSelector: React.FC<IProps> = ({ filters, customSet }) => {
+const SetSelector: React.FC<Props> = ({ filters, customSet }) => {
   const { data, loading, fetchMore } = useQuery<sets, setsVariables>(SetQuery, {
     variables: { first: PAGE_SIZE, filters },
   });
@@ -61,9 +61,9 @@ const SetSelector: React.FC<IProps> = ({ filters, customSet }) => {
         variables: { after: data.sets.pageInfo.endCursor },
         updateQuery: (prevData, { fetchMoreResult }) => {
           if (
-            !fetchMoreResult ||
-            fetchMoreResult.sets.pageInfo.endCursor ===
-              prevData.sets.pageInfo.endCursor
+            !fetchMoreResult
+            || fetchMoreResult.sets.pageInfo.endCursor
+              === prevData.sets.pageInfo.endCursor
           ) {
             return prevData;
           }

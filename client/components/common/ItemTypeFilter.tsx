@@ -9,20 +9,19 @@ import { CheckboxValueType } from 'antd/lib/checkbox/Group';
 
 const { Group: CheckboxGroup } = Checkbox;
 
-interface IProps {
+interface Props {
   itemTypes: Array<itemSlots_itemSlots_itemTypes>;
   itemTypeIds: Set<string>;
   setItemTypeIds: React.Dispatch<React.SetStateAction<Set<string>>>;
 }
 
-const ItemTypeFilter: React.FC<IProps> = ({
+const ItemTypeFilter: React.FC<Props> = ({
   itemTypes,
   itemTypeIds,
   setItemTypeIds,
 }) => {
   const onChangeItemTypeIds = React.useCallback(
-    (newItemTypeIds: Array<CheckboxValueType>) =>
-      setItemTypeIds(new Set(newItemTypeIds as Array<string>)),
+    (newItemTypeIds: Array<CheckboxValueType>) => setItemTypeIds(new Set(newItemTypeIds as Array<string>)),
     [setItemTypeIds],
   );
   if (itemTypes.length <= 1) {
@@ -48,7 +47,7 @@ const ItemTypeFilter: React.FC<IProps> = ({
         [mq[1]]: {
           lineHeight: 'normal',
         },
-        ['.ant-checkbox-group-item']: {
+        '.ant-checkbox-group-item': {
           flex: '0 1 144px',
           [mq[1]]: {
             flexBasis: '120px',
@@ -56,7 +55,7 @@ const ItemTypeFilter: React.FC<IProps> = ({
           minWidth: 0,
           marginTop: 4,
           fontSize: '0.75rem',
-          ['&:last-of-type']: {
+          '&:last-of-type': {
             marginRight: 8,
           },
         },

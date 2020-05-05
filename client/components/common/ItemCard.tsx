@@ -8,17 +8,17 @@ import {
   itemSlots_itemSlots,
   itemSlots,
 } from 'graphql/queries/__generated__/itemSlots';
-import BasicItemCard from './BasicItemCard';
 import Router from 'next/router';
 import { useApolloClient } from '@apollo/react-hooks';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import BasicItemCard from './BasicItemCard';
 
-interface IProps {
+interface Props {
   item: item;
   itemSlotId: string | null;
   customSetId: string | null;
   selectItemSlot?: React.Dispatch<
-    React.SetStateAction<itemSlots_itemSlots | null>
+  React.SetStateAction<itemSlots_itemSlots | null>
   >;
   equipped: boolean;
   openSetModal: (set: item_set) => void;
@@ -26,7 +26,7 @@ interface IProps {
   nextSlotId: string | null;
 }
 
-const ItemCard: React.FC<IProps> = ({
+const ItemCard: React.FC<Props> = ({
   item,
   itemSlotId,
   customSetId,
@@ -45,8 +45,7 @@ const ItemCard: React.FC<IProps> = ({
       const slots = client.readQuery<itemSlots>({ query: ItemSlotsQuery });
       let nextSlot = null;
       if (nextSlotId && slots) {
-        nextSlot =
-          slots.itemSlots.find((slot) => slot.id === nextSlotId) || null;
+        nextSlot = slots.itemSlots.find((slot) => slot.id === nextSlotId) || null;
       }
       selectItemSlot && selectItemSlot(nextSlot);
       if (isMobile && customSetId) {

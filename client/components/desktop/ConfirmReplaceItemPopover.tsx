@@ -8,23 +8,23 @@ import { item } from 'graphql/fragments/__generated__/item';
 import { useTranslation } from 'i18n';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { itemBox, popoverTitleStyle } from 'common/mixins';
-import ItemWithStats from './ItemWithStats';
 import { useEquipItemMutation } from 'common/utils';
 import { mq } from 'common/constants';
+import ItemWithStats from './ItemWithStats';
 
-interface IProps {
+interface Props {
   item: item;
   customSet: customSet;
 }
 
-const ConfirmReplaceItemPopover: React.FC<IProps> = ({
+const ConfirmReplaceItemPopover: React.FC<Props> = ({
   item,
   customSet,
   children,
 }) => {
   const { t } = useTranslation('common');
   const [selectedItemSlotId, setSelectedItemSlotId] = React.useState<
-    string | null
+  string | null
   >(null);
 
   const [visible, setIsVisible] = React.useState(false);
@@ -44,7 +44,7 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
       {({ css }) => (
         <Popover
           getPopupContainer={(node) => node.parentElement!}
-          content={
+          content={(
             <div
               css={{
                 width: '100%',
@@ -56,14 +56,10 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
               }}
             >
               {customSet.equippedItems
-                .filter((equippedItem) =>
-                  item.itemType.eligibleItemSlots
-                    .map((slot) => slot.id)
-                    .includes(equippedItem.slot.id),
-                )
-                .sort((item1, item2) =>
-                  item1.slot.id.localeCompare(item2.slot.id),
-                )
+                .filter((equippedItem) => item.itemType.eligibleItemSlots
+                  .map((slot) => slot.id)
+                  .includes(equippedItem.slot.id))
+                .sort((item1, item2) => item1.slot.id.localeCompare(item2.slot.id))
                 .map((equippedItem) => (
                   <div
                     css={itemBox}
@@ -80,7 +76,7 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
                   </div>
                 ))}
             </div>
-          }
+          )}
           title={t('SELECT_ITEM_TO_REPLACE')}
           visible={visible}
           onVisibleChange={setIsVisible}

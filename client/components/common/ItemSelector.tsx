@@ -5,7 +5,6 @@ import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 import InfiniteScroll from 'react-infinite-scroller';
 
-import ItemCard from './ItemCard';
 import ItemsQuery from 'graphql/queries/items.graphql';
 import { items, itemsVariables } from 'graphql/queries/__generated__/items';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
@@ -13,21 +12,22 @@ import { getResponsiveGridStyle } from 'common/mixins';
 import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { SharedFilters } from 'common/types';
 import { findEmptyOrOnlySlotId, findNextEmptySlotId } from 'common/utils';
-import ConfirmReplaceItemPopover from '../desktop/ConfirmReplaceItemPopover';
 import { item_set } from 'graphql/fragments/__generated__/item';
-import SetModal from './SetModal';
 import { mq } from 'common/constants';
+import ConfirmReplaceItemPopover from '../desktop/ConfirmReplaceItemPopover';
+import SetModal from './SetModal';
+import ItemCard from './ItemCard';
 import SkeletonCardsLoader from './SkeletonCardsLoader';
 
 const PAGE_SIZE = 24;
 
 const THRESHOLD = 600;
 
-interface IProps {
+interface Props {
   selectedItemSlot: itemSlots_itemSlots | null;
   customSet?: customSet | null;
   selectItemSlot?: React.Dispatch<
-    React.SetStateAction<itemSlots_itemSlots | null>
+  React.SetStateAction<itemSlots_itemSlots | null>
   >;
   customSetItemIds: Set<string>;
   filters: SharedFilters;
@@ -35,7 +35,7 @@ interface IProps {
   isMobile?: boolean;
 }
 
-const ItemSelector: React.FC<IProps> = ({
+const ItemSelector: React.FC<Props> = ({
   selectedItemSlot,
   customSet,
   selectItemSlot,
@@ -68,9 +68,9 @@ const ItemSelector: React.FC<IProps> = ({
       variables: { after: data.items.pageInfo.endCursor },
       updateQuery: (prevData, { fetchMoreResult }) => {
         if (
-          !fetchMoreResult ||
-          fetchMoreResult.items.pageInfo.endCursor ===
-            prevData.items.pageInfo.endCursor
+          !fetchMoreResult
+          || fetchMoreResult.items.pageInfo.endCursor
+            === prevData.items.pageInfo.endCursor
         ) {
           return prevData;
         }
@@ -127,15 +127,14 @@ const ItemSelector: React.FC<IProps> = ({
         (data?.items.edges ?? [])
           .map((edge) => edge.node)
           .map((item) => {
-            const itemSlotId =
-              selectedItemSlot?.id ||
-              findEmptyOrOnlySlotId(item.itemType, customSet);
+            const itemSlotId = selectedItemSlot?.id
+              || findEmptyOrOnlySlotId(item.itemType, customSet);
             const nextSlotId = selectedItemSlot
               ? findNextEmptySlotId(
-                  item.itemType,
-                  selectedItemSlot.id,
-                  customSet,
-                )
+                item.itemType,
+                selectedItemSlot.id,
+                customSet,
+              )
               : null;
             const card = (
               <ItemCard

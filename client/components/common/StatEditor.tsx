@@ -9,8 +9,8 @@ import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
 import { Stat } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
 import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { InputNumber } from 'antd';
-import { Button } from 'antd';
+import { InputNumber, Button } from 'antd';
+
 import { red6 } from 'common/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRedo } from '@fortawesome/free-solid-svg-icons';
@@ -29,7 +29,7 @@ import {
 import { useRouter } from 'next/router';
 import { StatKey, scrolledStats, baseStats } from 'common/types';
 
-interface IProps {
+interface Props {
   customSet?: customSet | null;
 }
 
@@ -123,7 +123,7 @@ const getInputNumberStyle = (
   alignItems: 'center',
   position: 'relative' as 'relative',
   ...(baseKey === 'baseVitality' && {
-    ['&::before']: {
+    '&::before': {
       position: 'absolute' as 'absolute',
       content: `"${title}"`,
       left: 0,
@@ -147,22 +147,22 @@ const getInputNumberStyle = (
   }),
 });
 
-const StatEditor: React.FC<IProps> = ({ customSet }) => {
+const StatEditor: React.FC<Props> = ({ customSet }) => {
   const initialState = customSet?.stats
     ? {
-        baseVitality: customSet.stats.baseVitality,
-        baseWisdom: customSet.stats.baseWisdom,
-        baseStrength: customSet.stats.baseStrength,
-        baseIntelligence: customSet.stats.baseIntelligence,
-        baseChance: customSet.stats.baseChance,
-        baseAgility: customSet.stats.baseAgility,
-        scrolledVitality: customSet.stats.scrolledVitality,
-        scrolledWisdom: customSet.stats.scrolledWisdom,
-        scrolledStrength: customSet.stats.scrolledStrength,
-        scrolledIntelligence: customSet.stats.scrolledIntelligence,
-        scrolledChance: customSet.stats.scrolledChance,
-        scrolledAgility: customSet.stats.scrolledAgility,
-      }
+      baseVitality: customSet.stats.baseVitality,
+      baseWisdom: customSet.stats.baseWisdom,
+      baseStrength: customSet.stats.baseStrength,
+      baseIntelligence: customSet.stats.baseIntelligence,
+      baseChance: customSet.stats.baseChance,
+      baseAgility: customSet.stats.baseAgility,
+      scrolledVitality: customSet.stats.scrolledVitality,
+      scrolledWisdom: customSet.stats.scrolledWisdom,
+      scrolledStrength: customSet.stats.scrolledStrength,
+      scrolledIntelligence: customSet.stats.scrolledIntelligence,
+      scrolledChance: customSet.stats.scrolledChance,
+      scrolledAgility: customSet.stats.scrolledAgility,
+    }
     : defaultInitialState;
   const [statState, dispatch] = React.useReducer(reducer, initialState);
 

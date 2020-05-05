@@ -1,7 +1,9 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { Modal, Input, Form, Button, notification } from 'antd';
+import {
+  Modal, Input, Form, Button, notification,
+} from 'antd';
 import { useMutation } from '@apollo/react-hooks';
 import { useTranslation } from 'i18n';
 import { mq } from 'common/constants';
@@ -11,18 +13,18 @@ import {
 } from 'graphql/mutations/__generated__/requestPasswordReset';
 import requestPasswordResetMutation from 'graphql/mutations/requestPasswordReset.graphql';
 
-interface IProps {
+interface Props {
   visible: boolean;
   onClose: () => void;
 }
 
-const RequestPasswordResetModal: React.FC<IProps> = ({ visible, onClose }) => {
+const RequestPasswordResetModal: React.FC<Props> = ({ visible, onClose }) => {
   const { t } = useTranslation(['auth', 'common']);
   const [form] = Form.useForm();
 
   const [requestPasswordReset, { loading }] = useMutation<
-    requestPasswordReset,
-    requestPasswordResetVariables
+  requestPasswordReset,
+  requestPasswordResetVariables
   >(requestPasswordResetMutation);
   const handleOk = React.useCallback(async () => {
     const values = await form.validateFields();
@@ -96,7 +98,7 @@ const RequestPasswordResetModal: React.FC<IProps> = ({ visible, onClose }) => {
               message: t('VALIDATION.VALID_EMAIL'),
             },
           ]}
-          validateTrigger={'onSubmit'}
+          validateTrigger="onSubmit"
         >
           <Input placeholder={t('EMAIL')} css={{ fontSize: '0.75rem' }} />
         </Form.Item>
