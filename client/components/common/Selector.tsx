@@ -74,7 +74,7 @@ const Selector: React.FC<IProps> = ({
   const [showSetsState, setShowSetsState] = React.useState(showSets || false);
 
   const customSetItemIds = new Set<string>();
-  (customSet?.equippedItems ?? []).forEach(equippedItem =>
+  (customSet?.equippedItems ?? []).forEach((equippedItem) =>
     customSetItemIds.add(equippedItem.item.id),
   );
 
@@ -124,9 +124,10 @@ const Selector: React.FC<IProps> = ({
             itemTypes={uniqWith(
               itemSlots
                 .filter(
-                  slot => !selectedItemSlot || selectedItemSlot.id === slot.id,
+                  (slot) =>
+                    !selectedItemSlot || selectedItemSlot.id === slot.id,
                 )
-                .flatMap(slot => slot.itemTypes),
+                .flatMap((slot) => slot.itemTypes),
               isEqual,
             )}
           />

@@ -201,9 +201,11 @@ const EquippedItemWithStats: React.FC<IProps> = ({
                   ...popoverTitleStyle,
                   '.ant-popover-content': {
                     maxHeight: contentRef.current
-                      ? `calc(100vh - ${contentRef.current.offsetTop +
+                      ? `calc(100vh - ${
+                          contentRef.current.offsetTop +
                           contentRef.current.offsetHeight +
-                          20}px)`
+                          20
+                        }px)`
                       : undefined,
                     overflow: 'auto',
                   },

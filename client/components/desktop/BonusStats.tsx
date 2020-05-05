@@ -74,7 +74,7 @@ const BonusStats: React.FC<IProps> = ({ customSet, isMobile }) => {
             .map(
               ({ count, set, set: { id, name, bonuses }, equippedItems }) => {
                 const filteredBonuses = bonuses.filter(
-                  bonus => bonus.numItems === count,
+                  (bonus) => bonus.numItems === count,
                 );
                 return (
                   <Popover
@@ -128,7 +128,7 @@ const BonusStats: React.FC<IProps> = ({ customSet, isMobile }) => {
                     >
                       {[...equippedItems]
                         .sort((i, j) => itemOrder[i.id] - itemOrder[j.id])
-                        .map(equippedItem => (
+                        .map((equippedItem) => (
                           <div
                             key={`set-bonus-item-${equippedItem.id}`}
                             css={{
@@ -148,7 +148,7 @@ const BonusStats: React.FC<IProps> = ({ customSet, isMobile }) => {
                                 src={equippedItem.item.imageUrl}
                                 css={{ maxWidth: '100%', maxHeight: '100%' }}
                                 onError={() => {
-                                  setBrokenImages(prev => [
+                                  setBrokenImages((prev) => [
                                     ...prev,
                                     equippedItem.id,
                                   ]);

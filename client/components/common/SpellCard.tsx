@@ -69,7 +69,7 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
     !rangedOnly &&
     !meleeOnly &&
     spellStats.spellEffects.some(
-      effect => getSimpleEffect(effect.effectType) === 'damage',
+      (effect) => getSimpleEffect(effect.effectType) === 'damage',
     );
 
   let content = null;
@@ -243,8 +243,9 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
               ) : (
                 <div
                   css={{
-                    gridArea: `1 / 2 / ${spellStats.spellEffects.length +
-                      2} / -1`,
+                    gridArea: `1 / 2 / ${
+                      spellStats.spellEffects.length + 2
+                    } / -1`,
                     background: theme.damage?.nonCrit?.background,
                     borderRadius: 4,
                     display: 'flex',
@@ -259,7 +260,7 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
                   {t('DOES_NOT_CRIT')}
                 </div>
               )}
-              {spellEffectSummaries.map(effect => {
+              {spellEffectSummaries.map((effect) => {
                 return (
                   <React.Fragment key={effect.id}>
                     <EffectLine
@@ -315,7 +316,7 @@ const SpellCard: React.FC<IProps> = ({ spell, customSet }) => {
                   );
                   return idx > spellLevelIdx ? (
                     <Tooltip
-                      getPopupContainer={element => element.parentElement!}
+                      getPopupContainer={(element) => element.parentElement!}
                       key={idx}
                       title={t('AVAILABLE_AT_LEVEL', {
                         level: spell.spellStats[idx].level,

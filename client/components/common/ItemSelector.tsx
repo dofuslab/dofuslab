@@ -49,7 +49,7 @@ const ItemSelector: React.FC<IProps> = ({
     ...filters,
     itemTypeIds:
       selectedItemSlot && itemTypeIdsArr.length === 0
-        ? selectedItemSlot.itemTypes.map(type => type.id)
+        ? selectedItemSlot.itemTypes.map((type) => type.id)
         : itemTypeIdsArr,
   };
   const { data, loading, fetchMore } = useQuery<items, itemsVariables>(
@@ -125,8 +125,8 @@ const ItemSelector: React.FC<IProps> = ({
         <SkeletonCardsLoader key="initial-loader" multiplier={2} />
       ) : (
         (data?.items.edges ?? [])
-          .map(edge => edge.node)
-          .map(item => {
+          .map((edge) => edge.node)
+          .map((item) => {
             const itemSlotId =
               selectedItemSlot?.id ||
               findEmptyOrOnlySlotId(item.itemType, customSet);

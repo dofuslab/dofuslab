@@ -296,7 +296,7 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
                         src={item.imageUrl}
                         css={{ width: 40 }}
                         onError={() => {
-                          setBrokenImages(prev => [...prev, id]);
+                          setBrokenImages((prev) => [...prev, id]);
                         }}
                       />
                     ),

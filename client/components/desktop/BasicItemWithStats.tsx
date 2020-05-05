@@ -62,7 +62,7 @@ const BasicItemWithStats: React.FC<IProps> = ({
         return (
           <Popover
             placement="bottom"
-            getPopupContainer={triggerNode => triggerNode.parentElement!}
+            getPopupContainer={(triggerNode) => triggerNode.parentElement!}
             title={<CardTitleWithLevel title={item.name} level={item.level} />}
             content={
               item.stats.length > 0 && <ItemStatsList item={item} exos={exos} />
@@ -72,9 +72,11 @@ const BasicItemWithStats: React.FC<IProps> = ({
               ...overlayCSS,
               '.ant-popover-content': {
                 maxHeight: contentRef.current
-                  ? `calc(100vh - ${contentRef.current.offsetTop +
+                  ? `calc(100vh - ${
+                      contentRef.current.offsetTop +
                       contentRef.current.offsetHeight +
-                      20}px)`
+                      20
+                    }px)`
                   : undefined,
                 overflow: 'auto',
               },

@@ -272,7 +272,7 @@ const MageModal: React.FC<IProps> = ({
                       dropdownClassName={css({ zIndex: 1062 })}
                       css={{ width: '100%', fontSize: '0.75rem' }}
                     >
-                      {Object.values(WeaponElementMage).map(v => (
+                      {Object.values(WeaponElementMage).map((v) => (
                         <Option key={v} value={v}>
                           <div css={{ display: 'flex', alignItems: 'center' }}>
                             <img
@@ -308,7 +308,7 @@ const MageModal: React.FC<IProps> = ({
               gridColumnGap: 12,
             }}
           >
-            {statsState.originalStats.map(statLine => (
+            {statsState.originalStats.map((statLine) => (
               <div key={`original-${statLine.stat}`} css={statLineCss}>
                 <div
                   css={deleteStatWrapper}
@@ -338,7 +338,7 @@ const MageModal: React.FC<IProps> = ({
             <Divider css={{ gridColumn: '1 / -1' }} />
             {statsState.exos
               .filter(({ stat }) => tempExoStatsMap[stat] !== undefined)
-              .map(statLine => {
+              .map((statLine) => {
                 return (
                   <div
                     key={`exo-${statLine.stat}`}
@@ -392,7 +392,7 @@ const MageModal: React.FC<IProps> = ({
                       { ignorePunctuation: true },
                     ),
                   )
-                  .map(stat => (
+                  .map((stat) => (
                     <Option
                       key={stat}
                       value={stat}

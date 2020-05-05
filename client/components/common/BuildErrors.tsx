@@ -51,7 +51,7 @@ const BuildErrors: React.FC<IProps> = ({ customSet, errors, isMobile }) => {
     );
   }
 
-  scrolledStats.forEach(scrolledStatKey => {
+  scrolledStats.forEach((scrolledStatKey) => {
     if (
       customSet.stats[scrolledStatKey] < 0 ||
       customSet.stats[scrolledStatKey] > 100

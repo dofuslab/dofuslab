@@ -59,7 +59,7 @@ const EquipmentSlots: React.FC<IProps> = ({
     setEquippedItem,
   ] = React.useState<customSet_equippedItems | null>(null);
   const openMageModal = React.useCallback(
-    equippedItem => {
+    (equippedItem) => {
       setEquippedItem(equippedItem);
       setMageModalVisible(true);
     },
@@ -98,7 +98,7 @@ const EquipmentSlots: React.FC<IProps> = ({
         },
       }}
     >
-      {itemSlots?.map(slot => {
+      {itemSlots?.map((slot) => {
         const equippedItem: customSet_equippedItems | undefined =
           equippedItemsBySlotId[slot.id];
         const equippedItemErrors: Array<IError> | undefined =

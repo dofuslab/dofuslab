@@ -152,7 +152,7 @@ const Layout = (props: LayoutProps) => {
       onSelect={changeLocaleHandler}
       css={{ '&.ant-select': { marginLeft: 12 } }}
     >
-      {LANGUAGES.map(lang => (
+      {LANGUAGES.map((lang) => (
         <Option key={lang} value={lang}>
           <div css={{ display: 'flex', alignItems: 'center' }}>
             {langToFullName(lang)}

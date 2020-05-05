@@ -217,7 +217,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
   const theme = useTheme<TTheme>();
 
   const display100 = scrolledStats.some(
-    scrolledStat => statState[scrolledStat] < 100,
+    (scrolledStat) => statState[scrolledStat] < 100,
   );
 
   return (
@@ -271,7 +271,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
             min={0}
             size="small"
             css={getInputNumberStyle(baseKey, t('BASE'), theme)}
-            onFocus={e => {
+            onFocus={(e) => {
               e.currentTarget.setSelectionRange(
                 0,
                 e.currentTarget.value.length,
@@ -289,7 +289,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
             min={0}
             size="small"
             css={getInputNumberStyle(baseKey, t('SCROLLED'), theme)}
-            onFocus={e => {
+            onFocus={(e) => {
               e.currentTarget.setSelectionRange(
                 0,
                 e.currentTarget.value.length,

@@ -12,7 +12,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import * as gtag from '../gtag';
 import { darkTheme } from 'common/themes';
 
-Router.events.on('routeChangeComplete', url => gtag.pageview(url));
+Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 config.autoAddCss = false;
 
 class DofusLabApp extends App<{

@@ -141,7 +141,7 @@ const EquippedItemCard: React.FC<IProps> = ({
           checked={hasExo}
           css={{ ...switchStyle(theme, true), marginRight: 12 }}
           checkedChildren={<FontAwesomeIcon icon={faIcon} />}
-          onChange={checked => {
+          onChange={(checked) => {
             onQuickMage(checked, stat);
           }}
         />

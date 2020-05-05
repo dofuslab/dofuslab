@@ -44,7 +44,7 @@ const Home: React.FC<IProps> = ({
   );
 
   const weapon = customSet?.equippedItems.find(
-    equippedItem => !!equippedItem.item.weaponStats,
+    (equippedItem) => !!equippedItem.item.weaponStats,
   );
 
   let errors: Array<IError> = [];

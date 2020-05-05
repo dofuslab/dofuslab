@@ -62,7 +62,7 @@ const WeaponDamage: React.FC<IProps> = ({
   const meleeOnly =
     !rangedOnly &&
     !customSet.equippedItems.some(
-      equippedItem => equippedItem.item.itemType.enName === 'Axe',
+      (equippedItem) => equippedItem.item.itemType.enName === 'Axe',
     );
 
   const showToggle = !rangedOnly && !meleeOnly;
@@ -268,7 +268,7 @@ const WeaponDamage: React.FC<IProps> = ({
             {t('DOES_NOT_CRIT')}
           </div>
         )}
-        {weaponEffectSummaries.map(effect => {
+        {weaponEffectSummaries.map((effect) => {
           return (
             <React.Fragment key={effect.id}>
               <EffectLine

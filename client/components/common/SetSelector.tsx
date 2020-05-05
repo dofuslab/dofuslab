@@ -108,8 +108,10 @@ const SetSelector: React.FC<IProps> = ({ filters, customSet }) => {
         />
       ) : (
         (data?.sets.edges ?? [])
-          .map(edge => edge.node)
-          .map(set => <SetCard key={set.id} set={set} onClick={openSetModal} />)
+          .map((edge) => edge.node)
+          .map((set) => (
+            <SetCard key={set.id} set={set} onClick={openSetModal} />
+          ))
       )}
       {selectedSet && (
         <SetModal

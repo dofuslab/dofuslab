@@ -58,7 +58,7 @@ const EquippedItemPage: NextPage = () => {
   }
 
   const equippedItem = customSet?.equippedItems.find(
-    equippedItem => equippedItem.id === equippedItemId,
+    (equippedItem) => equippedItem.id === equippedItemId,
   );
 
   if (!equippedItem) {

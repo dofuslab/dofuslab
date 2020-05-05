@@ -34,7 +34,7 @@ const ItemTypeFilter: React.FC<IProps> = ({
       onChange={onChangeItemTypeIds}
       options={[...itemTypes]
         .sort((t1, t2) => t1.name.localeCompare(t2.name))
-        .map(type => ({
+        .map((type) => ({
           label: type.name,
           value: type.id,
         }))}

@@ -92,7 +92,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
   const client = useApolloClient();
 
   const handleOk = React.useCallback(
-    async values => {
+    async (values) => {
       const ok = await checkAuthentication(client, t, customSet);
       if (!ok) return;
       dispatch({ type: 'STOP_EDIT' });

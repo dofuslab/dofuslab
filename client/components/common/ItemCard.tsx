@@ -45,7 +45,8 @@ const ItemCard: React.FC<IProps> = ({
       const slots = client.readQuery<itemSlots>({ query: ItemSlotsQuery });
       let nextSlot = null;
       if (nextSlotId && slots) {
-        nextSlot = slots.itemSlots.find(slot => slot.id === nextSlotId) || null;
+        nextSlot =
+          slots.itemSlots.find((slot) => slot.id === nextSlotId) || null;
       }
       selectItemSlot && selectItemSlot(nextSlot);
       if (isMobile && customSetId) {

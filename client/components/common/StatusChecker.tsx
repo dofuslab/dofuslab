@@ -94,10 +94,10 @@ const StatusChecker: React.FC = () => {
           delete newQuery[statusType];
         }
       } else {
-        statusValue.forEach(value => {
+        statusValue.forEach((value) => {
           if (processQueryEntry(statusType, value)) {
             const values = newQuery[statusType] as string[];
-            newQuery[statusType] = values.filter(s => s !== value);
+            newQuery[statusType] = values.filter((s) => s !== value);
             if (newQuery[statusType].length === 0) {
               delete newQuery[statusType];
             }

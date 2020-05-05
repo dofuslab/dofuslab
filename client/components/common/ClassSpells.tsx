@@ -36,7 +36,7 @@ const ClassSpells: React.FC<IProps> = ({ customSet }) => {
 
   const nameToId = data?.classes.reduce((acc, { id, allNames }) => {
     const obj = { ...acc };
-    allNames.forEach(className => {
+    allNames.forEach((className) => {
       obj[className] = id;
     });
     return obj;
@@ -94,14 +94,14 @@ const ClassSpells: React.FC<IProps> = ({ customSet }) => {
       >
         {[...data.classes]
           .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
-          .map(dofusClass => (
+          .map((dofusClass) => (
             <Option key={dofusClass.id} value={dofusClass.id}>
               {dofusClass.name}
             </Option>
           ))}
       </Select>
       {!classDataLoading && spellsList ? (
-        spellsList.map(spell => (
+        spellsList.map((spell) => (
           <SpellCard key={spell.id} spell={spell} customSet={customSet} />
         ))
       ) : (

@@ -289,7 +289,7 @@ const Layout = (props: LayoutProps) => {
                 </div>
               }
             >
-              {LANGUAGES.map(lang => (
+              {LANGUAGES.map((lang) => (
                 <Menu.Item
                   key={lang}
                   onClick={() => {

@@ -66,7 +66,7 @@ const SetModal: React.FC<IProps> = ({
 
   React.useEffect(() => {
     if (data && !loading) {
-      setItemIds(data.setById.items.map(item => item.id));
+      setItemIds(data.setById.items.map((item) => item.id));
     }
   }, [data, loading]);
 
@@ -84,7 +84,7 @@ const SetModal: React.FC<IProps> = ({
             display: 'flex',
           }}
         >
-          {data.setById.items.map(item => (
+          {data.setById.items.map((item) => (
             <div
               key={`item-${item.id}`}
               css={{
@@ -98,9 +98,9 @@ const SetModal: React.FC<IProps> = ({
                 },
               }}
               onClick={() => {
-                setItemIds(prev => {
+                setItemIds((prev) => {
                   if (prev.includes(item.id)) {
-                    return prev.filter(itemId => itemId !== item.id);
+                    return prev.filter((itemId) => itemId !== item.id);
                   }
                   return [...prev, item.id];
                 });

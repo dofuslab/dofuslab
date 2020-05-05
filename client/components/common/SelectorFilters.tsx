@@ -91,7 +91,7 @@ const SelectorFilters: React.FC<IProps> = ({
 
   const onChangeStats = React.useCallback(
     (stats: Array<{ label: string; value: Stat }>) => {
-      dispatch({ type: 'STATS', stats: stats.map(stat => stat.value) });
+      dispatch({ type: 'STATS', stats: stats.map((stat) => stat.value) });
     },
     [dispatch],
   );
@@ -237,7 +237,7 @@ const SelectorFilters: React.FC<IProps> = ({
                 },
               }}
               placeholder={t('STATS_PLACEHOLDER')}
-              value={stats.map(stat => ({
+              value={stats.map((stat) => ({
                 label: t(stat, { ns: 'stat' }),
                 key: stat,
                 value: stat,
@@ -261,7 +261,7 @@ const SelectorFilters: React.FC<IProps> = ({
                     { ignorePunctuation: true },
                   ),
                 )
-                .map(stat => (
+                .map((stat) => (
                   <Option key={stat} value={stat}>
                     {t(stat, { ns: 'stat' })}
                   </Option>

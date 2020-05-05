@@ -35,8 +35,8 @@ const StatTable: React.FC<IStatTable> = ({
       size="small"
       bordered
       dataSource={group}
-      rowKey={item => item.stat}
-      renderItem={item => (
+      rowKey={(item) => item.stat}
+      renderItem={(item) => (
         <List.Item
           css={{
             display: 'flex',

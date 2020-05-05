@@ -67,7 +67,7 @@ const SetCard: React.FC<IProps> = ({ set, onClick }) => {
               margin: '0px auto 12px',
             }}
           >
-            {set.items.map(item =>
+            {set.items.map((item) =>
               brokenImages.includes(item.id) ? (
                 <BrokenImagePlaceholder
                   key={`item-${item.id}`}
@@ -95,7 +95,7 @@ const SetCard: React.FC<IProps> = ({ set, onClick }) => {
                     [':not:first-of-type']: { marginLeft: 12 },
                   }}
                   onError={() => {
-                    setBrokenImages(prev => [...prev, item.id]);
+                    setBrokenImages((prev) => [...prev, item.id]);
                   }}
                 />
               ),
@@ -103,7 +103,7 @@ const SetCard: React.FC<IProps> = ({ set, onClick }) => {
           </div>
           <SetBonuses
             bonuses={set.bonuses.filter(
-              bonus => bonus.numItems === maxSetBonusItems,
+              (bonus) => bonus.numItems === maxSetBonusItems,
             )}
             count={maxSetBonusItems}
             t={t}
