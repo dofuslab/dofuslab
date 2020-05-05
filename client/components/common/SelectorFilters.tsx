@@ -239,6 +239,11 @@ const SelectorFilters: React.FC<Props> = ({
                 },
                 '.ant-select-selector': {
                   height: '100%',
+                  padding: '6px 11px',
+                },
+                '.ant-select-selection-placeholder': {
+                  color: 'rgba(255, 255, 255, 0.3)',
+                  opacity: 1,
                 },
               }}
               placeholder={t('STATS_PLACEHOLDER')}

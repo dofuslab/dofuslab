@@ -163,6 +163,12 @@ const Layout = ({ children }: LayoutProps) => {
           body: {
             height: 'auto',
           },
+          '.ant-input-affix-wrapper, .ant-input': {
+            padding: '7px 15px',
+          },
+          '.ant-btn': {
+            height: 42,
+          }
         }}
       />
       <StatusChecker />
@@ -190,7 +196,7 @@ const Layout = ({ children }: LayoutProps) => {
             />
           </div>
         </Link>
-        <Button onClick={openDrawer} size="large" css={{ fontSize: '0.9rem' }}>
+        <Button onClick={openDrawer} size="large" css={{ fontSize: '0.9rem', padding: '4px 15px' }}>
           <MenuOutlined />
         </Button>
         <Drawer
@@ -227,6 +233,12 @@ const Layout = ({ children }: LayoutProps) => {
               '.ant-menu-item::after': {
                 left: 0,
                 right: 'auto',
+              },
+              '.ant-menu-item:nth-of-type(1)': {
+                marginTop: '8px',
+              },
+              '.ant-menu-item:nth-last-of-type(1)': {
+                marginBottom: '8px',
               },
             }}
           >
