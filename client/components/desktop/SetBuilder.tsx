@@ -14,8 +14,8 @@ import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
 import { useTranslation } from 'i18n';
-import { BuildError } from 'common/types';
-import { TTheme } from 'common/themes';
+import { BuildError, Theme } from 'common/types';
+
 import { ItemSlot, CustomSet } from 'common/type-aliases';
 import Selector from '../common/Selector';
 import StatEditor from '../common/StatEditor';
@@ -73,7 +73,7 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
 
   const { t } = useTranslation('common');
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   return (
     <Layout>

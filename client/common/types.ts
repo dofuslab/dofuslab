@@ -89,6 +89,64 @@ export type TSimpleEffect =
 
 type TEffectMinMax = { min: number | null; max: number; baseMax: number };
 
+export type Theme = {
+  name: string;
+  body?: {
+    background: string;
+  };
+  header?: {
+    background?: string;
+  };
+  text?: {
+    default?: string;
+    light?: string;
+    link?: {
+      default?: string;
+    };
+    danger?: string;
+    primary?: string;
+  };
+  border?: {
+    default?: string;
+    selected?: string;
+    primarySelected?: string;
+    light?: string;
+  };
+  layer?: {
+    background?: string;
+    backgroundLight?: string;
+  };
+  statEditor?: {
+    categoryBackground?: string;
+    remainingPointsBackground?: string;
+  };
+  damage?: {
+    nonCrit?: {
+      background?: string;
+      color?: string;
+    };
+  };
+  badge?: {
+    background?: string;
+  };
+  scrollbar?: {
+    trackBackground?: string;
+    buttonBorder?: string;
+    background?: string;
+  };
+  switch?: {
+    background?: string;
+    button?: string;
+  };
+  backTop?: {
+    background?: string;
+    hoverBackground?: string;
+  };
+  card?: {
+    background?: string;
+  };
+};
+
 export type TEffectLine = {
   id: string;
   type: WeaponEffectType | SpellEffectType;

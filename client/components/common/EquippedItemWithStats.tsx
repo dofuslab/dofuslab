@@ -23,8 +23,8 @@ import { useDeleteItemMutation } from 'common/utils';
 import { useTranslation } from 'i18n';
 import { mq } from 'common/constants';
 import { Media } from 'components/common/Media';
-import { BuildError } from 'common/types';
-import { TTheme } from 'common/themes';
+import { BuildError, Theme } from 'common/types';
+
 import { BrokenImagePlaceholder } from 'common/wrappers';
 import { EquippedItem, CustomSet, ItemSet } from 'common/type-aliases';
 import EquippedItemCard from '../desktop/EquippedItemCard';
@@ -85,7 +85,7 @@ const EquippedItemWithStats: React.FC<Props> = ({
   );
 
   const { t } = useTranslation('common');
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
   const [brokenImage, setBrokenImage] = React.useState(false);
   const contentRef = React.useRef<HTMLDivElement | null>(null);
 

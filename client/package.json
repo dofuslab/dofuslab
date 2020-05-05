@@ -19,6 +19,17 @@
     "sync-i18n": "ts-node --project tsconfig.server.json sync-locales",
     "scan-i18n": "npx i18next-scanner"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/*.{js,jsx,ts,tsx}": [
+      "npx prettier --write pages/**/*.tsx pages/**/*.tsx common/**/*.ts common/**/*.tsx",
+      "eslint pages/**/*.tsx pages/**/*.tsx common/**/*.ts common/**/*.tsx --fix-dry-run"
+    ]
+  },
   "dependencies": {
     "@ant-design/dark-theme": "^2.0.1",
     "@ant-design/icons": "^4.1.0",

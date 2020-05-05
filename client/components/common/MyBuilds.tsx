@@ -7,7 +7,7 @@ import { LoadingOutlined } from '@ant-design/icons';
 import { useTheme } from 'emotion-theming';
 import InfiniteScroll from 'react-infinite-scroller';
 
-import { TTheme } from 'common/themes';
+import { Theme } from 'common/types';
 import {
   myCustomSets,
   myCustomSetsVariables,
@@ -162,7 +162,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
     return fetchMoreResult;
   }, [myBuilds, search]);
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
   const [deleteModalVisible, setDeleteModalVisible] = React.useState(false);

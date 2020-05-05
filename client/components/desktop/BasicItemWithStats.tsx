@@ -14,7 +14,7 @@ import {
 } from 'common/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagic, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { TTheme } from 'common/themes';
+import { Theme } from 'common/types';
 import { CardTitleWithLevel, BrokenImagePlaceholder } from 'common/wrappers';
 import { Exo, Item } from 'common/type-aliases';
 import ItemStatsList from '../common/ItemStatsList';
@@ -50,7 +50,7 @@ const BasicItemWithStats: React.FC<Props> = ({
   selected,
   overlayCSS,
 }) => {
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
   const [brokenImage, setBrokenImage] = React.useState(false);
   const contentRef = React.useRef<HTMLDivElement | null>(null);
 

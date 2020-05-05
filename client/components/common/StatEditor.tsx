@@ -4,7 +4,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
+import { Theme, StatKey, scrolledStats, baseStats } from 'common/types';
 import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
 import { Stat } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
@@ -26,7 +26,7 @@ import {
   navigateToNewCustomSet,
 } from 'common/utils';
 import { useRouter } from 'next/router';
-import { StatKey, scrolledStats, baseStats } from 'common/types';
+
 import { CustomSet } from 'common/type-aliases';
 
 interface Props {
@@ -112,11 +112,7 @@ const reducer = (state: StatState, action: StatStateAction) => {
   }
 };
 
-const getInputNumberStyle = (
-  baseKey: string,
-  title: string,
-  theme: TTheme,
-) => ({
+const getInputNumberStyle = (baseKey: string, title: string, theme: Theme) => ({
   fontSize: '0.75rem',
   maxWidth: '100%',
   display: 'flex',
@@ -214,7 +210,7 @@ const StatEditor: React.FC<Props> = ({ customSet }) => {
     checkAndMutate();
   }, [dispatch, checkAndMutate]);
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   const display100 = scrolledStats.some(
     (scrolledStat) => statState[scrolledStat] < 100,

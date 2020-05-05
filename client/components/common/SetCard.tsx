@@ -4,7 +4,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
+import { Theme } from 'common/types';
 import { useTranslation } from 'i18n';
 import {
   SetBonuses,
@@ -28,7 +28,7 @@ const SetCard: React.FC<Props> = ({ set, onClick }) => {
     0,
   );
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
 

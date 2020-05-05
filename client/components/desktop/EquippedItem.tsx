@@ -5,8 +5,8 @@ import { jsx } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
 
 import { itemBox, itemImageBox, selected as selectedBox } from 'common/mixins';
-import { BuildError } from 'common/types';
-import { TTheme } from 'common/themes';
+import { BuildError, Theme } from 'common/types';
+
 import {
   ItemSlot,
   EquippedItem as EquippedItemType,
@@ -44,7 +44,7 @@ const EquippedItem: React.FC<Props> = ({
     }
   }, [selectItemSlot, slot, selected, equippedItem]);
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   return (
     <>

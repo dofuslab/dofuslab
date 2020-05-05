@@ -6,7 +6,7 @@ import { Popover } from 'antd';
 import { useTranslation } from 'i18n';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
+import { Theme } from 'common/types';
 import { popoverTitleStyle } from 'common/mixins';
 import { getBonusesFromCustomSet } from 'common/utils';
 import { SetBonuses, BrokenImagePlaceholder } from 'common/wrappers';
@@ -29,7 +29,7 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile }) => {
     {},
   ) as { [key: string]: number };
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
 

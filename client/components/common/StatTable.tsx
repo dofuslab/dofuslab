@@ -6,8 +6,8 @@ import { useTranslation } from 'i18n';
 import { List } from 'antd';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
-import { StatGroup, StatsFromCustomSet } from 'common/types';
+import { Theme, StatGroup, StatsFromCustomSet } from 'common/types';
+
 import { statCalculators } from 'common/utils';
 import { CustomSet } from 'common/type-aliases';
 
@@ -23,7 +23,7 @@ const StatTable: React.FC<Props> = ({
   customSet,
 }) => {
   const { t } = useTranslation('stat');
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
   return (
     <List
       css={{

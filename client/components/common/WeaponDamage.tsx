@@ -6,7 +6,7 @@ import { Divider, Radio } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
+import { Theme, StatsFromCustomSet, TEffectLine } from 'common/types';
 import {
   CardTitleWithLevel,
   damageHeaderStyle,
@@ -23,7 +23,7 @@ import {
   elementMageToWeaponEffect,
   getInitialRangedState,
 } from 'common/utils';
-import { StatsFromCustomSet, TEffectLine } from 'common/types';
+
 import {
   Stat,
   WeaponElementMage,
@@ -211,7 +211,7 @@ const WeaponDamage: React.FC<Props> = ({
         averageNonCritHeal * (1 - critRate / 100)
       : averageNonCritHeal;
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   return (
     <Card

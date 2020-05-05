@@ -15,7 +15,7 @@ import {
   ITEM_BOX_WIDTH,
 } from 'common/mixins';
 import { WeaponElementMage } from '__generated__/globalTypes';
-import { TTheme } from 'common/themes';
+import { Theme } from 'common/types';
 import Card from 'components/common/Card';
 import ItemStatsList from './ItemStatsList';
 
@@ -37,7 +37,7 @@ const BasicItemCard: React.FC<Props> = ({
   weaponElementMage,
 }) => {
   const { t } = useTranslation(['common', 'stat', 'weapon_spell_effect']);
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
   const [brokenImage, setBrokenImage] = React.useState(false);
   return (
     <Card

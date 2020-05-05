@@ -16,8 +16,8 @@ import {
 import { useDebounceCallback } from '@react-hook/debounce';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
-import { SharedFilterAction, SharedFilters } from 'common/types';
+import { Theme, SharedFilterAction, SharedFilters } from 'common/types';
+
 import { useTranslation } from 'i18n';
 import Tooltip from 'components/common/Tooltip';
 import { Media } from './Media';
@@ -103,7 +103,7 @@ const SelectorFilters: React.FC<Props> = ({
 
   const { t } = useTranslation(['common', 'stat']);
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   return (
     <div

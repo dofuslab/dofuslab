@@ -5,7 +5,7 @@ import { jsx } from '@emotion/core';
 import { Tabs } from 'antd';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
+import { Theme, BuildError } from 'common/types';
 import { STAT_GROUPS } from 'common/constants';
 import { ResponsiveGrid } from 'common/wrappers';
 import { topMarginStyle } from 'common/mixins';
@@ -15,7 +15,7 @@ import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
 import { useTranslation } from 'i18n';
-import { BuildError } from 'common/types';
+
 import { ItemSlot, CustomSet } from 'common/type-aliases';
 import StatEditor from '../common/StatEditor';
 import EquipmentSlots from '../common/EquipmentSlots';
@@ -51,7 +51,7 @@ const Home: React.FC<Props> = ({
   }
   const { t } = useTranslation('common');
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   return (
     <>

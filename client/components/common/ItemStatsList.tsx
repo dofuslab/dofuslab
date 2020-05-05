@@ -8,9 +8,9 @@ import { Stat, WeaponElementMage } from '__generated__/globalTypes';
 import { Divider } from 'antd';
 import { WeaponEffectsList, BrokenImagePlaceholder } from 'common/wrappers';
 import { TFunction } from 'next-i18next';
-import { BuildError } from 'common/types';
+import { BuildError, Theme } from 'common/types';
 import { renderErrors } from 'common/utils';
-import { TTheme } from 'common/themes';
+
 import { Exo, ItemSet, Item } from 'common/type-aliases';
 
 interface Props {
@@ -79,7 +79,7 @@ const ItemStatsList: React.FC<Props> = ({
   errors,
 }) => {
   const { t, i18n } = useTranslation(['stat', 'weapon_spell_effect', 'common']);
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   const statsMap: {
     [key: string]: { value: number; maged: boolean };

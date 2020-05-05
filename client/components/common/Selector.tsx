@@ -8,8 +8,7 @@ import { useTheme } from 'emotion-theming';
 import uniqWith from 'lodash/uniqWith';
 import isEqual from 'lodash/isEqual';
 
-import { TTheme } from 'common/themes';
-import { SharedFilters, SharedFilterAction } from 'common/types';
+import { Theme, SharedFilters, SharedFilterAction } from 'common/types';
 
 import { topMarginStyle } from 'common/mixins';
 import { mq } from 'common/constants';
@@ -82,7 +81,7 @@ const Selector: React.FC<Props> = ({
     setItemTypeIds(new Set());
   }, [dispatch, customSet]);
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   return (
     <>

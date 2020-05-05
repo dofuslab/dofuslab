@@ -16,7 +16,7 @@ import {
   classByIdVariables,
 } from 'graphql/queries/__generated__/classById';
 import classByIdQuery from 'graphql/queries/classById.graphql';
-import { TTheme } from 'common/themes';
+import { Theme } from 'common/types';
 import { CustomSet, Spell } from 'common/type-aliases';
 import SpellCard from './SpellCard';
 
@@ -31,7 +31,7 @@ const ClassSpells: React.FC<Props> = ({ customSet }) => {
   const { query } = router;
   const { data, loading } = useQuery<classes>(classesQuery);
   const { t } = useTranslation('common');
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   const nameToId = data?.classes.reduce((acc, { id, allNames }) => {
     const obj = { ...acc };

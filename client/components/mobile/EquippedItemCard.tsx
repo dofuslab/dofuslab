@@ -15,7 +15,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
+import { Theme, BuildError } from 'common/types';
 import { useTranslation } from 'i18n';
 import { itemCardStyle, switchStyle } from 'common/mixins';
 import { useDeleteItemMutation, checkAuthentication } from 'common/utils';
@@ -29,7 +29,7 @@ import { TruncatableText } from 'common/wrappers';
 import Router from 'next/router';
 import { Media } from 'components/common/Media';
 import Link from 'next/link';
-import { BuildError } from 'common/types';
+
 import Card from 'components/common/Card';
 import { mq } from 'common/constants';
 import { EquippedItem, ItemSet, CustomSet } from 'common/type-aliases';
@@ -116,7 +116,7 @@ const EquippedItemCard: React.FC<Props> = ({
 
   const client = useApolloClient();
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   const onQuickMage = React.useCallback(
     async (checked: boolean, stat: Stat) => {

@@ -6,10 +6,10 @@ import { CardProps } from 'antd/lib/card';
 import { ClassNames, jsx } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
+import { Theme } from 'common/types';
 
 const Card: React.FC<CardProps> = ({ className, ...restProps }) => {
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
   return (
     <ClassNames>
       {({ css, cx }) => (

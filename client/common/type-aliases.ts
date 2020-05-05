@@ -2,6 +2,7 @@ import {
   customSet as CustomSet,
   customSet_equippedItems as EquippedItem,
   customSet_equippedItems_exos as Exo,
+  customSet_stats as Stats,
 } from 'graphql/fragments/__generated__/customSet';
 import {
   classById_classById_spellVariantPairs_spells as Spell,
@@ -13,7 +14,10 @@ import {
 } from 'graphql/queries/__generated__/itemSlots';
 import { sets_sets_edges_node as SetWithItems } from 'graphql/queries/__generated__/sets';
 import { set_setById_bonuses as SetBonus } from 'graphql/queries/__generated__/set';
-import { item_weaponStats as WeaponStats } from 'graphql/fragments/__generated__/item';
+import {
+  item_weaponStats as WeaponStats,
+  item_itemType as ItemTypeWithSlots,
+} from 'graphql/fragments/__generated__/item';
 
 export type { set as ItemSet } from 'graphql/fragments/__generated__/set';
 export type { item as Item } from 'graphql/fragments/__generated__/item';
@@ -28,4 +32,6 @@ export type {
   SetWithItems,
   SetBonus,
   WeaponStats,
+  Stats,
+  ItemTypeWithSlots,
 };

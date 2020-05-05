@@ -14,69 +14,12 @@ import {
   red8,
   red5,
 } from './mixins';
+import { Theme } from './types';
 
 export const DARK_THEME_NAME = 'DARK';
 export const LIGHT_THEME_NAME = 'LIGHT';
 
-export type TTheme = {
-  name: string;
-  body?: {
-    background: string;
-  };
-  header?: {
-    background?: string;
-  };
-  text?: {
-    default?: string;
-    light?: string;
-    link?: {
-      default?: string;
-    };
-    danger?: string;
-    primary?: string;
-  };
-  border?: {
-    default?: string;
-    selected?: string;
-    primarySelected?: string;
-    light?: string;
-  };
-  layer?: {
-    background?: string;
-    backgroundLight?: string;
-  };
-  statEditor?: {
-    categoryBackground?: string;
-    remainingPointsBackground?: string;
-  };
-  damage?: {
-    nonCrit?: {
-      background?: string;
-      color?: string;
-    };
-  };
-  badge?: {
-    background?: string;
-  };
-  scrollbar?: {
-    trackBackground?: string;
-    buttonBorder?: string;
-    background?: string;
-  };
-  switch?: {
-    background?: string;
-    button?: string;
-  };
-  backTop?: {
-    background?: string;
-    hoverBackground?: string;
-  };
-  card?: {
-    background?: string;
-  };
-};
-
-export const lightTheme: TTheme = {
+export const lightTheme: Theme = {
   name: LIGHT_THEME_NAME,
   text: {
     link: {
@@ -124,7 +67,7 @@ const darkColors = {
   defaultText: 'rgba(255, 255, 255, 0.65)',
 };
 
-export const darkTheme: TTheme = {
+export const darkTheme: Theme = {
   name: DARK_THEME_NAME,
   body: {
     background: gray12,

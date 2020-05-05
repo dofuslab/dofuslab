@@ -6,7 +6,7 @@ import { Radio, Divider } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
+import { Theme, TEffectLine } from 'common/types';
 import {
   CardTitleWithLevel,
   damageHeaderStyle,
@@ -22,7 +22,7 @@ import {
   getStatsFromCustomSet,
   getInitialRangedState,
 } from 'common/utils';
-import { TEffectLine } from 'common/types';
+
 import { Stat } from '__generated__/globalTypes';
 import Card from 'components/common/Card';
 import Tooltip from 'components/common/Tooltip';
@@ -76,7 +76,7 @@ const SpellCard: React.FC<Props> = ({ spell, customSet }) => {
     [selectSpellLevelIdx],
   );
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   if (!spellStats) {
     content = (

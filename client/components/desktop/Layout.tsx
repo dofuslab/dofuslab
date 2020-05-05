@@ -40,8 +40,9 @@ import {
 } from 'graphql/mutations/__generated__/changeLocale';
 import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
-import { TTheme, LIGHT_THEME_NAME } from 'common/themes';
+import { LIGHT_THEME_NAME } from 'common/themes';
 import Tooltip from 'components/common/Tooltip';
+import { Theme } from 'common/types';
 import MyBuilds from '../common/MyBuilds';
 import SignUpModal from '../common/SignUpModal';
 import LoginModal from '../common/LoginModal';
@@ -162,7 +163,7 @@ const Layout = ({ children }: LayoutProps) => {
     </Select>
   );
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   return (
     <AntdLayout

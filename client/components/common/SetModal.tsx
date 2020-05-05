@@ -8,7 +8,7 @@ import Router from 'next/router';
 import { useTheme } from 'emotion-theming';
 import groupBy from 'lodash/groupBy';
 
-import { TTheme } from 'common/themes';
+import { Theme } from 'common/types';
 import { set, setVariables } from 'graphql/queries/__generated__/set';
 import setQuery from 'graphql/queries/set.graphql';
 import { useTranslation } from 'i18n';
@@ -41,7 +41,7 @@ const SetModal: React.FC<Props> = ({
   });
 
   const { t } = useTranslation('common');
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
   const [itemIds, setItemIds] = React.useState<Array<string>>([]);
 
   const [mutate, { loading: mutationLoading }] = useEquipItemsMutation(

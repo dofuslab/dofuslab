@@ -8,10 +8,10 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { Popover } from 'antd';
 import { useTranslation } from 'i18n';
 import { popoverTitleStyle, gold5 } from 'common/mixins';
-import { baseStats, scrolledStats, BuildError } from 'common/types';
+import { baseStats, scrolledStats, BuildError, Theme } from 'common/types';
 import { calcPointCost, renderErrors } from 'common/utils';
 import groupBy from 'lodash/groupBy';
-import { TTheme } from 'common/themes';
+
 import { CustomSet } from 'common/type-aliases';
 
 interface Props {
@@ -22,7 +22,7 @@ interface Props {
 
 const BuildErrors: React.FC<Props> = ({ customSet, errors, isMobile }) => {
   const { t } = useTranslation(['common']);
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   const groupedErrors = groupBy(errors, ({ reason }) => reason);
 

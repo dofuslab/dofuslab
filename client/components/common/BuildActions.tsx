@@ -6,7 +6,7 @@ import { DownOutlined, LoadingOutlined } from '@ant-design/icons';
 import { useTheme } from 'emotion-theming';
 import { useRouter } from 'next/router';
 
-import { TTheme } from 'common/themes';
+import { Theme } from 'common/types';
 import { customSet as CustomSet } from 'graphql/fragments/__generated__/customSet';
 import {
   Button,
@@ -42,7 +42,7 @@ interface Props {
 
 const BuildActions: React.FC<Props> = ({ customSet, isMobile }) => {
   const { t } = useTranslation('common');
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
   const [copyMutate, { loading: copyLoading }] = useMutation<
     copyCustomSet,
     copyCustomSetVariables
