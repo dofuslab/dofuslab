@@ -8,12 +8,12 @@ import { useTranslation } from 'i18n';
 import { faRedo } from '@fortawesome/free-solid-svg-icons';
 import { mq } from 'common/constants';
 
-interface IProps {
+interface Props {
   onReset: () => void;
   className?: string;
 }
 
-const ResetAllButton: React.FC<IProps> = ({ onReset, className }) => {
+const ResetAllButton: React.FC<Props> = ({ onReset, className }) => {
   const { t } = useTranslation('common');
   return (
     <Button

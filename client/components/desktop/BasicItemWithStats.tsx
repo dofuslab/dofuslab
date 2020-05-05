@@ -12,13 +12,12 @@ import {
   itemImageDimensions,
   popoverShadow,
 } from 'common/mixins';
-import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/customSet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagic, faTimes } from '@fortawesome/free-solid-svg-icons';
-import ItemStatsList from '../common/ItemStatsList';
-import { item } from 'graphql/fragments/__generated__/item';
-import { TTheme } from 'common/themes';
+import { Theme } from 'common/types';
 import { CardTitleWithLevel, BrokenImagePlaceholder } from 'common/wrappers';
+import { Exo, Item } from 'common/type-aliases';
+import ItemStatsList from '../common/ItemStatsList';
 
 const wrapperStyles = {
   position: 'absolute' as 'absolute',
@@ -34,16 +33,16 @@ const wrapperStyles = {
   opacity: 0,
 };
 
-interface IProps {
-  item: item;
-  exos?: Array<customSet_equippedItems_exos>;
+interface Props {
+  item: Item;
+  exos?: Array<Exo>;
   deletable?: boolean;
   selected?: boolean;
   onDelete?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   overlayCSS?: React.CSSProperties;
 }
 
-const BasicItemWithStats: React.FC<IProps> = ({
+const BasicItemWithStats: React.FC<Props> = ({
   item,
   exos,
   deletable,
@@ -51,7 +50,7 @@ const BasicItemWithStats: React.FC<IProps> = ({
   selected,
   overlayCSS,
 }) => {
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
   const [brokenImage, setBrokenImage] = React.useState(false);
   const contentRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -62,7 +61,12 @@ const BasicItemWithStats: React.FC<IProps> = ({
         return (
           <Popover
             placement="bottom"
-            getPopupContainer={triggerNode => triggerNode.parentElement!}
+            getPopupContainer={(triggerNode) => {
+              if (triggerNode.parentElement) {
+                return triggerNode.parentElement;
+              }
+              return document && document.body;
+            }}
             title={<CardTitleWithLevel title={item.name} level={item.level} />}
             content={
               item.stats.length > 0 && <ItemStatsList item={item} exos={exos} />
@@ -72,9 +76,11 @@ const BasicItemWithStats: React.FC<IProps> = ({
               ...overlayCSS,
               '.ant-popover-content': {
                 maxHeight: contentRef.current
-                  ? `calc(100vh - ${contentRef.current.offsetTop +
+                  ? `calc(100vh - ${
+                      contentRef.current.offsetTop +
                       contentRef.current.offsetHeight +
-                      20}px)`
+                      20
+                    }px)`
                   : undefined,
                 overflow: 'auto',
               },
@@ -87,10 +93,10 @@ const BasicItemWithStats: React.FC<IProps> = ({
               css={{
                 ...itemImageBox(theme),
                 ...(selected && { ...selectedBox(theme) }),
-                ['&:hover']: {
+                '&:hover': {
                   [`.${wrapperClass}`]: {
                     opacity: 0.3,
-                    ['&:hover']: {
+                    '&:hover': {
                       opacity: 1,
                     },
                   },
@@ -109,6 +115,7 @@ const BasicItemWithStats: React.FC<IProps> = ({
                   onError={() => {
                     setBrokenImage(true);
                   }}
+                  alt={item.name}
                 />
               )}
               {(exos?.length ?? 0) > 0 && (

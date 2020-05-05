@@ -5,48 +5,39 @@ import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 import groupBy from 'lodash/groupBy';
 
-import {
-  customSet,
-  customSet_equippedItems,
-} from 'graphql/fragments/__generated__/customSet';
-import {
-  itemSlots,
-  itemSlots_itemSlots,
-} from 'graphql/queries/__generated__/itemSlots';
-import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
+import { itemSlots as ItemSlots } from 'graphql/queries/__generated__/itemSlots';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 
+import { mq } from 'common/constants';
+import { useSetModal } from 'common/utils';
+import { BuildError } from 'common/types';
+import { EquippedItem, CustomSet, ItemSlot } from 'common/type-aliases';
 import DesktopEquippedItem from '../desktop/EquippedItem';
 import MobileEquippedItem from '../mobile/EquippedItem';
-import { mq } from 'common/constants';
 import MageModal from './MageModal';
-import { useSetModal } from 'common/utils';
 import SetModal from './SetModal';
 import { Media } from './Media';
-import { IError } from 'common/types';
 
-interface IProps {
-  customSet?: customSet | null;
-  selectItemSlot: React.Dispatch<
-    React.SetStateAction<itemSlots_itemSlots | null>
-  >;
+interface Props {
+  customSet?: CustomSet | null;
+  selectItemSlot: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
   selectedItemSlotId: string | null;
   isMobile?: boolean;
-  errors: Array<IError>;
+  errors: Array<BuildError>;
 }
 
-const EquipmentSlots: React.FC<IProps> = ({
+const EquipmentSlots: React.FC<Props> = ({
   customSet,
   selectItemSlot,
   selectedItemSlotId,
   isMobile,
   errors,
 }) => {
-  const { data } = useQuery<itemSlots>(ItemSlotsQuery);
+  const { data } = useQuery<ItemSlots>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
 
   const equippedItemsBySlotId: {
-    [key: string]: customSet_customSetById_equippedItems;
+    [key: string]: EquippedItem;
   } =
     customSet?.equippedItems.reduce(
       (acc, curr) => ({ ...acc, [curr.slot?.id]: curr }),
@@ -54,13 +45,12 @@ const EquipmentSlots: React.FC<IProps> = ({
     ) ?? {};
 
   const [mageModalVisible, setMageModalVisible] = React.useState(false);
-  const [
-    equippedItem,
-    setEquippedItem,
-  ] = React.useState<customSet_equippedItems | null>(null);
+  const [equippedItem, setEquippedItem] = React.useState<EquippedItem | null>(
+    null,
+  );
   const openMageModal = React.useCallback(
-    equippedItem => {
-      setEquippedItem(equippedItem);
+    (ei) => {
+      setEquippedItem(ei);
       setMageModalVisible(true);
     },
     [setMageModalVisible],
@@ -76,7 +66,7 @@ const EquipmentSlots: React.FC<IProps> = ({
     closeSetModal,
   } = useSetModal();
 
-  const groupedErrors = groupBy(errors, ({ equippedItem }) => equippedItem.id);
+  const groupedErrors = groupBy(errors, ({ equippedItem: ei }) => ei.id);
 
   return (
     <div
@@ -98,18 +88,17 @@ const EquipmentSlots: React.FC<IProps> = ({
         },
       }}
     >
-      {itemSlots?.map(slot => {
-        const equippedItem: customSet_equippedItems | undefined =
-          equippedItemsBySlotId[slot.id];
-        const equippedItemErrors: Array<IError> | undefined =
-          groupedErrors[equippedItem?.id];
+      {itemSlots?.map((slot) => {
+        const ei: EquippedItem | undefined = equippedItemsBySlotId[slot.id];
+        const equippedItemErrors: Array<BuildError> | undefined =
+          groupedErrors[ei?.id];
         return (
           <React.Fragment key={slot.id}>
             <Media lessThan="xs">
               <MobileEquippedItem
                 slot={slot}
                 key={slot.id}
-                equippedItem={equippedItem}
+                equippedItem={ei}
                 selected={selectedItemSlotId === slot.id}
                 customSet={customSet}
                 openMageModal={openMageModal}
@@ -129,7 +118,7 @@ const EquipmentSlots: React.FC<IProps> = ({
               <DesktopEquippedItem
                 slot={slot}
                 key={slot.id}
-                equippedItem={equippedItem}
+                equippedItem={ei}
                 selected={selectedItemSlotId === slot.id}
                 selectItemSlot={selectItemSlot}
                 customSet={customSet}

@@ -2,20 +2,18 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
+import { CustomSet, ItemSlot } from 'common/type-aliases';
 import Layout from './Layout';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import Home from './Home';
 
-interface IProps {
-  customSet: customSet | null;
+interface Props {
+  customSet: CustomSet | null;
 }
 
-const SetBuilder: React.FC<IProps> = ({ customSet }) => {
-  const [
-    selectedItemSlot,
-    selectItemSlot,
-  ] = React.useState<itemSlots_itemSlots | null>(null);
+const SetBuilder: React.FC<Props> = ({ customSet }) => {
+  const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(
+    null,
+  );
 
   return (
     <Layout>

@@ -1,3 +1,4 @@
+import React from 'react';
 import App from 'next/app';
 import { ApolloProvider } from '@apollo/react-hooks';
 import withApollo from 'common/apollo';
@@ -7,12 +8,12 @@ import { MediaContextProvider } from 'components/common/Media';
 import Router from 'next/router';
 import { ThemeProvider } from 'emotion-theming';
 
+import { darkTheme } from 'common/themes';
 import { appWithTranslation } from '../i18n';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import * as gtag from '../gtag';
-import { darkTheme } from 'common/themes';
 
-Router.events.on('routeChangeComplete', url => gtag.pageview(url));
+Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 config.autoAddCss = false;
 
 class DofusLabApp extends App<{
@@ -36,6 +37,7 @@ class DofusLabApp extends App<{
   render() {
     const { Component, pageProps, apolloClient } = this.props;
 
+    /* eslint-disable react/jsx-props-no-spreading */
     return (
       <ApolloProvider client={apolloClient}>
         <MediaContextProvider>

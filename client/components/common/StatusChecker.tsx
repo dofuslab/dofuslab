@@ -1,10 +1,12 @@
 /** @jsx jsx */
 
 import React from 'react';
+// import { jsx } from '@emotion/core';
 import { useRouter } from 'next/router';
 import { notification } from 'antd';
 import cloneDeep from 'lodash/cloneDeep';
 import { useQuery, useApolloClient } from '@apollo/react-hooks';
+// import { Html } from 'next/document';
 
 import { useTranslation } from 'i18n';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
@@ -17,6 +19,7 @@ type StatusObj = {
   messageKey: string;
 };
 
+/* eslint-disable @typescript-eslint/camelcase */
 const statusMap = {
   reset_password: {
     messageKey: 'RESET_PASSWORD',
@@ -53,6 +56,7 @@ const statusMap = {
     [key: string]: StatusObj | string;
   };
 };
+/* eslint-enable @typescript-eslint/camelcase */
 
 function isStatusObj(value: string | StatusObj): value is StatusObj {
   return typeof value === 'object';
@@ -94,10 +98,10 @@ const StatusChecker: React.FC = () => {
           delete newQuery[statusType];
         }
       } else {
-        statusValue.forEach(value => {
+        statusValue.forEach((value) => {
           if (processQueryEntry(statusType, value)) {
             const values = newQuery[statusType] as string[];
-            newQuery[statusType] = values.filter(s => s !== value);
+            newQuery[statusType] = values.filter((s) => s !== value);
             if (newQuery[statusType].length === 0) {
               delete newQuery[statusType];
             }
@@ -123,6 +127,7 @@ const StatusChecker: React.FC = () => {
     }
   }, [localeData, client, i18n]);
 
+  // return <Html lang={i18n.language} />;
   return null;
 };
 

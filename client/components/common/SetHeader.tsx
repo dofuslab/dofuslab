@@ -8,26 +8,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
 import {
   editCustomSetMetadata,
   editCustomSetMetadataVariables,
-  editCustomSetMetadata_editCustomSetMetadata_customSet,
 } from 'graphql/mutations/__generated__/editCustomSetMetadata';
 import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetdata.graphql';
 import { checkAuthentication, navigateToNewCustomSet } from 'common/utils';
 import { ellipsis } from 'common/mixins';
 import { mq } from 'common/constants';
+import { BuildError } from 'common/types';
+import { CustomSet } from 'common/type-aliases';
 import BonusStats from '../desktop/BonusStats';
 import BuildErrors from './BuildErrors';
-import { IError } from 'common/types';
 import BuildActions from './BuildActions';
 
-interface IProps {
-  customSet?: customSet | null;
+interface Props {
+  customSet?: CustomSet | null;
   isMobile?: boolean;
-  errors: Array<IError>;
+  errors: Array<BuildError>;
 }
 
 interface CustomSetMetadata {
@@ -61,7 +60,7 @@ const reducer = (state: CustomSetMetadata, action: CustomSetMetdataAction) => {
   }
 };
 
-const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
+const SetHeader: React.FC<Props> = ({ customSet, isMobile, errors }) => {
   const originalState = {
     isEditing: false,
     name: customSet?.name || '',
@@ -92,7 +91,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
   const client = useApolloClient();
 
   const handleOk = React.useCallback(
-    async values => {
+    async (values) => {
       const ok = await checkAuthentication(client, t, customSet);
       if (!ok) return;
       dispatch({ type: 'STOP_EDIT' });
@@ -103,8 +102,9 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
           customSetId: customSet?.id,
         },
         optimisticResponse: customSet
-          ? ({ name, level }: any) => {
-              const optimisticCustomSet: editCustomSetMetadata_editCustomSetMetadata_customSet = {
+          ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            ({ name, level }: any) => {
+              const optimisticCustomSet: CustomSet = {
                 ...customSet,
                 name: name || null,
                 level,
@@ -143,7 +143,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
       name="header"
       id={isMobile ? 'header-form-mobile' : 'header-form'}
       onFinish={handleOk}
-      layout={'inline'}
+      layout="inline"
       css={{
         display: 'flex',
         flexDirection: 'column',

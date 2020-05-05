@@ -1,19 +1,21 @@
+/* eslint-disable react/no-array-index-key */
+
 import React from 'react';
 import { CardSkeleton } from 'common/wrappers';
 import { Media } from './Media';
 
-interface IProps {
+interface Props {
   multiplier?: number;
   length?: number;
 }
 
-const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
-  let mult = multiplier || 1;
-  let mod = (length || 0) % 5;
+const SkeletonCardsLoader: React.FC<Props> = ({ multiplier, length }) => {
+  const mult = multiplier || 1;
+  const mod = (length || 0) % 5;
   return (
-    <React.Fragment key={'frag'}>
+    <React.Fragment key="frag">
       <Media lessThan="xs">
-        {mediaClassNames => (
+        {(mediaClassNames) => (
           <>
             {Array(2)
               .fill(null)
@@ -27,7 +29,7 @@ const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
         )}
       </Media>
       <Media at="xs">
-        {mediaClassNames => (
+        {(mediaClassNames) => (
           <>
             {Array(4 * mult)
               .fill(null)
@@ -41,7 +43,7 @@ const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
         )}
       </Media>
       <Media at="sm">
-        {mediaClassNames => (
+        {(mediaClassNames) => (
           <>
             {Array(4 * mult)
               .fill(null)
@@ -55,7 +57,7 @@ const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
         )}
       </Media>
       <Media at="md">
-        {mediaClassNames => (
+        {(mediaClassNames) => (
           <>
             {Array(6 * mult)
               .fill(null)
@@ -69,7 +71,7 @@ const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
         )}
       </Media>
       <Media at="lg">
-        {mediaClassNames => (
+        {(mediaClassNames) => (
           <>
             {Array(8 * mult)
               .fill(null)
@@ -83,7 +85,7 @@ const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
         )}
       </Media>
       <Media at="xl">
-        {mediaClassNames => (
+        {(mediaClassNames) => (
           <>
             {Array(10 * mult - mod)
               .fill(null)
@@ -97,7 +99,7 @@ const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
         )}
       </Media>
       <Media greaterThanOrEqual="xxl">
-        {mediaClassNames => (
+        {(mediaClassNames) => (
           <>
             {Array(12 * mult)
               .fill(null)

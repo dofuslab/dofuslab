@@ -3,7 +3,10 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { CardTitleWithLevel, BrokenImagePlaceholder } from 'common/wrappers';
-import { item, item_set } from 'graphql/fragments/__generated__/item';
+import {
+  item as Item,
+  item_set as ItemSet,
+} from 'graphql/fragments/__generated__/item';
 import { useTranslation } from 'i18n';
 import { useTheme } from 'emotion-theming';
 import {
@@ -11,21 +14,21 @@ import {
   itemBoxDimensions,
   ITEM_BOX_WIDTH,
 } from 'common/mixins';
-import ItemStatsList from './ItemStatsList';
 import { WeaponElementMage } from '__generated__/globalTypes';
-import { TTheme } from 'common/themes';
+import { Theme } from 'common/types';
 import Card from 'components/common/Card';
+import ItemStatsList from './ItemStatsList';
 
-interface IProps {
-  item: item;
+interface Props {
+  item: Item;
   equipped?: boolean;
-  openSetModal?: (set: item_set) => void;
+  openSetModal?: (set: ItemSet) => void;
   onClick?: () => void;
   showOnlyWeaponStats?: boolean;
   weaponElementMage?: WeaponElementMage | null;
 }
 
-const BasicItemCard: React.FC<IProps> = ({
+const BasicItemCard: React.FC<Props> = ({
   item,
   equipped,
   openSetModal,
@@ -34,7 +37,7 @@ const BasicItemCard: React.FC<IProps> = ({
   weaponElementMage,
 }) => {
   const { t } = useTranslation(['common', 'stat', 'weapon_spell_effect']);
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
   const [brokenImage, setBrokenImage] = React.useState(false);
   return (
     <Card
@@ -50,7 +53,7 @@ const BasicItemCard: React.FC<IProps> = ({
       }
       css={{
         ...itemCardStyle,
-        [':hover']: {
+        ':hover': {
           border: `1px solid ${theme.border?.default}`,
         },
         border: `1px solid ${theme.border?.default}`,
@@ -86,6 +89,7 @@ const BasicItemCard: React.FC<IProps> = ({
             onError={() => {
               setBrokenImage(true);
             }}
+            alt={item.name}
           />
         )}
       </div>

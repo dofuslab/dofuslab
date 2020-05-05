@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react';
 import { getDataFromTree } from '@apollo/react-ssr';
 import ApolloClient, {
@@ -15,7 +17,7 @@ interface ExtendedAppContext extends AppContext {
   ctx: NextPageContext & { apolloClient: ApolloClient<NormalizedCacheObject> };
 }
 
-interface IProps {
+interface Props {
   apolloState: any;
   headers: IncomingHttpHeaders;
 }
@@ -31,11 +33,15 @@ function create(initialState: any, headers: IncomingHttpHeaders) {
     fetch,
     onError: ({ graphQLErrors, networkError }) => {
       if (networkError) {
-        notification.error({ message: networkError.message });
+        if (process.browser) {
+          notification.error({ message: networkError.message });
+        }
       }
       if (graphQLErrors) {
         graphQLErrors.forEach(({ message }) => {
-          notification.error({ message });
+          if (process.browser) {
+            notification.error({ message });
+          }
         });
       }
     },
@@ -54,10 +60,12 @@ const initApollo = (initialState: any, headers: IncomingHttpHeaders) => {
   return apolloClient;
 };
 
-export default (App: NextPage<any>) => {
-  return class withApollo extends React.Component<IProps> {
+export default (App: NextPage<any>) =>
+  class withApollo extends React.Component<Props> {
     static displayName = `withApollo(${App.displayName})`;
+
     static defaultProps = { apolloState: {} };
+
     static async getInitialProps(ctx: ExtendedAppContext) {
       const {
         AppTree,
@@ -103,4 +111,3 @@ export default (App: NextPage<any>) => {
       return <App apolloClient={this.apolloClient} {...this.props} />;
     }
   };
-};

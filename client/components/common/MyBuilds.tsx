@@ -7,7 +7,7 @@ import { LoadingOutlined } from '@ant-design/icons';
 import { useTheme } from 'emotion-theming';
 import InfiniteScroll from 'react-infinite-scroller';
 
-import { TTheme } from 'common/themes';
+import { Theme } from 'common/types';
 import {
   myCustomSets,
   myCustomSetsVariables,
@@ -36,11 +36,11 @@ import DeleteCustomSetModal from './DeleteCustomSetModal';
 const PAGE_SIZE = 10;
 const THRESHOLD = 600;
 
-interface IProps {
+interface Props {
   onClose?: () => void;
 }
 
-const MyBuilds: React.FC<IProps> = ({ onClose }) => {
+const MyBuilds: React.FC<Props> = ({ onClose }) => {
   const [search, setSearch] = React.useState('');
 
   const handleSearchChange = React.useCallback(
@@ -111,7 +111,9 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
             variables: { first: PAGE_SIZE, search: '' },
           });
 
-          onClose && onClose();
+          if (onClose) {
+            onClose();
+          }
         }
       },
     });
@@ -125,7 +127,9 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
 
   const onLoadMore = React.useCallback(async () => {
     if (!myBuilds?.currentUser?.customSets.pageInfo.hasNextPage) {
-      return () => {};
+      return () => {
+        // no-op
+      };
     }
 
     const fetchMoreResult = await fetchMore({
@@ -133,8 +137,8 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
         after: myBuilds.currentUser.customSets.pageInfo.endCursor,
         search,
       },
-      updateQuery: (prevData, { fetchMoreResult }) => {
-        if (!fetchMoreResult?.currentUser) {
+      updateQuery: (prevData, { fetchMoreResult: result }) => {
+        if (!result?.currentUser) {
           return prevData;
         }
 
@@ -145,9 +149,9 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
               ...myBuilds.currentUser.customSets,
               edges: [
                 ...myBuilds.currentUser.customSets.edges,
-                ...fetchMoreResult.currentUser.customSets.edges,
+                ...result.currentUser.customSets.edges,
               ],
-              pageInfo: fetchMoreResult.currentUser.customSets.pageInfo,
+              pageInfo: result.currentUser.customSets.pageInfo,
             },
           },
         };
@@ -158,7 +162,7 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
     return fetchMoreResult;
   }, [myBuilds, search]);
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
   const [deleteModalVisible, setDeleteModalVisible] = React.useState(false);
@@ -178,11 +182,12 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
       threshold={THRESHOLD}
       css={{ marginBottom: 20, [mq[1]]: { marginTop: 36 } }}
       loader={
-        <React.Fragment key={'frag'}>
+        <React.Fragment key="frag">
           {Array(4)
             .fill(null)
             .map((_, idx) => (
               <CardSkeleton
+                // eslint-disable-next-line react/no-array-index-key
                 key={`card-skeleton-${idx}`}
                 numRows={2}
                 css={{ marginTop: 20 }}
@@ -296,8 +301,9 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
                         src={item.imageUrl}
                         css={{ width: 40 }}
                         onError={() => {
-                          setBrokenImages(prev => [...prev, id]);
+                          setBrokenImages((prev) => [...prev, id]);
                         }}
+                        alt={id}
                       />
                     ),
                   )
@@ -326,6 +332,7 @@ const MyBuilds: React.FC<IProps> = ({ onClose }) => {
           .fill(null)
           .map((_, idx) => (
             <CardSkeleton
+              // eslint-disable-next-line react/no-array-index-key
               key={`card-${idx}`}
               css={{ marginTop: 20 }}
               numRows={2}

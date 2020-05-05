@@ -13,13 +13,13 @@ import {
 } from 'graphql/mutations/__generated__/deleteCustomSet';
 import deleteCustomSetMutation from 'graphql/mutations/deleteCustomSet.graphql';
 
-interface IProps {
+interface Props {
   visible: boolean;
   onCancel: () => void;
   customSetId: string;
 }
 
-const DeleteCustomSetModal: React.FC<IProps> = ({
+const DeleteCustomSetModal: React.FC<Props> = ({
   visible,
   onCancel,
   customSetId,

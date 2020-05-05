@@ -5,29 +5,28 @@ import { jsx } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
 
 import { itemBox, itemImageBox, selected as selectedBox } from 'common/mixins';
-import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
-import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import {
-  customSet,
-  customSet_equippedItems,
-} from 'graphql/fragments/__generated__/customSet';
-import EquippedItemWithStats from '../common/EquippedItemWithStats';
-import { item_set } from 'graphql/fragments/__generated__/item';
 import Link from 'next/link';
-import { IError } from 'common/types';
-import { TTheme } from 'common/themes';
+import { BuildError, Theme } from 'common/types';
 
-interface IProps {
-  slot: itemSlots_itemSlots;
-  equippedItem?: customSet_customSetById_equippedItems;
-  customSet?: customSet | null;
+import {
+  ItemSet,
+  ItemSlot,
+  EquippedItem as EquippedItemType,
+  CustomSet,
+} from 'common/type-aliases';
+import EquippedItemWithStats from '../common/EquippedItemWithStats';
+
+interface Props {
+  slot: ItemSlot;
+  equippedItem?: EquippedItemType;
+  customSet?: CustomSet | null;
   selected: boolean;
-  openMageModal: (equippedItem: customSet_equippedItems) => void;
-  openSetModal: (set: item_set) => void;
-  errors?: Array<IError>;
+  openMageModal: (equippedItem: EquippedItemType) => void;
+  openSetModal: (set: ItemSet) => void;
+  errors?: Array<BuildError>;
 }
 
-const EquippedItem: React.FC<IProps> = ({
+const EquippedItem: React.FC<Props> = ({
   slot,
   equippedItem,
   selected,
@@ -35,23 +34,22 @@ const EquippedItem: React.FC<IProps> = ({
   openMageModal,
   openSetModal,
   errors,
-  ...restProps
 }) => {
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   return (
     <>
-      <div css={itemBox} {...restProps}>
-        {equippedItem ? (
+      <div css={itemBox}>
+        {customSet && equippedItem ? (
           <Link
             href="/build/[customSetId]/[equippedItemId]"
-            as={`/build/${customSet!.id}/${equippedItem.id}`}
+            as={`/build/${customSet.id}/${equippedItem.id}`}
           >
             <div>
               <EquippedItemWithStats
                 equippedItem={equippedItem}
                 selected={selected}
-                customSet={customSet!}
+                customSet={customSet}
                 itemSlotId={slot.id}
                 openMageModal={openMageModal}
                 openSetModal={openSetModal}
@@ -80,6 +78,7 @@ const EquippedItem: React.FC<IProps> = ({
                   opacity: selected ? 0.75 : 0.4,
                   transition: 'all 0.3s',
                 }}
+                alt={slot.name}
               />
             </div>
           </Link>

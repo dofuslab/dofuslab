@@ -4,31 +4,31 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
+import { Theme } from 'common/types';
 import { useTranslation } from 'i18n';
 import {
   SetBonuses,
   CardTitleWithLevel,
   BrokenImagePlaceholder,
 } from 'common/wrappers';
-import { sets_sets_edges_node } from 'graphql/queries/__generated__/sets';
 import { itemCardStyle } from 'common/mixins';
 import { mq } from 'common/constants';
 import Card from 'components/common/Card';
+import { SetWithItems } from 'common/type-aliases';
 
-interface IProps {
-  set: sets_sets_edges_node;
-  onClick: (set: sets_sets_edges_node) => void;
+interface Props {
+  set: SetWithItems;
+  onClick: (set: SetWithItems) => void;
 }
 
-const SetCard: React.FC<IProps> = ({ set, onClick }) => {
+const SetCard: React.FC<Props> = ({ set, onClick }) => {
   const { t } = useTranslation(['stat', 'common']);
   const maxSetBonusItems = set.bonuses.reduce(
     (currMax, bonus) => Math.max(currMax, bonus.numItems),
     0,
   );
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
 
@@ -67,7 +67,7 @@ const SetCard: React.FC<IProps> = ({ set, onClick }) => {
               margin: '0px auto 12px',
             }}
           >
-            {set.items.map(item =>
+            {set.items.map((item) =>
               brokenImages.includes(item.id) ? (
                 <BrokenImagePlaceholder
                   key={`item-${item.id}`}
@@ -78,12 +78,12 @@ const SetCard: React.FC<IProps> = ({ set, onClick }) => {
                       width: 60,
                       height: 60,
                     },
-                    [':not:first-of-type']: { marginLeft: 12 },
+                    ':not:first-of-type': { marginLeft: 12 },
                   }}
                 />
               ) : (
                 <img
-                  src={item?.imageUrl}
+                  src={item.imageUrl}
                   key={`item-${item.id}`}
                   css={{
                     width: 84,
@@ -92,18 +92,19 @@ const SetCard: React.FC<IProps> = ({ set, onClick }) => {
                       width: 60,
                       height: 60,
                     },
-                    [':not:first-of-type']: { marginLeft: 12 },
+                    ':not:first-of-type': { marginLeft: 12 },
                   }}
                   onError={() => {
-                    setBrokenImages(prev => [...prev, item.id]);
+                    setBrokenImages((prev) => [...prev, item.id]);
                   }}
+                  alt={item.name}
                 />
               ),
             )}
           </div>
           <SetBonuses
             bonuses={set.bonuses.filter(
-              bonus => bonus.numItems === maxSetBonusItems,
+              (bonus) => bonus.numItems === maxSetBonusItems,
             )}
             count={maxSetBonusItems}
             t={t}

@@ -6,23 +6,22 @@ import { Popover } from 'antd';
 import { useTranslation } from 'i18n';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
+import { Theme } from 'common/types';
 import { popoverTitleStyle } from 'common/mixins';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getBonusesFromCustomSet } from 'common/utils';
 import { SetBonuses, BrokenImagePlaceholder } from 'common/wrappers';
 import { mq } from 'common/constants';
 import SetModal from 'components/common/SetModal';
-import { item_set } from 'graphql/fragments/__generated__/item';
+import { CustomSet, ItemSet } from 'common/type-aliases';
 
 const DISPLAY_ITEM_LIMIT = 3;
 
-interface IProps {
-  customSet: customSet;
+interface Props {
+  customSet: CustomSet;
   isMobile: boolean;
 }
 
-const BonusStats: React.FC<IProps> = ({ customSet, isMobile }) => {
+const BonusStats: React.FC<Props> = ({ customSet, isMobile }) => {
   const { t } = useTranslation(['stat', 'common']);
   const setBonuses = getBonusesFromCustomSet(customSet);
   const itemOrder = customSet.equippedItems.reduce(
@@ -30,15 +29,15 @@ const BonusStats: React.FC<IProps> = ({ customSet, isMobile }) => {
     {},
   ) as { [key: string]: number };
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
 
   const [setModalVisible, setSetModalVisible] = React.useState(false);
-  const [selectedSet, setSelectedSet] = React.useState<item_set | null>(null);
+  const [selectedSet, setSelectedSet] = React.useState<ItemSet | null>(null);
 
   const openSetModal = React.useCallback(
-    (set: item_set) => {
+    (set: ItemSet) => {
       setSelectedSet(set);
       setSetModalVisible(true);
     },
@@ -74,7 +73,7 @@ const BonusStats: React.FC<IProps> = ({ customSet, isMobile }) => {
             .map(
               ({ count, set, set: { id, name, bonuses }, equippedItems }) => {
                 const filteredBonuses = bonuses.filter(
-                  bonus => bonus.numItems === count,
+                  (bonus) => bonus.numItems === count,
                 );
                 return (
                   <Popover
@@ -128,14 +127,14 @@ const BonusStats: React.FC<IProps> = ({ customSet, isMobile }) => {
                     >
                       {[...equippedItems]
                         .sort((i, j) => itemOrder[i.id] - itemOrder[j.id])
-                        .map(equippedItem => (
+                        .map((equippedItem) => (
                           <div
                             key={`set-bonus-item-${equippedItem.id}`}
                             css={{
                               width: 40,
                               height: 40,
                               [mq[1]]: {
-                                [':not:first-of-type']: { marginLeft: 4 },
+                                ':not:first-of-type': { marginLeft: 4 },
                               },
                             }}
                           >
@@ -148,11 +147,12 @@ const BonusStats: React.FC<IProps> = ({ customSet, isMobile }) => {
                                 src={equippedItem.item.imageUrl}
                                 css={{ maxWidth: '100%', maxHeight: '100%' }}
                                 onError={() => {
-                                  setBrokenImages(prev => [
+                                  setBrokenImages((prev) => [
                                     ...prev,
                                     equippedItem.id,
                                   ]);
                                 }}
+                                alt={equippedItem.item.name}
                               />
                             )}
                           </div>
@@ -164,7 +164,7 @@ const BonusStats: React.FC<IProps> = ({ customSet, isMobile }) => {
                         )}
                       {equippedItems.length > DISPLAY_ITEM_LIMIT + 1 && (
                         <div
-                          key={'truncated-set'}
+                          key="truncated-set"
                           css={{
                             width: 40,
                             height: 40,
@@ -175,7 +175,7 @@ const BonusStats: React.FC<IProps> = ({ customSet, isMobile }) => {
                             alignItems: 'center',
                             color: theme.text?.light,
                             [mq[1]]: {
-                              [':not:first-of-type']: { marginLeft: 4 },
+                              ':not:first-of-type': { marginLeft: 4 },
                             },
                           }}
                         >

@@ -1,5 +1,5 @@
 import { mq, BREAKPOINTS } from './constants';
-import { TTheme } from './themes';
+import { Theme } from './types';
 
 export const shadow = '0 2px 8px rgba(0, 0, 0, 0.15)';
 
@@ -49,7 +49,7 @@ export const itemImageDimensions = {
   height: 'auto',
 };
 
-export const itemImageBox = (theme: TTheme) => ({
+export const itemImageBox = (theme: Theme) => ({
   position: 'absolute' as 'absolute',
   width: '100%',
   height: '100%',
@@ -72,10 +72,10 @@ export const itemImageBox = (theme: TTheme) => ({
   borderRadius: 4,
   cursor: 'pointer',
   border: `1px solid ${theme.border?.default}`,
-  ['&:hover::before']: {
+  '&:hover::before': {
     opacity: 1,
   },
-  ['&::before']: {
+  '&::before': {
     content: "''",
     boxShadow: shadow,
     opacity: 0,
@@ -99,7 +99,7 @@ export const ellipsis = {
   whiteSpace: 'nowrap' as 'nowrap',
 };
 
-export const itemBox = (theme: TTheme) => ({
+export const itemBox = (theme: Theme) => ({
   background: theme.layer?.background,
   paddingTop: '100%',
   position: 'relative' as 'relative',
@@ -118,7 +118,7 @@ export const itemBox = (theme: TTheme) => ({
   },
 });
 
-export const selected = (theme: TTheme) => ({
+export const selected = (theme: Theme) => ({
   border: '1px solid transparent', // fake border
   background: theme.layer?.background,
   zIndex: 1, // so "border" appears above other elements
@@ -132,7 +132,7 @@ export const selected = (theme: TTheme) => ({
   },
 });
 
-export const primarySelected = (theme: TTheme) => ({
+export const primarySelected = (theme: Theme) => ({
   boxShadow: `0 0 0 2px ${theme.border?.primarySelected}`, // renders as border
   background: theme.layer?.background,
 });
@@ -145,7 +145,7 @@ export const itemCardStyle = {
 };
 
 export const popoverTitleStyle = {
-  ['.ant-popover-title']: { padding: '8px 12px' },
+  '.ant-popover-title': { padding: '8px 12px' },
 };
 
 export const getResponsiveGridStyle = (numColumns: ReadonlyArray<number>) => {
@@ -195,7 +195,7 @@ export const topMarginStyle = {
   },
 };
 
-export const switchStyle = (theme: TTheme, showPrimary?: boolean) => ({
+export const switchStyle = (theme: Theme, showPrimary?: boolean) => ({
   background: showPrimary ? undefined : theme.switch?.background,
   '.ant-switch-inner': {
     color: theme.text?.default,

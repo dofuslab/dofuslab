@@ -1,14 +1,10 @@
 import {
-  customSet,
-  customSet_equippedItems,
-} from 'graphql/fragments/__generated__/customSet';
-import { item_set } from 'graphql/fragments/__generated__/item';
-import {
   Stat,
   ItemFilters,
   WeaponEffectType,
   SpellEffectType,
 } from '__generated__/globalTypes';
+import { ItemSet, EquippedItem, CustomSet } from './type-aliases';
 
 export type StatWithCalculatedValue = {
   stat: string;
@@ -27,14 +23,14 @@ export type StatsFromCustomSet = {
 
 export type StatCalculator = (
   statsFromCustomSet: StatsFromCustomSet | null,
-  customSet?: customSet | null,
+  customSet?: CustomSet | null,
 ) => number;
 
 export type SetCounter = {
   [key: string]: {
     count: number;
-    set: item_set;
-    equippedItems: Array<customSet_equippedItems>;
+    set: ItemSet;
+    equippedItems: Array<EquippedItem>;
   };
 };
 
@@ -77,7 +73,7 @@ export const mobileScreenTypes = mobileScreenTypesArr.reduce(
   {},
 ) as { [key in MobileScreen]: MobileScreen };
 
-export interface ICalcDamageInput {
+export interface CalcDamageInput {
   isCrit?: boolean;
   isTrap?: boolean;
   isWeapon?: boolean;
@@ -92,6 +88,64 @@ export type TSimpleEffect =
   | 'mp';
 
 type TEffectMinMax = { min: number | null; max: number; baseMax: number };
+
+export type Theme = {
+  name: string;
+  body?: {
+    background: string;
+  };
+  header?: {
+    background?: string;
+  };
+  text?: {
+    default?: string;
+    light?: string;
+    link?: {
+      default?: string;
+    };
+    danger?: string;
+    primary?: string;
+  };
+  border?: {
+    default?: string;
+    selected?: string;
+    primarySelected?: string;
+    light?: string;
+  };
+  layer?: {
+    background?: string;
+    backgroundLight?: string;
+  };
+  statEditor?: {
+    categoryBackground?: string;
+    remainingPointsBackground?: string;
+  };
+  damage?: {
+    nonCrit?: {
+      background?: string;
+      color?: string;
+    };
+  };
+  badge?: {
+    background?: string;
+  };
+  scrollbar?: {
+    trackBackground?: string;
+    buttonBorder?: string;
+    background?: string;
+  };
+  switch?: {
+    background?: string;
+    button?: string;
+  };
+  backTop?: {
+    background?: string;
+    hoverBackground?: string;
+  };
+  card?: {
+    background?: string;
+  };
+};
 
 export type TEffectLine = {
   id: string;
@@ -144,7 +198,7 @@ export type BaseStatKey = typeof baseStats[number];
 
 export type StatKey = typeof stats[number];
 
-export interface IError {
-  equippedItem: customSet_equippedItems;
+export interface BuildError {
+  equippedItem: EquippedItem;
   reason: string;
 }

@@ -15,19 +15,17 @@ import {
 import { useTranslation } from 'i18n';
 import { itemCardStyle, blue6 } from 'common/mixins';
 import { useDeleteItemMutation, checkAuthentication } from 'common/utils';
-import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
 import setEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.graphql';
 import {
   setEquippedItemExo,
   setEquippedItemExoVariables,
 } from 'graphql/mutations/__generated__/setEquippedItemExo';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
-import ItemStatsList from '../common/ItemStatsList';
-import { item_set } from 'graphql/fragments/__generated__/item';
-import { IError } from 'common/types';
+import { BuildError } from 'common/types';
 import Card from 'components/common/Card';
 import Tooltip from 'components/common/Tooltip';
+import { EquippedItem, CustomSet, ItemSet } from 'common/type-aliases';
+import ItemStatsList from '../common/ItemStatsList';
 
 const quickMageStats = [
   {
@@ -50,21 +48,21 @@ const actionWrapper = {
   margin: -ACTION_PADDING,
   padding: ACTION_PADDING,
   transition: 'color 0.3s ease-in-out',
-  [':hover']: { color: blue6 },
+  ':hover': { color: blue6 },
   fontSize: '0.8rem',
 };
 
-interface IProps {
-  equippedItem: customSet_customSetById_equippedItems;
+interface Props {
+  equippedItem: EquippedItem;
   itemSlotId: string;
-  customSet: customSet;
-  openMageModal: (equippedItem: customSet_customSetById_equippedItems) => void;
+  customSet: CustomSet;
+  openMageModal: (equippedItem: EquippedItem) => void;
   stopPropagationCallback?: (e: React.MouseEvent<HTMLElement>) => void;
-  openSetModal: (set: item_set) => void;
-  errors?: Array<IError>;
+  openSetModal: (set: ItemSet) => void;
+  errors?: Array<BuildError>;
 }
 
-const EquippedItemCard: React.FC<IProps> = ({
+const EquippedItemCard: React.FC<Props> = ({
   equippedItem,
   itemSlotId,
   customSet,
@@ -88,7 +86,12 @@ const EquippedItemCard: React.FC<IProps> = ({
           exos: hasStat
             ? [
                 ...equippedItem.exos,
-                { id: '0', stat, value: 1, __typename: 'EquippedItemExo' },
+                {
+                  id: '0',
+                  stat,
+                  value: 1,
+                  __typename: 'EquippedItemExo',
+                },
               ]
             : equippedItem.exos.filter(({ stat: exoStat }) => stat !== exoStat),
         },
@@ -155,7 +158,7 @@ const EquippedItemCard: React.FC<IProps> = ({
         ...itemCardStyle,
         display: 'flex',
         flexDirection: 'column',
-        ['.ant-card-body']: {
+        '.ant-card-body': {
           flex: '1',
         },
         border: 'none',

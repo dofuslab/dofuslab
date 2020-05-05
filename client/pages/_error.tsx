@@ -1,12 +1,13 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /** @jsx jsx */
 
 import Error, { ErrorProps } from 'next/error';
 import { jsx } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
-import { TTheme } from 'common/themes';
+import { Theme } from 'common/types';
 
 const ErrorPage = (props: ErrorProps) => {
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
   return (
     <div
       css={{

@@ -13,10 +13,6 @@ import {
   gold5,
   popoverShadow,
 } from 'common/mixins';
-import {
-  customSet_equippedItems,
-  customSet,
-} from 'graphql/fragments/__generated__/customSet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMagic,
@@ -25,13 +21,13 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useDeleteItemMutation } from 'common/utils';
 import { useTranslation } from 'i18n';
-import EquippedItemCard from '../desktop/EquippedItemCard';
 import { mq } from 'common/constants';
-import { item_set } from 'graphql/fragments/__generated__/item';
 import { Media } from 'components/common/Media';
-import { IError } from 'common/types';
-import { TTheme } from 'common/themes';
+import { BuildError, Theme } from 'common/types';
+
 import { BrokenImagePlaceholder } from 'common/wrappers';
+import { EquippedItem, CustomSet, ItemSet } from 'common/type-aliases';
+import EquippedItemCard from '../desktop/EquippedItemCard';
 
 const wrapperStyles = {
   position: 'absolute' as 'absolute',
@@ -51,17 +47,17 @@ const wrapperStyles = {
   },
 };
 
-interface IProps {
-  equippedItem: customSet_equippedItems;
+interface Props {
+  equippedItem: EquippedItem;
   selected: boolean;
-  customSet: customSet;
+  customSet: CustomSet;
   itemSlotId: string;
-  openMageModal: (equippedItem: customSet_equippedItems) => void;
-  openSetModal: (set: item_set) => void;
-  errors?: Array<IError>;
+  openMageModal: (equippedItem: EquippedItem) => void;
+  openSetModal: (set: ItemSet) => void;
+  errors?: Array<BuildError>;
 }
 
-const EquippedItemWithStats: React.FC<IProps> = ({
+const EquippedItemWithStats: React.FC<Props> = ({
   equippedItem,
   selected,
   customSet,
@@ -79,14 +75,17 @@ const EquippedItemWithStats: React.FC<IProps> = ({
     [],
   );
   const onDelete = React.useCallback(
-    (e: React.MouseEvent<HTMLElement>) => {
+    (e: React.SyntheticEvent<HTMLElement>) => {
       e.stopPropagation();
-      deleteItem && deleteItem();
+      if (deleteItem) {
+        deleteItem();
+      }
     },
     [deleteItem],
   );
+
   const { t } = useTranslation('common');
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
   const [brokenImage, setBrokenImage] = React.useState(false);
   const contentRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -119,6 +118,7 @@ const EquippedItemWithStats: React.FC<IProps> = ({
                 src={equippedItem.item.imageUrl}
                 css={itemImageDimensions}
                 onError={() => setBrokenImage(true)}
+                alt={equippedItem.item.name}
               />
             )}
             {(equippedItem.exos.length > 0 ||
@@ -159,64 +159,64 @@ const EquippedItemWithStats: React.FC<IProps> = ({
     <>
       <Media greaterThanOrEqual="xs">
         <ClassNames>
-          {({ css }) => {
-            return (
-              <Popover
-                placement="bottomLeft"
-                title={
+          {({ css }) => (
+            <Popover
+              placement="bottomLeft"
+              title={
+                <div
+                  css={{
+                    display: 'flex',
+                    alignItems: 'baseline',
+                    justifyContent: 'space-between',
+                    fontSize: '0.75rem',
+                  }}
+                  onClick={stopPropagationCallback}
+                >
+                  <div>{equippedItem.item.name}</div>
                   <div
                     css={{
-                      display: 'flex',
-                      alignItems: 'baseline',
-                      justifyContent: 'space-between',
+                      marginLeft: 16,
+                      [mq[1]]: { marginLeft: 8 },
+                      fontWeight: 400,
                       fontSize: '0.75rem',
                     }}
-                    onClick={stopPropagationCallback}
                   >
-                    <div>{equippedItem.item.name}</div>
-                    <div
-                      css={{
-                        marginLeft: 16,
-                        [mq[1]]: { marginLeft: 8 },
-                        fontWeight: 400,
-                        fontSize: '0.75rem',
-                      }}
-                    >
-                      {t('LEVEL_ABBREVIATION')} {equippedItem.item.level}
-                    </div>
+                    {t('LEVEL_ABBREVIATION')} {equippedItem.item.level}
                   </div>
-                }
-                content={
-                  <EquippedItemCard
-                    equippedItem={equippedItem}
-                    itemSlotId={itemSlotId}
-                    customSet={customSet}
-                    openMageModal={openMageModal}
-                    openSetModal={openSetModal}
-                    stopPropagationCallback={stopPropagationCallback}
-                    errors={errors}
-                  />
-                }
-                overlayClassName={css({
-                  ...popoverTitleStyle,
-                  '.ant-popover-content': {
-                    maxHeight: contentRef.current
-                      ? `calc(100vh - ${contentRef.current.offsetTop +
-                          contentRef.current.offsetHeight +
-                          20}px)`
-                      : undefined,
-                    overflow: 'auto',
-                  },
-                  '.ant-popover-inner-content': { padding: 0 },
-                  boxShadow: popoverShadow,
-                  maxWidth: 288,
-                })}
-                autoAdjustOverflow={{ adjustX: 1, adjustY: 0 }}
-              >
-                <div>{content}</div>
-              </Popover>
-            );
-          }}
+                </div>
+              }
+              content={
+                <EquippedItemCard
+                  equippedItem={equippedItem}
+                  itemSlotId={itemSlotId}
+                  customSet={customSet}
+                  openMageModal={openMageModal}
+                  openSetModal={openSetModal}
+                  stopPropagationCallback={stopPropagationCallback}
+                  errors={errors}
+                />
+              }
+              overlayClassName={css({
+                ...popoverTitleStyle,
+                '.ant-popover-content': {
+                  maxHeight: contentRef.current
+                    ? `calc(100vh - ${
+                        contentRef.current.offsetTop +
+                        contentRef.current.offsetHeight +
+                        20
+                      }px)`
+                    : undefined,
+                  overflow: 'auto',
+                },
+                '.ant-popover-inner-content': { padding: 0 },
+                boxShadow: popoverShadow,
+                maxWidth: 288,
+              })}
+              autoAdjustOverflow={{ adjustX: 1, adjustY: 0 }}
+            >
+              <div>{content}</div>
+            </Popover>
+          )}
         </ClassNames>
       </Media>
       <Media lessThan="xs">{content}</Media>

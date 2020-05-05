@@ -6,36 +6,34 @@ import { Tabs } from 'antd';
 import { useTheme } from 'emotion-theming';
 
 import { STAT_GROUPS, mq, SEARCH_BAR_ID } from 'common/constants';
-import Layout from './Layout';
-import StatTable from '../common/StatTable';
 import { ResponsiveGrid } from 'common/wrappers';
 
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getStatsFromCustomSet, getErrors } from 'common/utils';
-import SetHeader from '../common/SetHeader';
-import EquipmentSlots from '../common/EquipmentSlots';
-import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import StatEditor from '../common/StatEditor';
 import { topMarginStyle } from 'common/mixins';
-import Selector from '../common/Selector';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
 import { useTranslation } from 'i18n';
-import { IError } from 'common/types';
-import { TTheme } from 'common/themes';
+import { BuildError, Theme } from 'common/types';
+
+import { ItemSlot, CustomSet } from 'common/type-aliases';
+import Selector from '../common/Selector';
+import StatEditor from '../common/StatEditor';
+import EquipmentSlots from '../common/EquipmentSlots';
+import SetHeader from '../common/SetHeader';
+import StatTable from '../common/StatTable';
+import Layout from './Layout';
 
 const { TabPane } = Tabs;
 
-interface IProps {
-  customSet: customSet | null;
+interface Props {
+  customSet: CustomSet | null;
 }
 
-const SetBuilder: React.FC<IProps> = ({ customSet }) => {
-  const [
-    selectedItemSlot,
-    selectItemSlot,
-  ] = React.useState<itemSlots_itemSlots | null>(null);
+const SetBuilder: React.FC<Props> = ({ customSet }) => {
+  const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(
+    null,
+  );
 
   React.useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
@@ -64,10 +62,10 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
   );
 
   const weapon = customSet?.equippedItems.find(
-    equippedItem => !!equippedItem.item.weaponStats,
+    (equippedItem) => !!equippedItem.item.weaponStats,
   );
 
-  let errors: Array<IError> = [];
+  let errors: Array<BuildError> = [];
 
   if (customSet && statsFromCustomSet) {
     errors = getErrors(customSet, statsFromCustomSet);
@@ -75,7 +73,7 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
 
   const { t } = useTranslation('common');
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   return (
     <Layout>
@@ -121,9 +119,9 @@ const SetBuilder: React.FC<IProps> = ({ customSet }) => {
                 numColumns={[2, 1, 2, 2, 2, 2, 2]}
                 css={{ marginBottom: 20 }}
               >
-                {STAT_GROUPS.map((group, i) => (
+                {STAT_GROUPS.map((group) => (
                   <StatTable
-                    key={`stat-table-${i}`}
+                    key={`stat-table-${group[0].stat}`}
                     group={group}
                     statsFromCustomSet={statsFromCustomSet}
                     customSet={customSet}

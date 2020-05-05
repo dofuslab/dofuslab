@@ -4,13 +4,12 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
+import { Theme, StatKey, scrolledStats, baseStats } from 'common/types';
 import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
 import { Stat } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { InputNumber } from 'antd';
-import { Button } from 'antd';
+import { InputNumber, Button } from 'antd';
+
 import { red6 } from 'common/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRedo } from '@fortawesome/free-solid-svg-icons';
@@ -27,10 +26,11 @@ import {
   navigateToNewCustomSet,
 } from 'common/utils';
 import { useRouter } from 'next/router';
-import { StatKey, scrolledStats, baseStats } from 'common/types';
 
-interface IProps {
-  customSet?: customSet | null;
+import { CustomSet } from 'common/type-aliases';
+
+interface Props {
+  customSet?: CustomSet | null;
 }
 
 type StatState = {
@@ -112,18 +112,14 @@ const reducer = (state: StatState, action: StatStateAction) => {
   }
 };
 
-const getInputNumberStyle = (
-  baseKey: string,
-  title: string,
-  theme: TTheme,
-) => ({
+const getInputNumberStyle = (baseKey: string, title: string, theme: Theme) => ({
   fontSize: '0.75rem',
   maxWidth: '100%',
   display: 'flex',
   alignItems: 'center',
   position: 'relative' as 'relative',
   ...(baseKey === 'baseVitality' && {
-    ['&::before']: {
+    '&::before': {
       position: 'absolute' as 'absolute',
       content: `"${title}"`,
       left: 0,
@@ -147,7 +143,7 @@ const getInputNumberStyle = (
   }),
 });
 
-const StatEditor: React.FC<IProps> = ({ customSet }) => {
+const StatEditor: React.FC<Props> = ({ customSet }) => {
   const initialState = customSet?.stats
     ? {
         baseVitality: customSet.stats.baseVitality,
@@ -175,7 +171,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
   );
 
   const remainingPoints = baseStats.reduce(
-    (acc, statKey) => (acc -= calcPointCost(statState[statKey], statKey)),
+    (acc, statKey) => acc - calcPointCost(statState[statKey], statKey),
     ((customSet?.level ?? 200) - 1) * 5,
   );
 
@@ -214,10 +210,10 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
     checkAndMutate();
   }, [dispatch, checkAndMutate]);
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   const display100 = scrolledStats.some(
-    scrolledStat => statState[scrolledStat] < 100,
+    (scrolledStat) => statState[scrolledStat] < 100,
   );
 
   return (
@@ -271,7 +267,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
             min={0}
             size="small"
             css={getInputNumberStyle(baseKey, t('BASE'), theme)}
-            onFocus={e => {
+            onFocus={(e) => {
               e.currentTarget.setSelectionRange(
                 0,
                 e.currentTarget.value.length,
@@ -289,7 +285,7 @@ const StatEditor: React.FC<IProps> = ({ customSet }) => {
             min={0}
             size="small"
             css={getInputNumberStyle(baseKey, t('SCROLLED'), theme)}
-            onFocus={e => {
+            onFocus={(e) => {
               e.currentTarget.setSelectionRange(
                 0,
                 e.currentTarget.value.length,

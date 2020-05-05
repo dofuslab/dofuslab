@@ -6,25 +6,25 @@ import { Button, Form, Input, Modal, notification } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { useTranslation } from 'i18n';
 import {
-  changePassword,
-  changePasswordVariables,
+  changePassword as ChangePassword,
+  changePasswordVariables as ChangePasswordVariables,
 } from 'graphql/mutations/__generated__/changePassword';
 import changePasswordMutation from 'graphql/mutations/changePassword.graphql';
 import { PASSWORD_REGEX } from 'common/constants';
 
-interface IProps {
+interface Props {
   visible: boolean;
   onClose: () => void;
 }
 
-const ChangePasswordModal: React.FC<IProps> = ({ visible, onClose }) => {
+const ChangePasswordModal: React.FC<Props> = ({ visible, onClose }) => {
   const { t } = useTranslation(['auth', 'common']);
   const [form] = Form.useForm();
 
   const client = useApolloClient();
   const [changePassword, { loading }] = useMutation<
-    changePassword,
-    changePasswordVariables
+    ChangePassword,
+    ChangePasswordVariables
   >(changePasswordMutation);
   const handleOk = React.useCallback(async () => {
     const values = await form.validateFields();
@@ -84,7 +84,7 @@ const ChangePasswordModal: React.FC<IProps> = ({ visible, onClose }) => {
         wrapperCol={{ span: 14 }}
         css={{
           width: '100%',
-          ['.ant-form-item-explain, .ant-form-item-extra']: {
+          '.ant-form-item-explain, .ant-form-item-extra': {
             margin: '4px 0',
           },
         }}
@@ -92,7 +92,7 @@ const ChangePasswordModal: React.FC<IProps> = ({ visible, onClose }) => {
         <Form.Item
           name="oldPassword"
           label={<span css={{ fontSize: '0.75rem' }}>{t('OLD_PASSWORD')}</span>}
-          validateTrigger={'onSubmit'}
+          validateTrigger="onSubmit"
           rules={[
             { required: true, message: t('VALIDATION.REQUIRED_FIELD') },
             {
@@ -110,7 +110,7 @@ const ChangePasswordModal: React.FC<IProps> = ({ visible, onClose }) => {
         <Form.Item
           name="newPassword"
           label={<span css={{ fontSize: '0.75rem' }}>{t('NEW_PASSWORD')}</span>}
-          validateTrigger={'onSubmit'}
+          validateTrigger="onSubmit"
           rules={[
             { required: true, message: t('VALIDATION.REQUIRED_FIELD') },
             {
@@ -131,7 +131,7 @@ const ChangePasswordModal: React.FC<IProps> = ({ visible, onClose }) => {
             <span css={{ fontSize: '0.75rem' }}>{t('CONFIRM_PASSWORD')}</span>
           }
           dependencies={['newPassword']}
-          validateTrigger={'onSubmit'}
+          validateTrigger="onSubmit"
           rules={[
             { required: true, message: t('VALIDATION.REQUIRED_FIELD') },
             ({ getFieldValue }) => ({
