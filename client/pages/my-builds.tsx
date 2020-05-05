@@ -25,6 +25,7 @@ const MyBuildsPage: NextPage = () => {
       <Head>
         <style
           type="text/css"
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: mediaStyles }}
         />
         <title>{getTitle(t('MY_BUILDS'))}</title>

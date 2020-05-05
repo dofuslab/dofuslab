@@ -8,7 +8,7 @@ import Selector from 'components/common/Selector';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/react-hooks';
 import {
-  customSet,
+  customSet as CustomSetQueryType,
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
@@ -25,10 +25,10 @@ const EquipPage: NextPage = () => {
   const { data } = useQuery<itemSlots>(ItemSlotsQuery);
   const itemSlot = data?.itemSlots.find((slot) => slot.id === itemSlotId);
 
-  const { data: customSetData } = useQuery<customSet, customSetVariables>(
-    CustomSetQuery,
-    { variables: { id: customSetId }, skip: !customSetId },
-  );
+  const { data: customSetData } = useQuery<
+    CustomSetQueryType,
+    customSetVariables
+  >(CustomSetQuery, { variables: { id: customSetId }, skip: !customSetId });
 
   const customSet = customSetData?.customSetById ?? null;
 
@@ -41,6 +41,7 @@ const EquipPage: NextPage = () => {
       <Head>
         <style
           type="text/css"
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: mediaStyles }}
         />
       </Head>

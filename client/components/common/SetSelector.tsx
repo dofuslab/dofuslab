@@ -7,14 +7,10 @@ import InfiniteScroll from 'react-infinite-scroller';
 
 import SetQuery from 'graphql/queries/sets.graphql';
 import { SharedFilters } from 'common/types';
-import {
-  sets,
-  setsVariables,
-  sets_sets_edges_node,
-} from 'graphql/queries/__generated__/sets';
+import { sets, setsVariables } from 'graphql/queries/__generated__/sets';
 import { mq } from 'common/constants';
 import { getResponsiveGridStyle } from 'common/mixins';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
+import { SetWithItems, CustomSet } from 'common/type-aliases';
 import SetCard from './SetCard';
 import SkeletonCardsLoader from './SkeletonCardsLoader';
 import SetModal from './SetModal';
@@ -25,7 +21,7 @@ const THRESHOLD = 600;
 
 interface Props {
   filters: SharedFilters;
-  customSet: customSet | null;
+  customSet: CustomSet | null;
 }
 
 const SetSelector: React.FC<Props> = ({ filters, customSet }) => {
@@ -33,19 +29,15 @@ const SetSelector: React.FC<Props> = ({ filters, customSet }) => {
     variables: { first: PAGE_SIZE, filters },
   });
 
-  const [
-    selectedSet,
-    setSelectedSet,
-  ] = React.useState<sets_sets_edges_node | null>(null);
+  const [selectedSet, setSelectedSet] = React.useState<SetWithItems | null>(
+    null,
+  );
   const [setModalVisible, setSetModalVisible] = React.useState(false);
 
-  const openSetModal = React.useCallback(
-    (selectedSet: sets_sets_edges_node) => {
-      setSelectedSet(selectedSet);
-      setSetModalVisible(true);
-    },
-    [],
-  );
+  const openSetModal = React.useCallback((selected: SetWithItems) => {
+    setSelectedSet(selected);
+    setSetModalVisible(true);
+  }, []);
 
   const closeSetModal = React.useCallback(() => {
     setSetModalVisible(false);
@@ -53,17 +45,18 @@ const SetSelector: React.FC<Props> = ({ filters, customSet }) => {
 
   const onLoadMore = React.useCallback(async () => {
     if (!data || !data.sets.pageInfo.hasNextPage) {
-      return () => {};
+      return () => {
+        // no-op
+      };
     }
 
     try {
       const fetchMoreResult = await fetchMore({
         variables: { after: data.sets.pageInfo.endCursor },
-        updateQuery: (prevData, { fetchMoreResult }) => {
+        updateQuery: (prevData, { fetchMoreResult: result }) => {
           if (
-            !fetchMoreResult
-            || fetchMoreResult.sets.pageInfo.endCursor
-              === prevData.sets.pageInfo.endCursor
+            !result ||
+            result.sets.pageInfo.endCursor === prevData.sets.pageInfo.endCursor
           ) {
             return prevData;
           }
@@ -71,14 +64,20 @@ const SetSelector: React.FC<Props> = ({ filters, customSet }) => {
             ...prevData,
             sets: {
               ...prevData.sets,
-              edges: [...prevData.sets.edges, ...fetchMoreResult.sets.edges],
-              pageInfo: fetchMoreResult.sets.pageInfo,
+              edges: [...prevData.sets.edges, ...result.sets.edges],
+              pageInfo: result.sets.pageInfo,
             },
           };
         },
       });
       return fetchMoreResult;
-    } catch (e) {}
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.error(e);
+    }
+    return () => {
+      // no-op
+    };
   }, [data]);
 
   return (

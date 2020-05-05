@@ -64,8 +64,8 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
   );
 
   const { data: myBuilds, loading: queryLoading, fetchMore } = useQuery<
-  myCustomSets,
-  myCustomSetsVariables
+    myCustomSets,
+    myCustomSetsVariables
   >(myCustomSetsQuery, {
     variables: { first: PAGE_SIZE, search },
   });
@@ -111,7 +111,9 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
             variables: { first: PAGE_SIZE, search: '' },
           });
 
-          onClose && onClose();
+          if (onClose) {
+            onClose();
+          }
         }
       },
     });
@@ -125,7 +127,9 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
 
   const onLoadMore = React.useCallback(async () => {
     if (!myBuilds?.currentUser?.customSets.pageInfo.hasNextPage) {
-      return () => {};
+      return () => {
+        // no-op
+      };
     }
 
     const fetchMoreResult = await fetchMore({
@@ -133,8 +137,8 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
         after: myBuilds.currentUser.customSets.pageInfo.endCursor,
         search,
       },
-      updateQuery: (prevData, { fetchMoreResult }) => {
-        if (!fetchMoreResult?.currentUser) {
+      updateQuery: (prevData, { fetchMoreResult: result }) => {
+        if (!result?.currentUser) {
           return prevData;
         }
 
@@ -145,9 +149,9 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
               ...myBuilds.currentUser.customSets,
               edges: [
                 ...myBuilds.currentUser.customSets.edges,
-                ...fetchMoreResult.currentUser.customSets.edges,
+                ...result.currentUser.customSets.edges,
               ],
-              pageInfo: fetchMoreResult.currentUser.customSets.pageInfo,
+              pageInfo: result.currentUser.customSets.pageInfo,
             },
           },
         };
@@ -163,7 +167,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
   const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
   const [deleteModalVisible, setDeleteModalVisible] = React.useState(false);
   const [customSetIdToDelete, setCustomSetIdToDelete] = React.useState<
-  string | null
+    string | null
   >(null);
 
   const closeDeleteModal = React.useCallback(() => {
@@ -177,19 +181,20 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
       useWindow={false}
       threshold={THRESHOLD}
       css={{ marginBottom: 20, [mq[1]]: { marginTop: 36 } }}
-      loader={(
+      loader={
         <React.Fragment key="frag">
           {Array(4)
             .fill(null)
             .map((_, idx) => (
               <CardSkeleton
+                // eslint-disable-next-line react/no-array-index-key
                 key={`card-skeleton-${idx}`}
                 numRows={2}
                 css={{ marginTop: 20 }}
               />
             ))}
         </React.Fragment>
-      )}
+      }
     >
       {customSetIdToDelete && (
         <DeleteCustomSetModal
@@ -230,14 +235,14 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
             <Card
               onClick={onClose}
               hoverable
-              title={(
+              title={
                 <ClassNames>
                   {({ css }) => (
                     <CardTitleWithLevel
                       title={node.name || t('UNTITLED')}
                       level={node.level}
                       levelClassName={css({ marginLeft: 8 })}
-                      rightAlignedContent={(
+                      rightAlignedContent={
                         <div
                           css={{
                             padding: '0px 4px 0px 8px',
@@ -254,11 +259,11 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
                         >
                           <FontAwesomeIcon icon={faTrashAlt} />
                         </div>
-                      )}
+                      }
                     />
                   )}
                 </ClassNames>
-              )}
+              }
               size="small"
               css={{
                 ...itemCardStyle,
@@ -280,25 +285,28 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
                   .sort(
                     ({ slot: { order: i } }, { slot: { order: j } }) => i - j,
                   )
-                  .map(({ id, item }) => (brokenImages.includes(id) ? (
-                    <BrokenImagePlaceholder
-                      key={`broken-image-${id}`}
-                      css={{
-                        width: 40,
-                        height: 40,
-                        display: 'inline-flex',
-                      }}
-                    />
-                  ) : (
-                    <img
-                      key={`equipped-item-${id}`}
-                      src={item.imageUrl}
-                      css={{ width: 40 }}
-                      onError={() => {
-                        setBrokenImages((prev) => [...prev, id]);
-                      }}
-                    />
-                  )))
+                  .map(({ id, item }) =>
+                    brokenImages.includes(id) ? (
+                      <BrokenImagePlaceholder
+                        key={`broken-image-${id}`}
+                        css={{
+                          width: 40,
+                          height: 40,
+                          display: 'inline-flex',
+                        }}
+                      />
+                    ) : (
+                      <img
+                        key={`equipped-item-${id}`}
+                        src={item.imageUrl}
+                        css={{ width: 40 }}
+                        onError={() => {
+                          setBrokenImages((prev) => [...prev, id]);
+                        }}
+                        alt={id}
+                      />
+                    ),
+                  )
               ) : (
                 <div css={{ fontStyle: 'italic', color: theme.text?.light }}>
                   {t('NO_ITEMS_EQUIPPED')}
@@ -319,11 +327,12 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
           {t('NO_BUILDS_MATCHED', { search })}
         </div>
       )}
-      {queryLoading
-        && Array(10)
+      {queryLoading &&
+        Array(10)
           .fill(null)
           .map((_, idx) => (
             <CardSkeleton
+              // eslint-disable-next-line react/no-array-index-key
               key={`card-${idx}`}
               css={{ marginTop: 20 }}
               numRows={2}

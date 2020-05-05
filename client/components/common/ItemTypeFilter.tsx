@@ -2,15 +2,15 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { itemSlots_itemSlots_itemTypes } from 'graphql/queries/__generated__/itemSlots';
 import { mq } from 'common/constants';
 import { Checkbox } from 'antd';
 import { CheckboxValueType } from 'antd/lib/checkbox/Group';
+import { ItemType } from 'common/type-aliases';
 
 const { Group: CheckboxGroup } = Checkbox;
 
 interface Props {
-  itemTypes: Array<itemSlots_itemSlots_itemTypes>;
+  itemTypes: Array<ItemType>;
   itemTypeIds: Set<string>;
   setItemTypeIds: React.Dispatch<React.SetStateAction<Set<string>>>;
 }
@@ -21,7 +21,8 @@ const ItemTypeFilter: React.FC<Props> = ({
   setItemTypeIds,
 }) => {
   const onChangeItemTypeIds = React.useCallback(
-    (newItemTypeIds: Array<CheckboxValueType>) => setItemTypeIds(new Set(newItemTypeIds as Array<string>)),
+    (newItemTypeIds: Array<CheckboxValueType>) =>
+      setItemTypeIds(new Set(newItemTypeIds as Array<string>)),
     [setItemTypeIds],
   );
   if (itemTypes.length <= 1) {

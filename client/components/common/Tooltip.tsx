@@ -15,6 +15,7 @@ const Tooltip: React.FC<TooltipProps> = ({
     <ClassNames>
       {({ css, cx }) => (
         <AntdTooltip
+          // eslint-disable-next-line react/jsx-props-no-spreading
           {...restProps}
           overlayClassName={cx(
             css({

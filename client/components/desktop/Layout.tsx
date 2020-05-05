@@ -14,7 +14,6 @@ import {
 import { useRouter } from 'next/router';
 import { useTheme } from 'emotion-theming';
 
-import LoginModal from '../common/LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
@@ -28,8 +27,6 @@ import { faKey, faMugHot } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { useTranslation, LANGUAGES, langToFullName } from 'i18n';
-import SignUpModal from '../common/SignUpModal';
-import MyBuilds from '../common/MyBuilds';
 import {
   mq,
   DISCORD_SERVER_LINK,
@@ -45,6 +42,9 @@ import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
 import { TTheme, LIGHT_THEME_NAME } from 'common/themes';
 import Tooltip from 'components/common/Tooltip';
+import MyBuilds from '../common/MyBuilds';
+import SignUpModal from '../common/SignUpModal';
+import LoginModal from '../common/LoginModal';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -83,7 +83,7 @@ const getDonateElement = (t: TFunction) => {
   );
 };
 
-const Layout = (props: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
   const { t, i18n } = useTranslation(['auth', 'common']);
   const client = useApolloClient();
   const { data } = useQuery<ICurrentUser>(currentUserQuery);
@@ -118,8 +118,8 @@ const Layout = (props: LayoutProps) => {
   }, []);
 
   const logoutHandler = React.useCallback(async () => {
-    const { data } = await logout();
-    if (data?.logoutUser?.ok) {
+    const { data: logoutData } = await logout();
+    if (logoutData?.logoutUser?.ok) {
       client.writeQuery<ICurrentUser>({
         query: currentUserQuery,
         data: { currentUser: null },
@@ -247,6 +247,7 @@ const Layout = (props: LayoutProps) => {
                   : 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark.svg'
               }
               css={{ width: 120 }}
+              alt="DofusLab"
             />
           </div>
         </Link>
@@ -333,7 +334,11 @@ const Layout = (props: LayoutProps) => {
               },
             }}
           >
-            <a href={DISCORD_SERVER_LINK} target="_blank">
+            <a
+              href={DISCORD_SERVER_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Tooltip
                 placement="bottomLeft"
                 title={t('JOIN_US_DISCORD', { ns: 'common' })}
@@ -341,7 +346,11 @@ const Layout = (props: LayoutProps) => {
                 <FontAwesomeIcon icon={faDiscord} />
               </Tooltip>
             </a>
-            <a href={GITHUB_REPO_LINK} target="_blank">
+            <a
+              href={GITHUB_REPO_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Tooltip
                 placement="bottomLeft"
                 title={t('CONTRIBUTE_GITHUB', { ns: 'common' })}
@@ -351,7 +360,11 @@ const Layout = (props: LayoutProps) => {
             </a>
             {/* disable SSR to render based on Math.random() */}
             <NoSSR>
-              <a href={BUY_ME_COFFEE_LINK} target="_blank">
+              <a
+                href={BUY_ME_COFFEE_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Tooltip
                   placement="bottomLeft"
                   title={t('BUY_US_COFFEE', { ns: 'common' })}
@@ -372,7 +385,7 @@ const Layout = (props: LayoutProps) => {
           padding: 0,
         }}
       >
-        {props.children}
+        {children}
       </AntdLayout.Content>
 
       <LoginModal

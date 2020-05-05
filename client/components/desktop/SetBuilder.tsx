@@ -8,9 +8,7 @@ import { useTheme } from 'emotion-theming';
 import { STAT_GROUPS, mq, SEARCH_BAR_ID } from 'common/constants';
 import { ResponsiveGrid } from 'common/wrappers';
 
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getStatsFromCustomSet, getErrors } from 'common/utils';
-import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { topMarginStyle } from 'common/mixins';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
@@ -18,6 +16,7 @@ import ClassSpells from 'components/common/ClassSpells';
 import { useTranslation } from 'i18n';
 import { BuildError } from 'common/types';
 import { TTheme } from 'common/themes';
+import { ItemSlot, CustomSet } from 'common/type-aliases';
 import Selector from '../common/Selector';
 import StatEditor from '../common/StatEditor';
 import EquipmentSlots from '../common/EquipmentSlots';
@@ -28,14 +27,13 @@ import Layout from './Layout';
 const { TabPane } = Tabs;
 
 interface Props {
-  customSet: customSet | null;
+  customSet: CustomSet | null;
 }
 
 const SetBuilder: React.FC<Props> = ({ customSet }) => {
-  const [
-    selectedItemSlot,
-    selectItemSlot,
-  ] = React.useState<itemSlots_itemSlots | null>(null);
+  const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(
+    null,
+  );
 
   React.useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
@@ -121,9 +119,9 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                 numColumns={[2, 1, 2, 2, 2, 2, 2]}
                 css={{ marginBottom: 20 }}
               >
-                {STAT_GROUPS.map((group, i) => (
+                {STAT_GROUPS.map((group) => (
                   <StatTable
-                    key={`stat-table-${i}`}
+                    key={`stat-table-${group[0].stat}`}
                     group={group}
                     statsFromCustomSet={statsFromCustomSet}
                     customSet={customSet}

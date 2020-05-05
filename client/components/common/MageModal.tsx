@@ -2,12 +2,9 @@
 
 import React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
-import {
-  Modal, Select, Divider, Button,
-} from 'antd';
+import { Modal, Select, Divider, Button } from 'antd';
 import { LabeledValue } from 'antd/lib/select';
 
-import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
 import {
   getStatsMaps,
   checkAuthentication,
@@ -33,13 +30,14 @@ import {
 import MageEquippedItemMutation from 'graphql/mutations/mageEquippedItem.graphql';
 import { mq } from 'common/constants';
 import { WeaponEffectsList, TruncatableText } from 'common/wrappers';
+import { EquippedItem } from 'common/type-aliases';
 import MageInputNumber from './MageInputNumber';
 
 const { Option } = Select;
 
 interface Props {
   visible: boolean;
-  equippedItem: customSet_customSetById_equippedItems;
+  equippedItem: EquippedItem;
   closeMageModal: (e: React.MouseEvent<HTMLElement>) => void;
   customSetId: string;
 }
@@ -81,8 +79,8 @@ const reducer = (state: MageState, action: MageAction) => {
   switch (action.type) {
     case 'ADD':
       if (
-        state.exos.some(({ stat }) => action.stat === stat)
-        || state.originalStats.some(({ stat }) => action.stat === stat)
+        state.exos.some(({ stat }) => action.stat === stat) ||
+        state.originalStats.some(({ stat }) => action.stat === stat)
       ) {
         return state;
       }
@@ -90,13 +88,14 @@ const reducer = (state: MageState, action: MageAction) => {
         ...state,
         exos: [...state.exos, { stat: action.stat, value: 1 }],
       };
-    case 'REMOVE':
+    case 'REMOVE': {
       const exosCopy = [...state.exos];
       idx = exosCopy.findIndex(({ stat }) => stat === action.stat);
       if (idx === -1) return state;
       exosCopy.splice(idx, 1);
       return { ...state, exos: exosCopy };
-    case 'EDIT':
+    }
+    case 'EDIT': {
       const stateCopy = { ...state };
       if (action.isExo) {
         idx = stateCopy.exos.findIndex(({ stat }) => stat === action.stat);
@@ -108,7 +107,8 @@ const reducer = (state: MageState, action: MageAction) => {
         stateCopy.originalStats[idx].value = action.value;
       }
       return stateCopy;
-    case 'RESET':
+    }
+    case 'RESET': {
       return {
         originalStats: state.originalStats.map(({ stat }) => ({
           stat,
@@ -116,6 +116,7 @@ const reducer = (state: MageState, action: MageAction) => {
         })),
         exos: [],
       };
+    }
     default:
       throw new Error('Invalid action type');
   }
@@ -149,8 +150,10 @@ const MageModal: React.FC<Props> = ({
     originalStats: equippedItem.item.stats
       .filter(({ stat, maxValue }) => !!stat && !!maxValue)
       .map(({ stat }) => ({
+        /* eslint-disable @typescript-eslint/no-non-null-assertion */
         stat: stat!,
         value: statsMap[stat!].value,
+        /* eslint-enable @typescript-eslint/no-non-null-assertion */
       })),
     exos: equippedItem.exos
       .filter(({ stat }) => !!exoStatsMap[stat])
@@ -161,7 +164,7 @@ const MageModal: React.FC<Props> = ({
   });
 
   const [weaponElementMage, setWeaponElementMage] = React.useState<
-  WeaponElementMage | undefined
+    WeaponElementMage | undefined
   >();
 
   const [mutate] = useMutation<mageEquippedItem, mageEquippedItemVariables>(
@@ -282,8 +285,8 @@ const MageModal: React.FC<Props> = ({
                                 elementMageToWeaponEffect(v),
                               )}
                               css={{ width: 16, marginRight: 8 }}
-                            />
-                            {' '}
+                              alt={v}
+                            />{' '}
                             {t(`WEAPON_ELEMENT_MAGE.${v}`, {
                               ns: 'weapon_spell_effect',
                             })}
@@ -332,12 +335,9 @@ const MageModal: React.FC<Props> = ({
                   dispatch={dispatch}
                   isExo={false}
                 />
-                /
-                {' '}
+                /{' '}
                 <TruncatableText>
-                  {originalStatsMap[statLine.stat].value}
-                  {' '}
-                  {t(statLine.stat)}
+                  {originalStatsMap[statLine.stat].value} {t(statLine.stat)}
                 </TruncatableText>
               </div>
             ))}
@@ -381,17 +381,21 @@ const MageModal: React.FC<Props> = ({
                 onSelect={onAddStat}
                 css={{ fontSize: '0.75rem', width: '100%' }}
                 labelInValue
-                filterOption={(input, option) => (option?.children as string)
-                  .toLocaleUpperCase()
-                  .includes(input.toLocaleUpperCase())}
+                filterOption={(input, option) =>
+                  (option?.children as string)
+                    .toLocaleUpperCase()
+                    .includes(input.toLocaleUpperCase())
+                }
                 dropdownClassName={css({ zIndex: 1062 })} // higher than modal (1061)
               >
                 {Object.values(Stat)
-                  .sort((s1, s2) => t(s1, { ns: 'stat' }).localeCompare(
-                    t(s2, { ns: 'stat' }),
-                    undefined,
-                    { ignorePunctuation: true },
-                  ))
+                  .sort((s1, s2) =>
+                    t(s1, { ns: 'stat' }).localeCompare(
+                      t(s2, { ns: 'stat' }),
+                      undefined,
+                      { ignorePunctuation: true },
+                    ),
+                  )
                   .map((stat) => (
                     <Option
                       key={stat}

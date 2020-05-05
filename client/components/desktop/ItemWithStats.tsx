@@ -3,18 +3,15 @@
 import * as React from 'react';
 import { jsx } from '@emotion/core';
 
-import {
-  customSet_equippedItems,
-  customSet,
-} from 'graphql/fragments/__generated__/customSet';
 import { useDeleteItemMutation } from 'common/utils';
+import { EquippedItem, CustomSet } from 'common/type-aliases';
 import BasicItemWithStats from './BasicItemWithStats';
 
 interface Props {
-  equippedItem: customSet_equippedItems;
+  equippedItem: EquippedItem;
   selected: boolean;
   deletable: boolean;
-  customSet: customSet;
+  customSet: CustomSet;
 }
 
 const ItemWithStats: React.FC<Props> = ({
@@ -27,7 +24,9 @@ const ItemWithStats: React.FC<Props> = ({
   const onDelete = React.useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       e.stopPropagation();
-      deleteItem && deleteItem();
+      if (deleteItem) {
+        deleteItem();
+      }
     },
     [deleteItem],
   );

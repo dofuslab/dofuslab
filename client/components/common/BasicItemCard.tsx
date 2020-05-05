@@ -43,14 +43,14 @@ const BasicItemCard: React.FC<Props> = ({
     <Card
       hoverable={!!onClick}
       size="small"
-      title={(
+      title={
         <CardTitleWithLevel
           title={item.name}
           showBadge={equipped}
           badgeContent={t('EQUIPPED')}
           level={item.level}
         />
-      )}
+      }
       css={{
         ...itemCardStyle,
         ':hover': {

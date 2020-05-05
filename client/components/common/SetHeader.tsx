@@ -8,24 +8,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
 import {
   editCustomSetMetadata,
   editCustomSetMetadataVariables,
-  editCustomSetMetadata_editCustomSetMetadata_customSet,
 } from 'graphql/mutations/__generated__/editCustomSetMetadata';
 import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetdata.graphql';
 import { checkAuthentication, navigateToNewCustomSet } from 'common/utils';
 import { ellipsis } from 'common/mixins';
 import { mq } from 'common/constants';
 import { BuildError } from 'common/types';
+import { CustomSet } from 'common/type-aliases';
 import BonusStats from '../desktop/BonusStats';
 import BuildErrors from './BuildErrors';
 import BuildActions from './BuildActions';
 
 interface Props {
-  customSet?: customSet | null;
+  customSet?: CustomSet | null;
   isMobile?: boolean;
   errors: Array<BuildError>;
 }
@@ -74,8 +73,8 @@ const SetHeader: React.FC<Props> = ({ customSet, isMobile, errors }) => {
 
   const { t } = useTranslation('common');
   const [mutate] = useMutation<
-  editCustomSetMetadata,
-  editCustomSetMetadataVariables
+    editCustomSetMetadata,
+    editCustomSetMetadataVariables
   >(EditCustomSetMetadataMutation, { refetchQueries: () => ['myCustomSets'] });
 
   const [form] = Form.useForm();
@@ -103,21 +102,22 @@ const SetHeader: React.FC<Props> = ({ customSet, isMobile, errors }) => {
           customSetId: customSet?.id,
         },
         optimisticResponse: customSet
-          ? ({ name, level }: any) => {
-            const optimisticCustomSet: editCustomSetMetadata_editCustomSetMetadata_customSet = {
-              ...customSet,
-              name: name || null,
-              level,
-              __typename: 'CustomSet',
-            };
+          ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            ({ name, level }: any) => {
+              const optimisticCustomSet: CustomSet = {
+                ...customSet,
+                name: name || null,
+                level,
+                __typename: 'CustomSet',
+              };
 
-            return {
-              editCustomSetMetadata: {
-                customSet: optimisticCustomSet,
-                __typename: 'EditCustomSetMetadata',
-              },
-            };
-          }
+              return {
+                editCustomSetMetadata: {
+                  customSet: optimisticCustomSet,
+                  __typename: 'EditCustomSetMetadata',
+                },
+              };
+            }
           : undefined,
       });
 
@@ -226,8 +226,7 @@ const SetHeader: React.FC<Props> = ({ customSet, isMobile, errors }) => {
           css={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
           onClick={onStartEdit}
         >
-          {t('LEVEL')}
-          {' '}
+          {t('LEVEL')}{' '}
           {metadataState.isEditing ? (
             <Form.Item name="level" css={{ display: 'inline-flex' }}>
               <InputNumber
@@ -286,12 +285,12 @@ const SetHeader: React.FC<Props> = ({ customSet, isMobile, errors }) => {
         {customSet && !metadataState.isEditing && !isMobile ? (
           <Popover
             overlayStyle={{ maxWidth: 360 }}
-            title={(
+            title={
               <div css={{ fontWeight: 500, overflowWrap: 'break-word' }}>
                 {customSet.name || t('UNTITLED')}
               </div>
-            )}
-            content={(
+            }
+            content={
               <div
                 css={{
                   display: 'grid',
@@ -307,8 +306,7 @@ const SetHeader: React.FC<Props> = ({ customSet, isMobile, errors }) => {
                     month: 'short',
                     day: 'numeric',
                     year: 'numeric',
-                  })}
-                  {' '}
+                  })}{' '}
                   {creationDate.toLocaleTimeString(undefined, {
                     hour: '2-digit',
                     minute: '2-digit',
@@ -320,15 +318,14 @@ const SetHeader: React.FC<Props> = ({ customSet, isMobile, errors }) => {
                     month: 'short',
                     day: 'numeric',
                     year: 'numeric',
-                  })}
-                  {' '}
+                  })}{' '}
                   {modifiedDate.toLocaleTimeString(undefined, {
                     hour: '2-digit',
                     minute: '2-digit',
                   })}
                 </div>
               </div>
-            )}
+            }
             placement="bottomLeft"
           >
             {formElement}
@@ -362,8 +359,7 @@ const SetHeader: React.FC<Props> = ({ customSet, isMobile, errors }) => {
                   month: 'short',
                   day: 'numeric',
                   year: 'numeric',
-                })}
-                {' '}
+                })}{' '}
                 {creationDate.toLocaleTimeString(undefined, {
                   hour: '2-digit',
                   minute: '2-digit',
@@ -377,8 +373,7 @@ const SetHeader: React.FC<Props> = ({ customSet, isMobile, errors }) => {
                   month: 'short',
                   day: 'numeric',
                   year: 'numeric',
-                })}
-                {' '}
+                })}{' '}
                 {modifiedDate.toLocaleTimeString(undefined, {
                   hour: '2-digit',
                   minute: '2-digit',

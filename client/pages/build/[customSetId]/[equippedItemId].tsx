@@ -6,13 +6,12 @@ import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import Layout from 'components/mobile/Layout';
 import { useRouter } from 'next/router';
 import {
-  customSet,
+  customSet as customSetQueryType,
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
 
 import EquippedItemCard from 'components/mobile/EquippedItemCard';
 import ErrorPage from 'pages/_error';
-import { item_set } from 'graphql/fragments/__generated__/item';
 import MageModal from 'components/common/MageModal';
 import SetModal from 'components/common/SetModal';
 import { mediaStyles } from 'components/common/Media';
@@ -20,21 +19,22 @@ import Head from 'next/head';
 import { getErrors, getStatsFromCustomSet } from 'common/utils';
 import { BuildError } from 'common/types';
 import { CustomSetHead } from 'common/wrappers';
+import { ItemSet } from 'common/type-aliases';
 
 const EquippedItemPage: NextPage = () => {
   const router = useRouter();
   const { customSetId, equippedItemId } = router.query;
 
-  const { data: customSetData } = useQuery<customSet, customSetVariables>(
-    CustomSetQuery,
-    { variables: { id: customSetId }, skip: !customSetId },
-  );
+  const { data: customSetData } = useQuery<
+    customSetQueryType,
+    customSetVariables
+  >(CustomSetQuery, { variables: { id: customSetId }, skip: !customSetId });
 
   const [setModalVisible, setSetModalVisible] = React.useState(false);
-  const [selectedSet, setSelectedSet] = React.useState<item_set | null>(null);
+  const [selectedSet, setSelectedSet] = React.useState<ItemSet | null>(null);
 
   const openSetModal = React.useCallback(
-    (set: item_set) => {
+    (set: ItemSet) => {
       setSelectedSet(set);
       setSetModalVisible(true);
     },
@@ -61,7 +61,7 @@ const EquippedItemPage: NextPage = () => {
   }
 
   const equippedItem = customSet?.equippedItems.find(
-    (equippedItem) => equippedItem.id === equippedItemId,
+    (ei) => ei.id === equippedItemId,
   );
 
   if (!equippedItem) {
@@ -85,6 +85,7 @@ const EquippedItemPage: NextPage = () => {
       <Head>
         <style
           type="text/css"
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: mediaStyles }}
         />
       </Head>

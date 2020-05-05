@@ -14,8 +14,6 @@ import {
   DamageTypeToggle,
 } from 'common/wrappers';
 import { itemCardStyle } from 'common/mixins';
-import { item_weaponStats } from 'graphql/fragments/__generated__/item';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import {
   getStatsFromCustomSet,
   getStatWithDefault,
@@ -33,10 +31,11 @@ import {
 } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
 import Card from 'components/common/Card';
+import { WeaponStats, CustomSet } from 'common/type-aliases';
 
 interface Props {
-  weaponStats: item_weaponStats;
-  customSet: customSet;
+  weaponStats: WeaponStats;
+  customSet: CustomSet;
   weaponElementMage: WeaponElementMage | null;
 }
 
@@ -59,8 +58,9 @@ const WeaponDamage: React.FC<Props> = ({
   );
 
   const rangedOnly = !!weaponStats.minRange && weaponStats.minRange > 1;
-  const meleeOnly = !rangedOnly
-    && !customSet.equippedItems.some(
+  const meleeOnly =
+    !rangedOnly &&
+    !customSet.equippedItems.some(
       (equippedItem) => equippedItem.item.itemType.enName === 'Axe',
     );
 
@@ -71,16 +71,15 @@ const WeaponDamage: React.FC<Props> = ({
   );
 
   const damageTypeKey = showRanged ? 'ranged' : 'melee';
-  let critRate = typeof weaponStats.baseCritChance === 'number'
-    ? getStatWithDefault(statsFromCustomSet, Stat.CRITICAL)
-        + weaponStats.baseCritChance
-    : null;
+  let critRate =
+    typeof weaponStats.baseCritChance === 'number'
+      ? getStatWithDefault(statsFromCustomSet, Stat.CRITICAL) +
+        weaponStats.baseCritChance
+      : null;
   critRate = critRate === null ? null : Math.min(Math.max(critRate, 0), 100);
 
   const weaponEffectSummaries: Array<TEffectLine> = weaponStats.weaponEffects.map(
-    ({
-      minDamage, maxDamage, effectType, id,
-    }) => {
+    ({ minDamage, maxDamage, effectType, id }) => {
       let min = minDamage;
       let max = maxDamage;
       let type = effectType;
@@ -98,14 +97,14 @@ const WeaponDamage: React.FC<Props> = ({
         nonCrit: {
           min: min
             ? calcEffect(
-              min,
-              type,
-              customSet.level,
-              statsFromCustomSet,
-              { isWeapon: true },
-              damageTypeKey,
-              weaponSkillPower,
-            )
+                min,
+                type,
+                customSet.level,
+                statsFromCustomSet,
+                { isWeapon: true },
+                damageTypeKey,
+                weaponSkillPower,
+              )
             : null,
           max: calcEffect(
             max,
@@ -119,45 +118,45 @@ const WeaponDamage: React.FC<Props> = ({
           baseMax: max,
         },
         crit:
-          weaponStats.baseCritChance === null
-          || weaponStats.critBonusDamage === null
+          weaponStats.baseCritChance === null ||
+          weaponStats.critBonusDamage === null
             ? null
             : {
-              min: min
-                ? calcEffect(
-                  min
-                        + (getSimpleEffect(type) === 'damage'
-                        || getSimpleEffect(type) === 'heal'
+                min: min
+                  ? calcEffect(
+                      min +
+                        (getSimpleEffect(type) === 'damage' ||
+                        getSimpleEffect(type) === 'heal'
                           ? weaponStats.critBonusDamage
                           : 0),
+                      type,
+                      customSet.level,
+                      statsFromCustomSet,
+                      { isWeapon: true, isCrit: true },
+                      damageTypeKey,
+                      weaponSkillPower,
+                    )
+                  : null,
+                max: calcEffect(
+                  max +
+                    (getSimpleEffect(type) === 'damage' ||
+                    getSimpleEffect(type) === 'heal'
+                      ? weaponStats.critBonusDamage
+                      : 0),
                   type,
                   customSet.level,
                   statsFromCustomSet,
                   { isWeapon: true, isCrit: true },
                   damageTypeKey,
                   weaponSkillPower,
-                )
-                : null,
-              max: calcEffect(
-                max
-                    + (getSimpleEffect(type) === 'damage'
-                    || getSimpleEffect(type) === 'heal'
-                      ? weaponStats.critBonusDamage
-                      : 0),
-                type,
-                customSet.level,
-                statsFromCustomSet,
-                { isWeapon: true, isCrit: true },
-                damageTypeKey,
-                weaponSkillPower,
-              ),
-              baseMax:
-                  max
-                  + (getSimpleEffect(type) === 'damage'
-                  || getSimpleEffect(type) === 'heal'
+                ),
+                baseMax:
+                  max +
+                  (getSimpleEffect(type) === 'damage' ||
+                  getSimpleEffect(type) === 'heal'
                     ? 0
                     : weaponStats.critBonusDamage),
-            },
+              },
       };
     },
   );
@@ -181,10 +180,11 @@ const WeaponDamage: React.FC<Props> = ({
       return acc + average;
     }, 0 as number | null);
 
-  const weightedAverageDamage = averageCritDamage !== null && critRate
-    ? averageCritDamage * (critRate / 100)
-        + averageNonCritDamage * (1 - critRate / 100)
-    : averageNonCritDamage;
+  const weightedAverageDamage =
+    averageCritDamage !== null && critRate
+      ? averageCritDamage * (critRate / 100) +
+        averageNonCritDamage * (1 - critRate / 100)
+      : averageNonCritDamage;
 
   const averageNonCritHeal = weaponEffectSummaries
     .filter(({ type }) => getSimpleEffect(type) === 'heal')
@@ -205,10 +205,11 @@ const WeaponDamage: React.FC<Props> = ({
       return acc + average;
     }, 0 as number | null);
 
-  const weightedAverageHeal = averageCritHeal !== null && critRate
-    ? averageCritHeal * (critRate / 100)
-        + averageNonCritHeal * (1 - critRate / 100)
-    : averageNonCritHeal;
+  const weightedAverageHeal =
+    averageCritHeal !== null && critRate
+      ? averageCritHeal * (critRate / 100) +
+        averageNonCritHeal * (1 - critRate / 100)
+      : averageNonCritHeal;
 
   const theme = useTheme<TTheme>();
 
@@ -229,18 +230,12 @@ const WeaponDamage: React.FC<Props> = ({
           {t('NO_WEAPON_SKILL')}
         </Radio>
         <Radio value={300} css={{ fontSize: '0.75rem' }}>
-          {t('WEAPON_SKILL')}
-          {' '}
-          (300
-          {t('POWER', { ns: 'stat' })}
-          )
+          {t('WEAPON_SKILL')} (300
+          {t('POWER', { ns: 'stat' })})
         </Radio>
         <Radio value={350} css={{ fontSize: '0.75rem' }}>
-          {t('WEAPON_SKILL')}
-          {' '}
-          (350
-          {t('POWER', { ns: 'stat' })}
-          )
+          {t('WEAPON_SKILL')} (350
+          {t('POWER', { ns: 'stat' })})
         </Radio>
       </Radio.Group>
       <Divider css={{ margin: '12px 0' }} />
@@ -296,15 +291,11 @@ const WeaponDamage: React.FC<Props> = ({
       <Divider css={{ margin: '12px 0' }} />
       <div css={{ fontWeight: 500 }}>
         <div>
-          {t('AVERAGE_DAMAGE')}
-          :
-          {weightedAverageDamage.toFixed(0)}
+          {t('AVERAGE_DAMAGE')}:{weightedAverageDamage.toFixed(0)}
         </div>
         {!!weightedAverageHeal && (
           <div>
-            {t('AVERAGE_HEAL')}
-            :
-            {weightedAverageHeal.toFixed(0)}
+            {t('AVERAGE_HEAL')}:{weightedAverageHeal.toFixed(0)}
           </div>
         )}
       </div>

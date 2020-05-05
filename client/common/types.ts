@@ -104,16 +104,16 @@ export type TCondition = {
 
 export type TConditionObj =
   | {
-    and?: Array<TConditionObj>;
-    or?: Array<TConditionObj>;
-  }
+      and?: Array<TConditionObj>;
+      or?: Array<TConditionObj>;
+    }
   | TCondition;
 
 export type TEvaluatedConditionObj =
   | {
-    and?: Array<TEvaluatedConditionObj>;
-    or?: Array<TEvaluatedConditionObj>;
-  }
+      and?: Array<TEvaluatedConditionObj>;
+      or?: Array<TEvaluatedConditionObj>;
+    }
   | boolean;
 
 export const baseStats = [

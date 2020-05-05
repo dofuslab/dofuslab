@@ -11,18 +11,18 @@ import MobileSetBuilder from 'components/mobile/SetBuilder';
 import { mediaStyles, Media } from 'components/common/Media';
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import {
-  customSet,
+  customSet as CustomSetQueryType,
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
-import ErrorPage from './_error';
 import { CustomSetHead } from 'common/wrappers';
+import ErrorPage from './_error';
 
 const Index: NextPage = () => {
   const router = useRouter();
   const { customSetId } = router.query;
 
   const { data: customSetData, loading } = useQuery<
-    customSet,
+    CustomSetQueryType,
     customSetVariables
   >(CustomSetQuery, { variables: { id: customSetId }, skip: !customSetId });
 
@@ -37,6 +37,7 @@ const Index: NextPage = () => {
       <Head>
         <style
           type="text/css"
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: mediaStyles }}
         />
       </Head>

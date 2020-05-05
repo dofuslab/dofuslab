@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx } from '@emotion/core';
-import {
-  Button, Divider, Form, Input, Modal,
-} from 'antd';
+import { Button, Divider, Form, Input, Modal } from 'antd';
 
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import registerMutation from 'graphql/mutations/register.graphql';
@@ -32,13 +30,14 @@ const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
   const [form] = Form.useForm();
 
   const client = useApolloClient();
-  const [register, { loading }] = useMutation<register, registerVariables>(
-    registerMutation,
-  );
+  const [registerMutate, { loading }] = useMutation<
+    register,
+    registerVariables
+  >(registerMutation);
   const handleOk = React.useCallback(async () => {
     const values = await form.validateFields();
 
-    const { data } = await register({
+    const { data } = await registerMutate({
       variables: {
         email: values.email,
         password: values.password,
@@ -53,7 +52,7 @@ const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
       });
       onClose();
     }
-  }, [register, onClose, client, form]);
+  }, [registerMutate, onClose, client, form]);
 
   const onLogin = React.useCallback(() => {
     onClose();
@@ -193,9 +192,7 @@ const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
       <Divider />
       <div css={{ fontSize: '0.75rem' }}>
         <Trans i18nKey="auth:ALREADY_HAVE_ACCOUNT">
-          Already have an account?
-          {' '}
-          <a onClick={onLogin}>Login here.</a>
+          Already have an account? <a onClick={onLogin}>Login here.</a>
         </Trans>
       </div>
     </Modal>

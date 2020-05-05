@@ -4,9 +4,7 @@ import * as React from 'react';
 import { ClassNames, jsx } from '@emotion/core';
 import { Stat } from '__generated__/globalTypes';
 import { mq, DEBOUNCE_INTERVAL, SEARCH_BAR_ID } from 'common/constants';
-import {
-  Select, Input, InputNumber, Button, Switch,
-} from 'antd';
+import { Select, Input, InputNumber, Button, Switch } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -70,8 +68,8 @@ const SelectorFilters: React.FC<Props> = ({
   );
 
   const handleMaxLevelChange = React.useCallback(
-    (maxLevel: number) => {
-      dispatch({ type: 'MAX_LEVEL', maxLevel });
+    (max: number) => {
+      dispatch({ type: 'MAX_LEVEL', maxLevel: max });
     },
     [dispatch],
   );
@@ -82,18 +80,18 @@ const SelectorFilters: React.FC<Props> = ({
   );
 
   const onChangeMaxLevel = React.useCallback(
-    (maxLevel: number | undefined) => {
-      if (maxLevel) {
-        setMaxLevel(maxLevel);
-        debouncedUpdateLevel(maxLevel);
+    (max: number | undefined) => {
+      if (max) {
+        setMaxLevel(max);
+        debouncedUpdateLevel(max);
       }
     },
     [debouncedUpdateLevel, setMaxLevel],
   );
 
   const onChangeStats = React.useCallback(
-    (stats: Array<{ label: string; value: Stat }>) => {
-      dispatch({ type: 'STATS', stats: stats.map((stat) => stat.value) });
+    (s: Array<{ label: string; value: Stat }>) => {
+      dispatch({ type: 'STATS', stats: s.map((stat) => stat.value) });
     },
     [dispatch],
   );
@@ -225,7 +223,12 @@ const SelectorFilters: React.FC<Props> = ({
         <ClassNames>
           {({ css }) => (
             <Select
-              getPopupContainer={(node: HTMLElement) => node.parentElement!}
+              getPopupContainer={(node: HTMLElement) => {
+                if (node.parentElement) {
+                  return node.parentElement;
+                }
+                return document && document.body;
+              }}
               mode="multiple"
               css={{
                 fontSize: '0.75rem',
@@ -248,17 +251,21 @@ const SelectorFilters: React.FC<Props> = ({
               dropdownClassName={css({
                 '.ant-select-item': { fontSize: '0.75rem' },
               })}
-              filterOption={(input, option) => (option?.children as string)
-                .toLocaleUpperCase()
-                .includes(input.toLocaleUpperCase())}
+              filterOption={(input, option) =>
+                (option?.children as string)
+                  .toLocaleUpperCase()
+                  .includes(input.toLocaleUpperCase())
+              }
               labelInValue
             >
               {Object.values(Stat)
-                .sort((s1, s2) => t(s1, { ns: 'stat' }).localeCompare(
-                  t(s2, { ns: 'stat' }),
-                  undefined,
-                  { ignorePunctuation: true },
-                ))
+                .sort((s1, s2) =>
+                  t(s1, { ns: 'stat' }).localeCompare(
+                    t(s2, { ns: 'stat' }),
+                    undefined,
+                    { ignorePunctuation: true },
+                  ),
+                )
                 .map((stat) => (
                   <Option key={stat} value={stat}>
                     {t(stat, { ns: 'stat' })}

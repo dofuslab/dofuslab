@@ -19,15 +19,12 @@ import { TTheme } from 'common/themes';
 import { useTranslation } from 'i18n';
 import { itemCardStyle, switchStyle } from 'common/mixins';
 import { useDeleteItemMutation, checkAuthentication } from 'common/utils';
-import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
 import setEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.graphql';
 import {
   setEquippedItemExo,
   setEquippedItemExoVariables,
 } from 'graphql/mutations/__generated__/setEquippedItemExo';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { item_set } from 'graphql/fragments/__generated__/item';
 import { TruncatableText } from 'common/wrappers';
 import Router from 'next/router';
 import { Media } from 'components/common/Media';
@@ -35,8 +32,8 @@ import Link from 'next/link';
 import { BuildError } from 'common/types';
 import Card from 'components/common/Card';
 import { mq } from 'common/constants';
+import { EquippedItem, ItemSet, CustomSet } from 'common/type-aliases';
 import ItemStatsList from '../common/ItemStatsList';
-// import Tooltip from 'components/common/Tooltip';
 
 const quickMageStats = [
   {
@@ -64,11 +61,11 @@ const quickMageStats = [
 // };
 
 interface Props {
-  equippedItem: customSet_customSetById_equippedItems;
+  equippedItem: EquippedItem;
   itemSlotId: string;
-  customSet: customSet;
-  openMageModal: (equippedItem: customSet_customSetById_equippedItems) => void;
-  openSetModal: (set: item_set) => void;
+  customSet: CustomSet;
+  openMageModal: (equippedItem: EquippedItem) => void;
+  openSetModal: (set: ItemSet) => void;
   errors?: Array<BuildError>;
 }
 
@@ -85,8 +82,8 @@ const EquippedItemCard: React.FC<Props> = ({
   const deleteItem = useDeleteItemMutation(itemSlotId, customSet);
 
   const [quickExo] = useMutation<
-  setEquippedItemExo,
-  setEquippedItemExoVariables
+    setEquippedItemExo,
+    setEquippedItemExoVariables
   >(setEquippedItemExoMutation, {
     optimisticResponse: ({ stat, hasStat }) => ({
       setEquippedItemExo: {
@@ -94,14 +91,14 @@ const EquippedItemCard: React.FC<Props> = ({
           ...equippedItem,
           exos: hasStat
             ? [
-              ...equippedItem.exos,
-              {
-                id: '0',
-                stat,
-                value: 1,
-                __typename: 'EquippedItemExo',
-              },
-            ]
+                ...equippedItem.exos,
+                {
+                  id: '0',
+                  stat,
+                  value: 1,
+                  __typename: 'EquippedItemExo',
+                },
+              ]
             : equippedItem.exos.filter(({ stat: exoStat }) => stat !== exoStat),
         },
         __typename: 'SetEquippedItemExo',
@@ -177,7 +174,7 @@ const EquippedItemCard: React.FC<Props> = ({
       </Media>
       <Card
         size="small"
-        title={(
+        title={
           <div css={{ display: 'flex', alignItems: 'center' }}>
             <TruncatableText css={{ marginRight: 8, fontSize: '0.8rem' }}>
               {equippedItem.item.name}
@@ -185,12 +182,11 @@ const EquippedItemCard: React.FC<Props> = ({
             <div
               css={{ fontSize: '0.75rem', fontWeight: 400, marginLeft: 'auto' }}
             >
-              {t('LEVEL_ABBREVIATION', { ns: 'common' })}
-              {' '}
+              {t('LEVEL_ABBREVIATION', { ns: 'common' })}{' '}
               {equippedItem.item.level}
             </div>
           </div>
-        )}
+        }
         css={css({
           ...itemCardStyle,
           marginTop: 20,

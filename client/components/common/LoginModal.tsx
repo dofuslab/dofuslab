@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx } from '@emotion/core';
-import {
-  Modal, Input, Form, Button, Checkbox, Divider,
-} from 'antd';
+import { Modal, Input, Form, Button, Checkbox, Divider } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import {
   login as ILogin,
@@ -163,9 +161,7 @@ const LoginModal: React.FC<Props> = ({ visible, onClose, openSignUpModal }) => {
             </a>
           </div>
           <Trans i18nKey="auth:NO_ACCOUNT_SIGNUP">
-            Don't have an account?
-            {' '}
-            <a onClick={onSignUp}>Sign up here.</a>
+            Don&apos;t have an account? <a onClick={onSignUp}>Sign up here.</a>
           </Trans>
         </div>
       </Modal>

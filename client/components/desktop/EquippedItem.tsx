@@ -5,27 +5,24 @@ import { jsx } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
 
 import { itemBox, itemImageBox, selected as selectedBox } from 'common/mixins';
-import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
-import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import {
-  customSet,
-  customSet_equippedItems,
-} from 'graphql/fragments/__generated__/customSet';
-import { item_set } from 'graphql/fragments/__generated__/item';
 import { BuildError } from 'common/types';
 import { TTheme } from 'common/themes';
+import {
+  ItemSlot,
+  EquippedItem as EquippedItemType,
+  ItemSet,
+  CustomSet,
+} from 'common/type-aliases';
 import EquippedItemWithStats from '../common/EquippedItemWithStats';
 
 interface Props {
-  slot: itemSlots_itemSlots;
-  equippedItem?: customSet_customSetById_equippedItems;
-  selectItemSlot: React.Dispatch<
-  React.SetStateAction<itemSlots_itemSlots | null>
-  >;
-  customSet?: customSet | null;
+  slot: ItemSlot;
+  equippedItem?: EquippedItemType;
+  selectItemSlot: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
+  customSet?: CustomSet | null;
   selected: boolean;
-  openMageModal: (equippedItem: customSet_equippedItems) => void;
-  openSetModal: (set: item_set) => void;
+  openMageModal: (equippedItem: EquippedItemType) => void;
+  openSetModal: (set: ItemSet) => void;
   errors?: Array<BuildError>;
 }
 
@@ -38,7 +35,6 @@ const EquippedItem: React.FC<Props> = ({
   openMageModal,
   openSetModal,
   errors,
-  ...restProps
 }) => {
   const onClick = React.useCallback(() => {
     if (selected) {
@@ -52,12 +48,12 @@ const EquippedItem: React.FC<Props> = ({
 
   return (
     <>
-      <div css={itemBox} onClick={onClick} {...restProps}>
-        {equippedItem ? (
+      <div css={itemBox} onClick={onClick}>
+        {customSet && equippedItem ? (
           <EquippedItemWithStats
             equippedItem={equippedItem}
             selected={selected}
-            customSet={customSet!}
+            customSet={customSet}
             itemSlotId={slot.id}
             openMageModal={openMageModal}
             openSetModal={openSetModal}
@@ -80,6 +76,7 @@ const EquippedItem: React.FC<Props> = ({
                 opacity: selected ? 0.75 : 0.4,
                 transition: 'all 0.3s',
               }}
+              alt={slot.name}
             />
           </div>
         )}

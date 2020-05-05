@@ -8,7 +8,6 @@ import { TTheme } from 'common/themes';
 import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
 import { Stat } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { InputNumber, Button } from 'antd';
 
 import { red6 } from 'common/mixins';
@@ -28,9 +27,10 @@ import {
 } from 'common/utils';
 import { useRouter } from 'next/router';
 import { StatKey, scrolledStats, baseStats } from 'common/types';
+import { CustomSet } from 'common/type-aliases';
 
 interface Props {
-  customSet?: customSet | null;
+  customSet?: CustomSet | null;
 }
 
 type StatState = {
@@ -150,19 +150,19 @@ const getInputNumberStyle = (
 const StatEditor: React.FC<Props> = ({ customSet }) => {
   const initialState = customSet?.stats
     ? {
-      baseVitality: customSet.stats.baseVitality,
-      baseWisdom: customSet.stats.baseWisdom,
-      baseStrength: customSet.stats.baseStrength,
-      baseIntelligence: customSet.stats.baseIntelligence,
-      baseChance: customSet.stats.baseChance,
-      baseAgility: customSet.stats.baseAgility,
-      scrolledVitality: customSet.stats.scrolledVitality,
-      scrolledWisdom: customSet.stats.scrolledWisdom,
-      scrolledStrength: customSet.stats.scrolledStrength,
-      scrolledIntelligence: customSet.stats.scrolledIntelligence,
-      scrolledChance: customSet.stats.scrolledChance,
-      scrolledAgility: customSet.stats.scrolledAgility,
-    }
+        baseVitality: customSet.stats.baseVitality,
+        baseWisdom: customSet.stats.baseWisdom,
+        baseStrength: customSet.stats.baseStrength,
+        baseIntelligence: customSet.stats.baseIntelligence,
+        baseChance: customSet.stats.baseChance,
+        baseAgility: customSet.stats.baseAgility,
+        scrolledVitality: customSet.stats.scrolledVitality,
+        scrolledWisdom: customSet.stats.scrolledWisdom,
+        scrolledStrength: customSet.stats.scrolledStrength,
+        scrolledIntelligence: customSet.stats.scrolledIntelligence,
+        scrolledChance: customSet.stats.scrolledChance,
+        scrolledAgility: customSet.stats.scrolledAgility,
+      }
     : defaultInitialState;
   const [statState, dispatch] = React.useReducer(reducer, initialState);
 
@@ -175,7 +175,7 @@ const StatEditor: React.FC<Props> = ({ customSet }) => {
   );
 
   const remainingPoints = baseStats.reduce(
-    (acc, statKey) => (acc -= calcPointCost(statState[statKey], statKey)),
+    (acc, statKey) => acc - calcPointCost(statState[statKey], statKey),
     ((customSet?.level ?? 200) - 1) * 5,
   );
 

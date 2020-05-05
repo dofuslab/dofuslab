@@ -15,18 +15,16 @@ import {
 import { useTranslation } from 'i18n';
 import { itemCardStyle, blue6 } from 'common/mixins';
 import { useDeleteItemMutation, checkAuthentication } from 'common/utils';
-import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
 import setEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.graphql';
 import {
   setEquippedItemExo,
   setEquippedItemExoVariables,
 } from 'graphql/mutations/__generated__/setEquippedItemExo';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { item_set } from 'graphql/fragments/__generated__/item';
 import { BuildError } from 'common/types';
 import Card from 'components/common/Card';
 import Tooltip from 'components/common/Tooltip';
+import { EquippedItem, CustomSet, ItemSet } from 'common/type-aliases';
 import ItemStatsList from '../common/ItemStatsList';
 
 const quickMageStats = [
@@ -55,12 +53,12 @@ const actionWrapper = {
 };
 
 interface Props {
-  equippedItem: customSet_customSetById_equippedItems;
+  equippedItem: EquippedItem;
   itemSlotId: string;
-  customSet: customSet;
-  openMageModal: (equippedItem: customSet_customSetById_equippedItems) => void;
+  customSet: CustomSet;
+  openMageModal: (equippedItem: EquippedItem) => void;
   stopPropagationCallback?: (e: React.MouseEvent<HTMLElement>) => void;
-  openSetModal: (set: item_set) => void;
+  openSetModal: (set: ItemSet) => void;
   errors?: Array<BuildError>;
 }
 
@@ -78,8 +76,8 @@ const EquippedItemCard: React.FC<Props> = ({
   const deleteItem = useDeleteItemMutation(itemSlotId, customSet);
 
   const [quickExo] = useMutation<
-  setEquippedItemExo,
-  setEquippedItemExoVariables
+    setEquippedItemExo,
+    setEquippedItemExoVariables
   >(setEquippedItemExoMutation, {
     optimisticResponse: ({ stat, hasStat }) => ({
       setEquippedItemExo: {
@@ -87,14 +85,14 @@ const EquippedItemCard: React.FC<Props> = ({
           ...equippedItem,
           exos: hasStat
             ? [
-              ...equippedItem.exos,
-              {
-                id: '0',
-                stat,
-                value: 1,
-                __typename: 'EquippedItemExo',
-              },
-            ]
+                ...equippedItem.exos,
+                {
+                  id: '0',
+                  stat,
+                  value: 1,
+                  __typename: 'EquippedItemExo',
+                },
+              ]
             : equippedItem.exos.filter(({ stat: exoStat }) => stat !== exoStat),
         },
         __typename: 'SetEquippedItemExo',

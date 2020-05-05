@@ -84,16 +84,6 @@ const EquippedItemWithStats: React.FC<Props> = ({
     [deleteItem],
   );
 
-  const onKeyPress = React.useCallback(
-    (e: React.KeyboardEvent<HTMLElement>) => {
-      if (e.keyCode === 13) {
-        // enter
-        onDelete(e);
-      }
-    },
-    [onDelete],
-  );
-
   const { t } = useTranslation('common');
   const theme = useTheme<TTheme>();
   const [brokenImage, setBrokenImage] = React.useState(false);
@@ -156,15 +146,9 @@ const EquippedItemWithStats: React.FC<Props> = ({
                 }}
               />
             )}
-            <button
-              type="button"
-              className={wrapperClass}
-              onClick={onDelete}
-              onKeyPress={onKeyPress}
-              tabIndex={0}
-            >
+            <div className={wrapperClass} onClick={onDelete}>
               <FontAwesomeIcon icon={faTimes} />
-            </button>
+            </div>
           </div>
         );
       }}

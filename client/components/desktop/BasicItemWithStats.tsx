@@ -12,12 +12,11 @@ import {
   itemImageDimensions,
   popoverShadow,
 } from 'common/mixins';
-import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/customSet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagic, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { item } from 'graphql/fragments/__generated__/item';
 import { TTheme } from 'common/themes';
 import { CardTitleWithLevel, BrokenImagePlaceholder } from 'common/wrappers';
+import { Exo, Item } from 'common/type-aliases';
 import ItemStatsList from '../common/ItemStatsList';
 
 const wrapperStyles = {
@@ -35,8 +34,8 @@ const wrapperStyles = {
 };
 
 interface Props {
-  item: item;
-  exos?: Array<customSet_equippedItems_exos>;
+  item: Item;
+  exos?: Array<Exo>;
   deletable?: boolean;
   selected?: boolean;
   onDelete?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
@@ -62,7 +61,12 @@ const BasicItemWithStats: React.FC<Props> = ({
         return (
           <Popover
             placement="bottom"
-            getPopupContainer={(triggerNode) => triggerNode.parentElement!}
+            getPopupContainer={(triggerNode) => {
+              if (triggerNode.parentElement) {
+                return triggerNode.parentElement;
+              }
+              return document && document.body;
+            }}
             title={<CardTitleWithLevel title={item.name} level={item.level} />}
             content={
               item.stats.length > 0 && <ItemStatsList item={item} exos={exos} />
@@ -73,10 +77,10 @@ const BasicItemWithStats: React.FC<Props> = ({
               '.ant-popover-content': {
                 maxHeight: contentRef.current
                   ? `calc(100vh - ${
-                    contentRef.current.offsetTop
-                      + contentRef.current.offsetHeight
-                      + 20
-                  }px)`
+                      contentRef.current.offsetTop +
+                      contentRef.current.offsetHeight +
+                      20
+                    }px)`
                   : undefined,
                 overflow: 'auto',
               },
@@ -111,6 +115,7 @@ const BasicItemWithStats: React.FC<Props> = ({
                   onError={() => {
                     setBrokenImage(true);
                   }}
+                  alt={item.name}
                 />
               )}
               {(exos?.length ?? 0) > 0 && (

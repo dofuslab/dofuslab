@@ -9,15 +9,14 @@ import { TTheme } from 'common/themes';
 import { STAT_GROUPS } from 'common/constants';
 import { ResponsiveGrid } from 'common/wrappers';
 import { topMarginStyle } from 'common/mixins';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getStatsFromCustomSet, getErrors } from 'common/utils';
-import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import BonusStats from 'components/desktop/BonusStats';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
 import { useTranslation } from 'i18n';
 import { BuildError } from 'common/types';
+import { ItemSlot, CustomSet } from 'common/type-aliases';
 import StatEditor from '../common/StatEditor';
 import EquipmentSlots from '../common/EquipmentSlots';
 import SetHeader from '../common/SetHeader';
@@ -26,11 +25,9 @@ import StatTable from '../common/StatTable';
 const { TabPane } = Tabs;
 
 interface Props {
-  customSet: customSet | null;
-  selectItemSlot: React.Dispatch<
-  React.SetStateAction<itemSlots_itemSlots | null>
-  >;
-  selectedItemSlot: itemSlots_itemSlots | null;
+  customSet: CustomSet | null;
+  selectItemSlot: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
+  selectedItemSlot: ItemSlot | null;
 }
 
 const Home: React.FC<Props> = ({
@@ -90,9 +87,9 @@ const Home: React.FC<Props> = ({
           >
             <TabPane tab={t('CHARACTERISTICS')} key="characteristics">
               <ResponsiveGrid numColumns={[2]} css={{ marginBottom: 20 }}>
-                {STAT_GROUPS.map((group, i) => (
+                {STAT_GROUPS.map((group) => (
                   <StatTable
-                    key={`stat-table-${i}`}
+                    key={group[0].stat}
                     group={group}
                     statsFromCustomSet={statsFromCustomSet}
                     customSet={customSet}

@@ -3,8 +3,6 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
-import { item, item_set } from 'graphql/fragments/__generated__/item';
-import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
 import { Stat, WeaponElementMage } from '__generated__/globalTypes';
 import { Divider } from 'antd';
@@ -13,19 +11,21 @@ import { TFunction } from 'next-i18next';
 import { BuildError } from 'common/types';
 import { renderErrors } from 'common/utils';
 import { TTheme } from 'common/themes';
+import { Exo, ItemSet, Item } from 'common/type-aliases';
 
 interface Props {
-  readonly item: item;
+  readonly item: Item;
   readonly className?: string;
-  readonly exos?: ReadonlyArray<customSet_equippedItems_exos> | null;
+  readonly exos?: ReadonlyArray<Exo> | null;
   readonly hideSet?: boolean;
-  readonly openSetModal?: (set: item_set) => void;
+  readonly openSetModal?: (set: ItemSet) => void;
   readonly showImg?: boolean;
   readonly showOnlyWeaponStats?: boolean;
   readonly weaponElementMage?: WeaponElementMage | null;
   readonly errors?: Array<BuildError>;
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const renderConditions = (conditionsObj: any, t: TFunction, depth = 0) => {
   try {
     if (!conditionsObj || Object.keys(conditionsObj).length === 0) {
@@ -60,11 +60,13 @@ const renderConditions = (conditionsObj: any, t: TFunction, depth = 0) => {
     }
     throw new Error('Unknown conditions object');
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.error('Error parsing conditions object:', e);
   }
 
   return null;
 };
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 const ItemStatsList: React.FC<Props> = ({
   item,
@@ -142,6 +144,7 @@ const ItemStatsList: React.FC<Props> = ({
             onError={() => {
               setBrokenImage(true);
             }}
+            alt={item.name}
           />
         ))}
       {item.weaponStats && (
@@ -161,33 +164,30 @@ const ItemStatsList: React.FC<Props> = ({
         >
           {item.stats
             .sort(({ order: i }, { order: j }) => i - j)
-            .map((statLine, idx) => (
-              <li key={`stat-${idx}`}>
-                <span
-                  css={{
-                    color:
-                      statLine.stat && statsMap[statLine.stat].maged
-                        ? theme.text?.primary
-                        : statLine.maxValue && statLine.maxValue < 0
-                          ? theme.text?.danger
-                          : 'inherit',
-                  }}
-                >
-                  {statLine.stat
-                    ? `${statsMap[statLine.stat].value} ${t(statLine.stat)}`
-                    : statLine.customStat}
-                </span>
-              </li>
-            ))}
+            .map((statLine) => {
+              let color: string | undefined = 'inherit';
+              if (statLine.stat && statsMap[statLine.stat].maged) {
+                color = theme.text?.primary;
+              } else if (statLine.maxValue && statLine.maxValue < 0) {
+                color = theme.text?.danger;
+              }
+              return (
+                <li key={`stat-${statLine.id}`}>
+                  <span css={{ color }}>
+                    {statLine.stat
+                      ? `${statsMap[statLine.stat].value} ${t(statLine.stat)}`
+                      : statLine.customStat}
+                  </span>
+                </li>
+              );
+            })}
           {exos &&
             exos
               .filter(({ stat }) => !!exoStatsMap[stat])
               .map(({ stat, value }) => (
                 <li key={`exo-${stat}`}>
                   <span css={{ color: theme.text?.primary }}>
-                    {value}
-                    {' '}
-                    {t(stat)}
+                    {value} {t(stat)}
                   </span>
                 </li>
               ))}
@@ -199,30 +199,21 @@ const ItemStatsList: React.FC<Props> = ({
           <div>
             {item.weaponStats.apCost}
             &nbsp;
-            {t(Stat.AP, { ns: 'stat' })}
-            {' '}
-            •
-            {' '}
+            {t(Stat.AP, { ns: 'stat' })} •{' '}
             {!!item.weaponStats.minRange && `${item.weaponStats.minRange}-`}
             {item.weaponStats.maxRange}
             &nbsp;
-            {t(Stat.RANGE, { ns: 'stat' })}
-            {' '}
-            •
-            {' '}
+            {t(Stat.RANGE, { ns: 'stat' })} •{' '}
             {item.weaponStats.baseCritChance
               ? `${item.weaponStats.baseCritChance} ${t(Stat.CRITICAL, {
-                ns: 'stat',
-              })}\u00A0(+${item.weaponStats.critBonusDamage})`
-              : t('DOES_NOT_CRIT', { ns: 'weapon_spell_effect' })}
-            {' '}
-            •
-            {' '}
+                  ns: 'stat',
+                })}\u00A0(+${item.weaponStats.critBonusDamage})`
+              : t('DOES_NOT_CRIT', { ns: 'weapon_spell_effect' })}{' '}
+            •{' '}
             {t('USE_PER_TURN', {
               ns: 'weapon_spell_effect',
               count: item.weaponStats.usesPerTurn,
-            })}
-            {' '}
+            })}{' '}
           </div>
         </>
       )}
@@ -230,19 +221,19 @@ const ItemStatsList: React.FC<Props> = ({
         (Object.keys(conditions.conditions || {}).length > 0 ||
           Object.keys(conditions.customConditions || {}).length > 0) && (
           <>
-          <Divider css={{ margin: '12px 0' }} />
-          {Object.keys(conditions.conditions || {}).length > 0 && (
-            <div>{renderConditions(conditions.conditions, t)}</div>
-          )}
-          {Object.keys(conditions.customConditions || {}).length > 0 && (
-            <div>
-              {conditions.customConditions?.[i18n.language]?.join(
+            <Divider css={{ margin: '12px 0' }} />
+            {Object.keys(conditions.conditions || {}).length > 0 && (
+              <div>{renderConditions(conditions.conditions, t)}</div>
+            )}
+            {Object.keys(conditions.customConditions || {}).length > 0 && (
+              <div>
+                {conditions.customConditions?.[i18n.language]?.join(
                   ` ${t('CONDITIONS.AND')} `,
                 )}
-            </div>
-          )}
-        </>
-      )}
+              </div>
+            )}
+          </>
+        )}
       {errors && errors.length > 0 && (
         <>
           <Divider css={{ margin: '12px 0' }} />

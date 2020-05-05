@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /** @jsx jsx */
 
 import Error, { ErrorProps } from 'next/error';

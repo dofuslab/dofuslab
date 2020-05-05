@@ -71,7 +71,7 @@ const ClassSpells: React.FC<Props> = ({ customSet }) => {
           if (node.parentElement) {
             return node.parentElement;
           }
-          return document.body;
+          return document && document.body;
         }}
         css={{ gridColumn: '1 / -1' }}
         showSearch

@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx } from '@emotion/core';
-import {
-  Modal, Input, Form, Button, notification,
-} from 'antd';
+import { Modal, Input, Form, Button, notification } from 'antd';
 import { useMutation } from '@apollo/react-hooks';
 import { useTranslation } from 'i18n';
 import { mq } from 'common/constants';
@@ -22,14 +20,14 @@ const RequestPasswordResetModal: React.FC<Props> = ({ visible, onClose }) => {
   const { t } = useTranslation(['auth', 'common']);
   const [form] = Form.useForm();
 
-  const [requestPasswordReset, { loading }] = useMutation<
-  requestPasswordReset,
-  requestPasswordResetVariables
+  const [mutate, { loading }] = useMutation<
+    requestPasswordReset,
+    requestPasswordResetVariables
   >(requestPasswordResetMutation);
   const handleOk = React.useCallback(async () => {
     const values = await form.validateFields();
 
-    const { data } = await requestPasswordReset({
+    const { data } = await mutate({
       variables: {
         email: values.email,
       },
@@ -43,7 +41,7 @@ const RequestPasswordResetModal: React.FC<Props> = ({ visible, onClose }) => {
     }
 
     form.resetFields();
-  }, [requestPasswordReset, onClose, form]);
+  }, [mutate, onClose, form]);
 
   return (
     <Modal

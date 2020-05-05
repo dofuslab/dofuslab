@@ -4,17 +4,16 @@ import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
 import { Popover } from 'antd';
 
-import { item } from 'graphql/fragments/__generated__/item';
 import { useTranslation } from 'i18n';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { itemBox, popoverTitleStyle } from 'common/mixins';
 import { useEquipItemMutation } from 'common/utils';
 import { mq } from 'common/constants';
+import { Item, CustomSet } from 'common/type-aliases';
 import ItemWithStats from './ItemWithStats';
 
 interface Props {
-  item: item;
-  customSet: customSet;
+  item: Item;
+  customSet: CustomSet;
 }
 
 const ConfirmReplaceItemPopover: React.FC<Props> = ({
@@ -24,7 +23,7 @@ const ConfirmReplaceItemPopover: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation('common');
   const [selectedItemSlotId, setSelectedItemSlotId] = React.useState<
-  string | null
+    string | null
   >(null);
 
   const [visible, setIsVisible] = React.useState(false);
@@ -43,8 +42,13 @@ const ConfirmReplaceItemPopover: React.FC<Props> = ({
     <ClassNames>
       {({ css }) => (
         <Popover
-          getPopupContainer={(node) => node.parentElement!}
-          content={(
+          getPopupContainer={(node) => {
+            if (node.parentElement) {
+              return node.parentElement;
+            }
+            return document && document.body;
+          }}
+          content={
             <div
               css={{
                 width: '100%',
@@ -56,10 +60,14 @@ const ConfirmReplaceItemPopover: React.FC<Props> = ({
               }}
             >
               {customSet.equippedItems
-                .filter((equippedItem) => item.itemType.eligibleItemSlots
-                  .map((slot) => slot.id)
-                  .includes(equippedItem.slot.id))
-                .sort((item1, item2) => item1.slot.id.localeCompare(item2.slot.id))
+                .filter((equippedItem) =>
+                  item.itemType.eligibleItemSlots
+                    .map((slot) => slot.id)
+                    .includes(equippedItem.slot.id),
+                )
+                .sort((item1, item2) =>
+                  item1.slot.id.localeCompare(item2.slot.id),
+                )
                 .map((equippedItem) => (
                   <div
                     css={itemBox}
@@ -76,7 +84,7 @@ const ConfirmReplaceItemPopover: React.FC<Props> = ({
                   </div>
                 ))}
             </div>
-          )}
+          }
           title={t('SELECT_ITEM_TO_REPLACE')}
           visible={visible}
           onVisibleChange={setIsVisible}

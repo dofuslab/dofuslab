@@ -13,17 +13,14 @@ interface Props {
 
 const MAX = 9999;
 
-const MageInputNumber: React.FC<Props> = ({
-  stat,
-  value,
-  dispatch,
-  isExo,
-  ...restProps
-}) => {
+const MageInputNumber: React.FC<Props> = ({ stat, value, dispatch, isExo }) => {
   const onChange = React.useCallback(
     (v?: number) => {
       dispatch({
-        type: 'EDIT', stat, value: v || 0, isExo,
+        type: 'EDIT',
+        stat,
+        value: v || 0,
+        isExo,
       });
     },
     [dispatch, stat, value],
@@ -46,7 +43,6 @@ const MageInputNumber: React.FC<Props> = ({
             alignItems: 'center',
             flex: '0 0 60px',
           })}
-          {...restProps}
         />
       )}
     </ClassNames>

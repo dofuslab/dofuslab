@@ -9,18 +9,14 @@ import { useTheme } from 'emotion-theming';
 import groupBy from 'lodash/groupBy';
 
 import { TTheme } from 'common/themes';
-import {
-  set,
-  setVariables,
-  set_setById_bonuses,
-} from 'graphql/queries/__generated__/set';
+import { set, setVariables } from 'graphql/queries/__generated__/set';
 import setQuery from 'graphql/queries/set.graphql';
 import { useTranslation } from 'i18n';
 import { SetBonuses } from 'common/wrappers';
 import { itemBox } from 'common/mixins';
 import { mq } from 'common/constants';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useEquipItemsMutation } from 'common/utils';
+import { CustomSet, SetBonus } from 'common/type-aliases';
 import BasicItemWithStats from '../desktop/BasicItemWithStats';
 
 interface Props {
@@ -28,7 +24,7 @@ interface Props {
   setName: string;
   visible: boolean;
   onCancel: () => void;
-  customSet?: customSet | null;
+  customSet?: CustomSet | null;
   isMobile?: boolean;
 }
 
@@ -132,10 +128,7 @@ const SetModal: React.FC<Props> = ({
           }}
         >
           {Object.entries(
-            groupBy(
-              data.setById.bonuses,
-              (bonus: set_setById_bonuses) => bonus.numItems,
-            ),
+            groupBy(data.setById.bonuses, (bonus: SetBonus) => bonus.numItems),
           )
             .sort(([a, b]) => Number(a) - Number(b))
             .map(([numItems, bonuses]) => (
@@ -166,11 +159,11 @@ const SetModal: React.FC<Props> = ({
       confirmLoading={mutationLoading}
       onOk={onOk}
       okButtonProps={{ disabled: !itemIds.length }}
-      okText={(
+      okText={
         <span css={{ fontSize: '0.75rem' }}>
           {t('EQUIP_ITEMS', { count: itemIds.length })}
         </span>
-      )}
+      }
       cancelText={<span css={{ fontSize: '0.75rem' }}>{t('CANCEL')}</span>}
     >
       {bodyContent}

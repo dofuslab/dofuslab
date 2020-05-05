@@ -2,26 +2,21 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { item, item_set } from 'graphql/fragments/__generated__/item';
 import { useEquipItemMutation } from 'common/utils';
-import {
-  itemSlots_itemSlots,
-  itemSlots,
-} from 'graphql/queries/__generated__/itemSlots';
+import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import Router from 'next/router';
 import { useApolloClient } from '@apollo/react-hooks';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import { ItemSlot, ItemSet, Item } from 'common/type-aliases';
 import BasicItemCard from './BasicItemCard';
 
 interface Props {
-  item: item;
+  item: Item;
   itemSlotId: string | null;
   customSetId: string | null;
-  selectItemSlot?: React.Dispatch<
-  React.SetStateAction<itemSlots_itemSlots | null>
-  >;
+  selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
   equipped: boolean;
-  openSetModal: (set: item_set) => void;
+  openSetModal: (set: ItemSet) => void;
   isMobile?: boolean;
   nextSlotId: string | null;
 }
@@ -45,9 +40,12 @@ const ItemCard: React.FC<Props> = ({
       const slots = client.readQuery<itemSlots>({ query: ItemSlotsQuery });
       let nextSlot = null;
       if (nextSlotId && slots) {
-        nextSlot = slots.itemSlots.find((slot) => slot.id === nextSlotId) || null;
+        nextSlot =
+          slots.itemSlots.find((slot) => slot.id === nextSlotId) || null;
       }
-      selectItemSlot && selectItemSlot(nextSlot);
+      if (selectItemSlot) {
+        selectItemSlot(nextSlot);
+      }
       if (isMobile && customSetId) {
         Router.push(
           { pathname: '/index', query: { customSetId } },
