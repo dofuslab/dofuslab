@@ -29,8 +29,8 @@ interface Props {
   customSetItemIds: Set<string>;
   filters: SharedFilters;
   itemTypeIds: Set<string>;
-  isMobile?: boolean;
-  isClassic?: boolean;
+  isMobile: boolean;
+  isClassic: boolean;
 }
 
 const ItemSelector: React.FC<Props> = ({

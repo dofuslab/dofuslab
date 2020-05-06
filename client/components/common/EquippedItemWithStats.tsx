@@ -19,7 +19,7 @@ import {
   faTimes,
   faExclamationTriangle,
 } from '@fortawesome/free-solid-svg-icons';
-import { useDeleteItemMutation } from 'common/utils';
+import { useDeleteItemMutation, EditableContext } from 'common/utils';
 import { useTranslation } from 'i18n';
 import { mq } from 'common/constants';
 import { Media } from 'components/common/Media';
@@ -91,6 +91,8 @@ const EquippedItemWithStats: React.FC<Props> = ({
   const [brokenImage, setBrokenImage] = React.useState(false);
   const contentRef = React.useRef<HTMLDivElement | null>(null);
 
+  const isEditable = React.useContext(EditableContext);
+
   const content = (
     <ClassNames>
       {({ css, cx }) => {
@@ -100,18 +102,20 @@ const EquippedItemWithStats: React.FC<Props> = ({
             ref={contentRef}
             className={cx(
               css(
-                itemImageBox(theme),
+                itemImageBox(theme, isEditable),
                 css(selected ? selectedBox(theme) : {}),
-                css({
-                  '&:hover': {
-                    [`.${wrapperClass}`]: {
-                      opacity: 0.3,
-                      '&:hover': {
-                        opacity: 1,
+                {
+                  [css({
+                    '&:hover': {
+                      [`.${wrapperClass}`]: {
+                        opacity: 0.3,
+                        '&:hover': {
+                          opacity: 1,
+                        },
                       },
                     },
-                  },
-                }),
+                  })]: isEditable,
+                },
               ),
               className,
             )}
@@ -153,9 +157,11 @@ const EquippedItemWithStats: React.FC<Props> = ({
                 }}
               />
             )}
-            <div className={wrapperClass} onClick={onDelete}>
-              <FontAwesomeIcon icon={faTimes} />
-            </div>
+            {isEditable && (
+              <div className={wrapperClass} onClick={onDelete}>
+                <FontAwesomeIcon icon={faTimes} />
+              </div>
+            )}
           </div>
         );
       }}

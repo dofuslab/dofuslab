@@ -15,7 +15,7 @@ import { useTranslation } from 'i18n';
 import { SetBonuses } from 'common/wrappers';
 import { itemBox } from 'common/mixins';
 import { mq } from 'common/constants';
-import { useEquipItemsMutation } from 'common/utils';
+import { useEquipItemsMutation, EditableContext } from 'common/utils';
 import { CustomSet, SetBonus } from 'common/type-aliases';
 import BasicItemWithStats from '../desktop/BasicItemWithStats';
 
@@ -51,7 +51,12 @@ const SetModal: React.FC<Props> = ({
     customSet,
   );
 
+  const isEditable = React.useContext(EditableContext);
+
   const onOk = React.useCallback(async () => {
+    if (!isEditable) {
+      return;
+    }
     await mutate();
     onCancel();
     if (shouldRedirect && customSet) {
@@ -63,13 +68,13 @@ const SetModal: React.FC<Props> = ({
         customSet ? `/build/${customSet.id}/` : '/',
       );
     }
-  }, [mutate, onCancel, customSet, shouldRedirect, router]);
+  }, [mutate, onCancel, customSet, shouldRedirect, router, isEditable]);
 
   React.useEffect(() => {
-    if (data && !loading) {
+    if (data && !loading && isEditable) {
       setItemIds(data.setById.items.map((item) => item.id));
     }
-  }, [data, loading]);
+  }, [data, loading, isEditable]);
 
   let bodyContent = null;
 
@@ -99,6 +104,7 @@ const SetModal: React.FC<Props> = ({
                 },
               }}
               onClick={() => {
+                if (!isEditable) return;
                 setItemIds((prev) => {
                   if (prev.includes(item.id)) {
                     return prev.filter((itemId) => itemId !== item.id);
@@ -163,7 +169,7 @@ const SetModal: React.FC<Props> = ({
       zIndex={1031}
       confirmLoading={mutationLoading}
       onOk={onOk}
-      okButtonProps={{ disabled: !itemIds.length }}
+      okButtonProps={{ disabled: !itemIds.length || !isEditable }}
       okText={
         <span css={{ fontSize: '0.75rem' }}>
           {t('EQUIP_ITEMS', { count: itemIds.length })}

@@ -15,10 +15,11 @@ import { itemCardStyle } from 'common/mixins';
 import { useTheme } from 'emotion-theming';
 import { useTranslation } from 'i18n';
 import { Theme } from 'common/types';
+import { stripQueryString } from 'common/utils';
 
 const ClassicClassSelector: React.FC = () => {
   const router = useRouter();
-  const { query } = router;
+  const { query, pathname, asPath } = router;
 
   const { data } = useQuery<classes>(classesQuery);
   const selectedClassName = Array.isArray(query.class)
@@ -68,14 +69,15 @@ const ClassicClassSelector: React.FC = () => {
                 >
                   <Link
                     href={{
-                      pathname: '/',
+                      pathname,
                       query: { ...query, class: dofusClass.name },
                     }}
-                    as={
-                      query.customSetId
-                        ? `/build/${query.customSetId}/?class=${dofusClass.name}`
-                        : `/?class=${dofusClass.name}`
-                    }
+                    as={{
+                      pathname: stripQueryString(asPath),
+                      query: {
+                        class: dofusClass.name,
+                      },
+                    }}
                     shallow
                     passHref
                   >

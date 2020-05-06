@@ -13,6 +13,7 @@ import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import sessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
 import { sessionSettings } from 'graphql/queries/__generated__/sessionSettings';
+import { stripQueryString } from 'common/utils';
 
 type StatusObj = {
   type: 'info' | 'success' | 'warn' | 'error';
@@ -115,7 +116,7 @@ const StatusChecker: React.FC = () => {
     router.replace(
       { pathname: router.pathname, query: newQuery },
       {
-        pathname: router.asPath.substring(0, router.asPath.indexOf('?')),
+        pathname: stripQueryString(router.asPath),
         query: restQuery,
       },
       { shallow: true },

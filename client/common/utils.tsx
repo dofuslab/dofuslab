@@ -1307,6 +1307,8 @@ export const ClassicContext = React.createContext<
   },
 ]);
 
+export const EditableContext = React.createContext<boolean>(true);
+
 export const useClassic = () => {
   const { data: sessionSettingsData } = useQuery<sessionSettings>(
     sessionSettingsQuery,
@@ -1346,4 +1348,12 @@ export const useClassic = () => {
   );
 
   return [isClassic, onIsClassicChange] as const;
+};
+
+export const stripQueryString = (asPath: string) => {
+  const index = asPath.indexOf('?');
+  if (index >= 0) {
+    return asPath.substring(0, index);
+  }
+  return asPath;
 };

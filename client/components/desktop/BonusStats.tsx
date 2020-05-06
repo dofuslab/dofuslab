@@ -19,7 +19,7 @@ const DISPLAY_ITEM_LIMIT = 3;
 interface Props {
   customSet: CustomSet;
   isMobile: boolean;
-  isClassic?: boolean;
+  isClassic: boolean;
 }
 
 const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {

@@ -46,8 +46,8 @@ interface Props {
   selectedItemSlot: ItemSlot | null;
   selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
   showSets?: boolean;
-  isMobile?: boolean;
-  isClassic?: boolean;
+  isMobile: boolean;
+  isClassic: boolean;
 }
 
 const Selector: React.FC<Props> = ({
@@ -136,7 +136,12 @@ const Selector: React.FC<Props> = ({
           onReset={onReset}
         />
         {showSetsState ? (
-          <SetSelector filters={filters} customSet={customSet} isClassic />
+          <SetSelector
+            filters={filters}
+            customSet={customSet}
+            isClassic={isClassic}
+            isMobile={isMobile}
+          />
         ) : (
           <ItemSelector
             key={`selected-item-slot-${selectedItemSlot?.name}-level-${customSet?.level}`}

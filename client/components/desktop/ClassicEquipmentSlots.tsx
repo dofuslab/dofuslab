@@ -22,7 +22,6 @@ import ClassicEquippedItem from './ClassicEquippedItem';
 
 interface Props {
   customSet?: CustomSet | null;
-  isMobile?: boolean;
   errors: Array<BuildError>;
 }
 

@@ -55,14 +55,22 @@ const Home: React.FC<Props> = ({
 
   return (
     <>
-      <SetHeader customSet={customSet} errors={errors} isMobile />
+      <SetHeader
+        customSet={customSet}
+        errors={errors}
+        isMobile
+        isClassic={false}
+      />
       <EquipmentSlots
         customSet={customSet}
         selectItemSlot={selectItemSlot}
         selectedItemSlotId={selectedItemSlot?.id ?? null}
         errors={errors}
+        isMobile
       />
-      {customSet && <BonusStats customSet={customSet} isMobile />}
+      {customSet && (
+        <BonusStats customSet={customSet} isMobile isClassic={false} />
+      )}
       <div
         css={{
           flex: '1 1 auto',

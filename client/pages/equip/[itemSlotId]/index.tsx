@@ -72,6 +72,7 @@ const EquipPage: NextPage = () => {
             selectedItemSlot={itemSlot}
             showSets={false}
             isMobile
+            isClassic={false}
           />
         </MobileLayout>
       </Media>
@@ -91,6 +92,7 @@ const EquipPage: NextPage = () => {
               selectedItemSlot={itemSlot}
               showSets={false}
               isClassic
+              isMobile={false}
             />
           </DesktopLayout>
         </ClassicContext.Provider>

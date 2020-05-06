@@ -2,20 +2,20 @@
 
 import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import StatTable from 'components/common/StatTable';
 import { Stat } from '__generated__/globalTypes';
 import { getStatsFromCustomSet } from 'common/utils';
 import { mq } from 'common/constants';
 import StatEditor from 'components/common/StatEditor';
+import { CustomSet } from 'common/type-aliases';
 
-interface IProps {
-  customSet: customSet | null;
+interface Props {
+  customSet: CustomSet | null;
 }
 
 const margin = { marginBottom: 12, [mq[4]]: { marginBottom: 20 } };
 
-const ClassicLeftColumnStats: React.FC<IProps> = ({ customSet }) => {
+const ClassicLeftColumnStats: React.FC<Props> = ({ customSet }) => {
   const statsFromCustomSet = React.useMemo(
     () => getStatsFromCustomSet(customSet),
     [customSet],

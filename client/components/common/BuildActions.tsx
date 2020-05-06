@@ -29,7 +29,7 @@ import {
   restartCustomSetVariables,
 } from 'graphql/mutations/__generated__/restartCustomSet';
 import restartCustomSetMutation from 'graphql/mutations/restartCustomSet.graphql';
-import { navigateToNewCustomSet } from 'common/utils';
+import { navigateToNewCustomSet, EditableContext } from 'common/utils';
 
 import { mq } from 'common/constants';
 import { CheckboxChangeEvent } from 'antd/lib/checkbox';
@@ -38,7 +38,7 @@ import DeleteCustomSetModal from './DeleteCustomSetModal';
 interface Props {
   customSet: CustomSet;
   isMobile: boolean;
-  isClassic?: boolean;
+  isClassic: boolean;
 }
 
 const BuildActions: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
@@ -72,10 +72,12 @@ const BuildActions: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
   );
 
   const [deleteModalVisible, setDeleteModalVisible] = React.useState(false);
+  const isEditable = React.useContext(EditableContext);
 
   const openDeleteModal = React.useCallback(() => {
+    if (!isEditable) return;
     setDeleteModalVisible(true);
-  }, []);
+  }, [isEditable]);
 
   const closeDeleteModal = React.useCallback(() => {
     setDeleteModalVisible(false);
@@ -91,7 +93,13 @@ const BuildActions: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
   const linkTextareaRef = React.useRef<HTMLTextAreaElement | null>(null);
 
   const onCopyLink = async () => {
-    const url = window.location.href;
+    let url = `${window.location.host}/view/${customSet.id}/`;
+    if (router.query.class) {
+      const singleClass = Array.isArray(router.query.class)
+        ? router.query.class[0]
+        : router.query.class;
+      url = `${url}?class=${singleClass}`;
+    }
     try {
       if (navigator.clipboard) {
         await navigator.clipboard.writeText(url);
@@ -128,9 +136,10 @@ const BuildActions: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
   }, [copyMutate, customSet, router]);
 
   const onRestart = React.useCallback(async () => {
+    if (!isEditable) return;
     await restartMutate();
     closeRestartModal();
-  }, [restartMutate]);
+  }, [restartMutate, isEditable]);
 
   const anyLoading = copyLoading || restartLoading;
 
@@ -164,16 +173,20 @@ const BuildActions: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
               {copyLoading && <LoadingOutlined css={{ marginRight: 8 }} />}
               {t('COPY_BUILD')}
             </Menu.Item>
-            <Menu.Item key="restart" onClick={openRestartModal}>
-              {t('RESTART_BUILD')}
-            </Menu.Item>
-            <Menu.Item
-              key="delete"
-              css={{ color: theme.text?.danger }}
-              onClick={openDeleteModal}
-            >
-              {t('DELETE_BUILD')}
-            </Menu.Item>
+            {isEditable && (
+              <Menu.Item key="restart" onClick={openRestartModal}>
+                {t('RESTART_BUILD')}
+              </Menu.Item>
+            )}
+            {isEditable && (
+              <Menu.Item
+                key="delete"
+                css={{ color: theme.text?.danger }}
+                onClick={openDeleteModal}
+              >
+                {t('DELETE_BUILD')}
+              </Menu.Item>
+            )}
           </Menu>
         }
       >

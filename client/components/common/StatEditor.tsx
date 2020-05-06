@@ -24,6 +24,7 @@ import {
   checkAuthentication,
   calcPointCost,
   navigateToNewCustomSet,
+  EditableContext,
 } from 'common/utils';
 import { useRouter } from 'next/router';
 import { CustomSet } from 'common/type-aliases';
@@ -112,35 +113,51 @@ const reducer = (state: StatState, action: StatStateAction) => {
   }
 };
 
+const getStatDisplayStyle = (title: string, theme: Theme) => ({
+  '&::before': {
+    position: 'absolute' as 'absolute',
+    content: `"${title}"`,
+    left: 0,
+    top: -42,
+    height: 36,
+    [mq[1]]: {
+      top: -30,
+      height: 24,
+    },
+    width: '100%',
+    background: theme.statEditor?.categoryBackground,
+    color: 'white',
+    opacity: 0.8,
+    borderRadius: '4px',
+    padding: '0 4px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    pointerEvents: 'none' as 'none',
+  },
+});
+
 const getInputNumberStyle = (baseKey: string, title: string, theme: Theme) => ({
   fontSize: '0.75rem',
   maxWidth: '100%',
   display: 'flex',
   alignItems: 'center',
   position: 'relative' as 'relative',
-  ...(baseKey === 'baseVitality' && {
-    '&::before': {
-      position: 'absolute' as 'absolute',
-      content: `"${title}"`,
-      left: 0,
-      top: -42,
-      height: 36,
-      [mq[1]]: {
-        top: -30,
-        height: 24,
-      },
-      width: '100%',
-      background: theme.statEditor?.categoryBackground,
-      color: 'white',
-      opacity: 0.8,
-      borderRadius: '4px',
-      padding: '0 4px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      pointerEvents: 'none' as 'none',
-    },
-  }),
+  ...(baseKey === 'baseVitality' && getStatDisplayStyle(title, theme)),
+});
+
+const getReadonlyStatDisplayStyle = (
+  baseKey: string,
+  title: string,
+  theme: Theme,
+) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  position: 'relative' as 'relative',
+  background: theme.layer?.backgroundLight,
+  borderRadius: 4,
+  ...(baseKey === 'baseVitality' && getStatDisplayStyle(title, theme)),
 });
 
 const StatEditor: React.FC<Props> = ({ customSet, className }) => {
@@ -212,6 +229,8 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
 
   const theme = useTheme<Theme>();
 
+  const isEditable = React.useContext(EditableContext);
+
   const display100 = scrolledStats.some(
     (scrolledStat) => statState[scrolledStat] < 100,
   );
@@ -266,58 +285,82 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
               >
                 {t(stat, { ns: 'stat' })}
               </div>
-              <InputNumber
-                value={statState[baseKey]}
-                max={999}
-                min={0}
-                size="small"
-                css={getInputNumberStyle(baseKey, t('BASE'), theme)}
-                onFocus={(e) => {
-                  e.currentTarget.setSelectionRange(
-                    0,
-                    e.currentTarget.value.length,
-                  );
-                }}
-                onChange={(value?: number) => {
-                  if (typeof value !== 'number') return;
-                  dispatch({ type: 'edit', stat: baseKey, value });
-                  debouncedCheckAndMutate();
-                }}
-              />
-              <InputNumber
-                value={statState[scrolledKey]}
-                max={100}
-                min={0}
-                size="small"
-                css={getInputNumberStyle(baseKey, t('SCROLLED'), theme)}
-                onFocus={(e) => {
-                  e.currentTarget.setSelectionRange(
-                    0,
-                    e.currentTarget.value.length,
-                  );
-                }}
-                onChange={(value?: number) => {
-                  if (typeof value !== 'number') return;
-                  dispatch({ type: 'edit', stat: scrolledKey, value });
-                  debouncedCheckAndMutate();
-                }}
-              />
+              {isEditable ? (
+                <InputNumber
+                  value={statState[baseKey]}
+                  max={999}
+                  min={0}
+                  size="small"
+                  css={getInputNumberStyle(baseKey, t('BASE'), theme)}
+                  onFocus={(e) => {
+                    e.currentTarget.setSelectionRange(
+                      0,
+                      e.currentTarget.value.length,
+                    );
+                  }}
+                  onChange={(value?: number) => {
+                    if (typeof value !== 'number') return;
+                    dispatch({ type: 'edit', stat: baseKey, value });
+                    debouncedCheckAndMutate();
+                  }}
+                />
+              ) : (
+                <div
+                  css={getReadonlyStatDisplayStyle(baseKey, t('BASE'), theme)}
+                >
+                  {statState[baseKey]}
+                </div>
+              )}
+              {isEditable ? (
+                <InputNumber
+                  value={statState[scrolledKey]}
+                  max={100}
+                  min={0}
+                  size="small"
+                  css={getInputNumberStyle(baseKey, t('SCROLLED'), theme)}
+                  onFocus={(e) => {
+                    e.currentTarget.setSelectionRange(
+                      0,
+                      e.currentTarget.value.length,
+                    );
+                  }}
+                  onChange={(value?: number) => {
+                    if (typeof value !== 'number') return;
+                    dispatch({ type: 'edit', stat: scrolledKey, value });
+                    debouncedCheckAndMutate();
+                  }}
+                />
+              ) : (
+                <div
+                  css={getReadonlyStatDisplayStyle(
+                    baseKey,
+                    t('SCROLLED'),
+                    theme,
+                  )}
+                >
+                  {statState[scrolledKey]}
+                </div>
+              )}
             </React.Fragment>
           ))}
-          <Button
-            css={{
-              fontSize: '0.75rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifySelf: 'end',
-              padding: '4px 8px',
-              height: '100%',
-            }}
-            onClick={reset}
-          >
-            <FontAwesomeIcon icon={faRedo} css={{ marginRight: 8 }} />
-            {t('RESET_ALL')}
-          </Button>
+          {isEditable ? (
+            <Button
+              css={{
+                fontSize: '0.75rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifySelf: 'end',
+                padding: '4px 8px',
+                height: '100%',
+              }}
+              onClick={reset}
+            >
+              <FontAwesomeIcon icon={faRedo} css={{ marginRight: 8 }} />
+              {t('RESET_ALL')}
+            </Button>
+          ) : (
+            <div />
+          )}
           <div
             css={{
               display: 'flex',
@@ -331,12 +374,14 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
           >
             {remainingPoints}
           </div>
-          <Button
-            css={{ fontSize: '0.75rem', height: '100%' }}
-            onClick={display100 ? scrollAll : resetScroll}
-          >
-            {display100 ? 100 : 0}
-          </Button>
+          {isEditable && (
+            <Button
+              css={{ fontSize: '0.75rem', height: '100%' }}
+              onClick={display100 ? scrollAll : resetScroll}
+            >
+              {display100 ? 100 : 0}
+            </Button>
+          )}
         </div>
       )}
     </ClassNames>

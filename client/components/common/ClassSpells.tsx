@@ -61,6 +61,54 @@ const ClassSpells: React.FC<Props> = ({ customSet }) => {
     [] as Array<Spell>,
   );
 
+  let content = (
+    <div
+      css={{
+        height: 360,
+        gridColumn: '1 / -1',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: theme.text?.light,
+        fontWeight: 500,
+        marginBottom: 320,
+      }}
+    >
+      {t('SELECT_CLASS_DETAILED')}
+    </div>
+  );
+
+  if (classDataLoading) {
+    content = (
+      <>
+        {Array(22)
+          .fill(null)
+          .map((_, i) => (
+            <Card
+              // eslint-disable-next-line react/no-array-index-key
+              key={i}
+              size="small"
+              css={{
+                ...itemCardStyle,
+                border: `1px solid ${theme.border?.default}`,
+                background: theme.layer?.background,
+              }}
+            >
+              <Skeleton loading title active paragraph={{ rows: 6 }} />
+            </Card>
+          ))}
+      </>
+    );
+  } else if (spellsList) {
+    content = (
+      <>
+        {spellsList.map((spell) => (
+          <SpellCard key={spell.id} spell={spell} customSet={customSet} />
+        ))}
+      </>
+    );
+  }
+
   return data ? (
     <>
       <Select<string>
@@ -91,41 +139,7 @@ const ClassSpells: React.FC<Props> = ({ customSet }) => {
             </Option>
           ))}
       </Select>
-      {!classDataLoading && spellsList ? (
-        spellsList.map((spell) => (
-          <SpellCard key={spell.id} spell={spell} customSet={customSet} />
-        ))
-      ) : (
-        <div
-          css={{
-            height: 360,
-            gridColumn: '1 / -1',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            color: theme.text?.light,
-            fontWeight: 500,
-            marginBottom: 320,
-          }}
-        >
-          {classDataLoading
-            ? Array(22)
-                .fill(null)
-                .map(() => (
-                  <Card
-                    size="small"
-                    css={{
-                      ...itemCardStyle,
-                      border: `1px solid ${theme.border?.default}`,
-                      background: theme.layer?.background,
-                    }}
-                  >
-                    <Skeleton loading title active paragraph={{ rows: 6 }} />
-                  </Card>
-                ))
-            : t('SELECT_CLASS_DETAILED')}
-        </div>
-      )}
+      {content}
     </>
   ) : null;
 };

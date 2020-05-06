@@ -8,7 +8,7 @@ import { Media } from './Media';
 interface Props {
   multiplier?: number;
   length?: number;
-  isClassic?: boolean;
+  isClassic: boolean;
 }
 
 const getNumLoaders = (

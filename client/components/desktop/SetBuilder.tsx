@@ -139,12 +139,15 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
             padding: '0px 20px',
           },
         }}
+        isMobile={false}
+        isClassic={false}
       />
       <EquipmentSlots
         customSet={customSet}
         selectItemSlot={selectItemSlot}
         selectedItemSlotId={selectedItemSlot?.id ?? null}
         errors={errors}
+        isMobile={false}
       />
       <div
         css={{
@@ -228,6 +231,8 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
           customSet={customSet}
           selectItemSlot={selectItemSlot}
           selectedItemSlot={selectedItemSlot}
+          isMobile={false}
+          isClassic={false}
         />
       </div>
     </Layout>

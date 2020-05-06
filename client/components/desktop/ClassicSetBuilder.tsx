@@ -60,7 +60,12 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
           padding: '0 12px',
         }}
       >
-        <SetHeader customSet={customSet} errors={errors} isClassic />
+        <SetHeader
+          customSet={customSet}
+          errors={errors}
+          isClassic
+          isMobile={false}
+        />
         <Tabs
           defaultActiveKey="characteristics"
           css={{

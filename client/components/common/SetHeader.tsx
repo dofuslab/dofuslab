@@ -14,7 +14,11 @@ import {
   editCustomSetMetadataVariables,
 } from 'graphql/mutations/__generated__/editCustomSetMetadata';
 import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetdata.graphql';
-import { checkAuthentication, navigateToNewCustomSet } from 'common/utils';
+import {
+  checkAuthentication,
+  navigateToNewCustomSet,
+  EditableContext,
+} from 'common/utils';
 import { ellipsis } from 'common/mixins';
 import { mq } from 'common/constants';
 import { BuildError } from 'common/types';
@@ -25,9 +29,9 @@ import BuildActions from './BuildActions';
 
 interface Props {
   customSet?: CustomSet | null;
-  isMobile?: boolean;
+  isMobile: boolean;
   errors: Array<BuildError>;
-  isClassic?: boolean;
+  isClassic: boolean;
   className?: string;
 }
 
@@ -77,6 +81,8 @@ const SetHeader: React.FC<Props> = ({
 
   const router = useRouter();
 
+  const isEditable = React.useContext(EditableContext);
+
   const [metadataState, dispatch] = React.useReducer(reducer, originalState);
 
   const { t } = useTranslation('common');
@@ -88,8 +94,11 @@ const SetHeader: React.FC<Props> = ({
   const [form] = Form.useForm();
 
   const onStartEdit = React.useCallback(() => {
+    if (!isEditable) {
+      return;
+    }
     dispatch({ type: 'START_EDIT', originalState });
-  }, [dispatch, customSet?.name, customSet?.level]);
+  }, [dispatch, customSet?.name, customSet?.level, isEditable]);
 
   const onStopEdit = React.useCallback(() => {
     dispatch({ type: 'STOP_EDIT' });
@@ -210,7 +219,7 @@ const SetHeader: React.FC<Props> = ({
               maxWidth: 400,
             },
             marginRight: 20,
-            cursor: 'pointer',
+            cursor: isEditable ? 'pointer' : 'auto',
           }}
           onClick={onStartEdit}
         >
@@ -231,7 +240,11 @@ const SetHeader: React.FC<Props> = ({
         }}
       >
         <div
-          css={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
+          css={{
+            display: 'flex',
+            alignItems: 'center',
+            cursor: isEditable ? 'pointer' : 'auto',
+          }}
           onClick={onStartEdit}
         >
           {t('LEVEL')}{' '}
@@ -249,20 +262,21 @@ const SetHeader: React.FC<Props> = ({
             customSet?.level ?? 200
           )}
         </div>
-        {metadataState.isEditing ? (
-          <div css={{ marginLeft: 'auto' }}>
-            <Button type="primary" htmlType="submit">
-              {t('OK')}
-            </Button>
-            <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
-              {t('CANCEL')}
-            </Button>
-          </div>
-        ) : (
-          <a css={{ marginLeft: 12 }}>
-            <FontAwesomeIcon icon={faPencilAlt} onClick={onStartEdit} />
-          </a>
-        )}
+        {isEditable &&
+          (metadataState.isEditing ? (
+            <div css={{ marginLeft: 'auto' }}>
+              <Button type="primary" htmlType="submit">
+                {t('OK')}
+              </Button>
+              <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
+                {t('CANCEL')}
+              </Button>
+            </div>
+          ) : (
+            <a css={{ marginLeft: 12 }}>
+              <FontAwesomeIcon icon={faPencilAlt} onClick={onStartEdit} />
+            </a>
+          ))}
       </div>
     </Form>
   );
@@ -343,10 +357,18 @@ const SetHeader: React.FC<Props> = ({
               formElement
             )}
             {customSet && !isMobile && !isClassic && (
-              <BonusStats customSet={customSet} isMobile={false} />
+              <BonusStats
+                customSet={customSet}
+                isMobile={false}
+                isClassic={false}
+              />
             )}
             {customSet && !isMobile && (
-              <BuildErrors customSet={customSet} errors={errors} />
+              <BuildErrors
+                customSet={customSet}
+                errors={errors}
+                isMobile={false}
+              />
             )}
             {customSet && !isMobile && (
               <BuildActions
@@ -394,7 +416,7 @@ const SetHeader: React.FC<Props> = ({
                   </div>
                 </div>
               </div>
-              <BuildActions customSet={customSet} isMobile />
+              <BuildActions customSet={customSet} isMobile isClassic={false} />
               <BuildErrors customSet={customSet} errors={errors} isMobile />
             </>
           )}

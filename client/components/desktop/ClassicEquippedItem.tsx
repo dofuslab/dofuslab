@@ -15,6 +15,7 @@ import {
   ItemSet,
   CustomSet,
 } from 'common/type-aliases';
+import { EditableContext } from 'common/utils';
 import EquippedItemWithStats from '../common/EquippedItemWithStats';
 
 interface Props {
@@ -40,23 +41,12 @@ const ClassicEquippedItem: React.FC<Props> = ({
   const router = useRouter();
   const { query } = router;
 
+  const isEditable = React.useContext(EditableContext);
+
   return (
     <ClassNames>
-      {({ css, cx }) => (
-        <Link
-          href={{
-            pathname: '/equip/[itemSlotId]/',
-            query: {
-              ...query,
-              itemSlotId: slot.id,
-              customSetId: customSet?.id,
-            },
-          }}
-          as={{
-            pathname: `/equip/${slot.id}/${customSet ? customSet.id : ''}`,
-            query: query.class ? { class: query.class } : undefined,
-          }}
-        >
+      {({ css, cx }) => {
+        const content = (
           <div className={cx(css(itemBox(theme)), className)}>
             {equippedItem && customSet ? (
               <EquippedItemWithStats
@@ -72,11 +62,14 @@ const ClassicEquippedItem: React.FC<Props> = ({
               <div
                 className={cx(
                   css(itemImageBox(theme)),
-                  css({
-                    '&:hover > img': {
-                      opacity: 0.65,
-                    },
-                  }),
+                  {
+                    [css({
+                      '&:hover > img': {
+                        opacity: 0.65,
+                      },
+                    })]: isEditable,
+                  },
+                  { [css({ cursor: 'auto' })]: !isEditable },
                 )}
               >
                 <img
@@ -91,8 +84,29 @@ const ClassicEquippedItem: React.FC<Props> = ({
               </div>
             )}
           </div>
-        </Link>
-      )}
+        );
+
+        return isEditable ? (
+          <Link
+            href={{
+              pathname: '/equip/[itemSlotId]/',
+              query: {
+                ...query,
+                itemSlotId: slot.id,
+                customSetId: customSet?.id,
+              },
+            }}
+            as={{
+              pathname: `/equip/${slot.id}/${customSet ? customSet.id : ''}`,
+              query: query.class ? { class: query.class } : undefined,
+            }}
+          >
+            {content}
+          </Link>
+        ) : (
+          content
+        );
+      }}
     </ClassNames>
   );
 };

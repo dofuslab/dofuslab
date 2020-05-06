@@ -49,7 +49,7 @@ export const itemImageDimensions = {
   height: 'auto',
 };
 
-export const itemImageBox = (theme: Theme) => ({
+export const itemImageBox = (theme: Theme, isEditable = true) => ({
   position: 'absolute' as 'absolute',
   width: '100%',
   height: '100%',
@@ -70,7 +70,7 @@ export const itemImageBox = (theme: Theme) => ({
   alignItems: 'center',
   fontSize: '0.75rem',
   borderRadius: 4,
-  cursor: 'pointer',
+  cursor: isEditable ? 'pointer' : 'auto',
   border: `1px solid ${theme.border?.default}`,
   '&:hover::before': {
     opacity: 1,

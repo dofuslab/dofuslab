@@ -46,6 +46,8 @@ import Tooltip from 'components/common/Tooltip';
 import { switchStyle } from 'common/mixins';
 import { ClassicContext } from 'common/utils';
 import { Theme } from 'common/types';
+import { DownOutlined } from '@ant-design/icons';
+import { Media } from 'components/common/Media';
 import MyBuilds from '../common/MyBuilds';
 import SignUpModal from '../common/SignUpModal';
 import LoginModal from '../common/LoginModal';
@@ -170,15 +172,69 @@ const Layout = ({ children }: LayoutProps) => {
 
   const classicSwitch = (
     <ClassicContext.Consumer>
-      {([isClassic, setIsClassic]) => (
-        <Tooltip title={t('DOFUSLAB_CLASSIC', { ns: 'common' })}>
+      {([isClassic, setIsClassic]) => {
+        const switchElement = (
           <Switch
-            css={{ ...switchStyle(theme, true), marginLeft: 12 }}
+            css={{
+              ...switchStyle(theme, true),
+              [mq[2]]: {
+                marginLeft: 8,
+                marginRight: 8,
+              },
+            }}
             checked={isClassic}
             onChange={setIsClassic}
           />
-        </Tooltip>
-      )}
+        );
+        return (
+          <div css={{ display: 'flex', marginRight: 12, alignItems: 'center' }}>
+            <a
+              css={{
+                color: theme.text?.default,
+                opacity: isClassic ? 0.3 : 1,
+                transition: 'all 0.3s ease-in-out',
+                '&:hover': {
+                  opacity: 1,
+                },
+                display: 'none',
+                [mq[2]]: {
+                  display: 'inline',
+                },
+              }}
+              onClick={() => {
+                setIsClassic(false);
+              }}
+            >
+              DofusLab
+            </a>
+            <Media lessThan="sm">
+              <Tooltip title={t('DOFUSLAB_CLASSIC', { ns: 'common' })}>
+                {switchElement}
+              </Tooltip>
+            </Media>
+            <Media greaterThanOrEqual="sm">{switchElement}</Media>
+            <a
+              css={{
+                color: theme.text?.default,
+                opacity: isClassic ? 1 : 0.3,
+                transition: 'all 0.3s ease-in-out',
+                '&:hover': {
+                  opacity: 1,
+                },
+                display: 'none',
+                [mq[2]]: {
+                  display: 'inline',
+                },
+              }}
+              onClick={() => {
+                setIsClassic(true);
+              }}
+            >
+              DofusLab Classic
+            </a>
+          </div>
+        );
+      }}
     </ClassicContext.Consumer>
   );
 
@@ -270,31 +326,15 @@ const Layout = ({ children }: LayoutProps) => {
               />
             </div>
           </Link>
-          {classicSwitch}
         </div>
         <div css={{ display: 'flex', alignItems: 'center' }}>
+          {classicSwitch}
           {data?.currentUser ? (
             <div>
-              {t('WELCOME')}
-              <Dropdown
-                overlay={
-                  <Menu>
-                    <Menu.Item
-                      key="change-password"
-                      onClick={openPasswordModal}
-                    >
-                      <FontAwesomeIcon icon={faKey} css={{ marginRight: 8 }} />
-                      {t('CHANGE_PASSWORD')}
-                    </Menu.Item>
-                  </Menu>
-                }
-              >
-                <a onClick={openPasswordModal}>{data.currentUser.username}</a>
-              </Dropdown>
               {langSelect}
               {data.currentUser.verified && (
                 <>
-                  <Button onClick={openDrawer} css={{ marginLeft: 16 }}>
+                  <Button onClick={openDrawer} css={{ marginLeft: 12 }}>
                     {t('MY_BUILDS', { ns: 'common' })}
                   </Button>
                   <Drawer
@@ -305,6 +345,33 @@ const Layout = ({ children }: LayoutProps) => {
                   >
                     <MyBuilds onClose={closeDrawer} />
                   </Drawer>
+                  <Dropdown
+                    overlay={
+                      <Menu>
+                        <Menu.ItemGroup
+                          title={`${t('WELCOME')} ${data.currentUser.username}`}
+                        >
+                          <Menu.Item
+                            key="change-password"
+                            onClick={openPasswordModal}
+                          >
+                            <FontAwesomeIcon
+                              icon={faKey}
+                              css={{ marginRight: 8 }}
+                            />
+                            {t('CHANGE_PASSWORD')}
+                          </Menu.Item>
+                        </Menu.ItemGroup>
+                      </Menu>
+                    }
+                  >
+                    {/* <a onClick={openPasswordModal}>
+                      {data.currentUser.username}
+                    </a> */}
+                    <Button css={{ marginLeft: 12 }}>
+                      {t('MY_ACCOUNT')} <DownOutlined />
+                    </Button>
+                  </Dropdown>
                 </>
               )}
               <Button
@@ -317,6 +384,7 @@ const Layout = ({ children }: LayoutProps) => {
             </div>
           ) : (
             <div css={{ display: 'flex', alignItems: 'center' }}>
+              {classicSwitch}
               {langSelect}
               <Button
                 onClick={openLoginModal}

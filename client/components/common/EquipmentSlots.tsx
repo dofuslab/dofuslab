@@ -22,7 +22,7 @@ interface Props {
   customSet?: CustomSet | null;
   selectItemSlot: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
   selectedItemSlotId: string | null;
-  isMobile?: boolean;
+  isMobile: boolean;
   errors: Array<BuildError>;
 }
 

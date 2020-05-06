@@ -24,8 +24,8 @@ const THRESHOLD = 600;
 interface Props {
   filters: SharedFilters;
   customSet: CustomSet | null;
-  isMobile?: boolean;
-  isClassic?: boolean;
+  isMobile: boolean;
+  isClassic: boolean;
 }
 
 const SetSelector: React.FC<Props> = ({
