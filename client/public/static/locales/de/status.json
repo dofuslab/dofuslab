@@ -1,16 +1,16 @@
 {
   "VERIFY_EMAIL": {
     "ALREADY_VERIFIED": {
-      "DESCRIPTION": "__STRING_NOT_TRANSLATED__",
-      "TITLE": "__STRING_NOT_TRANSLATED__"
+      "DESCRIPTION": "Dein Account ist bereits verifiziert. Weitere Aktionen sind nicht notwendig.",
+      "TITLE": "Alles ist in Ordnung."
     },
     "INVALID": {
-      "DESCRIPTION": "__STRING_NOT_TRANSLATED__",
-      "TITLE": "__STRING_NOT_TRANSLATED__"
+      "DESCRIPTION": "Der Verifizierungslink ist abgelaufen oder ungültig.",
+      "TITLE": "Ungültige URL"
     },
     "SUCCESS": {
-      "DESCRIPTION": "__STRING_NOT_TRANSLATED__",
-      "TITLE": "__STRING_NOT_TRANSLATED__"
+      "DESCRIPTION": "Du hast deinen Account erfolgreich verifiziert. Danke dir!",
+      "TITLE": "Erfolgreich"
     }
   }
 }

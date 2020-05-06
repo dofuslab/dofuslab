@@ -1,8 +1,8 @@
 {
-  "EXO": "__STRING_NOT_TRANSLATED__",
-  "MAGE": "__STRING_NOT_TRANSLATED__",
-  "MAGE_MODAL_TITLE": "__STRING_NOT_TRANSLATED__",
-  "MORE_MAGING_OPTIONS": "__STRING_NOT_TRANSLATED__",
-  "REMOVE_EXO": "__STRING_NOT_TRANSLATED__",
-  "RESET_TO_ORIGINAL": "__STRING_NOT_TRANSLATED__"
+  "EXO": "{{stat}} exo",
+  "MAGE": "Schmiedmagie",
+  "MAGE_MODAL_TITLE": "Maging {{itemName}}",
+  "MORE_MAGING_OPTIONS": "Mehrere Mage Optionen",
+  "REMOVE_EXO": "Entferne {{stat}} exo",
+  "RESET_TO_ORIGINAL": "Zum Original zurücksetzen"
 }
