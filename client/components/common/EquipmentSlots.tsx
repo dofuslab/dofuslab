@@ -22,7 +22,7 @@ interface Props {
   customSet?: CustomSet | null;
   selectItemSlot: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
   selectedItemSlotId: string | null;
-  isMobile?: boolean;
+  isMobile: boolean;
   errors: Array<BuildError>;
 }
 
@@ -80,11 +80,11 @@ const EquipmentSlots: React.FC<Props> = ({
         },
         [mq[1]]: {
           display: 'flex',
-          margin: '0 8px',
+          margin: '4px 8px',
           gap: 0,
         },
         [mq[4]]: {
-          margin: '0 12px',
+          margin: '8px 12px',
         },
       }}
     >
@@ -125,6 +125,7 @@ const EquipmentSlots: React.FC<Props> = ({
                 openMageModal={openMageModal}
                 openSetModal={openSetModal}
                 errors={equippedItemErrors}
+                css={{ marginLeft: 4, [mq[4]]: { marginLeft: 8 } }}
               />
             </Media>
           </React.Fragment>
@@ -146,7 +147,7 @@ const EquipmentSlots: React.FC<Props> = ({
           visible={setModalVisible}
           onCancel={closeSetModal}
           customSet={customSet}
-          isMobile={isMobile}
+          shouldRedirect={isMobile}
         />
       )}
     </div>

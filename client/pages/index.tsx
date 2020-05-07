@@ -15,6 +15,8 @@ import {
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
 import { CustomSetHead } from 'common/wrappers';
+import ClassicSetBuilder from 'components/desktop/ClassicSetBuilder';
+import { ClassicContext, useClassic } from 'common/utils';
 import ErrorPage from './_error';
 
 const Index: NextPage = () => {
@@ -28,27 +30,35 @@ const Index: NextPage = () => {
 
   const customSet = customSetData?.customSetById || null;
 
+  const [isClassic, setIsClassic] = useClassic();
+
   if (customSetId && !customSet && !loading) {
     return <ErrorPage statusCode={404} />;
   }
 
   return (
-    <div className="App" css={{ height: '100%' }}>
-      <Head>
-        <style
-          type="text/css"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: mediaStyles }}
-        />
-      </Head>
-      <CustomSetHead customSet={customSet} />
-      <Media lessThan="xs">
-        <MobileSetBuilder customSet={customSet} />
-      </Media>
-      <Media greaterThanOrEqual="xs" css={{ height: '100%' }}>
-        <DesktopSetBuilder customSet={customSet} />
-      </Media>
-    </div>
+    <ClassicContext.Provider value={[isClassic, setIsClassic]}>
+      <div className="App" css={{ height: '100%' }}>
+        <Head>
+          <style
+            type="text/css"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: mediaStyles }}
+          />
+        </Head>
+        <CustomSetHead customSet={customSet} />
+        <Media lessThan="xs">
+          <MobileSetBuilder customSet={customSet} />
+        </Media>
+        <Media greaterThanOrEqual="xs" css={{ height: '100%' }}>
+          {isClassic ? (
+            <ClassicSetBuilder customSet={customSet} />
+          ) : (
+            <DesktopSetBuilder customSet={customSet} />
+          )}
+        </Media>
+      </div>
+    </ClassicContext.Provider>
   );
 };
 

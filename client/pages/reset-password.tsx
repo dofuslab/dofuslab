@@ -65,6 +65,7 @@ const RequestPasswordResetPage: NextPage = () => {
         message: t('RESET_PASSWORD_SUCCESS.TITLE'),
         description: t('RESET_PASSWORD_SUCCESS.DESCRIPTION'),
       });
+
       router.replace('/');
     }
   }, [mutate, t]);

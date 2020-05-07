@@ -43,7 +43,7 @@ const EquippedItem: React.FC<Props> = ({
         {customSet && equippedItem ? (
           <Link
             href="/build/[customSetId]/[equippedItemId]"
-            as={`/build/${customSet.id}/${equippedItem.id}`}
+            as={`/build/${customSet.id}/${equippedItem.id}/`}
           >
             <div>
               <EquippedItemWithStats
@@ -63,7 +63,7 @@ const EquippedItem: React.FC<Props> = ({
               pathname: '/equip/[itemSlotId]',
               query: { itemSlotId: slot.id, customSetId: customSet?.id },
             }}
-            as={`/equip/${slot.id}/${customSet ? customSet.id : ''}`}
+            as={`/equip/${slot.id}/${customSet ? `${customSet.id}/` : ''}`}
           >
             <div
               css={{

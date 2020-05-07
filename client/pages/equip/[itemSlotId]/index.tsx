@@ -1,9 +1,10 @@
 /** @jsx jsx */
 
+import React from 'react';
 import { jsx } from '@emotion/core';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { mediaStyles } from 'components/common/Media';
+import { mediaStyles, Media } from 'components/common/Media';
 import Selector from 'components/common/Selector';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/react-hooks';
@@ -15,12 +16,31 @@ import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import ErrorPage from 'pages/_error';
-import Layout from 'components/mobile/Layout';
+import MobileLayout from 'components/mobile/Layout';
+import DesktopLayout from 'components/desktop/Layout';
 import { CustomSetHead } from 'common/wrappers';
+import { ClassicContext, useClassic } from 'common/utils';
 
 const EquipPage: NextPage = () => {
   const router = useRouter();
   const { itemSlotId, customSetId } = router.query;
+
+  const [isClassic, setIsClassic] = useClassic();
+
+  const onIsClassicChange = React.useCallback(
+    (value: boolean) => {
+      setIsClassic(value);
+      if (!value) {
+        const { itemSlotId: oldItemSlotId, ...restQuery } = router.query;
+
+        router.push(
+          { pathname: '/', query: restQuery },
+          customSetId ? `/build/${customSetId}/` : '/',
+        );
+      }
+    },
+    [router],
+  );
 
   const { data } = useQuery<itemSlots>(ItemSlotsQuery);
   const itemSlot = data?.itemSlots.find((slot) => slot.id === itemSlotId);
@@ -37,22 +57,48 @@ const EquipPage: NextPage = () => {
   }
 
   return (
-    <Layout>
-      <Head>
-        <style
-          type="text/css"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: mediaStyles }}
-        />
-      </Head>
-      <CustomSetHead customSet={customSet} />
-      <Selector
-        customSet={customSet}
-        selectedItemSlot={itemSlot}
-        showSets={false}
-        isMobile
-      />
-    </Layout>
+    <>
+      <Media lessThan="xs">
+        <MobileLayout>
+          <Head>
+            <style
+              type="text/css"
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{ __html: mediaStyles }}
+            />
+          </Head>
+          <CustomSetHead customSet={customSet} />
+          <Selector
+            customSet={customSet}
+            selectedItemSlot={itemSlot}
+            showSets={false}
+            isMobile
+            isClassic={false}
+          />
+        </MobileLayout>
+      </Media>
+      <Media greaterThanOrEqual="xs">
+        <ClassicContext.Provider value={[isClassic, onIsClassicChange]}>
+          <DesktopLayout>
+            <Head>
+              <style
+                type="text/css"
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={{ __html: mediaStyles }}
+              />
+            </Head>
+            <CustomSetHead customSet={customSet} />
+            <Selector
+              customSet={customSet}
+              selectedItemSlot={itemSlot}
+              showSets={false}
+              isClassic
+              isMobile={false}
+            />
+          </DesktopLayout>
+        </ClassicContext.Provider>
+      </Media>
+    </>
   );
 };
 

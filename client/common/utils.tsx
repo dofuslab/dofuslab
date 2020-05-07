@@ -8,6 +8,7 @@ import groupBy from 'lodash/groupBy';
 import { TFunction } from 'next-i18next';
 import CustomSetFragment from 'graphql/fragments/customSet.graphql';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import Lockr from 'lockr';
 
 import {
   Stat,
@@ -39,6 +40,13 @@ import {
   equipItemsVariables,
 } from 'graphql/mutations/__generated__/equipItems';
 import EquipItemsMutation from 'graphql/mutations/equipItems.graphql';
+import { sessionSettings } from 'graphql/queries/__generated__/sessionSettings';
+import sessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
+import {
+  changeClassic,
+  changeClassicVariables,
+} from 'graphql/mutations/__generated__/changeClassic';
+import changeClassicMutation from 'graphql/mutations/changeClassic.graphql';
 import {
   StatsFromCustomSet,
   SetCounter,
@@ -51,7 +59,7 @@ import {
   StatCalculator,
   BaseStatKey,
 } from './types';
-import { META_DESCRIPTION } from './constants';
+import { META_DESCRIPTION, IS_CLASSIC_STORAGE_KEY } from './constants';
 import {
   CustomSet,
   Stats,
@@ -60,6 +68,7 @@ import {
   ItemSlot,
   ItemTypeWithSlots,
   EquippedItem,
+  Class,
 } from './type-aliases';
 
 export const navigateToNewCustomSet = (
@@ -270,7 +279,7 @@ export const getStatsFromCustomSet = (customSet?: CustomSet | null) => {
   return mergeStatObjs(statsFromSetBonuses, statsFromCustomSet);
 };
 
-export const findNextEmptySlotId = (
+export const findNextEmptySlotIds = (
   itemType: ItemTypeWithSlots,
   currentSlotId: string,
   customSet?: CustomSet | null,
@@ -279,17 +288,21 @@ export const findNextEmptySlotId = (
     (i, j) => i.order - j.order,
   );
   if (!customSet) {
-    return eligibleItemSlots.find((slot) => slot.id !== currentSlotId) || null;
+    return eligibleItemSlots
+      .filter((slot) => slot.id !== currentSlotId)
+      .map((slot) => slot.id);
   }
   const occupiedSlotsSet = customSet.equippedItems.reduce((set, curr) => {
     set.add(curr.slot.id);
     return set;
   }, new Set<string>());
-  const foundSlot = eligibleItemSlots.find(
-    (slot) => !occupiedSlotsSet.has(slot.id) && slot.id !== currentSlotId,
-  );
+  const foundSlotIds = eligibleItemSlots
+    .filter(
+      (slot) => !occupiedSlotsSet.has(slot.id) && slot.id !== currentSlotId,
+    )
+    .map((slot) => slot.id);
 
-  return foundSlot?.id || null;
+  return foundSlotIds;
 };
 
 export const findEmptySlotId = (
@@ -1262,4 +1275,90 @@ export const getInitialRangedState = (
       getStatWithDefault(statsFromCustomSet, Stat.PCT_MELEE_DAMAGE);
   }
   return initialShowRanged;
+};
+
+export const stripQueryString = (asPath: string) => {
+  const index = asPath.indexOf('?');
+  if (index >= 0) {
+    return asPath.substring(0, index);
+  }
+  return asPath;
+};
+
+export const onSelectClass = (
+  classes: Array<Class>,
+  selectedClass: string,
+  router: NextRouter,
+) => {
+  const idToName = classes.reduce((acc, { id, name }) => {
+    return { ...acc, [id]: name };
+  }, {} as { [key: string]: string });
+
+  const { query } = router;
+
+  const newQuery: { [key: string]: string | string[] } = {
+    ...query,
+    ...(idToName && { class: idToName?.[selectedClass] }),
+  };
+  const { customSetId, ...restNewQuery } = newQuery;
+
+  router.replace(
+    { pathname: router.pathname, query: newQuery },
+    {
+      pathname: stripQueryString(router.asPath),
+      query: restNewQuery,
+    },
+  );
+};
+
+export const ClassicContext = React.createContext<
+  [boolean, (v: boolean) => void]
+>([
+  false,
+  () => {
+    // no-op
+  },
+]);
+
+export const EditableContext = React.createContext<boolean>(true);
+
+export const useClassic = () => {
+  const { data: sessionSettingsData } = useQuery<sessionSettings>(
+    sessionSettingsQuery,
+  );
+
+  const [mutate] = useMutation<changeClassic, changeClassicVariables>(
+    changeClassicMutation,
+  );
+
+  const [isClassic, setIsClassic] = React.useState<boolean>(
+    sessionSettingsData?.classic ?? false,
+  );
+
+  React.useEffect(() => {
+    let classic = Lockr.get<boolean | null>(IS_CLASSIC_STORAGE_KEY, null);
+    if (classic === null) {
+      classic = sessionSettingsData?.classic ?? null;
+    }
+    setIsClassic(classic || false);
+  }, []);
+
+  const client = useApolloClient();
+
+  const onIsClassicChange = React.useCallback(
+    (value: boolean) => {
+      setIsClassic(value);
+      Lockr.set(IS_CLASSIC_STORAGE_KEY, value);
+      mutate({ variables: { classic: value } });
+      if (sessionSettingsData) {
+        client.writeQuery<sessionSettings>({
+          query: sessionSettingsQuery,
+          data: { ...sessionSettingsData, classic: value },
+        });
+      }
+    },
+    [client, sessionSettingsData, mutate],
+  );
+
+  return [isClassic, onIsClassicChange] as const;
 };

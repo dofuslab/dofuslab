@@ -8,10 +8,12 @@ import InfiniteScroll from 'react-infinite-scroller';
 import SetQuery from 'graphql/queries/sets.graphql';
 import { SharedFilters } from 'common/types';
 import { sets, setsVariables } from 'graphql/queries/__generated__/sets';
-import { mq } from 'common/constants';
+
+import { mq, getSelectorNumCols } from 'common/constants';
 import { getResponsiveGridStyle } from 'common/mixins';
 import { SetWithItems, CustomSet } from 'common/type-aliases';
 import SetCard from './SetCard';
+
 import SkeletonCardsLoader from './SkeletonCardsLoader';
 import SetModal from './SetModal';
 
@@ -22,9 +24,16 @@ const THRESHOLD = 600;
 interface Props {
   filters: SharedFilters;
   customSet: CustomSet | null;
+  isMobile: boolean;
+  isClassic: boolean;
 }
 
-const SetSelector: React.FC<Props> = ({ filters, customSet }) => {
+const SetSelector: React.FC<Props> = ({
+  filters,
+  customSet,
+  isMobile,
+  isClassic,
+}) => {
   const { data, loading, fetchMore } = useQuery<sets, setsVariables>(SetQuery, {
     variables: { first: PAGE_SIZE, filters },
   });
@@ -84,11 +93,15 @@ const SetSelector: React.FC<Props> = ({ filters, customSet }) => {
     <InfiniteScroll
       hasMore={data?.sets.pageInfo.hasNextPage}
       loader={
-        <SkeletonCardsLoader key="loader" length={data?.sets.edges.length} />
+        <SkeletonCardsLoader
+          key="loader"
+          length={data?.sets.edges.length}
+          isClassic
+        />
       }
       loadMore={onLoadMore}
       css={{
-        ...getResponsiveGridStyle([2, 2, 2, 3, 4, 5, 6]),
+        ...getResponsiveGridStyle(getSelectorNumCols(isClassic)),
         marginTop: 12,
         marginBottom: 20,
         position: 'relative',
@@ -96,7 +109,7 @@ const SetSelector: React.FC<Props> = ({ filters, customSet }) => {
         minWidth: 0,
         [mq[1]]: { gridGap: 12 },
       }}
-      useWindow={false}
+      useWindow={isMobile || isClassic}
       threshold={THRESHOLD}
     >
       {loading ? (
@@ -104,6 +117,7 @@ const SetSelector: React.FC<Props> = ({ filters, customSet }) => {
           key="initial-loader"
           multiplier={2}
           length={data?.sets.edges.length}
+          isClassic
         />
       ) : (
         (data?.sets.edges ?? [])
@@ -119,6 +133,7 @@ const SetSelector: React.FC<Props> = ({ filters, customSet }) => {
           onCancel={closeSetModal}
           visible={setModalVisible}
           customSet={customSet}
+          shouldRedirect={isMobile || isClassic}
         />
       )}
     </InfiniteScroll>

@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { jsx } from '@emotion/core';
 
-import { Select, Spin } from 'antd';
+import { Select, Card, Skeleton } from 'antd';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/react-hooks';
 import { useTheme } from 'emotion-theming';
@@ -18,6 +18,8 @@ import {
 import classByIdQuery from 'graphql/queries/classById.graphql';
 import { Theme } from 'common/types';
 import { CustomSet, Spell } from 'common/type-aliases';
+import { onSelectClass } from 'common/utils';
+import { itemCardStyle } from 'common/mixins';
 import SpellCard from './SpellCard';
 
 const { Option } = Select;
@@ -29,7 +31,7 @@ interface Props {
 const ClassSpells: React.FC<Props> = ({ customSet }) => {
   const router = useRouter();
   const { query } = router;
-  const { data, loading } = useQuery<classes>(classesQuery);
+  const { data } = useQuery<classes>(classesQuery);
   const { t } = useTranslation('common');
   const theme = useTheme<Theme>();
 
@@ -40,11 +42,6 @@ const ClassSpells: React.FC<Props> = ({ customSet }) => {
     });
     return obj;
   }, {} as { [key: string]: string });
-
-  const idToName = data?.classes.reduce(
-    (acc, { id, name }) => ({ ...acc, [id]: name }),
-    {} as { [key: string]: string },
-  );
 
   const selectedClassName = Array.isArray(query.class)
     ? query.class[0]
@@ -64,6 +61,54 @@ const ClassSpells: React.FC<Props> = ({ customSet }) => {
     [] as Array<Spell>,
   );
 
+  let content = (
+    <div
+      css={{
+        height: 360,
+        gridColumn: '1 / -1',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: theme.text?.light,
+        fontWeight: 500,
+        marginBottom: 320,
+      }}
+    >
+      {t('SELECT_CLASS_DETAILED')}
+    </div>
+  );
+
+  if (classDataLoading) {
+    content = (
+      <>
+        {Array(22)
+          .fill(null)
+          .map((_, i) => (
+            <Card
+              // eslint-disable-next-line react/no-array-index-key
+              key={i}
+              size="small"
+              css={{
+                ...itemCardStyle,
+                border: `1px solid ${theme.border?.default}`,
+                background: theme.layer?.background,
+              }}
+            >
+              <Skeleton loading title active paragraph={{ rows: 6 }} />
+            </Card>
+          ))}
+      </>
+    );
+  } else if (spellsList) {
+    content = (
+      <>
+        {spellsList.map((spell) => (
+          <SpellCard key={spell.id} spell={spell} customSet={customSet} />
+        ))}
+      </>
+    );
+  }
+
   return data ? (
     <>
       <Select<string>
@@ -82,18 +127,7 @@ const ClassSpells: React.FC<Props> = ({ customSet }) => {
         }
         value={selectedClassId}
         onChange={(value: string) => {
-          const newQuery: { [key: string]: string | string[] } = {
-            ...query,
-            ...(idToName && { class: idToName?.[value] }),
-          };
-          const { customSetId, ...restNewQuery } = newQuery;
-          router.replace(
-            { pathname: router.pathname, query: newQuery },
-            {
-              pathname: router.asPath.substring(0, router.asPath.indexOf('?')),
-              query: restNewQuery,
-            },
-          );
+          onSelectClass(data.classes, value, router);
         }}
         placeholder={t('SELECT_CLASS')}
       >
@@ -105,41 +139,9 @@ const ClassSpells: React.FC<Props> = ({ customSet }) => {
             </Option>
           ))}
       </Select>
-      {!classDataLoading && spellsList ? (
-        spellsList.map((spell) => (
-          <SpellCard key={spell.id} spell={spell} customSet={customSet} />
-        ))
-      ) : (
-        <div
-          css={{
-            height: 360,
-            gridColumn: '1 / -1',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            color: theme.text?.light,
-            fontWeight: 500,
-            marginBottom: 320,
-          }}
-        >
-          {classDataLoading ? <Spin /> : t('SELECT_CLASS_DETAILED')}
-        </div>
-      )}
+      {content}
     </>
-  ) : (
-    <div
-      css={{
-        gridColumn: '1 / -1',
-        height: 360,
-        marginBottom: 320,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      {loading && <Spin />}
-    </div>
-  );
+  ) : null;
 };
 
 export default ClassSpells;

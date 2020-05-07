@@ -17,7 +17,7 @@ import { CustomSet } from 'common/type-aliases';
 interface Props {
   customSet: CustomSet;
   errors: Array<BuildError>;
-  isMobile?: boolean;
+  isMobile: boolean;
 }
 
 const BuildErrors: React.FC<Props> = ({ customSet, errors, isMobile }) => {

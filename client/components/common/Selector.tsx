@@ -46,7 +46,8 @@ interface Props {
   selectedItemSlot: ItemSlot | null;
   selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
   showSets?: boolean;
-  isMobile?: boolean;
+  isMobile: boolean;
+  isClassic: boolean;
 }
 
 const Selector: React.FC<Props> = ({
@@ -55,6 +56,7 @@ const Selector: React.FC<Props> = ({
   selectItemSlot,
   showSets,
   isMobile,
+  isClassic,
 }) => {
   const [filters, dispatch] = React.useReducer(reducer, {
     stats: [],
@@ -92,7 +94,7 @@ const Selector: React.FC<Props> = ({
           ...topMarginStyle,
           [mq[1]]: {
             padding: '0 14px',
-            overflowY: 'scroll',
+            overflowY: 'auto',
             overflowAnchor: 'none',
             flex: 1,
             ...(topMarginStyle[mq[1]] as {}),
@@ -112,6 +114,8 @@ const Selector: React.FC<Props> = ({
           showSets={showSetsState}
           setShowSets={setShowSetsState}
           onReset={onReset}
+          shouldShowBack={isMobile || isClassic}
+          isMobile={isMobile}
         />
         {slots && !showSetsState && (
           <ItemTypeFilter
@@ -133,7 +137,12 @@ const Selector: React.FC<Props> = ({
           onReset={onReset}
         />
         {showSetsState ? (
-          <SetSelector filters={filters} customSet={customSet} />
+          <SetSelector
+            filters={filters}
+            customSet={customSet}
+            isClassic={isClassic}
+            isMobile={isMobile}
+          />
         ) : (
           <ItemSelector
             key={`selected-item-slot-${selectedItemSlot?.name}-level-${customSet?.level}`}
@@ -143,6 +152,7 @@ const Selector: React.FC<Props> = ({
             customSetItemIds={customSetItemIds}
             filters={filters}
             isMobile={isMobile}
+            isClassic={isClassic}
             selectItemSlot={selectItemSlot}
           />
         )}

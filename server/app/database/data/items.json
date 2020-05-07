@@ -117961,9 +117961,7 @@
     "stats": [],
     "customStats": [],
     "conditions": {
-      "conditions": {
-        "or": {}
-      },
+      "conditions": {},
       "customConditions": {
         "en": ["months = Aperirel and", "day(s) < 9"],
         "fr": ["Mois = Aperirel et", "Jour(s) < 9"],

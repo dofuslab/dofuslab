@@ -4,7 +4,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { Modal, Divider, Skeleton } from 'antd';
 import { useQuery } from '@apollo/react-hooks';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { useTheme } from 'emotion-theming';
 import groupBy from 'lodash/groupBy';
 
@@ -15,7 +15,7 @@ import { useTranslation } from 'i18n';
 import { SetBonuses } from 'common/wrappers';
 import { itemBox } from 'common/mixins';
 import { mq } from 'common/constants';
-import { useEquipItemsMutation } from 'common/utils';
+import { useEquipItemsMutation, EditableContext } from 'common/utils';
 import { CustomSet, SetBonus } from 'common/type-aliases';
 import BasicItemWithStats from '../desktop/BasicItemWithStats';
 
@@ -25,7 +25,7 @@ interface Props {
   visible: boolean;
   onCancel: () => void;
   customSet?: CustomSet | null;
-  isMobile?: boolean;
+  shouldRedirect?: boolean;
 }
 
 const SetModal: React.FC<Props> = ({
@@ -34,12 +34,14 @@ const SetModal: React.FC<Props> = ({
   visible,
   onCancel,
   customSet,
-  isMobile,
+  shouldRedirect,
 }) => {
   const { data, loading, error } = useQuery<set, setVariables>(setQuery, {
     variables: { id: setId },
   });
 
+  const router = useRouter();
+  const { query } = router;
   const { t } = useTranslation('common');
   const theme = useTheme<Theme>();
   const [itemIds, setItemIds] = React.useState<Array<string>>([]);
@@ -49,22 +51,30 @@ const SetModal: React.FC<Props> = ({
     customSet,
   );
 
+  const isEditable = React.useContext(EditableContext);
+
   const onOk = React.useCallback(async () => {
+    if (!isEditable) {
+      return;
+    }
     await mutate();
     onCancel();
-    if (isMobile && customSet) {
-      Router.push(
-        { pathname: '/index', query: { customSetId: customSet.id } },
-        customSet ? `/build/${customSet.id}` : '/',
+    if (shouldRedirect && customSet) {
+      router.push(
+        {
+          pathname: '/',
+          query: { customSetId: customSet.id, class: query.class },
+        },
+        customSet ? `/build/${customSet.id}/` : '/',
       );
     }
-  }, [mutate, onCancel, customSet, isMobile]);
+  }, [mutate, onCancel, customSet, shouldRedirect, router, isEditable]);
 
   React.useEffect(() => {
-    if (data && !loading) {
+    if (data && !loading && isEditable) {
       setItemIds(data.setById.items.map((item) => item.id));
     }
-  }, [data, loading]);
+  }, [data, loading, isEditable]);
 
   let bodyContent = null;
 
@@ -94,6 +104,7 @@ const SetModal: React.FC<Props> = ({
                 },
               }}
               onClick={() => {
+                if (!isEditable) return;
                 setItemIds((prev) => {
                   if (prev.includes(item.id)) {
                     return prev.filter((itemId) => itemId !== item.id);
@@ -158,7 +169,7 @@ const SetModal: React.FC<Props> = ({
       zIndex={1031}
       confirmLoading={mutationLoading}
       onOk={onOk}
-      okButtonProps={{ disabled: !itemIds.length }}
+      okButtonProps={{ disabled: !itemIds.length || !isEditable }}
       okText={
         <span css={{ fontSize: '0.75rem' }}>
           {t('EQUIP_ITEMS', { count: itemIds.length })}

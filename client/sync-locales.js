@@ -34,7 +34,7 @@ const sortFileKeys = (localeDirPath, file, isBase) => {
     parsed = merge(baseTranslations[file], parsed);
   }
   const sorted = sortKeys(parsed, { deep: true });
-  const data = JSON.stringify(sorted, null, 2);
+  const data = `${JSON.stringify(sorted, null, 2)}\n`;
   fs.writeFileSync(filePath, data);
 };
 

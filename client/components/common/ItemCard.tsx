@@ -4,10 +4,12 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { useEquipItemMutation } from 'common/utils';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { useApolloClient } from '@apollo/react-hooks';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { ItemSlot, ItemSet, Item } from 'common/type-aliases';
+import { notification } from 'antd';
+import { useTranslation, prependDe } from 'i18n';
 import BasicItemCard from './BasicItemCard';
 
 interface Props {
@@ -17,8 +19,8 @@ interface Props {
   selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
   equipped: boolean;
   openSetModal: (set: ItemSet) => void;
-  isMobile?: boolean;
-  nextSlotId: string | null;
+  shouldRedirect?: boolean;
+  remainingSlotIds: Array<string>;
 }
 
 const ItemCard: React.FC<Props> = ({
@@ -28,14 +30,19 @@ const ItemCard: React.FC<Props> = ({
   selectItemSlot,
   equipped,
   openSetModal,
-  isMobile,
-  nextSlotId,
+  shouldRedirect,
+  remainingSlotIds,
 }) => {
   const mutate = useEquipItemMutation(item);
-
+  const { t, i18n } = useTranslation('common');
   const client = useApolloClient();
 
+  const router = useRouter();
+
   const onClick = React.useCallback(() => {
+    const { query } = router;
+    const nextSlotId = remainingSlotIds[0];
+    const numRemainingSlots = remainingSlotIds.length;
     if (itemSlotId) {
       const slots = client.readQuery<itemSlots>({ query: ItemSlotsQuery });
       let nextSlot = null;
@@ -46,11 +53,40 @@ const ItemCard: React.FC<Props> = ({
       if (selectItemSlot) {
         selectItemSlot(nextSlot);
       }
-      if (isMobile && customSetId) {
-        Router.push(
-          { pathname: '/index', query: { customSetId } },
-          customSetId ? `/build/${customSetId}` : '/',
-        );
+      if (shouldRedirect && customSetId) {
+        if (nextSlot) {
+          router.replace(
+            {
+              pathname: '/equip/[itemSlotId]',
+              query: {
+                ...query,
+                itemSlotId: nextSlot.id,
+                customSetId,
+              },
+            },
+            `/equip/${nextSlot.id}/${customSetId}`,
+          );
+
+          notification.success({
+            message: t('SUCCESS'),
+            description: t('ITEM_EQUIPPED', {
+              itemName: item.name,
+              count: numRemainingSlots,
+              slotName: prependDe(i18n.language, nextSlot.name),
+            }),
+          });
+        } else {
+          router.push(
+            {
+              pathname: '/',
+              query: { customSetId, class: query.class || undefined },
+            },
+            {
+              pathname: customSetId ? `/build/${customSetId}` : '/',
+              query: query.class ? { class: query.class } : undefined,
+            },
+          );
+        }
       }
       mutate(itemSlotId);
     }
@@ -60,9 +96,11 @@ const ItemCard: React.FC<Props> = ({
     customSetId,
     mutate,
     selectItemSlot,
-    isMobile,
+    shouldRedirect,
     client,
-    nextSlotId,
+    remainingSlotIds,
+    router,
+    i18n,
   ]);
 
   return (

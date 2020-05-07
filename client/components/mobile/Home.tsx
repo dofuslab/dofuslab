@@ -6,7 +6,7 @@ import { Tabs } from 'antd';
 import { useTheme } from 'emotion-theming';
 
 import { Theme, BuildError } from 'common/types';
-import { STAT_GROUPS } from 'common/constants';
+import { classicStatGroups } from 'common/constants';
 import { ResponsiveGrid } from 'common/wrappers';
 import { topMarginStyle } from 'common/mixins';
 import { getStatsFromCustomSet, getErrors } from 'common/utils';
@@ -17,10 +17,10 @@ import ClassSpells from 'components/common/ClassSpells';
 import { useTranslation } from 'i18n';
 
 import { ItemSlot, CustomSet } from 'common/type-aliases';
+import StatTable from '../common/StatTable';
 import StatEditor from '../common/StatEditor';
 import EquipmentSlots from '../common/EquipmentSlots';
 import SetHeader from '../common/SetHeader';
-import StatTable from '../common/StatTable';
 
 const { TabPane } = Tabs;
 
@@ -55,14 +55,22 @@ const Home: React.FC<Props> = ({
 
   return (
     <>
-      <SetHeader customSet={customSet} errors={errors} isMobile />
+      <SetHeader
+        customSet={customSet}
+        errors={errors}
+        isMobile
+        isClassic={false}
+      />
       <EquipmentSlots
         customSet={customSet}
         selectItemSlot={selectItemSlot}
         selectedItemSlotId={selectedItemSlot?.id ?? null}
         errors={errors}
+        isMobile
       />
-      {customSet && <BonusStats customSet={customSet} isMobile />}
+      {customSet && (
+        <BonusStats customSet={customSet} isMobile isClassic={false} />
+      )}
       <div
         css={{
           flex: '1 1 auto',
@@ -87,9 +95,9 @@ const Home: React.FC<Props> = ({
           >
             <TabPane tab={t('CHARACTERISTICS')} key="characteristics">
               <ResponsiveGrid numColumns={[2]} css={{ marginBottom: 20 }}>
-                {STAT_GROUPS.map((group) => (
+                {classicStatGroups.map((group) => (
                   <StatTable
-                    key={group[0].stat}
+                    key={group[0]}
                     group={group}
                     statsFromCustomSet={statsFromCustomSet}
                     customSet={customSet}

@@ -25,7 +25,6 @@ def upgrade():
     conn = op.get_bind()
     res = conn.execute("select uuid, name from item_slot")
     item_slots = res.fetchall()
-    mappings = []
     for item_slot in item_slots:
         conn.execute(
             "UPDATE item_slot SET image_url='{}' WHERE uuid='{}'".format(

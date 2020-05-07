@@ -19,7 +19,7 @@ import {
   faTimes,
   faExclamationTriangle,
 } from '@fortawesome/free-solid-svg-icons';
-import { useDeleteItemMutation } from 'common/utils';
+import { useDeleteItemMutation, EditableContext } from 'common/utils';
 import { useTranslation } from 'i18n';
 import { mq } from 'common/constants';
 import { Media } from 'components/common/Media';
@@ -27,6 +27,7 @@ import { BuildError, Theme } from 'common/types';
 
 import { BrokenImagePlaceholder } from 'common/wrappers';
 import { EquippedItem, CustomSet, ItemSet } from 'common/type-aliases';
+import { TooltipPlacement } from 'antd/lib/tooltip';
 import EquippedItemCard from '../desktop/EquippedItemCard';
 
 const wrapperStyles = {
@@ -55,6 +56,8 @@ interface Props {
   openMageModal: (equippedItem: EquippedItem) => void;
   openSetModal: (set: ItemSet) => void;
   errors?: Array<BuildError>;
+  className?: string;
+  popoverPlacement?: TooltipPlacement;
 }
 
 const EquippedItemWithStats: React.FC<Props> = ({
@@ -65,6 +68,8 @@ const EquippedItemWithStats: React.FC<Props> = ({
   openMageModal,
   openSetModal,
   errors,
+  className,
+  popoverPlacement,
 }) => {
   const deleteItem = useDeleteItemMutation(equippedItem.slot.id, customSet);
   const stopPropagationCallback = React.useCallback(
@@ -89,25 +94,32 @@ const EquippedItemWithStats: React.FC<Props> = ({
   const [brokenImage, setBrokenImage] = React.useState(false);
   const contentRef = React.useRef<HTMLDivElement | null>(null);
 
+  const isEditable = React.useContext(EditableContext);
+
   const content = (
     <ClassNames>
-      {({ css }) => {
+      {({ css, cx }) => {
         const wrapperClass = css(wrapperStyles);
         return (
           <div
             ref={contentRef}
-            css={{
-              ...itemImageBox(theme),
-              ...(selected && { ...selectedBox(theme) }),
-              '&:hover': {
-                [`.${wrapperClass}`]: {
-                  opacity: 0.3,
+            className={cx(
+              css(
+                itemImageBox(theme, isEditable),
+                css(selected ? selectedBox(theme) : {}),
+                css({
                   '&:hover': {
-                    opacity: 1,
+                    [`.${wrapperClass}`]: {
+                      opacity: 0.3,
+                      '&:hover': {
+                        opacity: 1,
+                      },
+                    },
                   },
-                },
-              },
-            }}
+                }),
+              ),
+              className,
+            )}
           >
             {brokenImage ? (
               <BrokenImagePlaceholder
@@ -146,9 +158,11 @@ const EquippedItemWithStats: React.FC<Props> = ({
                 }}
               />
             )}
-            <div className={wrapperClass} onClick={onDelete}>
-              <FontAwesomeIcon icon={faTimes} />
-            </div>
+            {isEditable && (
+              <div className={wrapperClass} onClick={onDelete}>
+                <FontAwesomeIcon icon={faTimes} />
+              </div>
+            )}
           </div>
         );
       }}
@@ -161,7 +175,7 @@ const EquippedItemWithStats: React.FC<Props> = ({
         <ClassNames>
           {({ css }) => (
             <Popover
-              placement="bottomLeft"
+              placement={popoverPlacement || 'bottomLeft'}
               title={
                 <div
                   css={{

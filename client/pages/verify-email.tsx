@@ -39,7 +39,7 @@ const VerifyEmailPage: NextPage = () => {
       });
     }
     if (!data?.currentUser) {
-      router.replace('/', '/');
+      router.replace('/');
     }
   }, [data, router]);
 

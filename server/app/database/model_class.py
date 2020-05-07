@@ -22,3 +22,6 @@ class ModelClass(Base):
     spell_variant_pairs = relationship(
         "ModelSpellVariantPair", backref="class", cascade="all, delete-orphan"
     )
+    face_image_url = Column("face_image_url", String, nullable=False)
+    male_sprite_image_url = Column("male_sprite_image_url", String, nullable=False)
+    female_sprite_image_url = Column("female_sprite_image_url", String, nullable=False)

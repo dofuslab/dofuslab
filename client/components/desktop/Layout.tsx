@@ -10,6 +10,7 @@ import {
   Dropdown,
   Menu,
   Divider,
+  Switch,
 } from 'antd';
 import { useRouter } from 'next/router';
 import { useTheme } from 'emotion-theming';
@@ -42,7 +43,11 @@ import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
 import { LIGHT_THEME_NAME } from 'common/themes';
 import Tooltip from 'components/common/Tooltip';
+import { switchStyle } from 'common/mixins';
+import { ClassicContext } from 'common/utils';
 import { Theme } from 'common/types';
+import { DownOutlined } from '@ant-design/icons';
+import { Media } from 'components/common/Media';
 import MyBuilds from '../common/MyBuilds';
 import SignUpModal from '../common/SignUpModal';
 import LoginModal from '../common/LoginModal';
@@ -125,6 +130,7 @@ const Layout = ({ children }: LayoutProps) => {
         query: currentUserQuery,
         data: { currentUser: null },
       });
+
       router.push('/');
     }
   }, [logout, router]);
@@ -164,6 +170,74 @@ const Layout = ({ children }: LayoutProps) => {
   );
 
   const theme = useTheme<Theme>();
+
+  const classicSwitch = (
+    <ClassicContext.Consumer>
+      {([isClassic, setIsClassic]) => {
+        const switchElement = (
+          <Switch
+            css={{
+              ...switchStyle(theme, true),
+              [mq[2]]: {
+                marginLeft: 8,
+                marginRight: 8,
+              },
+            }}
+            checked={isClassic}
+            onChange={setIsClassic}
+          />
+        );
+        return (
+          <div css={{ display: 'flex', marginRight: 12, alignItems: 'center' }}>
+            <a
+              css={{
+                color: theme.text?.default,
+                opacity: isClassic ? 0.3 : 1,
+                transition: 'all 0.3s ease-in-out',
+                '&:hover': {
+                  opacity: 1,
+                },
+                display: 'none',
+                [mq[2]]: {
+                  display: 'inline',
+                },
+              }}
+              onClick={() => {
+                setIsClassic(false);
+              }}
+            >
+              DofusLab
+            </a>
+            <Media lessThan="sm">
+              <Tooltip title={t('DOFUSLAB_CLASSIC', { ns: 'common' })}>
+                {switchElement}
+              </Tooltip>
+            </Media>
+            <Media greaterThanOrEqual="sm">{switchElement}</Media>
+            <a
+              css={{
+                color: theme.text?.default,
+                opacity: isClassic ? 1 : 0.3,
+                transition: 'all 0.3s ease-in-out',
+                '&:hover': {
+                  opacity: 1,
+                },
+                display: 'none',
+                [mq[2]]: {
+                  display: 'inline',
+                },
+              }}
+              onClick={() => {
+                setIsClassic(true);
+              }}
+            >
+              DofusLab Classic
+            </a>
+          </div>
+        );
+      }}
+    </ClassicContext.Consumer>
+  );
 
   return (
     <AntdLayout
@@ -239,42 +313,29 @@ const Layout = ({ children }: LayoutProps) => {
           fontSize: '0.8rem',
         }}
       >
-        <Link href="/" as="/">
-          <div css={{ fontWeight: 500, cursor: 'pointer' }}>
-            <img
-              src={
-                theme.name === LIGHT_THEME_NAME
-                  ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg'
-                  : 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark.svg'
-              }
-              css={{ width: 120 }}
-              alt="DofusLab"
-            />
-          </div>
-        </Link>
         <div css={{ display: 'flex', alignItems: 'center' }}>
+          <Link href="/" as="/">
+            <div css={{ fontWeight: 500, cursor: 'pointer' }}>
+              <img
+                src={
+                  theme.name === LIGHT_THEME_NAME
+                    ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg'
+                    : 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark.svg'
+                }
+                css={{ width: 120 }}
+                alt="DofusLab"
+              />
+            </div>
+          </Link>
+        </div>
+        <div css={{ display: 'flex', alignItems: 'center' }}>
+          {classicSwitch}
           {data?.currentUser ? (
             <div>
-              {t('WELCOME')}
-              <Dropdown
-                overlay={
-                  <Menu>
-                    <Menu.Item
-                      key="change-password"
-                      onClick={openPasswordModal}
-                    >
-                      <FontAwesomeIcon icon={faKey} css={{ marginRight: 8 }} />
-                      {t('CHANGE_PASSWORD')}
-                    </Menu.Item>
-                  </Menu>
-                }
-              >
-                <a onClick={openPasswordModal}>{data.currentUser.username}</a>
-              </Dropdown>
               {langSelect}
               {data.currentUser.verified && (
                 <>
-                  <Button onClick={openDrawer} css={{ marginLeft: 16 }}>
+                  <Button onClick={openDrawer} css={{ marginLeft: 12 }}>
                     {t('MY_BUILDS', { ns: 'common' })}
                   </Button>
                   <Drawer
@@ -285,6 +346,32 @@ const Layout = ({ children }: LayoutProps) => {
                   >
                     <MyBuilds onClose={closeDrawer} />
                   </Drawer>
+                  <Dropdown
+                    overlay={
+                      <Menu>
+                        <Menu.ItemGroup
+                          title={`${t('WELCOME')} ${data.currentUser.username}`}
+                        >
+                          <Menu.Item
+                            key="change-password"
+                            onClick={openPasswordModal}
+                          >
+                            <FontAwesomeIcon
+                              icon={faKey}
+                              css={{ marginRight: 8 }}
+                            />
+                            {t('CHANGE_PASSWORD')}
+                          </Menu.Item>
+                        </Menu.ItemGroup>
+                      </Menu>
+                    }
+                  >
+                    <span>
+                      <Button css={{ marginLeft: 12 }}>
+                        {t('MY_ACCOUNT')} <DownOutlined />
+                      </Button>
+                    </span>
+                  </Dropdown>
                 </>
               )}
               <Button
@@ -297,6 +384,7 @@ const Layout = ({ children }: LayoutProps) => {
             </div>
           ) : (
             <div css={{ display: 'flex', alignItems: 'center' }}>
+              {classicSwitch}
               {langSelect}
               <Button
                 onClick={openLoginModal}

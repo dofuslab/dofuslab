@@ -14,7 +14,11 @@ import {
 
 import { useTranslation } from 'i18n';
 import { itemCardStyle, blue6 } from 'common/mixins';
-import { useDeleteItemMutation, checkAuthentication } from 'common/utils';
+import {
+  useDeleteItemMutation,
+  checkAuthentication,
+  EditableContext,
+} from 'common/utils';
 import { Stat } from '__generated__/globalTypes';
 import setEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.graphql';
 import {
@@ -151,6 +155,8 @@ const EquippedItemCard: React.FC<Props> = ({
     openMageModal(equippedItem);
   }, [openMageModal, equippedItem]);
 
+  const isEditable = React.useContext(EditableContext);
+
   return (
     <Card
       size="small"
@@ -166,27 +172,31 @@ const EquippedItemCard: React.FC<Props> = ({
         minWidth: 256,
         overflow: 'hidden',
       })}
-      actions={[
-        ...quickMageMenu,
-        <Tooltip
-          title={t('MAGE', { ns: 'mage' })}
-          align={{ offset: [0, -ACTION_PADDING] }}
-          placement="bottom"
-        >
-          <div css={actionWrapper} onClick={onMageClick}>
-            <FontAwesomeIcon icon={faMagic} />
-          </div>
-        </Tooltip>,
-        <Tooltip
-          title={t('DELETE')}
-          align={{ offset: [0, -ACTION_PADDING] }}
-          placement="bottom"
-        >
-          <div css={actionWrapper} onClick={onDelete}>
-            <FontAwesomeIcon icon={faTrashAlt} onClick={onDelete} />
-          </div>
-        </Tooltip>,
-      ]}
+      actions={
+        isEditable
+          ? [
+              ...quickMageMenu,
+              <Tooltip
+                title={t('MAGE', { ns: 'mage' })}
+                align={{ offset: [0, -ACTION_PADDING] }}
+                placement="bottom"
+              >
+                <div css={actionWrapper} onClick={onMageClick}>
+                  <FontAwesomeIcon icon={faMagic} />
+                </div>
+              </Tooltip>,
+              <Tooltip
+                title={t('DELETE')}
+                align={{ offset: [0, -ACTION_PADDING] }}
+                placement="bottom"
+              >
+                <div css={actionWrapper} onClick={onDelete}>
+                  <FontAwesomeIcon icon={faTrashAlt} onClick={onDelete} />
+                </div>
+              </Tooltip>,
+            ]
+          : undefined
+      }
       onClick={stopPropagationCallback}
     >
       <ItemStatsList

@@ -12,6 +12,9 @@ export interface classes_classes {
   id: any;
   name: string;
   allNames: string[];
+  faceImageUrl: string;
+  maleSpriteImageUrl: string;
+  femaleSpriteImageUrl: string;
 }
 
 export interface classes {
