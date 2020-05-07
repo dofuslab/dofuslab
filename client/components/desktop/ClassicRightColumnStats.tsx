@@ -2,19 +2,19 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import StatTable from 'components/common/StatTable';
 import { Stat } from '__generated__/globalTypes';
 import { getStatsFromCustomSet } from 'common/utils';
 import { mq } from 'common/constants';
+import { CustomSet } from 'common/type-aliases';
 
-interface IProps {
-  customSet: customSet | null;
+interface Props {
+  customSet: CustomSet | null;
 }
 
 const margin = { marginBottom: 12, [mq[4]]: { marginBottom: 20 } };
 
-const ClassicRightColumnStats: React.FC<IProps> = ({ customSet }) => {
+const ClassicRightColumnStats: React.FC<Props> = ({ customSet }) => {
   const statsFromCustomSet = React.useMemo(
     () => getStatsFromCustomSet(customSet),
     [customSet],
@@ -46,6 +46,18 @@ const ClassicRightColumnStats: React.FC<IProps> = ({ customSet }) => {
       />
       <StatTable
         group={[
+          Stat.NEUTRAL_DAMAGE,
+          Stat.EARTH_DAMAGE,
+          Stat.FIRE_DAMAGE,
+          Stat.WATER_DAMAGE,
+          Stat.AIR_DAMAGE,
+        ]}
+        statsFromCustomSet={statsFromCustomSet}
+        customSet={customSet}
+        css={margin}
+      />
+      <StatTable
+        group={[
           Stat.CRITICAL_DAMAGE,
           Stat.PUSHBACK_DAMAGE,
           Stat.PCT_MELEE_DAMAGE,
@@ -58,18 +70,7 @@ const ClassicRightColumnStats: React.FC<IProps> = ({ customSet }) => {
         css={margin}
       />
       <StatTable
-        group={[
-          Stat.CRITICAL_RES,
-          Stat.PUSHBACK_RES,
-          Stat.PCT_MELEE_RES,
-          Stat.PCT_RANGED_RES,
-        ]}
-        statsFromCustomSet={statsFromCustomSet}
-        customSet={customSet}
-        css={margin}
-      />
-      <StatTable
-        group={[Stat.TRAP_DAMAGE, Stat.TRAP_POWER, Stat.REFLECT, Stat.PODS]}
+        group={[Stat.TRAP_DAMAGE, Stat.TRAP_POWER, Stat.REFLECT]}
         statsFromCustomSet={statsFromCustomSet}
         customSet={customSet}
         css={margin}
