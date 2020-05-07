@@ -157,7 +157,10 @@ const Layout = ({ children }: LayoutProps) => {
     <Select<string>
       value={i18n.language}
       onSelect={changeLocaleHandler}
-      css={{ '&.ant-select': { marginLeft: 12 } }}
+      css={{
+        '&.ant-select': { marginLeft: 12 },
+        '&.ant-select-arrow': { pointerEvents: 'none' },
+      }}
     >
       {LANGUAGES.map((lang) => (
         <Option key={lang} value={lang}>
