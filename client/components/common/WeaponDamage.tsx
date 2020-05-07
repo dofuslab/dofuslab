@@ -289,11 +289,11 @@ const WeaponDamage: React.FC<Props> = ({
       <Divider css={{ margin: '12px 0' }} />
       <div css={{ fontWeight: 500 }}>
         <div>
-          {t('AVERAGE_DAMAGE')}:{weightedAverageDamage.toFixed(0)}
+          {t('AVERAGE_DAMAGE')}: {weightedAverageDamage.toFixed(0)}
         </div>
         {!!weightedAverageHeal && (
           <div>
-            {t('AVERAGE_HEAL')}:{weightedAverageHeal.toFixed(0)}
+            {t('AVERAGE_HEAL')}: {weightedAverageHeal.toFixed(0)}
           </div>
         )}
       </div>

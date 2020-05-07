@@ -56,7 +56,7 @@ const DeleteCustomSetModal: React.FC<Props> = ({
       onOk={onDelete}
       onCancel={onCancel}
       confirmLoading={deleteLoading}
-      okType="danger"
+      okButtonProps={{ danger: true }}
       okText={t('DELETE')}
     >
       <div>{t('CONFIRM_DELETE_BUILD')}</div>

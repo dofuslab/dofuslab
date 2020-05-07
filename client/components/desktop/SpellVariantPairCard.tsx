@@ -96,6 +96,7 @@ const SpellVariantPairCard: React.FC<Props> = ({
       <SpellCardContent
         spell={spell}
         selectedSpellLevelIdx={selectedSpellLevelIdx}
+        customSet={customSet}
       />
     </Card>
   );
