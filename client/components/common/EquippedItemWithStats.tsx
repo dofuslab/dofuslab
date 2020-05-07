@@ -104,18 +104,16 @@ const EquippedItemWithStats: React.FC<Props> = ({
               css(
                 itemImageBox(theme, isEditable),
                 css(selected ? selectedBox(theme) : {}),
-                {
-                  [css({
-                    '&:hover': {
-                      [`.${wrapperClass}`]: {
-                        opacity: 0.3,
-                        '&:hover': {
-                          opacity: 1,
-                        },
+                css({
+                  '&:hover': {
+                    [`.${wrapperClass}`]: {
+                      opacity: 0.3,
+                      '&:hover': {
+                        opacity: 1,
                       },
                     },
-                  })]: isEditable,
-                },
+                  },
+                }),
               ),
               className,
             )}

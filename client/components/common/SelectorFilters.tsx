@@ -33,6 +33,7 @@ interface Props {
   setShowSets: React.Dispatch<React.SetStateAction<boolean>>;
   onReset: () => void;
   shouldShowBack?: boolean;
+  isMobile: boolean;
 }
 
 const SelectorFilters: React.FC<Props> = ({
@@ -43,6 +44,7 @@ const SelectorFilters: React.FC<Props> = ({
   setShowSets,
   onReset,
   shouldShowBack,
+  isMobile,
 }) => {
   const router = useRouter();
   const { customSetId } = router.query;
@@ -105,6 +107,9 @@ const SelectorFilters: React.FC<Props> = ({
   const { t } = useTranslation(['common', 'stat']);
 
   const theme = useTheme<Theme>();
+
+  let searchId = showSets ? 'sets-search' : SEARCH_BAR_ID;
+  if (isMobile) searchId = `${searchId}-mobile`;
 
   return (
     <div
@@ -192,7 +197,7 @@ const SelectorFilters: React.FC<Props> = ({
           }}
         >
           <Search
-            id={showSets ? 'sets-search' : SEARCH_BAR_ID}
+            id={searchId}
             placeholder={t('SEARCH')}
             value={search}
             onChange={onSearch}

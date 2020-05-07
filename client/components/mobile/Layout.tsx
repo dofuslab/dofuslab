@@ -138,6 +138,7 @@ const Layout = ({ children }: LayoutProps) => {
         query: currentUserQuery,
         data: { currentUser: null },
       });
+
       router.push('/');
     }
   }, [logout, router]);

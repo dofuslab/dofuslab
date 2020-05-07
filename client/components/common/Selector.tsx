@@ -115,6 +115,7 @@ const Selector: React.FC<Props> = ({
           setShowSets={setShowSetsState}
           onReset={onReset}
           shouldShowBack={isMobile || isClassic}
+          isMobile={isMobile}
         />
         {slots && !showSetsState && (
           <ItemTypeFilter

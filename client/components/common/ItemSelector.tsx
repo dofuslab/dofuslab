@@ -9,7 +9,7 @@ import ItemsQuery from 'graphql/queries/items.graphql';
 import { items, itemsVariables } from 'graphql/queries/__generated__/items';
 import { getResponsiveGridStyle } from 'common/mixins';
 import { SharedFilters } from 'common/types';
-import { findEmptyOrOnlySlotId, findNextEmptySlotId } from 'common/utils';
+import { findEmptyOrOnlySlotId, findNextEmptySlotIds } from 'common/utils';
 import { mq, getSelectorNumCols } from 'common/constants';
 import { ItemSlot, CustomSet, ItemSet } from 'common/type-aliases';
 import ConfirmReplaceItemPopover from '../desktop/ConfirmReplaceItemPopover';
@@ -134,13 +134,13 @@ const ItemSelector: React.FC<Props> = ({
             const itemSlotId =
               selectedItemSlot?.id ||
               findEmptyOrOnlySlotId(item.itemType, customSet);
-            const nextSlotId = selectedItemSlot
-              ? findNextEmptySlotId(
+            const remainingSlotIds = selectedItemSlot
+              ? findNextEmptySlotIds(
                   item.itemType,
                   selectedItemSlot.id,
                   customSet,
                 )
-              : null;
+              : [];
             const card = (
               <ItemCard
                 key={`item-card-${item.id}`}
@@ -151,7 +151,7 @@ const ItemSelector: React.FC<Props> = ({
                 selectItemSlot={selectItemSlot}
                 openSetModal={openSetModal}
                 shouldRedirect={isMobile || isClassic}
-                nextSlotId={nextSlotId}
+                remainingSlotIds={remainingSlotIds}
               />
             );
             return itemSlotId || !customSet ? (

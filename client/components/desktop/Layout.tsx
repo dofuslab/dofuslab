@@ -130,6 +130,7 @@ const Layout = ({ children }: LayoutProps) => {
         query: currentUserQuery,
         data: { currentUser: null },
       });
+
       router.push('/');
     }
   }, [logout, router]);
@@ -365,12 +366,11 @@ const Layout = ({ children }: LayoutProps) => {
                       </Menu>
                     }
                   >
-                    {/* <a onClick={openPasswordModal}>
-                      {data.currentUser.username}
-                    </a> */}
-                    <Button css={{ marginLeft: 12 }}>
-                      {t('MY_ACCOUNT')} <DownOutlined />
-                    </Button>
+                    <span>
+                      <Button css={{ marginLeft: 12 }}>
+                        {t('MY_ACCOUNT')} <DownOutlined />
+                      </Button>
+                    </span>
                   </Dropdown>
                 </>
               )}

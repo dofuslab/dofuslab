@@ -279,7 +279,7 @@ export const getStatsFromCustomSet = (customSet?: CustomSet | null) => {
   return mergeStatObjs(statsFromSetBonuses, statsFromCustomSet);
 };
 
-export const findNextEmptySlotId = (
+export const findNextEmptySlotIds = (
   itemType: ItemTypeWithSlots,
   currentSlotId: string,
   customSet?: CustomSet | null,
@@ -288,17 +288,21 @@ export const findNextEmptySlotId = (
     (i, j) => i.order - j.order,
   );
   if (!customSet) {
-    return eligibleItemSlots.find((slot) => slot.id !== currentSlotId) || null;
+    return eligibleItemSlots
+      .filter((slot) => slot.id !== currentSlotId)
+      .map((slot) => slot.id);
   }
   const occupiedSlotsSet = customSet.equippedItems.reduce((set, curr) => {
     set.add(curr.slot.id);
     return set;
   }, new Set<string>());
-  const foundSlot = eligibleItemSlots.find(
-    (slot) => !occupiedSlotsSet.has(slot.id) && slot.id !== currentSlotId,
-  );
+  const foundSlotIds = eligibleItemSlots
+    .filter(
+      (slot) => !occupiedSlotsSet.has(slot.id) && slot.id !== currentSlotId,
+    )
+    .map((slot) => slot.id);
 
-  return foundSlot?.id || null;
+  return foundSlotIds;
 };
 
 export const findEmptySlotId = (
@@ -1273,6 +1277,14 @@ export const getInitialRangedState = (
   return initialShowRanged;
 };
 
+export const stripQueryString = (asPath: string) => {
+  const index = asPath.indexOf('?');
+  if (index >= 0) {
+    return asPath.substring(0, index);
+  }
+  return asPath;
+};
+
 export const onSelectClass = (
   classes: Array<Class>,
   selectedClass: string,
@@ -1289,10 +1301,11 @@ export const onSelectClass = (
     ...(idToName && { class: idToName?.[selectedClass] }),
   };
   const { customSetId, ...restNewQuery } = newQuery;
+
   router.replace(
     { pathname: router.pathname, query: newQuery },
     {
-      pathname: router.asPath.substring(0, router.asPath.indexOf('?')),
+      pathname: stripQueryString(router.asPath),
       query: restNewQuery,
     },
   );
@@ -1348,12 +1361,4 @@ export const useClassic = () => {
   );
 
   return [isClassic, onIsClassicChange] as const;
-};
-
-export const stripQueryString = (asPath: string) => {
-  const index = asPath.indexOf('?');
-  if (index >= 0) {
-    return asPath.substring(0, index);
-  }
-  return asPath;
 };

@@ -20,7 +20,7 @@ interface Props {
   equipped: boolean;
   openSetModal: (set: ItemSet) => void;
   shouldRedirect?: boolean;
-  nextSlotId: string | null;
+  remainingSlotIds: Array<string>;
 }
 
 const ItemCard: React.FC<Props> = ({
@@ -31,16 +31,18 @@ const ItemCard: React.FC<Props> = ({
   equipped,
   openSetModal,
   shouldRedirect,
-  nextSlotId,
+  remainingSlotIds,
 }) => {
   const mutate = useEquipItemMutation(item);
   const { t } = useTranslation('common');
   const client = useApolloClient();
 
   const router = useRouter();
-  const { query } = router;
 
   const onClick = React.useCallback(() => {
+    const { query } = router;
+    const nextSlotId = remainingSlotIds[0];
+    const numRemainingSlots = remainingSlotIds.length;
     if (itemSlotId) {
       const slots = client.readQuery<itemSlots>({ query: ItemSlotsQuery });
       let nextSlot = null;
@@ -62,16 +64,26 @@ const ItemCard: React.FC<Props> = ({
                 customSetId,
               },
             },
-            `/equip/${nextSlot.id}/${customSetId}/`,
+            `/equip/${nextSlot.id}/${customSetId}`,
           );
           notification.success({
             message: t('SUCCESS'),
-            description: t('ITEM_EQUIPPED', { itemName: item.name }),
+            description: t('ITEM_EQUIPPED', {
+              itemName: item.name,
+              count: numRemainingSlots,
+              slotName: nextSlot.name,
+            }),
           });
         } else {
           router.push(
-            { pathname: '/index', query: { customSetId, class: query.class } },
-            customSetId ? `/build/${customSetId}/` : '/',
+            {
+              pathname: '/',
+              query: { customSetId, class: query.class || undefined },
+            },
+            {
+              pathname: customSetId ? `/build/${customSetId}` : '/',
+              query: query.class ? { class: query.class } : undefined,
+            },
           );
         }
       }
@@ -85,7 +97,7 @@ const ItemCard: React.FC<Props> = ({
     selectItemSlot,
     shouldRedirect,
     client,
-    nextSlotId,
+    remainingSlotIds,
     router,
   ]);
 
