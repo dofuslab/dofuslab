@@ -27,6 +27,7 @@ import { BuildError, Theme } from 'common/types';
 
 import { BrokenImagePlaceholder } from 'common/wrappers';
 import { EquippedItem, CustomSet, ItemSet } from 'common/type-aliases';
+import { TooltipPlacement } from 'antd/lib/tooltip';
 import EquippedItemCard from '../desktop/EquippedItemCard';
 
 const wrapperStyles = {
@@ -56,6 +57,7 @@ interface Props {
   openSetModal: (set: ItemSet) => void;
   errors?: Array<BuildError>;
   className?: string;
+  popoverPlacement?: TooltipPlacement;
 }
 
 const EquippedItemWithStats: React.FC<Props> = ({
@@ -67,6 +69,7 @@ const EquippedItemWithStats: React.FC<Props> = ({
   openSetModal,
   errors,
   className,
+  popoverPlacement,
 }) => {
   const deleteItem = useDeleteItemMutation(equippedItem.slot.id, customSet);
   const stopPropagationCallback = React.useCallback(
@@ -172,7 +175,7 @@ const EquippedItemWithStats: React.FC<Props> = ({
         <ClassNames>
           {({ css }) => (
             <Popover
-              placement="bottomLeft"
+              placement={popoverPlacement || 'bottomLeft'}
               title={
                 <div
                   css={{

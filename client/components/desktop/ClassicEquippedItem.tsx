@@ -16,6 +16,7 @@ import {
   CustomSet,
 } from 'common/type-aliases';
 import { EditableContext } from 'common/utils';
+import { TooltipPlacement } from 'antd/lib/tooltip';
 import EquippedItemWithStats from '../common/EquippedItemWithStats';
 
 interface Props {
@@ -26,6 +27,7 @@ interface Props {
   openSetModal: (set: ItemSet) => void;
   className?: string;
   errors?: Array<BuildError>;
+  popoverPlacement?: TooltipPlacement;
 }
 
 const ClassicEquippedItem: React.FC<Props> = ({
@@ -36,6 +38,7 @@ const ClassicEquippedItem: React.FC<Props> = ({
   openSetModal,
   errors,
   className,
+  popoverPlacement,
 }) => {
   const theme = useTheme<Theme>();
   const router = useRouter();
@@ -57,6 +60,7 @@ const ClassicEquippedItem: React.FC<Props> = ({
                 openMageModal={openMageModal}
                 openSetModal={openSetModal}
                 errors={errors}
+                popoverPlacement={popoverPlacement}
               />
             ) : (
               <div

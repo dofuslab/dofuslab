@@ -15,6 +15,7 @@ import { CustomSet, EquippedItem } from 'common/type-aliases';
 import { useRouter } from 'next/router';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
+import { TooltipPlacement } from 'antd/lib/tooltip';
 import MageModal from '../common/MageModal';
 import SetModal from '../common/SetModal';
 import BonusStats from './BonusStats';
@@ -27,6 +28,33 @@ interface Props {
 
 const NO_CLASS_IMG =
   'https://dofus-lab.s3.us-east-2.amazonaws.com/class/sprite/No_Class.png';
+
+// "Amulet Character Character Character Character Hat"
+// "Ring Character Character Character Character Cloak"
+// "Ring2 Character Character Character Character Belt"
+// "Weapon Character Character Character Character Boots"
+// "Shield Character Character Character Character Pet"
+// "Dofus Dofus2 Dofus3 Dofus4 Dofus5 Dofus6"
+
+const getPopoverPlacement = (slotEnName: string): TooltipPlacement => {
+  switch (slotEnName) {
+    case 'Amulet':
+    case 'Ring':
+    case 'Weapon':
+    case 'Shield':
+      return 'right';
+    case 'Dofus':
+      return 'top';
+    case 'Hat':
+    case 'Cloak':
+    case 'Belt':
+    case 'Boots':
+    case 'Pet':
+      return 'left';
+    default:
+      return 'bottomLeft';
+  }
+};
 
 const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
   const { data } = useQuery<ItemSlotsQueryType>(ItemSlotsQuery);
@@ -105,6 +133,7 @@ const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
         const count = slotCounter[slot.enName];
         slotCounter[slot.enName] = count ? count + 1 : 1;
 
+        console.log(getPopoverPlacement(slot.enName));
         return (
           <div
             key={`slot-${slot.id}`}
@@ -123,6 +152,7 @@ const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
               openMageModal={openMageModal}
               openSetModal={openSetModal}
               errors={equippedItemErrors}
+              popoverPlacement={getPopoverPlacement(slot.enName)}
             />
           </div>
         );
