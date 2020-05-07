@@ -1,3 +1,4 @@
+/* eslint-disable */
 const fs = require('fs');
 const chalk = require('chalk');
 const typescript = require('typescript');
@@ -41,15 +42,18 @@ module.exports = {
     },
   },
   transform: function customTransform(file, enc, done) {
-    'use strict';
-    const parser = this.parser;
+    const { parser } = this;
     const { base, ext } = path.parse(file.path);
 
     if (['.ts', '.tsx'].includes(ext) && !base.includes('.d.ts')) {
       const content = fs.readFileSync(file.path, enc);
       let ns;
       const match = content.match(/useTranslation\(.+\)/);
-      if (match) ns = match[0].split(/(\'|\")/)[2];
+      if (match) {
+        const [firstMatch] = match;
+        // eslint-disable-next-line
+        ns = firstMatch.split(/('|")/)[2];
+      }
       let count = 0;
 
       const { outputText } = typescript.transpileModule(content, {
@@ -59,34 +63,30 @@ module.exports = {
         fileName: path.basename(file.path),
       });
 
-      parser.parseFuncFromString(outputText, { list: ['t'] }, function(
-        key,
-        options,
-      ) {
+      parser.parseFuncFromString(outputText, { list: ['t'] }, (key, options) => {
         parser.set(key, {
-          ns: ns ? ns : DEFAULT_NS,
+          ns: ns || DEFAULT_NS,
           nsSeparator: false,
           keySeparator: '.',
           ...options,
         });
-        ++count;
+        count += 1;
       });
       parser.parseTransFromString(
         outputText,
         { component: 'Trans', i18nKey: 'i18nKey' },
-        function(key, options) {
-          parser.set(
-            key.split(':')[1],
-            Object.assign({}, options, {
-              ns: key.split(':')[0],
-              nsSeparator: false,
-              keySeparator: '.',
-            }),
-          );
-          ++count;
+        (key, options) => {
+          parser.set(key.split(':')[1], {
+            ...options,
+            ns: key.split(':')[0],
+            nsSeparator: false,
+            keySeparator: '.',
+          });
+          count += 1;
         },
       );
       if (count > 0) {
+        // eslint-disable-next-line
         console.log(
           `i18next-scanner: count=${chalk.cyan(count)}, file=${chalk.yellow(
             JSON.stringify(file.relative),

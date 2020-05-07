@@ -5,7 +5,6 @@ import { jsx, ClassNames } from '@emotion/core';
 import { Modal, Select, Divider, Button } from 'antd';
 import { LabeledValue } from 'antd/lib/select';
 
-import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
 import {
   getStatsMaps,
   checkAuthentication,
@@ -20,7 +19,6 @@ import {
 } from '__generated__/globalTypes';
 import { MageAction } from 'common/types';
 import { useTranslation } from 'i18n';
-import MageInputNumber from './MageInputNumber';
 import { blue6 } from 'common/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faRedo } from '@fortawesome/free-solid-svg-icons';
@@ -32,12 +30,14 @@ import {
 import MageEquippedItemMutation from 'graphql/mutations/mageEquippedItem.graphql';
 import { mq } from 'common/constants';
 import { WeaponEffectsList, TruncatableText } from 'common/wrappers';
+import { EquippedItem } from 'common/type-aliases';
+import MageInputNumber from './MageInputNumber';
 
 const { Option } = Select;
 
-interface IProps {
+interface Props {
   visible: boolean;
-  equippedItem: customSet_customSetById_equippedItems;
+  equippedItem: EquippedItem;
   closeMageModal: (e: React.MouseEvent<HTMLElement>) => void;
   customSetId: string;
 }
@@ -69,7 +69,7 @@ const deleteStatWrapper = {
   opacity: 0.3,
   transition: 'opacity 0.3s ease-in-out',
   cursor: 'pointer',
-  ['&:hover']: {
+  '&:hover': {
     opacity: 1,
   },
 };
@@ -88,13 +88,14 @@ const reducer = (state: MageState, action: MageAction) => {
         ...state,
         exos: [...state.exos, { stat: action.stat, value: 1 }],
       };
-    case 'REMOVE':
+    case 'REMOVE': {
       const exosCopy = [...state.exos];
       idx = exosCopy.findIndex(({ stat }) => stat === action.stat);
       if (idx === -1) return state;
       exosCopy.splice(idx, 1);
       return { ...state, exos: exosCopy };
-    case 'EDIT':
+    }
+    case 'EDIT': {
       const stateCopy = { ...state };
       if (action.isExo) {
         idx = stateCopy.exos.findIndex(({ stat }) => stat === action.stat);
@@ -106,7 +107,8 @@ const reducer = (state: MageState, action: MageAction) => {
         stateCopy.originalStats[idx].value = action.value;
       }
       return stateCopy;
-    case 'RESET':
+    }
+    case 'RESET': {
       return {
         originalStats: state.originalStats.map(({ stat }) => ({
           stat,
@@ -114,6 +116,7 @@ const reducer = (state: MageState, action: MageAction) => {
         })),
         exos: [],
       };
+    }
     default:
       throw new Error('Invalid action type');
   }
@@ -132,7 +135,7 @@ const calcStatsDiff = (
   ...statsState.exos,
 ];
 
-const MageModal: React.FC<IProps> = ({
+const MageModal: React.FC<Props> = ({
   visible,
   equippedItem,
   closeMageModal,
@@ -147,8 +150,10 @@ const MageModal: React.FC<IProps> = ({
     originalStats: equippedItem.item.stats
       .filter(({ stat, maxValue }) => !!stat && !!maxValue)
       .map(({ stat }) => ({
+        /* eslint-disable @typescript-eslint/no-non-null-assertion */
         stat: stat!,
         value: statsMap[stat!].value,
+        /* eslint-enable @typescript-eslint/no-non-null-assertion */
       })),
     exos: equippedItem.exos
       .filter(({ stat }) => !!exoStatsMap[stat])
@@ -272,7 +277,7 @@ const MageModal: React.FC<IProps> = ({
                       dropdownClassName={css({ zIndex: 1062 })}
                       css={{ width: '100%', fontSize: '0.75rem' }}
                     >
-                      {Object.values(WeaponElementMage).map(v => (
+                      {Object.values(WeaponElementMage).map((v) => (
                         <Option key={v} value={v}>
                           <div css={{ display: 'flex', alignItems: 'center' }}>
                             <img
@@ -280,6 +285,7 @@ const MageModal: React.FC<IProps> = ({
                                 elementMageToWeaponEffect(v),
                               )}
                               css={{ width: 16, marginRight: 8 }}
+                              alt={v}
                             />{' '}
                             {t(`WEAPON_ELEMENT_MAGE.${v}`, {
                               ns: 'weapon_spell_effect',
@@ -308,7 +314,7 @@ const MageModal: React.FC<IProps> = ({
               gridColumnGap: 12,
             }}
           >
-            {statsState.originalStats.map(statLine => (
+            {statsState.originalStats.map((statLine) => (
               <div key={`original-${statLine.stat}`} css={statLineCss}>
                 <div
                   css={deleteStatWrapper}
@@ -338,30 +344,28 @@ const MageModal: React.FC<IProps> = ({
             <Divider css={{ gridColumn: '1 / -1' }} />
             {statsState.exos
               .filter(({ stat }) => tempExoStatsMap[stat] !== undefined)
-              .map(statLine => {
-                return (
+              .map((statLine) => (
+                <div
+                  key={`exo-${statLine.stat}`}
+                  css={{ ...statLineCss, color: blue6 }}
+                >
                   <div
-                    key={`exo-${statLine.stat}`}
-                    css={{ ...statLineCss, color: blue6 }}
+                    css={deleteStatWrapper}
+                    onClick={() => {
+                      dispatch({ type: 'REMOVE', stat: statLine.stat });
+                    }}
                   >
-                    <div
-                      css={deleteStatWrapper}
-                      onClick={() => {
-                        dispatch({ type: 'REMOVE', stat: statLine.stat });
-                      }}
-                    >
-                      <FontAwesomeIcon icon={faTimes} />
-                    </div>
-                    <MageInputNumber
-                      value={statLine.value}
-                      stat={statLine.stat}
-                      dispatch={dispatch}
-                      isExo={true}
-                    />
-                    {t(statLine.stat)}
+                    <FontAwesomeIcon icon={faTimes} />
                   </div>
-                );
-              })}
+                  <MageInputNumber
+                    value={statLine.value}
+                    stat={statLine.stat}
+                    dispatch={dispatch}
+                    isExo
+                  />
+                  {t(statLine.stat)}
+                </div>
+              ))}
             <div
               css={{
                 display: 'flex',
@@ -392,13 +396,13 @@ const MageModal: React.FC<IProps> = ({
                       { ignorePunctuation: true },
                     ),
                   )
-                  .map(stat => (
+                  .map((stat) => (
                     <Option
                       key={stat}
                       value={stat}
                       disabled={statsSet.has(stat)}
                       className={css({
-                        ['.ant-select-item-option-content']: {
+                        '.ant-select-item-option-content': {
                           fontSize: '0.75rem',
                         },
                       })}

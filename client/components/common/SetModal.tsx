@@ -4,48 +4,46 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { Modal, Divider, Skeleton } from 'antd';
 import { useQuery } from '@apollo/react-hooks';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { useTheme } from 'emotion-theming';
 import groupBy from 'lodash/groupBy';
 
-import { TTheme } from 'common/themes';
-import {
-  set,
-  setVariables,
-  set_setById_bonuses,
-} from 'graphql/queries/__generated__/set';
+import { Theme } from 'common/types';
+import { set, setVariables } from 'graphql/queries/__generated__/set';
 import setQuery from 'graphql/queries/set.graphql';
 import { useTranslation } from 'i18n';
-import BasicItemWithStats from '../desktop/BasicItemWithStats';
 import { SetBonuses } from 'common/wrappers';
 import { itemBox } from 'common/mixins';
 import { mq } from 'common/constants';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
-import { useEquipItemsMutation } from 'common/utils';
+import { useEquipItemsMutation, EditableContext } from 'common/utils';
+import { CustomSet, SetBonus } from 'common/type-aliases';
+import BasicItemWithStats from '../desktop/BasicItemWithStats';
 
-interface IProps {
+interface Props {
   setId: string;
   setName: string;
   visible: boolean;
   onCancel: () => void;
-  customSet?: customSet | null;
-  isMobile?: boolean;
+  customSet?: CustomSet | null;
+  shouldRedirect?: boolean;
 }
 
-const SetModal: React.FC<IProps> = ({
+const SetModal: React.FC<Props> = ({
   setId,
   setName,
   visible,
   onCancel,
   customSet,
-  isMobile,
+  shouldRedirect,
 }) => {
   const { data, loading, error } = useQuery<set, setVariables>(setQuery, {
     variables: { id: setId },
   });
 
+  const router = useRouter();
+  const { query } = router;
   const { t } = useTranslation('common');
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
   const [itemIds, setItemIds] = React.useState<Array<string>>([]);
 
   const [mutate, { loading: mutationLoading }] = useEquipItemsMutation(
@@ -53,22 +51,30 @@ const SetModal: React.FC<IProps> = ({
     customSet,
   );
 
+  const isEditable = React.useContext(EditableContext);
+
   const onOk = React.useCallback(async () => {
+    if (!isEditable) {
+      return;
+    }
     await mutate();
     onCancel();
-    if (isMobile && customSet) {
-      Router.push(
-        { pathname: '/index', query: { customSetId: customSet.id } },
-        customSet ? `/build/${customSet.id}` : '/',
+    if (shouldRedirect && customSet) {
+      router.push(
+        {
+          pathname: '/',
+          query: { customSetId: customSet.id, class: query.class },
+        },
+        customSet ? `/build/${customSet.id}/` : '/',
       );
     }
-  }, [mutate, onCancel, customSet, isMobile]);
+  }, [mutate, onCancel, customSet, shouldRedirect, router, isEditable]);
 
   React.useEffect(() => {
-    if (data && !loading) {
-      setItemIds(data.setById.items.map(item => item.id));
+    if (data && !loading && isEditable) {
+      setItemIds(data.setById.items.map((item) => item.id));
     }
-  }, [data, loading]);
+  }, [data, loading, isEditable]);
 
   let bodyContent = null;
 
@@ -84,7 +90,7 @@ const SetModal: React.FC<IProps> = ({
             display: 'flex',
           }}
         >
-          {data.setById.items.map(item => (
+          {data.setById.items.map((item) => (
             <div
               key={`item-${item.id}`}
               css={{
@@ -98,9 +104,10 @@ const SetModal: React.FC<IProps> = ({
                 },
               }}
               onClick={() => {
-                setItemIds(prev => {
+                if (!isEditable) return;
+                setItemIds((prev) => {
                   if (prev.includes(item.id)) {
-                    return prev.filter(itemId => itemId !== item.id);
+                    return prev.filter((itemId) => itemId !== item.id);
                   }
                   return [...prev, item.id];
                 });
@@ -132,10 +139,7 @@ const SetModal: React.FC<IProps> = ({
           }}
         >
           {Object.entries(
-            groupBy(
-              data.setById.bonuses,
-              (bonus: set_setById_bonuses) => bonus.numItems,
-            ),
+            groupBy(data.setById.bonuses, (bonus: SetBonus) => bonus.numItems),
           )
             .sort(([a, b]) => Number(a) - Number(b))
             .map(([numItems, bonuses]) => (
@@ -165,7 +169,7 @@ const SetModal: React.FC<IProps> = ({
       zIndex={1031}
       confirmLoading={mutationLoading}
       onOk={onOk}
-      okButtonProps={{ disabled: !itemIds.length }}
+      okButtonProps={{ disabled: !itemIds.length || !isEditable }}
       okText={
         <span css={{ fontSize: '0.75rem' }}>
           {t('EQUIP_ITEMS', { count: itemIds.length })}

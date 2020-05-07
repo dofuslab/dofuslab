@@ -5,37 +5,35 @@ import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
 import InfiniteScroll from 'react-infinite-scroller';
 
-import ItemCard from './ItemCard';
 import ItemsQuery from 'graphql/queries/items.graphql';
 import { items, itemsVariables } from 'graphql/queries/__generated__/items';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { getResponsiveGridStyle } from 'common/mixins';
-import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { SharedFilters } from 'common/types';
-import { findEmptyOrOnlySlotId, findNextEmptySlotId } from 'common/utils';
+import { findEmptyOrOnlySlotId, findNextEmptySlotIds } from 'common/utils';
+import { mq, getSelectorNumCols } from 'common/constants';
+import { ItemSlot, CustomSet, ItemSet } from 'common/type-aliases';
 import ConfirmReplaceItemPopover from '../desktop/ConfirmReplaceItemPopover';
-import { item_set } from 'graphql/fragments/__generated__/item';
 import SetModal from './SetModal';
-import { mq } from 'common/constants';
+import ItemCard from './ItemCard';
+
 import SkeletonCardsLoader from './SkeletonCardsLoader';
 
 const PAGE_SIZE = 24;
 
 const THRESHOLD = 600;
 
-interface IProps {
-  selectedItemSlot: itemSlots_itemSlots | null;
-  customSet?: customSet | null;
-  selectItemSlot?: React.Dispatch<
-    React.SetStateAction<itemSlots_itemSlots | null>
-  >;
+interface Props {
+  selectedItemSlot: ItemSlot | null;
+  customSet?: CustomSet | null;
+  selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
   customSetItemIds: Set<string>;
   filters: SharedFilters;
   itemTypeIds: Set<string>;
-  isMobile?: boolean;
+  isMobile: boolean;
+  isClassic: boolean;
 }
 
-const ItemSelector: React.FC<IProps> = ({
+const ItemSelector: React.FC<Props> = ({
   selectedItemSlot,
   customSet,
   selectItemSlot,
@@ -43,13 +41,14 @@ const ItemSelector: React.FC<IProps> = ({
   filters,
   itemTypeIds,
   isMobile,
+  isClassic,
 }) => {
   const itemTypeIdsArr = Array.from(itemTypeIds);
   const queryFilters = {
     ...filters,
     itemTypeIds:
       selectedItemSlot && itemTypeIdsArr.length === 0
-        ? selectedItemSlot.itemTypes.map(type => type.id)
+        ? selectedItemSlot.itemTypes.map((type) => type.id)
         : itemTypeIdsArr,
   };
   const { data, loading, fetchMore } = useQuery<items, itemsVariables>(
@@ -61,16 +60,17 @@ const ItemSelector: React.FC<IProps> = ({
 
   const onLoadMore = React.useCallback(async () => {
     if (!data || !data.items.pageInfo.hasNextPage) {
-      return () => {};
+      return () => {
+        // no-op
+      };
     }
 
     const fetchMoreResult = await fetchMore({
       variables: { after: data.items.pageInfo.endCursor },
-      updateQuery: (prevData, { fetchMoreResult }) => {
+      updateQuery: (prevData, { fetchMoreResult: result }) => {
         if (
-          !fetchMoreResult ||
-          fetchMoreResult.items.pageInfo.endCursor ===
-            prevData.items.pageInfo.endCursor
+          !result ||
+          result.items.pageInfo.endCursor === prevData.items.pageInfo.endCursor
         ) {
           return prevData;
         }
@@ -78,8 +78,8 @@ const ItemSelector: React.FC<IProps> = ({
           ...prevData,
           items: {
             ...prevData.items,
-            edges: [...prevData.items.edges, ...fetchMoreResult.items.edges],
-            pageInfo: fetchMoreResult.items.pageInfo,
+            edges: [...prevData.items.edges, ...result.items.edges],
+            pageInfo: result.items.pageInfo,
           },
         };
       },
@@ -88,10 +88,10 @@ const ItemSelector: React.FC<IProps> = ({
   }, [data, loading]);
 
   const [setModalVisible, setSetModalVisible] = React.useState(false);
-  const [selectedSet, setSelectedSet] = React.useState<item_set | null>(null);
+  const [selectedSet, setSelectedSet] = React.useState<ItemSet | null>(null);
 
   const openSetModal = React.useCallback(
-    (set: item_set) => {
+    (set: ItemSet) => {
       setSelectedSet(set);
       setSetModalVisible(true);
     },
@@ -106,11 +106,15 @@ const ItemSelector: React.FC<IProps> = ({
     <InfiniteScroll
       hasMore={data?.items.pageInfo.hasNextPage}
       loader={
-        <SkeletonCardsLoader key="loader" length={data?.items.edges.length} />
+        <SkeletonCardsLoader
+          key="loader"
+          length={data?.items.edges.length}
+          isClassic
+        />
       }
       loadMore={onLoadMore}
       css={{
-        ...getResponsiveGridStyle([2, 2, 2, 3, 4, 5, 6]),
+        ...getResponsiveGridStyle(getSelectorNumCols(isClassic)),
         marginTop: 12,
         marginBottom: 20,
         position: 'relative',
@@ -118,25 +122,25 @@ const ItemSelector: React.FC<IProps> = ({
         minWidth: 0,
         [mq[1]]: { gridGap: 12 },
       }}
-      useWindow={false}
+      useWindow={isMobile || isClassic}
       threshold={THRESHOLD}
     >
       {loading ? (
-        <SkeletonCardsLoader key="initial-loader" multiplier={2} />
+        <SkeletonCardsLoader key="initial-loader" multiplier={2} isClassic />
       ) : (
         (data?.items.edges ?? [])
-          .map(edge => edge.node)
-          .map(item => {
+          .map((edge) => edge.node)
+          .map((item) => {
             const itemSlotId =
               selectedItemSlot?.id ||
               findEmptyOrOnlySlotId(item.itemType, customSet);
-            const nextSlotId = selectedItemSlot
-              ? findNextEmptySlotId(
+            const remainingSlotIds = selectedItemSlot
+              ? findNextEmptySlotIds(
                   item.itemType,
                   selectedItemSlot.id,
                   customSet,
                 )
-              : null;
+              : [];
             const card = (
               <ItemCard
                 key={`item-card-${item.id}`}
@@ -146,8 +150,8 @@ const ItemSelector: React.FC<IProps> = ({
                 customSetId={customSet?.id ?? null}
                 selectItemSlot={selectItemSlot}
                 openSetModal={openSetModal}
-                isMobile={isMobile}
-                nextSlotId={nextSlotId}
+                shouldRedirect={isMobile || isClassic}
+                remainingSlotIds={remainingSlotIds}
               />
             );
             return itemSlotId || !customSet ? (
@@ -171,7 +175,7 @@ const ItemSelector: React.FC<IProps> = ({
           visible={setModalVisible}
           onCancel={closeSetModal}
           customSet={customSet}
-          isMobile={isMobile}
+          shouldRedirect={isMobile || isClassic}
         />
       )}
     </InfiniteScroll>

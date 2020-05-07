@@ -1,35 +1,33 @@
 /** @jsx jsx */
 
 import React from 'react';
-import { jsx } from '@emotion/core';
+import { jsx, ClassNames } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
 
 import { itemBox, itemImageBox, selected as selectedBox } from 'common/mixins';
-import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
-import { itemSlots_itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import {
-  customSet,
-  customSet_equippedItems,
-} from 'graphql/fragments/__generated__/customSet';
-import EquippedItemWithStats from '../common/EquippedItemWithStats';
-import { item_set } from 'graphql/fragments/__generated__/item';
-import { IError } from 'common/types';
-import { TTheme } from 'common/themes';
 
-interface IProps {
-  slot: itemSlots_itemSlots;
-  equippedItem?: customSet_customSetById_equippedItems;
-  selectItemSlot: React.Dispatch<
-    React.SetStateAction<itemSlots_itemSlots | null>
-  >;
-  customSet?: customSet | null;
+import { Theme, BuildError } from 'common/types';
+import {
+  ItemSlot,
+  EquippedItem as EquippedItemType,
+  ItemSet,
+  CustomSet,
+} from 'common/type-aliases';
+import EquippedItemWithStats from '../common/EquippedItemWithStats';
+
+interface Props {
+  slot: ItemSlot;
+  equippedItem?: EquippedItemType;
+  selectItemSlot: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
+  customSet?: CustomSet | null;
   selected: boolean;
-  openMageModal: (equippedItem: customSet_equippedItems) => void;
-  openSetModal: (set: item_set) => void;
-  errors?: Array<IError>;
+  openMageModal: (equippedItem: EquippedItemType) => void;
+  openSetModal: (set: ItemSet) => void;
+  className?: string;
+  errors?: Array<BuildError>;
 }
 
-const EquippedItem: React.FC<IProps> = ({
+const EquippedItem: React.FC<Props> = ({
   slot,
   equippedItem,
   selectItemSlot,
@@ -38,7 +36,7 @@ const EquippedItem: React.FC<IProps> = ({
   openMageModal,
   openSetModal,
   errors,
-  ...restProps
+  className,
 }) => {
   const onClick = React.useCallback(() => {
     if (selected) {
@@ -48,43 +46,48 @@ const EquippedItem: React.FC<IProps> = ({
     }
   }, [selectItemSlot, slot, selected, equippedItem]);
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   return (
-    <>
-      <div css={itemBox} onClick={onClick} {...restProps}>
-        {equippedItem ? (
-          <EquippedItemWithStats
-            equippedItem={equippedItem}
-            selected={selected}
-            customSet={customSet!}
-            itemSlotId={slot.id}
-            openMageModal={openMageModal}
-            openSetModal={openSetModal}
-            errors={errors}
-          />
-        ) : (
-          <div
-            css={{
-              ...itemImageBox(theme),
-              ...(selected ? selectedBox(theme) : {}),
-              '&:hover > img': {
-                opacity: 0.65,
-              },
-            }}
-          >
-            <img
-              src={slot.imageUrl}
-              css={{
-                maxWidth: '100%',
-                opacity: selected ? 0.75 : 0.4,
-                transition: 'all 0.3s',
-              }}
+    <ClassNames>
+      {({ css, cx }) => (
+        <div className={cx(css(itemBox(theme)), className)} onClick={onClick}>
+          {equippedItem && customSet ? (
+            <EquippedItemWithStats
+              equippedItem={equippedItem}
+              selected={selected}
+              customSet={customSet}
+              itemSlotId={slot.id}
+              openMageModal={openMageModal}
+              openSetModal={openSetModal}
+              errors={errors}
             />
-          </div>
-        )}
-      </div>
-    </>
+          ) : (
+            <div
+              className={cx(
+                css(itemImageBox(theme)),
+                selected ? css(selectedBox(theme)) : undefined,
+                css({
+                  '&:hover > img': {
+                    opacity: 0.65,
+                  },
+                }),
+              )}
+            >
+              <img
+                src={slot.imageUrl}
+                css={{
+                  maxWidth: '100%',
+                  opacity: selected ? 0.75 : 0.4,
+                  transition: 'all 0.3s',
+                }}
+                alt={slot.name}
+              />
+            </div>
+          )}
+        </div>
+      )}
+    </ClassNames>
   );
 };
 

@@ -8,35 +8,14 @@ import groupBy from 'lodash/groupBy';
 import { TFunction } from 'next-i18next';
 import CustomSetFragment from 'graphql/fragments/customSet.graphql';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import Lockr from 'lockr';
 
-import {
-  customSet_stats,
-  customSet,
-  customSet_equippedItems,
-} from 'graphql/fragments/__generated__/customSet';
 import {
   Stat,
   WeaponEffectType,
   SpellEffectType,
   WeaponElementMage,
 } from '__generated__/globalTypes';
-import {
-  StatsFromCustomSet,
-  SetCounter,
-  OriginalStatLine,
-  ExoStatLine,
-  ICalcDamageInput,
-  TSimpleEffect,
-  TCondition,
-  TConditionObj,
-  StatCalculator,
-  BaseStatKey,
-} from './types';
-import {
-  item_itemType,
-  item,
-  item_set,
-} from 'graphql/fragments/__generated__/item';
 import {
   updateCustomSetItem,
   updateCustomSetItemVariables,
@@ -55,16 +34,42 @@ import {
   equipSet,
   equipSetVariables,
 } from 'graphql/mutations/__generated__/equipSet';
-import {
-  itemSlots,
-  itemSlots_itemSlots,
-} from 'graphql/queries/__generated__/itemSlots';
+import { itemSlots as ItemSlotsQueryType } from 'graphql/queries/__generated__/itemSlots';
 import {
   equipItems,
   equipItemsVariables,
 } from 'graphql/mutations/__generated__/equipItems';
 import EquipItemsMutation from 'graphql/mutations/equipItems.graphql';
-import { META_DESCRIPTION } from './constants';
+import { sessionSettings } from 'graphql/queries/__generated__/sessionSettings';
+import sessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
+import {
+  changeClassic,
+  changeClassicVariables,
+} from 'graphql/mutations/__generated__/changeClassic';
+import changeClassicMutation from 'graphql/mutations/changeClassic.graphql';
+import {
+  StatsFromCustomSet,
+  SetCounter,
+  OriginalStatLine,
+  ExoStatLine,
+  CalcDamageInput,
+  TSimpleEffect,
+  TCondition,
+  TConditionObj,
+  StatCalculator,
+  BaseStatKey,
+} from './types';
+import { META_DESCRIPTION, IS_CLASSIC_STORAGE_KEY } from './constants';
+import {
+  CustomSet,
+  Stats,
+  ItemSet,
+  Item,
+  ItemSlot,
+  ItemTypeWithSlots,
+  EquippedItem,
+  Class,
+} from './type-aliases';
 
 export const navigateToNewCustomSet = (
   router: NextRouter,
@@ -84,7 +89,7 @@ export const navigateToNewCustomSet = (
   }
 };
 
-const getBaseStat = (stats: customSet_stats, stat: Stat) => {
+const getBaseStat = (stats: Stats, stat: Stat) => {
   switch (stat) {
     case Stat.VITALITY:
       return stats.baseVitality;
@@ -103,7 +108,7 @@ const getBaseStat = (stats: customSet_stats, stat: Stat) => {
   }
 };
 
-const getScrolledStat = (stats: customSet_stats, stat: Stat) => {
+const getScrolledStat = (stats: Stats, stat: Stat) => {
   switch (stat) {
     case Stat.VITALITY:
       return stats.scrolledVitality;
@@ -156,70 +161,37 @@ export const getStatsMaps = (
   return { statsMap, exoStatsMap, originalStatsMap };
 };
 
-export const getStatsFromCustomSet = (customSet?: customSet | null) => {
-  if (!customSet) {
-    return null;
-  }
+export const getBonusesFromCustomSet = (customSet: CustomSet) => {
+  const sets: SetCounter = {};
 
-  const statsFromCustomSet: StatsFromCustomSet = customSet.equippedItems.reduce(
-    (acc, { item, exos }) => {
-      const accCopy = { ...acc };
-      item?.stats.forEach(statLine => {
-        if (!statLine.stat || !statLine.maxValue) {
-          return;
-        }
-        if (accCopy[statLine.stat]) {
-          accCopy[statLine.stat] += statLine.maxValue;
-        } else {
-          accCopy[statLine.stat] = statLine.maxValue;
-        }
-      });
-      exos.forEach(statLine => {
-        if (accCopy[statLine.stat]) {
-          accCopy[statLine.stat] += statLine.value;
-        } else {
-          accCopy[statLine.stat] = statLine.value;
-        }
-      });
-      return accCopy;
-    },
-    {} as StatsFromCustomSet,
-  );
+  customSet.equippedItems.forEach((equippedItem) => {
+    const { item } = equippedItem;
+    if (!item) return;
 
-  [
-    Stat.VITALITY,
-    Stat.WISDOM,
-    Stat.STRENGTH,
-    Stat.INTELLIGENCE,
-    Stat.CHANCE,
-    Stat.AGILITY,
-  ].forEach(primaryStat => {
-    const baseStats =
-      getBaseStat(customSet.stats, primaryStat) +
-      getScrolledStat(customSet.stats, primaryStat);
-
-    if (statsFromCustomSet[primaryStat]) {
-      statsFromCustomSet[primaryStat] += baseStats;
-    } else {
-      statsFromCustomSet[primaryStat] = baseStats;
+    const { set } = item;
+    if (set) {
+      const setObj = sets[set.id];
+      sets[set.id] = setObj
+        ? {
+            ...setObj,
+            count: setObj.count + 1,
+            equippedItems: [...setObj.equippedItems, equippedItem],
+          }
+        : { set, count: 1, equippedItems: [equippedItem] };
     }
   });
 
-  const sets = getBonusesFromCustomSet(customSet);
-
-  const statsFromSetBonuses = mergeStatObjs(
-    ...Object.values(sets).map(({ count, set: { bonuses } }) =>
-      mergeStatObjs(
-        ...bonuses
-          .filter(
-            bonus => bonus.numItems === count && !!bonus.stat && !!bonus.value,
-          )
-          .map(({ stat, value }) => ({ [stat!]: value! })),
-      ),
-    ),
+  const filteredSets = Object.entries(sets).filter(
+    ([, setObj]) => setObj.count > 1,
   );
 
-  return mergeStatObjs(statsFromSetBonuses, statsFromCustomSet);
+  const result = filteredSets.reduce((obj, [setId, setWithCount]) => {
+    // eslint-disable-next-line no-param-reassign
+    obj[setId] = setWithCount;
+    return obj;
+  }, {} as SetCounter);
+
+  return result;
 };
 
 const mergeStatObjs = (...statObjs: ReadonlyArray<{ [key: string]: number }>) =>
@@ -238,64 +210,104 @@ const mergeStatObjs = (...statObjs: ReadonlyArray<{ [key: string]: number }>) =>
     return acc;
   }, {} as StatsFromCustomSet);
 
-export const getBonusesFromCustomSet = (customSet: customSet) => {
-  const sets: SetCounter = {};
-
-  for (const equippedItem of customSet.equippedItems) {
-    const { item } = equippedItem;
-    if (!item) continue;
-
-    const { set } = item;
-    if (set) {
-      const setObj = sets[set.id];
-      sets[set.id] = setObj
-        ? {
-            ...setObj,
-            count: setObj.count + 1,
-            equippedItems: [...setObj.equippedItems, equippedItem],
-          }
-        : { set, count: 1, equippedItems: [equippedItem] };
-    }
+export const getStatsFromCustomSet = (customSet?: CustomSet | null) => {
+  if (!customSet) {
+    return null;
   }
 
-  const filteredSets = Object.entries(sets).filter(
-    ([_, setObj]) => setObj.count > 1,
+  const statsFromCustomSet: StatsFromCustomSet = customSet.equippedItems.reduce(
+    (acc, { item: i, exos }) => {
+      const accCopy = { ...acc };
+      // eslint-disable-next-line no-unused-expressions
+      i?.stats.forEach((statLine) => {
+        if (!statLine.stat || !statLine.maxValue) {
+          return;
+        }
+        if (accCopy[statLine.stat]) {
+          accCopy[statLine.stat] += statLine.maxValue;
+        } else {
+          accCopy[statLine.stat] = statLine.maxValue;
+        }
+      });
+      exos.forEach((statLine) => {
+        if (accCopy[statLine.stat]) {
+          accCopy[statLine.stat] += statLine.value;
+        } else {
+          accCopy[statLine.stat] = statLine.value;
+        }
+      });
+      return accCopy;
+    },
+    {} as StatsFromCustomSet,
   );
 
-  const result = filteredSets.reduce((obj, [setId, setWithCount]) => {
-    obj[setId] = setWithCount;
-    return obj;
-  }, {} as SetCounter);
+  [
+    Stat.VITALITY,
+    Stat.WISDOM,
+    Stat.STRENGTH,
+    Stat.INTELLIGENCE,
+    Stat.CHANCE,
+    Stat.AGILITY,
+  ].forEach((primaryStat) => {
+    const baseStats =
+      getBaseStat(customSet.stats, primaryStat) +
+      getScrolledStat(customSet.stats, primaryStat);
 
-  return result;
+    if (statsFromCustomSet[primaryStat]) {
+      statsFromCustomSet[primaryStat] += baseStats;
+    } else {
+      statsFromCustomSet[primaryStat] = baseStats;
+    }
+  });
+
+  const sets = getBonusesFromCustomSet(customSet);
+
+  const statsFromSetBonuses = mergeStatObjs(
+    ...Object.values(sets).map(({ count, set: { bonuses } }) =>
+      mergeStatObjs(
+        ...bonuses
+          .filter(
+            (bonus) =>
+              bonus.numItems === count && !!bonus.stat && !!bonus.value,
+          )
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          .map(({ stat, value }) => ({ [stat!]: value! })),
+      ),
+    ),
+  );
+
+  return mergeStatObjs(statsFromSetBonuses, statsFromCustomSet);
 };
 
-export const findNextEmptySlotId = (
-  itemType: item_itemType,
+export const findNextEmptySlotIds = (
+  itemType: ItemTypeWithSlots,
   currentSlotId: string,
-  customSet?: customSet | null,
+  customSet?: CustomSet | null,
 ) => {
   const eligibleItemSlots = [...itemType.eligibleItemSlots].sort(
     (i, j) => i.order - j.order,
   );
   if (!customSet) {
-    return eligibleItemSlots.find(slot => slot.id !== currentSlotId) || null;
+    return eligibleItemSlots
+      .filter((slot) => slot.id !== currentSlotId)
+      .map((slot) => slot.id);
   }
   const occupiedSlotsSet = customSet.equippedItems.reduce((set, curr) => {
     set.add(curr.slot.id);
     return set;
   }, new Set<string>());
-  for (const slot of eligibleItemSlots) {
-    if (!occupiedSlotsSet.has(slot.id) && slot.id !== currentSlotId) {
-      return slot.id;
-    }
-  }
-  return null;
+  const foundSlotIds = eligibleItemSlots
+    .filter(
+      (slot) => !occupiedSlotsSet.has(slot.id) && slot.id !== currentSlotId,
+    )
+    .map((slot) => slot.id);
+
+  return foundSlotIds;
 };
 
 export const findEmptySlotId = (
-  itemType: item_itemType,
-  customSet?: customSet | null,
+  itemType: ItemTypeWithSlots,
+  customSet?: CustomSet | null,
 ) => {
   const eligibleItemSlots = [...itemType.eligibleItemSlots].sort(
     (i, j) => i.order - j.order,
@@ -307,17 +319,16 @@ export const findEmptySlotId = (
     set.add(curr.slot.id);
     return set;
   }, new Set<string>());
-  for (const slot of eligibleItemSlots) {
-    if (!occupiedSlotsSet.has(slot.id)) {
-      return slot.id;
-    }
-  }
-  return null;
+
+  const foundSlot = eligibleItemSlots.find(
+    (slot) => !occupiedSlotsSet.has(slot.id),
+  );
+  return foundSlot?.id ?? null;
 };
 
 export const findEmptyOrOnlySlotId = (
-  itemType: item_itemType,
-  customSet?: customSet | null,
+  itemType: ItemTypeWithSlots,
+  customSet?: CustomSet | null,
 ) => {
   const eligibleItemSlots = [...itemType.eligibleItemSlots].sort(
     (i, j) => i.order - j.order,
@@ -329,7 +340,7 @@ export const findEmptyOrOnlySlotId = (
 export const checkAuthentication = async (
   client: ApolloClient<object>,
   t: TFunction,
-  customSet?: customSet | null,
+  customSet?: CustomSet | null,
 ) => {
   const { data } = await client.query<currentUser>({ query: CurrentUserQuery });
   if (
@@ -347,7 +358,27 @@ export const checkAuthentication = async (
   return false;
 };
 
-export const useEquipItemMutation = (item: item) => {
+export const getCustomSet = (
+  client: ApolloClient<object>,
+  customSetId: string,
+) => {
+  const customSet = client.readFragment<CustomSet>(
+    {
+      id: `CustomSet:${customSetId}`,
+      fragment: CustomSetFragment,
+      fragmentName: 'customSet',
+    },
+    true,
+  );
+
+  if (!customSet) {
+    throw new Error(`Could not find custom set with id ${customSetId}`);
+  }
+
+  return customSet;
+};
+
+export const useEquipItemMutation = (item: Item) => {
   const router = useRouter();
   const { customSetId: routerCustomSetId } = router.query;
 
@@ -357,9 +388,9 @@ export const useEquipItemMutation = (item: item) => {
 
   const client = useApolloClient();
 
-  const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);
+  const { data: itemSlotsData } = useQuery<ItemSlotsQueryType>(ItemSlotsQuery);
 
-  const [updateCustomSetItem] = useMutation<
+  const [updateCustomSetItemMutate] = useMutation<
     updateCustomSetItem,
     updateCustomSetItemVariables
   >(UpdateCustomSetItemMutation, {
@@ -367,6 +398,7 @@ export const useEquipItemMutation = (item: item) => {
     optimisticResponse:
       customSetId && itemSlotsData
         ? ({ itemSlotId }) => {
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             const customSet = getCustomSet(client, customSetId)!;
 
             const { equippedItems: oldEquippedItems } = customSet;
@@ -374,12 +406,12 @@ export const useEquipItemMutation = (item: item) => {
             const equippedItems = [...oldEquippedItems];
 
             const oldEquippedItemIdx = oldEquippedItems.findIndex(
-              equippedItem => equippedItem.slot.id === itemSlotId,
+              (equippedItem) => equippedItem.slot.id === itemSlotId,
             );
 
             const slot = itemSlotsData.itemSlots.find(
-              slot => slot.id === itemSlotId,
-            ) as itemSlots_itemSlots;
+              (s) => s.id === itemSlotId,
+            ) as ItemSlot;
 
             if (oldEquippedItemIdx > -1) {
               const oldEquippedItem = equippedItems[oldEquippedItemIdx];
@@ -420,7 +452,7 @@ export const useEquipItemMutation = (item: item) => {
       const customSet = customSetId ? getCustomSet(client, customSetId) : null;
       const ok = await checkAuthentication(client, t, customSet);
       if (!ok) return;
-      const { data } = await updateCustomSetItem({
+      const { data } = await updateCustomSetItemMutate({
         variables: {
           customSetId,
           itemId: item.id,
@@ -432,7 +464,7 @@ export const useEquipItemMutation = (item: item) => {
         navigateToNewCustomSet(router, data.updateCustomSetItem.customSet.id);
       }
     },
-    [updateCustomSetItem, customSetId, item],
+    [updateCustomSetItemMutate, customSetId, item],
   );
 
   return onClick;
@@ -440,7 +472,7 @@ export const useEquipItemMutation = (item: item) => {
 
 export const useEquipItemsMutation = (
   itemIds: Array<string>,
-  customSet?: customSet | null,
+  customSet?: CustomSet | null,
 ): [
   () => Promise<void>,
   { data?: equipItems; loading: boolean; error?: ApolloError },
@@ -448,7 +480,7 @@ export const useEquipItemsMutation = (
   const router = useRouter();
   const { customSetId: routerSetId } = router.query;
 
-  const [equipItems, { data, loading, error }] = useMutation<
+  const [equipItemsMutate, { data, loading, error }] = useMutation<
     equipItems,
     equipItemsVariables
   >(EquipItemsMutation, {
@@ -466,7 +498,7 @@ export const useEquipItemsMutation = (
   const onClick = useCallback(async () => {
     const ok = await checkAuthentication(client, t, customSet);
     if (!ok) return;
-    const { data: resultData } = await equipItems();
+    const { data: resultData } = await equipItemsMutate();
 
     if (resultData?.equipMultipleItems?.customSet) {
       navigateToNewCustomSet(
@@ -474,14 +506,14 @@ export const useEquipItemsMutation = (
         resultData.equipMultipleItems.customSet.id,
       );
     }
-  }, [equipItems, routerSetId, router]);
+  }, [equipItemsMutate, routerSetId, router]);
 
   return [onClick, { data, loading, error }];
 };
 
 export const useEquipSetMutation = (
   setId: string,
-  customSet?: customSet | null,
+  customSet?: CustomSet | null,
 ): [
   () => Promise<void>,
   { data?: equipSet; loading: boolean; error?: ApolloError },
@@ -489,7 +521,7 @@ export const useEquipSetMutation = (
   const router = useRouter();
   const { customSetId: routerSetId } = router.query;
 
-  const [equipSet, { data, loading, error }] = useMutation<
+  const [equipSetMutate, { data, loading, error }] = useMutation<
     equipSet,
     equipSetVariables
   >(EquipSetMutation, {
@@ -507,19 +539,19 @@ export const useEquipSetMutation = (
   const onClick = useCallback(async () => {
     const ok = await checkAuthentication(client, t, customSet);
     if (!ok) return;
-    const { data: resultData } = await equipSet();
+    const { data: resultData } = await equipSetMutate();
 
     if (resultData?.equipSet) {
       navigateToNewCustomSet(router, resultData.equipSet.customSet.id);
     }
-  }, [equipSet, routerSetId, router]);
+  }, [equipSetMutate, routerSetId, router]);
 
   return [onClick, { data, loading, error }];
 };
 
 export const useDeleteItemMutation = (
   itemSlotId: string,
-  customSet: customSet,
+  customSet: CustomSet,
 ) => {
   const [mutate] = useMutation<
     deleteCustomSetItem,
@@ -533,7 +565,7 @@ export const useDeleteItemMutation = (
           lastModified: Date.now(),
           equippedItems: [
             ...customSet.equippedItems
-              .filter(equippedItem => equippedItem.slot.id !== slotId)
+              .filter((equippedItem) => equippedItem.slot.id !== slotId)
               .map(({ id }) => ({
                 id,
                 __typename: 'EquippedItem' as 'EquippedItem',
@@ -553,7 +585,7 @@ export const useDeleteItemMutation = (
     const ok = await checkAuthentication(client, t, customSet);
     if (!ok) return null;
     return mutate();
-  }, [mutate]);
+  }, [mutate, customSet]);
   return onDelete;
 };
 
@@ -563,32 +595,12 @@ export const useCustomSet = (customSetId: string | null) => {
   return getCustomSet(client, customSetId);
 };
 
-export const getCustomSet = (
-  client: ApolloClient<object>,
-  customSetId: string,
-) => {
-  const customSet = client.readFragment<customSet>(
-    {
-      id: `CustomSet:${customSetId}`,
-      fragment: CustomSetFragment,
-      fragmentName: 'customSet',
-    },
-    true,
-  );
-
-  if (!customSet) {
-    throw new Error(`Could not find custom set with id ${customSetId}`);
-  }
-
-  return customSet;
-};
-
 export const useSetModal = () => {
   const [setModalVisible, setSetModalVisible] = React.useState(false);
-  const [selectedSet, setSelectedSet] = React.useState<item_set | null>(null);
+  const [selectedSet, setSelectedSet] = React.useState<ItemSet | null>(null);
 
   const openSetModal = React.useCallback(
-    (set: item_set) => {
+    (set: ItemSet) => {
       setSelectedSet(set);
       setSetModalVisible(true);
     },
@@ -643,7 +655,7 @@ export const calcDamage = (
   baseDamage: number,
   effectType: WeaponEffectType | SpellEffectType,
   stats: StatsFromCustomSet | null,
-  damageTypeInput: ICalcDamageInput,
+  damageTypeInput: CalcDamageInput,
   weaponSkillPower?: number,
 ) => {
   const statTypes = getStats(effectType);
@@ -755,12 +767,14 @@ export const effectToIconUrl = (effect: WeaponEffectType | SpellEffectType) => {
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Shield_Point.svg';
     case SpellEffectType.PUSHBACK_DAMAGE:
       return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Pushback_Damage.svg';
+    default:
+      throw new Error('Unknown SpellEffectType');
   }
 };
 
 export const getSimpleEffect: (
   effectType: WeaponEffectType | SpellEffectType,
-) => TSimpleEffect = effectType => {
+) => TSimpleEffect = (effectType) => {
   switch (effectType) {
     case WeaponEffectType.AIR_DAMAGE:
     case WeaponEffectType.AIR_STEAL:
@@ -796,6 +810,8 @@ export const getSimpleEffect: (
     case WeaponEffectType.MP:
     case SpellEffectType.MP:
       return 'mp';
+    default:
+      throw new Error('Unknown SimpleEffect');
   }
 };
 
@@ -804,7 +820,7 @@ export const calcEffect = (
   effectType: WeaponEffectType | SpellEffectType,
   level: number,
   stats: StatsFromCustomSet | null,
-  damageTypeInput: ICalcDamageInput,
+  damageTypeInput: CalcDamageInput,
   damageTypeKey: 'melee' | 'ranged',
   weaponSkillPower?: number,
 ) => {
@@ -812,9 +828,11 @@ export const calcEffect = (
 
   if (simpleEffect === 'heal') {
     return calcHeal(baseDamage, stats, weaponSkillPower);
-  } else if (simpleEffect === 'pushback_damage') {
+  }
+  if (simpleEffect === 'pushback_damage') {
     return calcPushbackDamage(baseDamage, level, stats);
-  } else if (simpleEffect === 'damage') {
+  }
+  if (simpleEffect === 'damage') {
     return calcDamage(
       baseDamage,
       effectType,
@@ -822,7 +840,8 @@ export const calcEffect = (
       damageTypeInput,
       weaponSkillPower,
     )[damageTypeKey];
-  } else if (simpleEffect === 'shield') {
+  }
+  if (simpleEffect === 'shield') {
     return calcShield(baseDamage, level);
   }
   return baseDamage;
@@ -846,6 +865,8 @@ export const elementMageToWeaponEffect = (elementMage: WeaponElementMage) => {
     case WeaponElementMage.AIR_68:
     case WeaponElementMage.AIR_85:
       return WeaponEffectType.AIR_DAMAGE;
+    default:
+      throw new Error('Unknown WeaponElementMage');
   }
 };
 
@@ -873,6 +894,9 @@ export const calcElementMage = (
     case WeaponElementMage.WATER_85:
     case WeaponElementMage.AIR_85:
       multiplier = 0.85;
+      break;
+    default:
+      throw new Error('Unknown WeaponElementMage');
   }
   const calcDamageBase = Math.floor((baseMin - 1) * multiplier);
   const diff = Math.floor((baseMax - baseMin + 1) * multiplier);
@@ -891,9 +915,9 @@ export const statCalculators: { [key: string]: StatCalculator } = {
   [Stat.AP]: (statsFromCustomSet, customSet) =>
     ((customSet?.level ?? 200) >= 100 ? 7 : 6) +
     getStatWithDefault(statsFromCustomSet, Stat.AP),
-  [Stat.MP]: statsFromCustomSet =>
+  [Stat.MP]: (statsFromCustomSet) =>
     3 + getStatWithDefault(statsFromCustomSet, Stat.MP),
-  [Stat.INITIATIVE]: statsFromCustomSet =>
+  [Stat.INITIATIVE]: (statsFromCustomSet) =>
     statsFromCustomSet
       ? getStatWithDefault(statsFromCustomSet, Stat.STRENGTH) +
         getStatWithDefault(statsFromCustomSet, Stat.INTELLIGENCE) +
@@ -901,69 +925,73 @@ export const statCalculators: { [key: string]: StatCalculator } = {
         getStatWithDefault(statsFromCustomSet, Stat.AGILITY) +
         getStatWithDefault(statsFromCustomSet, Stat.INITIATIVE)
       : 0,
-  [Stat.SUMMON]: statsFromCustomSet =>
+  [Stat.SUMMON]: (statsFromCustomSet) =>
     1 + getStatWithDefault(statsFromCustomSet, Stat.SUMMON),
-  [Stat.PROSPECTING]: statsFromCustomSet =>
+  [Stat.PROSPECTING]: (statsFromCustomSet) =>
     100 +
     (statsFromCustomSet
       ? Math.floor(getStatWithDefault(statsFromCustomSet, Stat.CHANCE) / 10) +
         getStatWithDefault(statsFromCustomSet, Stat.PROSPECTING)
       : 0),
-  [Stat.DODGE]: statsFromCustomSet =>
+  [Stat.DODGE]: (statsFromCustomSet) =>
     statsFromCustomSet
       ? Math.floor(getStatWithDefault(statsFromCustomSet, Stat.AGILITY) / 10) +
         getStatWithDefault(statsFromCustomSet, Stat.DODGE)
       : 0,
-  [Stat.LOCK]: statsFromCustomSet =>
+  [Stat.LOCK]: (statsFromCustomSet) =>
     statsFromCustomSet
       ? Math.floor(getStatWithDefault(statsFromCustomSet, Stat.AGILITY) / 10) +
         getStatWithDefault(statsFromCustomSet, Stat.LOCK)
       : 0,
-  [Stat.AP_PARRY]: statsFromCustomSet =>
+  [Stat.AP_PARRY]: (statsFromCustomSet) =>
     statsFromCustomSet
       ? Math.floor(getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10) +
         getStatWithDefault(statsFromCustomSet, Stat.AP_PARRY)
       : 0,
-  [Stat.AP_REDUCTION]: statsFromCustomSet =>
+  [Stat.AP_REDUCTION]: (statsFromCustomSet) =>
     statsFromCustomSet
       ? Math.floor(getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10) +
         getStatWithDefault(statsFromCustomSet, Stat.AP_REDUCTION)
       : 0,
-  [Stat.MP_PARRY]: statsFromCustomSet =>
+  [Stat.MP_PARRY]: (statsFromCustomSet) =>
     statsFromCustomSet
       ? Math.floor(getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10) +
         getStatWithDefault(statsFromCustomSet, Stat.MP_PARRY)
       : 0,
-  [Stat.MP_REDUCTION]: statsFromCustomSet =>
+  [Stat.MP_REDUCTION]: (statsFromCustomSet) =>
     statsFromCustomSet
       ? Math.floor(getStatWithDefault(statsFromCustomSet, Stat.WISDOM) / 10) +
         getStatWithDefault(statsFromCustomSet, Stat.MP_REDUCTION)
       : 0,
-  [Stat.NEUTRAL_DAMAGE]: statsFromCustomSet =>
+  [Stat.NEUTRAL_DAMAGE]: (statsFromCustomSet) =>
     statsFromCustomSet
       ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
         getStatWithDefault(statsFromCustomSet, Stat.NEUTRAL_DAMAGE)
       : 0,
-  [Stat.EARTH_DAMAGE]: statsFromCustomSet =>
+  [Stat.EARTH_DAMAGE]: (statsFromCustomSet) =>
     statsFromCustomSet
       ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
         getStatWithDefault(statsFromCustomSet, Stat.EARTH_DAMAGE)
       : 0,
-  [Stat.FIRE_DAMAGE]: statsFromCustomSet =>
+  [Stat.FIRE_DAMAGE]: (statsFromCustomSet) =>
     statsFromCustomSet
       ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
         getStatWithDefault(statsFromCustomSet, Stat.FIRE_DAMAGE)
       : 0,
-  [Stat.WATER_DAMAGE]: statsFromCustomSet =>
+  [Stat.WATER_DAMAGE]: (statsFromCustomSet) =>
     statsFromCustomSet
       ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
         getStatWithDefault(statsFromCustomSet, Stat.WATER_DAMAGE)
       : 0,
-  [Stat.AIR_DAMAGE]: statsFromCustomSet =>
+  [Stat.AIR_DAMAGE]: (statsFromCustomSet) =>
     statsFromCustomSet
       ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
         getStatWithDefault(statsFromCustomSet, Stat.AIR_DAMAGE)
       : 0,
+  [Stat.PODS]: (statsFromCustomSet) =>
+    1000 +
+    getStatWithDefault(statsFromCustomSet, Stat.PODS) +
+    getStatWithDefault(statsFromCustomSet, Stat.STRENGTH) * 5,
 };
 
 function isLeafCondition(
@@ -981,7 +1009,7 @@ const getDefaultStatCalculator = (stat: Stat) => (
 ) => getStatWithDefault(statsFromCustomSet, stat);
 
 const evaluateLeafCondition = (
-  customSet: customSet,
+  customSet: CustomSet,
   statsFromCustomSet: StatsFromCustomSet,
   condition: TCondition,
 ) => {
@@ -993,7 +1021,8 @@ const evaluateLeafCondition = (
     );
     if (condition.operator === '<') {
       return numberBonuses < condition.value;
-    } else if (condition.operator === '>') {
+    }
+    if (condition.operator === '>') {
       return numberBonuses > condition.value;
     }
   } else {
@@ -1003,57 +1032,59 @@ const evaluateLeafCondition = (
     const value = statCalculator(statsFromCustomSet, customSet);
     if (condition.operator === '<') {
       return value < condition.value;
-    } else if (condition.operator === '>') {
+    }
+    if (condition.operator === '>') {
       return value > condition.value;
     }
   }
+  // eslint-disable-next-line no-console
   console.error('Unable to parse condition', condition);
   return true;
 };
 
 const traverseConditions = (
-  customSet: customSet,
+  customSet: CustomSet,
   statsFromCustomSet: StatsFromCustomSet,
   conditionsObj: TConditionObj,
 ): boolean => {
   if (isLeafCondition(conditionsObj)) {
     return evaluateLeafCondition(customSet, statsFromCustomSet, conditionsObj);
-  } else if (conditionsObj.and) {
-    return conditionsObj.and.every(obj =>
-      traverseConditions(customSet, statsFromCustomSet, obj),
-    );
-  } else if (conditionsObj.or) {
-    return conditionsObj.or.some(obj =>
+  }
+  if (conditionsObj.and) {
+    return conditionsObj.and.every((obj) =>
       traverseConditions(customSet, statsFromCustomSet, obj),
     );
   }
+  if (conditionsObj.or) {
+    return conditionsObj.or.some((obj) =>
+      traverseConditions(customSet, statsFromCustomSet, obj),
+    );
+  }
+  // eslint-disable-next-line no-console
   console.error('Unable to parse condition', conditionsObj);
   return true;
 };
 
 export const checkConditions = (
-  customSet: customSet | null,
+  customSet: CustomSet | null,
   statsFromCustomSet?: StatsFromCustomSet | null,
 ) => {
-  let customSetStats = statsFromCustomSet
-    ? statsFromCustomSet
-    : getStatsFromCustomSet(customSet);
+  const customSetStats = statsFromCustomSet || getStatsFromCustomSet(customSet);
 
   if (!customSet || !customSetStats) {
     return [];
   }
 
-  const failingItems: Array<customSet_equippedItems> = [];
+  const failingItems: Array<EquippedItem> = [];
 
-  customSet.equippedItems.forEach(equippedItem => {
+  customSet.equippedItems.forEach((equippedItem) => {
+    if (!customSetStats) {
+      return;
+    }
     const parsed = JSON.parse(equippedItem.item.conditions);
     if (parsed && parsed.conditions && Object.keys(parsed.conditions).length) {
       const conditionsObj = parsed.conditions;
-      const pass = traverseConditions(
-        customSet,
-        customSetStats!,
-        conditionsObj,
-      );
+      const pass = traverseConditions(customSet, customSetStats, conditionsObj);
       if (!pass) {
         failingItems.push(equippedItem);
       }
@@ -1066,7 +1097,8 @@ export const checkConditions = (
 export const calcPointCost = (value: number, statKey: BaseStatKey) => {
   if (statKey === 'baseVitality') {
     return value;
-  } else if (statKey === 'baseWisdom') {
+  }
+  if (statKey === 'baseWisdom') {
     return value * 3;
   }
   let numPoints = 0;
@@ -1080,15 +1112,16 @@ export const calcPointCost = (value: number, statKey: BaseStatKey) => {
   return numPoints;
 };
 
-const findMultipleExoErrors = (customSet: customSet, stat: Stat) => {
-  const equippedItemsWithExo = customSet.equippedItems.filter(equippedItem =>
+const findMultipleExoErrors = (customSet: CustomSet, stat: Stat) => {
+  const equippedItemsWithExo = customSet.equippedItems.filter((equippedItem) =>
     equippedItem.exos.some(
       ({ stat: exoStat, value }) => exoStat === stat && value > 0,
     ),
   );
 
   const totalValueExo = equippedItemsWithExo.reduce(
-    (acc, { exos }) => acc + (exos.find(exo => exo.stat === stat)?.value ?? 0),
+    (acc, { exos }) =>
+      acc + (exos.find((exo) => exo.stat === stat)?.value ?? 0),
     0,
   );
 
@@ -1100,26 +1133,26 @@ const findMultipleExoErrors = (customSet: customSet, stat: Stat) => {
 };
 
 export const getErrors = (
-  customSet: customSet,
+  customSet: CustomSet,
   statsFromCustomSet: StatsFromCustomSet,
 ) => {
   const failingItems = checkConditions(customSet, statsFromCustomSet);
 
-  const errors = failingItems.map(equippedItem => ({
+  const errors = failingItems.map((equippedItem) => ({
     equippedItem,
     reason: 'CONDITION_NOT_MET',
   }));
 
   const groupedBySet = getBonusesFromCustomSet(customSet);
 
-  Object.values(groupedBySet).forEach(setObj => {
+  Object.values(groupedBySet).forEach((setObj) => {
     const groupByItemId = groupBy(
       setObj.equippedItems,
-      equippedItem => equippedItem.item.id,
+      (equippedItem) => equippedItem.item.id,
     );
-    const dupes = Object.values(groupByItemId).filter(arr => arr.length > 1);
-    dupes.forEach(dupe => {
-      dupe.forEach(equippedItem =>
+    const dupes = Object.values(groupByItemId).filter((arr) => arr.length > 1);
+    dupes.forEach((dupe) => {
+      dupe.forEach((equippedItem) =>
         errors.push({ equippedItem, reason: 'DUPLICATE_ITEM_IN_SET' }),
       );
     });
@@ -1127,13 +1160,13 @@ export const getErrors = (
 
   const dofusesAndTrophies = groupBy(
     customSet.equippedItems.filter(({ slot }) => slot.name === 'Dofus'),
-    equippedItem => equippedItem.item.id,
+    (equippedItem) => equippedItem.item.id,
   );
 
-  const prysmaradites: Array<customSet_equippedItems> = [];
+  const prysmaradites: Array<EquippedItem> = [];
 
-  Object.values(dofusesAndTrophies).forEach(arr => {
-    arr.forEach(equippedItem => {
+  Object.values(dofusesAndTrophies).forEach((arr) => {
+    arr.forEach((equippedItem) => {
       if (equippedItem.item.itemType.name === 'Prysmaradite') {
         prysmaradites.push(equippedItem);
       }
@@ -1145,27 +1178,27 @@ export const getErrors = (
   });
 
   if (prysmaradites.length > 1) {
-    prysmaradites.forEach(prysma => {
+    prysmaradites.forEach((prysma) => {
       errors.push({ equippedItem: prysma, reason: 'MULTIPLE_PRYSMARADITES' });
     });
   }
 
   errors.push(
-    ...findMultipleExoErrors(customSet, Stat.AP).map(equippedItem => ({
+    ...findMultipleExoErrors(customSet, Stat.AP).map((equippedItem) => ({
       equippedItem,
       reason: 'MULTIPLE_AP_EXO',
     })),
   );
 
   errors.push(
-    ...findMultipleExoErrors(customSet, Stat.MP).map(equippedItem => ({
+    ...findMultipleExoErrors(customSet, Stat.MP).map((equippedItem) => ({
       equippedItem,
       reason: 'MULTIPLE_MP_EXO',
     })),
   );
 
   errors.push(
-    ...findMultipleExoErrors(customSet, Stat.RANGE).map(equippedItem => ({
+    ...findMultipleExoErrors(customSet, Stat.RANGE).map((equippedItem) => ({
       equippedItem,
       reason: 'MULTIPLE_RANGE_EXO',
     })),
@@ -1177,7 +1210,7 @@ export const getErrors = (
 export const renderErrors = (
   reason: string,
   t: TFunction,
-  equippedItem?: customSet_equippedItems,
+  equippedItem?: EquippedItem,
   includeItemName?: boolean,
 ) => {
   if (reason === 'CONDITION_NOT_MET' && equippedItem && includeItemName) {
@@ -1203,23 +1236,129 @@ export const getTitle = (title?: string | null) => {
   return `${title} - DofusLab`;
 };
 
-export const getCustomSetMetaDescription = (customSet?: customSet | null) => {
+export const getCustomSetMetaDescription = (customSet?: CustomSet | null) => {
   if (!customSet) {
     return META_DESCRIPTION;
   }
   if (customSet.owner && customSet.name) {
     return `View ${customSet.owner.username}'s build ${customSet.name} on DofusLab, the open-source set builder for the MMORPG Dofus.`;
-  } else if (customSet.owner) {
+  }
+  if (customSet.owner) {
     return `View ${customSet.owner.username}'s untitled build on DofusLab, the open-source set builder for the MMORPG Dofus.`;
-  } else if (customSet.name) {
+  }
+  if (customSet.name) {
     return `View the build ${customSet.name} on DofusLab, the open-source set builder for the MMORPG Dofus.`;
   }
   return 'View this untitled build on DofusLab, the open-source set builder for the MMORPG Dofus';
 };
 
-export const getCanonicalUrl = (customSet?: customSet | null) => {
+export const getCanonicalUrl = (customSet?: CustomSet | null) => {
   if (customSet) {
     return `https://dofuslab.io/build/${customSet.id}`;
   }
   return 'https://dofuslab.io';
+};
+
+export const getInitialRangedState = (
+  meleeOnly: boolean,
+  rangedOnly: boolean,
+  statsFromCustomSet: StatsFromCustomSet | null,
+) => {
+  let initialShowRanged = false;
+  if (rangedOnly) {
+    initialShowRanged = true;
+  } else if (meleeOnly) {
+    initialShowRanged = false;
+  } else if (statsFromCustomSet) {
+    initialShowRanged =
+      getStatWithDefault(statsFromCustomSet, Stat.PCT_RANGED_DAMAGE) >=
+      getStatWithDefault(statsFromCustomSet, Stat.PCT_MELEE_DAMAGE);
+  }
+  return initialShowRanged;
+};
+
+export const stripQueryString = (asPath: string) => {
+  const index = asPath.indexOf('?');
+  if (index >= 0) {
+    return asPath.substring(0, index);
+  }
+  return asPath;
+};
+
+export const onSelectClass = (
+  classes: Array<Class>,
+  selectedClass: string,
+  router: NextRouter,
+) => {
+  const idToName = classes.reduce((acc, { id, name }) => {
+    return { ...acc, [id]: name };
+  }, {} as { [key: string]: string });
+
+  const { query } = router;
+
+  const newQuery: { [key: string]: string | string[] } = {
+    ...query,
+    ...(idToName && { class: idToName?.[selectedClass] }),
+  };
+  const { customSetId, ...restNewQuery } = newQuery;
+
+  router.replace(
+    { pathname: router.pathname, query: newQuery },
+    {
+      pathname: stripQueryString(router.asPath),
+      query: restNewQuery,
+    },
+  );
+};
+
+export const ClassicContext = React.createContext<
+  [boolean, (v: boolean) => void]
+>([
+  false,
+  () => {
+    // no-op
+  },
+]);
+
+export const EditableContext = React.createContext<boolean>(true);
+
+export const useClassic = () => {
+  const { data: sessionSettingsData } = useQuery<sessionSettings>(
+    sessionSettingsQuery,
+  );
+
+  const [mutate] = useMutation<changeClassic, changeClassicVariables>(
+    changeClassicMutation,
+  );
+
+  const [isClassic, setIsClassic] = React.useState<boolean>(
+    sessionSettingsData?.classic ?? false,
+  );
+
+  React.useEffect(() => {
+    let classic = Lockr.get<boolean | null>(IS_CLASSIC_STORAGE_KEY, null);
+    if (classic === null) {
+      classic = sessionSettingsData?.classic ?? null;
+    }
+    setIsClassic(classic || false);
+  }, []);
+
+  const client = useApolloClient();
+
+  const onIsClassicChange = React.useCallback(
+    (value: boolean) => {
+      setIsClassic(value);
+      Lockr.set(IS_CLASSIC_STORAGE_KEY, value);
+      mutate({ variables: { classic: value } });
+      if (sessionSettingsData) {
+        client.writeQuery<sessionSettings>({
+          query: sessionSettingsQuery,
+          data: { ...sessionSettingsData, classic: value },
+        });
+      }
+    },
+    [client, sessionSettingsData, mutate],
+  );
+
+  return [isClassic, onIsClassicChange] as const;
 };

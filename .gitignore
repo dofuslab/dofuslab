@@ -14,8 +14,10 @@ server/migrations/versions/__pycache__/
 server/static/
 server/app/translations/*/LC_MESSAGES/messages.mo
 
-# Run 
+# Run
 server/messages.pot
 
 # Redis dump
 **/dump.rdb
+
+node_modules/

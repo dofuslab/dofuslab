@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /** @jsx jsx */
 
 import { jsx, CSSObject, ClassNames } from '@emotion/core';
@@ -5,15 +6,7 @@ import styled from '@emotion/styled';
 import { useTheme } from 'emotion-theming';
 import Head from 'next/head';
 
-import {
-  ellipsis,
-  getResponsiveGridStyle,
-  itemCardStyle,
-  blue6,
-  gray6,
-} from './mixins';
-import { Skeleton } from 'antd';
-import { set_bonuses } from 'graphql/fragments/__generated__/set';
+import { Skeleton, Switch } from 'antd';
 import { TFunction } from 'next-i18next';
 import { useTranslation } from 'i18n';
 import {
@@ -22,6 +15,17 @@ import {
   Stat,
   WeaponElementMage,
 } from '__generated__/globalTypes';
+import Card from 'components/common/Card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faCube,
+  faPeopleArrows,
+  faFistRaised,
+} from '@fortawesome/free-solid-svg-icons';
+import Tooltip from 'components/common/Tooltip';
+import { Media } from 'components/common/Media';
+import { mq } from './constants';
+import { Theme } from './types';
 import {
   effectToIconUrl,
   getSimpleEffect,
@@ -31,23 +35,21 @@ import {
   getCustomSetMetaDescription,
   getCanonicalUrl,
 } from './utils';
-import { item_weaponStats } from 'graphql/fragments/__generated__/item';
-import { TTheme } from './themes';
-import Card from 'components/common/Card';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCube } from '@fortawesome/free-solid-svg-icons';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
+import {
+  ellipsis,
+  getResponsiveGridStyle,
+  itemCardStyle,
+  blue6,
+  gray6,
+} from './mixins';
+import { SetBonus, WeaponStats, CustomSet } from './type-aliases';
 
-interface IResponsiveGrid {
-  readonly numColumns: ReadonlyArray<number>;
-}
-
-export const ResponsiveGrid = styled.div<IResponsiveGrid>(({ numColumns }) =>
-  getResponsiveGridStyle(numColumns),
+export const ResponsiveGrid = styled.div<{ numColumns: ReadonlyArray<number> }>(
+  ({ numColumns }) => getResponsiveGridStyle(numColumns),
 );
 
 export const Badge: React.FC = ({ children, ...restProps }) => {
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
   return (
     <span
       css={{
@@ -81,7 +83,7 @@ export const CardSkeleton: React.FC<{
   numRows?: number;
   className?: string;
 }> = ({ numRows, className, ...restProps }) => {
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -96,12 +98,7 @@ export const CardSkeleton: React.FC<{
           )}
           {...restProps}
         >
-          <Skeleton
-            loading
-            title
-            active
-            paragraph={{ rows: numRows || 6 }}
-          ></Skeleton>
+          <Skeleton loading title active paragraph={{ rows: numRows || 6 }} />
         </Card>
       )}
     </ClassNames>
@@ -109,7 +106,7 @@ export const CardSkeleton: React.FC<{
 };
 
 export const SetBonuses: React.FC<{
-  bonuses: Array<set_bonuses>;
+  bonuses: Array<SetBonus>;
   count: number;
   t: TFunction;
   className?: string;
@@ -120,7 +117,7 @@ export const SetBonuses: React.FC<{
     </div>
     {bonuses.length ? (
       <ul css={{ paddingInlineStart: '16px', marginTop: 8 }}>
-        {bonuses.map(bonus => (
+        {bonuses.map((bonus) => (
           <li key={bonus.id} css={{ fontSize: '0.75rem' }}>
             {!!bonus.value && !!bonus.stat
               ? `${bonus.value} ${t(bonus.stat, { ns: 'stat' })}`
@@ -223,6 +220,9 @@ export const EffectLine: React.FC<{
       break;
     case 'mp':
       content = `${max} ${t(Stat.MP)}`;
+      break;
+    default:
+      throw new Error('Unknown simple effect');
   }
   return (
     <div
@@ -234,6 +234,7 @@ export const EffectLine: React.FC<{
       <img
         src={effectToIconUrl(effectType)}
         css={{ height: 16, width: 16, marginRight: 8 }}
+        alt={effectType}
       />
       {content}
     </div>
@@ -241,7 +242,7 @@ export const EffectLine: React.FC<{
 };
 
 export const WeaponEffectsList: React.FC<{
-  weaponStats: item_weaponStats;
+  weaponStats: WeaponStats;
   className?: string;
   innerDivStyle?: CSSObject;
   elementMage?: WeaponElementMage | null;
@@ -249,7 +250,7 @@ export const WeaponEffectsList: React.FC<{
   const { t } = useTranslation('weapon_spell_effect');
   return (
     <div className={className}>
-      {weaponStats.weaponEffects.map(effect => {
+      {weaponStats.weaponEffects.map((effect) => {
         let { effectType, minDamage, maxDamage } = effect;
 
         if (elementMage && effectType === WeaponEffectType.NEUTRAL_DAMAGE) {
@@ -270,6 +271,7 @@ export const WeaponEffectsList: React.FC<{
             <img
               src={effectToIconUrl(effectType)}
               css={{ height: 16, width: 16, marginRight: 8 }}
+              alt={effectType}
             />
             <div
               css={{
@@ -305,6 +307,7 @@ export const BrokenImagePlaceholder: React.FC<React.HTMLAttributes<
           }),
           className,
         )}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         {...(restProps as any)}
       >
         <FontAwesomeIcon icon={faCube} />
@@ -313,7 +316,7 @@ export const BrokenImagePlaceholder: React.FC<React.HTMLAttributes<
   </ClassNames>
 );
 
-export const CustomSetHead: React.FC<{ customSet?: customSet | null }> = ({
+export const CustomSetHead: React.FC<{ customSet?: CustomSet | null }> = ({
   customSet,
 }) => {
   const { t } = useTranslation('common');
@@ -354,5 +357,61 @@ export const CustomSetHead: React.FC<{ customSet?: customSet | null }> = ({
       />
       <meta property="twitter:url" content={getCanonicalUrl(customSet)} />
     </Head>
+  );
+};
+
+export const DamageTypeToggle: React.FC<{
+  readonly showRanged: boolean;
+  readonly setShowRanged: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ showRanged, setShowRanged }) => {
+  const { t } = useTranslation('weapon_spell_effect');
+  const theme = useTheme<Theme>();
+
+  const toggleSwitch = (
+    <Switch
+      checked={showRanged}
+      onChange={setShowRanged}
+      css={{
+        background: theme.switch?.background,
+        '.ant-switch-inner': {
+          color: theme.text?.default,
+        },
+        '&::after': {
+          background: theme.switch?.button,
+        },
+      }}
+      checkedChildren={<FontAwesomeIcon icon={faPeopleArrows} />}
+      unCheckedChildren={<FontAwesomeIcon icon={faFistRaised} />}
+    />
+  );
+
+  return (
+    <div
+      css={{
+        display: 'flex',
+        marginBottom: 8,
+      }}
+    >
+      <span css={{ marginRight: 8, [mq[1]]: { display: 'none' } }}>
+        {t('MELEE')}
+      </span>
+      <Media lessThan="xs">{toggleSwitch}</Media>
+      <Media greaterThanOrEqual="xs">
+        <Tooltip
+          title={showRanged ? t('RANGED') : t('MELEE')}
+          getPopupContainer={(element) => {
+            if (element.parentElement) {
+              return element.parentElement;
+            }
+            return document && document.body;
+          }}
+        >
+          {toggleSwitch}
+        </Tooltip>
+      </Media>
+      <span css={{ marginLeft: 8, [mq[1]]: { display: 'none' } }}>
+        {t('RANGED')}
+      </span>
+    </div>
   );
 };

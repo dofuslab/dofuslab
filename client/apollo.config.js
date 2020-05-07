@@ -1,8 +1,8 @@
 module.exports = {
   client: {
-    includes: ["./graphql/**/*.graphql"],
+    includes: ['./graphql/**/*.graphql'],
     service: {
-      name: "dofus-sets"
-    }
-  }
+      name: 'dofus-sets',
+    },
+  },
 };

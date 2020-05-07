@@ -10,11 +10,11 @@ import {
   Dropdown,
   Menu,
   Divider,
+  Switch,
 } from 'antd';
 import { useRouter } from 'next/router';
 import { useTheme } from 'emotion-theming';
 
-import LoginModal from '../common/LoginModal';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
@@ -28,8 +28,6 @@ import { faKey, faMugHot } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { useTranslation, LANGUAGES, langToFullName } from 'i18n';
-import SignUpModal from '../common/SignUpModal';
-import MyBuilds from '../common/MyBuilds';
 import {
   mq,
   DISCORD_SERVER_LINK,
@@ -43,8 +41,16 @@ import {
 } from 'graphql/mutations/__generated__/changeLocale';
 import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
-import { TTheme, LIGHT_THEME_NAME } from 'common/themes';
+import { LIGHT_THEME_NAME } from 'common/themes';
 import Tooltip from 'components/common/Tooltip';
+import { switchStyle } from 'common/mixins';
+import { ClassicContext } from 'common/utils';
+import { Theme } from 'common/types';
+import { DownOutlined } from '@ant-design/icons';
+import { Media } from 'components/common/Media';
+import MyBuilds from '../common/MyBuilds';
+import SignUpModal from '../common/SignUpModal';
+import LoginModal from '../common/LoginModal';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -83,7 +89,7 @@ const getDonateElement = (t: TFunction) => {
   );
 };
 
-const Layout = (props: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
   const { t, i18n } = useTranslation(['auth', 'common']);
   const client = useApolloClient();
   const { data } = useQuery<ICurrentUser>(currentUserQuery);
@@ -118,12 +124,13 @@ const Layout = (props: LayoutProps) => {
   }, []);
 
   const logoutHandler = React.useCallback(async () => {
-    const { data } = await logout();
-    if (data?.logoutUser?.ok) {
+    const { data: logoutData } = await logout();
+    if (logoutData?.logoutUser?.ok) {
       client.writeQuery<ICurrentUser>({
         query: currentUserQuery,
         data: { currentUser: null },
       });
+
       router.push('/');
     }
   }, [logout, router]);
@@ -150,9 +157,11 @@ const Layout = (props: LayoutProps) => {
     <Select<string>
       value={i18n.language}
       onSelect={changeLocaleHandler}
-      css={{ '&.ant-select': { marginLeft: 12 } }}
+      css={{
+        '&.ant-select': { marginLeft: 12 },
+      }}
     >
-      {LANGUAGES.map(lang => (
+      {LANGUAGES.map((lang) => (
         <Option key={lang} value={lang}>
           <div css={{ display: 'flex', alignItems: 'center' }}>
             {langToFullName(lang)}
@@ -162,7 +171,75 @@ const Layout = (props: LayoutProps) => {
     </Select>
   );
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
+
+  const classicSwitch = (
+    <ClassicContext.Consumer>
+      {([isClassic, setIsClassic]) => {
+        const switchElement = (
+          <Switch
+            css={{
+              ...switchStyle(theme, true),
+              [mq[2]]: {
+                marginLeft: 8,
+                marginRight: 8,
+              },
+            }}
+            checked={isClassic}
+            onChange={setIsClassic}
+          />
+        );
+        return (
+          <div css={{ display: 'flex', marginRight: 12, alignItems: 'center' }}>
+            <a
+              css={{
+                color: theme.text?.default,
+                opacity: isClassic ? 0.3 : 1,
+                transition: 'all 0.3s ease-in-out',
+                '&:hover': {
+                  opacity: 1,
+                },
+                display: 'none',
+                [mq[2]]: {
+                  display: 'inline',
+                },
+              }}
+              onClick={() => {
+                setIsClassic(false);
+              }}
+            >
+              DofusLab
+            </a>
+            <Media lessThan="sm">
+              <Tooltip title={t('DOFUSLAB_CLASSIC', { ns: 'common' })}>
+                {switchElement}
+              </Tooltip>
+            </Media>
+            <Media greaterThanOrEqual="sm">{switchElement}</Media>
+            <a
+              css={{
+                color: theme.text?.default,
+                opacity: isClassic ? 1 : 0.3,
+                transition: 'all 0.3s ease-in-out',
+                '&:hover': {
+                  opacity: 1,
+                },
+                display: 'none',
+                [mq[2]]: {
+                  display: 'inline',
+                },
+              }}
+              onClick={() => {
+                setIsClassic(true);
+              }}
+            >
+              DofusLab Classic
+            </a>
+          </div>
+        );
+      }}
+    </ClassicContext.Consumer>
+  );
 
   return (
     <AntdLayout
@@ -238,41 +315,29 @@ const Layout = (props: LayoutProps) => {
           fontSize: '0.8rem',
         }}
       >
-        <Link href="/" as="/">
-          <div css={{ fontWeight: 500, cursor: 'pointer' }}>
-            <img
-              src={
-                theme.name === LIGHT_THEME_NAME
-                  ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg'
-                  : 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark.svg'
-              }
-              css={{ width: 120 }}
-            />
-          </div>
-        </Link>
         <div css={{ display: 'flex', alignItems: 'center' }}>
+          <Link href="/" as="/">
+            <div css={{ fontWeight: 500, cursor: 'pointer' }}>
+              <img
+                src={
+                  theme.name === LIGHT_THEME_NAME
+                    ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg'
+                    : 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark.svg'
+                }
+                css={{ width: 120 }}
+                alt="DofusLab"
+              />
+            </div>
+          </Link>
+        </div>
+        <div css={{ display: 'flex', alignItems: 'center' }}>
+          {classicSwitch}
           {data?.currentUser ? (
             <div>
-              {t('WELCOME')}
-              <Dropdown
-                overlay={
-                  <Menu>
-                    <Menu.Item
-                      key="change-password"
-                      onClick={openPasswordModal}
-                    >
-                      <FontAwesomeIcon icon={faKey} css={{ marginRight: 8 }} />
-                      {t('CHANGE_PASSWORD')}
-                    </Menu.Item>
-                  </Menu>
-                }
-              >
-                <a onClick={openPasswordModal}>{data.currentUser.username}</a>
-              </Dropdown>
               {langSelect}
               {data.currentUser.verified && (
                 <>
-                  <Button onClick={openDrawer} css={{ marginLeft: 16 }}>
+                  <Button onClick={openDrawer} css={{ marginLeft: 12 }}>
                     {t('MY_BUILDS', { ns: 'common' })}
                   </Button>
                   <Drawer
@@ -283,6 +348,33 @@ const Layout = (props: LayoutProps) => {
                   >
                     <MyBuilds onClose={closeDrawer} />
                   </Drawer>
+                  <Dropdown
+                    overlay={
+                      <Menu>
+                        <Menu.ItemGroup
+                          title={`${t('WELCOME')} ${data.currentUser.username}`}
+                        >
+                          <Menu.Item
+                            key="change-password"
+                            onClick={openPasswordModal}
+                          >
+                            <FontAwesomeIcon
+                              icon={faKey}
+                              css={{ marginRight: 8 }}
+                            />
+                            {t('CHANGE_PASSWORD')}
+                          </Menu.Item>
+                        </Menu.ItemGroup>
+                      </Menu>
+                    }
+                  >
+                    <span>
+                      <Button css={{ marginLeft: 12 }}>
+                        {t('MY_ACCOUNT')}{' '}
+                        <DownOutlined css={{ fontSize: '12px' }} />
+                      </Button>
+                    </span>
+                  </Dropdown>
                 </>
               )}
               <Button
@@ -333,7 +425,11 @@ const Layout = (props: LayoutProps) => {
               },
             }}
           >
-            <a href={DISCORD_SERVER_LINK} target="_blank">
+            <a
+              href={DISCORD_SERVER_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Tooltip
                 placement="bottomLeft"
                 title={t('JOIN_US_DISCORD', { ns: 'common' })}
@@ -341,7 +437,11 @@ const Layout = (props: LayoutProps) => {
                 <FontAwesomeIcon icon={faDiscord} />
               </Tooltip>
             </a>
-            <a href={GITHUB_REPO_LINK} target="_blank">
+            <a
+              href={GITHUB_REPO_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Tooltip
                 placement="bottomLeft"
                 title={t('CONTRIBUTE_GITHUB', { ns: 'common' })}
@@ -351,7 +451,11 @@ const Layout = (props: LayoutProps) => {
             </a>
             {/* disable SSR to render based on Math.random() */}
             <NoSSR>
-              <a href={BUY_ME_COFFEE_LINK} target="_blank">
+              <a
+                href={BUY_ME_COFFEE_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Tooltip
                   placement="bottomLeft"
                   title={t('BUY_US_COFFEE', { ns: 'common' })}
@@ -372,7 +476,7 @@ const Layout = (props: LayoutProps) => {
           padding: 0,
         }}
       >
-        {props.children}
+        {children}
       </AntdLayout.Content>
 
       <LoginModal

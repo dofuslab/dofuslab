@@ -19,28 +19,25 @@ import {
   VALID_START_END_REGEX,
 } from 'common/constants';
 
-interface IProps {
+interface Props {
   visible: boolean;
   onClose: () => void;
   openLoginModal: () => void;
 }
 
-const SignUpModal: React.FC<IProps> = ({
-  visible,
-  onClose,
-  openLoginModal,
-}) => {
+const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
   const { t } = useTranslation(['auth', 'common']);
   const [form] = Form.useForm();
 
   const client = useApolloClient();
-  const [register, { loading }] = useMutation<register, registerVariables>(
-    registerMutation,
-  );
+  const [registerMutate, { loading }] = useMutation<
+    register,
+    registerVariables
+  >(registerMutation);
   const handleOk = React.useCallback(async () => {
     const values = await form.validateFields();
 
-    const { data } = await register({
+    const { data } = await registerMutate({
       variables: {
         email: values.email,
         password: values.password,
@@ -55,7 +52,7 @@ const SignUpModal: React.FC<IProps> = ({
       });
       onClose();
     }
-  }, [register, onClose, client, form]);
+  }, [registerMutate, onClose, client, form]);
 
   const onLogin = React.useCallback(() => {
     onClose();
@@ -103,7 +100,7 @@ const SignUpModal: React.FC<IProps> = ({
         wrapperCol={{ span: 14 }}
         css={{
           width: '100%',
-          ['.ant-form-item-explain, .ant-form-item-extra']: {
+          '.ant-form-item-explain, .ant-form-item-extra': {
             margin: '4px 0',
           },
         }}
@@ -118,7 +115,7 @@ const SignUpModal: React.FC<IProps> = ({
               message: t('VALIDATION.VALID_EMAIL'),
             },
           ]}
-          validateTrigger={'onSubmit'}
+          validateTrigger="onSubmit"
         >
           <Input css={{ fontSize: '0.75rem' }} placeholder={t('EMAIL')} />
         </Form.Item>
@@ -140,7 +137,7 @@ const SignUpModal: React.FC<IProps> = ({
               message: t('VALIDATION.START_END_RULE'),
             },
           ]}
-          validateTrigger={'onSubmit'}
+          validateTrigger="onSubmit"
         >
           <Input
             css={{ fontSize: '0.75rem' }}
@@ -151,7 +148,7 @@ const SignUpModal: React.FC<IProps> = ({
         <Form.Item
           name="password"
           label={<span css={{ fontSize: '0.75rem' }}>{t('PASSWORD')}</span>}
-          validateTrigger={'onSubmit'}
+          validateTrigger="onSubmit"
           rules={[
             { required: true, message: t('VALIDATION.PASSWORD_REQUIRED') },
             {
@@ -172,7 +169,7 @@ const SignUpModal: React.FC<IProps> = ({
             <span css={{ fontSize: '0.75rem' }}>{t('CONFIRM_PASSWORD')}</span>
           }
           dependencies={['password']}
-          validateTrigger={'onSubmit'}
+          validateTrigger="onSubmit"
           rules={[
             { required: true, message: t('VALIDATION.PASSWORD_REQUIRED') },
             ({ getFieldValue }) => ({

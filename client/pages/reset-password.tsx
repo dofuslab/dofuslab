@@ -37,6 +37,7 @@ const RequestPasswordResetPage: NextPage = () => {
     if (data?.currentUser?.verified) {
       router.replace('/', {
         pathname: '/',
+        // eslint-disable-next-line @typescript-eslint/camelcase
         query: { reset_password: 'already_logged_in' },
       });
     } else if (data?.currentUser) {
@@ -52,18 +53,19 @@ const RequestPasswordResetPage: NextPage = () => {
     }
     const values = await form.validateFields();
 
-    const { data } = await mutate({
+    const { data: resetPasswordData } = await mutate({
       variables: {
         token,
         password: values.newPassword,
       },
     });
-    if (data?.resetPassword?.ok) {
+    if (resetPasswordData?.resetPassword?.ok) {
       form.resetFields();
       notification.success({
         message: t('RESET_PASSWORD_SUCCESS.TITLE'),
         description: t('RESET_PASSWORD_SUCCESS.DESCRIPTION'),
       });
+
       router.replace('/');
     }
   }, [mutate, t]);
@@ -77,6 +79,7 @@ const RequestPasswordResetPage: NextPage = () => {
       <Head>
         <style
           type="text/css"
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: mediaStyles }}
         />
         <title>{getTitle(t('CHANGE_PASSWORD'))}</title>
@@ -90,7 +93,10 @@ const RequestPasswordResetPage: NextPage = () => {
       >
         <h1 css={{ fontSize: '32px' }}>{t('RESET_PASSWORD')}</h1>
         <div css={{ marginBottom: 20 }}>
-          <img src="https://dofus-lab.s3.us-east-2.amazonaws.com/item/18191.png" />
+          <img
+            src="https://dofus-lab.s3.us-east-2.amazonaws.com/item/18042.png"
+            alt="Pandawa Cub"
+          />
         </div>
         <Form
           form={form}
@@ -104,7 +110,7 @@ const RequestPasswordResetPage: NextPage = () => {
             [mq[0]]: {
               width: 480,
             },
-            ['.ant-form-item-explain, .ant-form-item-extra']: {
+            '.ant-form-item-explain, .ant-form-item-extra': {
               margin: '4px 0',
             },
           }}
@@ -114,7 +120,7 @@ const RequestPasswordResetPage: NextPage = () => {
             label={
               <span css={{ fontSize: '0.75rem' }}>{t('NEW_PASSWORD')}</span>
             }
-            validateTrigger={'onSubmit'}
+            validateTrigger="onSubmit"
             rules={[
               { required: true, message: t('VALIDATION.REQUIRED_FIELD') },
               {
@@ -135,7 +141,7 @@ const RequestPasswordResetPage: NextPage = () => {
               <span css={{ fontSize: '0.75rem' }}>{t('CONFIRM_PASSWORD')}</span>
             }
             dependencies={['newPassword']}
-            validateTrigger={'onSubmit'}
+            validateTrigger="onSubmit"
             rules={[
               { required: true, message: t('VALIDATION.REQUIRED_FIELD') },
               ({ getFieldValue }) => ({

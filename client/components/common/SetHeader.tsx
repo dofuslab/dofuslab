@@ -1,33 +1,38 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
+import { jsx, ClassNames } from '@emotion/core';
 import { Button, Input, InputNumber, Form, Popover } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
 import {
   editCustomSetMetadata,
   editCustomSetMetadataVariables,
-  editCustomSetMetadata_editCustomSetMetadata_customSet,
 } from 'graphql/mutations/__generated__/editCustomSetMetadata';
 import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetdata.graphql';
-import { checkAuthentication, navigateToNewCustomSet } from 'common/utils';
+import {
+  checkAuthentication,
+  navigateToNewCustomSet,
+  EditableContext,
+} from 'common/utils';
 import { ellipsis } from 'common/mixins';
 import { mq } from 'common/constants';
+import { BuildError } from 'common/types';
+import { CustomSet } from 'common/type-aliases';
 import BonusStats from '../desktop/BonusStats';
 import BuildErrors from './BuildErrors';
-import { IError } from 'common/types';
 import BuildActions from './BuildActions';
 
-interface IProps {
-  customSet?: customSet | null;
-  isMobile?: boolean;
-  errors: Array<IError>;
+interface Props {
+  customSet?: CustomSet | null;
+  isMobile: boolean;
+  errors: Array<BuildError>;
+  isClassic: boolean;
+  className?: string;
 }
 
 interface CustomSetMetadata {
@@ -61,7 +66,13 @@ const reducer = (state: CustomSetMetadata, action: CustomSetMetdataAction) => {
   }
 };
 
-const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
+const SetHeader: React.FC<Props> = ({
+  customSet,
+  isClassic,
+  isMobile,
+  errors,
+  className,
+}) => {
   const originalState = {
     isEditing: false,
     name: customSet?.name || '',
@@ -69,6 +80,8 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
   };
 
   const router = useRouter();
+
+  const isEditable = React.useContext(EditableContext);
 
   const [metadataState, dispatch] = React.useReducer(reducer, originalState);
 
@@ -81,8 +94,11 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
   const [form] = Form.useForm();
 
   const onStartEdit = React.useCallback(() => {
+    if (!isEditable) {
+      return;
+    }
     dispatch({ type: 'START_EDIT', originalState });
-  }, [dispatch, customSet?.name, customSet?.level]);
+  }, [dispatch, customSet?.name, customSet?.level, isEditable]);
 
   const onStopEdit = React.useCallback(() => {
     dispatch({ type: 'STOP_EDIT' });
@@ -92,7 +108,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
   const client = useApolloClient();
 
   const handleOk = React.useCallback(
-    async values => {
+    async (values) => {
       const ok = await checkAuthentication(client, t, customSet);
       if (!ok) return;
       dispatch({ type: 'STOP_EDIT' });
@@ -103,8 +119,9 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
           customSetId: customSet?.id,
         },
         optimisticResponse: customSet
-          ? ({ name, level }: any) => {
-              const optimisticCustomSet: editCustomSetMetadata_editCustomSetMetadata_customSet = {
+          ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            ({ name, level }: any) => {
+              const optimisticCustomSet: CustomSet = {
                 ...customSet,
                 name: name || null,
                 level,
@@ -143,7 +160,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
       name="header"
       id={isMobile ? 'header-form-mobile' : 'header-form'}
       onFinish={handleOk}
-      layout={'inline'}
+      layout="inline"
       css={{
         display: 'flex',
         flexDirection: 'column',
@@ -186,6 +203,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
               },
             }}
             maxLength={50}
+            defaultValue={customSet?.name ?? ''}
           />
         </Form.Item>
       ) : (
@@ -201,7 +219,7 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
               maxWidth: 400,
             },
             marginRight: 20,
-            cursor: 'pointer',
+            cursor: isEditable ? 'pointer' : 'auto',
           }}
           onClick={onStartEdit}
         >
@@ -222,7 +240,11 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
         }}
       >
         <div
-          css={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
+          css={{
+            display: 'flex',
+            alignItems: 'center',
+            cursor: isEditable ? 'pointer' : 'auto',
+          }}
           onClick={onStartEdit}
         >
           {t('LEVEL')}{' '}
@@ -233,26 +255,28 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
                 type="number"
                 max={200}
                 min={1}
+                defaultValue={customSet?.level ?? 200}
               />
             </Form.Item>
           ) : (
             customSet?.level ?? 200
           )}
         </div>
-        {metadataState.isEditing ? (
-          <div css={{ marginLeft: 'auto' }}>
-            <Button type="primary" htmlType="submit">
-              {t('OK')}
-            </Button>
-            <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
-              {t('CANCEL')}
-            </Button>
-          </div>
-        ) : (
-          <a css={{ marginLeft: 12 }}>
-            <FontAwesomeIcon icon={faPencilAlt} onClick={onStartEdit} />
-          </a>
-        )}
+        {isEditable &&
+          (metadataState.isEditing ? (
+            <div css={{ marginLeft: 'auto' }}>
+              <Button type="primary" htmlType="submit">
+                {t('OK')}
+              </Button>
+              <Button css={{ marginLeft: 12 }} onClick={onStopEdit}>
+                {t('CANCEL')}
+              </Button>
+            </div>
+          ) : (
+            <a css={{ marginLeft: 12 }}>
+              <FontAwesomeIcon icon={faPencilAlt} onClick={onStartEdit} />
+            </a>
+          ))}
       </div>
     </Form>
   );
@@ -261,129 +285,144 @@ const SetHeader: React.FC<IProps> = ({ customSet, isMobile, errors }) => {
   const modifiedDate = new Date(customSet?.lastModified);
 
   return (
-    <>
-      <div
-        css={{
-          display: 'flex',
-          alignItems: 'center',
-          flex: '0 0 96px',
-          margin: '12px 4px',
-          [mq[1]]: {
-            overflowX: 'hidden',
-            alignItems: 'stretch',
-            margin: '4px 0px',
-            padding: '0px 14px',
-            flex: '0 0 52px',
-          },
-          [mq[4]]: {
-            padding: '0px 20px',
-          },
-        }}
-      >
-        {customSet && !metadataState.isEditing && !isMobile ? (
-          <Popover
-            overlayStyle={{ maxWidth: 360 }}
-            title={
-              <div css={{ fontWeight: 500, overflowWrap: 'break-word' }}>
-                {customSet.name || t('UNTITLED')}
-              </div>
-            }
-            content={
-              <div
-                css={{
-                  display: 'grid',
-                  gridTemplateColumns: 'auto auto',
-                  gridColumnGap: 12,
-                }}
-              >
-                <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
-                <div>{customSet.owner?.username ?? t('ANONYMOUS')}</div>
-                <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-                <div>
-                  {creationDate.toLocaleDateString(undefined, {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })}{' '}
-                  {creationDate.toLocaleTimeString(undefined, {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                  })}
-                </div>
-                <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-                <div>
-                  {modifiedDate.toLocaleDateString(undefined, {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })}{' '}
-                  {modifiedDate.toLocaleTimeString(undefined, {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                  })}
-                </div>
-              </div>
-            }
-            placement="bottomLeft"
-          >
-            {formElement}
-          </Popover>
-        ) : (
-          formElement
-        )}
-        {customSet && !isMobile && (
-          <BuildActions customSet={customSet} isMobile={false} />
-        )}
-        {customSet && !isMobile && (
-          <BonusStats customSet={customSet} isMobile={false} />
-        )}
-        {customSet && !isMobile && (
-          <BuildErrors customSet={customSet} errors={errors} />
-        )}
-      </div>
-      {customSet && isMobile && (
+    <ClassNames>
+      {({ css, cx }) => (
         <>
-          <div css={{ marginBottom: 20, fontSize: '0.75rem' }}>
-            <div css={{ display: 'flex' }}>
-              <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
-              <div css={{ marginLeft: 8 }}>
-                {customSet.owner?.username ?? t('ANONYMOUS')}
-              </div>
-            </div>
-            <div css={{ display: 'flex' }}>
-              <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-              <div css={{ marginLeft: 8 }}>
-                {creationDate.toLocaleDateString(undefined, {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}{' '}
-                {creationDate.toLocaleTimeString(undefined, {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                })}
-              </div>
-            </div>
-            <div css={{ display: 'flex' }}>
-              <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-              <div css={{ marginLeft: 8 }}>
-                {modifiedDate.toLocaleDateString(undefined, {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}{' '}
-                {modifiedDate.toLocaleTimeString(undefined, {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                })}
-              </div>
-            </div>
+          <div
+            css={cx(
+              css({
+                display: 'flex',
+                alignItems: 'center',
+                flex: '0 0 96px',
+                margin: '12px 4px',
+                [mq[1]]: {
+                  overflowX: 'hidden',
+                  alignItems: 'stretch',
+                  margin: '4px 0px',
+                  flex: '0 0 52px',
+                },
+              }),
+              className,
+            )}
+          >
+            {customSet && !metadataState.isEditing && !isMobile ? (
+              <Popover
+                overlayStyle={{ maxWidth: 360 }}
+                title={
+                  <div css={{ fontWeight: 500, overflowWrap: 'break-word' }}>
+                    {customSet.name || t('UNTITLED')}
+                  </div>
+                }
+                content={
+                  <div
+                    css={{
+                      display: 'grid',
+                      gridTemplateColumns: 'auto auto',
+                      gridColumnGap: 12,
+                    }}
+                  >
+                    <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
+                    <div>{customSet.owner?.username ?? t('ANONYMOUS')}</div>
+                    <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
+                    <div>
+                      {creationDate.toLocaleDateString(undefined, {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric',
+                      })}{' '}
+                      {creationDate.toLocaleTimeString(undefined, {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </div>
+                    <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
+                    <div>
+                      {modifiedDate.toLocaleDateString(undefined, {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric',
+                      })}{' '}
+                      {modifiedDate.toLocaleTimeString(undefined, {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </div>
+                  </div>
+                }
+                placement="bottomLeft"
+              >
+                {formElement}
+              </Popover>
+            ) : (
+              formElement
+            )}
+            {customSet && !isMobile && !isClassic && (
+              <BonusStats
+                customSet={customSet}
+                isMobile={false}
+                isClassic={false}
+              />
+            )}
+            {customSet && !isMobile && (
+              <BuildErrors
+                customSet={customSet}
+                errors={errors}
+                isMobile={false}
+              />
+            )}
+            {customSet && !isMobile && (
+              <BuildActions
+                customSet={customSet}
+                isMobile={false}
+                isClassic={isClassic}
+              />
+            )}
           </div>
-          <BuildActions customSet={customSet} isMobile />
-          <BuildErrors customSet={customSet} errors={errors} isMobile />
+          {customSet && isMobile && (
+            <>
+              <div css={{ marginBottom: 20, fontSize: '0.75rem' }}>
+                <div css={{ display: 'flex' }}>
+                  <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
+                  <div css={{ marginLeft: 8 }}>
+                    {customSet.owner?.username ?? t('ANONYMOUS')}
+                  </div>
+                </div>
+                <div css={{ display: 'flex' }}>
+                  <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
+                  <div css={{ marginLeft: 8 }}>
+                    {creationDate.toLocaleDateString(undefined, {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}{' '}
+                    {creationDate.toLocaleTimeString(undefined, {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })}
+                  </div>
+                </div>
+                <div css={{ display: 'flex' }}>
+                  <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
+                  <div css={{ marginLeft: 8 }}>
+                    {modifiedDate.toLocaleDateString(undefined, {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}{' '}
+                    {modifiedDate.toLocaleTimeString(undefined, {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })}
+                  </div>
+                </div>
+              </div>
+              <BuildActions customSet={customSet} isMobile isClassic={false} />
+              <BuildErrors customSet={customSet} errors={errors} isMobile />
+            </>
+          )}
         </>
       )}
-    </>
+    </ClassNames>
   );
 };
 

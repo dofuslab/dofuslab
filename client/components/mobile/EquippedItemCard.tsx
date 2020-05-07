@@ -15,28 +15,25 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
+import { Theme, BuildError } from 'common/types';
 import { useTranslation } from 'i18n';
 import { itemCardStyle, switchStyle } from 'common/mixins';
 import { useDeleteItemMutation, checkAuthentication } from 'common/utils';
-import { customSet_customSetById_equippedItems } from 'graphql/queries/__generated__/customSet';
 import { Stat } from '__generated__/globalTypes';
 import setEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.graphql';
 import {
   setEquippedItemExo,
   setEquippedItemExoVariables,
 } from 'graphql/mutations/__generated__/setEquippedItemExo';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
-import ItemStatsList from '../common/ItemStatsList';
-import { item_set } from 'graphql/fragments/__generated__/item';
 import { TruncatableText } from 'common/wrappers';
 import Router from 'next/router';
 import { Media } from 'components/common/Media';
 import Link from 'next/link';
-import { IError } from 'common/types';
+
 import Card from 'components/common/Card';
 import { mq } from 'common/constants';
-// import Tooltip from 'components/common/Tooltip';
+import { EquippedItem, ItemSet, CustomSet } from 'common/type-aliases';
+import ItemStatsList from '../common/ItemStatsList';
 
 const quickMageStats = [
   {
@@ -63,16 +60,16 @@ const quickMageStats = [
 //   fontSize: '0.8rem',
 // };
 
-interface IProps {
-  equippedItem: customSet_customSetById_equippedItems;
+interface Props {
+  equippedItem: EquippedItem;
   itemSlotId: string;
-  customSet: customSet;
-  openMageModal: (equippedItem: customSet_customSetById_equippedItems) => void;
-  openSetModal: (set: item_set) => void;
-  errors?: Array<IError>;
+  customSet: CustomSet;
+  openMageModal: (equippedItem: EquippedItem) => void;
+  openSetModal: (set: ItemSet) => void;
+  errors?: Array<BuildError>;
 }
 
-const EquippedItemCard: React.FC<IProps> = ({
+const EquippedItemCard: React.FC<Props> = ({
   equippedItem,
   itemSlotId,
   customSet,
@@ -95,7 +92,12 @@ const EquippedItemCard: React.FC<IProps> = ({
           exos: hasStat
             ? [
                 ...equippedItem.exos,
-                { id: '0', stat, value: 1, __typename: 'EquippedItemExo' },
+                {
+                  id: '0',
+                  stat,
+                  value: 1,
+                  __typename: 'EquippedItemExo',
+                },
               ]
             : equippedItem.exos.filter(({ stat: exoStat }) => stat !== exoStat),
         },
@@ -108,13 +110,13 @@ const EquippedItemCard: React.FC<IProps> = ({
     deleteItem();
     Router.push(
       { pathname: '/index', query: { customSetId: customSet.id } },
-      customSet ? `/build/${customSet.id}` : '/',
+      customSet ? `/build/${customSet.id}/` : '/',
     );
   }, [deleteItem, customSet]);
 
   const client = useApolloClient();
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   const onQuickMage = React.useCallback(
     async (checked: boolean, stat: Stat) => {
@@ -141,7 +143,7 @@ const EquippedItemCard: React.FC<IProps> = ({
           checked={hasExo}
           css={{ ...switchStyle(theme, true), marginRight: 12 }}
           checkedChildren={<FontAwesomeIcon icon={faIcon} />}
-          onChange={checked => {
+          onChange={(checked) => {
             onQuickMage(checked, stat);
           }}
         />
@@ -161,13 +163,16 @@ const EquippedItemCard: React.FC<IProps> = ({
     <div css={{ padding: '0 12px', marginTop: 12 }}>
       <Media lessThan="xs">
         <Link
-          href={{ pathname: '/index', query: { customSetId: customSet.id } }}
-          as={customSet ? `/build/${customSet.id}` : '/'}
+          href={{ pathname: '/', query: { customSetId: customSet.id } }}
+          as={customSet ? `/build/${customSet.id}/` : '/'}
+          passHref
         >
-          <Button size="large" css={{ fontSize: '0.75rem' }}>
-            <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
-            {t('BACK')}
-          </Button>
+          <a>
+            <Button size="large" css={{ fontSize: '0.75rem' }}>
+              <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
+              {t('BACK')}
+            </Button>
+          </a>
         </Link>
       </Media>
       <Card
@@ -190,7 +195,7 @@ const EquippedItemCard: React.FC<IProps> = ({
           marginTop: 20,
           display: 'flex',
           flexDirection: 'column',
-          ['.ant-card-body']: {
+          '.ant-card-body': {
             flex: '1',
           },
           border: `1px solid ${theme.border?.default}`,
@@ -236,8 +241,11 @@ const EquippedItemCard: React.FC<IProps> = ({
             },
           }}
           as={`/equip/${equippedItem.slot.id}/${customSet ? customSet.id : ''}`}
+          passHref
         >
-          <Button>{t('REPLACE')}</Button>
+          <a>
+            <Button>{t('REPLACE')}</Button>
+          </a>
         </Link>
         <Button onClick={onDelete} css={{ marginLeft: 12 }}>
           {t('DELETE')}

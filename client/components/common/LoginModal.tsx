@@ -12,27 +12,23 @@ import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { useTranslation, Trans } from 'i18n';
 import { mq, PASSWORD_REGEX, EMAIL_REGEX } from 'common/constants';
-import localeQuery from 'graphql/queries/locale.graphql';
+import sessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
 import RequestPasswordResetModal from './RequestPasswordResetModal';
 
-interface IProps {
+interface Props {
   visible: boolean;
   onClose: () => void;
   openSignUpModal: () => void;
 }
 
-const LoginModal: React.FC<IProps> = ({
-  visible,
-  onClose,
-  openSignUpModal,
-}) => {
+const LoginModal: React.FC<Props> = ({ visible, onClose, openSignUpModal }) => {
   const { t } = useTranslation(['auth', 'common']);
   const [form] = Form.useForm();
 
   const client = useApolloClient();
   const [login, { loading }] = useMutation<ILogin, ILoginVariables>(
     loginMutation,
-    { refetchQueries: [{ query: localeQuery }] },
+    { refetchQueries: [{ query: sessionSettingsQuery }] },
   );
 
   const handleOk = React.useCallback(async () => {
@@ -124,14 +120,14 @@ const LoginModal: React.FC<IProps> = ({
                 message: t('VALIDATION.VALID_EMAIL'),
               },
             ]}
-            validateTrigger={'onSubmit'}
+            validateTrigger="onSubmit"
           >
             <Input placeholder={t('EMAIL')} css={{ fontSize: '0.75rem' }} />
           </Form.Item>
           <Form.Item
             name="password"
             label={<span css={{ fontSize: '0.75rem' }}>{t('PASSWORD')}</span>}
-            validateTrigger={'onSubmit'}
+            validateTrigger="onSubmit"
             rules={[
               { required: true, message: t('VALIDATION.PASSWORD_REQUIRED') },
               {
@@ -150,7 +146,7 @@ const LoginModal: React.FC<IProps> = ({
             name="remember"
             wrapperCol={{ span: 24 }}
             css={{ textAlign: 'center', marginBottom: 0 }}
-            valuePropName={'checked'}
+            valuePropName="checked"
           >
             <Checkbox defaultChecked={false}>
               <span css={{ fontSize: '0.75rem' }}>{t('REMEMBER_ME')}</span>
@@ -165,7 +161,7 @@ const LoginModal: React.FC<IProps> = ({
             </a>
           </div>
           <Trans i18nKey="auth:NO_ACCOUNT_SIGNUP">
-            Don't have an account? <a onClick={onSignUp}>Sign up here.</a>
+            Don&apos;t have an account? <a onClick={onSignUp}>Sign up here.</a>
           </Trans>
         </div>
       </Modal>

@@ -34,11 +34,12 @@ const VerifyEmailPage: NextPage = () => {
     if (data?.currentUser?.verified) {
       router.replace('/', {
         pathname: '/',
+        // eslint-disable-next-line @typescript-eslint/camelcase
         query: { verify_email: 'already_verified' },
       });
     }
     if (!data?.currentUser) {
-      router.replace('/', '/');
+      router.replace('/');
     }
   }, [data, router]);
 
@@ -47,6 +48,7 @@ const VerifyEmailPage: NextPage = () => {
       <Head>
         <style
           type="text/css"
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: mediaStyles }}
         />
         <title>DofusLab</title>
@@ -63,7 +65,10 @@ const VerifyEmailPage: NextPage = () => {
       >
         <h1 css={{ fontSize: '32px' }}>{t('THANKS_FOR_SIGNING_UP')}</h1>
         <div css={{ marginBottom: 20 }}>
-          <img src="https://dofus-lab.s3.us-east-2.amazonaws.com/item/18191.png" />
+          <img
+            src="https://dofus-lab.s3.us-east-2.amazonaws.com/item/18191.png"
+            alt="Ratalda"
+          />
         </div>
         <div css={{ fontSize: '16px', marginBottom: 20 }}>
           {t('VERIFICATION_MESSAGE', { email })}

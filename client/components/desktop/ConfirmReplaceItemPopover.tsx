@@ -4,20 +4,19 @@ import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
 import { Popover } from 'antd';
 
-import { item } from 'graphql/fragments/__generated__/item';
 import { useTranslation } from 'i18n';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import { itemBox, popoverTitleStyle } from 'common/mixins';
-import ItemWithStats from './ItemWithStats';
 import { useEquipItemMutation } from 'common/utils';
 import { mq } from 'common/constants';
+import { Item, CustomSet } from 'common/type-aliases';
+import ItemWithStats from './ItemWithStats';
 
-interface IProps {
-  item: item;
-  customSet: customSet;
+interface Props {
+  item: Item;
+  customSet: CustomSet;
 }
 
-const ConfirmReplaceItemPopover: React.FC<IProps> = ({
+const ConfirmReplaceItemPopover: React.FC<Props> = ({
   item,
   customSet,
   children,
@@ -43,7 +42,12 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
     <ClassNames>
       {({ css }) => (
         <Popover
-          getPopupContainer={node => node.parentElement!}
+          getPopupContainer={(node) => {
+            if (node.parentElement) {
+              return node.parentElement;
+            }
+            return document && document.body;
+          }}
           content={
             <div
               css={{
@@ -56,15 +60,15 @@ const ConfirmReplaceItemPopover: React.FC<IProps> = ({
               }}
             >
               {customSet.equippedItems
-                .filter(equippedItem =>
+                .filter((equippedItem) =>
                   item.itemType.eligibleItemSlots
-                    .map(slot => slot.id)
+                    .map((slot) => slot.id)
                     .includes(equippedItem.slot.id),
                 )
                 .sort((item1, item2) =>
                   item1.slot.id.localeCompare(item2.slot.id),
                 )
-                .map(equippedItem => (
+                .map((equippedItem) => (
                   <div
                     css={itemBox}
                     key={equippedItem.id}

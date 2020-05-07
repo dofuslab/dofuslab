@@ -48,6 +48,7 @@ export interface item_itemType {
   __typename: "ItemType";
   id: any;
   name: string;
+  enName: string;
   eligibleItemSlots: item_itemType_eligibleItemSlots[];
 }
 

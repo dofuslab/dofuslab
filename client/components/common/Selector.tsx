@@ -8,19 +8,17 @@ import { useTheme } from 'emotion-theming';
 import uniqWith from 'lodash/uniqWith';
 import isEqual from 'lodash/isEqual';
 
-import { TTheme } from 'common/themes';
-import { SharedFilters, SharedFilterAction } from 'common/types';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
-import {
-  itemSlots_itemSlots,
-  itemSlots,
-} from 'graphql/queries/__generated__/itemSlots';
+import { Theme, SharedFilters, SharedFilterAction } from 'common/types';
+
 import { topMarginStyle } from 'common/mixins';
+import { mq } from 'common/constants';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import { ItemSlot, CustomSet } from 'common/type-aliases';
+import NoSSR from 'react-no-ssr';
+import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import SelectorFilters from './SelectorFilters';
 import ItemSelector from './ItemSelector';
-import { mq } from 'common/constants';
 import SetSelector from './SetSelector';
-import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import ItemTypeFilter from './ItemTypeFilter';
 import ResetAllButton from './ResetAllButton';
 
@@ -43,22 +41,22 @@ const reducer = (state: SharedFilters, action: SharedFilterAction) => {
   }
 };
 
-interface IProps {
-  customSet: customSet | null;
-  selectedItemSlot: itemSlots_itemSlots | null;
-  selectItemSlot?: React.Dispatch<
-    React.SetStateAction<itemSlots_itemSlots | null>
-  >;
+interface Props {
+  customSet: CustomSet | null;
+  selectedItemSlot: ItemSlot | null;
+  selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
   showSets?: boolean;
-  isMobile?: boolean;
+  isMobile: boolean;
+  isClassic: boolean;
 }
 
-const Selector: React.FC<IProps> = ({
+const Selector: React.FC<Props> = ({
   customSet,
   selectedItemSlot,
   selectItemSlot,
   showSets,
   isMobile,
+  isClassic,
 }) => {
   const [filters, dispatch] = React.useReducer(reducer, {
     stats: [],
@@ -67,14 +65,14 @@ const Selector: React.FC<IProps> = ({
   });
 
   const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);
-  const itemSlots = itemSlotsData?.itemSlots;
+  const slots = itemSlotsData?.itemSlots;
 
   const [itemTypeIds, setItemTypeIds] = React.useState<Set<string>>(new Set());
 
   const [showSetsState, setShowSetsState] = React.useState(showSets || false);
 
   const customSetItemIds = new Set<string>();
-  (customSet?.equippedItems ?? []).forEach(equippedItem =>
+  (customSet?.equippedItems ?? []).forEach((equippedItem) =>
     customSetItemIds.add(equippedItem.item.id),
   );
 
@@ -85,7 +83,7 @@ const Selector: React.FC<IProps> = ({
     setItemTypeIds(new Set());
   }, [dispatch, customSet]);
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   return (
     <>
@@ -96,7 +94,7 @@ const Selector: React.FC<IProps> = ({
           ...topMarginStyle,
           [mq[1]]: {
             padding: '0 14px',
-            overflowY: 'scroll',
+            overflowY: 'auto',
             overflowAnchor: 'none',
             flex: 1,
             ...(topMarginStyle[mq[1]] as {}),
@@ -116,17 +114,20 @@ const Selector: React.FC<IProps> = ({
           showSets={showSetsState}
           setShowSets={setShowSetsState}
           onReset={onReset}
+          shouldShowBack={isMobile || isClassic}
+          isMobile={isMobile}
         />
-        {itemSlots && !showSetsState && (
+        {slots && !showSetsState && (
           <ItemTypeFilter
             setItemTypeIds={setItemTypeIds}
             itemTypeIds={itemTypeIds}
             itemTypes={uniqWith(
-              itemSlots
+              slots
                 .filter(
-                  slot => !selectedItemSlot || selectedItemSlot.id === slot.id,
+                  (slot: ItemSlot) =>
+                    !selectedItemSlot || selectedItemSlot.id === slot.id,
                 )
-                .flatMap(slot => slot.itemTypes),
+                .flatMap((slot: ItemSlot) => slot.itemTypes),
               isEqual,
             )}
           />
@@ -136,7 +137,12 @@ const Selector: React.FC<IProps> = ({
           onReset={onReset}
         />
         {showSetsState ? (
-          <SetSelector filters={filters} customSet={customSet} />
+          <SetSelector
+            filters={filters}
+            customSet={customSet}
+            isClassic={isClassic}
+            isMobile={isMobile}
+          />
         ) : (
           <ItemSelector
             key={`selected-item-slot-${selectedItemSlot?.name}-level-${customSet?.level}`}
@@ -146,19 +152,27 @@ const Selector: React.FC<IProps> = ({
             customSetItemIds={customSetItemIds}
             filters={filters}
             isMobile={isMobile}
+            isClassic={isClassic}
             selectItemSlot={selectItemSlot}
           />
         )}
       </div>
-      <BackTop
-        target={() => selectorDivRef.current!}
-        css={{
-          '.ant-back-top-content': {
-            backgroundColor: theme.backTop?.background,
-            '&:hover': { backgroundColor: theme.backTop?.hoverBackground },
-          },
-        }}
-      />
+      <NoSSR>
+        <BackTop
+          target={() => {
+            if (selectorDivRef.current) {
+              return selectorDivRef.current;
+            }
+            return document.body;
+          }}
+          css={{
+            '.ant-back-top-content': {
+              backgroundColor: theme.backTop?.background,
+              '&:hover': { backgroundColor: theme.backTop?.hoverBackground },
+            },
+          }}
+        />
+      </NoSSR>
     </>
   );
 };

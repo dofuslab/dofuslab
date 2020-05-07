@@ -29,6 +29,7 @@ fragment item on Item {
   itemType {
     id
     name
+    enName
     eligibleItemSlots {
       id
       order

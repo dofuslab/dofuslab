@@ -1,21 +1,35 @@
+/* eslint-disable react/no-array-index-key */
+
 import React from 'react';
 import { CardSkeleton } from 'common/wrappers';
+import { getSelectorNumCols } from 'common/constants';
 import { Media } from './Media';
 
-interface IProps {
+interface Props {
   multiplier?: number;
   length?: number;
+  isClassic: boolean;
 }
 
-const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
-  let mult = multiplier || 1;
-  let mod = (length || 0) % 5;
+const getNumLoaders = (
+  numCols: number,
+  length: number | undefined,
+  mult: number,
+) => numCols * 2 * mult - ((length || 0) % numCols);
+
+const SkeletonCardsLoader: React.FC<Props> = ({
+  multiplier,
+  length,
+  isClassic,
+}) => {
+  const numCols = getSelectorNumCols(isClassic);
+  const mult = multiplier || 1;
   return (
-    <React.Fragment key={'frag'}>
+    <React.Fragment key="frag">
       <Media lessThan="xs">
-        {mediaClassNames => (
+        {(mediaClassNames) => (
           <>
-            {Array(2)
+            {Array(getNumLoaders(numCols[0], length, mult))
               .fill(null)
               .map((_, idx) => (
                 <CardSkeleton
@@ -27,9 +41,9 @@ const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
         )}
       </Media>
       <Media at="xs">
-        {mediaClassNames => (
+        {(mediaClassNames) => (
           <>
-            {Array(4 * mult)
+            {Array(getNumLoaders(numCols[1], length, mult))
               .fill(null)
               .map((_, idx) => (
                 <CardSkeleton
@@ -41,9 +55,9 @@ const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
         )}
       </Media>
       <Media at="sm">
-        {mediaClassNames => (
+        {(mediaClassNames) => (
           <>
-            {Array(4 * mult)
+            {Array(getNumLoaders(numCols[2], length, mult))
               .fill(null)
               .map((_, idx) => (
                 <CardSkeleton
@@ -55,9 +69,9 @@ const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
         )}
       </Media>
       <Media at="md">
-        {mediaClassNames => (
+        {(mediaClassNames) => (
           <>
-            {Array(6 * mult)
+            {Array(getNumLoaders(numCols[3], length, mult))
               .fill(null)
               .map((_, idx) => (
                 <CardSkeleton
@@ -69,9 +83,9 @@ const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
         )}
       </Media>
       <Media at="lg">
-        {mediaClassNames => (
+        {(mediaClassNames) => (
           <>
-            {Array(8 * mult)
+            {Array(getNumLoaders(numCols[4], length, mult))
               .fill(null)
               .map((_, idx) => (
                 <CardSkeleton
@@ -83,9 +97,9 @@ const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
         )}
       </Media>
       <Media at="xl">
-        {mediaClassNames => (
+        {(mediaClassNames) => (
           <>
-            {Array(10 * mult - mod)
+            {Array(getNumLoaders(numCols[5], length, mult))
               .fill(null)
               .map((_, idx) => (
                 <CardSkeleton
@@ -97,9 +111,9 @@ const SkeletonCardsLoader: React.FC<IProps> = ({ multiplier, length }) => {
         )}
       </Media>
       <Media greaterThanOrEqual="xxl">
-        {mediaClassNames => (
+        {(mediaClassNames) => (
           <>
-            {Array(12 * mult)
+            {Array(getNumLoaders(numCols[6], length, mult))
               .fill(null)
               .map((_, idx) => (
                 <CardSkeleton

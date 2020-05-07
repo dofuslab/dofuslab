@@ -1,0 +1,5 @@
+mutation changeClassic($classic: Boolean!) {
+  changeClassic(classic: $classic) {
+    ok
+  }
+}

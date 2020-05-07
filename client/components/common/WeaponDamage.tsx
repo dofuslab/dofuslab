@@ -6,15 +6,14 @@ import { Divider, Radio } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
+import { Theme, StatsFromCustomSet, TEffectLine } from 'common/types';
 import {
   CardTitleWithLevel,
   damageHeaderStyle,
   EffectLine,
+  DamageTypeToggle,
 } from 'common/wrappers';
 import { itemCardStyle } from 'common/mixins';
-import { item_weaponStats } from 'graphql/fragments/__generated__/item';
-import { customSet } from 'graphql/fragments/__generated__/customSet';
 import {
   getStatsFromCustomSet,
   getStatWithDefault,
@@ -22,8 +21,9 @@ import {
   calcEffect,
   calcElementMage,
   elementMageToWeaponEffect,
+  getInitialRangedState,
 } from 'common/utils';
-import { StatsFromCustomSet, TEffectLine } from 'common/types';
+
 import {
   Stat,
   WeaponElementMage,
@@ -31,14 +31,15 @@ import {
 } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
 import Card from 'components/common/Card';
+import { WeaponStats, CustomSet } from 'common/type-aliases';
 
-interface IProps {
-  weaponStats: item_weaponStats;
-  customSet: customSet;
+interface Props {
+  weaponStats: WeaponStats;
+  customSet: CustomSet;
   weaponElementMage: WeaponElementMage | null;
 }
 
-const WeaponDamage: React.FC<IProps> = ({
+const WeaponDamage: React.FC<Props> = ({
   weaponStats,
   customSet,
   weaponElementMage,
@@ -56,8 +57,20 @@ const WeaponDamage: React.FC<IProps> = ({
     [setWeaponSkillPower],
   );
 
-  const rangedOnly = weaponStats.minRange && weaponStats.minRange > 1;
-  const damageTypeKey = rangedOnly ? 'ranged' : 'melee';
+  const rangedOnly = !!weaponStats.minRange && weaponStats.minRange > 1;
+  const meleeOnly =
+    !rangedOnly &&
+    !customSet.equippedItems.some(
+      (equippedItem) => equippedItem.item.itemType.enName === 'Axe',
+    );
+
+  const showToggle = !rangedOnly && !meleeOnly;
+
+  const [showRanged, setShowRanged] = React.useState(
+    getInitialRangedState(meleeOnly, rangedOnly, statsFromCustomSet),
+  );
+
+  const damageTypeKey = showRanged ? 'ranged' : 'melee';
   let critRate =
     typeof weaponStats.baseCritChance === 'number'
       ? getStatWithDefault(statsFromCustomSet, Stat.CRITICAL) +
@@ -67,9 +80,9 @@ const WeaponDamage: React.FC<IProps> = ({
 
   const weaponEffectSummaries: Array<TEffectLine> = weaponStats.weaponEffects.map(
     ({ minDamage, maxDamage, effectType, id }) => {
-      let min = minDamage,
-        max = maxDamage,
-        type = effectType;
+      let min = minDamage;
+      let max = maxDamage;
+      let type = effectType;
       if (type === WeaponEffectType.NEUTRAL_DAMAGE && weaponElementMage) {
         ({ minDamage: min, maxDamage: max } = calcElementMage(
           weaponElementMage,
@@ -198,7 +211,7 @@ const WeaponDamage: React.FC<IProps> = ({
         averageNonCritHeal * (1 - critRate / 100)
       : averageNonCritHeal;
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
 
   return (
     <Card
@@ -206,24 +219,30 @@ const WeaponDamage: React.FC<IProps> = ({
       title={<CardTitleWithLevel title={t('WEAPON_DAMAGE')} />}
       css={{
         ...itemCardStyle,
-        [':hover']: {
+        ':hover': {
           border: `1px solid ${theme.border?.default}`,
         },
         border: `1px solid ${theme.border?.default}`,
       }}
     >
       <Radio.Group value={weaponSkillPower} onChange={onWeaponSkillChange}>
-        <Radio value={0} css={{ fontSize: '0.75rem' }}>
+        <Radio value={0} css={{ fontSize: '0.75rem', display: 'block' }}>
           {t('NO_WEAPON_SKILL')}
         </Radio>
-        <Radio value={300} css={{ fontSize: '0.75rem' }}>
+        <Radio value={300} css={{ fontSize: '0.75rem', display: 'block' }}>
           {t('WEAPON_SKILL')} (300 {t('POWER', { ns: 'stat' })})
         </Radio>
-        <Radio value={350} css={{ fontSize: '0.75rem' }}>
+        <Radio value={350} css={{ fontSize: '0.75rem', display: 'block' }}>
           {t('WEAPON_SKILL')} (350 {t('POWER', { ns: 'stat' })})
         </Radio>
       </Radio.Group>
       <Divider css={{ margin: '12px 0' }} />
+      {showToggle && (
+        <DamageTypeToggle
+          setShowRanged={setShowRanged}
+          showRanged={showRanged}
+        />
+      )}
       <div css={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
         <div css={damageHeaderStyle}>{t('NON_CRIT')}</div>
         {weaponStats.baseCritChance ? (
@@ -248,26 +267,24 @@ const WeaponDamage: React.FC<IProps> = ({
             {t('DOES_NOT_CRIT')}
           </div>
         )}
-        {weaponEffectSummaries.map(effect => {
-          return (
-            <React.Fragment key={effect.id}>
+        {weaponEffectSummaries.map((effect) => (
+          <React.Fragment key={effect.id}>
+            <EffectLine
+              min={effect.nonCrit.min}
+              max={effect.nonCrit.max}
+              effectType={effect.type}
+              baseMax={effect.nonCrit.baseMax}
+            />
+            {!!effect.crit && (
               <EffectLine
-                min={effect.nonCrit.min}
-                max={effect.nonCrit.max}
+                min={effect.crit.min}
+                max={effect.crit.max}
                 effectType={effect.type}
-                baseMax={effect.nonCrit.baseMax}
+                baseMax={effect.crit.baseMax}
               />
-              {!!effect.crit && (
-                <EffectLine
-                  min={effect.crit.min}
-                  max={effect.crit.max}
-                  effectType={effect.type}
-                  baseMax={effect.crit.baseMax}
-                />
-              )}
-            </React.Fragment>
-          );
-        })}
+            )}
+          </React.Fragment>
+        ))}
       </div>
       <Divider css={{ margin: '12px 0' }} />
       <div css={{ fontWeight: 500 }}>

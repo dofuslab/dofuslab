@@ -3,20 +3,20 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { notification } from 'antd';
-import cloneDeep from 'lodash/cloneDeep';
 import { useQuery, useApolloClient } from '@apollo/react-hooks';
 
 import { useTranslation } from 'i18n';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
-import { locale } from 'graphql/queries/__generated__/locale';
-import localeQuery from 'graphql/queries/locale.graphql';
+import sessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
+import { sessionSettings } from 'graphql/queries/__generated__/sessionSettings';
 
 type StatusObj = {
   type: 'info' | 'success' | 'warn' | 'error';
   messageKey: string;
 };
 
+/* eslint-disable @typescript-eslint/camelcase */
 const statusMap = {
   reset_password: {
     messageKey: 'RESET_PASSWORD',
@@ -53,6 +53,7 @@ const statusMap = {
     [key: string]: StatusObj | string;
   };
 };
+/* eslint-enable @typescript-eslint/camelcase */
 
 function isStatusObj(value: string | StatusObj): value is StatusObj {
   return typeof value === 'object';
@@ -64,7 +65,9 @@ const StatusChecker: React.FC = () => {
   const { t, i18n } = useTranslation('status');
   const client = useApolloClient();
   const { data } = useQuery<currentUser>(currentUserQuery);
-  const { data: localeData } = useQuery<locale>(localeQuery);
+  const { data: settingsData } = useQuery<sessionSettings>(
+    sessionSettingsQuery,
+  );
 
   const processQueryEntry = React.useCallback(
     (statusType: string, statusValue: string) => {
@@ -87,41 +90,23 @@ const StatusChecker: React.FC = () => {
       router.replace('/verify-email');
       return;
     }
-    const newQuery = cloneDeep(query);
     Object.entries(query).forEach(([statusType, statusValue]) => {
       if (typeof statusValue === 'string') {
-        if (processQueryEntry(statusType, statusValue)) {
-          delete newQuery[statusType];
-        }
+        processQueryEntry(statusType, statusValue);
       } else {
-        statusValue.forEach(value => {
-          if (processQueryEntry(statusType, value)) {
-            const values = newQuery[statusType] as string[];
-            newQuery[statusType] = values.filter(s => s !== value);
-            if (newQuery[statusType].length === 0) {
-              delete newQuery[statusType];
-            }
-          }
+        statusValue.forEach((value) => {
+          processQueryEntry(statusType, value);
         });
       }
     });
-    const { customSetId, ...restQuery } = newQuery;
-    router.replace(
-      { pathname: router.pathname, query: newQuery },
-      {
-        pathname: router.asPath.substring(0, router.asPath.indexOf('?')),
-        query: restQuery,
-      },
-      { shallow: true },
-    );
   }, [data]);
 
   React.useEffect(() => {
-    if (localeData?.locale && localeData.locale !== i18n.language) {
-      i18n.changeLanguage(localeData?.locale);
+    if (settingsData?.locale && settingsData.locale !== i18n.language) {
+      i18n.changeLanguage(settingsData?.locale);
       client.resetStore();
     }
-  }, [localeData, client, i18n]);
+  }, [settingsData, client, i18n]);
 
   return null;
 };

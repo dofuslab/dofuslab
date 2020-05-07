@@ -33,6 +33,7 @@ from app.database.model_spell_stats import ModelSpellStats
 from app.database.model_spell_translation import ModelSpellTranslation
 from app.database.model_spell import ModelSpell
 from app.database.model_spell_variant_pair import ModelSpellVariantPair
+from app.database.model_user_setting import ModelUserSetting
 from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_class import ModelClass
 from app.tasks import send_email
@@ -133,6 +134,17 @@ class ItemSlot(SQLAlchemyObjectType):
             .name
         )
 
+    en_name = graphene.String(required=True)
+
+    def resolve_en_name(self, info):
+        query = db.session.query(ModelItemSlotTranslation)
+        return (
+            query.filter(ModelItemSlotTranslation.locale == "en")
+            .filter(ModelItemSlotTranslation.item_slot_id == self.uuid)
+            .one()
+            .name
+        )
+
     class Meta:
         model = ModelItemSlot
         interfaces = (GlobalNode,)
@@ -141,12 +153,22 @@ class ItemSlot(SQLAlchemyObjectType):
 class ItemType(SQLAlchemyObjectType):
     eligible_item_slots = graphene.NonNull(graphene.List(graphene.NonNull(ItemSlot)))
     name = graphene.String(required=True)
+    en_name = graphene.String(required=True)
 
     def resolve_name(self, info):
         locale = str(get_locale())
         query = db.session.query(ModelItemTypeTranslation)
         return (
             query.filter(ModelItemTypeTranslation.locale == locale)
+            .filter(ModelItemTypeTranslation.item_type_id == self.uuid)
+            .one()
+            .name
+        )
+
+    def resolve_en_name(self, info):
+        query = db.session.query(ModelItemTypeTranslation)
+        return (
+            query.filter(ModelItemTypeTranslation.locale == "en")
             .filter(ModelItemTypeTranslation.item_type_id == self.uuid)
             .one()
             .name
@@ -781,7 +803,6 @@ class RegisterUser(graphene.Mutation):
                     username=username,
                     email=email,
                     password=ModelUserAccount.generate_hash(password),
-                    locale=str(get_locale()),
                 )
                 token = encode_token(user.email, verify_email_salt)
                 verify_url = generate_url("verify_email.verify_email", token)
@@ -789,6 +810,12 @@ class RegisterUser(graphene.Mutation):
                 content = template.render(display_name=username, verify_url=verify_url)
                 db_session.add(user)
                 db_session.flush()
+                user_setting = ModelUserSetting(
+                    locale=str(get_locale()),
+                    classic=session.get("classic", False),
+                    user_id=user.uuid,
+                )
+                db_session.add(user_setting)
                 q.enqueue(
                     send_email, user.email, _("Verify your DofusLab account"), content
                 )
@@ -879,10 +906,27 @@ class ChangeLocale(graphene.Mutation):
         with session_scope():
             user = current_user._get_current_object()
             if current_user.is_authenticated:
-                user.locale = locale
+                user.settings.locale = locale
             session["locale"] = locale
             refresh()
             return ChangeLocale(ok=True)
+
+
+class ChangeClassic(graphene.Mutation):
+    class Arguments:
+        classic = graphene.Boolean(required=True)
+
+    ok = graphene.Boolean(required=True)
+
+    def mutate(self, info, **kwargs):
+        with session_scope():
+            user = current_user._get_current_object()
+            classic = kwargs.get("classic")
+            if current_user.is_authenticated:
+                user.settings.classic = classic
+            session["classic"] = classic
+            refresh()
+            return ChangeClassic(ok=True)
 
 
 class ChangePassword(graphene.Mutation):
@@ -1173,6 +1217,13 @@ class Query(graphene.ObjectType):
     def resolve_locale(self, info):
         return str(get_locale())
 
+    classic = graphene.NonNull(graphene.Boolean)
+
+    def resolve_classic(self, info):
+        if current_user.is_authenticated:
+            return current_user.settings.classic
+        return session.get("classic", False)
+
 
 class Mutation(graphene.ObjectType):
     register_user = RegisterUser.Field()
@@ -1189,6 +1240,7 @@ class Mutation(graphene.ObjectType):
     create_custom_set = CreateCustomSet.Field()
     resend_verification_email = ResendVerificationEmail.Field()
     change_locale = ChangeLocale.Field()
+    change_classic = ChangeClassic.Field()
     change_password = ChangePassword.Field()
     request_password_reset = RequestPasswordReset.Field()
     reset_password = ResetPassword.Field()

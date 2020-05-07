@@ -3,29 +3,29 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
-import { item, item_set } from 'graphql/fragments/__generated__/item';
-import { customSet_equippedItems_exos } from 'graphql/fragments/__generated__/customSet';
 import { useTranslation } from 'i18n';
 import { Stat, WeaponElementMage } from '__generated__/globalTypes';
 import { Divider } from 'antd';
 import { WeaponEffectsList, BrokenImagePlaceholder } from 'common/wrappers';
 import { TFunction } from 'next-i18next';
-import { IError } from 'common/types';
+import { BuildError, Theme } from 'common/types';
 import { renderErrors } from 'common/utils';
-import { TTheme } from 'common/themes';
 
-interface IProps {
-  readonly item: item;
+import { Exo, ItemSet, Item } from 'common/type-aliases';
+
+interface Props {
+  readonly item: Item;
   readonly className?: string;
-  readonly exos?: ReadonlyArray<customSet_equippedItems_exos> | null;
+  readonly exos?: ReadonlyArray<Exo> | null;
   readonly hideSet?: boolean;
-  readonly openSetModal?: (set: item_set) => void;
+  readonly openSetModal?: (set: ItemSet) => void;
   readonly showImg?: boolean;
   readonly showOnlyWeaponStats?: boolean;
   readonly weaponElementMage?: WeaponElementMage | null;
-  readonly errors?: Array<IError>;
+  readonly errors?: Array<BuildError>;
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const renderConditions = (conditionsObj: any, t: TFunction, depth = 0) => {
   try {
     if (!conditionsObj || Object.keys(conditionsObj).length === 0) {
@@ -39,7 +39,8 @@ const renderConditions = (conditionsObj: any, t: TFunction, depth = 0) => {
     if (conditionsObj.and && conditionsObj.and.length === 1) {
       const condition = conditionsObj.and[0];
       return `${t(condition.stat)} ${condition.operator} ${condition.value}`;
-    } else if (conditionsObj.or && conditionsObj.or.length === 1) {
+    }
+    if (conditionsObj.or && conditionsObj.or.length === 1) {
       const condition = conditionsObj.or[0];
       return `${t(condition.stat)} ${condition.operator} ${condition.value}`;
     }
@@ -59,13 +60,15 @@ const renderConditions = (conditionsObj: any, t: TFunction, depth = 0) => {
     }
     throw new Error('Unknown conditions object');
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.error('Error parsing conditions object:', e);
   }
 
   return null;
 };
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
-const ItemStatsList: React.FC<IProps> = ({
+const ItemStatsList: React.FC<Props> = ({
   item,
   className,
   exos,
@@ -75,8 +78,8 @@ const ItemStatsList: React.FC<IProps> = ({
   weaponElementMage,
   errors,
 }) => {
-  const { t } = useTranslation(['stat', 'weapon_spell_effect', 'common']);
-  const theme = useTheme<TTheme>();
+  const { t, i18n } = useTranslation(['stat', 'weapon_spell_effect', 'common']);
+  const theme = useTheme<Theme>();
 
   const statsMap: {
     [key: string]: { value: number; maged: boolean };
@@ -141,6 +144,7 @@ const ItemStatsList: React.FC<IProps> = ({
             onError={() => {
               setBrokenImage(true);
             }}
+            alt={item.name}
           />
         ))}
       {item.weaponStats && (
@@ -160,24 +164,23 @@ const ItemStatsList: React.FC<IProps> = ({
         >
           {item.stats
             .sort(({ order: i }, { order: j }) => i - j)
-            .map((statLine, idx) => (
-              <li key={`stat-${idx}`}>
-                <span
-                  css={{
-                    color:
-                      statLine.stat && statsMap[statLine.stat].maged
-                        ? theme.text?.primary
-                        : statLine.maxValue && statLine.maxValue < 0
-                        ? theme.text?.danger
-                        : 'inherit',
-                  }}
-                >
-                  {statLine.stat
-                    ? `${statsMap[statLine.stat].value} ${t(statLine.stat)}`
-                    : statLine.customStat}
-                </span>
-              </li>
-            ))}
+            .map((statLine) => {
+              let color: string | undefined = 'inherit';
+              if (statLine.stat && statsMap[statLine.stat].maged) {
+                color = theme.text?.primary;
+              } else if (statLine.maxValue && statLine.maxValue < 0) {
+                color = theme.text?.danger;
+              }
+              return (
+                <li key={`stat-${statLine.id}`}>
+                  <span css={{ color }}>
+                    {statLine.stat
+                      ? `${statsMap[statLine.stat].value} ${t(statLine.stat)}`
+                      : statLine.customStat}
+                  </span>
+                </li>
+              );
+            })}
           {exos &&
             exos
               .filter(({ stat }) => !!exoStatsMap[stat])
@@ -194,9 +197,13 @@ const ItemStatsList: React.FC<IProps> = ({
         <>
           {!showOnlyWeaponStats && <Divider css={{ margin: '12px 0' }} />}
           <div>
-            {item.weaponStats.apCost}&nbsp;{t(Stat.AP, { ns: 'stat' })} •{' '}
+            {item.weaponStats.apCost}
+            &nbsp;
+            {t(Stat.AP, { ns: 'stat' })} •{' '}
             {!!item.weaponStats.minRange && `${item.weaponStats.minRange}-`}
-            {item.weaponStats.maxRange}&nbsp;{t(Stat.RANGE, { ns: 'stat' })} •{' '}
+            {item.weaponStats.maxRange}
+            &nbsp;
+            {t(Stat.RANGE, { ns: 'stat' })} •{' '}
             {item.weaponStats.baseCritChance
               ? `${item.weaponStats.baseCritChance} ${t(Stat.CRITICAL, {
                   ns: 'stat',
@@ -210,12 +217,23 @@ const ItemStatsList: React.FC<IProps> = ({
           </div>
         </>
       )}
-      {conditions && Object.keys(conditions.conditions || {}).length > 0 && (
-        <>
-          <Divider css={{ margin: '12px 0' }} />
-          <div>{renderConditions(conditions.conditions, t)}</div>
-        </>
-      )}
+      {conditions &&
+        (Object.keys(conditions.conditions || {}).length > 0 ||
+          Object.keys(conditions.customConditions || {}).length > 0) && (
+          <>
+            <Divider css={{ margin: '12px 0' }} />
+            {Object.keys(conditions.conditions || {}).length > 0 && (
+              <div>{renderConditions(conditions.conditions, t)}</div>
+            )}
+            {Object.keys(conditions.customConditions || {}).length > 0 && (
+              <div>
+                {conditions.customConditions?.[i18n.language]?.join(
+                  ` ${t('CONDITIONS.AND')} `,
+                )}
+              </div>
+            )}
+          </>
+        )}
       {errors && errors.length > 0 && (
         <>
           <Divider css={{ margin: '12px 0' }} />

@@ -16,32 +16,35 @@ import {
 import { useDebounceCallback } from '@react-hook/debounce';
 import { useTheme } from 'emotion-theming';
 
-import { TTheme } from 'common/themes';
-import { SharedFilterAction, SharedFilters } from 'common/types';
-import { Media } from './Media';
-import ResetAllButton from './ResetAllButton';
+import { Theme, SharedFilterAction, SharedFilters } from 'common/types';
+
 import { useTranslation } from 'i18n';
 import Tooltip from 'components/common/Tooltip';
+import ResetAllButton from './ResetAllButton';
 
 const { Search } = Input;
 const { Option } = Select;
 
-interface IProps {
+interface Props {
   filters: SharedFilters;
   dispatch: React.Dispatch<SharedFilterAction>;
   customSetLevel: number | null;
   showSets: boolean;
   setShowSets: React.Dispatch<React.SetStateAction<boolean>>;
   onReset: () => void;
+  shouldShowBack?: boolean;
+  isMobile: boolean;
 }
 
-const SelectorFilters: React.FC<IProps> = ({
+const SelectorFilters: React.FC<Props> = ({
   filters: { stats },
   dispatch,
   customSetLevel,
   showSets,
   setShowSets,
   onReset,
+  shouldShowBack,
+  isMobile,
 }) => {
   const router = useRouter();
   const { customSetId } = router.query;
@@ -68,8 +71,8 @@ const SelectorFilters: React.FC<IProps> = ({
   );
 
   const handleMaxLevelChange = React.useCallback(
-    (maxLevel: number) => {
-      dispatch({ type: 'MAX_LEVEL', maxLevel });
+    (max: number) => {
+      dispatch({ type: 'MAX_LEVEL', maxLevel: max });
     },
     [dispatch],
   );
@@ -80,18 +83,18 @@ const SelectorFilters: React.FC<IProps> = ({
   );
 
   const onChangeMaxLevel = React.useCallback(
-    (maxLevel: number | undefined) => {
-      if (maxLevel) {
-        setMaxLevel(maxLevel);
-        debouncedUpdateLevel(maxLevel);
+    (max: number | undefined) => {
+      if (max) {
+        setMaxLevel(max);
+        debouncedUpdateLevel(max);
       }
     },
     [debouncedUpdateLevel, setMaxLevel],
   );
 
   const onChangeStats = React.useCallback(
-    (stats: Array<{ label: string; value: Stat }>) => {
-      dispatch({ type: 'STATS', stats: stats.map(stat => stat.value) });
+    (s: Array<{ label: string; value: Stat }>) => {
+      dispatch({ type: 'STATS', stats: s.map((stat) => stat.value) });
     },
     [dispatch],
   );
@@ -103,7 +106,10 @@ const SelectorFilters: React.FC<IProps> = ({
 
   const { t } = useTranslation(['common', 'stat']);
 
-  const theme = useTheme<TTheme>();
+  const theme = useTheme<Theme>();
+
+  let searchId = showSets ? 'sets-search' : SEARCH_BAR_ID;
+  if (isMobile) searchId = `${searchId}-mobile`;
 
   return (
     <div
@@ -129,26 +135,35 @@ const SelectorFilters: React.FC<IProps> = ({
         <div
           css={{
             display: 'flex',
-            fontSize: '0.75rem',
             alignItems: 'center',
             height: 36,
+            fontSize: '0.75rem',
             justifyContent: 'space-between',
             [mq[1]]: {
               height: 'auto',
             },
           }}
         >
-          <Media lessThan="xs">
+          {shouldShowBack && (
             <Link
               href={{ pathname: '/index', query: { customSetId } }}
-              as={customSetId ? `/build/${customSetId}` : '/'}
+              as={customSetId ? `/build/${customSetId}/` : '/'}
+              passHref
             >
-              <Button size="large" css={{ fontSize: '0.75rem' }}>
-                <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
-                {t('BACK')}
-              </Button>
+              <a>
+                <Button
+                  size="large"
+                  css={{ fontSize: '0.75rem', [mq[1]]: { marginRight: 20 } }}
+                >
+                  <FontAwesomeIcon
+                    icon={faArrowLeft}
+                    css={{ marginRight: 12 }}
+                  />
+                  {t('BACK')}
+                </Button>
+              </a>
             </Link>
-          </Media>
+          )}
           <div css={{ display: 'flex', alignItems: 'center' }}>
             <span css={{ [mq[1]]: { display: 'none' } }}>{t('ITEMS')}</span>
             <Tooltip title={t(showSets ? 'VIEW_ITEMS' : 'VIEW_SETS')}>
@@ -182,11 +197,12 @@ const SelectorFilters: React.FC<IProps> = ({
           }}
         >
           <Search
-            id={SEARCH_BAR_ID}
+            id={searchId}
             placeholder={t('SEARCH')}
             value={search}
             onChange={onSearch}
             css={{
+              maxHeight: 'none',
               '.ant-input': { fontSize: '0.75rem' },
               '.ant-input-suffix': { display: 'flex', alignItems: 'center' },
             }}
@@ -223,7 +239,12 @@ const SelectorFilters: React.FC<IProps> = ({
         <ClassNames>
           {({ css }) => (
             <Select
-              getPopupContainer={(node: HTMLElement) => node.parentElement!}
+              getPopupContainer={(node: HTMLElement) => {
+                if (node.parentElement) {
+                  return node.parentElement;
+                }
+                return document && document.body;
+              }}
               mode="multiple"
               css={{
                 fontSize: '0.75rem',
@@ -237,14 +258,14 @@ const SelectorFilters: React.FC<IProps> = ({
                 },
               }}
               placeholder={t('STATS_PLACEHOLDER')}
-              value={stats.map(stat => ({
+              value={stats.map((stat) => ({
                 label: t(stat, { ns: 'stat' }),
                 key: stat,
                 value: stat,
               }))}
               onChange={onChangeStats}
               dropdownClassName={css({
-                ['.ant-select-item']: { fontSize: '0.75rem' },
+                '.ant-select-item': { fontSize: '0.75rem' },
               })}
               filterOption={(input, option) =>
                 (option?.children as string)
@@ -261,7 +282,7 @@ const SelectorFilters: React.FC<IProps> = ({
                     { ignorePunctuation: true },
                   ),
                 )
-                .map(stat => (
+                .map((stat) => (
                   <Option key={stat} value={stat}>
                     {t(stat, { ns: 'stat' })}
                   </Option>
