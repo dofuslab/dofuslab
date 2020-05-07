@@ -368,7 +368,8 @@ const Layout = ({ children }: LayoutProps) => {
                   >
                     <span>
                       <Button css={{ marginLeft: 12 }}>
-                        {t('MY_ACCOUNT')} <DownOutlined />
+                        {t('MY_ACCOUNT')}{' '}
+                        <DownOutlined css={{ fontSize: 12 }} />
                       </Button>
                     </span>
                   </Dropdown>
