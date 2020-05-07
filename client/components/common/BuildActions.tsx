@@ -93,7 +93,7 @@ const BuildActions: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
   const linkTextareaRef = React.useRef<HTMLTextAreaElement | null>(null);
 
   const onCopyLink = async () => {
-    let url = `${window.location.host}/view/${customSet.id}/`;
+    let url = `${window.location.protocol}//${window.location.host}/view/${customSet.id}/`;
     if (router.query.class) {
       const singleClass = Array.isArray(router.query.class)
         ? router.query.class[0]
