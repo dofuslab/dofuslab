@@ -61,6 +61,7 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
         }}
       >
         <SetHeader
+          key={customSet?.id}
           customSet={customSet}
           errors={errors}
           isClassic

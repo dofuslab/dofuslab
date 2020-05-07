@@ -50,6 +50,7 @@ const ClassicLeftColumnStats: React.FC<Props> = ({ customSet }) => {
       <ClassNames>
         {({ css, cx }) => (
           <StatEditor
+            key={customSet?.stats.id}
             customSet={customSet}
             css={cx(css(margin), css({ [mq[2]]: { marginTop: 16 } }))}
           />

@@ -56,6 +56,7 @@ const Home: React.FC<Props> = ({
   return (
     <>
       <SetHeader
+        key={customSet?.id}
         customSet={customSet}
         errors={errors}
         isMobile
@@ -103,7 +104,7 @@ const Home: React.FC<Props> = ({
                     customSet={customSet}
                   />
                 ))}
-                <StatEditor customSet={customSet} />
+                <StatEditor key={customSet?.stats.id} customSet={customSet} />
               </ResponsiveGrid>
             </TabPane>
             <TabPane tab={t('WEAPON_AND_SPELLS')} key="weapon-and-spells">

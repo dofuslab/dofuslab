@@ -131,6 +131,7 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
   return (
     <Layout>
       <SetHeader
+        key={customSet?.id}
         customSet={customSet}
         errors={errors}
         css={{
