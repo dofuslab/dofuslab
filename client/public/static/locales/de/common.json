@@ -1,5 +1,4 @@
 {
-
   "ACTIONS": "Aktionen",
   "ANONYMOUS": "Anonym",
   "AVAILABLE_AT_LEVEL": "Verfügbar ab {{level}}",
@@ -24,6 +23,7 @@
   "DELETE": "Löschen",
   "DELETE_BUILD": "Projekt löschen",
   "DELETE_BUILD_SUCCESS": "Ihr Projekt wurde erfolgreich gelöscht.",
+  "DOFUSLAB_CLASSIC": "DofusLab klassisch",
   "DUPLICATE_DOFUS_OR_TROPHY": "Du hast mehrere Kopien von dem gleichen Dofus, Trophäe oder Prysmaradit ausgerüstet.",
   "DUPLICATE_ITEM_IN_SET": "Du hast mehrere Kopien von dem selben Ausrüstungsteil eines Sets ausgerüstet.",
   "EQUIPPED": "Ausgerüstet",
@@ -35,6 +35,8 @@
   "INVALID_CHARACTERISTIC_POINTS": "Unzulässige Verteilung der Attributspunkte.",
   "INVALID_SCROLLED_CHARACTERISTICS": "Unzulässige Verteilung der zusätzlichen Attributspunkte.",
   "ITEMS": "Gegenstände",
+  "ITEM_EQUIPPED": "Gegenstand ausgerüstet",
+  "ITEM_EQUIPPED_plural": "Gegenstände ausgerüstet",
   "JOIN_US_DISCORD": "Tritt unserem Discord bei",
   "LANGUAGE": "Sprache",
   "LAST_MODIFIED": "Zuletzt geändert",
@@ -73,4 +75,3 @@
   "VIEW_SETS": "Sets ansehen",
   "WEAPON_AND_SPELLS": "Waffen und Zaubersprüche"
 }
-
