@@ -82,7 +82,12 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
         >
           <TabPane tab={t('CHARACTERISTICS')} key="characteristics">
             <div
-              css={{ display: 'flex', alignItems: 'flex-start', marginTop: 8 }}
+              css={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                marginTop: 8,
+                marginBottom: 60,
+              }}
             >
               <ClassicLeftColumnStats customSet={customSet} />
               <div css={{ flex: '1 1 auto' }}>
