@@ -159,7 +159,6 @@ const Layout = ({ children }: LayoutProps) => {
       onSelect={changeLocaleHandler}
       css={{
         '&.ant-select': { marginLeft: 12 },
-        '& > .ant-select-arrow': { pointerEvents: 'none' },
       }}
     >
       {LANGUAGES.map((lang) => (

@@ -200,7 +200,7 @@ const BuildActions: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
         onOk={onRestart}
         onCancel={closeRestartModal}
         confirmLoading={restartLoading}
-        okType="danger"
+        okButtonProps={{ danger: true }}
         okText={t('OK')}
         cancelText={t('CANCEL')}
       >
