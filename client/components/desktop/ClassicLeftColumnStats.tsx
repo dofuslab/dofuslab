@@ -42,6 +42,7 @@ const ClassicLeftColumnStats: React.FC<Props> = ({ customSet }) => {
           Stat.SUMMON,
           Stat.HEALS,
           Stat.PROSPECTING,
+          Stat.PODS,
         ]}
         statsFromCustomSet={statsFromCustomSet}
         customSet={customSet}

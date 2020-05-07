@@ -94,9 +94,11 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
                 <ClassicEquipmentSlots customSet={customSet} errors={errors} />
                 <div
                   css={{
-                    display: 'flex',
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr',
+                    gridGap: 12,
                     marginTop: 12,
-                    [mq[4]]: { marginTop: 20 },
+                    [mq[4]]: { gridGap: 20, marginTop: 20 },
                   }}
                 >
                   <StatTable
@@ -109,11 +111,6 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
                     ]}
                     statsFromCustomSet={statsFromCustomSet}
                     customSet={customSet}
-                    css={{
-                      flex: '1 1 0',
-                      marginRight: 12,
-                      [mq[4]]: { marginRight: 20 },
-                    }}
                   />
                   <StatTable
                     group={[
@@ -125,7 +122,16 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
                     ]}
                     statsFromCustomSet={statsFromCustomSet}
                     customSet={customSet}
-                    css={{ flex: '1 1 0' }}
+                  />
+                  <StatTable
+                    group={[Stat.PCT_MELEE_RES, Stat.PCT_RANGED_RES]}
+                    statsFromCustomSet={statsFromCustomSet}
+                    customSet={customSet}
+                  />
+                  <StatTable
+                    group={[Stat.CRITICAL_RES, Stat.PUSHBACK_RES]}
+                    statsFromCustomSet={statsFromCustomSet}
+                    customSet={customSet}
                   />
                 </div>
               </div>
