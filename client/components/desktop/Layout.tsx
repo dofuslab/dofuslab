@@ -159,7 +159,7 @@ const Layout = ({ children }: LayoutProps) => {
       onSelect={changeLocaleHandler}
       css={{
         '&.ant-select': { marginLeft: 12 },
-        '&.ant-select-arrow': { pointerEvents: 'none' },
+        '& > .ant-select-arrow': { pointerEvents: 'none' },
       }}
     >
       {LANGUAGES.map((lang) => (
@@ -371,7 +371,8 @@ const Layout = ({ children }: LayoutProps) => {
                   >
                     <span>
                       <Button css={{ marginLeft: 12 }}>
-                        {t('MY_ACCOUNT')} <DownOutlined />
+                        {t('MY_ACCOUNT')}{' '}
+                        <DownOutlined css={{ fontSize: '12px' }} />
                       </Button>
                     </span>
                   </Dropdown>
