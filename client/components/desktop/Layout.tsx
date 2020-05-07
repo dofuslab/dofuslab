@@ -384,7 +384,6 @@ const Layout = ({ children }: LayoutProps) => {
             </div>
           ) : (
             <div css={{ display: 'flex', alignItems: 'center' }}>
-              {classicSwitch}
               {langSelect}
               <Button
                 onClick={openLoginModal}
