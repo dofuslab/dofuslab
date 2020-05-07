@@ -22,7 +22,6 @@ import StatEditor from '../common/StatEditor';
 import EquipmentSlots from '../common/EquipmentSlots';
 import SetHeader from '../common/SetHeader';
 import StatTable from '../common/StatTable';
-import Layout from './Layout';
 
 const { TabPane } = Tabs;
 
@@ -129,8 +128,9 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
   const theme = useTheme<Theme>();
 
   return (
-    <Layout>
+    <>
       <SetHeader
+        key={customSet?.id}
         customSet={customSet}
         errors={errors}
         css={{
@@ -235,7 +235,7 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
           isClassic={false}
         />
       </div>
-    </Layout>
+    </>
   );
 };
 

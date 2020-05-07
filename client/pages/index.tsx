@@ -17,6 +17,8 @@ import {
 import { CustomSetHead } from 'common/wrappers';
 import ClassicSetBuilder from 'components/desktop/ClassicSetBuilder';
 import { ClassicContext, useClassic } from 'common/utils';
+import DesktopLayout from 'components/desktop/Layout';
+import MobileLayout from 'components/mobile/Layout';
 import ErrorPage from './_error';
 
 const Index: NextPage = () => {
@@ -48,14 +50,18 @@ const Index: NextPage = () => {
         </Head>
         <CustomSetHead customSet={customSet} />
         <Media lessThan="xs">
-          <MobileSetBuilder customSet={customSet} />
+          <MobileLayout>
+            <MobileSetBuilder customSet={customSet} />
+          </MobileLayout>
         </Media>
         <Media greaterThanOrEqual="xs" css={{ height: '100%' }}>
-          {isClassic ? (
-            <ClassicSetBuilder customSet={customSet} />
-          ) : (
-            <DesktopSetBuilder customSet={customSet} />
-          )}
+          <DesktopLayout>
+            {isClassic ? (
+              <ClassicSetBuilder customSet={customSet} />
+            ) : (
+              <DesktopSetBuilder customSet={customSet} />
+            )}
+          </DesktopLayout>
         </Media>
       </div>
     </ClassicContext.Provider>
