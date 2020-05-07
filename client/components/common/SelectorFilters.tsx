@@ -202,6 +202,7 @@ const SelectorFilters: React.FC<Props> = ({
             value={search}
             onChange={onSearch}
             css={{
+              maxHeight: 'none',
               '.ant-input': { fontSize: '0.75rem' },
               '.ant-input-suffix': { display: 'flex', alignItems: 'center' },
             }}
