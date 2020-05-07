@@ -133,7 +133,6 @@ const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
         const count = slotCounter[slot.enName];
         slotCounter[slot.enName] = count ? count + 1 : 1;
 
-        console.log(getPopoverPlacement(slot.enName));
         return (
           <div
             key={`slot-${slot.id}`}

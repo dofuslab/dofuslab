@@ -29,7 +29,37 @@ export const langToFullName = (language: TLanguage) => {
     //   return 'Italiano';
     // case 'es':
     //   return 'Español';
+    default:
+      throw new Error(`Unsupported locale ${language}`);
   }
+};
+
+const FRENCH_VOWEL_SOUNDS = [
+  'a',
+  'e',
+  'h',
+  'i',
+  'o',
+  'u',
+  'y',
+  'A',
+  'E',
+  'H',
+  'I',
+  'O',
+  'U',
+  'Y',
+];
+
+export const prependDe = (language: string, stringToTranslate: string) => {
+  if (language !== 'fr') {
+    return stringToTranslate;
+  }
+  if (FRENCH_VOWEL_SOUNDS.includes(stringToTranslate.charAt(0))) {
+    return `d'${stringToTranslate}`;
+  }
+
+  return `de ${stringToTranslate}`;
 };
 
 export default NextI18NextInstance;
