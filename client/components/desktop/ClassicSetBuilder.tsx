@@ -20,7 +20,6 @@ import ClassicRightColumnStats from './ClassicRightColumnStats';
 import ClassicLeftColumnStats from './ClassicLeftColumnStats';
 import ClassicEquipmentSlots from './ClassicEquipmentSlots';
 import SetHeader from '../common/SetHeader';
-import Layout from './Layout';
 import ClassicClassSelector from './ClassicClassSelector';
 
 const { TabPane } = Tabs;
@@ -50,7 +49,7 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
   }
 
   return (
-    <Layout>
+    <>
       <div
         css={{
           display: 'flex',
@@ -170,7 +169,7 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
           </TabPane>
         </Tabs>
       </div>
-    </Layout>
+    </>
   );
 };
 
