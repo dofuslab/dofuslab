@@ -226,7 +226,9 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
     </div>
   );
 
-  return (
+  return isClassic ? (
+    expandedContent
+  ) : (
     <>
       <Media lessThan="xs">{expandedContent}</Media>
       <Media

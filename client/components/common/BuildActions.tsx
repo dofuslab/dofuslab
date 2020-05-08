@@ -101,7 +101,15 @@ const BuildActions: React.FC<Props> = ({ customSet }) => {
           {t('RESTART_BUILD')}
           <FontAwesomeIcon icon={faRedoAlt} css={optionalIconCss} />
         </Button>
-        <Button onClick={openDeleteModal} css={{ marginLeft: 12 }} danger>
+        <Button
+          onClick={openDeleteModal}
+          css={{
+            display: 'block',
+            margin: '12px 0',
+            [mq[0]]: { display: 'inline', margin: '0 0 0 12px' },
+          }}
+          danger
+        >
           {t('DELETE_BUILD')}
           <FontAwesomeIcon icon={faTrashAlt} css={optionalIconCss} />
         </Button>
