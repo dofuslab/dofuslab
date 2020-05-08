@@ -27,8 +27,11 @@ import {
   deleteCustomSetItemVariables,
 } from 'graphql/mutations/__generated__/deleteCustomSetItem';
 import DeleteCustomSetItemMutation from 'graphql/mutations/deleteCustomSetItem.graphql';
-import { currentUser } from 'graphql/queries/__generated__/currentUser';
-import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
+import {
+  currentUser,
+  currentUser as CurrentUserQueryType,
+} from 'graphql/queries/__generated__/currentUser';
+import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { useTranslation, Trans } from 'i18n';
 import {
   equipSet,
@@ -47,6 +50,13 @@ import {
   changeClassicVariables,
 } from 'graphql/mutations/__generated__/changeClassic';
 import changeClassicMutation from 'graphql/mutations/changeClassic.graphql';
+import {
+  copyCustomSet,
+  copyCustomSetVariables,
+} from 'graphql/mutations/__generated__/copyCustomSet';
+import copyCustomSetMutation from 'graphql/mutations/copyCustomSet.graphql';
+
+import { ParsedUrlQuery } from 'querystring';
 import {
   StatsFromCustomSet,
   SetCounter,
@@ -342,7 +352,7 @@ export const checkAuthentication = async (
   t: TFunction,
   customSet?: CustomSet | null,
 ) => {
-  const { data } = await client.query<currentUser>({ query: CurrentUserQuery });
+  const { data } = await client.query<currentUser>({ query: currentUserQuery });
   if (
     !customSet ||
     !customSet.owner ||
@@ -1361,4 +1371,96 @@ export const useClassic = () => {
   );
 
   return [isClassic, onIsClassicChange] as const;
+};
+
+export const usePublicBuildActions = (customSet: CustomSet) => {
+  const { t } = useTranslation('common');
+  const [copyMutate, { loading: copyLoading }] = useMutation<
+    copyCustomSet,
+    copyCustomSetVariables
+  >(copyCustomSetMutation, {
+    variables: { customSetId: customSet.id },
+    refetchQueries: () => ['myCustomSets'],
+  });
+  const router = useRouter();
+
+  const linkTextareaRef = React.useRef<HTMLTextAreaElement | null>(null);
+
+  const onCopyLink = async () => {
+    let url = `${window.location.protocol}//${window.location.host}/view/${customSet.id}/`;
+    if (router.query.class) {
+      const singleClass = Array.isArray(router.query.class)
+        ? router.query.class[0]
+        : router.query.class;
+      url = `${url}?class=${singleClass}`;
+    }
+    try {
+      if (navigator.clipboard) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        if (!linkTextareaRef.current) {
+          return;
+        }
+        linkTextareaRef.current.value = url;
+        linkTextareaRef.current.focus();
+        linkTextareaRef.current.select();
+        document.execCommand('copy');
+      }
+      notification.success({
+        message: t('SUCCESS'),
+        description: t('COPY_LINK_SUCCESS'),
+      });
+    } catch (e) {
+      notification.error({
+        message: t('ERROR'),
+        description: t('ERROR_OCCURRED'),
+      });
+    }
+  };
+
+  const onCopyBuild = React.useCallback(async () => {
+    const { data } = await copyMutate();
+    if (data?.copyCustomSet) {
+      navigateToNewCustomSet(router, data.copyCustomSet.customSet.id);
+      notification.success({
+        message: t('SUCCESS'),
+        description: t('COPY_BUILD_SUCCESS'),
+      });
+    }
+  }, [copyMutate, customSet, router]);
+
+  return { copyLoading, onCopyLink, onCopyBuild, linkTextareaRef };
+};
+
+export const useIsOwnerOfCustomSet = (customSet?: CustomSet | null) => {
+  if (!customSet) {
+    return true;
+  }
+  const { data } = useQuery<CurrentUserQueryType>(currentUserQuery);
+  return customSet.owner?.id && customSet.owner.id === data?.currentUser?.id;
+};
+
+export const getBuildLink = (
+  customSet: CustomSet | undefined | null,
+  query: ParsedUrlQuery,
+) => {
+  const baseAs = customSet ? `/build/${customSet.id}` : '/';
+  const asQuery: { [key: string]: string } = {};
+  if (query.class) {
+    asQuery.class = Array.isArray(query.class) ? query.class[0] : query.class;
+  }
+  const hrefQuery = { ...asQuery };
+  if (customSet) {
+    hrefQuery.customSetId = customSet.id;
+  }
+  return {
+    href: {
+      pathname: '/',
+      query: hrefQuery,
+    },
+    as: {
+      pathname: baseAs,
+      query: asQuery,
+    },
+  };
 };

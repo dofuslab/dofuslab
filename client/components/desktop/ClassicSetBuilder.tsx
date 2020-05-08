@@ -21,6 +21,7 @@ import ClassicLeftColumnStats from './ClassicLeftColumnStats';
 import ClassicEquipmentSlots from './ClassicEquipmentSlots';
 import SetHeader from '../common/SetHeader';
 import ClassicClassSelector from './ClassicClassSelector';
+import PublicBuildActions from '../common/PublicBuildActions';
 
 const { TabPane } = Tabs;
 
@@ -68,6 +69,15 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
         />
         <Tabs
           defaultActiveKey="characteristics"
+          tabBarExtraContent={
+            customSet && (
+              <div css={{ position: 'relative' }}>
+                <div css={{ position: 'absolute', right: 0, zIndex: 1 }}>
+                  <PublicBuildActions customSet={customSet} />
+                </div>
+              </div>
+            )
+          }
           css={{
             width: '100%',
             maxWidth: 1036,

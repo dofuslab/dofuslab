@@ -2,17 +2,20 @@
 
 import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
-import { Popover } from 'antd';
+import { Popover, Divider } from 'antd';
 import { useTranslation } from 'i18n';
 import { useTheme } from 'emotion-theming';
 
 import { Theme } from 'common/types';
-import { popoverTitleStyle } from 'common/mixins';
+import { popoverTitleStyle, popoverShadow } from 'common/mixins';
 import { getBonusesFromCustomSet } from 'common/utils';
 import { SetBonuses, BrokenImagePlaceholder } from 'common/wrappers';
 import { mq } from 'common/constants';
 import SetModal from 'components/common/SetModal';
 import { CustomSet, ItemSet } from 'common/type-aliases';
+import { Media } from 'components/common/Media';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCubes } from '@fortawesome/free-solid-svg-icons';
 
 const DISPLAY_ITEM_LIMIT = 3;
 
@@ -49,7 +52,19 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
     setSetModalVisible(false);
   }, [setSetModalVisible]);
 
-  return (
+  if (Object.values(setBonuses).length === 0) {
+    return null;
+  }
+
+  const contentRef = React.useRef<HTMLDivElement | null>(null);
+
+  const sortedSetBonuses = Object.values(
+    setBonuses,
+  ).sort(({ set: { name: name1 } }, { set: { name: name2 } }) =>
+    name1.localeCompare(name2),
+  );
+
+  const expandedContent = (
     <div
       css={{
         display: 'flex',
@@ -64,137 +79,132 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
               justifyContent: 'center',
             }
           : {
-              margin: '0 0 0 20px',
+              margin: '0 0 0 12px',
               flexDirection: 'row',
               flex: '0 3 auto',
               flexWrap: 'wrap',
               overflowY: 'auto',
             },
+        [mq[4]]: {
+          margin: isClassic ? -4 : '0 0 0 20px',
+        },
       }}
     >
       <ClassNames>
         {({ css }) =>
-          Object.values(setBonuses)
-            .sort(({ set: { name: name1 } }, { set: { name: name2 } }) =>
-              name1.localeCompare(name2),
-            )
-            .map(
-              ({ count, set, set: { id, name, bonuses }, equippedItems }) => {
-                const filteredBonuses = bonuses.filter(
-                  (bonus) => bonus.numItems === count,
-                );
-                return (
-                  <Popover
-                    key={id}
-                    overlayClassName={css({
-                      ...popoverTitleStyle,
-                      maxWidth: 288,
-                    })}
-                    title={
-                      <div
-                        css={{
-                          display: 'flex',
-                          alignItems: 'baseline',
-                          fontSize: '0.8rem',
-                        }}
-                      >
-                        <div>{name}</div>
-                      </div>
-                    }
-                    content={
-                      <SetBonuses
-                        count={count}
-                        bonuses={filteredBonuses}
-                        t={t}
-                      />
-                    }
-                    placement={isClassic ? 'bottom' : 'bottomLeft'}
-                    trigger={isMobile ? 'click' : 'hover'}
-                  >
+          sortedSetBonuses.map(
+            ({ count, set, set: { id, name, bonuses }, equippedItems }) => {
+              const filteredBonuses = bonuses.filter(
+                (bonus) => bonus.numItems === count,
+              );
+              return (
+                <Popover
+                  key={id}
+                  overlayClassName={css({
+                    ...popoverTitleStyle,
+                    maxWidth: 288,
+                  })}
+                  title={
                     <div
                       css={{
                         display: 'flex',
-                        background: theme.layer?.background,
-                        borderRadius: 4,
-                        border: `1px solid ${theme.border?.default}`,
-                        padding: '4px 8px',
-                        cursor: 'pointer',
-                        margin: 6,
-                        [mq[1]]: isClassic
-                          ? { margin: 4 }
-                          : {
-                              margin: 0,
-                              '&:not(:first-of-type)': {
-                                marginLeft: 12,
-                              },
-                            },
-                      }}
-                      onClick={() => {
-                        openSetModal(set);
+                        alignItems: 'baseline',
+                        fontSize: '0.8rem',
                       }}
                     >
-                      {[...equippedItems]
-                        .sort((i, j) => itemOrder[i.id] - itemOrder[j.id])
-                        .map((equippedItem) => (
-                          <div
-                            key={`set-bonus-item-${equippedItem.id}`}
-                            css={{
-                              width: 40,
-                              height: 40,
-                              [mq[1]]: {
-                                ':not:first-of-type': { marginLeft: 4 },
-                              },
-                            }}
-                          >
-                            {brokenImages.includes(equippedItem.id) ? (
-                              <BrokenImagePlaceholder
-                                css={{ width: '100%', height: '100%' }}
-                              />
-                            ) : (
-                              <img
-                                src={equippedItem.item.imageUrl}
-                                css={{ maxWidth: '100%', maxHeight: '100%' }}
-                                onError={() => {
-                                  setBrokenImages((prev) => [
-                                    ...prev,
-                                    equippedItem.id,
-                                  ]);
-                                }}
-                                alt={equippedItem.item.name}
-                              />
-                            )}
-                          </div>
-                        ))
-                        .filter((_, idx) =>
-                          equippedItems.length - DISPLAY_ITEM_LIMIT > 1
-                            ? idx < DISPLAY_ITEM_LIMIT
-                            : idx < DISPLAY_ITEM_LIMIT + 1,
-                        )}
-                      {equippedItems.length > DISPLAY_ITEM_LIMIT + 1 && (
+                      <div>{name}</div>
+                    </div>
+                  }
+                  content={
+                    <SetBonuses count={count} bonuses={filteredBonuses} t={t} />
+                  }
+                  placement={isClassic ? 'bottom' : 'bottomLeft'}
+                  trigger={isMobile ? 'click' : 'hover'}
+                >
+                  <div
+                    css={{
+                      display: 'flex',
+                      background: theme.layer?.background,
+                      borderRadius: 4,
+                      border: `1px solid ${theme.border?.default}`,
+                      padding: '4px 8px',
+                      cursor: 'pointer',
+                      margin: 6,
+                      [mq[1]]: isClassic
+                        ? { margin: 4 }
+                        : {
+                            margin: 0,
+                            '&:not(:first-of-type)': {
+                              marginLeft: 12,
+                            },
+                          },
+                    }}
+                    onClick={() => {
+                      openSetModal(set);
+                    }}
+                  >
+                    {[...equippedItems]
+                      .sort((i, j) => itemOrder[i.id] - itemOrder[j.id])
+                      .map((equippedItem) => (
                         <div
-                          key="truncated-set"
+                          key={`set-bonus-item-${equippedItem.id}`}
                           css={{
                             width: 40,
                             height: 40,
-                            fontSize: '1rem',
-                            fontWeight: 500,
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            color: theme.text?.light,
                             [mq[1]]: {
                               ':not:first-of-type': { marginLeft: 4 },
                             },
                           }}
                         >
-                          +{equippedItems.length - DISPLAY_ITEM_LIMIT}
+                          {brokenImages.includes(equippedItem.id) ? (
+                            <BrokenImagePlaceholder
+                              css={{ width: '100%', height: '100%' }}
+                            />
+                          ) : (
+                            <img
+                              src={equippedItem.item.imageUrl}
+                              css={{ maxWidth: '100%', maxHeight: '100%' }}
+                              onError={() => {
+                                setBrokenImages((prev) => [
+                                  ...prev,
+                                  equippedItem.id,
+                                ]);
+                              }}
+                              alt={equippedItem.item.name}
+                            />
+                          )}
                         </div>
+                      ))
+                      .filter((_, idx) =>
+                        equippedItems.length - DISPLAY_ITEM_LIMIT > 1
+                          ? idx < DISPLAY_ITEM_LIMIT
+                          : idx < DISPLAY_ITEM_LIMIT + 1,
                       )}
-                    </div>
-                  </Popover>
-                );
-              },
-            )
+                    {equippedItems.length > DISPLAY_ITEM_LIMIT + 1 && (
+                      <div
+                        key="truncated-set"
+                        css={{
+                          width: 40,
+                          height: 40,
+                          fontSize: '1rem',
+                          fontWeight: 500,
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          color: theme.text?.light,
+                          [mq[1]]: {
+                            ':not:first-of-type': { marginLeft: 4 },
+                          },
+                        }}
+                      >
+                        +{equippedItems.length - DISPLAY_ITEM_LIMIT}
+                      </div>
+                    )}
+                  </div>
+                </Popover>
+              );
+            },
+          )
         }
       </ClassNames>
       {selectedSet && !isMobile && (
@@ -208,6 +218,76 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
         />
       )}
     </div>
+  );
+
+  const popoverTrigger = (
+    <div css={{ padding: '0px 8px' }} ref={contentRef}>
+      <FontAwesomeIcon icon={faCubes} css={{ fontSize: '1.5em' }} />
+    </div>
+  );
+
+  return isClassic ? (
+    expandedContent
+  ) : (
+    <>
+      <Media lessThan="xs">{expandedContent}</Media>
+      <Media
+        between={['xs', 'md']}
+        css={{ display: 'flex', alignItems: 'center', marginLeft: 12 }}
+      >
+        <ClassNames>
+          {({ css, cx }) => (
+            <Popover
+              overlayClassName={cx(
+                css(popoverTitleStyle),
+                css({
+                  fontSize: '0.75rem',
+                  maxWidth: 288,
+                  boxShadow: popoverShadow,
+                  '.ant-popover-content': {
+                    maxHeight: contentRef.current
+                      ? `calc(100vh - ${
+                          contentRef.current.offsetTop +
+                          contentRef.current.offsetHeight +
+                          20
+                        }px)`
+                      : undefined,
+                    overflow: 'auto',
+                  },
+                }),
+              )}
+              autoAdjustOverflow={{ adjustX: 1, adjustY: 0 }}
+              placement="bottom"
+              title={<div>{t('SET_BONUSES', { ns: 'common' })}</div>}
+              content={sortedSetBonuses.map(
+                ({ count, set: { id, name, bonuses } }, idx) => {
+                  const filteredBonuses = bonuses.filter(
+                    (bonus) => bonus.numItems === count,
+                  );
+
+                  return (
+                    <React.Fragment key={id}>
+                      {idx !== 0 && <Divider css={{ margin: '8px 0' }} />}
+                      <div>
+                        <div css={{ fontWeight: 500 }}>{name}</div>
+                        <SetBonuses
+                          count={count}
+                          bonuses={filteredBonuses}
+                          t={t}
+                        />
+                      </div>
+                    </React.Fragment>
+                  );
+                },
+              )}
+            >
+              {popoverTrigger}
+            </Popover>
+          )}
+        </ClassNames>
+      </Media>
+      <Media greaterThanOrEqual="md">{expandedContent}</Media>
+    </>
   );
 };
 
