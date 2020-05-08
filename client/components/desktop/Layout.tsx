@@ -16,8 +16,8 @@ import { useRouter } from 'next/router';
 import { useTheme } from 'emotion-theming';
 
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
-import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
-import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
+import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
+import { logout as LogoutMutationType } from 'graphql/mutations/__generated__/logout';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import logoutMutation from 'graphql/mutations/logout.graphql';
 import NoSSR from 'react-no-ssr';
@@ -92,8 +92,8 @@ const getDonateElement = (t: TFunction) => {
 const Layout = ({ children }: LayoutProps) => {
   const { t, i18n } = useTranslation(['auth', 'common']);
   const client = useApolloClient();
-  const { data } = useQuery<ICurrentUser>(currentUserQuery);
-  const [logout] = useMutation<ILogout>(logoutMutation);
+  const { data } = useQuery<CurrentUserQueryType>(currentUserQuery);
+  const [logout] = useMutation<LogoutMutationType>(logoutMutation);
   const [changeLocaleMutate] = useMutation<changeLocale, changeLocaleVariables>(
     changeLocaleMutation,
   );
@@ -126,7 +126,7 @@ const Layout = ({ children }: LayoutProps) => {
   const logoutHandler = React.useCallback(async () => {
     const { data: logoutData } = await logout();
     if (logoutData?.logoutUser?.ok) {
-      client.writeQuery<ICurrentUser>({
+      client.writeQuery<CurrentUserQueryType>({
         query: currentUserQuery,
         data: { currentUser: null },
       });

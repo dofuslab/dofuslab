@@ -18,11 +18,15 @@ import {
   checkAuthentication,
   navigateToNewCustomSet,
   EditableContext,
+  useIsOwnerOfCustomSet,
+  getBuildLink,
 } from 'common/utils';
 import { ellipsis } from 'common/mixins';
 import { mq } from 'common/constants';
 import { BuildError } from 'common/types';
 import { CustomSet } from 'common/type-aliases';
+import Link from 'next/link';
+import PublicBuildActions from 'components/common/PublicBuildActions';
 import BonusStats from '../desktop/BonusStats';
 import BuildErrors from './BuildErrors';
 import BuildActions from './BuildActions';
@@ -153,6 +157,8 @@ const SetHeader: React.FC<Props> = ({
     ],
   );
 
+  const isOwner = useIsOwnerOfCustomSet(customSet);
+
   const formElement = (
     <Form
       key={`form-${customSet?.id}`}
@@ -203,7 +209,6 @@ const SetHeader: React.FC<Props> = ({
               },
             }}
             maxLength={50}
-            defaultValue={customSet?.name ?? ''}
           />
         </Form.Item>
       ) : (
@@ -218,7 +223,7 @@ const SetHeader: React.FC<Props> = ({
               fontSize: '1.5rem',
               maxWidth: 400,
             },
-            marginRight: 20,
+            marginRight: 12,
             cursor: isEditable ? 'pointer' : 'auto',
           }}
           onClick={onStartEdit}
@@ -251,11 +256,10 @@ const SetHeader: React.FC<Props> = ({
           {metadataState.isEditing ? (
             <Form.Item name="level" css={{ display: 'inline-flex' }}>
               <InputNumber
-                css={{ marginLeft: 8 }}
+                css={{ marginLeft: 8, width: 64 }}
                 type="number"
                 max={200}
                 min={1}
-                defaultValue={customSet?.level ?? 200}
               />
             </Form.Item>
           ) : (
@@ -283,6 +287,8 @@ const SetHeader: React.FC<Props> = ({
 
   const creationDate = new Date(customSet?.creationDate);
   const modifiedDate = new Date(customSet?.lastModified);
+
+  const buildLink = getBuildLink(customSet, router.query);
 
   return (
     <ClassNames>
@@ -370,11 +376,30 @@ const SetHeader: React.FC<Props> = ({
                 isMobile={false}
               />
             )}
-            {customSet && !isMobile && (
+            {customSet && !isMobile && isEditable && (
               <BuildActions
                 customSet={customSet}
                 isMobile={false}
                 isClassic={isClassic}
+              />
+            )}
+            {customSet && isOwner && !isEditable && !isMobile && (
+              <Link href={buildLink.href} as={buildLink.as}>
+                <a css={{ alignSelf: 'center', marginLeft: 12 }}>
+                  <Button>
+                    {t('EDIT_BUILD')}
+                    <FontAwesomeIcon
+                      icon={faPencilAlt}
+                      css={{ marginLeft: 8 }}
+                    />
+                  </Button>
+                </a>
+              </Link>
+            )}
+            {customSet && !isMobile && !isClassic && (
+              <PublicBuildActions
+                customSet={customSet}
+                css={{ marginLeft: 'auto' }}
               />
             )}
           </div>
