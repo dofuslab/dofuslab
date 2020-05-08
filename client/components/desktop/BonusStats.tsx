@@ -7,7 +7,7 @@ import { useTranslation } from 'i18n';
 import { useTheme } from 'emotion-theming';
 
 import { Theme } from 'common/types';
-import { popoverTitleStyle } from 'common/mixins';
+import { popoverTitleStyle, popoverShadow } from 'common/mixins';
 import { getBonusesFromCustomSet } from 'common/utils';
 import { SetBonuses, BrokenImagePlaceholder } from 'common/wrappers';
 import { mq } from 'common/constants';
@@ -55,6 +55,8 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
   if (Object.values(setBonuses).length === 0) {
     return null;
   }
+
+  const contentRef = React.useRef<HTMLDivElement | null>(null);
 
   const sortedSetBonuses = Object.values(
     setBonuses,
@@ -218,6 +220,12 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
     </div>
   );
 
+  const popoverTrigger = (
+    <div css={{ padding: '0px 8px' }} ref={contentRef}>
+      <FontAwesomeIcon icon={faCubes} css={{ fontSize: '1.5em' }} />
+    </div>
+  );
+
   return (
     <>
       <Media lessThan="xs">{expandedContent}</Media>
@@ -230,8 +238,24 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
             <Popover
               overlayClassName={cx(
                 css(popoverTitleStyle),
-                css({ fontSize: '0.75rem', maxWidth: 288 }),
+                css({
+                  fontSize: '0.75rem',
+                  maxWidth: 288,
+                  boxShadow: popoverShadow,
+                  '.ant-popover-content': {
+                    maxHeight: contentRef.current
+                      ? `calc(100vh - ${
+                          contentRef.current.offsetTop +
+                          contentRef.current.offsetHeight +
+                          20
+                        }px)`
+                      : undefined,
+                    overflow: 'auto',
+                  },
+                }),
               )}
+              autoAdjustOverflow={{ adjustX: 1, adjustY: 0 }}
+              placement="bottom"
               title={<div>{t('SET_BONUSES', { ns: 'common' })}</div>}
               content={sortedSetBonuses.map(
                 ({ count, set: { id, name, bonuses } }, idx) => {
@@ -255,9 +279,7 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
                 },
               )}
             >
-              <div css={{ padding: '0px 8px' }}>
-                <FontAwesomeIcon icon={faCubes} css={{ fontSize: '1.5em' }} />
-              </div>
+              {popoverTrigger}
             </Popover>
           )}
         </ClassNames>
