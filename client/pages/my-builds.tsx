@@ -1,7 +1,7 @@
 import React from 'react';
 import { NextPage } from 'next';
 import { useQuery } from '@apollo/react-hooks';
-import { useRouter } from 'next/router';
+import Router from 'next/router';
 
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import Layout from 'components/mobile/Layout';
@@ -15,10 +15,12 @@ import { getTitle } from 'common/utils';
 const MyBuildsPage: NextPage = () => {
   const { data } = useQuery<currentUser>(currentUserQuery);
   const { t } = useTranslation('common');
-  const router = useRouter();
-  if (!data?.currentUser) {
-    router.push('/');
-  }
+
+  React.useEffect(() => {
+    if (!data?.currentUser) {
+      Router.push('/');
+    }
+  }, [data]);
 
   return (
     <Layout>
