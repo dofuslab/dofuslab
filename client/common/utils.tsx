@@ -1403,6 +1403,19 @@ export const usePublicBuildActions = (customSet: CustomSet) => {
         }
         linkTextareaRef.current.value = url;
         linkTextareaRef.current.focus();
+        if (navigator.userAgent.match(/ipad|iphone/i)) {
+          const range = document.createRange();
+          range.selectNodeContents(linkTextareaRef.current);
+          const selection = window.getSelection();
+          if (selection) {
+            selection.removeAllRanges();
+            selection.addRange(range);
+          }
+          linkTextareaRef.current.setSelectionRange(
+            0,
+            linkTextareaRef.current.value.length,
+          );
+        }
         linkTextareaRef.current.select();
         document.execCommand('copy');
       }
