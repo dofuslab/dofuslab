@@ -120,6 +120,14 @@ to_spell_enum = {
     "Pushback damage": enums.SpellEffectType.PUSHBACK_DAMAGE,
 }
 
+face_url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/class/face/{}_M.png"
+male_sprite_url_base = (
+    "https://dofus-lab.s3.us-east-2.amazonaws.com/class/sprite/{}_M.png"
+)
+female_sprite_url_base = (
+    "https://dofus-lab.s3.us-east-2.amazonaws.com/class/sprite/{}_F.png"
+)
+
 
 if __name__ == "__main__":
     # print("Resetting database")
@@ -538,7 +546,12 @@ if __name__ == "__main__":
     with open(os.path.join(app_root, "app/database/data/spells.json"), "r") as file:
         data = json.load(file)
         for record in data:
-            class_object = ModelClass()
+            en_name = record["names"]["en"]
+            class_object = ModelClass(
+                face_image_url=face_url_base.format(en_name),
+                male_sprite_image_url=male_sprite_url_base.format(en_name),
+                female_sprite_image_url=female_sprite_url_base.format(en_name),
+            )
 
             for locale in record["names"]:
                 class_translation = ModelClassTranslation(
