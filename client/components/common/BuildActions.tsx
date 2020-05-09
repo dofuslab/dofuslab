@@ -95,6 +95,7 @@ const BuildActions: React.FC<Props> = ({ customSet }) => {
         css={{ display: 'none' }}
         id="clipboard-link"
         ref={linkTextareaRef}
+        contentEditable
       />
       <>
         <Button onClick={openRestartModal}>
