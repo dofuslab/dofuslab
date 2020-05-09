@@ -288,7 +288,7 @@ const SetHeader: React.FC<Props> = ({
   const creationDate = new Date(customSet?.creationDate);
   const modifiedDate = new Date(customSet?.lastModified);
 
-  const buildLink = getBuildLink(customSet, router.query);
+  const buildLink = getBuildLink(customSet?.id, router.query);
 
   const editBuildButton = (
     <Link href={buildLink.href} as={buildLink.as}>

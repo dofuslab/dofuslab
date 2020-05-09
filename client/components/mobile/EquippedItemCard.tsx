@@ -177,7 +177,7 @@ const EquippedItemCard: React.FC<Props> = ({
       <Media lessThan="xs">
         <Link
           href={{
-            pathname: isEditable ? '/view/[customSetId]' : '/',
+            pathname: isEditable ? '/' : '/view/[customSetId]',
             query: { customSetId: customSet.id },
           }}
           as={asPath}
