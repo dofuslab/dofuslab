@@ -4,7 +4,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
 
-import { itemBox, itemImageBox, selected as selectedBox } from 'common/mixins';
+import { itemBox, itemImageBox } from 'common/mixins';
 import Link from 'next/link';
 import { BuildError, Theme } from 'common/types';
 
@@ -14,6 +14,7 @@ import {
   EquippedItem as EquippedItemType,
   CustomSet,
 } from 'common/type-aliases';
+import { EditableContext } from 'common/utils';
 import EquippedItemWithStats from '../common/EquippedItemWithStats';
 
 interface Props {
@@ -29,26 +30,69 @@ interface Props {
 const EquippedItem: React.FC<Props> = ({
   slot,
   equippedItem,
-  selected,
   customSet,
   openMageModal,
   openSetModal,
   errors,
 }) => {
   const theme = useTheme<Theme>();
+  const isEditable = React.useContext(EditableContext);
+
+  const urlBase = isEditable ? 'build' : 'view';
+
+  const hrefPath = `/${urlBase}/[customSetId]/[equippedItemId]`;
+  const asPath = `/${urlBase}/${customSet?.id}/${equippedItem?.id}`;
+
+  const emptyItemSlot = (
+    <div
+      css={{
+        ...itemImageBox(theme),
+      }}
+    >
+      <img
+        src={slot.imageUrl}
+        css={{
+          maxWidth: '100%',
+          opacity: 0.4,
+          transition: 'all 0.3s',
+        }}
+        alt={slot.name}
+      />
+    </div>
+  );
+
+  const content = isEditable ? (
+    <Link
+      href={{
+        pathname: '/equip/[itemSlotId]',
+        query: { itemSlotId: slot.id, customSetId: customSet?.id },
+      }}
+      as={`/equip/${slot.id}/${customSet ? `${customSet.id}/` : ''}`}
+    >
+      {emptyItemSlot}
+    </Link>
+  ) : (
+    emptyItemSlot
+  );
 
   return (
     <>
       <div css={itemBox}>
         {customSet && equippedItem ? (
           <Link
-            href="/build/[customSetId]/[equippedItemId]"
-            as={`/build/${customSet.id}/${equippedItem.id}/`}
+            href={{
+              pathname: hrefPath,
+              query: {
+                customSetId: customSet.id,
+                equippedItemId: equippedItem.id,
+              },
+            }}
+            as={asPath}
           >
             <div>
               <EquippedItemWithStats
                 equippedItem={equippedItem}
-                selected={selected}
+                selected={false}
                 customSet={customSet}
                 itemSlotId={slot.id}
                 openMageModal={openMageModal}
@@ -58,30 +102,7 @@ const EquippedItem: React.FC<Props> = ({
             </div>
           </Link>
         ) : (
-          <Link
-            href={{
-              pathname: '/equip/[itemSlotId]',
-              query: { itemSlotId: slot.id, customSetId: customSet?.id },
-            }}
-            as={`/equip/${slot.id}/${customSet ? `${customSet.id}/` : ''}`}
-          >
-            <div
-              css={{
-                ...itemImageBox(theme),
-                ...(selected ? selectedBox(theme) : {}),
-              }}
-            >
-              <img
-                src={slot.imageUrl}
-                css={{
-                  maxWidth: '100%',
-                  opacity: selected ? 0.75 : 0.4,
-                  transition: 'all 0.3s',
-                }}
-                alt={slot.name}
-              />
-            </div>
-          </Link>
+          content
         )}
       </div>
     </>

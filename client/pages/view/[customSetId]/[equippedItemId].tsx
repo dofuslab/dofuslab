@@ -4,15 +4,15 @@ import { NextPage } from 'next';
 import { EditableContext } from 'common/utils';
 import EquippedItemView from 'components/mobile/EquippedItemView';
 
-const EquippedItemPage: NextPage = () => {
+const EquippedItemPageReadonly: NextPage = () => {
   return (
-    <EditableContext.Provider value>
+    <EditableContext.Provider value={false}>
       <EquippedItemView />
     </EditableContext.Provider>
   );
 };
 
-EquippedItemPage.getInitialProps = async () => {
+EquippedItemPageReadonly.getInitialProps = async () => {
   return {
     namespacesRequired: [
       'common',
@@ -25,4 +25,4 @@ EquippedItemPage.getInitialProps = async () => {
   };
 };
 
-export default EquippedItemPage;
+export default EquippedItemPageReadonly;

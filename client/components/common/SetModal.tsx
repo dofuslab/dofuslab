@@ -87,22 +87,14 @@ const SetModal: React.FC<Props> = ({
       <div>
         <div
           css={{
-            display: 'flex',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(60px, 1fr))',
+            gridGap: 8,
           }}
         >
           {data.setById.items.map((item) => (
             <div
               key={`item-${item.id}`}
-              css={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                maxWidth: 80,
-                flex: '1 1 0',
-                '&:not(:last-of-type)': {
-                  marginRight: 4,
-                },
-              }}
               onClick={() => {
                 if (!isEditable) return;
                 setItemIds((prev) => {

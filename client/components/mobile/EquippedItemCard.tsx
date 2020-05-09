@@ -18,7 +18,11 @@ import { useTheme } from 'emotion-theming';
 import { Theme, BuildError } from 'common/types';
 import { useTranslation } from 'i18n';
 import { itemCardStyle, switchStyle } from 'common/mixins';
-import { useDeleteItemMutation, checkAuthentication } from 'common/utils';
+import {
+  useDeleteItemMutation,
+  checkAuthentication,
+  EditableContext,
+} from 'common/utils';
 import { Stat } from '__generated__/globalTypes';
 import setEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.graphql';
 import {
@@ -159,12 +163,24 @@ const EquippedItemCard: React.FC<Props> = ({
     openMageModal(equippedItem);
   }, [openMageModal, equippedItem]);
 
+  const isEditable = React.useContext(EditableContext);
+
+  let asPath = '/';
+  if (customSet && isEditable) {
+    asPath = `/build/${customSet.id}`;
+  } else if (customSet) {
+    asPath = `/view/${customSet.id}`;
+  }
+
   return (
     <div css={{ padding: '0 12px', marginTop: 12 }}>
       <Media lessThan="xs">
         <Link
-          href={{ pathname: '/', query: { customSetId: customSet.id } }}
-          as={customSet ? `/build/${customSet.id}/` : '/'}
+          href={{
+            pathname: isEditable ? '/view/[customSetId]' : '/',
+            query: { customSetId: customSet.id },
+          }}
+          as={asPath}
           passHref
         >
           <a>
@@ -205,24 +221,29 @@ const EquippedItemCard: React.FC<Props> = ({
           marginBottom: 40,
         })}
       >
-        <div
-          css={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gridGap: 8,
-            [mq[0]]: {
-              gridTemplateColumns: '1fr 1fr 1fr',
-            },
-          }}
-        >
-          {quickMageMenu}
-        </div>
-        <div css={{ marginTop: 20 }}>
-          <Button onClick={onMageClick}>
-            {t('MORE_MAGING_OPTIONS', { ns: 'mage' })}
-          </Button>
-        </div>
-        <Divider css={{ margin: '12px 0' }} />
+        {isEditable && (
+          <>
+            <div
+              css={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gridGap: 8,
+                [mq[0]]: {
+                  gridTemplateColumns: '1fr 1fr 1fr',
+                },
+              }}
+            >
+              {quickMageMenu}
+            </div>
+            <div css={{ marginTop: 20 }}>
+              <Button onClick={onMageClick}>
+                {t('MORE_MAGING_OPTIONS', { ns: 'mage' })}
+              </Button>
+            </div>
+            <Divider css={{ margin: '12px 0' }} />
+          </>
+        )}
+
         <ItemStatsList
           item={equippedItem.item}
           css={{ paddingLeft: 16, marginBottom: 0 }}
@@ -231,25 +252,32 @@ const EquippedItemCard: React.FC<Props> = ({
           showImg
           errors={errors}
         />
-        <Divider css={{ margin: '12px 0' }} />
-        <Link
-          href={{
-            pathname: '/equip/[itemSlotId]',
-            query: {
-              itemSlotId: equippedItem.slot.id,
-              customSetId: customSet?.id,
-            },
-          }}
-          as={`/equip/${equippedItem.slot.id}/${customSet ? customSet.id : ''}`}
-          passHref
-        >
-          <a>
-            <Button>{t('REPLACE')}</Button>
-          </a>
-        </Link>
-        <Button onClick={onDelete} css={{ marginLeft: 12 }}>
-          {t('DELETE')}
-        </Button>
+
+        {isEditable && (
+          <>
+            <Divider css={{ margin: '12px 0' }} />
+            <Link
+              href={{
+                pathname: '/equip/[itemSlotId]',
+                query: {
+                  itemSlotId: equippedItem.slot.id,
+                  customSetId: customSet?.id,
+                },
+              }}
+              as={`/equip/${equippedItem.slot.id}/${
+                customSet ? customSet.id : ''
+              }`}
+              passHref
+            >
+              <a>
+                <Button>{t('REPLACE')}</Button>
+              </a>
+            </Link>
+            <Button onClick={onDelete} css={{ marginLeft: 12 }}>
+              {t('DELETE')}
+            </Button>
+          </>
+        )}
       </Card>
     </div>
   );

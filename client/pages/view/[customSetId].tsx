@@ -33,6 +33,8 @@ const Index: NextPage = () => {
 
   const [isClassic, setIsClassic] = useClassic();
 
+  console.log('READONLY');
+
   if (!customSet && !loading) {
     return <ErrorPage statusCode={404} />;
   }
