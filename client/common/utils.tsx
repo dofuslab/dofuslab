@@ -1412,10 +1412,7 @@ export const usePublicBuildActions = (customSet: CustomSet) => {
             selection.removeAllRanges();
             selection.addRange(range);
           }
-          linkTextareaRef.current.setSelectionRange(
-            0,
-            linkTextareaRef.current.value.length,
-          );
+          linkTextareaRef.current.setSelectionRange(0, 999999);
         }
         linkTextareaRef.current.select();
         document.execCommand('copy');
