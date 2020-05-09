@@ -290,6 +290,22 @@ const SetHeader: React.FC<Props> = ({
 
   const buildLink = getBuildLink(customSet, router.query);
 
+  const editBuildButton = (
+    <Link href={buildLink.href} as={buildLink.as}>
+      <a
+        css={{
+          marginBottom: 20,
+          [mq[1]]: { alignSelf: 'center', marginLeft: 12, marginBottom: 0 },
+        }}
+      >
+        <Button>
+          {t('EDIT_BUILD')}
+          <FontAwesomeIcon icon={faPencilAlt} css={{ marginLeft: 8 }} />
+        </Button>
+      </a>
+    </Link>
+  );
+
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -383,19 +399,11 @@ const SetHeader: React.FC<Props> = ({
                 isClassic={isClassic}
               />
             )}
-            {customSet && isOwner && !isEditable && !isMobile && (
-              <Link href={buildLink.href} as={buildLink.as}>
-                <a css={{ alignSelf: 'center', marginLeft: 12 }}>
-                  <Button>
-                    {t('EDIT_BUILD')}
-                    <FontAwesomeIcon
-                      icon={faPencilAlt}
-                      css={{ marginLeft: 8 }}
-                    />
-                  </Button>
-                </a>
-              </Link>
-            )}
+            {customSet &&
+              isOwner &&
+              !isEditable &&
+              !isMobile &&
+              editBuildButton}
             {customSet && !isMobile && !isClassic && (
               <PublicBuildActions
                 customSet={customSet}
@@ -448,6 +456,7 @@ const SetHeader: React.FC<Props> = ({
                   isClassic={false}
                 />
               )}
+              {isOwner && !isEditable && editBuildButton}
               <BuildErrors customSet={customSet} errors={errors} isMobile />
             </>
           )}
