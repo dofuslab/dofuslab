@@ -54,6 +54,7 @@ import LoginModal from '../common/LoginModal';
 
 interface LayoutProps {
   children: React.ReactNode;
+  showSwitch: boolean;
 }
 
 const { Option } = Select;
@@ -89,7 +90,7 @@ const getDonateElement = (t: TFunction) => {
   );
 };
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, showSwitch }: LayoutProps) => {
   const { t, i18n } = useTranslation(['auth', 'common']);
   const client = useApolloClient();
   const { data } = useQuery<CurrentUserQueryType>(currentUserQuery);
@@ -331,7 +332,7 @@ const Layout = ({ children }: LayoutProps) => {
           </Link>
         </div>
         <div css={{ display: 'flex', alignItems: 'center' }}>
-          {classicSwitch}
+          {showSwitch && classicSwitch}
           {data?.currentUser ? (
             <div>
               {langSelect}

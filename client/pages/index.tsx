@@ -55,7 +55,7 @@ const Index: NextPage = () => {
           </MobileLayout>
         </Media>
         <Media greaterThanOrEqual="xs" css={{ height: '100%' }}>
-          <DesktopLayout>
+          <DesktopLayout showSwitch>
             {isClassic ? (
               <ClassicSetBuilder customSet={customSet} />
             ) : (

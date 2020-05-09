@@ -79,7 +79,7 @@ const EquipPage: NextPage = () => {
       </Media>
       <Media greaterThanOrEqual="xs">
         <ClassicContext.Provider value={[isClassic, onIsClassicChange]}>
-          <DesktopLayout>
+          <DesktopLayout showSwitch>
             <Head>
               <style
                 type="text/css"

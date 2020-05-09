@@ -441,7 +441,13 @@ const SetHeader: React.FC<Props> = ({
                   </div>
                 </div>
               </div>
-              <BuildActions customSet={customSet} isMobile isClassic={false} />
+              {isEditable && (
+                <BuildActions
+                  customSet={customSet}
+                  isMobile
+                  isClassic={false}
+                />
+              )}
               <BuildErrors customSet={customSet} errors={errors} isMobile />
             </>
           )}

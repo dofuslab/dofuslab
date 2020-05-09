@@ -44,7 +44,7 @@ const VerifyEmailPage: NextPage = () => {
   }, [data, router]);
 
   return (
-    <CommonLayout>
+    <CommonLayout showSwitch={false}>
       <Head>
         <style
           type="text/css"

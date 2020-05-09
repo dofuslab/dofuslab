@@ -6,15 +6,16 @@ import { Media } from './Media';
 
 interface Props {
   children: React.ReactNode;
+  showSwitch: boolean;
 }
 
-const CommonLayout: React.FC<Props> = ({ children }) => (
+const CommonLayout: React.FC<Props> = ({ children, showSwitch }) => (
   <>
     <Media lessThan="xs">
       <MobileLayout>{children}</MobileLayout>
     </Media>
     <Media greaterThanOrEqual="xs">
-      <DesktopLayout>{children}</DesktopLayout>
+      <DesktopLayout showSwitch={showSwitch}>{children}</DesktopLayout>
     </Media>
   </>
 );
