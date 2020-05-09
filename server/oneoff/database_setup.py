@@ -127,6 +127,8 @@ male_sprite_url_base = (
 female_sprite_url_base = (
     "https://dofus-lab.s3.us-east-2.amazonaws.com/class/sprite/{}_F.png"
 )
+slot_url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/icons/{}.svg"
+
 
 
 if __name__ == "__main__":
@@ -161,12 +163,13 @@ if __name__ == "__main__":
         i = 0
         for record in data:
             for _ in range(record.get("quantity", 1)):
+                en_name = record["name"]["en"]
                 item_slot = ModelItemSlot(
                     item_types=[
                         item_types[item_type_name] for item_type_name in record["types"]
                     ],
                     order=i,
-                    image_url="",
+                    image_url=slot_url_base.format(en_name),
                 )
                 db.session.add(item_slot)
                 db.session.flush()
