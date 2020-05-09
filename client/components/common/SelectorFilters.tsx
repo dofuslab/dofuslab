@@ -20,6 +20,7 @@ import { Theme, SharedFilterAction, SharedFilters } from 'common/types';
 
 import { useTranslation } from 'i18n';
 import Tooltip from 'components/common/Tooltip';
+import { getBuildLink } from 'common/utils';
 import ResetAllButton from './ResetAllButton';
 
 const { Search } = Input;
@@ -47,7 +48,10 @@ const SelectorFilters: React.FC<Props> = ({
   isMobile,
 }) => {
   const router = useRouter();
-  const { customSetId } = router.query;
+  const { customSetId: customSetIdParam } = router.query;
+  const customSetId = Array.isArray(customSetIdParam)
+    ? customSetIdParam[0]
+    : customSetIdParam;
   const [search, setSearch] = React.useState('');
   const [maxLevel, setMaxLevel] = React.useState(customSetLevel || 200);
   const handleSearchChange = React.useCallback(
@@ -108,8 +112,17 @@ const SelectorFilters: React.FC<Props> = ({
 
   const theme = useTheme<Theme>();
 
+  React.useEffect(() => {
+    const searchBar = document.getElementById(SEARCH_BAR_ID);
+    if (searchBar && !isMobile) {
+      searchBar.focus();
+    }
+  }, [isMobile]);
+
   let searchId = showSets ? 'sets-search' : SEARCH_BAR_ID;
   if (isMobile) searchId = `${searchId}-mobile`;
+
+  const buildLink = getBuildLink(customSetId, router.query);
 
   return (
     <div
@@ -145,11 +158,7 @@ const SelectorFilters: React.FC<Props> = ({
           }}
         >
           {shouldShowBack && (
-            <Link
-              href={{ pathname: '/index', query: { customSetId } }}
-              as={customSetId ? `/build/${customSetId}/` : '/'}
-              passHref
-            >
+            <Link href={buildLink.href} as={buildLink.as} passHref>
               <a>
                 <Button
                   size="large"
@@ -294,8 +303,8 @@ const SelectorFilters: React.FC<Props> = ({
           onReset={onResetAll}
           css={{
             display: 'none',
-            [mq[1]]: { display: 'block', margin: '0 0 0 12px' },
-            [mq[4]]: { marginLeft: 20 },
+            [mq[1]]: { display: 'block', margin: '0 0 0 12px', height: 40 },
+            [mq[4]]: { marginLeft: 20, height: 'auto' },
           }}
         />
       </div>

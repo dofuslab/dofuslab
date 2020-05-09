@@ -1452,17 +1452,17 @@ export const useIsOwnerOfCustomSet = (customSet?: CustomSet | null) => {
 };
 
 export const getBuildLink = (
-  customSet: CustomSet | undefined | null,
+  customSetId: string | undefined | null,
   query: ParsedUrlQuery,
 ) => {
-  const baseAs = customSet ? `/build/${customSet.id}` : '/';
+  const baseAs = customSetId ? `/build/${customSetId}` : '/';
   const asQuery: { [key: string]: string } = {};
   if (query.class) {
     asQuery.class = Array.isArray(query.class) ? query.class[0] : query.class;
   }
   const hrefQuery = { ...asQuery };
-  if (customSet) {
-    hrefQuery.customSetId = customSet.id;
+  if (customSetId) {
+    hrefQuery.customSetId = customSetId;
   }
   return {
     href: {
