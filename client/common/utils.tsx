@@ -1403,6 +1403,7 @@ export const usePublicBuildActions = (customSet: CustomSet) => {
         }
         linkTextareaRef.current.value = url;
         linkTextareaRef.current.focus();
+        // https://stackoverflow.com/questions/32851485/make-clipboard-copy-paste-work-on-iphone-devices
         if (navigator.userAgent.match(/ipad|iphone/i)) {
           const range = document.createRange();
           range.selectNodeContents(linkTextareaRef.current);
