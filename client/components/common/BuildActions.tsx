@@ -14,7 +14,7 @@ import {
   restartCustomSetVariables,
 } from 'graphql/mutations/__generated__/restartCustomSet';
 import restartCustomSetMutation from 'graphql/mutations/restartCustomSet.graphql';
-import { EditableContext, usePublicBuildActions } from 'common/utils';
+import { EditableContext } from 'common/utils';
 
 import { mq } from 'common/constants';
 import { CheckboxChangeEvent } from 'antd/lib/checkbox';
@@ -75,8 +75,6 @@ const BuildActions: React.FC<Props> = ({ customSet }) => {
     closeRestartModal();
   }, [restartMutate, isEditable]);
 
-  const { linkTextareaRef } = usePublicBuildActions(customSet);
-
   return (
     <div
       css={{
@@ -91,12 +89,6 @@ const BuildActions: React.FC<Props> = ({ customSet }) => {
         [mq[4]]: { marginLeft: 20, marginRight: 12 },
       }}
     >
-      <textarea
-        css={{ display: 'none' }}
-        id="clipboard-link"
-        ref={linkTextareaRef}
-        contentEditable
-      />
       <>
         <Button onClick={openRestartModal}>
           {t('RESTART_BUILD')}

@@ -299,8 +299,9 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
                     );
                   }}
                   onChange={(value?: number) => {
-                    if (typeof value !== 'number') return;
-                    dispatch({ type: 'edit', stat: baseKey, value });
+                    if (value && typeof value !== 'number') return;
+                    const newValue = value || 0;
+                    dispatch({ type: 'edit', stat: baseKey, value: newValue });
                     debouncedCheckAndMutate();
                   }}
                 />

@@ -37,6 +37,7 @@ const PublicBuildActions: React.FC<Props> = ({ customSet, className }) => {
             id="classic-clipboard-link"
             ref={linkTextareaRef}
             contentEditable
+            suppressContentEditableWarning
           />
           <Button onClick={onCopyBuild} loading={copyLoading}>
             {t('COPY_BUILD')}
