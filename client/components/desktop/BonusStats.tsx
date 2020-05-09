@@ -52,11 +52,11 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
     setSetModalVisible(false);
   }, [setSetModalVisible]);
 
+  const contentRef = React.useRef<HTMLDivElement | null>(null);
+
   if (Object.values(setBonuses).length === 0) {
     return null;
   }
-
-  const contentRef = React.useRef<HTMLDivElement | null>(null);
 
   const sortedSetBonuses = Object.values(
     setBonuses,
