@@ -719,8 +719,10 @@ export const calcPushbackDamage = (
   level: number,
   stats: StatsFromCustomSet | null,
 ) =>
-  (level / 2 + (getStatWithDefault(stats, Stat.PUSHBACK_DAMAGE) + 32)) *
-  (numSquaresPushed / 4);
+  Math.floor(
+    (level / 2 + (getStatWithDefault(stats, Stat.PUSHBACK_DAMAGE) + 32)) *
+      (numSquaresPushed / 4),
+  );
 
 export const calcHeal = (
   baseHeal: number,
