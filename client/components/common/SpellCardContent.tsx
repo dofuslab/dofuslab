@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import { Divider } from 'antd';
+import { Divider, notification } from 'antd';
 import { useTheme } from 'emotion-theming';
 
 import {
@@ -33,7 +33,7 @@ const SpellCardContent: React.FC<Props> = ({
   customSet,
   selectedSpellLevelIdx,
 }) => {
-  const { t } = useTranslation(['weapon_spell_effect', 'stat']);
+  const { t } = useTranslation(['weapon_spell_effect', 'stat', 'common']);
   const customSetLevel = customSet?.level || 200;
 
   const statsFromCustomSet = getStatsFromCustomSet(customSet);
@@ -48,6 +48,15 @@ const SpellCardContent: React.FC<Props> = ({
     getInitialRangedState(meleeOnly, rangedOnly, statsFromCustomSet),
   );
 
+  const [baseDamageIncreases, setBaseDamageIncreases] = React.useState<
+    Array<number>
+  >([]);
+
+  const totalDamageIncrease = baseDamageIncreases.reduce(
+    (acc, curr) => acc + curr,
+    0,
+  );
+
   const damageTypeKey = showRanged ? 'ranged' : 'melee';
 
   const showToggle =
@@ -60,6 +69,37 @@ const SpellCardContent: React.FC<Props> = ({
   let content = null;
 
   const theme = useTheme<Theme>();
+
+  const addDamageIncrease = React.useCallback(
+    (damageIncrease: number) => {
+      if (
+        !spellStats.spellDamageIncrease ||
+        (spellStats.spellDamageIncrease.maxStacks &&
+          baseDamageIncreases.length >=
+            spellStats.spellDamageIncrease.maxStacks)
+      ) {
+        notification.error({
+          message: t('ERROR', { ns: 'common' }),
+          description: t('MAX_STACKS_APPLIED'),
+        });
+        return;
+      }
+      setBaseDamageIncreases((prevIncreases) => [
+        ...prevIncreases,
+        damageIncrease,
+      ]);
+    },
+    [baseDamageIncreases, spellStats],
+  );
+
+  const removeDamageIncrease = React.useCallback(
+    (damageIncreaseIdx: number) => {
+      setBaseDamageIncreases((prevIncreases) =>
+        prevIncreases.filter((_, idx) => idx !== damageIncreaseIdx),
+      );
+    },
+    [],
+  );
 
   if (!spellStats) {
     content = (
@@ -81,7 +121,7 @@ const SpellCardContent: React.FC<Props> = ({
           nonCrit: {
             min: minDamage
               ? calcEffect(
-                  minDamage,
+                  minDamage + totalDamageIncrease,
                   effectType,
                   customSetLevel,
                   statsFromCustomSet,
@@ -90,7 +130,7 @@ const SpellCardContent: React.FC<Props> = ({
                 )
               : null,
             max: calcEffect(
-              maxDamage,
+              maxDamage + totalDamageIncrease,
               effectType,
               customSetLevel,
               statsFromCustomSet,
@@ -105,7 +145,7 @@ const SpellCardContent: React.FC<Props> = ({
               : {
                   min: critMinDamage
                     ? calcEffect(
-                        critMinDamage,
+                        critMinDamage + totalDamageIncrease,
                         effectType,
                         customSetLevel,
                         statsFromCustomSet,
@@ -114,7 +154,7 @@ const SpellCardContent: React.FC<Props> = ({
                       )
                     : null,
                   max: calcEffect(
-                    critMaxDamage,
+                    critMaxDamage + totalDamageIncrease,
                     effectType,
                     customSetLevel,
                     statsFromCustomSet,
@@ -196,6 +236,24 @@ const SpellCardContent: React.FC<Props> = ({
             ),
           )}
         </div>
+        {baseDamageIncreases.length > 0 && (
+          <>
+            <Divider css={{ margin: '12px 0' }} />
+            {baseDamageIncreases.map((increase, idx) => (
+              /* eslint-disable react/no-array-index-key */
+              <a
+                key={`increase-${idx}`}
+                onClick={() => {
+                  removeDamageIncrease(idx);
+                }}
+                css={{ display: 'block' }}
+              >
+                {t('INCREASE_BASE_DAMAGE', { damageIncrease: increase })}
+              </a>
+              /* eslint-enable react/no-array-index-key */
+            ))}
+          </>
+        )}
         {spellStats.spellEffects.length > 0 && (
           <>
             <Divider css={{ margin: '12px 0' }} />
@@ -223,7 +281,9 @@ const SpellCardContent: React.FC<Props> = ({
                 <div
                   css={{
                     gridArea: `1 / 2 / ${
-                      spellStats.spellEffects.length + 2
+                      spellStats.spellEffects.length +
+                      2 +
+                      (spellStats.spellDamageIncrease ? 1 : 0)
                     } / -1`,
                     background: theme.damage?.nonCrit?.background,
                     borderRadius: 4,
@@ -259,6 +319,42 @@ const SpellCardContent: React.FC<Props> = ({
                   </React.Fragment>
                 );
               })}
+              {!!spellStats.spellDamageIncrease && (
+                <>
+                  <a
+                    onClick={() => {
+                      if (!spellStats.spellDamageIncrease) {
+                        return;
+                      }
+                      addDamageIncrease(
+                        spellStats.spellDamageIncrease.baseIncrease,
+                      );
+                    }}
+                  >
+                    {t('INCREASE_BASE_DAMAGE', {
+                      damageIncrease:
+                        spellStats.spellDamageIncrease.baseIncrease,
+                    })}
+                  </a>
+                  {!!spellStats.spellDamageIncrease.critBaseIncrease && (
+                    <a
+                      onClick={() => {
+                        if (!spellStats.spellDamageIncrease?.critBaseIncrease) {
+                          return;
+                        }
+                        addDamageIncrease(
+                          spellStats.spellDamageIncrease.critBaseIncrease,
+                        );
+                      }}
+                    >
+                      {t('INCREASE_BASE_DAMAGE', {
+                        damageIncrease:
+                          spellStats.spellDamageIncrease.critBaseIncrease,
+                      })}
+                    </a>
+                  )}
+                </>
+              )}
             </div>
           </>
         )}

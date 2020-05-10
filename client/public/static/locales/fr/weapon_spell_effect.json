@@ -27,7 +27,9 @@
     "WATER_DAMAGE": "Dommage eau",
     "WATER_STEAL": "Vol de vie eau"
   },
+  "INCREASE_BASE_DAMAGE": "+{{damageIncrease}} dégâts de base",
   "LINEAR": "Linéaire",
+  "MAX_STACKS_APPLIED": "Nombre de cumuls maximal atteint.",
   "MELEE": "Mélée",
   "MODIFIABLE": "Modifiable",
   "NON_CRIT": "Sans CC",

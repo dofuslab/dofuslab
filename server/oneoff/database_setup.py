@@ -25,6 +25,7 @@ from app.database.model_spell_stats import ModelSpellStats
 from app.database.model_spell_stat_translation import ModelSpellStatTranslation
 from app.database.model_spell_effect import ModelSpellEffect
 from app.database import base, enums
+from oneoff.sync_spell import to_spell_enum
 from sqlalchemy.schema import MetaData
 from worker import redis_connection
 import sqlalchemy
@@ -104,21 +105,6 @@ to_effect_enum = {
     "HP restored": enums.WeaponEffectType.HP_RESTORED,
 }
 
-to_spell_enum = {
-    "Neutral damage": enums.SpellEffectType.NEUTRAL_DAMAGE,
-    "Earth damage": enums.SpellEffectType.EARTH_DAMAGE,
-    "Fire damage": enums.SpellEffectType.FIRE_DAMAGE,
-    "Water damage": enums.SpellEffectType.WATER_DAMAGE,
-    "Air damage": enums.SpellEffectType.AIR_DAMAGE,
-    "Neutral steal": enums.SpellEffectType.NEUTRAL_STEAL,
-    "Earth steal": enums.SpellEffectType.EARTH_STEAL,
-    "Fire steal": enums.SpellEffectType.FIRE_STEAL,
-    "Water steal": enums.SpellEffectType.WATER_STEAL,
-    "Air steal": enums.SpellEffectType.AIR_STEAL,
-    "HP restored": enums.SpellEffectType.HP_RESTORED,
-    "Shield": enums.SpellEffectType.SHIELD,
-    "Pushback damage": enums.SpellEffectType.PUSHBACK_DAMAGE,
-}
 
 face_url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/class/face/{}_M.png"
 male_sprite_url_base = (
@@ -128,7 +114,6 @@ female_sprite_url_base = (
     "https://dofus-lab.s3.us-east-2.amazonaws.com/class/sprite/{}_F.png"
 )
 slot_url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/icons/{}.svg"
-
 
 
 if __name__ == "__main__":

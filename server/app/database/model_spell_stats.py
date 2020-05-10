@@ -3,6 +3,7 @@ from .base import Base
 from sqlalchemy import Column, Integer, ForeignKey, Boolean
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
+from .model_spell_damage_increase import ModelSpellDamageIncrease
 
 
 class ModelSpellStats(Base):
@@ -38,4 +39,11 @@ class ModelSpellStats(Base):
 
     spell_effects = relationship(
         "ModelSpellEffect", backref="spell_stats", cascade="all, delete-orphan"
+    )
+
+    spell_damage_increase = relationship(
+        "ModelSpellDamageIncrease",
+        backref="spell_stats",
+        cascade="all, delete-orphan",
+        uselist=False,
     )

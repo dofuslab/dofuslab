@@ -31,6 +31,12 @@ query classById($id: UUID!) {
             critMaxDamage
             effectType
           }
+          spellDamageIncrease {
+            id
+            baseIncrease
+            critBaseIncrease
+            maxStacks
+          }
         }
       }
     }
