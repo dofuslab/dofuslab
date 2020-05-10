@@ -96,6 +96,7 @@ def create_spell_stats(db_session, record, spell):
         if damage_increase_max_stacks:
             base_increase = level["normalEffects"]["damageIncrease"]
             critical_effects = level.get("criticalEffects", None)
+            crit_base_increase = None
             if critical_effects:
                 crit_base_increase = level["criticalEffects"]["damageIncrease"]
             spell_damage_increase = ModelSpellDamageIncrease(
