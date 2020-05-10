@@ -95,6 +95,7 @@ const SetModal: React.FC<Props> = ({
           {data.setById.items.map((item) => (
             <div
               key={`item-${item.id}`}
+              css={{ display: 'flex', justifyContent: 'center' }}
               onClick={() => {
                 if (!isEditable) return;
                 setItemIds((prev) => {
