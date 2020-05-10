@@ -29,7 +29,7 @@
   },
   "INCREASE_BASE_DAMAGE": "+{{damageIncrease}} dégâts de base",
   "LINEAR": "Linéaire",
-  "MAX_STACKS_APPLIED": "__STRING_NOT_TRANSLATED__",
+  "MAX_STACKS_APPLIED": "Nombre de cumuls maximal atteint.",
   "MELEE": "Mélée",
   "MODIFIABLE": "Modifiable",
   "NON_CRIT": "Sans CC",

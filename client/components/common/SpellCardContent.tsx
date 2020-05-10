@@ -89,7 +89,7 @@ const SpellCardContent: React.FC<Props> = ({
         damageIncrease,
       ]);
     },
-    [baseDamageIncreases],
+    [baseDamageIncreases, spellStats],
   );
 
   const removeDamageIncrease = React.useCallback(
@@ -281,7 +281,9 @@ const SpellCardContent: React.FC<Props> = ({
                 <div
                   css={{
                     gridArea: `1 / 2 / ${
-                      spellStats.spellEffects.length + 2
+                      spellStats.spellEffects.length +
+                      2 +
+                      (spellStats.spellDamageIncrease ? 1 : 0)
                     } / -1`,
                     background: theme.damage?.nonCrit?.background,
                     borderRadius: 4,
