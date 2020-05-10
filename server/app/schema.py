@@ -29,6 +29,7 @@ from app.database.model_custom_set import ModelCustomSet, MAX_NAME_LENGTH
 from app.database.model_user import ModelUserAccount
 from app.database.model_spell_effect import ModelSpellEffect
 from app.database.model_spell_stat_translation import ModelSpellStatTranslation
+from app.database.model_spell_damage_increase import ModelSpellDamageIncrease
 from app.database.model_spell_stats import ModelSpellStats
 from app.database.model_spell_translation import ModelSpellTranslation
 from app.database.model_spell import ModelSpell
@@ -342,6 +343,12 @@ class User(SQLAlchemyObjectType):
 class SpellEffects(SQLAlchemyObjectType):
     class Meta:
         model = ModelSpellEffect
+        interfaces = (GlobalNode,)
+
+
+class SpellDamageIncrease(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelSpellDamageIncrease
         interfaces = (GlobalNode,)
 
 
