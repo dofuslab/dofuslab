@@ -27,7 +27,9 @@
     "WATER_DAMAGE": "Water damage",
     "WATER_STEAL": "Water steal"
   },
+  "INCREASE_BASE_DAMAGE": "+{{damageIncrease}} base damage",
   "LINEAR": "Linear",
+  "MAX_STACKS_APPLIED": "Max stacks already applied.",
   "MELEE": "Melee",
   "MODIFIABLE": "Modifiable",
   "NON_CRIT": "Non-crit",
