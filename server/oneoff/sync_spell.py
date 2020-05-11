@@ -78,7 +78,9 @@ def create_spell_stats(db_session, record, spell):
                 effect_type=to_spell_enum[
                     level["normalEffects"]["modifiableEffect"][i]["stat"]
                 ],
-                min_damage=level["normalEffects"]["modifiableEffect"][i]["minStat"],
+                min_damage=level["normalEffects"]["modifiableEffect"][i].get(
+                    "minStat", None
+                ),
                 max_damage=level["normalEffects"]["modifiableEffect"][i]["maxStat"],
             )
 
@@ -124,6 +126,7 @@ def update_spell(db_session, spell_name, record):
     elif len(translations) == 1:
         print("Spell already exists in database. Updating spell...")
         spell = translations[0].spell
+        spell.is_trap = record.get("isTrap", False)
         create_spell_translations(db_session, record, spell)
         print("Spell translations successfully updated")
         create_spell_stats(db_session, record, spell)

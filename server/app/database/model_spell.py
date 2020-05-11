@@ -1,6 +1,6 @@
 import sqlalchemy
 from .base import Base
-from sqlalchemy import Column, String, ForeignKey
+from sqlalchemy import Column, String, ForeignKey, Boolean
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
@@ -29,3 +29,5 @@ class ModelSpell(Base):
     spell_stats = relationship(
         "ModelSpellStats", backref="spell", cascade="all, delete-orphan"
     )
+
+    is_trap = Column("is_trap", Boolean, nullable=False)

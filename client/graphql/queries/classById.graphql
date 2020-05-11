@@ -9,6 +9,7 @@ query classById($id: UUID!) {
         name
         description
         imageUrl
+        isTrap
         spellStats {
           id
           level
