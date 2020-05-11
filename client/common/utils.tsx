@@ -629,8 +629,109 @@ export const getStatWithDefault = (
   stat: Stat,
 ) => (statsFromCustomSet ? statsFromCustomSet[stat] || 0 : 0);
 
-const getStats = (effectType: WeaponEffectType | SpellEffectType) => {
+const getCorrespondingDamage = (stat: Stat) => {
+  switch (stat) {
+    case Stat.STRENGTH:
+      return Stat.EARTH_DAMAGE;
+    case Stat.INTELLIGENCE:
+      return Stat.FIRE_DAMAGE;
+    case Stat.CHANCE:
+      return Stat.WATER_DAMAGE;
+    case Stat.AGILITY:
+      return Stat.AIR_DAMAGE;
+    default:
+      throw new Error('Invalid best element');
+  }
+};
+
+const getDamageObjectFromElement = (stat: Stat) => {
+  switch (stat) {
+    case Stat.STRENGTH:
+      return { multiplier: Stat.STRENGTH, damage: Stat.EARTH_DAMAGE };
+    case Stat.INTELLIGENCE:
+      return { multiplier: Stat.INTELLIGENCE, damage: Stat.FIRE_DAMAGE };
+    case Stat.CHANCE:
+      return { multiplier: Stat.CHANCE, damage: Stat.WATER_DAMAGE };
+    case Stat.AGILITY:
+      return { multiplier: Stat.AGILITY, damage: Stat.AIR_DAMAGE };
+    default:
+      throw new Error('Invalid best element');
+  }
+};
+
+const getBestStat = (statsFromCustomSet: StatsFromCustomSet | null) =>
+  [Stat.STRENGTH, Stat.INTELLIGENCE, Stat.CHANCE, Stat.AGILITY]
+    .map((s) => ({
+      value: getStatWithDefault(statsFromCustomSet, s),
+      stat: s,
+    }))
+    .reduce((currMax, curr) => {
+      if (!currMax) {
+        return curr;
+      }
+      if (curr.value > currMax.value) {
+        return curr;
+      }
+      if (curr.value === currMax.value) {
+        // if main stat (STR/INT/CHA/AGI) values are the same,
+        // use damage as tiebreaker
+        if (
+          getStatWithDefault(
+            statsFromCustomSet,
+            getCorrespondingDamage(curr.stat),
+          ) >
+          getStatWithDefault(
+            statsFromCustomSet,
+            getCorrespondingDamage(currMax.stat),
+          )
+        ) {
+          return curr;
+        }
+      }
+      return currMax;
+    }, null as { value: number; stat: Stat } | null)?.stat ?? Stat.STRENGTH;
+
+export const calcEffectType = (
+  effectType: SpellEffectType | WeaponEffectType,
+  statsFromCustomSet: StatsFromCustomSet | null,
+) => {
+  if (
+    effectType !== SpellEffectType.BEST_ELEMENT_DAMAGE &&
+    effectType !== SpellEffectType.BEST_ELEMENT_STEAL
+  ) {
+    return effectType;
+  }
+  const bestStat = getBestStat(statsFromCustomSet);
+  switch (bestStat) {
+    case Stat.STRENGTH:
+      return effectType === SpellEffectType.BEST_ELEMENT_DAMAGE
+        ? SpellEffectType.EARTH_DAMAGE
+        : SpellEffectType.EARTH_STEAL;
+    case Stat.INTELLIGENCE:
+      return effectType === SpellEffectType.BEST_ELEMENT_DAMAGE
+        ? SpellEffectType.FIRE_DAMAGE
+        : SpellEffectType.FIRE_STEAL;
+    case Stat.CHANCE:
+      return effectType === SpellEffectType.BEST_ELEMENT_DAMAGE
+        ? SpellEffectType.WATER_DAMAGE
+        : SpellEffectType.WATER_STEAL;
+    case Stat.AGILITY:
+      return effectType === SpellEffectType.BEST_ELEMENT_DAMAGE
+        ? SpellEffectType.AIR_DAMAGE
+        : SpellEffectType.AIR_STEAL;
+    default:
+      throw new Error('Invalid best stat');
+  }
+};
+
+const getStats = (
+  effectType: WeaponEffectType | SpellEffectType,
+  statsFromCustomSet: StatsFromCustomSet | null,
+) => {
   switch (effectType) {
+    case SpellEffectType.BEST_ELEMENT_DAMAGE:
+    case SpellEffectType.BEST_ELEMENT_STEAL:
+      return getDamageObjectFromElement(getBestStat(statsFromCustomSet));
     case WeaponEffectType.AIR_DAMAGE:
     case WeaponEffectType.AIR_STEAL:
     case SpellEffectType.AIR_DAMAGE:
@@ -668,7 +769,7 @@ export const calcDamage = (
   damageTypeInput: CalcDamageInput,
   weaponSkillPower?: number,
 ) => {
-  const statTypes = getStats(effectType);
+  const statTypes = getStats(effectType, stats);
   const { multiplier: multiplierType, damage: damageType } = statTypes;
   let multiplierValue =
     getStatWithDefault(stats, multiplierType) +
@@ -808,6 +909,8 @@ export const getSimpleEffect: (
     case SpellEffectType.WATER_STEAL:
     case SpellEffectType.NEUTRAL_DAMAGE:
     case SpellEffectType.NEUTRAL_STEAL:
+    case SpellEffectType.BEST_ELEMENT_DAMAGE:
+    case SpellEffectType.BEST_ELEMENT_STEAL:
       return 'damage';
     case WeaponEffectType.HP_RESTORED:
     case SpellEffectType.HP_RESTORED:
