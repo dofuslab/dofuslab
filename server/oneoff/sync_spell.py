@@ -26,6 +26,8 @@ to_spell_enum = {
     "HP restored": enums.SpellEffectType.HP_RESTORED,
     "Shield": enums.SpellEffectType.SHIELD,
     "Pushback damage": enums.SpellEffectType.PUSHBACK_DAMAGE,
+    "Best element damage": enums.SpellEffectType.BEST_ELEMENT_DAMAGE,
+    "Best element steal": enums.SpellEffectType.BEST_ELEMENT_STEAL,
 }
 
 

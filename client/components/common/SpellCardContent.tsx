@@ -17,6 +17,7 @@ import {
   calcEffect,
   getStatsFromCustomSet,
   getInitialRangedState,
+  calcEffectType,
 } from 'common/utils';
 import { TEffectLine, Theme } from 'common/types';
 import { Stat } from '__generated__/globalTypes';
@@ -305,14 +306,20 @@ const SpellCardContent: React.FC<Props> = ({
                     <EffectLine
                       min={effect.nonCrit.min}
                       max={effect.nonCrit.max}
-                      effectType={effect.type}
+                      effectType={calcEffectType(
+                        effect.type,
+                        statsFromCustomSet,
+                      )}
                       baseMax={effect.nonCrit.baseMax}
                     />
                     {!!effect.crit && (
                       <EffectLine
                         min={effect.crit.min}
                         max={effect.crit.max}
-                        effectType={effect.type}
+                        effectType={calcEffectType(
+                          effect.type,
+                          statsFromCustomSet,
+                        )}
                         baseMax={effect.crit.baseMax}
                       />
                     )}

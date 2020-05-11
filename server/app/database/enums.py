@@ -90,6 +90,8 @@ class SpellEffectType(Enum):
     HP_RESTORED = auto()
     SHIELD = auto()
     PUSHBACK_DAMAGE = auto()
+    BEST_ELEMENT_DAMAGE = auto()
+    BEST_ELEMENT_STEAL = auto()
 
 
 class WeaponElementMage(Enum):
