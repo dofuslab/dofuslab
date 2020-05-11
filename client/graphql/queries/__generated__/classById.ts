@@ -52,6 +52,7 @@ export interface classById_classById_spellVariantPairs_spells {
   name: string;
   description: string;
   imageUrl: string;
+  isTrap: boolean;
   spellStats: classById_classById_spellVariantPairs_spells_spellStats[];
 }
 

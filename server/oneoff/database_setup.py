@@ -556,6 +556,7 @@ if __name__ == "__main__":
                     spell_object = ModelSpell(
                         spell_variant_pair_id=spell_pair_object.uuid,
                         image_url=spell["imageUrl"],
+                        is_trap=spell.get("isTrap", False),
                     )
                     for locale in spell["name"]:
                         spell_translation = ModelSpellTranslation(
