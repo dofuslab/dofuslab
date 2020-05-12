@@ -93,9 +93,10 @@ const ClassicEquippedItem: React.FC<Props> = ({
         return isEditable ? (
           <Link
             href={{
-              pathname: '/equip/[itemSlotId]/',
+              pathname: customSet
+                ? '/equip/[itemSlotId]/[customSetId]'
+                : '/equip/[itemSlotId]',
               query: {
-                ...query,
                 itemSlotId: slot.id,
                 customSetId: customSet?.id,
               },

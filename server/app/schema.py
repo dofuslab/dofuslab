@@ -1089,7 +1089,7 @@ class Query(graphene.ObjectType):
                 items_query = items_query.join(
                     stat_sq, ModelItem.uuid == stat_sq.c.item_id
                 ).filter(stat_sq.c.num_stats_matched == len(stat_names))
-            if filters.max_level:
+            if filters.max_level != None:
                 items_query = items_query.filter(ModelItem.level <= filters.max_level)
             if filters.search:
                 items_query = (
@@ -1155,7 +1155,7 @@ class Query(graphene.ObjectType):
                 set_query = set_query.join(
                     bonus_sq, ModelSet.uuid == bonus_sq.c.set_id
                 ).filter(bonus_sq.c.num_stats_matched == len(stat_names))
-            if filters.max_level:
+            if filters.max_level != None:
                 set_query = set_query.filter(level_sq.c.level <= filters.max_level)
             if filters.search:
                 set_query = (

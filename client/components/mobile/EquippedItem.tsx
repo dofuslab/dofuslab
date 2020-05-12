@@ -64,7 +64,9 @@ const EquippedItem: React.FC<Props> = ({
   const content = isEditable ? (
     <Link
       href={{
-        pathname: '/equip/[itemSlotId]',
+        pathname: customSet
+          ? '/equip/[itemSlotId]/[customSetId]'
+          : '/equip/[itemSlotId]/',
         query: { itemSlotId: slot.id, customSetId: customSet?.id },
       }}
       as={`/equip/${slot.id}/${customSet ? `${customSet.id}/` : ''}`}

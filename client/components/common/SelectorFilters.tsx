@@ -87,11 +87,12 @@ const SelectorFilters: React.FC<Props> = ({
   );
 
   const onChangeMaxLevel = React.useCallback(
-    (max: number | undefined) => {
-      if (max) {
-        setMaxLevel(max);
-        debouncedUpdateLevel(max);
+    (max: number | string | undefined) => {
+      if (typeof max !== 'number') {
+        return;
       }
+      setMaxLevel(max);
+      debouncedUpdateLevel(max);
     },
     [debouncedUpdateLevel, setMaxLevel],
   );

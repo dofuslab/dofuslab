@@ -18,13 +18,6 @@ const handle = app.getRequestHandler();
         ...req.query,
       }),
     )
-    .get('/equip/:itemSlotId/:customSetId', (req, res) => {
-      return app.render(req, res, '/equip/[itemSlotId]/index', {
-        itemSlotId: req.params.itemSlotId,
-        customSetId: req.params.customSetId,
-        ...req.query,
-      });
-    })
     .get('*', (req, res) => handle(req, res))
     .listen(port);
   console.log(`> Ready on http://localhost:${port}`); // eslint-disable-line no-console

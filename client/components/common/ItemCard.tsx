@@ -57,9 +57,8 @@ const ItemCard: React.FC<Props> = ({
         if (nextSlot) {
           router.replace(
             {
-              pathname: '/equip/[itemSlotId]',
+              pathname: '/equip/[itemSlotId]/[customSetId]',
               query: {
-                ...query,
                 itemSlotId: nextSlot.id,
                 customSetId,
               },

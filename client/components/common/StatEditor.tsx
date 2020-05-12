@@ -298,8 +298,8 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
                       e.currentTarget.value.length,
                     );
                   }}
-                  onChange={(value?: number) => {
-                    if (value && typeof value !== 'number') return;
+                  onChange={(value: number | string | undefined) => {
+                    if (typeof value === 'string') return;
                     const newValue = value || 0;
                     dispatch({ type: 'edit', stat: baseKey, value: newValue });
                     debouncedCheckAndMutate();
@@ -325,9 +325,14 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
                       e.currentTarget.value.length,
                     );
                   }}
-                  onChange={(value?: number) => {
-                    if (typeof value !== 'number') return;
-                    dispatch({ type: 'edit', stat: scrolledKey, value });
+                  onChange={(value: number | string | undefined) => {
+                    if (typeof value === 'string') return;
+                    const newValue = value || 0;
+                    dispatch({
+                      type: 'edit',
+                      stat: scrolledKey,
+                      value: newValue,
+                    });
                     debouncedCheckAndMutate();
                   }}
                 />

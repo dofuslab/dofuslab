@@ -258,7 +258,9 @@ const EquippedItemCard: React.FC<Props> = ({
             <Divider css={{ margin: '12px 0' }} />
             <Link
               href={{
-                pathname: '/equip/[itemSlotId]',
+                pathname: customSet
+                  ? '/equip/[itemSlotId]/[customSetId]'
+                  : '/equip/[itemSlotId]/',
                 query: {
                   itemSlotId: equippedItem.slot.id,
                   customSetId: customSet?.id,
