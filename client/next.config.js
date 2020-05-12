@@ -13,7 +13,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 if (typeof require !== 'undefined') {
-  require.extensions['.less'] = file => {};
+  require.extensions['.less'] = (file) => {};
 }
 
 module.exports = withBundleAnalyzer(
@@ -64,7 +64,6 @@ module.exports = withBundleAnalyzer(
             return acc;
           }, {});
           config.plugins.push(new webpack.DefinePlugin(env));
-          config.resolve.modules.push(path.resolve('./'));
           return config;
         },
       }),
