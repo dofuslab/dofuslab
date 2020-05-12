@@ -10,7 +10,6 @@ import { NextPage, NextPageContext } from 'next';
 import Head from 'next/head';
 import { notification } from 'antd';
 import { IncomingHttpHeaders } from 'http';
-import fetch from 'isomorphic-unfetch';
 import { AppContext } from 'next/app';
 
 interface ExtendedAppContext extends AppContext {
