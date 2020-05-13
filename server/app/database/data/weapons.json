@@ -20348,6 +20348,11 @@
         "maxStat": 5
       },
       {
+        "stat": "AP Parry",
+        "minStat": -5,
+        "maxStat": -4
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -20380,11 +20385,6 @@
           "stat": "Water steal",
           "minStat": 5,
           "maxStat": 7
-        },
-        {
-          "stat": "AP",
-          "minStat": -4,
-          "maxStat": -5
         }
       ]
     },
