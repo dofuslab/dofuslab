@@ -11,7 +11,7 @@ import isEqual from 'lodash/isEqual';
 import { Theme, SharedFilters, SharedFilterAction } from 'common/types';
 
 import { topMarginStyle } from 'common/mixins';
-import { mq } from 'common/constants';
+import { mq, SEARCH_BAR_ID } from 'common/constants';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { ItemSlot, CustomSet } from 'common/type-aliases';
 import NoSSR from 'react-no-ssr';
@@ -81,7 +81,11 @@ const Selector: React.FC<Props> = ({
   const onReset = React.useCallback(() => {
     dispatch({ type: 'RESET', maxLevel: customSet?.level || 200 });
     setItemTypeIds(new Set());
-  }, [dispatch, customSet]);
+    const searchBar = document.getElementById(SEARCH_BAR_ID);
+    if (searchBar && !isMobile) {
+      searchBar.focus();
+    }
+  }, [dispatch, customSet, isMobile]);
 
   const theme = useTheme<Theme>();
 
