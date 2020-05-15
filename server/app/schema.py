@@ -8,6 +8,7 @@ from app import (
     base_url,
     reset_password_salt,
 )
+from app.database.model_favorite_item import ModelFavoriteItem
 from app.database.model_item_stat_translation import ModelItemStatTranslation
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_type_translation import ModelItemTypeTranslation
@@ -329,15 +330,29 @@ class User(SQLAlchemyObjectType):
 
         return query.all()
 
-    def resolve_email(self, info, **kwargs):
+    def resolve_email(self, info):
         if self.uuid != current_user.get_id():
             raise GraphQLError(_("You are not authorized to make this request."))
         return self.email
 
+    favorite_items = graphene.List(graphene.NonNull(Item))
+
+    def resolve_favorite_items(self, info):
+        if self.uuid != current_user.get_id():
+            raise GraphQLError(_("You are not authorized to make this request."))
+        return map(lambda favorite: favorite.item, self.favorite_items)
+
     class Meta:
         model = ModelUserAccount
         interfaces = (GlobalNode,)
-        only_fields = ("id", "username", "email", "custom_sets", "verified")
+        only_fields = (
+            "id",
+            "username",
+            "email",
+            "custom_sets",
+            "verified",
+            "favorite_items",
+        )
 
 
 class SpellEffects(SQLAlchemyObjectType):
@@ -1034,6 +1049,26 @@ class ResetPassword(graphene.Mutation):
             return ResetPassword(ok=True)
 
 
+class ToggleFavoriteItem(graphene.Mutation):
+    class Arguments:
+        item_id = graphene.UUID(required=True)
+        is_favorite = graphene.Boolean(required=True)
+
+    user = graphene.Field(User, required=True)
+
+    def mutate(self, info, **kwargs):
+        if not current_user.is_authenticated:
+            raise GraphQLError(_("You are not logged in."))
+        item_id = kwargs.get("item_id")
+        is_favorite = kwargs.get("is_favorite")
+        user_account_id = current_user.get_id()
+        with session_scope() as db_session:
+            ModelFavoriteItem.toggle_favorite(
+                db_session, user_account_id, item_id, is_favorite
+            )
+        return ToggleFavoriteItem(user=current_user._get_current_object())
+
+
 class ItemFilters(graphene.InputObjectType):
     stats = graphene.NonNull(graphene.List(graphene.NonNull(StatEnum)))
     max_level = graphene.NonNull(graphene.Int)
@@ -1254,6 +1289,7 @@ class Mutation(graphene.ObjectType):
     copy_custom_set = CopyCustomSet.Field()
     restart_custom_set = RestartCustomSet.Field()
     delete_custom_set = DeleteCustomSet.Field()
+    toggle_favorite_item = ToggleFavoriteItem.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
