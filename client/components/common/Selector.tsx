@@ -131,7 +131,8 @@ const Selector: React.FC<Props> = ({
                   (slot: ItemSlot) =>
                     !selectedItemSlot || selectedItemSlot.id === slot.id,
                 )
-                .flatMap((slot: ItemSlot) => slot.itemTypes),
+                .map((slot: ItemSlot) => slot.itemTypes)
+                .reduce((acc, curr) => [...acc, ...curr], []),
               isEqual,
             )}
           />
