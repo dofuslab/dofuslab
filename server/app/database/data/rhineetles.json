@@ -2847,6 +2847,34 @@
     "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/275.png"
   },
   {
+    "dofusID": "215",
+    "name": {
+      "en": "Sapphire and Crimson Rhineetle",
+      "fr": "Volkorne Saphir et Pourpre"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/215.png"
+  },
+  {
     "dofusID": "269",
     "name": {
       "en": "Sapphire and Ginger Rhineetle",

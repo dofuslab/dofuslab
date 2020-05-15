@@ -14,7 +14,14 @@ from oneoff.database_setup import to_effect_enum
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-allowed_file_names = ["items", "mounts", "pets", "prysmaradites", "weapons"]
+allowed_file_names = [
+    "items",
+    "mounts",
+    "pets",
+    "prysmaradites",
+    "weapons",
+    "rhineetles",
+]
 languages = ["en", "fr", "pt", "it", "es", "de"]
 
 
