@@ -145,7 +145,11 @@ const Selector: React.FC<Props> = ({
           onReset={onReset}
         />
         <FavoritesButton
-          css={{ marginLeft: 12, [mq[1]]: { display: 'none' } }}
+          css={{
+            display: 'block',
+            marginTop: 0,
+            [mq[1]]: { display: 'none' },
+          }}
           customSet={customSet}
           selectItemSlot={selectItemSlot}
           shouldRedirect={isClassic || isMobile}

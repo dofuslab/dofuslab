@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import React from 'react';
-import { jsx } from '@emotion/core';
+import { jsx, ClassNames } from '@emotion/core';
 import { Button, Modal } from 'antd';
 import { useTranslation } from 'i18n';
 import { mq, BREAKPOINTS } from 'common/constants';
@@ -70,22 +70,29 @@ const FavoritesButton: React.FC<Props> = ({
 
   return (
     <>
-      <Button
-        css={{
-          fontSize: '0.75rem',
-          margin: '12px 0',
-          height: 42,
-          [mq[1]]: {
-            height: 'auto',
-          },
-          [mq[4]]: { marginTop: '20px 0' },
-        }}
-        onClick={openModal}
-        className={className}
-      >
-        <HeartFilled />
-        {t('MY_FAVORITES')}
-      </Button>
+      <ClassNames>
+        {({ css, cx }) => (
+          <Button
+            onClick={openModal}
+            className={cx(
+              css({
+                fontSize: '0.75rem',
+                margin: '12px 0',
+                height: 42,
+                [mq[1]]: {
+                  height: 'auto',
+                },
+                [mq[4]]: { marginTop: '20px 0' },
+              }),
+              className,
+            )}
+          >
+            <HeartFilled />
+            {t('MY_FAVORITES')}
+          </Button>
+        )}
+      </ClassNames>
+
       <Modal
         visible={modalOpen}
         title={t('MY_FAVORITES')}
