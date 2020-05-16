@@ -245,10 +245,12 @@ const SelectorFilters: React.FC<Props> = ({
         css={{
           gridColumn: '1 / -1',
           display: 'flex',
-          flex: '2 1 0',
           flexDirection: 'column',
-          [mq[1]]: { flexDirection: 'row' },
-          [mq[3]]: { marginLeft: 12, maxWidth: 600 },
+          [mq[1]]: {
+            flexDirection: 'row',
+            height: isClassic ? 40 : 'auto',
+          },
+          [mq[3]]: { marginLeft: 12, maxWidth: 600, flex: '2 1 0' },
           [mq[4]]: { marginLeft: 16 },
         }}
       >
