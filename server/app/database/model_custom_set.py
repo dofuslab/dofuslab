@@ -65,15 +65,40 @@ class ModelCustomSet(Base):
                 return item_slot
         return eligible_item_slots[0]
 
+    # returns a list of eligible item slots with empty slots first
+    def prioritize_item_slots(self, item_type):
+        eligible_item_slots = item_type.eligible_item_slots
+        empty_item_slots = []
+        filled_item_slots = []
+        for item_slot in eligible_item_slots:
+            equipped_item = (
+                db.session.query(ModelEquippedItem)
+                .filter_by(custom_set_id=self.uuid, item_slot_id=item_slot.uuid)
+                .one_or_none()
+            )
+            if equipped_item:
+                filled_item_slots.append(item_slot)
+            else:
+                empty_item_slots.append(item_slot)
+        return empty_item_slots + filled_item_slots
+
     def equip_set(self, set_obj, db_session):
         self.equip_items(set_obj.items, db_session)
 
     def equip_items(self, items, db_session):
+        ordered_slots_map = {}
+        for item in items:
+            first_slot_id = item.item_type.eligible_item_slots[0].uuid
+            if not ordered_slots_map.get(first_slot_id, None):
+                ordered_slots_map[first_slot_id] = self.prioritize_item_slots(
+                    item.item_type
+                )
         counts = {}
         for item in items:
-            slot_idx = counts.get(item.item_type.uuid, 0)
-            counts[item.item_type.uuid] = slot_idx + 1
-            item_slot = item.item_type.eligible_item_slots[slot_idx]
+            first_slot_id = item.item_type.eligible_item_slots[0].uuid
+            slot_idx = counts.get(first_slot_id, 0)
+            counts[first_slot_id] = slot_idx + 1
+            item_slot = ordered_slots_map[first_slot_id][slot_idx]
             equipped_item = (
                 db_session.query(ModelEquippedItem)
                 .filter_by(custom_set_id=self.uuid, item_slot_id=item_slot.uuid)
