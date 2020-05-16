@@ -21,7 +21,9 @@ import { Theme, SharedFilterAction, SharedFilters } from 'common/types';
 import { useTranslation } from 'i18n';
 import Tooltip from 'components/common/Tooltip';
 import { getBuildLink } from 'common/utils';
+import { ItemSlot, CustomSet } from 'common/type-aliases';
 import ResetAllButton from './ResetAllButton';
+import FavoritesButton from './FavoritesButton';
 
 const { Search } = Input;
 const { Option } = Select;
@@ -29,23 +31,27 @@ const { Option } = Select;
 interface Props {
   filters: SharedFilters;
   dispatch: React.Dispatch<SharedFilterAction>;
-  customSetLevel: number | null;
+  customSet: CustomSet | null;
   showSets: boolean;
   setShowSets: React.Dispatch<React.SetStateAction<boolean>>;
   onReset: () => void;
-  shouldShowBack?: boolean;
   isMobile: boolean;
+  isClassic: boolean;
+  selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
+  selectedItemSlot: ItemSlot | null;
 }
 
 const SelectorFilters: React.FC<Props> = ({
   filters: { stats },
   dispatch,
-  customSetLevel,
+  customSet,
   showSets,
   setShowSets,
   onReset,
-  shouldShowBack,
+  selectedItemSlot,
   isMobile,
+  isClassic,
+  selectItemSlot,
 }) => {
   const router = useRouter();
   const { customSetId: customSetIdParam } = router.query;
@@ -53,7 +59,7 @@ const SelectorFilters: React.FC<Props> = ({
     ? customSetIdParam[0]
     : customSetIdParam;
   const [search, setSearch] = React.useState('');
-  const [maxLevel, setMaxLevel] = React.useState(customSetLevel || 200);
+  const [maxLevel, setMaxLevel] = React.useState(customSet?.level || 200);
   const handleSearchChange = React.useCallback(
     (searchValue: string) => {
       dispatch({ type: 'SEARCH', search: searchValue });
@@ -131,7 +137,7 @@ const SelectorFilters: React.FC<Props> = ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'stretch',
-        [mq[2]]: {
+        [mq[3]]: {
           flexDirection: 'row',
         },
       }}
@@ -142,7 +148,7 @@ const SelectorFilters: React.FC<Props> = ({
           marginBottom: 12,
           flexDirection: 'column',
           [mq[1]]: { flex: 1, flexDirection: 'row' },
-          [mq[2]]: { marginBottom: 0, maxWidth: 480 },
+          [mq[3]]: { marginBottom: 0, maxWidth: 480 },
           alignItems: 'stretch',
         }}
       >
@@ -158,7 +164,7 @@ const SelectorFilters: React.FC<Props> = ({
             },
           }}
         >
-          {shouldShowBack && (
+          {(isMobile || isClassic) && (
             <Link href={buildLink.href} as={buildLink.as} passHref>
               <a>
                 <Button
@@ -239,10 +245,10 @@ const SelectorFilters: React.FC<Props> = ({
         css={{
           gridColumn: '1 / -1',
           display: 'flex',
-          flex: '1',
+          flex: '2 1 0',
           flexDirection: 'column',
           [mq[1]]: { flexDirection: 'row' },
-          [mq[2]]: { marginLeft: 12, maxWidth: 420 },
+          [mq[3]]: { marginLeft: 12, maxWidth: 600 },
           [mq[4]]: { marginLeft: 16 },
         }}
       >
@@ -304,9 +310,21 @@ const SelectorFilters: React.FC<Props> = ({
           onReset={onResetAll}
           css={{
             display: 'none',
-            [mq[1]]: { display: 'block', margin: '0 0 0 12px', height: 40 },
-            [mq[4]]: { marginLeft: 20, height: 'auto' },
+            [mq[1]]: { display: 'block', margin: '0 0 0 12px' },
+            [mq[4]]: { marginLeft: 16, height: 'auto' },
           }}
+        />
+        <FavoritesButton
+          css={{
+            display: 'none',
+            [mq[1]]: { display: 'block', margin: '0 0 0 12px' },
+            [mq[4]]: { marginLeft: 16, height: 'auto' },
+          }}
+          showSets={showSets}
+          selectItemSlot={selectItemSlot}
+          shouldRedirect={isMobile || isClassic}
+          customSet={customSet}
+          selectedItemSlot={selectedItemSlot}
         />
       </div>
     </div>

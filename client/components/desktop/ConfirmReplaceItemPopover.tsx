@@ -52,9 +52,9 @@ const ConfirmReplaceItemPopover: React.FC<Props> = ({
             <div
               css={{
                 width: '100%',
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'space-around',
+                display: 'grid',
+                gridGap: 8,
+                gridTemplateColumns: 'repeat(auto-fit, minmax(60px, 1fr))',
                 maxWidth: 240,
                 [mq[4]]: { maxWidth: 300 },
               }}

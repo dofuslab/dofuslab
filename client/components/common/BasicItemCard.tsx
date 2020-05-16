@@ -24,8 +24,9 @@ interface Props {
   equipped?: boolean;
   openSetModal?: (set: ItemSet) => void;
   onClick?: () => void;
-  showOnlyWeaponStats?: boolean;
+  showOnlyWeaponStats: boolean;
   weaponElementMage?: WeaponElementMage | null;
+  favorite?: React.ReactNode;
 }
 
 const BasicItemCard: React.FC<Props> = ({
@@ -35,6 +36,7 @@ const BasicItemCard: React.FC<Props> = ({
   onClick,
   showOnlyWeaponStats,
   weaponElementMage,
+  favorite,
 }) => {
   const { t } = useTranslation(['common', 'stat', 'weapon_spell_effect']);
   const theme = useTheme<Theme>();
@@ -49,6 +51,7 @@ const BasicItemCard: React.FC<Props> = ({
           showBadge={equipped}
           badgeContent={t('EQUIPPED')}
           level={item.level}
+          rightAlignedContent={favorite}
         />
       }
       css={{

@@ -149,40 +149,46 @@ export const CardTitleWithLevel: React.FC<{
   levelClassName,
 }) => {
   const { t } = useTranslation('common');
+
   return (
-    <div css={{ display: 'flex', alignItems: 'center', marginRight: 4 }}>
-      <TruncatableText css={{ fontSize: '0.8rem' }}>{title}</TruncatableText>
-      {showBadge && <Badge css={{ marginRight: 4 }}>{badgeContent}</Badge>}
-      {level && (
-        <ClassNames>
-          {({ css, cx }) => (
-            <div
-              className={cx(
-                css({
-                  fontSize: '0.75rem',
-                  fontWeight: 400,
-                  marginLeft: 'auto',
-                  whiteSpace: 'nowrap',
-                }),
-                levelClassName,
-              )}
-            >
-              {t('LEVEL_ABBREVIATION', { ns: 'common' })} {level}
-            </div>
-          )}
-        </ClassNames>
-      )}
-      {rightAlignedContent && (
+    <div css={{ marginRight: 4, display: 'flex', alignItems: 'center' }}>
+      <div css={{ minWidth: 0 }}>
+        <div css={{ display: 'flex', alignItems: 'center' }}>
+          <TruncatableText css={{ fontSize: '0.8rem' }}>
+            {title}
+          </TruncatableText>
+          {showBadge && <Badge css={{ marginRight: 4 }}>{badgeContent}</Badge>}
+        </div>
         <div
           css={{
-            fontSize: '0.75rem',
-            fontWeight: 400,
-            marginLeft: 'auto',
-            whiteSpace: 'nowrap',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
           }}
         >
-          {rightAlignedContent}
+          {level && (
+            <ClassNames>
+              {({ css, cx }) => (
+                <div
+                  className={cx(
+                    css({
+                      fontSize: '0.75rem',
+                      fontWeight: 400,
+                      whiteSpace: 'nowrap',
+                    }),
+                    levelClassName,
+                  )}
+                >
+                  {t('LEVEL_ABBREVIATION', { ns: 'common' })} {level}
+                </div>
+              )}
+            </ClassNames>
+          )}
         </div>
+      </div>
+
+      {rightAlignedContent && (
+        <div css={{ marginLeft: 'auto' }}>{rightAlignedContent}</div>
       )}
     </div>
   );

@@ -243,8 +243,8 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
                 css({
                   fontSize: '0.75rem',
                   maxWidth: 288,
-                  boxShadow: popoverShadow,
                   '.ant-popover-content': {
+                    boxShadow: popoverShadow,
                     maxHeight: contentRef.current
                       ? `calc(100vh - ${
                           contentRef.current.offsetTop +

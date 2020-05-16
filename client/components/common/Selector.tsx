@@ -21,6 +21,7 @@ import ItemSelector from './ItemSelector';
 import SetSelector from './SetSelector';
 import ItemTypeFilter from './ItemTypeFilter';
 import ResetAllButton from './ResetAllButton';
+import FavoritesButton from './FavoritesButton';
 
 const reducer = (state: SharedFilters, action: SharedFilterAction) => {
   switch (action.type) {
@@ -114,12 +115,14 @@ const Selector: React.FC<Props> = ({
           key={`filters-level-${customSet?.level}`}
           filters={filters}
           dispatch={dispatch}
-          customSetLevel={customSet?.level || null}
+          customSet={customSet}
           showSets={showSetsState}
           setShowSets={setShowSetsState}
           onReset={onReset}
-          shouldShowBack={isMobile || isClassic}
           isMobile={isMobile}
+          isClassic={isClassic}
+          selectedItemSlot={selectedItemSlot}
+          selectItemSlot={selectItemSlot}
         />
         {slots && !showSetsState && (
           <ItemTypeFilter
@@ -140,6 +143,14 @@ const Selector: React.FC<Props> = ({
         <ResetAllButton
           css={{ [mq[1]]: { display: 'none' } }}
           onReset={onReset}
+        />
+        <FavoritesButton
+          css={{ marginLeft: 12, [mq[1]]: { display: 'none' } }}
+          customSet={customSet}
+          selectItemSlot={selectItemSlot}
+          shouldRedirect={isClassic || isMobile}
+          showSets={showSetsState}
+          selectedItemSlot={selectedItemSlot}
         />
         {showSetsState ? (
           <SetSelector

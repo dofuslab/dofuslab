@@ -4,9 +4,10 @@ from .base import Base
 from sqlalchemy import Column, ForeignKey, UniqueConstraint
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
+from graphql import GraphQLError
+from flask_babel import _
 
-
-MAX_FAVORITES = 50
+MAX_FAVORITES = 10
 
 
 class ModelFavoriteItem(Base):

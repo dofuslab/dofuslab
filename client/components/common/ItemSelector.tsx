@@ -152,6 +152,7 @@ const ItemSelector: React.FC<Props> = ({
                 openSetModal={openSetModal}
                 shouldRedirect={isMobile || isClassic}
                 remainingSlotIds={remainingSlotIds}
+                notifyOnEquip={false}
               />
             );
             return itemSlotId || !customSet ? (

@@ -335,7 +335,7 @@ class User(SQLAlchemyObjectType):
             raise GraphQLError(_("You are not authorized to make this request."))
         return self.email
 
-    favorite_items = graphene.List(graphene.NonNull(Item))
+    favorite_items = graphene.NonNull(graphene.List(graphene.NonNull(Item)))
 
     def resolve_favorite_items(self, info):
         if self.uuid != current_user.get_id():

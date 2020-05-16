@@ -1,0 +1,12 @@
+#import "graphql/fragments/item.graphql"
+
+mutation toggleFavoriteItem($itemId: UUID!, $isFavorite: Boolean!) {
+  toggleFavoriteItem(itemId: $itemId, isFavorite: $isFavorite) {
+    user {
+      id
+      favoriteItems {
+        ...item
+      }
+    }
+  }
+}

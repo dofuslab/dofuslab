@@ -1,8 +1,13 @@
+#import "graphql/fragments/item.graphql"
+
 query currentUser {
   currentUser {
     id
     username
     email
     verified
+    favoriteItems {
+      ...item
+    }
   }
 }
