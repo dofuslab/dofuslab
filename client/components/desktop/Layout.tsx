@@ -127,11 +127,7 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
   const logoutHandler = React.useCallback(async () => {
     const { data: logoutData } = await logout();
     if (logoutData?.logoutUser?.ok) {
-      client.writeQuery<CurrentUserQueryType>({
-        query: currentUserQuery,
-        data: { currentUser: null },
-      });
-
+      await client.resetStore();
       router.push('/');
     }
   }, [logout, router]);

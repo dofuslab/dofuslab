@@ -213,6 +213,7 @@ const EquippedItemWithStats: React.FC<Props> = ({
               overlayClassName={css({
                 ...popoverTitleStyle,
                 '.ant-popover-content': {
+                  boxShadow: popoverShadow,
                   maxHeight: contentRef.current
                     ? `calc(100vh - ${
                         contentRef.current.offsetTop +
@@ -223,7 +224,6 @@ const EquippedItemWithStats: React.FC<Props> = ({
                   overflow: 'auto',
                 },
                 '.ant-popover-inner-content': { padding: 0 },
-                boxShadow: popoverShadow,
                 maxWidth: 288,
               })}
               autoAdjustOverflow={{ adjustX: 1, adjustY: 0 }}

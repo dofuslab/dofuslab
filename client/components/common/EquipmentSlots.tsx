@@ -73,11 +73,8 @@ const EquipmentSlots: React.FC<Props> = ({
       css={{
         display: 'grid',
         gridGap: 8,
-        gridTemplateColumns: 'repeat(4, 1fr)',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(80px, 1fr))',
         flexShrink: 0,
-        [mq[0]]: {
-          gridTemplateColumns: 'repeat(8, 1fr)',
-        },
         [mq[1]]: {
           display: 'flex',
           margin: '4px 8px',

@@ -75,6 +75,7 @@ const BasicItemWithStats: React.FC<Props> = ({
               ...popoverTitleStyle,
               ...overlayCSS,
               '.ant-popover-content': {
+                boxShadow: popoverShadow,
                 maxHeight: contentRef.current
                   ? `calc(100vh - ${
                       contentRef.current.offsetTop +
@@ -84,7 +85,6 @@ const BasicItemWithStats: React.FC<Props> = ({
                   : undefined,
                 overflow: 'auto',
               },
-              boxShadow: popoverShadow,
               width: 240,
             })}
             autoAdjustOverflow={{ adjustX: 1, adjustY: 0 }}

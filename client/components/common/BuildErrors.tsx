@@ -13,6 +13,7 @@ import { calcPointCost, renderErrors } from 'common/utils';
 import groupBy from 'lodash/groupBy';
 
 import { CustomSet } from 'common/type-aliases';
+import { mq } from 'common/constants';
 
 interface Props {
   customSet: CustomSet;
@@ -94,10 +95,11 @@ const BuildErrors: React.FC<Props> = ({ customSet, errors, isMobile }) => {
   ) : (
     <div
       css={{
-        marginLeft: 20,
+        marginLeft: 12,
         marginTop: 0,
         display: 'flex',
         alignItems: 'center',
+        [mq[4]]: { marginLeft: 20 },
       }}
     >
       <ClassNames>

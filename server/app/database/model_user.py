@@ -17,7 +17,9 @@ from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
 from flask_login import UserMixin
 from datetime import datetime
+from graphql import GraphQLError
 from .model_user_setting import ModelUserSetting
+from .model_favorite_item import ModelFavoriteItem
 
 
 class ModelUserAccount(UserMixin, Base):
@@ -32,6 +34,7 @@ class ModelUserAccount(UserMixin, Base):
     email = Column("email", String(320), unique=True, nullable=False, index=True)
     password = Column("password", LargeBinary, nullable=False)
     custom_sets = relationship("ModelCustomSet", backref="owner")
+    favorite_items = relationship("ModelFavoriteItem", back_populates="user_account")
     settings = relationship("ModelUserSetting", backref="user", uselist=False)
     creation_date = Column("creation_date", DateTime, default=datetime.now)
     verification_email_sent = Column(

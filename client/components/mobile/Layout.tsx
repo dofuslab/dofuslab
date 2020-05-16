@@ -134,14 +134,10 @@ const Layout = ({ children }: LayoutProps) => {
   const logoutHandler = React.useCallback(async () => {
     const { data: logoutData } = await logout();
     if (logoutData?.logoutUser?.ok) {
-      client.writeQuery<ICurrentUser>({
-        query: currentUserQuery,
-        data: { currentUser: null },
-      });
-
+      await client.resetStore();
       router.push('/');
     }
-  }, [logout, router]);
+  }, [logout, router, client]);
 
   const changeLocaleHandler = React.useCallback(
     async (locale: string) => {
