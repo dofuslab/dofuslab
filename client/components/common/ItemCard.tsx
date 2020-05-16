@@ -109,7 +109,7 @@ const ItemCard: React.FC<Props> = ({
             : t('ITEM_EQUIPPED', { itemName: item.name }),
         });
 
-      if (notifyOnEquip) {
+      if (notifyOnEquip || (shouldRedirect && customSetId && nextSlot)) {
         notify(nextSlot);
       }
 
@@ -125,7 +125,6 @@ const ItemCard: React.FC<Props> = ({
             },
             `/equip/${nextSlot.id}/${customSetId}`,
           );
-          notify(nextSlot);
         } else {
           router.push(
             {
