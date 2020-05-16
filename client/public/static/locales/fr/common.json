@@ -54,7 +54,7 @@
   "NO_BONUS": "Aucun bonus de panoplie trouvé",
   "NO_BUILDS_MATCHED": "Aucune panoplie correspondante \"{{search}}\"",
   "NO_FAVORITE_ITEMS": "Aucun objet en favoris.",
-  "NO_FAVORITE_ITEMS_WITH_SLOT": "Aucun objet en favoris pour le slot {{slotName}}.",
+  "NO_FAVORITE_ITEMS_WITH_SLOT": "Aucun {{itemTypes}} favori.",
   "NO_ITEMS_EQUIPPED": "Aucun objet équipé",
   "NO_PERMISSION": "Tu n'as pas la permission de faire cela.",
   "NUM_ERROR": "{{count}} erreur trouvée",
