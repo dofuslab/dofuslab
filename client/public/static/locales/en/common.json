@@ -53,7 +53,7 @@
   "NO_BONUS": "No set bonus found",
   "NO_BUILDS_MATCHED": "No builds matched \"{{search}}\"",
   "NO_FAVORITE_ITEMS": "No favorite items found.",
-  "NO_FAVORITE_ITEMS_WITH_SLOT": "No favorite items for the {{slotName}} slot found.",
+  "NO_FAVORITE_ITEMS_WITH_SLOT": "No favorite {{itemTypes}} found.",
   "NO_ITEMS_EQUIPPED": "No items equipped",
   "NO_PERMISSION": "You don't have permission to do that.",
   "NUM_ERROR": "{{count}} error found",

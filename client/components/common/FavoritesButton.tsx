@@ -158,7 +158,9 @@ const FavoritesButton: React.FC<Props> = ({
           >
             {selectedItemSlot
               ? t('NO_FAVORITE_ITEMS_WITH_SLOT', {
-                  slotName: selectedItemSlot.name,
+                  itemTypes: selectedItemSlot.itemTypes
+                    .map((it) => it.name)
+                    .join('/'),
                 })
               : t('NO_FAVORITE_ITEMS')}
           </div>
