@@ -1,7 +1,12 @@
+#import "graphql/fragments/item.graphql"
+
 mutation register($email: String!, $password: String!, $username: String!) {
   registerUser(email: $email, password: $password, username: $username) {
     user {
       id
+      favoriteItems {
+        ...item
+      }
       username
       email
       verified
