@@ -17,7 +17,9 @@ class ModelItemType(Base):
         nullable=False,
     )
     eligible_item_slots = relationship(
-        "ModelItemSlot", secondary=item_type_slot_compat_table
+        "ModelItemSlot",
+        secondary=item_type_slot_compat_table,
+        order_by="asc(ModelItemSlot.order)",
     )
     items = relationship("ModelItem", back_populates="item_type")
     item_type_translation = relationship(
