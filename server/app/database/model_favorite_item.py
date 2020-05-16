@@ -7,7 +7,7 @@ from sqlalchemy.orm import relationship
 from graphql import GraphQLError
 from flask_babel import _
 
-MAX_FAVORITES = 10
+MAX_FAVORITES = 50
 
 
 class ModelFavoriteItem(Base):
