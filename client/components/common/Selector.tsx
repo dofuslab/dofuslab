@@ -180,10 +180,10 @@ const Selector: React.FC<Props> = ({
       <NoSSR>
         <BackTop
           target={() => {
-            if (selectorDivRef.current) {
+            if (selectorDivRef.current && !isClassic && !isMobile) {
               return selectorDivRef.current;
             }
-            return document.body;
+            return window;
           }}
           css={{
             '.ant-back-top-content': {
