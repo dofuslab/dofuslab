@@ -1374,6 +1374,7 @@ export const getCustomSetMetaImage = (customSet?: CustomSet | null) => {
   return `https://og-image-eight-chi.now.sh/${encodeURI(
     customSet.name || 'Untitled',
   )}?${customSet.equippedItems
+    .sort((ei1, ei2) => ei1.slot.order - ei2.slot.order)
     .map((ei) => {
       const { imageUrl } = ei.item;
       const match = imageUrl.match(

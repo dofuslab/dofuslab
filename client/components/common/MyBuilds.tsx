@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import React from 'react';
-import { jsx, ClassNames } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
 import { LoadingOutlined } from '@ant-design/icons';
 import { useTheme } from 'emotion-theming';
@@ -236,33 +236,28 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
               onClick={onClose}
               hoverable
               title={
-                <ClassNames>
-                  {({ css }) => (
-                    <CardTitleWithLevel
-                      title={node.name || t('UNTITLED')}
-                      level={node.level}
-                      levelClassName={css({ marginLeft: 8 })}
-                      rightAlignedContent={
-                        <div
-                          css={{
-                            padding: '0px 4px 0px 8px',
-                            marginLeft: 4,
-                            opacity: 0.3,
-                            transition: '0.3s opacity ease-in-out',
-                            '&:hover': { opacity: 1 },
-                          }}
-                          onClick={(e: React.MouseEvent<HTMLDivElement>) => {
-                            e.stopPropagation();
-                            setCustomSetIdToDelete(node.id);
-                            setDeleteModalVisible(true);
-                          }}
-                        >
-                          <FontAwesomeIcon icon={faTrashAlt} />
-                        </div>
-                      }
-                    />
-                  )}
-                </ClassNames>
+                <CardTitleWithLevel
+                  title={node.name || t('UNTITLED')}
+                  level={node.level}
+                  rightAlignedContent={
+                    <div
+                      css={{
+                        padding: '0px 4px 0px 8px',
+                        marginLeft: 4,
+                        opacity: 0.3,
+                        transition: '0.3s opacity ease-in-out',
+                        '&:hover': { opacity: 1 },
+                      }}
+                      onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+                        e.stopPropagation();
+                        setCustomSetIdToDelete(node.id);
+                        setDeleteModalVisible(true);
+                      }}
+                    >
+                      <FontAwesomeIcon icon={faTrashAlt} />
+                    </div>
+                  }
+                />
               }
               size="small"
               css={{
