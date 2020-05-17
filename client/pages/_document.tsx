@@ -16,11 +16,6 @@ export default class extends Document {
           />
 
           <meta property="twitter:card" content="summary_large_image" />
-
-          <meta
-            property="twitter:image"
-            content="https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark_Filled_BG_1200x628.png"
-          />
           <link
             rel="apple-touch-icon"
             sizes="180x180"

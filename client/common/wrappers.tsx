@@ -364,6 +364,10 @@ export const CustomSetHead: React.FC<{ customSet?: CustomSet | null }> = ({
         content={getCustomSetMetaDescription(customSet)}
       />
       <meta property="twitter:url" content={getCanonicalUrl(customSet)} />
+      <meta
+        property="twitter:image"
+        content={getCustomSetMetaImage(customSet)}
+      />
     </Head>
   );
 };
