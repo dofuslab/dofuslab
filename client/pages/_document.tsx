@@ -15,11 +15,6 @@ export default class extends Document {
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
           />
 
-          <meta
-            property="og:image"
-            content="https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark_Filled_BG_1200x628.png"
-          />
-
           <meta property="twitter:card" content="summary_large_image" />
 
           <meta
