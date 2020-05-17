@@ -34,6 +34,7 @@ import {
   getTitle,
   getCustomSetMetaDescription,
   getCanonicalUrl,
+  getCustomSetMetaImage,
 } from './utils';
 import {
   ellipsis,
@@ -352,6 +353,7 @@ export const CustomSetHead: React.FC<{ customSet?: CustomSet | null }> = ({
         content={getCustomSetMetaDescription(customSet)}
       />
       <meta property="og:url" content={getCanonicalUrl(customSet)} />
+      <meta property="og:image" content={getCustomSetMetaImage(customSet)} />
 
       <meta
         property="twitter:title"
