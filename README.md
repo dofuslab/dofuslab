@@ -1,6 +1,6 @@
 ![DofusLab](dofuslab-logo.png?raw=true 'DofusLab')
 
-DofusLab is an open source set builder for players of the French MMO [Dofus](https://www.dofus.com/). It lets you experiment with your equipment.
+DofusLab is an open source set builder for players of the French MMO [Dofus](https://www.dofus.com/), where you can experiment with your equipment.
 
 Written using [TypeScript](https://www.typescriptlang.org/) and Python 3.
 
