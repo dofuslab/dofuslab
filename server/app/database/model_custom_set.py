@@ -1,5 +1,6 @@
 import sqlalchemy
 from app import db, session_scope
+from app.database.enums import Stat
 from .base import Base
 from .model_item import ModelItem
 from .model_equipped_item import ModelEquippedItem
@@ -87,14 +88,20 @@ class ModelCustomSet(Base):
 
     def equip_items(self, items, db_session):
         ordered_slots_map = {}
-        for item in items:
+        for item_obj in items:
+            item = item_obj.get("item", None)
+            if not item:
+                continue
             first_slot_id = item.item_type.eligible_item_slots[0].uuid
             if not ordered_slots_map.get(first_slot_id, None):
                 ordered_slots_map[first_slot_id] = self.prioritize_item_slots(
                     item.item_type
                 )
         counts = {}
-        for item in items:
+        for item_obj in items:
+            item = item_obj.get("item", None)
+            if not item:
+                continue
             first_slot_id = item.item_type.eligible_item_slots[0].uuid
             slot_idx = counts.get(first_slot_id, 0)
             counts[first_slot_id] = slot_idx + 1
@@ -113,6 +120,22 @@ class ModelCustomSet(Base):
                     item_id=item.uuid,
                 )
                 db_session.add(equipped_item)
+                db_session.flush()
+                if item_obj.get("ap_exo", False):
+                    ap_exo_obj = ModelEquippedItemExo(
+                        stat=Stat.AP, value=1, equipped_item_id=equipped_item.uuid
+                    )
+                    db_session.add(ap_exo_obj)
+                if item_obj.get("mp_exo", False):
+                    mp_exo_obj = ModelEquippedItemExo(
+                        stat=Stat.MP, value=1, equipped_item_id=equipped_item.uuid
+                    )
+                    db_session.add(mp_exo_obj)
+                if item_obj.get("range_exo", False):
+                    range_exo_obj = ModelEquippedItemExo(
+                        stat=Stat.RANGE, value=1, equipped_item_id=equipped_item.uuid
+                    )
+                    db_session.add(range_exo_obj)
 
     def equip_item(self, item_id, item_slot_id, db_session):
         item = db_session.query(ModelItem).get(item_id)

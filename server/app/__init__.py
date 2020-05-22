@@ -40,9 +40,20 @@ supported_languages = ["en", "fr"]
 
 origins = []
 if flask_env == "development":
-    origins = ["http://localhost:3000", "http://dev.localhost:3000"]
+    origins = [
+        "http://localhost:3000",
+        "http://dev.localhost:3000",
+        "http://localhost:3001",
+        "http://dev.localhost:3001",
+        "chrome-extension://nnajljfdkjbhhgbfjbnnkmbkediobfjn",
+    ]
 elif flask_env == "production":
-    origins = ["https://www.dofuslab.io", "https://dofuslab.io"]
+    origins = [
+        "https://www.dofuslab.io",
+        "https://dofuslab.io",
+        "chrome-extension://chnhbolpdbkkohphieoamhdpdgleeolp",
+        "chrome-extension://nnajljfdkjbhhgbfjbnnkmbkediobfjn",
+    ]
 
 db = SQLAlchemy(app)
 CORS(

@@ -40,4 +40,6 @@ class ModelItem(Base):
         cascade="all, delete-orphan",
     )
     conditions = Column("conditions", JSON)
-    image_url = Column("image_url", String, nullable=False)
+
+    # needed for compatibility with other set builders
+    image_url = Column("image_url", String, nullable=False, index=True)
