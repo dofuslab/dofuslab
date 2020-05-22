@@ -51,7 +51,7 @@ elif flask_env == "production":
     origins = [
         "https://www.dofuslab.io",
         "https://dofuslab.io",
-        "chrome-extension://chnhbolpdbkkohphieoamhdpdgleeolp",
+        "chrome-extension://gplnfnclffeoogcfibnjiiekmpohjibk",
         "chrome-extension://nnajljfdkjbhhgbfjbnnkmbkediobfjn",
     ]
 
