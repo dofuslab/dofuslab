@@ -43,7 +43,12 @@ from app.utils import (
     get_or_create_custom_set,
     save_custom_sets,
     anonymous_or_verified,
+    verified,
     check_owner,
+    base_stat_list,
+    scrolled_stat_list,
+    edit_custom_set_stats,
+    edit_custom_set_metadata,
 )
 from app.verify_email import verify_email_salt
 from graphene import relay
@@ -478,22 +483,11 @@ class CustomSetExosInput(graphene.InputObjectType):
     value = graphene.Int(required=True)
 
 
-base_stat_list = [
-    "base_vitality",
-    "base_wisdom",
-    "base_strength",
-    "base_intelligence",
-    "base_chance",
-    "base_agility",
-]
-scrolled_stat_list = [
-    "scrolled_vitality",
-    "scrolled_wisdom",
-    "scrolled_strength",
-    "scrolled_intelligence",
-    "scrolled_chance",
-    "scrolled_agility",
-]
+class CustomSetImportedItemInput(graphene.InputObjectType):
+    id = graphene.UUID(required=True)
+    ap_exo = graphene.Boolean()
+    mp_exo = graphene.Boolean()
+    range_exo = graphene.Boolean()
 
 
 class CreateCustomSet(graphene.Mutation):
@@ -519,15 +513,8 @@ class EditCustomSetStats(graphene.Mutation):
         with session_scope() as db_session:
             custom_set_id = kwargs.get("custom_set_id")
             stats = kwargs.get("stats")
-            for base_stat in base_stat_list:
-                if stats[base_stat] < 0 or stats[base_stat] > 999:
-                    raise GraphQLError(_("Invalid stat value."))
-            for scrolled_stat in scrolled_stat_list:
-                if stats[scrolled_stat] < 0 or stats[scrolled_stat] > 100:
-                    raise GraphQLError(_("Invalid stat value."))
             custom_set = get_or_create_custom_set(custom_set_id, db_session)
-            for stat in base_stat_list + scrolled_stat_list:
-                setattr(custom_set.stats, stat, stats[stat])
+            edit_custom_set_stats(custom_set, stats)
 
         return EditCustomSetStats(custom_set=custom_set)
 
@@ -546,13 +533,8 @@ class EditCustomSetMetadata(graphene.Mutation):
             custom_set_id = kwargs.get("custom_set_id")
             name = kwargs.get("name")
             level = kwargs.get("level")
-            if len(name) > MAX_NAME_LENGTH:
-                raise GraphQLError(_("The set name is too long."))
-            if level < 1 or level > 200:
-                raise GraphQLError(_("Invalid set level (must be 1-200)."))
             custom_set = get_or_create_custom_set(custom_set_id, db_session)
-            custom_set.name = name
-            custom_set.level = level
+            edit_custom_set_metadata(custom_set, name, level)
 
         return EditCustomSetMetadata(custom_set=custom_set)
 
@@ -610,7 +592,14 @@ class EquipMultipleItems(graphene.Mutation):
             custom_set_id = kwargs.get("custom_set_id")
             item_ids = kwargs.get("item_ids")
             custom_set = get_or_create_custom_set(custom_set_id, db_session)
-            items = db_session.query(ModelItem).filter(ModelItem.uuid.in_(item_ids))
+            items = [
+                {
+                    "item": db.session.query(ModelItem)
+                    .filter(ModelItem.uuid == item_id)
+                    .one()
+                }
+                for item_id in item_ids
+            ]
             custom_set.equip_items(items, db_session)
 
         return EquipMultipleItems(custom_set=custom_set)
@@ -801,6 +790,42 @@ class DeleteCustomSet(graphene.Mutation):
             db_session.delete(custom_set)
 
         return DeleteCustomSet(ok=True)
+
+
+class ImportCustomSet(graphene.Mutation):
+    class Arguments:
+        items = graphene.NonNull(
+            graphene.List(graphene.NonNull(CustomSetImportedItemInput))
+        )
+        stats = graphene.NonNull(CustomSetStatsInput)
+        name = graphene.NonNull(graphene.String)
+        level = graphene.NonNull(graphene.Int)
+
+    custom_set = graphene.Field(CustomSet, required=True)
+
+    @verified
+    def mutate(self, info, **kwargs):
+        item_objs = kwargs.get("items")
+        stats = kwargs.get("stats")
+        name = kwargs.get("name")
+        level = kwargs.get("level")
+        with session_scope() as db_session:
+            custom_set = get_or_create_custom_set(None, db_session)
+            edit_custom_set_stats(custom_set, stats)
+            edit_custom_set_metadata(custom_set, name, level)
+            items = [
+                {
+                    "item": db.session.query(ModelItem)
+                    .filter(ModelItem.uuid == item_obj.id)
+                    .one(),
+                    "ap_exo": item_obj.ap_exo,
+                    "mp_exo": item_obj.mp_exo,
+                    "range_exo": item_obj.range_exo,
+                }
+                for item_obj in item_objs
+            ]
+            custom_set.equip_items(items, db_session)
+        return ImportCustomSet(custom_set=custom_set)
 
 
 class RegisterUser(graphene.Mutation):
@@ -1082,6 +1107,11 @@ class SetFilters(graphene.InputObjectType):
     search = graphene.String(required=True)
 
 
+class ItemNameObject(graphene.InputObjectType):
+    name = graphene.String()
+    image_id = graphene.String(required=True)
+
+
 class Query(graphene.ObjectType):
     current_user = graphene.Field(User)
 
@@ -1266,6 +1296,36 @@ class Query(graphene.ObjectType):
             return current_user.settings.classic
         return session.get("classic", False)
 
+    items_by_name = graphene.NonNull(
+        graphene.List(graphene.NonNull(Item)),
+        item_name_objs=graphene.NonNull(
+            graphene.List(graphene.NonNull(ItemNameObject))
+        ),
+    )
+
+    def resolve_items_by_name(self, info, **kwargs):
+        item_name_objs = kwargs.get("item_name_objs")
+        num_slots = db.session.query(ModelItemSlot).count()
+        if len(item_name_objs) > num_slots:
+            raise GraphQLError("Invalid request.")
+        result = []
+        for obj in item_name_objs:
+            item = (
+                db.session.query(ModelItem)
+                .filter(ModelItem.image_url.contains("/{}.png".format(obj.image_id)))
+                .one_or_none()
+            )
+            if not item:
+                item = (
+                    db.session.query(ModelItem)
+                    .join(ModelItemTranslation)
+                    .filter(ModelItemTranslation.name == obj.name)
+                    .one_or_none()
+                )
+            if item:
+                result.append(item)
+        return result
+
 
 class Mutation(graphene.ObjectType):
     register_user = RegisterUser.Field()
@@ -1290,6 +1350,7 @@ class Mutation(graphene.ObjectType):
     restart_custom_set = RestartCustomSet.Field()
     delete_custom_set = DeleteCustomSet.Field()
     toggle_favorite_item = ToggleFavoriteItem.Field()
+    import_custom_set = ImportCustomSet.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
