@@ -71,6 +71,7 @@ from flask_babel import _, get_locale, refresh
 from flask_login import login_required, login_user, current_user, logout_user
 from functools import lru_cache
 from sqlalchemy import func, distinct
+from sqlalchemy.orm import aliased
 from datetime import datetime
 
 # workaround from https://github.com/graphql-python/graphene-sqlalchemy/issues/211
@@ -1129,10 +1130,12 @@ class Query(graphene.ObjectType):
         locale = str(get_locale())
         filters = kwargs.get("filters")
 
+        current_locale_translations = aliased(ModelItemTranslation)
+
         items_query = (
             db.session.query(ModelItem)
-            .join(ModelItemTranslation)
-            .filter_by(locale=locale)
+            .join(ModelItem.item_translations.of_type(current_locale_translations))
+            .filter(current_locale_translations.locale == locale)
         )
 
         if filters:
@@ -1157,11 +1160,15 @@ class Query(graphene.ObjectType):
             if filters.max_level != None:
                 items_query = items_query.filter(ModelItem.level <= filters.max_level)
             if filters.search:
+                all_translations = aliased(ModelItemTranslation)
                 items_query = (
-                    items_query.join(ModelSet, isouter=True)
+                    items_query.join(
+                        ModelItem.item_translations.of_type(all_translations)
+                    )
+                    .join(ModelSet, isouter=True)
                     .join(ModelSetTranslation, isouter=True)
                     .filter(
-                        func.upper(ModelItemTranslation.name).contains(
+                        func.upper(all_translations.name).contains(
                             func.upper(filters.search.strip())
                         )
                         | func.upper(ModelSetTranslation.name).contains(
@@ -1175,7 +1182,7 @@ class Query(graphene.ObjectType):
                 )
 
         return items_query.order_by(
-            ModelItem.level.desc(), ModelItemTranslation.name.asc()
+            ModelItem.level.desc(), current_locale_translations.name.asc()
         ).all()
 
     sets = relay.ConnectionField(
@@ -1185,10 +1192,12 @@ class Query(graphene.ObjectType):
     def resolve_sets(self, info, **kwargs):
         locale = str(get_locale())
         filters = kwargs.get("filters")
+        current_locale_translations = aliased(ModelSetTranslation)
+
         set_query = (
             db.session.query(ModelSet)
-            .join(ModelSetTranslation)
-            .filter_by(locale=locale)
+            .join(ModelSet.set_translation.of_type(current_locale_translations))
+            .filter(current_locale_translations.locale == locale)
         )
 
         level_sq = (
@@ -1223,22 +1232,28 @@ class Query(graphene.ObjectType):
             if filters.max_level != None:
                 set_query = set_query.filter(level_sq.c.level <= filters.max_level)
             if filters.search:
+                all_translations = aliased(ModelSetTranslation)
                 set_query = (
-                    set_query.join(ModelItem)
+                    set_query.join(ModelSet.set_translation.of_type(all_translations))
+                    .join(ModelItem)
                     .join(ModelItemTranslation)
                     .filter(
-                        func.upper(ModelSetTranslation.name).contains(
+                        func.upper(all_translations.name).contains(
                             func.upper(filters.search.strip())
                         )
                         | func.upper(ModelItemTranslation.name).contains(
                             func.upper(filters.search.strip())
                         )
                     )
-                    .group_by(ModelSet.uuid, level_sq.c.level, ModelSetTranslation.name)
+                    .group_by(
+                        ModelSet.uuid,
+                        level_sq.c.level,
+                        current_locale_translations.name,
+                    )
                 )
 
         return set_query.order_by(
-            level_sq.c.level.desc(), ModelSetTranslation.name.asc()
+            level_sq.c.level.desc(), current_locale_translations.name.asc()
         ).all()
 
         return get_sets(locale, filters)
