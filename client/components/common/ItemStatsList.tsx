@@ -148,15 +148,15 @@ const ItemStatsList: React.FC<Props> = ({
           />
         ))}
       {item.weaponStats && (
-        <>
-          <WeaponEffectsList
-            weaponStats={item.weaponStats}
-            css={{ marginBottom: showImg ? 12 : 0 }}
-            elementMage={weaponElementMage}
-          />
-          <Divider css={{ margin: '12px 0' }} />
-        </>
+        <WeaponEffectsList
+          weaponStats={item.weaponStats}
+          css={{ marginBottom: showImg ? 12 : 0 }}
+          elementMage={weaponElementMage}
+        />
       )}
+      {item.weaponStats &&
+        !showOnlyWeaponStats &&
+        Boolean(item.stats.length) && <Divider css={{ margin: '12px 0' }} />}
       {!showOnlyWeaponStats && (
         <ul
           className={className}

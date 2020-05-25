@@ -11,6 +11,7 @@
   "COOLDOWN": "Intervalle de relance: {{count}} tour",
   "COOLDOWN_plural": "Intervalle de relance: {{count}} tours",
   "CRIT_WITH_PERCENTAGE": "CC ({{percentage}})%",
+  "DAMAGE": "Dommage",
   "DOES_NOT_CRIT": "Pas de coup critique",
   "EFFECT_TYPE": {
     "AIR_DAMAGE": "Dommage air",
@@ -27,6 +28,7 @@
     "WATER_DAMAGE": "Dommage eau",
     "WATER_STEAL": "Vol de vie eau"
   },
+  "HEAL": "Soins",
   "INCREASE_BASE_DAMAGE": "+{{damageIncrease}} dégâts de base",
   "LINEAR": "Linéaire",
   "MAX_STACKS_APPLIED": "Nombre de cumuls maximal atteint.",
@@ -36,6 +38,7 @@
   "NO_LOS": "Pas besoin de ligne de vue",
   "NO_WEAPON_SKILL": "Sans Maîtrise d'arme",
   "RANGED": "A distance",
+  "TOTAL": "Total",
   "UNAVAILABLE_SPELL": "Ce sort est disponible au niveau {{level}}.",
   "USE_PER_TURN": "{{count}} utilisation par tour",
   "USE_PER_TURN_plural": "{{count}} utilisations par tour",

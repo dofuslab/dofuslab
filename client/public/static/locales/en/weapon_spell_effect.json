@@ -11,6 +11,7 @@
   "COOLDOWN": "Cooldown: {{count}} turn",
   "COOLDOWN_plural": "Cooldown: {{count}} turns",
   "CRIT_WITH_PERCENTAGE": "Crit ({{percentage}}%)",
+  "DAMAGE": "Damage",
   "DOES_NOT_CRIT": "Does not crit",
   "EFFECT_TYPE": {
     "AIR_DAMAGE": "Air damage",
@@ -27,6 +28,7 @@
     "WATER_DAMAGE": "Water damage",
     "WATER_STEAL": "Water steal"
   },
+  "HEAL": "Heal",
   "INCREASE_BASE_DAMAGE": "+{{damageIncrease}} base damage",
   "LINEAR": "Linear",
   "MAX_STACKS_APPLIED": "Max stacks already applied.",
@@ -36,6 +38,7 @@
   "NO_LOS": "Does not require line of sight",
   "NO_WEAPON_SKILL": "No Weapon Skill",
   "RANGED": "Ranged",
+  "TOTAL": "Total",
   "UNAVAILABLE_SPELL": "This spell is available at level {{level}}.",
   "USE_PER_TURN": "{{count}} use/turn",
   "USE_PER_TURN_plural": "{{count}} uses/turn",
