@@ -195,7 +195,7 @@ const ItemStatsList: React.FC<Props> = ({
       )}
       {item.weaponStats && (
         <>
-          {!showOnlyWeaponStats && <Divider css={{ margin: '12px 0' }} />}
+          <Divider css={{ margin: '12px 0' }} />
           <div>
             {item.weaponStats.apCost}
             &nbsp;
