@@ -66,7 +66,7 @@ const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
   const { data: classesData } = useQuery<classes>(classesQuery);
   const selectedClassName = Array.isArray(query.class)
     ? query.class[0]
-    : query.class;
+    : query.class || '';
   const selectedClass = classesData?.classes.find((c) =>
     c.allNames.includes(selectedClassName),
   );
