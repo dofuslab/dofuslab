@@ -24,7 +24,7 @@ const ClassicClassSelector: React.FC = () => {
   const { data } = useQuery<classes>(classesQuery);
   const selectedClassName = Array.isArray(query.class)
     ? query.class[0]
-    : query.class;
+    : query.class || '';
 
   const theme = useTheme<Theme>();
   const { t } = useTranslation('common');

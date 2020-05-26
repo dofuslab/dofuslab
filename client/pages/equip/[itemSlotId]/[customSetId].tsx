@@ -9,7 +9,7 @@ const EquipWithCustomSetPage: NextPage = () => {
   const router = useRouter();
   const customSetId = Array.isArray(router.query.customSetId)
     ? router.query.customSetId[0]
-    : router.query.customSetId;
+    : router.query.customSetId || null;
   return <EquipPage customSetId={customSetId} />;
 };
 

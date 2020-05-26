@@ -41,7 +41,7 @@ const ClassicClassSpells: React.FC<Props> = ({ customSet }) => {
   const selectedClassName = Array.isArray(query.class)
     ? query.class[0]
     : query.class;
-  const selectedClassId = nameToId?.[selectedClassName] || undefined;
+  const selectedClassId = selectedClassName && nameToId?.[selectedClassName];
 
   const { data: classData, loading: classDataLoading } = useQuery<
     classById,
