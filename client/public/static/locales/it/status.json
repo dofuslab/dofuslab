@@ -1,16 +1,16 @@
 {
   "VERIFY_EMAIL": {
     "ALREADY_VERIFIED": {
-      "DESCRIPTION": "__STRING_NOT_TRANSLATED__",
-      "TITLE": "__STRING_NOT_TRANSLATED__"
+      "DESCRIPTION": "Il tuo account è già stato verificato. Non sono richieste ulteriori operazioni.",
+      "TITLE": "Sei a posto."
     },
     "INVALID": {
-      "DESCRIPTION": "__STRING_NOT_TRANSLATED__",
-      "TITLE": "__STRING_NOT_TRANSLATED__"
+      "DESCRIPTION": "Il link di verifica è scaduto o non valido.",
+      "TITLE": "URL non valido"
     },
     "SUCCESS": {
-      "DESCRIPTION": "__STRING_NOT_TRANSLATED__",
-      "TITLE": "__STRING_NOT_TRANSLATED__"
+      "DESCRIPTION": "Hai verificato il tuo account con successo. Grazie!",
+      "TITLE": "Successo"
     }
   }
 }
