@@ -93,7 +93,7 @@ const StatusChecker: React.FC = () => {
     Object.entries(query).forEach(([statusType, statusValue]) => {
       if (typeof statusValue === 'string') {
         processQueryEntry(statusType, statusValue);
-      } else {
+      } else if (Array.isArray(statusValue)) {
         statusValue.forEach((value) => {
           processQueryEntry(statusType, value);
         });
