@@ -7,6 +7,7 @@ import {
 import {
   classById_classById_spellVariantPairs_spells as Spell,
   classById_classById_spellVariantPairs_spells_spellStats as SpellStats,
+  classById_classById_spellVariantPairs_spells_spellStats_spellEffects as SpellEffect,
   classById_classById_spellVariantPairs as SpellVariantPair,
 } from 'graphql/queries/__generated__/classById';
 import {
@@ -30,6 +31,7 @@ export type {
   ItemType,
   Spell,
   SpellStats,
+  SpellEffect,
   Exo,
   SetWithItems,
   SetBonus,

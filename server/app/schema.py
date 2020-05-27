@@ -29,6 +29,9 @@ from app.database.model_equipped_item import ModelEquippedItem
 from app.database.model_custom_set import ModelCustomSet, MAX_NAME_LENGTH
 from app.database.model_user import ModelUserAccount
 from app.database.model_spell_effect import ModelSpellEffect
+from app.database.model_spell_effect_condition_translation import (
+    ModelSpellEffectConditionTranslation,
+)
 from app.database.model_spell_stat_translation import ModelSpellStatTranslation
 from app.database.model_spell_damage_increase import ModelSpellDamageIncrease
 from app.database.model_spell_stats import ModelSpellStats
@@ -362,6 +365,18 @@ class User(SQLAlchemyObjectType):
 
 
 class SpellEffects(SQLAlchemyObjectType):
+
+    condition = graphene.String()
+
+    def resolve_condition(self, info):
+        locale = str(get_locale())
+        condition_obj = (
+            db.session.query(ModelSpellEffectConditionTranslation)
+            .filter_by(locale=locale, spell_effect_id=self.uuid)
+            .one_or_none()
+        )
+        return condition_obj.condition if condition_obj else None
+
     class Meta:
         model = ModelSpellEffect
         interfaces = (GlobalNode,)

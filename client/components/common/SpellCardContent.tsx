@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import { Divider, notification } from 'antd';
+import { Divider, notification, Select, Radio } from 'antd';
 import { useTheme } from 'emotion-theming';
 
 import {
@@ -19,9 +19,9 @@ import {
   getInitialRangedState,
   calcEffectType,
 } from 'common/utils';
-import { TEffectLine, Theme } from 'common/types';
+import { TEffectLine, Theme, ConditionalSpellEffect } from 'common/types';
 import { Stat } from '__generated__/globalTypes';
-import { CustomSet, Spell, SpellStats } from 'common/type-aliases';
+import { CustomSet, Spell, SpellStats, SpellEffect } from 'common/type-aliases';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -52,6 +52,10 @@ const SpellCardContent: React.FC<Props> = ({
   const [baseDamageIncreases, setBaseDamageIncreases] = React.useState<
     Array<number>
   >([]);
+
+  const [selectedCondition, setSelectedCondition] = React.useState<
+    string | null
+  >(spellStats.spellEffects.find((e) => !!e.condition)?.condition ?? null);
 
   const totalDamageIncrease = baseDamageIncreases.reduce(
     (acc, curr) => acc + curr,
@@ -102,72 +106,99 @@ const SpellCardContent: React.FC<Props> = ({
     [],
   );
 
-  if (!spellStats) {
-    content = (
-      <div>{t('UNAVAILABLE_SPELL', { level: spell.spellStats[0].level })}</div>
-    );
-  } else {
-    const spellEffectSummaries: Array<TEffectLine> = spellStats.spellEffects.map(
-      ({
-        minDamage,
-        maxDamage,
-        effectType,
-        id,
-        critMinDamage,
-        critMaxDamage,
-      }) => {
-        return {
-          id,
-          type: effectType,
-          nonCrit: {
-            min: minDamage
-              ? calcEffect(
-                  minDamage + totalDamageIncrease,
-                  effectType,
-                  customSetLevel,
-                  statsFromCustomSet,
-                  { isTrap: spell.isTrap },
-                  damageTypeKey,
-                )
-              : null,
-            max: calcEffect(
-              maxDamage + totalDamageIncrease,
+  const getSpellEffectSummary = ({
+    minDamage,
+    maxDamage,
+    effectType,
+    id,
+    critMinDamage,
+    critMaxDamage,
+    condition,
+  }: SpellEffect) => {
+    return {
+      id,
+      condition,
+      type: effectType,
+      nonCrit: {
+        min: minDamage
+          ? calcEffect(
+              minDamage + totalDamageIncrease,
               effectType,
               customSetLevel,
               statsFromCustomSet,
               { isTrap: spell.isTrap },
               damageTypeKey,
-            ),
-            baseMax: maxDamage,
-          },
-          crit:
-            spellStats.baseCritChance === null || !critMaxDamage
-              ? null
-              : {
-                  min: critMinDamage
-                    ? calcEffect(
-                        critMinDamage + totalDamageIncrease,
-                        effectType,
-                        customSetLevel,
-                        statsFromCustomSet,
-                        { isCrit: true, isTrap: spell.isTrap },
-                        damageTypeKey,
-                      )
-                    : null,
-                  max: calcEffect(
-                    critMaxDamage + totalDamageIncrease,
+            )
+          : null,
+        max: calcEffect(
+          maxDamage + totalDamageIncrease,
+          effectType,
+          customSetLevel,
+          statsFromCustomSet,
+          { isTrap: spell.isTrap },
+          damageTypeKey,
+        ),
+        baseMax: maxDamage,
+      },
+      crit:
+        spellStats.baseCritChance === null || !critMaxDamage
+          ? null
+          : {
+              min: critMinDamage
+                ? calcEffect(
+                    critMinDamage + totalDamageIncrease,
                     effectType,
                     customSetLevel,
                     statsFromCustomSet,
                     { isCrit: true, isTrap: spell.isTrap },
                     damageTypeKey,
-                  ),
-                  baseMax: critMaxDamage,
-                },
-        };
-      },
-    );
+                  )
+                : null,
+              max: calcEffect(
+                critMaxDamage + totalDamageIncrease,
+                effectType,
+                customSetLevel,
+                statsFromCustomSet,
+                { isCrit: true, isTrap: spell.isTrap },
+                damageTypeKey,
+              ),
+              baseMax: critMaxDamage,
+            },
+    };
+  };
 
+  const renderSpellEffectSummary = (effect: TEffectLine) => {
+    return (
+      <React.Fragment key={effect.id}>
+        <EffectLine
+          min={effect.nonCrit.min}
+          max={effect.nonCrit.max}
+          effectType={calcEffectType(effect.type, statsFromCustomSet)}
+          baseMax={effect.nonCrit.baseMax}
+        />
+        {!!effect.crit && (
+          <EffectLine
+            min={effect.crit.min}
+            max={effect.crit.max}
+            effectType={calcEffectType(effect.type, statsFromCustomSet)}
+            baseMax={effect.crit.baseMax}
+          />
+        )}
+      </React.Fragment>
+    );
+  };
+
+  if (!spellStats) {
+    content = (
+      <div>{t('UNAVAILABLE_SPELL', { level: spell.spellStats[0].level })}</div>
+    );
+  } else {
+    const spellEffectSummaries: Array<TEffectLine> = spellStats.spellEffects
+      .filter((e) => !e.condition)
+      .map(getSpellEffectSummary);
+    const conditionalSpellEffectSummaries = spellStats.spellEffects
+      .map(getSpellEffectSummary)
+      .filter((e): e is ConditionalSpellEffect => !!e.condition);
     let critRate =
       typeof spellStats.baseCritChance === 'number'
         ? getStatWithDefault(statsFromCustomSet, Stat.CRITICAL) +
@@ -219,6 +250,20 @@ const SpellCardContent: React.FC<Props> = ({
       spellCharacteristics.push(t('COOLDOWN', { count: spellStats.cooldown }));
     }
 
+    const conditions: Array<string> = [];
+    const conditionsSet = new Set<string>();
+    conditionalSpellEffectSummaries.forEach((s) => {
+      if (conditionsSet.has(s.condition)) {
+        return;
+      }
+      conditionsSet.add(s.condition);
+      conditions.push(s.condition);
+    });
+
+    const selectedConditionalEffects = conditionalSpellEffectSummaries.filter(
+      (e) => e.condition === selectedCondition,
+    );
+
     content = (
       <>
         <div>
@@ -237,6 +282,35 @@ const SpellCardContent: React.FC<Props> = ({
             ),
           )}
         </div>
+        {conditions.length > 0 && (
+          <>
+            <Divider css={{ margin: '12px 0' }} />
+            {conditions.length < 4 ? (
+              <Radio.Group
+                defaultValue={selectedCondition || undefined}
+                onChange={(e) => setSelectedCondition(e.target.value)}
+              >
+                {conditions.map((c) => (
+                  <Radio key={c} value={c}>
+                    {c}
+                  </Radio>
+                ))}
+              </Radio.Group>
+            ) : (
+              <Select<string>
+                defaultValue={selectedCondition || undefined}
+                onChange={(v) => setSelectedCondition(v)}
+                css={{ width: '100%' }}
+              >
+                {conditions.map((c) => (
+                  <Select.Option key={c} value={c}>
+                    {c}
+                  </Select.Option>
+                ))}
+              </Select>
+            )}
+          </>
+        )}
         {baseDamageIncreases.length > 0 && (
           <>
             <Divider css={{ margin: '12px 0' }} />
@@ -300,32 +374,7 @@ const SpellCardContent: React.FC<Props> = ({
                   {t('DOES_NOT_CRIT')}
                 </div>
               )}
-              {spellEffectSummaries.map((effect) => {
-                return (
-                  <React.Fragment key={effect.id}>
-                    <EffectLine
-                      min={effect.nonCrit.min}
-                      max={effect.nonCrit.max}
-                      effectType={calcEffectType(
-                        effect.type,
-                        statsFromCustomSet,
-                      )}
-                      baseMax={effect.nonCrit.baseMax}
-                    />
-                    {!!effect.crit && (
-                      <EffectLine
-                        min={effect.crit.min}
-                        max={effect.crit.max}
-                        effectType={calcEffectType(
-                          effect.type,
-                          statsFromCustomSet,
-                        )}
-                        baseMax={effect.crit.baseMax}
-                      />
-                    )}
-                  </React.Fragment>
-                );
-              })}
+              {spellEffectSummaries.map(renderSpellEffectSummary)}
               {!!spellStats.spellDamageIncrease && (
                 <>
                   <a
@@ -362,6 +411,8 @@ const SpellCardContent: React.FC<Props> = ({
                   )}
                 </>
               )}
+              {!!selectedConditionalEffects.length &&
+                selectedConditionalEffects.map(renderSpellEffectSummary)}
             </div>
           </>
         )}

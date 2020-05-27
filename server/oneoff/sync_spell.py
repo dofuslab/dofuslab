@@ -5,6 +5,9 @@ from app.database.model_spell_translation import ModelSpellTranslation
 from app.database.model_spell_stats import ModelSpellStats
 from app.database.model_spell_stat_translation import ModelSpellStatTranslation
 from app.database.model_spell_effect import ModelSpellEffect
+from app.database.model_spell_effect_condition_translation import (
+    ModelSpellEffectConditionTranslation,
+)
 from app.database.model_spell_damage_increase import ModelSpellDamageIncrease
 from app.database import enums
 
@@ -44,6 +47,29 @@ def create_spell_translations(db_session, record, spell):
             db_session.add(spell_translation)
 
 
+def create_spell_effect(db_session, spell_stat, level, i, has_condition):
+    effect_type = "conditionalEffect" if has_condition else "modifiableEffect"
+    spell_effect = ModelSpellEffect(
+        spell_stat_id=spell_stat.uuid,
+        effect_type=to_spell_enum[level["normalEffects"][effect_type][i]["stat"]],
+        min_damage=level["normalEffects"][effect_type][i].get("minStat", None),
+        max_damage=level["normalEffects"][effect_type][i]["maxStat"],
+        has_condition=has_condition,
+        order=i if has_condition else None,
+    )
+
+    if level["criticalEffects"].get(effect_type, None):
+        spell_effect.crit_min_damage = level["criticalEffects"][effect_type][i][
+            "minStat"
+        ]
+        spell_effect.crit_max_damage = level["criticalEffects"][effect_type][i][
+            "maxStat"
+        ]
+
+    db_session.add(spell_effect)
+    return spell_effect
+
+
 def create_spell_stats(db_session, record, spell):
     db_session.query(ModelSpellStats).filter_by(spell_id=spell.uuid).delete()
     for level in record["effects"]:
@@ -74,27 +100,19 @@ def create_spell_stats(db_session, record, spell):
                 )
                 db_session.add(spell_stat_translation)
 
-        for i in range(len(level["normalEffects"]["modifiableEffect"])):
-            spell_effect = ModelSpellEffect(
-                spell_stat_id=spell_stat.uuid,
-                effect_type=to_spell_enum[
-                    level["normalEffects"]["modifiableEffect"][i]["stat"]
-                ],
-                min_damage=level["normalEffects"]["modifiableEffect"][i].get(
-                    "minStat", None
-                ),
-                max_damage=level["normalEffects"]["modifiableEffect"][i]["maxStat"],
-            )
+        for i in range(len(level["normalEffects"].get("modifiableEffect", []))):
+            create_spell_effect(db_session, spell_stat, level, i, False)
 
-            if level["criticalEffects"].get("modifiableEffect", None):
-                spell_effect.crit_min_damage = level["criticalEffects"][
-                    "modifiableEffect"
-                ][i]["minStat"]
-                spell_effect.crit_max_damage = level["criticalEffects"][
-                    "modifiableEffect"
-                ][i]["maxStat"]
-
-            db_session.add(spell_effect)
+        for i, effect in enumerate(level["normalEffects"].get("conditionalEffect", [])):
+            spell_effect = create_spell_effect(db_session, spell_stat, level, i, True)
+            db_session.flush()
+            for locale, condition in effect["condition"].items():
+                condition_translation = ModelSpellEffectConditionTranslation(
+                    spell_effect_id=spell_effect.uuid,
+                    locale=locale,
+                    condition=condition,
+                )
+                db_session.add(condition_translation)
 
         damage_increase_max_stacks = level.get("damageIncreaseMaxStacks", None)
         if damage_increase_max_stacks:
