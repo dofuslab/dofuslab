@@ -35,36 +35,34 @@ const SpellVariantPairCard: React.FC<Props> = ({
 }) => {
   const theme = useTheme<Theme>();
 
+  const spells = [...spellVariantPair.spells].sort(
+    (a, b) => getLowestSpellLevel(a) - getLowestSpellLevel(b),
+  );
+
   const [selectedSpellId, setSelectedSpellId] = React.useState<string>(
-    spellVariantPair.spells[0].id,
+    spells[0].id,
   );
   const customSetLevel = customSet?.level || 200;
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const spell = spellVariantPair.spells.find(
-    ({ id }) => id === selectedSpellId,
-  )!;
+  const spell = spells.find(({ id }) => id === selectedSpellId)!;
   const spellLevelIdx = getSpellLevelIdx(spell, customSetLevel);
   const [selectedSpellLevelIdx, selectSpellLevelIdx] = React.useState<number>(
     spellLevelIdx,
   );
 
-  const tabList = spellVariantPair.spells
-    .sort((a, b) => getLowestSpellLevel(a) - getLowestSpellLevel(b))
-    .map((currSpell) => ({
-      key: currSpell.id,
-      tab: currSpell.name,
-    }));
+  const tabList = spells.map((currSpell) => ({
+    key: currSpell.id,
+    tab: currSpell.name,
+  }));
 
   const onTabChange = React.useCallback(
     (key: string) => {
       setSelectedSpellId(key);
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      const newSelectedSpell = spellVariantPair.spells.find(
-        ({ id }) => id === key,
-      )!;
+      const newSelectedSpell = spells.find(({ id }) => id === key)!;
       selectSpellLevelIdx(getSpellLevelIdx(newSelectedSpell, customSetLevel));
     },
-    [spellVariantPair, customSetLevel],
+    [spells, customSetLevel],
   );
 
   const onLevelChange = React.useCallback(
