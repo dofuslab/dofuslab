@@ -29,7 +29,7 @@ import {
   UnconditionalSpellEffect,
 } from 'common/types';
 import { Stat } from '__generated__/globalTypes';
-import { CustomSet, Spell, SpellStats, SpellEffect } from 'common/type-aliases';
+import { CustomSet, Spell, SpellEffect } from 'common/type-aliases';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -47,8 +47,10 @@ const SpellCardContent: React.FC<Props> = ({
 
   const statsFromCustomSet = getStatsFromCustomSet(customSet);
 
-  const spellStats: SpellStats | undefined =
-    spell.spellStats[selectedSpellLevelIdx];
+  const spellStats =
+    selectedSpellLevelIdx < spell.spellStats.length
+      ? spell.spellStats[selectedSpellLevelIdx]
+      : undefined;
 
   const rangedOnly = !!spellStats?.minRange && spellStats?.minRange > 1;
   const meleeOnly = !spellStats?.maxRange || spellStats?.maxRange <= 1;
@@ -63,7 +65,7 @@ const SpellCardContent: React.FC<Props> = ({
 
   const [selectedCondition, setSelectedCondition] = React.useState<
     string | null
-  >(spellStats.spellEffects.find((e) => !!e.condition)?.condition ?? null);
+  >(spellStats?.spellEffects.find((e) => !!e.condition)?.condition ?? null);
 
   const totalDamageIncrease = baseDamageIncreases.reduce(
     (acc, curr) => acc + curr,
@@ -75,9 +77,10 @@ const SpellCardContent: React.FC<Props> = ({
   const showToggle =
     !rangedOnly &&
     !meleeOnly &&
-    spellStats.spellEffects.some(
+    (spellStats?.spellEffects.some(
       (effect) => getSimpleEffect(effect.effectType) === 'damage',
-    );
+    ) ??
+      false);
 
   let content = null;
 
@@ -85,6 +88,9 @@ const SpellCardContent: React.FC<Props> = ({
 
   const addDamageIncrease = React.useCallback(
     (damageIncrease: number) => {
+      if (!spellStats) {
+        return;
+      }
       if (
         !spellStats.spellDamageIncrease ||
         (spellStats.spellDamageIncrease.maxStacks &&
