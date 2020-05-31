@@ -68,6 +68,9 @@ import {
   TConditionObj,
   StatCalculator,
   BaseStatKey,
+  WeaponEffect,
+  ConditionalSpellEffect,
+  UnconditionalSpellEffect,
 } from './types';
 import { META_DESCRIPTION, IS_CLASSIC_STORAGE_KEY } from './constants';
 import {
@@ -1601,5 +1604,95 @@ export const getBuildLink = (
       pathname: baseAs,
       query: asQuery,
     },
+  };
+};
+
+export const getTotalDamage = (
+  summaries: Array<
+    WeaponEffect | UnconditionalSpellEffect | ConditionalSpellEffect
+  >,
+) => ({
+  nonCrit: {
+    min: summaries
+      .filter((e) => getSimpleEffect(e.type) === 'damage')
+      .reduce((acc, curr) => acc + (curr.nonCrit.min || curr.nonCrit.max), 0),
+    max: summaries
+      .filter((e) => getSimpleEffect(e.type) === 'damage')
+      .reduce((acc, curr) => acc + curr.nonCrit.max, 0),
+  },
+  crit: summaries.some((s) => !!s.crit)
+    ? {
+        min: summaries
+          .filter((e) => getSimpleEffect(e.type) === 'damage')
+          .reduce(
+            (acc, curr) => acc + ((curr.crit?.min || curr.crit?.max) ?? 0),
+            0,
+          ),
+        max: summaries
+          .filter((e) => getSimpleEffect(e.type) === 'damage')
+          .reduce((acc, curr) => acc + (curr.crit?.max ?? 0), 0),
+      }
+    : null,
+});
+
+export const getWeightedAverages = (
+  summaries: Array<
+    WeaponEffect | UnconditionalSpellEffect | ConditionalSpellEffect
+  >,
+  critRate: number | null,
+) => {
+  const averageNonCritDamage = summaries
+    .filter(({ type }) => getSimpleEffect(type) === 'damage')
+    .reduce((acc, { nonCrit }) => {
+      const average = nonCrit.min
+        ? (nonCrit.min + nonCrit.max) / 2
+        : nonCrit.max;
+      return acc + average;
+    }, 0);
+
+  const averageCritDamage = summaries
+    .filter(({ type }) => getSimpleEffect(type) === 'damage')
+    .reduce((acc, { crit }) => {
+      if (acc === null || crit === null) {
+        return null;
+      }
+      const average = crit.min ? (crit.min + crit.max) / 2 : crit.max;
+      return acc + average;
+    }, 0 as number | null);
+
+  const weightedAverageDamage =
+    averageCritDamage !== null && critRate
+      ? averageCritDamage * (critRate / 100) +
+        averageNonCritDamage * (1 - critRate / 100)
+      : averageNonCritDamage;
+
+  const averageNonCritHeal = summaries
+    .filter(({ type }) => getSimpleEffect(type) === 'heal')
+    .reduce((acc, { nonCrit }) => {
+      const average = nonCrit.min
+        ? (nonCrit.min + nonCrit.max) / 2
+        : nonCrit.max;
+      return acc + average;
+    }, 0);
+
+  const averageCritHeal = summaries
+    .filter(({ type }) => getSimpleEffect(type) === 'heal')
+    .reduce((acc, { crit }) => {
+      if (acc === null || crit === null) {
+        return null;
+      }
+      const average = crit.min ? (crit.min + crit.max) / 2 : crit.max;
+      return acc + average;
+    }, 0 as number | null);
+
+  const weightedAverageHeal =
+    averageCritHeal !== null && critRate
+      ? averageCritHeal * (critRate / 100) +
+        averageNonCritHeal * (1 - critRate / 100)
+      : averageNonCritHeal;
+
+  return {
+    weightedAverageDamage,
+    weightedAverageHeal,
   };
 };

@@ -12,6 +12,7 @@ import {
   damageHeaderStyle,
   EffectLine,
   DamageTypeToggle,
+  TotalDamageLine,
 } from 'common/wrappers';
 import { itemCardStyle } from 'common/mixins';
 import {
@@ -22,6 +23,8 @@ import {
   calcElementMage,
   elementMageToWeaponEffect,
   getInitialRangedState,
+  getTotalDamage,
+  getWeightedAverages,
 } from 'common/utils';
 
 import {
@@ -32,42 +35,6 @@ import {
 import { useTranslation } from 'i18n';
 import Card from 'components/common/Card';
 import { WeaponStats, CustomSet } from 'common/type-aliases';
-
-const TotalDamageLine = ({
-  totalObj,
-  imageUrl,
-  imageAlt,
-}: {
-  totalObj: {
-    nonCrit: { min: number; max: number };
-    crit: { min: number; max: number } | null;
-  };
-  imageUrl: string;
-  imageAlt: string;
-}) => {
-  return (
-    <div css={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-      <div css={{ display: 'flex', alignItems: 'center' }}>
-        <img
-          src={imageUrl}
-          css={{ height: 16, width: 16, marginRight: 8 }}
-          alt={imageAlt}
-        />
-        {totalObj.nonCrit.min} - {totalObj.nonCrit.max}
-      </div>
-      {totalObj.crit && (
-        <div css={{ display: 'flex', alignItems: 'center' }}>
-          <img
-            src={imageUrl}
-            css={{ height: 16, width: 16, marginRight: 8 }}
-            alt={imageAlt}
-          />
-          {totalObj.crit.min} - {totalObj.crit.max}
-        </div>
-      )}
-    </div>
-  );
-};
 
 interface Props {
   weaponStats: WeaponStats;
@@ -197,80 +164,12 @@ const WeaponDamage: React.FC<Props> = ({
     },
   );
 
-  const averageNonCritDamage = weaponEffectSummaries
-    .filter(({ type }) => getSimpleEffect(type) === 'damage')
-    .reduce((acc, { nonCrit }) => {
-      const average = nonCrit.min
-        ? (nonCrit.min + nonCrit.max) / 2
-        : nonCrit.max;
-      return acc + average;
-    }, 0);
+  const { weightedAverageDamage, weightedAverageHeal } = getWeightedAverages(
+    weaponEffectSummaries,
+    critRate,
+  );
 
-  const averageCritDamage = weaponEffectSummaries
-    .filter(({ type }) => getSimpleEffect(type) === 'damage')
-    .reduce((acc, { crit }) => {
-      if (acc === null || crit === null) {
-        return null;
-      }
-      const average = crit.min ? (crit.min + crit.max) / 2 : crit.max;
-      return acc + average;
-    }, 0 as number | null);
-
-  const weightedAverageDamage =
-    averageCritDamage !== null && critRate
-      ? averageCritDamage * (critRate / 100) +
-        averageNonCritDamage * (1 - critRate / 100)
-      : averageNonCritDamage;
-
-  const averageNonCritHeal = weaponEffectSummaries
-    .filter(({ type }) => getSimpleEffect(type) === 'heal')
-    .reduce((acc, { nonCrit }) => {
-      const average = nonCrit.min
-        ? (nonCrit.min + nonCrit.max) / 2
-        : nonCrit.max;
-      return acc + average;
-    }, 0);
-
-  const averageCritHeal = weaponEffectSummaries
-    .filter(({ type }) => getSimpleEffect(type) === 'heal')
-    .reduce((acc, { crit }) => {
-      if (acc === null || crit === null) {
-        return null;
-      }
-      const average = crit.min ? (crit.min + crit.max) / 2 : crit.max;
-      return acc + average;
-    }, 0 as number | null);
-
-  const weightedAverageHeal =
-    averageCritHeal !== null && critRate
-      ? averageCritHeal * (critRate / 100) +
-        averageNonCritHeal * (1 - critRate / 100)
-      : averageNonCritHeal;
-
-  const totalDamage = {
-    nonCrit: {
-      min: weaponEffectSummaries
-        .filter((e) => getSimpleEffect(e.type) === 'damage')
-        .reduce((acc, curr) => acc + (curr.nonCrit.min || curr.nonCrit.max), 0),
-      max: weaponEffectSummaries
-        .filter((e) => getSimpleEffect(e.type) === 'damage')
-        .reduce((acc, curr) => acc + curr.nonCrit.max, 0),
-    },
-    crit:
-      critRate !== null
-        ? {
-            min: weaponEffectSummaries
-              .filter((e) => getSimpleEffect(e.type) === 'damage')
-              .reduce(
-                (acc, curr) => acc + ((curr.crit?.min || curr.crit?.max) ?? 0),
-                0,
-              ),
-            max: weaponEffectSummaries
-              .filter((e) => getSimpleEffect(e.type) === 'damage')
-              .reduce((acc, curr) => acc + (curr.crit?.max ?? 0), 0),
-          }
-        : null,
-  };
+  const totalDamage = getTotalDamage(weaponEffectSummaries);
 
   const healLines = weaponEffectSummaries.filter(
     (e) => getSimpleEffect(e.type) === 'heal',

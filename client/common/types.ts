@@ -147,22 +147,19 @@ export type Theme = {
   };
 };
 
-type BaseEffect = {
+export type BaseEffect = {
   id: string;
 
   nonCrit: TEffectMinMax;
   crit: TEffectMinMax | null;
 };
 
-export interface UnconditionalEffect extends BaseEffect {
+export interface UnconditionalSpellEffect extends BaseEffect {
+  type: SpellEffectType;
   condition: null;
 }
 
-export interface UnconditionalSpellEffect extends UnconditionalEffect {
-  type: SpellEffectType;
-}
-
-export interface WeaponEffect extends UnconditionalEffect {
+export interface WeaponEffect extends BaseEffect {
   type: WeaponEffectType;
 }
 

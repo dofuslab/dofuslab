@@ -9,6 +9,7 @@ import {
   damageHeaderStyle,
   EffectLine,
   DamageTypeToggle,
+  TotalDamageLine,
 } from 'common/wrappers';
 import { useTranslation } from 'i18n';
 import {
@@ -18,6 +19,8 @@ import {
   getStatsFromCustomSet,
   getInitialRangedState,
   calcEffectType,
+  getTotalDamage,
+  getWeightedAverages,
 } from 'common/utils';
 import {
   TEffectLine,
@@ -269,6 +272,25 @@ const SpellCardContent: React.FC<Props> = ({
       (e) => e.condition === selectedCondition,
     );
 
+    const combinedSpellEffectSummaries = [
+      ...spellEffectSummaries,
+      ...selectedConditionalEffects,
+    ];
+
+    const totalDamage = getTotalDamage(combinedSpellEffectSummaries);
+    const { weightedAverageDamage, weightedAverageHeal } = getWeightedAverages(
+      combinedSpellEffectSummaries,
+      critRate,
+    );
+
+    const combinedDamageLines = combinedSpellEffectSummaries.filter(
+      (e) => getSimpleEffect(e.type) === 'damage',
+    );
+
+    const combinedHealLines = combinedSpellEffectSummaries.filter(
+      (e) => getSimpleEffect(e.type) === 'heal',
+    );
+
     content = (
       <>
         <div>
@@ -420,6 +442,36 @@ const SpellCardContent: React.FC<Props> = ({
               )}
               {!!selectedConditionalEffects.length &&
                 selectedConditionalEffects.map(renderSpellEffectSummary)}
+            </div>
+          </>
+        )}
+        {combinedSpellEffectSummaries.filter(
+          (e) => getSimpleEffect(e.type) === 'damage',
+        ).length > 1 && (
+          <>
+            <Divider css={{ margin: '12px 0' }} />
+            <div css={damageHeaderStyle}>{t('TOTAL')}</div>
+            <TotalDamageLine
+              totalObj={totalDamage}
+              imageUrl="https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Spell_Damage.svg"
+              imageAlt={t('DAMAGE')}
+            />
+          </>
+        )}
+        {combinedDamageLines.length + combinedHealLines.length > 0 && (
+          <>
+            <Divider css={{ margin: '12px 0' }} />
+            <div css={{ fontWeight: 500 }}>
+              {!!weightedAverageDamage && (
+                <div>
+                  {t('AVERAGE_DAMAGE')}: {weightedAverageDamage.toFixed(0)}
+                </div>
+              )}
+              {!!weightedAverageHeal && (
+                <div>
+                  {t('AVERAGE_HEAL')}: {weightedAverageHeal.toFixed(0)}
+                </div>
+              )}
             </div>
           </>
         )}
