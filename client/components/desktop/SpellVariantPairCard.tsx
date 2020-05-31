@@ -26,6 +26,9 @@ const getSpellLevelIdx = (spell: Spell, customSetLevel: number) =>
     return max;
   }, -1);
 
+const getLowestSpellLevel = (spell: Spell) =>
+  spell.spellStats.reduce((min, curr) => Math.min(min, curr.level), 200);
+
 const SpellVariantPairCard: React.FC<Props> = ({
   spellVariantPair,
   customSet,
@@ -45,10 +48,12 @@ const SpellVariantPairCard: React.FC<Props> = ({
     spellLevelIdx,
   );
 
-  const tabList = spellVariantPair.spells.map((currSpell) => ({
-    key: currSpell.id,
-    tab: currSpell.name,
-  }));
+  const tabList = spellVariantPair.spells
+    .sort((a, b) => getLowestSpellLevel(a) - getLowestSpellLevel(b))
+    .map((currSpell) => ({
+      key: currSpell.id,
+      tab: currSpell.name,
+    }));
 
   const onTabChange = React.useCallback(
     (key: string) => {

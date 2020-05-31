@@ -47,6 +47,7 @@ const quickMageStats = [
 ];
 
 const ACTION_PADDING = 12;
+const TOOLTIP_Z_INDEX = 1062; // greater than item popover
 
 const actionWrapper = {
   margin: -ACTION_PADDING,
@@ -139,6 +140,7 @@ const EquippedItemCard: React.FC<Props> = ({
         })}
         align={{ offset: [0, -ACTION_PADDING] }}
         placement="bottom"
+        overlayStyle={{ zIndex: TOOLTIP_Z_INDEX }}
       >
         <div
           css={{ color: hasExo ? blue6 : 'inherit', ...actionWrapper }}
@@ -180,6 +182,7 @@ const EquippedItemCard: React.FC<Props> = ({
                 title={t('MAGE', { ns: 'mage' })}
                 align={{ offset: [0, -ACTION_PADDING] }}
                 placement="bottom"
+                overlayStyle={{ zIndex: TOOLTIP_Z_INDEX }}
               >
                 <div css={actionWrapper} onClick={onMageClick}>
                   <FontAwesomeIcon icon={faMagic} />
@@ -189,6 +192,7 @@ const EquippedItemCard: React.FC<Props> = ({
                 title={t('DELETE')}
                 align={{ offset: [0, -ACTION_PADDING] }}
                 placement="bottom"
+                overlayStyle={{ zIndex: TOOLTIP_Z_INDEX }}
               >
                 <div css={actionWrapper} onClick={onDelete}>
                   <FontAwesomeIcon icon={faTrashAlt} onClick={onDelete} />
