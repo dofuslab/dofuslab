@@ -1,8 +1,8 @@
 {
-  "EXO": "__STRING_NOT_TRANSLATED__",
-  "MAGE": "__STRING_NOT_TRANSLATED__",
-  "MAGE_MODAL_TITLE": "__STRING_NOT_TRANSLATED__",
-  "MORE_MAGING_OPTIONS": "__STRING_NOT_TRANSLATED__",
-  "REMOVE_EXO": "__STRING_NOT_TRANSLATED__",
-  "RESET_TO_ORIGINAL": "__STRING_NOT_TRANSLATED__"
+  "EXO": "Exo {{stat}}",
+  "MAGE": "Maggia",
+  "MAGE_MODAL_TITLE": "Maggiando {{itemName}}",
+  "MORE_MAGING_OPTIONS": "Altre opzioni di forgimagia",
+  "REMOVE_EXO": "Rimuovi exo {{stat}}",
+  "RESET_TO_ORIGINAL": "Riporta alle stat originali."
 }
