@@ -19,7 +19,12 @@ import {
   getInitialRangedState,
   calcEffectType,
 } from 'common/utils';
-import { TEffectLine, Theme, ConditionalSpellEffect } from 'common/types';
+import {
+  TEffectLine,
+  Theme,
+  ConditionalSpellEffect,
+  UnconditionalSpellEffect,
+} from 'common/types';
 import { Stat } from '__generated__/globalTypes';
 import { CustomSet, Spell, SpellStats, SpellEffect } from 'common/type-aliases';
 
@@ -140,30 +145,29 @@ const SpellCardContent: React.FC<Props> = ({
         ),
         baseMax: maxDamage,
       },
-      crit:
-        spellStats.baseCritChance === null || !critMaxDamage
-          ? null
-          : {
-              min: critMinDamage
-                ? calcEffect(
-                    critMinDamage + totalDamageIncrease,
-                    effectType,
-                    customSetLevel,
-                    statsFromCustomSet,
-                    { isCrit: true, isTrap: spell.isTrap },
-                    damageTypeKey,
-                  )
-                : null,
-              max: calcEffect(
-                critMaxDamage + totalDamageIncrease,
-                effectType,
-                customSetLevel,
-                statsFromCustomSet,
-                { isCrit: true, isTrap: spell.isTrap },
-                damageTypeKey,
-              ),
-              baseMax: critMaxDamage,
-            },
+      crit: critMaxDamage
+        ? {
+            min: critMinDamage
+              ? calcEffect(
+                  critMinDamage + totalDamageIncrease,
+                  effectType,
+                  customSetLevel,
+                  statsFromCustomSet,
+                  { isCrit: true, isTrap: spell.isTrap },
+                  damageTypeKey,
+                )
+              : null,
+            max: calcEffect(
+              critMaxDamage + totalDamageIncrease,
+              effectType,
+              customSetLevel,
+              statsFromCustomSet,
+              { isCrit: true, isTrap: spell.isTrap },
+              damageTypeKey,
+            ),
+            baseMax: critMaxDamage,
+          }
+        : null,
     };
   };
 
@@ -193,12 +197,13 @@ const SpellCardContent: React.FC<Props> = ({
       <div>{t('UNAVAILABLE_SPELL', { level: spell.spellStats[0].level })}</div>
     );
   } else {
-    const spellEffectSummaries: Array<TEffectLine> = spellStats.spellEffects
-      .filter((e) => !e.condition)
-      .map(getSpellEffectSummary);
+    const spellEffectSummaries = spellStats.spellEffects
+      .map(getSpellEffectSummary)
+      .filter((e): e is UnconditionalSpellEffect => !e.condition);
     const conditionalSpellEffectSummaries = spellStats.spellEffects
       .map(getSpellEffectSummary)
       .filter((e): e is ConditionalSpellEffect => !!e.condition);
+
     let critRate =
       typeof spellStats.baseCritChance === 'number'
         ? getStatWithDefault(statsFromCustomSet, Stat.CRITICAL) +
@@ -346,11 +351,13 @@ const SpellCardContent: React.FC<Props> = ({
               }}
             >
               <div css={damageHeaderStyle}>{t('NON_CRIT')}</div>
-              {spellStats.baseCritChance ? (
+              {spellStats.spellEffects.some((e) => e.critMaxDamage) ? (
                 <div css={damageHeaderStyle}>
-                  {t('CRIT_WITH_PERCENTAGE', {
-                    percentage: critRate,
-                  })}
+                  {critRate !== null
+                    ? t('CRIT_WITH_PERCENTAGE', {
+                        percentage: critRate,
+                      })
+                    : t('CRIT')}
                 </div>
               ) : (
                 <div

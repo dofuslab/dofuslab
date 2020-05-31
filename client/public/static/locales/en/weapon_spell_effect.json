@@ -10,6 +10,7 @@
   "CELL_plural": "{{count}} cells",
   "COOLDOWN": "Cooldown: {{count}} turn",
   "COOLDOWN_plural": "Cooldown: {{count}} turns",
+  "CRIT": "Crit",
   "CRIT_WITH_PERCENTAGE": "Crit ({{percentage}}%)",
   "DAMAGE": "Damage",
   "DOES_NOT_CRIT": "Does not crit",

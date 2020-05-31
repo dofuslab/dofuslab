@@ -59,12 +59,13 @@ def create_spell_effect(db_session, spell_stat, level, i, has_condition):
     )
 
     if level["criticalEffects"].get(effect_type, None):
-        spell_effect.crit_min_damage = level["criticalEffects"][effect_type][i][
-            "minStat"
-        ]
-        spell_effect.crit_max_damage = level["criticalEffects"][effect_type][i][
-            "maxStat"
-        ]
+        if i < len(level["criticalEffects"][effect_type]):
+            spell_effect.crit_min_damage = level["criticalEffects"][effect_type][i][
+                "minStat"
+            ]
+            spell_effect.crit_max_damage = level["criticalEffects"][effect_type][i][
+                "maxStat"
+            ]
 
     db_session.add(spell_effect)
     return spell_effect

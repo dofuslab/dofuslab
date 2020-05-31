@@ -155,8 +155,15 @@ type BaseEffect = {
 };
 
 export interface UnconditionalEffect extends BaseEffect {
-  type: SpellEffectType | WeaponEffectType;
   condition: null;
+}
+
+export interface UnconditionalSpellEffect extends UnconditionalEffect {
+  type: SpellEffectType;
+}
+
+export interface WeaponEffect extends UnconditionalEffect {
+  type: WeaponEffectType;
 }
 
 export interface ConditionalEffect extends BaseEffect {
@@ -167,7 +174,10 @@ export interface ConditionalSpellEffect extends ConditionalEffect {
   type: SpellEffectType;
 }
 
-export type TEffectLine = UnconditionalEffect | ConditionalEffect;
+export type TEffectLine =
+  | UnconditionalSpellEffect
+  | ConditionalSpellEffect
+  | WeaponEffect;
 
 export type TCondition = {
   stat: Stat | 'SET_BONUS';
