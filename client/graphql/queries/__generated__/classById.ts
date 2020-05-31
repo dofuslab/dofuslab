@@ -17,6 +17,7 @@ export interface classById_classById_spellVariantPairs_spells_spellStats_spellEf
   critMinDamage: number | null;
   critMaxDamage: number | null;
   effectType: SpellEffectType;
+  condition: string | null;
 }
 
 export interface classById_classById_spellVariantPairs_spells_spellStats_spellDamageIncrease {

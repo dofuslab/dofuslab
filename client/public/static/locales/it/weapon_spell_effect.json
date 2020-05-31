@@ -10,6 +10,7 @@
   "CELL_plural": "{{count}} caselle",
   "COOLDOWN": "{{count}} turno",
   "COOLDOWN_plural": "{{count}} turni",
+  "CRIT": "CC",
   "CRIT_WITH_PERCENTAGE": "CC ({{percentage}}%)",
   "DAMAGE": "Danni",
   "DOES_NOT_CRIT": "Non può crittare",

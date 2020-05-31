@@ -10,7 +10,8 @@
   "CELL_plural": "{{count}} cellules",
   "COOLDOWN": "Intervalle de relance: {{count}} tour",
   "COOLDOWN_plural": "Intervalle de relance: {{count}} tours",
-  "CRIT_WITH_PERCENTAGE": "CC ({{percentage}})%",
+  "CRIT": "CC",
+  "CRIT_WITH_PERCENTAGE": "CC ({{percentage}}%)",
   "DAMAGE": "Dommage",
   "DOES_NOT_CRIT": "Pas de coup critique",
   "EFFECT_TYPE": {

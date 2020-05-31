@@ -427,3 +427,39 @@ export const DamageTypeToggle: React.FC<{
     </div>
   );
 };
+
+export const TotalDamageLine = ({
+  totalObj,
+  imageUrl,
+  imageAlt,
+}: {
+  totalObj: {
+    nonCrit: { min: number; max: number };
+    crit: { min: number; max: number } | null;
+  };
+  imageUrl: string;
+  imageAlt: string;
+}) => {
+  return (
+    <div css={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 8 }}>
+      <div css={{ display: 'flex', alignItems: 'center' }}>
+        <img
+          src={imageUrl}
+          css={{ height: 16, width: 16, marginRight: 8 }}
+          alt={imageAlt}
+        />
+        {totalObj.nonCrit.min}-{totalObj.nonCrit.max}
+      </div>
+      {totalObj.crit && (
+        <div css={{ display: 'flex', alignItems: 'center' }}>
+          <img
+            src={imageUrl}
+            css={{ height: 16, width: 16, marginRight: 8 }}
+            alt={imageAlt}
+          />
+          {totalObj.crit.min}-{totalObj.crit.max}
+        </div>
+      )}
+    </div>
+  );
+};

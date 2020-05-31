@@ -1,7 +1,8 @@
 import sqlalchemy
 from .base import Base
-from sqlalchemy import Column, Integer, Enum, ForeignKey
+from sqlalchemy import Column, Integer, Enum, ForeignKey, Boolean
 from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.orm import relationship
 from .enums import SpellEffectEnum
 
 
@@ -25,3 +26,11 @@ class ModelSpellEffect(Base):
     max_damage = Column("max_damage", Integer, nullable=False)
     crit_min_damage = Column("crit_min_damage", Integer)
     crit_max_damage = Column("crit_max_damage", Integer)
+    has_condition = Column("has_condition", Boolean, index=True, nullable=False)
+    order = Column("order", Integer)
+
+    condition = relationship(
+        "ModelSpellEffectConditionTranslation",
+        backref="spell_effect",
+        cascade="all, delete-orphan",
+    )

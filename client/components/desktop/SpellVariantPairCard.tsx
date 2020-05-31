@@ -94,6 +94,7 @@ const SpellVariantPairCard: React.FC<Props> = ({
       tabProps={{ size: 'small' }}
     >
       <SpellCardContent
+        key={spell.id}
         spell={spell}
         selectedSpellLevelIdx={selectedSpellLevelIdx}
         customSet={customSet}

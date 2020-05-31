@@ -31,6 +31,7 @@ query classById($id: UUID!) {
             critMinDamage
             critMaxDamage
             effectType
+            condition
           }
           spellDamageIncrease {
             id

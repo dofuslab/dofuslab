@@ -38,7 +38,10 @@ class ModelSpellStats(Base):
     max_range = Column("max_range", Integer)
 
     spell_effects = relationship(
-        "ModelSpellEffect", backref="spell_stats", cascade="all, delete-orphan"
+        "ModelSpellEffect",
+        backref="spell_stats",
+        cascade="all, delete-orphan",
+        order_by="ModelSpellEffect.order",
     )
 
     spell_damage_increase = relationship(

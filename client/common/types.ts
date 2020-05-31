@@ -147,12 +147,34 @@ export type Theme = {
   };
 };
 
-export type TEffectLine = {
+export type BaseEffect = {
   id: string;
-  type: WeaponEffectType | SpellEffectType;
+
   nonCrit: TEffectMinMax;
   crit: TEffectMinMax | null;
 };
+
+export interface UnconditionalSpellEffect extends BaseEffect {
+  type: SpellEffectType;
+  condition: null;
+}
+
+export interface WeaponEffect extends BaseEffect {
+  type: WeaponEffectType;
+}
+
+export interface ConditionalEffect extends BaseEffect {
+  condition: string;
+}
+
+export interface ConditionalSpellEffect extends ConditionalEffect {
+  type: SpellEffectType;
+}
+
+export type TEffectLine =
+  | UnconditionalSpellEffect
+  | ConditionalSpellEffect
+  | WeaponEffect;
 
 export type TCondition = {
   stat: Stat | 'SET_BONUS';
