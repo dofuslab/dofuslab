@@ -1,0 +1,31 @@
+import sqlalchemy
+from .base import Base
+from .enums import StatEnum
+from sqlalchemy import Column, Integer, Enum, ForeignKey
+from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.orm import relationship
+
+
+class ModelBuff(Base):
+    __tablename__ = "buff"
+
+    uuid = Column(
+        UUID(as_uuid=True),
+        server_default=sqlalchemy.text("uuid_generate_v4()"),
+        unique=True,
+        nullable=False,
+        primary_key=True,
+    )
+
+    item_id = Column(UUID(as_uuid=True), ForeignKey("item.uuid"), nullable=True)
+    spell_stat_id = Column(
+        UUID(as_uuid=True), ForeignKey("spell_stats.uuid"), nullable=True
+    )
+
+    stat = Column("stat", StatEnum, nullable=False)
+    min_value = Column("min_value", Integer)
+    increment_by = Column("increment_by", Integer)
+    max_stacks = Column("max_stacks", Integer)
+    crit_min_value = Column("crit_min_value", Integer)
+    crit_increment_by = Column("crit_increment_by", Integer)
+    crit_max_stacks = Column("crit_max_stacks", Integer)
