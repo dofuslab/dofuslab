@@ -272,7 +272,7 @@
     "level": 180,
     "customStats": {
       "en": ["The bearer gains 50 Critial for 1 turn."],
-      "fr": ["Le porteur gagne 50 Critique pendant 1 tour."]
+      "fr": ["Le porteur gagne 50 Critique pendant 1 tour."],
       "it": ["Il portatore ottiene 50 Critici per 1 turno."]
     },
     "conditions": {
@@ -492,7 +492,7 @@
     "level": 180,
     "customStats": {
       "en": ["The bearer gains +2 AP for their first round."],
-      "fr": ["Le porteur gagne +2 PA pendant son premier tour de jeu."]
+      "fr": ["Le porteur gagne +2 PA pendant son premier tour de jeu."],
       "it": ["Il portatore ottiene 2 PA durante il suo primo turno di gioco."]
     },
     "conditions": {
@@ -767,7 +767,7 @@
       "fr": "Pryssion Brillante",
       "de": null,
       "es": null,
-      "it": "Prissione Brillante,
+      "it": "Prissione Brillante",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -830,7 +830,7 @@
     "level": 180,
     "customStats": {
       "en": ["The bearer gains 20 Critical for 2 turns."],
-      "fr": ["Le porteur gagne 20 Critique pendant 2 tours."]
+      "fr": ["Le porteur gagne 20 Critique pendant 2 tours."],
       "it": ["Il portatore ottiene 20 Critici per 2 turni."]
     },
     "conditions": {
@@ -882,7 +882,7 @@
     "level": 180,
     "customStats": {
       "en": ["The bearer gains 8 Critical for 3 turns."],
-      "fr": ["Le porteur gagne 8 Critique pendant 3 tours."]
+      "fr": ["Le porteur gagne 8 Critique pendant 3 tours."],
       "it": ["Il portatore ottiene 8 Critici per 3 turni."]
     },
     "conditions": {
