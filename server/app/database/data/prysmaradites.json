@@ -6,7 +6,7 @@
       "fr": "Prysmaru",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Prisparito",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -17,6 +17,9 @@
       ],
       "fr": [
         "Le porteur devient invisible (1 tour) au début de son premier tour de jeu."
+      ],
+      "it": [
+        "Il portatore diventa invisibile per 1 turno all'inizio del suo primo turno di gioco."
       ]
     },
     "conditions": {
@@ -32,7 +35,7 @@
       "fr": "Prysantor",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Prisante",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -43,6 +46,9 @@
       ],
       "fr": [
         "Le porteur gagne l'état Pesanteur tant qu'il n'a pas subi de dommages."
+      ],
+      "it": [
+        "Il portatore viene affetto dallo stato Pesantezza fino a quando non subisce danni."
       ]
     },
     "conditions": {
@@ -58,7 +64,7 @@
       "fr": "Telprys Iridescente",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Debolpris Iridescente",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -69,6 +75,9 @@
       ],
       "fr": [
         "À la fin de son premier tour, le porteur réduit les dommages de 20% (1 tour) pour chaque ennemi à 2 cases ou moins."
+      ],
+      "it": [
+        "Alla fine del suo primo turno, il portatore riduce i danni del 20% per 1 turno per ogni nemico a 2 caselle o meno."
       ]
     },
     "conditions": {
@@ -84,7 +93,7 @@
       "fr": "Ratrapry Irdescente",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Acchiappris Iridescente,
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -95,6 +104,9 @@
       ],
       "fr": [
         "Le porteur gagne 1 PM (2 tours) par ennemi à plus de cases et perd 2 PA (2 tours) par ennemi à 9 cases ou moins."
+      ],
+      "it": [
+        "Il portatore ottiene 1 PM per 2 turni per ogni nemico a più di 9 caselle e perde 1 PA per 2 turni per ogni nemico a 9 caselle o meno."
       ]
     },
     "conditions": {
@@ -110,7 +122,7 @@
       "fr": "Prygen Iridescente",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Priscura Iridescente",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -121,6 +133,9 @@
       ],
       "fr": [
         "Soigne 100% des dommages ennemis subis jusqu'à la fin du premier tour."
+      ],
+      "it": [
+        "Cura il 100% dei danni nemici subito fino alla fine del primo turno."
       ]
     },
     "conditions": {
@@ -136,7 +151,7 @@
       "fr": "Aprykou Iridescente",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Prismatenza Iridescente",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -147,6 +162,9 @@
       ],
       "fr": [
         "Le porteur gagne 300 Puissance (1 tour) si un coup ennemi est reçu avant d'avoir joué."
+      ],
+      "it": [
+        "Il portatore ottiene 300 Potenza per 1 turno se riceve un colpo nemico prima di aver giocato."
       ]
     },
     "conditions": {
@@ -162,7 +180,7 @@
       "fr": "Prycipithon Iridescente",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Prismipitazione Iridescente",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -173,6 +191,9 @@
       ],
       "fr": [
         "Le porteur gagne +4 PA pendant son premier tour mais aussi -4 PM."
+      ],
+      "it": [
+        "Il portatore ottiene 4 PA durante il suo primo turno di gioco ma perde 4 PM."
       ]
     },
     "conditions": {
@@ -188,7 +209,7 @@
       "fr": "Pryssion Iridescente",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Prissione Iridescente",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -197,6 +218,9 @@
       "en": ["The bearer gains 4 AP for 1 turn but inflicts -50% damage."],
       "fr": [
         "Le porteur gagne 4 PA pendant 1 tour mais occasionne -50% de dommages."
+      ],
+      "it": [
+        "Il portatore ottiene 4 PA per 1 turno ma causa il 50% dei danni in meno."
       ]
     },
     "conditions": {
@@ -212,7 +236,7 @@
       "fr": "Prytek Iridescente",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Pristezione Iridescente",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -223,6 +247,9 @@
       ],
       "fr": [
         "Le porteur gagne 100% de sa vie actuelle en points de bouclier pendant son premier tour de jeu."
+      ],
+      "it": [
+        "Il portatore ottiene il 100% dei suoi PV attuali in punti scudo per il suo primo turno di gioco."
       ]
     },
     "conditions": {
@@ -238,7 +265,7 @@
       "fr": "Surpryz Iridescente",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Sorprisma Iridescente",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -246,6 +273,7 @@
     "customStats": {
       "en": ["The bearer gains 50 Critial for 1 turn."],
       "fr": ["Le porteur gagne 50 Critique pendant 1 tour."]
+      "it": ["Il portatore ottiene 50 Critici per 1 turno."]
     },
     "conditions": {
       "conditions": {},
@@ -260,7 +288,7 @@
       "fr": "Telprys",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Debolpris",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -271,6 +299,9 @@
       ],
       "fr": [
         "À la fin de son premier tour, le porteur réduit les dommages de 5% (3 tours) pour chaque ennemi à cases ou moins."
+      ],
+      "it": [
+        "Alla fine del suo primo turno, il portatore riduce i danni del 5% per 3 turni per ogni nemico a 2 caselle o meno."
       ]
     },
     "conditions": {
@@ -286,7 +317,7 @@
       "fr": "Ratrapry",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Acchiappris",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -295,7 +326,10 @@
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 15 cells away."
       ],
-      "fr": ["Le porteur gagne 1 PM (2 tours) par ennemi à plus de 15 cases."]
+      "fr": ["Le porteur gagne 1 PM (2 tours) par ennemi à plus de 15 cases."],
+      "it": [
+        "Il portatore ottiene 1 PM per 2 turni per ogni nemico a più di 15 caselle."
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -310,7 +344,7 @@
       "fr": "Prygen",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Priscura",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -321,6 +355,9 @@
       ],
       "fr": [
         "Soigne 15% des dommages ennemis subis jusqu'à la fin du troisième tour."
+      ],
+      "it": [
+        "Cura il 15% dei danni nemici subiti fino alla fine del terzo turno."
       ]
     },
     "conditions": {
@@ -336,14 +373,17 @@
       "fr": "Prymune",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Prismune",
       "pt": null
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": ["The bearer reduces damage suffered by 80% before playing."],
-      "fr": ["Le porteur réduit les dommages subis de 80% avant d'avoir joué."]
+      "fr": ["Le porteur réduit les dommages subis de 80% avant d'avoir joué."],
+      "it": [
+        "Il portatore riduce i danni subiti del 80% prima di giocare."
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -358,7 +398,7 @@
       "fr": "Aprykou",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Prismatenza",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -369,6 +409,9 @@
       ],
       "fr": [
         "Le porteur gagne 100 Puissance (3 tours) si un coup ennemi est reçu avant d'avoir joué."
+      ],
+      "it": [
+        "Il portatore ottiene 100 Potenza per 3 turni se riceve un colpo nemico prima di aver giocato."
       ]
     },
     "conditions": {
@@ -384,7 +427,7 @@
       "fr": "Aprybou",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Doposcudopris",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -395,6 +438,9 @@
       ],
       "fr": [
         "Le porteur gagne 100% de son niveau en points de bouclier (infini) pour chaque adversaire (hors invocation) que joue avant lui."
+      ],
+      "it": [
+        "Il portatore ottiene il 100% del suo livello in punti scudo (infinito) per ogni nemico, che non sia un'evocazione, che gioca prima di lui."
       ]
     },
     "conditions": {
@@ -410,7 +456,7 @@
       "fr": "Korprys",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Corpris",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -421,6 +467,9 @@
       ],
       "fr": [
         "Le porteur gagne 250 Esquive PM avant d'avoir joué, puis 50 Esquive PM pendant 1 tour."
+      ],
+      "it": [
+        "Il portatore ottiene 250 Schivata PM prima di giocare, poi 50 Schivata PM per 1 turno."
       ]
     },
     "conditions": {
@@ -436,7 +485,7 @@
       "fr": "Prycipithon",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Prismipitazione",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -444,6 +493,7 @@
     "customStats": {
       "en": ["The bearer gains +2 AP for their first round."],
       "fr": ["Le porteur gagne +2 PA pendant son premier tour de jeu."]
+      "it": ["Il portatore ottiene 2 PA durante il suo primo turno di gioco."]
     },
     "conditions": {
       "conditions": {},
@@ -458,7 +508,7 @@
       "fr": "Pryssion",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Prissione",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -467,6 +517,9 @@
       "en": ["The bearer gains 1 AP for 3 turns but inflicts -10% damage."],
       "fr": [
         "Le porteur gagne 1 PA pendant 3 tours mais occasionne -10% de dommages."
+      ],
+      "it": [
+        "Il portatore ottiene 1 PA per 3 turni ma causa il 10% dei danni in meno."
       ]
     },
     "conditions": {
@@ -482,7 +535,7 @@
       "fr": "Prytek",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Pristezione",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -493,6 +546,9 @@
       ],
       "fr": [
         "Le porteur gagne 25% de sa vie actuelle en points de bouclier pendant ses trois premiers tours de jeu."
+      ],
+      "it": [
+        "Il portatore ottiene il 25% dei suoi PV attuali in punti scudo per i suoi primi tre turni di gioco."
       ]
     },
     "conditions": {
@@ -508,7 +564,7 @@
       "fr": "Prysmenvout",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Prismincant",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -519,6 +575,9 @@
       ],
       "fr": [
         "Réduit de 4 la durée des effects actifs sur le porteur au début de son premier tour de jeu."
+      ],
+      "it": [
+        "Riduce di 4 turni la durata degli effetti attivi sul portatore all'inizio del suo primo turno di gioco."
       ]
     },
     "conditions": {
@@ -534,7 +593,7 @@
       "fr": "Pryximite",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Vicinopris",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -545,6 +604,9 @@
       ],
       "fr": [
         "Au début de son premier tour de jeu, le porteur gagne 200% de son niveau en bouclier (infini) pour chaque ennemi à 2 cases ou moins."
+      ],
+      "it": [
+        "All'inizio del suo primo turno di gioco, il portatore ottiene il 200% del suo livello in punti scudo (infinito) per ogni nemico a 2 caselle o meno."
       ]
     },
     "conditions": {
@@ -560,7 +622,7 @@
       "fr": "Teleprys Brillante",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Debolpris Brillante",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -571,6 +633,9 @@
       ],
       "fr": [
         "À la fin de son premier tour, le porteur réduit les dommages de 10% (2 tours) pour chque ennemi à 2 cases ou moins."
+      ],
+      "it": [
+        "Alla fine del suo primo turno, il portatore riduce i danni del 10% per 2 turni per ogni nemico a 2 caselle o meno."
       ]
     },
     "conditions": {
@@ -586,7 +651,7 @@
       "fr": "Ratrapry Brillante",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Acchiappris Brillante",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -597,6 +662,9 @@
       ],
       "fr": [
         "Le porteur gagne 1 PM (2 tours) par ennemi à plus de 12 cases et perd 1 PA (2 tours) par ennemi à 12 cases ou moins."
+      ],
+      "it": [
+        "Il portatore ottiene 1 PM per 2 turni per ogni nemico a più di 12 caselle e perde 1 PA per 2 turni per ogni nemico a 12 caselle o meno."
       ]
     },
     "conditions": {
@@ -612,7 +680,7 @@
       "fr": "Prygen Brillante",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Priscura Brillante",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -623,6 +691,9 @@
       ],
       "fr": [
         "Soigne 30% de dommages ennemis subis jusqu'à la fin du deuxième tour."
+      ],
+      "it": [
+        "Cura il 30% dei danni nemici subiti fino alla fine del secondo turno."
       ]
     },
     "conditions": {
@@ -638,7 +709,7 @@
       "fr": "Aprykou Brillante",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Prismatenza Brillante",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -649,6 +720,9 @@
       ],
       "fr": [
         "Le porteur gagne 200 Puissance (2 tours) si un coup ennemi est reçu avant d'avoir joué."
+      ],
+      "it": [
+        "Il portatore ottiene 200 Potenza per 2 turni se riceve un colpo nemico prima di aver giocato."
       ]
     },
     "conditions": {
@@ -664,7 +738,7 @@
       "fr": "Pricipithon Brillante",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Prismipitazione Brillante",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -675,6 +749,9 @@
       ],
       "fr": [
         "Le porteur gagne +3 PA pendant son premier tour mais aussi -2 PM."
+      ],
+      "it": [
+        "Il portatore ottiene 3 PA durante il suo primo turno di gioco ma perde 2 PM."
       ]
     },
     "conditions": {
@@ -690,7 +767,7 @@
       "fr": "Pryssion Brillante",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Prissione Brillante,
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -699,6 +776,9 @@
       "en": ["The bearer gains 2 AP for 2 turns but inflicts -20% damage."],
       "fr": [
         "Le porteur gagne 2 PA pendant 2 tours mais occasionne -20% de dommages."
+      ],
+      "it": [
+        "Il portatore ottiene 2 PA per 2 turni ma causa il 35% dei danni in meno."
       ]
     },
     "conditions": {
@@ -714,7 +794,7 @@
       "fr": "Prytek Brillante",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Pristezione Brillante",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -725,6 +805,9 @@
       ],
       "fr": [
         "Le porteur gagne 50% de sa vie actuelle en points de bouclier pendant ses deux premiers tours de jeu."
+      ],
+      "it": [
+        "Il portatore ottiene il 50% dei suoi PV attuali in punti scudo per i suoi primi due turni di gioco."
       ]
     },
     "conditions": {
@@ -740,7 +823,7 @@
       "fr": "Surpryz Brillante",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Sorprisma Brillante",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -748,6 +831,7 @@
     "customStats": {
       "en": ["The bearer gains 20 Critical for 2 turns."],
       "fr": ["Le porteur gagne 20 Critique pendant 2 tours."]
+      "it": ["Il portatore ottiene 20 Critici per 2 turni."]
     },
     "conditions": {
       "conditions": {},
@@ -762,7 +846,7 @@
       "fr": "Espryt",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Prismente",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -773,6 +857,9 @@
       ],
       "fr": [
         "Le porteur gagne 250 Esquive PA avant d'avoir joué, puis 50 Esquive PA pendant 1 tour."
+      ],
+      "it": [
+        "Il portatore ottiene 250 Schivata PA prima di giocare, poi 50 Schivata PA per 1 turno."
       ]
     },
     "conditions": {
@@ -788,7 +875,7 @@
       "fr": "Surpryz",
       "de": null,
       "es": null,
-      "it": null,
+      "it": "Sorprisma",
       "pt": null
     },
     "itemType": "Prysmaradite",
@@ -796,6 +883,7 @@
     "customStats": {
       "en": ["The bearer gains 8 Critical for 3 turns."],
       "fr": ["Le porteur gagne 8 Critique pendant 3 tours."]
+      "it": ["Il portatore ottiene 8 Critici per 3 turni."]
     },
     "conditions": {
       "conditions": {},
