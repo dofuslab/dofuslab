@@ -54,7 +54,6 @@ def create_spell_effect(db_session, spell_stat, level, i, has_condition):
         effect_type=to_spell_enum[level["normalEffects"][effect_type][i]["stat"]],
         min_damage=level["normalEffects"][effect_type][i].get("minStat", None),
         max_damage=level["normalEffects"][effect_type][i]["maxStat"],
-        has_condition=has_condition,
         order=i if has_condition else None,
     )
 
