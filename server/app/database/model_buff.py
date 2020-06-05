@@ -23,9 +23,6 @@ class ModelBuff(Base):
     )
 
     stat = Column("stat", StatEnum, nullable=False)
-    min_value = Column("min_value", Integer)
     increment_by = Column("increment_by", Integer)
     max_stacks = Column("max_stacks", Integer)
-    crit_min_value = Column("crit_min_value", Integer)
     crit_increment_by = Column("crit_increment_by", Integer)
-    crit_max_stacks = Column("crit_max_stacks", Integer)
