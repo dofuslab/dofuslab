@@ -5,10 +5,11 @@ import { jsx, ClassNames } from '@emotion/core';
 import { Button, Modal } from 'antd';
 import { useTranslation } from 'i18n';
 import { mq, BREAKPOINTS } from 'common/constants';
-import { HeartFilled } from '@ant-design/icons';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { useQuery } from '@apollo/react-hooks';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { CustomSet, ItemSlot } from 'common/type-aliases';
 import {
   findEmptyOrOnlySlotId,
@@ -87,7 +88,7 @@ const FavoritesButton: React.FC<Props> = ({
               className,
             )}
           >
-            <HeartFilled />
+            <FontAwesomeIcon icon={faHeart} css={{ marginRight: 8 }} />
             {t('MY_FAVORITES')}
           </Button>
         )}

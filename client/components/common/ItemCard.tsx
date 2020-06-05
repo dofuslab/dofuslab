@@ -2,22 +2,20 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { useEquipItemMutation } from 'common/utils';
+import { useEquipItemMutation, useToggleFavoriteMutation } from 'common/utils';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { useRouter } from 'next/router';
-import { useApolloClient, useQuery, useMutation } from '@apollo/react-hooks';
+import { useApolloClient, useQuery } from '@apollo/react-hooks';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { ItemSlot, ItemSet, Item } from 'common/type-aliases';
 import { notification } from 'antd';
 import { useTranslation, prependDe } from 'i18n';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
-import {
-  toggleFavoriteItem,
-  toggleFavoriteItemVariables,
-} from 'graphql/mutations/__generated__/toggleFavoriteItem';
-import toggleFavoriteItemMutation from 'graphql/mutations/toggleFavoriteItem.graphql';
-import { HeartFilled, HeartOutlined } from '@ant-design/icons';
+import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
+
 import BasicItemCard from './BasicItemCard';
 
 interface Props {
@@ -50,29 +48,10 @@ const ItemCard: React.FC<Props> = ({
   const router = useRouter();
   const { data } = useQuery<CurrentUserQueryType>(currentUserQuery);
 
-  const isFavorite = (data?.currentUser?.favoriteItems ?? [])
-    .map((fi) => fi.id)
-    .includes(item.id);
-
-  const [toggleFavorite] = useMutation<
-    toggleFavoriteItem,
-    toggleFavoriteItemVariables
-  >(toggleFavoriteItemMutation, {
-    variables: { itemId: item.id, isFavorite: !isFavorite },
-    optimisticResponse:
-      (data?.currentUser && {
-        toggleFavoriteItem: {
-          user: {
-            ...data.currentUser,
-            favoriteItems: isFavorite
-              ? data.currentUser.favoriteItems.filter((fi) => fi.id !== item.id)
-              : [...data.currentUser.favoriteItems, item],
-          },
-          __typename: 'ToggleFavoriteItem',
-        },
-      }) ||
-      undefined,
-  });
+  const {
+    isFavorite,
+    mutationResult: [toggleFavorite],
+  } = useToggleFavoriteMutation(item);
 
   const onFavoriteToggle = React.useCallback(
     (e: React.MouseEvent<HTMLSpanElement>) => {
@@ -154,8 +133,6 @@ const ItemCard: React.FC<Props> = ({
     notifyOnEquip,
   ]);
 
-  const FavoriteIcon = isFavorite ? HeartFilled : HeartOutlined;
-
   return (
     <BasicItemCard
       item={item}
@@ -166,7 +143,9 @@ const ItemCard: React.FC<Props> = ({
       favorite={
         data?.currentUser && (
           <a onClick={onFavoriteToggle} css={{ padding: 4 }}>
-            <FavoriteIcon />
+            <FontAwesomeIcon
+              icon={isFavorite ? faHeartSolid : faHeartRegular}
+            />
           </a>
         )
       }
