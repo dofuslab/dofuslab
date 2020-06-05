@@ -26,7 +26,6 @@ class ModelSpellEffect(Base):
     max_damage = Column("max_damage", Integer, nullable=False)
     crit_min_damage = Column("crit_min_damage", Integer)
     crit_max_damage = Column("crit_max_damage", Integer)
-    has_condition = Column("has_condition", Boolean, index=True, nullable=False)
     order = Column("order", Integer)
 
     condition = relationship(
