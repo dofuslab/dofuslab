@@ -55,7 +55,11 @@ import {
   copyCustomSetVariables,
 } from 'graphql/mutations/__generated__/copyCustomSet';
 import copyCustomSetMutation from 'graphql/mutations/copyCustomSet.graphql';
-
+import {
+  toggleFavoriteItem,
+  toggleFavoriteItemVariables,
+} from 'graphql/mutations/__generated__/toggleFavoriteItem';
+import toggleFavoriteItemMutation from 'graphql/mutations/toggleFavoriteItem.graphql';
 import { ParsedUrlQuery } from 'querystring';
 import {
   StatsFromCustomSet,
@@ -1694,5 +1698,38 @@ export const getWeightedAverages = (
   return {
     weightedAverageDamage,
     weightedAverageHeal,
+  };
+};
+
+export const useToggleFavoriteMutation = (item: Item) => {
+  const { data } = useQuery<CurrentUserQueryType>(currentUserQuery);
+
+  const isFavorite = (data?.currentUser?.favoriteItems ?? [])
+    .map((fi) => fi.id)
+    .includes(item.id);
+
+  return {
+    isFavorite,
+    mutationResult: useMutation<
+      toggleFavoriteItem,
+      toggleFavoriteItemVariables
+    >(toggleFavoriteItemMutation, {
+      variables: { isFavorite: !isFavorite, itemId: item.id },
+      optimisticResponse:
+        (data?.currentUser && {
+          toggleFavoriteItem: {
+            user: {
+              ...data.currentUser,
+              favoriteItems: isFavorite
+                ? data.currentUser.favoriteItems.filter(
+                    (fi) => fi.id !== item.id,
+                  )
+                : [...data.currentUser.favoriteItems, item],
+            },
+            __typename: 'ToggleFavoriteItem',
+          },
+        }) ||
+        undefined,
+    }),
   };
 };

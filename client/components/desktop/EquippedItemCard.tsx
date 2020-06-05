@@ -10,7 +10,9 @@ import {
   faMagic,
   faTrashAlt,
   faStar,
+  faHeart as faHeartSolid,
 } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
 
 import { useTranslation } from 'i18n';
 import { itemCardStyle, blue6 } from 'common/mixins';
@@ -18,6 +20,7 @@ import {
   useDeleteItemMutation,
   checkAuthentication,
   EditableContext,
+  useToggleFavoriteMutation,
 } from 'common/utils';
 import { Stat } from '__generated__/globalTypes';
 import setEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.graphql';
@@ -157,6 +160,15 @@ const EquippedItemCard: React.FC<Props> = ({
     openMageModal(equippedItem);
   }, [openMageModal, equippedItem]);
 
+  const {
+    isFavorite,
+    mutationResult: [toggleFavorite],
+  } = useToggleFavoriteMutation(equippedItem.item);
+
+  const onFavoriteClick = React.useCallback(() => {
+    toggleFavorite();
+  }, [toggleFavorite]);
+
   const isEditable = React.useContext(EditableContext);
 
   return (
@@ -186,6 +198,18 @@ const EquippedItemCard: React.FC<Props> = ({
               >
                 <div css={actionWrapper} onClick={onMageClick}>
                   <FontAwesomeIcon icon={faMagic} />
+                </div>
+              </Tooltip>,
+              <Tooltip
+                title={t('FAVORITE')}
+                align={{ offset: [0, -ACTION_PADDING] }}
+                placement="bottom"
+                overlayStyle={{ zIndex: TOOLTIP_Z_INDEX }}
+              >
+                <div css={actionWrapper} onClick={onFavoriteClick}>
+                  <FontAwesomeIcon
+                    icon={isFavorite ? faHeartSolid : faHeartRegular}
+                  />
                 </div>
               </Tooltip>,
               <Tooltip
