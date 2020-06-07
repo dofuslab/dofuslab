@@ -130,6 +130,8 @@ from app.loaders import (
     SetTranslationLoader,
     WeaponEffectLoader,
     WeaponStatLoader,
+    SpellBuffLoader,
+    ItemBuffLoader,
 )
 
 
@@ -145,6 +147,8 @@ def construct_dataloaders():
         "set_translation_loader": SetTranslationLoader(),
         "weapon_stat_loader": WeaponStatLoader(),
         "weapon_effect_loader": WeaponEffectLoader(),
+        "spell_buff_loader": SpellBuffLoader(),
+        "item_buff_loader": ItemBuffLoader(),
     }
 
 

@@ -242,8 +242,10 @@ class Item(SQLAlchemyObjectType):
     buffs = graphene.List(graphene.NonNull(Buff))
 
     def resolve_buffs(self, info):
-        query = db.session.query(ModelBuff).filter(ModelBuff.item_id == self.uuid)
-        return query
+        # query = db.session.query(ModelBuff).filter(ModelBuff.item_id == self.uuid)
+        # return query
+
+        return g.dataloaders.get("item_buff_loader").load(self.uuid)
 
     class Meta:
         model = ModelItem
@@ -420,8 +422,10 @@ class SpellStats(SQLAlchemyObjectType):
     buffs = graphene.List(graphene.NonNull(Buff))
 
     def resolve_buffs(self, info):
-        query = db.session.query(ModelBuff).filter(ModelBuff.spell_stat_id == self.uuid)
-        return query
+        # query = db.session.query(ModelBuff).filter(ModelBuff.spell_stat_id == self.uuid)
+        # return query
+
+        return g.dataloaders.get("spell_buff_loader").load(self.uuid)
 
     class Meta:
         model = ModelSpellStats
