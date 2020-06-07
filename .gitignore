@@ -5,8 +5,6 @@ venv/
 __pycache__/
 *.py[cod]
 
-/client/.eslintrc
-
 server/__pycache__/
 server/.vscode/
 server/.env
