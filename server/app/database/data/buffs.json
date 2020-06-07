@@ -9,12 +9,9 @@
             "buffs": [
               {
                 "stat": "Strength",
-                "minValue": 0,
                 "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 100,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "critIncrementBy": 100,
+                "maxStacks": 6
               }
             ]
           },
@@ -23,12 +20,9 @@
             "buffs": [
               {
                 "stat": "Strength",
-                "minValue": null,
                 "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 150,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "critIncrementBy": 150,
+                "maxStacks": 6
               }
             ]
           }
@@ -42,12 +36,9 @@
             "buffs": [
               {
                 "stat": "Intelligence",
-                "minValue": null,
                 "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 100,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "critIncrementBy": 100,
+                "maxStacks": 6
               }
             ]
           },
@@ -56,12 +47,9 @@
             "buffs": [
               {
                 "stat": "Intelligence",
-                "minValue": null,
                 "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 150,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "critIncrementBy": 150,
+                "maxStacks": 6
               }
             ]
           }
@@ -75,12 +63,9 @@
             "buffs": [
               {
                 "stat": "Chance",
-                "minValue": null,
                 "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 50,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "critIncrementBy": 50,
+                "maxStacks": 6
               }
             ]
           },
@@ -89,12 +74,9 @@
             "buffs": [
               {
                 "stat": "Chance",
-                "minValue": null,
                 "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 100,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "critIncrementBy": 100,
+                "maxStacks": 6
               }
             ]
           },
@@ -103,12 +85,9 @@
             "buffs": [
               {
                 "stat": "Chance",
-                "minValue": null,
                 "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 150,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "critIncrementBy": 150,
+                "maxStacks": 6
               }
             ]
           }
@@ -122,12 +101,9 @@
             "buffs": [
               {
                 "stat": "Agility",
-                "minValue": null,
                 "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 120,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "critIncrementBy": 120,
+                "maxStacks": 6
               }
             ]
           },
@@ -136,12 +112,9 @@
             "buffs": [
               {
                 "stat": "Agility",
-                "minValue": 0,
                 "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 200,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "critIncrementBy": 200,
+                "maxStacks": 6
               }
             ]
           }
@@ -155,12 +128,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 50,
                 "incrementBy": 50,
-                "maxStacks": 7,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 7
               }
             ]
           },
@@ -169,12 +139,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 70,
                 "incrementBy": 70,
-                "maxStacks": 7,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 7
               }
             ]
           }
@@ -188,12 +155,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 100,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 140,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 100,
+                "critIncrementBy": 140,
+                "maxStacks": 1
               }
             ]
           },
@@ -202,12 +166,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 175,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 245,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 175,
+                "critIncrementBy": 245,
+                "maxStacks": 1
               }
             ]
           },
@@ -216,12 +177,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 250,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 350,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 250,
+                "critIncrementBy": 350,
+                "maxStacks": 1
               }
             ]
           }
@@ -235,12 +193,9 @@
             "buffs": [
               {
                 "stat": "Pushback Damage",
-                "minValue": 100,
                 "incrementBy": 100,
-                "maxStacks": 2,
-                "critMinValue": 100,
                 "critIncrementBy": 100,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           }
@@ -254,12 +209,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 180,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 150,
+                "critIncrementBy": 180,
+                "maxStacks": 1
               }
             ]
           }
@@ -275,12 +227,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 220,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 220,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           },
@@ -289,12 +238,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 250,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 250,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -308,21 +254,15 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 100,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 100,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               },
               {
                 "stat": "Power",
-                "minValue": 250,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 250,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -338,12 +278,9 @@
             "buffs": [
               {
                 "stat": "Damage",
-                "minValue": 10,
                 "incrementBy": 10,
-                "maxStacks": 2,
-                "critMinValue": 13,
                 "critIncrementBy": 13,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           },
@@ -352,12 +289,9 @@
             "buffs": [
               {
                 "stat": "Damage",
-                "minValue": 15,
                 "incrementBy": 15,
-                "maxStacks": 2,
-                "critMinValue": 18,
                 "critIncrementBy": 18,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           },
@@ -366,12 +300,9 @@
             "buffs": [
               {
                 "stat": "Damage",
-                "minValue": 20,
                 "incrementBy": 20,
-                "maxStacks": 2,
-                "critMinValue": 23,
                 "critIncrementBy": 23,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           }
@@ -385,12 +316,9 @@
             "buffs": [
               {
                 "stat": "Pushback Damage",
-                "minValue": 40,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 40,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           },
@@ -399,12 +327,9 @@
             "buffs": [
               {
                 "stat": "Pushback Damage",
-                "minValue": 50,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 50,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -418,12 +343,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 100,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 120,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 100,
+                "critIncrementBy": 120,
+                "maxStacks": 1
               }
             ]
           },
@@ -432,12 +354,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 200,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 240,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 200,
+                "critIncrementBy": 240,
+                "maxStacks": 1
               }
             ]
           },
@@ -446,12 +365,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 300,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 350,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 300,
+                "critIncrementBy": 350,
+                "maxStacks": 1
               }
             ]
           }
@@ -467,21 +383,15 @@
             "buffs": [
               {
                 "stat": "Critical",
-                "minValue": 10,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 10,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 10,
+                "critIncrementBy": 10,
+                "maxStacks": 1
               },
               {
                 "stat": "Power",
-                "minValue": 0,
                 "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 10,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "critIncrementBy": 10,
+                "maxStacks": 1
               }
             ]
           },
@@ -490,21 +400,15 @@
             "buffs": [
               {
                 "stat": "Critical",
-                "minValue": 12,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 12,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 12,
+                "critIncrementBy": 12,
+                "maxStacks": 1
               },
               {
                 "stat": "Power",
-                "minValue": 0,
                 "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 30,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "critIncrementBy": 30,
+                "maxStacks": 1
               }
             ]
           },
@@ -513,21 +417,15 @@
             "buffs": [
               {
                 "stat": "Critical",
-                "minValue": 14,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 14,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 14,
+                "critIncrementBy": 14,
+                "maxStacks": 1
               },
               {
                 "stat": "Power",
-                "minValue": 0,
                 "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 50,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "critIncrementBy": 50,
+                "maxStacks": 1
               }
             ]
           }
@@ -541,12 +439,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 100,
                 "incrementBy": 100,
-                "maxStacks": 3,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "critIncrementBy": 100,
+                "maxStacks": 3
               }
             ]
           }
@@ -560,40 +455,31 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 170,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 150,
+                "critIncrementBy": 170,
+                "maxStacks": 1
               }
             ]
           },
           {
-            "level": 40,
+            "level": 107,
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 200,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 230,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 200,
+                "critIncrementBy": 230,
+                "maxStacks": 1
               }
             ]
           },
           {
-            "level": 40,
+            "level": 174,
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 250,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 290,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 250,
+                "critIncrementBy": 290,
+                "maxStacks": 1
               }
             ]
           }
@@ -607,12 +493,9 @@
             "buffs": [
               {
                 "stat": "Damage",
-                "minValue": 40,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 50,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 40,
+                "critIncrementBy": 50,
+                "maxStacks": 1
               }
             ]
           },
@@ -621,12 +504,9 @@
             "buffs": [
               {
                 "stat": "Damage",
-                "minValue": 60,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 70,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 60,
+                "critIncrementBy": 70,
+                "maxStacks": 1
               }
             ]
           }
@@ -640,12 +520,9 @@
             "buffs": [
               {
                 "stat": "% Spell Damage",
-                "minValue": 30,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 30,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -661,12 +538,9 @@
             "buffs": [
               {
                 "stat": "Intelligence",
-                "minValue": 20,
                 "incrementBy": 20,
-                "maxStacks": 3,
-                "critMinValue": 30,
                 "critIncrementBy": 30,
-                "critMaxStacks": 3
+                "maxStacks": 3
               }
             ]
           },
@@ -675,12 +549,9 @@
             "buffs": [
               {
                 "stat": "Intelligence",
-                "minValue": 40,
                 "incrementBy": 40,
-                "maxStacks": 3,
-                "critMinValue": 50,
                 "critIncrementBy": 50,
-                "critMaxStacks": 3
+                "maxStacks": 3
               }
             ]
           },
@@ -689,12 +560,9 @@
             "buffs": [
               {
                 "stat": "Intelligence",
-                "minValue": 60,
                 "incrementBy": 60,
-                "maxStacks": 3,
-                "critMinValue": 70,
                 "critIncrementBy": 70,
-                "critMaxStacks": 3
+                "maxStacks": 3
               }
             ]
           }
@@ -708,12 +576,9 @@
             "buffs": [
               {
                 "stat": "Agility",
-                "minValue": 20,
                 "incrementBy": 20,
-                "maxStacks": 3,
-                "critMinValue": 30,
                 "critIncrementBy": 30,
-                "critMaxStacks": 3
+                "maxStacks": 3
               }
             ]
           },
@@ -722,12 +587,9 @@
             "buffs": [
               {
                 "stat": "Agility",
-                "minValue": 40,
                 "incrementBy": 40,
-                "maxStacks": 3,
-                "critMinValue": 60,
-                "critIncrementBy": 60,
-                "critMaxStacks": 3
+                "critIncrementBy": 50,
+                "maxStacks": 3
               }
             ]
           },
@@ -736,12 +598,9 @@
             "buffs": [
               {
                 "stat": "Agility",
-                "minValue": 60,
                 "incrementBy": 60,
-                "maxStacks": 3,
-                "critMinValue": 70,
                 "critIncrementBy": 70,
-                "critMaxStacks": 3
+                "maxStacks": 3
               }
             ]
           }
@@ -755,12 +614,9 @@
             "buffs": [
               {
                 "stat": "% Melee Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 20,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": null
               }
             ]
           },
@@ -769,12 +625,9 @@
             "buffs": [
               {
                 "stat": "% Melee Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 20,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": null
               }
             ]
           }
@@ -788,12 +641,9 @@
             "buffs": [
               {
                 "stat": "Intelligence",
-                "minValue": 120,
                 "incrementBy": 120,
-                "maxStacks": 2,
-                "critMinValue": 140,
                 "critIncrementBy": 140,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           },
@@ -802,12 +652,9 @@
             "buffs": [
               {
                 "stat": "Intelligence",
-                "minValue": 150,
                 "incrementBy": 150,
-                "maxStacks": 2,
-                "critMinValue": 170,
                 "critIncrementBy": 170,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           }
@@ -821,12 +668,9 @@
             "buffs": [
               {
                 "stat": "Chance",
-                "minValue": 40,
                 "incrementBy": 40,
-                "maxStacks": 2,
-                "critMinValue": 60,
                 "critIncrementBy": 60,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           },
@@ -835,12 +679,9 @@
             "buffs": [
               {
                 "stat": "Chance",
-                "minValue": 60,
                 "incrementBy": 60,
-                "maxStacks": 2,
-                "critMinValue": 80,
                 "critIncrementBy": 80,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           },
@@ -849,12 +690,9 @@
             "buffs": [
               {
                 "stat": "Chance",
-                "minValue": 80,
                 "incrementBy": 80,
-                "maxStacks": 2,
-                "critMinValue": 100,
                 "critIncrementBy": 100,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           }
@@ -868,12 +706,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 80,
-                "incrementBy": null,
-                "maxStacks": 2,
-                "critMinValue": null,
+                "incrementBy": 80,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 2
               }
             ]
           },
@@ -882,12 +717,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 120,
-                "incrementBy": null,
-                "maxStacks": 2,
-                "critMinValue": null,
+                "incrementBy": 120,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 2
               }
             ]
           },
@@ -896,12 +728,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": 2,
-                "critMinValue": null,
+                "incrementBy": 150,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 2
               }
             ]
           }
@@ -915,12 +744,9 @@
             "buffs": [
               {
                 "stat": "Strength",
-                "minValue": 40,
                 "incrementBy": 40,
-                "maxStacks": 2,
-                "critMinValue": 60,
                 "critIncrementBy": 60,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           },
@@ -929,12 +755,9 @@
             "buffs": [
               {
                 "stat": "Strength",
-                "minValue": 60,
                 "incrementBy": 60,
-                "maxStacks": 2,
-                "critMinValue": 80,
                 "critIncrementBy": 80,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           },
@@ -943,12 +766,9 @@
             "buffs": [
               {
                 "stat": "Strength",
-                "minValue": 80,
                 "incrementBy": 80,
-                "maxStacks": 2,
-                "critMinValue": 100,
                 "critIncrementBy": 100,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           }
@@ -962,21 +782,15 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 120,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 120,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               },
               {
                 "stat": "Power",
-                "minValue": 160,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 160,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           },
@@ -985,21 +799,15 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 200,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 200,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               },
               {
                 "stat": "Power",
-                "minValue": 250,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 250,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -1015,12 +823,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 50,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 50,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           },
@@ -1029,12 +834,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 150,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           },
@@ -1043,12 +845,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 200,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 200,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -1065,12 +864,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 70,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 70,
+                "critIncrementBy": 70,
+                "maxStacks": 1
               }
             ]
           },
@@ -1079,12 +875,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 110,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 110,
+                "critIncrementBy": 110,
+                "maxStacks": 1
               }
             ]
           },
@@ -1093,12 +886,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 150,
+                "critIncrementBy": 150,
+                "maxStacks": 1
               }
             ]
           }
@@ -1114,12 +904,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 50,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 60,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 50,
+                "critIncrementBy": 60,
+                "maxStacks": 1
               }
             ]
           },
@@ -1128,12 +915,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 100,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 110,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 100,
+                "critIncrementBy": 110,
+                "maxStacks": 1
               }
             ]
           },
@@ -1142,12 +926,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 160,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 150,
+                "critIncrementBy": 160,
+                "maxStacks": 1
               }
             ]
           }
@@ -1161,12 +942,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 50,
                 "incrementBy": 50,
-                "maxStacks": 2,
-                "critMinValue": 55,
                 "critIncrementBy": 55,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           },
@@ -1175,12 +953,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 60,
                 "incrementBy": 60,
-                "maxStacks": 2,
-                "critMinValue": 65,
                 "critIncrementBy": 65,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           },
@@ -1189,12 +964,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 75,
                 "incrementBy": 75,
-                "maxStacks": 2,
-                "critMinValue": 80,
                 "critIncrementBy": 80,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           }
@@ -1208,12 +980,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 300,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 300,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -1227,12 +996,9 @@
             "buffs": [
               {
                 "stat": "Final Damage",
-                "minValue": 15,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 15,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -1248,12 +1014,9 @@
             "buffs": [
               {
                 "stat": "Agility",
-                "minValue": 60,
                 "incrementBy": 60,
-                "maxStacks": 2,
-                "critMinValue": 80,
                 "critIncrementBy": 80,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           },
@@ -1262,12 +1025,9 @@
             "buffs": [
               {
                 "stat": "Agility",
-                "minValue": 100,
                 "incrementBy": 100,
-                "maxStacks": 2,
-                "critMinValue": 120,
                 "critIncrementBy": 120,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           }
@@ -1281,12 +1041,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 100,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 100,
+                "critIncrementBy": 100,
+                "maxStacks": 1
               }
             ]
           },
@@ -1295,12 +1052,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 150,
+                "critIncrementBy": 150,
+                "maxStacks": 1
               }
             ]
           }
@@ -1314,12 +1068,9 @@
             "buffs": [
               {
                 "stat": "Chance",
-                "minValue": 40,
                 "incrementBy": 40,
-                "maxStacks": 2,
-                "critMinValue": 60,
                 "critIncrementBy": 60,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           },
@@ -1328,12 +1079,9 @@
             "buffs": [
               {
                 "stat": "Chance",
-                "minValue": 80,
                 "incrementBy": 80,
-                "maxStacks": 2,
-                "critMinValue": 100,
                 "critIncrementBy": 100,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           }
@@ -1347,12 +1095,9 @@
             "buffs": [
               {
                 "stat": "Strength",
-                "minValue": 100,
                 "incrementBy": 100,
-                "maxStacks": 2,
-                "critMinValue": 120,
                 "critIncrementBy": 120,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           }
@@ -1369,12 +1114,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 150,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -1388,21 +1130,15 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 100,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 100,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               },
               {
                 "stat": "Damage",
-                "minValue": 5,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 5,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           },
@@ -1411,21 +1147,15 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 150,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               },
               {
                 "stat": "Damage",
-                "minValue": 10,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 10,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           },
@@ -1434,21 +1164,15 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 200,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 200,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               },
               {
                 "stat": "Damage",
-                "minValue": 15,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 15,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -1464,12 +1188,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 70,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 90,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 70,
+                "critIncrementBy": 90,
+                "maxStacks": 1
               }
             ]
           },
@@ -1478,12 +1199,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 110,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 130,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 110,
+                "critIncrementBy": 130,
+                "maxStacks": 1
               }
             ]
           },
@@ -1492,12 +1210,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 170,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 150,
+                "critIncrementBy": 170,
+                "maxStacks": 1
               }
             ]
           }
@@ -1513,12 +1228,9 @@
             "buffs": [
               {
                 "stat": "% Ranged Damage",
-                "minValue": 10,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 10,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           },
@@ -1527,12 +1239,9 @@
             "buffs": [
               {
                 "stat": "% Ranged Damage",
-                "minValue": 10,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 10,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -1546,12 +1255,9 @@
             "buffs": [
               {
                 "stat": "% Melee Damage",
-                "minValue": 10,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 10,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           },
@@ -1560,12 +1266,9 @@
             "buffs": [
               {
                 "stat": "% Melee Damage",
-                "minValue": 10,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 10,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           },
@@ -1574,12 +1277,9 @@
             "buffs": [
               {
                 "stat": "% Melee Damage",
-                "minValue": 10,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 10,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -1593,12 +1293,9 @@
             "buffs": [
               {
                 "stat": "Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 22,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 20,
+                "critIncrementBy": 22,
+                "maxStacks": 1
               }
             ]
           },
@@ -1607,12 +1304,9 @@
             "buffs": [
               {
                 "stat": "Damage",
-                "minValue": 30,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 33,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 30,
+                "critIncrementBy": 33,
+                "maxStacks": 1
               }
             ]
           },
@@ -1621,12 +1315,9 @@
             "buffs": [
               {
                 "stat": "Damage",
-                "minValue": 40,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 44,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 40,
+                "critIncrementBy": 44,
+                "maxStacks": 1
               }
             ]
           }
@@ -1640,12 +1331,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 150,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -1659,12 +1347,9 @@
             "buffs": [
               {
                 "stat": "Pushback Damage",
-                "minValue": 80,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 80,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 80,
+                "critIncrementBy": 80,
+                "maxStacks": 1
               }
             ]
           }
@@ -1678,12 +1363,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 200,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 220,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 200,
+                "critIncrementBy": 220,
+                "maxStacks": 1
               }
             ]
           }
@@ -1699,12 +1381,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 70,
                 "incrementBy": 70,
-                "maxStacks": 2,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 2
               }
             ]
           },
@@ -1713,12 +1392,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 110,
                 "incrementBy": 110,
-                "maxStacks": 2,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 2
               }
             ]
           },
@@ -1727,12 +1403,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
                 "incrementBy": 150,
-                "maxStacks": 2,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 2
               }
             ]
           }
@@ -1746,12 +1419,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 150,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           },
@@ -1760,12 +1430,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 150,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -1779,21 +1446,15 @@
             "buffs": [
               {
                 "stat": "Damage",
-                "minValue": 12,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 16,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 12,
+                "critIncrementBy": 16,
+                "maxStacks": 1
               },
               {
                 "stat": "Pushback Damage",
-                "minValue": 25,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 30,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 25,
+                "critIncrementBy": 30,
+                "maxStacks": 1
               }
             ]
           },
@@ -1802,21 +1463,15 @@
             "buffs": [
               {
                 "stat": "Damage",
-                "minValue": 19,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 23,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 19,
+                "critIncrementBy": 23,
+                "maxStacks": 1
               },
               {
                 "stat": "Pushback Damage",
-                "minValue": 35,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 40,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 35,
+                "critIncrementBy": 40,
+                "maxStacks": 1
               }
             ]
           },
@@ -1825,21 +1480,15 @@
             "buffs": [
               {
                 "stat": "Damage",
-                "minValue": 25,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 30,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 25,
+                "critIncrementBy": 30,
+                "maxStacks": 1
               },
               {
                 "stat": "Pushback Damage",
-                "minValue": 40,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 50,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 40,
+                "critIncrementBy": 50,
+                "maxStacks": 1
               }
             ]
           }
@@ -1855,12 +1504,9 @@
             "buffs": [
               {
                 "stat": "Final Damage",
-                "minValue": 1,
                 "incrementBy": 1,
-                "maxStacks": 60,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 60
               }
             ]
           },
@@ -1869,12 +1515,9 @@
             "buffs": [
               {
                 "stat": "Final Damage",
-                "minValue": 1,
                 "incrementBy": 1,
-                "maxStacks": 80,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 80
               }
             ]
           },
@@ -1883,12 +1526,9 @@
             "buffs": [
               {
                 "stat": "Final Damage",
-                "minValue": 1,
                 "incrementBy": 1,
-                "maxStacks": 100,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 100
               }
             ]
           }
@@ -1902,12 +1542,9 @@
             "buffs": [
               {
                 "stat": "Final Damage",
-                "minValue": 1,
                 "incrementBy": 1,
-                "maxStacks": 20,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 20
               }
             ]
           },
@@ -1916,12 +1553,9 @@
             "buffs": [
               {
                 "stat": "Final Damage",
-                "minValue": 1,
                 "incrementBy": 1,
-                "maxStacks": 20,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 20
               }
             ]
           }
@@ -1935,21 +1569,15 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 75,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 75,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               },
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 150,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           },
@@ -1958,21 +1586,15 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 100,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 100,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               },
               {
                 "stat": "Power",
-                "minValue": 200,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 200,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -1988,39 +1610,27 @@
             "buffs": [
               {
                 "stat": "Intelligence",
-                "minValue": 100,
                 "incrementBy": 100,
-                "maxStacks": 2,
-                "critMinValue": 130,
                 "critIncrementBy": 130,
-                "critMaxStacks": 2
+                "maxStacks": 2
               },
               {
                 "stat": "Chance",
-                "minValue": 100,
                 "incrementBy": 100,
-                "maxStacks": 2,
-                "critMinValue": 130,
                 "critIncrementBy": 130,
-                "critMaxStacks": 2
+                "maxStacks": 2
               },
               {
                 "stat": "Strength",
-                "minValue": 100,
                 "incrementBy": 100,
-                "maxStacks": 2,
-                "critMinValue": 130,
                 "critIncrementBy": 130,
-                "critMaxStacks": 2
+                "maxStacks": 2
               },
               {
                 "stat": "Agility",
-                "minValue": 100,
                 "incrementBy": 100,
-                "maxStacks": 2,
-                "critMinValue": 130,
                 "critIncrementBy": 130,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           },
@@ -2029,39 +1639,27 @@
             "buffs": [
               {
                 "stat": "Intelligence",
-                "minValue": 150,
                 "incrementBy": 150,
-                "maxStacks": 2,
-                "critMinValue": 180,
                 "critIncrementBy": 180,
-                "critMaxStacks": 2
+                "maxStacks": 2
               },
               {
                 "stat": "Chance",
-                "minValue": 150,
                 "incrementBy": 150,
-                "maxStacks": 2,
-                "critMinValue": 180,
                 "critIncrementBy": 180,
-                "critMaxStacks": 2
+                "maxStacks": 2
               },
               {
                 "stat": "Strength",
-                "minValue": 150,
                 "incrementBy": 150,
-                "maxStacks": 2,
-                "critMinValue": 180,
                 "critIncrementBy": 180,
-                "critMaxStacks": 2
+                "maxStacks": 2
               },
               {
                 "stat": "Agility",
-                "minValue": 150,
                 "incrementBy": 150,
-                "maxStacks": 2,
-                "critMinValue": 180,
                 "critIncrementBy": 180,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           },
@@ -2070,39 +1668,27 @@
             "buffs": [
               {
                 "stat": "Intelligence",
-                "minValue": 200,
                 "incrementBy": 200,
-                "maxStacks": 2,
-                "critMinValue": 230,
                 "critIncrementBy": 230,
-                "critMaxStacks": 2
+                "maxStacks": 2
               },
               {
                 "stat": "Chance",
-                "minValue": 200,
                 "incrementBy": 200,
-                "maxStacks": 2,
-                "critMinValue": 230,
                 "critIncrementBy": 230,
-                "critMaxStacks": 2
+                "maxStacks": 2
               },
               {
                 "stat": "Strength",
-                "minValue": 200,
                 "incrementBy": 200,
-                "maxStacks": 2,
-                "critMinValue": 230,
                 "critIncrementBy": 230,
-                "critMaxStacks": 2
+                "maxStacks": 2
               },
               {
                 "stat": "Agility",
-                "minValue": 200,
                 "incrementBy": 200,
-                "maxStacks": 2,
-                "critMinValue": 230,
                 "critIncrementBy": 230,
-                "critMaxStacks": 2
+                "maxStacks": 2
               }
             ]
           }
@@ -2116,12 +1702,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
                 "incrementBy": 150,
-                "maxStacks": 2,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 2
               }
             ]
           },
@@ -2130,12 +1713,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
                 "incrementBy": 150,
-                "maxStacks": 2,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 2
               }
             ]
           },
@@ -2144,12 +1724,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
                 "incrementBy": 150,
-                "maxStacks": 2,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 2
               }
             ]
           }
@@ -2163,12 +1740,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
                 "incrementBy": 150,
-                "maxStacks": 2,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 2
               }
             ]
           },
@@ -2177,12 +1751,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
                 "incrementBy": 150,
-                "maxStacks": 2,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 2
               }
             ]
           }
@@ -2198,12 +1769,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 200,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 200,
+                "critIncrementBy": 200,
+                "maxStacks": 1
               }
             ]
           },
@@ -2212,12 +1780,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 200,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 200,
+                "critIncrementBy": 200,
+                "maxStacks": 1
               }
             ]
           }
@@ -2231,12 +1796,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 70,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 70,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 70,
+                "critIncrementBy": 70,
+                "maxStacks": 1
               }
             ]
           },
@@ -2245,12 +1807,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 110,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 110,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 110,
+                "critIncrementBy": 110,
+                "maxStacks": 1
               }
             ]
           },
@@ -2259,12 +1818,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 150,
-                "critIncrementBy": null,
-                "critMaxStacks": null
+                "incrementBy": 150,
+                "critIncrementBy": 150,
+                "maxStacks": 1
               }
             ]
           }
@@ -2278,12 +1834,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 100,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 100,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           },
@@ -2292,12 +1845,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 150,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 150,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           },
@@ -2306,12 +1856,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "minValue": 200,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
+                "incrementBy": 200,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 1
               }
             ]
           }
@@ -2325,21 +1872,15 @@
             "buffs": [
               {
                 "stat": "Pushback Damage",
-                "minValue": 10,
                 "incrementBy": 10,
-                "maxStacks": 10,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 10
               },
               {
                 "stat": "Pushback Damage",
-                "minValue": 40,
                 "incrementBy": 40,
-                "maxStacks": 10,
-                "critMinValue": null,
                 "critIncrementBy": null,
-                "critMaxStacks": null
+                "maxStacks": 10
               }
             ]
           }
@@ -2353,7 +1894,6 @@
       "buffs": [
         {
           "stat": "Final Damage",
-          "minValue": 1,
           "incrementBy": 1,
           "maxStacks": 10
         }
@@ -2364,7 +1904,6 @@
       "buffs": [
         {
           "stat": "Final Damage",
-          "minValue": 10,
           "incrementBy": 2,
           "maxStacks": 5
         }
@@ -2375,7 +1914,6 @@
       "buffs": [
         {
           "stat": "Final Damage",
-          "minValue": 10,
           "incrementBy": 1,
           "maxStacks": 10
         }
@@ -2386,9 +1924,8 @@
       "buffs": [
         {
           "stat": "Final Damage",
-          "minValue": 10,
-          "incrementBy": null,
-          "maxStacks": null
+          "incrementBy": 10,
+          "maxStacks": 1
         }
       ]
     },
@@ -2397,27 +1934,23 @@
       "buffs": [
         {
           "stat": "Chance",
-          "minValue": 300,
-          "incrementBy": null,
-          "maxStacks": null
+          "incrementBy": 300,
+          "maxStacks": 1
         },
         {
           "stat": "Strength",
-          "minValue": 300,
-          "incrementBy": null,
-          "maxStacks": null
+          "incrementBy": 300,
+          "maxStacks": 1
         },
         {
           "stat": "Agility",
-          "minValue": 300,
-          "incrementBy": null,
-          "maxStacks": null
+          "incrementBy": 300,
+          "maxStacks": 1
         },
         {
           "stat": "Intelligence",
-          "minValue": 300,
-          "incrementBy": null,
-          "maxStacks": null
+          "incrementBy": 300,
+          "maxStacks": 1
         }
       ]
     }
