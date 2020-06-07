@@ -1,7 +1,3 @@
-import sys
-
-sys.path.append("../")
-
 from app import session_scope
 from app.database.model_spell_translation import ModelSpellTranslation
 from app.database.model_spell_stats import ModelSpellStats
@@ -45,7 +41,7 @@ with open(os.path.join(root_dir, "app/database/data/buffs.json"), "r") as file:
                             crit_increment_by=buff["critIncrementBy"],
                             max_stacks=buff["maxStacks"],
                         )
-                        session.add(buff_object)
+                        db_session.add(buff_object)
 
         for item in all_items:
             item_id = (
@@ -62,4 +58,4 @@ with open(os.path.join(root_dir, "app/database/data/buffs.json"), "r") as file:
                     increment_by=buff["incrementBy"],
                     max_stacks=buff["maxStacks"],
                 )
-                session.add(buff_object)
+                db_session.add(buff_object)
