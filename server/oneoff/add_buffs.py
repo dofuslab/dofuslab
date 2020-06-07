@@ -59,7 +59,6 @@ with open(os.path.join(root_dir, "app/database/data/buffs.json"), "r") as file:
                 buff_object = ModelBuff(
                     item_id=item_id,
                     stat=to_stat_enum[buff["stat"]],
-                    min_value=buff["minValue"],
                     increment_by=buff["incrementBy"],
                     max_stacks=buff["maxStacks"],
                 )
