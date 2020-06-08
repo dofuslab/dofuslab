@@ -192,7 +192,7 @@ def load_spell_buffs(spell_buff_ids):
     )
 
 
-class SpellBuffLoader(Dataloader):
+class SpellBuffLoader(DataLoader):
     def batch_load_fn(self, spell_buff_ids):
         return load_spell_buffs(spell_buff_ids)
 
@@ -209,6 +209,6 @@ def load_item_buffs(item_buff_ids):
     )
 
 
-class ItemBuffLoader(item_buff_ids):
+class ItemBuffLoader(DataLoader):
     def batch_load_fn(self, item_buff_ids):
         return load_item_buffs(item_buff_ids)
