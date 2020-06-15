@@ -605,17 +605,7 @@ if __name__ == "__main__":
             add_classes_and_spells()
             break
         elif response == "n":
-            while True:
-                response = input(
-                    "Would you like to add item types and item slots? (y/n)? "
-                )
-                if response == "y":
-                    add_item_types_and_slots()
-                    break
-                elif response == "n":
-                    break
-                else:
-                    print("Invalid response, please type 'y' or 'n'")
+            add_item_types_and_slots()
 
             while True:
                 response = input("Would you like to add sets and items? (y/n)? ")
