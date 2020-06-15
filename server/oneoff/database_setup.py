@@ -1,4 +1,6 @@
+import sys
 from app import db
+from app import session_scope
 from app.database.model_item import ModelItem
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_stat_translation import ModelItemStatTranslation
@@ -25,12 +27,13 @@ from app.database.model_spell_stats import ModelSpellStats
 from app.database.model_spell_stat_translation import ModelSpellStatTranslation
 from app.database.model_spell_effect import ModelSpellEffect
 from app.database import base, enums
-from oneoff.sync_spell import to_spell_enum
+from oneoff.sync_spell import to_spell_enum, create_spell_stats
 from sqlalchemy.schema import MetaData
 from worker import redis_connection
 import sqlalchemy
 import json
-import sys
+
+# import sys
 import os
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -532,104 +535,51 @@ if __name__ == "__main__":
 
     print("Adding classes to database")
     with open(os.path.join(app_root, "app/database/data/spells.json"), "r") as file:
-        data = json.load(file)
-        for record in data:
-            en_name = record["names"]["en"]
-            class_object = ModelClass(
-                face_image_url=face_url_base.format(en_name),
-                male_sprite_image_url=male_sprite_url_base.format(en_name),
-                female_sprite_image_url=female_sprite_url_base.format(en_name),
-            )
-
-            for locale in record["names"]:
-                class_translation = ModelClassTranslation(
-                    class_id=class_object.uuid,
-                    locale=locale,
-                    name=record["names"][locale],
+        with session_scope() as db_session:
+            data = json.load(file)
+            for record in data:
+                en_name = record["names"]["en"]
+                class_object = ModelClass(
+                    face_image_url=face_url_base.format(en_name),
+                    male_sprite_image_url=male_sprite_url_base.format(en_name),
+                    female_sprite_image_url=female_sprite_url_base.format(en_name),
                 )
-                db.session.add(class_translation)
-                class_object.name.append(class_translation)
+                db_session.add(class_object)
+                db_session.flush()
 
-            for spell_pair in record["spells"]:
-                spell_pair_object = ModelSpellVariantPair(class_id=class_object.uuid)
-                for spell in spell_pair:
-                    spell_object = ModelSpell(
-                        spell_variant_pair_id=spell_pair_object.uuid,
-                        image_url=spell["imageUrl"],
-                        is_trap=spell.get("isTrap", False),
+                for locale in record["names"]:
+                    class_translation = ModelClassTranslation(
+                        class_id=class_object.uuid,
+                        locale=locale,
+                        name=record["names"][locale],
                     )
-                    for locale in spell["name"]:
-                        spell_translation = ModelSpellTranslation(
-                            spell_id=spell_object.uuid,
-                            locale=locale,
-                            name=spell["name"][locale],
-                            description=spell["description"][locale],
+                    db_session.add(class_translation)
+                    class_object.name.append(class_translation)
+
+                for spell_pair in record["spells"]:
+                    spell_pair_object = ModelSpellVariantPair(
+                        class_id=class_object.uuid
+                    )
+                    db_session.add(spell_pair_object)
+                    db_session.flush()
+
+                    for spell in spell_pair:
+                        spell_object = ModelSpell(
+                            spell_variant_pair_id=spell_pair_object.uuid,
+                            image_url=spell["imageUrl"],
+                            is_trap=spell.get("isTrap", False),
                         )
-                        db.session.add(spell_translation)
-                        spell_object.spell_translation.append(spell_translation)
+                        db_session.add(spell_object)
+                        db_session.flush()
 
-                    for level in spell["effects"]:
-                        spell_stat = ModelSpellStats(
-                            level=level["level"],
-                            ap_cost=level["apCost"],
-                            cooldown=level["cooldown"],
-                            base_crit_chance=level["baseCritRate"],
-                            casts_per_turn=level["castsPerTurn"],
-                            casts_per_target=level["castsPerPlayer"],
-                            needs_los=level["needLos"],
-                            has_modifiable_range=level["modifiableRange"],
-                            is_linear=level["isLinear"],
-                            needs_free_cell=level["needsFreeCell"],
-                            min_range=level["spellRange"]["minRange"],
-                            max_range=level["spellRange"]["maxRange"],
-                        )
-
-                        if level["aoeType"]:
-                            for locale in level["aoeType"]:
-                                spell_stat_translation = ModelSpellStatTranslation(
-                                    spell_stat_id=spell_stat.uuid,
-                                    locale=locale,
-                                    aoe_type=level["aoeType"][locale],
-                                )
-                                db.session.add(spell_stat_translation)
-                                spell_stat.spell_stat_translation.append(
-                                    spell_stat_translation
-                                )
-
-                        for i in range(len(level["normalEffects"]["modifiableEffect"])):
-                            spell_effect = ModelSpellEffect(
-                                spell_stat_id=spell_stat.uuid,
-                                effect_type=to_spell_enum[
-                                    level["normalEffects"]["modifiableEffect"][i][
-                                        "stat"
-                                    ]
-                                ],
-                                min_damage=level["normalEffects"]["modifiableEffect"][
-                                    i
-                                ]["minStat"],
-                                max_damage=level["normalEffects"]["modifiableEffect"][
-                                    i
-                                ]["maxStat"],
+                        for locale in spell["name"]:
+                            spell_translation = ModelSpellTranslation(
+                                spell_id=spell_object.uuid,
+                                locale=locale,
+                                name=spell["name"][locale],
+                                description=spell["description"][locale],
                             )
+                            db_session.add(spell_translation)
+                            spell_object.spell_translation.append(spell_translation)
 
-                            if level["criticalEffects"].get("modifiableEffect", None):
-                                spell_effect.crit_min_damage = level["criticalEffects"][
-                                    "modifiableEffect"
-                                ][i]["minStat"]
-                                spell_effect.crit_max_damage = level["criticalEffects"][
-                                    "modifiableEffect"
-                                ][i]["maxStat"]
-
-                            db.session.add(spell_effect)
-                            spell_stat.spell_effects.append(spell_effect)
-
-                        db.session.add(spell_stat)
-                        spell_object.spell_stats.append(spell_stat)
-
-                    db.session.add(spell_object)
-                    spell_pair_object.spells.append(spell_object)
-
-                db.session.add(spell_pair_object)
-                class_object.spell_variant_pairs.append(spell_pair_object)
-
-        db.session.commit()
+                        create_spell_stats(db_session, spell, spell_object)
