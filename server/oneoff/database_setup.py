@@ -1,4 +1,3 @@
-import sys
 from app import db
 from app import session_scope
 from app.database.model_item import ModelItem
@@ -32,8 +31,7 @@ from sqlalchemy.schema import MetaData
 from worker import redis_connection
 import sqlalchemy
 import json
-
-# import sys
+import sys
 import os
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -118,16 +116,10 @@ female_sprite_url_base = (
 )
 slot_url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/icons/{}.svg"
 
+item_types = {}
 
-if __name__ == "__main__":
-    # print("Resetting database")
-    # base.Base.metadata.reflect(base.engine)
-    # base.Base.metadata.drop_all(base.engine)
-    # base.Base.metadata.create_all(base.engine)
-    redis_connection.flushall()
 
-    item_types = {}
-
+def add_item_types_and_slots():
     print("Adding item types to database")
     with open(os.path.join(app_root, "app/database/data/item_types.json"), "r") as file:
         data = json.load(file)
@@ -173,6 +165,8 @@ if __name__ == "__main__":
 
     db.session.commit()
 
+
+def add_sets_and_items():
     print("Adding sets to database")
     with open(os.path.join(app_root, "app/database/data/sets.json"), "r") as file:
         data = json.load(file)
@@ -291,6 +285,8 @@ if __name__ == "__main__":
 
         db.session.commit()
 
+
+def add_weapons():
     print("Adding weapons to database")
     with open(os.path.join(app_root, "app/database/data/weapons.json"), "r") as file:
         data = json.load(file)
@@ -387,6 +383,8 @@ if __name__ == "__main__":
 
         db.session.commit()
 
+
+def add_pets():
     print("Adding pets to database")
     with open(os.path.join(app_root, "app/database/data/pets.json"), "r") as file:
         data = json.load(file)
@@ -457,7 +455,9 @@ if __name__ == "__main__":
                 print("KeyError occurred:", err)
 
         db.session.commit()
-    #
+
+
+def add_mounts():
     print("Adding mounts to database")
     with open(os.path.join(app_root, "app/database/data/mounts.json"), "r") as file:
         data = json.load(file)
@@ -533,6 +533,8 @@ if __name__ == "__main__":
 
         db.session.commit()
 
+
+def add_classes_and_spells():
     print("Adding classes to database")
     with open(os.path.join(app_root, "app/database/data/spells.json"), "r") as file:
         with session_scope() as db_session:
@@ -583,3 +585,88 @@ if __name__ == "__main__":
                             spell_object.spell_translation.append(spell_translation)
 
                         create_spell_stats(db_session, spell, spell_object)
+
+
+if __name__ == "__main__":
+    # print("Resetting database")
+    # base.Base.metadata.reflect(base.engine)
+    # base.Base.metadata.drop_all(base.engine)
+    # base.Base.metadata.create_all(base.engine)
+    redis_connection.flushall()
+
+    while True:
+        response = input("Would you like to populate all tables (y/n)? ")
+        if response == "y":
+            add_item_types_and_slots()
+            add_sets_and_items()
+            add_weapons()
+            add_pets()
+            add_mounts()
+            add_classes_and_spells()
+            break
+        elif response == "n":
+            while True:
+                response = input(
+                    "Would you like to add item types and item slots? (y/n)? "
+                )
+                if response == "y":
+                    add_item_types_and_slots()
+                    break
+                elif response == "n":
+                    break
+                else:
+                    print("Invalid response, please type 'y' or 'n'")
+
+            while True:
+                response = input("Would you like to add sets and items? (y/n)? ")
+                if response == "y":
+                    add_sets_and_items()
+                    break
+                elif response == "n":
+                    break
+                else:
+                    print("Invalid response, please type 'y' or 'n'")
+
+            while True:
+                response = input("Would you like to add weapons? (y/n)? ")
+                if response == "y":
+                    add_weapons()
+                    break
+                elif response == "n":
+                    break
+                else:
+                    print("Invalid response, please type 'y' or 'n'")
+
+            while True:
+                response = input("Would you like to add pets? (y/n)? ")
+                if response == "y":
+                    add_pets()
+                    break
+                elif response == "n":
+                    break
+                else:
+                    print("Invalid response, please type 'y' or 'n'")
+
+            while True:
+                response = input("Would you like to add mounts? (y/n)? ")
+                if response == "y":
+                    add_mounts()
+                    break
+                elif response == "n":
+                    break
+                else:
+                    print("Invalid response, please type 'y' or 'n'")
+
+            while True:
+                response = input("Would you like to add class and spell data? (y/n)? ")
+                if response == "y":
+                    add_classes_and_spells()
+                    break
+                elif response == "n":
+                    break
+                else:
+                    print("Invalid response, please type 'y' or 'n'")
+
+            break
+        else:
+            print("Invalid response, please type 'y' or 'n'")

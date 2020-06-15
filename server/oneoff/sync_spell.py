@@ -128,7 +128,6 @@ def create_spell_stats(db_session, record, spell):
                 max_stacks=damage_increase_max_stacks,
             )
             db_session.add(spell_damage_increase)
-            print("Damage increase effect added")
 
 
 def update_spell(db_session, spell_name, record):
