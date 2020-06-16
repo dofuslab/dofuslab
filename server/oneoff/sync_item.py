@@ -64,7 +64,6 @@ def update_or_create_item(db_session, item_name, record):
 
 
 def create_item(db_session, record):
-    print("Loading item types...")
     item_types = {}
     with open(os.path.join(app_root, "app/database/data/item_types.json"), "r") as file:
         data = json.load(file)
@@ -92,6 +91,8 @@ def create_item(db_session, record):
     db_session.flush()
 
     for locale in record["name"]:
+        if record["name"][locale] == None:
+            continue
         item_translations = ModelItemTranslation(
             item_id=item.uuid, locale=locale, name=record["name"][locale],
         )

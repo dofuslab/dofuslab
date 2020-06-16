@@ -1,3 +1,6 @@
+import sys
+
+sys.path.append("../")
 from app import db
 from app import session_scope
 from app.database.model_item import ModelItem
@@ -27,11 +30,13 @@ from app.database.model_spell_stat_translation import ModelSpellStatTranslation
 from app.database.model_spell_effect import ModelSpellEffect
 from app.database import base, enums
 from oneoff.sync_spell import to_spell_enum, create_spell_stats
+import oneoff.sync_item
 from sqlalchemy.schema import MetaData
 from worker import redis_connection
 import sqlalchemy
 import json
-import sys
+
+# import sys
 import os
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -210,178 +215,23 @@ def add_sets_and_items():
 
     print("Adding items to database")
     with open(os.path.join(app_root, "app/database/data/items.json"), "r") as file:
-        data = json.load(file)
-        for record in data:
-            if record["itemType"] == "Living object":
-                continue
-
-            item = ModelItem(
-                dofus_db_id=record["dofusID"],
-                item_type=item_types[record["itemType"]],
-                level=record["level"],
-                image_url=record["imageUrl"],
-            )
-            db.session.add(item)
-
-            conditions = {
-                "conditions": record["conditions"].get("conditions", None),
-                "customConditions": record["conditions"].get("customConditions", None),
-            }
-            item.conditions = conditions
-
-            for locale in record["name"]:
-                if record["name"][locale] == None:
+        with session_scope() as db_session:
+            data = json.load(file)
+            for record in data:
+                if record["itemType"] == "Living object":
                     continue
-                item_translations = ModelItemTranslation(
-                    locale=locale, name=record["name"][locale],
-                )
-                db.session.add(item_translations)
-                item.item_translations.append(item_translations)
 
-            try:
-                i = 0
-                for stat in record.get("stats", []):
-                    item_stat = ModelItemStat(
-                        stat=to_stat_enum[stat["stat"]],
-                        min_value=stat["minStat"],
-                        max_value=stat["maxStat"],
-                        order=i,
-                    )
-                    db.session.add(item_stat)
-                    item.stats.append(item_stat)
-                    i = i + 1
-
-                if record["customStats"] != {} and record["customStats"] != []:
-                    num_of_stats = len(record["customStats"]["en"])
-
-                    for j in range(num_of_stats):
-                        item_stat = ModelItemStat(order=i)
-                        for locale in record["customStats"]:
-                            custom_stat = record["customStats"][locale][j]
-                            stat_translation = ModelItemStatTranslation(
-                                item_stat_id=item_stat.uuid,
-                                locale=locale,
-                                custom_stat=custom_stat,
-                            )
-                            db.session.add(stat_translation)
-                            item_stat.item_stat_translation.append(stat_translation)
-
-                        db.session.add(item_stat)
-                        item.stats.append(item_stat)
-                        i = i + 1
-
-                # If this item belongs in a set, query the set and add the relationship to the record
-                if record.get("setID", None):
-                    set = record["setID"]
-                    set_record = (
-                        db.session.query(ModelSet)
-                        .filter(ModelSet.dofus_db_id == set)
-                        .first()
-                    )
-                    set_record.items.append(item)
-                    db.session.merge(set_record)
-            except KeyError as err:
-                print("KeyError occurred:", err)
-
-        db.session.commit()
+                oneoff.sync_item.create_item(db_session, record)
 
 
 def add_weapons():
     print("Adding weapons to database")
     with open(os.path.join(app_root, "app/database/data/weapons.json"), "r") as file:
-        data = json.load(file)
-        for record in data:
-            item = ModelItem(
-                dofus_db_id=record["dofusID"],
-                item_type=item_types[record["itemType"]],
-                level=record["level"],
-                image_url=record["imageUrl"],
-            )
-            db.session.add(item)
+        with session_scope() as db_session:
+            data = json.load(file)
+            for record in data:
 
-            conditions = {
-                "conditions": record["conditions"]["conditions"],
-                "customConditions": record["conditions"]["customConditions"],
-            }
-            item.conditions = conditions
-
-            for locale in record["name"]:
-                item_translations = ModelItemTranslation(
-                    item_id=item.uuid, locale=locale, name=record["name"][locale],
-                )
-                db.session.add(item_translations)
-                item.item_translations.append(item_translations)
-
-            try:
-                i = 0
-                for stat in record["stats"]:
-                    item_stat = ModelItemStat(
-                        stat=to_stat_enum[stat["stat"]],
-                        min_value=stat["minStat"],
-                        max_value=stat["maxStat"],
-                        order=i,
-                    )
-                    db.session.add(item_stat)
-                    item.stats.append(item_stat)
-                    i = i + 1
-                if record["customStats"] != {} and record["customStats"] != []:
-                    num_of_stats = len(record["customStats"]["en"])
-
-                    for j in range(num_of_stats):
-                        item_stat = ModelItemStat(order=i)
-                        for locale in record["customStats"]:
-                            custom_stat = record["customStats"][locale][j]
-                            stat_translation = ModelItemStatTranslation(
-                                item_stat_id=item_stat.uuid,
-                                locale=locale,
-                                custom_stat=custom_stat,
-                            )
-                            db.session.add(stat_translation)
-                            item_stat.item_stat_translation.append(stat_translation)
-
-                        db.session.add(item_stat)
-                        item.stats.append(item_stat)
-                        i = i + 1
-
-                # If this item belongs in a set, query the set and add the relationship to the record
-                if record["setID"]:
-                    set = record["setID"]
-                    set_record = (
-                        db.session.query(ModelSet)
-                        .filter(ModelSet.dofus_db_id == set)
-                        .first()
-                    )
-                    set_record.items.append(item)
-                    db.session.merge(set_record)
-            except KeyError as err:
-                print("KeyError occurred:", err)
-
-            weapon_stat = ModelWeaponStat(
-                ap_cost=record["weaponStats"]["apCost"],
-                uses_per_turn=record["weaponStats"]["usesPerTurn"],
-                min_range=record["weaponStats"]["minRange"],
-                max_range=record["weaponStats"]["maxRange"],
-            )
-
-            if record["weaponStats"]["baseCritChance"] > 0:
-                weapon_stat.base_crit_chance = (
-                    record["weaponStats"]["baseCritChance"],
-                )
-                weapon_stat.crit_bonus_damage = (
-                    record["weaponStats"]["critBonusDamage"],
-                )
-
-            for effect in record["weaponStats"]["weapon_effects"]:
-                weapon_effects = ModelWeaponEffect(
-                    effect_type=to_effect_enum[effect["stat"]],
-                    min_damage=effect["minStat"],
-                    max_damage=effect["maxStat"],
-                )
-                weapon_stat.weapon_effects.append(weapon_effects)
-
-            item.weapon_stats = weapon_stat
-
-        db.session.commit()
+                oneoff.sync_item.create_item(db_session, record)
 
 
 def add_pets():
@@ -587,13 +437,23 @@ def add_classes_and_spells():
                         create_spell_stats(db_session, spell, spell_object)
 
 
-if __name__ == "__main__":
-    # print("Resetting database")
-    # base.Base.metadata.reflect(base.engine)
-    # base.Base.metadata.drop_all(base.engine)
-    # base.Base.metadata.create_all(base.engine)
-    redis_connection.flushall()
+def add_buffs():
+    pass
 
+def populate_table_for(table, fn):
+    while True:
+        str = "Would you like to add {}? (y/n)? ".format(table)
+        response = input(str)
+        if response == "y":
+            fn()
+            break
+        elif response == "n":
+            break
+        else:
+            print("Invalid response, please type 'y' or 'n'")
+
+
+def setup_db():
     while True:
         response = input("Would you like to populate all tables (y/n)? ")
         if response == "y":
@@ -605,58 +465,23 @@ if __name__ == "__main__":
             add_classes_and_spells()
             break
         elif response == "n":
-            add_item_types_and_slots()
-
-            while True:
-                response = input("Would you like to add sets and items? (y/n)? ")
-                if response == "y":
-                    add_sets_and_items()
-                    break
-                elif response == "n":
-                    break
-                else:
-                    print("Invalid response, please type 'y' or 'n'")
-
-            while True:
-                response = input("Would you like to add weapons? (y/n)? ")
-                if response == "y":
-                    add_weapons()
-                    break
-                elif response == "n":
-                    break
-                else:
-                    print("Invalid response, please type 'y' or 'n'")
-
-            while True:
-                response = input("Would you like to add pets? (y/n)? ")
-                if response == "y":
-                    add_pets()
-                    break
-                elif response == "n":
-                    break
-                else:
-                    print("Invalid response, please type 'y' or 'n'")
-
-            while True:
-                response = input("Would you like to add mounts? (y/n)? ")
-                if response == "y":
-                    add_mounts()
-                    break
-                elif response == "n":
-                    break
-                else:
-                    print("Invalid response, please type 'y' or 'n'")
-
-            while True:
-                response = input("Would you like to add class and spell data? (y/n)? ")
-                if response == "y":
-                    add_classes_and_spells()
-                    break
-                elif response == "n":
-                    break
-                else:
-                    print("Invalid response, please type 'y' or 'n'")
-
+            populate_table_for("item types and item slots", add_item_types_and_slots)
+            populate_table_for("sets and items", add_sets_and_items)
+            populate_table_for("weapons", add_weapons)
+            populate_table_for("pets", add_pets)
+            populate_table_for("mounts", add_mounts)
+            populate_table_for("classes and spells", add_classes_and_spells)
+            populate_table_for("spell and item buffs", add_buffs)
             break
         else:
             print("Invalid response, please type 'y' or 'n'")
+
+
+if __name__ == "__main__":
+    # print("Resetting database")
+    # base.Base.metadata.reflect(base.engine)
+    # base.Base.metadata.drop_all(base.engine)
+    # base.Base.metadata.create_all(base.engine)
+    redis_connection.flushall()
+
+    setup_db()
