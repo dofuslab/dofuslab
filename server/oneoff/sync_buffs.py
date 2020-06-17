@@ -84,15 +84,22 @@ def update_or_create_item_buff(db_session, item_name, record):
 
 
 def update_or_create_spell_buff(db_session, spell_name, spell_data):
-    spell_id = (
+    translations = (
         db_session.query(ModelSpellTranslation)
         .filter(
             ModelSpellTranslation.locale == "en",
             ModelSpellTranslation.name == spell_name,
         )
-        .one()
-        .spell_id
+        .all()
     )
+    # I'm pretty sure spell names were recently made unique for all classes
+    # but a little error handling couldn't hurt
+    if len(translations) > 1:
+        print("Multiple spells with that name exist, skipping it.")
+        return
+
+    spell_id = translations[0].spell_id
+
     spell_stat_ids = {}
 
     for spell_data_per_level in spell_data["levels"]:
@@ -172,11 +179,6 @@ def sync_buffs():
     with open(os.path.join(root_dir, "app/database/data/buffs.json"), "r") as file:
         data = json.load(file)
 
-        name_to_class_record_map = {}
-
-        for class_name in data["spells"]:
-            name_to_class_record_map[class_name] = data["spells"][class_name]
-
         while True:
             response = input(
                 "Enter a class name (e.g. 'Eliotrope'), type 'update all' to update all classes, or type 'q' to move onto item buffs: "
@@ -190,8 +192,8 @@ def sync_buffs():
                             db_session, class_name, data["spells"][class_name]
                         )
                     break
-                elif response in name_to_class_record_map:
-                    all_spell_data = name_to_class_record_map[response]
+                elif response in data["spells"]:
+                    all_spell_data = data["spells"][response]
                     sync_spell_buffs(db_session, response, all_spell_data)
                 else:
                     print(
