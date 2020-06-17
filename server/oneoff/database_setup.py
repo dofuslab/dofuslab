@@ -1,6 +1,3 @@
-import sys
-
-sys.path.append("../")
 from app import db
 from app import session_scope
 from app.database.model_item import ModelItem
@@ -31,12 +28,12 @@ from app.database.model_spell_effect import ModelSpellEffect
 from app.database import base, enums
 from oneoff.sync_spell import to_spell_enum, create_spell_stats
 import oneoff.sync_item
+import oneoff.sync_buffs
 from sqlalchemy.schema import MetaData
 from worker import redis_connection
 import sqlalchemy
 import json
-
-# import sys
+import sys
 import os
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -78,6 +75,7 @@ to_stat_enum = {
     "% Weapon Damage": enums.Stat.PCT_WEAPON_DAMAGE,
     "% Ranged Damage": enums.Stat.PCT_RANGED_DAMAGE,
     "% Melee Damage": enums.Stat.PCT_MELEE_DAMAGE,
+    "% Final Damage": enums.Stat.PCT_FINAL_DAMAGE,
     "Neutral Resistance": enums.Stat.NEUTRAL_RES,
     "% Neutral Resistance": enums.Stat.PCT_NEUTRAL_RES,
     "Earth Resistance": enums.Stat.EARTH_RES,
@@ -438,7 +436,45 @@ def add_classes_and_spells():
 
 
 def add_buffs():
-    pass
+    print("Adding buffs to database")
+    with open(os.path.join(app_root, "app/database/data/buffs.json"), "r") as file:
+        data = json.load(file)
+
+        all_classes = data["spells"]
+        all_items = data["items"]
+
+        with session_scope() as db_session:
+            for class_name in all_classes:
+                for spell in all_classes[class_name]:
+                    spell_id = (
+                        db_session.query(ModelSpellTranslation)
+                        .filter_by(name=spell["name"], locale="en")
+                        .one()
+                        .spell_id
+                    )
+
+                    for level in spell["levels"]:
+                        spell_stat_id = (
+                            db_session.query(ModelSpellStats)
+                            .filter_by(spell_id=spell_id, level=level["level"])
+                            .one()
+                            .uuid
+                        )
+
+                        oneoff.sync_buffs.add_spell_buff_for_level(
+                            db_session, spell_stat_id, level
+                        )
+
+            for item in all_items:
+                item_id = (
+                    db_session.query(ModelItemTranslation)
+                    .filter_by(name=item["name"], locale="en")
+                    .one()
+                    .item_id
+                )
+
+                oneoff.sync_buffs.add_item_buffs(db_session, item_id, item)
+
 
 def populate_table_for(table, fn):
     while True:
