@@ -995,7 +995,7 @@
             "level": 190,
             "buffs": [
               {
-                "stat": "Final Damage",
+                "stat": "% Final Damage",
                 "incrementBy": 15,
                 "critIncrementBy": null,
                 "maxStacks": 1
@@ -1503,7 +1503,7 @@
             "level": 1,
             "buffs": [
               {
-                "stat": "Final Damage",
+                "stat": "% Final Damage",
                 "incrementBy": 1,
                 "critIncrementBy": null,
                 "maxStacks": 60
@@ -1514,7 +1514,7 @@
             "level": 66,
             "buffs": [
               {
-                "stat": "Final Damage",
+                "stat": "% Final Damage",
                 "incrementBy": 1,
                 "critIncrementBy": null,
                 "maxStacks": 80
@@ -1525,7 +1525,7 @@
             "level": 132,
             "buffs": [
               {
-                "stat": "Final Damage",
+                "stat": "% Final Damage",
                 "incrementBy": 1,
                 "critIncrementBy": null,
                 "maxStacks": 100
@@ -1541,7 +1541,7 @@
             "level": 95,
             "buffs": [
               {
-                "stat": "Final Damage",
+                "stat": "% Final Damage",
                 "incrementBy": 1,
                 "critIncrementBy": null,
                 "maxStacks": 20
@@ -1552,7 +1552,7 @@
             "level": 162,
             "buffs": [
               {
-                "stat": "Final Damage",
+                "stat": "% Final Damage",
                 "incrementBy": 1,
                 "critIncrementBy": null,
                 "maxStacks": 20
@@ -1893,7 +1893,7 @@
       "name": "Crimson Dofus",
       "buffs": [
         {
-          "stat": "Final Damage",
+          "stat": "% Final Damage",
           "incrementBy": 1,
           "maxStacks": 10
         }
@@ -1903,7 +1903,7 @@
       "name": "Ebony Dofus",
       "buffs": [
         {
-          "stat": "Final Damage",
+          "stat": "% Final Damage",
           "incrementBy": 2,
           "maxStacks": 5
         }
@@ -1913,7 +1913,7 @@
       "name": "Turquoise Dofus",
       "buffs": [
         {
-          "stat": "Final Damage",
+          "stat": "% Final Damage",
           "incrementBy": 1,
           "maxStacks": 10
         }
@@ -1923,7 +1923,7 @@
       "name": "Vulbis Dofus",
       "buffs": [
         {
-          "stat": "Final Damage",
+          "stat": "% Final Damage",
           "incrementBy": 10,
           "maxStacks": 1
         }
