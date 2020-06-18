@@ -4,7 +4,7 @@ from app.database.model_spell_stats import ModelSpellStats
 from app.database.model_item_translation import ModelItemTranslation
 from app.database.model_buff import ModelBuff
 from app.database.model_item import ModelItem
-import oneoff.database_setup
+from oneoff.enums import to_stat_enum
 import os
 import json
 
@@ -15,7 +15,7 @@ def add_item_buffs(db_session, item_id, record):
     for buff in record["buffs"]:
         buff_object = ModelBuff(
             item_id=item_id,
-            stat=oneoff.database_setup.to_stat_enum[buff["stat"]],
+            stat=to_stat_enum[buff["stat"]],
             increment_by=buff["incrementBy"],
             max_stacks=buff["maxStacks"],
         )
@@ -27,7 +27,7 @@ def update_item_buffs(db_session, item_id, record):
     for buff in record["buffs"]:
         buff_object = ModelBuff(
             item_id=item_id,
-            stat=oneoff.database_setup.to_stat_enum[buff["stat"]],
+            stat=to_stat_enum[buff["stat"]],
             increment_by=buff["incrementBy"],
             max_stacks=buff["maxStacks"],
         )
@@ -38,7 +38,7 @@ def add_spell_buff_for_level(db_session, spell_stat_id, buff_data):
     for buff in buff_data["buffs"]:
         buff_object = ModelBuff(
             spell_stat_id=spell_stat_id,
-            stat=oneoff.database_setup.to_stat_enum[buff["stat"]],
+            stat=to_stat_enum[buff["stat"]],
             increment_by=buff["incrementBy"],
             crit_increment_by=buff["critIncrementBy"],
             max_stacks=buff["maxStacks"],
@@ -53,7 +53,7 @@ def update_spell_buff_for_level(db_session, spell_stat_id, buff_data):
     for buff in buff_data["buffs"]:
         buff_object = ModelBuff(
             spell_stat_id=spell_stat_id,
-            stat=oneoff.database_setup.to_stat_enum[buff["stat"]],
+            stat=to_stat_enum[buff["stat"]],
             increment_by=buff["incrementBy"],
             crit_increment_by=buff["critIncrementBy"],
             max_stacks=buff["maxStacks"],
@@ -74,7 +74,7 @@ def update_or_create_item_buff(db_session, item_name, record):
     buffs = db_session.query(ModelItem).filter(ModelItem.uuid == item_id).one().buff
 
     if len(buffs) >= 1:
-        print("Buffs already exists on this item. Updating buffs...")
+        print("Buffs already exist on this item. Updating buffs...")
         update_item_buffs(db_session, item_id, record)
         print("Buffs for {} updated.".format(item_name))
     else:
@@ -129,7 +129,7 @@ def update_or_create_spell_buff(db_session, spell_name, spell_data):
     )
 
     if len(buffs) >= 1:
-        print("Buffs already exists for {}. Updating buffs...".format(spell_name))
+        print("Buffs already exist for {}. Updating buffs...".format(spell_name))
         for level in spell_stat_ids:
             update_spell_buff_for_level(
                 db_session,
@@ -207,7 +207,7 @@ def sync_buffs():
 
         while True:
             response = input(
-                "Enter an item name (e.g. 'Crimson Dofus'), type 'update all' to update all items in file, or type 'q' to quit: "
+                "Enter an item name (e.g. 'Crimson Dofus') to update its buffs, type 'update all' to update all buffs for items in the file, or type 'q' to quit: "
             )
             if response == "q":
                 break

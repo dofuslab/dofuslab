@@ -25,8 +25,9 @@ from app.database.model_spell_translation import ModelSpellTranslation
 from app.database.model_spell_stats import ModelSpellStats
 from app.database.model_spell_stat_translation import ModelSpellStatTranslation
 from app.database.model_spell_effect import ModelSpellEffect
-from app.database import base, enums
-from oneoff.sync_spell import to_spell_enum, create_spell_stats
+from app.database import base
+from oneoff.enums import to_stat_enum, to_effect_enum, to_spell_enum
+from oneoff.sync_spell import create_spell_stats
 import oneoff.sync_item
 import oneoff.sync_buffs
 from sqlalchemy.schema import MetaData
@@ -37,77 +38,6 @@ import sys
 import os
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-to_stat_enum = {
-    "Vitality": enums.Stat.VITALITY,
-    "AP": enums.Stat.AP,
-    "MP": enums.Stat.MP,
-    "Initiative": enums.Stat.INITIATIVE,
-    "Prospecting": enums.Stat.PROSPECTING,
-    "Range": enums.Stat.RANGE,
-    "Summons": enums.Stat.SUMMON,
-    "Wisdom": enums.Stat.WISDOM,
-    "Strength": enums.Stat.STRENGTH,
-    "Intelligence": enums.Stat.INTELLIGENCE,
-    "Chance": enums.Stat.CHANCE,
-    "Agility": enums.Stat.AGILITY,
-    "AP Parry": enums.Stat.AP_PARRY,
-    "AP Reduction": enums.Stat.AP_REDUCTION,
-    "MP Parry": enums.Stat.MP_PARRY,
-    "MP Reduction": enums.Stat.MP_REDUCTION,
-    "Critical": enums.Stat.CRITICAL,
-    "Heals": enums.Stat.HEALS,
-    "Lock": enums.Stat.LOCK,
-    "Dodge": enums.Stat.DODGE,
-    "Power": enums.Stat.POWER,
-    "Damage": enums.Stat.DAMAGE,
-    "Critical Damage": enums.Stat.CRITICAL_DAMAGE,
-    "Neutral Damage": enums.Stat.NEUTRAL_DAMAGE,
-    "Earth Damage": enums.Stat.EARTH_DAMAGE,
-    "Fire Damage": enums.Stat.FIRE_DAMAGE,
-    "Water Damage": enums.Stat.WATER_DAMAGE,
-    "Air Damage": enums.Stat.AIR_DAMAGE,
-    "Reflect": enums.Stat.REFLECT,
-    "Trap Damage": enums.Stat.TRAP_DAMAGE,
-    "Power (traps)": enums.Stat.TRAP_POWER,
-    "Pushback Damage": enums.Stat.PUSHBACK_DAMAGE,
-    "% Spell Damage": enums.Stat.PCT_SPELL_DAMAGE,
-    "% Weapon Damage": enums.Stat.PCT_WEAPON_DAMAGE,
-    "% Ranged Damage": enums.Stat.PCT_RANGED_DAMAGE,
-    "% Melee Damage": enums.Stat.PCT_MELEE_DAMAGE,
-    "% Final Damage": enums.Stat.PCT_FINAL_DAMAGE,
-    "Neutral Resistance": enums.Stat.NEUTRAL_RES,
-    "% Neutral Resistance": enums.Stat.PCT_NEUTRAL_RES,
-    "Earth Resistance": enums.Stat.EARTH_RES,
-    "% Earth Resistance": enums.Stat.PCT_EARTH_RES,
-    "Fire Resistance": enums.Stat.FIRE_RES,
-    "% Fire Resistance": enums.Stat.PCT_FIRE_RES,
-    "Water Resistance": enums.Stat.WATER_RES,
-    "% Water Resistance": enums.Stat.PCT_WATER_RES,
-    "Air Resistance": enums.Stat.AIR_RES,
-    "% Air Resistance": enums.Stat.PCT_AIR_RES,
-    "Critical Resistance": enums.Stat.CRITICAL_RES,
-    "Pushback Resistance": enums.Stat.PUSHBACK_RES,
-    "% Ranged Resistance": enums.Stat.PCT_RANGED_RES,
-    "% Melee Resistance": enums.Stat.PCT_MELEE_RES,
-    "pods": enums.Stat.PODS,
-}
-
-to_effect_enum = {
-    "Neutral damage": enums.WeaponEffectType.NEUTRAL_DAMAGE,
-    "Earth damage": enums.WeaponEffectType.EARTH_DAMAGE,
-    "Fire damage": enums.WeaponEffectType.FIRE_DAMAGE,
-    "Water damage": enums.WeaponEffectType.WATER_DAMAGE,
-    "Air damage": enums.WeaponEffectType.AIR_DAMAGE,
-    "Neutral steal": enums.WeaponEffectType.NEUTRAL_STEAL,
-    "Earth steal": enums.WeaponEffectType.EARTH_STEAL,
-    "Fire steal": enums.WeaponEffectType.FIRE_STEAL,
-    "Water steal": enums.WeaponEffectType.WATER_STEAL,
-    "Air steal": enums.WeaponEffectType.AIR_STEAL,
-    "AP": enums.WeaponEffectType.AP,
-    "MP": enums.WeaponEffectType.MP,
-    "HP restored": enums.WeaponEffectType.HP_RESTORED,
-}
 
 
 face_url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/class/face/{}_M.png"
@@ -499,6 +429,7 @@ def setup_db():
             add_pets()
             add_mounts()
             add_classes_and_spells()
+            add_buffs()
             break
         elif response == "n":
             populate_table_for("item types and item slots", add_item_types_and_slots)

@@ -9,8 +9,7 @@ from app.database.model_item_type import ModelItemType
 from app.database.model_item_type_translation import ModelItemTypeTranslation
 from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_weapon_stat import ModelWeaponStat
-import oneoff.database_setup
-import oneoff.database_setup
+from oneoff.enums import to_stat_enum, to_effect_enum
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -107,7 +106,7 @@ def create_item_stats(db_session, record, item):
     for stat in record.get("stats", []):
         item_stat = ModelItemStat(
             item_id=item.uuid,
-            stat=oneoff.database_setup.to_stat_enum[stat["stat"]],
+            stat=to_stat_enum[stat["stat"]],
             min_value=stat["minStat"],
             max_value=stat["maxStat"],
             order=i,
@@ -162,7 +161,7 @@ def create_weapon_stat(db_session, record, item):
     for effect in record["weaponStats"]["weapon_effects"]:
         weapon_effects = ModelWeaponEffect(
             weapon_stat_id=weapon_stat.uuid,
-            effect_type=oneoff.database_setup.to_effect_enum[effect["stat"]],
+            effect_type=to_effect_enum[effect["stat"]],
             min_damage=effect["minStat"],
             max_damage=effect["maxStat"],
         )

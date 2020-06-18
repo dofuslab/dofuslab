@@ -9,29 +9,11 @@ from app.database.model_spell_effect_condition_translation import (
     ModelSpellEffectConditionTranslation,
 )
 from app.database.model_spell_damage_increase import ModelSpellDamageIncrease
-from app.database import enums
+from oneoff.enums import to_spell_enum
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 languages = ["en", "fr", "pt", "it", "es", "de"]
-
-to_spell_enum = {
-    "Neutral damage": enums.SpellEffectType.NEUTRAL_DAMAGE,
-    "Earth damage": enums.SpellEffectType.EARTH_DAMAGE,
-    "Fire damage": enums.SpellEffectType.FIRE_DAMAGE,
-    "Water damage": enums.SpellEffectType.WATER_DAMAGE,
-    "Air damage": enums.SpellEffectType.AIR_DAMAGE,
-    "Neutral steal": enums.SpellEffectType.NEUTRAL_STEAL,
-    "Earth steal": enums.SpellEffectType.EARTH_STEAL,
-    "Fire steal": enums.SpellEffectType.FIRE_STEAL,
-    "Water steal": enums.SpellEffectType.WATER_STEAL,
-    "Air steal": enums.SpellEffectType.AIR_STEAL,
-    "HP restored": enums.SpellEffectType.HP_RESTORED,
-    "Shield": enums.SpellEffectType.SHIELD,
-    "Pushback damage": enums.SpellEffectType.PUSHBACK_DAMAGE,
-    "Best element damage": enums.SpellEffectType.BEST_ELEMENT_DAMAGE,
-    "Best element steal": enums.SpellEffectType.BEST_ELEMENT_STEAL,
-}
 
 
 def create_spell_translations(db_session, record, spell):
