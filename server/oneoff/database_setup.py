@@ -1,4 +1,5 @@
 from app import db
+from app import session_scope
 from app.database.model_item import ModelItem
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_stat_translation import ModelItemStatTranslation
@@ -24,8 +25,11 @@ from app.database.model_spell_translation import ModelSpellTranslation
 from app.database.model_spell_stats import ModelSpellStats
 from app.database.model_spell_stat_translation import ModelSpellStatTranslation
 from app.database.model_spell_effect import ModelSpellEffect
-from app.database import base, enums
-from oneoff.sync_spell import to_spell_enum
+from app.database import base
+from oneoff.enums import to_stat_enum, to_effect_enum, to_spell_enum
+from oneoff.sync_spell import create_spell_stats
+import oneoff.sync_item
+import oneoff.sync_buffs
 from sqlalchemy.schema import MetaData
 from worker import redis_connection
 import sqlalchemy
@@ -34,76 +38,6 @@ import sys
 import os
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-to_stat_enum = {
-    "Vitality": enums.Stat.VITALITY,
-    "AP": enums.Stat.AP,
-    "MP": enums.Stat.MP,
-    "Initiative": enums.Stat.INITIATIVE,
-    "Prospecting": enums.Stat.PROSPECTING,
-    "Range": enums.Stat.RANGE,
-    "Summons": enums.Stat.SUMMON,
-    "Wisdom": enums.Stat.WISDOM,
-    "Strength": enums.Stat.STRENGTH,
-    "Intelligence": enums.Stat.INTELLIGENCE,
-    "Chance": enums.Stat.CHANCE,
-    "Agility": enums.Stat.AGILITY,
-    "AP Parry": enums.Stat.AP_PARRY,
-    "AP Reduction": enums.Stat.AP_REDUCTION,
-    "MP Parry": enums.Stat.MP_PARRY,
-    "MP Reduction": enums.Stat.MP_REDUCTION,
-    "Critical": enums.Stat.CRITICAL,
-    "Heals": enums.Stat.HEALS,
-    "Lock": enums.Stat.LOCK,
-    "Dodge": enums.Stat.DODGE,
-    "Power": enums.Stat.POWER,
-    "Damage": enums.Stat.DAMAGE,
-    "Critical Damage": enums.Stat.CRITICAL_DAMAGE,
-    "Neutral Damage": enums.Stat.NEUTRAL_DAMAGE,
-    "Earth Damage": enums.Stat.EARTH_DAMAGE,
-    "Fire Damage": enums.Stat.FIRE_DAMAGE,
-    "Water Damage": enums.Stat.WATER_DAMAGE,
-    "Air Damage": enums.Stat.AIR_DAMAGE,
-    "Reflect": enums.Stat.REFLECT,
-    "Trap Damage": enums.Stat.TRAP_DAMAGE,
-    "Power (traps)": enums.Stat.TRAP_POWER,
-    "Pushback Damage": enums.Stat.PUSHBACK_DAMAGE,
-    "% Spell Damage": enums.Stat.PCT_SPELL_DAMAGE,
-    "% Weapon Damage": enums.Stat.PCT_WEAPON_DAMAGE,
-    "% Ranged Damage": enums.Stat.PCT_RANGED_DAMAGE,
-    "% Melee Damage": enums.Stat.PCT_MELEE_DAMAGE,
-    "Neutral Resistance": enums.Stat.NEUTRAL_RES,
-    "% Neutral Resistance": enums.Stat.PCT_NEUTRAL_RES,
-    "Earth Resistance": enums.Stat.EARTH_RES,
-    "% Earth Resistance": enums.Stat.PCT_EARTH_RES,
-    "Fire Resistance": enums.Stat.FIRE_RES,
-    "% Fire Resistance": enums.Stat.PCT_FIRE_RES,
-    "Water Resistance": enums.Stat.WATER_RES,
-    "% Water Resistance": enums.Stat.PCT_WATER_RES,
-    "Air Resistance": enums.Stat.AIR_RES,
-    "% Air Resistance": enums.Stat.PCT_AIR_RES,
-    "Critical Resistance": enums.Stat.CRITICAL_RES,
-    "Pushback Resistance": enums.Stat.PUSHBACK_RES,
-    "% Ranged Resistance": enums.Stat.PCT_RANGED_RES,
-    "% Melee Resistance": enums.Stat.PCT_MELEE_RES,
-    "pods": enums.Stat.PODS,
-}
-
-to_effect_enum = {
-    "Neutral damage": enums.WeaponEffectType.NEUTRAL_DAMAGE,
-    "Earth damage": enums.WeaponEffectType.EARTH_DAMAGE,
-    "Fire damage": enums.WeaponEffectType.FIRE_DAMAGE,
-    "Water damage": enums.WeaponEffectType.WATER_DAMAGE,
-    "Air damage": enums.WeaponEffectType.AIR_DAMAGE,
-    "Neutral steal": enums.WeaponEffectType.NEUTRAL_STEAL,
-    "Earth steal": enums.WeaponEffectType.EARTH_STEAL,
-    "Fire steal": enums.WeaponEffectType.FIRE_STEAL,
-    "Water steal": enums.WeaponEffectType.WATER_STEAL,
-    "Air steal": enums.WeaponEffectType.AIR_STEAL,
-    "AP": enums.WeaponEffectType.AP,
-    "MP": enums.WeaponEffectType.MP,
-    "HP restored": enums.WeaponEffectType.HP_RESTORED,
-}
 
 
 face_url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/class/face/{}_M.png"
@@ -115,16 +49,10 @@ female_sprite_url_base = (
 )
 slot_url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/icons/{}.svg"
 
+item_types = {}
 
-if __name__ == "__main__":
-    # print("Resetting database")
-    # base.Base.metadata.reflect(base.engine)
-    # base.Base.metadata.drop_all(base.engine)
-    # base.Base.metadata.create_all(base.engine)
-    redis_connection.flushall()
 
-    item_types = {}
-
+def add_item_types_and_slots():
     print("Adding item types to database")
     with open(os.path.join(app_root, "app/database/data/item_types.json"), "r") as file:
         data = json.load(file)
@@ -170,6 +98,8 @@ if __name__ == "__main__":
 
     db.session.commit()
 
+
+def add_sets_and_items():
     print("Adding sets to database")
     with open(os.path.join(app_root, "app/database/data/sets.json"), "r") as file:
         data = json.load(file)
@@ -213,177 +143,26 @@ if __name__ == "__main__":
 
     print("Adding items to database")
     with open(os.path.join(app_root, "app/database/data/items.json"), "r") as file:
-        data = json.load(file)
-        for record in data:
-            if record["itemType"] == "Living object":
-                continue
-
-            item = ModelItem(
-                dofus_db_id=record["dofusID"],
-                item_type=item_types[record["itemType"]],
-                level=record["level"],
-                image_url=record["imageUrl"],
-            )
-            db.session.add(item)
-
-            conditions = {
-                "conditions": record["conditions"].get("conditions", None),
-                "customConditions": record["conditions"].get("customConditions", None),
-            }
-            item.conditions = conditions
-
-            for locale in record["name"]:
-                if record["name"][locale] == None:
+        with session_scope() as db_session:
+            data = json.load(file)
+            for record in data:
+                if record["itemType"] == "Living object":
                     continue
-                item_translations = ModelItemTranslation(
-                    locale=locale, name=record["name"][locale],
-                )
-                db.session.add(item_translations)
-                item.item_translations.append(item_translations)
 
-            try:
-                i = 0
-                for stat in record.get("stats", []):
-                    item_stat = ModelItemStat(
-                        stat=to_stat_enum[stat["stat"]],
-                        min_value=stat["minStat"],
-                        max_value=stat["maxStat"],
-                        order=i,
-                    )
-                    db.session.add(item_stat)
-                    item.stats.append(item_stat)
-                    i = i + 1
+                oneoff.sync_item.create_item(db_session, record)
 
-                if record["customStats"] != {} and record["customStats"] != []:
-                    num_of_stats = len(record["customStats"]["en"])
 
-                    for j in range(num_of_stats):
-                        item_stat = ModelItemStat(order=i)
-                        for locale in record["customStats"]:
-                            custom_stat = record["customStats"][locale][j]
-                            stat_translation = ModelItemStatTranslation(
-                                item_stat_id=item_stat.uuid,
-                                locale=locale,
-                                custom_stat=custom_stat,
-                            )
-                            db.session.add(stat_translation)
-                            item_stat.item_stat_translation.append(stat_translation)
-
-                        db.session.add(item_stat)
-                        item.stats.append(item_stat)
-                        i = i + 1
-
-                # If this item belongs in a set, query the set and add the relationship to the record
-                if record.get("setID", None):
-                    set = record["setID"]
-                    set_record = (
-                        db.session.query(ModelSet)
-                        .filter(ModelSet.dofus_db_id == set)
-                        .first()
-                    )
-                    set_record.items.append(item)
-                    db.session.merge(set_record)
-            except KeyError as err:
-                print("KeyError occurred:", err)
-
-        db.session.commit()
-
+def add_weapons():
     print("Adding weapons to database")
     with open(os.path.join(app_root, "app/database/data/weapons.json"), "r") as file:
-        data = json.load(file)
-        for record in data:
-            item = ModelItem(
-                dofus_db_id=record["dofusID"],
-                item_type=item_types[record["itemType"]],
-                level=record["level"],
-                image_url=record["imageUrl"],
-            )
-            db.session.add(item)
+        with session_scope() as db_session:
+            data = json.load(file)
+            for record in data:
 
-            conditions = {
-                "conditions": record["conditions"]["conditions"],
-                "customConditions": record["conditions"]["customConditions"],
-            }
-            item.conditions = conditions
+                oneoff.sync_item.create_item(db_session, record)
 
-            for locale in record["name"]:
-                item_translations = ModelItemTranslation(
-                    item_id=item.uuid, locale=locale, name=record["name"][locale],
-                )
-                db.session.add(item_translations)
-                item.item_translations.append(item_translations)
 
-            try:
-                i = 0
-                for stat in record["stats"]:
-                    item_stat = ModelItemStat(
-                        stat=to_stat_enum[stat["stat"]],
-                        min_value=stat["minStat"],
-                        max_value=stat["maxStat"],
-                        order=i,
-                    )
-                    db.session.add(item_stat)
-                    item.stats.append(item_stat)
-                    i = i + 1
-                if record["customStats"] != {} and record["customStats"] != []:
-                    num_of_stats = len(record["customStats"]["en"])
-
-                    for j in range(num_of_stats):
-                        item_stat = ModelItemStat(order=i)
-                        for locale in record["customStats"]:
-                            custom_stat = record["customStats"][locale][j]
-                            stat_translation = ModelItemStatTranslation(
-                                item_stat_id=item_stat.uuid,
-                                locale=locale,
-                                custom_stat=custom_stat,
-                            )
-                            db.session.add(stat_translation)
-                            item_stat.item_stat_translation.append(stat_translation)
-
-                        db.session.add(item_stat)
-                        item.stats.append(item_stat)
-                        i = i + 1
-
-                # If this item belongs in a set, query the set and add the relationship to the record
-                if record["setID"]:
-                    set = record["setID"]
-                    set_record = (
-                        db.session.query(ModelSet)
-                        .filter(ModelSet.dofus_db_id == set)
-                        .first()
-                    )
-                    set_record.items.append(item)
-                    db.session.merge(set_record)
-            except KeyError as err:
-                print("KeyError occurred:", err)
-
-            weapon_stat = ModelWeaponStat(
-                ap_cost=record["weaponStats"]["apCost"],
-                uses_per_turn=record["weaponStats"]["usesPerTurn"],
-                min_range=record["weaponStats"]["minRange"],
-                max_range=record["weaponStats"]["maxRange"],
-            )
-
-            if record["weaponStats"]["baseCritChance"] > 0:
-                weapon_stat.base_crit_chance = (
-                    record["weaponStats"]["baseCritChance"],
-                )
-                weapon_stat.crit_bonus_damage = (
-                    record["weaponStats"]["critBonusDamage"],
-                )
-
-            for effect in record["weaponStats"]["weapon_effects"]:
-                weapon_effects = ModelWeaponEffect(
-                    effect_type=to_effect_enum[effect["stat"]],
-                    min_damage=effect["minStat"],
-                    max_damage=effect["maxStat"],
-                )
-                weapon_stat.weapon_effects.append(weapon_effects)
-
-            item.weapon_stats = weapon_stat
-
-        db.session.commit()
-
+def add_pets():
     print("Adding pets to database")
     with open(os.path.join(app_root, "app/database/data/pets.json"), "r") as file:
         data = json.load(file)
@@ -454,7 +233,9 @@ if __name__ == "__main__":
                 print("KeyError occurred:", err)
 
         db.session.commit()
-    #
+
+
+def add_mounts():
     print("Adding mounts to database")
     with open(os.path.join(app_root, "app/database/data/mounts.json"), "r") as file:
         data = json.load(file)
@@ -530,106 +311,144 @@ if __name__ == "__main__":
 
         db.session.commit()
 
+
+def add_classes_and_spells():
     print("Adding classes to database")
     with open(os.path.join(app_root, "app/database/data/spells.json"), "r") as file:
-        data = json.load(file)
-        for record in data:
-            en_name = record["names"]["en"]
-            class_object = ModelClass(
-                face_image_url=face_url_base.format(en_name),
-                male_sprite_image_url=male_sprite_url_base.format(en_name),
-                female_sprite_image_url=female_sprite_url_base.format(en_name),
-            )
-
-            for locale in record["names"]:
-                class_translation = ModelClassTranslation(
-                    class_id=class_object.uuid,
-                    locale=locale,
-                    name=record["names"][locale],
+        with session_scope() as db_session:
+            data = json.load(file)
+            for record in data:
+                en_name = record["names"]["en"]
+                class_object = ModelClass(
+                    face_image_url=face_url_base.format(en_name),
+                    male_sprite_image_url=male_sprite_url_base.format(en_name),
+                    female_sprite_image_url=female_sprite_url_base.format(en_name),
                 )
-                db.session.add(class_translation)
-                class_object.name.append(class_translation)
+                db_session.add(class_object)
+                db_session.flush()
 
-            for spell_pair in record["spells"]:
-                spell_pair_object = ModelSpellVariantPair(class_id=class_object.uuid)
-                for spell in spell_pair:
-                    spell_object = ModelSpell(
-                        spell_variant_pair_id=spell_pair_object.uuid,
-                        image_url=spell["imageUrl"],
-                        is_trap=spell.get("isTrap", False),
+                for locale in record["names"]:
+                    class_translation = ModelClassTranslation(
+                        class_id=class_object.uuid,
+                        locale=locale,
+                        name=record["names"][locale],
                     )
-                    for locale in spell["name"]:
-                        spell_translation = ModelSpellTranslation(
-                            spell_id=spell_object.uuid,
-                            locale=locale,
-                            name=spell["name"][locale],
-                            description=spell["description"][locale],
+                    db_session.add(class_translation)
+                    class_object.name.append(class_translation)
+
+                for spell_pair in record["spells"]:
+                    spell_pair_object = ModelSpellVariantPair(
+                        class_id=class_object.uuid
+                    )
+                    db_session.add(spell_pair_object)
+                    db_session.flush()
+
+                    for spell in spell_pair:
+                        spell_object = ModelSpell(
+                            spell_variant_pair_id=spell_pair_object.uuid,
+                            image_url=spell["imageUrl"],
+                            is_trap=spell.get("isTrap", False),
                         )
-                        db.session.add(spell_translation)
-                        spell_object.spell_translation.append(spell_translation)
+                        db_session.add(spell_object)
+                        db_session.flush()
 
-                    for level in spell["effects"]:
-                        spell_stat = ModelSpellStats(
-                            level=level["level"],
-                            ap_cost=level["apCost"],
-                            cooldown=level["cooldown"],
-                            base_crit_chance=level["baseCritRate"],
-                            casts_per_turn=level["castsPerTurn"],
-                            casts_per_target=level["castsPerPlayer"],
-                            needs_los=level["needLos"],
-                            has_modifiable_range=level["modifiableRange"],
-                            is_linear=level["isLinear"],
-                            needs_free_cell=level["needsFreeCell"],
-                            min_range=level["spellRange"]["minRange"],
-                            max_range=level["spellRange"]["maxRange"],
-                        )
-
-                        if level["aoeType"]:
-                            for locale in level["aoeType"]:
-                                spell_stat_translation = ModelSpellStatTranslation(
-                                    spell_stat_id=spell_stat.uuid,
-                                    locale=locale,
-                                    aoe_type=level["aoeType"][locale],
-                                )
-                                db.session.add(spell_stat_translation)
-                                spell_stat.spell_stat_translation.append(
-                                    spell_stat_translation
-                                )
-
-                        for i in range(len(level["normalEffects"]["modifiableEffect"])):
-                            spell_effect = ModelSpellEffect(
-                                spell_stat_id=spell_stat.uuid,
-                                effect_type=to_spell_enum[
-                                    level["normalEffects"]["modifiableEffect"][i][
-                                        "stat"
-                                    ]
-                                ],
-                                min_damage=level["normalEffects"]["modifiableEffect"][
-                                    i
-                                ]["minStat"],
-                                max_damage=level["normalEffects"]["modifiableEffect"][
-                                    i
-                                ]["maxStat"],
+                        for locale in spell["name"]:
+                            spell_translation = ModelSpellTranslation(
+                                spell_id=spell_object.uuid,
+                                locale=locale,
+                                name=spell["name"][locale],
+                                description=spell["description"][locale],
                             )
+                            db_session.add(spell_translation)
+                            spell_object.spell_translation.append(spell_translation)
 
-                            if level["criticalEffects"].get("modifiableEffect", None):
-                                spell_effect.crit_min_damage = level["criticalEffects"][
-                                    "modifiableEffect"
-                                ][i]["minStat"]
-                                spell_effect.crit_max_damage = level["criticalEffects"][
-                                    "modifiableEffect"
-                                ][i]["maxStat"]
+                        create_spell_stats(db_session, spell, spell_object)
 
-                            db.session.add(spell_effect)
-                            spell_stat.spell_effects.append(spell_effect)
 
-                        db.session.add(spell_stat)
-                        spell_object.spell_stats.append(spell_stat)
+def add_buffs():
+    print("Adding buffs to database")
+    with open(os.path.join(app_root, "app/database/data/buffs.json"), "r") as file:
+        data = json.load(file)
 
-                    db.session.add(spell_object)
-                    spell_pair_object.spells.append(spell_object)
+        all_classes = data["spells"]
+        all_items = data["items"]
 
-                db.session.add(spell_pair_object)
-                class_object.spell_variant_pairs.append(spell_pair_object)
+        with session_scope() as db_session:
+            for class_name in all_classes:
+                for spell in all_classes[class_name]:
+                    spell_id = (
+                        db_session.query(ModelSpellTranslation)
+                        .filter_by(name=spell["name"], locale="en")
+                        .one()
+                        .spell_id
+                    )
 
-        db.session.commit()
+                    for level in spell["levels"]:
+                        spell_stat_id = (
+                            db_session.query(ModelSpellStats)
+                            .filter_by(spell_id=spell_id, level=level["level"])
+                            .one()
+                            .uuid
+                        )
+
+                        oneoff.sync_buffs.add_spell_buff_for_level(
+                            db_session, spell_stat_id, level
+                        )
+
+            for item in all_items:
+                item_id = (
+                    db_session.query(ModelItemTranslation)
+                    .filter_by(name=item["name"], locale="en")
+                    .one()
+                    .item_id
+                )
+
+                oneoff.sync_buffs.add_item_buffs(db_session, item_id, item)
+
+
+def populate_table_for(table, fn):
+    while True:
+        str = "Would you like to add {}? (y/n)? ".format(table)
+        response = input(str)
+        if response == "y":
+            fn()
+            break
+        elif response == "n":
+            break
+        else:
+            print("Invalid response, please type 'y' or 'n'")
+
+
+def setup_db():
+    while True:
+        response = input("Would you like to populate all tables (y/n)? ")
+        if response == "y":
+            add_item_types_and_slots()
+            add_sets_and_items()
+            add_weapons()
+            add_pets()
+            add_mounts()
+            add_classes_and_spells()
+            add_buffs()
+            break
+        elif response == "n":
+            populate_table_for("item types and item slots", add_item_types_and_slots)
+            populate_table_for("sets and items", add_sets_and_items)
+            populate_table_for("weapons", add_weapons)
+            populate_table_for("pets", add_pets)
+            populate_table_for("mounts", add_mounts)
+            populate_table_for("classes and spells", add_classes_and_spells)
+            populate_table_for("spell and item buffs", add_buffs)
+            break
+        else:
+            print("Invalid response, please type 'y' or 'n'")
+
+
+if __name__ == "__main__":
+    # print("Resetting database")
+    # base.Base.metadata.reflect(base.engine)
+    # base.Base.metadata.drop_all(base.engine)
+    # base.Base.metadata.create_all(base.engine)
+    redis_connection.flushall()
+
+    setup_db()

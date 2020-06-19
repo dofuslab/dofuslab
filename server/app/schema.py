@@ -18,6 +18,7 @@ from app.database.model_item_slot import ModelItemSlot
 from app.database.model_item_translation import ModelItemTranslation
 from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_weapon_stat import ModelWeaponStat
+from app.database.model_buff import ModelBuff
 from app.database.model_item import ModelItem
 from app.database.model_set_bonus_translation import ModelSetBonusTranslation
 from app.database.model_set_bonus import ModelSetBonus
@@ -207,6 +208,12 @@ class WeaponStat(SQLAlchemyObjectType):
         interfaces = (GlobalNode,)
 
 
+class Buff(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelBuff
+        interfaces = (GlobalNode,)
+
+
 class Item(SQLAlchemyObjectType):
     stats = graphene.NonNull(graphene.List(graphene.NonNull(ItemStat)))
 
@@ -231,6 +238,14 @@ class Item(SQLAlchemyObjectType):
 
     def resolve_weapon_stat(self, info):
         return g.dataloaders.get("weapon_stat_loader").load(self.uuid)
+
+    buffs = graphene.List(graphene.NonNull(Buff))
+
+    def resolve_buffs(self, info):
+        # query = db.session.query(ModelBuff).filter(ModelBuff.item_id == self.uuid)
+        # return query
+
+        return g.dataloaders.get("item_buff_loader").load(self.uuid)
 
     class Meta:
         model = ModelItem
@@ -403,6 +418,14 @@ class SpellStats(SQLAlchemyObjectType):
 
         if query:
             return query.aoe_type
+
+    buffs = graphene.List(graphene.NonNull(Buff))
+
+    def resolve_buffs(self, info):
+        # query = db.session.query(ModelBuff).filter(ModelBuff.spell_stat_id == self.uuid)
+        # return query
+
+        return g.dataloaders.get("spell_buff_loader").load(self.uuid)
 
     class Meta:
         model = ModelSpellStats

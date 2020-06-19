@@ -50,3 +50,7 @@ class ModelSpellStats(Base):
         cascade="all, delete-orphan",
         uselist=False,
     )
+
+    buff = relationship(
+        "ModelBuff", backref="spell_stats", cascade="all, delete-orphan"
+    )

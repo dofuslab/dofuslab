@@ -178,3 +178,37 @@ def load_weapon_effects(weapon_stat_ids):
 class WeaponEffectLoader(DataLoader):
     def batch_load_fn(self, weapon_stat_ids):
         return load_weapon_effects(weapon_stat_ids)
+
+
+def load_spell_buffs(spell_buff_ids):
+    buff_by_spell_id = defaultdict(list)
+    for buff in db.session.query(ModelBuff).filter(
+        ModelBuff.spell_stat_id.in_(spell_buff_ids)
+    ):
+        buff_by_spell_id[buff.spell_stat_id].append(buff)
+
+    return Promise.resolve(
+        [buff_by_spell_id.get(spell_stat_id, []) for spell_stat_id in spell_stat_ids]
+    )
+
+
+class SpellBuffLoader(DataLoader):
+    def batch_load_fn(self, spell_buff_ids):
+        return load_spell_buffs(spell_buff_ids)
+
+
+def load_item_buffs(item_buff_ids):
+    buff_by_item_id = defaultdict(list)
+    for buff in db.session.query(ModelBuff).filter(
+        ModelBuff.item_id.in_(item_buff_ids)
+    ):
+        buff_by_item_id[buff.item_id].append(buff)
+
+    return Promise.resolve(
+        [buff_by_item_id.get(item_buff_id, []) for item_buff_id in item_buff_ids]
+    )
+
+
+class ItemBuffLoader(DataLoader):
+    def batch_load_fn(self, item_buff_ids):
+        return load_item_buffs(item_buff_ids)
