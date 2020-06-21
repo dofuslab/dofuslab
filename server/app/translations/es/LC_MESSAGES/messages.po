@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-05-16 02:40-0700\n"
+"POT-Creation-Date: 2020-06-20 17:32-0700\n"
 "PO-Revision-Date: 2020-03-27 23:05-0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -40,125 +40,125 @@ msgid ""
 "letter, one uppercase letter, and one number."
 msgstr ""
 
-#: app/schema.py:335 app/schema.py:342
+#: app/schema.py:359 app/schema.py:366
 msgid "You are not authorized to make this request."
 msgstr ""
 
-#: app/schema.py:524 app/schema.py:527
-msgid "Invalid stat value."
-msgstr ""
-
-#: app/schema.py:550
-msgid "The set name is too long."
-msgstr ""
-
-#: app/schema.py:552
-msgid "Invalid set level (must be 1-200)."
-msgstr ""
-
-#: app/schema.py:658
+#: app/schema.py:686
 msgid "Invalid element mage on non-weapon item."
 msgstr ""
 
-#: app/schema.py:685
+#: app/schema.py:713
 msgid "Invalid stat to set exo."
 msgstr ""
 
-#: app/schema.py:735
+#: app/schema.py:763
 #, python-format
 msgid "%(old_name)s copy"
 msgstr ""
 
-#: app/schema.py:737
+#: app/schema.py:765
 msgid "Copy"
 msgstr ""
 
-#: app/schema.py:823 app/schema.py:863 app/schema.py:999 app/schema.py:1026
+#: app/schema.py:887 app/schema.py:927 app/schema.py:1063 app/schema.py:1090
 msgid "You are already logged in."
 msgstr ""
 
-#: app/schema.py:842 app/schema.py:913
+#: app/schema.py:906 app/schema.py:977
 msgid "Verify your DofusLab account"
 msgstr ""
 
-#: app/schema.py:847
+#: app/schema.py:911
 msgid "An error occurred while registering."
 msgstr ""
 
-#: app/schema.py:868
+#: app/schema.py:932
 msgid "Invalid username or password."
 msgstr ""
 
-#: app/schema.py:893 app/schema.py:989
+#: app/schema.py:957 app/schema.py:1053
 msgid "Please wait a minute before trying again."
 msgstr ""
 
-#: app/schema.py:897
+#: app/schema.py:961
 msgid ""
 "You have sent too many verification emails. Please wait awhile before "
 "trying again."
 msgstr ""
 
-#: app/schema.py:905
+#: app/schema.py:969
 msgid "You must be signed in to do that."
 msgstr ""
 
-#: app/schema.py:907
+#: app/schema.py:971
 msgid "Your account is already verified."
 msgstr ""
 
-#: app/schema.py:927
+#: app/schema.py:991
 msgid "Received unsupported locale."
 msgstr ""
 
-#: app/schema.py:963 app/schema.py:1061
+#: app/schema.py:1027 app/schema.py:1125 app/utils.py:80
 msgid "You are not logged in."
 msgstr ""
 
-#: app/schema.py:967
+#: app/schema.py:1031
 msgid "Incorrect password."
 msgstr ""
 
-#: app/schema.py:975 app/schema.py:1045
+#: app/schema.py:1039 app/schema.py:1109
 msgid "You must enter a password different from your current one."
 msgstr ""
 
-#: app/schema.py:993
+#: app/schema.py:1057
 msgid ""
 "You have sent too many password request emails. Please wait awhile before"
 " trying again."
 msgstr ""
 
-#: app/schema.py:1002
+#: app/schema.py:1066
 msgid "We could not find an account with that email."
 msgstr ""
 
-#: app/schema.py:1006
+#: app/schema.py:1070
 msgid "Please verify your email first."
 msgstr ""
 
-#: app/schema.py:1013
+#: app/schema.py:1077
 msgid "Reset your DofusLab password"
 msgstr ""
 
-#: app/schema.py:1031 app/schema.py:1039
+#: app/schema.py:1095 app/schema.py:1103
 msgid "The link is invalid or expired. Please request a new one."
 msgstr ""
 
-#: app/utils.py:12
+#: app/utils.py:29
 msgid "Please wait a moment before trying again."
 msgstr ""
 
-#: app/utils.py:18 app/utils.py:20 app/utils.py:65 app/utils.py:67
+#: app/utils.py:35 app/utils.py:37 app/utils.py:98 app/utils.py:100
 msgid "You don't have permission to edit that build."
 msgstr ""
 
-#: app/utils.py:53
+#: app/utils.py:70 app/utils.py:86
 msgid "Please verify your account to continue using DofusLab."
 msgstr ""
 
-#: app/utils.py:62
+#: app/utils.py:95
 msgid "That build does not exist."
+msgstr ""
+
+#: app/utils.py:106 app/utils.py:109
+msgid "Invalid stat value."
+msgstr ""
+
+#: app/utils.py:116
+msgid "The set name is too long."
+msgstr ""
+
+#: app/utils.py:118
+msgid "Invalid set level (must be 1-200)."
 msgstr ""
 
 #: app/database/model_favorite_item.py:53
