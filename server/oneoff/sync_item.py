@@ -92,7 +92,6 @@ def create_item(db_session, record):
             "customConditions": record["conditions"].get("customConditions", {}),
         }
         item.conditions = conditions
-    print(item)
     db_session.add(item)
     db_session.flush()
 
@@ -211,7 +210,6 @@ def sync_item():
                     should_prompt_item = False
 
                     for record in data:
-                        print("create_all", create_all)
                         create_all = update_or_create_item(
                             db_session, record["name"]["en"], record, create_all
                         )
