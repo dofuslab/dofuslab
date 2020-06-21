@@ -36,7 +36,7 @@ flask_env = os.getenv("FLASK_ENV")
 reset_password_salt = "reset-password-salt"
 
 # supported_languages = ["en", "fr", "pt", "it", "de", "es"]
-supported_languages = ["en", "fr"]
+supported_languages = ["en", "fr", "it"]
 
 origins = []
 if flask_env == "development":
