@@ -36248,6 +36248,9 @@
       ],
       "fr": [
         "Au début de son tour, si le lanceur a moins de 20% de sa vie, il est soigné de 40% de sa vie et gagne 20% de dommages finaux pour le tour en cours.\nCet effet ne peut se jouer qu'une seule fois par combat."
+      ],
+      "it": [
+        "All'inizio del suo turno, se il lanciatore ha meno del 20% della sua vita, viene curato del 40% della sua vita e ottiene il 20% dei danni finali per il turno in corso. \nL'effetto è attivabile una sola volta per combattimento."
       ]
     },
     "conditions": {
@@ -36477,6 +36480,10 @@
       "fr": [
         "Attitude Dofus Ivoire",
         "À la fin du tour, les dommages de la prochaine attaque subie sont réduits de 50%."
+      ],
+      "it": [
+        "Emote Dofus Avorio",
+        "Alla fine del turno, i danni del prossimo attacco subito sono ridotti del 50%."
       ]
     },
     "conditions": {
@@ -36606,6 +36613,10 @@
       "fr": [
         "Attitude Dofus Ébène",
         "Génère une charge en début de tour, une deuxième en infligeant des dommages en mêlée et une troisième en infligeant des dommages à distance.\n\nLorsque 5 charges sont atteintes, la prochaine attaque consomme les charges et applique un poison (de 16 à 20 de dommages dans l'élément de votre attaque, cumulable) sur la cible pendant 3 tours.\n\nChaque charge donne un bonus de 2% de dommages finaux occasionnés."
+      ],
+      "it": [
+        "Emote Dofus Ebano",
+        "Genera 1 carica a inizio turno, 1 carica infliggendo danni da mischia e 1 carica infliggendo danni a distanza.\n\nQuando vengono accumulate 5 cariche, l'attacco seguente consuma le cariche e applica un veleno sul bersaglio per 3 turni.\n\nOgni carica accorda un bonus del 2% dei danni finali causati."
       ]
     },
     "conditions": {
