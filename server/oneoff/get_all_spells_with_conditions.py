@@ -3,8 +3,11 @@ import os
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# This script is to generate a list of spells to pass to sync_spells when translations
+# are added for conditional spells
 
-def sync_item_type():
+
+def get_all_spells_with_conditions():
     print("Loading and processing file...")
     with open(os.path.join(app_root, "app/database/data/spells.json"), "r",) as file:
         data = json.load(file)
@@ -25,4 +28,4 @@ def sync_item_type():
 
 
 if __name__ == "__main__":
-    sync_item_type()
+    get_all_spells_with_conditions()
