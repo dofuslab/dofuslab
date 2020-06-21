@@ -24,7 +24,7 @@ allowed_file_names = [
 languages = ["en", "fr", "pt", "it", "es", "de"]
 
 
-def update_or_create_item(db_session, item_name, record):
+def update_or_create_item(db_session, item_name, record, create_all=False):
     print(item_name)
     translations = (
         db_session.query(ModelItemTranslation)
@@ -54,12 +54,18 @@ def update_or_create_item(db_session, item_name, record):
             create_weapon_stat(db_session, record, item)
         print("Item weapon stats successfully updated")
     else:
+        if create_all:
+            create_item(db_session, record)
+            return True
         should_create_response = input(
-            "Item does not exist in database. Would you like to create it? (Y/n): "
+            "Item does not exist in database. Would you like to create it? (Y/n/YYY to create all): "
         )
-        if should_create_response == "Y":
+        if should_create_response == "Y" or should_create_response == "YYY":
             create_item(db_session, record)
             print("Item successfully created")
+        if should_create_response == "YYY":
+            return True
+    return create_all
 
 
 def create_item(db_session, record):
@@ -86,6 +92,7 @@ def create_item(db_session, record):
             "customConditions": record["conditions"].get("customConditions", {}),
         }
         item.conditions = conditions
+    print(item)
     db_session.add(item)
     db_session.flush()
 
@@ -192,6 +199,7 @@ def sync_item():
             name_to_record_map[r["name"]["en"]] = r
 
         should_prompt_item = True
+        create_all = False
         while should_prompt_item:
             item_name = input(
                 "Enter item name, e.g. 'Yellow Piwin', type 'update all' to update all items in file, or 'q' to quit: "
@@ -201,11 +209,15 @@ def sync_item():
             with session_scope() as db_session:
                 if item_name == "update all":
                     should_prompt_item = False
+
                     for record in data:
-                        update_or_create_item(db_session, record["name"]["en"], record)
+                        print("create_all", create_all)
+                        create_all = update_or_create_item(
+                            db_session, record["name"]["en"], record, create_all
+                        )
                 elif item_name in name_to_record_map:
                     record = name_to_record_map[item_name]
-                    update_or_create_item(db_session, item_name, record)
+                    update_or_create_item(db_session, item_name, record, False)
 
 
 if __name__ == "__main__":
