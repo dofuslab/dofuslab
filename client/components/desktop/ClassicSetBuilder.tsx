@@ -7,10 +7,9 @@ import { Tabs } from 'antd';
 import { mq } from 'common/constants';
 
 import { getStatsFromCustomSet, getErrors } from 'common/utils';
-import { BuildError, Theme } from 'common/types';
+import { BuildError } from 'common/types';
 import StatTable from 'components/common/StatTable';
 import { Stat } from '__generated__/globalTypes';
-import { useTheme } from 'emotion-theming';
 import { useTranslation } from 'i18n';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
@@ -34,8 +33,6 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
     () => getStatsFromCustomSet(customSet),
     [customSet],
   );
-
-  const theme = useTheme<Theme>();
 
   const { t } = useTranslation();
 
@@ -84,9 +81,8 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
             [mq[4]]: {
               maxWidth: 1124,
             },
-            '&.ant-tabs > .ant-tabs-bar': { textAlign: 'center' },
-            '.ant-tabs-bar': {
-              borderBottom: `1px solid ${theme.border?.default}`,
+            '&.ant-tabs > .ant-tabs-nav > .ant-tabs-nav-wrap': {
+              justifyContent: 'center',
             },
           }}
         >
