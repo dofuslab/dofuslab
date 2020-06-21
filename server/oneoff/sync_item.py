@@ -131,7 +131,7 @@ def create_item_stats(db_session, record, item):
 def create_item_translations(db_session, record, item):
     db_session.query(ModelItemTranslation).filter_by(item_id=item.uuid).delete()
     for locale in languages:
-        if record["name"][locale]:
+        if record["name"].get("locale"):
             item_translation = ModelItemTranslation(
                 item_id=item.uuid, locale=locale, name=record["name"][locale]
             )
