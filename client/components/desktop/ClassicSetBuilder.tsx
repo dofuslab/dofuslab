@@ -69,7 +69,9 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
           tabBarExtraContent={
             customSet && (
               <div css={{ position: 'relative' }}>
-                <div css={{ position: 'absolute', right: 0, zIndex: 1 }}>
+                <div
+                  css={{ position: 'absolute', top: -16, right: 0, zIndex: 1 }}
+                >
                   <PublicBuildActions customSet={customSet} />
                 </div>
               </div>
