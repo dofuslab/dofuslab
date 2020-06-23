@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import { Tabs } from 'antd';
+import { Tabs, Button } from 'antd';
 import { useTheme } from 'emotion-theming';
 
 import { mq, SEARCH_BAR_ID } from 'common/constants';
@@ -200,6 +200,9 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
               key="weapon-and-spells"
               forceRender
             >
+              <div css={{ marginBottom: 12 }}>
+                <Button>Buffs</Button>
+              </div>
               <ResponsiveGrid
                 numColumns={[2, 1, 2, 2, 2, 2, 2]}
                 css={{ marginBottom: 20 }}

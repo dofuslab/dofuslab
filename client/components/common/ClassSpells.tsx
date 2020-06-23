@@ -120,11 +120,11 @@ const ClassSpells: React.FC<Props> = ({ customSet }) => {
         }}
         css={{ gridColumn: '1 / -1' }}
         showSearch
-        filterOption={(input, option) =>
-          (option?.children as string)
+        filterOption={(input, option) => {
+          return (option?.children[1] as string)
             .toLocaleUpperCase()
-            .includes(input.toLocaleUpperCase())
-        }
+            .includes(input.toLocaleUpperCase());
+        }}
         value={selectedClassId}
         onChange={(value: string) => {
           onSelectClass(data.classes, value, router);
@@ -135,6 +135,11 @@ const ClassSpells: React.FC<Props> = ({ customSet }) => {
           .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
           .map((dofusClass) => (
             <Option key={dofusClass.id} value={dofusClass.id}>
+              <img
+                src={dofusClass.faceImageUrl}
+                alt={dofusClass.name}
+                css={{ width: 20, marginRight: 8 }}
+              />
               {dofusClass.name}
             </Option>
           ))}

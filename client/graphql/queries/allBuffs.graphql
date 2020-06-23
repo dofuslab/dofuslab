@@ -1,0 +1,22 @@
+query allBuffs {
+  allBuffs {
+    id
+    item {
+      id
+      name
+      imageUrl
+    }
+    spellStats {
+      id
+      spell {
+        id
+        name
+        imageUrl
+      }
+    }
+    stat
+    incrementBy
+    critIncrementBy
+    maxStacks
+  }
+}

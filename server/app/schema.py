@@ -1379,6 +1379,11 @@ class Query(graphene.ObjectType):
                 result.append(item)
         return result
 
+    all_buffs = graphene.NonNull(graphene.List(graphene.NonNull(Buff)))
+
+    def resolve_all_buffs(self, info, **kwargs):
+        return db.session.query(ModelBuff).all()
+
 
 class Mutation(graphene.ObjectType):
     register_user = RegisterUser.Field()
