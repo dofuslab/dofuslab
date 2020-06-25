@@ -2,6 +2,7 @@ from app import db, cache_region
 from collections import defaultdict
 from promise import Promise
 from promise.dataloader import DataLoader
+from app.database.model_buff import ModelBuff
 from app.database.model_item import ModelItem
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_translation import ModelItemTranslation
@@ -188,7 +189,7 @@ def load_spell_buffs(spell_buff_ids):
         buff_by_spell_id[buff.spell_stat_id].append(buff)
 
     return Promise.resolve(
-        [buff_by_spell_id.get(spell_stat_id, []) for spell_stat_id in spell_stat_ids]
+        [buff_by_spell_id.get(spell_buff_id, []) for spell_buff_id in spell_buff_ids]
     )
 
 
