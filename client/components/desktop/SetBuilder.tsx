@@ -8,7 +8,11 @@ import { useTheme } from 'emotion-theming';
 import { mq, SEARCH_BAR_ID } from 'common/constants';
 import { ResponsiveGrid } from 'common/wrappers';
 
-import { getStatsFromCustomSet, getErrors } from 'common/utils';
+import {
+  getStatsFromCustomSet,
+  getErrors,
+  appliedBuffsReducer,
+} from 'common/utils';
 import { topMarginStyle } from 'common/mixins';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
@@ -17,6 +21,7 @@ import { useTranslation } from 'i18n';
 import { BuildError, Theme } from 'common/types';
 import { Stat } from '__generated__/globalTypes';
 import { CustomSet, ItemSlot } from 'common/type-aliases';
+import BuffModal from 'components/common/BuffModal';
 import Selector from '../common/Selector';
 import StatEditor from '../common/StatEditor';
 import EquipmentSlots from '../common/EquipmentSlots';
@@ -86,6 +91,16 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
   const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(
     null,
   );
+
+  const [appliedBuffs, dispatch] = React.useReducer(appliedBuffsReducer, []);
+
+  const [buffModalOpen, setBuffModalOpen] = React.useState(false);
+  const openBuffModal = React.useCallback(() => {
+    setBuffModalOpen(true);
+  }, []);
+  const closeBuffModal = React.useCallback(() => {
+    setBuffModalOpen(false);
+  }, []);
 
   React.useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
@@ -201,7 +216,7 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
               forceRender
             >
               <div css={{ marginBottom: 12 }}>
-                <Button>Buffs</Button>
+                <Button onClick={openBuffModal}>{t('BUFFS')}</Button>
               </div>
               <ResponsiveGrid
                 numColumns={[2, 1, 2, 2, 2, 2, 2]}
@@ -238,6 +253,12 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
           isClassic={false}
         />
       </div>
+      <BuffModal
+        visible={buffModalOpen}
+        closeBuffModal={closeBuffModal}
+        appliedBuffs={appliedBuffs}
+        dispatch={dispatch}
+      />
     </>
   );
 };

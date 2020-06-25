@@ -1,20 +1,19 @@
 import React from 'react';
 import { Radio } from 'antd';
-import Tooltip from './Tooltip';
-import { classById_classById_spellVariantPairs_spells } from 'graphql/queries/__generated__/classById';
 import { RadioChangeEvent } from 'antd/lib/radio';
 import { useTranslation } from 'i18n';
+import Tooltip from './Tooltip';
 
-interface IProps {
-  spell: classById_classById_spellVariantPairs_spells;
+interface Props {
+  spellStats: Array<{ level: number }>;
   selectedSpellLevelIdx: number;
   onChange: (e: RadioChangeEvent) => void;
   spellLevelIdx: number;
   className?: string;
 }
 
-const SpellLevelRadio: React.FC<IProps> = ({
-  spell,
+const SpellLevelRadio: React.FC<Props> = ({
+  spellStats,
   selectedSpellLevelIdx,
   onChange,
   spellLevelIdx,
@@ -28,20 +27,24 @@ const SpellLevelRadio: React.FC<IProps> = ({
       size="small"
       className={className}
     >
-      {Array(spell.spellStats.length)
+      {Array(spellStats.length)
         .fill(null)
         .map((_, idx) => {
           const button = (
+            // eslint-disable-next-line react/no-array-index-key
             <Radio.Button key={idx} value={idx} disabled={idx > spellLevelIdx}>
               {idx + 1}
             </Radio.Button>
           );
           return idx > spellLevelIdx ? (
             <Tooltip
-              getPopupContainer={element => element.parentElement!}
+              getPopupContainer={(element) =>
+                element.parentElement || document.body
+              }
+              // eslint-disable-next-line react/no-array-index-key
               key={idx}
               title={t('AVAILABLE_AT_LEVEL', {
-                level: spell.spellStats[idx].level,
+                level: spellStats[idx].level,
               })}
             >
               {button}

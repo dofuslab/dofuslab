@@ -61,6 +61,8 @@ import {
 } from 'graphql/mutations/__generated__/toggleFavoriteItem';
 import toggleFavoriteItemMutation from 'graphql/mutations/toggleFavoriteItem.graphql';
 import { ParsedUrlQuery } from 'querystring';
+import { classes as classesQueryType } from 'graphql/queries/__generated__/classes';
+import classesQuery from 'graphql/queries/classes.graphql';
 import {
   StatsFromCustomSet,
   SetCounter,
@@ -75,6 +77,9 @@ import {
   WeaponEffect,
   ConditionalSpellEffect,
   UnconditionalSpellEffect,
+  AppliedBuff,
+  AppliedBuffAction,
+  AppliedBuffActionType,
 } from './types';
 import { META_DESCRIPTION, IS_CLASSIC_STORAGE_KEY } from './constants';
 import {
@@ -1732,4 +1737,69 @@ export const useToggleFavoriteMutation = (item: Item) => {
         undefined,
     }),
   };
+};
+
+export const appliedBuffsReducer = (
+  state: Array<AppliedBuff>,
+  action: AppliedBuffAction,
+): Array<AppliedBuff> => {
+  switch (action.type) {
+    case AppliedBuffActionType.ADD_STACK: {
+      const idx = state.findIndex(({ buff: { id } }) => id === action.buffId);
+      const { buff, numStacks, numCritStacks } = state[idx];
+      if (buff.maxStacks && numStacks + numCritStacks >= buff.maxStacks) {
+        return state;
+      }
+      const newState = [...state];
+      const key = action.isCrit ? 'numCritStacks' : 'numStacks';
+      newState[idx] = { ...state[idx], [key]: state[idx][key] + 1 };
+      return newState;
+    }
+    case AppliedBuffActionType.MAX_STACKS: {
+      const idx = state.findIndex(({ buff: { id } }) => id === action.buffId);
+      const { buff, numStacks, numCritStacks } = state[idx];
+      if (
+        !buff.maxStacks ||
+        (buff.maxStacks && numStacks + numCritStacks >= buff.maxStacks)
+      ) {
+        return state;
+      }
+      const newState = [...state];
+      const key = action.isCrit ? 'numCritStacks' : 'numStacks';
+      const otherKey = action.isCrit ? 'numStacks' : 'numCritStacks';
+      newState[idx] = {
+        ...state[idx],
+        [key]: buff.maxStacks - state[idx][otherKey],
+      };
+      return newState;
+    }
+    case AppliedBuffActionType.REMOVE_BUFF: {
+      return state.filter(({ buff: { id } }) => id !== action.buffId);
+    }
+    case AppliedBuffActionType.CLEAR_ALL: {
+      return [];
+    }
+    default:
+      throw new Error('Invalid action type');
+  }
+};
+
+export const useClassId = () => {
+  const router = useRouter();
+  const { query } = router;
+  const { data } = useQuery<classesQueryType>(classesQuery);
+
+  const nameToId = data?.classes.reduce((acc, { id, allNames }) => {
+    const obj = { ...acc };
+    allNames.forEach((className) => {
+      obj[className] = id;
+    });
+    return obj;
+  }, {} as { [key: string]: string });
+
+  const selectedClassName = Array.isArray(query.class)
+    ? query.class[0]
+    : query.class;
+  const selectedClassId = selectedClassName && nameToId?.[selectedClassName];
+  return selectedClassId;
 };

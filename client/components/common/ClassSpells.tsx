@@ -18,7 +18,7 @@ import {
 import classByIdQuery from 'graphql/queries/classById.graphql';
 import { Theme } from 'common/types';
 import { CustomSet, Spell } from 'common/type-aliases';
-import { onSelectClass } from 'common/utils';
+import { onSelectClass, useClassId } from 'common/utils';
 import { itemCardStyle } from 'common/mixins';
 import SpellCard from './SpellCard';
 
@@ -30,23 +30,11 @@ interface Props {
 
 const ClassSpells: React.FC<Props> = ({ customSet }) => {
   const router = useRouter();
-  const { query } = router;
   const { data } = useQuery<classes>(classesQuery);
   const { t } = useTranslation('common');
   const theme = useTheme<Theme>();
 
-  const nameToId = data?.classes.reduce((acc, { id, allNames }) => {
-    const obj = { ...acc };
-    allNames.forEach((className) => {
-      obj[className] = id;
-    });
-    return obj;
-  }, {} as { [key: string]: string });
-
-  const selectedClassName = Array.isArray(query.class)
-    ? query.class[0]
-    : query.class;
-  const selectedClassId = selectedClassName && nameToId?.[selectedClassName];
+  const selectedClassId = useClassId();
 
   const { data: classData, loading: classDataLoading } = useQuery<
     classById,

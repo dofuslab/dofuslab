@@ -8,10 +8,18 @@ query allBuffs {
     }
     spellStats {
       id
+      level
       spell {
         id
         name
         imageUrl
+        variantPair {
+          id
+          class {
+            id
+            name
+          }
+        }
       }
     }
     stat

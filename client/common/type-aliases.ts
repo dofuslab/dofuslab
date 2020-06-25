@@ -21,9 +21,11 @@ import {
   item_itemType as ItemTypeWithSlots,
 } from 'graphql/fragments/__generated__/item';
 import { classes_classes as Class } from 'graphql/queries/__generated__/classes';
+import { allBuffs_allBuffs as Buff } from 'graphql/queries/__generated__/allBuffs';
 
 export type { set as ItemSet } from 'graphql/fragments/__generated__/set';
 export type { item as Item } from 'graphql/fragments/__generated__/item';
+
 export type {
   CustomSet,
   EquippedItem,
@@ -40,4 +42,5 @@ export type {
   ItemTypeWithSlots,
   Class,
   SpellVariantPair,
+  Buff,
 };

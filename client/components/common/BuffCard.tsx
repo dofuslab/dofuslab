@@ -9,23 +9,29 @@ import { CardTitleWithLevel } from 'common/wrappers';
 import { itemCardStyle } from 'common/mixins';
 import Card from 'components/common/Card';
 import { Theme } from 'common/types';
-import { CustomSet, Spell } from 'common/type-aliases';
-import SpellCardContent from './SpellCardContent';
+import { Buff } from 'common/type-aliases';
 import SpellLevelRadio from './SpellLevelRadio';
 
 interface Props {
-  customSet?: CustomSet | null;
-  spell: Spell;
+  buffs: Array<Buff>;
+  level: number;
 }
 
-const SpellCard: React.FC<Props> = ({ spell, customSet }) => {
-  const customSetLevel = customSet?.level || 200;
-  const spellLevelIdx = spell.spellStats.reduce((max, curr, idx) => {
-    if (curr.level <= customSetLevel) {
+const BuffCard: React.FC<Props> = ({ buffs, level }) => {
+  const spellStats = buffs
+    .filter((b) => !!b.spellStats)
+    .map((b) => b.spellStats);
+
+  const spellLevelIdx = spellStats.reduce((max, curr, idx) => {
+    if (!curr) {
+      return max;
+    }
+    if (curr.level <= level) {
       return idx;
     }
     return max;
   }, -1);
+
   const [selectedSpellLevelIdx, selectSpellLevelIdx] = React.useState<number>(
     spellLevelIdx,
   );
@@ -41,18 +47,24 @@ const SpellCard: React.FC<Props> = ({ spell, customSet }) => {
 
   return (
     <Card
-      key={spell.id}
       size="small"
       title={
         <CardTitleWithLevel
-          title={spell.name}
+          title={
+            buffs[selectedSpellLevelIdx]?.spellStats?.spell?.name ||
+            buffs[0].item?.name ||
+            ''
+          }
           rightAlignedContent={
-            <SpellLevelRadio
-              selectedSpellLevelIdx={selectedSpellLevelIdx}
-              onChange={onChange}
-              spellLevelIdx={spellLevelIdx}
-              spellStats={spell.spellStats}
-            />
+            spellStats.length > 0 && (
+              <SpellLevelRadio
+                selectedSpellLevelIdx={selectedSpellLevelIdx}
+                onChange={onChange}
+                spellLevelIdx={spellLevelIdx}
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                spellStats={buffs.map((b) => b.spellStats!)}
+              />
+            )
           }
         />
       }
@@ -64,13 +76,9 @@ const SpellCard: React.FC<Props> = ({ spell, customSet }) => {
         border: `1px solid ${theme.border?.default}`,
       }}
     >
-      <SpellCardContent
-        customSet={customSet}
-        selectedSpellLevelIdx={selectedSpellLevelIdx}
-        spell={spell}
-      />
+      asdf
     </Card>
   );
 };
 
-export default SpellCard;
+export default BuffCard;
