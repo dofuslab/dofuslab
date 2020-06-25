@@ -18,4 +18,6 @@ class ModelSpellVariantPair(Base):
     class_id = Column(
         UUID(as_uuid=True), ForeignKey("class.uuid", ondelete="CASCADE"), nullable=False
     )
-    spells = relationship("ModelSpell", backref="class", cascade="all, delete-orphan")
+    spells = relationship(
+        "ModelSpell", backref="variant_pair", cascade="all, delete-orphan"
+    )
