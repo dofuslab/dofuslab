@@ -68,6 +68,15 @@ export interface register_registerUser_user_favoriteItems_set {
   bonuses: register_registerUser_user_favoriteItems_set_bonuses[];
 }
 
+export interface register_registerUser_user_favoriteItems_buffs {
+  __typename: 'Buff';
+  id: any;
+  stat: Stat;
+  incrementBy: number | null;
+  critIncrementBy: number | null;
+  maxStacks: number | null;
+}
+
 export interface register_registerUser_user_favoriteItems {
   __typename: 'Item';
   id: any;
@@ -79,6 +88,7 @@ export interface register_registerUser_user_favoriteItems {
   conditions: any | null;
   itemType: register_registerUser_user_favoriteItems_itemType;
   set: register_registerUser_user_favoriteItems_set | null;
+  buffs: register_registerUser_user_favoriteItems_buffs[] | null;
 }
 
 export interface register_registerUser_user {

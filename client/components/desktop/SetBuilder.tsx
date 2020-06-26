@@ -258,6 +258,7 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
         closeBuffModal={closeBuffModal}
         appliedBuffs={appliedBuffs}
         dispatch={dispatch}
+        customSet={customSet}
       />
     </>
   );

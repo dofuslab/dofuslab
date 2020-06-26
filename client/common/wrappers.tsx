@@ -49,7 +49,10 @@ export const ResponsiveGrid = styled.div<{ numColumns: ReadonlyArray<number> }>(
   ({ numColumns }) => getResponsiveGridStyle(numColumns),
 );
 
-export const Badge: React.FC = ({ children, ...restProps }) => {
+export const Badge: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
+  children,
+  ...restProps
+}) => {
   const theme = useTheme<Theme>();
   return (
     <span

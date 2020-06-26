@@ -3,14 +3,18 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ItemFilters, Stat, WeaponEffectType } from "./../../../__generated__/globalTypes";
+import {
+  ItemFilters,
+  Stat,
+  WeaponEffectType,
+} from './../../../__generated__/globalTypes';
 
 // ====================================================
 // GraphQL query operation: items
 // ====================================================
 
 export interface items_items_edges_node_stats {
-  __typename: "ItemStat";
+  __typename: 'ItemStat';
   id: any;
   order: number;
   maxValue: number | null;
@@ -19,7 +23,7 @@ export interface items_items_edges_node_stats {
 }
 
 export interface items_items_edges_node_weaponStats_weaponEffects {
-  __typename: "WeaponEffect";
+  __typename: 'WeaponEffect';
   id: any;
   minDamage: number | null;
   maxDamage: number;
@@ -27,7 +31,7 @@ export interface items_items_edges_node_weaponStats_weaponEffects {
 }
 
 export interface items_items_edges_node_weaponStats {
-  __typename: "WeaponStat";
+  __typename: 'WeaponStat';
   id: any;
   apCost: number;
   usesPerTurn: number;
@@ -39,13 +43,13 @@ export interface items_items_edges_node_weaponStats {
 }
 
 export interface items_items_edges_node_itemType_eligibleItemSlots {
-  __typename: "ItemSlot";
+  __typename: 'ItemSlot';
   id: any;
   order: number;
 }
 
 export interface items_items_edges_node_itemType {
-  __typename: "ItemType";
+  __typename: 'ItemType';
   id: any;
   name: string;
   enName: string;
@@ -53,7 +57,7 @@ export interface items_items_edges_node_itemType {
 }
 
 export interface items_items_edges_node_set_bonuses {
-  __typename: "SetBonus";
+  __typename: 'SetBonus';
   id: any;
   numItems: number;
   stat: Stat | null;
@@ -62,14 +66,23 @@ export interface items_items_edges_node_set_bonuses {
 }
 
 export interface items_items_edges_node_set {
-  __typename: "Set";
+  __typename: 'Set';
   id: any;
   name: string;
   bonuses: items_items_edges_node_set_bonuses[];
 }
 
+export interface items_items_edges_node_buffs {
+  __typename: 'Buff';
+  id: any;
+  stat: Stat;
+  incrementBy: number | null;
+  critIncrementBy: number | null;
+  maxStacks: number | null;
+}
+
 export interface items_items_edges_node {
-  __typename: "Item";
+  __typename: 'Item';
   id: any;
   name: string;
   level: number;
@@ -79,15 +92,16 @@ export interface items_items_edges_node {
   conditions: any | null;
   itemType: items_items_edges_node_itemType;
   set: items_items_edges_node_set | null;
+  buffs: items_items_edges_node_buffs[] | null;
 }
 
 export interface items_items_edges {
-  __typename: "ItemEdge";
+  __typename: 'ItemEdge';
   node: items_items_edges_node;
 }
 
 export interface items_items_pageInfo {
-  __typename: "PageInfo";
+  __typename: 'PageInfo';
   /**
    * When paginating forwards, are there more items?
    */
@@ -99,7 +113,7 @@ export interface items_items_pageInfo {
 }
 
 export interface items_items {
-  __typename: "ItemConnection";
+  __typename: 'ItemConnection';
   edges: items_items_edges[];
   /**
    * Pagination data for this connection.

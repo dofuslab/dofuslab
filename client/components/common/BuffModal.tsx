@@ -22,7 +22,9 @@ import {
 } from 'graphql/queries/__generated__/classBuffs';
 import classBuffsQuery from 'graphql/queries/classBuffs.graphql';
 import { mq } from 'common/constants';
+import { CustomSet } from 'common/type-aliases';
 import SpellBuffCard from './SpellBuffCard';
+import ItemBuffCard from './ItemBuffCard';
 
 const { Option } = Select;
 
@@ -37,6 +39,7 @@ interface Props {
   closeBuffModal: () => void;
   appliedBuffs: Array<AppliedBuff>;
   dispatch: React.Dispatch<AppliedBuffAction>;
+  customSet: CustomSet | null;
 }
 
 const BuffModal: React.FC<Props> = ({
@@ -44,6 +47,7 @@ const BuffModal: React.FC<Props> = ({
   closeBuffModal,
   appliedBuffs,
   dispatch,
+  customSet,
 }) => {
   const { t } = useTranslation(['stat', 'common']);
   const { data: classData } = useQuery<classes>(classesQuery);
@@ -68,6 +72,11 @@ const BuffModal: React.FC<Props> = ({
       (acc, { spells: [s1, s2] }) => [...acc, s1, s2],
       [] as Array<ClassBuffSpell>,
     ) ?? [];
+
+  const itemsWithBuffs =
+    customSet?.equippedItems
+      .filter((ei) => (ei.item.buffs?.length ?? 0) > 0)
+      .map((ei) => ei.item) ?? [];
 
   return (
     <Modal
@@ -107,6 +116,23 @@ const BuffModal: React.FC<Props> = ({
         );
       })}
       {appliedBuffs.length > 0 && <Divider css={{ margin: '12px 0' }} />}
+      {itemsWithBuffs.length > 0 && (
+        <>
+          <div
+            css={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(224px, 1fr))',
+              gridGap: 8,
+            }}
+          >
+            {itemsWithBuffs?.map((item) => (
+              <ItemBuffCard item={item} dispatch={dispatch} />
+            ))}
+          </div>
+          <Divider css={{ margin: '12px 0' }} />
+        </>
+      )}
+
       <Select<string>
         getPopupContainer={(node: HTMLElement) => {
           if (node.parentElement) {

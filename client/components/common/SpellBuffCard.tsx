@@ -81,9 +81,6 @@ const SpellBuffCard: React.FC<Props> = ({ spell, level, dispatch }) => {
       }
       css={{
         ...itemCardStyle,
-        ':hover': {
-          border: `1px solid ${theme.border?.default}`,
-        },
         border: `1px solid ${theme.border?.default}`,
       }}
     >
