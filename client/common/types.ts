@@ -4,7 +4,14 @@ import {
   WeaponEffectType,
   SpellEffectType,
 } from '__generated__/globalTypes';
-import { ItemSet, EquippedItem, CustomSet, Buff } from './type-aliases';
+import {
+  ItemSet,
+  EquippedItem,
+  CustomSet,
+  Buff,
+  Item,
+  ClassBuffSpell,
+} from './type-aliases';
 
 export type StatWithCalculatedValue = {
   stat: string;
@@ -229,6 +236,8 @@ export interface AppliedBuff {
   buff: Buff;
   numStacks: number;
   numCritStacks: number;
+  spell?: ClassBuffSpell;
+  item?: Item;
 }
 
 export enum AppliedBuffActionType {
@@ -241,9 +250,17 @@ export enum AppliedBuffActionType {
 export type AppliedBuffAction =
   | {
       type: AppliedBuffActionType.ADD_STACK;
-      buffId: string;
+      buff: Buff;
       isCrit: boolean;
+      spell?: ClassBuffSpell;
+      item?: Item;
     }
-  | { type: AppliedBuffActionType.MAX_STACKS; buffId: string; isCrit: boolean }
+  | {
+      type: AppliedBuffActionType.MAX_STACKS;
+      buff: Buff;
+      isCrit: boolean;
+      spell?: ClassBuffSpell;
+      item?: Item;
+    }
   | { type: AppliedBuffActionType.REMOVE_BUFF; buffId: string }
   | { type: AppliedBuffActionType.CLEAR_ALL };

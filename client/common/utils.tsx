@@ -1745,31 +1745,51 @@ export const appliedBuffsReducer = (
 ): Array<AppliedBuff> => {
   switch (action.type) {
     case AppliedBuffActionType.ADD_STACK: {
-      const idx = state.findIndex(({ buff: { id } }) => id === action.buffId);
-      const { buff, numStacks, numCritStacks } = state[idx];
+      const newState = [...state];
+      let idx = state.findIndex(({ buff: { id } }) => id === action.buff.id);
+      if (idx === -1) {
+        newState.push({
+          spell: action.spell,
+          item: action.item,
+          buff: action.buff,
+          numStacks: 0,
+          numCritStacks: 0,
+        });
+        idx = newState.length - 1;
+      }
+      const { buff, numStacks, numCritStacks } = newState[idx];
       if (buff.maxStacks && numStacks + numCritStacks >= buff.maxStacks) {
         return state;
       }
-      const newState = [...state];
       const key = action.isCrit ? 'numCritStacks' : 'numStacks';
-      newState[idx] = { ...state[idx], [key]: state[idx][key] + 1 };
+      newState[idx] = { ...newState[idx], [key]: newState[idx][key] + 1 };
       return newState;
     }
     case AppliedBuffActionType.MAX_STACKS: {
-      const idx = state.findIndex(({ buff: { id } }) => id === action.buffId);
-      const { buff, numStacks, numCritStacks } = state[idx];
+      const newState = [...state];
+      let idx = state.findIndex(({ buff: { id } }) => id === action.buff.id);
+      if (idx === -1) {
+        newState.push({
+          spell: action.spell,
+          item: action.item,
+          buff: action.buff,
+          numStacks: 0,
+          numCritStacks: 0,
+        });
+        idx = newState.length - 1;
+      }
+      const { buff, numStacks, numCritStacks } = newState[idx];
       if (
         !buff.maxStacks ||
         (buff.maxStacks && numStacks + numCritStacks >= buff.maxStacks)
       ) {
         return state;
       }
-      const newState = [...state];
       const key = action.isCrit ? 'numCritStacks' : 'numStacks';
       const otherKey = action.isCrit ? 'numStacks' : 'numCritStacks';
       newState[idx] = {
-        ...state[idx],
-        [key]: buff.maxStacks - state[idx][otherKey],
+        ...newState[idx],
+        [key]: buff.maxStacks - newState[idx][otherKey],
       };
       return newState;
     }

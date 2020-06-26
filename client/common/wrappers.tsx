@@ -141,6 +141,7 @@ export const CardTitleWithLevel: React.FC<{
   level?: number;
   rightAlignedContent?: React.ReactNode;
   levelClassName?: string;
+  className?: string;
 }> = ({
   title,
   level,
@@ -148,28 +149,36 @@ export const CardTitleWithLevel: React.FC<{
   badgeContent,
   rightAlignedContent,
   levelClassName,
+  className,
 }) => {
   const { t } = useTranslation('common');
 
   return (
-    <div css={{ marginRight: 4, display: 'flex', alignItems: 'center' }}>
-      <div css={{ minWidth: 0 }}>
-        <div css={{ display: 'flex', alignItems: 'center' }}>
-          <TruncatableText css={{ fontSize: '0.8rem' }}>
-            {title}
-          </TruncatableText>
-          {showBadge && <Badge css={{ marginRight: 4 }}>{badgeContent}</Badge>}
-        </div>
+    <ClassNames>
+      {({ css, cx }) => (
         <div
-          css={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}
+          css={cx(
+            className,
+            css({ marginRight: 4, display: 'flex', alignItems: 'center' }),
+          )}
         >
-          {level && (
-            <ClassNames>
-              {({ css, cx }) => (
+          <div css={{ minWidth: 0 }}>
+            <div css={{ display: 'flex', alignItems: 'center' }}>
+              <TruncatableText css={{ fontSize: '0.8rem' }}>
+                {title}
+              </TruncatableText>
+              {showBadge && (
+                <Badge css={{ marginRight: 4 }}>{badgeContent}</Badge>
+              )}
+            </div>
+            <div
+              css={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
+              {level && (
                 <div
                   className={cx(
                     css({
@@ -183,15 +192,15 @@ export const CardTitleWithLevel: React.FC<{
                   {t('LEVEL_ABBREVIATION', { ns: 'common' })} {level}
                 </div>
               )}
-            </ClassNames>
+            </div>
+          </div>
+
+          {rightAlignedContent && (
+            <div css={{ marginLeft: 'auto' }}>{rightAlignedContent}</div>
           )}
         </div>
-      </div>
-
-      {rightAlignedContent && (
-        <div css={{ marginLeft: 'auto' }}>{rightAlignedContent}</div>
       )}
-    </div>
+    </ClassNames>
   );
 };
 

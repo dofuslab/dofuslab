@@ -4,19 +4,33 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import Modal from 'antd/lib/modal/Modal';
 
-import { AppliedBuff, AppliedBuffAction } from 'common/types';
+import {
+  AppliedBuff,
+  AppliedBuffAction,
+  AppliedBuffActionType,
+} from 'common/types';
 import { useTranslation } from 'i18n';
 import { useQuery } from '@apollo/react-hooks';
-import { allBuffs } from 'graphql/queries/__generated__/allBuffs';
-import allBuffsQuery from 'graphql/queries/allBuffs.graphql';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
-import { Select } from 'antd';
+import { Select, Spin, Divider } from 'antd';
 import { useClassId } from 'common/utils';
-import { Buff } from 'common/type-aliases';
-import BuffCard from './BuffCard';
+import {
+  classBuffs,
+  classBuffsVariables,
+  classBuffs_classById_spellVariantPairs_spells as ClassBuffSpell,
+} from 'graphql/queries/__generated__/classBuffs';
+import classBuffsQuery from 'graphql/queries/classBuffs.graphql';
+import { mq } from 'common/constants';
+import SpellBuffCard from './SpellBuffCard';
 
 const { Option } = Select;
+
+const getBuffImage = (appliedBuff: AppliedBuff) =>
+  appliedBuff.spell?.imageUrl || appliedBuff.item?.imageUrl || null;
+
+const getBuffName = (appliedBuff: AppliedBuff) =>
+  appliedBuff.spell?.name || appliedBuff.item?.name || null;
 
 interface Props {
   visible: boolean;
@@ -28,54 +42,32 @@ interface Props {
 const BuffModal: React.FC<Props> = ({
   visible,
   closeBuffModal,
-  // appliedBuffs,
-  // dispatch,
+  appliedBuffs,
+  dispatch,
 }) => {
   const { t } = useTranslation(['stat', 'common']);
-  const { data } = useQuery<allBuffs>(allBuffsQuery);
   const { data: classData } = useQuery<classes>(classesQuery);
   const initialClassId = useClassId();
   const [selectedClassId, setSelectedClassId] = React.useState<
     string | undefined
   >(initialClassId);
+  const { data, loading } = useQuery<classBuffs, classBuffsVariables>(
+    classBuffsQuery,
+    {
+      skip: !selectedClassId,
+      variables: { id: selectedClassId },
+    },
+  );
 
   const onSelectClass = React.useCallback((newSelectedClassId: string) => {
     setSelectedClassId(newSelectedClassId);
   }, []);
 
-  // const buffItems = React.useMemo(() => {
-  //   const buffItemsObj: { [key: string]: BuffItem } = {};
-  //   const filteredBuffs = data?.allBuffs.filter((buff) => !!buff.item) ?? [];
-  //   filteredBuffs.forEach((buff) => {
-  //     if (!buff.item) {
-  //       return;
-  //     }
-  //     buffItemsObj[buff.item.id] = buff.item;
-  //   });
-  //   return Object.values(buffItemsObj);
-  // }, [data?.allBuffs]);
-
-  const buffClassesObj = React.useMemo(() => {
-    const obj: { [key: string]: { [key: string]: Array<Buff> } } = {};
-    const filteredBuffs =
-      data?.allBuffs.filter((buff) => !!buff.spellStats) ?? [];
-    filteredBuffs.forEach((buff) => {
-      if (!buff.spellStats?.spell?.variantPair?.class) {
-        return;
-      }
-      const classId = buff.spellStats.spell.variantPair.class.id;
-      const spellId = buff.spellStats.spell.id;
-      if (!obj[classId]) {
-        obj[classId] = {};
-      }
-      if (obj[classId][spellId]) {
-        obj[classId][spellId].push(buff);
-      } else {
-        obj[classId][spellId] = [buff];
-      }
-    });
-    return obj;
-  }, [data?.allBuffs]);
+  const flattenedSpells =
+    data?.classById?.spellVariantPairs.reduce(
+      (acc, { spells: [s1, s2] }) => [...acc, s1, s2],
+      [] as Array<ClassBuffSpell>,
+    ) ?? [];
 
   return (
     <Modal
@@ -83,7 +75,38 @@ const BuffModal: React.FC<Props> = ({
       onCancel={closeBuffModal}
       footer={null}
       title={t('BUFFS', { ns: 'common' })}
+      css={{ [mq[1]]: { minWidth: 720 } }}
     >
+      {appliedBuffs.map((ab) => {
+        const buffName = getBuffName(ab);
+        const buffImgUrl = getBuffImage(ab);
+        return (
+          <div css={{ ':not(:first-of-type)': { marginTop: 4 } }}>
+            <a
+              key={ab.buff.id}
+              onClick={() => {
+                dispatch({
+                  type: AppliedBuffActionType.REMOVE_BUFF,
+                  buffId: ab.buff.id,
+                });
+              }}
+            >
+              {buffName && buffImgUrl && (
+                <img
+                  src={buffImgUrl}
+                  css={{ width: 24, marginRight: 8 }}
+                  alt={buffName}
+                />
+              )}
+              {getBuffName(ab)}:{' '}
+              {ab.numStacks * (ab.buff.incrementBy || 0) +
+                ab.numCritStacks * (ab.buff.critIncrementBy || 0)}{' '}
+              {t(ab.buff.stat)}
+            </a>
+          </div>
+        );
+      })}
+      {appliedBuffs.length > 0 && <Divider css={{ margin: '12px 0' }} />}
       <Select<string>
         getPopupContainer={(node: HTMLElement) => {
           if (node.parentElement) {
@@ -91,6 +114,7 @@ const BuffModal: React.FC<Props> = ({
           }
           return document && document.body;
         }}
+        size="large"
         css={{ width: '100%', marginBottom: 12 }}
         showSearch
         filterOption={(input, option) => {
@@ -106,11 +130,7 @@ const BuffModal: React.FC<Props> = ({
           [...classData?.classes]
             .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
             .map((dofusClass) => (
-              <Option
-                key={dofusClass.id}
-                value={dofusClass.id}
-                disabled={!buffClassesObj[dofusClass.id]}
-              >
+              <Option key={dofusClass.id} value={dofusClass.id}>
                 <img
                   src={dofusClass.faceImageUrl}
                   alt={dofusClass.name}
@@ -127,19 +147,20 @@ const BuffModal: React.FC<Props> = ({
           gridGap: 8,
         }}
       >
-        {/* {data?.allBuffs
-          .filter(
-            (b) =>
-              b.spellStats?.spell?.variantPair?.class?.id === selectedClassId,
-          )
-          .map((b) => (
-            <div>{b.spellStats?.spell?.name}</div>
-          ))} */}
-        {selectedClassId &&
-          buffClassesObj[selectedClassId] &&
-          Object.entries(buffClassesObj[selectedClassId]).map(([, v]) => (
-            <BuffCard buffs={v} level={200} />
-          ))}
+        {loading ? (
+          <Spin css={{ marginTop: 24 }} />
+        ) : (
+          flattenedSpells
+            .filter((s) => !!s.spellStats.some((ss) => !!ss.buffs?.length))
+            .map((s) => (
+              <SpellBuffCard
+                key={s.id}
+                spell={s}
+                level={200}
+                dispatch={dispatch}
+              />
+            ))
+        )}
       </div>
     </Modal>
   );

@@ -106,6 +106,7 @@ const ClassSpells: React.FC<Props> = ({ customSet }) => {
           }
           return document && document.body;
         }}
+        size="large"
         css={{ gridColumn: '1 / -1' }}
         showSearch
         filterOption={(input, option) => {
