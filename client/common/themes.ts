@@ -82,7 +82,7 @@ export const darkTheme: Theme = {
     default: gray10,
     selected: gray9,
     primarySelected: blue6,
-    light: '#303030',
+    light: gray9,
   },
   layer: {
     background: gray11,

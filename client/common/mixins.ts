@@ -213,3 +213,13 @@ export const optionalIconCss = {
   marginLeft: 8,
   [mq[2]]: { display: 'inline' },
 };
+
+export const getModalStyle = (theme: Theme) => ({
+  '&.ant-modal .ant-card': {
+    background: theme.layer?.backgroundLight,
+
+    '.ant-card-head': {
+      borderBottom: `1px solid ${theme.border?.light}`,
+    },
+  },
+});

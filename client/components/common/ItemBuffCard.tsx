@@ -34,7 +34,7 @@ const ItemBuffCard: React.FC<Props> = ({ item, dispatch }) => {
       }
       css={{
         ...itemCardStyle,
-        border: `1px solid ${theme.border?.default}`,
+        background: theme.layer?.backgroundLight,
       }}
     >
       {item.buffs?.map((b) => (

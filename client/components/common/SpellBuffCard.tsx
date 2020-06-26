@@ -3,12 +3,11 @@
 import * as React from 'react';
 import { jsx } from '@emotion/core';
 import { RadioChangeEvent } from 'antd/lib/radio';
-import { useTheme } from 'emotion-theming';
 
 import { CardTitleWithLevel, damageHeaderStyle } from 'common/wrappers';
 import { itemCardStyle } from 'common/mixins';
 import Card from 'components/common/Card';
-import { Theme, AppliedBuffAction } from 'common/types';
+import { AppliedBuffAction } from 'common/types';
 import { classBuffs_classById_spellVariantPairs_spells as ClassBuffSpell } from 'graphql/queries/__generated__/classBuffs';
 import { useTranslation } from 'i18n';
 import SpellLevelRadio from './SpellLevelRadio';
@@ -41,8 +40,6 @@ const SpellBuffCard: React.FC<Props> = ({ spell, level, dispatch }) => {
     },
     [selectSpellLevelIdx],
   );
-
-  const theme = useTheme<Theme>();
 
   const currentSpellStats = spell.spellStats[selectedSpellLevelIdx];
   const { t } = useTranslation(['weapon_spell_effect', 'common']);
@@ -81,7 +78,6 @@ const SpellBuffCard: React.FC<Props> = ({ spell, level, dispatch }) => {
       }
       css={{
         ...itemCardStyle,
-        border: `1px solid ${theme.border?.default}`,
       }}
     >
       <div

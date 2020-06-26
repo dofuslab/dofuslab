@@ -8,6 +8,7 @@ import {
   AppliedBuff,
   AppliedBuffAction,
   AppliedBuffActionType,
+  Theme,
 } from 'common/types';
 import { useTranslation } from 'i18n';
 import { useQuery } from '@apollo/react-hooks';
@@ -25,6 +26,8 @@ import { mq } from 'common/constants';
 import { CustomSet } from 'common/type-aliases';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
+import { useTheme } from 'emotion-theming';
+import { getModalStyle } from 'common/mixins';
 import SpellBuffCard from './SpellBuffCard';
 import ItemBuffCard from './ItemBuffCard';
 
@@ -73,6 +76,8 @@ const BuffModal: React.FC<Props> = ({
     dispatch({ type: AppliedBuffActionType.CLEAR_ALL });
   }, []);
 
+  const theme = useTheme<Theme>();
+
   const flattenedSpells =
     data?.classById?.spellVariantPairs.reduce(
       (acc, { spells: [s1, s2] }) => [...acc, s1, s2],
@@ -90,7 +95,10 @@ const BuffModal: React.FC<Props> = ({
       onCancel={closeBuffModal}
       footer={null}
       title={t('BUFFS', { ns: 'common' })}
-      css={{ [mq[1]]: { minWidth: 720 } }}
+      css={{
+        [mq[1]]: { minWidth: 720 },
+        ...getModalStyle(theme),
+      }}
     >
       {appliedBuffs.length > 0 && (
         <Button
@@ -137,7 +145,7 @@ const BuffModal: React.FC<Props> = ({
             css={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(224px, 1fr))',
-              gridGap: 8,
+              gridGap: 12,
             }}
           >
             {itemsWithBuffs?.map((item) => (
@@ -185,7 +193,7 @@ const BuffModal: React.FC<Props> = ({
         css={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(224px, 1fr))',
-          gridGap: 8,
+          gridGap: 12,
         }}
       >
         {loading ? (
