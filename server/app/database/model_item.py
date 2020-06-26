@@ -42,4 +42,4 @@ class ModelItem(Base):
     conditions = Column("conditions", JSON)
     image_url = Column("image_url", String, nullable=False, index=True)
 
-    buff = relationship("ModelBuff", backref="item", cascade="all, delete-orphan")
+    buffs = relationship("ModelBuff", backref="item", cascade="all, delete-orphan")
