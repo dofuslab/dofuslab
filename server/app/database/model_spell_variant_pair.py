@@ -19,5 +19,5 @@ class ModelSpellVariantPair(Base):
         UUID(as_uuid=True), ForeignKey("class.uuid", ondelete="CASCADE"), nullable=False
     )
     spells = relationship(
-        "ModelSpell", backref="variant_pair", cascade="all, delete-orphan"
+        "ModelSpell", backref="spell_variant_pair", cascade="all, delete-orphan"
     )
