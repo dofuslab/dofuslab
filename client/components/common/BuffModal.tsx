@@ -13,7 +13,7 @@ import { useTranslation } from 'i18n';
 import { useQuery } from '@apollo/react-hooks';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
-import { Select, Spin, Divider } from 'antd';
+import { Select, Spin, Divider, Button } from 'antd';
 import { useClassId } from 'common/utils';
 import {
   classBuffs,
@@ -23,6 +23,8 @@ import {
 import classBuffsQuery from 'graphql/queries/classBuffs.graphql';
 import { mq } from 'common/constants';
 import { CustomSet } from 'common/type-aliases';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 import SpellBuffCard from './SpellBuffCard';
 import ItemBuffCard from './ItemBuffCard';
 
@@ -67,6 +69,10 @@ const BuffModal: React.FC<Props> = ({
     setSelectedClassId(newSelectedClassId);
   }, []);
 
+  const onResetAll = React.useCallback(() => {
+    dispatch({ type: AppliedBuffActionType.CLEAR_ALL });
+  }, []);
+
   const flattenedSpells =
     data?.classById?.spellVariantPairs.reduce(
       (acc, { spells: [s1, s2] }) => [...acc, s1, s2],
@@ -86,6 +92,15 @@ const BuffModal: React.FC<Props> = ({
       title={t('BUFFS', { ns: 'common' })}
       css={{ [mq[1]]: { minWidth: 720 } }}
     >
+      {appliedBuffs.length > 0 && (
+        <Button
+          css={{ float: 'right', marginBottom: 12, marginLeft: 12 }}
+          icon={<FontAwesomeIcon icon={faRedoAlt} css={{ marginRight: 8 }} />}
+          onClick={onResetAll}
+        >
+          {t('RESET_ALL', { ns: 'common' })}
+        </Button>
+      )}
       {appliedBuffs.map((ab) => {
         const buffName = getBuffName(ab);
         const buffImgUrl = getBuffImage(ab);

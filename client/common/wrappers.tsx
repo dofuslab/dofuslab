@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 import { useTheme } from 'emotion-theming';
 import Head from 'next/head';
 
-import { Skeleton, Switch } from 'antd';
+import { Skeleton, Switch, Button } from 'antd';
 import { TFunction } from 'next-i18next';
 import { useTranslation } from 'i18n';
 import {
@@ -21,11 +21,12 @@ import {
   faCube,
   faPeopleArrows,
   faFistRaised,
+  faBolt,
 } from '@fortawesome/free-solid-svg-icons';
 import Tooltip from 'components/common/Tooltip';
 import { Media } from 'components/common/Media';
 import { mq } from './constants';
-import { Theme } from './types';
+import { Theme, AppliedBuff } from './types';
 import {
   effectToIconUrl,
   getSimpleEffect,
@@ -473,5 +474,30 @@ export const TotalDamageLine = ({
         </div>
       )}
     </div>
+  );
+};
+
+export const BuffButton = ({
+  openBuffModal,
+  appliedBuffs,
+  className,
+}: {
+  openBuffModal: () => void;
+  appliedBuffs: Array<AppliedBuff>;
+  className?: string;
+}) => {
+  const { t } = useTranslation('common');
+  return (
+    <Button
+      onClick={openBuffModal}
+      icon={<FontAwesomeIcon icon={faBolt} css={{ marginRight: 8 }} />}
+      className={className}
+    >
+      {appliedBuffs.length > 0
+        ? t('BUFF_APPLIED', {
+            count: appliedBuffs.length,
+          })
+        : t('BUFFS')}
+    </Button>
   );
 };

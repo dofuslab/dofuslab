@@ -102,6 +102,8 @@ export const statIcons: { [key: string]: string } = {
     'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Melee_Resistance.svg',
   [Stat.PCT_RANGED_RES]:
     'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Ranged_Resistance.svg',
+  [Stat.DAMAGE]:
+    'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Damage.svg',
 };
 
 export const classicStatGroups = [

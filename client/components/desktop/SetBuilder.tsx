@@ -2,23 +2,28 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import { Tabs, Button } from 'antd';
+import { Tabs } from 'antd';
 import { useTheme } from 'emotion-theming';
 
 import { mq, SEARCH_BAR_ID } from 'common/constants';
-import { ResponsiveGrid } from 'common/wrappers';
+import { ResponsiveGrid, BuffButton } from 'common/wrappers';
 
 import {
   getStatsFromCustomSet,
   getErrors,
-  appliedBuffsReducer,
+  getStatsFromAppliedBuffs,
 } from 'common/utils';
 import { topMarginStyle } from 'common/mixins';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
 import { useTranslation } from 'i18n';
-import { BuildError, Theme } from 'common/types';
+import {
+  BuildError,
+  Theme,
+  AppliedBuff,
+  AppliedBuffAction,
+} from 'common/types';
 import { Stat } from '__generated__/globalTypes';
 import { CustomSet, ItemSlot } from 'common/type-aliases';
 import BuffModal from 'components/common/BuffModal';
@@ -85,14 +90,14 @@ const statGroups = [
 
 interface Props {
   customSet: CustomSet | null;
+  appliedBuffs: Array<AppliedBuff>;
+  dispatch: React.Dispatch<AppliedBuffAction>;
 }
 
-const SetBuilder: React.FC<Props> = ({ customSet }) => {
+const SetBuilder: React.FC<Props> = ({ customSet, appliedBuffs, dispatch }) => {
   const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(
     null,
   );
-
-  const [appliedBuffs, dispatch] = React.useReducer(appliedBuffsReducer, []);
 
   const [buffModalOpen, setBuffModalOpen] = React.useState(false);
   const openBuffModal = React.useCallback(() => {
@@ -126,6 +131,11 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
   const statsFromCustomSet = React.useMemo(
     () => getStatsFromCustomSet(customSet),
     [customSet],
+  );
+
+  const statsFromAppliedBuffs = React.useMemo(
+    () => getStatsFromAppliedBuffs(appliedBuffs),
+    [appliedBuffs],
   );
 
   const weapon = customSet?.equippedItems.find(
@@ -186,6 +196,12 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
             [mq[2]]: { flex: '0 1 576px' },
           }}
         >
+          <div css={{ [mq[2]]: { display: 'none' } }}>
+            <BuffButton
+              openBuffModal={openBuffModal}
+              appliedBuffs={appliedBuffs}
+            />
+          </div>
           <Tabs
             defaultActiveKey="characteristics"
             css={{
@@ -193,6 +209,13 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                 borderBottom: `1px solid ${theme.border?.default}`,
               },
             }}
+            tabBarExtraContent={
+              <BuffButton
+                openBuffModal={openBuffModal}
+                appliedBuffs={appliedBuffs}
+                css={{ display: 'none', [mq[2]]: { display: 'inline' } }}
+              />
+            }
           >
             <TabPane tab={t('CHARACTERISTICS')} key="characteristics">
               <ResponsiveGrid
@@ -204,7 +227,9 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                     key={`stat-table-${group[0]}`}
                     group={group}
                     statsFromCustomSet={statsFromCustomSet}
+                    statsFromAppliedBuffs={statsFromAppliedBuffs}
                     customSet={customSet}
+                    openBuffModal={openBuffModal}
                   />
                 ))}
                 <StatEditor key={customSet?.stats.id} customSet={customSet} />
@@ -215,9 +240,6 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
               key="weapon-and-spells"
               forceRender
             >
-              <div css={{ marginBottom: 12 }}>
-                <Button onClick={openBuffModal}>{t('BUFFS')}</Button>
-              </div>
               <ResponsiveGrid
                 numColumns={[2, 1, 2, 2, 2, 2, 2]}
                 css={{ marginBottom: 20 }}

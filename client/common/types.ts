@@ -264,3 +264,7 @@ export type AppliedBuffAction =
     }
   | { type: AppliedBuffActionType.REMOVE_BUFF; buffId: string }
   | { type: AppliedBuffActionType.CLEAR_ALL };
+
+export type StatsFromAppliedBuffs = {
+  [key: string]: number;
+};

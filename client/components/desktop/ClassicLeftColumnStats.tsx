@@ -8,14 +8,21 @@ import { getStatsFromCustomSet } from 'common/utils';
 import { mq } from 'common/constants';
 import StatEditor from 'components/common/StatEditor';
 import { CustomSet } from 'common/type-aliases';
+import { StatsFromAppliedBuffs } from 'common/types';
 
 interface Props {
   customSet: CustomSet | null;
+  statsFromAppliedBuffs: StatsFromAppliedBuffs;
+  openBuffModal: () => void;
 }
 
 const margin = { marginBottom: 12, [mq[4]]: { marginBottom: 20 } };
 
-const ClassicLeftColumnStats: React.FC<Props> = ({ customSet }) => {
+const ClassicLeftColumnStats: React.FC<Props> = ({
+  customSet,
+  statsFromAppliedBuffs,
+  openBuffModal,
+}) => {
   const statsFromCustomSet = React.useMemo(
     () => getStatsFromCustomSet(customSet),
     [customSet],
@@ -47,6 +54,8 @@ const ClassicLeftColumnStats: React.FC<Props> = ({ customSet }) => {
         statsFromCustomSet={statsFromCustomSet}
         customSet={customSet}
         css={margin}
+        statsFromAppliedBuffs={statsFromAppliedBuffs}
+        openBuffModal={openBuffModal}
       />
       <ClassNames>
         {({ css, cx }) => (
@@ -62,6 +71,8 @@ const ClassicLeftColumnStats: React.FC<Props> = ({ customSet }) => {
         statsFromCustomSet={statsFromCustomSet}
         customSet={customSet}
         css={margin}
+        statsFromAppliedBuffs={statsFromAppliedBuffs}
+        openBuffModal={openBuffModal}
       />
       <StatTable
         group={[
@@ -71,8 +82,10 @@ const ClassicLeftColumnStats: React.FC<Props> = ({ customSet }) => {
           Stat.MP_REDUCTION,
         ]}
         statsFromCustomSet={statsFromCustomSet}
+        statsFromAppliedBuffs={statsFromAppliedBuffs}
         customSet={customSet}
         css={margin}
+        openBuffModal={openBuffModal}
       />
     </div>
   );

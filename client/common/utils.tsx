@@ -80,6 +80,7 @@ import {
   AppliedBuff,
   AppliedBuffAction,
   AppliedBuffActionType,
+  StatsFromAppliedBuffs,
 } from './types';
 import { META_DESCRIPTION, IS_CLASSIC_STORAGE_KEY } from './constants';
 import {
@@ -1823,3 +1824,18 @@ export const useClassId = () => {
   const selectedClassId = selectedClassName && nameToId?.[selectedClassName];
   return selectedClassId;
 };
+
+/* eslint-disable no-param-reassign */
+export const getStatsFromAppliedBuffs = (appliedBuffs: Array<AppliedBuff>) =>
+  appliedBuffs.reduce((stats, ab) => {
+    const buffValue =
+      ab.numCritStacks * (ab.buff.critIncrementBy || 0) +
+      ab.numStacks * (ab.buff.incrementBy || 0);
+    if (stats[ab.buff.stat]) {
+      stats[ab.buff.stat] += buffValue;
+    } else {
+      stats[ab.buff.stat] = buffValue;
+    }
+    return stats;
+  }, {} as StatsFromAppliedBuffs);
+/* eslint-enable no-param-reassign */

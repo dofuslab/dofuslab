@@ -5,11 +5,20 @@ import { jsx } from '@emotion/core';
 import { Tabs } from 'antd';
 import { useTheme } from 'emotion-theming';
 
-import { Theme, BuildError } from 'common/types';
+import {
+  Theme,
+  BuildError,
+  AppliedBuff,
+  AppliedBuffAction,
+} from 'common/types';
 import { classicStatGroups } from 'common/constants';
 import { ResponsiveGrid } from 'common/wrappers';
 import { topMarginStyle } from 'common/mixins';
-import { getStatsFromCustomSet, getErrors } from 'common/utils';
+import {
+  getStatsFromCustomSet,
+  getErrors,
+  getStatsFromAppliedBuffs,
+} from 'common/utils';
 import BonusStats from 'components/desktop/BonusStats';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
@@ -18,6 +27,7 @@ import { useTranslation } from 'i18n';
 
 import { ItemSlot, CustomSet } from 'common/type-aliases';
 import PublicBuildActions from 'components/common/PublicBuildActions';
+import BuffModal from 'components/common/BuffModal';
 import StatTable from '../common/StatTable';
 import StatEditor from '../common/StatEditor';
 import EquipmentSlots from '../common/EquipmentSlots';
@@ -27,9 +37,11 @@ const { TabPane } = Tabs;
 
 interface Props {
   customSet: CustomSet | null;
+  appliedBuffs: Array<AppliedBuff>;
+  dispatch: React.Dispatch<AppliedBuffAction>;
 }
 
-const SetBuilder: React.FC<Props> = ({ customSet }) => {
+const SetBuilder: React.FC<Props> = ({ customSet, appliedBuffs, dispatch }) => {
   const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(
     null,
   );
@@ -37,6 +49,18 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
     () => getStatsFromCustomSet(customSet),
     [customSet],
   );
+  const statsFromAppliedBuffs = React.useMemo(
+    () => getStatsFromAppliedBuffs(appliedBuffs),
+    [appliedBuffs],
+  );
+
+  const [buffModalOpen, setBuffModalOpen] = React.useState(false);
+  const openBuffModal = React.useCallback(() => {
+    setBuffModalOpen(true);
+  }, []);
+  const closeBuffModal = React.useCallback(() => {
+    setBuffModalOpen(false);
+  }, []);
 
   const weapon = customSet?.equippedItems.find(
     (equippedItem) => !!equippedItem.item.weaponStats,
@@ -106,6 +130,8 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                     group={group}
                     statsFromCustomSet={statsFromCustomSet}
                     customSet={customSet}
+                    statsFromAppliedBuffs={statsFromAppliedBuffs}
+                    openBuffModal={openBuffModal}
                   />
                 ))}
                 <StatEditor key={customSet?.stats.id} customSet={customSet} />
@@ -136,6 +162,13 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
           </Tabs>
         </div>
       </div>
+      <BuffModal
+        visible={buffModalOpen}
+        closeBuffModal={closeBuffModal}
+        appliedBuffs={appliedBuffs}
+        dispatch={dispatch}
+        customSet={customSet}
+      />
     </>
   );
 };

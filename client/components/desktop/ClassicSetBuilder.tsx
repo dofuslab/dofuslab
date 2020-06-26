@@ -6,8 +6,12 @@ import { Tabs } from 'antd';
 
 import { mq } from 'common/constants';
 
-import { getStatsFromCustomSet, getErrors } from 'common/utils';
-import { BuildError } from 'common/types';
+import {
+  getStatsFromCustomSet,
+  getErrors,
+  getStatsFromAppliedBuffs,
+} from 'common/utils';
+import { BuildError, AppliedBuff, AppliedBuffAction } from 'common/types';
 import StatTable from 'components/common/StatTable';
 import { Stat } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
@@ -15,23 +19,35 @@ import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassicClassSpells from 'components/desktop/ClassicClassSpells';
 import { CustomSet } from 'common/type-aliases';
+import BuffModal from 'components/common/BuffModal';
+import { BuffButton } from 'common/wrappers';
 import ClassicRightColumnStats from './ClassicRightColumnStats';
 import ClassicLeftColumnStats from './ClassicLeftColumnStats';
 import ClassicEquipmentSlots from './ClassicEquipmentSlots';
 import SetHeader from '../common/SetHeader';
 import ClassicClassSelector from './ClassicClassSelector';
-import PublicBuildActions from '../common/PublicBuildActions';
 
 const { TabPane } = Tabs;
 
 interface Props {
   customSet: CustomSet | null;
+  appliedBuffs: Array<AppliedBuff>;
+  dispatch: React.Dispatch<AppliedBuffAction>;
 }
 
-const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
+const ClassicSetBuilder: React.FC<Props> = ({
+  customSet,
+  appliedBuffs,
+  dispatch,
+}) => {
   const statsFromCustomSet = React.useMemo(
     () => getStatsFromCustomSet(customSet),
     [customSet],
+  );
+
+  const statsFromAppliedBuffs = React.useMemo(
+    () => getStatsFromAppliedBuffs(appliedBuffs),
+    [appliedBuffs],
   );
 
   const { t } = useTranslation();
@@ -45,6 +61,14 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
   if (customSet && statsFromCustomSet) {
     errors = getErrors(customSet, statsFromCustomSet);
   }
+
+  const [buffModalOpen, setBuffModalOpen] = React.useState(false);
+  const openBuffModal = React.useCallback(() => {
+    setBuffModalOpen(true);
+  }, []);
+  const closeBuffModal = React.useCallback(() => {
+    setBuffModalOpen(false);
+  }, []);
 
   return (
     <>
@@ -67,15 +91,10 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
         <Tabs
           defaultActiveKey="characteristics"
           tabBarExtraContent={
-            customSet && (
-              <div css={{ position: 'relative' }}>
-                <div
-                  css={{ position: 'absolute', top: -16, right: 0, zIndex: 1 }}
-                >
-                  <PublicBuildActions customSet={customSet} />
-                </div>
-              </div>
-            )
+            <BuffButton
+              openBuffModal={openBuffModal}
+              appliedBuffs={appliedBuffs}
+            />
           }
           css={{
             width: '100%',
@@ -97,7 +116,11 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
                 marginBottom: 60,
               }}
             >
-              <ClassicLeftColumnStats customSet={customSet} />
+              <ClassicLeftColumnStats
+                customSet={customSet}
+                statsFromAppliedBuffs={statsFromAppliedBuffs}
+                openBuffModal={openBuffModal}
+              />
               <div css={{ flex: '1 1 auto' }}>
                 <ClassicEquipmentSlots customSet={customSet} errors={errors} />
                 <div
@@ -119,6 +142,8 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
                     ]}
                     statsFromCustomSet={statsFromCustomSet}
                     customSet={customSet}
+                    statsFromAppliedBuffs={statsFromAppliedBuffs}
+                    openBuffModal={openBuffModal}
                   />
                   <StatTable
                     group={[
@@ -130,20 +155,30 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
                     ]}
                     statsFromCustomSet={statsFromCustomSet}
                     customSet={customSet}
+                    statsFromAppliedBuffs={statsFromAppliedBuffs}
+                    openBuffModal={openBuffModal}
                   />
                   <StatTable
                     group={[Stat.PCT_MELEE_RES, Stat.PCT_RANGED_RES]}
                     statsFromCustomSet={statsFromCustomSet}
                     customSet={customSet}
+                    statsFromAppliedBuffs={statsFromAppliedBuffs}
+                    openBuffModal={openBuffModal}
                   />
                   <StatTable
                     group={[Stat.CRITICAL_RES, Stat.PUSHBACK_RES]}
                     statsFromCustomSet={statsFromCustomSet}
                     customSet={customSet}
+                    statsFromAppliedBuffs={statsFromAppliedBuffs}
+                    openBuffModal={openBuffModal}
                   />
                 </div>
               </div>
-              <ClassicRightColumnStats customSet={customSet} />
+              <ClassicRightColumnStats
+                customSet={customSet}
+                statsFromAppliedBuffs={statsFromAppliedBuffs}
+                openBuffModal={openBuffModal}
+              />
             </div>
           </TabPane>
           <TabPane
@@ -183,6 +218,13 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
           </TabPane>
         </Tabs>
       </div>
+      <BuffModal
+        visible={buffModalOpen}
+        closeBuffModal={closeBuffModal}
+        appliedBuffs={appliedBuffs}
+        dispatch={dispatch}
+        customSet={customSet}
+      />
     </>
   );
 };

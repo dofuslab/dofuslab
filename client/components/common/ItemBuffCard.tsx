@@ -19,8 +19,6 @@ interface Props {
 const ItemBuffCard: React.FC<Props> = ({ item, dispatch }) => {
   const theme = useTheme<Theme>();
 
-  // const { t } = useTranslation(['weapon_spell_effect', 'common']);
-
   return (
     <Card
       size="small"

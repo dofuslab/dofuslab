@@ -1,5 +1,6 @@
 /** @jsx jsx */
 
+import React from 'react';
 import { jsx } from '@emotion/core';
 import { NextPage } from 'next';
 import Head from 'next/head';
@@ -16,7 +17,7 @@ import {
 } from 'graphql/queries/__generated__/customSet';
 import { CustomSetHead } from 'common/wrappers';
 import ClassicSetBuilder from 'components/desktop/ClassicSetBuilder';
-import { ClassicContext, useClassic } from 'common/utils';
+import { ClassicContext, useClassic, appliedBuffsReducer } from 'common/utils';
 import DesktopLayout from 'components/desktop/Layout';
 import MobileLayout from 'components/mobile/Layout';
 import ErrorPage from './_error';
@@ -33,6 +34,7 @@ const Index: NextPage = () => {
   const customSet = customSetData?.customSetById || null;
 
   const [isClassic, setIsClassic] = useClassic();
+  const [appliedBuffs, dispatch] = React.useReducer(appliedBuffsReducer, []);
 
   if (customSetId && !customSet && !loading) {
     return <ErrorPage statusCode={404} />;
@@ -51,15 +53,27 @@ const Index: NextPage = () => {
         <CustomSetHead customSet={customSet} />
         <Media lessThan="xs">
           <MobileLayout>
-            <MobileSetBuilder customSet={customSet} />
+            <MobileSetBuilder
+              customSet={customSet}
+              appliedBuffs={appliedBuffs}
+              dispatch={dispatch}
+            />
           </MobileLayout>
         </Media>
         <Media greaterThanOrEqual="xs" css={{ height: '100%' }}>
           <DesktopLayout showSwitch>
             {isClassic ? (
-              <ClassicSetBuilder customSet={customSet} />
+              <ClassicSetBuilder
+                customSet={customSet}
+                appliedBuffs={appliedBuffs}
+                dispatch={dispatch}
+              />
             ) : (
-              <DesktopSetBuilder customSet={customSet} />
+              <DesktopSetBuilder
+                customSet={customSet}
+                appliedBuffs={appliedBuffs}
+                dispatch={dispatch}
+              />
             )}
           </DesktopLayout>
         </Media>

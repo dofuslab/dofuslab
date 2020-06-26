@@ -3,6 +3,8 @@ import { Theme } from './types';
 
 export const shadow = '0 2px 8px rgba(0, 0, 0, 0.15)';
 
+export const green5 = '#73d13d';
+
 export const gold5 = '#ffc53d';
 
 export const blue1 = '#e6f7ff';

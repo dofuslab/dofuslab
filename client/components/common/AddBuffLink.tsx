@@ -7,6 +7,7 @@ import { useTranslation } from 'i18n';
 import { AppliedBuffAction, AppliedBuffActionType } from 'common/types';
 import { Badge } from 'common/wrappers';
 import { blue6, blue8 } from 'common/mixins';
+import { statIcons } from 'common/constants';
 
 interface Props {
   buff: Buff;
@@ -49,7 +50,14 @@ const AddBuffLink: React.FC<Props> = ({
   return (
     <div css={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
       <a onClick={onAddBuff} css={{ marginRight: 4 }}>
-        {buff[key]} {t(buff.stat)}
+        <img
+          src={statIcons[buff.stat]}
+          alt={t(buff.stat)}
+          css={{ marginRight: 8, width: 16 }}
+        />
+        <span>
+          {buff[key]} {t(buff.stat)}
+        </span>
       </a>
       {buff.maxStacks && buff.maxStacks > 1 && (
         <Badge

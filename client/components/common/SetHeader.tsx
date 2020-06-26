@@ -404,7 +404,7 @@ const SetHeader: React.FC<Props> = ({
               !isEditable &&
               !isMobile &&
               editBuildButton}
-            {customSet && !isMobile && !isClassic && (
+            {customSet && !isMobile && (
               <PublicBuildActions
                 customSet={customSet}
                 css={{ marginLeft: 'auto' }}
