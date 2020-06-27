@@ -7,7 +7,6 @@ import { RadioChangeEvent } from 'antd/lib/radio';
 import { CardTitleWithLevel, damageHeaderStyle } from 'common/wrappers';
 import { itemCardStyle } from 'common/mixins';
 import Card from 'components/common/Card';
-import { AppliedBuffAction } from 'common/types';
 import { classBuffs_classById_spellVariantPairs_spells as ClassBuffSpell } from 'graphql/queries/__generated__/classBuffs';
 import { useTranslation } from 'i18n';
 import SpellLevelRadio from './SpellLevelRadio';
@@ -16,10 +15,9 @@ import AddBuffLink from './AddBuffLink';
 interface Props {
   spell: ClassBuffSpell;
   level: number;
-  dispatch: React.Dispatch<AppliedBuffAction>;
 }
 
-const SpellBuffCard: React.FC<Props> = ({ spell, level, dispatch }) => {
+const SpellBuffCard: React.FC<Props> = ({ spell, level }) => {
   const spellLevelIdx = spell.spellStats.reduce((max, curr, idx) => {
     if (!curr) {
       return max;
@@ -91,13 +89,7 @@ const SpellBuffCard: React.FC<Props> = ({ spell, level, dispatch }) => {
           <div css={damageHeaderStyle}>{t('NON_CRIT')}</div>
           {filteredNonCritBuffs.length > 0
             ? filteredNonCritBuffs.map((b) => (
-                <AddBuffLink
-                  key={b.id}
-                  isCrit={false}
-                  buff={b}
-                  dispatch={dispatch}
-                  spell={spell}
-                />
+                <AddBuffLink key={b.id} isCrit={false} buff={b} spell={spell} />
               ))
             : t('N/A', { ns: 'common' })}
         </div>
@@ -105,13 +97,7 @@ const SpellBuffCard: React.FC<Props> = ({ spell, level, dispatch }) => {
           <div css={damageHeaderStyle}>{t('CRIT')}</div>
           {filteredCritBuffs.length > 0
             ? filteredCritBuffs.map((b) => (
-                <AddBuffLink
-                  key={b.id}
-                  isCrit
-                  buff={b}
-                  dispatch={dispatch}
-                  spell={spell}
-                />
+                <AddBuffLink key={b.id} isCrit buff={b} spell={spell} />
               ))
             : t('N/A', { ns: 'common' })}
         </div>

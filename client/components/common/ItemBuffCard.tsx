@@ -7,16 +7,15 @@ import { useTheme } from 'emotion-theming';
 import { CardTitleWithLevel } from 'common/wrappers';
 import { itemCardStyle } from 'common/mixins';
 import Card from 'components/common/Card';
-import { Theme, AppliedBuffAction } from 'common/types';
+import { Theme } from 'common/types';
 import { Item } from 'common/type-aliases';
 import AddBuffLink from './AddBuffLink';
 
 interface Props {
   item: Item;
-  dispatch: React.Dispatch<AppliedBuffAction>;
 }
 
-const ItemBuffCard: React.FC<Props> = ({ item, dispatch }) => {
+const ItemBuffCard: React.FC<Props> = ({ item }) => {
   const theme = useTheme<Theme>();
 
   return (
@@ -38,7 +37,7 @@ const ItemBuffCard: React.FC<Props> = ({ item, dispatch }) => {
       }}
     >
       {item.buffs?.map((b) => (
-        <AddBuffLink item={item} dispatch={dispatch} isCrit={false} buff={b} />
+        <AddBuffLink key={b.id} item={item} isCrit={false} buff={b} />
       ))}
     </Card>
   );

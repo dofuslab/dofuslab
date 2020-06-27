@@ -8,8 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBullseye,
   faShoePrints,
-  // faMagic,
-  // faTrashAlt,
   faStar,
   faArrowLeft,
 } from '@fortawesome/free-solid-svg-icons';

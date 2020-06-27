@@ -10,8 +10,10 @@ import {
   getStatsFromCustomSet,
   getErrors,
   getStatsFromAppliedBuffs,
+  combineStatsWithBuffs,
+  AppliedBuffsContext,
 } from 'common/utils';
-import { BuildError, AppliedBuff, AppliedBuffAction } from 'common/types';
+import { BuildError } from 'common/types';
 import StatTable from 'components/common/StatTable';
 import { Stat } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
@@ -21,6 +23,7 @@ import ClassicClassSpells from 'components/desktop/ClassicClassSpells';
 import { CustomSet } from 'common/type-aliases';
 import BuffModal from 'components/common/BuffModal';
 import { BuffButton } from 'common/wrappers';
+import { useRouter } from 'next/router';
 import ClassicRightColumnStats from './ClassicRightColumnStats';
 import ClassicLeftColumnStats from './ClassicLeftColumnStats';
 import ClassicEquipmentSlots from './ClassicEquipmentSlots';
@@ -31,15 +34,10 @@ const { TabPane } = Tabs;
 
 interface Props {
   customSet: CustomSet | null;
-  appliedBuffs: Array<AppliedBuff>;
-  dispatch: React.Dispatch<AppliedBuffAction>;
 }
 
-const ClassicSetBuilder: React.FC<Props> = ({
-  customSet,
-  appliedBuffs,
-  dispatch,
-}) => {
+const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
+  const { appliedBuffs } = React.useContext(AppliedBuffsContext);
   const statsFromCustomSet = React.useMemo(
     () => getStatsFromCustomSet(customSet),
     [customSet],
@@ -49,6 +47,15 @@ const ClassicSetBuilder: React.FC<Props> = ({
     () => getStatsFromAppliedBuffs(appliedBuffs),
     [appliedBuffs],
   );
+
+  const statsFromCustomSetWithBuffs = React.useMemo(
+    () => combineStatsWithBuffs(statsFromCustomSet, statsFromAppliedBuffs),
+    [statsFromCustomSet, statsFromAppliedBuffs],
+  );
+
+  const {
+    query: { class: dofusClass },
+  } = useRouter();
 
   const { t } = useTranslation();
 
@@ -196,20 +203,24 @@ const ClassicSetBuilder: React.FC<Props> = ({
               }}
             >
               <ClassicClassSelector />
-              {weapon && customSet && weapon.item.weaponStats && (
-                <>
-                  <BasicItemCard
-                    item={weapon.item}
-                    showOnlyWeaponStats
-                    weaponElementMage={weapon.weaponElementMage}
-                  />
-                  <WeaponDamage
-                    weaponStats={weapon.item.weaponStats}
-                    customSet={customSet}
-                    weaponElementMage={weapon.weaponElementMage}
-                  />
-                </>
-              )}
+              {weapon &&
+                customSet &&
+                statsFromCustomSet &&
+                weapon.item.weaponStats && (
+                  <>
+                    <BasicItemCard
+                      item={weapon.item}
+                      showOnlyWeaponStats
+                      weaponElementMage={weapon.weaponElementMage}
+                    />
+                    <WeaponDamage
+                      weaponStats={weapon.item.weaponStats}
+                      customSet={customSet}
+                      statsFromCustomSet={statsFromCustomSetWithBuffs}
+                      weaponElementMage={weapon.weaponElementMage}
+                    />
+                  </>
+                )}
               <ClassicClassSpells
                 key={`${customSet?.id}-${customSet?.level}`}
                 customSet={customSet}
@@ -219,10 +230,9 @@ const ClassicSetBuilder: React.FC<Props> = ({
         </Tabs>
       </div>
       <BuffModal
+        key={String(dofusClass)}
         visible={buffModalOpen}
         closeBuffModal={closeBuffModal}
-        appliedBuffs={appliedBuffs}
-        dispatch={dispatch}
         customSet={customSet}
       />
     </>

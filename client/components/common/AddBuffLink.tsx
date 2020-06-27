@@ -4,30 +4,48 @@ import * as React from 'react';
 import { jsx } from '@emotion/core';
 import { Buff, ClassBuffSpell, Item } from 'common/type-aliases';
 import { useTranslation } from 'i18n';
-import { AppliedBuffAction, AppliedBuffActionType } from 'common/types';
+import { AppliedBuffActionType } from 'common/types';
 import { Badge } from 'common/wrappers';
 import { blue6, blue8 } from 'common/mixins';
 import { statIcons } from 'common/constants';
+import { AppliedBuffsContext } from 'common/utils';
+import { notification } from 'antd';
 
 interface Props {
   buff: Buff;
   isCrit: boolean;
-  dispatch: React.Dispatch<AppliedBuffAction>;
   spell?: ClassBuffSpell;
   item?: Item;
+  shouldNotify?: boolean;
 }
 
 const AddBuffLink: React.FC<Props> = ({
   buff,
   isCrit,
-  dispatch,
   spell,
   item,
+  shouldNotify,
 }) => {
+  const buffName = spell?.name || item?.name || '';
+  const { appliedBuffs, dispatch } = React.useContext(AppliedBuffsContext);
   const key = isCrit ? 'critIncrementBy' : 'incrementBy';
-  const { t } = useTranslation(['stat', 'common']);
+  const { t } = useTranslation(['stat', 'common', 'weapon_spell_effect']);
+
+  const currentBuff = appliedBuffs.find((ab) => ab.buff.id === buff.id);
+
+  const maxStacksApplied =
+    buff.maxStacks &&
+    (currentBuff?.numCritStacks ?? 0) + (currentBuff?.numStacks ?? 0) >=
+      buff.maxStacks;
 
   const onAddBuff = React.useCallback(() => {
+    if (maxStacksApplied) {
+      notification.error({
+        message: t('ERROR', { ns: 'common' }),
+        description: t('MAX_STACKS_APPLIED', { ns: 'weapon_spell_effect' }),
+      });
+      return;
+    }
     dispatch({
       type: AppliedBuffActionType.ADD_STACK,
       isCrit,
@@ -35,9 +53,22 @@ const AddBuffLink: React.FC<Props> = ({
       spell,
       item,
     });
-  }, [isCrit, buff]);
+    if (shouldNotify) {
+      notification.success({
+        message: t('SUCCESS', { ns: 'common' }),
+        description: t('BUFF_APPLY_SUCCESS', { ns: 'common', buffName }),
+      });
+    }
+  }, [isCrit, buff, spell, item, maxStacksApplied]);
 
   const onAddMax = React.useCallback(() => {
+    if (maxStacksApplied) {
+      notification.error({
+        message: t('ERROR', { ns: 'common' }),
+        description: t('MAX_STACKS_APPLIED', { ns: 'weapon_spell_effect' }),
+      });
+      return;
+    }
     dispatch({
       type: AppliedBuffActionType.MAX_STACKS,
       isCrit,
@@ -45,10 +76,16 @@ const AddBuffLink: React.FC<Props> = ({
       spell,
       item,
     });
-  }, [isCrit, buff, spell, item]);
+    if (shouldNotify) {
+      notification.success({
+        message: t('SUCCESS', { ns: 'common' }),
+        description: t('BUFF_APPLY_SUCCESS', { ns: 'common', buffName }),
+      });
+    }
+  }, [isCrit, buff, spell, item, maxStacksApplied]);
 
   return (
-    <div css={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+    <div>
       <a onClick={onAddBuff} css={{ marginRight: 4 }}>
         <img
           src={statIcons[buff.stat]}

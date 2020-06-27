@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { SpellEffectType } from './../../../__generated__/globalTypes';
+import { SpellEffectType, Stat } from './../../../__generated__/globalTypes';
 
 // ====================================================
 // GraphQL query operation: classById
@@ -28,6 +28,15 @@ export interface classById_classById_spellVariantPairs_spells_spellStats_spellDa
   maxStacks: number | null;
 }
 
+export interface classById_classById_spellVariantPairs_spells_spellStats_buffs {
+  __typename: 'Buff';
+  id: any;
+  stat: Stat;
+  incrementBy: number | null;
+  critIncrementBy: number | null;
+  maxStacks: number | null;
+}
+
 export interface classById_classById_spellVariantPairs_spells_spellStats {
   __typename: 'SpellStats';
   id: any;
@@ -45,6 +54,7 @@ export interface classById_classById_spellVariantPairs_spells_spellStats {
   hasModifiableRange: boolean;
   spellEffects: classById_classById_spellVariantPairs_spells_spellStats_spellEffects[];
   spellDamageIncrease: classById_classById_spellVariantPairs_spells_spellStats_spellDamageIncrease | null;
+  buffs: classById_classById_spellVariantPairs_spells_spellStats_buffs[] | null;
 }
 
 export interface classById_classById_spellVariantPairs_spells {

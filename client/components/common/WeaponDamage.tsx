@@ -16,7 +16,6 @@ import {
 } from 'common/wrappers';
 import { itemCardStyle } from 'common/mixins';
 import {
-  getStatsFromCustomSet,
   getStatWithDefault,
   getSimpleEffect,
   calcEffect,
@@ -39,19 +38,18 @@ import { WeaponStats, CustomSet } from 'common/type-aliases';
 interface Props {
   weaponStats: WeaponStats;
   customSet: CustomSet;
+  statsFromCustomSet: StatsFromCustomSet;
   weaponElementMage: WeaponElementMage | null;
 }
 
 const WeaponDamage: React.FC<Props> = ({
   weaponStats,
   customSet,
+  statsFromCustomSet,
   weaponElementMage,
 }) => {
   const { t } = useTranslation(['weapon_spell_effect', 'stat']);
   const [weaponSkillPower, setWeaponSkillPower] = React.useState(300);
-  const statsFromCustomSet = getStatsFromCustomSet(
-    customSet,
-  ) as StatsFromCustomSet;
 
   const onWeaponSkillChange = React.useCallback(
     (e: RadioChangeEvent) => {

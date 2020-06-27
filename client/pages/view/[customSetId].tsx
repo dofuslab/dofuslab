@@ -1,5 +1,6 @@
 /** @jsx jsx */
 
+import * as React from 'react';
 import { jsx } from '@emotion/core';
 import { NextPage } from 'next';
 import Head from 'next/head';
@@ -15,9 +16,16 @@ import {
 } from 'graphql/queries/__generated__/customSet';
 import { CustomSetHead } from 'common/wrappers';
 import ClassicSetBuilder from 'components/desktop/ClassicSetBuilder';
-import { ClassicContext, useClassic, EditableContext } from 'common/utils';
+import {
+  ClassicContext,
+  useClassic,
+  EditableContext,
+  appliedBuffsReducer,
+  AppliedBuffsContext,
+} from 'common/utils';
 import DesktopLayout from 'components/desktop/Layout';
 import MobileLayout from 'components/mobile/Layout';
+import { AppliedBuffActionType } from 'common/types';
 import ErrorPage from '../_error';
 
 const Index: NextPage = () => {
@@ -32,6 +40,11 @@ const Index: NextPage = () => {
   const customSet = customSetData?.customSetById || null;
 
   const [isClassic, setIsClassic] = useClassic();
+  const [appliedBuffs, dispatch] = React.useReducer(appliedBuffsReducer, []);
+
+  React.useEffect(() => {
+    dispatch({ type: AppliedBuffActionType.CLEAR_ALL });
+  }, [customSetId]);
 
   if (!customSet && !loading) {
     return <ErrorPage statusCode={404} />;
@@ -48,18 +61,20 @@ const Index: NextPage = () => {
           />
         </Head>
         <CustomSetHead customSet={customSet} />
-        <EditableContext.Provider value={false}>
-          <Media lessThan="xs">
-            <MobileLayout>
-              <MobileSetBuilder customSet={customSet} />
-            </MobileLayout>
-          </Media>
-          <Media greaterThanOrEqual="xs" css={{ height: '100%' }}>
-            <DesktopLayout showSwitch={false}>
-              <ClassicSetBuilder customSet={customSet} />
-            </DesktopLayout>
-          </Media>
-        </EditableContext.Provider>
+        <AppliedBuffsContext.Provider value={{ dispatch, appliedBuffs }}>
+          <EditableContext.Provider value={false}>
+            <Media lessThan="xs">
+              <MobileLayout>
+                <MobileSetBuilder customSet={customSet} />
+              </MobileLayout>
+            </Media>
+            <Media greaterThanOrEqual="xs" css={{ height: '100%' }}>
+              <DesktopLayout showSwitch={false}>
+                <ClassicSetBuilder customSet={customSet} />
+              </DesktopLayout>
+            </Media>
+          </EditableContext.Provider>
+        </AppliedBuffsContext.Provider>
       </div>
     </ClassicContext.Provider>
   );

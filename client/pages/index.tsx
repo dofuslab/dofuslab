@@ -17,9 +17,15 @@ import {
 } from 'graphql/queries/__generated__/customSet';
 import { CustomSetHead } from 'common/wrappers';
 import ClassicSetBuilder from 'components/desktop/ClassicSetBuilder';
-import { ClassicContext, useClassic, appliedBuffsReducer } from 'common/utils';
+import {
+  ClassicContext,
+  useClassic,
+  appliedBuffsReducer,
+  AppliedBuffsContext,
+} from 'common/utils';
 import DesktopLayout from 'components/desktop/Layout';
 import MobileLayout from 'components/mobile/Layout';
+import { AppliedBuffActionType } from 'common/types';
 import ErrorPage from './_error';
 
 const Index: NextPage = () => {
@@ -36,6 +42,10 @@ const Index: NextPage = () => {
   const [isClassic, setIsClassic] = useClassic();
   const [appliedBuffs, dispatch] = React.useReducer(appliedBuffsReducer, []);
 
+  React.useEffect(() => {
+    dispatch({ type: AppliedBuffActionType.CLEAR_ALL });
+  }, [customSetId]);
+
   if (customSetId && !customSet && !loading) {
     return <ErrorPage statusCode={404} />;
   }
@@ -51,32 +61,22 @@ const Index: NextPage = () => {
           />
         </Head>
         <CustomSetHead customSet={customSet} />
-        <Media lessThan="xs">
-          <MobileLayout>
-            <MobileSetBuilder
-              customSet={customSet}
-              appliedBuffs={appliedBuffs}
-              dispatch={dispatch}
-            />
-          </MobileLayout>
-        </Media>
-        <Media greaterThanOrEqual="xs" css={{ height: '100%' }}>
-          <DesktopLayout showSwitch>
-            {isClassic ? (
-              <ClassicSetBuilder
-                customSet={customSet}
-                appliedBuffs={appliedBuffs}
-                dispatch={dispatch}
-              />
-            ) : (
-              <DesktopSetBuilder
-                customSet={customSet}
-                appliedBuffs={appliedBuffs}
-                dispatch={dispatch}
-              />
-            )}
-          </DesktopLayout>
-        </Media>
+        <AppliedBuffsContext.Provider value={{ dispatch, appliedBuffs }}>
+          <Media lessThan="xs">
+            <MobileLayout>
+              <MobileSetBuilder customSet={customSet} />
+            </MobileLayout>
+          </Media>
+          <Media greaterThanOrEqual="xs" css={{ height: '100%' }}>
+            <DesktopLayout showSwitch>
+              {isClassic ? (
+                <ClassicSetBuilder customSet={customSet} />
+              ) : (
+                <DesktopSetBuilder customSet={customSet} />
+              )}
+            </DesktopLayout>
+          </Media>
+        </AppliedBuffsContext.Provider>
       </div>
     </ClassicContext.Provider>
   );

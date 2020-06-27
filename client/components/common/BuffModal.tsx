@@ -4,18 +4,13 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import Modal from 'antd/lib/modal/Modal';
 
-import {
-  AppliedBuff,
-  AppliedBuffAction,
-  AppliedBuffActionType,
-  Theme,
-} from 'common/types';
+import { AppliedBuff, AppliedBuffActionType, Theme } from 'common/types';
 import { useTranslation } from 'i18n';
 import { useQuery } from '@apollo/react-hooks';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
 import { Select, Spin, Divider, Button } from 'antd';
-import { useClassId } from 'common/utils';
+import { useClassId, AppliedBuffsContext } from 'common/utils';
 import {
   classBuffs,
   classBuffsVariables,
@@ -36,24 +31,18 @@ const { Option } = Select;
 const getBuffImage = (appliedBuff: AppliedBuff) =>
   appliedBuff.spell?.imageUrl || appliedBuff.item?.imageUrl || null;
 
-const getBuffName = (appliedBuff: AppliedBuff) =>
-  appliedBuff.spell?.name || appliedBuff.item?.name || null;
+const getBuffName = (appliedBuff: AppliedBuff) => {
+  return appliedBuff.spell?.name || appliedBuff.item?.name || null;
+};
 
 interface Props {
   visible: boolean;
   closeBuffModal: () => void;
-  appliedBuffs: Array<AppliedBuff>;
-  dispatch: React.Dispatch<AppliedBuffAction>;
   customSet: CustomSet | null;
 }
 
-const BuffModal: React.FC<Props> = ({
-  visible,
-  closeBuffModal,
-  appliedBuffs,
-  dispatch,
-  customSet,
-}) => {
+const BuffModal: React.FC<Props> = ({ visible, closeBuffModal, customSet }) => {
+  const { appliedBuffs, dispatch } = React.useContext(AppliedBuffsContext);
   const { t } = useTranslation(['stat', 'common']);
   const { data: classData } = useQuery<classes>(classesQuery);
   const initialClassId = useClassId();
@@ -144,12 +133,12 @@ const BuffModal: React.FC<Props> = ({
           <div
             css={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(224px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(224px, 1fr))',
               gridGap: 12,
             }}
           >
             {itemsWithBuffs?.map((item) => (
-              <ItemBuffCard item={item} dispatch={dispatch} />
+              <ItemBuffCard item={item} />
             ))}
           </div>
           <Divider css={{ margin: '12px 0' }} />
@@ -192,7 +181,7 @@ const BuffModal: React.FC<Props> = ({
       <div
         css={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(224px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(224px, 1fr))',
           gridGap: 12,
         }}
       >
@@ -201,14 +190,7 @@ const BuffModal: React.FC<Props> = ({
         ) : (
           flattenedSpells
             .filter((s) => !!s.spellStats.some((ss) => !!ss.buffs?.length))
-            .map((s) => (
-              <SpellBuffCard
-                key={s.id}
-                spell={s}
-                level={200}
-                dispatch={dispatch}
-              />
-            ))
+            .map((s) => <SpellBuffCard key={s.id} spell={s} level={200} />)
         )}
       </div>
     </Modal>

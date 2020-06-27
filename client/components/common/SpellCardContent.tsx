@@ -30,6 +30,7 @@ import {
 } from 'common/types';
 import { Stat } from '__generated__/globalTypes';
 import { CustomSet, Spell, SpellEffect } from 'common/type-aliases';
+import AddBuffLink from './AddBuffLink';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -362,7 +363,8 @@ const SpellCardContent: React.FC<Props> = ({
             ))}
           </>
         )}
-        {spellStats.spellEffects.length > 0 && (
+        {(spellStats.spellEffects.length > 0 ||
+          (spellStats.buffs?.length ?? 0) > 0) && (
           <>
             <Divider css={{ margin: '12px 0' }} />
             {showToggle && (
@@ -379,7 +381,7 @@ const SpellCardContent: React.FC<Props> = ({
               }}
             >
               <div css={damageHeaderStyle}>{t('NON_CRIT')}</div>
-              {spellStats.spellEffects.some((e) => e.critMaxDamage) ? (
+              {spellStats.baseCritChance !== null ? (
                 <div css={damageHeaderStyle}>
                   {critRate !== null
                     ? t('CRIT_WITH_PERCENTAGE', {
@@ -392,6 +394,7 @@ const SpellCardContent: React.FC<Props> = ({
                   css={{
                     gridArea: `1 / 2 / ${
                       spellStats.spellEffects.length +
+                      (spellStats.buffs?.length ?? 0) +
                       2 +
                       (spellStats.spellDamageIncrease ? 1 : 0)
                     } / -1`,
@@ -448,9 +451,36 @@ const SpellCardContent: React.FC<Props> = ({
               )}
               {!!selectedConditionalEffects.length &&
                 selectedConditionalEffects.map(renderSpellEffectSummary)}
+              {spellStats.buffs?.map((b) => (
+                <React.Fragment key={b.id}>
+                  {b.incrementBy ? (
+                    <AddBuffLink
+                      key={b.id}
+                      spell={spell}
+                      buff={b}
+                      isCrit={false}
+                      shouldNotify
+                    />
+                  ) : (
+                    <div />
+                  )}
+                  {b.critIncrementBy ? (
+                    <AddBuffLink
+                      key={b.id}
+                      spell={spell}
+                      buff={b}
+                      isCrit
+                      shouldNotify
+                    />
+                  ) : (
+                    <div />
+                  )}
+                </React.Fragment>
+              ))}
             </div>
           </>
         )}
+
         {combinedSpellEffectSummaries.filter(
           (e) => getSimpleEffect(e.type) === 'damage',
         ).length > 1 && (

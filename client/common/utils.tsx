@@ -1473,6 +1473,16 @@ export const ClassicContext = React.createContext<
 
 export const EditableContext = React.createContext<boolean>(true);
 
+export const AppliedBuffsContext = React.createContext<{
+  appliedBuffs: Array<AppliedBuff>;
+  dispatch: React.Dispatch<AppliedBuffAction>;
+}>({
+  appliedBuffs: [],
+  dispatch: () => {
+    // no-op
+  },
+});
+
 export const useClassic = () => {
   const { data: sessionSettingsData } = useQuery<sessionSettings>(
     sessionSettingsQuery,
@@ -1825,17 +1835,30 @@ export const useClassId = () => {
   return selectedClassId;
 };
 
-/* eslint-disable no-param-reassign */
 export const getStatsFromAppliedBuffs = (appliedBuffs: Array<AppliedBuff>) =>
-  appliedBuffs.reduce((stats, ab) => {
+  appliedBuffs.reduce((stats: StatsFromAppliedBuffs, ab: AppliedBuff) => {
     const buffValue =
       ab.numCritStacks * (ab.buff.critIncrementBy || 0) +
       ab.numStacks * (ab.buff.incrementBy || 0);
-    if (stats[ab.buff.stat]) {
-      stats[ab.buff.stat] += buffValue;
-    } else {
-      stats[ab.buff.stat] = buffValue;
-    }
-    return stats;
+    const a = stats[ab.buff.stat] || 0;
+    const result = {
+      ...stats,
+      [ab.buff.stat]: a + buffValue,
+    } as StatsFromAppliedBuffs;
+    return result;
   }, {} as StatsFromAppliedBuffs);
-/* eslint-enable no-param-reassign */
+
+export const combineStatsWithBuffs = (
+  statsFromCustomSet: StatsFromCustomSet | null,
+  statsFromAppliedBuffs: StatsFromAppliedBuffs,
+) => {
+  const statsFromCustomSetWithBuffs = Object.entries(
+    statsFromAppliedBuffs,
+  ).reduce((totalStats, [k, v]) => {
+    return {
+      ...totalStats,
+      [k]: (totalStats[k] || 0) + v,
+    } as StatsFromCustomSet;
+  }, statsFromCustomSet || ({} as StatsFromCustomSet));
+  return statsFromCustomSetWithBuffs;
+};

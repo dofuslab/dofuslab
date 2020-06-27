@@ -32,6 +32,8 @@ import { BuildError } from 'common/types';
 import Card from 'components/common/Card';
 import Tooltip from 'components/common/Tooltip';
 import { EquippedItem, CustomSet, ItemSet } from 'common/type-aliases';
+import AddBuffLink from 'components/common/AddBuffLink';
+import { Divider } from 'antd';
 import ItemStatsList from '../common/ItemStatsList';
 
 const quickMageStats = [
@@ -236,6 +238,17 @@ const EquippedItemCard: React.FC<Props> = ({
         weaponElementMage={equippedItem.weaponElementMage}
         errors={errors}
       />
+      {(equippedItem.item.buffs?.length ?? 0) > 0 && (
+        <Divider css={{ margin: '12px 0' }} />
+      )}
+      {equippedItem.item.buffs?.map((b) => (
+        <AddBuffLink
+          buff={b}
+          isCrit={false}
+          shouldNotify
+          item={equippedItem.item}
+        />
+      ))}
     </Card>
   );
 };
