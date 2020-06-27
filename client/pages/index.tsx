@@ -22,9 +22,9 @@ const Index: NextPage = () => {
   const router = useRouter();
   const { customSetId } = router.query;
 
-  const { customSet } = useContext(CustomSetContext);
+  const { customSet, customSetLoading } = useContext(CustomSetContext);
 
-  if (customSetId && !customSet) {
+  if (customSetId && !customSet && !customSetLoading) {
     return <ErrorPage statusCode={404} />;
   }
 

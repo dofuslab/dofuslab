@@ -42,7 +42,7 @@ const DofusLabApp: React.FC<Props> = ({
   const router = useRouter();
   const { customSetId } = router.query;
 
-  const { data: customSetData } = useQuery<
+  const { data: customSetData, loading: customSetLoading } = useQuery<
     CustomSetQueryType,
     customSetVariables
   >(CustomSetQuery, {
@@ -84,6 +84,7 @@ const DofusLabApp: React.FC<Props> = ({
               dispatch,
               appliedBuffs,
               customSet,
+              customSetLoading,
               statsFromCustomSet,
               statsFromAppliedBuffs,
               statsFromCustomSetWithBuffs,

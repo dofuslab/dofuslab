@@ -1477,6 +1477,7 @@ export const CustomSetContext = React.createContext<{
   appliedBuffs: Array<AppliedBuff>;
   dispatch: React.Dispatch<AppliedBuffAction>;
   customSet?: CustomSet | null;
+  customSetLoading: boolean;
   statsFromCustomSet: StatsFromCustomSet | null;
   statsFromAppliedBuffs: StatsFromAppliedBuffs;
   statsFromCustomSetWithBuffs: StatsFromCustomSet;
@@ -1486,6 +1487,7 @@ export const CustomSetContext = React.createContext<{
     // no-op
   },
   customSet: null,
+  customSetLoading: false,
   statsFromCustomSet: null,
   statsFromAppliedBuffs: {},
   statsFromCustomSetWithBuffs: {},

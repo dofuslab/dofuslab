@@ -189,7 +189,7 @@ const BuffModal: React.FC<Props> = ({ visible, closeBuffModal, customSet }) => {
         }}
       >
         {loading ? (
-          <Spin css={{ marginTop: 24 }} />
+          <Spin css={{ marginTop: 24, gridColumn: '1 / -1' }} />
         ) : (
           flattenedSpells
             .filter((s) => !!s.spellStats.some((ss) => !!ss.buffs?.length))

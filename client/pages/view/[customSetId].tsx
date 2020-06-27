@@ -25,11 +25,11 @@ const Index: NextPage = () => {
   const router = useRouter();
   const { customSetId } = router.query;
 
-  const { customSet } = React.useContext(CustomSetContext);
+  const { customSet, customSetLoading } = React.useContext(CustomSetContext);
 
   const [isClassic, setIsClassic] = useClassic();
 
-  if (customSetId && !customSet) {
+  if (customSetId && !customSet && !customSetLoading) {
     return <ErrorPage statusCode={404} />;
   }
 
