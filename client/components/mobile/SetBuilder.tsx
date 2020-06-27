@@ -28,7 +28,7 @@ import SetHeader from '../common/SetHeader';
 const { TabPane } = Tabs;
 
 interface Props {
-  customSet: CustomSet | null;
+  customSet?: CustomSet | null;
 }
 
 const SetBuilder: React.FC<Props> = ({ customSet }) => {

@@ -27,7 +27,7 @@ import ClassicClassSelector from './ClassicClassSelector';
 const { TabPane } = Tabs;
 
 interface Props {
-  customSet: CustomSet | null;
+  customSet?: CustomSet | null;
 }
 
 const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {

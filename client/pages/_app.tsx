@@ -1,53 +1,100 @@
 import React from 'react';
-import App from 'next/app';
-import { ApolloProvider } from '@apollo/react-hooks';
+import { AppProps } from 'next/app';
+import { ApolloProvider, useQuery } from '@apollo/react-hooks';
 import withApollo from 'common/apollo';
 import { ApolloClient, NormalizedCacheObject } from 'apollo-boost';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { MediaContextProvider } from 'components/common/Media';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { ThemeProvider } from 'emotion-theming';
 
+import CustomSetQuery from 'graphql/queries/customSet.graphql';
+import {
+  customSet as CustomSetQueryType,
+  customSetVariables,
+} from 'graphql/queries/__generated__/customSet';
 import { darkTheme } from 'common/themes';
-import { appWithTranslation } from '../i18n';
+import { appWithTranslation } from 'i18n';
+import * as gtag from 'gtag';
+import {
+  appliedBuffsReducer,
+  getStatsFromCustomSet,
+  getStatsFromAppliedBuffs,
+  combineStatsWithBuffs,
+  CustomSetContext,
+} from 'common/utils';
+import { AppliedBuffActionType } from 'common/types';
+
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import * as gtag from '../gtag';
 
 Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 config.autoAddCss = false;
 
-class DofusLabApp extends App<{
+interface Props extends AppProps {
   apolloClient: ApolloClient<NormalizedCacheObject>;
-}> {
-  state = {
-    theme: darkTheme,
-  };
-
-  // dynamic seems to load the CSS unconditionally
-  // https://github.com/zeit/next-plugins/issues/444
-  // componentDidMount() {
-  //   if (window.localStorage.getItem('theme') === darkTheme.name) {
-  //     dynamic(() => {
-  //       return import('../styles/dark-mode.less');
-  //     });
-  //     this.setState({ theme: darkTheme });
-  //   }
-  // }
-
-  render() {
-    const { Component, pageProps, apolloClient } = this.props;
-
-    /* eslint-disable react/jsx-props-no-spreading */
-    return (
-      <ApolloProvider client={apolloClient}>
-        <MediaContextProvider>
-          <ThemeProvider theme={this.state.theme}>
-            <Component {...pageProps} />
-          </ThemeProvider>
-        </MediaContextProvider>
-      </ApolloProvider>
-    );
-  }
 }
+
+const DofusLabApp: React.FC<Props> = ({
+  Component,
+  apolloClient,
+  pageProps,
+}) => {
+  const router = useRouter();
+  const { customSetId } = router.query;
+
+  const { data: customSetData } = useQuery<
+    CustomSetQueryType,
+    customSetVariables
+  >(CustomSetQuery, {
+    variables: { id: customSetId },
+    skip: !customSetId,
+    client: apolloClient,
+  });
+
+  const customSet = customSetData?.customSetById || null;
+
+  const [appliedBuffs, dispatch] = React.useReducer(appliedBuffsReducer, []);
+
+  const statsFromCustomSet = React.useMemo(
+    () => getStatsFromCustomSet(customSet),
+    [customSet],
+  );
+
+  const statsFromAppliedBuffs = React.useMemo(
+    () => getStatsFromAppliedBuffs(appliedBuffs),
+    [appliedBuffs],
+  );
+
+  const statsFromCustomSetWithBuffs = React.useMemo(
+    () => combineStatsWithBuffs(statsFromCustomSet, statsFromAppliedBuffs),
+    [statsFromCustomSet, statsFromAppliedBuffs],
+  );
+
+  React.useEffect(() => {
+    dispatch({ type: AppliedBuffActionType.CLEAR_ALL });
+  }, [customSetId]);
+
+  /* eslint-disable react/jsx-props-no-spreading */
+  return (
+    <ApolloProvider client={apolloClient}>
+      <MediaContextProvider>
+        <ThemeProvider theme={darkTheme}>
+          <CustomSetContext.Provider
+            value={{
+              dispatch,
+              appliedBuffs,
+              customSet,
+              statsFromCustomSet,
+              statsFromAppliedBuffs,
+              statsFromCustomSetWithBuffs,
+            }}
+          >
+            <Component {...pageProps} />
+          </CustomSetContext.Provider>
+        </ThemeProvider>
+      </MediaContextProvider>
+    </ApolloProvider>
+  );
+};
 
 export default withApollo(appWithTranslation(DofusLabApp));

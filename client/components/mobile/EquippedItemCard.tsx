@@ -35,6 +35,7 @@ import Link from 'next/link';
 import Card from 'components/common/Card';
 import { mq } from 'common/constants';
 import { EquippedItem, ItemSet, CustomSet } from 'common/type-aliases';
+import AddBuffLink from 'components/common/AddBuffLink';
 import ItemStatsList from '../common/ItemStatsList';
 
 const quickMageStats = [
@@ -250,6 +251,19 @@ const EquippedItemCard: React.FC<Props> = ({
           showImg
           errors={errors}
         />
+
+        {(equippedItem.item.buffs?.length ?? 0) > 0 && (
+          <Divider css={{ margin: '12px 0' }} />
+        )}
+        {equippedItem.item.buffs?.map((b) => (
+          <AddBuffLink
+            key={b.id}
+            buff={b}
+            isCrit={false}
+            shouldNotify
+            item={equippedItem.item}
+          />
+        ))}
 
         {isEditable && (
           <>

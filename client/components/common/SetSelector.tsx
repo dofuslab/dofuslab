@@ -23,7 +23,7 @@ const THRESHOLD = 600;
 
 interface Props {
   filters: SharedFilters;
-  customSet: CustomSet | null;
+  customSet?: CustomSet | null;
   isMobile: boolean;
   isClassic: boolean;
 }

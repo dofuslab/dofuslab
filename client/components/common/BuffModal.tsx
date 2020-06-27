@@ -38,7 +38,7 @@ const getBuffName = (appliedBuff: AppliedBuff) => {
 interface Props {
   visible: boolean;
   closeBuffModal: () => void;
-  customSet: CustomSet | null;
+  customSet?: CustomSet | null;
 }
 
 const BuffModal: React.FC<Props> = ({ visible, closeBuffModal, customSet }) => {

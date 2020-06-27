@@ -81,7 +81,7 @@ const statGroups = [
 ];
 
 interface Props {
-  customSet: CustomSet | null;
+  customSet?: CustomSet | null;
 }
 
 const SetBuilder: React.FC<Props> = ({ customSet }) => {

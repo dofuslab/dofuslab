@@ -25,7 +25,7 @@ import SetModal from './SetModal';
 
 interface Props {
   className?: string;
-  customSet: CustomSet | null;
+  customSet?: CustomSet | null;
   selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
   shouldRedirect: boolean;
   showSets: boolean;
