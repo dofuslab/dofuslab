@@ -13,7 +13,7 @@ import {
   customSet as CustomSetQueryType,
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
-import { darkTheme } from 'common/themes';
+import { lightTheme } from 'common/themes';
 import { appWithTranslation } from 'i18n';
 import * as gtag from 'gtag';
 import {
@@ -24,6 +24,7 @@ import {
   CustomSetContext,
 } from 'common/utils';
 import { AppliedBuffActionType } from 'common/types';
+import changeTheme from 'next-dynamic-antd-theme';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
@@ -53,6 +54,11 @@ const DofusLabApp: React.FC<Props> = ({
 
   const customSet = customSetData?.customSetById || null;
 
+  React.useEffect(() => {
+    setTimeout(() => {
+      changeTheme('dark');
+    }, 5000);
+  });
   const [appliedBuffs, dispatch] = React.useReducer(appliedBuffsReducer, []);
 
   const statsFromCustomSet = React.useMemo(
@@ -78,7 +84,7 @@ const DofusLabApp: React.FC<Props> = ({
   return (
     <ApolloProvider client={apolloClient}>
       <MediaContextProvider>
-        <ThemeProvider theme={darkTheme}>
+        <ThemeProvider theme={lightTheme}>
           <CustomSetContext.Provider
             value={{
               dispatch,

@@ -1,5 +1,6 @@
 import React from 'react';
 import Document, { Head, Main, NextScript, Html } from 'next/document';
+import getConfig from 'next/config';
 
 import { GA_TRACKING_ID } from '../gtag';
 
@@ -62,6 +63,23 @@ export default class extends Document {
           />
         </Head>
         <body>
+          <link
+            rel="stylesheet/less"
+            type="text/css"
+            href={`${
+              getConfig().publicRuntimeConfig.prefix
+            }_next/static/color.less`}
+          />
+          <script
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: `window.less = { async: false, env: 'production' };`,
+            }}
+          />
+          <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"
+          />
           <Main />
           <NextScript />
         </body>
