@@ -9,13 +9,7 @@ import { Theme, BuildError } from 'common/types';
 import { classicStatGroups } from 'common/constants';
 import { ResponsiveGrid, BuffButton } from 'common/wrappers';
 import { topMarginStyle } from 'common/mixins';
-import {
-  getStatsFromCustomSet,
-  getErrors,
-  getStatsFromAppliedBuffs,
-  combineStatsWithBuffs,
-  CustomSetContext,
-} from 'common/utils';
+import { getErrors, CustomSetContext } from 'common/utils';
 import BonusStats from 'components/desktop/BonusStats';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
@@ -38,22 +32,11 @@ interface Props {
 }
 
 const SetBuilder: React.FC<Props> = ({ customSet }) => {
-  const { appliedBuffs, dispatch } = React.useContext(CustomSetContext);
+  const { appliedBuffs, statsFromCustomSet } = React.useContext(
+    CustomSetContext,
+  );
   const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(
     null,
-  );
-  const statsFromCustomSet = React.useMemo(
-    () => getStatsFromCustomSet(customSet),
-    [customSet],
-  );
-  const statsFromAppliedBuffs = React.useMemo(
-    () => getStatsFromAppliedBuffs(appliedBuffs),
-    [appliedBuffs],
-  );
-
-  const statsFromCustomSetWithBuffs = React.useMemo(
-    () => combineStatsWithBuffs(statsFromCustomSet, statsFromAppliedBuffs),
-    [statsFromCustomSet, statsFromAppliedBuffs],
   );
 
   const {
@@ -102,7 +85,6 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
         selectedItemSlotId={selectedItemSlot?.id ?? null}
         errors={errors}
         isMobile
-        dispatch={dispatch}
       />
       {customSet && (
         <BonusStats customSet={customSet} isMobile isClassic={false} />
@@ -140,9 +122,6 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                   <StatTable
                     key={group[0]}
                     group={group}
-                    statsFromCustomSet={statsFromCustomSet}
-                    customSet={customSet}
-                    statsFromAppliedBuffs={statsFromAppliedBuffs}
                     openBuffModal={openBuffModal}
                   />
                 ))}
@@ -164,7 +143,6 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                       <WeaponDamage
                         weaponStats={weapon.item.weaponStats}
                         customSet={customSet}
-                        statsFromCustomSet={statsFromCustomSetWithBuffs}
                         weaponElementMage={weapon.weaponElementMage}
                       />
                     </>

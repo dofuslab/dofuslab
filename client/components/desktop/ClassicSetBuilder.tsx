@@ -6,12 +6,7 @@ import { Tabs } from 'antd';
 
 import { mq } from 'common/constants';
 
-import {
-  getStatsFromCustomSet,
-  getErrors,
-  getStatsFromAppliedBuffs,
-  CustomSetContext,
-} from 'common/utils';
+import { getErrors, CustomSetContext } from 'common/utils';
 import { BuildError } from 'common/types';
 import StatTable from 'components/common/StatTable';
 import { Stat } from '__generated__/globalTypes';
@@ -36,15 +31,8 @@ interface Props {
 }
 
 const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
-  const { appliedBuffs } = React.useContext(CustomSetContext);
-  const statsFromCustomSet = React.useMemo(
-    () => getStatsFromCustomSet(customSet),
-    [customSet],
-  );
-
-  const statsFromAppliedBuffs = React.useMemo(
-    () => getStatsFromAppliedBuffs(appliedBuffs),
-    [appliedBuffs],
+  const { appliedBuffs, statsFromCustomSet } = React.useContext(
+    CustomSetContext,
   );
 
   const {
@@ -159,11 +147,7 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
                   />
                 </div>
               </div>
-              <ClassicRightColumnStats
-                customSet={customSet}
-                statsFromAppliedBuffs={statsFromAppliedBuffs}
-                openBuffModal={openBuffModal}
-              />
+              <ClassicRightColumnStats openBuffModal={openBuffModal} />
             </div>
           </TabPane>
           <TabPane
