@@ -6,8 +6,8 @@ import { useTranslation } from 'i18n';
 import { List } from 'antd';
 import { useTheme } from 'emotion-theming';
 
-import { StatsFromCustomSet, Theme, StatsFromAppliedBuffs } from 'common/types';
-import { statCalculators } from 'common/utils';
+import { StatsFromCustomSet, Theme } from 'common/types';
+import { statCalculators, CustomSetContext } from 'common/utils';
 import { Stat } from '__generated__/globalTypes';
 import { statIcons } from 'common/constants';
 import { CustomSet } from 'common/type-aliases';
@@ -29,21 +29,16 @@ const getStatValue = (
 
 interface Props {
   group: Array<Stat | string>;
-  statsFromCustomSet: StatsFromCustomSet | null;
-  statsFromAppliedBuffs: StatsFromAppliedBuffs;
-  customSet?: CustomSet | null;
   className?: string;
   openBuffModal: () => void;
 }
 
-const StatTable: React.FC<Props> = ({
-  group,
-  statsFromCustomSet,
-  statsFromAppliedBuffs,
-  customSet,
-  className,
-  openBuffModal,
-}) => {
+const StatTable: React.FC<Props> = ({ group, className, openBuffModal }) => {
+  const {
+    customSet,
+    statsFromCustomSet,
+    statsFromAppliedBuffs,
+  } = React.useContext(CustomSetContext);
   const { t } = useTranslation('stat');
   const theme = useTheme<Theme>();
 

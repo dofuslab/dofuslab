@@ -10,8 +10,7 @@ import {
   getStatsFromCustomSet,
   getErrors,
   getStatsFromAppliedBuffs,
-  combineStatsWithBuffs,
-  AppliedBuffsContext,
+  CustomSetContext,
 } from 'common/utils';
 import { BuildError } from 'common/types';
 import StatTable from 'components/common/StatTable';
@@ -37,7 +36,7 @@ interface Props {
 }
 
 const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
-  const { appliedBuffs } = React.useContext(AppliedBuffsContext);
+  const { appliedBuffs } = React.useContext(CustomSetContext);
   const statsFromCustomSet = React.useMemo(
     () => getStatsFromCustomSet(customSet),
     [customSet],
@@ -46,11 +45,6 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
   const statsFromAppliedBuffs = React.useMemo(
     () => getStatsFromAppliedBuffs(appliedBuffs),
     [appliedBuffs],
-  );
-
-  const statsFromCustomSetWithBuffs = React.useMemo(
-    () => combineStatsWithBuffs(statsFromCustomSet, statsFromAppliedBuffs),
-    [statsFromCustomSet, statsFromAppliedBuffs],
   );
 
   const {
@@ -123,11 +117,7 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
                 marginBottom: 60,
               }}
             >
-              <ClassicLeftColumnStats
-                customSet={customSet}
-                statsFromAppliedBuffs={statsFromAppliedBuffs}
-                openBuffModal={openBuffModal}
-              />
+              <ClassicLeftColumnStats openBuffModal={openBuffModal} />
               <div css={{ flex: '1 1 auto' }}>
                 <ClassicEquipmentSlots customSet={customSet} errors={errors} />
                 <div
@@ -147,9 +137,6 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
                       Stat.PCT_WATER_RES,
                       Stat.PCT_AIR_RES,
                     ]}
-                    statsFromCustomSet={statsFromCustomSet}
-                    customSet={customSet}
-                    statsFromAppliedBuffs={statsFromAppliedBuffs}
                     openBuffModal={openBuffModal}
                   />
                   <StatTable
@@ -160,23 +147,14 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
                       Stat.WATER_RES,
                       Stat.AIR_RES,
                     ]}
-                    statsFromCustomSet={statsFromCustomSet}
-                    customSet={customSet}
-                    statsFromAppliedBuffs={statsFromAppliedBuffs}
                     openBuffModal={openBuffModal}
                   />
                   <StatTable
                     group={[Stat.PCT_MELEE_RES, Stat.PCT_RANGED_RES]}
-                    statsFromCustomSet={statsFromCustomSet}
-                    customSet={customSet}
-                    statsFromAppliedBuffs={statsFromAppliedBuffs}
                     openBuffModal={openBuffModal}
                   />
                   <StatTable
                     group={[Stat.CRITICAL_RES, Stat.PUSHBACK_RES]}
-                    statsFromCustomSet={statsFromCustomSet}
-                    customSet={customSet}
-                    statsFromAppliedBuffs={statsFromAppliedBuffs}
                     openBuffModal={openBuffModal}
                   />
                 </div>
@@ -203,27 +181,22 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
               }}
             >
               <ClassicClassSelector />
-              {weapon &&
-                customSet &&
-                statsFromCustomSet &&
-                weapon.item.weaponStats && (
-                  <>
-                    <BasicItemCard
-                      item={weapon.item}
-                      showOnlyWeaponStats
-                      weaponElementMage={weapon.weaponElementMage}
-                    />
-                    <WeaponDamage
-                      weaponStats={weapon.item.weaponStats}
-                      customSet={customSet}
-                      statsFromCustomSet={statsFromCustomSetWithBuffs}
-                      weaponElementMage={weapon.weaponElementMage}
-                    />
-                  </>
-                )}
+              {weapon && customSet && weapon.item.weaponStats && (
+                <>
+                  <BasicItemCard
+                    item={weapon.item}
+                    showOnlyWeaponStats
+                    weaponElementMage={weapon.weaponElementMage}
+                  />
+                  <WeaponDamage
+                    weaponStats={weapon.item.weaponStats}
+                    customSet={customSet}
+                    weaponElementMage={weapon.weaponElementMage}
+                  />
+                </>
+              )}
               <ClassicClassSpells
                 key={`${customSet?.id}-${customSet?.level}`}
-                customSet={customSet}
               />
             </div>
           </TabPane>

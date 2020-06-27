@@ -21,7 +21,10 @@ import {
   ClassicContext,
   useClassic,
   appliedBuffsReducer,
-  AppliedBuffsContext,
+  CustomSetContext,
+  getStatsFromCustomSet,
+  getStatsFromAppliedBuffs,
+  combineStatsWithBuffs,
 } from 'common/utils';
 import DesktopLayout from 'components/desktop/Layout';
 import MobileLayout from 'components/mobile/Layout';
@@ -42,6 +45,21 @@ const Index: NextPage = () => {
   const [isClassic, setIsClassic] = useClassic();
   const [appliedBuffs, dispatch] = React.useReducer(appliedBuffsReducer, []);
 
+  const statsFromCustomSet = React.useMemo(
+    () => getStatsFromCustomSet(customSet),
+    [customSet],
+  );
+
+  const statsFromAppliedBuffs = React.useMemo(
+    () => getStatsFromAppliedBuffs(appliedBuffs),
+    [appliedBuffs],
+  );
+
+  const statsFromCustomSetWithBuffs = React.useMemo(
+    () => combineStatsWithBuffs(statsFromCustomSet, statsFromAppliedBuffs),
+    [statsFromCustomSet, statsFromAppliedBuffs],
+  );
+
   React.useEffect(() => {
     dispatch({ type: AppliedBuffActionType.CLEAR_ALL });
   }, [customSetId]);
@@ -61,7 +79,16 @@ const Index: NextPage = () => {
           />
         </Head>
         <CustomSetHead customSet={customSet} />
-        <AppliedBuffsContext.Provider value={{ dispatch, appliedBuffs }}>
+        <CustomSetContext.Provider
+          value={{
+            dispatch,
+            appliedBuffs,
+            customSet,
+            statsFromCustomSet,
+            statsFromAppliedBuffs,
+            statsFromCustomSetWithBuffs,
+          }}
+        >
           <Media lessThan="xs">
             <MobileLayout>
               <MobileSetBuilder customSet={customSet} />
@@ -76,7 +103,7 @@ const Index: NextPage = () => {
               )}
             </DesktopLayout>
           </Media>
-        </AppliedBuffsContext.Provider>
+        </CustomSetContext.Provider>
       </div>
     </ClassicContext.Provider>
   );

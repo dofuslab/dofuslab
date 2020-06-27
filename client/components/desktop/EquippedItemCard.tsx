@@ -51,12 +51,9 @@ const quickMageStats = [
   },
 ];
 
-const ACTION_PADDING = 12;
 const TOOLTIP_Z_INDEX = 1062; // greater than item popover
 
 const actionWrapper = {
-  margin: -ACTION_PADDING,
-  padding: ACTION_PADDING,
   transition: 'color 0.3s ease-in-out',
   ':hover': { color: blue6 },
   fontSize: '0.8rem',
@@ -143,7 +140,6 @@ const EquippedItemCard: React.FC<Props> = ({
           ns: 'mage',
           stat: t(stat, { ns: 'stat' }),
         })}
-        align={{ offset: [0, -ACTION_PADDING] }}
         placement="bottom"
         overlayStyle={{ zIndex: TOOLTIP_Z_INDEX }}
       >
@@ -185,7 +181,7 @@ const EquippedItemCard: React.FC<Props> = ({
         },
         border: 'none',
         borderRadius: 4,
-        minWidth: 256,
+        minWidth: 288,
         overflow: 'hidden',
       })}
       actions={
@@ -194,7 +190,6 @@ const EquippedItemCard: React.FC<Props> = ({
               ...quickMageMenu,
               <Tooltip
                 title={t('MAGE', { ns: 'mage' })}
-                align={{ offset: [0, -ACTION_PADDING] }}
                 placement="bottom"
                 overlayStyle={{ zIndex: TOOLTIP_Z_INDEX }}
               >
@@ -204,7 +199,6 @@ const EquippedItemCard: React.FC<Props> = ({
               </Tooltip>,
               <Tooltip
                 title={t('FAVORITE')}
-                align={{ offset: [0, -ACTION_PADDING] }}
                 placement="bottom"
                 overlayStyle={{ zIndex: TOOLTIP_Z_INDEX }}
               >
@@ -216,7 +210,6 @@ const EquippedItemCard: React.FC<Props> = ({
               </Tooltip>,
               <Tooltip
                 title={t('DELETE')}
-                align={{ offset: [0, -ACTION_PADDING] }}
                 placement="bottom"
                 overlayStyle={{ zIndex: TOOLTIP_Z_INDEX }}
               >
@@ -243,6 +236,7 @@ const EquippedItemCard: React.FC<Props> = ({
       )}
       {equippedItem.item.buffs?.map((b) => (
         <AddBuffLink
+          key={b.id}
           buff={b}
           isCrit={false}
           shouldNotify

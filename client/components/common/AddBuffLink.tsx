@@ -8,7 +8,7 @@ import { AppliedBuffActionType } from 'common/types';
 import { Badge } from 'common/wrappers';
 import { blue6, blue8 } from 'common/mixins';
 import { statIcons } from 'common/constants';
-import { AppliedBuffsContext } from 'common/utils';
+import { CustomSetContext } from 'common/utils';
 import { notification } from 'antd';
 
 interface Props {
@@ -27,7 +27,7 @@ const AddBuffLink: React.FC<Props> = ({
   shouldNotify,
 }) => {
   const buffName = spell?.name || item?.name || '';
-  const { appliedBuffs, dispatch } = React.useContext(AppliedBuffsContext);
+  const { appliedBuffs, dispatch } = React.useContext(CustomSetContext);
   const key = isCrit ? 'critIncrementBy' : 'incrementBy';
   const { t } = useTranslation(['stat', 'common', 'weapon_spell_effect']);
 

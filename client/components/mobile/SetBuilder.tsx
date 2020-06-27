@@ -14,7 +14,7 @@ import {
   getErrors,
   getStatsFromAppliedBuffs,
   combineStatsWithBuffs,
-  AppliedBuffsContext,
+  CustomSetContext,
 } from 'common/utils';
 import BonusStats from 'components/desktop/BonusStats';
 import BasicItemCard from 'components/common/BasicItemCard';
@@ -38,7 +38,7 @@ interface Props {
 }
 
 const SetBuilder: React.FC<Props> = ({ customSet }) => {
-  const { appliedBuffs, dispatch } = React.useContext(AppliedBuffsContext);
+  const { appliedBuffs, dispatch } = React.useContext(CustomSetContext);
   const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(
     null,
   );

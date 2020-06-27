@@ -6,7 +6,7 @@ import { Divider, Radio } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
 import { useTheme } from 'emotion-theming';
 
-import { Theme, StatsFromCustomSet, TEffectLine } from 'common/types';
+import { Theme, TEffectLine } from 'common/types';
 import {
   CardTitleWithLevel,
   damageHeaderStyle,
@@ -24,6 +24,7 @@ import {
   getInitialRangedState,
   getTotalDamage,
   getWeightedAverages,
+  CustomSetContext,
 } from 'common/utils';
 
 import {
@@ -38,16 +39,15 @@ import { WeaponStats, CustomSet } from 'common/type-aliases';
 interface Props {
   weaponStats: WeaponStats;
   customSet: CustomSet;
-  statsFromCustomSet: StatsFromCustomSet;
   weaponElementMage: WeaponElementMage | null;
 }
 
 const WeaponDamage: React.FC<Props> = ({
   weaponStats,
   customSet,
-  statsFromCustomSet,
   weaponElementMage,
 }) => {
+  const { statsFromCustomSetWithBuffs } = React.useContext(CustomSetContext);
   const { t } = useTranslation(['weapon_spell_effect', 'stat']);
   const [weaponSkillPower, setWeaponSkillPower] = React.useState(300);
 
@@ -68,13 +68,13 @@ const WeaponDamage: React.FC<Props> = ({
   const showToggle = !rangedOnly && !meleeOnly;
 
   const [showRanged, setShowRanged] = React.useState(
-    getInitialRangedState(meleeOnly, rangedOnly, statsFromCustomSet),
+    getInitialRangedState(meleeOnly, rangedOnly, statsFromCustomSetWithBuffs),
   );
 
   const damageTypeKey = showRanged ? 'ranged' : 'melee';
   let critRate =
     typeof weaponStats.baseCritChance === 'number'
-      ? getStatWithDefault(statsFromCustomSet, Stat.CRITICAL) +
+      ? getStatWithDefault(statsFromCustomSetWithBuffs, Stat.CRITICAL) +
         weaponStats.baseCritChance
       : null;
   critRate = critRate === null ? null : Math.min(Math.max(critRate, 0), 100);
@@ -101,7 +101,7 @@ const WeaponDamage: React.FC<Props> = ({
                 min,
                 type,
                 customSet.level,
-                statsFromCustomSet,
+                statsFromCustomSetWithBuffs,
                 { isWeapon: true },
                 damageTypeKey,
                 weaponSkillPower,
@@ -111,7 +111,7 @@ const WeaponDamage: React.FC<Props> = ({
             max,
             type,
             customSet.level,
-            statsFromCustomSet,
+            statsFromCustomSetWithBuffs,
             { isWeapon: true },
             damageTypeKey,
             weaponSkillPower,
@@ -132,7 +132,7 @@ const WeaponDamage: React.FC<Props> = ({
                           : 0),
                       type,
                       customSet.level,
-                      statsFromCustomSet,
+                      statsFromCustomSetWithBuffs,
                       { isWeapon: true, isCrit: true },
                       damageTypeKey,
                       weaponSkillPower,
@@ -146,7 +146,7 @@ const WeaponDamage: React.FC<Props> = ({
                       : 0),
                   type,
                   customSet.level,
-                  statsFromCustomSet,
+                  statsFromCustomSetWithBuffs,
                   { isWeapon: true, isCrit: true },
                   damageTypeKey,
                   weaponSkillPower,

@@ -16,11 +16,11 @@ import {
   getStatWithDefault,
   getSimpleEffect,
   calcEffect,
-  getStatsFromCustomSet,
   getInitialRangedState,
   calcEffectType,
   getTotalDamage,
   getWeightedAverages,
+  CustomSetContext,
 } from 'common/utils';
 import {
   TEffectLine,
@@ -40,13 +40,13 @@ interface Props {
 
 const SpellCardContent: React.FC<Props> = ({
   spell,
-  customSet,
   selectedSpellLevelIdx,
 }) => {
+  const { customSet, statsFromCustomSetWithBuffs } = React.useContext(
+    CustomSetContext,
+  );
   const { t } = useTranslation(['weapon_spell_effect', 'stat', 'common']);
   const customSetLevel = customSet?.level || 200;
-
-  const statsFromCustomSet = getStatsFromCustomSet(customSet);
 
   const spellStats =
     selectedSpellLevelIdx < spell.spellStats.length
@@ -57,7 +57,7 @@ const SpellCardContent: React.FC<Props> = ({
   const meleeOnly = !spellStats?.maxRange || spellStats?.maxRange <= 1;
 
   const [showRanged, setShowRanged] = React.useState(
-    getInitialRangedState(meleeOnly, rangedOnly, statsFromCustomSet),
+    getInitialRangedState(meleeOnly, rangedOnly, statsFromCustomSetWithBuffs),
   );
 
   const [baseDamageIncreases, setBaseDamageIncreases] = React.useState<
@@ -140,7 +140,7 @@ const SpellCardContent: React.FC<Props> = ({
               minDamage + totalDamageIncrease,
               effectType,
               customSetLevel,
-              statsFromCustomSet,
+              statsFromCustomSetWithBuffs,
               { isTrap: spell.isTrap },
               damageTypeKey,
             )
@@ -149,7 +149,7 @@ const SpellCardContent: React.FC<Props> = ({
           maxDamage + totalDamageIncrease,
           effectType,
           customSetLevel,
-          statsFromCustomSet,
+          statsFromCustomSetWithBuffs,
           { isTrap: spell.isTrap },
           damageTypeKey,
         ),
@@ -162,7 +162,7 @@ const SpellCardContent: React.FC<Props> = ({
                   critMinDamage + totalDamageIncrease,
                   effectType,
                   customSetLevel,
-                  statsFromCustomSet,
+                  statsFromCustomSetWithBuffs,
                   { isCrit: true, isTrap: spell.isTrap },
                   damageTypeKey,
                 )
@@ -171,7 +171,7 @@ const SpellCardContent: React.FC<Props> = ({
               critMaxDamage + totalDamageIncrease,
               effectType,
               customSetLevel,
-              statsFromCustomSet,
+              statsFromCustomSetWithBuffs,
               { isCrit: true, isTrap: spell.isTrap },
               damageTypeKey,
             ),
@@ -187,14 +187,17 @@ const SpellCardContent: React.FC<Props> = ({
         <EffectLine
           min={effect.nonCrit.min}
           max={effect.nonCrit.max}
-          effectType={calcEffectType(effect.type, statsFromCustomSet)}
+          effectType={calcEffectType(effect.type, statsFromCustomSetWithBuffs)}
           baseMax={effect.nonCrit.baseMax}
         />
         {!!effect.crit && (
           <EffectLine
             min={effect.crit.min}
             max={effect.crit.max}
-            effectType={calcEffectType(effect.type, statsFromCustomSet)}
+            effectType={calcEffectType(
+              effect.type,
+              statsFromCustomSetWithBuffs,
+            )}
             baseMax={effect.crit.baseMax}
           />
         )}
@@ -216,7 +219,7 @@ const SpellCardContent: React.FC<Props> = ({
 
     let critRate =
       typeof spellStats.baseCritChance === 'number'
-        ? getStatWithDefault(statsFromCustomSet, Stat.CRITICAL) +
+        ? getStatWithDefault(statsFromCustomSetWithBuffs, Stat.CRITICAL) +
           spellStats?.baseCritChance
         : null;
     critRate = critRate === null ? null : Math.min(Math.max(critRate, 0), 100);
@@ -455,7 +458,7 @@ const SpellCardContent: React.FC<Props> = ({
                 <React.Fragment key={b.id}>
                   {b.incrementBy ? (
                     <AddBuffLink
-                      key={b.id}
+                      key={`${b.id}-non-crit`}
                       spell={spell}
                       buff={b}
                       isCrit={false}
@@ -466,7 +469,7 @@ const SpellCardContent: React.FC<Props> = ({
                   )}
                   {b.critIncrementBy ? (
                     <AddBuffLink
-                      key={b.id}
+                      key={`${b.id}-crit`}
                       spell={spell}
                       buff={b}
                       isCrit

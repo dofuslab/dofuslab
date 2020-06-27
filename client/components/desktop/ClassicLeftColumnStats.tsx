@@ -4,29 +4,18 @@ import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
 import StatTable from 'components/common/StatTable';
 import { Stat } from '__generated__/globalTypes';
-import { getStatsFromCustomSet } from 'common/utils';
+import { CustomSetContext } from 'common/utils';
 import { mq } from 'common/constants';
 import StatEditor from 'components/common/StatEditor';
-import { CustomSet } from 'common/type-aliases';
-import { StatsFromAppliedBuffs } from 'common/types';
 
 interface Props {
-  customSet: CustomSet | null;
-  statsFromAppliedBuffs: StatsFromAppliedBuffs;
   openBuffModal: () => void;
 }
 
 const margin = { marginBottom: 12, [mq[4]]: { marginBottom: 20 } };
 
-const ClassicLeftColumnStats: React.FC<Props> = ({
-  customSet,
-  statsFromAppliedBuffs,
-  openBuffModal,
-}) => {
-  const statsFromCustomSet = React.useMemo(
-    () => getStatsFromCustomSet(customSet),
-    [customSet],
-  );
+const ClassicLeftColumnStats: React.FC<Props> = ({ openBuffModal }) => {
+  const { customSet } = React.useContext(CustomSetContext);
 
   return (
     <div
@@ -51,10 +40,7 @@ const ClassicLeftColumnStats: React.FC<Props> = ({
           Stat.PROSPECTING,
           Stat.PODS,
         ]}
-        statsFromCustomSet={statsFromCustomSet}
-        customSet={customSet}
         css={margin}
-        statsFromAppliedBuffs={statsFromAppliedBuffs}
         openBuffModal={openBuffModal}
       />
       <ClassNames>
@@ -68,10 +54,7 @@ const ClassicLeftColumnStats: React.FC<Props> = ({
       </ClassNames>
       <StatTable
         group={[Stat.DODGE, Stat.LOCK]}
-        statsFromCustomSet={statsFromCustomSet}
-        customSet={customSet}
         css={margin}
-        statsFromAppliedBuffs={statsFromAppliedBuffs}
         openBuffModal={openBuffModal}
       />
       <StatTable
@@ -81,9 +64,6 @@ const ClassicLeftColumnStats: React.FC<Props> = ({
           Stat.MP_PARRY,
           Stat.MP_REDUCTION,
         ]}
-        statsFromCustomSet={statsFromCustomSet}
-        statsFromAppliedBuffs={statsFromAppliedBuffs}
-        customSet={customSet}
         css={margin}
         openBuffModal={openBuffModal}
       />

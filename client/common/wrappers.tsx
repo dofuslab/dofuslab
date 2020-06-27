@@ -66,6 +66,7 @@ export const Badge: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
         padding: '2px 4px',
         borderRadius: 4,
         marginLeft: 8,
+        display: 'inline-block',
       }}
       {...restProps}
     >

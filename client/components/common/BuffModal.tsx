@@ -10,7 +10,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
 import { Select, Spin, Divider, Button } from 'antd';
-import { useClassId, AppliedBuffsContext } from 'common/utils';
+import { useClassId, CustomSetContext } from 'common/utils';
 import {
   classBuffs,
   classBuffsVariables,
@@ -42,7 +42,7 @@ interface Props {
 }
 
 const BuffModal: React.FC<Props> = ({ visible, closeBuffModal, customSet }) => {
-  const { appliedBuffs, dispatch } = React.useContext(AppliedBuffsContext);
+  const { appliedBuffs, dispatch } = React.useContext(CustomSetContext);
   const { t } = useTranslation(['stat', 'common']);
   const { data: classData } = useQuery<classes>(classesQuery);
   const initialClassId = useClassId();
@@ -102,7 +102,10 @@ const BuffModal: React.FC<Props> = ({ visible, closeBuffModal, customSet }) => {
         const buffName = getBuffName(ab);
         const buffImgUrl = getBuffImage(ab);
         return (
-          <div css={{ ':not(:first-of-type)': { marginTop: 4 } }}>
+          <div
+            key={ab.buff.id}
+            css={{ ':not(:first-of-type)': { marginTop: 4 } }}
+          >
             <a
               key={ab.buff.id}
               onClick={() => {
@@ -138,7 +141,7 @@ const BuffModal: React.FC<Props> = ({ visible, closeBuffModal, customSet }) => {
             }}
           >
             {itemsWithBuffs?.map((item) => (
-              <ItemBuffCard item={item} />
+              <ItemBuffCard item={item} key={item.id} />
             ))}
           </div>
           <Divider css={{ margin: '12px 0' }} />

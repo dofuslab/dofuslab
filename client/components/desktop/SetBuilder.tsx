@@ -8,13 +8,7 @@ import { useTheme } from 'emotion-theming';
 import { mq, SEARCH_BAR_ID } from 'common/constants';
 import { ResponsiveGrid, BuffButton } from 'common/wrappers';
 
-import {
-  getStatsFromCustomSet,
-  getErrors,
-  getStatsFromAppliedBuffs,
-  combineStatsWithBuffs,
-  AppliedBuffsContext,
-} from 'common/utils';
+import { getErrors, CustomSetContext } from 'common/utils';
 import { topMarginStyle } from 'common/mixins';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
@@ -91,7 +85,9 @@ interface Props {
 }
 
 const SetBuilder: React.FC<Props> = ({ customSet }) => {
-  const { appliedBuffs } = React.useContext(AppliedBuffsContext);
+  const { appliedBuffs, statsFromCustomSet } = React.useContext(
+    CustomSetContext,
+  );
   const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(
     null,
   );
@@ -124,21 +120,6 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
       searchBar.setSelectionRange(0, searchBar.value.length);
     }
   }, [selectedItemSlot?.id]);
-
-  const statsFromCustomSet = React.useMemo(
-    () => getStatsFromCustomSet(customSet),
-    [customSet],
-  );
-
-  const statsFromAppliedBuffs = React.useMemo(
-    () => getStatsFromAppliedBuffs(appliedBuffs),
-    [appliedBuffs],
-  );
-
-  const statsFromCustomSetWithBuffs = React.useMemo(
-    () => combineStatsWithBuffs(statsFromCustomSet, statsFromAppliedBuffs),
-    [statsFromCustomSet, statsFromAppliedBuffs],
-  );
 
   const {
     query: { class: dofusClass },
@@ -232,9 +213,6 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                   <StatTable
                     key={`stat-table-${group[0]}`}
                     group={group}
-                    statsFromCustomSet={statsFromCustomSet}
-                    statsFromAppliedBuffs={statsFromAppliedBuffs}
-                    customSet={customSet}
                     openBuffModal={openBuffModal}
                   />
                 ))}
@@ -263,7 +241,6 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                       <WeaponDamage
                         weaponStats={weapon.item.weaponStats}
                         customSet={customSet}
-                        statsFromCustomSet={statsFromCustomSetWithBuffs}
                         weaponElementMage={weapon.weaponElementMage}
                       />
                     </>

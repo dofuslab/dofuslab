@@ -1473,14 +1473,22 @@ export const ClassicContext = React.createContext<
 
 export const EditableContext = React.createContext<boolean>(true);
 
-export const AppliedBuffsContext = React.createContext<{
+export const CustomSetContext = React.createContext<{
   appliedBuffs: Array<AppliedBuff>;
   dispatch: React.Dispatch<AppliedBuffAction>;
+  customSet?: CustomSet | null;
+  statsFromCustomSet: StatsFromCustomSet | null;
+  statsFromAppliedBuffs: StatsFromAppliedBuffs;
+  statsFromCustomSetWithBuffs: StatsFromCustomSet;
 }>({
   appliedBuffs: [],
   dispatch: () => {
     // no-op
   },
+  customSet: null,
+  statsFromCustomSet: null,
+  statsFromAppliedBuffs: {},
+  statsFromCustomSetWithBuffs: {},
 });
 
 export const useClassic = () => {
