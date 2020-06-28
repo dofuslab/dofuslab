@@ -1953,6 +1953,41 @@
           "maxStacks": 1
         }
       ]
+    },
+    {
+      "name": "Sparkling Silver Dofus",
+      "buffs": [
+        {
+          "stat": "% Final Damage",
+          "incrementBy": 20,
+          "maxStacks": 1
+        }
+      ]
+    },
+    {
+      "name": "Cloudy Dofus",
+      "buffs": [
+        {
+          "stat": "% Final Damage",
+          "incrementBy": 20,
+          "maxStacks": 1
+        },
+        {
+          "stat": "% Final Damage",
+          "incrementBy": -10,
+          "maxStacks": 1
+        }
+      ]
+    },
+    {
+      "name": "Domakuro",
+      "buffs": [
+        {
+          "stat": "Damage",
+          "incrementBy": 5,
+          "maxStacks": 10
+        }
+      ]
     }
   ]
 }
