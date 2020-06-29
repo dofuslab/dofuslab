@@ -21647,24 +21647,12 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Title: Gossip Pants"
-      ],
-      "fr": [
-        "Titre : Commère des Miches"
-      ],
-      "de": [
-        "Titel: Monstertratscher"
-      ],
-      "es": [
-        "Título: Don Chisme."
-      ],
-      "it": [
-        "Titolo: Comare"
-      ],
-      "pt": [
-        "Título: Língua solta"
-      ]
+      "en": ["Title: Gossip Pants"],
+      "fr": ["Titre : Commère des Miches"],
+      "de": ["Titel: Monstertratscher"],
+      "es": ["Título: Don Chisme."],
+      "it": ["Titolo: Comare"],
+      "pt": ["Título: Língua solta"]
     },
     "conditions": {
       "conditions": {
@@ -22912,24 +22900,12 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Title: Ice Soulja"
-      ],
-      "fr": [
-        "Titre : Trouffion des Neiges"
-      ],
-      "de": [
-        "Titel: Schneekriecher"
-      ],
-      "es": [
-        "Título: Soldado de las Nieves."
-      ],
-      "it": [
-        "Titolo: Bucone delle Nevi"
-      ],
-      "pt": [
-        "Título: Recruta das Neves"
-      ]
+      "en": ["Title: Ice Soulja"],
+      "fr": ["Titre : Trouffion des Neiges"],
+      "de": ["Titel: Schneekriecher"],
+      "es": ["Título: Soldado de las Nieves."],
+      "it": ["Titolo: Bucone delle Nevi"],
+      "pt": ["Título: Recruta das Neves"]
     },
     "conditions": {
       "conditions": {},
@@ -34281,24 +34257,12 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Title: Conqueror of Light"
-      ],
-      "fr": [
-        "Titre : Conquérant de la Lumière"
-      ],
-      "de": [
-        "Titel: Verteidiger des Lichts"
-      ],
-      "es": [
-        "Título: Miembro de la «Fuerza Luz»."
-      ],
-      "it": [
-        "Titolo: Conquistatore della luce"
-      ],
-      "pt": [
-        "Título: Conquistador da Luz"
-      ]
+      "en": ["Title: Conqueror of Light"],
+      "fr": ["Titre : Conquérant de la Lumière"],
+      "de": ["Titel: Verteidiger des Lichts"],
+      "es": ["Título: Miembro de la «Fuerza Luz»."],
+      "it": ["Titolo: Conquistatore della luce"],
+      "pt": ["Título: Conquistador da Luz"]
     },
     "conditions": {
       "conditions": {},
@@ -41439,24 +41403,12 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Title: Grand Master of the Elements"
-      ],
-      "fr": [
-        "Titre : Grand Maître des Éléments"
-      ],
-      "de": [
-        "Titel: Erzmeister der Elemente"
-      ],
-      "es": [
-        "Título: Gran maestro de los elementos."
-      ],
-      "it": [
-        "Titolo: Gran Maestro degli Elementi"
-      ],
-      "pt": [
-        "Título: Grão-Mestre dos Elementos"
-      ]
+      "en": ["Title: Grand Master of the Elements"],
+      "fr": ["Titre : Grand Maître des Éléments"],
+      "de": ["Titel: Erzmeister der Elemente"],
+      "es": ["Título: Gran maestro de los elementos."],
+      "it": ["Titolo: Gran Maestro degli Elementi"],
+      "pt": ["Título: Grão-Mestre dos Elementos"]
     },
     "conditions": {
       "conditions": {
@@ -43068,24 +43020,12 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Title: Adopted Kin"
-      ],
-      "fr": [
-        "Titre : Robill Adoptif"
-      ],
-      "de": [
-        "Titel: Metamunsch-Zögling"
-      ],
-      "es": [
-        "Título: Jug'Onh Adoptivo."
-      ],
-      "it": [
-        "Titolo: Robilo Adottivo"
-      ],
-      "pt": [
-        "Título: Max Adotivo"
-      ]
+      "en": ["Title: Adopted Kin"],
+      "fr": ["Titre : Robill Adoptif"],
+      "de": ["Titel: Metamunsch-Zögling"],
+      "es": ["Título: Jug'Onh Adoptivo."],
+      "it": ["Titolo: Robilo Adottivo"],
+      "pt": ["Título: Max Adotivo"]
     },
     "conditions": {
       "conditions": {},
@@ -46743,24 +46683,14 @@
     "level": 150,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Trickery spell's maximum range by 2"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Tromperie de 2"
-      ],
+      "en": ["Increases the Trickery spell's maximum range by 2"],
+      "fr": ["Augmente la portée maximale du sort Tromperie de 2"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Blendwerk um 2."
       ],
-      "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Truco."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Inganno di 2"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Enganação em 2"
-      ]
+      "es": ["Aumenta en 2 el alcance máximo del hechizo Truco."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Inganno di 2"],
+      "pt": ["Aumenta o alcance máximo do feitiço Enganação em 2"]
     },
     "conditions": {
       "conditions": {},
@@ -47320,24 +47250,12 @@
     "level": 150,
     "stats": [],
     "customStats": {
-      "en": [
-        "20% Critical Hit bonus on the Ghostly Spade spell"
-      ],
-      "fr": [
-        "20% Critique sur le sort Bêche Fantomatique"
-      ],
-      "de": [
-        "20% KT beim Zauber: Phantomspaten"
-      ],
-      "es": [
-        "20% crítico del hechizo Laya Fantomática"
-      ],
-      "it": [
-        "20% CC sull'incantesimo Vanga Fantomatica"
-      ],
-      "pt": [
-        "20% de crítico para o feitiço Enxada Fantasmagórica"
-      ]
+      "en": ["20% Critical Hit bonus on the Ghostly Spade spell"],
+      "fr": ["20% Critique sur le sort Bêche Fantomatique"],
+      "de": ["20% KT beim Zauber: Phantomspaten"],
+      "es": ["20% crítico del hechizo Laya Fantomática"],
+      "it": ["20% CC sull'incantesimo Vanga Fantomatica"],
+      "pt": ["20% de crítico para o feitiço Enxada Fantasmagórica"]
     },
     "conditions": {
       "conditions": {},
@@ -47360,24 +47278,16 @@
     "level": 150,
     "stats": [],
     "customStats": {
-      "en": [
-        "Reduces the Ultra-Powerful spell's cooldown period by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le délai de relance du sort Surpuissante"
-      ],
-      "de": [
-        "Senkt den Cooldown des Zaubers Superpüppchen um 1"
-      ],
+      "en": ["Reduces the Ultra-Powerful spell's cooldown period by 1"],
+      "fr": ["Réduit de 1 le délai de relance du sort Surpuissante"],
+      "de": ["Senkt den Cooldown des Zaubers Superpüppchen um 1"],
       "es": [
         "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Superpoderosa"
       ],
       "it": [
         "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Strapotente"
       ],
-      "pt": [
-        "Reduz em 1 o intervalo de relançamento do feitiço Superpoderosa"
-      ]
+      "pt": ["Reduz em 1 o intervalo de relançamento do feitiço Superpoderosa"]
     },
     "conditions": {
       "conditions": {},
@@ -47662,24 +47572,16 @@
     "level": 150,
     "stats": [],
     "customStats": {
-      "en": [
-        "Reduces the Covering spell's cooldown period by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le délai de relance du sort Revêtement"
-      ],
-      "de": [
-        "Senkt den Cooldown des Zaubers Überzug um 1"
-      ],
+      "en": ["Reduces the Covering spell's cooldown period by 1"],
+      "fr": ["Réduit de 1 le délai de relance du sort Revêtement"],
+      "de": ["Senkt den Cooldown des Zaubers Überzug um 1"],
       "es": [
         "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Revestimiento"
       ],
       "it": [
         "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Rivestimento"
       ],
-      "pt": [
-        "Reduz em 1 o intervalo de relançamento do feitiço Revestimento"
-      ]
+      "pt": ["Reduz em 1 o intervalo de relançamento do feitiço Revestimento"]
     },
     "conditions": {
       "conditions": {},
@@ -48235,24 +48137,16 @@
     "level": 150,
     "stats": [],
     "customStats": {
-      "en": [
-        "Reduces the Jashin Ritual spell's AP cost by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le coût en PA du sort Rituel de Jashin"
-      ],
-      "de": [
-        "Senkt die AP-Kosten des Zaubers Jashins Ritual um 1"
-      ],
+      "en": ["Reduces the Jashin Ritual spell's AP cost by 1"],
+      "fr": ["Réduit de 1 le coût en PA du sort Rituel de Jashin"],
+      "de": ["Senkt die AP-Kosten des Zaubers Jashins Ritual um 1"],
       "es": [
         "Reduce en 1 el número de PA que cuesta el hechizo Ritual de Jashin."
       ],
       "it": [
         "Diminuisce di 1 il costo di PA dell'incantesimo Rituale di Jashin"
       ],
-      "pt": [
-        "Reduz em 1 o custo de PA do feitiço Ritual de Jashin"
-      ]
+      "pt": ["Reduz em 1 o custo de PA do feitiço Ritual de Jashin"]
     },
     "conditions": {
       "conditions": {},
@@ -48275,24 +48169,14 @@
     "level": 150,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Imposture spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Imposture de 1"
-      ],
+      "en": ["Increases the Imposture spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Imposture de 1"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Vorgaukelung um 1."
       ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Impostura."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Impostura di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Impostura em 1"
-      ]
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Impostura."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Impostura di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Impostura em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -48892,24 +48776,12 @@
     "level": 150,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Hurricane spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Ouragan de 1"
-      ],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Orkan um 1."
-      ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Huracán."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Uragano di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Furacão em 1"
-      ]
+      "en": ["Increases the Hurricane spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Ouragan de 1"],
+      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Orkan um 1."],
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Huracán."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Uragano di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Furacão em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -48978,24 +48850,16 @@
     "level": 150,
     "stats": [],
     "customStats": {
-      "en": [
-        "Reduces the Sentinel spell's cooldown period by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le délai de relance du sort Sentinelle"
-      ],
-      "de": [
-        "Senkt den Cooldown des Zaubers Wache um 1"
-      ],
+      "en": ["Reduces the Sentinel spell's cooldown period by 1"],
+      "fr": ["Réduit de 1 le délai de relance du sort Sentinelle"],
+      "de": ["Senkt den Cooldown des Zaubers Wache um 1"],
       "es": [
         "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Centinela"
       ],
       "it": [
         "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Sentinella"
       ],
-      "pt": [
-        "Reduz em 1 o intervalo de relançamento do feitiço Sentinela"
-      ]
+      "pt": ["Reduz em 1 o intervalo de relançamento do feitiço Sentinela"]
     },
     "conditions": {
       "conditions": {},
@@ -49064,24 +48928,12 @@
     "level": 150,
     "stats": [],
     "customStats": {
-      "en": [
-        "15% Critical Hit bonus on the Petrification spell"
-      ],
-      "fr": [
-        "15% Critique sur le sort Pétrification"
-      ],
-      "de": [
-        "15% KT beim Zauber: Versteinerung"
-      ],
-      "es": [
-        "15% crítico del hechizo Petrificación"
-      ],
-      "it": [
-        "15% CC sull'incantesimo Pietrificazione"
-      ],
-      "pt": [
-        "15% de crítico para o feitiço Petrificação"
-      ]
+      "en": ["15% Critical Hit bonus on the Petrification spell"],
+      "fr": ["15% Critique sur le sort Pétrification"],
+      "de": ["15% KT beim Zauber: Versteinerung"],
+      "es": ["15% crítico del hechizo Petrificación"],
+      "it": ["15% CC sull'incantesimo Pietrificazione"],
+      "pt": ["15% de crítico para o feitiço Petrificação"]
     },
     "conditions": {
       "conditions": {},
@@ -49607,24 +49459,14 @@
     "level": 150,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Insolence spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Insolence de 1"
-      ],
+      "en": ["Increases the Insolence spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Insolence de 1"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Unverfrorenheit um 1."
       ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Insolencia."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Insolenza di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Insolência em 1"
-      ]
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Insolencia."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Insolenza di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Insolência em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -49822,24 +49664,12 @@
     "level": 150,
     "stats": [],
     "customStats": {
-      "en": [
-        "15% Critical Hit bonus on the Gobball Fleece spell"
-      ],
-      "fr": [
-        "15% Critique sur le sort Toison Bouffante"
-      ],
-      "de": [
-        "15% KT beim Zauber: Bauschiges Fell"
-      ],
-      "es": [
-        "15% crítico del hechizo Melena Voluminosa"
-      ],
-      "it": [
-        "15% CC sull'incantesimo Vello Pappante"
-      ],
-      "pt": [
-        "15% de crítico para o feitiço Lã Farta"
-      ]
+      "en": ["15% Critical Hit bonus on the Gobball Fleece spell"],
+      "fr": ["15% Critique sur le sort Toison Bouffante"],
+      "de": ["15% KT beim Zauber: Bauschiges Fell"],
+      "es": ["15% crítico del hechizo Melena Voluminosa"],
+      "it": ["15% CC sull'incantesimo Vello Pappante"],
+      "pt": ["15% de crítico para o feitiço Lã Farta"]
     },
     "conditions": {
       "conditions": {},
@@ -49862,24 +49692,14 @@
     "level": 150,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Swelling spell's maximum range by 2"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Boursoufflure de 2"
-      ],
+      "en": ["Increases the Swelling spell's maximum range by 2"],
+      "fr": ["Augmente la portée maximale du sort Boursoufflure de 2"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Aufgedunsenheit um 2."
       ],
-      "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Abotargamiento."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Escrescenza di 2"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Tumefação em 2"
-      ]
+      "es": ["Aumenta en 2 el alcance máximo del hechizo Abotargamiento."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Escrescenza di 2"],
+      "pt": ["Aumenta o alcance máximo do feitiço Tumefação em 2"]
     },
     "conditions": {
       "conditions": {},
@@ -49902,24 +49722,16 @@
     "level": 150,
     "stats": [],
     "customStats": {
-      "en": [
-        "Reduces the Affectionate Word spell's AP cost by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le coût en PA du sort Mot d'Affection"
-      ],
-      "de": [
-        "Senkt die AP-Kosten des Zaubers Liebevolles Wort um 1"
-      ],
+      "en": ["Reduces the Affectionate Word spell's AP cost by 1"],
+      "fr": ["Réduit de 1 le coût en PA du sort Mot d'Affection"],
+      "de": ["Senkt die AP-Kosten des Zaubers Liebevolles Wort um 1"],
       "es": [
         "Reduce en 1 el número de PA que cuesta el hechizo Palabra de Afecto."
       ],
       "it": [
         "Diminuisce di 1 il costo di PA dell'incantesimo Parola Affezionante"
       ],
-      "pt": [
-        "Reduz em 1 o custo de PA do feitiço Palavra de Carinho"
-      ]
+      "pt": ["Reduz em 1 o custo de PA do feitiço Palavra de Carinho"]
     },
     "conditions": {
       "conditions": {},
@@ -49942,24 +49754,14 @@
     "level": 150,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Plotter spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Comploteur de 1"
-      ],
+      "en": ["Increases the Plotter spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Comploteur de 1"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Verschwörer um 1."
       ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Conspirador."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Complottatore di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Conspirador em 1"
-      ]
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Conspirador."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Complottatore di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Conspirador em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -55292,24 +55094,14 @@
     "level": 130,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Pawpads spell's maximum range by 2"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Coussinets de 2"
-      ],
+      "en": ["Increases the Pawpads spell's maximum range by 2"],
+      "fr": ["Augmente la portée maximale du sort Coussinets de 2"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Kleine Polster um 2."
       ],
-      "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Almohadillas."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Cuscinetti di 2"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Amortecimento em 2"
-      ]
+      "es": ["Aumenta en 2 el alcance máximo del hechizo Almohadillas."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Cuscinetti di 2"],
+      "pt": ["Aumenta o alcance máximo do feitiço Amortecimento em 2"]
     },
     "conditions": {
       "conditions": {},
@@ -55332,24 +55124,16 @@
     "level": 130,
     "stats": [],
     "customStats": {
-      "en": [
-        "Reduces the Tactical Beacon spell's cooldown period by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le délai de relance du sort Balise Tactique"
-      ],
-      "de": [
-        "Senkt den Cooldown des Zaubers Taktische Markierung um 1"
-      ],
+      "en": ["Reduces the Tactical Beacon spell's cooldown period by 1"],
+      "fr": ["Réduit de 1 le délai de relance du sort Balise Tactique"],
+      "de": ["Senkt den Cooldown des Zaubers Taktische Markierung um 1"],
       "es": [
         "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Baliza Táctica"
       ],
       "it": [
         "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Elementale Tattico"
       ],
-      "pt": [
-        "Reduz em 1 o intervalo de relançamento do feitiço Baliza Tática"
-      ]
+      "pt": ["Reduz em 1 o intervalo de relançamento do feitiço Baliza Tática"]
     },
     "conditions": {
       "conditions": {},
@@ -55372,24 +55156,12 @@
     "level": 130,
     "stats": [],
     "customStats": {
-      "en": [
-        "10% Critical Hit bonus on the Tetany spell"
-      ],
-      "fr": [
-        "10% Critique sur le sort Tétanie"
-      ],
-      "de": [
-        "10% KT beim Zauber: Tetanie"
-      ],
-      "es": [
-        "10% crítico del hechizo Tetania"
-      ],
-      "it": [
-        "10% CC sull'incantesimo Tetania"
-      ],
-      "pt": [
-        "10% de crítico para o feitiço Tetania"
-      ]
+      "en": ["10% Critical Hit bonus on the Tetany spell"],
+      "fr": ["10% Critique sur le sort Tétanie"],
+      "de": ["10% KT beim Zauber: Tetanie"],
+      "es": ["10% crítico del hechizo Tetania"],
+      "it": ["10% CC sull'incantesimo Tetania"],
+      "pt": ["10% de crítico para o feitiço Tetania"]
     },
     "conditions": {
       "conditions": {},
@@ -55412,24 +55184,12 @@
     "level": 130,
     "stats": [],
     "customStats": {
-      "en": [
-        "20% Critical Hit bonus on the Nautilus spell"
-      ],
-      "fr": [
-        "20% Critique sur le sort Nautile"
-      ],
-      "de": [
-        "20% KT beim Zauber: Nautilus"
-      ],
-      "es": [
-        "20% crítico del hechizo Nautilo"
-      ],
-      "it": [
-        "20% CC sull'incantesimo Nautilo"
-      ],
-      "pt": [
-        "20% de crítico para o feitiço Náutilo"
-      ]
+      "en": ["20% Critical Hit bonus on the Nautilus spell"],
+      "fr": ["20% Critique sur le sort Nautile"],
+      "de": ["20% KT beim Zauber: Nautilus"],
+      "es": ["20% crítico del hechizo Nautilo"],
+      "it": ["20% CC sull'incantesimo Nautilo"],
+      "pt": ["20% de crítico para o feitiço Náutilo"]
     },
     "conditions": {
       "conditions": {},
@@ -55514,24 +55274,14 @@
     "level": 130,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Contraction spell's maximum range by 2"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Contraction de 2"
-      ],
+      "en": ["Increases the Contraction spell's maximum range by 2"],
+      "fr": ["Augmente la portée maximale du sort Contraction de 2"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Kompression um 2."
       ],
-      "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Contracción."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Contrazione di 2"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Contração em 2"
-      ]
+      "es": ["Aumenta en 2 el alcance máximo del hechizo Contracción."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Contrazione di 2"],
+      "pt": ["Aumenta o alcance máximo do feitiço Contração em 2"]
     },
     "conditions": {
       "conditions": {},
@@ -55591,24 +55341,16 @@
     "level": 130,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Fight Back spell's maximum range by 3"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Coup pour coup de 3"
-      ],
+      "en": ["Increases the Fight Back spell's maximum range by 3"],
+      "fr": ["Augmente la portée maximale du sort Coup pour coup de 3"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Schlag um Schlag um 3."
       ],
-      "es": [
-        "Aumenta en 3 el alcance máximo del hechizo Golpe por Golpe."
-      ],
+      "es": ["Aumenta en 3 el alcance máximo del hechizo Golpe por Golpe."],
       "it": [
         "Aumenta la Portata massima dell'incantesimo Colpo per Colpo di 3"
       ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Dar o Troco em 3"
-      ]
+      "pt": ["Aumenta o alcance máximo do feitiço Dar o Troco em 3"]
     },
     "conditions": {
       "conditions": {},
@@ -55785,24 +55527,12 @@
     "level": 130,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Flood spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Déluge de 1"
-      ],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Sintflut um 1."
-      ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Diluvio."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Diluvio di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Dilúvio em 1"
-      ]
+      "en": ["Increases the Flood spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Déluge de 1"],
+      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Sintflut um 1."],
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Diluvio."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Diluvio di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Dilúvio em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -55984,24 +55714,14 @@
     "level": 130,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Inebriation spell's maximum range by 2"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Ebriété de 2"
-      ],
+      "en": ["Increases the Inebriation spell's maximum range by 2"],
+      "fr": ["Augmente la portée maximale du sort Ebriété de 2"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Trunkenheit um 2."
       ],
-      "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Ebriedad."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Ebbrezza di 2"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Sobriedade em 2"
-      ]
+      "es": ["Aumenta en 2 el alcance máximo del hechizo Ebriedad."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Ebbrezza di 2"],
+      "pt": ["Aumenta o alcance máximo do feitiço Sobriedade em 2"]
     },
     "conditions": {
       "conditions": {},
@@ -56274,24 +55994,12 @@
     "level": 130,
     "stats": [],
     "customStats": {
-      "en": [
-        "Makes the Waylaying spell's range modifiable"
-      ],
-      "fr": [
-        "Rend la portée du sort Guet-apens modifiable"
-      ],
-      "de": [
-        "Die Reichweite des Zaubers Auflauern wird steigerbar"
-      ],
-      "es": [
-        "Vuelve modificable el alcance del hechizo Zalagarda"
-      ],
-      "it": [
-        "Rende modificabile la portata dell'incantesimo Agguato"
-      ],
-      "pt": [
-        "Torna possível mudar o alcance do feitiço Tocaia"
-      ]
+      "en": ["Makes the Waylaying spell's range modifiable"],
+      "fr": ["Rend la portée du sort Guet-apens modifiable"],
+      "de": ["Die Reichweite des Zaubers Auflauern wird steigerbar"],
+      "es": ["Vuelve modificable el alcance del hechizo Zalagarda"],
+      "it": ["Rende modificabile la portata dell'incantesimo Agguato"],
+      "pt": ["Torna possível mudar o alcance do feitiço Tocaia"]
     },
     "conditions": {
       "conditions": {},
@@ -56360,15 +56068,9 @@
     "level": 130,
     "stats": [],
     "customStats": {
-      "en": [
-        "Reduces the Bloodthirsty Madness spell's cooldown period by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le délai de relance du sort Folie Sanguinaire"
-      ],
-      "de": [
-        "Senkt den Cooldown des Zaubers Blutiger Wahnsinn um 1"
-      ],
+      "en": ["Reduces the Bloodthirsty Madness spell's cooldown period by 1"],
+      "fr": ["Réduit de 1 le délai de relance du sort Folie Sanguinaire"],
+      "de": ["Senkt den Cooldown des Zaubers Blutiger Wahnsinn um 1"],
       "es": [
         "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Locura Sanguinaria"
       ],
@@ -56400,24 +56102,12 @@
     "level": 130,
     "stats": [],
     "customStats": {
-      "en": [
-        "Duster no longer requires a line of sight"
-      ],
-      "fr": [
-        "Désactive la ligne de vue du sort Plumeau"
-      ],
-      "de": [
-        "Deaktiviert die Sichtlinie für den Zauber Staubwedel"
-      ],
-      "es": [
-        "Desactiva la línea de visión del hechizo Plumero"
-      ],
-      "it": [
-        "Disattiva la linea di tiro dell'incantesimo Piumino"
-      ],
-      "pt": [
-        "Desativa a linha de visão do feitiço Penacho"
-      ]
+      "en": ["Duster no longer requires a line of sight"],
+      "fr": ["Désactive la ligne de vue du sort Plumeau"],
+      "de": ["Deaktiviert die Sichtlinie für den Zauber Staubwedel"],
+      "es": ["Desactiva la línea de visión del hechizo Plumero"],
+      "it": ["Disattiva la linea di tiro dell'incantesimo Piumino"],
+      "pt": ["Desativa a linha de visão do feitiço Penacho"]
     },
     "conditions": {
       "conditions": {},
@@ -56522,24 +56212,12 @@
     "level": 130,
     "stats": [],
     "customStats": {
-      "en": [
-        "Leafy Tree no longer requires a line of sight"
-      ],
-      "fr": [
-        "Désactive la ligne de vue du sort Arbre Feuillu"
-      ],
-      "de": [
-        "Deaktiviert die Sichtlinie für den Zauber Laubbaum"
-      ],
-      "es": [
-        "Desactiva la línea de visión del hechizo Árbol Frondoso"
-      ],
-      "it": [
-        "Disattiva la linea di tiro dell'incantesimo Albero Frondoso"
-      ],
-      "pt": [
-        "Desativa a linha de visão do feitiço Árvore Frondosa"
-      ]
+      "en": ["Leafy Tree no longer requires a line of sight"],
+      "fr": ["Désactive la ligne de vue du sort Arbre Feuillu"],
+      "de": ["Deaktiviert die Sichtlinie für den Zauber Laubbaum"],
+      "es": ["Desactiva la línea de visión del hechizo Árbol Frondoso"],
+      "it": ["Disattiva la linea di tiro dell'incantesimo Albero Frondoso"],
+      "pt": ["Desativa a linha de visão do feitiço Árvore Frondosa"]
     },
     "conditions": {
       "conditions": {},
@@ -56562,24 +56240,16 @@
     "level": 130,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Spade Kiss spell's maximum range by 2"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Roulage de Bêche de 2"
-      ],
+      "en": ["Increases the Spade Kiss spell's maximum range by 2"],
+      "fr": ["Augmente la portée maximale du sort Roulage de Bêche de 2"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Herumwirbelnder Spaten um 2."
       ],
-      "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Jarabe de Laya."
-      ],
+      "es": ["Aumenta en 2 el alcance máximo del hechizo Jarabe de Laya."],
       "it": [
         "Aumenta la Portata massima dell'incantesimo Limonata di Vanga di 2"
       ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Enxada Virada em 2"
-      ]
+      "pt": ["Aumenta o alcance máximo do feitiço Enxada Virada em 2"]
     },
     "conditions": {
       "conditions": {},
@@ -58067,24 +57737,12 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Title: Master of the Elements"
-      ],
-      "fr": [
-        "Titre : Maître des Éléments"
-      ],
-      "de": [
-        "Titel: Meister der Elemente"
-      ],
-      "es": [
-        "Título: Maestro de los elementos."
-      ],
-      "it": [
-        "Titolo: Maestro degli Elementi"
-      ],
-      "pt": [
-        "Título: Mestre dos Elementos"
-      ]
+      "en": ["Title: Master of the Elements"],
+      "fr": ["Titre : Maître des Éléments"],
+      "de": ["Titel: Meister der Elemente"],
+      "es": ["Título: Maestro de los elementos."],
+      "it": ["Titolo: Maestro degli Elementi"],
+      "pt": ["Título: Mestre dos Elementos"]
     },
     "conditions": {
       "conditions": {
@@ -64106,24 +63764,12 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Title: Keeper of the Peace"
-      ],
-      "fr": [
-        "Titre : Gardien de la Paix"
-      ],
-      "de": [
-        "Titel: Gesetzeshüter"
-      ],
-      "es": [
-        "Título: Agente de paz."
-      ],
-      "it": [
-        "Titolo: Guardiano della Pace"
-      ],
-      "pt": [
-        "Título: Guardião da Paz"
-      ]
+      "en": ["Title: Keeper of the Peace"],
+      "fr": ["Titre : Gardien de la Paix"],
+      "de": ["Titel: Gesetzeshüter"],
+      "es": ["Título: Agente de paz."],
+      "it": ["Titolo: Guardiano della Pace"],
+      "pt": ["Título: Guardião da Paz"]
     },
     "conditions": {
       "conditions": {},
@@ -66904,24 +66550,16 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Reduces the Gathering spell's cooldown period by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le délai de relance du sort Rassemblement"
-      ],
-      "de": [
-        "Senkt den Cooldown des Zaubers Aufmarsch um 1"
-      ],
+      "en": ["Reduces the Gathering spell's cooldown period by 1"],
+      "fr": ["Réduit de 1 le délai de relance du sort Rassemblement"],
+      "de": ["Senkt den Cooldown des Zaubers Aufmarsch um 1"],
       "es": [
         "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Congregación"
       ],
       "it": [
         "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Raduno"
       ],
-      "pt": [
-        "Reduz em 1 o intervalo de relançamento do feitiço Ajuntamento"
-      ]
+      "pt": ["Reduz em 1 o intervalo de relançamento do feitiço Ajuntamento"]
     },
     "conditions": {
       "conditions": {},
@@ -66950,24 +66588,16 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Increases the Shovelbrained spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Pelle en l'Air de 1"
-      ],
+      "en": ["Increases the Shovelbrained spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Pelle en l'Air de 1"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Schaufel hoch um 1."
       ],
       "es": [
         "Aumenta en 1 el alcance máximo del hechizo Con la Pala en las Nubes."
       ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Pala per Aria di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Pá nas Nuvens em 1"
-      ]
+      "it": ["Aumenta la Portata massima dell'incantesimo Pala per Aria di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Pá nas Nuvens em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -66996,24 +66626,14 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Increases the Shrapnel spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Shrapnel de 1"
-      ],
+      "en": ["Increases the Shrapnel spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Shrapnel de 1"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Schrapnell um 1."
       ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Perdigonazo."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Shrapnel di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Shrapnel em 1"
-      ]
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Perdigonazo."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Shrapnel di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Shrapnel em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -68220,9 +67840,7 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Increases the Tireless Mask spell's maximum range by 1"
-      ],
+      "en": ["Increases the Tireless Mask spell's maximum range by 1"],
       "fr": [
         "Augmente la portée maximale du sort Masque de l'Infatigable de 1"
       ],
@@ -68235,9 +67853,7 @@
       "it": [
         "Aumenta la Portata massima dell'incantesimo Maschera dell'Infaticabile di 1"
       ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Máscara do Incansável em 1"
-      ]
+      "pt": ["Aumenta o alcance máximo do feitiço Máscara do Incansável em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -69040,24 +68656,12 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Increases the First spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Prime de 1"
-      ],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Prime um 1."
-      ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Primero."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Prima di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Primo em 1"
-      ]
+      "en": ["Increases the First spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Prime de 1"],
+      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Prime um 1."],
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Primero."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Prima di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Primo em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -69086,24 +68690,12 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Increases the Manoeuvre spell's maximum range by 2"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Manoeuvre de 2"
-      ],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Manöver um 2."
-      ],
-      "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Maniobra."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Manovra di 2"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Manobra em 2"
-      ]
+      "en": ["Increases the Manoeuvre spell's maximum range by 2"],
+      "fr": ["Augmente la portée maximale du sort Manoeuvre de 2"],
+      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Manöver um 2."],
+      "es": ["Aumenta en 2 el alcance máximo del hechizo Maniobra."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Manovra di 2"],
+      "pt": ["Aumenta o alcance máximo do feitiço Manobra em 2"]
     },
     "conditions": {
       "conditions": {},
@@ -69513,9 +69105,7 @@
       "en": [
         "At the start of the turn, heals 7% of health points of aligned allies."
       ],
-      "fr": [
-        "En début de tour, rend 7% de points de vie aux alliés alignés."
-      ],
+      "fr": ["En début de tour, rend 7% de points de vie aux alliés alignés."],
       "de": [
         "Heilt zu Beginn der Runde 7 % der LP von Verbündeten in linearer Ausrichtung."
       ],
@@ -69661,15 +69251,9 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Reduces the Elemental Guardian spell's cooldown period by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le délai de relance du sort Gardien Élémentaire"
-      ],
-      "de": [
-        "Senkt den Cooldown des Zaubers Elementarwächter um 1"
-      ],
+      "en": ["Reduces the Elemental Guardian spell's cooldown period by 1"],
+      "fr": ["Réduit de 1 le délai de relance du sort Gardien Élémentaire"],
+      "de": ["Senkt den Cooldown des Zaubers Elementarwächter um 1"],
       "es": [
         "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Guardián Elemental"
       ],
@@ -69851,15 +69435,9 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Reduces the Summoning Stroke spell's cooldown period by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le délai de relance du sort Caresse Invocatrice"
-      ],
-      "de": [
-        "Senkt den Cooldown des Zaubers Heilende Tatzen um 1"
-      ],
+      "en": ["Reduces the Summoning Stroke spell's cooldown period by 1"],
+      "fr": ["Réduit de 1 le délai de relance du sort Caresse Invocatrice"],
+      "de": ["Senkt den Cooldown des Zaubers Heilende Tatzen um 1"],
       "es": [
         "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Caricia Invocadora"
       ],
@@ -69949,24 +69527,12 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Embalming no longer requires a line of sight"
-      ],
-      "fr": [
-        "Désactive la ligne de vue du sort Embaumement"
-      ],
-      "de": [
-        "Deaktiviert die Sichtlinie für den Zauber Einbalsamieren"
-      ],
-      "es": [
-        "Desactiva la línea de visión del hechizo Embalsamamiento"
-      ],
-      "it": [
-        "Disattiva la linea di tiro dell'incantesimo Imbalsamazione"
-      ],
-      "pt": [
-        "Desativa a linha de visão do feitiço Embalsamamento"
-      ]
+      "en": ["Embalming no longer requires a line of sight"],
+      "fr": ["Désactive la ligne de vue du sort Embaumement"],
+      "de": ["Deaktiviert die Sichtlinie für den Zauber Einbalsamieren"],
+      "es": ["Desactiva la línea de visión del hechizo Embalsamamiento"],
+      "it": ["Disattiva la linea di tiro dell'incantesimo Imbalsamazione"],
+      "pt": ["Desativa a linha de visão do feitiço Embalsamamento"]
     },
     "conditions": {
       "conditions": {},
@@ -69995,24 +69561,12 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Reduces the Fermentation spell's AP cost by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le coût en PA du sort Fermentation"
-      ],
-      "de": [
-        "Senkt die AP-Kosten des Zaubers Fermentation um 1"
-      ],
-      "es": [
-        "Reduce en 1 el número de PA que cuesta el hechizo Fermentación."
-      ],
-      "it": [
-        "Diminuisce di 1 il costo di PA dell'incantesimo Fermentazione"
-      ],
-      "pt": [
-        "Reduz em 1 o custo de PA do feitiço Fermentação"
-      ]
+      "en": ["Reduces the Fermentation spell's AP cost by 1"],
+      "fr": ["Réduit de 1 le coût en PA du sort Fermentation"],
+      "de": ["Senkt die AP-Kosten des Zaubers Fermentation um 1"],
+      "es": ["Reduce en 1 el número de PA que cuesta el hechizo Fermentación."],
+      "it": ["Diminuisce di 1 il costo di PA dell'incantesimo Fermentazione"],
+      "pt": ["Reduz em 1 o custo de PA do feitiço Fermentação"]
     },
     "conditions": {
       "conditions": {},
@@ -70184,24 +69738,12 @@
       }
     ],
     "customStats": {
-      "en": [
-        "15% Critical Hit bonus on the Torpedo spell"
-      ],
-      "fr": [
-        "15% Critique sur le sort Torpille"
-      ],
-      "de": [
-        "15% KT beim Zauber: Torpedo"
-      ],
-      "es": [
-        "15% crítico del hechizo Torpedo"
-      ],
-      "it": [
-        "15% CC sull'incantesimo Siluro"
-      ],
-      "pt": [
-        "15% de crítico para o feitiço Torpedo"
-      ]
+      "en": ["15% Critical Hit bonus on the Torpedo spell"],
+      "fr": ["15% Critique sur le sort Torpille"],
+      "de": ["15% KT beim Zauber: Torpedo"],
+      "es": ["15% crítico del hechizo Torpedo"],
+      "it": ["15% CC sull'incantesimo Siluro"],
+      "pt": ["15% de crítico para o feitiço Torpedo"]
     },
     "conditions": {
       "conditions": {},
@@ -70929,24 +70471,12 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Increases the Bane spell's maximum range by 2"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Fléau de 2"
-      ],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Geißel um 2."
-      ],
-      "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Plaga."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Flagello di 2"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Flagelo em 2"
-      ]
+      "en": ["Increases the Bane spell's maximum range by 2"],
+      "fr": ["Augmente la portée maximale du sort Fléau de 2"],
+      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Geißel um 2."],
+      "es": ["Aumenta en 2 el alcance máximo del hechizo Plaga."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Flagello di 2"],
+      "pt": ["Aumenta o alcance máximo do feitiço Flagelo em 2"]
     },
     "conditions": {
       "conditions": {},
@@ -71021,24 +70551,16 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Reduces the Tyrannical Arrow spell's AP cost by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le coût en PA du sort Flèche Tyrannique"
-      ],
-      "de": [
-        "Senkt die AP-Kosten des Zaubers Tyrannischer Pfeil um 1"
-      ],
+      "en": ["Reduces the Tyrannical Arrow spell's AP cost by 1"],
+      "fr": ["Réduit de 1 le coût en PA du sort Flèche Tyrannique"],
+      "de": ["Senkt die AP-Kosten des Zaubers Tyrannischer Pfeil um 1"],
       "es": [
         "Reduce en 1 el número de PA que cuesta el hechizo Flecha Tiránica."
       ],
       "it": [
         "Diminuisce di 1 il costo di PA dell'incantesimo Freccia Tirannica"
       ],
-      "pt": [
-        "Reduz em 1 o custo de PA do feitiço Flecha Tirânica"
-      ]
+      "pt": ["Reduz em 1 o custo de PA do feitiço Flecha Tirânica"]
     },
     "conditions": {
       "conditions": {},
@@ -75126,24 +74648,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Enutrof only"
-        ],
-        "fr": [
-          "Être un Enutrof"
-        ],
-        "de": [
-          "Ein(e) Enutrof sein"
-        ],
-        "es": [
-          "Ser un Anutrof"
-        ],
-        "it": [
-          "Essere Anutrof"
-        ],
-        "pt": [
-          "Ser um Enutrof"
-        ]
+        "en": ["Enutrof only"],
+        "fr": ["Être un Enutrof"],
+        "de": ["Ein(e) Enutrof sein"],
+        "es": ["Ser un Anutrof"],
+        "it": ["Essere Anutrof"],
+        "pt": ["Ser um Enutrof"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/9040.png"
@@ -76586,24 +76096,12 @@
     "level": 80,
     "stats": [],
     "customStats": {
-      "en": [
-        "15% Critical Hit bonus on the Cross Scale spell"
-      ],
-      "fr": [
-        "15% Critique sur le sort Écaille Transversale"
-      ],
-      "de": [
-        "15% KT beim Zauber: Diagonaler Schuppenangriff"
-      ],
-      "es": [
-        "15% crítico del hechizo Escama Transversal"
-      ],
-      "it": [
-        "15% CC sull'incantesimo Scaglia Trasversale"
-      ],
-      "pt": [
-        "15% de crítico para o feitiço Escama Transversal"
-      ]
+      "en": ["15% Critical Hit bonus on the Cross Scale spell"],
+      "fr": ["15% Critique sur le sort Écaille Transversale"],
+      "de": ["15% KT beim Zauber: Diagonaler Schuppenangriff"],
+      "es": ["15% crítico del hechizo Escama Transversal"],
+      "it": ["15% CC sull'incantesimo Scaglia Trasversale"],
+      "pt": ["15% de crítico para o feitiço Escama Transversal"]
     },
     "conditions": {
       "conditions": {},
@@ -76626,24 +76124,16 @@
     "level": 80,
     "stats": [],
     "customStats": {
-      "en": [
-        "Reduces the Living Satchel spell's cooldown period by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le délai de relance du sort Musette Animée"
-      ],
-      "de": [
-        "Senkt den Cooldown des Zaubers Belebter Beutel um 1"
-      ],
+      "en": ["Reduces the Living Satchel spell's cooldown period by 1"],
+      "fr": ["Réduit de 1 le délai de relance du sort Musette Animée"],
+      "de": ["Senkt den Cooldown des Zaubers Belebter Beutel um 1"],
       "es": [
         "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Morral Animado"
       ],
       "it": [
         "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Borsa Animata"
       ],
-      "pt": [
-        "Reduz em 1 o intervalo de relançamento do feitiço Bolsa Animada"
-      ]
+      "pt": ["Reduz em 1 o intervalo de relançamento do feitiço Bolsa Animada"]
     },
     "conditions": {
       "conditions": {},
@@ -76973,24 +76463,14 @@
     "level": 80,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Stalactite spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Stalactite de 1"
-      ],
+      "en": ["Increases the Stalactite spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Stalactite de 1"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Stalaktit um 1."
       ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Estalactita."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Stalattite di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Estalactite em 1"
-      ]
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Estalactita."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Stalattite di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Estalactite em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -77111,24 +76591,12 @@
     "level": 80,
     "stats": [],
     "customStats": {
-      "en": [
-        "15% Critical Hit bonus on the Tumult spell"
-      ],
-      "fr": [
-        "15% Critique sur le sort Tumulte"
-      ],
-      "de": [
-        "15% KT beim Zauber: Tumult"
-      ],
-      "es": [
-        "15% crítico del hechizo Tumulto"
-      ],
-      "it": [
-        "15% CC sull'incantesimo Tumulto"
-      ],
-      "pt": [
-        "15% de crítico para o feitiço Tumulto"
-      ]
+      "en": ["15% Critical Hit bonus on the Tumult spell"],
+      "fr": ["15% Critique sur le sort Tumulte"],
+      "de": ["15% KT beim Zauber: Tumult"],
+      "es": ["15% crítico del hechizo Tumulto"],
+      "it": ["15% CC sull'incantesimo Tumulto"],
+      "pt": ["15% de crítico para o feitiço Tumulto"]
     },
     "conditions": {
       "conditions": {},
@@ -77151,24 +76619,14 @@
     "level": 80,
     "stats": [],
     "customStats": {
-      "en": [
-        "Reduces the Serious Hour spell's AP cost by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le coût en PA du sort Heure Grave"
-      ],
-      "de": [
-        "Senkt die AP-Kosten des Zaubers Ernste Stunde um 1"
-      ],
+      "en": ["Reduces the Serious Hour spell's AP cost by 1"],
+      "fr": ["Réduit de 1 le coût en PA du sort Heure Grave"],
+      "de": ["Senkt die AP-Kosten des Zaubers Ernste Stunde um 1"],
       "es": [
         "Reduce en 1 el número de PA que cuesta el hechizo Momento Crítico."
       ],
-      "it": [
-        "Diminuisce di 1 il costo di PA dell'incantesimo Ora Grave"
-      ],
-      "pt": [
-        "Reduz em 1 o custo de PA do feitiço Hora Grave"
-      ]
+      "it": ["Diminuisce di 1 il costo di PA dell'incantesimo Ora Grave"],
+      "pt": ["Reduz em 1 o custo de PA do feitiço Hora Grave"]
     },
     "conditions": {
       "conditions": {},
@@ -77237,24 +76695,12 @@
     "level": 80,
     "stats": [],
     "customStats": {
-      "en": [
-        "20% Critical Hit bonus on the Tipple spell"
-      ],
-      "fr": [
-        "20% Critique sur le sort Ethylo"
-      ],
-      "de": [
-        "20% KT beim Zauber: Ethyllo"
-      ],
-      "es": [
-        "20% crítico del hechizo Etilo"
-      ],
-      "it": [
-        "20% CC sull'incantesimo Etile"
-      ],
-      "pt": [
-        "20% de crítico para o feitiço Etílico"
-      ]
+      "en": ["20% Critical Hit bonus on the Tipple spell"],
+      "fr": ["20% Critique sur le sort Ethylo"],
+      "de": ["20% KT beim Zauber: Ethyllo"],
+      "es": ["20% crítico del hechizo Etilo"],
+      "it": ["20% CC sull'incantesimo Etile"],
+      "pt": ["20% de crítico para o feitiço Etílico"]
     },
     "conditions": {
       "conditions": {},
@@ -77588,24 +77034,14 @@
     "level": 80,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Curative Palm spell's maximum range by 2"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Paume Curative de 2"
-      ],
+      "en": ["Increases the Curative Palm spell's maximum range by 2"],
+      "fr": ["Augmente la portée maximale du sort Paume Curative de 2"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Heilende Hand um 2."
       ],
-      "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Palma Curativa."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Palmo Curativo di 2"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Palma Curativa em 2"
-      ]
+      "es": ["Aumenta en 2 el alcance máximo del hechizo Palma Curativa."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Palmo Curativo di 2"],
+      "pt": ["Aumenta o alcance máximo do feitiço Palma Curativa em 2"]
     },
     "conditions": {
       "conditions": {},
@@ -77846,24 +77282,12 @@
     "level": 80,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Shot Pellets spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Grenaille de 1"
-      ],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Schrot um 1."
-      ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Granalla."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Piombino di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Granalha em 1"
-      ]
+      "en": ["Increases the Shot Pellets spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Grenaille de 1"],
+      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Schrot um 1."],
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Granalla."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Piombino di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Granalha em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -78057,24 +77481,12 @@
     "level": 80,
     "stats": [],
     "customStats": {
-      "en": [
-        "15% Critical Hit bonus on the Immolation spell"
-      ],
-      "fr": [
-        "15% Critique sur le sort Immolation"
-      ],
-      "de": [
-        "15% KT beim Zauber: Flammenschlag"
-      ],
-      "es": [
-        "15% crítico del hechizo Inmolación"
-      ],
-      "it": [
-        "15% CC sull'incantesimo Immolazione"
-      ],
-      "pt": [
-        "15% de crítico para o feitiço Imolação"
-      ]
+      "en": ["15% Critical Hit bonus on the Immolation spell"],
+      "fr": ["15% Critique sur le sort Immolation"],
+      "de": ["15% KT beim Zauber: Flammenschlag"],
+      "es": ["15% crítico del hechizo Inmolación"],
+      "it": ["15% CC sull'incantesimo Immolazione"],
+      "pt": ["15% de crítico para o feitiço Imolação"]
     },
     "conditions": {
       "conditions": {},
@@ -78097,24 +77509,16 @@
     "level": 80,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Repulsive Arrow spell's maximum range by 2"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Flèche Répulsive de 2"
-      ],
+      "en": ["Increases the Repulsive Arrow spell's maximum range by 2"],
+      "fr": ["Augmente la portée maximale du sort Flèche Répulsive de 2"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Rückstoßpfeil um 2."
       ],
-      "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Flecha Repulsiva."
-      ],
+      "es": ["Aumenta en 2 el alcance máximo del hechizo Flecha Repulsiva."],
       "it": [
         "Aumenta la Portata massima dell'incantesimo Freccia Repulsiva di 2"
       ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Flecha Repulsiva em 2"
-      ]
+      "pt": ["Aumenta o alcance máximo do feitiço Flecha Repulsiva em 2"]
     },
     "conditions": {
       "conditions": {},
@@ -78491,24 +77895,12 @@
     "level": 80,
     "stats": [],
     "customStats": {
-      "en": [
-        "15% Critical Hit bonus on the Yowling spell"
-      ],
-      "fr": [
-        "15% Critique sur le sort Feulement"
-      ],
-      "de": [
-        "15% KT beim Zauber: Fauchen"
-      ],
-      "es": [
-        "15% crítico del hechizo Bufido"
-      ],
-      "it": [
-        "15% CC sull'incantesimo Miagolito"
-      ],
-      "pt": [
-        "15% de crítico para o feitiço Rugido Felino"
-      ]
+      "en": ["15% Critical Hit bonus on the Yowling spell"],
+      "fr": ["15% Critique sur le sort Feulement"],
+      "de": ["15% KT beim Zauber: Fauchen"],
+      "es": ["15% crítico del hechizo Bufido"],
+      "it": ["15% CC sull'incantesimo Miagolito"],
+      "pt": ["15% de crítico para o feitiço Rugido Felino"]
     },
     "conditions": {
       "conditions": {},
@@ -78531,24 +77923,14 @@
     "level": 80,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Mass Grave spell's maximum range by 2"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Fosse Commune de 2"
-      ],
+      "en": ["Increases the Mass Grave spell's maximum range by 2"],
+      "fr": ["Augmente la portée maximale du sort Fosse Commune de 2"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Massengrab um 2."
       ],
-      "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Fosa Común."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Fossa Comune di 2"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Vala Comum em 2"
-      ]
+      "es": ["Aumenta en 2 el alcance máximo del hechizo Fosa Común."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Fossa Comune di 2"],
+      "pt": ["Aumenta o alcance máximo do feitiço Vala Comum em 2"]
     },
     "conditions": {
       "conditions": {},
@@ -78571,12 +77953,8 @@
     "level": 80,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Helping Word spell's maximum range by 2"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Mot d'Entraide de 2"
-      ],
+      "en": ["Increases the Helping Word spell's maximum range by 2"],
+      "fr": ["Augmente la portée maximale du sort Mot d'Entraide de 2"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Wort der Solidarität um 2."
       ],
@@ -78586,9 +77964,7 @@
       "it": [
         "Aumenta la Portata massima dell'incantesimo Parola Reciproca di 2"
       ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Palavra de Ajuda Mútua em 2"
-      ]
+      "pt": ["Aumenta o alcance máximo do feitiço Palavra de Ajuda Mútua em 2"]
     },
     "conditions": {
       "conditions": {},
@@ -78657,24 +78033,12 @@
     "level": 80,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Atabak spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Atabak de 1"
-      ],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Atabak um 1."
-      ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Atabak."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Atabak di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Atabak em 1"
-      ]
+      "en": ["Increases the Atabak spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Atabak de 1"],
+      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Atabak um 1."],
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Atabak."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Atabak di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Atabak em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -83267,32 +82631,17 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Title: Ballotwine"
-      ],
-      "fr": [
-        "Titre : Ballotin"
-      ],
-      "de": [
-        "Titel: Valenteeni"
-      ],
-      "es": [
-        "Título: Valentón."
-      ],
-      "it": [
-        "Titolo: Balotino"
-      ],
-      "pt": [
-        "Título: Rosadinho"
-      ]
+      "en": ["Title: Ballotwine"],
+      "fr": ["Titre : Ballotin"],
+      "de": ["Titel: Valenteeni"],
+      "es": ["Título: Valentón."],
+      "it": ["Titolo: Balotino"],
+      "pt": ["Título: Rosadinho"]
     },
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Male only and",
-          "Quest 'Flower Power' complete"
-        ],
+        "en": ["Male only and", "Quest 'Flower Power' complete"],
         "fr": [
           "Être de sexe masculin et",
           "Quête 'Le pouvoir des fleurs.' achevée"
@@ -83677,32 +83026,17 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Title: Ballotwine"
-      ],
-      "fr": [
-        "Titre : Ballotine"
-      ],
-      "de": [
-        "Titel: Valenteena"
-      ],
-      "es": [
-        "Título: Valentona."
-      ],
-      "it": [
-        "Titolo: Balotina"
-      ],
-      "pt": [
-        "Título: Rosadinha"
-      ]
+      "en": ["Title: Ballotwine"],
+      "fr": ["Titre : Ballotine"],
+      "de": ["Titel: Valenteena"],
+      "es": ["Título: Valentona."],
+      "it": ["Titolo: Balotina"],
+      "pt": ["Título: Rosadinha"]
     },
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Female only and",
-          "Quest 'Flower Power' complete"
-        ],
+        "en": ["Female only and", "Quest 'Flower Power' complete"],
         "fr": [
           "Être de sexe féminin et",
           "Quête 'Le pouvoir des fleurs.' achevée"
@@ -84688,24 +84022,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Enutrof only"
-        ],
-        "fr": [
-          "Être un Enutrof"
-        ],
-        "de": [
-          "Ein(e) Enutrof sein"
-        ],
-        "es": [
-          "Ser un Anutrof"
-        ],
-        "it": [
-          "Essere Anutrof"
-        ],
-        "pt": [
-          "Ser um Enutrof"
-        ]
+        "en": ["Enutrof only"],
+        "fr": ["Être un Enutrof"],
+        "de": ["Ein(e) Enutrof sein"],
+        "es": ["Ser un Anutrof"],
+        "it": ["Essere Anutrof"],
+        "pt": ["Ser um Enutrof"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/9039.png"
@@ -88386,24 +87708,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Alignment 1"
-        ],
-        "fr": [
-          "Alignement 1"
-        ],
-        "de": [
-          "Gesinnung 1"
-        ],
-        "es": [
-          "Alineamiento 1"
-        ],
-        "it": [
-          "Allineamento 1"
-        ],
-        "pt": [
-          "Alinhamento 1"
-        ]
+        "en": ["Alignment 1"],
+        "fr": ["Alignement 1"],
+        "de": ["Gesinnung 1"],
+        "es": ["Alineamiento 1"],
+        "it": ["Allineamento 1"],
+        "pt": ["Alinhamento 1"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/10037.png"
@@ -88447,24 +87757,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Alignment 2"
-        ],
-        "fr": [
-          "Alignement 2"
-        ],
-        "de": [
-          "Gesinnung 2"
-        ],
-        "es": [
-          "Alineamiento 2"
-        ],
-        "it": [
-          "Allineamento 2"
-        ],
-        "pt": [
-          "Alinhamento 2"
-        ]
+        "en": ["Alignment 2"],
+        "fr": ["Alignement 2"],
+        "de": ["Gesinnung 2"],
+        "es": ["Alineamiento 2"],
+        "it": ["Allineamento 2"],
+        "pt": ["Alinhamento 2"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/10038.png"
@@ -88609,24 +87907,12 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Title: Fleastmaker"
-      ],
-      "fr": [
-        "Titre : Pwâkificateur"
-      ],
-      "de": [
-        "Titel: Ostewahasifikator"
-      ],
-      "es": [
-        "Título: Pazcuakficador."
-      ],
-      "it": [
-        "Titolo: Pwakuificatore"
-      ],
-      "pt": [
-        "Título: Paskwificador"
-      ]
+      "en": ["Title: Fleastmaker"],
+      "fr": ["Titre : Pwâkificateur"],
+      "de": ["Titel: Ostewahasifikator"],
+      "es": ["Título: Pazcuakficador."],
+      "it": ["Titolo: Pwakuificatore"],
+      "pt": ["Título: Paskwificador"]
     },
     "conditions": {
       "conditions": {},
@@ -90330,30 +89616,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Alignment 1 and",
-          "Alignment level > 10"
-        ],
-        "fr": [
-          "Alignement 1 et",
-          "Niveau d'alignement > 10"
-        ],
-        "de": [
-          "Gesinnung 1 und",
-          "Gesinnungsstufe > 10"
-        ],
-        "es": [
-          "Alineamiento 1 y",
-          "Nivel de alineamiento > 10"
-        ],
-        "it": [
-          "Allineamento 1 e",
-          "Livello dell'allineamento > 10"
-        ],
-        "pt": [
-          "Alinhamento 1 e",
-          "Nível de alinhamento > 10"
-        ]
+        "en": ["Alignment 1 and", "Alignment level > 10"],
+        "fr": ["Alignement 1 et", "Niveau d'alignement > 10"],
+        "de": ["Gesinnung 1 und", "Gesinnungsstufe > 10"],
+        "es": ["Alineamiento 1 y", "Nivel de alineamiento > 10"],
+        "it": ["Allineamento 1 e", "Livello dell'allineamento > 10"],
+        "pt": ["Alinhamento 1 e", "Nível de alinhamento > 10"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/1023.png"
@@ -93166,24 +92434,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Kamas > 100000"
-        ],
-        "fr": [
-          "Kamas > 100000"
-        ],
-        "de": [
-          "Kamas > 100000"
-        ],
-        "es": [
-          "kamas > 100000"
-        ],
-        "it": [
-          "Kama > 100000"
-        ],
-        "pt": [
-          "Kamas > 100000"
-        ]
+        "en": ["Kamas > 100000"],
+        "fr": ["Kamas > 100000"],
+        "de": ["Kamas > 100000"],
+        "es": ["kamas > 100000"],
+        "it": ["Kama > 100000"],
+        "pt": ["Kamas > 100000"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/82035.png"
@@ -98071,24 +97327,12 @@
       }
     ],
     "customStats": {
-      "en": [
-        "Title: Pandawushuka Disciple"
-      ],
-      "fr": [
-        "Titre : Disciple Pandawushuka"
-      ],
-      "de": [
-        "Titel: Pandawushuka-Schüler"
-      ],
-      "es": [
-        "Título: Discípulo pandawushuka."
-      ],
-      "it": [
-        "Titolo: Discepolo Pandawushuka"
-      ],
-      "pt": [
-        "Título: Discípulo Pandawushuka"
-      ]
+      "en": ["Title: Pandawushuka Disciple"],
+      "fr": ["Titre : Disciple Pandawushuka"],
+      "de": ["Titel: Pandawushuka-Schüler"],
+      "es": ["Título: Discípulo pandawushuka."],
+      "it": ["Titolo: Discepolo Pandawushuka"],
+      "pt": ["Título: Discípulo Pandawushuka"]
     },
     "conditions": {
       "conditions": {},
@@ -98891,24 +98135,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Not in possession of 'Ghoulified'"
-        ],
-        "fr": [
-          "Ne pas posséder l'objet 'Goulyfié'"
-        ],
-        "de": [
-          "Den Gegenstand 'Ghulifiziert' nicht besitzen"
-        ],
-        "es": [
-          "No poseer el objeto 'Ghulificado'"
-        ],
-        "it": [
-          "Non possedere l'oggetto \"Gulifiato\""
-        ],
-        "pt": [
-          "Não possuir o item \"Ghoulificado\""
-        ]
+        "en": ["Not in possession of 'Ghoulified'"],
+        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
+        "de": ["Den Gegenstand 'Ghulifiziert' nicht besitzen"],
+        "es": ["No poseer el objeto 'Ghulificado'"],
+        "it": ["Non possedere l'oggetto \"Gulifiato\""],
+        "pt": ["Não possuir o item \"Ghoulificado\""]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/1146.png"
@@ -101584,24 +100816,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Not in possession of 'Ghoulified'"
-        ],
-        "fr": [
-          "Ne pas posséder l'objet 'Goulyfié'"
-        ],
-        "de": [
-          "Den Gegenstand 'Ghulifiziert' nicht besitzen"
-        ],
-        "es": [
-          "No poseer el objeto 'Ghulificado'"
-        ],
-        "it": [
-          "Non possedere l'oggetto \"Gulifiato\""
-        ],
-        "pt": [
-          "Não possuir o item \"Ghoulificado\""
-        ]
+        "en": ["Not in possession of 'Ghoulified'"],
+        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
+        "de": ["Den Gegenstand 'Ghulifiziert' nicht besitzen"],
+        "es": ["No poseer el objeto 'Ghulificado'"],
+        "it": ["Non possedere l'oggetto \"Gulifiato\""],
+        "pt": ["Não possuir o item \"Ghoulificado\""]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/16244.png"
@@ -101939,24 +101159,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Not in possession of 'Ghoulified'"
-        ],
-        "fr": [
-          "Ne pas posséder l'objet 'Goulyfié'"
-        ],
-        "de": [
-          "Den Gegenstand 'Ghulifiziert' nicht besitzen"
-        ],
-        "es": [
-          "No poseer el objeto 'Ghulificado'"
-        ],
-        "it": [
-          "Non possedere l'oggetto \"Gulifiato\""
-        ],
-        "pt": [
-          "Não possuir o item \"Ghoulificado\""
-        ]
+        "en": ["Not in possession of 'Ghoulified'"],
+        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
+        "de": ["Den Gegenstand 'Ghulifiziert' nicht besitzen"],
+        "es": ["No poseer el objeto 'Ghulificado'"],
+        "it": ["Non possedere l'oggetto \"Gulifiato\""],
+        "pt": ["Não possuir o item \"Ghoulificado\""]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/10156.png"
@@ -102660,24 +101868,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Not in possession of 'Ghoulified'"
-        ],
-        "fr": [
-          "Ne pas posséder l'objet 'Goulyfié'"
-        ],
-        "de": [
-          "Den Gegenstand 'Ghulifiziert' nicht besitzen"
-        ],
-        "es": [
-          "No poseer el objeto 'Ghulificado'"
-        ],
-        "it": [
-          "Non possedere l'oggetto \"Gulifiato\""
-        ],
-        "pt": [
-          "Não possuir o item \"Ghoulificado\""
-        ]
+        "en": ["Not in possession of 'Ghoulified'"],
+        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
+        "de": ["Den Gegenstand 'Ghulifiziert' nicht besitzen"],
+        "es": ["No poseer el objeto 'Ghulificado'"],
+        "it": ["Non possedere l'oggetto \"Gulifiato\""],
+        "pt": ["Não possuir o item \"Ghoulificado\""]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/9171.png"
@@ -102837,24 +102033,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Not in possession of 'Ghoulified'"
-        ],
-        "fr": [
-          "Ne pas posséder l'objet 'Goulyfié'"
-        ],
-        "de": [
-          "Den Gegenstand 'Ghulifiziert' nicht besitzen"
-        ],
-        "es": [
-          "No poseer el objeto 'Ghulificado'"
-        ],
-        "it": [
-          "Non possedere l'oggetto \"Gulifiato\""
-        ],
-        "pt": [
-          "Não possuir o item \"Ghoulificado\""
-        ]
+        "en": ["Not in possession of 'Ghoulified'"],
+        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
+        "de": ["Den Gegenstand 'Ghulifiziert' nicht besitzen"],
+        "es": ["No poseer el objeto 'Ghulificado'"],
+        "it": ["Non possedere l'oggetto \"Gulifiato\""],
+        "pt": ["Não possuir o item \"Ghoulificado\""]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/17168.png"
@@ -104327,24 +103511,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Not in possession of 'Ghoulified'"
-        ],
-        "fr": [
-          "Ne pas posséder l'objet 'Goulyfié'"
-        ],
-        "de": [
-          "Den Gegenstand 'Ghulifiziert' nicht besitzen"
-        ],
-        "es": [
-          "No poseer el objeto 'Ghulificado'"
-        ],
-        "it": [
-          "Non possedere l'oggetto \"Gulifiato\""
-        ],
-        "pt": [
-          "Não possuir o item \"Ghoulificado\""
-        ]
+        "en": ["Not in possession of 'Ghoulified'"],
+        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
+        "de": ["Den Gegenstand 'Ghulifiziert' nicht besitzen"],
+        "es": ["No poseer el objeto 'Ghulificado'"],
+        "it": ["Non possedere l'oggetto \"Gulifiato\""],
+        "pt": ["Não possuir o item \"Ghoulificado\""]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/11139.png"
@@ -105252,24 +104424,14 @@
     "level": 40,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Pitfall spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Chausse-Trappe de 1"
-      ],
+      "en": ["Increases the Pitfall spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Chausse-Trappe de 1"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Fußangeln um 1."
       ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Abrojo."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Piede di Corvo di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Estrepe em 1"
-      ]
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Abrojo."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Piede di Corvo di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Estrepe em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -105292,12 +104454,8 @@
     "level": 40,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Regenerating Mark spell's maximum range by 2"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Marque de Régénération de 2"
-      ],
+      "en": ["Increases the Regenerating Mark spell's maximum range by 2"],
+      "fr": ["Augmente la portée maximale du sort Marque de Régénération de 2"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Zeichen der Regeneration um 2."
       ],
@@ -105307,9 +104465,7 @@
       "it": [
         "Aumenta la Portata massima dell'incantesimo Marchio di Rigenerazione di 2"
       ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Marca de Regeneração em 2"
-      ]
+      "pt": ["Aumenta o alcance máximo do feitiço Marca de Regeneração em 2"]
     },
     "conditions": {
       "conditions": {},
@@ -105332,24 +104488,14 @@
     "level": 40,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Surge spell's maximum range by 2"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Selpâtre de 2"
-      ],
+      "en": ["Increases the Surge spell's maximum range by 2"],
+      "fr": ["Augmente la portée maximale du sort Selpâtre de 2"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Pater Sel um 2."
       ],
-      "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Salitre."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Salnitro di 2"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Salitre em 2"
-      ]
+      "es": ["Aumenta en 2 el alcance máximo del hechizo Salitre."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Salnitro di 2"],
+      "pt": ["Aumenta o alcance máximo do feitiço Salitre em 2"]
     },
     "conditions": {
       "conditions": {},
@@ -105591,24 +104737,12 @@
     "level": 40,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Souvenir spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Souvenir de 1"
-      ],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Souvenir um 1."
-      ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Recuerdo."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Ricordo di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Souvenir em 1"
-      ]
+      "en": ["Increases the Souvenir spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Souvenir de 1"],
+      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Souvenir um 1."],
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Recuerdo."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Ricordo di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Souvenir em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -105631,24 +104765,14 @@
     "level": 40,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Aquaculture spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Aquaculture de 1"
-      ],
+      "en": ["Increases the Aquaculture spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Aquaculture de 1"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Aquakultur um 1."
       ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Acuicultura."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Acquacoltura di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Aquicultura em 1"
-      ]
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Acuicultura."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Acquacoltura di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Aquicultura em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -105671,24 +104795,14 @@
     "level": 40,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Numbness spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Engourdissement de 1"
-      ],
+      "en": ["Increases the Numbness spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Engourdissement de 1"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Benommenheit um 1."
       ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Entumecimiento."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Intorpidimento di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Dormência em 1"
-      ]
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Entumecimiento."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Intorpidimento di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Dormência em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -105795,24 +104909,12 @@
     "level": 40,
     "stats": [],
     "customStats": {
-      "en": [
-        "Makes the Lazybeam spell's range modifiable"
-      ],
-      "fr": [
-        "Rend la portée du sort Faisceau modifiable"
-      ],
-      "de": [
-        "Die Reichweite des Zaubers Zwielichtstrahl wird steigerbar"
-      ],
-      "es": [
-        "Vuelve modificable el alcance del hechizo Resplandor"
-      ],
-      "it": [
-        "Rende modificabile la portata dell'incantesimo Fascio"
-      ],
-      "pt": [
-        "Torna possível mudar o alcance do feitiço Feixe"
-      ]
+      "en": ["Makes the Lazybeam spell's range modifiable"],
+      "fr": ["Rend la portée du sort Faisceau modifiable"],
+      "de": ["Die Reichweite des Zaubers Zwielichtstrahl wird steigerbar"],
+      "es": ["Vuelve modificable el alcance del hechizo Resplandor"],
+      "it": ["Rende modificabile la portata dell'incantesimo Fascio"],
+      "pt": ["Torna possível mudar o alcance do feitiço Feixe"]
     },
     "conditions": {
       "conditions": {},
@@ -106013,24 +105115,12 @@
     "level": 40,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Slaughter spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Hécatombe de 1"
-      ],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Gemetzel um 1."
-      ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Hecatombe."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Ecatombe di 1"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Hecatombe em 1"
-      ]
+      "en": ["Increases the Slaughter spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Hécatombe de 1"],
+      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Gemetzel um 1."],
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Hecatombe."],
+      "it": ["Aumenta la Portata massima dell'incantesimo Ecatombe di 1"],
+      "pt": ["Aumenta o alcance máximo do feitiço Hecatombe em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -106204,24 +105294,12 @@
     "level": 40,
     "stats": [],
     "customStats": {
-      "en": [
-        "Stripping no longer requires a line of sight"
-      ],
-      "fr": [
-        "Désactive la ligne de vue du sort Dépouille"
-      ],
-      "de": [
-        "Deaktiviert die Sichtlinie für den Zauber Abräumer"
-      ],
-      "es": [
-        "Desactiva la línea de visión del hechizo Restos"
-      ],
-      "it": [
-        "Disattiva la linea di tiro dell'incantesimo Spoglia"
-      ],
-      "pt": [
-        "Desativa a linha de visão do feitiço Esfoladura"
-      ]
+      "en": ["Stripping no longer requires a line of sight"],
+      "fr": ["Désactive la ligne de vue du sort Dépouille"],
+      "de": ["Deaktiviert die Sichtlinie für den Zauber Abräumer"],
+      "es": ["Desactiva la línea de visión del hechizo Restos"],
+      "it": ["Disattiva la linea di tiro dell'incantesimo Spoglia"],
+      "pt": ["Desativa a linha de visão do feitiço Esfoladura"]
     },
     "conditions": {
       "conditions": {},
@@ -106447,24 +105525,12 @@
     "level": 40,
     "stats": [],
     "customStats": {
-      "en": [
-        "15% Critical Hit bonus on the Rise of Sap spell"
-      ],
-      "fr": [
-        "15% Critique sur le sort Montée de Sève"
-      ],
-      "de": [
-        "15% KT beim Zauber: Harzstoß"
-      ],
-      "es": [
-        "15% crítico del hechizo Subida de Savia"
-      ],
-      "it": [
-        "15% CC sull'incantesimo Salita di Linfa"
-      ],
-      "pt": [
-        "15% de crítico para o feitiço Inundação de Seiva"
-      ]
+      "en": ["15% Critical Hit bonus on the Rise of Sap spell"],
+      "fr": ["15% Critique sur le sort Montée de Sève"],
+      "de": ["15% KT beim Zauber: Harzstoß"],
+      "es": ["15% crítico del hechizo Subida de Savia"],
+      "it": ["15% CC sull'incantesimo Salita di Linfa"],
+      "pt": ["15% de crítico para o feitiço Inundação de Seiva"]
     },
     "conditions": {
       "conditions": {},
@@ -106487,24 +105553,12 @@
     "level": 40,
     "stats": [],
     "customStats": {
-      "en": [
-        "25% Critical Hit bonus on the Redemption Arrow spell"
-      ],
-      "fr": [
-        "25% Critique sur le sort Flèche de Rédemption"
-      ],
-      "de": [
-        "25% KT beim Zauber: Erlösungspfeil"
-      ],
-      "es": [
-        "25% crítico del hechizo Flecha de Redención"
-      ],
-      "it": [
-        "25% CC sull'incantesimo Freccia di Redenzione"
-      ],
-      "pt": [
-        "25% de crítico para o feitiço Flecha de Redenção"
-      ]
+      "en": ["25% Critical Hit bonus on the Redemption Arrow spell"],
+      "fr": ["25% Critique sur le sort Flèche de Rédemption"],
+      "de": ["25% KT beim Zauber: Erlösungspfeil"],
+      "es": ["25% crítico del hechizo Flecha de Redención"],
+      "it": ["25% CC sull'incantesimo Freccia di Redenzione"],
+      "pt": ["25% de crítico para o feitiço Flecha de Redenção"]
     },
     "conditions": {
       "conditions": {},
@@ -106527,24 +105581,16 @@
     "level": 40,
     "stats": [],
     "customStats": {
-      "en": [
-        "Reduces the Pavise spell's cooldown period by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le délai de relance du sort Pavois"
-      ],
-      "de": [
-        "Senkt den Cooldown des Zaubers Pavese um 1"
-      ],
+      "en": ["Reduces the Pavise spell's cooldown period by 1"],
+      "fr": ["Réduit de 1 le délai de relance du sort Pavois"],
+      "de": ["Senkt den Cooldown des Zaubers Pavese um 1"],
       "es": [
         "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Pavés"
       ],
       "it": [
         "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Palvese"
       ],
-      "pt": [
-        "Reduz em 1 o intervalo de relançamento do feitiço Broquel"
-      ]
+      "pt": ["Reduz em 1 o intervalo de relançamento do feitiço Broquel"]
     },
     "conditions": {
       "conditions": {},
@@ -106646,24 +105692,12 @@
     "level": 40,
     "stats": [],
     "customStats": {
-      "en": [
-        "Makes the Crossing spell's range modifiable"
-      ],
-      "fr": [
-        "Rend la portée du sort Croisement modifiable"
-      ],
-      "de": [
-        "Die Reichweite des Zaubers Kreuzung wird steigerbar"
-      ],
-      "es": [
-        "Vuelve modificable el alcance del hechizo Cruce"
-      ],
-      "it": [
-        "Rende modificabile la portata dell'incantesimo Incrocio"
-      ],
-      "pt": [
-        "Torna possível mudar o alcance do feitiço Cruzamento"
-      ]
+      "en": ["Makes the Crossing spell's range modifiable"],
+      "fr": ["Rend la portée du sort Croisement modifiable"],
+      "de": ["Die Reichweite des Zaubers Kreuzung wird steigerbar"],
+      "es": ["Vuelve modificable el alcance del hechizo Cruce"],
+      "it": ["Rende modificabile la portata dell'incantesimo Incrocio"],
+      "pt": ["Torna possível mudar o alcance do feitiço Cruzamento"]
     },
     "conditions": {
       "conditions": {},
@@ -106686,24 +105720,16 @@
     "level": 40,
     "stats": [],
     "customStats": {
-      "en": [
-        "Increases the Poltroon Mask spell's maximum range by 1"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Masque du Couard de 1"
-      ],
+      "en": ["Increases the Poltroon Mask spell's maximum range by 1"],
+      "fr": ["Augmente la portée maximale du sort Masque du Couard de 1"],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Maske des Duckmäusers um 1."
       ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Máscara de Cobarde."
-      ],
+      "es": ["Aumenta en 1 el alcance máximo del hechizo Máscara de Cobarde."],
       "it": [
         "Aumenta la Portata massima dell'incantesimo Maschera del Codardo di 1"
       ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Máscara do Medroso em 1"
-      ]
+      "pt": ["Aumenta o alcance máximo do feitiço Máscara do Medroso em 1"]
     },
     "conditions": {
       "conditions": {},
@@ -107993,24 +107019,12 @@
         ]
       },
       "customConditions": {
-        "en": [
-          "Alignment 1"
-        ],
-        "fr": [
-          "Alignement 1"
-        ],
-        "de": [
-          "Gesinnung 1"
-        ],
-        "es": [
-          "Alineamiento 1"
-        ],
-        "it": [
-          "Allineamento 1"
-        ],
-        "pt": [
-          "Alinhamento 1"
-        ]
+        "en": ["Alignment 1"],
+        "fr": ["Alignement 1"],
+        "de": ["Gesinnung 1"],
+        "es": ["Alineamiento 1"],
+        "it": ["Allineamento 1"],
+        "pt": ["Alinhamento 1"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/10021.png"
@@ -108366,24 +107380,12 @@
         ]
       },
       "customConditions": {
-        "en": [
-          "Alignment 2"
-        ],
-        "fr": [
-          "Alignement 2"
-        ],
-        "de": [
-          "Gesinnung 2"
-        ],
-        "es": [
-          "Alineamiento 2"
-        ],
-        "it": [
-          "Allineamento 2"
-        ],
-        "pt": [
-          "Alinhamento 2"
-        ]
+        "en": ["Alignment 2"],
+        "fr": ["Alignement 2"],
+        "de": ["Gesinnung 2"],
+        "es": ["Alineamiento 2"],
+        "it": ["Allineamento 2"],
+        "pt": ["Alinhamento 2"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/10022.png"
@@ -111405,30 +110407,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Alignment 1 and",
-          "Alignment level > 20"
-        ],
-        "fr": [
-          "Alignement 1 et",
-          "Niveau d'alignement > 20"
-        ],
-        "de": [
-          "Gesinnung 1 und",
-          "Gesinnungsstufe > 20"
-        ],
-        "es": [
-          "Alineamiento 1 y",
-          "Nivel de alineamiento > 20"
-        ],
-        "it": [
-          "Allineamento 1 e",
-          "Livello dell'allineamento > 20"
-        ],
-        "pt": [
-          "Alinhamento 1 e",
-          "Nível de alinhamento > 20"
-        ]
+        "en": ["Alignment 1 and", "Alignment level > 20"],
+        "fr": ["Alignement 1 et", "Niveau d'alignement > 20"],
+        "de": ["Gesinnung 1 und", "Gesinnungsstufe > 20"],
+        "es": ["Alineamiento 1 y", "Nivel de alineamiento > 20"],
+        "it": ["Allineamento 1 e", "Livello dell'allineamento > 20"],
+        "pt": ["Alinhamento 1 e", "Nível de alinhamento > 20"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/17002.png"
@@ -112728,24 +111712,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Sadida only"
-        ],
-        "fr": [
-          "Être un Sadida"
-        ],
-        "de": [
-          "Ein(e) Sadida sein"
-        ],
-        "es": [
-          "Ser un Sadida"
-        ],
-        "it": [
-          "Essere Sadida"
-        ],
-        "pt": [
-          "Ser um Sadida"
-        ]
+        "en": ["Sadida only"],
+        "fr": ["Être un Sadida"],
+        "de": ["Ein(e) Sadida sein"],
+        "es": ["Ser un Sadida"],
+        "it": ["Essere Sadida"],
+        "pt": ["Ser um Sadida"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/16017.png"
@@ -119002,30 +117974,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "months = Aperirel and",
-          "day(s) < 9"
-        ],
-        "fr": [
-          "Mois = Aperirel et",
-          "Jour(s) < 9"
-        ],
-        "de": [
-          "Monat = Aperirel und",
-          "Tag(e) < 9"
-        ],
-        "es": [
-          "Mes = Aperirel y",
-          "día(s) < 9"
-        ],
-        "it": [
-          "mesi = Aperir e",
-          "giorn(o/i) < 9"
-        ],
-        "pt": [
-          "meses = Aperirel e",
-          "dia(s) < 9"
-        ]
+        "en": ["months = Aperirel and", "day(s) < 9"],
+        "fr": ["Mois = Aperirel et", "Jour(s) < 9"],
+        "de": ["Monat = Aperirel und", "Tag(e) < 9"],
+        "es": ["Mes = Aperirel y", "día(s) < 9"],
+        "it": ["mesi = Aperir e", "giorn(o/i) < 9"],
+        "pt": ["meses = Aperirel e", "dia(s) < 9"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/16410.png"
@@ -121221,30 +120175,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Alignment 2 and",
-          "Alignment level > 30"
-        ],
-        "fr": [
-          "Alignement 2 et",
-          "Niveau d'alignement > 30"
-        ],
-        "de": [
-          "Gesinnung 2 und",
-          "Gesinnungsstufe > 30"
-        ],
-        "es": [
-          "Alineamiento 2 y",
-          "Nivel de alineamiento > 30"
-        ],
-        "it": [
-          "Allineamento 2 e",
-          "Livello dell'allineamento > 30"
-        ],
-        "pt": [
-          "Alinhamento 2 e",
-          "Nível de alinhamento > 30"
-        ]
+        "en": ["Alignment 2 and", "Alignment level > 30"],
+        "fr": ["Alignement 2 et", "Niveau d'alignement > 30"],
+        "de": ["Gesinnung 2 und", "Gesinnungsstufe > 30"],
+        "es": ["Alineamiento 2 y", "Nivel de alineamiento > 30"],
+        "it": ["Allineamento 2 e", "Livello dell'allineamento > 30"],
+        "pt": ["Alinhamento 2 e", "Nível de alinhamento > 30"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/17184.png"
@@ -122020,24 +120956,12 @@
     "level": 1,
     "stats": [],
     "customStats": {
-      "en": [
-        "Title: Moon Slayer"
-      ],
-      "fr": [
-        "Titre : Pourfendeur du Moon"
-      ],
-      "de": [
-        "Titel: Moon-Besieger"
-      ],
-      "es": [
-        "Título: Asesino de Moon."
-      ],
-      "it": [
-        "Titolo: Fenditore di Moon"
-      ],
-      "pt": [
-        "Título: Exterminador do Moon"
-      ]
+      "en": ["Title: Moon Slayer"],
+      "fr": ["Titre : Pourfendeur du Moon"],
+      "de": ["Titel: Moon-Besieger"],
+      "es": ["Título: Asesino de Moon."],
+      "it": ["Titolo: Fenditore di Moon"],
+      "pt": ["Título: Exterminador do Moon"]
     },
     "conditions": {
       "conditions": {},
@@ -122060,24 +120984,12 @@
     "level": 1,
     "stats": [],
     "customStats": {
-      "en": [
-        "Title: Dragon Pig Slayer"
-      ],
-      "fr": [
-        "Titre : Pourfendeur du Dragon Cochon"
-      ],
-      "de": [
-        "Titel: Schweinedrachen-Besieger"
-      ],
-      "es": [
-        "Título: Asesino de Dragocerdo."
-      ],
-      "it": [
-        "Titolo: Fenditore di Drago Maiale"
-      ],
-      "pt": [
-        "Título: Exterminador do Dragão-Porco"
-      ]
+      "en": ["Title: Dragon Pig Slayer"],
+      "fr": ["Titre : Pourfendeur du Dragon Cochon"],
+      "de": ["Titel: Schweinedrachen-Besieger"],
+      "es": ["Título: Asesino de Dragocerdo."],
+      "it": ["Titolo: Fenditore di Drago Maiale"],
+      "pt": ["Título: Exterminador do Dragão-Porco"]
     },
     "conditions": {
       "conditions": {},
@@ -122195,24 +121107,12 @@
     "level": 1,
     "stats": [],
     "customStats": {
-      "en": [
-        "Cooperative crafting impossible"
-      ],
-      "fr": [
-        "Craft coopératif impossible."
-      ],
-      "de": [
-        "Gemeinsames Herstellen nicht möglich."
-      ],
-      "es": [
-        "Craft cooperativo imposible."
-      ],
-      "it": [
-        "Craft cooperativo impossibile."
-      ],
-      "pt": [
-        "Fabricação cooperativa impossível."
-      ]
+      "en": ["Cooperative crafting impossible"],
+      "fr": ["Craft coopératif impossible."],
+      "de": ["Gemeinsames Herstellen nicht möglich."],
+      "es": ["Craft cooperativo imposible."],
+      "it": ["Craft cooperativo impossibile."],
+      "pt": ["Fabricação cooperativa impossível."]
     },
     "conditions": {
       "conditions": {},
@@ -122265,24 +121165,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Alignment 2"
-        ],
-        "fr": [
-          "Alignement 2"
-        ],
-        "de": [
-          "Gesinnung 2"
-        ],
-        "es": [
-          "Alineamiento 2"
-        ],
-        "it": [
-          "Allineamento 2"
-        ],
-        "pt": [
-          "Alinhamento 2"
-        ]
+        "en": ["Alignment 2"],
+        "fr": ["Alignement 2"],
+        "de": ["Gesinnung 2"],
+        "es": ["Alineamiento 2"],
+        "it": ["Allineamento 2"],
+        "pt": ["Alinhamento 2"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/17020.png"
@@ -122305,24 +121193,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Female only"
-        ],
-        "fr": [
-          "Être de sexe féminin"
-        ],
-        "de": [
-          "Weiblich sein"
-        ],
-        "es": [
-          "Ser de sexo femenino"
-        ],
-        "it": [
-          "Essere di sesso Femminile"
-        ],
-        "pt": [
-          "Ser do sexo feminino"
-        ]
+        "en": ["Female only"],
+        "fr": ["Être de sexe féminin"],
+        "de": ["Weiblich sein"],
+        "es": ["Ser de sexo femenino"],
+        "it": ["Essere di sesso Femminile"],
+        "pt": ["Ser do sexo feminino"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/16054.png"
@@ -122427,24 +121303,12 @@
     "level": 1,
     "stats": [],
     "customStats": {
-      "en": [
-        "Title: Soft Oak Slayer"
-      ],
-      "fr": [
-        "Titre : Pourfendeur du Chêne Mou"
-      ],
-      "de": [
-        "Titel: Weich-Eich-Besieger"
-      ],
-      "es": [
-        "Título: Asesino de Roble Blando."
-      ],
-      "it": [
-        "Titolo: Fenditore della Quercia Molle"
-      ],
-      "pt": [
-        "Título: Exterminador do Carvalho Mole"
-      ]
+      "en": ["Title: Soft Oak Slayer"],
+      "fr": ["Titre : Pourfendeur du Chêne Mou"],
+      "de": ["Titel: Weich-Eich-Besieger"],
+      "es": ["Título: Asesino de Roble Blando."],
+      "it": ["Titolo: Fenditore della Quercia Molle"],
+      "pt": ["Título: Exterminador do Carvalho Mole"]
     },
     "conditions": {
       "conditions": {},
@@ -122467,24 +121331,12 @@
     "level": 1,
     "stats": [],
     "customStats": {
-      "en": [
-        "Title: Kimbo Slayer"
-      ],
-      "fr": [
-        "Titre : Pourfendeur du Kimbo"
-      ],
-      "de": [
-        "Titel: Kimbo-Besieger"
-      ],
-      "es": [
-        "Título: Asesino del Kimbo."
-      ],
-      "it": [
-        "Titolo: Fenditore di Kimbo"
-      ],
-      "pt": [
-        "Título: Exterminador do Kimbo"
-      ]
+      "en": ["Title: Kimbo Slayer"],
+      "fr": ["Titre : Pourfendeur du Kimbo"],
+      "de": ["Titel: Kimbo-Besieger"],
+      "es": ["Título: Asesino del Kimbo."],
+      "it": ["Titolo: Fenditore di Kimbo"],
+      "pt": ["Título: Exterminador do Kimbo"]
     },
     "conditions": {
       "conditions": {},
@@ -122507,24 +121359,12 @@
     "level": 1,
     "stats": [],
     "customStats": {
-      "en": [
-        "Title: Bworker Slayer"
-      ],
-      "fr": [
-        "Titre : Pourfendeur de Bworker"
-      ],
-      "de": [
-        "Titel: Bworker-Besieger"
-      ],
-      "es": [
-        "Título: Asesino de Bworker."
-      ],
-      "it": [
-        "Titolo: Fenditore di Bworker"
-      ],
-      "pt": [
-        "Título: Exterminador de Bworker"
-      ]
+      "en": ["Title: Bworker Slayer"],
+      "fr": ["Titre : Pourfendeur de Bworker"],
+      "de": ["Titel: Bworker-Besieger"],
+      "es": ["Título: Asesino de Bworker."],
+      "it": ["Titolo: Fenditore di Bworker"],
+      "pt": ["Título: Exterminador de Bworker"]
     },
     "conditions": {
       "conditions": {},
@@ -122982,24 +121822,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Male only"
-        ],
-        "fr": [
-          "Être de sexe masculin"
-        ],
-        "de": [
-          "Männlich sein"
-        ],
-        "es": [
-          "Ser de sexo masculino"
-        ],
-        "it": [
-          "Essere di sesso Maschile"
-        ],
-        "pt": [
-          "Ser do sexo masculino"
-        ]
+        "en": ["Male only"],
+        "fr": ["Être de sexe masculin"],
+        "de": ["Männlich sein"],
+        "es": ["Ser de sexo masculino"],
+        "it": ["Essere di sesso Maschile"],
+        "pt": ["Ser do sexo masculino"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/16053.png"
@@ -123167,24 +121995,12 @@
     "level": 1,
     "stats": [],
     "customStats": {
-      "en": [
-        "Title: Dark Vlad Slayer"
-      ],
-      "fr": [
-        "Titre : Pourfendeur du Dark Vlad"
-      ],
-      "de": [
-        "Titel: Dark Vlad-Besieger"
-      ],
-      "es": [
-        "Título: Asesino de Dark Vlad."
-      ],
-      "it": [
-        "Titolo: Fenditore di Dark Vlad"
-      ],
-      "pt": [
-        "Título: Exterminador do Dark Vlad"
-      ]
+      "en": ["Title: Dark Vlad Slayer"],
+      "fr": ["Titre : Pourfendeur du Dark Vlad"],
+      "de": ["Titel: Dark Vlad-Besieger"],
+      "es": ["Título: Asesino de Dark Vlad."],
+      "it": ["Titolo: Fenditore di Dark Vlad"],
+      "pt": ["Título: Exterminador do Dark Vlad"]
     },
     "conditions": {
       "conditions": {},
@@ -123207,24 +122023,12 @@
     "level": 1,
     "stats": [],
     "customStats": {
-      "en": [
-        "Title: Koolich Slayer"
-      ],
-      "fr": [
-        "Titre : Pourfendeur du Koulosse"
-      ],
-      "de": [
-        "Titel: Kuhloss-Besieger"
-      ],
-      "es": [
-        "Título: Asesino de Trankitronko."
-      ],
-      "it": [
-        "Titolo: Fenditore di Culosse"
-      ],
-      "pt": [
-        "Título: Exterminador do Tronkoso"
-      ]
+      "en": ["Title: Koolich Slayer"],
+      "fr": ["Titre : Pourfendeur du Koulosse"],
+      "de": ["Titel: Kuhloss-Besieger"],
+      "es": ["Título: Asesino de Trankitronko."],
+      "it": ["Titolo: Fenditore di Culosse"],
+      "pt": ["Título: Exterminador do Tronkoso"]
     },
     "conditions": {
       "conditions": {},
@@ -123247,24 +122051,12 @@
     "level": 1,
     "stats": [],
     "customStats": {
-      "en": [
-        "Title: Sphincter Cell Slayer"
-      ],
-      "fr": [
-        "Titre : Pourfendeur du Sphincter Cell"
-      ],
-      "de": [
-        "Titel: Sphincter Cell-Besieger"
-      ],
-      "es": [
-        "Título: Asesino de Sfinter Cell."
-      ],
-      "it": [
-        "Titolo: Fenditore di Sfinter Cell"
-      ],
-      "pt": [
-        "Título: Exterminador do Sphincter Cell"
-      ]
+      "en": ["Title: Sphincter Cell Slayer"],
+      "fr": ["Titre : Pourfendeur du Sphincter Cell"],
+      "de": ["Titel: Sphincter Cell-Besieger"],
+      "es": ["Título: Asesino de Sfinter Cell."],
+      "it": ["Titolo: Fenditore di Sfinter Cell"],
+      "pt": ["Título: Exterminador do Sphincter Cell"]
     },
     "conditions": {
       "conditions": {},
@@ -123473,24 +122265,12 @@
     "level": 1,
     "stats": [],
     "customStats": {
-      "en": [
-        "Cooperative crafting impossible"
-      ],
-      "fr": [
-        "Craft coopératif impossible."
-      ],
-      "de": [
-        "Gemeinsames Herstellen nicht möglich."
-      ],
-      "es": [
-        "Craft cooperativo imposible."
-      ],
-      "it": [
-        "Craft cooperativo impossibile."
-      ],
-      "pt": [
-        "Fabricação cooperativa impossível."
-      ]
+      "en": ["Cooperative crafting impossible"],
+      "fr": ["Craft coopératif impossible."],
+      "de": ["Gemeinsames Herstellen nicht möglich."],
+      "es": ["Craft cooperativo imposible."],
+      "it": ["Craft cooperativo impossibile."],
+      "pt": ["Fabricação cooperativa impossível."]
     },
     "conditions": {
       "conditions": {},
@@ -123569,24 +122349,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Alignment 1"
-        ],
-        "fr": [
-          "Alignement 1"
-        ],
-        "de": [
-          "Gesinnung 1"
-        ],
-        "es": [
-          "Alineamiento 1"
-        ],
-        "it": [
-          "Allineamento 1"
-        ],
-        "pt": [
-          "Alinhamento 1"
-        ]
+        "en": ["Alignment 1"],
+        "fr": ["Alignement 1"],
+        "de": ["Gesinnung 1"],
+        "es": ["Alineamiento 1"],
+        "it": ["Allineamento 1"],
+        "pt": ["Alinhamento 1"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/17034.png"
@@ -123665,24 +122433,12 @@
     "level": 1,
     "stats": [],
     "customStats": {
-      "en": [
-        "Title: Wa Wabbit Slayer"
-      ],
-      "fr": [
-        "Titre : Pourfendeur du Wa Wabbit"
-      ],
-      "de": [
-        "Titel: Wa Wabbit-Besieger"
-      ],
-      "es": [
-        "Título: Asesino del Wey Wabbit."
-      ],
-      "it": [
-        "Titolo: Fenditore di We Wabbit"
-      ],
-      "pt": [
-        "Título: Exterminador do Wei Wabbit"
-      ]
+      "en": ["Title: Wa Wabbit Slayer"],
+      "fr": ["Titre : Pourfendeur du Wa Wabbit"],
+      "de": ["Titel: Wa Wabbit-Besieger"],
+      "es": ["Título: Asesino del Wey Wabbit."],
+      "it": ["Titolo: Fenditore di We Wabbit"],
+      "pt": ["Título: Exterminador do Wei Wabbit"]
     },
     "conditions": {
       "conditions": {},
@@ -124033,24 +122789,12 @@
     "conditions": {
       "conditions": {},
       "customConditions": {
-        "en": [
-          "Server = Shika"
-        ],
-        "fr": [
-          "Serveur = Shika"
-        ],
-        "de": [
-          "Server = Shika"
-        ],
-        "es": [
-          "Servidor = Shika"
-        ],
-        "it": [
-          "Server = Shika"
-        ],
-        "pt": [
-          "Servidor = Shika"
-        ]
+        "en": ["Server = Shika"],
+        "fr": ["Serveur = Shika"],
+        "de": ["Server = Shika"],
+        "es": ["Servidor = Shika"],
+        "it": ["Server = Shika"],
+        "pt": ["Servidor = Shika"]
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/16005.png"
@@ -124316,9 +123060,7 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains +4 AP for their first round but also loses 4 MP"
-      ]
+      "en": ["The bearer gains +4 AP for their first round but also loses 4 MP"]
     },
     "conditions": {
       "conditions": {},
@@ -124339,9 +123081,7 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains 4 AP for 1 turn but inflicts -50% damage"
-      ]
+      "en": ["The bearer gains 4 AP for 1 turn but inflicts -50% damage"]
     },
     "conditions": {
       "conditions": {},
@@ -124385,9 +123125,7 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains 50 Critial for 1 turn"
-      ]
+      "en": ["The bearer gains 50 Critial for 1 turn"]
     },
     "conditions": {
       "conditions": {},
@@ -124477,9 +123215,7 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer reduces damage suffered by 80% before playing"
-      ]
+      "en": ["The bearer reduces damage suffered by 80% before playing"]
     },
     "conditions": {
       "conditions": {},
@@ -124569,9 +123305,7 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains +2 AP for their first round"
-      ]
+      "en": ["The bearer gains +2 AP for their first round"]
     },
     "conditions": {
       "conditions": {},
@@ -124592,9 +123326,7 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains 1 AP for 3 turns but inflicts -10% damage"
-      ]
+      "en": ["The bearer gains 1 AP for 3 turns but inflicts -10% damage"]
     },
     "conditions": {
       "conditions": {},
@@ -124776,9 +123508,7 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains +3 AP for their first round but also loses 2 MP"
-      ]
+      "en": ["The bearer gains +3 AP for their first round but also loses 2 MP"]
     },
     "conditions": {
       "conditions": {},
@@ -124799,9 +123529,7 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains 2 AP for 2 turns but inflicts -20% damage"
-      ]
+      "en": ["The bearer gains 2 AP for 2 turns but inflicts -20% damage"]
     },
     "conditions": {
       "conditions": {},
@@ -124845,9 +123573,7 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains 20 Critical for 2 turns"
-      ]
+      "en": ["The bearer gains 20 Critical for 2 turns"]
     },
     "conditions": {
       "conditions": {},
@@ -124891,9 +123617,7 @@
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": [
-        "The bearer gains 8 Critical for 3 turns"
-      ]
+      "en": ["The bearer gains 8 Critical for 3 turns"]
     },
     "conditions": {
       "conditions": {},
@@ -126081,7 +124805,7 @@
         "À partir du tour 6, le lanceur gagne jusqu'à 50 dommages pour le reste du comabt selon le nombre d'attaques, qui infligent des dommages directs, occaseionnées àchacun des tours précédents."
       ],
       "it": [
-        "A partire dal turno 6, il lanciatore ottiene fino a 50 danni per la restante parte del combattimento a seconda del numero di attacchi che infliggono danni diretti causati in ognunu dei turni precedenti."
+        "A partire dal turno 6, il lanciatore ottiene fino a 50 danni per la restante parte del combattimento a seconda del numero di attacchi che infliggono danni diretti causati in ognuno dei turni precedenti."
       ]
     },
     "conditions": {
