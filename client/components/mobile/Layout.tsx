@@ -26,6 +26,8 @@ import {
   faUserPlus,
   faKey,
   faMugHot,
+  faMoon,
+  faSun,
 } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
@@ -36,13 +38,14 @@ import {
 } from 'graphql/mutations/__generated__/changeLocale';
 import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
-import { LIGHT_THEME_NAME } from 'common/themes';
+import { LIGHT_THEME_NAME, darkTheme, lightTheme } from 'common/themes';
 import {
   DISCORD_SERVER_LINK,
   GITHUB_REPO_LINK,
   BUY_ME_COFFEE_LINK,
 } from 'common/constants';
 import { Theme } from 'common/types';
+import { ThemeContext } from 'common/utils';
 import SignUpModal from '../common/SignUpModal';
 import LoginModal from '../common/LoginModal';
 
@@ -148,7 +151,17 @@ const Layout = ({ children }: LayoutProps) => {
     [changeLocaleMutate, i18n, client],
   );
 
+  const { setTheme } = React.useContext(ThemeContext);
+
   const theme = useTheme<Theme>();
+
+  const switchToDarkMode = React.useCallback(() => {
+    setTheme(darkTheme);
+  }, []);
+
+  const switchToLightMode = React.useCallback(() => {
+    setTheme(lightTheme);
+  }, []);
 
   return (
     <AntdLayout css={{ height: '100%', minHeight: '100vh' }}>
@@ -165,13 +178,15 @@ const Layout = ({ children }: LayoutProps) => {
       <StatusChecker />
       <AntdLayout.Header
         css={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          background: theme.header?.background,
-          borderBottom: `1px solid ${theme.border?.default}`,
-          padding: '0 12px',
-          fontSize: '0.8rem',
+          '&.ant-layout-header': {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            background: theme.header?.background,
+            borderBottom: `1px solid ${theme.border?.default}`,
+            padding: '0 12px',
+            fontSize: '0.8rem',
+          },
         }}
       >
         <Link href="/" as="/">
@@ -277,6 +292,26 @@ const Layout = ({ children }: LayoutProps) => {
                 {t('CHANGE_PASSWORD')}
               </Menu.Item>
             )}
+            <Menu.Item
+              key="dark-mode"
+              onClick={
+                theme.name === LIGHT_THEME_NAME
+                  ? switchToDarkMode
+                  : switchToLightMode
+              }
+            >
+              <span css={iconWrapper}>
+                <FontAwesomeIcon
+                  icon={theme.name === LIGHT_THEME_NAME ? faMoon : faSun}
+                />
+              </span>
+              {t(
+                theme.name === LIGHT_THEME_NAME
+                  ? 'SWITCH_TO_DARK_MODE'
+                  : 'SWITCH_TO_LIGHT_MODE',
+                { ns: 'common' },
+              )}
+            </Menu.Item>
             <SubMenu
               key="language"
               title={

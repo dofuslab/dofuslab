@@ -10,12 +10,12 @@ import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
 import Tooltip from 'components/common/Tooltip';
 import Link from 'next/link';
-import { Card } from 'antd';
 import { itemCardStyle } from 'common/mixins';
 import { useTheme } from 'emotion-theming';
 import { useTranslation } from 'i18n';
 import { Theme } from 'common/types';
 import { stripQueryString } from 'common/utils';
+import Card from 'components/common/Card';
 
 const ClassicClassSelector: React.FC = () => {
   const router = useRouter();
