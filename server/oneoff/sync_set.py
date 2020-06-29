@@ -74,7 +74,7 @@ def create_or_update_set(db_session, set_name, data):
         print("Multiple sets with that name exist, skipping it.")
         return
     elif len(translations) == 1:
-        print("This set currently exists. Updating the set")
+        print("The set {} currently exists. Updating the set.".format(set_name))
         set_object = (
             db_session.query(ModelSet)
             .filter(ModelSet.uuid == translations[0].set_id)
@@ -82,7 +82,7 @@ def create_or_update_set(db_session, set_name, data):
         )
         update_set(db_session, set_object, data)
     else:
-        print("No set was found. Creating the set")
+        print("No set was found for {}. Creating the set".format(set_name))
         create_set(db_session, data)
 
 
