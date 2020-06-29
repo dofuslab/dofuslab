@@ -231,7 +231,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
           as={`/build/${node.id}/`}
           key={node.id}
         >
-          <div>
+          <a>
             <Card
               onClick={onClose}
               hoverable
@@ -308,7 +308,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
                 </div>
               )}
             </Card>
-          </div>
+          </a>
         </Link>
       ))}
       {!queryLoading && myBuilds?.currentUser?.customSets.edges.length === 0 && (
