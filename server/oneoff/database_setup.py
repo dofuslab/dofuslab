@@ -28,6 +28,7 @@ from app.database.model_spell_effect import ModelSpellEffect
 from app.database import base
 from oneoff.enums import to_stat_enum, to_effect_enum, to_spell_enum
 from oneoff.sync_spell import create_spell_stats
+from oneoff.sync_sets import create_set
 import oneoff.sync_item
 import oneoff.sync_buffs
 from sqlalchemy.schema import MetaData
@@ -102,44 +103,10 @@ def add_item_types_and_slots():
 def add_sets_and_items():
     print("Adding sets to database")
     with open(os.path.join(app_root, "app/database/data/sets.json"), "r") as file:
-        data = json.load(file)
-        for record in data:
-            set_obj = ModelSet(dofus_db_id=record["id"])
-            db.session.add(set_obj)
-
-            for locale in record["name"]:
-                set_translation = ModelSetTranslation(
-                    set_id=set_obj.uuid, locale=locale, name=record["name"][locale]
-                )
-                db.session.add(set_translation)
-                set_obj.set_translation.append(set_translation)
-
-            for num_items in record["bonuses"]:
-                bonuses = record["bonuses"][num_items]
-                for bonus in bonuses:
-                    bonus_obj = ModelSetBonus(
-                        set_id=set_obj.uuid, num_items=int(num_items),
-                    )
-                    if bonus["stat"]:
-                        bonus_obj.stat = to_stat_enum[bonus["stat"]]
-                        bonus_obj.value = bonus["value"]
-                    else:
-                        for locale in bonus["altStat"]:
-                            for custom_bonus in bonus["altStat"][locale]:
-                                bonus_translation = ModelSetBonusTranslation(
-                                    set_bonus_id=bonus_obj.uuid,
-                                    locale=locale,
-                                    custom_stat=custom_bonus,
-                                )
-                                db.session.add(bonus_translation)
-                                bonus_obj.set_bonus_translation.append(
-                                    bonus_translation
-                                )
-
-                    db.session.add(bonus_obj)
-                    set_obj.bonuses.append(bonus_obj)
-
-        db.session.commit()
+        with session_scope() as db_session:
+            data = json.load(file)
+            for record in data:
+                create_set(db_session, record)
 
     print("Adding items to database")
     with open(os.path.join(app_root, "app/database/data/items.json"), "r") as file:

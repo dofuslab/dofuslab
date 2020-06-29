@@ -1,6 +1,7 @@
 import json
 import os
 from app import session_scope
+from app.database.model_set import ModelSet
 from app.database.model_item import ModelItem
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_stat_translation import ModelItemStatTranslation
@@ -86,6 +87,15 @@ def create_item(db_session, record):
         level=record["level"],
         image_url=record["imageUrl"],
     )
+
+    if record.get("setID", None):
+        set = (
+            db_session.query(ModelSet)
+            .filter(ModelSet.dofus_db_id == record["setID"])
+            .one()
+        )
+        set.items.append(item)
+
     if "conditions" in record:
         conditions = {
             "conditions": record["conditions"].get("conditions", {}),

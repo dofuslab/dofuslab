@@ -7745,12 +7745,24 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Legend Hunter"],
-            "fr": ["Titre : Chasseur de Légendes"],
-            "de": ["Titel: Legenden-Jäger"],
-            "es": ["Título: Cazador de Leyendas."],
-            "it": ["Titolo: Cacciatore di Leggende"],
-            "pt": ["Título: Caçador de Lendas"]
+            "en": [
+              "Title: Legend Hunter"
+            ],
+            "fr": [
+              "Titre : Chasseur de Légendes"
+            ],
+            "de": [
+              "Titel: Legenden-Jäger"
+            ],
+            "es": [
+              "Título: Cazador de Leyendas."
+            ],
+            "it": [
+              "Titolo: Cacciatore di Leggende"
+            ],
+            "pt": [
+              "Título: Caçador de Lendas"
+            ]
           }
         },
         {
@@ -8220,12 +8232,24 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Someone's following you!"],
-            "fr": ["Quelqu'un vous suit !"],
-            "de": ["Jemand folgt euch!"],
-            "es": ["¡Alguien te sigue!"],
-            "it": ["Qualcuno ti segue!"],
-            "pt": ["Você está sendo seguido!"]
+            "en": [
+              "Someone's following you!"
+            ],
+            "fr": [
+              "Quelqu'un vous suit !"
+            ],
+            "de": [
+              "Jemand folgt euch!"
+            ],
+            "es": [
+              "¡Alguien te sigue!"
+            ],
+            "it": [
+              "Qualcuno ti segue!"
+            ],
+            "pt": [
+              "Você está sendo seguido!"
+            ]
           }
         },
         {
@@ -8296,68 +8320,120 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Robbery no longer requires a line of sight"],
-            "fr": ["Désactive la ligne de vue du sort Brigandage"],
-            "de": ["Deaktiviert die Sichtlinie für den Zauber Räubern"],
-            "es": ["Desactiva la línea de visión del hechizo Bandolerismo"],
-            "it": ["Disattiva la linea di tiro dell'incantesimo Brigandeggio"],
-            "pt": ["Desativa a linha de visão do feitiço Bandoleirismo"]
+            "en": [
+              "Robbery no longer requires a line of sight"
+            ],
+            "fr": [
+              "Désactive la ligne de vue du sort Brigandage"
+            ],
+            "de": [
+              "Deaktiviert die Sichtlinie für den Zauber Räubern"
+            ],
+            "es": [
+              "Desactiva la línea de visión del hechizo Bandolerismo"
+            ],
+            "it": [
+              "Disattiva la linea di tiro dell'incantesimo Brigandeggio"
+            ],
+            "pt": [
+              "Desativa a linha de visão do feitiço Bandoleirismo"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["25 Damage on the spell: Contraband"],
-            "fr": ["25 Dommages sur le sort Contrebande"],
-            "de": ["25 Schaden beim Zauber: Schmuggelei"],
-            "es": ["25 daños del hechizo Contrabando"],
-            "it": ["25 Danni sull'incantesimo Contrabbando"],
-            "pt": ["25 danos para o feitiço Contrabando"]
+            "en": [
+              "25 Damage on the spell: Contraband"
+            ],
+            "fr": [
+              "25 Dommages sur le sort Contrebande"
+            ],
+            "de": [
+              "25 Schaden beim Zauber: Schmuggelei"
+            ],
+            "es": [
+              "25 daños del hechizo Contrabando"
+            ],
+            "it": [
+              "25 Danni sull'incantesimo Contrabbando"
+            ],
+            "pt": [
+              "25 danos para o feitiço Contrabando"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Tax is no longer linear"],
-            "fr": ["Désactive le lancer en ligne du sort Taxe"],
+            "en": [
+              "Tax is no longer linear"
+            ],
+            "fr": [
+              "Désactive le lancer en ligne du sort Taxe"
+            ],
             "de": [
               "Deaktiviert die lineare Wirkungsweise für den Zauber Versteuerung"
             ],
-            "es": ["Desactiva el lanzamiento en línea recta del hechizo Tasa"],
-            "it": ["Disattiva il lancio in linea dell'incantesimo Tassa"],
-            "pt": ["Desativa o lançamento em linha do feitiço Taxa"]
+            "es": [
+              "Desactiva el lanzamiento en línea recta del hechizo Tasa"
+            ],
+            "it": [
+              "Disattiva il lancio in linea dell'incantesimo Tassa"
+            ],
+            "pt": [
+              "Desativa o lançamento em linha do feitiço Taxa"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Reduces the Leasing spell's AP cost by 1"],
-            "fr": ["Réduit de 1 le coût en PA du sort Affermage"],
-            "de": ["Senkt die AP-Kosten des Zaubers Pacht um 1"],
+            "en": [
+              "Reduces the Leasing spell's AP cost by 1"
+            ],
+            "fr": [
+              "Réduit de 1 le coût en PA du sort Affermage"
+            ],
+            "de": [
+              "Senkt die AP-Kosten des Zaubers Pacht um 1"
+            ],
             "es": [
               "Reduce en 1 el número de PA que cuesta el hechizo Arrendamiento."
             ],
             "it": [
               "Diminuisce di 1 il costo di PA dell'incantesimo Affermanza"
             ],
-            "pt": ["Reduz em 1 o custo de PA do feitiço Arrendamento"]
+            "pt": [
+              "Reduz em 1 o custo de PA do feitiço Arrendamento"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Increases the Salt Tax spell's maximum range by 2"],
-            "fr": ["Augmente la portée maximale du sort Gabelle de 2"],
+            "en": [
+              "Increases the Salt Tax spell's maximum range by 2"
+            ],
+            "fr": [
+              "Augmente la portée maximale du sort Gabelle de 2"
+            ],
             "de": [
               "Erhöht die maximale Reichweite des Zauberspruchs Salzsteuer um 2."
             ],
-            "es": ["Aumenta en 2 el alcance máximo del hechizo Gabela."],
-            "it": ["Aumenta la Portata massima dell'incantesimo Gabella di 2"],
-            "pt": ["Aumenta o alcance máximo do feitiço Taxa de Sal em 2"]
+            "es": [
+              "Aumenta en 2 el alcance máximo del hechizo Gabela."
+            ],
+            "it": [
+              "Aumenta la Portata massima dell'incantesimo Gabella di 2"
+            ],
+            "pt": [
+              "Aumenta o alcance máximo do feitiço Taxa de Sal em 2"
+            ]
           }
         },
         {
@@ -8650,12 +8726,24 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Changes speech"],
-            "fr": ["Change les paroles"],
-            "de": ["Die Worte ändern"],
-            "es": ["Cambia las palabras"],
-            "it": ["Cambia le parole"],
-            "pt": ["Muda as palavras"]
+            "en": [
+              "Changes speech"
+            ],
+            "fr": [
+              "Change les paroles"
+            ],
+            "de": [
+              "Die Worte ändern"
+            ],
+            "es": [
+              "Cambia las palabras"
+            ],
+            "it": [
+              "Cambia le parole"
+            ],
+            "pt": [
+              "Muda as palavras"
+            ]
           }
         }
       ]
@@ -10597,20 +10685,36 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["30 Damage on the spell: Infernal Flames"],
-            "fr": ["30 Dommages sur le sort Flammes Infernales"],
-            "de": ["30 Schaden beim Zauber: Flammen der Hölle"],
-            "es": ["30 daños del hechizo Llamas Infernales"],
-            "it": ["30 Danni sull'incantesimo Fiamme Infernali"],
-            "pt": ["30 danos para o feitiço Chamas Infernais"]
+            "en": [
+              "30 Damage on the spell: Infernal Flames"
+            ],
+            "fr": [
+              "30 Dommages sur le sort Flammes Infernales"
+            ],
+            "de": [
+              "30 Schaden beim Zauber: Flammen der Hölle"
+            ],
+            "es": [
+              "30 daños del hechizo Llamas Infernales"
+            ],
+            "it": [
+              "30 Danni sull'incantesimo Fiamme Infernali"
+            ],
+            "pt": [
+              "30 danos para o feitiço Chamas Infernais"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Mind-numbing Flames no longer requires a line of sight"],
-            "fr": ["Désactive la ligne de vue du sort Flammes Abrutissantes"],
+            "en": [
+              "Mind-numbing Flames no longer requires a line of sight"
+            ],
+            "fr": [
+              "Désactive la ligne de vue du sort Flammes Abrutissantes"
+            ],
             "de": [
               "Deaktiviert die Sichtlinie für den Zauber Flammende Dummheit"
             ],
@@ -10629,8 +10733,12 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Treacherous Flames no longer requires a line of sight"],
-            "fr": ["Désactive la ligne de vue du sort Flammes de Traîtrise"],
+            "en": [
+              "Treacherous Flames no longer requires a line of sight"
+            ],
+            "fr": [
+              "Désactive la ligne de vue du sort Flammes de Traîtrise"
+            ],
             "de": [
               "Deaktiviert die Sichtlinie für den Zauber Flammender Verrat"
             ],
@@ -10640,21 +10748,33 @@
             "it": [
               "Disattiva la linea di tiro dell'incantesimo Fiamme di Tradimento"
             ],
-            "pt": ["Desativa a linha de visão do feitiço Chamas Traidoras"]
+            "pt": [
+              "Desativa a linha de visão do feitiço Chamas Traidoras"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Heat Theft no longer requires a line of sight"],
-            "fr": ["Désactive la ligne de vue du sort Vol de Chaleur"],
-            "de": ["Deaktiviert die Sichtlinie für den Zauber Wärmeraub"],
-            "es": ["Desactiva la línea de visión del hechizo Robo de Calor"],
+            "en": [
+              "Heat Theft no longer requires a line of sight"
+            ],
+            "fr": [
+              "Désactive la ligne de vue du sort Vol de Chaleur"
+            ],
+            "de": [
+              "Deaktiviert die Sichtlinie für den Zauber Wärmeraub"
+            ],
+            "es": [
+              "Desactiva la línea de visión del hechizo Robo de Calor"
+            ],
             "it": [
               "Disattiva la linea di tiro dell'incantesimo Furto di Calore"
             ],
-            "pt": ["Desativa a linha de visão do feitiço Roubo de Calor"]
+            "pt": [
+              "Desativa a linha de visão do feitiço Roubo de Calor"
+            ]
           }
         },
         {
@@ -10798,8 +10918,12 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Increases the Stagnant Water spell's maximum range by 2"],
-            "fr": ["Augmente la portée maximale du sort Eau Stagnante de 2"],
+            "en": [
+              "Increases the Stagnant Water spell's maximum range by 2"
+            ],
+            "fr": [
+              "Augmente la portée maximale du sort Eau Stagnante de 2"
+            ],
             "de": [
               "Erhöht die maximale Reichweite des Zauberspruchs Stilles Wasser um 2."
             ],
@@ -10809,7 +10933,9 @@
             "it": [
               "Aumenta la Portata massima dell'incantesimo Acqua Stagnante di 2"
             ],
-            "pt": ["Aumenta o alcance máximo do feitiço Água Estagnada em 2"]
+            "pt": [
+              "Aumenta o alcance máximo do feitiço Água Estagnada em 2"
+            ]
           }
         },
         {
@@ -10822,7 +10948,9 @@
             "fr": [
               "Réduit de 1 le délai de relance du sort Absorption Aqueuse"
             ],
-            "de": ["Senkt den Cooldown des Zaubers Wässrige Absorption um 1"],
+            "de": [
+              "Senkt den Cooldown des Zaubers Wässrige Absorption um 1"
+            ],
             "es": [
               "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Absorción Acuosa"
             ],
@@ -10838,16 +10966,24 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Reduces the Miraculous Water spell's AP cost by 1"],
-            "fr": ["Réduit de 1 le coût en PA du sort Eau Miraculeuse"],
-            "de": ["Senkt die AP-Kosten des Zaubers Wunderwasser um 1"],
+            "en": [
+              "Reduces the Miraculous Water spell's AP cost by 1"
+            ],
+            "fr": [
+              "Réduit de 1 le coût en PA du sort Eau Miraculeuse"
+            ],
+            "de": [
+              "Senkt die AP-Kosten des Zaubers Wunderwasser um 1"
+            ],
             "es": [
               "Reduce en 1 el número de PA que cuesta el hechizo Agua Bendita."
             ],
             "it": [
               "Diminuisce di 1 il costo di PA dell'incantesimo Acqua Miracolosa"
             ],
-            "pt": ["Reduz em 1 o custo de PA do feitiço Água Milagrosa"]
+            "pt": [
+              "Reduz em 1 o custo de PA do feitiço Água Milagrosa"
+            ]
           }
         }
       ]
@@ -10903,9 +11039,15 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Reduces the Shaving Foam spell's cooldown period by 1"],
-            "fr": ["Réduit de 1 le délai de relance du sort Mousse à Raser"],
-            "de": ["Senkt den Cooldown des Zaubers Rasierschaum um 1"],
+            "en": [
+              "Reduces the Shaving Foam spell's cooldown period by 1"
+            ],
+            "fr": [
+              "Réduit de 1 le délai de relance du sort Mousse à Raser"
+            ],
+            "de": [
+              "Senkt den Cooldown des Zaubers Rasierschaum um 1"
+            ],
             "es": [
               "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Espuma de afeitar"
             ],
@@ -10921,37 +11063,63 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Makes the Ambidexterity spell's range modifiable"],
-            "fr": ["Rend la portée du sort Ambidextrie modifiable"],
-            "de": ["Die Reichweite des Zaubers Ambidextrie wird steigerbar"],
-            "es": ["Vuelve modificable el alcance del hechizo Ambidextreza"],
+            "en": [
+              "Makes the Ambidexterity spell's range modifiable"
+            ],
+            "fr": [
+              "Rend la portée du sort Ambidextrie modifiable"
+            ],
+            "de": [
+              "Die Reichweite des Zaubers Ambidextrie wird steigerbar"
+            ],
+            "es": [
+              "Vuelve modificable el alcance del hechizo Ambidextreza"
+            ],
             "it": [
               "Rende modificabile la portata dell'incantesimo Ambidestria"
             ],
-            "pt": ["Torna possível mudar o alcance do feitiço Ambidestria"]
+            "pt": [
+              "Torna possível mudar o alcance do feitiço Ambidestria"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Increases the Quattro spell's maximum range by 2"],
-            "fr": ["Augmente la portée maximale du sort Quattro de 2"],
+            "en": [
+              "Increases the Quattro spell's maximum range by 2"
+            ],
+            "fr": [
+              "Augmente la portée maximale du sort Quattro de 2"
+            ],
             "de": [
               "Erhöht die maximale Reichweite des Zauberspruchs Quattro um 2."
             ],
-            "es": ["Aumenta en 2 el alcance máximo del hechizo Cuattro."],
-            "it": ["Aumenta la Portata massima dell'incantesimo Quattro di 2"],
-            "pt": ["Aumenta o alcance máximo do feitiço Quattro em 2"]
+            "es": [
+              "Aumenta en 2 el alcance máximo del hechizo Cuattro."
+            ],
+            "it": [
+              "Aumenta la Portata massima dell'incantesimo Quattro di 2"
+            ],
+            "pt": [
+              "Aumenta o alcance máximo do feitiço Quattro em 2"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Reduces the Dual-blade spell's cooldown period by 1"],
-            "fr": ["Réduit de 1 le délai de relance du sort Double-lame"],
-            "de": ["Senkt den Cooldown des Zaubers Doppelklinge um 1"],
+            "en": [
+              "Reduces the Dual-blade spell's cooldown period by 1"
+            ],
+            "fr": [
+              "Réduit de 1 le délai de relance du sort Double-lame"
+            ],
+            "de": [
+              "Senkt den Cooldown des Zaubers Doppelklinge um 1"
+            ],
             "es": [
               "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Doble-filo"
             ],
@@ -10967,16 +11135,24 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Reduces the Wild Stampede spell's AP cost by 1"],
-            "fr": ["Réduit de 1 le coût en PA du sort Ruée Sauvage"],
-            "de": ["Senkt die AP-Kosten des Zaubers Wilder Ansturm um 1"],
+            "en": [
+              "Reduces the Wild Stampede spell's AP cost by 1"
+            ],
+            "fr": [
+              "Réduit de 1 le coût en PA du sort Ruée Sauvage"
+            ],
+            "de": [
+              "Senkt die AP-Kosten des Zaubers Wilder Ansturm um 1"
+            ],
             "es": [
               "Reduce en 1 el número de PA que cuesta el hechizo Avalancha Salvaje."
             ],
             "it": [
               "Diminuisce di 1 il costo di PA dell'incantesimo Calata Selvaggia"
             ],
-            "pt": ["Reduz em 1 o custo de PA do feitiço Dispersão Selvagem"]
+            "pt": [
+              "Reduz em 1 o custo de PA do feitiço Dispersão Selvagem"
+            ]
           }
         },
         {
@@ -16151,12 +16327,24 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Sauroshell Hunter"],
-            "fr": ["Titre : Chasseur de Krokilles"],
-            "de": ["Titel: Schockerschalen-Jäger"],
-            "es": ["Título: Cazador de Cascasaurios."],
-            "it": ["Titolo: Cacciatore di Krokiglie"],
-            "pt": ["Título: Caçador de Kaskas"]
+            "en": [
+              "Title: Sauroshell Hunter"
+            ],
+            "fr": [
+              "Titre : Chasseur de Krokilles"
+            ],
+            "de": [
+              "Titel: Schockerschalen-Jäger"
+            ],
+            "es": [
+              "Título: Cazador de Cascasaurios."
+            ],
+            "it": [
+              "Titolo: Cacciatore di Krokiglie"
+            ],
+            "pt": [
+              "Título: Caçador de Kaskas"
+            ]
           }
         },
         {
@@ -16188,12 +16376,24 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Wimpkin"],
-            "fr": ["Titre : Citrouillard"],
-            "de": ["Titel: Kürbängstling"],
-            "es": ["Título: Calawaza espantadoso."],
-            "it": ["Titolo: Cucuwbifone"],
-            "pt": ["Título: Abóbowa Medwosa"]
+            "en": [
+              "Title: Wimpkin"
+            ],
+            "fr": [
+              "Titre : Citrouillard"
+            ],
+            "de": [
+              "Titel: Kürbängstling"
+            ],
+            "es": [
+              "Título: Calawaza espantadoso."
+            ],
+            "it": [
+              "Titolo: Cucuwbifone"
+            ],
+            "pt": [
+              "Título: Abóbowa Medwosa"
+            ]
           }
         }
       ],
@@ -16207,12 +16407,24 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Wimpkin"],
-            "fr": ["Titre : Citrouillard"],
-            "de": ["Titel: Kürbängstling"],
-            "es": ["Título: Calawaza espantadoso."],
-            "it": ["Titolo: Cucuwbifone"],
-            "pt": ["Título: Abóbowa Medwosa"]
+            "en": [
+              "Title: Wimpkin"
+            ],
+            "fr": [
+              "Titre : Citrouillard"
+            ],
+            "de": [
+              "Titel: Kürbängstling"
+            ],
+            "es": [
+              "Título: Calawaza espantadoso."
+            ],
+            "it": [
+              "Titolo: Cucuwbifone"
+            ],
+            "pt": [
+              "Título: Abóbowa Medwosa"
+            ]
           }
         },
         {
@@ -16236,12 +16448,24 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Wimpkin"],
-            "fr": ["Titre : Citrouillard"],
-            "de": ["Titel: Kürbängstling"],
-            "es": ["Título: Calawaza espantadoso."],
-            "it": ["Titolo: Cucuwbifone"],
-            "pt": ["Título: Abóbowa Medwosa"]
+            "en": [
+              "Title: Wimpkin"
+            ],
+            "fr": [
+              "Titre : Citrouillard"
+            ],
+            "de": [
+              "Titel: Kürbängstling"
+            ],
+            "es": [
+              "Título: Calawaza espantadoso."
+            ],
+            "it": [
+              "Titolo: Cucuwbifone"
+            ],
+            "pt": [
+              "Título: Abóbowa Medwosa"
+            ]
           }
         },
         {
@@ -16270,12 +16494,24 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Wimpkin"],
-            "fr": ["Titre : Citrouillard"],
-            "de": ["Titel: Kürbängstling"],
-            "es": ["Título: Calawaza espantadoso."],
-            "it": ["Titolo: Cucuwbifone"],
-            "pt": ["Título: Abóbowa Medwosa"]
+            "en": [
+              "Title: Wimpkin"
+            ],
+            "fr": [
+              "Titre : Citrouillard"
+            ],
+            "de": [
+              "Titel: Kürbängstling"
+            ],
+            "es": [
+              "Título: Calawaza espantadoso."
+            ],
+            "it": [
+              "Titolo: Cucuwbifone"
+            ],
+            "pt": [
+              "Título: Abóbowa Medwosa"
+            ]
           }
         },
         {
@@ -18959,12 +19195,24 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Nelween's Aura emote"],
-            "fr": ["Attitude Aura de Nelween"],
-            "de": ["Emote Nelwynn-Aura"],
-            "es": ["Actitud Aura de Nelwynn"],
-            "it": ["Emote \"Aura di Nelween\""],
-            "pt": ["Emote Aura de Nelween"]
+            "en": [
+              "Nelween's Aura emote"
+            ],
+            "fr": [
+              "Attitude Aura de Nelween"
+            ],
+            "de": [
+              "Emote Nelwynn-Aura"
+            ],
+            "es": [
+              "Actitud Aura de Nelwynn"
+            ],
+            "it": [
+              "Emote \"Aura di Nelween\""
+            ],
+            "pt": [
+              "Emote Aura de Nelween"
+            ]
           }
         }
       ]
@@ -20441,12 +20689,24 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Tourist Hunter"],
-            "fr": ["Titre : Chasseur de Touristes"],
-            "de": ["Titel: Tourischürzen-Jäger"],
-            "es": ["Título: Cazador de Turistas."],
-            "it": ["Titolo: Cacciatore di Turisti"],
-            "pt": ["Título: Caçador de Turistas"]
+            "en": [
+              "Title: Tourist Hunter"
+            ],
+            "fr": [
+              "Titre : Chasseur de Touristes"
+            ],
+            "de": [
+              "Titel: Tourischürzen-Jäger"
+            ],
+            "es": [
+              "Título: Cazador de Turistas."
+            ],
+            "it": [
+              "Titolo: Cacciatore di Turisti"
+            ],
+            "pt": [
+              "Título: Caçador de Turistas"
+            ]
           }
         },
         {
@@ -22696,12 +22956,24 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["20 HP"],
-            "fr": ["20 Vie"],
-            "de": ["+20 LP"],
-            "es": ["+20 PdV"],
-            "it": ["20 Vita"],
-            "pt": ["20 Vida"]
+            "en": [
+              "20 HP"
+            ],
+            "fr": [
+              "20 Vie"
+            ],
+            "de": [
+              "+20 LP"
+            ],
+            "es": [
+              "+20 PdV"
+            ],
+            "it": [
+              "20 Vita"
+            ],
+            "pt": [
+              "20 Vida"
+            ]
           }
         },
         {
@@ -22964,96 +23236,192 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Vampyric Aura emote"],
-            "fr": ["Attitude Aura vampyrique"],
-            "de": ["Emote Blutsaugaura"],
-            "es": ["Actitud Aura vampírica"],
-            "it": ["Emote \"Aura Vampyresca\""],
-            "pt": ["Emote Aura Vampiresca"]
+            "en": [
+              "Vampyric Aura emote"
+            ],
+            "fr": [
+              "Attitude Aura vampyrique"
+            ],
+            "de": [
+              "Emote Blutsaugaura"
+            ],
+            "es": [
+              "Actitud Aura vampírica"
+            ],
+            "it": [
+              "Emote \"Aura Vampyresca\""
+            ],
+            "pt": [
+              "Emote Aura Vampiresca"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Vampyre"],
-            "fr": ["Titre : Vampyre"],
-            "de": ["Titel: Vampyr"],
-            "es": ["Título: Vampyro."],
-            "it": ["Titolo: Vampyro"],
-            "pt": ["Título: Vampyro"]
+            "en": [
+              "Title: Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre"
+            ],
+            "de": [
+              "Titel: Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro."
+            ],
+            "it": [
+              "Titolo: Vampyro"
+            ],
+            "pt": [
+              "Título: Vampyro"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Cursyd Vampyre"],
-            "fr": ["Titre : Vampyre Maudyt"],
-            "de": ["Titel: Verfluchter Vampyr"],
-            "es": ["Título: Vampyro Maldyto."],
-            "it": ["Titolo: Vampyro Malyedetto"],
-            "pt": ["Título: Vampyro Maldyto"]
+            "en": [
+              "Title: Cursyd Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Maudyt"
+            ],
+            "de": [
+              "Titel: Verfluchter Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Maldyto."
+            ],
+            "it": [
+              "Titolo: Vampyro Malyedetto"
+            ],
+            "pt": [
+              "Título: Vampyro Maldyto"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Demonyc Vampyre"],
-            "fr": ["Titre : Vampyre Démonyaque"],
-            "de": ["Titel: Daemonyscher Vampyr"],
-            "es": ["Título: Vampyro Demonýaco."],
-            "it": ["Titolo: Vampyro Demonyaco"],
-            "pt": ["Título: Vampyro Demonyaco"]
+            "en": [
+              "Title: Demonyc Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Démonyaque"
+            ],
+            "de": [
+              "Titel: Daemonyscher Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Demonýaco."
+            ],
+            "it": [
+              "Titolo: Vampyro Demonyaco"
+            ],
+            "pt": [
+              "Título: Vampyro Demonyaco"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Bloody Vampyre"],
-            "fr": ["Titre : Vampyre Sanglant"],
-            "de": ["Titel: Blutyger Vampyr"],
-            "es": ["Título: Vampyro Sangryento."],
-            "it": ["Titolo: Vampyro Sanguynante"],
-            "pt": ["Título: Vampyro Sangrento"]
+            "en": [
+              "Title: Bloody Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Sanglant"
+            ],
+            "de": [
+              "Titel: Blutyger Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Sangryento."
+            ],
+            "it": [
+              "Titolo: Vampyro Sanguynante"
+            ],
+            "pt": [
+              "Título: Vampyro Sangrento"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Runyc Vampyre"],
-            "fr": ["Titre : Vampyre Runyque"],
-            "de": ["Titel: Runyscher Vampyr"],
-            "es": ["Título: Vampyro Rúnyco."],
-            "it": ["Titolo: Vampyro Runyco"],
-            "pt": ["Título: Vampyro Rúnyco"]
+            "en": [
+              "Title: Runyc Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Runyque"
+            ],
+            "de": [
+              "Titel: Runyscher Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Rúnyco."
+            ],
+            "it": [
+              "Titolo: Vampyro Runyco"
+            ],
+            "pt": [
+              "Título: Vampyro Rúnyco"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Ultymyte Vampyre"],
-            "fr": ["Titre : Vampyre Ultyme"],
-            "de": ["Titel: Ultymatyver Vampyr"],
-            "es": ["Título: Vampyro Suprym."],
-            "it": ["Titolo: Vampyro Ultymo"],
-            "pt": ["Título: Vampyro Superyor"]
+            "en": [
+              "Title: Ultymyte Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Ultyme"
+            ],
+            "de": [
+              "Titel: Ultymatyver Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Suprym."
+            ],
+            "it": [
+              "Titolo: Vampyro Ultymo"
+            ],
+            "pt": [
+              "Título: Vampyro Superyor"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Add a temporary spell"],
-            "fr": ["Ajouter un sort temporaire"],
-            "de": ["Einen temporären Zauberspruch hinzufügen"],
-            "es": ["Añadir un hechizo temporal"],
-            "it": ["Aggiungere un incantesimo temporaneo"],
-            "pt": ["Adicionar um feitiço temporário"]
+            "en": [
+              "Add a temporary spell"
+            ],
+            "fr": [
+              "Ajouter un sort temporaire"
+            ],
+            "de": [
+              "Einen temporären Zauberspruch hinzufügen"
+            ],
+            "es": [
+              "Añadir un hechizo temporal"
+            ],
+            "it": [
+              "Aggiungere un incantesimo temporaneo"
+            ],
+            "pt": [
+              "Adicionar um feitiço temporário"
+            ]
           }
         }
       ],
@@ -23062,96 +23430,192 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Vampyric Aura emote"],
-            "fr": ["Attitude Aura vampyrique"],
-            "de": ["Emote Blutsaugaura"],
-            "es": ["Actitud Aura vampírica"],
-            "it": ["Emote \"Aura Vampyresca\""],
-            "pt": ["Emote Aura Vampiresca"]
+            "en": [
+              "Vampyric Aura emote"
+            ],
+            "fr": [
+              "Attitude Aura vampyrique"
+            ],
+            "de": [
+              "Emote Blutsaugaura"
+            ],
+            "es": [
+              "Actitud Aura vampírica"
+            ],
+            "it": [
+              "Emote \"Aura Vampyresca\""
+            ],
+            "pt": [
+              "Emote Aura Vampiresca"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Vampyre"],
-            "fr": ["Titre : Vampyre"],
-            "de": ["Titel: Vampyr"],
-            "es": ["Título: Vampyro."],
-            "it": ["Titolo: Vampyro"],
-            "pt": ["Título: Vampyro"]
+            "en": [
+              "Title: Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre"
+            ],
+            "de": [
+              "Titel: Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro."
+            ],
+            "it": [
+              "Titolo: Vampyro"
+            ],
+            "pt": [
+              "Título: Vampyro"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Cursyd Vampyre"],
-            "fr": ["Titre : Vampyre Maudyt"],
-            "de": ["Titel: Verfluchter Vampyr"],
-            "es": ["Título: Vampyro Maldyto."],
-            "it": ["Titolo: Vampyro Malyedetto"],
-            "pt": ["Título: Vampyro Maldyto"]
+            "en": [
+              "Title: Cursyd Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Maudyt"
+            ],
+            "de": [
+              "Titel: Verfluchter Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Maldyto."
+            ],
+            "it": [
+              "Titolo: Vampyro Malyedetto"
+            ],
+            "pt": [
+              "Título: Vampyro Maldyto"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Demonyc Vampyre"],
-            "fr": ["Titre : Vampyre Démonyaque"],
-            "de": ["Titel: Daemonyscher Vampyr"],
-            "es": ["Título: Vampyro Demonýaco."],
-            "it": ["Titolo: Vampyro Demonyaco"],
-            "pt": ["Título: Vampyro Demonyaco"]
+            "en": [
+              "Title: Demonyc Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Démonyaque"
+            ],
+            "de": [
+              "Titel: Daemonyscher Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Demonýaco."
+            ],
+            "it": [
+              "Titolo: Vampyro Demonyaco"
+            ],
+            "pt": [
+              "Título: Vampyro Demonyaco"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Bloody Vampyre"],
-            "fr": ["Titre : Vampyre Sanglant"],
-            "de": ["Titel: Blutyger Vampyr"],
-            "es": ["Título: Vampyro Sangryento."],
-            "it": ["Titolo: Vampyro Sanguynante"],
-            "pt": ["Título: Vampyro Sangrento"]
+            "en": [
+              "Title: Bloody Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Sanglant"
+            ],
+            "de": [
+              "Titel: Blutyger Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Sangryento."
+            ],
+            "it": [
+              "Titolo: Vampyro Sanguynante"
+            ],
+            "pt": [
+              "Título: Vampyro Sangrento"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Runyc Vampyre"],
-            "fr": ["Titre : Vampyre Runyque"],
-            "de": ["Titel: Runyscher Vampyr"],
-            "es": ["Título: Vampyro Rúnyco."],
-            "it": ["Titolo: Vampyro Runyco"],
-            "pt": ["Título: Vampyro Rúnyco"]
+            "en": [
+              "Title: Runyc Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Runyque"
+            ],
+            "de": [
+              "Titel: Runyscher Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Rúnyco."
+            ],
+            "it": [
+              "Titolo: Vampyro Runyco"
+            ],
+            "pt": [
+              "Título: Vampyro Rúnyco"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Ultymyte Vampyre"],
-            "fr": ["Titre : Vampyre Ultyme"],
-            "de": ["Titel: Ultymatyver Vampyr"],
-            "es": ["Título: Vampyro Suprym."],
-            "it": ["Titolo: Vampyro Ultymo"],
-            "pt": ["Título: Vampyro Superyor"]
+            "en": [
+              "Title: Ultymyte Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Ultyme"
+            ],
+            "de": [
+              "Titel: Ultymatyver Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Suprym."
+            ],
+            "it": [
+              "Titolo: Vampyro Ultymo"
+            ],
+            "pt": [
+              "Título: Vampyro Superyor"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Add a temporary spell"],
-            "fr": ["Ajouter un sort temporaire"],
-            "de": ["Einen temporären Zauberspruch hinzufügen"],
-            "es": ["Añadir un hechizo temporal"],
-            "it": ["Aggiungere un incantesimo temporaneo"],
-            "pt": ["Adicionar um feitiço temporário"]
+            "en": [
+              "Add a temporary spell"
+            ],
+            "fr": [
+              "Ajouter un sort temporaire"
+            ],
+            "de": [
+              "Einen temporären Zauberspruch hinzufügen"
+            ],
+            "es": [
+              "Añadir un hechizo temporal"
+            ],
+            "it": [
+              "Aggiungere un incantesimo temporaneo"
+            ],
+            "pt": [
+              "Adicionar um feitiço temporário"
+            ]
           }
         },
         {
@@ -23170,96 +23634,192 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Vampyric Aura emote"],
-            "fr": ["Attitude Aura vampyrique"],
-            "de": ["Emote Blutsaugaura"],
-            "es": ["Actitud Aura vampírica"],
-            "it": ["Emote \"Aura Vampyresca\""],
-            "pt": ["Emote Aura Vampiresca"]
+            "en": [
+              "Vampyric Aura emote"
+            ],
+            "fr": [
+              "Attitude Aura vampyrique"
+            ],
+            "de": [
+              "Emote Blutsaugaura"
+            ],
+            "es": [
+              "Actitud Aura vampírica"
+            ],
+            "it": [
+              "Emote \"Aura Vampyresca\""
+            ],
+            "pt": [
+              "Emote Aura Vampiresca"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Vampyre"],
-            "fr": ["Titre : Vampyre"],
-            "de": ["Titel: Vampyr"],
-            "es": ["Título: Vampyro."],
-            "it": ["Titolo: Vampyro"],
-            "pt": ["Título: Vampyro"]
+            "en": [
+              "Title: Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre"
+            ],
+            "de": [
+              "Titel: Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro."
+            ],
+            "it": [
+              "Titolo: Vampyro"
+            ],
+            "pt": [
+              "Título: Vampyro"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Cursyd Vampyre"],
-            "fr": ["Titre : Vampyre Maudyt"],
-            "de": ["Titel: Verfluchter Vampyr"],
-            "es": ["Título: Vampyro Maldyto."],
-            "it": ["Titolo: Vampyro Malyedetto"],
-            "pt": ["Título: Vampyro Maldyto"]
+            "en": [
+              "Title: Cursyd Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Maudyt"
+            ],
+            "de": [
+              "Titel: Verfluchter Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Maldyto."
+            ],
+            "it": [
+              "Titolo: Vampyro Malyedetto"
+            ],
+            "pt": [
+              "Título: Vampyro Maldyto"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Demonyc Vampyre"],
-            "fr": ["Titre : Vampyre Démonyaque"],
-            "de": ["Titel: Daemonyscher Vampyr"],
-            "es": ["Título: Vampyro Demonýaco."],
-            "it": ["Titolo: Vampyro Demonyaco"],
-            "pt": ["Título: Vampyro Demonyaco"]
+            "en": [
+              "Title: Demonyc Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Démonyaque"
+            ],
+            "de": [
+              "Titel: Daemonyscher Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Demonýaco."
+            ],
+            "it": [
+              "Titolo: Vampyro Demonyaco"
+            ],
+            "pt": [
+              "Título: Vampyro Demonyaco"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Bloody Vampyre"],
-            "fr": ["Titre : Vampyre Sanglant"],
-            "de": ["Titel: Blutyger Vampyr"],
-            "es": ["Título: Vampyro Sangryento."],
-            "it": ["Titolo: Vampyro Sanguynante"],
-            "pt": ["Título: Vampyro Sangrento"]
+            "en": [
+              "Title: Bloody Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Sanglant"
+            ],
+            "de": [
+              "Titel: Blutyger Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Sangryento."
+            ],
+            "it": [
+              "Titolo: Vampyro Sanguynante"
+            ],
+            "pt": [
+              "Título: Vampyro Sangrento"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Runyc Vampyre"],
-            "fr": ["Titre : Vampyre Runyque"],
-            "de": ["Titel: Runyscher Vampyr"],
-            "es": ["Título: Vampyro Rúnyco."],
-            "it": ["Titolo: Vampyro Runyco"],
-            "pt": ["Título: Vampyro Rúnyco"]
+            "en": [
+              "Title: Runyc Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Runyque"
+            ],
+            "de": [
+              "Titel: Runyscher Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Rúnyco."
+            ],
+            "it": [
+              "Titolo: Vampyro Runyco"
+            ],
+            "pt": [
+              "Título: Vampyro Rúnyco"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Ultymyte Vampyre"],
-            "fr": ["Titre : Vampyre Ultyme"],
-            "de": ["Titel: Ultymatyver Vampyr"],
-            "es": ["Título: Vampyro Suprym."],
-            "it": ["Titolo: Vampyro Ultymo"],
-            "pt": ["Título: Vampyro Superyor"]
+            "en": [
+              "Title: Ultymyte Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Ultyme"
+            ],
+            "de": [
+              "Titel: Ultymatyver Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Suprym."
+            ],
+            "it": [
+              "Titolo: Vampyro Ultymo"
+            ],
+            "pt": [
+              "Título: Vampyro Superyor"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Add a temporary spell"],
-            "fr": ["Ajouter un sort temporaire"],
-            "de": ["Einen temporären Zauberspruch hinzufügen"],
-            "es": ["Añadir un hechizo temporal"],
-            "it": ["Aggiungere un incantesimo temporaneo"],
-            "pt": ["Adicionar um feitiço temporário"]
+            "en": [
+              "Add a temporary spell"
+            ],
+            "fr": [
+              "Ajouter un sort temporaire"
+            ],
+            "de": [
+              "Einen temporären Zauberspruch hinzufügen"
+            ],
+            "es": [
+              "Añadir un hechizo temporal"
+            ],
+            "it": [
+              "Aggiungere un incantesimo temporaneo"
+            ],
+            "pt": [
+              "Adicionar um feitiço temporário"
+            ]
           }
         },
         {
@@ -23278,96 +23838,192 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Vampyric Aura emote"],
-            "fr": ["Attitude Aura vampyrique"],
-            "de": ["Emote Blutsaugaura"],
-            "es": ["Actitud Aura vampírica"],
-            "it": ["Emote \"Aura Vampyresca\""],
-            "pt": ["Emote Aura Vampiresca"]
+            "en": [
+              "Vampyric Aura emote"
+            ],
+            "fr": [
+              "Attitude Aura vampyrique"
+            ],
+            "de": [
+              "Emote Blutsaugaura"
+            ],
+            "es": [
+              "Actitud Aura vampírica"
+            ],
+            "it": [
+              "Emote \"Aura Vampyresca\""
+            ],
+            "pt": [
+              "Emote Aura Vampiresca"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Vampyre"],
-            "fr": ["Titre : Vampyre"],
-            "de": ["Titel: Vampyr"],
-            "es": ["Título: Vampyro."],
-            "it": ["Titolo: Vampyro"],
-            "pt": ["Título: Vampyro"]
+            "en": [
+              "Title: Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre"
+            ],
+            "de": [
+              "Titel: Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro."
+            ],
+            "it": [
+              "Titolo: Vampyro"
+            ],
+            "pt": [
+              "Título: Vampyro"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Cursyd Vampyre"],
-            "fr": ["Titre : Vampyre Maudyt"],
-            "de": ["Titel: Verfluchter Vampyr"],
-            "es": ["Título: Vampyro Maldyto."],
-            "it": ["Titolo: Vampyro Malyedetto"],
-            "pt": ["Título: Vampyro Maldyto"]
+            "en": [
+              "Title: Cursyd Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Maudyt"
+            ],
+            "de": [
+              "Titel: Verfluchter Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Maldyto."
+            ],
+            "it": [
+              "Titolo: Vampyro Malyedetto"
+            ],
+            "pt": [
+              "Título: Vampyro Maldyto"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Demonyc Vampyre"],
-            "fr": ["Titre : Vampyre Démonyaque"],
-            "de": ["Titel: Daemonyscher Vampyr"],
-            "es": ["Título: Vampyro Demonýaco."],
-            "it": ["Titolo: Vampyro Demonyaco"],
-            "pt": ["Título: Vampyro Demonyaco"]
+            "en": [
+              "Title: Demonyc Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Démonyaque"
+            ],
+            "de": [
+              "Titel: Daemonyscher Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Demonýaco."
+            ],
+            "it": [
+              "Titolo: Vampyro Demonyaco"
+            ],
+            "pt": [
+              "Título: Vampyro Demonyaco"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Bloody Vampyre"],
-            "fr": ["Titre : Vampyre Sanglant"],
-            "de": ["Titel: Blutyger Vampyr"],
-            "es": ["Título: Vampyro Sangryento."],
-            "it": ["Titolo: Vampyro Sanguynante"],
-            "pt": ["Título: Vampyro Sangrento"]
+            "en": [
+              "Title: Bloody Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Sanglant"
+            ],
+            "de": [
+              "Titel: Blutyger Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Sangryento."
+            ],
+            "it": [
+              "Titolo: Vampyro Sanguynante"
+            ],
+            "pt": [
+              "Título: Vampyro Sangrento"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Runyc Vampyre"],
-            "fr": ["Titre : Vampyre Runyque"],
-            "de": ["Titel: Runyscher Vampyr"],
-            "es": ["Título: Vampyro Rúnyco."],
-            "it": ["Titolo: Vampyro Runyco"],
-            "pt": ["Título: Vampyro Rúnyco"]
+            "en": [
+              "Title: Runyc Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Runyque"
+            ],
+            "de": [
+              "Titel: Runyscher Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Rúnyco."
+            ],
+            "it": [
+              "Titolo: Vampyro Runyco"
+            ],
+            "pt": [
+              "Título: Vampyro Rúnyco"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Ultymyte Vampyre"],
-            "fr": ["Titre : Vampyre Ultyme"],
-            "de": ["Titel: Ultymatyver Vampyr"],
-            "es": ["Título: Vampyro Suprym."],
-            "it": ["Titolo: Vampyro Ultymo"],
-            "pt": ["Título: Vampyro Superyor"]
+            "en": [
+              "Title: Ultymyte Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Ultyme"
+            ],
+            "de": [
+              "Titel: Ultymatyver Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Suprym."
+            ],
+            "it": [
+              "Titolo: Vampyro Ultymo"
+            ],
+            "pt": [
+              "Título: Vampyro Superyor"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Add a temporary spell"],
-            "fr": ["Ajouter un sort temporaire"],
-            "de": ["Einen temporären Zauberspruch hinzufügen"],
-            "es": ["Añadir un hechizo temporal"],
-            "it": ["Aggiungere un incantesimo temporaneo"],
-            "pt": ["Adicionar um feitiço temporário"]
+            "en": [
+              "Add a temporary spell"
+            ],
+            "fr": [
+              "Ajouter un sort temporaire"
+            ],
+            "de": [
+              "Einen temporären Zauberspruch hinzufügen"
+            ],
+            "es": [
+              "Añadir un hechizo temporal"
+            ],
+            "it": [
+              "Aggiungere un incantesimo temporaneo"
+            ],
+            "pt": [
+              "Adicionar um feitiço temporário"
+            ]
           }
         },
         {
@@ -23386,96 +24042,192 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Vampyric Aura emote"],
-            "fr": ["Attitude Aura vampyrique"],
-            "de": ["Emote Blutsaugaura"],
-            "es": ["Actitud Aura vampírica"],
-            "it": ["Emote \"Aura Vampyresca\""],
-            "pt": ["Emote Aura Vampiresca"]
+            "en": [
+              "Vampyric Aura emote"
+            ],
+            "fr": [
+              "Attitude Aura vampyrique"
+            ],
+            "de": [
+              "Emote Blutsaugaura"
+            ],
+            "es": [
+              "Actitud Aura vampírica"
+            ],
+            "it": [
+              "Emote \"Aura Vampyresca\""
+            ],
+            "pt": [
+              "Emote Aura Vampiresca"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Vampyre"],
-            "fr": ["Titre : Vampyre"],
-            "de": ["Titel: Vampyr"],
-            "es": ["Título: Vampyro."],
-            "it": ["Titolo: Vampyro"],
-            "pt": ["Título: Vampyro"]
+            "en": [
+              "Title: Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre"
+            ],
+            "de": [
+              "Titel: Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro."
+            ],
+            "it": [
+              "Titolo: Vampyro"
+            ],
+            "pt": [
+              "Título: Vampyro"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Cursyd Vampyre"],
-            "fr": ["Titre : Vampyre Maudyt"],
-            "de": ["Titel: Verfluchter Vampyr"],
-            "es": ["Título: Vampyro Maldyto."],
-            "it": ["Titolo: Vampyro Malyedetto"],
-            "pt": ["Título: Vampyro Maldyto"]
+            "en": [
+              "Title: Cursyd Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Maudyt"
+            ],
+            "de": [
+              "Titel: Verfluchter Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Maldyto."
+            ],
+            "it": [
+              "Titolo: Vampyro Malyedetto"
+            ],
+            "pt": [
+              "Título: Vampyro Maldyto"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Demonyc Vampyre"],
-            "fr": ["Titre : Vampyre Démonyaque"],
-            "de": ["Titel: Daemonyscher Vampyr"],
-            "es": ["Título: Vampyro Demonýaco."],
-            "it": ["Titolo: Vampyro Demonyaco"],
-            "pt": ["Título: Vampyro Demonyaco"]
+            "en": [
+              "Title: Demonyc Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Démonyaque"
+            ],
+            "de": [
+              "Titel: Daemonyscher Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Demonýaco."
+            ],
+            "it": [
+              "Titolo: Vampyro Demonyaco"
+            ],
+            "pt": [
+              "Título: Vampyro Demonyaco"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Bloody Vampyre"],
-            "fr": ["Titre : Vampyre Sanglant"],
-            "de": ["Titel: Blutyger Vampyr"],
-            "es": ["Título: Vampyro Sangryento."],
-            "it": ["Titolo: Vampyro Sanguynante"],
-            "pt": ["Título: Vampyro Sangrento"]
+            "en": [
+              "Title: Bloody Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Sanglant"
+            ],
+            "de": [
+              "Titel: Blutyger Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Sangryento."
+            ],
+            "it": [
+              "Titolo: Vampyro Sanguynante"
+            ],
+            "pt": [
+              "Título: Vampyro Sangrento"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Runyc Vampyre"],
-            "fr": ["Titre : Vampyre Runyque"],
-            "de": ["Titel: Runyscher Vampyr"],
-            "es": ["Título: Vampyro Rúnyco."],
-            "it": ["Titolo: Vampyro Runyco"],
-            "pt": ["Título: Vampyro Rúnyco"]
+            "en": [
+              "Title: Runyc Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Runyque"
+            ],
+            "de": [
+              "Titel: Runyscher Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Rúnyco."
+            ],
+            "it": [
+              "Titolo: Vampyro Runyco"
+            ],
+            "pt": [
+              "Título: Vampyro Rúnyco"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Ultymyte Vampyre"],
-            "fr": ["Titre : Vampyre Ultyme"],
-            "de": ["Titel: Ultymatyver Vampyr"],
-            "es": ["Título: Vampyro Suprym."],
-            "it": ["Titolo: Vampyro Ultymo"],
-            "pt": ["Título: Vampyro Superyor"]
+            "en": [
+              "Title: Ultymyte Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Ultyme"
+            ],
+            "de": [
+              "Titel: Ultymatyver Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Suprym."
+            ],
+            "it": [
+              "Titolo: Vampyro Ultymo"
+            ],
+            "pt": [
+              "Título: Vampyro Superyor"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Add a temporary spell"],
-            "fr": ["Ajouter un sort temporaire"],
-            "de": ["Einen temporären Zauberspruch hinzufügen"],
-            "es": ["Añadir un hechizo temporal"],
-            "it": ["Aggiungere un incantesimo temporaneo"],
-            "pt": ["Adicionar um feitiço temporário"]
+            "en": [
+              "Add a temporary spell"
+            ],
+            "fr": [
+              "Ajouter un sort temporaire"
+            ],
+            "de": [
+              "Einen temporären Zauberspruch hinzufügen"
+            ],
+            "es": [
+              "Añadir un hechizo temporal"
+            ],
+            "it": [
+              "Aggiungere un incantesimo temporaneo"
+            ],
+            "pt": [
+              "Adicionar um feitiço temporário"
+            ]
           }
         },
         {
@@ -23499,96 +24251,192 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Vampyric Aura emote"],
-            "fr": ["Attitude Aura vampyrique"],
-            "de": ["Emote Blutsaugaura"],
-            "es": ["Actitud Aura vampírica"],
-            "it": ["Emote \"Aura Vampyresca\""],
-            "pt": ["Emote Aura Vampiresca"]
+            "en": [
+              "Vampyric Aura emote"
+            ],
+            "fr": [
+              "Attitude Aura vampyrique"
+            ],
+            "de": [
+              "Emote Blutsaugaura"
+            ],
+            "es": [
+              "Actitud Aura vampírica"
+            ],
+            "it": [
+              "Emote \"Aura Vampyresca\""
+            ],
+            "pt": [
+              "Emote Aura Vampiresca"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Vampyre"],
-            "fr": ["Titre : Vampyre"],
-            "de": ["Titel: Vampyr"],
-            "es": ["Título: Vampyro."],
-            "it": ["Titolo: Vampyro"],
-            "pt": ["Título: Vampyro"]
+            "en": [
+              "Title: Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre"
+            ],
+            "de": [
+              "Titel: Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro."
+            ],
+            "it": [
+              "Titolo: Vampyro"
+            ],
+            "pt": [
+              "Título: Vampyro"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Cursyd Vampyre"],
-            "fr": ["Titre : Vampyre Maudyt"],
-            "de": ["Titel: Verfluchter Vampyr"],
-            "es": ["Título: Vampyro Maldyto."],
-            "it": ["Titolo: Vampyro Malyedetto"],
-            "pt": ["Título: Vampyro Maldyto"]
+            "en": [
+              "Title: Cursyd Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Maudyt"
+            ],
+            "de": [
+              "Titel: Verfluchter Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Maldyto."
+            ],
+            "it": [
+              "Titolo: Vampyro Malyedetto"
+            ],
+            "pt": [
+              "Título: Vampyro Maldyto"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Demonyc Vampyre"],
-            "fr": ["Titre : Vampyre Démonyaque"],
-            "de": ["Titel: Daemonyscher Vampyr"],
-            "es": ["Título: Vampyro Demonýaco."],
-            "it": ["Titolo: Vampyro Demonyaco"],
-            "pt": ["Título: Vampyro Demonyaco"]
+            "en": [
+              "Title: Demonyc Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Démonyaque"
+            ],
+            "de": [
+              "Titel: Daemonyscher Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Demonýaco."
+            ],
+            "it": [
+              "Titolo: Vampyro Demonyaco"
+            ],
+            "pt": [
+              "Título: Vampyro Demonyaco"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Bloody Vampyre"],
-            "fr": ["Titre : Vampyre Sanglant"],
-            "de": ["Titel: Blutyger Vampyr"],
-            "es": ["Título: Vampyro Sangryento."],
-            "it": ["Titolo: Vampyro Sanguynante"],
-            "pt": ["Título: Vampyro Sangrento"]
+            "en": [
+              "Title: Bloody Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Sanglant"
+            ],
+            "de": [
+              "Titel: Blutyger Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Sangryento."
+            ],
+            "it": [
+              "Titolo: Vampyro Sanguynante"
+            ],
+            "pt": [
+              "Título: Vampyro Sangrento"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Runyc Vampyre"],
-            "fr": ["Titre : Vampyre Runyque"],
-            "de": ["Titel: Runyscher Vampyr"],
-            "es": ["Título: Vampyro Rúnyco."],
-            "it": ["Titolo: Vampyro Runyco"],
-            "pt": ["Título: Vampyro Rúnyco"]
+            "en": [
+              "Title: Runyc Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Runyque"
+            ],
+            "de": [
+              "Titel: Runyscher Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Rúnyco."
+            ],
+            "it": [
+              "Titolo: Vampyro Runyco"
+            ],
+            "pt": [
+              "Título: Vampyro Rúnyco"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Title: Ultymyte Vampyre"],
-            "fr": ["Titre : Vampyre Ultyme"],
-            "de": ["Titel: Ultymatyver Vampyr"],
-            "es": ["Título: Vampyro Suprym."],
-            "it": ["Titolo: Vampyro Ultymo"],
-            "pt": ["Título: Vampyro Superyor"]
+            "en": [
+              "Title: Ultymyte Vampyre"
+            ],
+            "fr": [
+              "Titre : Vampyre Ultyme"
+            ],
+            "de": [
+              "Titel: Ultymatyver Vampyr"
+            ],
+            "es": [
+              "Título: Vampyro Suprym."
+            ],
+            "it": [
+              "Titolo: Vampyro Ultymo"
+            ],
+            "pt": [
+              "Título: Vampyro Superyor"
+            ]
           }
         },
         {
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Add a temporary spell"],
-            "fr": ["Ajouter un sort temporaire"],
-            "de": ["Einen temporären Zauberspruch hinzufügen"],
-            "es": ["Añadir un hechizo temporal"],
-            "it": ["Aggiungere un incantesimo temporaneo"],
-            "pt": ["Adicionar um feitiço temporário"]
+            "en": [
+              "Add a temporary spell"
+            ],
+            "fr": [
+              "Ajouter un sort temporaire"
+            ],
+            "de": [
+              "Einen temporären Zauberspruch hinzufügen"
+            ],
+            "es": [
+              "Añadir un hechizo temporal"
+            ],
+            "it": [
+              "Aggiungere un incantesimo temporaneo"
+            ],
+            "pt": [
+              "Adicionar um feitiço temporário"
+            ]
           }
         },
         {
@@ -27648,12 +28496,24 @@
           "stat": null,
           "value": null,
           "altStat": {
-            "en": ["Champion emote"],
-            "fr": ["Attitude Champion"],
-            "de": ["Emote Champion"],
-            "es": ["Actitud Campeón"],
-            "it": ["Emote \"Campione\""],
-            "pt": ["Emote Campeão"]
+            "en": [
+              "Champion emote"
+            ],
+            "fr": [
+              "Attitude Champion"
+            ],
+            "de": [
+              "Emote Champion"
+            ],
+            "es": [
+              "Actitud Campeón"
+            ],
+            "it": [
+              "Emote \"Campione\""
+            ],
+            "pt": [
+              "Emote Campeão"
+            ]
           }
         }
       ]
@@ -27827,6 +28687,168 @@
         {
           "stat": "Wisdom",
           "value": 5,
+          "altStat": null
+        }
+      ]
+    }
+  },
+  {
+    "id": "9675435",
+    "name": {
+      "en": "Kozaru Set",
+      "fr": "Panoplie Kozaru"
+    },
+    "bonuses": {
+      "2": [
+        {
+          "stat": "Heals",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Critical Damage",
+          "value": 10,
+          "altStat": null
+        }
+      ],
+      "3": [
+        {
+          "stat": "Heals",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Critical Damage",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "MP",
+          "value": 1,
+          "altStat": null
+        }
+      ]
+    }
+  },
+  {
+    "id": "13378161",
+    "name": {
+      "en": "Kwapa Set",
+      "fr": "Panoplie Kwapa"
+    },
+    "bonuses": {
+      "2": [
+        {
+          "stat": "Chance",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "Lock",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "AP Parry",
+          "value": 10,
+          "altStat": null
+        }
+      ],
+      "3": [
+        {
+          "stat": "Chance",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "Lock",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "AP Parry",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Summons",
+          "value": 1,
+          "altStat": null
+        }
+      ]
+    }
+  },
+  {
+    "id": "87342329",
+    "name": {
+      "en": "Firefoux Set",
+      "fr": "Panoplie Firefoux"
+    },
+    "bonuses": {
+      "2": [
+        {
+          "stat": "Heals",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "Vitality",
+          "value": 100,
+          "altStat": null
+        }
+      ],
+      "3": [
+        {
+          "stat": "Heals",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "Vitality",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "AP",
+          "value": 1,
+          "altStat": null
+        }
+      ]
+    }
+  },
+  {
+    "id": "933618",
+    "name": {
+      "en": "Tanuki Set",
+      "fr": "Panoplie Tanuki"
+    },
+    "bonuses": {
+      "2": [
+        {
+          "stat": "Strength",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "Pushback Resistance",
+          "value": 20,
+          "altStat": null
+        }
+      ],
+      "3": [
+        {
+          "stat": "Strength",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "Pushback Resistance",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "AP",
+          "value": 1,
           "altStat": null
         }
       ]
