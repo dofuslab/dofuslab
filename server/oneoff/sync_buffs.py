@@ -71,7 +71,7 @@ def update_or_create_item_buff(db_session, item_name, record):
         .one()
         .item_id
     )
-    buffs = db_session.query(ModelItem).filter(ModelItem.uuid == item_id).one().buff
+    buffs = db_session.query(ModelItem).filter(ModelItem.uuid == item_id).one().buffs
 
     if len(buffs) >= 1:
         print("Buffs already exist on this item. Updating buffs...")
@@ -125,7 +125,7 @@ def update_or_create_spell_buff(db_session, spell_name, spell_data):
         db_session.query(ModelSpellStats)
         .filter(ModelSpellStats.uuid == spell_stat_ids[next(iter(spell_stat_ids))])
         .one()
-        .buff
+        .buffs
     )
 
     if len(buffs) >= 1:

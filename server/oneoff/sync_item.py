@@ -62,8 +62,11 @@ def update_or_create_item(db_session, item_name, record, create_all=False):
             "Item does not exist in database. Would you like to create it? (Y/n/YYY to create all): "
         )
         if should_create_response == "Y" or should_create_response == "YYY":
-            create_item(db_session, record)
-            print("Item successfully created")
+            result = create_item(db_session, record)
+            if result:
+                print("Item successfully created")
+            else:
+                print("Something went wrong, item skipped")
         if should_create_response == "YYY":
             return True
     return create_all
@@ -81,6 +84,8 @@ def create_item(db_session, record):
                 .item_type
             )
             item_types[item_type_record["en"]] = item_type
+    if record["itemType"] == "Living object":
+        return False
     item = ModelItem(
         dofus_db_id=record["dofusID"],
         item_type_id=item_types[record["itemType"]].uuid,
@@ -114,6 +119,7 @@ def create_item(db_session, record):
         db_session.add(item_translations)
     create_item_stats(db_session, record, item)
     create_weapon_stat(db_session, record, item)
+    return True
 
 
 def create_item_stats(db_session, record, item):
