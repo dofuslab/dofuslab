@@ -77,7 +77,7 @@ def update_or_create_item_buff(db_session, item_name, record, should_only_add_mi
         update_item_buffs(db_session, item_id, record)
         print("Buffs for {} updated.".format(item_name))
     elif len(buffs) == 0:
-        print("No buffs currently exist on this item. Adding buffs now.")
+        print("No buffs currently exist for {}. Adding buffs now.".format(item_name))
         add_item_buffs(db_session, item_id, record)
         print("Buffs for {} added.".format(item_name))
 
