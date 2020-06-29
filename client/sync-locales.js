@@ -31,7 +31,7 @@ const sortFileKeys = (localeDirPath, file, isBase) => {
     replaceValues(copy);
     baseTranslations[file] = copy;
   } else {
-    parsed = merge(baseTranslations[file], parsed);
+    parsed = merge({}, baseTranslations[file], parsed);
   }
   const sorted = sortKeys(parsed, { deep: true });
   const data = `${JSON.stringify(sorted, null, 2)}\n`;
