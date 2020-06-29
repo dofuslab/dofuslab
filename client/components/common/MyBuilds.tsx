@@ -234,6 +234,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
           <a>
             <Card
               onClick={onClose}
+              bordered
               hoverable
               title={
                 <CardTitleWithLevel

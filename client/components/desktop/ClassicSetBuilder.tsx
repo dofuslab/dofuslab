@@ -7,7 +7,7 @@ import { Tabs } from 'antd';
 import { mq } from 'common/constants';
 
 import { getErrors, CustomSetContext } from 'common/utils';
-import { BuildError } from 'common/types';
+import { BuildError, Theme } from 'common/types';
 import StatTable from 'components/common/StatTable';
 import { Stat } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
@@ -18,6 +18,7 @@ import { CustomSet } from 'common/type-aliases';
 import BuffModal from 'components/common/BuffModal';
 import { BuffButton } from 'common/wrappers';
 import { useRouter } from 'next/router';
+import { useTheme } from 'emotion-theming';
 import ClassicRightColumnStats from './ClassicRightColumnStats';
 import ClassicLeftColumnStats from './ClassicLeftColumnStats';
 import ClassicEquipmentSlots from './ClassicEquipmentSlots';
@@ -40,6 +41,7 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
   } = useRouter();
 
   const { t } = useTranslation();
+  const theme = useTheme<Theme>();
 
   const weapon = customSet?.equippedItems.find(
     (equippedItem) => !!equippedItem.item.weaponStats,
@@ -93,6 +95,9 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
             },
             '&.ant-tabs > .ant-tabs-nav > .ant-tabs-nav-wrap': {
               justifyContent: 'center',
+            },
+            '&.ant-tabs > .ant-tabs-nav::before': {
+              borderBottom: `1px solid ${theme.border?.default}`,
             },
           }}
         >

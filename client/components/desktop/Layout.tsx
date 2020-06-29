@@ -6,7 +6,6 @@ import {
   Layout as AntdLayout,
   Button,
   Drawer,
-  Select,
   Dropdown,
   Menu,
   Divider,
@@ -24,7 +23,12 @@ import NoSSR from 'react-no-ssr';
 import Link from 'next/link';
 import { TFunction } from 'next-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faKey, faMugHot } from '@fortawesome/free-solid-svg-icons';
+import {
+  faKey,
+  faMugHot,
+  faSun,
+  faMoon,
+} from '@fortawesome/free-solid-svg-icons';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { useTranslation, LANGUAGES, langToFullName } from 'i18n';
@@ -41,13 +45,17 @@ import {
 } from 'graphql/mutations/__generated__/changeLocale';
 import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
-import { LIGHT_THEME_NAME } from 'common/themes';
+import {
+  LIGHT_THEME_NAME,
+  darkTheme,
+  lightTheme,
+  DARK_THEME_NAME,
+} from 'common/themes';
 import Tooltip from 'components/common/Tooltip';
 import { switchStyle } from 'common/mixins';
-import { ClassicContext } from 'common/utils';
+import { ClassicContext, ThemeContext } from 'common/utils';
 import { Theme } from 'common/types';
 import { DownOutlined } from '@ant-design/icons';
-import { Media } from 'components/common/Media';
 import MyBuilds from '../common/MyBuilds';
 import SignUpModal from '../common/SignUpModal';
 import LoginModal from '../common/LoginModal';
@@ -56,8 +64,6 @@ interface LayoutProps {
   children: React.ReactNode;
   showSwitch: boolean;
 }
-
-const { Option } = Select;
 
 const getDonateElement = (t: TFunction) => {
   return Math.random() < 0.98 ? (
@@ -150,100 +156,18 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
     setDrawerVisible(false);
   }, [setDrawerVisible]);
 
-  const langSelect = (
-    <Select<string>
-      value={i18n.language}
-      onSelect={changeLocaleHandler}
-      css={{
-        '&.ant-select': { marginLeft: 12 },
-      }}
-    >
-      {LANGUAGES.map((lang) => (
-        <Option key={lang} value={lang}>
-          <div css={{ display: 'flex', alignItems: 'center' }}>
-            {langToFullName(lang)}
-          </div>
-        </Option>
-      ))}
-    </Select>
-  );
+  const { setTheme } = React.useContext(ThemeContext);
 
   const theme = useTheme<Theme>();
-
-  const classicSwitch = (
-    <ClassicContext.Consumer>
-      {([isClassic, setIsClassic]) => {
-        const switchElement = (
-          <Switch
-            css={{
-              ...switchStyle(theme, true),
-              [mq[2]]: {
-                marginLeft: 8,
-                marginRight: 8,
-              },
-            }}
-            checked={isClassic}
-            onChange={setIsClassic}
-          />
-        );
-        return (
-          <div css={{ display: 'flex', marginRight: 12, alignItems: 'center' }}>
-            <a
-              css={{
-                color: theme.text?.default,
-                opacity: isClassic ? 0.3 : 1,
-                transition: 'all 0.3s ease-in-out',
-                '&:hover': {
-                  opacity: 1,
-                },
-                display: 'none',
-                [mq[2]]: {
-                  display: 'inline',
-                },
-              }}
-              onClick={() => {
-                setIsClassic(false);
-              }}
-            >
-              DofusLab
-            </a>
-            <Media lessThan="sm">
-              <Tooltip title={t('DOFUSLAB_CLASSIC', { ns: 'common' })}>
-                {switchElement}
-              </Tooltip>
-            </Media>
-            <Media greaterThanOrEqual="sm">{switchElement}</Media>
-            <a
-              css={{
-                color: theme.text?.default,
-                opacity: isClassic ? 1 : 0.3,
-                transition: 'all 0.3s ease-in-out',
-                '&:hover': {
-                  opacity: 1,
-                },
-                display: 'none',
-                [mq[2]]: {
-                  display: 'inline',
-                },
-              }}
-              onClick={() => {
-                setIsClassic(true);
-              }}
-            >
-              DofusLab Classic
-            </a>
-          </div>
-        );
-      }}
-    </ClassicContext.Consumer>
-  );
 
   return (
     <AntdLayout
       css={{
-        height: '100%',
-        minHeight: '100vh',
-        backgroundColor: theme.body?.background,
+        '&.ant-layout': {
+          height: '100%',
+          minHeight: '100vh',
+          backgroundColor: theme.body?.background,
+        },
       }}
     >
       <Global
@@ -304,12 +228,14 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
       <StatusChecker />
       <AntdLayout.Header
         css={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          background: theme.header?.background,
-          borderBottom: `1px solid ${theme.border?.default}`,
-          padding: '0 20px',
-          fontSize: '0.8rem',
+          '&.ant-layout-header': {
+            display: 'flex',
+            justifyContent: 'space-between',
+            background: theme.header?.background,
+            borderBottom: `1px solid ${theme.border?.default}`,
+            padding: '0 20px',
+            fontSize: '0.8rem',
+          },
         }}
       >
         <div css={{ display: 'flex', alignItems: 'center' }}>
@@ -330,10 +256,79 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
           </Link>
         </div>
         <div css={{ display: 'flex', alignItems: 'center' }}>
-          {showSwitch && classicSwitch}
+          <ClassicContext.Consumer>
+            {([isClassic, setIsClassic]) => {
+              return (
+                <Dropdown
+                  overlay={
+                    <Menu>
+                      <Menu.SubMenu title={t('LANGUAGE', { ns: 'common' })}>
+                        {LANGUAGES.map((lang) => (
+                          <Menu.Item
+                            key={lang}
+                            onClick={() => changeLocaleHandler(lang)}
+                          >
+                            {langToFullName(lang)}
+                          </Menu.Item>
+                        ))}
+                      </Menu.SubMenu>
+                      <Menu.Divider />
+                      <Menu.Item
+                        onClick={() => {
+                          setIsClassic(!isClassic);
+                        }}
+                      >
+                        {showSwitch && (
+                          <>
+                            <Switch
+                              css={{
+                                ...switchStyle(theme, true),
+                                marginRight: 8,
+                              }}
+                              checked={isClassic}
+                              onClick={(checked, e) => {
+                                setIsClassic(checked);
+                                e.stopPropagation();
+                              }}
+                            />
+                            DofusLab Classic
+                          </>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item
+                        onClick={() => {
+                          setTheme(
+                            theme.name === LIGHT_THEME_NAME
+                              ? darkTheme
+                              : lightTheme,
+                          );
+                        }}
+                      >
+                        <Switch
+                          checked={theme.name === DARK_THEME_NAME}
+                          onClick={(checked, e) => {
+                            setTheme(checked ? darkTheme : lightTheme);
+                            e.stopPropagation();
+                          }}
+                          css={{ marginRight: 8 }}
+                          checkedChildren={<FontAwesomeIcon icon={faMoon} />}
+                          unCheckedChildren={<FontAwesomeIcon icon={faSun} />}
+                        />
+                        {t('DARK_MODE', { ns: 'common' })}
+                      </Menu.Item>
+                    </Menu>
+                  }
+                >
+                  <Button>
+                    {t('OPTIONS', { ns: 'common' })}{' '}
+                    <DownOutlined css={{ fontSize: '12px' }} />
+                  </Button>
+                </Dropdown>
+              );
+            }}
+          </ClassicContext.Consumer>
           {data?.currentUser ? (
             <div>
-              {langSelect}
               {data.currentUser.verified && (
                 <>
                   <Button onClick={openDrawer} css={{ marginLeft: 12 }}>
@@ -364,15 +359,20 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                             {t('CHANGE_PASSWORD')}
                           </Menu.Item>
                         </Menu.ItemGroup>
+                        <Menu.SubMenu title={t('LANGUAGE', { ns: 'common' })}>
+                          {LANGUAGES.map((lang) => (
+                            <Menu.Item key={lang}>
+                              {langToFullName(lang)}
+                            </Menu.Item>
+                          ))}
+                        </Menu.SubMenu>
                       </Menu>
                     }
                   >
-                    <span>
-                      <Button css={{ marginLeft: 12 }}>
-                        {t('MY_ACCOUNT')}{' '}
-                        <DownOutlined css={{ fontSize: '12px' }} />
-                      </Button>
-                    </span>
+                    <Button css={{ marginLeft: 12 }}>
+                      {t('MY_ACCOUNT')}{' '}
+                      <DownOutlined css={{ fontSize: '12px' }} />
+                    </Button>
                   </Dropdown>
                 </>
               )}
@@ -386,7 +386,6 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
             </div>
           ) : (
             <div css={{ display: 'flex', alignItems: 'center' }}>
-              {langSelect}
               <Button
                 onClick={openLoginModal}
                 type="link"
