@@ -314,17 +314,19 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
       >
         <div css={{ display: 'flex', alignItems: 'center' }}>
           <Link href="/" as="/">
-            <div css={{ fontWeight: 500, cursor: 'pointer' }}>
-              <img
-                src={
-                  theme.name === LIGHT_THEME_NAME
-                    ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg'
-                    : 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark.svg'
-                }
-                css={{ width: 120 }}
-                alt="DofusLab"
-              />
-            </div>
+            <a>
+              <div css={{ fontWeight: 500, cursor: 'pointer' }}>
+                <img
+                  src={
+                    theme.name === LIGHT_THEME_NAME
+                      ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg'
+                      : 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark.svg'
+                  }
+                  css={{ width: 120 }}
+                  alt="DofusLab"
+                />
+              </div>
+            </a>
           </Link>
         </div>
         <div css={{ display: 'flex', alignItems: 'center' }}>

@@ -106,7 +106,7 @@ const ClassicEquippedItem: React.FC<Props> = ({
               query: query.class ? { class: query.class } : undefined,
             }}
           >
-            {content}
+            <a>{content}</a>
           </Link>
         ) : (
           content

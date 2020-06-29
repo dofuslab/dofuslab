@@ -71,7 +71,7 @@ const EquippedItem: React.FC<Props> = ({
       }}
       as={`/equip/${slot.id}/${customSet ? `${customSet.id}/` : ''}`}
     >
-      {emptyItemSlot}
+      <a>{emptyItemSlot}</a>
     </Link>
   ) : (
     emptyItemSlot
