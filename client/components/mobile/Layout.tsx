@@ -175,17 +175,19 @@ const Layout = ({ children }: LayoutProps) => {
         }}
       >
         <Link href="/" as="/">
-          <div css={{ fontWeight: 500 }}>
-            <img
-              src={
-                theme.name === LIGHT_THEME_NAME
-                  ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg'
-                  : 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark.svg'
-              }
-              css={{ width: 120 }}
-              alt="DofusLab"
-            />
-          </div>
+          <a>
+            <div css={{ fontWeight: 500 }}>
+              <img
+                src={
+                  theme.name === LIGHT_THEME_NAME
+                    ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg'
+                    : 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark.svg'
+                }
+                css={{ width: 120 }}
+                alt="DofusLab"
+              />
+            </div>
+          </a>
         </Link>
         <Button onClick={openDrawer} size="large" css={{ fontSize: '0.9rem' }}>
           <MenuOutlined />
@@ -241,12 +243,12 @@ const Layout = ({ children }: LayoutProps) => {
             {data?.currentUser && data.currentUser.verified && (
               <Menu.Item key="my-builds">
                 <Link href="/my-builds" as="/my-builds">
-                  <div>
+                  <a>
                     <span css={iconWrapper}>
                       <FontAwesomeIcon icon={faTshirt} />
                     </span>
                     {t('MY_BUILDS', { ns: 'common' })}
-                  </div>
+                  </a>
                 </Link>
               </Menu.Item>
             )}
