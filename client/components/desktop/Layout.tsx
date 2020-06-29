@@ -452,12 +452,7 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Tooltip
-                  placement="bottomLeft"
-                  title={t('BUY_US_COFFEE', { ns: 'common' })}
-                >
-                  {getDonateElement(t)}
-                </Tooltip>
+                {getDonateElement(t)}
               </a>
             </NoSSR>
           </div>
