@@ -19,7 +19,11 @@ import {
   faTimes,
   faExclamationTriangle,
 } from '@fortawesome/free-solid-svg-icons';
-import { useDeleteItemMutation, EditableContext } from 'common/utils';
+import {
+  useDeleteItemMutation,
+  EditableContext,
+  ClassicContext,
+} from 'common/utils';
 import { useTranslation } from 'i18n';
 import { mq } from 'common/constants';
 import { Media } from 'components/common/Media';
@@ -95,6 +99,7 @@ const EquippedItemWithStats: React.FC<Props> = ({
   const contentRef = React.useRef<HTMLDivElement | null>(null);
 
   const isEditable = React.useContext(EditableContext);
+  const [isClassic] = React.useContext(ClassicContext);
 
   const content = (
     <ClassNames>
@@ -214,17 +219,18 @@ const EquippedItemWithStats: React.FC<Props> = ({
                 ...popoverTitleStyle,
                 '.ant-popover-content': {
                   boxShadow: popoverShadow,
-                  maxHeight: contentRef.current
-                    ? `calc(100vh - ${
-                        contentRef.current.offsetTop +
-                        contentRef.current.offsetHeight +
-                        20
-                      }px)`
-                    : undefined,
+                  maxHeight:
+                    contentRef.current && !isClassic
+                      ? `calc(100vh - ${
+                          contentRef.current.offsetTop +
+                          contentRef.current.offsetHeight +
+                          20
+                        }px)`
+                      : undefined,
                   overflow: 'auto',
                 },
                 '.ant-popover-inner-content': { padding: 0 },
-                maxWidth: 300,
+                maxWidth: 312,
               })}
               autoAdjustOverflow={{ adjustX: 1, adjustY: 0 }}
             >
