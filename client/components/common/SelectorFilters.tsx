@@ -31,7 +31,7 @@ const { Option } = Select;
 interface Props {
   filters: SharedFilters;
   dispatch: React.Dispatch<SharedFilterAction>;
-  customSet: CustomSet | null;
+  customSet?: CustomSet | null;
   showSets: boolean;
   setShowSets: React.Dispatch<React.SetStateAction<boolean>>;
   onReset: () => void;

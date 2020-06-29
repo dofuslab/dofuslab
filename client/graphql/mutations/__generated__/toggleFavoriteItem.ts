@@ -68,6 +68,15 @@ export interface toggleFavoriteItem_toggleFavoriteItem_user_favoriteItems_set {
   bonuses: toggleFavoriteItem_toggleFavoriteItem_user_favoriteItems_set_bonuses[];
 }
 
+export interface toggleFavoriteItem_toggleFavoriteItem_user_favoriteItems_buffs {
+  __typename: 'Buff';
+  id: any;
+  stat: Stat;
+  incrementBy: number | null;
+  critIncrementBy: number | null;
+  maxStacks: number | null;
+}
+
 export interface toggleFavoriteItem_toggleFavoriteItem_user_favoriteItems {
   __typename: 'Item';
   id: any;
@@ -79,6 +88,9 @@ export interface toggleFavoriteItem_toggleFavoriteItem_user_favoriteItems {
   conditions: any | null;
   itemType: toggleFavoriteItem_toggleFavoriteItem_user_favoriteItems_itemType;
   set: toggleFavoriteItem_toggleFavoriteItem_user_favoriteItems_set | null;
+  buffs:
+    | toggleFavoriteItem_toggleFavoriteItem_user_favoriteItems_buffs[]
+    | null;
 }
 
 export interface toggleFavoriteItem_toggleFavoriteItem_user {

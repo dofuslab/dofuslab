@@ -19,12 +19,13 @@ import {
 import ConfirmReplaceItemPopover from 'components/desktop/ConfirmReplaceItemPopover';
 import { useTheme } from 'emotion-theming';
 import { Theme } from 'common/types';
+import { getModalStyle } from 'common/mixins';
 import ItemCard from './ItemCard';
 import SetModal from './SetModal';
 
 interface Props {
   className?: string;
-  customSet: CustomSet | null;
+  customSet?: CustomSet | null;
   selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
   shouldRedirect: boolean;
   showSets: boolean;
@@ -100,6 +101,7 @@ const FavoritesButton: React.FC<Props> = ({
         onCancel={closeModal}
         bodyStyle={{ maxHeight: '65vh', overflow: 'auto' }}
         css={{
+          ...getModalStyle(theme),
           [mq[0]]: { minWidth: '100%' },
           [mq[1]]: { minWidth: BREAKPOINTS[1] },
           [mq[2]]: { minWidth: BREAKPOINTS[2] },

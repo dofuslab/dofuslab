@@ -6,9 +6,9 @@ import { Tabs } from 'antd';
 import { useTheme } from 'emotion-theming';
 
 import { mq, SEARCH_BAR_ID } from 'common/constants';
-import { ResponsiveGrid } from 'common/wrappers';
+import { ResponsiveGrid, BuffButton } from 'common/wrappers';
 
-import { getStatsFromCustomSet, getErrors } from 'common/utils';
+import { getErrors, CustomSetContext } from 'common/utils';
 import { topMarginStyle } from 'common/mixins';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
@@ -17,6 +17,8 @@ import { useTranslation } from 'i18n';
 import { BuildError, Theme } from 'common/types';
 import { Stat } from '__generated__/globalTypes';
 import { CustomSet, ItemSlot } from 'common/type-aliases';
+import BuffModal from 'components/common/BuffModal';
+import { useRouter } from 'next/router';
 import Selector from '../common/Selector';
 import StatEditor from '../common/StatEditor';
 import EquipmentSlots from '../common/EquipmentSlots';
@@ -79,13 +81,24 @@ const statGroups = [
 ];
 
 interface Props {
-  customSet: CustomSet | null;
+  customSet?: CustomSet | null;
 }
 
 const SetBuilder: React.FC<Props> = ({ customSet }) => {
+  const { appliedBuffs, statsFromCustomSet } = React.useContext(
+    CustomSetContext,
+  );
   const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(
     null,
   );
+
+  const [buffModalOpen, setBuffModalOpen] = React.useState(false);
+  const openBuffModal = React.useCallback(() => {
+    setBuffModalOpen(true);
+  }, []);
+  const closeBuffModal = React.useCallback(() => {
+    setBuffModalOpen(false);
+  }, []);
 
   React.useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
@@ -108,10 +121,9 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
     }
   }, [selectedItemSlot?.id]);
 
-  const statsFromCustomSet = React.useMemo(
-    () => getStatsFromCustomSet(customSet),
-    [customSet],
-  );
+  const {
+    query: { class: dofusClass },
+  } = useRouter();
 
   const weapon = customSet?.equippedItems.find(
     (equippedItem) => !!equippedItem.item.weaponStats,
@@ -171,6 +183,12 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
             [mq[2]]: { flex: '0 1 576px' },
           }}
         >
+          <div css={{ [mq[2]]: { display: 'none' } }}>
+            <BuffButton
+              openBuffModal={openBuffModal}
+              appliedBuffs={appliedBuffs}
+            />
+          </div>
           <Tabs
             defaultActiveKey="characteristics"
             css={{
@@ -178,6 +196,13 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                 borderBottom: `1px solid ${theme.border?.default}`,
               },
             }}
+            tabBarExtraContent={
+              <BuffButton
+                openBuffModal={openBuffModal}
+                appliedBuffs={appliedBuffs}
+                css={{ display: 'none', [mq[2]]: { display: 'inline' } }}
+              />
+            }
           >
             <TabPane tab={t('CHARACTERISTICS')} key="characteristics">
               <ResponsiveGrid
@@ -188,8 +213,7 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                   <StatTable
                     key={`stat-table-${group[0]}`}
                     group={group}
-                    statsFromCustomSet={statsFromCustomSet}
-                    customSet={customSet}
+                    openBuffModal={openBuffModal}
                   />
                 ))}
                 <StatEditor key={customSet?.stats.id} customSet={customSet} />
@@ -204,20 +228,23 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                 numColumns={[2, 1, 2, 2, 2, 2, 2]}
                 css={{ marginBottom: 20 }}
               >
-                {weapon && customSet && weapon.item.weaponStats && (
-                  <>
-                    <BasicItemCard
-                      item={weapon.item}
-                      showOnlyWeaponStats
-                      weaponElementMage={weapon.weaponElementMage}
-                    />
-                    <WeaponDamage
-                      weaponStats={weapon.item.weaponStats}
-                      customSet={customSet}
-                      weaponElementMage={weapon.weaponElementMage}
-                    />
-                  </>
-                )}
+                {weapon &&
+                  customSet &&
+                  statsFromCustomSet &&
+                  weapon.item.weaponStats && (
+                    <>
+                      <BasicItemCard
+                        item={weapon.item}
+                        showOnlyWeaponStats
+                        weaponElementMage={weapon.weaponElementMage}
+                      />
+                      <WeaponDamage
+                        weaponStats={weapon.item.weaponStats}
+                        customSet={customSet}
+                        weaponElementMage={weapon.weaponElementMage}
+                      />
+                    </>
+                  )}
                 <ClassSpells
                   key={`${customSet?.id}-${customSet?.level}`}
                   customSet={customSet}
@@ -235,6 +262,12 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
           isClassic={false}
         />
       </div>
+      <BuffModal
+        key={String(dofusClass)}
+        visible={buffModalOpen}
+        closeBuffModal={closeBuffModal}
+        customSet={customSet}
+      />
     </>
   );
 };

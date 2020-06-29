@@ -1,3 +1,5 @@
+#import "graphql/fragments/buff.graphql"
+
 fragment item on Item {
   id
   name
@@ -45,5 +47,8 @@ fragment item on Item {
       value
       customStat
     }
+  }
+  buffs {
+    ...buff
   }
 }

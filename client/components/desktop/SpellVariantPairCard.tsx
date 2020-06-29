@@ -82,7 +82,7 @@ const SpellVariantPairCard: React.FC<Props> = ({
           selectedSpellLevelIdx={selectedSpellLevelIdx}
           onChange={onLevelChange}
           spellLevelIdx={spellLevelIdx}
-          spell={spell}
+          spellStats={spell.spellStats}
           css={{ marginLeft: 8 }}
         />
       }

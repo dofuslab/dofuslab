@@ -68,6 +68,15 @@ export interface login_loginUser_user_favoriteItems_set {
   bonuses: login_loginUser_user_favoriteItems_set_bonuses[];
 }
 
+export interface login_loginUser_user_favoriteItems_buffs {
+  __typename: 'Buff';
+  id: any;
+  stat: Stat;
+  incrementBy: number | null;
+  critIncrementBy: number | null;
+  maxStacks: number | null;
+}
+
 export interface login_loginUser_user_favoriteItems {
   __typename: 'Item';
   id: any;
@@ -79,6 +88,7 @@ export interface login_loginUser_user_favoriteItems {
   conditions: any | null;
   itemType: login_loginUser_user_favoriteItems_itemType;
   set: login_loginUser_user_favoriteItems_set | null;
+  buffs: login_loginUser_user_favoriteItems_buffs[] | null;
 }
 
 export interface login_loginUser_user {

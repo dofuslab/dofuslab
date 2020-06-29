@@ -4,7 +4,14 @@ import {
   WeaponEffectType,
   SpellEffectType,
 } from '__generated__/globalTypes';
-import { ItemSet, EquippedItem, CustomSet } from './type-aliases';
+import {
+  ItemSet,
+  EquippedItem,
+  CustomSet,
+  Buff,
+  Item,
+  ClassBuffSpell,
+} from './type-aliases';
 
 export type StatWithCalculatedValue = {
   stat: string;
@@ -224,3 +231,40 @@ export interface BuildError {
   equippedItem: EquippedItem;
   reason: string;
 }
+
+export interface AppliedBuff {
+  buff: Buff;
+  numStacks: number;
+  numCritStacks: number;
+  spell?: ClassBuffSpell;
+  item?: Item;
+}
+
+export enum AppliedBuffActionType {
+  ADD_STACK,
+  MAX_STACKS,
+  REMOVE_BUFF,
+  CLEAR_ALL,
+}
+
+export type AppliedBuffAction =
+  | {
+      type: AppliedBuffActionType.ADD_STACK;
+      buff: Buff;
+      isCrit: boolean;
+      spell?: ClassBuffSpell;
+      item?: Item;
+    }
+  | {
+      type: AppliedBuffActionType.MAX_STACKS;
+      buff: Buff;
+      isCrit: boolean;
+      spell?: ClassBuffSpell;
+      item?: Item;
+    }
+  | { type: AppliedBuffActionType.REMOVE_BUFF; buffId: string }
+  | { type: AppliedBuffActionType.CLEAR_ALL };
+
+export type StatsFromAppliedBuffs = {
+  [key: string]: number;
+};

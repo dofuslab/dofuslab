@@ -1,40 +1,30 @@
 /** @jsx jsx */
 
+import { useContext } from 'react';
 import { jsx } from '@emotion/core';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useQuery } from '@apollo/react-hooks';
 
 import DesktopSetBuilder from 'components/desktop/SetBuilder';
 import MobileSetBuilder from 'components/mobile/SetBuilder';
 import { mediaStyles, Media } from 'components/common/Media';
-import CustomSetQuery from 'graphql/queries/customSet.graphql';
-import {
-  customSet as CustomSetQueryType,
-  customSetVariables,
-} from 'graphql/queries/__generated__/customSet';
+
 import { CustomSetHead } from 'common/wrappers';
 import ClassicSetBuilder from 'components/desktop/ClassicSetBuilder';
-import { ClassicContext, useClassic } from 'common/utils';
+import { ClassicContext, useClassic, CustomSetContext } from 'common/utils';
 import DesktopLayout from 'components/desktop/Layout';
 import MobileLayout from 'components/mobile/Layout';
 import ErrorPage from './_error';
 
 const Index: NextPage = () => {
+  const [isClassic, setIsClassic] = useClassic();
   const router = useRouter();
   const { customSetId } = router.query;
 
-  const { data: customSetData, loading } = useQuery<
-    CustomSetQueryType,
-    customSetVariables
-  >(CustomSetQuery, { variables: { id: customSetId }, skip: !customSetId });
+  const { customSet, customSetLoading } = useContext(CustomSetContext);
 
-  const customSet = customSetData?.customSetById || null;
-
-  const [isClassic, setIsClassic] = useClassic();
-
-  if (customSetId && !customSet && !loading) {
+  if (customSetId && !customSet && !customSetLoading) {
     return <ErrorPage statusCode={404} />;
   }
 
@@ -49,6 +39,7 @@ const Index: NextPage = () => {
           />
         </Head>
         <CustomSetHead customSet={customSet} />
+
         <Media lessThan="xs">
           <MobileLayout>
             <MobileSetBuilder customSet={customSet} />

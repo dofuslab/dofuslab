@@ -19,7 +19,7 @@ const Tooltip: React.FC<TooltipProps> = ({
           {...restProps}
           overlayClassName={cx(
             css({
-              '.ant-tooltip-inner, .ant-tooltip-arrow::before': {
+              '.ant-tooltip-inner, .ant-tooltip-arrow-content': {
                 backgroundColor: theme.layer?.backgroundLight,
               },
             }),

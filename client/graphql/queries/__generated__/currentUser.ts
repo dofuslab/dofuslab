@@ -68,6 +68,15 @@ export interface currentUser_currentUser_favoriteItems_set {
   bonuses: currentUser_currentUser_favoriteItems_set_bonuses[];
 }
 
+export interface currentUser_currentUser_favoriteItems_buffs {
+  __typename: 'Buff';
+  id: any;
+  stat: Stat;
+  incrementBy: number | null;
+  critIncrementBy: number | null;
+  maxStacks: number | null;
+}
+
 export interface currentUser_currentUser_favoriteItems {
   __typename: 'Item';
   id: any;
@@ -79,6 +88,7 @@ export interface currentUser_currentUser_favoriteItems {
   conditions: any | null;
   itemType: currentUser_currentUser_favoriteItems_itemType;
   set: currentUser_currentUser_favoriteItems_set | null;
+  buffs: currentUser_currentUser_favoriteItems_buffs[] | null;
 }
 
 export interface currentUser_currentUser {

@@ -18,7 +18,7 @@ import {
 import classByIdQuery from 'graphql/queries/classById.graphql';
 import { Theme } from 'common/types';
 import { CustomSet, Spell } from 'common/type-aliases';
-import { onSelectClass } from 'common/utils';
+import { onSelectClass, useClassId } from 'common/utils';
 import { itemCardStyle } from 'common/mixins';
 import SpellCard from './SpellCard';
 
@@ -30,23 +30,11 @@ interface Props {
 
 const ClassSpells: React.FC<Props> = ({ customSet }) => {
   const router = useRouter();
-  const { query } = router;
   const { data } = useQuery<classes>(classesQuery);
   const { t } = useTranslation('common');
   const theme = useTheme<Theme>();
 
-  const nameToId = data?.classes.reduce((acc, { id, allNames }) => {
-    const obj = { ...acc };
-    allNames.forEach((className) => {
-      obj[className] = id;
-    });
-    return obj;
-  }, {} as { [key: string]: string });
-
-  const selectedClassName = Array.isArray(query.class)
-    ? query.class[0]
-    : query.class;
-  const selectedClassId = selectedClassName && nameToId?.[selectedClassName];
+  const selectedClassId = useClassId();
 
   const { data: classData, loading: classDataLoading } = useQuery<
     classById,
@@ -118,13 +106,14 @@ const ClassSpells: React.FC<Props> = ({ customSet }) => {
           }
           return document && document.body;
         }}
+        size="large"
         css={{ gridColumn: '1 / -1' }}
         showSearch
-        filterOption={(input, option) =>
-          (option?.children as string)
+        filterOption={(input, option) => {
+          return (option?.children[1] as string)
             .toLocaleUpperCase()
-            .includes(input.toLocaleUpperCase())
-        }
+            .includes(input.toLocaleUpperCase());
+        }}
         value={selectedClassId}
         onChange={(value: string) => {
           onSelectClass(data.classes, value, router);
@@ -135,6 +124,11 @@ const ClassSpells: React.FC<Props> = ({ customSet }) => {
           .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
           .map((dofusClass) => (
             <Option key={dofusClass.id} value={dofusClass.id}>
+              <img
+                src={dofusClass.faceImageUrl}
+                alt={dofusClass.name}
+                css={{ width: 20, marginRight: 8 }}
+              />
               {dofusClass.name}
             </Option>
           ))}

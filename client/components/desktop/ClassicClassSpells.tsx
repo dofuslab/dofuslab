@@ -17,14 +17,11 @@ import {
 import classByIdQuery from 'graphql/queries/classById.graphql';
 import { itemCardStyle } from 'common/mixins';
 import { Theme } from 'common/types';
-import { CustomSet } from 'common/type-aliases';
+import { CustomSetContext } from 'common/utils';
 import SpellVariantPairCard from './SpellVariantPairCard';
 
-interface Props {
-  customSet?: CustomSet | null;
-}
-
-const ClassicClassSpells: React.FC<Props> = ({ customSet }) => {
+const ClassicClassSpells: React.FC = () => {
+  const { customSet } = React.useContext(CustomSetContext);
   const router = useRouter();
   const { query } = router;
   const { data } = useQuery<classes>(classesQuery);

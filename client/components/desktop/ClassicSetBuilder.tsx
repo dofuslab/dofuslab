@@ -6,7 +6,7 @@ import { Tabs } from 'antd';
 
 import { mq } from 'common/constants';
 
-import { getStatsFromCustomSet, getErrors } from 'common/utils';
+import { getErrors, CustomSetContext } from 'common/utils';
 import { BuildError } from 'common/types';
 import StatTable from 'components/common/StatTable';
 import { Stat } from '__generated__/globalTypes';
@@ -15,24 +15,29 @@ import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassicClassSpells from 'components/desktop/ClassicClassSpells';
 import { CustomSet } from 'common/type-aliases';
+import BuffModal from 'components/common/BuffModal';
+import { BuffButton } from 'common/wrappers';
+import { useRouter } from 'next/router';
 import ClassicRightColumnStats from './ClassicRightColumnStats';
 import ClassicLeftColumnStats from './ClassicLeftColumnStats';
 import ClassicEquipmentSlots from './ClassicEquipmentSlots';
 import SetHeader from '../common/SetHeader';
 import ClassicClassSelector from './ClassicClassSelector';
-import PublicBuildActions from '../common/PublicBuildActions';
 
 const { TabPane } = Tabs;
 
 interface Props {
-  customSet: CustomSet | null;
+  customSet?: CustomSet | null;
 }
 
 const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
-  const statsFromCustomSet = React.useMemo(
-    () => getStatsFromCustomSet(customSet),
-    [customSet],
+  const { appliedBuffs, statsFromCustomSet } = React.useContext(
+    CustomSetContext,
   );
+
+  const {
+    query: { class: dofusClass },
+  } = useRouter();
 
   const { t } = useTranslation();
 
@@ -45,6 +50,14 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
   if (customSet && statsFromCustomSet) {
     errors = getErrors(customSet, statsFromCustomSet);
   }
+
+  const [buffModalOpen, setBuffModalOpen] = React.useState(false);
+  const openBuffModal = React.useCallback(() => {
+    setBuffModalOpen(true);
+  }, []);
+  const closeBuffModal = React.useCallback(() => {
+    setBuffModalOpen(false);
+  }, []);
 
   return (
     <>
@@ -67,15 +80,10 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
         <Tabs
           defaultActiveKey="characteristics"
           tabBarExtraContent={
-            customSet && (
-              <div css={{ position: 'relative' }}>
-                <div
-                  css={{ position: 'absolute', top: -16, right: 0, zIndex: 1 }}
-                >
-                  <PublicBuildActions customSet={customSet} />
-                </div>
-              </div>
-            )
+            <BuffButton
+              openBuffModal={openBuffModal}
+              appliedBuffs={appliedBuffs}
+            />
           }
           css={{
             width: '100%',
@@ -97,7 +105,7 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
                 marginBottom: 60,
               }}
             >
-              <ClassicLeftColumnStats customSet={customSet} />
+              <ClassicLeftColumnStats openBuffModal={openBuffModal} />
               <div css={{ flex: '1 1 auto' }}>
                 <ClassicEquipmentSlots customSet={customSet} errors={errors} />
                 <div
@@ -117,8 +125,7 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
                       Stat.PCT_WATER_RES,
                       Stat.PCT_AIR_RES,
                     ]}
-                    statsFromCustomSet={statsFromCustomSet}
-                    customSet={customSet}
+                    openBuffModal={openBuffModal}
                   />
                   <StatTable
                     group={[
@@ -128,22 +135,19 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
                       Stat.WATER_RES,
                       Stat.AIR_RES,
                     ]}
-                    statsFromCustomSet={statsFromCustomSet}
-                    customSet={customSet}
+                    openBuffModal={openBuffModal}
                   />
                   <StatTable
                     group={[Stat.PCT_MELEE_RES, Stat.PCT_RANGED_RES]}
-                    statsFromCustomSet={statsFromCustomSet}
-                    customSet={customSet}
+                    openBuffModal={openBuffModal}
                   />
                   <StatTable
                     group={[Stat.CRITICAL_RES, Stat.PUSHBACK_RES]}
-                    statsFromCustomSet={statsFromCustomSet}
-                    customSet={customSet}
+                    openBuffModal={openBuffModal}
                   />
                 </div>
               </div>
-              <ClassicRightColumnStats customSet={customSet} />
+              <ClassicRightColumnStats openBuffModal={openBuffModal} />
             </div>
           </TabPane>
           <TabPane
@@ -177,12 +181,17 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
               )}
               <ClassicClassSpells
                 key={`${customSet?.id}-${customSet?.level}`}
-                customSet={customSet}
               />
             </div>
           </TabPane>
         </Tabs>
       </div>
+      <BuffModal
+        key={String(dofusClass)}
+        visible={buffModalOpen}
+        closeBuffModal={closeBuffModal}
+        customSet={customSet}
+      />
     </>
   );
 };

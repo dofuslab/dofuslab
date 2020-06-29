@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 import { useTheme } from 'emotion-theming';
 import Head from 'next/head';
 
-import { Skeleton, Switch } from 'antd';
+import { Skeleton, Switch, Button } from 'antd';
 import { TFunction } from 'next-i18next';
 import { useTranslation } from 'i18n';
 import {
@@ -21,11 +21,12 @@ import {
   faCube,
   faPeopleArrows,
   faFistRaised,
+  faBolt,
 } from '@fortawesome/free-solid-svg-icons';
 import Tooltip from 'components/common/Tooltip';
 import { Media } from 'components/common/Media';
 import { mq } from './constants';
-import { Theme } from './types';
+import { Theme, AppliedBuff } from './types';
 import {
   effectToIconUrl,
   getSimpleEffect,
@@ -49,7 +50,10 @@ export const ResponsiveGrid = styled.div<{ numColumns: ReadonlyArray<number> }>(
   ({ numColumns }) => getResponsiveGridStyle(numColumns),
 );
 
-export const Badge: React.FC = ({ children, ...restProps }) => {
+export const Badge: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
+  children,
+  ...restProps
+}) => {
   const theme = useTheme<Theme>();
   return (
     <span
@@ -62,6 +66,7 @@ export const Badge: React.FC = ({ children, ...restProps }) => {
         padding: '2px 4px',
         borderRadius: 4,
         marginLeft: 8,
+        display: 'inline-block',
       }}
       {...restProps}
     >
@@ -141,6 +146,7 @@ export const CardTitleWithLevel: React.FC<{
   level?: number;
   rightAlignedContent?: React.ReactNode;
   levelClassName?: string;
+  className?: string;
 }> = ({
   title,
   level,
@@ -148,28 +154,36 @@ export const CardTitleWithLevel: React.FC<{
   badgeContent,
   rightAlignedContent,
   levelClassName,
+  className,
 }) => {
   const { t } = useTranslation('common');
 
   return (
-    <div css={{ marginRight: 4, display: 'flex', alignItems: 'center' }}>
-      <div css={{ minWidth: 0 }}>
-        <div css={{ display: 'flex', alignItems: 'center' }}>
-          <TruncatableText css={{ fontSize: '0.8rem' }}>
-            {title}
-          </TruncatableText>
-          {showBadge && <Badge css={{ marginRight: 4 }}>{badgeContent}</Badge>}
-        </div>
+    <ClassNames>
+      {({ css, cx }) => (
         <div
-          css={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}
+          css={cx(
+            className,
+            css({ marginRight: 4, display: 'flex', alignItems: 'center' }),
+          )}
         >
-          {level && (
-            <ClassNames>
-              {({ css, cx }) => (
+          <div css={{ minWidth: 0 }}>
+            <div css={{ display: 'flex', alignItems: 'center' }}>
+              <TruncatableText css={{ fontSize: '0.8rem' }}>
+                {title}
+              </TruncatableText>
+              {showBadge && (
+                <Badge css={{ marginRight: 4 }}>{badgeContent}</Badge>
+              )}
+            </div>
+            <div
+              css={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
+              {level && (
                 <div
                   className={cx(
                     css({
@@ -183,15 +197,15 @@ export const CardTitleWithLevel: React.FC<{
                   {t('LEVEL_ABBREVIATION', { ns: 'common' })} {level}
                 </div>
               )}
-            </ClassNames>
+            </div>
+          </div>
+
+          {rightAlignedContent && (
+            <div css={{ marginLeft: 'auto' }}>{rightAlignedContent}</div>
           )}
         </div>
-      </div>
-
-      {rightAlignedContent && (
-        <div css={{ marginLeft: 'auto' }}>{rightAlignedContent}</div>
       )}
-    </div>
+    </ClassNames>
   );
 };
 
@@ -461,5 +475,30 @@ export const TotalDamageLine = ({
         </div>
       )}
     </div>
+  );
+};
+
+export const BuffButton = ({
+  openBuffModal,
+  appliedBuffs,
+  className,
+}: {
+  openBuffModal: () => void;
+  appliedBuffs: Array<AppliedBuff>;
+  className?: string;
+}) => {
+  const { t } = useTranslation('common');
+  return (
+    <Button
+      onClick={openBuffModal}
+      icon={<FontAwesomeIcon icon={faBolt} css={{ marginRight: 8 }} />}
+      className={className}
+    >
+      {appliedBuffs.length > 0
+        ? t('BUFF_APPLIED', {
+            count: appliedBuffs.length,
+          })
+        : t('BUFFS')}
+    </Button>
   );
 };

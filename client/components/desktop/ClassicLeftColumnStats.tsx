@@ -4,22 +4,18 @@ import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
 import StatTable from 'components/common/StatTable';
 import { Stat } from '__generated__/globalTypes';
-import { getStatsFromCustomSet } from 'common/utils';
+import { CustomSetContext } from 'common/utils';
 import { mq } from 'common/constants';
 import StatEditor from 'components/common/StatEditor';
-import { CustomSet } from 'common/type-aliases';
 
 interface Props {
-  customSet: CustomSet | null;
+  openBuffModal: () => void;
 }
 
 const margin = { marginBottom: 12, [mq[4]]: { marginBottom: 20 } };
 
-const ClassicLeftColumnStats: React.FC<Props> = ({ customSet }) => {
-  const statsFromCustomSet = React.useMemo(
-    () => getStatsFromCustomSet(customSet),
-    [customSet],
-  );
+const ClassicLeftColumnStats: React.FC<Props> = ({ openBuffModal }) => {
+  const { customSet } = React.useContext(CustomSetContext);
 
   return (
     <div
@@ -44,9 +40,8 @@ const ClassicLeftColumnStats: React.FC<Props> = ({ customSet }) => {
           Stat.PROSPECTING,
           Stat.PODS,
         ]}
-        statsFromCustomSet={statsFromCustomSet}
-        customSet={customSet}
         css={margin}
+        openBuffModal={openBuffModal}
       />
       <ClassNames>
         {({ css, cx }) => (
@@ -59,9 +54,8 @@ const ClassicLeftColumnStats: React.FC<Props> = ({ customSet }) => {
       </ClassNames>
       <StatTable
         group={[Stat.DODGE, Stat.LOCK]}
-        statsFromCustomSet={statsFromCustomSet}
-        customSet={customSet}
         css={margin}
+        openBuffModal={openBuffModal}
       />
       <StatTable
         group={[
@@ -70,9 +64,8 @@ const ClassicLeftColumnStats: React.FC<Props> = ({ customSet }) => {
           Stat.MP_PARRY,
           Stat.MP_REDUCTION,
         ]}
-        statsFromCustomSet={statsFromCustomSet}
-        customSet={customSet}
         css={margin}
+        openBuffModal={openBuffModal}
       />
     </div>
   );

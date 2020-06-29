@@ -51,7 +51,7 @@ const SpellCard: React.FC<Props> = ({ spell, customSet }) => {
               selectedSpellLevelIdx={selectedSpellLevelIdx}
               onChange={onChange}
               spellLevelIdx={spellLevelIdx}
-              spell={spell}
+              spellStats={spell.spellStats}
             />
           }
         />

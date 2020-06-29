@@ -1,0 +1,7 @@
+fragment buff on Buff {
+  id
+  stat
+  incrementBy
+  critIncrementBy
+  maxStacks
+}

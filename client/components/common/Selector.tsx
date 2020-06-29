@@ -43,7 +43,7 @@ const reducer = (state: SharedFilters, action: SharedFilterAction) => {
 };
 
 interface Props {
-  customSet: CustomSet | null;
+  customSet?: CustomSet | null;
   selectedItemSlot: ItemSlot | null;
   selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
   showSets?: boolean;
