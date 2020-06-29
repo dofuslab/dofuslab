@@ -61,8 +61,7 @@ def update_spell_buff_for_level(db_session, spell_stat_id, buff_data):
         db_session.add(buff_object)
 
 
-def update_or_create_item_buff(db_session, item_name, record):
-    print(item_name)
+def update_or_create_item_buff(db_session, item_name, record, should_only_add_missing):
     item_id = (
         db_session.query(ModelItemTranslation)
         .filter(
@@ -73,17 +72,17 @@ def update_or_create_item_buff(db_session, item_name, record):
     )
     buffs = db_session.query(ModelItem).filter(ModelItem.uuid == item_id).one().buffs
 
-    if len(buffs) >= 1:
-        print("Buffs already exist on this item. Updating buffs...")
+    if len(buffs) >= 1 and not should_only_add_missing:
+        print("Buffs already exist on for {}. Updating buffs...".format(item_name))
         update_item_buffs(db_session, item_id, record)
         print("Buffs for {} updated.".format(item_name))
-    else:
+    elif len(buffs) == 0:
         print("No buffs currently exist on this item. Adding buffs now.")
         add_item_buffs(db_session, item_id, record)
         print("Buffs for {} added.".format(item_name))
 
 
-def update_or_create_spell_buff(db_session, spell_name, spell_data):
+def update_or_create_spell_buff(db_session, spell_name, spell_data, should_only_add_missing):
     translations = (
         db_session.query(ModelSpellTranslation)
         .filter(
@@ -128,7 +127,7 @@ def update_or_create_spell_buff(db_session, spell_name, spell_data):
         .buffs
     )
 
-    if len(buffs) >= 1:
+    if len(buffs) >= 1 and not should_only_add_missing:
         print("Buffs already exist for {}. Updating buffs...".format(spell_name))
         for level in spell_stat_ids:
             update_spell_buff_for_level(
@@ -137,7 +136,7 @@ def update_or_create_spell_buff(db_session, spell_name, spell_data):
                 level_to_spell_stat_record_map[level],
             )
         print("Buffs for {} updated.".format(spell_name))
-    else:
+    elif len(buffs) == 0:
         print("No buffs currently exist for {}. Adding buffs now.".format(spell_name))
         for level in spell_stat_ids:
             add_spell_buff_for_level(
@@ -157,18 +156,22 @@ def sync_spell_buffs(db_session, class_name, spells):
 
     while True:
         response = input(
-            "Enter a spell name, type 'update all' to update all spell buffs for this class, or type 'q' to quit: "
+            "Enter a spell name, type 'update all' to update all spell buffs for this class, 'add missing buffs' to only add buffs to spells that are missing them, or type 'q' to quit: "
         )
         if response == "q":
             break
         with session_scope() as db_session:
             if response == "update all":
                 for spell in spells:
-                    update_or_create_spell_buff(db_session, spell["name"], spell)
+                    update_or_create_spell_buff(db_session, spell["name"], spell, False)
+                break
+            elif response == "add missing buffs":
+                for spell in spells:
+                    update_or_create_spell_buff(db_session, spell["name"], spell, True)
                 break
             elif response in name_to_spell_record_map:
                 spell_data = name_to_spell_record_map[response]
-                update_or_create_spell_buff(db_session, response, spell_data)
+                update_or_create_spell_buff(db_session, response, spell_data, False)
             else:
                 print(
                     "That spell either does not have a buff or a typo was made, please try again."
@@ -207,18 +210,26 @@ def sync_buffs():
 
         while True:
             response = input(
-                "Enter an item name (e.g. 'Crimson Dofus') to update its buffs, type 'update all' to update all buffs for items in the file, or type 'q' to quit: "
+                "Enter an item name (e.g. 'Crimson Dofus') to update its buffs, type 'update all' to update all buffs for items in the file, 'add missing buffs' to only add buffs to items that are missing them, or type 'q' to quit: "
             )
             if response == "q":
                 break
             with session_scope() as db_session:
                 if response == "update all":
                     for record in data["items"]:
-                        update_or_create_item_buff(db_session, record["name"], record)
+                        update_or_create_item_buff(
+                            db_session, record["name"], record, False
+                        )
+                    break
+                elif response == "add missing buffs":
+                    for record in data["items"]:
+                        update_or_create_item_buff(
+                            db_session, record["name"], record, True
+                        )
                     break
                 elif response in name_to_item_record_map:
                     record = name_to_item_record_map[response]
-                    update_or_create_item_buff(db_session, response, record)
+                    update_or_create_item_buff(db_session, response, record, False)
                 else:
                     print(
                         "That item does not have a buff or a typo was made, please try again."
