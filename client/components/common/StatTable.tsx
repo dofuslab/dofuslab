@@ -59,11 +59,9 @@ const StatTable: React.FC<Props> = ({ group, className, openBuffModal }) => {
         <List
           css={cx(
             css({
-              '&.ant-list-bordered': {
-                border: `1px solid ${theme.border?.default}`,
-                background: theme.layer?.background,
-                borderRadius: 4,
-              },
+              background: theme.layer?.background,
+              border: theme.border?.default,
+              borderRadius: 4,
             }),
             className,
           )}

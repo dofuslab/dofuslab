@@ -231,10 +231,9 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
           as={`/build/${node.id}/`}
           key={node.id}
         >
-          <a>
+          <div>
             <Card
               onClick={onClose}
-              bordered
               hoverable
               title={
                 <CardTitleWithLevel
@@ -309,7 +308,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
                 </div>
               )}
             </Card>
-          </a>
+          </div>
         </Link>
       ))}
       {!queryLoading && myBuilds?.currentUser?.customSets.edges.length === 0 && (
