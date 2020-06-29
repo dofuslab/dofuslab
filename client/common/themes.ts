@@ -60,6 +60,7 @@ export const lightTheme: Theme = {
   },
   switch: {
     background: 'rgba(0, 0, 0, 0.25)',
+    button: 'rgba(0, 0, 0, 0.25)',
   },
 };
 

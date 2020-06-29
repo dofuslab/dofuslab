@@ -40,6 +40,7 @@ export default class extends Document {
             href="/static/safari-pinned-tab.svg"
             color="#5bbad5"
           />
+
           <link rel="stylesheet" href="/twicon/twicon.css" />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />

@@ -196,7 +196,9 @@ export const topMarginStyle = {
 };
 
 export const switchStyle = (theme: Theme, showPrimary?: boolean) => ({
-  background: showPrimary ? undefined : theme.switch?.background,
+  '&.ant-switch-checked': {
+    background: showPrimary ? undefined : theme.switch?.background,
+  },
   '.ant-switch-inner': {
     color: theme.text?.default,
   },
