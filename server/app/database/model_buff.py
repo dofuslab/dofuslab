@@ -17,9 +17,9 @@ class ModelBuff(Base):
         primary_key=True,
     )
 
-    item_id = Column(UUID(as_uuid=True), ForeignKey("item.uuid"), nullable=True)
+    item_id = Column(UUID(as_uuid=True), ForeignKey("item.uuid", ondelete="CASCADE"), nullable=True)
     spell_stat_id = Column(
-        UUID(as_uuid=True), ForeignKey("spell_stats.uuid"), nullable=True
+        UUID(as_uuid=True), ForeignKey("spell_stats.uuid", ondelete="CASCADE"), nullable=True
     )
 
     stat = Column("stat", StatEnum, nullable=False)

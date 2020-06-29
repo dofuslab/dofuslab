@@ -112,7 +112,7 @@ def create_spell_stats(db_session, record, spell):
             db_session.add(spell_damage_increase)
 
 
-def update_spell(db_session, spell_name, record):
+def update_spell(db_session, spell_name, record, should_only_add_missing):
     print(spell_name)
     translations = (
         db_session.query(ModelSpellTranslation)
@@ -124,7 +124,7 @@ def update_spell(db_session, spell_name, record):
     )
     if len(translations) > 1:
         print("Error: Multiple spells with that name exist in the database")
-    elif len(translations) == 1:
+    elif len(translations) == 1 and not should_only_add_missing:
         print("Spell already exists in database. Updating spell...")
         spell = translations[0].spell
         spell.is_trap = record.get("isTrap", False)
@@ -132,7 +132,7 @@ def update_spell(db_session, spell_name, record):
         print("Spell translations successfully updated")
         create_spell_stats(db_session, record, spell)
         print("Spell stats successfully updated")
-    else:
+    elif len(translations) == 0:
         print("Error: Spell does not exist in database")
 
 
@@ -152,15 +152,28 @@ def sync_spell():
         while should_prompt_spell:
             response = input(
                 "Enter spell name, e.g. 'Blindness' or multiple spell names separated "
-                "by commas, type 'update all' to update all spells in file, or 'q' to quit: "
+                "by commas, type 'update all' to update all spells in file, "
+                "type 'add missing spells' to only add spells that are missing, or 'q' to quit: "
             )
             if response == "q":
                 return
             with session_scope() as db_session:
                 if response == "update all":
                     should_prompt_spell = False
-                    for record in data:
-                        update_spell(db_session, record["name"]["en"], record)
+                    for class_data in data:
+                        for spell_pair in class_data["spells"]:
+                            for spell in spell_pair:
+                                update_spell(
+                                    db_session, spell["name"]["en"], spell, False
+                                )
+                elif response == "add missing spells":
+                    should_prompt_spell = False
+                    for class_data in data:
+                        for spell_pair in class_data["spells"]:
+                            for spell in spell_pair:
+                                update_spell(
+                                    db_session, spell["name"]["en"], spell, True
+                                )
                 else:
                     spell_names = response.split(",")
                     print(spell_names)
@@ -168,7 +181,7 @@ def sync_spell():
                         spell_name = name.strip()
                         if spell_name in name_to_record_map:
                             record = name_to_record_map[spell_name]
-                            update_spell(db_session, spell_name, record)
+                            update_spell(db_session, spell_name, record, False)
 
 
 if __name__ == "__main__":
