@@ -169,20 +169,20 @@ msgstr "Essa build não existe."
 
 #: app/utils.py:106 app/utils.py:109
 msgid "Invalid stat value."
-msgstr ""
+msgstr "Valor de característica inválido."
 
 #: app/utils.py:116
 msgid "The set name is too long."
-msgstr ""
+msgstr "Nome do set muito longo."
 
 #: app/utils.py:118
 msgid "Invalid set level (must be 1-200)."
-msgstr ""
+msgstr "Level do set inválido (deve ser 1-200)."
 
 #: app/database/model_favorite_item.py:53
 #, python-format
 msgid "You may not have more than %(max_favorites)s favorites."
-msgstr ""
+msgstr "Você não pode ter mais que %(max_favorites)s favoritos."
 
 #: app/templates/reset_password.html:10
 msgid ""
@@ -221,7 +221,7 @@ msgid "- The DofusLab team"
 msgstr "- A equipe DofusLab"
 
 #~ msgid "Hey %(display_name),"
-#~ msgstr ""
+#~ msgstr "Olá %(display_name),"
 
 #~ msgid ""
 #~ "Thanks for signing up for DofusLab. "
@@ -229,13 +229,17 @@ msgstr "- A equipe DofusLab"
 #~ ""
 #~ "    your account."
 #~ msgstr ""
+#~ "Obrigado por se registrar no DofusLab. "
+#~ "Por favor siga o link para ativar\n"
+#~ ""
+#~ "    sua conta."
 
 #~ msgid "Confirm your DofusLab account"
-#~ msgstr ""
+#~ msgstr "Confirme sua conta do DofusLab"
 
 #~ msgid "copy"
-#~ msgstr ""
+#~ msgstr "copiar"
 
 #~ msgid "You don't have permission to edit that set."
-#~ msgstr ""
+#~ msgstr "Você não tem permissão para editar este set."
 
