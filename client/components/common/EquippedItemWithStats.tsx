@@ -231,11 +231,7 @@ const EquippedItemWithStats: React.FC<Props> = ({
                   overflow: 'auto',
                 },
                 '.ant-popover-inner-content': { padding: 0 },
-<<<<<<< HEAD
                 maxWidth: 312,
-=======
-                maxWidth: 300,
->>>>>>> Add light mode
               })}
               autoAdjustOverflow={{ adjustX: 1, adjustY: 0 }}
             >
