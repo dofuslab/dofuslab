@@ -36251,6 +36251,9 @@
       ],
       "it": [
         "All'inizio del suo turno, se il lanciatore ha meno del 20% della sua vita, viene curato del 40% della sua vita e ottiene il 20% dei danni finali per il turno in corso. \nL'effetto è attivabile una sola volta per combattimento."
+      ],
+      "pt": [
+        "No começo do turno dele, se o lançador estiver com menos de 20% da vida, ele será curado em 40% da vida e ganhará 20% de danos finais no turno em andamento. Esse efeito só pode se produzir uma vez por combate."
       ]
     },
     "conditions": {
@@ -36484,6 +36487,10 @@
       "it": [
         "Emote Dofus Avorio",
         "Alla fine del turno, i danni del prossimo attacco subito sono ridotti del 50%."
+      ],
+      "pt": [
+        "Emote Dofus Marfim",
+        "No fim do turno, os danos do próximo ataque sofrido serão reduzidos em 50%."
       ]
     },
     "conditions": {
@@ -36617,6 +36624,10 @@
       "it": [
         "Emote Dofus Ebano",
         "Genera 1 carica a inizio turno, 1 carica infliggendo danni da mischia e 1 carica infliggendo danni a distanza.\n\nQuando vengono accumulate 5 cariche, l'attacco seguente consuma le cariche e applica un veleno sul bersaglio per 3 turni.\n\nOgni carica accorda un bonus del 2% dei danni finali causati."
+      ],
+      "pt": [
+        "Emote Dofus Ébano",
+        "Gera 1 carga no começo do turno, 1 segunda carga inflingindo danos de corpo a corpo e 1 terceira carga inflingindo dados a distância.\n\nQuando 5 cargas forem alcançadas, o próximo ataque consumirá as cargas e aplicará um veneno no alvo durante 3 turnos. \n\nCada carga dará um bônus de 2% de danos finais causados."
       ]
     },
     "conditions": {
@@ -122917,13 +122928,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Prismaparecido"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "The bearer becomes invisible (1 turn) at the start of their first round"
+      ],
+      "pt": [
+        "O portador fica invisível (1 turno) no início do primeiro turno de jogo dele"
       ]
     },
     "conditions": {
@@ -122940,13 +122954,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Prisada"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "The bear gains the Gravity state as long as they have not suffered any damage"
+      ],
+      "pt": [
+        "O portador ganha o estado de Gravidade se não tiver sofrido danos"
       ]
     },
     "conditions": {
@@ -122963,13 +122980,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Priora Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "At the end of their first turn, the bearer reduces damage by 20% (1 turn) for each enemy within 2 cells"
+      ],
+      "pt": [
+        "No fim do primeiro turno dele, o portador reduz em 20% os danos (1 turno) por inimigo a até 2 células de distância"
       ]
     },
     "conditions": {
@@ -122986,13 +123006,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Aprissar Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 9 cells away and loses 2 AP (2 turns) per enemy within 9 cells"
+      ],
+      "pt": [
+        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 9 células de distância e perde 2 PA (2 turnos) por inimigo a até 9 células"
       ]
     },
     "conditions": {
@@ -123009,13 +123032,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Prigen Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "Heals 100% of the enemy damage suffered until the end of the first turn"
+      ],
+      "pt": [
+        "Cura 100% dos danos inimigos sofridos até o fim do primeiro turno"
       ]
     },
     "conditions": {
@@ -123032,13 +123058,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Golprisma Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "The bearer gains 300 Power (1 turn) if they suffer an enemy hit before playing"
+      ],
+      "pt": [
+        "O portador ganha 300 de potência (1 turno) quando recebe um golpe inimigo antes de jogar"
       ]
     },
     "conditions": {
@@ -123055,12 +123084,13 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Pricipitada Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": ["The bearer gains +4 AP for their first round but also loses 4 MP"]
+      "en": ["The bearer gains +4 AP for their first round but also loses 4 MP"],
+      "pt": ["O portador ganha +4 PA durante seu primeiro turno, mas também -4 PM"]
     },
     "conditions": {
       "conditions": {},
@@ -123076,12 +123106,13 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Prissão Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": ["The bearer gains 4 AP for 1 turn but inflicts -50% damage"]
+      "en": ["The bearer gains 4 AP for 1 turn but inflicts -50% damage"],
+      "pt": ["O portador ganh 4 PA durante 1 turno, mas inflige -50% de danos"]
     },
     "conditions": {
       "conditions": {},
@@ -123097,13 +123128,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Pritek Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "The bearer gains 100% of their current health in shield points for their first round"
+      ],
+      "pt": [
+        "O portador ganha 100% da vida atual em pontos de escudo durante seu primeiro turno de jogo"
       ]
     },
     "conditions": {
@@ -123120,12 +123154,13 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Surprisma Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": ["The bearer gains 50 Critial for 1 turn"]
+      "en": ["The bearer gains 50 Critial for 1 turn"],
+      "pt": ["O portador ganha 50% de crítico durante 1 turno"]
     },
     "conditions": {
       "conditions": {},
@@ -123141,13 +123176,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Priora"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "At the end of their first turn, the bearer reduces damage by 5% (3 turns) for each enemy within 2 cells"
+      ],
+      "pt": [
+        "No fim do primeiro turno dele, o portador reduz em 5% os danos (3 turnos) por inimigo a até 2 células de distância"
       ]
     },
     "conditions": {
@@ -123164,13 +123202,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Aprissar"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 15 cells away"
+      ],
+      "pt": [
+        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 15 células de distância"
       ]
     },
     "conditions": {
@@ -123187,13 +123228,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Prigen"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "Heals 15% of the enemy damage suffered until the end of the third turn"
+      ],
+      "pt": [
+        "Cura 15% dos danos inimigos sofridos até o fim do terceiro turno"
       ]
     },
     "conditions": {
@@ -123210,12 +123254,13 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Primune"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": ["The bearer reduces damage suffered by 80% before playing"]
+      "en": ["The bearer reduces damage suffered by 80% before playing"],
+      "pt": ["O portador reduz os danos sofridos em 80% antes de jogar"]
     },
     "conditions": {
       "conditions": {},
@@ -123231,13 +123276,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Goldprisma"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "The bearer gains 100 Power (3 turns) if they suffer an enemy hit before playing"
+      ],
+      "pt": [
+        "O portador ganha 100 de potência (3 turnos) quando recebe um golpe inimigo antes de jogar"
       ]
     },
     "conditions": {
@@ -123254,13 +123302,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Prismeiros"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "The bearer gains 100% of their level in shield points (infinite) for each opponent (excluding summons) that plays before them"
+      ],
+      "pt": [
+        "O portador ganha 100% do nível em pontos de escudo (infinito) por adversário (fora invocações) que joga antes dele"
       ]
     },
     "conditions": {
@@ -124785,7 +124836,7 @@
       "de": [],
       "es": [],
       "it": "Domakuro",
-      "pt": []
+      "pt": "Domakuro"
     },
     "itemType": "Dofus",
     "setID": null,
@@ -124806,6 +124857,9 @@
       ],
       "it": [
         "A partire dal turno 6, il lanciatore ottiene fino a 50 danni per la restante parte del combattimento a seconda del numero di attacchi che infliggono danni diretti causati in ognuno dei turni precedenti."
+      ],
+      "pt": [
+        "A partir do turno 6, o lançador ganha até 50 de dano pra o resto do combate. O bônus de dano dado é reduzido em 5 por ataque até 10 por turno para qualquer ataque direto lançado nos turnos de 1 a 5."
       ]
     },
     "conditions": {
