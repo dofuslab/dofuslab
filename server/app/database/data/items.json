@@ -123276,7 +123276,7 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": "Goldprisma"
+      "pt": "Golprisma"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123328,13 +123328,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Korpris"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "The bearer gains 250 MP Parry before playing, then 50 MP Parry for 1 turn"
+      ],
+      "pt": [
+        "O portador ganha 250 de Esquiva PM antes de jogar e, depois, 50 de Esquiva PM durante 1 turno"
       ]
     },
     "conditions": {
@@ -123351,12 +123354,13 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Pricipitada"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": ["The bearer gains +2 AP for their first round"]
+      "en": ["The bearer gains +2 AP for their first round"],
+      "pt": ["O portador ganha +2 PA durante seu primeiro turno de jogo"]
     },
     "conditions": {
       "conditions": {},
@@ -123372,12 +123376,13 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Prissão"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": ["The bearer gains 1 AP for 3 turns but inflicts -10% damage"]
+      "en": ["The bearer gains 1 AP for 3 turns but inflicts -10% damage"],
+      "pt": ["O portador ganha 1 PA durante 3 turnos, mas inflige -10% de danos"]
     },
     "conditions": {
       "conditions": {},
@@ -123393,13 +123398,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Pritek"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "The bearer gains 25% of their current health in shield points for their first three rounds"
+      ],
+      "pt": [
+        "O portador ganha 25% da vida atual em pontos de escudo durante seus três primeiros turnos de jogo"
       ]
     },
     "conditions": {
@@ -123416,13 +123424,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Prismencanto"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "Reduces the duration of active effects on the bearer by 5 at the start of their first round"
+      ],
+      "pt": [
+        "Reduz em 4 a duração dos efeitos ativos no portador no início do primeiro turno de jogo dele"
       ]
     },
     "conditions": {
@@ -123439,13 +123450,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Priximidade"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "At the start of their first round, the bearer gains 200% of their level in shield (infinite) for each enemy within 2 cells"
+      ],
+      "pt": [
+        "No começo de seu primeiro turno de jogo, o portador ganha 200% do nível em escudo (inifinito) por inimigo a até 2 células"
       ]
     },
     "conditions": {
@@ -123462,13 +123476,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Priora brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "At the end of their first turn, the bearer reduces damage by 10% (2 turns) for each enemy within 2 cells"
+      ],
+      "pt": [
+        "No fim do primeiro turno dele, o portador reduz em 10% os danos (2 turnos) por inimigo a até 2 células de distância"
       ]
     },
     "conditions": {
@@ -123485,13 +123502,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Aprissar Brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 12 cells away and loses 1 AP (2 turns) per enemy within 12 cells"
+      ],
+      "pt": [
+        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 12 células de distância e perde 1 PA (2 turnos) por inimigo a até 12 células"
       ]
     },
     "conditions": {
@@ -123508,13 +123528,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Prigen Brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "Heals 30% of enemy damage suffered until the end of the second turn"
+      ],
+      "pt": [
+        "Cura 30% dos danos inimigos sofridos até o fim do segundo turno"
       ]
     },
     "conditions": {
@@ -123531,13 +123554,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Golprisma Brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "The bearer gains 200 Power (2 turns) if they suffer an enemy hit before playing"
+      ],
+      "pt": [
+        "O portador ganha 200 de potência (2 turnos) quando recebe um golpe inimigo antes de jogar"
       ]
     },
     "conditions": {
@@ -123554,12 +123580,13 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Pricipitada Brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": ["The bearer gains +3 AP for their first round but also loses 2 MP"]
+      "en": ["The bearer gains +3 AP for their first round but also loses 2 MP"],
+      "pt": ["O portador ganha +3 PA durante seu primeiro turno, mas também -2 PM"]
     },
     "conditions": {
       "conditions": {},
@@ -123575,12 +123602,13 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Prissão Brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": ["The bearer gains 2 AP for 2 turns but inflicts -20% damage"]
+      "en": ["The bearer gains 2 AP for 2 turns but inflicts -20% damage"],
+      "pt": ["O portador ganha 2 PA durante 2 turnos, mas inflige -35% de danos"]
     },
     "conditions": {
       "conditions": {},
@@ -123596,13 +123624,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Pritek Brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "The bearer gains 50% of their current health in shield points for their first two rounds"
+      ],
+      "pt": [
+        "O portador ganha 50% da vida atual em pontos de escudo durante seus dois primeiros turnos de jogo"
       ]
     },
     "conditions": {
@@ -123619,12 +123650,13 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Surprisma Brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": ["The bearer gains 20 Critical for 2 turns"]
+      "en": ["The bearer gains 20 Critical for 2 turns"],
+      "pt": ["O portador ganha 20 de crítico durante 2 turnos"]
     },
     "conditions": {
       "conditions": {},
@@ -123640,13 +123672,16 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Esprírito"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": [
         "The bearer gains 250 AP Parry before playing, then 50 AP Parry for 1 turn"
+      ],
+      "pt": [
+        "O portador ganha 250 de Esquiva PA antes de jogar e, depois, 50 de Esquiva PA durante 1 turno"
       ]
     },
     "conditions": {
@@ -123663,12 +123698,13 @@
       "de": null,
       "es": null,
       "it": null,
-      "pt": null
+      "pt": "Surprisma"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
-      "en": ["The bearer gains 8 Critical for 3 turns"]
+      "en": ["The bearer gains 8 Critical for 3 turns"],
+      "pt": ["O portador ganha 8 de crítico durante 3 turnos"]
     },
     "conditions": {
       "conditions": {},
