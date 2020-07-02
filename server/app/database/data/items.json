@@ -122924,7 +122924,7 @@
     "dofusID": "217029",
     "name": {
       "en": "Disaprys",
-      "fr": null,
+      "fr": "Prysmaru",
       "de": null,
       "es": null,
       "it": "Prisparito",
@@ -122934,7 +122934,7 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer becomes invisible (1 turn) at the start of their first round"
+        "The bearer becomes invisible (1 turn) at the start of their first round."
       ],
       "fr": [
         "Le porteur devient invisible (1 tour) au début de son premier tour de jeu."
@@ -122943,7 +122943,7 @@
         "Il portatore diventa invisibile per 1 turno all'inizio del suo primo turno di gioco."
       ],
       "pt": [
-        "O portador fica invisível (1 turno) no início do primeiro turno de jogo dele"
+        "O portador fica invisível (1 turno) no início do primeiro turno de jogo dele."
       ]
     },
     "conditions": {
@@ -122956,7 +122956,7 @@
     "dofusID": "217035",
     "name": {
       "en": "Gravprysy",
-      "fr": null,
+      "fr": "Prysantor",
       "de": null,
       "es": null,
       "it": "Prisante",
@@ -122966,7 +122966,7 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bear gains the Gravity state as long as they have not suffered any damage"
+        "The bearer gains the Gravity state as long as they have not suffered any damage."
       ],
       "fr": [
         "Le porteur gagne l'état Pesanteur tant qu'il n'a pas subi de dommages."
@@ -122975,7 +122975,7 @@
         "Il portatore viene affetto dallo stato Pesantezza fino a quando non subisce danni."
       ],
       "pt": [
-        "O portador ganha o estado de Gravidade se não tiver sofrido danos"
+        "O portador ganha o estado de Gravidade se não tiver sofrido danos."
       ]
     },
     "conditions": {
@@ -122988,7 +122988,7 @@
     "dofusID": "217028",
     "name": {
       "en": "Iridescent Pryank",
-      "fr": null,
+      "fr": "Telprys Iridescente",
       "de": null,
       "es": null,
       "it": "Debolpris Iridescente",
@@ -122998,13 +122998,16 @@
     "level": 180,
     "customStats": {
       "en": [
-        "At the end of their first turn, the bearer reduces damage by 20% (1 turn) for each enemy within 2 cells"
+        "At the end of their first turn, the bearer reduces damage by 20% (1 turn) for each enemy within 2 cells."
       ],
       "it": [
         "Alla fine del suo primo turno, il portatore riduce i danni del 20% per 1 turno per ogni nemico a 2 caselle o meno."
       ],
       "pt": [
         "No fim do primeiro turno dele, o portador reduz em 20% os danos (1 turno) por inimigo a até 2 células de distância"
+      ],
+      "fr": [
+        "À la fin de son premier tour, le porteur réduit les dommages de 20% (1 tour) pour chaque ennemi à 2 cases ou moins."
       ]
     },
     "conditions": {
@@ -123017,7 +123020,7 @@
     "dofusID": "217017",
     "name": {
       "en": "Iridescent Prycapture",
-      "fr": null,
+      "fr": "Ratrapry Irdescente",
       "de": null,
       "es": null,
       "it": "Acchiappris Iridescente",
@@ -123027,13 +123030,16 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 1 MP (2 turns) per enemy more than 9 cells away and loses 2 AP (2 turns) per enemy within 9 cells"
+        "The bearer gains 1 MP (2 turns) per enemy more than 9 cells away and loses 2 AP (2 turns) per enemy within 9 cells."
+      ],
+      "fr": [
+        "Le porteur gagne 1 PM (2 tours) par ennemi à plus de cases et perd 2 PA (2 tours) par ennemi à 9 cases ou moins."
       ],
       "it": [
         "Il portatore ottiene 1 PM per 2 turni per ogni nemico a più di 9 caselle e perde 1 PA per 2 turni per ogni nemico a 9 caselle o meno."
       ],
       "pt": [
-        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 9 células de distância e perde 2 PA (2 turnos) por inimigo a até 9 células"
+        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 9 células de distância e perde 2 PA (2 turnos) por inimigo a até 9 células."
       ]
     },
     "conditions": {
@@ -123046,7 +123052,7 @@
     "dofusID": "217020",
     "name": {
       "en": "Iridescent Prygenerate",
-      "fr": null,
+      "fr": "Prygen Iridescente",
       "de": null,
       "es": null,
       "it": "Priscura Iridescente",
@@ -123056,13 +123062,16 @@
     "level": 180,
     "customStats": {
       "en": [
-        "Heals 100% of the enemy damage suffered until the end of the first turn"
+        "Heals 100% of the enemy damage suffered until the end of the first turn."
+      ],
+      "fr": [
+        "Soigne 100% des dommages ennemis subis jusqu'à la fin du premier tour."
       ],
       "it": [
         "Cura il 100% dei danni nemici subito fino alla fine del primo turno."
       ],
       "pt": [
-        "Cura 100% dos danos inimigos sofridos até o fim do primeiro turno"
+        "Cura 100% dos danos inimigos sofridos até o fim do primeiro turno."
       ]
     },
     "conditions": {
@@ -123075,7 +123084,7 @@
     "dofusID": "217014",
     "name": {
       "en": "Iridescent Pryndsight",
-      "fr": null,
+      "fr": "Aprykou Iridescente",
       "de": null,
       "es": null,
       "it": "Prismatenza Iridescente",
@@ -123085,7 +123094,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 300 Power (1 turn) if they suffer an enemy hit before playing"
+        "The bearer gains 300 Power (1 turn) if they suffer an enemy hit before playing."
+      ],
+      "fr": [
+        "Le porteur gagne 300 Puissance (1 tour) si un coup ennemi est reçu avant d'avoir joué."
       ],
       "it": [
         "Il portatore ottiene 300 Potenza per 1 turno se riceve un colpo nemico prima di aver giocato."
@@ -123104,7 +123116,7 @@
     "dofusID": "217023",
     "name": {
       "en": "Iridescent Prysipitate",
-      "fr": null,
+      "fr": "Prycipithon Iridescente",
       "de": null,
       "es": null,
       "it": "Prismipitazione Iridescente",
@@ -123123,7 +123135,7 @@
         "Il portatore ottiene 4 PA durante il suo primo turno di gioco ma perde 4 PM."
       ],
       "pt": [
-        "O portador ganha +4 PA durante seu primeiro turno, mas também -4 PM"
+        "O portador ganha +4 PA durante seu primeiro turno, mas também -4 PM."
       ]
     },
     "conditions": {
@@ -123136,7 +123148,7 @@
     "dofusID": "217008",
     "name": {
       "en": "Iridescent Pryssure",
-      "fr": null,
+      "fr": "Pryssion Iridescente",
       "de": null,
       "es": null,
       "it": "Prissione Iridescente",
@@ -123153,7 +123165,7 @@
         "Il portatore ottiene 4 PA per 1 turno ma causa il 50% dei danni in meno."
       ],
       "pt": [
-        "O portador ganh 4 PA durante 1 turno, mas inflige -50% de danos"
+        "O portador ganh 4 PA durante 1 turno, mas inflige -50% de danos."
       ]
     },
     "conditions": {
@@ -123166,7 +123178,7 @@
     "dofusID": "217002",
     "name": {
       "en": "Iridescent Prytekt",
-      "fr": null,
+      "fr": "Prytek Iridescente",
       "de": null,
       "es": null,
       "it": "Pristezione Iridescente",
@@ -123176,13 +123188,16 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 100% of their current health in shield points for their first round"
+        "The bearer gains 100% of their current health in shield points for their first round."
+      ],
+      "fr": [
+        "Le porteur gagne 100% de sa vie actuelle en points de bouclier pendant son premier tour de jeu."
       ],
       "it": [
         "Il portatore ottiene il 100% dei suoi PV attuali in punti scudo per il suo primo turno di gioco."
       ],
       "pt": [
-        "O portador ganha 100% da vida atual em pontos de escudo durante seu primeiro turno de jogo"
+        "O portador ganha 100% da vida atual em pontos de escudo durante seu primeiro turno de jogo."
       ]
     },
     "conditions": {
@@ -123195,7 +123210,7 @@
     "dofusID": "217011",
     "name": {
       "en": "Iridescent Surpryz",
-      "fr": null,
+      "fr": "Surpryz Iridescente",
       "de": null,
       "es": null,
       "it": "Sorprisma Iridescente",
@@ -123207,7 +123222,7 @@
       "en": ["The bearer gains 50 Critial for 1 turn."],
       "fr": ["Le porteur gagne 50 Critique pendant 1 tour."],
       "it": ["Il portatore ottiene 50 Critici per 1 turno."],
-      "pt": ["O portador ganha 50% de crítico durante 1 turno"]
+      "pt": ["O portador ganha 50% de crítico durante 1 turno."]
     },
     "conditions": {
       "conditions": {},
@@ -123219,7 +123234,7 @@
     "dofusID": "217026",
     "name": {
       "en": "Pryank",
-      "fr": null,
+      "fr": "Telprys",
       "de": null,
       "es": null,
       "it": "Debolpris",
@@ -123229,7 +123244,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "At the end of their first turn, the bearer reduces damage by 5% (3 turns) for each enemy within 2 cells"
+        "At the end of their first turn, the bearer reduces damage by 5% (3 turns) for each enemy within 2 cells."
+      ],
+      "fr": [
+        "À la fin de son premier tour, le porteur réduit les dommages de 5% (3 tours) pour chaque ennemi à cases ou moins."
       ],
       "it": [
         "Alla fine del suo primo turno, il portatore riduce i danni del 5% per 3 turni per ogni nemico a 2 caselle o meno."
@@ -123248,7 +123266,7 @@
     "dofusID": "217015",
     "name": {
       "en": "Prycapture",
-      "fr": null,
+      "fr": "Ratrapry",
       "de": null,
       "es": null,
       "it": "Acchiappris",
@@ -123258,14 +123276,14 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 1 MP (2 turns) per enemy more than 15 cells away"
+        "The bearer gains 1 MP (2 turns) per enemy more than 15 cells away."
       ],
       "fr": ["Le porteur gagne 1 PM (2 tours) par ennemi à plus de 15 cases."],
       "it": [
         "Il portatore ottiene 1 PM per 2 turni per ogni nemico a più di 15 caselle."
       ],
       "pt": [
-        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 15 células de distância"
+        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 15 células de distância."
       ]
     },
     "conditions": {
@@ -123278,7 +123296,7 @@
     "dofusID": "217018",
     "name": {
       "en": "Prygenerate",
-      "fr": null,
+      "fr": "Prygen",
       "de": null,
       "es": null,
       "it": "Priscura",
@@ -123288,7 +123306,10 @@
     "level": 180,
     "customStats": {
       "en": [
-        "Heals 15% of the enemy damage suffered until the end of the third turn"
+        "Heals 15% of the enemy damage suffered until the end of the third turn."
+      ],
+      "fr": [
+        "Soigne 15% des dommages ennemis subis jusqu'à la fin du troisième tour."
       ],
       "it": [
         "Cura il 15% dei danni nemici subiti fino alla fine del terzo turno."
@@ -123307,7 +123328,7 @@
     "dofusID": "217034",
     "name": {
       "en": "Prymune",
-      "fr": null,
+      "fr": "Prymune",
       "de": null,
       "es": null,
       "it": "Prismune",
@@ -123321,7 +123342,7 @@
       "it": [
         "Il portatore riduce i danni subiti del 80% prima di giocare."
       ],
-      "pt": ["O portador reduz os danos sofridos em 80% antes de jogar"]
+      "pt": ["O portador reduz os danos sofridos em 80% antes de jogar."]
     },
     "conditions": {
       "conditions": {},
@@ -123333,7 +123354,7 @@
     "dofusID": "217012",
     "name": {
       "en": "Pryndsight",
-      "fr": null,
+      "fr": "Aprykou",
       "de": null,
       "es": null,
       "it": "Prismatenza",
@@ -123343,7 +123364,7 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 100 Power (3 turns) if they suffer an enemy hit before playing"
+        "The bearer gains 100 Power (3 turns) if they suffer an enemy hit before playing."
       ],
       "fr": [
         "Le porteur gagne 100 Puissance (3 tours) si un coup ennemi est reçu avant d'avoir joué."
@@ -123352,7 +123373,7 @@
         "Il portatore ottiene 100 Potenza per 3 turni se riceve un colpo nemico prima di aver giocato."
       ],
       "pt": [
-        "O portador ganha 100 de potência (3 turnos) quando recebe um golpe inimigo antes de jogar"
+        "O portador ganha 100 de potência (3 turnos) quando recebe um golpe inimigo antes de jogar."
       ]
     },
     "conditions": {
@@ -123365,7 +123386,7 @@
     "dofusID": "217032",
     "name": {
       "en": "Pryshield",
-      "fr": null,
+      "fr": "Aprybou",
       "de": null,
       "es": null,
       "it": "Doposcudopris",
@@ -123375,7 +123396,7 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 100% of their level in shield points (infinite) for each opponent (excluding summons) that plays before them"
+        "The bearer gains 100% of their level in shield points (infinite) for each opponent (excluding summons) that plays before them."
       ],
       "fr": [
         "Le porteur gagne 100% de son niveau en points de bouclier (infini) pour chaque adversaire (hors invocation) que joue avant lui."
@@ -123384,7 +123405,7 @@
         "Il portatore ottiene il 100% del suo livello in punti scudo (infinito) per ogni nemico, che non sia un'evocazione, che gioca prima di lui."
       ],
       "pt": [
-        "O portador ganha 100% do nível em pontos de escudo (infinito) por adversário (fora invocações) que joga antes dele"
+        "O portador ganha 100% do nível em pontos de escudo (infinito) por adversário (fora invocações) que joga antes dele."
       ]
     },
     "conditions": {
@@ -123397,7 +123418,7 @@
     "dofusID": "217025",
     "name": {
       "en": "Prysical",
-      "fr": null,
+      "fr": "Korprys",
       "de": null,
       "es": null,
       "it": "Corpris",
@@ -123407,7 +123428,7 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 250 MP Parry before playing, then 50 MP Parry for 1 turn"
+        "The bearer gains 250 MP Parry before playing, then 50 MP Parry for 1 turn."
       ],
       "fr": [
         "Le porteur gagne 250 Esquive PM avant d'avoir joué, puis 50 Esquive PM pendant 1 tour."
@@ -123416,7 +123437,7 @@
         "Il portatore ottiene 250 Schivata PM prima di giocare, poi 50 Schivata PM per 1 turno."
       ],
       "pt": [
-        "O portador ganha 250 de Esquiva PM antes de jogar e, depois, 50 de Esquiva PM durante 1 turno"
+        "O portador ganha 250 de Esquiva PM antes de jogar e, depois, 50 de Esquiva PM durante 1 turno."
       ]
     },
     "conditions": {
@@ -123429,7 +123450,7 @@
     "dofusID": "217021",
     "name": {
       "en": "Prysipitate",
-      "fr": null,
+      "fr": "Prycipithon",
       "de": null,
       "es": null,
       "it": "Prismipitazione",
@@ -123441,7 +123462,7 @@
       "en": ["The bearer gains +2 AP for their first round."],
       "fr": ["Le porteur gagne +2 PA pendant son premier tour de jeu."],
       "it": ["Il portatore ottiene 2 PA durante il suo primo turno di gioco."],
-      "pt": ["O portador ganha +2 PA durante seu primeiro turno de jogo"]
+      "pt": ["O portador ganha +2 PA durante seu primeiro turno de jogo."]
     },
     "conditions": {
       "conditions": {},
@@ -123453,7 +123474,7 @@
     "dofusID": "217006",
     "name": {
       "en": "Pryssure",
-      "fr": null,
+      "fr": "Pryssion",
       "de": null,
       "es": null,
       "it": "Prissione",
@@ -123470,7 +123491,7 @@
         "Il portatore ottiene 1 PA per 3 turni ma causa il 10% dei danni in meno."
       ],
       "pt": [
-        "O portador ganha 1 PA durante 3 turnos, mas inflige -10% de danos"
+        "O portador ganha 1 PA durante 3 turnos, mas inflige -10% de danos."
       ]
     },
     "conditions": {
@@ -123483,7 +123504,7 @@
     "dofusID": "217000",
     "name": {
       "en": "Prytekt",
-      "fr": null,
+      "fr": "Prytek",
       "de": null,
       "es": null,
       "it": "Pristezione",
@@ -123493,13 +123514,16 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 25% of their current health in shield points for their first three rounds"
+        "The bearer gains 25% of their current health in shield points for their first three rounds."
+      ],
+      "fr": [
+        "Le porteur gagne 25% de sa vie actuelle en points de bouclier pendant ses trois premiers tours de jeu."
       ],
       "it": [
         "Il portatore ottiene il 25% dei suoi PV attuali in punti scudo per i suoi primi tre turni di gioco."
       ],
       "pt": [
-        "O portador ganha 25% da vida atual em pontos de escudo durante seus três primeiros turnos de jogo"
+        "O portador ganha 25% da vida atual em pontos de escudo durante seus três primeiros turnos de jogo."
       ]
     },
     "conditions": {
@@ -123512,7 +123536,7 @@
     "dofusID": "217030",
     "name": {
       "en": "Prywitchment",
-      "fr": null,
+      "fr": "Prysmenvout",
       "de": null,
       "es": null,
       "it": "Prismincant",
@@ -123522,7 +123546,7 @@
     "level": 180,
     "customStats": {
       "en": [
-        "Reduces the duration of active effects on the bearer by 5 at the start of their first round"
+        "Reduces the duration of active effects on the bearer by 4 at the start of their first round."
       ],
       "fr": [
         "Réduit de 4 la durée des effects actifs sur le porteur au début de son premier tour de jeu."
@@ -123531,7 +123555,7 @@
         "Riduce di 4 turni la durata degli effetti attivi sul portatore all'inizio del suo primo turno di gioco."
       ],
       "pt": [
-        "Reduz em 4 a duração dos efeitos ativos no portador no início do primeiro turno de jogo dele"
+        "Reduz em 4 a duração dos efeitos ativos no portador no início do primeiro turno de jogo dele."
       ]
     },
     "conditions": {
@@ -123544,7 +123568,7 @@
     "dofusID": "217033",
     "name": {
       "en": "Pryximity",
-      "fr": null,
+      "fr": "Pryximite",
       "de": null,
       "es": null,
       "it": "Vicinopris",
@@ -123554,7 +123578,7 @@
     "level": 180,
     "customStats": {
       "en": [
-        "At the start of their first round, the bearer gains 200% of their level in shield (infinite) for each enemy within 2 cells"
+        "At the start of their first round, the bearer gains 200% of their level in shield (infinite) for each enemy within 2 cells."
       ],
       "fr": [
         "Au début de son premier tour de jeu, le porteur gagne 200% de son niveau en bouclier (infini) pour chaque ennemi à 2 cases ou moins."
@@ -123563,7 +123587,7 @@
         "All'inizio del suo primo turno di gioco, il portatore ottiene il 200% del suo livello in punti scudo (infinito) per ogni nemico a 2 caselle o meno."
       ],
       "pt": [
-        "No começo de seu primeiro turno de jogo, o portador ganha 200% do nível em escudo (inifinito) por inimigo a até 2 células"
+        "No começo de seu primeiro turno de jogo, o portador ganha 200% do nível em escudo (inifinito) por inimigo a até 2 células."
       ]
     },
     "conditions": {
@@ -123576,7 +123600,7 @@
     "dofusID": "217027",
     "name": {
       "en": "Shiny Pryank",
-      "fr": null,
+      "fr": "Teleprys Brillante",
       "de": null,
       "es": null,
       "it": "Debolpris Brillante",
@@ -123586,7 +123610,7 @@
     "level": 180,
     "customStats": {
       "en": [
-        "At the end of their first turn, the bearer reduces damage by 10% (2 turns) for each enemy within 2 cells"
+        "At the end of their first turn, the bearer reduces damage by 10% (2 turns) for each enemy within 2 cells."
       ],
       "fr": [
         "À la fin de son premier tour, le porteur réduit les dommages de 10% (2 tours) pour chque ennemi à 2 cases ou moins."
@@ -123608,7 +123632,7 @@
     "dofusID": "217016",
     "name": {
       "en": "Shiny Prycapture",
-      "fr": null,
+      "fr": "Ratrapry Brillante",
       "de": null,
       "es": null,
       "it": "Acchiappris Brillante",
@@ -123618,13 +123642,16 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 1 MP (2 turns) per enemy more than 12 cells away and loses 1 AP (2 turns) per enemy within 12 cells"
+        "The bearer gains 1 MP (2 turns) per enemy more than 12 cells away and loses 1 AP (2 turns) per enemy within 12 cells."
+      ],
+      "fr": [
+        "Le porteur gagne 1 PM (2 tours) par ennemi à plus de 12 cases et perd 1 PA (2 tours) par ennemi à 12 cases ou moins."
       ],
       "it": [
         "Il portatore ottiene 1 PM per 2 turni per ogni nemico a più di 12 caselle e perde 1 PA per 2 turni per ogni nemico a 12 caselle o meno."
       ],
       "pt": [
-        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 12 células de distância e perde 1 PA (2 turnos) por inimigo a até 12 células"
+        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 12 células de distância e perde 1 PA (2 turnos) por inimigo a até 12 células"   
       ]
     },
     "conditions": {
@@ -123637,7 +123664,7 @@
     "dofusID": "217019",
     "name": {
       "en": "Shiny Prygenerate",
-      "fr": null,
+      "fr": "Prygen Brillante",
       "de": null,
       "es": null,
       "it": "Priscura Brillante",
@@ -123647,13 +123674,16 @@
     "level": 180,
     "customStats": {
       "en": [
-        "Heals 30% of enemy damage suffered until the end of the second turn"
+        "Heals 30% of enemy damage suffered until the end of the second turn."
+      ],
+      "fr": [
+        "Soigne 30% de dommages ennemis subis jusqu'à la fin du deuxième tour."
       ],
       "it": [
         "Cura il 30% dei danni nemici subiti fino alla fine del secondo turno."
       ],
       "pt": [
-        "Cura 30% dos danos inimigos sofridos até o fim do segundo turno"
+        "Cura 30% dos danos inimigos sofridos até o fim do segundo turno."
       ]
     },
     "conditions": {
@@ -123666,7 +123696,7 @@
     "dofusID": "217013",
     "name": {
       "en": "Shiny Pryndsight",
-      "fr": null,
+      "fr": "Aprykou Brillante",
       "de": null,
       "es": null,
       "it": "Prismatenza Brillante",
@@ -123676,13 +123706,16 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 200 Power (2 turns) if they suffer an enemy hit before playing"
+        "The bearer gains 200 Power (2 turns) if they suffer an enemy hit before playing."
+      ],
+      "fr": [
+        "Le porteur gagne 200 Puissance (2 tours) si un coup ennemi est reçu avant d'avoir joué."
       ],
       "it": [
         "Il portatore ottiene 200 Potenza per 2 turni se riceve un colpo nemico prima di aver giocato."
       ],
       "pt": [
-        "O portador ganha 200 de potência (2 turnos) quando recebe um golpe inimigo antes de jogar"
+        "O portador ganha 200 de potência (2 turnos) quando recebe um golpe inimigo antes de jogar."
       ]
     },
     "conditions": {
@@ -123695,7 +123728,7 @@
     "dofusID": "217022",
     "name": {
       "en": "Shiny Prysipitate",
-      "fr": null,
+      "fr": "Pricipithon Brillante",
       "de": null,
       "es": null,
       "it": "Prismipitazione Brillante",
@@ -123714,7 +123747,7 @@
         "Il portatore ottiene 3 PA durante il suo primo turno di gioco ma perde 2 PM."
       ],
       "pt": [
-        "O portador ganha +3 PA durante seu primeiro turno, mas também -2 PM"
+        "O portador ganha +3 PA durante seu primeiro turno, mas também -2 PM."
       ]
     },
     "conditions": {
@@ -123727,7 +123760,7 @@
     "dofusID": "217007",
     "name": {
       "en": "Shiny Pryssure",
-      "fr": null,
+      "fr": "Pryssion Brillante",
       "de": null,
       "es": null,
       "it": "Prissione Brillante",
@@ -123744,7 +123777,7 @@
         "Il portatore ottiene 2 PA per 2 turni ma causa il 35% dei danni in meno."
       ],
       "pt": [
-        "O portador ganha 2 PA durante 2 turnos, mas inflige -35% de danos"
+        "O portador ganha 2 PA durante 2 turnos, mas inflige -35% de danos."
       ]
     },
     "conditions": {
@@ -123757,7 +123790,7 @@
     "dofusID": "217001",
     "name": {
       "en": "Shiny Prytekt",
-      "fr": null,
+      "fr": "Prytek Brillante",
       "de": null,
       "es": null,
       "it": "Pristezione Brillante",
@@ -123767,13 +123800,16 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 50% of their current health in shield points for their first two rounds"
+        "The bearer gains 50% of their current health in shield points for their first two rounds."
+      ],
+      "fr": [
+        "Le porteur gagne 50% de sa vie actuelle en points de bouclier pendant ses deux premiers tours de jeu."
       ],
       "it": [
         "Il portatore ottiene il 50% dei suoi PV attuali in punti scudo per i suoi primi due turni di gioco."
       ],
       "pt": [
-        "O portador ganha 50% da vida atual em pontos de escudo durante seus dois primeiros turnos de jogo"
+        "O portador ganha 50% da vida atual em pontos de escudo durante seus dois primeiros turnos de jogo."
       ]
     },
     "conditions": {
@@ -123786,7 +123822,7 @@
     "dofusID": "217010",
     "name": {
       "en": "Shiny Surpryz",
-      "fr": null,
+      "fr": "Surpryz Brillante",
       "de": null,
       "es": null,
       "it": "Sorprisma Brillante",
@@ -123810,7 +123846,7 @@
     "dofusID": "217024",
     "name": {
       "en": "Spryritual",
-      "fr": null,
+      "fr": "Espryt",
       "de": null,
       "es": null,
       "it": "Prismente",
@@ -123820,7 +123856,7 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 250 AP Parry before playing, then 50 AP Parry for 1 turn"
+        "The bearer gains 250 AP Parry before playing, then 50 AP Parry for 1 turn."
       ],
       "fr": [
         "Le porteur gagne 250 Esquive PA avant d'avoir joué, puis 50 Esquive PA pendant 1 tour."
@@ -123829,7 +123865,7 @@
         "Il portatore ottiene 250 Schivata PA prima di giocare, poi 50 Schivata PA per 1 turno."
       ],
       "pt": [
-        "O portador ganha 250 de Esquiva PA antes de jogar e, depois, 50 de Esquiva PA durante 1 turno"
+        "O portador ganha 250 de Esquiva PA antes de jogar e, depois, 50 de Esquiva PA durante 1 turno."
       ]
     },
     "conditions": {
@@ -123842,7 +123878,7 @@
     "dofusID": "217009",
     "name": {
       "en": "Surpryz",
-      "fr": null,
+      "fr": "Surpryz",
       "de": null,
       "es": null,
       "it": "Sorprisma",
