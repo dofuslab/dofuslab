@@ -36251,6 +36251,9 @@
       ],
       "it": [
         "All'inizio del suo turno, se il lanciatore ha meno del 20% della sua vita, viene curato del 40% della sua vita e ottiene il 20% dei danni finali per il turno in corso. \nL'effetto è attivabile una sola volta per combattimento."
+      ],
+      "pt": [
+        "No começo do turno dele, se o lançador estiver com menos de 20% da vida, ele será curado em 40% da vida e ganhará 20% de danos finais no turno em andamento. Esse efeito só pode se produzir uma vez por combate."
       ]
     },
     "conditions": {
@@ -36484,6 +36487,10 @@
       "it": [
         "Emote Dofus Avorio",
         "Alla fine del turno, i danni del prossimo attacco subito sono ridotti del 50%."
+      ],
+      "pt": [
+        "Emote Dofus Marfim",
+        "No fim do turno, os danos do próximo ataque sofrido serão reduzidos em 50%."
       ]
     },
     "conditions": {
@@ -36617,6 +36624,10 @@
       "it": [
         "Emote Dofus Ebano",
         "Genera 1 carica a inizio turno, 1 carica infliggendo danni da mischia e 1 carica infliggendo danni a distanza.\n\nQuando vengono accumulate 5 cariche, l'attacco seguente consuma le cariche e applica un veleno sul bersaglio per 3 turni.\n\nOgni carica accorda un bonus del 2% dei danni finali causati."
+      ],
+      "pt": [
+        "Emote Dofus Ébano",
+        "Gera 1 carga no começo do turno, 1 segunda carga inflingindo danos de corpo a corpo e 1 terceira carga inflingindo dados a distância.\n\nQuando 5 cargas forem alcançadas, o próximo ataque consumirá as cargas e aplicará um veneno no alvo durante 3 turnos. \n\nCada carga dará um bônus de 2% de danos finais causados."
       ]
     },
     "conditions": {
@@ -122917,7 +122928,7 @@
       "de": null,
       "es": null,
       "it": "Prisparito",
-      "pt": null
+      "pt": "Prismaparecido"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -122930,6 +122941,9 @@
       ],
       "it": [
         "Il portatore diventa invisibile per 1 turno all'inizio del suo primo turno di gioco."
+      ],
+      "pt": [
+        "O portador fica invisível (1 turno) no início do primeiro turno de jogo dele."
       ]
     },
     "conditions": {
@@ -122946,7 +122960,7 @@
       "de": null,
       "es": null,
       "it": "Prisante",
-      "pt": null
+      "pt": "Prisada"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -122959,6 +122973,9 @@
       ],
       "it": [
         "Il portatore viene affetto dallo stato Pesantezza fino a quando non subisce danni."
+      ],
+      "pt": [
+        "O portador ganha o estado de Gravidade se não tiver sofrido danos."
       ]
     },
     "conditions": {
@@ -122975,7 +122992,7 @@
       "de": null,
       "es": null,
       "it": "Debolpris Iridescente",
-      "pt": null
+      "pt": "Priora Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -122983,11 +123000,14 @@
       "en": [
         "At the end of their first turn, the bearer reduces damage by 20% (1 turn) for each enemy within 2 cells."
       ],
-      "fr": [
-        "À la fin de son premier tour, le porteur réduit les dommages de 20% (1 tour) pour chaque ennemi à 2 cases ou moins."
-      ],
       "it": [
         "Alla fine del suo primo turno, il portatore riduce i danni del 20% per 1 turno per ogni nemico a 2 caselle o meno."
+      ],
+      "pt": [
+        "No fim do primeiro turno dele, o portador reduz em 20% os danos (1 turno) por inimigo a até 2 células de distância"
+      ],
+      "fr": [
+        "À la fin de son premier tour, le porteur réduit les dommages de 20% (1 tour) pour chaque ennemi à 2 cases ou moins."
       ]
     },
     "conditions": {
@@ -123004,7 +123024,7 @@
       "de": null,
       "es": null,
       "it": "Acchiappris Iridescente",
-      "pt": null
+      "pt": "Aprissar Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123017,6 +123037,9 @@
       ],
       "it": [
         "Il portatore ottiene 1 PM per 2 turni per ogni nemico a più di 9 caselle e perde 1 PA per 2 turni per ogni nemico a 9 caselle o meno."
+      ],
+      "pt": [
+        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 9 células de distância e perde 2 PA (2 turnos) por inimigo a até 9 células."
       ]
     },
     "conditions": {
@@ -123033,7 +123056,7 @@
       "de": null,
       "es": null,
       "it": "Priscura Iridescente",
-      "pt": null
+      "pt": "Prigen Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123046,6 +123069,9 @@
       ],
       "it": [
         "Cura il 100% dei danni nemici subito fino alla fine del primo turno."
+      ],
+      "pt": [
+        "Cura 100% dos danos inimigos sofridos até o fim do primeiro turno."
       ]
     },
     "conditions": {
@@ -123062,7 +123088,7 @@
       "de": null,
       "es": null,
       "it": "Prismatenza Iridescente",
-      "pt": null
+      "pt": "Golprisma Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123075,6 +123101,9 @@
       ],
       "it": [
         "Il portatore ottiene 300 Potenza per 1 turno se riceve un colpo nemico prima di aver giocato."
+      ],
+      "pt": [
+        "O portador ganha 300 de potência (1 turno) quando recebe um golpe inimigo antes de jogar"
       ]
     },
     "conditions": {
@@ -123091,7 +123120,7 @@
       "de": null,
       "es": null,
       "it": "Prismipitazione Iridescente",
-      "pt": null
+      "pt": "Pricipitada Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123104,6 +123133,9 @@
       ],
       "it": [
         "Il portatore ottiene 4 PA durante il suo primo turno di gioco ma perde 4 PM."
+      ],
+      "pt": [
+        "O portador ganha +4 PA durante seu primeiro turno, mas também -4 PM."
       ]
     },
     "conditions": {
@@ -123120,7 +123152,7 @@
       "de": null,
       "es": null,
       "it": "Prissione Iridescente",
-      "pt": null
+      "pt": "Prissão Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123131,6 +123163,9 @@
       ],
       "it": [
         "Il portatore ottiene 4 PA per 1 turno ma causa il 50% dei danni in meno."
+      ],
+      "pt": [
+        "O portador ganh 4 PA durante 1 turno, mas inflige -50% de danos."
       ]
     },
     "conditions": {
@@ -123147,7 +123182,7 @@
       "de": null,
       "es": null,
       "it": "Pristezione Iridescente",
-      "pt": null
+      "pt": "Pritek Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123160,6 +123195,9 @@
       ],
       "it": [
         "Il portatore ottiene il 100% dei suoi PV attuali in punti scudo per il suo primo turno di gioco."
+      ],
+      "pt": [
+        "O portador ganha 100% da vida atual em pontos de escudo durante seu primeiro turno de jogo."
       ]
     },
     "conditions": {
@@ -123176,14 +123214,15 @@
       "de": null,
       "es": null,
       "it": "Sorprisma Iridescente",
-      "pt": null
+      "pt": "Surprisma Iridescente"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": ["The bearer gains 50 Critial for 1 turn."],
       "fr": ["Le porteur gagne 50 Critique pendant 1 tour."],
-      "it": ["Il portatore ottiene 50 Critici per 1 turno."]
+      "it": ["Il portatore ottiene 50 Critici per 1 turno."],
+      "pt": ["O portador ganha 50% de crítico durante 1 turno."]
     },
     "conditions": {
       "conditions": {},
@@ -123199,7 +123238,7 @@
       "de": null,
       "es": null,
       "it": "Debolpris",
-      "pt": null
+      "pt": "Priora"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123212,6 +123251,9 @@
       ],
       "it": [
         "Alla fine del suo primo turno, il portatore riduce i danni del 5% per 3 turni per ogni nemico a 2 caselle o meno."
+      ],
+      "pt": [
+        "No fim do primeiro turno dele, o portador reduz em 5% os danos (3 turnos) por inimigo a até 2 células de distância"
       ]
     },
     "conditions": {
@@ -123228,7 +123270,7 @@
       "de": null,
       "es": null,
       "it": "Acchiappris",
-      "pt": null
+      "pt": "Aprissar"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123239,6 +123281,9 @@
       "fr": ["Le porteur gagne 1 PM (2 tours) par ennemi à plus de 15 cases."],
       "it": [
         "Il portatore ottiene 1 PM per 2 turni per ogni nemico a più di 15 caselle."
+      ],
+      "pt": [
+        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 15 células de distância."
       ]
     },
     "conditions": {
@@ -123255,7 +123300,7 @@
       "de": null,
       "es": null,
       "it": "Priscura",
-      "pt": null
+      "pt": "Prigen"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123268,6 +123313,9 @@
       ],
       "it": [
         "Cura il 15% dei danni nemici subiti fino alla fine del terzo turno."
+      ],
+      "pt": [
+        "Cura 15% dos danos inimigos sofridos até o fim do terceiro turno"
       ]
     },
     "conditions": {
@@ -123284,7 +123332,7 @@
       "de": null,
       "es": null,
       "it": "Prismune",
-      "pt": null
+      "pt": "Primune"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123293,7 +123341,8 @@
       "fr": ["Le porteur réduit les dommages subis de 80% avant d'avoir joué."],
       "it": [
         "Il portatore riduce i danni subiti del 80% prima di giocare."
-      ]
+      ],
+      "pt": ["O portador reduz os danos sofridos em 80% antes de jogar."]
     },
     "conditions": {
       "conditions": {},
@@ -123309,7 +123358,7 @@
       "de": null,
       "es": null,
       "it": "Prismatenza",
-      "pt": null
+      "pt": "Golprisma"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123322,6 +123371,9 @@
       ],
       "it": [
         "Il portatore ottiene 100 Potenza per 3 turni se riceve un colpo nemico prima di aver giocato."
+      ],
+      "pt": [
+        "O portador ganha 100 de potência (3 turnos) quando recebe um golpe inimigo antes de jogar."
       ]
     },
     "conditions": {
@@ -123338,7 +123390,7 @@
       "de": null,
       "es": null,
       "it": "Doposcudopris",
-      "pt": null
+      "pt": "Prismeiros"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123351,6 +123403,9 @@
       ],
       "it": [
         "Il portatore ottiene il 100% del suo livello in punti scudo (infinito) per ogni nemico, che non sia un'evocazione, che gioca prima di lui."
+      ],
+      "pt": [
+        "O portador ganha 100% do nível em pontos de escudo (infinito) por adversário (fora invocações) que joga antes dele."
       ]
     },
     "conditions": {
@@ -123367,7 +123422,7 @@
       "de": null,
       "es": null,
       "it": "Corpris",
-      "pt": null
+      "pt": "Korpris"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123380,6 +123435,9 @@
       ],
       "it": [
         "Il portatore ottiene 250 Schivata PM prima di giocare, poi 50 Schivata PM per 1 turno."
+      ],
+      "pt": [
+        "O portador ganha 250 de Esquiva PM antes de jogar e, depois, 50 de Esquiva PM durante 1 turno."
       ]
     },
     "conditions": {
@@ -123396,14 +123454,15 @@
       "de": null,
       "es": null,
       "it": "Prismipitazione",
-      "pt": null
+      "pt": "Pricipitada"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": ["The bearer gains +2 AP for their first round."],
       "fr": ["Le porteur gagne +2 PA pendant son premier tour de jeu."],
-      "it": ["Il portatore ottiene 2 PA durante il suo primo turno di gioco."]
+      "it": ["Il portatore ottiene 2 PA durante il suo primo turno di gioco."],
+      "pt": ["O portador ganha +2 PA durante seu primeiro turno de jogo."]
     },
     "conditions": {
       "conditions": {},
@@ -123419,7 +123478,7 @@
       "de": null,
       "es": null,
       "it": "Prissione",
-      "pt": null
+      "pt": "Prissão"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123430,6 +123489,9 @@
       ],
       "it": [
         "Il portatore ottiene 1 PA per 3 turni ma causa il 10% dei danni in meno."
+      ],
+      "pt": [
+        "O portador ganha 1 PA durante 3 turnos, mas inflige -10% de danos."
       ]
     },
     "conditions": {
@@ -123446,7 +123508,7 @@
       "de": null,
       "es": null,
       "it": "Pristezione",
-      "pt": null
+      "pt": "Pritek"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123459,6 +123521,9 @@
       ],
       "it": [
         "Il portatore ottiene il 25% dei suoi PV attuali in punti scudo per i suoi primi tre turni di gioco."
+      ],
+      "pt": [
+        "O portador ganha 25% da vida atual em pontos de escudo durante seus três primeiros turnos de jogo."
       ]
     },
     "conditions": {
@@ -123475,7 +123540,7 @@
       "de": null,
       "es": null,
       "it": "Prismincant",
-      "pt": null
+      "pt": "Prismencanto"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123488,6 +123553,9 @@
       ],
       "it": [
         "Riduce di 4 turni la durata degli effetti attivi sul portatore all'inizio del suo primo turno di gioco."
+      ],
+      "pt": [
+        "Reduz em 4 a duração dos efeitos ativos no portador no início do primeiro turno de jogo dele."
       ]
     },
     "conditions": {
@@ -123504,7 +123572,7 @@
       "de": null,
       "es": null,
       "it": "Vicinopris",
-      "pt": null
+      "pt": "Priximidade"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123517,6 +123585,9 @@
       ],
       "it": [
         "All'inizio del suo primo turno di gioco, il portatore ottiene il 200% del suo livello in punti scudo (infinito) per ogni nemico a 2 caselle o meno."
+      ],
+      "pt": [
+        "No começo de seu primeiro turno de jogo, o portador ganha 200% do nível em escudo (inifinito) por inimigo a até 2 células."
       ]
     },
     "conditions": {
@@ -123533,7 +123604,7 @@
       "de": null,
       "es": null,
       "it": "Debolpris Brillante",
-      "pt": null
+      "pt": "Priora brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123546,6 +123617,9 @@
       ],
       "it": [
         "Alla fine del suo primo turno, il portatore riduce i danni del 10% per 2 turni per ogni nemico a 2 caselle o meno."
+      ],
+      "pt": [
+        "No fim do primeiro turno dele, o portador reduz em 10% os danos (2 turnos) por inimigo a até 2 células de distância"
       ]
     },
     "conditions": {
@@ -123562,7 +123636,7 @@
       "de": null,
       "es": null,
       "it": "Acchiappris Brillante",
-      "pt": null
+      "pt": "Aprissar Brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123575,6 +123649,9 @@
       ],
       "it": [
         "Il portatore ottiene 1 PM per 2 turni per ogni nemico a più di 12 caselle e perde 1 PA per 2 turni per ogni nemico a 12 caselle o meno."
+      ],
+      "pt": [
+        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 12 células de distância e perde 1 PA (2 turnos) por inimigo a até 12 células"   
       ]
     },
     "conditions": {
@@ -123591,7 +123668,7 @@
       "de": null,
       "es": null,
       "it": "Priscura Brillante",
-      "pt": null
+      "pt": "Prigen Brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123604,6 +123681,9 @@
       ],
       "it": [
         "Cura il 30% dei danni nemici subiti fino alla fine del secondo turno."
+      ],
+      "pt": [
+        "Cura 30% dos danos inimigos sofridos até o fim do segundo turno."
       ]
     },
     "conditions": {
@@ -123620,7 +123700,7 @@
       "de": null,
       "es": null,
       "it": "Prismatenza Brillante",
-      "pt": null
+      "pt": "Golprisma Brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123633,6 +123713,9 @@
       ],
       "it": [
         "Il portatore ottiene 200 Potenza per 2 turni se riceve un colpo nemico prima di aver giocato."
+      ],
+      "pt": [
+        "O portador ganha 200 de potência (2 turnos) quando recebe um golpe inimigo antes de jogar."
       ]
     },
     "conditions": {
@@ -123649,7 +123732,7 @@
       "de": null,
       "es": null,
       "it": "Prismipitazione Brillante",
-      "pt": null
+      "pt": "Pricipitada Brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123662,6 +123745,9 @@
       ],
       "it": [
         "Il portatore ottiene 3 PA durante il suo primo turno di gioco ma perde 2 PM."
+      ],
+      "pt": [
+        "O portador ganha +3 PA durante seu primeiro turno, mas também -2 PM."
       ]
     },
     "conditions": {
@@ -123678,7 +123764,7 @@
       "de": null,
       "es": null,
       "it": "Prissione Brillante",
-      "pt": null
+      "pt": "Prissão Brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123689,6 +123775,9 @@
       ],
       "it": [
         "Il portatore ottiene 2 PA per 2 turni ma causa il 35% dei danni in meno."
+      ],
+      "pt": [
+        "O portador ganha 2 PA durante 2 turnos, mas inflige -35% de danos."
       ]
     },
     "conditions": {
@@ -123705,7 +123794,7 @@
       "de": null,
       "es": null,
       "it": "Pristezione Brillante",
-      "pt": null
+      "pt": "Pritek Brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123718,6 +123807,9 @@
       ],
       "it": [
         "Il portatore ottiene il 50% dei suoi PV attuali in punti scudo per i suoi primi due turni di gioco."
+      ],
+      "pt": [
+        "O portador ganha 50% da vida atual em pontos de escudo durante seus dois primeiros turnos de jogo."
       ]
     },
     "conditions": {
@@ -123734,14 +123826,15 @@
       "de": null,
       "es": null,
       "it": "Sorprisma Brillante",
-      "pt": null
+      "pt": "Surprisma Brilhante"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": ["The bearer gains 20 Critical for 2 turns."],
       "fr": ["Le porteur gagne 20 Critique pendant 2 tours."],
-      "it": ["Il portatore ottiene 20 Critici per 2 turni."]
+      "it": ["Il portatore ottiene 20 Critici per 2 turni."],
+      "pt": ["O portador ganha 20 de crítico durante 2 turnos"]
     },
     "conditions": {
       "conditions": {},
@@ -123757,7 +123850,7 @@
       "de": null,
       "es": null,
       "it": "Prismente",
-      "pt": null
+      "pt": "Esprírito"
     },
     "itemType": "Prysmaradite",
     "level": 180,
@@ -123770,6 +123863,9 @@
       ],
       "it": [
         "Il portatore ottiene 250 Schivata PA prima di giocare, poi 50 Schivata PA per 1 turno."
+      ],
+      "pt": [
+        "O portador ganha 250 de Esquiva PA antes de jogar e, depois, 50 de Esquiva PA durante 1 turno."
       ]
     },
     "conditions": {
@@ -123786,14 +123882,15 @@
       "de": null,
       "es": null,
       "it": "Sorprisma",
-      "pt": null
+      "pt": "Surprisma"
     },
     "itemType": "Prysmaradite",
     "level": 180,
     "customStats": {
       "en": ["The bearer gains 8 Critical for 3 turns."],
       "fr": ["Le porteur gagne 8 Critique pendant 3 tours."],
-      "it": ["Il portatore ottiene 8 Critici per 3 turni."]
+      "it": ["Il portatore ottiene 8 Critici per 3 turni."],
+      "pt": ["O portador ganha 8 de crítico durante 3 turnos"]
     },
     "conditions": {
       "conditions": {},
@@ -124961,7 +125058,7 @@
       "de": [],
       "es": [],
       "it": "Domakuro",
-      "pt": []
+      "pt": "Domakuro"
     },
     "itemType": "Dofus",
     "setID": null,
@@ -124982,6 +125079,9 @@
       ],
       "it": [
         "A partire dal turno 6, il lanciatore ottiene fino a 50 danni per la restante parte del combattimento a seconda del numero di attacchi che infliggono danni diretti causati in ognuno dei turni precedenti."
+      ],
+      "pt": [
+        "A partir do turno 6, o lançador ganha até 50 de dano pra o resto do combate. O bônus de dano dado é reduzido em 5 por ataque até 10 por turno para qualquer ataque direto lançado nos turnos de 1 a 5."
       ]
     },
     "conditions": {

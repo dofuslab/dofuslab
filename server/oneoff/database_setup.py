@@ -28,9 +28,9 @@ from app.database.model_spell_effect import ModelSpellEffect
 from app.database import base
 from oneoff.enums import to_stat_enum, to_effect_enum, to_spell_enum
 from oneoff.sync_spell import create_spell_stats
-from oneoff.sync_sets import create_set
+from oneoff.sync_set import create_set
 import oneoff.sync_item
-import oneoff.sync_buffs
+import oneoff.sync_buff
 from sqlalchemy.schema import MetaData
 from worker import redis_connection
 import sqlalchemy
@@ -358,7 +358,7 @@ def add_buffs():
                             .uuid
                         )
 
-                        oneoff.sync_buffs.add_spell_buff_for_level(
+                        oneoff.sync_buff.add_spell_buff_for_level(
                             db_session, spell_stat_id, level
                         )
 
@@ -370,7 +370,7 @@ def add_buffs():
                     .item_id
                 )
 
-                oneoff.sync_buffs.add_item_buffs(db_session, item_id, item)
+                oneoff.sync_buff.add_item_buffs(db_session, item_id, item)
 
 
 def populate_table_for(table, fn):
