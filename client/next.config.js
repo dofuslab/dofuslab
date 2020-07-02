@@ -58,7 +58,7 @@ const withAntd = (nextConfig = {}) => {
     },
     webpack(config, options) {
       if (config.externals) {
-        const includes = [/antd/];
+        const includes = [/antd\/.*?\/style.*?/, /next-dynamic-antd-theme/];
         config.externals = config.externals.map((external) => {
           if (typeof external !== 'function') return external;
           return (ctx, req, cb) => {
