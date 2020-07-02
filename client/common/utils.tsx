@@ -1384,7 +1384,7 @@ export const getCustomSetMetaImage = (customSet?: CustomSet | null) => {
   if (!customSet) {
     return 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark_Filled_BG_1200x628.png';
   }
-  return `https://32kom7xq5i.execute-api.us-east-2.amazonaws.com/${encodeURI(
+  return `https://32kom7xq5i.execute-api.us-east-2.amazonaws.com/${encodeURIComponent(
     customSet.name || 'Untitled',
   )}?${customSet.equippedItems
     .sort((ei1, ei2) => ei1.slot.order - ei2.slot.order)
