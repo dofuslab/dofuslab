@@ -123164,9 +123164,7 @@
       "it": [
         "Il portatore ottiene 4 PA per 1 turno ma causa il 50% dei danni in meno."
       ],
-      "pt": [
-        "O portador ganh 4 PA durante 1 turno, mas inflige -50% de danos."
-      ]
+      "pt": ["O portador ganh 4 PA durante 1 turno, mas inflige -50% de danos."]
     },
     "conditions": {
       "conditions": {},
@@ -123314,9 +123312,7 @@
       "it": [
         "Cura il 15% dei danni nemici subiti fino alla fine del terzo turno."
       ],
-      "pt": [
-        "Cura 15% dos danos inimigos sofridos até o fim do terceiro turno"
-      ]
+      "pt": ["Cura 15% dos danos inimigos sofridos até o fim do terceiro turno"]
     },
     "conditions": {
       "conditions": {},
@@ -123339,9 +123335,7 @@
     "customStats": {
       "en": ["The bearer reduces damage suffered by 80% before playing."],
       "fr": ["Le porteur réduit les dommages subis de 80% avant d'avoir joué."],
-      "it": [
-        "Il portatore riduce i danni subiti del 80% prima di giocare."
-      ],
+      "it": ["Il portatore riduce i danni subiti del 80% prima di giocare."],
       "pt": ["O portador reduz os danos sofridos em 80% antes de jogar."]
     },
     "conditions": {
@@ -123651,7 +123645,7 @@
         "Il portatore ottiene 1 PM per 2 turni per ogni nemico a più di 12 caselle e perde 1 PA per 2 turni per ogni nemico a 12 caselle o meno."
       ],
       "pt": [
-        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 12 células de distância e perde 1 PA (2 turnos) por inimigo a até 12 células"   
+        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 12 células de distância e perde 1 PA (2 turnos) por inimigo a até 12 células"
       ]
     },
     "conditions": {
@@ -123682,9 +123676,7 @@
       "it": [
         "Cura il 30% dei danni nemici subiti fino alla fine del secondo turno."
       ],
-      "pt": [
-        "Cura 30% dos danos inimigos sofridos até o fim do segundo turno."
-      ]
+      "pt": ["Cura 30% dos danos inimigos sofridos até o fim do segundo turno."]
     },
     "conditions": {
       "conditions": {},
@@ -124910,7 +124902,7 @@
     "dofusID": 16627,
     "name": {
       "en": "Titfertat Hat",
-      "fr": "Chapeua Kassé",
+      "fr": "Chapeau Kassé",
       "de": null,
       "es": null,
       "it": "Copricapo Vasorotto",
