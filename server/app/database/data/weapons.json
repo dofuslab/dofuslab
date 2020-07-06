@@ -20853,7 +20853,7 @@
         {
           "stat": "AP",
           "minStat": -2,
-          "maxStat": -3
+          "maxStat": 3
         }
       ]
     },
