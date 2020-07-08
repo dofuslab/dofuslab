@@ -200,7 +200,7 @@ def get_stats(all_soups):
                 i = i + 1
                 continue
 
-            if re.search(r"(?:-\d to \d|-\d) (?:AP|MP)", description):
+            if re.search(r"(?:-\d to \d|-\d) (?:AP|MP)$", description):
                 # print("--------- Found a weapon effect ---------")
                 if "to" in description:
                     arr = description.split(" ")

@@ -1393,7 +1393,7 @@ if __name__ == "__main__":
 
     # WeaponScraper.get_all_weapon_ids()
     # WeaponScraper.get_weapon_data(1000)
-    # WeaponScraper.get_data_for_ids(["18018", "6524"])
+    WeaponScraper.get_data_for_ids(["20391"])
 
     # PetScraper.get_all_pet_ids()
     # PetScraper.get_all_pet_data(1000)
@@ -1406,5 +1406,5 @@ if __name__ == "__main__":
     # class_scraper.get_info_for_all_classes()
 
     # DataAdjustment.add_missing_trophy_conditions()
-    DataAdjustment.add_missing_item_details()
+    # DataAdjustment.add_missing_item_details()
     # DataAdjustment.change_condition_case()
