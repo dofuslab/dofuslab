@@ -62,7 +62,7 @@ def create_set(db_session, data):
     create_set_bonuses(db_session, set_object, data)
 
 
-def create_or_update_set(db_session, set_name, data):
+def create_or_update_set(db_session, set_name, data, should_only_add_missing):
     translations = (
         db_session.query(ModelSetTranslation)
         .filter(
@@ -73,7 +73,7 @@ def create_or_update_set(db_session, set_name, data):
     if len(translations) > 1:
         print("Multiple sets with that name exist, skipping it.")
         return
-    elif len(translations) == 1:
+    elif len(translations) == 1 and not should_only_add_missing:
         print("The set {} currently exists. Updating the set.".format(set_name))
         set_object = (
             db_session.query(ModelSet)
@@ -81,7 +81,7 @@ def create_or_update_set(db_session, set_name, data):
             .one()
         )
         update_set(db_session, set_object, data)
-    else:
+    elif len(translations) == 0:
         print("No set was found for {}. Creating the set".format(set_name))
         create_set(db_session, data)
 
@@ -97,7 +97,7 @@ def sync_set():
 
         while True:
             response = input(
-                "Enter a set name, type 'update all' to update all sets, or type 'q' to quit: "
+                "Enter a set name, type 'update all' to update all sets, type 'add missing sets' to only add sets that are missing, or type 'q' to quit: "
             )
             if response == "q":
                 break
@@ -105,12 +105,18 @@ def sync_set():
                 if response == "update all":
                     for set_data in data:
                         create_or_update_set(
-                            db_session, set_data["name"]["en"], set_data
+                            db_session, set_data["name"]["en"], set_data, False
+                        )
+                    break
+                elif response == "add missing sets":
+                    for set_data in data:
+                        create_or_update_set(
+                            db_session, set_data["name"]["en"], set_data, True
                         )
                     break
                 elif response in name_to_record_map:
                     record = name_to_record_map[response]
-                    create_or_update_set(db_session, response, record)
+                    create_or_update_set(db_session, response, record, False)
                 else:
                     print(
                         "The set {} does not exist. Please try again.".format(response)

@@ -18,14 +18,13 @@ allowed_file_names = [
     "items",
     "mounts",
     "pets",
-    "prysmaradites",
     "weapons",
     "rhineetles",
 ]
 languages = ["en", "fr", "pt", "it", "es", "de"]
 
 
-def update_or_create_item(db_session, item_name, record, create_all=False):
+def update_or_create_item(db_session, item_name, record, should_only_add_missing, create_all=False):
     print(item_name)
     translations = (
         db_session.query(ModelItemTranslation)
@@ -36,7 +35,7 @@ def update_or_create_item(db_session, item_name, record, create_all=False):
     )
     if len(translations) > 1:
         print("Error: Multiple items with that name exist in the database")
-    elif len(translations) == 1:
+    elif len(translations) == 1 and not should_only_add_missing:
         print("Item already exists in database. Updating item...")
         item = translations[0].item
         create_item_translations(db_session, record, item)
@@ -54,7 +53,7 @@ def update_or_create_item(db_session, item_name, record, create_all=False):
         if "weaponStats" in record:
             create_weapon_stat(db_session, record, item)
         print("Item weapon stats successfully updated")
-    else:
+    elif len(translations) == 0:
         if create_all:
             create_item(db_session, record)
             return True
@@ -218,7 +217,7 @@ def sync_item():
         create_all = False
         while should_prompt_item:
             item_name = input(
-                "Enter item name, e.g. 'Yellow Piwin', type 'update all' to update all items in file, or 'q' to quit: "
+                "Enter item name, e.g. 'Yellow Piwin', type 'update all' to update all items in file, type 'add missing items' to only add items that are missing, or 'q' to quit: "
             )
             if item_name == "q":
                 return
@@ -228,11 +227,18 @@ def sync_item():
 
                     for record in data:
                         create_all = update_or_create_item(
-                            db_session, record["name"]["en"], record, create_all
+                            db_session, record["name"]["en"], record, False, create_all
+                        )
+                elif item_name == "add missing items":
+                    should_prompt_item = False
+
+                    for record in data:
+                        create_all = update_or_create_item(
+                            db_session, record["name"]["en"], record, True, create_all
                         )
                 elif item_name in name_to_record_map:
                     record = name_to_record_map[item_name]
-                    update_or_create_item(db_session, item_name, record, False)
+                    update_or_create_item(db_session, item_name, record, False, False)
 
 
 if __name__ == "__main__":
