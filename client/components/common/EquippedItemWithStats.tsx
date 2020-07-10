@@ -86,6 +86,7 @@ const EquippedItemWithStats: React.FC<Props> = ({
   const onDelete = React.useCallback(
     (e: React.SyntheticEvent<HTMLElement>) => {
       e.stopPropagation();
+      e.preventDefault();
       if (deleteItem) {
         deleteItem();
       }

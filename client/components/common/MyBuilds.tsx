@@ -250,6 +250,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
                       }}
                       onClick={(e: React.MouseEvent<HTMLDivElement>) => {
                         e.stopPropagation();
+                        e.preventDefault();
                         setCustomSetIdToDelete(node.id);
                         setDeleteModalVisible(true);
                       }}
