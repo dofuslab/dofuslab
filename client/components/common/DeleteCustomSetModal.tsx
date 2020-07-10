@@ -35,26 +35,38 @@ const DeleteCustomSetModal: React.FC<Props> = ({
   });
   const router = useRouter();
 
-  const onDelete = React.useCallback(async () => {
-    const { data } = await deleteMutate();
-    onCancel();
-    if (data?.deleteCustomSet?.ok) {
-      if (customSetId === router.query.customSetId) {
-        router.push('/', '/', { shallow: true });
+  const onDelete = React.useCallback(
+    async (e: React.MouseEvent<HTMLElement>) => {
+      e.stopPropagation();
+      const { data } = await deleteMutate();
+      onCancel();
+      if (data?.deleteCustomSet?.ok) {
+        if (customSetId === router.query.customSetId) {
+          router.push('/', '/', { shallow: true });
+        }
+        notification.success({
+          message: t('SUCCESS'),
+          description: t('DELETE_BUILD_SUCCESS'),
+        });
       }
-      notification.success({
-        message: t('SUCCESS'),
-        description: t('DELETE_BUILD_SUCCESS'),
-      });
-    }
-  }, [deleteMutate, router, onCancel, customSetId]);
+    },
+    [deleteMutate, router, onCancel, customSetId],
+  );
+
+  const onCancelClick = React.useCallback(
+    (e: React.MouseEvent<HTMLElement>) => {
+      e.stopPropagation();
+      onCancel();
+    },
+    [onCancel],
+  );
 
   return (
     <Modal
       visible={visible}
       title={t('DELETE_BUILD')}
       onOk={onDelete}
-      onCancel={onCancel}
+      onCancel={onCancelClick}
       confirmLoading={deleteLoading}
       okButtonProps={{ danger: true }}
       okText={t('DELETE')}
