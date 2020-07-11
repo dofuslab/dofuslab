@@ -22,6 +22,9 @@ const withAntdTheme = generateTheme({
   stylesDir: path.join(__dirname, './theme'),
   varFile: path.join(__dirname, './theme/vars.less'),
   outputFilePath: path.join(__dirname, './.next/static/color.less'),
+  lessFilePath: `${prefix}_next/static/color.less`,
+  lessJSPath:
+    'https://cdnjs.cloudflare.com/ajax/libs/less.js/3.11.3/less.min.js',
 });
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
@@ -58,7 +61,7 @@ const withAntd = (nextConfig = {}) => {
     },
     webpack(config, options) {
       if (config.externals) {
-        const includes = [/antd\/.*?\/style.*?/, /next-dynamic-antd-theme/];
+        const includes = [/antd/];
         config.externals = config.externals.map((external) => {
           if (typeof external !== 'function') return external;
           return (ctx, req, cb) => {
@@ -90,10 +93,8 @@ module.exports = withPlugins(
   [withAntd, withLess, withTM, withSass, withCSS, withAntdTheme],
   {
     serverRuntimeConfig: {},
-    publicRuntimeConfig: { prefix },
     assetPrefix: prefix,
     webpack: (config, options) => {
-      // config.node = { fs: 'empty' };
       return config;
     },
   },
