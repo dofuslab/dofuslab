@@ -20822,6 +20822,11 @@
         "maxStat": 10
       },
       {
+        "stat": "AP Parry",
+        "minStat": -2,
+        "maxStat": -3
+      },
+      {
         "stat": "Lock",
         "minStat": 4,
         "maxStat": 6
@@ -20849,11 +20854,6 @@
           "stat": "Water steal",
           "minStat": 5,
           "maxStat": 7
-        },
-        {
-          "stat": "AP",
-          "minStat": -2,
-          "maxStat": 3
         }
       ]
     },
@@ -57354,5 +57354,117 @@
       "customConditions": {}
     },
     "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/4141.png"
+  },
+  {
+    "dofusID": "20391",
+    "name": {
+      "en": "Sacrificial Knives",
+      "fr": "Couteaux Sacrificiels",
+      "de": "Opfermesser",
+      "es": "Cuchillos sacrificiales",
+      "it": "Coltelli Sacrificali",
+      "pt": "Facas Sacrificiais"
+    },
+    "itemType": "Dagger",
+    "level": 200,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 400
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Chance",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": -30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Lock",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": -1
+      }
+    ],
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": 2,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        {
+          "stat": "Water steal",
+          "minStat": 12,
+          "maxStat": 18
+        },
+        {
+          "stat": "Fire steal",
+          "minStat": 12,
+          "maxStat": 18
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/5098.png"
   }
 ]
