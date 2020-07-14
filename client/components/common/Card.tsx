@@ -14,12 +14,19 @@ const Card: React.FC<CardProps> = ({ className, ...restProps }) => {
     <ClassNames>
       {({ css, cx }) => (
         <AntdCard
-          // eslint-disable-next-line react/jsx-props-no-spreading
-          {...restProps}
           className={cx(
-            css({ backgroundColor: theme.card?.background }),
+            css({
+              '&.ant-card': {
+                backgroundColor: theme.card?.background,
+              },
+              '&.ant-card-bordered': {
+                borderColor: theme.border?.default,
+              },
+            }),
             className,
           )}
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...restProps}
         />
       )}
     </ClassNames>

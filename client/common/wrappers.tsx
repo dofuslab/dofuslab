@@ -43,6 +43,7 @@ import {
   itemCardStyle,
   blue6,
   gray6,
+  switchStyle,
 } from './mixins';
 import { SetBonus, WeaponStats, CustomSet } from './type-aliases';
 
@@ -397,15 +398,7 @@ export const DamageTypeToggle: React.FC<{
     <Switch
       checked={showRanged}
       onChange={setShowRanged}
-      css={{
-        background: theme.switch?.background,
-        '.ant-switch-inner': {
-          color: theme.text?.default,
-        },
-        '&::after': {
-          background: theme.switch?.button,
-        },
-      }}
+      css={switchStyle(theme, false)}
       checkedChildren={<FontAwesomeIcon icon={faPeopleArrows} />}
       unCheckedChildren={<FontAwesomeIcon icon={faFistRaised} />}
     />

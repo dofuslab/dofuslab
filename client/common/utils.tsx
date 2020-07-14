@@ -81,6 +81,7 @@ import {
   AppliedBuffAction,
   AppliedBuffActionType,
   StatsFromAppliedBuffs,
+  Theme,
 } from './types';
 import { META_DESCRIPTION, IS_CLASSIC_STORAGE_KEY } from './constants';
 import {
@@ -1872,3 +1873,11 @@ export const combineStatsWithBuffs = (
   }, statsFromCustomSet || ({} as StatsFromCustomSet));
   return statsFromCustomSetWithBuffs;
 };
+
+export const ThemeContext = React.createContext<{
+  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
+}>({
+  setTheme: () => {
+    // no-op
+  },
+});

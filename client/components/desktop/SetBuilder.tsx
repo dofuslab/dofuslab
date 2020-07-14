@@ -192,7 +192,7 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
           <Tabs
             defaultActiveKey="characteristics"
             css={{
-              '.ant-tabs-bar': {
+              '&.ant-tabs > .ant-tabs-nav::before': {
                 borderBottom: `1px solid ${theme.border?.default}`,
               },
             }}

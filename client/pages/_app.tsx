@@ -7,13 +7,19 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import { MediaContextProvider } from 'components/common/Media';
 import Router, { useRouter } from 'next/router';
 import { ThemeProvider } from 'emotion-theming';
+import Lockr from 'lockr';
 
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import {
   customSet as CustomSetQueryType,
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
-import { darkTheme } from 'common/themes';
+import {
+  lightTheme,
+  darkTheme,
+  LIGHT_THEME_NAME,
+  DARK_THEME_NAME,
+} from 'common/themes';
 import { appWithTranslation } from 'i18n';
 import * as gtag from 'gtag';
 import {
@@ -22,10 +28,13 @@ import {
   getStatsFromAppliedBuffs,
   combineStatsWithBuffs,
   CustomSetContext,
+  ThemeContext,
 } from 'common/utils';
-import { AppliedBuffActionType } from 'common/types';
+import { AppliedBuffActionType, Theme } from 'common/types';
+import changeTheme from 'next-dynamic-antd-theme';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { THEME_STORAGE_KEY } from 'common/constants';
 
 Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 config.autoAddCss = false;
@@ -51,6 +60,21 @@ const DofusLabApp: React.FC<Props> = ({
     client: apolloClient,
   });
 
+  const [theme, setTheme] = React.useState<Theme>(lightTheme);
+
+  React.useEffect(() => {
+    const localStorageValue = Lockr.get(THEME_STORAGE_KEY);
+    if (localStorageValue === DARK_THEME_NAME) {
+      setTheme(darkTheme);
+    } else if (!localStorageValue) {
+      const mqList = window.matchMedia('(prefers-color-scheme: dark)');
+      const prefersDark = mqList.matches;
+      if (prefersDark) {
+        setTheme(darkTheme);
+      }
+    }
+  }, []);
+
   const customSet = customSetData?.customSetById || null;
 
   const [appliedBuffs, dispatch] = React.useReducer(appliedBuffsReducer, []);
@@ -71,6 +95,15 @@ const DofusLabApp: React.FC<Props> = ({
   );
 
   React.useEffect(() => {
+    Lockr.set(THEME_STORAGE_KEY, theme.name);
+    if (theme.name === LIGHT_THEME_NAME) {
+      changeTheme('default');
+    } else {
+      changeTheme('dark');
+    }
+  }, [theme]);
+
+  React.useEffect(() => {
     dispatch({ type: AppliedBuffActionType.CLEAR_ALL });
   }, [customSetId]);
 
@@ -78,20 +111,22 @@ const DofusLabApp: React.FC<Props> = ({
   return (
     <ApolloProvider client={apolloClient}>
       <MediaContextProvider>
-        <ThemeProvider theme={darkTheme}>
-          <CustomSetContext.Provider
-            value={{
-              dispatch,
-              appliedBuffs,
-              customSet,
-              customSetLoading,
-              statsFromCustomSet,
-              statsFromAppliedBuffs,
-              statsFromCustomSetWithBuffs,
-            }}
-          >
-            <Component {...pageProps} />
-          </CustomSetContext.Provider>
+        <ThemeProvider theme={theme}>
+          <ThemeContext.Provider value={{ setTheme }}>
+            <CustomSetContext.Provider
+              value={{
+                dispatch,
+                appliedBuffs,
+                customSet,
+                customSetLoading,
+                statsFromCustomSet,
+                statsFromAppliedBuffs,
+                statsFromCustomSetWithBuffs,
+              }}
+            >
+              <Component {...pageProps} />
+            </CustomSetContext.Provider>
+          </ThemeContext.Provider>
         </ThemeProvider>
       </MediaContextProvider>
     </ApolloProvider>
