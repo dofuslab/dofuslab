@@ -1,0 +1,16 @@
+{
+  "VERIFY_EMAIL": {
+    "ALREADY_VERIFIED": {
+      "DESCRIPTION": "Váš účet je již verifikován, není již potřeba další akce.",
+      "TITLE": "Vše vpořádku"
+    },
+    "INVALID": {
+      "DESCRIPTION": "Verifikační odkaz vypršel nebo je neplatný.",
+      "TITLE": "Neplatná URL"
+    },
+    "SUCCESS": {
+      "DESCRIPTION": "Úspěšně jste verifikovali Váš účet. Děkujeme!",
+      "TITLE": "Úspěšný"
+    }
+  }
+}
