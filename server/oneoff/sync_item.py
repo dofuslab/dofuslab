@@ -124,6 +124,8 @@ def create_item(db_session, record):
 def create_item_stats(db_session, record, item):
     i = 0
 
+    item.dofus_db_id = record["dofusID"]
+
     for stat in record.get("stats", []):
         item_stat = ModelItemStat(
             item_id=item.uuid,
