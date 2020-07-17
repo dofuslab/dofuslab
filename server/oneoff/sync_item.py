@@ -24,7 +24,9 @@ allowed_file_names = [
 languages = ["en", "fr", "pt", "it", "es", "de"]
 
 
-def update_or_create_item(db_session, item_name, record, should_only_add_missing, create_all=False):
+def update_or_create_item(
+    db_session, item_name, record, should_only_add_missing, create_all=False
+):
     print(item_name)
     translations = (
         db_session.query(ModelItemTranslation)
@@ -38,6 +40,9 @@ def update_or_create_item(db_session, item_name, record, should_only_add_missing
     elif len(translations) == 1 and not should_only_add_missing:
         print("Item already exists in database. Updating item...")
         item = translations[0].item
+        item.dofus_db_id = record["dofusID"]
+        item.level = record["level"]
+        item.image_url = record["imageUrl"]
         create_item_translations(db_session, record, item)
         print("Item translations successfully updated")
         db_session.query(ModelItemStat).filter_by(item_id=item.uuid).delete()
