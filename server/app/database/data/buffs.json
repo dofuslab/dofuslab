@@ -2,125 +2,6 @@
   "spells": {
     "Ecaflip": [
       {
-        "name": "Tails or Heads",
-        "levels": [
-          {
-            "level": 95,
-            "buffs": [
-              {
-                "stat": "Strength",
-                "incrementBy": null,
-                "critIncrementBy": 100,
-                "maxStacks": 6
-              }
-            ]
-          },
-          {
-            "level": 162,
-            "buffs": [
-              {
-                "stat": "Strength",
-                "incrementBy": null,
-                "critIncrementBy": 150,
-                "maxStacks": 6
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Meowch",
-        "levels": [
-          {
-            "level": 100,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": null,
-                "critIncrementBy": 100,
-                "maxStacks": 6
-              }
-            ]
-          },
-          {
-            "level": 167,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": null,
-                "critIncrementBy": 150,
-                "maxStacks": 6
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Bluff",
-        "levels": [
-          {
-            "level": 3,
-            "buffs": [
-              {
-                "stat": "Chance",
-                "incrementBy": null,
-                "critIncrementBy": 50,
-                "maxStacks": 6
-              }
-            ]
-          },
-          {
-            "level": 69,
-            "buffs": [
-              {
-                "stat": "Chance",
-                "incrementBy": null,
-                "critIncrementBy": 100,
-                "maxStacks": 6
-              }
-            ]
-          },
-          {
-            "level": 136,
-            "buffs": [
-              {
-                "stat": "Chance",
-                "incrementBy": null,
-                "critIncrementBy": 150,
-                "maxStacks": 6
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nerve",
-        "levels": [
-          {
-            "level": 110,
-            "buffs": [
-              {
-                "stat": "Agility",
-                "incrementBy": null,
-                "critIncrementBy": 120,
-                "maxStacks": 6
-              }
-            ]
-          },
-          {
-            "level": 177,
-            "buffs": [
-              {
-                "stat": "Agility",
-                "incrementBy": null,
-                "critIncrementBy": 200,
-                "maxStacks": 6
-              }
-            ]
-          }
-        ]
-      },
-      {
         "name": "Roar",
         "levels": [
           {
@@ -1984,8 +1865,8 @@
       "buffs": [
         {
           "stat": "Damage",
-          "incrementBy": 5,
-          "maxStacks": 10
+          "incrementBy": 8,
+          "maxStacks": 8
         }
       ]
     }

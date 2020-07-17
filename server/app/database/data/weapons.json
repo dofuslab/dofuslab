@@ -57162,88 +57162,6 @@
     "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/19082.png"
   },
   {
-    "dofusID": 4108,
-    "name": {
-      "en": "Bâton en Bambou Spirituel",
-      "fr": "Bâton en Bambou Spirituel",
-      "de": null,
-      "es": null,
-      "it": "Bâton en Bambou Spirituel",
-      "pt": null
-    },
-    "itemType": "Staff",
-    "setID": null,
-    "level": 110,
-    "stats": [
-      {
-        "stat": "Vitality",
-        "minStat": 101,
-        "maxStat": 150
-      },
-      {
-        "stat": "Wisdom",
-        "minStat": 16,
-        "maxStat": 20
-      },
-      {
-        "stat": "Power",
-        "minStat": 21,
-        "maxStat": 30
-      },
-      {
-        "stat": "Critical",
-        "minStat": 3,
-        "maxStat": 5
-      },
-      {
-        "stat": "Range",
-        "minStat": null,
-        "maxStat": 1
-      },
-      {
-        "stat": "% Earth Resistance",
-        "minStat": 3,
-        "maxStat": 4
-      },
-      {
-        "stat": "% Fire Resistance",
-        "minStat": 3,
-        "maxStat": 4
-      },
-      {
-        "stat": "% Water Resistance",
-        "minStat": 3,
-        "maxStat": 4
-      },
-      {
-        "stat": "% Air Resistance",
-        "minStat": 3,
-        "maxStat": 4
-      }
-    ],
-    "weaponStats": {
-      "apCost": 5,
-      "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
-      "baseCritChance": 30,
-      "critBonusDamage": 6,
-      "weapon_effects": [
-        {
-          "stat": "Neutral damage",
-          "minStat": 21,
-          "maxStat": 30
-        }
-      ]
-    },
-    "customStats": {},
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/4108.png"
-  },
-  {
     "dofusID": 4141,
     "name": {
       "en": "Roasty Breadstick",
@@ -57466,5 +57384,586 @@
       "customConditions": {}
     },
     "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/5098.png"
+  },
+  {
+    "dofusID": "23315",
+    "name": {
+      "en": "Rock Katana",
+      "fr": "Katana de la Roche",
+      "de": "Felskatana",
+      "es": "Katana de la roca",
+      "it": "Katana della Roccia",
+      "pt": "Katana da Rocha"
+    },
+    "itemType": "Sword",
+    "level": 120,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Lock",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Ranged Damage",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "% Weapon Damage",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 20,
+      "critBonusDamage": 10,
+      "weapon_effects": [
+        {
+          "stat": "Earth damage",
+          "minStat": 35,
+          "maxStat": 52
+        }
+      ]
+    },
+    "customStats": {
+      "en": ["Cooperative crafting impossible"],
+      "fr": ["Craft coopératif impossible."],
+      "de": ["Gemeinsames Herstellen nicht möglich."],
+      "es": ["Craft cooperativo imposible."],
+      "it": ["Craft cooperativo impossibile."],
+      "pt": ["Fabricação cooperativa impossível."]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": ["Quest 'Gokwa: Path of the Staff' complete"],
+        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
+        "de": ["Quest 'Gokwa: Der Weg des Steckens' beendet"],
+        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
+        "it": ["Missione \"Gokwa: via del bastone\" compiuta"],
+        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/6743.png"
+  },
+  {
+    "dofusID": "23314",
+    "name": {
+      "en": "Tidal Katana",
+      "fr": "Katana de la Marée",
+      "de": "Gezeitenkatana",
+      "es": "Katana de la marea",
+      "it": "Katana della Marea",
+      "pt": "Katana da Maré"
+    },
+    "itemType": "Sword",
+    "level": 120,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Lock",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Ranged Damage",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "% Weapon Damage",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 20,
+      "critBonusDamage": 10,
+      "weapon_effects": [
+        {
+          "stat": "Water damage",
+          "minStat": 35,
+          "maxStat": 52
+        }
+      ]
+    },
+    "customStats": {
+      "en": ["Cooperative crafting impossible"],
+      "fr": ["Craft coopératif impossible."],
+      "de": ["Gemeinsames Herstellen nicht möglich."],
+      "es": ["Craft cooperativo imposible."],
+      "it": ["Craft cooperativo impossibile."],
+      "pt": ["Fabricação cooperativa impossível."]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": ["Quest 'Gokwa: Path of the Staff' complete"],
+        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
+        "de": ["Quest 'Gokwa: Der Weg des Steckens' beendet"],
+        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
+        "it": ["Missione \"Gokwa: via del bastone\" compiuta"],
+        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/6744.png"
+  },
+  {
+    "dofusID": "23313",
+    "name": {
+      "en": "Storm Katana",
+      "fr": "Katana de la Tempête",
+      "de": "Sturmkatana",
+      "es": "Katana de la tempestad",
+      "it": "Katana della Tempesta",
+      "pt": "Katana da Tempestade"
+    },
+    "itemType": "Sword",
+    "level": 120,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Agility",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Lock",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Ranged Damage",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "% Weapon Damage",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 20,
+      "critBonusDamage": 10,
+      "weapon_effects": [
+        {
+          "stat": "Air damage",
+          "minStat": 35,
+          "maxStat": 52
+        }
+      ]
+    },
+    "customStats": {
+      "en": ["Cooperative crafting impossible"],
+      "fr": ["Craft coopératif impossible."],
+      "de": ["Gemeinsames Herstellen nicht möglich."],
+      "es": ["Craft cooperativo imposible."],
+      "it": ["Craft cooperativo impossibile."],
+      "pt": ["Fabricação cooperativa impossível."]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": ["Quest 'Gokwa: Path of the Staff' complete"],
+        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
+        "de": ["Quest 'Gokwa: Der Weg des Steckens' beendet"],
+        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
+        "it": ["Missione \"Gokwa: via del bastone\" compiuta"],
+        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/6745.png"
+  },
+  {
+    "dofusID": "23316",
+    "name": {
+      "en": "Leaf Katana",
+      "fr": "Katana de la Feuille",
+      "de": "Blattkatana",
+      "es": "Katana de la hoja",
+      "it": "Katana della Foglia",
+      "pt": "Katana da Folha"
+    },
+    "itemType": "Sword",
+    "level": 120,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Lock",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Ranged Damage",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "% Weapon Damage",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 20,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        {
+          "stat": "Air damage",
+          "minStat": 7,
+          "maxStat": 12
+        },
+        {
+          "stat": "Water damage",
+          "minStat": 7,
+          "maxStat": 12
+        },
+        {
+          "stat": "Fire damage",
+          "minStat": 7,
+          "maxStat": 12
+        },
+        {
+          "stat": "Earth damage",
+          "minStat": 7,
+          "maxStat": 12
+        }
+      ]
+    },
+    "customStats": {
+      "en": ["Cooperative crafting impossible"],
+      "fr": ["Craft coopératif impossible."],
+      "de": ["Gemeinsames Herstellen nicht möglich."],
+      "es": ["Craft cooperativo imposible."],
+      "it": ["Craft cooperativo impossibile."],
+      "pt": ["Fabricação cooperativa impossível."]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": ["Quest 'Gokwa: Path of the Staff' complete"],
+        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
+        "de": ["Quest 'Gokwa: Der Weg des Steckens' beendet"],
+        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
+        "it": ["Missione \"Gokwa: via del bastone\" compiuta"],
+        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/6747.png"
+  },
+  {
+    "dofusID": "23312",
+    "name": {
+      "en": "Fire Katana",
+      "fr": "Katana de la Flamme",
+      "de": "Flammenkatana",
+      "es": "Katana de la llama",
+      "it": "Katana della Fiamma",
+      "pt": "Katana da Chama"
+    },
+    "itemType": "Sword",
+    "level": 120,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Lock",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Ranged Damage",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "% Weapon Damage",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 20,
+      "critBonusDamage": 10,
+      "weapon_effects": [
+        {
+          "stat": "Fire damage",
+          "minStat": 35,
+          "maxStat": 52
+        }
+      ]
+    },
+    "customStats": {
+      "en": ["Cooperative crafting impossible"],
+      "fr": ["Craft coopératif impossible."],
+      "de": ["Gemeinsames Herstellen nicht möglich."],
+      "es": ["Craft cooperativo imposible."],
+      "it": ["Craft cooperativo impossibile."],
+      "pt": ["Fabricação cooperativa impossível."]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": ["Quest 'Gokwa: Path of the Staff' complete"],
+        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
+        "de": ["Quest 'Gokwa: Der Weg des Steckens' beendet"],
+        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
+        "it": ["Missione \"Gokwa: via del bastone\" compiuta"],
+        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/6746.png"
+  },
+  {
+    "dofusID": "23522",
+    "name": {
+      "en": "Spirit Bamboo Staff",
+      "fr": "Bâton en bambou spirituel",
+      "de": "Stecken aus spirituellem Bambus",
+      "es": "Bastón en bambú espiritual",
+      "it": "Bastone di Bambù Spirituale",
+      "pt": "Bastão de Bambu Espiritual"
+    },
+    "itemType": "Staff",
+    "level": 110,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 30,
+      "critBonusDamage": 6,
+      "weapon_effects": [
+        {
+          "stat": "Neutral damage",
+          "minStat": 21,
+          "maxStat": 30
+        }
+      ]
+    },
+    "customStats": {
+      "en": ["Cooperative crafting impossible"],
+      "fr": ["Craft coopératif impossible."],
+      "de": ["Gemeinsames Herstellen nicht möglich."],
+      "es": ["Craft cooperativo imposible."],
+      "it": ["Craft cooperativo impossibile."],
+      "pt": ["Fabricação cooperativa impossível."]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": ["Quest 'Rokwa: Path of the Fist' complete"],
+        "fr": ["Quête 'Rokwa : Voie du poing' achevée"],
+        "de": ["Quest 'Rokwa: Der Weg der Faust' beendet"],
+        "es": ["Misión 'Rokwa: Vía del puño' completada"],
+        "it": ["Missione \"Rokwa: via del pugno\" compiuta"],
+        "pt": ["Missão \"Rokwa: Via do punho\" concluída"]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/4108.png"
   }
 ]

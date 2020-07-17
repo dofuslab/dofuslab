@@ -12888,107 +12888,6 @@
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/17455.png"
   },
   {
-    "dofusID": "22412",
-    "name": {
-      "en": "Corruption Pestilence",
-      "fr": "Pestilence de Corruption",
-      "de": "Verderbnis’ Pestilenz",
-      "es": "Pestilencia de Corrupción",
-      "it": "Pestilenza di Corruzione",
-      "pt": "Pestilência de Corrupção"
-    },
-    "itemType": "Cloak",
-    "setID": null,
-    "level": 200,
-    "stats": [
-      {
-        "stat": "Initiative",
-        "minStat": null,
-        "maxStat": -500
-      },
-      {
-        "stat": "Vitality",
-        "minStat": 401,
-        "maxStat": 450
-      },
-      {
-        "stat": "Strength",
-        "minStat": 61,
-        "maxStat": 80
-      },
-      {
-        "stat": "Chance",
-        "minStat": 61,
-        "maxStat": 80
-      },
-      {
-        "stat": "% Melee Resistance",
-        "minStat": 7,
-        "maxStat": 10
-      },
-      {
-        "stat": "Critical Resistance",
-        "minStat": null,
-        "maxStat": -30
-      },
-      {
-        "stat": "% Ranged Damage",
-        "minStat": null,
-        "maxStat": -10
-      },
-      {
-        "stat": "Fire Damage",
-        "minStat": 11,
-        "maxStat": 15
-      },
-      {
-        "stat": "Air Damage",
-        "minStat": 11,
-        "maxStat": 15
-      },
-      {
-        "stat": "Earth Damage",
-        "minStat": 11,
-        "maxStat": 15
-      },
-      {
-        "stat": "Neutral Damage",
-        "minStat": 11,
-        "maxStat": 15
-      },
-      {
-        "stat": "Water Damage",
-        "minStat": 11,
-        "maxStat": 15
-      }
-    ],
-    "customStats": {
-      "en": [
-        "At the end of each turn, the bearer applies a start-of-turn poison for 1 turn in their best attack element on allied and enemy entities 2 cells away or less. The affected entities apply the poison again at the end of their turn on entities around them. The bearer also reduces poison damage received by 50%."
-      ],
-      "fr": [
-        "À chaque fin de tour, le porteur applique un poison de début de tour pour 1 tour dans son meilleur élément d'attaque aux entités alliées et ennemies à 2 cases ou moins. Les entités touchées appliquent à nouveau le poison à la fin de leur tour aux entités autour d'elles. Le porteur réduit également les dommages de poison reçus de 50%."
-      ],
-      "de": [
-        "Am Ende einer jeden Runde wendet der Träger in seinem besten Angriffselement ein Gift für den Rundenbeginn auf verbündete und gegnerische Einheiten in einer Entfernung von 2 Feldern oder weniger an, das 1 Runde anhält. Getroffene Einheiten wenden das Gift am Ende ihrer Runde erneut auf Einheiten im Wirkungsbereich an. Der Träger verringert außerdem erlittenen Giftschaden um 50 %."
-      ],
-      "es": [
-        "Al final de cada turno, el portador aplica un veneno de inicio de turno durante 1 turno en su mejor elemento de ataque a las entidades aliadas y enemigas a 2 casillas o menos. Las entidades alcanzadas aplican de nuevo el veneno al final de su turno a las entidades a su alrededor. El portador reduce también los daños de veneno recibidos un 50%."
-      ],
-      "it": [
-        "Alla fine di ogni turno, il portatore applica un veleno a inizio turno per 1 turno nel suo migliore elemento d'attacco alle entità alleate o nemiche a 2 caselle o meno. Le entità colpite applicano nuovamente il veleno alla fine del loro turno alle entità attorno ad esse. Il portatore riduce inoltre i danni dei veleni ricevuti del 50%."
-      ],
-      "pt": [
-        "A cada fim de turno, o portador aplica um veneno de início de turno durante 1 turno em seu melhor elemento de ataque nas entidades aliadas e inimigas a até 2 células. Ao fim do turno delas, as entidades afetadas aplicam de novo o veneno às entidades ao redor de si. Além disso, o portador reduz em 50% os danos de veneno sofridos."
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/17454.png"
-  },
-  {
     "dofusID": "958",
     "name": {
       "en": "Dofusteuse",
@@ -125043,13 +124942,104 @@
     "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/10345.png"
   },
   {
-    "dofusID": 23032,
+    "dofusID": "22412",
+    "name": {
+      "en": "Corruption Pestilence",
+      "fr": "Pestilence de Corruption",
+      "de": "Verderbnis’ Pestilenz",
+      "es": "Pestilencia de Corrupción",
+      "it": "Pestilenza di Corruzione",
+      "pt": "Pestilência de Corrupção"
+    },
+    "itemType": "Cloak",
+    "setID": null,
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 450
+      },
+      {
+        "stat": "Strength",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Chance",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": -30
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -20
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Ranged Damage",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "% Melee Resistance",
+        "minStat": null,
+        "maxStat": 10
+      }
+    ],
+    "customStats": {
+      "en": [
+        "When the bearer is healed or steals health, the bearer applies a start-of-turn poison in their best attack element in an 2-cell circle area of effect on entities around them. The poison lasts 1 turn, cannot be unbewitched, and can be stacked a maximum of 3 times."
+      ],
+      "fr": [
+        "Quand le porteur est soigné ou vole de la vie, il applique un poison de début de tour dans son meilleur élément d'attaque en zone Cercle 2 aux entités autour de lui. Le poison dure 1 tour, ne peut pas être désenvoûté et peut être cumulé 3 fois maximum."
+      ],
+      "de": [
+        "Wenn der Träger geheilt wird oder LP stiehlt, vergiftet er zu Rundenbeginn in einem kreisförmigen Wirkungsbereich von 2 Feldern in seinem besten Angriffselement Einheiten um ihn herum. Die Vergiftung hält 1 Runde an, kann nicht aufgehoben und maximal 3-mal kumuliert werden."
+      ],
+      "es": [
+        "Cuando el portador es curado o roba de vida, aplica un veneno de principio de turno en su mejor elemento de ataque en zona de círculo 2 a las entidades a su alrededor. El veneno dura 1 turno, no puede ser desembrujado y puede ser acumulado 3 veces como máximo."
+      ],
+      "it": [
+        "Quando il portatore è curato o ruba PV, applica un veleno a inizio turno nel suo migliore elemento d'attacco in un'area Cerchio 2 alle entità intorno a sé. Il veleno dura 1 turno, non può essere rimosso e può essere accumulato al massimo 3 volte."
+      ],
+      "pt": [
+        "Quando o portador é curado ou rouba vida, ele aplica um veneno de início de turno em seu melhor elemento de ataque em uma zona de círculo 2 às entidades ao redor de. O veneno dura 1 turno, não pode ser dissipado e acumula até 3 vezes."
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/17454.png"
+  },
+  {
+    "dofusID": "23237",
     "name": {
       "en": "Domakuro",
       "fr": "Domakuro",
-      "de": [],
-      "es": [],
-      "it": "Domakuro",
+      "de": "Domakuro",
+      "es": "Domakuro",
+      "it": "Domakkuro",
       "pt": "Domakuro"
     },
     "itemType": "Dofus",
@@ -125064,22 +125054,28 @@
     ],
     "customStats": {
       "en": [
-        "From round 6, the caster gains up to 50 damage for the rest of the combat. The damage buff given is reduced by 5 per attack up to 10 per turn for any direct attack casted on turns 1 through 5."
+        "Starting on the 5th turn, the caster gains up to 64 damage for the rest of the fight based on the number of attacks that inflicted direct damage during each of the previous turns.\nNo attacks: 16 damage\n1 attack: 8 damage\n2+ attacks: 0 damage."
       ],
       "fr": [
-        "À partir du tour 6, le lanceur gagne jusqu'à 50 dommages pour le reste du comabt selon le nombre d'attaques, qui infligent des dommages directs, occaseionnées àchacun des tours précédents."
+        "À partir du tour 5, le lanceur gagne jusqu'à 64 dommages pour le reste du combat selon le nombre d'attaques, qui infligent des dommages directs, occasionnées à chacun des tours précédents.\nAucune attaque : 16 dommages\n1 attaque : 8 dommages.\n2 attaques et + : 0 dommage."
+      ],
+      "de": [
+        "Ab Runde 5 erhält der Zaubernde abhängig von der Anzahl der Angriffe, die in den vorangegangenen Runden direkten Schaden verursacht haben, bis zu 64 Schaden für den Rest des Kampfes.\nKein Angriff: 16 Schaden\n1 Angriff: 8 Schaden\nAb 2 Angriffen: 0 Schaden."
+      ],
+      "es": [
+        "A partir del turno 5, el lanzador gana hasta 64 de daño durante el resto del combate según el número de ataques con daños directos ocasionados en cada uno de los turnos anteriores.\nNingún ataque: 16 de daño\n1 ataque: 8 de daño\n2 o más ataques: 0 de daño."
       ],
       "it": [
-        "A partire dal turno 6, il lanciatore ottiene fino a 50 danni per la restante parte del combattimento a seconda del numero di attacchi che infliggono danni diretti causati in ognuno dei turni precedenti."
+        "A partire dal turno 5, il lanciatore ottiene fino a 64 danni per la restante parte del combattimento a seconda del numero di attacchi che infliggono danni diretti causati in ognuno dei turni precedenti.\nNessun attacco: 16 danni.\n1 attacco: 8 danni.\n2 e + attacchi: 0 danni."
       ],
       "pt": [
-        "A partir do turno 6, o lançador ganha até 50 de dano pra o resto do combate. O bônus de dano dado é reduzido em 5 por ataque até 10 por turno para qualquer ataque direto lançado nos turnos de 1 a 5."
+        "A partir do turno 5, o lançador recebe até 64 danos durante o resto do combate, dependendo da quantidade de ataques com danos diretos que tiverem sido infligidos em cada um dos turnos anteriores.\nNenhum ataque: 16 danos.\n1 ataque: 8 danos.\n2 ou + ataques: 0 dano."
       ]
     },
     "conditions": {
       "conditions": {},
       "customConditions": {}
     },
-    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/23032.png"
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/23032.png"
   }
 ]
