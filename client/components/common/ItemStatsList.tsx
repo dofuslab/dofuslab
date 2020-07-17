@@ -173,7 +173,7 @@ const ItemStatsList: React.FC<Props> = ({
               }
               return (
                 <li key={`stat-${statLine.id}`}>
-                  <span css={{ color }}>
+                  <span css={{ color, whiteSpace: 'pre-line' }}>
                     {statLine.stat
                       ? `${statsMap[statLine.stat].value} ${t(statLine.stat)}`
                       : statLine.customStat}
