@@ -57162,88 +57162,6 @@
     "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/19082.png"
   },
   {
-    "dofusID": 4108,
-    "name": {
-      "en": "Bâton en Bambou Spirituel",
-      "fr": "Bâton en Bambou Spirituel",
-      "de": null,
-      "es": null,
-      "it": "Bâton en Bambou Spirituel",
-      "pt": null
-    },
-    "itemType": "Staff",
-    "setID": null,
-    "level": 110,
-    "stats": [
-      {
-        "stat": "Vitality",
-        "minStat": 101,
-        "maxStat": 150
-      },
-      {
-        "stat": "Wisdom",
-        "minStat": 16,
-        "maxStat": 20
-      },
-      {
-        "stat": "Power",
-        "minStat": 21,
-        "maxStat": 30
-      },
-      {
-        "stat": "Critical",
-        "minStat": 3,
-        "maxStat": 5
-      },
-      {
-        "stat": "Range",
-        "minStat": null,
-        "maxStat": 1
-      },
-      {
-        "stat": "% Earth Resistance",
-        "minStat": 3,
-        "maxStat": 4
-      },
-      {
-        "stat": "% Fire Resistance",
-        "minStat": 3,
-        "maxStat": 4
-      },
-      {
-        "stat": "% Water Resistance",
-        "minStat": 3,
-        "maxStat": 4
-      },
-      {
-        "stat": "% Air Resistance",
-        "minStat": 3,
-        "maxStat": 4
-      }
-    ],
-    "weaponStats": {
-      "apCost": 5,
-      "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
-      "baseCritChance": 30,
-      "critBonusDamage": 6,
-      "weapon_effects": [
-        {
-          "stat": "Neutral damage",
-          "minStat": 21,
-          "maxStat": 30
-        }
-      ]
-    },
-    "customStats": {},
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "https://dofus-lab.s3.us-east-2.amazonaws.com/item/4108.png"
-  },
-  {
     "dofusID": 4141,
     "name": {
       "en": "Roasty Breadstick",
@@ -57951,5 +57869,101 @@
       }
     },
     "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/6746.png"
+  },
+  {
+    "dofusID": "23522",
+    "name": {
+      "en": "Spirit Bamboo Staff",
+      "fr": "Bâton en bambou spirituel",
+      "de": "Stecken aus spirituellem Bambus",
+      "es": "Bastón en bambú espiritual",
+      "it": "Bastone di Bambù Spirituale",
+      "pt": "Bastão de Bambu Espiritual"
+    },
+    "itemType": "Staff",
+    "level": 110,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 30,
+      "critBonusDamage": 6,
+      "weapon_effects": [
+        {
+          "stat": "Neutral damage",
+          "minStat": 21,
+          "maxStat": 30
+        }
+      ]
+    },
+    "customStats": {
+      "en": ["Cooperative crafting impossible"],
+      "fr": ["Craft coopératif impossible."],
+      "de": ["Gemeinsames Herstellen nicht möglich."],
+      "es": ["Craft cooperativo imposible."],
+      "it": ["Craft cooperativo impossibile."],
+      "pt": ["Fabricação cooperativa impossível."]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": ["Quest 'Rokwa: Path of the Fist' complete"],
+        "fr": ["Quête 'Rokwa : Voie du poing' achevée"],
+        "de": ["Quest 'Rokwa: Der Weg der Faust' beendet"],
+        "es": ["Misión 'Rokwa: Vía del puño' completada"],
+        "it": ["Missione \"Rokwa: via del pugno\" compiuta"],
+        "pt": ["Missão \"Rokwa: Via do punho\" concluída"]
+      }
+    },
+    "imageUrl": "https://static.ankama.com/dofus/ng/img/../../../dofus/www/game/items/200/4108.png"
   }
 ]
