@@ -40,15 +40,12 @@ def sync_name_for_item(db_session, file_name):
 
             if new_name not in name_to_record_map:
                 print("Error: The new name does not exist within the data files.")
-                continue
             elif len(translations) > 1:
                 print("Error: Multiple records with the old name exist in the db.")
-                continue
             elif len(translations) == 0:
                 print(
                     "Error: Record with the provided old name does not exist in the db"
                 )
-                continue
             else:
                 print("Updating names for {}".format(new_name))
                 item = translations[0].item
@@ -66,7 +63,7 @@ def sync_name_for_item(db_session, file_name):
                         db_session.add(item_translation)
 
 
-def sync_name_for_spells(db_session):
+def sync_name_for_spell(db_session):
     with open(os.path.join(app_root, "app/database/data/spells.json"), "r") as file:
         data = json.load(file)
         name_to_record_map = {}
@@ -97,15 +94,12 @@ def sync_name_for_spells(db_session):
 
             if new_name not in name_to_record_map:
                 print("Error: The new name does not exist within the data files.")
-                continue
             elif len(translations) > 1:
                 print("Error: Multiple records with the old name exist in the db.")
-                continue
             elif len(translations) == 0:
                 print(
                     "Error: Record with the provided old name does not exist in the db"
                 )
-                continue
             else:
                 print("Updating names for {}".format(new_name))
                 spell = translations[0].spell
@@ -137,7 +131,7 @@ def sync_name():
         if file_name in allowed_file_names:
             with session_scope() as db_session:
                 if file_name == "spells":
-                    sync_name_for_spells(db_session)
+                    sync_name_for_spell(db_session)
                 else:
                     sync_name_for_item(db_session, file_name)
         else:
