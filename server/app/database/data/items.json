@@ -36133,7 +36133,7 @@
       "en": "Sparkling Silver Dofus",
       "fr": "Dofus Argenté Scintillant",
       "de": "Glänzender Silberdofus",
-      "es": "Dofus plateado centelleante",
+      "es": "Dofus Plateado Centelleante",
       "it": "Dofus Argentato Scintillante",
       "pt": "Dofus Prateado Cintilante"
     },
@@ -36153,6 +36153,9 @@
       ],
       "pt": [
         "No começo do turno dele, se o lançador estiver com menos de 20% da vida, ele será curado em 40% da vida e ganhará 20% de danos finais no turno em andamento. Esse efeito só pode se produzir uma vez por combate."
+      ],
+      "es": [
+        "Al principio de su turno, si el lanzador tiene menos de un 20% de su vida, se cura un 40% de su vida y gana un 20% de los daños finales para el turno en curso.\nEste efecto solo puede utilizarse una vez por combate."
       ]
     },
     "conditions": {
@@ -36390,6 +36393,10 @@
       "pt": [
         "Emote Dofus Marfim",
         "No fim do turno, os danos do próximo ataque sofrido serão reduzidos em 50%."
+      ],
+      "es": [
+        "Actitud Dofus Marfil",
+        "Al final del turno, los daños del próximo ataque sufrido se reducen un 50%"
       ]
     },
     "conditions": {
@@ -36527,6 +36534,10 @@
       "pt": [
         "Emote Dofus Ébano",
         "Gera 1 carga no começo do turno, 1 segunda carga inflingindo danos de corpo a corpo e 1 terceira carga inflingindo dados a distância.\n\nQuando 5 cargas forem alcançadas, o próximo ataque consumirá as cargas e aplicará um veneno no alvo durante 3 turnos. \n\nCada carga dará um bônus de 2% de danos finais causados."
+      ],
+      "es": [
+        "Actitud Dofus Ébano",
+        "Genera 1 carga al principio del turno, 1 segunda carga al inflingir daños en cuerpo a cuarpo y 1 tercera carga al inflingir daños a distáncia.\n\nCuando 5 se alcanzan 5 cargas, el próximo ataque consume las cargas y aplica un veneno al objetivo durante 3 turnos. \n\nCada carga dará um bônus de 2% de danos finais causados."
       ]
     },
     "conditions": {
@@ -122825,7 +122836,7 @@
       "en": "Disaprys",
       "fr": "Prysmaru",
       "de": null,
-      "es": null,
+      "es": "Prismausente",
       "it": "Prisparito",
       "pt": "Prismaparecido"
     },
@@ -122843,6 +122854,9 @@
       ],
       "pt": [
         "O portador fica invisível (1 turno) no início do primeiro turno de jogo dele."
+      ],
+      "es": [
+        "El portador se vuelve invisible (1 turno) al principio de su primer turno de juego."
       ]
     },
     "conditions": {
@@ -122857,7 +122871,7 @@
       "en": "Gravprysy",
       "fr": "Prysantor",
       "de": null,
-      "es": null,
+      "es": "Prismazacote",
       "it": "Prisante",
       "pt": "Prisada"
     },
@@ -122875,6 +122889,9 @@
       ],
       "pt": [
         "O portador ganha o estado de Gravidade se não tiver sofrido danos."
+      ],
+      "es": [
+        "El portador gana el estado Pesado mientras no haya sufrido daños."
       ]
     },
     "conditions": {
@@ -122889,7 +122906,7 @@
       "en": "Iridescent Pryank",
       "fr": "Telprys Iridescente",
       "de": null,
-      "es": null,
+      "es": "Prisentimiento iridiscente",
       "it": "Debolpris Iridescente",
       "pt": "Priora Iridescente"
     },
@@ -122907,6 +122924,9 @@
       ],
       "fr": [
         "À la fin de son premier tour, le porteur réduit les dommages de 20% (1 tour) pour chaque ennemi à 2 cases ou moins."
+      ],
+      "es": [
+        "Al final de su primer turno, el portador reduce los daños un 20% (1 turno) por cada enemigo a 2 casillas o menos."
       ]
     },
     "conditions": {
@@ -122921,7 +122941,7 @@
       "en": "Iridescent Prycapture",
       "fr": "Ratrapry Irdescente",
       "de": null,
-      "es": null,
+      "es": "Pristeza Iridiscente",
       "it": "Acchiappris Iridescente",
       "pt": "Aprissar Iridescente"
     },
@@ -122939,6 +122959,9 @@
       ],
       "pt": [
         "O portador ganha 1 PM (2 turnos) por inimigo a mais de 9 células de distância e perde 2 PA (2 turnos) por inimigo a até 9 células."
+      ],
+      "es": [
+        "El portador gana 1 PM (2 turnos) por enemigo a más de 9 casillas y pierde 2 PA (2 turnos) por enemigo a 9 casillas o menos."
       ]
     },
     "conditions": {
@@ -122953,7 +122976,7 @@
       "en": "Iridescent Prygenerate",
       "fr": "Prygen Iridescente",
       "de": null,
-      "es": null,
+      "es": "Prisanación Iridiscente",
       "it": "Priscura Iridescente",
       "pt": "Prigen Iridescente"
     },
@@ -122971,6 +122994,9 @@
       ],
       "pt": [
         "Cura 100% dos danos inimigos sofridos até o fim do primeiro turno."
+      ],
+      "es": [
+        "Cura un 100% de los daños enemigos sufridos hasta el final del primer turno."
       ]
     },
     "conditions": {
@@ -122985,7 +123011,7 @@
       "en": "Iridescent Pryndsight",
       "fr": "Aprykou Iridescente",
       "de": null,
-      "es": null,
+      "es": "Pristraumático Iridiscente",
       "it": "Prismatenza Iridescente",
       "pt": "Golprisma Iridescente"
     },
@@ -123002,7 +123028,10 @@
         "Il portatore ottiene 300 Potenza per 1 turno se riceve un colpo nemico prima di aver giocato."
       ],
       "pt": [
-        "O portador ganha 300 de potência (1 turno) quando recebe um golpe inimigo antes de jogar"
+        "O portador ganha 300 de potência (1 turno) quando recebe um golpe inimigo antes de jogar."
+      ],
+      "es": [
+        "El portador gana 300 de potencia (1 turno) si recibe un golpe enemigo antes de haber jugado."
       ]
     },
     "conditions": {
@@ -123017,7 +123046,7 @@
       "en": "Iridescent Prysipitate",
       "fr": "Prycipithon Iridescente",
       "de": null,
-      "es": null,
+      "es": "Prismacción Iridiscente",
       "it": "Prismipitazione Iridescente",
       "pt": "Pricipitada Iridescente"
     },
@@ -123035,6 +123064,9 @@
       ],
       "pt": [
         "O portador ganha +4 PA durante seu primeiro turno, mas também -4 PM."
+      ],
+      "es": [
+        "El portador gana +4 PA durante su primer turno, pero también -4 PM."
       ]
     },
     "conditions": {
@@ -123049,7 +123081,7 @@
       "en": "Iridescent Pryssure",
       "fr": "Pryssion Iridescente",
       "de": null,
-      "es": null,
+      "es": "Pristrés Iridiscente",
       "it": "Prissione Iridescente",
       "pt": "Prissão Iridescente"
     },
@@ -123063,7 +123095,12 @@
       "it": [
         "Il portatore ottiene 4 PA per 1 turno ma causa il 50% dei danni in meno."
       ],
-      "pt": ["O portador ganh 4 PA durante 1 turno, mas inflige -50% de danos."]
+      "pt": [
+        "O portador ganh 4 PA durante 1 turno, mas inflige -50% de danos."
+      ],
+      "es": [
+        "El portador gana 4 PA durante 1 turno, pero ocasiona -50% de daño."
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123077,7 +123114,7 @@
       "en": "Iridescent Prytekt",
       "fr": "Prytek Iridescente",
       "de": null,
-      "es": null,
+      "es": "Priscudo Iridiscente",
       "it": "Pristezione Iridescente",
       "pt": "Pritek Iridescente"
     },
@@ -123095,6 +123132,9 @@
       ],
       "pt": [
         "O portador ganha 100% da vida atual em pontos de escudo durante seu primeiro turno de jogo."
+      ],
+      "es": [
+        "El portador gana un 100% de su vida actual en puntos de escudo durante su primer turno de juego."
       ]
     },
     "conditions": {
@@ -123109,7 +123149,7 @@
       "en": "Iridescent Surpryz",
       "fr": "Surpryz Iridescente",
       "de": null,
-      "es": null,
+      "es": "Prisorpresa Iridiscente",
       "it": "Sorprisma Iridescente",
       "pt": "Surprisma Iridescente"
     },
@@ -123119,7 +123159,8 @@
       "en": ["The bearer gains 50 Critial for 1 turn."],
       "fr": ["Le porteur gagne 50 Critique pendant 1 tour."],
       "it": ["Il portatore ottiene 50 Critici per 1 turno."],
-      "pt": ["O portador ganha 50% de crítico durante 1 turno."]
+      "pt": ["O portador ganha 50% de crítico durante 1 turno."],
+      "es": ["El portador gana 50 de crítico durante 1 turno."]
     },
     "conditions": {
       "conditions": {},
@@ -123133,7 +123174,7 @@
       "en": "Pryank",
       "fr": "Telprys",
       "de": null,
-      "es": null,
+      "es": "Prisentimiento",
       "it": "Debolpris",
       "pt": "Priora"
     },
@@ -123150,7 +123191,10 @@
         "Alla fine del suo primo turno, il portatore riduce i danni del 5% per 3 turni per ogni nemico a 2 caselle o meno."
       ],
       "pt": [
-        "No fim do primeiro turno dele, o portador reduz em 5% os danos (3 turnos) por inimigo a até 2 células de distância"
+        "No fim do primeiro turno dele, o portador reduz em 5% os danos (3 turnos) por inimigo a até 2 células de distância."
+      ],
+      "es": [
+        "Al final de su primer turno, el portador reduce los daños un 5% (3 turnos) por cada enemigo a 2 casillas o menos."
       ]
     },
     "conditions": {
@@ -123165,7 +123209,7 @@
       "en": "Prycapture",
       "fr": "Ratrapry",
       "de": null,
-      "es": null,
+      "es": "Pristeza",
       "it": "Acchiappris",
       "pt": "Aprissar"
     },
@@ -123181,6 +123225,9 @@
       ],
       "pt": [
         "O portador ganha 1 PM (2 turnos) por inimigo a mais de 15 células de distância."
+      ],
+      "es": [
+        "El portador gana 1 PM (2 turnos) por cada enemigo a más de 15 casillas."
       ]
     },
     "conditions": {
@@ -123195,7 +123242,7 @@
       "en": "Prygenerate",
       "fr": "Prygen",
       "de": null,
-      "es": null,
+      "es": "Prisanación",
       "it": "Priscura",
       "pt": "Prigen"
     },
@@ -123211,7 +123258,12 @@
       "it": [
         "Cura il 15% dei danni nemici subiti fino alla fine del terzo turno."
       ],
-      "pt": ["Cura 15% dos danos inimigos sofridos até o fim do terceiro turno"]
+      "pt": [
+        "Cura 15% dos danos inimigos sofridos até o fim do terceiro turno"
+      ],
+      "es": [
+        "Cura un 15% de los daños enemigos sufridos hasta el final del tercer turno."
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123225,7 +123277,7 @@
       "en": "Prymune",
       "fr": "Prymune",
       "de": null,
-      "es": null,
+      "es": "Prismantelación",
       "it": "Prismune",
       "pt": "Primune"
     },
@@ -123235,7 +123287,8 @@
       "en": ["The bearer reduces damage suffered by 80% before playing."],
       "fr": ["Le porteur réduit les dommages subis de 80% avant d'avoir joué."],
       "it": ["Il portatore riduce i danni subiti del 80% prima di giocare."],
-      "pt": ["O portador reduz os danos sofridos em 80% antes de jogar."]
+      "pt": ["O portador reduz os danos sofridos em 80% antes de jogar."],
+      "es": ["El portador reduce los daños sufridos un 80% antes de haber jugado."]
     },
     "conditions": {
       "conditions": {},
@@ -123249,7 +123302,7 @@
       "en": "Pryndsight",
       "fr": "Aprykou",
       "de": null,
-      "es": null,
+      "es": "Pristraumático",
       "it": "Prismatenza",
       "pt": "Golprisma"
     },
@@ -123267,6 +123320,9 @@
       ],
       "pt": [
         "O portador ganha 100 de potência (3 turnos) quando recebe um golpe inimigo antes de jogar."
+      ],
+      "es": [
+        "El portador gana 100 de potencia (3 turnos) si recibe un golpe enemigo antes de haber jugado."
       ]
     },
     "conditions": {
@@ -123281,7 +123337,7 @@
       "en": "Pryshield",
       "fr": "Aprybou",
       "de": null,
-      "es": null,
+      "es": "Prismuralla",
       "it": "Doposcudopris",
       "pt": "Prismeiros"
     },
@@ -123299,6 +123355,9 @@
       ],
       "pt": [
         "O portador ganha 100% do nível em pontos de escudo (infinito) por adversário (fora invocações) que joga antes dele."
+      ],
+      "es": [
+        "El portador gana un 100% de su nivel en puntos de escudo (infinito) por cada adversario (salvo invocación) que juegue antes que él."
       ]
     },
     "conditions": {
@@ -123313,7 +123372,7 @@
       "en": "Prysical",
       "fr": "Korprys",
       "de": null,
-      "es": null,
+      "es": "Prisencia",
       "it": "Corpris",
       "pt": "Korpris"
     },
@@ -123331,6 +123390,9 @@
       ],
       "pt": [
         "O portador ganha 250 de Esquiva PM antes de jogar e, depois, 50 de Esquiva PM durante 1 turno."
+      ],
+      "es": [
+        "El portador gana 250 de esquiva de PM antes de jugar y, después, 50 de esquiva de PM durante 1 turno."
       ]
     },
     "conditions": {
@@ -123345,7 +123407,7 @@
       "en": "Prysipitate",
       "fr": "Prycipithon",
       "de": null,
-      "es": null,
+      "es": "Prismacción",
       "it": "Prismipitazione",
       "pt": "Pricipitada"
     },
@@ -123355,7 +123417,8 @@
       "en": ["The bearer gains +2 AP for their first round."],
       "fr": ["Le porteur gagne +2 PA pendant son premier tour de jeu."],
       "it": ["Il portatore ottiene 2 PA durante il suo primo turno di gioco."],
-      "pt": ["O portador ganha +2 PA durante seu primeiro turno de jogo."]
+      "pt": ["O portador ganha +2 PA durante seu primeiro turno de jogo."],
+      "es": ["El portrador gana +2 PA durante su primer turno de juego."]
     },
     "conditions": {
       "conditions": {},
@@ -123369,7 +123432,7 @@
       "en": "Pryssure",
       "fr": "Pryssion",
       "de": null,
-      "es": null,
+      "es": "Pristrés",
       "it": "Prissione",
       "pt": "Prissão"
     },
@@ -123385,6 +123448,9 @@
       ],
       "pt": [
         "O portador ganha 1 PA durante 3 turnos, mas inflige -10% de danos."
+      ],
+      "es": [
+        "El portador gana 1 PA durante 3 turnos, pero ocasiona -10% de daño."
       ]
     },
     "conditions": {
@@ -123399,7 +123465,7 @@
       "en": "Prytekt",
       "fr": "Prytek",
       "de": null,
-      "es": null,
+      "es": "Priscudo",
       "it": "Pristezione",
       "pt": "Pritek"
     },
@@ -123417,6 +123483,9 @@
       ],
       "pt": [
         "O portador ganha 25% da vida atual em pontos de escudo durante seus três primeiros turnos de jogo."
+      ],
+      "es": [
+        "El portador gana un 25% de su vida actual en puntos de escudo durante sus tres primeros turnos de juego."
       ]
     },
     "conditions": {
@@ -123431,7 +123500,7 @@
       "en": "Prywitchment",
       "fr": "Prysmenvout",
       "de": null,
-      "es": null,
+      "es": "Prisortilegio",
       "it": "Prismincant",
       "pt": "Prismencanto"
     },
@@ -123449,6 +123518,9 @@
       ],
       "pt": [
         "Reduz em 4 a duração dos efeitos ativos no portador no início do primeiro turno de jogo dele."
+      ],
+      "es": [
+        "Reduce en 4 la duración de los efectos activos en el portador al principio de su primer turno de juego."
       ]
     },
     "conditions": {
@@ -123463,7 +123535,7 @@
       "en": "Pryximity",
       "fr": "Pryximite",
       "de": null,
-      "es": null,
+      "es": "Priximidad",
       "it": "Vicinopris",
       "pt": "Priximidade"
     },
@@ -123481,6 +123553,9 @@
       ],
       "pt": [
         "No começo de seu primeiro turno de jogo, o portador ganha 200% do nível em escudo (inifinito) por inimigo a até 2 células."
+      ],
+      "es": [
+        "Al principio de su primer turno de juego, el portador gana el 200% de su nivel en escudo ( infinito) por cada enemigo a 2 casillas o menos."
       ]
     },
     "conditions": {
@@ -123495,7 +123570,7 @@
       "en": "Shiny Pryank",
       "fr": "Teleprys Brillante",
       "de": null,
-      "es": null,
+      "es": "Prisentimiento Brillante",
       "it": "Debolpris Brillante",
       "pt": "Priora brilhante"
     },
@@ -123512,7 +123587,10 @@
         "Alla fine del suo primo turno, il portatore riduce i danni del 10% per 2 turni per ogni nemico a 2 caselle o meno."
       ],
       "pt": [
-        "No fim do primeiro turno dele, o portador reduz em 10% os danos (2 turnos) por inimigo a até 2 células de distância"
+        "No fim do primeiro turno dele, o portador reduz em 10% os danos (2 turnos) por inimigo a até 2 células de distância."
+      ],
+      "es": [
+        "Al final de su primer turno, el portador reduce los daños un 10% (2 turnos) por cada enemigo a 2 casillas o menos."
       ]
     },
     "conditions": {
@@ -123527,7 +123605,7 @@
       "en": "Shiny Prycapture",
       "fr": "Ratrapry Brillante",
       "de": null,
-      "es": null,
+      "es": "Pristeza Brillante",
       "it": "Acchiappris Brillante",
       "pt": "Aprissar Brilhante"
     },
@@ -123544,7 +123622,10 @@
         "Il portatore ottiene 1 PM per 2 turni per ogni nemico a più di 12 caselle e perde 1 PA per 2 turni per ogni nemico a 12 caselle o meno."
       ],
       "pt": [
-        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 12 células de distância e perde 1 PA (2 turnos) por inimigo a até 12 células"
+        "O portador ganha 1 PM (2 turnos) por inimigo a mais de 12 células de distância e perde 1 PA (2 turnos) por inimigo a até 12 células."
+      ],
+      "es": [
+        "El portador gana 1 PM (2 turnos) por enemigo a más de 12 casillas y pierde 1 PA (2 turnos) por enemigo a 12 casillas o menos."
       ]
     },
     "conditions": {
@@ -123559,7 +123640,7 @@
       "en": "Shiny Prygenerate",
       "fr": "Prygen Brillante",
       "de": null,
-      "es": null,
+      "es": "Prisanación Brillante",
       "it": "Priscura Brillante",
       "pt": "Prigen Brilhante"
     },
@@ -123575,7 +123656,12 @@
       "it": [
         "Cura il 30% dei danni nemici subiti fino alla fine del secondo turno."
       ],
-      "pt": ["Cura 30% dos danos inimigos sofridos até o fim do segundo turno."]
+      "pt": [
+        "Cura 30% dos danos inimigos sofridos até o fim do segundo turno."
+      ],
+      "es": [
+        "Cura un 30% de los daños enemigos sufridos hasta el final del segundo turno."
+      ]
     },
     "conditions": {
       "conditions": {},
@@ -123589,7 +123675,7 @@
       "en": "Shiny Pryndsight",
       "fr": "Aprykou Brillante",
       "de": null,
-      "es": null,
+      "es": "Pristraumático Brillante",
       "it": "Prismatenza Brillante",
       "pt": "Golprisma Brilhante"
     },
@@ -123607,6 +123693,9 @@
       ],
       "pt": [
         "O portador ganha 200 de potência (2 turnos) quando recebe um golpe inimigo antes de jogar."
+      ],
+      "es": [
+        "El portador gana 200 de potencia (2 turnos) si recibe un golpe enemigo antes de haber jugado."
       ]
     },
     "conditions": {
@@ -123621,7 +123710,7 @@
       "en": "Shiny Prysipitate",
       "fr": "Pricipithon Brillante",
       "de": null,
-      "es": null,
+      "es": "Prismacción Brillante",
       "it": "Prismipitazione Brillante",
       "pt": "Pricipitada Brilhante"
     },
@@ -123639,6 +123728,9 @@
       ],
       "pt": [
         "O portador ganha +3 PA durante seu primeiro turno, mas também -2 PM."
+      ],
+      "es": [
+        "El portador gana +3 PA durante su primer turno, pero también -2 PM."
       ]
     },
     "conditions": {
@@ -123653,7 +123745,7 @@
       "en": "Shiny Pryssure",
       "fr": "Pryssion Brillante",
       "de": null,
-      "es": null,
+      "es": "Pristrés Brillante",
       "it": "Prissione Brillante",
       "pt": "Prissão Brilhante"
     },
@@ -123669,6 +123761,9 @@
       ],
       "pt": [
         "O portador ganha 2 PA durante 2 turnos, mas inflige -35% de danos."
+      ],
+      "es": [
+        "El portador gana 2 PA durante 2 turnos, pero ocasiona -35% de daño."
       ]
     },
     "conditions": {
@@ -123683,7 +123778,7 @@
       "en": "Shiny Prytekt",
       "fr": "Prytek Brillante",
       "de": null,
-      "es": null,
+      "es": "Priscudo Brillante",
       "it": "Pristezione Brillante",
       "pt": "Pritek Brilhante"
     },
@@ -123701,6 +123796,9 @@
       ],
       "pt": [
         "O portador ganha 50% da vida atual em pontos de escudo durante seus dois primeiros turnos de jogo."
+      ],
+      "es": [
+        "El portador gana un 50% de su vida actual en puntos de escudo durante sus dos primeros turnos de juego."
       ]
     },
     "conditions": {
@@ -123715,7 +123813,7 @@
       "en": "Shiny Surpryz",
       "fr": "Surpryz Brillante",
       "de": null,
-      "es": null,
+      "es": "Prisorpresa Brillante",
       "it": "Sorprisma Brillante",
       "pt": "Surprisma Brilhante"
     },
@@ -123725,7 +123823,8 @@
       "en": ["The bearer gains 20 Critical for 2 turns."],
       "fr": ["Le porteur gagne 20 Critique pendant 2 tours."],
       "it": ["Il portatore ottiene 20 Critici per 2 turni."],
-      "pt": ["O portador ganha 20 de crítico durante 2 turnos"]
+      "pt": ["O portador ganha 20 de crítico durante 2 turnos"],
+      "es": ["El portador gana 20 de crítico durante 2 turnos"]
     },
     "conditions": {
       "conditions": {},
@@ -123739,7 +123838,7 @@
       "en": "Spryritual",
       "fr": "Espryt",
       "de": null,
-      "es": null,
+      "es": "Prispiritu",
       "it": "Prismente",
       "pt": "Esprírito"
     },
@@ -123757,6 +123856,9 @@
       ],
       "pt": [
         "O portador ganha 250 de Esquiva PA antes de jogar e, depois, 50 de Esquiva PA durante 1 turno."
+      ],
+      "es": [
+        "El portador gana 250 de esquiva de PA antes de jugar y, después, 50 de esquiva de PA durante 1 turno."
       ]
     },
     "conditions": {
@@ -123771,7 +123873,7 @@
       "en": "Surpryz",
       "fr": "Surpryz",
       "de": null,
-      "es": null,
+      "es": "Prisorpresa",
       "it": "Sorprisma",
       "pt": "Surprisma"
     },
@@ -123781,7 +123883,8 @@
       "en": ["The bearer gains 8 Critical for 3 turns."],
       "fr": ["Le porteur gagne 8 Critique pendant 3 tours."],
       "it": ["Il portatore ottiene 8 Critici per 3 turni."],
-      "pt": ["O portador ganha 8 de crítico durante 3 turnos"]
+      "pt": ["O portador ganha 8 de crítico durante 3 turnos"],
+      "es": ["El portador gana 8 de crítico durante 3 turnos"]
     },
     "conditions": {
       "conditions": {},
@@ -123795,7 +123898,7 @@
       "en": "Cloakscreen",
       "fr": "Caparavent",
       "de": null,
-      "es": null,
+      "es": "Caparapeto",
       "it": "Mantello Paravento",
       "pt": null
     },
@@ -123862,7 +123965,7 @@
       "en": "Dark Hurl Necklace",
       "fr": "Collier de perlouzes",
       "de": null,
-      "es": null,
+      "es": "Collar de perlucas",
       "it": "Collana di Perloffe",
       "pt": null
     },
@@ -123934,7 +124037,7 @@
       "en": "Kwapuddle Cap",
       "fr": "Kwaflaque",
       "de": null,
-      "es": null,
+      "es": "Kwapamela",
       "it": "Kwappicacpo",
       "pt": null
     },
@@ -124001,7 +124104,7 @@
       "en": "Kwarapace",
       "fr": "Kwarapace",
       "de": null,
-      "es": null,
+      "es": "Kuaparazón",
       "it": "Kwapparapace",
       "pt": null
     },
@@ -124073,7 +124176,7 @@
       "en": "Nagate's Tear",
       "fr": "Larme de Nagate",
       "de": null,
-      "es": null,
+      "es": "Lágrima de Nagate",
       "it": "Lacrima di Nagate, la Dama delle Acque",
       "pt": null
     },
@@ -124145,7 +124248,7 @@
       "en": "Bulbuckler",
       "fr": "Bulbouclier",
       "de": null,
-      "es": null,
+      "es": "Bulbescudo",
       "it": "Bulboscudo",
       "pt": null
     },
@@ -124197,7 +124300,7 @@
       "en": "Capistil",
       "fr": "Capistil",
       "de": null,
-      "es": null,
+      "es": "Capistillo",
       "it": "Cappistillo",
       "pt": null
     },
@@ -124304,7 +124407,7 @@
       "en": "Cuttings",
       "fr": "Boutures",
       "de": null,
-      "es": null,
+      "es": "Esquejes",
       "it": "Stivali Talea",
       "pt": null
     },
@@ -124376,7 +124479,7 @@
       "en": "Plantamulet",
       "fr": "Plantamulette",
       "de": null,
-      "es": null,
+      "es": "Plantamuleto",
       "it": "Piandamuleto",
       "pt": null
     },
@@ -124448,7 +124551,7 @@
       "en": "Firefoux Bag",
       "fr": "Sac de Firefoux",
       "de": null,
-      "es": null,
+      "es": "Saco Firefux",
       "it": "Zaino dei Focopaz",
       "pt": null
     },
@@ -124515,7 +124618,7 @@
       "en": "Firefoux Ring",
       "fr": "Alliace des Firefoux",
       "de": null,
-      "es": null,
+      "es": "Alianza Firefux",
       "it": "Anello dei Focopaz",
       "pt": null
     },
@@ -124587,7 +124690,7 @@
       "en": "Firefoux Spitfire",
       "fr": "Crache-feu Firefoux",
       "de": null,
-      "es": null,
+      "es": "Escupefuegos Firefux",
       "it": "Sputa-fuoco Focopaz",
       "pt": null
     },
@@ -124664,7 +124767,7 @@
       "en": "Firewelt",
       "fr": "Ceinture d'artifices",
       "de": null,
-      "es": null,
+      "es": "Cinturón de Artificio",
       "it": "Cintura d'Artificio",
       "pt": null
     },
@@ -124736,7 +124839,7 @@
       "en": "Nutcrackers",
       "fr": "Les Casse-noiesttes",
       "de": null,
-      "es": null,
+      "es": "Cascanueces",
       "it": "Gli Spacca-nocciole",
       "pt": null
     },
@@ -124803,7 +124906,7 @@
       "en": "Titfertat Hat",
       "fr": "Chapeau Kassé",
       "de": null,
-      "es": null,
+      "es": "Bacía Vacía",
       "it": "Copricapo Vasorotto",
       "pt": null
     },
@@ -124872,10 +124975,10 @@
   {
     "dofusID": 10345,
     "name": {
-      "en": "Turpiude Band",
+      "en": "Turpitude Band",
       "fr": "Ceinture Pitude",
       "de": null,
-      "es": null,
+      "es": "Cinto Fensa",
       "it": "Cinturpitudine",
       "pt": null
     },
