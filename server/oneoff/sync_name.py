@@ -3,10 +3,11 @@ import os
 from app import session_scope
 from app.database.model_item_translation import ModelItemTranslation
 from app.database.model_spell_translation import ModelSpellTranslation
+from oneoff.sync_item import allowed_file_names as item_file_names
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-allowed_file_names = ["items", "mounts", "pets", "weapons", "rhineetles", "spells"]
+allowed_file_names = item_file_names + ["spells"]
 
 
 def sync_name_for_item(db_session, file_name):
