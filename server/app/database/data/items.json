@@ -35870,7 +35870,7 @@
       "en": "Ice Dofus",
       "fr": "Dofus des Glaces",
       "de": "Eisdofus",
-      "es": "Dofus de los hielos",
+      "es": "Dofus de los Hielos",
       "it": "Dofus dei Ghiacci",
       "pt": "Dofus do Gelo"
     },
@@ -36148,14 +36148,14 @@
       "fr": [
         "Au début de son tour, si le lanceur a moins de 20% de sa vie, il est soigné de 40% de sa vie et gagne 20% de dommages finaux pour le tour en cours.\nCet effet ne peut se jouer qu'une seule fois par combat."
       ],
+      "es": [
+        "Al principio de su turno, si el lanzador tiene menos de un 20% de su vida, se cura un 40% de su vida y gana un 20% de los daños finales para el turno en curso.\nEste efecto solo puede utilizarse una vez por combate."
+      ],
       "it": [
         "All'inizio del suo turno, se il lanciatore ha meno del 20% della sua vita, viene curato del 40% della sua vita e ottiene il 20% dei danni finali per il turno in corso. \nL'effetto è attivabile una sola volta per combattimento."
       ],
       "pt": [
         "No começo do turno dele, se o lançador estiver com menos de 20% da vida, ele será curado em 40% da vida e ganhará 20% de danos finais no turno em andamento. Esse efeito só pode se produzir uma vez por combate."
-      ],
-      "es": [
-        "Al principio de su turno, si el lanzador tiene menos de un 20% de su vida, se cura un 40% de su vida y gana un 20% de los daños finales para el turno en curso.\nEste efecto solo puede utilizarse una vez por combate."
       ]
     },
     "conditions": {
@@ -36386,6 +36386,10 @@
         "Attitude Dofus Ivoire",
         "À la fin du tour, les dommages de la prochaine attaque subie sont réduits de 50%."
       ],
+      "es": [
+        "Actitud Dofus Marfil",
+        "Al final del turno, los daños del próximo ataque sufrido se reducen un 50%"
+      ],
       "it": [
         "Emote Dofus Avorio",
         "Alla fine del turno, i danni del prossimo attacco subito sono ridotti del 50%."
@@ -36393,10 +36397,6 @@
       "pt": [
         "Emote Dofus Marfim",
         "No fim do turno, os danos do próximo ataque sofrido serão reduzidos em 50%."
-      ],
-      "es": [
-        "Actitud Dofus Marfil",
-        "Al final del turno, los daños del próximo ataque sufrido se reducen un 50%"
       ]
     },
     "conditions": {
@@ -36527,6 +36527,10 @@
         "Attitude Dofus Ébène",
         "Génère une charge en début de tour, une deuxième en infligeant des dommages en mêlée et une troisième en infligeant des dommages à distance.\n\nLorsque 5 charges sont atteintes, la prochaine attaque consomme les charges et applique un poison (de 16 à 20 de dommages dans l'élément de votre attaque, cumulable) sur la cible pendant 3 tours.\n\nChaque charge donne un bonus de 2% de dommages finaux occasionnés."
       ],
+      "es": [
+        "Actitud Dofus Ébano",
+        "Genera 1 carga al principio del turno, 1 segunda carga al inflingir daños en cuerpo a cuarpo y 1 tercera carga al inflingir daños a distáncia.\n\nCuando 5 se alcanzan 5 cargas, el próximo ataque consume las cargas y aplica un veneno al objetivo durante 3 turnos. \n\nCada carga dará um bônus de 2% de danos finais causados."
+      ],
       "it": [
         "Emote Dofus Ebano",
         "Genera 1 carica a inizio turno, 1 carica infliggendo danni da mischia e 1 carica infliggendo danni a distanza.\n\nQuando vengono accumulate 5 cariche, l'attacco seguente consuma le cariche e applica un veleno sul bersaglio per 3 turni.\n\nOgni carica accorda un bonus del 2% dei danni finali causati."
@@ -36534,10 +36538,6 @@
       "pt": [
         "Emote Dofus Ébano",
         "Gera 1 carga no começo do turno, 1 segunda carga inflingindo danos de corpo a corpo e 1 terceira carga inflingindo dados a distância.\n\nQuando 5 cargas forem alcançadas, o próximo ataque consumirá as cargas e aplicará um veneno no alvo durante 3 turnos. \n\nCada carga dará um bônus de 2% de danos finais causados."
-      ],
-      "es": [
-        "Actitud Dofus Ébano",
-        "Genera 1 carga al principio del turno, 1 segunda carga al inflingir daños en cuerpo a cuarpo y 1 tercera carga al inflingir daños a distáncia.\n\nCuando 5 se alcanzan 5 cargas, el próximo ataque consume las cargas y aplica un veneno al objetivo durante 3 turnos. \n\nCada carga dará um bônus de 2% de danos finais causados."
       ]
     },
     "conditions": {
@@ -93215,7 +93215,7 @@
       "en": "Cocoa Dofus",
       "fr": "Dofus Cacao",
       "de": "Kakao-Dofus",
-      "es": "Dofus cacao",
+      "es": "Dofus Cacao",
       "it": "Dofus Cacao",
       "pt": "Dofus Cacau"
     },
@@ -114436,7 +114436,7 @@
       "en": "Silver Dofus",
       "fr": "Dofus Argenté",
       "de": "Silberdofus",
-      "es": "Dofus plateado",
+      "es": "Dofus Plateado",
       "it": "Dofus Argentato",
       "pt": "Dofus Prateado"
     },
@@ -122849,14 +122849,14 @@
       "fr": [
         "Le porteur devient invisible (1 tour) au début de son premier tour de jeu."
       ],
+      "es": [
+        "El portador se vuelve invisible (1 turno) al principio de su primer turno de juego."
+      ],
       "it": [
         "Il portatore diventa invisibile per 1 turno all'inizio del suo primo turno di gioco."
       ],
       "pt": [
         "O portador fica invisível (1 turno) no início do primeiro turno de jogo dele."
-      ],
-      "es": [
-        "El portador se vuelve invisible (1 turno) al principio de su primer turno de juego."
       ]
     },
     "conditions": {
@@ -122884,14 +122884,14 @@
       "fr": [
         "Le porteur gagne l'état Pesanteur tant qu'il n'a pas subi de dommages."
       ],
+      "es": [
+        "El portador gana el estado Pesado mientras no haya sufrido daños."
+      ],
       "it": [
         "Il portatore viene affetto dallo stato Pesantezza fino a quando non subisce danni."
       ],
       "pt": [
         "O portador ganha o estado de Gravidade se não tiver sofrido danos."
-      ],
-      "es": [
-        "El portador gana el estado Pesado mientras no haya sufrido daños."
       ]
     },
     "conditions": {
@@ -122916,17 +122916,17 @@
       "en": [
         "At the end of their first turn, the bearer reduces damage by 20% (1 turn) for each enemy within 2 cells."
       ],
-      "it": [
-        "Alla fine del suo primo turno, il portatore riduce i danni del 20% per 1 turno per ogni nemico a 2 caselle o meno."
-      ],
-      "pt": [
-        "No fim do primeiro turno dele, o portador reduz em 20% os danos (1 turno) por inimigo a até 2 células de distância"
-      ],
       "fr": [
         "À la fin de son premier tour, le porteur réduit les dommages de 20% (1 tour) pour chaque ennemi à 2 cases ou moins."
       ],
       "es": [
         "Al final de su primer turno, el portador reduce los daños un 20% (1 turno) por cada enemigo a 2 casillas o menos."
+      ],
+      "it": [
+        "Alla fine del suo primo turno, il portatore riduce i danni del 20% per 1 turno per ogni nemico a 2 caselle o meno."
+      ],
+      "pt": [
+        "No fim do primeiro turno dele, o portador reduz em 20% os danos (1 turno) por inimigo a até 2 células de distância"
       ]
     },
     "conditions": {
@@ -122954,14 +122954,14 @@
       "fr": [
         "Le porteur gagne 1 PM (2 tours) par ennemi à plus de cases et perd 2 PA (2 tours) par ennemi à 9 cases ou moins."
       ],
+      "es": [
+        "El portador gana 1 PM (2 turnos) por enemigo a más de 9 casillas y pierde 2 PA (2 turnos) por enemigo a 9 casillas o menos."
+      ],
       "it": [
         "Il portatore ottiene 1 PM per 2 turni per ogni nemico a più di 9 caselle e perde 1 PA per 2 turni per ogni nemico a 9 caselle o meno."
       ],
       "pt": [
         "O portador ganha 1 PM (2 turnos) por inimigo a mais de 9 células de distância e perde 2 PA (2 turnos) por inimigo a até 9 células."
-      ],
-      "es": [
-        "El portador gana 1 PM (2 turnos) por enemigo a más de 9 casillas y pierde 2 PA (2 turnos) por enemigo a 9 casillas o menos."
       ]
     },
     "conditions": {
@@ -122989,14 +122989,14 @@
       "fr": [
         "Soigne 100% des dommages ennemis subis jusqu'à la fin du premier tour."
       ],
+      "es": [
+        "Cura un 100% de los daños enemigos sufridos hasta el final del primer turno."
+      ],
       "it": [
         "Cura il 100% dei danni nemici subito fino alla fine del primo turno."
       ],
       "pt": [
         "Cura 100% dos danos inimigos sofridos até o fim do primeiro turno."
-      ],
-      "es": [
-        "Cura un 100% de los daños enemigos sufridos hasta el final del primer turno."
       ]
     },
     "conditions": {
@@ -123024,14 +123024,14 @@
       "fr": [
         "Le porteur gagne 300 Puissance (1 tour) si un coup ennemi est reçu avant d'avoir joué."
       ],
+      "es": [
+        "El portador gana 300 de potencia (1 turno) si recibe un golpe enemigo antes de haber jugado."
+      ],
       "it": [
         "Il portatore ottiene 300 Potenza per 1 turno se riceve un colpo nemico prima di aver giocato."
       ],
       "pt": [
         "O portador ganha 300 de potência (1 turno) quando recebe um golpe inimigo antes de jogar."
-      ],
-      "es": [
-        "El portador gana 300 de potencia (1 turno) si recibe un golpe enemigo antes de haber jugado."
       ]
     },
     "conditions": {
@@ -123059,14 +123059,14 @@
       "fr": [
         "Le porteur gagne +4 PA pendant son premier tour mais aussi -4 PM."
       ],
+      "es": [
+        "El portador gana +4 PA durante su primer turno, pero también -4 PM."
+      ],
       "it": [
         "Il portatore ottiene 4 PA durante il suo primo turno di gioco ma perde 4 PM."
       ],
       "pt": [
         "O portador ganha +4 PA durante seu primeiro turno, mas também -4 PM."
-      ],
-      "es": [
-        "El portador gana +4 PA durante su primer turno, pero también -4 PM."
       ]
     },
     "conditions": {
@@ -123092,14 +123092,14 @@
       "fr": [
         "Le porteur gagne 4 PA pendant 1 tour mais occasionne -50% de dommages."
       ],
+      "es": [
+        "El portador gana 4 PA durante 1 turno, pero ocasiona -50% de daño."
+      ],
       "it": [
         "Il portatore ottiene 4 PA per 1 turno ma causa il 50% dei danni in meno."
       ],
       "pt": [
         "O portador ganh 4 PA durante 1 turno, mas inflige -50% de danos."
-      ],
-      "es": [
-        "El portador gana 4 PA durante 1 turno, pero ocasiona -50% de daño."
       ]
     },
     "conditions": {
@@ -123127,14 +123127,14 @@
       "fr": [
         "Le porteur gagne 100% de sa vie actuelle en points de bouclier pendant son premier tour de jeu."
       ],
+      "es": [
+        "El portador gana un 100% de su vida actual en puntos de escudo durante su primer turno de juego."
+      ],
       "it": [
         "Il portatore ottiene il 100% dei suoi PV attuali in punti scudo per il suo primo turno di gioco."
       ],
       "pt": [
         "O portador ganha 100% da vida atual em pontos de escudo durante seu primeiro turno de jogo."
-      ],
-      "es": [
-        "El portador gana un 100% de su vida actual en puntos de escudo durante su primer turno de juego."
       ]
     },
     "conditions": {
@@ -123158,9 +123158,9 @@
     "customStats": {
       "en": ["The bearer gains 50 Critial for 1 turn."],
       "fr": ["Le porteur gagne 50 Critique pendant 1 tour."],
+      "es": ["El portador gana 50 de crítico durante 1 turno."],
       "it": ["Il portatore ottiene 50 Critici per 1 turno."],
-      "pt": ["O portador ganha 50% de crítico durante 1 turno."],
-      "es": ["El portador gana 50 de crítico durante 1 turno."]
+      "pt": ["O portador ganha 50% de crítico durante 1 turno."]
     },
     "conditions": {
       "conditions": {},
@@ -123187,14 +123187,14 @@
       "fr": [
         "À la fin de son premier tour, le porteur réduit les dommages de 5% (3 tours) pour chaque ennemi à cases ou moins."
       ],
+      "es": [
+        "Al final de su primer turno, el portador reduce los daños un 5% (3 turnos) por cada enemigo a 2 casillas o menos."
+      ],
       "it": [
         "Alla fine del suo primo turno, il portatore riduce i danni del 5% per 3 turni per ogni nemico a 2 caselle o meno."
       ],
       "pt": [
         "No fim do primeiro turno dele, o portador reduz em 5% os danos (3 turnos) por inimigo a até 2 células de distância."
-      ],
-      "es": [
-        "Al final de su primer turno, el portador reduce los daños un 5% (3 turnos) por cada enemigo a 2 casillas o menos."
       ]
     },
     "conditions": {
@@ -123220,14 +123220,14 @@
         "The bearer gains 1 MP (2 turns) per enemy more than 15 cells away."
       ],
       "fr": ["Le porteur gagne 1 PM (2 tours) par ennemi à plus de 15 cases."],
+      "es": [
+        "El portador gana 1 PM (2 turnos) por cada enemigo a más de 15 casillas."
+      ],
       "it": [
         "Il portatore ottiene 1 PM per 2 turni per ogni nemico a più di 15 caselle."
       ],
       "pt": [
         "O portador ganha 1 PM (2 turnos) por inimigo a mais de 15 células de distância."
-      ],
-      "es": [
-        "El portador gana 1 PM (2 turnos) por cada enemigo a más de 15 casillas."
       ]
     },
     "conditions": {
@@ -123255,14 +123255,14 @@
       "fr": [
         "Soigne 15% des dommages ennemis subis jusqu'à la fin du troisième tour."
       ],
+      "es": [
+        "Cura un 15% de los daños enemigos sufridos hasta el final del tercer turno."
+      ],
       "it": [
         "Cura il 15% dei danni nemici subiti fino alla fine del terzo turno."
       ],
       "pt": [
         "Cura 15% dos danos inimigos sofridos até o fim do terceiro turno"
-      ],
-      "es": [
-        "Cura un 15% de los daños enemigos sufridos hasta el final del tercer turno."
       ]
     },
     "conditions": {
@@ -123286,9 +123286,9 @@
     "customStats": {
       "en": ["The bearer reduces damage suffered by 80% before playing."],
       "fr": ["Le porteur réduit les dommages subis de 80% avant d'avoir joué."],
+      "es": ["El portador reduce los daños sufridos un 80% antes de haber jugado."],
       "it": ["Il portatore riduce i danni subiti del 80% prima di giocare."],
-      "pt": ["O portador reduz os danos sofridos em 80% antes de jogar."],
-      "es": ["El portador reduce los daños sufridos un 80% antes de haber jugado."]
+      "pt": ["O portador reduz os danos sofridos em 80% antes de jogar."]
     },
     "conditions": {
       "conditions": {},
@@ -123315,14 +123315,14 @@
       "fr": [
         "Le porteur gagne 100 Puissance (3 tours) si un coup ennemi est reçu avant d'avoir joué."
       ],
+      "es": [
+        "El portador gana 100 de potencia (3 turnos) si recibe un golpe enemigo antes de haber jugado."
+      ],
       "it": [
         "Il portatore ottiene 100 Potenza per 3 turni se riceve un colpo nemico prima di aver giocato."
       ],
       "pt": [
         "O portador ganha 100 de potência (3 turnos) quando recebe um golpe inimigo antes de jogar."
-      ],
-      "es": [
-        "El portador gana 100 de potencia (3 turnos) si recibe un golpe enemigo antes de haber jugado."
       ]
     },
     "conditions": {
@@ -123350,14 +123350,14 @@
       "fr": [
         "Le porteur gagne 100% de son niveau en points de bouclier (infini) pour chaque adversaire (hors invocation) que joue avant lui."
       ],
+      "es": [
+        "El portador gana un 100% de su nivel en puntos de escudo (infinito) por cada adversario (salvo invocación) que juegue antes que él."
+      ],
       "it": [
         "Il portatore ottiene il 100% del suo livello in punti scudo (infinito) per ogni nemico, che non sia un'evocazione, che gioca prima di lui."
       ],
       "pt": [
         "O portador ganha 100% do nível em pontos de escudo (infinito) por adversário (fora invocações) que joga antes dele."
-      ],
-      "es": [
-        "El portador gana un 100% de su nivel en puntos de escudo (infinito) por cada adversario (salvo invocación) que juegue antes que él."
       ]
     },
     "conditions": {
@@ -123385,14 +123385,14 @@
       "fr": [
         "Le porteur gagne 250 Esquive PM avant d'avoir joué, puis 50 Esquive PM pendant 1 tour."
       ],
+      "es": [
+        "El portador gana 250 de esquiva de PM antes de jugar y, después, 50 de esquiva de PM durante 1 turno."
+      ],
       "it": [
         "Il portatore ottiene 250 Schivata PM prima di giocare, poi 50 Schivata PM per 1 turno."
       ],
       "pt": [
         "O portador ganha 250 de Esquiva PM antes de jogar e, depois, 50 de Esquiva PM durante 1 turno."
-      ],
-      "es": [
-        "El portador gana 250 de esquiva de PM antes de jugar y, después, 50 de esquiva de PM durante 1 turno."
       ]
     },
     "conditions": {
@@ -123416,9 +123416,9 @@
     "customStats": {
       "en": ["The bearer gains +2 AP for their first round."],
       "fr": ["Le porteur gagne +2 PA pendant son premier tour de jeu."],
+      "es": ["El portrador gana +2 PA durante su primer turno de juego."],
       "it": ["Il portatore ottiene 2 PA durante il suo primo turno di gioco."],
-      "pt": ["O portador ganha +2 PA durante seu primeiro turno de jogo."],
-      "es": ["El portrador gana +2 PA durante su primer turno de juego."]
+      "pt": ["O portador ganha +2 PA durante seu primeiro turno de jogo."]
     },
     "conditions": {
       "conditions": {},
@@ -123443,14 +123443,14 @@
       "fr": [
         "Le porteur gagne 1 PA pendant 3 tours mais occasionne -10% de dommages."
       ],
+      "es": [
+        "El portador gana 1 PA durante 3 turnos, pero ocasiona -10% de daño."
+      ],
       "it": [
         "Il portatore ottiene 1 PA per 3 turni ma causa il 10% dei danni in meno."
       ],
       "pt": [
         "O portador ganha 1 PA durante 3 turnos, mas inflige -10% de danos."
-      ],
-      "es": [
-        "El portador gana 1 PA durante 3 turnos, pero ocasiona -10% de daño."
       ]
     },
     "conditions": {
@@ -123478,14 +123478,14 @@
       "fr": [
         "Le porteur gagne 25% de sa vie actuelle en points de bouclier pendant ses trois premiers tours de jeu."
       ],
+      "es": [
+        "El portador gana un 25% de su vida actual en puntos de escudo durante sus tres primeros turnos de juego."
+      ],
       "it": [
         "Il portatore ottiene il 25% dei suoi PV attuali in punti scudo per i suoi primi tre turni di gioco."
       ],
       "pt": [
         "O portador ganha 25% da vida atual em pontos de escudo durante seus três primeiros turnos de jogo."
-      ],
-      "es": [
-        "El portador gana un 25% de su vida actual en puntos de escudo durante sus tres primeros turnos de juego."
       ]
     },
     "conditions": {
@@ -123513,14 +123513,14 @@
       "fr": [
         "Réduit de 4 la durée des effects actifs sur le porteur au début de son premier tour de jeu."
       ],
+      "es": [
+        "Reduce en 4 la duración de los efectos activos en el portador al principio de su primer turno de juego."
+      ],
       "it": [
         "Riduce di 4 turni la durata degli effetti attivi sul portatore all'inizio del suo primo turno di gioco."
       ],
       "pt": [
         "Reduz em 4 a duração dos efeitos ativos no portador no início do primeiro turno de jogo dele."
-      ],
-      "es": [
-        "Reduce en 4 la duración de los efectos activos en el portador al principio de su primer turno de juego."
       ]
     },
     "conditions": {
@@ -123548,14 +123548,14 @@
       "fr": [
         "Au début de son premier tour de jeu, le porteur gagne 200% de son niveau en bouclier (infini) pour chaque ennemi à 2 cases ou moins."
       ],
+      "es": [
+        "Al principio de su primer turno de juego, el portador gana el 200% de su nivel en escudo ( infinito) por cada enemigo a 2 casillas o menos."
+      ],
       "it": [
         "All'inizio del suo primo turno di gioco, il portatore ottiene il 200% del suo livello in punti scudo (infinito) per ogni nemico a 2 caselle o meno."
       ],
       "pt": [
         "No começo de seu primeiro turno de jogo, o portador ganha 200% do nível em escudo (inifinito) por inimigo a até 2 células."
-      ],
-      "es": [
-        "Al principio de su primer turno de juego, el portador gana el 200% de su nivel en escudo ( infinito) por cada enemigo a 2 casillas o menos."
       ]
     },
     "conditions": {
@@ -123583,14 +123583,14 @@
       "fr": [
         "À la fin de son premier tour, le porteur réduit les dommages de 10% (2 tours) pour chque ennemi à 2 cases ou moins."
       ],
+      "es": [
+        "Al final de su primer turno, el portador reduce los daños un 10% (2 turnos) por cada enemigo a 2 casillas o menos."
+      ],
       "it": [
         "Alla fine del suo primo turno, il portatore riduce i danni del 10% per 2 turni per ogni nemico a 2 caselle o meno."
       ],
       "pt": [
         "No fim do primeiro turno dele, o portador reduz em 10% os danos (2 turnos) por inimigo a até 2 células de distância."
-      ],
-      "es": [
-        "Al final de su primer turno, el portador reduce los daños un 10% (2 turnos) por cada enemigo a 2 casillas o menos."
       ]
     },
     "conditions": {
@@ -123618,14 +123618,14 @@
       "fr": [
         "Le porteur gagne 1 PM (2 tours) par ennemi à plus de 12 cases et perd 1 PA (2 tours) par ennemi à 12 cases ou moins."
       ],
+      "es": [
+        "El portador gana 1 PM (2 turnos) por enemigo a más de 12 casillas y pierde 1 PA (2 turnos) por enemigo a 12 casillas o menos."
+      ],
       "it": [
         "Il portatore ottiene 1 PM per 2 turni per ogni nemico a più di 12 caselle e perde 1 PA per 2 turni per ogni nemico a 12 caselle o meno."
       ],
       "pt": [
         "O portador ganha 1 PM (2 turnos) por inimigo a mais de 12 células de distância e perde 1 PA (2 turnos) por inimigo a até 12 células."
-      ],
-      "es": [
-        "El portador gana 1 PM (2 turnos) por enemigo a más de 12 casillas y pierde 1 PA (2 turnos) por enemigo a 12 casillas o menos."
       ]
     },
     "conditions": {
@@ -123653,14 +123653,14 @@
       "fr": [
         "Soigne 30% de dommages ennemis subis jusqu'à la fin du deuxième tour."
       ],
+      "es": [
+        "Cura un 30% de los daños enemigos sufridos hasta el final del segundo turno."
+      ],
       "it": [
         "Cura il 30% dei danni nemici subiti fino alla fine del secondo turno."
       ],
       "pt": [
         "Cura 30% dos danos inimigos sofridos até o fim do segundo turno."
-      ],
-      "es": [
-        "Cura un 30% de los daños enemigos sufridos hasta el final del segundo turno."
       ]
     },
     "conditions": {
@@ -123688,14 +123688,14 @@
       "fr": [
         "Le porteur gagne 200 Puissance (2 tours) si un coup ennemi est reçu avant d'avoir joué."
       ],
+      "es": [
+        "El portador gana 200 de potencia (2 turnos) si recibe un golpe enemigo antes de haber jugado."
+      ],
       "it": [
         "Il portatore ottiene 200 Potenza per 2 turni se riceve un colpo nemico prima di aver giocato."
       ],
       "pt": [
         "O portador ganha 200 de potência (2 turnos) quando recebe um golpe inimigo antes de jogar."
-      ],
-      "es": [
-        "El portador gana 200 de potencia (2 turnos) si recibe un golpe enemigo antes de haber jugado."
       ]
     },
     "conditions": {
@@ -123723,14 +123723,14 @@
       "fr": [
         "Le porteur gagne +3 PA pendant son premier tour mais aussi -2 PM."
       ],
+      "es": [
+        "El portador gana +3 PA durante su primer turno, pero también -2 PM."
+      ],
       "it": [
         "Il portatore ottiene 3 PA durante il suo primo turno di gioco ma perde 2 PM."
       ],
       "pt": [
         "O portador ganha +3 PA durante seu primeiro turno, mas também -2 PM."
-      ],
-      "es": [
-        "El portador gana +3 PA durante su primer turno, pero también -2 PM."
       ]
     },
     "conditions": {
@@ -123756,14 +123756,14 @@
       "fr": [
         "Le porteur gagne 2 PA pendant 2 tours mais occasionne -20% de dommages."
       ],
+      "es": [
+        "El portador gana 2 PA durante 2 turnos, pero ocasiona -35% de daño."
+      ],
       "it": [
         "Il portatore ottiene 2 PA per 2 turni ma causa il 35% dei danni in meno."
       ],
       "pt": [
         "O portador ganha 2 PA durante 2 turnos, mas inflige -35% de danos."
-      ],
-      "es": [
-        "El portador gana 2 PA durante 2 turnos, pero ocasiona -35% de daño."
       ]
     },
     "conditions": {
@@ -123791,14 +123791,14 @@
       "fr": [
         "Le porteur gagne 50% de sa vie actuelle en points de bouclier pendant ses deux premiers tours de jeu."
       ],
+      "es": [
+        "El portador gana un 50% de su vida actual en puntos de escudo durante sus dos primeros turnos de juego."
+      ],
       "it": [
         "Il portatore ottiene il 50% dei suoi PV attuali in punti scudo per i suoi primi due turni di gioco."
       ],
       "pt": [
         "O portador ganha 50% da vida atual em pontos de escudo durante seus dois primeiros turnos de jogo."
-      ],
-      "es": [
-        "El portador gana un 50% de su vida actual en puntos de escudo durante sus dos primeros turnos de juego."
       ]
     },
     "conditions": {
@@ -123822,9 +123822,10 @@
     "customStats": {
       "en": ["The bearer gains 20 Critical for 2 turns."],
       "fr": ["Le porteur gagne 20 Critique pendant 2 tours."],
+      "es": ["El portador gana 20 de crítico durante 2 turnos"],
       "it": ["Il portatore ottiene 20 Critici per 2 turni."],
-      "pt": ["O portador ganha 20 de crítico durante 2 turnos"],
-      "es": ["El portador gana 20 de crítico durante 2 turnos"]
+      "pt": ["O portador ganha 20 de crítico durante 2 turnos"]
+      
     },
     "conditions": {
       "conditions": {},
@@ -123851,14 +123852,14 @@
       "fr": [
         "Le porteur gagne 250 Esquive PA avant d'avoir joué, puis 50 Esquive PA pendant 1 tour."
       ],
+      "es": [
+        "El portador gana 250 de esquiva de PA antes de jugar y, después, 50 de esquiva de PA durante 1 turno."
+      ],
       "it": [
         "Il portatore ottiene 250 Schivata PA prima di giocare, poi 50 Schivata PA per 1 turno."
       ],
       "pt": [
         "O portador ganha 250 de Esquiva PA antes de jogar e, depois, 50 de Esquiva PA durante 1 turno."
-      ],
-      "es": [
-        "El portador gana 250 de esquiva de PA antes de jugar y, después, 50 de esquiva de PA durante 1 turno."
       ]
     },
     "conditions": {
@@ -123882,9 +123883,9 @@
     "customStats": {
       "en": ["The bearer gains 8 Critical for 3 turns."],
       "fr": ["Le porteur gagne 8 Critique pendant 3 tours."],
+      "es": ["El portador gana 8 de crítico durante 3 turnos"],
       "it": ["Il portatore ottiene 8 Critici per 3 turni."],
-      "pt": ["O portador ganha 8 de crítico durante 3 turnos"],
-      "es": ["El portador gana 8 de crítico durante 3 turnos"]
+      "pt": ["O portador ganha 8 de crítico durante 3 turnos"]
     },
     "conditions": {
       "conditions": {},
@@ -124975,7 +124976,7 @@
   {
     "dofusID": 10345,
     "name": {
-      "en": "Turpitude Band",
+      "en": "Turpiude Band",
       "fr": "Ceinture Pitude",
       "de": null,
       "es": "Cinto Fensa",
