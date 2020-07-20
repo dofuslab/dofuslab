@@ -173,6 +173,11 @@ class ItemScraper:
             image = all_soups["en"].find("img", attrs={"class": "img-maxresponsive"})[
                 "src"
             ]
+            scraper_utils.download_image(id, image, "items")
+            scraper_utils.upload_image_to_s3(
+                os.path.join(scraper_utils.image_folder, "items", id + ".png"), "item"
+            )
+
             set = None
             try:
                 set = (
@@ -1386,14 +1391,14 @@ class DataAdjustment:
 if __name__ == "__main__":
     # ItemScraper.get_all_item_ids()
     # ItemScraper.get_all_item_data(3000)
-    # ItemScraper.get_data_for_ids(["19985", "6760"])
+    ItemScraper.get_data_for_ids(["23265"])
 
     # SetScraper.get_all_set_ids()
     # SetScraper.get_set_data(1000)
 
     # WeaponScraper.get_all_weapon_ids()
     # WeaponScraper.get_weapon_data(1000)
-    WeaponScraper.get_data_for_ids(["20391"])
+    # WeaponScraper.get_data_for_ids(["20391"])
 
     # PetScraper.get_all_pet_ids()
     # PetScraper.get_all_pet_data(1000)
@@ -1408,3 +1413,6 @@ if __name__ == "__main__":
     # DataAdjustment.add_missing_trophy_conditions()
     # DataAdjustment.add_missing_item_details()
     # DataAdjustment.change_condition_case()
+
+    pass
+    # scraper_utils.upload_image_to_s3("/Users/SamLee/Desktop/dofusSets/server/static/images/test.png", "item")

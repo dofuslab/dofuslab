@@ -1,7 +1,17 @@
 import requests
 import re
 import unicodedata
+import boto3
+from botocore.exceptions import ClientError
+import os
 from bs4 import BeautifulSoup
+
+s3 = boto3.client("s3")
+
+root_dir = os.path.dirname(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+)
+image_folder = os.path.join(root_dir, "static", "images")
 
 
 class Constants:
@@ -855,3 +865,25 @@ def get_weapon_stats(soup):
     }
 
     return weapon_stat
+
+
+def download_image(id, image_url, image_sub_folder):
+    r = requests.get(image_url)
+    if r.status_code == 200:
+        with open(os.path.join(image_folder, image_sub_folder, id + ".png"), "wb") as f:
+            f.write(r.content)
+    else:
+        print("Image failed to download. ID: {}".format(id))
+
+
+def upload_image_to_s3(file_path, path):
+    file_name = file_path.split("/")[-1]
+    try:
+        s3.upload_file(
+            file_path,
+            "dofus-lab",
+            path + "/" + file_name,
+            ExtraArgs={"ACL": "public-read"},
+        )
+    except ClientError as e:
+        print(e)
