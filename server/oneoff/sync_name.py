@@ -20,7 +20,7 @@ def update_name(db_session, file_name):
         if file_name in item_file_names:
             for r in data:
                 name_to_record_map[r["name"]["en"]] = r
-        else:
+        elif file_name == "spells":
             for r in data:
                 for pair in r["spells"]:
                     for spell in pair:
@@ -46,7 +46,7 @@ def update_name(db_session, file_name):
                     )
                     .all()
                 )
-            else:
+            elif file_name == "spells":
                 translations = (
                     db_session.query(ModelSpellTranslation)
                     .filter(
@@ -80,7 +80,7 @@ def update_name(db_session, file_name):
                                 name=record["name"][locale],
                             )
                             db_session.add(item_translation)
-                else:
+                elif file_name == "spells":
                     spell = translations[0].spell
                     record = name_to_record_map[new_name]
                     db_session.query(ModelSpellTranslation).filter_by(
