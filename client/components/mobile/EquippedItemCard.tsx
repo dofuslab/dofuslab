@@ -250,6 +250,7 @@ const EquippedItemCard: React.FC<Props> = ({
           openSetModal={openSetModal}
           showImg
           errors={errors}
+          weaponElementMage={equippedItem.weaponElementMage}
         />
 
         {(equippedItem.item.buffs?.length ?? 0) > 0 && (
