@@ -177,6 +177,7 @@ class ItemScraper:
             scraper_utils.upload_image_to_s3(
                 os.path.join(scraper_utils.image_folder, "items", id + ".png"), "item"
             )
+            image = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/" + id + ".png"
 
             set = None
             try:
@@ -382,6 +383,12 @@ class WeaponScraper:
             image = all_soups["en"].find("img", attrs={"class": "img-maxresponsive"})[
                 "src"
             ]
+            scraper_utils.download_image(id, image, "items")
+            scraper_utils.upload_image_to_s3(
+                os.path.join(scraper_utils.image_folder, "items", id + ".png"), "item"
+            )
+            image = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/" + id + ".png"
+
             set = None
             divs = (
                 all_soups["en"]
@@ -773,6 +780,14 @@ class ClassScraper:
                     .find("div", {"class": "ak-spell-details-illu"})
                     .find("img")["src"]
                 )
+                scraper_utils.download_image(id, image_url, "spells")
+                scraper_utils.upload_image_to_s3(
+                    os.path.join(scraper_utils.image_folder, "spells", id + ".png"),
+                    "spell",
+                )
+                image_url = (
+                    "https://dofus-lab.s3.us-east-2.amazonaws.com/spell/" + id + ".png"
+                )
 
                 levels = (
                     all_soups["en"]
@@ -1153,9 +1168,6 @@ class ClassScraper:
             "https://www.dofus.com/en/mmorpg/encyclopedia/classes/18-ouginak",
         ]
 
-        # with open(os.path.join(dirname, "spells.json"), "w") as file:
-        #     json.dump([], file)
-
         for url in all_urls:
             self.get_info_for_class(url)
 
@@ -1391,14 +1403,14 @@ class DataAdjustment:
 if __name__ == "__main__":
     # ItemScraper.get_all_item_ids()
     # ItemScraper.get_all_item_data(3000)
-    ItemScraper.get_data_for_ids(["23265"])
+    # ItemScraper.get_data_for_ids(["23265"])
 
     # SetScraper.get_all_set_ids()
     # SetScraper.get_set_data(1000)
 
     # WeaponScraper.get_all_weapon_ids()
     # WeaponScraper.get_weapon_data(1000)
-    # WeaponScraper.get_data_for_ids(["20391"])
+    WeaponScraper.get_data_for_ids(["23316"])
 
     # PetScraper.get_all_pet_ids()
     # PetScraper.get_all_pet_data(1000)
@@ -1413,6 +1425,3 @@ if __name__ == "__main__":
     # DataAdjustment.add_missing_trophy_conditions()
     # DataAdjustment.add_missing_item_details()
     # DataAdjustment.change_condition_case()
-
-    pass
-    # scraper_utils.upload_image_to_s3("/Users/SamLee/Desktop/dofusSets/server/static/images/test.png", "item")
