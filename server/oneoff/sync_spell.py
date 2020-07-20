@@ -127,6 +127,7 @@ def update_spell(db_session, spell_name, record, should_only_add_missing):
     elif len(translations) == 1 and not should_only_add_missing:
         print("Spell already exists in database. Updating spell...")
         spell = translations[0].spell
+        spell.image_url = record.get("imageUrl", "")
         spell.is_trap = record.get("isTrap", False)
         create_spell_translations(db_session, record, spell)
         print("Spell translations successfully updated")
