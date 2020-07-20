@@ -20,186 +20,196 @@ msgstr ""
 
 #: app/mutation_validation_utils.py:18
 msgid "The email you entered is invalid."
-msgstr ""
+msgstr "La dirección de correo electrónico introducida no es válida."
 
 #: app/mutation_validation_utils.py:21
 msgid "There already exists a user with that email."
-msgstr ""
+msgstr "Ya existe una cuenta con este correo electrónico."
 
 #: app/mutation_validation_utils.py:28
 msgid "The display name you entered is invalid."
-msgstr ""
+msgstr "El nombre de muestra introducido no es válido."
 
 #: app/mutation_validation_utils.py:31
 msgid "There already exists a user with that display name."
-msgstr ""
+msgstr "Ya existe una cuenta con éste nombre de muestra."
 
 #: app/mutation_validation_utils.py:39
 msgid ""
 "Passwords must have a minimum of 8 characters, at least one lowercase "
 "letter, one uppercase letter, and one number."
 msgstr ""
+"La contraseña debe tener un mínimo de 8 caracteres, al menos una letra "
+"minúscula, una mayúscula, y un número."
 
 #: app/schema.py:359 app/schema.py:366
 msgid "You are not authorized to make this request."
-msgstr ""
+msgstr "No estás autorizado para realizar ésta petición."
 
 #: app/schema.py:686
 msgid "Invalid element mage on non-weapon item."
-msgstr ""
+msgstr "Forjamagia imposible en éste objeto"
 
 #: app/schema.py:713
 msgid "Invalid stat to set exo."
-msgstr ""
+msgstr "Forjamagia imposible."
 
 #: app/schema.py:763
 #, python-format
 msgid "%(old_name)s copy"
-msgstr ""
+msgstr "Copia de %(old_name)s"
 
 #: app/schema.py:765
 msgid "Copy"
-msgstr ""
+msgstr "Copia"
 
 #: app/schema.py:887 app/schema.py:927 app/schema.py:1063 app/schema.py:1090
 msgid "You are already logged in."
-msgstr ""
+msgstr "Ya estás conectado."
 
 #: app/schema.py:906 app/schema.py:977
 msgid "Verify your DofusLab account"
-msgstr ""
+msgstr "Verifica tu cuenta de DofusLab."
 
 #: app/schema.py:911
 msgid "An error occurred while registering."
-msgstr ""
+msgstr "Ha ocurrido un error durante el registro."
 
 #: app/schema.py:932
 msgid "Invalid username or password."
-msgstr ""
+msgstr "Nombre de usuario o contraseña incorrectos."
 
 #: app/schema.py:957 app/schema.py:1053
 msgid "Please wait a minute before trying again."
-msgstr ""
+msgstr "Por favor, espera 1 minuto antes de volver a intentarlo."
 
 #: app/schema.py:961
 msgid ""
 "You have sent too many verification emails. Please wait awhile before "
 "trying again."
 msgstr ""
+"Has enviado demasiados correos de verificación. Por favor espera antes "
+"de volver a intentarlo."
 
 #: app/schema.py:969
 msgid "You must be signed in to do that."
-msgstr ""
+msgstr "Debes conectarte para hacer esto."
 
 #: app/schema.py:971
 msgid "Your account is already verified."
-msgstr ""
+msgstr "Tu cuenta ya está verificada."
 
 #: app/schema.py:991
 msgid "Received unsupported locale."
-msgstr ""
+msgstr "Lenguaje sin soporte."
 
 #: app/schema.py:1027 app/schema.py:1125 app/utils.py:80
 msgid "You are not logged in."
-msgstr ""
+msgstr "No estás conectado."
 
 #: app/schema.py:1031
 msgid "Incorrect password."
-msgstr ""
+msgstr "Contraseña incorrecta."
 
 #: app/schema.py:1039 app/schema.py:1109
 msgid "You must enter a password different from your current one."
-msgstr ""
+msgstr "Debes introducir una contraseña diferente a la anterior."
 
 #: app/schema.py:1057
 msgid ""
 "You have sent too many password request emails. Please wait awhile before"
 " trying again."
 msgstr ""
+"Has enviado demasiadas peticiones de cambio de correo electrónico. Por favor,"
+" espera para volver a intentarlo."
 
 #: app/schema.py:1066
 msgid "We could not find an account with that email."
-msgstr ""
+msgstr "No hemos podido encontrar una cuenta con este correo electrónico."
 
 #: app/schema.py:1070
 msgid "Please verify your email first."
-msgstr ""
+msgstr "Por favor verifica tu correo electrónico primero."
 
 #: app/schema.py:1077
 msgid "Reset your DofusLab password"
-msgstr ""
+msgstr "Reestablece tu contraseña de DofusLab"
 
 #: app/schema.py:1095 app/schema.py:1103
 msgid "The link is invalid or expired. Please request a new one."
-msgstr ""
+msgstr "El enlace es inválido o ha expirado. Por favor, genera uno nuevo."
 
 #: app/utils.py:29
 msgid "Please wait a moment before trying again."
-msgstr ""
+msgstr "Espera un momento antes de volver a intentarlo."
 
 #: app/utils.py:35 app/utils.py:37 app/utils.py:98 app/utils.py:100
 msgid "You don't have permission to edit that build."
-msgstr ""
+msgstr "No tienes permiso para editar ese conjunto."
 
 #: app/utils.py:70 app/utils.py:86
 msgid "Please verify your account to continue using DofusLab."
-msgstr ""
+msgstr "Verifica tu cuenta para seguir usando DofusLab."
 
 #: app/utils.py:95
 msgid "That build does not exist."
-msgstr ""
+msgstr "Ese conjunto no existe."
 
 #: app/utils.py:106 app/utils.py:109
 msgid "Invalid stat value."
-msgstr ""
+msgstr "Valor de característica inválido."
 
 #: app/utils.py:116
 msgid "The set name is too long."
-msgstr ""
+msgstr "El nombre del set es muy largo."
 
 #: app/utils.py:118
 msgid "Invalid set level (must be 1-200)."
-msgstr ""
+msgstr "El nivel del set es inválido"
 
 #: app/database/model_favorite_item.py:53
 #, python-format
 msgid "You may not have more than %(max_favorites)s favorites."
-msgstr ""
+msgstr "No puedes tener mas de %(max_favorites)s favoritos."
 
 #: app/templates/reset_password.html:10
 msgid ""
 "We just received a request to reset your password. Follow the link\n"
 "        below to reset it."
 msgstr ""
+"Hemos recibido una petición de reestablecimiento de contraseña. "
+"Sigue el link de abajo para reestablecerla."
 
 #: app/templates/reset_password.html:14
 msgid "If this wasn't you, please ignore this message."
-msgstr ""
+msgstr "Si no fuiste tú, por favor, ignora este mensaje."
 
 #: app/templates/reset_password.html:16
 msgid "Thanks for using DofusLab!"
-msgstr ""
+msgstr "¡Gracias por usar DofusLab!"
 
 #: app/templates/reset_password.html:16
 msgid "The DofusLab team"
-msgstr ""
+msgstr "El equipo de DofusLab"
 
 #: app/templates/verify_email.html:10
 msgid ""
 "Thanks for signing up for DofusLab. Please follow the link to\n"
 "        activate your account."
 msgstr ""
+"Gracias por registrarte en DofusLab. Sigue las instrucciones\n"
+"        para activar tu cuenta."
 
 #: app/templates/verify_email.html:14
 msgid "Cheers!"
-msgstr ""
+msgstr "¡Salud!"
 
 #: app/templates/verify_email.html:14
 msgid "- The DofusLab team"
-msgstr ""
+msgstr "- El equipo de DofusLab"
 
 #~ msgid "Hey %(display_name),"
-#~ msgstr ""
+#~ msgstr "Hola %(display_name),"
 
 #~ msgid ""
 #~ "Thanks for signing up for DofusLab. "
@@ -207,12 +217,16 @@ msgstr ""
 #~ ""
 #~ "    your account."
 #~ msgstr ""
+#~ "Gracias por registrarte en DofusLab. "
+#~ "Por favor, sigue el enlace para activar\n"
+#~ ""
+#~ "    tu cuenta."
 
 #~ msgid "Confirm your DofusLab account"
-#~ msgstr ""
+#~ msgstr "Confirma tu cuenta de DofusLab"
 
 #~ msgid "copy"
-#~ msgstr ""
+#~ msgstr "copiar"
 
 #~ msgid "You don't have permission to edit that set."
-#~ msgstr ""
+#~ msgstr "No tienes permiso para editar este conjunto."
