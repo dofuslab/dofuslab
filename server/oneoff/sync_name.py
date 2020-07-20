@@ -25,6 +25,8 @@ def update_name(db_session, file_name):
                 for pair in r["spells"]:
                     for spell in pair:
                         name_to_record_map[spell["name"]["en"]] = spell
+        else:
+            raise ValueError("Invalid file name")
 
         while True:
             old_name = input(
@@ -55,6 +57,8 @@ def update_name(db_session, file_name):
                     )
                     .all()
                 )
+            else:
+                raise ValueError("Invalid file name")
 
             if new_name not in name_to_record_map:
                 print("Error: The new name does not exist within the data files.")
@@ -95,6 +99,8 @@ def update_name(db_session, file_name):
                                 description=record["description"][locale],
                             )
                             db_session.add(spell_translation)
+                else:
+                    raise ValueError("Invalid file name")
 
 
 def sync_name():
