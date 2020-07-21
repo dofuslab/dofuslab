@@ -33,107 +33,18 @@ class ItemScraper:
             writer = csv.writer(file)
             writer.writerow(item_ids)
 
-    def get_all_item_data(max_number_of_items):
-        # get all item ids from csv
-        all_item_ids = []
-        with open(os.path.join(dirname, "all_item_ids.csv"), "r") as csvfile:
-            data = csv.reader(csvfile, delimiter=",")
-            for row in data:
-                all_item_ids = row
+    def get_data_for_ids(id_list=[]):
+        if id_list == []:
+            with open(os.path.join(dirname, "all_item_ids.csv"), "r") as csvfile:
+                data = csv.reader(csvfile, delimiter=",")
+                for row in data:
+                    id_list = row
 
-        # for each id in the csv, start scraping for that id's info
-        items = []
-        missed_items = []
-        i = 0
-        for id in all_item_ids:
-            # early exit for now as to avoid scraping 2000+ items
-            if i == max_number_of_items:
-                break
-            i = i + 1
-            # if int(id) != 15157:
-            #     continue
-            # if i < 1800:
-            #     continue
-
-            url = "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/" + id
-            all_soups = scraper_utils.get_all_localized_soup(url)
-
-            is_404 = False
-            for key, value in all_soups.items():
-                if (
-                    value.find(
-                        "div", attrs={"class": "ak-encyclo-detail-type col-xs-6"}
-                    )
-                    == None
-                ):
-                    print("---- Item 404'd, skipping item (id: {}) ----".format(id))
-                    missed_items.append(id)
-                    is_404 = True
-
-                    break
-
-            if is_404:
-                continue
-
-            names = scraper_utils.get_alternate_names(all_soups)
-            item_type = (
-                all_soups["en"]
-                .find("div", attrs={"class": "ak-encyclo-detail-type col-xs-6"})
-                .text[7:]
-            )
-            level = (
-                all_soups["en"]
-                .find(
-                    "div",
-                    attrs={"class": "ak-encyclo-detail-level col-xs-6 text-right"},
-                )
-                .text[7:]
-            )
-            image = all_soups["en"].find("img", attrs={"class": "img-maxresponsive"})[
-                "src"
-            ]
-            set = None
-            divs = (
-                all_soups["en"]
-                .find("div", attrs={"class": "ak-container ak-panel-stack ak-glue"})
-                .find_all("div", attrs={"class": "ak-container ak-panel"})
-            )
-            for div in divs:
-                if "is part of the" in div.text:
-                    set = div.find("a")["href"].split("/")[-1].split("-")[0]
-                    break
-
-            all_stats = scraper_utils.get_stats(all_soups)
-            stats = all_stats[0]
-            custom_stats = all_stats[1]
-            conditions = scraper_utils.get_conditions(all_soups, item_type)
-
-            item = {
-                "dofusID": id,
-                "name": names,
-                "itemType": item_type,
-                "setID": set,
-                "level": int(level),
-                "stats": stats,
-                "customStats": custom_stats,
-                "conditions": conditions,
-                "imageUrl": image,
-            }
-
-            items.append(item)
-            print("Item " + str(i) + " (id: {}) complete".format(id))
-
-        with open(os.path.join(dirname, "items.json"), "w") as file:
-            print("Writing item data to file")
-            json.dump(items, file)
-
-        print(missed_items)
-        return missed_items
-
-    def get_data_for_ids(id_list):
         data = None
         with open(os.path.join(dirname, "items.json"), "r") as json_file:
             data = json.load(json_file)
+
+        missed_items = []
 
         for id in id_list:
             url = "https://www.dofus.com/en/mmorpg/encyclopedia/equipment/" + id
@@ -215,6 +126,11 @@ class ItemScraper:
         with open(os.path.join(dirname, "items.json"), "w") as json_file:
             json.dump(data, json_file)
 
+        if missed_items == []:
+            print("All item data successfully retrieved.")
+        else:
+            print("Some data was not successfully retrieved: {}".format(missed_items))
+
 
 class WeaponScraper:
     def get_all_weapon_ids():
@@ -243,107 +159,18 @@ class WeaponScraper:
             writer = csv.writer(file)
             writer.writerow(weapon_ids)
 
-    def get_weapon_data(max_number_of_items):
-        all_weapon_ids = []
+    def get_data_for_ids(id_list=[]):
+        if id_list == []:
+            with open(os.path.join(dirname, "all_weapon_ids.csv"), "r") as csvfile:
+                data = csv.reader(csvfile, delimiter=",")
+                for row in data:
+                    id_list = row
 
-        with open(os.path.join(dirname, "all_weapon_ids.csv"), "r") as csvfile:
-            data = csv.reader(csvfile, delimiter=",")
-            for row in data:
-                all_weapon_ids = row
-
-        weapons = []
-        missed_weapons = []
-        i = 0
-        for id in all_weapon_ids:
-            if i == max_number_of_items:
-                break
-            # if int(id) != 2416:
-            #     continue
-            i = i + 1
-
-            url = "https://www.dofus.com/en/mmorpg/encyclopedia/weapons/" + id
-            all_soups = scraper_utils.get_all_localized_soup(url)
-
-            is_404 = False
-            for key, value in all_soups.items():
-                if (
-                    value.find(
-                        "div", attrs={"class": "ak-encyclo-detail-type col-xs-6"}
-                    )
-                    == None
-                ):
-                    print("---- Item 404'd, skipping item (id: {}) ----".format(id))
-                    missed_weapons.append(id)
-                    is_404 = True
-
-                    break
-
-            if is_404:
-                continue
-
-            names = scraper_utils.get_alternate_names(all_soups)
-            item_type = (
-                all_soups["en"]
-                .find("div", attrs={"class": "ak-encyclo-detail-type col-xs-6"})
-                .text[7:]
-            )
-            level = (
-                all_soups["en"]
-                .find(
-                    "div",
-                    attrs={"class": "ak-encyclo-detail-level col-xs-6 text-right"},
-                )
-                .text[7:]
-            )
-            image = all_soups["en"].find("img", attrs={"class": "img-maxresponsive"})[
-                "src"
-            ]
-            set = None
-            divs = (
-                all_soups["en"]
-                .find("div", attrs={"class": "ak-container ak-panel-stack ak-glue"})
-                .find_all("div", attrs={"class": "ak-container ak-panel"})
-            )
-            for div in divs:
-                if "is part of the" in div.text:
-                    set = div.find("a")["href"].split("/")[-1].split("-")[0]
-                    break
-
-            all_stats = scraper_utils.get_stats(all_soups)
-            stats = all_stats[0]
-            custom_stats = all_stats[1]
-            conditions = scraper_utils.get_conditions(all_soups, item_type)
-
-            weapon_stats = scraper_utils.get_weapon_stats(all_soups["en"])
-            weapon_stats["weapon_effects"] = all_stats[2]
-
-            weapon = {
-                "dofusID": id,
-                "name": names,
-                "itemType": item_type,
-                "level": int(level),
-                "setID": set,
-                "stats": stats,
-                "weaponStats": weapon_stats,
-                "customStats": custom_stats,
-                "conditions": conditions,
-                "imageUrl": image,
-            }
-
-            weapons.append(weapon)
-            print("Item " + str(i) + " (id: {}) complete".format(id))
-
-        with open(os.path.join(dirname, "weapons.json"), "w") as file:
-            print("Writing weapon data to file")
-            json.dump(weapons, file)
-
-        print(missed_weapons)
-        return missed_weapons
-
-    def get_data_for_ids(id_list):
         data = None
         with open(os.path.join(dirname, "weapons.json"), "r") as json_file:
             data = json.load(json_file)
+
+        missed_weapons = []
 
         for id in id_list:
             url = "https://www.dofus.com/en/mmorpg/encyclopedia/weapons/" + id
@@ -427,6 +254,11 @@ class WeaponScraper:
         with open(os.path.join(dirname, "weapons.json"), "w") as json_file:
             json.dump(data, json_file)
 
+        if missed_items == []:
+            print("All weapon data successfully retrieved.")
+        else:
+            print("Some data was not successfully retrieved: {}".format(missed_weapons))
+
 
 class SetScraper:
     def get_all_set_ids():
@@ -454,26 +286,20 @@ class SetScraper:
             writer = csv.writer(file)
             writer.writerow(set_ids)
 
-    def get_set_data(max_number_of_items):
-        # get all set ids from csvfile
-        all_set_ids = []
+    def get_set_data_for_ids(id_list=[]):
+        if id_list == []:
+            with open(os.path.join(dirname, "all_set_ids.csv"), "r") as csvfile:
+                data = csv.reader(csvfile, delimiter=",")
+                for row in data:
+                    id_list = row
 
-        with open(os.path.join(dirname, "all_set_ids.csv"), "r") as csvfile:
-            data = csv.reader(csvfile, delimiter=",")
-            for row in data:
-                all_set_ids = row
+        data = None
+        with open(os.path.join(dirname, "sets.json"), "r") as json_file:
+            data = json.load(json_file)
 
-        # for each id in the csv, start scraping for that id's info
-        sets = []
         missed_sets = []
-        i = 0
-        for id in all_set_ids:
-            if i == max_number_of_items:
-                break
-            i = i + 1
-            # if int(id) != 204:
-            #     continue
 
+        for id in id_list:
             url = "https://www.dofus.com/en/mmorpg/encyclopedia/sets/" + id
             all_soups = scraper_utils.get_all_localized_soup(url)
 
@@ -498,12 +324,17 @@ class SetScraper:
             bonuses = scraper_utils.get_bonuses(all_soups)
 
             set = {"id": id, "name": names, "bonuses": bonuses}
-            sets.append(set)
+            data.append(set)
             print("Set " + str(i) + " (id: {}) complete".format(id))
 
         print("Writing set data to file")
         with open(os.path.join(dirname, "sets.json"), "w") as file:
             json.dump(sets, file)
+
+        if missed_sets == []:
+            print("All set data successfully retrieved.")
+        else:
+            print("Some data was not successfully retrieved: {}".format(missed_sets))
 
 
 class PetScraper:
@@ -530,23 +361,20 @@ class PetScraper:
             writer = csv.writer(file)
             writer.writerow(item_ids)
 
-    def get_all_pet_data(max_number_of_items):
-        all_pet_ids = []
-        with open(os.path.join(dirname, "all_pet_ids.csv"), "r") as csvfile:
-            data = csv.reader(csvfile, delimiter=",")
-            for row in data:
-                all_pet_ids = row
+    def get_pet_data_for_ids(id_list=[]):
+        if id_list == []:
+            with open(os.path.join(dirname, "all_pet_ids.csv"), "r") as csvfile:
+                data = csv.reader(csvfile, delimiter=",")
+                for row in data:
+                    id_list = row
 
-        pets = []
+        data = None
+        with open(os.path.join(dirname, "pets.json"), "r") as json_file:
+            data = json.load(json_file)
+
         missed_pets = []
-        i = 0
-        for id in all_pet_ids:
-            if i == max_number_of_items:
-                break
-            i = i + 1
-            # if int(id) != 2077:
-            #     continue
 
+        for id in id_list:
             url = "https://www.dofus.com/en/mmorpg/encyclopedia/pets/" + id
             all_soups = scraper_utils.get_all_localized_soup(url)
 
@@ -584,6 +412,12 @@ class PetScraper:
             image = all_soups["en"].find("img", attrs={"class": "img-maxresponsive"})[
                 "src"
             ]
+            scraper_utils.download_image(id, image, "items")
+            scraper_utils.upload_image_to_s3(
+                os.path.join(scraper_utils.image_folder, "items", id + ".png"), "item"
+            )
+            image = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/" + id + ".png"
+
             set = None
             divs = (
                 all_soups["en"]
@@ -618,8 +452,10 @@ class PetScraper:
             print("Writing item data to file")
             json.dump(pets, file)
 
-        print(missed_pets)
-        return missed_pets
+        if missed_pets == []:
+            print("All pet data successfully retrieved.")
+        else:
+            print("Some data was not successfully retrieved: {}".format(missed_pets))
 
 
 class MountScraper:
@@ -646,21 +482,20 @@ class MountScraper:
             writer = csv.writer(file)
             writer.writerow(mount_ids)
 
-    def get_all_mount_data(max_number_of_items):
-        all_mount_ids = []
-        with open(os.path.join(dirname, "all_mount_ids.csv"), "r") as csvfile:
-            data = csv.reader(csvfile, delimiter=",")
-            for row in data:
-                all_mount_ids = row
+    def get_mount_data_for_ids(id_list=[]):
+        if id_list == []:
+            with open(os.path.join(dirname, "all_mounts_ids.csv"), "r") as csvfile:
+                data = csv.reader(csvfile, delimiter=",")
+                for row in data:
+                    id_list = row
 
-        mounts = []
+        data = None
+        with open(os.path.join(dirname, "mounts.json"), "r") as json_file:
+            data = json.load(json_file)
+
         missed_mounts = []
-        i = 0
-        for id in all_mount_ids:
-            if i == max_number_of_items:
-                break
-            i = i + 1
 
+        for id in all_mount_ids:
             wild_mount_ids = [1, 6, 74, 167, 168, 169, 170, 171]
             if int(id) in wild_mount_ids:
                 continue
@@ -691,6 +526,12 @@ class MountScraper:
             image = all_soups["en"].find("img", attrs={"class": "img-maxresponsive"})[
                 "src"
             ]
+            scraper_utils.download_image(id, image, "items")
+            scraper_utils.upload_image_to_s3(
+                os.path.join(scraper_utils.image_folder, "items", id + ".png"), "item"
+            )
+            image = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/" + id + ".png"
+
             all_stats = scraper_utils.get_stats(all_soups)
             stats = all_stats[0]
             custom_stats = all_stats[1]
@@ -712,8 +553,10 @@ class MountScraper:
             print("Writing item data to file")
             json.dump(mounts, file)
 
-        print(missed_mounts)
-        return missed_mounts
+        if missed_mounts == []:
+            print("All mount data successfully retrieved.")
+        else:
+            print("Some data was not successfully retrieved: {}".format(missed_mounts))
 
 
 class ClassScraper:
