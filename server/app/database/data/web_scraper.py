@@ -560,7 +560,7 @@ class MountScraper:
 
 
 class ClassScraper:
-    def get_info_for_class(self, url):
+    def get_data_for_class(self, url):
         soup = scraper_utils.get_soup(url)
         class_name = "".join(url.split("-")[-1:]).capitalize()
 
@@ -989,30 +989,30 @@ class ClassScraper:
             print("Writing spell data to file")
             json.dump(all_class_info, file)
 
-    def get_info_for_all_classes(self):
-        all_urls = [
-            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/1-feca",
-            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/2-osamodas",
-            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/3-enutrof",
-            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/4-sram",
-            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/5-xelor",
-            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/6-ecaflip",
-            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/7-eniripsa",
-            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/8-iop",
-            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/9-cra",
-            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/10-sadida",
-            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/11-sacrier",
-            # "https://www.dofus.com/en/mmorpg/encyclopedia/classes/12-pandawa",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/13-rogue",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/14-masqueraider",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/15-foggernaut",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/16-eliotrope",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/17-huppermage",
-            "https://www.dofus.com/en/mmorpg/encyclopedia/classes/18-ouginak",
-        ]
+    def get_data_for_classes(self, classes):
+        all_urls = {
+            "Feca": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/1-feca",
+            "Osamodas": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/2-osamodas",
+            "Enutrof": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/3-enutrof",
+            "Sram": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/4-sram",
+            "Xelor": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/5-xelor",
+            "Ecaflip": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/6-ecaflip",
+            "Eniripsa": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/7-eniripsa",
+            "Iop": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/8-iop",
+            "Cra": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/9-cra",
+            "Sadida": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/10-sadida",
+            "Sacrier": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/11-sacrier",
+            "Pandawa": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/12-pandawa",
+            "Rogue": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/13-rogue",
+            "Masqueraider": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/14-masqueraider",
+            "Foggernaut": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/15-foggernaut",
+            "Eliotrope": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/16-eliotrope",
+            "Huppermage": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/17-huppermage",
+            "Ouginak": "https://www.dofus.com/en/mmorpg/encyclopedia/classes/18-ouginak",
+        }
 
-        for url in all_urls:
-            self.get_info_for_class(url)
+        for class_name in classes:
+            self.get_data_for_class(all_urls[class_name])
 
 
 class DataAdjustment:
@@ -1245,25 +1245,22 @@ class DataAdjustment:
 
 if __name__ == "__main__":
     # ItemScraper.get_all_item_ids()
-    # ItemScraper.get_all_item_data(3000)
     # ItemScraper.get_data_for_ids(["23265"])
 
     # SetScraper.get_all_set_ids()
-    # SetScraper.get_set_data(1000)
+    # SetScraper.get_set_data_for_ids()
 
     # WeaponScraper.get_all_weapon_ids()
-    # WeaponScraper.get_weapon_data(1000)
     WeaponScraper.get_data_for_ids(["23316"])
 
     # PetScraper.get_all_pet_ids()
-    # PetScraper.get_all_pet_data(1000)
-    # arr = ["14827", "14848", "8211"]
+    # PetScraper.get_pet_data_for_ids()
 
     # MountScraper.get_all_mount_ids()
-    # MountScraper.get_all_mount_data(3000)
+    # MountScraper.get_mount_data_for_ids()
 
     # class_scraper = ClassScraper()
-    # class_scraper.get_info_for_all_classes()
+    # class_scraper.get_data_for_classes([])
 
     # DataAdjustment.add_missing_trophy_conditions()
     # DataAdjustment.add_missing_item_details()
