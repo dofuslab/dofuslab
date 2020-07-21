@@ -55,7 +55,7 @@
   "MULTIPLE_PRYSMARADITES": "Tienes múltiples prismariditas equipadas.",
   "MULTIPLE_RANGE_EXO": "Tienes múltiples exo Alcance.",
   "MY_BUILDS": "Mis conjuntos",
-  "MY_FAVORITES": "Mis gavoritos",
+  "MY_FAVORITES": "Mis favoritos",
   "NEW_BUILD": "Nueva build",
   "NOT_APPLICABLE": "N/A",
   "NO_BONUS": "No se ha encontrado bonus de set",
@@ -71,7 +71,7 @@
   "OR": "o",
   "OWNER": "Dueño",
   "REPLACE": "Reemplazar",
-  "RESET_ALL": "Reestablecer todo",
+  "RESET_ALL": "Resetear todo",
   "RESET_ALL_FILTERS": "Reestablecer todos los filtros",
   "RESTART_BUILD": "Reestablecer conjunto",
   "SCROLLED": "Scrolleado",
@@ -82,10 +82,10 @@
   "SETS": "Conjuntos",
   "SET_BONUSES": "Bonus de set",
   "SHARE_BUILD": "Compartir conjunto",
-  "STATS_PLACEHOLDER": "Estadísticas (e.g. AP, Pods, Prospecting)",
+  "STATS_PLACEHOLDER": "Estadísticas (ej. PA, Pods, Prospección)",
   "SUCCESS": "Éxito",
   "UNTITLED": "Sin título",
   "VIEW_ITEMS": "Ver objetos",
   "VIEW_SETS": "Ver sets",
-  "WEAPON_AND_SPELLS": "Objetos y hechizos"
+  "WEAPON_AND_SPELLS": "Arma y hechizos"
 }
