@@ -6,6 +6,7 @@ import { mq } from 'common/constants';
 import { Checkbox } from 'antd';
 import { CheckboxValueType } from 'antd/lib/checkbox/Group';
 import { ItemType } from 'common/type-aliases';
+import { ellipsis } from 'common/mixins';
 
 const { Group: CheckboxGroup } = Checkbox;
 
@@ -49,6 +50,7 @@ const ItemTypeFilter: React.FC<Props> = ({
           lineHeight: 'normal',
         },
         '.ant-checkbox-group-item': {
+          ...ellipsis,
           flex: '0 1 144px',
           [mq[1]]: {
             flexBasis: '120px',
