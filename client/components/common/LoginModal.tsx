@@ -13,6 +13,8 @@ import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/curre
 import { useTranslation, Trans } from 'i18n';
 import { mq, PASSWORD_REGEX, EMAIL_REGEX } from 'common/constants';
 import sessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
+import { inputFontSize } from 'common/mixins';
+
 import RequestPasswordResetModal from './RequestPasswordResetModal';
 
 interface Props {
@@ -122,7 +124,7 @@ const LoginModal: React.FC<Props> = ({ visible, onClose, openSignUpModal }) => {
             ]}
             validateTrigger="onSubmit"
           >
-            <Input placeholder={t('EMAIL')} css={{ fontSize: '0.75rem' }} />
+            <Input placeholder={t('EMAIL')} css={inputFontSize} />
           </Form.Item>
           <Form.Item
             name="password"
@@ -139,7 +141,7 @@ const LoginModal: React.FC<Props> = ({ visible, onClose, openSignUpModal }) => {
           >
             <Input.Password
               placeholder={t('PASSWORD')}
-              css={{ '.ant-input': { fontSize: '0.75rem' } }}
+              css={{ '.ant-input': inputFontSize }}
             />
           </Form.Item>
           <Form.Item

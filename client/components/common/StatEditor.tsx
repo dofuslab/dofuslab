@@ -10,7 +10,7 @@ import { Stat } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
 import { InputNumber, Button } from 'antd';
 
-import { red6 } from 'common/mixins';
+import { inputFontSize, red6 } from 'common/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRedo } from '@fortawesome/free-solid-svg-icons';
 import { useDebounceCallback } from '@react-hook/debounce';
@@ -138,7 +138,7 @@ const getStatDisplayStyle = (title: string, theme: Theme) => ({
 });
 
 const getInputNumberStyle = (baseKey: string, title: string, theme: Theme) => ({
-  fontSize: '0.75rem',
+  ...inputFontSize,
   maxWidth: '100%',
   display: 'flex',
   alignItems: 'center',

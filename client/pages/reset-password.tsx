@@ -20,6 +20,7 @@ import CommonLayout from 'components/common/CommonLayout';
 import ErrorPage from 'pages/_error';
 import { mq, PASSWORD_REGEX } from 'common/constants';
 import { getTitle } from 'common/utils';
+import { inputFontSize } from 'common/mixins';
 
 const RequestPasswordResetPage: NextPage = () => {
   const { data } = useQuery<currentUser>(currentUserQuery);
@@ -131,7 +132,7 @@ const RequestPasswordResetPage: NextPage = () => {
             css={{ marginTop: 16 }}
           >
             <Input.Password
-              css={{ '.ant-input': { fontSize: '0.75rem' } }}
+              css={{ '.ant-input': inputFontSize }}
               placeholder={t('PASSWORD')}
             />
           </Form.Item>
@@ -156,7 +157,7 @@ const RequestPasswordResetPage: NextPage = () => {
             css={{ marginTop: 16 }}
           >
             <Input.Password
-              css={{ '.ant-input': { fontSize: '0.75rem' } }}
+              css={{ '.ant-input': inputFontSize }}
               placeholder={t('PASSWORD')}
             />
           </Form.Item>

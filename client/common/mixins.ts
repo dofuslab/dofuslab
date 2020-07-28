@@ -223,3 +223,8 @@ export const getModalStyle = (theme: Theme) => ({
     },
   },
 });
+
+export const inputFontSize = {
+  fontSize: '0.9rem',
+  [mq[1]]: { fontSize: '0.75rem' },
+};

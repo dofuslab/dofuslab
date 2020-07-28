@@ -17,11 +17,12 @@ import { useDebounceCallback } from '@react-hook/debounce';
 import { useTheme } from 'emotion-theming';
 
 import { Theme, SharedFilterAction, SharedFilters } from 'common/types';
-
 import { useTranslation } from 'i18n';
 import Tooltip from 'components/common/Tooltip';
 import { getBuildLink } from 'common/utils';
 import { ItemSlot, CustomSet } from 'common/type-aliases';
+import { inputFontSize } from 'common/mixins';
+
 import ResetAllButton from './ResetAllButton';
 import FavoritesButton from './FavoritesButton';
 
@@ -219,7 +220,7 @@ const SelectorFilters: React.FC<Props> = ({
             onChange={onSearch}
             css={{
               maxHeight: 'none',
-              '.ant-input': { fontSize: '0.75rem' },
+              '.ant-input': inputFontSize,
               '.ant-input-suffix': { display: 'flex', alignItems: 'center' },
             }}
           />
@@ -265,10 +266,11 @@ const SelectorFilters: React.FC<Props> = ({
               }}
               mode="multiple"
               css={{
-                fontSize: '0.75rem',
+                fontSize: '0.9rem',
                 flex: '1 1 0%',
                 height: 42,
                 [mq[1]]: {
+                  fontSize: '0.75rem',
                   height: 'auto',
                 },
                 '.ant-select-selector': {

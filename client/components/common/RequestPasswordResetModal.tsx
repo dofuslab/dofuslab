@@ -10,6 +10,7 @@ import {
   requestPasswordResetVariables,
 } from 'graphql/mutations/__generated__/requestPasswordReset';
 import requestPasswordResetMutation from 'graphql/mutations/requestPasswordReset.graphql';
+import { inputFontSize } from 'common/mixins';
 
 interface Props {
   visible: boolean;
@@ -98,7 +99,7 @@ const RequestPasswordResetModal: React.FC<Props> = ({ visible, onClose }) => {
           ]}
           validateTrigger="onSubmit"
         >
-          <Input placeholder={t('EMAIL')} css={{ fontSize: '0.75rem' }} />
+          <Input placeholder={t('EMAIL')} css={inputFontSize} />
         </Form.Item>
       </Form>
     </Modal>
