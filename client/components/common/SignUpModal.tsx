@@ -18,6 +18,7 @@ import {
   CONSECUTIVE_SEPARATOR_REGEX,
   VALID_START_END_REGEX,
 } from 'common/constants';
+import { inputFontSize } from 'common/mixins';
 
 interface Props {
   visible: boolean;
@@ -117,7 +118,7 @@ const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
           ]}
           validateTrigger="onSubmit"
         >
-          <Input css={{ fontSize: '0.75rem' }} placeholder={t('EMAIL')} />
+          <Input css={inputFontSize} placeholder={t('EMAIL')} />
         </Form.Item>
         <Form.Item
           name="username"
@@ -140,7 +141,7 @@ const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
           validateTrigger="onSubmit"
         >
           <Input
-            css={{ fontSize: '0.75rem' }}
+            css={inputFontSize}
             placeholder={t('DISPLAY_NAME')}
             maxLength={20}
           />
@@ -159,7 +160,7 @@ const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
           css={{ marginTop: 16 }}
         >
           <Input.Password
-            css={{ '.ant-input': { fontSize: '0.75rem' } }}
+            css={{ '.ant-input': inputFontSize }}
             placeholder={t('PASSWORD')}
           />
         </Form.Item>
@@ -184,7 +185,7 @@ const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
           css={{ marginTop: 16 }}
         >
           <Input.Password
-            css={{ '.ant-input': { fontSize: '0.75rem' } }}
+            css={{ '.ant-input': inputFontSize }}
             placeholder={t('PASSWORD')}
           />
         </Form.Item>

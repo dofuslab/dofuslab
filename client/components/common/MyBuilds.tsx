@@ -15,7 +15,7 @@ import {
 import myCustomSetsQuery from 'graphql/queries/myCustomSets.graphql';
 import { Button, Input } from 'antd';
 import { useTranslation } from 'i18n';
-import { itemCardStyle, selected } from 'common/mixins';
+import { inputFontSize, itemCardStyle, selected } from 'common/mixins';
 import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
 import Link from 'next/link';
 import {
@@ -220,7 +220,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
           {t('NEW_BUILD')}
         </Button>
         <Input
-          css={{ marginLeft: 20, flex: 1, fontSize: '0.75rem' }}
+          css={{ marginLeft: 20, flex: 1, ...inputFontSize }}
           onChange={onSearch}
           placeholder={t('SEARCH')}
         />

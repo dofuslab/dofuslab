@@ -21,7 +21,7 @@ import {
   useIsOwnerOfCustomSet,
   getBuildLink,
 } from 'common/utils';
-import { ellipsis } from 'common/mixins';
+import { ellipsis, inputFontSize } from 'common/mixins';
 import { mq } from 'common/constants';
 import { BuildError } from 'common/types';
 import { CustomSet } from 'common/type-aliases';
@@ -256,7 +256,7 @@ const SetHeader: React.FC<Props> = ({
           {metadataState.isEditing ? (
             <Form.Item name="level" css={{ display: 'inline-flex' }}>
               <InputNumber
-                css={{ marginLeft: 8, width: 64 }}
+                css={{ marginLeft: 8, width: 64, ...inputFontSize }}
                 type="number"
                 max={200}
                 min={1}

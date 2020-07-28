@@ -3,6 +3,7 @@ import { InputNumber } from 'antd';
 import { Stat } from '__generated__/globalTypes';
 import { MageAction } from 'common/types';
 import { ClassNames } from '@emotion/core';
+import { inputFontSize } from 'common/mixins';
 
 interface Props {
   stat: Stat;
@@ -39,8 +40,8 @@ const MageInputNumber: React.FC<Props> = ({ stat, value, dispatch, isExo }) => {
           max={MAX}
           min={-MAX}
           className={css({
+            ...inputFontSize,
             marginRight: 8,
-            fontSize: '0.75rem',
             height: '100%',
             display: 'flex',
             alignItems: 'center',

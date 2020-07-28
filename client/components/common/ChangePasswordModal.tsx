@@ -11,6 +11,7 @@ import {
 } from 'graphql/mutations/__generated__/changePassword';
 import changePasswordMutation from 'graphql/mutations/changePassword.graphql';
 import { PASSWORD_REGEX } from 'common/constants';
+import { inputFontSize } from 'common/mixins';
 
 interface Props {
   visible: boolean;
@@ -103,7 +104,9 @@ const ChangePasswordModal: React.FC<Props> = ({ visible, onClose }) => {
           css={{ marginTop: 16 }}
         >
           <Input.Password
-            css={{ '.ant-input': { fontSize: '0.75rem' } }}
+            css={{
+              '.ant-input': inputFontSize,
+            }}
             placeholder={t('PASSWORD')}
           />
         </Form.Item>
@@ -121,7 +124,7 @@ const ChangePasswordModal: React.FC<Props> = ({ visible, onClose }) => {
           css={{ marginTop: 16 }}
         >
           <Input.Password
-            css={{ '.ant-input': { fontSize: '0.75rem' } }}
+            css={{ '.ant-input': inputFontSize }}
             placeholder={t('PASSWORD')}
           />
         </Form.Item>
@@ -146,7 +149,7 @@ const ChangePasswordModal: React.FC<Props> = ({ visible, onClose }) => {
           css={{ marginTop: 16 }}
         >
           <Input.Password
-            css={{ '.ant-input': { fontSize: '0.75rem' } }}
+            css={{ '.ant-input': inputFontSize }}
             placeholder={t('PASSWORD')}
           />
         </Form.Item>
