@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import InfiniteScroll from 'react-infinite-scroller';
 
 import SetQuery from 'graphql/queries/sets.graphql';

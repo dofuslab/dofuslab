@@ -1,11 +1,16 @@
 /* eslint-disable */
 
 import React from 'react';
-import { getDataFromTree } from '@apollo/react-ssr';
-import ApolloClient, {
+import { getDataFromTree } from '@apollo/client/react/ssr';
+import {
   InMemoryCache,
   NormalizedCacheObject,
-} from 'apollo-boost';
+  ApolloClient,
+  from,
+  HttpLink,
+} from '@apollo/client';
+
+import { onError } from '@apollo/client/link/error';
 import { NextPage, NextPageContext } from 'next';
 import Head from 'next/head';
 import { notification } from 'antd';
@@ -23,25 +28,28 @@ interface Props {
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 
-function create(initialState: any, headers: IncomingHttpHeaders) {
+const errorLink = onError(({ graphQLErrors, networkError }) => {
+  if (networkError && process.browser) {
+    notification.error({ message: networkError.message });
+  }
+  if (graphQLErrors) {
+    graphQLErrors.forEach(({ message }) => {
+      if (process.browser) {
+        notification.error({ message });
+      }
+    });
+  }
+});
+
+const link = from([errorLink, new HttpLink({ uri: process.env.GRAPHQL_URI })]);
+
+function create(initialState: any, headers: any) {
   return new ApolloClient<NormalizedCacheObject>({
     credentials: 'include',
     uri: process.env.GRAPHQL_URI,
     cache: new InMemoryCache().restore(initialState || {}),
     headers,
-    fetch,
-    onError: ({ graphQLErrors, networkError }) => {
-      if (networkError && process.browser) {
-        notification.error({ message: networkError.message });
-      }
-      if (graphQLErrors) {
-        graphQLErrors.forEach(({ message }) => {
-          if (process.browser) {
-            notification.error({ message });
-          }
-        });
-      }
-    },
+    link,
   });
 }
 
@@ -81,7 +89,7 @@ export default (App: NextPage<any>) =>
           console.error(err);
         }
       }
-      if (res && res.finished) {
+      if (res && res.writableEnded) {
         return {};
       }
       if (typeof window === 'undefined') {

@@ -3,7 +3,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { Button, Form, Input, Modal, notification } from 'antd';
 
-import { useMutation, useApolloClient } from '@apollo/react-hooks';
+import { useMutation, useApolloClient } from '@apollo/client';
 import { useTranslation } from 'i18n';
 import {
   changePassword as ChangePassword,

@@ -5,7 +5,7 @@ import { jsx } from '@emotion/core';
 
 import { Card, Skeleton } from 'antd';
 import { useRouter } from 'next/router';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { useTheme } from 'emotion-theming';
 
 import { classes } from 'graphql/queries/__generated__/classes';

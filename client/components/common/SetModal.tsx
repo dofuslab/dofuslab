@@ -3,7 +3,7 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { Modal, Divider, Skeleton } from 'antd';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 import { useTheme } from 'emotion-theming';
 import groupBy from 'lodash/groupBy';
