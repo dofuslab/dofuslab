@@ -118,7 +118,7 @@ const BuffModal: React.FC<Props> = ({ visible, closeBuffModal, customSet }) => {
               {buffName && buffImgUrl && (
                 <img
                   src={buffImgUrl}
-                  css={{ width: 24, marginRight: 8 }}
+                  css={{ width: 24, height: 24, marginRight: 8 }}
                   alt={buffName}
                 />
               )}
