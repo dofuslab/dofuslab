@@ -69,9 +69,9 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
           marginRight: 'auto',
           padding: '0 12px',
           width: '100%',
-          maxWidth: 1036,
+          maxWidth: 1084,
           [mq[4]]: {
-            maxWidth: 1124,
+            maxWidth: 1172,
           },
         }}
       >
