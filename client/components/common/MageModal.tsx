@@ -22,7 +22,7 @@ import { useTranslation } from 'i18n';
 import { blue6 } from 'common/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faRedo } from '@fortawesome/free-solid-svg-icons';
-import { useMutation, useApolloClient } from '@apollo/client';
+import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import {
   mageEquippedItem,
   mageEquippedItemVariables,

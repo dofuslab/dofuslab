@@ -2,7 +2,7 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { Modal, Input, Form, Button, notification } from 'antd';
-import { useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/react-hooks';
 import { useTranslation } from 'i18n';
 import { mq } from 'common/constants';
 import {

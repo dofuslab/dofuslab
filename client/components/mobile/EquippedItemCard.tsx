@@ -3,7 +3,7 @@
 import React from 'react';
 import { jsx, css } from '@emotion/core';
 import { Button, Switch, Divider } from 'antd';
-import { useMutation, useApolloClient } from '@apollo/client';
+import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBullseye,

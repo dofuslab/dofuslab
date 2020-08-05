@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { NextPage } from 'next';
-import { useQuery, useMutation } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/react-hooks';
 import { jsx } from '@emotion/core';
 
 import { currentUser } from 'graphql/queries/__generated__/currentUser';

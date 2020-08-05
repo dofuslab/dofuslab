@@ -3,7 +3,7 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { Modal, notification } from 'antd';
-import { useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
 
 import { useTranslation } from 'i18n';

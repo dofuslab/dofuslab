@@ -14,7 +14,7 @@ import { inputFontSize, red6 } from 'common/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRedo } from '@fortawesome/free-solid-svg-icons';
 import { useDebounceCallback } from '@react-hook/debounce';
-import { useMutation, useApolloClient } from '@apollo/client';
+import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import {
   editCustomSetStats,
   editCustomSetStatsVariables,
@@ -135,7 +135,6 @@ const getStatDisplayStyle = (title: string, theme: Theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     pointerEvents: 'none' as 'none',
-    fontSize: '0.75rem',
   },
 });
 

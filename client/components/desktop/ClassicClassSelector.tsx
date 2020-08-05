@@ -4,7 +4,7 @@ import * as React from 'react';
 import { jsx } from '@emotion/core';
 
 import { useRouter } from 'next/router';
-import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/react-hooks';
 
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';

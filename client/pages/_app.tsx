@@ -1,12 +1,8 @@
 import React from 'react';
 import { AppProps } from 'next/app';
-import {
-  ApolloProvider,
-  useQuery,
-  ApolloClient,
-  NormalizedCacheObject,
-} from '@apollo/client';
+import { ApolloProvider, useQuery } from '@apollo/react-hooks';
 import withApollo from 'common/apollo';
+import { ApolloClient, NormalizedCacheObject } from 'apollo-boost';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { MediaContextProvider } from 'components/common/Media';
 import Router, { useRouter } from 'next/router';

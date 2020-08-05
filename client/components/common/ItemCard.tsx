@@ -5,7 +5,7 @@ import { jsx } from '@emotion/core';
 import { useEquipItemMutation, useToggleFavoriteMutation } from 'common/utils';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { useRouter } from 'next/router';
-import { useApolloClient, useQuery } from '@apollo/client';
+import { useApolloClient, useQuery } from '@apollo/react-hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { ItemSlot, ItemSet, Item } from 'common/type-aliases';

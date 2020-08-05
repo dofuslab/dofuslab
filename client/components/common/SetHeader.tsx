@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
 import { Button, Input, InputNumber, Form, Popover } from 'antd';
-import { useMutation, useApolloClient } from '@apollo/client';
+import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';

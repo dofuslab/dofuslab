@@ -162,7 +162,7 @@ const ItemStatsList: React.FC<Props> = ({
           className={className}
           css={{ paddingInlineStart: 16, fontSize: '0.75rem' }}
         >
-          {[...item.stats]
+          {item.stats
             .sort(({ order: i }, { order: j }) => i - j)
             .map((statLine) => {
               let color: string | undefined = 'inherit';

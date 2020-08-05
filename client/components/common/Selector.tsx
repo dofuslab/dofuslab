@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/react-hooks';
 import { BackTop } from 'antd';
 import { useTheme } from 'emotion-theming';
 import uniqWith from 'lodash/uniqWith';

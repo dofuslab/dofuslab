@@ -3,7 +3,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import { Button, Divider, Form, Input, Modal } from 'antd';
 
-import { useMutation, useApolloClient } from '@apollo/client';
+import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import registerMutation from 'graphql/mutations/register.graphql';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';

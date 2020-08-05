@@ -7,7 +7,7 @@ import { useTranslation } from 'i18n';
 import { mq, BREAKPOINTS } from 'common/constants';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
-import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/react-hooks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { CustomSet, ItemSlot } from 'common/type-aliases';

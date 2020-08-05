@@ -2,7 +2,7 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { Modal, Input, Form, Button, Checkbox, Divider } from 'antd';
-import { useMutation, useApolloClient } from '@apollo/client';
+import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import {
   login as ILogin,
   loginVariables as ILoginVariables,

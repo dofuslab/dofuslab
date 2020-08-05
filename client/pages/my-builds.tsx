@@ -1,6 +1,6 @@
 import React from 'react';
 import { NextPage } from 'next';
-import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/react-hooks';
 import Router from 'next/router';
 
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
