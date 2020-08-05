@@ -1,5 +1,5 @@
 import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import Layout from 'components/mobile/Layout';

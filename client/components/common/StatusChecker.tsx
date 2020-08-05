@@ -3,7 +3,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { notification } from 'antd';
-import { useQuery, useApolloClient } from '@apollo/react-hooks';
+import { useQuery, useApolloClient } from '@apollo/client';
 
 import { useTranslation } from 'i18n';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';

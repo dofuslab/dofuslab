@@ -68,6 +68,11 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
           marginLeft: 'auto',
           marginRight: 'auto',
           padding: '0 12px',
+          width: '100%',
+          maxWidth: 1036,
+          [mq[4]]: {
+            maxWidth: 1124,
+          },
         }}
       >
         <SetHeader
@@ -86,11 +91,6 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
             />
           }
           css={{
-            width: '100%',
-            maxWidth: 1036,
-            [mq[4]]: {
-              maxWidth: 1124,
-            },
             '&.ant-tabs > .ant-tabs-nav > .ant-tabs-nav-wrap': {
               justifyContent: 'center',
             },

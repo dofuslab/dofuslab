@@ -6,7 +6,7 @@ import Head from 'next/head';
 import { mediaStyles, Media } from 'components/common/Media';
 import Selector from 'components/common/Selector';
 import { useRouter } from 'next/router';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import {
   customSet as CustomSetQueryType,
   customSetVariables,
