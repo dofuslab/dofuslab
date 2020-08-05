@@ -17,7 +17,12 @@ const Card: React.FC<CardProps> = ({ className, ...restProps }) => {
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...restProps}
           className={cx(
-            css({ backgroundColor: theme.card?.background }),
+            css({
+              backgroundColor: theme.card?.background,
+              '.ant-card-actions': {
+                backgroundColor: theme.card?.background,
+              },
+            }),
             className,
           )}
         />
