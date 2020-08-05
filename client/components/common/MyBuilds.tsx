@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
+import { useQuery, useMutation, useApolloClient } from '@apollo/client';
 import { LoadingOutlined } from '@ant-design/icons';
 import { useTheme } from 'emotion-theming';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -277,7 +277,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
               }}
             >
               {node.equippedItems.length > 0 ? (
-                node.equippedItems
+                [...node.equippedItems]
                   .sort(
                     ({ slot: { order: i } }, { slot: { order: j } }) => i - j,
                   )

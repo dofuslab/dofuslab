@@ -7,7 +7,7 @@ import { jsx } from '@emotion/core';
 import { customSet as CustomSet } from 'graphql/fragments/__generated__/customSet';
 import { Button, Modal, Checkbox, Divider } from 'antd';
 import { useTranslation } from 'i18n';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 
 import {
   restartCustomSet,
