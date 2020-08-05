@@ -232,10 +232,10 @@ const SelectorFilters: React.FC<Props> = ({
             max={200}
             min={1}
             css={{
+              ...inputFontSize,
               alignSelf: 'stretch',
               marginLeft: 12,
               [mq[4]]: { marginLeft: 16 },
-              fontSize: '0.75rem',
               display: 'flex',
               alignItems: 'center',
             }}

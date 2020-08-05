@@ -54,7 +54,7 @@ const SpellBuffCard: React.FC<Props> = ({ spell, level }) => {
         <div css={{ display: 'flex' }}>
           <img
             src={spell.imageUrl}
-            css={{ width: 24, marginRight: 8 }}
+            css={{ width: 24, height: 24, marginRight: 8 }}
             alt={spell.name}
           />
           <CardTitleWithLevel

@@ -25,7 +25,7 @@ const ItemBuffCard: React.FC<Props> = ({ item }) => {
         <div css={{ display: 'flex' }}>
           <img
             src={item.imageUrl}
-            css={{ width: 24, marginRight: 8 }}
+            css={{ width: 24, height: 24, marginRight: 8 }}
             alt={item.name}
           />
           <CardTitleWithLevel title={item.name} />

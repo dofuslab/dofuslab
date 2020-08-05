@@ -25,6 +25,7 @@ import {
   calcPointCost,
   navigateToNewCustomSet,
   EditableContext,
+  selectOnFocus,
 } from 'common/utils';
 import { useRouter } from 'next/router';
 import { CustomSet } from 'common/type-aliases';
@@ -292,12 +293,7 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
                   min={0}
                   size="small"
                   css={getInputNumberStyle(baseKey, t('BASE'), theme)}
-                  onFocus={(e) => {
-                    e.currentTarget.setSelectionRange(
-                      0,
-                      e.currentTarget.value.length,
-                    );
-                  }}
+                  onFocus={selectOnFocus}
                   onChange={(value: number | string | undefined) => {
                     if (typeof value === 'string') return;
                     const newValue = value || 0;
@@ -319,12 +315,7 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
                   min={0}
                   size="small"
                   css={getInputNumberStyle(baseKey, t('SCROLLED'), theme)}
-                  onFocus={(e) => {
-                    e.currentTarget.setSelectionRange(
-                      0,
-                      e.currentTarget.value.length,
-                    );
-                  }}
+                  onFocus={selectOnFocus}
                   onChange={(value: number | string | undefined) => {
                     if (typeof value === 'string') return;
                     const newValue = value || 0;

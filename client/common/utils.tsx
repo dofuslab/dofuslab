@@ -1872,3 +1872,7 @@ export const combineStatsWithBuffs = (
   }, statsFromCustomSet || ({} as StatsFromCustomSet));
   return statsFromCustomSetWithBuffs;
 };
+
+export const selectOnFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+  e.currentTarget.setSelectionRange(0, e.currentTarget.value.length);
+};
