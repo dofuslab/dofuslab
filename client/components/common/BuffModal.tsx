@@ -6,7 +6,7 @@ import Modal from 'antd/lib/modal/Modal';
 
 import { AppliedBuff, AppliedBuffActionType, Theme } from 'common/types';
 import { useTranslation } from 'i18n';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
 import { Select, Spin, Divider, Button } from 'antd';

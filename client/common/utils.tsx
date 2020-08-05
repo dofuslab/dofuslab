@@ -1,7 +1,13 @@
 import React, { useCallback } from 'react';
-import { useMutation, useApolloClient, useQuery } from '@apollo/react-hooks';
+import {
+  useMutation,
+  useApolloClient,
+  useQuery,
+  ApolloClient,
+  ApolloError,
+} from '@apollo/client';
 import { useRouter, NextRouter } from 'next/router';
-import { ApolloClient, ApolloError } from 'apollo-boost';
+
 import { notification } from 'antd';
 import cloneDeep from 'lodash/cloneDeep';
 import groupBy from 'lodash/groupBy';
@@ -498,7 +504,7 @@ export const useEquipItemsMutation = (
   customSet?: CustomSet | null,
 ): [
   () => Promise<void>,
-  { data?: equipItems; loading: boolean; error?: ApolloError },
+  { data?: equipItems | null; loading: boolean; error?: ApolloError },
 ] => {
   const router = useRouter();
   const { customSetId: routerSetId } = router.query;
@@ -539,7 +545,7 @@ export const useEquipSetMutation = (
   customSet?: CustomSet | null,
 ): [
   () => Promise<void>,
-  { data?: equipSet; loading: boolean; error?: ApolloError },
+  { data?: equipSet | null; loading: boolean; error?: ApolloError },
 ] => {
   const router = useRouter();
   const { customSetId: routerSetId } = router.query;

@@ -9,7 +9,7 @@ import NoSSR from 'react-no-ssr';
 import { useRouter } from 'next/router';
 import { TFunction } from 'next-i18next';
 
-import { useQuery, useMutation, useApolloClient } from '@apollo/react-hooks';
+import { useQuery, useMutation, useApolloClient } from '@apollo/client';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';

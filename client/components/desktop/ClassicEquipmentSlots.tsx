@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import groupBy from 'lodash/groupBy';
 
 import { itemSlots as ItemSlotsQueryType } from 'graphql/queries/__generated__/itemSlots';
