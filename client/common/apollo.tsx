@@ -41,15 +41,17 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
   }
 });
 
-const link = from([errorLink, new HttpLink({ uri: process.env.GRAPHQL_URI })]);
-
-function create(initialState: any, headers: any) {
-  return new ApolloClient<NormalizedCacheObject>({
-    credentials: 'include',
+const getHttpLink = (headers: IncomingHttpHeaders) =>
+  new HttpLink({
     uri: process.env.GRAPHQL_URI,
-    cache: new InMemoryCache().restore(initialState || {}),
+    credentials: 'include',
     headers,
-    link,
+  });
+
+function create(initialState: any, headers: IncomingHttpHeaders) {
+  return new ApolloClient<NormalizedCacheObject>({
+    cache: new InMemoryCache().restore(initialState || {}),
+    link: from([errorLink, getHttpLink(headers)]),
   });
 }
 
