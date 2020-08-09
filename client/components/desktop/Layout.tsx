@@ -249,7 +249,10 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
       <Global
         styles={{
           html: {
-            fontSize: 18,
+            fontSize: 22,
+            [mq[1]]: {
+              fontSize: 18,
+            },
           },
           body: {
             backgroundColor: theme.body?.background,
