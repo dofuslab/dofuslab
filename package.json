@@ -1,5 +1,5 @@
 {
-  "name": "dofus-lab",
+  "name": "dofuslab",
   "version": "1.0.0",
   "description": "![DofusLab](dofuslab-logo.png?raw=true \"DofusLab\")",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com-lightyearsaway:dofuslab/dofuslab.git"
+    "url": "git@github.com:dofuslab/dofuslab.git"
   },
   "author": "",
   "license": "MIT",

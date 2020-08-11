@@ -26,7 +26,7 @@ module.exports = {
       user: 'jeremy',
       host: '134.209.168.215',
       ref: 'origin/master',
-      repo: 'git@github.com:samlee405/dofus-lab.git',
+      repo: 'git@github.com:dofuslab/dofuslab.git',
       path: '/var/www/production',
       'post-deploy':
         'cd client && yarn && yarn build && pm2 reload ecosystem.config.js --env production && pm2 save',
@@ -40,7 +40,7 @@ module.exports = {
       user: 'jeremy',
       host: '134.209.168.215',
       ref: process.env.DEPLOY_BRANCH,
-      repo: 'git@github.com:samlee405/dofus-lab.git',
+      repo: 'git@github.com:dofuslab/dofuslab.git',
       path: '/var/www/production',
       'post-deploy':
         'cd client && yarn && yarn build && pm2 reload ecosystem.config.js --env branch && pm2 save',
