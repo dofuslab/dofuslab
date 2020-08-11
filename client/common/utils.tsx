@@ -1395,11 +1395,11 @@ export const getCustomSetMetaImage = (customSet?: CustomSet | null) => {
   }
   return `https://32kom7xq5i.execute-api.us-east-2.amazonaws.com/${encodeURIComponent(
     customSet.name || 'Untitled',
-  )}?${customSet.equippedItems
+  )}?${[...customSet.equippedItems]
     .sort((ei1, ei2) => ei1.slot.order - ei2.slot.order)
     .map((ei) => {
       const { imageUrl } = ei.item;
-      const match = imageUrl.match(/\/item\/(\d+)\.png/);
+      const match = imageUrl.match(/item\/(\d+)\.png/);
       if (match && match[1]) {
         return match[1];
       }
