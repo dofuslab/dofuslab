@@ -16,7 +16,7 @@ branch_labels = None
 depends_on = None
 
 
-url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/icons/{}.svg"
+url_base = "icons/{}.svg"
 
 
 def upgrade():

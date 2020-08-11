@@ -41,14 +41,10 @@ import os
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-face_url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/class/face/{}_M.png"
-male_sprite_url_base = (
-    "https://dofus-lab.s3.us-east-2.amazonaws.com/class/sprite/{}_M.png"
-)
-female_sprite_url_base = (
-    "https://dofus-lab.s3.us-east-2.amazonaws.com/class/sprite/{}_F.png"
-)
-slot_url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/icons/{}.svg"
+face_url_base = "class/face/{}_M.png"
+male_sprite_url_base = "class/sprite/{}_M.png"
+female_sprite_url_base = "class/sprite/{}_F.png"
+slot_url_base = "icons/{}.svg"
 
 item_types = {}
 

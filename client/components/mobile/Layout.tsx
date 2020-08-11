@@ -43,6 +43,7 @@ import {
   BUY_ME_COFFEE_LINK,
 } from 'common/constants';
 import { Theme } from 'common/types';
+import { getImageUrl } from 'common/utils';
 import SignUpModal from '../common/SignUpModal';
 import LoginModal from '../common/LoginModal';
 
@@ -178,11 +179,11 @@ const Layout = ({ children }: LayoutProps) => {
           <a>
             <div css={{ fontWeight: 500 }}>
               <img
-                src={
+                src={getImageUrl(
                   theme.name === LIGHT_THEME_NAME
-                    ? 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Light.svg'
-                    : 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark.svg'
-                }
+                    ? 'logo/DL-Full_Light.svg'
+                    : 'logo/DL-Full_Dark.svg',
+                )}
                 css={{ width: 120 }}
                 alt="DofusLab"
               />

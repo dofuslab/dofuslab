@@ -15,6 +15,7 @@ import { itemCardStyle } from 'common/mixins';
 import { mq } from 'common/constants';
 import Card from 'components/common/Card';
 import { SetWithItems } from 'common/type-aliases';
+import { getImageUrl } from 'common/utils';
 
 interface Props {
   set: SetWithItems;
@@ -83,7 +84,7 @@ const SetCard: React.FC<Props> = ({ set, onClick }) => {
                 />
               ) : (
                 <img
-                  src={item.imageUrl}
+                  src={getImageUrl(item.imageUrl)}
                   key={`item-${item.id}`}
                   css={{
                     width: 84,

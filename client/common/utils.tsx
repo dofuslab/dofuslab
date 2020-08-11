@@ -100,6 +100,9 @@ import {
   Class,
 } from './type-aliases';
 
+export const getImageUrl = (suffix: string) =>
+  `https://d2iuiayak06k8j.cloudfront.net/${suffix}`;
+
 export const navigateToNewCustomSet = (
   router: NextRouter,
   customSetId: string,
@@ -865,40 +868,40 @@ export const effectToIconUrl = (effect: WeaponEffectType | SpellEffectType) => {
     case WeaponEffectType.AIR_STEAL:
     case SpellEffectType.AIR_DAMAGE:
     case SpellEffectType.AIR_STEAL:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Agility.svg';
+      return 'icon/Agility.svg';
     case WeaponEffectType.EARTH_DAMAGE:
     case WeaponEffectType.EARTH_STEAL:
     case SpellEffectType.EARTH_DAMAGE:
     case SpellEffectType.EARTH_STEAL:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Strength.svg';
+      return 'icon/Strength.svg';
     case WeaponEffectType.FIRE_DAMAGE:
     case WeaponEffectType.FIRE_STEAL:
     case SpellEffectType.FIRE_DAMAGE:
     case SpellEffectType.FIRE_STEAL:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Intelligence.svg';
+      return 'icon/Intelligence.svg';
     case WeaponEffectType.NEUTRAL_DAMAGE:
     case WeaponEffectType.NEUTRAL_STEAL:
     case SpellEffectType.NEUTRAL_DAMAGE:
     case SpellEffectType.NEUTRAL_STEAL:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Neutral.svg';
+      return 'icon/Neutral.svg';
     case WeaponEffectType.WATER_DAMAGE:
     case WeaponEffectType.WATER_STEAL:
     case SpellEffectType.WATER_DAMAGE:
     case SpellEffectType.WATER_STEAL:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Chance.svg';
+      return 'icon/Chance.svg';
     case WeaponEffectType.AP:
     case SpellEffectType.AP:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Action_Point.svg';
+      return 'icon/Action_Point.svg';
     case WeaponEffectType.MP:
     case SpellEffectType.MP:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Movement_Point.svg';
+      return 'icon/Movement_Point.svg';
     case WeaponEffectType.HP_RESTORED:
     case SpellEffectType.HP_RESTORED:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Health_Point.svg';
+      return 'icon/Health_Point.svg';
     case SpellEffectType.SHIELD:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Shield_Point.svg';
+      return 'icon/Shield_Point.svg';
     case SpellEffectType.PUSHBACK_DAMAGE:
-      return 'https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Pushback_Damage.svg';
+      return 'icon/Pushback_Damage.svg';
     default:
       throw new Error('Unknown SpellEffectType');
   }
@@ -1388,7 +1391,7 @@ export const getCustomSetMetaDescription = (customSet?: CustomSet | null) => {
 
 export const getCustomSetMetaImage = (customSet?: CustomSet | null) => {
   if (!customSet) {
-    return 'https://dofus-lab.s3.us-east-2.amazonaws.com/logos/DL-Full_Dark_Filled_BG_1200x628.png';
+    return getImageUrl('logo/DL-Full_Dark_Filled_BG_1200x628.png');
   }
   return `https://32kom7xq5i.execute-api.us-east-2.amazonaws.com/${encodeURIComponent(
     customSet.name || 'Untitled',
@@ -1396,9 +1399,7 @@ export const getCustomSetMetaImage = (customSet?: CustomSet | null) => {
     .sort((ei1, ei2) => ei1.slot.order - ei2.slot.order)
     .map((ei) => {
       const { imageUrl } = ei.item;
-      const match = imageUrl.match(
-        /https:\/\/dofus-lab\.s3\.us-east-2\.amazonaws\.com\/item\/(\d+)\.png/,
-      );
+      const match = imageUrl.match(/\/item\/(\d+)\.png/);
       if (match && match[1]) {
         return match[1];
       }

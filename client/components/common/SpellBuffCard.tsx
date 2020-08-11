@@ -9,6 +9,7 @@ import { itemCardStyle } from 'common/mixins';
 import Card from 'components/common/Card';
 import { classBuffs_classById_spellVariantPairs_spells as ClassBuffSpell } from 'graphql/queries/__generated__/classBuffs';
 import { useTranslation } from 'i18n';
+import { getImageUrl } from 'common/utils';
 import SpellLevelRadio from './SpellLevelRadio';
 import AddBuffLink from './AddBuffLink';
 
@@ -53,7 +54,7 @@ const SpellBuffCard: React.FC<Props> = ({ spell, level }) => {
       title={
         <div css={{ display: 'flex' }}>
           <img
-            src={spell.imageUrl}
+            src={getImageUrl(spell.imageUrl)}
             css={{ width: 24, height: 24, marginRight: 8 }}
             alt={spell.name}
           />

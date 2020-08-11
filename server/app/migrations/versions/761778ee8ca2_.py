@@ -15,13 +15,9 @@ down_revision = "9ce751fbce98"
 branch_labels = None
 depends_on = None
 
-face_url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/class/face/{}_M.png"
-male_sprite_url_base = (
-    "https://dofus-lab.s3.us-east-2.amazonaws.com/class/sprite/{}_M.png"
-)
-female_sprite_url_base = (
-    "https://dofus-lab.s3.us-east-2.amazonaws.com/class/sprite/{}_F.png"
-)
+face_url_base = "class/face/{}_M.png"
+male_sprite_url_base = "class/sprite/{}_M.png"
+female_sprite_url_base = "class/sprite/{}_F.png"
 
 
 def upgrade():

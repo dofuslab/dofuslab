@@ -17,6 +17,7 @@ import {
 import { WeaponElementMage } from '__generated__/globalTypes';
 import { Theme } from 'common/types';
 import Card from 'components/common/Card';
+import { getImageUrl } from 'common/utils';
 import ItemStatsList from './ItemStatsList';
 
 interface Props {
@@ -83,7 +84,7 @@ const BasicItemCard: React.FC<Props> = ({
           />
         ) : (
           <img
-            src={item.imageUrl}
+            src={getImageUrl(item.imageUrl)}
             css={{
               ...itemBoxDimensions,
               marginBottom: 12,

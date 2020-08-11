@@ -10,7 +10,7 @@ import { useQuery } from '@apollo/client';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
 import { Select, Spin, Divider, Button } from 'antd';
-import { useClassId, CustomSetContext } from 'common/utils';
+import { useClassId, CustomSetContext, getImageUrl } from 'common/utils';
 import {
   classBuffs,
   classBuffsVariables,
@@ -100,7 +100,7 @@ const BuffModal: React.FC<Props> = ({ visible, closeBuffModal, customSet }) => {
       )}
       {appliedBuffs.map((ab) => {
         const buffName = getBuffName(ab);
-        const buffImgUrl = getBuffImage(ab);
+        const buffImgSuffix = getBuffImage(ab);
         return (
           <div
             key={ab.buff.id}
@@ -115,9 +115,9 @@ const BuffModal: React.FC<Props> = ({ visible, closeBuffModal, customSet }) => {
                 });
               }}
             >
-              {buffName && buffImgUrl && (
+              {buffName && buffImgSuffix && (
                 <img
-                  src={buffImgUrl}
+                  src={getImageUrl(buffImgSuffix)}
                   css={{ width: 24, height: 24, marginRight: 8 }}
                   alt={buffName}
                 />

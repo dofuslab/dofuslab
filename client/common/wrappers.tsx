@@ -36,6 +36,7 @@ import {
   getCustomSetMetaDescription,
   getCanonicalUrl,
   getCustomSetMetaImage,
+  getImageUrl,
 } from './utils';
 import {
   ellipsis,
@@ -253,7 +254,7 @@ export const EffectLine: React.FC<{
       }}
     >
       <img
-        src={effectToIconUrl(effectType)}
+        src={getImageUrl(effectToIconUrl(effectType))}
         css={{ height: 16, width: 16, marginRight: 8 }}
         alt={effectType}
       />
@@ -290,7 +291,7 @@ export const WeaponEffectsList: React.FC<{
             css={{ display: 'flex', alignItems: 'center', ...innerDivStyle }}
           >
             <img
-              src={effectToIconUrl(effectType)}
+              src={getImageUrl(effectToIconUrl(effectType))}
               css={{ height: 16, width: 16, marginRight: 8 }}
               alt={effectType}
             />
@@ -458,7 +459,7 @@ export const TotalDamageLine = ({
     <div css={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 8 }}>
       <div css={{ display: 'flex', alignItems: 'center' }}>
         <img
-          src={imageUrl}
+          src={getImageUrl(imageUrl)}
           css={{ height: 16, width: 16, marginRight: 8 }}
           alt={imageAlt}
         />
@@ -467,7 +468,7 @@ export const TotalDamageLine = ({
       {totalObj.crit && (
         <div css={{ display: 'flex', alignItems: 'center' }}>
           <img
-            src={imageUrl}
+            src={getImageUrl(imageUrl)}
             css={{ height: 16, width: 16, marginRight: 8 }}
             alt={imageAlt}
           />

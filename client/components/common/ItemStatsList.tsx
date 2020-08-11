@@ -9,7 +9,7 @@ import { Divider } from 'antd';
 import { WeaponEffectsList, BrokenImagePlaceholder } from 'common/wrappers';
 import { TFunction } from 'next-i18next';
 import { BuildError, Theme } from 'common/types';
-import { renderErrors } from 'common/utils';
+import { getImageUrl, renderErrors } from 'common/utils';
 
 import { Exo, ItemSet, Item } from 'common/type-aliases';
 
@@ -139,7 +139,7 @@ const ItemStatsList: React.FC<Props> = ({
           />
         ) : (
           <img
-            src={item.imageUrl}
+            src={getImageUrl(item.imageUrl)}
             css={{ float: 'right', maxWidth: 84 }}
             onError={() => {
               setBrokenImage(true);

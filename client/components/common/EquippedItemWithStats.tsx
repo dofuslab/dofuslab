@@ -23,6 +23,7 @@ import {
   useDeleteItemMutation,
   EditableContext,
   ClassicContext,
+  getImageUrl,
 } from 'common/utils';
 import { useTranslation } from 'i18n';
 import { mq } from 'common/constants';
@@ -133,7 +134,7 @@ const EquippedItemWithStats: React.FC<Props> = ({
               />
             ) : (
               <img
-                src={equippedItem.item.imageUrl}
+                src={getImageUrl(equippedItem.item.imageUrl)}
                 css={itemImageDimensions}
                 onError={() => setBrokenImage(true)}
                 alt={equippedItem.item.name}

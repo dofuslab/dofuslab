@@ -7,7 +7,7 @@ import { List } from 'antd';
 import { useTheme } from 'emotion-theming';
 
 import { StatsFromCustomSet, Theme } from 'common/types';
-import { statCalculators, CustomSetContext } from 'common/utils';
+import { statCalculators, CustomSetContext, getImageUrl } from 'common/utils';
 import { Stat } from '__generated__/globalTypes';
 import { statIcons } from 'common/constants';
 import { CustomSet } from 'common/type-aliases';
@@ -100,7 +100,7 @@ const StatTable: React.FC<Props> = ({ group, className, openBuffModal }) => {
                     }}
                   >
                     <img
-                      src={statIcons[item]}
+                      src={getImageUrl(statIcons[item])}
                       css={{ height: '80%', width: '80%' }}
                       alt={item}
                     />
