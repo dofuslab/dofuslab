@@ -8,7 +8,7 @@ import { AppliedBuffActionType } from 'common/types';
 import { Badge } from 'common/wrappers';
 import { blue6, blue8 } from 'common/mixins';
 import { statIcons } from 'common/constants';
-import { CustomSetContext } from 'common/utils';
+import { CustomSetContext, getImageUrl } from 'common/utils';
 import { notification } from 'antd';
 
 interface Props {
@@ -88,7 +88,7 @@ const AddBuffLink: React.FC<Props> = ({
     <div>
       <a onClick={onAddBuff} css={{ marginRight: 4 }}>
         <img
-          src={statIcons[buff.stat]}
+          src={getImageUrl(statIcons[buff.stat])}
           alt={t(buff.stat)}
           css={{ marginRight: 8, width: 16 }}
         />

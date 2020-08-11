@@ -9,6 +9,7 @@ import { itemCardStyle } from 'common/mixins';
 import Card from 'components/common/Card';
 import { Theme } from 'common/types';
 import { Item } from 'common/type-aliases';
+import { getImageUrl } from 'common/utils';
 import AddBuffLink from './AddBuffLink';
 
 interface Props {
@@ -24,7 +25,7 @@ const ItemBuffCard: React.FC<Props> = ({ item }) => {
       title={
         <div css={{ display: 'flex' }}>
           <img
-            src={item.imageUrl}
+            src={getImageUrl(item.imageUrl)}
             css={{ width: 24, height: 24, marginRight: 8 }}
             alt={item.name}
           />

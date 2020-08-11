@@ -17,6 +17,7 @@ import { faMagic, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Theme } from 'common/types';
 import { CardTitleWithLevel, BrokenImagePlaceholder } from 'common/wrappers';
 import { Exo, Item } from 'common/type-aliases';
+import { getImageUrl } from 'common/utils';
 import ItemStatsList from '../common/ItemStatsList';
 
 const wrapperStyles = {
@@ -110,7 +111,7 @@ const BasicItemWithStats: React.FC<Props> = ({
                 />
               ) : (
                 <img
-                  src={item.imageUrl}
+                  src={getImageUrl(item.imageUrl)}
                   css={itemImageDimensions}
                   onError={() => {
                     setBrokenImage(true);

@@ -9,7 +9,7 @@ import { itemSlots as ItemSlotsQueryType } from 'graphql/queries/__generated__/i
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 
 import { mq } from 'common/constants';
-import { useSetModal } from 'common/utils';
+import { getImageUrl, useSetModal } from 'common/utils';
 import { BuildError } from 'common/types';
 import { CustomSet, EquippedItem } from 'common/type-aliases';
 import { useRouter } from 'next/router';
@@ -26,8 +26,7 @@ interface Props {
   errors: Array<BuildError>;
 }
 
-const NO_CLASS_IMG =
-  'https://dofus-lab.s3.us-east-2.amazonaws.com/class/sprite/No_Class.png';
+const NO_CLASS_IMG = getImageUrl('class/sprite/No_Class.png');
 
 // "Amulet Character Character Character Character Hat"
 // "Ring Character Character Character Character Cloak"

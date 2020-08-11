@@ -15,7 +15,7 @@ import {
   ItemSet,
   CustomSet,
 } from 'common/type-aliases';
-import { EditableContext } from 'common/utils';
+import { EditableContext, getImageUrl } from 'common/utils';
 import { TooltipPlacement } from 'antd/lib/tooltip';
 import EquippedItemWithStats from '../common/EquippedItemWithStats';
 
@@ -77,7 +77,7 @@ const ClassicEquippedItem: React.FC<Props> = ({
                 )}
               >
                 <img
-                  src={slot.imageUrl}
+                  src={getImageUrl(slot.imageUrl)}
                   css={{
                     maxWidth: '100%',
                     opacity: 0.4,

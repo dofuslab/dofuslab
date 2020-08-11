@@ -19,7 +19,7 @@ import resetPasswordMutation from 'graphql/mutations/resetPassword.graphql';
 import CommonLayout from 'components/common/CommonLayout';
 import ErrorPage from 'pages/_error';
 import { mq, PASSWORD_REGEX } from 'common/constants';
-import { getTitle } from 'common/utils';
+import { getImageUrl, getTitle } from 'common/utils';
 import { inputFontSize } from 'common/mixins';
 
 const RequestPasswordResetPage: NextPage = () => {
@@ -94,10 +94,7 @@ const RequestPasswordResetPage: NextPage = () => {
       >
         <h1 css={{ fontSize: '32px' }}>{t('RESET_PASSWORD')}</h1>
         <div css={{ marginBottom: 20 }}>
-          <img
-            src="https://dofus-lab.s3.us-east-2.amazonaws.com/item/18042.png"
-            alt="Pandawa Cub"
-          />
+          <img src={getImageUrl('item/18042.png')} alt="Pandawa Cub" />
         </div>
         <Form
           form={form}

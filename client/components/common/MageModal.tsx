@@ -11,6 +11,7 @@ import {
   useCustomSet,
   effectToIconUrl,
   elementMageToWeaponEffect,
+  getImageUrl,
 } from 'common/utils';
 import {
   Stat,
@@ -281,8 +282,8 @@ const MageModal: React.FC<Props> = ({
                         <Option key={v} value={v}>
                           <div css={{ display: 'flex', alignItems: 'center' }}>
                             <img
-                              src={effectToIconUrl(
-                                elementMageToWeaponEffect(v),
+                              src={getImageUrl(
+                                effectToIconUrl(elementMageToWeaponEffect(v)),
                               )}
                               css={{ width: 16, marginRight: 8 }}
                               alt={v}

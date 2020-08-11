@@ -30,7 +30,7 @@ import { createCustomSet } from 'graphql/mutations/__generated__/createCustomSet
 import createCustomSetMutation from 'graphql/mutations/createCustomSet.graphql';
 import { useDebounceCallback } from '@react-hook/debounce';
 import Card from 'components/common/Card';
-import { navigateToNewCustomSet } from 'common/utils';
+import { getImageUrl, navigateToNewCustomSet } from 'common/utils';
 import DeleteCustomSetModal from './DeleteCustomSetModal';
 
 const PAGE_SIZE = 10;
@@ -294,7 +294,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
                     ) : (
                       <img
                         key={`equipped-item-${id}`}
-                        src={item.imageUrl}
+                        src={getImageUrl(item.imageUrl)}
                         css={{ width: 40 }}
                         onError={() => {
                           setBrokenImages((prev) => [...prev, id]);

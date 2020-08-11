@@ -21,6 +21,7 @@ import {
   getTotalDamage,
   getWeightedAverages,
   CustomSetContext,
+  getImageUrl,
 } from 'common/utils';
 import {
   TEffectLine,
@@ -305,7 +306,7 @@ const SpellCardContent: React.FC<Props> = ({
       <>
         <div>
           <img
-            src={spell.imageUrl}
+            src={getImageUrl(spell.imageUrl)}
             css={{ float: 'right', width: 40, marginLeft: 8, marginBottom: 8 }}
             alt={spell.name}
           />
@@ -492,7 +493,7 @@ const SpellCardContent: React.FC<Props> = ({
             <div css={damageHeaderStyle}>{t('TOTAL')}</div>
             <TotalDamageLine
               totalObj={totalDamage}
-              imageUrl="https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Spell_Damage.svg"
+              imageUrl={getImageUrl('icon/Spell_Damage.svg')}
               imageAlt={t('DAMAGE')}
             />
           </>

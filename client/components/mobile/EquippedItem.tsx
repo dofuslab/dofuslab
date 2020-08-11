@@ -14,7 +14,7 @@ import {
   EquippedItem as EquippedItemType,
   CustomSet,
 } from 'common/type-aliases';
-import { EditableContext } from 'common/utils';
+import { EditableContext, getImageUrl } from 'common/utils';
 import EquippedItemWithStats from '../common/EquippedItemWithStats';
 
 interface Props {
@@ -50,7 +50,7 @@ const EquippedItem: React.FC<Props> = ({
       }}
     >
       <img
-        src={slot.imageUrl}
+        src={getImageUrl(slot.imageUrl)}
         css={{
           maxWidth: '100%',
           opacity: 0.4,

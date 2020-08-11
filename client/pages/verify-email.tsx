@@ -15,6 +15,7 @@ import { resendVerificationEmail } from 'graphql/mutations/__generated__/resendV
 import resendVerificationEmailMutation from 'graphql/mutations/resendVerificationEmail.graphql';
 import CommonLayout from 'components/common/CommonLayout';
 import { mq } from 'common/constants';
+import { getImageUrl } from 'common/utils';
 
 const VerifyEmailPage: NextPage = () => {
   const { data } = useQuery<currentUser>(currentUserQuery);
@@ -65,10 +66,7 @@ const VerifyEmailPage: NextPage = () => {
       >
         <h1 css={{ fontSize: '32px' }}>{t('THANKS_FOR_SIGNING_UP')}</h1>
         <div css={{ marginBottom: 20 }}>
-          <img
-            src="https://dofus-lab.s3.us-east-2.amazonaws.com/item/18191.png"
-            alt="Ratalda"
-          />
+          <img src={getImageUrl('item/18191.png')} alt="Ratalda" />
         </div>
         <div css={{ fontSize: '16px', marginBottom: 20 }}>
           {t('VERIFICATION_MESSAGE', { email })}

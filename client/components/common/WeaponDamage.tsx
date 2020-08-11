@@ -25,6 +25,7 @@ import {
   getTotalDamage,
   getWeightedAverages,
   CustomSetContext,
+  getImageUrl,
 } from 'common/utils';
 
 import {
@@ -275,13 +276,13 @@ const WeaponDamage: React.FC<Props> = ({
       <div css={damageHeaderStyle}>{t('TOTAL')}</div>
       <TotalDamageLine
         totalObj={totalDamage}
-        imageUrl="https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Weapon_Damage.svg"
+        imageUrl={getImageUrl('icon/Weapon_Damage.svg')}
         imageAlt={t('DAMAGE')}
       />
       {totalHeal && (
         <TotalDamageLine
           totalObj={totalHeal}
-          imageUrl="https://dofus-lab.s3.us-east-2.amazonaws.com/icons/Health_Point.svg"
+          imageUrl={getImageUrl('icon/Health_Point.svg')}
           imageAlt={t('HEAL')}
         />
       )}

@@ -8,7 +8,7 @@ import { useTheme } from 'emotion-theming';
 
 import { Theme } from 'common/types';
 import { popoverTitleStyle, popoverShadow } from 'common/mixins';
-import { getBonusesFromCustomSet } from 'common/utils';
+import { getBonusesFromCustomSet, getImageUrl } from 'common/utils';
 import { SetBonuses, BrokenImagePlaceholder } from 'common/wrappers';
 import { mq } from 'common/constants';
 import SetModal from 'components/common/SetModal';
@@ -162,7 +162,7 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
                             />
                           ) : (
                             <img
-                              src={equippedItem.item.imageUrl}
+                              src={getImageUrl(equippedItem.item.imageUrl)}
                               css={{ maxWidth: '100%', maxHeight: '100%' }}
                               onError={() => {
                                 setBrokenImages((prev) => [
