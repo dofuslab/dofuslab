@@ -6,6 +6,7 @@ from app.database.model_set_translation import ModelSetTranslation
 from app.database.model_set import ModelSet
 from app.database.model_item import ModelItem
 from app.database.model_spell import ModelSpell
+from app.database.model_item_slot import ModelItemSlot
 import json
 import os
 
@@ -13,7 +14,7 @@ app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def update_item_urls_in_db():
-    url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/"
+    url_base = "item/"
 
     mappings = []
 
@@ -30,7 +31,7 @@ def update_item_urls_in_db():
 
 
 def update_spell_urls_in_db():
-    url_base = "https://dofus-lab.s3.us-east-2.amazonaws.com/spell/"
+    url_base = "spell/"
 
     mappings = []
 
@@ -46,8 +47,25 @@ def update_spell_urls_in_db():
     db.session.commit()
 
 
+def update_item_slot_urls_in_db():
+    url_base = "icon/"
+
+    mappings = []
+
+    for slot in db.session.query(ModelItemSlot):
+        info = {
+            "uuid": slot.uuid,
+            "image_url": url_base + re.search("\w+\.svg", slot.image_url)[0],
+        }
+        mappings.append(info)
+
+    db.session.bulk_update_mappings(ModelItemSlot, mappings)
+    db.session.flush()
+    db.session.commit()
+
+
 def add_prysmaradite_image_urls():
-    base_url = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/"
+    base_url = "item/"
 
     data = None
     with open(os.path.join(app_root, "app/database/data/items.json"), "r") as file:
@@ -61,7 +79,7 @@ def add_prysmaradite_image_urls():
 
 
 def add_rhineetle_image_urls():
-    base_url = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/"
+    base_url = "item/"
 
     data = None
     with open(os.path.join(app_root, "app/database/data/rhineetles.json"), "r") as file:
@@ -74,7 +92,7 @@ def add_rhineetle_image_urls():
 
 
 def add_mount_image_urls():
-    base_url = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/"
+    base_url = "item/"
 
     data = None
     with open(os.path.join(app_root, "app/database/data/mounts.json"), "r") as file:
@@ -92,3 +110,4 @@ if __name__ == "__main__":
     # add_mount_image_urls()
     update_item_urls_in_db()
     update_spell_urls_in_db()
+    update_item_slot_urls_in_db()
