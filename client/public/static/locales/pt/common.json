@@ -48,6 +48,8 @@
   "LAST_MODIFIED": "Última modificação",
   "LEVEL": "Nível",
   "LEVEL_ABBREVIATION": "Nv.",
+  "LEVEL_TOO_HIGH": "__STRING_NOT_TRANSLATED__",
+  "LEVEL_TOO_HIGH_WITH_ITEM": "__STRING_NOT_TRANSLATED__",
   "MAX_NUM": "Máximo {{max}}",
   "MULTIPLE_AP_EXO": "Você tem vários exos PA.",
   "MULTIPLE_MP_EXO": "Você tem vários exos PM.",

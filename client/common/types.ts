@@ -227,11 +227,6 @@ export type BaseStatKey = typeof baseStats[number];
 
 export type StatKey = typeof stats[number];
 
-export interface BuildError {
-  equippedItem: EquippedItem;
-  reason: string;
-}
-
 export interface AppliedBuff {
   buff: Buff;
   numStacks: number;
@@ -268,3 +263,19 @@ export type AppliedBuffAction =
 export type StatsFromAppliedBuffs = {
   [key: string]: number;
 };
+
+export enum BuildErrorType {
+  ConditionNotMet = 'CONDITION_NOT_MET',
+  LevelTooHigh = 'LEVEL_TOO_HIGH',
+  DuplicateItemInSet = 'DUPLICATE_ITEM_IN_SET',
+  DuplicateDofusOrTrophy = 'DUPLICATE_DOFUS_OR_TROPHY',
+  DuplicatePrysmaradite = 'DUPLICATE_PRYSMARADITE',
+  DuplicateApExo = 'DUPLICATE_AP_EXO',
+  DuplicateMpExo = 'DUPLICATE_MP_EXO',
+  DuplicateRangeExo = 'DUPLICATE_RANGE_EXO',
+}
+
+export interface BuildError {
+  equippedItem: EquippedItem;
+  reason: BuildErrorType;
+}
