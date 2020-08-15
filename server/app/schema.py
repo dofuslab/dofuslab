@@ -1365,7 +1365,7 @@ class Query(graphene.ObjectType):
         for obj in item_name_objs:
             item = (
                 db.session.query(ModelItem)
-                .filter(ModelItem.image_url.contains("{}.png".format(obj.image_id)))
+                .filter(ModelItem.image_url.contains("/{}.png".format(obj.image_id)))
                 .one_or_none()
             )
             if not item:
