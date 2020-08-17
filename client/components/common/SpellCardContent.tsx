@@ -493,7 +493,7 @@ const SpellCardContent: React.FC<Props> = ({
             <div css={damageHeaderStyle}>{t('TOTAL')}</div>
             <TotalDamageLine
               totalObj={totalDamage}
-              imageUrl={getImageUrl('icon/Spell_Damage.svg')}
+              imageUrl="icon/Spell_Damage.svg"
               imageAlt={t('DAMAGE')}
             />
           </>
