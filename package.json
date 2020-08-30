@@ -39,9 +39,6 @@
     "client/**/*.tsx": [
       "npx prettier --write",
       "eslint --fix-dry-run"
-    ],
-    "client/graphql/*/!(__generated__)": [
-      "yarn apollo-codegen"
     ]
   }
 }
