@@ -56788,10 +56788,10 @@
     "name": {
       "en": "Hanshi Staff",
       "fr": "Bâton de Hanshi",
-      "de": null,
-      "es": null,
+      "de": "Hanshis Stecken",
+      "es": "Bastón de Hanshi",
       "it": "Bastone di Hanshi",
-      "pt": null
+      "pt": "Bastão de Hanshi"
     },
     "itemType": "Staff",
     "setID": null,
@@ -56880,10 +56880,10 @@
     "name": {
       "en": "Nun-Charang",
       "fr": "Nun-Charang",
-      "de": null,
-      "es": null,
+      "de": "Nun-Charang",
+      "es": "Nuncharán",
       "it": "Nuncharang",
-      "pt": null
+      "pt": "Nun-Cherangue"
     },
     "itemType": "Staff",
     "setID": "9675435",
@@ -56972,10 +56972,10 @@
     "name": {
       "en": "Shihan Fans",
       "fr": "Éventails de Shihan",
-      "de": null,
-      "es": null,
+      "de": "Shihans Fächer",
+      "es": "Abanicos de Shihan",
       "it": "Ventagli di Shihan",
-      "pt": null
+      "pt": "Leques de Shihan"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -57074,10 +57074,10 @@
     "name": {
       "en": "Kwaxe",
       "fr": "Kwache",
-      "de": null,
-      "es": null,
+      "de": "Kwaxt",
+      "es": "Kuapacha",
       "it": "Kwappascia",
-      "pt": null
+      "pt": "Kwachado"
     },
     "itemType": "Axe",
     "setID": "13378161",
@@ -57135,7 +57135,7 @@
       }
     ],
     "weaponStats": {
-      "apCost": 3,
+      "apCost": 4,
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
@@ -57166,10 +57166,10 @@
     "name": {
       "en": "Roasty Breadstick",
       "fr": "Baguette Bainkuite",
-      "de": null,
-      "es": null,
+      "de": "Kross gebackenes Baguette",
+      "es": "Varita Tolozana",
       "it": "Bagghetta Benkotta",
-      "pt": null
+      "pt": "Baspão Benhassado"
     },
     "itemType": "Wand",
     "setID": null,
