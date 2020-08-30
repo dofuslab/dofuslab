@@ -87,6 +87,7 @@ import {
   AppliedBuffAction,
   AppliedBuffActionType,
   StatsFromAppliedBuffs,
+  BuildErrorType,
 } from './types';
 import { META_DESCRIPTION, IS_CLASSIC_STORAGE_KEY } from './constants';
 import {
@@ -1277,8 +1278,14 @@ export const getErrors = (
 
   const errors = failingItems.map((equippedItem) => ({
     equippedItem,
-    reason: 'CONDITION_NOT_MET',
+    reason: BuildErrorType.ConditionNotMet,
   }));
+
+  customSet.equippedItems
+    .filter((equippedItem) => equippedItem.item.level > customSet.level)
+    .forEach((equippedItem) => {
+      errors.push({ equippedItem, reason: BuildErrorType.LevelTooHigh });
+    });
 
   const groupedBySet = getBonusesFromCustomSet(customSet);
 
@@ -1290,7 +1297,10 @@ export const getErrors = (
     const dupes = Object.values(groupByItemId).filter((arr) => arr.length > 1);
     dupes.forEach((dupe) => {
       dupe.forEach((equippedItem) =>
-        errors.push({ equippedItem, reason: 'DUPLICATE_ITEM_IN_SET' }),
+        errors.push({
+          equippedItem,
+          reason: BuildErrorType.DuplicateItemInSet,
+        }),
       );
     });
   });
@@ -1304,40 +1314,46 @@ export const getErrors = (
 
   Object.values(dofusesAndTrophies).forEach((arr) => {
     arr.forEach((equippedItem) => {
-      if (equippedItem.item.itemType.name === 'Prysmaradite') {
+      if (equippedItem.item.itemType.enName === 'Prysmaradite') {
         prysmaradites.push(equippedItem);
       }
 
       if (arr.length > 1) {
-        errors.push({ equippedItem, reason: 'DUPLICATE_DOFUS_OR_TROPHY' });
+        errors.push({
+          equippedItem,
+          reason: BuildErrorType.DuplicateDofusOrTrophy,
+        });
       }
     });
   });
 
   if (prysmaradites.length > 1) {
     prysmaradites.forEach((prysma) => {
-      errors.push({ equippedItem: prysma, reason: 'MULTIPLE_PRYSMARADITES' });
+      errors.push({
+        equippedItem: prysma,
+        reason: BuildErrorType.DuplicatePrysmaradite,
+      });
     });
   }
 
   errors.push(
     ...findMultipleExoErrors(customSet, Stat.AP).map((equippedItem) => ({
       equippedItem,
-      reason: 'MULTIPLE_AP_EXO',
+      reason: BuildErrorType.DuplicateApExo,
     })),
   );
 
   errors.push(
     ...findMultipleExoErrors(customSet, Stat.MP).map((equippedItem) => ({
       equippedItem,
-      reason: 'MULTIPLE_MP_EXO',
+      reason: BuildErrorType.DuplicateMpExo,
     })),
   );
 
   errors.push(
     ...findMultipleExoErrors(customSet, Stat.RANGE).map((equippedItem) => ({
       equippedItem,
-      reason: 'MULTIPLE_RANGE_EXO',
+      reason: BuildErrorType.DuplicateRangeExo,
     })),
   );
 
@@ -1350,18 +1366,33 @@ export const renderErrors = (
   equippedItem?: EquippedItem,
   includeItemName?: boolean,
 ) => {
-  if (reason === 'CONDITION_NOT_MET' && equippedItem && includeItemName) {
-    return (
-      <li key={`equipped-item-${equippedItem.id}-${reason}`}>
-        <Trans i18nKey="common:CONDITION_NOT_MET_WITH_ITEM">
-          The conditions for the item{' '}
-          <strong css={{ fontWeight: 500 }}>
-            {{ itemName: equippedItem.item.name }}
-          </strong>{' '}
-          have not been met.
-        </Trans>
-      </li>
-    );
+  if (equippedItem && includeItemName) {
+    if (reason === BuildErrorType.ConditionNotMet) {
+      return (
+        <li key={`equipped-item-${equippedItem.id}-${reason}`}>
+          <Trans i18nKey="common:CONDITION_NOT_MET_WITH_ITEM">
+            The conditions for the item{' '}
+            <strong css={{ fontWeight: 500 }}>
+              {{ itemName: equippedItem.item.name }}
+            </strong>{' '}
+            have not been met.
+          </Trans>
+        </li>
+      );
+    }
+    if (reason === BuildErrorType.LevelTooHigh) {
+      return (
+        <li key={`equipped-item-${equippedItem.id}-${reason}`}>
+          <Trans i18nKey="common:LEVEL_TOO_HIGH_WITH_ITEM">
+            The level of the item{' '}
+            <strong css={{ fontWeight: 500 }}>
+              {{ itemName: equippedItem.item.name }}
+            </strong>{' '}
+            is higher than the build&apos;s.
+          </Trans>
+        </li>
+      );
+    }
   }
   return <li key={`generic-${reason}`}>{t(reason, { ns: 'common' })}</li>;
 };

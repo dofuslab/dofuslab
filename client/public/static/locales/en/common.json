@@ -48,6 +48,8 @@
   "LAST_MODIFIED": "Last modified",
   "LEVEL": "Level",
   "LEVEL_ABBREVIATION": "Lvl.",
+  "LEVEL_TOO_HIGH": "The level of this item is higher than the build's.",
+  "LEVEL_TOO_HIGH_WITH_ITEM": "The level of the item <2>{{itemName}}</2> is higher than the build's.",
   "MAX_NUM": "Max {{max}}",
   "MULTIPLE_AP_EXO": "You have multiple AP exos.",
   "MULTIPLE_MP_EXO": "You have multiple MP exos.",

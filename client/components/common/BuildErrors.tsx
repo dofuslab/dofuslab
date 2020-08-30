@@ -8,7 +8,13 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { Popover } from 'antd';
 import { useTranslation } from 'i18n';
 import { popoverTitleStyle, gold5 } from 'common/mixins';
-import { baseStats, scrolledStats, BuildError, Theme } from 'common/types';
+import {
+  baseStats,
+  scrolledStats,
+  BuildError,
+  Theme,
+  BuildErrorType,
+} from 'common/types';
 import { calcPointCost, renderErrors } from 'common/utils';
 import groupBy from 'lodash/groupBy';
 
@@ -30,7 +36,10 @@ const BuildErrors: React.FC<Props> = ({ customSet, errors, isMobile }) => {
   const errorNodes: Array<React.ReactNode> = [];
 
   Object.entries(groupedErrors).forEach(([reason, arr]) => {
-    if (reason === 'CONDITION_NOT_MET') {
+    if (
+      reason === BuildErrorType.ConditionNotMet ||
+      reason === BuildErrorType.LevelTooHigh
+    ) {
       arr.forEach(({ equippedItem, reason: r }) => {
         errorNodes.push(renderErrors(r, t, equippedItem, true));
       });
