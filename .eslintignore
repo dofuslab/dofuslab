@@ -1,2 +1,4 @@
 node_modules/
 client/node_modules/
+client/__generated__/
+client/graphql/*/__generated__/
