@@ -1,4 +1,4 @@
-#import "graphql/fragments/customSet.graphql"
+#import "graphql/fragments/item.graphql"
 
 mutation updateCustomSetItem(
   $itemSlotId: UUID!
@@ -11,7 +11,24 @@ mutation updateCustomSetItem(
     itemId: $itemId
   ) {
     customSet {
-      ...customSet
+      id
+      equippedItems {
+        id
+        slot {
+          id
+          name
+          order
+        }
+        item {
+          ...item
+        }
+        exos {
+          id
+          stat
+          value
+        }
+        weaponElementMage
+      }
     }
   }
 }
