@@ -28,6 +28,7 @@ class ModelCustomSet(Base):
     name = Column("name", String(MAX_NAME_LENGTH), index=True)
     description = Column("description", String)
     owner_id = Column(UUID(as_uuid=True), ForeignKey("user_account.uuid"), index=True)
+    default_class_id = Column(UUID(as_uuid=True), ForeignKey("class.uuid"), index=True)
     creation_date = Column("creation_date", DateTime, default=datetime.utcnow)
     last_modified = Column(
         "last_modified",
@@ -53,6 +54,7 @@ class ModelCustomSet(Base):
         "ModelCustomSet", back_populates="children_custom_sets"
     )
     children_custom_sets = relationship("ModelCustomSet")
+    default_class = relationship("ModelClass")
 
     def empty_or_first_item_slot(self, item_type):
         eligible_item_slots = item_type.eligible_item_slots

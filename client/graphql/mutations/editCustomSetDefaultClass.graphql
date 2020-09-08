@@ -1,0 +1,17 @@
+mutation editCustomSetDefaultClass($customSetId: UUID, $defaultClassId: UUID) {
+  editCustomSetDefaultClass(
+    customSetId: $customSetId
+    defaultClassId: $defaultClassId
+  ) {
+    customSet {
+      id
+      lastModified
+      defaultClass {
+        id
+        name
+        faceImageUrl
+        maleSpriteImageUrl
+      }
+    }
+  }
+}

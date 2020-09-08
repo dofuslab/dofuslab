@@ -3,14 +3,14 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat } from './../../../__generated__/globalTypes';
+import { Stat } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: classBuffs
 // ====================================================
 
 export interface classBuffs_classById_spellVariantPairs_spells_spellStats_buffs {
-  __typename: 'Buff';
+  __typename: "Buff";
   id: any;
   stat: Stat;
   incrementBy: number | null;
@@ -19,16 +19,14 @@ export interface classBuffs_classById_spellVariantPairs_spells_spellStats_buffs 
 }
 
 export interface classBuffs_classById_spellVariantPairs_spells_spellStats {
-  __typename: 'SpellStats';
+  __typename: "SpellStats";
   id: any;
   level: number;
-  buffs:
-    | classBuffs_classById_spellVariantPairs_spells_spellStats_buffs[]
-    | null;
+  buffs: classBuffs_classById_spellVariantPairs_spells_spellStats_buffs[] | null;
 }
 
 export interface classBuffs_classById_spellVariantPairs_spells {
-  __typename: 'Spell';
+  __typename: "Spell";
   id: any;
   name: string;
   description: string;
@@ -37,13 +35,13 @@ export interface classBuffs_classById_spellVariantPairs_spells {
 }
 
 export interface classBuffs_classById_spellVariantPairs {
-  __typename: 'SpellVariantPair';
+  __typename: "SpellVariantPair";
   id: any;
   spells: classBuffs_classById_spellVariantPairs_spells[];
 }
 
 export interface classBuffs_classById {
-  __typename: 'Class';
+  __typename: "Class";
   id: any;
   name: string;
   spellVariantPairs: classBuffs_classById_spellVariantPairs[];

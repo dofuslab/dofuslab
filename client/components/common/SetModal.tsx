@@ -41,7 +41,6 @@ const SetModal: React.FC<Props> = ({
   });
 
   const router = useRouter();
-  const { query } = router;
   const { t } = useTranslation('common');
   const theme = useTheme<Theme>();
   const [itemIds, setItemIds] = React.useState<Array<string>>([]);
@@ -63,7 +62,7 @@ const SetModal: React.FC<Props> = ({
       router.push(
         {
           pathname: '/',
-          query: { customSetId: customSet.id, class: query.class },
+          query: { customSetId: customSet.id },
         },
         customSet ? `/build/${customSet.id}/` : '/',
       );

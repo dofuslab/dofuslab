@@ -8,7 +8,7 @@
 // ====================================================
 
 export interface deleteCustomSet_deleteCustomSet {
-  __typename: 'DeleteCustomSet';
+  __typename: "DeleteCustomSet";
   ok: boolean;
 }
 

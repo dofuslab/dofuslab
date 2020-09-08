@@ -8,7 +8,7 @@
 // ====================================================
 
 export interface changeLocale_changeLocale {
-  __typename: 'ChangeLocale';
+  __typename: "ChangeLocale";
   ok: boolean;
 }
 

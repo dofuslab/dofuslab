@@ -8,7 +8,6 @@ import { itemBox, itemImageBox } from 'common/mixins';
 
 import { BuildError, Theme } from 'common/types';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import {
   ItemSlot,
   EquippedItem,
@@ -41,8 +40,6 @@ const ClassicEquippedItem: React.FC<Props> = ({
   popoverPlacement,
 }) => {
   const theme = useTheme<Theme>();
-  const router = useRouter();
-  const { query } = router;
 
   const isEditable = React.useContext(EditableContext);
 
@@ -103,7 +100,6 @@ const ClassicEquippedItem: React.FC<Props> = ({
             }}
             as={{
               pathname: `/equip/${slot.id}/${customSet ? customSet.id : ''}`,
-              query: query.class ? { class: query.class } : undefined,
             }}
           >
             <a>{content}</a>

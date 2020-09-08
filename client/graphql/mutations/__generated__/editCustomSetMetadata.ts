@@ -8,7 +8,7 @@
 // ====================================================
 
 export interface editCustomSetMetadata_editCustomSetMetadata_customSet {
-  __typename: 'CustomSet';
+  __typename: "CustomSet";
   id: any;
   name: string | null;
   level: number;
@@ -16,7 +16,7 @@ export interface editCustomSetMetadata_editCustomSetMetadata_customSet {
 }
 
 export interface editCustomSetMetadata_editCustomSetMetadata {
-  __typename: 'EditCustomSetMetadata';
+  __typename: "EditCustomSetMetadata";
   customSet: editCustomSetMetadata_editCustomSetMetadata_customSet;
 }
 

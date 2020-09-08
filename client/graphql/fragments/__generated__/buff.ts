@@ -3,14 +3,14 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat } from './../../../__generated__/globalTypes';
+import { Stat } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL fragment: buff
 // ====================================================
 
 export interface buff {
-  __typename: 'Buff';
+  __typename: "Buff";
   id: any;
   stat: Stat;
   incrementBy: number | null;

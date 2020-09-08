@@ -8,7 +8,7 @@
 // ====================================================
 
 export interface resendVerificationEmail_resendVerificationEmail {
-  __typename: 'ResendVerificationEmail';
+  __typename: "ResendVerificationEmail";
   ok: boolean;
 }
 

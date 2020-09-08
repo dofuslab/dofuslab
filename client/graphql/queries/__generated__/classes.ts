@@ -8,7 +8,7 @@
 // ====================================================
 
 export interface classes_classes {
-  __typename: 'Class';
+  __typename: "Class";
   id: any;
   name: string;
   allNames: string[];

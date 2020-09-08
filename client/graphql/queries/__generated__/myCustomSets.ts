@@ -8,26 +8,26 @@
 // ====================================================
 
 export interface myCustomSets_currentUser_customSets_edges_node_equippedItems_slot {
-  __typename: 'ItemSlot';
+  __typename: "ItemSlot";
   id: any;
   order: number;
 }
 
 export interface myCustomSets_currentUser_customSets_edges_node_equippedItems_item {
-  __typename: 'Item';
+  __typename: "Item";
   id: any;
   imageUrl: string;
 }
 
 export interface myCustomSets_currentUser_customSets_edges_node_equippedItems {
-  __typename: 'EquippedItem';
+  __typename: "EquippedItem";
   id: any;
   slot: myCustomSets_currentUser_customSets_edges_node_equippedItems_slot;
   item: myCustomSets_currentUser_customSets_edges_node_equippedItems_item;
 }
 
 export interface myCustomSets_currentUser_customSets_edges_node {
-  __typename: 'CustomSet';
+  __typename: "CustomSet";
   id: any;
   name: string | null;
   level: number;
@@ -35,12 +35,12 @@ export interface myCustomSets_currentUser_customSets_edges_node {
 }
 
 export interface myCustomSets_currentUser_customSets_edges {
-  __typename: 'CustomSetEdge';
+  __typename: "CustomSetEdge";
   node: myCustomSets_currentUser_customSets_edges_node;
 }
 
 export interface myCustomSets_currentUser_customSets_pageInfo {
-  __typename: 'PageInfo';
+  __typename: "PageInfo";
   /**
    * When paginating forwards, are there more items?
    */
@@ -52,7 +52,7 @@ export interface myCustomSets_currentUser_customSets_pageInfo {
 }
 
 export interface myCustomSets_currentUser_customSets {
-  __typename: 'CustomSetConnection';
+  __typename: "CustomSetConnection";
   edges: myCustomSets_currentUser_customSets_edges[];
   /**
    * Pagination data for this connection.
@@ -61,7 +61,7 @@ export interface myCustomSets_currentUser_customSets {
 }
 
 export interface myCustomSets_currentUser {
-  __typename: 'User';
+  __typename: "User";
   id: any;
   customSets: myCustomSets_currentUser_customSets;
 }

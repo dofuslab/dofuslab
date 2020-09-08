@@ -4,7 +4,6 @@ import * as React from 'react';
 import { jsx } from '@emotion/core';
 
 import { Card, Skeleton } from 'antd';
-import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import { useTheme } from 'emotion-theming';
 
@@ -20,32 +19,21 @@ import { Theme } from 'common/types';
 import { CustomSetContext } from 'common/utils';
 import SpellVariantPairCard from './SpellVariantPairCard';
 
-const ClassicClassSpells: React.FC = () => {
+interface Props {
+  dofusClassId?: string;
+}
+
+const ClassicClassSpells: React.FC<Props> = ({ dofusClassId }) => {
   const { customSet } = React.useContext(CustomSetContext);
-  const router = useRouter();
-  const { query } = router;
   const { data } = useQuery<classes>(classesQuery);
   const theme = useTheme<Theme>();
-
-  const nameToId = data?.classes.reduce((acc, { id, allNames }) => {
-    const obj = { ...acc };
-    allNames.forEach((className) => {
-      obj[className] = id;
-    });
-    return obj;
-  }, {} as { [key: string]: string });
-
-  const selectedClassName = Array.isArray(query.class)
-    ? query.class[0]
-    : query.class;
-  const selectedClassId = selectedClassName && nameToId?.[selectedClassName];
 
   const { data: classData, loading: classDataLoading } = useQuery<
     classById,
     classByIdVariables
   >(classByIdQuery, {
-    variables: { id: selectedClassId },
-    skip: !selectedClassId,
+    variables: { id: dofusClassId },
+    skip: !dofusClassId,
   });
 
   const spellVariantPairs = classData?.classById?.spellVariantPairs;

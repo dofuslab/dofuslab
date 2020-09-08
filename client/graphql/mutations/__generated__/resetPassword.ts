@@ -8,7 +8,7 @@
 // ====================================================
 
 export interface resetPassword_resetPassword {
-  __typename: 'ResetPassword';
+  __typename: "ResetPassword";
   ok: boolean;
 }
 

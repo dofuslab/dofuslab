@@ -3,25 +3,21 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import {
-  Stat,
-  WeaponEffectType,
-  WeaponElementMage,
-} from './../../../__generated__/globalTypes';
+import { Stat, WeaponEffectType, WeaponElementMage } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: customSet
 // ====================================================
 
 export interface customSet_customSetById_equippedItems_slot {
-  __typename: 'ItemSlot';
+  __typename: "ItemSlot";
   id: any;
   name: string;
   order: number;
 }
 
 export interface customSet_customSetById_equippedItems_item_stats {
-  __typename: 'ItemStat';
+  __typename: "ItemStat";
   id: any;
   order: number;
   maxValue: number | null;
@@ -30,7 +26,7 @@ export interface customSet_customSetById_equippedItems_item_stats {
 }
 
 export interface customSet_customSetById_equippedItems_item_weaponStats_weaponEffects {
-  __typename: 'WeaponEffect';
+  __typename: "WeaponEffect";
   id: any;
   minDamage: number | null;
   maxDamage: number;
@@ -38,7 +34,7 @@ export interface customSet_customSetById_equippedItems_item_weaponStats_weaponEf
 }
 
 export interface customSet_customSetById_equippedItems_item_weaponStats {
-  __typename: 'WeaponStat';
+  __typename: "WeaponStat";
   id: any;
   apCost: number;
   usesPerTurn: number;
@@ -50,13 +46,13 @@ export interface customSet_customSetById_equippedItems_item_weaponStats {
 }
 
 export interface customSet_customSetById_equippedItems_item_itemType_eligibleItemSlots {
-  __typename: 'ItemSlot';
+  __typename: "ItemSlot";
   id: any;
   order: number;
 }
 
 export interface customSet_customSetById_equippedItems_item_itemType {
-  __typename: 'ItemType';
+  __typename: "ItemType";
   id: any;
   name: string;
   enName: string;
@@ -64,7 +60,7 @@ export interface customSet_customSetById_equippedItems_item_itemType {
 }
 
 export interface customSet_customSetById_equippedItems_item_set_bonuses {
-  __typename: 'SetBonus';
+  __typename: "SetBonus";
   id: any;
   numItems: number;
   stat: Stat | null;
@@ -73,14 +69,14 @@ export interface customSet_customSetById_equippedItems_item_set_bonuses {
 }
 
 export interface customSet_customSetById_equippedItems_item_set {
-  __typename: 'Set';
+  __typename: "Set";
   id: any;
   name: string;
   bonuses: customSet_customSetById_equippedItems_item_set_bonuses[];
 }
 
 export interface customSet_customSetById_equippedItems_item_buffs {
-  __typename: 'Buff';
+  __typename: "Buff";
   id: any;
   stat: Stat;
   incrementBy: number | null;
@@ -89,7 +85,7 @@ export interface customSet_customSetById_equippedItems_item_buffs {
 }
 
 export interface customSet_customSetById_equippedItems_item {
-  __typename: 'Item';
+  __typename: "Item";
   id: any;
   name: string;
   level: number;
@@ -103,14 +99,14 @@ export interface customSet_customSetById_equippedItems_item {
 }
 
 export interface customSet_customSetById_equippedItems_exos {
-  __typename: 'EquippedItemExo';
+  __typename: "EquippedItemExo";
   id: any;
   stat: Stat;
   value: number;
 }
 
 export interface customSet_customSetById_equippedItems {
-  __typename: 'EquippedItem';
+  __typename: "EquippedItem";
   id: any;
   slot: customSet_customSetById_equippedItems_slot;
   item: customSet_customSetById_equippedItems_item;
@@ -119,7 +115,7 @@ export interface customSet_customSetById_equippedItems {
 }
 
 export interface customSet_customSetById_stats {
-  __typename: 'CustomSetStats';
+  __typename: "CustomSetStats";
   id: any;
   baseVitality: number;
   baseWisdom: number;
@@ -136,19 +132,28 @@ export interface customSet_customSetById_stats {
 }
 
 export interface customSet_customSetById_owner {
-  __typename: 'User';
+  __typename: "User";
   id: any;
   username: string;
 }
 
+export interface customSet_customSetById_defaultClass {
+  __typename: "Class";
+  id: any;
+  name: string;
+  faceImageUrl: string;
+  maleSpriteImageUrl: string;
+}
+
 export interface customSet_customSetById {
-  __typename: 'CustomSet';
+  __typename: "CustomSet";
   id: any;
   name: string | null;
   level: number;
   equippedItems: customSet_customSetById_equippedItems[];
   stats: customSet_customSetById_stats;
   owner: customSet_customSetById_owner | null;
+  defaultClass: customSet_customSetById_defaultClass | null;
   creationDate: any | null;
   lastModified: any | null;
 }

@@ -3,14 +3,14 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat } from './../../../__generated__/globalTypes';
+import { Stat } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL fragment: set
 // ====================================================
 
 export interface set_bonuses {
-  __typename: 'SetBonus';
+  __typename: "SetBonus";
   id: any;
   numItems: number;
   stat: Stat | null;
@@ -19,7 +19,7 @@ export interface set_bonuses {
 }
 
 export interface set {
-  __typename: 'Set';
+  __typename: "Set";
   id: any;
   name: string;
   bonuses: set_bonuses[];

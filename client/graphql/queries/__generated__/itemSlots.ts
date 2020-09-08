@@ -8,13 +8,13 @@
 // ====================================================
 
 export interface itemSlots_itemSlots_itemTypes {
-  __typename: 'ItemType';
+  __typename: "ItemType";
   id: any;
   name: string;
 }
 
 export interface itemSlots_itemSlots {
-  __typename: 'ItemSlot';
+  __typename: "ItemSlot";
   id: any;
   enName: string;
   name: string;

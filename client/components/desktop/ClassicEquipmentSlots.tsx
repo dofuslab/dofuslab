@@ -12,9 +12,6 @@ import { mq } from 'common/constants';
 import { getImageUrl, useSetModal } from 'common/utils';
 import { BuildError } from 'common/types';
 import { CustomSet, EquippedItem } from 'common/type-aliases';
-import { useRouter } from 'next/router';
-import { classes } from 'graphql/queries/__generated__/classes';
-import classesQuery from 'graphql/queries/classes.graphql';
 import { TooltipPlacement } from 'antd/lib/tooltip';
 import MageModal from '../common/MageModal';
 import SetModal from '../common/SetModal';
@@ -58,17 +55,6 @@ const getPopoverPlacement = (slotEnName: string): TooltipPlacement => {
 const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
   const { data } = useQuery<ItemSlotsQueryType>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
-
-  const router = useRouter();
-  const { query } = router;
-
-  const { data: classesData } = useQuery<classes>(classesQuery);
-  const selectedClassName = Array.isArray(query.class)
-    ? query.class[0]
-    : query.class || '';
-  const selectedClass = classesData?.classes.find((c) =>
-    c.allNames.includes(selectedClassName),
-  );
 
   const equippedItemsBySlotId: {
     [key: string]: EquippedItem;
@@ -179,7 +165,7 @@ const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
             margin: '24px 0',
             minWidth: 0,
             background: `transparent url('${
-              selectedClass ? selectedClass.maleSpriteImageUrl : NO_CLASS_IMG
+              customSet?.defaultClass?.maleSpriteImageUrl ?? NO_CLASS_IMG
             }') no-repeat scroll center center`,
             backgroundSize: 'contain',
             alignSelf: 'stretch',

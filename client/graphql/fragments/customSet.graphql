@@ -29,6 +29,12 @@ fragment customSet on CustomSet {
     id
     username
   }
+  defaultClass {
+    id
+    name
+    faceImageUrl
+    maleSpriteImageUrl
+  }
   creationDate
   lastModified
 }

@@ -16,7 +16,7 @@ branch_labels = None
 depends_on = None
 
 
-url_base = "icons/{}.svg"
+url_base = "icon/{}.svg"
 
 
 def upgrade():

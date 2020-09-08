@@ -62,17 +62,13 @@ module.exports = {
       2,
       { devDependencies: ['**/test.tsx', '**/test.ts'] },
     ],
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/camelcase': [
-      'error',
-      {
-        ignoreImports: true,
-      },
-    ],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
       { ignoreRestSiblings: true },
     ],
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': 'error',
     'prettier/prettier': [
       'error',
       {

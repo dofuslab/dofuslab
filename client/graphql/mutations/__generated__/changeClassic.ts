@@ -8,7 +8,7 @@
 // ====================================================
 
 export interface changeClassic_changeClassic {
-  __typename: 'ChangeClassic';
+  __typename: "ChangeClassic";
   ok: boolean;
 }
 

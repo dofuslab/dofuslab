@@ -8,7 +8,7 @@
 // ====================================================
 
 export interface changePassword_changePassword {
-  __typename: 'ChangePassword';
+  __typename: "ChangePassword";
   ok: boolean;
 }
 

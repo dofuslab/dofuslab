@@ -578,6 +578,24 @@ class EditCustomSetMetadata(graphene.Mutation):
         return EditCustomSetMetadata(custom_set=custom_set)
 
 
+class EditCustomSetDefaultClass(graphene.Mutation):
+    class Arguments:
+        custom_set_id = graphene.UUID()
+        default_class_id = graphene.UUID()
+
+    custom_set = graphene.Field(CustomSet, required=True)
+
+    @anonymous_or_verified
+    def mutate(self, info, **kwargs):
+        with session_scope() as db_session:
+            custom_set_id = kwargs.get("custom_set_id")
+            default_class_id = kwargs.get("default_class_id")
+            custom_set = get_or_create_custom_set(custom_set_id, db_session)
+            custom_set.default_class_id = default_class_id
+
+        return EditCustomSetDefaultClass(custom_set=custom_set)
+
+
 class UpdateCustomSetItem(graphene.Mutation):
     class Arguments:
         # if null, create new set
@@ -1389,6 +1407,7 @@ class Mutation(graphene.ObjectType):
     mage_equipped_item = MageEquippedItem.Field()
     set_equipped_item_exo = SetEquippedItemExo.Field()
     edit_custom_set_metadata = EditCustomSetMetadata.Field()
+    edit_custom_set_default_class = EditCustomSetDefaultClass.Field()
     edit_custom_set_stats = EditCustomSetStats.Field()
     equip_set = EquipSet.Field()
     equip_multiple_items = EquipMultipleItems.Field()

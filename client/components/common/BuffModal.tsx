@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import React from 'react';
+import * as React from 'react';
 import { jsx } from '@emotion/core';
 import Modal from 'antd/lib/modal/Modal';
 
@@ -10,7 +10,7 @@ import { useQuery } from '@apollo/client';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
 import { Select, Spin, Divider, Button } from 'antd';
-import { useClassId, CustomSetContext, getImageUrl } from 'common/utils';
+import { CustomSetContext, getImageUrl } from 'common/utils';
 import {
   classBuffs,
   classBuffsVariables,
@@ -39,16 +39,22 @@ interface Props {
   visible: boolean;
   closeBuffModal: () => void;
   customSet?: CustomSet | null;
+  dofusClassId?: string;
 }
 
-const BuffModal: React.FC<Props> = ({ visible, closeBuffModal, customSet }) => {
+const BuffModal: React.FC<Props> = ({
+  visible,
+  closeBuffModal,
+  customSet,
+  dofusClassId,
+}) => {
   const { appliedBuffs, dispatch } = React.useContext(CustomSetContext);
   const { t } = useTranslation(['stat', 'common']);
   const { data: classData } = useQuery<classes>(classesQuery);
-  const initialClassId = useClassId();
+
   const [selectedClassId, setSelectedClassId] = React.useState<
     string | undefined
-  >(initialClassId);
+  >(dofusClassId);
   const { data, loading } = useQuery<classBuffs, classBuffsVariables>(
     classBuffsQuery,
     {
