@@ -1329,7 +1329,7 @@ export const getErrors = (
     prysmaradites.forEach((prysma) => {
       errors.push({
         equippedItem: prysma,
-        reason: BuildErrorType.DuplicatePrysmaradite,
+        reason: BuildErrorType.MultiplePrysmaradites,
       });
     });
   }
@@ -1337,21 +1337,21 @@ export const getErrors = (
   errors.push(
     ...findMultipleExoErrors(customSet, Stat.AP).map((equippedItem) => ({
       equippedItem,
-      reason: BuildErrorType.DuplicateApExo,
+      reason: BuildErrorType.MultipleApExo,
     })),
   );
 
   errors.push(
     ...findMultipleExoErrors(customSet, Stat.MP).map((equippedItem) => ({
       equippedItem,
-      reason: BuildErrorType.DuplicateMpExo,
+      reason: BuildErrorType.MultipleMpExo,
     })),
   );
 
   errors.push(
     ...findMultipleExoErrors(customSet, Stat.RANGE).map((equippedItem) => ({
       equippedItem,
-      reason: BuildErrorType.DuplicateRangeExo,
+      reason: BuildErrorType.MultipleRangeExo,
     })),
   );
 
