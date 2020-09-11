@@ -3,27 +3,27 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat } from './../../../__generated__/globalTypes';
+import { Stat } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: setEquippedItemExo
 // ====================================================
 
 export interface setEquippedItemExo_setEquippedItemExo_equippedItem_exos {
-  __typename: 'EquippedItemExo';
+  __typename: "EquippedItemExo";
   id: any;
   stat: Stat;
   value: number;
 }
 
 export interface setEquippedItemExo_setEquippedItemExo_equippedItem {
-  __typename: 'EquippedItem';
+  __typename: "EquippedItem";
   id: any;
   exos: setEquippedItemExo_setEquippedItemExo_equippedItem_exos[];
 }
 
 export interface setEquippedItemExo_setEquippedItemExo {
-  __typename: 'SetEquippedItemExo';
+  __typename: "SetEquippedItemExo";
   equippedItem: setEquippedItemExo_setEquippedItemExo_equippedItem;
 }
 

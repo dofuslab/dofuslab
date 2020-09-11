@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import React from 'react';
+import * as React from 'react';
 import { jsx } from '@emotion/core';
 import { Tabs } from 'antd';
 import { useTheme } from 'emotion-theming';
@@ -19,7 +19,6 @@ import { useTranslation } from 'i18n';
 import { ItemSlot, CustomSet } from 'common/type-aliases';
 import PublicBuildActions from 'components/common/PublicBuildActions';
 import BuffModal from 'components/common/BuffModal';
-import { useRouter } from 'next/router';
 import StatTable from '../common/StatTable';
 import StatEditor from '../common/StatEditor';
 import EquipmentSlots from '../common/EquipmentSlots';
@@ -39,9 +38,9 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
     null,
   );
 
-  const {
-    query: { class: dofusClass },
-  } = useRouter();
+  const [dofusClassId, setDofusClassId] = React.useState<string | undefined>(
+    customSet?.defaultClass?.id,
+  );
 
   const [buffModalOpen, setBuffModalOpen] = React.useState(false);
   const openBuffModal = React.useCallback(() => {
@@ -78,6 +77,7 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
         errors={errors}
         isMobile
         isClassic={false}
+        setDofusClassId={setDofusClassId}
       />
       <EquipmentSlots
         customSet={customSet}
@@ -150,6 +150,8 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                 <ClassSpells
                   key={`${customSet?.id}-${customSet?.level}`}
                   customSet={customSet}
+                  dofusClassId={dofusClassId}
+                  setDofusClassId={setDofusClassId}
                 />
               </ResponsiveGrid>
             </TabPane>
@@ -157,10 +159,11 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
         </div>
       </div>
       <BuffModal
-        key={String(dofusClass)}
+        key={dofusClassId}
         visible={buffModalOpen}
         closeBuffModal={closeBuffModal}
         customSet={customSet}
+        dofusClassId={dofusClassId}
       />
     </>
   );

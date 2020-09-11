@@ -1,10 +1,8 @@
 /** @jsx jsx */
 
-import * as React from 'react';
 import { jsx } from '@emotion/core';
 
 import { Select, Card, Skeleton } from 'antd';
-import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import { useTheme } from 'emotion-theming';
 
@@ -18,7 +16,6 @@ import {
 import classByIdQuery from 'graphql/queries/classById.graphql';
 import { Theme } from 'common/types';
 import { CustomSet, Spell } from 'common/type-aliases';
-import { onSelectClass, useClassId } from 'common/utils';
 import { itemCardStyle } from 'common/mixins';
 import SpellCard from './SpellCard';
 
@@ -26,22 +23,25 @@ const { Option } = Select;
 
 interface Props {
   customSet?: CustomSet | null;
+  dofusClassId?: string;
+  setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
-const ClassSpells: React.FC<Props> = ({ customSet }) => {
-  const router = useRouter();
+const ClassSpells: React.FC<Props> = ({
+  customSet,
+  dofusClassId,
+  setDofusClassId,
+}) => {
   const { data } = useQuery<classes>(classesQuery);
   const { t } = useTranslation('common');
   const theme = useTheme<Theme>();
-
-  const selectedClassId = useClassId();
 
   const { data: classData, loading: classDataLoading } = useQuery<
     classById,
     classByIdVariables
   >(classByIdQuery, {
-    variables: { id: selectedClassId },
-    skip: !selectedClassId,
+    variables: { id: dofusClassId },
+    skip: !dofusClassId,
   });
 
   const spellsList = classData?.classById?.spellVariantPairs.reduce(
@@ -114,9 +114,9 @@ const ClassSpells: React.FC<Props> = ({ customSet }) => {
             .toLocaleUpperCase()
             .includes(input.toLocaleUpperCase());
         }}
-        value={selectedClassId}
+        value={dofusClassId}
         onChange={(value: string) => {
-          onSelectClass(data.classes, value, router);
+          setDofusClassId(value);
         }}
         placeholder={t('SELECT_CLASS')}
       >

@@ -130,7 +130,7 @@ const SelectorFilters: React.FC<Props> = ({
   let searchId = showSets ? 'sets-search' : SEARCH_BAR_ID;
   if (isMobile) searchId = `${searchId}-mobile`;
 
-  const buildLink = getBuildLink(customSetId, router.query);
+  const buildLink = getBuildLink(customSetId);
 
   return (
     <div

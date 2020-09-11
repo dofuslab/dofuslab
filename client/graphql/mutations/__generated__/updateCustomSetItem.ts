@@ -3,25 +3,21 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import {
-  Stat,
-  WeaponEffectType,
-  WeaponElementMage,
-} from './../../../__generated__/globalTypes';
+import { Stat, WeaponEffectType, WeaponElementMage } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: updateCustomSetItem
 // ====================================================
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_slot {
-  __typename: 'ItemSlot';
+  __typename: "ItemSlot";
   id: any;
   name: string;
   order: number;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_stats {
-  __typename: 'ItemStat';
+  __typename: "ItemStat";
   id: any;
   order: number;
   maxValue: number | null;
@@ -30,7 +26,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_weaponStats_weaponEffects {
-  __typename: 'WeaponEffect';
+  __typename: "WeaponEffect";
   id: any;
   minDamage: number | null;
   maxDamage: number;
@@ -38,7 +34,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_weaponStats {
-  __typename: 'WeaponStat';
+  __typename: "WeaponStat";
   id: any;
   apCost: number;
   usesPerTurn: number;
@@ -50,13 +46,13 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_itemType_eligibleItemSlots {
-  __typename: 'ItemSlot';
+  __typename: "ItemSlot";
   id: any;
   order: number;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_itemType {
-  __typename: 'ItemType';
+  __typename: "ItemType";
   id: any;
   name: string;
   enName: string;
@@ -64,7 +60,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set_bonuses {
-  __typename: 'SetBonus';
+  __typename: "SetBonus";
   id: any;
   numItems: number;
   stat: Stat | null;
@@ -73,14 +69,14 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set {
-  __typename: 'Set';
+  __typename: "Set";
   id: any;
   name: string;
   bonuses: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set_bonuses[];
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_buffs {
-  __typename: 'Buff';
+  __typename: "Buff";
   id: any;
   stat: Stat;
   incrementBy: number | null;
@@ -89,7 +85,7 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item {
-  __typename: 'Item';
+  __typename: "Item";
   id: any;
   name: string;
   level: number;
@@ -99,20 +95,18 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
   conditions: any | null;
   itemType: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_itemType;
   set: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_set | null;
-  buffs:
-    | updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_buffs[]
-    | null;
+  buffs: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item_buffs[] | null;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_exos {
-  __typename: 'EquippedItemExo';
+  __typename: "EquippedItemExo";
   id: any;
   stat: Stat;
   value: number;
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems {
-  __typename: 'EquippedItem';
+  __typename: "EquippedItem";
   id: any;
   slot: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_slot;
   item: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems_item;
@@ -121,13 +115,13 @@ export interface updateCustomSetItem_updateCustomSetItem_customSet_equippedItems
 }
 
 export interface updateCustomSetItem_updateCustomSetItem_customSet {
-  __typename: 'CustomSet';
+  __typename: "CustomSet";
   id: any;
   equippedItems: updateCustomSetItem_updateCustomSetItem_customSet_equippedItems[];
 }
 
 export interface updateCustomSetItem_updateCustomSetItem {
-  __typename: 'UpdateCustomSetItem';
+  __typename: "UpdateCustomSetItem";
   customSet: updateCustomSetItem_updateCustomSetItem_customSet;
 }
 

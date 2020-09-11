@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import React from 'react';
+import * as React from 'react';
 import { jsx } from '@emotion/core';
 import { useEquipItemMutation, useToggleFavoriteMutation } from 'common/utils';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
@@ -62,7 +62,6 @@ const ItemCard: React.FC<Props> = ({
   );
 
   const onClick = React.useCallback(() => {
-    const { query } = router;
     const nextSlotId = remainingSlotIds[0];
     const numRemainingSlots = remainingSlotIds.length;
     if (itemSlotId) {
@@ -108,11 +107,10 @@ const ItemCard: React.FC<Props> = ({
           router.push(
             {
               pathname: '/',
-              query: { customSetId, class: query.class || undefined },
+              query: { customSetId },
             },
             {
               pathname: customSetId ? `/build/${customSetId}` : '/',
-              query: query.class ? { class: query.class } : undefined,
             },
           );
         }

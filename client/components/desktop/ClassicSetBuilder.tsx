@@ -17,7 +17,6 @@ import ClassicClassSpells from 'components/desktop/ClassicClassSpells';
 import { CustomSet } from 'common/type-aliases';
 import BuffModal from 'components/common/BuffModal';
 import { BuffButton } from 'common/wrappers';
-import { useRouter } from 'next/router';
 import ClassicRightColumnStats from './ClassicRightColumnStats';
 import ClassicLeftColumnStats from './ClassicLeftColumnStats';
 import ClassicEquipmentSlots from './ClassicEquipmentSlots';
@@ -35,9 +34,9 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
     CustomSetContext,
   );
 
-  const {
-    query: { class: dofusClass },
-  } = useRouter();
+  const [dofusClassId, setDofusClassId] = React.useState<string | undefined>(
+    customSet?.defaultClass?.id,
+  );
 
   const { t } = useTranslation();
 
@@ -69,9 +68,9 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
           marginRight: 'auto',
           padding: '0 12px',
           width: '100%',
-          maxWidth: 1084,
+          maxWidth: 1036,
           [mq[4]]: {
-            maxWidth: 1172,
+            maxWidth: 1124,
           },
         }}
       >
@@ -81,6 +80,7 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
           errors={errors}
           isClassic
           isMobile={false}
+          setDofusClassId={setDofusClassId}
         />
         <Tabs
           defaultActiveKey="characteristics"
@@ -164,7 +164,10 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
                 marginBottom: 60,
               }}
             >
-              <ClassicClassSelector />
+              <ClassicClassSelector
+                dofusClassId={dofusClassId}
+                setDofusClassId={setDofusClassId}
+              />
               {weapon && customSet && weapon.item.weaponStats && (
                 <>
                   <BasicItemCard
@@ -181,16 +184,18 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
               )}
               <ClassicClassSpells
                 key={`${customSet?.id}-${customSet?.level}`}
+                dofusClassId={dofusClassId}
               />
             </div>
           </TabPane>
         </Tabs>
       </div>
       <BuffModal
-        key={String(dofusClass)}
+        key={dofusClassId}
         visible={buffModalOpen}
         closeBuffModal={closeBuffModal}
         customSet={customSet}
+        dofusClassId={dofusClassId}
       />
     </>
   );

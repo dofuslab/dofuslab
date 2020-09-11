@@ -269,10 +269,10 @@ export enum BuildErrorType {
   LevelTooHigh = 'LEVEL_TOO_HIGH',
   DuplicateItemInSet = 'DUPLICATE_ITEM_IN_SET',
   DuplicateDofusOrTrophy = 'DUPLICATE_DOFUS_OR_TROPHY',
-  DuplicatePrysmaradite = 'DUPLICATE_PRYSMARADITE',
-  DuplicateApExo = 'DUPLICATE_AP_EXO',
-  DuplicateMpExo = 'DUPLICATE_MP_EXO',
-  DuplicateRangeExo = 'DUPLICATE_RANGE_EXO',
+  MultiplePrysmaradites = 'MULTIPLE_PRYSMARADITES',
+  MultipleApExo = 'MULTIPLE_AP_EXO',
+  MultipleMpExo = 'MULTIPLE_MP_EXO',
+  MultipleRangeExo = 'MULTIPLE_RANGE_EXO',
 }
 
 export interface BuildError {

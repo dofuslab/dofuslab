@@ -3,14 +3,14 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat, WeaponEffectType } from './../../../__generated__/globalTypes';
+import { Stat, WeaponEffectType } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: currentUser
 // ====================================================
 
 export interface currentUser_currentUser_favoriteItems_stats {
-  __typename: 'ItemStat';
+  __typename: "ItemStat";
   id: any;
   order: number;
   maxValue: number | null;
@@ -19,7 +19,7 @@ export interface currentUser_currentUser_favoriteItems_stats {
 }
 
 export interface currentUser_currentUser_favoriteItems_weaponStats_weaponEffects {
-  __typename: 'WeaponEffect';
+  __typename: "WeaponEffect";
   id: any;
   minDamage: number | null;
   maxDamage: number;
@@ -27,7 +27,7 @@ export interface currentUser_currentUser_favoriteItems_weaponStats_weaponEffects
 }
 
 export interface currentUser_currentUser_favoriteItems_weaponStats {
-  __typename: 'WeaponStat';
+  __typename: "WeaponStat";
   id: any;
   apCost: number;
   usesPerTurn: number;
@@ -39,13 +39,13 @@ export interface currentUser_currentUser_favoriteItems_weaponStats {
 }
 
 export interface currentUser_currentUser_favoriteItems_itemType_eligibleItemSlots {
-  __typename: 'ItemSlot';
+  __typename: "ItemSlot";
   id: any;
   order: number;
 }
 
 export interface currentUser_currentUser_favoriteItems_itemType {
-  __typename: 'ItemType';
+  __typename: "ItemType";
   id: any;
   name: string;
   enName: string;
@@ -53,7 +53,7 @@ export interface currentUser_currentUser_favoriteItems_itemType {
 }
 
 export interface currentUser_currentUser_favoriteItems_set_bonuses {
-  __typename: 'SetBonus';
+  __typename: "SetBonus";
   id: any;
   numItems: number;
   stat: Stat | null;
@@ -62,14 +62,14 @@ export interface currentUser_currentUser_favoriteItems_set_bonuses {
 }
 
 export interface currentUser_currentUser_favoriteItems_set {
-  __typename: 'Set';
+  __typename: "Set";
   id: any;
   name: string;
   bonuses: currentUser_currentUser_favoriteItems_set_bonuses[];
 }
 
 export interface currentUser_currentUser_favoriteItems_buffs {
-  __typename: 'Buff';
+  __typename: "Buff";
   id: any;
   stat: Stat;
   incrementBy: number | null;
@@ -78,7 +78,7 @@ export interface currentUser_currentUser_favoriteItems_buffs {
 }
 
 export interface currentUser_currentUser_favoriteItems {
-  __typename: 'Item';
+  __typename: "Item";
   id: any;
   name: string;
   level: number;
@@ -92,7 +92,7 @@ export interface currentUser_currentUser_favoriteItems {
 }
 
 export interface currentUser_currentUser {
-  __typename: 'User';
+  __typename: "User";
   id: any;
   username: string;
   email: string;

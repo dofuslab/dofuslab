@@ -38,7 +38,6 @@ const RequestPasswordResetPage: NextPage = () => {
     if (data?.currentUser?.verified) {
       router.replace('/', {
         pathname: '/',
-        // eslint-disable-next-line @typescript-eslint/camelcase
         query: { reset_password: 'already_logged_in' },
       });
     } else if (data?.currentUser) {

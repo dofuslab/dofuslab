@@ -3,14 +3,14 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat, WeaponEffectType } from './../../../__generated__/globalTypes';
+import { Stat, WeaponEffectType } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: set
 // ====================================================
 
 export interface set_setById_bonuses {
-  __typename: 'SetBonus';
+  __typename: "SetBonus";
   id: any;
   numItems: number;
   stat: Stat | null;
@@ -19,7 +19,7 @@ export interface set_setById_bonuses {
 }
 
 export interface set_setById_items_stats {
-  __typename: 'ItemStat';
+  __typename: "ItemStat";
   id: any;
   order: number;
   maxValue: number | null;
@@ -28,7 +28,7 @@ export interface set_setById_items_stats {
 }
 
 export interface set_setById_items_weaponStats_weaponEffects {
-  __typename: 'WeaponEffect';
+  __typename: "WeaponEffect";
   id: any;
   minDamage: number | null;
   maxDamage: number;
@@ -36,7 +36,7 @@ export interface set_setById_items_weaponStats_weaponEffects {
 }
 
 export interface set_setById_items_weaponStats {
-  __typename: 'WeaponStat';
+  __typename: "WeaponStat";
   id: any;
   apCost: number;
   usesPerTurn: number;
@@ -48,13 +48,13 @@ export interface set_setById_items_weaponStats {
 }
 
 export interface set_setById_items_itemType_eligibleItemSlots {
-  __typename: 'ItemSlot';
+  __typename: "ItemSlot";
   id: any;
   order: number;
 }
 
 export interface set_setById_items_itemType {
-  __typename: 'ItemType';
+  __typename: "ItemType";
   id: any;
   name: string;
   enName: string;
@@ -62,7 +62,7 @@ export interface set_setById_items_itemType {
 }
 
 export interface set_setById_items_set_bonuses {
-  __typename: 'SetBonus';
+  __typename: "SetBonus";
   id: any;
   numItems: number;
   stat: Stat | null;
@@ -71,14 +71,14 @@ export interface set_setById_items_set_bonuses {
 }
 
 export interface set_setById_items_set {
-  __typename: 'Set';
+  __typename: "Set";
   id: any;
   name: string;
   bonuses: set_setById_items_set_bonuses[];
 }
 
 export interface set_setById_items_buffs {
-  __typename: 'Buff';
+  __typename: "Buff";
   id: any;
   stat: Stat;
   incrementBy: number | null;
@@ -87,7 +87,7 @@ export interface set_setById_items_buffs {
 }
 
 export interface set_setById_items {
-  __typename: 'Item';
+  __typename: "Item";
   id: any;
   name: string;
   level: number;
@@ -101,7 +101,7 @@ export interface set_setById_items {
 }
 
 export interface set_setById {
-  __typename: 'Set';
+  __typename: "Set";
   id: any;
   name: string;
   bonuses: set_setById_bonuses[];

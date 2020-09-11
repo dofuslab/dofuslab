@@ -18,7 +18,7 @@ import { BuildError, Theme } from 'common/types';
 import { Stat } from '__generated__/globalTypes';
 import { CustomSet, ItemSlot } from 'common/type-aliases';
 import BuffModal from 'components/common/BuffModal';
-import { useRouter } from 'next/router';
+
 import Selector from '../common/Selector';
 import StatEditor from '../common/StatEditor';
 import EquipmentSlots from '../common/EquipmentSlots';
@@ -102,7 +102,7 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
 
   React.useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
-      if (e.keyCode === 27) {
+      if (e.keyCode === 27 || e.code === 'Escape') {
         // escape key
         selectItemSlot(null);
       }
@@ -121,9 +121,9 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
     }
   }, [selectedItemSlot?.id]);
 
-  const {
-    query: { class: dofusClass },
-  } = useRouter();
+  const [dofusClassId, setDofusClassId] = React.useState<string | undefined>(
+    customSet?.defaultClass?.id,
+  );
 
   const weapon = customSet?.equippedItems.find(
     (equippedItem) => !!equippedItem.item.weaponStats,
@@ -153,6 +153,7 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
         }}
         isMobile={false}
         isClassic={false}
+        setDofusClassId={setDofusClassId}
       />
       <EquipmentSlots
         customSet={customSet}
@@ -179,7 +180,7 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
             overflow: 'auto',
             flex: '0 1 296px',
             paddingRight: 12,
-            ...(topMarginStyle[mq[1]] as {}),
+            ...(topMarginStyle[mq[1]] as Record<string, unknown>),
             [mq[2]]: { flex: '0 1 576px' },
           }}
         >
@@ -248,6 +249,8 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                 <ClassSpells
                   key={`${customSet?.id}-${customSet?.level}`}
                   customSet={customSet}
+                  dofusClassId={dofusClassId}
+                  setDofusClassId={setDofusClassId}
                 />
               </ResponsiveGrid>
             </TabPane>
@@ -263,7 +266,8 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
         />
       </div>
       <BuffModal
-        key={String(dofusClass)}
+        key={dofusClassId}
+        dofusClassId={dofusClassId}
         visible={buffModalOpen}
         closeBuffModal={closeBuffModal}
         customSet={customSet}

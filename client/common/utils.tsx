@@ -66,9 +66,6 @@ import {
   toggleFavoriteItemVariables,
 } from 'graphql/mutations/__generated__/toggleFavoriteItem';
 import toggleFavoriteItemMutation from 'graphql/mutations/toggleFavoriteItem.graphql';
-import { ParsedUrlQuery } from 'querystring';
-import { classes as classesQueryType } from 'graphql/queries/__generated__/classes';
-import classesQuery from 'graphql/queries/classes.graphql';
 import {
   StatsFromCustomSet,
   SetCounter,
@@ -98,7 +95,6 @@ import {
   ItemSlot,
   ItemTypeWithSlots,
   EquippedItem,
-  Class,
 } from './type-aliases';
 
 export const getImageUrl = (suffix: string) =>
@@ -371,6 +367,7 @@ export const findEmptyOrOnlySlotId = (
 };
 
 export const checkAuthentication = async (
+  // eslint-disable-next-line @typescript-eslint/ban-types
   client: ApolloClient<object>,
   t: TFunction,
   customSet?: CustomSet | null,
@@ -392,6 +389,7 @@ export const checkAuthentication = async (
 };
 
 export const getCustomSet = (
+  // eslint-disable-next-line @typescript-eslint/ban-types
   client: ApolloClient<object>,
   customSetId: string,
 ) => {
@@ -601,7 +599,7 @@ export const useDeleteItemMutation = (
               .filter((equippedItem) => equippedItem.slot.id !== slotId)
               .map(({ id }) => ({
                 id,
-                __typename: 'EquippedItem' as 'EquippedItem',
+                __typename: 'EquippedItem' as const,
               })),
           ],
           __typename: 'CustomSet',
@@ -1331,7 +1329,7 @@ export const getErrors = (
     prysmaradites.forEach((prysma) => {
       errors.push({
         equippedItem: prysma,
-        reason: BuildErrorType.DuplicatePrysmaradite,
+        reason: BuildErrorType.MultiplePrysmaradites,
       });
     });
   }
@@ -1339,21 +1337,21 @@ export const getErrors = (
   errors.push(
     ...findMultipleExoErrors(customSet, Stat.AP).map((equippedItem) => ({
       equippedItem,
-      reason: BuildErrorType.DuplicateApExo,
+      reason: BuildErrorType.MultipleApExo,
     })),
   );
 
   errors.push(
     ...findMultipleExoErrors(customSet, Stat.MP).map((equippedItem) => ({
       equippedItem,
-      reason: BuildErrorType.DuplicateMpExo,
+      reason: BuildErrorType.MultipleMpExo,
     })),
   );
 
   errors.push(
     ...findMultipleExoErrors(customSet, Stat.RANGE).map((equippedItem) => ({
       equippedItem,
-      reason: BuildErrorType.DuplicateRangeExo,
+      reason: BuildErrorType.MultipleRangeExo,
     })),
   );
 
@@ -1474,32 +1472,6 @@ export const stripQueryString = (asPath: string) => {
   return asPath;
 };
 
-export const onSelectClass = (
-  classes: Array<Class>,
-  selectedClass: string,
-  router: NextRouter,
-) => {
-  const idToName = classes.reduce((acc, { id, name }) => {
-    return { ...acc, [id]: name };
-  }, {} as { [key: string]: string });
-
-  const { query } = router;
-
-  const newQuery: { [key: string]: string | string[] } = {
-    ...query,
-    ...(idToName && { class: idToName?.[selectedClass] }),
-  };
-  const { customSetId, ...restNewQuery } = newQuery;
-
-  router.replace(
-    { pathname: router.pathname, query: newQuery },
-    {
-      pathname: stripQueryString(router.asPath),
-      query: restNewQuery,
-    },
-  );
-};
-
 export const ClassicContext = React.createContext<
   [boolean, (v: boolean) => void]
 >([
@@ -1586,13 +1558,7 @@ export const usePublicBuildActions = (customSet: CustomSet) => {
   const linkTextareaRef = React.useRef<HTMLTextAreaElement | null>(null);
 
   const onCopyLink = async () => {
-    let url = `${window.location.protocol}//${window.location.host}/view/${customSet.id}/`;
-    if (router.query.class) {
-      const singleClass = Array.isArray(router.query.class)
-        ? router.query.class[0]
-        : router.query.class;
-      url = `${url}?class=${singleClass}`;
-    }
+    const url = `${window.location.protocol}//${window.location.host}/view/${customSet.id}/`;
     try {
       if (navigator.clipboard) {
         await navigator.clipboard.writeText(url);
@@ -1650,27 +1616,15 @@ export const useIsOwnerOfCustomSet = (customSet?: CustomSet | null) => {
   return customSet.owner?.id && customSet.owner.id === data?.currentUser?.id;
 };
 
-export const getBuildLink = (
-  customSetId: string | undefined | null,
-  query: ParsedUrlQuery,
-) => {
+export const getBuildLink = (customSetId: string | undefined | null) => {
   const baseAs = customSetId ? `/build/${customSetId}` : '/';
-  const asQuery: { [key: string]: string } = {};
-  if (query.class) {
-    asQuery.class = Array.isArray(query.class) ? query.class[0] : query.class;
-  }
-  const hrefQuery = { ...asQuery };
-  if (customSetId) {
-    hrefQuery.customSetId = customSetId;
-  }
   return {
     href: {
       pathname: '/',
-      query: hrefQuery,
+      query: { customSetId },
     },
     as: {
       pathname: baseAs,
-      query: asQuery,
     },
   };
 };
@@ -1861,26 +1815,6 @@ export const appliedBuffsReducer = (
     default:
       throw new Error('Invalid action type');
   }
-};
-
-export const useClassId = () => {
-  const router = useRouter();
-  const { query } = router;
-  const { data } = useQuery<classesQueryType>(classesQuery);
-
-  const nameToId = data?.classes.reduce((acc, { id, allNames }) => {
-    const obj = { ...acc };
-    allNames.forEach((className) => {
-      obj[className] = id;
-    });
-    return obj;
-  }, {} as { [key: string]: string });
-
-  const selectedClassName = Array.isArray(query.class)
-    ? query.class[0]
-    : query.class;
-  const selectedClassId = selectedClassName && nameToId?.[selectedClassName];
-  return selectedClassId;
 };
 
 export const getStatsFromAppliedBuffs = (appliedBuffs: Array<AppliedBuff>) =>

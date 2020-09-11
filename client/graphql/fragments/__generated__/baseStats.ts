@@ -8,7 +8,7 @@
 // ====================================================
 
 export interface baseStats {
-  __typename: 'CustomSetStats';
+  __typename: "CustomSetStats";
   id: any;
   baseVitality: number;
   baseWisdom: number;

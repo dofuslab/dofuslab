@@ -8,7 +8,7 @@
 // ====================================================
 
 export interface logout_logoutUser {
-  __typename: 'LogoutUser';
+  __typename: "LogoutUser";
   ok: boolean;
 }
 

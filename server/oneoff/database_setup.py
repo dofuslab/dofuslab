@@ -44,7 +44,7 @@ app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 face_url_base = "class/face/{}_M.png"
 male_sprite_url_base = "class/sprite/{}_M.png"
 female_sprite_url_base = "class/sprite/{}_F.png"
-slot_url_base = "icons/{}.svg"
+slot_url_base = "icon/{}.svg"
 
 item_types = {}
 

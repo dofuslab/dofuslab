@@ -20,6 +20,7 @@ import {
   EditableContext,
   useIsOwnerOfCustomSet,
   getBuildLink,
+  getImageUrl,
 } from 'common/utils';
 import { ellipsis, inputFontSize } from 'common/mixins';
 import { mq } from 'common/constants';
@@ -30,6 +31,7 @@ import PublicBuildActions from 'components/common/PublicBuildActions';
 import BonusStats from '../desktop/BonusStats';
 import BuildErrors from './BuildErrors';
 import BuildActions from './BuildActions';
+import DefaultClassModal from './DefaultClassModal';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -37,6 +39,7 @@ interface Props {
   errors: Array<BuildError>;
   isClassic: boolean;
   className?: string;
+  setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
 interface CustomSetMetadata {
@@ -76,6 +79,7 @@ const SetHeader: React.FC<Props> = ({
   isMobile,
   errors,
   className,
+  setDofusClassId,
 }) => {
   const originalState = {
     isEditing: false,
@@ -156,6 +160,18 @@ const SetHeader: React.FC<Props> = ({
       metadataState,
     ],
   );
+
+  const [
+    defaultClassModalVisible,
+    setDefaultClassModalVisible,
+  ] = React.useState(false);
+
+  const openDefaultClassModal = React.useCallback(() => {
+    setDefaultClassModalVisible(true);
+  }, [setDefaultClassModalVisible]);
+  const closeDefaultClassModal = React.useCallback(() => {
+    setDefaultClassModalVisible(false);
+  }, [setDefaultClassModalVisible]);
 
   const isOwner = useIsOwnerOfCustomSet(customSet);
 
@@ -288,7 +304,7 @@ const SetHeader: React.FC<Props> = ({
   const creationDate = new Date(customSet?.creationDate);
   const modifiedDate = new Date(customSet?.lastModified);
 
-  const buildLink = getBuildLink(customSet?.id, router.query);
+  const buildLink = getBuildLink(customSet?.id);
 
   const editBuildButton = (
     <Link href={buildLink.href} as={buildLink.as}>
@@ -327,6 +343,49 @@ const SetHeader: React.FC<Props> = ({
               className,
             )}
           >
+            <div
+              css={{
+                display: 'flex',
+                alignItems: 'center',
+                flex: '0 0 36px',
+                marginRight: 12,
+              }}
+            >
+              {isEditable ? (
+                <a
+                  onClick={openDefaultClassModal}
+                  css={{ display: 'block', flex: 1 }}
+                >
+                  <img
+                    src={
+                      customSet?.defaultClass?.faceImageUrl ??
+                      getImageUrl('class/face/No_Class.svg')
+                    }
+                    css={{
+                      maxWidth: '100%',
+                      width: 'auto',
+                      height: 'auto',
+                    }}
+                    alt={customSet?.defaultClass?.name ?? t('NO_CLASS')}
+                  />
+                </a>
+              ) : (
+                <div css={{ flex: 1 }}>
+                  <img
+                    src={
+                      customSet?.defaultClass?.faceImageUrl ??
+                      getImageUrl('class/face/No_Class.svg')
+                    }
+                    css={{
+                      maxWidth: '100%',
+                      width: 'auto',
+                      height: 'auto',
+                    }}
+                    alt={customSet?.defaultClass?.name ?? t('NO_CLASS')}
+                  />
+                </div>
+              )}
+            </div>
             {customSet && !metadataState.isEditing && !isMobile ? (
               <Popover
                 overlayStyle={{ maxWidth: 360 }}
@@ -371,7 +430,6 @@ const SetHeader: React.FC<Props> = ({
                     </div>
                   </div>
                 }
-                placement="bottomLeft"
               >
                 {formElement}
               </Popover>
@@ -460,6 +518,12 @@ const SetHeader: React.FC<Props> = ({
               <BuildErrors customSet={customSet} errors={errors} isMobile />
             </>
           )}
+          <DefaultClassModal
+            closeModal={closeDefaultClassModal}
+            visible={defaultClassModalVisible}
+            setDofusClassId={setDofusClassId}
+            customSet={customSet}
+          />
         </>
       )}
     </ClassNames>

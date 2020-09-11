@@ -3,28 +3,27 @@
 import * as React from 'react';
 import { jsx } from '@emotion/core';
 
-import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
 import Tooltip from 'components/common/Tooltip';
-import Link from 'next/link';
 import { Card } from 'antd';
 import { itemCardStyle } from 'common/mixins';
 import { useTheme } from 'emotion-theming';
 import { useTranslation } from 'i18n';
 import { Theme } from 'common/types';
-import { stripQueryString } from 'common/utils';
 
-const ClassicClassSelector: React.FC = () => {
-  const router = useRouter();
-  const { query, pathname, asPath } = router;
+interface Props {
+  dofusClassId?: string;
+  setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
+}
 
+const ClassicClassSelector: React.FC<Props> = ({
+  dofusClassId,
+  setDofusClassId,
+}) => {
   const { data } = useQuery<classes>(classesQuery);
-  const selectedClassName = Array.isArray(query.class)
-    ? query.class[0]
-    : query.class || '';
 
   const theme = useTheme<Theme>();
   const { t } = useTranslation('common');
@@ -58,39 +57,26 @@ const ClassicClassSelector: React.FC = () => {
                 <div
                   css={{
                     cursor: 'pointer',
-                    opacity: dofusClass.allNames.includes(selectedClassName)
-                      ? 1
-                      : 0.3,
+                    opacity: dofusClass.id === dofusClassId ? 1 : 0.3,
                     transition: 'all 0.3s ease-in-out',
                     '&:hover': {
                       opacity: 1,
                     },
                   }}
                 >
-                  <Link
-                    href={{
-                      pathname,
-                      query: { ...query, class: dofusClass.name },
+                  <a
+                    onClick={() => {
+                      setDofusClassId(dofusClass.id);
                     }}
-                    as={{
-                      pathname: stripQueryString(asPath),
-                      query: {
-                        class: dofusClass.name,
-                      },
-                    }}
-                    shallow
-                    passHref
                   >
-                    <a>
-                      <img
-                        src={dofusClass.faceImageUrl}
-                        css={{
-                          width: '100%',
-                        }}
-                        alt={dofusClass.name}
-                      />
-                    </a>
-                  </Link>
+                    <img
+                      src={dofusClass.faceImageUrl}
+                      css={{
+                        width: '100%',
+                      }}
+                      alt={dofusClass.name}
+                    />
+                  </a>
                 </div>
               </Tooltip>
             ))}

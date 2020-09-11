@@ -3,14 +3,14 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { CustomSetStatsInput } from './../../../__generated__/globalTypes';
+import { CustomSetStatsInput } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: editCustomSetStats
 // ====================================================
 
 export interface editCustomSetStats_editCustomSetStats_customSet_stats {
-  __typename: 'CustomSetStats';
+  __typename: "CustomSetStats";
   id: any;
   baseVitality: number;
   baseWisdom: number;
@@ -27,14 +27,14 @@ export interface editCustomSetStats_editCustomSetStats_customSet_stats {
 }
 
 export interface editCustomSetStats_editCustomSetStats_customSet {
-  __typename: 'CustomSet';
+  __typename: "CustomSet";
   id: any;
   lastModified: any | null;
   stats: editCustomSetStats_editCustomSetStats_customSet_stats;
 }
 
 export interface editCustomSetStats_editCustomSetStats {
-  __typename: 'EditCustomSetStats';
+  __typename: "EditCustomSetStats";
   customSet: editCustomSetStats_editCustomSetStats_customSet;
 }
 
