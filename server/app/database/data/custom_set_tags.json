@@ -4,7 +4,7 @@
       "en": "PvM",
       "fr": "PvM",
       "de": "PvM",
-      "es": "PvM",
+      "es": "JcM",
       "it": "PvM",
       "pt": "PvM"
     },
@@ -15,7 +15,7 @@
       "en": "PvP",
       "fr": "PvP",
       "de": "PvP",
-      "es": "PvP",
+      "es": "JcJ",
       "it": "PvP",
       "pt": "PvP"
     },
@@ -26,7 +26,7 @@
       "en": "Str",
       "fr": "Terre",
       "de": "Str",
-      "es": "Str",
+      "es": "Fo",
       "it": "Str",
       "pt": "Str"
     },
@@ -48,7 +48,7 @@
       "en": "Cha",
       "fr": "Eau",
       "de": "Cha",
-      "es": "Cha",
+      "es": "Suerte",
       "it": "Cha",
       "pt": "Cha"
     },
@@ -70,7 +70,7 @@
       "en": "Omni",
       "fr": "Multi",
       "de": "Omni",
-      "es": "Omni",
+      "es": "Multi",
       "it": "Omni",
       "pt": "Omni"
     },
@@ -92,7 +92,7 @@
       "en": "Ranged",
       "fr": "Distance",
       "de": "Ranged",
-      "es": "Ranged",
+      "es": "Distancia",
       "it": "Ranged",
       "pt": "Ranged"
     },
@@ -103,7 +103,7 @@
       "en": "Melee",
       "fr": "CaC",
       "de": "Melee",
-      "es": "Melee",
+      "es": "CaC",
       "it": "Melee",
       "pt": "Melee"
     },
@@ -136,7 +136,7 @@
       "en": "Wis",
       "fr": "Sagesse",
       "de": "Wis",
-      "es": "Wis",
+      "es": "Sab",
       "it": "Wis",
       "pt": "Wis"
     },
@@ -158,7 +158,7 @@
       "en": "PB",
       "fr": "Do pou",
       "de": "PB",
-      "es": "PB",
+      "es": "Empujes",
       "it": "PB",
       "pt": "PB"
     },
@@ -169,7 +169,7 @@
       "en": "AP Red",
       "fr": "Ret PA",
       "de": "AP Red",
-      "es": "AP Red",
+      "es": "Ret PA",
       "it": "AP Red",
       "pt": "AP Red"
     },
@@ -180,7 +180,7 @@
       "en": "MP Red",
       "fr": "Ret PM",
       "de": "MP Red",
-      "es": "MP Red",
+      "es": "Ret PM",
       "it": "MP Red",
       "pt": "MP Red"
     },
@@ -191,7 +191,7 @@
       "en": "Heal",
       "fr": "Soins",
       "de": "Heal",
-      "es": "Heal",
+      "es": "Curas",
       "it": "Heal",
       "pt": "Heal"
     },
@@ -202,7 +202,7 @@
       "en": "Summon",
       "fr": "Invoc",
       "de": "Summon",
-      "es": "Summon",
+      "es": "Invos",
       "it": "Summon",
       "pt": "Summon"
     },
