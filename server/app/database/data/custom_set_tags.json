@@ -24,7 +24,7 @@
   {
     "name": {
       "en": "Str",
-      "fr": "Str",
+      "fr": "Terre",
       "de": "Str",
       "es": "Str",
       "it": "Str",
@@ -35,7 +35,7 @@
   {
     "name": {
       "en": "Int",
-      "fr": "Int",
+      "fr": "Feu",
       "de": "Int",
       "es": "Int",
       "it": "Int",
@@ -46,7 +46,7 @@
   {
     "name": {
       "en": "Cha",
-      "fr": "Cha",
+      "fr": "Eau",
       "de": "Cha",
       "es": "Cha",
       "it": "Cha",
@@ -57,7 +57,7 @@
   {
     "name": {
       "en": "Agi",
-      "fr": "Agi",
+      "fr": "Air",
       "de": "Agi",
       "es": "Agi",
       "it": "Agi",
@@ -68,7 +68,7 @@
   {
     "name": {
       "en": "Omni",
-      "fr": "Omni",
+      "fr": "Multi",
       "de": "Omni",
       "es": "Omni",
       "it": "Omni",
@@ -79,7 +79,7 @@
   {
     "name": {
       "en": "Crit",
-      "fr": "Crit",
+      "fr": "CC",
       "de": "Crit",
       "es": "Crit",
       "it": "Crit",
@@ -90,7 +90,7 @@
   {
     "name": {
       "en": "Ranged",
-      "fr": "Ranged",
+      "fr": "Distance",
       "de": "Ranged",
       "es": "Ranged",
       "it": "Ranged",
@@ -101,7 +101,7 @@
   {
     "name": {
       "en": "Melee",
-      "fr": "Melee",
+      "fr": "CaC",
       "de": "Melee",
       "es": "Melee",
       "it": "Melee",
@@ -134,7 +134,7 @@
   {
     "name": {
       "en": "Wis",
-      "fr": "Wis",
+      "fr": "Sagesse",
       "de": "Wis",
       "es": "Wis",
       "it": "Wis",
@@ -156,7 +156,7 @@
   {
     "name": {
       "en": "PB",
-      "fr": "PB",
+      "fr": "Do pou",
       "de": "PB",
       "es": "PB",
       "it": "PB",
@@ -167,7 +167,7 @@
   {
     "name": {
       "en": "AP Red",
-      "fr": "AP Red",
+      "fr": "Ret PA",
       "de": "AP Red",
       "es": "AP Red",
       "it": "AP Red",
@@ -178,7 +178,7 @@
   {
     "name": {
       "en": "MP Red",
-      "fr": "MP Red",
+      "fr": "Ret PM",
       "de": "MP Red",
       "es": "MP Red",
       "it": "MP Red",
@@ -189,7 +189,7 @@
   {
     "name": {
       "en": "Heal",
-      "fr": "Heal",
+      "fr": "Soins",
       "de": "Heal",
       "es": "Heal",
       "it": "Heal",
@@ -200,7 +200,7 @@
   {
     "name": {
       "en": "Summon",
-      "fr": "Summon",
+      "fr": "Invoc",
       "de": "Summon",
       "es": "Summon",
       "it": "Summon",
