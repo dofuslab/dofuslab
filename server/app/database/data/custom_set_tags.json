@@ -1,0 +1,211 @@
+[
+  {
+    "name": {
+      "en": "PvM",
+      "fr": "PvM",
+      "de": "PvM",
+      "es": "PvM",
+      "it": "PvM",
+      "pt": "PvM"
+    },
+    "image_url": "icon/???.svg"
+  },
+  {
+    "name": {
+      "en": "PvP",
+      "fr": "PvP",
+      "de": "PvP",
+      "es": "PvP",
+      "it": "PvP",
+      "pt": "PvP"
+    },
+    "image_url": "icon/???.svg"
+  },
+  {
+    "name": {
+      "en": "Str",
+      "fr": "Str",
+      "de": "Str",
+      "es": "Str",
+      "it": "Str",
+      "pt": "Str"
+    },
+    "image_url": "icon/Strength.svg"
+  },
+  {
+    "name": {
+      "en": "Int",
+      "fr": "Int",
+      "de": "Int",
+      "es": "Int",
+      "it": "Int",
+      "pt": "Int"
+    },
+    "image_url": "icon/Intelligence.svg"
+  },
+  {
+    "name": {
+      "en": "Cha",
+      "fr": "Cha",
+      "de": "Cha",
+      "es": "Cha",
+      "it": "Cha",
+      "pt": "Cha"
+    },
+    "image_url": "icon/Chance.svg"
+  },
+  {
+    "name": {
+      "en": "Agi",
+      "fr": "Agi",
+      "de": "Agi",
+      "es": "Agi",
+      "it": "Agi",
+      "pt": "Agi"
+    },
+    "image_url": "icon/Agility.svg"
+  },
+  {
+    "name": {
+      "en": "Omni",
+      "fr": "Omni",
+      "de": "Omni",
+      "es": "Omni",
+      "it": "Omni",
+      "pt": "Omni"
+    },
+    "image_url": "icon/???.svg"
+  },
+  {
+    "name": {
+      "en": "Crit",
+      "fr": "Crit",
+      "de": "Crit",
+      "es": "Crit",
+      "it": "Crit",
+      "pt": "Crit"
+    },
+    "image_url": "icon/Critical_Hit.svg"
+  },
+  {
+    "name": {
+      "en": "Ranged",
+      "fr": "Ranged",
+      "de": "Ranged",
+      "es": "Ranged",
+      "it": "Ranged",
+      "pt": "Ranged"
+    },
+    "image_url": "icon/Ranged_Damage.svg"
+  },
+  {
+    "name": {
+      "en": "Melee",
+      "fr": "Melee",
+      "de": "Melee",
+      "es": "Melee",
+      "it": "Melee",
+      "pt": "Melee"
+    },
+    "image_url": "icon/Melee_Damage.svg"
+  },
+  {
+    "name": {
+      "en": "Tank",
+      "fr": "Tank",
+      "de": "Tank",
+      "es": "Tank",
+      "it": "Tank",
+      "pt": "Tank"
+    },
+    "image_url": "icon/Melee_Resistance.svg"
+  },
+  {
+    "name": {
+      "en": "PP",
+      "fr": "PP",
+      "de": "PP",
+      "es": "PP",
+      "it": "PP",
+      "pt": "PP"
+    },
+    "image_url": "icon/Prospecting.svg"
+  },
+  {
+    "name": {
+      "en": "Wis",
+      "fr": "Wis",
+      "de": "Wis",
+      "es": "Wis",
+      "it": "Wis",
+      "pt": "Wis"
+    },
+    "image_url": "icon/Wisdom.svg"
+  },
+  {
+    "name": {
+      "en": "Pods",
+      "fr": "Pods",
+      "de": "Pods",
+      "es": "Pods",
+      "it": "Pods",
+      "pt": "Pods"
+    },
+    "image_url": "icon/Pods.svg"
+  },
+  {
+    "name": {
+      "en": "PB",
+      "fr": "PB",
+      "de": "PB",
+      "es": "PB",
+      "it": "PB",
+      "pt": "PB"
+    },
+    "image_url": "icon/Pushback_Damage.svg"
+  },
+  {
+    "name": {
+      "en": "AP Red",
+      "fr": "AP Red",
+      "de": "AP Red",
+      "es": "AP Red",
+      "it": "AP Red",
+      "pt": "AP Red"
+    },
+    "image_url": "icon/AP_Reduction.svg"
+  },
+  {
+    "name": {
+      "en": "MP Red",
+      "fr": "MP Red",
+      "de": "MP Red",
+      "es": "MP Red",
+      "it": "MP Red",
+      "pt": "MP Red"
+    },
+    "image_url": "icon/MP_Reduction.svg"
+  },
+  {
+    "name": {
+      "en": "Heal",
+      "fr": "Heal",
+      "de": "Heal",
+      "es": "Heal",
+      "it": "Heal",
+      "pt": "Heal"
+    },
+    "image_url": "icon/Heals.svg"
+  },
+  {
+    "name": {
+      "en": "Summon",
+      "fr": "Summon",
+      "de": "Summon",
+      "es": "Summon",
+      "it": "Summon",
+      "pt": "Summon"
+    },
+    "image_url": "icon/Summon.svg"
+  }
+]
