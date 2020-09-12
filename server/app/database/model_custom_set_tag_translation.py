@@ -22,4 +22,4 @@ class ModelCustomSetTagTranslation(Base):
 
     name = Column("name", String, nullable=False)
 
-    __table_args__ = (Index("spell_id", "locale"),)
+    __table_args__ = (Index("custom_set_tag_id", "locale"),)

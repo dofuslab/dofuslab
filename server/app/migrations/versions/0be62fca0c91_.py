@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 99987f8688c7
+Revision ID: 0be62fca0c91
 Revises: 06c1e15ce9ee
-Create Date: 2020-09-11 00:40:27.847928
+Create Date: 2020-09-12 02:32:48.866223
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
-revision = "99987f8688c7"
+revision = "0be62fca0c91"
 down_revision = "06c1e15ce9ee"
 branch_labels = None
 depends_on = None
@@ -48,7 +48,9 @@ def upgrade():
         ),
         sa.PrimaryKeyConstraint("uuid", name=op.f("pk_custom_set_tag_translation")),
     )
-    op.create_index("spell_id", "custom_set_tag_translation", ["locale"], unique=False)
+    op.create_index(
+        "custom_set_tag_id", "custom_set_tag_translation", ["locale"], unique=False
+    )
     op.create_table(
         "custom_set_tag_association",
         sa.Column("custom_set_tag_id", postgresql.UUID(as_uuid=True), nullable=False),
@@ -97,7 +99,7 @@ def downgrade():
         table_name="custom_set_tag_association",
     )
     op.drop_table("custom_set_tag_association")
-    op.drop_index("spell_id", table_name="custom_set_tag_translation")
+    op.drop_index("custom_set_tag_id", table_name="custom_set_tag_translation")
     op.drop_table("custom_set_tag_translation")
     op.drop_table("custom_set_tag")
     # ### end Alembic commands ###
