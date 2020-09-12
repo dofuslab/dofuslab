@@ -8,7 +8,7 @@
       "it": "PvM",
       "pt": "PvM"
     },
-    "imageUrl": "icon/???.svg"
+    "imageUrl": "icon/PvM.svg"
   },
   {
     "name": {
@@ -19,7 +19,7 @@
       "it": "PvP",
       "pt": "PvP"
     },
-    "imageUrl": "icon/???.svg"
+    "imageUrl": "icon/PvP.svg"
   },
   {
     "name": {
@@ -27,7 +27,7 @@
       "fr": "Terre",
       "de": "Str",
       "es": "Fo",
-      "it": "Str",
+      "it": "Forz",
       "pt": "Str"
     },
     "imageUrl": "icon/Strength.svg"
@@ -49,7 +49,7 @@
       "fr": "Eau",
       "de": "Cha",
       "es": "Suerte",
-      "it": "Cha",
+      "it": "Fort",
       "pt": "Cha"
     },
     "imageUrl": "icon/Chance.svg"
@@ -71,10 +71,10 @@
       "fr": "Multi",
       "de": "Omni",
       "es": "Multi",
-      "it": "Omni",
+      "it": "Multi",
       "pt": "Omni"
     },
-    "imageUrl": "icon/???.svg"
+    "imageUrl": "icon/Omni.svg"
   },
   {
     "name": {
@@ -93,10 +93,10 @@
       "fr": "Distance",
       "de": "Ranged",
       "es": "Distancia",
-      "it": "Ranged",
+      "it": "Distanza",
       "pt": "Ranged"
     },
-    "imageUrl": "icon/Ranged_Damage.svg"
+    "imageUrl": "icon/Ranged.svg"
   },
   {
     "name": {
@@ -104,10 +104,10 @@
       "fr": "CaC",
       "de": "Melee",
       "es": "CaC",
-      "it": "Melee",
+      "it": "CaC",
       "pt": "Melee"
     },
-    "imageUrl": "icon/Melee_Damage.svg"
+    "imageUrl": "icon/Melee.svg"
   },
   {
     "name": {
@@ -137,7 +137,7 @@
       "fr": "Sagesse",
       "de": "Wis",
       "es": "Sab",
-      "it": "Wis",
+      "it": "Sag",
       "pt": "Wis"
     },
     "imageUrl": "icon/Wisdom.svg"
@@ -159,7 +159,7 @@
       "fr": "Do pou",
       "de": "PB",
       "es": "Empujes",
-      "it": "PB",
+      "it": "Da Spi",
       "pt": "PB"
     },
     "imageUrl": "icon/Pushback_Damage.svg"
@@ -170,7 +170,7 @@
       "fr": "Ret PA",
       "de": "AP Red",
       "es": "Ret PA",
-      "it": "AP Red",
+      "it": "Rid PA",
       "pt": "AP Red"
     },
     "imageUrl": "icon/AP_Reduction.svg"
@@ -181,7 +181,7 @@
       "fr": "Ret PM",
       "de": "MP Red",
       "es": "Ret PM",
-      "it": "MP Red",
+      "it": "Rid PM",
       "pt": "MP Red"
     },
     "imageUrl": "icon/MP_Reduction.svg"
@@ -192,7 +192,7 @@
       "fr": "Soins",
       "de": "Heal",
       "es": "Curas",
-      "it": "Heal",
+      "it": "Cure",
       "pt": "Heal"
     },
     "imageUrl": "icon/Heals.svg"
@@ -203,7 +203,7 @@
       "fr": "Invoc",
       "de": "Summon",
       "es": "Invos",
-      "it": "Summon",
+      "it": "Evoc",
       "pt": "Summon"
     },
     "imageUrl": "icon/Summon.svg"
