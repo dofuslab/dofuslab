@@ -8,7 +8,7 @@
       "it": "PvM",
       "pt": "PvM"
     },
-    "image_url": "icon/???.svg"
+    "imageUrl": "icon/???.svg"
   },
   {
     "name": {
@@ -19,7 +19,7 @@
       "it": "PvP",
       "pt": "PvP"
     },
-    "image_url": "icon/???.svg"
+    "imageUrl": "icon/???.svg"
   },
   {
     "name": {
@@ -30,7 +30,7 @@
       "it": "Str",
       "pt": "Str"
     },
-    "image_url": "icon/Strength.svg"
+    "imageUrl": "icon/Strength.svg"
   },
   {
     "name": {
@@ -41,7 +41,7 @@
       "it": "Int",
       "pt": "Int"
     },
-    "image_url": "icon/Intelligence.svg"
+    "imageUrl": "icon/Intelligence.svg"
   },
   {
     "name": {
@@ -52,7 +52,7 @@
       "it": "Cha",
       "pt": "Cha"
     },
-    "image_url": "icon/Chance.svg"
+    "imageUrl": "icon/Chance.svg"
   },
   {
     "name": {
@@ -63,7 +63,7 @@
       "it": "Agi",
       "pt": "Agi"
     },
-    "image_url": "icon/Agility.svg"
+    "imageUrl": "icon/Agility.svg"
   },
   {
     "name": {
@@ -74,7 +74,7 @@
       "it": "Omni",
       "pt": "Omni"
     },
-    "image_url": "icon/???.svg"
+    "imageUrl": "icon/???.svg"
   },
   {
     "name": {
@@ -85,7 +85,7 @@
       "it": "Crit",
       "pt": "Crit"
     },
-    "image_url": "icon/Critical_Hit.svg"
+    "imageUrl": "icon/Critical_Hit.svg"
   },
   {
     "name": {
@@ -96,7 +96,7 @@
       "it": "Ranged",
       "pt": "Ranged"
     },
-    "image_url": "icon/Ranged_Damage.svg"
+    "imageUrl": "icon/Ranged_Damage.svg"
   },
   {
     "name": {
@@ -107,7 +107,7 @@
       "it": "Melee",
       "pt": "Melee"
     },
-    "image_url": "icon/Melee_Damage.svg"
+    "imageUrl": "icon/Melee_Damage.svg"
   },
   {
     "name": {
@@ -118,7 +118,7 @@
       "it": "Tank",
       "pt": "Tank"
     },
-    "image_url": "icon/Melee_Resistance.svg"
+    "imageUrl": "icon/Melee_Resistance.svg"
   },
   {
     "name": {
@@ -129,7 +129,7 @@
       "it": "PP",
       "pt": "PP"
     },
-    "image_url": "icon/Prospecting.svg"
+    "imageUrl": "icon/Prospecting.svg"
   },
   {
     "name": {
@@ -140,7 +140,7 @@
       "it": "Wis",
       "pt": "Wis"
     },
-    "image_url": "icon/Wisdom.svg"
+    "imageUrl": "icon/Wisdom.svg"
   },
   {
     "name": {
@@ -151,7 +151,7 @@
       "it": "Pods",
       "pt": "Pods"
     },
-    "image_url": "icon/Pods.svg"
+    "imageUrl": "icon/Pods.svg"
   },
   {
     "name": {
@@ -162,7 +162,7 @@
       "it": "PB",
       "pt": "PB"
     },
-    "image_url": "icon/Pushback_Damage.svg"
+    "imageUrl": "icon/Pushback_Damage.svg"
   },
   {
     "name": {
@@ -173,7 +173,7 @@
       "it": "AP Red",
       "pt": "AP Red"
     },
-    "image_url": "icon/AP_Reduction.svg"
+    "imageUrl": "icon/AP_Reduction.svg"
   },
   {
     "name": {
@@ -184,7 +184,7 @@
       "it": "MP Red",
       "pt": "MP Red"
     },
-    "image_url": "icon/MP_Reduction.svg"
+    "imageUrl": "icon/MP_Reduction.svg"
   },
   {
     "name": {
@@ -195,7 +195,7 @@
       "it": "Heal",
       "pt": "Heal"
     },
-    "image_url": "icon/Heals.svg"
+    "imageUrl": "icon/Heals.svg"
   },
   {
     "name": {
@@ -206,6 +206,6 @@
       "it": "Summon",
       "pt": "Summon"
     },
-    "image_url": "icon/Summon.svg"
+    "imageUrl": "icon/Summon.svg"
   }
 ]
