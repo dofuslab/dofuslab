@@ -1,30 +1,10 @@
 import sqlalchemy
 from .base import Base
 from .model_custom_set_tag_translation import ModelCustomSetTagTranslation
+from .model_custom_set_tag_association import ModelCustomSetTagAssociation
 from sqlalchemy import Column, String, ForeignKey, Table, UniqueConstraint
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
-
-
-custom_set_tag_association_table = Table(
-    "custom_set_tag_association",
-    Base.metadata,
-    Column(
-        "custom_set_tag_id",
-        UUID(as_uuid=True),
-        ForeignKey("custom_set_tag.uuid", ondelete="CASCADE"),
-        nullable=False,
-        index=True,
-    ),
-    Column(
-        "custom_set_id",
-        UUID(as_uuid=True),
-        ForeignKey("custom_set.uuid", ondelete="CASCADE"),
-        nullable=False,
-        index=True,
-    ),
-    UniqueConstraint("custom_set_tag_id", "custom_set_id"),
-)
 
 
 class ModelCustomSetTag(Base):
@@ -43,7 +23,5 @@ class ModelCustomSetTag(Base):
     )
     image_url = Column("image_url", String, nullable=False)
     custom_sets = relationship(
-        "ModelCustomSet",
-        secondary=custom_set_tag_association_table,
-        back_populates="tags",
+        "ModelCustomSet", back_populates="tags", secondary="custom_set_tag_association",
     )

@@ -145,6 +145,13 @@ export interface copyCustomSet_copyCustomSet_customSet_defaultClass {
   maleSpriteImageUrl: string;
 }
 
+export interface copyCustomSet_copyCustomSet_customSet_tags {
+  __typename: "CustomSetTag";
+  id: any;
+  name: string;
+  imageUrl: string;
+}
+
 export interface copyCustomSet_copyCustomSet_customSet {
   __typename: "CustomSet";
   id: any;
@@ -156,6 +163,7 @@ export interface copyCustomSet_copyCustomSet_customSet {
   defaultClass: copyCustomSet_copyCustomSet_customSet_defaultClass | null;
   creationDate: any | null;
   lastModified: any | null;
+  tags: copyCustomSet_copyCustomSet_customSet_tags[];
 }
 
 export interface copyCustomSet_copyCustomSet {

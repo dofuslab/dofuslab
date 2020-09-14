@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 0be62fca0c91
+Revision ID: 1708eab39bf2
 Revises: 06c1e15ce9ee
-Create Date: 2020-09-12 02:32:48.866223
+Create Date: 2020-09-14 01:06:30.340900
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
-revision = "0be62fca0c91"
+revision = "1708eab39bf2"
 down_revision = "06c1e15ce9ee"
 branch_labels = None
 depends_on = None
@@ -55,6 +55,7 @@ def upgrade():
         "custom_set_tag_association",
         sa.Column("custom_set_tag_id", postgresql.UUID(as_uuid=True), nullable=False),
         sa.Column("custom_set_id", postgresql.UUID(as_uuid=True), nullable=False),
+        sa.Column("association_date", sa.DateTime(), nullable=True),
         sa.ForeignKeyConstraint(
             ["custom_set_id"],
             ["custom_set.uuid"],
@@ -67,10 +68,10 @@ def upgrade():
             name=op.f("fk_custom_set_tag_association_custom_set_tag_id_custom_set_tag"),
             ondelete="CASCADE",
         ),
-        sa.UniqueConstraint(
-            "custom_set_tag_id",
+        sa.PrimaryKeyConstraint(
             "custom_set_id",
-            name=op.f("uq_custom_set_tag_association_custom_set_tag_id"),
+            "custom_set_tag_id",
+            name=op.f("pk_custom_set_tag_association"),
         ),
     )
     op.create_index(

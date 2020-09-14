@@ -1,0 +1,15 @@
+mutation removeTagFromCustomSet($customSetId: UUID, $customSetTagId: UUID!) {
+  removeTagFromCustomSet(
+    customSetId: $customSetId
+    customSetTagId: $customSetTagId
+  ) {
+    customSet {
+      id
+      tags {
+        id
+        name
+        imageUrl
+      }
+    }
+  }
+}

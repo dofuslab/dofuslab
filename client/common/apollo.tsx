@@ -50,7 +50,19 @@ const getHttpLink = (headers: IncomingHttpHeaders) =>
 
 function create(initialState: any, headers: IncomingHttpHeaders) {
   return new ApolloClient<NormalizedCacheObject>({
-    cache: new InMemoryCache().restore(initialState || {}),
+    cache: new InMemoryCache({
+      typePolicies: {
+        CustomSet: {
+          fields: {
+            tags: {
+              merge(_ignored, incoming) {
+                return incoming;
+              },
+            },
+          },
+        },
+      },
+    }).restore(initialState || {}),
     link: from([errorLink, getHttpLink(headers)]),
   });
 }

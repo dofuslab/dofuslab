@@ -3,6 +3,7 @@ import {
   customSet_equippedItems as EquippedItem,
   customSet_equippedItems_exos as Exo,
   customSet_stats as Stats,
+  customSet_tags as CustomSetTags,
 } from 'graphql/fragments/__generated__/customSet';
 import {
   classById_classById_spellVariantPairs_spells as Spell,
@@ -44,4 +45,5 @@ export type {
   Class,
   SpellVariantPair,
   ClassBuffSpell,
+  CustomSetTags,
 };

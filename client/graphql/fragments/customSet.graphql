@@ -37,4 +37,9 @@ fragment customSet on CustomSet {
   }
   creationDate
   lastModified
+  tags {
+    id
+    name
+    imageUrl
+  }
 }

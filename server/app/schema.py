@@ -25,6 +25,9 @@ from app.database.model_set_bonus import ModelSetBonus
 from app.database.model_set_translation import ModelSetTranslation
 from app.database.model_set import ModelSet
 from app.database.model_custom_set_stat import ModelCustomSetStat
+from app.database.model_custom_set_tag import ModelCustomSetTag
+from app.database.model_custom_set_tag_translation import ModelCustomSetTagTranslation
+from app.database.model_custom_set_tag_association import ModelCustomSetTagAssociation
 from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_equipped_item import ModelEquippedItem
 from app.database.model_custom_set import ModelCustomSet, MAX_NAME_LENGTH
@@ -313,15 +316,38 @@ class CustomSetStats(SQLAlchemyObjectType):
         interfaces = (GlobalNode,)
 
 
+class CustomSetTag(SQLAlchemyObjectType):
+    name = graphene.String(required=True)
+    image_url = graphene.String(required=True)
+
+    def resolve_name(self, info):
+        locale = str(get_locale())
+        query = db.session.query(ModelCustomSetTagTranslation)
+        return (
+            query.filter(ModelCustomSetTagTranslation.locale == locale)
+            .filter(ModelCustomSetTagTranslation.custom_set_tag_id == self.uuid)
+            .one()
+            .name
+        )
+
+    class Meta:
+        model = ModelCustomSetTag
+        interfaces = (GlobalNode,)
+
+
 class CustomSet(SQLAlchemyObjectType):
     equipped_items = graphene.NonNull(graphene.List(graphene.NonNull(EquippedItem)))
     stats = graphene.NonNull(CustomSetStats)
+    tags = graphene.NonNull(graphene.List(graphene.NonNull(CustomSetTag)))
 
     def resolve_creation_date(self, info):
         return pytz.utc.localize(self.creation_date)
 
     def resolve_last_modified(self, info):
         return pytz.utc.localize(self.last_modified)
+
+    # def resolve_tags(self, info):
+    #     return self.tags
 
     class Meta:
         model = ModelCustomSet
@@ -634,6 +660,48 @@ class EquipSet(graphene.Mutation):
             custom_set.equip_set(set_obj, db_session)
 
         return EquipSet(custom_set=custom_set)
+
+
+class AddTagToCustomSet(graphene.Mutation):
+    class Arguments:
+        custom_set_id = graphene.UUID()
+        custom_set_tag_id = graphene.UUID(required=True)
+
+    custom_set = graphene.Field(CustomSet, required=True)
+
+    @anonymous_or_verified
+    def mutate(self, info, **kwargs):
+        with session_scope() as db_session:
+            custom_set_id = kwargs.get("custom_set_id")
+            custom_set_tag_id = kwargs.get("custom_set_tag_id")
+            tag = db_session.query(ModelCustomSetTag).get(custom_set_tag_id)
+            custom_set = get_or_create_custom_set(custom_set_id, db_session)
+            db_session.add(
+                ModelCustomSetTagAssociation(
+                    custom_set_id=custom_set.uuid, custom_set_tag_id=tag.uuid
+                )
+            )
+
+        return AddTagToCustomSet(custom_set=custom_set)
+
+
+class RemoveTagFromCustomSet(graphene.Mutation):
+    class Arguments:
+        custom_set_id = graphene.UUID()
+        custom_set_tag_id = graphene.UUID(required=True)
+
+    custom_set = graphene.Field(CustomSet, required=True)
+
+    @anonymous_or_verified
+    def mutate(self, info, **kwargs):
+        with session_scope() as db_session:
+            custom_set_id = kwargs.get("custom_set_id")
+            custom_set_tag_id = kwargs.get("custom_set_tag_id")
+            tag = db_session.query(ModelCustomSetTag).get(custom_set_tag_id)
+            custom_set = get_or_create_custom_set(custom_set_id, db_session)
+            custom_set.tags.remove(tag)
+
+        return RemoveTagFromCustomSet(custom_set=custom_set)
 
 
 class EquipMultipleItems(graphene.Mutation):
@@ -1397,6 +1465,11 @@ class Query(graphene.ObjectType):
                 result.append(item)
         return result
 
+    custom_set_tags = graphene.NonNull(graphene.List(graphene.NonNull(CustomSetTag)))
+
+    def resolve_custom_set_tags(self, info):
+        return db.session.query(ModelCustomSetTag).all()
+
 
 class Mutation(graphene.ObjectType):
     register_user = RegisterUser.Field()
@@ -1423,6 +1496,8 @@ class Mutation(graphene.ObjectType):
     delete_custom_set = DeleteCustomSet.Field()
     toggle_favorite_item = ToggleFavoriteItem.Field()
     import_custom_set = ImportCustomSet.Field()
+    add_tag_to_custom_set = AddTagToCustomSet.Field()
+    remove_tag_from_custom_set = RemoveTagFromCustomSet.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

@@ -7,7 +7,7 @@ from .model_equipped_item import ModelEquippedItem
 from .model_equipped_item_exo import ModelEquippedItemExo
 from .model_item_slot import ModelItemSlot
 from .model_custom_set_stat import ModelCustomSetStat
-from .model_custom_set_tag import custom_set_tag_association_table
+from .model_custom_set_tag_association import ModelCustomSetTagAssociation
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, text, func
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.postgresql import UUID
@@ -59,8 +59,9 @@ class ModelCustomSet(Base):
 
     tags = relationship(
         "ModelCustomSetTag",
-        secondary=custom_set_tag_association_table,
         back_populates="custom_sets",
+        secondary="custom_set_tag_association",
+        order_by="ModelCustomSetTagAssociation.association_date",
     )
 
     def empty_or_first_item_slot(self, item_type):
