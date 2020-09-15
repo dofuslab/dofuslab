@@ -16,6 +16,7 @@ import Head from 'next/head';
 import { notification } from 'antd';
 import { IncomingHttpHeaders } from 'http';
 import { AppContext } from 'next/app';
+import { relayStylePagination } from '@apollo/client/utilities';
 
 interface ExtendedAppContext extends AppContext {
   ctx: NextPageContext & { apolloClient: ApolloClient<NormalizedCacheObject> };
@@ -59,6 +60,17 @@ function create(initialState: any, headers: IncomingHttpHeaders) {
                 return incoming;
               },
             },
+          },
+        },
+        User: {
+          fields: {
+            customSets: relayStylePagination(),
+          },
+        },
+        Query: {
+          fields: {
+            items: relayStylePagination(),
+            sets: relayStylePagination(),
           },
         },
       },

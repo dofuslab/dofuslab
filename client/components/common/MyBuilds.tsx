@@ -33,7 +33,7 @@ import Card from 'components/common/Card';
 import { getImageUrl, navigateToNewCustomSet } from 'common/utils';
 import DeleteCustomSetModal from './DeleteCustomSetModal';
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 20;
 const THRESHOLD = 600;
 
 interface Props {
@@ -137,27 +137,6 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
         after: myBuilds.currentUser.customSets.pageInfo.endCursor,
         search,
       },
-      updateQuery: (prevData, { fetchMoreResult: result }) => {
-        if (!result?.currentUser) {
-          return prevData;
-        }
-
-        const myBuildsCopy: myCustomSets = {
-          currentUser: myBuilds.currentUser && {
-            ...myBuilds.currentUser,
-            customSets: {
-              ...myBuilds.currentUser.customSets,
-              edges: [
-                ...myBuilds.currentUser.customSets.edges,
-                ...result.currentUser.customSets.edges,
-              ],
-              pageInfo: result.currentUser.customSets.pageInfo,
-            },
-          },
-        };
-
-        return myBuildsCopy;
-      },
     });
     return fetchMoreResult;
   }, [myBuilds, search]);
@@ -180,7 +159,15 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
       loadMore={onLoadMore}
       useWindow={false}
       threshold={THRESHOLD}
-      css={{ marginBottom: 20, [mq[1]]: { marginTop: 36 } }}
+      css={{
+        marginBottom: 20,
+        [mq[1]]: {
+          marginTop: 36,
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+          gridGap: 20,
+        },
+      }}
       loader={
         <React.Fragment key="frag">
           {Array(4)
@@ -190,7 +177,6 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
                 // eslint-disable-next-line react/no-array-index-key
                 key={`card-skeleton-${idx}`}
                 numRows={2}
-                css={{ marginTop: 20 }}
               />
             ))}
         </React.Fragment>
@@ -203,7 +189,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
           onCancel={closeDeleteModal}
         />
       )}
-      <div css={{ display: 'flex' }}>
+      <div css={{ display: 'flex', gridColumn: '1 / -1' }}>
         <Button
           type="primary"
           onClick={onCreate}
@@ -243,6 +229,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
                     <div css={{ display: 'flex', alignItems: 'center' }}>
                       {node.tags.map((tag) => (
                         <img
+                          key={tag.id}
                           src={getImageUrl(tag.imageUrl)}
                           css={{ width: 14, height: 'auto', marginLeft: 4 }}
                           alt={tag.name}
@@ -275,7 +262,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
               css={{
                 ...itemCardStyle,
                 border: `1px solid ${theme.border?.light}`,
-                marginTop: 20,
+                height: '100%',
                 ':hover': {
                   border: `1px solid ${theme.border?.light}`,
                   ...(node.id === customSetId && selected(theme)),
@@ -341,7 +328,10 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
             <CardSkeleton
               // eslint-disable-next-line react/no-array-index-key
               key={`card-${idx}`}
-              css={{ marginTop: 20 }}
+              css={{
+                marginTop: 20,
+                backgroundColor: theme.layer?.backgroundLight,
+              }}
               numRows={2}
             />
           ))}

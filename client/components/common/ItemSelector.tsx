@@ -67,22 +67,6 @@ const ItemSelector: React.FC<Props> = ({
 
     const fetchMoreResult = await fetchMore({
       variables: { after: data.items.pageInfo.endCursor },
-      updateQuery: (prevData, { fetchMoreResult: result }) => {
-        if (
-          !result ||
-          result.items.pageInfo.endCursor === prevData.items.pageInfo.endCursor
-        ) {
-          return prevData;
-        }
-        return {
-          ...prevData,
-          items: {
-            ...prevData.items,
-            edges: [...prevData.items.edges, ...result.items.edges],
-            pageInfo: result.items.pageInfo,
-          },
-        };
-      },
     });
     return fetchMoreResult;
   }, [data, loading]);
