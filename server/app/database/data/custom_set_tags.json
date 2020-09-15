@@ -207,5 +207,60 @@
       "pt": "Summon"
     },
     "imageUrl": "icon/Summon.svg"
+  },
+  {
+    "name": {
+      "en": "1v1",
+      "fr": "1v1",
+      "de": "1v1",
+      "es": "1v1",
+      "it": "1v1",
+      "pt": "1v1"
+    },
+    "imageUrl": "icon/1v1.svg"
+  },
+  {
+    "name": {
+      "en": "3v3",
+      "fr": "3v3",
+      "de": "3v3",
+      "es": "3v3",
+      "it": "3v3",
+      "pt": "3v3"
+    },
+    "imageUrl": "icon/3v3.svg"
+  },
+  {
+    "name": {
+      "en": "5v5",
+      "fr": "5v5",
+      "de": "5v5",
+      "es": "5v5",
+      "it": "5v5",
+      "pt": "5v5"
+    },
+    "imageUrl": "icon/5v5.svg"
+  },
+  {
+    "name": {
+      "en": "Budget",
+      "fr": "Budget",
+      "de": "Budget",
+      "es": "Budget",
+      "it": "Budget",
+      "pt": "Budget"
+    },
+    "imageUrl": "icon/Budget.svg"
+  },
+  {
+    "name": {
+      "en": "12AP",
+      "fr": "12AP",
+      "de": "12AP",
+      "es": "12AP",
+      "it": "12AP",
+      "pt": "12AP"
+    },
+    "imageUrl": "icon/12AP.svg"
   }
 ]
