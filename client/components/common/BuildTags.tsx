@@ -3,11 +3,13 @@
 import * as React from 'react';
 import { jsx } from '@emotion/core';
 import { Select, Tag } from 'antd';
-// import { useTranslation } from 'i18n';
-import { CustomSetTags } from 'common/type-aliases';
+import { useRouter } from 'next/router';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useMutation, useQuery } from '@apollo/client';
+import { LabeledValue } from 'antd/lib/select';
+
+import { CustomSetTags } from 'common/type-aliases';
 import {
   addTagToCustomSet,
   addTagToCustomSetVariables,
@@ -26,8 +28,7 @@ import {
   removeTagFromCustomSetVariables,
 } from 'graphql/mutations/__generated__/removeTagFromCustomSet';
 import removeTagFromCustomSetMutation from 'graphql/mutations/removeTagFromCustomSet.graphql';
-import { LabeledValue } from 'antd/lib/select';
-import { useRouter } from 'next/router';
+import { useTranslation } from 'i18n';
 
 interface Props {
   customSetId?: string;
@@ -35,6 +36,7 @@ interface Props {
 }
 
 const BuildTags: React.FC<Props> = ({ customSetId, tags }) => {
+  const { t } = useTranslation('common');
   const isEditable = React.useContext(EditableContext);
   const { data } = useQuery<customSetTags>(customSetTagsQuery);
   const [addMutate] = useMutation<
@@ -161,7 +163,7 @@ const BuildTags: React.FC<Props> = ({ customSetId, tags }) => {
             fontSize: 12,
             marginBottom: 4,
           }}
-          placeholder="Add tag"
+          placeholder={t('ADD_TAG')}
           labelInValue
           filterOption={(input, option) => {
             return (option?.children[1] as string)

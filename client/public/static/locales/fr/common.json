@@ -1,5 +1,6 @@
 {
   "ACTIONS": "Actions",
+  "ADD_TAG": "__STRING_NOT_TRANSLATED__",
   "ANONYMOUS": "Anonyme",
   "AVAILABLE_AT_LEVEL": "Disponible au niveau {{level}}",
   "BACK": "Retour",
@@ -61,7 +62,7 @@
   "NEW_BUILD": "Nouvel ensemble",
   "NOT_APPLICABLE": "N/A",
   "NO_BONUS": "Aucun bonus de panoplie trouvé",
-  "NO_BUILDS_MATCHED": "Aucune panoplie correspondante \"{{search}}\"",
+  "NO_BUILDS_FOUND": "__STRING_NOT_TRANSLATED__",
   "NO_CLASS": "Aucune classe",
   "NO_FAVORITE_ITEMS": "Aucun objet en favoris.",
   "NO_FAVORITE_ITEMS_WITH_SLOT": "Aucun {{itemTypes}} favori.",
@@ -83,6 +84,7 @@
   "SELECT_CLASS": "Choisir une classe",
   "SELECT_CLASS_DETAILED": "Choisir une classe pour voir ses sorts.",
   "SELECT_ITEM_TO_REPLACE": "Selectionner un item à remplacer",
+  "SELECT_TAGS": "__STRING_NOT_TRANSLATED__",
   "SETS": "Panoplies",
   "SET_BONUSES": "Bonus de panoplie",
   "SHARE_BUILD": "Partager",

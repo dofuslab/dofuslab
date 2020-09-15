@@ -1,5 +1,6 @@
 {
   "ACTIONS": "Actions",
+  "ADD_TAG": "Add tag",
   "ANONYMOUS": "Anonymous",
   "AVAILABLE_AT_LEVEL": "Available at level {{level}}",
   "BACK": "Back",
@@ -60,7 +61,7 @@
   "NEW_BUILD": "New build",
   "NOT_APPLICABLE": "N/A",
   "NO_BONUS": "No set bonus found",
-  "NO_BUILDS_MATCHED": "No builds matched \"{{search}}\"",
+  "NO_BUILDS_FOUND": "No builds found",
   "NO_CLASS": "No class",
   "NO_FAVORITE_ITEMS": "No favorite items found.",
   "NO_FAVORITE_ITEMS_WITH_SLOT": "No favorite {{itemTypes}} found.",
@@ -82,6 +83,7 @@
   "SELECT_CLASS": "Select class",
   "SELECT_CLASS_DETAILED": "Select a class to see its spells.",
   "SELECT_ITEM_TO_REPLACE": "Select item to replace",
+  "SELECT_TAGS": "Select tags",
   "SETS": "Sets",
   "SET_BONUSES": "Set bonuses",
   "SHARE_BUILD": "Share",

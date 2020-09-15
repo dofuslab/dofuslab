@@ -130,6 +130,12 @@ export interface CustomSetExosInput {
   value: number;
 }
 
+export interface CustomSetFilters {
+  search: string;
+  tagIds: any[];
+  defaultClassId?: any | null;
+}
+
 export interface CustomSetStatsInput {
   scrolledVitality: number;
   scrolledWisdom: number;

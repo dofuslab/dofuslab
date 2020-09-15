@@ -356,13 +356,22 @@ class CustomSetConnection(NonNullConnection):
         node = CustomSet
 
 
+class CustomSetFilters(graphene.InputObjectType):
+    search = graphene.String(required=True)
+    tag_ids = graphene.NonNull(graphene.List(graphene.NonNull(graphene.UUID)))
+    default_class_id = graphene.UUID()
+
+
 class User(SQLAlchemyObjectType):
     custom_sets = relay.ConnectionField(
-        graphene.NonNull(CustomSetConnection), search=graphene.Argument(graphene.String)
+        graphene.NonNull(CustomSetConnection),
+        filters=graphene.Argument(CustomSetFilters),
     )
 
     def resolve_custom_sets(self, info, **kwargs):
-        search = kwargs.get("search")
+        filters = kwargs.get("filters")
+        search = filters.search.strip()
+
         query = (
             db.session.query(ModelCustomSet)
             .filter_by(owner_id=self.uuid)
@@ -370,10 +379,30 @@ class User(SQLAlchemyObjectType):
         )
 
         if search:
-            search = search.strip()
             query = query.filter(
-                func.upper(ModelCustomSet.name).contains(func.upper(search.strip()))
+                func.upper(ModelCustomSet.name).contains(func.upper(search))
             )
+
+        if filters.default_class_id:
+            query = query.filter_by(default_class_id=filters.default_class_id)
+
+        if filters.tag_ids:
+            tag_sq = (
+                db.session.query(
+                    ModelCustomSetTagAssociation.custom_set_id,
+                    func.count(ModelCustomSetTagAssociation.custom_set_tag_id).label(
+                        "num_tags_matched"
+                    ),
+                )
+                .filter(
+                    ModelCustomSetTagAssociation.custom_set_tag_id.in_(filters.tag_ids)
+                )
+                .group_by(ModelCustomSetTagAssociation.custom_set_id)
+                .subquery()
+            )
+            query = query.join(
+                tag_sq, ModelCustomSet.uuid == tag_sq.c.custom_set_id
+            ).filter(tag_sq.c.num_tags_matched == len(filters.tag_ids))
 
         return query.all()
 

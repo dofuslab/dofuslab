@@ -64,13 +64,13 @@ function create(initialState: any, headers: IncomingHttpHeaders) {
         },
         User: {
           fields: {
-            customSets: relayStylePagination(),
+            customSets: relayStylePagination(['filters']),
           },
         },
         Query: {
           fields: {
-            items: relayStylePagination(),
-            sets: relayStylePagination(),
+            items: relayStylePagination(['filters']),
+            sets: relayStylePagination(['filters']),
           },
         },
       },

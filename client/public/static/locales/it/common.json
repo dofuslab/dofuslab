@@ -1,5 +1,6 @@
 {
   "ACTIONS": "Azioni",
+  "ADD_TAG": "__STRING_NOT_TRANSLATED__",
   "ANONYMOUS": "Anonimo",
   "AVAILABLE_AT_LEVEL": "Disponibile a partire dal livello {{level}}",
   "BACK": "Indietro",
@@ -61,7 +62,7 @@
   "NEW_BUILD": "Nuova build",
   "NOT_APPLICABLE": "N/A",
   "NO_BONUS": "Nessun bonus panoplia rilevato",
-  "NO_BUILDS_MATCHED": "La ricerca \"{{search}}\" non ha prodotto risultati.",
+  "NO_BUILDS_FOUND": "__STRING_NOT_TRANSLATED__",
   "NO_CLASS": "Nessuna classe",
   "NO_FAVORITE_ITEMS": "Non sono stati trovati oggetti preferiti.",
   "NO_FAVORITE_ITEMS_WITH_SLOT": "Non sono stati trovati {{itemTypes}} preferiti.",
@@ -83,6 +84,7 @@
   "SELECT_CLASS": "Seleziona classe",
   "SELECT_CLASS_DETAILED": "Seleziona una classe per vederne le spell.",
   "SELECT_ITEM_TO_REPLACE": "Seleziona l'oggetto da sostituire",
+  "SELECT_TAGS": "__STRING_NOT_TRANSLATED__",
   "SETS": "Panoplie",
   "SET_BONUSES": "Bonus panoplia",
   "SHARE_BUILD": "Condividi",

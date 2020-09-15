@@ -1,7 +1,7 @@
-query myCustomSets($first: Int!, $after: String, $search: String) {
+query myCustomSets($first: Int!, $after: String, $filters: CustomSetFilters!) {
   currentUser {
     id
-    customSets(first: $first, after: $after, search: $search) {
+    customSets(first: $first, after: $after, filters: $filters) {
       edges {
         node {
           id

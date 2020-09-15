@@ -13,7 +13,7 @@ import {
   myCustomSetsVariables,
 } from 'graphql/queries/__generated__/myCustomSets';
 import myCustomSetsQuery from 'graphql/queries/myCustomSets.graphql';
-import { Button, Input } from 'antd';
+import { Button, Input, Select } from 'antd';
 import { useTranslation } from 'i18n';
 import { inputFontSize, itemCardStyle, selected } from 'common/mixins';
 import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
@@ -31,6 +31,10 @@ import createCustomSetMutation from 'graphql/mutations/createCustomSet.graphql';
 import { useDebounceCallback } from '@react-hook/debounce';
 import Card from 'components/common/Card';
 import { getImageUrl, navigateToNewCustomSet } from 'common/utils';
+import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
+import customSetTagsQuery from 'graphql/queries/customSetTags.graphql';
+import classesQuery from 'graphql/queries/classes.graphql';
+import { classes } from 'graphql/queries/__generated__/classes';
 import DeleteCustomSetModal from './DeleteCustomSetModal';
 
 const PAGE_SIZE = 20;
@@ -42,7 +46,10 @@ interface Props {
 
 const MyBuilds: React.FC<Props> = ({ onClose }) => {
   const [search, setSearch] = React.useState('');
-
+  const [dofusClassId, setDofusClassId] = React.useState<string | undefined>(
+    undefined,
+  );
+  const [tagIds, setTagIds] = React.useState<Array<string>>([]);
   const handleSearchChange = React.useCallback(
     (searchValue: string) => {
       setSearch(searchValue);
@@ -67,8 +74,14 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
     myCustomSets,
     myCustomSetsVariables
   >(myCustomSetsQuery, {
-    variables: { first: PAGE_SIZE, search },
+    variables: {
+      first: PAGE_SIZE,
+      filters: { search, defaultClassId: dofusClassId, tagIds },
+    },
   });
+
+  const { data: tagsData } = useQuery<customSetTags>(customSetTagsQuery);
+  const { data: classesData } = useQuery<classes>(classesQuery);
 
   const router = useRouter();
   const { customSetId } = router.query;
@@ -85,7 +98,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
         if (!data?.createCustomSet) return;
         const oldData = client.readQuery<myCustomSets, myCustomSetsVariables>({
           query: myCustomSetsQuery,
-          variables: { first: PAGE_SIZE, search: '' },
+          variables: { first: PAGE_SIZE, filters: { search: '', tagIds: [] } },
         });
 
         const newData: myCustomSets | null = oldData && {
@@ -108,7 +121,10 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
           client.writeQuery<myCustomSets, myCustomSetsVariables>({
             data: newData,
             query: myCustomSetsQuery,
-            variables: { first: PAGE_SIZE, search: '' },
+            variables: {
+              first: PAGE_SIZE,
+              filters: { search: '', tagIds: [] },
+            },
           });
 
           if (onClose) {
@@ -205,12 +221,85 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
           </span>
           {t('NEW_BUILD')}
         </Button>
-        <Input
+        <Input.Search
           css={{ marginLeft: 20, flex: 1, ...inputFontSize }}
           onChange={onSearch}
           placeholder={t('SEARCH')}
         />
+        {classesData && (
+          <Select<string>
+            getPopupContainer={(node: HTMLElement) => {
+              if (node.parentElement) {
+                return node.parentElement;
+              }
+              return document && document.body;
+            }}
+            css={{ marginLeft: 20, flex: 1, ...inputFontSize }}
+            showSearch
+            filterOption={(input, option) => {
+              return (option?.children[1] as string)
+                .toLocaleUpperCase()
+                .includes(input.toLocaleUpperCase());
+            }}
+            value={dofusClassId}
+            onChange={(value: string) => {
+              setDofusClassId(value);
+            }}
+            placeholder={t('SELECT_CLASS')}
+            allowClear
+          >
+            {[...classesData.classes]
+              .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
+              .map((dofusClass) => (
+                <Select.Option key={dofusClass.id} value={dofusClass.id}>
+                  <img
+                    src={dofusClass.faceImageUrl}
+                    alt={dofusClass.name}
+                    css={{ width: 20, marginRight: 8 }}
+                  />
+                  {dofusClass.name}
+                </Select.Option>
+              ))}
+          </Select>
+        )}
       </div>
+      {tagsData && (
+        <Select<Array<string>>
+          getPopupContainer={(node: HTMLElement) => {
+            if (node.parentElement) {
+              return node.parentElement;
+            }
+            return document && document.body;
+          }}
+          css={{ gridColumn: '1 / -1', ...inputFontSize }}
+          showSearch
+          filterOption={(input, option) => {
+            return (option?.children[1] as string)
+              .toLocaleUpperCase()
+              .includes(input.toLocaleUpperCase());
+          }}
+          value={tagIds}
+          onChange={(value: Array<string>) => {
+            setTagIds(value);
+          }}
+          placeholder={t('SELECT_TAGS')}
+          mode="multiple"
+          allowClear
+        >
+          {[...tagsData.customSetTags]
+            .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
+            .map((tag) => (
+              <Select.Option key={tag.id} value={tag.id}>
+                <img
+                  src={getImageUrl(tag.imageUrl)}
+                  alt={tag.name}
+                  css={{ width: 16, marginRight: 8 }}
+                />
+                {tag.name}
+              </Select.Option>
+            ))}
+        </Select>
+      )}
       {myBuilds?.currentUser?.customSets.edges.map(({ node }) => (
         <Link
           href={{ pathname: '/index', query: { customSetId: node.id } }}
@@ -261,10 +350,8 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
               size="small"
               css={{
                 ...itemCardStyle,
-                border: `1px solid ${theme.border?.light}`,
                 height: '100%',
                 ':hover': {
-                  border: `1px solid ${theme.border?.light}`,
                   ...(node.id === customSetId && selected(theme)),
                 },
                 ...(node.id === customSetId && selected(theme)),
@@ -316,9 +403,11 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
             color: theme.text?.light,
             marginTop: 20,
             fontStyle: 'italic',
+            textAlign: 'center',
+            gridColumn: '1 / -1',
           }}
         >
-          {t('NO_BUILDS_MATCHED', { search })}
+          {t('NO_BUILDS_FOUND')}
         </div>
       )}
       {queryLoading &&
@@ -329,7 +418,6 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
               // eslint-disable-next-line react/no-array-index-key
               key={`card-${idx}`}
               css={{
-                marginTop: 20,
                 backgroundColor: theme.layer?.backgroundLight,
               }}
               numRows={2}

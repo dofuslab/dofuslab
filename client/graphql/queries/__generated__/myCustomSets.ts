@@ -3,6 +3,8 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
+import { CustomSetFilters } from "./../../../__generated__/globalTypes";
+
 // ====================================================
 // GraphQL query operation: myCustomSets
 // ====================================================
@@ -81,5 +83,5 @@ export interface myCustomSets {
 export interface myCustomSetsVariables {
   first: number;
   after?: string | null;
-  search?: string | null;
+  filters: CustomSetFilters;
 }
