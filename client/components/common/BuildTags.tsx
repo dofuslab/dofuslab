@@ -15,7 +15,11 @@ import {
 import addTagToCustomSetMutation from 'graphql/mutations/addTagToCustomSet.graphql';
 import customSetTagsQuery from 'graphql/queries/customSetTags.graphql';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
-import { EditableContext, getImageUrl } from 'common/utils';
+import {
+  EditableContext,
+  getImageUrl,
+  navigateToNewCustomSet,
+} from 'common/utils';
 import { mq } from 'common/constants';
 import {
   removeTagFromCustomSet,
@@ -23,6 +27,7 @@ import {
 } from 'graphql/mutations/__generated__/removeTagFromCustomSet';
 import removeTagFromCustomSetMutation from 'graphql/mutations/removeTagFromCustomSet.graphql';
 import { LabeledValue } from 'antd/lib/select';
+import { useRouter } from 'next/router';
 
 interface Props {
   customSetId?: string;
@@ -76,6 +81,8 @@ const BuildTags: React.FC<Props> = ({ customSetId, tags }) => {
         : undefined,
   });
 
+  const router = useRouter();
+
   return (
     <div
       css={{
@@ -95,7 +102,7 @@ const BuildTags: React.FC<Props> = ({ customSetId, tags }) => {
               alignItems: 'center',
               marginBottom: 4,
               height: 24,
-              cursor: 'pointer',
+              cursor: isEditable ? 'pointer' : 'auto',
             }}
             closable={isEditable}
             closeIcon={
@@ -135,10 +142,16 @@ const BuildTags: React.FC<Props> = ({ customSetId, tags }) => {
         <Select
           key={tags?.length ? tags[tags.length - 1].id : undefined}
           size="small"
-          onSelect={(selectedValue: LabeledValue) => {
-            addMutate({
+          onSelect={async (selectedValue: LabeledValue) => {
+            const { data: addMutateData } = await addMutate({
               variables: { customSetTagId: selectedValue.value, customSetId },
             });
+            if (addMutateData?.addTagToCustomSet?.customSet) {
+              navigateToNewCustomSet(
+                router,
+                addMutateData?.addTagToCustomSet.customSet.id,
+              );
+            }
           }}
           showSearch
           css={{

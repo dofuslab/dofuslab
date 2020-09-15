@@ -346,9 +346,6 @@ class CustomSet(SQLAlchemyObjectType):
     def resolve_last_modified(self, info):
         return pytz.utc.localize(self.last_modified)
 
-    # def resolve_tags(self, info):
-    #     return self.tags
-
     class Meta:
         model = ModelCustomSet
         interfaces = (GlobalNode,)

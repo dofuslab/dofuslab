@@ -148,6 +148,7 @@ export const CardTitleWithLevel: React.FC<{
   rightAlignedContent?: React.ReactNode;
   levelClassName?: string;
   className?: string;
+  afterLevel?: React.ReactNode;
 }> = ({
   title,
   level,
@@ -156,6 +157,7 @@ export const CardTitleWithLevel: React.FC<{
   rightAlignedContent,
   levelClassName,
   className,
+  afterLevel,
 }) => {
   const { t } = useTranslation('common');
 
@@ -191,11 +193,16 @@ export const CardTitleWithLevel: React.FC<{
                       fontSize: '0.75rem',
                       fontWeight: 400,
                       whiteSpace: 'nowrap',
+                      display: 'flex',
+                      alignItems: 'center',
                     }),
                     levelClassName,
                   )}
                 >
-                  {t('LEVEL_ABBREVIATION', { ns: 'common' })} {level}
+                  <span css={{ marginRight: 4 }}>
+                    {t('LEVEL_ABBREVIATION', { ns: 'common' })} {level}
+                  </span>
+                  {afterLevel}
                 </div>
               )}
             </div>
@@ -486,6 +493,7 @@ export const BuffButton = ({
 }: {
   openBuffModal: () => void;
   appliedBuffs: Array<AppliedBuff>;
+  // eslint-disable-next-line react/require-default-props
   className?: string;
 }) => {
   const { t } = useTranslation('common');

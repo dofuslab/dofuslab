@@ -18,6 +18,11 @@ query myCustomSets($first: Int!, $after: String, $search: String) {
               imageUrl
             }
           }
+          tags {
+            id
+            name
+            imageUrl
+          }
         }
       }
       pageInfo {

@@ -239,6 +239,17 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
                 <CardTitleWithLevel
                   title={node.name || t('UNTITLED')}
                   level={node.level}
+                  afterLevel={
+                    <div css={{ display: 'flex', alignItems: 'center' }}>
+                      {node.tags.map((tag) => (
+                        <img
+                          src={getImageUrl(tag.imageUrl)}
+                          css={{ width: 14, height: 'auto', marginLeft: 4 }}
+                          alt={tag.name}
+                        />
+                      ))}
+                    </div>
+                  }
                   rightAlignedContent={
                     <div
                       css={{
