@@ -411,7 +411,7 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
         </div>
       )}
       {queryLoading &&
-        Array(10)
+        Array(PAGE_SIZE)
           .fill(null)
           .map((_, idx) => (
             <CardSkeleton
