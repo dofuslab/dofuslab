@@ -213,7 +213,7 @@
       "en": "1v1",
       "fr": "1v1",
       "de": "1v1",
-      "es": "1v1",
+      "es": "1vs1",
       "it": "1v1",
       "pt": "1v1"
     },
@@ -224,7 +224,7 @@
       "en": "3v3",
       "fr": "3v3",
       "de": "3v3",
-      "es": "3v3",
+      "es": "3vs3",
       "it": "3v3",
       "pt": "3v3"
     },
@@ -235,7 +235,7 @@
       "en": "5v5",
       "fr": "5v5",
       "de": "5v5",
-      "es": "5v5",
+      "es": "5vs5",
       "it": "5v5",
       "pt": "5v5"
     },
@@ -246,7 +246,7 @@
       "en": "Budget",
       "fr": "Budget",
       "de": "Budget",
-      "es": "Budget",
+      "es": "Barato",
       "it": "Budget",
       "pt": "Budget"
     },
@@ -254,12 +254,12 @@
   },
   {
     "name": {
-      "en": "12AP",
-      "fr": "12PA",
-      "de": "12AP",
-      "es": "12AP",
-      "it": "12AP",
-      "pt": "12AP"
+      "en": "12 AP",
+      "fr": "12 PA",
+      "de": "12 AP",
+      "es": "12 PA",
+      "it": "12 PA",
+      "pt": "12 PA"
     },
     "imageUrl": "icon/12AP.svg"
   }
