@@ -42,9 +42,10 @@ const THRESHOLD = 600;
 
 interface Props {
   onClose?: () => void;
+  isMobile: boolean;
 }
 
-const MyBuilds: React.FC<Props> = ({ onClose }) => {
+const MyBuilds: React.FC<Props> = ({ onClose, isMobile }) => {
   const [search, setSearch] = React.useState('');
   const [dofusClassId, setDofusClassId] = React.useState<string | undefined>(
     undefined,
@@ -169,6 +170,46 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
     setDeleteModalVisible(false);
   }, []);
 
+  const classSelect = classesData && (
+    <Select<string>
+      getPopupContainer={(node: HTMLElement) => {
+        if (node.parentElement) {
+          return node.parentElement;
+        }
+        return document && document.body;
+      }}
+      css={[
+        { ...inputFontSize },
+        { marginTop: 20, [mq[1]]: { marginTop: 0, marginLeft: 20, flex: 1 } },
+      ]}
+      showSearch
+      filterOption={(input, option) => {
+        return (option?.children[1] as string)
+          .toLocaleUpperCase()
+          .includes(input.toLocaleUpperCase());
+      }}
+      value={dofusClassId}
+      onChange={(value: string) => {
+        setDofusClassId(value);
+      }}
+      placeholder={t('SELECT_CLASS')}
+      allowClear
+    >
+      {[...classesData.classes]
+        .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
+        .map((dofusClass) => (
+          <Select.Option key={dofusClass.id} value={dofusClass.id}>
+            <img
+              src={dofusClass.faceImageUrl}
+              alt={dofusClass.name}
+              css={{ width: 20, marginRight: 8 }}
+            />
+            {dofusClass.name}
+          </Select.Option>
+        ))}
+    </Select>
+  );
+
   return (
     <InfiniteScroll
       hasMore={myBuilds?.currentUser?.customSets.pageInfo.hasNextPage}
@@ -176,10 +217,12 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
       useWindow={false}
       threshold={THRESHOLD}
       css={{
+        display: 'flex',
+        flexDirection: 'column',
         marginBottom: 20,
         [mq[1]]: {
-          marginTop: 36,
           display: 'grid',
+          marginTop: 36,
           gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
           gridGap: 20,
         },
@@ -222,47 +265,22 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
           {t('NEW_BUILD')}
         </Button>
         <Input.Search
-          css={{ marginLeft: 20, flex: 1, ...inputFontSize }}
+          css={{
+            marginLeft: 20,
+            flex: 1,
+            ...inputFontSize,
+            '.ant-input': inputFontSize,
+            height: 32,
+            [mq[1]]: {
+              height: 'auto',
+            },
+          }}
           onChange={onSearch}
           placeholder={t('SEARCH')}
         />
-        {classesData && (
-          <Select<string>
-            getPopupContainer={(node: HTMLElement) => {
-              if (node.parentElement) {
-                return node.parentElement;
-              }
-              return document && document.body;
-            }}
-            css={{ marginLeft: 20, flex: 1, ...inputFontSize }}
-            showSearch
-            filterOption={(input, option) => {
-              return (option?.children[1] as string)
-                .toLocaleUpperCase()
-                .includes(input.toLocaleUpperCase());
-            }}
-            value={dofusClassId}
-            onChange={(value: string) => {
-              setDofusClassId(value);
-            }}
-            placeholder={t('SELECT_CLASS')}
-            allowClear
-          >
-            {[...classesData.classes]
-              .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
-              .map((dofusClass) => (
-                <Select.Option key={dofusClass.id} value={dofusClass.id}>
-                  <img
-                    src={dofusClass.faceImageUrl}
-                    alt={dofusClass.name}
-                    css={{ width: 20, marginRight: 8 }}
-                  />
-                  {dofusClass.name}
-                </Select.Option>
-              ))}
-          </Select>
-        )}
+        {!isMobile && classSelect}
       </div>
+      {isMobile && classSelect}
       {tagsData && (
         <Select<Array<string>>
           getPopupContainer={(node: HTMLElement) => {
@@ -271,7 +289,15 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
             }
             return document && document.body;
           }}
-          css={{ gridColumn: '1 / -1', ...inputFontSize }}
+          css={[
+            inputFontSize,
+            {
+              gridColumn: '1 / -1',
+
+              marginTop: 20,
+              [mq[1]]: { marginTop: 0 },
+            },
+          ]}
           showSearch
           filterOption={(input, option) => {
             return (option?.children[1] as string)
@@ -350,6 +376,10 @@ const MyBuilds: React.FC<Props> = ({ onClose }) => {
               size="small"
               css={{
                 ...itemCardStyle,
+                marginTop: 20,
+                [mq[1]]: {
+                  marginTop: 0,
+                },
                 height: '100%',
                 ':hover': {
                   ...(node.id === customSetId && selected(theme)),
