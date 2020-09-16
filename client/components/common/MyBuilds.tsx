@@ -441,7 +441,7 @@ const MyBuilds: React.FC<Props> = ({ onClose, isMobile }) => {
         </div>
       )}
       {queryLoading &&
-        Array(PAGE_SIZE)
+        Array(isMobile ? 4 : PAGE_SIZE)
           .fill(null)
           .map((_, idx) => (
             <CardSkeleton
