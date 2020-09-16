@@ -321,14 +321,7 @@ class CustomSetTag(SQLAlchemyObjectType):
     image_url = graphene.String(required=True)
 
     def resolve_name(self, info):
-        locale = str(get_locale())
-        query = db.session.query(ModelCustomSetTagTranslation)
-        return (
-            query.filter(ModelCustomSetTagTranslation.locale == locale)
-            .filter(ModelCustomSetTagTranslation.custom_set_tag_id == self.uuid)
-            .one()
-            .name
-        )
+        return g.dataloaders.get("custom_set_tag_translation_loader").load(self.uuid)
 
     class Meta:
         model = ModelCustomSetTag
@@ -345,6 +338,9 @@ class CustomSet(SQLAlchemyObjectType):
 
     def resolve_last_modified(self, info):
         return pytz.utc.localize(self.last_modified)
+
+    def resolve_tags(self, info):
+        return g.dataloaders.get("custom_set_tag_loader").load(self.uuid)
 
     class Meta:
         model = ModelCustomSet

@@ -13,6 +13,9 @@ from app.database.model_set_bonus_translation import ModelSetBonusTranslation
 from app.database.model_set_translation import ModelSetTranslation
 from app.database.model_weapon_stat import ModelWeaponStat
 from app.database.model_weapon_effect import ModelWeaponEffect
+from app.database.model_custom_set_tag import ModelCustomSetTag
+from app.database.model_custom_set_tag_association import ModelCustomSetTagAssociation
+from app.database.model_custom_set_tag_translation import ModelCustomSetTagTranslation
 from flask_babel import get_locale
 
 
@@ -213,3 +216,46 @@ def load_item_buffs(item_buff_ids):
 class ItemBuffLoader(DataLoader):
     def batch_load_fn(self, item_buff_ids):
         return load_item_buffs(item_buff_ids)
+
+
+def load_custom_set_tags(custom_set_ids):
+    tags_by_custom_set_id = defaultdict(list)
+    for tag_association in db.session.query(ModelCustomSetTagAssociation).filter(
+        ModelCustomSetTagAssociation.custom_set_id.in_(custom_set_ids)
+    ):
+        tags_by_custom_set_id[tag_association.custom_set_id].append(
+            tag_association.custom_set_tag
+        )
+    return Promise.resolve(
+        [
+            tags_by_custom_set_id.get(custom_set_id, [])
+            for custom_set_id in custom_set_ids
+        ]
+    )
+
+
+class CustomSetTagLoader(DataLoader):
+    def batch_load_fn(self, custom_set_ids):
+        return load_custom_set_tags(custom_set_ids)
+
+
+def load_custom_set_tag_translations(tag_ids):
+    locale = str(get_locale())
+    translation_by_tag_id = {}
+    for translation in (
+        db.session.query(ModelCustomSetTagTranslation)
+        .filter(ModelCustomSetTagTranslation.custom_set_tag_id.in_(tag_ids))
+        .filter_by(locale=locale)
+    ):
+        translation_by_tag_id[translation.custom_set_tag_id] = translation.name
+    return Promise.resolve(
+        [
+            translation_by_tag_id.get(custom_set_tag_id, None)
+            for custom_set_tag_id in tag_ids
+        ]
+    )
+
+
+class CustomSetTagTranslationLoader(DataLoader):
+    def batch_load_fn(self, tag_ids):
+        return load_custom_set_tag_translations(tag_ids)
