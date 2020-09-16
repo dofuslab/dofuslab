@@ -698,6 +698,7 @@ class AddTagToCustomSet(graphene.Mutation):
             custom_set_tag_id = kwargs.get("custom_set_tag_id")
             tag = db_session.query(ModelCustomSetTag).get(custom_set_tag_id)
             custom_set = get_or_create_custom_set(custom_set_id, db_session)
+            check_owner(custom_set)
             db_session.add(
                 ModelCustomSetTagAssociation(
                     custom_set_id=custom_set.uuid, custom_set_tag_id=tag.uuid
@@ -721,6 +722,7 @@ class RemoveTagFromCustomSet(graphene.Mutation):
             custom_set_tag_id = kwargs.get("custom_set_tag_id")
             tag = db_session.query(ModelCustomSetTag).get(custom_set_tag_id)
             custom_set = get_or_create_custom_set(custom_set_id, db_session)
+            check_owner(custom_set)
             custom_set.tags.remove(tag)
 
         return RemoveTagFromCustomSet(custom_set=custom_set)
