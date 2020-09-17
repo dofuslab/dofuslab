@@ -784,6 +784,7 @@ class CopyCustomSet(graphene.Mutation):
             )
             custom_set.level = old_custom_set.level
             custom_set.parent_custom_set_id = old_custom_set.uuid
+            custom_set.default_class_id = old_custom_set.default_class_id
             for stat in base_stat_list + scrolled_stat_list:
                 setattr(custom_set.stats, stat, getattr(old_custom_set.stats, stat))
             for old_equipped_item in old_custom_set.equipped_items:
