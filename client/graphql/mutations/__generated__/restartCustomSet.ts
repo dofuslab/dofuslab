@@ -145,11 +145,18 @@ export interface restartCustomSet_restartCustomSet_customSet_defaultClass {
   maleSpriteImageUrl: string;
 }
 
-export interface restartCustomSet_restartCustomSet_customSet_tags {
+export interface restartCustomSet_restartCustomSet_customSet_tagAssociations_customSetTag {
   __typename: "CustomSetTag";
   id: any;
   name: string;
   imageUrl: string;
+}
+
+export interface restartCustomSet_restartCustomSet_customSet_tagAssociations {
+  __typename: "CustomSetTagAssociation";
+  id: string;
+  associationDate: any;
+  customSetTag: restartCustomSet_restartCustomSet_customSet_tagAssociations_customSetTag;
 }
 
 export interface restartCustomSet_restartCustomSet_customSet {
@@ -163,7 +170,7 @@ export interface restartCustomSet_restartCustomSet_customSet {
   defaultClass: restartCustomSet_restartCustomSet_customSet_defaultClass | null;
   creationDate: any | null;
   lastModified: any | null;
-  tags: restartCustomSet_restartCustomSet_customSet_tags[];
+  tagAssociations: restartCustomSet_restartCustomSet_customSet_tagAssociations[];
 }
 
 export interface restartCustomSet_restartCustomSet {

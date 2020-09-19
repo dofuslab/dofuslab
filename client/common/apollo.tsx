@@ -55,7 +55,7 @@ function create(initialState: any, headers: IncomingHttpHeaders) {
       typePolicies: {
         CustomSet: {
           fields: {
-            tags: {
+            tagAssociations: {
               merge(_ignored, incoming) {
                 return incoming;
               },

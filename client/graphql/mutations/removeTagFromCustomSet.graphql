@@ -5,10 +5,14 @@ mutation removeTagFromCustomSet($customSetId: UUID, $customSetTagId: UUID!) {
   ) {
     customSet {
       id
-      tags {
+      tagAssociations {
         id
-        name
-        imageUrl
+        associationDate
+        customSetTag {
+          id
+          name
+          imageUrl
+        }
       }
     }
   }

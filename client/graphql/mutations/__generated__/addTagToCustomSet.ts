@@ -7,17 +7,24 @@
 // GraphQL mutation operation: addTagToCustomSet
 // ====================================================
 
-export interface addTagToCustomSet_addTagToCustomSet_customSet_tags {
+export interface addTagToCustomSet_addTagToCustomSet_customSet_tagAssociations_customSetTag {
   __typename: "CustomSetTag";
   id: any;
   name: string;
   imageUrl: string;
 }
 
+export interface addTagToCustomSet_addTagToCustomSet_customSet_tagAssociations {
+  __typename: "CustomSetTagAssociation";
+  id: string;
+  associationDate: any;
+  customSetTag: addTagToCustomSet_addTagToCustomSet_customSet_tagAssociations_customSetTag;
+}
+
 export interface addTagToCustomSet_addTagToCustomSet_customSet {
   __typename: "CustomSet";
   id: any;
-  tags: addTagToCustomSet_addTagToCustomSet_customSet_tags[];
+  tagAssociations: addTagToCustomSet_addTagToCustomSet_customSet_tagAssociations[];
 }
 
 export interface addTagToCustomSet_addTagToCustomSet {

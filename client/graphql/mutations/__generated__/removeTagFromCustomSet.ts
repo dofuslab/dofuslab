@@ -7,17 +7,24 @@
 // GraphQL mutation operation: removeTagFromCustomSet
 // ====================================================
 
-export interface removeTagFromCustomSet_removeTagFromCustomSet_customSet_tags {
+export interface removeTagFromCustomSet_removeTagFromCustomSet_customSet_tagAssociations_customSetTag {
   __typename: "CustomSetTag";
   id: any;
   name: string;
   imageUrl: string;
 }
 
+export interface removeTagFromCustomSet_removeTagFromCustomSet_customSet_tagAssociations {
+  __typename: "CustomSetTagAssociation";
+  id: string;
+  associationDate: any;
+  customSetTag: removeTagFromCustomSet_removeTagFromCustomSet_customSet_tagAssociations_customSetTag;
+}
+
 export interface removeTagFromCustomSet_removeTagFromCustomSet_customSet {
   __typename: "CustomSet";
   id: any;
-  tags: removeTagFromCustomSet_removeTagFromCustomSet_customSet_tags[];
+  tagAssociations: removeTagFromCustomSet_removeTagFromCustomSet_customSet_tagAssociations[];
 }
 
 export interface removeTagFromCustomSet_removeTagFromCustomSet {

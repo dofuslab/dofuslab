@@ -529,7 +529,10 @@ const SetHeader: React.FC<Props> = ({
             setDofusClassId={setDofusClassId}
             customSet={customSet}
           />
-          <BuildTags customSetId={customSet?.id} tags={customSet?.tags} />
+          <BuildTags
+            customSetId={customSet?.id}
+            tagAssociations={customSet?.tagAssociations}
+          />
         </div>
       )}
     </ClassNames>

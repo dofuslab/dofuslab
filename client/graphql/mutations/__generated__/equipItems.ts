@@ -145,11 +145,18 @@ export interface equipItems_equipMultipleItems_customSet_defaultClass {
   maleSpriteImageUrl: string;
 }
 
-export interface equipItems_equipMultipleItems_customSet_tags {
+export interface equipItems_equipMultipleItems_customSet_tagAssociations_customSetTag {
   __typename: "CustomSetTag";
   id: any;
   name: string;
   imageUrl: string;
+}
+
+export interface equipItems_equipMultipleItems_customSet_tagAssociations {
+  __typename: "CustomSetTagAssociation";
+  id: string;
+  associationDate: any;
+  customSetTag: equipItems_equipMultipleItems_customSet_tagAssociations_customSetTag;
 }
 
 export interface equipItems_equipMultipleItems_customSet {
@@ -163,7 +170,7 @@ export interface equipItems_equipMultipleItems_customSet {
   defaultClass: equipItems_equipMultipleItems_customSet_defaultClass | null;
   creationDate: any | null;
   lastModified: any | null;
-  tags: equipItems_equipMultipleItems_customSet_tags[];
+  tagAssociations: equipItems_equipMultipleItems_customSet_tagAssociations[];
 }
 
 export interface equipItems_equipMultipleItems {

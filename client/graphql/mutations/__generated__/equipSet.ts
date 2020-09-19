@@ -145,11 +145,18 @@ export interface equipSet_equipSet_customSet_defaultClass {
   maleSpriteImageUrl: string;
 }
 
-export interface equipSet_equipSet_customSet_tags {
+export interface equipSet_equipSet_customSet_tagAssociations_customSetTag {
   __typename: "CustomSetTag";
   id: any;
   name: string;
   imageUrl: string;
+}
+
+export interface equipSet_equipSet_customSet_tagAssociations {
+  __typename: "CustomSetTagAssociation";
+  id: string;
+  associationDate: any;
+  customSetTag: equipSet_equipSet_customSet_tagAssociations_customSetTag;
 }
 
 export interface equipSet_equipSet_customSet {
@@ -163,7 +170,7 @@ export interface equipSet_equipSet_customSet {
   defaultClass: equipSet_equipSet_customSet_defaultClass | null;
   creationDate: any | null;
   lastModified: any | null;
-  tags: equipSet_equipSet_customSet_tags[];
+  tagAssociations: equipSet_equipSet_customSet_tagAssociations[];
 }
 
 export interface equipSet_equipSet {

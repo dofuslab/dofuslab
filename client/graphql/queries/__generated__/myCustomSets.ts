@@ -28,11 +28,18 @@ export interface myCustomSets_currentUser_customSets_edges_node_equippedItems {
   item: myCustomSets_currentUser_customSets_edges_node_equippedItems_item;
 }
 
-export interface myCustomSets_currentUser_customSets_edges_node_tags {
+export interface myCustomSets_currentUser_customSets_edges_node_tagAssociations_customSetTag {
   __typename: "CustomSetTag";
   id: any;
   name: string;
   imageUrl: string;
+}
+
+export interface myCustomSets_currentUser_customSets_edges_node_tagAssociations {
+  __typename: "CustomSetTagAssociation";
+  id: string;
+  associationDate: any;
+  customSetTag: myCustomSets_currentUser_customSets_edges_node_tagAssociations_customSetTag;
 }
 
 export interface myCustomSets_currentUser_customSets_edges_node {
@@ -41,7 +48,7 @@ export interface myCustomSets_currentUser_customSets_edges_node {
   name: string | null;
   level: number;
   equippedItems: myCustomSets_currentUser_customSets_edges_node_equippedItems[];
-  tags: myCustomSets_currentUser_customSets_edges_node_tags[];
+  tagAssociations: myCustomSets_currentUser_customSets_edges_node_tagAssociations[];
 }
 
 export interface myCustomSets_currentUser_customSets_edges {
