@@ -145,6 +145,13 @@ export interface equipSet_equipSet_customSet_defaultClass {
   maleSpriteImageUrl: string;
 }
 
+export interface equipSet_equipSet_customSet_tags {
+  __typename: "CustomSetTag";
+  id: any;
+  name: string;
+  imageUrl: string;
+}
+
 export interface equipSet_equipSet_customSet {
   __typename: "CustomSet";
   id: any;
@@ -156,6 +163,7 @@ export interface equipSet_equipSet_customSet {
   defaultClass: equipSet_equipSet_customSet_defaultClass | null;
   creationDate: any | null;
   lastModified: any | null;
+  tags: equipSet_equipSet_customSet_tags[];
 }
 
 export interface equipSet_equipSet {

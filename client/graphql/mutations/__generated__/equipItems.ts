@@ -145,6 +145,13 @@ export interface equipItems_equipMultipleItems_customSet_defaultClass {
   maleSpriteImageUrl: string;
 }
 
+export interface equipItems_equipMultipleItems_customSet_tags {
+  __typename: "CustomSetTag";
+  id: any;
+  name: string;
+  imageUrl: string;
+}
+
 export interface equipItems_equipMultipleItems_customSet {
   __typename: "CustomSet";
   id: any;
@@ -156,6 +163,7 @@ export interface equipItems_equipMultipleItems_customSet {
   defaultClass: equipItems_equipMultipleItems_customSet_defaultClass | null;
   creationDate: any | null;
   lastModified: any | null;
+  tags: equipItems_equipMultipleItems_customSet_tags[];
 }
 
 export interface equipItems_equipMultipleItems {

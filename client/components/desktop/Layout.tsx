@@ -343,9 +343,9 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                     visible={drawerVisible}
                     closable
                     onClose={closeDrawer}
-                    width={480}
+                    width="min(100%, 1000px)"
                   >
-                    <MyBuilds onClose={closeDrawer} />
+                    <MyBuilds onClose={closeDrawer} isMobile={false} />
                   </Drawer>
                   <Dropdown
                     overlay={

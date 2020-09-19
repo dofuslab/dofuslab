@@ -20,11 +20,11 @@ const ClassicLeftColumnStats: React.FC<Props> = ({ openBuffModal }) => {
   return (
     <div
       css={{
-        flex: '0 2 260px',
+        flex: '0 2 244px',
         display: 'flex',
         flexDirection: 'column',
         marginRight: 12,
-        [mq[4]]: { marginRight: 20 },
+        [mq[4]]: { marginRight: 20, flex: '0 2 260px' },
       }}
     >
       <StatTable

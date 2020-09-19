@@ -16,6 +16,7 @@ import Head from 'next/head';
 import { notification } from 'antd';
 import { IncomingHttpHeaders } from 'http';
 import { AppContext } from 'next/app';
+import { relayStylePagination } from '@apollo/client/utilities';
 
 interface ExtendedAppContext extends AppContext {
   ctx: NextPageContext & { apolloClient: ApolloClient<NormalizedCacheObject> };
@@ -50,7 +51,30 @@ const getHttpLink = (headers: IncomingHttpHeaders) =>
 
 function create(initialState: any, headers: IncomingHttpHeaders) {
   return new ApolloClient<NormalizedCacheObject>({
-    cache: new InMemoryCache().restore(initialState || {}),
+    cache: new InMemoryCache({
+      typePolicies: {
+        CustomSet: {
+          fields: {
+            tags: {
+              merge(_ignored, incoming) {
+                return incoming;
+              },
+            },
+          },
+        },
+        User: {
+          fields: {
+            customSets: relayStylePagination(['filters']),
+          },
+        },
+        Query: {
+          fields: {
+            items: relayStylePagination(['filters']),
+            sets: relayStylePagination(['filters']),
+          },
+        },
+      },
+    }).restore(initialState || {}),
     link: from([errorLink, getHttpLink(headers)]),
   });
 }

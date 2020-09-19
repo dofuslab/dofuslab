@@ -1,5 +1,7 @@
 from app import db
 from app import session_scope
+from app.database.model_custom_set_tag import ModelCustomSetTag
+from app.database.model_custom_set_tag_translation import ModelCustomSetTagTranslation
 from app.database.model_item import ModelItem
 from app.database.model_item_stat import ModelItemStat
 from app.database.model_item_stat_translation import ModelItemStatTranslation
@@ -369,6 +371,12 @@ def add_buffs():
                 oneoff.sync_buff.add_item_buffs(db_session, item_id, item)
 
 
+def add_tags():
+    print("Adding custom set tags to database")
+    load_and_create_all_custom_set_tags(db.session)
+    db.session.commit()
+
+
 def populate_table_for(table, fn):
     while True:
         str = "Would you like to add {}? (y/n)? ".format(table)
@@ -393,6 +401,7 @@ def setup_db():
             add_mounts()
             add_classes_and_spells()
             add_buffs()
+            add_tags()
             break
         elif response == "n":
             populate_table_for("item types and item slots", add_item_types_and_slots)

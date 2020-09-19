@@ -32,6 +32,7 @@ import BonusStats from '../desktop/BonusStats';
 import BuildErrors from './BuildErrors';
 import BuildActions from './BuildActions';
 import DefaultClassModal from './DefaultClassModal';
+import BuildTags from './BuildTags';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -215,11 +216,10 @@ const SetHeader: React.FC<Props> = ({
           <Input
             key={`input-${customSet?.id}`}
             css={{
-              fontSize: '1.2rem',
+              fontSize: '1.15rem',
               fontWeight: 500,
               [mq[1]]: {
                 flex: '1 1 0',
-                fontSize: '1.5rem',
                 width: 240,
                 maxWidth: '100%',
               },
@@ -325,22 +325,27 @@ const SetHeader: React.FC<Props> = ({
   return (
     <ClassNames>
       {({ css, cx }) => (
-        <>
+        <div
+          css={cx(
+            css({
+              flex: '0 0 96px',
+              margin: '12px 4px',
+              [mq[1]]: { flex: '0 0 52px', margin: '4px 0px' },
+            }),
+            className,
+          )}
+        >
           <div
             css={cx(
               css({
                 display: 'flex',
                 alignItems: 'center',
-                flex: '0 0 96px',
-                margin: '12px 4px',
+                marginBottom: 8,
                 [mq[1]]: {
                   overflowX: 'hidden',
                   alignItems: 'stretch',
-                  margin: '4px 0px',
-                  flex: '0 0 52px',
                 },
               }),
-              className,
             )}
           >
             <div
@@ -524,7 +529,8 @@ const SetHeader: React.FC<Props> = ({
             setDofusClassId={setDofusClassId}
             customSet={customSet}
           />
-        </>
+          <BuildTags customSetId={customSet?.id} tags={customSet?.tags} />
+        </div>
       )}
     </ClassNames>
   );

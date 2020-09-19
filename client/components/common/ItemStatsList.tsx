@@ -135,12 +135,12 @@ const ItemStatsList: React.FC<Props> = ({
       {showImg &&
         (brokenImage ? (
           <BrokenImagePlaceholder
-            css={{ float: 'right', maxWidth: 84, fontSize: '1.2rem' }}
+            css={{ float: 'right', maxWidth: 80, fontSize: '1.2rem' }}
           />
         ) : (
           <img
             src={getImageUrl(item.imageUrl)}
-            css={{ float: 'right', maxWidth: 84 }}
+            css={{ float: 'right', maxWidth: 80 }}
             onError={() => {
               setBrokenImage(true);
             }}

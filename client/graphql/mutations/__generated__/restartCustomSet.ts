@@ -145,6 +145,13 @@ export interface restartCustomSet_restartCustomSet_customSet_defaultClass {
   maleSpriteImageUrl: string;
 }
 
+export interface restartCustomSet_restartCustomSet_customSet_tags {
+  __typename: "CustomSetTag";
+  id: any;
+  name: string;
+  imageUrl: string;
+}
+
 export interface restartCustomSet_restartCustomSet_customSet {
   __typename: "CustomSet";
   id: any;
@@ -156,6 +163,7 @@ export interface restartCustomSet_restartCustomSet_customSet {
   defaultClass: restartCustomSet_restartCustomSet_customSet_defaultClass | null;
   creationDate: any | null;
   lastModified: any | null;
+  tags: restartCustomSet_restartCustomSet_customSet_tags[];
 }
 
 export interface restartCustomSet_restartCustomSet {

@@ -62,22 +62,6 @@ const SetSelector: React.FC<Props> = ({
     try {
       const fetchMoreResult = await fetchMore({
         variables: { after: data.sets.pageInfo.endCursor },
-        updateQuery: (prevData, { fetchMoreResult: result }) => {
-          if (
-            !result ||
-            result.sets.pageInfo.endCursor === prevData.sets.pageInfo.endCursor
-          ) {
-            return prevData;
-          }
-          return {
-            ...prevData,
-            sets: {
-              ...prevData.sets,
-              edges: [...prevData.sets.edges, ...result.sets.edges],
-              pageInfo: result.sets.pageInfo,
-            },
-          };
-        },
       });
       return fetchMoreResult;
     } catch (e) {

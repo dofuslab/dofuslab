@@ -32,7 +32,7 @@ const MyBuildsPage: NextPage = () => {
         />
         <title>{getTitle(t('MY_BUILDS'))}</title>
       </Head>
-      <MyBuilds />
+      <MyBuilds isMobile />
     </Layout>
   );
 };

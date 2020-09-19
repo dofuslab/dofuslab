@@ -1,5 +1,6 @@
 {
   "ACTIONS": "Ações",
+  "ADD_TAG": "__STRING_NOT_TRANSLATED__",
   "ANONYMOUS": "Anônimo",
   "AVAILABLE_AT_LEVEL": "Disponível no nível {{level}}",
   "BACK": "Voltar",
@@ -60,7 +61,7 @@
   "NEW_BUILD": "Nova build",
   "NOT_APPLICABLE": "Não aplicável",
   "NO_BONUS": "Nenhum bônus de set encontrado",
-  "NO_BUILDS_MATCHED": "Nenhuma build encontrada \"{{search}}\"",
+  "NO_BUILDS_FOUND": "__STRING_NOT_TRANSLATED__",
   "NO_CLASS": "__STRING_NOT_TRANSLATED__",
   "NO_FAVORITE_ITEMS": "Nenhum item favorito encontrado",
   "NO_FAVORITE_ITEMS_WITH_SLOT": "Nenhum {{itemTypes}} favorito encontrado.",
@@ -82,6 +83,7 @@
   "SELECT_CLASS": "Selecionar classe",
   "SELECT_CLASS_DETAILED": "Selecione uma classe para ver os feitiços",
   "SELECT_ITEM_TO_REPLACE": "Selecione um item para substituir",
+  "SELECT_TAGS": "__STRING_NOT_TRANSLATED__",
   "SETS": "Sets",
   "SET_BONUSES": "Bônus de set",
   "SHARE_BUILD": "Compartilhar",
