@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useMutation, useQuery } from '@apollo/client';
 import { LabeledValue } from 'antd/lib/select';
 
-import { CustomSetTags } from 'common/type-aliases';
+import { CustomSetTagAssociations } from 'common/type-aliases';
 import {
   addTagToCustomSet,
   addTagToCustomSetVariables,
@@ -32,28 +32,55 @@ import { useTranslation } from 'i18n';
 
 interface Props {
   customSetId?: string;
-  tags?: Array<CustomSetTags>;
+  tagAssociations?: Array<CustomSetTagAssociations>;
 }
 
-const BuildTags: React.FC<Props> = ({ customSetId, tags }) => {
+const BuildTags: React.FC<Props> = ({ customSetId, tagAssociations }) => {
   const { t } = useTranslation('common');
   const isEditable = React.useContext(EditableContext);
   const { data } = useQuery<customSetTags>(customSetTagsQuery);
+  const maxAssociationTime =
+    tagAssociations?.reduce(
+      (currMax, { associationDate }) =>
+        Math.max(currMax, new Date(associationDate).getTime()),
+      0,
+    ) ?? 0;
   const [addMutate] = useMutation<
     addTagToCustomSet,
     addTagToCustomSetVariables
   >(addTagToCustomSetMutation, {
     optimisticResponse:
-      customSetId && tags && data
+      customSetId && tagAssociations && data
         ? ({ customSetTagId }) => {
             const newTag = data.customSetTags.find(
               (cst) => cst.id === customSetTagId,
             );
+            if (!newTag) {
+              return {
+                addTagToCustomSet: {
+                  customSet: {
+                    id: customSetId,
+                    tagAssociations,
+                    __typename: 'CustomSet',
+                  },
+                  __typename: 'AddTagToCustomSet',
+                },
+              };
+            }
+            const newTagAssociation = {
+              id: '0',
+              associationDate: new Date(maxAssociationTime + 1).toISOString(), // hack to always show new tag last
+              customSetTag: newTag,
+              __typename: 'CustomSetTagAssociation' as const,
+            };
+
             return {
               addTagToCustomSet: {
                 customSet: {
                   id: customSetId,
-                  tags: newTag ? [...tags, newTag] : tags,
+                  tagAssociations: newTagAssociation
+                    ? [...tagAssociations, newTagAssociation]
+                    : tagAssociations,
                   __typename: 'CustomSet',
                 },
                 __typename: 'AddTagToCustomSet',
@@ -67,13 +94,15 @@ const BuildTags: React.FC<Props> = ({ customSetId, tags }) => {
     removeTagFromCustomSetVariables
   >(removeTagFromCustomSetMutation, {
     optimisticResponse:
-      customSetId && tags
+      customSetId && tagAssociations
         ? ({ customSetTagId }) => {
             return {
               removeTagFromCustomSet: {
                 customSet: {
                   id: customSetId,
-                  tags: tags.filter((t1) => t1.id !== customSetTagId),
+                  tagAssociations: tagAssociations.filter(
+                    (t1) => t1.customSetTag?.id !== customSetTagId,
+                  ),
                   __typename: 'CustomSet',
                 },
                 __typename: 'RemoveTagFromCustomSet',
@@ -95,54 +124,65 @@ const BuildTags: React.FC<Props> = ({ customSetId, tags }) => {
         [mq[1]]: { marginTop: 0 },
       }}
     >
-      {tags?.map((tag) => {
-        return (
-          <Tag
-            key={tag.id}
-            css={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              marginBottom: 4,
-              height: 24,
-              cursor: isEditable ? 'pointer' : 'auto',
-            }}
-            closable={isEditable}
-            closeIcon={
-              <FontAwesomeIcon icon={faTimes} css={{ marginLeft: 4 }} />
-            }
-            onClose={() => {
-              if (!isEditable) {
-                return;
-              }
-              removeMutate({
-                variables: { customSetTagId: tag.id, customSetId },
-              });
-            }}
-            onClick={() => {
-              if (!isEditable) {
-                return;
-              }
-              removeMutate({
-                variables: { customSetTagId: tag.id, customSetId },
-              });
-            }}
-          >
-            <img
-              src={getImageUrl(tag.imageUrl)}
-              alt={tag.name}
-              css={{
-                width: 14,
-                height: 'auto',
-                marginRight: 4,
-              }}
-            />
-            {tag.name}
-          </Tag>
-        );
-      })}
+      {tagAssociations &&
+        [...tagAssociations]
+          .sort(
+            (a1, a2) =>
+              new Date(a1.associationDate).getTime() -
+              new Date(a2.associationDate).getTime(),
+          )
+          .map(({ customSetTag: tag }) => {
+            return (
+              <Tag
+                key={tag.id}
+                css={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  marginBottom: 4,
+                  height: 24,
+                  cursor: isEditable ? 'pointer' : 'auto',
+                }}
+                closable={isEditable}
+                closeIcon={
+                  <FontAwesomeIcon icon={faTimes} css={{ marginLeft: 4 }} />
+                }
+                onClose={() => {
+                  if (!isEditable) {
+                    return;
+                  }
+                  removeMutate({
+                    variables: { customSetTagId: tag.id, customSetId },
+                  });
+                }}
+                onClick={() => {
+                  if (!isEditable) {
+                    return;
+                  }
+                  removeMutate({
+                    variables: { customSetTagId: tag.id, customSetId },
+                  });
+                }}
+              >
+                <img
+                  src={getImageUrl(tag.imageUrl)}
+                  alt={tag.name}
+                  css={{
+                    width: 14,
+                    height: 'auto',
+                    marginRight: 4,
+                  }}
+                />
+                {tag.name}
+              </Tag>
+            );
+          })}
       {isEditable && (
         <Select
-          key={tags?.length ? tags[tags.length - 1].id : undefined}
+          key={
+            tagAssociations?.length
+              ? tagAssociations[tagAssociations.length - 1].id
+              : undefined
+          }
           size="small"
           onSelect={async (selectedValue: LabeledValue) => {
             const { data: addMutateData } = await addMutate({
@@ -178,7 +218,9 @@ const BuildTags: React.FC<Props> = ({ customSetId, tags }) => {
                 <Select.Option
                   key={tag.id}
                   value={tag.id}
-                  disabled={tags?.some((t1) => t1.id === tag.id)}
+                  disabled={tagAssociations?.some(
+                    ({ customSetTag: t1 }) => t1.id === tag.id,
+                  )}
                   style={{
                     fontSize: 12,
                     display: 'flex',

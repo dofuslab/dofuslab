@@ -23,6 +23,6 @@ class ModelCustomSetTagAssociation(Base):
         nullable=False,
         index=True,
     )
-    association_date = Column(DateTime, default=datetime.utcnow)
+    association_date = Column(DateTime, default=datetime.utcnow, nullable=False)
     custom_set = relationship("ModelCustomSet")
     custom_set_tag = relationship("ModelCustomSetTag")

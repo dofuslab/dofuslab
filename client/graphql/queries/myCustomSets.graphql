@@ -18,10 +18,14 @@ query myCustomSets($first: Int!, $after: String, $filters: CustomSetFilters!) {
               imageUrl
             }
           }
-          tags {
+          tagAssociations {
             id
-            name
-            imageUrl
+            associationDate
+            customSetTag {
+              id
+              name
+              imageUrl
+            }
           }
         }
       }

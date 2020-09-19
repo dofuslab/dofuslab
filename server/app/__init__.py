@@ -132,7 +132,7 @@ from app.loaders import (
     WeaponStatLoader,
     SpellBuffLoader,
     ItemBuffLoader,
-    CustomSetTagLoader,
+    CustomSetTagAssociationLoader,
     CustomSetTagTranslationLoader,
 )
 
@@ -151,7 +151,7 @@ def construct_dataloaders():
         "weapon_effect_loader": WeaponEffectLoader(),
         "spell_buff_loader": SpellBuffLoader(),
         "item_buff_loader": ItemBuffLoader(),
-        "custom_set_tag_loader": CustomSetTagLoader(),
+        "custom_set_tag_association_loader": CustomSetTagAssociationLoader(),
         "custom_set_tag_translation_loader": CustomSetTagTranslationLoader(),
     }
 

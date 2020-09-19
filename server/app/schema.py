@@ -328,10 +328,23 @@ class CustomSetTag(SQLAlchemyObjectType):
         interfaces = (GlobalNode,)
 
 
+class CustomSetTagAssociation(SQLAlchemyObjectType):
+    id = graphene.String(required=True)
+    custom_set_tag = graphene.NonNull(CustomSetTag)
+
+    def resolve_id(self, info):
+        return "{}:{}".format(self.custom_set_id, self.custom_set_tag_id)
+
+    class Meta:
+        model = ModelCustomSetTagAssociation
+
+
 class CustomSet(SQLAlchemyObjectType):
     equipped_items = graphene.NonNull(graphene.List(graphene.NonNull(EquippedItem)))
     stats = graphene.NonNull(CustomSetStats)
-    tags = graphene.NonNull(graphene.List(graphene.NonNull(CustomSetTag)))
+    tag_associations = graphene.NonNull(
+        graphene.List(graphene.NonNull(CustomSetTagAssociation))
+    )
 
     def resolve_creation_date(self, info):
         return pytz.utc.localize(self.creation_date)
@@ -339,8 +352,8 @@ class CustomSet(SQLAlchemyObjectType):
     def resolve_last_modified(self, info):
         return pytz.utc.localize(self.last_modified)
 
-    def resolve_tags(self, info):
-        return g.dataloaders.get("custom_set_tag_loader").load(self.uuid)
+    def resolve_tag_associations(self, info):
+        return g.dataloaders.get("custom_set_tag_association_loader").load(self.uuid)
 
     class Meta:
         model = ModelCustomSet

@@ -342,14 +342,22 @@ const MyBuilds: React.FC<Props> = ({ onClose, isMobile }) => {
                   level={node.level}
                   afterLevel={
                     <div css={{ display: 'flex', alignItems: 'center' }}>
-                      {node.tags.map((tag) => (
-                        <img
-                          key={tag.id}
-                          src={getImageUrl(tag.imageUrl)}
-                          css={{ width: 14, height: 'auto', marginLeft: 4 }}
-                          alt={tag.name}
-                        />
-                      ))}
+                      {[...node.tagAssociations]
+                        .sort(
+                          (a1, a2) =>
+                            new Date(a1.associationDate).getTime() -
+                            new Date(a2.associationDate).getTime(),
+                        )
+                        .map(({ customSetTag: tag }) => {
+                          return (
+                            <img
+                              key={tag.id}
+                              src={getImageUrl(tag.imageUrl)}
+                              css={{ width: 14, height: 'auto', marginLeft: 4 }}
+                              alt={tag.name}
+                            />
+                          );
+                        })}
                     </div>
                   }
                   rightAlignedContent={

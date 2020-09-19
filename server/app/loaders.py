@@ -218,14 +218,12 @@ class ItemBuffLoader(DataLoader):
         return load_item_buffs(item_buff_ids)
 
 
-def load_custom_set_tags(custom_set_ids):
+def load_custom_set_tag_associations(custom_set_ids):
     tags_by_custom_set_id = defaultdict(list)
     for tag_association in db.session.query(ModelCustomSetTagAssociation).filter(
         ModelCustomSetTagAssociation.custom_set_id.in_(custom_set_ids)
     ):
-        tags_by_custom_set_id[tag_association.custom_set_id].append(
-            tag_association.custom_set_tag
-        )
+        tags_by_custom_set_id[tag_association.custom_set_id].append(tag_association)
     return Promise.resolve(
         [
             tags_by_custom_set_id.get(custom_set_id, [])
@@ -234,9 +232,9 @@ def load_custom_set_tags(custom_set_ids):
     )
 
 
-class CustomSetTagLoader(DataLoader):
+class CustomSetTagAssociationLoader(DataLoader):
     def batch_load_fn(self, custom_set_ids):
-        return load_custom_set_tags(custom_set_ids)
+        return load_custom_set_tag_associations(custom_set_ids)
 
 
 def load_custom_set_tag_translations(tag_ids):

@@ -145,11 +145,18 @@ export interface customSet_defaultClass {
   maleSpriteImageUrl: string;
 }
 
-export interface customSet_tags {
+export interface customSet_tagAssociations_customSetTag {
   __typename: "CustomSetTag";
   id: any;
   name: string;
   imageUrl: string;
+}
+
+export interface customSet_tagAssociations {
+  __typename: "CustomSetTagAssociation";
+  id: string;
+  associationDate: any;
+  customSetTag: customSet_tagAssociations_customSetTag;
 }
 
 export interface customSet {
@@ -163,5 +170,5 @@ export interface customSet {
   defaultClass: customSet_defaultClass | null;
   creationDate: any | null;
   lastModified: any | null;
-  tags: customSet_tags[];
+  tagAssociations: customSet_tagAssociations[];
 }
