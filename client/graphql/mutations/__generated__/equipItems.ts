@@ -171,6 +171,7 @@ export interface equipItems_equipMultipleItems_customSet {
   creationDate: any | null;
   lastModified: any | null;
   tagAssociations: equipItems_equipMultipleItems_customSet_tagAssociations[];
+  hasEditPermission: boolean;
 }
 
 export interface equipItems_equipMultipleItems {

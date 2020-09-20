@@ -171,6 +171,7 @@ export interface createCustomSet_createCustomSet_customSet {
   creationDate: any | null;
   lastModified: any | null;
   tagAssociations: createCustomSet_createCustomSet_customSet_tagAssociations[];
+  hasEditPermission: boolean;
 }
 
 export interface createCustomSet_createCustomSet {

@@ -171,4 +171,5 @@ export interface customSet {
   creationDate: any | null;
   lastModified: any | null;
   tagAssociations: customSet_tagAssociations[];
+  hasEditPermission: boolean;
 }

@@ -171,6 +171,7 @@ export interface copyCustomSet_copyCustomSet_customSet {
   creationDate: any | null;
   lastModified: any | null;
   tagAssociations: copyCustomSet_copyCustomSet_customSet_tagAssociations[];
+  hasEditPermission: boolean;
 }
 
 export interface copyCustomSet_copyCustomSet {

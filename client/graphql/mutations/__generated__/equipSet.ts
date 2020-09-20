@@ -171,6 +171,7 @@ export interface equipSet_equipSet_customSet {
   creationDate: any | null;
   lastModified: any | null;
   tagAssociations: equipSet_equipSet_customSet_tagAssociations[];
+  hasEditPermission: boolean;
 }
 
 export interface equipSet_equipSet {
