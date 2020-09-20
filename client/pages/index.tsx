@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { jsx } from '@emotion/core';
 import { NextPage } from 'next';
 import Head from 'next/head';
@@ -15,6 +15,9 @@ import ClassicSetBuilder from 'components/desktop/ClassicSetBuilder';
 import { ClassicContext, useClassic, CustomSetContext } from 'common/utils';
 import DesktopLayout from 'components/desktop/Layout';
 import MobileLayout from 'components/mobile/Layout';
+import { currentUser } from 'graphql/queries/__generated__/currentUser';
+import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import { useQuery } from '@apollo/client';
 import ErrorPage from './_error';
 
 const Index: NextPage = () => {
@@ -23,6 +26,22 @@ const Index: NextPage = () => {
   const { customSetId } = router.query;
 
   const { customSet, customSetLoading } = useContext(CustomSetContext);
+
+  const { data } = useQuery<currentUser>(currentUserQuery);
+  const isOwner =
+    customSet?.owner?.id && customSet?.owner.id === data?.currentUser?.id;
+
+  React.useEffect(() => {
+    if (!isOwner && customSet) {
+      router.replace(
+        {
+          pathname: '/view/[customSetId]',
+          query: { customSetId: customSet.id },
+        },
+        `/view/${customSet.id}/`,
+      );
+    }
+  }, []);
 
   if (customSetId && !customSet && !customSetLoading) {
     return <ErrorPage statusCode={404} />;

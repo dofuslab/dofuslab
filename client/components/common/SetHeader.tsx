@@ -474,50 +474,52 @@ const SetHeader: React.FC<Props> = ({
               />
             )}
           </div>
-          {customSet && isMobile && (
+          {isMobile && (
             <>
-              <div css={{ marginBottom: 20, fontSize: '0.75rem' }}>
-                <div css={{ display: 'flex' }}>
-                  <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
-                  <div css={{ marginLeft: 8 }}>
-                    {customSet.owner?.username ?? t('ANONYMOUS')}
+              {customSet && (
+                <div css={{ marginBottom: 20, fontSize: '0.75rem' }}>
+                  <div css={{ display: 'flex' }}>
+                    <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
+                    <div css={{ marginLeft: 8 }}>
+                      {customSet.owner?.username ?? t('ANONYMOUS')}
+                    </div>
+                  </div>
+                  <div css={{ display: 'flex' }}>
+                    <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
+                    <div css={{ marginLeft: 8 }}>
+                      {creationDate.toLocaleDateString(undefined, {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric',
+                      })}{' '}
+                      {creationDate.toLocaleTimeString(undefined, {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </div>
+                  </div>
+                  <div css={{ display: 'flex' }}>
+                    <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
+                    <div css={{ marginLeft: 8 }}>
+                      {modifiedDate.toLocaleDateString(undefined, {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric',
+                      })}{' '}
+                      {modifiedDate.toLocaleTimeString(undefined, {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </div>
                   </div>
                 </div>
-                <div css={{ display: 'flex' }}>
-                  <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-                  <div css={{ marginLeft: 8 }}>
-                    {creationDate.toLocaleDateString(undefined, {
-                      month: 'short',
-                      day: 'numeric',
-                      year: 'numeric',
-                    })}{' '}
-                    {creationDate.toLocaleTimeString(undefined, {
-                      hour: '2-digit',
-                      minute: '2-digit',
-                    })}
-                  </div>
-                </div>
-                <div css={{ display: 'flex' }}>
-                  <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-                  <div css={{ marginLeft: 8 }}>
-                    {modifiedDate.toLocaleDateString(undefined, {
-                      month: 'short',
-                      day: 'numeric',
-                      year: 'numeric',
-                    })}{' '}
-                    {modifiedDate.toLocaleTimeString(undefined, {
-                      hour: '2-digit',
-                      minute: '2-digit',
-                    })}
-                  </div>
-                </div>
-              </div>
+              )}
               <BuildTags
                 customSetId={customSet?.id}
                 tagAssociations={customSet?.tagAssociations}
                 isMobile={isMobile}
               />
-              {isEditable && (
+              {isEditable && customSet && (
                 <BuildActions
                   customSet={customSet}
                   isMobile
@@ -525,7 +527,9 @@ const SetHeader: React.FC<Props> = ({
                 />
               )}
               {isOwner && !isEditable && editBuildButton}
-              <BuildErrors customSet={customSet} errors={errors} isMobile />
+              {customSet && (
+                <BuildErrors customSet={customSet} errors={errors} isMobile />
+              )}
             </>
           )}
           <DefaultClassModal
