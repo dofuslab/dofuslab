@@ -78,9 +78,9 @@ const BuildActions: React.FC<Props> = ({ customSet }) => {
   return (
     <div
       css={{
-        marginBottom: 12,
+        marginTop: 20,
         [mq[1]]: {
-          marginBottom: 0,
+          marginTop: 0,
           marginLeft: 12,
           display: 'flex',
           alignItems: 'center',
@@ -97,9 +97,7 @@ const BuildActions: React.FC<Props> = ({ customSet }) => {
         <Button
           onClick={openDeleteModal}
           css={{
-            display: 'block',
-            margin: '12px 0',
-            [mq[0]]: { display: 'inline', margin: '0 0 0 12px' },
+            marginLeft: 12,
           }}
           danger
         >

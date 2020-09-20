@@ -512,6 +512,11 @@ const SetHeader: React.FC<Props> = ({
                   </div>
                 </div>
               </div>
+              <BuildTags
+                customSetId={customSet?.id}
+                tagAssociations={customSet?.tagAssociations}
+                isMobile={isMobile}
+              />
               {isEditable && (
                 <BuildActions
                   customSet={customSet}
@@ -529,10 +534,13 @@ const SetHeader: React.FC<Props> = ({
             setDofusClassId={setDofusClassId}
             customSet={customSet}
           />
-          <BuildTags
-            customSetId={customSet?.id}
-            tagAssociations={customSet?.tagAssociations}
-          />
+          {!isMobile && (
+            <BuildTags
+              customSetId={customSet?.id}
+              tagAssociations={customSet?.tagAssociations}
+              isMobile={isMobile}
+            />
+          )}
         </div>
       )}
     </ClassNames>

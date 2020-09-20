@@ -29,13 +29,19 @@ import {
 } from 'graphql/mutations/__generated__/removeTagFromCustomSet';
 import removeTagFromCustomSetMutation from 'graphql/mutations/removeTagFromCustomSet.graphql';
 import { useTranslation } from 'i18n';
+import { smallInputFontSize } from 'common/mixins';
 
 interface Props {
   customSetId?: string;
   tagAssociations?: Array<CustomSetTagAssociations>;
+  isMobile: boolean;
 }
 
-const BuildTags: React.FC<Props> = ({ customSetId, tagAssociations }) => {
+const BuildTags: React.FC<Props> = ({
+  customSetId,
+  tagAssociations,
+  isMobile,
+}) => {
   const { t } = useTranslation('common');
   const isEditable = React.useContext(EditableContext);
   const { data } = useQuery<customSetTags>(customSetTagsQuery);
@@ -114,117 +120,128 @@ const BuildTags: React.FC<Props> = ({ customSetId, tagAssociations }) => {
 
   const router = useRouter();
 
-  return (
-    <div
-      css={{
-        marginTop: 12,
-        display: 'flex',
-        alignItems: 'flex-start',
-        flexFlow: 'wrap',
-        [mq[1]]: { marginTop: 0 },
+  const selectMenu = (
+    <Select
+      key={
+        tagAssociations?.length
+          ? tagAssociations[tagAssociations.length - 1].id
+          : undefined
+      }
+      size={isMobile ? 'middle' : 'small'}
+      onSelect={async (selectedValue: LabeledValue) => {
+        const { data: addMutateData } = await addMutate({
+          variables: { customSetTagId: selectedValue.value, customSetId },
+        });
+        if (addMutateData?.addTagToCustomSet?.customSet) {
+          navigateToNewCustomSet(
+            router,
+            addMutateData?.addTagToCustomSet.customSet.id,
+          );
+        }
+      }}
+      showSearch
+      css={[
+        {
+          width: 160,
+          display: 'flex',
+          alignItems: 'center',
+          marginBottom: 4,
+          marginTop: 8,
+          [mq[1]]: {
+            width: 100,
+            marginTop: 0,
+            display: 'inline-flex',
+          },
+        },
+        smallInputFontSize,
+      ]}
+      placeholder={t('ADD_TAG')}
+      labelInValue
+      filterOption={(input, option) => {
+        return (option?.children[1] as string)
+          .toLocaleUpperCase()
+          .includes(input.toLocaleUpperCase());
       }}
     >
-      {tagAssociations &&
-        [...tagAssociations]
-          .sort(
-            (a1, a2) =>
-              new Date(a1.associationDate).getTime() -
-              new Date(a2.associationDate).getTime(),
-          )
-          .map(({ customSetTag: tag }) => {
-            return (
-              <Tag
-                key={tag.id}
+      {data &&
+        [...data.customSetTags]
+          .sort((t1, t2) => t1.name.localeCompare(t2.name))
+          .map((tag) => (
+            <Select.Option
+              key={tag.id}
+              value={tag.id}
+              disabled={tagAssociations?.some(
+                ({ customSetTag: t1 }) => t1.id === tag.id,
+              )}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                fontSize: isMobile ? 'max(0.9rem, 16px)' : '0.65rem',
+              }}
+            >
+              <img
+                src={getImageUrl(tag.imageUrl)}
+                alt={tag.name}
                 css={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  marginBottom: 4,
-                  height: 24,
-                  cursor: isEditable ? 'pointer' : 'auto',
+                  width: 14,
+                  height: 'auto',
+                  marginRight: 6,
                 }}
-                closable={isEditable}
-                closeIcon={
-                  <FontAwesomeIcon icon={faTimes} css={{ marginLeft: 4 }} />
-                }
-                onClose={() => {
-                  if (!isEditable) {
-                    return;
-                  }
-                  removeMutate({
-                    variables: { customSetTagId: tag.id, customSetId },
-                  });
-                }}
-                onClick={() => {
-                  if (!isEditable) {
-                    return;
-                  }
-                  removeMutate({
-                    variables: { customSetTagId: tag.id, customSetId },
-                  });
-                }}
-              >
-                <img
-                  src={getImageUrl(tag.imageUrl)}
-                  alt={tag.name}
-                  css={{
-                    width: 14,
-                    height: 'auto',
-                    marginRight: 4,
-                  }}
-                />
-                {tag.name}
-              </Tag>
-            );
-          })}
-      {isEditable && (
-        <Select
-          key={
-            tagAssociations?.length
-              ? tagAssociations[tagAssociations.length - 1].id
-              : undefined
-          }
-          size="small"
-          onSelect={async (selectedValue: LabeledValue) => {
-            const { data: addMutateData } = await addMutate({
-              variables: { customSetTagId: selectedValue.value, customSetId },
-            });
-            if (addMutateData?.addTagToCustomSet?.customSet) {
-              navigateToNewCustomSet(
-                router,
-                addMutateData?.addTagToCustomSet.customSet.id,
-              );
-            }
-          }}
-          showSearch
-          css={{
-            width: 100,
-            display: 'inline-flex',
-            alignItems: 'center',
-            fontSize: 12,
-            marginBottom: 4,
-          }}
-          placeholder={t('ADD_TAG')}
-          labelInValue
-          filterOption={(input, option) => {
-            return (option?.children[1] as string)
-              .toLocaleUpperCase()
-              .includes(input.toLocaleUpperCase());
-          }}
-        >
-          {data &&
-            [...data.customSetTags]
-              .sort((t1, t2) => t1.name.localeCompare(t2.name))
-              .map((tag) => (
-                <Select.Option
+              />
+              {tag.name}
+            </Select.Option>
+          ))}
+    </Select>
+  );
+
+  return (
+    <div>
+      <div
+        css={{
+          marginTop: 12,
+          display: 'flex',
+          alignItems: 'flex-start',
+          flexFlow: 'wrap',
+          [mq[1]]: { marginTop: 0 },
+        }}
+      >
+        {tagAssociations &&
+          [...tagAssociations]
+            .sort(
+              (a1, a2) =>
+                new Date(a1.associationDate).getTime() -
+                new Date(a2.associationDate).getTime(),
+            )
+            .map(({ customSetTag: tag }) => {
+              return (
+                <Tag
                   key={tag.id}
-                  value={tag.id}
-                  disabled={tagAssociations?.some(
-                    ({ customSetTag: t1 }) => t1.id === tag.id,
-                  )}
-                  style={{
-                    fontSize: 12,
-                    display: 'flex',
+                  css={{
+                    display: 'inline-flex',
                     alignItems: 'center',
+                    marginBottom: 4,
+                    height: 24,
+                    cursor: isEditable ? 'pointer' : 'auto',
+                  }}
+                  closable={isEditable}
+                  closeIcon={
+                    <FontAwesomeIcon icon={faTimes} css={{ marginLeft: 4 }} />
+                  }
+                  onClose={() => {
+                    if (!isEditable) {
+                      return;
+                    }
+                    removeMutate({
+                      variables: { customSetTagId: tag.id, customSetId },
+                    });
+                  }}
+                  onClick={() => {
+                    if (!isEditable) {
+                      return;
+                    }
+                    removeMutate({
+                      variables: { customSetTagId: tag.id, customSetId },
+                    });
                   }}
                 >
                   <img
@@ -233,14 +250,16 @@ const BuildTags: React.FC<Props> = ({ customSetId, tagAssociations }) => {
                     css={{
                       width: 14,
                       height: 'auto',
-                      marginRight: 6,
+                      marginRight: 4,
                     }}
                   />
                   {tag.name}
-                </Select.Option>
-              ))}
-        </Select>
-      )}
+                </Tag>
+              );
+            })}
+        {isEditable && !isMobile && selectMenu}
+      </div>
+      {isMobile && selectMenu}
     </div>
   );
 };

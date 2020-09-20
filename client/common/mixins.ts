@@ -52,7 +52,7 @@ export const itemImageDimensions = {
 };
 
 export const itemImageBox = (theme: Theme, isEditable = true) => ({
-  position: 'absolute' as 'absolute',
+  position: 'absolute' as const,
   width: '100%',
   height: '100%',
   top: 0,
@@ -61,7 +61,7 @@ export const itemImageBox = (theme: Theme, isEditable = true) => ({
   [mq[1]]: {
     maxWidth: ITEM_BOX_WIDTH_SMALL,
     maxHeight: ITEM_BOX_WIDTH_SMALL,
-    position: 'relative' as 'relative',
+    position: 'relative' as const,
   },
   [mq[4]]: {
     maxWidth: ITEM_BOX_WIDTH,
@@ -82,7 +82,7 @@ export const itemImageBox = (theme: Theme, isEditable = true) => ({
     boxShadow: shadow,
     opacity: 0,
     transition: 'opacity 0.3s',
-    position: 'absolute' as 'absolute',
+    position: 'absolute' as const,
     top: 0,
     right: 0,
     bottom: 0,
@@ -96,25 +96,25 @@ export const itemImageBox = (theme: Theme, isEditable = true) => ({
 });
 
 export const ellipsis = {
-  overflow: 'hidden' as 'hidden',
-  textOverflow: 'ellipsis' as 'ellipsis',
-  whiteSpace: 'nowrap' as 'nowrap',
+  overflow: 'hidden' as const,
+  textOverflow: 'ellipsis' as const,
+  whiteSpace: 'nowrap' as const,
 };
 
 export const itemBox = (theme: Theme) => ({
   background: theme.layer?.background,
   paddingTop: '100%',
-  position: 'relative' as 'relative',
+  position: 'relative' as const,
   borderRadius: 4,
 
   ...itemBoxDimensions,
   [mq[1]]: {
     paddingTop: 0,
-    position: 'static' as 'static',
-    ...(itemBoxDimensions[mq[1]] as {}),
+    position: 'static' as const,
+    ...(itemBoxDimensions[mq[1]] as Record<string, unknown>),
   },
   [mq[4]]: {
-    ...(itemBoxDimensions[mq[4]] as {}),
+    ...(itemBoxDimensions[mq[4]] as Record<string, unknown>),
   },
 });
 
@@ -227,4 +227,9 @@ export const getModalStyle = (theme: Theme) => ({
 export const inputFontSize = {
   fontSize: 'max(0.9rem, 16px)',
   [mq[1]]: { fontSize: '0.75rem' },
+};
+
+export const smallInputFontSize = {
+  fontSize: 'max(0.9rem, 16px)',
+  [mq[1]]: { fontSize: '0.65rem' },
 };
