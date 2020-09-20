@@ -345,6 +345,7 @@ class CustomSet(SQLAlchemyObjectType):
     tag_associations = graphene.NonNull(
         graphene.List(graphene.NonNull(CustomSetTagAssociation))
     )
+    has_edit_permission = graphene.Boolean(required=True)
 
     def resolve_creation_date(self, info):
         return pytz.utc.localize(self.creation_date)
@@ -354,6 +355,13 @@ class CustomSet(SQLAlchemyObjectType):
 
     def resolve_tag_associations(self, info):
         return g.dataloaders.get("custom_set_tag_association_loader").load(self.uuid)
+
+    def resolve_has_edit_permission(self, info):
+        try:
+            check_owner(self)
+        except GraphQLError:
+            return False
+        return True
 
     class Meta:
         model = ModelCustomSet

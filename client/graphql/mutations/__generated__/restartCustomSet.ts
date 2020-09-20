@@ -171,6 +171,7 @@ export interface restartCustomSet_restartCustomSet_customSet {
   creationDate: any | null;
   lastModified: any | null;
   tagAssociations: restartCustomSet_restartCustomSet_customSet_tagAssociations[];
+  hasEditPermission: boolean;
 }
 
 export interface restartCustomSet_restartCustomSet {
