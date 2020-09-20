@@ -271,9 +271,6 @@ const MyBuilds: React.FC<Props> = ({ onClose, isMobile }) => {
             ...inputFontSize,
             '.ant-input': inputFontSize,
             height: 32,
-            [mq[1]]: {
-              height: 'auto',
-            },
           }}
           onChange={onSearch}
           placeholder={t('SEARCH')}
@@ -351,6 +348,7 @@ const MyBuilds: React.FC<Props> = ({ onClose, isMobile }) => {
                         .map(({ customSetTag: tag }) => {
                           return (
                             <img
+                              title={tag.name}
                               key={tag.id}
                               src={getImageUrl(tag.imageUrl)}
                               css={{ width: 14, height: 'auto', marginLeft: 4 }}
@@ -400,32 +398,59 @@ const MyBuilds: React.FC<Props> = ({ onClose, isMobile }) => {
               }}
             >
               {node.equippedItems.length > 0 ? (
-                [...node.equippedItems]
-                  .sort(
-                    ({ slot: { order: i } }, { slot: { order: j } }) => i - j,
-                  )
-                  .map(({ id, item }) =>
-                    brokenImages.includes(id) ? (
-                      <BrokenImagePlaceholder
-                        key={`broken-image-${id}`}
-                        css={{
-                          width: 40,
-                          height: 40,
-                          display: 'inline-flex',
-                        }}
-                      />
-                    ) : (
-                      <img
-                        key={`equipped-item-${id}`}
-                        src={getImageUrl(item.imageUrl)}
-                        css={{ width: 40 }}
-                        onError={() => {
-                          setBrokenImages((prev) => [...prev, id]);
-                        }}
-                        alt={id}
-                      />
-                    ),
-                  )
+                <div
+                  css={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(8, 1fr)',
+                    gridAutoRows: '1fr 1fr',
+                  }}
+                >
+                  {[...node.equippedItems]
+                    .sort(
+                      ({ slot: { order: i } }, { slot: { order: j } }) => i - j,
+                    )
+                    .map(({ id, item }) =>
+                      brokenImages.includes(id) ? (
+                        <BrokenImagePlaceholder
+                          key={`broken-image-${id}`}
+                          css={{
+                            width: 40,
+                            height: 40,
+                            display: 'inline-flex',
+                          }}
+                        />
+                      ) : (
+                        <div
+                          css={{
+                            position: 'relative',
+                            '&::before': {
+                              content: "''",
+                              display: 'block',
+                              paddingTop: '100%',
+                            },
+                          }}
+                        >
+                          <img
+                            key={`equipped-item-${id}`}
+                            src={getImageUrl(item.imageUrl)}
+                            css={{
+                              position: 'absolute',
+                              top: 0,
+                              left: 0,
+                              right: 0,
+                              bottom: 0,
+                              width: '100%',
+                              height: '100%',
+                            }}
+                            onError={() => {
+                              setBrokenImages((prev) => [...prev, id]);
+                            }}
+                            alt={id}
+                          />
+                        </div>
+                      ),
+                    )}
+                </div>
               ) : (
                 <div css={{ fontStyle: 'italic', color: theme.text?.light }}>
                   {t('NO_ITEMS_EQUIPPED')}
@@ -456,6 +481,8 @@ const MyBuilds: React.FC<Props> = ({ onClose, isMobile }) => {
               // eslint-disable-next-line react/no-array-index-key
               key={`card-${idx}`}
               css={{
+                marginTop: 20,
+                [mq[1]]: { marginTop: 0 },
                 backgroundColor: theme.layer?.backgroundLight,
               }}
               numRows={2}
