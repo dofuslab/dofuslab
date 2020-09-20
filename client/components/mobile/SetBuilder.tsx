@@ -17,7 +17,6 @@ import ClassSpells from 'components/common/ClassSpells';
 import { useTranslation } from 'i18n';
 
 import { ItemSlot, CustomSet } from 'common/type-aliases';
-import PublicBuildActions from 'components/common/PublicBuildActions';
 import BuffModal from 'components/common/BuffModal';
 import StatTable from '../common/StatTable';
 import StatEditor from '../common/StatEditor';
@@ -65,12 +64,6 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
 
   return (
     <>
-      {customSet && (
-        <PublicBuildActions
-          customSet={customSet}
-          css={{ marginTop: 8, justifyContent: 'flex-end' }}
-        />
-      )}
       <SetHeader
         key={customSet?.id}
         customSet={customSet}

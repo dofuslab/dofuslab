@@ -146,7 +146,7 @@ const BuildTags: React.FC<Props> = ({
           display: 'flex',
           alignItems: 'center',
           marginBottom: 4,
-          marginTop: 8,
+          marginTop: tagAssociations?.length ? 8 : 0,
           [mq[1]]: {
             width: 100,
             marginTop: 0,
