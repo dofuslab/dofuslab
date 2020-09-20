@@ -78,13 +78,11 @@ const BuildActions: React.FC<Props> = ({ customSet }) => {
   return (
     <div
       css={{
-        marginTop: 20,
+        marginBottom: 8,
         [mq[1]]: {
-          marginTop: 0,
-          marginLeft: 12,
+          margin: '0 12px',
           display: 'flex',
           alignItems: 'center',
-          marginRight: 12,
         },
         [mq[4]]: { marginLeft: 20, marginRight: 12 },
       }}

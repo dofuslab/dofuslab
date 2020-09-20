@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { jsx, ClassNames } from '@emotion/core';
-import { Button, Input, InputNumber, Form, Popover } from 'antd';
+import { Button, Input, InputNumber, Form, Popover, Divider } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
@@ -477,7 +477,7 @@ const SetHeader: React.FC<Props> = ({
           {isMobile && (
             <>
               {customSet && (
-                <div css={{ marginBottom: 20, fontSize: '0.75rem' }}>
+                <div css={{ fontSize: '0.75rem' }}>
                   <div css={{ display: 'flex' }}>
                     <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
                     <div css={{ marginLeft: 8 }}>
@@ -514,18 +514,23 @@ const SetHeader: React.FC<Props> = ({
                   </div>
                 </div>
               )}
+              <Divider css={{ margin: '12px 0' }} />
               <BuildTags
                 customSetId={customSet?.id}
                 tagAssociations={customSet?.tagAssociations}
                 isMobile={isMobile}
               />
-              {isEditable && customSet && (
-                <BuildActions
-                  customSet={customSet}
-                  isMobile
-                  isClassic={false}
-                />
-              )}
+              <Divider css={{ margin: '12px 0' }} />
+              <div>
+                {isEditable && customSet && (
+                  <BuildActions
+                    customSet={customSet}
+                    isMobile
+                    isClassic={false}
+                  />
+                )}
+                {customSet && <PublicBuildActions customSet={customSet} />}
+              </div>
               {isOwner && !isEditable && editBuildButton}
               {customSet && (
                 <BuildErrors customSet={customSet} errors={errors} isMobile />
