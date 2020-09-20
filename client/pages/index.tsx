@@ -29,10 +29,10 @@ const Index: NextPage = () => {
 
   const { data } = useQuery<currentUser>(currentUserQuery);
   const isOwner =
-    customSet?.owner?.id && customSet?.owner.id === data?.currentUser?.id;
+    customSet?.owner && customSet?.owner?.id === data?.currentUser?.id;
 
   React.useEffect(() => {
-    if (!isOwner && customSet) {
+    if (!isOwner && customSet && customSet.owner) {
       router.replace(
         {
           pathname: '/view/[customSetId]',
