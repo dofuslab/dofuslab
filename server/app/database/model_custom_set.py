@@ -62,7 +62,6 @@ class ModelCustomSet(Base):
         back_populates="custom_sets",
         secondary="custom_set_tag_association",
         order_by="ModelCustomSetTagAssociation.association_date",
-        cascade="all, delete",
     )
 
     def empty_or_first_item_slot(self, item_type):
