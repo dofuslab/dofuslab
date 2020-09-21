@@ -329,7 +329,7 @@ const MyBuilds: React.FC<Props> = ({ onClose, isMobile }) => {
           as={`/build/${node.id}/`}
           key={node.id}
         >
-          <a>
+          <a key={node.id}>
             <Card
               onClick={onClose}
               hoverable
