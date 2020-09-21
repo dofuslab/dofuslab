@@ -541,6 +541,7 @@ class SpellVariantPair(SQLAlchemyObjectType):
 
 class Class(SQLAlchemyObjectType):
     name = graphene.String(required=True)
+    en_name = graphene.String(required=True)
     spell_variant_pairs = graphene.NonNull(
         graphene.List(graphene.NonNull(SpellVariantPair))
     )
@@ -552,6 +553,14 @@ class Class(SQLAlchemyObjectType):
         return (
             query.filter(ModelClassTranslation.locale == locale)
             .filter(ModelClassTranslation.class_id == self.uuid)
+            .one()
+            .name
+        )
+
+    def resolve_en_name(self, info):
+        return (
+            db.session.query(ModelClassTranslation)
+            .filter_by(class_id=self.uuid, locale="en")
             .one()
             .name
         )

@@ -1422,21 +1422,35 @@ export const getCustomSetMetaImage = (customSet?: CustomSet | null) => {
   if (!customSet) {
     return getImageUrl('logo/DL-Full_Dark_Filled_BG_1200x628.png');
   }
-  return `https://32kom7xq5i.execute-api.us-east-2.amazonaws.com/${encodeURIComponent(
-    customSet.name || 'Untitled',
-  )}?${[...customSet.equippedItems]
+  const searchParams = new URLSearchParams();
+  if (customSet.defaultClass) {
+    searchParams.set('class', customSet.defaultClass.enName);
+  }
+  [...customSet.tagAssociations]
+    .sort(
+      (a1, a2) =>
+        new Date(a1.associationDate).getTime() -
+        new Date(a2.associationDate).getTime(),
+    )
+    .forEach(({ customSetTag: tag }) => {
+      const { imageUrl } = tag;
+      const match = imageUrl.match(/icon\/(\w+)\.svg/);
+      if (match && match[1]) {
+        searchParams.append('tags', match[1]);
+      }
+    });
+  [...customSet.equippedItems]
     .sort((ei1, ei2) => ei1.slot.order - ei2.slot.order)
-    .map((ei) => {
+    .forEach((ei) => {
       const { imageUrl } = ei.item;
       const match = imageUrl.match(/item\/(\d+)\.png/);
       if (match && match[1]) {
-        return match[1];
+        searchParams.append('items', match[1]);
       }
-      return null;
-    })
-    .filter((i) => i !== null)
-    .map((i) => `items=${i}`)
-    .join('&')}`;
+    });
+  return `https://32kom7xq5i.execute-api.us-east-2.amazonaws.com/${encodeURIComponent(
+    customSet.name || 'Untitled',
+  )}?${searchParams.toString()}`;
 };
 
 export const getCanonicalUrl = (customSet?: CustomSet | null) => {

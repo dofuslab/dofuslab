@@ -141,6 +141,7 @@ export interface restartCustomSet_restartCustomSet_customSet_defaultClass {
   __typename: "Class";
   id: any;
   name: string;
+  enName: string;
   faceImageUrl: string;
   maleSpriteImageUrl: string;
 }
