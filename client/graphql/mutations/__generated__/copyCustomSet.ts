@@ -141,6 +141,7 @@ export interface copyCustomSet_copyCustomSet_customSet_defaultClass {
   __typename: "Class";
   id: any;
   name: string;
+  enName: string;
   faceImageUrl: string;
   maleSpriteImageUrl: string;
 }
