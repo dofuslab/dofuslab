@@ -22,7 +22,7 @@ import BuffModal from 'components/common/BuffModal';
 import Selector from '../common/Selector';
 import StatEditor from '../common/StatEditor';
 import EquipmentSlots from '../common/EquipmentSlots';
-import SetHeader from '../common/SetHeader';
+import SetHeader from './SetHeader';
 import StatTable from '../common/StatTable';
 
 const { TabPane } = Tabs;
@@ -85,9 +85,11 @@ interface Props {
 }
 
 const SetBuilder: React.FC<Props> = ({ customSet }) => {
-  const { appliedBuffs, statsFromCustomSet } = React.useContext(
-    CustomSetContext,
-  );
+  const {
+    appliedBuffs,
+    statsFromCustomSet,
+    customSetLoading,
+  } = React.useContext(CustomSetContext);
   const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(
     null,
   );
@@ -151,9 +153,9 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
             padding: '0px 20px',
           },
         }}
-        isMobile={false}
         isClassic={false}
         setDofusClassId={setDofusClassId}
+        customSetLoading={customSetLoading}
       />
       <EquipmentSlots
         customSet={customSet}

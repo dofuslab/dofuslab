@@ -21,7 +21,7 @@ import BuffModal from 'components/common/BuffModal';
 import StatTable from '../common/StatTable';
 import StatEditor from '../common/StatEditor';
 import EquipmentSlots from '../common/EquipmentSlots';
-import SetHeader from '../common/SetHeader';
+import SetHeader from './SetHeader';
 
 const { TabPane } = Tabs;
 
@@ -30,9 +30,11 @@ interface Props {
 }
 
 const SetBuilder: React.FC<Props> = ({ customSet }) => {
-  const { appliedBuffs, statsFromCustomSet } = React.useContext(
-    CustomSetContext,
-  );
+  const {
+    appliedBuffs,
+    statsFromCustomSet,
+    customSetLoading,
+  } = React.useContext(CustomSetContext);
   const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(
     null,
   );
@@ -67,6 +69,7 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
       <SetHeader
         key={customSet?.id}
         customSet={customSet}
+        customSetLoading={customSetLoading}
         errors={errors}
         isMobile
         isClassic={false}

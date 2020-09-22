@@ -279,3 +279,15 @@ export interface BuildError {
   equippedItem: EquippedItem;
   reason: BuildErrorType;
 }
+
+export interface CustomSetMetadata {
+  isEditing: boolean;
+  name: string;
+  level: number;
+}
+
+export type CustomSetMetadataAction =
+  | { type: 'START_EDIT'; originalState: CustomSetMetadata }
+  | { type: 'EDIT_NAME'; name: string }
+  | { type: 'EDIT_LEVEL'; level: number }
+  | { type: 'STOP_EDIT' };
