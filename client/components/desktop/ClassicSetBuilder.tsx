@@ -20,7 +20,7 @@ import { BuffButton } from 'common/wrappers';
 import ClassicRightColumnStats from './ClassicRightColumnStats';
 import ClassicLeftColumnStats from './ClassicLeftColumnStats';
 import ClassicEquipmentSlots from './ClassicEquipmentSlots';
-import SetHeader from '../common/SetHeader';
+import SetHeader from './SetHeader';
 import ClassicClassSelector from './ClassicClassSelector';
 
 const { TabPane } = Tabs;
@@ -30,9 +30,11 @@ interface Props {
 }
 
 const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
-  const { appliedBuffs, statsFromCustomSet } = React.useContext(
-    CustomSetContext,
-  );
+  const {
+    appliedBuffs,
+    statsFromCustomSet,
+    customSetLoading,
+  } = React.useContext(CustomSetContext);
 
   const [dofusClassId, setDofusClassId] = React.useState<string | undefined>(
     customSet?.defaultClass?.id,
@@ -77,9 +79,9 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
         <SetHeader
           key={customSet?.id}
           customSet={customSet}
+          customSetLoading={customSetLoading}
           errors={errors}
           isClassic
-          isMobile={false}
           setDofusClassId={setDofusClassId}
         />
         <Tabs

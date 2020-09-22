@@ -47,7 +47,8 @@ export const itemBoxDimensions = {
 };
 
 export const itemImageDimensions = {
-  width: '80%',
+  width: 56,
+  [mq[4]]: { width: 60 },
   height: 'auto',
 };
 
