@@ -3,13 +3,13 @@
     "dofusID": "13896",
     "name": {
       "en": "Riff Hatchet",
-      "fr": "Eriphe Ax",
-      "from": "Axt des Sheriffs",
+      "fr": "Hache Ériphe",
+      "de": "Axt des Sheriffs",
       "es": "Hacha Riff",
       "it": "Asceriffo",
       "pt": "Machado Nerrobado"
     },
-    "itemType": "Axis",
+    "itemType": "Axe",
     "level": 200,
     "setID": null,
     "stats": [
@@ -127,14 +127,14 @@
       },
       "customConditions": {}
     },
-    "imageUrl": "item / 19065.png"
+    "imageUrl": "item/19065.png"
   },
   {
     "dofusID": "15494",
     "name": {
       "en": "Dark Court Shovel",
-      "en": "Dark Court Shovel",
-      "from": "Schaufel aus Düsterhof",
+      "fr": "Pelle de la Cour Sombre",
+      "de": "Schaufel aus Düsterhof",
       "es": "Pala de cortesano tenebroso",
       "it": "Pala della Corte Oscura",
       "pt": "Pá da Corte Sombria"
@@ -224,14 +224,14 @@
       "conditions": {},
       "customConditions": {}
     },
-    "imageUrl": "item / 8076.png"
+    "imageUrl": "item/8076.png"
   },
   {
     "dofusID": "15496",
     "name": {
       "en": "Queen of Thieves' Sword",
-      "en": "Sword of the Queen of Thieves",
-      "from": "Schwert der Königin der Diebe",
+      "fr": "Épée de la Reine des Voleurs",
+      "de": "Schwert der Königin der Diebe",
       "es": "Espada de la Reina de los Ladrones",
       "it": "Spada della Regina dei Ladri",
       "pt": "Espada da Rainha dos Ladrões"
@@ -354,7 +354,7 @@
       },
       "customConditions": {}
     },
-    "imageUrl": "item / 6730.png"
+    "imageUrl": "item/6730.png"
   },
   {
     "dofusID": "17586",
