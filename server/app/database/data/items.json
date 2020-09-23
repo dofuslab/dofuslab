@@ -125176,5 +125176,942 @@
       "customConditions": {}
     },
     "imageUrl": "item/23032.png"
+  },
+  {
+    "dofusID": "23626",
+    "name": {
+      "en": "Slayspirit Headband",
+      "fr": "Bandeau de Spiritueur",
+      "de": "Geistreichen-Augenbinde",
+      "es": "Bandana de espiritasesino",
+      "it": "Benda di Spiritassassino",
+      "pt": "Faixa de Assassispírito"
+    },
+    "itemType": "Hat",
+    "setID": null,
+    "level": 155,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": null,
+        "maxStat": -200
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -20
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": -2
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {
+        "and": [
+          {
+            "stat": "AP",
+            "operator": "<",
+            "value": 12
+          }
+        ]
+      },
+      "customConditions": {}
+    },
+    "imageUrl": "item/23626.png"
+  },
+  {
+    "dofusID": "23618",
+    "name": {
+      "en": "Jiangshi-Nobi Mortuary Bag",
+      "fr": "Sac mortuaire de Jiangshi-Nobi",
+      "de": "Jiangshi-Nobi-Totensack",
+      "es": "Bolsa mortuoria de jiangshi-Nobi",
+      "it": "Sacco Mortuario di Jiangshi-Nobi",
+      "pt": "Saco Mortuário de Jiangshi-Nobi"
+    },
+    "itemType": "Backpack",
+    "setID": "",
+    "level": 154,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": -10
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/23618.png"
+  },
+  {
+    "dofusID": "23619",
+    "name": {
+      "en": "Mist Boots",
+      "fr": "Bottes de Brume",
+      "de": "Nebelstiefel",
+      "es": "Botas de bruma",
+      "it": "Stivali di Bruma",
+      "pt": "Botas de Bruma"
+    },
+    "itemType": "Boots",
+    "setID": "",
+    "level": 156,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
+        "stat": "Strength",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 25
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Lock",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/23619.png"
+  },
+  {
+    "dofusID": "23621",
+    "name": {
+      "en": "Yokomainu Shield",
+      "fr": "Bouclier du Yokomaïnu",
+      "de": "Schild des Yokomainu",
+      "es": "Escudo de yokomainu",
+      "it": "Scudo del Yokomainu",
+      "pt": "Escudo do Yokomainu"
+    },
+    "itemType": "Shield",
+    "setID": null,
+    "level": 160,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 25
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Ranged Damage",
+        "minStat": null,
+        "maxStat": -7
+      },
+      {
+        "stat": "% Spell Damage",
+        "minStat": 9,
+        "maxStat": 12
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/23621.png"
+  },
+  {
+    "dofusID": "23620",
+    "name": {
+      "en": "Tsukinochi Belt",
+      "fr": "Ceinture de Tsukinochi",
+      "de": "Gürtel des Tsukinochi",
+      "es": "Cinturón de tsukinoichi",
+      "it": "Cintura di Tsukinoichi",
+      "pt": "Cinto de Tsukinoichi"
+    },
+    "itemType": "Belt",
+    "setID": "",
+    "level": 158,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 201,
+        "maxStat": 250
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Chance",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 26,
+        "maxStat": 35
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 21,
+        "maxStat": 25
+      },
+      {
+        "stat": "Lock",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/23620.png"
+  },
+  {
+    "dofusID": "23625",
+    "name": {
+      "en": "Kaonashi Mask",
+      "fr": "Masque de Kaonashi",
+      "de": "Kaonashi-Maske",
+      "es": "Máscara de kaonashi",
+      "it": "Maschera di Kaonashi",
+      "pt": "Máscara de Kaonashi"
+    },
+    "itemType": "Hat",
+    "setID": null,
+    "level": 170,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/23625.png"
+  },
+  {
+    "dofusID": "23622",
+    "name": {
+      "en": "Koumiho Ring",
+      "fr": "Anneau de Koumiho",
+      "de": "Kumihos Ring",
+      "es": "Anillo de Kumijo",
+      "it": "Anello di Kyumiho",
+      "pt": "Anel de Kumihu"
+    },
+    "itemType": "Ring",
+    "setID": "",
+    "level": 164,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Earth Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 25
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/23622.png"
+  },
+  {
+    "dofusID": "23624",
+    "name": {
+      "en": "Onigori Belt",
+      "fr": "Ceinture d'Onigori",
+      "de": "Onigori-Gürtel",
+      "es": "Cinturón de onigori",
+      "it": "Cintura di Onigori",
+      "pt": "Cinto de Onigori"
+    },
+    "itemType": "Belt",
+    "setID": "",
+    "level": 168,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 301,
+        "maxStat": 400
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 201,
+        "maxStat": 250
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Neutral Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 26,
+        "maxStat": 35
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Heals",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/23624.png"
+  },
+  {
+    "dofusID": "23628",
+    "name": {
+      "en": "Slayoover Tank",
+      "fr": "Fût d'Aspiratueur",
+      "de": "Fluchsauger-Fass",
+      "es": "Depósito de aspirasesino",
+      "it": "Serbatoio dell'Aspiritassassino",
+      "pt": "Recipiente de Aspirassino"
+    },
+    "itemType": "Backpack",
+    "setID": null,
+    "level": 165,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": null,
+        "maxStat": -300
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 201,
+        "maxStat": 250
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": -20
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 6,
+        "maxStat": 9
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 6,
+        "maxStat": 9
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 6,
+        "maxStat": 9
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 6,
+        "maxStat": 9
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Critical",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": -15
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {
+        "and": [
+          {
+            "stat": "AP",
+            "operator": "<",
+            "value": 12
+          }
+        ]
+      },
+      "customConditions": {}
+    },
+    "imageUrl": "item/23628.png"
+  },
+  {
+    "dofusID": "23623",
+    "name": {
+      "en": "Tomb Geta",
+      "fr": "Geta des Tombeaux",
+      "de": "Geta der Gräber",
+      "es": "Getas de las tumbas",
+      "it": "Geta delle Tombe",
+      "pt": "Geta das Tumbas"
+    },
+    "itemType": "Boots",
+    "setID": "",
+    "level": 166,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 201,
+        "maxStat": 300
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 201,
+        "maxStat": 250
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Fire Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Heals",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/23623.png"
+  },
+  {
+    "dofusID": "23408",
+    "name": {
+      "en": "Dorigami",
+      "fr": "Dorigami",
+      "de": "Dorigami",
+      "es": "Dorigami",
+      "it": "Dorigami",
+      "pt": "Dorigami"
+    },
+    "itemType": "Dofus",
+    "setID": null,
+    "level": 150,
+    "stats": [
+      {
+        "stat": "MP Parry",
+        "minStat": null,
+        "maxStat": 20
+      }
+    ],
+    "customStats": {
+      "en": [
+        "Applies 100% of level as Shield at the start of each turn for the first 5 turns.\nDuring each of these 5 turns, if the caster kills a summons, the caster gains 100% of their level as Shield for 1 turn (max. 4 times), and 300% (max. 2 times) for a monster or player.\nShields are only obtained during the caster's turn."
+      ],
+      "fr": [
+        "Pendant les 5 premiers tours, le lanceur gagne 100% de son niveau en bouclier pour 1 tour à chaque début de tour. Tuer une invocation ennemie ajoute 150% du niveau en bouclier pour 1 tour, et 300% pour un monstre ou joueur ennemi.\nNe fonctionne que pendant le tour du lanceur."
+      ],
+      "de": [
+        "Verleiht während der ersten 5 Runden zu Rundenbeginn 100 % der Schildstufe.\nWährend dieser 5 Runden erhält der Zaubernde 1 Runde lang 100 % seiner Schildstufe (max. 4 Mal), wenn er eine Beschwörung tötet, und 300 % (max. 2 Mal), wenn er ein Monster oder einen Spieler tötet.\nDie Schilde werden nur in der Spielrunde des Zaubernden verliehen."
+      ],
+      "es": [
+        "Aplica el 100% del nivel en escudo en cada inicio de turno durante los 5 primeros turnos.\nDurante estos 5 turnos, si el lanzador mata a una invocación, gana el 100% de su nivel en escudo durante 1 turno (4 veces máx.), y el 300% (2 veces máx.) para un monstruo o un jugador.\nLos escudos se obtienen solo durante el turno de juego del lanzador."
+      ],
+      "it": [
+        "Applica il 100% del livello in scudo all'inizio di ogni turno per i primi 5 turni.\nDurante questi 5 turni, se il lanciatore uccide un'evocazione ottiene il 100% del suo livello in scudo per 1 turno (max 4 volte). Se uccide un mostro o un altro giocatore, ottiene il 300% (max 2 volte).\nGli scudi si ottengono solo durante il turno di gioco del lanciatore."
+      ],
+      "pt": [
+        "Aplica 100% do nível em escudo a cada início de turno durante os primeiros 5 turnos.\nNesses 5 turnos, se o lançador matar uma invocação, ele ganha 100% de seu nível em escudo durante 1 turno (4 vezes no máximo) e 300% (2 vezes no máximo) se for um monstro ou um jogador.\nOs escudos só podem ser obtidos durante o turno do lançador."
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/23408.png"
   }
 ]
