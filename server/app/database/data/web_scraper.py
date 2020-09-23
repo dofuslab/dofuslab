@@ -88,7 +88,7 @@ class ItemScraper:
             scraper_utils.upload_image_to_s3(
                 os.path.join(scraper_utils.image_folder, "items", id + ".png"), "item"
             )
-            image = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/" + id + ".png"
+            image = "item/" + id + ".png"
 
             set = None
             try:
@@ -214,7 +214,7 @@ class WeaponScraper:
             scraper_utils.upload_image_to_s3(
                 os.path.join(scraper_utils.image_folder, "items", id + ".png"), "item"
             )
-            image = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/" + id + ".png"
+            image = "item/" + id + ".png"
 
             set = None
             divs = (
@@ -416,7 +416,7 @@ class PetScraper:
             scraper_utils.upload_image_to_s3(
                 os.path.join(scraper_utils.image_folder, "items", id + ".png"), "item"
             )
-            image = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/" + id + ".png"
+            image = "item/" + id + ".png"
 
             set = None
             divs = (
@@ -530,7 +530,7 @@ class MountScraper:
             scraper_utils.upload_image_to_s3(
                 os.path.join(scraper_utils.image_folder, "items", id + ".png"), "item"
             )
-            image = "https://dofus-lab.s3.us-east-2.amazonaws.com/item/" + id + ".png"
+            image = "item/" + id + ".png"
 
             all_stats = scraper_utils.get_stats(all_soups)
             stats = all_stats[0]
@@ -628,9 +628,7 @@ class ClassScraper:
                     os.path.join(scraper_utils.image_folder, "spells", id + ".png"),
                     "spell",
                 )
-                image_url = (
-                    "https://dofus-lab.s3.us-east-2.amazonaws.com/spell/" + id + ".png"
-                )
+                image_url = "spell/" + id + ".png"
 
                 levels = (
                     all_soups["en"]
