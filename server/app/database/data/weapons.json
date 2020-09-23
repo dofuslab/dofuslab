@@ -1024,7 +1024,7 @@
         "Quand le porteur occasionne un coup critique, il gagne des dommages de poussée pour 2 tours, cumulable 5 fois."
       ],
       "de": [
-        "Wenn der Träger einen kritischen Treffer landet, gewinnt er 2 Runden lang Schubsschaden, der bis zu 5 Mal kumulierbar ist."
+        "Wenn der Träger einen kritischen Treffer landet, gewinnt er 2 Runden lang Schubsschaden, der bis zu 5 Mal kumulierbar ist."
       ],
       "es": [
         "Cuando el portador ocasiona un golpe crítico, gana daños de empuje durante 2 turnos, acumulable 5 veces."
@@ -1245,7 +1245,7 @@
         "Si le porteur est au contact d'un ennemi au début de son tour, il gagne 20 Retrait PM pour 1 tour, sinon, il gagne 30 Tacle. Quand le porteur tue un adversaire (hors invocations) avec des dommages directs, il gagne 1 PM jusqu'à la fin du combat, cumulable 3 fois maximum."
       ],
       "de": [
-        "Steht der Träger zu Beginn seiner Runde in Nahkampfentfernung zu einem Gegner, erhält er 1 Runde lang 20 BP-Entzug. Falls nicht, erhält er 30 Blocken. Tötet der Träger einen Gegner durch direkten Schaden (Beschwörungen ausgenommen), erhält er bis zum Ende des Kampfes 1 BP, der maximal 3 Mal kumulierbar ist."
+        "Steht der Träger zu Beginn seiner Runde in Nahkampfentfernung zu einem Gegner, erhält er 1 Runde lang 20 BP-Entzug. Falls nicht, erhält er 30 Blocken. Tötet der Träger einen Gegner durch direkten Schaden (Beschwörungen ausgenommen), erhält er bis zum Ende des Kampfes 1 BP, der maximal 3 Mal kumulierbar ist."
       ],
       "es": [
         "Si el portador está en contacto con un enemigo al principio de su turno, gana 20 de retirada de PM durante 1 turno, si no, gana 30 de placaje. Cuando el portador mata a un adversario (salvo invocaciones) con daños directos, gana 1 PM hasta el final del combate, acumulable un máximo de 3 veces."
@@ -5439,7 +5439,7 @@
         "Quand le porteur subit du retrait PA, PM ou PO, les dommages qu'il subit sont réduits de 4% pour 2 tours. Les dommages subis par l'attaquant sont augmentés de 4% pour 2 tours. Cumulable 3 fois maximum."
       ],
       "de": [
-        "Werden dem Träger AP, BP oder RW entzogen, wird der erlittene Schaden 2 Runden lang um 4 % reduziert. Der vom Angreifer erlittene Schaden wird 2 Runden lang um 4 % erhöht. Maximal 3 Mal kumulierbar."
+        "Werden dem Träger AP, BP oder RW entzogen, wird der erlittene Schaden 2 Runden lang um 4 % reduziert. Der vom Angreifer erlittene Schaden wird 2 Runden lang um 4 % erhöht. Maximal 3 Mal kumulierbar."
       ],
       "es": [
         "Cuando el portador sufre una retirada de PA, PM o AL, los daños que sufre se reducen un 4% durante 2 turnos. Los daños sufridos por el atacante aumentan un 4% durante 2 turnos. Acumulable 3 veces como máximo."
@@ -57965,5 +57965,56 @@
       }
     },
     "imageUrl": "item/4108.png"
+  },
+  {
+    "dofusID": "23627",
+    "name": {
+      "en": "Slayspirit Katana",
+      "fr": "Katana de Spiritueur",
+      "de": "Geistreichen-Katana",
+      "es": "Katana de espiritasesino",
+      "it": "Katana di Spiritassassino",
+      "pt": "Katana de Assassisp\u00edrito"
+    },
+    "itemType": "Sword",
+    "level": 160,
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Strength", "minStat": 41, "maxStat": 60 },
+      { "stat": "Intelligence", "minStat": 41, "maxStat": 60 },
+      { "stat": "Agility", "minStat": 41, "maxStat": 60 },
+      { "stat": "Critical Resistance", "minStat": null, "maxStat": -10 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 25 },
+      { "stat": "Dodge", "minStat": null, "maxStat": -20 },
+      { "stat": "Fire Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Air Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Earth Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Neutral Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "Critical Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Range", "minStat": null, "maxStat": -2 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 20,
+      "critBonusDamage": 7,
+      "weapon_effects": [
+        { "stat": "Air damage", "minStat": 10, "maxStat": 16 },
+        { "stat": "Fire damage", "minStat": 10, "maxStat": 16 },
+        { "stat": "Earth damage", "minStat": 10, "maxStat": 16 }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": { "and": [{ "stat": "AP", "operator": "<", "value": 12 }] },
+      "customConditions": {}
+    },
+    "imageUrl": "item/23627.png"
   }
 ]
