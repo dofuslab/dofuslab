@@ -254,7 +254,7 @@ class WeaponScraper:
         with open(os.path.join(dirname, "weapons.json"), "w") as json_file:
             json.dump(data, json_file)
 
-        if missed_items == []:
+        if missed_weapons == []:
             print("All weapon data successfully retrieved.")
         else:
             print("Some data was not successfully retrieved: {}".format(missed_weapons))
@@ -1242,24 +1242,24 @@ class DataAdjustment:
 
 
 if __name__ == "__main__":
-    # ItemScraper.get_all_item_ids()
-    # ItemScraper.get_data_for_ids(["23265"])
+    ItemScraper.get_all_item_ids()
+    ItemScraper.get_data_for_ids([])
 
-    # SetScraper.get_all_set_ids()
-    # SetScraper.get_set_data_for_ids()
+    SetScraper.get_all_set_ids()
+    SetScraper.get_set_data_for_ids()
 
-    # WeaponScraper.get_all_weapon_ids()
-    WeaponScraper.get_data_for_ids(["23316"])
+    WeaponScraper.get_all_weapon_ids()
+    WeaponScraper.get_data_for_ids([])
 
-    # PetScraper.get_all_pet_ids()
-    # PetScraper.get_pet_data_for_ids()
+    PetScraper.get_all_pet_ids()
+    PetScraper.get_pet_data_for_ids()
 
-    # MountScraper.get_all_mount_ids()
-    # MountScraper.get_mount_data_for_ids()
+    MountScraper.get_all_mount_ids()
+    MountScraper.get_mount_data_for_ids()
 
-    # class_scraper = ClassScraper()
-    # class_scraper.get_data_for_classes([])
+    class_scraper = ClassScraper()
+    class_scraper.get_data_for_classes([])
 
-    # DataAdjustment.add_missing_trophy_conditions()
-    # DataAdjustment.add_missing_item_details()
-    # DataAdjustment.change_condition_case()
+    DataAdjustment.add_missing_trophy_conditions()
+    DataAdjustment.add_missing_item_details()
+    DataAdjustment.change_condition_case()
