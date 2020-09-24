@@ -161,14 +161,15 @@ def get_stats(all_soups):
             # char count analysis to separate the 2. This will need testing
             # or refactoring at a later time
             if len(description) > 40:
-                custom_stats = {
-                    "en": [],
-                    "fr": [],
-                    "de": [],
-                    "es": [],
-                    "it": [],
-                    "pt": [],
-                }
+                if custom_stats == {}:
+                    custom_stats = {
+                        "en": [],
+                        "fr": [],
+                        "de": [],
+                        "es": [],
+                        "it": [],
+                        "pt": [],
+                    }
                 for key, value in all_soups.items():
                     custom_stat = (
                         value.find(
