@@ -46590,36 +46590,6 @@
     "imageUrl": "item/11262.png"
   },
   {
-    "dofusID": "8715",
-    "name": {
-      "en": "Blaber Ring",
-      "fr": "Bague Houx",
-      "de": "Würfelring",
-      "es": "Anillo del Craps",
-      "it": "Anello Bla",
-      "pt": "Anel Blaber"
-    },
-    "itemType": "Ring",
-    "setID": "88",
-    "level": 150,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Trickery spell's maximum range by 2"],
-      "fr": ["Augmente la portée maximale du sort Tromperie de 2"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Blendwerk um 2."
-      ],
-      "es": ["Aumenta en 2 el alcance máximo del hechizo Truco."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Inganno di 2"],
-      "pt": ["Aumenta o alcance máximo do feitiço Enganação em 2"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/9127.png"
-  },
-  {
     "dofusID": "12630",
     "name": {
       "en": "Major Friction",
@@ -47157,112 +47127,6 @@
     "imageUrl": "item/151204.png"
   },
   {
-    "dofusID": "8719",
-    "name": {
-      "en": "Rememb Ring",
-      "fr": "Anneau Stalgik",
-      "de": "Konservato-Ring",
-      "es": "Anillo Stálgico",
-      "it": "Anello Stalgico",
-      "pt": "Anel Lemb"
-    },
-    "itemType": "Ring",
-    "setID": "85",
-    "level": 150,
-    "stats": [],
-    "customStats": {
-      "en": ["20% Critical Hit bonus on the Ghostly Spade spell"],
-      "fr": ["20% Critique sur le sort Bêche Fantomatique"],
-      "de": ["20% KT beim Zauber: Phantomspaten"],
-      "es": ["20% crítico del hechizo Laya Fantomática"],
-      "it": ["20% CC sull'incantesimo Vanga Fantomatica"],
-      "pt": ["20% de crítico para o feitiço Enxada Fantasmagórica"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/9131.png"
-  },
-  {
-    "dofusID": "8724",
-    "name": {
-      "en": "Hai Ring",
-      "fr": "Anneau Pwal",
-      "de": "Haar-Harr-Ring",
-      "es": "Anillo Peludo",
-      "it": "Anello Pelo",
-      "pt": "Anel Relva"
-    },
-    "itemType": "Ring",
-    "setID": "90",
-    "level": 150,
-    "stats": [],
-    "customStats": {
-      "en": ["Reduces the Ultra-Powerful spell's cooldown period by 1"],
-      "fr": ["Réduit de 1 le délai de relance du sort Surpuissante"],
-      "de": ["Senkt den Cooldown des Zaubers Superpüppchen um 1"],
-      "es": [
-        "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Superpoderosa"
-      ],
-      "it": [
-        "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Strapotente"
-      ],
-      "pt": ["Reduz em 1 o intervalo de relançamento do feitiço Superpoderosa"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/9136.png"
-  },
-  {
-    "dofusID": "12394",
-    "name": {
-      "en": "Mithik Bracelet",
-      "fr": "Bracelet Jande",
-      "de": "Armreif der Legenden",
-      "es": "Brazalete Yenda",
-      "it": "Bracciale Leggenda",
-      "pt": "Bracelete Mithik"
-    },
-    "itemType": "Ring",
-    "setID": "218",
-    "level": 150,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "Reduces the Plastron spell's AP cost by 1",
-        "Reduces the Ginga spell's AP cost by 1"
-      ],
-      "fr": [
-        "Réduit de 1 le coût en PA du sort Plastron",
-        "Réduit de 1 le coût en PA du sort Ginga"
-      ],
-      "de": [
-        "Senkt die AP-Kosten des Zaubers Plastromni um 1",
-        "Senkt die AP-Kosten des Zaubers Ginga um 1"
-      ],
-      "es": [
-        "Reduce en 1 el número de PA que cuesta el hechizo Coraza.",
-        "Reduce en 1 el número de PA que cuesta el hechizo Ginga."
-      ],
-      "it": [
-        "Diminuisce di 1 il costo di PA dell'incantesimo Piastra",
-        "Diminuisce di 1 il costo di PA dell'incantesimo Ginga"
-      ],
-      "pt": [
-        "Reduz em 1 o custo de PA do feitiço Plastrão",
-        "Reduz em 1 o custo de PA do feitiço Ginga"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/9235.png"
-  },
-  {
     "dofusID": "12636",
     "name": {
       "en": "Major Fugitive",
@@ -47477,38 +47341,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/151078.png"
-  },
-  {
-    "dofusID": "13265",
-    "name": {
-      "en": "Pressure Ring",
-      "fr": "Steamanneau Maître",
-      "de": "Baron Meters Ring",
-      "es": "Manometranillo",
-      "it": "Steamanello Maestro",
-      "pt": "Steamanel Mestre"
-    },
-    "itemType": "Ring",
-    "setID": "250",
-    "level": 150,
-    "stats": [],
-    "customStats": {
-      "en": ["Reduces the Covering spell's cooldown period by 1"],
-      "fr": ["Réduit de 1 le délai de relance du sort Revêtement"],
-      "de": ["Senkt den Cooldown des Zaubers Überzug um 1"],
-      "es": [
-        "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Revestimiento"
-      ],
-      "it": [
-        "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Rivestimento"
-      ],
-      "pt": ["Reduz em 1 o intervalo de relançamento do feitiço Revestimento"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/9250.png"
   },
   {
     "dofusID": "13756",
@@ -47996,114 +47828,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/82022.png"
-  },
-  {
-    "dofusID": "8717",
-    "name": {
-      "en": "Ring Bellious",
-      "fr": "Bague Harre",
-      "de": "Wessen-Ring",
-      "es": "Pulserriña",
-      "it": "Anello Rissa",
-      "pt": "Anel Bellious"
-    },
-    "itemType": "Ring",
-    "setID": "81",
-    "level": 150,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "Increases the Virtue spell's maximum range by 1",
-        "Accumulation is no longer linear"
-      ],
-      "fr": [
-        "Augmente la portée maximale du sort Vertu de 1",
-        "Désactive le lancer en ligne du sort Accumulation"
-      ],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Tugendhaftigkeit um 1.",
-        "Deaktiviert die lineare Wirkungsweise für den Zauber Ansammlung"
-      ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Virtud.",
-        "Desactiva el lanzamiento en línea recta del hechizo Acumulación"
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Virtù di 1",
-        "Disattiva il lancio in linea dell'incantesimo Accumulo"
-      ],
-      "pt": [
-        "Aumenta o alcance máximo do feitiço Virtude em 1",
-        "Desativa o lançamento em linha do feitiço Acumulação"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/9129.png"
-  },
-  {
-    "dofusID": "8725",
-    "name": {
-      "en": "Ring Neinwonwon",
-      "fr": "Anneau Pitale",
-      "de": "SOS-Ring (So-oder-So)",
-      "es": "Hospit Anillo",
-      "it": "Anello Spedale",
-      "pt": "Anel Neinwonwon"
-    },
-    "itemType": "Ring",
-    "setID": "87",
-    "level": 150,
-    "stats": [],
-    "customStats": {
-      "en": ["Reduces the Jashin Ritual spell's AP cost by 1"],
-      "fr": ["Réduit de 1 le coût en PA du sort Rituel de Jashin"],
-      "de": ["Senkt die AP-Kosten des Zaubers Jashins Ritual um 1"],
-      "es": [
-        "Reduce en 1 el número de PA que cuesta el hechizo Ritual de Jashin."
-      ],
-      "it": [
-        "Diminuisce di 1 il costo di PA dell'incantesimo Rituale di Jashin"
-      ],
-      "pt": ["Reduz em 1 o custo de PA do feitiço Ritual de Jashin"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/9137.png"
-  },
-  {
-    "dofusID": "12393",
-    "name": {
-      "en": "Enig Mittens",
-      "fr": "Mitaine Aibre",
-      "de": "Handschuhe der dunklen Magie",
-      "es": "Mitones Curidad",
-      "it": "Guanto Tenebra",
-      "pt": "Luvas Enig"
-    },
-    "itemType": "Ring",
-    "setID": "217",
-    "level": 150,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Imposture spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Imposture de 1"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Vorgaukelung um 1."
-      ],
-      "es": ["Aumenta en 1 el alcance máximo del hechizo Impostura."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Impostura di 1"],
-      "pt": ["Aumenta o alcance máximo do feitiço Impostura em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/9234.png"
   },
   {
     "dofusID": "12633",
@@ -48683,112 +48407,6 @@
     "imageUrl": "item/151234.png"
   },
   {
-    "dofusID": "17452",
-    "name": {
-      "en": "Oringinal",
-      "fr": "Anneau Riginel",
-      "de": "Kein Ring sie zu knechten",
-      "es": "Anillo rúnico",
-      "it": "Anello Originale",
-      "pt": "Anel original"
-    },
-    "itemType": "Ring",
-    "setID": "392",
-    "level": 150,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Hurricane spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Ouragan de 1"],
-      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Orkan um 1."],
-      "es": ["Aumenta en 1 el alcance máximo del hechizo Huracán."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Uragano di 1"],
-      "pt": ["Aumenta o alcance máximo do feitiço Furacão em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/9312.png"
-  },
-  {
-    "dofusID": "18615",
-    "name": {
-      "en": "Bone Band",
-      "fr": "Anneau Nos",
-      "de": "Knochi-Ring",
-      "es": "Anillóseo",
-      "it": "Anello Osso",
-      "pt": "Anelosso"
-    },
-    "itemType": "Ring",
-    "setID": "430",
-    "level": 150,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "20% Critical Hit bonus on the Carving Up spell",
-        "Doggedness is no longer linear"
-      ],
-      "fr": [
-        "20% Critique sur le sort Dépeçage",
-        "Désactive le lancer en ligne du sort Acharnement"
-      ],
-      "de": [
-        "20% KT beim Zauber: Zerlegung",
-        "Deaktiviert die lineare Wirkungsweise für den Zauber Vitatox"
-      ],
-      "es": [
-        "20% crítico del hechizo Despiece",
-        "Desactiva el lanzamiento en línea recta del hechizo Ensañamiento"
-      ],
-      "it": [
-        "20% CC sull'incantesimo Tagliuzzamento",
-        "Disattiva il lancio in linea dell'incantesimo Accanimento"
-      ],
-      "pt": [
-        "20% de crítico para o feitiço Desmembramento",
-        "Desativa o lançamento em linha do feitiço Casmurrice"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/9325.png"
-  },
-  {
-    "dofusID": "8714",
-    "name": {
-      "en": "Honoh Ring",
-      "fr": "Anneau Bhli",
-      "de": "Spannring",
-      "es": "Divin Anillo",
-      "it": "Anello Bhli",
-      "pt": "Anel de Honra"
-    },
-    "itemType": "Ring",
-    "setID": "82",
-    "level": 150,
-    "stats": [],
-    "customStats": {
-      "en": ["Reduces the Sentinel spell's cooldown period by 1"],
-      "fr": ["Réduit de 1 le délai de relance du sort Sentinelle"],
-      "de": ["Senkt den Cooldown des Zaubers Wache um 1"],
-      "es": [
-        "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Centinela"
-      ],
-      "it": [
-        "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Sentinella"
-      ],
-      "pt": ["Reduz em 1 o intervalo de relançamento do feitiço Sentinela"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/9126.png"
-  },
-  {
     "dofusID": "8721",
     "name": {
       "en": "Ear Ring",
@@ -48833,34 +48451,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/9133.png"
-  },
-  {
-    "dofusID": "8723",
-    "name": {
-      "en": "Subma Ring",
-      "fr": "Anneau Tilus",
-      "de": "Subma-Ring",
-      "es": "Puntu Alianza",
-      "it": "Anello Autilus",
-      "pt": "Anel Subma"
-    },
-    "itemType": "Ring",
-    "setID": "86",
-    "level": 150,
-    "stats": [],
-    "customStats": {
-      "en": ["15% Critical Hit bonus on the Petrification spell"],
-      "fr": ["15% Critique sur le sort Pétrification"],
-      "de": ["15% KT beim Zauber: Versteinerung"],
-      "es": ["15% crítico del hechizo Petrificación"],
-      "it": ["15% CC sull'incantesimo Pietrificazione"],
-      "pt": ["15% de crítico para o feitiço Petrificação"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/9135.png"
   },
   {
     "dofusID": "12624",
@@ -49366,36 +48956,6 @@
     "imageUrl": "item/9260.png"
   },
   {
-    "dofusID": "16144",
-    "name": {
-      "en": "Nova Ring",
-      "fr": "Anneau Vae",
-      "de": "Nova-Ring",
-      "es": "Anillo nova",
-      "it": "Anello Nova",
-      "pt": "Novanel"
-    },
-    "itemType": "Ring",
-    "setID": "370",
-    "level": 150,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Insolence spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Insolence de 1"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Unverfrorenheit um 1."
-      ],
-      "es": ["Aumenta en 1 el alcance máximo del hechizo Insolencia."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Insolenza di 1"],
-      "pt": ["Aumenta o alcance máximo do feitiço Insolência em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/9305.png"
-  },
-  {
     "dofusID": "16190",
     "name": {
       "en": "Major Curer",
@@ -49571,34 +49131,6 @@
     "imageUrl": "item/151259.png"
   },
   {
-    "dofusID": "8716",
-    "name": {
-      "en": "Lion Ring",
-      "fr": "Bague Héra",
-      "de": "Blutrüns Tigerring",
-      "es": "Col Anillo",
-      "it": "Anello Zoo",
-      "pt": "Anel Leão"
-    },
-    "itemType": "Ring",
-    "setID": "84",
-    "level": 150,
-    "stats": [],
-    "customStats": {
-      "en": ["15% Critical Hit bonus on the Gobball Fleece spell"],
-      "fr": ["15% Critique sur le sort Toison Bouffante"],
-      "de": ["15% KT beim Zauber: Bauschiges Fell"],
-      "es": ["15% crítico del hechizo Melena Voluminosa"],
-      "it": ["15% CC sull'incantesimo Vello Pappante"],
-      "pt": ["15% de crítico para o feitiço Lã Farta"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/9128.png"
-  },
-  {
     "dofusID": "8718",
     "name": {
       "en": "Memo Ring",
@@ -49659,36 +49191,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/9132.png"
-  },
-  {
-    "dofusID": "8722",
-    "name": {
-      "en": "Elkebi Ring",
-      "fr": "Anneau Hell",
-      "de": "Hallow-Reeng",
-      "es": "Avernillo",
-      "it": "Anello Hell",
-      "pt": "Anel Elkebi"
-    },
-    "itemType": "Ring",
-    "setID": "89",
-    "level": 150,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Plotter spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Comploteur de 1"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Verschwörer um 1."
-      ],
-      "es": ["Aumenta en 1 el alcance máximo del hechizo Conspirador."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Complottatore di 1"],
-      "pt": ["Aumenta o alcance máximo do feitiço Conspirador em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/9134.png"
   },
   {
     "dofusID": "12693",
@@ -55001,68 +54503,6 @@
     "imageUrl": "item/17206.png"
   },
   {
-    "dofusID": "8652",
-    "name": {
-      "en": "Belt Sterous",
-      "fr": "Ceinture Buhlent",
-      "de": "66er",
-      "es": "Cinturón Baraja",
-      "it": "Cintura Zardo",
-      "pt": "Cinto Urbulento"
-    },
-    "itemType": "Belt",
-    "setID": "88",
-    "level": 130,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Pawpads spell's maximum range by 2"],
-      "fr": ["Augmente la portée maximale du sort Coussinets de 2"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Kleine Polster um 2."
-      ],
-      "es": ["Aumenta en 2 el alcance máximo del hechizo Almohadillas."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Cuscinetti di 2"],
-      "pt": ["Aumenta o alcance máximo do feitiço Amortecimento em 2"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/10117.png"
-  },
-  {
-    "dofusID": "8660",
-    "name": {
-      "en": "Targ Belt",
-      "fr": "Sangle Cible",
-      "de": "Dart-Gurt",
-      "es": "Cincha diana",
-      "it": "Cintura Bersaglio",
-      "pt": "Cinto Targ"
-    },
-    "itemType": "Belt",
-    "setID": "82",
-    "level": 130,
-    "stats": [],
-    "customStats": {
-      "en": ["Reduces the Tactical Beacon spell's cooldown period by 1"],
-      "fr": ["Réduit de 1 le délai de relance du sort Balise Tactique"],
-      "de": ["Senkt den Cooldown des Zaubers Taktische Markierung um 1"],
-      "es": [
-        "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Baliza Táctica"
-      ],
-      "it": [
-        "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Elementale Tattico"
-      ],
-      "pt": ["Reduz em 1 o intervalo de relançamento do feitiço Baliza Tática"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/10125.png"
-  },
-  {
     "dofusID": "8661",
     "name": {
       "en": "Girdle Belt",
@@ -55089,34 +54529,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/10126.png"
-  },
-  {
-    "dofusID": "13264",
-    "name": {
-      "en": "Buoy's Belt",
-      "fr": "Ceinture Blot",
-      "de": "Bullau-Gürtel",
-      "es": "Cinturojo Debuhey",
-      "it": "Cinturoblò",
-      "pt": "Cinto Olho"
-    },
-    "itemType": "Belt",
-    "setID": "250",
-    "level": 130,
-    "stats": [],
-    "customStats": {
-      "en": ["20% Critical Hit bonus on the Nautilus spell"],
-      "fr": ["20% Critique sur le sort Nautile"],
-      "de": ["20% KT beim Zauber: Nautilus"],
-      "es": ["20% crítico del hechizo Nautilo"],
-      "it": ["20% CC sull'incantesimo Nautilo"],
-      "pt": ["20% de crítico para o feitiço Náutilo"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/10230.png"
   },
   {
     "dofusID": "15358",
@@ -55181,36 +54593,6 @@
     "imageUrl": "item/9291.png"
   },
   {
-    "dofusID": "16143",
-    "name": {
-      "en": "Cyclone Belt",
-      "fr": "Ceinture Billonnante",
-      "de": "Zyklon-Gürtel",
-      "es": "Cinturón ciclón",
-      "it": "Cintura Ciclonica",
-      "pt": "Cinto ciclônico"
-    },
-    "itemType": "Belt",
-    "setID": "370",
-    "level": 130,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Contraction spell's maximum range by 2"],
-      "fr": ["Augmente la portée maximale du sort Contraction de 2"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Kompression um 2."
-      ],
-      "es": ["Aumenta en 2 el alcance máximo del hechizo Contracción."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Contrazione di 2"],
-      "pt": ["Aumenta o alcance máximo do feitiço Contração em 2"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/10290.png"
-  },
-  {
     "dofusID": "1488",
     "name": {
       "en": "Plimclik",
@@ -55246,38 +54628,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/1123.png"
-  },
-  {
-    "dofusID": "8651",
-    "name": {
-      "en": "Bloody Belt",
-      "fr": "Sangle Hynère",
-      "de": "Blurt-Gurt",
-      "es": "Correa Litichow",
-      "it": "Cintura Inaria",
-      "pt": "Cinto Sangrento"
-    },
-    "itemType": "Belt",
-    "setID": "81",
-    "level": 130,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Fight Back spell's maximum range by 3"],
-      "fr": ["Augmente la portée maximale du sort Coup pour coup de 3"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Schlag um Schlag um 3."
-      ],
-      "es": ["Aumenta en 3 el alcance máximo del hechizo Golpe por Golpe."],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Colpo per Colpo di 3"
-      ],
-      "pt": ["Aumenta o alcance máximo do feitiço Dar o Troco em 3"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/10116.png"
   },
   {
     "dofusID": "15359",
@@ -55434,34 +54784,6 @@
     "imageUrl": "item/11270.png"
   },
   {
-    "dofusID": "17451",
-    "name": {
-      "en": "The Elebelt",
-      "fr": "L'Élémenture",
-      "de": "Elementargürtel",
-      "es": "Elementurón",
-      "it": "L'Elementura",
-      "pt": "Elemencinto"
-    },
-    "itemType": "Belt",
-    "setID": "392",
-    "level": 130,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Flood spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Déluge de 1"],
-      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Sintflut um 1."],
-      "es": ["Aumenta en 1 el alcance máximo del hechizo Diluvio."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Diluvio di 1"],
-      "pt": ["Aumenta o alcance máximo do feitiço Dilúvio em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/10306.png"
-  },
-  {
     "dofusID": "18435",
     "name": {
       "en": "El Piko Ring",
@@ -55579,46 +54901,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/82012.png"
-  },
-  {
-    "dofusID": "8654",
-    "name": {
-      "en": "Sleepless Belt",
-      "fr": "Ceinture Lupine",
-      "de": "Uhr-Guhrt",
-      "es": "Cinto O'rario",
-      "it": "Cintura Ticchettac",
-      "pt": "Cinto Insônia"
-    },
-    "itemType": "Belt",
-    "setID": "86",
-    "level": 130,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "Increases the maximum number of times Temporal Distortion can be cast per turn by 1"
-      ],
-      "fr": [
-        "Augmente de 1 le nombre de lancer maximal par tour du sort Distorsion Temporelle"
-      ],
-      "de": [
-        "Erhöht das Maximum an Zaubern pro Runde für den Zauber Zeitverschiebung um 1"
-      ],
-      "es": [
-        "+1 al número máximo de veces por turno que se puede lanzar el hechizo Distorsión Temporal"
-      ],
-      "it": [
-        "Aumenta di 1 il numero di lanci massimi per turno dell'incantesimo Distorsione Temporale"
-      ],
-      "pt": [
-        "Aumenta em 1 o número máximo de lançamentos por turno do feitiço Distorção Temporal"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/10119.png"
   },
   {
     "dofusID": "8659",
@@ -55748,92 +55030,6 @@
     "imageUrl": "item/16274.png"
   },
   {
-    "dofusID": "12391",
-    "name": {
-      "en": "Glisserin Belt",
-      "fr": "Sangle Hyssérine",
-      "de": "Nitros Glitzerriemen",
-      "es": "Cinturón Daxpansiva",
-      "it": "Cintura Glicerina",
-      "pt": "Cinto de Glicerina"
-    },
-    "itemType": "Belt",
-    "setID": "217",
-    "level": 130,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "Increases the maximum number of times Sticky Bomb can be cast per turn by 1"
-      ],
-      "fr": [
-        "Augmente de 1 le nombre de lancer maximal par tour du sort Bombe Collante"
-      ],
-      "de": [
-        "Erhöht das Maximum an Zaubern pro Runde für den Zauber Klebrige Bombe um 1"
-      ],
-      "es": [
-        "+1 al número máximo de veces por turno que se puede lanzar el hechizo Bomba Pegajosa"
-      ],
-      "it": [
-        "Aumenta di 1 il numero di lanci massimi per turno dell'incantesimo Bomba Appiccicosa"
-      ],
-      "pt": [
-        "Aumenta em 1 o número máximo de lançamentos por turno do feitiço Bomba Pegajosa"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/10210.png"
-  },
-  {
-    "dofusID": "12392",
-    "name": {
-      "en": "Retchual Rope",
-      "fr": "Corde Ure",
-      "de": "Mutschnur",
-      "es": "Cuerda Sura",
-      "it": "Cintura Barile",
-      "pt": "Corda Retchual"
-    },
-    "itemType": "Belt",
-    "setID": "218",
-    "level": 130,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "25% Critical Hit bonus on the Brincaderia spell",
-        "Apostasy is no longer linear"
-      ],
-      "fr": [
-        "25% Critique sur le sort Brincaderia",
-        "Désactive le lancer en ligne du sort Apostasie"
-      ],
-      "de": [
-        "25% KT beim Zauber: Brincaderia",
-        "Deaktiviert die lineare Wirkungsweise für den Zauber Apostasie"
-      ],
-      "es": [
-        "25% crítico del hechizo Brincaderia",
-        "Desactiva el lanzamiento en línea recta del hechizo Apostasía"
-      ],
-      "it": [
-        "25% CC sull'incantesimo Brincaderia",
-        "Disattiva il lancio in linea dell'incantesimo Apostasia"
-      ],
-      "pt": [
-        "25% de crítico para o feitiço Brincadeira",
-        "Desativa o lançamento em linha do feitiço Apostasia"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/10211.png"
-  },
-  {
     "dofusID": "20983",
     "name": {
       "en": "Snackpack Sack",
@@ -55901,34 +55097,6 @@
     "imageUrl": "item/81069.png"
   },
   {
-    "dofusID": "8653",
-    "name": {
-      "en": "Clinkin Belt",
-      "fr": "Sangle Glinglin",
-      "de": "Klackerdieklacker-Gurt",
-      "es": "Cinto Hreru",
-      "it": "Cintura Calende Greche",
-      "pt": "Cinto Clinkin"
-    },
-    "itemType": "Belt",
-    "setID": "89",
-    "level": 130,
-    "stats": [],
-    "customStats": {
-      "en": ["Makes the Waylaying spell's range modifiable"],
-      "fr": ["Rend la portée du sort Guet-apens modifiable"],
-      "de": ["Die Reichweite des Zaubers Auflauern wird steigerbar"],
-      "es": ["Vuelve modificable el alcance del hechizo Zalagarda"],
-      "it": ["Rende modificabile la portata dell'incantesimo Agguato"],
-      "pt": ["Torna possível mudar o alcance do feitiço Tocaia"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/10118.png"
-  },
-  {
     "dofusID": "8655",
     "name": {
       "en": "Blub Belt",
@@ -55973,68 +55141,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/10120.png"
-  },
-  {
-    "dofusID": "8657",
-    "name": {
-      "en": "Strap Pado",
-      "fr": "Sangle Hans",
-      "de": "Krawattschurz",
-      "es": "Cinto Orturator",
-      "it": "Cintura Blad",
-      "pt": "Strap Pado"
-    },
-    "itemType": "Belt",
-    "setID": "87",
-    "level": 130,
-    "stats": [],
-    "customStats": {
-      "en": ["Reduces the Bloodthirsty Madness spell's cooldown period by 1"],
-      "fr": ["Réduit de 1 le délai de relance du sort Folie Sanguinaire"],
-      "de": ["Senkt den Cooldown des Zaubers Blutiger Wahnsinn um 1"],
-      "es": [
-        "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Locura Sanguinaria"
-      ],
-      "it": [
-        "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Follia Sanguinaria"
-      ],
-      "pt": [
-        "Reduz em 1 o intervalo de relançamento do feitiço Loucura Sanguinária"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/10122.png"
-  },
-  {
-    "dofusID": "8658",
-    "name": {
-      "en": "Diezzle Belt",
-      "fr": "Ceinture Bodiézèle",
-      "de": "Tswangs Gürtel",
-      "es": "Cinto'Rbodyezel",
-      "it": "Cintura Bolzebù",
-      "pt": "Cinto Diezzle"
-    },
-    "itemType": "Belt",
-    "setID": "84",
-    "level": 130,
-    "stats": [],
-    "customStats": {
-      "en": ["Duster no longer requires a line of sight"],
-      "fr": ["Désactive la ligne de vue du sort Plumeau"],
-      "de": ["Deaktiviert die Sichtlinie für den Zauber Staubwedel"],
-      "es": ["Desactiva la línea de visión del hechizo Plumero"],
-      "it": ["Disattiva la linea di tiro dell'incantesimo Piumino"],
-      "pt": ["Desativa a linha de visão do feitiço Penacho"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/10123.png"
   },
   {
     "dofusID": "8458",
@@ -56117,66 +55223,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/17125.png"
-  },
-  {
-    "dofusID": "8656",
-    "name": {
-      "en": "Belt Atio",
-      "fr": "Ceinture Luthe",
-      "de": "Düpier-Gürtel",
-      "es": "Cintelación",
-      "it": "Cintura Lazione",
-      "pt": "Cinto Atio"
-    },
-    "itemType": "Belt",
-    "setID": "90",
-    "level": 130,
-    "stats": [],
-    "customStats": {
-      "en": ["Leafy Tree no longer requires a line of sight"],
-      "fr": ["Désactive la ligne de vue du sort Arbre Feuillu"],
-      "de": ["Deaktiviert die Sichtlinie für den Zauber Laubbaum"],
-      "es": ["Desactiva la línea de visión del hechizo Árbol Frondoso"],
-      "it": ["Disattiva la linea di tiro dell'incantesimo Albero Frondoso"],
-      "pt": ["Desativa a linha de visão do feitiço Árvore Frondosa"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/10121.png"
-  },
-  {
-    "dofusID": "8662",
-    "name": {
-      "en": "Belt Urgid",
-      "fr": "Ceinture Gessant",
-      "de": "Leitgurt",
-      "es": "Cinto Rhente",
-      "it": "Cintura Gessante",
-      "pt": "Cinto Mescente"
-    },
-    "itemType": "Belt",
-    "setID": "85",
-    "level": 130,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Spade Kiss spell's maximum range by 2"],
-      "fr": ["Augmente la portée maximale du sort Roulage de Bêche de 2"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Herumwirbelnder Spaten um 2."
-      ],
-      "es": ["Aumenta en 2 el alcance máximo del hechizo Jarabe de Laya."],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Limonata di Vanga di 2"
-      ],
-      "pt": ["Aumenta o alcance máximo do feitiço Enxada Virada em 2"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/10127.png"
   },
   {
     "dofusID": "11584",
@@ -56269,52 +55315,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/10177.png"
-  },
-  {
-    "dofusID": "18622",
-    "name": {
-      "en": "Belting Belt",
-      "fr": "Ceinture Leumant",
-      "de": "Vergnügürtel",
-      "es": "Cinturón azotón",
-      "it": "Cintura Ululato",
-      "pt": "Cintortura"
-    },
-    "itemType": "Belt",
-    "setID": "430",
-    "level": 130,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "Reduces the Vertebra spell's AP cost by 1",
-        "Pursuit is no longer linear"
-      ],
-      "fr": [
-        "Réduit de 1 le coût en PA du sort Vertèbre",
-        "Désactive le lancer en ligne du sort Poursuite"
-      ],
-      "de": [
-        "Senkt die AP-Kosten des Zaubers Wirbel um 1",
-        "Deaktiviert die lineare Wirkungsweise für den Zauber Verfolgung"
-      ],
-      "es": [
-        "Reduce en 1 el número de PA que cuesta el hechizo Vértebra.",
-        "Desactiva el lanzamiento en línea recta del hechizo Caza"
-      ],
-      "it": [
-        "Diminuisce di 1 il costo di PA dell'incantesimo Vertebra",
-        "Disattiva il lancio in linea dell'incantesimo Inseguimento"
-      ],
-      "pt": [
-        "Reduz em 1 o custo de PA do feitiço Vértebra",
-        "Desativa o lançamento em linha do feitiço Perseguição"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/10321.png"
   },
   {
     "dofusID": "8287",
@@ -66451,118 +65451,6 @@
     "imageUrl": "item/9058.png"
   },
   {
-    "dofusID": "8663",
-    "name": {
-      "en": "Boot-a-Hoop",
-      "fr": "Bottes Antrin",
-      "de": "Imafrohs Drauflos-Stiefel",
-      "es": "Botas altante",
-      "it": "Stivali Show",
-      "pt": "Bota-a-Aro"
-    },
-    "itemType": "Boots",
-    "setID": "81",
-    "level": 100,
-    "stats": [
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "customStats": {
-      "en": ["Reduces the Gathering spell's cooldown period by 1"],
-      "fr": ["Réduit de 1 le délai de relance du sort Rassemblement"],
-      "de": ["Senkt den Cooldown des Zaubers Aufmarsch um 1"],
-      "es": [
-        "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Congregación"
-      ],
-      "it": [
-        "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Raduno"
-      ],
-      "pt": ["Reduz em 1 o intervalo de relançamento do feitiço Ajuntamento"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/11100.png"
-  },
-  {
-    "dofusID": "8726",
-    "name": {
-      "en": "Crusuede Shoes",
-      "fr": "Chaussures Lepon-Davignon",
-      "de": "Geiger-Derwisch-Schuhe",
-      "es": "Zapatos Ginkel-Hy",
-      "it": "Scarpe Ballerine",
-      "pt": "Sapatos Perda"
-    },
-    "itemType": "Boots",
-    "setID": "85",
-    "level": 100,
-    "stats": [
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "customStats": {
-      "en": ["Increases the Shovelbrained spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Pelle en l'Air de 1"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Schaufel hoch um 1."
-      ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Con la Pala en las Nubes."
-      ],
-      "it": ["Aumenta la Portata massima dell'incantesimo Pala per Aria di 1"],
-      "pt": ["Aumenta o alcance máximo do feitiço Pá nas Nuvens em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/11109.png"
-  },
-  {
-    "dofusID": "12389",
-    "name": {
-      "en": "Doc Post-Martems",
-      "fr": "Bottes Opsy",
-      "de": "Autop-Stiefel",
-      "es": "Botas Opsya",
-      "it": "Stivali Autopsia",
-      "pt": "Documento de Pós-morte"
-    },
-    "itemType": "Boots",
-    "setID": "217",
-    "level": 100,
-    "stats": [
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "customStats": {
-      "en": ["Increases the Shrapnel spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Shrapnel de 1"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Schrapnell um 1."
-      ],
-      "es": ["Aumenta en 1 el alcance máximo del hechizo Perdigonazo."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Shrapnel di 1"],
-      "pt": ["Aumenta o alcance máximo do feitiço Shrapnel em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/11198.png"
-  },
-  {
     "dofusID": "12632",
     "name": {
       "en": "Oppressor",
@@ -67576,52 +66464,6 @@
     "imageUrl": "item/151242.png"
   },
   {
-    "dofusID": "18616",
-    "name": {
-      "en": "Bootarkies",
-      "fr": "Bottes Harcie",
-      "de": "Austreter-Stiefel",
-      "es": "Botas Masnada",
-      "it": "Stivali Autarchia",
-      "pt": "Botarquias"
-    },
-    "itemType": "Boots",
-    "setID": "430",
-    "level": 100,
-    "stats": [
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "customStats": {
-      "en": [
-        "Increases the maximum number of times Snuggletooth can be cast per turn by 1"
-      ],
-      "fr": [
-        "Augmente de 1 le nombre de lancer maximal par tour du sort Caninos"
-      ],
-      "de": [
-        "Erhöht das Maximum an Zaubern pro Runde für den Zauber Caninos um 1"
-      ],
-      "es": [
-        "+1 al número máximo de veces por turno que se puede lanzar el hechizo Caninos"
-      ],
-      "it": [
-        "Aumenta di 1 il numero di lanci massimi per turno dell'incantesimo Caninosso"
-      ],
-      "pt": [
-        "Aumenta em 1 o número máximo de lançamentos por turno do feitiço Caninos"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/11322.png"
-  },
-  {
     "dofusID": "737",
     "name": {
       "en": "Emerald Dofus",
@@ -67739,48 +66581,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/1066.png"
-  },
-  {
-    "dofusID": "12390",
-    "name": {
-      "en": "Notts O'Clever Clogs",
-      "fr": "Sabots Taj",
-      "de": "Holzpantoffel \"Held\"",
-      "es": "Zuecos Toso",
-      "it": "Sandali Sabotaggio",
-      "pt": "Tamancos de Notts O'Clever"
-    },
-    "itemType": "Boots",
-    "setID": "218",
-    "level": 100,
-    "stats": [
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "customStats": {
-      "en": ["Increases the Tireless Mask spell's maximum range by 1"],
-      "fr": [
-        "Augmente la portée maximale du sort Masque de l'Infatigable de 1"
-      ],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Maske des Unermüdlichen um 1."
-      ],
-      "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Máscara de Incansable."
-      ],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Maschera dell'Infaticabile di 1"
-      ],
-      "pt": ["Aumenta o alcance máximo do feitiço Máscara do Incansável em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/11199.png"
   },
   {
     "dofusID": "12623",
@@ -68187,70 +66987,6 @@
     "imageUrl": "item/10250.png"
   },
   {
-    "dofusID": "16142",
-    "name": {
-      "en": "Transit Boots",
-      "fr": "Bottes Ransitoires",
-      "de": "Transit-Stiefel",
-      "es": "Botas de tránsito",
-      "it": "Stivali Transitori",
-      "pt": "Botas transitórias"
-    },
-    "itemType": "Boots",
-    "setID": "370",
-    "level": 100,
-    "stats": [
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "customStats": {
-      "en": [
-        "Reduces the Distortion spell's AP cost by 1",
-        "Reduces the Exodus spell's AP cost by 1",
-        "Reduces the Offence spell's AP cost by 1",
-        "Affront is no longer linear"
-      ],
-      "fr": [
-        "Réduit de 1 le coût en PA du sort Distorsion",
-        "Réduit de 1 le coût en PA du sort Exode",
-        "Réduit de 1 le coût en PA du sort Offense",
-        "Désactive le lancer en ligne du sort Outrage"
-      ],
-      "de": [
-        "Senkt die AP-Kosten des Zaubers Verzerrung um 1",
-        "Senkt die AP-Kosten des Zaubers Exodus um 1",
-        "Senkt die AP-Kosten des Zaubers Brüskierung um 1",
-        "Deaktiviert die lineare Wirkungsweise für den Zauber Beleidigung"
-      ],
-      "es": [
-        "Reduce en 1 el número de PA que cuesta el hechizo Distorsión.",
-        "Reduce en 1 el número de PA que cuesta el hechizo Éxodo.",
-        "Reduce en 1 el número de PA que cuesta el hechizo Ofensiva.",
-        "Desactiva el lanzamiento en línea recta del hechizo Afrenta"
-      ],
-      "it": [
-        "Diminuisce di 1 il costo di PA dell'incantesimo Distorsione",
-        "Diminuisce di 1 il costo di PA dell'incantesimo Esodo",
-        "Diminuisce di 1 il costo di PA dell'incantesimo Offesa",
-        "Disattiva il lancio in linea dell'incantesimo Oltraggio"
-      ],
-      "pt": [
-        "Reduz em 1 o custo de PA do feitiço Distorção",
-        "Reduz em 1 o custo de PA do feitiço Êxodo",
-        "Reduz em 1 o custo de PA do feitiço Ofensa",
-        "Desativa o lançamento em linha do feitiço Injúria"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/11286.png"
-  },
-  {
     "dofusID": "16256",
     "name": {
       "en": "Neutral Devastator",
@@ -68555,40 +67291,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/11104.png"
-  },
-  {
-    "dofusID": "8670",
-    "name": {
-      "en": "Wawka Boots",
-      "fr": "Bottes Swana",
-      "de": "Sieben-Meilen-Pantoffeln",
-      "es": "Botaz Mania",
-      "it": "Stivali Smania",
-      "pt": "Botas Wana"
-    },
-    "itemType": "Boots",
-    "setID": "84",
-    "level": 100,
-    "stats": [
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "customStats": {
-      "en": ["Increases the First spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Prime de 1"],
-      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Prime um 1."],
-      "es": ["Aumenta en 1 el alcance máximo del hechizo Primero."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Prima di 1"],
-      "pt": ["Aumenta o alcance máximo do feitiço Primo em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/11107.png"
   },
   {
     "dofusID": "8727",
@@ -69152,46 +67854,6 @@
     "imageUrl": "item/151203.png"
   },
   {
-    "dofusID": "17450",
-    "name": {
-      "en": "Initial Boots",
-      "fr": "Bottes Initiales",
-      "de": "Siebenmeilenstiefel",
-      "es": "Botas iniciales",
-      "it": "Stivali Iniziali",
-      "pt": "Botas iniciais"
-    },
-    "itemType": "Boots",
-    "setID": "392",
-    "level": 100,
-    "stats": [
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "customStats": {
-      "en": ["Reduces the Elemental Guardian spell's cooldown period by 1"],
-      "fr": ["Réduit de 1 le délai de relance du sort Gardien Élémentaire"],
-      "de": ["Senkt den Cooldown des Zaubers Elementarwächter um 1"],
-      "es": [
-        "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Guardián Elemental"
-      ],
-      "it": [
-        "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Guardiano Elementale"
-      ],
-      "pt": [
-        "Reduz em 1 o intervalo de relançamento do feitiço Guardião Elementar"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/11303.png"
-  },
-  {
     "dofusID": "6812",
     "name": {
       "en": "Bwork Chief Briefs",
@@ -69334,132 +67996,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/1110.png"
-  },
-  {
-    "dofusID": "8664",
-    "name": {
-      "en": "Sleephairs",
-      "fr": "Charentaises à poils",
-      "de": "Haarige Mukuboots",
-      "es": "Zapatillas con pelos",
-      "it": "Scarpette Pelose",
-      "pt": "Sonecabelo"
-    },
-    "itemType": "Boots",
-    "setID": "88",
-    "level": 100,
-    "stats": [
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "customStats": {
-      "en": ["Reduces the Summoning Stroke spell's cooldown period by 1"],
-      "fr": ["Réduit de 1 le délai de relance du sort Caresse Invocatrice"],
-      "de": ["Senkt den Cooldown des Zaubers Heilende Tatzen um 1"],
-      "es": [
-        "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Caricia Invocadora"
-      ],
-      "it": [
-        "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Carezza Evocatrice"
-      ],
-      "pt": [
-        "Reduz em 1 o intervalo de relançamento do feitiço Carícia Invocadora"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/11105.png"
-  },
-  {
-    "dofusID": "8665",
-    "name": {
-      "en": "Boots Hox",
-      "fr": "Bottes Hox",
-      "de": "Botoxiner",
-      "es": "Botas Idermista",
-      "it": "Stivali Hox",
-      "pt": "Botas Hox"
-    },
-    "itemType": "Boots",
-    "setID": "89",
-    "level": 100,
-    "stats": [
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "customStats": {
-      "en": [
-        "15% Critical Hit bonus on the Cut-Throat spell",
-        "15 Damage on the spell: Tricky Blow"
-      ],
-      "fr": [
-        "15% Critique sur le sort Coupe-gorge",
-        "15 Dommages sur le sort Coup Sournois"
-      ],
-      "de": [
-        "15% KT beim Zauber: M. Euchel",
-        "15 Schaden beim Zauber: Tückischer Angriff"
-      ],
-      "es": [
-        "15% crítico del hechizo Rebanacuellos",
-        "15 daños del hechizo Golpe Solapado"
-      ],
-      "it": [
-        "15% CC sull'incantesimo Tagliagole",
-        "15 Danni sull'incantesimo Colpo Subdolo"
-      ],
-      "pt": [
-        "15% de crítico para o feitiço Degolador",
-        "15 danos para o feitiço Golpe Dissimulado"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/11102.png"
-  },
-  {
-    "dofusID": "8666",
-    "name": {
-      "en": "Shal'Hal Boots",
-      "fr": "Bottes Hairo",
-      "de": "Icellis Botten",
-      "es": "Zapato M'prano",
-      "it": "Stivali Aerografici",
-      "pt": "Botas Ero"
-    },
-    "itemType": "Boots",
-    "setID": "86",
-    "level": 100,
-    "stats": [
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "customStats": {
-      "en": ["Embalming no longer requires a line of sight"],
-      "fr": ["Désactive la ligne de vue du sort Embaumement"],
-      "de": ["Deaktiviert die Sichtlinie für den Zauber Einbalsamieren"],
-      "es": ["Desactiva la línea de visión del hechizo Embalsamamiento"],
-      "it": ["Disattiva la linea di tiro dell'incantesimo Imbalsamazione"],
-      "pt": ["Desativa a linha de visão do feitiço Embalsamamento"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/11103.png"
   },
   {
     "dofusID": "8713",
@@ -69637,40 +68173,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/151074.png"
-  },
-  {
-    "dofusID": "13263",
-    "name": {
-      "en": "Roboots",
-      "fr": "Bottes Omates",
-      "de": "Grundreter",
-      "es": "Robotas",
-      "it": "Stivali Automi",
-      "pt": "Botas Automa"
-    },
-    "itemType": "Boots",
-    "setID": "250",
-    "level": 100,
-    "stats": [
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "customStats": {
-      "en": ["15% Critical Hit bonus on the Torpedo spell"],
-      "fr": ["15% Critique sur le sort Torpille"],
-      "de": ["15% KT beim Zauber: Torpedo"],
-      "es": ["15% crítico del hechizo Torpedo"],
-      "it": ["15% CC sull'incantesimo Siluro"],
-      "pt": ["15% de crítico para o feitiço Torpedo"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/11220.png"
   },
   {
     "dofusID": "13773",
@@ -70370,124 +68872,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/23010.png"
-  },
-  {
-    "dofusID": "8668",
-    "name": {
-      "en": "Boots Hanik",
-      "fr": "Bottes Hanik",
-      "de": "Biotreter",
-      "es": "Botas Nicas",
-      "it": "Stivali Botanici",
-      "pt": "Botas Hanik"
-    },
-    "itemType": "Boots",
-    "setID": "90",
-    "level": 100,
-    "stats": [
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "customStats": {
-      "en": ["Increases the Bane spell's maximum range by 2"],
-      "fr": ["Augmente la portée maximale du sort Fléau de 2"],
-      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Geißel um 2."],
-      "es": ["Aumenta en 2 el alcance máximo del hechizo Plaga."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Flagello di 2"],
-      "pt": ["Aumenta o alcance máximo do feitiço Flagelo em 2"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/11101.png"
-  },
-  {
-    "dofusID": "8669",
-    "name": {
-      "en": "Nailed Thongs",
-      "fr": "Tong Aclou",
-      "de": "Fakirinas",
-      "es": "Chancla Vada",
-      "it": "Infrachiodo",
-      "pt": "Correias Pregadas"
-    },
-    "itemType": "Boots",
-    "setID": "87",
-    "level": 100,
-    "stats": [
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "customStats": {
-      "en": [
-        "Increases the maximum number of times Light Speed can be cast per turn by 1"
-      ],
-      "fr": [
-        "Augmente de 1 le nombre de lancer maximal par tour du sort Fulgurance"
-      ],
-      "de": [
-        "Erhöht das Maximum an Zaubern pro Runde für den Zauber Brillanz um 1"
-      ],
-      "es": [
-        "+1 al número máximo de veces por turno que se puede lanzar el hechizo Fulgor"
-      ],
-      "it": [
-        "Aumenta di 1 il numero di lanci massimi per turno dell'incantesimo Folgoramento"
-      ],
-      "pt": [
-        "Aumenta em 1 o número máximo de lançamentos por turno do feitiço Fulgurância"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/11106.png"
-  },
-  {
-    "dofusID": "8728",
-    "name": {
-      "en": "Veggie Boots",
-      "fr": "Bottes Deuradi",
-      "de": "Karottenbotten",
-      "es": "Botas Delappioh",
-      "it": "Stivali Gadget",
-      "pt": "Botas Veggie"
-    },
-    "itemType": "Boots",
-    "setID": "82",
-    "level": 100,
-    "stats": [
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "customStats": {
-      "en": ["Reduces the Tyrannical Arrow spell's AP cost by 1"],
-      "fr": ["Réduit de 1 le coût en PA du sort Flèche Tyrannique"],
-      "de": ["Senkt die AP-Kosten des Zaubers Tyrannischer Pfeil um 1"],
-      "es": [
-        "Reduce en 1 el número de PA que cuesta el hechizo Flecha Tiránica."
-      ],
-      "it": [
-        "Diminuisce di 1 il costo di PA dell'incantesimo Freccia Tirannica"
-      ],
-      "pt": ["Reduz em 1 o custo de PA do feitiço Flecha Tirânica"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/11111.png"
   },
   {
     "dofusID": "12641",
@@ -76003,66 +74387,6 @@
     "imageUrl": "item/17120.png"
   },
   {
-    "dofusID": "8646",
-    "name": {
-      "en": "Cape Anama",
-      "fr": "Cape Lyne",
-      "de": "Häme-Umhang",
-      "es": "Capa Lina",
-      "it": "Mantel Lina",
-      "pt": "Capa Anama"
-    },
-    "itemType": "Cloak",
-    "setID": "84",
-    "level": 80,
-    "stats": [],
-    "customStats": {
-      "en": ["15% Critical Hit bonus on the Cross Scale spell"],
-      "fr": ["15% Critique sur le sort Écaille Transversale"],
-      "de": ["15% KT beim Zauber: Diagonaler Schuppenangriff"],
-      "es": ["15% crítico del hechizo Escama Transversal"],
-      "it": ["15% CC sull'incantesimo Scaglia Trasversale"],
-      "pt": ["15% de crítico para o feitiço Escama Transversal"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/17137.png"
-  },
-  {
-    "dofusID": "8650",
-    "name": {
-      "en": "Cape Hernaum",
-      "fr": "Cape Haharnum",
-      "de": "Harnumdrang",
-      "es": "S'capa Toria",
-      "it": "Mantello Mappa",
-      "pt": "Capa Harnaum"
-    },
-    "itemType": "Cloak",
-    "setID": "85",
-    "level": 80,
-    "stats": [],
-    "customStats": {
-      "en": ["Reduces the Living Satchel spell's cooldown period by 1"],
-      "fr": ["Réduit de 1 le délai de relance du sort Musette Animée"],
-      "de": ["Senkt den Cooldown des Zaubers Belebter Beutel um 1"],
-      "es": [
-        "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Morral Animado"
-      ],
-      "it": [
-        "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Borsa Animata"
-      ],
-      "pt": ["Reduz em 1 o intervalo de relançamento do feitiço Bolsa Animada"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/17135.png"
-  },
-  {
     "dofusID": "9126",
     "name": {
       "en": "Royal Morello Cherry Blop Ring",
@@ -76370,82 +74694,6 @@
     "imageUrl": "item/11122.png"
   },
   {
-    "dofusID": "17449",
-    "name": {
-      "en": "Fundamental Cape",
-      "fr": "Cape Rimordiale",
-      "de": "Ehrwürdiger Umhang",
-      "es": "Capa Sencial",
-      "it": "Mantello Primordiale",
-      "pt": "Capa primordial"
-    },
-    "itemType": "Cloak",
-    "setID": "392",
-    "level": 80,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Stalactite spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Stalactite de 1"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Stalaktit um 1."
-      ],
-      "es": ["Aumenta en 1 el alcance máximo del hechizo Estalactita."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Stalattite di 1"],
-      "pt": ["Aumenta o alcance máximo do feitiço Estalactite em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/17359.png"
-  },
-  {
-    "dofusID": "18617",
-    "name": {
-      "en": "Jusfur Wrap",
-      "fr": "Cape Hoile",
-      "de": "Adamsumhang",
-      "es": "Capa Pelo",
-      "it": "Pelontello",
-      "pt": "Capelada"
-    },
-    "itemType": "Cloak",
-    "setID": "430",
-    "level": 80,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "Increases the maximum number of times Gangrene can be cast per turn by 1",
-        "Muzzle is no longer linear"
-      ],
-      "fr": [
-        "Augmente de 1 le nombre de lancer maximal par tour du sort Gangrène",
-        "Désactive le lancer en ligne du sort Muselière"
-      ],
-      "de": [
-        "Erhöht das Maximum an Zaubern pro Runde für den Zauber Wundbrand um 1",
-        "Deaktiviert die lineare Wirkungsweise für den Zauber Maulkorb"
-      ],
-      "es": [
-        "+1 al número máximo de veces por turno que se puede lanzar el hechizo Gangrena",
-        "Desactiva el lanzamiento en línea recta del hechizo Bozal"
-      ],
-      "it": [
-        "Aumenta di 1 il numero di lanci massimi per turno dell'incantesimo Cancrena",
-        "Disattiva il lancio in linea dell'incantesimo Museruola"
-      ],
-      "pt": [
-        "Aumenta em 1 o número máximo de lançamentos por turno do feitiço Gangrena",
-        "Desativa o lançamento em linha do feitiço Mordaça"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/17381.png"
-  },
-  {
     "dofusID": "8301",
     "name": {
       "en": "Shika's Clogs",
@@ -76496,110 +74744,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/11091.png"
-  },
-  {
-    "dofusID": "8639",
-    "name": {
-      "en": "Cloak Orporal",
-      "fr": "Cape Aurale",
-      "de": "Ballisti-Cape",
-      "es": "Capa Yaso",
-      "it": "Mantello Olonello",
-      "pt": "Manto Orporal"
-    },
-    "itemType": "Cloak",
-    "setID": "81",
-    "level": 80,
-    "stats": [],
-    "customStats": {
-      "en": ["15% Critical Hit bonus on the Tumult spell"],
-      "fr": ["15% Critique sur le sort Tumulte"],
-      "de": ["15% KT beim Zauber: Tumult"],
-      "es": ["15% crítico del hechizo Tumulto"],
-      "it": ["15% CC sull'incantesimo Tumulto"],
-      "pt": ["15% de crítico para o feitiço Tumulto"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/17131.png"
-  },
-  {
-    "dofusID": "8642",
-    "name": {
-      "en": "Cap Cape",
-      "fr": "Cape Huchon",
-      "de": "Mantel der Diskretion",
-      "es": "Capa Tic-tac",
-      "it": "Passamantello",
-      "pt": "Cap Capa"
-    },
-    "itemType": "Cloak",
-    "setID": "86",
-    "level": 80,
-    "stats": [],
-    "customStats": {
-      "en": ["Reduces the Serious Hour spell's AP cost by 1"],
-      "fr": ["Réduit de 1 le coût en PA du sort Heure Grave"],
-      "de": ["Senkt die AP-Kosten des Zaubers Ernste Stunde um 1"],
-      "es": [
-        "Reduce en 1 el número de PA que cuesta el hechizo Momento Crítico."
-      ],
-      "it": ["Diminuisce di 1 il costo di PA dell'incantesimo Ora Grave"],
-      "pt": ["Reduz em 1 o custo de PA do feitiço Hora Grave"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/17141.png"
-  },
-  {
-    "dofusID": "8644",
-    "name": {
-      "en": "Cape o'Tbelly",
-      "fr": "Cape Hitton",
-      "de": "Speckiger Mantel",
-      "es": "Capitón",
-      "it": "Mantello Anguillo",
-      "pt": "Capa Otbellied"
-    },
-    "itemType": "Cloak",
-    "setID": "90",
-    "level": 80,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "Reduces the Madoll spell's cooldown period by 1",
-        "Poisoned Undergrowth is no longer linear"
-      ],
-      "fr": [
-        "Réduit de 1 le délai de relance du sort Folle",
-        "Désactive le lancer en ligne du sort Broussaille Empoisonnée"
-      ],
-      "de": [
-        "Senkt den Cooldown des Zaubers Wahnsinnspüppchen um 1",
-        "Deaktiviert die lineare Wirkungsweise für den Zauber Giftbusch"
-      ],
-      "es": [
-        "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Loca",
-        "Desactiva el lanzamiento en línea recta del hechizo Maleza Envenenada"
-      ],
-      "it": [
-        "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Pazza",
-        "Disattiva il lancio in linea dell'incantesimo Sterpaglia Avvelenata"
-      ],
-      "pt": [
-        "Reduz em 1 o intervalo de relançamento do feitiço Louca",
-        "Desativa o lançamento em linha do feitiço Matagal Envenenado"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/17139.png"
   },
   {
     "dofusID": "8647",
@@ -76833,52 +74977,6 @@
     "imageUrl": "item/10143.png"
   },
   {
-    "dofusID": "13262",
-    "name": {
-      "en": "Tanked Backpack",
-      "fr": "Sac Rebleux",
-      "de": "Stofs saurer Flaschensack",
-      "es": "Saca-botellón",
-      "it": "Bombola alla Spina",
-      "pt": "Saco Cheio"
-    },
-    "itemType": "Backpack",
-    "setID": "250",
-    "level": 80,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "Reduces the Assistance spell's cooldown period by 1",
-        "Drill no longer requires a line of sight"
-      ],
-      "fr": [
-        "Réduit de 1 le délai de relance du sort Assistance",
-        "Désactive la ligne de vue du sort Foreuse"
-      ],
-      "de": [
-        "Senkt den Cooldown des Zaubers Assistenz um 1",
-        "Deaktiviert die Sichtlinie für den Zauber Bohrmaschine"
-      ],
-      "es": [
-        "Reduce en 1 el número de turnos a esperar antes de poder volver a lanzar el hechizo Asistencia",
-        "Desactiva la línea de visión del hechizo Perforadora"
-      ],
-      "it": [
-        "Diminuisce di 1 turni l'attesa per il rilancio dell'incantesimo Assistenza",
-        "Disattiva la linea di tiro dell'incantesimo Trivella"
-      ],
-      "pt": [
-        "Reduz em 1 o intervalo de relançamento do feitiço Assistência",
-        "Desativa a linha de visão do feitiço Perfuradora"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/81064.png"
-  },
-  {
     "dofusID": "14491",
     "name": {
       "en": "Wa Wobot Crown",
@@ -76939,36 +75037,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/16374.png"
-  },
-  {
-    "dofusID": "16141",
-    "name": {
-      "en": "Ortal Cloak",
-      "fr": "Cape Ortail",
-      "de": "Ortal-Umhang",
-      "es": "Capa ortal",
-      "it": "Mantello Ortal",
-      "pt": "Capa Ortal"
-    },
-    "itemType": "Cloak",
-    "setID": "370",
-    "level": 80,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Curative Palm spell's maximum range by 2"],
-      "fr": ["Augmente la portée maximale du sort Paume Curative de 2"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Heilende Hand um 2."
-      ],
-      "es": ["Aumenta en 2 el alcance máximo del hechizo Palma Curativa."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Palmo Curativo di 2"],
-      "pt": ["Aumenta o alcance máximo do feitiço Palma Curativa em 2"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/17340.png"
   },
   {
     "dofusID": "8303",
@@ -77189,34 +75257,6 @@
     "imageUrl": "item/10141.png"
   },
   {
-    "dofusID": "12387",
-    "name": {
-      "en": "Hanging Cloak",
-      "fr": "Cape Endaison",
-      "de": "Umhang zum Erhängen",
-      "es": "Capa Horcado",
-      "it": "Mantello Impiccagione",
-      "pt": "Manto de Suspensão"
-    },
-    "itemType": "Cloak",
-    "setID": "217",
-    "level": 80,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Shot Pellets spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Grenaille de 1"],
-      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Schrot um 1."],
-      "es": ["Aumenta en 1 el alcance máximo del hechizo Granalla."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Piombino di 1"],
-      "pt": ["Aumenta o alcance máximo do feitiço Granalha em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/17228.png"
-  },
-  {
     "dofusID": "18428",
     "name": {
       "en": "Leopena G-String",
@@ -77386,66 +75426,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/16156.png"
-  },
-  {
-    "dofusID": "8645",
-    "name": {
-      "en": "Cape Ytal",
-      "fr": "Cape Ytale",
-      "de": "Unabdingling",
-      "es": "Cap'Ytal",
-      "it": "Mantello Vitale",
-      "pt": "Capa Ytal"
-    },
-    "itemType": "Cloak",
-    "setID": "87",
-    "level": 80,
-    "stats": [],
-    "customStats": {
-      "en": ["15% Critical Hit bonus on the Immolation spell"],
-      "fr": ["15% Critique sur le sort Immolation"],
-      "de": ["15% KT beim Zauber: Flammenschlag"],
-      "es": ["15% crítico del hechizo Inmolación"],
-      "it": ["15% CC sull'incantesimo Immolazione"],
-      "pt": ["15% de crítico para o feitiço Imolação"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/17138.png"
-  },
-  {
-    "dofusID": "8648",
-    "name": {
-      "en": "Cape Hulco",
-      "fr": "Cape Hulco",
-      "de": "Ahulcos Cape",
-      "es": "Capulko",
-      "it": "Mantello Hapulco",
-      "pt": "Capa Hulco"
-    },
-    "itemType": "Cloak",
-    "setID": "82",
-    "level": 80,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Repulsive Arrow spell's maximum range by 2"],
-      "fr": ["Augmente la portée maximale du sort Flèche Répulsive de 2"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Rückstoßpfeil um 2."
-      ],
-      "es": ["Aumenta en 2 el alcance máximo del hechizo Flecha Repulsiva."],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Freccia Repulsiva di 2"
-      ],
-      "pt": ["Aumenta o alcance máximo do feitiço Flecha Repulsiva em 2"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/17132.png"
   },
   {
     "dofusID": "9128",
@@ -77802,64 +75782,6 @@
     "imageUrl": "item/16133.png"
   },
   {
-    "dofusID": "8640",
-    "name": {
-      "en": "Cape of Spades",
-      "fr": "Cape Aillé",
-      "de": "Cape Cash",
-      "es": "Capa Gar",
-      "it": "Mantello Dollars",
-      "pt": "Cash'n Cape"
-    },
-    "itemType": "Cloak",
-    "setID": "88",
-    "level": 80,
-    "stats": [],
-    "customStats": {
-      "en": ["15% Critical Hit bonus on the Yowling spell"],
-      "fr": ["15% Critique sur le sort Feulement"],
-      "de": ["15% KT beim Zauber: Fauchen"],
-      "es": ["15% crítico del hechizo Bufido"],
-      "it": ["15% CC sull'incantesimo Miagolito"],
-      "pt": ["15% de crítico para o feitiço Rugido Felino"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/17133.png"
-  },
-  {
-    "dofusID": "8641",
-    "name": {
-      "en": "F-Ha(r)t",
-      "fr": "Cape Routh",
-      "de": "Meuchelmäntelchen",
-      "es": "Capa Migodel Oajeno",
-      "it": "Mantello Quilone",
-      "pt": "F-Chap(é)u"
-    },
-    "itemType": "Cloak",
-    "setID": "89",
-    "level": 80,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Mass Grave spell's maximum range by 2"],
-      "fr": ["Augmente la portée maximale du sort Fosse Commune de 2"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Massengrab um 2."
-      ],
-      "es": ["Aumenta en 2 el alcance máximo del hechizo Fosa Común."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Fossa Comune di 2"],
-      "pt": ["Aumenta o alcance máximo do feitiço Vala Comum em 2"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/17140.png"
-  },
-  {
     "dofusID": "8643",
     "name": {
       "en": "Cape Sulitis",
@@ -77938,34 +75860,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/17136.png"
-  },
-  {
-    "dofusID": "12388",
-    "name": {
-      "en": "Bangin' Cloak",
-      "fr": "Cape Aircussion",
-      "de": "Regenzeug mit Schlag",
-      "es": "Capa Aircusión",
-      "it": "Mantello Percussione",
-      "pt": "Manto de Bangin"
-    },
-    "itemType": "Cloak",
-    "setID": "218",
-    "level": 80,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Atabak spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Atabak de 1"],
-      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Atabak um 1."],
-      "es": ["Aumenta en 1 el alcance máximo del hechizo Atabak."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Atabak di 1"],
-      "pt": ["Aumenta o alcance máximo do feitiço Atabak em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/17229.png"
   },
   {
     "dofusID": "17078",
@@ -103695,86 +101589,6 @@
     "imageUrl": "item/11036.png"
   },
   {
-    "dofusID": "8619",
-    "name": {
-      "en": "Hat Ariutokinabot",
-      "fr": "Casque Keutumedi",
-      "de": "Dula-Berst-Michan-Helm",
-      "es": "Casco Moasdicho",
-      "it": "Elmo Kemmidici",
-      "pt": "Chapéu Ariutokinabot"
-    },
-    "itemType": "Hat",
-    "setID": "81",
-    "level": 40,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "Increases the maximum number of times Prosecution can be cast per turn by 1"
-      ],
-      "fr": [
-        "Augmente de 1 le nombre de lancer maximal par tour du sort Vindicte"
-      ],
-      "de": [
-        "Erhöht das Maximum an Zaubern pro Runde für den Zauber Brandmarke um 1"
-      ],
-      "es": [
-        "+1 al número máximo de veces por turno que se puede lanzar el hechizo Vindicta"
-      ],
-      "it": [
-        "Aumenta di 1 il numero di lanci massimi per turno dell'incantesimo Biasimo"
-      ],
-      "pt": [
-        "Aumenta em 1 o número máximo de lançamentos por turno do feitiço Revide"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16175.png"
-  },
-  {
-    "dofusID": "8628",
-    "name": {
-      "en": "Ukando Hat",
-      "fr": "Chapeau Leufère",
-      "de": "Nur-Mut-Hut",
-      "es": "Sombrero de tahúr",
-      "it": "Cappello Oping",
-      "pt": "Chapéu Ukando"
-    },
-    "itemType": "Hat",
-    "setID": "88",
-    "level": 40,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "Increases the maximum number of times Tails or Heads can be cast per turn by 1"
-      ],
-      "fr": [
-        "Augmente de 1 le nombre de lancer maximal par tour du sort Face ou Pile"
-      ],
-      "de": [
-        "Erhöht das Maximum an Zaubern pro Runde für den Zauber Zahl oder Kopf um 1"
-      ],
-      "es": [
-        "+1 al número máximo de veces por turno que se puede lanzar el hechizo Cruz o Cara"
-      ],
-      "it": [
-        "Aumenta di 1 il numero di lanci massimi per turno dell'incantesimo Croce o Testa"
-      ],
-      "pt": [
-        "Aumenta em 1 o número máximo de lançamentos por turno do feitiço Coroa ou Cara"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16185.png"
-  },
-  {
     "dofusID": "9543",
     "name": {
       "en": "The Godfather's Ring",
@@ -104331,36 +102145,6 @@
     "imageUrl": "item/1078.png"
   },
   {
-    "dofusID": "8629",
-    "name": {
-      "en": "Hat Tsokey",
-      "fr": "Chapeau Grave",
-      "de": "Alles-wird-gut-Hut",
-      "es": "Multricornio",
-      "it": "Cappello Niente",
-      "pt": "Chapéu Tsokey"
-    },
-    "itemType": "Hat",
-    "setID": "89",
-    "level": 40,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Pitfall spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Chausse-Trappe de 1"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Fußangeln um 1."
-      ],
-      "es": ["Aumenta en 1 el alcance máximo del hechizo Abrojo."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Piede di Corvo di 1"],
-      "pt": ["Aumenta o alcance máximo do feitiço Estrepe em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16179.png"
-  },
-  {
     "dofusID": "8631",
     "name": {
       "en": "Hat Wisholdoo",
@@ -104393,36 +102177,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/16184.png"
-  },
-  {
-    "dofusID": "13261",
-    "name": {
-      "en": "Diving Bell End",
-      "fr": "Scaphandre Ojine",
-      "de": "Abbs Taucheranzug",
-      "es": "Escafandra Gina",
-      "it": "Scafandro Ogino",
-      "pt": "Escafandro Ógino"
-    },
-    "itemType": "Hat",
-    "setID": "250",
-    "level": 40,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Surge spell's maximum range by 2"],
-      "fr": ["Augmente la portée maximale du sort Selpâtre de 2"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Pater Sel um 2."
-      ],
-      "es": ["Aumenta en 2 el alcance máximo del hechizo Salitre."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Salnitro di 2"],
-      "pt": ["Aumenta o alcance máximo do feitiço Salitre em 2"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16338.png"
   },
   {
     "dofusID": "15994",
@@ -104465,52 +102219,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/16457.png"
-  },
-  {
-    "dofusID": "17448",
-    "name": {
-      "en": "Fundamental Headdress",
-      "fr": "Coiffe Ondamentale",
-      "de": "Superwellen-Haube",
-      "es": "Tocado Minante",
-      "it": "Cappello Fondamentale",
-      "pt": "Chapéu fundamental"
-    },
-    "itemType": "Hat",
-    "setID": "392",
-    "level": 40,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "Increases the maximum number of times Tectonic Breach can be cast per turn by 1",
-        "Volcano is no longer linear"
-      ],
-      "fr": [
-        "Augmente de 1 le nombre de lancer maximal par tour du sort Brèche Tectonique",
-        "Désactive le lancer en ligne du sort Volcan"
-      ],
-      "de": [
-        "Erhöht das Maximum an Zaubern pro Runde für den Zauber Tektonische Bresche um 1",
-        "Deaktiviert die lineare Wirkungsweise für den Zauber Vulkan"
-      ],
-      "es": [
-        "+1 al número máximo de veces por turno que se puede lanzar el hechizo Brecha Tectónica",
-        "Desactiva el lanzamiento en línea recta del hechizo Volcán"
-      ],
-      "it": [
-        "Aumenta di 1 il numero di lanci massimi per turno dell'incantesimo Breccia Tettonica",
-        "Disattiva il lancio in linea dell'incantesimo Vulcano"
-      ],
-      "pt": [
-        "Aumenta em 1 o número máximo de lançamentos por turno do feitiço Brecha Tectônica",
-        "Desativa o lançamento em linha do feitiço Vulcão"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16490.png"
   },
   {
     "dofusID": "2420",
@@ -104644,64 +102352,6 @@
     "imageUrl": "item/9051.png"
   },
   {
-    "dofusID": "8630",
-    "name": {
-      "en": "Hatter Lily",
-      "fr": "Bonnet Nufar",
-      "de": "Schlafspitz",
-      "es": "Diapa sombrero",
-      "it": "Cappello Ayomatto",
-      "pt": "Chapeleiro de Lírio"
-    },
-    "itemType": "Hat",
-    "setID": "86",
-    "level": 40,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Souvenir spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Souvenir de 1"],
-      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Souvenir um 1."],
-      "es": ["Aumenta en 1 el alcance máximo del hechizo Recuerdo."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Ricordo di 1"],
-      "pt": ["Aumenta o alcance máximo do feitiço Souvenir em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16177.png"
-  },
-  {
-    "dofusID": "8634",
-    "name": {
-      "en": "Cool Hood",
-      "fr": "Capuche Apin",
-      "de": "Horn-Helm",
-      "es": "Capucha Apino",
-      "it": "Cappuccio Apino",
-      "pt": "Gorro Fresco"
-    },
-    "itemType": "Hat",
-    "setID": "84",
-    "level": 40,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Aquaculture spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Aquaculture de 1"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Aquakultur um 1."
-      ],
-      "es": ["Aumenta en 1 el alcance máximo del hechizo Acuicultura."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Acquacoltura di 1"],
-      "pt": ["Aumenta o alcance máximo do feitiço Aquicultura em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16181.png"
-  },
-  {
     "dofusID": "8635",
     "name": {
       "en": "Helmet Hicc",
@@ -104814,34 +102464,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/17294.png"
-  },
-  {
-    "dofusID": "16140",
-    "name": {
-      "en": "Krosmetic Mask",
-      "fr": "Masque Rosmique",
-      "de": "Krosmetische Maske",
-      "es": "Máscara krósmica",
-      "it": "Maschera Krosmica",
-      "pt": "Máscara krósmica"
-    },
-    "itemType": "Hat",
-    "setID": "370",
-    "level": 40,
-    "stats": [],
-    "customStats": {
-      "en": ["Makes the Lazybeam spell's range modifiable"],
-      "fr": ["Rend la portée du sort Faisceau modifiable"],
-      "de": ["Die Reichweite des Zaubers Zwielichtstrahl wird steigerbar"],
-      "es": ["Vuelve modificable el alcance del hechizo Resplandor"],
-      "it": ["Rende modificabile la portata dell'incantesimo Fascio"],
-      "pt": ["Torna possível mudar o alcance do feitiço Feixe"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16462.png"
   },
   {
     "dofusID": "17012",
@@ -105022,74 +102644,6 @@
     "imageUrl": "item/11049.png"
   },
   {
-    "dofusID": "8633",
-    "name": {
-      "en": "Cap Rayer",
-      "fr": "Bonnet Spairance",
-      "de": "Döhna-Kebkapp",
-      "es": "Sombrervido",
-      "it": "Cappello Sparanza",
-      "pt": "Capa Raiante"
-    },
-    "itemType": "Hat",
-    "setID": "87",
-    "level": 40,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Slaughter spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Hécatombe de 1"],
-      "de": ["Erhöht die maximale Reichweite des Zauberspruchs Gemetzel um 1."],
-      "es": ["Aumenta en 1 el alcance máximo del hechizo Hecatombe."],
-      "it": ["Aumenta la Portata massima dell'incantesimo Ecatombe di 1"],
-      "pt": ["Aumenta o alcance máximo do feitiço Hecatombe em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16180.png"
-  },
-  {
-    "dofusID": "8638",
-    "name": {
-      "en": "Sthood",
-      "fr": "Chapeau Taufeu",
-      "de": "Bedeckel",
-      "es": "Alfue Gorro",
-      "it": "Cappello Fornello",
-      "pt": "Stcapuz"
-    },
-    "itemType": "Hat",
-    "setID": "85",
-    "level": 40,
-    "stats": [],
-    "customStats": {
-      "en": [
-        "Increases the maximum number of times Armlock can be cast per turn by 1"
-      ],
-      "fr": [
-        "Augmente de 1 le nombre de lancer maximal par tour du sort Clef de bras"
-      ],
-      "de": [
-        "Erhöht das Maximum an Zaubern pro Runde für den Zauber Armschlüssel um 1"
-      ],
-      "es": [
-        "+1 al número máximo de veces por turno que se puede lanzar el hechizo Llave de Brazo"
-      ],
-      "it": [
-        "Aumenta di 1 il numero di lanci massimi per turno dell'incantesimo Chiave di Braccia"
-      ],
-      "pt": [
-        "Aumenta em 1 o número máximo de lançamentos por turno do feitiço Chave de Braço"
-      ]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16183.png"
-  },
-  {
     "dofusID": "9408",
     "name": {
       "en": "Lousy Ring",
@@ -105199,34 +102753,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/10302.png"
-  },
-  {
-    "dofusID": "18621",
-    "name": {
-      "en": "Helmeteo",
-      "fr": "Chapeau Devin",
-      "de": "Aus-dem-Hut",
-      "es": "Gorro morro",
-      "it": "Cappello Divinatorio",
-      "pt": "Adivinhapéu"
-    },
-    "itemType": "Hat",
-    "setID": "430",
-    "level": 40,
-    "stats": [],
-    "customStats": {
-      "en": ["Stripping no longer requires a line of sight"],
-      "fr": ["Désactive la ligne de vue du sort Dépouille"],
-      "de": ["Deaktiviert die Sichtlinie für den Zauber Abräumer"],
-      "es": ["Desactiva la línea de visión del hechizo Restos"],
-      "it": ["Disattiva la linea di tiro dell'incantesimo Spoglia"],
-      "pt": ["Desativa a linha de visão do feitiço Esfoladura"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16514.png"
   },
   {
     "dofusID": "836",
@@ -105432,62 +102958,6 @@
     "imageUrl": "item/11048.png"
   },
   {
-    "dofusID": "8632",
-    "name": {
-      "en": "Cap Ricott",
-      "fr": "Chapeau Tyron",
-      "de": "Barettich",
-      "es": "Gorra Bano",
-      "it": "Cappello N'Cione",
-      "pt": "Chapéu Ricott"
-    },
-    "itemType": "Hat",
-    "setID": "90",
-    "level": 40,
-    "stats": [],
-    "customStats": {
-      "en": ["15% Critical Hit bonus on the Rise of Sap spell"],
-      "fr": ["15% Critique sur le sort Montée de Sève"],
-      "de": ["15% KT beim Zauber: Harzstoß"],
-      "es": ["15% crítico del hechizo Subida de Savia"],
-      "it": ["15% CC sull'incantesimo Salita di Linfa"],
-      "pt": ["15% de crítico para o feitiço Inundação de Seiva"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16178.png"
-  },
-  {
-    "dofusID": "8636",
-    "name": {
-      "en": "Robbie Hoodie Cap",
-      "fr": "Coiffe de Robbie Capuche",
-      "de": "Robbins Hut",
-      "es": "Gorro del príncipe Robin",
-      "it": "Copricapo di Roby Cappuccio",
-      "pt": "Chapéu de Robbie Capuz"
-    },
-    "itemType": "Hat",
-    "setID": "82",
-    "level": 40,
-    "stats": [],
-    "customStats": {
-      "en": ["25% Critical Hit bonus on the Redemption Arrow spell"],
-      "fr": ["25% Critique sur le sort Flèche de Rédemption"],
-      "de": ["25% KT beim Zauber: Erlösungspfeil"],
-      "es": ["25% crítico del hechizo Flecha de Redención"],
-      "it": ["25% CC sull'incantesimo Freccia di Redenzione"],
-      "pt": ["25% de crítico para o feitiço Flecha de Redenção"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16186.png"
-  },
-  {
     "dofusID": "8637",
     "name": {
       "en": "Zinda Hood",
@@ -105597,66 +103067,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/10163.png"
-  },
-  {
-    "dofusID": "12385",
-    "name": {
-      "en": "Hoodwink Headgear",
-      "fr": "Coiffe Ainte",
-      "de": "Hut \"Rickreich\"",
-      "es": "Bandana burlona",
-      "it": "Bandana Finta",
-      "pt": "Capacete Hoodwink"
-    },
-    "itemType": "Hat",
-    "setID": "217",
-    "level": 40,
-    "stats": [],
-    "customStats": {
-      "en": ["Makes the Crossing spell's range modifiable"],
-      "fr": ["Rend la portée du sort Croisement modifiable"],
-      "de": ["Die Reichweite des Zaubers Kreuzung wird steigerbar"],
-      "es": ["Vuelve modificable el alcance del hechizo Cruce"],
-      "it": ["Rende modificabile la portata dell'incantesimo Incrocio"],
-      "pt": ["Torna possível mudar o alcance do feitiço Cruzamento"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16311.png"
-  },
-  {
-    "dofusID": "12386",
-    "name": {
-      "en": "Arpone Mask",
-      "fr": "Masque Arpone",
-      "de": "Maske \"Arpone\"",
-      "es": "Máscara Rpone",
-      "it": "Maschera Arpone",
-      "pt": "Máscara Arpone"
-    },
-    "itemType": "Hat",
-    "setID": "218",
-    "level": 40,
-    "stats": [],
-    "customStats": {
-      "en": ["Increases the Poltroon Mask spell's maximum range by 1"],
-      "fr": ["Augmente la portée maximale du sort Masque du Couard de 1"],
-      "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Maske des Duckmäusers um 1."
-      ],
-      "es": ["Aumenta en 1 el alcance máximo del hechizo Máscara de Cobarde."],
-      "it": [
-        "Aumenta la Portata massima dell'incantesimo Maschera del Codardo di 1"
-      ],
-      "pt": ["Aumenta o alcance máximo do feitiço Máscara do Medroso em 1"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16312.png"
   },
   {
     "dofusID": "17496",
