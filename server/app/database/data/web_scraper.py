@@ -86,9 +86,10 @@ class ItemScraper:
             ]
             scraper_utils.download_image(id, image, "items")
             scraper_utils.upload_image_to_s3(
-                os.path.join(scraper_utils.image_folder, "items", id + ".png"), "item"
+                os.path.join(scraper_utils.image_folder, "items", image.split("/")[-1]),
+                "item",
             )
-            image = "item/" + id + ".png"
+            image = "item/" + image.split("/")[-1]
 
             set = None
             try:
