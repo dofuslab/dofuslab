@@ -28009,5 +28009,139 @@
         }
       ]
     }
+  },
+  {
+    "id": "23746238472934297",
+    "name": {
+      "en": "Tomb Set",
+      "fr": "Panoplie des Tombeaux",
+      "de": "Grabmal-Set",
+      "es": "Set de las tumbas",
+      "it": "Panoplia delle Tombe",
+      "pt": "Conjunto das Tumbas"
+    },
+    "bonuses": {
+      "2": [
+        {
+          "stat": "Fire Resistance",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Earth Resistance",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Neutral Resistance",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Air Resistance",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Water Resistance",
+          "value": 20,
+          "altStat": null
+        }
+      ],
+      "3": [
+        {
+          "stat": "Fire Resistance",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Earth Resistance",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Neutral Resistance",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Air Resistance",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Water Resistance",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "AP",
+          "value": 1,
+          "altStat": null
+        }
+      ]
+    }
+  },
+  {
+    "id": "1982471246125781928",
+    "name": {
+      "en": "Mist Set",
+      "fr": "Panoplie de Brume",
+      "de": "Nebel-Set",
+      "es": "Set de bruma",
+      "it": "Panoplia di Bruma",
+      "pt": "Conjunto de Bruma"
+    },
+    "bonuses": {
+      "2": [
+        {
+          "stat": "AP Reduction",
+          "value": 5,
+          "altStat": null
+        },
+        {
+          "stat": "Chance",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 20,
+          "altStat": null
+        }
+      ],
+      "3": [
+        {
+          "stat": "AP Reduction",
+          "value": 5,
+          "altStat": null
+        },
+        {
+          "stat": "Chance",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "AP",
+          "value": 1,
+          "altStat": null
+        }
+      ]
+    }
   }
 ]
