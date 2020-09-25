@@ -43,6 +43,13 @@ def update_or_create_item(
         item.dofus_db_id = record["dofusID"]
         item.level = record["level"]
         item.image_url = record["imageUrl"]
+        if item.set == None and record.get("setID", None):
+            set = (
+                db_session.query(ModelSet)
+                .filter(ModelSet.dofus_db_id == record["setID"])
+                .one()
+            )
+            set.items.append(item)
         create_item_translations(db_session, record, item)
         print("Item translations successfully updated")
         db_session.query(ModelItemStat).filter_by(item_id=item.uuid).delete()

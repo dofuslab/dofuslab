@@ -41290,28 +41290,22 @@
       "conditions": {},
       "customConditions": {
         "en": [
-          "Quest 'Day of the Assassins' in progress or",
-          "Quest 'Day of the Assassins' complete"
+          "Quest 'Day of the Assassins' in progress or Quest 'Day of the Assassins' complete"
         ],
         "fr": [
-          "Quête 'Le jour des assassins' en cours ou",
-          "Quête 'Le jour des assassins' achevée"
+          "Quête 'Le jour des assassins' en cours ou Quête 'Le jour des assassins' achevée"
         ],
         "de": [
-          "Quest 'Der Tag der Assassinen' am Laufen oder",
-          "Quest 'Der Tag der Assassinen' beendet"
+          "Quest 'Der Tag der Assassinen' am Laufen oder Quest 'Der Tag der Assassinen' beendet"
         ],
         "es": [
-          "Misión 'El día de los asesinos' en curso o",
-          "Misión 'El día de los asesinos' completada"
+          "Misión 'El día de los asesinos' en curso o Misión 'El día de los asesinos' completada"
         ],
         "it": [
-          "Missione \"Il giorno degli assassini\" in corso o",
-          "Missione \"Il giorno degli assassini\" compiuta"
+          "Missione \"Il giorno degli assassini\" in corso o Missione \"Il giorno degli assassini\" compiuta"
         ],
         "pt": [
-          "Missão \"O dia dos assassinos\" em andamento ou",
-          "Missão \"O dia dos assassinos\" concluída"
+          "Missão \"O dia dos assassinos\" em andamento ou Missão \"O dia dos assassinos\" concluída"
         ]
       }
     },
@@ -58191,7 +58185,7 @@
       "conditions": {
         "and": [
           {
-            "stat": "Strength",
+            "stat": "STRENGTH",
             "operator": ">",
             "value": 450
           }
@@ -58199,28 +58193,22 @@
       },
       "customConditions": {
         "en": [
-          "Quest 'Shodanwa: Martial Perfection' complete or",
-          "Quest 'Shodanwa: Martial Perfection' in progress"
+          "Quest 'Shodanwa: Martial Perfection' complete or Quest 'Shodanwa: Martial Perfection' in progress"
         ],
         "fr": [
-          "Quête 'Shodanwa : Perfection martiale' en cours ou",
-          "Quête 'Shodanwa : Perfection martiale' achevée"
+          "Quête 'Shodanwa : Perfection martiale' en cours ou Quête 'Shodanwa : Perfection martiale' achevée"
         ],
         "de": [
-          "Quest Shodanwa: Kämpferische Vollkommenheit' am Laufen oder",
-          "Quest Shodanwa: Kämpferische Vollkommenheit' beendet"
+          "Quest Shodanwa: 'Kämpferische Vollkommenheit' am Laufen oder Quest Shodanwa: 'Kämpferische Vollkommenheit' beendet"
         ],
         "es": [
-          "Misión 'Shodanwa: perfección marcial' en curso o",
-          "Misión 'Shodanwa: perfección marcial' completada"
+          "Misión 'Shodanwa: perfección marcial' en curso o Misión 'Shodanwa: perfección marcial' completada"
         ],
         "it": [
-          "Missione \"Shodanwa: perfezione marziale\" in corso o",
-          "Missione \"Shodanwa: perfezione marziale\" compiuta"
+          "Missione \"Shodanwa: perfezione marziale\" in corso o Missione \"Shodanwa: perfezione marziale\" compiuta"
         ],
         "pt": [
-          "Missão \"Shodanwa: Perfeição marcial\" em andamento ou",
-          "Missão \"Shodanwa: Perfeição marcial\" concluída"
+          "Missão \"Shodanwa: Perfeição marcial\" em andamento ou Missão \"Shodanwa: Perfeição marcial\" concluída"
         ]
       }
     },
