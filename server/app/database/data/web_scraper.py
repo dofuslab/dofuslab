@@ -81,15 +81,16 @@ class ItemScraper:
                 )
                 .text[7:]
             )
-            image = all_soups["en"].find("img", attrs={"class": "img-maxresponsive"})[
-                "src"
-            ]
-            scraper_utils.download_image(id, image, "items")
+            image_url = all_soups["en"].find(
+                "img", attrs={"class": "img-maxresponsive"}
+            )["src"]
+            image_id = image_url.split("/")[-1].split(".")[0]
+            scraper_utils.download_image(image_id, image_url, "items")
             scraper_utils.upload_image_to_s3(
-                os.path.join(scraper_utils.image_folder, "items", image.split("/")[-1]),
+                os.path.join(scraper_utils.image_folder, "items", image_id + ".png"),
                 "item",
             )
-            image = "item/" + image.split("/")[-1]
+            image = "item/" + image_id + ".png"
 
             set = None
             try:
@@ -208,14 +209,16 @@ class WeaponScraper:
                 )
                 .text[7:]
             )
-            image = all_soups["en"].find("img", attrs={"class": "img-maxresponsive"})[
-                "src"
-            ]
-            scraper_utils.download_image(id, image, "items")
+            image_url = all_soups["en"].find(
+                "img", attrs={"class": "img-maxresponsive"}
+            )["src"]
+            image_id = image_url.split("/")[-1].split(".")[0]
+            scraper_utils.download_image(image_id, image_url, "items")
             scraper_utils.upload_image_to_s3(
-                os.path.join(scraper_utils.image_folder, "items", id + ".png"), "item"
+                os.path.join(scraper_utils.image_folder, "items", image_id + ".png"),
+                "item",
             )
-            image = "item/" + id + ".png"
+            image = "item/" + image_id + ".png"
 
             set = None
             divs = (
@@ -410,14 +413,16 @@ class PetScraper:
                 )
                 .text[7:]
             )
-            image = all_soups["en"].find("img", attrs={"class": "img-maxresponsive"})[
-                "src"
-            ]
-            scraper_utils.download_image(id, image, "items")
+            image_url = all_soups["en"].find(
+                "img", attrs={"class": "img-maxresponsive"}
+            )["src"]
+            image_id = image_url.split("/")[-1].split(".")[0]
+            scraper_utils.download_image(image_id, image_url, "items")
             scraper_utils.upload_image_to_s3(
-                os.path.join(scraper_utils.image_folder, "items", id + ".png"), "item"
+                os.path.join(scraper_utils.image_folder, "items", image_id + ".png"),
+                "item",
             )
-            image = "item/" + id + ".png"
+            image = "item/" + image_id + ".png"
 
             set = None
             divs = (
@@ -524,14 +529,16 @@ class MountScraper:
             names = scraper_utils.get_alternate_names(all_soups)
             item_type = "Mount"
             level = 60
-            image = all_soups["en"].find("img", attrs={"class": "img-maxresponsive"})[
-                "src"
-            ]
-            scraper_utils.download_image(id, image, "items")
+            image_url = all_soups["en"].find(
+                "img", attrs={"class": "img-maxresponsive"}
+            )["src"]
+            image_id = image_url.split("/")[-1].split(".")[0]
+            scraper_utils.download_image(image_id, image_url, "items")
             scraper_utils.upload_image_to_s3(
-                os.path.join(scraper_utils.image_folder, "items", id + ".png"), "item"
+                os.path.join(scraper_utils.image_folder, "items", image_id + ".png"),
+                "item",
             )
-            image = "item/" + id + ".png"
+            image = "item/" + image_id + ".png"
 
             all_stats = scraper_utils.get_stats(all_soups)
             stats = all_stats[0]
@@ -624,12 +631,15 @@ class ClassScraper:
                     .find("div", {"class": "ak-spell-details-illu"})
                     .find("img")["src"]
                 )
-                scraper_utils.download_image(id, image_url, "spells")
+                image_id = image_url.split("/")[-1].split(".")[0]
+                scraper_utils.download_image(image_id, image_url, "spells")
                 scraper_utils.upload_image_to_s3(
-                    os.path.join(scraper_utils.image_folder, "spells", id + ".png"),
+                    os.path.join(
+                        scraper_utils.image_folder, "spells", image_id + ".png"
+                    ),
                     "spell",
                 )
-                image_url = "spell/" + id + ".png"
+                image_url = "spell/" + image_id + ".png"
 
                 levels = (
                     all_soups["en"]
@@ -1244,13 +1254,13 @@ class DataAdjustment:
 
 if __name__ == "__main__":
     ItemScraper.get_all_item_ids()
-    ItemScraper.get_data_for_ids([])
+    ItemScraper.get_data_for_ids()
 
     SetScraper.get_all_set_ids()
     SetScraper.get_set_data_for_ids()
 
     WeaponScraper.get_all_weapon_ids()
-    WeaponScraper.get_data_for_ids([])
+    WeaponScraper.get_data_for_ids()
 
     PetScraper.get_all_pet_ids()
     PetScraper.get_pet_data_for_ids()
@@ -1259,7 +1269,7 @@ if __name__ == "__main__":
     MountScraper.get_mount_data_for_ids()
 
     class_scraper = ClassScraper()
-    class_scraper.get_data_for_classes([])
+    class_scraper.get_data_for_classes()
 
     DataAdjustment.add_missing_trophy_conditions()
     DataAdjustment.add_missing_item_details()
