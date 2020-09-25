@@ -57974,28 +57974,92 @@
       "de": "Geistreichen-Katana",
       "es": "Katana de espiritasesino",
       "it": "Katana di Spiritassassino",
-      "pt": "Katana de Assassisp\u00edrito"
+      "pt": "Katana de Assassispírito"
     },
     "itemType": "Sword",
     "level": 160,
     "setID": null,
     "stats": [
-      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
-      { "stat": "Strength", "minStat": 41, "maxStat": 60 },
-      { "stat": "Intelligence", "minStat": 41, "maxStat": 60 },
-      { "stat": "Agility", "minStat": 41, "maxStat": 60 },
-      { "stat": "Critical Resistance", "minStat": null, "maxStat": -10 },
-      { "stat": "Wisdom", "minStat": 21, "maxStat": 25 },
-      { "stat": "Dodge", "minStat": null, "maxStat": -20 },
-      { "stat": "Fire Damage", "minStat": 4, "maxStat": 5 },
-      { "stat": "Air Damage", "minStat": 4, "maxStat": 5 },
-      { "stat": "Earth Damage", "minStat": 4, "maxStat": 5 },
-      { "stat": "Neutral Damage", "minStat": 4, "maxStat": 5 },
-      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
-      { "stat": "Critical Damage", "minStat": 11, "maxStat": 15 },
-      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
-      { "stat": "Range", "minStat": null, "maxStat": -2 },
-      { "stat": "MP", "minStat": null, "maxStat": 1 }
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 25
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -20
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": -2
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      }
     ],
     "weaponStats": {
       "apCost": 5,
@@ -58005,16 +58069,161 @@
       "baseCritChance": 20,
       "critBonusDamage": 7,
       "weapon_effects": [
-        { "stat": "Air damage", "minStat": 10, "maxStat": 16 },
-        { "stat": "Fire damage", "minStat": 10, "maxStat": 16 },
-        { "stat": "Earth damage", "minStat": 10, "maxStat": 16 }
+        {
+          "stat": "Air damage",
+          "minStat": 10,
+          "maxStat": 16
+        },
+        {
+          "stat": "Fire damage",
+          "minStat": 10,
+          "maxStat": 16
+        },
+        {
+          "stat": "Earth damage",
+          "minStat": 10,
+          "maxStat": 16
+        }
       ]
     },
     "customStats": {},
     "conditions": {
-      "conditions": { "and": [{ "stat": "AP", "operator": "<", "value": 12 }] },
+      "conditions": {
+        "and": [
+          {
+            "stat": "AP",
+            "operator": "<",
+            "value": 12
+          }
+        ]
+      },
       "customConditions": {}
     },
     "imageUrl": "item/23627.png"
+  },
+  {
+    "dofusID": "23590",
+    "name": {
+      "en": "Musamune",
+      "fr": "Musamune",
+      "de": "Musamune",
+      "es": "Musamune",
+      "it": "Musamune",
+      "pt": "Musamune"
+    },
+    "itemType": "Sword",
+    "level": 150,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Strength",
+        "minStat": 71,
+        "maxStat": 100
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Neutral Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Lock",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -20
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Critical",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Weapon Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Ranged Damage",
+        "minStat": null,
+        "maxStat": -15
+      }
+    ],
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 10,
+      "critBonusDamage": 20,
+      "weapon_effects": [
+        {
+          "stat": "Neutral damage",
+          "minStat": 51,
+          "maxStat": 70
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {
+        "and": [
+          {
+            "stat": "Strength",
+            "operator": ">",
+            "value": 450
+          }
+        ]
+      },
+      "customConditions": {
+        "en": [
+          "Quest 'Shodanwa: Martial Perfection' complete or",
+          "Quest 'Shodanwa: Martial Perfection' in progress"
+        ],
+        "fr": [
+          "Quête 'Shodanwa : Perfection martiale' en cours ou",
+          "Quête 'Shodanwa : Perfection martiale' achevée"
+        ],
+        "de": [
+          "Quest Shodanwa: Kämpferische Vollkommenheit' am Laufen oder",
+          "Quest Shodanwa: Kämpferische Vollkommenheit' beendet"
+        ],
+        "es": [
+          "Misión 'Shodanwa: perfección marcial' en curso o",
+          "Misión 'Shodanwa: perfección marcial' completada"
+        ],
+        "it": [
+          "Missione \"Shodanwa: perfezione marziale\" in corso o",
+          "Missione \"Shodanwa: perfezione marziale\" compiuta"
+        ],
+        "pt": [
+          "Missão \"Shodanwa: Perfeição marcial\" em andamento ou",
+          "Missão \"Shodanwa: Perfeição marcial\" concluída"
+        ]
+      }
+    },
+    "imageUrl": "item/6748.png"
   }
 ]
