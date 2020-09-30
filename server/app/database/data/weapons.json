@@ -15774,8 +15774,8 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Critical Resistance",
