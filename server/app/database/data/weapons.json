@@ -15773,6 +15773,11 @@
         "maxStat": 5
       },
       {
+        "stat": "MP Parry",
+        "minStat": -4,
+        "maxStat": -5
+      },
+      {
         "stat": "Critical Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -15795,11 +15800,6 @@
           "stat": "Air damage",
           "minStat": 4,
           "maxStat": 6
-        },
-        {
-          "stat": "MP",
-          "minStat": -4,
-          "maxStat": -5
         }
       ]
     },
