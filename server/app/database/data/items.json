@@ -82315,7 +82315,33 @@
     "itemType": "Boots",
     "setID": null,
     "level": 59,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Critical",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -10
+      }
+    ],
     "customStats": [],
     "conditions": {
       "conditions": {},
