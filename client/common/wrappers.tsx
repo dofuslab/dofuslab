@@ -149,6 +149,8 @@ export const CardTitleWithLevel: React.FC<{
   levelClassName?: string;
   className?: string;
   afterLevel?: React.ReactNode;
+  leftImageUrl?: string;
+  leftImageAlt?: string;
 }> = ({
   title,
   level,
@@ -158,6 +160,8 @@ export const CardTitleWithLevel: React.FC<{
   levelClassName,
   className,
   afterLevel,
+  leftImageUrl,
+  leftImageAlt,
 }) => {
   const { t } = useTranslation('common');
 
@@ -170,6 +174,13 @@ export const CardTitleWithLevel: React.FC<{
             css({ marginRight: 4, display: 'flex', alignItems: 'center' }),
           )}
         >
+          {leftImageUrl && (
+            <img
+              src={leftImageUrl}
+              alt={leftImageAlt}
+              css={{ width: 36, height: 36, marginRight: 8 }}
+            />
+          )}
           <div css={{ minWidth: 0 }}>
             <div css={{ display: 'flex', alignItems: 'center' }}>
               <TruncatableText css={{ fontSize: '0.8rem' }}>

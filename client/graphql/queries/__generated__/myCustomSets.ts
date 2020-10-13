@@ -9,6 +9,13 @@ import { CustomSetFilters } from "./../../../__generated__/globalTypes";
 // GraphQL query operation: myCustomSets
 // ====================================================
 
+export interface myCustomSets_currentUser_customSets_edges_node_defaultClass {
+  __typename: "Class";
+  id: any;
+  name: string;
+  faceImageUrl: string;
+}
+
 export interface myCustomSets_currentUser_customSets_edges_node_equippedItems_slot {
   __typename: "ItemSlot";
   id: any;
@@ -45,6 +52,7 @@ export interface myCustomSets_currentUser_customSets_edges_node_tagAssociations 
 export interface myCustomSets_currentUser_customSets_edges_node {
   __typename: "CustomSet";
   id: any;
+  defaultClass: myCustomSets_currentUser_customSets_edges_node_defaultClass | null;
   name: string | null;
   level: number;
   equippedItems: myCustomSets_currentUser_customSets_edges_node_equippedItems[];
