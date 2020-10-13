@@ -377,6 +377,11 @@ const MyBuilds: React.FC<Props> = ({ onClose, isMobile }) => {
                       <FontAwesomeIcon icon={faTrashAlt} />
                     </div>
                   }
+                  leftImageUrl={
+                    node.defaultClass?.faceImageUrl ??
+                    getImageUrl('class/face/No_Class.svg')
+                  }
+                  leftImageAlt={node.defaultClass?.name}
                 />
               }
               size="small"

@@ -5,6 +5,11 @@ query myCustomSets($first: Int!, $after: String, $filters: CustomSetFilters!) {
       edges {
         node {
           id
+          defaultClass {
+            id
+            name
+            faceImageUrl
+          }
           name
           level
           equippedItems {
