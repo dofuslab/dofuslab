@@ -1,5 +1,6 @@
 import sqlalchemy
 from .base import Base
+from .enums import GameVersionEnum
 from .model_custom_set_tag_translation import ModelCustomSetTagTranslation
 from .model_custom_set_tag_association import ModelCustomSetTagAssociation
 from sqlalchemy import Column, String, ForeignKey, Table, UniqueConstraint
@@ -25,3 +26,4 @@ class ModelCustomSetTag(Base):
     custom_sets = relationship(
         "ModelCustomSet", back_populates="tags", secondary="custom_set_tag_association",
     )
+    game_version = Column("game_version", GameVersionEnum, nullable=False, index=True)

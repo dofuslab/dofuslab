@@ -1,6 +1,6 @@
 import sqlalchemy
 from .base import Base
-from .enums import StatEnum
+from .enums import StatEnum, GameVersionEnum
 from sqlalchemy import Column, Integer, Enum, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
@@ -17,12 +17,18 @@ class ModelBuff(Base):
         primary_key=True,
     )
 
-    item_id = Column(UUID(as_uuid=True), ForeignKey("item.uuid", ondelete="CASCADE"), nullable=True)
+    item_id = Column(
+        UUID(as_uuid=True), ForeignKey("item.uuid", ondelete="CASCADE"), nullable=True
+    )
     spell_stat_id = Column(
-        UUID(as_uuid=True), ForeignKey("spell_stats.uuid", ondelete="CASCADE"), nullable=True
+        UUID(as_uuid=True),
+        ForeignKey("spell_stats.uuid", ondelete="CASCADE"),
+        nullable=True,
     )
 
     stat = Column("stat", StatEnum, nullable=False)
     increment_by = Column("increment_by", Integer)
     max_stacks = Column("max_stacks", Integer)
     crit_increment_by = Column("crit_increment_by", Integer)
+
+    game_version = Column("game_version", GameVersionEnum, nullable=False, index=True)

@@ -1,5 +1,6 @@
 import sqlalchemy
 from .base import Base
+from .enums import GameVersionEnum
 from sqlalchemy import Column, String
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
@@ -25,3 +26,4 @@ class ModelClass(Base):
     face_image_url = Column("face_image_url", String, nullable=False)
     male_sprite_image_url = Column("male_sprite_image_url", String, nullable=False)
     female_sprite_image_url = Column("female_sprite_image_url", String, nullable=False)
+    game_version = Column("game_version", GameVersionEnum, nullable=False, index=True)

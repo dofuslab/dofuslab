@@ -2,6 +2,7 @@ import sqlalchemy
 from .base import Base
 from .model_item_type import ModelItemType
 from .model_item_stat import ModelItemStat
+from .enums import GameVersionEnum
 from sqlalchemy import Column, ForeignKey, Integer, String, JSON
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy.dialects.postgresql import UUID
@@ -43,3 +44,4 @@ class ModelItem(Base):
     image_url = Column("image_url", String, nullable=False, index=True)
 
     buffs = relationship("ModelBuff", backref="item", cascade="all, delete-orphan")
+    game_version = Column("game_version", GameVersionEnum, nullable=False, index=True)
