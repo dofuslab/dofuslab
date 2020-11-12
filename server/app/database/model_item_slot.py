@@ -3,7 +3,7 @@ from .base import Base
 from .item_type_slot_compat_table import item_type_slot_compat_table
 from .enums import GameVersionEnum
 from sqlalchemy import Column, String, Integer
-from sqlalchemy.dialects.postgresql import UUID, ENUM
+from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
 

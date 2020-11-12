@@ -1,6 +1,6 @@
 import sqlalchemy
 from .base import Base
-from .enums import StatEnum, GameVersionEnum
+from .enums import GameVersionEnum
 from .model_set_bonus import ModelSetBonus
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.dialects.postgresql import UUID
