@@ -27,3 +27,4 @@ class ModelClass(Base):
     male_sprite_image_url = Column("male_sprite_image_url", String, nullable=False)
     female_sprite_image_url = Column("female_sprite_image_url", String, nullable=False)
     game_version = Column("game_version", GameVersionEnum, nullable=False, index=True)
+    spells = relationship("ModelSpell", backref="class", cascade="all, delete-orphan")
