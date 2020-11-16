@@ -33,5 +33,6 @@ def upgrade():
 
 
 def downgrade():
+    op.execute("DELETE FROM item_slot WHERE game_version <> 'DOFUS_2'")
     op.drop_column("item_slot", "game_version")
     game_version_pg_enum.drop(op.get_bind())
