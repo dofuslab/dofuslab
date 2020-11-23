@@ -53,8 +53,8 @@ def update_set(db_session, set_object, data):
     create_set_bonuses(db_session, set_object, data)
 
 
-def create_set(db_session, data):
-    set_object = ModelSet(dofus_db_id=data["id"])
+def create_set(db_session, data, game_version):
+    set_object = ModelSet(dofus_db_id=data["id"], game_version=game_version)
     db_session.add(set_object)
     db_session.flush()
 

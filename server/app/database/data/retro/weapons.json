@@ -1,0 +1,54 @@
+[
+  {
+    "dofusID": "2416",
+    "name": {
+      "en": "Gobball Hammer",
+      "fr": "Marteau du Bouftou",
+      "de": "Hammer des Fresssacks",
+      "es": "Martillo de jalató",
+      "it": "Martello del Pappatutto",
+      "pt": "Martelo do Papatudo"
+    },
+    "itemType": "Hammer",
+    "level": 20,
+    "setID": "1",
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 30,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        {
+          "stat": "Fire damage",
+          "minStat": 4,
+          "maxStat": 8
+        },
+        {
+          "stat": "Earth damage",
+          "minStat": 4,
+          "maxStat": 8
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/7023.png"
+  }
+]

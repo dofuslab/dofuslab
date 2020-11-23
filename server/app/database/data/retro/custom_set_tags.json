@@ -1,0 +1,189 @@
+[
+  {
+    "name": {
+      "en": "PvM",
+      "fr": "PvM",
+      "de": "PvM",
+      "es": "JcM",
+      "it": "PvM",
+      "pt": "PvM"
+    },
+    "imageUrl": "icon/PvM.svg"
+  },
+  {
+    "name": {
+      "en": "PvP",
+      "fr": "PvP",
+      "de": "PvP",
+      "es": "JcJ",
+      "it": "PvP",
+      "pt": "PvP"
+    },
+    "imageUrl": "icon/PvP.svg"
+  },
+  {
+    "name": {
+      "en": "Str",
+      "fr": "Terre",
+      "de": "Str",
+      "es": "Fo",
+      "it": "Fo",
+      "pt": "Str"
+    },
+    "imageUrl": "icon/Strength.svg"
+  },
+  {
+    "name": {
+      "en": "Int",
+      "fr": "Feu",
+      "de": "Int",
+      "es": "Int",
+      "it": "Int",
+      "pt": "Int"
+    },
+    "imageUrl": "icon/Intelligence.svg"
+  },
+  {
+    "name": {
+      "en": "Cha",
+      "fr": "Eau",
+      "de": "Cha",
+      "es": "Suerte",
+      "it": "Cha",
+      "pt": "Cha"
+    },
+    "imageUrl": "icon/Chance.svg"
+  },
+  {
+    "name": {
+      "en": "Agi",
+      "fr": "Air",
+      "de": "Agi",
+      "es": "Agi",
+      "it": "Agi",
+      "pt": "Agi"
+    },
+    "imageUrl": "icon/Agility.svg"
+  },
+  {
+    "name": {
+      "en": "Omni",
+      "fr": "Multi",
+      "de": "Omni",
+      "es": "Multi",
+      "it": "Multi",
+      "pt": "Omni"
+    },
+    "imageUrl": "icon/Omni.svg"
+  },
+  {
+    "name": {
+      "en": "Crit",
+      "fr": "CC",
+      "de": "Crit",
+      "es": "Crit",
+      "it": "Crit",
+      "pt": "Crit"
+    },
+    "imageUrl": "icon/Critical_Hit.svg"
+  },
+  {
+    "name": {
+      "en": "Tank",
+      "fr": "Tank",
+      "de": "Tank",
+      "es": "Tank",
+      "it": "Tank",
+      "pt": "Tank"
+    },
+    "imageUrl": "icon/Melee_Resistance.svg"
+  },
+  {
+    "name": {
+      "en": "PP",
+      "fr": "PP",
+      "de": "PP",
+      "es": "PP",
+      "it": "PP",
+      "pt": "PP"
+    },
+    "imageUrl": "icon/Prospecting.svg"
+  },
+  {
+    "name": {
+      "en": "Wis",
+      "fr": "Sagesse",
+      "de": "Wis",
+      "es": "Sab",
+      "it": "Sag",
+      "pt": "Wis"
+    },
+    "imageUrl": "icon/Wisdom.svg"
+  },
+  {
+    "name": {
+      "en": "Pods",
+      "fr": "Pods",
+      "de": "Pods",
+      "es": "Pods",
+      "it": "Pods",
+      "pt": "Pods"
+    },
+    "imageUrl": "icon/Pods.svg"
+  },
+  {
+    "name": {
+      "en": "Heal",
+      "fr": "Soins",
+      "de": "Heal",
+      "es": "Curas",
+      "it": "Cure",
+      "pt": "Heal"
+    },
+    "imageUrl": "icon/Heals.svg"
+  },
+  {
+    "name": {
+      "en": "Summon",
+      "fr": "Invoc",
+      "de": "Summon",
+      "es": "Invos",
+      "it": "Evoc",
+      "pt": "Summon"
+    },
+    "imageUrl": "icon/Summon.svg"
+  },
+  {
+    "name": {
+      "en": "1v1",
+      "fr": "1v1",
+      "de": "1v1",
+      "es": "1vs1",
+      "it": "1vs1",
+      "pt": "1v1"
+    },
+    "imageUrl": "icon/1v1.svg"
+  },
+  {
+    "name": {
+      "en": "Budget",
+      "fr": "Budget",
+      "de": "Budget",
+      "es": "Barato",
+      "it": "Economico",
+      "pt": "Budget"
+    },
+    "imageUrl": "icon/Budget.svg"
+  },
+  {
+    "name": {
+      "en": "12 AP",
+      "fr": "12 PA",
+      "de": "12 AP",
+      "es": "12 PA",
+      "it": "12 PA",
+      "pt": "12 PA"
+    },
+    "imageUrl": "icon/12AP.svg"
+  }
+]

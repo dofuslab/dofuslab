@@ -10,7 +10,7 @@ const handle = app.getRequestHandler();
 (async () => {
   await app.prepare();
   await nextI18next.initPromise;
-  await express()
+  express()
     .use(nextI18NextMiddleware(nextI18next))
     .get('/build/:customSetId', (req, res) =>
       app.render(req, res, '/index', {

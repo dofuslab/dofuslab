@@ -1,0 +1,36 @@
+[
+  {
+    "dofusID": "7519",
+    "name": {
+      "en": "Pink Dragoone",
+      "fr": "Dragoune Rose",
+      "de": "Rosa Dragooner",
+      "es": "Dragún rosa",
+      "it": "Dragona Rosa",
+      "pt": "Draguna Rosa"
+    },
+    "itemType": "Pet",
+    "setID": null,
+    "level": 1,
+    "stats": [
+      {
+        "stat": "Wisdom",
+        "minStat": null,
+        "maxStat": 50
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {
+        "en": ["Subscribers only"],
+        "fr": ["Etre abonné"],
+        "de": ["Abonniert sein"],
+        "es": ["Estar abonado"],
+        "it": ["Essere abbonato"],
+        "pt": ["Ser assinante"]
+      }
+    },
+    "imageUrl": "item/18014.png"
+  }
+]

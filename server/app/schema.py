@@ -56,6 +56,7 @@ from app.utils import (
     scrolled_stat_list,
     edit_custom_set_stats,
     edit_custom_set_metadata,
+    get_game_version,
 )
 from app.verify_email import verify_email_salt
 from graphene import relay
@@ -391,7 +392,7 @@ class User(SQLAlchemyObjectType):
 
         query = (
             db.session.query(ModelCustomSet)
-            .filter_by(owner_id=self.uuid)
+            .filter_by(owner_id=self.uuid, game_version=get_game_version(info.context))
             .order_by(ModelCustomSet.last_modified.desc())
         )
 
@@ -433,7 +434,11 @@ class User(SQLAlchemyObjectType):
     def resolve_favorite_items(self, info):
         if self.uuid != current_user.get_id():
             raise GraphQLError(_("You are not authorized to make this request."))
-        return map(lambda favorite: favorite.item, self.favorite_items)
+        return filter(
+            lambda favorite_item: favorite_item.game_version
+            == get_game_version(info.context),
+            map(lambda favorite: favorite.item, self.favorite_items),
+        )
 
     class Meta:
         model = ModelUserAccount
@@ -613,7 +618,9 @@ class CreateCustomSet(graphene.Mutation):
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
-            custom_set = get_or_create_custom_set(None, db_session)
+            custom_set = get_or_create_custom_set(
+                None, db_session, get_game_version(info.context)
+            )
 
         return CreateCustomSet(custom_set=custom_set)
 
@@ -630,7 +637,9 @@ class EditCustomSetStats(graphene.Mutation):
         with session_scope() as db_session:
             custom_set_id = kwargs.get("custom_set_id")
             stats = kwargs.get("stats")
-            custom_set = get_or_create_custom_set(custom_set_id, db_session)
+            custom_set = get_or_create_custom_set(
+                custom_set_id, db_session, get_game_version(info.context)
+            )
             edit_custom_set_stats(custom_set, stats)
 
         return EditCustomSetStats(custom_set=custom_set)
@@ -650,7 +659,9 @@ class EditCustomSetMetadata(graphene.Mutation):
             custom_set_id = kwargs.get("custom_set_id")
             name = kwargs.get("name")
             level = kwargs.get("level")
-            custom_set = get_or_create_custom_set(custom_set_id, db_session)
+            custom_set = get_or_create_custom_set(
+                custom_set_id, db_session, get_game_version(info.context)
+            )
             edit_custom_set_metadata(custom_set, name, level)
 
         return EditCustomSetMetadata(custom_set=custom_set)
@@ -668,7 +679,9 @@ class EditCustomSetDefaultClass(graphene.Mutation):
         with session_scope() as db_session:
             custom_set_id = kwargs.get("custom_set_id")
             default_class_id = kwargs.get("default_class_id")
-            custom_set = get_or_create_custom_set(custom_set_id, db_session)
+            custom_set = get_or_create_custom_set(
+                custom_set_id, db_session, get_game_version(info.context)
+            )
             custom_set.default_class_id = default_class_id
 
         return EditCustomSetDefaultClass(custom_set=custom_set)
@@ -689,7 +702,9 @@ class UpdateCustomSetItem(graphene.Mutation):
             custom_set_id = kwargs.get("custom_set_id")
             item_slot_id = kwargs.get("item_slot_id")
             item_id = kwargs.get("item_id")
-            custom_set = get_or_create_custom_set(custom_set_id, db_session)
+            custom_set = get_or_create_custom_set(
+                custom_set_id, db_session, get_game_version(info.context)
+            )
             custom_set.equip_item(item_id, item_slot_id, db_session)
 
         return UpdateCustomSetItem(custom_set=custom_set)
@@ -707,7 +722,9 @@ class EquipSet(graphene.Mutation):
         with session_scope() as db_session:
             custom_set_id = kwargs.get("custom_set_id")
             set_id = kwargs.get("set_id")
-            custom_set = get_or_create_custom_set(custom_set_id, db_session)
+            custom_set = get_or_create_custom_set(
+                custom_set_id, db_session, get_game_version(info.context)
+            )
             set_obj = db_session.query(ModelSet).get(set_id)
             custom_set.equip_set(set_obj, db_session)
 
@@ -727,7 +744,9 @@ class AddTagToCustomSet(graphene.Mutation):
             custom_set_id = kwargs.get("custom_set_id")
             custom_set_tag_id = kwargs.get("custom_set_tag_id")
             tag = db_session.query(ModelCustomSetTag).get(custom_set_tag_id)
-            custom_set = get_or_create_custom_set(custom_set_id, db_session)
+            custom_set = get_or_create_custom_set(
+                custom_set_id, db_session, get_game_version(info.context)
+            )
             check_owner(custom_set)
             db_session.add(
                 ModelCustomSetTagAssociation(
@@ -751,7 +770,9 @@ class RemoveTagFromCustomSet(graphene.Mutation):
             custom_set_id = kwargs.get("custom_set_id")
             custom_set_tag_id = kwargs.get("custom_set_tag_id")
             tag = db_session.query(ModelCustomSetTag).get(custom_set_tag_id)
-            custom_set = get_or_create_custom_set(custom_set_id, db_session)
+            custom_set = get_or_create_custom_set(
+                custom_set_id, db_session, get_game_version(info.context)
+            )
             check_owner(custom_set)
             custom_set.tags.remove(tag)
 
@@ -770,7 +791,9 @@ class EquipMultipleItems(graphene.Mutation):
         with session_scope() as db_session:
             custom_set_id = kwargs.get("custom_set_id")
             item_ids = kwargs.get("item_ids")
-            custom_set = get_or_create_custom_set(custom_set_id, db_session)
+            custom_set = get_or_create_custom_set(
+                custom_set_id, db_session, get_game_version(info.context)
+            )
             items = [
                 {
                     "item": db.session.query(ModelItem)
@@ -898,7 +921,9 @@ class CopyCustomSet(graphene.Mutation):
         custom_set_id = kwargs.get("custom_set_id")
         with session_scope() as db_session:
             old_custom_set = db_session.query(ModelCustomSet).get(custom_set_id)
-            custom_set = get_or_create_custom_set(None, db_session)
+            custom_set = get_or_create_custom_set(
+                None, db_session, get_game_version(info.context)
+            )
             custom_set.name = (
                 _("%(old_name)s copy", old_name=old_custom_set.name)[:MAX_NAME_LENGTH]
                 if old_custom_set.name
@@ -996,7 +1021,9 @@ class ImportCustomSet(graphene.Mutation):
         name = kwargs.get("name")
         level = kwargs.get("level")
         with session_scope() as db_session:
-            custom_set = get_or_create_custom_set(None, db_session)
+            custom_set = get_or_create_custom_set(
+                None, db_session, get_game_version(info.context)
+            )
             edit_custom_set_stats(custom_set, stats)
             edit_custom_set_metadata(custom_set, name, level)
             items = [
@@ -1320,7 +1347,10 @@ class Query(graphene.ObjectType):
         items_query = (
             db.session.query(ModelItem)
             .join(ModelItem.item_translations.of_type(current_locale_translations))
-            .filter(current_locale_translations.locale == locale)
+            .filter(
+                current_locale_translations.locale == locale,
+                ModelItem.game_version == get_game_version(info.context),
+            )
         )
 
         if filters:
@@ -1381,6 +1411,7 @@ class Query(graphene.ObjectType):
 
         set_query = (
             db.session.query(ModelSet)
+            .filter_by(game_version=get_game_version(info.context))
             .join(ModelSet.set_translation.of_type(current_locale_translations))
             .filter(current_locale_translations.locale == locale)
         )
@@ -1446,12 +1477,16 @@ class Query(graphene.ObjectType):
     custom_sets = graphene.List(CustomSet)
 
     def resolve_custom_sets(self, info):
-        return db.session.query(ModelCustomSet).all()
+        return db.session.query(ModelCustomSet).filter_by(
+            game_version=get_game_version(info.context)
+        )
 
     classes = graphene.NonNull(graphene.List(graphene.NonNull(Class)))
 
     def resolve_classes(self, info):
-        return db.session.query(ModelClass).all()
+        return db.session.query(ModelClass).filter_by(
+            game_version=get_game_version(info.context)
+        )
 
     # Retrieve record by uuid
     class_by_id = graphene.Field(Class, id=graphene.UUID(required=True))
@@ -1482,7 +1517,12 @@ class Query(graphene.ObjectType):
     item_slots = graphene.NonNull(graphene.List(graphene.NonNull(ItemSlot)))
 
     def resolve_item_slots(self, info):
-        return db.session.query(ModelItemSlot).order_by(ModelItemSlot.order).all()
+        version = get_game_version(info.context)
+        return (
+            db.session.query(ModelItemSlot)
+            .filter_by(game_version=version)
+            .order_by(ModelItemSlot.order)
+        )
 
     locale = graphene.NonNull(graphene.String)
 
@@ -1529,7 +1569,9 @@ class Query(graphene.ObjectType):
     custom_set_tags = graphene.NonNull(graphene.List(graphene.NonNull(CustomSetTag)))
 
     def resolve_custom_set_tags(self, info):
-        return db.session.query(ModelCustomSetTag).all()
+        return db.session.query(ModelCustomSetTag).filter_by(
+            game_version=get_game_version(info.context)
+        )
 
 
 class Mutation(graphene.ObjectType):

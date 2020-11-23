@@ -10,6 +10,7 @@ from app.database.model_item_type import ModelItemType
 from app.database.model_item_type_translation import ModelItemTypeTranslation
 from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_weapon_stat import ModelWeaponStat
+from oneoff.utils import get_relative_path_for_game_version
 from oneoff.enums import to_stat_enum, to_effect_enum
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -83,17 +84,28 @@ def update_or_create_item(
     return create_all
 
 
-def create_item(db_session, record):
+def create_item(db_session, record, game_version):
     item_types = {}
-    with open(os.path.join(app_root, "app/database/data/item_types.json"), "r") as file:
+    with open(
+        os.path.join(
+            app_root,
+            get_relative_path_for_game_version(game_version),
+            "item_types.json",
+        ),
+        "r",
+    ) as file:
         data = json.load(file)
         for item_type_record in data:
-            item_type = (
-                db_session.query(ModelItemTypeTranslation)
-                .filter_by(locale="en", name=item_type_record["en"])
-                .one()
-                .item_type
-            )
+            item_types_translations = db_session.query(
+                ModelItemTypeTranslation
+            ).filter_by(locale="en", name=item_type_record["en"])
+            item_type = next(
+                filter(
+                    lambda translation: translation.item_type.game_version
+                    == game_version,
+                    item_types_translations,
+                )
+            ).item_type
             item_types[item_type_record["en"]] = item_type
     if record["itemType"] == "Living object":
         return False
@@ -102,12 +114,16 @@ def create_item(db_session, record):
         item_type_id=item_types[record["itemType"]].uuid,
         level=record["level"],
         image_url=record["imageUrl"],
+        game_version=game_version,
     )
 
     if record.get("setID", None):
         set = (
             db_session.query(ModelSet)
-            .filter(ModelSet.dofus_db_id == record["setID"])
+            .filter(
+                ModelSet.dofus_db_id == record["setID"],
+                ModelSet.game_version == game_version,
+            )
             .one()
         )
         set.items.append(item)

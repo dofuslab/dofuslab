@@ -1,0 +1,162 @@
+[
+  {
+    "id": "1",
+    "name": {
+      "en": "Gobball Set",
+      "fr": "Panoplie du Bouftou",
+      "de": "Fresssack-Set",
+      "es": "Set de jalató",
+      "it": "Panoplia del Pappatutto",
+      "pt": "Conjunto do Papatudo"
+    },
+    "bonuses": {
+      "2": [
+        {
+          "stat": "Strength",
+          "value": 5,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 5,
+          "altStat": null
+        }
+      ],
+      "3": [
+        {
+          "stat": "Strength",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 10,
+          "altStat": null
+        }
+      ],
+      "4": [
+        {
+          "stat": "Fire Damage",
+          "value": 2,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Earth Damage",
+          "value": 2,
+          "altStat": null
+        },
+        {
+          "stat": "Neutral Damage",
+          "value": 2,
+          "altStat": null
+        }
+      ],
+      "5": [
+        {
+          "stat": "Fire Damage",
+          "value": 4,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "Earth Damage",
+          "value": 4,
+          "altStat": null
+        },
+        {
+          "stat": "Neutral Damage",
+          "value": 4,
+          "altStat": null
+        }
+      ],
+      "6": [
+        {
+          "stat": "Fire Damage",
+          "value": 4,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "Earth Damage",
+          "value": 4,
+          "altStat": null
+        },
+        {
+          "stat": "Neutral Damage",
+          "value": 4,
+          "altStat": null
+        }
+      ],
+      "7": [
+        {
+          "stat": "Vitality",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "AP",
+          "value": 1,
+          "altStat": null
+        },
+        {
+          "stat": "Wisdom",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Fire Damage",
+          "value": 5,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 50,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
+          "value": 50,
+          "altStat": null
+        },
+        {
+          "stat": "Earth Damage",
+          "value": 5,
+          "altStat": null
+        },
+        {
+          "stat": "Neutral Damage",
+          "value": 5,
+          "altStat": null
+        }
+      ]
+    }
+  }
+]

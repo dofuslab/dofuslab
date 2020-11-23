@@ -1,5 +1,6 @@
 from app import db
 from app import session_scope
+from app.database.enums import GameVersion
 from app.database.model_custom_set_tag import ModelCustomSetTag
 from app.database.model_custom_set_tag_translation import ModelCustomSetTagTranslation
 from app.database.model_item import ModelItem
@@ -31,6 +32,8 @@ from app.database import base
 from oneoff.enums import to_stat_enum, to_effect_enum, to_spell_enum
 from oneoff.sync_spell import create_spell_stats
 from oneoff.sync_set import create_set
+from oneoff.sync_custom_set_tag import load_and_create_all_custom_set_tags
+from oneoff.utils import prompt_game_version, get_relative_path_for_game_version
 import oneoff.sync_item
 import oneoff.sync_buff
 from sqlalchemy.schema import MetaData
@@ -51,26 +54,38 @@ slot_url_base = "icon/{}.svg"
 item_types = {}
 
 
-def add_item_types_and_slots():
+def add_item_types_and_slots(game_version, db_session):
     print("Adding item types to database")
-    with open(os.path.join(app_root, "app/database/data/item_types.json"), "r") as file:
+    with open(
+        os.path.join(
+            app_root,
+            get_relative_path_for_game_version(game_version),
+            "item_types.json",
+        ),
+        "r",
+    ) as file:
         data = json.load(file)
         for record in data:
-            item_type = ModelItemType()
-            db.session.add(item_type)
-            db.session.flush()
+            item_type = ModelItemType(game_version=game_version)
+            db_session.add(item_type)
+            db_session.flush()
             for locale in record:
                 translation = ModelItemTypeTranslation(
                     item_type_id=item_type.uuid, locale=locale, name=record[locale]
                 )
-                db.session.add(translation)
+                db_session.add(translation)
 
             item_types[record["en"]] = item_type
 
-    db.session.commit()
-
     print("Adding item slots to database")
-    with open(os.path.join(app_root, "app/database/data/item_slots.json"), "r") as file:
+    with open(
+        os.path.join(
+            app_root,
+            get_relative_path_for_game_version(game_version),
+            "item_slots.json",
+        ),
+        "r",
+    ) as file:
         data = json.load(file)
         i = 0
         for record in data:
@@ -82,307 +97,212 @@ def add_item_types_and_slots():
                     ],
                     order=i,
                     image_url=slot_url_base.format(en_name),
+                    game_version=game_version,
                 )
-                db.session.add(item_slot)
-                db.session.flush()
+                db_session.add(item_slot)
+                db_session.flush()
                 for locale in record["name"]:
                     translation = ModelItemSlotTranslation(
                         item_slot_id=item_slot.uuid,
                         locale=locale,
                         name=record["name"][locale],
                     )
-                    db.session.add(translation)
+                    db_session.add(translation)
 
                 i = i + 1
 
-    db.session.commit()
 
-
-def add_sets_and_items():
+def add_sets_and_items(game_version, db_session):
     print("Adding sets to database")
-    with open(os.path.join(app_root, "app/database/data/sets.json"), "r") as file:
-        with session_scope() as db_session:
-            data = json.load(file)
-            for record in data:
-                create_set(db_session, record)
+    with open(
+        os.path.join(
+            app_root, get_relative_path_for_game_version(game_version), "sets.json"
+        ),
+        "r",
+    ) as file:
+        data = json.load(file)
+        for record in data:
+            create_set(db_session, record, game_version)
 
     print("Adding items to database")
-    with open(os.path.join(app_root, "app/database/data/items.json"), "r") as file:
-        with session_scope() as db_session:
-            data = json.load(file)
-            for record in data:
-                if record["itemType"] == "Living object":
-                    continue
+    with open(
+        os.path.join(
+            app_root, get_relative_path_for_game_version(game_version), "items.json"
+        ),
+        "r",
+    ) as file:
+        data = json.load(file)
+        for record in data:
+            if record["itemType"] == "Living object":
+                continue
 
-                oneoff.sync_item.create_item(db_session, record)
+            oneoff.sync_item.create_item(db_session, record, game_version)
 
 
-def add_weapons():
+def add_weapons(game_version, db_session):
     print("Adding weapons to database")
-    with open(os.path.join(app_root, "app/database/data/weapons.json"), "r") as file:
-        with session_scope() as db_session:
-            data = json.load(file)
-            for record in data:
+    with open(
+        os.path.join(
+            app_root, get_relative_path_for_game_version(game_version), "weapons.json"
+        ),
+        "r",
+    ) as file:
+        data = json.load(file)
+        for record in data:
+            oneoff.sync_item.create_item(db_session, record, game_version)
 
-                oneoff.sync_item.create_item(db_session, record)
 
-
-def add_pets():
+def add_pets(game_version, db_session):
     print("Adding pets to database")
-    with open(os.path.join(app_root, "app/database/data/pets.json"), "r") as file:
+    with open(
+        os.path.join(
+            app_root, get_relative_path_for_game_version(game_version), "pets.json"
+        ),
+        "r",
+    ) as file:
         data = json.load(file)
         for record in data:
-            item = ModelItem(
-                dofus_db_id=record["dofusID"],
-                item_type=item_types[record["itemType"]],
-                level=record["level"],
-                image_url=record["imageUrl"],
-            )
-            db.session.add(item)
-
-            conditions = {
-                "conditions": record["conditions"]["conditions"],
-                "customConditions": record["conditions"]["customConditions"],
-            }
-            item.conditions = conditions
-
-            for locale in record["name"]:
-                item_translations = ModelItemTranslation(
-                    item_id=item.uuid, locale=locale, name=record["name"][locale],
-                )
-                db.session.add(item_translations)
-                item.item_translations.append(item_translations)
-
-            try:
-                i = 0
-                for stat in record["stats"]:
-                    item_stat = ModelItemStat(
-                        stat=to_stat_enum[stat["stat"]],
-                        min_value=stat["minStat"],
-                        max_value=stat["maxStat"],
-                        order=i,
-                    )
-                    db.session.add(item_stat)
-                    item.stats.append(item_stat)
-                    i = i + 1
-                if record["customStats"] != {} and record["customStats"] != []:
-                    num_of_stats = len(record["customStats"]["en"])
-
-                    for j in range(num_of_stats):
-                        item_stat = ModelItemStat(order=i)
-                        for locale in record["customStats"]:
-                            custom_stat = record["customStats"][locale][j]
-                            stat_translation = ModelItemStatTranslation(
-                                item_stat_id=item_stat.uuid,
-                                locale=locale,
-                                custom_stat=custom_stat,
-                            )
-                            db.session.add(stat_translation)
-                            item_stat.item_stat_translation.append(stat_translation)
-
-                        db.session.add(item_stat)
-                        item.stats.append(item_stat)
-                        i = i + 1
-
-                # If this item belongs in a set, query the set and add the relationship to the record
-                if record["setID"]:
-                    set = record["setID"]
-                    set_record = (
-                        db.session.query(ModelSet)
-                        .filter(ModelSet.dofus_db_id == set)
-                        .first()
-                    )
-                    set_record.items.append(item)
-                    db.session.merge(set_record)
-            except KeyError as err:
-                print("KeyError occurred:", err)
-
-        db.session.commit()
+            oneoff.sync_item.create_item(db_session, record, game_version)
 
 
-def add_mounts():
+def add_mounts(game_version, db_session):
     print("Adding mounts to database")
-    with open(os.path.join(app_root, "app/database/data/mounts.json"), "r") as file:
+    with open(
+        os.path.join(
+            app_root, get_relative_path_for_game_version(game_version), "mounts.json"
+        ),
+        "r",
+    ) as file:
         data = json.load(file)
         for record in data:
-            item = ModelItem(
-                dofus_db_id=record["dofusID"],
-                item_type=item_types[record["itemType"]],
-                level=record["level"],
-                image_url=record["imageUrl"],
-            )
+            oneoff.sync_item.create_item(db_session, record, game_version)
 
-            for locale in record["name"]:
-                item_translations = ModelItemTranslation(
-                    item_id=item.uuid, locale=locale, name=record["name"][locale],
-                )
-                db.session.add(item_translations)
-                item.item_translations.append(item_translations)
-
-            try:
-                i = 0
-                for stat in record["stats"]:
-                    item_stat = ModelItemStat(
-                        stat=to_stat_enum[stat["stat"]],
-                        min_value=stat["minStat"],
-                        max_value=stat["maxStat"],
-                        order=i,
-                    )
-                    db.session.add(item_stat)
-                    item.stats.append(item_stat)
-                    i = i + 1
-
-                db.session.add(item)
-
-            except KeyError as err:
-                print("KeyError occurred:", err)
-
-        db.session.commit()
-
-    with open(os.path.join(app_root, "app/database/data/rhineetles.json"), "r") as file:
-        data = json.load(file)
-        for record in data:
-            item = ModelItem(
-                dofus_db_id=record["dofusID"],
-                item_type=item_types[record["itemType"]],
-                level=record["level"],
-                image_url=record["imageUrl"],
-            )
-
-            for locale in record["name"]:
-                item_translations = ModelItemTranslation(
-                    item_id=item.uuid, locale=locale, name=record["name"][locale],
-                )
-                db.session.add(item_translations)
-                item.item_translations.append(item_translations)
-
-            try:
-                i = 0
-                for stat in record["stats"]:
-                    item_stat = ModelItemStat(
-                        stat=to_stat_enum[stat["stat"]],
-                        min_value=stat["minStat"],
-                        max_value=stat["maxStat"],
-                        order=i,
-                    )
-                    db.session.add(item_stat)
-                    item.stats.append(item_stat)
-                    i = i + 1
-
-                db.session.add(item)
-
-            except KeyError as err:
-                print("KeyError occurred:", err)
-
-        db.session.commit()
-
-
-def add_classes_and_spells():
-    print("Adding classes to database")
-    with open(os.path.join(app_root, "app/database/data/spells.json"), "r") as file:
-        with session_scope() as db_session:
+    try:
+        with open(
+            os.path.join(
+                app_root,
+                get_relative_path_for_game_version(game_version),
+                "rhineetles.json",
+            ),
+            "r",
+        ) as file:
             data = json.load(file)
             for record in data:
-                en_name = record["names"]["en"]
-                class_object = ModelClass(
-                    face_image_url=face_url_base.format(en_name),
-                    male_sprite_image_url=male_sprite_url_base.format(en_name),
-                    female_sprite_image_url=female_sprite_url_base.format(en_name),
+                oneoff.sync_item.create_item(db_session, record, game_version)
+    except FileNotFoundError:
+        print("Rhineetles file not found")
+
+
+def add_classes_and_spells(game_version, db_session):
+    print("Adding classes to database")
+    with open(
+        os.path.join(
+            app_root, get_relative_path_for_game_version(game_version), "spells.json"
+        ),
+        "r",
+    ) as file:
+        data = json.load(file)
+        for record in data:
+            en_name = record["names"]["en"]
+            class_object = ModelClass(
+                face_image_url=face_url_base.format(en_name),
+                male_sprite_image_url=male_sprite_url_base.format(en_name),
+                female_sprite_image_url=female_sprite_url_base.format(en_name),
+            )
+            db_session.add(class_object)
+            db_session.flush()
+
+            for locale in record["names"]:
+                class_translation = ModelClassTranslation(
+                    class_id=class_object.uuid,
+                    locale=locale,
+                    name=record["names"][locale],
                 )
-                db_session.add(class_object)
+                db_session.add(class_translation)
+                class_object.name.append(class_translation)
+
+            for spell_pair in record["spells"]:
+                spell_pair_object = ModelSpellVariantPair(class_id=class_object.uuid)
+                db_session.add(spell_pair_object)
                 db_session.flush()
 
-                for locale in record["names"]:
-                    class_translation = ModelClassTranslation(
-                        class_id=class_object.uuid,
-                        locale=locale,
-                        name=record["names"][locale],
+                for spell in spell_pair:
+                    spell_object = ModelSpell(
+                        spell_variant_pair_id=spell_pair_object.uuid,
+                        image_url=spell["imageUrl"],
+                        is_trap=spell.get("isTrap", False),
                     )
-                    db_session.add(class_translation)
-                    class_object.name.append(class_translation)
-
-                for spell_pair in record["spells"]:
-                    spell_pair_object = ModelSpellVariantPair(
-                        class_id=class_object.uuid
-                    )
-                    db_session.add(spell_pair_object)
+                    db_session.add(spell_object)
                     db_session.flush()
 
-                    for spell in spell_pair:
-                        spell_object = ModelSpell(
-                            spell_variant_pair_id=spell_pair_object.uuid,
-                            image_url=spell["imageUrl"],
-                            is_trap=spell.get("isTrap", False),
+                    for locale in spell["name"]:
+                        spell_translation = ModelSpellTranslation(
+                            spell_id=spell_object.uuid,
+                            locale=locale,
+                            name=spell["name"][locale],
+                            description=spell["description"][locale],
                         )
-                        db_session.add(spell_object)
-                        db_session.flush()
+                        db_session.add(spell_translation)
+                        spell_object.spell_translation.append(spell_translation)
 
-                        for locale in spell["name"]:
-                            spell_translation = ModelSpellTranslation(
-                                spell_id=spell_object.uuid,
-                                locale=locale,
-                                name=spell["name"][locale],
-                                description=spell["description"][locale],
-                            )
-                            db_session.add(spell_translation)
-                            spell_object.spell_translation.append(spell_translation)
-
-                        create_spell_stats(db_session, spell, spell_object)
+                    create_spell_stats(db_session, spell, spell_object)
 
 
-def add_buffs():
+def add_buffs(game_version, db_session):
     print("Adding buffs to database")
-    with open(os.path.join(app_root, "app/database/data/buffs.json"), "r") as file:
+    with open(
+        os.path.join(
+            app_root, get_relative_path_for_game_version(game_version), "buffs.json"
+        ),
+        "r",
+    ) as file:
         data = json.load(file)
 
         all_classes = data["spells"]
         all_items = data["items"]
 
-        with session_scope() as db_session:
-            for class_name in all_classes:
-                for spell in all_classes[class_name]:
-                    spell_id = (
-                        db_session.query(ModelSpellTranslation)
-                        .filter_by(name=spell["name"], locale="en")
-                        .one()
-                        .spell_id
-                    )
-
-                    for level in spell["levels"]:
-                        spell_stat_id = (
-                            db_session.query(ModelSpellStats)
-                            .filter_by(spell_id=spell_id, level=level["level"])
-                            .one()
-                            .uuid
-                        )
-
-                        oneoff.sync_buff.add_spell_buff_for_level(
-                            db_session, spell_stat_id, level
-                        )
-
-            for item in all_items:
-                item_id = (
-                    db_session.query(ModelItemTranslation)
-                    .filter_by(name=item["name"], locale="en")
+        for class_name in all_classes:
+            for spell in all_classes[class_name]:
+                spell_id = (
+                    db_session.query(ModelSpellTranslation)
+                    .filter_by(name=spell["name"], locale="en")
                     .one()
-                    .item_id
+                    .spell_id
                 )
 
-                oneoff.sync_buff.add_item_buffs(db_session, item_id, item)
+                for level in spell["levels"]:
+                    spell_stat_id = (
+                        db_session.query(ModelSpellStats)
+                        .filter_by(spell_id=spell_id, level=level["level"])
+                        .one()
+                        .uuid
+                    )
+
+                    oneoff.sync_buff.add_spell_buff_for_level(
+                        db_session, spell_stat_id, level
+                    )
+
+        for item in all_items:
+            item_id = (
+                db_session.query(ModelItemTranslation)
+                .filter_by(name=item["name"], locale="en")
+                .one()
+                .item_id
+            )
+            oneoff.sync_buff.add_item_buffs(db_session, item_id, item, game_version)
 
 
-def add_tags():
+def add_tags(game_version, db_session):
     print("Adding custom set tags to database")
-    load_and_create_all_custom_set_tags(db.session)
-    db.session.commit()
+    load_and_create_all_custom_set_tags(db_session, game_version)
 
 
-def populate_table_for(table, fn):
+def populate_table_for(table, fn, game_version, db_session):
     while True:
         str = "Would you like to add {}? (y/n)? ".format(table)
         response = input(str)
         if response == "y":
-            fn()
+            fn(game_version, db_session)
             break
         elif response == "n":
             break
@@ -391,29 +311,42 @@ def populate_table_for(table, fn):
 
 
 def setup_db():
+    game_version = prompt_game_version()
     while True:
-        response = input("Would you like to populate all tables (y/n)? ")
-        if response == "y":
-            add_item_types_and_slots()
-            add_sets_and_items()
-            add_weapons()
-            add_pets()
-            add_mounts()
-            add_classes_and_spells()
-            add_buffs()
-            add_tags()
-            break
-        elif response == "n":
-            populate_table_for("item types and item slots", add_item_types_and_slots)
-            populate_table_for("sets and items", add_sets_and_items)
-            populate_table_for("weapons", add_weapons)
-            populate_table_for("pets", add_pets)
-            populate_table_for("mounts", add_mounts)
-            populate_table_for("classes and spells", add_classes_and_spells)
-            populate_table_for("spell and item buffs", add_buffs)
-            break
-        else:
-            print("Invalid response, please type 'y' or 'n'")
+        with session_scope() as db_session:
+            response = input("Would you like to populate all tables (y/n)? ")
+            if response == "y":
+                add_item_types_and_slots(game_version, db_session)
+                add_sets_and_items(game_version, db_session)
+                add_weapons(game_version, db_session)
+                add_pets(game_version, db_session)
+                add_mounts(game_version, db_session)
+                add_classes_and_spells(game_version, db_session)
+                add_buffs(game_version, db_session)
+                add_tags(game_version, db_session)
+                break
+            elif response == "n":
+                populate_table_for(
+                    "item types and item slots", add_item_types_and_slots, game_version
+                )
+                populate_table_for(
+                    "sets and items", add_sets_and_items, game_version, db_session
+                )
+                populate_table_for("weapons", add_weapons, game_version, db_session)
+                populate_table_for("pets", add_pets, game_version, db_session)
+                populate_table_for("mounts", add_mounts, game_version, db_session)
+                populate_table_for(
+                    "classes and spells",
+                    add_classes_and_spells,
+                    game_version,
+                    db_session,
+                )
+                populate_table_for(
+                    "spell and item buffs", add_buffs, game_version, db_session
+                )
+                break
+            else:
+                print("Invalid response, please type 'y' or 'n'")
 
 
 if __name__ == "__main__":

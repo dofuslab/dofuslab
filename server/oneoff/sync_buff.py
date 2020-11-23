@@ -11,13 +11,14 @@ import json
 root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-def add_item_buffs(db_session, item_id, record):
+def add_item_buffs(db_session, item_id, record, game_version):
     for buff in record["buffs"]:
         buff_object = ModelBuff(
             item_id=item_id,
             stat=to_stat_enum[buff["stat"]],
             increment_by=buff["incrementBy"],
             max_stacks=buff["maxStacks"],
+            game_version=game_version,
         )
         db_session.add(buff_object)
 
@@ -82,7 +83,9 @@ def update_or_create_item_buff(db_session, item_name, record, should_only_add_mi
         print("Buffs for {} added.".format(item_name))
 
 
-def update_or_create_spell_buff(db_session, spell_name, spell_data, should_only_add_missing):
+def update_or_create_spell_buff(
+    db_session, spell_name, spell_data, should_only_add_missing
+):
     translations = (
         db_session.query(ModelSpellTranslation)
         .filter(

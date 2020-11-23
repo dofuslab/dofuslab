@@ -15,7 +15,9 @@ class ModelItemSlotTranslation(Base):
         primary_key=True,
     )
     item_slot_id = Column(
-        UUID(as_uuid=True), ForeignKey("item_slot.uuid"), nullable=False
+        UUID(as_uuid=True),
+        ForeignKey("item_slot.uuid", ondelete="CASCADE"),
+        nullable=False,
     )
     locale = Column("locale", String, nullable=False)
 

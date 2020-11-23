@@ -45,6 +45,8 @@ if flask_env == "development":
         "http://dev.localhost:3000",
         "http://localhost:3001",
         "http://dev.localhost:3001",
+        "http://retro.dev.localhost:3000",
+        "http://touch.dev.localhost:3000",
         "chrome-extension://nnajljfdkjbhhgbfjbnnkmbkediobfjn",
     ]
 elif flask_env == "production":
@@ -174,4 +176,4 @@ from app.verify_email import verify_email_blueprint
 app.register_blueprint(verify_email_blueprint)
 
 if __name__ == "__main__":
-    app.run(debug=True, host=".dev.localhost")
+    app.run(debug=True, host=".localhost")

@@ -1,0 +1,204 @@
+[
+  {
+    "dofusID": "2422",
+    "name": {
+      "en": "Gobboots",
+      "fr": "Boufbottes",
+      "de": "Fressstiefel",
+      "es": "Jalabotas",
+      "it": "Pappastivali",
+      "pt": "Papabotas"
+    },
+    "itemType": "Boots",
+    "setID": "1",
+    "level": 20,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 16,
+        "maxStat": 20
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/11026.png"
+  },
+  {
+    "dofusID": "2411",
+    "name": {
+      "en": "Gobball Headgear",
+      "fr": "Coiffe du Bouftou",
+      "de": "Fresssackkapp",
+      "es": "Sombrero de jalató",
+      "it": "Copricapo del Pappatutto",
+      "pt": "Chapéu do Papatudo"
+    },
+    "itemType": "Hat",
+    "setID": "1",
+    "level": 20,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 16,
+        "maxStat": 20
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16041.png"
+  },
+  {
+    "dofusID": "2414",
+    "name": {
+      "en": "Gobball Cape",
+      "fr": "Cape Bouffante",
+      "de": "Fresssacksack",
+      "es": "Capa Jalosa",
+      "it": "Mantello Pappante",
+      "pt": "Capa Gobbling"
+    },
+    "itemType": "Cloak",
+    "setID": "1",
+    "level": 20,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 36,
+        "maxStat": 40
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/17044.png"
+  },
+  {
+    "dofusID": "2419",
+    "name": {
+      "en": "Bouze Lite Yeah's Ring",
+      "fr": "Anneau de Bouze le Clerc",
+      "de": "Ring von Buhz Leichtfrier",
+      "es": "Anillo De Boz Layt Yer",
+      "it": "Anello di Buz il Prete",
+      "pt": "Anel de Boz Laitíer"
+    },
+    "itemType": "Ring",
+    "setID": "1",
+    "level": 20,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 71,
+        "maxStat": 100
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9044.png"
+  },
+  {
+    "dofusID": "2425",
+    "name": {
+      "en": "Gobball Amulet",
+      "fr": "Amulette du Bouftou",
+      "de": "Amulett des Fresssacks",
+      "es": "Amuleto de jalató",
+      "it": "Amuleto del Pappatutto",
+      "pt": "Amuleto do Papatudo"
+    },
+    "itemType": "Amulet",
+    "setID": "1",
+    "level": 20,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Strength",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/1048.png"
+  },
+  {
+    "dofusID": "2428",
+    "name": {
+      "en": "Gobball Belt",
+      "fr": "Ceinture du Bouftou",
+      "de": "Gürtel des Fresssacks",
+      "es": "Cinturón de jalató",
+      "it": "Cintura del Pappatutto",
+      "pt": "Cinto do Papatudo"
+    },
+    "itemType": "Belt",
+    "setID": "1",
+    "level": 20,
+    "stats": [
+      {
+        "stat": "pods",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Strength",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/10029.png"
+  }
+]

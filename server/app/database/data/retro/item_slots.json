@@ -1,0 +1,127 @@
+[
+  {
+    "name": {
+      "en": "Hat",
+      "fr": "Chapeau",
+      "de": "Hut",
+      "es": "Sombrero",
+      "it": "Cappello",
+      "pt": "Chapéu"
+    },
+    "types": ["Hat"]
+  },
+  {
+    "name": {
+      "en": "Cloak",
+      "fr": "Cape",
+      "de": "Umhang",
+      "es": "Capa",
+      "it": "Mantello",
+      "pt": "Capa"
+    },
+    "types": ["Backpack", "Cloak"]
+  },
+  {
+    "name": {
+      "en": "Amulet",
+      "fr": "Amulette",
+      "de": "Amulett",
+      "es": "Amuleto",
+      "it": "Amuleto",
+      "pt": "Amuleto"
+    },
+    "types": ["Amulet"]
+  },
+  {
+    "name": {
+      "en": "Ring",
+      "fr": "Anneau",
+      "de": "Ring",
+      "es": "Anillo",
+      "it": "Anello",
+      "pt": "Anel"
+    },
+    "types": ["Ring"],
+    "quantity": 2
+  },
+  {
+    "name": {
+      "en": "Belt",
+      "fr": "Ceinture",
+      "de": "Gürtel",
+      "es": "Cinturón",
+      "it": "Cintura",
+      "pt": "Cinto"
+    },
+    "types": ["Belt"]
+  },
+  {
+    "name": {
+      "en": "Boots",
+      "fr": "Bottes",
+      "de": "Stiefel",
+      "es": "Bota",
+      "it": "Stivali",
+      "pt": "Botas"
+    },
+    "types": ["Boots"]
+  },
+  {
+    "name": {
+      "en": "Weapon",
+      "fr": "Arme",
+      "de": "Waffe",
+      "es": "Arma",
+      "it": "Arma",
+      "pt": "Arma"
+    },
+    "types": [
+      "Axe",
+      "Bow",
+      "Dagger",
+      "Hammer",
+      "Pickaxe",
+      "Scythe",
+      "Shovel",
+      "Soul stone",
+      "Staff",
+      "Sword",
+      "Tool",
+      "Wand"
+    ]
+  },
+  {
+    "name": {
+      "en": "Shield",
+      "fr": "Bouclier",
+      "de": "Schild",
+      "es": "Escudo",
+      "it": "Scudo",
+      "pt": "Escudo"
+    },
+    "types": ["Shield"]
+  },
+  {
+    "name": {
+      "en": "Dofus",
+      "fr": "Dofus",
+      "de": "Dofus",
+      "es": "Dofus",
+      "it": "Dofus",
+      "pt": "Dofus"
+    },
+    "types": ["Dofus"],
+    "quantity": 6
+  },
+  {
+    "name": {
+      "en": "Pet",
+      "fr": "Familier",
+      "de": "Vertrauter",
+      "es": "Mascota",
+      "it": "Famiglio",
+      "pt": "Mascote"
+    },
+    "types": ["Pet", "Mount"]
+  }
+]

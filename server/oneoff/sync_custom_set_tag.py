@@ -3,28 +3,32 @@ import os
 from app import session_scope
 from app.database.model_custom_set_tag import ModelCustomSetTag
 from app.database.model_custom_set_tag_translation import ModelCustomSetTagTranslation
+from oneoff.utils import get_relative_path_for_game_version
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-def create_or_update_custom_set_tag(db_session, en_name, record):
-    translation = (
+def create_or_update_custom_set_tag(db_session, en_name, record, game_version):
+    custom_set_tag = (
         db_session.query(ModelCustomSetTagTranslation)
+        .join(ModelCustomSetTag)
         .filter(
             ModelCustomSetTagTranslation.locale == "en",
             ModelCustomSetTagTranslation.name == en_name,
+            ModelCustomSetTag.game_version == game_version,
         )
-        .one_or_none()
-    )
-    if translation:
-        custom_set_tag = translation.custom_set_tag
+    ).one_or_none()
+
+    if custom_set_tag:
         db_session.query(ModelCustomSetTagTranslation).filter_by(
             custom_set_tag_id=custom_set_tag.uuid
         ).delete()
 
         custom_set_tag.image_url = record["imageUrl"]
     else:
-        custom_set_tag = ModelCustomSetTag(image_url=record["imageUrl"])
+        custom_set_tag = ModelCustomSetTag(
+            image_url=record["imageUrl"], game_version=game_version
+        )
         db_session.add(custom_set_tag)
         db_session.flush()
 
@@ -38,23 +42,35 @@ def create_or_update_custom_set_tag(db_session, en_name, record):
         db_session.add(new_translation)
 
 
-def create_or_update_all_custom_set_tags(db_session, data):
+def create_or_update_all_custom_set_tags(db_session, data, game_version):
     for record in data:
-        create_or_update_custom_set_tag(db_session, record["name"]["en"], record)
+        create_or_update_custom_set_tag(
+            db_session, record["name"]["en"], record, game_version
+        )
 
 
-def load_and_create_all_custom_set_tags(db_session):
+def load_and_create_all_custom_set_tags(db_session, game_version):
     with open(
-        os.path.join(app_root, "app/database/data/custom_set_tags.json"), "r",
+        os.path.join(
+            app_root,
+            get_relative_path_for_game_version(game_version),
+            "custom_set_tags.json",
+        ),
+        "r",
     ) as file:
         data = json.load(file)
-        create_or_update_all_custom_set_tags(db_session, data)
+        create_or_update_all_custom_set_tags(db_session, data, game_version)
 
 
 def sync_custom_set_tag():
     print("Loading and processing file...")
     with open(
-        os.path.join(app_root, "app/database/data/custom_set_tags.json"), "r",
+        os.path.join(
+            app_root,
+            get_relative_path_for_game_version(game_version),
+            "custom_set_tags.json",
+        ),
+        "r",
     ) as file:
         data = json.load(file)
         name_to_record_map = {}
