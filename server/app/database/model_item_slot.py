@@ -1,6 +1,7 @@
 import sqlalchemy
 from .base import Base
 from .item_type_slot_compat_table import item_type_slot_compat_table
+from .enums import GameVersionEnum
 from sqlalchemy import Column, String, Integer
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
@@ -26,3 +27,4 @@ class ModelItemSlot(Base):
     item_slot_translation = relationship(
         "ModelItemSlotTranslation", backref="item_slot", cascade="all, delete-orphan"
     )
+    game_version = Column("game_version", GameVersionEnum, nullable=False, index=True)

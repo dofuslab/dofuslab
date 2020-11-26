@@ -1,5 +1,6 @@
 import sqlalchemy
 from .base import Base
+from .enums import GameVersionEnum
 from sqlalchemy import Column, String, ForeignKey, Boolean
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
@@ -18,8 +19,11 @@ class ModelSpell(Base):
     spell_variant_pair_id = Column(
         UUID(as_uuid=True),
         ForeignKey("spell_variant_pair.uuid", ondelete="CASCADE"),
-        nullable=False,
+        nullable=True,
         index=True,
+    )
+    class_id = Column(
+        UUID(as_uuid=True), ForeignKey("class.uuid", ondelete="CASCADE"), nullable=True
     )
 
     spell_translation = relationship(
@@ -31,3 +35,4 @@ class ModelSpell(Base):
     )
 
     is_trap = Column("is_trap", Boolean, nullable=False)
+    game_version = Column("game_version", GameVersionEnum, nullable=False, index=True)

@@ -109,7 +109,14 @@ class WeaponElementMage(Enum):
     AIR_50 = auto()
 
 
+class GameVersion(Enum):
+    DOFUS_2 = auto()
+    DOFUS_RETRO = auto()
+    DOFUS_TOUCH = auto()
+
+
 StatEnum = sqlalchemy.Enum(Stat)
 WeaponEffectEnum = sqlalchemy.Enum(WeaponEffectType)
 SpellEffectEnum = sqlalchemy.Enum(SpellEffectType)
 WeaponElementMageEnum = sqlalchemy.Enum(WeaponElementMage)
+GameVersionEnum = sqlalchemy.Enum(GameVersion)

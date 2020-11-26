@@ -2,6 +2,7 @@ import sqlalchemy
 from app import db, session_scope
 from app.database.enums import Stat
 from .base import Base
+from .enums import GameVersionEnum
 from .model_item import ModelItem
 from .model_equipped_item import ModelEquippedItem
 from .model_equipped_item_exo import ModelEquippedItemExo
@@ -63,6 +64,8 @@ class ModelCustomSet(Base):
         secondary="custom_set_tag_association",
         order_by="ModelCustomSetTagAssociation.association_date",
     )
+
+    game_version = Column("game_version", GameVersionEnum, nullable=False, index=True)
 
     def empty_or_first_item_slot(self, item_type):
         eligible_item_slots = item_type.eligible_item_slots

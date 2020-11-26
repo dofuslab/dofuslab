@@ -1,5 +1,6 @@
 import sqlalchemy
 from .base import Base
+from .enums import GameVersionEnum
 from .model_set_bonus import ModelSetBonus
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.dialects.postgresql import UUID
@@ -19,3 +20,4 @@ class ModelSet(Base):
     set_translation = relationship("ModelSetTranslation", cascade="all, delete-orphan")
     items = relationship("ModelItem", cascade="all, delete-orphan")
     bonuses = relationship("ModelSetBonus", passive_deletes=True)
+    game_version = Column("game_version", GameVersionEnum, nullable=False, index=True)
