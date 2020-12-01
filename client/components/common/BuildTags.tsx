@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import { Select, Tag } from 'antd';
+import { Divider, Select, Tag } from 'antd';
 import { useRouter } from 'next/router';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -195,72 +195,77 @@ const BuildTags: React.FC<Props> = ({
   );
 
   return (
-    <div>
-      <div
-        css={{
-          marginTop: 12,
-          display: 'flex',
-          alignItems: 'flex-start',
-          flexFlow: 'wrap',
-          [mq[1]]: { marginTop: 0 },
-        }}
-      >
-        {tagAssociations &&
-          [...tagAssociations]
-            .sort(
-              (a1, a2) =>
-                new Date(a1.associationDate).getTime() -
-                new Date(a2.associationDate).getTime(),
-            )
-            .map(({ customSetTag: tag }) => {
-              return (
-                <Tag
-                  key={tag.id}
-                  css={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    marginBottom: 4,
-                    height: 24,
-                    cursor: isEditable ? 'pointer' : 'auto',
-                  }}
-                  closable={isEditable}
-                  closeIcon={
-                    <FontAwesomeIcon icon={faTimes} css={{ marginLeft: 4 }} />
-                  }
-                  onClose={() => {
-                    if (!isEditable) {
-                      return;
-                    }
-                    removeMutate({
-                      variables: { customSetTagId: tag.id, customSetId },
-                    });
-                  }}
-                  onClick={() => {
-                    if (!isEditable) {
-                      return;
-                    }
-                    removeMutate({
-                      variables: { customSetTagId: tag.id, customSetId },
-                    });
-                  }}
-                >
-                  <img
-                    src={getImageUrl(tag.imageUrl)}
-                    alt={tag.name}
+    <>
+      <div>
+        <div
+          css={{
+            marginTop: 12,
+            display: 'flex',
+            alignItems: 'flex-start',
+            flexFlow: 'wrap',
+            [mq[1]]: { marginTop: 0 },
+          }}
+        >
+          {tagAssociations &&
+            [...tagAssociations]
+              .sort(
+                (a1, a2) =>
+                  new Date(a1.associationDate).getTime() -
+                  new Date(a2.associationDate).getTime(),
+              )
+              .map(({ customSetTag: tag }) => {
+                return (
+                  <Tag
+                    key={tag.id}
                     css={{
-                      width: 14,
-                      height: 'auto',
-                      marginRight: 4,
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      marginBottom: 4,
+                      height: 24,
+                      cursor: isEditable ? 'pointer' : 'auto',
                     }}
-                  />
-                  {tag.name}
-                </Tag>
-              );
-            })}
-        {isEditable && !isMobile && selectMenu}
+                    closable={isEditable}
+                    closeIcon={
+                      <FontAwesomeIcon icon={faTimes} css={{ marginLeft: 4 }} />
+                    }
+                    onClose={() => {
+                      if (!isEditable) {
+                        return;
+                      }
+                      removeMutate({
+                        variables: { customSetTagId: tag.id, customSetId },
+                      });
+                    }}
+                    onClick={() => {
+                      if (!isEditable) {
+                        return;
+                      }
+                      removeMutate({
+                        variables: { customSetTagId: tag.id, customSetId },
+                      });
+                    }}
+                  >
+                    <img
+                      src={getImageUrl(tag.imageUrl)}
+                      alt={tag.name}
+                      css={{
+                        width: 14,
+                        height: 'auto',
+                        marginRight: 4,
+                      }}
+                    />
+                    {tag.name}
+                  </Tag>
+                );
+              })}
+          {isEditable && !isMobile && selectMenu}
+        </div>
+        {isEditable && isMobile && selectMenu}
       </div>
-      {isMobile && selectMenu}
-    </div>
+      {isMobile && !!(isEditable || tagAssociations?.length) && (
+        <Divider css={{ margin: '12px 0' }} />
+      )}
+    </>
   );
 };
 

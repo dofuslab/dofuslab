@@ -9,6 +9,7 @@ import { faClone, faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { CustomSet } from 'common/type-aliases';
 import { usePublicBuildActions } from 'common/utils';
 import { optionalIconCss } from 'common/mixins';
+import { mq } from 'common/constants';
 
 interface Props {
   customSet: CustomSet;
@@ -28,7 +29,12 @@ const PublicBuildActions: React.FC<Props> = ({ customSet, className }) => {
       {({ css, cx }) => (
         <div
           className={cx(
-            css({ display: 'flex', alignItems: 'center' }),
+            css({
+              display: 'flex',
+              alignItems: 'center',
+              marginBottom: 12,
+              [mq[1]]: { marginBottom: 0 },
+            }),
             className,
           )}
         >
