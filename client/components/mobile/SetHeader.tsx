@@ -110,12 +110,8 @@ const SetHeader: React.FC<Props> = ({
 
   const editBuildButton = (
     <Link href={buildLink.href} as={buildLink.as}>
-      <a
-        css={{
-          marginBottom: 20,
-        }}
-      >
-        <Button>
+      <a>
+        <Button css={{ marginBottom: 12 }}>
           {t('EDIT_BUILD')}
           <FontAwesomeIcon icon={faPencilAlt} css={{ marginLeft: 8 }} />
         </Button>
@@ -234,7 +230,6 @@ const SetHeader: React.FC<Props> = ({
               tagAssociations={customSet?.tagAssociations}
               isMobile
             />
-            <Divider css={{ margin: '12px 0' }} />
             <div>
               {isEditable && customSet && (
                 <BuildActions
