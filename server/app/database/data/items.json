@@ -13842,6 +13842,11 @@
         "stat": "AP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": null,
+        "maxStat": -5
       }
     ],
     "customStats": {},
@@ -131037,5 +131042,863 @@
       "customConditions": {}
     },
     "imageUrl": "item/17136.png"
+  },
+  {
+    "dofusID": "",
+    "name": {
+      "en": "Wulan Amulet",
+      "fr": "Amulette de Wulan",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "itemType": "Amulet",
+    "setID": "983465221000031",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -15
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": -15
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 16,
+        "maxStat": 20
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/1317.png"
+  },
+  {
+    "dofusID": "",
+    "name": {
+      "en": "Wulan Hat",
+      "fr": "Diadéme de Wulan",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "itemType": "Hat",
+    "setID": "983465221000031",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 400
+      },
+      {
+        "stat": "Strength",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Chance",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 26,
+        "maxStat": 35
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 14,
+        "maxStat": 18
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 14,
+        "maxStat": 18
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 14,
+        "maxStat": 18
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -12
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": -12
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16643.png"
+  },
+  {
+    "dofusID": "",
+    "name": {
+      "en": "Rtograf Ring",
+      "fr": "Anneau Rtograf",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "itemType": "Ring",
+    "setID": null,
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 6,
+        "maxStat": 9
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 6,
+        "maxStat": 9
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 6,
+        "maxStat": 9
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": null,
+        "maxStat": -12
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 6,
+        "maxStat": 9
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9348.png"
+  },
+  {
+    "dofusID": "",
+    "name": {
+      "en": "Menclatur Ring",
+      "fr": "Anneau Menclatur",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "itemType": "Ring",
+    "setID": null,
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Agility",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 25
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9347.png"
+  },
+  {
+    "dofusID": "",
+    "name": {
+      "en": "Onsonne Hat",
+      "fr": "Casque Onsonne",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "itemType": "Hat",
+    "setID": "7346235253564237",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": -5
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Lock",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": -15
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": -15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16641.png"
+  },
+  {
+    "dofusID": "",
+    "name": {
+      "en": "Cape Ostrophe",
+      "fr": "Cape Ostrophe",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "itemType": "Cloak",
+    "setID": "7346235253564237",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 400
+      },
+      {
+        "stat": "Strength",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Agility",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": -4
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Lock",
+        "minStat": null,
+        "maxStat": -12
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": null,
+        "maxStat": -12
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/17479.png"
+  },
+  {
+    "dofusID": "",
+    "name": {
+      "en": "Rinne Amulette",
+      "fr": "Amulette Rinne",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "itemType": "Amulet",
+    "setID": "472937642426324323",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Lock",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": -15
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": -25
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/1316.png"
+  },
+  {
+    "dofusID": "",
+    "name": {
+      "en": "Icisme Belt",
+      "fr": "Sangle Icisme",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "itemType": "Belt",
+    "setID": "472937642426324323",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 400
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Chance",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Lock",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -12
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": null,
+        "maxStat": -12
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 9,
+        "maxStat": 12
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/10348.png"
+  },
+  {
+    "dofusID": "",
+    "name": {
+      "en": "Kritur Boots",
+      "fr": "Solerets Kritur",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "itemType": "Boots",
+    "setID": "472937642426324323",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Chance",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": -12
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": -25
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 16,
+        "maxStat": 20
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/11348.png"
   }
 ]

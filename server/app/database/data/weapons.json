@@ -58213,5 +58213,663 @@
       }
     },
     "imageUrl": "item/6748.png"
+  },
+  {
+    "dofusID": "23590",
+    "name": {
+      "en": "Wulan Bow",
+      "fr": "Arc de Wulan",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "itemType": "Bow",
+    "level": 200,
+    "setID": "983465221000031",
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Strength",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Chance",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": 4,
+      "maxRange": 7,
+      "baseCritChance": 15,
+      "critBonusDamage": 10,
+      "weapon_effects": [
+        {
+          "stat": "Earth damage",
+          "minStat": 17,
+          "maxStat": 22
+        },
+        {
+          "stat": "Water damage",
+          "minStat": 17,
+          "maxStat": 22
+        },
+        {
+          "stat": "MP",
+          "minStat": null,
+          "maxStat": -1
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {
+        "and": [
+          {
+            "stat": "STRENGTH",
+            "operator": ">",
+            "value": 300
+          },
+          {
+            "stat": "CHANCE",
+            "operator": ">",
+            "value": 300
+          }
+        ]
+      },
+      "customConditions": {}
+    },
+    "imageUrl": "item/2090.png"
+  },
+  {
+    "dofusID": "23590",
+    "name": {
+      "en": "Imologie Wand",
+      "fr": "Baguette Imologie",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "itemType": "Wand",
+    "level": 200,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Heals",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 21,
+        "maxStat": 30
+      }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": 1,
+      "minRange": 3,
+      "maxRange": 6,
+      "baseCritChance": 15,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        {
+          "stat": "Fire damage",
+          "minStat": 21,
+          "maxStat": 26
+        },
+        {
+          "stat": "Fire steal",
+          "minStat": 5,
+          "maxStat": 8
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/3090.png"
+  },
+  {
+    "dofusID": "",
+    "name": {
+      "en": "Pitaf Hammer",
+      "fr": "Maillet Pitaf",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "itemType": "Hammer",
+    "level": 200,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 450
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 51,
+        "maxStat": 75
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 15,
+        "maxStat": 18
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 201,
+        "maxStat": 300
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Lock",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 21,
+        "maxStat": 25
+      }
+    ],
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": 2,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        {
+          "stat": "Fire damage",
+          "minStat": 16,
+          "maxStat": 18
+        },
+        {
+          "stat": "Fire steal",
+          "minStat": 1,
+          "maxStat": 12
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/7744.png"
+  },
+  {
+    "dofusID": "",
+    "name": {
+      "en": "Faux Nétik",
+      "fr": "Faux Nétik",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "itemType": "Scythe",
+    "level": 200,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 450
+      },
+      {
+        "stat": "Agility",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": -1
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Heals",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Lock",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 21,
+        "maxStat": 25
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": 1,
+      "maxRange": 2,
+      "baseCritChance": 5,
+      "critBonusDamage": 15,
+      "weapon_effects": [
+        {
+          "stat": "Air steal",
+          "minStat": 31,
+          "maxStat": 42
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/22006.png"
+  },
+  {
+    "dofusID": "",
+    "name": {
+      "en": "Kanji Jirark",
+      "fr": "Kanji Jirark",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "itemType": "Bow",
+    "level": 200,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 450
+      },
+      {
+        "stat": "Chance",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 21,
+        "maxStat": 25
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 301,
+        "maxStat": 500
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Lock",
+        "minStat": 9,
+        "maxStat": 12
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": 4,
+      "maxRange": 7,
+      "baseCritChance": 10,
+      "critBonusDamage": 10,
+      "weapon_effects": [
+        {
+          "stat": "Water damage",
+          "minStat": 44,
+          "maxStat": 50
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/2091.png"
+  },
+  {
+    "dofusID": "",
+    "name": {
+      "en": "Faux Nème",
+      "fr": "Faux Nème",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "itemType": "Scythe",
+    "level": 200,
+    "setID": "7346235253564237",
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
+        "stat": "Strength",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Agility",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": -3
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": -12
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": -20
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": 1,
+      "maxRange": 2,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        {
+          "stat": "Earth damage",
+          "minStat": 23,
+          "maxStat": 28
+        },
+        {
+          "stat": "Air damage",
+          "minStat": 23,
+          "maxStat": 28
+        },
+        {
+          "stat": "MP",
+          "minStat": null,
+          "maxStat": -1
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {
+        "and": [
+          {
+            "stat": "STRENGTH",
+            "operator": ">",
+            "value": 300
+          },
+          {
+            "stat": "AGILITY",
+            "operator": ">",
+            "value": 300
+          }
+        ]
+      },
+      "customConditions": {}
+    },
+    "imageUrl": "item/22007.png"
   }
 ]
