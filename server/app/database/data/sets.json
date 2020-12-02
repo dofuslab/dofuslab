@@ -28143,5 +28143,191 @@
         }
       ]
     }
+  },
+  {
+    "id": "472937642426324323",
+    "name": {
+      "en": "Wukin Set",
+      "fr": "Panoplie du Wukin",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "bonuses": {
+      "2": [
+        {
+          "stat": "AP Reduction",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Chance",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "MP Reduction",
+          "value": -10,
+          "altStat": null
+        }
+      ],
+      "3": [
+        {
+          "stat": "AP Reduction",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Chance",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "MP Reduction",
+          "value": -10,
+          "altStat": null
+        },
+        {
+          "stat": "MP",
+          "value": 1,
+          "altStat": null
+        }
+      ]
+    }
+  },
+  {
+    "id": "7346235253564237",
+    "name": {
+      "en": "Wukang Set",
+      "fr": "Panoplie du Wukang",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "bonuses": {
+      "2": [
+        {
+          "stat": "Strength",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "AP Reduction",
+          "value": -10,
+          "altStat": null
+        },
+        {
+          "stat": "MP Reduction",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Agility",
+          "value": 40,
+          "altStat": null
+        }
+      ],
+      "3": [
+        {
+          "stat": "Strength",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "AP Reduction",
+          "value": -10,
+          "altStat": null
+        },
+        {
+          "stat": "MP Reduction",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Agility",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "AP",
+          "value": 1,
+          "altStat": null
+        }
+      ]
+    }
+  },
+  {
+    "id": "983465221000031",
+    "name": {
+      "en": "Wulan Set",
+      "fr": "Panoplie du Wulan",
+      "de": "",
+      "es": "",
+      "it": "",
+      "pt": ""
+    },
+    "bonuses": {
+      "2": [
+        {
+          "stat": "Critical Damage",
+          "value": 15,
+          "altStat": null
+        },
+        {
+          "stat": "Chance",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "MP Reduction",
+          "value": 10,
+          "altStat": null
+        }
+      ],
+      "3": [
+        {
+          "stat": "Critical Damage",
+          "value": 15,
+          "altStat": null
+        },
+        {
+          "stat": "Chance",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "MP Reduction",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "AP",
+          "value": 1,
+          "altStat": null
+        }
+      ]
+    }
   }
 ]
