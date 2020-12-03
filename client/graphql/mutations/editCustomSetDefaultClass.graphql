@@ -9,6 +9,7 @@ mutation editCustomSetDefaultClass($customSetId: UUID, $defaultClassId: UUID) {
       defaultClass {
         id
         name
+        enName
         faceImageUrl
         maleSpriteImageUrl
       }

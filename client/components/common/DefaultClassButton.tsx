@@ -46,6 +46,7 @@ const DefaultClassButton: React.FC<Props> = ({
               defaultClass: dofusClass && {
                 id: dofusClass.id,
                 name: dofusClass.name,
+                enName: dofusClass.enName,
                 faceImageUrl: dofusClass.faceImageUrl,
                 maleSpriteImageUrl: dofusClass.maleSpriteImageUrl,
                 __typename: 'Class',

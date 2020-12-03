@@ -2,6 +2,7 @@ query classes {
   classes {
     id
     name
+    enName
     allNames
     faceImageUrl
     maleSpriteImageUrl
