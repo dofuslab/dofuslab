@@ -3,6 +3,9 @@
 # 5502 - postgres
 # 5503 - redis
 
+# You can initialize the database with data using the "Docker.initdb" image
+# Make sure when creating the container that you specify the --network dofuslab_default switch
+
 version: '3.4'
 
 services:
