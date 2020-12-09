@@ -102,6 +102,52 @@ $ yarn dev
 
 Open http://dev.localhost:3000/ and test away!
 
+## Docker
+```
+```
+
+</p>
+</details>
+
+---
+
+<details><summary><b>Project setup in Docker</b></summary>
+<p>
+
+## Ports used
+```
+5500 - Frontend (client)
+5501 - Backend (server)
+5502 - postgres
+5503 - redis
+```
+## Setup dofus lab and initalize the database
+
+#### Setup
+```
+docker-compose -f "docker-compose.debug.yml" up -d --build
+```
+
+#### Initialize database
+```
+docker build --pull --rm -f "server\Dockerfile.initdb" -t dofuslab_init:latest "server"
+docker create --network dofuslab_default --name dofuslab_init_1 dofuslab_init
+docker start dofuslab_init_1
+```
+
+Show docker logs (for tracking progress and debugging)
+```
+docker logs dofuslab_init_1
+```
+
+Remove the dofuslab_init container (this is mandatory)
+```
+docker stop dofuslab_init_1
+docker rm dofuslab_init_1
+```
+
+Open http://localhost:5500/ and test away!
+
 </p>
 </details>
 
