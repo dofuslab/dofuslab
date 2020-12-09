@@ -9,6 +9,3 @@ flask db upgrade
 cd dofuslab-server
 printf 'y\n' | python -m oneoff.database_setup
 printf 'y\n' | python -m oneoff.update_image_urls
-cd ..
-
-flask run --host=0.0.0.0 --port=5501

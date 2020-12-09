@@ -115,32 +115,45 @@ Open http://dev.localhost:3000/ and test away!
 <p>
 
 ## Ports used
+
 ```
 5500 - Frontend (client)
 5501 - Backend (server)
 5502 - postgres
 5503 - redis
 ```
-## Setup dofus lab and initalize the database
+
+## Setup dofus lab in docker
 
 #### Setup
+
 ```
 docker-compose -f "docker-compose.debug.yml" up -d --build
 ```
 
-#### Initialize database
+#### Initialize database script
+
 ```
-docker build --pull --rm -f "server\Dockerfile.initdb" -t dofuslab_init:latest "server"
-docker create --network dofuslab_default --name dofuslab_init_1 dofuslab_init
-docker start dofuslab_init_1
+initdb.sh
 ```
 
-Show docker logs (for tracking progress and debugging)
+## Initialize database manually
+
+You can run *./initdb.sh* or run the commands manually
+
+```
+docker build --pull --rm -f "server\Dockerfile.initdb" -t dofuslab_init:latest "server"
+docker run --network dofuslab_default --name dofuslab_init_1 dofuslab_init
+```
+
+#### Show docker logs (for tracking progress and debugging)
+
 ```
 docker logs dofuslab_init_1
 ```
 
-Remove the dofuslab_init container
+#### Remove the dofuslab_init container
+
 ```
 docker stop dofuslab_init_1
 docker rm dofuslab_init_1
