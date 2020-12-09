@@ -23,3 +23,6 @@ server/messages.pot
 node_modules/
 
 *.DS_Store
+
+# Ensure shell script uses LF.
+*.sh        eol=lf
