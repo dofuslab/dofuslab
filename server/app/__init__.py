@@ -41,7 +41,7 @@ supported_languages = ["en", "fr", "it", "es"]
 origins = []
 if flask_env == "development":
     origins = [
-        "http://localhost:5500",
+        "http://dev.localhost:5500",
         "http://localhost:3000",
         "http://dev.localhost:3000",
         "http://localhost:3001",
