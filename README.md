@@ -131,15 +131,15 @@ Open http://dev.localhost:3000/ and test away!
 docker-compose -f "docker-compose.debug.yml" up -d --build
 ```
 
-#### Initialize database script
+#### Initialize database
 
 ```
-initdb.sh
+docker-compose -f "docker-compose.initdb.yml" run --rm initdb
 ```
 
 ## Initialize database manually
 
-You can run *./initdb.sh* or run the commands manually
+NOTE: You don't need to initialize database manually if you initialized with docker-compose.
 
 ```
 docker build --rm -f "server\Dockerfile.initdb" -t dofuslab_init:latest "server"

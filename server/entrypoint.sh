@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#Caution when editing on windows the EOF should be LF
+# Caution when editing on windows the EOF should be LF
 
 psql -v ON_ERROR_STOP=1 --host "postgres" --username "dofuslab" --dbname "dofuslab" <<-EOSQL
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
