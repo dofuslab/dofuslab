@@ -12,7 +12,7 @@
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node .build/server",
     "type-check": "tsc",
-    "apollo-codegen": "apollo client:codegen --target typescript --endpoint=http://server:5501/api/graphql",
+    "apollo-codegen": "apollo client:codegen --target typescript --endpoint=http://localhost:5000/api/graphql",
     "publish-heroku": "cd ../ && git subtree push --prefix client heroku-client master || true",
     "deploy-production": "pm2 deploy ecosystem.config.js production --force",
     "reload-production": "pm2 deploy ecosystem.config.js production exec 'pm2 reload app'",

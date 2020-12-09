@@ -140,7 +140,7 @@ Show docker logs (for tracking progress and debugging)
 docker logs dofuslab_init_1
 ```
 
-Remove the dofuslab_init container (this is mandatory)
+Remove the dofuslab_init container
 ```
 docker stop dofuslab_init_1
 docker rm dofuslab_init_1
