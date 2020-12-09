@@ -159,7 +159,7 @@ docker stop dofuslab_init_1
 docker rm dofuslab_init_1
 ```
 
-Open http://localhost:5500/ and test away!
+Open http://dev.localhost:5500/ and test away!
 
 </p>
 </details>
