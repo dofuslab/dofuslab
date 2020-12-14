@@ -1,4 +1,4 @@
-FROM node:erbium-buster
+FROM node:erbium-alpine
 
 ENV GRAPHQL_URI="http://dev.localhost:5501/api/graphql"
 
