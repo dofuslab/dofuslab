@@ -137,6 +137,8 @@ docker-compose -f "docker-compose.debug.yml" up -d --build
 docker-compose -f "docker-compose.initdb.yml" run --rm initdb
 ```
 
+Open http://dev.localhost:5500/ and test away!
+
 ## Initialize database manually
 
 NOTE: You don't need to initialize database manually if you initialized with docker-compose.

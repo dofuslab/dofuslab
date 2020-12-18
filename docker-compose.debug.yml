@@ -10,12 +10,12 @@ version: '3.4'
 
 services:
   redis:
-    image: "redis:latest"
+    image: "redis:alpine"
     ports:
       - "5503:6379"
 
   postgres:
-    image: "postgres:latest"
+    image: "postgres:alpine"
     environment:
       POSTGRES_USER: dofuslab
       POSTGRES_PASSWORD: do-not-use-in-production
