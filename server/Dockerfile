@@ -23,11 +23,11 @@ RUN python -m pip install -r requirements.txt
 ADD . /dofuslab-server
 COPY .env.docker .env
 
-# Cleanup
-#RUN apk --purge del .py_deps .build-deps .flask
+# Cleanup (do not remove .flask)
+RUN apk --purge del .py_deps .build-deps
 
 # Switching to a non-root user
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+RUN adduser -S appuser
 USER appuser
 
 ENTRYPOINT flask run --host=0.0.0.0 --port=5501
