@@ -11,6 +11,7 @@ export interface editCustomSetDefaultClass_editCustomSetDefaultClass_customSet_d
   __typename: "Class";
   id: any;
   name: string;
+  enName: string;
   faceImageUrl: string;
   maleSpriteImageUrl: string;
 }
