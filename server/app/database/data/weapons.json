@@ -804,7 +804,7 @@
       }
     ],
     "weaponStats": {
-      "apCost": 5,
+      "apCost": 6,
       "usesPerTurn": 1,
       "minRange": 4,
       "maxRange": 8,
@@ -4076,10 +4076,10 @@
     "weaponStats": {
       "apCost": 5,
       "usesPerTurn": 1,
-      "minRange": 3,
+      "minRange": 4,
       "maxRange": 7,
-      "baseCritChance": 15,
-      "critBonusDamage": 6,
+      "baseCritChance": 5,
+      "critBonusDamage": 5,
       "weapon_effects": [
         {
           "stat": "Earth damage",
@@ -4520,9 +4520,9 @@
     "weaponStats": {
       "apCost": 6,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
-      "baseCritChance": 5,
+      "minRange": 1,
+      "maxRange": 2,
+      "baseCritChance": 1,
       "critBonusDamage": 5,
       "weapon_effects": [
         {
@@ -52525,8 +52525,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 5,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -53441,8 +53441,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 10,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -56699,7 +56699,7 @@
       }
     ],
     "weaponStats": {
-      "apCost": 5,
+      "apCost": 6,
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
@@ -58217,12 +58217,12 @@
   {
     "dofusID": "2090",
     "name": {
-      "en": "Wulan Bow",
+      "en": "Wulan's Bow",
       "fr": "Arc de Wulan",
-      "de": "Arc de Wulan",
-      "es": "Arc de Wulan",
-      "it": "Arc de Wulan",
-      "pt": "Arc de Wulan"
+      "de": "Wulans Bogen",
+      "es": "Arco de Wulán",
+      "it": "Arco di Wulan",
+      "pt": "Arco de Wulan"
     },
     "itemType": "Bow",
     "level": 200,
@@ -58347,12 +58347,12 @@
   {
     "dofusID": "3090",
     "name": {
-      "en": "Imologie Wand",
+      "en": "Etymolowand",
       "fr": "Baguette Imologie",
-      "de": "Baguette Imologie",
-      "es": "Baguette Imologie",
-      "it": "Baguette Imologie",
-      "pt": "Baguette Imologie"
+      "de": "Etymologehstock",
+      "es": "Palote Timológico",
+      "it": "Bacchetta Etimologica",
+      "pt": "Varinha Timológica"
     },
     "itemType": "Wand",
     "level": 200,
@@ -58449,12 +58449,12 @@
   {
     "dofusID": "7744",
     "name": {
-      "en": "Pitaf Hammer",
+      "en": "Bledger",
       "fr": "Maillet Pitaf",
-      "de": "Maillet Pitaf",
-      "es": "Maillet Pitaf",
-      "it": "Maillet Pitaf",
-      "pt": "Maillet Pitaf"
+      "de": "Walhallammer",
+      "es": "Martillo Menaje",
+      "it": "Mazza Lapidaria",
+      "pt": "Martelo Pitáfio"
     },
     "itemType": "Hammer",
     "level": 200,
@@ -58546,12 +58546,12 @@
   {
     "dofusID": "22006",
     "name": {
-      "en": "Faux Nétik",
+      "en": "Faux Netic Scythe",
       "fr": "Faux Nétik",
-      "de": "Faux Nétik",
-      "es": "Faux Nétik",
-      "it": "Faux Nétik",
-      "pt": "Faux Nétik"
+      "de": "Okklusense",
+      "es": "Tintarela picuda",
+      "it": "Falce Fonetica",
+      "pt": "Foice Nética"
     },
     "itemType": "Scythe",
     "level": 200,
@@ -58648,11 +58648,11 @@
   {
     "dofusID": "2091",
     "name": {
-      "en": "Kanji Jirark",
+      "en": "Jobimcarl Bow",
       "fr": "Kanji Jirark",
-      "de": "Kanji Jirark",
-      "es": "Kanji Jirark",
-      "it": "Kanji Jirark",
+      "de": "Kanjimca",
+      "es": "Dimbow",
+      "it": "Kanji Kangiante",
       "pt": "Kanji Jirark"
     },
     "itemType": "Bow",
@@ -58661,8 +58661,8 @@
     "stats": [
       {
         "stat": "Vitality",
-        "minStat": 401,
-        "maxStat": 450
+        "minStat": 351,
+        "maxStat": 400
       },
       {
         "stat": "Chance",
@@ -58701,13 +58701,13 @@
       },
       {
         "stat": "% Water Resistance",
-        "minStat": 7,
-        "maxStat": 10
+        "minStat": 5,
+        "maxStat": 7
       },
       {
         "stat": "% Air Resistance",
-        "minStat": 7,
-        "maxStat": 10
+        "minStat": 5,
+        "maxStat": 7
       },
       {
         "stat": "Lock",
@@ -58740,12 +58740,12 @@
   {
     "dofusID": "22007",
     "name": {
-      "en": "Faux Nème",
+      "en": "Phonemenal Scythe",
       "fr": "Faux Nème",
-      "de": "Faux Nème",
-      "es": "Faux Nème",
-      "it": "Faux Nème",
-      "pt": "Faux Nème"
+      "de": "Silbensense",
+      "es": "Origadaña",
+      "it": "Falce Fonemica",
+      "pt": "Foice Nema"
     },
     "itemType": "Scythe",
     "level": 200,

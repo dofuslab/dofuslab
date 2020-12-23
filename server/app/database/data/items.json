@@ -3856,22 +3856,22 @@
     ],
     "customStats": {
       "en": [
-        "When the bearer suffers an AP, MP or Range removal, they gain 50 Power for 2 turns, stackable 10 times."
+        "When the bearer suffers an AP, MP or Range removal, they gain 3% weapon damage for 2 turns, stackable 5 times."
       ],
       "fr": [
-        "Quand le porteur subit un retrait de PA, de PM ou de PO, il gagne 50 de Puissance pour 2 tours, cumulable 10 fois."
+        "Quand le porteur subit un retrait de PA, de PM ou de PO, il gagne 3% de dommages d'armes pour 2 tours, cumulable 5 fois."
       ],
       "de": [
-        "Wenn der Träger AP-, BP- oder RW-Entzug erleidet, erhält er 2 Runden lang 50 Schlagkraft, die maximal 10 Mal kumulierbar sind."
+        "Wenn der Träger AP-, BP- oder RW-Entzug erleidet, erhält er 2 Runden lang 3 % Waffenschäden, die maximal 5 Mal kumulierbar sind."
       ],
       "es": [
-        "Cuando el portador sufre una retirada de PA, de PM o de AL, gana 50 de potencia durante 2 turnos, acumulable 10 veces."
+        "Cuando el portador sufre una retirada de PA, de PM o de AL, gana un 3% de daños de arma durante 2 turnos, acumulable 5 veces."
       ],
       "it": [
-        "Quando il portatore subisce una sottrazione PA, PM o PO, ottiene 50 Potenza per 2 turni, cumulabile 10 volte."
+        "Quando il portatore subisce una sottrazione PA, PM o PO, ottiene il 3% di danni dalle armi per 2 turni, cumulabile 5 volte."
       ],
       "pt": [
-        "Quando alguém retira PA, PM ou AL do portador, ele ganha 50 de potência por 2 turnos. Acumula até 10 vezes."
+        "Quando alguém retira PA, PM ou AL do portador, ele ganha 3% de danos de arma por 2 turnos. Acumula até 5 vezes."
       ]
     },
     "conditions": {
@@ -4074,22 +4074,22 @@
     ],
     "customStats": {
       "en": [
-        "At the start of each turn, the wearer pushes entities in close combat back 1 cell."
+        "At the start of each turn, the wearer pushes entities in close combat back 2 cells."
       ],
       "fr": [
-        "A chaque début de tour, le porteur repousse d'une case les entités en mêlée."
+        "A chaque début de tour, le porteur repousse de 2 cases les entités en mêlée."
       ],
       "de": [
-        "Am Anfang jeder Runde schubst der Träger alle Wesen im Nahkampf ein Feld zurück."
+        "Zu Beginn jeder Runde stößt der Träger alle Gegner in Nahkampf-Reichweite um 2 Felder zurück."
       ],
       "es": [
-        "En cada inicio de turno, el portador empuja a las entidades cuerpo a cuerpo una casilla."
+        "En cada inicio de turno, el portador empuja a las entidades cuerpo a cuerpo 2 casillas."
       ],
       "it": [
-        "All'inizio di ogni turno, il portatore respinge di una casella le entità in mischia."
+        "All'inizio di ogni turno, il portatore respinge di 2 caselle le entità in mischia."
       ],
       "pt": [
-        "No começo de cada turno, o portador empurra as entidades à distância de corpo a corpo por 1 célula."
+        "No começo de cada turno, o portador empurra as entidades à distância de corpo a corpo por 2 células."
       ]
     },
     "conditions": {
@@ -8407,22 +8407,22 @@
     ],
     "customStats": {
       "en": [
-        "If the bearer suffers a Lock or does not move during their turn, the bearer becomes Unlockable on their next turn for 1 turn."
+        "At the start of each turn, the caster randomly teleports to an adjacent cell. If the move is impossible, they earn a +10% chance of critical hits and +80 Pushback Damage for 1 turn."
       ],
       "fr": [
-        "Si le porteur subit un tacle ou ne se déplace pas pendant son tour, il devient Intaclable au prochain tour pour 1 tour."
+        "À chaque début de tour, le lanceur se téléporte aléatoirement sur une case adjacente à sa position. Si le déplacement est impossible, il gagne 10% de chances de Critique et 80 Dommages de poussée pour 1 tour."
       ],
       "de": [
-        "Wenn der Träger geblockt wird oder sich während seiner Runde nicht bewegt, nimmt er in der nächsten Runde 1 Runde lang den Zustand „Unblockbar“ an."
+        "Zu Beginn jeder Runde teleportiert sich der Zaubernde auf ein zufälliges benachbartes Feld. Sollte die Fortbewegung nicht möglich sein, erhält er 1 Runde lang 10 % Chance auf kritische Treffer und 80 Schubsschaden."
       ],
       "es": [
-        "Si el portador sufre un placaje o no se desplaza durante su turno, se vuelve No Placable en el próximo turno y durante 1 turno."
+        "En cada inicio de turno, el lanzador se teletransporta aleatoriamente a una casilla adyacente a su posición. Si el desplazamiento es imposible, gana un 10% de posibilidades de crítico y 80 de daños de empuje durante 1 turno."
       ],
       "it": [
-        "Se il portatore viene contrastato o non si sposta durante il suo turno, diventa Incontrastabile al turno successivo per 1 turno."
+        "All'inizio di ogni turno, il lanciatore si teletrasporta in maniera casuale su una casella adiacente alla sua posizione. Se lo spostamento è impossibile, ottiene il 10% di possibilità di Critico e 80 danni da Spinta per 1 turno."
       ],
       "pt": [
-        "Se o portador sofrer um bloqueio ou não se deslocar no turno dele, ele ficará Imbloqueável no turno seguinte."
+        "No começo de cada turno, o lançador se teletransporta aleatoriamente para uma célula adjacente à sua posição. Se o deslocamento não for possível, ele ganhará 10% de chances de crítico e 80 danos de empurrão por 1 turno."
       ]
     },
     "conditions": {
@@ -12313,22 +12313,22 @@
     ],
     "customStats": {
       "en": [
-        "At the end of their turn, the bearer removes 50 Dodge from adjacent enemies for 1 turn."
+        "At the end of their turn, the bearer removes 100 Dodge from adjacent enemies for 1 turn."
       ],
       "fr": [
-        "A la fin de son tour, le porteur retire 50 de fuite pour 1 tour aux ennemis au contact."
+        "A la fin de son tour, le porteur retire 100 de fuite pour 1 tour aux ennemis au contact."
       ],
       "de": [
-        "Am Ende seiner Runde entzieht der Träger den Gegnern im Nahkampf 1 Runde lang 50 Ausweichen."
+        "Am Ende seiner Runde entzieht der Träger den Gegnern im Nahkampf 1 Runde lang 100 Ausweichen."
       ],
       "es": [
-        "Al final de su turno, el portador retira 50 de huida durante 1 turno a los enemigos en contacto."
+        "Al final de su turno, el portador retira 100 de huida durante 1 turno a los enemigos en contacto."
       ],
       "it": [
-        "Alla fine del suo turno, il portatore sottrae 50 Fuga per 1 turno ai nemici in corpo a corpo."
+        "Alla fine del suo turno, il portatore sottrae 100 Fuga per 1 turno ai nemici in corpo a corpo."
       ],
       "pt": [
-        "No final do turno dele, o portador retira 50 de fuga dos inimigos em contato por 1 turno."
+        "No final do turno dele, o portador retira 100 de fuga dos inimigos em contato por 1 turno."
       ]
     },
     "conditions": {
@@ -20775,22 +20775,22 @@
     ],
     "customStats": {
       "en": [
-        "The bearer gains a 10% reduction in damage suffered for 1 turn at the start of each turn. The bonus is removed as soon as the caster is pushed, attracted, carried or transposed."
+        "If the bearer ends their turn with a line of sight to at least one opponent, they earn a 10% damage suffered reduction for 1 turn as long as they haven't been pushed, attracted, carried, teleported or transposed."
       ],
       "fr": [
-        "Le porteur gagne une réduction de dommages subis de 10% pour 1 tour à chaque début de tour. Le bonus est retiré dès que le lanceur est poussé, attiré, porté ou transposé."
+        "Si le porteur termine son tour en ligne de vue avec au moins un adversaire, il gagne une réduction de dommages subis de 10% pendant 1 tour tant qu'il n'a pas été poussé, attiré, porté, téléporté ou transposé."
       ],
       "de": [
-        "Zu Beginn jeder Runde verringert sich der vom Träger erlittene Schaden 1 Runde lang um 10 %. Der Bonus wird aufgehoben, sobald der Zaubernde geschubst, herangezogen, getragen oder versetzt wird."
+        "Wenn der Träger seinen Zug in der Sichtlinie von mindestens einem Gegner beendet, wird sein erlittener Schaden 1 Runde lang um 10 % gemindert, solange er nicht geschubst, angezogen, getragen, teleportiert oder versetzt wurde."
       ],
       "es": [
-        "El portador gana una reducción de los daños sufridos de un 10% durante 1 turno en cada inicio de turno. El bonus se retira en cuanto el lanzador es empujado, atraído, portado o transposicionado."
+        "Si el portador termina su turno en la línea de visión de al menos un adversario, gana una reducción de daños recibidos del 10% durante 1 turno mientras no lo hayan empujado, atraído, portado, teletransportado o transposicionado."
       ],
       "it": [
-        "Il portatore ottiene una riduzione dei danni subiti del 10% per 1 turno all'inizio di ogni turno. Il bonus viene rimosso se il lanciatore viene spinto, attirato, portato o trasposto."
+        "Se il portatore termina il suo turno in Linea di Tiro con almeno un avversario, ottiene una riduzione del 10% dei danni subiti per 1 turno, fino a quando non viene spinto, attirato, portato, teletrasportato o trasposto."
       ],
       "pt": [
-        "Os danos sofridos pelo portador são reduzidos em 10% durante 1 turno no início de cada turno. O bônus será retirado assim que o lançador for empurrado, atraído, carregado ou transposto."
+        "Se o portador terminar o turno dele com pelo menos um adversário na linha de visão, ele ganha uma redução de 10% nos danos sofridos durante 1 turno se não tiver sido empurrado, atraído, carregado, teletransportado nem transposto."
       ]
     },
     "conditions": {
@@ -21180,7 +21180,7 @@
   {
     "dofusID": "22206",
     "name": {
-      "en": "Corruption's Ring",
+      "en": "Corruption's Engagement Ring",
       "fr": "Alliance de Corruption",
       "de": "Verderbnis’ Trauring",
       "es": "Alianza de Corrupción",
@@ -36148,19 +36148,19 @@
     "stats": [],
     "customStats": {
       "en": [
-        "At the start of the caster's turn, if they have less than 20% HP, they are healed 40% HP and gain 20% final damage for the current turn.\nThis effect can only be played once per fight."
+        "As soon as the bearer falls below 20% of their health points, the Dofus's effect is triggered. At the start of their next turn: heals 30% HP and gives 20% final damage for 1 turn (once per fight)."
       ],
       "fr": [
-        "Au début de son tour, si le lanceur a moins de 20% de sa vie, il est soigné de 40% de sa vie et gagne 20% de dommages finaux pour le tour en cours.\nCet effet ne peut se jouer qu'une seule fois par combat."
+        "Des que le porteur descend en dessous de 20% de ses points de vie, il déclenche l'effet du Dofus. Au début de son prochain tour : soigne 30% de la vie et donne 20% de dommages finaux pour 1 tour (1 fois par combat)."
       ],
       "es": [
-        "Al principio de su turno, si el lanzador tiene menos de un 20% de su vida, se cura un 40% de su vida y gana un 20% de los daños finales para el turno en curso.\nEste efecto solo puede utilizarse una vez por combate."
+        "En cuanto el portador baja del 20% de sus puntos de vida, activa el efecto del dofus. Al principio de su próximo turno: cura un 30% de la vida y da un 20% de daños finales durante 1 turno (1 vez por combate)."
       ],
       "it": [
-        "All'inizio del suo turno, se il lanciatore ha meno del 20% della sua vita, viene curato del 40% della sua vita e ottiene il 20% dei danni finali per il turno in corso. \nL'effetto è attivabile una sola volta per combattimento."
+        "Non appena il portatore scende al di sotto del 20% dei Punti Vita, attiva l'effetto del Dofus. All'inizio del suo prossimo turno: cura il 30% dei Punti Vita e dà il 20% dei danni finali per 1 turno (1 volta per combattimento)."
       ],
       "pt": [
-        "No começo do turno dele, se o lançador estiver com menos de 20% da vida, ele será curado em 40% da vida e ganhará 20% de danos finais no turno em andamento. Esse efeito só pode se produzir uma vez por combate."
+        "Assim que o portador fica com menos de 20% dos pontos de vida, ele aciona o efeito do Dofus. No início de seu próximo turno: cura 30% da vida e concede 20% de danos finais por 1 turno (1 turno por combate)."
       ]
     },
     "conditions": {
@@ -36168,6 +36168,48 @@
       "customConditions": {}
     },
     "imageUrl": "item/23027.png"
+  },
+  {
+    "dofusID": "7112",
+    "name": {
+      "en": "Black-Spotted Dofus",
+      "fr": "Dofus Tacheté",
+      "es": "Dofus Meteado",
+      "it": "Dofus Maculato",
+      "pt": "Dofus Pintado"
+    },
+    "itemType": "Dofus",
+    "setID": null,
+    "level": 180,
+    "stats": [
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 30
+      }
+    ],
+    "customStats": {
+      "en": [
+        "If the bearer inflicts damage during their turn, they and their allies carrying the DOrigami gain 20 damage for 1 turn.\n\nIf the bearer does not inflict damage, they and their allies carrying the Domakuro gain 150% of their respective levels in shield for 1 turn"
+      ],
+      "fr": [
+        "Si le porteur inflige des dommages pendant son tour de jeu, ses alliés porteurs du Dorigami et lui même gagnent 20 dommages pendant 1 tour.\n\nS'il n'inflige pas de dommages, ses alliés porteurs du Domakuro et lui même gagnent 150% de leur niveau en bouclier pendant 1 tour."
+      ],
+      "es": [
+        "Si el portador inflige daños durante su turno de juego, sus aliados portadores del dorigami y él ganan 20 de daño durante 1 turno.\n\nSi no inflige daños, sus aliados portadores del domakuro y él ganan el 150% de su nivel en escudo durante 1 turno."
+      ],
+      "it": [
+        "Se il portatore infligge danni durante il suo turno di gioco, i suoi alleati portatori del Dorigami e lui stesso ottengono 20 danni per 1 turno.\n\nSe non infligge danni, i suoi alleati portatori del Domakkuro e lui stesso ottengono il 150% del loro livello in scudo per 1 turno. "
+      ],
+      "pt": [
+        "Se o jogador infligir danos em seu turno, os aliados dele portadores do Dorigami e ele ganham 20 de dano durante 1 hora.\n\nSe ele não infligir danos, os aliados dele portadores do Domakuro e ele ganham 150% de seu nível em escudo durante 1 hora."
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/23008.png"
   },
   {
     "dofusID": "6980",
@@ -36357,51 +36399,51 @@
     "level": 180,
     "stats": [
       {
-        "stat": "Neutral Resistance",
+        "stat": "% Neutral Resistance",
         "minStat": null,
-        "maxStat": 40
+        "maxStat": 4
       },
       {
-        "stat": "Earth Resistance",
+        "stat": "% Earth Resistance",
         "minStat": null,
-        "maxStat": 40
+        "maxStat": 4
       },
       {
-        "stat": "Fire Resistance",
+        "stat": "% Fire Resistance",
         "minStat": null,
-        "maxStat": 40
+        "maxStat": 4
       },
       {
-        "stat": "Water Resistance",
+        "stat": "% Water Resistance",
         "minStat": null,
-        "maxStat": 40
+        "maxStat": 4
       },
       {
-        "stat": "Air Resistance",
+        "stat": "% Air Resistance",
         "minStat": null,
-        "maxStat": 40
+        "maxStat": 4
       }
     ],
     "customStats": {
       "en": [
         "Ivory Dofus emote",
-        "At the end of the turn, damage from the next attack suffered is reduced by 50%."
+        "The bearer reduces damage from one out of five attacks by 50%. The reduction is lost if this one is sacriced."
       ],
       "fr": [
         "Attitude Dofus Ivoire",
-        "À la fin du tour, les dommages de la prochaine attaque subie sont réduits de 50%."
+        "Le porteur réduit de 50% les dommages d'une attaque sur cinq. La réduction est perdue si celui-ci est sacrifié."
       ],
       "es": [
         "Actitud Dofus Marfil",
-        "Al final del turno, los daños del próximo ataque sufrido se reducen un 50%"
+        "Da El portador reduce un 50% los difdaños de un ataque de cada loscinco. La reducción se pierde si de este se sacrifica."
       ],
       "it": [
         "Emote Dofus Avorio",
-        "Alla fine del turno, i danni del prossimo attacco subito sono ridotti del 50%."
+        "Il portatore riduce del 50% i danni di 1 attacco su 5. La riduzione si perde se viene sacrificato."
       ],
       "pt": [
         "Emote Dofus Marfim",
-        "No fim do turno, os danos do próximo ataque sofrido serão reduzidos em 50%."
+        "O portador reduz em 50% os danos de um ataque em cinco. A redução se perderá se ele for sacrificado."
       ]
     },
     "conditions": {
@@ -36526,23 +36568,23 @@
     "customStats": {
       "en": [
         "Ebony Dofus emote",
-        "Generates 1 first charge at the start of the turn, 1 second charge upon inflicting close-combat damage, and 1 third charge upon inflicting ranged damage.\n\nOnce 5 charges are reached, the next attack consumes the charges and applies a poison to the target for 3 turns.\n\n Each charge gives a 2% final damage inflicted bonus."
+        "Inflicting ranged damage and close-combat damage during one's turn triggers the Ebony Dofus's power: the next attack during the same turn applies a poison (2 turns).\n\nThis attack takes 2 turns to recharge. The poison can be stacked 2 times."
       ],
       "fr": [
         "Attitude Dofus Ébène",
-        "Génère une charge en début de tour, une deuxième en infligeant des dommages en mêlée et une troisième en infligeant des dommages à distance.\n\nLorsque 5 charges sont atteintes, la prochaine attaque consomme les charges et applique un poison (de 16 à 20 de dommages dans l'élément de votre attaque, cumulable) sur la cible pendant 3 tours.\n\nChaque charge donne un bonus de 2% de dommages finaux occasionnés."
+        "Occasionner des dommages à distance et en mêlée pendant son propre tour de jeu déclenche le pouvoir du Dofus Ébène : la prochaine attaque, toujours dans le même tour, applique un poison(2 tours).\n\nCette attaque a un temps de jamais tes recharge de 2 tours. Le poison est le site cumulable 2 fois."
       ],
       "es": [
         "Actitud Dofus Ébano",
-        "Genera 1 carga al principio del turno, 1 segunda carga al inflingir daños en cuerpo a cuarpo y 1 tercera carga al inflingir daños a distáncia.\n\nCuando 5 se alcanzan 5 cargas, el próximo ataque consume las cargas y aplica un veneno al objetivo durante 3 turnos. \n\nCada carga dará um bônus de 2% de danos finais causados."
+        "Ocasionar daños a distancia y er cuerpo a cuerpo durante el turno de juego propio activa el poder de dofus Ebano: el próximo ataque, en el mismo turno, aplica un veneno (2 turnos).\n\nEste ataque tiene un tiempo de recarga de 2 turnos. El veneno se puede acumular 2 veces."
       ],
       "it": [
         "Emote Dofus Ebano",
-        "Genera 1 carica a inizio turno, 1 carica infliggendo danni da mischia e 1 carica infliggendo danni a distanza.\n\nQuando vengono accumulate 5 cariche, l'attacco seguente consuma le cariche e applica un veleno sul bersaglio per 3 turni.\n\nOgni carica accorda un bonus del 2% dei danni finali causati."
+        "Causare danni a distanza e in mischia durante il proprio turno di gioco attiva il potere del Dofus Ebano: l'attacco successivo, sempre nello stesso turno, applica un veleno per 2 turni.\n\nQuesto attacco ha un tempo di ricarica di 2 turni. Il veleno è cumulabile 2 volte."
       ],
       "pt": [
         "Emote Dofus Ébano",
-        "Gera 1 carga no começo do turno, 1 segunda carga inflingindo danos de corpo a corpo e 1 terceira carga inflingindo dados a distância.\n\nQuando 5 cargas forem alcançadas, o próximo ataque consumirá as cargas e aplicará um veneno no alvo durante 3 turnos. \n\nCada carga dará um bônus de 2% de danos finais causados."
+        "Infligir danos a distância e no corpo a corpo em seu próprio turno de jogo aciona o poder do Dofus Ébano: no ataque seguinte, também no mesmo turno, aplica um veneno (acumula 2 turnos).\n\nEste ataque tem 2 turnos de recarga. O veneno pode acumular 2 vezes."
       ]
     },
     "conditions": {
@@ -120561,19 +120603,19 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 100% of their current health in shield points for their first round."
+        "The bearer gains 10% of their current life in shield points for their first turn, 15% on the second turn and 20% on the third."
       ],
       "fr": [
-        "Le porteur gagne 100% de sa vie actuelle en points de bouclier pendant son premier tour de jeu."
+        "Le porteur gagne 10% de sa vie actuelle en points de bouclier au premier tour, 15% au deuxième tour et 20% au troisième."
       ],
       "es": [
-        "El portador gana un 100% de su vida actual en puntos de escudo durante su primer turno de juego."
+        "El portador gana un 10% de su vida actual en puntos de escudo en el primer turno, un 15% en el segundo turno y un 20% en el tercero."
       ],
       "it": [
-        "Il portatore ottiene il 100% dei suoi PV attuali in punti scudo per il suo primo turno di gioco."
+        "Il portatore ottiene il 10% dei suoi PV attuali in Punti Scudo al primo turno, 15% al secondo turno e il 20% al terzo."
       ],
       "pt": [
-        "O portador ganha 100% da vida atual em pontos de escudo durante seu primeiro turno de jogo."
+        "O portador ganha 10% da vida atual em pontos de escudo no primeiro turno, 15% no segundo e 20% no terceiro."
       ]
     },
     "conditions": {
@@ -120912,19 +120954,19 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 25% of their current health in shield points for their first three rounds."
+        "The bearer gains 20% of their current life in shield points for their first turn, 15% on the second turn and 10% on the third."
       ],
       "fr": [
-        "Le porteur gagne 25% de sa vie actuelle en points de bouclier pendant ses trois premiers tours de jeu."
+        "Le porteur gagne 20% de sa vie actuelle en points de bouclier au premier tour, 15% au deuxième tour et 10% au troisième."
       ],
       "es": [
-        "El portador gana un 25% de su vida actual en puntos de escudo durante sus tres primeros turnos de juego."
+        "El portador gana un 20% de su vida actual en puntos de escudo en el primer turno, un 15% en el segundo turno y un 10% en el tercero."
       ],
       "it": [
-        "Il portatore ottiene il 25% dei suoi PV attuali in punti scudo per i suoi primi tre turni di gioco."
+        "Il portatore ottiene il 20% dei suoi PV attuali in Punti Scudo al primo turno, 15% al secondo turno e il 10% al terzo."
       ],
       "pt": [
-        "O portador ganha 25% da vida atual em pontos de escudo durante seus três primeiros turnos de jogo."
+        "O portador ganha 20% da vida atual em pontos de escudo no primeiro turno, 15% no segundo e 10% no terceiro."
       ]
     },
     "conditions": {
@@ -121223,19 +121265,19 @@
     "level": 180,
     "customStats": {
       "en": [
-        "The bearer gains 50% of their current health in shield points for their first two rounds."
+        "The bearer gains 15% of their current life in shield points for their first turn, 15% on the second turn and 15% on the third."
       ],
       "fr": [
-        "Le porteur gagne 50% de sa vie actuelle en points de bouclier pendant ses deux premiers tours de jeu."
+        "Le porteur gagne 15% de sa vie actuelle en points de bouclier au premier tour, 15% au deuxième tour et 15% au troisième."
       ],
       "es": [
-        "El portador gana un 50% de su vida actual en puntos de escudo durante sus dos primeros turnos de juego."
+        "El portador gana un 15% de su cara. vida actual en puntos de escudo en el primer turno, un 15% en el segundo turno y un 15% en el tercero."
       ],
       "it": [
-        "Il portatore ottiene il 50% dei suoi PV attuali in punti scudo per i suoi primi due turni di gioco."
+        "Il portatore ottiene il 15% dei suoi PV attuali in Punti Scudo al primo turno, 15% al secondo turno e il 15% al terzo."
       ],
       "pt": [
-        "O portador ganha 50% da vida atual em pontos de escudo durante seus dois primeiros turnos de jogo."
+        "O portador ganha 15% da vida atual em pontos de escudo no primeiro turno, 15% no segundo e 15% no terceiro."
       ]
     },
     "conditions": {
@@ -122548,22 +122590,22 @@
     ],
     "customStats": {
       "en": [
-        "When the bearer is healed or steals health, the bearer applies a start-of-turn poison in their best attack element in an 2-cell circle area of effect on entities around them. The poison lasts 1 turn, cannot be unbewitched, and can be stacked a maximum of 3 times."
+        "When the caster returns to 100% life, it applies a poison at the start of their turn in their best element on entities two cells away or less. The poison lasts 2 turns, cannot be unbewitched, and can be stacked only 1 time."
       ],
       "fr": [
-        "Quand le porteur est soigné ou vole de la vie, il applique un poison de début de tour dans son meilleur élément d'attaque en zone Cercle 2 aux entités autour de lui. Le poison dure 1 tour, ne peut pas être désenvoûté et peut être cumulé 3 fois maximum."
+        "Quand le lanceur remonte à 100% de sa vie, il applique un poison de début de tour dans son meilleur élément aux entités à deux cases ou moins de lui. Le poison dure 2 tours, ne peut pas être désenvoûté et peut être cumulé 1 fois maximum."
       ],
       "de": [
-        "Wenn der Träger geheilt wird oder LP stiehlt, vergiftet er zu Rundenbeginn in einem kreisförmigen Wirkungsbereich von 2 Feldern in seinem besten Angriffselement Einheiten um ihn herum. Die Vergiftung hält 1 Runde an, kann nicht aufgehoben und maximal 3-mal kumuliert werden."
+        "Wenn der Zaubernde wieder 100 % seiner Lebenspunkte hat, vergiftet er zu Rundenbeginn im Umkreis von zwei Feldern in seinem besten Element Einheiten um ihn herum. Die Vergiftung hält 2 Runden an, kann nicht aufgehoben und maximal 1 Mal kumuliert werden."
       ],
       "es": [
-        "Cuando el portador es curado o roba de vida, aplica un veneno de principio de turno en su mejor elemento de ataque en zona de círculo 2 a las entidades a su alrededor. El veneno dura 1 turno, no puede ser desembrujado y puede ser acumulado 3 veces como máximo."
+        "Cuando el lanzador llega al 100% de su vida, aplica un veneno de inicio de turno con su mejor elemento a las entidades a dos casillas o menos de sí. El veneno dura 2 turnos, no puede ser desembrujado y puede ser acumulado 1 vez como máximo."
       ],
       "it": [
-        "Quando il portatore è curato o ruba PV, applica un veleno a inizio turno nel suo migliore elemento d'attacco in un'area Cerchio 2 alle entità intorno a sé. Il veleno dura 1 turno, non può essere rimosso e può essere accumulato al massimo 3 volte."
+        "Quando il lanciatore torna ad avere il 100% dei suoi PV, all'inizio di ogni turno applica un veleno nel suo elemento migliore alle entità a 2 caselle o meno da lui. Il veleno dura 2 turni, non può essere rimosso e può essere accumulato al massimo 1 volta."
       ],
       "pt": [
-        "Quando o portador é curado ou rouba vida, ele aplica um veneno de início de turno em seu melhor elemento de ataque em uma zona de círculo 2 às entidades ao redor de. O veneno dura 1 turno, não pode ser dissipado e acumula até 3 vezes."
+        "Quando o lançador fica com 100% da vida, ele aplica um veneno de começo de turno em seu melhor elemento às entidades a até duas células dele. O veneno dura 2 turnos, não pode ser dissipado e acumula até 1 vez."
       ]
     },
     "conditions": {
@@ -131046,12 +131088,12 @@
   {
     "dofusID": "1317",
     "name": {
-      "en": "Wulan Amulet",
+      "en": "Wulan's Amulet",
       "fr": "Amulette de Wulan",
-      "de": "Amulette de Wulan",
-      "es": "Amulette de Wulan",
-      "it": "Amulette de Wulan",
-      "pt": "Amulette de Wulan"
+      "de": "Wulans Amulett",
+      "es": "Amuleto de Wulàn",
+      "it": "Amuleto di Wulan",
+      "pt": "Amuleto de Wulan"
     },
     "itemType": "Amulet",
     "setID": "983465221000031",
@@ -131148,12 +131190,12 @@
   {
     "dofusID": "16643",
     "name": {
-      "en": "Wulan Hat",
+      "en": "Wulan's Diadem",
       "fr": "Diadéme de Wulan",
-      "de": "Diadéme de Wulan",
-      "es": "Diadéme de Wulan",
-      "it": "Diadéme de Wulan",
-      "pt": "Diadéme de Wulan"
+      "de": "Wulans Diadem",
+      "es": "Diadema de Wulán",
+      "it": "Diadema di Wulan",
+      "pt": "Diadema de Wulan"
     },
     "itemType": "Hat",
     "setID": "983465221000031",
@@ -131235,12 +131277,12 @@
   {
     "dofusID": "9348",
     "name": {
-      "en": "Rtograf Ring",
+      "en": "Spilling Ryng",
       "fr": "Anneau Rtograf",
-      "de": "Anneau Rtograf",
-      "es": "Anneau Rtograf",
-      "it": "Anneau Rtograf",
-      "pt": "Anneau Rtograf"
+      "de": "Rechtschreibring",
+      "es": "Anillo Rtografiko",
+      "it": "Anello Rtografico",
+      "pt": "Anel Togafia"
     },
     "itemType": "Ring",
     "setID": null,
@@ -131334,10 +131376,10 @@
     "name": {
       "en": "Menclatur Ring",
       "fr": "Anneau Menclatur",
-      "de": "Anneau Menclatur",
-      "es": "Anneau Menclatur",
-      "it": "Anneau Menclatur",
-      "pt": "Anneau Menclatur"
+      "de": "Strukturring",
+      "es": "Negruraro",
+      "it": "Anello Lessicale",
+      "pt": "Anel Menclatura"
     },
     "itemType": "Ring",
     "setID": null,
@@ -131399,12 +131441,12 @@
   {
     "dofusID": "16641",
     "name": {
-      "en": "Onsonne Hat",
+      "en": "Capsonant",
       "fr": "Casque Onsonne",
-      "de": "Casque Onsonne",
-      "es": "Casque Onsonne",
-      "it": "Casque Onsonne",
-      "pt": "Casque Onsonne"
+      "de": "Konsonantenhelm",
+      "es": "Pliegorro",
+      "it": "Cascon Sonante",
+      "pt": "Casco Soante"
     },
     "itemType": "Hat",
     "setID": "7346235253564237",
@@ -131498,10 +131540,10 @@
     "name": {
       "en": "Cape Ostrophe",
       "fr": "Cape Ostrophe",
-      "de": "Cape Ostrophe",
-      "es": "Cape Ostrophe",
-      "it": "Cape Ostrophe",
-      "pt": "Cape Ostrophe"
+      "de": "Capeostroph",
+      "es": "Capa Peleta",
+      "it": "Mantello Apostrofico",
+      "pt": "Capa Óstrofo"
     },
     "itemType": "Cloak",
     "setID": "7346235253564237",
@@ -131598,12 +131640,12 @@
   {
     "dofusID": "1316",
     "name": {
-      "en": "Rinne Amulette",
+      "en": "Initiamulet",
       "fr": "Amulette Rinne",
-      "de": "Amulette Rinne",
-      "es": "Amulette Rinne",
-      "it": "Amulette Rinne",
-      "pt": "Amulette Rinne"
+      "de": "Amulett Ering",
+      "es": "Amuletro",
+      "it": "Amuleto Capolet",
+      "pt": "Amuleto Capitular"
     },
     "itemType": "Amulet",
     "setID": "472937642426324323",
@@ -131700,12 +131742,12 @@
   {
     "dofusID": "10348",
     "name": {
-      "en": "Icisme Belt",
+      "en": "Engirdle Ishism",
       "fr": "Sangle Icisme",
-      "de": "Sangle Icisme",
-      "es": "Sangle Icisme",
-      "it": "Sangle Icisme",
-      "pt": "Sangle Icisme"
+      "de": "Gurt mit Gürtelschnanglizismus",
+      "es": "Cinturón Deseirah",
+      "it": "Cintura Nglicismo",
+      "pt": "Cinto Hãglicismo"
     },
     "itemType": "Belt",
     "setID": "472937642426324323",
@@ -131802,12 +131844,12 @@
   {
     "dofusID": "11348",
     "name": {
-      "en": "Kritur Boots",
+      "en": "Pithy Treads",
       "fr": "Solerets Kritur",
-      "de": "Solerets Kritur",
-      "es": "Solerets Kritur",
-      "it": "Solerets Kritur",
-      "pt": "Solerets Kritur"
+      "de": "Leisetreter",
+      "es": "Escarpes Kritura",
+      "it": "Stivali Scrittura",
+      "pt": "Cascos Krita"
     },
     "itemType": "Boots",
     "setID": "472937642426324323",
