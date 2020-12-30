@@ -1,0 +1,3864 @@
+[
+  {
+    "name": {
+      "en": "Stringsecticide",
+      "fr": "String Tue-Mouche",
+      "de": "String \"Sektizid\"",
+      "es": "Tanga muscárido",
+      "it": "Tanga Ammazza-Mosche",
+      "pt": "Stringseticida"
+    },
+    "level": 192,
+    "imageUrl": "/retro/item/10132.png",
+    "setID": "107",
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 300 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ougaabelt",
+      "fr": "Ougature",
+      "de": "Stinkelinggurt",
+      "es": "Cintugah",
+      "it": "Ugantura",
+      "pt": "Cintugah"
+    },
+    "level": 185,
+    "imageUrl": "/retro/item/10135.png",
+    "setID": "118",
+    "stats": [
+      { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
+      { "stat": "Wisdom", "minStat": 41, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 31, "maxStat": 40 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 2 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bherbal Bherb Belt",
+      "fr": "Ceinture Rasboulaire du Rasboul",
+      "de": "Yastoinpatl",
+      "es": "Cinturón Rasgabolario del Rasgabola",
+      "it": "Cintura Rasbulare del Rasbul",
+      "pt": "Cinto Rasgabolar do Rasgabola"
+    },
+    "level": 182,
+    "imageUrl": "/retro/item/10115.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 41, "maxStat": 60 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 6 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Biibl Belt",
+      "fr": "Ceinture Toré",
+      "de": "Verzweckter Schurz",
+      "es": "Cinturón Toré",
+      "it": "Cintura To",
+      "pt": "Cinto Biibl"
+    },
+    "level": 181,
+    "imageUrl": "/retro/item/10145.png",
+    "setID": "109",
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 5 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Slice of Undergrowth",
+      "fr": "Tranche des Sous-bois",
+      "de": "Unterholziger Ulmentgurt",
+      "es": "Rodaja del sotobosque",
+      "it": "Fetta dei Sottoboschi",
+      "pt": "Fatia de sub-bosque"
+    },
+    "level": 179,
+    "imageUrl": "/retro/item/10134.png",
+    "setID": "120",
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 351, "maxStat": 400 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 21, "maxStat": 30 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fungas Belt",
+      "fr": "Ceinture Mycosine",
+      "de": "Mykosatorgürtel",
+      "es": "Cinturón Micosino",
+      "it": "Cintura Micosina",
+      "pt": "Cinto Fungas"
+    },
+    "level": 177,
+    "imageUrl": "/retro/item/10133.png",
+    "setID": "121",
+    "stats": [
+      { "stat": "Strength", "minStat": 41, "maxStat": 60 },
+      { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 301, "maxStat": 500 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Grendibelt",
+      "fr": "Goldoture",
+      "de": "Goldogur",
+      "es": "Goldotura",
+      "it": "Goldontura",
+      "pt": "Grendicinto"
+    },
+    "level": 164,
+    "imageUrl": "/retro/item/10085.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Power", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Minotot Belt",
+      "fr": "Ceinture du Minotot",
+      "de": "Minotot-Gürtel",
+      "es": "Cinturón del Minotot",
+      "it": "Cintura del Minotot",
+      "pt": "Cinto do Minotot"
+    },
+    "level": 149,
+    "imageUrl": "/retro/item/10105.png",
+    "setID": "57",
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 181, "maxStat": 250 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 25 },
+      { "stat": "Pods", "minStat": null, "maxStat": 500 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 8 },
+      { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Air Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Parkinn Pan's Pikokowal Belt",
+      "fr": "Ceinture Bitoufale de Prosper Youpla",
+      "de": "Ykaros' Gurt",
+      "es": "Cinturón Túfico de Cosmic Ario",
+      "it": "Cintura Bitufale di Prosper Youpla",
+      "pt": "Cinto Bitufal de Pan Bitufowal"
+    },
+    "level": 148,
+    "imageUrl": "/retro/item/10128.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 300 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Autumnal Soft Oak G-String",
+      "fr": "String Automnal du Chêne Mou",
+      "de": "Weich-Eich-Herbststring",
+      "es": "Tanga otoñal de Roble Blando",
+      "it": "Perizoma Autunnale della Quercia Molle",
+      "pt": "Fio Dental de Outono de Carvalho Mole"
+    },
+    "level": 141,
+    "imageUrl": "/retro/item/10113.png",
+    "setID": "66",
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 4 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Pods", "minStat": 501, "maxStat": 600 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lord of the Rats' Ceremonial Belt",
+      "fr": "Ceinture Cérémoniale du Seigneur des Rats",
+      "de": "Zeremoniengürtel des Rattenmeisters",
+      "es": "Cinturón ceremonial del Amo de las Ratas",
+      "it": "Cintura Cerimoniale del Signore dei Ratti",
+      "pt": "Cinto cerimonal do Senhor dos Ratos"
+    },
+    "level": 133,
+    "imageUrl": "/retro/item/10111.png",
+    "setID": "64",
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Pods", "minStat": null, "maxStat": 500 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Belt Urgid",
+      "fr": "Ceinture Gessant",
+      "de": "Leitgurt",
+      "es": "Cinto Rhente",
+      "it": "Cintura Gessante",
+      "pt": "Cinto Mescente"
+    },
+    "level": 130,
+    "imageUrl": "/retro/item/10127.png",
+    "setID": "85",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Girdle Belt",
+      "fr": "Gaine Hage",
+      "de": "Pro Viant Amin-Gürtel",
+      "es": "La Merendera",
+      "it": "Borsa Agio",
+      "pt": "Cinto Espartilho"
+    },
+    "level": 130,
+    "imageUrl": "/retro/item/10126.png",
+    "setID": "91",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Targ Belt",
+      "fr": "Sangle Cible",
+      "de": "Dart-Gurt",
+      "es": "Cincha diana",
+      "it": "Cintura Bersaglio",
+      "pt": "Cinto Targ"
+    },
+    "level": 130,
+    "imageUrl": "/retro/item/10125.png",
+    "setID": "82",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sticky Strap",
+      "fr": "Sangle Huée",
+      "de": "Gravitas-Gurt",
+      "es": "Pandinturón",
+      "it": "Cintura Gravity",
+      "pt": "Faixa Fedida"
+    },
+    "level": 130,
+    "imageUrl": "/retro/item/10124.png",
+    "setID": "92",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Diezzle Belt",
+      "fr": "Ceinture Bodiézèle",
+      "de": "Tswangs Gürtel",
+      "es": "Cinto'Rbodyezel",
+      "it": "Cintura Bolzebù",
+      "pt": "Cinto Diezzle"
+    },
+    "level": 130,
+    "imageUrl": "/retro/item/10123.png",
+    "setID": "84",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Strap Pado",
+      "fr": "Sangle Hans",
+      "de": "Krawattschurz",
+      "es": "Cinto Orturator",
+      "it": "Cintura Blad",
+      "pt": "Strap Pado"
+    },
+    "level": 130,
+    "imageUrl": "/retro/item/10122.png",
+    "setID": "87",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Belt Atio",
+      "fr": "Ceinture Luthe",
+      "de": "Düpier-Gürtel",
+      "es": "Cintelación",
+      "it": "Cintura Lazione",
+      "pt": "Cinto Atio"
+    },
+    "level": 130,
+    "imageUrl": "/retro/item/10121.png",
+    "setID": "90",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Blub Belt",
+      "fr": "Sangle Holon",
+      "de": "Erster-Holon-Gürtel",
+      "es": "Cinturronchón",
+      "it": "Cintura Tirs",
+      "pt": "Cinto Blub"
+    },
+    "level": 130,
+    "imageUrl": "/retro/item/10120.png",
+    "setID": "83",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sleepless Belt",
+      "fr": "Ceinture Lupine",
+      "de": "Uhr-Guhrt",
+      "es": "Cinto O'rario",
+      "it": "Cintura Ticchettac",
+      "pt": "Cinto Insônia"
+    },
+    "level": 130,
+    "imageUrl": "/retro/item/10119.png",
+    "setID": "86",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Clinkin Belt",
+      "fr": "Sangle Glinglin",
+      "de": "Klackerdieklacker-Gurt",
+      "es": "Cinto Hreru",
+      "it": "Cintura Calende Greche",
+      "pt": "Cinto Clinkin"
+    },
+    "level": 130,
+    "imageUrl": "/retro/item/10118.png",
+    "setID": "89",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Belt Sterous",
+      "fr": "Ceinture Buhlent",
+      "de": "66er",
+      "es": "Cinturón Baraja",
+      "it": "Cintura Zardo",
+      "pt": "Cinto Urbulento"
+    },
+    "level": 130,
+    "imageUrl": "/retro/item/10117.png",
+    "setID": "88",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bloody Belt",
+      "fr": "Sangle Hynère",
+      "de": "Blurt-Gurt",
+      "es": "Correa Litichow",
+      "it": "Cintura Inaria",
+      "pt": "Cinto Sangrento"
+    },
+    "level": 130,
+    "imageUrl": "/retro/item/10116.png",
+    "setID": "81",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Moowish Belt",
+      "fr": "Ceinture Meulante",
+      "de": "MuWu-Gürtel",
+      "es": "Cinturón mulante",
+      "it": "Cintura Muulante",
+      "pt": "Cinto Mulante"
+    },
+    "level": 129,
+    "imageUrl": "/retro/item/10051.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 401, "maxStat": 600 },
+      { "stat": "Air Resistance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 300 },
+      { "stat": "Water Resistance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Fire Resistance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Earth Resistance", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Light Treeckler Belt",
+      "fr": "Ceinture Claire en Abrakleur",
+      "de": "Gurt aus hellem Astakrachlerholz",
+      "es": "Cinturón claro de abrajidor",
+      "it": "Cintura Chiara di Alberaklur",
+      "pt": "Cinto claro de Arvorador"
+    },
+    "level": 128,
+    "imageUrl": "/retro/item/10130.png",
+    "setID": "79",
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 45 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 45 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 300 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Moowolf Belt",
+      "fr": "Ceinture du Meulou",
+      "de": "MuWulf-Gürtel",
+      "es": "Cinturón de Maxilubo",
+      "it": "Cintura del Muulupo",
+      "pt": "Cinto do Mulobo"
+    },
+    "level": 125,
+    "imageUrl": "/retro/item/10103.png",
+    "setID": "55",
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 4 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Xenature",
+      "fr": "Xénature",
+      "de": "Xenaschurz",
+      "es": "Xenatura",
+      "it": "Xenantura",
+      "pt": "Xenatura"
+    },
+    "level": 125,
+    "imageUrl": "/retro/item/10083.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 300 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 20 },
+      { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ditchy Belt",
+      "fr": "Ceinture Sula",
+      "de": "Gürtel Lena",
+      "es": "Cinturón de Santy",
+      "it": "Cintura Sula",
+      "pt": "Cinto de Sula"
+    },
+    "level": 125,
+    "imageUrl": "/retro/item/10082.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 16, "maxStat": 20 },
+      { "stat": "Power (traps)", "minStat": 16, "maxStat": 20 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 20 },
+      { "stat": "Neutral Resistance", "minStat": 9, "maxStat": 12 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dreggon Belt",
+      "fr": "Ceinture du Dragoeuf",
+      "de": "Drachei-Gürtel",
+      "es": "Cinturón de dragohuevo",
+      "it": "Cintura del Draguovo",
+      "pt": "Cinto do Dragovo"
+    },
+    "level": 124,
+    "imageUrl": "/retro/item/10104.png",
+    "setID": "56",
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Pods", "minStat": 301, "maxStat": 500 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
+      { "stat": "Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "Water Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Aman Date Belt",
+      "fr": "Ceinture de l'Amant d'Ha",
+      "de": "Gürtel des Armen Dates",
+      "es": "Cinturón del Amante Fugaz",
+      "it": "Cintura dell'Amante di Ha",
+      "pt": "Cinto do Amante da Hora"
+    },
+    "level": 121,
+    "imageUrl": "/retro/item/10057.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 71, "maxStat": 100 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 8 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "Prospecting", "minStat": 9, "maxStat": 13 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crowish Belt",
+      "fr": "Ceinture Corbaquiale",
+      "de": "Rabschürzling",
+      "es": "Cinturón Cuerbakial",
+      "it": "Cintura Cuervochiale",
+      "pt": "Cinto Corvoquial"
+    },
+    "level": 120,
+    "imageUrl": "/retro/item/10056.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Initiative", "minStat": 181, "maxStat": 330 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ancestral Treebelt",
+      "fr": "Abrature Ancestrale",
+      "de": "Ur-Astaschurz",
+      "es": "Abratura Ancestral",
+      "it": "Alberantura Ancestrale",
+      "pt": "Arvracinto Ancestral"
+    },
+    "level": 111,
+    "imageUrl": "/retro/item/10112.png",
+    "setID": "65",
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 45 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Air Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Water Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Minotoror Belt",
+      "fr": "Ceinture du Minotoror",
+      "de": "Minotoror-Gürtel",
+      "es": "Cinturón del Minotauroro",
+      "it": "Cintura del Minotoror",
+      "pt": "Cinto do Minotoror"
+    },
+    "level": 111,
+    "imageUrl": "/retro/item/10106.png",
+    "setID": "54",
+    "stats": [
+      { "stat": "Vitality", "minStat": 131, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Summons", "minStat": 2, "maxStat": 3 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "White Rat Belt",
+      "fr": "Ceinture du Rat Blanc",
+      "de": "Weißer Rattengürtel",
+      "es": "Cinturón de la Rata Blanca",
+      "it": "Cintura del Ratto Bianco",
+      "pt": "Cinto do Rato Branco"
+    },
+    "level": 102,
+    "imageUrl": "/retro/item/10110.png",
+    "setID": "67",
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 80 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Black Rat Belt",
+      "fr": "Ceinture du Rat Noir",
+      "de": "Schwarzer Rattengürtel",
+      "es": "Cinturón de la Rata Negra",
+      "it": "Cintura del Ratto Nero",
+      "pt": "Cinto do Rato Negro"
+    },
+    "level": 101,
+    "imageUrl": "/retro/item/10109.png",
+    "setID": "68",
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 45 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power (traps)", "minStat": 16, "maxStat": 25 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
+      { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bwork Chief Briefs",
+      "fr": "Slip du Chef Bwork",
+      "de": "Schlüpfer des Bwork-Chefs",
+      "es": "Calzoncillo de jefe bwork",
+      "it": "Mutande del Capo Bwork",
+      "pt": "Cueca do Chefe Bwork"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/10059.png",
+    "setID": "19",
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 45 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 35 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 },
+      { "stat": "Prospecting", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Chouquish Belt",
+      "fr": "Ceinture Chouqueuse",
+      "de": "Tschuckschürz",
+      "es": "Cinturón Le Chukoso",
+      "it": "Cintura Chukosa",
+      "pt": "Cinto Tchukoso"
+    },
+    "level": 98,
+    "imageUrl": "/retro/item/10041.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 51, "maxStat": 80 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dark Treeckler Belt",
+      "fr": "Ceinture sombre en Abrakleur",
+      "de": "Gurt aus dunklem Astakrachlerholz",
+      "es": "Cinturón oscuro de abrajidor",
+      "it": "Cintura Oscura di Alberaklur",
+      "pt": "Cinto sombrio de Arvorador"
+    },
+    "level": 92,
+    "imageUrl": "/retro/item/10129.png",
+    "setID": "80",
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 35 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Rainbow Blop Belt",
+      "fr": "Blopture Multicolore Royale",
+      "de": "Königlicher Multiblob-Gurt",
+      "es": "Blopinturón Multicolor Real",
+      "it": "Blopintura Multicolore Reale",
+      "pt": "Blopcinto Arco-Íris Real"
+    },
+    "level": 90,
+    "imageUrl": "/retro/item/10144.png",
+    "setID": "106",
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Power", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 8 },
+      { "stat": "% Earth Resistance", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sangroku's Belt",
+      "fr": "Ceinture de Sangroku",
+      "de": "Sangrokus Gürtel",
+      "es": "Cinturón de Sanchoku",
+      "it": "Cintura di Sangroku",
+      "pt": "Cinto de Sangroku"
+    },
+    "level": 86,
+    "imageUrl": "/retro/item/10080.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Event Belt",
+      "fr": "Ceinture des Vents",
+      "de": "Aereignisgürtel",
+      "es": "Cinturón de los vientos",
+      "it": "Cintura dei Venti",
+      "pt": "Cinto dos ventos"
+    },
+    "level": 84,
+    "imageUrl": "/retro/item/10015.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Range", "minStat": 1, "maxStat": 2 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 8 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Feudala Belt",
+      "fr": "Ceinture Feudala",
+      "de": "Feudala-Gürtel",
+      "es": "Cinturón Fuegodala",
+      "it": "Cintura Focodala",
+      "pt": "Cinto Fogodala"
+    },
+    "level": 81,
+    "imageUrl": "/retro/item/10077.png",
+    "setID": "37",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 45 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Boowish Belt",
+      "fr": "Ceinture Mulante",
+      "de": "WuWulfs-Gürtel",
+      "es": "Cinturón mediulante",
+      "it": "Cintura Buulante",
+      "pt": "Cinto Milante"
+    },
+    "level": 81,
+    "imageUrl": "/retro/item/10050.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 70 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Initiative", "minStat": 151, "maxStat": 200 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Indigo Blop Belt",
+      "fr": "Blopture Indigo Royale",
+      "de": "Königlicher Indigo Blob-Gurt",
+      "es": "Blopinturón Índigo Real",
+      "it": "Blopintura Indaco Reale",
+      "pt": "Blopcinto Índigo Real"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/10143.png",
+    "setID": "105",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 45 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Pods", "minStat": 201, "maxStat": 400 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Coco Blop Belt",
+      "fr": "Blopture Coco Royale",
+      "de": "Königlicher Kokos Blob-Gurt",
+      "es": "Blopinturón Coco Real",
+      "it": "Blopintura Cocco Reale",
+      "pt": "Blopcinto Coco Real"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/10142.png",
+    "setID": "104",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 45 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Pods", "minStat": 201, "maxStat": 400 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Pippin Blop Belt",
+      "fr": "Blopture Reinette Royale",
+      "de": "Königlicher Apfel Blob-Gurt",
+      "es": "Blopinturón Reineta Real",
+      "it": "Blopintura Reginetta Reale",
+      "pt": "Blopcinto Maçã Real"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/10141.png",
+    "setID": "103",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 45 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Pods", "minStat": 201, "maxStat": 400 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Morello Cherry Blop Belt",
+      "fr": "Blopture Griotte Royale",
+      "de": "Königlicher Kirsch Blob-Gurt",
+      "es": "Blopinturón Guinda Real",
+      "it": "Blopintura Griotta Reale",
+      "pt": "Blopcinto Cereja Real"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/10140.png",
+    "setID": "102",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 45 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Pods", "minStat": 201, "maxStat": 400 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Shika's Belt",
+      "fr": "Shikature",
+      "de": "Shikas Gürtel",
+      "es": "Shikaturón",
+      "it": "Shikantura",
+      "pt": "Cinto de Shika"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/10107.png",
+    "setID": "53",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 4, "maxStat": 5 },
+      { "stat": "Prospecting", "minStat": 4, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "Water Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "Fire Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Legendary Crackler Belt",
+      "fr": "Ceinture du Craqueleur Légendaire",
+      "de": "Gürtel des Legendären Mega-Krachlers",
+      "es": "Cinturón de Crujidor Legendario",
+      "it": "Cintura del Croccaroc Leggendario",
+      "pt": "Cinto do Smagador Legendário"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/10094.png",
+    "setID": "52",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Pods", "minStat": 201, "maxStat": 300 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Farlebelt",
+      "fr": "Farlature",
+      "de": "Farles Arbeitsschurz",
+      "es": "Farlacinto",
+      "it": "Farlintura",
+      "pt": "Farlecinto"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/10061.png",
+    "setID": "17",
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 4, "maxStat": 5 },
+      { "stat": "Prospecting", "minStat": 4, "maxStat": 5 },
+      { "stat": "Water Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "Air Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "Fire Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Powerful Dazzling Belt",
+      "fr": "Puissante Ceinture Fulgurante",
+      "de": "Mächtig funkelnder Gürtel",
+      "es": "Poderoso cinturón fulgurante",
+      "it": "Potente Cintura Folgorante",
+      "pt": "Poderoso Cinto Ofuscante"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/10026.png",
+    "setID": null,
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Drasmuty Belt",
+      "fr": "Ceinture Dracochoune",
+      "de": "Schweinischer Drachengürtel",
+      "es": "Cinturón dragocerda",
+      "it": "Cintura Dragomaiala",
+      "pt": "Cinto Drasmuty"
+    },
+    "level": 77,
+    "imageUrl": "/retro/item/10052.png",
+    "setID": "58",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 },
+      { "stat": "Range", "minStat": 1, "maxStat": 2 },
+      { "stat": "Summons", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden Lady's Belt",
+      "fr": "Ceinture d'une Femme en Or",
+      "de": "Gürtel der goldenen Lady",
+      "es": "Cinturón de una mujer de oro",
+      "it": "Cintura di una Donna d'Oro",
+      "pt": "Cinto de uma Mulher de Ouro"
+    },
+    "level": 71,
+    "imageUrl": "/retro/item/10086.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 51, "maxStat": 70 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Pods", "minStat": 301, "maxStat": 500 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Aerdala Belt",
+      "fr": "Ceinture Aerdala",
+      "de": "Aerdala-Gürtel",
+      "es": "Cinturón Airedala",
+      "it": "Cintura Erdala",
+      "pt": "Cinto Ardala"
+    },
+    "level": 70,
+    "imageUrl": "/retro/item/10079.png",
+    "setID": "35",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 35 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crocodyl Chief Belt",
+      "fr": "Ceinture du Chef Crocodaille",
+      "de": "Gürtel des Chef-Crocodylls",
+      "es": "Cinturón de jefe cocodrail",
+      "it": "Cintura del Capo Coccodrail",
+      "pt": "Cinto do Chefe Crocodyl"
+    },
+    "level": 70,
+    "imageUrl": "/retro/item/10060.png",
+    "setID": "20",
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 35 },
+      { "stat": "Chance", "minStat": 26, "maxStat": 35 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Xerbo",
+      "fr": "La Xerbo",
+      "de": "Xerbo",
+      "es": "El Xerbo",
+      "it": "La Xerbo",
+      "pt": "O Xerbo"
+    },
+    "level": 67,
+    "imageUrl": "/retro/item/10039.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 35 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "Power", "minStat": 3, "maxStat": 5 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Pods", "minStat": 151, "maxStat": 250 },
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ouginiakal Belt",
+      "fr": "Ceinture Ouginakale",
+      "de": "Ouginakischer Gürtel",
+      "es": "Cinturón Uginakal",
+      "it": "Cintura Uginakale",
+      "pt": "Cinto Kilórfico"
+    },
+    "level": 65,
+    "imageUrl": "/retro/item/10055.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": 11, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Koalak Belt",
+      "fr": "Ceinture du Koalak",
+      "de": "Gürtel des Koalak",
+      "es": "Cinturón de koalak",
+      "it": "Cintura del Koalak",
+      "pt": "Cinto do Koalak"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/10087.png",
+    "setID": "46",
+    "stats": [
+      { "stat": "Pods", "minStat": 101, "maxStat": 200 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 250 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "GM Wabbit Y-fwonts",
+      "fr": "Slip Kangouwou du Wabbit GM",
+      "de": "Kanguwuschlüpfer des Wabbit GM",
+      "es": "Slip kanguwo del wabbit GM",
+      "it": "Mutande Kanguwu del Wabbit GM",
+      "pt": "Cueca do Wabbit GM"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/10058.png",
+    "setID": "11",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 9 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Red Turtle Belt",
+      "fr": "Ceinture Tortue Rouge",
+      "de": "Gürtel der roten Schildkröte",
+      "es": "Cinturón tortuga roja",
+      "it": "Cintura Tartaruga Rossa",
+      "pt": "Cinto de tartaruga vermelha"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/10045.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 35 },
+      { "stat": "Prospecting", "minStat": 3, "maxStat": 6 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Green Turtle Belt",
+      "fr": "Ceinture Tortue Verte",
+      "de": "Gürtel der grünen Schildkröte",
+      "es": "Cinturón tortuga verde",
+      "it": "Cintura Tartaruga Verde",
+      "pt": "Cinto de tartaruga verde"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/10042.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 35 },
+      { "stat": "Prospecting", "minStat": 3, "maxStat": 6 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Blue Turtle Belt",
+      "fr": "Ceinture Tortue Bleue",
+      "de": "Gürtel der blauen Schildkröte",
+      "es": "Cinturón tortuga azul",
+      "it": "Cintura Tartaruga Blu",
+      "pt": "Cinto de tartaruga azul"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/10044.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 35 },
+      { "stat": "Prospecting", "minStat": 3, "maxStat": 6 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Yellow Turtle Belt",
+      "fr": "Ceinture Tortue Jaune",
+      "de": "Gürtel der gelben Schildkröte",
+      "es": "Cinturón tortuga amarilla",
+      "it": "Cintura Tartaruga Gialla",
+      "pt": "Cinto de tartaruga amarela"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/10043.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 35 },
+      { "stat": "Prospecting", "minStat": 3, "maxStat": 6 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Jellibelt",
+      "fr": "Geloture",
+      "de": "Gelogürtelo",
+      "es": "Gelaturón",
+      "it": "Gelontura",
+      "pt": "Gelacinto"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/10032.png",
+    "setID": "6",
+    "stats": [{ "stat": "Intelligence", "minStat": 11, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Rat Belt",
+      "fr": "Ceinture du Rat",
+      "de": "Gürtel der Gürtelratte",
+      "es": "Cinturón de rata",
+      "it": "Cintura del Ratto",
+      "pt": "Cinto do Rato"
+    },
+    "level": 55,
+    "imageUrl": "/retro/item/10027.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Trembling Dodu Belt",
+      "fr": "Ceinture du Dodu Trembleur",
+      "de": "Gürtel des zitternden Dickmanns",
+      "es": "Cinturón del Temblador Regordete",
+      "it": "Cintura del Dodu Tremante",
+      "pt": "Cinto do Dodu Trêmulo"
+    },
+    "level": 55,
+    "imageUrl": "/retro/item/10014.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Damage", "minStat": 3, "maxStat": 8 },
+      { "stat": "Water Resistance", "minStat": 3, "maxStat": 8 },
+      { "stat": "Air Resistance", "minStat": 3, "maxStat": 8 },
+      { "stat": "Fire Resistance", "minStat": 3, "maxStat": 8 },
+      { "stat": "Earth Resistance", "minStat": 3, "maxStat": 8 },
+      { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Haks Or Belt",
+      "fr": "Ceinture du Roks Or",
+      "de": "Goldigürtel",
+      "es": "Cinturón Goldpex",
+      "it": "Cintura del Roks Or",
+      "pt": "Cinto do Roksor"
+    },
+    "level": 53,
+    "imageUrl": "/retro/item/10166.png",
+    "setID": "151",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 16, "maxStat": 20 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Brakmarian Belt",
+      "fr": "Ceinture Brâkmarienne",
+      "de": "Brâkschurz",
+      "es": "Cinturón brakmariano",
+      "it": "Cintura Brakmariana",
+      "pt": "Cinto Brakmariano"
+    },
+    "level": 53,
+    "imageUrl": "/retro/item/10038.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
+      { "stat": "Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 30 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Alignement = Brâkmar"],
+      "fr": ["Alignement = Brâkmar"],
+      "de": ["Alignement = Brâkmar"],
+      "es": ["Alignement = Brâkmar"],
+      "it": ["Alignement = Brâkmar"],
+      "pt": ["Alignement = Brâkmar"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bontarian Belt",
+      "fr": "Ceinture Bontarienne",
+      "de": "Bonta-Gürtel",
+      "es": "Cinturón bontariano",
+      "it": "Cintura Bontariana",
+      "pt": "Cinto Bontariano"
+    },
+    "level": 53,
+    "imageUrl": "/retro/item/10037.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
+      { "stat": "Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Alignement = Bonta"],
+      "fr": ["Alignement = Bonta"],
+      "de": ["Alignement = Bonta"],
+      "es": ["Alignement = Bonta"],
+      "it": ["Alignement = Bonta"],
+      "pt": ["Alignement = Bonta"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Klume's Belt",
+      "fr": "Ceinture de Klüme",
+      "de": "A.M.Boss Gürtel",
+      "es": "Cinturón de Kunye",
+      "it": "Cintura di Cudine",
+      "pt": "Cinto de Klume"
+    },
+    "level": 52,
+    "imageUrl": "/retro/item/10167.png",
+    "setID": "153",
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 50 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Gobball's Belt",
+      "fr": "Ceinture Royale du Bouftou",
+      "de": "Gürtel des königlichen Fresssacks",
+      "es": "Cinturón Real de Jalató",
+      "it": "Cintura Reale del Pappatutto",
+      "pt": "Cinto Real do Papatudo"
+    },
+    "level": 52,
+    "imageUrl": "/retro/item/10031.png",
+    "setID": "4",
+    "stats": [
+      { "stat": "Pods", "minStat": 101, "maxStat": 800 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 70 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kloug's Belt",
+      "fr": "Ceinture de Kloug",
+      "de": "Äkebäker-Gürtel",
+      "es": "Cinturón de Napazam",
+      "it": "Cintura di Kloug",
+      "pt": "Cinto de Napizram"
+    },
+    "level": 51,
+    "imageUrl": "/retro/item/10168.png",
+    "setID": "154",
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Pods", "minStat": 251, "maxStat": 300 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Hulkrap's Belt",
+      "fr": "Ceinture d'Hulkrap",
+      "de": "Lerkstim-Gürtel",
+      "es": "Cinturón de Ravelaca",
+      "it": "Cintura di Quentindel",
+      "pt": "Cinto de Lápucra"
+    },
+    "level": 51,
+    "imageUrl": "/retro/item/10169.png",
+    "setID": "152",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden Scarabelt",
+      "fr": "Scarature Dorée",
+      "de": "Gürtel des goldenen Scarabiestes",
+      "es": "Escaratura dorada",
+      "it": "Scarantura Dorata",
+      "pt": "Scaracinto dourado"
+    },
+    "level": 51,
+    "imageUrl": "/retro/item/10090.png",
+    "setID": "51",
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 55 },
+      { "stat": "Agility", "minStat": 6, "maxStat": 30 },
+      { "stat": "Heals", "minStat": 1, "maxStat": 3 },
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 3 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 3 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 3 },
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Indigo Blop Belt",
+      "fr": "Blopture Indigo",
+      "de": "Indigo Blob-Gurt",
+      "es": "Blopinturón índigo",
+      "it": "Blopintura Indaco",
+      "pt": "Blopcinto Índigo"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/10139.png",
+    "setID": "101",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Pods", "minStat": 101, "maxStat": 300 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Coco Blop Belt",
+      "fr": "Blopture Coco",
+      "de": "Kokos Blob-Gurt",
+      "es": "Blopinturón coco",
+      "it": "Blopintura Cocco",
+      "pt": "Blopcinto Coco"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/10138.png",
+    "setID": "100",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Pods", "minStat": 101, "maxStat": 300 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pippin Blop Belt",
+      "fr": "Blopture Reinette",
+      "de": "Apfel Blob-Gurt",
+      "es": "Blopinturón reineta",
+      "it": "Blopintura Reginetta",
+      "pt": "Blopcinto Maçã"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/10137.png",
+    "setID": "99",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Pods", "minStat": 101, "maxStat": 300 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Morello Cherry Blop Belt",
+      "fr": "Blopture Griotte",
+      "de": "Kirsch Blob-Gurt",
+      "es": "Blopinturón guinda",
+      "it": "Blopintura Griotta",
+      "pt": "Blopcinto Cereja"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/10136.png",
+    "setID": "98",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Pods", "minStat": 101, "maxStat": 300 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sticky Belt",
+      "fr": "Ceinture Kolante",
+      "de": "Kleblingsgürtel",
+      "es": "Cinturón pegajoso",
+      "it": "Cintura Kollante",
+      "pt": "Cinto Fedorento"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/10046.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 7, "maxStat": 11 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Prospecting", "minStat": 3, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Luthuthu Belt",
+      "fr": "Ceinture Luthuthu",
+      "de": "Ruf des Gürthulhu",
+      "es": "Cinturón Ropopompero",
+      "it": "Cintura Luthuthu",
+      "pt": "Cinto Luthuthu"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/10013.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pink Tutu",
+      "fr": "Tutu Rose",
+      "de": "Tütüll",
+      "es": "Tutú rosa",
+      "it": "Tutù Rosa",
+      "pt": "Tutu rosa"
+    },
+    "level": 49,
+    "imageUrl": "/retro/item/10148.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Critical", "minStat": 3, "maxStat": 7 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Terrdala Belt",
+      "fr": "Ceinture Terrdala",
+      "de": "Teradala-Gürtel",
+      "es": "Cinturón Tierradala",
+      "it": "Cintura Terradala",
+      "pt": "Cinto Terradala"
+    },
+    "level": 49,
+    "imageUrl": "/retro/item/10078.png",
+    "setID": "36",
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Pods", "minStat": 301, "maxStat": 400 },
+      { "stat": "Power (traps)", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Boowolf Thong",
+      "fr": "String du Mulou",
+      "de": "WuWulfische Gürtelschnur",
+      "es": "Tanga de mediulubo",
+      "it": "Perizoma del Buulupo",
+      "pt": "Tira de Boolobo"
+    },
+    "level": 49,
+    "imageUrl": "/retro/item/10092.png",
+    "setID": "32",
+    "stats": [
+      { "stat": "Strength", "minStat": 1, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
+      { "stat": "Chance", "minStat": 1, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 3 },
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Chafeerce Belt",
+      "fr": "Ceinture Chafeuse",
+      "de": "Chafer-Gürtel",
+      "es": "Cinturón Chafero",
+      "it": "Cintura Caliente",
+      "pt": "Cinto Chaferoso"
+    },
+    "level": 49,
+    "imageUrl": "/retro/item/10053.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 9 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Peeka Belt",
+      "fr": "Chtévu",
+      "de": "Isedi",
+      "es": "Tevisto",
+      "it": "Thovist",
+      "pt": "Cintevi"
+    },
+    "level": 49,
+    "imageUrl": "/retro/item/10025.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Critical", "minStat": 3, "maxStat": 7 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "% Neutral Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Godfather's Pants 'n' Suspenders",
+      "fr": "Caleçon à bretelles du Parrain",
+      "de": "Hosenträgershorts des Paten",
+      "es": "Calzón con tirantes del padrino",
+      "it": "Mutande con Bretelle del Padrino",
+      "pt": "Samba-canção com suspensórios do Padrinho"
+    },
+    "level": 48,
+    "imageUrl": "/retro/item/10152.png",
+    "setID": "126",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Ceinture Cristaline",
+      "fr": "Ceinture Cristaline",
+      "de": "[!DE] Ceinture Cristaline",
+      "es": "[!ES] Ceinture Cristaline",
+      "it": "[!IT] Ceinture Cristaline",
+      "pt": "[!PT] Ceinture Cristaline"
+    },
+    "level": 48,
+    "imageUrl": "/retro/item/10151.png",
+    "setID": "125",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Flash Gorgon's Belt",
+      "fr": "Ceinture de Flash Gorgone",
+      "de": "Gürtel von Fläsch Gorgon",
+      "es": "Cinturón de Flash Gorgon",
+      "it": "Cintura di Flash Gorgon",
+      "pt": "Cinto de Flash Gorgon"
+    },
+    "level": 48,
+    "imageUrl": "/retro/item/10146.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Adelus",
+      "fr": "L'Adelus",
+      "de": "Adelus",
+      "es": "El Adelus",
+      "it": "L'Adelus",
+      "pt": "Adelus"
+    },
+    "level": 48,
+    "imageUrl": "/retro/item/10012.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Frank Lee Bruce's Black Belt",
+      "fr": "Ceinture Noire de Frank Lee Bruce",
+      "de": "Schwarzer Gürtel von Frank Lee Bruce",
+      "es": "Cinturón negro de Frank Lee Bruce",
+      "it": "Cintura Nera di Frank Lee Bruce",
+      "pt": "Cinto Preto de Frank Lee Bruce"
+    },
+    "level": 47,
+    "imageUrl": "/retro/item/10081.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Black Wab Belt",
+      "fr": "Ceinture du Black Wab",
+      "de": "Black Wab - Gürtel",
+      "es": "Cinturón de black wab",
+      "it": "Cintura del Wab Newo",
+      "pt": "Cinto do Black Wab"
+    },
+    "level": 46,
+    "imageUrl": "/retro/item/10153.png",
+    "setID": "127",
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Blue Scarabelt",
+      "fr": "Scarature Bleue",
+      "de": "Blauer Scara-Gurt",
+      "es": "Escaracinto azul",
+      "it": "Scarantura Blu",
+      "pt": "Scaracinto Azul"
+    },
+    "level": 46,
+    "imageUrl": "/retro/item/10070.png",
+    "setID": "30",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Red Scarabelt",
+      "fr": "Scarature Rouge",
+      "de": "Roter Scara-Gurt",
+      "es": "Escaracinto rojo",
+      "it": "Scarantura Rossa",
+      "pt": "Scaracinto Vermelho"
+    },
+    "level": 46,
+    "imageUrl": "/retro/item/10068.png",
+    "setID": "28",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "White Scarabelt",
+      "fr": "Scarature Blanche",
+      "de": "Weißer Scara-Gurt",
+      "es": "Escaracinto blanco",
+      "it": "Scarantura Bianca",
+      "pt": "Scaracinto Branco"
+    },
+    "level": 46,
+    "imageUrl": "/retro/item/10069.png",
+    "setID": "29",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Green Scarabelt",
+      "fr": "Scarature Verte",
+      "de": "Grüner Scara-Gurt",
+      "es": "Escaracinto verde",
+      "it": "Scarantura Verde",
+      "pt": "Scaracinto Verde"
+    },
+    "level": 46,
+    "imageUrl": "/retro/item/10067.png",
+    "setID": "27",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Viootifool Belt",
+      "fr": "Ceinture Vioutifoule",
+      "de": "Viewtifuler Gürtel",
+      "es": "Cinturón Viewtiful",
+      "it": "Cintura Viutiful",
+      "pt": "Cinto Viewtiful"
+    },
+    "level": 46,
+    "imageUrl": "/retro/item/10035.png",
+    "setID": "75",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fasstroid Belt",
+      "fr": "Beignature",
+      "de": "Naschürtel",
+      "es": "Cinturosquilla",
+      "it": "Ciambellantura",
+      "pt": "Cintonut"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/10147.png",
+    "setID": "110",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crackler Belt",
+      "fr": "Ceinture du Craqueleur",
+      "de": "Krachlergurt",
+      "es": "Cinturón de crujidor",
+      "it": "Cintura del Croccaroc",
+      "pt": "Cinto do Smagador"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/10074.png",
+    "setID": "26",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "Pods", "minStat": 1, "maxStat": 300 },
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Megabelt",
+      "fr": "Mégature",
+      "de": "Megagürtel",
+      "es": "Megaturón",
+      "it": "Megantura",
+      "pt": "Megacinto"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/10034.png",
+    "setID": "76",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Treebelt",
+      "fr": "Abrature",
+      "de": "Astaschurz",
+      "es": "Abracinto",
+      "it": "Alberantura",
+      "pt": "Arvracinto"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/10030.png",
+    "setID": "3",
+    "stats": [
+      { "stat": "Pods", "minStat": 51, "maxStat": 150 },
+      { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 30 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fyred Ampe's Belt",
+      "fr": "Ceinture de Grizou",
+      "de": "Wetterschlag-Gürtel",
+      "es": "Cinturón de Grizú",
+      "it": "Cintura di Grisup",
+      "pt": "Cinto de Grisu"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/10162.png",
+    "setID": "149",
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Belugo",
+      "fr": "Yugure",
+      "de": "Yagurt",
+      "es": "Ugorón",
+      "it": "Yugura",
+      "pt": "Belugo"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/10157.png",
+    "setID": "134",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Black Scarabelt",
+      "fr": "Scarature Noire",
+      "de": "Schwarzer Scara-Gurt",
+      "es": "Escaracinto negro",
+      "it": "Scarantura Nera",
+      "pt": "Scaracinto Preto"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/10093.png",
+    "setID": "49",
+    "stats": [
+      { "stat": "Critical", "minStat": 2, "maxStat": 4 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Goboff's Belt",
+      "fr": "Ceinture de Gobeuf",
+      "de": "Gobschling-Gürtel",
+      "es": "Cinturón de Gobuevo",
+      "it": "Cintura di Gobluovo",
+      "pt": "Cinto de Gobovo"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/10165.png",
+    "setID": "146",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Koksiks's Belt",
+      "fr": "Ceinture de Kocksis",
+      "de": "Racknacknock-Gürtel",
+      "es": "Cinturón de Koxys",
+      "it": "Cintura di Koccid",
+      "pt": "Cinto de Koksis"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/10164.png",
+    "setID": "145",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Vampyre Belt",
+      "fr": "Ceinture du Vampyre",
+      "de": "Vampyr-Gürtel",
+      "es": "Cinturón de Vampyro",
+      "it": "Cintura del Vampyro",
+      "pt": "Cinto do Vampyro"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/10156.png",
+    "setID": "130",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 250 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kokokette Belt",
+      "fr": "Ceinture Kokokette",
+      "de": "Kokoketter Gürtel",
+      "es": "Cinturón Kokoketo",
+      "it": "Cintura Kokoketta",
+      "pt": "Cinto de Kokokette"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/10040.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Monty's Belt",
+      "fr": "Ceinture de Mounu",
+      "de": "Mounu-Gürtel",
+      "es": "Coquicinturón de Munú",
+      "it": "Cintura di Munù",
+      "pt": "Cinto Mounu"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/10160.png",
+    "setID": "143",
+    "stats": [
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Toot's Belt",
+      "fr": "Ceinture de Tolot",
+      "de": "Tolot-Gürtel",
+      "es": "Flotadurón de Tolot",
+      "it": "Cintura di Tolot",
+      "pt": "Cinto Brasiwawa"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/10159.png",
+    "setID": "142",
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Siks Wonn Ein Belt",
+      "fr": "Ceinture Siks Won Naïne",
+      "de": "Voller Nellson Gürtel",
+      "es": "Cinturón de Tor Nyquete",
+      "it": "Cintura Sics Uan Nain",
+      "pt": "Cinturão Siks Wonn Ein"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/10155.png",
+    "setID": "131",
+    "stats": [
+      { "stat": "Vitality", "minStat": 36, "maxStat": 45 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Akwadala Belt",
+      "fr": "Ceinture Akwadala",
+      "de": "Akwadala-Gürtel",
+      "es": "Cinturón Akwadala",
+      "it": "Cintura Aksadala",
+      "pt": "Cinto Akwadala"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/10076.png",
+    "setID": "34",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 20 },
+      { "stat": "Pods", "minStat": 101, "maxStat": 150 },
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wind Kwakelt",
+      "fr": "Kwakture de Vent",
+      "de": "Wind-Kwackürtel",
+      "es": "Kwakcinto de viento",
+      "it": "Kwakantura di Vento",
+      "pt": "Kwaktura do Vento"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/10063.png",
+    "setID": "15",
+    "stats": [
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 2 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Earth Kwakelt",
+      "fr": "Kwakture de Terre",
+      "de": "Erd-Kwackürtel",
+      "es": "Kwakcinto de tierra",
+      "it": "Kwakantura di Terra",
+      "pt": "Kwacar da Terra"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/10065.png",
+    "setID": "14",
+    "stats": [
+      { "stat": "Strength", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 2 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ice Kwakelt",
+      "fr": "Kwakture de Glace",
+      "de": "Eis-Kwackürtel",
+      "es": "Kwakcinto de hielo",
+      "it": "Kwakantura di Ghiaccio",
+      "pt": "Kwakcinto de Gelo"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/10036.png",
+    "setID": "13",
+    "stats": [
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 2 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fire Kwakelt",
+      "fr": "Kwakture de Flammes",
+      "de": "Flammen-Kwackürtel",
+      "es": "Kwakcinto de llamas",
+      "it": "Kwakantura di Fiamma",
+      "pt": "Kwacinto do Fogo"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/10028.png",
+    "setID": "2",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 2 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Vegete Hative",
+      "fr": "La Végète Hâtif",
+      "de": "Vegagürtel",
+      "es": "El Vegeta Tivo",
+      "it": "La Vegeta Tiva",
+      "pt": "O Vegete Ativo"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/10023.png",
+    "setID": null,
+    "stats": [
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Stroy Zemol's Belt",
+      "fr": "Ceinture de Rekto Topi",
+      "de": "Piffpaffplumps-Gürtel",
+      "es": "Cinturón de Panpun Pon",
+      "it": "Cintura di Altap Eto",
+      "pt": "Cinto de Stroy Zemol"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/10161.png",
+    "setID": "148",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Heals", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Grute's Belt",
+      "fr": "Ceinture de Grüt",
+      "de": "Bwurgs Gürtel",
+      "es": "Cinturón de Gruut",
+      "it": "Cintura di Griut",
+      "pt": "Cinto de Grute"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/10163.png",
+    "setID": "144",
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 20 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lardine Belt",
+      "fr": "Ceinture Lardière",
+      "de": "Speckgürtel",
+      "es": "Cinturón tocinero",
+      "it": "Cintura Salume",
+      "pt": "Cinto Touceiro"
+    },
+    "level": 39,
+    "imageUrl": "/retro/item/10149.png",
+    "setID": "113",
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Power (traps)", "minStat": 1, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Krabelt",
+      "fr": "Krustoture",
+      "de": "Krusto-Riemen",
+      "es": "Krustacinto",
+      "it": "Krustontura",
+      "pt": "Kracinto"
+    },
+    "level": 39,
+    "imageUrl": "/retro/item/10131.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Power (traps)", "minStat": 1, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Slamdance Belt",
+      "fr": "Ceinture du Tétounik",
+      "de": "Teckton-Ihks Gürtel",
+      "es": "Cinturón taktikonik",
+      "it": "Cintura del Teutonik",
+      "pt": "Cinto Confusão"
+    },
+    "level": 38,
+    "imageUrl": "/retro/item/10154.png",
+    "setID": "132",
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 6, "maxStat": 15 },
+      { "stat": "Heals", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Oxo Belt",
+      "fr": "L'oxolature",
+      "de": "Oxolatur",
+      "es": "Cinturoxo",
+      "it": "L'Oxocintura",
+      "pt": "Cinto Oxo"
+    },
+    "level": 37,
+    "imageUrl": "/retro/item/10158.png",
+    "setID": "133",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobkool Belt",
+      "fr": "Ceinture du Boufcoul",
+      "de": "Fresscool-Gürtel",
+      "es": "Cinturón de jalatranki",
+      "it": "Cintura del Pappacool",
+      "pt": "Cinto do Papakool"
+    },
+    "level": 37,
+    "imageUrl": "/retro/item/10084.png",
+    "setID": "43",
+    "stats": [
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Pods", "minStat": 101, "maxStat": 500 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ramoune the Eternal",
+      "fr": "Ramoume l'Eternelle",
+      "de": "Ramum, die Ewige",
+      "es": "Ramún el Eterno",
+      "it": "Ramum l'Eterno",
+      "pt": "Ramoune, O Eterno"
+    },
+    "level": 37,
+    "imageUrl": "/retro/item/10022.png",
+    "setID": null,
+    "stats": [
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 2 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": [
+        "\n                                \n                                  Alignement = Brâkmar"
+      ],
+      "fr": [
+        "\n                                \n                                  Alignement = Brâkmar"
+      ],
+      "de": [
+        "\n                                \n                                  Alignement = Brâkmar"
+      ],
+      "es": [
+        "\n                                \n                                  Alignement = Brâkmar"
+      ],
+      "it": [
+        "\n                                \n                                  Alignement = Brâkmar"
+      ],
+      "pt": [
+        "\n                                \n                                  Alignement = Brâkmar"
+      ]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Raya Bean's Nights",
+      "fr": "L'Ami Léhunui",
+      "de": "Gürtel von Tausendundeiner Schlacht",
+      "es": "Lasmil Unanoches",
+      "it": "Lamil Eunotte",
+      "pt": "Noites de Raya Beans"
+    },
+    "level": 37,
+    "imageUrl": "/retro/item/10021.png",
+    "setID": null,
+    "stats": [
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 2 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": [
+        "\n                                \n                                  Alignement = Bonta"
+      ],
+      "fr": [
+        "\n                                \n                                  Alignement = Bonta"
+      ],
+      "de": [
+        "\n                                \n                                  Alignement = Bonta"
+      ],
+      "es": [
+        "\n                                \n                                  Alignement = Bonta"
+      ],
+      "it": [
+        "\n                                \n                                  Alignement = Bonta"
+      ],
+      "pt": [
+        "\n                                \n                                  Alignement = Bonta"
+      ]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crocoburio's Power",
+      "fr": "Puissance de Crocoburio",
+      "de": "Macht des Crocoburio",
+      "es": "Poder de Cocoburio",
+      "it": "Potenza di Crocobarro",
+      "pt": "Poder de Crocoburio"
+    },
+    "level": 34,
+    "imageUrl": "/retro/item/10018.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": 51, "maxStat": 80 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tot's Belt",
+      "fr": "Ceinture du Tot",
+      "de": "Tots Gürtel",
+      "es": "Cinturón del Tot",
+      "it": "Cintura del Tot",
+      "pt": "Cinto do Tot"
+    },
+    "level": 33,
+    "imageUrl": "/retro/item/10010.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": null, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Prespic Belt",
+      "fr": "Ceinture du Prespic",
+      "de": "Prespik-Gürtel",
+      "es": "Cinturón de prespic",
+      "it": "Cintura del Prespic",
+      "pt": "Cinto do Prespic"
+    },
+    "level": 33,
+    "imageUrl": "/retro/item/10071.png",
+    "setID": "31",
+    "stats": [{ "stat": "Reflect", "minStat": 1, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Deceitful Belt",
+      "fr": "Ceinture Fourbissante",
+      "de": "Heckenschutzschurz",
+      "es": "Cinturón mazorralizo",
+      "it": "Cintura Furbicante",
+      "pt": "Cinto Enganador"
+    },
+    "level": 33,
+    "imageUrl": "/retro/item/10062.png",
+    "setID": "16",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Initiative", "minStat": 41, "maxStat": 60 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Eastern Wood Belt",
+      "fr": "Ceinture du bois de l'est",
+      "de": "Ostwald-Gürtel",
+      "es": "Cinturón del Bosque del Este",
+      "it": "Cintura del Bosco dell'Est",
+      "pt": "Cinto do Bosque do Leste"
+    },
+    "level": 32,
+    "imageUrl": "/retro/item/10150.png",
+    "setID": "114",
+    "stats": [
+      { "stat": "Agility", "minStat": 11, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 41, "maxStat": 65 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wild Banisation Belt",
+      "fr": "Ceinture Banisation Sauvage",
+      "de": "Lendenschurz \"Bannisierung, wild\"",
+      "es": "Cinturón pekabeza salvaje",
+      "it": "Cintura Espulsione Selvaggia",
+      "pt": "Cinto Banisation Selvagem"
+    },
+    "level": 32,
+    "imageUrl": "/retro/item/10048.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": 11, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 41, "maxStat": 65 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Power Belt",
+      "fr": "Ceinture de Puissance",
+      "de": "Gürtel der Macht",
+      "es": "Cinturón de potencia",
+      "it": "Cintura di Potenza",
+      "pt": "Cinto de Poder"
+    },
+    "level": 31,
+    "imageUrl": "/retro/item/10019.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": 21, "maxStat": 35 },
+      { "stat": "Critical", "minStat": null, "maxStat": 2 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dazzling Belt",
+      "fr": "Ceinture Fulgurante",
+      "de": "Funkelnder Gürtel",
+      "es": "Cinturón fulgurante",
+      "it": "Cintura Folgorante",
+      "pt": "Cinto Deslumbrante"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/10010.png",
+    "setID": null,
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Banisation Belt",
+      "fr": "Ceinture Banisation",
+      "de": "Lendenschurz \"Bannisierung, grün\"",
+      "es": "Cinturón pekabeza",
+      "it": "Cintura Espulsione",
+      "pt": "Cinto Banisação"
+    },
+    "level": 29,
+    "imageUrl": "/retro/item/10047.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": 11, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Cruncher",
+      "fr": "La Croqueuse",
+      "de": "Beißgürtelchen",
+      "es": "La Mordisca",
+      "it": "La Croccatrice",
+      "pt": "O Moedor"
+    },
+    "level": 28,
+    "imageUrl": "/retro/item/10020.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": "<", "value": 40 },
+        { "stat": "Intelligence", "operator": ">", "value": 80 }
+      ]
+    },
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Stamina Belt",
+      "fr": "Ceinture d'Endurance",
+      "de": "Gürtel der Haltbarkeit",
+      "es": "Cinturón de aguante",
+      "it": "Cintura di Resistenza",
+      "pt": "Cinto de Resistência"
+    },
+    "level": 27,
+    "imageUrl": "/retro/item/10003.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Comfleecy Belt",
+      "fr": "La Mouthmou",
+      "de": "Pauls Vermöbelgürtel",
+      "es": "La Puleca",
+      "it": "La Muthmu",
+      "pt": "Cinto Comfleecy"
+    },
+    "level": 27,
+    "imageUrl": "/retro/item/10024.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 100 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Celerity Belt",
+      "fr": "Ceinture de Célérité",
+      "de": "Geschwindel der Gürtlichkeit",
+      "es": "Cinturón de celeridad",
+      "it": "Cintura di Celerità",
+      "pt": "Cinto de Celeridade"
+    },
+    "level": 27,
+    "imageUrl": "/retro/item/10017.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": 16, "maxStat": 35 },
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Spicy Belt",
+      "fr": "Ceinture Piquante",
+      "de": "Gürtel von Evis Sohn",
+      "es": "Cinturón picador",
+      "it": "Cintura Pungente",
+      "pt": "Cinto Picante"
+    },
+    "level": 26,
+    "imageUrl": "/retro/item/10054.png",
+    "setID": null,
+    "stats": [{ "stat": "Wisdom", "minStat": 11, "maxStat": 15 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tofu Belt",
+      "fr": "Ceinture du Tofu",
+      "de": "Tofu-Gürtel",
+      "es": "Cinturón de tofu",
+      "it": "Cintura del Tofu",
+      "pt": "Cinto do Tofu"
+    },
+    "level": 22,
+    "imageUrl": "/retro/item/10089.png",
+    "setID": "50",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 6, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 6, "maxStat": 15 },
+      { "stat": "Pods", "minStat": 1, "maxStat": 200 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Farmer Beltudas",
+      "fr": "Ceinturemuda du Paysan",
+      "de": "Bermudagürtel des Bauern",
+      "es": "Cintobermuda de campesino",
+      "it": "Cintermuda del Contadino",
+      "pt": "Cintormudas do Fazendeiro"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/10091.png",
+    "setID": "47",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bearman's Belt",
+      "fr": "Ceinture de l'Homme Ours",
+      "de": "Gürtel des Bärenmannes",
+      "es": "Cinturón del hombre oso",
+      "it": "Cintura dell'Uomo Orso",
+      "pt": "Cinto do Homem Urso"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/10066.png",
+    "setID": "12",
+    "stats": [
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 2 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 2 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 2 },
+      { "stat": "Vitality", "minStat": 9, "maxStat": 12 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobball Belt",
+      "fr": "Ceinture du Bouftou",
+      "de": "Gürtel des Fresssacks",
+      "es": "Cinturón de jalató",
+      "it": "Cintura del Pappatutto",
+      "pt": "Cinto do Papatudo"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/10029.png",
+    "setID": "1",
+    "stats": [{ "stat": "Pods", "minStat": 1, "maxStat": 500 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pocket Belt",
+      "fr": "Ceinture de Poche",
+      "de": "Gürtel der vielen Taschen",
+      "es": "Cinturón de bolsillo",
+      "it": "Cintura con Tasche",
+      "pt": "Cinto de Utilidades"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/10016.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Pods", "minStat": 201, "maxStat": 300 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Boar Belt",
+      "fr": "Sanglature",
+      "de": "Keiler-Gürtel",
+      "es": "Vellurón",
+      "it": "Sanguantura",
+      "pt": "Strapcinto"
+    },
+    "level": 18,
+    "imageUrl": "/retro/item/10075.png",
+    "setID": "21",
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 20 },
+      { "stat": "Critical", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Blo'up Belt",
+      "fr": "Ceinture de Sécurité",
+      "de": "Sicherheitsgürtel",
+      "es": "Cinturón de seguridad",
+      "it": "Cintura di Sicurezza",
+      "pt": "Cinto de Segurança"
+    },
+    "level": 17,
+    "imageUrl": "/retro/item/10007.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 25 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Robber Belt",
+      "fr": "Ceinture du Bandit",
+      "de": "Schurkenschurz",
+      "es": "Cinturón de bandido",
+      "it": "Cintura del Bandito",
+      "pt": "Cinto do Bandido"
+    },
+    "level": 15,
+    "imageUrl": "/retro/item/10072.png",
+    "setID": "25",
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 20 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 3 },
+      { "stat": "Critical", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sponge Belt",
+      "fr": "Ceinture en Mousse",
+      "de": "Schwammgürtel",
+      "es": "Cinturón de esponja",
+      "it": "Cintura di Spugna",
+      "pt": "Cinto de Esponja"
+    },
+    "level": 10,
+    "imageUrl": "/retro/item/10102.png",
+    "setID": "63",
+    "stats": [{ "stat": "Pods", "minStat": 1, "maxStat": 200 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Flowery Belt",
+      "fr": "Ceinture Fleurie",
+      "de": "Blumiger Gürtel",
+      "es": "Cinturón florido",
+      "it": "Cintura Fiorita",
+      "pt": "Cinto Florido"
+    },
+    "level": 10,
+    "imageUrl": "/retro/item/10064.png",
+    "setID": "18",
+    "stats": [
+      { "stat": "Vitality", "minStat": 5, "maxStat": 6 },
+      { "stat": "Intelligence", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crab Belt",
+      "fr": "Ceinture du Kwabe",
+      "de": "Taschenkrebs-Gürtel",
+      "es": "Cinturón del Kangwejo",
+      "it": "Cintura del Kwabe",
+      "pt": "Cinto do Kawanguejo"
+    },
+    "level": 8,
+    "imageUrl": "/retro/item/10049.png",
+    "setID": null,
+    "stats": [{ "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Imposante Ceinture Agilesque",
+      "fr": "Imposante Ceinture Agilesque",
+      "de": "[!DE] Imposante Ceinture Agilesque",
+      "es": "[!ES] Imposante Ceinture Agilesque",
+      "it": "[!IT] Imposante Ceinture Agilesque",
+      "pt": "[!PT] Imposante Ceinture Agilesque"
+    },
+    "level": 8,
+    "imageUrl": "/retro/item/10008.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 8 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Imposante Ceinture Forcesque",
+      "fr": "Imposante Ceinture Forcesque",
+      "de": "[!DE] Imposante Ceinture Forcesque",
+      "es": "[!ES] Imposante Ceinture Forcesque",
+      "it": "[!IT] Imposante Ceinture Forcesque",
+      "pt": "[!PT] Imposante Ceinture Forcesque"
+    },
+    "level": 8,
+    "imageUrl": "/retro/item/10011.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 8 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Imposante Ceinture Vitalesque",
+      "fr": "Imposante Ceinture Vitalesque",
+      "de": "[!DE] Imposante Ceinture Vitalesque",
+      "es": "[!ES] Imposante Ceinture Vitalesque",
+      "it": "[!IT] Imposante Ceinture Vitalesque",
+      "pt": "[!PT] Imposante Ceinture Vitalesque"
+    },
+    "level": 8,
+    "imageUrl": "/retro/item/10009.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 8 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Arachnobelt",
+      "fr": "Araknoture",
+      "de": "Arachnoschurz",
+      "es": "Araknocinto",
+      "it": "Araknontura",
+      "pt": "Araknocinto"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/10073.png",
+    "setID": "22",
+    "stats": [{ "stat": "Initiative", "minStat": 11, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Grande Ceinture Agilesque",
+      "fr": "Grande Ceinture Agilesque",
+      "de": "[!DE] Grande Ceinture Agilesque",
+      "es": "[!ES] Grande Ceinture Agilesque",
+      "it": "[!IT] Grande Ceinture Agilesque",
+      "pt": "[!PT] Grande Ceinture Agilesque"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/10008.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 6 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Grande Ceinture Forcesque",
+      "fr": "Grande Ceinture Forcesque",
+      "de": "[!DE] Grande Ceinture Forcesque",
+      "es": "[!ES] Grande Ceinture Forcesque",
+      "it": "[!IT] Grande Ceinture Forcesque",
+      "pt": "[!PT] Grande Ceinture Forcesque"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/10011.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 6 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Grande Ceinture Vitalesque",
+      "fr": "Grande Ceinture Vitalesque",
+      "de": "[!DE] Grande Ceinture Vitalesque",
+      "es": "[!ES] Grande Ceinture Vitalesque",
+      "it": "[!IT] Grande Ceinture Vitalesque",
+      "pt": "[!PT] Grande Ceinture Vitalesque"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/10009.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 6 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Nimble Belt",
+      "fr": "Ceinture Agilesque",
+      "de": "Gürtelflink",
+      "es": "Cinturón agilesco",
+      "it": "Cintura Agilesca",
+      "pt": "Cinto de agilidade"
+    },
+    "level": 3,
+    "imageUrl": "/retro/item/10008.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 4 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Strong Belt",
+      "fr": "Ceinture Forcesque",
+      "de": "Stärk-Gürtel",
+      "es": "Cinturón forcesco",
+      "it": "Cintura Forzesca",
+      "pt": "Cinto de força"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/10011.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 4 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Vital Belt",
+      "fr": "Ceinture Vitalesque",
+      "de": "Vitalgürtel",
+      "es": "Cinturón vitalesco",
+      "it": "Cintura Vitalesca",
+      "pt": "Cinto de vitalidade"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/10009.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 4 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Muffin Belt",
+      "fr": "La Spamette",
+      "de": "Spammettchen",
+      "es": "La Spamita",
+      "it": "La Spametta",
+      "pt": "O Spameto"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/10114.png",
+    "setID": "69",
+    "stats": [{ "stat": "Damage", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pink Piwi Belt",
+      "fr": "Ceinture du Piou Rose",
+      "de": "Gürtel des rosafarbenen Piepmatzes",
+      "es": "Cinturón de pío rosa",
+      "it": "Cintura del Pìu Rosa",
+      "pt": "Cinto do Piu Rosa"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/10101.png",
+    "setID": "70",
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Yellow Piwi Belt",
+      "fr": "Ceinture du Piou Jaune",
+      "de": "Gürtel des gelben Piepmatzes",
+      "es": "Cinturón de pío amarillo",
+      "it": "Cintura del Pìu Giallo",
+      "pt": "Cinto do Piu Amarelo"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/10100.png",
+    "setID": "72",
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Green Piwi Belt",
+      "fr": "Ceinture du Piou Vert",
+      "de": "Gürtel des grünen Piepmatzes",
+      "es": "Cinturón de pío verde",
+      "it": "Cintura del Pìu Verde",
+      "pt": "Cinto do Piu Verde"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/10099.png",
+    "setID": "71",
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Purple Piwi Belt",
+      "fr": "Ceinture du Piou Violet",
+      "de": "Gürtel des violetten Piepmatzes",
+      "es": "Cinturón de pío violeta",
+      "it": "Cintura del Pìu Viola",
+      "pt": "Cinto do Piu Violeta"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/10098.png",
+    "setID": "62",
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Blue Piwi Belt",
+      "fr": "Ceinture du Piou Bleu",
+      "de": "Gürtel des blauen Piepmatzes",
+      "es": "Cinturón de pío azul",
+      "it": "Cintura del Pìu Blu",
+      "pt": "Cinto do Piu Azul"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/10097.png",
+    "setID": "61",
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Red Piwi Belt",
+      "fr": "Ceinture du Piou Rouge",
+      "de": "Gürtel des roten Piepmatzes",
+      "es": "Cinturón de pío rojo",
+      "it": "Cintura del Pìu Rosso",
+      "pt": "Cinto do Piu Vermelho"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/10096.png",
+    "setID": "60",
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Ceinture du Champion",
+      "fr": "Ceinture du Champion",
+      "de": "[!DE] Ceinture du Champion",
+      "es": "[!ES] Ceinture du Champion",
+      "it": "[!IT] Ceinture du Champion",
+      "pt": "[!PT] Ceinture du Champion"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/10088.png",
+    "setID": "45",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Chance Belt",
+      "fr": "Ceinture de Chance",
+      "de": "Gürtel des Glücks",
+      "es": "Cinturón de suerte",
+      "it": "Cintura di Fortuna",
+      "pt": "Cinto de Sorte"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/10003.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Ceinture d'Agilité",
+      "fr": "Ceinture d'Agilité",
+      "de": "[!DE] Ceinture d'Agilité",
+      "es": "[!ES] Ceinture d'Agilité",
+      "it": "[!IT] Ceinture d'Agilité",
+      "pt": "[!PT] Ceinture d'Agilité"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/10008.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Koober's Belt",
+      "fr": "Ceinture du Kobeer",
+      "de": "Kobeer-Gürtel",
+      "es": "Cinturón del Kobeer",
+      "it": "Cintura del Kobeer",
+      "pt": "Cinto de Koober"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/10009.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Adventurer Belt",
+      "fr": "Ceinture de l'aventurier",
+      "de": "Gürtel des Abenteurers",
+      "es": "Cinturón de aventurero",
+      "it": "Cintura dell'Avventuriero",
+      "pt": "Cinto de Aventureiro"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/10033.png",
+    "setID": "5",
+    "stats": [
+      { "stat": "Chance", "minStat": 1, "maxStat": 2 },
+      { "stat": "Strength", "minStat": 1, "maxStat": 2 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 2 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 2 },
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Petite Ceinture Agilesque",
+      "fr": "Petite Ceinture Agilesque",
+      "de": "[!DE] Petite Ceinture Agilesque",
+      "es": "[!ES] Petite Ceinture Agilesque",
+      "it": "[!IT] Petite Ceinture Agilesque",
+      "pt": "[!PT] Petite Ceinture Agilesque"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/10008.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Petite Ceinture Forcesque",
+      "fr": "Petite Ceinture Forcesque",
+      "de": "[!DE] Petite Ceinture Forcesque",
+      "es": "[!ES] Petite Ceinture Forcesque",
+      "it": "[!IT] Petite Ceinture Forcesque",
+      "pt": "[!PT] Petite Ceinture Forcesque"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/10011.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Petite Ceinture Vitalesque",
+      "fr": "Petite Ceinture Vitalesque",
+      "de": "[!DE] Petite Ceinture Vitalesque",
+      "es": "[!ES] Petite Ceinture Vitalesque",
+      "it": "[!IT] Petite Ceinture Vitalesque",
+      "pt": "[!PT] Petite Ceinture Vitalesque"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/10009.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  }
+]

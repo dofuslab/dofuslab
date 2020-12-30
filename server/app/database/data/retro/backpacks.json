@@ -1,0 +1,350 @@
+[
+  {
+    "name": {
+      "en": "Crocodyl Chief Schoolbag",
+      "fr": "Petit sac d'écolier du Chef Crocodaille",
+      "de": "Kleiner Schulranzen des Chef-Crocodylls",
+      "es": "Pequeña mochila de escolar de jefe cocodrail",
+      "it": "Piccolo Zaino dello Scolaro del Capo Coccodrail",
+      "pt": "Pequena mochila escolar do Chefe Crocodyl"
+    },
+    "level": 70,
+    "imageUrl": "/retro/item/81058.png",
+    "setID": "20",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Pods", "minStat": 301, "maxStat": 350 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Koolich Bag",
+      "fr": "Sac du Koulosse",
+      "de": "Sack des Kuhlosses",
+      "es": "Bolso de Trankitronko",
+      "it": "Zaino del Culosse",
+      "pt": "Mochila do Tronkoso"
+    },
+    "level": 69,
+    "imageUrl": "/retro/item/81002.png",
+    "setID": "44",
+    "stats": [
+      { "stat": "Vitality", "minStat": 51, "maxStat": 150 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Pods", "minStat": 101, "maxStat": 500 },
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Cawwot-Bag",
+      "fr": "Sac-Cawotte",
+      "de": "Kawott-Rucksack",
+      "es": "Bolso-Zanahowia",
+      "it": "Zaino-Cawota",
+      "pt": "Mochila-Cenouwa"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/81057.png",
+    "setID": "11",
+    "stats": [
+      { "stat": "Pods", "minStat": 501, "maxStat": 1000 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Large Adventurer Bag",
+      "fr": "Sac du Grand Aventurier",
+      "de": "Rucksack des erfahrenen Abenteurers",
+      "es": "Mochila de gran aventurero",
+      "it": "Zaino del Grande Avventuriero",
+      "pt": "Mochila do grande aventureiro"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/81032.png",
+    "setID": null,
+    "stats": [{ "stat": "Pods", "minStat": 501, "maxStat": 1000 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Adventurer Bag",
+      "fr": "Sac de l'Aventurier",
+      "de": "Rucksack des Abenteurers",
+      "es": "Mochila de aventurero",
+      "it": "Zaino dell'Avventuriero",
+      "pt": "Mochila do aventureiro"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/81031.png",
+    "setID": null,
+    "stats": [{ "stat": "Pods", "minStat": 251, "maxStat": 300 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Sac de Bouba le Prophète",
+      "fr": "Sac de Bouba le Prophète",
+      "de": "[!DE] Sac de Bouba le Prophète",
+      "es": "[!ES] Sac de Bouba le Prophète",
+      "it": "[!IT] Sac de Bouba le Prophète",
+      "pt": "[!PT] Sac de Bouba le Prophète"
+    },
+    "level": 38,
+    "imageUrl": "/retro/item/81033.png",
+    "setID": "117",
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Larvabag",
+      "fr": "Larvasac",
+      "de": "Larvasack",
+      "es": "Larvabolso",
+      "it": "Larvazaino",
+      "pt": "Mochilarva"
+    },
+    "level": 27,
+    "imageUrl": "/retro/item/81060.png",
+    "setID": "33",
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 20 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Staca Noviste's Rucksack",
+      "fr": "Sac du Staca Noviste",
+      "de": "Rucksack des Stacka Novista",
+      "es": "Mochila de Staca Novista",
+      "it": "Zaino dello Staca Novista",
+      "pt": "Sacola de Staca Noviste"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/81030.png",
+    "setID": null,
+    "stats": [{ "stat": "Pods", "minStat": 1001, "maxStat": 1500 }],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Métier ="],
+      "fr": ["Métier ="],
+      "de": ["Métier ="],
+      "es": ["Métier ="],
+      "it": ["Métier ="],
+      "pt": ["Métier ="]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Large Harvester Bag",
+      "fr": "Sac du Grand Récolteur",
+      "de": "Rucksack des großen Ernters",
+      "es": "Mochila de gran recolector",
+      "it": "Zaino del Grande Raccoglitore",
+      "pt": "Sacola do Grande Coletor"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/81029.png",
+    "setID": null,
+    "stats": [{ "stat": "Pods", "minStat": 601, "maxStat": 800 }],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Métier ="],
+      "fr": ["Métier ="],
+      "de": ["Métier ="],
+      "es": ["Métier ="],
+      "it": ["Métier ="],
+      "pt": ["Métier ="]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Cheeky Bag",
+      "fr": "Sac ripant",
+      "de": "Frechsack",
+      "es": "Morral Lanac",
+      "it": "Zaino Furbacchione",
+      "pt": "Sacola Atrevida"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/81025.png",
+    "setID": null,
+    "stats": [{ "stat": "Pods", "minStat": 201, "maxStat": 250 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Farmer Bag",
+      "fr": "Sac du Paysan",
+      "de": "Bauernsack",
+      "es": "Bolso de campesino",
+      "it": "Zaino del Contadino",
+      "pt": "Sacola do Fazendeiro"
+    },
+    "level": 19,
+    "imageUrl": "/retro/item/81003.png",
+    "setID": "47",
+    "stats": [
+      { "stat": "Chance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Pods", "minStat": 101, "maxStat": 200 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Small Moskito Schoolbag",
+      "fr": "Sac du Petit Moskito",
+      "de": "Kleiner Moskitosack",
+      "es": "Mochila de pequeño moskito",
+      "it": "Zaino del Piccolo Moskito",
+      "pt": "Mochila do Moskitinho"
+    },
+    "level": 16,
+    "imageUrl": "/retro/item/81059.png",
+    "setID": "23",
+    "stats": [
+      { "stat": "Chance", "minStat": 1, "maxStat": 30 },
+      { "stat": "Pods", "minStat": 1, "maxStat": 100 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Harvester Bag",
+      "fr": "Sac du Récolteur",
+      "de": "Rucksack des Ernters",
+      "es": "Mochila de recolector",
+      "it": "Zaino del Raccoglitore",
+      "pt": "Sacola de Coletor"
+    },
+    "level": 15,
+    "imageUrl": "/retro/item/81028.png",
+    "setID": null,
+    "stats": [{ "stat": "Pods", "minStat": 251, "maxStat": 400 }],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Métier ="],
+      "fr": ["Métier ="],
+      "de": ["Métier ="],
+      "es": ["Métier ="],
+      "it": ["Métier ="],
+      "pt": ["Métier ="]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Small Adventurer Bag",
+      "fr": "Sac du Petit Aventurier",
+      "de": "Rucksack des jungen Abenteurers",
+      "es": "Mochila de pequeño aventurero",
+      "it": "Zaino del Piccolo Avventuriero",
+      "pt": "Mochila do pequeno aventureiro"
+    },
+    "level": 10,
+    "imageUrl": "/retro/item/81027.png",
+    "setID": null,
+    "stats": [{ "stat": "Pods", "minStat": 151, "maxStat": 200 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Small Harvester Bag",
+      "fr": "Sac du Petit Récolteur",
+      "de": "Rucksack des kleinen Ernters",
+      "es": "Mochila de pequeño recolector",
+      "it": "Zaino del Piccolo Raccoglitore",
+      "pt": "Sacola de Pequeno Cultivador"
+    },
+    "level": 5,
+    "imageUrl": "/retro/item/81026.png",
+    "setID": null,
+    "stats": [{ "stat": "Pods", "minStat": 151, "maxStat": 250 }],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Métier ="],
+      "fr": ["Métier ="],
+      "de": ["Métier ="],
+      "es": ["Métier ="],
+      "it": ["Métier ="],
+      "pt": ["Métier ="]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Sakananas",
+      "fr": "Sakananas",
+      "de": "[!DE] Sakananas",
+      "es": "[!ES] Sakananas",
+      "it": "[!IT] Sakananas",
+      "pt": "[!PT] Sakananas"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/81001.png",
+    "setID": null,
+    "stats": [{ "stat": "Pods", "minStat": 201, "maxStat": 400 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Small Gobbly Wool Bag",
+      "fr": "Petit Sac en Laine de Boufton",
+      "de": "Kleiner Rucksack aus Fresssackwolle",
+      "es": "Pequeña mochila en lana de jalatín",
+      "it": "Piccolo Zaino di Lana di Pappaton",
+      "pt": "Pequena Sacola em Lã de Paparneiro"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/81025.png",
+    "setID": null,
+    "stats": [{ "stat": "Pods", "minStat": 51, "maxStat": 100 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  }
+]

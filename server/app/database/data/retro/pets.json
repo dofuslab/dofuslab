@@ -1,6 +1,807 @@
 [
   {
-    "dofusID": "7519",
+    "name": {
+      "en": "Peki Peki",
+      "fr": "Péki",
+      "de": "Péki",
+      "es": "Peki",
+      "it": "Peki",
+      "pt": "Peki"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/18012.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 400 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sting",
+      "fr": "Pykur",
+      "de": "Prespieks",
+      "es": "Otazo",
+      "it": "Prespina",
+      "pt": "Pikada"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18061.png",
+    "setID": null,
+    "stats": [{ "stat": "Prospecting", "minStat": 1, "maxStat": 80 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tofrazzle",
+      "fr": "Tofoudre",
+      "de": "Blitzofu",
+      "es": "Tofucilazo",
+      "it": "Tofulmine",
+      "pt": "Tofulminado"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18060.png",
+    "setID": null,
+    "stats": [{ "stat": "Damage", "minStat": 1, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Smush",
+      "fr": "Meuch",
+      "de": "Pfefferling",
+      "es": "Miscaludo",
+      "it": "Fuuung Fuuung",
+      "pt": "Coguzim"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18059.png",
+    "setID": null,
+    "stats": [{ "stat": "Heals", "minStat": 1, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tarzantula",
+      "fr": "Raknaille",
+      "de": "Arachnaille",
+      "es": "Araknuza",
+      "it": "Sgarbarakne",
+      "pt": "Tarzântula"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18058.png",
+    "setID": null,
+    "stats": [{ "stat": "Reflect", "minStat": 1, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden Dragoone",
+      "fr": "Dragoune Dorée",
+      "de": "Goldener Dragooner",
+      "es": "Dragún dorado",
+      "it": "Dragona Dorata",
+      "pt": "Draguna Dourada"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18057.png",
+    "setID": "151",
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ogrine Seeker",
+      "fr": "Chercheur d'Ogrines",
+      "de": "Ogrinenjäger",
+      "es": "Buscador de ogrinas",
+      "it": "Cercatore di Ogrin",
+      "pt": "Caçador de Ogrinas"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18056.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Jellufo",
+      "fr": "Gelutin",
+      "de": "Gelutine",
+      "es": "Gelutín",
+      "it": "Gellufo",
+      "pt": "Jellufo"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18055.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 150 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Borbat",
+      "fr": "Chauffe-souris",
+      "de": "Fleddermaus",
+      "es": "Murciego",
+      "it": "Pipì-Strello",
+      "pt": "Borcego"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18054.png",
+    "setID": null,
+    "stats": [{ "stat": "Pods", "minStat": 10, "maxStat": 1000 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Vampyrina",
+      "fr": "Vampyrette",
+      "de": "Vampyrella",
+      "es": "Vampyrilla",
+      "it": "Vampyretta",
+      "pt": "Vampyrina"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18053.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 150 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Rushu's Shushu",
+      "fr": "Shushu de Rushu",
+      "de": "Shushu von Rushu",
+      "es": "Fab'huritu de Rushu",
+      "it": "Shushu di Rushu",
+      "pt": "Shushu de Rushu"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18052.png",
+    "setID": null,
+    "stats": [{ "stat": "HP", "minStat": 1, "maxStat": 150 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Black Dragoone",
+      "fr": "Dragoune Noire",
+      "de": "Schwarzer Dragooner",
+      "es": "Dragún negro",
+      "it": "Dragona Nera",
+      "pt": "Draguna Negra"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18048.png",
+    "setID": null,
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crocodyl",
+      "fr": "Crocodaille",
+      "de": "Crocodyll",
+      "es": "Cocodrail",
+      "it": "Coccodrail",
+      "pt": "Crocodyl"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18047.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Miniminotot",
+      "fr": "Miniminotot",
+      "de": "Miniminotot",
+      "es": "Miniminotot",
+      "it": "Miniminotot",
+      "pt": "Miniminotot"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18049.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tiwabbit Wosungwee",
+      "fr": "Tiwabbit Kiafin",
+      "de": "Tiwabbit Ischungrig",
+      "es": "Pekewabbit hambriento",
+      "it": "Piccolo Wabbit Keafam",
+      "pt": "Pekewabbit Kofome"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18051.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Angora Bow Meow",
+      "fr": "Chacha Angora",
+      "de": "Angora Maunzmiez",
+      "es": "Miaumiau de Angora",
+      "it": "Maomao Angora",
+      "pt": "Miaw angorá"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18050.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Godfather's Gobtubby",
+      "fr": "Bouloute du Parrain",
+      "de": "Fresskügelchen des Paten",
+      "es": "Boluto del padrino",
+      "it": "Palladineve del Padrino",
+      "pt": "Boloto do Padrinho"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18046.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 150 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Feanor",
+      "fr": "Fëanor",
+      "de": "Felidan",
+      "es": "Feanor",
+      "it": "Feanor",
+      "pt": "Feanor"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18045.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ross",
+      "fr": "Ross",
+      "de": "Surr",
+      "es": "Ross",
+      "it": "Ross",
+      "pt": "Ross"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18044.png",
+    "setID": null,
+    "stats": [{ "stat": "Heals", "minStat": 1, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pandawa Cub",
+      "fr": "Bébé Pandawa",
+      "de": "Pandawa-Baby",
+      "es": "Bebé pandawa",
+      "it": "Bebé Pandawa",
+      "pt": "Bebê Pandawa"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18042.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pingoku",
+      "fr": "Walk",
+      "de": "Ping",
+      "es": "Walk",
+      "it": "Walk",
+      "pt": "Walk"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18038.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Minifoux",
+      "fr": "Tifoux",
+      "de": "Minifux",
+      "es": "Pekefux",
+      "it": "Tifux",
+      "pt": "Pekefox"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18037.png",
+    "setID": null,
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "El Scarador",
+      "fr": "El Scarador",
+      "de": "El Scarador",
+      "es": "Escarador",
+      "it": "El Scarador",
+      "pt": "El Scarador"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18036.png",
+    "setID": null,
+    "stats": [
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 20 },
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 20 },
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 20 },
+      { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 20 },
+      { "stat": "% Neutral Resistance", "minStat": 1, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Treechster",
+      "fr": "Abra Kadabra",
+      "de": "Astaknydasta",
+      "es": "Abra kadabra",
+      "it": "Arbre Magic",
+      "pt": "Abra Kadabra"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18034.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobtubby",
+      "fr": "Bouloute",
+      "de": "Fresskügelchen",
+      "es": "Boluto",
+      "it": "Palladineve",
+      "pt": "Boloto"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18035.png",
+    "setID": null,
+    "stats": [{ "stat": "HP", "minStat": 1, "maxStat": 150 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Mini Champion",
+      "fr": "Mini Champion",
+      "de": "[!DE] Mini Champion",
+      "es": "[!ES] Mini Champion",
+      "it": "[!IT] Mini Champion",
+      "pt": "[!PT] Mini Champion"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18032.png",
+    "setID": "45",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bworky",
+      "fr": "Bworky",
+      "de": "Bworky",
+      "es": "Bworky",
+      "it": "Bworky",
+      "pt": "Bworky"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18031.png",
+    "setID": null,
+    "stats": [{ "stat": "Pods", "minStat": 10, "maxStat": 1000 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bloody Koalak",
+      "fr": "Koalak Sanguin",
+      "de": "Blutrünstiger Koalak",
+      "es": "Koalak sanguíneo",
+      "it": "Koalak Sanguigno",
+      "pt": "Koalak Sanguíneo"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18030.png",
+    "setID": "46",
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Willy Peninzias",
+      "fr": "Willy le Relou",
+      "de": "Willy Wirrwolf",
+      "es": "Willy, el Plasta",
+      "it": "Willy il Rompi",
+      "pt": "Willy, o Mala"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18029.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Mini Wa",
+      "fr": "Mini Wa",
+      "de": "Mini Wa",
+      "es": "Mini wey",
+      "it": "Mini We",
+      "pt": "Mini Wei"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18028.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 1, "maxStat": 80 },
+      { "stat": "Chance", "minStat": 1, "maxStat": 80 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 80 },
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 80 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Atooin",
+      "fr": "Atouin",
+      "de": "Krötschild",
+      "es": "Tortuga",
+      "it": "Atuin",
+      "pt": "Atuin"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18017.png",
+    "setID": "9",
+    "stats": [
+      { "stat": "Heals", "minStat": 1, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Purple Piwin",
+      "fr": "Pioute violet",
+      "de": "Violetter Piepmatz",
+      "es": "Piotín violeta",
+      "it": "Pìut Viola",
+      "pt": "Piuta Violeta"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18022.png",
+    "setID": null,
+    "stats": [{ "stat": "Damage", "minStat": 1, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Green Piwin",
+      "fr": "Pioute vert",
+      "de": "Grüner Piepmatz",
+      "es": "Piotín verde",
+      "it": "Pìut Verde",
+      "pt": "Piuta Verde"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18026.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": 1, "maxStat": 80 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Red Piwin",
+      "fr": "Pioute rouge",
+      "de": "Roter Piepmatz",
+      "es": "Piotín rojo",
+      "it": "Pìut Rosso",
+      "pt": "Piuta Vermelho"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18025.png",
+    "setID": null,
+    "stats": [{ "stat": "Intelligence", "minStat": 1, "maxStat": 80 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pink Piwin",
+      "fr": "Pioute rose",
+      "de": "Rosa Piepmatz",
+      "es": "Piotín rosa",
+      "it": "Pìut Rosa",
+      "pt": "Piuta Rosa"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18024.png",
+    "setID": null,
+    "stats": [{ "stat": "Heals", "minStat": 1, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Yellow Piwin",
+      "fr": "Pioute jaune",
+      "de": "Gelber Piepmatz",
+      "es": "Piotín amarillo",
+      "it": "Pìut Giallo",
+      "pt": "Piuta Amarela"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18023.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": 1, "maxStat": 80 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Blue Piwin",
+      "fr": "Pioute bleu",
+      "de": "Blauer Piepmatz",
+      "es": "Piotín azul",
+      "it": "Pìut Blu",
+      "pt": "Piuta Azul"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18019.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": 1, "maxStat": 80 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Young Wild Boar",
+      "fr": "Marcassin",
+      "de": "Frischling",
+      "es": "Cochino jabato",
+      "it": "Cinghialetto",
+      "pt": "Javalino"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18020.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bilby",
+      "fr": "Bilby",
+      "de": "Bilby",
+      "es": "Bilby",
+      "it": "Bilby",
+      "pt": "Bilby"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18043.png",
+    "setID": null,
+    "stats": [{ "stat": "Damage", "minStat": 1, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Leopardo",
+      "fr": "Léopardo",
+      "de": "Feuerfux",
+      "es": "Leopardo",
+      "it": "Leopardo",
+      "pt": "Leopardo"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18027.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Ecureuil Chenapan",
+      "fr": "Ecureuil Chenapan",
+      "de": "[!DE] Ecureuil Chenapan",
+      "es": "[!ES] Ecureuil Chenapan",
+      "it": "[!IT] Ecureuil Chenapan",
+      "pt": "[!PT] Ecureuil Chenapan"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18016.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Baby Crowdzilla",
+      "fr": "Vilain Petit Corbac",
+      "de": "Kleiner böser Rabling",
+      "es": "Cuerbokito Feo",
+      "it": "Cattivo Piccolo Cuervoc",
+      "pt": "Corvoquinho Feio"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18018.png",
+    "setID": "8",
+    "stats": [{ "stat": "Prospecting", "minStat": 1, "maxStat": 40 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tabby Bow Meow",
+      "fr": "Chacha Tigré",
+      "de": "Getigerte Maunzmiez",
+      "es": "Miaumiau atigrado",
+      "it": "Maomao Tigrato",
+      "pt": "Miaw tigrado"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18041.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Chachate Rousse",
+      "fr": "Chachate Rousse",
+      "de": "[!DE] Chachate Rousse",
+      "es": "[!ES] Chachate Rousse",
+      "it": "[!IT] Chachate Rousse",
+      "pt": "[!PT] Chachate Rousse"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18040.png",
+    "setID": null,
+    "stats": [{ "stat": "HP", "minStat": null, "maxStat": 15 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Minimino",
+      "fr": "Minimino",
+      "de": "Minimino",
+      "es": "Minimino",
+      "it": "Minimino",
+      "pt": "Minimino"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18021.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Croum",
+      "fr": "Croum",
+      "de": "Croum",
+      "es": "Crum",
+      "it": "Crum",
+      "pt": "Crum"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18015.png",
+    "setID": null,
+    "stats": [
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 20 },
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 20 },
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 20 },
+      { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 20 },
+      { "stat": "% Neutral Resistance", "minStat": 1, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
     "name": {
       "en": "Pink Dragoone",
       "fr": "Dragoune Rose",
@@ -9,28 +810,299 @@
       "it": "Dragona Rosa",
       "pt": "Draguna Rosa"
     },
-    "itemType": "Pet",
-    "setID": null,
     "level": 1,
-    "stats": [
-      {
-        "stat": "Wisdom",
-        "minStat": null,
-        "maxStat": 50
-      }
-    ],
-    "customStats": {},
-    "conditions": {
-      "conditions": {},
-      "customConditions": {
-        "en": ["Subscribers only"],
-        "fr": ["Etre abonné"],
-        "de": ["Abonniert sein"],
-        "es": ["Estar abonado"],
-        "it": ["Essere abbonato"],
-        "pt": ["Ser assinante"]
-      }
+    "imageUrl": "/retro/item/18014.png",
+    "setID": null,
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ghast",
+      "fr": "Fotome",
+      "de": "Phantöffelchen",
+      "es": "Fotasma",
+      "it": "Fotasma",
+      "pt": "Fotasma"
     },
-    "imageUrl": "item/18014.png"
+    "level": 1,
+    "imageUrl": "/retro/item/18013.png",
+    "setID": null,
+    "stats": [{ "stat": "HP", "minStat": 1, "maxStat": 150 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Little Black Bow Wow",
+      "fr": "Petit Chienchien Noir",
+      "de": "Kleiner schwarzer Schnuffwuff",
+      "es": "Pequeño wauwau negro",
+      "it": "Piccolo Baubau Nero",
+      "pt": "Pequeno Awaw Negro"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18010.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Little White Bow Meow",
+      "fr": "Petit Chacha Blanc",
+      "de": "Kleine weiße Maunzmiez",
+      "es": "Pequeño miaumiau blanco",
+      "it": "Piccolo Maomao Bianco",
+      "pt": "Pequeno Miaw Branco"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18009.png",
+    "setID": null,
+    "stats": [{ "stat": "Initiative", "minStat": 5, "maxStat": 800 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "White Bow Meow",
+      "fr": "Chacha Blanc",
+      "de": "Weiße Maunzmiez",
+      "es": "Miaumiau blanco",
+      "it": "Maomao Bianco",
+      "pt": "Miaw branco"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18009.png",
+    "setID": null,
+    "stats": [{ "stat": "HP", "minStat": null, "maxStat": 15 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Black Bow Wow",
+      "fr": "Chienchien Noir",
+      "de": "Schwarzer SchnuffWuff",
+      "es": "Wauwau negro",
+      "it": "Baubau Nero",
+      "pt": "Awaw Negro"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18010.png",
+    "setID": null,
+    "stats": [{ "stat": "HP", "minStat": null, "maxStat": 15 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Nomoon",
+      "fr": "Nomoon",
+      "de": "Nomoon",
+      "es": "Nomoon",
+      "it": "Nomoon",
+      "pt": "Nomoon"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18011.png",
+    "setID": null,
+    "stats": [{ "stat": "Prospecting", "minStat": 1, "maxStat": 80 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Quaquack",
+      "fr": "Kouin-Kouin",
+      "de": "Quark-Quak",
+      "es": "Kuakuá",
+      "it": "Quaquà",
+      "pt": "Quaquá"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18008.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Prospecting", "minStat": null, "maxStat": 20 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 200 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Earth Bwak",
+      "fr": "Bwak de Terre",
+      "de": "Erd-Bwack",
+      "es": "Bwak de tierra",
+      "it": "Bwak di Terra",
+      "pt": "Bwak de Terra"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18005.png",
+    "setID": "14",
+    "stats": [
+      { "stat": "Strength", "minStat": 1, "maxStat": 80 },
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 80 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Air Bwak",
+      "fr": "Bwak d'Air",
+      "de": "Luft-Bwack",
+      "es": "Bwak de aire",
+      "it": "Bwak di Aria",
+      "pt": "Bwak de Ar"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18004.png",
+    "setID": "15",
+    "stats": [
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 80 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 80 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Water Bwak",
+      "fr": "Bwak d'Eau",
+      "de": "Wasser-Bwack",
+      "es": "Bwak de agua",
+      "it": "Bwak di Acqua",
+      "pt": "Bwak de Água"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18002.png",
+    "setID": "13",
+    "stats": [
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 20 },
+      { "stat": "Chance", "minStat": 1, "maxStat": 80 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 80 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fire Bwak",
+      "fr": "Bwak de Feu",
+      "de": "Feuer-Bwack",
+      "es": "Bwak de fuego",
+      "it": "Bwak di Fuoco",
+      "pt": "Bwak de Fogo"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18003.png",
+    "setID": "2",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 80 },
+      { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 80 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wabbit",
+      "fr": "Wabbit",
+      "de": "Wabbit",
+      "es": "Wabbit",
+      "it": "Wabbit",
+      "pt": "Wabbit"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18007.png",
+    "setID": "11",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 27 },
+      { "stat": "Strength", "minStat": 1, "maxStat": 80 },
+      { "stat": "Chance", "minStat": 1, "maxStat": 80 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 80 },
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 80 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bow Meow",
+      "fr": "Chacha",
+      "de": "Maunzmiez",
+      "es": "Miaumiau",
+      "it": "Maomao",
+      "pt": "Miaw"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18001.png",
+    "setID": null,
+    "stats": [
+      { "stat": "% Neutral Resistance", "minStat": 1, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 80 },
+      { "stat": "Strength", "minStat": 1, "maxStat": 80 },
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 80 },
+      { "stat": "Chance", "minStat": 1, "maxStat": 80 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 80 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bow Wow",
+      "fr": "Chienchien",
+      "de": "SchnuffWuff",
+      "es": "Wauwau",
+      "it": "Baubau",
+      "pt": "Awaw"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18006.png",
+    "setID": null,
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 20 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Kometh",
+      "fr": "Kometh",
+      "de": "[!DE] Kometh",
+      "es": "[!ES] Kometh",
+      "it": "[!IT] Kometh",
+      "pt": "[!PT] Kometh"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/18062.png",
+    "setID": null,
+    "stats": [{ "stat": "Prospecting", "minStat": null, "maxStat": 80 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
   }
 ]

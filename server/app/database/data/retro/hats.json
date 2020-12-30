@@ -1,0 +1,4952 @@
+[
+  {
+    "name": {
+      "en": "The Kim",
+      "fr": "Le Kim",
+      "de": "Kimbo-Perücke",
+      "es": "El Kim",
+      "it": "Il Kim",
+      "pt": "O Kim"
+    },
+    "level": 196,
+    "imageUrl": "/retro/item/16230.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Critical", "minStat": 4, "maxStat": 7 },
+      { "stat": "Strength", "minStat": 51, "maxStat": 80 },
+      { "stat": "Vitality", "minStat": 301, "maxStat": 400 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 25 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Batouta Helmet",
+      "fr": "Casque Harnage",
+      "de": "Geheimnishüter",
+      "es": "Casco Lérico",
+      "it": "Elmo Assacro",
+      "pt": "Capacete Batouta"
+    },
+    "level": 189,
+    "imageUrl": "/retro/item/16212.png",
+    "setID": "109",
+    "stats": [
+      { "stat": "Chance", "minStat": 41, "maxStat": 60 },
+      { "stat": "Intelligence", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 21, "maxStat": 30 },
+      { "stat": "Summons", "minStat": null, "maxStat": 2 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Mush Ombrero",
+      "fr": "Chapignon",
+      "de": "Egerkäppling",
+      "es": "Gorro'Ngo",
+      "it": "Cappellignon",
+      "pt": "Cogu Ombrero"
+    },
+    "level": 185,
+    "imageUrl": "/retro/item/16221.png",
+    "setID": "119",
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 11, "maxStat": 20 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 300 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crocodyl Dandy's Hat",
+      "fr": "Chapeau de Crocodaille Dandi",
+      "de": "Hut des Crocodyll Dandy",
+      "es": "Sombrero de Cocodrail Dandi",
+      "it": "Cappello di Coccodrail Dandy",
+      "pt": "Chapéu de Crocodyl Dandy"
+    },
+    "level": 180,
+    "imageUrl": "/retro/item/16203.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 41, "maxStat": 60 },
+      { "stat": "Chance", "minStat": 41, "maxStat": 60 },
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 16, "maxStat": 20 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 25 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ougaat",
+      "fr": "Ougalurette",
+      "de": "Stinkelinghut",
+      "es": "Ugahlureta",
+      "it": "Ugacapo",
+      "pt": "Ugahlureta"
+    },
+    "level": 178,
+    "imageUrl": "/retro/item/16120.png",
+    "setID": "118",
+    "stats": [
+      { "stat": "Vitality", "minStat": 301, "maxStat": 400 },
+      { "stat": "Wisdom", "minStat": 41, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 8, "maxStat": 10 },
+      { "stat": "Power", "minStat": 41, "maxStat": 50 },
+      { "stat": "Prospecting", "minStat": 21, "maxStat": 30 },
+      { "stat": "% Neutral Resistance", "minStat": 8, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sulik",
+      "fr": "Sulik",
+      "de": "Sulik",
+      "es": "Sulik",
+      "it": "Sulik",
+      "pt": "Sulik"
+    },
+    "level": 172,
+    "imageUrl": "/retro/item/16092.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 301, "maxStat": 400 },
+      { "stat": "Wisdom", "minStat": 41, "maxStat": 50 },
+      { "stat": "Reflect", "minStat": 11, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 41, "maxStat": 60 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Mopy King Sovereign Hood",
+      "fr": "Capuche Souveraine du Roissingue",
+      "de": "King Morphs Mächtige Haube",
+      "es": "Soberana capucha de rey stropajo",
+      "it": "Cappuccio Sovrano del Re Cencio",
+      "pt": "Capuz soberano do Rei Nojoso"
+    },
+    "level": 168,
+    "imageUrl": "/retro/item/16204.png",
+    "setID": "78",
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 41, "maxStat": 60 },
+      { "stat": "Chance", "minStat": 51, "maxStat": 70 },
+      { "stat": "Agility", "minStat": 51, "maxStat": 70 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 400 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 20 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tynril Hat",
+      "fr": "Coiffe du Tynril",
+      "de": "Tynril-Hut",
+      "es": "Tocado de Tynril",
+      "it": "Copricapo del Tynril",
+      "pt": "Chapéu do Tynril"
+    },
+    "level": 164,
+    "imageUrl": "/retro/item/16188.png",
+    "setID": null,
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Prospecting", "minStat": 21, "maxStat": 30 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Bloprown",
+      "fr": "Blopronne Royale",
+      "de": "Königliche Blobrone",
+      "es": "Bloprona Real",
+      "it": "Bloporona Reale",
+      "pt": "Bloporoa Real"
+    },
+    "level": 161,
+    "imageUrl": "/retro/item/16223.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 7 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Jester Hat",
+      "fr": "Le Nahitse",
+      "de": "Narrmützl",
+      "es": "El Nahits",
+      "it": "Il Nahit",
+      "pt": "Jester Chapéu"
+    },
+    "level": 160,
+    "imageUrl": "/retro/item/16190.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 41, "maxStat": 60 },
+      { "stat": "Intelligence", "minStat": 41, "maxStat": 60 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Air Resistance", "minStat": 8, "maxStat": 12 },
+      { "stat": "Fire Resistance", "minStat": 8, "maxStat": 12 },
+      { "stat": "% Air Resistance", "minStat": 8, "maxStat": 12 },
+      { "stat": "% Fire Resistance", "minStat": 8, "maxStat": 12 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Archer Voodoo Mask",
+      "fr": "Masque Vaudou Ark",
+      "de": "Archibalds kanniballische Wuddu-Maske",
+      "es": "Máscara bodú arquero",
+      "it": "Maschera Vudù Arc",
+      "pt": "Máscara Vodu Arko"
+    },
+    "level": 158,
+    "imageUrl": "/retro/item/16202.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 61, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 301, "maxStat": 500 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Fire Resistance", "minStat": 9, "maxStat": 14 },
+      { "stat": "Fire Resistance", "minStat": 9, "maxStat": 14 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sarbak Voodoo Mask",
+      "fr": "Masque Vaudou Sarbak",
+      "de": "Sarbaks kanniballische Wuddu-Maske",
+      "es": "Máscara bodú cerbat",
+      "it": "Maschera Vudù Cerb",
+      "pt": "Máscara Vodu Sarbak"
+    },
+    "level": 158,
+    "imageUrl": "/retro/item/16201.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": 61, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 301, "maxStat": 500 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Air Resistance", "minStat": 9, "maxStat": 14 },
+      { "stat": "Air Resistance", "minStat": 9, "maxStat": 14 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Jav Voodoo Mask",
+      "fr": "Masque Vaudou Jav",
+      "de": "Jaffs kanniballische Wuddu-Maske",
+      "es": "Máscara bodú jav",
+      "it": "Maschera Vudù Giav",
+      "pt": "Máscara Vodu Jav"
+    },
+    "level": 158,
+    "imageUrl": "/retro/item/16200.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": 61, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 301, "maxStat": 500 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Water Resistance", "minStat": 9, "maxStat": 14 },
+      { "stat": "Water Resistance", "minStat": 9, "maxStat": 14 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Thierry Voodoo Mask",
+      "fr": "Masque Vaudou Eth",
+      "de": "Thomas' kanniballische Wuddu-Maske",
+      "es": "Máscara bodú Fipi",
+      "it": "Maschera Vudù As",
+      "pt": "Máscara Vodu Eth"
+    },
+    "level": 158,
+    "imageUrl": "/retro/item/16199.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 61, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 301, "maxStat": 500 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Earth Resistance", "minStat": 9, "maxStat": 14 },
+      { "stat": "Earth Resistance", "minStat": 9, "maxStat": 14 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Minotot Headgear",
+      "fr": "Coiffe du Minotot",
+      "de": "Minotot-Hut",
+      "es": "Sombrero del Minotot",
+      "it": "Copricapo del Minotot",
+      "pt": "Chapéu do Minotot"
+    },
+    "level": 157,
+    "imageUrl": "/retro/item/16151.png",
+    "setID": "57",
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Power", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 270 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 8 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 25 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Zoth Master Hat",
+      "fr": "Coiffe du Maître Zoth",
+      "de": "Helm des Zoth-Meisters",
+      "es": "Tocado de maestro zoth",
+      "it": "Copricapo del Maestro Zoth",
+      "pt": "Chapéu do Mestre Zoth"
+    },
+    "level": 156,
+    "imageUrl": "/retro/item/16208.png",
+    "setID": "94",
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Power", "minStat": 16, "maxStat": 25 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Air Pikoko Helmet",
+      "fr": "Casque du Bitouf Aérien",
+      "de": "Helm des Luft-Bitouf",
+      "es": "Casco de tufo aéreo",
+      "it": "Elmo del Bituf Aereo",
+      "pt": "Capacete do Bitufo Aéreo"
+    },
+    "level": 154,
+    "imageUrl": "/retro/item/16209.png",
+    "setID": null,
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 7 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Air Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Water Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Mitch Shroom",
+      "fr": "Chapblopignon",
+      "de": "Bloblingshütchen",
+      "es": "Blopisetombrero",
+      "it": "Capplopinolo",
+      "pt": "Chablopumelo"
+    },
+    "level": 152,
+    "imageUrl": "/retro/item/16222.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 41, "maxStat": 60 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 300 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ruskie Hat",
+      "fr": "Ruskauffe",
+      "de": "Sibirischer Filz",
+      "es": "Simbreria",
+      "it": "Ruskapo",
+      "pt": "Chapéu Ruskie"
+    },
+    "level": 151,
+    "imageUrl": "/retro/item/16167.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 45 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 4 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 7 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Summons", "minStat": 4, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kracker Cap",
+      "fr": "Krépite",
+      "de": "Kaboom",
+      "es": "Krepita",
+      "it": "Krepito",
+      "pt": "Kracklin Kepi"
+    },
+    "level": 149,
+    "imageUrl": "/retro/item/16095.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 30 },
+      { "stat": "Fire Resistance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Air Resistance", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Soft Oak Hat",
+      "fr": "Coiffe du Chêne Mou",
+      "de": "Weich-Eich-Hut",
+      "es": "Sombrero de Roble Blando",
+      "it": "Copricapo della Quercia Molle",
+      "pt": "Chapéu do Carvalho Mole"
+    },
+    "level": 145,
+    "imageUrl": "/retro/item/16166.png",
+    "setID": "66",
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 11, "maxStat": 20 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 8 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 5 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Paperb' Hat",
+      "fr": "Piruk",
+      "de": "Piruk",
+      "es": "Piruk",
+      "it": "Piruk",
+      "pt": "Peruka"
+    },
+    "level": 145,
+    "imageUrl": "/retro/item/16112.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Initiative", "minStat": 401, "maxStat": 600 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bronze Bwork Helmet",
+      "fr": "Casque du Bwork de Bronze",
+      "de": "Helm des Bronze-Bworks",
+      "es": "Casco de bwork de bronce",
+      "it": "Elmo del Bwork di Bronzo",
+      "pt": "Capacete do Bwork de Bronze"
+    },
+    "level": 144,
+    "imageUrl": "/retro/item/16091.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Neutral Resistance", "minStat": 16, "maxStat": 20 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 300 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 25 },
+      { "stat": "Fire Resistance", "minStat": 16, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Moowolf Headgear",
+      "fr": "Coiffe du Meulou",
+      "de": "MuWulf-Hut",
+      "es": "Casco de Maxilubo",
+      "it": "Copricapo del Muulupo",
+      "pt": "Chapéu do Mulobo"
+    },
+    "level": 141,
+    "imageUrl": "/retro/item/16144.png",
+    "setID": "55",
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 55 },
+      { "stat": "Power", "minStat": 11, "maxStat": 20 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 270 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Zoth Warrior Helmet",
+      "fr": "Casque du Guerrier Zoth",
+      "de": "Helm des Zoth-Kriegers",
+      "es": "Casco de guerrero zoth",
+      "it": "Elmo del Guerriero Zoth",
+      "pt": "Capacete do Guerreiro Zoth"
+    },
+    "level": 134,
+    "imageUrl": "/retro/item/16207.png",
+    "setID": "95",
+    "stats": [
+      { "stat": "Strength", "minStat": 61, "maxStat": 80 },
+      { "stat": "Vitality", "minStat": 301, "maxStat": 400 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Light Treeckler Mask",
+      "fr": "Masque de l'Abrakleur clair",
+      "de": "Maskenhelm des hellen Astakrachler",
+      "es": "Máscara de abrajidor claro",
+      "it": "Maschera dell'Alberaklur Chiaro",
+      "pt": "Máscara do Arvorador Claro"
+    },
+    "level": 134,
+    "imageUrl": "/retro/item/16193.png",
+    "setID": "79",
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 8 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Zoth Sergeant Mask",
+      "fr": "Masque du Sergent Zoth",
+      "de": "Maske des Zoth-Sergeanten",
+      "es": "Máscara de sargento zoth",
+      "it": "Maschera del Sergente Zoth",
+      "pt": "Máscara do Sargento Zoth"
+    },
+    "level": 133,
+    "imageUrl": "/retro/item/16191.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Chance", "minStat": 41, "maxStat": 60 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 400 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lord of the Rats' Ceremonial Hat",
+      "fr": "Coiffe Cérémoniale du Seigneur des Rats",
+      "de": "Zeremonienmaske des Rattenmeisters",
+      "es": "Máscara ceremonial del Amo de las Ratas",
+      "it": "Copricapo Cerimoniale del Signore dei Ratti",
+      "pt": "Chapéu cerimonial do Senhor dos Ratos"
+    },
+    "level": 133,
+    "imageUrl": "/retro/item/16173.png",
+    "setID": "64",
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 7 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Water Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kaliptus Headband",
+      "fr": "Bandeau Kaliptus",
+      "de": "Kalyptus-Stirnband",
+      "es": "Pañuelo kalipto",
+      "it": "Fascia Kalipto",
+      "pt": "Bandana Kaliptus"
+    },
+    "level": 133,
+    "imageUrl": "/retro/item/16124.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Power", "minStat": 11, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 400 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Doro L. Blak",
+      "fr": "Doro le Blak",
+      "de": "Doro l'Blak",
+      "es": "Doro le Black",
+      "it": "Doro Black",
+      "pt": "Dorrol Beque"
+    },
+    "level": 129,
+    "imageUrl": "/retro/item/16172.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Prospecting", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Zoth Girl Hat",
+      "fr": "Chapeau de la Gamine Zoth",
+      "de": "Hut des Zoth-Mädels",
+      "es": "Sombrero de la chavala zoth",
+      "it": "Cappello della Marmocchia Zoth",
+      "pt": "Chapéu da Garota Zoth"
+    },
+    "level": 128,
+    "imageUrl": "/retro/item/16206.png",
+    "setID": "93",
+    "stats": [
+      { "stat": "Agility", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Zoth Disciple Hat",
+      "fr": "Coiffe du Disciple Zoth",
+      "de": "Hut des Zoth-Schülers",
+      "es": "Gorro de discípulo zoth",
+      "it": "Copricapo del Discepolo Zoth",
+      "pt": "Chapéu do Discípulo Zoth"
+    },
+    "level": 128,
+    "imageUrl": "/retro/item/16192.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dreggon Helmet",
+      "fr": "Casque Dragoeuf",
+      "de": "Drachei-Helm",
+      "es": "Casco de dragohuevo",
+      "it": "Elmo del Draguovo",
+      "pt": "Capacete de Dragovo"
+    },
+    "level": 128,
+    "imageUrl": "/retro/item/16149.png",
+    "setID": "56",
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 13 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 13 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 13 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 13 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 13 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Tofu Crown",
+      "fr": "Couronne du Tofu Royal",
+      "de": "Krone des Königlichen Tofus",
+      "es": "Corona de Tofu Real",
+      "it": "Corona di Tofu Reale",
+      "pt": "Coroa do Tofu Real"
+    },
+    "level": 128,
+    "imageUrl": "/retro/item/16154.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Agility", "minStat": 46, "maxStat": 60 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 35 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Snailmet",
+      "fr": "Kaskargo",
+      "de": "Schnhelm",
+      "es": "Kascorakol",
+      "it": "Kaskargo",
+      "pt": "Krakapacete"
+    },
+    "level": 123,
+    "imageUrl": "/retro/item/16195.png",
+    "setID": "96",
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Himune",
+      "fr": "Holoune",
+      "de": "Holond",
+      "es": "Holuna",
+      "it": "Hulun",
+      "pt": "Holoone"
+    },
+    "level": 122,
+    "imageUrl": "/retro/item/16111.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wheritz Hat",
+      "fr": "Kanistère",
+      "de": "Kanistere",
+      "es": "Kanístero",
+      "it": "Kanistero",
+      "pt": "Kanistere"
+    },
+    "level": 120,
+    "imageUrl": "/retro/item/16110.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Critical", "minStat": 5, "maxStat": 7 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 1500 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Clay-headed Giant's Helmet",
+      "fr": "Koloss",
+      "de": "Helmchen des Lords",
+      "es": "Kolososo",
+      "it": "Koloss",
+      "pt": "Koloss"
+    },
+    "level": 120,
+    "imageUrl": "/retro/item/16108.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power (traps)", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 20 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Solomonk",
+      "fr": "Solomonk",
+      "de": "Solomonk",
+      "es": "Solomonk",
+      "it": "Solomonk",
+      "pt": "Solomonk"
+    },
+    "level": 120,
+    "imageUrl": "/retro/item/16123.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 5, "maxStat": 7 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 21, "maxStat": 30 },
+      { "stat": "Power", "minStat": 16, "maxStat": 25 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 300 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Nee Cap",
+      "fr": "Krokop",
+      "de": "Krokappo",
+      "es": "Krokop",
+      "it": "Krokop",
+      "pt": "Krokop"
+    },
+    "level": 120,
+    "imageUrl": "/retro/item/16086.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 20 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dora Bora",
+      "fr": "Dora Bora",
+      "de": "Dora Bora",
+      "es": "Dora Bora",
+      "it": "Dora Bora",
+      "pt": "Dora Bora"
+    },
+    "level": 120,
+    "imageUrl": "/retro/item/16061.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 61, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 41, "maxStat": 60 },
+      { "stat": "Intelligence", "minStat": 61, "maxStat": 80 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 15 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ancestral Treechelmet",
+      "fr": "Abracaska Ancestral",
+      "de": "Ur-Astakappa",
+      "es": "Abracaska Ancestral",
+      "it": "Alberacasko Ancestrale",
+      "pt": "Arvrapacete Ancestral"
+    },
+    "level": 114,
+    "imageUrl": "/retro/item/16174.png",
+    "setID": "65",
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Mothat",
+      "fr": "Phalène",
+      "de": "Nachtfalthut",
+      "es": "Falena",
+      "it": "Falenas",
+      "pt": "Motchapéu"
+    },
+    "level": 113,
+    "imageUrl": "/retro/item/16087.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Krutch",
+      "fr": "La Bekille",
+      "de": "Bekilli",
+      "es": "La Muleta",
+      "it": "La Stampella",
+      "pt": "Krutch"
+    },
+    "level": 111,
+    "imageUrl": "/retro/item/16109.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 6 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 8 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 8 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bimd'Oule Hat",
+      "fr": "Coiffe du Bimd'Oule",
+      "de": "Hut von Bimd'Oul",
+      "es": "Sombrero de Bimd'Ulo",
+      "it": "Copricapo del Bimd'Ulo",
+      "pt": "Chapéu de Bimd'Oule"
+    },
+    "level": 110,
+    "imageUrl": "/retro/item/16121.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Power", "minStat": 16, "maxStat": 25 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 300 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 20 },
+      { "stat": "Fire Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Palishat",
+      "fr": "Blémiche",
+      "de": "Fahlut",
+      "es": "Paliducha",
+      "it": "Impallichiappa",
+      "pt": "Palishat"
+    },
+    "level": 108,
+    "imageUrl": "/retro/item/16116.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gaddie's Hat",
+      "fr": "Coiffe du Gaddie",
+      "de": "Gaddiehaube",
+      "es": "Sombrero de Gaddi",
+      "it": "Copricapo del Gaddy",
+      "pt": "Chapéu do Gaddie"
+    },
+    "level": 106,
+    "imageUrl": "/retro/item/16115.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "White Rat Hat",
+      "fr": "Coiffe du Rat Blanc",
+      "de": "Weißer Rattenhut",
+      "es": "Sombrero de la Rata Blanca",
+      "it": "Copricapo del Ratto Bianco",
+      "pt": "Chapéu do Rato Branco"
+    },
+    "level": 105,
+    "imageUrl": "/retro/item/16160.png",
+    "setID": "67",
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 35 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 100 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ouassingual Hood",
+      "fr": "Capuche de la Ouassingue",
+      "de": "Morph-Haube",
+      "es": "Capucha de stropajo",
+      "it": "Cappuccio di Cencia",
+      "pt": "Capuz da Nojosa"
+    },
+    "level": 104,
+    "imageUrl": "/retro/item/16205.png",
+    "setID": "77",
+    "stats": [
+      { "stat": "Vitality", "minStat": 71, "maxStat": 120 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dark Miner Hat",
+      "fr": "Chapeau du Mineur Sombre",
+      "de": "Helm des Schattenbergmannes",
+      "es": "Sombrero de minero oscuro",
+      "it": "Cappello del Minatore Oscuro",
+      "pt": "Chapéu do Mineiro Sombrio"
+    },
+    "level": 103,
+    "imageUrl": "/retro/item/16090.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 15 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Black Rat Mask",
+      "fr": "Masque du Rat Noir",
+      "de": "Schwarze Rattenmaske",
+      "es": "Máscara de la Rata Negra",
+      "it": "Maschera del Ratto Nero",
+      "pt": "Máscara do Rato Negro"
+    },
+    "level": 102,
+    "imageUrl": "/retro/item/16158.png",
+    "setID": "68",
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 80 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power (traps)", "minStat": 16, "maxStat": 25 },
+      { "stat": "Air Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kabuto",
+      "fr": "Kabuto",
+      "de": "Kabuto",
+      "es": "Kabuto",
+      "it": "Kabuto",
+      "pt": "Kabuto"
+    },
+    "level": 101,
+    "imageUrl": "/retro/item/16135.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Power", "minStat": 21, "maxStat": 35 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Vitality", "minStat": 71, "maxStat": 100 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Billalo",
+      "fr": "Billréole",
+      "de": "Heilibillyschein",
+      "es": "Billreola",
+      "it": "Billaureola",
+      "pt": "Billalo"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/16159.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 },
+      { "stat": "Range", "minStat": 1, "maxStat": 2 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 1, "maxStat": 2000 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 100 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bwork Chief Helmet",
+      "fr": "Casque du Chef Bwork",
+      "de": "Helm des Bwork-Chefs",
+      "es": "Casco de jefe bwork",
+      "it": "Elmo del Capo Bwork",
+      "pt": "Capacete do Chefe Bwork"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/16065.png",
+    "setID": "19",
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 35 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dragon Pig Headgear",
+      "fr": "Coiffe du Dragon Cochon",
+      "de": "Schweinedrachen-Hut",
+      "es": "Casco de Dragocerdo",
+      "it": "Copricapo del Drago Maiale",
+      "pt": "Chapéu do Dragão Porco"
+    },
+    "level": 98,
+    "imageUrl": "/retro/item/16150.png",
+    "setID": "58",
+    "stats": [
+      { "stat": "Chance", "minStat": 21, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 35 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 4 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 10 },
+      { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Feudala Hat",
+      "fr": "Chapeau Feudala",
+      "de": "Feudala-Mütze",
+      "es": "Sombrero Fuegodala",
+      "it": "Cappello Focodala",
+      "pt": "Chapéu Fogodala"
+    },
+    "level": 98,
+    "imageUrl": "/retro/item/16145.png",
+    "setID": "37",
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Master Nabur Helmet",
+      "fr": "Casque de Maître Nabur",
+      "de": "Helm von Meister Nabur",
+      "es": "Casco del maestro Nabur",
+      "it": "Elmo del Maestro Nabur",
+      "pt": "Capacete do Mestre Nabur"
+    },
+    "level": 97,
+    "imageUrl": "/retro/item/16093.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 71, "maxStat": 100 },
+      { "stat": "Agility", "minStat": 36, "maxStat": 50 },
+      { "stat": "Power (traps)", "minStat": 16, "maxStat": 25 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 400 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dark Treeckler Mask",
+      "fr": "Masque de l'Abrakleur sombre",
+      "de": "Maskenhelm des dunklen Astakrachler",
+      "es": "Máscara de abrajidor oscuro",
+      "it": "Maschera dell'Alberaklur Oscuro",
+      "pt": "Máscara do Arvorador Sombrio"
+    },
+    "level": 95,
+    "imageUrl": "/retro/item/16194.png",
+    "setID": "80",
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dragostess Hat",
+      "fr": "Coiffe de la Dragueuse",
+      "de": "Draconixa-Helm",
+      "es": "Sombrero de dragosa",
+      "it": "Copricapo della Dragosa",
+      "pt": "Chapéu da Dragosa"
+    },
+    "level": 95,
+    "imageUrl": "/retro/item/16153.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 90 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Initiative", "minStat": 151, "maxStat": 250 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Dragocoiffe noire",
+      "fr": "Dragocoiffe noire",
+      "de": "[!DE] Dragocoiffe noire",
+      "es": "[!ES] Dragocoiffe noire",
+      "it": "[!IT] Dragocoiffe noire",
+      "pt": "[!PT] Dragocoiffe noire"
+    },
+    "level": 93,
+    "imageUrl": "/retro/item/16056.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 7 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 15 },
+      { "stat": "% Earth Resistance", "minStat": null, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Koolich Headgear",
+      "fr": "Coiffe du Koulosse",
+      "de": "Kopftuch des Kuhlosses",
+      "es": "Sombrero de Trankitronko",
+      "it": "Copricapo del Culosse",
+      "pt": "Chapéu do Tronkoso"
+    },
+    "level": 82,
+    "imageUrl": "/retro/item/16122.png",
+    "setID": "44",
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 300 },
+      { "stat": "% Neutral Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 10 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lullibye",
+      "fr": "La Bertheuze",
+      "de": "Berthusalem",
+      "es": "La Bertoza",
+      "it": "La Bertuz",
+      "pt": "Lullabye"
+    },
+    "level": 81,
+    "imageUrl": "/retro/item/16114.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 81, "maxStat": 110 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Shika's Hat",
+      "fr": "Shikacoiffe",
+      "de": "Shikappe",
+      "es": "Shikasombrero",
+      "it": "Shikacapo",
+      "pt": "Chapéu de Shika"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/16156.png",
+    "setID": "53",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 8, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Legendary Crackler Helmet",
+      "fr": "Casque du Craqueleur Légendaire",
+      "de": "Helm des legendären Mega-Krachlers",
+      "es": "Casco de Crujidor Legendario",
+      "it": "Elmo del Croccaroc Leggendario",
+      "pt": "Capacete do Smagador Legendário"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/16133.png",
+    "setID": "52",
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 35 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
+      { "stat": "Fire Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "Air Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Farle's Straw Hat",
+      "fr": "Farlacoiffe",
+      "de": "Farles Strohhut",
+      "es": "Farlasombrero",
+      "it": "Farlacapo",
+      "pt": "Chapéu de Palha de Farle"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/16067.png",
+    "setID": "17",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 8, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Barbrossa's Hat",
+      "fr": "Chapeau de Barbroussa",
+      "de": "Bartarossa-Hut",
+      "es": "Sombrero de barbrusa",
+      "it": "Cappello di Barbrussa",
+      "pt": "Chapéu do Barbrossa"
+    },
+    "level": 79,
+    "imageUrl": "/retro/item/16197.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 300 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "King Jellix's Crown",
+      "fr": "Couronne du Roi Gelax",
+      "de": "Helm von König Gelax",
+      "es": "Corona del rey Gelax",
+      "it": "Corona del Re Gelax",
+      "pt": "Coroa do Rei Geléias"
+    },
+    "level": 79,
+    "imageUrl": "/retro/item/16094.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 300 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 6 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 200 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Octovius",
+      "fr": "Octovius",
+      "de": "Oktoviehutus",
+      "es": "Octovius",
+      "it": "Octovius",
+      "pt": "Octovius"
+    },
+    "level": 77,
+    "imageUrl": "/retro/item/16096.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Terrdala Hat",
+      "fr": "Chapeau Terrdala",
+      "de": "Teradala-Mütze",
+      "es": "Sombrero Tierradala",
+      "it": "Cappello Terradala",
+      "pt": "Chapéu Terradala"
+    },
+    "level": 75,
+    "imageUrl": "/retro/item/16147.png",
+    "setID": "36",
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 4, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Korko Kousto",
+      "fr": "Korko Kousto",
+      "de": "Korko Kousto",
+      "es": "Korko Kusko",
+      "it": "Korko Kusto",
+      "pt": "Korko Kusto"
+    },
+    "level": 73,
+    "imageUrl": "/retro/item/16059.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 7 },
+      { "stat": "Summons", "minStat": 2, "maxStat": 3 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Flying Dreggon Headgear",
+      "fr": "Coiffe du Dragoeuf volant",
+      "de": "Helm eines fliegenden Dracheis",
+      "es": "Sombrero de dragohuevo volador",
+      "it": "Copricapo del Draguovo Volante",
+      "pt": "Chapéu do Dragovo voador"
+    },
+    "level": 72,
+    "imageUrl": "/retro/item/16152.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 45 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 151, "maxStat": 200 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crocodyl Chief Headgear",
+      "fr": "Coiffe du Chef Crocodaille",
+      "de": "Maske des Chef-Crocodylls",
+      "es": "Sombrero de jefe cocodrail",
+      "it": "Copricapo del Capo Coccodrail",
+      "pt": "Chapéu do Chefe Crocodyl"
+    },
+    "level": 70,
+    "imageUrl": "/retro/item/16066.png",
+    "setID": "20",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Dragocoiffe de Saphire",
+      "fr": "Dragocoiffe de Saphire",
+      "de": "[!DE] Dragocoiffe de Saphire",
+      "es": "[!ES] Dragocoiffe de Saphire",
+      "it": "[!IT] Dragocoiffe de Saphire",
+      "pt": "[!PT] Dragocoiffe de Saphire"
+    },
+    "level": 70,
+    "imageUrl": "/retro/item/16057.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 35 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 },
+      { "stat": "Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": null, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Aerdala Hat",
+      "fr": "Chapeau Aerdala",
+      "de": "Aerdala-Mütze",
+      "es": "Sombrero Airedala",
+      "it": "Cappello Erdala",
+      "pt": "Chapéu Ardala"
+    },
+    "level": 64,
+    "imageUrl": "/retro/item/16148.png",
+    "setID": "35",
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kitsou Cap",
+      "fr": "Coiffe du Kitsou",
+      "de": "Kitsou-Kappe",
+      "es": "Sombrero de kitsu",
+      "it": "Copricapo del Kitsù",
+      "pt": "Chapéu do Kitsu"
+    },
+    "level": 61,
+    "imageUrl": "/retro/item/16097.png",
+    "setID": "41",
+    "stats": [{ "stat": "Vitality", "minStat": 51, "maxStat": 150 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Boowolf Headgear",
+      "fr": "Coiffe du Mulou",
+      "de": "WuWulfut",
+      "es": "Sombrero de mediulubo",
+      "it": "Copricapo del Buulupo",
+      "pt": "Chapéu do Milobo"
+    },
+    "level": 61,
+    "imageUrl": "/retro/item/16131.png",
+    "setID": "32",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 5 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Koalak Headgear",
+      "fr": "Coiffe du Koalak",
+      "de": "Maske des Koalak",
+      "es": "Sombrero de koalak",
+      "it": "Copricapo del Koalak",
+      "pt": "Chapéu do Koalak"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/16125.png",
+    "setID": "46",
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wabbit Ears",
+      "fr": "Oreilles de Wabbits",
+      "de": "Wabbitohren",
+      "es": "Orejas de wabbit",
+      "it": "Orecchie di Wabbit",
+      "pt": "Orelhas de Wabbits"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/16052.png",
+    "setID": "11",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 8 },
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Caracap",
+      "fr": "Caracoiffe",
+      "de": "Carachoud",
+      "es": "Caparasombrero",
+      "it": "Caracapo",
+      "pt": "Carachapeú"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/16048.png",
+    "setID": "9",
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 80 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Jelleadgear",
+      "fr": "Gelocoiffe",
+      "de": "Gelohaube",
+      "es": "Gelosombrero",
+      "it": "Gelocapo",
+      "pt": "Gelapéu"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/16043.png",
+    "setID": "6",
+    "stats": [
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden Scara Helmet",
+      "fr": "Scaracoiffe Dorée",
+      "de": "Helm des goldenen Scarabiestes",
+      "es": "Escarasombrero dorado",
+      "it": "Scaracapo Dorato",
+      "pt": "Scaracapacete dourado"
+    },
+    "level": 58,
+    "imageUrl": "/retro/item/16129.png",
+    "setID": "51",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 6, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 6, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 5 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Dragocoiffe Dorée",
+      "fr": "Dragocoiffe Dorée",
+      "de": "[!DE] Dragocoiffe Dorée",
+      "es": "[!ES] Dragocoiffe Dorée",
+      "it": "[!IT] Dragocoiffe Dorée",
+      "pt": "[!PT] Dragocoiffe Dorée"
+    },
+    "level": 57,
+    "imageUrl": "/retro/item/16055.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": null, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kannipiwi",
+      "fr": "Kannipiou",
+      "de": "Kanniepmatz",
+      "es": "Kanipío",
+      "it": "Kannipìu",
+      "pt": "Kanipiu"
+    },
+    "level": 55,
+    "imageUrl": "/retro/item/16089.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Black Scara Helmet",
+      "fr": "Scaracoiffe Noire",
+      "de": "Schwarzer Scara-Helm",
+      "es": "Escarasombrero negro",
+      "it": "Scaracapo Nero",
+      "pt": "Scaracapacete preto"
+    },
+    "level": 53,
+    "imageUrl": "/retro/item/16132.png",
+    "setID": "49",
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 45 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 15 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 4 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Haks Or Mask",
+      "fr": "Casque du Roks Or",
+      "de": "Goldiger Helm",
+      "es": "Casco Goldpex",
+      "it": "Casco del Roks Or",
+      "pt": "Capacete do Roksor"
+    },
+    "level": 52,
+    "imageUrl": "/retro/item/16254.png",
+    "setID": "151",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Power", "minStat": 16, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Turkohat",
+      "fr": "Chapodindo",
+      "de": "Truterkappe",
+      "es": "Sombropavo",
+      "it": "Cappellacchino",
+      "pt": "Chaperu"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/16118.png",
+    "setID": "42",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 30 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Gobball Headgear",
+      "fr": "Boufcoiffe Royale",
+      "de": "Königliche Fresssackkapp",
+      "es": "Jalasombrero Real",
+      "it": "Pappacapo Reale",
+      "pt": "Elmo de Papatudo Real"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/16042.png",
+    "setID": "4",
+    "stats": [
+      { "stat": "Strength", "minStat": 1, "maxStat": 70 },
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 70 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dark Makroute",
+      "fr": "Makroute Sombre",
+      "de": "Schatten-Makroute",
+      "es": "Mistetas Oscuro",
+      "it": "Mykakka Oscuro",
+      "pt": "Makroute Sombra"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/16033.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Earth Resistance", "minStat": 3, "maxStat": 8 },
+      { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 8 },
+      { "stat": "Water Resistance", "minStat": 3, "maxStat": 8 },
+      { "stat": "Air Resistance", "minStat": 3, "maxStat": 8 },
+      { "stat": "Fire Resistance", "minStat": 3, "maxStat": 8 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Chafer Helmet",
+      "fr": "Casque du Chafer",
+      "de": "Chafer-Helm",
+      "es": "Casco de chafer",
+      "it": "Elmo dello Chafer",
+      "pt": "Capacete do Chafer"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/16031.png",
+    "setID": null,
+    "stats": [{ "stat": "AP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Noreilles de Slait",
+      "fr": "Noreilles de Slait",
+      "de": "[!DE] Noreilles de Slait",
+      "es": "[!ES] Noreilles de Slait",
+      "it": "[!IT] Noreilles de Slait",
+      "pt": "[!PT] Noreilles de Slait"
+    },
+    "level": 49,
+    "imageUrl": "/retro/item/16238.png",
+    "setID": "128",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Coiffe du Black Wab",
+      "fr": "Coiffe du Black Wab",
+      "de": "[!DE] Coiffe du Black Wab",
+      "es": "[!ES] Coiffe du Black Wab",
+      "it": "[!IT] Coiffe du Black Wab",
+      "pt": "[!PT] Coiffe du Black Wab"
+    },
+    "level": 49,
+    "imageUrl": "/retro/item/16235.png",
+    "setID": "127",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Heals", "minStat": 2, "maxStat": 3 },
+      { "stat": "Power", "minStat": 16, "maxStat": 25 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Bandeau Papayou",
+      "fr": "Bandeau Papayou",
+      "de": "[!DE] Bandeau Papayou",
+      "es": "[!ES] Bandeau Papayou",
+      "it": "[!IT] Bandeau Papayou",
+      "pt": "[!PT] Bandeau Papayou"
+    },
+    "level": 48,
+    "imageUrl": "/retro/item/16236.png",
+    "setID": "129",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Daudgee",
+      "fr": "Kraignosse",
+      "de": "Verhärlm",
+      "es": "Témelo",
+      "it": "Kak A'Rella",
+      "pt": "Daudgee"
+    },
+    "level": 48,
+    "imageUrl": "/retro/item/16037.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobkool Headgear",
+      "fr": "Coiffe du Boufcoul",
+      "de": "Fresscool-Hut",
+      "es": "Sombrero de jalatranki",
+      "it": "Copricapo del Pappacool",
+      "pt": "Chapéu do Papakool"
+    },
+    "level": 47,
+    "imageUrl": "/retro/item/16119.png",
+    "setID": "43",
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tromatising Mask",
+      "fr": "Masque Tromatisant",
+      "de": "Tromatisierende Maske",
+      "es": "Máscara traumatizante",
+      "it": "Maschera Traumatizzante",
+      "pt": "Máscara Tromatizante"
+    },
+    "level": 47,
+    "imageUrl": "/retro/item/16011.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 60 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Guavhat",
+      "fr": "Goyave",
+      "de": "Guarghwe",
+      "es": "Guayaba",
+      "it": "Goyave",
+      "pt": "Gorroiaba"
+    },
+    "level": 46,
+    "imageUrl": "/retro/item/16088.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Heals", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Poshocoiffe",
+      "fr": "Poshocoiffe",
+      "de": "[!DE] Poshocoiffe",
+      "es": "[!ES] Poshocoiffe",
+      "it": "[!IT] Poshocoiffe",
+      "pt": "[!PT] Poshocoiffe"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/16232.png",
+    "setID": "123",
+    "stats": [
+      { "stat": "Power", "minStat": 11, "maxStat": 20 },
+      { "stat": "Initiative", "minStat": 11, "maxStat": 210 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crobak Helmet",
+      "fr": "Corbacoiffe",
+      "de": "Rabling-Helm",
+      "es": "Cuerbosombrero",
+      "it": "Cuervocapo",
+      "pt": "Capacete de Corvoc"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/16050.png",
+    "setID": "8",
+    "stats": [
+      { "stat": "Power", "minStat": 11, "maxStat": 20 },
+      { "stat": "Initiative", "minStat": 11, "maxStat": 210 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Treechelmet",
+      "fr": "Abracaska",
+      "de": "Astakappa",
+      "es": "Abracaska",
+      "it": "Alberacasko",
+      "pt": "Arvrapacete"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/16040.png",
+    "setID": "3",
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Chapeau Paupayahn",
+      "fr": "Chapeau Paupayahn",
+      "de": "[!DE] Chapeau Paupayahn",
+      "es": "[!ES] Chapeau Paupayahn",
+      "it": "[!IT] Chapeau Paupayahn",
+      "pt": "[!PT] Chapeau Paupayahn"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/16220.png",
+    "setID": "111",
+    "stats": [
+      { "stat": "Agility", "minStat": 1, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Caskogato",
+      "fr": "Caskogato",
+      "de": "[!DE] Caskogato",
+      "es": "[!ES] Caskogato",
+      "it": "[!IT] Caskogato",
+      "pt": "[!PT] Caskogato"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/16219.png",
+    "setID": "110",
+    "stats": [
+      { "stat": "Strength", "minStat": 1, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Blue Scara Helmet",
+      "fr": "Scaracoiffe Bleue",
+      "de": "Blauer Scara-Helm",
+      "es": "Escarasombrero azul",
+      "it": "Scaracapo Blu",
+      "pt": "Scaracapacete azul"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/16076.png",
+    "setID": "30",
+    "stats": [
+      { "stat": "Chance", "minStat": 1, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "White Scara Helmet",
+      "fr": "Scaracoiffe Blanche",
+      "de": "Weißer Scara-Helm",
+      "es": "Escarasombrero blanco",
+      "it": "Scaracapo Bianco",
+      "pt": "Scaracapacete branco"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/16079.png",
+    "setID": "29",
+    "stats": [
+      { "stat": "Agility", "minStat": 1, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Red Scara Helmet",
+      "fr": "Scaracoiffe Rouge",
+      "de": "Roter Scara-Helm",
+      "es": "Escarasombrero rojo",
+      "it": "Scaracapo Rosso",
+      "pt": "Scaracapacete vermelho"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/16077.png",
+    "setID": "28",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Green Scara Helmet",
+      "fr": "Scaracoiffe Verte",
+      "de": "Grüner Scara-Helm",
+      "es": "Escarasombrero verde",
+      "it": "Scaracapo Verde",
+      "pt": "Scaracapacete verde"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/16078.png",
+    "setID": "27",
+    "stats": [
+      { "stat": "Strength", "minStat": 1, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crackler Helmet",
+      "fr": "Casque du Craqueleur",
+      "de": "Krachlerhelm",
+      "es": "Casco de crujidor",
+      "it": "Elmo del Croccaroc",
+      "pt": "Capacete do Smagador"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/16085.png",
+    "setID": "26",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 6 },
+      { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Casque Vioutifoule",
+      "fr": "Casque Vioutifoule",
+      "de": "[!DE] Casque Vioutifoule",
+      "es": "[!ES] Casque Vioutifoule",
+      "it": "[!IT] Casque Vioutifoule",
+      "pt": "[!PT] Casque Vioutifoule"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/16047.png",
+    "setID": "75",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Mégacoiffe",
+      "fr": "Mégacoiffe",
+      "de": "[!DE] Mégacoiffe",
+      "es": "[!ES] Mégacoiffe",
+      "it": "[!IT] Mégacoiffe",
+      "pt": "[!PT] Mégacoiffe"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/16046.png",
+    "setID": "76",
+    "stats": [
+      { "stat": "Chance", "minStat": 1, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Coiffe de la Denrée",
+      "fr": "Coiffe de la Denrée",
+      "de": "[!DE] Coiffe de la Denrée",
+      "es": "[!ES] Coiffe de la Denrée",
+      "it": "[!IT] Coiffe de la Denrée",
+      "pt": "[!PT] Coiffe de la Denrée"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/16250.png",
+    "setID": "133",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Borsalino du Parrain",
+      "fr": "Borsalino du Parrain",
+      "de": "[!DE] Borsalino du Parrain",
+      "es": "[!ES] Borsalino du Parrain",
+      "it": "[!IT] Borsalino du Parrain",
+      "pt": "[!PT] Borsalino du Parrain"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/16234.png",
+    "setID": "126",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Akwadala Hat",
+      "fr": "Chapeau Akwadala",
+      "de": "Akwadala-Mütze",
+      "es": "Sombrero Akwadala",
+      "it": "Cappello Aksadala",
+      "pt": "Chapéu Akwadala"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/16146.png",
+    "setID": "34",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Champo",
+      "fr": "Champo",
+      "de": "Pilzhut",
+      "es": "Champo",
+      "it": "Champello",
+      "pt": "Champéu"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/16036.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Masque de Noké",
+      "fr": "Masque de Noké",
+      "de": "[!DE] Masque de Noké",
+      "es": "[!ES] Masque de Noké",
+      "it": "[!IT] Masque de Noké",
+      "pt": "[!PT] Masque de Noké"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/16249.png",
+    "setID": "135",
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Masque solaire",
+      "fr": "Masque solaire",
+      "de": "[!DE] Masque solaire",
+      "es": "[!ES] Masque solaire",
+      "it": "[!IT] Masque solaire",
+      "pt": "[!PT] Masque solaire"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/16248.png",
+    "setID": "136",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 35 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Limasque",
+      "fr": "Limasque",
+      "de": "[!DE] Limasque",
+      "es": "[!ES] Limasque",
+      "it": "[!IT] Limasque",
+      "pt": "[!PT] Limasque"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/16247.png",
+    "setID": "137",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Vampyre Mask",
+      "fr": "Masque du Vampyre",
+      "de": "Vampyrmaske",
+      "es": "Máscara de vampyro",
+      "it": "Maschera del Vampyro",
+      "pt": "Máscara do Vampyro"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/16244.png",
+    "setID": "130",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Corno fulgures",
+      "fr": "Corno fulgures",
+      "de": "[!DE] Corno fulgures",
+      "es": "[!ES] Corno fulgures",
+      "it": "[!IT] Corno fulgures",
+      "pt": "[!PT] Corno fulgures"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/16239.png",
+    "setID": "139",
+    "stats": [
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Kaskwette",
+      "fr": "Kaskwette",
+      "de": "[!DE] Kaskwette",
+      "es": "[!ES] Kaskwette",
+      "it": "[!IT] Kaskwette",
+      "pt": "[!PT] Kaskwette"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/16237.png",
+    "setID": "140",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] La HmmMmmMmmm",
+      "fr": "La HmmMmmMmmm",
+      "de": "[!DE] La HmmMmmMmmm",
+      "es": "[!ES] La HmmMmmMmmm",
+      "it": "[!IT] La HmmMmmMmmm",
+      "pt": "[!PT] La HmmMmmMmmm"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/16171.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 42 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Chapeau de Beneji",
+      "fr": "Chapeau de Beneji",
+      "de": "[!DE] Chapeau de Beneji",
+      "es": "[!ES] Chapeau de Beneji",
+      "it": "[!IT] Chapeau de Beneji",
+      "pt": "[!PT] Chapeau de Beneji"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/16253.png",
+    "setID": "143",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Chapeau de Tolot",
+      "fr": "Chapeau de Tolot",
+      "de": "[!DE] Chapeau de Tolot",
+      "es": "[!ES] Chapeau de Tolot",
+      "it": "[!IT] Chapeau de Tolot",
+      "pt": "[!PT] Chapeau de Tolot"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/16252.png",
+    "setID": "142",
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Yugonnet",
+      "fr": "Yugonnet",
+      "de": "[!DE] Yugonnet",
+      "es": "[!ES] Yugonnet",
+      "it": "[!IT] Yugonnet",
+      "pt": "[!PT] Yugonnet"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/16245.png",
+    "setID": "134",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Kwakoiffe du Vent",
+      "fr": "Kwakoiffe du Vent",
+      "de": "[!DE] Kwakoiffe du Vent",
+      "es": "[!ES] Kwakoiffe du Vent",
+      "it": "[!IT] Kwakoiffe du Vent",
+      "pt": "[!PT] Kwakoiffe du Vent"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/16069.png",
+    "setID": "15",
+    "stats": [
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Wisdom", "minStat": 4, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Earth Kwak Headdress",
+      "fr": "Kwakoiffe de Terre",
+      "de": "Stein-Kwackapp",
+      "es": "Kwakosombrero de tierra",
+      "it": "Kwakapo di Terra",
+      "pt": "Kwakapacete de Terra"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/16071.png",
+    "setID": "14",
+    "stats": [
+      { "stat": "Strength", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Wisdom", "minStat": 4, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ice Kwak Headdress",
+      "fr": "Kwakoiffe de Glace",
+      "de": "Eis-Kwackapp",
+      "es": "Kwakosombrero de hielo",
+      "it": "Kwakapo di Ghiaccio",
+      "pt": "Kwakapacete de Gelo"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/16049.png",
+    "setID": "13",
+    "stats": [
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Wisdom", "minStat": 4, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fire Kwak Headdress",
+      "fr": "Kwakoiffe de Flammes",
+      "de": "Flammen-Kwackapp",
+      "es": "Kwakosombrero de llamas",
+      "it": "Kwakapo di Fiamma",
+      "pt": "Kwakapacete de Fogo"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/16039.png",
+    "setID": "2",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Wisdom", "minStat": 4, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Chispocasque",
+      "fr": "Chispocasque",
+      "de": "[!DE] Chispocasque",
+      "es": "[!ES] Chispocasque",
+      "it": "[!IT] Chispocasque",
+      "pt": "[!PT] Chispocasque"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16246.png",
+    "setID": "138",
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Chapeau du bois de l'est",
+      "fr": "Chapeau du bois de l'est",
+      "de": "[!DE] Chapeau du bois de l'est",
+      "es": "[!ES] Chapeau du bois de l'est",
+      "it": "[!IT] Chapeau du bois de l'est",
+      "pt": "[!PT] Chapeau du bois de l'est"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16226.png",
+    "setID": "114",
+    "stats": [
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 10 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Sombrero de Pépitox",
+      "fr": "Sombrero de Pépitox",
+      "de": "[!DE] Sombrero de Pépitox",
+      "es": "[!ES] Sombrero de Pépitox",
+      "it": "[!IT] Sombrero de Pépitox",
+      "pt": "[!PT] Sombrero de Pépitox"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16216.png",
+    "setID": null,
+    "stats": [{ "stat": "Damage", "minStat": 3, "maxStat": 7 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Masque Kanniboule",
+      "fr": "Masque Kanniboule",
+      "de": "[!DE] Masque Kanniboule",
+      "es": "[!ES] Masque Kanniboule",
+      "it": "[!IT] Masque Kanniboule",
+      "pt": "[!PT] Masque Kanniboule"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16026.png",
+    "setID": null,
+    "stats": [{ "stat": "Damage", "minStat": 3, "maxStat": 7 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sthood",
+      "fr": "Chapeau Taufeu",
+      "de": "Bedeckel",
+      "es": "Alfue Gorro",
+      "it": "Cappello Fornello",
+      "pt": "Stcapuz"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16183.png",
+    "setID": "85",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Zinda Hood",
+      "fr": "Bonnet Toual",
+      "de": "Nasführer",
+      "es": "Sombrerillo del lazarillo",
+      "it": "Cappello Guida",
+      "pt": "Capuz da Sorte"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16182.png",
+    "setID": "91",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Robbie Hoodie Cap",
+      "fr": "Coiffe de Robbie Capuche",
+      "de": "Robbins Hut",
+      "es": "Gorro del príncipe Robin",
+      "it": "Copricapo di Roby Cappuccio",
+      "pt": "Chapéu de Robbie Capuz"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16186.png",
+    "setID": "82",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Helmet Hicc",
+      "fr": "Chapeau Lithique",
+      "de": "Dikthutor",
+      "es": "Casco Locado",
+      "it": "Cappello Politico",
+      "pt": "Capacete Hicc"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16176.png",
+    "setID": "92",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Cool Hood",
+      "fr": "Capuche Apin",
+      "de": "Horn-Helm",
+      "es": "Capucha Apino",
+      "it": "Cappuccio Apino",
+      "pt": "Gorro Fresco"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16181.png",
+    "setID": "84",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Cap Rayer",
+      "fr": "Bonnet Spairance",
+      "de": "Döhna-Kebkapp",
+      "es": "Sombrervido",
+      "it": "Cappello Sparanza",
+      "pt": "Capa Raiante"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16180.png",
+    "setID": "87",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Cap Ricott",
+      "fr": "Chapeau Tyron",
+      "de": "Barettich",
+      "es": "Gorra Bano",
+      "it": "Cappello N'Cione",
+      "pt": "Chapéu Ricott"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16178.png",
+    "setID": "90",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Hat Wisholdoo",
+      "fr": "Coiffe Fère",
+      "de": "Magiesterhut",
+      "es": "Gorro del maestro Piezo",
+      "it": "Copricapo Kefar",
+      "pt": "Chapéu Wisholdoo"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16184.png",
+    "setID": "83",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Hatter Lily",
+      "fr": "Bonnet Nufar",
+      "de": "Schlafspitz",
+      "es": "Diapa sombrero",
+      "it": "Cappello Ayomatto",
+      "pt": "Chapeleiro de Lírio"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16177.png",
+    "setID": "86",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Hat Tsokey",
+      "fr": "Chapeau Grave",
+      "de": "Alles-wird-gut-Hut",
+      "es": "Multricornio",
+      "it": "Cappello Niente",
+      "pt": "Chapéu Tsokey"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16179.png",
+    "setID": "89",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ukando Hat",
+      "fr": "Chapeau Leufère",
+      "de": "Nur-Mut-Hut",
+      "es": "Sombrero de tahúr",
+      "it": "Cappello Oping",
+      "pt": "Chapéu Ukando"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16185.png",
+    "setID": "88",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Hat Ariutokinabot",
+      "fr": "Casque Keutumedi",
+      "de": "Dula-Berst-Michan-Helm",
+      "es": "Casco Moasdicho",
+      "it": "Elmo Kemmidici",
+      "pt": "Chapéu Ariutokinabot"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16175.png",
+    "setID": "81",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Vegadgear",
+      "fr": "Végacoiffe",
+      "de": "Vegakapp",
+      "es": "Vegasombrero",
+      "it": "Vegecapo",
+      "pt": "Vegagorro"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/16045.png",
+    "setID": "10",
+    "stats": [
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 10 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Coiffe Mulet du Tétounik",
+      "fr": "Coiffe Mulet du Tétounik",
+      "de": "[!DE] Coiffe Mulet du Tétounik",
+      "es": "[!ES] Coiffe Mulet du Tétounik",
+      "it": "[!IT] Coiffe Mulet du Tétounik",
+      "pt": "[!PT] Coiffe Mulet du Tétounik"
+    },
+    "level": 39,
+    "imageUrl": "/retro/item/16241.png",
+    "setID": "132",
+    "stats": [
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Heals", "minStat": 2, "maxStat": 3 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Dragocoiffe Blanche",
+      "fr": "Dragocoiffe Blanche",
+      "de": "[!DE] Dragocoiffe Blanche",
+      "es": "[!ES] Dragocoiffe Blanche",
+      "it": "[!IT] Dragocoiffe Blanche",
+      "pt": "[!PT] Dragocoiffe Blanche"
+    },
+    "level": 39,
+    "imageUrl": "/retro/item/16028.png",
+    "setID": null,
+    "stats": [{ "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 15 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Masque Siks Won Naïne",
+      "fr": "Masque Siks Won Naïne",
+      "de": "[!DE] Masque Siks Won Naïne",
+      "es": "[!ES] Masque Siks Won Naïne",
+      "it": "[!IT] Masque Siks Won Naïne",
+      "pt": "[!PT] Masque Siks Won Naïne"
+    },
+    "level": 38,
+    "imageUrl": "/retro/item/16240.png",
+    "setID": "131",
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Le Chapleau",
+      "fr": "Le Chapleau",
+      "de": "[!DE] Le Chapleau",
+      "es": "[!ES] Le Chapleau",
+      "it": "[!IT] Le Chapleau",
+      "pt": "[!PT] Le Chapleau"
+    },
+    "level": 37,
+    "imageUrl": "/retro/item/16243.png",
+    "setID": "116",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Caskostar",
+      "fr": "Caskostar",
+      "de": "[!DE] Caskostar",
+      "es": "[!ES] Caskostar",
+      "it": "[!IT] Caskostar",
+      "pt": "[!PT] Caskostar"
+    },
+    "level": 37,
+    "imageUrl": "/retro/item/16242.png",
+    "setID": "117",
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Caskabeille",
+      "fr": "Caskabeille",
+      "de": "[!DE] Caskabeille",
+      "es": "[!ES] Caskabeille",
+      "it": "[!IT] Caskabeille",
+      "pt": "[!PT] Caskabeille"
+    },
+    "level": 37,
+    "imageUrl": "/retro/item/16224.png",
+    "setID": "112",
+    "stats": [
+      { "stat": "Strength", "minStat": 11, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 11, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lorko Kasko",
+      "fr": "Lorko Kasko",
+      "de": "Lorko Kasko",
+      "es": "Lorko Kasko",
+      "it": "Lorko Kasko",
+      "pt": "Lorko Kasko"
+    },
+    "level": 37,
+    "imageUrl": "/retro/item/16015.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 11, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 11, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Brave's Dark Dora",
+      "fr": "Dora Sombre de Brave",
+      "de": "Braves Dora des Schattens",
+      "es": "Dora Oscura de Bravo",
+      "it": "Dora Oscuro di Brave",
+      "pt": "Dora sombrio de Valente"
+    },
+    "level": 37,
+    "imageUrl": "/retro/item/16035.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Cochobits",
+      "fr": "Cochobits",
+      "de": "[!DE] Cochobits",
+      "es": "[!ES] Cochobits",
+      "it": "[!IT] Cochobits",
+      "pt": "[!PT] Cochobits"
+    },
+    "level": 36,
+    "imageUrl": "/retro/item/16225.png",
+    "setID": "113",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 20 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Chapeau de Satanusse",
+      "fr": "Chapeau de Satanusse",
+      "de": "[!DE] Chapeau de Satanusse",
+      "es": "[!ES] Chapeau de Satanusse",
+      "it": "[!IT] Chapeau de Satanusse",
+      "pt": "[!PT] Chapeau de Satanusse"
+    },
+    "level": 36,
+    "imageUrl": "/retro/item/16187.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 60 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 60 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Prespwig",
+      "fr": "Coiffe du Prespic",
+      "de": "Prespikapp",
+      "es": "Sombrero de prespic",
+      "it": "Copricapo del Prespic",
+      "pt": "Chapéu do Prespic"
+    },
+    "level": 36,
+    "imageUrl": "/retro/item/16081.png",
+    "setID": "31",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 20 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Eachure Hat",
+      "fr": "Dantgoule",
+      "de": "Dantgoule",
+      "es": "Dantgul",
+      "it": "Dantgul",
+      "pt": "Dantgul"
+    },
+    "level": 36,
+    "imageUrl": "/retro/item/16010.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": 11, "maxStat": 60 },
+      { "stat": "Vitality", "minStat": 11, "maxStat": 60 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dora",
+      "fr": "Dora",
+      "de": "Dora",
+      "es": "Dora",
+      "it": "Dora",
+      "pt": "Dora"
+    },
+    "level": 36,
+    "imageUrl": "/retro/item/16009.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 60 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 60 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Coiffe de Crâ Cramé",
+      "fr": "Coiffe de Crâ Cramé",
+      "de": "[!DE] Coiffe de Crâ Cramé",
+      "es": "[!ES] Coiffe de Crâ Cramé",
+      "it": "[!IT] Coiffe de Crâ Cramé",
+      "pt": "[!PT] Coiffe de Crâ Cramé"
+    },
+    "level": 35,
+    "imageUrl": "/retro/item/16218.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 11, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Bear",
+      "fr": "Le Ours",
+      "de": "Där Bär",
+      "es": "El Oso",
+      "it": "L'Orso",
+      "pt": "O Urso"
+    },
+    "level": 35,
+    "imageUrl": "/retro/item/16034.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 11, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Larvhat",
+      "fr": "Larvacoiffe",
+      "de": "Larvamütz",
+      "es": "Larvasombrero",
+      "it": "Larvacapo",
+      "pt": "Larvachapéu"
+    },
+    "level": 34,
+    "imageUrl": "/retro/item/16103.png",
+    "setID": "33",
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Shako",
+      "fr": "Shako",
+      "de": "Shako",
+      "es": "Shako",
+      "it": "Shako",
+      "pt": "Shako"
+    },
+    "level": 34,
+    "imageUrl": "/retro/item/16058.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Cigalocoiffe",
+      "fr": "Cigalocoiffe",
+      "de": "[!DE] Cigalocoiffe",
+      "es": "[!ES] Cigalocoiffe",
+      "it": "[!IT] Cigalocoiffe",
+      "pt": "[!PT] Cigalocoiffe"
+    },
+    "level": 33,
+    "imageUrl": "/retro/item/16233.png",
+    "setID": "122",
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 15 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Pompocoiffe",
+      "fr": "Pompocoiffe",
+      "de": "[!DE] Pompocoiffe",
+      "es": "[!ES] Pompocoiffe",
+      "it": "[!IT] Pompocoiffe",
+      "pt": "[!PT] Pompocoiffe"
+    },
+    "level": 33,
+    "imageUrl": "/retro/item/16229.png",
+    "setID": "124",
+    "stats": [{ "stat": "Range", "minStat": 1, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Coiffe de Maître Noir Jack",
+      "fr": "Coiffe de Maître Noir Jack",
+      "de": "[!DE] Coiffe de Maître Noir Jack",
+      "es": "[!ES] Coiffe de Maître Noir Jack",
+      "it": "[!IT] Coiffe de Maître Noir Jack",
+      "pt": "[!PT] Coiffe de Maître Noir Jack"
+    },
+    "level": 33,
+    "imageUrl": "/retro/item/16215.png",
+    "setID": null,
+    "stats": [{ "stat": "Wisdom", "minStat": 16, "maxStat": 25 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Casque de Galgarion",
+      "fr": "Casque de Galgarion",
+      "de": "[!DE] Casque de Galgarion",
+      "es": "[!ES] Casque de Galgarion",
+      "it": "[!IT] Casque de Galgarion",
+      "pt": "[!PT] Casque de Galgarion"
+    },
+    "level": 33,
+    "imageUrl": "/retro/item/16213.png",
+    "setID": null,
+    "stats": [{ "stat": "Range", "minStat": 1, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Lapinocoiffe",
+      "fr": "Lapinocoiffe",
+      "de": "[!DE] Lapinocoiffe",
+      "es": "[!ES] Lapinocoiffe",
+      "it": "[!IT] Lapinocoiffe",
+      "pt": "[!PT] Lapinocoiffe"
+    },
+    "level": 33,
+    "imageUrl": "/retro/item/16168.png",
+    "setID": null,
+    "stats": [{ "stat": "Range", "minStat": 1, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gulliver",
+      "fr": "Gulliver",
+      "de": "Gulliver",
+      "es": "Gulliver",
+      "it": "Gulliver",
+      "pt": "Gulliver"
+    },
+    "level": 33,
+    "imageUrl": "/retro/item/16018.png",
+    "setID": null,
+    "stats": [{ "stat": "Wisdom", "minStat": 16, "maxStat": 25 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Minot'Horn",
+      "fr": "Minotokorno",
+      "de": "MinotoHorno",
+      "es": "MinotauKorno",
+      "it": "Minotokorno",
+      "pt": "MinotoHorno"
+    },
+    "level": 33,
+    "imageUrl": "/retro/item/16013.png",
+    "setID": "54",
+    "stats": [
+      { "stat": "Strength", "minStat": 11, "maxStat": 50 },
+      { "stat": "Power", "minStat": 11, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sortingat Hogwat",
+      "fr": "Choipo Podlard",
+      "de": "Sprehs schöner Hut",
+      "es": "Sombrero de Selección de Hoguarts",
+      "it": "Cappello Hoggwarts",
+      "pt": "Sortingat Hogwat"
+    },
+    "level": 33,
+    "imageUrl": "/retro/item/16004.png",
+    "setID": null,
+    "stats": [{ "stat": "Range", "minStat": 1, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ambusheadgear",
+      "fr": "Fourbacoiffe",
+      "de": "Heckenschutzmütze",
+      "es": "Mazorrasombrero",
+      "it": "Furbacapo",
+      "pt": "Chaparbustor"
+    },
+    "level": 31,
+    "imageUrl": "/retro/item/16068.png",
+    "setID": "16",
+    "stats": [
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Initiative", "minStat": 151, "maxStat": 200 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Borsitrono",
+      "fr": "Borsitrono",
+      "de": "[!DE] Borsitrono",
+      "es": "[!ES] Borsitrono",
+      "it": "[!IT] Borsitrono",
+      "pt": "[!PT] Borsitrono"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/16227.png",
+    "setID": "115",
+    "stats": [{ "stat": "Critical", "minStat": 3, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Coiffe de Goultard",
+      "fr": "Coiffe de Goultard",
+      "de": "[!DE] Coiffe de Goultard",
+      "es": "[!ES] Coiffe de Goultard",
+      "it": "[!IT] Coiffe de Goultard",
+      "pt": "[!PT] Coiffe de Goultard"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/16214.png",
+    "setID": null,
+    "stats": [{ "stat": "Critical", "minStat": 3, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Chapeau Shika",
+      "fr": "Chapeau Shika",
+      "de": "[!DE] Chapeau Shika",
+      "es": "[!ES] Chapeau Shika",
+      "it": "[!IT] Chapeau Shika",
+      "pt": "[!PT] Chapeau Shika"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/16210.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wa Wabbit's Crown",
+      "fr": "Couronne du Wa Wabbit",
+      "de": "Krone des Wa Wabbits",
+      "es": "Corona del Wey Wabbit",
+      "it": "Corona del We Wabbit",
+      "pt": "Coroa do Wei Wabbit"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/16021.png",
+    "setID": "40",
+    "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 100 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pilbocks Hat",
+      "fr": "Houde",
+      "de": "Houde",
+      "es": "Jud",
+      "it": "Hud",
+      "pt": "Houde"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/16014.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": 11, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kritter",
+      "fr": "Kritter",
+      "de": "Kritter",
+      "es": "Kritter",
+      "it": "Kritter",
+      "pt": "Kritter"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/16008.png",
+    "setID": null,
+    "stats": [{ "stat": "Critical", "minStat": 3, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Toady",
+      "fr": "Toady",
+      "de": "Toady",
+      "es": "Toady",
+      "it": "Toady",
+      "pt": "Toady"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/16051.png",
+    "setID": "7",
+    "stats": [{ "stat": "Agility", "minStat": 11, "maxStat": 60 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Oreilles de Lapineupe",
+      "fr": "Oreilles de Lapineupe",
+      "de": "[!DE] Oreilles de Lapineupe",
+      "es": "[!ES] Oreilles de Lapineupe",
+      "it": "[!IT] Oreilles de Lapineupe",
+      "pt": "[!PT] Oreilles de Lapineupe"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/16030.png",
+    "setID": null,
+    "stats": [{ "stat": "Critical", "minStat": 1, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobbowl Helmet",
+      "fr": "Casque de boufbowl",
+      "de": "Fressballkappe",
+      "es": "Casco de jálabol",
+      "it": "Casco da Pappaball",
+      "pt": "Capacete de Papabol"
+    },
+    "level": 29,
+    "imageUrl": "/retro/item/16253.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 7 },
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Jouik Krampe",
+      "fr": "Jouik Krampe",
+      "de": "Jouiks Krempe",
+      "es": "Juik Kramp",
+      "it": "Juik Kramp",
+      "pt": "Juik Kramp"
+    },
+    "level": 26,
+    "imageUrl": "/retro/item/16017.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crystal O'Ball",
+      "fr": "Crystal O'Boul",
+      "de": "O'Bouls Kristallkugelhut",
+      "es": "Crystralobola",
+      "it": "Crystal O'Bul",
+      "pt": "Bola de Cristal"
+    },
+    "level": 24,
+    "imageUrl": "/retro/item/16012.png",
+    "setID": "38",
+    "stats": [{ "stat": "Vitality", "minStat": 21, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Helmetofu",
+      "fr": "Kaskofu",
+      "de": "Helmofu",
+      "es": "Kaskofu",
+      "it": "Kaskofu",
+      "pt": "Kaskofu"
+    },
+    "level": 23,
+    "imageUrl": "/retro/item/16128.png",
+    "setID": "50",
+    "stats": [{ "stat": "Wisdom", "minStat": 6, "maxStat": 15 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Coiffe Cristaline",
+      "fr": "Coiffe Cristaline",
+      "de": "[!DE] Coiffe Cristaline",
+      "es": "[!ES] Coiffe Cristaline",
+      "it": "[!IT] Coiffe Cristaline",
+      "pt": "[!PT] Coiffe Cristaline"
+    },
+    "level": 22,
+    "imageUrl": "/retro/item/16228.png",
+    "setID": "125",
+    "stats": [{ "stat": "Chance", "minStat": 11, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Father Kwismas Hat",
+      "fr": "Chapeau du Papa Nowel",
+      "de": "Hut des Weißnachtsmannes",
+      "es": "Sombrero de Chanta Klaus",
+      "it": "Cappello di Babbo Nawal",
+      "pt": "Chapéu do Papai Nowel"
+    },
+    "level": 22,
+    "imageUrl": "/retro/item/16155.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Pods", "minStat": 51, "maxStat": 60 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Géniallissime Coiffe de Torte Hou",
+      "fr": "Géniallissime Coiffe de Torte Hou",
+      "de": "[!DE] Géniallissime Coiffe de Torte Hou",
+      "es": "[!ES] Géniallissime Coiffe de Torte Hou",
+      "it": "[!IT] Géniallissime Coiffe de Torte Hou",
+      "pt": "[!PT] Géniallissime Coiffe de Torte Hou"
+    },
+    "level": 22,
+    "imageUrl": "/retro/item/16082.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": 11, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Oiram",
+      "fr": "Le Oiram",
+      "de": "Oiram",
+      "es": "El Oiram",
+      "it": "L'Oiram",
+      "pt": "O Oiram"
+    },
+    "level": 22,
+    "imageUrl": "/retro/item/16007.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": 11, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Troma",
+      "fr": "Le Troma",
+      "de": "Troma",
+      "es": "El Etreuma",
+      "it": "Il Troma",
+      "pt": "O Troma"
+    },
+    "level": 22,
+    "imageUrl": "/retro/item/16005.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": 11, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Coquille Emeraude",
+      "fr": "Coquille Emeraude",
+      "de": "[!DE] Coquille Emeraude",
+      "es": "[!ES] Coquille Emeraude",
+      "it": "[!IT] Coquille Emeraude",
+      "pt": "[!PT] Coquille Emeraude"
+    },
+    "level": 21,
+    "imageUrl": "/retro/item/16189.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": 21, "maxStat": 35 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pointed Hat",
+      "fr": "Chapeau Pointu",
+      "de": "Spitzhut",
+      "es": "Sombrero Puntiagudo",
+      "it": "Cappello Appuntito",
+      "pt": "Chapéu Pontudo"
+    },
+    "level": 21,
+    "imageUrl": "/retro/item/16001.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": 21, "maxStat": 35 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Cornes de XVII",
+      "fr": "Cornes de XVII",
+      "de": "[!DE] Cornes de XVII",
+      "es": "[!ES] Cornes de XVII",
+      "it": "[!IT] Cornes de XVII",
+      "pt": "[!PT] Cornes de XVII"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/16217.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 6, "maxStat": 20 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Astrocoiffe",
+      "fr": "Astrocoiffe",
+      "de": "[!DE] Astrocoiffe",
+      "es": "[!ES] Astrocoiffe",
+      "it": "[!IT] Astrocoiffe",
+      "pt": "[!PT] Astrocoiffe"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/16027.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 6, "maxStat": 20 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Helmet",
+      "fr": "Casque",
+      "de": "Fliegerhelm",
+      "es": "Casco",
+      "it": "Elmo",
+      "pt": "Capacete"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/16025.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pumpkwin",
+      "fr": "Citwouille",
+      "de": "Küwbiss",
+      "es": "Calawaza",
+      "it": "Cucuwbita",
+      "pt": "Abóbowa"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/16024.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 10 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 10 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 10 },
+      { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bearman's Headgear",
+      "fr": "Coiffe de l'Homme Ours",
+      "de": "Maske des Bärenmannes",
+      "es": "Sombrero del hombre oso",
+      "it": "Copricapo dell'Uomo Orso",
+      "pt": "Chapéu do Homem Urso"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/16064.png",
+    "setID": "12",
+    "stats": [{ "stat": "Vitality", "minStat": 21, "maxStat": 30 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Slob Headgear",
+      "fr": "La Coiffe du Ploukosse",
+      "de": "Grobianium",
+      "es": "Sombrero del Paletoso",
+      "it": "Il Copricapo del Plukos",
+      "pt": "Touca Suja"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/16002.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 6, "maxStat": 20 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Farmer Sunhat",
+      "fr": "Bob du Paysan",
+      "de": "Bauernkappe",
+      "es": "Bob de campesino",
+      "it": "Cappello del Contadino",
+      "pt": "Sombreiro do Fazendeiro"
+    },
+    "level": 19,
+    "imageUrl": "/retro/item/16130.png",
+    "setID": "47",
+    "stats": [{ "stat": "Wisdom", "minStat": 6, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Korko Klako",
+      "fr": "Korko Klako",
+      "de": "Korko Klako",
+      "es": "Korko Klako",
+      "it": "Korko Klako",
+      "pt": "Korko Klako"
+    },
+    "level": 17,
+    "imageUrl": "/retro/item/16016.png",
+    "setID": null,
+    "stats": [{ "stat": "Summons", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Moskabuto",
+      "fr": "Moskitogalurette",
+      "de": "Moskitomütz",
+      "es": "Moskitogarruleto",
+      "it": "Moskitellino",
+      "pt": "Moskabuto"
+    },
+    "level": 15,
+    "imageUrl": "/retro/item/16080.png",
+    "setID": "23",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 10 },
+      { "stat": "Chance", "minStat": 1, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Barking M'hat",
+      "fr": "Coiffe Wouaf",
+      "de": "Hutinak",
+      "es": "Ushanka Guau",
+      "it": "Berretto Woof",
+      "pt": "Chapéu Barking"
+    },
+    "level": 11,
+    "imageUrl": "/retro/item/16256.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sponge Helmet",
+      "fr": "Coiffe en Mousse",
+      "de": "Schwammützel",
+      "es": "Sombrero de esponja",
+      "it": "Copricapo di Spugna",
+      "pt": "Chapéu de esponja"
+    },
+    "level": 11,
+    "imageUrl": "/retro/item/16143.png",
+    "setID": "63",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Florheadgear",
+      "fr": "Coiffe Champêtre",
+      "de": "Blühütchen",
+      "es": "Sombrero campestre",
+      "it": "Copricapo Campestre",
+      "pt": "Chapéu campestre"
+    },
+    "level": 10,
+    "imageUrl": "/retro/item/16070.png",
+    "setID": "18",
+    "stats": [{ "stat": "Summons", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobball Headgear",
+      "fr": "Coiffe du Bouftou",
+      "de": "Fresssackkapp",
+      "es": "Sombrero de jalató",
+      "it": "Copricapo del Pappatutto",
+      "pt": "Chapéu do Papatudo"
+    },
+    "level": 10,
+    "imageUrl": "/retro/item/16041.png",
+    "setID": "1",
+    "stats": [
+      { "stat": "Strength", "minStat": 1, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Musheadgear",
+      "fr": "Champcoiffe",
+      "de": "Pilzkäppchen",
+      "es": "Champisombrero",
+      "it": "Fungocapo",
+      "pt": "Chapeumelo"
+    },
+    "level": 9,
+    "imageUrl": "/retro/item/16084.png",
+    "setID": "24",
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 15 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Chapeau du Lapino",
+      "fr": "Chapeau du Lapino",
+      "de": "[!DE] Chapeau du Lapino",
+      "es": "[!ES] Chapeau du Lapino",
+      "it": "[!IT] Chapeau du Lapino",
+      "pt": "[!PT] Chapeau du Lapino"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/16170.png",
+    "setID": null,
+    "stats": [{ "stat": "Summons", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Arachelmet",
+      "fr": "L'Araknacoiffe",
+      "de": "Arachnamaska",
+      "es": "Araknosombrero",
+      "it": "L'Araknecapo",
+      "pt": "Arakapacete"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/16083.png",
+    "setID": "22",
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 15 },
+      { "stat": "Initiative", "minStat": 11, "maxStat": 30 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pandawa",
+      "fr": "Pandawa",
+      "de": "Pandawa",
+      "es": "Pandawa",
+      "it": "Pandawa",
+      "pt": "Pandawa"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/16006.png",
+    "setID": null,
+    "stats": [{ "stat": "Summons", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Makroute",
+      "fr": "Makroute",
+      "de": "Makroute",
+      "es": "Mistetas",
+      "it": "Mykakka",
+      "pt": "Makroute"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/16003.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 6, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Grand Bandeau de Vitalité",
+      "fr": "Grand Bandeau de Vitalité",
+      "de": "[!DE] Grand Bandeau de Vitalité",
+      "es": "[!ES] Grand Bandeau de Vitalité",
+      "it": "[!IT] Grand Bandeau de Vitalité",
+      "pt": "[!PT] Grand Bandeau de Vitalité"
+    },
+    "level": 3,
+    "imageUrl": "/retro/item/16020.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 15 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Couronne Koninginnedag",
+      "fr": "Couronne Koninginnedag",
+      "de": "[!DE] Couronne Koninginnedag",
+      "es": "[!ES] Couronne Koninginnedag",
+      "it": "[!IT] Couronne Koninginnedag",
+      "pt": "[!PT] Couronne Koninginnedag"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16251.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Critical", "minStat": null, "maxStat": 1 },
+      { "stat": "Strength", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Chapeau de la Sain Ballotin",
+      "fr": "Chapeau de la Sain Ballotin",
+      "de": "[!DE] Chapeau de la Sain Ballotin",
+      "es": "[!ES] Chapeau de la Sain Ballotin",
+      "it": "[!IT] Chapeau de la Sain Ballotin",
+      "pt": "[!PT] Chapeau de la Sain Ballotin"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16231.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Critical", "minStat": null, "maxStat": 1 },
+      { "stat": "Chance", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Marié = non"],
+      "fr": ["Marié = non"],
+      "de": ["Marié = non"],
+      "es": ["Marié = non"],
+      "it": ["Marié = non"],
+      "pt": ["Marié = non"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Improved Helmet",
+      "fr": "Casque amélioré",
+      "de": "Verbesserter Helm",
+      "es": "Casco mejorado",
+      "it": "Elmo Migliorato",
+      "pt": "Capacete melhorado"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16025.png",
+    "setID": null,
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Flud",
+      "fr": "Le Floude",
+      "de": "Flud",
+      "es": "El Flud",
+      "it": "Il Flud",
+      "pt": "O Flud"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16169.png",
+    "setID": "69",
+    "stats": [{ "stat": "Damage", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pink Piwi Hat",
+      "fr": "Chapeau du Piou Rose",
+      "de": "Hut des rosafarbenen Piepmatzes",
+      "es": "Sombrero de pío rosa",
+      "it": "Cappello del Pìu Rosa",
+      "pt": "Chapéu do Piu Rosa"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16142.png",
+    "setID": "70",
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Yellow Piwi Hat",
+      "fr": "Chapeau du Piou Jaune",
+      "de": "Hut des gelben Piepmatzes",
+      "es": "Sombrero de pío amarillo",
+      "it": "Cappello del Pìu Giallo",
+      "pt": "Chapéu do Piu Amarelo"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16141.png",
+    "setID": "72",
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Green Piwi Hat",
+      "fr": "Chapeau du Piou Vert",
+      "de": "Hut des grünen Piepmatzes",
+      "es": "Sombrero de pío verde",
+      "it": "Cappello del Pìu Verde",
+      "pt": "Chapéu do Piu Verde"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16140.png",
+    "setID": "71",
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Purple Piwi Hat",
+      "fr": "Chapeau du Piou Violet",
+      "de": "Violetter Piepmatz-Hut",
+      "es": "Sombrero de pío violeta",
+      "it": "Cappello del Pìu Viola",
+      "pt": "Chapéu do Piu Violeta"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16139.png",
+    "setID": "62",
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Blue Piwi Hat",
+      "fr": "Chapeau du Piou Bleu",
+      "de": "Hut des blauen Piepmatzes",
+      "es": "Sombrero de pío azul",
+      "it": "Cappello del Pìu Blu",
+      "pt": "Chapéu do Piu Azul"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16138.png",
+    "setID": "61",
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Red Piwi Hat",
+      "fr": "Chapeau du Piou Rouge",
+      "de": "Hut des roten Piepmatzes",
+      "es": "Sombrero de pío rojo",
+      "it": "Cappello del Pìu Rosso",
+      "pt": "Chapéu do Piu Vermelho"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16137.png",
+    "setID": "60",
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pumpkwin Head",
+      "fr": "Tête de Citwouille",
+      "de": "Küwbiskopf",
+      "es": "Calawaza",
+      "it": "Testa di Cucuwbita",
+      "pt": "Cabeça de Abóbowa"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16134.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Initiative", "minStat": 1, "maxStat": 10 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Coiffe du Champion",
+      "fr": "Coiffe du Champion",
+      "de": "[!DE] Coiffe du Champion",
+      "es": "[!ES] Coiffe du Champion",
+      "it": "[!IT] Coiffe du Champion",
+      "pt": "[!PT] Coiffe du Champion"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16127.png",
+    "setID": "45",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Maskananas",
+      "fr": "Maskananas",
+      "de": "[!DE] Maskananas",
+      "es": "[!ES] Maskananas",
+      "it": "[!IT] Maskananas",
+      "pt": "[!PT] Maskananas"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16117.png",
+    "setID": "74",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Vitality Headband",
+      "fr": "Bandeau de Vitalité",
+      "de": "Band der Vitalität",
+      "es": "Pañuelo de vitalidad",
+      "it": "Fascia di Vitalità",
+      "pt": "Faixa de vitalidade"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16020.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Petit Bandeau de Vitalité",
+      "fr": "Petit Bandeau de Vitalité",
+      "de": "[!DE] Petit Bandeau de Vitalité",
+      "es": "[!ES] Petit Bandeau de Vitalité",
+      "it": "[!IT] Petit Bandeau de Vitalité",
+      "pt": "[!PT] Petit Bandeau de Vitalité"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16020.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 5 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Smoother",
+      "fr": "Lisseur",
+      "de": "Lizzy",
+      "es": "Alisador",
+      "it": "Lisciatore",
+      "pt": "Aplainador"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16023.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 3 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 3 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Komintot Headband",
+      "fr": "Bandeau Komintot",
+      "de": "Witots Stirnband",
+      "es": "Pañuelo Komuntot",
+      "it": "Fascia Komintot",
+      "pt": "Bandana de Komintot"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16022.png",
+    "setID": null,
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 5 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Farter",
+      "fr": "Louffeur",
+      "de": "Poupsi",
+      "es": "Depedador",
+      "it": "Scorreggiatore",
+      "pt": "Farter"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16020.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 3 },
+      { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pandawushu Headband",
+      "fr": "Bandeau Pandawushu",
+      "de": "Pandawushu-Stirnband",
+      "es": "Pañuelo pandawushuka",
+      "it": "Fascia Pandawushu",
+      "pt": "Faixa Pandawushu"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16102.png",
+    "setID": null,
+    "stats": [{ "stat": "Initiative", "minStat": 51, "maxStat": 100 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Cache Oreilles",
+      "fr": "Cache Oreilles",
+      "de": "[!DE] Cache Oreilles",
+      "es": "[!ES] Cache Oreilles",
+      "it": "[!IT] Cache Oreilles",
+      "pt": "[!PT] Cache Oreilles"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16073.png",
+    "setID": null,
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bride Hat",
+      "fr": "Chapeau de la Mariée",
+      "de": "Brauthut",
+      "es": "Sombrero de novia",
+      "it": "Cappello della Sposa",
+      "pt": "Chapéu da noiva"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16054.png",
+    "setID": null,
+    "stats": [],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Personnage = Féminin"],
+      "fr": ["Personnage = Féminin"],
+      "de": ["Personnage = Féminin"],
+      "es": ["Personnage = Féminin"],
+      "it": ["Personnage = Féminin"],
+      "pt": ["Personnage = Féminin"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Groom Hat",
+      "fr": "Chapeau du Marié",
+      "de": "Zylinder des Bräutigams",
+      "es": "Sombrero de novio",
+      "it": "Cappello dello Sposo",
+      "pt": "Chapéu do noivo"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16053.png",
+    "setID": null,
+    "stats": [],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Personnage = Masculin"],
+      "fr": ["Personnage = Masculin"],
+      "de": ["Personnage = Masculin"],
+      "es": ["Personnage = Masculin"],
+      "it": ["Personnage = Masculin"],
+      "pt": ["Personnage = Masculin"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Adventurer Hat",
+      "fr": "Chapeau de l'Aventurier",
+      "de": "Hut des Abenteurers",
+      "es": "Sombrero de aventurero",
+      "it": "Cappello dell'Avventuriero",
+      "pt": "Chapéu do aventureiro"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/16044.png",
+    "setID": "5",
+    "stats": [
+      { "stat": "Chance", "minStat": 1, "maxStat": 2 },
+      { "stat": "Strength", "minStat": 1, "maxStat": 2 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 2 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 2 },
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  }
+]

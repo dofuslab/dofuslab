@@ -23,3 +23,5 @@ server/messages.pot
 node_modules/
 
 *.DS_Store
+
+parser/

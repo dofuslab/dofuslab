@@ -1,0 +1,3791 @@
+[
+  {
+    "name": {
+      "en": "Kralomansion",
+      "fr": "Kralamansion",
+      "de": "Krakamulett",
+      "es": "Kralamansion",
+      "it": "Kralamansion",
+      "pt": "Kralamansão"
+    },
+    "level": 194,
+    "imageUrl": "/retro/item/1142.png",
+    "setID": "97",
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 350 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 21, "maxStat": 30 },
+      { "stat": "Range", "minStat": null, "maxStat": 2 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 },
+      { "stat": "Prospecting", "minStat": 21, "maxStat": 30 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Amunita",
+      "fr": "Amunite",
+      "de": "Pom-Pompöses Amulett",
+      "es": "Amunito",
+      "it": "Amunnite",
+      "pt": "Amunito"
+    },
+    "level": 189,
+    "imageUrl": "/retro/item/1141.png",
+    "setID": "107",
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Memori Amulet",
+      "fr": "Amulette Ripage",
+      "de": "Amulett des Bworkrippers",
+      "es": "Amuleto del descanso eterno",
+      "it": "Amuleto Raschiatura",
+      "pt": "Amuleto Memori"
+    },
+    "level": 184,
+    "imageUrl": "/retro/item/1137.png",
+    "setID": "108",
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Power (traps)", "minStat": 11, "maxStat": 20 },
+      { "stat": "Initiative", "minStat": 301, "maxStat": 400 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ougaamulet",
+      "fr": "Ougamulette",
+      "de": "Stinkelingsamulett",
+      "es": "Ugahmuleto",
+      "it": "Ugamuleto",
+      "pt": "Ugahmuleto"
+    },
+    "level": 181,
+    "imageUrl": "/retro/item/1127.png",
+    "setID": "118",
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 41, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Power", "minStat": 31, "maxStat": 40 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 501, "maxStat": 600 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Zothulet",
+      "fr": "Zothulette",
+      "de": "Zothulett",
+      "es": "Zothuleto",
+      "it": "Zothuleto",
+      "pt": "Zothuleto"
+    },
+    "level": 162,
+    "imageUrl": "/retro/item/1124.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Minotot Necklace",
+      "fr": "Collier du Minotot",
+      "de": "Halskette des Minotots",
+      "es": "Collar del Minotot",
+      "it": "Collana del Minotot",
+      "pt": "Colar do Minotot"
+    },
+    "level": 158,
+    "imageUrl": "/retro/item/1111.png",
+    "setID": "57",
+    "stats": [
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 181, "maxStat": 230 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 25 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tanukouï San Collar",
+      "fr": "Collier du Tanukouï San",
+      "de": "Collier des Tanukouï San",
+      "es": "Collar del Tanukui San",
+      "it": "Collana di Tanukui San",
+      "pt": "Colar do Tanukui San"
+    },
+    "level": 152,
+    "imageUrl": "/retro/item/1092.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 401, "maxStat": 700 },
+      { "stat": "Neutral Resistance", "minStat": 8, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 8, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Amoolet",
+      "fr": "La Meulette",
+      "de": "MuWulf-Amulett",
+      "es": "El Amaxilubeto",
+      "it": "La Muletto",
+      "pt": "Um Moolet"
+    },
+    "level": 143,
+    "imageUrl": "/retro/item/1107.png",
+    "setID": "55",
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Power", "minStat": 6, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Soft Oak Talisman",
+      "fr": "Talisman du Chêne Mou",
+      "de": "Weich-Eich-Talisman",
+      "es": "Talismán de Roble Blando",
+      "it": "Talismano della Quercia Molle",
+      "pt": "Talismã do Carvalho Mole"
+    },
+    "level": 138,
+    "imageUrl": "/retro/item/1119.png",
+    "setID": "66",
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 8 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 300 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Elya Wood's Talisman",
+      "fr": "Talisman d'Elya Wood",
+      "de": "Talisman von Elya Wood",
+      "es": "Talismán de Elya Wood",
+      "it": "Talismano di Elya Wood",
+      "pt": "Talismã de Elya Wood"
+    },
+    "level": 135,
+    "imageUrl": "/retro/item/1086.png",
+    "setID": "39",
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 30 },
+      { "stat": "Fire Resistance", "minStat": 9, "maxStat": 13 },
+      { "stat": "Earth Resistance", "minStat": 9, "maxStat": 13 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lord of the Rats' Ceremonial Necklace",
+      "fr": "Collier Cérémonial du Seigneur des Rats",
+      "de": "Zeremonienhalskette des Rattenmeisters",
+      "es": "Collar ceremonial del Amo de las Ratas",
+      "it": "Collana Cerimoniale del Signore dei Ratti",
+      "pt": "Colar cerimonal do Senhor dos Ratos"
+    },
+    "level": 134,
+    "imageUrl": "/retro/item/1117.png",
+    "setID": "64",
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 400 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Plimclik",
+      "fr": "Plimclik",
+      "de": "Plimclik",
+      "es": "Plimclik",
+      "it": "Plimclik",
+      "pt": "Plimclik"
+    },
+    "level": 130,
+    "imageUrl": "/retro/item/1123.png",
+    "setID": null,
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Renewed Amulet",
+      "fr": "Amulette du Renouveau",
+      "de": "Medaillon des zweiten Frühlings",
+      "es": "Amuleto del Renuevo",
+      "it": "Amuleto della Rinascita",
+      "pt": "Amuleto Renovado"
+    },
+    "level": 126,
+    "imageUrl": "/retro/item/1057.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 70 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Aykido Medal",
+      "fr": "Médaille Kido",
+      "de": "Medaille Kido",
+      "es": "Medalla Kido",
+      "it": "Medaglia Kido",
+      "pt": "Medalha AyKido"
+    },
+    "level": 125,
+    "imageUrl": "/retro/item/1089.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 20 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dreggon Amulet",
+      "fr": "Amulette du Dragoeuf",
+      "de": "Drachei-Amulett",
+      "es": "Amuleto de dragohuevo",
+      "it": "Amuleto del Draguovo",
+      "pt": "Amuleto do Dragovo"
+    },
+    "level": 124,
+    "imageUrl": "/retro/item/1108.png",
+    "setID": "56",
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 71, "maxStat": 100 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Power (traps)", "minStat": 11, "maxStat": 20 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 300 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Spring Leaf",
+      "fr": "La Feuille de Printemps",
+      "de": "Frühlingsblatt",
+      "es": "La Hoja de Primavera",
+      "it": "La Foglia di Primavera",
+      "pt": "A folha da primavera"
+    },
+    "level": 123,
+    "imageUrl": "/retro/item/1062.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 70 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": 1, "maxStat": 2 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Minotoror Necklace",
+      "fr": "Collier du Minotoror",
+      "de": "Minotoror-Amulett",
+      "es": "Collar del Minotauroro",
+      "it": "Collana del Minotoror",
+      "pt": "Colar do Minotoror"
+    },
+    "level": 111,
+    "imageUrl": "/retro/item/1112.png",
+    "setID": "54",
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 45 },
+      { "stat": "Summons", "minStat": 2, "maxStat": 3 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ancestral Torc",
+      "fr": "Torque Ancestral",
+      "de": "Ur-Torque",
+      "es": "Torque Ancestral",
+      "it": "Collana Ancestrale",
+      "pt": "Torque Ancestral"
+    },
+    "level": 110,
+    "imageUrl": "/retro/item/1118.png",
+    "setID": "65",
+    "stats": [
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 100 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Fire Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ouassulet",
+      "fr": "Ouassulette",
+      "de": "Morphmamph",
+      "es": "Stropamuleto",
+      "it": "Cencios",
+      "pt": "Ouassulet"
+    },
+    "level": 105,
+    "imageUrl": "/retro/item/1125.png",
+    "setID": "77",
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 70 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "White Rat Necklace",
+      "fr": "Collier du Rat Blanc",
+      "de": "Weißes Rattenhalsband",
+      "es": "Collar de la Rata Blanca",
+      "it": "Collana del Ratto Bianco",
+      "pt": "Colar do Rato Branco"
+    },
+    "level": 103,
+    "imageUrl": "/retro/item/1116.png",
+    "setID": "67",
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 35 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 200 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Black Rat Necklace",
+      "fr": "Collier du Rat Noir",
+      "de": "Schwarzes Rattenhalsband",
+      "es": "Collar de la Rata Negra",
+      "it": "Collana del Ratto Nero",
+      "pt": "Colar do Rato Negro"
+    },
+    "level": 103,
+    "imageUrl": "/retro/item/1115.png",
+    "setID": "68",
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 70 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power (traps)", "minStat": 16, "maxStat": 25 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dragon Pig Necklace",
+      "fr": "Collier du Dragon Cochon",
+      "de": "Amulett des Schweinedrachen",
+      "es": "Collar de Dragocerdo",
+      "it": "Collana del Drago Maiale",
+      "pt": "Colar do Dragão-Porco"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/1110.png",
+    "setID": "58",
+    "stats": [
+      { "stat": "Agility", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Power", "minStat": 16, "maxStat": 20 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bwork Chief Amulet",
+      "fr": "Amulette du Chef Bwork",
+      "de": "Amulett des Bwork-Chefs",
+      "es": "Amuleto de jefe bwork",
+      "it": "Amuleto del Capo Bwork",
+      "pt": "Amuleto do Chefe Bwork"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/1066.png",
+    "setID": "19",
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 36, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 26, "maxStat": 35 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 4 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 81, "maxStat": 100 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Winter Leaf",
+      "fr": "La Feuille d'Hiver",
+      "de": "Winterblatt",
+      "es": "La Hoja de Invierno",
+      "it": "La Foglia d'Inverno",
+      "pt": "A folha do inverno"
+    },
+    "level": 98,
+    "imageUrl": "/retro/item/1065.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 7 },
+      { "stat": "Power", "minStat": 3, "maxStat": 5 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 15 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Amulet of Double Luck",
+      "fr": "Amulette de la Bouboule",
+      "de": "Glückskügelchen",
+      "es": "Amuleto de la Bobola",
+      "it": "Amuleto della Papalla",
+      "pt": "Amuleto da Bobola"
+    },
+    "level": 98,
+    "imageUrl": "/retro/item/1039.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 15 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lil' Resin",
+      "fr": "La Résinette",
+      "de": "Harzilein",
+      "es": "La Resinilla",
+      "it": "La Resinetta",
+      "pt": "Pequena Resina"
+    },
+    "level": 94,
+    "imageUrl": "/retro/item/1085.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 8 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Feudala Amulet",
+      "fr": "Amulette Feudala",
+      "de": "Feudala-Amulett",
+      "es": "Amuleto Fuegodala",
+      "it": "Amuleto Focodala",
+      "pt": "Amuleto Fogodala"
+    },
+    "level": 91,
+    "imageUrl": "/retro/item/1081.png",
+    "setID": "37",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 5 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Rainbow Amublop",
+      "fr": "Amublop Multicolore Royale",
+      "de": "Königliches Multiblob-Amulett",
+      "es": "Amublop Multicolor Real",
+      "it": "Amublop Multicolore Reale",
+      "pt": "Amublop Arco-Íris Real"
+    },
+    "level": 90,
+    "imageUrl": "/retro/item/1136.png",
+    "setID": "106",
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 70 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Power", "minStat": 21, "maxStat": 30 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "% Fire Resistance", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Autumn Leaf",
+      "fr": "La Feuille d'Automne",
+      "de": "Herbstblatt",
+      "es": "La Hoja de Otoño",
+      "it": "La Foglia d'Autunno",
+      "pt": "A folha do outono"
+    },
+    "level": 89,
+    "imageUrl": "/retro/item/1064.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Range", "minStat": 1, "maxStat": 2 },
+      { "stat": "Critical", "minStat": 6, "maxStat": 10 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 50 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Amufafah",
+      "fr": "Amufafah",
+      "de": "Mufafahmulett",
+      "es": "Amufafah",
+      "it": "Amufafah",
+      "pt": "Amufafah"
+    },
+    "level": 84,
+    "imageUrl": "/retro/item/1126.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 3 },
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Legendary Crackler Amulet",
+      "fr": "Amulette du Craqueleur Légendaire",
+      "de": "Amulett des Legendären Mega-Krachlers",
+      "es": "Amuleto de Crujidor Legendario",
+      "it": "Amuleto del Croccaroc Leggendario",
+      "pt": "Amuleto do Smagador Legendário"
+    },
+    "level": 84,
+    "imageUrl": "/retro/item/1099.png",
+    "setID": "52",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Water Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kaa Amulet",
+      "fr": "Amulette Argie",
+      "de": "Amulett Argie",
+      "es": "Amuletargo",
+      "it": "Amuleto Argo",
+      "pt": "Amuletárgico"
+    },
+    "level": 82,
+    "imageUrl": "/retro/item/1054.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Indigo Amublop",
+      "fr": "Amublop Indigo Royale",
+      "de": "Königliches Indigo Blob-Amulett",
+      "es": "Amublop Índigo Real",
+      "it": "Amublop Indaco Reale",
+      "pt": "Amublop Índigo Real"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/1135.png",
+    "setID": "105",
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 30 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Coco Amublop",
+      "fr": "Amublop Coco Royale",
+      "de": "Königliches Kokos Blob-Amulett",
+      "es": "Amublop Coco Real",
+      "it": "Amublop Cocco Reale",
+      "pt": "Amublop Coco Real"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/1134.png",
+    "setID": "104",
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Pippin Amublop",
+      "fr": "Amublop Reinette Royale",
+      "de": "Königliches Apfel Blob-Amulett",
+      "es": "Amublop Reineta Real",
+      "it": "Amublop Reginetta Reale",
+      "pt": "Amublop Maçã Real"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/1133.png",
+    "setID": "103",
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 30 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Morello Cherry Amublop",
+      "fr": "Amublop Griotte Royale",
+      "de": "Königliches Kirsch Blob-Amulett",
+      "es": "Amublop Guinda Real",
+      "it": "Amublop Griotta Reale",
+      "pt": "Amublop Cereja Real"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/1132.png",
+    "setID": "102",
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Shika's Ears",
+      "fr": "Epis de Shika",
+      "de": "Shikas Ähren",
+      "es": "Espiga de Shika",
+      "it": "Spiga di Shika",
+      "pt": "Orelhas de Shika"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/1113.png",
+    "setID": "53",
+    "stats": [
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Terrdala Amulet",
+      "fr": "Amulette Terrdala",
+      "de": "Teradala-Amulett",
+      "es": "Amuleto Tierradala",
+      "it": "Amuleto Terradala",
+      "pt": "Amuleto Terradala"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/1080.png",
+    "setID": "36",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Farle's Ears",
+      "fr": "Epis de Farle",
+      "de": "Farles Ähre",
+      "es": "Espiga de Farle",
+      "it": "Spiga di Farle",
+      "pt": "Orelhas de Farle"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/1068.png",
+    "setID": "17",
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Smoothitch O'Ball",
+      "fr": "La Doubitch O'Boul",
+      "de": "Die Weichlichkeit O'Bouls",
+      "es": "La Bostabola",
+      "it": "L' Ascell O'Bul",
+      "pt": "Amuletofedor O'Bal"
+    },
+    "level": 77,
+    "imageUrl": "/retro/item/1087.png",
+    "setID": "38",
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crocodyl Chief Amulet",
+      "fr": "Amulette du Chef Crocodaille",
+      "de": "Amulett des Chef-Crocodylls",
+      "es": "Amuleto de jefe cocodrail",
+      "it": "Amuleto del Capo Coccodrail",
+      "pt": "Amuleto do Chefe Crocodyl"
+    },
+    "level": 70,
+    "imageUrl": "/retro/item/1067.png",
+    "setID": "20",
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Skill of Dolls",
+      "fr": "La Maîtrise des Poupées",
+      "de": "Puppet-Master",
+      "es": "El Dominio de los Muñecos",
+      "it": "La Padronanza delle Bambole",
+      "pt": "O Domínio das Bonecas"
+    },
+    "level": 69,
+    "imageUrl": "/retro/item/1056.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 45 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": 2, "maxStat": 3 },
+      { "stat": "Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobbamu",
+      "fr": "Boufbamu",
+      "de": "Fressbamu",
+      "es": "Jalaboleto",
+      "it": "Pappaballeto",
+      "pt": "Gobbamu"
+    },
+    "level": 64,
+    "imageUrl": "/retro/item/1158.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Turquoise Amulet",
+      "fr": "Amulette Turquoise",
+      "de": "Türkis-Amulett",
+      "es": "Amuleto turquesa",
+      "it": "Amuleto Turchese",
+      "pt": "Amuleto Turquesa"
+    },
+    "level": 63,
+    "imageUrl": "/retro/item/1058.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Prospecting", "minStat": 3, "maxStat": 5 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Stars Custard Tart",
+      "fr": "Le Flan des Étoiles",
+      "de": "Sternpudding",
+      "es": "El Flan de Estrellas",
+      "it": "Il Budino delle Stelle",
+      "pt": "Pudim das Estrelas"
+    },
+    "level": 62,
+    "imageUrl": "/retro/item/1010.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Aerdala Amulet",
+      "fr": "Amulette Aerdala",
+      "de": "Aerdala-Amulett",
+      "es": "Amuleto Airedala",
+      "it": "Amuleto Erdala",
+      "pt": "Amuleto Ardala"
+    },
+    "level": 62,
+    "imageUrl": "/retro/item/1082.png",
+    "setID": "35",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Koalak Amulet",
+      "fr": "Amulette du Koalak",
+      "de": "Koalak-Amulett",
+      "es": "Amuleto de koalak",
+      "it": "Amuleto del Koalak",
+      "pt": "Amuleto do Koalak"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/1094.png",
+    "setID": "46",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 4 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wabbit-tooth Amulet",
+      "fr": "Amulette \"Dents de Wabbits\"",
+      "de": "\"Die Zähne des Wabbits\"",
+      "es": "Amuleto «Dientes de Wabbits»",
+      "it": "Amuleto \"Denti di Wabbit\"",
+      "pt": "Amuleto \"Dentes de Wabbits\""
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/1059.png",
+    "setID": "11",
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Power", "minStat": 1, "maxStat": 5 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gelamu",
+      "fr": "Gelamu",
+      "de": "Gelamu",
+      "es": "Gelamú",
+      "it": "Gelamu",
+      "pt": "Gelamu"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/1051.png",
+    "setID": "6",
+    "stats": [
+      { "stat": "Initiative", "minStat": 101, "maxStat": 400 },
+      { "stat": "Range", "minStat": 1, "maxStat": 2 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Boowolfulet",
+      "fr": "Amuloumulette",
+      "de": "WuWulf-Amulett",
+      "es": "Amediulubomuleto",
+      "it": "Abuulupulupeto",
+      "pt": "Booloboamul"
+    },
+    "level": 57,
+    "imageUrl": "/retro/item/1098.png",
+    "setID": "32",
+    "stats": [
+      { "stat": "Agility", "minStat": 6, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 5 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bow'hee Talisman",
+      "fr": "Talisman du Faucheur d'Avoine",
+      "de": "Talisman des Karpf'Ediemtales",
+      "es": "Talismán del segador de avena",
+      "it": "Talismano del Falciatore d'Avena",
+      "pt": "Talismã do Ceifador de Aveia"
+    },
+    "level": 55,
+    "imageUrl": "/retro/item/1084.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kloug's Amulet",
+      "fr": "Amulette de Kloug",
+      "de": "Äkebäker-Amulett",
+      "es": "Amuleto de Napazam",
+      "it": "Amuleto di Kloug",
+      "pt": "Amuleto de Napizram"
+    },
+    "level": 53,
+    "imageUrl": "/retro/item/1155.png",
+    "setID": "154",
+    "stats": [
+      { "stat": "Chance", "minStat": 16, "maxStat": 20 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Hulkrap's Amulet",
+      "fr": "Amulette d'Hulkrap",
+      "de": "Lerkstim-Amulett",
+      "es": "Amuleto de Ravelaca",
+      "it": "Amuleto di Quentindel",
+      "pt": "Amuleto de Lápucra"
+    },
+    "level": 53,
+    "imageUrl": "/retro/item/1156.png",
+    "setID": "152",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 25 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Plain Crackler Amulet",
+      "fr": "Amulette du Craqueleur des Plaines",
+      "de": "Amulett der Krachler der Ebenen",
+      "es": "Amuleto de crujidor de las llanuras",
+      "it": "Amuleto del Croccaroc delle Pianure",
+      "pt": "Amuleto do Smagador das Planícies"
+    },
+    "level": 52,
+    "imageUrl": "/retro/item/1055.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 8 },
+      { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Eye of the Kaniger",
+      "fr": "L'Œil de Kanigrou",
+      "de": "Das Auge des Kanigrous",
+      "es": "Ojo de kanugro",
+      "it": "L'Occhio di Kanigrù",
+      "pt": "Olho do Kanigre"
+    },
+    "level": 52,
+    "imageUrl": "/retro/item/1045.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Critical", "minStat": 2, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 5 },
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Xelor Amulet",
+      "fr": "Amulette de Xélor",
+      "de": "Xélor-Amulett",
+      "es": "Amuleto de Xelor",
+      "it": "Amuleto di Xelor",
+      "pt": "Amuleto de Xelor"
+    },
+    "level": 52,
+    "imageUrl": "/retro/item/1028.png",
+    "setID": null,
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Grozillamu",
+      "fr": "Grozillamu",
+      "de": "[!DE] Grozillamu",
+      "es": "[!ES] Grozillamu",
+      "it": "[!IT] Grozillamu",
+      "pt": "[!PT] Grozillamu"
+    },
+    "level": 51,
+    "imageUrl": "/retro/item/1157.png",
+    "setID": null,
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Power", "minStat": 21, "maxStat": 30 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Oly Medal",
+      "fr": "Médaille Oly",
+      "de": "Medaille Oly",
+      "es": "Medalla Lacena",
+      "it": "Medaglia Oly",
+      "pt": "Medalha Oly"
+    },
+    "level": 51,
+    "imageUrl": "/retro/item/1023.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Damage", "minStat": null, "maxStat": 6 },
+      { "stat": "Strength", "minStat": null, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": [
+        "Alignement = Bonta\n                                \n                                ",
+        "\n                                \n                                  Alignement > 10"
+      ],
+      "fr": [
+        "Alignement = Bonta\n                                \n                                ",
+        "\n                                \n                                  Alignement > 10"
+      ],
+      "de": [
+        "Alignement = Bonta\n                                \n                                ",
+        "\n                                \n                                  Alignement > 10"
+      ],
+      "es": [
+        "Alignement = Bonta\n                                \n                                ",
+        "\n                                \n                                  Alignement > 10"
+      ],
+      "it": [
+        "Alignement = Bonta\n                                \n                                ",
+        "\n                                \n                                  Alignement > 10"
+      ],
+      "pt": [
+        "Alignement = Bonta\n                                \n                                ",
+        "\n                                \n                                  Alignement > 10"
+      ]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Indigo Amublop",
+      "fr": "Amublop Indigo",
+      "de": "Indigoblob-Amulett",
+      "es": "Amublop índigo",
+      "it": "Amublop Indaco",
+      "pt": "Amublop Índigo"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/1131.png",
+    "setID": "101",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Coco Amublop",
+      "fr": "Amublop Coco",
+      "de": "Kokos Blob-Amulett",
+      "es": "Amublop coco",
+      "it": "Amublop Cocco",
+      "pt": "Amublop Coco"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/1130.png",
+    "setID": "100",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pippin Amublop",
+      "fr": "Amublop Reinette",
+      "de": "Apfel Blob-Amulett",
+      "es": "Amublop reineta",
+      "it": "Amublop Reginetta",
+      "pt": "Amublop Maçã"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/1129.png",
+    "setID": "99",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Morello Cherry Amublop",
+      "fr": "Amublop Griotte",
+      "de": "Kirsch Blob-Amulett",
+      "es": "Amublop guinda",
+      "it": "Amublop Griotta",
+      "pt": "Amublop Cereja"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/1128.png",
+    "setID": "98",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Gobball's Amulet",
+      "fr": "Amulette Royale du Bouftou",
+      "de": "Amulett des königlichen Fresssacks",
+      "es": "Amuleto Real de Jalató",
+      "it": "Amuleto Reale del Pappatutto",
+      "pt": "Amuleto Real do Papatudo"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/1050.png",
+    "setID": "4",
+    "stats": [
+      { "stat": "Strength", "minStat": 11, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 30 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Amulet of Luck",
+      "fr": "Amulette de la Boule",
+      "de": "Glückskugel",
+      "es": "Amuleto de la Bola",
+      "it": "Amuleto della Palla",
+      "pt": "Amuleto da Bola"
+    },
+    "level": 49,
+    "imageUrl": "/retro/item/1038.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Alowa Amulet",
+      "fr": "Amulette Papayou",
+      "de": "Papayo-Amulett",
+      "es": "Amuleto del director Kuno",
+      "it": "Amuleto Loha",
+      "pt": "Amuleto Aloha"
+    },
+    "level": 47,
+    "imageUrl": "/retro/item/1144.png",
+    "setID": "129",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Amulet of the Depths",
+      "fr": "Amulette des Abîmes",
+      "de": "Amulett des Abgrunds",
+      "es": "Amuleto de los Abismos",
+      "it": "Amuleto degli Abissi",
+      "pt": "Amuleto dos Abismos"
+    },
+    "level": 47,
+    "imageUrl": "/retro/item/1022.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Critical", "minStat": null, "maxStat": 5 },
+      { "stat": "Wisdom", "minStat": 2, "maxStat": 21 },
+      { "stat": "Chance", "minStat": null, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Harmony",
+      "fr": "Harmonie",
+      "de": "Harmonie",
+      "es": "Armonía",
+      "it": "Armonia",
+      "pt": "Harmonia"
+    },
+    "level": 47,
+    "imageUrl": "/retro/item/1122.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": null, "maxStat": 15 },
+      { "stat": "Agility", "minStat": null, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 15 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 15 },
+      { "stat": "Chance", "minStat": null, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crackler Pendant",
+      "fr": "Amulette du Craqueleur",
+      "de": "Amulett des Krachlers",
+      "es": "Amuleto de crujidor",
+      "it": "Amuleto del Croccaroc",
+      "pt": "Amuleto do Smagador"
+    },
+    "level": 47,
+    "imageUrl": "/retro/item/1025.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Water Resistance", "minStat": 2, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 2, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 2, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Flooey's Clock",
+      "fr": "Pendule du Gudule",
+      "de": "Guduls Taschenuhr",
+      "es": "Péndulo de Gúdulo",
+      "it": "Ciondolo di Gudolo",
+      "pt": "Pêndulo do Flooey"
+    },
+    "level": 46,
+    "imageUrl": "/retro/item/1090.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crackler Amulet",
+      "fr": "Craquamulette",
+      "de": "Krachlerkette",
+      "es": "Crujimuleto",
+      "it": "Croccamuleto",
+      "pt": "Smagamuleto"
+    },
+    "level": 46,
+    "imageUrl": "/retro/item/1077.png",
+    "setID": "26",
+    "stats": [
+      { "stat": "Strength", "minStat": 1, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 20 },
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 8 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 8 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 8 },
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] L'Abramu",
+      "fr": "L'Abramu",
+      "de": "[!DE] L'Abramu",
+      "es": "[!ES] L'Abramu",
+      "it": "[!IT] L'Abramu",
+      "pt": "[!PT] L'Abramu"
+    },
+    "level": 46,
+    "imageUrl": "/retro/item/1016.png",
+    "setID": null,
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Vampyre Amulet",
+      "fr": "Amulette du Vampyre",
+      "de": "Vampyr-Amulett",
+      "es": "Amuleto de Vampyro",
+      "it": "Amuleto del Vampyro",
+      "pt": "Amuleto do Vampyro"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/1146.png",
+    "setID": "130",
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Summons", "minStat": null, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden Scarabugly Amulet",
+      "fr": "Amulette Scarabosse Doré",
+      "de": "Amulett des goldenen Scarabiestes",
+      "es": "Amuleto de Escarajefe Dorado",
+      "it": "Amuleto dello Scaragobba Dorato",
+      "pt": "Amuleto do Scarachefe Dourado"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/1096.png",
+    "setID": "51",
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 45 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 6, "maxStat": 15 },
+      { "stat": "Heals", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Summer Leaf",
+      "fr": "La Feuille d'Eté",
+      "de": "Sommerblatt",
+      "es": "La Hoja de Verano",
+      "it": "La Foglia d'Estate",
+      "pt": "A folha do verão"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/1063.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 30 },
+      { "stat": "Prospecting", "minStat": 4, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Liche Chain",
+      "fr": "Chaîne de la Liche",
+      "de": "Kette des Lichas",
+      "es": "Cadena del Lich",
+      "it": "Catena della Liche",
+      "pt": "Corrente de Liche"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/1012.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Summons", "minStat": null, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Claw's Jigsaw Amulet",
+      "fr": "L'Amulette du Puzzle de la Griffe",
+      "de": "Amulett des Krallenrätsels",
+      "es": "El Amuleto del Puzzle de la Garra",
+      "it": "L'Amuleto del Puzzle dell'Artiglio",
+      "pt": "Amuleto do Quebra-Cabeça da Garra"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/1036.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lucky Mulette",
+      "fr": "Chance à Mulette",
+      "de": "Glücksbringer von Mulette",
+      "es": "Suerte de Amulata",
+      "it": "Fortun a Muleto",
+      "pt": "Mulette da Sorte"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/1026.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Prospecting", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Amlugo",
+      "fr": "Yugolette",
+      "de": "Yagulett",
+      "es": "Ugoleto",
+      "it": "Yugoleto",
+      "pt": "Yugoleto"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/1147.png",
+    "setID": "134",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Chavate",
+      "fr": "La Chaplivate",
+      "de": "Chaplivatte",
+      "es": "La Charbata",
+      "it": "La Chapavatta",
+      "pt": "A Gravata"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/1145.png",
+    "setID": "116",
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Slump Necklace",
+      "fr": "Collier Sleump",
+      "de": "Slump-Kette",
+      "es": "Collar Slump",
+      "it": "Collana Slump",
+      "pt": "TomboColar"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/1143.png",
+    "setID": "140",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Heals", "minStat": 1, "maxStat": 2 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tartamulet",
+      "fr": "Tartamulette",
+      "de": "Naschmulett",
+      "es": "Tartamuleto",
+      "it": "Tartamuleto",
+      "pt": "Tortamuleto"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/1138.png",
+    "setID": "110",
+    "stats": [
+      { "stat": "Strength", "minStat": 1, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 4 },
+      { "stat": "Power", "minStat": 1, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kam Assutra Amulet",
+      "fr": "Amulette du Kam Assutra",
+      "de": "Amulett von Kam Assutra",
+      "es": "Amuleto del Kam Asutra",
+      "it": "Amuleto del Kam Assutra",
+      "pt": "Amuleto do Kam Assutra"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/1004.png",
+    "setID": null,
+    "stats": [{ "stat": "AP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Goboff's Amulet",
+      "fr": "Amulette de Gobeuf",
+      "de": "Gobschling-Amulett",
+      "es": "Amuleto de Gobuevo",
+      "it": "Amuleto di Gobluovo",
+      "pt": "Amuleto de Gobovo"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/1152.png",
+    "setID": "146",
+    "stats": [
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Grute's Amulet",
+      "fr": "Amulette de Grüt",
+      "de": "Bwurgs-Amulett",
+      "es": "Amuleto de Gruut",
+      "it": "Amuleto di Griut",
+      "pt": "Amuleto de Grute"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/1153.png",
+    "setID": "144",
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Esteban",
+      "fr": "L'Esteban",
+      "de": "Das Esteban",
+      "es": "Amuleto Solar",
+      "it": "L'Esteban",
+      "pt": "O Esteban"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/1149.png",
+    "setID": "136",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 35 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Slugly Amulet",
+      "fr": "Collertue",
+      "de": "Schnamulett",
+      "es": "Collechuga",
+      "it": "Amulettuga",
+      "pt": "Amuleto Lesmoso"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/1148.png",
+    "setID": "137",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wind Kwakamulet",
+      "fr": "Amukwak du Vent",
+      "de": "Windiges Amukwack",
+      "es": "Amukwak de viento",
+      "it": "Amukwak di Vento",
+      "pt": "Kwakamuleto de vento"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/1070.png",
+    "setID": "15",
+    "stats": [
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 20 },
+      { "stat": "Critical", "minStat": null, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Earth Kwakamulet",
+      "fr": "Amukwak de Terre",
+      "de": "Steinernes Amukwack",
+      "es": "Amukwak de tierra",
+      "it": "Amukwak di Terra",
+      "pt": "Kwakamuleto de Terra"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/1072.png",
+    "setID": "14",
+    "stats": [
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 20 },
+      { "stat": "Critical", "minStat": null, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ice Kwakamulet",
+      "fr": "Amukwak de Glace",
+      "de": "Eisiges Amukwack",
+      "es": "Amukwak de hielo",
+      "it": "Amukwak di Ghiaccio",
+      "pt": "Kwakamuleto de Gelo"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/1071.png",
+    "setID": "13",
+    "stats": [
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 20 },
+      { "stat": "Critical", "minStat": null, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fire Kwakamulet",
+      "fr": "Amukwak de Flammes",
+      "de": "Feuriges Amukwack",
+      "es": "Amukwak de llamas",
+      "it": "Amukwak di Fiamma",
+      "pt": "Kwakamuleto de Fogo"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/1047.png",
+    "setID": "2",
+    "stats": [
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 20 },
+      { "stat": "Critical", "minStat": null, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Mad Bacon's Scarf",
+      "fr": "Le foulard du Lard Fou",
+      "de": "Lard Fous Halstuch",
+      "es": "El fular del Tocino Loco",
+      "it": "Il Foulard del Lard Fù",
+      "pt": "O Tecido do Toucinho Louco"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/1042.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Water Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "Air Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "Fire Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Neutral Resistance", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Modified Dragolyre",
+      "fr": "Dragolyre Remaniée",
+      "de": "Modifizierte Dracoleier",
+      "es": "Dragolira modificada",
+      "it": "Dragolyr Ritoccata",
+      "pt": "Dragolira modificada"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/1025.png",
+    "setID": null,
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Stroy Zemol's Amulet",
+      "fr": "Amulette de Rekto Topi",
+      "de": "Piffpaffplumps-Amulett",
+      "es": "Amuleto de Panpun Pon",
+      "it": "Amuleto di Altap Eto",
+      "pt": "Anel de Stroy Zemol"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/1154.png",
+    "setID": "148",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Heals", "minStat": 1, "maxStat": 2 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lektor's Amulet",
+      "fr": "Amulette de Laikteur",
+      "de": "Terlecs Amulett",
+      "es": "Amuleto de Retkel",
+      "it": "Amuleto di An Lekter",
+      "pt": "Amuleto de Lektor"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/1151.png",
+    "setID": "147",
+    "stats": [
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Noke's Necklace",
+      "fr": "Collier de Noké",
+      "de": "Nokes Mono-Halskette",
+      "es": "Collar de Noke",
+      "it": "Collana di Noke",
+      "pt": "Colar Noke"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/1150.png",
+    "setID": "135",
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Akwadala Amulet",
+      "fr": "Amulette Akwadala",
+      "de": "Akwadala-Amulett",
+      "es": "Amuleto Akwadala",
+      "it": "Amuleto Aksadala",
+      "pt": "Amuleto Akwadala"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/1079.png",
+    "setID": "34",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pirate Amulet",
+      "fr": "Amulette du Pirate",
+      "de": "Piratenamulett",
+      "es": "Amuleto de pirata",
+      "it": "Amuleto del Pirata",
+      "pt": "Amuleto do Pirata"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/1020.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Critical", "minStat": null, "maxStat": 2 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Palid Emblem",
+      "fr": "Emblème Livide",
+      "de": "Emblem der Blässe",
+      "es": "Emblema Lívido",
+      "it": "Emblema Livido",
+      "pt": "Emblema Pálido"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/1032.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Damage", "minStat": null, "maxStat": 2 },
+      { "stat": "Strength", "minStat": null, "maxStat": 10 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Celestial Brooch",
+      "fr": "La Broche Céleste",
+      "de": "Die Himmlische Brosche",
+      "es": "El Broche Celeste",
+      "it": "La Spilla Celeste",
+      "pt": "O Broche Celestial"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/1008.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Critical", "minStat": null, "maxStat": 5 },
+      { "stat": "Damage", "minStat": null, "maxStat": 2 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bambulet",
+      "fr": "Bambamulette",
+      "de": "Bambulett",
+      "es": "Bambumuleto",
+      "it": "Bambamuleto",
+      "pt": "Bambuleto"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/1078.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Heals", "minStat": 3, "maxStat": 5 },
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Vegamu",
+      "fr": "Vegamu",
+      "de": "Vegamu",
+      "es": "Vegamú",
+      "it": "Vegemuleto",
+      "pt": "Vegamu"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/1053.png",
+    "setID": "10",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 70 },
+      { "stat": "Range", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Moskito Ambamulet",
+      "fr": "Ambramulette Moskito",
+      "de": "Moskito-Bernisteinmedaillon",
+      "es": "Ambarmuleto moskito",
+      "it": "Ambramuleto Moskito",
+      "pt": "Ambamuleto Moskito"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/1017.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dark Miner Amulet",
+      "fr": "Amulette du Mineur Sombre",
+      "de": "Amulett des Schattenbergmanns",
+      "es": "Amuleto de minero oscuro",
+      "it": "Amuleto del Minatore Oscuro",
+      "pt": "Amuleto do Mineiro Sombrio"
+    },
+    "level": 39,
+    "imageUrl": "/retro/item/1061.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": 21, "maxStat": 35 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Peace",
+      "fr": "Accord",
+      "de": "Einvernehmen",
+      "es": "Acuerdo",
+      "it": "Accordo",
+      "pt": "Acordo"
+    },
+    "level": 38,
+    "imageUrl": "/retro/item/1121.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": null, "maxStat": 10 },
+      { "stat": "Agility", "minStat": null, "maxStat": 10 },
+      { "stat": "Chance", "minStat": null, "maxStat": 10 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 10 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 10 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Silicate Amulet",
+      "fr": "Amulette de Silicate",
+      "de": "Halskette von Silikat",
+      "es": "Amuleto de Silicato",
+      "it": "Amuleto di Silicato",
+      "pt": "Amuleto de Silicato"
+    },
+    "level": 37,
+    "imageUrl": "/retro/item/1009.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Critical", "minStat": null, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": null, "maxStat": 1 },
+      { "stat": "Air Resistance", "minStat": null, "maxStat": 1 },
+      { "stat": "Fire Resistance", "minStat": null, "maxStat": 1 },
+      { "stat": "Earth Resistance", "minStat": null, "maxStat": 1 },
+      { "stat": "Neutral Resistance", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Somoon Fisherman Amulet",
+      "fr": "Amulette du Pêcheur de Somoon",
+      "de": "Amulett des Somoon-Fischers",
+      "es": "Amuleto del pescador de salmoon",
+      "it": "Amuleto del Pescatore di Salmoon",
+      "pt": "Amuleto do Pescador de Salmoon"
+    },
+    "level": 35,
+    "imageUrl": "/retro/item/1024.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": 12, "maxStat": 41 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Ambramulette Arackne",
+      "fr": "Ambramulette Arackne",
+      "de": "[!DE] Ambramulette Arackne",
+      "es": "[!ES] Ambramulette Arackne",
+      "it": "[!IT] Ambramulette Arackne",
+      "pt": "[!PT] Ambramulette Arackne"
+    },
+    "level": 34,
+    "imageUrl": "/retro/item/1018.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Deceitful Amulet",
+      "fr": "Fourbamulette",
+      "de": "Heckenschutzamulett",
+      "es": "Mazorramuleto",
+      "it": "Furbamuleto",
+      "pt": "Amularbustor"
+    },
+    "level": 33,
+    "imageUrl": "/retro/item/1069.png",
+    "setID": "16",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": null, "maxStat": 1 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Deulegarnoulle Amulet",
+      "fr": "Amulette Deulegarnoulle",
+      "de": "VanDenFrogg-Halskette",
+      "es": "Amuleto Demetarana",
+      "it": "Amuleto Dimetarana",
+      "pt": "Amuleto Deulegarnoulle"
+    },
+    "level": 33,
+    "imageUrl": "/retro/item/1002.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Summons", "minStat": null, "maxStat": 2 },
+      { "stat": "Water Resistance", "minStat": null, "maxStat": 2 },
+      { "stat": "Air Resistance", "minStat": null, "maxStat": 2 },
+      { "stat": "Fire Resistance", "minStat": null, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dragolyre",
+      "fr": "Dragolyre",
+      "de": "Dracoleier",
+      "es": "Dragolira",
+      "it": "Dragolyr",
+      "pt": "Dragolira"
+    },
+    "level": 32,
+    "imageUrl": "/retro/item/1009.png",
+    "setID": null,
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bud",
+      "fr": "La Bourgeonette",
+      "de": "Knospenkettchen",
+      "es": "El Brotecillo",
+      "it": "La Gemmina",
+      "pt": "Botão"
+    },
+    "level": 32,
+    "imageUrl": "/retro/item/1041.png",
+    "setID": null,
+    "stats": [
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Badoul's Amulet",
+      "fr": "Amulette du Badoul",
+      "de": "Amulett von Badoul",
+      "es": "Amuleto del Badulo",
+      "it": "Amuleto del Badul",
+      "pt": "Amuleto do Badul"
+    },
+    "level": 32,
+    "imageUrl": "/retro/item/1037.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lahilama Medal",
+      "fr": "Médaille Lahilama",
+      "de": "Lahilama-Medaillon",
+      "es": "Medalla Hilama",
+      "it": "Medaglia Lahilama",
+      "pt": "Medalha Lahilama"
+    },
+    "level": 31,
+    "imageUrl": "/retro/item/1083.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Heals", "minStat": 1, "maxStat": 3 },
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Holy Medal",
+      "fr": "Médaille Holy",
+      "de": "Medaille Holy",
+      "es": "Medalla Manduca",
+      "it": "Medaglia Holy",
+      "pt": "Medalha Sagrada"
+    },
+    "level": 31,
+    "imageUrl": "/retro/item/1023.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Damage", "minStat": 1, "maxStat": 3 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Bibelaw",
+      "fr": "La Bibelaw",
+      "de": "Das Bibbelaw",
+      "es": "La Chuchoría",
+      "it": "Law Bibelò",
+      "pt": "O Bibelaw"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/1044.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Air Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Water Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Fire Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Earth Resistance", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Shika Amulet",
+      "fr": "Amulette de Shika",
+      "de": "Shikas Amulett",
+      "es": "Amuleto de Shika",
+      "it": "Amuleto di Shika",
+      "pt": "Amuleto de Shika"
+    },
+    "level": 29,
+    "imageUrl": "/retro/item/1060.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 31, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kabbala",
+      "fr": "Kabale",
+      "de": "Kabbal",
+      "es": "Cábala",
+      "it": "Kabala",
+      "pt": "Kabala"
+    },
+    "level": 29,
+    "imageUrl": "/retro/item/1013.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 10 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pin of Mhete",
+      "fr": "La Broche Hète",
+      "de": "Die Brosche Hète",
+      "es": "El Broche Heta",
+      "it": "La Spilla Edino",
+      "pt": "Broche de Mhete"
+    },
+    "level": 28,
+    "imageUrl": "/retro/item/1015.png",
+    "setID": null,
+    "stats": [{ "stat": "Wisdom", "minStat": 11, "maxStat": 20 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bobblamulet",
+      "fr": "Pompamulette",
+      "de": "Pom-Pompösamulett",
+      "es": "Pompamuleto",
+      "it": "Pompamuleto",
+      "pt": "Bobblamuleto"
+    },
+    "level": 27,
+    "imageUrl": "/retro/item/1140.png",
+    "setID": "124",
+    "stats": [
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fame",
+      "fr": "La Célébrité",
+      "de": "Die Berühmtheit",
+      "es": "La Celebridad",
+      "it": "La Celebrità",
+      "pt": "A Fama"
+    },
+    "level": 27,
+    "imageUrl": "/retro/item/1009.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kitsou Amulet",
+      "fr": "Amulette du Kitsou",
+      "de": "Kitsou-Amulett",
+      "es": "Amuleto de kitsu",
+      "it": "Amuleto del Kitsù",
+      "pt": "Amuleto do Kitsu"
+    },
+    "level": 26,
+    "imageUrl": "/retro/item/1091.png",
+    "setID": "41",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 40 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Larvamulet",
+      "fr": "Larvamulette",
+      "de": "Larvamulett",
+      "es": "Larvamuleto",
+      "it": "Larvamuleto",
+      "pt": "Larvamuleto"
+    },
+    "level": 26,
+    "imageUrl": "/retro/item/1088.png",
+    "setID": "33",
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 20 },
+      { "stat": "Intelligence", "minStat": 6, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 6, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Understanding",
+      "fr": "Entente",
+      "de": "Eintracht",
+      "es": "Entendimiento",
+      "it": "Intesa",
+      "pt": "Entendimento"
+    },
+    "level": 26,
+    "imageUrl": "/retro/item/1011.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": null, "maxStat": 5 },
+      { "stat": "Agility", "minStat": null, "maxStat": 5 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 5 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 5 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 5 },
+      { "stat": "Chance", "minStat": null, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crab Amulet",
+      "fr": "Amulette en Crabe",
+      "de": "Krebshalskette",
+      "es": "Amuleto de cangrejo",
+      "it": "Amuleto di Granchio",
+      "pt": "Amuleto de Caranguejo"
+    },
+    "level": 24,
+    "imageUrl": "/retro/item/1030.png",
+    "setID": null,
+    "stats": [{ "stat": "Range", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tofu Amulet",
+      "fr": "Amulette du Tofu",
+      "de": "Tofu-Amulett",
+      "es": "Amuleto de tofu",
+      "it": "Amuleto del Tofu",
+      "pt": "Amuleto do Tofu"
+    },
+    "level": 22,
+    "imageUrl": "/retro/item/1095.png",
+    "setID": "50",
+    "stats": [
+      { "stat": "Agility", "minStat": 6, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lumberjack Amulet",
+      "fr": "Amulette du Bûcheron",
+      "de": "Holzfälleramulett",
+      "es": "Amuleto del leñador",
+      "it": "Amuleto del Taglialegna",
+      "pt": "Amuleto do Lenhador"
+    },
+    "level": 22,
+    "imageUrl": "/retro/item/1009.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": null, "maxStat": 15 },
+      { "stat": "Chance", "minStat": null, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fisherman Amulet",
+      "fr": "Amulette du Marin",
+      "de": "Halskette des Seebären",
+      "es": "Amuleto de marinero",
+      "it": "Amuleto del Marinaio",
+      "pt": "Amuleto do Marinheiro"
+    },
+    "level": 22,
+    "imageUrl": "/retro/item/1029.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": 21, "maxStat": 30 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pippin",
+      "fr": "La Reinette",
+      "de": "Reignett",
+      "es": "La Ranilla",
+      "it": "La Reginetta",
+      "pt": "A Reineta"
+    },
+    "level": 22,
+    "imageUrl": "/retro/item/1027.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": null, "maxStat": 20 },
+      { "stat": "Agility", "minStat": null, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Farmer Amulet",
+      "fr": "Amulette Paysanne",
+      "de": "Bauernamulett",
+      "es": "Amuleto campesino",
+      "it": "Amuleto Contadino",
+      "pt": "Amuleto Camponês"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/1097.png",
+    "setID": "47",
+    "stats": [
+      { "stat": "Damage", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 1, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobkool Amulet",
+      "fr": "Amulette du Boufcoul",
+      "de": "Fresscool-Amulett",
+      "es": "Amuleto de jalatranki",
+      "it": "Amuleto del Pappacool",
+      "pt": "Amuleto do Papakool"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/1093.png",
+    "setID": "43",
+    "stats": [
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bearman's Necklace",
+      "fr": "Amulette de l'Homme Ours",
+      "de": "Amulett des Bärenmannes",
+      "es": "Amuleto del hombre oso",
+      "it": "Amuleto dell'Uomo Orso",
+      "pt": "Amuleto do Homem Urso"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/1074.png",
+    "setID": "12",
+    "stats": [
+      { "stat": "Water Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "Air Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "Fire Resistance", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Arachnamu",
+      "fr": "Araknamu",
+      "de": "Arach-Amulett",
+      "es": "Araknamú",
+      "it": "Araknamu",
+      "pt": "Araknamuleto"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/1049.png",
+    "setID": "3",
+    "stats": [{ "stat": "Range", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Captain Chafer Amulet",
+      "fr": "Amulette du Chafer",
+      "de": "Chafer-Amulett",
+      "es": "Amuleto de chafer",
+      "it": "Amuleto dello Chafer",
+      "pt": "Amuleto do Chafer"
+    },
+    "level": 19,
+    "imageUrl": "/retro/item/1003.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": null, "maxStat": 4 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 4 },
+      { "stat": "Critical", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Gougnole",
+      "fr": "La Gougnole",
+      "de": "Das Geschnapsel",
+      "es": "El Etirujo",
+      "it": "Il Goccetto",
+      "pt": "O Gougnole"
+    },
+    "level": 17,
+    "imageUrl": "/retro/item/1007.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 4 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 4 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Omelette Amulet",
+      "fr": "Omelette Amulette",
+      "de": "Omelett-Amulett",
+      "es": "Amuleto Hortilla",
+      "it": "Omelette Amuleto",
+      "pt": "Amuleto Melete"
+    },
+    "level": 17,
+    "imageUrl": "/retro/item/1040.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 30 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Amulette Itby remaniée",
+      "fr": "Amulette Itby remaniée",
+      "de": "[!DE] Amulette Itby remaniée",
+      "es": "[!ES] Amulette Itby remaniée",
+      "it": "[!IT] Amulette Itby remaniée",
+      "pt": "[!PT] Amulette Itby remaniée"
+    },
+    "level": 17,
+    "imageUrl": "/retro/item/1031.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 20 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lars Amulet",
+      "fr": "Amulette du Bandit",
+      "de": "Banditenamulett",
+      "es": "Amuleto de bandido",
+      "it": "Amuleto del Bandito",
+      "pt": "Amuleto do Bandido"
+    },
+    "level": 16,
+    "imageUrl": "/retro/item/1076.png",
+    "setID": "25",
+    "stats": [{ "stat": "Damage", "minStat": 1, "maxStat": 3 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Moskito Amulet",
+      "fr": "Amulette du Moskito",
+      "de": "Medaillon des Moskitos",
+      "es": "Amuleto del moskito",
+      "it": "Amuleto del Moskito",
+      "pt": "Amuleto do Moskito"
+    },
+    "level": 15,
+    "imageUrl": "/retro/item/1075.png",
+    "setID": "23",
+    "stats": [
+      { "stat": "Chance", "minStat": 1, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Soft Calf",
+      "fr": "La Veaux Doux",
+      "de": "Weichmutband",
+      "es": "Jabún Suave",
+      "it": "La Vitel Dolce",
+      "pt": "O colar dos bezerros"
+    },
+    "level": 15,
+    "imageUrl": "/retro/item/1046.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 11, "maxStat": 17 },
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Hozuki Lampulet",
+      "fr": "La Lou Ptiote",
+      "de": "Lams Pione",
+      "es": "La Lucecita",
+      "it": "La Lu Chola",
+      "pt": "Lou Ptiote"
+    },
+    "level": 15,
+    "imageUrl": "/retro/item/1043.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 17 },
+      { "stat": "% Fire Resistance", "minStat": null, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Nhanor Kibrill Chain",
+      "fr": "La Chaîne Nhanor Kibrill",
+      "de": "Das Gelitzder Gogolkettchen",
+      "es": "La cadena Nhoro Kebriya",
+      "it": "La Catena 'Noro Kebrill",
+      "pt": "Corrente Nhanor Kibrill"
+    },
+    "level": 13,
+    "imageUrl": "/retro/item/1012.png",
+    "setID": null,
+    "stats": [{ "stat": "Intelligence", "minStat": 11, "maxStat": 15 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden Destiny",
+      "fr": "La Destinée Dorée",
+      "de": "Die Goldene Zukunft",
+      "es": "El Destino Dorado",
+      "it": "La Sorte Dorata",
+      "pt": "O Destino Dourado"
+    },
+    "level": 12,
+    "imageUrl": "/retro/item/1009.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 6 },
+      { "stat": "Agility", "minStat": null, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sponge Amulet",
+      "fr": "Amulette en Mousse",
+      "de": "Schwammulett",
+      "es": "Amuleto de esponja",
+      "it": "Amuleto di Spugna",
+      "pt": "Amuleto de Esponja"
+    },
+    "level": 11,
+    "imageUrl": "/retro/item/1106.png",
+    "setID": "63",
+    "stats": [{ "stat": "Vitality", "minStat": 6, "maxStat": 15 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Field Amulet",
+      "fr": "Amulette des Champs",
+      "de": "Wald-und-Wiesen-Amulett",
+      "es": "Amuleto de los campos",
+      "it": "Amuleto dei Fung",
+      "pt": "Amuleto dos Campos"
+    },
+    "level": 10,
+    "imageUrl": "/retro/item/1073.png",
+    "setID": "18",
+    "stats": [
+      { "stat": "Vitality", "minStat": 5, "maxStat": 6 },
+      { "stat": "Agility", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Instant Calm Amulet",
+      "fr": "Amulette Itby",
+      "de": "Amulett Itby",
+      "es": "Amuleto Blada",
+      "it": "Amuleto Itby",
+      "pt": "Amuleto Histenshalt"
+    },
+    "level": 10,
+    "imageUrl": "/retro/item/1031.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Puissante Amulette du Loup",
+      "fr": "Puissante Amulette du Loup",
+      "de": "[!DE] Puissante Amulette du Loup",
+      "es": "[!ES] Puissante Amulette du Loup",
+      "it": "[!IT] Puissante Amulette du Loup",
+      "pt": "[!PT] Puissante Amulette du Loup"
+    },
+    "level": 8,
+    "imageUrl": "/retro/item/1006.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 8 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Puissante Amulette de l'Ours",
+      "fr": "Puissante Amulette de l'Ours",
+      "de": "[!DE] Puissante Amulette de l'Ours",
+      "es": "[!ES] Puissante Amulette de l'Ours",
+      "it": "[!IT] Puissante Amulette de l'Ours",
+      "pt": "[!PT] Puissante Amulette de l'Ours"
+    },
+    "level": 8,
+    "imageUrl": "/retro/item/1005.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 8 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Puissante Amulette du Hibou",
+      "fr": "Puissante Amulette du Hibou",
+      "de": "[!DE] Puissante Amulette du Hibou",
+      "es": "[!ES] Puissante Amulette du Hibou",
+      "it": "[!IT] Puissante Amulette du Hibou",
+      "pt": "[!PT] Puissante Amulette du Hibou"
+    },
+    "level": 8,
+    "imageUrl": "/retro/item/1001.png",
+    "setID": null,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 8 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Belle Amulette du Loup",
+      "fr": "Belle Amulette du Loup",
+      "de": "[!DE] Belle Amulette du Loup",
+      "es": "[!ES] Belle Amulette du Loup",
+      "it": "[!IT] Belle Amulette du Loup",
+      "pt": "[!PT] Belle Amulette du Loup"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/1006.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 6 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Belle Amulette de l'Ours",
+      "fr": "Belle Amulette de l'Ours",
+      "de": "[!DE] Belle Amulette de l'Ours",
+      "es": "[!ES] Belle Amulette de l'Ours",
+      "it": "[!IT] Belle Amulette de l'Ours",
+      "pt": "[!PT] Belle Amulette de l'Ours"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/1005.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 6 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Belle Amulette du Hibou",
+      "fr": "Belle Amulette du Hibou",
+      "de": "[!DE] Belle Amulette du Hibou",
+      "es": "[!ES] Belle Amulette du Hibou",
+      "it": "[!IT] Belle Amulette du Hibou",
+      "pt": "[!PT] Belle Amulette du Hibou"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/1001.png",
+    "setID": null,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 6 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Krokette Amulet",
+      "fr": "Amulette de Krokette",
+      "de": "Kroketthalskett",
+      "es": "Amuleto de Kroketa",
+      "it": "Amuleto di Kroket",
+      "pt": "Amuleto de Kaskrokete"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/1007.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 6 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Rainbow Necklace",
+      "fr": "Collier de l'Arc en Ciel",
+      "de": "Regenbogenhalskette",
+      "es": "Collar del Arco Iris",
+      "it": "Collana dell'Arcobaleno",
+      "pt": "Colar de arco-Íris"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/1011.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 6 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobball Amulet",
+      "fr": "Amulette du Bouftou",
+      "de": "Amulett des Fresssacks",
+      "es": "Amuleto de jalató",
+      "it": "Amuleto del Pappatutto",
+      "pt": "Amuleto do Papatudo"
+    },
+    "level": 3,
+    "imageUrl": "/retro/item/1048.png",
+    "setID": "1",
+    "stats": [
+      { "stat": "Strength", "minStat": 1, "maxStat": 10 },
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Puny Owl Pendant",
+      "fr": "Pendentif du Hibou Chétif",
+      "de": "Anhänger der mickrigen Eule",
+      "es": "Colgante del Búho Enclenque",
+      "it": "Ciondolo del Gufo Fragile",
+      "pt": "Pendente de Coruja Fraca"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/1001.png",
+    "setID": null,
+    "stats": [{ "stat": "Intelligence", "minStat": 6, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wolf Amulet",
+      "fr": "Amulette du Loup",
+      "de": "Wolfsamulett",
+      "es": "Amuleto del lobo",
+      "it": "Amuleto del Lupo",
+      "pt": "Amuleto do lobo"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/1006.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 4 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bear Amulet",
+      "fr": "Amulette de l'Ours",
+      "de": "Bärenamulett",
+      "es": "Amuleto del oso",
+      "it": "Amuleto dell'Orso",
+      "pt": "Amuleto do urso"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/1005.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 4 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Owl Amulet",
+      "fr": "Amulette du Hibou",
+      "de": "Eulenamulett",
+      "es": "Amuleto del búho",
+      "it": "Amuleto del Gufo",
+      "pt": "Amuleto da coruja"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/1001.png",
+    "setID": null,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 4 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sram Amulet",
+      "fr": "Amulette du Sram",
+      "de": "SRAMulett",
+      "es": "Amuleto de sram",
+      "it": "Amuleto dell'Etram",
+      "pt": "Amuleto do Sram"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/1003.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 4 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobball Tear",
+      "fr": "La Larme du Bouftou",
+      "de": "Die Träne des Fresssacks",
+      "es": "La Lágrima de Jalató",
+      "it": "La Lacrima di Pappatutto",
+      "pt": "A Lágrima do Papatudo"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/1007.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 4 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Issa Mess",
+      "fr": "Le S'Mesme",
+      "de": "Äs Ähm Ässe",
+      "es": "El S'Mesmo",
+      "it": "Il S'Mesmo",
+      "pt": "O S'Mesmo"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1120.png",
+    "setID": "69",
+    "stats": [{ "stat": "Prospecting", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pink Piwi Amulet",
+      "fr": "Amulette du Piou Rose",
+      "de": "Amulett des rosafarbenen Piepmatzes",
+      "es": "Amuleto de pío rosa",
+      "it": "Amuleto del Pìu Rosa",
+      "pt": "Amuleto do Piu Rosa"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1105.png",
+    "setID": "70",
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Yellow Piwi Amulet",
+      "fr": "Amulette du Piou Jaune",
+      "de": "Amulett des gelben Piepmatzes",
+      "es": "Amuleto de pío amarillo",
+      "it": "Amuleto del Pìu Giallo",
+      "pt": "Amuleto do Piu Amarelo"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1104.png",
+    "setID": "72",
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Green Piwi Amulet",
+      "fr": "Amulette du Piou Vert",
+      "de": "Amulett des grünen Piepmatzes",
+      "es": "Amuleto de pío verde",
+      "it": "Amuleto del Pìu Verde",
+      "pt": "Amuleto do Piu Verde"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1103.png",
+    "setID": "71",
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Purple Piwi Amulet",
+      "fr": "Amulette du Piou Violet",
+      "de": "Amulett des violetten Piepmatzes",
+      "es": "Amuleto de pío violeta",
+      "it": "Amuleto del Pìu Viola",
+      "pt": "Amuleto do Piu Violeta"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1102.png",
+    "setID": "62",
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Blue Piwi Amulet",
+      "fr": "Amulette du Piou Bleu",
+      "de": "Amulett des blauen Piepmatzes",
+      "es": "Amuleto de pío azul",
+      "it": "Amuleto del Pìu Blu",
+      "pt": "Amuleto do Piu Azul"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1101.png",
+    "setID": "61",
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Red Piwi Amulet",
+      "fr": "Amulette du Piou Rouge",
+      "de": "Amulett des roten Piepmatzes",
+      "es": "Amuleto de pío rojo",
+      "it": "Amuleto del Pìu Rosso",
+      "pt": "Amuleto do Piu Vermelho"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1100.png",
+    "setID": "60",
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tude Amulet",
+      "fr": "Amulette Tude",
+      "de": "Halskette Tude",
+      "es": "Amuleto Incakodo",
+      "it": "Amuleto Tude",
+      "pt": "Amuleto Tude"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1019.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Little Frog",
+      "fr": "Grenouillette",
+      "de": "Fröschli",
+      "es": "Ranilla",
+      "it": "Ranocchietta",
+      "pt": "Sapinho"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1002.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Amulette du Petit Ours",
+      "fr": "Amulette du Petit Ours",
+      "de": "[!DE] Amulette du Petit Ours",
+      "es": "[!ES] Amulette du Petit Ours",
+      "it": "[!IT] Amulette du Petit Ours",
+      "pt": "[!PT] Amulette du Petit Ours"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1005.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Koliet Aclou",
+      "fr": "Koliet Aclou",
+      "de": "Elnags Collier",
+      "es": "Koyar Clavito",
+      "it": "Kollo Kiodo",
+      "pt": "Koliet Aclou"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1034.png",
+    "setID": null,
+    "stats": [{ "stat": "Damage", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Amulette du Petit Hibou",
+      "fr": "Amulette du Petit Hibou",
+      "de": "[!DE] Amulette du Petit Hibou",
+      "es": "[!ES] Amulette du Petit Hibou",
+      "it": "[!IT] Amulette du Petit Hibou",
+      "pt": "[!PT] Amulette du Petit Hibou"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1001.png",
+    "setID": null,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Petite Amulette du Loup",
+      "fr": "Petite Amulette du Loup",
+      "de": "[!DE] Petite Amulette du Loup",
+      "es": "[!ES] Petite Amulette du Loup",
+      "it": "[!IT] Petite Amulette du Loup",
+      "pt": "[!PT] Petite Amulette du Loup"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1006.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Petite Amulette de l'Ours",
+      "fr": "Petite Amulette de l'Ours",
+      "de": "[!DE] Petite Amulette de l'Ours",
+      "es": "[!ES] Petite Amulette de l'Ours",
+      "it": "[!IT] Petite Amulette de l'Ours",
+      "pt": "[!PT] Petite Amulette de l'Ours"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1005.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Adventurer Amulet",
+      "fr": "Amulette de l'Aventurier",
+      "de": "Amulett des Abenteurers",
+      "es": "Amuleto de aventurero",
+      "it": "Amuleto dell'Avventuriero",
+      "pt": "Amuleto do Aventureiro"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1052.png",
+    "setID": "5",
+    "stats": [
+      { "stat": "Chance", "minStat": 1, "maxStat": 2 },
+      { "stat": "Strength", "minStat": 1, "maxStat": 2 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 2 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 2 },
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Petite Amulette du Hibou",
+      "fr": "Petite Amulette du Hibou",
+      "de": "[!DE] Petite Amulette du Hibou",
+      "es": "[!ES] Petite Amulette du Hibou",
+      "it": "[!IT] Petite Amulette du Hibou",
+      "pt": "[!PT] Petite Amulette du Hibou"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/1001.png",
+    "setID": null,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  }
+]

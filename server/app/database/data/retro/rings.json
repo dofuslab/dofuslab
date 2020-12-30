@@ -1,0 +1,3842 @@
+[
+  {
+    "name": {
+      "en": "Kringlove",
+      "fr": "Kralano",
+      "de": "Krakamoring",
+      "es": "Kralanillo",
+      "it": "Kralano",
+      "pt": "Kralanel"
+    },
+    "level": 199,
+    "imageUrl": "/retro/item/9142.png",
+    "setID": "97",
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Head Band",
+      "fr": "Annolamour",
+      "de": "Traum A-Ring",
+      "es": "Anilamar",
+      "it": "Anellamore",
+      "pt": "Faixa Principal"
+    },
+    "level": 189,
+    "imageUrl": "/retro/item/9145.png",
+    "setID": "97",
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 11, "maxStat": 20 },
+      { "stat": "Initiative", "minStat": 501, "maxStat": 700 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Colette's Ring",
+      "fr": "Anneau Colerette",
+      "de": "Mariettes Enthauptring",
+      "es": "Anillo Colette",
+      "it": "Anello Colerina",
+      "pt": "Anel Colette"
+    },
+    "level": 188,
+    "imageUrl": "/retro/item/9146.png",
+    "setID": "119",
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Damage", "minStat": 11, "maxStat": 20 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fungal Ring",
+      "fr": "Alliance Boletée",
+      "de": "Fungiering",
+      "es": "Alianza Boletusa",
+      "it": "Fede Boletata",
+      "pt": "Aliança Boletada"
+    },
+    "level": 186,
+    "imageUrl": "/retro/item/9148.png",
+    "setID": "107",
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "Summons", "minStat": null, "maxStat": 2 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tash Ring",
+      "fr": "Anneau Chevelu",
+      "de": "Behaaring",
+      "es": "Ánulo",
+      "it": "Anello Capelluto",
+      "pt": "Anel Cabeludo"
+    },
+    "level": 180,
+    "imageUrl": "/retro/item/9147.png",
+    "setID": "121",
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Nose Ring",
+      "fr": "Anneau Bliteré",
+      "de": "Akkumulierring",
+      "es": "Anillo Bliterado",
+      "it": "Anello Bliterato",
+      "pt": "Anel de Nariz"
+    },
+    "level": 179,
+    "imageUrl": "/retro/item/9159.png",
+    "setID": "109",
+    "stats": [
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 301, "maxStat": 400 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pot-Bellied Bracelet",
+      "fr": "Bracelet Ventré",
+      "de": "Sündenpfahlring",
+      "es": "Brazalete Destripador",
+      "it": "Bracciale Sventrato",
+      "pt": "Bracelete Espesso"
+    },
+    "level": 179,
+    "imageUrl": "/retro/item/9158.png",
+    "setID": "108",
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 301, "maxStat": 400 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Mopy King Sovereign Seal",
+      "fr": "Sceau Souverain du Roissingue",
+      "de": "King Morphs Siegelring",
+      "es": "Soberano sello de rey stropajo",
+      "it": "Sigillo Sovrano del Re Cencio",
+      "pt": "Selo soberano do Rei Nojoso"
+    },
+    "level": 158,
+    "imageUrl": "/retro/item/9138.png",
+    "setID": "78",
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Minotot Bracelet",
+      "fr": "Bracelet du Minotot",
+      "de": "Minotot-Armband",
+      "es": "Pulsera del Minotot",
+      "it": "Bracciale del Minotot",
+      "pt": "Bracelete de Minotot"
+    },
+    "level": 151,
+    "imageUrl": "/retro/item/9116.png",
+    "setID": "57",
+    "stats": [
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 130 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 7 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 7 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ring Neinwonwon",
+      "fr": "Anneau Pitale",
+      "de": "SOS-Ring (So-oder-So)",
+      "es": "Hospit Anillo",
+      "it": "Anello Spedale",
+      "pt": "Anel Neinwonwon"
+    },
+    "level": 150,
+    "imageUrl": "/retro/item/9137.png",
+    "setID": "87",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Hai Ring",
+      "fr": "Anneau Pwal",
+      "de": "Haar-Harr-Ring",
+      "es": "Anillo Peludo",
+      "it": "Anello Pelo",
+      "pt": "Anel Relva"
+    },
+    "level": 150,
+    "imageUrl": "/retro/item/9136.png",
+    "setID": "90",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Subma Ring",
+      "fr": "Anneau Tilus",
+      "de": "Subma-Ring",
+      "es": "Puntu Alianza",
+      "it": "Anello Autilus",
+      "pt": "Anel Subma"
+    },
+    "level": 150,
+    "imageUrl": "/retro/item/9135.png",
+    "setID": "86",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Elkebi Ring",
+      "fr": "Anneau Hell",
+      "de": "Hallow-Reeng",
+      "es": "Avernillo",
+      "it": "Anello Hell",
+      "pt": "Anel Elkebi"
+    },
+    "level": 150,
+    "imageUrl": "/retro/item/9134.png",
+    "setID": "89",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ear Ring",
+      "fr": "Anneau Raille",
+      "de": "Bierlein-öffne-Dich",
+      "es": "Anillo chistoso",
+      "it": "Anello Beffa",
+      "pt": "Anel Orelha"
+    },
+    "level": 150,
+    "imageUrl": "/retro/item/9133.png",
+    "setID": "92",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Chee Ring",
+      "fr": "Anneau Zamour",
+      "de": "Deko Dia-Ring",
+      "es": "Alianza Guero",
+      "it": "Anello Z'Amore",
+      "pt": "Anel Chee"
+    },
+    "level": 150,
+    "imageUrl": "/retro/item/9132.png",
+    "setID": "83",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Rememb Ring",
+      "fr": "Anneau Stalgik",
+      "de": "Konservato-Ring",
+      "es": "Anillo Stálgico",
+      "it": "Anello Stalgico",
+      "pt": "Anel Lemb"
+    },
+    "level": 150,
+    "imageUrl": "/retro/item/9131.png",
+    "setID": "85",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Memo Ring",
+      "fr": "Anneau Tassion",
+      "de": "Erinner-Ring",
+      "es": "Anillo Vedor",
+      "it": "Anello Nota",
+      "pt": "Memo Anel"
+    },
+    "level": 150,
+    "imageUrl": "/retro/item/9130.png",
+    "setID": "91",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ring Bellious",
+      "fr": "Bague Harre",
+      "de": "Wessen-Ring",
+      "es": "Pulserriña",
+      "it": "Anello Rissa",
+      "pt": "Anel Bellious"
+    },
+    "level": 150,
+    "imageUrl": "/retro/item/9129.png",
+    "setID": "81",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lion Ring",
+      "fr": "Bague Héra",
+      "de": "Blutrüns Tigerring",
+      "es": "Col Anillo",
+      "it": "Anello Zoo",
+      "pt": "Anel Leão"
+    },
+    "level": 150,
+    "imageUrl": "/retro/item/9128.png",
+    "setID": "84",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Blaber Ring",
+      "fr": "Bague Houx",
+      "de": "Würfelring",
+      "es": "Anillo del Craps",
+      "it": "Anello Bla",
+      "pt": "Anel Blaber"
+    },
+    "level": 150,
+    "imageUrl": "/retro/item/9127.png",
+    "setID": "88",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Honoh Ring",
+      "fr": "Anneau Bhli",
+      "de": "Spannring",
+      "es": "Divin Anillo",
+      "it": "Anello Bhli",
+      "pt": "Anel de Honra"
+    },
+    "level": 150,
+    "imageUrl": "/retro/item/9126.png",
+    "setID": "82",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Soft Oak Ring",
+      "fr": "Anneau du Chêne Mou",
+      "de": "Weich-Eich-Ring",
+      "es": "Anillo de Roble Blando",
+      "it": "Anello della Quercia Molle",
+      "pt": "Anel do Carvalho Mole"
+    },
+    "level": 139,
+    "imageUrl": "/retro/item/9124.png",
+    "setID": "66",
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lord of the Rats' Ceremonial Ring",
+      "fr": "Anneau Cérémonial du Seigneur des Rats",
+      "de": "Zeremonienring des Rattenmeisters",
+      "es": "Anillo ceremonial del Amo de las Ratas",
+      "it": "Anello Cerimoniale del Signore dei Ratti",
+      "pt": "Anel Cerimonial do Senhor dos Ratos"
+    },
+    "level": 131,
+    "imageUrl": "/retro/item/9122.png",
+    "setID": "64",
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 130 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Fire Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "Earth Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dreggon Ring",
+      "fr": "Anneau du Dragoeuf",
+      "de": "Drachei-Ring",
+      "es": "Anillo de dragohuevo",
+      "it": "Anello del Draguovo",
+      "pt": "Anel do Dragovo"
+    },
+    "level": 128,
+    "imageUrl": "/retro/item/9114.png",
+    "setID": "56",
+    "stats": [
+      { "stat": "Power", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Moowolf Ring",
+      "fr": "Anneau du Meulou",
+      "de": "MuWulfs-Ring",
+      "es": "Anillo de Maxilubo",
+      "it": "Anello del Muulupo",
+      "pt": "Anel do Mulobo"
+    },
+    "level": 126,
+    "imageUrl": "/retro/item/9113.png",
+    "setID": "55",
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 71, "maxStat": 100 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Snailmet Ring",
+      "fr": "Anneau Skargo",
+      "de": "Schnelm-Ring",
+      "es": "Anillo kasrakol",
+      "it": "Anello Skargo",
+      "pt": "Krakanel"
+    },
+    "level": 120,
+    "imageUrl": "/retro/item/9140.png",
+    "setID": "96",
+    "stats": [
+      { "stat": "Chance", "minStat": 26, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 81, "maxStat": 100 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Elya Wood's Wedding Ring",
+      "fr": "Alliance d'Elya Wood",
+      "de": "Ehering von Elya Wood",
+      "es": "Alianza de Elya Wood",
+      "it": "Fede di Elya Wood",
+      "pt": "Aliança de Elya Wood"
+    },
+    "level": 120,
+    "imageUrl": "/retro/item/9084.png",
+    "setID": "39",
+    "stats": [
+      { "stat": "Vitality", "minStat": 61, "maxStat": 100 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Fire Resistance", "minStat": 8, "maxStat": 12 },
+      { "stat": "Earth Resistance", "minStat": 8, "maxStat": 12 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ancestral Ring",
+      "fr": "Anneau Ancestral",
+      "de": "Ur-Ring",
+      "es": "Anillo Ancestral",
+      "it": "Anello Ancestrale",
+      "pt": "Anel Ancestral"
+    },
+    "level": 113,
+    "imageUrl": "/retro/item/9123.png",
+    "setID": "65",
+    "stats": [
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 81, "maxStat": 130 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 35 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dragon Pig Ring",
+      "fr": "Anneau du Dragon Cochon",
+      "de": "Ring des Schweinedrachens",
+      "es": "Anillo de Dragocerdo",
+      "it": "Anello del Drago Maiale",
+      "pt": "Anel do Dragão-Porco"
+    },
+    "level": 108,
+    "imageUrl": "/retro/item/9115.png",
+    "setID": "58",
+    "stats": [
+      { "stat": "Chance", "minStat": 21, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 80 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 35 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Power", "minStat": 3, "maxStat": 5 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Minotoror Ring",
+      "fr": "Anneau du Minotoror",
+      "de": "Minotororing",
+      "es": "Anillo del Minotauroro",
+      "it": "Anello del Minotoror",
+      "pt": "Anel do Minotoror"
+    },
+    "level": 105,
+    "imageUrl": "/retro/item/9117.png",
+    "setID": "54",
+    "stats": [
+      { "stat": "Vitality", "minStat": 61, "maxStat": 100 },
+      { "stat": "Prospecting", "minStat": 7, "maxStat": 10 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 },
+      { "stat": "Air Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "White Rat Gauntlet",
+      "fr": "Gantelet du Rat Blanc",
+      "de": "Weißer Rattenpanzerhandschuh",
+      "es": "Guante de la Rata Blanca",
+      "it": "Guanto del Ratto Bianco",
+      "pt": "Luva do Rato Branco"
+    },
+    "level": 101,
+    "imageUrl": "/retro/item/9121.png",
+    "setID": "67",
+    "stats": [
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 },
+      { "stat": "Air Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Water Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bwork Chief Bracelet",
+      "fr": "Bracelet du Chef Bwork",
+      "de": "Armschützer des Bwork-Chefs",
+      "es": "Brazal de jefe bwork",
+      "it": "Bracciale del Capo Bwork",
+      "pt": "Bracelete do Chefe Bwork"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/9058.png",
+    "setID": "19",
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "Power", "minStat": 3, "maxStat": 5 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 7 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 7 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 7 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 7 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 7 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 7 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Black Rat Ring",
+      "fr": "Anneau du Rat Noir",
+      "de": "Schwarzer Rattenring",
+      "es": "Anillo de la Rata Negra",
+      "it": "Anello del Ratto Nero",
+      "pt": "Anel do Rato Negro"
+    },
+    "level": 98,
+    "imageUrl": "/retro/item/9120.png",
+    "setID": "68",
+    "stats": [
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Power", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 8 },
+      { "stat": "Power (traps)", "minStat": 11, "maxStat": 20 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
+      { "stat": "Prospecting", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Rainbow Blop Ring",
+      "fr": "Blopanneau Multicolore Royal",
+      "de": "Königlicher Multiblobring",
+      "es": "Blopanillo Multicolor Real",
+      "it": "Blopanello Multicolore Reale",
+      "pt": "Blopanel Arco-Íris Real"
+    },
+    "level": 90,
+    "imageUrl": "/retro/item/9157.png",
+    "setID": "106",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 5 },
+      { "stat": "Power", "minStat": 16, "maxStat": 25 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "% Air Resistance", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ugle Ring",
+      "fr": "Anneau K'Tuelle",
+      "de": "Nachtfaltering",
+      "es": "Anillo Mamestro",
+      "it": "Anello Ak'Tuale",
+      "pt": "Anel Ugle"
+    },
+    "level": 90,
+    "imageUrl": "/retro/item/9094.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 51, "maxStat": 100 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 35 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 35 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Farle's Wedding Ring",
+      "fr": "Alliance de Farle",
+      "de": "Farles Ehering",
+      "es": "Alianza de Farle",
+      "it": "Fede di Farle",
+      "pt": "Aliança de Farle"
+    },
+    "level": 87,
+    "imageUrl": "/retro/item/9055.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 },
+      { "stat": "Power", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gogorified Miner Ring",
+      "fr": "Anneau du Mineur Gogorifiant",
+      "de": "Gogorifizierendes Bergmannsband",
+      "es": "Anillo de minero Gogorífico",
+      "it": "Anello del Minatore Gorgorificato",
+      "pt": "Anel do Mineiro Gogorificante"
+    },
+    "level": 84,
+    "imageUrl": "/retro/item/9040.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 35 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Feudala Wedding Ring",
+      "fr": "Alliance Feudala",
+      "de": "Feudala-Trauring",
+      "es": "Alianza Fuegodala",
+      "it": "Fede Focodala",
+      "pt": "Aliança Fogodala"
+    },
+    "level": 81,
+    "imageUrl": "/retro/item/9082.png",
+    "setID": "37",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Indigo Blop Ring",
+      "fr": "Blopanneau Indigo Royal",
+      "de": "Königlicher Indigo Blob-Ring",
+      "es": "Blopanillo Índigo Real",
+      "it": "Blopanello Indaco Reale",
+      "pt": "Blopanel Índigo Real"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/9156.png",
+    "setID": "105",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Coco Blop Ring",
+      "fr": "Blopanneau Coco Royal",
+      "de": "Königlicher Kokos Blob-Ring",
+      "es": "Blopanillo Coco Real",
+      "it": "Blopanello Cocco Reale",
+      "pt": "Blopanel Coco Real"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/9155.png",
+    "setID": "104",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Pippin Blop Ring",
+      "fr": "Blopanneau Reinette Royal",
+      "de": "Königlicher Apfel Blob-Ring",
+      "es": "Blopanillo Reineta Real",
+      "it": "Blopanello Reginetta Reale",
+      "pt": "Blopanel Maçã Real"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/9154.png",
+    "setID": "103",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Morello Cherry Blop Ring",
+      "fr": "Blopanneau Griotte Royal",
+      "de": "Königlicher Kirsch Blob-Ring",
+      "es": "Blopanillo Guinda Real",
+      "it": "Blopanello Griotta Reale",
+      "pt": "Blopanel Cereja Real"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/9153.png",
+    "setID": "102",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Shika's Magic Bracelet",
+      "fr": "Bracelet Magique de Shika",
+      "de": "Shikas magisches Armband",
+      "es": "Pulsera Mágica de Shika",
+      "it": "Bracciale Magico di Shika",
+      "pt": "Bracelete mágico de Shika"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/9118.png",
+    "setID": "53",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 36, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 20 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Legendary Cracklering",
+      "fr": "Craquanneau Légendaire",
+      "de": "Ring des Legendären Mega-Krachlers",
+      "es": "Crujianillo legendario",
+      "it": "Croccanello Leggendario",
+      "pt": "Smaganel Legendário"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/9105.png",
+    "setID": "52",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Farle's Magic Bracelet",
+      "fr": "Bracelet Magique de Farle",
+      "de": "Farles magisches Armband",
+      "es": "Pulsera Mágica de Farle",
+      "it": "Bracciale Magico di Farle",
+      "pt": "Bracelete mágico de Farle"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/9061.png",
+    "setID": "17",
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 36, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 20 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Loopine's Ring",
+      "fr": "Anneau de Loopine",
+      "de": "Dok Drums Ring",
+      "es": "Anillo de Mardock",
+      "it": "Anello di Loopin",
+      "pt": "Anel de Loopino"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/9052.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 4 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 3 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 15 },
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 3 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Terrdala Wedding Ring",
+      "fr": "Alliance Terrdala",
+      "de": "Teradala-Trauring",
+      "es": "Alianza Tierradala",
+      "it": "Fede Terradala",
+      "pt": "Aliança Terradala"
+    },
+    "level": 77,
+    "imageUrl": "/retro/item/9081.png",
+    "setID": "36",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ab'ho Ring",
+      "fr": "Anneau Bsène",
+      "de": "Obszönling",
+      "es": "Anillo Bsceno",
+      "it": "Anello Bsceno",
+      "pt": "Anel Obscuro"
+    },
+    "level": 70,
+    "imageUrl": "/retro/item/9095.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 2 },
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Conno Ring",
+      "fr": "Anneau Fioutioure",
+      "de": "Fioutioure-Ring",
+      "es": "Anillo Fiutiuro",
+      "it": "Anello Fiuturo",
+      "pt": "Anel de Fioutioure"
+    },
+    "level": 70,
+    "imageUrl": "/retro/item/9079.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 8 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 150 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crocodyl Chief Bracelet",
+      "fr": "Bracelet du Chef Crocodaille",
+      "de": "Armschützer des Chef-Crocodylls",
+      "es": "Brazal de jefe cocodrail",
+      "it": "Bracciale del Capo Coccodrail",
+      "pt": "Bracelete do Chefe Crocodyl"
+    },
+    "level": 70,
+    "imageUrl": "/retro/item/9059.png",
+    "setID": "20",
+    "stats": [
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 3 },
+      { "stat": "Prospecting", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ano Neemous Ring",
+      "fr": "Anneau Nime",
+      "de": "Ano Nims Ring",
+      "es": "Anillo Nónimo",
+      "it": "Anello Nimo",
+      "pt": "Anel de Ano Nimos"
+    },
+    "level": 70,
+    "imageUrl": "/retro/item/9053.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Initiative", "minStat": 31, "maxStat": 50 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Polished Ring",
+      "fr": "Anneau Poli",
+      "de": "Ring des geschliffenen Krachlklotzes",
+      "es": "Anillo Pulío",
+      "it": "Anello Levigato",
+      "pt": "Anel Polido"
+    },
+    "level": 66,
+    "imageUrl": "/retro/item/9143.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 11, "maxStat": 15 },
+      { "stat": "Vitality", "minStat": 11, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 4 },
+      { "stat": "Power", "minStat": 6, "maxStat": 15 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 141, "maxStat": 170 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Coral Ring",
+      "fr": "Alliance de Corail",
+      "de": "Koralliger Ehering",
+      "es": "Alianza de Coral",
+      "it": "Fede di Corallo",
+      "pt": "Aliança de Coral"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/9139.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 11, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 30 },
+      { "stat": "Prospecting", "minStat": 3, "maxStat": 5 },
+      { "stat": "Water Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gelano",
+      "fr": "Gelano",
+      "de": "Gelano",
+      "es": "Gelanillo",
+      "it": "Gelanello",
+      "pt": "Gelanel"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/9047.png",
+    "setID": "6",
+    "stats": [{ "stat": "AP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Omerta Ring",
+      "fr": "Anneau Merta",
+      "de": "Mertas Ring",
+      "es": "Anillo Mertá",
+      "it": "Anello Mertà",
+      "pt": "Anel de Merta"
+    },
+    "level": 59,
+    "imageUrl": "/retro/item/9091.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 4 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
+      { "stat": "Water Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Young Vald's Ring",
+      "fr": "Anneau du Jeune Vald",
+      "de": "Valds Jugendring",
+      "es": "Anillo del joven Vald",
+      "it": "Anello del Giovane Vald",
+      "pt": "Anel do Jovem Vald"
+    },
+    "level": 59,
+    "imageUrl": "/retro/item/9054.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Prospecting", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Fire Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Water Resistance", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Enutrofion",
+      "fr": "L'Enutrofion",
+      "de": "Das Enutrofion",
+      "es": "El Anutopía",
+      "it": "L'Anutrofion",
+      "pt": "O Enutrofion"
+    },
+    "level": 59,
+    "imageUrl": "/retro/item/9039.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": 11, "maxStat": 20 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Nonsenz Ring",
+      "fr": "Anneau Ha",
+      "de": "No Ha-Ring",
+      "es": "Anillo Kohono",
+      "it": "Anello Ha",
+      "pt": "Anél Nonsenz"
+    },
+    "level": 58,
+    "imageUrl": "/retro/item/9085.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Power (traps)", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Aerdala Wedding Ring",
+      "fr": "Alliance Aerdala",
+      "de": "Aerdala-Trauring",
+      "es": "Alianza Airedala",
+      "it": "Fede Erdala",
+      "pt": "Aliança Ardala"
+    },
+    "level": 57,
+    "imageUrl": "/retro/item/9083.png",
+    "setID": "35",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pota Ring",
+      "fr": "Anneau Piaume",
+      "de": "Opi Uhms Ring",
+      "es": "Anillo Pyó",
+      "it": "Anello Oppio",
+      "pt": "Anel Opiom"
+    },
+    "level": 57,
+    "imageUrl": "/retro/item/9090.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kitsou Ring",
+      "fr": "Anneau du Kitsou",
+      "de": "Kitsou-Ring",
+      "es": "Anillo de kitsu",
+      "it": "Anello del Kitsù",
+      "pt": "Anel do Kitsu"
+    },
+    "level": 55,
+    "imageUrl": "/retro/item/9093.png",
+    "setID": "41",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 50 },
+      { "stat": "Air Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Water Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Klume's Ring",
+      "fr": "Anneau de Klüme",
+      "de": "A.M.Boss Ring",
+      "es": "Anillo de Kunye",
+      "it": "Anello di Cudine",
+      "pt": "Anel de Klume"
+    },
+    "level": 54,
+    "imageUrl": "/retro/item/9183.png",
+    "setID": "153",
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Okaringa",
+      "fr": "Anneau Karina",
+      "de": "OkaRinga",
+      "es": "Anillo Karina",
+      "it": "Anello Karina",
+      "pt": "OkaRinga"
+    },
+    "level": 54,
+    "imageUrl": "/retro/item/9089.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "% Air Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Earth Resistance", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Koalak Ring",
+      "fr": "Anneau du Koalak",
+      "de": "Koalak-Ring",
+      "es": "Anillo de koalak",
+      "it": "Anello del Koalak",
+      "pt": "Anel do Koalak"
+    },
+    "level": 53,
+    "imageUrl": "/retro/item/9099.png",
+    "setID": "46",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ostarr Ring",
+      "fr": "Alliance Ethnique",
+      "de": "Ring'N'Sing",
+      "es": "Alianza Étnica",
+      "it": "Fede Etnica",
+      "pt": "Aliança Étnica"
+    },
+    "level": 53,
+    "imageUrl": "/retro/item/9092.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 35 },
+      { "stat": "Prospecting", "minStat": 4, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 3, "maxStat": 4 },
+      { "stat": "Air Resistance", "minStat": 3, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kloug's Ring",
+      "fr": "Anneau de Kloug",
+      "de": "Äkebäker-Ring",
+      "es": "Anillo de Napazam",
+      "it": "Anello di Kloug",
+      "pt": "Anel de Napizram"
+    },
+    "level": 51,
+    "imageUrl": "/retro/item/9184.png",
+    "setID": "154",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Haks Or Ring",
+      "fr": "Anneau du Roks Or",
+      "de": "Golding",
+      "es": "Anillo Goldpex",
+      "it": "Anello del Roks Or",
+      "pt": "Anel do Roksor"
+    },
+    "level": 51,
+    "imageUrl": "/retro/item/9182.png",
+    "setID": "151",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
+      { "stat": "Heals", "minStat": 1, "maxStat": 2 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Boowolf Ring",
+      "fr": "Anneau du Mulou",
+      "de": "WuWulf-Ring",
+      "es": "Anillo de mediulubo",
+      "it": "Anello del Buulupo",
+      "pt": "Anel do Milobo"
+    },
+    "level": 51,
+    "imageUrl": "/retro/item/9103.png",
+    "setID": "32",
+    "stats": [
+      { "stat": "Strength", "minStat": 1, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 25 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 10 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tribal Ring",
+      "fr": "Anneau Tribal",
+      "de": "Tribal-Armband",
+      "es": "Anillo Tribal",
+      "it": "Anello Tribale",
+      "pt": "Anel tribal"
+    },
+    "level": 51,
+    "imageUrl": "/retro/item/9049.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": null, "maxStat": 2 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Indigo Blop Ring",
+      "fr": "Blopanneau Indigo",
+      "de": "Indigo Blob-Ring",
+      "es": "Blopanillo índigo",
+      "it": "Blopanello Indaco",
+      "pt": "Blopanel Índigo"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/9152.png",
+    "setID": "101",
+    "stats": [
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 3 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Coco Blop Ring",
+      "fr": "Blopanneau Coco",
+      "de": "Kokos Blob-Ring",
+      "es": "Blopanillo coco",
+      "it": "Blopanello Cocco",
+      "pt": "Blopanel Coco"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/9151.png",
+    "setID": "100",
+    "stats": [
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 3 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pippin Blop Ring",
+      "fr": "Blopanneau Reinette",
+      "de": "Apfel Blob-Ring",
+      "es": "Blopanillo reineta",
+      "it": "Blopanello Reginetta",
+      "pt": "Blopanel Maçã"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/9150.png",
+    "setID": "99",
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 3 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Morello Cherry Blop Ring",
+      "fr": "Blopanneau Griotte",
+      "de": "Kirsch Blob-Ring",
+      "es": "Blopanillo guinda",
+      "it": "Blopanello Griotta",
+      "pt": "Blopanel Cereja"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/9149.png",
+    "setID": "98",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 4 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Turkoring",
+      "fr": "Anodindo",
+      "de": "Trutering",
+      "es": "Anillopavo",
+      "it": "Anocchino",
+      "pt": "Turkoanel"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/9097.png",
+    "setID": "42",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 1, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 25 },
+      { "stat": "Strength", "minStat": 1, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Nozokomial Ring",
+      "fr": "Anneau Zocomial",
+      "de": "Ozochiramial-Ring",
+      "es": "Anillo Cosonomial",
+      "it": "Anello Nozocomial",
+      "pt": "Anel Nozokomial"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/9087.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
+      { "stat": "Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "Water Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "O-Ring Ami",
+      "fr": "Anneau Rigami",
+      "de": "O' Ring Ami",
+      "es": "Anillo Rigamia",
+      "it": "Anello Rigami",
+      "pt": "O’ Anel Ami"
+    },
+    "level": 49,
+    "imageUrl": "/retro/item/9096.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Earth Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Black Scararing",
+      "fr": "Scaranneau Noir",
+      "de": "Schwarzer Scararara-Ring",
+      "es": "Escaranillo negro",
+      "it": "Scaranello Nero",
+      "pt": "Scaranel Preto"
+    },
+    "level": 48,
+    "imageUrl": "/retro/item/9104.png",
+    "setID": "49",
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 3 },
+      { "stat": "Heals", "minStat": 1, "maxStat": 4 },
+      { "stat": "% Neutral Resistance", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ring o'Stradamus",
+      "fr": "Anneau Stradamus",
+      "de": "Ring O'Stradamus",
+      "es": "Anillo Stradamus",
+      "it": "Anello Stradamus",
+      "pt": "Anel Stradamus"
+    },
+    "level": 48,
+    "imageUrl": "/retro/item/9078.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 5 },
+      { "stat": "Earth Resistance", "minStat": 3, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dark Treering",
+      "fr": "Abranneau Sombre",
+      "de": "Düsterholzring",
+      "es": "Abranillo oscuro",
+      "it": "Alberanello Oscuro",
+      "pt": "Arvranel Sombrio"
+    },
+    "level": 48,
+    "imageUrl": "/retro/item/9017.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": 11, "maxStat": 20 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ring Dikuloos",
+      "fr": "Palmano",
+      "de": "Eindrindling",
+      "es": "Palmanillo",
+      "it": "Palmano",
+      "pt": "Anel Dikuloos"
+    },
+    "level": 46,
+    "imageUrl": "/retro/item/9141.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": 21, "maxStat": 35 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 300 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Soft Treering",
+      "fr": "Abranneau Mou",
+      "de": "Holzring von Weich-Eich",
+      "es": "Abranillo blando",
+      "it": "Alberanello Molle",
+      "pt": "Arvranel Mole"
+    },
+    "level": 46,
+    "imageUrl": "/retro/item/9011.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 2 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 80 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Slamdance Bracelet",
+      "fr": "Bracelet du Tétounik",
+      "de": "Teckton-Ihks Armband",
+      "es": "Brazalete taktikonik",
+      "it": "Bracciale di Teutonik",
+      "pt": "Bracelete Confusão"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/9168.png",
+    "setID": "132",
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Heals", "minStat": 2, "maxStat": 3 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Beanie Ring",
+      "fr": "Anneau Paupayahn",
+      "de": "Robusta-Ring",
+      "es": "Anillo Saymassa",
+      "it": "Anello Valazza",
+      "pt": "Anel Gorro"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/9160.png",
+    "setID": "111",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Goboff's Ring",
+      "fr": "Anneau de Gobeuf",
+      "de": "Gobschling-Ring",
+      "es": "Anillo de Gobuevo",
+      "it": "Anello di Gobluovo",
+      "pt": "Anel de Gobovo"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/9180.png",
+    "setID": "146",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Chisp Fingerless Gloves",
+      "fr": "Mitaines de Chisp",
+      "de": "Chisp-Fäustlinge",
+      "es": "Mitón de Chisp",
+      "it": "Chispuanto",
+      "pt": "Luvas sem Dedos de Chisp"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/9173.png",
+    "setID": "138",
+    "stats": [
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bedazzling Fist",
+      "fr": "Fulgu au poing",
+      "de": "Faustesblitz",
+      "es": "Puño Rotante",
+      "it": "Pugno Folgorante",
+      "pt": "Punho de Gren Dizer"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/9169.png",
+    "setID": "139",
+    "stats": [
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ignoah Ring",
+      "fr": "Anneau Hé",
+      "de": "No Ah-Ring",
+      "es": "Anillo de Eon",
+      "it": "Anello Hoé",
+      "pt": "Anel de Noha"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/9086.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Trav' Ring",
+      "fr": "Anneau Forain",
+      "de": "Jahrmarktring",
+      "es": "Anillo feriante",
+      "it": "Anello Giostraio",
+      "pt": "Anel Itinerante"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/9050.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": 11, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
+      { "stat": "Power", "minStat": 3, "maxStat": 5 },
+      { "stat": "Water Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "Air Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "Fire Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fyred Ampe's Ring",
+      "fr": "Anneau de Grizou",
+      "de": "Wetterschlag-Ring",
+      "es": "Anillo de Grizú",
+      "it": "Anello di Grisup",
+      "pt": "Anel de Grisu"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/9181.png",
+    "setID": "149",
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lamechester United Glove",
+      "fr": "Gantelet des Bouftons Rouges",
+      "de": "Arsenal Roter Fresssack-Lederhandschuh",
+      "es": "Guante del Sporting Jalatín",
+      "it": "Guanto del Pappaton United",
+      "pt": "Luvas do Papachester United"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/9177.png",
+    "setID": "143",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Real Gobbly Glove",
+      "fr": "Gantelet du Real Boitar",
+      "de": "FC Humpelstilz-Lederhandschuh",
+      "es": "Guante del Atleticojos de Bonta",
+      "it": "Guanto del Real Pappid",
+      "pt": "Luvas do Paparcelona"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/9176.png",
+    "setID": "142",
+    "stats": [
+      { "stat": "Strength", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Slait Ring",
+      "fr": "Anneau de Slait",
+      "de": "Slait-Ring",
+      "es": "Anillo Sliat",
+      "it": "Anello di Slait",
+      "pt": "Anel de Slait"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/9167.png",
+    "setID": "128",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Heals", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden Scarabugly Ring",
+      "fr": "Anneau du Scarabosse Doré",
+      "de": "Ring des goldenen Scarabiestes",
+      "es": "Anillo de Escarajefe Dorado",
+      "it": "Anello dello Scaragobba Dorato",
+      "pt": "Anel do Scarachefe Dourado"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/9101.png",
+    "setID": "51",
+    "stats": [
+      { "stat": "Heals", "minStat": 1, "maxStat": 4 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Blue Scararing",
+      "fr": "Scaranneau Bleu",
+      "de": "Blauer Scararara-Ring",
+      "es": "Escaranillo azul",
+      "it": "Scaranello Blu",
+      "pt": "Scaranel Azul"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/9070.png",
+    "setID": "30",
+    "stats": [
+      { "stat": "Chance", "minStat": 1, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 4 },
+      { "stat": "Power", "minStat": 1, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "White Scararing",
+      "fr": "Scaranneau Blanc",
+      "de": "Weißer Scararara-Ring",
+      "es": "Escaranillo blanco",
+      "it": "Scaranello Bianco",
+      "pt": "Scaranel Branco"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/9067.png",
+    "setID": "29",
+    "stats": [
+      { "stat": "Agility", "minStat": 1, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 4 },
+      { "stat": "Power", "minStat": 1, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Red Scararing",
+      "fr": "Scaranneau Rouge",
+      "de": "Roter Scararara-Ring",
+      "es": "Escaranillo rojo",
+      "it": "Scaranello Rosso",
+      "pt": "Scaranel Vermelho"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/9068.png",
+    "setID": "28",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 4 },
+      { "stat": "Power", "minStat": 1, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
+      { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Green Scararing",
+      "fr": "Scaranneau Vert",
+      "de": "Grüner Scararara-Ring",
+      "es": "Escaranillo verde",
+      "it": "Scaranello Verde",
+      "pt": "Scaranel Verde"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/9069.png",
+    "setID": "27",
+    "stats": [
+      { "stat": "Strength", "minStat": 1, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 4 },
+      { "stat": "Power", "minStat": 1, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lektor's Ring",
+      "fr": "Anneau de Laikteur",
+      "de": "Terlecs Ring",
+      "es": "Anillo de Retkel",
+      "it": "Anello di An Lekter",
+      "pt": "Anel de Lektor"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/9178.png",
+    "setID": "147",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Vampyre Ring",
+      "fr": "Anneau du Vampyre",
+      "de": "Vampyring",
+      "es": "Anillo de Vampyro",
+      "it": "Anello del Vampyro",
+      "pt": "Anel do Vampyro"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/9171.png",
+    "setID": "130",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Power", "minStat": 16, "maxStat": 20 },
+      { "stat": "Pods", "minStat": 151, "maxStat": 200 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wind Kwakring",
+      "fr": "Kwakanneau de Vent",
+      "de": "Wind-Kwackband",
+      "es": "Kwakanillo de viento",
+      "it": "Kwakanello di Vento",
+      "pt": "Kwakanel de Vento"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/9062.png",
+    "setID": "15",
+    "stats": [
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 20 },
+      { "stat": "Power", "minStat": 5, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Earth Kwakring",
+      "fr": "Kwakanneau de Terre",
+      "de": "Stein-Kwackband",
+      "es": "Kwakanillo de tierra",
+      "it": "Kwakanello di Terra",
+      "pt": "Kwakanel de Terra"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/9064.png",
+    "setID": "14",
+    "stats": [
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 20 },
+      { "stat": "Power", "minStat": 5, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ice Kwakring",
+      "fr": "Kwakanneau de Glace",
+      "de": "Eis-Kwackband",
+      "es": "Kwakanillo de hielo",
+      "it": "Kwakanello di Ghiaccio",
+      "pt": "Kwakanel de Gelo"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/9063.png",
+    "setID": "13",
+    "stats": [
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 20 },
+      { "stat": "Power", "minStat": 5, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fire Kwakring",
+      "fr": "Kwakanneau de Flammes",
+      "de": "Flammen-Kwackband",
+      "es": "Kwakanillo de llamas",
+      "it": "Kwakanello di Fiamma",
+      "pt": "Kwakanel de Fogo"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/9043.png",
+    "setID": "2",
+    "stats": [
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 20 },
+      { "stat": "Power", "minStat": 5, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Koksiks's Ring",
+      "fr": "Anneau de Kocksis",
+      "de": "Racknacknock-Ring",
+      "es": "Anillo de Koxys",
+      "it": "Anello di Koccid",
+      "pt": "Anel de Koksis"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/9179.png",
+    "setID": "145",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 15 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Solaris Ring",
+      "fr": "Anneau solaire",
+      "de": "Sonnenring",
+      "es": "Anillo Solar",
+      "it": "Anello Solare",
+      "pt": "Anel Solar"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/9174.png",
+    "setID": "136",
+    "stats": [
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Godfather's Ring",
+      "fr": "Grosse Bagouze du Parrain",
+      "de": "Protzring des Paten",
+      "es": "Anillote gordo del padrino",
+      "it": "Grande Anellaccio del Padrino",
+      "pt": "Anel do Padrinho"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/9166.png",
+    "setID": "126",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": null, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lousy Ring",
+      "fr": "Jambanneau",
+      "de": "Schink'n'Ring",
+      "es": "Jamonillo",
+      "it": "Maianello",
+      "pt": "Lardanel"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/9162.png",
+    "setID": "113",
+    "stats": [{ "stat": "Damage", "minStat": 4, "maxStat": 5 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Satisfied Summoner's Ring",
+      "fr": "Anneau de l'Invocateur Satisfait",
+      "de": "Ring der Genugbeschwörtuung",
+      "es": "Anillo del Invocador Satisfecho",
+      "it": "Anello dell'Evocatore Soddisfatto",
+      "pt": "Anel do Invocador Satisfeito"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/9051.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ringtree",
+      "fr": "Anobra",
+      "de": "Astaband",
+      "es": "Anibra",
+      "it": "Aneramo",
+      "pt": "Anelknídeo"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/9045.png",
+    "setID": "3",
+    "stats": [{ "stat": "Damage", "minStat": 4, "maxStat": 5 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crocoburio's Strength",
+      "fr": "Force de Crocoburio",
+      "de": "Kraft des Crocoburio",
+      "es": "Fuerza de Cocoburio",
+      "it": "Forza di Crocobarro",
+      "pt": "Força de Crocoburio"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/9038.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": 16, "maxStat": 30 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobkool Ring",
+      "fr": "Anneau du Boufcoul",
+      "de": "Fresscool-Ring",
+      "es": "Anillo de jalatranki",
+      "it": "Anello del Pappacool",
+      "pt": "Anel do Papakool"
+    },
+    "level": 38,
+    "imageUrl": "/retro/item/9098.png",
+    "setID": "43",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Prespic Ring",
+      "fr": "Anneau du Prespic",
+      "de": "Prespik-Armband",
+      "es": "Anillo de prespic",
+      "it": "Anello del Prespic",
+      "pt": "Anel do Prespic"
+    },
+    "level": 38,
+    "imageUrl": "/retro/item/9072.png",
+    "setID": "31",
+    "stats": [{ "stat": "Reflect", "minStat": 1, "maxStat": 3 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Oxo Ring",
+      "fr": "Oxano",
+      "de": "Oxano",
+      "es": "Oxanillo",
+      "it": "Oxanello",
+      "pt": "Oxanel"
+    },
+    "level": 37,
+    "imageUrl": "/retro/item/9175.png",
+    "setID": "133",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Heals", "minStat": 1, "maxStat": 2 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Akwadala Wedding Ring",
+      "fr": "Alliance Akwadala",
+      "de": "Akwadala-Trauring",
+      "es": "Alianza Akwadala",
+      "it": "Fede Aksadala",
+      "pt": "Aliança Akwadala"
+    },
+    "level": 37,
+    "imageUrl": "/retro/item/9080.png",
+    "setID": "34",
+    "stats": [
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
+      { "stat": "Water Resistance", "minStat": 7, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ring of Death",
+      "fr": "Anneau de la mort",
+      "de": "Todesring",
+      "es": "Anillo de la Muerte",
+      "it": "Anello della Morte",
+      "pt": "Anel da Morte"
+    },
+    "level": 36,
+    "imageUrl": "/retro/item/9170.png",
+    "setID": "117",
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Soff Ring",
+      "fr": "L'Anneau Dhyn",
+      "de": "Ano Dhyn Ring",
+      "es": "Anillo Dhyno",
+      "it": "L'Anello Dhyn",
+      "pt": "Anel de Dhyn"
+    },
+    "level": 36,
+    "imageUrl": "/retro/item/9037.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Damage", "minStat": 2, "maxStat": 4 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 4 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Deceitful Wedding Ring",
+      "fr": "Fourballiance",
+      "de": "Heckenschutzring",
+      "es": "Mazorralianza",
+      "it": "Furbafede",
+      "pt": "Aliarbustor"
+    },
+    "level": 33,
+    "imageUrl": "/retro/item/9060.png",
+    "setID": "16",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Solo's Ring",
+      "fr": "Anneau Solo",
+      "de": "Organa-Ring",
+      "es": "Hanillo Solo",
+      "it": "Anello Solo",
+      "pt": "Anel Solo"
+    },
+    "level": 31,
+    "imageUrl": "/retro/item/9144.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 6, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 6, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bobblering",
+      "fr": "Pompanneau",
+      "de": "Pom-Pompöser Ring des Pösen",
+      "es": "Pompanillo",
+      "it": "Pompanello",
+      "pt": "Bobbleanel"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/9165.png",
+    "setID": "124",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Anneau Cristalin",
+      "fr": "Anneau Cristalin",
+      "de": "[!DE] Anneau Cristalin",
+      "es": "[!ES] Anneau Cristalin",
+      "it": "[!IT] Anneau Cristalin",
+      "pt": "[!PT] Anneau Cristalin"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/9164.png",
+    "setID": "125",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Gobball's Ring",
+      "fr": "Anneau Royal du Bouftou",
+      "de": "Königlicher Fresssackring",
+      "es": "Anillo Real de Jalató",
+      "it": "Anello Reale del Pappatutto",
+      "pt": "Anel Real do Papatudo"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/9046.png",
+    "setID": "4",
+    "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 60 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Enutrof's Memento",
+      "fr": "Souvenir d'Enutrof",
+      "de": "Enutrofs Erinnering",
+      "es": "Recuerdo de Anutrof",
+      "it": "Ricordo di Anutrof",
+      "pt": "Lembrança de Enutrof"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/9015.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Xelor's Past",
+      "fr": "Passé de Xélor",
+      "de": "Xélors Vergangenheit",
+      "es": "Pasado de Xelor",
+      "it": "Passato di Xelor",
+      "pt": "Passado de Xelor"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/9016.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ecalisor",
+      "fr": "L'Ecaliseur",
+      "de": "Der Ecalisator",
+      "es": "El Zurcalizador",
+      "it": "L'Ecalizzatore",
+      "pt": "Ecalisor"
+    },
+    "level": 29,
+    "imageUrl": "/retro/item/9035.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": null, "maxStat": 4 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 4 },
+      { "stat": "Damage", "minStat": null, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Silimelle's Wedding Ring",
+      "fr": "Alliance de Silimelle",
+      "de": "Silimelles Ehering",
+      "es": "Alianza de Silimella",
+      "it": "Fede di Silimelle",
+      "pt": "Aliança de Silimela"
+    },
+    "level": 26,
+    "imageUrl": "/retro/item/9030.png",
+    "setID": null,
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 25 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Warrior Fecalizer",
+      "fr": "Fécaliseur du Guerrier",
+      "de": "Krieger-Fécalisator",
+      "es": "Fecalizador del Guerrero",
+      "it": "Fecalizzatore del Guerriero",
+      "pt": "Fecalizador do Guerreiro"
+    },
+    "level": 26,
+    "imageUrl": "/retro/item/9041.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Magus Fecalizer",
+      "fr": "Fécaliseur du Magicien",
+      "de": "Magier-Fécalisator",
+      "es": "Fecalizador del Mago",
+      "it": "Fecalizzatore del Mago",
+      "pt": "Fecalizador do Mago"
+    },
+    "level": 26,
+    "imageUrl": "/retro/item/9040.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Mer Ring",
+      "fr": "Anneau Mèr",
+      "de": "O' Mer-Ring",
+      "es": "Anillo Mahr",
+      "it": "Anello Mar",
+      "pt": "Anel deMer"
+    },
+    "level": 25,
+    "imageUrl": "/retro/item/9028.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": 2, "maxStat": 61 }],
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": "<", "value": 100 },
+        { "stat": "Chance", "operator": "<", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tofu Ring",
+      "fr": "Anneau du Tofu",
+      "de": "Tofu-Ring",
+      "es": "Anillo de tofu",
+      "it": "Anello del Tofu",
+      "pt": "Anel do Tofu"
+    },
+    "level": 21,
+    "imageUrl": "/retro/item/9100.png",
+    "setID": "50",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 10 },
+      { "stat": "Agility", "minStat": 6, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Mos Kitano",
+      "fr": "Mos Kitano",
+      "de": "Moski-Toring",
+      "es": "Mos Kitano",
+      "it": "Mos Kitanello",
+      "pt": "Mos Kitanel"
+    },
+    "level": 21,
+    "imageUrl": "/retro/item/9071.png",
+    "setID": "23",
+    "stats": [
+      { "stat": "Chance", "minStat": 1, "maxStat": 15 },
+      { "stat": "Heals", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Zest Ring",
+      "fr": "Anneau Zest",
+      "de": "Zitring",
+      "es": "Anillo Ralladuro",
+      "it": "Anello Scorza",
+      "pt": "Raspanel"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/9163.png",
+    "setID": "115",
+    "stats": [
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bearman's Wedding Ring",
+      "fr": "Alliance de l'Homme Ours",
+      "de": "Ehering des Bärenmannes",
+      "es": "Alianza del hombre oso",
+      "it": "Fede dell'Uomo Orso",
+      "pt": "Aliança do Homem Urso"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/9066.png",
+    "setID": "12",
+    "stats": [
+      { "stat": "Initiative", "minStat": 26, "maxStat": 35 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ecaflip's Luck",
+      "fr": "Chance d'Ecaflip",
+      "de": "Ecaflips Glück",
+      "es": "Suerte de Zurcarák",
+      "it": "Fortuna dell'Ecaflip",
+      "pt": "Sorte de Ecaflip"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/9032.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Boar Ring",
+      "fr": "Anneau du Sanglier",
+      "de": "Armband des Keilers",
+      "es": "Anillo de jabalí",
+      "it": "Anello del Cinghiale",
+      "pt": "Anel do Javali"
+    },
+    "level": 19,
+    "imageUrl": "/retro/item/9073.png",
+    "setID": "21",
+    "stats": [{ "stat": "Wisdom", "minStat": 6, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Blubba Ring",
+      "fr": "Anneau Vice",
+      "de": "Initialiring",
+      "es": "Anillo Novato",
+      "it": "Anello Vizio",
+      "pt": "Anel de Novato"
+    },
+    "level": 18,
+    "imageUrl": "/retro/item/9088.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gangster Ring",
+      "fr": "Anneau du Bandit",
+      "de": "Banditenring",
+      "es": "Anillo de bandido",
+      "it": "Anello del Bandito",
+      "pt": "Anel do Bandido"
+    },
+    "level": 17,
+    "imageUrl": "/retro/item/9077.png",
+    "setID": "25",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ano Rak Ring",
+      "fr": "Anneau Rak",
+      "de": "Regen-Ringe",
+      "es": "Anillo Vizna",
+      "it": "Anello Rak",
+      "pt": "Anel de Ano Rak"
+    },
+    "level": 17,
+    "imageUrl": "/retro/item/9034.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 8 },
+      { "stat": "Chance", "minStat": null, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Rocky Ring",
+      "fr": "Anneau des Rocheuses",
+      "de": "Felsenring",
+      "es": "Anillo de las Rocosas",
+      "it": "Anello delle Rocce",
+      "pt": "Anel Rochoso"
+    },
+    "level": 15,
+    "imageUrl": "/retro/item/9004.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": null, "maxStat": 4 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ringer",
+      "fr": "Le Bagueur",
+      "de": "Markiering",
+      "es": "El Anillador",
+      "it": "L'Anellatore",
+      "pt": "Sineiro"
+    },
+    "level": 15,
+    "imageUrl": "/retro/item/9014.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 10 },
+      { "stat": "Chance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sacrier's Wound",
+      "fr": "Blessure du Sacrieur",
+      "de": "Sacrieurs Wunde",
+      "es": "Herida del Sacrógrito",
+      "it": "Ferita del Sàcrido",
+      "pt": "Ferida do Sacrier"
+    },
+    "level": 15,
+    "imageUrl": "/retro/item/9013.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 6, "maxStat": 10 },
+      { "stat": "Vitality", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Mental Ring",
+      "fr": "Anneau du Mental",
+      "de": "Ring der Geistesstärke",
+      "es": "Anillo mental",
+      "it": "Anello Mentale",
+      "pt": "Anel Mental"
+    },
+    "level": 14,
+    "imageUrl": "/retro/item/9036.png",
+    "setID": null,
+    "stats": [{ "stat": "Intelligence", "minStat": 11, "maxStat": 20 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Farmer Moth-Eaten Mittens",
+      "fr": "Mitaines Mitées du Paysan",
+      "de": "Mottenzerfressene Bauernfäustlinge",
+      "es": "Mitones apolillados de campesino",
+      "it": "Guanto Tarmato del Contadino",
+      "pt": "Luvas roídas por traças do fazendeiro"
+    },
+    "level": 12,
+    "imageUrl": "/retro/item/9102.png",
+    "setID": "47",
+    "stats": [
+      { "stat": "Heals", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Valuable Ring",
+      "fr": "L'Anneau de Valeur",
+      "de": "Ring der Tüchtigkeit",
+      "es": "Anillo de valor",
+      "it": "L'Anello di Valore",
+      "pt": "Anel Valuable"
+    },
+    "level": 12,
+    "imageUrl": "/retro/item/9007.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": null, "maxStat": 4 },
+      { "stat": "Chance", "minStat": null, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fortifying Ring",
+      "fr": "Anneau Fortifiant",
+      "de": "Festungsring",
+      "es": "Anillo fortalecedor",
+      "it": "Anello Fortificante",
+      "pt": "Anel Fortificante"
+    },
+    "level": 11,
+    "imageUrl": "/retro/item/9029.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": 6, "maxStat": 15 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sponge Ring",
+      "fr": "Anneau en Mousse",
+      "de": "Schwammring",
+      "es": "Anillo de esponja",
+      "it": "Anello di Spugna",
+      "pt": "Anel de Esponja"
+    },
+    "level": 10,
+    "imageUrl": "/retro/item/9112.png",
+    "setID": "63",
+    "stats": [{ "stat": "Summons", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Country Ring",
+      "fr": "Anneau Champêtre",
+      "de": "Ring des Feldhüters",
+      "es": "Anillo campestre",
+      "it": "Anello Campestre",
+      "pt": "Anel Campestre"
+    },
+    "level": 10,
+    "imageUrl": "/retro/item/9065.png",
+    "setID": "18",
+    "stats": [
+      { "stat": "Vitality", "minStat": 5, "maxStat": 6 },
+      { "stat": "Intelligence", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bouze Lite Yeah's Ring",
+      "fr": "Anneau de Bouze le Clerc",
+      "de": "Ring von Buhz Leichtfrier",
+      "es": "Anillo De Boz Layt Yer",
+      "it": "Anello di Buz il Prete",
+      "pt": "Anel de Boz Laitíer"
+    },
+    "level": 10,
+    "imageUrl": "/retro/item/9044.png",
+    "setID": "1",
+    "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 30 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ring of Satisfaction",
+      "fr": "Anneau de Satisfaction",
+      "de": "Ring der Genugtuung",
+      "es": "Anillo de satisfacción",
+      "it": "Anello di Soddisfazione",
+      "pt": "Anel da Satisfação"
+    },
+    "level": 8,
+    "imageUrl": "/retro/item/9012.png",
+    "setID": null,
+    "stats": [{ "stat": "AP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Puissant Anneau d'Agilité",
+      "fr": "Puissant Anneau d'Agilité",
+      "de": "[!DE] Puissant Anneau d'Agilité",
+      "es": "[!ES] Puissant Anneau d'Agilité",
+      "it": "[!IT] Puissant Anneau d'Agilité",
+      "pt": "[!PT] Puissant Anneau d'Agilité"
+    },
+    "level": 8,
+    "imageUrl": "/retro/item/9001.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 8 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Puissant Anneau de Chance",
+      "fr": "Puissant Anneau de Chance",
+      "de": "[!DE] Puissant Anneau de Chance",
+      "es": "[!ES] Puissant Anneau de Chance",
+      "it": "[!IT] Puissant Anneau de Chance",
+      "pt": "[!PT] Puissant Anneau de Chance"
+    },
+    "level": 8,
+    "imageUrl": "/retro/item/9009.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 8 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Puissant Anneau de Sagesse",
+      "fr": "Puissant Anneau de Sagesse",
+      "de": "[!DE] Puissant Anneau de Sagesse",
+      "es": "[!ES] Puissant Anneau de Sagesse",
+      "it": "[!IT] Puissant Anneau de Sagesse",
+      "pt": "[!PT] Puissant Anneau de Sagesse"
+    },
+    "level": 8,
+    "imageUrl": "/retro/item/9007.png",
+    "setID": null,
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 4 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Grand Anneau de Chance",
+      "fr": "Grand Anneau de Chance",
+      "de": "[!DE] Grand Anneau de Chance",
+      "es": "[!ES] Grand Anneau de Chance",
+      "it": "[!IT] Grand Anneau de Chance",
+      "pt": "[!PT] Grand Anneau de Chance"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/9009.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 6 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Grand Anneau de Sagesse",
+      "fr": "Grand Anneau de Sagesse",
+      "de": "[!DE] Grand Anneau de Sagesse",
+      "es": "[!ES] Grand Anneau de Sagesse",
+      "it": "[!IT] Grand Anneau de Sagesse",
+      "pt": "[!PT] Grand Anneau de Sagesse"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/9007.png",
+    "setID": null,
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 3 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Arachnoring",
+      "fr": "Araknoton",
+      "de": "Arachnoton",
+      "es": "Araknotón",
+      "it": "Araknoton",
+      "pt": "Araknanel"
+    },
+    "level": 5,
+    "imageUrl": "/retro/item/9076.png",
+    "setID": "22",
+    "stats": [{ "stat": "Agility", "minStat": 1, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Treering",
+      "fr": "Abranneau",
+      "de": "Astakning",
+      "es": "Abranillo",
+      "it": "Alberanello",
+      "pt": "Arvranel"
+    },
+    "level": 5,
+    "imageUrl": "/retro/item/9011.png",
+    "setID": null,
+    "stats": [{ "stat": "AP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Grand Anneau d'Agilité",
+      "fr": "Grand Anneau d'Agilité",
+      "de": "[!DE] Grand Anneau d'Agilité",
+      "es": "[!ES] Grand Anneau d'Agilité",
+      "it": "[!IT] Grand Anneau d'Agilité",
+      "pt": "[!PT] Grand Anneau d'Agilité"
+    },
+    "level": 5,
+    "imageUrl": "/retro/item/9001.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 6 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tea Ring",
+      "fr": "Anneau Thé",
+      "de": "Thee-Ring",
+      "es": "Anillo Té",
+      "it": "Anello Té",
+      "pt": "Chaanel"
+    },
+    "level": 4,
+    "imageUrl": "/retro/item/9001.png",
+    "setID": null,
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Mush Mush Wedding Ring",
+      "fr": "Alliance Du Champ Champ",
+      "de": "Pilzlingtrauring",
+      "es": "Alianza de champi champ",
+      "it": "Fede del Fun Fung",
+      "pt": "Aliança do Cogu Cogu"
+    },
+    "level": 3,
+    "imageUrl": "/retro/item/9075.png",
+    "setID": "24",
+    "stats": [
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 3 },
+      { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Mush Mush Ring",
+      "fr": "Anneau du Champ Champ",
+      "de": "Pilzlingring",
+      "es": "Anillo de champi champ",
+      "it": "Anello del Fun Fung",
+      "pt": "Anel do Cogu Cogu"
+    },
+    "level": 3,
+    "imageUrl": "/retro/item/9074.png",
+    "setID": "24",
+    "stats": [
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 3 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 3 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Agility Ring",
+      "fr": "Anneau d'Agilité",
+      "de": "Ring der Flinkheit",
+      "es": "Anillo de agilidad",
+      "it": "Anello di Agilità",
+      "pt": "Anel de agilidade"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/9001.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 4 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Chance Ring",
+      "fr": "Anneau de Chance",
+      "de": "Glücksring",
+      "es": "Anillo de suerte",
+      "it": "Anello di Fortuna",
+      "pt": "Anel de sorte"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/9009.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 4 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wisdom Ring",
+      "fr": "Anneau de Sagesse",
+      "de": "Ring der Weisheit",
+      "es": "Anillo de sabiduría",
+      "it": "Anello di Saggezza",
+      "pt": "Anel de sabedoria"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/9007.png",
+    "setID": null,
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pluswan",
+      "fr": "Le Plussain",
+      "de": "Plusains",
+      "es": "El Masano",
+      "it": "Il Pìuuno",
+      "pt": "O Maizum"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9125.png",
+    "setID": "69",
+    "stats": [{ "stat": "Critical", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pink Piwi Ring",
+      "fr": "Anneau du Piou Rose",
+      "de": "Ring des rosafarbenen Piepmatzes",
+      "es": "Anillo de pío rosa",
+      "it": "Anello del Pìu Rosa",
+      "pt": "Anel do Piu Rosa"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9111.png",
+    "setID": "70",
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Yellow Piwi Ring",
+      "fr": "Anneau du Piou Jaune",
+      "de": "Ring des gelben Piepmatzes",
+      "es": "Anillo de pío amarillo",
+      "it": "Anello del Pìu Giallo",
+      "pt": "Anel do Piu Amarelo"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9110.png",
+    "setID": "72",
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Green Piwi Ring",
+      "fr": "Anneau du Piou Vert",
+      "de": "Ring des grünen Piepmatzes",
+      "es": "Anillo de pío verde",
+      "it": "Anello del Pìu Verde",
+      "pt": "Anel do Piu Verde"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9109.png",
+    "setID": "71",
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Purple Piwi Ring",
+      "fr": "Anneau du Piou Violet",
+      "de": "Ring des violetten Piepmatzes",
+      "es": "Anillo de pío violeta",
+      "it": "Anello del Pìu Viola",
+      "pt": "Anel do Piu Violeta"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9108.png",
+    "setID": "62",
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Blue Piwi Ring",
+      "fr": "Anneau du Piou Bleu",
+      "de": "Ring des blauen Piepmatzes",
+      "es": "Anillo de pío azul",
+      "it": "Anello del Pìu Blu",
+      "pt": "Anel do Piu Azul"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9107.png",
+    "setID": "61",
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Red Piwi Ring",
+      "fr": "Anneau du Piou Rouge",
+      "de": "Ring des roten Piepmatzes",
+      "es": "Anillo de pío rojo",
+      "it": "Anello del Pìu Rosso",
+      "pt": "Anel do Piu Vermelho"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9106.png",
+    "setID": "60",
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Small Chance Ring",
+      "fr": "Petit Anneau du Chanceux",
+      "de": "Glücksikläglich Ring",
+      "es": "Pequeño anillo del afortunado",
+      "it": "Piccolo Anello del Fortunato",
+      "pt": "Pequeno Anel do Sortudo"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9042.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Small Magic Ring",
+      "fr": "Petit Anneau Magique",
+      "de": "Intellimagich Ring",
+      "es": "Pequeño anillo mágico",
+      "it": "Piccolo Anello Magico",
+      "pt": "Pequeno Anel Mágico"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9003.png",
+    "setID": null,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Vital Ring",
+      "fr": "Anneau Vitalesque",
+      "de": "Vitalitätich Ring",
+      "es": "Anillo vitalesco",
+      "it": "Anello Vitalesco",
+      "pt": "Anel Vitalício"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9002.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Nimble Ring",
+      "fr": "Anneau Agilesque",
+      "de": "Flinkitäglich Ring",
+      "es": "Anillo agilesco",
+      "it": "Anello Agilesco",
+      "pt": "Anel Ágil"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9001.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Strong Ring",
+      "fr": "Anneau Forcesque",
+      "de": "Stärkitätmich Ring",
+      "es": "Anillo forcesco",
+      "it": "Anello Forzesco",
+      "pt": "Anel de Força"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9005.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ano Rexik Ring",
+      "fr": "Anneau Rexik",
+      "de": "Ano Rexik Ring",
+      "es": "Anillo Réxiko",
+      "it": "Anello Rexik",
+      "pt": "Anel de Ano Rexik"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9031.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": 2, "maxStat": 6 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Camate",
+      "fr": "Camaïneux",
+      "de": "Camasserfüllt",
+      "es": "Camafeoso",
+      "it": "Camanello",
+      "pt": "Camate"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9033.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": 2, "maxStat": 6 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Gantie",
+      "fr": "Gantie Royal",
+      "de": "Royal Gantie",
+      "es": "Ganti Real",
+      "it": "Ganti Reale",
+      "pt": "Gantie Real"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9008.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": 2, "maxStat": 6 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Petit Anneau d'Agilité",
+      "fr": "Petit Anneau d'Agilité",
+      "de": "[!DE] Petit Anneau d'Agilité",
+      "es": "[!ES] Petit Anneau d'Agilité",
+      "it": "[!IT] Petit Anneau d'Agilité",
+      "pt": "[!PT] Petit Anneau d'Agilité"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9001.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Petit Anneau de Chance",
+      "fr": "Petit Anneau de Chance",
+      "de": "[!DE] Petit Anneau de Chance",
+      "es": "[!ES] Petit Anneau de Chance",
+      "it": "[!IT] Petit Anneau de Chance",
+      "pt": "[!PT] Petit Anneau de Chance"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9009.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Petit Anneau de Sagesse",
+      "fr": "Petit Anneau de Sagesse",
+      "de": "[!DE] Petit Anneau de Sagesse",
+      "es": "[!ES] Petit Anneau de Sagesse",
+      "it": "[!IT] Petit Anneau de Sagesse",
+      "pt": "[!PT] Petit Anneau de Sagesse"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9007.png",
+    "setID": null,
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Adventurer Ring",
+      "fr": "Anneau de l'Aventurier",
+      "de": "Ring des Abenteurers",
+      "es": "Anillo de aventurero",
+      "it": "Anello dell'Avventuriero",
+      "pt": "Anel do Aventureiro"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9048.png",
+    "setID": "5",
+    "stats": [
+      { "stat": "Chance", "minStat": 1, "maxStat": 2 },
+      { "stat": "Strength", "minStat": 1, "maxStat": 2 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 2 },
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 2 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wedding Ring",
+      "fr": "Alliance",
+      "de": "Trauring",
+      "es": "Alianza",
+      "it": "Fede",
+      "pt": "Aliança"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/9027.png",
+    "setID": null,
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  }
+]

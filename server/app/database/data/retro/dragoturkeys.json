@@ -1,0 +1,1839 @@
+[
+  {
+    "name": {
+      "en": "Armoured Dragoturkey",
+      "fr": "Dragodinde en armure",
+      "de": "Gepanzerter Dracotruter",
+      "es": "Dragopavo con armadura",
+      "it": "Dragacchino in Armatura",
+      "pt": "Dragoperu com armadura"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97093.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Power", "minStat": null, "maxStat": 50 },
+      { "stat": "% Neutral Resistance", "minStat": null, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": null, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": null, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": null, "maxStat": 5 },
+      { "stat": "% Air Resistance", "minStat": null, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Plum and Crimson Dragoturkey",
+      "fr": "Dragodinde Prune et Pourpre",
+      "de": "Purpur und Pflaumen-Dracotruter",
+      "es": "Dragopavo ciruela y púrpura",
+      "it": "Dragacchino Prugna e Porpora",
+      "pt": "Dragoperu ameixa e púrpura"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97092.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 200 },
+      { "stat": "Strength", "minStat": null, "maxStat": 60 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Plum and Orchid Dragoturkey",
+      "fr": "Dragodinde Prune et Orchidée",
+      "de": "Pflaumen und Orchideen-Dracotruter",
+      "es": "Dragopavo ciruela y orquídeo",
+      "it": "Dragacchino Prugna e Orchidea",
+      "pt": "Dragoperu ameixa e orquídea"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97091.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 200 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 60 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Plum and Turquoise Dragoturkey",
+      "fr": "Dragodinde Prune et Turquoise",
+      "de": "Türkis und Pflaumen-Dracotruter",
+      "es": "Dragopavo ciruela y turquesa",
+      "it": "Dragacchino Prugna e Turchese",
+      "pt": "Dragoperu ameixa e turquesa"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97090.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 200 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": null, "maxStat": 60 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Plum and Ginger Dragoturkey",
+      "fr": "Dragodinde Prune et Rousse",
+      "de": "Rot und Pflaumen-Dracotruter",
+      "es": "Dragopavo ciruela y pelirrojo",
+      "it": "Dragacchino Prugna e Rosso",
+      "pt": "Dragoperu ameixa e ruivo"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97089.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 300 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Plum and Ivory Dragoturkey",
+      "fr": "Dragodinde Prune et Ivoire",
+      "de": "Pflaumen und Elfenbein-Dracotruter",
+      "es": "Dragopavo ciruela y marfil",
+      "it": "Dragacchino Prugna e Avorio",
+      "pt": "Dragoperu ameixa e marfim"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97088.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 200 },
+      { "stat": "Power", "minStat": null, "maxStat": 40 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Plum and Indigo Dragoturkey",
+      "fr": "Dragodinde Prune et Indigo",
+      "de": "Indigo und Pflaumen-Dracotruter",
+      "es": "Dragopavo ciruela e índigo",
+      "it": "Dragacchino Prugna e Indaco",
+      "pt": "Dragoperu ameixa e índigo"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97087.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 200 },
+      { "stat": "Chance", "minStat": null, "maxStat": 60 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Plum and Emerald Dragoturkey",
+      "fr": "Dragodinde Prune et Emeraude",
+      "de": "Pflaumen und Smaragd-Dracotruter",
+      "es": "Dragopavo ciruela y esmeralda",
+      "it": "Dragacchino Prugna e Smeraldo",
+      "pt": "Dragoperu ameixa e esmeralda"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97086.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 200 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Plum and Ebony Dragoturkey",
+      "fr": "Dragodinde Prune et Ebène",
+      "de": "Pflaumen und Ebenholz-Dracotruter",
+      "es": "Dragopavo ciruela y ébano",
+      "it": "Dragacchino Prugna ed Ebano",
+      "pt": "Dragoperu ameixa e ébano"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97085.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 200 },
+      { "stat": "Agility", "minStat": null, "maxStat": 60 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Plum and Golden Dragoturkey",
+      "fr": "Dragodinde Prune et Dorée",
+      "de": "Goldener Pflaumen-Dracotruter",
+      "es": "Dragopavo ciruela y dorado",
+      "it": "Dragacchino Prugna e Dorato",
+      "pt": "Dragoperu ameixa e dourado"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97084.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 25 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Plum and Almond Dragoturkey",
+      "fr": "Dragodinde Prune et Amande",
+      "de": "Pflaumen und Mandel-Dracotruter",
+      "es": "Dragopavo ciruela y almendrado",
+      "it": "Dragacchino Prugna e Mandorla",
+      "pt": "Dragoperu ameixa e amêndoa"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97083.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 200 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 500 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Orchid and Crimson Dragoturkey",
+      "fr": "Dragodinde Orchidée et Pourpre",
+      "de": "Purpur und Orchideen-Dracotruter",
+      "es": "Dragopavo orquídeo y púrpura",
+      "it": "Dragacchino Orchidea e Porpora",
+      "pt": "Dragoperu orquídea e púrpura"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97082.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Strength", "minStat": null, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Turquoise and Crimson Dragoturkey",
+      "fr": "Dragodinde Turquoise et Pourpre",
+      "de": "Türkis und Purpur-Dracotruter",
+      "es": "Dragopavo turquesa y púrpura",
+      "it": "Dragacchino Turchese e Porpora",
+      "pt": "Dragoperu turquesa e púrpura"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97079.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Strength", "minStat": null, "maxStat": 60 },
+      { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Turquoise and Orchid Dragoturkey",
+      "fr": "Dragodinde Turquoise et Orchidée",
+      "de": "Türkis und Orchideen-Dracotruter",
+      "es": "Dragopavo turquesa y orquídeo",
+      "it": "Dragacchino Turchese e Orchidea",
+      "pt": "Dragoperu turquesa e orquídea"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97078.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 60 },
+      { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crimson and Ginger Dragoturkey",
+      "fr": "Dragodinde Pourpre et Rousse",
+      "de": "Rot und Purpur-Dracotruter",
+      "es": "Dragopavo púrpura y pelirrojo",
+      "it": "Dragacchino Porpora e Rosso",
+      "pt": "Dragoperu púrpura e ruivo"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97077.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 150 },
+      { "stat": "Strength", "minStat": null, "maxStat": 60 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Orchid and Ginger Dragoturkey",
+      "fr": "Dragodinde Orchidée et Rousse",
+      "de": "Rot und Orchideen-Dracotruter",
+      "es": "Dragopavo orquídeo y pelirrojo",
+      "it": "Dragacchino Orchidea e Rosso",
+      "pt": "Dragoperu orquídea e ruivo"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97076.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 150 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 60 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Turquoise and Ginger Dragoturkey",
+      "fr": "Dragodinde Turquoise et Rousse",
+      "de": "Rot und Türkis-Dracotruter",
+      "es": "Dragopavo turquesa y pelirrojo",
+      "it": "Dragacchino Turchese e Rosso",
+      "pt": "Dragoperu turquesa e ruivo"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97075.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 200 },
+      { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ivory and Crimson Dragoturkey",
+      "fr": "Dragodinde Ivoire et Pourpre",
+      "de": "Elfenbein und Purpur-Dracotruter",
+      "es": "Dragopavo marfil y púrpura",
+      "it": "Dragacchino Avorio e Porpora",
+      "pt": "Dragoperu marfim e púrpura"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97074.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Strength", "minStat": null, "maxStat": 40 },
+      { "stat": "Power", "minStat": null, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ivory and Orchid Dragoturkey",
+      "fr": "Dragodinde Ivoire et Orchidée",
+      "de": "Elfenbein und Orchideen-Dracotruter",
+      "es": "Dragopavo marfil y orquídeo",
+      "it": "Dragacchino Avorio e Orchidea",
+      "pt": "Dragoperu marfim e orquídea"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97073.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 40 },
+      { "stat": "Power", "minStat": null, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Indigo and Crimson Dragoturkey",
+      "fr": "Dragodinde Indigo et Pourpre",
+      "de": "Indigo und Purpur-Dracotruter",
+      "es": "Dragopavo índigo y púrpura",
+      "it": "Dragacchino Indaco e Porpora",
+      "pt": "Dragoperu índigo e púrpura"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97071.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Strength", "minStat": null, "maxStat": 50 },
+      { "stat": "Chance", "minStat": null, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Emerald and Ivory Dragoturkey",
+      "fr": "Dragodinde Emeraude et Ivoire",
+      "de": "Smaragd und Elfenbein-Dracotruter",
+      "es": "Dragopavo esmeralda y marfil",
+      "it": "Dragacchino Smeraldo e Avorio",
+      "pt": "Dragoperu esmeralda e marfim"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97062.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Power", "minStat": null, "maxStat": 20 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Emerald and Indigo Dragoturkey",
+      "fr": "Dragodinde Emeraude et Indigo",
+      "de": "Indigo und Smaragd-Dracotruter",
+      "es": "Dragopavo esmeralda e índigo",
+      "it": "Dragacchino Smeraldo e Indaco",
+      "pt": "Dragoperu esmeralda e índigo"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97061.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Chance", "minStat": null, "maxStat": 30 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ebony and Crimson Dragoturkey",
+      "fr": "Dragodinde Ebène et Pourpre",
+      "de": "Purpur und Ebenholz-Dracotruter",
+      "es": "Dragopavo ébano y púrpura",
+      "it": "Dragacchino Ebano e Porpora",
+      "pt": "Dragoperu ébano e púrpura"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97057.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Strength", "minStat": null, "maxStat": 50 },
+      { "stat": "Agility", "minStat": null, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ebony and Orchid Dragoturkey",
+      "fr": "Dragodinde Ebène et Orchidée",
+      "de": "Orchideen und Ebenholz-Dracotruter",
+      "es": "Dragopavo ébano y orquídeo",
+      "it": "Dragacchino Ebano e Orchidea",
+      "pt": "Dragoperu ébano e orquídea"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97060.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 50 },
+      { "stat": "Agility", "minStat": null, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ebony and Turquoise Dragoturkey",
+      "fr": "Dragodinde Ebène et Turquoise",
+      "de": "Türkis und Ebenholz-Dracotruter",
+      "es": "Dragopavo ébano y turquesa",
+      "it": "Dragacchino Ebano e Turchese",
+      "pt": "Dragoperu ébano e turquesa"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97059.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Agility", "minStat": null, "maxStat": 60 },
+      { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ebony and Indigo Dragoturkey",
+      "fr": "Dragodinde Ebène et Indigo",
+      "de": "Indigo und Ebenholz-Dracotruter",
+      "es": "Dragopavo ébano e índigo",
+      "it": "Dragacchino Ebano e Indaco",
+      "pt": "Dragoperu ébano e índigo"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97058.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Chance", "minStat": null, "maxStat": 50 },
+      { "stat": "Agility", "minStat": null, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ebony and Emerald Dragoturkey",
+      "fr": "Dragodinde Ebène et Emeraude",
+      "de": "Smaragd und Ebenholz-Dracotruter",
+      "es": "Dragopavo ébano y esmeralda",
+      "it": "Dragacchino Ebano e Smeraldo",
+      "pt": "Dragoperu ébano e esmeralda"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97056.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Agility", "minStat": null, "maxStat": 30 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden and Crimson Dragoturkey",
+      "fr": "Dragodinde Dorée et Pourpre",
+      "de": "Gold und Purpur-Dracotruter",
+      "es": "Dragopavo dorado y púrpura",
+      "it": "Dragacchino Dorato e Porpora",
+      "pt": "Dragoperu dourado e púrpura"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97055.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Strength", "minStat": null, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden and Orchid Dragoturkey",
+      "fr": "Dragodinde Dorée et Orchidée",
+      "de": "Gold und Orchideen-Dracotruter",
+      "es": "Dragopavo dorado y orquídeo",
+      "it": "Dragacchino Dorato e Orchidea",
+      "pt": "Dragoperu dourado e orquídea"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97054.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden and Turquoise Dragoturkey",
+      "fr": "Dragodinde Dorée et Turquoise",
+      "de": "Gold und Türkis-Dracotruter",
+      "es": "Dragopavo dorado y turquesa",
+      "it": "Dragacchino Dorato e Turchese",
+      "pt": "Dragoperu dourado e turquesa"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97053.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 25 },
+      { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden and Ginger Dragoturkey",
+      "fr": "Dragodinde Dorée et Rousse",
+      "de": "Rot und Goldener Dracotruter",
+      "es": "Dragopavo dorado y pelirrojo",
+      "it": "Dragacchino Dorato e Rosso",
+      "pt": "Dragoperu dourado e ruivo"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97052.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden and Ivory Dragoturkey",
+      "fr": "Dragodinde Dorée et Ivoire",
+      "de": "Gold und Elfenbein-Dracotruter",
+      "es": "Dragopavo dorado y marfil",
+      "it": "Dragacchino Dorato e Avorio",
+      "pt": "Dragoperu dourado e marfim"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97051.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 25 },
+      { "stat": "Power", "minStat": null, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden and Indigo Dragoturkey",
+      "fr": "Dragodinde Dorée et Indigo",
+      "de": "Gold und Indigo-Dracotruter",
+      "es": "Dragopavo dorado e índigo",
+      "it": "Dragacchino Dorato e Indaco",
+      "pt": "Dragoperu dourado e índigo"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97050.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Chance", "minStat": null, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden and Emerald Dragoturkey",
+      "fr": "Dragodinde Dorée et Emeraude",
+      "de": "Gold und Smaragd-Dracotruter",
+      "es": "Dragopavo dorado y esmeralda",
+      "it": "Dragacchino Dorato e Smeraldo",
+      "pt": "Dragoperu dourado e esmeralda"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97049.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 25 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden and Ebony Dragoturkey",
+      "fr": "Dragodinde Dorée et Ebène",
+      "de": "Gold und Ebenholz-Dracotruter",
+      "es": "Dragopavo dorado y ébano",
+      "it": "Dragacchino Dorato ed Ebano",
+      "pt": "Dragoperu dourado e ébano"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97048.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Agility", "minStat": null, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Almond and Crimson Dragoturkey",
+      "fr": "Dragodinde Amande et Pourpre",
+      "de": "Purpur und Mandel-Dracotruter",
+      "es": "Dragopavo almendrado y púrpura",
+      "it": "Dragacchino Mandorla e Porpora",
+      "pt": "Dragoperu amêndoa e púrpura"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97047.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 50 },
+      { "stat": "Strength", "minStat": null, "maxStat": 60 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 500 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Almond and Orchid Dragoturkey",
+      "fr": "Dragodinde Amande et Orchidée",
+      "de": "Orchideen und Mandel-Dracotruter",
+      "es": "Dragopavo almendrado y orquídeo",
+      "it": "Dragacchino Mandorla e Orchidea",
+      "pt": "Dragoperu amêndoa e orquídea"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97046.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 60 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 500 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Almond and Turquoise Dragoturkey",
+      "fr": "Dragodinde Amande et Turquoise",
+      "de": "Türkis und Mandel-Dracotruter",
+      "es": "Dragopavo almendrado y turquesa",
+      "it": "Dragacchino Mandorla e Turchese",
+      "pt": "Dragoperu amêndoa e turquesa"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97045.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 50 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": null, "maxStat": 40 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 500 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Almond and Ginger Dragoturkey",
+      "fr": "Dragodinde Amande et Rousse",
+      "de": "Rot und Mandel-Dracotruter",
+      "es": "Dragopavo almendrado y pelirrojo",
+      "it": "Dragacchino Mandorla e Rosso",
+      "pt": "Dragoperu amêndoa e ruivo"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97044.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Summons", "minStat": null, "maxStat": 2 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 500 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Almond and Ivory Dragoturkey",
+      "fr": "Dragodinde Amande et Ivoire",
+      "de": "Elfenbein und Mandel-Dracotruter",
+      "es": "Dragopavo almendrado y marfil",
+      "it": "Dragacchino Mandorla e Avorio",
+      "pt": "Dragoperu amêndoa e marfim"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97043.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 40 },
+      { "stat": "Power", "minStat": null, "maxStat": 40 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 500 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Almond and Indigo Dragoturkey",
+      "fr": "Dragodinde Amande et Indigo",
+      "de": "Indigo und Mandel-Dracotruter",
+      "es": "Dragopavo almendrado e índigo",
+      "it": "Dragacchino Mandorla e Indaco",
+      "pt": "Dragoperu amêndoa e índigo"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97042.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 50 },
+      { "stat": "Chance", "minStat": null, "maxStat": 60 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 500 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Almond and Emerald Dragoturkey",
+      "fr": "Dragodinde Amande et Emeraude",
+      "de": "Smaragd und Mandel-Dracotruter",
+      "es": "Dragopavo almendrado y esmeralda",
+      "it": "Dragacchino Mandorla e Smeraldo",
+      "pt": "Dragoperu amêndoa e esmeralda"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97041.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 500 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Almond and Ebony Dragoturkey",
+      "fr": "Dragodinde Amande et Ebène",
+      "de": "Ebenholz und Mandel-Dracotruter",
+      "es": "Dragopavo almendrado y ébano",
+      "it": "Dragacchino Mandorla ed Ebano",
+      "pt": "Dragoperu amêndoa e ébano"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97040.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 50 },
+      { "stat": "Agility", "minStat": null, "maxStat": 60 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 500 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Almond and Golden Dragoturkey",
+      "fr": "Dragodinde Amande et Dorée",
+      "de": "Gold und Mandel-Dracotruter",
+      "es": "Dragopavo almendrado y dorado",
+      "it": "Dragacchino Mandorla e Dorato",
+      "pt": "Dragoperu amêndoa e dourado"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97039.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 25 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 500 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Plum Dragoturkey",
+      "fr": "Dragodinde Prune",
+      "de": "Pflaumen-Dracotruter",
+      "es": "Dragopavo ciruela",
+      "it": "Dragacchino Prugna",
+      "pt": "Dragoperu ameixa"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97038.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 200 },
+      { "stat": "Range", "minStat": null, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Orchid Dragoturkey",
+      "fr": "Dragodinde Orchidée",
+      "de": "Orchideen-Dracotruter",
+      "es": "Dragopavo orquídeo",
+      "it": "Dragacchino Orchidea",
+      "pt": "Dragoperu orquídea"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97037.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 80 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Emerald Dragoturkey",
+      "fr": "Dragodinde Emeraude",
+      "de": "Smaragd-Dracotruter",
+      "es": "Dragopavo esmeralda",
+      "it": "Dragacchino Smeraldo",
+      "pt": "Dragoperu esmeralda"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97036.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 200 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Almond Dragoturkey",
+      "fr": "Dragodinde Amande",
+      "de": "Mandel-Dracotruter",
+      "es": "Dragopavo almendrado",
+      "it": "Dragacchino Mandorla",
+      "pt": "Dragoperu amêndoa"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97023.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Summons", "minStat": null, "maxStat": 2 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 1000 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crimson Dragoturkey",
+      "fr": "Dragodinde Pourpre",
+      "de": "Purpur-Dracotruter",
+      "es": "Dragopavo púrpura",
+      "it": "Dragacchino Porpora",
+      "pt": "Dragoperu púrpura"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97034.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 50 },
+      { "stat": "Strength", "minStat": null, "maxStat": 80 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden Dragoturkey",
+      "fr": "Dragodinde Dorée",
+      "de": "Goldener Dracotruter",
+      "es": "Dragopavo dorado",
+      "it": "Dragacchino Dorato",
+      "pt": "Dragoperu dourado"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97033.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Indigo Dragoturkey",
+      "fr": "Dragodinde Indigo",
+      "de": "Indigo-Dracotruter",
+      "es": "Dragopavo índigo",
+      "it": "Dragacchino Indaco",
+      "pt": "Dragoperu índigo"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97032.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 50 },
+      { "stat": "Chance", "minStat": null, "maxStat": 80 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ivory Dragoturkey",
+      "fr": "Dragodinde Ivoire",
+      "de": "Elfenbein-Dracotruter",
+      "es": "Dragopavo marfil",
+      "it": "Dragacchino Avorio",
+      "pt": "Dragoperu marfim"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97094.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 50 },
+      { "stat": "Power", "minStat": null, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Turquoise Dragoturkey",
+      "fr": "Dragodinde Turquoise",
+      "de": "Türkis-Dracotruter",
+      "es": "Dragopavo turquesa",
+      "it": "Dragacchino Turchese",
+      "pt": "Dragoperu turquesa"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97030.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 50 },
+      { "stat": "Prospecting", "minStat": null, "maxStat": 80 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ebony and Ginger Dragoturkey",
+      "fr": "Dragodinde Ebène et Rousse",
+      "de": "Rot und Ebenholz-Dracotruter",
+      "es": "Dragopavo ébano y pelirrojo",
+      "it": "Dragacchino Ebano e Rosso",
+      "pt": "Dragoperu ébano e ruivo"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97029.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 150 },
+      { "stat": "Agility", "minStat": null, "maxStat": 60 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ivory and Ginger Dragoturkey",
+      "fr": "Dragodinde Ivoire et Rousse",
+      "de": "Rot und Elfenbein-Dracotruter",
+      "es": "Dragopavo marfil y pelirrojo",
+      "it": "Dragacchino Avorio e Rosso",
+      "pt": "Dragoperu marfim e ruivo"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97028.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 200 },
+      { "stat": "Power", "minStat": null, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ginger Dragoturkey",
+      "fr": "Dragodinde Rousse",
+      "de": "Roter Dracotruter",
+      "es": "Dragopavo pelirrojo",
+      "it": "Dragacchino Rosso",
+      "pt": "Dragoperu ruivo"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97025.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 300 }],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ebony and Ivory Dragoturkey",
+      "fr": "Dragodinde Ebène et Ivoire",
+      "de": "Ebenholz und Elfenbein-Dracotruter",
+      "es": "Dragopavo ébano y marfil",
+      "it": "Dragacchino Ebano e Avorio",
+      "pt": "Dragoperu ébano e marfim"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97026.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Agility", "minStat": null, "maxStat": 40 },
+      { "stat": "Power", "minStat": null, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ebony Dragoturkey",
+      "fr": "Dragodinde Ebène",
+      "de": "Ebenholz-Dracotruter",
+      "es": "Dragopavo ébano",
+      "it": "Dragacchino Ebano",
+      "pt": "Dragoperu ébano"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/97024.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 50 },
+      { "stat": "Agility", "minStat": null, "maxStat": 80 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ivory and Turquoise Dragoturkey",
+      "fr": "Dragodinde Ivoire et Turquoise",
+      "de": "Türkis und Elfenbein-Dracotruter",
+      "es": "Dragopavo marfil y turquesa",
+      "it": "Dragacchino Avorio e Turchese",
+      "pt": "Dragoperu marfim e turquesa"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/97072.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Power", "minStat": null, "maxStat": 40 },
+      { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Indigo and Orchid Dragoturkey",
+      "fr": "Dragodinde Indigo et Orchidée",
+      "de": "Indigo und Orchideen-Dracotruter",
+      "es": "Dragopavo índigo y orquídeo",
+      "it": "Dragacchino Indaco e Orchidea",
+      "pt": "Dragoperu índigo e orquídea"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/97070.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 50 },
+      { "stat": "Chance", "minStat": null, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Indigo and Turquoise Dragoturkey",
+      "fr": "Dragodinde Indigo et Turquoise",
+      "de": "Türkis und Indigo-Dracotruter",
+      "es": "Dragopavo índigo y turquesa",
+      "it": "Dragacchino Indaco e Turchese",
+      "pt": "Dragoperu índigo e turquesa"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/97069.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Chance", "minStat": null, "maxStat": 60 },
+      { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Indigo and Ginger Dragoturkey",
+      "fr": "Dragodinde Indigo et Rousse",
+      "de": "Rot und Indigo-Dracotruter",
+      "es": "Dragopavo índigo y pelirrojo",
+      "it": "Dragacchino Indaco e Rosso",
+      "pt": "Dragoperu índigo e ruivo"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/97068.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 150 },
+      { "stat": "Chance", "minStat": null, "maxStat": 60 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Indigo and Ivory Dragoturkey",
+      "fr": "Dragodinde Indigo et Ivoire",
+      "de": "Indigo und Elfenbein-Dracotruter",
+      "es": "Dragopavo índigo y marfil",
+      "it": "Dragacchino Indaco e Avorio",
+      "pt": "Dragoperu índigo e marfim"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/97067.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Chance", "minStat": null, "maxStat": 40 },
+      { "stat": "Power", "minStat": null, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Emerald and Crimson Dragoturkey",
+      "fr": "Dragodinde Emeraude et Pourpre",
+      "de": "Smaragd und Purpur-Dracotruter",
+      "es": "Dragopavo esmeralda y púrpura",
+      "it": "Dragacchino Smeraldo e Porpora",
+      "pt": "Dragoperu esmeralda e púrpura"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/97066.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Strength", "minStat": null, "maxStat": 30 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Emerald and Orchid Dragoturkey",
+      "fr": "Dragodinde Emeraude et Orchidée",
+      "de": "Smaragd und Orchideen-Dracotruter",
+      "es": "Dragopavo esmeralda y orquídeo",
+      "it": "Dragacchino Smeraldo e Orchidea",
+      "pt": "Dragoperu esmeralda e orquídea"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/97065.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 30 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Emerald and Turquoise Dragoturkey",
+      "fr": "Dragodinde Emeraude et Turquoise",
+      "de": "Smaragd und Türkis-Dracotruter",
+      "es": "Dragopavo esmeralda y turquesa",
+      "it": "Dragacchino Smeraldo e Turchese",
+      "pt": "Dragoperu esmeralda e turquesa"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/97064.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 100 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Emerald and Ginger Dragoturkey",
+      "fr": "Dragodinde Emeraude et Rousse",
+      "de": "Rot und Smaragd-Dracotruter",
+      "es": "Dragopavo esmeralda y pelirrojo",
+      "it": "Dragacchino Smeraldo e Rosso",
+      "pt": "Dragoperu esmeralda e ruivo"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/97063.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 300 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {
+      "en": ["Niveau > 59"],
+      "fr": ["Niveau > 59"],
+      "de": ["Niveau > 59"],
+      "es": ["Niveau > 59"],
+      "it": ["Niveau > 59"],
+      "pt": ["Niveau > 59"]
+    },
+    "customStats": {}
+  }
+]

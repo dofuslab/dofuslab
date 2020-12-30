@@ -1,0 +1,138 @@
+[
+  {
+    "name": {
+      "en": "Kaliptus Dofus",
+      "fr": "Dofus Kaliptus",
+      "de": "Kalyptus-Dofus",
+      "es": "Dofus kalipto",
+      "it": "Dofus Kalipto",
+      "pt": "Dofus Kaliptus"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/23010.png",
+    "setID": null,
+    "stats": [{ "stat": "Prospecting", "minStat": 6, "maxStat": 30 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ochre Dofus",
+      "fr": "Dofus Ocre",
+      "de": "Ocker-Dofus",
+      "es": "Dofus Ocre",
+      "it": "Dofus Ocra",
+      "pt": "Dofus Ocre"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/23012.png",
+    "setID": null,
+    "stats": [{ "stat": "AP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Cawwot Dofus",
+      "fr": "Dofus Cawotte",
+      "de": "Kawott-Dofus",
+      "es": "Dofus zanahowia",
+      "it": "Dofus Cawota",
+      "pt": "Dofus Cenouwa"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/23006.png",
+    "setID": null,
+    "stats": [{ "stat": "Wisdom", "minStat": 6, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dofawa",
+      "fr": "Dofawa",
+      "de": "Dofawa",
+      "es": "Dofawa",
+      "it": "Dofawa",
+      "pt": "Dofawa"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/23009.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Vulbis Dofus",
+      "fr": "Dofus Vulbis",
+      "de": "Dofus Vulbis",
+      "es": "Dofus vulbis",
+      "it": "Dofus Vulbis",
+      "pt": "Dofus Vulbis"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/23004.png",
+    "setID": null,
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Turquoise Dofus",
+      "fr": "Dofus Turquoise",
+      "de": "Türkis-Dofus",
+      "es": "Dofus Turquesa",
+      "it": "Dofus Turchese",
+      "pt": "Dofus Turquesa"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/23003.png",
+    "setID": null,
+    "stats": [{ "stat": "Critical", "minStat": 11, "maxStat": 20 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Emerald Dofus",
+      "fr": "Dofus Émeraude",
+      "de": "Smaragd-Dofus",
+      "es": "Dofus Esmeralda",
+      "it": "Dofus Smeraldo",
+      "pt": "Dofus Esmeralda"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/23002.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": 51, "maxStat": 100 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crimson Dofus",
+      "fr": "Dofus Pourpre",
+      "de": "Purpur-Dofus",
+      "es": "Dofus Púrpura",
+      "it": "Dofus Porpora",
+      "pt": "Dofus Púrpura"
+    },
+    "level": 6,
+    "imageUrl": "/retro/item/23001.png",
+    "setID": null,
+    "stats": [{ "stat": "Power", "minStat": 26, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  }
+]

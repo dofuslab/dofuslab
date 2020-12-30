@@ -1,0 +1,3720 @@
+[
+  {
+    "name": {
+      "en": "Round Kimbo Sandals",
+      "fr": "Sandales Circulaires du Kimbo",
+      "de": "Kimbo-Treter",
+      "es": "Sandalias circulares del Kimbo",
+      "it": "Sandali Circolari del Kimbo",
+      "pt": "Sandálias circulares do Kimbo"
+    },
+    "level": 195,
+    "imageUrl": "/retro/item/11113.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": 51, "maxStat": 70 },
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pierced Boots",
+      "fr": "Bottes Répané",
+      "de": "Beringte Stiefel",
+      "es": "Botas Plastao",
+      "it": "Stivali Battuta",
+      "pt": "Botas Furadas"
+    },
+    "level": 184,
+    "imageUrl": "/retro/item/11126.png",
+    "setID": "109",
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "Summons", "minStat": null, "maxStat": 2 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Spore Boots",
+      "fr": "Chaussons Pignons",
+      "de": "Pandemische Toffeln",
+      "es": "Zapatiñones",
+      "it": "Pantofolignon",
+      "pt": "Botas Espora"
+    },
+    "level": 181,
+    "imageUrl": "/retro/item/11116.png",
+    "setID": "121",
+    "stats": [
+      { "stat": "Strength", "minStat": 51, "maxStat": 70 },
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ta Boots",
+      "fr": "Bottines des sous-bois",
+      "de": "Unterholzige Überstülpchen",
+      "es": "Botines del sotobosque",
+      "it": "Stivaletti dei Sottoboschi",
+      "pt": "Botas do sub-bosque"
+    },
+    "level": 175,
+    "imageUrl": "/retro/item/11115.png",
+    "setID": "120",
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 401, "maxStat": 700 },
+      { "stat": "Prospecting", "minStat": 21, "maxStat": 30 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Minotot Sandals",
+      "fr": "Sandales du Minotot",
+      "de": "Minotot-Sandalen",
+      "es": "Sandalias del Minotot",
+      "it": "Sandali del Minotot",
+      "pt": "Sandálias do Minotot"
+    },
+    "level": 163,
+    "imageUrl": "/retro/item/11088.png",
+    "setID": "57",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Still Sandals",
+      "fr": "Sandales Hambic",
+      "de": "Orts Treter",
+      "es": "Sandalia Lambique",
+      "it": "Sandali M'Bicco",
+      "pt": "Sandálias Firmes"
+    },
+    "level": 159,
+    "imageUrl": "/retro/item/11062.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 6 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 6 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Damage", "minStat": 16, "maxStat": 25 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 20 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wooden Treeckler Boots",
+      "fr": "Bottines en bois d'abrakleur",
+      "de": "Astakrachlerholz-Bottinen",
+      "es": "Botines de madera de abrajidor",
+      "it": "Stivaletti in Legno di Alberaklur",
+      "pt": "Botinas de madeira de Arvorador"
+    },
+    "level": 136,
+    "imageUrl": "/retro/item/11114.png",
+    "setID": "79",
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 35 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 8 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Soft Oak Flip-Flops",
+      "fr": "Tongues du dimanche du Chêne Mou",
+      "de": "Weich-Eich-Sonntagsschlappen",
+      "es": "Chanclas de domingo de Roble Blando",
+      "it": "Infradito della Domenica della Quercia Molle",
+      "pt": "Calçados de Couro do Carvalho Mole"
+    },
+    "level": 136,
+    "imageUrl": "/retro/item/11097.png",
+    "setID": "66",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lord of the Rats' Ceremonial Boots",
+      "fr": "Bottes Cérémoniales du Seigneur des Rats",
+      "de": "Zeremonienstiefel des Rattenmeisters",
+      "es": "Botas Ceremoniales del Amo de las Ratas",
+      "it": "Stivali Cerimoniali del Signore dei Ratti",
+      "pt": "Botas Cerimoniais do Senhor dos Ratos"
+    },
+    "level": 134,
+    "imageUrl": "/retro/item/11095.png",
+    "setID": "64",
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 121, "maxStat": 170 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 7 },
+      { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Moowolf Boots",
+      "fr": "Bottes du Meulou",
+      "de": "MuWulf-Stiefel",
+      "es": "Botas de Maxilubo",
+      "it": "Stivali del Muulupo",
+      "pt": "Botas do Mulobo"
+    },
+    "level": 131,
+    "imageUrl": "/retro/item/11085.png",
+    "setID": "55",
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 71, "maxStat": 120 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Air Resistance", "minStat": 4, "maxStat": 8 },
+      { "stat": "Water Resistance", "minStat": 4, "maxStat": 8 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Power", "minStat": 4, "maxStat": 5 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 9 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 9 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
+      { "stat": "Pods", "minStat": 201, "maxStat": 300 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 8 },
+      { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 8 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dreggon Boots",
+      "fr": "Bottes du Dragoeuf",
+      "de": "Drachei-Stiefel",
+      "es": "Botas de dragohuevo",
+      "it": "Stivali del Draguovo",
+      "pt": "Botas do Dragovo"
+    },
+    "level": 129,
+    "imageUrl": "/retro/item/11086.png",
+    "setID": "56",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 45 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Vitality", "minStat": 71, "maxStat": 120 },
+      { "stat": "Chance", "minStat": 26, "maxStat": 45 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 5 },
+      { "stat": "Pods", "minStat": 201, "maxStat": 300 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 8 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Harry Boots",
+      "fr": "Bottes Harry",
+      "de": "Flips Slippers",
+      "es": "Botas Focas",
+      "it": "Stivali Harry",
+      "pt": "Botas de Harry"
+    },
+    "level": 123,
+    "imageUrl": "/retro/item/11070.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 126, "maxStat": 150 },
+      { "stat": "Agility", "minStat": 36, "maxStat": 50 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 300 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sandal Titude",
+      "fr": "Sandales Titude",
+      "de": "Klötzi",
+      "es": "Sandalia Titud",
+      "it": "Sandali Titud",
+      "pt": "Sandália Titude"
+    },
+    "level": 122,
+    "imageUrl": "/retro/item/11067.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 175 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 7 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dark Animal Boots",
+      "fr": "Bottes Animales Sombres",
+      "de": "Dunkle tierische Stiefel",
+      "es": "Botas animales oscuras",
+      "it": "Stivali Animali Oscuri",
+      "pt": "Botas de Animal das Sombras"
+    },
+    "level": 122,
+    "imageUrl": "/retro/item/11023.png",
+    "setID": null,
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Air Resistance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Fire Resistance", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Siren Thong",
+      "fr": "Sandales Humeuses",
+      "de": "Schuh Kubus",
+      "es": "Sandalias Fatales",
+      "it": "Sandali Teladà",
+      "pt": "Sandália Trevida"
+    },
+    "level": 121,
+    "imageUrl": "/retro/item/11060.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 40 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Minotoror Boots",
+      "fr": "Bottes du Minotoror",
+      "de": "Minotoror-Stiefel",
+      "es": "Botas del Minotauroro",
+      "it": "Stivali del Minotoror",
+      "pt": "Botas do Minotoror"
+    },
+    "level": 113,
+    "imageUrl": "/retro/item/11089.png",
+    "setID": "54",
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Summons", "minStat": 2, "maxStat": 3 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 5 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ancestral Shin Guards",
+      "fr": "Protège-Tibias Ancestraux",
+      "de": "Ur-Schienbeinschoner",
+      "es": "Protege-tibias ancestral",
+      "it": "Parastinchi Ancestrali",
+      "pt": "Protetores de Canela Ancestrais"
+    },
+    "level": 110,
+    "imageUrl": "/retro/item/11096.png",
+    "setID": "65",
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 81, "maxStat": 130 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 35 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Fire Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Black Rat Boots",
+      "fr": "Bottes du Rat Noir",
+      "de": "Schwarze Rattenstiefel",
+      "es": "Botas de la Rata Negra",
+      "it": "Stivali del Ratto Nero",
+      "pt": "Botas do Rato Negro"
+    },
+    "level": 101,
+    "imageUrl": "/retro/item/11093.png",
+    "setID": "68",
+    "stats": [
+      { "stat": "Agility", "minStat": 21, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power (traps)", "minStat": 16, "maxStat": 25 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Boots Kwish",
+      "fr": "Bottes Horchons",
+      "de": "Schmoinkser",
+      "es": "Botas stropajo",
+      "it": "Stivali Straccio",
+      "pt": "Botas Kwish"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/11112.png",
+    "setID": "77",
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 45 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Veggie Boots",
+      "fr": "Bottes Deuradi",
+      "de": "Karottenbotten",
+      "es": "Botas Delappioh",
+      "it": "Stivali Gadget",
+      "pt": "Botas Veggie"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/11111.png",
+    "setID": "82",
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Relief Boots",
+      "fr": "Bottes Antouche",
+      "de": "Kneif-Stiefel",
+      "es": "Botas de Úveta",
+      "it": "Stivali 4X4",
+      "pt": "Botas de Alívio"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/11110.png",
+    "setID": "91",
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crusuede Shoes",
+      "fr": "Chaussures Lepon-Davignon",
+      "de": "Geiger-Derwisch-Schuhe",
+      "es": "Zapatos Ginkel-Hy",
+      "it": "Scarpe Ballerine",
+      "pt": "Sapatos Perda"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/11109.png",
+    "setID": "85",
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Geta Bernacle",
+      "fr": "Getas Bernacle",
+      "de": "Spagettas",
+      "es": "Chancletas Bernáculo",
+      "it": "Geta Bernacolo",
+      "pt": "Getas Bernacles"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/11108.png",
+    "setID": "92",
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wawka Boots",
+      "fr": "Bottes Swana",
+      "de": "Sieben-Meilen-Pantoffeln",
+      "es": "Botaz Mania",
+      "it": "Stivali Smania",
+      "pt": "Botas Wana"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/11107.png",
+    "setID": "84",
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Nailed Thongs",
+      "fr": "Tong Aclou",
+      "de": "Fakirinas",
+      "es": "Chancla Vada",
+      "it": "Infrachiodo",
+      "pt": "Correias Pregadas"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/11106.png",
+    "setID": "87",
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Boots Hanik",
+      "fr": "Bottes Hanik",
+      "de": "Biotreter",
+      "es": "Botas Nicas",
+      "it": "Stivali Botanici",
+      "pt": "Botas Hanik"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/11101.png",
+    "setID": "90",
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Antibooties",
+      "fr": "Bottes Ulisme",
+      "de": "Bakterientreter",
+      "es": "Botas Epsia",
+      "it": "Stivali Eucociti",
+      "pt": "Botas Ulism"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/11104.png",
+    "setID": "83",
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Shal'Hal Boots",
+      "fr": "Bottes Hairo",
+      "de": "Icellis Botten",
+      "es": "Zapato M'prano",
+      "it": "Stivali Aerografici",
+      "pt": "Botas Ero"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/11103.png",
+    "setID": "86",
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Boots Hox",
+      "fr": "Bottes Hox",
+      "de": "Botoxiner",
+      "es": "Botas Idermista",
+      "it": "Stivali Hox",
+      "pt": "Botas Hox"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/11102.png",
+    "setID": "89",
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sleephairs",
+      "fr": "Charentaises à poils",
+      "de": "Haarige Mukuboots",
+      "es": "Zapatillas con pelos",
+      "it": "Scarpette Pelose",
+      "pt": "Sonecabelo"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/11105.png",
+    "setID": "88",
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Boot-a-Hoop",
+      "fr": "Bottes Antrin",
+      "de": "Imafrohs Drauflos-Stiefel",
+      "es": "Botas altante",
+      "it": "Stivali Show",
+      "pt": "Bota-a-Aro"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/11100.png",
+    "setID": "81",
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bwork Chief Boots",
+      "fr": "Bottes du Chef Bwork",
+      "de": "Stiefel des Bwork-Chefs",
+      "es": "Botas de jefe bwork",
+      "it": "Stivali del Capo Bwork",
+      "pt": "Botas do Chefe Bwork"
+    },
+    "level": 100,
+    "imageUrl": "/retro/item/11044.png",
+    "setID": "19",
+    "stats": [
+      { "stat": "Vitality", "minStat": 36, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 35 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "White Rat Boots",
+      "fr": "Bottes du Rat Blanc",
+      "de": "Weiße Rattenstiefel",
+      "es": "Botas de la Rata Blanca",
+      "it": "Stivali del Ratto Bianco",
+      "pt": "Botas do Rato Branco"
+    },
+    "level": 99,
+    "imageUrl": "/retro/item/11094.png",
+    "setID": "67",
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Hogmeiser's Golden Boots",
+      "fr": "Bottes Dorées d'Hogmeiser",
+      "de": "Goldene Hogmeiser-Stiefel",
+      "es": "Botas doradas de Hogmeiser",
+      "it": "Stivali Dorati di Hogmeiser",
+      "pt": "Botas Douradas do Hogmeiser"
+    },
+    "level": 99,
+    "imageUrl": "/retro/item/11012.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 36, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 7, "maxStat": 8 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 6 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 70 },
+      { "stat": "Water Resistance", "minStat": 10, "maxStat": 12 },
+      { "stat": "Air Resistance", "minStat": 10, "maxStat": 12 },
+      { "stat": "Fire Resistance", "minStat": 10, "maxStat": 12 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Animal Boots",
+      "fr": "Bottes Animales",
+      "de": "Tierische Stiefel",
+      "es": "Botas animales",
+      "it": "Stivali Animali",
+      "pt": "Botas Animais"
+    },
+    "level": 94,
+    "imageUrl": "/retro/item/11022.png",
+    "setID": null,
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Dragon Pig Mules",
+      "fr": "Mules du Dragon Cochon",
+      "de": "Schweinedrachen-Pantoffeln",
+      "es": "Zapatillas de Dragocerdo",
+      "it": "Pantofole del Drago Maiale",
+      "pt": "Chinelos de Dragão-Porco"
+    },
+    "level": 93,
+    "imageUrl": "/retro/item/11087.png",
+    "setID": "58",
+    "stats": [
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 46, "maxStat": 70 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Rainbow Bloopts",
+      "fr": "Bloptes Multicolores Royales",
+      "de": "Königliche Multiblobtten",
+      "es": "Bloptas Multicolor Real",
+      "it": "Stivoblopli Multicolori Reali",
+      "pt": "Bloptas Arco-Íris Reais"
+    },
+    "level": 90,
+    "imageUrl": "/retro/item/11125.png",
+    "setID": "106",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Power", "minStat": 16, "maxStat": 30 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Air Resistance", "minStat": 2, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 2, "maxStat": 10 },
+      { "stat": "Fire Resistance", "minStat": 2, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 2, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Legendary Crackler Boots",
+      "fr": "Bottes Du Craqueleur Légendaire",
+      "de": "Stiefel des legendären Mega-Krachlers",
+      "es": "Botas de Crujidor Legendario",
+      "it": "Stivali del Croccaroc Leggendario",
+      "pt": "Botas do Smagador Legendário"
+    },
+    "level": 86,
+    "imageUrl": "/retro/item/11077.png",
+    "setID": "52",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Water Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "Earth Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sewer Warden Boots",
+      "fr": "Bottes du Gardien des Égouts",
+      "de": "Schuhe des GulliWächters",
+      "es": "Botas del guardián de las alcantarillas",
+      "it": "Stivali del Guardiano delle Fogne",
+      "pt": "Botas do Guardião dos Esgotos"
+    },
+    "level": 83,
+    "imageUrl": "/retro/item/11028.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 6 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Indigo Bloopts",
+      "fr": "Bloptes Indigo Royales",
+      "de": "Königliche Indigo Blobtten",
+      "es": "Bloptas Índigo Real",
+      "it": "Stivoblopli Indaco Reali",
+      "pt": "Bloptas Índigo Reais"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/11124.png",
+    "setID": "105",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Coco Bloopts",
+      "fr": "Bloptes Coco Royales",
+      "de": "Königliche Kokos Blobtten",
+      "es": "Bloptas Coco Real",
+      "it": "Stivoblopli Cocco Reali",
+      "pt": "Bloptas Coco Reais"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/11123.png",
+    "setID": "104",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Pippin Bloopts",
+      "fr": "Bloptes Reinette Royales",
+      "de": "Königliche Apfel Blobtten",
+      "es": "Bloptas Reineta Real",
+      "it": "Stivoblopli Reginetta Reali",
+      "pt": "Bloptas Maçã Reais"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/11122.png",
+    "setID": "103",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Morello Cherry Bloopts",
+      "fr": "Bloptes Griotte Royales",
+      "de": "Königliche Kirsch Blobtten",
+      "es": "Bloptas Guinda Real",
+      "it": "Stivoblopli Griotta Reali",
+      "pt": "Bloptas Cereja Reais"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/11121.png",
+    "setID": "102",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Shika's Clogs",
+      "fr": "Sabots de Shika",
+      "de": "Shikas Holzschuhe",
+      "es": "Zuecos de Shika",
+      "it": "Zoccoli di Shika",
+      "pt": "Tamancos de Shika"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/11091.png",
+    "setID": "53",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 36, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Air Resistance", "minStat": 3, "maxStat": 4 },
+      { "stat": "Water Resistance", "minStat": 3, "maxStat": 4 },
+      { "stat": "Fire Resistance", "minStat": 3, "maxStat": 4 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Farle's Clogs",
+      "fr": "Sabots de Farle",
+      "de": "Farles Holzschuhe",
+      "es": "Zuecos de Farle",
+      "it": "Zoccoli di Farle",
+      "pt": "Tamancos do Farle"
+    },
+    "level": 80,
+    "imageUrl": "/retro/item/11046.png",
+    "setID": "17",
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 36, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Water Resistance", "minStat": 3, "maxStat": 4 },
+      { "stat": "Air Resistance", "minStat": 3, "maxStat": 4 },
+      { "stat": "Fire Resistance", "minStat": 3, "maxStat": 4 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Orino Boots",
+      "fr": "Bottes Orino",
+      "de": "HNO-Stiefel",
+      "es": "Botas O'Torrino",
+      "it": "Stivali Otori",
+      "pt": "Botas Orrino"
+    },
+    "level": 77,
+    "imageUrl": "/retro/item/11021.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Terrdala Geta",
+      "fr": "Geta Terrdala",
+      "de": "Teradala-Getas",
+      "es": "Geta de Tierradala",
+      "it": "Geta Terradala",
+      "pt": "Geta Terradala"
+    },
+    "level": 76,
+    "imageUrl": "/retro/item/11055.png",
+    "setID": "36",
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sandals Adin",
+      "fr": "Sandales Adin",
+      "de": "Adins Sandale",
+      "es": "Sandalia Ladín",
+      "it": "Sandali Din",
+      "pt": "Sandália Din"
+    },
+    "level": 76,
+    "imageUrl": "/retro/item/11063.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Hogmeiser's Boots",
+      "fr": "Bottes d'Hogmeiser",
+      "de": "Hogmeiser-Stiefel",
+      "es": "Botas de Hogmeiser",
+      "it": "Stivali di Hogmeiser",
+      "pt": "Botas de Hogmeiser"
+    },
+    "level": 76,
+    "imageUrl": "/retro/item/11011.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 5, "maxStat": 6 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Koolich Boots",
+      "fr": "Bottes du Koulosse",
+      "de": "Stiefel des Kuhlosses",
+      "es": "Botas de Trankitronko",
+      "it": "Stivali del Culosse",
+      "pt": "Botas do Tronkoso"
+    },
+    "level": 73,
+    "imageUrl": "/retro/item/11069.png",
+    "setID": "44",
+    "stats": [
+      { "stat": "Vitality", "minStat": 51, "maxStat": 150 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 7 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crocodyl Chief Sharp Slippers",
+      "fr": "Pantoufles Crochues du Chef Crocodaille",
+      "de": "Klauenpantoffeln des Chef Crocodylls",
+      "es": "Zapatillas corvas de jefe cocodrail",
+      "it": "Pantofole Dentate del Capo Coccodrail",
+      "pt": "Chinelos Afiados do Chefe Crocodyl"
+    },
+    "level": 70,
+    "imageUrl": "/retro/item/11045.png",
+    "setID": "20",
+    "stats": [
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Feudala Geta",
+      "fr": "Geta Feudala",
+      "de": "Feudala-Getas",
+      "es": "Geta de Fuegodala",
+      "it": "Geta Focodala",
+      "pt": "Geta Fogodala"
+    },
+    "level": 68,
+    "imageUrl": "/retro/item/11056.png",
+    "setID": "37",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobball Breeder Boots",
+      "fr": "Bottes de l'Eleveur de Bouftous",
+      "de": "Stiefel des Fresssackzüchters",
+      "es": "Botas de criador de jalatós",
+      "it": "Stivali dell'Allevatore di Pappatutto",
+      "pt": "Botas do criador de Papatudos"
+    },
+    "level": 68,
+    "imageUrl": "/retro/item/11040.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Flee-Flops",
+      "fr": "Tongues Baques",
+      "de": "Schuholong Backs Retrotreter",
+      "es": "Chanclas pisadas",
+      "it": "Infradito Dimenticati",
+      "pt": "Chinelos"
+    },
+    "level": 67,
+    "imageUrl": "/retro/item/11058.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Moon Boots",
+      "fr": "Moon Boutse",
+      "de": "Moon-Buhts",
+      "es": "Moon Boots",
+      "it": "Moon Boot",
+      "pt": "Moon Buts"
+    },
+    "level": 62,
+    "imageUrl": "/retro/item/11019.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Boowolf Boots",
+      "fr": "Bottines du Mulou",
+      "de": "WuWulf-Stiefelchen",
+      "es": "Botines de mediulubo",
+      "it": "Stivaletti del Buulupo",
+      "pt": "Botinas do Milobo"
+    },
+    "level": 61,
+    "imageUrl": "/retro/item/11076.png",
+    "setID": "32",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 20 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Koalak Boots",
+      "fr": "Bottes du Koalak",
+      "de": "Koalak-Stiefel",
+      "es": "Botas de koalak",
+      "it": "Stivali del Koalak",
+      "pt": "Botas do Koalak"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/11071.png",
+    "setID": "46",
+    "stats": [
+      { "stat": "Heals", "minStat": 1, "maxStat": 2 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wabbit Flip-Flops",
+      "fr": "Tongues Wabbits",
+      "de": "Wabbit - Flip-Flops",
+      "es": "Chanclas wabbits",
+      "it": "Infradito Wabbits",
+      "pt": "Chinelos Wabbits"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/11039.png",
+    "setID": "11",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Caraboots",
+      "fr": "Carabottes",
+      "de": "Caraboots",
+      "es": "Carabotas",
+      "it": "Carastivali",
+      "pt": "Carabotas"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/11035.png",
+    "setID": "9",
+    "stats": [
+      { "stat": "Chance", "minStat": 1, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Jelliboots",
+      "fr": "Gelobottes",
+      "de": "Geloboots",
+      "es": "Gelatibotas",
+      "it": "Gelostivali",
+      "pt": "Gelabotas"
+    },
+    "level": 60,
+    "imageUrl": "/retro/item/11031.png",
+    "setID": "6",
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sandals Koholiks",
+      "fr": "Sandales Koliques",
+      "de": "Sandale Kohols",
+      "es": "Sandalias Kotchielos",
+      "it": "Sandali Kolika",
+      "pt": "Sandálias Koholiks"
+    },
+    "level": 58,
+    "imageUrl": "/retro/item/11061.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Aerdala Geta",
+      "fr": "Geta Aerdala",
+      "de": "Aerdala-Getas",
+      "es": "Geta de Airedala",
+      "it": "Geta Erdala",
+      "pt": "Geta Ardala"
+    },
+    "level": 57,
+    "imageUrl": "/retro/item/11057.png",
+    "setID": "35",
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 35 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sandals Ailuya",
+      "fr": "Sandales Ailuya",
+      "de": "Sandale \"Luja\"",
+      "es": "Sandalia Leluya",
+      "it": "Sandali Luya",
+      "pt": "Sandália Leluya"
+    },
+    "level": 56,
+    "imageUrl": "/retro/item/11064.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Golden Scaraboots",
+      "fr": "Scarabottes Dorées",
+      "de": "Stiefel des goldenen Scarabiestes",
+      "es": "Escarabotas doradas",
+      "it": "Scarastivali Dorati",
+      "pt": "Scarabotas Douradas"
+    },
+    "level": 54,
+    "imageUrl": "/retro/item/11074.png",
+    "setID": "51",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 10 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 3 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 3 },
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 3 },
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Hulkrap's Boots",
+      "fr": "Bottes d'Hulkrap",
+      "de": "Lerkstim-Stiefel",
+      "es": "Botas de Ravelaca",
+      "it": "Stivali di Quentindel",
+      "pt": "Botas de Lápucra"
+    },
+    "level": 53,
+    "imageUrl": "/retro/item/11151.png",
+    "setID": "152",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 20 },
+      { "stat": "Heals", "minStat": 1, "maxStat": 2 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Celery-Tea's Boots",
+      "fr": "Bottes de Céleri-Thé",
+      "de": "Speedies \"Nächster Gang, gebt alles\"-Stiefel",
+      "es": "Botas de Rap y Dhez",
+      "it": "Stivali di Celeri-Thà",
+      "pt": "Botas de Aipo-Chá"
+    },
+    "level": 53,
+    "imageUrl": "/retro/item/11005.png",
+    "setID": null,
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 30 },
+      { "stat": "Prospecting", "minStat": 2, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Klume's Boots",
+      "fr": "Bottes de Klüme",
+      "de": "A.M.Boss Stiefel",
+      "es": "Botas de Kunye",
+      "it": "Stivali di Cudine",
+      "pt": "Botas Klume"
+    },
+    "level": 52,
+    "imageUrl": "/retro/item/11152.png",
+    "setID": "153",
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Apprentice Summoner Boots",
+      "fr": "Bottes de l'Apprenti Invocateur",
+      "de": "Stiefel des Beschwörlehrlings",
+      "es": "Botas del invocador aprendiz",
+      "it": "Stivali dell'Apprendista Evocatore",
+      "pt": "Botas do Aprendiz Invocador"
+    },
+    "level": 51,
+    "imageUrl": "/retro/item/11014.png",
+    "setID": null,
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Water Resistance", "minStat": 4, "maxStat": 8 },
+      { "stat": "Air Resistance", "minStat": 4, "maxStat": 8 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Indigo Bloopts",
+      "fr": "Bloptes Indigo",
+      "de": "Indigo Blobtten",
+      "es": "Bloptas índigo",
+      "it": "Stivoblopli Indaco",
+      "pt": "Bloptas Índigo"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/11120.png",
+    "setID": "101",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Coco Bloopts",
+      "fr": "Bloptes Coco",
+      "de": "Kokos Blobtten",
+      "es": "Bloptas coco",
+      "it": "Stivoblopli Cocco",
+      "pt": "Bloptas Coco"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/11119.png",
+    "setID": "100",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pippin Bloopts",
+      "fr": "Bloptes Reinette",
+      "de": "Apfel Blobtten",
+      "es": "Bloptas reineta",
+      "it": "Stivoblopli Reginetta",
+      "pt": "Bloptas Maçã"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/11118.png",
+    "setID": "99",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Morello Cherry Bloopts",
+      "fr": "Bloptes Griottes",
+      "de": "Kirsch-Blobtten",
+      "es": "Bloptas guinda",
+      "it": "Stivoblopli Griotta",
+      "pt": "Bloptas Cereja"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/11117.png",
+    "setID": "98",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Turkoboots",
+      "fr": "Botodindo",
+      "de": "Trutertreter",
+      "es": "Botopavos",
+      "it": "Stivalacchino",
+      "pt": "Turkobotas"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/11065.png",
+    "setID": "42",
+    "stats": [
+      { "stat": "Heals", "minStat": 2, "maxStat": 6 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 6 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bowisse's Boots",
+      "fr": "Bottes de Bowisse",
+      "de": "Bowissen-Stiefel",
+      "es": "Botas de Bowis",
+      "it": "Stivali di Bowis",
+      "pt": "Botas de Bowis"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/11002.png",
+    "setID": null,
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 30 },
+      { "stat": "Prospecting", "minStat": 2, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Royal Gobboots",
+      "fr": "Boufbottes Royales",
+      "de": "Königliche Fressstiefel",
+      "es": "Jalabotas Reales",
+      "it": "Pappastivali Reali",
+      "pt": "Papabotas Reais"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/11030.png",
+    "setID": "4",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 70 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 8 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Apprenticeship Boots",
+      "fr": "Bottes d'Apprentissage",
+      "de": "Stiefel des Lehrlings",
+      "es": "Botas de aprendizaje",
+      "it": "Stivali di Apprendimento",
+      "pt": "Botas de Aprendizado"
+    },
+    "level": 50,
+    "imageUrl": "/retro/item/11068.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Power", "minStat": 11, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Alowa Sandals",
+      "fr": "Sandales Papayou",
+      "de": "Papayo-Sandalen",
+      "es": "Sandalias del director Kuno",
+      "it": "Sandali Loha",
+      "pt": "Sandálias Aloha"
+    },
+    "level": 49,
+    "imageUrl": "/retro/item/11132.png",
+    "setID": "129",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ragalde's Boots",
+      "fr": "Bottes de Ragalde",
+      "de": "Stiefel von Ragalde",
+      "es": "Botas de Ragalde",
+      "it": "Stivali di Ragalde",
+      "pt": "Botas de Ragalde"
+    },
+    "level": 49,
+    "imageUrl": "/retro/item/11007.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 11, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 20 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 20 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 30 },
+      { "stat": "Prospecting", "minStat": 2, "maxStat": 5 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Black Wab Boots",
+      "fr": "Bottines du Black Wab",
+      "de": "Black Wab - Stiefel",
+      "es": "Botines de black wab",
+      "it": "Stivaletti del Wab Newo",
+      "pt": "Botinas do Black Wab"
+    },
+    "level": 47,
+    "imageUrl": "/retro/item/11131.png",
+    "setID": "127",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crackler Boots",
+      "fr": "Bottes du Craqueleur",
+      "de": "Stiefel des Krachlers",
+      "es": "Botas de crujidor",
+      "it": "Stivali del Croccaroc",
+      "pt": "Botas do Smagador"
+    },
+    "level": 47,
+    "imageUrl": "/retro/item/11052.png",
+    "setID": "26",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
+      { "stat": "Power", "minStat": 1, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 8 },
+      { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 8 },
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Croboots",
+      "fr": "Corbottes",
+      "de": "Rabühstiefel",
+      "es": "Cuerbotas",
+      "it": "Cuervostivali",
+      "pt": "Crobotas"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/11037.png",
+    "setID": "8",
+    "stats": [
+      { "stat": "Agility", "minStat": 1, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 5 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Eni Kere Miracle Boots",
+      "fr": "L'Eni Kère",
+      "de": "Enis Keys",
+      "es": "Los Nykers",
+      "it": "L'Ani Kère",
+      "pt": "Eni Kere"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/11029.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "Prospecting", "minStat": 2, "maxStat": 6 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Treeboots",
+      "fr": "Abrabottes",
+      "de": "Astaboots",
+      "es": "Abrabotas",
+      "it": "Alberastivali",
+      "pt": "Arvrabotas"
+    },
+    "level": 45,
+    "imageUrl": "/retro/item/11027.png",
+    "setID": "3",
+    "stats": [{ "stat": "Strength", "minStat": 1, "maxStat": 50 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Grute's Boots",
+      "fr": "Bottes de Grüt",
+      "de": "Bwurgs Stiefel",
+      "es": "Botas de Gruut",
+      "it": "Stivali di Griut",
+      "pt": "Botas de Grute"
+    },
+    "level": 44,
+    "imageUrl": "/retro/item/11150.png",
+    "setID": "144",
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lektor's Boots",
+      "fr": "Bottes de Laikteur",
+      "de": "Terlecs Stiefel",
+      "es": "Chanclas de Retkel",
+      "it": "Stivali di An Lekter",
+      "pt": "Botas de Lektor"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/11148.png",
+    "setID": "147",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pair o'Shuplins",
+      "fr": "Les Chaplures",
+      "de": "Charliefel",
+      "es": "Charlzado",
+      "it": "I Chapangrattati",
+      "pt": "Par de Sapatos"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/11138.png",
+    "setID": "116",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Slait Boots",
+      "fr": "Bottes de Slait",
+      "de": "Slait-Stiefel",
+      "es": "Botas de Sliat",
+      "it": "Stivali di Slait",
+      "pt": "Botas de Slait"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/11134.png",
+    "setID": "128",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 20 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 4 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Slump Rollers",
+      "fr": "Les Sleumpettes",
+      "de": "Slumpenstiefel",
+      "es": "Slumptines",
+      "it": "Le Slumpette",
+      "pt": "Tombotas"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/11133.png",
+    "setID": "140",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Beanie Boots",
+      "fr": "Bottes Paupayahn",
+      "de": "Robusta-Treter",
+      "es": "Botas Saymassa",
+      "it": "Stivali Valazza",
+      "pt": "Botas Gorro"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/11127.png",
+    "setID": "111",
+    "stats": [
+      { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 4 },
+      { "stat": "Power", "minStat": 1, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Viootifool Boots",
+      "fr": "Bottes Vioutifoule",
+      "de": "Viewtifule Stiefel",
+      "es": "Botas Viewtiful",
+      "it": "Stivali Viutiful",
+      "pt": "Botas Viutiful"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/11034.png",
+    "setID": "75",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 4 },
+      { "stat": "Power", "minStat": 1, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
+      { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Megaboots",
+      "fr": "Mégabottes",
+      "de": "Megastiefel",
+      "es": "Megabotas",
+      "it": "Megastivali",
+      "pt": "Megabotas"
+    },
+    "level": 43,
+    "imageUrl": "/retro/item/11033.png",
+    "setID": "76",
+    "stats": [
+      { "stat": "Chance", "minStat": 1, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 4 },
+      { "stat": "Power", "minStat": 1, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Koksiks's Boots",
+      "fr": "Bottes de Kocksis",
+      "de": "Racknacknock-Stiefel",
+      "es": "Botas de Koxys",
+      "it": "Stivali di Koccid",
+      "pt": "Botas de Koksis"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/11149.png",
+    "setID": "145",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lamechester United Boots",
+      "fr": "Bottes des Bouftons Rouges",
+      "de": "Arsenal Roter Fresssack-Stiefel",
+      "es": "Botas del Sporting Jalatín",
+      "it": "Stivali del Pappaton United",
+      "pt": "Botas do Papachester United"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/11145.png",
+    "setID": "143",
+    "stats": [
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Real Gobbly Boots",
+      "fr": "Bottes du Real Boitar",
+      "de": "FC Humpelstilz-Stiefel",
+      "es": "Botas del Atleticojos de Bonta",
+      "it": "Stivali del Real Pappid",
+      "pt": "Botas do Paparcelona"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/11144.png",
+    "setID": "142",
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Chisp Boots",
+      "fr": "Chispottes",
+      "de": "Chisp-Boots",
+      "es": "Chispotas",
+      "it": "Chispivali",
+      "pt": "Botas de Chisp"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/11141.png",
+    "setID": "138",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Siks Wonn Ein Boots",
+      "fr": "Bottes Siks Won Naïne",
+      "de": "Volle Nellson Stiefel",
+      "es": "Botas de Tor Nyquete",
+      "it": "Stivali Sics Uan Nain",
+      "pt": "Botas Siks Wonn Ein"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/11137.png",
+    "setID": "131",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Heals", "minStat": null, "maxStat": 1 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bedazzling Boots",
+      "fr": "Golbottes",
+      "de": "Goldoboots",
+      "es": "Robotas",
+      "it": "Stivali Folgoranti",
+      "pt": "Botas de Gren Dizer"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/11136.png",
+    "setID": "139",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crocoburio's Spirit",
+      "fr": "Esprit de Crocoburio",
+      "de": "Geist des Crocoburio",
+      "es": "Espíritu de Cocoburio",
+      "it": "Spirito di Crocobarro",
+      "pt": "Espírito de Crocoburio"
+    },
+    "level": 42,
+    "imageUrl": "/retro/item/11012.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fyred Ampe's Boots",
+      "fr": "Bottes de Grizou",
+      "de": "Wetterschlag-Stiefel",
+      "es": "Botas de Grizú",
+      "it": "Stivali di Grisup",
+      "pt": "Botas de Grisu"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/11146.png",
+    "setID": "149",
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Stroy Zemol's Boots",
+      "fr": "Bottes de Rekto Topi",
+      "de": "Piffpaffplumps-Stiefel",
+      "es": "Chanclas de Panpun Pon",
+      "it": "Stivali di Altap Eto",
+      "pt": "Botas de Stroy Zemol"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/11147.png",
+    "setID": "148",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Heals", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Slugo",
+      "fr": "Yugoufle",
+      "de": "Yagoffel",
+      "es": "Ugotufla",
+      "it": "Yugontofole",
+      "pt": "Yugantufa"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/11140.png",
+    "setID": "134",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Vampyre Boots",
+      "fr": "Bottes du Vampyre",
+      "de": "Vampyr-Stiefel",
+      "es": "Botas de Vampyro",
+      "it": "Stivali del Vampyro",
+      "pt": "Botas do Vampyro"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/11139.png",
+    "setID": "130",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Surpuissantes Bottes de Klime",
+      "fr": "Surpuissantes Bottes de Klime",
+      "de": "[!DE] Surpuissantes Bottes de Klime",
+      "es": "[!ES] Surpuissantes Bottes de Klime",
+      "it": "[!IT] Surpuissantes Bottes de Klime",
+      "pt": "[!PT] Surpuissantes Bottes de Klime"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/11009.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 25 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Winged Boots",
+      "fr": "Bottes Volatiles",
+      "de": "Flattrige Stiefel",
+      "es": "Botas volátiles",
+      "it": "Stivali Volatili",
+      "pt": "Botas Voláteis"
+    },
+    "level": 41,
+    "imageUrl": "/retro/item/11017.png",
+    "setID": null,
+    "stats": [
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 40 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Slamdance Shoes",
+      "fr": "Chaussures du Tétounik",
+      "de": "Teckton-Ihks Schuhe",
+      "es": "Zapatillas taktikonik",
+      "it": "Scarpe di Teutonik",
+      "pt": "Sapato Slamdance"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/11135.png",
+    "setID": "132",
+    "stats": [
+      { "stat": "Heals", "minStat": 2, "maxStat": 3 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "The Godfather's Polished Oxfords",
+      "fr": "Souliers laqués du Parrain",
+      "de": "Lackschuhe des Paten",
+      "es": "Zapatos lacados del padrino",
+      "it": "Scarpe Laccate del Padrino",
+      "pt": "Sapatos Polidos do Padrinho"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/11130.png",
+    "setID": "126",
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Kwakobottes du Vent",
+      "fr": "Kwakobottes du Vent",
+      "de": "[!DE] Kwakobottes du Vent",
+      "es": "[!ES] Kwakobottes du Vent",
+      "it": "[!IT] Kwakobottes du Vent",
+      "pt": "[!PT] Kwakobottes du Vent"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/11048.png",
+    "setID": "15",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Earth Kwakoboots",
+      "fr": "Kwakobottes de Terre",
+      "de": "Steinerne Kwacklauen",
+      "es": "Kwakobotas de tierra",
+      "it": "Kwakstivali di Terra",
+      "pt": "Kwakbotas da Terra"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/11049.png",
+    "setID": "14",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ice Kwakoboots",
+      "fr": "Kwakobottes de Glace",
+      "de": "Eisige Kwacklauen",
+      "es": "Kwakobotas de hielo",
+      "it": "Kwakstivali di Ghiaccio",
+      "pt": "Kwakabotas de Gelo"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/11036.png",
+    "setID": "13",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fire Kwakoboots",
+      "fr": "Kwakobottes de Flammes",
+      "de": "Feurige Kwacklauen",
+      "es": "Kwakobotas de llamas",
+      "it": "Kwakstivali di Fiamma",
+      "pt": "Kwakobotas do Fogo"
+    },
+    "level": 40,
+    "imageUrl": "/retro/item/11025.png",
+    "setID": "2",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Slugly Boots",
+      "fr": "Libottes",
+      "de": "Schniefel",
+      "es": "Babotas",
+      "it": "Lumastivali",
+      "pt": "Botas Lesmosas"
+    },
+    "level": 39,
+    "imageUrl": "/retro/item/11142.png",
+    "setID": "137",
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Puissantes Bottes de Poursuite",
+      "fr": "Puissantes Bottes de Poursuite",
+      "de": "[!DE] Puissantes Bottes de Poursuite",
+      "es": "[!ES] Puissantes Bottes de Poursuite",
+      "it": "[!IT] Puissantes Bottes de Poursuite",
+      "pt": "[!PT] Puissantes Bottes de Poursuite"
+    },
+    "level": 39,
+    "imageUrl": "/retro/item/11010.png",
+    "setID": null,
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Chance", "minStat": 26, "maxStat": 35 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Lymph a Tik Boots",
+      "fr": "Bottes de Lymphe a Tik",
+      "de": "Lymphs Stiefel am Tisch",
+      "es": "Botas de Linfa Tiko",
+      "it": "Stivali di Lymphe A'Tik",
+      "pt": "Botas de Lymph a Tik"
+    },
+    "level": 39,
+    "imageUrl": "/retro/item/11018.png",
+    "setID": null,
+    "stats": [
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 31, "maxStat": 50 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Oxo Boots",
+      "fr": "Bottines de la Denrée",
+      "de": "Morgentau-Stiefelchen",
+      "es": "Botines del extraterestre",
+      "it": "Stivaletti della Derrata",
+      "pt": "Botas Oxo"
+    },
+    "level": 38,
+    "imageUrl": "/retro/item/11143.png",
+    "setID": "133",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobkool Boots",
+      "fr": "Bottes du Boufcoul",
+      "de": "Fresscool-Stiefel",
+      "es": "Botas de jalatranki",
+      "it": "Stivali del Pappacool",
+      "pt": "Botas do Papakool"
+    },
+    "level": 38,
+    "imageUrl": "/retro/item/11066.png",
+    "setID": "43",
+    "stats": [
+      { "stat": "Power", "minStat": 6, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tarsy's Boots",
+      "fr": "Bottes Tarsy",
+      "de": "Hains Siedlerstiefel",
+      "es": "Botas de Jame",
+      "it": "Stivali Tarsy",
+      "pt": "Botas de Tarsy"
+    },
+    "level": 38,
+    "imageUrl": "/retro/item/11020.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Chance", "minStat": 16, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 20 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Grandes Bottes de Poursuite",
+      "fr": "Grandes Bottes de Poursuite",
+      "de": "[!DE] Grandes Bottes de Poursuite",
+      "es": "[!ES] Grandes Bottes de Poursuite",
+      "it": "[!IT] Grandes Bottes de Poursuite",
+      "pt": "[!PT] Grandes Bottes de Poursuite"
+    },
+    "level": 37,
+    "imageUrl": "/retro/item/11010.png",
+    "setID": null,
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Chance", "minStat": 26, "maxStat": 30 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Akwadala Geta",
+      "fr": "Geta Akwadala",
+      "de": "Akwadala-Getas",
+      "es": "Geta de Akwadala",
+      "it": "Geta Aksadala",
+      "pt": "Geta Akwadala"
+    },
+    "level": 35,
+    "imageUrl": "/retro/item/11054.png",
+    "setID": "34",
+    "stats": [
+      { "stat": "Agility", "minStat": 11, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 30 },
+      { "stat": "Power", "minStat": 6, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Beezers",
+      "fr": "Pantoufrelons",
+      "de": "Biefel",
+      "es": "Zapatillánganos",
+      "it": "Pantofolabrone",
+      "pt": "Pantufa Abelhuda"
+    },
+    "level": 34,
+    "imageUrl": "/retro/item/11128.png",
+    "setID": "112",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Chase Boots",
+      "fr": "Bottes de Poursuite",
+      "de": "Stiefel der Verfolgung",
+      "es": "Botas de persecución",
+      "it": "Stivali di Inseguimento",
+      "pt": "Botas de Perseguição"
+    },
+    "level": 34,
+    "imageUrl": "/retro/item/11010.png",
+    "setID": null,
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Ambusherboots",
+      "fr": "Fourbabottes",
+      "de": "Heckenschuhützer",
+      "es": "Mazorrabotas",
+      "it": "Furbastivali",
+      "pt": "Botarbustor"
+    },
+    "level": 34,
+    "imageUrl": "/retro/item/11047.png",
+    "setID": "16",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Larvaboots",
+      "fr": "Larvabottes",
+      "de": "Larvuschus",
+      "es": "Larvabotas",
+      "it": "Larvastivali",
+      "pt": "Larvabotas"
+    },
+    "level": 33,
+    "imageUrl": "/retro/item/11053.png",
+    "setID": "33",
+    "stats": [
+      { "stat": "Intelligence", "minStat": 6, "maxStat": 20 },
+      { "stat": "Heals", "minStat": 2, "maxStat": 3 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Petites Bottes de Poursuite",
+      "fr": "Petites Bottes de Poursuite",
+      "de": "[!DE] Petites Bottes de Poursuite",
+      "es": "[!ES] Petites Bottes de Poursuite",
+      "it": "[!IT] Petites Bottes de Poursuite",
+      "pt": "[!PT] Petites Bottes de Poursuite"
+    },
+    "level": 31,
+    "imageUrl": "/retro/item/11010.png",
+    "setID": null,
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Chance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Eastern Wood Boots",
+      "fr": "Bottes du bois de l'est",
+      "de": "Ostwald-Stiefel",
+      "es": "Botas del Bosque del Este",
+      "it": "Stivali del Bosco dell'Est",
+      "pt": "Botas do Bosque do Leste"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/11129.png",
+    "setID": "114",
+    "stats": [
+      { "stat": "Strength", "minStat": 6, "maxStat": 10 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 6, "maxStat": 10 },
+      { "stat": "Agility", "minStat": 6, "maxStat": 10 },
+      { "stat": "Chance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Cruella Sandals",
+      "fr": "Sandales Macien",
+      "de": "Sandale \"Matina\"",
+      "es": "Sandalmatas",
+      "it": "Sandali Mata",
+      "pt": "Sandálias Macian"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/11059.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Patent Lousy Pig Shoes",
+      "fr": "Souliers Vernis de Porkass",
+      "de": "Haarige Treter des lausigen Schweinepriesters",
+      "es": "Zapatos varnizados de puerkazo",
+      "it": "Scarpe Verniciate di Porkass",
+      "pt": "Sapatos de verniz do Porkasso"
+    },
+    "level": 30,
+    "imageUrl": "/retro/item/11041.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 6, "maxStat": 10 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 6, "maxStat": 10 },
+      { "stat": "Agility", "minStat": 6, "maxStat": 10 },
+      { "stat": "Chance", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Puissantes Bottes de Concentration",
+      "fr": "Puissantes Bottes de Concentration",
+      "de": "[!DE] Puissantes Bottes de Concentration",
+      "es": "[!ES] Puissantes Bottes de Concentration",
+      "it": "[!IT] Puissantes Bottes de Concentration",
+      "pt": "[!PT] Puissantes Bottes de Concentration"
+    },
+    "level": 27,
+    "imageUrl": "/retro/item/11006.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Critical", "minStat": null, "maxStat": 2 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Iop's Crushers",
+      "fr": "L'Ecrabouilleur de Iop",
+      "de": "Iops Zermalmer",
+      "es": "Espachurrador de Yopuka",
+      "it": "Lo Spappolatore di Yop",
+      "pt": "Esmagador Iop"
+    },
+    "level": 27,
+    "imageUrl": "/retro/item/11007.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": null, "maxStat": 25 },
+      { "stat": "Agility", "minStat": null, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Grandes Bottes de Concentration",
+      "fr": "Grandes Bottes de Concentration",
+      "de": "[!DE] Grandes Bottes de Concentration",
+      "es": "[!ES] Grandes Bottes de Concentration",
+      "it": "[!IT] Grandes Bottes de Concentration",
+      "pt": "[!PT] Grandes Bottes de Concentration"
+    },
+    "level": 26,
+    "imageUrl": "/retro/item/11006.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Critical", "minStat": null, "maxStat": 2 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Concentration Boots",
+      "fr": "Bottes de Concentration",
+      "de": "Nachdenkliche Stiefel",
+      "es": "Botas de concentración",
+      "it": "Stivali di Concentrazione",
+      "pt": "Botas de Concentração"
+    },
+    "level": 24,
+    "imageUrl": "/retro/item/11006.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Critical", "minStat": null, "maxStat": 2 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Faillette Boots",
+      "fr": "Bottes de Faillete",
+      "de": "Feiht-Schuhe",
+      "es": "Botas de Fayt",
+      "it": "Stivali Marziali",
+      "pt": "Botas de Faillette"
+    },
+    "level": 24,
+    "imageUrl": "/retro/item/11008.png",
+    "setID": null,
+    "stats": [{ "stat": "Critical", "minStat": 3, "maxStat": 6 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tofu Slippers",
+      "fr": "Pantoufles du Tofu",
+      "de": "Tofu-Pantoffeln",
+      "es": "Zapatillas de tofu",
+      "it": "Pantofole del Tofu",
+      "pt": "Pantufas do Tofu"
+    },
+    "level": 23,
+    "imageUrl": "/retro/item/11073.png",
+    "setID": "50",
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 6, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 6, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Boar Hooves",
+      "fr": "Pieds du Sanglier",
+      "de": "Keilerpfotentreter",
+      "es": "Pies de jabalí",
+      "it": "Piedi del Cinghiale",
+      "pt": "Pés do Javali"
+    },
+    "level": 22,
+    "imageUrl": "/retro/item/11051.png",
+    "setID": "21",
+    "stats": [
+      { "stat": "Agility", "minStat": 6, "maxStat": 15 },
+      { "stat": "Heals", "minStat": null, "maxStat": 1 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Petites Bottes de Concentration",
+      "fr": "Petites Bottes de Concentration",
+      "de": "[!DE] Petites Bottes de Concentration",
+      "es": "[!ES] Petites Bottes de Concentration",
+      "it": "[!IT] Petites Bottes de Concentration",
+      "pt": "[!PT] Petites Bottes de Concentration"
+    },
+    "level": 22,
+    "imageUrl": "/retro/item/11006.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Critical", "minStat": null, "maxStat": 2 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Anticipation Boots",
+      "fr": "Bottes d'Anticipation",
+      "de": "Stiefel der Vorhersehung",
+      "es": "Botas de anticipación",
+      "it": "Stivali di Anticipazione",
+      "pt": "Botas de Antecipação"
+    },
+    "level": 22,
+    "imageUrl": "/retro/item/11015.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Power Boots",
+      "fr": "Bottes de Puissance",
+      "de": "Stiefel der Macht",
+      "es": "Botas de potencia",
+      "it": "Stivali di Potenza",
+      "pt": "Botas de Poder"
+    },
+    "level": 22,
+    "imageUrl": "/retro/item/11014.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Skill Boots",
+      "fr": "Bottes de Maîtrise",
+      "de": "Stiefel der Meisterschaft",
+      "es": "Botas de dominación",
+      "it": "Stivali di Padronanza",
+      "pt": "Botas de Perícia"
+    },
+    "level": 22,
+    "imageUrl": "/retro/item/11014.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Bearman's Boots",
+      "fr": "Bottes de l'Homme Ours",
+      "de": "Stiefel des Bärenmannes",
+      "es": "Botas del hombre oso",
+      "it": "Stivali dell'Uomo Orso",
+      "pt": "Botas do Homem Urso"
+    },
+    "level": 20,
+    "imageUrl": "/retro/item/11051.png",
+    "setID": "12",
+    "stats": [
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Klime's Boots",
+      "fr": "Puissantes Bottes de Klime",
+      "de": "Mächtige Stiefel von R.Klimm",
+      "es": "Poderosas botas de Klim",
+      "it": "Potenti Stivali di Klim",
+      "pt": "Poderosas botas de Klim"
+    },
+    "level": 19,
+    "imageUrl": "/retro/item/11009.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 25 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Farmer Boots",
+      "fr": "Bottes Paysannes",
+      "de": "Bauernstiefel",
+      "es": "Botas Campesinas",
+      "it": "Stivali Contadini",
+      "pt": "Botas de Fazendeiro"
+    },
+    "level": 18,
+    "imageUrl": "/retro/item/11075.png",
+    "setID": "47",
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Grandes Bottes de Klime",
+      "fr": "Grandes Bottes de Klime",
+      "de": "[!DE] Grandes Bottes de Klime",
+      "es": "[!ES] Grandes Bottes de Klime",
+      "it": "[!IT] Grandes Bottes de Klime",
+      "pt": "[!PT] Grandes Bottes de Klime"
+    },
+    "level": 18,
+    "imageUrl": "/retro/item/11009.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 20 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Klime's Boots",
+      "fr": "Bottes de Klime",
+      "de": "Stiefel von R.Klimm",
+      "es": "Botas de Klim",
+      "it": "Stivali di Klim",
+      "pt": "Botas do Klim"
+    },
+    "level": 17,
+    "imageUrl": "/retro/item/11009.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Satisfaction Boots",
+      "fr": "Bottes de Satisfaction",
+      "de": "Stiefel der Genugtuung",
+      "es": "Botas de satisfacción",
+      "it": "Stivali di Soddisfazione",
+      "pt": "Botas de Satisfação"
+    },
+    "level": 17,
+    "imageUrl": "/retro/item/11038.png",
+    "setID": null,
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Nexus's Boots",
+      "fr": "Bottes de Nexus",
+      "de": "Stiefel des Nexus",
+      "es": "Botas de Nexus",
+      "it": "Stivali di Nexus",
+      "pt": "Botas de Nexus"
+    },
+    "level": 17,
+    "imageUrl": "/retro/item/11016.png",
+    "setID": null,
+    "stats": [{ "stat": "Vitality", "minStat": 11, "maxStat": 30 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobtrotter",
+      "fr": "Gobtroteur",
+      "de": "Gobtreter",
+      "es": "Gobtroter",
+      "it": "Gobtrottar",
+      "pt": "Gobtrote"
+    },
+    "level": 14,
+    "imageUrl": "/retro/item/11098.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 15 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Petites Bottes de Klime",
+      "fr": "Petites Bottes de Klime",
+      "de": "[!DE] Petites Bottes de Klime",
+      "es": "[!ES] Petites Bottes de Klime",
+      "it": "[!IT] Petites Bottes de Klime",
+      "pt": "[!PT] Petites Bottes de Klime"
+    },
+    "level": 13,
+    "imageUrl": "/retro/item/11009.png",
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 10 },
+      { "stat": "Agility", "minStat": 6, "maxStat": 10 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Sponge Boots",
+      "fr": "Bottes en Mousse",
+      "de": "Schwammokassins",
+      "es": "Botas de esponja",
+      "it": "Stivali di Spugna",
+      "pt": "Botas de Esponja"
+    },
+    "level": 11,
+    "imageUrl": "/retro/item/11084.png",
+    "setID": "63",
+    "stats": [{ "stat": "Agility", "minStat": 6, "maxStat": 15 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Wild Boots",
+      "fr": "Bottes Champêtres",
+      "de": "Wald-und-Wiesen-Stiefel",
+      "es": "Botas campestres",
+      "it": "Stivali Campestri",
+      "pt": "Botas Campestres"
+    },
+    "level": 10,
+    "imageUrl": "/retro/item/11050.png",
+    "setID": "18",
+    "stats": [
+      { "stat": "Vitality", "minStat": 5, "maxStat": 6 },
+      { "stat": "Intelligence", "minStat": 4, "maxStat": 5 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobboots",
+      "fr": "Boufbottes",
+      "de": "Fressstiefel",
+      "es": "Jalabotas",
+      "it": "Pappastivali",
+      "pt": "Papabotas"
+    },
+    "level": 10,
+    "imageUrl": "/retro/item/11026.png",
+    "setID": "1",
+    "stats": [
+      { "stat": "Power", "minStat": 1, "maxStat": 15 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 35 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Chance Boots",
+      "fr": "Bottes de Chance",
+      "de": "Glückliche Stiefel",
+      "es": "Botas de suerte",
+      "it": "Stivali di Fortuna",
+      "pt": "Botas de Sorte"
+    },
+    "level": 8,
+    "imageUrl": "/retro/item/11001.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": 6, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Nimble Boots",
+      "fr": "Bottes Agilesques",
+      "de": "Flinke Stiefel",
+      "es": "Botas agilescas",
+      "it": "Stivali Agileschi",
+      "pt": "Botas Ágeis"
+    },
+    "level": 8,
+    "imageUrl": "/retro/item/11005.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": 6, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Intelligence Sandals",
+      "fr": "Sandales d'Intelligence",
+      "de": "Intelligente Sandalen",
+      "es": "Sandalias de inteligencia",
+      "it": "Sandali di Intelligenza",
+      "pt": "Sandálias de inteligência"
+    },
+    "level": 8,
+    "imageUrl": "/retro/item/11004.png",
+    "setID": null,
+    "stats": [{ "stat": "Intelligence", "minStat": 6, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Kluh's Boots",
+      "fr": "Bottes de Kluh",
+      "de": "Kluhschuh",
+      "es": "Botas de Kluh",
+      "it": "Stivali di Kluh",
+      "pt": "Botas de Kluh"
+    },
+    "level": 8,
+    "imageUrl": "/retro/item/11003.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": 11, "maxStat": 20 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Bottes du Puissant Bouftou",
+      "fr": "Bottes du Puissant Bouftou",
+      "de": "[!DE] Bottes du Puissant Bouftou",
+      "es": "[!ES] Bottes du Puissant Bouftou",
+      "it": "[!IT] Bottes du Puissant Bouftou",
+      "pt": "[!PT] Bottes du Puissant Bouftou"
+    },
+    "level": 4,
+    "imageUrl": "/retro/item/11003.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 5 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Bottes du Grand Bouftou",
+      "fr": "Bottes du Grand Bouftou",
+      "de": "[!DE] Bottes du Grand Bouftou",
+      "es": "[!ES] Bottes du Grand Bouftou",
+      "it": "[!IT] Bottes du Grand Bouftou",
+      "pt": "[!PT] Bottes du Grand Bouftou"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/11003.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 4 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Petites Bottes de Force",
+      "fr": "Petites Bottes de Force",
+      "de": "[!DE] Petites Bottes de Force",
+      "es": "[!ES] Petites Bottes de Force",
+      "it": "[!IT] Petites Bottes de Force",
+      "pt": "[!PT] Petites Bottes de Force"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/11003.png",
+    "setID": null,
+    "stats": [{ "stat": "Strength", "minStat": 6, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Mulish Cat's Boots",
+      "fr": "Bottes du Chat Buté",
+      "de": "Stiefel des geprügelten Katers",
+      "es": "Botas del Gato con Gotas",
+      "it": "Stivali del Gatto Zuccone",
+      "pt": "Botas de Gato Teimoso"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/11003.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": 6, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Fecaflip",
+      "fr": "Fecaflip",
+      "de": "Fecaflip",
+      "es": "Fecarak",
+      "it": "Fecaflip",
+      "pt": "Fecaflip"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/11003.png",
+    "setID": null,
+    "stats": [{ "stat": "Intelligence", "minStat": 6, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Einekeineux",
+      "fr": "Einekeineux",
+      "de": "Einekeineux",
+      "es": "Einekenoso",
+      "it": "Einekenux",
+      "pt": "Einekeineux"
+    },
+    "level": 2,
+    "imageUrl": "/retro/item/11005.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": 6, "maxStat": 10 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Crashers",
+      "fr": "Les Incrustes",
+      "de": "Ainmischa",
+      "es": "Los Okupas",
+      "it": "I Ficcanaso",
+      "pt": "As Incrustas"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/11099.png",
+    "setID": "69",
+    "stats": [{ "stat": "Neutral Resistance", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pineapi Boots",
+      "fr": "Bottananas",
+      "de": "Ananas-Stiefel",
+      "es": "Botapiñas",
+      "it": "Stivalananas",
+      "pt": "Botacaxi"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/11090.png",
+    "setID": "74",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Pink Piwi Sandals",
+      "fr": "Sandales du Piou Rose",
+      "de": "Sandalen des rosafarbenen Piepmatzes",
+      "es": "Sandalias de pío rosa",
+      "it": "Sandali del Pìu Rosa",
+      "pt": "Sandálias do Piu Rosa"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/11083.png",
+    "setID": "70",
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Yellow Piwi Sandals",
+      "fr": "Sandales du Piou Jaune",
+      "de": "Sandalen des gelben Piepmatzes",
+      "es": "Sandalias de pío amarillo",
+      "it": "Sandali del Pìu Giallo",
+      "pt": "Sandálias do Piu Amarelo"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/11082.png",
+    "setID": "72",
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Green Piwi Sandals",
+      "fr": "Sandales du Piou Vert",
+      "de": "Sandalen des grünen Piepmatzes",
+      "es": "Sandalias de pío verde",
+      "it": "Sandali del Pìu Verde",
+      "pt": "Sandálias do Piu Verde"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/11081.png",
+    "setID": "71",
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Purple Piwi Sandals",
+      "fr": "Sandales du Piou Violet",
+      "de": "Sandalen des violetten Piepmatzes",
+      "es": "Sandalias de pío violeta",
+      "it": "Sandali del Pìu Viola",
+      "pt": "Sandálias do Piu Violeta"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/11080.png",
+    "setID": "62",
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Blue Piwi Sandals",
+      "fr": "Sandales du Piou Bleu",
+      "de": "Sandalen des blauen Piepmatzes",
+      "es": "Sandalias de pío azul",
+      "it": "Sandali del Pìu Blu",
+      "pt": "Sandálias do Piu Azul"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/11079.png",
+    "setID": "61",
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Red Piwi Sandals",
+      "fr": "Sandales du Piou Rouge",
+      "de": "Sandalen des roten Piepmatzes",
+      "es": "Sandalias de pío rojo",
+      "it": "Sandali del Pìu Rosso",
+      "pt": "Sandálias do Piu Vermelho"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/11078.png",
+    "setID": "60",
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Bottes du Champion",
+      "fr": "Bottes du Champion",
+      "de": "[!DE] Bottes du Champion",
+      "es": "[!ES] Bottes du Champion",
+      "it": "[!IT] Bottes du Champion",
+      "pt": "[!PT] Bottes du Champion"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/11072.png",
+    "setID": "45",
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Hogmeiser's Worn Boots",
+      "fr": "Bottes Usées d'Hogmeiser",
+      "de": "Abgenutzte Hogmeiser-Stiefel",
+      "es": "Botas usadas de Hogmeiser",
+      "it": "Stivali Consumati di Hogmeiser",
+      "pt": "Botas Usadas de Hogmeiser"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/11011.png",
+    "setID": null,
+    "stats": [],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Gobball Boots",
+      "fr": "Bottes du Bouftou",
+      "de": "Fresssackstiefel",
+      "es": "Botas de jalató",
+      "it": "Stivali del Pappatutto",
+      "pt": "Botas do Papatudo"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/11003.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 3 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Adventurer Boots",
+      "fr": "Bottes de l'Aventurier",
+      "de": "Stiefel des Abenteurers",
+      "es": "Botas de aventurero",
+      "it": "Stivali dell'Avventuriero",
+      "pt": "Botas do Aventureiro"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/11032.png",
+    "setID": "5",
+    "stats": [
+      { "stat": "Chance", "minStat": 1, "maxStat": 2 },
+      { "stat": "Strength", "minStat": 1, "maxStat": 2 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 2 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 2 },
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 2 }
+    ],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "Tofu Sandals",
+      "fr": "Sandales Tofuesques",
+      "de": "Tofulytische Sandalen",
+      "es": "Sandalias tofuescas",
+      "it": "Sandali Tofeschi",
+      "pt": "Sandálias Tofuescas"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/11004.png",
+    "setID": null,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  },
+  {
+    "name": {
+      "en": "[!EN] Bottes du Petit Bouftou",
+      "fr": "Bottes du Petit Bouftou",
+      "de": "[!DE] Bottes du Petit Bouftou",
+      "es": "[!ES] Bottes du Petit Bouftou",
+      "it": "[!IT] Bottes du Petit Bouftou",
+      "pt": "[!PT] Bottes du Petit Bouftou"
+    },
+    "level": 1,
+    "imageUrl": "/retro/item/11003.png",
+    "setID": null,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 2 }],
+    "conditions": {},
+    "customConditions": {},
+    "customStats": {}
+  }
+]
