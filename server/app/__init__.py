@@ -176,4 +176,4 @@ from app.verify_email import verify_email_blueprint
 app.register_blueprint(verify_email_blueprint)
 
 if __name__ == "__main__":
-    app.run(debug=True, host=".localhost")
+    app.run(debug=True, host=".dev.localhost")

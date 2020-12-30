@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "yarn && yarn apollo-codegen && nodemon --exec ts-node --project tsconfig.server.json server",
     "build": "next build && tsc --project tsconfig.server.json",
-    "start": "NODE_ENV=production node .build/server & node .build/server/retro",
+    "start": "NODE_ENV=production node .build/server",
     "type-check": "tsc",
     "apollo-codegen": "apollo client:codegen --target typescript --endpoint=http://localhost:5000/api/graphql",
     "publish-heroku": "cd ../ && git subtree push --prefix client heroku-client master || true",
