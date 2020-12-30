@@ -10,7 +10,7 @@ from app.database.model_item_type import ModelItemType
 from app.database.model_item_type_translation import ModelItemTypeTranslation
 from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_weapon_stat import ModelWeaponStat
-from oneoff.utils import get_relative_path_for_game_version
+from oneoff.utils import get_relative_path_for_game_version, prompt_game_version
 from oneoff.enums import to_stat_enum, to_effect_enum
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,18 +21,35 @@ allowed_file_names = [
     "pets",
     "weapons",
     "rhineetles",
+    "amulets",
+    "backpacks",
+    "belts",
+    "cloaks",
+    "dofus",
+    "dragoturkeys",
+    "hats",
+    "rings",
+    "shields",
 ]
 languages = ["en", "fr", "pt", "it", "es", "de"]
 
 
 def update_or_create_item(
-    db_session, item_name, record, should_only_add_missing, create_all=False
+    db_session,
+    item_name,
+    record,
+    should_only_add_missing,
+    game_version,
+    create_all=False,
 ):
     print(item_name)
     translations = (
         db_session.query(ModelItemTranslation)
+        .join(ModelItem)
         .filter(
-            ModelItemTranslation.locale == "en", ModelItemTranslation.name == item_name,
+            ModelItemTranslation.locale == "en",
+            ModelItemTranslation.name == item_name,
+            ModelItem.game_version == game_version,
         )
         .all()
     )
@@ -68,13 +85,13 @@ def update_or_create_item(
         print("Item weapon stats successfully updated")
     elif len(translations) == 0:
         if create_all:
-            create_item(db_session, record)
+            create_item(db_session, record, game_version)
             return True
         should_create_response = input(
             "Item does not exist in database. Would you like to create it? (Y/n/YYY to create all): "
         )
         if should_create_response == "Y" or should_create_response == "YYY":
-            result = create_item(db_session, record)
+            result = create_item(db_session, record, game_version)
             if result:
                 print("Item successfully created")
             else:
@@ -221,6 +238,7 @@ def create_weapon_stat(db_session, record, item):
 
 
 def sync_item():
+    game_version = prompt_game_version()
     should_prompt_file = True
     while should_prompt_file:
         file_name = input(
@@ -235,7 +253,12 @@ def sync_item():
 
     print("Loading and processing file...")
     with open(
-        os.path.join(app_root, "app/database/data/{}.json".format(file_name)), "r"
+        os.path.join(
+            app_root,
+            get_relative_path_for_game_version(game_version),
+            "{}.json".format(file_name),
+        ),
+        "r",
     ) as file:
         data = json.load(file)
         name_to_record_map = {}
@@ -257,18 +280,30 @@ def sync_item():
 
                     for record in data:
                         create_all = update_or_create_item(
-                            db_session, record["name"]["en"], record, False, create_all
+                            db_session,
+                            record["name"]["en"],
+                            record,
+                            False,
+                            game_version,
+                            create_all,
                         )
                 elif item_name == "add missing items":
                     should_prompt_item = False
 
                     for record in data:
                         create_all = update_or_create_item(
-                            db_session, record["name"]["en"], record, True, create_all
+                            db_session,
+                            record["name"]["en"],
+                            record,
+                            True,
+                            game_version,
+                            create_all,
                         )
                 elif item_name in name_to_record_map:
                     record = name_to_record_map[item_name]
-                    update_or_create_item(db_session, item_name, record, False, False)
+                    update_or_create_item(
+                        db_session, item_name, record, False, game_version, False
+                    )
 
 
 if __name__ == "__main__":

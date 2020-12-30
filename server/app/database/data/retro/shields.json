@@ -1,5 +1,6 @@
 [
   {
+    "dofusID": "7977",
     "name": {
       "en": "Sharkal Shield",
       "fr": "Bouclier Fi'Squale",
@@ -8,13 +9,14 @@
       "it": "Scudo Fi'Squal",
       "pt": "Escudo Tubaral"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/82035.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 10,
     "stats": [
       { "stat": "Neutral Resistance (PvP)", "minStat": 16, "maxStat": 25 },
       { "stat": "Fire Resistance (PvP)", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Kamas > 790000"],
@@ -24,9 +26,10 @@
       "it": ["Kamas > 790000"],
       "pt": ["Kamas > 790000"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/82035.png"
   },
   {
+    "dofusID": "9980",
     "name": {
       "en": "[!EN] Bouclier draconique",
       "fr": "Bouclier draconique",
@@ -35,9 +38,9 @@
       "it": "[!IT] Bouclier draconique",
       "pt": "[!PT] Bouclier draconique"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82051.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Air Resistance (PvP)", "minStat": null, "maxStat": 1 },
       { "stat": "% Water Resistance (PvP)", "minStat": null, "maxStat": 1 },
@@ -45,11 +48,13 @@
       { "stat": "% Earth Resistance (PvP)", "minStat": null, "maxStat": 1 },
       { "stat": "% Neutral Resistance (PvP)", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82051.png"
   },
   {
+    "dofusID": "9978",
     "name": {
       "en": "[!EN] Bouclier des Bouftons Rouges",
       "fr": "Bouclier des Bouftons Rouges",
@@ -58,17 +63,19 @@
       "it": "[!IT] Bouclier des Bouftons Rouges",
       "pt": "[!PT] Bouclier des Bouftons Rouges"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82053.png",
+    "itemType": "Shield",
     "setID": "143",
+    "level": 1,
     "stats": [
       { "stat": "% Water Resistance (PvP)", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82053.png"
   },
   {
+    "dofusID": "9977",
     "name": {
       "en": "[!EN] Bouclier du Real Boitar",
       "fr": "Bouclier du Real Boitar",
@@ -77,15 +84,17 @@
       "it": "[!IT] Bouclier du Real Boitar",
       "pt": "[!PT] Bouclier du Real Boitar"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82054.png",
+    "itemType": "Shield",
     "setID": "142",
+    "level": 1,
     "stats": [{ "stat": "% Air Resistance (PvP)", "minStat": 2, "maxStat": 3 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82054.png"
   },
   {
+    "dofusID": "9976",
     "name": {
       "en": "[!EN] Bouclier solaire",
       "fr": "Bouclier solaire",
@@ -94,17 +103,19 @@
       "it": "[!IT] Bouclier solaire",
       "pt": "[!PT] Bouclier solaire"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82042.png",
+    "itemType": "Shield",
     "setID": "136",
+    "level": 1,
     "stats": [
       { "stat": "% Water Resistance (PvP)", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82042.png"
   },
   {
+    "dofusID": "9975",
     "name": {
       "en": "[!EN] Chispouclier",
       "fr": "Chispouclier",
@@ -113,15 +124,17 @@
       "it": "[!IT] Chispouclier",
       "pt": "[!PT] Chispouclier"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82041.png",
+    "itemType": "Shield",
     "setID": "138",
+    "level": 1,
     "stats": [{ "stat": "% Air Resistance (PvP)", "minStat": 1, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82041.png"
   },
   {
+    "dofusID": "9974",
     "name": {
       "en": "Trophy Bworker Shield",
       "fr": "Bouclier trophée du Bworker",
@@ -130,15 +143,17 @@
       "it": "Scudo Trofeo del Bworker",
       "pt": "Escudo-troféu do Bworker"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82052.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82052.png"
   },
   {
+    "dofusID": "9973",
     "name": {
       "en": "Trophy Sphincter Cell Shield",
       "fr": "Bouclier trophée du Sphincter Cell",
@@ -147,15 +162,17 @@
       "it": "Scudo Trofeo di Sfinter Cell",
       "pt": "Escudo-troféu do Sphincter Cell"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82056.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82056.png"
   },
   {
+    "dofusID": "9972",
     "name": {
       "en": "Trophy Koolich Shield",
       "fr": "Bouclier trophée du Koulosse",
@@ -164,15 +181,17 @@
       "it": "Scudo Trofeo del Culosse",
       "pt": "Escudo-troféu do Tronkoso"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82050.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82050.png"
   },
   {
+    "dofusID": "9971",
     "name": {
       "en": "Trophy Wa Wabbit Shield",
       "fr": "Bouclier trophée du Wa Wabbit",
@@ -181,15 +200,17 @@
       "it": "Scudo Trofeo del We Wabbit",
       "pt": "Escudo-troféu do Wei Wabbit"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82049.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82049.png"
   },
   {
+    "dofusID": "9970",
     "name": {
       "en": "Trophy Kimbo Shield",
       "fr": "Bouclier trophée du Kimbo",
@@ -198,15 +219,17 @@
       "it": "Scudo Trofeo del Kimbo",
       "pt": "Escudo-troféu do Kimbo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82048.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82048.png"
   },
   {
+    "dofusID": "9969",
     "name": {
       "en": "[!EN] Bouclier trophée du Minotoror",
       "fr": "Bouclier trophée du Minotoror",
@@ -215,15 +238,17 @@
       "it": "[!IT] Bouclier trophée du Minotoror",
       "pt": "[!PT] Bouclier trophée du Minotoror"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82047.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82047.png"
   },
   {
+    "dofusID": "9968",
     "name": {
       "en": "Trophy Dragon Pig Shield",
       "fr": "Bouclier trophée du Dragon Cochon",
@@ -232,15 +257,17 @@
       "it": "Scudo Trofeo del Drago Maiale",
       "pt": "Escudo-troféu do Dragão-Porco"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82046.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82046.png"
   },
   {
+    "dofusID": "9967",
     "name": {
       "en": "Trophy Soft Oak Shield",
       "fr": "Bouclier trophée du Chêne Mou",
@@ -249,15 +276,17 @@
       "it": "Scudo Trofeo della Quercia Molle",
       "pt": "Escudo-troféu do Carvalho Mole"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82045.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82045.png"
   },
   {
+    "dofusID": "9966",
     "name": {
       "en": "Trophy Moon Shield",
       "fr": "Bouclier trophée du Moon",
@@ -266,15 +295,17 @@
       "it": "Scudo Trofeo di Moon",
       "pt": "Escudo-troféu do Moon"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82044.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82044.png"
   },
   {
+    "dofusID": "9965",
     "name": {
       "en": "Trophy Dark Vlad Shield",
       "fr": "Bouclier trophée du Dark Vlad",
@@ -283,15 +314,17 @@
       "it": "Scudo Trofeo di Dark Vlad",
       "pt": "Escudo-troféu do Dark Vlad"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82043.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82043.png"
   },
   {
+    "dofusID": "9963",
     "name": {
       "en": "[!EN] Bouclier hispanique",
       "fr": "Bouclier hispanique",
@@ -300,15 +333,17 @@
       "it": "[!IT] Bouclier hispanique",
       "pt": "[!PT] Bouclier hispanique"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82040.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82040.png"
   },
   {
+    "dofusID": "9962",
     "name": {
       "en": "[!EN] Bouclier Pararayon",
       "fr": "Bouclier Pararayon",
@@ -317,15 +352,17 @@
       "it": "[!IT] Bouclier Pararayon",
       "pt": "[!PT] Bouclier Pararayon"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82034.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82034.png"
   },
   {
+    "dofusID": "8402",
     "name": {
       "en": "[!EN] Bouclier Tigré",
       "fr": "Bouclier Tigré",
@@ -334,18 +371,20 @@
       "it": "[!IT] Bouclier Tigré",
       "pt": "[!PT] Bouclier Tigré"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82039.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Water Resistance (PvP)", "minStat": 2, "maxStat": 3 },
       { "stat": "% Earth Resistance (PvP)", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82039.png"
   },
   {
+    "dofusID": "8401",
     "name": {
       "en": "[!EN] Bouclier Boh-Bihn",
       "fr": "Bouclier Boh-Bihn",
@@ -354,18 +393,20 @@
       "it": "[!IT] Bouclier Boh-Bihn",
       "pt": "[!PT] Bouclier Boh-Bihn"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82038.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Air Resistance (PvP)", "minStat": 2, "maxStat": 3 },
       { "stat": "% Fire Resistance (PvP)", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82038.png"
   },
   {
+    "dofusID": "8400",
     "name": {
       "en": "[!EN] Cigaloclier",
       "fr": "Cigaloclier",
@@ -374,18 +415,20 @@
       "it": "[!IT] Cigaloclier",
       "pt": "[!PT] Cigaloclier"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82037.png",
+    "itemType": "Shield",
     "setID": "122",
+    "level": 1,
     "stats": [
       { "stat": "Fire Resistance (PvP)", "minStat": 2, "maxStat": 3 },
       { "stat": "% Water Resistance (PvP)", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82037.png"
   },
   {
+    "dofusID": "8399",
     "name": {
       "en": "[!EN] Poshoclier",
       "fr": "Poshoclier",
@@ -394,18 +437,20 @@
       "it": "[!IT] Poshoclier",
       "pt": "[!PT] Poshoclier"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82036.png",
+    "itemType": "Shield",
     "setID": "123",
+    "level": 1,
     "stats": [
       { "stat": "Earth Resistance (PvP)", "minStat": 2, "maxStat": 3 },
       { "stat": "% Fire Resistance (PvP)", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82036.png"
   },
   {
+    "dofusID": "8140",
     "name": {
       "en": "Aerdala Shield",
       "fr": "Bouclier Aerdala",
@@ -414,18 +459,20 @@
       "it": "Scudo Erdala",
       "pt": "Escudo Ardala"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82030.png",
+    "itemType": "Shield",
     "setID": "35",
+    "level": 1,
     "stats": [
       { "stat": "% Air Resistance (PvP)", "minStat": 16, "maxStat": 20 },
       { "stat": "Earth Resistance (PvP)", "minStat": 12, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82030.png"
   },
   {
+    "dofusID": "8139",
     "name": {
       "en": "Feudala Shield",
       "fr": "Bouclier Feudala",
@@ -434,18 +481,20 @@
       "it": "Scudo Focodala",
       "pt": "Escudo Fogodala"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82033.png",
+    "itemType": "Shield",
     "setID": "37",
+    "level": 1,
     "stats": [
       { "stat": "% Fire Resistance (PvP)", "minStat": 21, "maxStat": 25 },
       { "stat": "Air Resistance (PvP)", "minStat": 12, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82033.png"
   },
   {
+    "dofusID": "8138",
     "name": {
       "en": "Terrdala Shield",
       "fr": "Bouclier Terrdala",
@@ -454,18 +503,20 @@
       "it": "Scudo Terradala",
       "pt": "Escudo Terradala"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82032.png",
+    "itemType": "Shield",
     "setID": "36",
+    "level": 1,
     "stats": [
       { "stat": "% Earth Resistance (PvP)", "minStat": 15, "maxStat": 18 },
       { "stat": "Water Resistance (PvP)", "minStat": 8, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82032.png"
   },
   {
+    "dofusID": "8137",
     "name": {
       "en": "Crackler Shield",
       "fr": "Bouclier du Craqueleur",
@@ -474,19 +525,21 @@
       "it": "Scudo del Croccaroc",
       "pt": "Escudo do Smagador"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82023.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Neutral Resistance (PvP)", "minStat": 7, "maxStat": 9 },
       { "stat": "Air Resistance (PvP)", "minStat": 7, "maxStat": 9 },
       { "stat": "Earth Resistance (PvP)", "minStat": 7, "maxStat": 9 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82023.png"
   },
   {
+    "dofusID": "8136",
     "name": {
       "en": "Bowisse's Shield",
       "fr": "Bouclier de Bowisse",
@@ -495,19 +548,21 @@
       "it": "Scudo di Bowis",
       "pt": "Escudo de Bowis"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82021.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Water Resistance (PvP)", "minStat": 12, "maxStat": 15 },
       { "stat": "Fire Resistance (PvP)", "minStat": 5, "maxStat": 7 },
       { "stat": "Neutral Resistance (PvP)", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82021.png"
   },
   {
+    "dofusID": "8135",
     "name": {
       "en": "Gobball Shield",
       "fr": "Bouclier du Bouftou",
@@ -516,17 +571,19 @@
       "it": "Scudo del Pappatutto",
       "pt": "Escudo do Papatudo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82020.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Neutral Resistance (PvP)", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82020.png"
   },
   {
+    "dofusID": "8134",
     "name": {
       "en": "LeChouque's Shield",
       "fr": "Bouclier du Chouque",
@@ -535,19 +592,21 @@
       "it": "Scudo del Chuko",
       "pt": "Escudo do Tchuke"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82018.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Water Resistance (PvP)", "minStat": 21, "maxStat": 25 },
       { "stat": "% Earth Resistance (PvP)", "minStat": 8, "maxStat": 10 },
       { "stat": "Air Resistance (PvP)", "minStat": 8, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82018.png"
   },
   {
+    "dofusID": "8133",
     "name": {
       "en": "Flying Shield",
       "fr": "Bouclier Volant",
@@ -556,15 +615,17 @@
       "it": "Scudo Volante",
       "pt": "Escudo Voador"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82017.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Fire Resistance (PvP)", "minStat": 4, "maxStat": 5 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82017.png"
   },
   {
+    "dofusID": "8132",
     "name": {
       "en": "Kloome",
       "fr": "Kloume",
@@ -573,19 +634,21 @@
       "it": "Klum",
       "pt": "Klum"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82015.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Air Resistance (PvP)", "minStat": 12, "maxStat": 15 },
       { "stat": "% Water Resistance (PvP)", "minStat": 12, "maxStat": 15 },
       { "stat": "Fire Resistance (PvP)", "minStat": 8, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82015.png"
   },
   {
+    "dofusID": "8131",
     "name": {
       "en": "Captain Amakna Shield",
       "fr": "Bouclier du Captain Amakna",
@@ -594,9 +657,9 @@
       "it": "Scudo di Capitan Amakna",
       "pt": "Escudo do Capitão Amakna"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82014.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Neutral Resistance (PvP)", "minStat": 21, "maxStat": 25 },
       { "stat": "% Fire Resistance (PvP)", "minStat": 21, "maxStat": 25 },
@@ -604,11 +667,13 @@
       { "stat": "Water Resistance (PvP)", "minStat": 12, "maxStat": 15 },
       { "stat": "Air Resistance (PvP)", "minStat": 12, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82014.png"
   },
   {
+    "dofusID": "8130",
     "name": {
       "en": "Derma Tho",
       "fr": "Derma Tho",
@@ -617,18 +682,20 @@
       "it": "Derma Tho",
       "pt": "Derma Tho"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82003.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Neutral Resistance (PvP)", "minStat": 10, "maxStat": 12 },
       { "stat": "Air Resistance (PvP)", "minStat": 10, "maxStat": 12 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82003.png"
   },
   {
+    "dofusID": "8129",
     "name": {
       "en": "Bawbawian Shield",
       "fr": "Bouclier du Bawbawe",
@@ -637,18 +704,20 @@
       "it": "Scudo del Bawbawo",
       "pt": "Escudo do Báwbawo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82002.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Neutral Resistance (PvP)", "minStat": 10, "maxStat": 12 },
       { "stat": "% Air Resistance (PvP)", "minStat": 10, "maxStat": 12 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82002.png"
   },
   {
+    "dofusID": "8128",
     "name": {
       "en": "[!EN] Le Karde Coeur",
       "fr": "Le Karde Coeur",
@@ -657,18 +726,20 @@
       "it": "[!IT] Le Karde Coeur",
       "pt": "[!PT] Le Karde Coeur"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82007.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Fire Resistance (PvP)", "minStat": 10, "maxStat": 12 },
       { "stat": "% Earth Resistance (PvP)", "minStat": 10, "maxStat": 12 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82007.png"
   },
   {
+    "dofusID": "8127",
     "name": {
       "en": "Imp Shield",
       "fr": "Bouclier des Brigandins",
@@ -677,20 +748,22 @@
       "it": "Scudo dei Brigandini",
       "pt": "Escudo dos Diabretes"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82009.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Neutral Resistance (PvP)", "minStat": 16, "maxStat": 20 },
       { "stat": "% Fire Resistance (PvP)", "minStat": 16, "maxStat": 20 },
       { "stat": "Earth Resistance (PvP)", "minStat": 8, "maxStat": 10 },
       { "stat": "Air Resistance (PvP)", "minStat": 8, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82009.png"
   },
   {
+    "dofusID": "8126",
     "name": {
       "en": "Mount Stinkky Shield",
       "fr": "Bouclier du Mont Kipou",
@@ -699,18 +772,20 @@
       "it": "Scudo del Monte Kepuz",
       "pt": "Escudo do Monte Kifed"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82001.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Neutral Resistance (PvP)", "minStat": 6, "maxStat": 8 },
       { "stat": "Water Resistance (PvP)", "minStat": 8, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82001.png"
   },
   {
+    "dofusID": "8125",
     "name": {
       "en": "Lumberjack Shield",
       "fr": "Bouclier du Bûcheron",
@@ -719,17 +794,19 @@
       "it": "Scudo del Taglialegna",
       "pt": "Escudo do Lenhador"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82004.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Earth Resistance (PvP)", "minStat": 5, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82004.png"
   },
   {
+    "dofusID": "8124",
     "name": {
       "en": "Water Dial",
       "fr": "Cadran d'Eau",
@@ -738,15 +815,17 @@
       "it": "Quadrante di Acqua",
       "pt": "Quadrante de Água"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82025.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Water Resistance (PvP)", "minStat": 4, "maxStat": 5 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82025.png"
   },
   {
+    "dofusID": "8123",
     "name": {
       "en": "Earth Dial",
       "fr": "Cadran de Terre",
@@ -755,15 +834,17 @@
       "it": "Quadrante di Terra",
       "pt": "Quadrante de Terra"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82027.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Earth Resistance (PvP)", "minStat": 4, "maxStat": 5 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82027.png"
   },
   {
+    "dofusID": "8122",
     "name": {
       "en": "Air Dial",
       "fr": "Cadran d'Air",
@@ -772,15 +853,17 @@
       "it": "Quadrante di Aria",
       "pt": "Quadrante de Ar"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82026.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Air Resistance (PvP)", "minStat": 7, "maxStat": 9 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82026.png"
   },
   {
+    "dofusID": "8121",
     "name": {
       "en": "Fire Dial",
       "fr": "Cadran de Feu",
@@ -789,15 +872,17 @@
       "it": "Quadrante di Fuoco",
       "pt": "Quadrante de Fogo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82024.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Fire Resistance (PvP)", "minStat": 7, "maxStat": 9 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82024.png"
   },
   {
+    "dofusID": "8120",
     "name": {
       "en": "Pandawa Shield",
       "fr": "Bouclier Pandawa",
@@ -806,18 +891,20 @@
       "it": "Scudo Pandawa",
       "pt": "Escudo Pandawa"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82022.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Neutral Resistance (PvP)", "minStat": 6, "maxStat": 8 },
       { "stat": "Fire Resistance (PvP)", "minStat": 8, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82022.png"
   },
   {
+    "dofusID": "8119",
     "name": {
       "en": "Treechnid Shield",
       "fr": "Bouclier Abraknyde",
@@ -826,18 +913,20 @@
       "it": "Scudo Alberagno",
       "pt": "Escudo de Arvraknídeo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82019.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Neutral Resistance (PvP)", "minStat": 6, "maxStat": 8 },
       { "stat": "Earth Resistance (PvP)", "minStat": 8, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82019.png"
   },
   {
+    "dofusID": "8118",
     "name": {
       "en": "Asse Shield",
       "fr": "Bouclier d'Asse",
@@ -846,20 +935,22 @@
       "it": "Scudo di Asse",
       "pt": "Escudo de Mota"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82016.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Air Resistance (PvP)", "minStat": 21, "maxStat": 25 },
       { "stat": "% Water Resistance (PvP)", "minStat": 21, "maxStat": 25 },
       { "stat": "Earth Resistance (PvP)", "minStat": 12, "maxStat": 15 },
       { "stat": "Neutral Resistance (PvP)", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82016.png"
   },
   {
+    "dofusID": "8117",
     "name": {
       "en": "Shield in Briefs",
       "fr": "Bouclier en Slip",
@@ -868,20 +959,22 @@
       "it": "Scudo di Mutande",
       "pt": "Escudo de Cueca"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82013.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Fire Resistance (PvP)", "minStat": 15, "maxStat": 18 },
       { "stat": "% Air Resistance (PvP)", "minStat": 15, "maxStat": 18 },
       { "stat": "Neutral Resistance (PvP)", "minStat": 4, "maxStat": 5 },
       { "stat": "Water Resistance (PvP)", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82013.png"
   },
   {
+    "dofusID": "8116",
     "name": {
       "en": "Sadida Shield",
       "fr": "Bouclier du Sadida",
@@ -890,19 +983,21 @@
       "it": "Scudo del Sadida",
       "pt": "Escudo do Sadida"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82012.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Neutral Resistance (PvP)", "minStat": 12, "maxStat": 15 },
       { "stat": "% Earth Resistance (PvP)", "minStat": 21, "maxStat": 25 },
       { "stat": "Water Resistance (PvP)", "minStat": 12, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82012.png"
   },
   {
+    "dofusID": "8115",
     "name": {
       "en": "Fan Shield",
       "fr": "Bouclier Ventaille",
@@ -911,20 +1006,22 @@
       "it": "Scudo Ventaglio",
       "pt": "Escudo Ventilador"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82011.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Neutral Resistance (PvP)", "minStat": 16, "maxStat": 20 },
       { "stat": "% Fire Resistance (PvP)", "minStat": 12, "maxStat": 15 },
       { "stat": "% Air Resistance (PvP)", "minStat": 16, "maxStat": 20 },
       { "stat": "Water Resistance (PvP)", "minStat": 12, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82011.png"
   },
   {
+    "dofusID": "8114",
     "name": {
       "en": "Akwadala Shield",
       "fr": "Bouclier Akwadala",
@@ -933,18 +1030,20 @@
       "it": "Scudo Aksadala",
       "pt": "Escudo Akwadala"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82031.png",
+    "itemType": "Shield",
     "setID": "34",
+    "level": 1,
     "stats": [
       { "stat": "% Water Resistance (PvP)", "minStat": 6, "maxStat": 8 },
       { "stat": "Fire Resistance (PvP)", "minStat": 8, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82031.png"
   },
   {
+    "dofusID": "8113",
     "name": {
       "en": "Inn Shield",
       "fr": "Bouclier Taverne",
@@ -953,20 +1052,22 @@
       "it": "Scudo Taverna",
       "pt": "Escudo Taberna"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82006.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Fire Resistance (PvP)", "minStat": 8, "maxStat": 10 },
       { "stat": "% Air Resistance (PvP)", "minStat": 8, "maxStat": 10 },
       { "stat": "Neutral Resistance (PvP)", "minStat": 8, "maxStat": 10 },
       { "stat": "Water Resistance (PvP)", "minStat": 8, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82006.png"
   },
   {
+    "dofusID": "8112",
     "name": {
       "en": "Phtalmo",
       "fr": "Ftalmo",
@@ -975,18 +1076,20 @@
       "it": "Ftalmo",
       "pt": "Ftalmo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82005.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Fire Resistance (PvP)", "minStat": 14, "maxStat": 18 },
       { "stat": "% Water Resistance (PvP)", "minStat": 14, "maxStat": 18 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82005.png"
   },
   {
+    "dofusID": "8111",
     "name": {
       "en": "Sidimote Shield",
       "fr": "Bouclier de Sidimote",
@@ -995,19 +1098,21 @@
       "it": "Scudo di Sidimote",
       "pt": "Escudo de Sidimote"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82008.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Neutral Resistance (PvP)", "minStat": 12, "maxStat": 15 },
       { "stat": "% Water Resistance (PvP)", "minStat": 12, "maxStat": 15 },
       { "stat": "Earth Resistance (PvP)", "minStat": 8, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82008.png"
   },
   {
+    "dofusID": "6392",
     "name": {
       "en": "Training Shield",
       "fr": "Bouclier d'entraînement",
@@ -1016,15 +1121,17 @@
       "it": "Scudo di Allenamento",
       "pt": "Escudo de treinamento"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82001.png",
+    "itemType": "Shield",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82001.png"
   },
   {
+    "dofusID": "6374",
     "name": {
       "en": "Sponghield",
       "fr": "Bouclier en Mousse",
@@ -1033,14 +1140,15 @@
       "it": "Scudo di Spugna",
       "pt": "Escudo de Esponja"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/82010.png",
+    "itemType": "Shield",
     "setID": "63",
+    "level": 1,
     "stats": [
       { "stat": "% Water Resistance (PvP)", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/82010.png"
   }
 ]

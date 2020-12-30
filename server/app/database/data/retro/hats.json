@@ -1,5 +1,6 @@
 [
   {
+    "dofusID": "8387",
     "name": {
       "en": "The Kim",
       "fr": "Le Kim",
@@ -8,9 +9,9 @@
       "it": "Il Kim",
       "pt": "O Kim"
     },
-    "level": 196,
-    "imageUrl": "/retro/item/16230.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 196,
     "stats": [
       { "stat": "Critical", "minStat": 4, "maxStat": 7 },
       { "stat": "Strength", "minStat": 51, "maxStat": 80 },
@@ -23,11 +24,13 @@
       { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16230.png"
   },
   {
+    "dofusID": "8281",
     "name": {
       "en": "Batouta Helmet",
       "fr": "Casque Harnage",
@@ -36,9 +39,9 @@
       "it": "Elmo Assacro",
       "pt": "Capacete Batouta"
     },
-    "level": 189,
-    "imageUrl": "/retro/item/16212.png",
+    "itemType": "Hat",
     "setID": "109",
+    "level": 189,
     "stats": [
       { "stat": "Chance", "minStat": 41, "maxStat": 60 },
       { "stat": "Intelligence", "minStat": 41, "maxStat": 60 },
@@ -51,11 +54,13 @@
       { "stat": "Summons", "minStat": null, "maxStat": 2 },
       { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16212.png"
   },
   {
+    "dofusID": "8247",
     "name": {
       "en": "Mush Ombrero",
       "fr": "Chapignon",
@@ -64,9 +69,9 @@
       "it": "Cappellignon",
       "pt": "Cogu Ombrero"
     },
-    "level": 185,
-    "imageUrl": "/retro/item/16221.png",
+    "itemType": "Hat",
     "setID": "119",
+    "level": 185,
     "stats": [
       { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
@@ -80,11 +85,13 @@
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16221.png"
   },
   {
+    "dofusID": "7967",
     "name": {
       "en": "Crocodyl Dandy's Hat",
       "fr": "Chapeau de Crocodaille Dandi",
@@ -93,9 +100,9 @@
       "it": "Cappello di Coccodrail Dandy",
       "pt": "Chapéu de Crocodyl Dandy"
     },
-    "level": 180,
-    "imageUrl": "/retro/item/16203.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 180,
     "stats": [
       { "stat": "Strength", "minStat": 41, "maxStat": 60 },
       { "stat": "Chance", "minStat": 41, "maxStat": 60 },
@@ -107,11 +114,13 @@
       { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16203.png"
   },
   {
+    "dofusID": "6931",
     "name": {
       "en": "Ougaat",
       "fr": "Ougalurette",
@@ -120,9 +129,9 @@
       "it": "Ugacapo",
       "pt": "Ugahlureta"
     },
-    "level": 178,
-    "imageUrl": "/retro/item/16120.png",
+    "itemType": "Hat",
     "setID": "118",
+    "level": 178,
     "stats": [
       { "stat": "Vitality", "minStat": 301, "maxStat": 400 },
       { "stat": "Wisdom", "minStat": 41, "maxStat": 50 },
@@ -131,11 +140,13 @@
       { "stat": "Prospecting", "minStat": 21, "maxStat": 30 },
       { "stat": "% Neutral Resistance", "minStat": 8, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16120.png"
   },
   {
+    "dofusID": "6299",
     "name": {
       "en": "Sulik",
       "fr": "Sulik",
@@ -144,20 +155,22 @@
       "it": "Sulik",
       "pt": "Sulik"
     },
-    "level": 172,
-    "imageUrl": "/retro/item/16092.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 172,
     "stats": [
       { "stat": "Vitality", "minStat": 301, "maxStat": 400 },
       { "stat": "Wisdom", "minStat": 41, "maxStat": 50 },
       { "stat": "Reflect", "minStat": 11, "maxStat": 25 },
       { "stat": "Chance", "minStat": 41, "maxStat": 60 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16092.png"
   },
   {
+    "dofusID": "7968",
     "name": {
       "en": "Mopy King Sovereign Hood",
       "fr": "Capuche Souveraine du Roissingue",
@@ -166,9 +179,9 @@
       "it": "Cappuccio Sovrano del Re Cencio",
       "pt": "Capuz soberano do Rei Nojoso"
     },
-    "level": 168,
-    "imageUrl": "/retro/item/16204.png",
+    "itemType": "Hat",
     "setID": "78",
+    "level": 168,
     "stats": [
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
       { "stat": "Wisdom", "minStat": 41, "maxStat": 60 },
@@ -181,11 +194,13 @@
       { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16204.png"
   },
   {
+    "dofusID": "7832",
     "name": {
       "en": "Tynril Hat",
       "fr": "Coiffe du Tynril",
@@ -194,9 +209,9 @@
       "it": "Copricapo del Tynril",
       "pt": "Chapéu do Tynril"
     },
-    "level": 164,
-    "imageUrl": "/retro/item/16188.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 164,
     "stats": [
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
@@ -208,11 +223,13 @@
       { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 8 },
       { "stat": "Earth Resistance", "minStat": 6, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16188.png"
   },
   {
+    "dofusID": "8358",
     "name": {
       "en": "Royal Bloprown",
       "fr": "Blopronne Royale",
@@ -221,9 +238,9 @@
       "it": "Bloporona Reale",
       "pt": "Bloporoa Real"
     },
-    "level": 161,
-    "imageUrl": "/retro/item/16223.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 161,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
       { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
@@ -236,11 +253,13 @@
       { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16223.png"
   },
   {
+    "dofusID": "7835",
     "name": {
       "en": "Jester Hat",
       "fr": "Le Nahitse",
@@ -249,9 +268,9 @@
       "it": "Il Nahit",
       "pt": "Jester Chapéu"
     },
-    "level": 160,
-    "imageUrl": "/retro/item/16190.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 160,
     "stats": [
       { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
       { "stat": "Agility", "minStat": 41, "maxStat": 60 },
@@ -264,11 +283,13 @@
       { "stat": "% Fire Resistance", "minStat": 8, "maxStat": 12 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16190.png"
   },
   {
+    "dofusID": "7966",
     "name": {
       "en": "Archer Voodoo Mask",
       "fr": "Masque Vaudou Ark",
@@ -277,9 +298,9 @@
       "it": "Maschera Vudù Arc",
       "pt": "Máscara Vodu Arko"
     },
-    "level": 158,
-    "imageUrl": "/retro/item/16202.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 158,
     "stats": [
       { "stat": "Intelligence", "minStat": 61, "maxStat": 80 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
@@ -292,11 +313,13 @@
       { "stat": "% Fire Resistance", "minStat": 9, "maxStat": 14 },
       { "stat": "Fire Resistance", "minStat": 9, "maxStat": 14 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16202.png"
   },
   {
+    "dofusID": "7965",
     "name": {
       "en": "Sarbak Voodoo Mask",
       "fr": "Masque Vaudou Sarbak",
@@ -305,9 +328,9 @@
       "it": "Maschera Vudù Cerb",
       "pt": "Máscara Vodu Sarbak"
     },
-    "level": 158,
-    "imageUrl": "/retro/item/16201.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 158,
     "stats": [
       { "stat": "Agility", "minStat": 61, "maxStat": 80 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
@@ -320,11 +343,13 @@
       { "stat": "% Air Resistance", "minStat": 9, "maxStat": 14 },
       { "stat": "Air Resistance", "minStat": 9, "maxStat": 14 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16201.png"
   },
   {
+    "dofusID": "7964",
     "name": {
       "en": "Jav Voodoo Mask",
       "fr": "Masque Vaudou Jav",
@@ -333,9 +358,9 @@
       "it": "Maschera Vudù Giav",
       "pt": "Máscara Vodu Jav"
     },
-    "level": 158,
-    "imageUrl": "/retro/item/16200.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 158,
     "stats": [
       { "stat": "Chance", "minStat": 61, "maxStat": 80 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
@@ -348,11 +373,13 @@
       { "stat": "% Water Resistance", "minStat": 9, "maxStat": 14 },
       { "stat": "Water Resistance", "minStat": 9, "maxStat": 14 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16200.png"
   },
   {
+    "dofusID": "7963",
     "name": {
       "en": "Thierry Voodoo Mask",
       "fr": "Masque Vaudou Eth",
@@ -361,9 +388,9 @@
       "it": "Maschera Vudù As",
       "pt": "Máscara Vodu Eth"
     },
-    "level": 158,
-    "imageUrl": "/retro/item/16199.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 158,
     "stats": [
       { "stat": "Strength", "minStat": 61, "maxStat": 80 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
@@ -376,11 +403,13 @@
       { "stat": "% Earth Resistance", "minStat": 9, "maxStat": 14 },
       { "stat": "Earth Resistance", "minStat": 9, "maxStat": 14 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16199.png"
   },
   {
+    "dofusID": "7468",
     "name": {
       "en": "Minotot Headgear",
       "fr": "Coiffe du Minotot",
@@ -389,9 +418,9 @@
       "it": "Copricapo del Minotot",
       "pt": "Chapéu do Minotot"
     },
-    "level": 157,
-    "imageUrl": "/retro/item/16151.png",
+    "itemType": "Hat",
     "setID": "57",
+    "level": 157,
     "stats": [
       { "stat": "Chance", "minStat": 31, "maxStat": 50 },
       { "stat": "Power", "minStat": 16, "maxStat": 25 },
@@ -404,11 +433,13 @@
       { "stat": "Prospecting", "minStat": 16, "maxStat": 25 },
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16151.png"
   },
   {
+    "dofusID": "7972",
     "name": {
       "en": "Zoth Master Hat",
       "fr": "Coiffe du Maître Zoth",
@@ -417,9 +448,9 @@
       "it": "Copricapo del Maestro Zoth",
       "pt": "Chapéu do Mestre Zoth"
     },
-    "level": 156,
-    "imageUrl": "/retro/item/16208.png",
+    "itemType": "Hat",
     "setID": "94",
+    "level": 156,
     "stats": [
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
@@ -430,11 +461,13 @@
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Prospecting", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16208.png"
   },
   {
+    "dofusID": "8101",
     "name": {
       "en": "Air Pikoko Helmet",
       "fr": "Casque du Bitouf Aérien",
@@ -443,9 +476,9 @@
       "it": "Elmo del Bituf Aereo",
       "pt": "Capacete do Bitufo Aéreo"
     },
-    "level": 154,
-    "imageUrl": "/retro/item/16209.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 154,
     "stats": [
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
@@ -459,11 +492,13 @@
       { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "Earth Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16209.png"
   },
   {
+    "dofusID": "8357",
     "name": {
       "en": "Mitch Shroom",
       "fr": "Chapblopignon",
@@ -472,9 +507,9 @@
       "it": "Capplopinolo",
       "pt": "Chablopumelo"
     },
-    "level": 152,
-    "imageUrl": "/retro/item/16222.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 152,
     "stats": [
       { "stat": "Strength", "minStat": 41, "maxStat": 60 },
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
@@ -486,11 +521,13 @@
       { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16222.png"
   },
   {
+    "dofusID": "7697",
     "name": {
       "en": "Ruskie Hat",
       "fr": "Ruskauffe",
@@ -499,9 +536,9 @@
       "it": "Ruskapo",
       "pt": "Chapéu Ruskie"
     },
-    "level": 151,
-    "imageUrl": "/retro/item/16167.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 151,
     "stats": [
       { "stat": "Vitality", "minStat": 201, "maxStat": 300 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 45 },
@@ -513,11 +550,13 @@
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16167.png"
   },
   {
+    "dofusID": "6358",
     "name": {
       "en": "Kracker Cap",
       "fr": "Krépite",
@@ -526,9 +565,9 @@
       "it": "Krepito",
       "pt": "Kracklin Kepi"
     },
-    "level": 149,
-    "imageUrl": "/retro/item/16095.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 149,
     "stats": [
       { "stat": "Vitality", "minStat": 201, "maxStat": 300 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
@@ -538,11 +577,13 @@
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 8 },
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16095.png"
   },
   {
+    "dofusID": "7645",
     "name": {
       "en": "Soft Oak Hat",
       "fr": "Coiffe du Chêne Mou",
@@ -551,9 +592,9 @@
       "it": "Copricapo della Quercia Molle",
       "pt": "Chapéu do Carvalho Mole"
     },
-    "level": 145,
-    "imageUrl": "/retro/item/16166.png",
+    "itemType": "Hat",
     "setID": "66",
+    "level": 145,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
       { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
@@ -567,11 +608,13 @@
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16166.png"
   },
   {
+    "dofusID": "6431",
     "name": {
       "en": "Paperb' Hat",
       "fr": "Piruk",
@@ -580,9 +623,9 @@
       "it": "Piruk",
       "pt": "Peruka"
     },
-    "level": 145,
-    "imageUrl": "/retro/item/16112.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 145,
     "stats": [
       { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
@@ -594,11 +637,13 @@
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16112.png"
   },
   {
+    "dofusID": "5862",
     "name": {
       "en": "Bronze Bwork Helmet",
       "fr": "Casque du Bwork de Bronze",
@@ -607,9 +652,9 @@
       "it": "Elmo del Bwork di Bronzo",
       "pt": "Capacete do Bwork de Bronze"
     },
-    "level": 144,
-    "imageUrl": "/retro/item/16091.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 144,
     "stats": [
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
       { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
@@ -620,11 +665,13 @@
       { "stat": "Prospecting", "minStat": 16, "maxStat": 25 },
       { "stat": "Fire Resistance", "minStat": 16, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16091.png"
   },
   {
+    "dofusID": "7451",
     "name": {
       "en": "Moowolf Headgear",
       "fr": "Coiffe du Meulou",
@@ -633,9 +680,9 @@
       "it": "Copricapo del Muulupo",
       "pt": "Chapéu do Mulobo"
     },
-    "level": 141,
-    "imageUrl": "/retro/item/16144.png",
+    "itemType": "Hat",
     "setID": "55",
+    "level": 141,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 55 },
       { "stat": "Power", "minStat": 11, "maxStat": 20 },
@@ -648,11 +695,13 @@
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16144.png"
   },
   {
+    "dofusID": "7971",
     "name": {
       "en": "Zoth Warrior Helmet",
       "fr": "Casque du Guerrier Zoth",
@@ -661,9 +710,9 @@
       "it": "Elmo del Guerriero Zoth",
       "pt": "Capacete do Guerreiro Zoth"
     },
-    "level": 134,
-    "imageUrl": "/retro/item/16207.png",
+    "itemType": "Hat",
     "setID": "95",
+    "level": 134,
     "stats": [
       { "stat": "Strength", "minStat": 61, "maxStat": 80 },
       { "stat": "Vitality", "minStat": 301, "maxStat": 400 },
@@ -672,11 +721,13 @@
       { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16207.png"
   },
   {
+    "dofusID": "7948",
     "name": {
       "en": "Light Treeckler Mask",
       "fr": "Masque de l'Abrakleur clair",
@@ -685,9 +736,9 @@
       "it": "Maschera dell'Alberaklur Chiaro",
       "pt": "Máscara do Arvorador Claro"
     },
-    "level": 134,
-    "imageUrl": "/retro/item/16193.png",
+    "itemType": "Hat",
     "setID": "79",
+    "level": 134,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 40 },
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
@@ -699,11 +750,13 @@
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16193.png"
   },
   {
+    "dofusID": "7946",
     "name": {
       "en": "Zoth Sergeant Mask",
       "fr": "Masque du Sergent Zoth",
@@ -712,9 +765,9 @@
       "it": "Maschera del Sergente Zoth",
       "pt": "Máscara do Sargento Zoth"
     },
-    "level": 133,
-    "imageUrl": "/retro/item/16191.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 133,
     "stats": [
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
@@ -726,11 +779,13 @@
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16191.png"
   },
   {
+    "dofusID": "7628",
     "name": {
       "en": "Lord of the Rats' Ceremonial Hat",
       "fr": "Coiffe Cérémoniale du Seigneur des Rats",
@@ -739,9 +794,9 @@
       "it": "Copricapo Cerimoniale del Signore dei Ratti",
       "pt": "Chapéu cerimonial do Senhor dos Ratos"
     },
-    "level": 133,
-    "imageUrl": "/retro/item/16173.png",
+    "itemType": "Hat",
     "setID": "64",
+    "level": 133,
     "stats": [
       { "stat": "Agility", "minStat": 31, "maxStat": 50 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
@@ -756,11 +811,13 @@
       { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16173.png"
   },
   {
+    "dofusID": "7445",
     "name": {
       "en": "Kaliptus Headband",
       "fr": "Bandeau Kaliptus",
@@ -769,9 +826,9 @@
       "it": "Fascia Kalipto",
       "pt": "Bandana Kaliptus"
     },
-    "level": 133,
-    "imageUrl": "/retro/item/16124.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 133,
     "stats": [
       { "stat": "Agility", "minStat": 31, "maxStat": 50 },
       { "stat": "Power", "minStat": 11, "maxStat": 20 },
@@ -784,11 +841,13 @@
       { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "Damage", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16124.png"
   },
   {
+    "dofusID": "7726",
     "name": {
       "en": "Doro L. Blak",
       "fr": "Doro le Blak",
@@ -797,9 +856,9 @@
       "it": "Doro Black",
       "pt": "Dorrol Beque"
     },
-    "level": 129,
-    "imageUrl": "/retro/item/16172.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 129,
     "stats": [
       { "stat": "Chance", "minStat": 41, "maxStat": 60 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
@@ -808,11 +867,13 @@
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16172.png"
   },
   {
+    "dofusID": "7970",
     "name": {
       "en": "Zoth Girl Hat",
       "fr": "Chapeau de la Gamine Zoth",
@@ -821,9 +882,9 @@
       "it": "Cappello della Marmocchia Zoth",
       "pt": "Chapéu da Garota Zoth"
     },
-    "level": 128,
-    "imageUrl": "/retro/item/16206.png",
+    "itemType": "Hat",
     "setID": "93",
+    "level": 128,
     "stats": [
       { "stat": "Agility", "minStat": 41, "maxStat": 60 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
@@ -834,11 +895,13 @@
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16206.png"
   },
   {
+    "dofusID": "7947",
     "name": {
       "en": "Zoth Disciple Hat",
       "fr": "Coiffe du Disciple Zoth",
@@ -847,9 +910,9 @@
       "it": "Copricapo del Discepolo Zoth",
       "pt": "Chapéu do Discípulo Zoth"
     },
-    "level": 128,
-    "imageUrl": "/retro/item/16192.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 128,
     "stats": [
       { "stat": "Vitality", "minStat": 201, "maxStat": 300 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -860,11 +923,13 @@
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16192.png"
   },
   {
+    "dofusID": "7471",
     "name": {
       "en": "Dreggon Helmet",
       "fr": "Casque Dragoeuf",
@@ -873,9 +938,9 @@
       "it": "Elmo del Draguovo",
       "pt": "Capacete de Dragovo"
     },
-    "level": 128,
-    "imageUrl": "/retro/item/16149.png",
+    "itemType": "Hat",
     "setID": "56",
+    "level": 128,
     "stats": [
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 13 },
@@ -884,11 +949,13 @@
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 13 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 13 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16149.png"
   },
   {
+    "dofusID": "7147",
     "name": {
       "en": "Royal Tofu Crown",
       "fr": "Couronne du Tofu Royal",
@@ -897,9 +964,9 @@
       "it": "Corona di Tofu Reale",
       "pt": "Coroa do Tofu Real"
     },
-    "level": 128,
-    "imageUrl": "/retro/item/16154.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 128,
     "stats": [
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
       { "stat": "Agility", "minStat": 46, "maxStat": 60 },
@@ -907,11 +974,13 @@
       { "stat": "Wisdom", "minStat": 26, "maxStat": 35 },
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16154.png"
   },
   {
+    "dofusID": "7950",
     "name": {
       "en": "Snailmet",
       "fr": "Kaskargo",
@@ -920,9 +989,9 @@
       "it": "Kaskargo",
       "pt": "Krakapacete"
     },
-    "level": 123,
-    "imageUrl": "/retro/item/16195.png",
+    "itemType": "Hat",
     "setID": "96",
+    "level": 123,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
@@ -934,11 +1003,13 @@
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16195.png"
   },
   {
+    "dofusID": "6430",
     "name": {
       "en": "Himune",
       "fr": "Holoune",
@@ -947,9 +1018,9 @@
       "it": "Hulun",
       "pt": "Holoone"
     },
-    "level": 122,
-    "imageUrl": "/retro/item/16111.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 122,
     "stats": [
       { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
       { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
@@ -959,11 +1030,13 @@
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16111.png"
   },
   {
+    "dofusID": "6439",
     "name": {
       "en": "Wheritz Hat",
       "fr": "Kanistère",
@@ -972,20 +1045,22 @@
       "it": "Kanistero",
       "pt": "Kanistere"
     },
-    "level": 120,
-    "imageUrl": "/retro/item/16110.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 120,
     "stats": [
       { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
       { "stat": "Critical", "minStat": 5, "maxStat": 7 },
       { "stat": "Damage", "minStat": 6, "maxStat": 10 },
       { "stat": "Initiative", "minStat": null, "maxStat": 1500 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16110.png"
   },
   {
+    "dofusID": "6438",
     "name": {
       "en": "Clay-headed Giant's Helmet",
       "fr": "Koloss",
@@ -994,9 +1069,9 @@
       "it": "Koloss",
       "pt": "Koloss"
     },
-    "level": 120,
-    "imageUrl": "/retro/item/16108.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 120,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
@@ -1007,11 +1082,13 @@
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 8 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16108.png"
   },
   {
+    "dofusID": "6432",
     "name": {
       "en": "Solomonk",
       "fr": "Solomonk",
@@ -1020,9 +1097,9 @@
       "it": "Solomonk",
       "pt": "Solomonk"
     },
-    "level": 120,
-    "imageUrl": "/retro/item/16123.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 120,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
       { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
@@ -1033,11 +1110,13 @@
       { "stat": "Power", "minStat": 16, "maxStat": 25 },
       { "stat": "Initiative", "minStat": null, "maxStat": 300 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16123.png"
   },
   {
+    "dofusID": "6300",
     "name": {
       "en": "Nee Cap",
       "fr": "Krokop",
@@ -1046,9 +1125,9 @@
       "it": "Krokop",
       "pt": "Krokop"
     },
-    "level": 120,
-    "imageUrl": "/retro/item/16086.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 120,
     "stats": [
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
       { "stat": "Agility", "minStat": 31, "maxStat": 50 },
@@ -1058,11 +1137,13 @@
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16086.png"
   },
   {
+    "dofusID": "5860",
     "name": {
       "en": "Dora Bora",
       "fr": "Dora Bora",
@@ -1071,9 +1152,9 @@
       "it": "Dora Bora",
       "pt": "Dora Bora"
     },
-    "level": 120,
-    "imageUrl": "/retro/item/16061.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 120,
     "stats": [
       { "stat": "Strength", "minStat": 61, "maxStat": 80 },
       { "stat": "Wisdom", "minStat": 41, "maxStat": 60 },
@@ -1084,11 +1165,13 @@
       { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16061.png"
   },
   {
+    "dofusID": "7634",
     "name": {
       "en": "Ancestral Treechelmet",
       "fr": "Abracaska Ancestral",
@@ -1097,9 +1180,9 @@
       "it": "Alberacasko Ancestrale",
       "pt": "Arvrapacete Ancestral"
     },
-    "level": 114,
-    "imageUrl": "/retro/item/16174.png",
+    "itemType": "Hat",
     "setID": "65",
+    "level": 114,
     "stats": [
       { "stat": "Chance", "minStat": 31, "maxStat": 50 },
       { "stat": "Strength", "minStat": 26, "maxStat": 40 },
@@ -1110,11 +1193,13 @@
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
       { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16174.png"
   },
   {
+    "dofusID": "6301",
     "name": {
       "en": "Mothat",
       "fr": "Phalène",
@@ -1123,9 +1208,9 @@
       "it": "Falenas",
       "pt": "Motchapéu"
     },
-    "level": 113,
-    "imageUrl": "/retro/item/16087.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 113,
     "stats": [
       { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
@@ -1134,11 +1219,13 @@
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16087.png"
   },
   {
+    "dofusID": "6437",
     "name": {
       "en": "Krutch",
       "fr": "La Bekille",
@@ -1147,9 +1234,9 @@
       "it": "La Stampella",
       "pt": "Krutch"
     },
-    "level": 111,
-    "imageUrl": "/retro/item/16109.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 111,
     "stats": [
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
       { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
@@ -1159,11 +1246,13 @@
       { "stat": "% Water Resistance", "minStat": 5, "maxStat": 8 },
       { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16109.png"
   },
   {
+    "dofusID": "6791",
     "name": {
       "en": "Bimd'Oule Hat",
       "fr": "Coiffe du Bimd'Oule",
@@ -1172,9 +1261,9 @@
       "it": "Copricapo del Bimd'Ulo",
       "pt": "Chapéu de Bimd'Oule"
     },
-    "level": 110,
-    "imageUrl": "/retro/item/16121.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 110,
     "stats": [
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
       { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
@@ -1187,11 +1276,13 @@
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16121.png"
   },
   {
+    "dofusID": "6433",
     "name": {
       "en": "Palishat",
       "fr": "Blémiche",
@@ -1200,9 +1291,9 @@
       "it": "Impallichiappa",
       "pt": "Palishat"
     },
-    "level": 108,
-    "imageUrl": "/retro/item/16116.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 108,
     "stats": [
       { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
@@ -1210,11 +1301,13 @@
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16116.png"
   },
   {
+    "dofusID": "6434",
     "name": {
       "en": "Gaddie's Hat",
       "fr": "Coiffe du Gaddie",
@@ -1223,9 +1316,9 @@
       "it": "Copricapo del Gaddy",
       "pt": "Chapéu do Gaddie"
     },
-    "level": 106,
-    "imageUrl": "/retro/item/16115.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 106,
     "stats": [
       { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
       { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
@@ -1233,11 +1326,13 @@
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16115.png"
   },
   {
+    "dofusID": "7622",
     "name": {
       "en": "White Rat Hat",
       "fr": "Coiffe du Rat Blanc",
@@ -1246,9 +1341,9 @@
       "it": "Copricapo del Ratto Bianco",
       "pt": "Chapéu do Rato Branco"
     },
-    "level": 105,
-    "imageUrl": "/retro/item/16160.png",
+    "itemType": "Hat",
     "setID": "67",
+    "level": 105,
     "stats": [
       { "stat": "Agility", "minStat": 26, "maxStat": 35 },
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
@@ -1260,11 +1355,13 @@
       { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
       { "stat": "Fire Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16160.png"
   },
   {
+    "dofusID": "7969",
     "name": {
       "en": "Ouassingual Hood",
       "fr": "Capuche de la Ouassingue",
@@ -1273,9 +1370,9 @@
       "it": "Cappuccio di Cencia",
       "pt": "Capuz da Nojosa"
     },
-    "level": 104,
-    "imageUrl": "/retro/item/16205.png",
+    "itemType": "Hat",
     "setID": "77",
+    "level": 104,
     "stats": [
       { "stat": "Vitality", "minStat": 71, "maxStat": 120 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
@@ -1285,11 +1382,13 @@
       { "stat": "Damage", "minStat": 4, "maxStat": 6 },
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16205.png"
   },
   {
+    "dofusID": "5856",
     "name": {
       "en": "Dark Miner Hat",
       "fr": "Chapeau du Mineur Sombre",
@@ -1298,9 +1397,9 @@
       "it": "Cappello del Minatore Oscuro",
       "pt": "Chapéu do Mineiro Sombrio"
     },
-    "level": 103,
-    "imageUrl": "/retro/item/16090.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 103,
     "stats": [
       { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
       { "stat": "Chance", "minStat": 31, "maxStat": 50 },
@@ -1311,11 +1410,13 @@
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16090.png"
   },
   {
+    "dofusID": "7613",
     "name": {
       "en": "Black Rat Mask",
       "fr": "Masque du Rat Noir",
@@ -1324,9 +1425,9 @@
       "it": "Maschera del Ratto Nero",
       "pt": "Máscara do Rato Negro"
     },
-    "level": 102,
-    "imageUrl": "/retro/item/16158.png",
+    "itemType": "Hat",
     "setID": "68",
+    "level": 102,
     "stats": [
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -1338,11 +1439,13 @@
       { "stat": "Air Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "Earth Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16158.png"
   },
   {
+    "dofusID": "7374",
     "name": {
       "en": "Kabuto",
       "fr": "Kabuto",
@@ -1351,9 +1454,9 @@
       "it": "Kabuto",
       "pt": "Kabuto"
     },
-    "level": 101,
-    "imageUrl": "/retro/item/16135.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 101,
     "stats": [
       { "stat": "Power", "minStat": 21, "maxStat": 35 },
       { "stat": "Damage", "minStat": 4, "maxStat": 6 },
@@ -1364,11 +1467,13 @@
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "Initiative", "minStat": 101, "maxStat": 150 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16135.png"
   },
   {
+    "dofusID": "7612",
     "name": {
       "en": "Billalo",
       "fr": "Billréole",
@@ -1377,9 +1482,9 @@
       "it": "Billaureola",
       "pt": "Billalo"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/16159.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 100,
     "stats": [
       { "stat": "Summons", "minStat": 1, "maxStat": 2 },
       { "stat": "Range", "minStat": 1, "maxStat": 2 },
@@ -1387,11 +1492,13 @@
       { "stat": "Initiative", "minStat": 1, "maxStat": 2000 },
       { "stat": "Vitality", "minStat": 51, "maxStat": 100 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16159.png"
   },
   {
+    "dofusID": "6146",
     "name": {
       "en": "Bwork Chief Helmet",
       "fr": "Casque du Chef Bwork",
@@ -1400,9 +1507,9 @@
       "it": "Elmo del Capo Bwork",
       "pt": "Capacete do Chefe Bwork"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/16065.png",
+    "itemType": "Hat",
     "setID": "19",
+    "level": 100,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 40 },
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
@@ -1415,11 +1522,13 @@
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16065.png"
   },
   {
+    "dofusID": "7469",
     "name": {
       "en": "Dragon Pig Headgear",
       "fr": "Coiffe du Dragon Cochon",
@@ -1428,9 +1537,9 @@
       "it": "Copricapo del Drago Maiale",
       "pt": "Chapéu do Dragão Porco"
     },
-    "level": 98,
-    "imageUrl": "/retro/item/16150.png",
+    "itemType": "Hat",
     "setID": "58",
+    "level": 98,
     "stats": [
       { "stat": "Chance", "minStat": 21, "maxStat": 35 },
       { "stat": "Agility", "minStat": 21, "maxStat": 35 },
@@ -1445,11 +1554,13 @@
       { "stat": "Earth Resistance", "minStat": 1, "maxStat": 10 },
       { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16150.png"
   },
   {
+    "dofusID": "6512",
     "name": {
       "en": "Feudala Hat",
       "fr": "Chapeau Feudala",
@@ -1458,9 +1569,9 @@
       "it": "Cappello Focodala",
       "pt": "Chapéu Fogodala"
     },
-    "level": 98,
-    "imageUrl": "/retro/item/16145.png",
+    "itemType": "Hat",
     "setID": "37",
+    "level": 98,
     "stats": [
       { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
@@ -1469,11 +1580,13 @@
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16145.png"
   },
   {
+    "dofusID": "6343",
     "name": {
       "en": "Master Nabur Helmet",
       "fr": "Casque de Maître Nabur",
@@ -1482,9 +1595,9 @@
       "it": "Elmo del Maestro Nabur",
       "pt": "Capacete do Mestre Nabur"
     },
-    "level": 97,
-    "imageUrl": "/retro/item/16093.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 97,
     "stats": [
       { "stat": "Vitality", "minStat": 71, "maxStat": 100 },
       { "stat": "Agility", "minStat": 36, "maxStat": 50 },
@@ -1493,11 +1606,13 @@
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16093.png"
   },
   {
+    "dofusID": "7949",
     "name": {
       "en": "Dark Treeckler Mask",
       "fr": "Masque de l'Abrakleur sombre",
@@ -1506,9 +1621,9 @@
       "it": "Maschera dell'Alberaklur Oscuro",
       "pt": "Máscara do Arvorador Sombrio"
     },
-    "level": 95,
-    "imageUrl": "/retro/item/16194.png",
+    "itemType": "Hat",
     "setID": "80",
+    "level": 95,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 40 },
       { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
@@ -1518,11 +1633,13 @@
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
       { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16194.png"
   },
   {
+    "dofusID": "7514",
     "name": {
       "en": "Dragostess Hat",
       "fr": "Coiffe de la Dragueuse",
@@ -1531,9 +1648,9 @@
       "it": "Copricapo della Dragosa",
       "pt": "Chapéu da Dragosa"
     },
-    "level": 95,
-    "imageUrl": "/retro/item/16153.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 95,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 40 },
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
@@ -1544,11 +1661,13 @@
       { "stat": "Critical", "minStat": 1, "maxStat": 2 },
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16153.png"
   },
   {
+    "dofusID": "5853",
     "name": {
       "en": "[!EN] Dragocoiffe noire",
       "fr": "Dragocoiffe noire",
@@ -1557,9 +1676,9 @@
       "it": "[!IT] Dragocoiffe noire",
       "pt": "[!PT] Dragocoiffe noire"
     },
-    "level": 93,
-    "imageUrl": "/retro/item/16056.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 93,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 15 },
@@ -1570,11 +1689,13 @@
       { "stat": "Prospecting", "minStat": 6, "maxStat": 15 },
       { "stat": "% Earth Resistance", "minStat": null, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16056.png"
   },
   {
+    "dofusID": "7120",
     "name": {
       "en": "Koolich Headgear",
       "fr": "Coiffe du Koulosse",
@@ -1583,9 +1704,9 @@
       "it": "Copricapo del Culosse",
       "pt": "Chapéu do Tronkoso"
     },
-    "level": 82,
-    "imageUrl": "/retro/item/16122.png",
+    "itemType": "Hat",
     "setID": "44",
+    "level": 82,
     "stats": [
       { "stat": "Vitality", "minStat": 151, "maxStat": 300 },
       { "stat": "% Neutral Resistance", "minStat": 1, "maxStat": 5 },
@@ -1593,11 +1714,13 @@
       { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 10 },
       { "stat": "Fire Resistance", "minStat": 1, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16122.png"
   },
   {
+    "dofusID": "6435",
     "name": {
       "en": "Lullibye",
       "fr": "La Bertheuze",
@@ -1606,9 +1729,9 @@
       "it": "La Bertuz",
       "pt": "Lullabye"
     },
-    "level": 81,
-    "imageUrl": "/retro/item/16114.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 81,
     "stats": [
       { "stat": "Vitality", "minStat": 81, "maxStat": 110 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
@@ -1617,11 +1740,13 @@
       { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16114.png"
   },
   {
+    "dofusID": "7488",
     "name": {
       "en": "Shika's Hat",
       "fr": "Shikacoiffe",
@@ -1630,9 +1755,9 @@
       "it": "Shikacapo",
       "pt": "Chapéu de Shika"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/16156.png",
+    "itemType": "Hat",
     "setID": "53",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
@@ -1641,11 +1766,13 @@
       { "stat": "Prospecting", "minStat": 8, "maxStat": 10 },
       { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16156.png"
   },
   {
+    "dofusID": "7358",
     "name": {
       "en": "Legendary Crackler Helmet",
       "fr": "Casque du Craqueleur Légendaire",
@@ -1654,9 +1781,9 @@
       "it": "Elmo del Croccaroc Leggendario",
       "pt": "Capacete do Smagador Legendário"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/16133.png",
+    "itemType": "Hat",
     "setID": "52",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -1668,11 +1795,13 @@
       { "stat": "Fire Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "Air Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16133.png"
   },
   {
+    "dofusID": "6111",
     "name": {
       "en": "Farle's Straw Hat",
       "fr": "Farlacoiffe",
@@ -1681,9 +1810,9 @@
       "it": "Farlacapo",
       "pt": "Chapéu de Palha de Farle"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/16067.png",
+    "itemType": "Hat",
     "setID": "17",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
@@ -1692,11 +1821,13 @@
       { "stat": "Prospecting", "minStat": 8, "maxStat": 10 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16067.png"
   },
   {
+    "dofusID": "7955",
     "name": {
       "en": "Barbrossa's Hat",
       "fr": "Chapeau de Barbroussa",
@@ -1705,9 +1836,9 @@
       "it": "Cappello di Barbrussa",
       "pt": "Chapéu do Barbrossa"
     },
-    "level": 79,
-    "imageUrl": "/retro/item/16197.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 79,
     "stats": [
       { "stat": "Agility", "minStat": 31, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
@@ -1717,11 +1848,13 @@
       { "stat": "Earth Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16197.png"
   },
   {
+    "dofusID": "6347",
     "name": {
       "en": "King Jellix's Crown",
       "fr": "Couronne du Roi Gelax",
@@ -1730,19 +1863,21 @@
       "it": "Corona del Re Gelax",
       "pt": "Coroa do Rei Geléias"
     },
-    "level": 79,
-    "imageUrl": "/retro/item/16094.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 79,
     "stats": [
       { "stat": "Vitality", "minStat": 201, "maxStat": 300 },
       { "stat": "Critical", "minStat": 4, "maxStat": 6 },
       { "stat": "Initiative", "minStat": null, "maxStat": 200 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16094.png"
   },
   {
+    "dofusID": "6360",
     "name": {
       "en": "Octovius",
       "fr": "Octovius",
@@ -1751,19 +1886,21 @@
       "it": "Octovius",
       "pt": "Octovius"
     },
-    "level": 77,
-    "imageUrl": "/retro/item/16096.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 77,
     "stats": [
       { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
       { "stat": "Water Resistance", "minStat": 6, "maxStat": 8 },
       { "stat": "Earth Resistance", "minStat": 6, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16096.png"
   },
   {
+    "dofusID": "6511",
     "name": {
       "en": "Terrdala Hat",
       "fr": "Chapeau Terrdala",
@@ -1772,9 +1909,9 @@
       "it": "Cappello Terradala",
       "pt": "Chapéu Terradala"
     },
-    "level": 75,
-    "imageUrl": "/retro/item/16147.png",
+    "itemType": "Hat",
     "setID": "36",
+    "level": 75,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 35 },
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
@@ -1784,11 +1921,13 @@
       { "stat": "Fire Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "Air Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16147.png"
   },
   {
+    "dofusID": "5861",
     "name": {
       "en": "Korko Kousto",
       "fr": "Korko Kousto",
@@ -1797,9 +1936,9 @@
       "it": "Korko Kusto",
       "pt": "Korko Kusto"
     },
-    "level": 73,
-    "imageUrl": "/retro/item/16059.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 73,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
       { "stat": "Damage", "minStat": 3, "maxStat": 7 },
@@ -1808,11 +1947,13 @@
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
       { "stat": "Strength", "minStat": 21, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16059.png"
   },
   {
+    "dofusID": "7513",
     "name": {
       "en": "Flying Dreggon Headgear",
       "fr": "Coiffe du Dragoeuf volant",
@@ -1821,9 +1962,9 @@
       "it": "Copricapo del Draguovo Volante",
       "pt": "Chapéu do Dragovo voador"
     },
-    "level": 72,
-    "imageUrl": "/retro/item/16152.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 72,
     "stats": [
       { "stat": "Intelligence", "minStat": 31, "maxStat": 45 },
       { "stat": "Critical", "minStat": 3, "maxStat": 4 },
@@ -1832,11 +1973,13 @@
       { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Initiative", "minStat": 151, "maxStat": 200 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16152.png"
   },
   {
+    "dofusID": "6167",
     "name": {
       "en": "Crocodyl Chief Headgear",
       "fr": "Coiffe du Chef Crocodaille",
@@ -1845,9 +1988,9 @@
       "it": "Copricapo del Capo Coccodrail",
       "pt": "Chapéu do Chefe Crocodyl"
     },
-    "level": 70,
-    "imageUrl": "/retro/item/16066.png",
+    "itemType": "Hat",
     "setID": "20",
+    "level": 70,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
@@ -1857,11 +2000,13 @@
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16066.png"
   },
   {
+    "dofusID": "5852",
     "name": {
       "en": "[!EN] Dragocoiffe de Saphire",
       "fr": "Dragocoiffe de Saphire",
@@ -1870,9 +2015,9 @@
       "it": "[!IT] Dragocoiffe de Saphire",
       "pt": "[!PT] Dragocoiffe de Saphire"
     },
-    "level": 70,
-    "imageUrl": "/retro/item/16057.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 70,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Chance", "minStat": 21, "maxStat": 35 },
@@ -1882,11 +2027,13 @@
       { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": null, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16057.png"
   },
   {
+    "dofusID": "6513",
     "name": {
       "en": "Aerdala Hat",
       "fr": "Chapeau Aerdala",
@@ -1895,9 +2042,9 @@
       "it": "Cappello Erdala",
       "pt": "Chapéu Ardala"
     },
-    "level": 64,
-    "imageUrl": "/retro/item/16148.png",
+    "itemType": "Hat",
     "setID": "35",
+    "level": 64,
     "stats": [
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
@@ -1905,11 +2052,13 @@
       { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 8 },
       { "stat": "Air Resistance", "minStat": 6, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16148.png"
   },
   {
+    "dofusID": "6622",
     "name": {
       "en": "Kitsou Cap",
       "fr": "Coiffe du Kitsou",
@@ -1918,15 +2067,17 @@
       "it": "Copricapo del Kitsù",
       "pt": "Chapéu do Kitsu"
     },
-    "level": 61,
-    "imageUrl": "/retro/item/16097.png",
+    "itemType": "Hat",
     "setID": "41",
+    "level": 61,
     "stats": [{ "stat": "Vitality", "minStat": 51, "maxStat": 150 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16097.png"
   },
   {
+    "dofusID": "6272",
     "name": {
       "en": "Boowolf Headgear",
       "fr": "Coiffe du Mulou",
@@ -1935,9 +2086,9 @@
       "it": "Copricapo del Buulupo",
       "pt": "Chapéu do Milobo"
     },
-    "level": 61,
-    "imageUrl": "/retro/item/16131.png",
+    "itemType": "Hat",
     "setID": "32",
+    "level": 61,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 40 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 20 },
@@ -1946,11 +2097,13 @@
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16131.png"
   },
   {
+    "dofusID": "7231",
     "name": {
       "en": "Koalak Headgear",
       "fr": "Coiffe du Koalak",
@@ -1959,20 +2112,22 @@
       "it": "Copricapo del Koalak",
       "pt": "Chapéu do Koalak"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/16125.png",
+    "itemType": "Hat",
     "setID": "46",
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
       { "stat": "Critical", "minStat": 3, "maxStat": 4 },
       { "stat": "Damage", "minStat": 4, "maxStat": 6 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16125.png"
   },
   {
+    "dofusID": "5879",
     "name": {
       "en": "Wabbit Ears",
       "fr": "Oreilles de Wabbits",
@@ -1981,20 +2136,22 @@
       "it": "Orecchie di Wabbit",
       "pt": "Orelhas de Wabbits"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/16052.png",
+    "itemType": "Hat",
     "setID": "11",
+    "level": 60,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 40 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 8 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16052.png"
   },
   {
+    "dofusID": "2134",
     "name": {
       "en": "Caracap",
       "fr": "Caracoiffe",
@@ -2003,18 +2160,20 @@
       "it": "Caracapo",
       "pt": "Carachapeú"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/16048.png",
+    "itemType": "Hat",
     "setID": "9",
+    "level": 60,
     "stats": [
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 80 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16048.png"
   },
   {
+    "dofusID": "2057",
     "name": {
       "en": "Jelleadgear",
       "fr": "Gelocoiffe",
@@ -2023,19 +2182,21 @@
       "it": "Gelocapo",
       "pt": "Gelapéu"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/16043.png",
+    "itemType": "Hat",
     "setID": "6",
+    "level": 60,
     "stats": [
       { "stat": "Prospecting", "minStat": 6, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 30 },
       { "stat": "Intelligence", "minStat": 1, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16043.png"
   },
   {
+    "dofusID": "7327",
     "name": {
       "en": "Golden Scara Helmet",
       "fr": "Scaracoiffe Dorée",
@@ -2044,9 +2205,9 @@
       "it": "Scaracapo Dorato",
       "pt": "Scaracapacete dourado"
     },
-    "level": 58,
-    "imageUrl": "/retro/item/16129.png",
+    "itemType": "Hat",
     "setID": "51",
+    "level": 58,
     "stats": [
       { "stat": "Intelligence", "minStat": 6, "maxStat": 30 },
       { "stat": "Agility", "minStat": 6, "maxStat": 30 },
@@ -2055,11 +2216,13 @@
       { "stat": "Prospecting", "minStat": 1, "maxStat": 10 },
       { "stat": "% Neutral Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16129.png"
   },
   {
+    "dofusID": "5851",
     "name": {
       "en": "[!EN] Dragocoiffe Dorée",
       "fr": "Dragocoiffe Dorée",
@@ -2068,9 +2231,9 @@
       "it": "[!IT] Dragocoiffe Dorée",
       "pt": "[!PT] Dragocoiffe Dorée"
     },
-    "level": 57,
-    "imageUrl": "/retro/item/16055.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 57,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
@@ -2079,11 +2242,13 @@
       { "stat": "Fire Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Fire Resistance", "minStat": null, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16055.png"
   },
   {
+    "dofusID": "6303",
     "name": {
       "en": "Kannipiwi",
       "fr": "Kannipiou",
@@ -2092,18 +2257,20 @@
       "it": "Kannipìu",
       "pt": "Kanipiu"
     },
-    "level": 55,
-    "imageUrl": "/retro/item/16089.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 55,
     "stats": [
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
       { "stat": "Heals", "minStat": 3, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16089.png"
   },
   {
+    "dofusID": "7344",
     "name": {
       "en": "Black Scara Helmet",
       "fr": "Scaracoiffe Noire",
@@ -2112,20 +2279,22 @@
       "it": "Scaracapo Nero",
       "pt": "Scaracapacete preto"
     },
-    "level": 53,
-    "imageUrl": "/retro/item/16132.png",
+    "itemType": "Hat",
     "setID": "49",
+    "level": 53,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 45 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 15 },
       { "stat": "Damage", "minStat": 1, "maxStat": 4 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16132.png"
   },
   {
+    "dofusID": "9231",
     "name": {
       "en": "Haks Or Mask",
       "fr": "Casque du Roks Or",
@@ -2134,20 +2303,22 @@
       "it": "Casco del Roks Or",
       "pt": "Capacete do Roksor"
     },
-    "level": 52,
-    "imageUrl": "/retro/item/16254.png",
+    "itemType": "Hat",
     "setID": "151",
+    "level": 52,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Critical", "minStat": 4, "maxStat": 5 },
       { "stat": "Power", "minStat": 16, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16254.png"
   },
   {
+    "dofusID": "6828",
     "name": {
       "en": "Turkohat",
       "fr": "Chapodindo",
@@ -2156,20 +2327,22 @@
       "it": "Cappellacchino",
       "pt": "Chaperu"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/16118.png",
+    "itemType": "Hat",
     "setID": "42",
+    "level": 50,
     "stats": [
       { "stat": "Wisdom", "minStat": 1, "maxStat": 30 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 20 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 50 },
       { "stat": "Damage", "minStat": 1, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16118.png"
   },
   {
+    "dofusID": "2049",
     "name": {
       "en": "Royal Gobball Headgear",
       "fr": "Boufcoiffe Royale",
@@ -2178,18 +2351,20 @@
       "it": "Pappacapo Reale",
       "pt": "Elmo de Papatudo Real"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/16042.png",
+    "itemType": "Hat",
     "setID": "4",
+    "level": 50,
     "stats": [
       { "stat": "Strength", "minStat": 1, "maxStat": 70 },
       { "stat": "Intelligence", "minStat": 1, "maxStat": 70 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16042.png"
   },
   {
+    "dofusID": "1729",
     "name": {
       "en": "Dark Makroute",
       "fr": "Makroute Sombre",
@@ -2198,9 +2373,9 @@
       "it": "Mykakka Oscuro",
       "pt": "Makroute Sombra"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/16033.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 50,
     "stats": [
       { "stat": "Earth Resistance", "minStat": 3, "maxStat": 8 },
       { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 8 },
@@ -2209,11 +2384,13 @@
       { "stat": "Fire Resistance", "minStat": 3, "maxStat": 8 },
       { "stat": "Vitality", "minStat": 16, "maxStat": 30 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16033.png"
   },
   {
+    "dofusID": "1549",
     "name": {
       "en": "Chafer Helmet",
       "fr": "Casque du Chafer",
@@ -2222,15 +2399,17 @@
       "it": "Elmo dello Chafer",
       "pt": "Capacete do Chafer"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/16031.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 50,
     "stats": [{ "stat": "AP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16031.png"
   },
   {
+    "dofusID": "8543",
     "name": {
       "en": "[!EN] Noreilles de Slait",
       "fr": "Noreilles de Slait",
@@ -2239,20 +2418,22 @@
       "it": "[!IT] Noreilles de Slait",
       "pt": "[!PT] Noreilles de Slait"
     },
-    "level": 49,
-    "imageUrl": "/retro/item/16238.png",
+    "itemType": "Hat",
     "setID": "128",
+    "level": 49,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
       { "stat": "Agility", "minStat": 21, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16238.png"
   },
   {
+    "dofusID": "8476",
     "name": {
       "en": "[!EN] Coiffe du Black Wab",
       "fr": "Coiffe du Black Wab",
@@ -2261,20 +2442,22 @@
       "it": "[!IT] Coiffe du Black Wab",
       "pt": "[!PT] Coiffe du Black Wab"
     },
-    "level": 49,
-    "imageUrl": "/retro/item/16235.png",
+    "itemType": "Hat",
     "setID": "127",
+    "level": 49,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Heals", "minStat": 2, "maxStat": 3 },
       { "stat": "Power", "minStat": 16, "maxStat": 25 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16235.png"
   },
   {
+    "dofusID": "8532",
     "name": {
       "en": "[!EN] Bandeau Papayou",
       "fr": "Bandeau Papayou",
@@ -2283,19 +2466,21 @@
       "it": "[!IT] Bandeau Papayou",
       "pt": "[!PT] Bandeau Papayou"
     },
-    "level": 48,
-    "imageUrl": "/retro/item/16236.png",
+    "itemType": "Hat",
     "setID": "129",
+    "level": 48,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 3, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16236.png"
   },
   {
+    "dofusID": "1739",
     "name": {
       "en": "Daudgee",
       "fr": "Kraignosse",
@@ -2304,19 +2489,21 @@
       "it": "Kak A'Rella",
       "pt": "Daudgee"
     },
-    "level": 48,
-    "imageUrl": "/retro/item/16037.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 48,
     "stats": [
       { "stat": "Vitality", "minStat": 41, "maxStat": 80 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16037.png"
   },
   {
+    "dofusID": "7119",
     "name": {
       "en": "Gobkool Headgear",
       "fr": "Coiffe du Boufcoul",
@@ -2325,20 +2512,22 @@
       "it": "Copricapo del Pappacool",
       "pt": "Chapéu do Papakool"
     },
-    "level": 47,
-    "imageUrl": "/retro/item/16119.png",
+    "itemType": "Hat",
     "setID": "43",
+    "level": 47,
     "stats": [
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
       { "stat": "Chance", "minStat": 26, "maxStat": 40 },
       { "stat": "Fire Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "Earth Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16119.png"
   },
   {
+    "dofusID": "452",
     "name": {
       "en": "Tromatising Mask",
       "fr": "Masque Tromatisant",
@@ -2347,18 +2536,20 @@
       "it": "Maschera Traumatizzante",
       "pt": "Máscara Tromatizante"
     },
-    "level": 47,
-    "imageUrl": "/retro/item/16011.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 47,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 60 },
       { "stat": "Damage", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16011.png"
   },
   {
+    "dofusID": "6302",
     "name": {
       "en": "Guavhat",
       "fr": "Goyave",
@@ -2367,19 +2558,21 @@
       "it": "Goyave",
       "pt": "Gorroiaba"
     },
-    "level": 46,
-    "imageUrl": "/retro/item/16088.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 46,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Heals", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16088.png"
   },
   {
+    "dofusID": "8397",
     "name": {
       "en": "[!EN] Poshocoiffe",
       "fr": "Poshocoiffe",
@@ -2388,18 +2581,20 @@
       "it": "[!IT] Poshocoiffe",
       "pt": "[!PT] Poshocoiffe"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/16232.png",
+    "itemType": "Hat",
     "setID": "123",
+    "level": 45,
     "stats": [
       { "stat": "Power", "minStat": 11, "maxStat": 20 },
       { "stat": "Initiative", "minStat": 11, "maxStat": 210 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16232.png"
   },
   {
+    "dofusID": "2147",
     "name": {
       "en": "Crobak Helmet",
       "fr": "Corbacoiffe",
@@ -2408,18 +2603,20 @@
       "it": "Cuervocapo",
       "pt": "Capacete de Corvoc"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/16050.png",
+    "itemType": "Hat",
     "setID": "8",
+    "level": 45,
     "stats": [
       { "stat": "Power", "minStat": 11, "maxStat": 20 },
       { "stat": "Initiative", "minStat": 11, "maxStat": 210 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16050.png"
   },
   {
+    "dofusID": "2022",
     "name": {
       "en": "Treechelmet",
       "fr": "Abracaska",
@@ -2428,18 +2625,20 @@
       "it": "Alberacasko",
       "pt": "Arvrapacete"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/16040.png",
+    "itemType": "Hat",
     "setID": "3",
+    "level": 45,
     "stats": [
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16040.png"
   },
   {
+    "dofusID": "8297",
     "name": {
       "en": "[!EN] Chapeau Paupayahn",
       "fr": "Chapeau Paupayahn",
@@ -2448,20 +2647,22 @@
       "it": "[!IT] Chapeau Paupayahn",
       "pt": "[!PT] Chapeau Paupayahn"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/16220.png",
+    "itemType": "Hat",
     "setID": "111",
+    "level": 44,
     "stats": [
       { "stat": "Agility", "minStat": 1, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16220.png"
   },
   {
+    "dofusID": "8294",
     "name": {
       "en": "[!EN] Caskogato",
       "fr": "Caskogato",
@@ -2470,20 +2671,22 @@
       "it": "[!IT] Caskogato",
       "pt": "[!PT] Caskogato"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/16219.png",
+    "itemType": "Hat",
     "setID": "110",
+    "level": 44,
     "stats": [
       { "stat": "Strength", "minStat": 1, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16219.png"
   },
   {
+    "dofusID": "6259",
     "name": {
       "en": "Blue Scara Helmet",
       "fr": "Scaracoiffe Bleue",
@@ -2492,20 +2695,22 @@
       "it": "Scaracapo Blu",
       "pt": "Scaracapacete azul"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/16076.png",
+    "itemType": "Hat",
     "setID": "30",
+    "level": 44,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16076.png"
   },
   {
+    "dofusID": "6258",
     "name": {
       "en": "White Scara Helmet",
       "fr": "Scaracoiffe Blanche",
@@ -2514,20 +2719,22 @@
       "it": "Scaracapo Bianco",
       "pt": "Scaracapacete branco"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/16079.png",
+    "itemType": "Hat",
     "setID": "29",
+    "level": 44,
     "stats": [
       { "stat": "Agility", "minStat": 1, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16079.png"
   },
   {
+    "dofusID": "6257",
     "name": {
       "en": "Red Scara Helmet",
       "fr": "Scaracoiffe Rouge",
@@ -2536,20 +2743,22 @@
       "it": "Scaracapo Rosso",
       "pt": "Scaracapacete vermelho"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/16077.png",
+    "itemType": "Hat",
     "setID": "28",
+    "level": 44,
     "stats": [
       { "stat": "Intelligence", "minStat": 1, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
       { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16077.png"
   },
   {
+    "dofusID": "6256",
     "name": {
       "en": "Green Scara Helmet",
       "fr": "Scaracoiffe Verte",
@@ -2558,20 +2767,22 @@
       "it": "Scaracapo Verde",
       "pt": "Scaracapacete verde"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/16078.png",
+    "itemType": "Hat",
     "setID": "27",
+    "level": 44,
     "stats": [
       { "stat": "Strength", "minStat": 1, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16078.png"
   },
   {
+    "dofusID": "6251",
     "name": {
       "en": "Crackler Helmet",
       "fr": "Casque du Craqueleur",
@@ -2580,20 +2791,22 @@
       "it": "Elmo del Croccaroc",
       "pt": "Capacete do Smagador"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/16085.png",
+    "itemType": "Hat",
     "setID": "26",
+    "level": 44,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 10 },
       { "stat": "Earth Resistance", "minStat": 1, "maxStat": 6 },
       { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16085.png"
   },
   {
+    "dofusID": "2123",
     "name": {
       "en": "[!EN] Casque Vioutifoule",
       "fr": "Casque Vioutifoule",
@@ -2602,20 +2815,22 @@
       "it": "[!IT] Casque Vioutifoule",
       "pt": "[!PT] Casque Vioutifoule"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/16047.png",
+    "itemType": "Hat",
     "setID": "75",
+    "level": 44,
     "stats": [
       { "stat": "Intelligence", "minStat": 1, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
       { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16047.png"
   },
   {
+    "dofusID": "2122",
     "name": {
       "en": "[!EN] Mégacoiffe",
       "fr": "Mégacoiffe",
@@ -2624,20 +2839,22 @@
       "it": "[!IT] Mégacoiffe",
       "pt": "[!PT] Mégacoiffe"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/16046.png",
+    "itemType": "Hat",
     "setID": "76",
+    "level": 44,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16046.png"
   },
   {
+    "dofusID": "8929",
     "name": {
       "en": "[!EN] Coiffe de la Denrée",
       "fr": "Coiffe de la Denrée",
@@ -2646,9 +2863,9 @@
       "it": "[!IT] Coiffe de la Denrée",
       "pt": "[!PT] Coiffe de la Denrée"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/16250.png",
+    "itemType": "Hat",
     "setID": "133",
+    "level": 43,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
@@ -2656,11 +2873,13 @@
       { "stat": "Damage", "minStat": 1, "maxStat": 2 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16250.png"
   },
   {
+    "dofusID": "8457",
     "name": {
       "en": "[!EN] Borsalino du Parrain",
       "fr": "Borsalino du Parrain",
@@ -2669,19 +2888,21 @@
       "it": "[!IT] Borsalino du Parrain",
       "pt": "[!PT] Borsalino du Parrain"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/16234.png",
+    "itemType": "Hat",
     "setID": "126",
+    "level": 43,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16234.png"
   },
   {
+    "dofusID": "6510",
     "name": {
       "en": "Akwadala Hat",
       "fr": "Chapeau Akwadala",
@@ -2690,19 +2911,21 @@
       "it": "Cappello Aksadala",
       "pt": "Chapéu Akwadala"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/16146.png",
+    "itemType": "Hat",
     "setID": "34",
+    "level": 43,
     "stats": [
       { "stat": "Wisdom", "minStat": 6, "maxStat": 25 },
       { "stat": "Chance", "minStat": 11, "maxStat": 30 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16146.png"
   },
   {
+    "dofusID": "1732",
     "name": {
       "en": "Champo",
       "fr": "Champo",
@@ -2711,19 +2934,21 @@
       "it": "Champello",
       "pt": "Champéu"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/16036.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 43,
     "stats": [
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 40 },
       { "stat": "Damage", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16036.png"
   },
   {
+    "dofusID": "8925",
     "name": {
       "en": "[!EN] Masque de Noké",
       "fr": "Masque de Noké",
@@ -2732,20 +2957,22 @@
       "it": "[!IT] Masque de Noké",
       "pt": "[!PT] Masque de Noké"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/16249.png",
+    "itemType": "Hat",
     "setID": "135",
+    "level": 42,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 35 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 },
       { "stat": "Power", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16249.png"
   },
   {
+    "dofusID": "8924",
     "name": {
       "en": "[!EN] Masque solaire",
       "fr": "Masque solaire",
@@ -2754,19 +2981,21 @@
       "it": "[!IT] Masque solaire",
       "pt": "[!PT] Masque solaire"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/16248.png",
+    "itemType": "Hat",
     "setID": "136",
+    "level": 42,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Chance", "minStat": 21, "maxStat": 35 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16248.png"
   },
   {
+    "dofusID": "8920",
     "name": {
       "en": "[!EN] Limasque",
       "fr": "Limasque",
@@ -2775,20 +3004,22 @@
       "it": "[!IT] Limasque",
       "pt": "[!PT] Limasque"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/16247.png",
+    "itemType": "Hat",
     "setID": "137",
+    "level": 42,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
       { "stat": "Power", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16247.png"
   },
   {
+    "dofusID": "8866",
     "name": {
       "en": "Vampyre Mask",
       "fr": "Masque du Vampyre",
@@ -2797,19 +3028,21 @@
       "it": "Maschera del Vampyro",
       "pt": "Máscara do Vampyro"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/16244.png",
+    "itemType": "Hat",
     "setID": "130",
+    "level": 42,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16244.png"
   },
   {
+    "dofusID": "8728",
     "name": {
       "en": "[!EN] Corno fulgures",
       "fr": "Corno fulgures",
@@ -2818,20 +3051,22 @@
       "it": "[!IT] Corno fulgures",
       "pt": "[!PT] Corno fulgures"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/16239.png",
+    "itemType": "Hat",
     "setID": "139",
+    "level": 42,
     "stats": [
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Power", "minStat": 6, "maxStat": 10 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16239.png"
   },
   {
+    "dofusID": "8533",
     "name": {
       "en": "[!EN] Kaskwette",
       "fr": "Kaskwette",
@@ -2840,20 +3075,22 @@
       "it": "[!IT] Kaskwette",
       "pt": "[!PT] Kaskwette"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/16237.png",
+    "itemType": "Hat",
     "setID": "140",
+    "level": 42,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16237.png"
   },
   {
+    "dofusID": "7718",
     "name": {
       "en": "[!EN] La HmmMmmMmmm",
       "fr": "La HmmMmmMmmm",
@@ -2862,15 +3099,17 @@
       "it": "[!IT] La HmmMmmMmmm",
       "pt": "[!PT] La HmmMmmMmmm"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/16171.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 42,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 42 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16171.png"
   },
   {
+    "dofusID": "9148",
     "name": {
       "en": "[!EN] Chapeau de Beneji",
       "fr": "Chapeau de Beneji",
@@ -2879,19 +3118,21 @@
       "it": "[!IT] Chapeau de Beneji",
       "pt": "[!PT] Chapeau de Beneji"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/16253.png",
+    "itemType": "Hat",
     "setID": "143",
+    "level": 41,
     "stats": [
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16253.png"
   },
   {
+    "dofusID": "9147",
     "name": {
       "en": "[!EN] Chapeau de Tolot",
       "fr": "Chapeau de Tolot",
@@ -2900,19 +3141,21 @@
       "it": "[!IT] Chapeau de Tolot",
       "pt": "[!PT] Chapeau de Tolot"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/16252.png",
+    "itemType": "Hat",
     "setID": "142",
+    "level": 41,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16252.png"
   },
   {
+    "dofusID": "9146",
     "name": {
       "en": "[!EN] Yugonnet",
       "fr": "Yugonnet",
@@ -2921,18 +3164,20 @@
       "it": "[!IT] Yugonnet",
       "pt": "[!PT] Yugonnet"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/16245.png",
+    "itemType": "Hat",
     "setID": "134",
+    "level": 41,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
       { "stat": "Damage", "minStat": 2, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16245.png"
   },
   {
+    "dofusID": "6096",
     "name": {
       "en": "[!EN] Kwakoiffe du Vent",
       "fr": "Kwakoiffe du Vent",
@@ -2941,19 +3186,21 @@
       "it": "[!IT] Kwakoiffe du Vent",
       "pt": "[!PT] Kwakoiffe du Vent"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/16069.png",
+    "itemType": "Hat",
     "setID": "15",
+    "level": 41,
     "stats": [
       { "stat": "Agility", "minStat": 11, "maxStat": 15 },
       { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Wisdom", "minStat": 4, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16069.png"
   },
   {
+    "dofusID": "6095",
     "name": {
       "en": "Earth Kwak Headdress",
       "fr": "Kwakoiffe de Terre",
@@ -2962,19 +3209,21 @@
       "it": "Kwakapo di Terra",
       "pt": "Kwakapacete de Terra"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/16071.png",
+    "itemType": "Hat",
     "setID": "14",
+    "level": 41,
     "stats": [
       { "stat": "Strength", "minStat": 11, "maxStat": 15 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Wisdom", "minStat": 4, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16071.png"
   },
   {
+    "dofusID": "2137",
     "name": {
       "en": "Ice Kwak Headdress",
       "fr": "Kwakoiffe de Glace",
@@ -2983,19 +3232,21 @@
       "it": "Kwakapo di Ghiaccio",
       "pt": "Kwakapacete de Gelo"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/16049.png",
+    "itemType": "Hat",
     "setID": "13",
+    "level": 41,
     "stats": [
       { "stat": "Chance", "minStat": 11, "maxStat": 15 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Wisdom", "minStat": 4, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16049.png"
   },
   {
+    "dofusID": "2021",
     "name": {
       "en": "Fire Kwak Headdress",
       "fr": "Kwakoiffe de Flammes",
@@ -3004,19 +3255,21 @@
       "it": "Kwakapo di Fiamma",
       "pt": "Kwakapacete de Fogo"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/16039.png",
+    "itemType": "Hat",
     "setID": "2",
+    "level": 41,
     "stats": [
       { "stat": "Intelligence", "minStat": 11, "maxStat": 15 },
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Wisdom", "minStat": 4, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16039.png"
   },
   {
+    "dofusID": "8915",
     "name": {
       "en": "[!EN] Chispocasque",
       "fr": "Chispocasque",
@@ -3025,19 +3278,21 @@
       "it": "[!IT] Chispocasque",
       "pt": "[!PT] Chispocasque"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16246.png",
+    "itemType": "Hat",
     "setID": "138",
+    "level": 40,
     "stats": [
       { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
       { "stat": "Agility", "minStat": 21, "maxStat": 30 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16246.png"
   },
   {
+    "dofusID": "8369",
     "name": {
       "en": "[!EN] Chapeau du bois de l'est",
       "fr": "Chapeau du bois de l'est",
@@ -3046,19 +3301,21 @@
       "it": "[!IT] Chapeau du bois de l'est",
       "pt": "[!PT] Chapeau du bois de l'est"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16226.png",
+    "itemType": "Hat",
     "setID": "114",
+    "level": 40,
     "stats": [
       { "stat": "Prospecting", "minStat": 1, "maxStat": 10 },
       { "stat": "Agility", "minStat": 1, "maxStat": 40 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16226.png"
   },
   {
+    "dofusID": "8288",
     "name": {
       "en": "[!EN] Sombrero de Pépitox",
       "fr": "Sombrero de Pépitox",
@@ -3067,15 +3324,17 @@
       "it": "[!IT] Sombrero de Pépitox",
       "pt": "[!PT] Sombrero de Pépitox"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16216.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 40,
     "stats": [{ "stat": "Damage", "minStat": 3, "maxStat": 7 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16216.png"
   },
   {
+    "dofusID": "782",
     "name": {
       "en": "[!EN] Masque Kanniboule",
       "fr": "Masque Kanniboule",
@@ -3084,15 +3343,17 @@
       "it": "[!IT] Masque Kanniboule",
       "pt": "[!PT] Masque Kanniboule"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16026.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 40,
     "stats": [{ "stat": "Damage", "minStat": 3, "maxStat": 7 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16026.png"
   },
   {
+    "dofusID": "7776",
     "name": {
       "en": "Sthood",
       "fr": "Chapeau Taufeu",
@@ -3101,15 +3362,17 @@
       "it": "Cappello Fornello",
       "pt": "Stcapuz"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16183.png",
+    "itemType": "Hat",
     "setID": "85",
+    "level": 40,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16183.png"
   },
   {
+    "dofusID": "7775",
     "name": {
       "en": "Zinda Hood",
       "fr": "Bonnet Toual",
@@ -3118,15 +3381,17 @@
       "it": "Cappello Guida",
       "pt": "Capuz da Sorte"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16182.png",
+    "itemType": "Hat",
     "setID": "91",
+    "level": 40,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16182.png"
   },
   {
+    "dofusID": "7774",
     "name": {
       "en": "Robbie Hoodie Cap",
       "fr": "Coiffe de Robbie Capuche",
@@ -3135,15 +3400,17 @@
       "it": "Copricapo di Roby Cappuccio",
       "pt": "Chapéu de Robbie Capuz"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16186.png",
+    "itemType": "Hat",
     "setID": "82",
+    "level": 40,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16186.png"
   },
   {
+    "dofusID": "7773",
     "name": {
       "en": "Helmet Hicc",
       "fr": "Chapeau Lithique",
@@ -3152,15 +3419,17 @@
       "it": "Cappello Politico",
       "pt": "Capacete Hicc"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16176.png",
+    "itemType": "Hat",
     "setID": "92",
+    "level": 40,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16176.png"
   },
   {
+    "dofusID": "7772",
     "name": {
       "en": "Cool Hood",
       "fr": "Capuche Apin",
@@ -3169,15 +3438,17 @@
       "it": "Cappuccio Apino",
       "pt": "Gorro Fresco"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16181.png",
+    "itemType": "Hat",
     "setID": "84",
+    "level": 40,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16181.png"
   },
   {
+    "dofusID": "7771",
     "name": {
       "en": "Cap Rayer",
       "fr": "Bonnet Spairance",
@@ -3186,15 +3457,17 @@
       "it": "Cappello Sparanza",
       "pt": "Capa Raiante"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16180.png",
+    "itemType": "Hat",
     "setID": "87",
+    "level": 40,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16180.png"
   },
   {
+    "dofusID": "7770",
     "name": {
       "en": "Cap Ricott",
       "fr": "Chapeau Tyron",
@@ -3203,15 +3476,17 @@
       "it": "Cappello N'Cione",
       "pt": "Chapéu Ricott"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16178.png",
+    "itemType": "Hat",
     "setID": "90",
+    "level": 40,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16178.png"
   },
   {
+    "dofusID": "7769",
     "name": {
       "en": "Hat Wisholdoo",
       "fr": "Coiffe Fère",
@@ -3220,15 +3495,17 @@
       "it": "Copricapo Kefar",
       "pt": "Chapéu Wisholdoo"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16184.png",
+    "itemType": "Hat",
     "setID": "83",
+    "level": 40,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16184.png"
   },
   {
+    "dofusID": "7768",
     "name": {
       "en": "Hatter Lily",
       "fr": "Bonnet Nufar",
@@ -3237,15 +3514,17 @@
       "it": "Cappello Ayomatto",
       "pt": "Chapeleiro de Lírio"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16177.png",
+    "itemType": "Hat",
     "setID": "86",
+    "level": 40,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16177.png"
   },
   {
+    "dofusID": "7767",
     "name": {
       "en": "Hat Tsokey",
       "fr": "Chapeau Grave",
@@ -3254,15 +3533,17 @@
       "it": "Cappello Niente",
       "pt": "Chapéu Tsokey"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16179.png",
+    "itemType": "Hat",
     "setID": "89",
+    "level": 40,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16179.png"
   },
   {
+    "dofusID": "7766",
     "name": {
       "en": "Ukando Hat",
       "fr": "Chapeau Leufère",
@@ -3271,15 +3552,17 @@
       "it": "Cappello Oping",
       "pt": "Chapéu Ukando"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16185.png",
+    "itemType": "Hat",
     "setID": "88",
+    "level": 40,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16185.png"
   },
   {
+    "dofusID": "7760",
     "name": {
       "en": "Hat Ariutokinabot",
       "fr": "Casque Keutumedi",
@@ -3288,15 +3571,17 @@
       "it": "Elmo Kemmidici",
       "pt": "Chapéu Ariutokinabot"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16175.png",
+    "itemType": "Hat",
     "setID": "81",
+    "level": 40,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16175.png"
   },
   {
+    "dofusID": "2088",
     "name": {
       "en": "Vegadgear",
       "fr": "Végacoiffe",
@@ -3305,19 +3590,21 @@
       "it": "Vegecapo",
       "pt": "Vegagorro"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/16045.png",
+    "itemType": "Hat",
     "setID": "10",
+    "level": 40,
     "stats": [
       { "stat": "Prospecting", "minStat": 1, "maxStat": 10 },
       { "stat": "Agility", "minStat": 1, "maxStat": 40 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16045.png"
   },
   {
+    "dofusID": "8735",
     "name": {
       "en": "[!EN] Coiffe Mulet du Tétounik",
       "fr": "Coiffe Mulet du Tétounik",
@@ -3326,19 +3613,21 @@
       "it": "[!IT] Coiffe Mulet du Tétounik",
       "pt": "[!PT] Coiffe Mulet du Tétounik"
     },
-    "level": 39,
-    "imageUrl": "/retro/item/16241.png",
+    "itemType": "Hat",
     "setID": "132",
+    "level": 39,
     "stats": [
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Heals", "minStat": 2, "maxStat": 3 },
       { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16241.png"
   },
   {
+    "dofusID": "1546",
     "name": {
       "en": "[!EN] Dragocoiffe Blanche",
       "fr": "Dragocoiffe Blanche",
@@ -3347,15 +3636,17 @@
       "it": "[!IT] Dragocoiffe Blanche",
       "pt": "[!PT] Dragocoiffe Blanche"
     },
-    "level": 39,
-    "imageUrl": "/retro/item/16028.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 39,
     "stats": [{ "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16028.png"
   },
   {
+    "dofusID": "8734",
     "name": {
       "en": "[!EN] Masque Siks Won Naïne",
       "fr": "Masque Siks Won Naïne",
@@ -3364,20 +3655,22 @@
       "it": "[!IT] Masque Siks Won Naïne",
       "pt": "[!PT] Masque Siks Won Naïne"
     },
-    "level": 38,
-    "imageUrl": "/retro/item/16240.png",
+    "itemType": "Hat",
     "setID": "131",
+    "level": 38,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16240.png"
   },
   {
+    "dofusID": "8741",
     "name": {
       "en": "[!EN] Le Chapleau",
       "fr": "Le Chapleau",
@@ -3386,19 +3679,21 @@
       "it": "[!IT] Le Chapleau",
       "pt": "[!PT] Le Chapleau"
     },
-    "level": 37,
-    "imageUrl": "/retro/item/16243.png",
+    "itemType": "Hat",
     "setID": "116",
+    "level": 37,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16243.png"
   },
   {
+    "dofusID": "8740",
     "name": {
       "en": "[!EN] Caskostar",
       "fr": "Caskostar",
@@ -3407,19 +3702,21 @@
       "it": "[!IT] Caskostar",
       "pt": "[!PT] Caskostar"
     },
-    "level": 37,
-    "imageUrl": "/retro/item/16242.png",
+    "itemType": "Hat",
     "setID": "117",
+    "level": 37,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16242.png"
   },
   {
+    "dofusID": "8364",
     "name": {
       "en": "[!EN] Caskabeille",
       "fr": "Caskabeille",
@@ -3428,19 +3725,21 @@
       "it": "[!IT] Caskabeille",
       "pt": "[!PT] Caskabeille"
     },
-    "level": 37,
-    "imageUrl": "/retro/item/16224.png",
+    "itemType": "Hat",
     "setID": "112",
+    "level": 37,
     "stats": [
       { "stat": "Strength", "minStat": 11, "maxStat": 40 },
       { "stat": "Intelligence", "minStat": 11, "maxStat": 40 },
       { "stat": "Vitality", "minStat": 11, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16224.png"
   },
   {
+    "dofusID": "456",
     "name": {
       "en": "Lorko Kasko",
       "fr": "Lorko Kasko",
@@ -3449,19 +3748,21 @@
       "it": "Lorko Kasko",
       "pt": "Lorko Kasko"
     },
-    "level": 37,
-    "imageUrl": "/retro/item/16015.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 37,
     "stats": [
       { "stat": "Strength", "minStat": 11, "maxStat": 40 },
       { "stat": "Intelligence", "minStat": 11, "maxStat": 40 },
       { "stat": "Vitality", "minStat": 11, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16015.png"
   },
   {
+    "dofusID": "1731",
     "name": {
       "en": "Brave's Dark Dora",
       "fr": "Dora Sombre de Brave",
@@ -3470,18 +3771,20 @@
       "it": "Dora Oscuro di Brave",
       "pt": "Dora sombrio de Valente"
     },
-    "level": 37,
-    "imageUrl": "/retro/item/16035.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 37,
     "stats": [
       { "stat": "Intelligence", "minStat": 11, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16035.png"
   },
   {
+    "dofusID": "8365",
     "name": {
       "en": "[!EN] Cochobits",
       "fr": "Cochobits",
@@ -3490,18 +3793,20 @@
       "it": "[!IT] Cochobits",
       "pt": "[!PT] Cochobits"
     },
-    "level": 36,
-    "imageUrl": "/retro/item/16225.png",
+    "itemType": "Hat",
     "setID": "113",
+    "level": 36,
     "stats": [
       { "stat": "Wisdom", "minStat": 1, "maxStat": 20 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16225.png"
   },
   {
+    "dofusID": "7816",
     "name": {
       "en": "[!EN] Chapeau de Satanusse",
       "fr": "Chapeau de Satanusse",
@@ -3510,18 +3815,20 @@
       "it": "[!IT] Chapeau de Satanusse",
       "pt": "[!PT] Chapeau de Satanusse"
     },
-    "level": 36,
-    "imageUrl": "/retro/item/16187.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 36,
     "stats": [
       { "stat": "Intelligence", "minStat": 11, "maxStat": 60 },
       { "stat": "Strength", "minStat": 11, "maxStat": 60 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16187.png"
   },
   {
+    "dofusID": "6247",
     "name": {
       "en": "Prespwig",
       "fr": "Coiffe du Prespic",
@@ -3530,18 +3837,20 @@
       "it": "Copricapo del Prespic",
       "pt": "Chapéu do Prespic"
     },
-    "level": 36,
-    "imageUrl": "/retro/item/16081.png",
+    "itemType": "Hat",
     "setID": "31",
+    "level": 36,
     "stats": [
       { "stat": "Wisdom", "minStat": 1, "maxStat": 20 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16081.png"
   },
   {
+    "dofusID": "451",
     "name": {
       "en": "Eachure Hat",
       "fr": "Dantgoule",
@@ -3550,18 +3859,20 @@
       "it": "Dantgul",
       "pt": "Dantgul"
     },
-    "level": 36,
-    "imageUrl": "/retro/item/16010.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 36,
     "stats": [
       { "stat": "Agility", "minStat": 11, "maxStat": 60 },
       { "stat": "Vitality", "minStat": 11, "maxStat": 60 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16010.png"
   },
   {
+    "dofusID": "450",
     "name": {
       "en": "Dora",
       "fr": "Dora",
@@ -3570,18 +3881,20 @@
       "it": "Dora",
       "pt": "Dora"
     },
-    "level": 36,
-    "imageUrl": "/retro/item/16009.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 36,
     "stats": [
       { "stat": "Intelligence", "minStat": 11, "maxStat": 60 },
       { "stat": "Strength", "minStat": 11, "maxStat": 60 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16009.png"
   },
   {
+    "dofusID": "8290",
     "name": {
       "en": "[!EN] Coiffe de Crâ Cramé",
       "fr": "Coiffe de Crâ Cramé",
@@ -3590,18 +3903,20 @@
       "it": "[!IT] Coiffe de Crâ Cramé",
       "pt": "[!PT] Coiffe de Crâ Cramé"
     },
-    "level": 35,
-    "imageUrl": "/retro/item/16218.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 35,
     "stats": [
       { "stat": "Strength", "minStat": 11, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16218.png"
   },
   {
+    "dofusID": "1730",
     "name": {
       "en": "The Bear",
       "fr": "Le Ours",
@@ -3610,18 +3925,20 @@
       "it": "L'Orso",
       "pt": "O Urso"
     },
-    "level": 35,
-    "imageUrl": "/retro/item/16034.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 35,
     "stats": [
       { "stat": "Strength", "minStat": 11, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16034.png"
   },
   {
+    "dofusID": "6401",
     "name": {
       "en": "Larvhat",
       "fr": "Larvacoiffe",
@@ -3630,20 +3947,22 @@
       "it": "Larvacapo",
       "pt": "Larvachapéu"
     },
-    "level": 34,
-    "imageUrl": "/retro/item/16103.png",
+    "itemType": "Hat",
     "setID": "33",
+    "level": 34,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 15 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16103.png"
   },
   {
+    "dofusID": "1705",
     "name": {
       "en": "Shako",
       "fr": "Shako",
@@ -3652,18 +3971,20 @@
       "it": "Shako",
       "pt": "Shako"
     },
-    "level": 34,
-    "imageUrl": "/retro/item/16058.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 34,
     "stats": [
       { "stat": "Intelligence", "minStat": 11, "maxStat": 50 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16058.png"
   },
   {
+    "dofusID": "8404",
     "name": {
       "en": "[!EN] Cigalocoiffe",
       "fr": "Cigalocoiffe",
@@ -3672,15 +3993,17 @@
       "it": "[!IT] Cigalocoiffe",
       "pt": "[!PT] Cigalocoiffe"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/16233.png",
+    "itemType": "Hat",
     "setID": "122",
+    "level": 33,
     "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16233.png"
   },
   {
+    "dofusID": "8384",
     "name": {
       "en": "[!EN] Pompocoiffe",
       "fr": "Pompocoiffe",
@@ -3689,15 +4012,17 @@
       "it": "[!IT] Pompocoiffe",
       "pt": "[!PT] Pompocoiffe"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/16229.png",
+    "itemType": "Hat",
     "setID": "124",
+    "level": 33,
     "stats": [{ "stat": "Range", "minStat": 1, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16229.png"
   },
   {
+    "dofusID": "8287",
     "name": {
       "en": "[!EN] Coiffe de Maître Noir Jack",
       "fr": "Coiffe de Maître Noir Jack",
@@ -3706,15 +4031,17 @@
       "it": "[!IT] Coiffe de Maître Noir Jack",
       "pt": "[!PT] Coiffe de Maître Noir Jack"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/16215.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 33,
     "stats": [{ "stat": "Wisdom", "minStat": 16, "maxStat": 25 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16215.png"
   },
   {
+    "dofusID": "8284",
     "name": {
       "en": "[!EN] Casque de Galgarion",
       "fr": "Casque de Galgarion",
@@ -3723,15 +4050,17 @@
       "it": "[!IT] Casque de Galgarion",
       "pt": "[!PT] Casque de Galgarion"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/16213.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 33,
     "stats": [{ "stat": "Range", "minStat": 1, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16213.png"
   },
   {
+    "dofusID": "7698",
     "name": {
       "en": "[!EN] Lapinocoiffe",
       "fr": "Lapinocoiffe",
@@ -3740,15 +4069,17 @@
       "it": "[!IT] Lapinocoiffe",
       "pt": "[!PT] Lapinocoiffe"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/16168.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 33,
     "stats": [{ "stat": "Range", "minStat": 1, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16168.png"
   },
   {
+    "dofusID": "459",
     "name": {
       "en": "Gulliver",
       "fr": "Gulliver",
@@ -3757,15 +4088,17 @@
       "it": "Gulliver",
       "pt": "Gulliver"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/16018.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 33,
     "stats": [{ "stat": "Wisdom", "minStat": 16, "maxStat": 25 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16018.png"
   },
   {
+    "dofusID": "454",
     "name": {
       "en": "Minot'Horn",
       "fr": "Minotokorno",
@@ -3774,18 +4107,20 @@
       "it": "Minotokorno",
       "pt": "MinotoHorno"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/16013.png",
+    "itemType": "Hat",
     "setID": "54",
+    "level": 33,
     "stats": [
       { "stat": "Strength", "minStat": 11, "maxStat": 50 },
       { "stat": "Power", "minStat": 11, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16013.png"
   },
   {
+    "dofusID": "445",
     "name": {
       "en": "Sortingat Hogwat",
       "fr": "Choipo Podlard",
@@ -3794,15 +4129,17 @@
       "it": "Cappello Hoggwarts",
       "pt": "Sortingat Hogwat"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/16004.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 33,
     "stats": [{ "stat": "Range", "minStat": 1, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16004.png"
   },
   {
+    "dofusID": "6099",
     "name": {
       "en": "Ambusheadgear",
       "fr": "Fourbacoiffe",
@@ -3811,18 +4148,20 @@
       "it": "Furbacapo",
       "pt": "Chaparbustor"
     },
-    "level": 31,
-    "imageUrl": "/retro/item/16068.png",
+    "itemType": "Hat",
     "setID": "16",
+    "level": 31,
     "stats": [
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Initiative", "minStat": 151, "maxStat": 200 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16068.png"
   },
   {
+    "dofusID": "8373",
     "name": {
       "en": "[!EN] Borsitrono",
       "fr": "Borsitrono",
@@ -3831,15 +4170,17 @@
       "it": "[!IT] Borsitrono",
       "pt": "[!PT] Borsitrono"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/16227.png",
+    "itemType": "Hat",
     "setID": "115",
+    "level": 30,
     "stats": [{ "stat": "Critical", "minStat": 3, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16227.png"
   },
   {
+    "dofusID": "8285",
     "name": {
       "en": "[!EN] Coiffe de Goultard",
       "fr": "Coiffe de Goultard",
@@ -3848,15 +4189,17 @@
       "it": "[!IT] Coiffe de Goultard",
       "pt": "[!PT] Coiffe de Goultard"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/16214.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 30,
     "stats": [{ "stat": "Critical", "minStat": 3, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16214.png"
   },
   {
+    "dofusID": "8220",
     "name": {
       "en": "[!EN] Chapeau Shika",
       "fr": "Chapeau Shika",
@@ -3865,18 +4208,20 @@
       "it": "[!IT] Chapeau Shika",
       "pt": "[!PT] Chapeau Shika"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/16210.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 30,
     "stats": [
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": null, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16210.png"
   },
   {
+    "dofusID": "677",
     "name": {
       "en": "Wa Wabbit's Crown",
       "fr": "Couronne du Wa Wabbit",
@@ -3885,15 +4230,17 @@
       "it": "Corona del We Wabbit",
       "pt": "Coroa do Wei Wabbit"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/16021.png",
+    "itemType": "Hat",
     "setID": "40",
+    "level": 30,
     "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 100 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16021.png"
   },
   {
+    "dofusID": "455",
     "name": {
       "en": "Pilbocks Hat",
       "fr": "Houde",
@@ -3902,18 +4249,20 @@
       "it": "Hud",
       "pt": "Houde"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/16014.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 30,
     "stats": [
       { "stat": "Chance", "minStat": 11, "maxStat": 50 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16014.png"
   },
   {
+    "dofusID": "449",
     "name": {
       "en": "Kritter",
       "fr": "Kritter",
@@ -3922,15 +4271,17 @@
       "it": "Kritter",
       "pt": "Kritter"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/16008.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 30,
     "stats": [{ "stat": "Critical", "minStat": 3, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16008.png"
   },
   {
+    "dofusID": "2241",
     "name": {
       "en": "Toady",
       "fr": "Toady",
@@ -3939,15 +4290,17 @@
       "it": "Toady",
       "pt": "Toady"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/16051.png",
+    "itemType": "Hat",
     "setID": "7",
+    "level": 30,
     "stats": [{ "stat": "Agility", "minStat": 11, "maxStat": 60 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16051.png"
   },
   {
+    "dofusID": "1548",
     "name": {
       "en": "[!EN] Oreilles de Lapineupe",
       "fr": "Oreilles de Lapineupe",
@@ -3956,15 +4309,17 @@
       "it": "[!IT] Oreilles de Lapineupe",
       "pt": "[!PT] Oreilles de Lapineupe"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/16030.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 30,
     "stats": [{ "stat": "Critical", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16030.png"
   },
   {
+    "dofusID": "9365",
     "name": {
       "en": "Gobbowl Helmet",
       "fr": "Casque de boufbowl",
@@ -3973,18 +4328,20 @@
       "it": "Casco da Pappaball",
       "pt": "Capacete de Papabol"
     },
-    "level": 29,
-    "imageUrl": "/retro/item/16253.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 29,
     "stats": [
       { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 7 },
       { "stat": "Earth Resistance", "minStat": 1, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16253.png"
   },
   {
+    "dofusID": "458",
     "name": {
       "en": "Jouik Krampe",
       "fr": "Jouik Krampe",
@@ -3993,18 +4350,20 @@
       "it": "Juik Kramp",
       "pt": "Juik Kramp"
     },
-    "level": 26,
-    "imageUrl": "/retro/item/16017.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 26,
     "stats": [
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Intelligence", "minStat": 11, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16017.png"
   },
   {
+    "dofusID": "453",
     "name": {
       "en": "Crystal O'Ball",
       "fr": "Crystal O'Boul",
@@ -4013,15 +4372,17 @@
       "it": "Crystal O'Bul",
       "pt": "Bola de Cristal"
     },
-    "level": 24,
-    "imageUrl": "/retro/item/16012.png",
+    "itemType": "Hat",
     "setID": "38",
+    "level": 24,
     "stats": [{ "stat": "Vitality", "minStat": 21, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16012.png"
   },
   {
+    "dofusID": "7326",
     "name": {
       "en": "Helmetofu",
       "fr": "Kaskofu",
@@ -4030,15 +4391,17 @@
       "it": "Kaskofu",
       "pt": "Kaskofu"
     },
-    "level": 23,
-    "imageUrl": "/retro/item/16128.png",
+    "itemType": "Hat",
     "setID": "50",
+    "level": 23,
     "stats": [{ "stat": "Wisdom", "minStat": 6, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16128.png"
   },
   {
+    "dofusID": "8377",
     "name": {
       "en": "[!EN] Coiffe Cristaline",
       "fr": "Coiffe Cristaline",
@@ -4047,15 +4410,17 @@
       "it": "[!IT] Coiffe Cristaline",
       "pt": "[!PT] Coiffe Cristaline"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/16228.png",
+    "itemType": "Hat",
     "setID": "125",
+    "level": 22,
     "stats": [{ "stat": "Chance", "minStat": 11, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16228.png"
   },
   {
+    "dofusID": "7516",
     "name": {
       "en": "Father Kwismas Hat",
       "fr": "Chapeau du Papa Nowel",
@@ -4064,18 +4429,20 @@
       "it": "Cappello di Babbo Nawal",
       "pt": "Chapéu do Papai Nowel"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/16155.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 22,
     "stats": [
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
       { "stat": "Pods", "minStat": 51, "maxStat": 60 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16155.png"
   },
   {
+    "dofusID": "6278",
     "name": {
       "en": "[!EN] Géniallissime Coiffe de Torte Hou",
       "fr": "Géniallissime Coiffe de Torte Hou",
@@ -4084,15 +4451,17 @@
       "it": "[!IT] Géniallissime Coiffe de Torte Hou",
       "pt": "[!PT] Géniallissime Coiffe de Torte Hou"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/16082.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 22,
     "stats": [{ "stat": "Chance", "minStat": 11, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16082.png"
   },
   {
+    "dofusID": "448",
     "name": {
       "en": "The Oiram",
       "fr": "Le Oiram",
@@ -4101,15 +4470,17 @@
       "it": "L'Oiram",
       "pt": "O Oiram"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/16007.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 22,
     "stats": [{ "stat": "Chance", "minStat": 11, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16007.png"
   },
   {
+    "dofusID": "446",
     "name": {
       "en": "The Troma",
       "fr": "Le Troma",
@@ -4118,15 +4489,17 @@
       "it": "Il Troma",
       "pt": "O Troma"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/16005.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 22,
     "stats": [{ "stat": "Vitality", "minStat": 11, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16005.png"
   },
   {
+    "dofusID": "7833",
     "name": {
       "en": "[!EN] Coquille Emeraude",
       "fr": "Coquille Emeraude",
@@ -4135,15 +4508,17 @@
       "it": "[!IT] Coquille Emeraude",
       "pt": "[!PT] Coquille Emeraude"
     },
-    "level": 21,
-    "imageUrl": "/retro/item/16189.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 21,
     "stats": [{ "stat": "Vitality", "minStat": 21, "maxStat": 35 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16189.png"
   },
   {
+    "dofusID": "410",
     "name": {
       "en": "Pointed Hat",
       "fr": "Chapeau Pointu",
@@ -4152,15 +4527,17 @@
       "it": "Cappello Appuntito",
       "pt": "Chapéu Pontudo"
     },
-    "level": 21,
-    "imageUrl": "/retro/item/16001.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 21,
     "stats": [{ "stat": "Vitality", "minStat": 21, "maxStat": 35 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16001.png"
   },
   {
+    "dofusID": "8289",
     "name": {
       "en": "[!EN] Cornes de XVII",
       "fr": "Cornes de XVII",
@@ -4169,15 +4546,17 @@
       "it": "[!IT] Cornes de XVII",
       "pt": "[!PT] Cornes de XVII"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/16217.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 20,
     "stats": [{ "stat": "Power", "minStat": 6, "maxStat": 20 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16217.png"
   },
   {
+    "dofusID": "784",
     "name": {
       "en": "[!EN] Astrocoiffe",
       "fr": "Astrocoiffe",
@@ -4186,15 +4565,17 @@
       "it": "[!IT] Astrocoiffe",
       "pt": "[!PT] Astrocoiffe"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/16027.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 20,
     "stats": [{ "stat": "Power", "minStat": 6, "maxStat": 20 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16027.png"
   },
   {
+    "dofusID": "715",
     "name": {
       "en": "Helmet",
       "fr": "Casque",
@@ -4203,18 +4584,20 @@
       "it": "Elmo",
       "pt": "Capacete"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/16025.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 20,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16025.png"
   },
   {
+    "dofusID": "684",
     "name": {
       "en": "Pumpkwin",
       "fr": "Citwouille",
@@ -4223,9 +4606,9 @@
       "it": "Cucuwbita",
       "pt": "Abóbowa"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/16024.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 20,
     "stats": [
       { "stat": "Water Resistance", "minStat": 1, "maxStat": 10 },
       { "stat": "Air Resistance", "minStat": 1, "maxStat": 10 },
@@ -4233,11 +4616,13 @@
       { "stat": "Earth Resistance", "minStat": 1, "maxStat": 10 },
       { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16024.png"
   },
   {
+    "dofusID": "6062",
     "name": {
       "en": "Bearman's Headgear",
       "fr": "Coiffe de l'Homme Ours",
@@ -4246,15 +4631,17 @@
       "it": "Copricapo dell'Uomo Orso",
       "pt": "Chapéu do Homem Urso"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/16064.png",
+    "itemType": "Hat",
     "setID": "12",
+    "level": 20,
     "stats": [{ "stat": "Vitality", "minStat": 21, "maxStat": 30 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16064.png"
   },
   {
+    "dofusID": "443",
     "name": {
       "en": "Slob Headgear",
       "fr": "La Coiffe du Ploukosse",
@@ -4263,15 +4650,17 @@
       "it": "Il Copricapo del Plukos",
       "pt": "Touca Suja"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/16002.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 20,
     "stats": [{ "stat": "Power", "minStat": 6, "maxStat": 20 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16002.png"
   },
   {
+    "dofusID": "7336",
     "name": {
       "en": "Farmer Sunhat",
       "fr": "Bob du Paysan",
@@ -4280,15 +4669,17 @@
       "it": "Cappello del Contadino",
       "pt": "Sombreiro do Fazendeiro"
     },
-    "level": 19,
-    "imageUrl": "/retro/item/16130.png",
+    "itemType": "Hat",
     "setID": "47",
+    "level": 19,
     "stats": [{ "stat": "Wisdom", "minStat": 6, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16130.png"
   },
   {
+    "dofusID": "457",
     "name": {
       "en": "Korko Klako",
       "fr": "Korko Klako",
@@ -4297,15 +4688,17 @@
       "it": "Korko Klako",
       "pt": "Korko Klako"
     },
-    "level": 17,
-    "imageUrl": "/retro/item/16016.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 17,
     "stats": [{ "stat": "Summons", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16016.png"
   },
   {
+    "dofusID": "6238",
     "name": {
       "en": "Moskabuto",
       "fr": "Moskitogalurette",
@@ -4314,19 +4707,21 @@
       "it": "Moskitellino",
       "pt": "Moskabuto"
     },
-    "level": 15,
-    "imageUrl": "/retro/item/16080.png",
+    "itemType": "Hat",
     "setID": "23",
+    "level": 15,
     "stats": [
       { "stat": "Wisdom", "minStat": 1, "maxStat": 10 },
       { "stat": "Chance", "minStat": 1, "maxStat": 30 },
       { "stat": "Intelligence", "minStat": 11, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16080.png"
   },
   {
+    "dofusID": "9371",
     "name": {
       "en": "Barking M'hat",
       "fr": "Coiffe Wouaf",
@@ -4335,18 +4730,20 @@
       "it": "Berretto Woof",
       "pt": "Chapéu Barking"
     },
-    "level": 11,
-    "imageUrl": "/retro/item/16256.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 11,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 10 },
       { "stat": "Initiative", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16256.png"
   },
   {
+    "dofusID": "7444",
     "name": {
       "en": "Sponge Helmet",
       "fr": "Coiffe en Mousse",
@@ -4355,19 +4752,21 @@
       "it": "Copricapo di Spugna",
       "pt": "Chapéu de esponja"
     },
-    "level": 11,
-    "imageUrl": "/retro/item/16143.png",
+    "itemType": "Hat",
     "setID": "63",
+    "level": 11,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
       { "stat": "Damage", "minStat": null, "maxStat": 1 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16143.png"
   },
   {
+    "dofusID": "6130",
     "name": {
       "en": "Florheadgear",
       "fr": "Coiffe Champêtre",
@@ -4376,15 +4775,17 @@
       "it": "Copricapo Campestre",
       "pt": "Chapéu campestre"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/16070.png",
+    "itemType": "Hat",
     "setID": "18",
+    "level": 10,
     "stats": [{ "stat": "Summons", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16070.png"
   },
   {
+    "dofusID": "2023",
     "name": {
       "en": "Gobball Headgear",
       "fr": "Coiffe du Bouftou",
@@ -4393,18 +4794,20 @@
       "it": "Copricapo del Pappatutto",
       "pt": "Chapéu do Papatudo"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/16041.png",
+    "itemType": "Hat",
     "setID": "1",
+    "level": 10,
     "stats": [
       { "stat": "Strength", "minStat": 1, "maxStat": 40 },
       { "stat": "Intelligence", "minStat": 1, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16041.png"
   },
   {
+    "dofusID": "6242",
     "name": {
       "en": "Musheadgear",
       "fr": "Champcoiffe",
@@ -4413,15 +4816,17 @@
       "it": "Fungocapo",
       "pt": "Chapeumelo"
     },
-    "level": 9,
-    "imageUrl": "/retro/item/16084.png",
+    "itemType": "Hat",
     "setID": "24",
+    "level": 9,
     "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16084.png"
   },
   {
+    "dofusID": "7717",
     "name": {
       "en": "[!EN] Chapeau du Lapino",
       "fr": "Chapeau du Lapino",
@@ -4430,15 +4835,17 @@
       "it": "[!IT] Chapeau du Lapino",
       "pt": "[!PT] Chapeau du Lapino"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/16170.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Summons", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16170.png"
   },
   {
+    "dofusID": "6234",
     "name": {
       "en": "Arachelmet",
       "fr": "L'Araknacoiffe",
@@ -4447,19 +4854,21 @@
       "it": "L'Araknecapo",
       "pt": "Arakapacete"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/16083.png",
+    "itemType": "Hat",
     "setID": "22",
+    "level": 6,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 15 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 15 },
       { "stat": "Initiative", "minStat": 11, "maxStat": 30 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16083.png"
   },
   {
+    "dofusID": "447",
     "name": {
       "en": "Pandawa",
       "fr": "Pandawa",
@@ -4468,15 +4877,17 @@
       "it": "Pandawa",
       "pt": "Pandawa"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/16006.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Summons", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16006.png"
   },
   {
+    "dofusID": "444",
     "name": {
       "en": "Makroute",
       "fr": "Makroute",
@@ -4485,18 +4896,20 @@
       "it": "Mykakka",
       "pt": "Makroute"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/16003.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 6,
     "stats": [
       { "stat": "Strength", "minStat": 6, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16003.png"
   },
   {
+    "dofusID": "659",
     "name": {
       "en": "[!EN] Grand Bandeau de Vitalité",
       "fr": "Grand Bandeau de Vitalité",
@@ -4505,15 +4918,17 @@
       "it": "[!IT] Grand Bandeau de Vitalité",
       "pt": "[!PT] Grand Bandeau de Vitalité"
     },
-    "level": 3,
-    "imageUrl": "/retro/item/16020.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 3,
     "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16020.png"
   },
   {
+    "dofusID": "9080",
     "name": {
       "en": "[!EN] Couronne Koninginnedag",
       "fr": "Couronne Koninginnedag",
@@ -4522,19 +4937,21 @@
       "it": "[!IT] Couronne Koninginnedag",
       "pt": "[!PT] Couronne Koninginnedag"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16251.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Critical", "minStat": null, "maxStat": 1 },
       { "stat": "Strength", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16251.png"
   },
   {
+    "dofusID": "8392",
     "name": {
       "en": "[!EN] Chapeau de la Sain Ballotin",
       "fr": "Chapeau de la Sain Ballotin",
@@ -4543,14 +4960,15 @@
       "it": "[!IT] Chapeau de la Sain Ballotin",
       "pt": "[!PT] Chapeau de la Sain Ballotin"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16231.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Critical", "minStat": null, "maxStat": 1 },
       { "stat": "Chance", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Marié = non"],
@@ -4560,9 +4978,10 @@
       "it": ["Marié = non"],
       "pt": ["Marié = non"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/16231.png"
   },
   {
+    "dofusID": "8035",
     "name": {
       "en": "Improved Helmet",
       "fr": "Casque amélioré",
@@ -4571,15 +4990,17 @@
       "it": "Elmo Migliorato",
       "pt": "Capacete melhorado"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16025.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16025.png"
   },
   {
+    "dofusID": "7700",
     "name": {
       "en": "Flud",
       "fr": "Le Floude",
@@ -4588,15 +5009,17 @@
       "it": "Il Flud",
       "pt": "O Flud"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16169.png",
+    "itemType": "Hat",
     "setID": "69",
+    "level": 1,
     "stats": [{ "stat": "Damage", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16169.png"
   },
   {
+    "dofusID": "7433",
     "name": {
       "en": "Pink Piwi Hat",
       "fr": "Chapeau du Piou Rose",
@@ -4605,15 +5028,17 @@
       "it": "Cappello del Pìu Rosa",
       "pt": "Chapéu do Piu Rosa"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16142.png",
+    "itemType": "Hat",
     "setID": "70",
+    "level": 1,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16142.png"
   },
   {
+    "dofusID": "7432",
     "name": {
       "en": "Yellow Piwi Hat",
       "fr": "Chapeau du Piou Jaune",
@@ -4622,15 +5047,17 @@
       "it": "Cappello del Pìu Giallo",
       "pt": "Chapéu do Piu Amarelo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16141.png",
+    "itemType": "Hat",
     "setID": "72",
+    "level": 1,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16141.png"
   },
   {
+    "dofusID": "7431",
     "name": {
       "en": "Green Piwi Hat",
       "fr": "Chapeau du Piou Vert",
@@ -4639,15 +5066,17 @@
       "it": "Cappello del Pìu Verde",
       "pt": "Chapéu do Piu Verde"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16140.png",
+    "itemType": "Hat",
     "setID": "71",
+    "level": 1,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16140.png"
   },
   {
+    "dofusID": "7430",
     "name": {
       "en": "Purple Piwi Hat",
       "fr": "Chapeau du Piou Violet",
@@ -4656,15 +5085,17 @@
       "it": "Cappello del Pìu Viola",
       "pt": "Chapéu do Piu Violeta"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16139.png",
+    "itemType": "Hat",
     "setID": "62",
+    "level": 1,
     "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16139.png"
   },
   {
+    "dofusID": "7429",
     "name": {
       "en": "Blue Piwi Hat",
       "fr": "Chapeau du Piou Bleu",
@@ -4673,15 +5104,17 @@
       "it": "Cappello del Pìu Blu",
       "pt": "Chapéu do Piu Azul"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16138.png",
+    "itemType": "Hat",
     "setID": "61",
+    "level": 1,
     "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16138.png"
   },
   {
+    "dofusID": "7428",
     "name": {
       "en": "Red Piwi Hat",
       "fr": "Chapeau du Piou Rouge",
@@ -4690,15 +5123,17 @@
       "it": "Cappello del Pìu Rosso",
       "pt": "Chapéu do Piu Vermelho"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16137.png",
+    "itemType": "Hat",
     "setID": "60",
+    "level": 1,
     "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16137.png"
   },
   {
+    "dofusID": "7373",
     "name": {
       "en": "Pumpkwin Head",
       "fr": "Tête de Citwouille",
@@ -4707,18 +5142,20 @@
       "it": "Testa di Cucuwbita",
       "pt": "Cabeça de Abóbowa"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16134.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Initiative", "minStat": 1, "maxStat": 10 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16134.png"
   },
   {
+    "dofusID": "7283",
     "name": {
       "en": "[!EN] Coiffe du Champion",
       "fr": "Coiffe du Champion",
@@ -4727,15 +5164,17 @@
       "it": "[!IT] Coiffe du Champion",
       "pt": "[!PT] Coiffe du Champion"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16127.png",
+    "itemType": "Hat",
     "setID": "45",
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16127.png"
   },
   {
+    "dofusID": "6701",
     "name": {
       "en": "[!EN] Maskananas",
       "fr": "Maskananas",
@@ -4744,15 +5183,17 @@
       "it": "[!IT] Maskananas",
       "pt": "[!PT] Maskananas"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16117.png",
+    "itemType": "Hat",
     "setID": "74",
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16117.png"
   },
   {
+    "dofusID": "654",
     "name": {
       "en": "Vitality Headband",
       "fr": "Bandeau de Vitalité",
@@ -4761,15 +5202,17 @@
       "it": "Fascia di Vitalità",
       "pt": "Faixa de vitalidade"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16020.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16020.png"
   },
   {
+    "dofusID": "653",
     "name": {
       "en": "[!EN] Petit Bandeau de Vitalité",
       "fr": "Petit Bandeau de Vitalité",
@@ -4778,15 +5221,17 @@
       "it": "[!IT] Petit Bandeau de Vitalité",
       "pt": "[!PT] Petit Bandeau de Vitalité"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16020.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16020.png"
   },
   {
+    "dofusID": "652",
     "name": {
       "en": "Smoother",
       "fr": "Lisseur",
@@ -4795,19 +5240,21 @@
       "it": "Lisciatore",
       "pt": "Aplainador"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16023.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Water Resistance", "minStat": 1, "maxStat": 3 },
       { "stat": "Air Resistance", "minStat": 1, "maxStat": 3 },
       { "stat": "Fire Resistance", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16023.png"
   },
   {
+    "dofusID": "651",
     "name": {
       "en": "Komintot Headband",
       "fr": "Bandeau Komintot",
@@ -4816,15 +5263,17 @@
       "it": "Fascia Komintot",
       "pt": "Bandana de Komintot"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16022.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16022.png"
   },
   {
+    "dofusID": "650",
     "name": {
       "en": "Farter",
       "fr": "Louffeur",
@@ -4833,18 +5282,20 @@
       "it": "Scorreggiatore",
       "pt": "Farter"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16020.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Earth Resistance", "minStat": 1, "maxStat": 3 },
       { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16020.png"
   },
   {
+    "dofusID": "6463",
     "name": {
       "en": "Pandawushu Headband",
       "fr": "Bandeau Pandawushu",
@@ -4853,15 +5304,17 @@
       "it": "Fascia Pandawushu",
       "pt": "Faixa Pandawushu"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16102.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Initiative", "minStat": 51, "maxStat": 100 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16102.png"
   },
   {
+    "dofusID": "6135",
     "name": {
       "en": "[!EN] Cache Oreilles",
       "fr": "Cache Oreilles",
@@ -4870,15 +5323,17 @@
       "it": "[!IT] Cache Oreilles",
       "pt": "[!PT] Cache Oreilles"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16073.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16073.png"
   },
   {
+    "dofusID": "6029",
     "name": {
       "en": "Bride Hat",
       "fr": "Chapeau de la Mariée",
@@ -4887,10 +5342,11 @@
       "it": "Cappello della Sposa",
       "pt": "Chapéu da noiva"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16054.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Personnage = Féminin"],
@@ -4900,9 +5356,10 @@
       "it": ["Personnage = Féminin"],
       "pt": ["Personnage = Féminin"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/16054.png"
   },
   {
+    "dofusID": "6027",
     "name": {
       "en": "Groom Hat",
       "fr": "Chapeau du Marié",
@@ -4911,10 +5368,11 @@
       "it": "Cappello dello Sposo",
       "pt": "Chapéu do noivo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16053.png",
+    "itemType": "Hat",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Personnage = Masculin"],
@@ -4924,9 +5382,10 @@
       "it": ["Personnage = Masculin"],
       "pt": ["Personnage = Masculin"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/16053.png"
   },
   {
+    "dofusID": "2077",
     "name": {
       "en": "Adventurer Hat",
       "fr": "Chapeau de l'Aventurier",
@@ -4935,9 +5394,9 @@
       "it": "Cappello dell'Avventuriero",
       "pt": "Chapéu do aventureiro"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/16044.png",
+    "itemType": "Hat",
     "setID": "5",
+    "level": 1,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 2 },
       { "stat": "Strength", "minStat": 1, "maxStat": 2 },
@@ -4945,8 +5404,9 @@
       { "stat": "Wisdom", "minStat": 1, "maxStat": 2 },
       { "stat": "Intelligence", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/16044.png"
   }
 ]

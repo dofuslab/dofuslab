@@ -1,5 +1,6 @@
 [
   {
+    "dofusID": "8243",
     "name": {
       "en": "Stringsecticide",
       "fr": "String Tue-Mouche",
@@ -8,9 +9,9 @@
       "it": "Tanga Ammazza-Mosche",
       "pt": "Stringseticida"
     },
-    "level": 192,
-    "imageUrl": "/retro/item/10132.png",
+    "itemType": "Belt",
     "setID": "107",
+    "level": 192,
     "stats": [
       { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
@@ -23,11 +24,13 @@
       { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10132.png"
   },
   {
+    "dofusID": "8246",
     "name": {
       "en": "Ougaabelt",
       "fr": "Ougature",
@@ -36,9 +39,9 @@
       "it": "Ugantura",
       "pt": "Cintugah"
     },
-    "level": 185,
-    "imageUrl": "/retro/item/10135.png",
+    "itemType": "Belt",
     "setID": "118",
+    "level": 185,
     "stats": [
       { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
       { "stat": "Wisdom", "minStat": 41, "maxStat": 50 },
@@ -49,11 +52,13 @@
       { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10135.png"
   },
   {
+    "dofusID": "7978",
     "name": {
       "en": "Bherbal Bherb Belt",
       "fr": "Ceinture Rasboulaire du Rasboul",
@@ -62,9 +67,9 @@
       "it": "Cintura Rasbulare del Rasbul",
       "pt": "Cinto Rasgabolar do Rasgabola"
     },
-    "level": 182,
-    "imageUrl": "/retro/item/10115.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 182,
     "stats": [
       { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
@@ -77,11 +82,13 @@
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10115.png"
   },
   {
+    "dofusID": "8283",
     "name": {
       "en": "Biibl Belt",
       "fr": "Ceinture Toré",
@@ -90,9 +97,9 @@
       "it": "Cintura To",
       "pt": "Cinto Biibl"
     },
-    "level": 181,
-    "imageUrl": "/retro/item/10145.png",
+    "itemType": "Belt",
     "setID": "109",
+    "level": 181,
     "stats": [
       { "stat": "Chance", "minStat": 31, "maxStat": 50 },
       { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
@@ -107,11 +114,13 @@
       { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10145.png"
   },
   {
+    "dofusID": "8245",
     "name": {
       "en": "Slice of Undergrowth",
       "fr": "Tranche des Sous-bois",
@@ -120,9 +129,9 @@
       "it": "Fetta dei Sottoboschi",
       "pt": "Fatia de sub-bosque"
     },
-    "level": 179,
-    "imageUrl": "/retro/item/10134.png",
+    "itemType": "Belt",
     "setID": "120",
+    "level": 179,
     "stats": [
       { "stat": "Chance", "minStat": 31, "maxStat": 50 },
       { "stat": "Vitality", "minStat": 351, "maxStat": 400 },
@@ -133,11 +142,13 @@
       { "stat": "Prospecting", "minStat": 21, "maxStat": 30 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10134.png"
   },
   {
+    "dofusID": "8244",
     "name": {
       "en": "Fungas Belt",
       "fr": "Ceinture Mycosine",
@@ -146,9 +157,9 @@
       "it": "Cintura Micosina",
       "pt": "Cinto Fungas"
     },
-    "level": 177,
-    "imageUrl": "/retro/item/10133.png",
+    "itemType": "Belt",
     "setID": "121",
+    "level": 177,
     "stats": [
       { "stat": "Strength", "minStat": 41, "maxStat": 60 },
       { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
@@ -162,11 +173,13 @@
       { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10133.png"
   },
   {
+    "dofusID": "6834",
     "name": {
       "en": "Grendibelt",
       "fr": "Goldoture",
@@ -175,9 +188,9 @@
       "it": "Goldontura",
       "pt": "Grendicinto"
     },
-    "level": 164,
-    "imageUrl": "/retro/item/10085.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 164,
     "stats": [
       { "stat": "Summons", "minStat": 1, "maxStat": 2 },
       { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
@@ -188,11 +201,13 @@
       { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
       { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10085.png"
   },
   {
+    "dofusID": "7467",
     "name": {
       "en": "Minotot Belt",
       "fr": "Ceinture du Minotot",
@@ -201,9 +216,9 @@
       "it": "Cintura del Minotot",
       "pt": "Cinto do Minotot"
     },
-    "level": 149,
-    "imageUrl": "/retro/item/10105.png",
+    "itemType": "Belt",
     "setID": "57",
+    "level": 149,
     "stats": [
       { "stat": "Chance", "minStat": 31, "maxStat": 50 },
       { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
@@ -218,11 +233,13 @@
       { "stat": "Earth Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10105.png"
   },
   {
+    "dofusID": "7983",
     "name": {
       "en": "Parkinn Pan's Pikokowal Belt",
       "fr": "Ceinture Bitoufale de Prosper Youpla",
@@ -231,9 +248,9 @@
       "it": "Cintura Bitufale di Prosper Youpla",
       "pt": "Cinto Bitufal de Pan Bitufowal"
     },
-    "level": 148,
-    "imageUrl": "/retro/item/10128.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 148,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
       { "stat": "Agility", "minStat": 31, "maxStat": 50 },
@@ -247,11 +264,13 @@
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10128.png"
   },
   {
+    "dofusID": "7644",
     "name": {
       "en": "Autumnal Soft Oak G-String",
       "fr": "String Automnal du Chêne Mou",
@@ -260,9 +279,9 @@
       "it": "Perizoma Autunnale della Quercia Molle",
       "pt": "Fio Dental de Outono de Carvalho Mole"
     },
-    "level": 141,
-    "imageUrl": "/retro/item/10113.png",
+    "itemType": "Belt",
     "setID": "66",
+    "level": 141,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 40 },
       { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
@@ -278,11 +297,13 @@
       { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10113.png"
   },
   {
+    "dofusID": "7632",
     "name": {
       "en": "Lord of the Rats' Ceremonial Belt",
       "fr": "Ceinture Cérémoniale du Seigneur des Rats",
@@ -291,9 +312,9 @@
       "it": "Cintura Cerimoniale del Signore dei Ratti",
       "pt": "Cinto cerimonal do Senhor dos Ratos"
     },
-    "level": 133,
-    "imageUrl": "/retro/item/10111.png",
+    "itemType": "Belt",
     "setID": "64",
+    "level": 133,
     "stats": [
       { "stat": "Agility", "minStat": 31, "maxStat": 50 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
@@ -308,11 +329,13 @@
       { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Water Resistance", "minStat": 5, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10111.png"
   },
   {
+    "dofusID": "7800",
     "name": {
       "en": "Belt Urgid",
       "fr": "Ceinture Gessant",
@@ -321,15 +344,17 @@
       "it": "Cintura Gessante",
       "pt": "Cinto Mescente"
     },
-    "level": 130,
-    "imageUrl": "/retro/item/10127.png",
+    "itemType": "Belt",
     "setID": "85",
+    "level": 130,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10127.png"
   },
   {
+    "dofusID": "7799",
     "name": {
       "en": "Girdle Belt",
       "fr": "Gaine Hage",
@@ -338,15 +363,17 @@
       "it": "Borsa Agio",
       "pt": "Cinto Espartilho"
     },
-    "level": 130,
-    "imageUrl": "/retro/item/10126.png",
+    "itemType": "Belt",
     "setID": "91",
+    "level": 130,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10126.png"
   },
   {
+    "dofusID": "7798",
     "name": {
       "en": "Targ Belt",
       "fr": "Sangle Cible",
@@ -355,15 +382,17 @@
       "it": "Cintura Bersaglio",
       "pt": "Cinto Targ"
     },
-    "level": 130,
-    "imageUrl": "/retro/item/10125.png",
+    "itemType": "Belt",
     "setID": "82",
+    "level": 130,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10125.png"
   },
   {
+    "dofusID": "7797",
     "name": {
       "en": "Sticky Strap",
       "fr": "Sangle Huée",
@@ -372,15 +401,17 @@
       "it": "Cintura Gravity",
       "pt": "Faixa Fedida"
     },
-    "level": 130,
-    "imageUrl": "/retro/item/10124.png",
+    "itemType": "Belt",
     "setID": "92",
+    "level": 130,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10124.png"
   },
   {
+    "dofusID": "7796",
     "name": {
       "en": "Diezzle Belt",
       "fr": "Ceinture Bodiézèle",
@@ -389,15 +420,17 @@
       "it": "Cintura Bolzebù",
       "pt": "Cinto Diezzle"
     },
-    "level": 130,
-    "imageUrl": "/retro/item/10123.png",
+    "itemType": "Belt",
     "setID": "84",
+    "level": 130,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10123.png"
   },
   {
+    "dofusID": "7795",
     "name": {
       "en": "Strap Pado",
       "fr": "Sangle Hans",
@@ -406,15 +439,17 @@
       "it": "Cintura Blad",
       "pt": "Strap Pado"
     },
-    "level": 130,
-    "imageUrl": "/retro/item/10122.png",
+    "itemType": "Belt",
     "setID": "87",
+    "level": 130,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10122.png"
   },
   {
+    "dofusID": "7794",
     "name": {
       "en": "Belt Atio",
       "fr": "Ceinture Luthe",
@@ -423,15 +458,17 @@
       "it": "Cintura Lazione",
       "pt": "Cinto Atio"
     },
-    "level": 130,
-    "imageUrl": "/retro/item/10121.png",
+    "itemType": "Belt",
     "setID": "90",
+    "level": 130,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10121.png"
   },
   {
+    "dofusID": "7793",
     "name": {
       "en": "Blub Belt",
       "fr": "Sangle Holon",
@@ -440,15 +477,17 @@
       "it": "Cintura Tirs",
       "pt": "Cinto Blub"
     },
-    "level": 130,
-    "imageUrl": "/retro/item/10120.png",
+    "itemType": "Belt",
     "setID": "83",
+    "level": 130,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10120.png"
   },
   {
+    "dofusID": "7792",
     "name": {
       "en": "Sleepless Belt",
       "fr": "Ceinture Lupine",
@@ -457,15 +496,17 @@
       "it": "Cintura Ticchettac",
       "pt": "Cinto Insônia"
     },
-    "level": 130,
-    "imageUrl": "/retro/item/10119.png",
+    "itemType": "Belt",
     "setID": "86",
+    "level": 130,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10119.png"
   },
   {
+    "dofusID": "7791",
     "name": {
       "en": "Clinkin Belt",
       "fr": "Sangle Glinglin",
@@ -474,15 +515,17 @@
       "it": "Cintura Calende Greche",
       "pt": "Cinto Clinkin"
     },
-    "level": 130,
-    "imageUrl": "/retro/item/10118.png",
+    "itemType": "Belt",
     "setID": "89",
+    "level": 130,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10118.png"
   },
   {
+    "dofusID": "7790",
     "name": {
       "en": "Belt Sterous",
       "fr": "Ceinture Buhlent",
@@ -491,15 +534,17 @@
       "it": "Cintura Zardo",
       "pt": "Cinto Urbulento"
     },
-    "level": 130,
-    "imageUrl": "/retro/item/10117.png",
+    "itemType": "Belt",
     "setID": "88",
+    "level": 130,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10117.png"
   },
   {
+    "dofusID": "7789",
     "name": {
       "en": "Bloody Belt",
       "fr": "Sangle Hynère",
@@ -508,15 +553,17 @@
       "it": "Cintura Inaria",
       "pt": "Cinto Sangrento"
     },
-    "level": 130,
-    "imageUrl": "/retro/item/10116.png",
+    "itemType": "Belt",
     "setID": "81",
+    "level": 130,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10116.png"
   },
   {
+    "dofusID": "2375",
     "name": {
       "en": "Moowish Belt",
       "fr": "Ceinture Meulante",
@@ -525,9 +572,9 @@
       "it": "Cintura Muulante",
       "pt": "Cinto Mulante"
     },
-    "level": 129,
-    "imageUrl": "/retro/item/10051.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 129,
     "stats": [
       { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
       { "stat": "Damage", "minStat": 5, "maxStat": 10 },
@@ -538,11 +585,13 @@
       { "stat": "Fire Resistance", "minStat": 11, "maxStat": 15 },
       { "stat": "Earth Resistance", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10051.png"
   },
   {
+    "dofusID": "7992",
     "name": {
       "en": "Light Treeckler Belt",
       "fr": "Ceinture Claire en Abrakleur",
@@ -551,9 +600,9 @@
       "it": "Cintura Chiara di Alberaklur",
       "pt": "Cinto claro de Arvorador"
     },
-    "level": 128,
-    "imageUrl": "/retro/item/10130.png",
+    "itemType": "Belt",
     "setID": "79",
+    "level": 128,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 45 },
       { "stat": "Agility", "minStat": 31, "maxStat": 45 },
@@ -565,11 +614,13 @@
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10130.png"
   },
   {
+    "dofusID": "7450",
     "name": {
       "en": "Moowolf Belt",
       "fr": "Ceinture du Meulou",
@@ -578,9 +629,9 @@
       "it": "Cintura del Muulupo",
       "pt": "Cinto do Mulobo"
     },
-    "level": 125,
-    "imageUrl": "/retro/item/10103.png",
+    "itemType": "Belt",
     "setID": "55",
+    "level": 125,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
@@ -591,11 +642,13 @@
       { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 4 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10103.png"
   },
   {
+    "dofusID": "6429",
     "name": {
       "en": "Xenature",
       "fr": "Xénature",
@@ -604,9 +657,9 @@
       "it": "Xenantura",
       "pt": "Xenatura"
     },
-    "level": 125,
-    "imageUrl": "/retro/item/10083.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 125,
     "stats": [
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
       { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
@@ -618,11 +671,13 @@
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10083.png"
   },
   {
+    "dofusID": "6428",
     "name": {
       "en": "Ditchy Belt",
       "fr": "Ceinture Sula",
@@ -631,9 +686,9 @@
       "it": "Cintura Sula",
       "pt": "Cinto de Sula"
     },
-    "level": 125,
-    "imageUrl": "/retro/item/10082.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 125,
     "stats": [
       { "stat": "Agility", "minStat": 31, "maxStat": 50 },
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
@@ -645,11 +700,13 @@
       { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10082.png"
   },
   {
+    "dofusID": "7472",
     "name": {
       "en": "Dreggon Belt",
       "fr": "Ceinture du Dragoeuf",
@@ -658,9 +715,9 @@
       "it": "Cintura del Draguovo",
       "pt": "Cinto do Dragovo"
     },
-    "level": 124,
-    "imageUrl": "/retro/item/10104.png",
+    "itemType": "Belt",
     "setID": "56",
+    "level": 124,
     "stats": [
       { "stat": "Chance", "minStat": 31, "maxStat": 50 },
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
@@ -678,11 +735,13 @@
       { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "Earth Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10104.png"
   },
   {
+    "dofusID": "5831",
     "name": {
       "en": "Aman Date Belt",
       "fr": "Ceinture de l'Amant d'Ha",
@@ -691,9 +750,9 @@
       "it": "Cintura dell'Amante di Ha",
       "pt": "Cinto do Amante da Hora"
     },
-    "level": 121,
-    "imageUrl": "/retro/item/10057.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 121,
     "stats": [
       { "stat": "Vitality", "minStat": 71, "maxStat": 100 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
@@ -706,11 +765,13 @@
       { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10057.png"
   },
   {
+    "dofusID": "2255",
     "name": {
       "en": "Crowish Belt",
       "fr": "Ceinture Corbaquiale",
@@ -719,9 +780,9 @@
       "it": "Cintura Cuervochiale",
       "pt": "Cinto Corvoquial"
     },
-    "level": 120,
-    "imageUrl": "/retro/item/10056.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 120,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
@@ -731,11 +792,13 @@
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10056.png"
   },
   {
+    "dofusID": "7639",
     "name": {
       "en": "Ancestral Treebelt",
       "fr": "Abrature Ancestrale",
@@ -744,9 +807,9 @@
       "it": "Alberantura Ancestrale",
       "pt": "Arvracinto Ancestral"
     },
-    "level": 111,
-    "imageUrl": "/retro/item/10112.png",
+    "itemType": "Belt",
     "setID": "65",
+    "level": 111,
     "stats": [
       { "stat": "Chance", "minStat": 31, "maxStat": 45 },
       { "stat": "Strength", "minStat": 21, "maxStat": 35 },
@@ -761,11 +824,13 @@
       { "stat": "Fire Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10112.png"
   },
   {
+    "dofusID": "7466",
     "name": {
       "en": "Minotoror Belt",
       "fr": "Ceinture du Minotoror",
@@ -774,9 +839,9 @@
       "it": "Cintura del Minotoror",
       "pt": "Cinto do Minotoror"
     },
-    "level": 111,
-    "imageUrl": "/retro/item/10106.png",
+    "itemType": "Belt",
     "setID": "54",
+    "level": 111,
     "stats": [
       { "stat": "Vitality", "minStat": 131, "maxStat": 200 },
       { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
@@ -786,11 +851,13 @@
       { "stat": "Fire Resistance", "minStat": 6, "maxStat": 8 },
       { "stat": "Heals", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10106.png"
   },
   {
+    "dofusID": "7626",
     "name": {
       "en": "White Rat Belt",
       "fr": "Ceinture du Rat Blanc",
@@ -799,9 +866,9 @@
       "it": "Cintura del Ratto Bianco",
       "pt": "Cinto do Rato Branco"
     },
-    "level": 102,
-    "imageUrl": "/retro/item/10110.png",
+    "itemType": "Belt",
     "setID": "67",
+    "level": 102,
     "stats": [
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
@@ -811,11 +878,13 @@
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10110.png"
   },
   {
+    "dofusID": "7618",
     "name": {
       "en": "Black Rat Belt",
       "fr": "Ceinture du Rat Noir",
@@ -824,9 +893,9 @@
       "it": "Cintura del Ratto Nero",
       "pt": "Cinto do Rato Negro"
     },
-    "level": 101,
-    "imageUrl": "/retro/item/10109.png",
+    "itemType": "Belt",
     "setID": "68",
+    "level": 101,
     "stats": [
       { "stat": "Agility", "minStat": 31, "maxStat": 45 },
       { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
@@ -838,11 +907,13 @@
       { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
       { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10109.png"
   },
   {
+    "dofusID": "6145",
     "name": {
       "en": "Bwork Chief Briefs",
       "fr": "Slip du Chef Bwork",
@@ -851,9 +922,9 @@
       "it": "Mutande del Capo Bwork",
       "pt": "Cueca do Chefe Bwork"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/10059.png",
+    "itemType": "Belt",
     "setID": "19",
+    "level": 100,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 35 },
       { "stat": "Vitality", "minStat": 31, "maxStat": 45 },
@@ -865,11 +936,13 @@
       { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10059.png"
   },
   {
+    "dofusID": "2270",
     "name": {
       "en": "Chouquish Belt",
       "fr": "Ceinture Chouqueuse",
@@ -878,9 +951,9 @@
       "it": "Cintura Chukosa",
       "pt": "Cinto Tchukoso"
     },
-    "level": 98,
-    "imageUrl": "/retro/item/10041.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 98,
     "stats": [
       { "stat": "Vitality", "minStat": 51, "maxStat": 80 },
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
@@ -890,11 +963,13 @@
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10041.png"
   },
   {
+    "dofusID": "7991",
     "name": {
       "en": "Dark Treeckler Belt",
       "fr": "Ceinture sombre en Abrakleur",
@@ -903,9 +978,9 @@
       "it": "Cintura Oscura di Alberaklur",
       "pt": "Cinto sombrio de Arvorador"
     },
-    "level": 92,
-    "imageUrl": "/retro/item/10129.png",
+    "itemType": "Belt",
     "setID": "80",
+    "level": 92,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 35 },
       { "stat": "Intelligence", "minStat": 26, "maxStat": 35 },
@@ -916,11 +991,13 @@
       { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10129.png"
   },
   {
+    "dofusID": "8275",
     "name": {
       "en": "Royal Rainbow Blop Belt",
       "fr": "Blopture Multicolore Royale",
@@ -929,9 +1006,9 @@
       "it": "Blopintura Multicolore Reale",
       "pt": "Blopcinto Arco-Íris Real"
     },
-    "level": 90,
-    "imageUrl": "/retro/item/10144.png",
+    "itemType": "Belt",
     "setID": "106",
+    "level": 90,
     "stats": [
       { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
       { "stat": "Power", "minStat": 21, "maxStat": 35 },
@@ -939,11 +1016,13 @@
       { "stat": "Damage", "minStat": 6, "maxStat": 8 },
       { "stat": "% Earth Resistance", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10144.png"
   },
   {
+    "dofusID": "6338",
     "name": {
       "en": "Sangroku's Belt",
       "fr": "Ceinture de Sangroku",
@@ -952,9 +1031,9 @@
       "it": "Cintura di Sangroku",
       "pt": "Cinto de Sangroku"
     },
-    "level": 86,
-    "imageUrl": "/retro/item/10080.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 86,
     "stats": [
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
       { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
@@ -962,11 +1041,13 @@
       { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10080.png"
   },
   {
+    "dofusID": "1328",
     "name": {
       "en": "Event Belt",
       "fr": "Ceinture des Vents",
@@ -975,9 +1056,9 @@
       "it": "Cintura dei Venti",
       "pt": "Cinto dos ventos"
     },
-    "level": 84,
-    "imageUrl": "/retro/item/10015.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 84,
     "stats": [
       { "stat": "Range", "minStat": 1, "maxStat": 2 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
@@ -986,11 +1067,13 @@
       { "stat": "Damage", "minStat": 4, "maxStat": 8 },
       { "stat": "Critical", "minStat": 4, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10015.png"
   },
   {
+    "dofusID": "6524",
     "name": {
       "en": "Feudala Belt",
       "fr": "Ceinture Feudala",
@@ -999,9 +1082,9 @@
       "it": "Cintura Focodala",
       "pt": "Cinto Fogodala"
     },
-    "level": 81,
-    "imageUrl": "/retro/item/10077.png",
+    "itemType": "Belt",
     "setID": "37",
+    "level": 81,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 45 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
@@ -1011,11 +1094,13 @@
       { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "Fire Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10077.png"
   },
   {
+    "dofusID": "2372",
     "name": {
       "en": "Boowish Belt",
       "fr": "Ceinture Mulante",
@@ -1024,9 +1109,9 @@
       "it": "Cintura Buulante",
       "pt": "Cinto Milante"
     },
-    "level": 81,
-    "imageUrl": "/retro/item/10050.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 81,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 40 },
       { "stat": "Vitality", "minStat": 41, "maxStat": 70 },
@@ -1036,11 +1121,13 @@
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10050.png"
   },
   {
+    "dofusID": "8274",
     "name": {
       "en": "Royal Indigo Blop Belt",
       "fr": "Blopture Indigo Royale",
@@ -1049,9 +1136,9 @@
       "it": "Blopintura Indaco Reale",
       "pt": "Blopcinto Índigo Real"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/10143.png",
+    "itemType": "Belt",
     "setID": "105",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 45 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -1061,11 +1148,13 @@
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10143.png"
   },
   {
+    "dofusID": "8273",
     "name": {
       "en": "Royal Coco Blop Belt",
       "fr": "Blopture Coco Royale",
@@ -1074,9 +1163,9 @@
       "it": "Blopintura Cocco Reale",
       "pt": "Blopcinto Coco Real"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/10142.png",
+    "itemType": "Belt",
     "setID": "104",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 45 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -1086,11 +1175,13 @@
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10142.png"
   },
   {
+    "dofusID": "8272",
     "name": {
       "en": "Royal Pippin Blop Belt",
       "fr": "Blopture Reinette Royale",
@@ -1099,9 +1190,9 @@
       "it": "Blopintura Reginetta Reale",
       "pt": "Blopcinto Maçã Real"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/10141.png",
+    "itemType": "Belt",
     "setID": "103",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 45 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -1111,11 +1202,13 @@
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10141.png"
   },
   {
+    "dofusID": "8271",
     "name": {
       "en": "Royal Morello Cherry Blop Belt",
       "fr": "Blopture Griotte Royale",
@@ -1124,9 +1217,9 @@
       "it": "Blopintura Griotta Reale",
       "pt": "Blopcinto Cereja Real"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/10140.png",
+    "itemType": "Belt",
     "setID": "102",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 45 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -1136,11 +1229,13 @@
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10140.png"
   },
   {
+    "dofusID": "7487",
     "name": {
       "en": "Shika's Belt",
       "fr": "Shikature",
@@ -1149,9 +1244,9 @@
       "it": "Shikantura",
       "pt": "Cinto de Shika"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/10107.png",
+    "itemType": "Belt",
     "setID": "53",
+    "level": 80,
     "stats": [
       { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
@@ -1163,11 +1258,13 @@
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10107.png"
   },
   {
+    "dofusID": "7363",
     "name": {
       "en": "Legendary Crackler Belt",
       "fr": "Ceinture du Craqueleur Légendaire",
@@ -1176,9 +1273,9 @@
       "it": "Cintura del Croccaroc Leggendario",
       "pt": "Cinto do Smagador Legendário"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/10094.png",
+    "itemType": "Belt",
     "setID": "52",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -1188,11 +1285,13 @@
       { "stat": "Pods", "minStat": 201, "maxStat": 300 },
       { "stat": "Initiative", "minStat": 101, "maxStat": 150 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10094.png"
   },
   {
+    "dofusID": "6110",
     "name": {
       "en": "Farlebelt",
       "fr": "Farlature",
@@ -1201,9 +1300,9 @@
       "it": "Farlintura",
       "pt": "Farlecinto"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/10061.png",
+    "itemType": "Belt",
     "setID": "17",
+    "level": 80,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
@@ -1216,11 +1315,13 @@
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10061.png"
   },
   {
+    "dofusID": "1987",
     "name": {
       "en": "Powerful Dazzling Belt",
       "fr": "Puissante Ceinture Fulgurante",
@@ -1229,20 +1330,22 @@
       "it": "Potente Cintura Folgorante",
       "pt": "Poderoso Cinto Ofuscante"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/10026.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 80,
     "stats": [
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
       { "stat": "Damage", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10026.png"
   },
   {
+    "dofusID": "2376",
     "name": {
       "en": "Drasmuty Belt",
       "fr": "Ceinture Dracochoune",
@@ -1251,9 +1354,9 @@
       "it": "Cintura Dragomaiala",
       "pt": "Cinto Drasmuty"
     },
-    "level": 77,
-    "imageUrl": "/retro/item/10052.png",
+    "itemType": "Belt",
     "setID": "58",
+    "level": 77,
     "stats": [
       { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
       { "stat": "Chance", "minStat": 21, "maxStat": 40 },
@@ -1262,11 +1365,13 @@
       { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10052.png"
   },
   {
+    "dofusID": "7134",
     "name": {
       "en": "Golden Lady's Belt",
       "fr": "Ceinture d'une Femme en Or",
@@ -1275,20 +1380,22 @@
       "it": "Cintura di una Donna d'Oro",
       "pt": "Cinto de uma Mulher de Ouro"
     },
-    "level": 71,
-    "imageUrl": "/retro/item/10086.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 71,
     "stats": [
       { "stat": "Vitality", "minStat": 51, "maxStat": 70 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
       { "stat": "Pods", "minStat": 301, "maxStat": 500 },
       { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10086.png"
   },
   {
+    "dofusID": "6525",
     "name": {
       "en": "Aerdala Belt",
       "fr": "Ceinture Aerdala",
@@ -1297,9 +1404,9 @@
       "it": "Cintura Erdala",
       "pt": "Cinto Ardala"
     },
-    "level": 70,
-    "imageUrl": "/retro/item/10079.png",
+    "itemType": "Belt",
     "setID": "35",
+    "level": 70,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
@@ -1307,11 +1414,13 @@
       { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10079.png"
   },
   {
+    "dofusID": "6164",
     "name": {
       "en": "Crocodyl Chief Belt",
       "fr": "Ceinture du Chef Crocodaille",
@@ -1320,9 +1429,9 @@
       "it": "Cintura del Capo Coccodrail",
       "pt": "Cinto do Chefe Crocodyl"
     },
-    "level": 70,
-    "imageUrl": "/retro/item/10060.png",
+    "itemType": "Belt",
     "setID": "20",
+    "level": 70,
     "stats": [
       { "stat": "Agility", "minStat": 26, "maxStat": 35 },
       { "stat": "Chance", "minStat": 26, "maxStat": 35 },
@@ -1331,11 +1440,13 @@
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10060.png"
   },
   {
+    "dofusID": "2588",
     "name": {
       "en": "The Xerbo",
       "fr": "La Xerbo",
@@ -1344,9 +1455,9 @@
       "it": "La Xerbo",
       "pt": "O Xerbo"
     },
-    "level": 67,
-    "imageUrl": "/retro/item/10039.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 67,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
@@ -1357,11 +1468,13 @@
       { "stat": "Pods", "minStat": 151, "maxStat": 250 },
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10039.png"
   },
   {
+    "dofusID": "2379",
     "name": {
       "en": "Ouginiakal Belt",
       "fr": "Ceinture Ouginakale",
@@ -1370,9 +1483,9 @@
       "it": "Cintura Uginakale",
       "pt": "Cinto Kilórfico"
     },
-    "level": 65,
-    "imageUrl": "/retro/item/10055.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 65,
     "stats": [
       { "stat": "Agility", "minStat": 11, "maxStat": 25 },
       { "stat": "Chance", "minStat": 11, "maxStat": 25 },
@@ -1381,11 +1494,13 @@
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10055.png"
   },
   {
+    "dofusID": "7230",
     "name": {
       "en": "Koalak Belt",
       "fr": "Ceinture du Koalak",
@@ -1394,19 +1509,21 @@
       "it": "Cintura del Koalak",
       "pt": "Cinto do Koalak"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/10087.png",
+    "itemType": "Belt",
     "setID": "46",
+    "level": 60,
     "stats": [
       { "stat": "Pods", "minStat": 101, "maxStat": 200 },
       { "stat": "Initiative", "minStat": 201, "maxStat": 250 },
       { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10087.png"
   },
   {
+    "dofusID": "5877",
     "name": {
       "en": "GM Wabbit Y-fwonts",
       "fr": "Slip Kangouwou du Wabbit GM",
@@ -1415,20 +1532,22 @@
       "it": "Mutande Kanguwu del Wabbit GM",
       "pt": "Cueca do Wabbit GM"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/10058.png",
+    "itemType": "Belt",
     "setID": "11",
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 30 },
       { "stat": "Critical", "minStat": 3, "maxStat": 9 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10058.png"
   },
   {
+    "dofusID": "2275",
     "name": {
       "en": "Red Turtle Belt",
       "fr": "Ceinture Tortue Rouge",
@@ -1437,9 +1556,9 @@
       "it": "Cintura Tartaruga Rossa",
       "pt": "Cinto de tartaruga vermelha"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/10045.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 35 },
@@ -1447,11 +1566,13 @@
       { "stat": "Initiative", "minStat": 51, "maxStat": 100 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10045.png"
   },
   {
+    "dofusID": "2274",
     "name": {
       "en": "Green Turtle Belt",
       "fr": "Ceinture Tortue Verte",
@@ -1460,9 +1581,9 @@
       "it": "Cintura Tartaruga Verde",
       "pt": "Cinto de tartaruga verde"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/10042.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
       { "stat": "Strength", "minStat": 16, "maxStat": 35 },
@@ -1470,11 +1591,13 @@
       { "stat": "Initiative", "minStat": 51, "maxStat": 100 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10042.png"
   },
   {
+    "dofusID": "2273",
     "name": {
       "en": "Blue Turtle Belt",
       "fr": "Ceinture Tortue Bleue",
@@ -1483,9 +1606,9 @@
       "it": "Cintura Tartaruga Blu",
       "pt": "Cinto de tartaruga azul"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/10044.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
       { "stat": "Chance", "minStat": 16, "maxStat": 35 },
@@ -1493,11 +1616,13 @@
       { "stat": "Initiative", "minStat": 51, "maxStat": 100 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10044.png"
   },
   {
+    "dofusID": "2272",
     "name": {
       "en": "Yellow Turtle Belt",
       "fr": "Ceinture Tortue Jaune",
@@ -1506,9 +1631,9 @@
       "it": "Cintura Tartaruga Gialla",
       "pt": "Cinto de tartaruga amarela"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/10043.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
       { "stat": "Agility", "minStat": 16, "maxStat": 35 },
@@ -1516,11 +1641,13 @@
       { "stat": "Initiative", "minStat": 51, "maxStat": 100 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10043.png"
   },
   {
+    "dofusID": "2074",
     "name": {
       "en": "Jellibelt",
       "fr": "Geloture",
@@ -1529,15 +1656,17 @@
       "it": "Gelontura",
       "pt": "Gelacinto"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/10032.png",
+    "itemType": "Belt",
     "setID": "6",
+    "level": 60,
     "stats": [{ "stat": "Intelligence", "minStat": 11, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10032.png"
   },
   {
+    "dofusID": "2020",
     "name": {
       "en": "Rat Belt",
       "fr": "Ceinture du Rat",
@@ -1546,20 +1675,22 @@
       "it": "Cintura del Ratto",
       "pt": "Cinto do Rato"
     },
-    "level": 55,
-    "imageUrl": "/retro/item/10027.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 55,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
       { "stat": "Initiative", "minStat": 101, "maxStat": 200 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10027.png"
   },
   {
+    "dofusID": "1327",
     "name": {
       "en": "Trembling Dodu Belt",
       "fr": "Ceinture du Dodu Trembleur",
@@ -1568,9 +1699,9 @@
       "it": "Cintura del Dodu Tremante",
       "pt": "Cinto do Dodu Trêmulo"
     },
-    "level": 55,
-    "imageUrl": "/retro/item/10014.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 55,
     "stats": [
       { "stat": "Damage", "minStat": 3, "maxStat": 8 },
       { "stat": "Water Resistance", "minStat": 3, "maxStat": 8 },
@@ -1579,11 +1710,13 @@
       { "stat": "Earth Resistance", "minStat": 3, "maxStat": 8 },
       { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10014.png"
   },
   {
+    "dofusID": "9234",
     "name": {
       "en": "Haks Or Belt",
       "fr": "Ceinture du Roks Or",
@@ -1592,20 +1725,22 @@
       "it": "Cintura del Roks Or",
       "pt": "Cinto do Roksor"
     },
-    "level": 53,
-    "imageUrl": "/retro/item/10166.png",
+    "itemType": "Belt",
     "setID": "151",
+    "level": 53,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Power", "minStat": 16, "maxStat": 20 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10166.png"
   },
   {
+    "dofusID": "2587",
     "name": {
       "en": "Brakmarian Belt",
       "fr": "Ceinture Brâkmarienne",
@@ -1614,9 +1749,9 @@
       "it": "Cintura Brakmariana",
       "pt": "Cinto Brakmariano"
     },
-    "level": 53,
-    "imageUrl": "/retro/item/10038.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 53,
     "stats": [
       { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
       { "stat": "Earth Resistance", "minStat": 3, "maxStat": 5 },
@@ -1624,6 +1759,7 @@
       { "stat": "Strength", "minStat": 16, "maxStat": 30 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Alignement = Brâkmar"],
@@ -1633,9 +1769,10 @@
       "it": ["Alignement = Brâkmar"],
       "pt": ["Alignement = Brâkmar"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/10038.png"
   },
   {
+    "dofusID": "2586",
     "name": {
       "en": "Bontarian Belt",
       "fr": "Ceinture Bontarienne",
@@ -1644,9 +1781,9 @@
       "it": "Cintura Bontariana",
       "pt": "Cinto Bontariano"
     },
-    "level": 53,
-    "imageUrl": "/retro/item/10037.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 53,
     "stats": [
       { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
       { "stat": "Water Resistance", "minStat": 3, "maxStat": 5 },
@@ -1655,6 +1792,7 @@
       { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Alignement = Bonta"],
@@ -1664,9 +1802,10 @@
       "it": ["Alignement = Bonta"],
       "pt": ["Alignement = Bonta"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/10037.png"
   },
   {
+    "dofusID": "9385",
     "name": {
       "en": "Klume's Belt",
       "fr": "Ceinture de Klüme",
@@ -1675,20 +1814,22 @@
       "it": "Cintura di Cudine",
       "pt": "Cinto de Klume"
     },
-    "level": 52,
-    "imageUrl": "/retro/item/10167.png",
+    "itemType": "Belt",
     "setID": "153",
+    "level": 52,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 35 },
       { "stat": "Vitality", "minStat": 41, "maxStat": 50 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10167.png"
   },
   {
+    "dofusID": "2054",
     "name": {
       "en": "Royal Gobball's Belt",
       "fr": "Ceinture Royale du Bouftou",
@@ -1697,20 +1838,22 @@
       "it": "Cintura Reale del Pappatutto",
       "pt": "Cinto Real do Papatudo"
     },
-    "level": 52,
-    "imageUrl": "/retro/item/10031.png",
+    "itemType": "Belt",
     "setID": "4",
+    "level": 52,
     "stats": [
       { "stat": "Pods", "minStat": 101, "maxStat": 800 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 70 },
       { "stat": "Critical", "minStat": 1, "maxStat": 5 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10031.png"
   },
   {
+    "dofusID": "9386",
     "name": {
       "en": "Kloug's Belt",
       "fr": "Ceinture de Kloug",
@@ -1719,20 +1862,22 @@
       "it": "Cintura di Kloug",
       "pt": "Cinto de Napizram"
     },
-    "level": 51,
-    "imageUrl": "/retro/item/10168.png",
+    "itemType": "Belt",
     "setID": "154",
+    "level": 51,
     "stats": [
       { "stat": "Vitality", "minStat": 41, "maxStat": 50 },
       { "stat": "Chance", "minStat": 21, "maxStat": 30 },
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Pods", "minStat": 251, "maxStat": 300 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10168.png"
   },
   {
+    "dofusID": "9384",
     "name": {
       "en": "Hulkrap's Belt",
       "fr": "Ceinture d'Hulkrap",
@@ -1741,20 +1886,22 @@
       "it": "Cintura di Quentindel",
       "pt": "Cinto de Lápucra"
     },
-    "level": 51,
-    "imageUrl": "/retro/item/10169.png",
+    "itemType": "Belt",
     "setID": "152",
+    "level": 51,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 25 },
       { "stat": "Critical", "minStat": 3, "maxStat": 4 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10169.png"
   },
   {
+    "dofusID": "7330",
     "name": {
       "en": "Golden Scarabelt",
       "fr": "Scarature Dorée",
@@ -1763,9 +1910,9 @@
       "it": "Scarantura Dorata",
       "pt": "Scaracinto dourado"
     },
-    "level": 51,
-    "imageUrl": "/retro/item/10090.png",
+    "itemType": "Belt",
     "setID": "51",
+    "level": 51,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 55 },
       { "stat": "Agility", "minStat": 6, "maxStat": 30 },
@@ -1775,11 +1922,13 @@
       { "stat": "Fire Resistance", "minStat": 1, "maxStat": 3 },
       { "stat": "Earth Resistance", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10090.png"
   },
   {
+    "dofusID": "8270",
     "name": {
       "en": "Indigo Blop Belt",
       "fr": "Blopture Indigo",
@@ -1788,9 +1937,9 @@
       "it": "Blopintura Indaco",
       "pt": "Blopcinto Índigo"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/10139.png",
+    "itemType": "Belt",
     "setID": "101",
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
@@ -1798,11 +1947,13 @@
       { "stat": "Damage", "minStat": 1, "maxStat": 2 },
       { "stat": "Pods", "minStat": 101, "maxStat": 300 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10139.png"
   },
   {
+    "dofusID": "8269",
     "name": {
       "en": "Coco Blop Belt",
       "fr": "Blopture Coco",
@@ -1811,9 +1962,9 @@
       "it": "Blopintura Cocco",
       "pt": "Blopcinto Coco"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/10138.png",
+    "itemType": "Belt",
     "setID": "100",
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
@@ -1821,11 +1972,13 @@
       { "stat": "Damage", "minStat": 1, "maxStat": 2 },
       { "stat": "Pods", "minStat": 101, "maxStat": 300 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10138.png"
   },
   {
+    "dofusID": "8268",
     "name": {
       "en": "Pippin Blop Belt",
       "fr": "Blopture Reinette",
@@ -1834,9 +1987,9 @@
       "it": "Blopintura Reginetta",
       "pt": "Blopcinto Maçã"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/10137.png",
+    "itemType": "Belt",
     "setID": "99",
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
@@ -1844,11 +1997,13 @@
       { "stat": "Damage", "minStat": 1, "maxStat": 2 },
       { "stat": "Pods", "minStat": 101, "maxStat": 300 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10137.png"
   },
   {
+    "dofusID": "8267",
     "name": {
       "en": "Morello Cherry Blop Belt",
       "fr": "Blopture Griotte",
@@ -1857,9 +2012,9 @@
       "it": "Blopintura Griotta",
       "pt": "Blopcinto Cereja"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/10136.png",
+    "itemType": "Belt",
     "setID": "98",
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
@@ -1867,11 +2022,13 @@
       { "stat": "Damage", "minStat": 1, "maxStat": 2 },
       { "stat": "Pods", "minStat": 101, "maxStat": 300 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10136.png"
   },
   {
+    "dofusID": "2276",
     "name": {
       "en": "Sticky Belt",
       "fr": "Ceinture Kolante",
@@ -1880,9 +2037,9 @@
       "it": "Cintura Kollante",
       "pt": "Cinto Fedorento"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/10046.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Power", "minStat": 7, "maxStat": 11 },
@@ -1890,11 +2047,13 @@
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Prospecting", "minStat": 3, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10046.png"
   },
   {
+    "dofusID": "1326",
     "name": {
       "en": "Luthuthu Belt",
       "fr": "Ceinture Luthuthu",
@@ -1903,9 +2062,9 @@
       "it": "Cintura Luthuthu",
       "pt": "Cinto Luthuthu"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/10013.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 50,
     "stats": [
       { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
@@ -1915,11 +2074,13 @@
       { "stat": "Air Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Fire Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10013.png"
   },
   {
+    "dofusID": "8344",
     "name": {
       "en": "Pink Tutu",
       "fr": "Tutu Rose",
@@ -1928,19 +2089,21 @@
       "it": "Tutù Rosa",
       "pt": "Tutu rosa"
     },
-    "level": 49,
-    "imageUrl": "/retro/item/10148.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 49,
     "stats": [
       { "stat": "Critical", "minStat": 3, "maxStat": 7 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10148.png"
   },
   {
+    "dofusID": "6523",
     "name": {
       "en": "Terrdala Belt",
       "fr": "Ceinture Terrdala",
@@ -1949,9 +2112,9 @@
       "it": "Cintura Terradala",
       "pt": "Cinto Terradala"
     },
-    "level": 49,
-    "imageUrl": "/retro/item/10078.png",
+    "itemType": "Belt",
     "setID": "36",
+    "level": 49,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 35 },
       { "stat": "Critical", "minStat": 3, "maxStat": 4 },
@@ -1959,11 +2122,13 @@
       { "stat": "Pods", "minStat": 301, "maxStat": 400 },
       { "stat": "Power (traps)", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10078.png"
   },
   {
+    "dofusID": "6275",
     "name": {
       "en": "Boowolf Thong",
       "fr": "String du Mulou",
@@ -1972,9 +2137,9 @@
       "it": "Perizoma del Buulupo",
       "pt": "Tira de Boolobo"
     },
-    "level": 49,
-    "imageUrl": "/retro/item/10092.png",
+    "itemType": "Belt",
     "setID": "32",
+    "level": 49,
     "stats": [
       { "stat": "Strength", "minStat": 1, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
@@ -1982,11 +2147,13 @@
       { "stat": "Damage", "minStat": 1, "maxStat": 3 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10092.png"
   },
   {
+    "dofusID": "2377",
     "name": {
       "en": "Chafeerce Belt",
       "fr": "Ceinture Chafeuse",
@@ -1995,19 +2162,21 @@
       "it": "Cintura Caliente",
       "pt": "Cinto Chaferoso"
     },
-    "level": 49,
-    "imageUrl": "/retro/item/10053.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 49,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 40 },
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Critical", "minStat": 1, "maxStat": 9 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10053.png"
   },
   {
+    "dofusID": "2019",
     "name": {
       "en": "Peeka Belt",
       "fr": "Chtévu",
@@ -2016,19 +2185,21 @@
       "it": "Thovist",
       "pt": "Cintevi"
     },
-    "level": 49,
-    "imageUrl": "/retro/item/10025.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 49,
     "stats": [
       { "stat": "Critical", "minStat": 3, "maxStat": 7 },
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "% Neutral Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10025.png"
   },
   {
+    "dofusID": "8465",
     "name": {
       "en": "The Godfather's Pants 'n' Suspenders",
       "fr": "Caleçon à bretelles du Parrain",
@@ -2037,20 +2208,22 @@
       "it": "Mutande con Bretelle del Padrino",
       "pt": "Samba-canção com suspensórios do Padrinho"
     },
-    "level": 48,
-    "imageUrl": "/retro/item/10152.png",
+    "itemType": "Belt",
     "setID": "126",
+    "level": 48,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10152.png"
   },
   {
+    "dofusID": "8380",
     "name": {
       "en": "[!EN] Ceinture Cristaline",
       "fr": "Ceinture Cristaline",
@@ -2059,18 +2232,20 @@
       "it": "[!IT] Ceinture Cristaline",
       "pt": "[!PT] Ceinture Cristaline"
     },
-    "level": 48,
-    "imageUrl": "/retro/item/10151.png",
+    "itemType": "Belt",
     "setID": "125",
+    "level": 48,
     "stats": [
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 2, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10151.png"
   },
   {
+    "dofusID": "8286",
     "name": {
       "en": "Flash Gorgon's Belt",
       "fr": "Ceinture de Flash Gorgone",
@@ -2079,18 +2254,20 @@
       "it": "Cintura di Flash Gorgon",
       "pt": "Cinto de Flash Gorgon"
     },
-    "level": 48,
-    "imageUrl": "/retro/item/10146.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 48,
     "stats": [
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 2, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10146.png"
   },
   {
+    "dofusID": "1172",
     "name": {
       "en": "Adelus",
       "fr": "L'Adelus",
@@ -2099,18 +2276,20 @@
       "it": "L'Adelus",
       "pt": "Adelus"
     },
-    "level": 48,
-    "imageUrl": "/retro/item/10012.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 48,
     "stats": [
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 2, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10012.png"
   },
   {
+    "dofusID": "6348",
     "name": {
       "en": "Frank Lee Bruce's Black Belt",
       "fr": "Ceinture Noire de Frank Lee Bruce",
@@ -2119,9 +2298,9 @@
       "it": "Cintura Nera di Frank Lee Bruce",
       "pt": "Cinto Preto de Frank Lee Bruce"
     },
-    "level": 47,
-    "imageUrl": "/retro/item/10081.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 47,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
@@ -2129,11 +2308,13 @@
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Damage", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10081.png"
   },
   {
+    "dofusID": "8478",
     "name": {
       "en": "Black Wab Belt",
       "fr": "Ceinture du Black Wab",
@@ -2142,19 +2323,21 @@
       "it": "Cintura del Wab Newo",
       "pt": "Cinto do Black Wab"
     },
-    "level": 46,
-    "imageUrl": "/retro/item/10153.png",
+    "itemType": "Belt",
     "setID": "127",
+    "level": 46,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10153.png"
   },
   {
+    "dofusID": "6271",
     "name": {
       "en": "Blue Scarabelt",
       "fr": "Scarature Bleue",
@@ -2163,9 +2346,9 @@
       "it": "Scarantura Blu",
       "pt": "Scaracinto Azul"
     },
-    "level": 46,
-    "imageUrl": "/retro/item/10070.png",
+    "itemType": "Belt",
     "setID": "30",
+    "level": 46,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
@@ -2174,11 +2357,13 @@
       { "stat": "Fire Resistance", "minStat": 1, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10070.png"
   },
   {
+    "dofusID": "6270",
     "name": {
       "en": "Red Scarabelt",
       "fr": "Scarature Rouge",
@@ -2187,9 +2372,9 @@
       "it": "Scarantura Rossa",
       "pt": "Scaracinto Vermelho"
     },
-    "level": 46,
-    "imageUrl": "/retro/item/10068.png",
+    "itemType": "Belt",
     "setID": "28",
+    "level": 46,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
@@ -2198,11 +2383,13 @@
       { "stat": "Fire Resistance", "minStat": 1, "maxStat": 5 },
       { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10068.png"
   },
   {
+    "dofusID": "6269",
     "name": {
       "en": "White Scarabelt",
       "fr": "Scarature Blanche",
@@ -2211,9 +2398,9 @@
       "it": "Scarantura Bianca",
       "pt": "Scaracinto Branco"
     },
-    "level": 46,
-    "imageUrl": "/retro/item/10069.png",
+    "itemType": "Belt",
     "setID": "29",
+    "level": 46,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
@@ -2222,11 +2409,13 @@
       { "stat": "Fire Resistance", "minStat": 1, "maxStat": 5 },
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10069.png"
   },
   {
+    "dofusID": "6268",
     "name": {
       "en": "Green Scarabelt",
       "fr": "Scarature Verte",
@@ -2235,9 +2424,9 @@
       "it": "Scarantura Verde",
       "pt": "Scaracinto Verde"
     },
-    "level": 46,
-    "imageUrl": "/retro/item/10067.png",
+    "itemType": "Belt",
     "setID": "27",
+    "level": 46,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
@@ -2246,11 +2435,13 @@
       { "stat": "Fire Resistance", "minStat": 1, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10067.png"
   },
   {
+    "dofusID": "2127",
     "name": {
       "en": "Viootifool Belt",
       "fr": "Ceinture Vioutifoule",
@@ -2259,9 +2450,9 @@
       "it": "Cintura Viutiful",
       "pt": "Cinto Viewtiful"
     },
-    "level": 46,
-    "imageUrl": "/retro/item/10035.png",
+    "itemType": "Belt",
     "setID": "75",
+    "level": 46,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
@@ -2270,11 +2461,13 @@
       { "stat": "Fire Resistance", "minStat": 1, "maxStat": 5 },
       { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10035.png"
   },
   {
+    "dofusID": "8292",
     "name": {
       "en": "Fasstroid Belt",
       "fr": "Beignature",
@@ -2283,9 +2476,9 @@
       "it": "Ciambellantura",
       "pt": "Cintonut"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/10147.png",
+    "itemType": "Belt",
     "setID": "110",
+    "level": 45,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
@@ -2293,11 +2486,13 @@
       { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10147.png"
   },
   {
+    "dofusID": "6255",
     "name": {
       "en": "Crackler Belt",
       "fr": "Ceinture du Craqueleur",
@@ -2306,9 +2501,9 @@
       "it": "Cintura del Croccaroc",
       "pt": "Cinto do Smagador"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/10074.png",
+    "itemType": "Belt",
     "setID": "26",
+    "level": 45,
     "stats": [
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
       { "stat": "Pods", "minStat": 1, "maxStat": 300 },
@@ -2316,11 +2511,13 @@
       { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 5 },
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10074.png"
   },
   {
+    "dofusID": "2126",
     "name": {
       "en": "Megabelt",
       "fr": "Mégature",
@@ -2329,9 +2526,9 @@
       "it": "Megantura",
       "pt": "Megacinto"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/10034.png",
+    "itemType": "Belt",
     "setID": "76",
+    "level": 45,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
@@ -2340,11 +2537,13 @@
       { "stat": "Fire Resistance", "minStat": 1, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10034.png"
   },
   {
+    "dofusID": "2041",
     "name": {
       "en": "Treebelt",
       "fr": "Abrature",
@@ -2353,19 +2552,21 @@
       "it": "Alberantura",
       "pt": "Arvracinto"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/10030.png",
+    "itemType": "Belt",
     "setID": "3",
+    "level": 45,
     "stats": [
       { "stat": "Pods", "minStat": 51, "maxStat": 150 },
       { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "Strength", "minStat": 11, "maxStat": 30 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10030.png"
   },
   {
+    "dofusID": "9198",
     "name": {
       "en": "Fyred Ampe's Belt",
       "fr": "Ceinture de Grizou",
@@ -2374,19 +2575,21 @@
       "it": "Cintura di Grisup",
       "pt": "Cinto de Grisu"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/10162.png",
+    "itemType": "Belt",
     "setID": "149",
+    "level": 43,
     "stats": [
       { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10162.png"
   },
   {
+    "dofusID": "8902",
     "name": {
       "en": "Belugo",
       "fr": "Yugure",
@@ -2395,18 +2598,20 @@
       "it": "Yugura",
       "pt": "Belugo"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/10157.png",
+    "itemType": "Belt",
     "setID": "134",
+    "level": 43,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
       { "stat": "Damage", "minStat": 3, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10157.png"
   },
   {
+    "dofusID": "7343",
     "name": {
       "en": "Black Scarabelt",
       "fr": "Scarature Noire",
@@ -2415,20 +2620,22 @@
       "it": "Scarantura Nera",
       "pt": "Scaracinto Preto"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/10093.png",
+    "itemType": "Belt",
     "setID": "49",
+    "level": 43,
     "stats": [
       { "stat": "Critical", "minStat": 2, "maxStat": 4 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10093.png"
   },
   {
+    "dofusID": "9185",
     "name": {
       "en": "Goboff's Belt",
       "fr": "Ceinture de Gobeuf",
@@ -2437,19 +2644,21 @@
       "it": "Cintura di Gobluovo",
       "pt": "Cinto de Gobovo"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/10165.png",
+    "itemType": "Belt",
     "setID": "146",
+    "level": 42,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10165.png"
   },
   {
+    "dofusID": "9182",
     "name": {
       "en": "Koksiks's Belt",
       "fr": "Ceinture de Kocksis",
@@ -2458,20 +2667,22 @@
       "it": "Cintura di Koccid",
       "pt": "Cinto de Koksis"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/10164.png",
+    "itemType": "Belt",
     "setID": "145",
+    "level": 42,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10164.png"
   },
   {
+    "dofusID": "8841",
     "name": {
       "en": "Vampyre Belt",
       "fr": "Ceinture du Vampyre",
@@ -2480,19 +2691,21 @@
       "it": "Cintura del Vampyro",
       "pt": "Cinto do Vampyro"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/10156.png",
+    "itemType": "Belt",
     "setID": "130",
+    "level": 42,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Chance", "minStat": 21, "maxStat": 30 },
       { "stat": "Initiative", "minStat": 201, "maxStat": 250 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10156.png"
   },
   {
+    "dofusID": "2271",
     "name": {
       "en": "Kokokette Belt",
       "fr": "Ceinture Kokokette",
@@ -2501,19 +2714,21 @@
       "it": "Cintura Kokoketta",
       "pt": "Cinto de Kokokette"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/10040.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 42,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 35 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
       { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10040.png"
   },
   {
+    "dofusID": "9154",
     "name": {
       "en": "Monty's Belt",
       "fr": "Ceinture de Mounu",
@@ -2522,20 +2737,22 @@
       "it": "Cintura di Munù",
       "pt": "Cinto Mounu"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/10160.png",
+    "itemType": "Belt",
     "setID": "143",
+    "level": 41,
     "stats": [
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10160.png"
   },
   {
+    "dofusID": "9153",
     "name": {
       "en": "Toot's Belt",
       "fr": "Ceinture de Tolot",
@@ -2544,20 +2761,22 @@
       "it": "Cintura di Tolot",
       "pt": "Cinto Brasiwawa"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/10159.png",
+    "itemType": "Belt",
     "setID": "142",
+    "level": 41,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10159.png"
   },
   {
+    "dofusID": "8733",
     "name": {
       "en": "Siks Wonn Ein Belt",
       "fr": "Ceinture Siks Won Naïne",
@@ -2566,19 +2785,21 @@
       "it": "Cintura Sics Uan Nain",
       "pt": "Cinturão Siks Wonn Ein"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/10155.png",
+    "itemType": "Belt",
     "setID": "131",
+    "level": 41,
     "stats": [
       { "stat": "Vitality", "minStat": 36, "maxStat": 45 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10155.png"
   },
   {
+    "dofusID": "6522",
     "name": {
       "en": "Akwadala Belt",
       "fr": "Ceinture Akwadala",
@@ -2587,19 +2808,21 @@
       "it": "Cintura Aksadala",
       "pt": "Cinto Akwadala"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/10076.png",
+    "itemType": "Belt",
     "setID": "34",
+    "level": 41,
     "stats": [
       { "stat": "Wisdom", "minStat": 6, "maxStat": 20 },
       { "stat": "Pods", "minStat": 101, "maxStat": 150 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10076.png"
   },
   {
+    "dofusID": "6094",
     "name": {
       "en": "Wind Kwakelt",
       "fr": "Kwakture de Vent",
@@ -2608,19 +2831,21 @@
       "it": "Kwakantura di Vento",
       "pt": "Kwaktura do Vento"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/10063.png",
+    "itemType": "Belt",
     "setID": "15",
+    "level": 41,
     "stats": [
       { "stat": "Agility", "minStat": 11, "maxStat": 15 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 2 },
       { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10063.png"
   },
   {
+    "dofusID": "6093",
     "name": {
       "en": "Earth Kwakelt",
       "fr": "Kwakture de Terre",
@@ -2629,19 +2854,21 @@
       "it": "Kwakantura di Terra",
       "pt": "Kwacar da Terra"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/10065.png",
+    "itemType": "Belt",
     "setID": "14",
+    "level": 41,
     "stats": [
       { "stat": "Strength", "minStat": 11, "maxStat": 15 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 2 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10065.png"
   },
   {
+    "dofusID": "2138",
     "name": {
       "en": "Ice Kwakelt",
       "fr": "Kwakture de Glace",
@@ -2650,19 +2877,21 @@
       "it": "Kwakantura di Ghiaccio",
       "pt": "Kwakcinto de Gelo"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/10036.png",
+    "itemType": "Belt",
     "setID": "13",
+    "level": 41,
     "stats": [
       { "stat": "Chance", "minStat": 11, "maxStat": 15 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 2 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10036.png"
   },
   {
+    "dofusID": "2039",
     "name": {
       "en": "Fire Kwakelt",
       "fr": "Kwakture de Flammes",
@@ -2671,19 +2900,21 @@
       "it": "Kwakantura di Fiamma",
       "pt": "Kwacinto do Fogo"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/10028.png",
+    "itemType": "Belt",
     "setID": "2",
+    "level": 41,
     "stats": [
       { "stat": "Intelligence", "minStat": 11, "maxStat": 15 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 2 },
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10028.png"
   },
   {
+    "dofusID": "1988",
     "name": {
       "en": "The Vegete Hative",
       "fr": "La Végète Hâtif",
@@ -2692,19 +2923,21 @@
       "it": "La Vegeta Tiva",
       "pt": "O Vegete Ativo"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/10023.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 41,
     "stats": [
       { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Agility", "minStat": 21, "maxStat": 30 },
       { "stat": "Strength", "minStat": 11, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10023.png"
   },
   {
+    "dofusID": "9193",
     "name": {
       "en": "Stroy Zemol's Belt",
       "fr": "Ceinture de Rekto Topi",
@@ -2713,19 +2946,21 @@
       "it": "Cintura di Altap Eto",
       "pt": "Cinto de Stroy Zemol"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/10161.png",
+    "itemType": "Belt",
     "setID": "148",
+    "level": 40,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Heals", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10161.png"
   },
   {
+    "dofusID": "9177",
     "name": {
       "en": "Grute's Belt",
       "fr": "Ceinture de Grüt",
@@ -2734,19 +2969,21 @@
       "it": "Cintura di Griut",
       "pt": "Cinto de Grute"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/10163.png",
+    "itemType": "Belt",
     "setID": "144",
+    "level": 40,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 20 },
       { "stat": "Vitality", "minStat": 16, "maxStat": 20 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10163.png"
   },
   {
+    "dofusID": "8368",
     "name": {
       "en": "Lardine Belt",
       "fr": "Ceinture Lardière",
@@ -2755,9 +2992,9 @@
       "it": "Cintura Salume",
       "pt": "Cinto Touceiro"
     },
-    "level": 39,
-    "imageUrl": "/retro/item/10149.png",
+    "itemType": "Belt",
     "setID": "113",
+    "level": 39,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
@@ -2765,11 +3002,13 @@
       { "stat": "Critical", "minStat": 1, "maxStat": 2 },
       { "stat": "Power (traps)", "minStat": 1, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10149.png"
   },
   {
+    "dofusID": "7994",
     "name": {
       "en": "Krabelt",
       "fr": "Krustoture",
@@ -2778,9 +3017,9 @@
       "it": "Krustontura",
       "pt": "Kracinto"
     },
-    "level": 39,
-    "imageUrl": "/retro/item/10131.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 39,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
@@ -2788,11 +3027,13 @@
       { "stat": "Critical", "minStat": 1, "maxStat": 2 },
       { "stat": "Power (traps)", "minStat": 1, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10131.png"
   },
   {
+    "dofusID": "8726",
     "name": {
       "en": "Slamdance Belt",
       "fr": "Ceinture du Tétounik",
@@ -2801,19 +3042,21 @@
       "it": "Cintura del Teutonik",
       "pt": "Cinto Confusão"
     },
-    "level": 38,
-    "imageUrl": "/retro/item/10154.png",
+    "itemType": "Belt",
     "setID": "132",
+    "level": 38,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Intelligence", "minStat": 6, "maxStat": 15 },
       { "stat": "Heals", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10154.png"
   },
   {
+    "dofusID": "8932",
     "name": {
       "en": "Oxo Belt",
       "fr": "L'oxolature",
@@ -2822,20 +3065,22 @@
       "it": "L'Oxocintura",
       "pt": "Cinto Oxo"
     },
-    "level": 37,
-    "imageUrl": "/retro/item/10158.png",
+    "itemType": "Belt",
     "setID": "133",
+    "level": 37,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10158.png"
   },
   {
+    "dofusID": "7118",
     "name": {
       "en": "Gobkool Belt",
       "fr": "Ceinture du Boufcoul",
@@ -2844,20 +3089,22 @@
       "it": "Cintura del Pappacool",
       "pt": "Cinto do Papakool"
     },
-    "level": 37,
-    "imageUrl": "/retro/item/10084.png",
+    "itemType": "Belt",
     "setID": "43",
+    "level": 37,
     "stats": [
       { "stat": "Agility", "minStat": 11, "maxStat": 15 },
       { "stat": "Chance", "minStat": 11, "maxStat": 15 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Pods", "minStat": 101, "maxStat": 500 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10084.png"
   },
   {
+    "dofusID": "1986",
     "name": {
       "en": "Ramoune the Eternal",
       "fr": "Ramoume l'Eternelle",
@@ -2866,13 +3113,14 @@
       "it": "Ramum l'Eterno",
       "pt": "Ramoune, O Eterno"
     },
-    "level": 37,
-    "imageUrl": "/retro/item/10022.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 37,
     "stats": [
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 2 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": [
@@ -2894,9 +3142,10 @@
         "\n                                \n                                  Alignement = Brâkmar"
       ]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/10022.png"
   },
   {
+    "dofusID": "1985",
     "name": {
       "en": "Raya Bean's Nights",
       "fr": "L'Ami Léhunui",
@@ -2905,13 +3154,14 @@
       "it": "Lamil Eunotte",
       "pt": "Noites de Raya Beans"
     },
-    "level": 37,
-    "imageUrl": "/retro/item/10021.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 37,
     "stats": [
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 2 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": [
@@ -2933,9 +3183,10 @@
         "\n                                \n                                  Alignement = Bonta"
       ]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/10021.png"
   },
   {
+    "dofusID": "1376",
     "name": {
       "en": "Crocoburio's Power",
       "fr": "Puissance de Crocoburio",
@@ -2944,15 +3195,17 @@
       "it": "Potenza di Crocobarro",
       "pt": "Poder de Crocoburio"
     },
-    "level": 34,
-    "imageUrl": "/retro/item/10018.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 34,
     "stats": [{ "stat": "Vitality", "minStat": 51, "maxStat": 80 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10018.png"
   },
   {
+    "dofusID": "94",
     "name": {
       "en": "Tot's Belt",
       "fr": "Ceinture du Tot",
@@ -2961,18 +3214,20 @@
       "it": "Cintura del Tot",
       "pt": "Cinto do Tot"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/10010.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 33,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Critical", "minStat": null, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10010.png"
   },
   {
+    "dofusID": "6250",
     "name": {
       "en": "Prespic Belt",
       "fr": "Ceinture du Prespic",
@@ -2981,15 +3236,17 @@
       "it": "Cintura del Prespic",
       "pt": "Cinto do Prespic"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/10071.png",
+    "itemType": "Belt",
     "setID": "31",
+    "level": 33,
     "stats": [{ "stat": "Reflect", "minStat": 1, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10071.png"
   },
   {
+    "dofusID": "6080",
     "name": {
       "en": "Deceitful Belt",
       "fr": "Ceinture Fourbissante",
@@ -2998,20 +3255,22 @@
       "it": "Cintura Furbicante",
       "pt": "Cinto Enganador"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/10062.png",
+    "itemType": "Belt",
     "setID": "16",
+    "level": 33,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 },
       { "stat": "Initiative", "minStat": 41, "maxStat": 60 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10062.png"
   },
   {
+    "dofusID": "8371",
     "name": {
       "en": "Eastern Wood Belt",
       "fr": "Ceinture du bois de l'est",
@@ -3020,19 +3279,21 @@
       "it": "Cintura del Bosco dell'Est",
       "pt": "Cinto do Bosque do Leste"
     },
-    "level": 32,
-    "imageUrl": "/retro/item/10150.png",
+    "itemType": "Belt",
     "setID": "114",
+    "level": 32,
     "stats": [
       { "stat": "Agility", "minStat": 11, "maxStat": 20 },
       { "stat": "Critical", "minStat": 3, "maxStat": 5 },
       { "stat": "Initiative", "minStat": 41, "maxStat": 65 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10150.png"
   },
   {
+    "dofusID": "2278",
     "name": {
       "en": "Wild Banisation Belt",
       "fr": "Ceinture Banisation Sauvage",
@@ -3041,19 +3302,21 @@
       "it": "Cintura Espulsione Selvaggia",
       "pt": "Cinto Banisation Selvagem"
     },
-    "level": 32,
-    "imageUrl": "/retro/item/10048.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 32,
     "stats": [
       { "stat": "Agility", "minStat": 11, "maxStat": 20 },
       { "stat": "Critical", "minStat": 3, "maxStat": 5 },
       { "stat": "Initiative", "minStat": 41, "maxStat": 65 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10048.png"
   },
   {
+    "dofusID": "71",
     "name": {
       "en": "Power Belt",
       "fr": "Ceinture de Puissance",
@@ -3062,19 +3325,21 @@
       "it": "Cintura di Potenza",
       "pt": "Cinto de Poder"
     },
-    "level": 31,
-    "imageUrl": "/retro/item/10019.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 31,
     "stats": [
       { "stat": "Chance", "minStat": 21, "maxStat": 35 },
       { "stat": "Critical", "minStat": null, "maxStat": 2 },
       { "stat": "Damage", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10019.png"
   },
   {
+    "dofusID": "676",
     "name": {
       "en": "Dazzling Belt",
       "fr": "Ceinture Fulgurante",
@@ -3083,20 +3348,22 @@
       "it": "Cintura Folgorante",
       "pt": "Cinto Deslumbrante"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/10010.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 30,
     "stats": [
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10010.png"
   },
   {
+    "dofusID": "2277",
     "name": {
       "en": "Banisation Belt",
       "fr": "Ceinture Banisation",
@@ -3105,18 +3372,20 @@
       "it": "Cintura Espulsione",
       "pt": "Cinto Banisação"
     },
-    "level": 29,
-    "imageUrl": "/retro/item/10047.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 29,
     "stats": [
       { "stat": "Agility", "minStat": 11, "maxStat": 20 },
       { "stat": "Critical", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10047.png"
   },
   {
+    "dofusID": "1863",
     "name": {
       "en": "The Cruncher",
       "fr": "La Croqueuse",
@@ -3125,13 +3394,14 @@
       "it": "La Croccatrice",
       "pt": "O Moedor"
     },
-    "level": 28,
-    "imageUrl": "/retro/item/10020.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 28,
     "stats": [
       { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
       { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {
       "and": [
         { "stat": "Force", "operator": "<", "value": 40 },
@@ -3139,9 +3409,10 @@
       ]
     },
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10020.png"
   },
   {
+    "dofusID": "223",
     "name": {
       "en": "Stamina Belt",
       "fr": "Ceinture d'Endurance",
@@ -3150,18 +3421,20 @@
       "it": "Cintura di Resistenza",
       "pt": "Cinto de Resistência"
     },
-    "level": 27,
-    "imageUrl": "/retro/item/10003.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 27,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10003.png"
   },
   {
+    "dofusID": "1989",
     "name": {
       "en": "Comfleecy Belt",
       "fr": "La Mouthmou",
@@ -3170,18 +3443,20 @@
       "it": "La Muthmu",
       "pt": "Cinto Comfleecy"
     },
-    "level": 27,
-    "imageUrl": "/retro/item/10024.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 27,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 100 },
       { "stat": "Summons", "minStat": 1, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10024.png"
   },
   {
+    "dofusID": "1359",
     "name": {
       "en": "Celerity Belt",
       "fr": "Ceinture de Célérité",
@@ -3190,18 +3465,20 @@
       "it": "Cintura di Celerità",
       "pt": "Cinto de Celeridade"
     },
-    "level": 27,
-    "imageUrl": "/retro/item/10017.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 27,
     "stats": [
       { "stat": "Agility", "minStat": 16, "maxStat": 35 },
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10017.png"
   },
   {
+    "dofusID": "2378",
     "name": {
       "en": "Spicy Belt",
       "fr": "Ceinture Piquante",
@@ -3210,15 +3487,17 @@
       "it": "Cintura Pungente",
       "pt": "Cinto Picante"
     },
-    "level": 26,
-    "imageUrl": "/retro/item/10054.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 26,
     "stats": [{ "stat": "Wisdom", "minStat": 11, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10054.png"
   },
   {
+    "dofusID": "7325",
     "name": {
       "en": "Tofu Belt",
       "fr": "Ceinture du Tofu",
@@ -3227,19 +3506,21 @@
       "it": "Cintura del Tofu",
       "pt": "Cinto do Tofu"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/10089.png",
+    "itemType": "Belt",
     "setID": "50",
+    "level": 22,
     "stats": [
       { "stat": "Intelligence", "minStat": 6, "maxStat": 15 },
       { "stat": "Agility", "minStat": 6, "maxStat": 15 },
       { "stat": "Pods", "minStat": 1, "maxStat": 200 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10089.png"
   },
   {
+    "dofusID": "7335",
     "name": {
       "en": "Farmer Beltudas",
       "fr": "Ceinturemuda du Paysan",
@@ -3248,18 +3529,20 @@
       "it": "Cintermuda del Contadino",
       "pt": "Cintormudas do Fazendeiro"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/10091.png",
+    "itemType": "Belt",
     "setID": "47",
+    "level": 20,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Chance", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10091.png"
   },
   {
+    "dofusID": "6067",
     "name": {
       "en": "Bearman's Belt",
       "fr": "Ceinture de l'Homme Ours",
@@ -3268,20 +3551,22 @@
       "it": "Cintura dell'Uomo Orso",
       "pt": "Cinto do Homem Urso"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/10066.png",
+    "itemType": "Belt",
     "setID": "12",
+    "level": 20,
     "stats": [
       { "stat": "Water Resistance", "minStat": 1, "maxStat": 2 },
       { "stat": "Air Resistance", "minStat": 1, "maxStat": 2 },
       { "stat": "Fire Resistance", "minStat": 1, "maxStat": 2 },
       { "stat": "Vitality", "minStat": 9, "maxStat": 12 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10066.png"
   },
   {
+    "dofusID": "2040",
     "name": {
       "en": "Gobball Belt",
       "fr": "Ceinture du Bouftou",
@@ -3290,15 +3575,17 @@
       "it": "Cintura del Pappatutto",
       "pt": "Cinto do Papatudo"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/10029.png",
+    "itemType": "Belt",
     "setID": "1",
+    "level": 20,
     "stats": [{ "stat": "Pods", "minStat": 1, "maxStat": 500 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10029.png"
   },
   {
+    "dofusID": "1360",
     "name": {
       "en": "Pocket Belt",
       "fr": "Ceinture de Poche",
@@ -3307,18 +3594,20 @@
       "it": "Cintura con Tasche",
       "pt": "Cinto de Utilidades"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/10016.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 20,
     "stats": [
       { "stat": "Pods", "minStat": 201, "maxStat": 300 },
       { "stat": "Strength", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10016.png"
   },
   {
+    "dofusID": "6229",
     "name": {
       "en": "Boar Belt",
       "fr": "Sanglature",
@@ -3327,18 +3616,20 @@
       "it": "Sanguantura",
       "pt": "Strapcinto"
     },
-    "level": 18,
-    "imageUrl": "/retro/item/10075.png",
+    "itemType": "Belt",
     "setID": "21",
+    "level": 18,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 20 },
       { "stat": "Critical", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10075.png"
   },
   {
+    "dofusID": "479",
     "name": {
       "en": "Blo'up Belt",
       "fr": "Ceinture de Sécurité",
@@ -3347,15 +3638,17 @@
       "it": "Cintura di Sicurezza",
       "pt": "Cinto de Segurança"
     },
-    "level": 17,
-    "imageUrl": "/retro/item/10007.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 17,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 25 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10007.png"
   },
   {
+    "dofusID": "6246",
     "name": {
       "en": "Robber Belt",
       "fr": "Ceinture du Bandit",
@@ -3364,19 +3657,21 @@
       "it": "Cintura del Bandito",
       "pt": "Cinto do Bandido"
     },
-    "level": 15,
-    "imageUrl": "/retro/item/10072.png",
+    "itemType": "Belt",
     "setID": "25",
+    "level": 15,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 20 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 },
       { "stat": "Critical", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10072.png"
   },
   {
+    "dofusID": "7442",
     "name": {
       "en": "Sponge Belt",
       "fr": "Ceinture en Mousse",
@@ -3385,15 +3680,17 @@
       "it": "Cintura di Spugna",
       "pt": "Cinto de Esponja"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/10102.png",
+    "itemType": "Belt",
     "setID": "63",
+    "level": 10,
     "stats": [{ "stat": "Pods", "minStat": 1, "maxStat": 200 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10102.png"
   },
   {
+    "dofusID": "6129",
     "name": {
       "en": "Flowery Belt",
       "fr": "Ceinture Fleurie",
@@ -3402,18 +3699,20 @@
       "it": "Cintura Fiorita",
       "pt": "Cinto Florido"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/10064.png",
+    "itemType": "Belt",
     "setID": "18",
+    "level": 10,
     "stats": [
       { "stat": "Vitality", "minStat": 5, "maxStat": 6 },
       { "stat": "Intelligence", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10064.png"
   },
   {
+    "dofusID": "2371",
     "name": {
       "en": "Crab Belt",
       "fr": "Ceinture du Kwabe",
@@ -3422,15 +3721,17 @@
       "it": "Cintura del Kwabe",
       "pt": "Cinto do Kawanguejo"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/10049.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10049.png"
   },
   {
+    "dofusID": "141",
     "name": {
       "en": "[!EN] Imposante Ceinture Agilesque",
       "fr": "Imposante Ceinture Agilesque",
@@ -3439,15 +3740,17 @@
       "it": "[!IT] Imposante Ceinture Agilesque",
       "pt": "[!PT] Imposante Ceinture Agilesque"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/10008.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 8 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10008.png"
   },
   {
+    "dofusID": "137",
     "name": {
       "en": "[!EN] Imposante Ceinture Forcesque",
       "fr": "Imposante Ceinture Forcesque",
@@ -3456,15 +3759,17 @@
       "it": "[!IT] Imposante Ceinture Forcesque",
       "pt": "[!PT] Imposante Ceinture Forcesque"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/10011.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 8 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10011.png"
   },
   {
+    "dofusID": "133",
     "name": {
       "en": "[!EN] Imposante Ceinture Vitalesque",
       "fr": "Imposante Ceinture Vitalesque",
@@ -3473,15 +3778,17 @@
       "it": "[!IT] Imposante Ceinture Vitalesque",
       "pt": "[!PT] Imposante Ceinture Vitalesque"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/10009.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 8 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10009.png"
   },
   {
+    "dofusID": "6233",
     "name": {
       "en": "Arachnobelt",
       "fr": "Araknoture",
@@ -3490,15 +3797,17 @@
       "it": "Araknontura",
       "pt": "Araknocinto"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/10073.png",
+    "itemType": "Belt",
     "setID": "22",
+    "level": 6,
     "stats": [{ "stat": "Initiative", "minStat": 11, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10073.png"
   },
   {
+    "dofusID": "140",
     "name": {
       "en": "[!EN] Grande Ceinture Agilesque",
       "fr": "Grande Ceinture Agilesque",
@@ -3507,15 +3816,17 @@
       "it": "[!IT] Grande Ceinture Agilesque",
       "pt": "[!PT] Grande Ceinture Agilesque"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/10008.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 6 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10008.png"
   },
   {
+    "dofusID": "136",
     "name": {
       "en": "[!EN] Grande Ceinture Forcesque",
       "fr": "Grande Ceinture Forcesque",
@@ -3524,15 +3835,17 @@
       "it": "[!IT] Grande Ceinture Forcesque",
       "pt": "[!PT] Grande Ceinture Forcesque"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/10011.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 6 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10011.png"
   },
   {
+    "dofusID": "132",
     "name": {
       "en": "[!EN] Grande Ceinture Vitalesque",
       "fr": "Grande Ceinture Vitalesque",
@@ -3541,15 +3854,17 @@
       "it": "[!IT] Grande Ceinture Vitalesque",
       "pt": "[!PT] Grande Ceinture Vitalesque"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/10009.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 6 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10009.png"
   },
   {
+    "dofusID": "139",
     "name": {
       "en": "Nimble Belt",
       "fr": "Ceinture Agilesque",
@@ -3558,15 +3873,17 @@
       "it": "Cintura Agilesca",
       "pt": "Cinto de agilidade"
     },
-    "level": 3,
-    "imageUrl": "/retro/item/10008.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 3,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 4 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10008.png"
   },
   {
+    "dofusID": "135",
     "name": {
       "en": "Strong Belt",
       "fr": "Ceinture Forcesque",
@@ -3575,15 +3892,17 @@
       "it": "Cintura Forzesca",
       "pt": "Cinto de força"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/10011.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 4 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10011.png"
   },
   {
+    "dofusID": "131",
     "name": {
       "en": "Vital Belt",
       "fr": "Ceinture Vitalesque",
@@ -3592,15 +3911,17 @@
       "it": "Cintura Vitalesca",
       "pt": "Cinto de vitalidade"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/10009.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 4 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10009.png"
   },
   {
+    "dofusID": "7703",
     "name": {
       "en": "Muffin Belt",
       "fr": "La Spamette",
@@ -3609,15 +3930,17 @@
       "it": "La Spametta",
       "pt": "O Spameto"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/10114.png",
+    "itemType": "Belt",
     "setID": "69",
+    "level": 1,
     "stats": [{ "stat": "Damage", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10114.png"
   },
   {
+    "dofusID": "7427",
     "name": {
       "en": "Pink Piwi Belt",
       "fr": "Ceinture du Piou Rose",
@@ -3626,15 +3949,17 @@
       "it": "Cintura del Pìu Rosa",
       "pt": "Cinto do Piu Rosa"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/10101.png",
+    "itemType": "Belt",
     "setID": "70",
+    "level": 1,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10101.png"
   },
   {
+    "dofusID": "7426",
     "name": {
       "en": "Yellow Piwi Belt",
       "fr": "Ceinture du Piou Jaune",
@@ -3643,15 +3968,17 @@
       "it": "Cintura del Pìu Giallo",
       "pt": "Cinto do Piu Amarelo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/10100.png",
+    "itemType": "Belt",
     "setID": "72",
+    "level": 1,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10100.png"
   },
   {
+    "dofusID": "7425",
     "name": {
       "en": "Green Piwi Belt",
       "fr": "Ceinture du Piou Vert",
@@ -3660,15 +3987,17 @@
       "it": "Cintura del Pìu Verde",
       "pt": "Cinto do Piu Verde"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/10099.png",
+    "itemType": "Belt",
     "setID": "71",
+    "level": 1,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10099.png"
   },
   {
+    "dofusID": "7424",
     "name": {
       "en": "Purple Piwi Belt",
       "fr": "Ceinture du Piou Violet",
@@ -3677,15 +4006,17 @@
       "it": "Cintura del Pìu Viola",
       "pt": "Cinto do Piu Violeta"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/10098.png",
+    "itemType": "Belt",
     "setID": "62",
+    "level": 1,
     "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10098.png"
   },
   {
+    "dofusID": "7423",
     "name": {
       "en": "Blue Piwi Belt",
       "fr": "Ceinture du Piou Bleu",
@@ -3694,15 +4025,17 @@
       "it": "Cintura del Pìu Blu",
       "pt": "Cinto do Piu Azul"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/10097.png",
+    "itemType": "Belt",
     "setID": "61",
+    "level": 1,
     "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10097.png"
   },
   {
+    "dofusID": "7422",
     "name": {
       "en": "Red Piwi Belt",
       "fr": "Ceinture du Piou Rouge",
@@ -3711,15 +4044,17 @@
       "it": "Cintura del Pìu Rosso",
       "pt": "Cinto do Piu Vermelho"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/10096.png",
+    "itemType": "Belt",
     "setID": "60",
+    "level": 1,
     "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10096.png"
   },
   {
+    "dofusID": "7284",
     "name": {
       "en": "[!EN] Ceinture du Champion",
       "fr": "Ceinture du Champion",
@@ -3728,15 +4063,17 @@
       "it": "[!IT] Ceinture du Champion",
       "pt": "[!PT] Ceinture du Champion"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/10088.png",
+    "itemType": "Belt",
     "setID": "45",
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10088.png"
   },
   {
+    "dofusID": "587",
     "name": {
       "en": "Chance Belt",
       "fr": "Ceinture de Chance",
@@ -3745,15 +4082,17 @@
       "it": "Cintura di Fortuna",
       "pt": "Cinto de Sorte"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/10003.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10003.png"
   },
   {
+    "dofusID": "586",
     "name": {
       "en": "[!EN] Ceinture d'Agilité",
       "fr": "Ceinture d'Agilité",
@@ -3762,15 +4101,17 @@
       "it": "[!IT] Ceinture d'Agilité",
       "pt": "[!PT] Ceinture d'Agilité"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/10008.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10008.png"
   },
   {
+    "dofusID": "522",
     "name": {
       "en": "Koober's Belt",
       "fr": "Ceinture du Kobeer",
@@ -3779,15 +4120,17 @@
       "it": "Cintura del Kobeer",
       "pt": "Cinto de Koober"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/10009.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10009.png"
   },
   {
+    "dofusID": "2080",
     "name": {
       "en": "Adventurer Belt",
       "fr": "Ceinture de l'aventurier",
@@ -3796,9 +4139,9 @@
       "it": "Cintura dell'Avventuriero",
       "pt": "Cinto de Aventureiro"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/10033.png",
+    "itemType": "Belt",
     "setID": "5",
+    "level": 1,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 2 },
       { "stat": "Strength", "minStat": 1, "maxStat": 2 },
@@ -3806,11 +4149,13 @@
       { "stat": "Wisdom", "minStat": 1, "maxStat": 2 },
       { "stat": "Intelligence", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10033.png"
   },
   {
+    "dofusID": "138",
     "name": {
       "en": "[!EN] Petite Ceinture Agilesque",
       "fr": "Petite Ceinture Agilesque",
@@ -3819,15 +4164,17 @@
       "it": "[!IT] Petite Ceinture Agilesque",
       "pt": "[!PT] Petite Ceinture Agilesque"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/10008.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10008.png"
   },
   {
+    "dofusID": "134",
     "name": {
       "en": "[!EN] Petite Ceinture Forcesque",
       "fr": "Petite Ceinture Forcesque",
@@ -3836,15 +4183,17 @@
       "it": "[!IT] Petite Ceinture Forcesque",
       "pt": "[!PT] Petite Ceinture Forcesque"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/10011.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10011.png"
   },
   {
+    "dofusID": "130",
     "name": {
       "en": "[!EN] Petite Ceinture Vitalesque",
       "fr": "Petite Ceinture Vitalesque",
@@ -3853,12 +4202,13 @@
       "it": "[!IT] Petite Ceinture Vitalesque",
       "pt": "[!PT] Petite Ceinture Vitalesque"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/10009.png",
+    "itemType": "Belt",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/10009.png"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "dofusID": "7997",
     "name": {
       "en": "Kringlove",
       "fr": "Kralano",
@@ -8,9 +9,9 @@
       "it": "Kralano",
       "pt": "Kralanel"
     },
-    "level": 199,
-    "imageUrl": "/retro/item/9142.png",
+    "itemType": "Ring",
     "setID": "97",
+    "level": 199,
     "stats": [
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
       { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
@@ -24,11 +25,13 @@
       { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9142.png"
   },
   {
+    "dofusID": "8103",
     "name": {
       "en": "Head Band",
       "fr": "Annolamour",
@@ -37,9 +40,9 @@
       "it": "Anellamore",
       "pt": "Faixa Principal"
     },
-    "level": 189,
-    "imageUrl": "/retro/item/9145.png",
+    "itemType": "Ring",
     "setID": "97",
+    "level": 189,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
       { "stat": "Chance", "minStat": 31, "maxStat": 50 },
@@ -52,11 +55,13 @@
       { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9145.png"
   },
   {
+    "dofusID": "8231",
     "name": {
       "en": "Colette's Ring",
       "fr": "Anneau Colerette",
@@ -65,9 +70,9 @@
       "it": "Anello Colerina",
       "pt": "Anel Colette"
     },
-    "level": 188,
-    "imageUrl": "/retro/item/9146.png",
+    "itemType": "Ring",
     "setID": "119",
+    "level": 188,
     "stats": [
       { "stat": "Agility", "minStat": 31, "maxStat": 50 },
       { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
@@ -81,11 +86,13 @@
       { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9146.png"
   },
   {
+    "dofusID": "8233",
     "name": {
       "en": "Fungal Ring",
       "fr": "Alliance Boletée",
@@ -94,9 +101,9 @@
       "it": "Fede Boletata",
       "pt": "Aliança Boletada"
     },
-    "level": 186,
-    "imageUrl": "/retro/item/9148.png",
+    "itemType": "Ring",
     "setID": "107",
+    "level": 186,
     "stats": [
       { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
@@ -109,11 +116,13 @@
       { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9148.png"
   },
   {
+    "dofusID": "8232",
     "name": {
       "en": "Tash Ring",
       "fr": "Anneau Chevelu",
@@ -122,9 +131,9 @@
       "it": "Anello Capelluto",
       "pt": "Anel Cabeludo"
     },
-    "level": 180,
-    "imageUrl": "/retro/item/9147.png",
+    "itemType": "Ring",
     "setID": "121",
+    "level": 180,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
@@ -137,11 +146,13 @@
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9147.png"
   },
   {
+    "dofusID": "8278",
     "name": {
       "en": "Nose Ring",
       "fr": "Anneau Bliteré",
@@ -150,9 +161,9 @@
       "it": "Anello Bliterato",
       "pt": "Anel de Nariz"
     },
-    "level": 179,
-    "imageUrl": "/retro/item/9159.png",
+    "itemType": "Ring",
     "setID": "109",
+    "level": 179,
     "stats": [
       { "stat": "Chance", "minStat": 26, "maxStat": 40 },
       { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
@@ -165,11 +176,13 @@
       { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9159.png"
   },
   {
+    "dofusID": "8277",
     "name": {
       "en": "Pot-Bellied Bracelet",
       "fr": "Bracelet Ventré",
@@ -178,9 +191,9 @@
       "it": "Bracciale Sventrato",
       "pt": "Bracelete Espesso"
     },
-    "level": 179,
-    "imageUrl": "/retro/item/9158.png",
+    "itemType": "Ring",
     "setID": "108",
+    "level": 179,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 40 },
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
@@ -193,11 +206,13 @@
       { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9158.png"
   },
   {
+    "dofusID": "7980",
     "name": {
       "en": "Mopy King Sovereign Seal",
       "fr": "Sceau Souverain du Roissingue",
@@ -206,9 +221,9 @@
       "it": "Sigillo Sovrano del Re Cencio",
       "pt": "Selo soberano do Rei Nojoso"
     },
-    "level": 158,
-    "imageUrl": "/retro/item/9138.png",
+    "itemType": "Ring",
     "setID": "78",
+    "level": 158,
     "stats": [
       { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
@@ -221,11 +236,13 @@
       { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9138.png"
   },
   {
+    "dofusID": "7454",
     "name": {
       "en": "Minotot Bracelet",
       "fr": "Bracelet du Minotot",
@@ -234,9 +251,9 @@
       "it": "Bracciale del Minotot",
       "pt": "Bracelete de Minotot"
     },
-    "level": 151,
-    "imageUrl": "/retro/item/9116.png",
+    "itemType": "Ring",
     "setID": "57",
+    "level": 151,
     "stats": [
       { "stat": "Chance", "minStat": 26, "maxStat": 40 },
       { "stat": "Vitality", "minStat": 101, "maxStat": 130 },
@@ -250,11 +267,13 @@
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "Initiative", "minStat": 101, "maxStat": 200 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9116.png"
   },
   {
+    "dofusID": "7854",
     "name": {
       "en": "Ring Neinwonwon",
       "fr": "Anneau Pitale",
@@ -263,15 +282,17 @@
       "it": "Anello Spedale",
       "pt": "Anel Neinwonwon"
     },
-    "level": 150,
-    "imageUrl": "/retro/item/9137.png",
+    "itemType": "Ring",
     "setID": "87",
+    "level": 150,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9137.png"
   },
   {
+    "dofusID": "7853",
     "name": {
       "en": "Hai Ring",
       "fr": "Anneau Pwal",
@@ -280,15 +301,17 @@
       "it": "Anello Pelo",
       "pt": "Anel Relva"
     },
-    "level": 150,
-    "imageUrl": "/retro/item/9136.png",
+    "itemType": "Ring",
     "setID": "90",
+    "level": 150,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9136.png"
   },
   {
+    "dofusID": "7852",
     "name": {
       "en": "Subma Ring",
       "fr": "Anneau Tilus",
@@ -297,15 +320,17 @@
       "it": "Anello Autilus",
       "pt": "Anel Subma"
     },
-    "level": 150,
-    "imageUrl": "/retro/item/9135.png",
+    "itemType": "Ring",
     "setID": "86",
+    "level": 150,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9135.png"
   },
   {
+    "dofusID": "7851",
     "name": {
       "en": "Elkebi Ring",
       "fr": "Anneau Hell",
@@ -314,15 +339,17 @@
       "it": "Anello Hell",
       "pt": "Anel Elkebi"
     },
-    "level": 150,
-    "imageUrl": "/retro/item/9134.png",
+    "itemType": "Ring",
     "setID": "89",
+    "level": 150,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9134.png"
   },
   {
+    "dofusID": "7850",
     "name": {
       "en": "Ear Ring",
       "fr": "Anneau Raille",
@@ -331,15 +358,17 @@
       "it": "Anello Beffa",
       "pt": "Anel Orelha"
     },
-    "level": 150,
-    "imageUrl": "/retro/item/9133.png",
+    "itemType": "Ring",
     "setID": "92",
+    "level": 150,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9133.png"
   },
   {
+    "dofusID": "7849",
     "name": {
       "en": "Chee Ring",
       "fr": "Anneau Zamour",
@@ -348,15 +377,17 @@
       "it": "Anello Z'Amore",
       "pt": "Anel Chee"
     },
-    "level": 150,
-    "imageUrl": "/retro/item/9132.png",
+    "itemType": "Ring",
     "setID": "83",
+    "level": 150,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9132.png"
   },
   {
+    "dofusID": "7848",
     "name": {
       "en": "Rememb Ring",
       "fr": "Anneau Stalgik",
@@ -365,15 +396,17 @@
       "it": "Anello Stalgico",
       "pt": "Anel Lemb"
     },
-    "level": 150,
-    "imageUrl": "/retro/item/9131.png",
+    "itemType": "Ring",
     "setID": "85",
+    "level": 150,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9131.png"
   },
   {
+    "dofusID": "7847",
     "name": {
       "en": "Memo Ring",
       "fr": "Anneau Tassion",
@@ -382,15 +415,17 @@
       "it": "Anello Nota",
       "pt": "Memo Anel"
     },
-    "level": 150,
-    "imageUrl": "/retro/item/9130.png",
+    "itemType": "Ring",
     "setID": "91",
+    "level": 150,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9130.png"
   },
   {
+    "dofusID": "7846",
     "name": {
       "en": "Ring Bellious",
       "fr": "Bague Harre",
@@ -399,15 +434,17 @@
       "it": "Anello Rissa",
       "pt": "Anel Bellious"
     },
-    "level": 150,
-    "imageUrl": "/retro/item/9129.png",
+    "itemType": "Ring",
     "setID": "81",
+    "level": 150,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9129.png"
   },
   {
+    "dofusID": "7845",
     "name": {
       "en": "Lion Ring",
       "fr": "Bague Héra",
@@ -416,15 +453,17 @@
       "it": "Anello Zoo",
       "pt": "Anel Leão"
     },
-    "level": 150,
-    "imageUrl": "/retro/item/9128.png",
+    "itemType": "Ring",
     "setID": "84",
+    "level": 150,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9128.png"
   },
   {
+    "dofusID": "7844",
     "name": {
       "en": "Blaber Ring",
       "fr": "Bague Houx",
@@ -433,15 +472,17 @@
       "it": "Anello Bla",
       "pt": "Anel Blaber"
     },
-    "level": 150,
-    "imageUrl": "/retro/item/9127.png",
+    "itemType": "Ring",
     "setID": "88",
+    "level": 150,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9127.png"
   },
   {
+    "dofusID": "7843",
     "name": {
       "en": "Honoh Ring",
       "fr": "Anneau Bhli",
@@ -450,15 +491,17 @@
       "it": "Anello Bhli",
       "pt": "Anel de Honra"
     },
-    "level": 150,
-    "imageUrl": "/retro/item/9126.png",
+    "itemType": "Ring",
     "setID": "82",
+    "level": 150,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9126.png"
   },
   {
+    "dofusID": "7641",
     "name": {
       "en": "Soft Oak Ring",
       "fr": "Anneau du Chêne Mou",
@@ -467,9 +510,9 @@
       "it": "Anello della Quercia Molle",
       "pt": "Anel do Carvalho Mole"
     },
-    "level": 139,
-    "imageUrl": "/retro/item/9124.png",
+    "itemType": "Ring",
     "setID": "66",
+    "level": 139,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 30 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
@@ -482,11 +525,13 @@
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9124.png"
   },
   {
+    "dofusID": "7631",
     "name": {
       "en": "Lord of the Rats' Ceremonial Ring",
       "fr": "Anneau Cérémonial du Seigneur des Rats",
@@ -495,9 +540,9 @@
       "it": "Anello Cerimoniale del Signore dei Ratti",
       "pt": "Anel Cerimonial do Senhor dos Ratos"
     },
-    "level": 131,
-    "imageUrl": "/retro/item/9122.png",
+    "itemType": "Ring",
     "setID": "64",
+    "level": 131,
     "stats": [
       { "stat": "Vitality", "minStat": 101, "maxStat": 130 },
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
@@ -509,11 +554,13 @@
       { "stat": "Earth Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9122.png"
   },
   {
+    "dofusID": "7473",
     "name": {
       "en": "Dreggon Ring",
       "fr": "Anneau du Dragoeuf",
@@ -522,9 +569,9 @@
       "it": "Anello del Draguovo",
       "pt": "Anel do Dragovo"
     },
-    "level": 128,
-    "imageUrl": "/retro/item/9114.png",
+    "itemType": "Ring",
     "setID": "56",
+    "level": 128,
     "stats": [
       { "stat": "Power", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
@@ -534,11 +581,13 @@
       { "stat": "Heals", "minStat": 4, "maxStat": 6 },
       { "stat": "Damage", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9114.png"
   },
   {
+    "dofusID": "7447",
     "name": {
       "en": "Moowolf Ring",
       "fr": "Anneau du Meulou",
@@ -547,9 +596,9 @@
       "it": "Anello del Muulupo",
       "pt": "Anel do Mulobo"
     },
-    "level": 126,
-    "imageUrl": "/retro/item/9113.png",
+    "itemType": "Ring",
     "setID": "55",
+    "level": 126,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 40 },
       { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
@@ -561,11 +610,13 @@
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9113.png"
   },
   {
+    "dofusID": "7986",
     "name": {
       "en": "Snailmet Ring",
       "fr": "Anneau Skargo",
@@ -574,9 +625,9 @@
       "it": "Anello Skargo",
       "pt": "Krakanel"
     },
-    "level": 120,
-    "imageUrl": "/retro/item/9140.png",
+    "itemType": "Ring",
     "setID": "96",
+    "level": 120,
     "stats": [
       { "stat": "Chance", "minStat": 26, "maxStat": 35 },
       { "stat": "Vitality", "minStat": 81, "maxStat": 100 },
@@ -586,11 +637,13 @@
       { "stat": "Water Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9140.png"
   },
   {
+    "dofusID": "6309",
     "name": {
       "en": "Elya Wood's Wedding Ring",
       "fr": "Alliance d'Elya Wood",
@@ -599,9 +652,9 @@
       "it": "Fede di Elya Wood",
       "pt": "Aliança de Elya Wood"
     },
-    "level": 120,
-    "imageUrl": "/retro/item/9084.png",
+    "itemType": "Ring",
     "setID": "39",
+    "level": 120,
     "stats": [
       { "stat": "Vitality", "minStat": 61, "maxStat": 100 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
@@ -612,11 +665,13 @@
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9084.png"
   },
   {
+    "dofusID": "7637",
     "name": {
       "en": "Ancestral Ring",
       "fr": "Anneau Ancestral",
@@ -625,9 +680,9 @@
       "it": "Anello Ancestrale",
       "pt": "Anel Ancestral"
     },
-    "level": 113,
-    "imageUrl": "/retro/item/9123.png",
+    "itemType": "Ring",
     "setID": "65",
+    "level": 113,
     "stats": [
       { "stat": "Chance", "minStat": 26, "maxStat": 40 },
       { "stat": "Strength", "minStat": 21, "maxStat": 30 },
@@ -637,11 +692,13 @@
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9123.png"
   },
   {
+    "dofusID": "7455",
     "name": {
       "en": "Dragon Pig Ring",
       "fr": "Anneau du Dragon Cochon",
@@ -650,9 +707,9 @@
       "it": "Anello del Drago Maiale",
       "pt": "Anel do Dragão-Porco"
     },
-    "level": 108,
-    "imageUrl": "/retro/item/9115.png",
+    "itemType": "Ring",
     "setID": "58",
+    "level": 108,
     "stats": [
       { "stat": "Chance", "minStat": 21, "maxStat": 35 },
       { "stat": "Vitality", "minStat": 51, "maxStat": 80 },
@@ -665,11 +722,13 @@
       { "stat": "Damage", "minStat": 3, "maxStat": 5 },
       { "stat": "Strength", "minStat": 21, "maxStat": 35 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9115.png"
   },
   {
+    "dofusID": "7453",
     "name": {
       "en": "Minotoror Ring",
       "fr": "Anneau du Minotoror",
@@ -678,9 +737,9 @@
       "it": "Anello del Minotoror",
       "pt": "Anel do Minotoror"
     },
-    "level": 105,
-    "imageUrl": "/retro/item/9117.png",
+    "itemType": "Ring",
     "setID": "54",
+    "level": 105,
     "stats": [
       { "stat": "Vitality", "minStat": 61, "maxStat": 100 },
       { "stat": "Prospecting", "minStat": 7, "maxStat": 10 },
@@ -690,11 +749,13 @@
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
       { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9117.png"
   },
   {
+    "dofusID": "7625",
     "name": {
       "en": "White Rat Gauntlet",
       "fr": "Gantelet du Rat Blanc",
@@ -703,9 +764,9 @@
       "it": "Guanto del Ratto Bianco",
       "pt": "Luva do Rato Branco"
     },
-    "level": 101,
-    "imageUrl": "/retro/item/9121.png",
+    "itemType": "Ring",
     "setID": "67",
+    "level": 101,
     "stats": [
       { "stat": "Agility", "minStat": 21, "maxStat": 30 },
       { "stat": "Strength", "minStat": 11, "maxStat": 20 },
@@ -718,11 +779,13 @@
       { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "Earth Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9121.png"
   },
   {
+    "dofusID": "6138",
     "name": {
       "en": "Bwork Chief Bracelet",
       "fr": "Bracelet du Chef Bwork",
@@ -731,9 +794,9 @@
       "it": "Bracciale del Capo Bwork",
       "pt": "Bracelete do Chefe Bwork"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/9058.png",
+    "itemType": "Ring",
     "setID": "19",
+    "level": 100,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 40 },
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
@@ -749,11 +812,13 @@
       { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9058.png"
   },
   {
+    "dofusID": "7619",
     "name": {
       "en": "Black Rat Ring",
       "fr": "Anneau du Rat Noir",
@@ -762,9 +827,9 @@
       "it": "Anello del Ratto Nero",
       "pt": "Anel do Rato Negro"
     },
-    "level": 98,
-    "imageUrl": "/retro/item/9120.png",
+    "itemType": "Ring",
     "setID": "68",
+    "level": 98,
     "stats": [
       { "stat": "Agility", "minStat": 21, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
@@ -776,11 +841,13 @@
       { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
       { "stat": "Prospecting", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9120.png"
   },
   {
+    "dofusID": "8248",
     "name": {
       "en": "Royal Rainbow Blop Ring",
       "fr": "Blopanneau Multicolore Royal",
@@ -789,9 +856,9 @@
       "it": "Blopanello Multicolore Reale",
       "pt": "Blopanel Arco-Íris Real"
     },
-    "level": 90,
-    "imageUrl": "/retro/item/9157.png",
+    "itemType": "Ring",
     "setID": "106",
+    "level": 90,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -800,11 +867,13 @@
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "% Air Resistance", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9157.png"
   },
   {
+    "dofusID": "6409",
     "name": {
       "en": "Ugle Ring",
       "fr": "Anneau K'Tuelle",
@@ -813,9 +882,9 @@
       "it": "Anello Ak'Tuale",
       "pt": "Anel Ugle"
     },
-    "level": 90,
-    "imageUrl": "/retro/item/9094.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 90,
     "stats": [
       { "stat": "Vitality", "minStat": 51, "maxStat": 100 },
       { "stat": "Agility", "minStat": 21, "maxStat": 35 },
@@ -825,11 +894,13 @@
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9094.png"
   },
   {
+    "dofusID": "5848",
     "name": {
       "en": "Farle's Wedding Ring",
       "fr": "Alliance de Farle",
@@ -838,9 +909,9 @@
       "it": "Fede di Farle",
       "pt": "Aliança de Farle"
     },
-    "level": 87,
-    "imageUrl": "/retro/item/9055.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 87,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
@@ -850,11 +921,13 @@
       { "stat": "Damage", "minStat": 3, "maxStat": 4 },
       { "stat": "Power", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9055.png"
   },
   {
+    "dofusID": "5884",
     "name": {
       "en": "Gogorified Miner Ring",
       "fr": "Anneau du Mineur Gogorifiant",
@@ -863,9 +936,9 @@
       "it": "Anello del Minatore Gorgorificato",
       "pt": "Anel do Mineiro Gogorificante"
     },
-    "level": 84,
-    "imageUrl": "/retro/item/9040.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 84,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -876,11 +949,13 @@
       { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9040.png"
   },
   {
+    "dofusID": "6532",
     "name": {
       "en": "Feudala Wedding Ring",
       "fr": "Alliance Feudala",
@@ -889,9 +964,9 @@
       "it": "Fede Focodala",
       "pt": "Aliança Fogodala"
     },
-    "level": 81,
-    "imageUrl": "/retro/item/9082.png",
+    "itemType": "Ring",
     "setID": "37",
+    "level": 81,
     "stats": [
       { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
@@ -899,11 +974,13 @@
       { "stat": "Heals", "minStat": 4, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9082.png"
   },
   {
+    "dofusID": "8229",
     "name": {
       "en": "Royal Indigo Blop Ring",
       "fr": "Blopanneau Indigo Royal",
@@ -912,9 +989,9 @@
       "it": "Blopanello Indaco Reale",
       "pt": "Blopanel Índigo Real"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/9156.png",
+    "itemType": "Ring",
     "setID": "105",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
@@ -923,11 +1000,13 @@
       { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9156.png"
   },
   {
+    "dofusID": "8228",
     "name": {
       "en": "Royal Coco Blop Ring",
       "fr": "Blopanneau Coco Royal",
@@ -936,9 +1015,9 @@
       "it": "Blopanello Cocco Reale",
       "pt": "Blopanel Coco Real"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/9155.png",
+    "itemType": "Ring",
     "setID": "104",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
@@ -947,11 +1026,13 @@
       { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9155.png"
   },
   {
+    "dofusID": "8227",
     "name": {
       "en": "Royal Pippin Blop Ring",
       "fr": "Blopanneau Reinette Royal",
@@ -960,9 +1041,9 @@
       "it": "Blopanello Reginetta Reale",
       "pt": "Blopanel Maçã Real"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/9154.png",
+    "itemType": "Ring",
     "setID": "103",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
@@ -971,11 +1052,13 @@
       { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9154.png"
   },
   {
+    "dofusID": "8226",
     "name": {
       "en": "Royal Morello Cherry Blop Ring",
       "fr": "Blopanneau Griotte Royal",
@@ -984,9 +1067,9 @@
       "it": "Blopanello Griotta Reale",
       "pt": "Blopanel Cereja Real"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/9153.png",
+    "itemType": "Ring",
     "setID": "102",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
@@ -995,11 +1078,13 @@
       { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9153.png"
   },
   {
+    "dofusID": "7483",
     "name": {
       "en": "Shika's Magic Bracelet",
       "fr": "Bracelet Magique de Shika",
@@ -1008,9 +1093,9 @@
       "it": "Bracciale Magico di Shika",
       "pt": "Bracelete mágico de Shika"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/9118.png",
+    "itemType": "Ring",
     "setID": "53",
+    "level": 80,
     "stats": [
       { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 36, "maxStat": 50 },
@@ -1021,11 +1106,13 @@
       { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9118.png"
   },
   {
+    "dofusID": "7360",
     "name": {
       "en": "Legendary Cracklering",
       "fr": "Craquanneau Légendaire",
@@ -1034,9 +1121,9 @@
       "it": "Croccanello Leggendario",
       "pt": "Smaganel Legendário"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/9105.png",
+    "itemType": "Ring",
     "setID": "52",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
@@ -1045,11 +1132,13 @@
       { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9105.png"
   },
   {
+    "dofusID": "6102",
     "name": {
       "en": "Farle's Magic Bracelet",
       "fr": "Bracelet Magique de Farle",
@@ -1058,9 +1147,9 @@
       "it": "Bracciale Magico di Farle",
       "pt": "Bracelete mágico de Farle"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/9061.png",
+    "itemType": "Ring",
     "setID": "17",
+    "level": 80,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 36, "maxStat": 50 },
@@ -1071,11 +1160,13 @@
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9061.png"
   },
   {
+    "dofusID": "5844",
     "name": {
       "en": "Loopine's Ring",
       "fr": "Anneau de Loopine",
@@ -1084,9 +1175,9 @@
       "it": "Anello di Loopin",
       "pt": "Anel de Loopino"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/9052.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Chance", "minStat": 21, "maxStat": 30 },
@@ -1097,11 +1188,13 @@
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 3 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9052.png"
   },
   {
+    "dofusID": "6531",
     "name": {
       "en": "Terrdala Wedding Ring",
       "fr": "Alliance Terrdala",
@@ -1110,9 +1203,9 @@
       "it": "Fede Terradala",
       "pt": "Aliança Terradala"
     },
-    "level": 77,
-    "imageUrl": "/retro/item/9081.png",
+    "itemType": "Ring",
     "setID": "36",
+    "level": 77,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -1120,11 +1213,13 @@
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9081.png"
   },
   {
+    "dofusID": "6414",
     "name": {
       "en": "Ab'ho Ring",
       "fr": "Anneau Bsène",
@@ -1133,9 +1228,9 @@
       "it": "Anello Bsceno",
       "pt": "Anel Obscuro"
     },
-    "level": 70,
-    "imageUrl": "/retro/item/9095.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 70,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Heals", "minStat": 4, "maxStat": 5 },
@@ -1144,11 +1239,13 @@
       { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 2 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9095.png"
   },
   {
+    "dofusID": "6308",
     "name": {
       "en": "Conno Ring",
       "fr": "Anneau Fioutioure",
@@ -1157,20 +1254,22 @@
       "it": "Anello Fiuturo",
       "pt": "Anel de Fioutioure"
     },
-    "level": 70,
-    "imageUrl": "/retro/item/9079.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 70,
     "stats": [
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
       { "stat": "Agility", "minStat": 21, "maxStat": 30 },
       { "stat": "Heals", "minStat": 6, "maxStat": 8 },
       { "stat": "Initiative", "minStat": null, "maxStat": 150 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9079.png"
   },
   {
+    "dofusID": "6152",
     "name": {
       "en": "Crocodyl Chief Bracelet",
       "fr": "Bracelet du Chef Crocodaille",
@@ -1179,9 +1278,9 @@
       "it": "Bracciale del Capo Coccodrail",
       "pt": "Bracelete do Chefe Crocodyl"
     },
-    "level": 70,
-    "imageUrl": "/retro/item/9059.png",
+    "itemType": "Ring",
     "setID": "20",
+    "level": 70,
     "stats": [
       { "stat": "Agility", "minStat": 21, "maxStat": 30 },
       { "stat": "Chance", "minStat": 21, "maxStat": 30 },
@@ -1190,11 +1289,13 @@
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9059.png"
   },
   {
+    "dofusID": "5846",
     "name": {
       "en": "Ano Neemous Ring",
       "fr": "Anneau Nime",
@@ -1203,9 +1304,9 @@
       "it": "Anello Nimo",
       "pt": "Anel de Ano Nimos"
     },
-    "level": 70,
-    "imageUrl": "/retro/item/9053.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 70,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
@@ -1219,11 +1320,13 @@
       { "stat": "Earth Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9053.png"
   },
   {
+    "dofusID": "7999",
     "name": {
       "en": "Polished Ring",
       "fr": "Anneau Poli",
@@ -1232,9 +1335,9 @@
       "it": "Anello Levigato",
       "pt": "Anel Polido"
     },
-    "level": 66,
-    "imageUrl": "/retro/item/9143.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 66,
     "stats": [
       { "stat": "Strength", "minStat": 11, "maxStat": 15 },
       { "stat": "Vitality", "minStat": 11, "maxStat": 25 },
@@ -1246,11 +1349,13 @@
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": 141, "maxStat": 170 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9143.png"
   },
   {
+    "dofusID": "7981",
     "name": {
       "en": "Coral Ring",
       "fr": "Alliance de Corail",
@@ -1259,9 +1364,9 @@
       "it": "Fede di Corallo",
       "pt": "Aliança de Coral"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/9139.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Strength", "minStat": 11, "maxStat": 20 },
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
@@ -1271,11 +1376,13 @@
       { "stat": "Water Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9139.png"
   },
   {
+    "dofusID": "2072",
     "name": {
       "en": "Gelano",
       "fr": "Gelano",
@@ -1284,15 +1391,17 @@
       "it": "Gelanello",
       "pt": "Gelanel"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/9047.png",
+    "itemType": "Ring",
     "setID": "6",
+    "level": 60,
     "stats": [{ "stat": "AP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9047.png"
   },
   {
+    "dofusID": "6407",
     "name": {
       "en": "Omerta Ring",
       "fr": "Anneau Merta",
@@ -1301,9 +1410,9 @@
       "it": "Anello Mertà",
       "pt": "Anel de Merta"
     },
-    "level": 59,
-    "imageUrl": "/retro/item/9091.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 59,
     "stats": [
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
@@ -1312,11 +1421,13 @@
       { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
       { "stat": "Water Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9091.png"
   },
   {
+    "dofusID": "5847",
     "name": {
       "en": "Young Vald's Ring",
       "fr": "Anneau du Jeune Vald",
@@ -1325,9 +1436,9 @@
       "it": "Anello del Giovane Vald",
       "pt": "Anel do Jovem Vald"
     },
-    "level": 59,
-    "imageUrl": "/retro/item/9054.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 59,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
@@ -1338,11 +1449,13 @@
       { "stat": "% Fire Resistance", "minStat": 2, "maxStat": 3 },
       { "stat": "% Water Resistance", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9054.png"
   },
   {
+    "dofusID": "1183",
     "name": {
       "en": "The Enutrofion",
       "fr": "L'Enutrofion",
@@ -1351,18 +1464,20 @@
       "it": "L'Anutrofion",
       "pt": "O Enutrofion"
     },
-    "level": 59,
-    "imageUrl": "/retro/item/9039.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 59,
     "stats": [
       { "stat": "Chance", "minStat": 11, "maxStat": 20 },
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9039.png"
   },
   {
+    "dofusID": "6410",
     "name": {
       "en": "Nonsenz Ring",
       "fr": "Anneau Ha",
@@ -1371,9 +1486,9 @@
       "it": "Anello Ha",
       "pt": "Anél Nonsenz"
     },
-    "level": 58,
-    "imageUrl": "/retro/item/9085.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 58,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
@@ -1381,11 +1496,13 @@
       { "stat": "Damage", "minStat": 4, "maxStat": 5 },
       { "stat": "Power (traps)", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9085.png"
   },
   {
+    "dofusID": "6533",
     "name": {
       "en": "Aerdala Wedding Ring",
       "fr": "Alliance Aerdala",
@@ -1394,20 +1511,22 @@
       "it": "Fede Erdala",
       "pt": "Aliança Ardala"
     },
-    "level": 57,
-    "imageUrl": "/retro/item/9083.png",
+    "itemType": "Ring",
     "setID": "35",
+    "level": 57,
     "stats": [
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 },
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9083.png"
   },
   {
+    "dofusID": "6420",
     "name": {
       "en": "Pota Ring",
       "fr": "Anneau Piaume",
@@ -1416,19 +1535,21 @@
       "it": "Anello Oppio",
       "pt": "Anel Opiom"
     },
-    "level": 57,
-    "imageUrl": "/retro/item/9090.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 57,
     "stats": [
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 3, "maxStat": 4 },
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9090.png"
   },
   {
+    "dofusID": "6624",
     "name": {
       "en": "Kitsou Ring",
       "fr": "Anneau du Kitsou",
@@ -1437,20 +1558,22 @@
       "it": "Anello del Kitsù",
       "pt": "Anel do Kitsu"
     },
-    "level": 55,
-    "imageUrl": "/retro/item/9093.png",
+    "itemType": "Ring",
     "setID": "41",
+    "level": 55,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 50 },
       { "stat": "Air Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "Water Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9093.png"
   },
   {
+    "dofusID": "9389",
     "name": {
       "en": "Klume's Ring",
       "fr": "Anneau de Klüme",
@@ -1459,19 +1582,21 @@
       "it": "Anello di Cudine",
       "pt": "Anel de Klume"
     },
-    "level": 54,
-    "imageUrl": "/retro/item/9183.png",
+    "itemType": "Ring",
     "setID": "153",
+    "level": 54,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9183.png"
   },
   {
+    "dofusID": "6417",
     "name": {
       "en": "Okaringa",
       "fr": "Anneau Karina",
@@ -1480,9 +1605,9 @@
       "it": "Anello Karina",
       "pt": "OkaRinga"
     },
-    "level": 54,
-    "imageUrl": "/retro/item/9089.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 54,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
@@ -1490,11 +1615,13 @@
       { "stat": "% Air Resistance", "minStat": 2, "maxStat": 3 },
       { "stat": "% Earth Resistance", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9089.png"
   },
   {
+    "dofusID": "7226",
     "name": {
       "en": "Koalak Ring",
       "fr": "Anneau du Koalak",
@@ -1503,20 +1630,22 @@
       "it": "Anello del Koalak",
       "pt": "Anel do Koalak"
     },
-    "level": 53,
-    "imageUrl": "/retro/item/9099.png",
+    "itemType": "Ring",
     "setID": "46",
+    "level": 53,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9099.png"
   },
   {
+    "dofusID": "6408",
     "name": {
       "en": "Ostarr Ring",
       "fr": "Alliance Ethnique",
@@ -1525,9 +1654,9 @@
       "it": "Fede Etnica",
       "pt": "Aliança Étnica"
     },
-    "level": 53,
-    "imageUrl": "/retro/item/9092.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 53,
     "stats": [
       { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
       { "stat": "Chance", "minStat": 21, "maxStat": 35 },
@@ -1535,11 +1664,13 @@
       { "stat": "Fire Resistance", "minStat": 3, "maxStat": 4 },
       { "stat": "Air Resistance", "minStat": 3, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9092.png"
   },
   {
+    "dofusID": "9390",
     "name": {
       "en": "Kloug's Ring",
       "fr": "Anneau de Kloug",
@@ -1548,20 +1679,22 @@
       "it": "Anello di Kloug",
       "pt": "Anel de Napizram"
     },
-    "level": 51,
-    "imageUrl": "/retro/item/9184.png",
+    "itemType": "Ring",
     "setID": "154",
+    "level": 51,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Chance", "minStat": 16, "maxStat": 20 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Power", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9184.png"
   },
   {
+    "dofusID": "9233",
     "name": {
       "en": "Haks Or Ring",
       "fr": "Anneau du Roks Or",
@@ -1570,19 +1703,21 @@
       "it": "Anello del Roks Or",
       "pt": "Anel do Roksor"
     },
-    "level": 51,
-    "imageUrl": "/retro/item/9182.png",
+    "itemType": "Ring",
     "setID": "151",
+    "level": 51,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
       { "stat": "Heals", "minStat": 1, "maxStat": 2 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9182.png"
   },
   {
+    "dofusID": "6276",
     "name": {
       "en": "Boowolf Ring",
       "fr": "Anneau du Mulou",
@@ -1591,9 +1726,9 @@
       "it": "Anello del Buulupo",
       "pt": "Anel do Milobo"
     },
-    "level": 51,
-    "imageUrl": "/retro/item/9103.png",
+    "itemType": "Ring",
     "setID": "32",
+    "level": 51,
     "stats": [
       { "stat": "Strength", "minStat": 1, "maxStat": 25 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
@@ -1601,11 +1736,13 @@
       { "stat": "Prospecting", "minStat": 1, "maxStat": 10 },
       { "stat": "Fire Resistance", "minStat": 1, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9103.png"
   },
   {
+    "dofusID": "2585",
     "name": {
       "en": "Tribal Ring",
       "fr": "Anneau Tribal",
@@ -1614,9 +1751,9 @@
       "it": "Anello Tribale",
       "pt": "Anel tribal"
     },
-    "level": 51,
-    "imageUrl": "/retro/item/9049.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 51,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 15 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 15 },
@@ -1625,11 +1762,13 @@
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": 101, "maxStat": 150 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9049.png"
   },
   {
+    "dofusID": "8225",
     "name": {
       "en": "Indigo Blop Ring",
       "fr": "Blopanneau Indigo",
@@ -1638,20 +1777,22 @@
       "it": "Blopanello Indaco",
       "pt": "Blopanel Índigo"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/9152.png",
+    "itemType": "Ring",
     "setID": "101",
+    "level": 50,
     "stats": [
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 },
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9152.png"
   },
   {
+    "dofusID": "8224",
     "name": {
       "en": "Coco Blop Ring",
       "fr": "Blopanneau Coco",
@@ -1660,20 +1801,22 @@
       "it": "Blopanello Cocco",
       "pt": "Blopanel Coco"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/9151.png",
+    "itemType": "Ring",
     "setID": "100",
+    "level": 50,
     "stats": [
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 },
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9151.png"
   },
   {
+    "dofusID": "8223",
     "name": {
       "en": "Pippin Blop Ring",
       "fr": "Blopanneau Reinette",
@@ -1682,20 +1825,22 @@
       "it": "Blopanello Reginetta",
       "pt": "Blopanel Maçã"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/9150.png",
+    "itemType": "Ring",
     "setID": "99",
+    "level": 50,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 },
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9150.png"
   },
   {
+    "dofusID": "8222",
     "name": {
       "en": "Morello Cherry Blop Ring",
       "fr": "Blopanneau Griotte",
@@ -1704,20 +1849,22 @@
       "it": "Blopanello Griotta",
       "pt": "Blopanel Cereja"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/9149.png",
+    "itemType": "Ring",
     "setID": "98",
+    "level": 50,
     "stats": [
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 2, "maxStat": 4 },
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9149.png"
   },
   {
+    "dofusID": "6830",
     "name": {
       "en": "Turkoring",
       "fr": "Anodindo",
@@ -1726,9 +1873,9 @@
       "it": "Anocchino",
       "pt": "Turkoanel"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/9097.png",
+    "itemType": "Ring",
     "setID": "42",
+    "level": 50,
     "stats": [
       { "stat": "Intelligence", "minStat": 1, "maxStat": 25 },
       { "stat": "Chance", "minStat": 1, "maxStat": 25 },
@@ -1736,11 +1883,13 @@
       { "stat": "Strength", "minStat": 1, "maxStat": 25 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9097.png"
   },
   {
+    "dofusID": "6412",
     "name": {
       "en": "Nozokomial Ring",
       "fr": "Anneau Zocomial",
@@ -1749,9 +1898,9 @@
       "it": "Anello Nozocomial",
       "pt": "Anel Nozokomial"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/9087.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 },
@@ -1759,11 +1908,13 @@
       { "stat": "Air Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "Water Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9087.png"
   },
   {
+    "dofusID": "6421",
     "name": {
       "en": "O-Ring Ami",
       "fr": "Anneau Rigami",
@@ -1772,9 +1923,9 @@
       "it": "Anello Rigami",
       "pt": "O’ Anel Ami"
     },
-    "level": 49,
-    "imageUrl": "/retro/item/9096.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 49,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
       { "stat": "Fire Resistance", "minStat": 3, "maxStat": 5 },
@@ -1782,11 +1933,13 @@
       { "stat": "Water Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Earth Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9096.png"
   },
   {
+    "dofusID": "7347",
     "name": {
       "en": "Black Scararing",
       "fr": "Scaranneau Noir",
@@ -1795,20 +1948,22 @@
       "it": "Scaranello Nero",
       "pt": "Scaranel Preto"
     },
-    "level": 48,
-    "imageUrl": "/retro/item/9104.png",
+    "itemType": "Ring",
     "setID": "49",
+    "level": 48,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 30 },
       { "stat": "Critical", "minStat": 1, "maxStat": 3 },
       { "stat": "Heals", "minStat": 1, "maxStat": 4 },
       { "stat": "% Neutral Resistance", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9104.png"
   },
   {
+    "dofusID": "6307",
     "name": {
       "en": "Ring o'Stradamus",
       "fr": "Anneau Stradamus",
@@ -1817,19 +1972,21 @@
       "it": "Anello Stradamus",
       "pt": "Anel Stradamus"
     },
-    "level": 48,
-    "imageUrl": "/retro/item/9078.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 48,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Heals", "minStat": 3, "maxStat": 5 },
       { "stat": "Earth Resistance", "minStat": 3, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9078.png"
   },
   {
+    "dofusID": "1268",
     "name": {
       "en": "Dark Treering",
       "fr": "Abranneau Sombre",
@@ -1838,9 +1995,9 @@
       "it": "Alberanello Oscuro",
       "pt": "Arvranel Sombrio"
     },
-    "level": 48,
-    "imageUrl": "/retro/item/9017.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 48,
     "stats": [
       { "stat": "Chance", "minStat": 11, "maxStat": 20 },
       { "stat": "Strength", "minStat": 11, "maxStat": 20 },
@@ -1849,11 +2006,13 @@
       { "stat": "Intelligence", "minStat": 11, "maxStat": 20 },
       { "stat": "Vitality", "minStat": 11, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9017.png"
   },
   {
+    "dofusID": "7993",
     "name": {
       "en": "Ring Dikuloos",
       "fr": "Palmano",
@@ -1862,19 +2021,21 @@
       "it": "Palmano",
       "pt": "Anel Dikuloos"
     },
-    "level": 46,
-    "imageUrl": "/retro/item/9141.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 46,
     "stats": [
       { "stat": "Agility", "minStat": 21, "maxStat": 35 },
       { "stat": "Summons", "minStat": 1, "maxStat": 2 },
       { "stat": "Initiative", "minStat": 201, "maxStat": 300 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9141.png"
   },
   {
+    "dofusID": "1237",
     "name": {
       "en": "Soft Treering",
       "fr": "Abranneau Mou",
@@ -1883,19 +2044,21 @@
       "it": "Alberanello Molle",
       "pt": "Arvranel Mole"
     },
-    "level": 46,
-    "imageUrl": "/retro/item/9011.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 46,
     "stats": [
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 2 },
       { "stat": "Vitality", "minStat": 31, "maxStat": 80 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9011.png"
   },
   {
+    "dofusID": "8725",
     "name": {
       "en": "Slamdance Bracelet",
       "fr": "Bracelet du Tétounik",
@@ -1904,19 +2067,21 @@
       "it": "Bracciale di Teutonik",
       "pt": "Bracelete Confusão"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/9168.png",
+    "itemType": "Ring",
     "setID": "132",
+    "level": 45,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Heals", "minStat": 2, "maxStat": 3 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9168.png"
   },
   {
+    "dofusID": "8298",
     "name": {
       "en": "Beanie Ring",
       "fr": "Anneau Paupayahn",
@@ -1925,9 +2090,9 @@
       "it": "Anello Valazza",
       "pt": "Anel Gorro"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/9160.png",
+    "itemType": "Ring",
     "setID": "111",
+    "level": 45,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
@@ -1936,11 +2101,13 @@
       { "stat": "Fire Resistance", "minStat": 1, "maxStat": 5 },
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9160.png"
   },
   {
+    "dofusID": "9186",
     "name": {
       "en": "Goboff's Ring",
       "fr": "Anneau de Gobeuf",
@@ -1949,19 +2116,21 @@
       "it": "Anello di Gobluovo",
       "pt": "Anel de Gobovo"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/9180.png",
+    "itemType": "Ring",
     "setID": "146",
+    "level": 44,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9180.png"
   },
   {
+    "dofusID": "8916",
     "name": {
       "en": "Chisp Fingerless Gloves",
       "fr": "Mitaines de Chisp",
@@ -1970,18 +2139,20 @@
       "it": "Chispuanto",
       "pt": "Luvas sem Dedos de Chisp"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/9173.png",
+    "itemType": "Ring",
     "setID": "138",
+    "level": 44,
     "stats": [
       { "stat": "Agility", "minStat": 16, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9173.png"
   },
   {
+    "dofusID": "8729",
     "name": {
       "en": "Bedazzling Fist",
       "fr": "Fulgu au poing",
@@ -1990,19 +2161,21 @@
       "it": "Pugno Folgorante",
       "pt": "Punho de Gren Dizer"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/9169.png",
+    "itemType": "Ring",
     "setID": "139",
+    "level": 44,
     "stats": [
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9169.png"
   },
   {
+    "dofusID": "6411",
     "name": {
       "en": "Ignoah Ring",
       "fr": "Anneau Hé",
@@ -2011,19 +2184,21 @@
       "it": "Anello Hoé",
       "pt": "Anel de Noha"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/9086.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 44,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9086.png"
   },
   {
+    "dofusID": "5842",
     "name": {
       "en": "Trav' Ring",
       "fr": "Anneau Forain",
@@ -2032,9 +2207,9 @@
       "it": "Anello Giostraio",
       "pt": "Anel Itinerante"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/9050.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 44,
     "stats": [
       { "stat": "Chance", "minStat": 11, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
@@ -2044,11 +2219,13 @@
       { "stat": "Fire Resistance", "minStat": 2, "maxStat": 3 },
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9050.png"
   },
   {
+    "dofusID": "9196",
     "name": {
       "en": "Fyred Ampe's Ring",
       "fr": "Anneau de Grizou",
@@ -2057,20 +2234,22 @@
       "it": "Anello di Grisup",
       "pt": "Anel de Grisu"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/9181.png",
+    "itemType": "Ring",
     "setID": "149",
+    "level": 43,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 },
       { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9181.png"
   },
   {
+    "dofusID": "9152",
     "name": {
       "en": "Lamechester United Glove",
       "fr": "Gantelet des Bouftons Rouges",
@@ -2079,19 +2258,21 @@
       "it": "Guanto del Pappaton United",
       "pt": "Luvas do Papachester United"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/9177.png",
+    "itemType": "Ring",
     "setID": "143",
+    "level": 43,
     "stats": [
       { "stat": "Intelligence", "minStat": 11, "maxStat": 15 },
       { "stat": "Agility", "minStat": 11, "maxStat": 15 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9177.png"
   },
   {
+    "dofusID": "9151",
     "name": {
       "en": "Real Gobbly Glove",
       "fr": "Gantelet du Real Boitar",
@@ -2100,19 +2281,21 @@
       "it": "Guanto del Real Pappid",
       "pt": "Luvas do Paparcelona"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/9176.png",
+    "itemType": "Ring",
     "setID": "142",
+    "level": 43,
     "stats": [
       { "stat": "Strength", "minStat": 11, "maxStat": 15 },
       { "stat": "Chance", "minStat": 11, "maxStat": 15 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9176.png"
   },
   {
+    "dofusID": "8542",
     "name": {
       "en": "Slait Ring",
       "fr": "Anneau de Slait",
@@ -2121,19 +2304,21 @@
       "it": "Anello di Slait",
       "pt": "Anel de Slait"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/9167.png",
+    "itemType": "Ring",
     "setID": "128",
+    "level": 43,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
       { "stat": "Heals", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9167.png"
   },
   {
+    "dofusID": "7332",
     "name": {
       "en": "Golden Scarabugly Ring",
       "fr": "Anneau du Scarabosse Doré",
@@ -2142,18 +2327,20 @@
       "it": "Anello dello Scaragobba Dorato",
       "pt": "Anel do Scarachefe Dourado"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/9101.png",
+    "itemType": "Ring",
     "setID": "51",
+    "level": 43,
     "stats": [
       { "stat": "Heals", "minStat": 1, "maxStat": 4 },
       { "stat": "Damage", "minStat": 1, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9101.png"
   },
   {
+    "dofusID": "6267",
     "name": {
       "en": "Blue Scararing",
       "fr": "Scaranneau Bleu",
@@ -2162,9 +2349,9 @@
       "it": "Scaranello Blu",
       "pt": "Scaranel Azul"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/9070.png",
+    "itemType": "Ring",
     "setID": "30",
+    "level": 43,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 20 },
       { "stat": "Critical", "minStat": 1, "maxStat": 4 },
@@ -2172,11 +2359,13 @@
       { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9070.png"
   },
   {
+    "dofusID": "6266",
     "name": {
       "en": "White Scararing",
       "fr": "Scaranneau Blanc",
@@ -2185,9 +2374,9 @@
       "it": "Scaranello Bianco",
       "pt": "Scaranel Branco"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/9067.png",
+    "itemType": "Ring",
     "setID": "29",
+    "level": 43,
     "stats": [
       { "stat": "Agility", "minStat": 1, "maxStat": 20 },
       { "stat": "Critical", "minStat": 1, "maxStat": 4 },
@@ -2195,11 +2384,13 @@
       { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9067.png"
   },
   {
+    "dofusID": "6265",
     "name": {
       "en": "Red Scararing",
       "fr": "Scaranneau Rouge",
@@ -2208,9 +2399,9 @@
       "it": "Scaranello Rosso",
       "pt": "Scaranel Vermelho"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/9068.png",
+    "itemType": "Ring",
     "setID": "28",
+    "level": 43,
     "stats": [
       { "stat": "Intelligence", "minStat": 1, "maxStat": 20 },
       { "stat": "Critical", "minStat": 1, "maxStat": 4 },
@@ -2218,11 +2409,13 @@
       { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
       { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9068.png"
   },
   {
+    "dofusID": "6264",
     "name": {
       "en": "Green Scararing",
       "fr": "Scaranneau Vert",
@@ -2231,9 +2424,9 @@
       "it": "Scaranello Verde",
       "pt": "Scaranel Verde"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/9069.png",
+    "itemType": "Ring",
     "setID": "27",
+    "level": 43,
     "stats": [
       { "stat": "Strength", "minStat": 1, "maxStat": 20 },
       { "stat": "Critical", "minStat": 1, "maxStat": 4 },
@@ -2241,11 +2434,13 @@
       { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9069.png"
   },
   {
+    "dofusID": "9189",
     "name": {
       "en": "Lektor's Ring",
       "fr": "Anneau de Laikteur",
@@ -2254,19 +2449,21 @@
       "it": "Anello di An Lekter",
       "pt": "Anel de Lektor"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/9178.png",
+    "itemType": "Ring",
     "setID": "147",
+    "level": 42,
     "stats": [
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9178.png"
   },
   {
+    "dofusID": "8839",
     "name": {
       "en": "Vampyre Ring",
       "fr": "Anneau du Vampyre",
@@ -2275,19 +2472,21 @@
       "it": "Anello del Vampyro",
       "pt": "Anel do Vampyro"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/9171.png",
+    "itemType": "Ring",
     "setID": "130",
+    "level": 42,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Power", "minStat": 16, "maxStat": 20 },
       { "stat": "Pods", "minStat": 151, "maxStat": 200 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9171.png"
   },
   {
+    "dofusID": "6084",
     "name": {
       "en": "Wind Kwakring",
       "fr": "Kwakanneau de Vent",
@@ -2296,19 +2495,21 @@
       "it": "Kwakanello di Vento",
       "pt": "Kwakanel de Vento"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/9062.png",
+    "itemType": "Ring",
     "setID": "15",
+    "level": 42,
     "stats": [
       { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Agility", "minStat": 16, "maxStat": 20 },
       { "stat": "Power", "minStat": 5, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9062.png"
   },
   {
+    "dofusID": "6083",
     "name": {
       "en": "Earth Kwakring",
       "fr": "Kwakanneau de Terre",
@@ -2317,19 +2518,21 @@
       "it": "Kwakanello di Terra",
       "pt": "Kwakanel de Terra"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/9064.png",
+    "itemType": "Ring",
     "setID": "14",
+    "level": 42,
     "stats": [
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Strength", "minStat": 16, "maxStat": 20 },
       { "stat": "Power", "minStat": 5, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9064.png"
   },
   {
+    "dofusID": "6070",
     "name": {
       "en": "Ice Kwakring",
       "fr": "Kwakanneau de Glace",
@@ -2338,19 +2541,21 @@
       "it": "Kwakanello di Ghiaccio",
       "pt": "Kwakanel de Gelo"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/9063.png",
+    "itemType": "Ring",
     "setID": "13",
+    "level": 42,
     "stats": [
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Chance", "minStat": 16, "maxStat": 20 },
       { "stat": "Power", "minStat": 5, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9063.png"
   },
   {
+    "dofusID": "2030",
     "name": {
       "en": "Fire Kwakring",
       "fr": "Kwakanneau de Flammes",
@@ -2359,19 +2564,21 @@
       "it": "Kwakanello di Fiamma",
       "pt": "Kwakanel de Fogo"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/9043.png",
+    "itemType": "Ring",
     "setID": "2",
+    "level": 42,
     "stats": [
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 20 },
       { "stat": "Power", "minStat": 5, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9043.png"
   },
   {
+    "dofusID": "9180",
     "name": {
       "en": "Koksiks's Ring",
       "fr": "Anneau de Kocksis",
@@ -2380,19 +2587,21 @@
       "it": "Anello di Koccid",
       "pt": "Anel de Koksis"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/9179.png",
+    "itemType": "Ring",
     "setID": "145",
+    "level": 41,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Strength", "minStat": 11, "maxStat": 15 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9179.png"
   },
   {
+    "dofusID": "8922",
     "name": {
       "en": "Solaris Ring",
       "fr": "Anneau solaire",
@@ -2401,18 +2610,20 @@
       "it": "Anello Solare",
       "pt": "Anel Solar"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/9174.png",
+    "itemType": "Ring",
     "setID": "136",
+    "level": 41,
     "stats": [
       { "stat": "Chance", "minStat": 11, "maxStat": 15 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9174.png"
   },
   {
+    "dofusID": "8459",
     "name": {
       "en": "The Godfather's Ring",
       "fr": "Grosse Bagouze du Parrain",
@@ -2421,19 +2632,21 @@
       "it": "Grande Anellaccio del Padrino",
       "pt": "Anel do Padrinho"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/9166.png",
+    "itemType": "Ring",
     "setID": "126",
+    "level": 40,
     "stats": [
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Damage", "minStat": null, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9166.png"
   },
   {
+    "dofusID": "8367",
     "name": {
       "en": "Lousy Ring",
       "fr": "Jambanneau",
@@ -2442,15 +2655,17 @@
       "it": "Maianello",
       "pt": "Lardanel"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/9162.png",
+    "itemType": "Ring",
     "setID": "113",
+    "level": 40,
     "stats": [{ "stat": "Damage", "minStat": 4, "maxStat": 5 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9162.png"
   },
   {
+    "dofusID": "5843",
     "name": {
       "en": "Satisfied Summoner's Ring",
       "fr": "Anneau de l'Invocateur Satisfait",
@@ -2459,18 +2674,20 @@
       "it": "Anello dell'Evocatore Soddisfatto",
       "pt": "Anel do Invocador Satisfeito"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/9051.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 40,
     "stats": [
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "AP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9051.png"
   },
   {
+    "dofusID": "2032",
     "name": {
       "en": "Ringtree",
       "fr": "Anobra",
@@ -2479,15 +2696,17 @@
       "it": "Aneramo",
       "pt": "Anelknídeo"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/9045.png",
+    "itemType": "Ring",
     "setID": "3",
+    "level": 40,
     "stats": [{ "stat": "Damage", "minStat": 4, "maxStat": 5 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9045.png"
   },
   {
+    "dofusID": "1374",
     "name": {
       "en": "Crocoburio's Strength",
       "fr": "Force de Crocoburio",
@@ -2496,15 +2715,17 @@
       "it": "Forza di Crocobarro",
       "pt": "Força de Crocoburio"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/9038.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 40,
     "stats": [{ "stat": "Strength", "minStat": 16, "maxStat": 30 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9038.png"
   },
   {
+    "dofusID": "7114",
     "name": {
       "en": "Gobkool Ring",
       "fr": "Anneau du Boufcoul",
@@ -2513,19 +2734,21 @@
       "it": "Anello del Pappacool",
       "pt": "Anel do Papakool"
     },
-    "level": 38,
-    "imageUrl": "/retro/item/9098.png",
+    "itemType": "Ring",
     "setID": "43",
+    "level": 38,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Fire Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "Earth Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9098.png"
   },
   {
+    "dofusID": "6249",
     "name": {
       "en": "Prespic Ring",
       "fr": "Anneau du Prespic",
@@ -2534,15 +2757,17 @@
       "it": "Anello del Prespic",
       "pt": "Anel do Prespic"
     },
-    "level": 38,
-    "imageUrl": "/retro/item/9072.png",
+    "itemType": "Ring",
     "setID": "31",
+    "level": 38,
     "stats": [{ "stat": "Reflect", "minStat": 1, "maxStat": 3 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9072.png"
   },
   {
+    "dofusID": "8930",
     "name": {
       "en": "Oxo Ring",
       "fr": "Oxano",
@@ -2551,20 +2776,22 @@
       "it": "Oxanello",
       "pt": "Oxanel"
     },
-    "level": 37,
-    "imageUrl": "/retro/item/9175.png",
+    "itemType": "Ring",
     "setID": "133",
+    "level": 37,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 },
       { "stat": "Heals", "minStat": 1, "maxStat": 2 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9175.png"
   },
   {
+    "dofusID": "6530",
     "name": {
       "en": "Akwadala Wedding Ring",
       "fr": "Alliance Akwadala",
@@ -2573,18 +2800,20 @@
       "it": "Fede Aksadala",
       "pt": "Aliança Akwadala"
     },
-    "level": 37,
-    "imageUrl": "/retro/item/9080.png",
+    "itemType": "Ring",
     "setID": "34",
+    "level": 37,
     "stats": [
       { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
       { "stat": "Water Resistance", "minStat": 7, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9080.png"
   },
   {
+    "dofusID": "8746",
     "name": {
       "en": "Ring of Death",
       "fr": "Anneau de la mort",
@@ -2593,19 +2822,21 @@
       "it": "Anello della Morte",
       "pt": "Anel da Morte"
     },
-    "level": 36,
-    "imageUrl": "/retro/item/9170.png",
+    "itemType": "Ring",
     "setID": "117",
+    "level": 36,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9170.png"
   },
   {
+    "dofusID": "1179",
     "name": {
       "en": "Soff Ring",
       "fr": "L'Anneau Dhyn",
@@ -2614,19 +2845,21 @@
       "it": "L'Anello Dhyn",
       "pt": "Anel de Dhyn"
     },
-    "level": 36,
-    "imageUrl": "/retro/item/9037.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 36,
     "stats": [
       { "stat": "Damage", "minStat": 2, "maxStat": 4 },
       { "stat": "Critical", "minStat": 2, "maxStat": 4 },
       { "stat": "Agility", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9037.png"
   },
   {
+    "dofusID": "6078",
     "name": {
       "en": "Deceitful Wedding Ring",
       "fr": "Fourballiance",
@@ -2635,19 +2868,21 @@
       "it": "Furbafede",
       "pt": "Aliarbustor"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/9060.png",
+    "itemType": "Ring",
     "setID": "16",
+    "level": 33,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9060.png"
   },
   {
+    "dofusID": "8001",
     "name": {
       "en": "Solo's Ring",
       "fr": "Anneau Solo",
@@ -2656,19 +2891,21 @@
       "it": "Anello Solo",
       "pt": "Anel Solo"
     },
-    "level": 31,
-    "imageUrl": "/retro/item/9144.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 31,
     "stats": [
       { "stat": "Strength", "minStat": 6, "maxStat": 15 },
       { "stat": "Agility", "minStat": 6, "maxStat": 15 },
       { "stat": "Critical", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9144.png"
   },
   {
+    "dofusID": "8382",
     "name": {
       "en": "Bobblering",
       "fr": "Pompanneau",
@@ -2677,18 +2914,20 @@
       "it": "Pompanello",
       "pt": "Bobbleanel"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/9165.png",
+    "itemType": "Ring",
     "setID": "124",
+    "level": 30,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Intelligence", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9165.png"
   },
   {
+    "dofusID": "8379",
     "name": {
       "en": "[!EN] Anneau Cristalin",
       "fr": "Anneau Cristalin",
@@ -2697,18 +2936,20 @@
       "it": "[!IT] Anneau Cristalin",
       "pt": "[!PT] Anneau Cristalin"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/9164.png",
+    "itemType": "Ring",
     "setID": "125",
+    "level": 30,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Chance", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9164.png"
   },
   {
+    "dofusID": "2051",
     "name": {
       "en": "Royal Gobball's Ring",
       "fr": "Anneau Royal du Bouftou",
@@ -2717,15 +2958,17 @@
       "it": "Anello Reale del Pappatutto",
       "pt": "Anel Real do Papatudo"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/9046.png",
+    "itemType": "Ring",
     "setID": "4",
+    "level": 30,
     "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 60 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9046.png"
   },
   {
+    "dofusID": "1182",
     "name": {
       "en": "Enutrof's Memento",
       "fr": "Souvenir d'Enutrof",
@@ -2734,18 +2977,20 @@
       "it": "Ricordo di Anutrof",
       "pt": "Lembrança de Enutrof"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/9015.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 30,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Chance", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9015.png"
   },
   {
+    "dofusID": "1181",
     "name": {
       "en": "Xelor's Past",
       "fr": "Passé de Xélor",
@@ -2754,18 +2999,20 @@
       "it": "Passato di Xelor",
       "pt": "Passado de Xelor"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/9016.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 30,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Intelligence", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9016.png"
   },
   {
+    "dofusID": "226",
     "name": {
       "en": "Ecalisor",
       "fr": "L'Ecaliseur",
@@ -2774,19 +3021,21 @@
       "it": "L'Ecalizzatore",
       "pt": "Ecalisor"
     },
-    "level": 29,
-    "imageUrl": "/retro/item/9035.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 29,
     "stats": [
       { "stat": "Chance", "minStat": null, "maxStat": 4 },
       { "stat": "Vitality", "minStat": null, "maxStat": 4 },
       { "stat": "Damage", "minStat": null, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9035.png"
   },
   {
+    "dofusID": "477",
     "name": {
       "en": "Silimelle's Wedding Ring",
       "fr": "Alliance de Silimelle",
@@ -2795,15 +3044,17 @@
       "it": "Fede di Silimelle",
       "pt": "Aliança de Silimela"
     },
-    "level": 26,
-    "imageUrl": "/retro/item/9030.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 26,
     "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 25 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9030.png"
   },
   {
+    "dofusID": "1318",
     "name": {
       "en": "Warrior Fecalizer",
       "fr": "Fécaliseur du Guerrier",
@@ -2812,18 +3063,20 @@
       "it": "Fecalizzatore del Guerriero",
       "pt": "Fecalizador do Guerreiro"
     },
-    "level": 26,
-    "imageUrl": "/retro/item/9041.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 26,
     "stats": [
       { "stat": "Earth Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9041.png"
   },
   {
+    "dofusID": "1317",
     "name": {
       "en": "Magus Fecalizer",
       "fr": "Fécaliseur du Magicien",
@@ -2832,19 +3085,21 @@
       "it": "Fecalizzatore del Mago",
       "pt": "Fecalizador do Mago"
     },
-    "level": 26,
-    "imageUrl": "/retro/item/9040.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 26,
     "stats": [
       { "stat": "Water Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Air Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Fire Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9040.png"
   },
   {
+    "dofusID": "1385",
     "name": {
       "en": "Mer Ring",
       "fr": "Anneau Mèr",
@@ -2853,10 +3108,11 @@
       "it": "Anello Mar",
       "pt": "Anel deMer"
     },
-    "level": 25,
-    "imageUrl": "/retro/item/9028.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 25,
     "stats": [{ "stat": "Vitality", "minStat": 2, "maxStat": 61 }],
+    "customStats": {},
     "conditions": {
       "and": [
         { "stat": "Intelligence", "operator": "<", "value": 100 },
@@ -2864,9 +3120,10 @@
       ]
     },
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9028.png"
   },
   {
+    "dofusID": "7321",
     "name": {
       "en": "Tofu Ring",
       "fr": "Anneau du Tofu",
@@ -2875,18 +3132,20 @@
       "it": "Anello del Tofu",
       "pt": "Anel do Tofu"
     },
-    "level": 21,
-    "imageUrl": "/retro/item/9100.png",
+    "itemType": "Ring",
     "setID": "50",
+    "level": 21,
     "stats": [
       { "stat": "Wisdom", "minStat": 1, "maxStat": 10 },
       { "stat": "Agility", "minStat": 6, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9100.png"
   },
   {
+    "dofusID": "6236",
     "name": {
       "en": "Mos Kitano",
       "fr": "Mos Kitano",
@@ -2895,18 +3154,20 @@
       "it": "Mos Kitanello",
       "pt": "Mos Kitanel"
     },
-    "level": 21,
-    "imageUrl": "/retro/item/9071.png",
+    "itemType": "Ring",
     "setID": "23",
+    "level": 21,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 15 },
       { "stat": "Heals", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9071.png"
   },
   {
+    "dofusID": "8375",
     "name": {
       "en": "Zest Ring",
       "fr": "Anneau Zest",
@@ -2915,18 +3176,20 @@
       "it": "Anello Scorza",
       "pt": "Raspanel"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/9163.png",
+    "itemType": "Ring",
     "setID": "115",
+    "level": 20,
     "stats": [
       { "stat": "Chance", "minStat": 11, "maxStat": 15 },
       { "stat": "Intelligence", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9163.png"
   },
   {
+    "dofusID": "6065",
     "name": {
       "en": "Bearman's Wedding Ring",
       "fr": "Alliance de l'Homme Ours",
@@ -2935,18 +3198,20 @@
       "it": "Fede dell'Uomo Orso",
       "pt": "Aliança do Homem Urso"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/9066.png",
+    "itemType": "Ring",
     "setID": "12",
+    "level": 20,
     "stats": [
       { "stat": "Initiative", "minStat": 26, "maxStat": 35 },
       { "stat": "Damage", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9066.png"
   },
   {
+    "dofusID": "1180",
     "name": {
       "en": "Ecaflip's Luck",
       "fr": "Chance d'Ecaflip",
@@ -2955,18 +3220,20 @@
       "it": "Fortuna dell'Ecaflip",
       "pt": "Sorte de Ecaflip"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/9032.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 20,
     "stats": [
       { "stat": "Chance", "minStat": 11, "maxStat": 15 },
       { "stat": "Intelligence", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9032.png"
   },
   {
+    "dofusID": "6231",
     "name": {
       "en": "Boar Ring",
       "fr": "Anneau du Sanglier",
@@ -2975,15 +3242,17 @@
       "it": "Anello del Cinghiale",
       "pt": "Anel do Javali"
     },
-    "level": 19,
-    "imageUrl": "/retro/item/9073.png",
+    "itemType": "Ring",
     "setID": "21",
+    "level": 19,
     "stats": [{ "stat": "Wisdom", "minStat": 6, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9073.png"
   },
   {
+    "dofusID": "6413",
     "name": {
       "en": "Blubba Ring",
       "fr": "Anneau Vice",
@@ -2992,18 +3261,20 @@
       "it": "Anello Vizio",
       "pt": "Anel de Novato"
     },
-    "level": 18,
-    "imageUrl": "/retro/item/9088.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 18,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9088.png"
   },
   {
+    "dofusID": "6279",
     "name": {
       "en": "Gangster Ring",
       "fr": "Anneau du Bandit",
@@ -3012,18 +3283,20 @@
       "it": "Anello del Bandito",
       "pt": "Anel do Bandido"
     },
-    "level": 17,
-    "imageUrl": "/retro/item/9077.png",
+    "itemType": "Ring",
     "setID": "25",
+    "level": 17,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 15 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9077.png"
   },
   {
+    "dofusID": "214",
     "name": {
       "en": "Ano Rak Ring",
       "fr": "Anneau Rak",
@@ -3032,18 +3305,20 @@
       "it": "Anello Rak",
       "pt": "Anel de Ano Rak"
     },
-    "level": 17,
-    "imageUrl": "/retro/item/9034.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 17,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 8 },
       { "stat": "Chance", "minStat": null, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9034.png"
   },
   {
+    "dofusID": "152",
     "name": {
       "en": "Rocky Ring",
       "fr": "Anneau des Rocheuses",
@@ -3052,18 +3327,20 @@
       "it": "Anello delle Rocce",
       "pt": "Anel Rochoso"
     },
-    "level": 15,
-    "imageUrl": "/retro/item/9004.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 15,
     "stats": [
       { "stat": "Agility", "minStat": null, "maxStat": 4 },
       { "stat": "Vitality", "minStat": null, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9004.png"
   },
   {
+    "dofusID": "1178",
     "name": {
       "en": "Ringer",
       "fr": "Le Bagueur",
@@ -3072,18 +3349,20 @@
       "it": "L'Anellatore",
       "pt": "Sineiro"
     },
-    "level": 15,
-    "imageUrl": "/retro/item/9014.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 15,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 10 },
       { "stat": "Chance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9014.png"
   },
   {
+    "dofusID": "1177",
     "name": {
       "en": "Sacrier's Wound",
       "fr": "Blessure du Sacrieur",
@@ -3092,18 +3371,20 @@
       "it": "Ferita del Sàcrido",
       "pt": "Ferida do Sacrier"
     },
-    "level": 15,
-    "imageUrl": "/retro/item/9013.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 15,
     "stats": [
       { "stat": "Strength", "minStat": 6, "maxStat": 10 },
       { "stat": "Vitality", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9013.png"
   },
   {
+    "dofusID": "781",
     "name": {
       "en": "Mental Ring",
       "fr": "Anneau du Mental",
@@ -3112,15 +3393,17 @@
       "it": "Anello Mentale",
       "pt": "Anel Mental"
     },
-    "level": 14,
-    "imageUrl": "/retro/item/9036.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 14,
     "stats": [{ "stat": "Intelligence", "minStat": 11, "maxStat": 20 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9036.png"
   },
   {
+    "dofusID": "7337",
     "name": {
       "en": "Farmer Moth-Eaten Mittens",
       "fr": "Mitaines Mitées du Paysan",
@@ -3129,18 +3412,20 @@
       "it": "Guanto Tarmato del Contadino",
       "pt": "Luvas roídas por traças do fazendeiro"
     },
-    "level": 12,
-    "imageUrl": "/retro/item/9102.png",
+    "itemType": "Ring",
     "setID": "47",
+    "level": 12,
     "stats": [
       { "stat": "Heals", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9102.png"
   },
   {
+    "dofusID": "222",
     "name": {
       "en": "Valuable Ring",
       "fr": "L'Anneau de Valeur",
@@ -3149,18 +3434,20 @@
       "it": "L'Anello di Valore",
       "pt": "Anel Valuable"
     },
-    "level": 12,
-    "imageUrl": "/retro/item/9007.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 12,
     "stats": [
       { "stat": "Strength", "minStat": null, "maxStat": 4 },
       { "stat": "Chance", "minStat": null, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9007.png"
   },
   {
+    "dofusID": "519",
     "name": {
       "en": "Fortifying Ring",
       "fr": "Anneau Fortifiant",
@@ -3169,15 +3456,17 @@
       "it": "Anello Fortificante",
       "pt": "Anel Fortificante"
     },
-    "level": 11,
-    "imageUrl": "/retro/item/9029.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 11,
     "stats": [{ "stat": "Strength", "minStat": 6, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9029.png"
   },
   {
+    "dofusID": "7439",
     "name": {
       "en": "Sponge Ring",
       "fr": "Anneau en Mousse",
@@ -3186,15 +3475,17 @@
       "it": "Anello di Spugna",
       "pt": "Anel de Esponja"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/9112.png",
+    "itemType": "Ring",
     "setID": "63",
+    "level": 10,
     "stats": [{ "stat": "Summons", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9112.png"
   },
   {
+    "dofusID": "6124",
     "name": {
       "en": "Country Ring",
       "fr": "Anneau Champêtre",
@@ -3203,18 +3494,20 @@
       "it": "Anello Campestre",
       "pt": "Anel Campestre"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/9065.png",
+    "itemType": "Ring",
     "setID": "18",
+    "level": 10,
     "stats": [
       { "stat": "Vitality", "minStat": 5, "maxStat": 6 },
       { "stat": "Intelligence", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9065.png"
   },
   {
+    "dofusID": "2031",
     "name": {
       "en": "Bouze Lite Yeah's Ring",
       "fr": "Anneau de Bouze le Clerc",
@@ -3223,15 +3516,17 @@
       "it": "Anello di Buz il Prete",
       "pt": "Anel de Boz Laitíer"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/9044.png",
+    "itemType": "Ring",
     "setID": "1",
+    "level": 10,
     "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 30 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9044.png"
   },
   {
+    "dofusID": "571",
     "name": {
       "en": "Ring of Satisfaction",
       "fr": "Anneau de Satisfaction",
@@ -3240,15 +3535,17 @@
       "it": "Anello di Soddisfazione",
       "pt": "Anel da Satisfação"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/9012.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "AP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9012.png"
   },
   {
+    "dofusID": "52",
     "name": {
       "en": "[!EN] Puissant Anneau d'Agilité",
       "fr": "Puissant Anneau d'Agilité",
@@ -3257,15 +3554,17 @@
       "it": "[!IT] Puissant Anneau d'Agilité",
       "pt": "[!PT] Puissant Anneau d'Agilité"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/9001.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 8 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9001.png"
   },
   {
+    "dofusID": "48",
     "name": {
       "en": "[!EN] Puissant Anneau de Chance",
       "fr": "Puissant Anneau de Chance",
@@ -3274,15 +3573,17 @@
       "it": "[!IT] Puissant Anneau de Chance",
       "pt": "[!PT] Puissant Anneau de Chance"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/9009.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 8 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9009.png"
   },
   {
+    "dofusID": "44",
     "name": {
       "en": "[!EN] Puissant Anneau de Sagesse",
       "fr": "Puissant Anneau de Sagesse",
@@ -3291,15 +3592,17 @@
       "it": "[!IT] Puissant Anneau de Sagesse",
       "pt": "[!PT] Puissant Anneau de Sagesse"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/9007.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 4 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9007.png"
   },
   {
+    "dofusID": "47",
     "name": {
       "en": "[!EN] Grand Anneau de Chance",
       "fr": "Grand Anneau de Chance",
@@ -3308,15 +3611,17 @@
       "it": "[!IT] Grand Anneau de Chance",
       "pt": "[!PT] Grand Anneau de Chance"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/9009.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 6 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9009.png"
   },
   {
+    "dofusID": "43",
     "name": {
       "en": "[!EN] Grand Anneau de Sagesse",
       "fr": "Grand Anneau de Sagesse",
@@ -3325,15 +3630,17 @@
       "it": "[!IT] Grand Anneau de Sagesse",
       "pt": "[!PT] Grand Anneau de Sagesse"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/9007.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 3 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9007.png"
   },
   {
+    "dofusID": "6232",
     "name": {
       "en": "Arachnoring",
       "fr": "Araknoton",
@@ -3342,15 +3649,17 @@
       "it": "Araknoton",
       "pt": "Araknanel"
     },
-    "level": 5,
-    "imageUrl": "/retro/item/9076.png",
+    "itemType": "Ring",
     "setID": "22",
+    "level": 5,
     "stats": [{ "stat": "Agility", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9076.png"
   },
   {
+    "dofusID": "567",
     "name": {
       "en": "Treering",
       "fr": "Abranneau",
@@ -3359,15 +3668,17 @@
       "it": "Alberanello",
       "pt": "Arvranel"
     },
-    "level": 5,
-    "imageUrl": "/retro/item/9011.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 5,
     "stats": [{ "stat": "AP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9011.png"
   },
   {
+    "dofusID": "51",
     "name": {
       "en": "[!EN] Grand Anneau d'Agilité",
       "fr": "Grand Anneau d'Agilité",
@@ -3376,15 +3687,17 @@
       "it": "[!IT] Grand Anneau d'Agilité",
       "pt": "[!PT] Grand Anneau d'Agilité"
     },
-    "level": 5,
-    "imageUrl": "/retro/item/9001.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 5,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 6 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9001.png"
   },
   {
+    "dofusID": "6106",
     "name": {
       "en": "Tea Ring",
       "fr": "Anneau Thé",
@@ -3393,15 +3706,17 @@
       "it": "Anello Té",
       "pt": "Chaanel"
     },
-    "level": 4,
-    "imageUrl": "/retro/item/9001.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 4,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9001.png"
   },
   {
+    "dofusID": "6241",
     "name": {
       "en": "Mush Mush Wedding Ring",
       "fr": "Alliance Du Champ Champ",
@@ -3410,18 +3725,20 @@
       "it": "Fede del Fun Fung",
       "pt": "Aliança do Cogu Cogu"
     },
-    "level": 3,
-    "imageUrl": "/retro/item/9075.png",
+    "itemType": "Ring",
     "setID": "24",
+    "level": 3,
     "stats": [
       { "stat": "Earth Resistance", "minStat": 1, "maxStat": 3 },
       { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9075.png"
   },
   {
+    "dofusID": "6240",
     "name": {
       "en": "Mush Mush Ring",
       "fr": "Anneau du Champ Champ",
@@ -3430,19 +3747,21 @@
       "it": "Anello del Fun Fung",
       "pt": "Anel do Cogu Cogu"
     },
-    "level": 3,
-    "imageUrl": "/retro/item/9074.png",
+    "itemType": "Ring",
     "setID": "24",
+    "level": 3,
     "stats": [
       { "stat": "Water Resistance", "minStat": 1, "maxStat": 3 },
       { "stat": "Air Resistance", "minStat": 1, "maxStat": 3 },
       { "stat": "Fire Resistance", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9074.png"
   },
   {
+    "dofusID": "50",
     "name": {
       "en": "Agility Ring",
       "fr": "Anneau d'Agilité",
@@ -3451,15 +3770,17 @@
       "it": "Anello di Agilità",
       "pt": "Anel de agilidade"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/9001.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 4 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9001.png"
   },
   {
+    "dofusID": "46",
     "name": {
       "en": "Chance Ring",
       "fr": "Anneau de Chance",
@@ -3468,15 +3789,17 @@
       "it": "Anello di Fortuna",
       "pt": "Anel de sorte"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/9009.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 4 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9009.png"
   },
   {
+    "dofusID": "42",
     "name": {
       "en": "Wisdom Ring",
       "fr": "Anneau de Sagesse",
@@ -3485,15 +3808,17 @@
       "it": "Anello di Saggezza",
       "pt": "Anel de sabedoria"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/9007.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9007.png"
   },
   {
+    "dofusID": "7704",
     "name": {
       "en": "Pluswan",
       "fr": "Le Plussain",
@@ -3502,15 +3827,17 @@
       "it": "Il Pìuuno",
       "pt": "O Maizum"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9125.png",
+    "itemType": "Ring",
     "setID": "69",
+    "level": 1,
     "stats": [{ "stat": "Critical", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9125.png"
   },
   {
+    "dofusID": "7409",
     "name": {
       "en": "Pink Piwi Ring",
       "fr": "Anneau du Piou Rose",
@@ -3519,15 +3846,17 @@
       "it": "Anello del Pìu Rosa",
       "pt": "Anel do Piu Rosa"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9111.png",
+    "itemType": "Ring",
     "setID": "70",
+    "level": 1,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9111.png"
   },
   {
+    "dofusID": "7408",
     "name": {
       "en": "Yellow Piwi Ring",
       "fr": "Anneau du Piou Jaune",
@@ -3536,15 +3865,17 @@
       "it": "Anello del Pìu Giallo",
       "pt": "Anel do Piu Amarelo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9110.png",
+    "itemType": "Ring",
     "setID": "72",
+    "level": 1,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9110.png"
   },
   {
+    "dofusID": "7407",
     "name": {
       "en": "Green Piwi Ring",
       "fr": "Anneau du Piou Vert",
@@ -3553,15 +3884,17 @@
       "it": "Anello del Pìu Verde",
       "pt": "Anel do Piu Verde"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9109.png",
+    "itemType": "Ring",
     "setID": "71",
+    "level": 1,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9109.png"
   },
   {
+    "dofusID": "7406",
     "name": {
       "en": "Purple Piwi Ring",
       "fr": "Anneau du Piou Violet",
@@ -3570,15 +3903,17 @@
       "it": "Anello del Pìu Viola",
       "pt": "Anel do Piu Violeta"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9108.png",
+    "itemType": "Ring",
     "setID": "62",
+    "level": 1,
     "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9108.png"
   },
   {
+    "dofusID": "7405",
     "name": {
       "en": "Blue Piwi Ring",
       "fr": "Anneau du Piou Bleu",
@@ -3587,15 +3922,17 @@
       "it": "Anello del Pìu Blu",
       "pt": "Anel do Piu Azul"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9107.png",
+    "itemType": "Ring",
     "setID": "61",
+    "level": 1,
     "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9107.png"
   },
   {
+    "dofusID": "7404",
     "name": {
       "en": "Red Piwi Ring",
       "fr": "Anneau du Piou Rouge",
@@ -3604,15 +3941,17 @@
       "it": "Anello del Pìu Rosso",
       "pt": "Anel do Piu Vermelho"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9106.png",
+    "itemType": "Ring",
     "setID": "60",
+    "level": 1,
     "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9106.png"
   },
   {
+    "dofusID": "583",
     "name": {
       "en": "Small Chance Ring",
       "fr": "Petit Anneau du Chanceux",
@@ -3621,15 +3960,17 @@
       "it": "Piccolo Anello del Fortunato",
       "pt": "Pequeno Anel do Sortudo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9042.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9042.png"
   },
   {
+    "dofusID": "582",
     "name": {
       "en": "Small Magic Ring",
       "fr": "Petit Anneau Magique",
@@ -3638,15 +3979,17 @@
       "it": "Piccolo Anello Magico",
       "pt": "Pequeno Anel Mágico"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9003.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9003.png"
   },
   {
+    "dofusID": "581",
     "name": {
       "en": "Vital Ring",
       "fr": "Anneau Vitalesque",
@@ -3655,15 +3998,17 @@
       "it": "Anello Vitalesco",
       "pt": "Anel Vitalício"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9002.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9002.png"
   },
   {
+    "dofusID": "580",
     "name": {
       "en": "Nimble Ring",
       "fr": "Anneau Agilesque",
@@ -3672,15 +4017,17 @@
       "it": "Anello Agilesco",
       "pt": "Anel Ágil"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9001.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9001.png"
   },
   {
+    "dofusID": "579",
     "name": {
       "en": "Strong Ring",
       "fr": "Anneau Forcesque",
@@ -3689,15 +4036,17 @@
       "it": "Anello Forzesco",
       "pt": "Anel de Força"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9005.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9005.png"
   },
   {
+    "dofusID": "521",
     "name": {
       "en": "Ano Rexik Ring",
       "fr": "Anneau Rexik",
@@ -3706,15 +4055,17 @@
       "it": "Anello Rexik",
       "pt": "Anel de Ano Rexik"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9031.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Agility", "minStat": 2, "maxStat": 6 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9031.png"
   },
   {
+    "dofusID": "503",
     "name": {
       "en": "Camate",
       "fr": "Camaïneux",
@@ -3723,15 +4074,17 @@
       "it": "Camanello",
       "pt": "Camate"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9033.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Vitality", "minStat": 2, "maxStat": 6 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9033.png"
   },
   {
+    "dofusID": "502",
     "name": {
       "en": "Royal Gantie",
       "fr": "Gantie Royal",
@@ -3740,15 +4093,17 @@
       "it": "Ganti Reale",
       "pt": "Gantie Real"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9008.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Strength", "minStat": 2, "maxStat": 6 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9008.png"
   },
   {
+    "dofusID": "49",
     "name": {
       "en": "[!EN] Petit Anneau d'Agilité",
       "fr": "Petit Anneau d'Agilité",
@@ -3757,15 +4112,17 @@
       "it": "[!IT] Petit Anneau d'Agilité",
       "pt": "[!PT] Petit Anneau d'Agilité"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9001.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9001.png"
   },
   {
+    "dofusID": "45",
     "name": {
       "en": "[!EN] Petit Anneau de Chance",
       "fr": "Petit Anneau de Chance",
@@ -3774,15 +4131,17 @@
       "it": "[!IT] Petit Anneau de Chance",
       "pt": "[!PT] Petit Anneau de Chance"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9009.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9009.png"
   },
   {
+    "dofusID": "41",
     "name": {
       "en": "[!EN] Petit Anneau de Sagesse",
       "fr": "Petit Anneau de Sagesse",
@@ -3791,15 +4150,17 @@
       "it": "[!IT] Petit Anneau de Sagesse",
       "pt": "[!PT] Petit Anneau de Sagesse"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9007.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9007.png"
   },
   {
+    "dofusID": "2078",
     "name": {
       "en": "Adventurer Ring",
       "fr": "Anneau de l'Aventurier",
@@ -3808,9 +4169,9 @@
       "it": "Anello dell'Avventuriero",
       "pt": "Anel do Aventureiro"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9048.png",
+    "itemType": "Ring",
     "setID": "5",
+    "level": 1,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 2 },
       { "stat": "Strength", "minStat": 1, "maxStat": 2 },
@@ -3818,11 +4179,13 @@
       { "stat": "Intelligence", "minStat": 1, "maxStat": 2 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9048.png"
   },
   {
+    "dofusID": "1185",
     "name": {
       "en": "Wedding Ring",
       "fr": "Alliance",
@@ -3831,12 +4194,13 @@
       "it": "Fede",
       "pt": "Aliança"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/9027.png",
+    "itemType": "Ring",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/9027.png"
   }
 ]

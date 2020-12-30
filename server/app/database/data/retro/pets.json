@@ -1,5 +1,6 @@
 [
   {
+    "dofusID": "6291",
     "name": {
       "en": "Peki Peki",
       "fr": "Péki",
@@ -8,15 +9,17 @@
       "it": "Peki",
       "pt": "Peki"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/18012.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 60,
     "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 400 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18012.png"
   },
   {
+    "dofusID": "9400",
     "name": {
       "en": "Sting",
       "fr": "Pykur",
@@ -25,15 +28,17 @@
       "it": "Prespina",
       "pt": "Pikada"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18061.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Prospecting", "minStat": 1, "maxStat": 80 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18061.png"
   },
   {
+    "dofusID": "9399",
     "name": {
       "en": "Tofrazzle",
       "fr": "Tofoudre",
@@ -42,15 +47,17 @@
       "it": "Tofulmine",
       "pt": "Tofulminado"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18060.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Damage", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18060.png"
   },
   {
+    "dofusID": "9398",
     "name": {
       "en": "Smush",
       "fr": "Meuch",
@@ -59,15 +66,17 @@
       "it": "Fuuung Fuuung",
       "pt": "Coguzim"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18059.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Heals", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18059.png"
   },
   {
+    "dofusID": "9397",
     "name": {
       "en": "Tarzantula",
       "fr": "Raknaille",
@@ -76,15 +85,17 @@
       "it": "Sgarbarakne",
       "pt": "Tarzântula"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18058.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Reflect", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18058.png"
   },
   {
+    "dofusID": "9346",
     "name": {
       "en": "Golden Dragoone",
       "fr": "Dragoune Dorée",
@@ -93,15 +104,17 @@
       "it": "Dragona Dorata",
       "pt": "Draguna Dourada"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18057.png",
+    "itemType": "Pet",
     "setID": "151",
+    "level": 1,
     "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18057.png"
   },
   {
+    "dofusID": "9209",
     "name": {
       "en": "Ogrine Seeker",
       "fr": "Chercheur d'Ogrines",
@@ -110,15 +123,17 @@
       "it": "Cercatore di Ogrin",
       "pt": "Caçador de Ogrinas"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18056.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18056.png"
   },
   {
+    "dofusID": "9145",
     "name": {
       "en": "Jellufo",
       "fr": "Gelutin",
@@ -127,15 +142,17 @@
       "it": "Gellufo",
       "pt": "Jellufo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18055.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 150 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18055.png"
   },
   {
+    "dofusID": "8871",
     "name": {
       "en": "Borbat",
       "fr": "Chauffe-souris",
@@ -144,15 +161,17 @@
       "it": "Pipì-Strello",
       "pt": "Borcego"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18054.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Pods", "minStat": 10, "maxStat": 1000 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18054.png"
   },
   {
+    "dofusID": "8870",
     "name": {
       "en": "Vampyrina",
       "fr": "Vampyrette",
@@ -161,15 +180,17 @@
       "it": "Vampyretta",
       "pt": "Vampyrina"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18053.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 150 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18053.png"
   },
   {
+    "dofusID": "8619",
     "name": {
       "en": "Rushu's Shushu",
       "fr": "Shushu de Rushu",
@@ -178,15 +199,17 @@
       "it": "Shushu di Rushu",
       "pt": "Shushu de Rushu"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18052.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "HP", "minStat": 1, "maxStat": 150 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18052.png"
   },
   {
+    "dofusID": "8504",
     "name": {
       "en": "Black Dragoone",
       "fr": "Dragoune Noire",
@@ -195,15 +218,17 @@
       "it": "Dragona Nera",
       "pt": "Draguna Negra"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18048.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18048.png"
   },
   {
+    "dofusID": "8503",
     "name": {
       "en": "Crocodyl",
       "fr": "Crocodaille",
@@ -212,15 +237,17 @@
       "it": "Coccodrail",
       "pt": "Crocodyl"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18047.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18047.png"
   },
   {
+    "dofusID": "8500",
     "name": {
       "en": "Miniminotot",
       "fr": "Miniminotot",
@@ -229,15 +256,17 @@
       "it": "Miniminotot",
       "pt": "Miniminotot"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18049.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18049.png"
   },
   {
+    "dofusID": "8499",
     "name": {
       "en": "Tiwabbit Wosungwee",
       "fr": "Tiwabbit Kiafin",
@@ -246,15 +275,17 @@
       "it": "Piccolo Wabbit Keafam",
       "pt": "Pekewabbit Kofome"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18051.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18051.png"
   },
   {
+    "dofusID": "8497",
     "name": {
       "en": "Angora Bow Meow",
       "fr": "Chacha Angora",
@@ -263,15 +294,17 @@
       "it": "Maomao Angora",
       "pt": "Miaw angorá"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18050.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18050.png"
   },
   {
+    "dofusID": "8491",
     "name": {
       "en": "The Godfather's Gobtubby",
       "fr": "Bouloute du Parrain",
@@ -280,15 +313,17 @@
       "it": "Palladineve del Padrino",
       "pt": "Boloto do Padrinho"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18046.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 150 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18046.png"
   },
   {
+    "dofusID": "7829",
     "name": {
       "en": "Feanor",
       "fr": "Fëanor",
@@ -297,15 +332,17 @@
       "it": "Feanor",
       "pt": "Feanor"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18045.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18045.png"
   },
   {
+    "dofusID": "7815",
     "name": {
       "en": "Ross",
       "fr": "Ross",
@@ -314,15 +351,17 @@
       "it": "Ross",
       "pt": "Ross"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18044.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Heals", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18044.png"
   },
   {
+    "dofusID": "7719",
     "name": {
       "en": "Pandawa Cub",
       "fr": "Bébé Pandawa",
@@ -331,15 +370,17 @@
       "it": "Bebé Pandawa",
       "pt": "Bebê Pandawa"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18042.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18042.png"
   },
   {
+    "dofusID": "7397",
     "name": {
       "en": "Pingoku",
       "fr": "Walk",
@@ -348,15 +389,17 @@
       "it": "Walk",
       "pt": "Walk"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18038.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18038.png"
   },
   {
+    "dofusID": "7366",
     "name": {
       "en": "Minifoux",
       "fr": "Tifoux",
@@ -365,15 +408,17 @@
       "it": "Tifux",
       "pt": "Pekefox"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18037.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18037.png"
   },
   {
+    "dofusID": "7365",
     "name": {
       "en": "El Scarador",
       "fr": "El Scarador",
@@ -382,9 +427,9 @@
       "it": "El Scarador",
       "pt": "El Scarador"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18036.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 20 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 20 },
@@ -392,11 +437,13 @@
       { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 20 },
       { "stat": "% Neutral Resistance", "minStat": 1, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18036.png"
   },
   {
+    "dofusID": "7364",
     "name": {
       "en": "Treechster",
       "fr": "Abra Kadabra",
@@ -405,15 +452,17 @@
       "it": "Arbre Magic",
       "pt": "Abra Kadabra"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18034.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18034.png"
   },
   {
+    "dofusID": "7362",
     "name": {
       "en": "Gobtubby",
       "fr": "Bouloute",
@@ -422,15 +471,17 @@
       "it": "Palladineve",
       "pt": "Boloto"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18035.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "HP", "minStat": 1, "maxStat": 150 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18035.png"
   },
   {
+    "dofusID": "7285",
     "name": {
       "en": "[!EN] Mini Champion",
       "fr": "Mini Champion",
@@ -439,15 +490,17 @@
       "it": "[!IT] Mini Champion",
       "pt": "[!PT] Mini Champion"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18032.png",
+    "itemType": "Pet",
     "setID": "45",
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18032.png"
   },
   {
+    "dofusID": "7222",
     "name": {
       "en": "Bworky",
       "fr": "Bworky",
@@ -456,15 +509,17 @@
       "it": "Bworky",
       "pt": "Bworky"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18031.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Pods", "minStat": 10, "maxStat": 1000 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18031.png"
   },
   {
+    "dofusID": "7141",
     "name": {
       "en": "Bloody Koalak",
       "fr": "Koalak Sanguin",
@@ -473,15 +528,17 @@
       "it": "Koalak Sanguigno",
       "pt": "Koalak Sanguíneo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18030.png",
+    "itemType": "Pet",
     "setID": "46",
+    "level": 1,
     "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18030.png"
   },
   {
+    "dofusID": "7125",
     "name": {
       "en": "Willy Peninzias",
       "fr": "Willy le Relou",
@@ -490,15 +547,17 @@
       "it": "Willy il Rompi",
       "pt": "Willy, o Mala"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18029.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18029.png"
   },
   {
+    "dofusID": "7124",
     "name": {
       "en": "Mini Wa",
       "fr": "Mini Wa",
@@ -507,20 +566,22 @@
       "it": "Mini We",
       "pt": "Mini Wei"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18028.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Strength", "minStat": 1, "maxStat": 80 },
       { "stat": "Chance", "minStat": 1, "maxStat": 80 },
       { "stat": "Agility", "minStat": 1, "maxStat": 80 },
       { "stat": "Intelligence", "minStat": 1, "maxStat": 80 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18028.png"
   },
   {
+    "dofusID": "6962",
     "name": {
       "en": "Atooin",
       "fr": "Atouin",
@@ -529,18 +590,20 @@
       "it": "Atuin",
       "pt": "Atuin"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18017.png",
+    "itemType": "Pet",
     "setID": "9",
+    "level": 1,
     "stats": [
       { "stat": "Heals", "minStat": 1, "maxStat": 10 },
       { "stat": "Damage", "minStat": 1, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18017.png"
   },
   {
+    "dofusID": "6961",
     "name": {
       "en": "Purple Piwin",
       "fr": "Pioute violet",
@@ -549,15 +612,17 @@
       "it": "Pìut Viola",
       "pt": "Piuta Violeta"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18022.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Damage", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18022.png"
   },
   {
+    "dofusID": "6960",
     "name": {
       "en": "Green Piwin",
       "fr": "Pioute vert",
@@ -566,15 +631,17 @@
       "it": "Pìut Verde",
       "pt": "Piuta Verde"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18026.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Strength", "minStat": 1, "maxStat": 80 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18026.png"
   },
   {
+    "dofusID": "6959",
     "name": {
       "en": "Red Piwin",
       "fr": "Pioute rouge",
@@ -583,15 +650,17 @@
       "it": "Pìut Rosso",
       "pt": "Piuta Vermelho"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18025.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Intelligence", "minStat": 1, "maxStat": 80 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18025.png"
   },
   {
+    "dofusID": "6958",
     "name": {
       "en": "Pink Piwin",
       "fr": "Pioute rose",
@@ -600,15 +669,17 @@
       "it": "Pìut Rosa",
       "pt": "Piuta Rosa"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18024.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Heals", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18024.png"
   },
   {
+    "dofusID": "6957",
     "name": {
       "en": "Yellow Piwin",
       "fr": "Pioute jaune",
@@ -617,15 +688,17 @@
       "it": "Pìut Giallo",
       "pt": "Piuta Amarela"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18023.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Agility", "minStat": 1, "maxStat": 80 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18023.png"
   },
   {
+    "dofusID": "6956",
     "name": {
       "en": "Blue Piwin",
       "fr": "Pioute bleu",
@@ -634,15 +707,17 @@
       "it": "Pìut Blu",
       "pt": "Piuta Azul"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18019.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Chance", "minStat": 1, "maxStat": 80 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18019.png"
   },
   {
+    "dofusID": "6955",
     "name": {
       "en": "Young Wild Boar",
       "fr": "Marcassin",
@@ -651,15 +726,17 @@
       "it": "Cinghialetto",
       "pt": "Javalino"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18020.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18020.png"
   },
   {
+    "dofusID": "6954",
     "name": {
       "en": "Bilby",
       "fr": "Bilby",
@@ -668,15 +745,17 @@
       "it": "Bilby",
       "pt": "Bilby"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18043.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Damage", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18043.png"
   },
   {
+    "dofusID": "6953",
     "name": {
       "en": "Leopardo",
       "fr": "Léopardo",
@@ -685,15 +764,17 @@
       "it": "Leopardo",
       "pt": "Leopardo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18027.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18027.png"
   },
   {
+    "dofusID": "6952",
     "name": {
       "en": "[!EN] Ecureuil Chenapan",
       "fr": "Ecureuil Chenapan",
@@ -702,15 +783,17 @@
       "it": "[!IT] Ecureuil Chenapan",
       "pt": "[!PT] Ecureuil Chenapan"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18016.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18016.png"
   },
   {
+    "dofusID": "6951",
     "name": {
       "en": "Baby Crowdzilla",
       "fr": "Vilain Petit Corbac",
@@ -719,15 +802,17 @@
       "it": "Cattivo Piccolo Cuervoc",
       "pt": "Corvoquinho Feio"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18018.png",
+    "itemType": "Pet",
     "setID": "8",
+    "level": 1,
     "stats": [{ "stat": "Prospecting", "minStat": 1, "maxStat": 40 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18018.png"
   },
   {
+    "dofusID": "6799",
     "name": {
       "en": "Tabby Bow Meow",
       "fr": "Chacha Tigré",
@@ -736,15 +821,17 @@
       "it": "Maomao Tigrato",
       "pt": "Miaw tigrado"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18041.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18041.png"
   },
   {
+    "dofusID": "6798",
     "name": {
       "en": "[!EN] Chachate Rousse",
       "fr": "Chachate Rousse",
@@ -753,15 +840,17 @@
       "it": "[!IT] Chachate Rousse",
       "pt": "[!PT] Chachate Rousse"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18040.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "HP", "minStat": null, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18040.png"
   },
   {
+    "dofusID": "6797",
     "name": {
       "en": "Minimino",
       "fr": "Minimino",
@@ -770,15 +859,17 @@
       "it": "Minimino",
       "pt": "Minimino"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18021.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18021.png"
   },
   {
+    "dofusID": "6795",
     "name": {
       "en": "Croum",
       "fr": "Croum",
@@ -787,9 +878,9 @@
       "it": "Crum",
       "pt": "Crum"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18015.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 20 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 20 },
@@ -797,11 +888,13 @@
       { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 20 },
       { "stat": "% Neutral Resistance", "minStat": 1, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18015.png"
   },
   {
+    "dofusID": "6794",
     "name": {
       "en": "Pink Dragoone",
       "fr": "Dragoune Rose",
@@ -810,15 +903,17 @@
       "it": "Dragona Rosa",
       "pt": "Draguna Rosa"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18014.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18014.png"
   },
   {
+    "dofusID": "6793",
     "name": {
       "en": "Ghast",
       "fr": "Fotome",
@@ -827,15 +922,17 @@
       "it": "Fotasma",
       "pt": "Fotasma"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18013.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "HP", "minStat": 1, "maxStat": 150 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18013.png"
   },
   {
+    "dofusID": "6695",
     "name": {
       "en": "Little Black Bow Wow",
       "fr": "Petit Chienchien Noir",
@@ -844,15 +941,17 @@
       "it": "Piccolo Baubau Nero",
       "pt": "Pequeno Awaw Negro"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18010.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Power", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18010.png"
   },
   {
+    "dofusID": "6694",
     "name": {
       "en": "Little White Bow Meow",
       "fr": "Petit Chacha Blanc",
@@ -861,15 +960,17 @@
       "it": "Piccolo Maomao Bianco",
       "pt": "Pequeno Miaw Branco"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18009.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Initiative", "minStat": 5, "maxStat": 800 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18009.png"
   },
   {
+    "dofusID": "6061",
     "name": {
       "en": "White Bow Meow",
       "fr": "Chacha Blanc",
@@ -878,15 +979,17 @@
       "it": "Maomao Bianco",
       "pt": "Miaw branco"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18009.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "HP", "minStat": null, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18009.png"
   },
   {
+    "dofusID": "6060",
     "name": {
       "en": "Black Bow Wow",
       "fr": "Chienchien Noir",
@@ -895,15 +998,17 @@
       "it": "Baubau Nero",
       "pt": "Awaw Negro"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18010.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "HP", "minStat": null, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18010.png"
   },
   {
+    "dofusID": "6059",
     "name": {
       "en": "Nomoon",
       "fr": "Nomoon",
@@ -912,15 +1017,17 @@
       "it": "Nomoon",
       "pt": "Nomoon"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18011.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Prospecting", "minStat": 1, "maxStat": 80 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18011.png"
   },
   {
+    "dofusID": "5974",
     "name": {
       "en": "Quaquack",
       "fr": "Kouin-Kouin",
@@ -929,18 +1036,20 @@
       "it": "Quaquà",
       "pt": "Quaquá"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18008.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Prospecting", "minStat": null, "maxStat": 20 },
       { "stat": "Initiative", "minStat": null, "maxStat": 200 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18008.png"
   },
   {
+    "dofusID": "1712",
     "name": {
       "en": "Earth Bwak",
       "fr": "Bwak de Terre",
@@ -949,19 +1058,21 @@
       "it": "Bwak di Terra",
       "pt": "Bwak de Terra"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18005.png",
+    "itemType": "Pet",
     "setID": "14",
+    "level": 1,
     "stats": [
       { "stat": "Strength", "minStat": 1, "maxStat": 80 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 20 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 80 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18005.png"
   },
   {
+    "dofusID": "1711",
     "name": {
       "en": "Air Bwak",
       "fr": "Bwak d'Air",
@@ -970,19 +1081,21 @@
       "it": "Bwak di Aria",
       "pt": "Bwak de Ar"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18004.png",
+    "itemType": "Pet",
     "setID": "15",
+    "level": 1,
     "stats": [
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 20 },
       { "stat": "Agility", "minStat": 1, "maxStat": 80 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 80 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18004.png"
   },
   {
+    "dofusID": "1710",
     "name": {
       "en": "Water Bwak",
       "fr": "Bwak d'Eau",
@@ -991,19 +1104,21 @@
       "it": "Bwak di Acqua",
       "pt": "Bwak de Água"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18002.png",
+    "itemType": "Pet",
     "setID": "13",
+    "level": 1,
     "stats": [
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 20 },
       { "stat": "Chance", "minStat": 1, "maxStat": 80 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 80 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18002.png"
   },
   {
+    "dofusID": "1709",
     "name": {
       "en": "Fire Bwak",
       "fr": "Bwak de Feu",
@@ -1012,19 +1127,21 @@
       "it": "Bwak di Fuoco",
       "pt": "Bwak de Fogo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18003.png",
+    "itemType": "Pet",
     "setID": "2",
+    "level": 1,
     "stats": [
       { "stat": "Intelligence", "minStat": 1, "maxStat": 80 },
       { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 20 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 80 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18003.png"
   },
   {
+    "dofusID": "1403",
     "name": {
       "en": "Wabbit",
       "fr": "Wabbit",
@@ -1033,9 +1150,9 @@
       "it": "Wabbit",
       "pt": "Wabbit"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18007.png",
+    "itemType": "Pet",
     "setID": "11",
+    "level": 1,
     "stats": [
       { "stat": "Wisdom", "minStat": 1, "maxStat": 27 },
       { "stat": "Strength", "minStat": 1, "maxStat": 80 },
@@ -1043,11 +1160,13 @@
       { "stat": "Agility", "minStat": 1, "maxStat": 80 },
       { "stat": "Intelligence", "minStat": 1, "maxStat": 80 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18007.png"
   },
   {
+    "dofusID": "1384",
     "name": {
       "en": "Bow Meow",
       "fr": "Chacha",
@@ -1056,9 +1175,9 @@
       "it": "Maomao",
       "pt": "Miaw"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18001.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "% Neutral Resistance", "minStat": 1, "maxStat": 20 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 80 },
@@ -1067,11 +1186,13 @@
       { "stat": "Chance", "minStat": 1, "maxStat": 80 },
       { "stat": "Agility", "minStat": 1, "maxStat": 80 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18001.png"
   },
   {
+    "dofusID": "1368",
     "name": {
       "en": "Bow Wow",
       "fr": "Chienchien",
@@ -1080,15 +1201,17 @@
       "it": "Baubau",
       "pt": "Awaw"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18006.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 20 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18006.png"
   },
   {
+    "dofusID": "10015",
     "name": {
       "en": "[!EN] Kometh",
       "fr": "Kometh",
@@ -1097,12 +1220,13 @@
       "it": "[!IT] Kometh",
       "pt": "[!PT] Kometh"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/18062.png",
+    "itemType": "Pet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Prospecting", "minStat": null, "maxStat": 80 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/18062.png"
   }
 ]

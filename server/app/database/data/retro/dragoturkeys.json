@@ -1,5 +1,6 @@
 [
   {
+    "dofusID": "8485",
     "name": {
       "en": "Armoured Dragoturkey",
       "fr": "Dragodinde en armure",
@@ -8,9 +9,9 @@
       "it": "Dragacchino in Armatura",
       "pt": "Dragoperu com armadura"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97093.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Power", "minStat": null, "maxStat": 50 },
       { "stat": "% Neutral Resistance", "minStat": null, "maxStat": 5 },
@@ -19,6 +20,7 @@
       { "stat": "% Water Resistance", "minStat": null, "maxStat": 5 },
       { "stat": "% Air Resistance", "minStat": null, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -28,9 +30,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97093.png"
   },
   {
+    "dofusID": "7111",
     "name": {
       "en": "Plum and Crimson Dragoturkey",
       "fr": "Dragodinde Prune et Pourpre",
@@ -39,14 +42,15 @@
       "it": "Dragacchino Prugna e Porpora",
       "pt": "Dragoperu ameixa e púrpura"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97092.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 200 },
       { "stat": "Strength", "minStat": null, "maxStat": 60 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -56,9 +60,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97092.png"
   },
   {
+    "dofusID": "7110",
     "name": {
       "en": "Plum and Orchid Dragoturkey",
       "fr": "Dragodinde Prune et Orchidée",
@@ -67,14 +72,15 @@
       "it": "Dragacchino Prugna e Orchidea",
       "pt": "Dragoperu ameixa e orquídea"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97091.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 200 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 60 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -84,9 +90,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97091.png"
   },
   {
+    "dofusID": "7109",
     "name": {
       "en": "Plum and Turquoise Dragoturkey",
       "fr": "Dragodinde Prune et Turquoise",
@@ -95,14 +102,15 @@
       "it": "Dragacchino Prugna e Turchese",
       "pt": "Dragoperu ameixa e turquesa"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97090.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 200 },
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Prospecting", "minStat": null, "maxStat": 60 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -112,9 +120,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97090.png"
   },
   {
+    "dofusID": "7108",
     "name": {
       "en": "Plum and Ginger Dragoturkey",
       "fr": "Dragodinde Prune et Rousse",
@@ -123,13 +132,14 @@
       "it": "Dragacchino Prugna e Rosso",
       "pt": "Dragoperu ameixa e ruivo"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97089.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 300 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -139,9 +149,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97089.png"
   },
   {
+    "dofusID": "7107",
     "name": {
       "en": "Plum and Ivory Dragoturkey",
       "fr": "Dragodinde Prune et Ivoire",
@@ -150,14 +161,15 @@
       "it": "Dragacchino Prugna e Avorio",
       "pt": "Dragoperu ameixa e marfim"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97088.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 200 },
       { "stat": "Power", "minStat": null, "maxStat": 40 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -167,9 +179,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97088.png"
   },
   {
+    "dofusID": "7106",
     "name": {
       "en": "Plum and Indigo Dragoturkey",
       "fr": "Dragodinde Prune et Indigo",
@@ -178,14 +191,15 @@
       "it": "Dragacchino Prugna e Indaco",
       "pt": "Dragoperu ameixa e índigo"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97087.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 200 },
       { "stat": "Chance", "minStat": null, "maxStat": 60 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -195,9 +209,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97087.png"
   },
   {
+    "dofusID": "7105",
     "name": {
       "en": "Plum and Emerald Dragoturkey",
       "fr": "Dragodinde Prune et Emeraude",
@@ -206,14 +221,15 @@
       "it": "Dragacchino Prugna e Smeraldo",
       "pt": "Dragoperu ameixa e esmeralda"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97086.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 200 },
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -223,9 +239,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97086.png"
   },
   {
+    "dofusID": "7104",
     "name": {
       "en": "Plum and Ebony Dragoturkey",
       "fr": "Dragodinde Prune et Ebène",
@@ -234,14 +251,15 @@
       "it": "Dragacchino Prugna ed Ebano",
       "pt": "Dragoperu ameixa e ébano"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97085.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 200 },
       { "stat": "Agility", "minStat": null, "maxStat": 60 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -251,9 +269,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97085.png"
   },
   {
+    "dofusID": "7103",
     "name": {
       "en": "Plum and Golden Dragoturkey",
       "fr": "Dragodinde Prune et Dorée",
@@ -262,14 +281,15 @@
       "it": "Dragacchino Prugna e Dorato",
       "pt": "Dragoperu ameixa e dourado"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97084.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 200 },
       { "stat": "Wisdom", "minStat": null, "maxStat": 25 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -279,9 +299,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97084.png"
   },
   {
+    "dofusID": "7102",
     "name": {
       "en": "Plum and Almond Dragoturkey",
       "fr": "Dragodinde Prune et Amande",
@@ -290,15 +311,16 @@
       "it": "Dragacchino Prugna e Mandorla",
       "pt": "Dragoperu ameixa e amêndoa"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97083.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 200 },
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": null, "maxStat": 500 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -308,9 +330,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97083.png"
   },
   {
+    "dofusID": "7101",
     "name": {
       "en": "Orchid and Crimson Dragoturkey",
       "fr": "Dragodinde Orchidée et Pourpre",
@@ -319,14 +342,15 @@
       "it": "Dragacchino Orchidea e Porpora",
       "pt": "Dragoperu orquídea e púrpura"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97082.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Strength", "minStat": null, "maxStat": 50 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -336,9 +360,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97082.png"
   },
   {
+    "dofusID": "7098",
     "name": {
       "en": "Turquoise and Crimson Dragoturkey",
       "fr": "Dragodinde Turquoise et Pourpre",
@@ -347,14 +372,15 @@
       "it": "Dragacchino Turchese e Porpora",
       "pt": "Dragoperu turquesa e púrpura"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97079.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Strength", "minStat": null, "maxStat": 60 },
       { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -364,9 +390,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97079.png"
   },
   {
+    "dofusID": "7097",
     "name": {
       "en": "Turquoise and Orchid Dragoturkey",
       "fr": "Dragodinde Turquoise et Orchidée",
@@ -375,14 +402,15 @@
       "it": "Dragacchino Turchese e Orchidea",
       "pt": "Dragoperu turquesa e orquídea"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97078.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 60 },
       { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -392,9 +420,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97078.png"
   },
   {
+    "dofusID": "7096",
     "name": {
       "en": "Crimson and Ginger Dragoturkey",
       "fr": "Dragodinde Pourpre et Rousse",
@@ -403,13 +432,14 @@
       "it": "Dragacchino Porpora e Rosso",
       "pt": "Dragoperu púrpura e ruivo"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97077.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 150 },
       { "stat": "Strength", "minStat": null, "maxStat": 60 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -419,9 +449,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97077.png"
   },
   {
+    "dofusID": "7095",
     "name": {
       "en": "Orchid and Ginger Dragoturkey",
       "fr": "Dragodinde Orchidée et Rousse",
@@ -430,13 +461,14 @@
       "it": "Dragacchino Orchidea e Rosso",
       "pt": "Dragoperu orquídea e ruivo"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97076.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 150 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 60 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -446,9 +478,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97076.png"
   },
   {
+    "dofusID": "7094",
     "name": {
       "en": "Turquoise and Ginger Dragoturkey",
       "fr": "Dragodinde Turquoise et Rousse",
@@ -457,13 +490,14 @@
       "it": "Dragacchino Turchese e Rosso",
       "pt": "Dragoperu turquesa e ruivo"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97075.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 200 },
       { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -473,9 +507,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97075.png"
   },
   {
+    "dofusID": "7093",
     "name": {
       "en": "Ivory and Crimson Dragoturkey",
       "fr": "Dragodinde Ivoire et Pourpre",
@@ -484,14 +519,15 @@
       "it": "Dragacchino Avorio e Porpora",
       "pt": "Dragoperu marfim e púrpura"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97074.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Strength", "minStat": null, "maxStat": 40 },
       { "stat": "Power", "minStat": null, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -501,9 +537,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97074.png"
   },
   {
+    "dofusID": "7092",
     "name": {
       "en": "Ivory and Orchid Dragoturkey",
       "fr": "Dragodinde Ivoire et Orchidée",
@@ -512,14 +549,15 @@
       "it": "Dragacchino Avorio e Orchidea",
       "pt": "Dragoperu marfim e orquídea"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97073.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 40 },
       { "stat": "Power", "minStat": null, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -529,9 +567,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97073.png"
   },
   {
+    "dofusID": "7090",
     "name": {
       "en": "Indigo and Crimson Dragoturkey",
       "fr": "Dragodinde Indigo et Pourpre",
@@ -540,14 +579,15 @@
       "it": "Dragacchino Indaco e Porpora",
       "pt": "Dragoperu índigo e púrpura"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97071.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Strength", "minStat": null, "maxStat": 50 },
       { "stat": "Chance", "minStat": null, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -557,9 +597,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97071.png"
   },
   {
+    "dofusID": "7081",
     "name": {
       "en": "Emerald and Ivory Dragoturkey",
       "fr": "Dragodinde Emeraude et Ivoire",
@@ -568,14 +609,15 @@
       "it": "Dragacchino Smeraldo e Avorio",
       "pt": "Dragoperu esmeralda e marfim"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97062.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Power", "minStat": null, "maxStat": 20 },
       { "stat": "MP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -585,9 +627,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97062.png"
   },
   {
+    "dofusID": "7080",
     "name": {
       "en": "Emerald and Indigo Dragoturkey",
       "fr": "Dragodinde Emeraude et Indigo",
@@ -596,14 +639,15 @@
       "it": "Dragacchino Smeraldo e Indaco",
       "pt": "Dragoperu esmeralda e índigo"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97061.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Chance", "minStat": null, "maxStat": 30 },
       { "stat": "MP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -613,9 +657,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97061.png"
   },
   {
+    "dofusID": "7079",
     "name": {
       "en": "Ebony and Crimson Dragoturkey",
       "fr": "Dragodinde Ebène et Pourpre",
@@ -624,14 +669,15 @@
       "it": "Dragacchino Ebano e Porpora",
       "pt": "Dragoperu ébano e púrpura"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97057.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Strength", "minStat": null, "maxStat": 50 },
       { "stat": "Agility", "minStat": null, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -641,9 +687,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97057.png"
   },
   {
+    "dofusID": "7078",
     "name": {
       "en": "Ebony and Orchid Dragoturkey",
       "fr": "Dragodinde Ebène et Orchidée",
@@ -652,14 +699,15 @@
       "it": "Dragacchino Ebano e Orchidea",
       "pt": "Dragoperu ébano e orquídea"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97060.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 50 },
       { "stat": "Agility", "minStat": null, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -669,9 +717,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97060.png"
   },
   {
+    "dofusID": "7077",
     "name": {
       "en": "Ebony and Turquoise Dragoturkey",
       "fr": "Dragodinde Ebène et Turquoise",
@@ -680,14 +729,15 @@
       "it": "Dragacchino Ebano e Turchese",
       "pt": "Dragoperu ébano e turquesa"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97059.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Agility", "minStat": null, "maxStat": 60 },
       { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -697,9 +747,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97059.png"
   },
   {
+    "dofusID": "7076",
     "name": {
       "en": "Ebony and Indigo Dragoturkey",
       "fr": "Dragodinde Ebène et Indigo",
@@ -708,14 +759,15 @@
       "it": "Dragacchino Ebano e Indaco",
       "pt": "Dragoperu ébano e índigo"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97058.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Chance", "minStat": null, "maxStat": 50 },
       { "stat": "Agility", "minStat": null, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -725,9 +777,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97058.png"
   },
   {
+    "dofusID": "7075",
     "name": {
       "en": "Ebony and Emerald Dragoturkey",
       "fr": "Dragodinde Ebène et Emeraude",
@@ -736,14 +789,15 @@
       "it": "Dragacchino Ebano e Smeraldo",
       "pt": "Dragoperu ébano e esmeralda"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97056.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Agility", "minStat": null, "maxStat": 30 },
       { "stat": "MP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -753,9 +807,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97056.png"
   },
   {
+    "dofusID": "7074",
     "name": {
       "en": "Golden and Crimson Dragoturkey",
       "fr": "Dragodinde Dorée et Pourpre",
@@ -764,14 +819,15 @@
       "it": "Dragacchino Dorato e Porpora",
       "pt": "Dragoperu dourado e púrpura"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97055.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Strength", "minStat": null, "maxStat": 60 },
       { "stat": "Wisdom", "minStat": null, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -781,9 +837,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97055.png"
   },
   {
+    "dofusID": "7073",
     "name": {
       "en": "Golden and Orchid Dragoturkey",
       "fr": "Dragodinde Dorée et Orchidée",
@@ -792,14 +849,15 @@
       "it": "Dragacchino Dorato e Orchidea",
       "pt": "Dragoperu dourado e orquídea"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97054.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 60 },
       { "stat": "Wisdom", "minStat": null, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -809,9 +867,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97054.png"
   },
   {
+    "dofusID": "7072",
     "name": {
       "en": "Golden and Turquoise Dragoturkey",
       "fr": "Dragodinde Dorée et Turquoise",
@@ -820,14 +879,15 @@
       "it": "Dragacchino Dorato e Turchese",
       "pt": "Dragoperu dourado e turquesa"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97053.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Wisdom", "minStat": null, "maxStat": 25 },
       { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -837,9 +897,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97053.png"
   },
   {
+    "dofusID": "7071",
     "name": {
       "en": "Golden and Ginger Dragoturkey",
       "fr": "Dragodinde Dorée et Rousse",
@@ -848,13 +909,14 @@
       "it": "Dragacchino Dorato e Rosso",
       "pt": "Dragoperu dourado e ruivo"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97052.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Wisdom", "minStat": null, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -864,9 +926,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97052.png"
   },
   {
+    "dofusID": "7070",
     "name": {
       "en": "Golden and Ivory Dragoturkey",
       "fr": "Dragodinde Dorée et Ivoire",
@@ -875,14 +938,15 @@
       "it": "Dragacchino Dorato e Avorio",
       "pt": "Dragoperu dourado e marfim"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97051.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Wisdom", "minStat": null, "maxStat": 25 },
       { "stat": "Power", "minStat": null, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -892,9 +956,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97051.png"
   },
   {
+    "dofusID": "7069",
     "name": {
       "en": "Golden and Indigo Dragoturkey",
       "fr": "Dragodinde Dorée et Indigo",
@@ -903,14 +968,15 @@
       "it": "Dragacchino Dorato e Indaco",
       "pt": "Dragoperu dourado e índigo"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97050.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Chance", "minStat": null, "maxStat": 60 },
       { "stat": "Wisdom", "minStat": null, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -920,9 +986,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97050.png"
   },
   {
+    "dofusID": "7068",
     "name": {
       "en": "Golden and Emerald Dragoturkey",
       "fr": "Dragodinde Dorée et Emeraude",
@@ -931,14 +998,15 @@
       "it": "Dragacchino Dorato e Smeraldo",
       "pt": "Dragoperu dourado e esmeralda"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97049.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Wisdom", "minStat": null, "maxStat": 25 },
       { "stat": "MP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -948,9 +1016,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97049.png"
   },
   {
+    "dofusID": "7067",
     "name": {
       "en": "Golden and Ebony Dragoturkey",
       "fr": "Dragodinde Dorée et Ebène",
@@ -959,14 +1028,15 @@
       "it": "Dragacchino Dorato ed Ebano",
       "pt": "Dragoperu dourado e ébano"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97048.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Agility", "minStat": null, "maxStat": 60 },
       { "stat": "Wisdom", "minStat": null, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -976,9 +1046,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97048.png"
   },
   {
+    "dofusID": "7066",
     "name": {
       "en": "Almond and Crimson Dragoturkey",
       "fr": "Dragodinde Amande et Pourpre",
@@ -987,15 +1058,16 @@
       "it": "Dragacchino Mandorla e Porpora",
       "pt": "Dragoperu amêndoa e púrpura"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97047.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 50 },
       { "stat": "Strength", "minStat": null, "maxStat": 60 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": null, "maxStat": 500 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1005,9 +1077,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97047.png"
   },
   {
+    "dofusID": "7065",
     "name": {
       "en": "Almond and Orchid Dragoturkey",
       "fr": "Dragodinde Amande et Orchidée",
@@ -1016,15 +1089,16 @@
       "it": "Dragacchino Mandorla e Orchidea",
       "pt": "Dragoperu amêndoa e orquídea"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97046.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 50 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 60 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": null, "maxStat": 500 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1034,9 +1108,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97046.png"
   },
   {
+    "dofusID": "7064",
     "name": {
       "en": "Almond and Turquoise Dragoturkey",
       "fr": "Dragodinde Amande et Turquoise",
@@ -1045,15 +1120,16 @@
       "it": "Dragacchino Mandorla e Turchese",
       "pt": "Dragoperu amêndoa e turquesa"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97045.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 50 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Prospecting", "minStat": null, "maxStat": 40 },
       { "stat": "Initiative", "minStat": null, "maxStat": 500 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1063,9 +1139,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97045.png"
   },
   {
+    "dofusID": "7063",
     "name": {
       "en": "Almond and Ginger Dragoturkey",
       "fr": "Dragodinde Amande et Rousse",
@@ -1074,14 +1151,15 @@
       "it": "Dragacchino Mandorla e Rosso",
       "pt": "Dragoperu amêndoa e ruivo"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97044.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Summons", "minStat": null, "maxStat": 2 },
       { "stat": "Initiative", "minStat": null, "maxStat": 500 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1091,9 +1169,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97044.png"
   },
   {
+    "dofusID": "7062",
     "name": {
       "en": "Almond and Ivory Dragoturkey",
       "fr": "Dragodinde Amande et Ivoire",
@@ -1102,15 +1181,16 @@
       "it": "Dragacchino Mandorla e Avorio",
       "pt": "Dragoperu amêndoa e marfim"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97043.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 40 },
       { "stat": "Power", "minStat": null, "maxStat": 40 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": null, "maxStat": 500 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1120,9 +1200,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97043.png"
   },
   {
+    "dofusID": "7061",
     "name": {
       "en": "Almond and Indigo Dragoturkey",
       "fr": "Dragodinde Amande et Indigo",
@@ -1131,15 +1212,16 @@
       "it": "Dragacchino Mandorla e Indaco",
       "pt": "Dragoperu amêndoa e índigo"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97042.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 50 },
       { "stat": "Chance", "minStat": null, "maxStat": 60 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": null, "maxStat": 500 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1149,9 +1231,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97042.png"
   },
   {
+    "dofusID": "7060",
     "name": {
       "en": "Almond and Emerald Dragoturkey",
       "fr": "Dragodinde Amande et Emeraude",
@@ -1160,15 +1243,16 @@
       "it": "Dragacchino Mandorla e Smeraldo",
       "pt": "Dragoperu amêndoa e esmeralda"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97041.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": null, "maxStat": 500 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1178,9 +1262,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97041.png"
   },
   {
+    "dofusID": "7059",
     "name": {
       "en": "Almond and Ebony Dragoturkey",
       "fr": "Dragodinde Amande et Ebène",
@@ -1189,15 +1274,16 @@
       "it": "Dragacchino Mandorla ed Ebano",
       "pt": "Dragoperu amêndoa e ébano"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97040.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 50 },
       { "stat": "Agility", "minStat": null, "maxStat": 60 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": null, "maxStat": 500 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1207,9 +1293,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97040.png"
   },
   {
+    "dofusID": "7058",
     "name": {
       "en": "Almond and Golden Dragoturkey",
       "fr": "Dragodinde Amande et Dorée",
@@ -1218,15 +1305,16 @@
       "it": "Dragacchino Mandorla e Dorato",
       "pt": "Dragoperu amêndoa e dourado"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97039.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": null, "maxStat": 25 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": null, "maxStat": 500 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1236,9 +1324,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97039.png"
   },
   {
+    "dofusID": "7057",
     "name": {
       "en": "Plum Dragoturkey",
       "fr": "Dragodinde Prune",
@@ -1247,13 +1336,14 @@
       "it": "Dragacchino Prugna",
       "pt": "Dragoperu ameixa"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97038.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 200 },
       { "stat": "Range", "minStat": null, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1263,9 +1353,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97038.png"
   },
   {
+    "dofusID": "7056",
     "name": {
       "en": "Orchid Dragoturkey",
       "fr": "Dragodinde Orchidée",
@@ -1274,13 +1365,14 @@
       "it": "Dragacchino Orchidea",
       "pt": "Dragoperu orquídea"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97037.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 50 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 80 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1290,9 +1382,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97037.png"
   },
   {
+    "dofusID": "7055",
     "name": {
       "en": "Emerald Dragoturkey",
       "fr": "Dragodinde Emeraude",
@@ -1301,13 +1394,14 @@
       "it": "Dragacchino Smeraldo",
       "pt": "Dragoperu esmeralda"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97036.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 200 },
       { "stat": "MP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1317,9 +1411,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97036.png"
   },
   {
+    "dofusID": "7054",
     "name": {
       "en": "Almond Dragoturkey",
       "fr": "Dragodinde Amande",
@@ -1328,13 +1423,14 @@
       "it": "Dragacchino Mandorla",
       "pt": "Dragoperu amêndoa"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97023.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Summons", "minStat": null, "maxStat": 2 },
       { "stat": "Initiative", "minStat": null, "maxStat": 1000 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1344,9 +1440,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97023.png"
   },
   {
+    "dofusID": "7053",
     "name": {
       "en": "Crimson Dragoturkey",
       "fr": "Dragodinde Pourpre",
@@ -1355,13 +1452,14 @@
       "it": "Dragacchino Porpora",
       "pt": "Dragoperu púrpura"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97034.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 50 },
       { "stat": "Strength", "minStat": null, "maxStat": 80 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1371,9 +1469,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97034.png"
   },
   {
+    "dofusID": "7052",
     "name": {
       "en": "Golden Dragoturkey",
       "fr": "Dragodinde Dorée",
@@ -1382,13 +1481,14 @@
       "it": "Dragacchino Dorato",
       "pt": "Dragoperu dourado"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97033.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": null, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1398,9 +1498,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97033.png"
   },
   {
+    "dofusID": "7051",
     "name": {
       "en": "Indigo Dragoturkey",
       "fr": "Dragodinde Indigo",
@@ -1409,13 +1510,14 @@
       "it": "Dragacchino Indaco",
       "pt": "Dragoperu índigo"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97032.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 50 },
       { "stat": "Chance", "minStat": null, "maxStat": 80 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1425,9 +1527,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97032.png"
   },
   {
+    "dofusID": "7050",
     "name": {
       "en": "Ivory Dragoturkey",
       "fr": "Dragodinde Ivoire",
@@ -1436,13 +1539,14 @@
       "it": "Dragacchino Avorio",
       "pt": "Dragoperu marfim"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97094.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 50 },
       { "stat": "Power", "minStat": null, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1452,9 +1556,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97094.png"
   },
   {
+    "dofusID": "7049",
     "name": {
       "en": "Turquoise Dragoturkey",
       "fr": "Dragodinde Turquoise",
@@ -1463,13 +1568,14 @@
       "it": "Dragacchino Turchese",
       "pt": "Dragoperu turquesa"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97030.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 50 },
       { "stat": "Prospecting", "minStat": null, "maxStat": 80 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1479,9 +1585,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97030.png"
   },
   {
+    "dofusID": "7048",
     "name": {
       "en": "Ebony and Ginger Dragoturkey",
       "fr": "Dragodinde Ebène et Rousse",
@@ -1490,13 +1597,14 @@
       "it": "Dragacchino Ebano e Rosso",
       "pt": "Dragoperu ébano e ruivo"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97029.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 150 },
       { "stat": "Agility", "minStat": null, "maxStat": 60 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1506,9 +1614,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97029.png"
   },
   {
+    "dofusID": "7047",
     "name": {
       "en": "Ivory and Ginger Dragoturkey",
       "fr": "Dragodinde Ivoire et Rousse",
@@ -1517,13 +1626,14 @@
       "it": "Dragacchino Avorio e Rosso",
       "pt": "Dragoperu marfim e ruivo"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97028.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 200 },
       { "stat": "Power", "minStat": null, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1533,9 +1643,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97028.png"
   },
   {
+    "dofusID": "7046",
     "name": {
       "en": "Ginger Dragoturkey",
       "fr": "Dragodinde Rousse",
@@ -1544,10 +1655,11 @@
       "it": "Dragacchino Rosso",
       "pt": "Dragoperu ruivo"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97025.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 300 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1557,9 +1669,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97025.png"
   },
   {
+    "dofusID": "7045",
     "name": {
       "en": "Ebony and Ivory Dragoturkey",
       "fr": "Dragodinde Ebène et Ivoire",
@@ -1568,14 +1681,15 @@
       "it": "Dragacchino Ebano e Avorio",
       "pt": "Dragoperu ébano e marfim"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97026.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Agility", "minStat": null, "maxStat": 40 },
       { "stat": "Power", "minStat": null, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1585,9 +1699,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97026.png"
   },
   {
+    "dofusID": "7043",
     "name": {
       "en": "Ebony Dragoturkey",
       "fr": "Dragodinde Ebène",
@@ -1596,13 +1711,14 @@
       "it": "Dragacchino Ebano",
       "pt": "Dragoperu ébano"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/97024.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 60,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 50 },
       { "stat": "Agility", "minStat": null, "maxStat": 80 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1612,9 +1728,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97024.png"
   },
   {
+    "dofusID": "7091",
     "name": {
       "en": "Ivory and Turquoise Dragoturkey",
       "fr": "Dragodinde Ivoire et Turquoise",
@@ -1623,19 +1740,21 @@
       "it": "Dragacchino Avorio e Turchese",
       "pt": "Dragoperu marfim e turquesa"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/97072.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Power", "minStat": null, "maxStat": 40 },
       { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/97072.png"
   },
   {
+    "dofusID": "7089",
     "name": {
       "en": "Indigo and Orchid Dragoturkey",
       "fr": "Dragodinde Indigo et Orchidée",
@@ -1644,19 +1763,21 @@
       "it": "Dragacchino Indaco e Orchidea",
       "pt": "Dragoperu índigo e orquídea"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/97070.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 50 },
       { "stat": "Chance", "minStat": null, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/97070.png"
   },
   {
+    "dofusID": "7088",
     "name": {
       "en": "Indigo and Turquoise Dragoturkey",
       "fr": "Dragodinde Indigo et Turquoise",
@@ -1665,19 +1786,21 @@
       "it": "Dragacchino Indaco e Turchese",
       "pt": "Dragoperu índigo e turquesa"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/97069.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Chance", "minStat": null, "maxStat": 60 },
       { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/97069.png"
   },
   {
+    "dofusID": "7087",
     "name": {
       "en": "Indigo and Ginger Dragoturkey",
       "fr": "Dragodinde Indigo et Rousse",
@@ -1686,18 +1809,20 @@
       "it": "Dragacchino Indaco e Rosso",
       "pt": "Dragoperu índigo e ruivo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/97068.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 150 },
       { "stat": "Chance", "minStat": null, "maxStat": 60 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/97068.png"
   },
   {
+    "dofusID": "7086",
     "name": {
       "en": "Indigo and Ivory Dragoturkey",
       "fr": "Dragodinde Indigo et Ivoire",
@@ -1706,14 +1831,15 @@
       "it": "Dragacchino Indaco e Avorio",
       "pt": "Dragoperu índigo e marfim"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/97067.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Chance", "minStat": null, "maxStat": 40 },
       { "stat": "Power", "minStat": null, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1723,9 +1849,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97067.png"
   },
   {
+    "dofusID": "7085",
     "name": {
       "en": "Emerald and Crimson Dragoturkey",
       "fr": "Dragodinde Emeraude et Pourpre",
@@ -1734,14 +1861,15 @@
       "it": "Dragacchino Smeraldo e Porpora",
       "pt": "Dragoperu esmeralda e púrpura"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/97066.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Strength", "minStat": null, "maxStat": 30 },
       { "stat": "MP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1751,9 +1879,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97066.png"
   },
   {
+    "dofusID": "7084",
     "name": {
       "en": "Emerald and Orchid Dragoturkey",
       "fr": "Dragodinde Emeraude et Orchidée",
@@ -1762,14 +1891,15 @@
       "it": "Dragacchino Smeraldo e Orchidea",
       "pt": "Dragoperu esmeralda e orquídea"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/97065.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 30 },
       { "stat": "MP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1779,9 +1909,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97065.png"
   },
   {
+    "dofusID": "7083",
     "name": {
       "en": "Emerald and Turquoise Dragoturkey",
       "fr": "Dragodinde Emeraude et Turquoise",
@@ -1790,14 +1921,15 @@
       "it": "Dragacchino Smeraldo e Turchese",
       "pt": "Dragoperu esmeralda e turquesa"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/97064.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 100 },
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Prospecting", "minStat": null, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1807,9 +1939,10 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97064.png"
   },
   {
+    "dofusID": "7082",
     "name": {
       "en": "Emerald and Ginger Dragoturkey",
       "fr": "Dragodinde Emeraude et Rousse",
@@ -1818,13 +1951,14 @@
       "it": "Dragacchino Smeraldo e Rosso",
       "pt": "Dragoperu esmeralda e ruivo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/97063.png",
+    "itemType": "Mount",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 300 },
       { "stat": "MP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Niveau > 59"],
@@ -1834,6 +1968,6 @@
       "it": ["Niveau > 59"],
       "pt": ["Niveau > 59"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/97063.png"
   }
 ]

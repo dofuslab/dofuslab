@@ -1,5 +1,6 @@
 [
   {
+    "dofusID": "7286",
     "name": {
       "en": "Kaliptus Dofus",
       "fr": "Dofus Kaliptus",
@@ -8,15 +9,17 @@
       "it": "Dofus Kalipto",
       "pt": "Dofus Kaliptus"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/23010.png",
+    "itemType": "Dofus",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Prospecting", "minStat": 6, "maxStat": 30 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/23010.png"
   },
   {
+    "dofusID": "6989",
     "name": {
       "en": "Ochre Dofus",
       "fr": "Dofus Ocre",
@@ -25,15 +28,17 @@
       "it": "Dofus Ocra",
       "pt": "Dofus Ocre"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/23012.png",
+    "itemType": "Dofus",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "AP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/23012.png"
   },
   {
+    "dofusID": "680",
     "name": {
       "en": "Cawwot Dofus",
       "fr": "Dofus Cawotte",
@@ -42,15 +47,17 @@
       "it": "Dofus Cawota",
       "pt": "Dofus Cenouwa"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/23006.png",
+    "itemType": "Dofus",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Wisdom", "minStat": 6, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/23006.png"
   },
   {
+    "dofusID": "6404",
     "name": {
       "en": "Dofawa",
       "fr": "Dofawa",
@@ -59,15 +66,17 @@
       "it": "Dofawa",
       "pt": "Dofawa"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/23009.png",
+    "itemType": "Dofus",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/23009.png"
   },
   {
+    "dofusID": "6292",
     "name": {
       "en": "Vulbis Dofus",
       "fr": "Dofus Vulbis",
@@ -76,15 +85,17 @@
       "it": "Dofus Vulbis",
       "pt": "Dofus Vulbis"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/23004.png",
+    "itemType": "Dofus",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/23004.png"
   },
   {
+    "dofusID": "481",
     "name": {
       "en": "Turquoise Dofus",
       "fr": "Dofus Turquoise",
@@ -93,15 +104,17 @@
       "it": "Dofus Turchese",
       "pt": "Dofus Turquesa"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/23003.png",
+    "itemType": "Dofus",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Critical", "minStat": 11, "maxStat": 20 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/23003.png"
   },
   {
+    "dofusID": "480",
     "name": {
       "en": "Emerald Dofus",
       "fr": "Dofus Émeraude",
@@ -110,15 +123,17 @@
       "it": "Dofus Smeraldo",
       "pt": "Dofus Esmeralda"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/23002.png",
+    "itemType": "Dofus",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Vitality", "minStat": 51, "maxStat": 100 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/23002.png"
   },
   {
+    "dofusID": "441",
     "name": {
       "en": "Crimson Dofus",
       "fr": "Dofus Pourpre",
@@ -127,12 +142,13 @@
       "it": "Dofus Porpora",
       "pt": "Dofus Púrpura"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/23001.png",
+    "itemType": "Dofus",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Power", "minStat": 26, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/23001.png"
   }
 ]

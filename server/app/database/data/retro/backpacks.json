@@ -1,5 +1,6 @@
 [
   {
+    "dofusID": "6163",
     "name": {
       "en": "Crocodyl Chief Schoolbag",
       "fr": "Petit sac d'écolier du Chef Crocodaille",
@@ -8,9 +9,9 @@
       "it": "Piccolo Zaino dello Scolaro del Capo Coccodrail",
       "pt": "Pequena mochila escolar do Chefe Crocodyl"
     },
-    "level": 70,
-    "imageUrl": "/retro/item/81058.png",
+    "itemType": "Backpack",
     "setID": "20",
+    "level": 70,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
@@ -20,11 +21,13 @@
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/81058.png"
   },
   {
+    "dofusID": "7121",
     "name": {
       "en": "Koolich Bag",
       "fr": "Sac du Koulosse",
@@ -33,9 +36,9 @@
       "it": "Zaino del Culosse",
       "pt": "Mochila do Tronkoso"
     },
-    "level": 69,
-    "imageUrl": "/retro/item/81002.png",
+    "itemType": "Backpack",
     "setID": "44",
+    "level": 69,
     "stats": [
       { "stat": "Vitality", "minStat": 51, "maxStat": 150 },
       { "stat": "Damage", "minStat": 5, "maxStat": 7 },
@@ -43,11 +46,13 @@
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/81002.png"
   },
   {
+    "dofusID": "5880",
     "name": {
       "en": "Cawwot-Bag",
       "fr": "Sac-Cawotte",
@@ -56,19 +61,21 @@
       "it": "Zaino-Cawota",
       "pt": "Mochila-Cenouwa"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/81057.png",
+    "itemType": "Backpack",
     "setID": "11",
+    "level": 60,
     "stats": [
       { "stat": "Pods", "minStat": 501, "maxStat": 1000 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/81057.png"
   },
   {
+    "dofusID": "1365",
     "name": {
       "en": "Large Adventurer Bag",
       "fr": "Sac du Grand Aventurier",
@@ -77,15 +84,17 @@
       "it": "Zaino del Grande Avventuriero",
       "pt": "Mochila do grande aventureiro"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/81032.png",
+    "itemType": "Backpack",
     "setID": null,
+    "level": 60,
     "stats": [{ "stat": "Pods", "minStat": 501, "maxStat": 1000 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/81032.png"
   },
   {
+    "dofusID": "1364",
     "name": {
       "en": "Adventurer Bag",
       "fr": "Sac de l'Aventurier",
@@ -94,15 +103,17 @@
       "it": "Zaino dell'Avventuriero",
       "pt": "Mochila do aventureiro"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/81031.png",
+    "itemType": "Backpack",
     "setID": null,
+    "level": 40,
     "stats": [{ "stat": "Pods", "minStat": 251, "maxStat": 300 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/81031.png"
   },
   {
+    "dofusID": "8749",
     "name": {
       "en": "[!EN] Sac de Bouba le Prophète",
       "fr": "Sac de Bouba le Prophète",
@@ -111,19 +122,21 @@
       "it": "[!IT] Sac de Bouba le Prophète",
       "pt": "[!PT] Sac de Bouba le Prophète"
     },
-    "level": 38,
-    "imageUrl": "/retro/item/81033.png",
+    "itemType": "Backpack",
     "setID": "117",
+    "level": 38,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/81033.png"
   },
   {
+    "dofusID": "6400",
     "name": {
       "en": "Larvabag",
       "fr": "Larvasac",
@@ -132,18 +145,20 @@
       "it": "Larvazaino",
       "pt": "Mochilarva"
     },
-    "level": 27,
-    "imageUrl": "/retro/item/81060.png",
+    "itemType": "Backpack",
     "setID": "33",
+    "level": 27,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 20 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/81060.png"
   },
   {
+    "dofusID": "1363",
     "name": {
       "en": "Staca Noviste's Rucksack",
       "fr": "Sac du Staca Noviste",
@@ -152,10 +167,11 @@
       "it": "Zaino dello Staca Novista",
       "pt": "Sacola de Staca Noviste"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/81030.png",
+    "itemType": "Backpack",
     "setID": null,
+    "level": 20,
     "stats": [{ "stat": "Pods", "minStat": 1001, "maxStat": 1500 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Métier ="],
@@ -165,9 +181,10 @@
       "it": ["Métier ="],
       "pt": ["Métier ="]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/81030.png"
   },
   {
+    "dofusID": "1362",
     "name": {
       "en": "Large Harvester Bag",
       "fr": "Sac du Grand Récolteur",
@@ -176,10 +193,11 @@
       "it": "Zaino del Grande Raccoglitore",
       "pt": "Sacola do Grande Coletor"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/81029.png",
+    "itemType": "Backpack",
     "setID": null,
+    "level": 20,
     "stats": [{ "stat": "Pods", "minStat": 601, "maxStat": 800 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Métier ="],
@@ -189,9 +207,10 @@
       "it": ["Métier ="],
       "pt": ["Métier ="]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/81029.png"
   },
   {
+    "dofusID": "10014",
     "name": {
       "en": "Cheeky Bag",
       "fr": "Sac ripant",
@@ -200,15 +219,17 @@
       "it": "Zaino Furbacchione",
       "pt": "Sacola Atrevida"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/81025.png",
+    "itemType": "Backpack",
     "setID": null,
+    "level": 20,
     "stats": [{ "stat": "Pods", "minStat": 201, "maxStat": 250 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/81025.png"
   },
   {
+    "dofusID": "7342",
     "name": {
       "en": "Farmer Bag",
       "fr": "Sac du Paysan",
@@ -217,18 +238,20 @@
       "it": "Zaino del Contadino",
       "pt": "Sacola do Fazendeiro"
     },
-    "level": 19,
-    "imageUrl": "/retro/item/81003.png",
+    "itemType": "Backpack",
     "setID": "47",
+    "level": 19,
     "stats": [
       { "stat": "Chance", "minStat": 6, "maxStat": 10 },
       { "stat": "Pods", "minStat": 101, "maxStat": 200 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/81003.png"
   },
   {
+    "dofusID": "6237",
     "name": {
       "en": "Small Moskito Schoolbag",
       "fr": "Sac du Petit Moskito",
@@ -237,18 +260,20 @@
       "it": "Zaino del Piccolo Moskito",
       "pt": "Mochila do Moskitinho"
     },
-    "level": 16,
-    "imageUrl": "/retro/item/81059.png",
+    "itemType": "Backpack",
     "setID": "23",
+    "level": 16,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 30 },
       { "stat": "Pods", "minStat": 1, "maxStat": 100 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/81059.png"
   },
   {
+    "dofusID": "1361",
     "name": {
       "en": "Harvester Bag",
       "fr": "Sac du Récolteur",
@@ -257,10 +282,11 @@
       "it": "Zaino del Raccoglitore",
       "pt": "Sacola de Coletor"
     },
-    "level": 15,
-    "imageUrl": "/retro/item/81028.png",
+    "itemType": "Backpack",
     "setID": null,
+    "level": 15,
     "stats": [{ "stat": "Pods", "minStat": 251, "maxStat": 400 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Métier ="],
@@ -270,9 +296,10 @@
       "it": ["Métier ="],
       "pt": ["Métier ="]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/81028.png"
   },
   {
+    "dofusID": "1358",
     "name": {
       "en": "Small Adventurer Bag",
       "fr": "Sac du Petit Aventurier",
@@ -281,15 +308,17 @@
       "it": "Zaino del Piccolo Avventuriero",
       "pt": "Mochila do pequeno aventureiro"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/81027.png",
+    "itemType": "Backpack",
     "setID": null,
+    "level": 10,
     "stats": [{ "stat": "Pods", "minStat": 151, "maxStat": 200 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/81027.png"
   },
   {
+    "dofusID": "1357",
     "name": {
       "en": "Small Harvester Bag",
       "fr": "Sac du Petit Récolteur",
@@ -298,10 +327,11 @@
       "it": "Zaino del Piccolo Raccoglitore",
       "pt": "Sacola de Pequeno Cultivador"
     },
-    "level": 5,
-    "imageUrl": "/retro/item/81026.png",
+    "itemType": "Backpack",
     "setID": null,
+    "level": 5,
     "stats": [{ "stat": "Pods", "minStat": 151, "maxStat": 250 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Métier ="],
@@ -311,9 +341,10 @@
       "it": ["Métier ="],
       "pt": ["Métier ="]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/81026.png"
   },
   {
+    "dofusID": "6856",
     "name": {
       "en": "[!EN] Sakananas",
       "fr": "Sakananas",
@@ -322,15 +353,17 @@
       "it": "[!IT] Sakananas",
       "pt": "[!PT] Sakananas"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/81001.png",
+    "itemType": "Backpack",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Pods", "minStat": 201, "maxStat": 400 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/81001.png"
   },
   {
+    "dofusID": "1356",
     "name": {
       "en": "Small Gobbly Wool Bag",
       "fr": "Petit Sac en Laine de Boufton",
@@ -339,12 +372,13 @@
       "it": "Piccolo Zaino di Lana di Pappaton",
       "pt": "Pequena Sacola em Lã de Paparneiro"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/81025.png",
+    "itemType": "Backpack",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Pods", "minStat": 51, "maxStat": 100 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/81025.png"
   }
 ]

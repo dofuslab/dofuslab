@@ -1,5 +1,6 @@
 [
   {
+    "dofusID": "8389",
     "name": {
       "en": "Kralomansion",
       "fr": "Kralamansion",
@@ -8,9 +9,9 @@
       "it": "Kralamansion",
       "pt": "Kralamansão"
     },
-    "level": 194,
-    "imageUrl": "/retro/item/1142.png",
+    "itemType": "Amulet",
     "setID": "97",
+    "level": 194,
     "stats": [
       { "stat": "Vitality", "minStat": 251, "maxStat": 350 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
@@ -23,11 +24,13 @@
       { "stat": "Summons", "minStat": 1, "maxStat": 2 },
       { "stat": "Prospecting", "minStat": 21, "maxStat": 30 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1142.png"
   },
   {
+    "dofusID": "8388",
     "name": {
       "en": "Amunita",
       "fr": "Amunite",
@@ -36,9 +39,9 @@
       "it": "Amunnite",
       "pt": "Amunito"
     },
-    "level": 189,
-    "imageUrl": "/retro/item/1141.png",
+    "itemType": "Amulet",
     "setID": "107",
+    "level": 189,
     "stats": [
       { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
       { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
@@ -51,11 +54,13 @@
       { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1141.png"
   },
   {
+    "dofusID": "8279",
     "name": {
       "en": "Memori Amulet",
       "fr": "Amulette Ripage",
@@ -64,9 +69,9 @@
       "it": "Amuleto Raschiatura",
       "pt": "Amuleto Memori"
     },
-    "level": 184,
-    "imageUrl": "/retro/item/1137.png",
+    "itemType": "Amulet",
     "setID": "108",
+    "level": 184,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
       { "stat": "Agility", "minStat": 31, "maxStat": 50 },
@@ -80,11 +85,13 @@
       { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
       { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1137.png"
   },
   {
+    "dofusID": "8230",
     "name": {
       "en": "Ougaamulet",
       "fr": "Ougamulette",
@@ -93,9 +100,9 @@
       "it": "Ugamuleto",
       "pt": "Ugahmuleto"
     },
-    "level": 181,
-    "imageUrl": "/retro/item/1127.png",
+    "itemType": "Amulet",
     "setID": "118",
+    "level": 181,
     "stats": [
       { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
       { "stat": "Wisdom", "minStat": 41, "maxStat": 50 },
@@ -106,11 +113,13 @@
       { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1127.png"
   },
   {
+    "dofusID": "7984",
     "name": {
       "en": "Zothulet",
       "fr": "Zothulette",
@@ -119,9 +128,9 @@
       "it": "Zothuleto",
       "pt": "Zothuleto"
     },
-    "level": 162,
-    "imageUrl": "/retro/item/1124.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 162,
     "stats": [
       { "stat": "Damage", "minStat": 6, "maxStat": 10 },
       { "stat": "Power", "minStat": 31, "maxStat": 50 },
@@ -134,11 +143,13 @@
       { "stat": "Critical", "minStat": 4, "maxStat": 5 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1124.png"
   },
   {
+    "dofusID": "7456",
     "name": {
       "en": "Minotot Necklace",
       "fr": "Collier du Minotot",
@@ -147,9 +158,9 @@
       "it": "Collana del Minotot",
       "pt": "Colar do Minotot"
     },
-    "level": 158,
-    "imageUrl": "/retro/item/1111.png",
+    "itemType": "Amulet",
     "setID": "57",
+    "level": 158,
     "stats": [
       { "stat": "Chance", "minStat": 26, "maxStat": 40 },
       { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
@@ -162,11 +173,13 @@
       { "stat": "Prospecting", "minStat": 16, "maxStat": 25 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1111.png"
   },
   {
+    "dofusID": "6505",
     "name": {
       "en": "Tanukouï San Collar",
       "fr": "Collier du Tanukouï San",
@@ -175,9 +188,9 @@
       "it": "Collana di Tanukui San",
       "pt": "Colar do Tanukui San"
     },
-    "level": 152,
-    "imageUrl": "/retro/item/1092.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 152,
     "stats": [
       { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
       { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
@@ -189,11 +202,13 @@
       { "stat": "Neutral Resistance", "minStat": 8, "maxStat": 10 },
       { "stat": "% Neutral Resistance", "minStat": 8, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1092.png"
   },
   {
+    "dofusID": "7446",
     "name": {
       "en": "Amoolet",
       "fr": "La Meulette",
@@ -202,9 +217,9 @@
       "it": "La Muletto",
       "pt": "Um Moolet"
     },
-    "level": 143,
-    "imageUrl": "/retro/item/1107.png",
+    "itemType": "Amulet",
     "setID": "55",
+    "level": 143,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
       { "stat": "Power", "minStat": 6, "maxStat": 15 },
@@ -217,11 +232,13 @@
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "Damage", "minStat": 2, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1107.png"
   },
   {
+    "dofusID": "7640",
     "name": {
       "en": "Soft Oak Talisman",
       "fr": "Talisman du Chêne Mou",
@@ -230,9 +247,9 @@
       "it": "Talismano della Quercia Molle",
       "pt": "Talismã do Carvalho Mole"
     },
-    "level": 138,
-    "imageUrl": "/retro/item/1119.png",
+    "itemType": "Amulet",
     "setID": "66",
+    "level": 138,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 40 },
       { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
@@ -244,11 +261,13 @@
       { "stat": "Heals", "minStat": 6, "maxStat": 8 },
       { "stat": "Initiative", "minStat": 201, "maxStat": 300 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1119.png"
   },
   {
+    "dofusID": "6314",
     "name": {
       "en": "Elya Wood's Talisman",
       "fr": "Talisman d'Elya Wood",
@@ -257,9 +276,9 @@
       "it": "Talismano di Elya Wood",
       "pt": "Talismã de Elya Wood"
     },
-    "level": 135,
-    "imageUrl": "/retro/item/1086.png",
+    "itemType": "Amulet",
     "setID": "39",
+    "level": 135,
     "stats": [
       { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
@@ -271,11 +290,13 @@
       { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1086.png"
   },
   {
+    "dofusID": "7630",
     "name": {
       "en": "Lord of the Rats' Ceremonial Necklace",
       "fr": "Collier Cérémonial du Seigneur des Rats",
@@ -284,9 +305,9 @@
       "it": "Collana Cerimoniale del Signore dei Ratti",
       "pt": "Colar cerimonal do Senhor dos Ratos"
     },
-    "level": 134,
-    "imageUrl": "/retro/item/1117.png",
+    "itemType": "Amulet",
     "setID": "64",
+    "level": 134,
     "stats": [
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
@@ -298,11 +319,13 @@
       { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1117.png"
   },
   {
+    "dofusID": "1173",
     "name": {
       "en": "Plimclik",
       "fr": "Plimclik",
@@ -311,19 +334,21 @@
       "it": "Plimclik",
       "pt": "Plimclik"
     },
-    "level": 130,
-    "imageUrl": "/retro/item/1123.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 130,
     "stats": [
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1123.png"
   },
   {
+    "dofusID": "5824",
     "name": {
       "en": "Renewed Amulet",
       "fr": "Amulette du Renouveau",
@@ -332,9 +357,9 @@
       "it": "Amuleto della Rinascita",
       "pt": "Amuleto Renovado"
     },
-    "level": 126,
-    "imageUrl": "/retro/item/1057.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 126,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
       { "stat": "Vitality", "minStat": 41, "maxStat": 70 },
@@ -345,11 +370,13 @@
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "AP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1057.png"
   },
   {
+    "dofusID": "6425",
     "name": {
       "en": "Aykido Medal",
       "fr": "Médaille Kido",
@@ -358,9 +385,9 @@
       "it": "Medaglia Kido",
       "pt": "Medalha AyKido"
     },
-    "level": 125,
-    "imageUrl": "/retro/item/1089.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 125,
     "stats": [
       { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
@@ -370,11 +397,13 @@
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1089.png"
   },
   {
+    "dofusID": "7474",
     "name": {
       "en": "Dreggon Amulet",
       "fr": "Amulette du Dragoeuf",
@@ -383,9 +412,9 @@
       "it": "Amuleto del Draguovo",
       "pt": "Amuleto do Dragovo"
     },
-    "level": 124,
-    "imageUrl": "/retro/item/1108.png",
+    "itemType": "Amulet",
     "setID": "56",
+    "level": 124,
     "stats": [
       { "stat": "Agility", "minStat": 31, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
@@ -399,11 +428,13 @@
       { "stat": "Initiative", "minStat": 201, "maxStat": 300 },
       { "stat": "Prospecting", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1108.png"
   },
   {
+    "dofusID": "5840",
     "name": {
       "en": "Spring Leaf",
       "fr": "La Feuille de Printemps",
@@ -412,9 +443,9 @@
       "it": "La Foglia di Primavera",
       "pt": "A folha da primavera"
     },
-    "level": 123,
-    "imageUrl": "/retro/item/1062.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 123,
     "stats": [
       { "stat": "Vitality", "minStat": 41, "maxStat": 70 },
       { "stat": "Agility", "minStat": 31, "maxStat": 50 },
@@ -426,11 +457,13 @@
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1062.png"
   },
   {
+    "dofusID": "7452",
     "name": {
       "en": "Minotoror Necklace",
       "fr": "Collier du Minotoror",
@@ -439,9 +472,9 @@
       "it": "Collana del Minotoror",
       "pt": "Colar do Minotoror"
     },
-    "level": 111,
-    "imageUrl": "/retro/item/1112.png",
+    "itemType": "Amulet",
     "setID": "54",
+    "level": 111,
     "stats": [
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
@@ -450,11 +483,13 @@
       { "stat": "Heals", "minStat": 4, "maxStat": 6 },
       { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1112.png"
   },
   {
+    "dofusID": "7636",
     "name": {
       "en": "Ancestral Torc",
       "fr": "Torque Ancestral",
@@ -463,9 +498,9 @@
       "it": "Collana Ancestrale",
       "pt": "Torque Ancestral"
     },
-    "level": 110,
-    "imageUrl": "/retro/item/1118.png",
+    "itemType": "Amulet",
     "setID": "65",
+    "level": 110,
     "stats": [
       { "stat": "Chance", "minStat": 26, "maxStat": 40 },
       { "stat": "Strength", "minStat": 21, "maxStat": 30 },
@@ -477,11 +512,13 @@
       { "stat": "Fire Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1118.png"
   },
   {
+    "dofusID": "7995",
     "name": {
       "en": "Ouassulet",
       "fr": "Ouassulette",
@@ -490,9 +527,9 @@
       "it": "Cencios",
       "pt": "Ouassulet"
     },
-    "level": 105,
-    "imageUrl": "/retro/item/1125.png",
+    "itemType": "Amulet",
     "setID": "77",
+    "level": 105,
     "stats": [
       { "stat": "Vitality", "minStat": 41, "maxStat": 70 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
@@ -503,11 +540,13 @@
       { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
       { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1125.png"
   },
   {
+    "dofusID": "7624",
     "name": {
       "en": "White Rat Necklace",
       "fr": "Collier du Rat Blanc",
@@ -516,9 +555,9 @@
       "it": "Collana del Ratto Bianco",
       "pt": "Colar do Rato Branco"
     },
-    "level": 103,
-    "imageUrl": "/retro/item/1116.png",
+    "itemType": "Amulet",
     "setID": "67",
+    "level": 103,
     "stats": [
       { "stat": "Agility", "minStat": 26, "maxStat": 35 },
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
@@ -528,11 +567,13 @@
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": null, "maxStat": 200 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1116.png"
   },
   {
+    "dofusID": "7616",
     "name": {
       "en": "Black Rat Necklace",
       "fr": "Collier du Rat Noir",
@@ -541,9 +582,9 @@
       "it": "Collana del Ratto Nero",
       "pt": "Colar do Rato Negro"
     },
-    "level": 103,
-    "imageUrl": "/retro/item/1115.png",
+    "itemType": "Amulet",
     "setID": "68",
+    "level": 103,
     "stats": [
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
       { "stat": "AP", "minStat": null, "maxStat": 1 },
@@ -553,11 +594,13 @@
       { "stat": "Power (traps)", "minStat": 16, "maxStat": 25 },
       { "stat": "Fire Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1115.png"
   },
   {
+    "dofusID": "7457",
     "name": {
       "en": "Dragon Pig Necklace",
       "fr": "Collier du Dragon Cochon",
@@ -566,9 +609,9 @@
       "it": "Collana del Drago Maiale",
       "pt": "Colar do Dragão-Porco"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/1110.png",
+    "itemType": "Amulet",
     "setID": "58",
+    "level": 100,
     "stats": [
       { "stat": "Agility", "minStat": 21, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -581,11 +624,13 @@
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "AP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1110.png"
   },
   {
+    "dofusID": "6137",
     "name": {
       "en": "Bwork Chief Amulet",
       "fr": "Amulette du Chef Bwork",
@@ -594,9 +639,9 @@
       "it": "Amuleto del Capo Bwork",
       "pt": "Amuleto do Chefe Bwork"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/1066.png",
+    "itemType": "Amulet",
     "setID": "19",
+    "level": 100,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 36, "maxStat": 50 },
@@ -609,11 +654,13 @@
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1066.png"
   },
   {
+    "dofusID": "5839",
     "name": {
       "en": "Winter Leaf",
       "fr": "La Feuille d'Hiver",
@@ -622,9 +669,9 @@
       "it": "La Foglia d'Inverno",
       "pt": "A folha do inverno"
     },
-    "level": 98,
-    "imageUrl": "/retro/item/1065.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 98,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
@@ -634,11 +681,13 @@
       { "stat": "Prospecting", "minStat": 6, "maxStat": 15 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1065.png"
   },
   {
+    "dofusID": "2007",
     "name": {
       "en": "Amulet of Double Luck",
       "fr": "Amulette de la Bouboule",
@@ -647,9 +696,9 @@
       "it": "Amuleto della Papalla",
       "pt": "Amuleto da Bobola"
     },
-    "level": 98,
-    "imageUrl": "/retro/item/1039.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 98,
     "stats": [
       { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
       { "stat": "Summons", "minStat": 1, "maxStat": 2 },
@@ -661,11 +710,13 @@
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1039.png"
   },
   {
+    "dofusID": "6313",
     "name": {
       "en": "Lil' Resin",
       "fr": "La Résinette",
@@ -674,9 +725,9 @@
       "it": "La Resinetta",
       "pt": "Pequena Resina"
     },
-    "level": 94,
-    "imageUrl": "/retro/item/1085.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 94,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -686,11 +737,13 @@
       { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "Fire Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1085.png"
   },
   {
+    "dofusID": "6536",
     "name": {
       "en": "Feudala Amulet",
       "fr": "Amulette Feudala",
@@ -699,9 +752,9 @@
       "it": "Amuleto Focodala",
       "pt": "Amuleto Fogodala"
     },
-    "level": 91,
-    "imageUrl": "/retro/item/1081.png",
+    "itemType": "Amulet",
     "setID": "37",
+    "level": 91,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
@@ -710,11 +763,13 @@
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1081.png"
   },
   {
+    "dofusID": "8257",
     "name": {
       "en": "Royal Rainbow Amublop",
       "fr": "Amublop Multicolore Royale",
@@ -723,9 +778,9 @@
       "it": "Amublop Multicolore Reale",
       "pt": "Amublop Arco-Íris Real"
     },
-    "level": 90,
-    "imageUrl": "/retro/item/1136.png",
+    "itemType": "Amulet",
     "setID": "106",
+    "level": 90,
     "stats": [
       { "stat": "Vitality", "minStat": 41, "maxStat": 70 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
@@ -734,11 +789,13 @@
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "% Fire Resistance", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1136.png"
   },
   {
+    "dofusID": "629",
     "name": {
       "en": "Autumn Leaf",
       "fr": "La Feuille d'Automne",
@@ -747,9 +804,9 @@
       "it": "La Foglia d'Autunno",
       "pt": "A folha do outono"
     },
-    "level": 89,
-    "imageUrl": "/retro/item/1064.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 89,
     "stats": [
       { "stat": "Range", "minStat": 1, "maxStat": 2 },
       { "stat": "Critical", "minStat": 6, "maxStat": 10 },
@@ -757,11 +814,13 @@
       { "stat": "Agility", "minStat": 21, "maxStat": 50 },
       { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1064.png"
   },
   {
+    "dofusID": "8000",
     "name": {
       "en": "Amufafah",
       "fr": "Amufafah",
@@ -770,9 +829,9 @@
       "it": "Amufafah",
       "pt": "Amufafah"
     },
-    "level": 84,
-    "imageUrl": "/retro/item/1126.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 84,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
@@ -783,11 +842,13 @@
       { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 3 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1126.png"
   },
   {
+    "dofusID": "7361",
     "name": {
       "en": "Legendary Crackler Amulet",
       "fr": "Amulette du Craqueleur Légendaire",
@@ -796,9 +857,9 @@
       "it": "Amuleto del Croccaroc Leggendario",
       "pt": "Amuleto do Smagador Legendário"
     },
-    "level": 84,
-    "imageUrl": "/retro/item/1099.png",
+    "itemType": "Amulet",
     "setID": "52",
+    "level": 84,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -808,11 +869,13 @@
       { "stat": "Water Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "Earth Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1099.png"
   },
   {
+    "dofusID": "3762",
     "name": {
       "en": "Kaa Amulet",
       "fr": "Amulette Argie",
@@ -821,9 +884,9 @@
       "it": "Amuleto Argo",
       "pt": "Amuletárgico"
     },
-    "level": 82,
-    "imageUrl": "/retro/item/1054.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 82,
     "stats": [
       { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
@@ -834,11 +897,13 @@
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1054.png"
   },
   {
+    "dofusID": "8256",
     "name": {
       "en": "Royal Indigo Amublop",
       "fr": "Amublop Indigo Royale",
@@ -847,9 +912,9 @@
       "it": "Amublop Indaco Reale",
       "pt": "Amublop Índigo Real"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/1135.png",
+    "itemType": "Amulet",
     "setID": "105",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
       { "stat": "Chance", "minStat": 16, "maxStat": 30 },
@@ -858,11 +923,13 @@
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1135.png"
   },
   {
+    "dofusID": "8255",
     "name": {
       "en": "Royal Coco Amublop",
       "fr": "Amublop Coco Royale",
@@ -871,9 +938,9 @@
       "it": "Amublop Cocco Reale",
       "pt": "Amublop Coco Real"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/1134.png",
+    "itemType": "Amulet",
     "setID": "104",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
       { "stat": "Agility", "minStat": 16, "maxStat": 30 },
@@ -882,11 +949,13 @@
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1134.png"
   },
   {
+    "dofusID": "8254",
     "name": {
       "en": "Royal Pippin Amublop",
       "fr": "Amublop Reinette Royale",
@@ -895,9 +964,9 @@
       "it": "Amublop Reginetta Reale",
       "pt": "Amublop Maçã Real"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/1133.png",
+    "itemType": "Amulet",
     "setID": "103",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
       { "stat": "Strength", "minStat": 16, "maxStat": 30 },
@@ -906,11 +975,13 @@
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1133.png"
   },
   {
+    "dofusID": "8253",
     "name": {
       "en": "Royal Morello Cherry Amublop",
       "fr": "Amublop Griotte Royale",
@@ -919,9 +990,9 @@
       "it": "Amublop Griotta Reale",
       "pt": "Amublop Cereja Real"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/1132.png",
+    "itemType": "Amulet",
     "setID": "102",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
@@ -930,11 +1001,13 @@
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1132.png"
   },
   {
+    "dofusID": "7482",
     "name": {
       "en": "Shika's Ears",
       "fr": "Epis de Shika",
@@ -943,9 +1016,9 @@
       "it": "Spiga di Shika",
       "pt": "Orelhas de Shika"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/1113.png",
+    "itemType": "Amulet",
     "setID": "53",
+    "level": 80,
     "stats": [
       { "stat": "Chance", "minStat": 21, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
@@ -956,11 +1029,13 @@
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Prospecting", "minStat": 6, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1113.png"
   },
   {
+    "dofusID": "6535",
     "name": {
       "en": "Terrdala Amulet",
       "fr": "Amulette Terrdala",
@@ -969,9 +1044,9 @@
       "it": "Amuleto Terradala",
       "pt": "Amuleto Terradala"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/1080.png",
+    "itemType": "Amulet",
     "setID": "36",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
@@ -979,11 +1054,13 @@
       { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1080.png"
   },
   {
+    "dofusID": "6101",
     "name": {
       "en": "Farle's Ears",
       "fr": "Epis de Farle",
@@ -992,9 +1069,9 @@
       "it": "Spiga di Farle",
       "pt": "Orelhas de Farle"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/1068.png",
+    "itemType": "Amulet",
     "setID": "17",
+    "level": 80,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
@@ -1005,11 +1082,13 @@
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Prospecting", "minStat": 6, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1068.png"
   },
   {
+    "dofusID": "6323",
     "name": {
       "en": "Smoothitch O'Ball",
       "fr": "La Doubitch O'Boul",
@@ -1018,20 +1097,22 @@
       "it": "L' Ascell O'Bul",
       "pt": "Amuletofedor O'Bal"
     },
-    "level": 77,
-    "imageUrl": "/retro/item/1087.png",
+    "itemType": "Amulet",
     "setID": "38",
+    "level": 77,
     "stats": [
       { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1087.png"
   },
   {
+    "dofusID": "6150",
     "name": {
       "en": "Crocodyl Chief Amulet",
       "fr": "Amulette du Chef Crocodaille",
@@ -1040,20 +1121,22 @@
       "it": "Amuleto del Capo Coccodrail",
       "pt": "Amuleto do Chefe Crocodyl"
     },
-    "level": 70,
-    "imageUrl": "/retro/item/1067.png",
+    "itemType": "Amulet",
     "setID": "20",
+    "level": 70,
     "stats": [
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1067.png"
   },
   {
+    "dofusID": "4503",
     "name": {
       "en": "Skill of Dolls",
       "fr": "La Maîtrise des Poupées",
@@ -1062,9 +1145,9 @@
       "it": "La Padronanza delle Bambole",
       "pt": "O Domínio das Bonecas"
     },
-    "level": 69,
-    "imageUrl": "/retro/item/1056.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 69,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 45 },
       { "stat": "AP", "minStat": null, "maxStat": 1 },
@@ -1073,11 +1156,13 @@
       { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1056.png"
   },
   {
+    "dofusID": "9373",
     "name": {
       "en": "Gobbamu",
       "fr": "Boufbamu",
@@ -1086,20 +1171,22 @@
       "it": "Pappaballeto",
       "pt": "Gobbamu"
     },
-    "level": 64,
-    "imageUrl": "/retro/item/1158.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 64,
     "stats": [
       { "stat": "Chance", "minStat": 21, "maxStat": 30 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 },
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "AP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1158.png"
   },
   {
+    "dofusID": "5825",
     "name": {
       "en": "Turquoise Amulet",
       "fr": "Amulette Turquoise",
@@ -1108,9 +1195,9 @@
       "it": "Amuleto Turchese",
       "pt": "Amuleto Turquesa"
     },
-    "level": 63,
-    "imageUrl": "/retro/item/1058.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 63,
     "stats": [
       { "stat": "Prospecting", "minStat": 3, "maxStat": 5 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
@@ -1119,11 +1206,13 @@
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1058.png"
   },
   {
+    "dofusID": "75",
     "name": {
       "en": "The Stars Custard Tart",
       "fr": "Le Flan des Étoiles",
@@ -1132,20 +1221,22 @@
       "it": "Il Budino delle Stelle",
       "pt": "Pudim das Estrelas"
     },
-    "level": 62,
-    "imageUrl": "/retro/item/1010.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 62,
     "stats": [
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "AP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1010.png"
   },
   {
+    "dofusID": "6537",
     "name": {
       "en": "Aerdala Amulet",
       "fr": "Amulette Aerdala",
@@ -1154,20 +1245,22 @@
       "it": "Amuleto Erdala",
       "pt": "Amuleto Ardala"
     },
-    "level": 62,
-    "imageUrl": "/retro/item/1082.png",
+    "itemType": "Amulet",
     "setID": "35",
+    "level": 62,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Agility", "minStat": 21, "maxStat": 30 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 },
       { "stat": "AP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1082.png"
   },
   {
+    "dofusID": "7225",
     "name": {
       "en": "Koalak Amulet",
       "fr": "Amulette du Koalak",
@@ -1176,19 +1269,21 @@
       "it": "Amuleto del Koalak",
       "pt": "Amuleto do Koalak"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/1094.png",
+    "itemType": "Amulet",
     "setID": "46",
+    "level": 60,
     "stats": [
       { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 4 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1094.png"
   },
   {
+    "dofusID": "5878",
     "name": {
       "en": "Wabbit-tooth Amulet",
       "fr": "Amulette \"Dents de Wabbits\"",
@@ -1197,9 +1292,9 @@
       "it": "Amuleto \"Denti di Wabbit\"",
       "pt": "Amuleto \"Dentes de Wabbits\""
     },
-    "level": 60,
-    "imageUrl": "/retro/item/1059.png",
+    "itemType": "Amulet",
     "setID": "11",
+    "level": 60,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
@@ -1210,11 +1305,13 @@
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": 101, "maxStat": 200 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1059.png"
   },
   {
+    "dofusID": "2075",
     "name": {
       "en": "Gelamu",
       "fr": "Gelamu",
@@ -1223,19 +1320,21 @@
       "it": "Gelamu",
       "pt": "Gelamu"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/1051.png",
+    "itemType": "Amulet",
     "setID": "6",
+    "level": 60,
     "stats": [
       { "stat": "Initiative", "minStat": 101, "maxStat": 400 },
       { "stat": "Range", "minStat": 1, "maxStat": 2 },
       { "stat": "Summons", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1051.png"
   },
   {
+    "dofusID": "7340",
     "name": {
       "en": "Boowolfulet",
       "fr": "Amuloumulette",
@@ -1244,20 +1343,22 @@
       "it": "Abuulupulupeto",
       "pt": "Booloboamul"
     },
-    "level": 57,
-    "imageUrl": "/retro/item/1098.png",
+    "itemType": "Amulet",
     "setID": "32",
+    "level": 57,
     "stats": [
       { "stat": "Agility", "minStat": 6, "maxStat": 30 },
       { "stat": "Critical", "minStat": 2, "maxStat": 5 },
       { "stat": "Damage", "minStat": 2, "maxStat": 5 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1098.png"
   },
   {
+    "dofusID": "6312",
     "name": {
       "en": "Bow'hee Talisman",
       "fr": "Talisman du Faucheur d'Avoine",
@@ -1266,9 +1367,9 @@
       "it": "Talismano del Falciatore d'Avena",
       "pt": "Talismã do Ceifador de Aveia"
     },
-    "level": 55,
-    "imageUrl": "/retro/item/1084.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 55,
     "stats": [
       { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
       { "stat": "Heals", "minStat": 3, "maxStat": 5 },
@@ -1276,11 +1377,13 @@
       { "stat": "Air Resistance", "minStat": 1, "maxStat": 5 },
       { "stat": "Water Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1084.png"
   },
   {
+    "dofusID": "9388",
     "name": {
       "en": "Kloug's Amulet",
       "fr": "Amulette de Kloug",
@@ -1289,20 +1392,22 @@
       "it": "Amuleto di Kloug",
       "pt": "Amuleto de Napizram"
     },
-    "level": 53,
-    "imageUrl": "/retro/item/1155.png",
+    "itemType": "Amulet",
     "setID": "154",
+    "level": 53,
     "stats": [
       { "stat": "Chance", "minStat": 16, "maxStat": 20 },
       { "stat": "Damage", "minStat": null, "maxStat": 1 },
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1155.png"
   },
   {
+    "dofusID": "9387",
     "name": {
       "en": "Hulkrap's Amulet",
       "fr": "Amulette d'Hulkrap",
@@ -1311,19 +1416,21 @@
       "it": "Amuleto di Quentindel",
       "pt": "Amuleto de Lápucra"
     },
-    "level": 53,
-    "imageUrl": "/retro/item/1156.png",
+    "itemType": "Amulet",
     "setID": "152",
+    "level": 53,
     "stats": [
       { "stat": "Intelligence", "minStat": 21, "maxStat": 25 },
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": 101, "maxStat": 150 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1156.png"
   },
   {
+    "dofusID": "4065",
     "name": {
       "en": "Plain Crackler Amulet",
       "fr": "Amulette du Craqueleur des Plaines",
@@ -1332,9 +1439,9 @@
       "it": "Amuleto del Croccaroc delle Pianure",
       "pt": "Amuleto do Smagador das Planícies"
     },
-    "level": 52,
-    "imageUrl": "/retro/item/1055.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 52,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
@@ -1343,11 +1450,13 @@
       { "stat": "Earth Resistance", "minStat": 4, "maxStat": 8 },
       { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1055.png"
   },
   {
+    "dofusID": "2014",
     "name": {
       "en": "Eye of the Kaniger",
       "fr": "L'Œil de Kanigrou",
@@ -1356,20 +1465,22 @@
       "it": "L'Occhio di Kanigrù",
       "pt": "Olho do Kanigre"
     },
-    "level": 52,
-    "imageUrl": "/retro/item/1045.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 52,
     "stats": [
       { "stat": "Critical", "minStat": 2, "maxStat": 5 },
       { "stat": "Damage", "minStat": 2, "maxStat": 5 },
       { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
       { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1045.png"
   },
   {
+    "dofusID": "1159",
     "name": {
       "en": "Xelor Amulet",
       "fr": "Amulette de Xélor",
@@ -1378,19 +1489,21 @@
       "it": "Amuleto di Xelor",
       "pt": "Amuleto de Xelor"
     },
-    "level": 52,
-    "imageUrl": "/retro/item/1028.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 52,
     "stats": [
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Damage", "minStat": 3, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1028.png"
   },
   {
+    "dofusID": "9438",
     "name": {
       "en": "[!EN] Grozillamu",
       "fr": "Grozillamu",
@@ -1399,18 +1512,20 @@
       "it": "[!IT] Grozillamu",
       "pt": "[!PT] Grozillamu"
     },
-    "level": 51,
-    "imageUrl": "/retro/item/1157.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 51,
     "stats": [
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Power", "minStat": 21, "maxStat": 30 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1157.png"
   },
   {
+    "dofusID": "1018",
     "name": {
       "en": "Oly Medal",
       "fr": "Médaille Oly",
@@ -1419,13 +1534,14 @@
       "it": "Medaglia Oly",
       "pt": "Medalha Oly"
     },
-    "level": 51,
-    "imageUrl": "/retro/item/1023.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 51,
     "stats": [
       { "stat": "Damage", "minStat": null, "maxStat": 6 },
       { "stat": "Strength", "minStat": null, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": [
@@ -1453,9 +1569,10 @@
         "\n                                \n                                  Alignement > 10"
       ]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/1023.png"
   },
   {
+    "dofusID": "8252",
     "name": {
       "en": "Indigo Amublop",
       "fr": "Amublop Indigo",
@@ -1464,20 +1581,22 @@
       "it": "Amublop Indaco",
       "pt": "Amublop Índigo"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/1131.png",
+    "itemType": "Amulet",
     "setID": "101",
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1131.png"
   },
   {
+    "dofusID": "8251",
     "name": {
       "en": "Coco Amublop",
       "fr": "Amublop Coco",
@@ -1486,20 +1605,22 @@
       "it": "Amublop Cocco",
       "pt": "Amublop Coco"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/1130.png",
+    "itemType": "Amulet",
     "setID": "100",
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1130.png"
   },
   {
+    "dofusID": "8250",
     "name": {
       "en": "Pippin Amublop",
       "fr": "Amublop Reinette",
@@ -1508,20 +1629,22 @@
       "it": "Amublop Reginetta",
       "pt": "Amublop Maçã"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/1129.png",
+    "itemType": "Amulet",
     "setID": "99",
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1129.png"
   },
   {
+    "dofusID": "8249",
     "name": {
       "en": "Morello Cherry Amublop",
       "fr": "Amublop Griotte",
@@ -1530,20 +1653,22 @@
       "it": "Amublop Griotta",
       "pt": "Amublop Cereja"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/1128.png",
+    "itemType": "Amulet",
     "setID": "98",
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1128.png"
   },
   {
+    "dofusID": "2053",
     "name": {
       "en": "Royal Gobball's Amulet",
       "fr": "Amulette Royale du Bouftou",
@@ -1552,18 +1677,20 @@
       "it": "Amuleto Reale del Pappatutto",
       "pt": "Amuleto Real do Papatudo"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/1050.png",
+    "itemType": "Amulet",
     "setID": "4",
+    "level": 50,
     "stats": [
       { "stat": "Strength", "minStat": 11, "maxStat": 30 },
       { "stat": "Intelligence", "minStat": 11, "maxStat": 30 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1050.png"
   },
   {
+    "dofusID": "2006",
     "name": {
       "en": "Amulet of Luck",
       "fr": "Amulette de la Boule",
@@ -1572,18 +1699,20 @@
       "it": "Amuleto della Palla",
       "pt": "Amuleto da Bola"
     },
-    "level": 49,
-    "imageUrl": "/retro/item/1038.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 49,
     "stats": [
       { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
       { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1038.png"
   },
   {
+    "dofusID": "8538",
     "name": {
       "en": "Alowa Amulet",
       "fr": "Amulette Papayou",
@@ -1592,20 +1721,22 @@
       "it": "Amuleto Loha",
       "pt": "Amuleto Aloha"
     },
-    "level": 47,
-    "imageUrl": "/retro/item/1144.png",
+    "itemType": "Amulet",
     "setID": "129",
+    "level": 47,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1144.png"
   },
   {
+    "dofusID": "412",
     "name": {
       "en": "Amulet of the Depths",
       "fr": "Amulette des Abîmes",
@@ -1614,19 +1745,21 @@
       "it": "Amuleto degli Abissi",
       "pt": "Amuleto dos Abismos"
     },
-    "level": 47,
-    "imageUrl": "/retro/item/1022.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 47,
     "stats": [
       { "stat": "Critical", "minStat": null, "maxStat": 5 },
       { "stat": "Wisdom", "minStat": 2, "maxStat": 21 },
       { "stat": "Chance", "minStat": null, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1022.png"
   },
   {
+    "dofusID": "1163",
     "name": {
       "en": "Harmony",
       "fr": "Harmonie",
@@ -1635,9 +1768,9 @@
       "it": "Armonia",
       "pt": "Harmonia"
     },
-    "level": 47,
-    "imageUrl": "/retro/item/1122.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 47,
     "stats": [
       { "stat": "Strength", "minStat": null, "maxStat": 15 },
       { "stat": "Agility", "minStat": null, "maxStat": 15 },
@@ -1646,11 +1779,13 @@
       { "stat": "Chance", "minStat": null, "maxStat": 15 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1122.png"
   },
   {
+    "dofusID": "1161",
     "name": {
       "en": "Crackler Pendant",
       "fr": "Amulette du Craqueleur",
@@ -1659,9 +1794,9 @@
       "it": "Amuleto del Croccaroc",
       "pt": "Amuleto do Smagador"
     },
-    "level": 47,
-    "imageUrl": "/retro/item/1025.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 47,
     "stats": [
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
@@ -1671,11 +1806,13 @@
       { "stat": "Air Resistance", "minStat": 2, "maxStat": 5 },
       { "stat": "Fire Resistance", "minStat": 2, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1025.png"
   },
   {
+    "dofusID": "6340",
     "name": {
       "en": "Flooey's Clock",
       "fr": "Pendule du Gudule",
@@ -1684,20 +1821,22 @@
       "it": "Ciondolo di Gudolo",
       "pt": "Pêndulo do Flooey"
     },
-    "level": 46,
-    "imageUrl": "/retro/item/1090.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 46,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Agility", "minStat": 21, "maxStat": 30 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Damage", "minStat": 6, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1090.png"
   },
   {
+    "dofusID": "6254",
     "name": {
       "en": "Crackler Amulet",
       "fr": "Craquamulette",
@@ -1706,9 +1845,9 @@
       "it": "Croccamuleto",
       "pt": "Smagamuleto"
     },
-    "level": 46,
-    "imageUrl": "/retro/item/1077.png",
+    "itemType": "Amulet",
     "setID": "26",
+    "level": 46,
     "stats": [
       { "stat": "Strength", "minStat": 1, "maxStat": 20 },
       { "stat": "Agility", "minStat": 1, "maxStat": 20 },
@@ -1717,11 +1856,13 @@
       { "stat": "Fire Resistance", "minStat": 1, "maxStat": 8 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1077.png"
   },
   {
+    "dofusID": "1281",
     "name": {
       "en": "[!EN] L'Abramu",
       "fr": "L'Abramu",
@@ -1730,19 +1871,21 @@
       "it": "[!IT] L'Abramu",
       "pt": "[!PT] L'Abramu"
     },
-    "level": 46,
-    "imageUrl": "/retro/item/1016.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 46,
     "stats": [
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
       { "stat": "Damage", "minStat": 3, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1016.png"
   },
   {
+    "dofusID": "8840",
     "name": {
       "en": "Vampyre Amulet",
       "fr": "Amulette du Vampyre",
@@ -1751,20 +1894,22 @@
       "it": "Amuleto del Vampyro",
       "pt": "Amuleto do Vampyro"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/1146.png",
+    "itemType": "Amulet",
     "setID": "130",
+    "level": 45,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Summons", "minStat": null, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1146.png"
   },
   {
+    "dofusID": "7331",
     "name": {
       "en": "Golden Scarabugly Amulet",
       "fr": "Amulette Scarabosse Doré",
@@ -1773,20 +1918,22 @@
       "it": "Amuleto dello Scaragobba Dorato",
       "pt": "Amuleto do Scarachefe Dourado"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/1096.png",
+    "itemType": "Amulet",
     "setID": "51",
+    "level": 45,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 45 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 15 },
       { "stat": "Intelligence", "minStat": 6, "maxStat": 15 },
       { "stat": "Heals", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1096.png"
   },
   {
+    "dofusID": "5841",
     "name": {
       "en": "Summer Leaf",
       "fr": "La Feuille d'Eté",
@@ -1795,19 +1942,21 @@
       "it": "La Foglia d'Estate",
       "pt": "A folha do verão"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/1063.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 45,
     "stats": [
       { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
       { "stat": "Chance", "minStat": 16, "maxStat": 30 },
       { "stat": "Prospecting", "minStat": 4, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1063.png"
   },
   {
+    "dofusID": "1176",
     "name": {
       "en": "Liche Chain",
       "fr": "Chaîne de la Liche",
@@ -1816,19 +1965,21 @@
       "it": "Catena della Liche",
       "pt": "Corrente de Liche"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/1012.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 45,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
       { "stat": "Chance", "minStat": 21, "maxStat": 30 },
       { "stat": "Summons", "minStat": null, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1012.png"
   },
   {
+    "dofusID": "2004",
     "name": {
       "en": "Claw's Jigsaw Amulet",
       "fr": "L'Amulette du Puzzle de la Griffe",
@@ -1837,18 +1988,20 @@
       "it": "L'Amuleto del Puzzle dell'Artiglio",
       "pt": "Amuleto do Quebra-Cabeça da Garra"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/1036.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 44,
     "stats": [
       { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
       { "stat": "Damage", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1036.png"
   },
   {
+    "dofusID": "1162",
     "name": {
       "en": "Lucky Mulette",
       "fr": "Chance à Mulette",
@@ -1857,18 +2010,20 @@
       "it": "Fortun a Muleto",
       "pt": "Mulette da Sorte"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/1026.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 44,
     "stats": [
       { "stat": "Chance", "minStat": 21, "maxStat": 30 },
       { "stat": "Prospecting", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1026.png"
   },
   {
+    "dofusID": "8900",
     "name": {
       "en": "Amlugo",
       "fr": "Yugolette",
@@ -1877,19 +2032,21 @@
       "it": "Yugoleto",
       "pt": "Yugoleto"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/1147.png",
+    "itemType": "Amulet",
     "setID": "134",
+    "level": 43,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 },
       { "stat": "Initiative", "minStat": 101, "maxStat": 150 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1147.png"
   },
   {
+    "dofusID": "8748",
     "name": {
       "en": "The Chavate",
       "fr": "La Chaplivate",
@@ -1898,20 +2055,22 @@
       "it": "La Chapavatta",
       "pt": "A Gravata"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/1145.png",
+    "itemType": "Amulet",
     "setID": "116",
+    "level": 43,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1145.png"
   },
   {
+    "dofusID": "8539",
     "name": {
       "en": "Slump Necklace",
       "fr": "Collier Sleump",
@@ -1920,20 +2079,22 @@
       "it": "Collana Slump",
       "pt": "TomboColar"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/1143.png",
+    "itemType": "Amulet",
     "setID": "140",
+    "level": 43,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Heals", "minStat": 1, "maxStat": 2 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1143.png"
   },
   {
+    "dofusID": "8293",
     "name": {
       "en": "Tartamulet",
       "fr": "Tartamulette",
@@ -1942,9 +2103,9 @@
       "it": "Tartamuleto",
       "pt": "Tortamuleto"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/1138.png",
+    "itemType": "Amulet",
     "setID": "110",
+    "level": 43,
     "stats": [
       { "stat": "Strength", "minStat": 1, "maxStat": 20 },
       { "stat": "Critical", "minStat": 1, "maxStat": 4 },
@@ -1952,11 +2113,13 @@
       { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1138.png"
   },
   {
+    "dofusID": "194",
     "name": {
       "en": "Kam Assutra Amulet",
       "fr": "Amulette du Kam Assutra",
@@ -1965,15 +2128,17 @@
       "it": "Amuleto del Kam Assutra",
       "pt": "Amuleto do Kam Assutra"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/1004.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 43,
     "stats": [{ "stat": "AP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1004.png"
   },
   {
+    "dofusID": "9184",
     "name": {
       "en": "Goboff's Amulet",
       "fr": "Amulette de Gobeuf",
@@ -1982,19 +2147,21 @@
       "it": "Amuleto di Gobluovo",
       "pt": "Amuleto de Gobovo"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/1152.png",
+    "itemType": "Amulet",
     "setID": "146",
+    "level": 42,
     "stats": [
       { "stat": "Power", "minStat": 6, "maxStat": 10 },
       { "stat": "Critical", "minStat": 3, "maxStat": 4 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1152.png"
   },
   {
+    "dofusID": "9176",
     "name": {
       "en": "Grute's Amulet",
       "fr": "Amulette de Grüt",
@@ -2003,20 +2170,22 @@
       "it": "Amuleto di Griut",
       "pt": "Amuleto de Grute"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/1153.png",
+    "itemType": "Amulet",
     "setID": "144",
+    "level": 42,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
       { "stat": "Power", "minStat": 6, "maxStat": 10 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1153.png"
   },
   {
+    "dofusID": "8921",
     "name": {
       "en": "The Esteban",
       "fr": "L'Esteban",
@@ -2025,20 +2194,22 @@
       "it": "L'Esteban",
       "pt": "O Esteban"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/1149.png",
+    "itemType": "Amulet",
     "setID": "136",
+    "level": 42,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
       { "stat": "Chance", "minStat": 21, "maxStat": 35 },
       { "stat": "Power", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1149.png"
   },
   {
+    "dofusID": "8917",
     "name": {
       "en": "Slugly Amulet",
       "fr": "Collertue",
@@ -2047,18 +2218,20 @@
       "it": "Amulettuga",
       "pt": "Amuleto Lesmoso"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/1148.png",
+    "itemType": "Amulet",
     "setID": "137",
+    "level": 42,
     "stats": [
       { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
       { "stat": "Damage", "minStat": 3, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1148.png"
   },
   {
+    "dofusID": "6082",
     "name": {
       "en": "Wind Kwakamulet",
       "fr": "Amukwak du Vent",
@@ -2067,19 +2240,21 @@
       "it": "Amukwak di Vento",
       "pt": "Kwakamuleto de vento"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/1070.png",
+    "itemType": "Amulet",
     "setID": "15",
+    "level": 42,
     "stats": [
       { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Agility", "minStat": 16, "maxStat": 20 },
       { "stat": "Critical", "minStat": null, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1070.png"
   },
   {
+    "dofusID": "6081",
     "name": {
       "en": "Earth Kwakamulet",
       "fr": "Amukwak de Terre",
@@ -2088,19 +2263,21 @@
       "it": "Amukwak di Terra",
       "pt": "Kwakamuleto de Terra"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/1072.png",
+    "itemType": "Amulet",
     "setID": "14",
+    "level": 42,
     "stats": [
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Strength", "minStat": 16, "maxStat": 20 },
       { "stat": "Critical", "minStat": null, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1072.png"
   },
   {
+    "dofusID": "6069",
     "name": {
       "en": "Ice Kwakamulet",
       "fr": "Amukwak de Glace",
@@ -2109,19 +2286,21 @@
       "it": "Amukwak di Ghiaccio",
       "pt": "Kwakamuleto de Gelo"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/1071.png",
+    "itemType": "Amulet",
     "setID": "13",
+    "level": 42,
     "stats": [
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Chance", "minStat": 16, "maxStat": 20 },
       { "stat": "Critical", "minStat": null, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1071.png"
   },
   {
+    "dofusID": "2036",
     "name": {
       "en": "Fire Kwakamulet",
       "fr": "Amukwak de Flammes",
@@ -2130,19 +2309,21 @@
       "it": "Amukwak di Fiamma",
       "pt": "Kwakamuleto de Fogo"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/1047.png",
+    "itemType": "Amulet",
     "setID": "2",
+    "level": 42,
     "stats": [
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 20 },
       { "stat": "Critical", "minStat": null, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1047.png"
   },
   {
+    "dofusID": "2011",
     "name": {
       "en": "Mad Bacon's Scarf",
       "fr": "Le foulard du Lard Fou",
@@ -2151,9 +2332,9 @@
       "it": "Il Foulard del Lard Fù",
       "pt": "O Tecido do Toucinho Louco"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/1042.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 42,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
@@ -2162,11 +2343,13 @@
       { "stat": "Fire Resistance", "minStat": 2, "maxStat": 3 },
       { "stat": "% Neutral Resistance", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1042.png"
   },
   {
+    "dofusID": "2008",
     "name": {
       "en": "Modified Dragolyre",
       "fr": "Dragolyre Remaniée",
@@ -2175,18 +2358,20 @@
       "it": "Dragolyr Ritoccata",
       "pt": "Dragolira modificada"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/1025.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 42,
     "stats": [
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1025.png"
   },
   {
+    "dofusID": "9192",
     "name": {
       "en": "Stroy Zemol's Amulet",
       "fr": "Amulette de Rekto Topi",
@@ -2195,19 +2380,21 @@
       "it": "Amuleto di Altap Eto",
       "pt": "Anel de Stroy Zemol"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/1154.png",
+    "itemType": "Amulet",
     "setID": "148",
+    "level": 41,
     "stats": [
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Heals", "minStat": 1, "maxStat": 2 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1154.png"
   },
   {
+    "dofusID": "9188",
     "name": {
       "en": "Lektor's Amulet",
       "fr": "Amulette de Laikteur",
@@ -2216,19 +2403,21 @@
       "it": "Amuleto di An Lekter",
       "pt": "Amuleto de Lektor"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/1151.png",
+    "itemType": "Amulet",
     "setID": "147",
+    "level": 41,
     "stats": [
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1151.png"
   },
   {
+    "dofusID": "8927",
     "name": {
       "en": "Noke's Necklace",
       "fr": "Collier de Noké",
@@ -2237,20 +2426,22 @@
       "it": "Collana di Noke",
       "pt": "Colar Noke"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/1150.png",
+    "itemType": "Amulet",
     "setID": "135",
+    "level": 41,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 35 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 },
       { "stat": "Damage", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1150.png"
   },
   {
+    "dofusID": "6534",
     "name": {
       "en": "Akwadala Amulet",
       "fr": "Amulette Akwadala",
@@ -2259,20 +2450,22 @@
       "it": "Amuleto Aksadala",
       "pt": "Amuleto Akwadala"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/1079.png",
+    "itemType": "Amulet",
     "setID": "34",
+    "level": 41,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 30 },
       { "stat": "Chance", "minStat": 11, "maxStat": 30 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1079.png"
   },
   {
+    "dofusID": "407",
     "name": {
       "en": "Pirate Amulet",
       "fr": "Amulette du Pirate",
@@ -2281,19 +2474,21 @@
       "it": "Amuleto del Pirata",
       "pt": "Amuleto do Pirata"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/1020.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 41,
     "stats": [
       { "stat": "Critical", "minStat": null, "maxStat": 2 },
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Strength", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1020.png"
   },
   {
+    "dofusID": "1167",
     "name": {
       "en": "Palid Emblem",
       "fr": "Emblème Livide",
@@ -2302,19 +2497,21 @@
       "it": "Emblema Livido",
       "pt": "Emblema Pálido"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/1032.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 41,
     "stats": [
       { "stat": "Damage", "minStat": null, "maxStat": 2 },
       { "stat": "Strength", "minStat": null, "maxStat": 10 },
       { "stat": "Wisdom", "minStat": null, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1032.png"
   },
   {
+    "dofusID": "74",
     "name": {
       "en": "The Celestial Brooch",
       "fr": "La Broche Céleste",
@@ -2323,19 +2520,21 @@
       "it": "La Spilla Celeste",
       "pt": "O Broche Celestial"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/1008.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 40,
     "stats": [
       { "stat": "Critical", "minStat": null, "maxStat": 5 },
       { "stat": "Damage", "minStat": null, "maxStat": 2 },
       { "stat": "AP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1008.png"
   },
   {
+    "dofusID": "6311",
     "name": {
       "en": "Bambulet",
       "fr": "Bambamulette",
@@ -2344,18 +2543,20 @@
       "it": "Bambamuleto",
       "pt": "Bambuleto"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/1078.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 40,
     "stats": [
       { "stat": "Heals", "minStat": 3, "maxStat": 5 },
       { "stat": "Vitality", "minStat": 11, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1078.png"
   },
   {
+    "dofusID": "2101",
     "name": {
       "en": "Vegamu",
       "fr": "Vegamu",
@@ -2364,18 +2565,20 @@
       "it": "Vegemuleto",
       "pt": "Vegamu"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/1053.png",
+    "itemType": "Amulet",
     "setID": "10",
+    "level": 40,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 70 },
       { "stat": "Range", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1053.png"
   },
   {
+    "dofusID": "1320",
     "name": {
       "en": "Moskito Ambamulet",
       "fr": "Ambramulette Moskito",
@@ -2384,18 +2587,20 @@
       "it": "Ambramuleto Moskito",
       "pt": "Ambamuleto Moskito"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/1017.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 40,
     "stats": [
       { "stat": "Damage", "minStat": 3, "maxStat": 5 },
       { "stat": "Chance", "minStat": 11, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1017.png"
   },
   {
+    "dofusID": "5838",
     "name": {
       "en": "Dark Miner Amulet",
       "fr": "Amulette du Mineur Sombre",
@@ -2404,18 +2609,20 @@
       "it": "Amuleto del Minatore Oscuro",
       "pt": "Amuleto do Mineiro Sombrio"
     },
-    "level": 39,
-    "imageUrl": "/retro/item/1061.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 39,
     "stats": [
       { "stat": "Chance", "minStat": 21, "maxStat": 35 },
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1061.png"
   },
   {
+    "dofusID": "1165",
     "name": {
       "en": "Peace",
       "fr": "Accord",
@@ -2424,9 +2631,9 @@
       "it": "Accordo",
       "pt": "Acordo"
     },
-    "level": 38,
-    "imageUrl": "/retro/item/1121.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 38,
     "stats": [
       { "stat": "Strength", "minStat": null, "maxStat": 10 },
       { "stat": "Agility", "minStat": null, "maxStat": 10 },
@@ -2435,11 +2642,13 @@
       { "stat": "Vitality", "minStat": null, "maxStat": 10 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1121.png"
   },
   {
+    "dofusID": "628",
     "name": {
       "en": "Silicate Amulet",
       "fr": "Amulette de Silicate",
@@ -2448,9 +2657,9 @@
       "it": "Amuleto di Silicato",
       "pt": "Amuleto de Silicato"
     },
-    "level": 37,
-    "imageUrl": "/retro/item/1009.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 37,
     "stats": [
       { "stat": "Critical", "minStat": null, "maxStat": 10 },
       { "stat": "Water Resistance", "minStat": null, "maxStat": 1 },
@@ -2459,11 +2668,13 @@
       { "stat": "Earth Resistance", "minStat": null, "maxStat": 1 },
       { "stat": "Neutral Resistance", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1009.png"
   },
   {
+    "dofusID": "411",
     "name": {
       "en": "Somoon Fisherman Amulet",
       "fr": "Amulette du Pêcheur de Somoon",
@@ -2472,15 +2683,17 @@
       "it": "Amuleto del Pescatore di Salmoon",
       "pt": "Amuleto do Pescador de Salmoon"
     },
-    "level": 35,
-    "imageUrl": "/retro/item/1024.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 35,
     "stats": [{ "stat": "Chance", "minStat": 12, "maxStat": 41 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1024.png"
   },
   {
+    "dofusID": "1321",
     "name": {
       "en": "[!EN] Ambramulette Arackne",
       "fr": "Ambramulette Arackne",
@@ -2489,19 +2702,21 @@
       "it": "[!IT] Ambramulette Arackne",
       "pt": "[!PT] Ambramulette Arackne"
     },
-    "level": 34,
-    "imageUrl": "/retro/item/1018.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 34,
     "stats": [
       { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1018.png"
   },
   {
+    "dofusID": "6077",
     "name": {
       "en": "Deceitful Amulet",
       "fr": "Fourbamulette",
@@ -2510,19 +2725,21 @@
       "it": "Furbamuleto",
       "pt": "Amularbustor"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/1069.png",
+    "itemType": "Amulet",
     "setID": "16",
+    "level": 33,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Critical", "minStat": null, "maxStat": 1 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1069.png"
   },
   {
+    "dofusID": "197",
     "name": {
       "en": "Deulegarnoulle Amulet",
       "fr": "Amulette Deulegarnoulle",
@@ -2531,20 +2748,22 @@
       "it": "Amuleto Dimetarana",
       "pt": "Amuleto Deulegarnoulle"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/1002.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 33,
     "stats": [
       { "stat": "Summons", "minStat": null, "maxStat": 2 },
       { "stat": "Water Resistance", "minStat": null, "maxStat": 2 },
       { "stat": "Air Resistance", "minStat": null, "maxStat": 2 },
       { "stat": "Fire Resistance", "minStat": null, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1002.png"
   },
   {
+    "dofusID": "592",
     "name": {
       "en": "Dragolyre",
       "fr": "Dragolyre",
@@ -2553,18 +2772,20 @@
       "it": "Dragolyr",
       "pt": "Dragolira"
     },
-    "level": 32,
-    "imageUrl": "/retro/item/1009.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 32,
     "stats": [
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1009.png"
   },
   {
+    "dofusID": "2010",
     "name": {
       "en": "Bud",
       "fr": "La Bourgeonette",
@@ -2573,18 +2794,20 @@
       "it": "La Gemmina",
       "pt": "Botão"
     },
-    "level": 32,
-    "imageUrl": "/retro/item/1041.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 32,
     "stats": [
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Strength", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1041.png"
   },
   {
+    "dofusID": "2005",
     "name": {
       "en": "Badoul's Amulet",
       "fr": "Amulette du Badoul",
@@ -2593,18 +2816,20 @@
       "it": "Amuleto del Badul",
       "pt": "Amuleto do Badul"
     },
-    "level": 32,
-    "imageUrl": "/retro/item/1037.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 32,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Power", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1037.png"
   },
   {
+    "dofusID": "6310",
     "name": {
       "en": "Lahilama Medal",
       "fr": "Médaille Lahilama",
@@ -2613,18 +2838,20 @@
       "it": "Medaglia Lahilama",
       "pt": "Medalha Lahilama"
     },
-    "level": 31,
-    "imageUrl": "/retro/item/1083.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 31,
     "stats": [
       { "stat": "Heals", "minStat": 1, "maxStat": 3 },
       { "stat": "Vitality", "minStat": 11, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1083.png"
   },
   {
+    "dofusID": "1171",
     "name": {
       "en": "Holy Medal",
       "fr": "Médaille Holy",
@@ -2633,18 +2860,20 @@
       "it": "Medaglia Holy",
       "pt": "Medalha Sagrada"
     },
-    "level": 31,
-    "imageUrl": "/retro/item/1023.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 31,
     "stats": [
       { "stat": "Damage", "minStat": 1, "maxStat": 3 },
       { "stat": "Strength", "minStat": 11, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1023.png"
   },
   {
+    "dofusID": "2013",
     "name": {
       "en": "The Bibelaw",
       "fr": "La Bibelaw",
@@ -2653,9 +2882,9 @@
       "it": "Law Bibelò",
       "pt": "O Bibelaw"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/1044.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 30,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
       { "stat": "% Air Resistance", "minStat": 2, "maxStat": 3 },
@@ -2663,11 +2892,13 @@
       { "stat": "% Fire Resistance", "minStat": 2, "maxStat": 3 },
       { "stat": "% Earth Resistance", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1044.png"
   },
   {
+    "dofusID": "5845",
     "name": {
       "en": "Shika Amulet",
       "fr": "Amulette de Shika",
@@ -2676,19 +2907,21 @@
       "it": "Amuleto di Shika",
       "pt": "Amuleto de Shika"
     },
-    "level": 29,
-    "imageUrl": "/retro/item/1060.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 29,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
       { "stat": "Initiative", "minStat": 31, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1060.png"
   },
   {
+    "dofusID": "1168",
     "name": {
       "en": "Kabbala",
       "fr": "Kabale",
@@ -2697,18 +2930,20 @@
       "it": "Kabala",
       "pt": "Kabala"
     },
-    "level": 29,
-    "imageUrl": "/retro/item/1013.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 29,
     "stats": [
       { "stat": "Wisdom", "minStat": null, "maxStat": 10 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1013.png"
   },
   {
+    "dofusID": "1174",
     "name": {
       "en": "Pin of Mhete",
       "fr": "La Broche Hète",
@@ -2717,15 +2952,17 @@
       "it": "La Spilla Edino",
       "pt": "Broche de Mhete"
     },
-    "level": 28,
-    "imageUrl": "/retro/item/1015.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 28,
     "stats": [{ "stat": "Wisdom", "minStat": 11, "maxStat": 20 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1015.png"
   },
   {
+    "dofusID": "8381",
     "name": {
       "en": "Bobblamulet",
       "fr": "Pompamulette",
@@ -2734,18 +2971,20 @@
       "it": "Pompamuleto",
       "pt": "Bobblamuleto"
     },
-    "level": 27,
-    "imageUrl": "/retro/item/1140.png",
+    "itemType": "Amulet",
     "setID": "124",
+    "level": 27,
     "stats": [
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": null, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1140.png"
   },
   {
+    "dofusID": "76",
     "name": {
       "en": "Fame",
       "fr": "La Célébrité",
@@ -2754,18 +2993,20 @@
       "it": "La Celebrità",
       "pt": "A Fama"
     },
-    "level": 27,
-    "imageUrl": "/retro/item/1009.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 27,
     "stats": [
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": null, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1009.png"
   },
   {
+    "dofusID": "6625",
     "name": {
       "en": "Kitsou Amulet",
       "fr": "Amulette du Kitsou",
@@ -2774,18 +3015,20 @@
       "it": "Amuleto del Kitsù",
       "pt": "Amuleto do Kitsu"
     },
-    "level": 26,
-    "imageUrl": "/retro/item/1091.png",
+    "itemType": "Amulet",
     "setID": "41",
+    "level": 26,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 40 },
       { "stat": "Initiative", "minStat": null, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1091.png"
   },
   {
+    "dofusID": "6398",
     "name": {
       "en": "Larvamulet",
       "fr": "Larvamulette",
@@ -2794,19 +3037,21 @@
       "it": "Larvamuleto",
       "pt": "Larvamuleto"
     },
-    "level": 26,
-    "imageUrl": "/retro/item/1088.png",
+    "itemType": "Amulet",
     "setID": "33",
+    "level": 26,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 20 },
       { "stat": "Intelligence", "minStat": 6, "maxStat": 20 },
       { "stat": "Agility", "minStat": 6, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1088.png"
   },
   {
+    "dofusID": "1166",
     "name": {
       "en": "Understanding",
       "fr": "Entente",
@@ -2815,9 +3060,9 @@
       "it": "Intesa",
       "pt": "Entendimento"
     },
-    "level": 26,
-    "imageUrl": "/retro/item/1011.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 26,
     "stats": [
       { "stat": "Strength", "minStat": null, "maxStat": 5 },
       { "stat": "Agility", "minStat": null, "maxStat": 5 },
@@ -2826,11 +3071,13 @@
       { "stat": "Intelligence", "minStat": null, "maxStat": 5 },
       { "stat": "Chance", "minStat": null, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1011.png"
   },
   {
+    "dofusID": "405",
     "name": {
       "en": "Crab Amulet",
       "fr": "Amulette en Crabe",
@@ -2839,15 +3086,17 @@
       "it": "Amuleto di Granchio",
       "pt": "Amuleto de Caranguejo"
     },
-    "level": 24,
-    "imageUrl": "/retro/item/1030.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 24,
     "stats": [{ "stat": "Range", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1030.png"
   },
   {
+    "dofusID": "7320",
     "name": {
       "en": "Tofu Amulet",
       "fr": "Amulette du Tofu",
@@ -2856,18 +3105,20 @@
       "it": "Amuleto del Tofu",
       "pt": "Amuleto do Tofu"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/1095.png",
+    "itemType": "Amulet",
     "setID": "50",
+    "level": 22,
     "stats": [
       { "stat": "Agility", "minStat": 6, "maxStat": 15 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1095.png"
   },
   {
+    "dofusID": "517",
     "name": {
       "en": "Lumberjack Amulet",
       "fr": "Amulette du Bûcheron",
@@ -2876,18 +3127,20 @@
       "it": "Amuleto del Taglialegna",
       "pt": "Amuleto do Lenhador"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/1009.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 22,
     "stats": [
       { "stat": "Agility", "minStat": null, "maxStat": 15 },
       { "stat": "Chance", "minStat": null, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1009.png"
   },
   {
+    "dofusID": "406",
     "name": {
       "en": "Fisherman Amulet",
       "fr": "Amulette du Marin",
@@ -2896,15 +3149,17 @@
       "it": "Amuleto del Marinaio",
       "pt": "Amuleto do Marinheiro"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/1029.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 22,
     "stats": [{ "stat": "Chance", "minStat": 21, "maxStat": 30 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1029.png"
   },
   {
+    "dofusID": "1170",
     "name": {
       "en": "Pippin",
       "fr": "La Reinette",
@@ -2913,18 +3168,20 @@
       "it": "La Reginetta",
       "pt": "A Reineta"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/1027.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 22,
     "stats": [
       { "stat": "Chance", "minStat": null, "maxStat": 20 },
       { "stat": "Agility", "minStat": null, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1027.png"
   },
   {
+    "dofusID": "7334",
     "name": {
       "en": "Farmer Amulet",
       "fr": "Amulette Paysanne",
@@ -2933,18 +3190,20 @@
       "it": "Amuleto Contadino",
       "pt": "Amuleto Camponês"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/1097.png",
+    "itemType": "Amulet",
     "setID": "47",
+    "level": 20,
     "stats": [
       { "stat": "Damage", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": 1, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1097.png"
   },
   {
+    "dofusID": "7113",
     "name": {
       "en": "Gobkool Amulet",
       "fr": "Amulette du Boufcoul",
@@ -2953,18 +3212,20 @@
       "it": "Amuleto del Pappacool",
       "pt": "Amuleto do Papakool"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/1093.png",
+    "itemType": "Amulet",
     "setID": "43",
+    "level": 20,
     "stats": [
       { "stat": "Agility", "minStat": 11, "maxStat": 15 },
       { "stat": "Chance", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1093.png"
   },
   {
+    "dofusID": "6066",
     "name": {
       "en": "Bearman's Necklace",
       "fr": "Amulette de l'Homme Ours",
@@ -2973,19 +3234,21 @@
       "it": "Amuleto dell'Uomo Orso",
       "pt": "Amuleto do Homem Urso"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/1074.png",
+    "itemType": "Amulet",
     "setID": "12",
+    "level": 20,
     "stats": [
       { "stat": "Water Resistance", "minStat": 2, "maxStat": 3 },
       { "stat": "Air Resistance", "minStat": 2, "maxStat": 3 },
       { "stat": "Fire Resistance", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1074.png"
   },
   {
+    "dofusID": "2038",
     "name": {
       "en": "Arachnamu",
       "fr": "Araknamu",
@@ -2994,15 +3257,17 @@
       "it": "Araknamu",
       "pt": "Araknamuleto"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/1049.png",
+    "itemType": "Amulet",
     "setID": "3",
+    "level": 20,
     "stats": [{ "stat": "Range", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1049.png"
   },
   {
+    "dofusID": "318",
     "name": {
       "en": "Captain Chafer Amulet",
       "fr": "Amulette du Chafer",
@@ -3011,19 +3276,21 @@
       "it": "Amuleto dello Chafer",
       "pt": "Amuleto do Chafer"
     },
-    "level": 19,
-    "imageUrl": "/retro/item/1003.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 19,
     "stats": [
       { "stat": "Chance", "minStat": null, "maxStat": 4 },
       { "stat": "Wisdom", "minStat": null, "maxStat": 4 },
       { "stat": "Critical", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1003.png"
   },
   {
+    "dofusID": "72",
     "name": {
       "en": "The Gougnole",
       "fr": "La Gougnole",
@@ -3032,19 +3299,21 @@
       "it": "Il Goccetto",
       "pt": "O Gougnole"
     },
-    "level": 17,
-    "imageUrl": "/retro/item/1007.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 17,
     "stats": [
       { "stat": "Wisdom", "minStat": null, "maxStat": 4 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 4 },
       { "stat": "Vitality", "minStat": null, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1007.png"
   },
   {
+    "dofusID": "2009",
     "name": {
       "en": "Omelette Amulet",
       "fr": "Omelette Amulette",
@@ -3053,18 +3322,20 @@
       "it": "Omelette Amuleto",
       "pt": "Amuleto Melete"
     },
-    "level": 17,
-    "imageUrl": "/retro/item/1040.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 17,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 30 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1040.png"
   },
   {
+    "dofusID": "1169",
     "name": {
       "en": "[!EN] Amulette Itby remaniée",
       "fr": "Amulette Itby remaniée",
@@ -3073,15 +3344,17 @@
       "it": "[!IT] Amulette Itby remaniée",
       "pt": "[!PT] Amulette Itby remaniée"
     },
-    "level": 17,
-    "imageUrl": "/retro/item/1031.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 17,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 20 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1031.png"
   },
   {
+    "dofusID": "6244",
     "name": {
       "en": "Lars Amulet",
       "fr": "Amulette du Bandit",
@@ -3090,15 +3363,17 @@
       "it": "Amuleto del Bandito",
       "pt": "Amuleto do Bandido"
     },
-    "level": 16,
-    "imageUrl": "/retro/item/1076.png",
+    "itemType": "Amulet",
     "setID": "25",
+    "level": 16,
     "stats": [{ "stat": "Damage", "minStat": 1, "maxStat": 3 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1076.png"
   },
   {
+    "dofusID": "6239",
     "name": {
       "en": "Moskito Amulet",
       "fr": "Amulette du Moskito",
@@ -3107,18 +3382,20 @@
       "it": "Amuleto del Moskito",
       "pt": "Amuleto do Moskito"
     },
-    "level": 15,
-    "imageUrl": "/retro/item/1075.png",
+    "itemType": "Amulet",
     "setID": "23",
+    "level": 15,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 20 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1075.png"
   },
   {
+    "dofusID": "2015",
     "name": {
       "en": "The Soft Calf",
       "fr": "La Veaux Doux",
@@ -3127,18 +3404,20 @@
       "it": "La Vitel Dolce",
       "pt": "O colar dos bezerros"
     },
-    "level": 15,
-    "imageUrl": "/retro/item/1046.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 15,
     "stats": [
       { "stat": "Strength", "minStat": 11, "maxStat": 17 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1046.png"
   },
   {
+    "dofusID": "2012",
     "name": {
       "en": "Hozuki Lampulet",
       "fr": "La Lou Ptiote",
@@ -3147,18 +3426,20 @@
       "it": "La Lu Chola",
       "pt": "Lou Ptiote"
     },
-    "level": 15,
-    "imageUrl": "/retro/item/1043.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 15,
     "stats": [
       { "stat": "Intelligence", "minStat": 11, "maxStat": 17 },
       { "stat": "% Fire Resistance", "minStat": null, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1043.png"
   },
   {
+    "dofusID": "1175",
     "name": {
       "en": "Nhanor Kibrill Chain",
       "fr": "La Chaîne Nhanor Kibrill",
@@ -3167,15 +3448,17 @@
       "it": "La Catena 'Noro Kebrill",
       "pt": "Corrente Nhanor Kibrill"
     },
-    "level": 13,
-    "imageUrl": "/retro/item/1012.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 13,
     "stats": [{ "stat": "Intelligence", "minStat": 11, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1012.png"
   },
   {
+    "dofusID": "73",
     "name": {
       "en": "Golden Destiny",
       "fr": "La Destinée Dorée",
@@ -3184,18 +3467,20 @@
       "it": "La Sorte Dorata",
       "pt": "O Destino Dourado"
     },
-    "level": 12,
-    "imageUrl": "/retro/item/1009.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 12,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 6 },
       { "stat": "Agility", "minStat": null, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1009.png"
   },
   {
+    "dofusID": "7438",
     "name": {
       "en": "Sponge Amulet",
       "fr": "Amulette en Mousse",
@@ -3204,15 +3489,17 @@
       "it": "Amuleto di Spugna",
       "pt": "Amuleto de Esponja"
     },
-    "level": 11,
-    "imageUrl": "/retro/item/1106.png",
+    "itemType": "Amulet",
     "setID": "63",
+    "level": 11,
     "stats": [{ "stat": "Vitality", "minStat": 6, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1106.png"
   },
   {
+    "dofusID": "6122",
     "name": {
       "en": "Field Amulet",
       "fr": "Amulette des Champs",
@@ -3221,18 +3508,20 @@
       "it": "Amuleto dei Fung",
       "pt": "Amuleto dos Campos"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/1073.png",
+    "itemType": "Amulet",
     "setID": "18",
+    "level": 10,
     "stats": [
       { "stat": "Vitality", "minStat": 5, "maxStat": 6 },
       { "stat": "Agility", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1073.png"
   },
   {
+    "dofusID": "1017",
     "name": {
       "en": "Instant Calm Amulet",
       "fr": "Amulette Itby",
@@ -3241,15 +3530,17 @@
       "it": "Amuleto Itby",
       "pt": "Amuleto Histenshalt"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/1031.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 10,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1031.png"
   },
   {
+    "dofusID": "32",
     "name": {
       "en": "[!EN] Puissante Amulette du Loup",
       "fr": "Puissante Amulette du Loup",
@@ -3258,15 +3549,17 @@
       "it": "[!IT] Puissante Amulette du Loup",
       "pt": "[!PT] Puissante Amulette du Loup"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/1006.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 8 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1006.png"
   },
   {
+    "dofusID": "28",
     "name": {
       "en": "[!EN] Puissante Amulette de l'Ours",
       "fr": "Puissante Amulette de l'Ours",
@@ -3275,15 +3568,17 @@
       "it": "[!IT] Puissante Amulette de l'Ours",
       "pt": "[!PT] Puissante Amulette de l'Ours"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/1005.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 8 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1005.png"
   },
   {
+    "dofusID": "24",
     "name": {
       "en": "[!EN] Puissante Amulette du Hibou",
       "fr": "Puissante Amulette du Hibou",
@@ -3292,15 +3587,17 @@
       "it": "[!IT] Puissante Amulette du Hibou",
       "pt": "[!PT] Puissante Amulette du Hibou"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/1001.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 8 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1001.png"
   },
   {
+    "dofusID": "31",
     "name": {
       "en": "[!EN] Belle Amulette du Loup",
       "fr": "Belle Amulette du Loup",
@@ -3309,15 +3606,17 @@
       "it": "[!IT] Belle Amulette du Loup",
       "pt": "[!PT] Belle Amulette du Loup"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/1006.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 6 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1006.png"
   },
   {
+    "dofusID": "27",
     "name": {
       "en": "[!EN] Belle Amulette de l'Ours",
       "fr": "Belle Amulette de l'Ours",
@@ -3326,15 +3625,17 @@
       "it": "[!IT] Belle Amulette de l'Ours",
       "pt": "[!PT] Belle Amulette de l'Ours"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/1005.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 6 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1005.png"
   },
   {
+    "dofusID": "23",
     "name": {
       "en": "[!EN] Belle Amulette du Hibou",
       "fr": "Belle Amulette du Hibou",
@@ -3343,15 +3644,17 @@
       "it": "[!IT] Belle Amulette du Hibou",
       "pt": "[!PT] Belle Amulette du Hibou"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/1001.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 6 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1001.png"
   },
   {
+    "dofusID": "195",
     "name": {
       "en": "Krokette Amulet",
       "fr": "Amulette de Krokette",
@@ -3360,15 +3663,17 @@
       "it": "Amuleto di Kroket",
       "pt": "Amuleto de Kaskrokete"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/1007.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 6 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1007.png"
   },
   {
+    "dofusID": "154",
     "name": {
       "en": "Rainbow Necklace",
       "fr": "Collier de l'Arc en Ciel",
@@ -3377,15 +3682,17 @@
       "it": "Collana dell'Arcobaleno",
       "pt": "Colar de arco-Íris"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/1011.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 6 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1011.png"
   },
   {
+    "dofusID": "2037",
     "name": {
       "en": "Gobball Amulet",
       "fr": "Amulette du Bouftou",
@@ -3394,18 +3701,20 @@
       "it": "Amuleto del Pappatutto",
       "pt": "Amuleto do Papatudo"
     },
-    "level": 3,
-    "imageUrl": "/retro/item/1048.png",
+    "itemType": "Amulet",
     "setID": "1",
+    "level": 3,
     "stats": [
       { "stat": "Strength", "minStat": 1, "maxStat": 10 },
       { "stat": "Intelligence", "minStat": 1, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1048.png"
   },
   {
+    "dofusID": "520",
     "name": {
       "en": "Puny Owl Pendant",
       "fr": "Pendentif du Hibou Chétif",
@@ -3414,15 +3723,17 @@
       "it": "Ciondolo del Gufo Fragile",
       "pt": "Pendente de Coruja Fraca"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/1001.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Intelligence", "minStat": 6, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1001.png"
   },
   {
+    "dofusID": "30",
     "name": {
       "en": "Wolf Amulet",
       "fr": "Amulette du Loup",
@@ -3431,15 +3742,17 @@
       "it": "Amuleto del Lupo",
       "pt": "Amuleto do lobo"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/1006.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 4 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1006.png"
   },
   {
+    "dofusID": "26",
     "name": {
       "en": "Bear Amulet",
       "fr": "Amulette de l'Ours",
@@ -3448,15 +3761,17 @@
       "it": "Amuleto dell'Orso",
       "pt": "Amuleto do urso"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/1005.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 4 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1005.png"
   },
   {
+    "dofusID": "22",
     "name": {
       "en": "Owl Amulet",
       "fr": "Amulette du Hibou",
@@ -3465,15 +3780,17 @@
       "it": "Amuleto del Gufo",
       "pt": "Amuleto da coruja"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/1001.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 4 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1001.png"
   },
   {
+    "dofusID": "196",
     "name": {
       "en": "Sram Amulet",
       "fr": "Amulette du Sram",
@@ -3482,15 +3799,17 @@
       "it": "Amuleto dell'Etram",
       "pt": "Amuleto do Sram"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/1003.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 4 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1003.png"
   },
   {
+    "dofusID": "153",
     "name": {
       "en": "Gobball Tear",
       "fr": "La Larme du Bouftou",
@@ -3499,15 +3818,17 @@
       "it": "La Lacrima di Pappatutto",
       "pt": "A Lágrima do Papatudo"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/1007.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 4 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1007.png"
   },
   {
+    "dofusID": "7705",
     "name": {
       "en": "Issa Mess",
       "fr": "Le S'Mesme",
@@ -3516,15 +3837,17 @@
       "it": "Il S'Mesmo",
       "pt": "O S'Mesmo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1120.png",
+    "itemType": "Amulet",
     "setID": "69",
+    "level": 1,
     "stats": [{ "stat": "Prospecting", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1120.png"
   },
   {
+    "dofusID": "7403",
     "name": {
       "en": "Pink Piwi Amulet",
       "fr": "Amulette du Piou Rose",
@@ -3533,15 +3856,17 @@
       "it": "Amuleto del Pìu Rosa",
       "pt": "Amuleto do Piu Rosa"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1105.png",
+    "itemType": "Amulet",
     "setID": "70",
+    "level": 1,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1105.png"
   },
   {
+    "dofusID": "7402",
     "name": {
       "en": "Yellow Piwi Amulet",
       "fr": "Amulette du Piou Jaune",
@@ -3550,15 +3875,17 @@
       "it": "Amuleto del Pìu Giallo",
       "pt": "Amuleto do Piu Amarelo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1104.png",
+    "itemType": "Amulet",
     "setID": "72",
+    "level": 1,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1104.png"
   },
   {
+    "dofusID": "7401",
     "name": {
       "en": "Green Piwi Amulet",
       "fr": "Amulette du Piou Vert",
@@ -3567,15 +3894,17 @@
       "it": "Amuleto del Pìu Verde",
       "pt": "Amuleto do Piu Verde"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1103.png",
+    "itemType": "Amulet",
     "setID": "71",
+    "level": 1,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1103.png"
   },
   {
+    "dofusID": "7400",
     "name": {
       "en": "Purple Piwi Amulet",
       "fr": "Amulette du Piou Violet",
@@ -3584,15 +3913,17 @@
       "it": "Amuleto del Pìu Viola",
       "pt": "Amuleto do Piu Violeta"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1102.png",
+    "itemType": "Amulet",
     "setID": "62",
+    "level": 1,
     "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1102.png"
   },
   {
+    "dofusID": "7399",
     "name": {
       "en": "Blue Piwi Amulet",
       "fr": "Amulette du Piou Bleu",
@@ -3601,15 +3932,17 @@
       "it": "Amuleto del Pìu Blu",
       "pt": "Amuleto do Piu Azul"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1101.png",
+    "itemType": "Amulet",
     "setID": "61",
+    "level": 1,
     "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1101.png"
   },
   {
+    "dofusID": "7398",
     "name": {
       "en": "Red Piwi Amulet",
       "fr": "Amulette du Piou Rouge",
@@ -3618,15 +3951,17 @@
       "it": "Amuleto del Pìu Rosso",
       "pt": "Amuleto do Piu Vermelho"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1100.png",
+    "itemType": "Amulet",
     "setID": "60",
+    "level": 1,
     "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1100.png"
   },
   {
+    "dofusID": "6107",
     "name": {
       "en": "Tude Amulet",
       "fr": "Amulette Tude",
@@ -3635,18 +3970,20 @@
       "it": "Amuleto Tude",
       "pt": "Amuleto Tude"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1019.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 1,
     "stats": [
       { "stat": "Intelligence", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": null, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1019.png"
   },
   {
+    "dofusID": "585",
     "name": {
       "en": "Little Frog",
       "fr": "Grenouillette",
@@ -3655,15 +3992,17 @@
       "it": "Ranocchietta",
       "pt": "Sapinho"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1002.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1002.png"
   },
   {
+    "dofusID": "584",
     "name": {
       "en": "[!EN] Amulette du Petit Ours",
       "fr": "Amulette du Petit Ours",
@@ -3672,15 +4011,17 @@
       "it": "[!IT] Amulette du Petit Ours",
       "pt": "[!PT] Amulette du Petit Ours"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1005.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1005.png"
   },
   {
+    "dofusID": "501",
     "name": {
       "en": "Koliet Aclou",
       "fr": "Koliet Aclou",
@@ -3689,15 +4030,17 @@
       "it": "Kollo Kiodo",
       "pt": "Koliet Aclou"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1034.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Damage", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1034.png"
   },
   {
+    "dofusID": "499",
     "name": {
       "en": "[!EN] Amulette du Petit Hibou",
       "fr": "Amulette du Petit Hibou",
@@ -3706,15 +4049,17 @@
       "it": "[!IT] Amulette du Petit Hibou",
       "pt": "[!PT] Amulette du Petit Hibou"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1001.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1001.png"
   },
   {
+    "dofusID": "29",
     "name": {
       "en": "[!EN] Petite Amulette du Loup",
       "fr": "Petite Amulette du Loup",
@@ -3723,15 +4068,17 @@
       "it": "[!IT] Petite Amulette du Loup",
       "pt": "[!PT] Petite Amulette du Loup"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1006.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1006.png"
   },
   {
+    "dofusID": "25",
     "name": {
       "en": "[!EN] Petite Amulette de l'Ours",
       "fr": "Petite Amulette de l'Ours",
@@ -3740,15 +4087,17 @@
       "it": "[!IT] Petite Amulette de l'Ours",
       "pt": "[!PT] Petite Amulette de l'Ours"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1005.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1005.png"
   },
   {
+    "dofusID": "2081",
     "name": {
       "en": "Adventurer Amulet",
       "fr": "Amulette de l'Aventurier",
@@ -3757,9 +4106,9 @@
       "it": "Amuleto dell'Avventuriero",
       "pt": "Amuleto do Aventureiro"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1052.png",
+    "itemType": "Amulet",
     "setID": "5",
+    "level": 1,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 2 },
       { "stat": "Strength", "minStat": 1, "maxStat": 2 },
@@ -3767,11 +4116,13 @@
       { "stat": "Wisdom", "minStat": 1, "maxStat": 2 },
       { "stat": "Intelligence", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1052.png"
   },
   {
+    "dofusID": "1",
     "name": {
       "en": "[!EN] Petite Amulette du Hibou",
       "fr": "Petite Amulette du Hibou",
@@ -3780,12 +4131,13 @@
       "it": "[!IT] Petite Amulette du Hibou",
       "pt": "[!PT] Petite Amulette du Hibou"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/1001.png",
+    "itemType": "Amulet",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/1001.png"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "dofusID": "7996",
     "name": {
       "en": "Inky Veil",
       "fr": "Voile d'encre",
@@ -8,9 +9,9 @@
       "it": "Velo d'Inchiostro",
       "pt": "Véu de tinta"
     },
-    "level": 191,
-    "imageUrl": "/retro/item/17147.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 191,
     "stats": [
       { "stat": "Vitality", "minStat": 251, "maxStat": 350 },
       { "stat": "Strength", "minStat": 51, "maxStat": 70 },
@@ -23,11 +24,13 @@
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17147.png"
   },
   {
+    "dofusID": "8242",
     "name": {
       "en": "Deadly Night Cape",
       "fr": "Capignon",
@@ -36,9 +39,9 @@
       "it": "Mantellignon",
       "pt": "Capa da Noite Mortífera"
     },
-    "level": 190,
-    "imageUrl": "/retro/item/17150.png",
+    "itemType": "Cloak",
     "setID": "107",
+    "level": 190,
     "stats": [
       { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
       { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
@@ -51,11 +54,13 @@
       { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17150.png"
   },
   {
+    "dofusID": "8280",
     "name": {
       "en": "Chee Cape",
       "fr": "Cape Erforée",
@@ -64,9 +69,9 @@
       "it": "Mantello Cucito",
       "pt": "Capa Chee"
     },
-    "level": 185,
-    "imageUrl": "/retro/item/17151.png",
+    "itemType": "Cloak",
     "setID": "108",
+    "level": 185,
     "stats": [
       { "stat": "Agility", "minStat": 41, "maxStat": 60 },
       { "stat": "Strength", "minStat": 41, "maxStat": 60 },
@@ -79,11 +84,13 @@
       { "stat": "Prospecting", "minStat": 21, "maxStat": 30 },
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17151.png"
   },
   {
+    "dofusID": "8241",
     "name": {
       "en": "Ragoat",
       "fr": "Caprin",
@@ -92,9 +99,9 @@
       "it": "Mantellarcio",
       "pt": "Ragoat"
     },
-    "level": 181,
-    "imageUrl": "/retro/item/17154.png",
+    "itemType": "Cloak",
     "setID": "119",
+    "level": 181,
     "stats": [
       { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
       { "stat": "Agility", "minStat": 41, "maxStat": 60 },
@@ -106,11 +113,13 @@
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17154.png"
   },
   {
+    "dofusID": "7548",
     "name": {
       "en": "Little Red Waddling Cape",
       "fr": "Cape du Petit Chapon Rouge",
@@ -119,9 +128,9 @@
       "it": "Mantello del Capponcino Rosso",
       "pt": "Capa Bamboleante Vermelhinha"
     },
-    "level": 171,
-    "imageUrl": "/retro/item/17121.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 171,
     "stats": [
       { "stat": "Intelligence", "minStat": 51, "maxStat": 70 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
@@ -132,11 +141,13 @@
       { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17121.png"
   },
   {
+    "dofusID": "7464",
     "name": {
       "en": "Minotot Cloak",
       "fr": "Cape du Minotot",
@@ -145,9 +156,9 @@
       "it": "Mantello del Minotot",
       "pt": "Capa do Minotot"
     },
-    "level": 156,
-    "imageUrl": "/retro/item/17116.png",
+    "itemType": "Cloak",
     "setID": "57",
+    "level": 156,
     "stats": [
       { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
       { "stat": "Chance", "minStat": 31, "maxStat": 50 },
@@ -157,11 +168,13 @@
       { "stat": "Prospecting", "minStat": 16, "maxStat": 30 },
       { "stat": "Damage", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17116.png"
   },
   {
+    "dofusID": "7944",
     "name": {
       "en": "Mopy King Sovereign Cape",
       "fr": "Cape Souveraine du Roissingue",
@@ -170,9 +183,9 @@
       "it": "Mantello Sovrano del Re Cencio",
       "pt": "Capa Soberana do Rei Nojoso"
     },
-    "level": 152,
-    "imageUrl": "/retro/item/17143.png",
+    "itemType": "Cloak",
     "setID": "78",
+    "level": 152,
     "stats": [
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
       { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
@@ -186,11 +199,13 @@
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17143.png"
   },
   {
+    "dofusID": "6790",
     "name": {
       "en": "Cape Tenfuture",
       "fr": "Cape Itaineflam",
@@ -199,9 +214,9 @@
       "it": "Mantello Spaziale",
       "pt": "Capa Tenfuture"
     },
-    "level": 148,
-    "imageUrl": "/retro/item/17092.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 148,
     "stats": [
       { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
@@ -216,11 +231,13 @@
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Initiative", "minStat": 151, "maxStat": 300 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17092.png"
   },
   {
+    "dofusID": "7643",
     "name": {
       "en": "Worn Soft Oak Cape",
       "fr": "Cape Usée du Chêne Mou",
@@ -229,9 +246,9 @@
       "it": "Mantello Consumato della Quercia Molle",
       "pt": "Capa usada do Carvalho Mole"
     },
-    "level": 142,
-    "imageUrl": "/retro/item/17127.png",
+    "itemType": "Cloak",
     "setID": "66",
+    "level": 142,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 40 },
       { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
@@ -245,11 +262,13 @@
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17127.png"
   },
   {
+    "dofusID": "7449",
     "name": {
       "en": "Moowolf Cloak",
       "fr": "Cape du Meulou",
@@ -258,9 +277,9 @@
       "it": "Mantello del Muulupo",
       "pt": "Capa do Mulobo"
     },
-    "level": 139,
-    "imageUrl": "/retro/item/17110.png",
+    "itemType": "Cloak",
     "setID": "55",
+    "level": 139,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 },
@@ -273,11 +292,13 @@
       { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17110.png"
   },
   {
+    "dofusID": "7629",
     "name": {
       "en": "Lord of the Rats' Ceremonial Cape",
       "fr": "Cape Cérémoniale du Seigneur des Rats",
@@ -286,9 +307,9 @@
       "it": "Mantello Cerimoniale del Signore dei Ratti",
       "pt": "Capa cerimonial do Senhor dos Ratos"
     },
-    "level": 130,
-    "imageUrl": "/retro/item/17125.png",
+    "itemType": "Cloak",
     "setID": "64",
+    "level": 130,
     "stats": [
       { "stat": "Agility", "minStat": 31, "maxStat": 45 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
@@ -303,11 +324,13 @@
       { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17125.png"
   },
   {
+    "dofusID": "7470",
     "name": {
       "en": "Dreggon Cape",
       "fr": "Cape Dragoeuf",
@@ -316,9 +339,9 @@
       "it": "Mantello del Draguovo",
       "pt": "Capa de Dragovo"
     },
-    "level": 127,
-    "imageUrl": "/retro/item/17115.png",
+    "itemType": "Cloak",
     "setID": "56",
+    "level": 127,
     "stats": [
       { "stat": "Prospecting", "minStat": 16, "maxStat": 25 },
       { "stat": "Range", "minStat": null, "maxStat": 1 },
@@ -328,11 +351,13 @@
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 8 },
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17115.png"
   },
   {
+    "dofusID": "2148",
     "name": {
       "en": "Mastralis Croak",
       "fr": "Corbacape Mastralis",
@@ -341,9 +366,9 @@
       "it": "Cuervantello Mastralis",
       "pt": "Corvocapa Mastralis"
     },
-    "level": 127,
-    "imageUrl": "/retro/item/17056.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 127,
     "stats": [
       { "stat": "Wisdom", "minStat": 36, "maxStat": 50 },
       { "stat": "Vitality", "minStat": 81, "maxStat": 120 },
@@ -354,11 +379,13 @@
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "Chance", "minStat": 46, "maxStat": 60 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17056.png"
   },
   {
+    "dofusID": "6427",
     "name": {
       "en": "Nettlez",
       "fr": "Ortiz",
@@ -367,9 +394,9 @@
       "it": "Ortiz",
       "pt": "Ortiz"
     },
-    "level": 125,
-    "imageUrl": "/retro/item/17091.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 125,
     "stats": [
       { "stat": "Intelligence", "minStat": 26, "maxStat": 50 },
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
@@ -378,11 +405,13 @@
       { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17091.png"
   },
   {
+    "dofusID": "2229",
     "name": {
       "en": "Caracape Minotoris",
       "fr": "Caracape Minotoris",
@@ -391,9 +420,9 @@
       "it": "Caracapo Minotoris",
       "pt": "Caracapa Minotoris"
     },
-    "level": 121,
-    "imageUrl": "/retro/item/17055.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 121,
     "stats": [
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 },
@@ -407,11 +436,13 @@
       { "stat": "Earth Resistance", "minStat": 11, "maxStat": 15 },
       { "stat": "Neutral Resistance", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17055.png"
   },
   {
+    "dofusID": "7635",
     "name": {
       "en": "Ancestral Treecape",
       "fr": "Abracapa Ancestrale",
@@ -420,9 +451,9 @@
       "it": "Alberantello Ancestrale",
       "pt": "Arvracapa Ancestral"
     },
-    "level": 114,
-    "imageUrl": "/retro/item/17126.png",
+    "itemType": "Cloak",
     "setID": "65",
+    "level": 114,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 30 },
       { "stat": "Chance", "minStat": 26, "maxStat": 45 },
@@ -435,11 +466,13 @@
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17126.png"
   },
   {
+    "dofusID": "7987",
     "name": {
       "en": "Powerful Dazzling Cloak",
       "fr": "Puissante Cape Fulgurante",
@@ -448,20 +481,22 @@
       "it": "Potente Mantello Folgorante",
       "pt": "Poderosa capa fulgurante"
     },
-    "level": 110,
-    "imageUrl": "/retro/item/17145.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 110,
     "stats": [
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
       { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
       { "stat": "Damage", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17145.png"
   },
   {
+    "dofusID": "7463",
     "name": {
       "en": "Minotoror Cloak",
       "fr": "Cape du Minotoror",
@@ -470,9 +505,9 @@
       "it": "Mantello del Minotoror",
       "pt": "Capa do Minotoror"
     },
-    "level": 109,
-    "imageUrl": "/retro/item/17117.png",
+    "itemType": "Cloak",
     "setID": "54",
+    "level": 109,
     "stats": [
       { "stat": "Vitality", "minStat": 121, "maxStat": 170 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
@@ -481,11 +516,13 @@
       { "stat": "Heals", "minStat": 4, "maxStat": 6 },
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17117.png"
   },
   {
+    "dofusID": "7614",
     "name": {
       "en": "Black Rat Cape",
       "fr": "Cape du Rat Noir",
@@ -494,9 +531,9 @@
       "it": "Mantello del Ratto Nero",
       "pt": "Capa do Rato Negro"
     },
-    "level": 105,
-    "imageUrl": "/retro/item/17123.png",
+    "itemType": "Cloak",
     "setID": "68",
+    "level": 105,
     "stats": [
       { "stat": "Agility", "minStat": 31, "maxStat": 40 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
@@ -506,11 +543,13 @@
       { "stat": "Power (traps)", "minStat": 11, "maxStat": 20 },
       { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17123.png"
   },
   {
+    "dofusID": "6306",
     "name": {
       "en": "Graytess Cape",
       "fr": "Cape Houte",
@@ -519,9 +558,9 @@
       "it": "Mantello Kaput",
       "pt": "Capa Houte"
     },
-    "level": 105,
-    "imageUrl": "/retro/item/17081.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 105,
     "stats": [
       { "stat": "Vitality", "minStat": 71, "maxStat": 100 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -531,11 +570,13 @@
       { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17081.png"
   },
   {
+    "dofusID": "7465",
     "name": {
       "en": "Dragon Pig Cloak",
       "fr": "Cape du Dragon Cochon",
@@ -544,9 +585,9 @@
       "it": "Mantello del Drago Maiale",
       "pt": "Capa do Dragão Porco"
     },
-    "level": 103,
-    "imageUrl": "/retro/item/17118.png",
+    "itemType": "Cloak",
     "setID": "58",
+    "level": 103,
     "stats": [
       { "stat": "Chance", "minStat": 26, "maxStat": 40 },
       { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
@@ -560,11 +601,13 @@
       { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "Earth Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17118.png"
   },
   {
+    "dofusID": "7623",
     "name": {
       "en": "White Rat Cape",
       "fr": "Cape du Rat Blanc",
@@ -573,9 +616,9 @@
       "it": "Mantello del Ratto Bianco",
       "pt": "Capa do Rato Branco"
     },
-    "level": 102,
-    "imageUrl": "/retro/item/17124.png",
+    "itemType": "Cloak",
     "setID": "67",
+    "level": 102,
     "stats": [
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
       { "stat": "Strength", "minStat": 21, "maxStat": 30 },
@@ -586,11 +629,13 @@
       { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17124.png"
   },
   {
+    "dofusID": "6144",
     "name": {
       "en": "Bwork Chief Cloak",
       "fr": "Cape du Chef Bwork",
@@ -599,9 +644,9 @@
       "it": "Mantello del Capo Bwork",
       "pt": "Capa do Chefe Bwork"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/17060.png",
+    "itemType": "Cloak",
     "setID": "19",
+    "level": 100,
     "stats": [
       { "stat": "Vitality", "minStat": 36, "maxStat": 50 },
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
@@ -617,11 +662,13 @@
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17060.png"
   },
   {
+    "dofusID": "7945",
     "name": {
       "en": "Ouassingual Cape",
       "fr": "Cape de la Ouassingue",
@@ -630,9 +677,9 @@
       "it": "Mantello di Cencia",
       "pt": "Capa da Nojosa"
     },
-    "level": 97,
-    "imageUrl": "/retro/item/17144.png",
+    "itemType": "Cloak",
     "setID": "77",
+    "level": 97,
     "stats": [
       { "stat": "Vitality", "minStat": 51, "maxStat": 80 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
@@ -644,11 +691,13 @@
       { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17144.png"
   },
   {
+    "dofusID": "6516",
     "name": {
       "en": "Feudala Cloak",
       "fr": "Cape Feudala",
@@ -657,9 +706,9 @@
       "it": "Mantello Focodala",
       "pt": "Capa Fogodala"
     },
-    "level": 92,
-    "imageUrl": "/retro/item/17111.png",
+    "itemType": "Cloak",
     "setID": "37",
+    "level": 92,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 45 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -669,11 +718,13 @@
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17111.png"
   },
   {
+    "dofusID": "2001",
     "name": {
       "en": "Grazor",
       "fr": "La Brouteuse",
@@ -682,9 +733,9 @@
       "it": "La Bruterba",
       "pt": "Grazor"
     },
-    "level": 88,
-    "imageUrl": "/retro/item/17039.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 88,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
@@ -693,11 +744,13 @@
       { "stat": "% Fire Resistance", "minStat": 7, "maxStat": 9 },
       { "stat": "% Neutral Resistance", "minStat": 7, "maxStat": 9 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17039.png"
   },
   {
+    "dofusID": "7391",
     "name": {
       "en": "Legendary Crackler Cloak",
       "fr": "Craquelocape Légendaire",
@@ -706,9 +759,9 @@
       "it": "Croccantello Leggendario",
       "pt": "Smagocapa Legendária"
     },
-    "level": 84,
-    "imageUrl": "/retro/item/17101.png",
+    "itemType": "Cloak",
     "setID": "52",
+    "level": 84,
     "stats": [
       { "stat": "Vitality", "minStat": 51, "maxStat": 70 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -718,11 +771,13 @@
       { "stat": "Fire Resistance", "minStat": 5, "maxStat": 6 },
       { "stat": "Air Resistance", "minStat": 5, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17101.png"
   },
   {
+    "dofusID": "7788",
     "name": {
       "en": "Cape Hernaum",
       "fr": "Cape Haharnum",
@@ -731,15 +786,17 @@
       "it": "Mantello Mappa",
       "pt": "Capa Harnaum"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/17135.png",
+    "itemType": "Cloak",
     "setID": "85",
+    "level": 80,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17135.png"
   },
   {
+    "dofusID": "7787",
     "name": {
       "en": "Cape Adossia",
       "fr": "Cape Hadosse",
@@ -748,15 +805,17 @@
       "it": "Mantello Atlante",
       "pt": "Capa Dóssia"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/17136.png",
+    "itemType": "Cloak",
     "setID": "91",
+    "level": 80,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17136.png"
   },
   {
+    "dofusID": "7786",
     "name": {
       "en": "Cape Hulco",
       "fr": "Cape Hulco",
@@ -765,15 +824,17 @@
       "it": "Mantello Hapulco",
       "pt": "Capa Hulco"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/17132.png",
+    "itemType": "Cloak",
     "setID": "82",
+    "level": 80,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17132.png"
   },
   {
+    "dofusID": "7785",
     "name": {
       "en": "Cape Wuera",
       "fr": "Cape Wéra",
@@ -782,15 +843,17 @@
       "it": "Mantello Capwera",
       "pt": "Capa Weira"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/17142.png",
+    "itemType": "Cloak",
     "setID": "92",
+    "level": 80,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17142.png"
   },
   {
+    "dofusID": "7784",
     "name": {
       "en": "Cape Anama",
       "fr": "Cape Lyne",
@@ -799,15 +862,17 @@
       "it": "Mantel Lina",
       "pt": "Capa Anama"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/17137.png",
+    "itemType": "Cloak",
     "setID": "84",
+    "level": 80,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17137.png"
   },
   {
+    "dofusID": "7783",
     "name": {
       "en": "Cape Ytal",
       "fr": "Cape Ytale",
@@ -816,15 +881,17 @@
       "it": "Mantello Vitale",
       "pt": "Capa Ytal"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/17138.png",
+    "itemType": "Cloak",
     "setID": "87",
+    "level": 80,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17138.png"
   },
   {
+    "dofusID": "7782",
     "name": {
       "en": "Cape o'Tbelly",
       "fr": "Cape Hitton",
@@ -833,15 +900,17 @@
       "it": "Mantello Anguillo",
       "pt": "Capa Otbellied"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/17139.png",
+    "itemType": "Cloak",
     "setID": "90",
+    "level": 80,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17139.png"
   },
   {
+    "dofusID": "7781",
     "name": {
       "en": "Cape Sulitis",
       "fr": "Cape Sulhit",
@@ -850,15 +919,17 @@
       "it": "Mantello Sulhit",
       "pt": "Capa Sulitis"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/17134.png",
+    "itemType": "Cloak",
     "setID": "83",
+    "level": 80,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17134.png"
   },
   {
+    "dofusID": "7780",
     "name": {
       "en": "Cap Cape",
       "fr": "Cape Huchon",
@@ -867,15 +938,17 @@
       "it": "Passamantello",
       "pt": "Cap Capa"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/17141.png",
+    "itemType": "Cloak",
     "setID": "86",
+    "level": 80,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17141.png"
   },
   {
+    "dofusID": "7779",
     "name": {
       "en": "F-Ha(r)t",
       "fr": "Cape Routh",
@@ -884,15 +957,17 @@
       "it": "Mantello Quilone",
       "pt": "F-Chap(é)u"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/17140.png",
+    "itemType": "Cloak",
     "setID": "89",
+    "level": 80,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17140.png"
   },
   {
+    "dofusID": "7778",
     "name": {
       "en": "Cape of Spades",
       "fr": "Cape Aillé",
@@ -901,15 +976,17 @@
       "it": "Mantello Dollars",
       "pt": "Cash'n Cape"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/17133.png",
+    "itemType": "Cloak",
     "setID": "88",
+    "level": 80,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17133.png"
   },
   {
+    "dofusID": "7777",
     "name": {
       "en": "Cloak Orporal",
       "fr": "Cape Aurale",
@@ -918,15 +995,17 @@
       "it": "Mantello Olonello",
       "pt": "Manto Orporal"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/17131.png",
+    "itemType": "Cloak",
     "setID": "81",
+    "level": 80,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17131.png"
   },
   {
+    "dofusID": "7486",
     "name": {
       "en": "Shika's Cape",
       "fr": "Cape de Shika",
@@ -935,9 +1014,9 @@
       "it": "Mantello di Shika",
       "pt": "Capa de Shika"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/17120.png",
+    "itemType": "Cloak",
     "setID": "53",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
@@ -952,11 +1031,13 @@
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17120.png"
   },
   {
+    "dofusID": "6109",
     "name": {
       "en": "Farle's Cloak",
       "fr": "Cape de Farle",
@@ -965,9 +1046,9 @@
       "it": "Mantello di Farle",
       "pt": "Capa de Farle"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/17070.png",
+    "itemType": "Cloak",
     "setID": "17",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
@@ -982,11 +1063,13 @@
       { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17070.png"
   },
   {
+    "dofusID": "1354",
     "name": {
       "en": "Elya Wood's Cloak",
       "fr": "Cape d'Elya Wood",
@@ -995,9 +1078,9 @@
       "it": "Mantello d'Elya Wood",
       "pt": "Capa do Elya Wood"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/17009.png",
+    "itemType": "Cloak",
     "setID": "39",
+    "level": 80,
     "stats": [
       { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
       { "stat": "Damage", "minStat": 6, "maxStat": 8 },
@@ -1006,11 +1089,13 @@
       { "stat": "Air Resistance", "minStat": 6, "maxStat": 15 },
       { "stat": "Fire Resistance", "minStat": 6, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17009.png"
   },
   {
+    "dofusID": "6322",
     "name": {
       "en": "Desire O'Ball Cloak",
       "fr": "Cape du Désir O'Boul",
@@ -1019,20 +1104,22 @@
       "it": "Mantello del Desiderio O'Bul",
       "pt": "Manto de Bola dos Desejos"
     },
-    "level": 67,
-    "imageUrl": "/retro/item/17083.png",
+    "itemType": "Cloak",
     "setID": "38",
+    "level": 67,
     "stats": [
       { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
       { "stat": "Critical", "minStat": 3, "maxStat": 4 },
       { "stat": "Damage", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17083.png"
   },
   {
+    "dofusID": "6517",
     "name": {
       "en": "Aerdala Cloak",
       "fr": "Cape Aerdala",
@@ -1041,9 +1128,9 @@
       "it": "Mantello Erdala",
       "pt": "Capa Ardala"
     },
-    "level": 65,
-    "imageUrl": "/retro/item/17114.png",
+    "itemType": "Cloak",
     "setID": "35",
+    "level": 65,
     "stats": [
       { "stat": "Agility", "minStat": 11, "maxStat": 20 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
@@ -1052,11 +1139,13 @@
       { "stat": "Fire Resistance", "minStat": 6, "maxStat": 8 },
       { "stat": "Water Resistance", "minStat": 6, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17114.png"
   },
   {
+    "dofusID": "6274",
     "name": {
       "en": "Boowolf Cloak",
       "fr": "Cape du Mulou",
@@ -1065,9 +1154,9 @@
       "it": "Mantello del Buulupo",
       "pt": "Capa do Milobo"
     },
-    "level": 64,
-    "imageUrl": "/retro/item/17099.png",
+    "itemType": "Cloak",
     "setID": "32",
+    "level": 64,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 20 },
@@ -1075,11 +1164,13 @@
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17099.png"
   },
   {
+    "dofusID": "6515",
     "name": {
       "en": "Terrdala Cloak",
       "fr": "Cape Terrdala",
@@ -1088,9 +1179,9 @@
       "it": "Mantello Terradala",
       "pt": "Capa Terradala"
     },
-    "level": 63,
-    "imageUrl": "/retro/item/17112.png",
+    "itemType": "Cloak",
     "setID": "36",
+    "level": 63,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
@@ -1099,11 +1190,13 @@
       { "stat": "Water Resistance", "minStat": 6, "maxStat": 7 },
       { "stat": "Earth Resistance", "minStat": 6, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17112.png"
   },
   {
+    "dofusID": "2003",
     "name": {
       "en": "Hairy Cloak",
       "fr": "La Poilue",
@@ -1112,15 +1205,16 @@
       "it": "La Pelosa",
       "pt": "Manto Peludo"
     },
-    "level": 63,
-    "imageUrl": "/retro/item/17041.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 63,
     "stats": [
       { "stat": "Range", "minStat": 1, "maxStat": 2 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {
       "and": [
         { "stat": "Sagesse", "operator": ">", "value": 30 },
@@ -1128,9 +1222,10 @@
       ]
     },
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17041.png"
   },
   {
+    "dofusID": "6623",
     "name": {
       "en": "Kitsou Wrap",
       "fr": "Cape du Kitsou",
@@ -1139,19 +1234,21 @@
       "it": "Mantello del Kitsù",
       "pt": "Capa do Kitsu"
     },
-    "level": 62,
-    "imageUrl": "/retro/item/17084.png",
+    "itemType": "Cloak",
     "setID": "41",
+    "level": 62,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 100 },
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17084.png"
   },
   {
+    "dofusID": "9381",
     "name": {
       "en": "Phero-Cape",
       "fr": "Phéro-Cape",
@@ -1160,9 +1257,9 @@
       "it": "Ferontello",
       "pt": "Capa Phero"
     },
-    "level": 61,
-    "imageUrl": "/retro/item/17173.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 61,
     "stats": [
       { "stat": "Vitality", "minStat": 41, "maxStat": 50 },
       { "stat": "Power", "minStat": 21, "maxStat": 30 },
@@ -1170,11 +1267,13 @@
       { "stat": "Pods", "minStat": 101, "maxStat": 150 },
       { "stat": "Initiative", "minStat": 201, "maxStat": 250 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17173.png"
   },
   {
+    "dofusID": "7988",
     "name": {
       "en": "Moopet Cape",
       "fr": "Cape de la Meupette",
@@ -1183,9 +1282,9 @@
       "it": "Mantello della Mopet",
       "pt": "Capa da Mopete"
     },
-    "level": 61,
-    "imageUrl": "/retro/item/17146.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 61,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Agility", "minStat": 21, "maxStat": 30 },
@@ -1195,11 +1294,13 @@
       { "stat": "Earth Resistance", "minStat": 2, "maxStat": 5 },
       { "stat": "Neutral Resistance", "minStat": 2, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17146.png"
   },
   {
+    "dofusID": "7229",
     "name": {
       "en": "Koalak Cloak",
       "fr": "Cape du Koalak",
@@ -1208,20 +1309,22 @@
       "it": "Mantello del Koalak",
       "pt": "Capa do Koalak"
     },
-    "level": 61,
-    "imageUrl": "/retro/item/17095.png",
+    "itemType": "Cloak",
     "setID": "46",
+    "level": 61,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Water Resistance", "minStat": 7, "maxStat": 10 },
       { "stat": "Fire Resistance", "minStat": 7, "maxStat": 10 },
       { "stat": "Earth Resistance", "minStat": 7, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17095.png"
   },
   {
+    "dofusID": "1997",
     "name": {
       "en": "Flowing Cloak",
       "fr": "Cape Flotteuse",
@@ -1230,19 +1333,21 @@
       "it": "Mantello Galleggiante",
       "pt": "Manto Flutuante"
     },
-    "level": 61,
-    "imageUrl": "/retro/item/17036.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 61,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17036.png"
   },
   {
+    "dofusID": "2135",
     "name": {
       "en": "Caracape",
       "fr": "Caracape",
@@ -1251,20 +1356,22 @@
       "it": "Carantello",
       "pt": "Caracapa"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/17052.png",
+    "itemType": "Cloak",
     "setID": "9",
+    "level": 60,
     "stats": [
       { "stat": "Wisdom", "minStat": 6, "maxStat": 30 },
       { "stat": "Chance", "minStat": 1, "maxStat": 30 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 5 },
       { "stat": "Critical", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17052.png"
   },
   {
+    "dofusID": "2056",
     "name": {
       "en": "Jellicape",
       "fr": "Gelocape",
@@ -1273,18 +1380,20 @@
       "it": "Gelontello",
       "pt": "Gelacapa"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/17047.png",
+    "itemType": "Cloak",
     "setID": "6",
+    "level": 60,
     "stats": [
       { "stat": "Prospecting", "minStat": 6, "maxStat": 20 },
       { "stat": "Range", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17047.png"
   },
   {
+    "dofusID": "7328",
     "name": {
       "en": "Golden Scaracape",
       "fr": "Scaracape Dorée",
@@ -1293,9 +1402,9 @@
       "it": "Scarantello Dorato",
       "pt": "Scaracapa Dourada"
     },
-    "level": 58,
-    "imageUrl": "/retro/item/17098.png",
+    "itemType": "Cloak",
     "setID": "51",
+    "level": 58,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 55 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 20 },
@@ -1303,11 +1412,13 @@
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": 1, "maxStat": 200 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17098.png"
   },
   {
+    "dofusID": "6305",
     "name": {
       "en": "Hooded Cloak",
       "fr": "Cape Hôte",
@@ -1316,20 +1427,22 @@
       "it": "Mantello Berretto",
       "pt": "Manto Encapado"
     },
-    "level": 58,
-    "imageUrl": "/retro/item/17080.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 58,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
       { "stat": "Heals", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17080.png"
   },
   {
+    "dofusID": "2092",
     "name": {
       "en": "Vegicape",
       "fr": "Vegacape",
@@ -1338,18 +1451,20 @@
       "it": "Vegentello",
       "pt": "Vegacape"
     },
-    "level": 58,
-    "imageUrl": "/retro/item/17049.png",
+    "itemType": "Cloak",
     "setID": "10",
+    "level": 58,
     "stats": [
       { "stat": "Damage", "minStat": 1, "maxStat": 7 },
       { "stat": "Power", "minStat": 1, "maxStat": 30 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17049.png"
   },
   {
+    "dofusID": "7117",
     "name": {
       "en": "Gobkool Cape",
       "fr": "Cape du Boufcoul",
@@ -1358,19 +1473,21 @@
       "it": "Mantello del Pappacool",
       "pt": "Capa do Papakool"
     },
-    "level": 55,
-    "imageUrl": "/retro/item/17093.png",
+    "itemType": "Cloak",
     "setID": "43",
+    "level": 55,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Heals", "minStat": 3, "maxStat": 4 },
       { "stat": "Initiative", "minStat": 201, "maxStat": 300 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17093.png"
   },
   {
+    "dofusID": "675",
     "name": {
       "en": "Dazzling Cloak",
       "fr": "Cape Fulgurante",
@@ -1379,20 +1496,22 @@
       "it": "Mantello Folgorante",
       "pt": "Capa fulgurante"
     },
-    "level": 55,
-    "imageUrl": "/retro/item/17078.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 55,
     "stats": [
       { "stat": "Wisdom", "minStat": 1, "maxStat": 20 },
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17078.png"
   },
   {
+    "dofusID": "9232",
     "name": {
       "en": "Haks Or Cloak",
       "fr": "Cape du Roks Or",
@@ -1401,19 +1520,21 @@
       "it": "Mantello del Roks Or",
       "pt": "Capa do Roksor"
     },
-    "level": 54,
-    "imageUrl": "/retro/item/17171.png",
+    "itemType": "Cloak",
     "setID": "151",
+    "level": 54,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Damage", "minStat": 3, "maxStat": 4 },
       { "stat": "Power", "minStat": 21, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17171.png"
   },
   {
+    "dofusID": "1352",
     "name": {
       "en": "Jules Yanos's Cloak",
       "fr": "Cape de Jules Yanos",
@@ -1422,9 +1543,9 @@
       "it": "Mantello di Jules Yanos",
       "pt": "Manto de Jules Yanos"
     },
-    "level": 54,
-    "imageUrl": "/retro/item/17008.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 54,
     "stats": [
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "MP", "minStat": null, "maxStat": 1 },
@@ -1432,11 +1553,13 @@
       { "stat": "Earth Resistance", "minStat": 3, "maxStat": 6 },
       { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17008.png"
   },
   {
+    "dofusID": "7345",
     "name": {
       "en": "Black Scaracape",
       "fr": "Scaracape Noire",
@@ -1445,20 +1568,22 @@
       "it": "Scarantello Nero",
       "pt": "Scaracapa Negra"
     },
-    "level": 53,
-    "imageUrl": "/retro/item/17100.png",
+    "itemType": "Cloak",
     "setID": "49",
+    "level": 53,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 45 },
       { "stat": "Damage", "minStat": 1, "maxStat": 4 },
       { "stat": "Power (traps)", "minStat": 6, "maxStat": 20 },
       { "stat": "% Neutral Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17100.png"
   },
   {
+    "dofusID": "2002",
     "name": {
       "en": "Rags",
       "fr": "La Guenille",
@@ -1467,19 +1592,21 @@
       "it": "Lo Straccio",
       "pt": "Farrapo"
     },
-    "level": 53,
-    "imageUrl": "/retro/item/17040.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 53,
     "stats": [
       { "stat": "Critical", "minStat": 3, "maxStat": 10 },
       { "stat": "Damage", "minStat": 3, "maxStat": 5 },
       { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17040.png"
   },
   {
+    "dofusID": "6827",
     "name": {
       "en": "Turkocape",
       "fr": "Capodindo",
@@ -1488,15 +1615,17 @@
       "it": "Mantellacchino",
       "pt": "Caperu"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/17090.png",
+    "itemType": "Cloak",
     "setID": "42",
+    "level": 50,
     "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17090.png"
   },
   {
+    "dofusID": "2055",
     "name": {
       "en": "Royal Gobball's Cape",
       "fr": "Cape Bouffante Royale",
@@ -1505,18 +1634,20 @@
       "it": "Mantello Pappante Reale",
       "pt": "Capa Papante Real"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/17046.png",
+    "itemType": "Cloak",
     "setID": "4",
+    "level": 50,
     "stats": [
       { "stat": "Strength", "minStat": 11, "maxStat": 60 },
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17046.png"
   },
   {
+    "dofusID": "1999",
     "name": {
       "en": "Kwag'U Cape",
       "fr": "Cape Sanguine",
@@ -1525,9 +1656,9 @@
       "it": "Mantello Sanguigno",
       "pt": "Capa Sanguína"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/17038.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
@@ -1535,11 +1666,13 @@
       { "stat": "Air Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Fire Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17038.png"
   },
   {
+    "dofusID": "1550",
     "name": {
       "en": "Ouginak Cloak",
       "fr": "Cape Ouginak",
@@ -1548,19 +1681,21 @@
       "it": "Mantello Uginak",
       "pt": "Capa de Kilorf"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/17033.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 50,
     "stats": [
       { "stat": "Power", "minStat": 6, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17033.png"
   },
   {
+    "dofusID": "8534",
     "name": {
       "en": "[!EN] Cape Papayou",
       "fr": "Cape Papayou",
@@ -1569,20 +1704,22 @@
       "it": "[!IT] Cape Papayou",
       "pt": "[!PT] Cape Papayou"
     },
-    "level": 48,
-    "imageUrl": "/retro/item/17165.png",
+    "itemType": "Cloak",
     "setID": "129",
+    "level": 48,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 },
       { "stat": "Initiative", "minStat": 51, "maxStat": 75 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17165.png"
   },
   {
+    "dofusID": "8456",
     "name": {
       "en": "[!EN] Cape du Parrain",
       "fr": "Cape du Parrain",
@@ -1591,20 +1728,22 @@
       "it": "[!IT] Cape du Parrain",
       "pt": "[!PT] Cape du Parrain"
     },
-    "level": 48,
-    "imageUrl": "/retro/item/17163.png",
+    "itemType": "Cloak",
     "setID": "126",
+    "level": 48,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Heals", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17163.png"
   },
   {
+    "dofusID": "8540",
     "name": {
       "en": "[!EN] Cape de Slait",
       "fr": "Cape de Slait",
@@ -1613,9 +1752,9 @@
       "it": "[!IT] Cape de Slait",
       "pt": "[!PT] Cape de Slait"
     },
-    "level": 47,
-    "imageUrl": "/retro/item/17166.png",
+    "itemType": "Cloak",
     "setID": "128",
+    "level": 47,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
@@ -1623,11 +1762,13 @@
       { "stat": "Range", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17166.png"
   },
   {
+    "dofusID": "8477",
     "name": {
       "en": "[!EN] Cape du Black Wab",
       "fr": "Cape du Black Wab",
@@ -1636,20 +1777,22 @@
       "it": "[!IT] Cape du Black Wab",
       "pt": "[!PT] Cape du Black Wab"
     },
-    "level": 46,
-    "imageUrl": "/retro/item/17164.png",
+    "itemType": "Cloak",
     "setID": "127",
+    "level": 46,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 45 },
       { "stat": "Critical", "minStat": 3, "maxStat": 4 },
       { "stat": "Heals", "minStat": null, "maxStat": 1 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17164.png"
   },
   {
+    "dofusID": "6304",
     "name": {
       "en": "Hallelujah Cloak",
       "fr": "Cape Ricéfini",
@@ -1658,18 +1801,20 @@
       "it": "Mantello Tonì",
       "pt": "Manto Hallelujah"
     },
-    "level": 46,
-    "imageUrl": "/retro/item/17079.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 46,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Heals", "minStat": 3, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17079.png"
   },
   {
+    "dofusID": "6252",
     "name": {
       "en": "Crackler Cloak",
       "fr": "Craquelocape",
@@ -1678,9 +1823,9 @@
       "it": "Croccantello",
       "pt": "Smagocapa"
     },
-    "level": 46,
-    "imageUrl": "/retro/item/17077.png",
+    "itemType": "Cloak",
     "setID": "26",
+    "level": 46,
     "stats": [
       { "stat": "Strength", "minStat": 1, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 10 },
@@ -1689,11 +1834,13 @@
       { "stat": "Fire Resistance", "minStat": 1, "maxStat": 6 },
       { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17077.png"
   },
   {
+    "dofusID": "8296",
     "name": {
       "en": "[!EN] Cape Paupayahn",
       "fr": "Cape Paupayahn",
@@ -1702,20 +1849,22 @@
       "it": "[!IT] Cape Paupayahn",
       "pt": "[!PT] Cape Paupayahn"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/17153.png",
+    "itemType": "Cloak",
     "setID": "111",
+    "level": 45,
     "stats": [
       { "stat": "Agility", "minStat": 1, "maxStat": 10 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 },
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17153.png"
   },
   {
+    "dofusID": "8295",
     "name": {
       "en": "[!EN] Capogato",
       "fr": "Capogato",
@@ -1724,20 +1873,22 @@
       "it": "[!IT] Capogato",
       "pt": "[!PT] Capogato"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/17152.png",
+    "itemType": "Cloak",
     "setID": "110",
+    "level": 45,
     "stats": [
       { "stat": "Strength", "minStat": 1, "maxStat": 10 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17152.png"
   },
   {
+    "dofusID": "6263",
     "name": {
       "en": "White Scaracape",
       "fr": "Scaracape Blanche",
@@ -1746,20 +1897,22 @@
       "it": "Scarantello Bianco",
       "pt": "Scaracapa Branca"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/17071.png",
+    "itemType": "Cloak",
     "setID": "29",
+    "level": 45,
     "stats": [
       { "stat": "Agility", "minStat": 1, "maxStat": 10 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 },
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17071.png"
   },
   {
+    "dofusID": "6262",
     "name": {
       "en": "Red Scaracape",
       "fr": "Scaracape Rouge",
@@ -1768,20 +1921,22 @@
       "it": "Scarantello Rosso",
       "pt": "Scaracapa Vermelha"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/17072.png",
+    "itemType": "Cloak",
     "setID": "28",
+    "level": 45,
     "stats": [
       { "stat": "Intelligence", "minStat": 1, "maxStat": 10 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 },
       { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17072.png"
   },
   {
+    "dofusID": "6261",
     "name": {
       "en": "Blue Scaracape",
       "fr": "Scaracape Bleue",
@@ -1790,20 +1945,22 @@
       "it": "Scarantello Blu",
       "pt": "Scaracapa Azul"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/17073.png",
+    "itemType": "Cloak",
     "setID": "30",
+    "level": 45,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 10 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17073.png"
   },
   {
+    "dofusID": "6260",
     "name": {
       "en": "Green Scaracape",
       "fr": "Scaracape Verte",
@@ -1812,20 +1969,22 @@
       "it": "Scarantello Verde",
       "pt": "Scaracapa Verde"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/17074.png",
+    "itemType": "Cloak",
     "setID": "27",
+    "level": 45,
     "stats": [
       { "stat": "Strength", "minStat": 1, "maxStat": 10 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17074.png"
   },
   {
+    "dofusID": "5830",
     "name": {
       "en": "Crobacape",
       "fr": "Corbacape",
@@ -1834,20 +1993,22 @@
       "it": "Cuervontello",
       "pt": "Corvocapa"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/17054.png",
+    "itemType": "Cloak",
     "setID": "8",
+    "level": 45,
     "stats": [
       { "stat": "Wisdom", "minStat": 6, "maxStat": 20 },
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 7 },
       { "stat": "Agility", "minStat": 21, "maxStat": 35 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17054.png"
   },
   {
+    "dofusID": "2121",
     "name": {
       "en": "[!EN] Cape Vioutifoule",
       "fr": "Cape Vioutifoule",
@@ -1856,20 +2017,22 @@
       "it": "[!IT] Cape Vioutifoule",
       "pt": "[!PT] Cape Vioutifoule"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/17051.png",
+    "itemType": "Cloak",
     "setID": "75",
+    "level": 45,
     "stats": [
       { "stat": "Intelligence", "minStat": 1, "maxStat": 10 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 },
       { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17051.png"
   },
   {
+    "dofusID": "2120",
     "name": {
       "en": "[!EN] Mégacape",
       "fr": "Mégacape",
@@ -1878,20 +2041,22 @@
       "it": "[!IT] Mégacape",
       "pt": "[!PT] Mégacape"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/17050.png",
+    "itemType": "Cloak",
     "setID": "76",
+    "level": 45,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 10 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17050.png"
   },
   {
+    "dofusID": "2025",
     "name": {
       "en": "Treecapa",
       "fr": "Abracapa",
@@ -1900,20 +2065,22 @@
       "it": "Alberacappa",
       "pt": "Arvracapa"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/17043.png",
+    "itemType": "Cloak",
     "setID": "3",
+    "level": 45,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 50 },
       { "stat": "Strength", "minStat": 1, "maxStat": 30 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Damage", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17043.png"
   },
   {
+    "dofusID": "1696",
     "name": {
       "en": "Crobak Cloak",
       "fr": "Cape du Corbac",
@@ -1922,19 +2089,21 @@
       "it": "Mantello del Cuervoc",
       "pt": "Capa do Corvoc"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/17015.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 45,
     "stats": [
       { "stat": "Wisdom", "minStat": 6, "maxStat": 20 },
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17015.png"
   },
   {
+    "dofusID": "6426",
     "name": {
       "en": "Cape Huccino",
       "fr": "Cape Huccino",
@@ -1943,19 +2112,21 @@
       "it": "Mantello Caffeino",
       "pt": "Capa Huccino"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/17015.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 44,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17015.png"
   },
   {
+    "dofusID": "512",
     "name": {
       "en": "Salt 'n' Battery Cape",
       "fr": "Cape du Coq Hû",
@@ -1964,18 +2135,20 @@
       "it": "Mantello del Gal Lett",
       "pt": "Capa do Galo Velho"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/17010.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 44,
     "stats": [
       { "stat": "Chance", "minStat": 11, "maxStat": 20 },
       { "stat": "MP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17010.png"
   },
   {
+    "dofusID": "1184",
     "name": {
       "en": "Carpet Cape",
       "fr": "La Mokette",
@@ -1984,15 +2157,17 @@
       "it": "La Mokette",
       "pt": "Mokette"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/17008.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 43,
     "stats": [{ "stat": "Damage", "minStat": 3, "maxStat": 7 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17008.png"
   },
   {
+    "dofusID": "8919",
     "name": {
       "en": "[!EN] Limape",
       "fr": "Limape",
@@ -2001,19 +2176,21 @@
       "it": "[!IT] Limape",
       "pt": "[!PT] Limape"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/17169.png",
+    "itemType": "Cloak",
     "setID": "137",
+    "level": 42,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17169.png"
   },
   {
+    "dofusID": "8737",
     "name": {
       "en": "[!EN] Cape Siks Won Naïne",
       "fr": "Cape Siks Won Naïne",
@@ -2022,19 +2199,21 @@
       "it": "[!IT] Cape Siks Won Naïne",
       "pt": "[!PT] Cape Siks Won Naïne"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/17167.png",
+    "itemType": "Cloak",
     "setID": "131",
+    "level": 42,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Heals", "minStat": 2, "maxStat": 3 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17167.png"
   },
   {
+    "dofusID": "8926",
     "name": {
       "en": "[!EN] Cape de Noké",
       "fr": "Cape de Noké",
@@ -2043,19 +2222,21 @@
       "it": "[!IT] Cape de Noké",
       "pt": "[!PT] Cape de Noké"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/17170.png",
+    "itemType": "Cloak",
     "setID": "135",
+    "level": 41,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 35 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Critical", "minStat": 3, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17170.png"
   },
   {
+    "dofusID": "8843",
     "name": {
       "en": "Vampyre Cape",
       "fr": "Cape du Vampyre",
@@ -2064,19 +2245,21 @@
       "it": "Mantello del Vampyro",
       "pt": "Capa do Vampyro"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/17168.png",
+    "itemType": "Cloak",
     "setID": "130",
+    "level": 41,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17168.png"
   },
   {
+    "dofusID": "6514",
     "name": {
       "en": "Akwadala Cloak",
       "fr": "Cape Akwadala",
@@ -2085,19 +2268,21 @@
       "it": "Mantello Aksadala",
       "pt": "Capa Akwadala"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/17113.png",
+    "itemType": "Cloak",
     "setID": "34",
+    "level": 41,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 60 },
       { "stat": "Chance", "minStat": 11, "maxStat": 20 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17113.png"
   },
   {
+    "dofusID": "6092",
     "name": {
       "en": "[!EN] Kwape du Vent",
       "fr": "Kwape du Vent",
@@ -2106,20 +2291,22 @@
       "it": "[!IT] Kwape du Vent",
       "pt": "[!PT] Kwape du Vent"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/17062.png",
+    "itemType": "Cloak",
     "setID": "15",
+    "level": 41,
     "stats": [
       { "stat": "Agility", "minStat": 11, "maxStat": 15 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": 21, "maxStat": 30 },
       { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17062.png"
   },
   {
+    "dofusID": "6091",
     "name": {
       "en": "Earth Kwape",
       "fr": "Kwape de Terre",
@@ -2128,20 +2315,22 @@
       "it": "Kwantello di Terra",
       "pt": "Kwakapa de Terra"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/17064.png",
+    "itemType": "Cloak",
     "setID": "14",
+    "level": 41,
     "stats": [
       { "stat": "Strength", "minStat": 11, "maxStat": 15 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": 21, "maxStat": 30 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17064.png"
   },
   {
+    "dofusID": "2136",
     "name": {
       "en": "Ice Kwape",
       "fr": "Kwape de Glace",
@@ -2150,20 +2339,22 @@
       "it": "Kwantello di Ghiaccio",
       "pt": "Kwakapa de gelo"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/17053.png",
+    "itemType": "Cloak",
     "setID": "13",
+    "level": 41,
     "stats": [
       { "stat": "Chance", "minStat": 11, "maxStat": 15 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": 21, "maxStat": 30 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17053.png"
   },
   {
+    "dofusID": "2024",
     "name": {
       "en": "Fire Kwape",
       "fr": "Kwape de Flammes",
@@ -2172,20 +2363,22 @@
       "it": "Kwantello di Fiamma",
       "pt": "Kwakapa de Fogo"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/17042.png",
+    "itemType": "Cloak",
     "setID": "2",
+    "level": 41,
     "stats": [
       { "stat": "Intelligence", "minStat": 11, "maxStat": 15 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": 21, "maxStat": 30 },
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17042.png"
   },
   {
+    "dofusID": "1996",
     "name": {
       "en": "Mushd Cloak",
       "fr": "Cape de Bou",
@@ -2194,19 +2387,21 @@
       "it": "Mantello di Boo",
       "pt": "Manto de Mushd"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/17035.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 41,
     "stats": [
       { "stat": "Water Resistance", "minStat": 6, "maxStat": 20 },
       { "stat": "Air Resistance", "minStat": 6, "maxStat": 20 },
       { "stat": "Fire Resistance", "minStat": 6, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17035.png"
   },
   {
+    "dofusID": "8366",
     "name": {
       "en": "[!EN] Cape Bouchon",
       "fr": "Cape Bouchon",
@@ -2215,18 +2410,20 @@
       "it": "[!IT] Cape Bouchon",
       "pt": "[!PT] Cape Bouchon"
     },
-    "level": 37,
-    "imageUrl": "/retro/item/17156.png",
+    "itemType": "Cloak",
     "setID": "113",
+    "level": 37,
     "stats": [
       { "stat": "Wisdom", "minStat": 1, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17156.png"
   },
   {
+    "dofusID": "6248",
     "name": {
       "en": "Prespic Cloak",
       "fr": "Cape du Prespic",
@@ -2235,18 +2432,20 @@
       "it": "Mantello del Prespic",
       "pt": "Capa do Prespic"
     },
-    "level": 37,
-    "imageUrl": "/retro/item/17075.png",
+    "itemType": "Cloak",
     "setID": "31",
+    "level": 37,
     "stats": [
       { "stat": "Wisdom", "minStat": 1, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17075.png"
   },
   {
+    "dofusID": "8370",
     "name": {
       "en": "[!EN] Cape du bois de l'est",
       "fr": "Cape du bois de l'est",
@@ -2255,19 +2454,21 @@
       "it": "[!IT] Cape du bois de l'est",
       "pt": "[!PT] Cape du bois de l'est"
     },
-    "level": 36,
-    "imageUrl": "/retro/item/17157.png",
+    "itemType": "Cloak",
     "setID": "114",
+    "level": 36,
     "stats": [
       { "stat": "Initiative", "minStat": 151, "maxStat": 200 },
       { "stat": "Agility", "minStat": 16, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 11, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17157.png"
   },
   {
+    "dofusID": "662",
     "name": {
       "en": "Mad Tofu Cloak",
       "fr": "Cape du Tofu Fou",
@@ -2276,18 +2477,20 @@
       "it": "Mantello del Tofu Pazzo",
       "pt": "Capa do Tofu Louco"
     },
-    "level": 36,
-    "imageUrl": "/retro/item/17019.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 36,
     "stats": [
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Agility", "minStat": 1, "maxStat": 100 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17019.png"
   },
   {
+    "dofusID": "1998",
     "name": {
       "en": "Maimpa Cloak",
       "fr": "Cape Maimpa",
@@ -2296,19 +2499,21 @@
       "it": "Mantello Mempà",
       "pt": "Manto de Maimpa"
     },
-    "level": 36,
-    "imageUrl": "/retro/item/17037.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 36,
     "stats": [
       { "stat": "Initiative", "minStat": 151, "maxStat": 200 },
       { "stat": "Agility", "minStat": 16, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 11, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17037.png"
   },
   {
+    "dofusID": "664",
     "name": {
       "en": "Cape Hillary",
       "fr": "Cape Hilère",
@@ -2317,15 +2522,17 @@
       "it": "Mantello Capello",
       "pt": "Capa Hilar"
     },
-    "level": 34,
-    "imageUrl": "/retro/item/17005.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 34,
     "stats": [{ "stat": "Vitality", "minStat": 31, "maxStat": 100 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17005.png"
   },
   {
+    "dofusID": "514",
     "name": {
       "en": "Maj'Hic Cloak",
       "fr": "Cape Maj'Hic",
@@ -2334,20 +2541,22 @@
       "it": "Mantello Maj'Hic",
       "pt": "Manto de Maj’Hic"
     },
-    "level": 34,
-    "imageUrl": "/retro/item/17012.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 34,
     "stats": [
       { "stat": "Water Resistance", "minStat": 3, "maxStat": 7 },
       { "stat": "Air Resistance", "minStat": 3, "maxStat": 7 },
       { "stat": "Fire Resistance", "minStat": 3, "maxStat": 7 },
       { "stat": "Power", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17012.png"
   },
   {
+    "dofusID": "8398",
     "name": {
       "en": "[!EN] Poshocape",
       "fr": "Poshocape",
@@ -2356,15 +2565,17 @@
       "it": "[!IT] Poshocape",
       "pt": "[!PT] Poshocape"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/17161.png",
+    "itemType": "Cloak",
     "setID": "123",
+    "level": 33,
     "stats": [{ "stat": "Range", "minStat": 1, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17161.png"
   },
   {
+    "dofusID": "8383",
     "name": {
       "en": "[!EN] Pompocape",
       "fr": "Pompocape",
@@ -2373,18 +2584,20 @@
       "it": "[!IT] Pompocape",
       "pt": "[!PT] Pompocape"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/17160.png",
+    "itemType": "Cloak",
     "setID": "124",
+    "level": 33,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 60 },
       { "stat": "Power", "minStat": 6, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17160.png"
   },
   {
+    "dofusID": "8363",
     "name": {
       "en": "[!EN] Cape Kifébzz",
       "fr": "Cape Kifébzz",
@@ -2393,18 +2606,20 @@
       "it": "[!IT] Cape Kifébzz",
       "pt": "[!PT] Cape Kifébzz"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/17155.png",
+    "itemType": "Cloak",
     "setID": "112",
+    "level": 33,
     "stats": [
       { "stat": "Damage", "minStat": 2, "maxStat": 3 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17155.png"
   },
   {
+    "dofusID": "665",
     "name": {
       "en": "Cape Rice",
       "fr": "Cape Rice",
@@ -2413,15 +2628,17 @@
       "it": "Mantello Capriccio",
       "pt": "Capa Arixo"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/17007.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 33,
     "stats": [{ "stat": "Range", "minStat": 1, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17007.png"
   },
   {
+    "dofusID": "661",
     "name": {
       "en": "Mad Boowolf Cloak",
       "fr": "Cape du Mulou Fou",
@@ -2430,18 +2647,20 @@
       "it": "Mantello del Buulupo Pazzo",
       "pt": "Capa do Milobo Louco"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/17003.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 33,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 60 },
       { "stat": "Power", "minStat": 6, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17003.png"
   },
   {
+    "dofusID": "6098",
     "name": {
       "en": "Ambusherot",
       "fr": "Fourbacapa",
@@ -2450,18 +2669,20 @@
       "it": "Furbantello",
       "pt": "Caparbustor"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/17061.png",
+    "itemType": "Cloak",
     "setID": "16",
+    "level": 33,
     "stats": [
       { "stat": "Damage", "minStat": 2, "maxStat": 3 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17061.png"
   },
   {
+    "dofusID": "496",
     "name": {
       "en": "Chogreloting Cheeken Cloak",
       "fr": "Cape du Poolay Chogrelotant",
@@ -2470,9 +2691,9 @@
       "it": "Mantello del Poolay Vibrardente",
       "pt": "Capa do Phrango Chogreloting"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/17003.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 33,
     "stats": [
       { "stat": "Earth Resistance", "minStat": 4, "maxStat": 12 },
       { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 12 },
@@ -2480,11 +2701,13 @@
       { "stat": "Air Resistance", "minStat": 4, "maxStat": 12 },
       { "stat": "Fire Resistance", "minStat": 4, "maxStat": 12 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17003.png"
   },
   {
+    "dofusID": "8403",
     "name": {
       "en": "[!EN] Cigalocape",
       "fr": "Cigalocape",
@@ -2493,18 +2716,20 @@
       "it": "[!IT] Cigalocape",
       "pt": "[!PT] Cigalocape"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/17162.png",
+    "itemType": "Cloak",
     "setID": "122",
+    "level": 30,
     "stats": [
       { "stat": "Chance", "minStat": 11, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17162.png"
   },
   {
+    "dofusID": "8374",
     "name": {
       "en": "[!EN] Cape Grume",
       "fr": "Cape Grume",
@@ -2513,18 +2738,20 @@
       "it": "[!IT] Cape Grume",
       "pt": "[!PT] Cape Grume"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/17158.png",
+    "itemType": "Cloak",
     "setID": "115",
+    "level": 30,
     "stats": [
       { "stat": "Chance", "minStat": 11, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17158.png"
   },
   {
+    "dofusID": "8221",
     "name": {
       "en": "Shika's Cape",
       "fr": "Cape de Shika",
@@ -2533,18 +2760,20 @@
       "it": "Mantello di Shika",
       "pt": "Capa de Shika"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/17148.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 30,
     "stats": [
       { "stat": "Vitality", "minStat": null, "maxStat": 20 },
       { "stat": "Wisdom", "minStat": null, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17148.png"
   },
   {
+    "dofusID": "8036",
     "name": {
       "en": "Improved Wooden Wings",
       "fr": "Ailes en bois améliorées",
@@ -2553,18 +2782,20 @@
       "it": "Ali di Legno Migliorate",
       "pt": "Asas de madeira melhoradas"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/17022.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 30,
     "stats": [
       { "stat": "Pods", "minStat": 151, "maxStat": 200 },
       { "stat": "Initiative", "minStat": 151, "maxStat": 200 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17022.png"
   },
   {
+    "dofusID": "679",
     "name": {
       "en": "Wa Wabbit's Cloak",
       "fr": "Cape du Wa Wabbit",
@@ -2573,15 +2804,17 @@
       "it": "Mantello del We Wabbit",
       "pt": "Capa do Wei Wabbit"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/17021.png",
+    "itemType": "Cloak",
     "setID": "40",
+    "level": 30,
     "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 100 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17021.png"
   },
   {
+    "dofusID": "523",
     "name": {
       "en": "Cape of Good Hope",
       "fr": "Cape de Bonne Espérance",
@@ -2590,18 +2823,20 @@
       "it": "Mantello di Buona Speranza",
       "pt": "Capa da Boa Esperança"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/17005.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 30,
     "stats": [
       { "stat": "Chance", "minStat": 11, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17005.png"
   },
   {
+    "dofusID": "495",
     "name": {
       "en": "Dispenser of Justice Cloak",
       "fr": "Cape du Justicier",
@@ -2610,13 +2845,14 @@
       "it": "Mantello del Giustiziere",
       "pt": "Capa do Justiceiro"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/17002.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 30,
     "stats": [
       { "stat": "Power", "minStat": 21, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": [
@@ -2644,9 +2880,10 @@
         "\n                                \n                                  Alignement > 20"
       ]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/17002.png"
   },
   {
+    "dofusID": "492",
     "name": {
       "en": "Vampire Cloak",
       "fr": "Cape du Vampire",
@@ -2655,19 +2892,21 @@
       "it": "Mantello del Vampiro",
       "pt": "Capa do Vampiro"
     },
-    "level": 29,
-    "imageUrl": "/retro/item/17017.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 29,
     "stats": [
       { "stat": "Water Resistance", "minStat": 3, "maxStat": 7 },
       { "stat": "Air Resistance", "minStat": 3, "maxStat": 7 },
       { "stat": "Fire Resistance", "minStat": 3, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17017.png"
   },
   {
+    "dofusID": "9367",
     "name": {
       "en": "Banana Cape",
       "fr": "Banana Cape",
@@ -2676,19 +2915,21 @@
       "it": "Bananantello",
       "pt": "Capa de Banana"
     },
-    "level": 28,
-    "imageUrl": "/retro/item/17172.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 28,
     "stats": [
       { "stat": "Power", "minStat": 11, "maxStat": 15 },
       { "stat": "Initiative", "minStat": 31, "maxStat": 40 },
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17172.png"
   },
   {
+    "dofusID": "7324",
     "name": {
       "en": "Tofu Cloak",
       "fr": "Cape du Tofu",
@@ -2697,15 +2938,17 @@
       "it": "Mantello del Tofu",
       "pt": "Capa do Tofu"
     },
-    "level": 26,
-    "imageUrl": "/retro/item/17097.png",
+    "itemType": "Cloak",
     "setID": "50",
+    "level": 26,
     "stats": [{ "stat": "Damage", "minStat": 1, "maxStat": 3 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17097.png"
   },
   {
+    "dofusID": "666",
     "name": {
       "en": "The Gobb",
       "fr": "La Boufteuse",
@@ -2714,18 +2957,20 @@
       "it": "La Pappatrice",
       "pt": "A Papatosa"
     },
-    "level": 23,
-    "imageUrl": "/retro/item/17012.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 23,
     "stats": [
       { "stat": "Power", "minStat": 6, "maxStat": 15 },
       { "stat": "Vitality", "minStat": 11, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17012.png"
   },
   {
+    "dofusID": "663",
     "name": {
       "en": "Poak Cloak",
       "fr": "La Samoulaille",
@@ -2734,15 +2979,17 @@
       "it": "Il Samulai",
       "pt": "A Samulai"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/17002.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 22,
     "stats": [{ "stat": "Damage", "minStat": 1, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17002.png"
   },
   {
+    "dofusID": "507",
     "name": {
       "en": "Swashbucloak",
       "fr": "Cape Edépée",
@@ -2751,18 +2998,20 @@
       "it": "Mantello Espada",
       "pt": "Fanfamanto"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/17004.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 22,
     "stats": [
       { "stat": "Earth Resistance", "minStat": 2, "maxStat": 4 },
       { "stat": "Neutral Resistance", "minStat": 2, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17004.png"
   },
   {
+    "dofusID": "8378",
     "name": {
       "en": "[!EN] Cape Cristaline",
       "fr": "Cape Cristaline",
@@ -2771,15 +3020,17 @@
       "it": "[!IT] Cape Cristaline",
       "pt": "[!PT] Cape Cristaline"
     },
-    "level": 21,
-    "imageUrl": "/retro/item/17159.png",
+    "itemType": "Cloak",
     "setID": "125",
+    "level": 21,
     "stats": [{ "stat": "Intelligence", "minStat": 21, "maxStat": 35 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17159.png"
   },
   {
+    "dofusID": "515",
     "name": {
       "en": "Itou Lascione Cape",
       "fr": "Cape Itou Lascione",
@@ -2788,15 +3039,17 @@
       "it": "Mantello Capy Tulassion",
       "pt": "Capa Itou Lascione"
     },
-    "level": 21,
-    "imageUrl": "/retro/item/17007.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 21,
     "stats": [{ "stat": "Intelligence", "minStat": 21, "maxStat": 35 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17007.png"
   },
   {
+    "dofusID": "717",
     "name": {
       "en": "Wooden Wings",
       "fr": "Ailes en bois",
@@ -2805,18 +3058,20 @@
       "it": "Ali di Legno",
       "pt": "Asas de madeira"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/17022.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 20,
     "stats": [
       { "stat": "Pods", "minStat": 31, "maxStat": 50 },
       { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17022.png"
   },
   {
+    "dofusID": "6063",
     "name": {
       "en": "Bearman's Cloak",
       "fr": "Cape de l'Homme Ours",
@@ -2825,18 +3080,20 @@
       "it": "Mantello dell'Uomo Orso",
       "pt": "Capa do Homem Urso"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/17058.png",
+    "itemType": "Cloak",
     "setID": "12",
+    "level": 20,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Agility", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17058.png"
   },
   {
+    "dofusID": "484",
     "name": {
       "en": "Bowisse's Cloak",
       "fr": "Cape de Bowisse",
@@ -2845,15 +3102,17 @@
       "it": "Mantello di Bowis",
       "pt": "Capa do Bowis"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/17001.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 20,
     "stats": [{ "stat": "Chance", "minStat": 11, "maxStat": 40 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17001.png"
   },
   {
+    "dofusID": "7515",
     "name": {
       "en": "Father Kwismas Cape",
       "fr": "Cape du Papa Nowel",
@@ -2862,18 +3121,20 @@
       "it": "Mantello di Babbo Nawal",
       "pt": "Capa do Papai Nowel"
     },
-    "level": 19,
-    "imageUrl": "/retro/item/17119.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 19,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Initiative", "minStat": 51, "maxStat": 60 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17119.png"
   },
   {
+    "dofusID": "657",
     "name": {
       "en": "[!EN] Grande Cape Sombre",
       "fr": "Grande Cape Sombre",
@@ -2882,15 +3143,17 @@
       "it": "[!IT] Grande Cape Sombre",
       "pt": "[!PT] Grande Cape Sombre"
     },
-    "level": 19,
-    "imageUrl": "/retro/item/17015.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 19,
     "stats": [{ "stat": "Wisdom", "minStat": 6, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17015.png"
   },
   {
+    "dofusID": "510",
     "name": {
       "en": "Cape Ability",
       "fr": "Cape Abilité",
@@ -2899,15 +3162,17 @@
       "it": "Mantello Abilità",
       "pt": "Capa Bilidade"
     },
-    "level": 17,
-    "imageUrl": "/retro/item/17009.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 17,
     "stats": [{ "stat": "Critical", "minStat": 2, "maxStat": 3 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17009.png"
   },
   {
+    "dofusID": "644",
     "name": {
       "en": "[!EN] Grande Cape de Rougeur",
       "fr": "Grande Cape de Rougeur",
@@ -2916,15 +3181,17 @@
       "it": "[!IT] Grande Cape de Rougeur",
       "pt": "[!PT] Grande Cape de Rougeur"
     },
-    "level": 16,
-    "imageUrl": "/retro/item/17013.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 16,
     "stats": [{ "stat": "Vitality", "minStat": 16, "maxStat": 20 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17013.png"
   },
   {
+    "dofusID": "7699",
     "name": {
       "en": "[!EN] Cape du Lapino Blasé",
       "fr": "Cape du Lapino Blasé",
@@ -2933,15 +3200,17 @@
       "it": "[!IT] Cape du Lapino Blasé",
       "pt": "[!PT] Cape du Lapino Blasé"
     },
-    "level": 14,
-    "imageUrl": "/retro/item/17129.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 14,
     "stats": [{ "stat": "Agility", "minStat": 11, "maxStat": 20 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17129.png"
   },
   {
+    "dofusID": "511",
     "name": {
       "en": "Sin Cape",
       "fr": "Cape Sulcorpe",
@@ -2950,15 +3219,17 @@
       "it": "Cappa Sulcorps",
       "pt": "Capa Sulcorp"
     },
-    "level": 14,
-    "imageUrl": "/retro/item/17008.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 14,
     "stats": [{ "stat": "Strength", "minStat": 11, "maxStat": 20 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17008.png"
   },
   {
+    "dofusID": "509",
     "name": {
       "en": "Cape Ulais",
       "fr": "Cape Ulais",
@@ -2967,15 +3238,17 @@
       "it": "Cappa Uleti",
       "pt": "Capa Ulais"
     },
-    "level": 14,
-    "imageUrl": "/retro/item/17007.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 14,
     "stats": [{ "stat": "Vitality", "minStat": 11, "maxStat": 20 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17007.png"
   },
   {
+    "dofusID": "508",
     "name": {
       "en": "Ellinie Cloak",
       "fr": "Cape Ellinie",
@@ -2984,15 +3257,17 @@
       "it": "Mantello Tortellino",
       "pt": "Capa Ellini"
     },
-    "level": 14,
-    "imageUrl": "/retro/item/17005.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 14,
     "stats": [{ "stat": "Agility", "minStat": 11, "maxStat": 20 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17005.png"
   },
   {
+    "dofusID": "643",
     "name": {
       "en": "Redness Cloak",
       "fr": "Cape de Rougeur",
@@ -3001,15 +3276,17 @@
       "it": "Mantello di Rossore",
       "pt": "Capa de rubor"
     },
-    "level": 13,
-    "imageUrl": "/retro/item/17013.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 13,
     "stats": [{ "stat": "Vitality", "minStat": 11, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17013.png"
   },
   {
+    "dofusID": "656",
     "name": {
       "en": "Dark Cloak",
       "fr": "Cape Sombre",
@@ -3018,15 +3295,17 @@
       "it": "Mantello Oscuro",
       "pt": "Capa sombria"
     },
-    "level": 12,
-    "imageUrl": "/retro/item/17015.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 12,
     "stats": [{ "stat": "Wisdom", "minStat": 3, "maxStat": 5 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17015.png"
   },
   {
+    "dofusID": "7443",
     "name": {
       "en": "Sponge Cape",
       "fr": "Cape en Mousse",
@@ -3035,15 +3314,17 @@
       "it": "Mantello di Spugna",
       "pt": "Capa de Esponja"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/17109.png",
+    "itemType": "Cloak",
     "setID": "63",
+    "level": 10,
     "stats": [{ "stat": "Initiative", "minStat": 1, "maxStat": 100 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17109.png"
   },
   {
+    "dofusID": "658",
     "name": {
       "en": "Treecloak",
       "fr": "Abracape",
@@ -3052,18 +3333,20 @@
       "it": "Alberantello",
       "pt": "Arvramanto"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/17016.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 10,
     "stats": [
       { "stat": "AP", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17016.png"
   },
   {
+    "dofusID": "6460",
     "name": {
       "en": "Pandawushu Cloak",
       "fr": "Cape Pandawushu",
@@ -3072,15 +3355,17 @@
       "it": "Mantello Pandawushu",
       "pt": "Capa Pandawushu"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/17089.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 10,
     "stats": [{ "stat": "Vitality", "minStat": 6, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17089.png"
   },
   {
+    "dofusID": "6128",
     "name": {
       "en": "Purple Cloak",
       "fr": "Capouze des Champs",
@@ -3089,18 +3374,20 @@
       "it": "Mantellina dei Campi",
       "pt": "Manto Violeta"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/17065.png",
+    "itemType": "Cloak",
     "setID": "18",
+    "level": 10,
     "stats": [
       { "stat": "Vitality", "minStat": 5, "maxStat": 6 },
       { "stat": "Initiative", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17065.png"
   },
   {
+    "dofusID": "2026",
     "name": {
       "en": "Gobball Cape",
       "fr": "Cape Bouffante",
@@ -3109,18 +3396,20 @@
       "it": "Mantello Pappante",
       "pt": "Capa Gobbling"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/17044.png",
+    "itemType": "Cloak",
     "setID": "1",
+    "level": 10,
     "stats": [
       { "stat": "Initiative", "minStat": 1, "maxStat": 300 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17044.png"
   },
   {
+    "dofusID": "7688",
     "name": {
       "en": "The Red Cape",
       "fr": "La cape rouge",
@@ -3129,15 +3418,17 @@
       "it": "Il Mantello Rosso",
       "pt": "A Capa Vermelha"
     },
-    "level": 9,
-    "imageUrl": "/retro/item/17128.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 9,
     "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 20 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17128.png"
   },
   {
+    "dofusID": "6243",
     "name": {
       "en": "Mush Mush Cloak",
       "fr": "Cape du Champ Champ",
@@ -3146,19 +3437,21 @@
       "it": "Mantello del Fun Fung",
       "pt": "Capa do Cogu Cogu"
     },
-    "level": 9,
-    "imageUrl": "/retro/item/17076.png",
+    "itemType": "Cloak",
     "setID": "24",
+    "level": 9,
     "stats": [
       { "stat": "Wisdom", "minStat": 1, "maxStat": 10 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17076.png"
   },
   {
+    "dofusID": "655",
     "name": {
       "en": "[!EN] Petite Cape Sombre",
       "fr": "Petite Cape Sombre",
@@ -3167,15 +3460,17 @@
       "it": "[!IT] Petite Cape Sombre",
       "pt": "[!PT] Petite Cape Sombre"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/17015.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "Wisdom", "minStat": 2, "maxStat": 3 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17015.png"
   },
   {
+    "dofusID": "642",
     "name": {
       "en": "[!EN] Petite Cape de Rougeur",
       "fr": "Petite Cape de Rougeur",
@@ -3184,15 +3479,17 @@
       "it": "[!IT] Petite Cape de Rougeur",
       "pt": "[!PT] Petite Cape de Rougeur"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/17013.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "Vitality", "minStat": 6, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17013.png"
   },
   {
+    "dofusID": "667",
     "name": {
       "en": "Dofusteuse",
       "fr": "Dofusteuse",
@@ -3201,9 +3498,9 @@
       "it": "Dofusantello",
       "pt": "Dofustosa"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/17008.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 6,
     "stats": [
       { "stat": "Wisdom", "minStat": 1, "maxStat": 20 },
       { "stat": "Agility", "minStat": 1, "maxStat": 50 },
@@ -3212,11 +3509,13 @@
       { "stat": "Strength", "minStat": 1, "maxStat": 50 },
       { "stat": "Intelligence", "minStat": 1, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17008.png"
   },
   {
+    "dofusID": "647",
     "name": {
       "en": "[!EN] Grande Cape Bleutée",
       "fr": "Grande Cape Bleutée",
@@ -3225,15 +3524,17 @@
       "it": "[!IT] Grande Cape Bleutée",
       "pt": "[!PT] Grande Cape Bleutée"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/17018.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Chance", "minStat": 1, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17018.png"
   },
   {
+    "dofusID": "513",
     "name": {
       "en": "Mori Arty's Cloak",
       "fr": "Cape de Mori Arty",
@@ -3242,10 +3543,11 @@
       "it": "Mantello di Mori Arty",
       "pt": "Manto de Mori Arty"
     },
-    "level": 6,
-    "imageUrl": "/retro/item/17011.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 6,
     "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": [
@@ -3273,9 +3575,10 @@
         "\n                                \n                                  Alignement > 30"
       ]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/17011.png"
   },
   {
+    "dofusID": "646",
     "name": {
       "en": "Bluish Cloak",
       "fr": "Cape Bleutée",
@@ -3284,15 +3587,17 @@
       "it": "Mantello Celeste",
       "pt": "Capa azulada"
     },
-    "level": 3,
-    "imageUrl": "/retro/item/17018.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 3,
     "stats": [{ "stat": "Chance", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17018.png"
   },
   {
+    "dofusID": "7701",
     "name": {
       "en": "S'loque Cape",
       "fr": "La Cape S'loque",
@@ -3301,15 +3606,17 @@
       "it": "Il Mantello Slok",
       "pt": "A capa Sloque"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/17130.png",
+    "itemType": "Cloak",
     "setID": "69",
+    "level": 1,
     "stats": [{ "stat": "Heals", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17130.png"
   },
   {
+    "dofusID": "7421",
     "name": {
       "en": "Yellow Piwi Cape",
       "fr": "Cape du Piou Jaune",
@@ -3318,15 +3625,17 @@
       "it": "Mantello del Pìu Giallo",
       "pt": "Capa do Piu Amarelo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/17107.png",
+    "itemType": "Cloak",
     "setID": "72",
+    "level": 1,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17107.png"
   },
   {
+    "dofusID": "7420",
     "name": {
       "en": "Pink Piwi Cape",
       "fr": "Cape du Piou Rose",
@@ -3335,15 +3644,17 @@
       "it": "Mantello del Pìu Rosa",
       "pt": "Capa do Piu Rosa"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/17108.png",
+    "itemType": "Cloak",
     "setID": "70",
+    "level": 1,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17108.png"
   },
   {
+    "dofusID": "7419",
     "name": {
       "en": "Purple Piwi Cape",
       "fr": "Cape du Piou Violet",
@@ -3352,15 +3663,17 @@
       "it": "Mantello del Pìu Viola",
       "pt": "Capa do Piu Violeta"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/17106.png",
+    "itemType": "Cloak",
     "setID": "62",
+    "level": 1,
     "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17106.png"
   },
   {
+    "dofusID": "7418",
     "name": {
       "en": "Green Piwi Cape",
       "fr": "Cape du Piou Vert",
@@ -3369,15 +3682,17 @@
       "it": "Mantello del Pìu Verde",
       "pt": "Capa do Piu Verde"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/17105.png",
+    "itemType": "Cloak",
     "setID": "71",
+    "level": 1,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17105.png"
   },
   {
+    "dofusID": "7417",
     "name": {
       "en": "Blue Piwi Cape",
       "fr": "Cape du Piou Bleu",
@@ -3386,15 +3701,17 @@
       "it": "Mantello del Pìu Blu",
       "pt": "Capa do Piu Azul"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/17104.png",
+    "itemType": "Cloak",
     "setID": "61",
+    "level": 1,
     "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17104.png"
   },
   {
+    "dofusID": "7416",
     "name": {
       "en": "Red Piwi Cape",
       "fr": "Cape du Piou Rouge",
@@ -3403,15 +3720,17 @@
       "it": "Mantello del Pìu Rosso",
       "pt": "Capa do Piu Vermelho"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/17103.png",
+    "itemType": "Cloak",
     "setID": "60",
+    "level": 1,
     "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17103.png"
   },
   {
+    "dofusID": "7282",
     "name": {
       "en": "[!EN] Cape du Champion",
       "fr": "Cape du Champion",
@@ -3420,15 +3739,17 @@
       "it": "[!IT] Cape du Champion",
       "pt": "[!PT] Cape du Champion"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/17096.png",
+    "itemType": "Cloak",
     "setID": "45",
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17096.png"
   },
   {
+    "dofusID": "7221",
     "name": {
       "en": "[!EN] Capananas",
       "fr": "Capananas",
@@ -3437,15 +3758,17 @@
       "it": "[!IT] Capananas",
       "pt": "[!PT] Capananas"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/17094.png",
+    "itemType": "Cloak",
     "setID": "74",
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17094.png"
   },
   {
+    "dofusID": "645",
     "name": {
       "en": "[!EN] Petite Cape Bleutée",
       "fr": "Petite Cape Bleutée",
@@ -3454,15 +3777,17 @@
       "it": "[!IT] Petite Cape Bleutée",
       "pt": "[!PT] Petite Cape Bleutée"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/17018.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Chance", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17018.png"
   },
   {
+    "dofusID": "6134",
     "name": {
       "en": "[!EN] Cape Hivernale",
       "fr": "Cape Hivernale",
@@ -3471,15 +3796,17 @@
       "it": "[!IT] Cape Hivernale",
       "pt": "[!PT] Cape Hivernale"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/17018.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17018.png"
   },
   {
+    "dofusID": "6133",
     "name": {
       "en": "Basic Cloak",
       "fr": "Cape Banale",
@@ -3488,15 +3815,17 @@
       "it": "Mantello Banale",
       "pt": "Manto Básico"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/17015.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17015.png"
   },
   {
+    "dofusID": "2076",
     "name": {
       "en": "Adventurer Cloak",
       "fr": "Cape de l'Aventurier",
@@ -3505,9 +3834,9 @@
       "it": "Mantello dell'Avventuriero",
       "pt": "Capa do Aventureiro"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/17048.png",
+    "itemType": "Cloak",
     "setID": "5",
+    "level": 1,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 2 },
       { "stat": "Strength", "minStat": 1, "maxStat": 2 },
@@ -3515,11 +3844,13 @@
       { "stat": "Wisdom", "minStat": 1, "maxStat": 2 },
       { "stat": "Intelligence", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/17048.png"
   },
   {
+    "dofusID": "1752",
     "name": {
       "en": "Bontarian Cloak",
       "fr": "Cape Bontarienne",
@@ -3528,10 +3859,11 @@
       "it": "Mantello Bontariano",
       "pt": "Capa Bontariana"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/17034.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Alignement = Bonta"],
@@ -3541,9 +3873,10 @@
       "it": ["Alignement = Bonta"],
       "pt": ["Alignement = Bonta"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/17034.png"
   },
   {
+    "dofusID": "1751",
     "name": {
       "en": "Brakmarian Cloak",
       "fr": "Cape Brâkmarienne",
@@ -3552,10 +3885,11 @@
       "it": "Mantello Brakmariano",
       "pt": "Capa Brakmariana"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/17020.png",
+    "itemType": "Cloak",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {
       "en": ["Alignement = Brâkmar"],
@@ -3565,6 +3899,6 @@
       "it": ["Alignement = Brâkmar"],
       "pt": ["Alignement = Brâkmar"]
     },
-    "customStats": {}
+    "imageUrl": "/retro/item/17020.png"
   }
 ]

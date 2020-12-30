@@ -1,5 +1,6 @@
 [
   {
+    "dofusID": "7982",
     "name": {
       "en": "Round Kimbo Sandals",
       "fr": "Sandales Circulaires du Kimbo",
@@ -8,9 +9,9 @@
       "it": "Sandali Circolari del Kimbo",
       "pt": "Sandálias circulares do Kimbo"
     },
-    "level": 195,
-    "imageUrl": "/retro/item/11113.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 195,
     "stats": [
       { "stat": "Chance", "minStat": 51, "maxStat": 70 },
       { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
@@ -22,11 +23,13 @@
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11113.png"
   },
   {
+    "dofusID": "8282",
     "name": {
       "en": "Pierced Boots",
       "fr": "Bottes Répané",
@@ -35,9 +38,9 @@
       "it": "Stivali Battuta",
       "pt": "Botas Furadas"
     },
-    "level": 184,
-    "imageUrl": "/retro/item/11126.png",
+    "itemType": "Boots",
     "setID": "109",
+    "level": 184,
     "stats": [
       { "stat": "Chance", "minStat": 31, "maxStat": 50 },
       { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
@@ -50,11 +53,13 @@
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "MP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11126.png"
   },
   {
+    "dofusID": "8240",
     "name": {
       "en": "Spore Boots",
       "fr": "Chaussons Pignons",
@@ -63,9 +68,9 @@
       "it": "Pantofolignon",
       "pt": "Botas Espora"
     },
-    "level": 181,
-    "imageUrl": "/retro/item/11116.png",
+    "itemType": "Boots",
     "setID": "121",
+    "level": 181,
     "stats": [
       { "stat": "Strength", "minStat": 51, "maxStat": 70 },
       { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
@@ -77,11 +82,13 @@
       { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11116.png"
   },
   {
+    "dofusID": "8239",
     "name": {
       "en": "Ta Boots",
       "fr": "Bottines des sous-bois",
@@ -90,9 +97,9 @@
       "it": "Stivaletti dei Sottoboschi",
       "pt": "Botas do sub-bosque"
     },
-    "level": 175,
-    "imageUrl": "/retro/item/11115.png",
+    "itemType": "Boots",
     "setID": "120",
+    "level": 175,
     "stats": [
       { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
@@ -105,11 +112,13 @@
       { "stat": "Prospecting", "minStat": 21, "maxStat": 30 },
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11115.png"
   },
   {
+    "dofusID": "7461",
     "name": {
       "en": "Minotot Sandals",
       "fr": "Sandales du Minotot",
@@ -118,9 +127,9 @@
       "it": "Sandali del Minotot",
       "pt": "Sandálias do Minotot"
     },
-    "level": 163,
-    "imageUrl": "/retro/item/11088.png",
+    "itemType": "Boots",
     "setID": "57",
+    "level": 163,
     "stats": [
       { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
       { "stat": "Agility", "minStat": 16, "maxStat": 30 },
@@ -132,11 +141,13 @@
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
       { "stat": "Prospecting", "minStat": 11, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11088.png"
   },
   {
+    "dofusID": "6501",
     "name": {
       "en": "Still Sandals",
       "fr": "Sandales Hambic",
@@ -145,9 +156,9 @@
       "it": "Sandali M'Bicco",
       "pt": "Sandálias Firmes"
     },
-    "level": 159,
-    "imageUrl": "/retro/item/11062.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 159,
     "stats": [
       { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
@@ -158,11 +169,13 @@
       { "stat": "Prospecting", "minStat": 16, "maxStat": 20 },
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11062.png"
   },
   {
+    "dofusID": "7990",
     "name": {
       "en": "Wooden Treeckler Boots",
       "fr": "Bottines en bois d'abrakleur",
@@ -171,9 +184,9 @@
       "it": "Stivaletti in Legno di Alberaklur",
       "pt": "Botinas de madeira de Arvorador"
     },
-    "level": 136,
-    "imageUrl": "/retro/item/11114.png",
+    "itemType": "Boots",
     "setID": "79",
+    "level": 136,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 40 },
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
@@ -185,11 +198,13 @@
       { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11114.png"
   },
   {
+    "dofusID": "7642",
     "name": {
       "en": "Soft Oak Flip-Flops",
       "fr": "Tongues du dimanche du Chêne Mou",
@@ -198,9 +213,9 @@
       "it": "Infradito della Domenica della Quercia Molle",
       "pt": "Calçados de Couro do Carvalho Mole"
     },
-    "level": 136,
-    "imageUrl": "/retro/item/11097.png",
+    "itemType": "Boots",
     "setID": "66",
+    "level": 136,
     "stats": [
       { "stat": "Intelligence", "minStat": 31, "maxStat": 40 },
       { "stat": "Strength", "minStat": 31, "maxStat": 40 },
@@ -214,11 +229,13 @@
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11097.png"
   },
   {
+    "dofusID": "7633",
     "name": {
       "en": "Lord of the Rats' Ceremonial Boots",
       "fr": "Bottes Cérémoniales du Seigneur des Rats",
@@ -227,9 +244,9 @@
       "it": "Stivali Cerimoniali del Signore dei Ratti",
       "pt": "Botas Cerimoniais do Senhor dos Ratos"
     },
-    "level": 134,
-    "imageUrl": "/retro/item/11095.png",
+    "itemType": "Boots",
     "setID": "64",
+    "level": 134,
     "stats": [
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
@@ -243,11 +260,13 @@
       { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 6 },
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11095.png"
   },
   {
+    "dofusID": "7448",
     "name": {
       "en": "Moowolf Boots",
       "fr": "Bottes du Meulou",
@@ -256,9 +275,9 @@
       "it": "Stivali del Muulupo",
       "pt": "Botas do Mulobo"
     },
-    "level": 131,
-    "imageUrl": "/retro/item/11085.png",
+    "itemType": "Boots",
     "setID": "55",
+    "level": 131,
     "stats": [
       { "stat": "Strength", "minStat": 31, "maxStat": 50 },
       { "stat": "MP", "minStat": null, "maxStat": 1 },
@@ -278,11 +297,13 @@
       { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 8 },
       { "stat": "Earth Resistance", "minStat": 4, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11085.png"
   },
   {
+    "dofusID": "7475",
     "name": {
       "en": "Dreggon Boots",
       "fr": "Bottes du Dragoeuf",
@@ -291,9 +312,9 @@
       "it": "Stivali del Draguovo",
       "pt": "Botas do Dragovo"
     },
-    "level": 129,
-    "imageUrl": "/retro/item/11086.png",
+    "itemType": "Boots",
     "setID": "56",
+    "level": 129,
     "stats": [
       { "stat": "Intelligence", "minStat": 26, "maxStat": 45 },
       { "stat": "Critical", "minStat": 3, "maxStat": 4 },
@@ -307,11 +328,13 @@
       { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 8 },
       { "stat": "% Water Resistance", "minStat": 5, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11086.png"
   },
   {
+    "dofusID": "6789",
     "name": {
       "en": "Harry Boots",
       "fr": "Bottes Harry",
@@ -320,9 +343,9 @@
       "it": "Stivali Harry",
       "pt": "Botas de Harry"
     },
-    "level": 123,
-    "imageUrl": "/retro/item/11070.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 123,
     "stats": [
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 126, "maxStat": 150 },
@@ -334,11 +357,13 @@
       { "stat": "Damage", "minStat": 6, "maxStat": 10 },
       { "stat": "Critical", "minStat": 3, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11070.png"
   },
   {
+    "dofusID": "6788",
     "name": {
       "en": "Sandal Titude",
       "fr": "Sandales Titude",
@@ -347,9 +372,9 @@
       "it": "Sandali Titud",
       "pt": "Sandália Titude"
     },
-    "level": 122,
-    "imageUrl": "/retro/item/11067.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 122,
     "stats": [
       { "stat": "Vitality", "minStat": 151, "maxStat": 175 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
@@ -360,11 +385,13 @@
       { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 7 },
       { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11067.png"
   },
   {
+    "dofusID": "2016",
     "name": {
       "en": "Dark Animal Boots",
       "fr": "Bottes Animales Sombres",
@@ -373,9 +400,9 @@
       "it": "Stivali Animali Oscuri",
       "pt": "Botas de Animal das Sombras"
     },
-    "level": 122,
-    "imageUrl": "/retro/item/11023.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 122,
     "stats": [
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
@@ -387,11 +414,13 @@
       { "stat": "Fire Resistance", "minStat": 11, "maxStat": 15 },
       { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11023.png"
   },
   {
+    "dofusID": "6499",
     "name": {
       "en": "Siren Thong",
       "fr": "Sandales Humeuses",
@@ -400,9 +429,9 @@
       "it": "Sandali Teladà",
       "pt": "Sandália Trevida"
     },
-    "level": 121,
-    "imageUrl": "/retro/item/11060.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 121,
     "stats": [
       { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
@@ -414,11 +443,13 @@
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11060.png"
   },
   {
+    "dofusID": "7460",
     "name": {
       "en": "Minotoror Boots",
       "fr": "Bottes du Minotoror",
@@ -427,9 +458,9 @@
       "it": "Stivali del Minotoror",
       "pt": "Botas do Minotoror"
     },
-    "level": 113,
-    "imageUrl": "/retro/item/11089.png",
+    "itemType": "Boots",
     "setID": "54",
+    "level": 113,
     "stats": [
       { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
@@ -441,11 +472,13 @@
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11089.png"
   },
   {
+    "dofusID": "7638",
     "name": {
       "en": "Ancestral Shin Guards",
       "fr": "Protège-Tibias Ancestraux",
@@ -454,9 +487,9 @@
       "it": "Parastinchi Ancestrali",
       "pt": "Protetores de Canela Ancestrais"
     },
-    "level": 110,
-    "imageUrl": "/retro/item/11096.png",
+    "itemType": "Boots",
     "setID": "65",
+    "level": 110,
     "stats": [
       { "stat": "Chance", "minStat": 31, "maxStat": 50 },
       { "stat": "Strength", "minStat": 21, "maxStat": 35 },
@@ -467,11 +500,13 @@
       { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
       { "stat": "Fire Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11096.png"
   },
   {
+    "dofusID": "7617",
     "name": {
       "en": "Black Rat Boots",
       "fr": "Bottes du Rat Noir",
@@ -480,9 +515,9 @@
       "it": "Stivali del Ratto Nero",
       "pt": "Botas do Rato Negro"
     },
-    "level": 101,
-    "imageUrl": "/retro/item/11093.png",
+    "itemType": "Boots",
     "setID": "68",
+    "level": 101,
     "stats": [
       { "stat": "Agility", "minStat": 21, "maxStat": 35 },
       { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
@@ -492,11 +527,13 @@
       { "stat": "Power (traps)", "minStat": 16, "maxStat": 25 },
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11093.png"
   },
   {
+    "dofusID": "7979",
     "name": {
       "en": "Boots Kwish",
       "fr": "Bottes Horchons",
@@ -505,9 +542,9 @@
       "it": "Stivali Straccio",
       "pt": "Botas Kwish"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/11112.png",
+    "itemType": "Boots",
     "setID": "77",
+    "level": 100,
     "stats": [
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
@@ -518,11 +555,13 @@
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11112.png"
   },
   {
+    "dofusID": "7857",
     "name": {
       "en": "Veggie Boots",
       "fr": "Bottes Deuradi",
@@ -531,15 +570,17 @@
       "it": "Stivali Gadget",
       "pt": "Botas Veggie"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/11111.png",
+    "itemType": "Boots",
     "setID": "82",
+    "level": 100,
     "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11111.png"
   },
   {
+    "dofusID": "7856",
     "name": {
       "en": "Relief Boots",
       "fr": "Bottes Antouche",
@@ -548,15 +589,17 @@
       "it": "Stivali 4X4",
       "pt": "Botas de Alívio"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/11110.png",
+    "itemType": "Boots",
     "setID": "91",
+    "level": 100,
     "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11110.png"
   },
   {
+    "dofusID": "7855",
     "name": {
       "en": "Crusuede Shoes",
       "fr": "Chaussures Lepon-Davignon",
@@ -565,15 +608,17 @@
       "it": "Scarpe Ballerine",
       "pt": "Sapatos Perda"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/11109.png",
+    "itemType": "Boots",
     "setID": "85",
+    "level": 100,
     "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11109.png"
   },
   {
+    "dofusID": "7842",
     "name": {
       "en": "Geta Bernacle",
       "fr": "Getas Bernacle",
@@ -582,15 +627,17 @@
       "it": "Geta Bernacolo",
       "pt": "Getas Bernacles"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/11108.png",
+    "itemType": "Boots",
     "setID": "92",
+    "level": 100,
     "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11108.png"
   },
   {
+    "dofusID": "7808",
     "name": {
       "en": "Wawka Boots",
       "fr": "Bottes Swana",
@@ -599,15 +646,17 @@
       "it": "Stivali Smania",
       "pt": "Botas Wana"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/11107.png",
+    "itemType": "Boots",
     "setID": "84",
+    "level": 100,
     "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11107.png"
   },
   {
+    "dofusID": "7807",
     "name": {
       "en": "Nailed Thongs",
       "fr": "Tong Aclou",
@@ -616,15 +665,17 @@
       "it": "Infrachiodo",
       "pt": "Correias Pregadas"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/11106.png",
+    "itemType": "Boots",
     "setID": "87",
+    "level": 100,
     "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11106.png"
   },
   {
+    "dofusID": "7806",
     "name": {
       "en": "Boots Hanik",
       "fr": "Bottes Hanik",
@@ -633,15 +684,17 @@
       "it": "Stivali Botanici",
       "pt": "Botas Hanik"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/11101.png",
+    "itemType": "Boots",
     "setID": "90",
+    "level": 100,
     "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11101.png"
   },
   {
+    "dofusID": "7805",
     "name": {
       "en": "Antibooties",
       "fr": "Bottes Ulisme",
@@ -650,15 +703,17 @@
       "it": "Stivali Eucociti",
       "pt": "Botas Ulism"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/11104.png",
+    "itemType": "Boots",
     "setID": "83",
+    "level": 100,
     "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11104.png"
   },
   {
+    "dofusID": "7804",
     "name": {
       "en": "Shal'Hal Boots",
       "fr": "Bottes Hairo",
@@ -667,15 +722,17 @@
       "it": "Stivali Aerografici",
       "pt": "Botas Ero"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/11103.png",
+    "itemType": "Boots",
     "setID": "86",
+    "level": 100,
     "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11103.png"
   },
   {
+    "dofusID": "7803",
     "name": {
       "en": "Boots Hox",
       "fr": "Bottes Hox",
@@ -684,15 +741,17 @@
       "it": "Stivali Hox",
       "pt": "Botas Hox"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/11102.png",
+    "itemType": "Boots",
     "setID": "89",
+    "level": 100,
     "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11102.png"
   },
   {
+    "dofusID": "7802",
     "name": {
       "en": "Sleephairs",
       "fr": "Charentaises à poils",
@@ -701,15 +760,17 @@
       "it": "Scarpette Pelose",
       "pt": "Sonecabelo"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/11105.png",
+    "itemType": "Boots",
     "setID": "88",
+    "level": 100,
     "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11105.png"
   },
   {
+    "dofusID": "7801",
     "name": {
       "en": "Boot-a-Hoop",
       "fr": "Bottes Antrin",
@@ -718,15 +779,17 @@
       "it": "Stivali Show",
       "pt": "Bota-a-Aro"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/11100.png",
+    "itemType": "Boots",
     "setID": "81",
+    "level": 100,
     "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11100.png"
   },
   {
+    "dofusID": "6140",
     "name": {
       "en": "Bwork Chief Boots",
       "fr": "Bottes du Chef Bwork",
@@ -735,9 +798,9 @@
       "it": "Stivali del Capo Bwork",
       "pt": "Botas do Chefe Bwork"
     },
-    "level": 100,
-    "imageUrl": "/retro/item/11044.png",
+    "itemType": "Boots",
     "setID": "19",
+    "level": 100,
     "stats": [
       { "stat": "Vitality", "minStat": 36, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -749,11 +812,13 @@
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11044.png"
   },
   {
+    "dofusID": "7627",
     "name": {
       "en": "White Rat Boots",
       "fr": "Bottes du Rat Blanc",
@@ -762,9 +827,9 @@
       "it": "Stivali del Ratto Bianco",
       "pt": "Botas do Rato Branco"
     },
-    "level": 99,
-    "imageUrl": "/retro/item/11094.png",
+    "itemType": "Boots",
     "setID": "67",
+    "level": 99,
     "stats": [
       { "stat": "Agility", "minStat": 26, "maxStat": 40 },
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
@@ -774,11 +839,13 @@
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
       { "stat": "% Air Resistance", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11094.png"
   },
   {
+    "dofusID": "627",
     "name": {
       "en": "Hogmeiser's Golden Boots",
       "fr": "Bottes Dorées d'Hogmeiser",
@@ -787,9 +854,9 @@
       "it": "Stivali Dorati di Hogmeiser",
       "pt": "Botas Douradas do Hogmeiser"
     },
-    "level": 99,
-    "imageUrl": "/retro/item/11012.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 99,
     "stats": [
       { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
       { "stat": "Agility", "minStat": 36, "maxStat": 50 },
@@ -801,11 +868,13 @@
       { "stat": "Fire Resistance", "minStat": 10, "maxStat": 12 },
       { "stat": "Summons", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11012.png"
   },
   {
+    "dofusID": "2000",
     "name": {
       "en": "Animal Boots",
       "fr": "Bottes Animales",
@@ -814,9 +883,9 @@
       "it": "Stivali Animali",
       "pt": "Botas Animais"
     },
-    "level": 94,
-    "imageUrl": "/retro/item/11022.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 94,
     "stats": [
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
@@ -826,11 +895,13 @@
       { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11022.png"
   },
   {
+    "dofusID": "7462",
     "name": {
       "en": "Dragon Pig Mules",
       "fr": "Mules du Dragon Cochon",
@@ -839,9 +910,9 @@
       "it": "Pantofole del Drago Maiale",
       "pt": "Chinelos de Dragão-Porco"
     },
-    "level": 93,
-    "imageUrl": "/retro/item/11087.png",
+    "itemType": "Boots",
     "setID": "58",
+    "level": 93,
     "stats": [
       { "stat": "Chance", "minStat": 26, "maxStat": 40 },
       { "stat": "MP", "minStat": null, "maxStat": 1 },
@@ -854,11 +925,13 @@
       { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
       { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11087.png"
   },
   {
+    "dofusID": "8266",
     "name": {
       "en": "Royal Rainbow Bloopts",
       "fr": "Bloptes Multicolores Royales",
@@ -867,9 +940,9 @@
       "it": "Stivoblopli Multicolori Reali",
       "pt": "Bloptas Arco-Íris Reais"
     },
-    "level": 90,
-    "imageUrl": "/retro/item/11125.png",
+    "itemType": "Boots",
     "setID": "106",
+    "level": 90,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
@@ -881,11 +954,13 @@
       { "stat": "Earth Resistance", "minStat": 2, "maxStat": 10 },
       { "stat": "% Water Resistance", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11125.png"
   },
   {
+    "dofusID": "7357",
     "name": {
       "en": "Legendary Crackler Boots",
       "fr": "Bottes Du Craqueleur Légendaire",
@@ -894,9 +969,9 @@
       "it": "Stivali del Croccaroc Leggendario",
       "pt": "Botas do Smagador Legendário"
     },
-    "level": 86,
-    "imageUrl": "/retro/item/11077.png",
+    "itemType": "Boots",
     "setID": "52",
+    "level": 86,
     "stats": [
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
@@ -906,11 +981,13 @@
       { "stat": "Water Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "Earth Resistance", "minStat": 5, "maxStat": 7 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11077.png"
   },
   {
+    "dofusID": "6021",
     "name": {
       "en": "Sewer Warden Boots",
       "fr": "Bottes du Gardien des Égouts",
@@ -919,9 +996,9 @@
       "it": "Stivali del Guardiano delle Fogne",
       "pt": "Botas do Guardião dos Esgotos"
     },
-    "level": 83,
-    "imageUrl": "/retro/item/11028.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 83,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Critical", "minStat": 3, "maxStat": 4 },
@@ -930,11 +1007,13 @@
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11028.png"
   },
   {
+    "dofusID": "8265",
     "name": {
       "en": "Royal Indigo Bloopts",
       "fr": "Bloptes Indigo Royales",
@@ -943,9 +1022,9 @@
       "it": "Stivoblopli Indaco Reali",
       "pt": "Bloptas Índigo Reais"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/11124.png",
+    "itemType": "Boots",
     "setID": "105",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
       { "stat": "Chance", "minStat": 16, "maxStat": 30 },
@@ -955,11 +1034,13 @@
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "% Water Resistance", "minStat": 5, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11124.png"
   },
   {
+    "dofusID": "8264",
     "name": {
       "en": "Royal Coco Bloopts",
       "fr": "Bloptes Coco Royales",
@@ -968,9 +1049,9 @@
       "it": "Stivoblopli Cocco Reali",
       "pt": "Bloptas Coco Reais"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/11123.png",
+    "itemType": "Boots",
     "setID": "104",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
       { "stat": "Agility", "minStat": 16, "maxStat": 30 },
@@ -980,11 +1061,13 @@
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "% Air Resistance", "minStat": 5, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11123.png"
   },
   {
+    "dofusID": "8263",
     "name": {
       "en": "Royal Pippin Bloopts",
       "fr": "Bloptes Reinette Royales",
@@ -993,9 +1076,9 @@
       "it": "Stivoblopli Reginetta Reali",
       "pt": "Bloptas Maçã Reais"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/11122.png",
+    "itemType": "Boots",
     "setID": "103",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
       { "stat": "Strength", "minStat": 16, "maxStat": 30 },
@@ -1005,11 +1088,13 @@
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11122.png"
   },
   {
+    "dofusID": "8262",
     "name": {
       "en": "Royal Morello Cherry Bloopts",
       "fr": "Bloptes Griotte Royales",
@@ -1018,9 +1103,9 @@
       "it": "Stivoblopli Griotta Reali",
       "pt": "Bloptas Cereja Reais"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/11121.png",
+    "itemType": "Boots",
     "setID": "102",
+    "level": 80,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
@@ -1030,11 +1115,13 @@
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11121.png"
   },
   {
+    "dofusID": "7485",
     "name": {
       "en": "Shika's Clogs",
       "fr": "Sabots de Shika",
@@ -1043,9 +1130,9 @@
       "it": "Zoccoli di Shika",
       "pt": "Tamancos de Shika"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/11091.png",
+    "itemType": "Boots",
     "setID": "53",
+    "level": 80,
     "stats": [
       { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 36, "maxStat": 50 },
@@ -1058,11 +1145,13 @@
       { "stat": "Fire Resistance", "minStat": 3, "maxStat": 4 },
       { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11091.png"
   },
   {
+    "dofusID": "6108",
     "name": {
       "en": "Farle's Clogs",
       "fr": "Sabots de Farle",
@@ -1071,9 +1160,9 @@
       "it": "Zoccoli di Farle",
       "pt": "Tamancos do Farle"
     },
-    "level": 80,
-    "imageUrl": "/retro/item/11046.png",
+    "itemType": "Boots",
     "setID": "17",
+    "level": 80,
     "stats": [
       { "stat": "Strength", "minStat": 21, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 36, "maxStat": 50 },
@@ -1086,11 +1175,13 @@
       { "stat": "Fire Resistance", "minStat": 3, "maxStat": 4 },
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11046.png"
   },
   {
+    "dofusID": "1993",
     "name": {
       "en": "Orino Boots",
       "fr": "Bottes Orino",
@@ -1099,9 +1190,9 @@
       "it": "Stivali Otori",
       "pt": "Botas Orrino"
     },
-    "level": 77,
-    "imageUrl": "/retro/item/11021.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 77,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 50 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
@@ -1111,11 +1202,13 @@
       { "stat": "Power", "minStat": 6, "maxStat": 10 },
       { "stat": "Strength", "minStat": 21, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11021.png"
   },
   {
+    "dofusID": "6527",
     "name": {
       "en": "Terrdala Geta",
       "fr": "Geta Terrdala",
@@ -1124,9 +1217,9 @@
       "it": "Geta Terradala",
       "pt": "Geta Terradala"
     },
-    "level": 76,
-    "imageUrl": "/retro/item/11055.png",
+    "itemType": "Boots",
     "setID": "36",
+    "level": 76,
     "stats": [
       { "stat": "Strength", "minStat": 26, "maxStat": 40 },
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
@@ -1134,11 +1227,13 @@
       { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11055.png"
   },
   {
+    "dofusID": "6502",
     "name": {
       "en": "Sandals Adin",
       "fr": "Sandales Adin",
@@ -1147,20 +1242,22 @@
       "it": "Sandali Din",
       "pt": "Sandália Din"
     },
-    "level": 76,
-    "imageUrl": "/retro/item/11063.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 76,
     "stats": [
       { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
       { "stat": "Critical", "minStat": 4, "maxStat": 5 },
       { "stat": "Damage", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11063.png"
   },
   {
+    "dofusID": "625",
     "name": {
       "en": "Hogmeiser's Boots",
       "fr": "Bottes d'Hogmeiser",
@@ -1169,9 +1266,9 @@
       "it": "Stivali di Hogmeiser",
       "pt": "Botas de Hogmeiser"
     },
-    "level": 76,
-    "imageUrl": "/retro/item/11011.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 76,
     "stats": [
       { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
       { "stat": "Agility", "minStat": 31, "maxStat": 40 },
@@ -1180,11 +1277,13 @@
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": 31, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11011.png"
   },
   {
+    "dofusID": "7122",
     "name": {
       "en": "Koolich Boots",
       "fr": "Bottes du Koulosse",
@@ -1193,9 +1292,9 @@
       "it": "Stivali del Culosse",
       "pt": "Botas do Tronkoso"
     },
-    "level": 73,
-    "imageUrl": "/retro/item/11069.png",
+    "itemType": "Boots",
     "setID": "44",
+    "level": 73,
     "stats": [
       { "stat": "Vitality", "minStat": 51, "maxStat": 150 },
       { "stat": "Heals", "minStat": 5, "maxStat": 7 },
@@ -1203,11 +1302,13 @@
       { "stat": "Air Resistance", "minStat": 1, "maxStat": 10 },
       { "stat": "Earth Resistance", "minStat": 1, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11069.png"
   },
   {
+    "dofusID": "6158",
     "name": {
       "en": "Crocodyl Chief Sharp Slippers",
       "fr": "Pantoufles Crochues du Chef Crocodaille",
@@ -1216,20 +1317,22 @@
       "it": "Pantofole Dentate del Capo Coccodrail",
       "pt": "Chinelos Afiados do Chefe Crocodyl"
     },
-    "level": 70,
-    "imageUrl": "/retro/item/11045.png",
+    "itemType": "Boots",
     "setID": "20",
+    "level": 70,
     "stats": [
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11045.png"
   },
   {
+    "dofusID": "6528",
     "name": {
       "en": "Feudala Geta",
       "fr": "Geta Feudala",
@@ -1238,9 +1341,9 @@
       "it": "Geta Focodala",
       "pt": "Geta Fogodala"
     },
-    "level": 68,
-    "imageUrl": "/retro/item/11056.png",
+    "itemType": "Boots",
     "setID": "37",
+    "level": 68,
     "stats": [
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Agility", "minStat": 21, "maxStat": 40 },
@@ -1248,11 +1351,13 @@
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11056.png"
   },
   {
+    "dofusID": "5849",
     "name": {
       "en": "Gobball Breeder Boots",
       "fr": "Bottes de l'Eleveur de Bouftous",
@@ -1261,9 +1366,9 @@
       "it": "Stivali dell'Allevatore di Pappatutto",
       "pt": "Botas do criador de Papatudos"
     },
-    "level": 68,
-    "imageUrl": "/retro/item/11040.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 68,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
@@ -1271,11 +1376,13 @@
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11040.png"
   },
   {
+    "dofusID": "6396",
     "name": {
       "en": "Flee-Flops",
       "fr": "Tongues Baques",
@@ -1284,20 +1391,22 @@
       "it": "Infradito Dimenticati",
       "pt": "Chinelos"
     },
-    "level": 67,
-    "imageUrl": "/retro/item/11058.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 67,
     "stats": [
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Heals", "minStat": 3, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11058.png"
   },
   {
+    "dofusID": "1991",
     "name": {
       "en": "Moon Boots",
       "fr": "Moon Boutse",
@@ -1306,20 +1415,22 @@
       "it": "Moon Boot",
       "pt": "Moon Buts"
     },
-    "level": 62,
-    "imageUrl": "/retro/item/11019.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 62,
     "stats": [
       { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 50 },
       { "stat": "Agility", "minStat": 11, "maxStat": 20 },
       { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11019.png"
   },
   {
+    "dofusID": "6273",
     "name": {
       "en": "Boowolf Boots",
       "fr": "Bottines du Mulou",
@@ -1328,9 +1439,9 @@
       "it": "Stivaletti del Buulupo",
       "pt": "Botinas do Milobo"
     },
-    "level": 61,
-    "imageUrl": "/retro/item/11076.png",
+    "itemType": "Boots",
     "setID": "32",
+    "level": 61,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Agility", "minStat": 1, "maxStat": 20 },
@@ -1339,11 +1450,13 @@
       { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11076.png"
   },
   {
+    "dofusID": "7228",
     "name": {
       "en": "Koalak Boots",
       "fr": "Bottes du Koalak",
@@ -1352,19 +1465,21 @@
       "it": "Stivali del Koalak",
       "pt": "Botas do Koalak"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/11071.png",
+    "itemType": "Boots",
     "setID": "46",
+    "level": 60,
     "stats": [
       { "stat": "Heals", "minStat": 1, "maxStat": 2 },
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11071.png"
   },
   {
+    "dofusID": "5872",
     "name": {
       "en": "Wabbit Flip-Flops",
       "fr": "Tongues Wabbits",
@@ -1373,20 +1488,22 @@
       "it": "Infradito Wabbits",
       "pt": "Chinelos Wabbits"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/11039.png",
+    "itemType": "Boots",
     "setID": "11",
+    "level": 60,
     "stats": [
       { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
       { "stat": "Damage", "minStat": 3, "maxStat": 5 },
       { "stat": "Initiative", "minStat": 51, "maxStat": 100 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11039.png"
   },
   {
+    "dofusID": "2133",
     "name": {
       "en": "Caraboots",
       "fr": "Carabottes",
@@ -1395,18 +1512,20 @@
       "it": "Carastivali",
       "pt": "Carabotas"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/11035.png",
+    "itemType": "Boots",
     "setID": "9",
+    "level": 60,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 50 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11035.png"
   },
   {
+    "dofusID": "2073",
     "name": {
       "en": "Jelliboots",
       "fr": "Gelobottes",
@@ -1415,18 +1534,20 @@
       "it": "Gelostivali",
       "pt": "Gelabotas"
     },
-    "level": 60,
-    "imageUrl": "/retro/item/11031.png",
+    "itemType": "Boots",
     "setID": "6",
+    "level": 60,
     "stats": [
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11031.png"
   },
   {
+    "dofusID": "6500",
     "name": {
       "en": "Sandals Koholiks",
       "fr": "Sandales Koliques",
@@ -1435,19 +1556,21 @@
       "it": "Sandali Kolika",
       "pt": "Sandálias Koholiks"
     },
-    "level": 58,
-    "imageUrl": "/retro/item/11061.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 58,
     "stats": [
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 3, "maxStat": 4 },
       { "stat": "MP", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11061.png"
   },
   {
+    "dofusID": "6529",
     "name": {
       "en": "Aerdala Geta",
       "fr": "Geta Aerdala",
@@ -1456,20 +1579,22 @@
       "it": "Geta Erdala",
       "pt": "Geta Ardala"
     },
-    "level": 57,
-    "imageUrl": "/retro/item/11057.png",
+    "itemType": "Boots",
     "setID": "35",
+    "level": 57,
     "stats": [
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Agility", "minStat": 21, "maxStat": 35 },
       { "stat": "Critical", "minStat": 3, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11057.png"
   },
   {
+    "dofusID": "6503",
     "name": {
       "en": "Sandals Ailuya",
       "fr": "Sandales Ailuya",
@@ -1478,9 +1603,9 @@
       "it": "Sandali Luya",
       "pt": "Sandália Leluya"
     },
-    "level": 56,
-    "imageUrl": "/retro/item/11064.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 56,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
@@ -1489,11 +1614,13 @@
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11064.png"
   },
   {
+    "dofusID": "7333",
     "name": {
       "en": "Golden Scaraboots",
       "fr": "Scarabottes Dorées",
@@ -1502,9 +1629,9 @@
       "it": "Scarastivali Dorati",
       "pt": "Scarabotas Douradas"
     },
-    "level": 54,
-    "imageUrl": "/retro/item/11074.png",
+    "itemType": "Boots",
     "setID": "51",
+    "level": 54,
     "stats": [
       { "stat": "Wisdom", "minStat": 1, "maxStat": 10 },
       { "stat": "MP", "minStat": null, "maxStat": 1 },
@@ -1513,11 +1640,13 @@
       { "stat": "Earth Resistance", "minStat": 1, "maxStat": 3 },
       { "stat": "Water Resistance", "minStat": 1, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11074.png"
   },
   {
+    "dofusID": "9382",
     "name": {
       "en": "Hulkrap's Boots",
       "fr": "Bottes d'Hulkrap",
@@ -1526,20 +1655,22 @@
       "it": "Stivali di Quentindel",
       "pt": "Botas de Lápucra"
     },
-    "level": 53,
-    "imageUrl": "/retro/item/11151.png",
+    "itemType": "Boots",
     "setID": "152",
+    "level": 53,
     "stats": [
       { "stat": "Intelligence", "minStat": 16, "maxStat": 20 },
       { "stat": "Heals", "minStat": 1, "maxStat": 2 },
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11151.png"
   },
   {
+    "dofusID": "216",
     "name": {
       "en": "Celery-Tea's Boots",
       "fr": "Bottes de Céleri-Thé",
@@ -1548,19 +1679,21 @@
       "it": "Stivali di Celeri-Thà",
       "pt": "Botas de Aipo-Chá"
     },
-    "level": 53,
-    "imageUrl": "/retro/item/11005.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 53,
     "stats": [
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Chance", "minStat": 11, "maxStat": 30 },
       { "stat": "Prospecting", "minStat": 2, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11005.png"
   },
   {
+    "dofusID": "9383",
     "name": {
       "en": "Klume's Boots",
       "fr": "Bottes de Klüme",
@@ -1569,20 +1702,22 @@
       "it": "Stivali di Cudine",
       "pt": "Botas Klume"
     },
-    "level": 52,
-    "imageUrl": "/retro/item/11152.png",
+    "itemType": "Boots",
     "setID": "153",
+    "level": 52,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 20 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11152.png"
   },
   {
+    "dofusID": "1325",
     "name": {
       "en": "Apprentice Summoner Boots",
       "fr": "Bottes de l'Apprenti Invocateur",
@@ -1591,9 +1726,9 @@
       "it": "Stivali dell'Apprendista Evocatore",
       "pt": "Botas do Aprendiz Invocador"
     },
-    "level": 51,
-    "imageUrl": "/retro/item/11014.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 51,
     "stats": [
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
@@ -1601,11 +1736,13 @@
       { "stat": "Air Resistance", "minStat": 4, "maxStat": 8 },
       { "stat": "Fire Resistance", "minStat": 4, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11014.png"
   },
   {
+    "dofusID": "8261",
     "name": {
       "en": "Indigo Bloopts",
       "fr": "Bloptes Indigo",
@@ -1614,9 +1751,9 @@
       "it": "Stivoblopli Indaco",
       "pt": "Bloptas Índigo"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/11120.png",
+    "itemType": "Boots",
     "setID": "101",
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Chance", "minStat": 11, "maxStat": 15 },
@@ -1625,11 +1762,13 @@
       { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11120.png"
   },
   {
+    "dofusID": "8260",
     "name": {
       "en": "Coco Bloopts",
       "fr": "Bloptes Coco",
@@ -1638,9 +1777,9 @@
       "it": "Stivoblopli Cocco",
       "pt": "Bloptas Coco"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/11119.png",
+    "itemType": "Boots",
     "setID": "100",
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Agility", "minStat": 11, "maxStat": 15 },
@@ -1649,11 +1788,13 @@
       { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11119.png"
   },
   {
+    "dofusID": "8259",
     "name": {
       "en": "Pippin Bloopts",
       "fr": "Bloptes Reinette",
@@ -1662,9 +1803,9 @@
       "it": "Stivoblopli Reginetta",
       "pt": "Bloptas Maçã"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/11118.png",
+    "itemType": "Boots",
     "setID": "99",
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Strength", "minStat": 11, "maxStat": 15 },
@@ -1673,11 +1814,13 @@
       { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11118.png"
   },
   {
+    "dofusID": "8258",
     "name": {
       "en": "Morello Cherry Bloopts",
       "fr": "Bloptes Griottes",
@@ -1686,9 +1829,9 @@
       "it": "Stivoblopli Griotta",
       "pt": "Bloptas Cereja"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/11117.png",
+    "itemType": "Boots",
     "setID": "98",
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
       { "stat": "Intelligence", "minStat": 11, "maxStat": 15 },
@@ -1697,11 +1840,13 @@
       { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
       { "stat": "Prospecting", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11117.png"
   },
   {
+    "dofusID": "6829",
     "name": {
       "en": "Turkoboots",
       "fr": "Botodindo",
@@ -1710,20 +1855,22 @@
       "it": "Stivalacchino",
       "pt": "Turkobotas"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/11065.png",
+    "itemType": "Boots",
     "setID": "42",
+    "level": 50,
     "stats": [
       { "stat": "Heals", "minStat": 2, "maxStat": 6 },
       { "stat": "Damage", "minStat": 2, "maxStat": 6 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11065.png"
   },
   {
+    "dofusID": "53",
     "name": {
       "en": "Bowisse's Boots",
       "fr": "Bottes de Bowisse",
@@ -1732,19 +1879,21 @@
       "it": "Stivali di Bowis",
       "pt": "Botas de Bowis"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/11002.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 50,
     "stats": [
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Chance", "minStat": 11, "maxStat": 30 },
       { "stat": "Prospecting", "minStat": 2, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11002.png"
   },
   {
+    "dofusID": "2052",
     "name": {
       "en": "Royal Gobboots",
       "fr": "Boufbottes Royales",
@@ -1753,18 +1902,20 @@
       "it": "Pappastivali Reali",
       "pt": "Papabotas Reais"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/11030.png",
+    "itemType": "Boots",
     "setID": "4",
+    "level": 50,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 70 },
       { "stat": "Damage", "minStat": 2, "maxStat": 8 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11030.png"
   },
   {
+    "dofusID": "1324",
     "name": {
       "en": "Apprenticeship Boots",
       "fr": "Bottes d'Apprentissage",
@@ -1773,20 +1924,22 @@
       "it": "Stivali di Apprendimento",
       "pt": "Botas de Aprendizado"
     },
-    "level": 50,
-    "imageUrl": "/retro/item/11068.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 50,
     "stats": [
       { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Power", "minStat": 11, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11068.png"
   },
   {
+    "dofusID": "8535",
     "name": {
       "en": "Alowa Sandals",
       "fr": "Sandales Papayou",
@@ -1795,19 +1948,21 @@
       "it": "Sandali Loha",
       "pt": "Sandálias Aloha"
     },
-    "level": 49,
-    "imageUrl": "/retro/item/11132.png",
+    "itemType": "Boots",
     "setID": "129",
+    "level": 49,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 3, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11132.png"
   },
   {
+    "dofusID": "478",
     "name": {
       "en": "Ragalde's Boots",
       "fr": "Bottes de Ragalde",
@@ -1816,9 +1971,9 @@
       "it": "Stivali di Ragalde",
       "pt": "Botas de Ragalde"
     },
-    "level": 49,
-    "imageUrl": "/retro/item/11007.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 49,
     "stats": [
       { "stat": "Strength", "minStat": 11, "maxStat": 20 },
       { "stat": "Agility", "minStat": 11, "maxStat": 20 },
@@ -1827,11 +1982,13 @@
       { "stat": "Prospecting", "minStat": 2, "maxStat": 5 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11007.png"
   },
   {
+    "dofusID": "8479",
     "name": {
       "en": "Black Wab Boots",
       "fr": "Bottines du Black Wab",
@@ -1840,20 +1997,22 @@
       "it": "Stivaletti del Wab Newo",
       "pt": "Botinas do Black Wab"
     },
-    "level": 47,
-    "imageUrl": "/retro/item/11131.png",
+    "itemType": "Boots",
     "setID": "127",
+    "level": 47,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11131.png"
   },
   {
+    "dofusID": "6253",
     "name": {
       "en": "Crackler Boots",
       "fr": "Bottes du Craqueleur",
@@ -1862,9 +2021,9 @@
       "it": "Stivali del Croccaroc",
       "pt": "Botas do Smagador"
     },
-    "level": 47,
-    "imageUrl": "/retro/item/11052.png",
+    "itemType": "Boots",
     "setID": "26",
+    "level": 47,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 30 },
       { "stat": "Power", "minStat": 1, "maxStat": 10 },
@@ -1872,11 +2031,13 @@
       { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 8 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11052.png"
   },
   {
+    "dofusID": "2146",
     "name": {
       "en": "Croboots",
       "fr": "Corbottes",
@@ -1885,19 +2046,21 @@
       "it": "Cuervostivali",
       "pt": "Crobotas"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/11037.png",
+    "itemType": "Boots",
     "setID": "8",
+    "level": 45,
     "stats": [
       { "stat": "Agility", "minStat": 1, "maxStat": 30 },
       { "stat": "Critical", "minStat": 1, "maxStat": 5 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11037.png"
   },
   {
+    "dofusID": "2046",
     "name": {
       "en": "Eni Kere Miracle Boots",
       "fr": "L'Eni Kère",
@@ -1906,18 +2069,20 @@
       "it": "L'Ani Kère",
       "pt": "Eni Kere"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/11029.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 45,
     "stats": [
       { "stat": "Agility", "minStat": 16, "maxStat": 30 },
       { "stat": "Prospecting", "minStat": 2, "maxStat": 6 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11029.png"
   },
   {
+    "dofusID": "2035",
     "name": {
       "en": "Treeboots",
       "fr": "Abrabottes",
@@ -1926,15 +2091,17 @@
       "it": "Alberastivali",
       "pt": "Arvrabotas"
     },
-    "level": 45,
-    "imageUrl": "/retro/item/11027.png",
+    "itemType": "Boots",
     "setID": "3",
+    "level": 45,
     "stats": [{ "stat": "Strength", "minStat": 1, "maxStat": 50 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11027.png"
   },
   {
+    "dofusID": "9178",
     "name": {
       "en": "Grute's Boots",
       "fr": "Bottes de Grüt",
@@ -1943,20 +2110,22 @@
       "it": "Stivali di Griut",
       "pt": "Botas de Grute"
     },
-    "level": 44,
-    "imageUrl": "/retro/item/11150.png",
+    "itemType": "Boots",
     "setID": "144",
+    "level": 44,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11150.png"
   },
   {
+    "dofusID": "9190",
     "name": {
       "en": "Lektor's Boots",
       "fr": "Bottes de Laikteur",
@@ -1965,19 +2134,21 @@
       "it": "Stivali di An Lekter",
       "pt": "Botas de Lektor"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/11148.png",
+    "itemType": "Boots",
     "setID": "147",
+    "level": 43,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11148.png"
   },
   {
+    "dofusID": "8747",
     "name": {
       "en": "Pair o'Shuplins",
       "fr": "Les Chaplures",
@@ -1986,19 +2157,21 @@
       "it": "I Chapangrattati",
       "pt": "Par de Sapatos"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/11138.png",
+    "itemType": "Boots",
     "setID": "116",
+    "level": 43,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Range", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11138.png"
   },
   {
+    "dofusID": "8547",
     "name": {
       "en": "Slait Boots",
       "fr": "Bottes de Slait",
@@ -2007,19 +2180,21 @@
       "it": "Stivali di Slait",
       "pt": "Botas de Slait"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/11134.png",
+    "itemType": "Boots",
     "setID": "128",
+    "level": 43,
     "stats": [
       { "stat": "Intelligence", "minStat": 11, "maxStat": 20 },
       { "stat": "Agility", "minStat": 11, "maxStat": 20 },
       { "stat": "Heals", "minStat": 3, "maxStat": 4 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11134.png"
   },
   {
+    "dofusID": "8536",
     "name": {
       "en": "Slump Rollers",
       "fr": "Les Sleumpettes",
@@ -2028,20 +2203,22 @@
       "it": "Le Slumpette",
       "pt": "Tombotas"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/11133.png",
+    "itemType": "Boots",
     "setID": "140",
+    "level": 43,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11133.png"
   },
   {
+    "dofusID": "8299",
     "name": {
       "en": "Beanie Boots",
       "fr": "Bottes Paupayahn",
@@ -2050,9 +2227,9 @@
       "it": "Stivali Valazza",
       "pt": "Botas Gorro"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/11127.png",
+    "itemType": "Boots",
     "setID": "111",
+    "level": 43,
     "stats": [
       { "stat": "Vitality", "minStat": 1, "maxStat": 20 },
       { "stat": "Critical", "minStat": 1, "maxStat": 4 },
@@ -2060,11 +2237,13 @@
       { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
       { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11127.png"
   },
   {
+    "dofusID": "2125",
     "name": {
       "en": "Viootifool Boots",
       "fr": "Bottes Vioutifoule",
@@ -2073,9 +2252,9 @@
       "it": "Stivali Viutiful",
       "pt": "Botas Viutiful"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/11034.png",
+    "itemType": "Boots",
     "setID": "75",
+    "level": 43,
     "stats": [
       { "stat": "Intelligence", "minStat": 1, "maxStat": 20 },
       { "stat": "Critical", "minStat": 1, "maxStat": 4 },
@@ -2083,11 +2262,13 @@
       { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
       { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11034.png"
   },
   {
+    "dofusID": "2124",
     "name": {
       "en": "Megaboots",
       "fr": "Mégabottes",
@@ -2096,9 +2277,9 @@
       "it": "Megastivali",
       "pt": "Megabotas"
     },
-    "level": 43,
-    "imageUrl": "/retro/item/11033.png",
+    "itemType": "Boots",
     "setID": "76",
+    "level": 43,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 20 },
       { "stat": "Critical", "minStat": 1, "maxStat": 4 },
@@ -2106,11 +2287,13 @@
       { "stat": "Initiative", "minStat": 1, "maxStat": 100 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11033.png"
   },
   {
+    "dofusID": "9181",
     "name": {
       "en": "Koksiks's Boots",
       "fr": "Bottes de Kocksis",
@@ -2119,19 +2302,21 @@
       "it": "Stivali di Koccid",
       "pt": "Botas de Koksis"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/11149.png",
+    "itemType": "Boots",
     "setID": "145",
+    "level": 42,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11149.png"
   },
   {
+    "dofusID": "9156",
     "name": {
       "en": "Lamechester United Boots",
       "fr": "Bottes des Bouftons Rouges",
@@ -2140,20 +2325,22 @@
       "it": "Stivali del Pappaton United",
       "pt": "Botas do Papachester United"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/11145.png",
+    "itemType": "Boots",
     "setID": "143",
+    "level": 42,
     "stats": [
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11145.png"
   },
   {
+    "dofusID": "9155",
     "name": {
       "en": "Real Gobbly Boots",
       "fr": "Bottes du Real Boitar",
@@ -2162,20 +2349,22 @@
       "it": "Stivali del Real Pappid",
       "pt": "Botas do Paparcelona"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/11144.png",
+    "itemType": "Boots",
     "setID": "142",
+    "level": 42,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11144.png"
   },
   {
+    "dofusID": "8913",
     "name": {
       "en": "Chisp Boots",
       "fr": "Chispottes",
@@ -2184,20 +2373,22 @@
       "it": "Chispivali",
       "pt": "Botas de Chisp"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/11141.png",
+    "itemType": "Boots",
     "setID": "138",
+    "level": 42,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 },
       { "stat": "Power", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11141.png"
   },
   {
+    "dofusID": "8732",
     "name": {
       "en": "Siks Wonn Ein Boots",
       "fr": "Bottes Siks Won Naïne",
@@ -2206,20 +2397,22 @@
       "it": "Stivali Sics Uan Nain",
       "pt": "Botas Siks Wonn Ein"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/11137.png",
+    "itemType": "Boots",
     "setID": "131",
+    "level": 42,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Heals", "minStat": null, "maxStat": 1 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11137.png"
   },
   {
+    "dofusID": "8731",
     "name": {
       "en": "Bedazzling Boots",
       "fr": "Golbottes",
@@ -2228,20 +2421,22 @@
       "it": "Stivali Folgoranti",
       "pt": "Botas de Gren Dizer"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/11136.png",
+    "itemType": "Boots",
     "setID": "139",
+    "level": 42,
     "stats": [
       { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11136.png"
   },
   {
+    "dofusID": "1375",
     "name": {
       "en": "Crocoburio's Spirit",
       "fr": "Esprit de Crocoburio",
@@ -2250,18 +2445,20 @@
       "it": "Spirito di Crocobarro",
       "pt": "Espírito de Crocoburio"
     },
-    "level": 42,
-    "imageUrl": "/retro/item/11012.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 42,
     "stats": [
       { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11012.png"
   },
   {
+    "dofusID": "9197",
     "name": {
       "en": "Fyred Ampe's Boots",
       "fr": "Bottes de Grizou",
@@ -2270,19 +2467,21 @@
       "it": "Stivali di Grisup",
       "pt": "Botas de Grisu"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/11146.png",
+    "itemType": "Boots",
     "setID": "149",
+    "level": 41,
     "stats": [
       { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11146.png"
   },
   {
+    "dofusID": "9194",
     "name": {
       "en": "Stroy Zemol's Boots",
       "fr": "Bottes de Rekto Topi",
@@ -2291,19 +2490,21 @@
       "it": "Stivali di Altap Eto",
       "pt": "Botas de Stroy Zemol"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/11147.png",
+    "itemType": "Boots",
     "setID": "148",
+    "level": 41,
     "stats": [
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Heals", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11147.png"
   },
   {
+    "dofusID": "8901",
     "name": {
       "en": "Slugo",
       "fr": "Yugoufle",
@@ -2312,19 +2513,21 @@
       "it": "Yugontofole",
       "pt": "Yugantufa"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/11140.png",
+    "itemType": "Boots",
     "setID": "134",
+    "level": 41,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Damage", "minStat": 2, "maxStat": 3 },
       { "stat": "Power", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11140.png"
   },
   {
+    "dofusID": "8844",
     "name": {
       "en": "Vampyre Boots",
       "fr": "Bottes du Vampyre",
@@ -2333,20 +2536,22 @@
       "it": "Stivali del Vampyro",
       "pt": "Botas do Vampyro"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/11139.png",
+    "itemType": "Boots",
     "setID": "130",
+    "level": 41,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Agility", "minStat": 21, "maxStat": 30 },
       { "stat": "Critical", "minStat": 2, "maxStat": 3 },
       { "stat": "Damage", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11139.png"
   },
   {
+    "dofusID": "620",
     "name": {
       "en": "[!EN] Surpuissantes Bottes de Klime",
       "fr": "Surpuissantes Bottes de Klime",
@@ -2355,19 +2560,21 @@
       "it": "[!IT] Surpuissantes Bottes de Klime",
       "pt": "[!PT] Surpuissantes Bottes de Klime"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/11009.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 41,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 25 },
       { "stat": "Agility", "minStat": 21, "maxStat": 25 },
       { "stat": "Strength", "minStat": 21, "maxStat": 30 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11009.png"
   },
   {
+    "dofusID": "1698",
     "name": {
       "en": "Winged Boots",
       "fr": "Bottes Volatiles",
@@ -2376,19 +2583,21 @@
       "it": "Stivali Volatili",
       "pt": "Botas Voláteis"
     },
-    "level": 41,
-    "imageUrl": "/retro/item/11017.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 41,
     "stats": [
       { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Agility", "minStat": 31, "maxStat": 40 },
       { "stat": "Strength", "minStat": 31, "maxStat": 40 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11017.png"
   },
   {
+    "dofusID": "8727",
     "name": {
       "en": "Slamdance Shoes",
       "fr": "Chaussures du Tétounik",
@@ -2397,19 +2606,21 @@
       "it": "Scarpe di Teutonik",
       "pt": "Sapato Slamdance"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/11135.png",
+    "itemType": "Boots",
     "setID": "132",
+    "level": 40,
     "stats": [
       { "stat": "Heals", "minStat": 2, "maxStat": 3 },
       { "stat": "Power", "minStat": 11, "maxStat": 15 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11135.png"
   },
   {
+    "dofusID": "8458",
     "name": {
       "en": "The Godfather's Polished Oxfords",
       "fr": "Souliers laqués du Parrain",
@@ -2418,20 +2629,22 @@
       "it": "Scarpe Laccate del Padrino",
       "pt": "Sapatos Polidos do Padrinho"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/11130.png",
+    "itemType": "Boots",
     "setID": "126",
+    "level": 40,
     "stats": [
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 },
       { "stat": "Summons", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11130.png"
   },
   {
+    "dofusID": "6090",
     "name": {
       "en": "[!EN] Kwakobottes du Vent",
       "fr": "Kwakobottes du Vent",
@@ -2440,19 +2653,21 @@
       "it": "[!IT] Kwakobottes du Vent",
       "pt": "[!PT] Kwakobottes du Vent"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/11048.png",
+    "itemType": "Boots",
     "setID": "15",
+    "level": 40,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Damage", "minStat": null, "maxStat": 1 },
       { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11048.png"
   },
   {
+    "dofusID": "6089",
     "name": {
       "en": "Earth Kwakoboots",
       "fr": "Kwakobottes de Terre",
@@ -2461,19 +2676,21 @@
       "it": "Kwakstivali di Terra",
       "pt": "Kwakbotas da Terra"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/11049.png",
+    "itemType": "Boots",
     "setID": "14",
+    "level": 40,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Damage", "minStat": null, "maxStat": 1 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11049.png"
   },
   {
+    "dofusID": "6088",
     "name": {
       "en": "Ice Kwakoboots",
       "fr": "Kwakobottes de Glace",
@@ -2482,19 +2699,21 @@
       "it": "Kwakstivali di Ghiaccio",
       "pt": "Kwakabotas de Gelo"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/11036.png",
+    "itemType": "Boots",
     "setID": "13",
+    "level": 40,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Damage", "minStat": null, "maxStat": 1 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11036.png"
   },
   {
+    "dofusID": "2033",
     "name": {
       "en": "Fire Kwakoboots",
       "fr": "Kwakobottes de Flammes",
@@ -2503,19 +2722,21 @@
       "it": "Kwakstivali di Fiamma",
       "pt": "Kwakobotas do Fogo"
     },
-    "level": 40,
-    "imageUrl": "/retro/item/11025.png",
+    "itemType": "Boots",
     "setID": "2",
+    "level": 40,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Damage", "minStat": null, "maxStat": 1 },
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11025.png"
   },
   {
+    "dofusID": "8918",
     "name": {
       "en": "Slugly Boots",
       "fr": "Libottes",
@@ -2524,19 +2745,21 @@
       "it": "Lumastivali",
       "pt": "Botas Lesmosas"
     },
-    "level": 39,
-    "imageUrl": "/retro/item/11142.png",
+    "itemType": "Boots",
     "setID": "137",
+    "level": 39,
     "stats": [
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
       { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11142.png"
   },
   {
+    "dofusID": "624",
     "name": {
       "en": "[!EN] Puissantes Bottes de Poursuite",
       "fr": "Puissantes Bottes de Poursuite",
@@ -2545,18 +2768,20 @@
       "it": "[!IT] Puissantes Bottes de Poursuite",
       "pt": "[!PT] Puissantes Bottes de Poursuite"
     },
-    "level": 39,
-    "imageUrl": "/retro/item/11010.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 39,
     "stats": [
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Chance", "minStat": 26, "maxStat": 35 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11010.png"
   },
   {
+    "dofusID": "1990",
     "name": {
       "en": "Lymph a Tik Boots",
       "fr": "Bottes de Lymphe a Tik",
@@ -2565,20 +2790,22 @@
       "it": "Stivali di Lymphe A'Tik",
       "pt": "Botas de Lymph a Tik"
     },
-    "level": 39,
-    "imageUrl": "/retro/item/11018.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 39,
     "stats": [
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "Chance", "minStat": 26, "maxStat": 40 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 },
       { "stat": "Initiative", "minStat": 31, "maxStat": 50 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11018.png"
   },
   {
+    "dofusID": "8931",
     "name": {
       "en": "Oxo Boots",
       "fr": "Bottines de la Denrée",
@@ -2587,20 +2814,22 @@
       "it": "Stivaletti della Derrata",
       "pt": "Botas Oxo"
     },
-    "level": 38,
-    "imageUrl": "/retro/item/11143.png",
+    "itemType": "Boots",
     "setID": "133",
+    "level": 38,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
       { "stat": "Agility", "minStat": 11, "maxStat": 15 },
       { "stat": "Damage", "minStat": 1, "maxStat": 2 },
       { "stat": "Summons", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11143.png"
   },
   {
+    "dofusID": "7116",
     "name": {
       "en": "Gobkool Boots",
       "fr": "Bottes du Boufcoul",
@@ -2609,19 +2838,21 @@
       "it": "Stivali del Pappacool",
       "pt": "Botas do Papakool"
     },
-    "level": 38,
-    "imageUrl": "/retro/item/11066.png",
+    "itemType": "Boots",
     "setID": "43",
+    "level": 38,
     "stats": [
       { "stat": "Power", "minStat": 6, "maxStat": 20 },
       { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
       { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11066.png"
   },
   {
+    "dofusID": "1992",
     "name": {
       "en": "Tarsy's Boots",
       "fr": "Bottes Tarsy",
@@ -2630,20 +2861,22 @@
       "it": "Stivali Tarsy",
       "pt": "Botas de Tarsy"
     },
-    "level": 38,
-    "imageUrl": "/retro/item/11020.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 38,
     "stats": [
       { "stat": "Chance", "minStat": 16, "maxStat": 35 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Vitality", "minStat": 16, "maxStat": 20 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11020.png"
   },
   {
+    "dofusID": "623",
     "name": {
       "en": "[!EN] Grandes Bottes de Poursuite",
       "fr": "Grandes Bottes de Poursuite",
@@ -2652,18 +2885,20 @@
       "it": "[!IT] Grandes Bottes de Poursuite",
       "pt": "[!PT] Grandes Bottes de Poursuite"
     },
-    "level": 37,
-    "imageUrl": "/retro/item/11010.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 37,
     "stats": [
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Chance", "minStat": 26, "maxStat": 30 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11010.png"
   },
   {
+    "dofusID": "6526",
     "name": {
       "en": "Akwadala Geta",
       "fr": "Geta Akwadala",
@@ -2672,19 +2907,21 @@
       "it": "Geta Aksadala",
       "pt": "Geta Akwadala"
     },
-    "level": 35,
-    "imageUrl": "/retro/item/11054.png",
+    "itemType": "Boots",
     "setID": "34",
+    "level": 35,
     "stats": [
       { "stat": "Agility", "minStat": 11, "maxStat": 30 },
       { "stat": "Chance", "minStat": 11, "maxStat": 30 },
       { "stat": "Power", "minStat": 6, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11054.png"
   },
   {
+    "dofusID": "8361",
     "name": {
       "en": "Beezers",
       "fr": "Pantoufrelons",
@@ -2693,19 +2930,21 @@
       "it": "Pantofolabrone",
       "pt": "Pantufa Abelhuda"
     },
-    "level": 34,
-    "imageUrl": "/retro/item/11128.png",
+    "itemType": "Boots",
     "setID": "112",
+    "level": 34,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11128.png"
   },
   {
+    "dofusID": "622",
     "name": {
       "en": "Chase Boots",
       "fr": "Bottes de Poursuite",
@@ -2714,18 +2953,20 @@
       "it": "Stivali di Inseguimento",
       "pt": "Botas de Perseguição"
     },
-    "level": 34,
-    "imageUrl": "/retro/item/11010.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 34,
     "stats": [
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Chance", "minStat": 16, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11010.png"
   },
   {
+    "dofusID": "6079",
     "name": {
       "en": "Ambusherboots",
       "fr": "Fourbabottes",
@@ -2734,19 +2975,21 @@
       "it": "Furbastivali",
       "pt": "Botarbustor"
     },
-    "level": 34,
-    "imageUrl": "/retro/item/11047.png",
+    "itemType": "Boots",
     "setID": "16",
+    "level": 34,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11047.png"
   },
   {
+    "dofusID": "6399",
     "name": {
       "en": "Larvaboots",
       "fr": "Larvabottes",
@@ -2755,18 +2998,20 @@
       "it": "Larvastivali",
       "pt": "Larvabotas"
     },
-    "level": 33,
-    "imageUrl": "/retro/item/11053.png",
+    "itemType": "Boots",
     "setID": "33",
+    "level": 33,
     "stats": [
       { "stat": "Intelligence", "minStat": 6, "maxStat": 20 },
       { "stat": "Heals", "minStat": 2, "maxStat": 3 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11053.png"
   },
   {
+    "dofusID": "621",
     "name": {
       "en": "[!EN] Petites Bottes de Poursuite",
       "fr": "Petites Bottes de Poursuite",
@@ -2775,18 +3020,20 @@
       "it": "[!IT] Petites Bottes de Poursuite",
       "pt": "[!PT] Petites Bottes de Poursuite"
     },
-    "level": 31,
-    "imageUrl": "/retro/item/11010.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 31,
     "stats": [
       { "stat": "MP", "minStat": null, "maxStat": 1 },
       { "stat": "Chance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11010.png"
   },
   {
+    "dofusID": "8372",
     "name": {
       "en": "Eastern Wood Boots",
       "fr": "Bottes du bois de l'est",
@@ -2795,9 +3042,9 @@
       "it": "Stivali del Bosco dell'Est",
       "pt": "Botas do Bosque do Leste"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/11129.png",
+    "itemType": "Boots",
     "setID": "114",
+    "level": 30,
     "stats": [
       { "stat": "Strength", "minStat": 6, "maxStat": 10 },
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
@@ -2805,11 +3052,13 @@
       { "stat": "Agility", "minStat": 6, "maxStat": 10 },
       { "stat": "Chance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11129.png"
   },
   {
+    "dofusID": "6498",
     "name": {
       "en": "Cruella Sandals",
       "fr": "Sandales Macien",
@@ -2818,19 +3067,21 @@
       "it": "Sandali Mata",
       "pt": "Sandálias Macian"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/11059.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 30,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11059.png"
   },
   {
+    "dofusID": "5850",
     "name": {
       "en": "Patent Lousy Pig Shoes",
       "fr": "Souliers Vernis de Porkass",
@@ -2839,9 +3090,9 @@
       "it": "Scarpe Verniciate di Porkass",
       "pt": "Sapatos de verniz do Porkasso"
     },
-    "level": 30,
-    "imageUrl": "/retro/item/11041.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 30,
     "stats": [
       { "stat": "Strength", "minStat": 6, "maxStat": 10 },
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
@@ -2849,11 +3100,13 @@
       { "stat": "Agility", "minStat": 6, "maxStat": 10 },
       { "stat": "Chance", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11041.png"
   },
   {
+    "dofusID": "604",
     "name": {
       "en": "[!EN] Puissantes Bottes de Concentration",
       "fr": "Puissantes Bottes de Concentration",
@@ -2862,18 +3115,20 @@
       "it": "[!IT] Puissantes Bottes de Concentration",
       "pt": "[!PT] Puissantes Bottes de Concentration"
     },
-    "level": 27,
-    "imageUrl": "/retro/item/11006.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 27,
     "stats": [
       { "stat": "Critical", "minStat": null, "maxStat": 2 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11006.png"
   },
   {
+    "dofusID": "56",
     "name": {
       "en": "Iop's Crushers",
       "fr": "L'Ecrabouilleur de Iop",
@@ -2882,18 +3137,20 @@
       "it": "Lo Spappolatore di Yop",
       "pt": "Esmagador Iop"
     },
-    "level": 27,
-    "imageUrl": "/retro/item/11007.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 27,
     "stats": [
       { "stat": "Strength", "minStat": null, "maxStat": 25 },
       { "stat": "Agility", "minStat": null, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11007.png"
   },
   {
+    "dofusID": "603",
     "name": {
       "en": "[!EN] Grandes Bottes de Concentration",
       "fr": "Grandes Bottes de Concentration",
@@ -2902,18 +3159,20 @@
       "it": "[!IT] Grandes Bottes de Concentration",
       "pt": "[!PT] Grandes Bottes de Concentration"
     },
-    "level": 26,
-    "imageUrl": "/retro/item/11006.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 26,
     "stats": [
       { "stat": "Critical", "minStat": null, "maxStat": 2 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11006.png"
   },
   {
+    "dofusID": "55",
     "name": {
       "en": "Concentration Boots",
       "fr": "Bottes de Concentration",
@@ -2922,18 +3181,20 @@
       "it": "Stivali di Concentrazione",
       "pt": "Botas de Concentração"
     },
-    "level": 24,
-    "imageUrl": "/retro/item/11006.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 24,
     "stats": [
       { "stat": "Critical", "minStat": null, "maxStat": 2 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11006.png"
   },
   {
+    "dofusID": "173",
     "name": {
       "en": "Faillette Boots",
       "fr": "Bottes de Faillete",
@@ -2942,15 +3203,17 @@
       "it": "Stivali Marziali",
       "pt": "Botas de Faillette"
     },
-    "level": 24,
-    "imageUrl": "/retro/item/11008.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 24,
     "stats": [{ "stat": "Critical", "minStat": 3, "maxStat": 6 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11008.png"
   },
   {
+    "dofusID": "7323",
     "name": {
       "en": "Tofu Slippers",
       "fr": "Pantoufles du Tofu",
@@ -2959,19 +3222,21 @@
       "it": "Pantofole del Tofu",
       "pt": "Pantufas do Tofu"
     },
-    "level": 23,
-    "imageUrl": "/retro/item/11073.png",
+    "itemType": "Boots",
     "setID": "50",
+    "level": 23,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 15 },
       { "stat": "Intelligence", "minStat": 6, "maxStat": 15 },
       { "stat": "Agility", "minStat": 6, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11073.png"
   },
   {
+    "dofusID": "6230",
     "name": {
       "en": "Boar Hooves",
       "fr": "Pieds du Sanglier",
@@ -2980,18 +3245,20 @@
       "it": "Piedi del Cinghiale",
       "pt": "Pés do Javali"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/11051.png",
+    "itemType": "Boots",
     "setID": "21",
+    "level": 22,
     "stats": [
       { "stat": "Agility", "minStat": 6, "maxStat": 15 },
       { "stat": "Heals", "minStat": null, "maxStat": 1 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11051.png"
   },
   {
+    "dofusID": "54",
     "name": {
       "en": "[!EN] Petites Bottes de Concentration",
       "fr": "Petites Bottes de Concentration",
@@ -3000,18 +3267,20 @@
       "it": "[!IT] Petites Bottes de Concentration",
       "pt": "[!PT] Petites Bottes de Concentration"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/11006.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 22,
     "stats": [
       { "stat": "Critical", "minStat": null, "maxStat": 2 },
       { "stat": "Intelligence", "minStat": null, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11006.png"
   },
   {
+    "dofusID": "1285",
     "name": {
       "en": "Anticipation Boots",
       "fr": "Bottes d'Anticipation",
@@ -3020,18 +3289,20 @@
       "it": "Stivali di Anticipazione",
       "pt": "Botas de Antecipação"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/11015.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 22,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Agility", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11015.png"
   },
   {
+    "dofusID": "1284",
     "name": {
       "en": "Power Boots",
       "fr": "Bottes de Puissance",
@@ -3040,18 +3311,20 @@
       "it": "Stivali di Potenza",
       "pt": "Botas de Poder"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/11014.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 22,
     "stats": [
       { "stat": "Strength", "minStat": 16, "maxStat": 25 },
       { "stat": "Chance", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11014.png"
   },
   {
+    "dofusID": "1283",
     "name": {
       "en": "Skill Boots",
       "fr": "Bottes de Maîtrise",
@@ -3060,18 +3333,20 @@
       "it": "Stivali di Padronanza",
       "pt": "Botas de Perícia"
     },
-    "level": 22,
-    "imageUrl": "/retro/item/11014.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 22,
     "stats": [
       { "stat": "Agility", "minStat": 16, "maxStat": 25 },
       { "stat": "Intelligence", "minStat": 16, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11014.png"
   },
   {
+    "dofusID": "6064",
     "name": {
       "en": "Bearman's Boots",
       "fr": "Bottes de l'Homme Ours",
@@ -3080,18 +3355,20 @@
       "it": "Stivali dell'Uomo Orso",
       "pt": "Botas do Homem Urso"
     },
-    "level": 20,
-    "imageUrl": "/retro/item/11051.png",
+    "itemType": "Boots",
     "setID": "12",
+    "level": 20,
     "stats": [
       { "stat": "Agility", "minStat": 11, "maxStat": 15 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11051.png"
   },
   {
+    "dofusID": "635",
     "name": {
       "en": "Klime's Boots",
       "fr": "Puissantes Bottes de Klime",
@@ -3100,18 +3377,20 @@
       "it": "Potenti Stivali di Klim",
       "pt": "Poderosas botas de Klim"
     },
-    "level": 19,
-    "imageUrl": "/retro/item/11009.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 19,
     "stats": [
       { "stat": "Vitality", "minStat": 21, "maxStat": 25 },
       { "stat": "Agility", "minStat": 21, "maxStat": 25 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11009.png"
   },
   {
+    "dofusID": "7339",
     "name": {
       "en": "Farmer Boots",
       "fr": "Bottes Paysannes",
@@ -3120,18 +3399,20 @@
       "it": "Stivali Contadini",
       "pt": "Botas de Fazendeiro"
     },
-    "level": 18,
-    "imageUrl": "/retro/item/11075.png",
+    "itemType": "Boots",
     "setID": "47",
+    "level": 18,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Wisdom", "minStat": 1, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11075.png"
   },
   {
+    "dofusID": "619",
     "name": {
       "en": "[!EN] Grandes Bottes de Klime",
       "fr": "Grandes Bottes de Klime",
@@ -3140,18 +3421,20 @@
       "it": "[!IT] Grandes Bottes de Klime",
       "pt": "[!PT] Grandes Bottes de Klime"
     },
-    "level": 18,
-    "imageUrl": "/retro/item/11009.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 18,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 20 },
       { "stat": "Agility", "minStat": 16, "maxStat": 20 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11009.png"
   },
   {
+    "dofusID": "618",
     "name": {
       "en": "Klime's Boots",
       "fr": "Bottes de Klime",
@@ -3160,18 +3443,20 @@
       "it": "Stivali di Klim",
       "pt": "Botas do Klim"
     },
-    "level": 17,
-    "imageUrl": "/retro/item/11009.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 17,
     "stats": [
       { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
       { "stat": "Agility", "minStat": 11, "maxStat": 15 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11009.png"
   },
   {
+    "dofusID": "2589",
     "name": {
       "en": "Satisfaction Boots",
       "fr": "Bottes de Satisfaction",
@@ -3180,15 +3465,17 @@
       "it": "Stivali di Soddisfazione",
       "pt": "Botas de Satisfação"
     },
-    "level": 17,
-    "imageUrl": "/retro/item/11038.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 17,
     "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11038.png"
   },
   {
+    "dofusID": "1286",
     "name": {
       "en": "Nexus's Boots",
       "fr": "Bottes de Nexus",
@@ -3197,15 +3484,17 @@
       "it": "Stivali di Nexus",
       "pt": "Botas de Nexus"
     },
-    "level": 17,
-    "imageUrl": "/retro/item/11016.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 17,
     "stats": [{ "stat": "Vitality", "minStat": 11, "maxStat": 30 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11016.png"
   },
   {
+    "dofusID": "7694",
     "name": {
       "en": "Gobtrotter",
       "fr": "Gobtroteur",
@@ -3214,19 +3503,21 @@
       "it": "Gobtrottar",
       "pt": "Gobtrote"
     },
-    "level": 14,
-    "imageUrl": "/retro/item/11098.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 14,
     "stats": [
       { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
       { "stat": "Strength", "minStat": 11, "maxStat": 15 },
       { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11098.png"
   },
   {
+    "dofusID": "617",
     "name": {
       "en": "[!EN] Petites Bottes de Klime",
       "fr": "Petites Bottes de Klime",
@@ -3235,18 +3526,20 @@
       "it": "[!IT] Petites Bottes de Klime",
       "pt": "[!PT] Petites Bottes de Klime"
     },
-    "level": 13,
-    "imageUrl": "/retro/item/11009.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 13,
     "stats": [
       { "stat": "Vitality", "minStat": 6, "maxStat": 10 },
       { "stat": "Agility", "minStat": 6, "maxStat": 10 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11009.png"
   },
   {
+    "dofusID": "7441",
     "name": {
       "en": "Sponge Boots",
       "fr": "Bottes en Mousse",
@@ -3255,15 +3548,17 @@
       "it": "Stivali di Spugna",
       "pt": "Botas de Esponja"
     },
-    "level": 11,
-    "imageUrl": "/retro/item/11084.png",
+    "itemType": "Boots",
     "setID": "63",
+    "level": 11,
     "stats": [{ "stat": "Agility", "minStat": 6, "maxStat": 15 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11084.png"
   },
   {
+    "dofusID": "6127",
     "name": {
       "en": "Wild Boots",
       "fr": "Bottes Champêtres",
@@ -3272,18 +3567,20 @@
       "it": "Stivali Campestri",
       "pt": "Botas Campestres"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/11050.png",
+    "itemType": "Boots",
     "setID": "18",
+    "level": 10,
     "stats": [
       { "stat": "Vitality", "minStat": 5, "maxStat": 6 },
       { "stat": "Intelligence", "minStat": 4, "maxStat": 5 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11050.png"
   },
   {
+    "dofusID": "2034",
     "name": {
       "en": "Gobboots",
       "fr": "Boufbottes",
@@ -3292,18 +3589,20 @@
       "it": "Pappastivali",
       "pt": "Papabotas"
     },
-    "level": 10,
-    "imageUrl": "/retro/item/11026.png",
+    "itemType": "Boots",
     "setID": "1",
+    "level": 10,
     "stats": [
       { "stat": "Power", "minStat": 1, "maxStat": 15 },
       { "stat": "Vitality", "minStat": 1, "maxStat": 35 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11026.png"
   },
   {
+    "dofusID": "591",
     "name": {
       "en": "Chance Boots",
       "fr": "Bottes de Chance",
@@ -3312,15 +3611,17 @@
       "it": "Stivali di Fortuna",
       "pt": "Botas de Sorte"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/11001.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "Chance", "minStat": 6, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11001.png"
   },
   {
+    "dofusID": "590",
     "name": {
       "en": "Nimble Boots",
       "fr": "Bottes Agilesques",
@@ -3329,15 +3630,17 @@
       "it": "Stivali Agileschi",
       "pt": "Botas Ágeis"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/11005.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "Agility", "minStat": 6, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11005.png"
   },
   {
+    "dofusID": "589",
     "name": {
       "en": "Intelligence Sandals",
       "fr": "Sandales d'Intelligence",
@@ -3346,15 +3649,17 @@
       "it": "Sandali di Intelligenza",
       "pt": "Sandálias de inteligência"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/11004.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "Intelligence", "minStat": 6, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11004.png"
   },
   {
+    "dofusID": "568",
     "name": {
       "en": "Kluh's Boots",
       "fr": "Bottes de Kluh",
@@ -3363,15 +3668,17 @@
       "it": "Stivali di Kluh",
       "pt": "Botas de Kluh"
     },
-    "level": 8,
-    "imageUrl": "/retro/item/11003.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 8,
     "stats": [{ "stat": "Strength", "minStat": 11, "maxStat": 20 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11003.png"
   },
   {
+    "dofusID": "607",
     "name": {
       "en": "[!EN] Bottes du Puissant Bouftou",
       "fr": "Bottes du Puissant Bouftou",
@@ -3380,15 +3687,17 @@
       "it": "[!IT] Bottes du Puissant Bouftou",
       "pt": "[!PT] Bottes du Puissant Bouftou"
     },
-    "level": 4,
-    "imageUrl": "/retro/item/11003.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 4,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 5 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11003.png"
   },
   {
+    "dofusID": "606",
     "name": {
       "en": "[!EN] Bottes du Grand Bouftou",
       "fr": "Bottes du Grand Bouftou",
@@ -3397,15 +3706,17 @@
       "it": "[!IT] Bottes du Grand Bouftou",
       "pt": "[!PT] Bottes du Grand Bouftou"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/11003.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 4 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11003.png"
   },
   {
+    "dofusID": "588",
     "name": {
       "en": "[!EN] Petites Bottes de Force",
       "fr": "Petites Bottes de Force",
@@ -3414,15 +3725,17 @@
       "it": "[!IT] Petites Bottes de Force",
       "pt": "[!PT] Petites Bottes de Force"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/11003.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Strength", "minStat": 6, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11003.png"
   },
   {
+    "dofusID": "518",
     "name": {
       "en": "Mulish Cat's Boots",
       "fr": "Bottes du Chat Buté",
@@ -3431,15 +3744,17 @@
       "it": "Stivali del Gatto Zuccone",
       "pt": "Botas de Gato Teimoso"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/11003.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Chance", "minStat": 6, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11003.png"
   },
   {
+    "dofusID": "505",
     "name": {
       "en": "Fecaflip",
       "fr": "Fecaflip",
@@ -3448,15 +3763,17 @@
       "it": "Fecaflip",
       "pt": "Fecaflip"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/11003.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Intelligence", "minStat": 6, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11003.png"
   },
   {
+    "dofusID": "504",
     "name": {
       "en": "Einekeineux",
       "fr": "Einekeineux",
@@ -3465,15 +3782,17 @@
       "it": "Einekenux",
       "pt": "Einekeineux"
     },
-    "level": 2,
-    "imageUrl": "/retro/item/11005.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 2,
     "stats": [{ "stat": "Chance", "minStat": 6, "maxStat": 10 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11005.png"
   },
   {
+    "dofusID": "7702",
     "name": {
       "en": "Crashers",
       "fr": "Les Incrustes",
@@ -3482,15 +3801,17 @@
       "it": "I Ficcanaso",
       "pt": "As Incrustas"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/11099.png",
+    "itemType": "Boots",
     "setID": "69",
+    "level": 1,
     "stats": [{ "stat": "Neutral Resistance", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11099.png"
   },
   {
+    "dofusID": "7523",
     "name": {
       "en": "Pineapi Boots",
       "fr": "Bottananas",
@@ -3499,15 +3820,17 @@
       "it": "Stivalananas",
       "pt": "Botacaxi"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/11090.png",
+    "itemType": "Boots",
     "setID": "74",
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11090.png"
   },
   {
+    "dofusID": "7415",
     "name": {
       "en": "Pink Piwi Sandals",
       "fr": "Sandales du Piou Rose",
@@ -3516,15 +3839,17 @@
       "it": "Sandali del Pìu Rosa",
       "pt": "Sandálias do Piu Rosa"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/11083.png",
+    "itemType": "Boots",
     "setID": "70",
+    "level": 1,
     "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11083.png"
   },
   {
+    "dofusID": "7414",
     "name": {
       "en": "Yellow Piwi Sandals",
       "fr": "Sandales du Piou Jaune",
@@ -3533,15 +3858,17 @@
       "it": "Sandali del Pìu Giallo",
       "pt": "Sandálias do Piu Amarelo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/11082.png",
+    "itemType": "Boots",
     "setID": "72",
+    "level": 1,
     "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11082.png"
   },
   {
+    "dofusID": "7413",
     "name": {
       "en": "Green Piwi Sandals",
       "fr": "Sandales du Piou Vert",
@@ -3550,15 +3877,17 @@
       "it": "Sandali del Pìu Verde",
       "pt": "Sandálias do Piu Verde"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/11081.png",
+    "itemType": "Boots",
     "setID": "71",
+    "level": 1,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11081.png"
   },
   {
+    "dofusID": "7412",
     "name": {
       "en": "Purple Piwi Sandals",
       "fr": "Sandales du Piou Violet",
@@ -3567,15 +3896,17 @@
       "it": "Sandali del Pìu Viola",
       "pt": "Sandálias do Piu Violeta"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/11080.png",
+    "itemType": "Boots",
     "setID": "62",
+    "level": 1,
     "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11080.png"
   },
   {
+    "dofusID": "7411",
     "name": {
       "en": "Blue Piwi Sandals",
       "fr": "Sandales du Piou Bleu",
@@ -3584,15 +3915,17 @@
       "it": "Sandali del Pìu Blu",
       "pt": "Sandálias do Piu Azul"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/11079.png",
+    "itemType": "Boots",
     "setID": "61",
+    "level": 1,
     "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11079.png"
   },
   {
+    "dofusID": "7410",
     "name": {
       "en": "Red Piwi Sandals",
       "fr": "Sandales du Piou Rouge",
@@ -3601,15 +3934,17 @@
       "it": "Sandali del Pìu Rosso",
       "pt": "Sandálias do Piu Vermelho"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/11078.png",
+    "itemType": "Boots",
     "setID": "60",
+    "level": 1,
     "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11078.png"
   },
   {
+    "dofusID": "7281",
     "name": {
       "en": "[!EN] Bottes du Champion",
       "fr": "Bottes du Champion",
@@ -3618,15 +3953,17 @@
       "it": "[!IT] Bottes du Champion",
       "pt": "[!PT] Bottes du Champion"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/11072.png",
+    "itemType": "Boots",
     "setID": "45",
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11072.png"
   },
   {
+    "dofusID": "626",
     "name": {
       "en": "Hogmeiser's Worn Boots",
       "fr": "Bottes Usées d'Hogmeiser",
@@ -3635,15 +3972,17 @@
       "it": "Stivali Consumati di Hogmeiser",
       "pt": "Botas Usadas de Hogmeiser"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/11011.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 1,
     "stats": [],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11011.png"
   },
   {
+    "dofusID": "605",
     "name": {
       "en": "Gobball Boots",
       "fr": "Bottes du Bouftou",
@@ -3652,15 +3991,17 @@
       "it": "Stivali del Pappatutto",
       "pt": "Botas do Papatudo"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/11003.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 3 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11003.png"
   },
   {
+    "dofusID": "2079",
     "name": {
       "en": "Adventurer Boots",
       "fr": "Bottes de l'Aventurier",
@@ -3669,9 +4010,9 @@
       "it": "Stivali dell'Avventuriero",
       "pt": "Botas do Aventureiro"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/11032.png",
+    "itemType": "Boots",
     "setID": "5",
+    "level": 1,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 2 },
       { "stat": "Strength", "minStat": 1, "maxStat": 2 },
@@ -3679,11 +4020,13 @@
       { "stat": "Wisdom", "minStat": 1, "maxStat": 2 },
       { "stat": "Intelligence", "minStat": 1, "maxStat": 2 }
     ],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11032.png"
   },
   {
+    "dofusID": "172",
     "name": {
       "en": "Tofu Sandals",
       "fr": "Sandales Tofuesques",
@@ -3692,15 +4035,17 @@
       "it": "Sandali Tofeschi",
       "pt": "Sandálias Tofuescas"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/11004.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11004.png"
   },
   {
+    "dofusID": "171",
     "name": {
       "en": "[!EN] Bottes du Petit Bouftou",
       "fr": "Bottes du Petit Bouftou",
@@ -3709,12 +4054,13 @@
       "it": "[!IT] Bottes du Petit Bouftou",
       "pt": "[!PT] Bottes du Petit Bouftou"
     },
-    "level": 1,
-    "imageUrl": "/retro/item/11003.png",
+    "itemType": "Boots",
     "setID": null,
+    "level": 1,
     "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 2 }],
+    "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "customStats": {}
+    "imageUrl": "/retro/item/11003.png"
   }
 ]
