@@ -125,7 +125,6 @@ def edit_custom_set_metadata(custom_set, name, level):
 
 def get_game_version(request):
     host = request.headers.get("Origin") or request.headers.get("Host")
-    print(host)
     if "retro." in host:
         return GameVersion.DOFUS_RETRO
     elif "touch." in host:

@@ -56,6 +56,18 @@ class Stat(Enum):
     PCT_RANGED_RES = auto()
     PCT_MELEE_RES = auto()
     PODS = auto()
+    CRITICAL_FAILURE = auto()
+    NEUTRAL_RES_PVP = auto()
+    PCT_NEUTRAL_RES_PVP = auto()
+    EARTH_RES_PVP = auto()
+    PCT_EARTH_RES_PVP = auto()
+    FIRE_RES_PVP = auto()
+    PCT_FIRE_RES_PVP = auto()
+    WATER_RES_PVP = auto()
+    PCT_WATER_RES_PVP = auto()
+    AIR_RES_PVP = auto()
+    PCT_AIR_RES_PVP = auto()
+    HP = auto()
 
 
 class WeaponEffectType(Enum):
