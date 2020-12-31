@@ -1,0 +1,2996 @@
+[
+  {
+    "dofusID": "8390",
+    "name": {
+      "en": "Shovel Emlaka",
+      "fr": "Pelle Emélaka",
+      "de": "Seltsame Schaufel",
+      "es": "Pala Emélaka",
+      "it": "Pala Ladra",
+      "pt": "Pá Emlaka"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 191,
+    "stats": [
+      { "stat": "Chance", "minStat": 41, "maxStat": 60 },
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 21, "maxStat": 30 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/8051.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 35,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 26, "stat": "Water damage" },
+        { "minStat": 8, "maxStat": 18, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8050",
+    "name": {
+      "en": "[!EN] la Bêche à Mel",
+      "fr": "la Bêche à Mel",
+      "de": "[!DE] la Bêche à Mel",
+      "es": "[!ES] la Bêche à Mel",
+      "it": "[!IT] la Bêche à Mel",
+      "pt": "[!PT] la Bêche à Mel"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 176,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 8 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 250 },
+        { "stat": "Intelligence", "operator": ">", "value": 250 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8048.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 35,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Fire damage" },
+        { "minStat": 16, "maxStat": 30, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8052",
+    "name": {
+      "en": "Shovel Egant",
+      "fr": "Pelle Aigante",
+      "de": "Rokokokette Schaufel",
+      "es": "Pala Garbosa",
+      "it": "Pala Egante",
+      "pt": "Pá de Egant"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 156,
+    "stats": [
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 7 },
+      { "stat": "Summons", "minStat": null, "maxStat": 2 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 300 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 250 },
+        { "stat": "Intelligence", "operator": ">", "value": 250 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8050.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 20,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 27, "stat": "Fire damage" },
+        { "minStat": 16, "maxStat": 27, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6497",
+    "name": {
+      "en": "Splitting Shovel",
+      "fr": "Pelle Rhon",
+      "de": "Ahnz Triebschaufel",
+      "es": "Pala Ancefálica",
+      "it": "Pala Rhon",
+      "pt": "Pá Penetrante"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 142,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 45 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Power", "minStat": 11, "maxStat": 20 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 400 },
+        { "stat": "Vitalité", "operator": ">", "value": 250 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8041.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 24, "maxStat": 43, "stat": "Neutral damage" },
+        { "minStat": 5, "maxStat": 7, "stat": "Water steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8051",
+    "name": {
+      "en": "Shovel Shattkitou",
+      "fr": "Pelle Shattkitou",
+      "de": "Allesfürdiekatz",
+      "es": "Pala Shattkitou",
+      "it": "Pala Gattin",
+      "pt": "Pá Shattkitou"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 137,
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 71, "maxStat": 100 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Air Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 150 },
+        { "stat": "Agilité", "operator": ">", "value": 200 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8049.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 20, "maxStat": 34, "stat": "Neutral damage" },
+        { "minStat": 4, "maxStat": 6, "stat": "Air steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7597",
+    "name": {
+      "en": "Cake Shovel",
+      "fr": "Pelle à Gâteau",
+      "de": "Kuchenschaufel",
+      "es": "Pala para pasteles",
+      "it": "Paletta per Dolci",
+      "pt": "Pá de bolo"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 131,
+    "stats": [
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "Water Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "Earth Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 250 },
+        { "stat": "Agilité", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8043.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 14, "stat": "Neutral damage" },
+        { "minStat": 6, "maxStat": 8, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7600",
+    "name": {
+      "en": "Dreggon Shovel",
+      "fr": "Pelle Dragoeuf",
+      "de": "Drachei-Schaufel",
+      "es": "Pala dragohuevo",
+      "it": "Pala del Draguovo",
+      "pt": "Pá de Dragovo"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 127,
+    "stats": [
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 8 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 200 },
+        { "stat": "Force", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8045.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 18, "maxStat": 33, "stat": "Neutral damage" },
+        { "minStat": 4, "maxStat": 6, "stat": "Neutral steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5905",
+    "name": {
+      "en": "Hikule Shovel",
+      "fr": "Pelle Hikule",
+      "de": "Schupp-Schipp",
+      "es": "Pala Antikaspa",
+      "it": "Pala Hikola",
+      "pt": "Pá de Hikule"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 121,
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 300 },
+        { "stat": "Force", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 100 },
+        { "stat": "Sagesse", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8036.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 24, "maxStat": 43, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5906",
+    "name": {
+      "en": "Dark Miner Shovel",
+      "fr": "Pelle du Mineur Sombre",
+      "de": "Schaufel des Schattenbergmannes",
+      "es": "Pala de minero oscuro",
+      "it": "Pala del Minatore Oscuro",
+      "pt": "Pá do Mineiro Sombrio"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 120,
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 5, "maxStat": 8 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 400 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 250 },
+        { "stat": "Vitalité", "operator": ">", "value": 100 },
+        { "stat": "Force", "operator": ">", "value": 75 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8034.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 60,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 21, "stat": "Neutral damage" },
+        { "minStat": 12, "maxStat": 21, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7599",
+    "name": {
+      "en": "Shovel Ijah",
+      "fr": "Pelle Moh",
+      "de": "Moh-Schaufel",
+      "es": "Pala Moh",
+      "it": "Pala Moh",
+      "pt": "Pá de Moh"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 115,
+    "stats": [
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/8042.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [{ "minStat": 9, "maxStat": 15, "stat": "Water steal" }]
+    }
+  },
+  {
+    "dofusID": "5902",
+    "name": {
+      "en": "Hebuse Shovel",
+      "fr": "Pelle Hébuse",
+      "de": "Hebus' Schaufel",
+      "es": "Pala Hebuso",
+      "it": "Pala Hebù",
+      "pt": "Pá de Hebuse"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 94,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 200 },
+        { "stat": "Vitalité", "operator": ">", "value": 70 },
+        { "stat": "Sagesse", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8004.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 24, "maxStat": 41, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5907",
+    "name": {
+      "en": "Mairhe Shovel",
+      "fr": "Pelle Mairhe",
+      "de": "Schwiegrige Mutterschaufel",
+      "es": "Pala suegra",
+      "it": "Pala Kulo",
+      "pt": "Pá de Mairhe"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 88,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 200 },
+        { "stat": "Vitalité", "operator": ">", "value": 100 },
+        { "stat": "Agilité", "operator": ">", "value": 70 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8037.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Neutral damage" },
+        { "minStat": 1, "maxStat": 8, "stat": "Water steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5904",
+    "name": {
+      "en": "Travel Shovel",
+      "fr": "Pelle Rinage",
+      "de": "Wanderschaufel",
+      "es": "Pala Grino",
+      "it": "Pala Grinaggio",
+      "pt": "Pá de Viagem"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 88,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 80 },
+        { "stat": "Chance", "operator": ">", "value": 150 },
+        { "stat": "Sagesse", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8004.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 16, "stat": "Neutral damage" },
+        { "minStat": 3, "maxStat": 6, "stat": "Water steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5910",
+    "name": {
+      "en": "Helabete Shovel",
+      "fr": "La Pelle Hélabète",
+      "de": "Die Schaufel Untasbist",
+      "es": "La Pala Enamorada",
+      "it": "La Pala Elabest",
+      "pt": "Pá Helabete"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 87,
+    "stats": [
+      { "stat": "Chance", "minStat": 21, "maxStat": 35 },
+      { "stat": "Initiative", "minStat": 151, "maxStat": 250 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 150 },
+        { "stat": "Vitalité", "operator": ">", "value": 80 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8033.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 15,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 18, "maxStat": 37, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5908",
+    "name": {
+      "en": "Vaidaire Shovel",
+      "fr": "Pelle Vaidaire",
+      "de": "Aussichts-Plattschaufel",
+      "es": "Pala Mirador",
+      "it": "Pala Noramik",
+      "pt": "Pá Vaidaire"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 84,
+    "stats": [
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 6 },
+      { "stat": "Range", "minStat": null, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 200 },
+        { "stat": "Vitalité", "operator": ">", "value": 70 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8039.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 13, "stat": "Water damage" },
+        { "minStat": 6, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1120",
+    "name": {
+      "en": "The Fat Shovel",
+      "fr": "La Pelle du Large",
+      "de": "Lockruf der Schwere",
+      "es": "La Pala Gorda",
+      "it": "La Pala del Largo",
+      "pt": "A Pá Pesada"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 80,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/8011.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 26, "maxStat": 35, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "128",
+    "name": {
+      "en": "Axel",
+      "fr": "Ares",
+      "de": "Ares",
+      "es": "Ares",
+      "it": "Ares",
+      "pt": "Ares"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 72,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 30 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/8009.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 13, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5909",
+    "name": {
+      "en": "Truffle Shovel",
+      "fr": "Pelle Gicque",
+      "de": "Die Schaufel von Bella Ghiena",
+      "es": "Pala Blega",
+      "it": "Barza Pala",
+      "pt": "Pá de Gicque"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 71,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 35 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 30 },
+        { "stat": "Chance", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8035.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 25,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 40, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8592",
+    "name": {
+      "en": "Shovel Conquistador",
+      "fr": "Pelle Hi'Sé'Moun'",
+      "de": "Schaufel Fen'Folkh'",
+      "es": "Pala Den'Troh",
+      "it": "Pala Guz'Zan'Tih'",
+      "pt": "Pá Dorado"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 70,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 35 },
+        { "stat": "Agilité", "operator": ">", "value": 35 },
+        { "stat": "Chance", "operator": ">", "value": 35 },
+        { "stat": "Force", "operator": ">", "value": 35 },
+        { "stat": "Vitalité", "operator": ">", "value": 70 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8056.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 4,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 7, "stat": "Air damage" },
+        { "minStat": 5, "maxStat": 7, "stat": "Water damage" },
+        { "minStat": 5, "maxStat": 7, "stat": "Fire damage" },
+        { "minStat": 5, "maxStat": 7, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7754",
+    "name": {
+      "en": "Shovel Minster",
+      "fr": "Pelle Minstère",
+      "de": "Spatzack",
+      "es": "Pala Minsterio",
+      "it": "Pala Politik",
+      "pt": "Pá do Convento"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 70,
+    "stats": [
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/8046.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 24, "stat": "Neutral damage" },
+        { "minStat": 2, "maxStat": 3, "stat": "Water steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7755",
+    "name": {
+      "en": "RIP Shovel",
+      "fr": "Pelle Ripe",
+      "de": "RIP-Schipp",
+      "es": "R.I.Pala",
+      "it": "Pala Raschietto",
+      "pt": "Pá Tumba"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 66,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 35 },
+      { "stat": "Chance", "minStat": 26, "maxStat": 35 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 100 },
+        { "stat": "Chance", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8047.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 20,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 12, "stat": "Neutral damage" },
+        { "minStat": 6, "maxStat": 12, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "747",
+    "name": {
+      "en": "[!EN] Imposante Pelle Woukuis",
+      "fr": "Imposante Pelle Woukuis",
+      "de": "[!DE] Imposante Pelle Woukuis",
+      "es": "[!ES] Imposante Pelle Woukuis",
+      "it": "[!IT] Imposante Pelle Woukuis",
+      "pt": "[!PT] Imposante Pelle Woukuis"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 64,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 32, "maxStat": 41 },
+      { "stat": "Strength", "minStat": 32, "maxStat": 41 },
+      { "stat": "Critical", "minStat": null, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 50 },
+        { "stat": "Force", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8021.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 31, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8591",
+    "name": {
+      "en": "Shovel Ington",
+      "fr": "Pelle Rail'Zeur'",
+      "de": "Schaufel Th'Beth'",
+      "es": "Pala Ji'Yoh",
+      "it": "Pala Heil'Raiser'",
+      "pt": "Pá Ington"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 60,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 60 },
+        { "stat": "Vitalité", "operator": ">", "value": 60 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8055.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 2,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 20, "maxStat": 26, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1118",
+    "name": {
+      "en": "Security Shovel",
+      "fr": "Pelle Sécutrice",
+      "de": "Hins Richterschaufel",
+      "es": "Pala defensiva",
+      "it": "Pala di Autodifesa",
+      "pt": "Pá defensiva"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 60 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 60 },
+        { "stat": "Force", "operator": ">", "value": 30 },
+        { "stat": "Agilité", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8004.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 19, "maxStat": 26, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "1116",
+    "name": {
+      "en": "[!EN] Grande Pelle Mechba",
+      "fr": "Grande Pelle Mechba",
+      "de": "[!DE] Grande Pelle Mechba",
+      "es": "[!ES] Grande Pelle Mechba",
+      "it": "[!IT] Grande Pelle Mechba",
+      "pt": "[!PT] Grande Pelle Mechba"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      { "stat": "Chance", "minStat": 11, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 25 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 25 },
+        { "stat": "Intelligence", "operator": ">", "value": 25 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8019.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 20, "maxStat": 23, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "746",
+    "name": {
+      "en": "[!EN] Grande Pelle Woukuis",
+      "fr": "Grande Pelle Woukuis",
+      "de": "[!DE] Grande Pelle Woukuis",
+      "es": "[!ES] Grande Pelle Woukuis",
+      "it": "[!IT] Grande Pelle Woukuis",
+      "pt": "[!PT] Grande Pelle Woukuis"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 59,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 30, "maxStat": 39 },
+      { "stat": "Strength", "minStat": 30, "maxStat": 39 },
+      { "stat": "Critical", "minStat": null, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 45 },
+        { "stat": "Force", "operator": ">", "value": 45 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8021.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 29, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1112",
+    "name": {
+      "en": "Zebuth Shovel",
+      "fr": "Pelle Zébuth",
+      "de": "Zebubs Schaufel",
+      "es": "Pala Zebuth",
+      "it": "Pala Zebù",
+      "pt": "Pá Zebuth"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 55,
+    "stats": [{ "stat": "Chance", "minStat": 11, "maxStat": 50 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Alignement = Brâkmar"],
+      "fr": ["Alignement = Brâkmar"],
+      "de": ["[!DE] Alignement = Brâkmar"],
+      "es": ["[!ES] Alignement = Brâkmar"],
+      "it": ["[!IT] Alignement = Brâkmar"],
+      "pt": ["[!PT] Alignement = Brâkmar"]
+    },
+    "imageUrl": "/retro/item/8040.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 35, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "745",
+    "name": {
+      "en": "Woukuis Shovel",
+      "fr": "Pelle Woukuis",
+      "de": "Schaufelding „Wookil Ltd.“",
+      "es": "Pala de Wukis",
+      "it": "Pala Wukis",
+      "pt": "Pá Woukuis"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 54,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 28, "maxStat": 37 },
+      { "stat": "Strength", "minStat": 28, "maxStat": 37 },
+      { "stat": "Critical", "minStat": null, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 42 },
+        { "stat": "Force", "operator": ">", "value": 42 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8021.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 27, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "748",
+    "name": {
+      "en": "Cruel Trovel",
+      "fr": "Cruelle Pelle-Truelle",
+      "de": "Kill-Schrills Schaufelkelle",
+      "es": "Cruel Pala Paleta",
+      "it": "Crudele Palaspatola",
+      "pt": "Espátula-Pá Cruel"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 53,
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/8015.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5903",
+    "name": {
+      "en": "Uftoon Shovel",
+      "fr": "Pelle Musicale",
+      "de": "Schaufel der Musik",
+      "es": "Pala Musical",
+      "it": "Pala Musicale",
+      "pt": "Pá musical"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 52,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 80 },
+        { "stat": "Intelligence", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8038.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 20,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 18, "maxStat": 29, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2738",
+    "name": {
+      "en": "Doudish Shovel",
+      "fr": "Pelle Doudesque",
+      "de": "Die Schaufel des Dudes",
+      "es": "Pala Canastensa",
+      "it": "Pala Dudesca",
+      "pt": "Pá de Doudish"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 52,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 35 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 35 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 60 },
+        { "stat": "Vitalité", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8027.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 30, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8590",
+    "name": {
+      "en": "Shovel Vett",
+      "fr": "Pelle Ag'Heuze'",
+      "de": "Schaufel Seh'Nh'",
+      "es": "Pala Míh",
+      "it": "Pala Po'Tar'",
+      "pt": "Pá Vett"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 50,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8054.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 2,
+      "is2Handed": true,
+      "weapon_effects": [{ "minStat": 19, "maxStat": 25, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "743",
+    "name": {
+      "en": "[!EN] Puissante Pelle Melle",
+      "fr": "Puissante Pelle Melle",
+      "de": "[!DE] Puissante Pelle Melle",
+      "es": "[!ES] Puissante Pelle Melle",
+      "it": "[!IT] Puissante Pelle Melle",
+      "pt": "[!PT] Puissante Pelle Melle"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 50,
+    "stats": [
+      { "stat": "Strength", "minStat": 27, "maxStat": 36 },
+      { "stat": "Chance", "minStat": 17, "maxStat": 26 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 35 },
+        { "stat": "Force", "operator": ">", "value": 15 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 17, "maxStat": 23, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1121",
+    "name": {
+      "en": "Ikan Shovel",
+      "fr": "Pelle Ikan",
+      "de": "Schippe Hansi",
+      "es": "Pala Kran",
+      "it": "Pala Ikan",
+      "pt": "Pá Ikan"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 50,
+    "stats": [
+      { "stat": "Chance", "minStat": 13, "maxStat": 22 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 30 },
+        { "stat": "Agilité", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8008.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 2, "maxStat": 20, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "744",
+    "name": {
+      "en": "[!EN] Petite Pelle Woukuis",
+      "fr": "Petite Pelle Woukuis",
+      "de": "[!DE] Petite Pelle Woukuis",
+      "es": "[!ES] Petite Pelle Woukuis",
+      "it": "[!IT] Petite Pelle Woukuis",
+      "pt": "[!PT] Petite Pelle Woukuis"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 49,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 35 },
+      { "stat": "Strength", "minStat": 26, "maxStat": 35 },
+      { "stat": "Critical", "minStat": null, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 40 },
+        { "stat": "Force", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8021.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 25, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "742",
+    "name": {
+      "en": "[!EN] Grande Pelle Melle",
+      "fr": "Grande Pelle Melle",
+      "de": "[!DE] Grande Pelle Melle",
+      "es": "[!ES] Grande Pelle Melle",
+      "it": "[!IT] Grande Pelle Melle",
+      "pt": "[!PT] Grande Pelle Melle"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 46,
+    "stats": [
+      { "stat": "Strength", "minStat": 25, "maxStat": 34 },
+      { "stat": "Chance", "minStat": 15, "maxStat": 24 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 12 },
+        { "stat": "Chance", "operator": ">", "value": 33 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 22, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1115",
+    "name": {
+      "en": "Mechba Shovel",
+      "fr": "Pelle Mechba",
+      "de": "Deils Schippe",
+      "es": "Pala frutera",
+      "it": "Pala Fruttifera",
+      "pt": "Pá de Mechba"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 45,
+    "stats": [
+      { "stat": "Chance", "minStat": 11, "maxStat": 13 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 13 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 15 },
+        { "stat": "Intelligence", "operator": ">", "value": 15 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8019.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 18, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "739",
+    "name": {
+      "en": "[!EN] Magnifique Pelle de Bois Dormant",
+      "fr": "Magnifique Pelle de Bois Dormant",
+      "de": "[!DE] Magnifique Pelle de Bois Dormant",
+      "es": "[!ES] Magnifique Pelle de Bois Dormant",
+      "it": "[!IT] Magnifique Pelle de Bois Dormant",
+      "pt": "[!PT] Magnifique Pelle de Bois Dormant"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 43,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 15 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 26 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 4 },
+        { "stat": "Chance", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8020.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 23, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "741",
+    "name": {
+      "en": "Mishmashovel",
+      "fr": "Pelle Melle",
+      "de": "Mischmaschaufel",
+      "es": "Pala enredaderada",
+      "it": "Pala Lapala",
+      "pt": "Pá Gunça"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 42,
+    "stats": [
+      { "stat": "Strength", "minStat": 23, "maxStat": 32 },
+      { "stat": "Chance", "minStat": 13, "maxStat": 22 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 11 },
+        { "stat": "Chance", "operator": ">", "value": 31 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 21, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8589",
+    "name": {
+      "en": "Shovel Hem",
+      "fr": "Pelle Ass'Tik'",
+      "de": "Schaufel Sh'Ther'",
+      "es": "Pala Mah'Unt",
+      "it": "Pala Ass'Tik'",
+      "pt": "Pá Hem"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 40,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 40 },
+        { "stat": "Vitalité", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8052.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 20, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "738",
+    "name": {
+      "en": "[!EN] Grande Pelle de Bois Dormant",
+      "fr": "Grande Pelle de Bois Dormant",
+      "de": "[!DE] Grande Pelle de Bois Dormant",
+      "es": "[!ES] Grande Pelle de Bois Dormant",
+      "it": "[!IT] Grande Pelle de Bois Dormant",
+      "pt": "[!PT] Grande Pelle de Bois Dormant"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 40,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 13 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 24 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 4 },
+        { "stat": "Chance", "operator": ">", "value": 28 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8020.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 22, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "215",
+    "name": {
+      "en": "Golden Rhizome",
+      "fr": "Rhizome Doré",
+      "de": "Goldenes Rhizom",
+      "es": "Rhizoma dorado",
+      "it": "Rizoma Dorata",
+      "pt": "Rizoma dourada"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 40,
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 10 },
+        { "stat": "Chance", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8010.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "740",
+    "name": {
+      "en": "[!EN] Petite Pelle Melle",
+      "fr": "Petite Pelle Melle",
+      "de": "[!DE] Petite Pelle Melle",
+      "es": "[!ES] Petite Pelle Melle",
+      "it": "[!IT] Petite Pelle Melle",
+      "pt": "[!PT] Petite Pelle Melle"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 38,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 20 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 10 },
+        { "stat": "Chance", "operator": ">", "value": 28 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "737",
+    "name": {
+      "en": "Sleeping Shovel",
+      "fr": "Pelle de Bois Dormant",
+      "de": "Dornengespickte rosa Schaufel",
+      "es": "Pala de Vello Durmiente",
+      "it": "Pala di Legno Addormentato",
+      "pt": "Pá Dormente"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 37,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 11 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 22 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 4 },
+        { "stat": "Chance", "operator": ">", "value": 27 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8020.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 21, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "752",
+    "name": {
+      "en": "[!EN] Effrayante Pelle de Koutoulou",
+      "fr": "Effrayante Pelle de Koutoulou",
+      "de": "[!DE] Effrayante Pelle de Koutoulou",
+      "es": "[!ES] Effrayante Pelle de Koutoulou",
+      "it": "[!IT] Effrayante Pelle de Koutoulou",
+      "pt": "[!PT] Effrayante Pelle de Koutoulou"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 34,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 24 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 13 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 29 },
+        { "stat": "Intelligence", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8019.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "736",
+    "name": {
+      "en": "[!EN] Petite Pelle de Bois Dormant",
+      "fr": "Petite Pelle de Bois Dormant",
+      "de": "[!DE] Petite Pelle de Bois Dormant",
+      "es": "[!ES] Petite Pelle de Bois Dormant",
+      "it": "[!IT] Petite Pelle de Bois Dormant",
+      "pt": "[!PT] Petite Pelle de Bois Dormant"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 34,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 10 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 4 },
+        { "stat": "Chance", "operator": ">", "value": 26 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8020.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "751",
+    "name": {
+      "en": "[!EN] Grande Pelle de Koutoulou",
+      "fr": "Grande Pelle de Koutoulou",
+      "de": "[!DE] Grande Pelle de Koutoulou",
+      "es": "[!ES] Grande Pelle de Koutoulou",
+      "it": "[!IT] Grande Pelle de Koutoulou",
+      "pt": "[!PT] Grande Pelle de Koutoulou"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 31,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 21 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 11 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 27 },
+        { "stat": "Intelligence", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8019.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "343",
+    "name": {
+      "en": "[!EN] Puissante Pelle Teuze",
+      "fr": "Puissante Pelle Teuze",
+      "de": "[!DE] Puissante Pelle Teuze",
+      "es": "[!ES] Puissante Pelle Teuze",
+      "it": "[!IT] Puissante Pelle Teuze",
+      "pt": "[!PT] Puissante Pelle Teuze"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 31,
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 30 },
+      { "stat": "Critical", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 11 },
+        { "stat": "Chance", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8008.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 18, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8588",
+    "name": {
+      "en": "Shovel Kroh",
+      "fr": "Pelle Rin'",
+      "de": "Schaufel Fen'Bhein'",
+      "es": "Pala Di'Noh",
+      "it": "Pala Grin'",
+      "pt": "Pá Kroh"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 30,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 30 },
+        { "stat": "Vitalité", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8053.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 15, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1114",
+    "name": {
+      "en": "[!EN] Petite Pelle Mechba",
+      "fr": "Petite Pelle Mechba",
+      "de": "[!DE] Petite Pelle Mechba",
+      "es": "[!ES] Petite Pelle Mechba",
+      "it": "[!IT] Petite Pelle Mechba",
+      "pt": "[!PT] Petite Pelle Mechba"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 30,
+    "stats": [
+      { "stat": "Chance", "minStat": 7, "maxStat": 9 },
+      { "stat": "Intelligence", "minStat": 7, "maxStat": 9 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 10 },
+        { "stat": "Intelligence", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8019.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 15, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "342",
+    "name": {
+      "en": "[!EN] Grande Pelle Teuze",
+      "fr": "Grande Pelle Teuze",
+      "de": "[!DE] Grande Pelle Teuze",
+      "es": "[!ES] Grande Pelle Teuze",
+      "it": "[!IT] Grande Pelle Teuze",
+      "pt": "[!PT] Grande Pelle Teuze"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 29,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 25 },
+      { "stat": "Critical", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 9 },
+        { "stat": "Chance", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8008.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 17, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "170",
+    "name": {
+      "en": "[!EN] Puissante Pelle du craqueleur",
+      "fr": "Puissante Pelle du craqueleur",
+      "de": "[!DE] Puissante Pelle du craqueleur",
+      "es": "[!ES] Puissante Pelle du craqueleur",
+      "it": "[!IT] Puissante Pelle du craqueleur",
+      "pt": "[!PT] Puissante Pelle du craqueleur"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 29,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 11 },
+      { "stat": "Agility", "minStat": null, "maxStat": 11 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 14 },
+        { "stat": "Chance", "operator": ">", "value": 15 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8007.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "750",
+    "name": {
+      "en": "Koutoulou's Shovel",
+      "fr": "Pelle de Koutoulou",
+      "de": "Schaufel von Kutuluh",
+      "es": "Pala de Kutulú",
+      "it": "Pala di Kutulu",
+      "pt": "Pá de Katulu"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 28,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 18 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 9 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 24 },
+        { "stat": "Intelligence", "operator": ">", "value": 4 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8019.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "341",
+    "name": {
+      "en": "Pushn Shovel",
+      "fr": "Pelle Teuze",
+      "de": "Baggers Schaufel",
+      "es": "Pala apaleadora",
+      "it": "Pala 'Nca",
+      "pt": "Pá Garmico"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 27,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 20 },
+      { "stat": "Critical", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 7 },
+        { "stat": "Chance", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8008.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 16, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "169",
+    "name": {
+      "en": "[!EN] Grande Pelle du Craqueleur",
+      "fr": "Grande Pelle du Craqueleur",
+      "de": "[!DE] Grande Pelle du Craqueleur",
+      "es": "[!ES] Grande Pelle du Craqueleur",
+      "it": "[!IT] Grande Pelle du Craqueleur",
+      "pt": "[!PT] Grande Pelle du Craqueleur"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 26,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 9 },
+      { "stat": "Agility", "minStat": null, "maxStat": 9 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 11 },
+        { "stat": "Chance", "operator": ">", "value": 15 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8007.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "749",
+    "name": {
+      "en": "[!EN] Petite Pelle de Koutoulou",
+      "fr": "Petite Pelle de Koutoulou",
+      "de": "[!DE] Petite Pelle de Koutoulou",
+      "es": "[!ES] Petite Pelle de Koutoulou",
+      "it": "[!IT] Petite Pelle de Koutoulou",
+      "pt": "[!PT] Petite Pelle de Koutoulou"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 25,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 22 },
+        { "stat": "Intelligence", "operator": ">", "value": 3 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8019.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "213",
+    "name": {
+      "en": "[!EN] Petite Pelle Teuze",
+      "fr": "Petite Pelle Teuze",
+      "de": "[!DE] Petite Pelle Teuze",
+      "es": "[!ES] Petite Pelle Teuze",
+      "it": "[!IT] Petite Pelle Teuze",
+      "pt": "[!PT] Petite Pelle Teuze"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 25,
+    "stats": [
+      { "stat": "Strength", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 5 },
+        { "stat": "Chance", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8008.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1111",
+    "name": {
+      "en": "Layte's Slicer",
+      "fr": "Pelle à Thart'",
+      "de": "Kuch Henwegs Schaufel",
+      "es": "Pala Patarta",
+      "it": "Pala di Schia",
+      "pt": "Cortadora de Thart"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 24,
+    "stats": [{ "stat": "Chance", "minStat": 1, "maxStat": 24 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/8008.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "168",
+    "name": {
+      "en": "Crackler Shovel",
+      "fr": "Pelle du Craqueleur",
+      "de": "Krachlerschaufel",
+      "es": "Pala de crujidor",
+      "it": "Pala del Croccaroc",
+      "pt": "Pá do Smagador"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 23,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 7 },
+      { "stat": "Agility", "minStat": null, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 8 },
+        { "stat": "Chance", "operator": ">", "value": 15 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8007.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1117",
+    "name": {
+      "en": "Houze Shovel",
+      "fr": "Pelle Houze",
+      "de": "Fels Gartenschau",
+      "es": "Pala de Kolokón",
+      "it": "Pala Iuola",
+      "pt": "Pá de Houze"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 21,
+    "stats": [
+      { "stat": "Strength", "minStat": 6, "maxStat": 15 },
+      { "stat": "Vitality", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 27 },
+        { "stat": "Sagesse", "operator": "<", "value": 100 },
+        { "stat": "Force", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 2,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 16, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "167",
+    "name": {
+      "en": "[!EN] Petite Pelle du Craqueleur",
+      "fr": "Petite Pelle du Craqueleur",
+      "de": "[!DE] Petite Pelle du Craqueleur",
+      "es": "[!ES] Petite Pelle du Craqueleur",
+      "it": "[!IT] Petite Pelle du Craqueleur",
+      "pt": "[!PT] Petite Pelle du Craqueleur"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 20,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 5 },
+      { "stat": "Agility", "minStat": null, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 5 },
+        { "stat": "Chance", "operator": ">", "value": 15 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8007.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "129",
+    "name": {
+      "en": "Greybeard",
+      "fr": "Barbe Grise",
+      "de": "Graubart",
+      "es": "Barba Gris",
+      "it": "Barba Grigia",
+      "pt": "Barba Cinza"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 20,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 5 },
+        { "stat": "Chance", "operator": ">", "value": 15 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8011.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "127",
+    "name": {
+      "en": "[!EN] Puissante Pelle de Rapage",
+      "fr": "Puissante Pelle de Rapage",
+      "de": "[!DE] Puissante Pelle de Rapage",
+      "es": "[!ES] Puissante Pelle de Rapage",
+      "it": "[!IT] Puissante Pelle de Rapage",
+      "pt": "[!PT] Puissante Pelle de Rapage"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 19,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 11 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 9 },
+        { "stat": "Chance", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8005.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "126",
+    "name": {
+      "en": "[!EN] Grande Pelle de Rapage",
+      "fr": "Grande Pelle de Rapage",
+      "de": "[!DE] Grande Pelle de Rapage",
+      "es": "[!ES] Grande Pelle de Rapage",
+      "it": "[!IT] Grande Pelle de Rapage",
+      "pt": "[!PT] Grande Pelle de Rapage"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 17,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 9 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 7 },
+        { "stat": "Chance", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8005.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "123",
+    "name": {
+      "en": "[!EN] Puissante Pelle de Crapouille",
+      "fr": "Puissante Pelle de Crapouille",
+      "de": "[!DE] Puissante Pelle de Crapouille",
+      "es": "[!ES] Puissante Pelle de Crapouille",
+      "it": "[!IT] Puissante Pelle de Crapouille",
+      "pt": "[!PT] Puissante Pelle de Crapouille"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 17,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 11 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 7 },
+        { "stat": "Chance", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8004.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "122",
+    "name": {
+      "en": "[!EN] Grande Pelle de Crapouille",
+      "fr": "Grande Pelle de Crapouille",
+      "de": "[!DE] Grande Pelle de Crapouille",
+      "es": "[!ES] Grande Pelle de Crapouille",
+      "it": "[!IT] Grande Pelle de Crapouille",
+      "pt": "[!PT] Grande Pelle de Crapouille"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 16,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 9 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 6 },
+        { "stat": "Chance", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8004.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "753",
+    "name": {
+      "en": "Field Shovel",
+      "fr": "Pelle des Champs",
+      "de": "Grabund Schaufel",
+      "es": "Pala de los Campos",
+      "it": "Pala dei Campi",
+      "pt": "Pá dos Campos"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 15,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 10 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/8017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 9, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "125",
+    "name": {
+      "en": "Scratchy Shovel",
+      "fr": "Pelle de Rapage",
+      "de": "Schürfschaufel",
+      "es": "Pala de raspadura",
+      "it": "Pala di Raspatura",
+      "pt": "Pá de raspagem"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 15,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 7 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 10 },
+        { "stat": "Chance", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8005.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "121",
+    "name": {
+      "en": "Crapouille's Shovel",
+      "fr": "Pelle de Crapouille",
+      "de": "Kehrschaufel",
+      "es": "Pala de Crapullo",
+      "it": "Pala di Pivello",
+      "pt": "Pá de Crapulino"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 15,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 7 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 5 },
+        { "stat": "Chance", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8004.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "124",
+    "name": {
+      "en": "[!EN] Petite Pelle de Rapage",
+      "fr": "Petite Pelle de Rapage",
+      "de": "[!DE] Petite Pelle de Rapage",
+      "es": "[!ES] Petite Pelle de Rapage",
+      "it": "[!IT] Petite Pelle de Rapage",
+      "pt": "[!PT] Petite Pelle de Rapage"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 3 },
+        { "stat": "Chance", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8005.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "120",
+    "name": {
+      "en": "[!EN] Petite Pelle de Crapouille",
+      "fr": "Petite Pelle de Crapouille",
+      "de": "[!DE] Petite Pelle de Crapouille",
+      "es": "[!ES] Petite Pelle de Crapouille",
+      "it": "[!IT] Petite Pelle de Crapouille",
+      "pt": "[!PT] Petite Pelle de Crapouille"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 3 },
+        { "stat": "Chance", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8004.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7440",
+    "name": {
+      "en": "Sponge Shovel",
+      "fr": "Pelle en Mousse",
+      "de": "Schwammaufel",
+      "es": "Pala de esponja",
+      "it": "Pala di Spugna",
+      "pt": "Pá de esponja"
+    },
+    "itemType": "Shovel",
+    "setID": "63",
+    "level": 10,
+    "stats": [{ "stat": "Chance", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/8044.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 18, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "70",
+    "name": {
+      "en": "[!EN] Puissante Pelle de Boisaille",
+      "fr": "Puissante Pelle de Boisaille",
+      "de": "[!DE] Puissante Pelle de Boisaille",
+      "es": "[!ES] Puissante Pelle de Boisaille",
+      "it": "[!IT] Puissante Pelle de Boisaille",
+      "pt": "[!PT] Puissante Pelle de Boisaille"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 6,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 1 },
+        { "stat": "Chance", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 2,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 4, "maxStat": 8, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "69",
+    "name": {
+      "en": "[!EN] Grande Pelle de Boisaille",
+      "fr": "Grande Pelle de Boisaille",
+      "de": "[!DE] Grande Pelle de Boisaille",
+      "es": "[!ES] Grande Pelle de Boisaille",
+      "it": "[!IT] Grande Pelle de Boisaille",
+      "pt": "[!PT] Grande Pelle de Boisaille"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 4,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 1 },
+        { "stat": "Chance", "operator": ">", "value": 3 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 2,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 7, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "68",
+    "name": {
+      "en": "Twiggy Shovel",
+      "fr": "Pelle de Boisaille",
+      "de": "Hölzerne Schaufel",
+      "es": "Pala de maderucha",
+      "it": "Pala di Legnuccio",
+      "pt": "Pá de graveto"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 2,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 1 },
+        { "stat": "Chance", "operator": ">", "value": 1 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 6, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "67",
+    "name": {
+      "en": "[!EN] Petite Pelle de Boisaille",
+      "fr": "Petite Pelle de Boisaille",
+      "de": "[!DE] Petite Pelle de Boisaille",
+      "es": "[!ES] Petite Pelle de Boisaille",
+      "it": "[!IT] Petite Pelle de Boisaille",
+      "pt": "[!PT] Petite Pelle de Boisaille"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 1 },
+        { "stat": "Chance", "operator": ">", "value": 1 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/8001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 5, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6119",
+    "name": {
+      "en": "[!EN] Pelle de l'Initié",
+      "fr": "Pelle de l'Initié",
+      "de": "[!DE] Pelle de l'Initié",
+      "es": "[!ES] Pelle de l'Initié",
+      "it": "[!IT] Pelle de l'Initié",
+      "pt": "[!PT] Pelle de l'Initié"
+    },
+    "itemType": "Shovel",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/8001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  }
+]

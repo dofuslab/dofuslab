@@ -1,0 +1,3346 @@
+[
+  {
+    "dofusID": "8235",
+    "name": {
+      "en": "Wanderelle",
+      "fr": "Baguetterelle",
+      "de": "Trompetenknüppel",
+      "es": "Variterela",
+      "it": "Bacchettrombetta",
+      "pt": "Varinherelle"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 184,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 300 },
+        { "stat": "Agilité", "operator": ">", "value": 300 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3066.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 45,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 16, "stat": "Neutral damage" },
+        { "minStat": 9, "maxStat": 16, "stat": "Air damage" },
+        { "minStat": 1, "maxStat": 7, "stat": "Fire steal" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5874",
+    "name": {
+      "en": "Soft Oak Wand",
+      "fr": "Baguette du Chêne Mou",
+      "de": "Stab von Weich-Eich",
+      "es": "Varita de Roble Blando",
+      "it": "Bacchetta della Quercia Molle",
+      "pt": "Varinha do Carvalho Mole"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 172,
+    "stats": [
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 50 },
+      { "stat": "Heals", "minStat": 8, "maxStat": 10 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 250 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 7 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 400 },
+        { "stat": "Chance", "operator": ">", "value": 250 },
+        { "stat": "Sagesse", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3042.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 3,
+      "maxRange": 4,
+      "critDenominator": 45,
+      "critBonusDamage": 7,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 25, "stat": "Fire damage" },
+        { "minStat": 1, "maxStat": 15, "stat": "Water steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6395",
+    "name": {
+      "en": "The Xyothine",
+      "fr": "La Xyothine",
+      "de": "Rutoxine",
+      "es": "La Xyothina",
+      "it": "La Xyativa",
+      "pt": "O Xyothine"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 145,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 450 },
+        { "stat": "Vitalité", "operator": ">", "value": 200 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3053.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 3,
+      "maxRange": 5,
+      "critDenominator": 30,
+      "critBonusDamage": 7,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 13, "stat": "Fire damage" },
+        { "minStat": 9, "maxStat": 13, "stat": "Neutral damage" },
+        { "minStat": 4, "maxStat": 5, "stat": "Air steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7302",
+    "name": {
+      "en": "Iots Wand",
+      "fr": "Baguette Iots",
+      "de": "Stoi-Stab",
+      "es": "Varita Aleyx",
+      "it": "Bacchetta Ioz",
+      "pt": "Varinha Mágica Iots"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 138,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 7 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 35 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 35 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 8 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 150 },
+        { "stat": "Agilité", "operator": ">", "value": 100 },
+        { "stat": "Chance", "operator": ">", "value": 100 },
+        { "stat": "Force", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3057.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 3,
+      "maxRange": 4,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 2, "stat": "Fire steal" },
+        { "minStat": 1, "maxStat": 2, "stat": "Earth steal" },
+        { "minStat": 1, "maxStat": 2, "stat": "Water steal" },
+        { "minStat": 1, "maxStat": 2, "stat": "Air steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7959",
+    "name": {
+      "en": "Light Treeckler Branch",
+      "fr": "Branche de l'Abrakleur clair",
+      "de": "Ast des hellen Astakrachler",
+      "es": "Rama de abrajidor claro",
+      "it": "Ramo dell'Alberaklur Chiaro",
+      "pt": "Galho do Arvorador Claro"
+    },
+    "itemType": "Wand",
+    "setID": "79",
+    "level": 132,
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 8 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 200 },
+        { "stat": "Force", "operator": ">", "value": 200 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3065.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 5,
+      "critDenominator": 10,
+      "critBonusDamage": 4,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 4, "maxStat": 6, "stat": "Earth steal" },
+        { "minStat": 7, "maxStat": 16, "stat": "Air damage" },
+        { "minStat": 7, "maxStat": 16, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7301",
+    "name": {
+      "en": "Gyver Wand",
+      "fr": "Baguette Gyver",
+      "de": "Gyver-Stab",
+      "es": "Varita Gyver",
+      "it": "Bacchetta Gyver",
+      "pt": "Varinha Gyver"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 128,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 8 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3056.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 5,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 26, "maxStat": 33, "stat": "Neutral damage" },
+        { "minStat": 4, "maxStat": 6, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6457",
+    "name": {
+      "en": "Wand Heroff",
+      "fr": "Baguette Ourderie",
+      "de": "Stab der Kopflosigkeit",
+      "es": "Varita Despistada",
+      "it": "Bacchetta Stordita",
+      "pt": "Varinha Heroff"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 127,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 6 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 6 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 6 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 300 },
+        { "stat": "Vitalité", "operator": ">", "value": 300 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3047.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 4,
+      "maxRange": 6,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 14, "stat": "Neutral damage" },
+        { "minStat": 6, "maxStat": 14, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6649",
+    "name": {
+      "en": "Star Wand",
+      "fr": "Baguette Houalle",
+      "de": "Stärnbchen",
+      "es": "Varita Strella",
+      "it": "Bacchetta Tela",
+      "pt": "Varinha Mágica Estelar"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 126,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 301, "maxStat": 400 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 100 },
+        { "stat": "Vitalité", "operator": ">", "value": 150 },
+        { "stat": "Intelligence", "operator": ">", "value": 300 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3055.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 24, "stat": "Neutral damage" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7480",
+    "name": {
+      "en": "Dreggon Wand",
+      "fr": "Baguette du Dragoeuf",
+      "de": "Drachei-Stab",
+      "es": "Varita de dragohuevo",
+      "it": "Bacchetta del Draguovo",
+      "pt": "Varinha do Dragovo"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 124,
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 100 },
+        { "stat": "Agilité", "operator": ">", "value": 200 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3060.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 5,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 22, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5894",
+    "name": {
+      "en": "Amrothiline",
+      "fr": "Amrothiline",
+      "de": "Amothirilin",
+      "es": "Amrothilina",
+      "it": "Amrothilina",
+      "pt": "Amrothilina"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 120,
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 300 },
+        { "stat": "Vitalité", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3044.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 6,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 23, "stat": "Neutral damage" },
+        { "minStat": 5, "maxStat": 9, "stat": "Neutral steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5873",
+    "name": {
+      "en": "Elya Wood's Wand",
+      "fr": "Baguette d'Elya Wood",
+      "de": "Stab von Elya Wood",
+      "es": "Varita de Elya Wood",
+      "it": "Bacchetta di Elya Wood",
+      "pt": "Varinha de Elya Wood"
+    },
+    "itemType": "Wand",
+    "setID": "39",
+    "level": 120,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 300 },
+        { "stat": "Sagesse", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3039.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Fire damage" },
+        { "minStat": 7, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6456",
+    "name": {
+      "en": "Creizy-Stufh Wand",
+      "fr": "Baguette Houffe-Craitien",
+      "de": "Verfrut und Zugestäbt",
+      "es": "Varita Rosca",
+      "it": "Bacchetta Mat-Cretien",
+      "pt": "Varinha Mágica de Creizy-Stufh"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 112,
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 70 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 5, "maxStat": 6 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "Initiative", "minStat": 151, "maxStat": 250 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 350 },
+        { "stat": "Vitalité", "operator": ">", "value": 200 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3046.png",
+    "weaponStats": {
+      "apCost": 2,
+      "usesPerTurn": null,
+      "minRange": 3,
+      "maxRange": 4,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 5, "stat": "Neutral damage" },
+        { "minStat": 2, "maxStat": 3, "stat": "Fire steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "83",
+    "name": {
+      "en": "Limbo Wand",
+      "fr": "La Baguette des Limbes",
+      "de": "Stab des Limbos",
+      "es": "La Varita del Limbo",
+      "it": "La Bacchetta dei Limbi",
+      "pt": "Varinha do Limbo"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 105,
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 200 },
+        { "stat": "Sagesse", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3007.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6458",
+    "name": {
+      "en": "Boogey Wand",
+      "fr": "Baguette Rhon",
+      "de": "Stapopel",
+      "es": "Varita Fekal",
+      "it": "Bacchetta Rhon",
+      "pt": "Varinha Mágica de Boogey"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 105,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 130 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 200 },
+        { "stat": "Sagesse", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3049.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 15, "stat": "Neutral damage" },
+        { "minStat": 1, "maxStat": 10, "stat": "Fire steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6452",
+    "name": {
+      "en": "Kilih Wand Jaro",
+      "fr": "Baguette Nah",
+      "de": "Killniemand-Stabo",
+      "es": "Varita Eide",
+      "it": "Bacchetta Nah",
+      "pt": "Varinha Mágica Jaro Kilih"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 105,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3054.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 3,
+      "maxRange": 6,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 13, "stat": "Neutral damage" },
+        { "minStat": 4, "maxStat": 5, "stat": "Fire steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7958",
+    "name": {
+      "en": "Dark Treeckler Branch",
+      "fr": "Branche de l'Abrakleur sombre",
+      "de": "Ast des dunklen Astakrachler",
+      "es": "Rama de abrajidor oscuro",
+      "it": "Ramo dell'Alberaklur Oscuro",
+      "pt": "Galho do Arvorador Sombrio"
+    },
+    "itemType": "Wand",
+    "setID": "80",
+    "level": 97,
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 46, "maxStat": 70 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 100 },
+        { "stat": "Intelligence", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3064.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 6, "stat": "Earth steal" },
+        { "minStat": 6, "maxStat": 30, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5821",
+    "name": {
+      "en": "Hairy Wand",
+      "fr": "Baguette Velue",
+      "de": "Haarastabi",
+      "es": "Varita Velluda",
+      "it": "Bacchetta Pelosa",
+      "pt": "Varinha Mágica Peluda"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 95,
+    "stats": [
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Sagesse", "operator": ">", "value": 40 },
+        { "stat": "Intelligence", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3031.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 5,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 21, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5820",
+    "name": {
+      "en": "Unreal Wand",
+      "fr": "Baguette Irréelle",
+      "de": "Fremdding",
+      "es": "Varita Irreal",
+      "it": "Bacchetta Irreale",
+      "pt": "Varinha Irreal"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 90,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 30 },
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 10 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 10 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 10 },
+      { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 90 },
+        { "stat": "Sagesse", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3032.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 20,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 40, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5896",
+    "name": {
+      "en": "The Migraine",
+      "fr": "La Migraine",
+      "de": "Migräne",
+      "es": "La Migraña",
+      "it": "L'Emicrania",
+      "pt": "A Enxaqueca"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 85,
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 70 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 151, "maxStat": 300 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 150 },
+        { "stat": "Vitalité", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3045.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 19, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5819",
+    "name": {
+      "en": "Limp Wand",
+      "fr": "Baguette Molle",
+      "de": "Wabbel",
+      "es": "Varita Blanda",
+      "it": "Bacchetta Molle",
+      "pt": "Varinha Mole"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 85,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3033.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6455",
+    "name": {
+      "en": "Sparkly Wand",
+      "fr": "Baguette Hincelle",
+      "de": "Freds Feuerstab",
+      "es": "Varita Chispera",
+      "it": "Bacchetta Fiammella",
+      "pt": "Varinha Mágica Fagulhante"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 81,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3052.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Neutral damage" },
+        { "minStat": 3, "maxStat": 4, "stat": "Fire steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5895",
+    "name": {
+      "en": "Kouartz Wand",
+      "fr": "Baguette de Kouartz",
+      "de": "Kwuarzstab",
+      "es": "Varita de Kuarzo",
+      "it": "Bacchetta di Kuartz",
+      "pt": "Varinha de Kuartzo"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 80,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 35 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 120 },
+        { "stat": "Sagesse", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3041.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 27, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1395",
+    "name": {
+      "en": "Red-Hot Wand",
+      "fr": "Baguette Affeulante",
+      "de": "Glühstäbchen",
+      "es": "Varita Fogosa",
+      "it": "Bacchetta Focolento",
+      "pt": "Varinha fervente"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 80,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 300 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 60 },
+        { "stat": "Vitalité", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3024.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 14, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7753",
+    "name": {
+      "en": "The Bidjiz",
+      "fr": "La Bidjiz",
+      "de": "Ill-Yeah-Richter-Stab",
+      "es": "El Bidyiz",
+      "it": "La Bidjiz",
+      "pt": "O Bidjiz"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 79,
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3062.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 5,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 22, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5380",
+    "name": {
+      "en": "Hell's Wand",
+      "fr": "Baguette Helles",
+      "de": "Stab der Hölle",
+      "es": "Varita Infernal",
+      "it": "Bacchetta N'Ferno",
+      "pt": "Varinha Mágica Helles"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 75,
+    "stats": [
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 50 },
+        { "stat": "Sagesse", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3022.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7752",
+    "name": {
+      "en": "Wand Else?",
+      "fr": "Bagdette Café",
+      "de": "Bastab Café",
+      "es": "Vagdita Café",
+      "it": "Bacchetta Caffé",
+      "pt": "Xicarinha de Café"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 72,
+    "stats": [
+      { "stat": "Chance", "minStat": 16, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 100 },
+        { "stat": "Chance", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3061.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 15,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 8, "stat": "Water damage" },
+        { "minStat": 5, "maxStat": 8, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "838",
+    "name": {
+      "en": "[!EN] Excellente Baguette Meneuse",
+      "fr": "Excellente Baguette Meneuse",
+      "de": "[!DE] Excellente Baguette Meneuse",
+      "es": "[!ES] Excellente Baguette Meneuse",
+      "it": "[!IT] Excellente Baguette Meneuse",
+      "pt": "[!PT] Excellente Baguette Meneuse"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 71,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 56, "maxStat": 65 },
+      { "stat": "Strength", "minStat": 26, "maxStat": 35 },
+      { "stat": "Water Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Air Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3021.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 23, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8607",
+    "name": {
+      "en": "Wand Herfool",
+      "fr": "Baguette Euh'Laille'Fe'",
+      "de": "Stab Ih'Lh'",
+      "es": "Varita Mar'Hiz",
+      "it": "Bacchetta Get'Eh'Laif'",
+      "pt": "Varinha Herfool"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 70,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 35 },
+        { "stat": "Force", "operator": ">", "value": 35 },
+        { "stat": "Intelligence", "operator": ">", "value": 35 },
+        { "stat": "Agilité", "operator": ">", "value": 35 },
+        { "stat": "Vitalité", "operator": ">", "value": 70 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3071.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 40,
+      "critBonusDamage": 2,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 7, "stat": "Air damage" },
+        { "minStat": 3, "maxStat": 7, "stat": "Water damage" },
+        { "minStat": 3, "maxStat": 7, "stat": "Fire damage" },
+        { "minStat": 3, "maxStat": 7, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5875",
+    "name": {
+      "en": "Dark Treechnid Root Wand",
+      "fr": "Baguette en Racine d'Abraknyde Sombre",
+      "de": "Stab aus Schattenastaknydenwurzeln",
+      "es": "Varita de raíz de abráknido oscuro",
+      "it": "Bacchetta in Radice di Alberagno Oscuro",
+      "pt": "Varinha de Raiz de Arvraknídeo Sombrio"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 67,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 70 },
+        { "stat": "Sagesse", "operator": ">", "value": 70 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3040.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 16, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "837",
+    "name": {
+      "en": "[!EN] Grande Baguette Meneuse",
+      "fr": "Grande Baguette Meneuse",
+      "de": "[!DE] Grande Baguette Meneuse",
+      "es": "[!ES] Grande Baguette Meneuse",
+      "it": "[!IT] Grande Baguette Meneuse",
+      "pt": "[!PT] Grande Baguette Meneuse"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 66,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 51, "maxStat": 60 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Water Resistance", "minStat": null, "maxStat": 3 },
+      { "stat": "Air Resistance", "minStat": null, "maxStat": 3 },
+      { "stat": "Fire Resistance", "minStat": null, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3021.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 21, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1047",
+    "name": {
+      "en": "Vampiric Stake",
+      "fr": "Pieu Vampirique",
+      "de": "Vampirpflock",
+      "es": "Estaca vampírica",
+      "it": "Paletto Vampiresco",
+      "pt": "Estaca Vampírica"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 65,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 30 },
+        { "stat": "Sagesse", "operator": "<", "value": 60 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3014.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 6, "maxStat": 15, "stat": "Fire steal" }]
+    }
+  },
+  {
+    "dofusID": "6454",
+    "name": {
+      "en": "Pinted Wand",
+      "fr": "Baguette Hylique",
+      "de": "Alkos Hohlstab",
+      "es": "Varita Kacikera",
+      "it": "Bacchetta Etilica",
+      "pt": "Varinha Mágica Pintada"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 63,
+    "stats": [
+      { "stat": "Heals", "minStat": 4, "maxStat": 5 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3051.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 8, "stat": "Neutral damage" },
+        { "minStat": 5, "maxStat": 8, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5876",
+    "name": {
+      "en": "Clearing Balgourde",
+      "fr": "Balgourde des Clairettes",
+      "de": "Lichte Balgourde",
+      "es": "Balgurda de las disculpas",
+      "it": "Bulgurda delle Scuse",
+      "pt": "Balgourde dos Esclarecidos"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 63,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 35 },
+      { "stat": "Power", "minStat": 6, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 63 },
+        { "stat": "Sagesse", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3043.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 8, "maxStat": 20, "stat": "Fire damage" }]
+    }
+  },
+  {
+    "dofusID": "836",
+    "name": {
+      "en": "Iron Wand",
+      "fr": "Baguette Meneuse",
+      "de": "Stab der Beherrschung",
+      "es": "Varita de líder",
+      "it": "Bacchetta Leader",
+      "pt": "Varinha de Líder"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 61,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 46, "maxStat": 55 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 25 },
+      { "stat": "Water Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "Air Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "Fire Resistance", "minStat": 2, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3021.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8606",
+    "name": {
+      "en": "Wand Rohid",
+      "fr": "Baguette Ta'Lay'",
+      "de": "Stab Weh'Xhehl'",
+      "es": "Varita Ayh'Stoh'Ri",
+      "it": "Bacchetta Span'Der'",
+      "pt": "Varinha Rohid"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 60,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 60 },
+        { "stat": "Vitalité", "operator": ">", "value": 60 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3070.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [{ "minStat": 8, "maxStat": 21, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "7329",
+    "name": {
+      "en": "Golden Scarabugly Wand",
+      "fr": "Baguette du Scarabosse Doré",
+      "de": "Stab des goldenen Scarabiestes",
+      "es": "Varita de Escarajefe Dorado",
+      "it": "Bacchetta dello Scaragobba Dorato",
+      "pt": "Varinha do Scarachefe Dourado"
+    },
+    "itemType": "Wand",
+    "setID": "51",
+    "level": 59,
+    "stats": [
+      { "stat": "Heals", "minStat": 1, "maxStat": 3 },
+      { "stat": "Power", "minStat": 6, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3059.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": []
+    }
+  },
+  {
+    "dofusID": "1044",
+    "name": {
+      "en": "Wily Wand",
+      "fr": "Le Tison Fûté",
+      "de": "Ast \"Geh Auf'm Weg\"",
+      "es": "El Tizón Zippón",
+      "it": "Il Tizzone Furbo",
+      "pt": "Astuto"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 59,
+    "stats": [
+      { "stat": "Strength", "minStat": 6, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 6, "maxStat": 20 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 70 },
+        { "stat": "Force", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3012.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 30,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 9, "maxStat": 16, "stat": "Fire damage" }]
+    }
+  },
+  {
+    "dofusID": "835",
+    "name": {
+      "en": "[!EN] Petite Baguette Meneuse",
+      "fr": "Petite Baguette Meneuse",
+      "de": "[!DE] Petite Baguette Meneuse",
+      "es": "[!ES] Petite Baguette Meneuse",
+      "it": "[!IT] Petite Baguette Meneuse",
+      "pt": "[!PT] Petite Baguette Meneuse"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 56,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 41, "maxStat": 50 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 20 },
+      { "stat": "Water Resistance", "minStat": null, "maxStat": 2 },
+      { "stat": "Air Resistance", "minStat": null, "maxStat": 2 },
+      { "stat": "Fire Resistance", "minStat": null, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3021.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 18, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "832",
+    "name": {
+      "en": "[!EN] Traumatisante Baguette d'Houvette",
+      "fr": "Traumatisante Baguette d'Houvette",
+      "de": "[!DE] Traumatisante Baguette d'Houvette",
+      "es": "[!ES] Traumatisante Baguette d'Houvette",
+      "it": "[!IT] Traumatisante Baguette d'Houvette",
+      "pt": "[!PT] Traumatisante Baguette d'Houvette"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 55,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 23 },
+      { "stat": "Chance", "minStat": null, "maxStat": 12 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Sagesse", "operator": ">", "value": 17 },
+        { "stat": "Intelligence", "operator": ">", "value": 53 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3019.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "9393",
+    "name": {
+      "en": "Kloug's Wand",
+      "fr": "Baguette de Kloug",
+      "de": "Äkebäker-Stab",
+      "es": "Vaguita de Napazam",
+      "it": "Bacchetta di Kloug",
+      "pt": "Varinha de Napizram"
+    },
+    "itemType": "Wand",
+    "setID": "154",
+    "level": 53,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3073.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 3,
+      "maxRange": 5,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 22, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "84",
+    "name": {
+      "en": "Sky Wand",
+      "fr": "Baguette des Cieux",
+      "de": "Himmlischer Stab",
+      "es": "Varita de los Cielos",
+      "it": "Bacchetta dei Cieli",
+      "pt": "Varinha Mágica do Céu"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 52,
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 45 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 45 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 104 },
+        { "stat": "Vitalité", "operator": ">", "value": 20 },
+        { "stat": "Agilité", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3006.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "823",
+    "name": {
+      "en": "[!EN] Imposante Baguette d'Eglise",
+      "fr": "Imposante Baguette d'Eglise",
+      "de": "[!DE] Imposante Baguette d'Eglise",
+      "es": "[!ES] Imposante Baguette d'Eglise",
+      "it": "[!IT] Imposante Baguette d'Eglise",
+      "pt": "[!PT] Imposante Baguette d'Eglise"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 52,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 51 },
+        { "stat": "Force", "operator": ">", "value": 25 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3016.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8605",
+    "name": {
+      "en": "Wand Rogenus",
+      "fr": "Baguette Han'Dar'",
+      "de": "Stab Ih'Lhitäth'",
+      "es": "Varita Mar'Hin'Doo",
+      "it": "Bacchetta Sten'Dard'",
+      "pt": "Varinha Rogenus"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 50,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3069.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 19, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "831",
+    "name": {
+      "en": "[!EN] Grande Baguette d'Houvette",
+      "fr": "Grande Baguette d'Houvette",
+      "de": "[!DE] Grande Baguette d'Houvette",
+      "es": "[!ES] Grande Baguette d'Houvette",
+      "it": "[!IT] Grande Baguette d'Houvette",
+      "pt": "[!PT] Grande Baguette d'Houvette"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 50,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 22 },
+      { "stat": "Chance", "minStat": null, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Sagesse", "operator": ">", "value": 15 },
+        { "stat": "Intelligence", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3019.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 9, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "824",
+    "name": {
+      "en": "Ni'Ninnin Wand",
+      "fr": "Baguette Ni'Ninnin",
+      "de": "Ni'Ninnin Stab",
+      "es": "Varita Ni'Ninnin",
+      "it": "Bacchetta Ni'Ninnin",
+      "pt": "Varinha Mágica Ni'Ninnin"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 50,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 99 },
+        { "stat": "Sagesse", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 1, "maxStat": 10, "stat": "Fire steal" }]
+    }
+  },
+  {
+    "dofusID": "203",
+    "name": {
+      "en": "Ber Ed Stick",
+      "fr": "Baguette Deuh-Pain",
+      "de": "Brotstab",
+      "es": "Varita Depan",
+      "it": "Bacchetta Delh-Pan",
+      "pt": "Bastão Bre Ad"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 50,
+    "stats": [
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 16, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Sagesse", "operator": ">", "value": 40 },
+        { "stat": "Intelligence", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3009.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 3,
+      "maxRange": 5,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1045",
+    "name": {
+      "en": "The Hyldegarde",
+      "fr": "L'Hyldegarde",
+      "de": "Hyldegarde",
+      "es": "La Hyldegard",
+      "it": "L'Hyldegard",
+      "pt": "O Hyldegarde"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 48,
+    "stats": [
+      { "stat": "Strength", "minStat": 3, "maxStat": 7 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3008.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 23, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "800",
+    "name": {
+      "en": "[!EN] Lourde Baguette d'Eglise",
+      "fr": "Lourde Baguette d'Eglise",
+      "de": "[!DE] Lourde Baguette d'Eglise",
+      "es": "[!ES] Lourde Baguette d'Eglise",
+      "it": "[!IT] Lourde Baguette d'Eglise",
+      "pt": "[!PT] Lourde Baguette d'Eglise"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 46,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 45 },
+        { "stat": "Force", "operator": ">", "value": 25 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3016.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "830",
+    "name": {
+      "en": "Houvette's Wand",
+      "fr": "Baguette d'Houvette",
+      "de": "Houvrett-Stab",
+      "es": "Varita de Huveta",
+      "it": "Bacchetta di Huvetta",
+      "pt": "Varinha Teza"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 45,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 20 },
+      { "stat": "Chance", "minStat": null, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Sagesse", "operator": ">", "value": 12 },
+        { "stat": "Intelligence", "operator": ">", "value": 48 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3019.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 8, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "828",
+    "name": {
+      "en": "[!EN] Indispensable Baguette à Pans",
+      "fr": "Indispensable Baguette à Pans",
+      "de": "[!DE] Indispensable Baguette à Pans",
+      "es": "[!ES] Indispensable Baguette à Pans",
+      "it": "[!IT] Indispensable Baguette à Pans",
+      "pt": "[!PT] Indispensable Baguette à Pans"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 45,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 45 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3020.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 10, "maxStat": 16, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6453",
+    "name": {
+      "en": "Wand Hering",
+      "fr": "Baguette Cetera",
+      "de": "Endlosschleifstab",
+      "es": "Varita Cétera",
+      "it": "Bacchetta Cetera",
+      "pt": "Varinha Anelar"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 43,
+    "stats": [{ "stat": "Heals", "minStat": 2, "maxStat": 4 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3050.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 17, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1046",
+    "name": {
+      "en": "Sylvian Wand",
+      "fr": "Baguette Sylvien",
+      "de": "Stab der Sylvan",
+      "es": "Varita Prismática",
+      "it": "Bacchetta Sylviana",
+      "pt": "Varinha Mágica Sylvian"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 43,
+    "stats": [
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 10 },
+      { "stat": "Chance", "minStat": 1, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3015.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 40,
+      "critBonusDamage": 4,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 8, "maxStat": 14, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "799",
+    "name": {
+      "en": "Clergy Wand",
+      "fr": "Baguette d'Eglise",
+      "de": "Kirchenstab",
+      "es": "Varita de iglesia",
+      "it": "Bacchetta di Chiesa",
+      "pt": "Varinha Clériga"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 41,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 25 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 40 },
+        { "stat": "Force", "operator": ">", "value": 25 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3016.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 9, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8604",
+    "name": {
+      "en": "Wand Enonly",
+      "fr": "Baguette Stror'Di'Ner'",
+      "de": "Stab Lah'Hmp'",
+      "es": "Varita N'Bulh",
+      "it": "Bacchetta Stra'Bil'Ant'",
+      "pt": "Varinha Enonly"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 40,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 40 },
+        { "stat": "Vitalité", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3068.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 16, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "829",
+    "name": {
+      "en": "[!EN] Discrète Baguette d'Houvette",
+      "fr": "Discrète Baguette d'Houvette",
+      "de": "[!DE] Discrète Baguette d'Houvette",
+      "es": "[!ES] Discrète Baguette d'Houvette",
+      "it": "[!IT] Discrète Baguette d'Houvette",
+      "pt": "[!PT] Discrète Baguette d'Houvette"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 40,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 18 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 10 },
+      { "stat": "Chance", "minStat": null, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Sagesse", "operator": ">", "value": 10 },
+        { "stat": "Intelligence", "operator": ">", "value": 45 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3019.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 8, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "827",
+    "name": {
+      "en": "[!EN] Grande Baguette à Pans",
+      "fr": "Grande Baguette à Pans",
+      "de": "[!DE] Grande Baguette à Pans",
+      "es": "[!ES] Grande Baguette à Pans",
+      "it": "[!IT] Grande Baguette à Pans",
+      "pt": "[!PT] Grande Baguette à Pans"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 40,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3020.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6402",
+    "name": {
+      "en": "Larval Wand",
+      "fr": "Baguette Larvesque",
+      "de": "Larvuta",
+      "es": "Varita larvesca",
+      "it": "Bacchetta Larvesca",
+      "pt": "Varinha Larvesca"
+    },
+    "itemType": "Wand",
+    "setID": "33",
+    "level": 40,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3019.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": -1, "maxStat": -2, "stat": "AP" }]
+    }
+  },
+  {
+    "dofusID": "798",
+    "name": {
+      "en": "[!EN] Petite Baguette d'Eglise",
+      "fr": "Petite Baguette d'Eglise",
+      "de": "[!DE] Petite Baguette d'Eglise",
+      "es": "[!ES] Petite Baguette d'Eglise",
+      "it": "[!IT] Petite Baguette d'Eglise",
+      "pt": "[!PT] Petite Baguette d'Eglise"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 36,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 20 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 25 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 36 },
+        { "stat": "Force", "operator": ">", "value": 25 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3016.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 8, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "826",
+    "name": {
+      "en": "Inacleft Stick",
+      "fr": "Baguette à Pans",
+      "de": "Einwegrute",
+      "es": "Varita plumero",
+      "it": "Bacchetta Piumino",
+      "pt": "Varinha Madilha"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 35,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3020.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1043",
+    "name": {
+      "en": "Wangs",
+      "fr": "Daguette",
+      "de": "Stolche",
+      "es": "Varidaga",
+      "it": "Dacchetta",
+      "pt": "Pequenas Adagas"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 35,
+    "stats": [
+      { "stat": "Agility", "minStat": 11, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Vitality", "minStat": 6, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 6, "maxStat": 15, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "329",
+    "name": {
+      "en": "Treechnid Root Wand",
+      "fr": "Baguette en Racine d'Abraknyde",
+      "de": "Stab aus Astaknydenwurzeln",
+      "es": "Varita de raíz de abráknido",
+      "it": "Bacchetta in Radice di Alberagno",
+      "pt": "Varinha de Raiz de Arvraknídeo"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 33,
+    "stats": [{ "stat": "Wisdom", "minStat": 26, "maxStat": 30 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 33 },
+        { "stat": "Sagesse", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3003.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8883",
+    "name": {
+      "en": "Bandit Sorcerer's Wand",
+      "fr": "Baguette du bandit ensorceleur",
+      "de": "Stab des Banditen-Zauberers",
+      "es": "Varita de bandido hechicero",
+      "it": "Bacchetta del Bandito Stregone",
+      "pt": "Varinha do Bandido Feiticeiro"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 30,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3072.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 40,
+      "critBonusDamage": 2,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 5, "stat": "Air damage" },
+        { "minStat": 1, "maxStat": 5, "stat": "Water damage" },
+        { "minStat": 1, "maxStat": 5, "stat": "Fire damage" },
+        { "minStat": 1, "maxStat": 5, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8603",
+    "name": {
+      "en": "Wand Erboy",
+      "fr": "Baguette Hoh'",
+      "de": "Stab Ih'Lhisiah'",
+      "es": "Varita H'Rifa",
+      "it": "Bacchetta Ghet'Hoh'",
+      "pt": "Varinha Erboy"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 30,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 30 },
+        { "stat": "Vitalité", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3067.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [{ "minStat": 5, "maxStat": 12, "stat": "Fire damage" }]
+    }
+  },
+  {
+    "dofusID": "825",
+    "name": {
+      "en": "[!EN] Petite Baguette à Pans",
+      "fr": "Petite Baguette à Pans",
+      "de": "[!DE] Petite Baguette à Pans",
+      "es": "[!ES] Petite Baguette à Pans",
+      "it": "[!IT] Petite Baguette à Pans",
+      "pt": "[!PT] Petite Baguette à Pans"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 30,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 35 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3020.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "797",
+    "name": {
+      "en": "[!EN] Terrifiante Baguette Heure",
+      "fr": "Terrifiante Baguette Heure",
+      "de": "[!DE] Terrifiante Baguette Heure",
+      "es": "[!ES] Terrifiante Baguette Heure",
+      "it": "[!IT] Terrifiante Baguette Heure",
+      "pt": "[!PT] Terrifiante Baguette Heure"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 30,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 10 },
+      { "stat": "Strength", "minStat": null, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 31 },
+        { "stat": "Force", "operator": ">", "value": 4 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3017.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "563",
+    "name": {
+      "en": "[!EN] Puissante Baguette d'Intelligence",
+      "fr": "Puissante Baguette d'Intelligence",
+      "de": "[!DE] Puissante Baguette d'Intelligence",
+      "es": "[!ES] Puissante Baguette d'Intelligence",
+      "it": "[!IT] Puissante Baguette d'Intelligence",
+      "pt": "[!PT] Puissante Baguette d'Intelligence"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 29,
+    "stats": [{ "stat": "Intelligence", "minStat": 26, "maxStat": 30 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3001.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 16, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6459",
+    "name": {
+      "en": "Strangly Wand",
+      "fr": "Baguette Rangleuse",
+      "de": "Würgrut",
+      "es": "Varita estranguladora",
+      "it": "Bacchetta Strozzante",
+      "pt": "Varinha sufocante"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 27,
+    "stats": [{ "stat": "Heals", "minStat": 2, "maxStat": 3 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3048.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 4,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 1, "maxStat": 7, "stat": "Fire damage" }]
+    }
+  },
+  {
+    "dofusID": "566",
+    "name": {
+      "en": "[!EN] Puissante Baguette de Sagesse",
+      "fr": "Puissante Baguette de Sagesse",
+      "de": "[!DE] Puissante Baguette de Sagesse",
+      "es": "[!ES] Puissante Baguette de Sagesse",
+      "it": "[!IT] Puissante Baguette de Sagesse",
+      "pt": "[!PT] Puissante Baguette de Sagesse"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 27,
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 16 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 27 },
+        { "stat": "Sagesse", "operator": ">", "value": 11 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3004.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "562",
+    "name": {
+      "en": "[!EN] Grande Baguette d'Intelligence",
+      "fr": "Grande Baguette d'Intelligence",
+      "de": "[!DE] Grande Baguette d'Intelligence",
+      "es": "[!ES] Grande Baguette d'Intelligence",
+      "it": "[!IT] Grande Baguette d'Intelligence",
+      "pt": "[!PT] Grande Baguette d'Intelligence"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 27,
+    "stats": [{ "stat": "Intelligence", "minStat": 21, "maxStat": 25 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3001.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 10, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "796",
+    "name": {
+      "en": "[!EN] Grande Baguette Heure",
+      "fr": "Grande Baguette Heure",
+      "de": "[!DE] Grande Baguette Heure",
+      "es": "[!ES] Grande Baguette Heure",
+      "it": "[!IT] Grande Baguette Heure",
+      "pt": "[!PT] Grande Baguette Heure"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 25,
+    "stats": [
+      { "stat": "Strength", "minStat": null, "maxStat": 9 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 9 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 29 },
+        { "stat": "Force", "operator": ">", "value": 3 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3017.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 9, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7322",
+    "name": {
+      "en": "Tofu Wand",
+      "fr": "Baguette du Tofu",
+      "de": "Tofu-Stab",
+      "es": "Varita de tofu",
+      "it": "Bacchetta del Tofu",
+      "pt": "Varinha do Tofu"
+    },
+    "itemType": "Wand",
+    "setID": "50",
+    "level": 25,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3058.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 4, "stat": "Air steal" },
+        { "minStat": 3, "maxStat": 4, "stat": "Fire steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "565",
+    "name": {
+      "en": "[!EN] Grande Baguette de Sagesse",
+      "fr": "Grande Baguette de Sagesse",
+      "de": "[!DE] Grande Baguette de Sagesse",
+      "es": "[!ES] Grande Baguette de Sagesse",
+      "it": "[!IT] Grande Baguette de Sagesse",
+      "pt": "[!PT] Grande Baguette de Sagesse"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 25,
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 14 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 25 },
+        { "stat": "Sagesse", "operator": ">", "value": 9 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3004.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 18, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "561",
+    "name": {
+      "en": "Intelligence Wand",
+      "fr": "Baguette d'Intelligence",
+      "de": "Intelligenzstäbchen",
+      "es": "Varita de inteligencia",
+      "it": "Bacchetta di Intelligenza",
+      "pt": "Varinha de inteligência"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 24,
+    "stats": [{ "stat": "Intelligence", "minStat": 16, "maxStat": 20 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3001.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "564",
+    "name": {
+      "en": "Wisdom Wand",
+      "fr": "Baguette de Sagesse",
+      "de": "Weisheitsstäbchen",
+      "es": "Varita de sabiduría",
+      "it": "Bacchetta di Saggezza",
+      "pt": "Varinha de sabedoria"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 23,
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 12 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 23 },
+        { "stat": "Sagesse", "operator": ">", "value": 7 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3004.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 16, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "82",
+    "name": {
+      "en": "[!EN] Petite Baguette de Sagesse",
+      "fr": "Petite Baguette de Sagesse",
+      "de": "[!DE] Petite Baguette de Sagesse",
+      "es": "[!ES] Petite Baguette de Sagesse",
+      "it": "[!IT] Petite Baguette de Sagesse",
+      "pt": "[!PT] Petite Baguette de Sagesse"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 20,
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 20 },
+        { "stat": "Sagesse", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3004.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 10, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "81",
+    "name": {
+      "en": "[!EN] Petite Baguette d'Intelligence",
+      "fr": "Petite Baguette d'Intelligence",
+      "de": "[!DE] Petite Baguette d'Intelligence",
+      "es": "[!ES] Petite Baguette d'Intelligence",
+      "it": "[!IT] Petite Baguette d'Intelligence",
+      "pt": "[!PT] Petite Baguette d'Intelligence"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 20,
+    "stats": [{ "stat": "Intelligence", "minStat": 11, "maxStat": 15 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3001.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "795",
+    "name": {
+      "en": "Hour Wand",
+      "fr": "Baguette Heure",
+      "de": "Stab für gewisse Stunden",
+      "es": "Varita Hora",
+      "it": "Bacchetta Ora",
+      "pt": "Varinha Hora"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 20,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 8 },
+      { "stat": "Strength", "minStat": null, "maxStat": 8 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 27 },
+        { "stat": "Force", "operator": ">", "value": 2 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3017.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 8, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "204",
+    "name": {
+      "en": "Liriel's Wand",
+      "fr": "Baguette de Liriel",
+      "de": "Liriels Stab",
+      "es": "Varita de Liriel",
+      "it": "Bacchetta di Liriel",
+      "pt": "Varinha Mágica de Liriel"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 20,
+    "stats": [{ "stat": "Critical", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3005.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1186",
+    "name": {
+      "en": "Will-o'-the-Wisp's Wand",
+      "fr": "Baguette de Feu Follesque",
+      "de": "Stab des Irrlichts",
+      "es": "Varita de fuego fatuo",
+      "it": "Bacchetta di Fuoco Fatuo",
+      "pt": "Varinha do Fogo Fátuo"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 20,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3014.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 5, "maxStat": 8, "stat": "Fire damage" }]
+    }
+  },
+  {
+    "dofusID": "80",
+    "name": {
+      "en": "[!EN] Puissante Baguette de Glace",
+      "fr": "Puissante Baguette de Glace",
+      "de": "[!DE] Puissante Baguette de Glace",
+      "es": "[!ES] Puissante Baguette de Glace",
+      "it": "[!IT] Puissante Baguette de Glace",
+      "pt": "[!PT] Puissante Baguette de Glace"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 15,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 18, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "794",
+    "name": {
+      "en": "[!EN] Petite Baguette Heure",
+      "fr": "Petite Baguette Heure",
+      "de": "[!DE] Petite Baguette Heure",
+      "es": "[!ES] Petite Baguette Heure",
+      "it": "[!IT] Petite Baguette Heure",
+      "pt": "[!PT] Petite Baguette Heure"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 15,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 7 },
+      { "stat": "Strength", "minStat": null, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 25 },
+        { "stat": "Force", "operator": ">", "value": 1 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/3017.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 7, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "79",
+    "name": {
+      "en": "[!EN] Grande Baguette de Glace",
+      "fr": "Grande Baguette de Glace",
+      "de": "[!DE] Grande Baguette de Glace",
+      "es": "[!ES] Grande Baguette de Glace",
+      "it": "[!IT] Grande Baguette de Glace",
+      "pt": "[!PT] Grande Baguette de Glace"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 14,
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 17, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "78",
+    "name": {
+      "en": "Ice Wand",
+      "fr": "Baguette de Glace",
+      "de": "Eisstab",
+      "es": "Varita de hielo",
+      "it": "Bacchetta di Ghiaccio",
+      "pt": "Varinha de gelo"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 16, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "77",
+    "name": {
+      "en": "[!EN] Petite Baguette de Glace",
+      "fr": "Petite Baguette de Glace",
+      "de": "[!DE] Petite Baguette de Glace",
+      "es": "[!ES] Petite Baguette de Glace",
+      "it": "[!IT] Petite Baguette de Glace",
+      "pt": "[!PT] Petite Baguette de Glace"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Wisdom", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1042",
+    "name": {
+      "en": "Half Loaf",
+      "fr": "Demi-Baguette",
+      "de": "1/2-Stäbchenbaguette",
+      "es": "Bio Varita",
+      "it": "Semi-Bacchetta",
+      "pt": "Meia-varinha"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 11,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 5 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3013.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 2,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 2, "maxStat": 6, "stat": "Water damage" }]
+    }
+  },
+  {
+    "dofusID": "59",
+    "name": {
+      "en": "[!EN] Puissante Baguette de Boisaille",
+      "fr": "Puissante Baguette de Boisaille",
+      "de": "[!DE] Puissante Baguette de Boisaille",
+      "es": "[!ES] Puissante Baguette de Boisaille",
+      "it": "[!IT] Puissante Baguette de Boisaille",
+      "pt": "[!PT] Puissante Baguette de Boisaille"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 5,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3008.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 4, "maxStat": 8, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "58",
+    "name": {
+      "en": "[!EN] Grande Baguette de Boisaille",
+      "fr": "Grande Baguette de Boisaille",
+      "de": "[!DE] Grande Baguette de Boisaille",
+      "es": "[!ES] Grande Baguette de Boisaille",
+      "it": "[!IT] Grande Baguette de Boisaille",
+      "pt": "[!PT] Grande Baguette de Boisaille"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 4,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3008.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 7, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "57",
+    "name": {
+      "en": "Twiggy Wand",
+      "fr": "Baguette de Boisaille",
+      "de": "Hölzernes Stäbchen",
+      "es": "Varita de maderucha",
+      "it": "Bacchetta di Legnuccio",
+      "pt": "Varinha de graveto"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 2,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3008.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 6, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7146",
+    "name": {
+      "en": "[!EN] Baguette du Tournoi (MJ)",
+      "fr": "Baguette du Tournoi (MJ)",
+      "de": "[!DE] Baguette du Tournoi (MJ)",
+      "es": "[!ES] Baguette du Tournoi (MJ)",
+      "it": "[!IT] Baguette du Tournoi (MJ)",
+      "pt": "[!PT] Baguette du Tournoi (MJ)"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 1,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3008.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": []
+    }
+  },
+  {
+    "dofusID": "6114",
+    "name": {
+      "en": "[!EN] Baguette de l'Initié",
+      "fr": "Baguette de l'Initié",
+      "de": "[!DE] Baguette de l'Initié",
+      "es": "[!ES] Baguette de l'Initié",
+      "it": "[!IT] Baguette de l'Initié",
+      "pt": "[!PT] Baguette de l'Initié"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/3008.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": 2,
+      "maxRange": 3,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  }
+]

@@ -1,0 +1,4134 @@
+[
+  {
+    "dofusID": "8217",
+    "name": {
+      "en": "Ougaammer",
+      "fr": "Ougarteau",
+      "de": "Stinkelingshammer",
+      "es": "Ugartillo",
+      "it": "Ugartello",
+      "pt": "Ugahrtelo"
+    },
+    "itemType": "Hammer",
+    "setID": "118",
+    "level": 180,
+    "stats": [
+      { "stat": "Vitality", "minStat": 301, "maxStat": 400 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 31, "maxStat": 40 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7067.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 19, "maxStat": 35, "stat": "Neutral damage" },
+        { "minStat": 2, "maxStat": 7, "stat": "Water steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7757",
+    "name": {
+      "en": "Stephammer",
+      "fr": "Marteau Minokers",
+      "de": "Tommys Klopfer",
+      "es": "Mart'IT'llo",
+      "it": "Martello Minoker",
+      "pt": "Martelo Zery"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 178,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Summons", "minStat": null, "maxStat": 2 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 350 },
+        { "stat": "Sagesse", "operator": ">", "value": 180 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7062.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 27, "maxStat": 43, "stat": "Neutral damage" },
+        { "minStat": 4, "maxStat": 6, "stat": "Fire steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6481",
+    "name": {
+      "en": "Hammer Sheys",
+      "fr": "Marteau Bleuronne",
+      "de": "Xocoatlkrachl",
+      "es": "Martillito Blerón",
+      "it": "Martello Ciociok",
+      "pt": "Martelo Sheys"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 150,
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 41, "maxStat": 50 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 150 },
+        { "stat": "Vitalité", "operator": ">", "value": 200 }
+      ]
+    },
+    "customConditions": {
+      "en": ["[!EN] Classe = encyclopedia.class-5|2"],
+      "fr": ["Classe = encyclopedia.class-5|2"],
+      "de": ["[!DE] Classe = encyclopedia.class-5|2"],
+      "es": ["[!ES] Classe = encyclopedia.class-5|2"],
+      "it": ["[!IT] Classe = encyclopedia.class-5|2"],
+      "pt": ["[!PT] Classe = encyclopedia.class-5|2"]
+    },
+    "imageUrl": "/retro/item/7053.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 8, "stat": "Fire steal" },
+        { "minStat": 18, "maxStat": 36, "stat": "Neutral damage" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6445",
+    "name": {
+      "en": "Trikidiki Hammer",
+      "fr": "Marteau Lahre",
+      "de": "Gehs Fanghammer",
+      "es": "Martillo Katraz",
+      "it": "Martello Lahr",
+      "pt": "Martelo de Luhene"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 143,
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 6 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 250 },
+        { "stat": "Classe", "operator": "=", "value": null, "class": "Xélor" }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7047.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Neutral damage" },
+        { "minStat": 5, "maxStat": 7, "stat": "Air steal" },
+        { "minStat": 11, "maxStat": 20, "stat": "Air damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7309",
+    "name": {
+      "en": "Dunb Hammer",
+      "fr": "Marteau Mawoque",
+      "de": "Toms Mahok-Hammer",
+      "es": "Martillo Kosner",
+      "it": "Martello Kostner",
+      "pt": "Martelo de Dunb"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 140,
+    "stats": [
+      { "stat": "Power", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 250 },
+        { "stat": "Chance", "operator": ">", "value": 250 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7056.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 23, "stat": "Fire damage" },
+        { "minStat": 14, "maxStat": 23, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6446",
+    "name": {
+      "en": "Cogito Hammer",
+      "fr": "Marteau Pinière",
+      "de": "Mauls Wurfhammer",
+      "es": "Martillo Escarbador",
+      "it": "Martello Pineta",
+      "pt": "Martelo da Colina"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 135,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 200 },
+        { "stat": "Vitalité", "operator": ">", "value": 300 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7052.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 21, "stat": "Neutral damage" },
+        { "minStat": 13, "maxStat": 21, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7952",
+    "name": {
+      "en": "Zoth Girl Hammer",
+      "fr": "Marteau de la Gamine Zoth",
+      "de": "Hammer des Zoth-Mädels",
+      "es": "Martillo de la chavala zoth",
+      "it": "Martello della Marmocchia Zoth",
+      "pt": "Martelo da Garota Zoth"
+    },
+    "itemType": "Hammer",
+    "setID": "93",
+    "level": 132,
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 91, "maxStat": 120 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 250 },
+        { "stat": "Sagesse", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7064.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 18, "stat": "Air damage" },
+        { "minStat": 11, "maxStat": 18, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7310",
+    "name": {
+      "en": "Hammer O'In",
+      "fr": "Marteau Xiko",
+      "de": "Liebestöter",
+      "es": "Martillo Xiko",
+      "it": "Martello Xiko",
+      "pt": "Martelo Oin"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 129,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 250 },
+        { "stat": "Intelligence", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7057.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 32, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6440",
+    "name": {
+      "en": "Metal Hammer",
+      "fr": "Marteau Hubohu",
+      "de": "Bohus Hammer des Tohuwers",
+      "es": "Martillo Bombo",
+      "it": "Martello Heco",
+      "pt": "Martelo de Hubohu"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 126,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7051.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 30, "stat": "Neutral damage" },
+        { "minStat": 6, "maxStat": 10, "stat": "Water steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7951",
+    "name": {
+      "en": "Great Coralator Mace",
+      "fr": "Masse du Corailleur Magistral",
+      "de": "Mächtige korallatorige Donnerkralle",
+      "es": "Maza de Coralador Magistral",
+      "it": "Mazza del Corallaro Magistrale",
+      "pt": "Maça do Coralador Magistral"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 125,
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 130 },
+        { "stat": "Chance", "operator": ">", "value": 130 },
+        { "stat": "Sagesse", "operator": ">", "value": 130 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7063.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 100,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 8, "stat": "Air steal" },
+        { "minStat": 1, "maxStat": 8, "stat": "Water steal" },
+        { "minStat": 21, "maxStat": 35, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6444",
+    "name": {
+      "en": "Toll Hammer",
+      "fr": "Marteau Ksain",
+      "de": "Stürmischer Glockenklöppel",
+      "es": "Martillito Holón",
+      "it": "Martello Ksen",
+      "pt": "Martelo de Toksin"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 124,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "Fire Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7049.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 10, "maxStat": 22, "stat": "Neutral damage" },
+        { "minStat": 10, "maxStat": 22, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7478",
+    "name": {
+      "en": "Dreggon Hammer",
+      "fr": "Marteau du Dragoeuf",
+      "de": "Drachei-Hammer",
+      "es": "Martillo de dragohuevo",
+      "it": "Martello del Draguovo",
+      "pt": "Martelo do Dragovo"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 123,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 8 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 200 },
+        { "stat": "Chance", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7059.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 35, "stat": "Neutral damage" },
+        { "minStat": 3, "maxStat": 5, "stat": "Fire steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5889",
+    "name": {
+      "en": "Blarney Hammer",
+      "fr": "Marteau Ridhe",
+      "de": "Der Verwüster",
+      "es": "Martillo Kaxondo",
+      "it": "Martello Ruga",
+      "pt": "Martelo Ridhe"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 120,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 4, "maxStat": 8 },
+      { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 8 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 150 },
+        { "stat": "Force", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7042.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 46, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5888",
+    "name": {
+      "en": "Castr Hammer",
+      "fr": "Marteau Kahr",
+      "de": "Scheufäusteligkeit",
+      "es": "Martillo Puka",
+      "it": "Martello Kahr",
+      "pt": "Martelo de Kahr"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 120,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 4, "maxStat": 8 },
+      { "stat": "Air Resistance", "minStat": 4, "maxStat": 8 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 8 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 150 },
+        { "stat": "Intelligence", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7041.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 25, "maxStat": 42, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5887",
+    "name": {
+      "en": "Crick Hammer",
+      "fr": "Marteau R'Ticolis",
+      "de": "Hammer-Star \"Rernacken\"",
+      "es": "Martillo Trotícolis",
+      "it": "Martello R'Cicollo",
+      "pt": "Martelo R’Ticolis"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 120,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 35 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 9 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": 2, "maxStat": 3 },
+      { "stat": "Prospecting", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 100 },
+        { "stat": "Intelligence", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7040.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 25, "maxStat": 42, "stat": "Neutral damage" },
+        { "minStat": 4, "maxStat": 6, "stat": "Neutral steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6442",
+    "name": {
+      "en": "Hammer Ingthaiphoons",
+      "fr": "Marteau Nairedeubrest",
+      "de": "Hammer des Donnerwetters",
+      "es": "Martillo de Capitán Kodah",
+      "it": "Martello Kat-Yvello",
+      "pt": "Martelo Ingthaiphoons"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 113,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 150 },
+        { "stat": "Sagesse", "operator": ">", "value": 100 },
+        { "stat": "Classe", "operator": "=", "value": null, "class": "Xélor" }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7048.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 15, "stat": "Neutral damage" },
+        { "minStat": 3, "maxStat": 4, "stat": "Fire steal" },
+        { "minStat": -1, "maxStat": -2, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6443",
+    "name": {
+      "en": "Hammer Ican",
+      "fr": "Marteau Ronto",
+      "de": "Hammer der Burg",
+      "es": "Martillito Ronto",
+      "it": "Martello Ronto",
+      "pt": "Martelo Ican"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 107,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 150 },
+        { "stat": "Vitalité", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {
+      "en": ["[!EN] Classe = encyclopedia.class-2|5"],
+      "fr": ["Classe = encyclopedia.class-2|5"],
+      "de": ["[!DE] Classe = encyclopedia.class-2|5"],
+      "es": ["[!ES] Classe = encyclopedia.class-2|5"],
+      "it": ["[!IT] Classe = encyclopedia.class-2|5"],
+      "pt": ["[!PT] Classe = encyclopedia.class-2|5"]
+    },
+    "imageUrl": "/retro/item/7050.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6441",
+    "name": {
+      "en": "Toy Hammer",
+      "fr": "Marteau M'Pouce",
+      "de": "Däumlingsklopfer",
+      "es": "Martillo Polgarcito",
+      "it": "Martello Pollicino",
+      "pt": "Martelo de Brinquedo"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 107,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 350 },
+        { "stat": "Vitalité", "operator": ">", "value": 200 },
+        { "stat": "Sagesse", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7046.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 17, "stat": "Neutral damage" },
+        { "minStat": 9, "maxStat": 17, "stat": "Fire damage" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5883",
+    "name": {
+      "en": "Rehadaure Hammer",
+      "fr": "Marteau Réhadaure",
+      "de": "Stierhammerkämpfer",
+      "es": "Martillo Taurino",
+      "it": "Martello Taurino",
+      "pt": "Martelo Rehadaure"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 100,
+    "stats": [
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 100 },
+        { "stat": "Sagesse", "operator": ">", "value": 40 },
+        { "stat": "Force", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7037.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Fire damage" },
+        { "minStat": 11, "maxStat": 15, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5885",
+    "name": {
+      "en": "Terps Hammer",
+      "fr": "Marteau de la Terps",
+      "de": "Hammer der Terps",
+      "es": "Martillo de la Terps",
+      "it": "Martello della Terps",
+      "pt": "Martelo de Terps"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 90,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 20 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 60 },
+        { "stat": "Intelligence", "operator": ">", "value": 60 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7038.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 35,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 6, "stat": "Neutral steal" },
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" },
+        { "minStat": 6, "maxStat": 10, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7957",
+    "name": {
+      "en": "Coralator Mace",
+      "fr": "Masse du Corailleur",
+      "de": "Korallatorige Donnerkralle",
+      "es": "Maza de coralador",
+      "it": "Mazza del Corallaro",
+      "pt": "Maça do Coralador"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 85,
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 70 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 100 },
+        { "stat": "Agilité", "operator": ">", "value": 100 },
+        { "stat": "Vitalité", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7065.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 16, "stat": "Water damage" },
+        { "minStat": 8, "maxStat": 16, "stat": "Air damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7756",
+    "name": {
+      "en": "Red Hammer",
+      "fr": "Marteau Mato",
+      "de": "Weichklopfer",
+      "es": "Martillo rojo",
+      "it": "Martello Tomato",
+      "pt": "Martelo Vermelho"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 83,
+    "stats": [
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 100 },
+        { "stat": "Vitalité", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7061.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 14, "stat": "Neutral damage" },
+        { "minStat": 7, "maxStat": 14, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5890",
+    "name": {
+      "en": "Pog Hammer",
+      "fr": "Marteau Nitruhant",
+      "de": "Smerz' Hammerkopf",
+      "es": "Martillo Xelorillo",
+      "it": "Martello Nitrico",
+      "pt": "Martelo de Nitruhant"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 82,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 50 },
+        { "stat": "Chance", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7043.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 19, "maxStat": 38, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "115",
+    "name": {
+      "en": "Kaiser",
+      "fr": "Kaiser",
+      "de": "Kaiser",
+      "es": "Kaiser",
+      "it": "Kaiser",
+      "pt": "Kaiser"
+    },
+    "itemType": "Hammer",
+    "setID": "58",
+    "level": 82,
+    "stats": [
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 70 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 80 },
+        { "stat": "Intelligence", "operator": ">", "value": 80 },
+        { "stat": "Agilité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7010.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 20,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 25, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "778",
+    "name": {
+      "en": "Hammer of Wrongs",
+      "fr": "Marteau à Torts",
+      "de": "Tors Hammer",
+      "es": "Martillo Tohrero",
+      "it": "Martello del Torto",
+      "pt": "Martelo Errante"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 81,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7020.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7359",
+    "name": {
+      "en": "Legendary Crackler Hammer",
+      "fr": "Marteau du Craqueleur Légendaire",
+      "de": "Hammer des Legendären Mega-Krachlers",
+      "es": "Martillo de Crujidor Legendario",
+      "it": "Martello del Croccaroc Leggendario",
+      "pt": "Martelo do Smagador Legendário"
+    },
+    "itemType": "Hammer",
+    "setID": "52",
+    "level": 81,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 35 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 100 },
+        { "stat": "Intelligence", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7058.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 24, "stat": "Air damage" },
+        { "minStat": 9, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5882",
+    "name": {
+      "en": "Fantal Hammer",
+      "fr": "Marteau Fantal",
+      "de": "Fantals Hammer",
+      "es": "Martillo Fantal",
+      "it": "Martello Fantal",
+      "pt": "Martelo Fantal"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 81,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 },
+      { "stat": "Prospecting", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 80 },
+        { "stat": "Vitalité", "operator": ">", "value": 70 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7036.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 38, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7998",
+    "name": {
+      "en": "Kidommer",
+      "fr": "Kidorteau",
+      "de": "Kido-Klopfer",
+      "es": "Kidortillo",
+      "it": "Kidortello",
+      "pt": "Kidormmer"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 79,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Summons", "minStat": 2, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7066.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 12, "stat": "Air damage" },
+        { "minStat": 7, "maxStat": 12, "stat": "Water damage" },
+        { "minStat": 7, "maxStat": 12, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "779",
+    "name": {
+      "en": "Falistos's Maul",
+      "fr": "Marteau des Falistos",
+      "de": "Falistos Hammer",
+      "es": "Martillo de los Falistos",
+      "it": "Martello dei Falisti",
+      "pt": "Martelo dos Falistos"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 79,
+    "stats": [
+      { "stat": "Strength", "minStat": 41, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7019.png",
+    "weaponStats": {
+      "apCost": 7,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 15,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 31, "maxStat": 50, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8597",
+    "name": {
+      "en": "Hammer Leen",
+      "fr": "Marteau Ni'Hok'",
+      "de": "Hammer Ehk'Malh'",
+      "es": "Martillo Ghí",
+      "it": "Martello Ni'Hok'",
+      "pt": "Martelo Leen"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 70,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 35 },
+        { "stat": "Agilité", "operator": ">", "value": 35 },
+        { "stat": "Force", "operator": ">", "value": 35 },
+        { "stat": "Intelligence", "operator": ">", "value": 35 },
+        { "stat": "Vitalité", "operator": ">", "value": 70 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7073.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 2,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 5, "stat": "Air damage" },
+        { "minStat": 2, "maxStat": 5, "stat": "Water damage" },
+        { "minStat": 2, "maxStat": 5, "stat": "Fire damage" },
+        { "minStat": 2, "maxStat": 5, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "777",
+    "name": {
+      "en": "[!EN] Puissant marteau Pospodrol",
+      "fr": "Puissant marteau Pospodrol",
+      "de": "[!DE] Puissant marteau Pospodrol",
+      "es": "[!ES] Puissant marteau Pospodrol",
+      "it": "[!IT] Puissant marteau Pospodrol",
+      "pt": "[!PT] Puissant marteau Pospodrol"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 70,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 30 },
+        { "stat": "Force", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7005.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 24, "maxStat": 31, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "116",
+    "name": {
+      "en": "Ragnarok",
+      "fr": "Ragnarok",
+      "de": "Ragnarok",
+      "es": "Ragnarok",
+      "it": "Ragnarok",
+      "pt": "Ragnarok"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 66,
+    "stats": [
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Intelligence", "minStat": 36, "maxStat": 45 },
+      { "stat": "Wisdom", "minStat": 36, "maxStat": 45 },
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 40 },
+        { "stat": "Intelligence", "operator": ">", "value": 40 },
+        { "stat": "Sagesse", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7055.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 23, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "776",
+    "name": {
+      "en": "[!EN] Grand Marteau Pospodrol",
+      "fr": "Grand Marteau Pospodrol",
+      "de": "[!DE] Grand Marteau Pospodrol",
+      "es": "[!ES] Grand Marteau Pospodrol",
+      "it": "[!IT] Grand Marteau Pospodrol",
+      "pt": "[!PT] Grand Marteau Pospodrol"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 65,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 19, "maxStat": 36 },
+      { "stat": "Strength", "minStat": 19, "maxStat": 36 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 28 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 28 },
+        { "stat": "Force", "operator": ">", "value": 28 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7005.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 23, "maxStat": 29, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8596",
+    "name": {
+      "en": "Hammer Udeet",
+      "fr": "Marteau Bo'Gan'",
+      "de": "Hammer Ih'Dianh'",
+      "es": "Ata'Kah Martillo",
+      "it": "Martello Shi'Vol'",
+      "pt": "Martelo Udeet"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 60,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 60 },
+        { "stat": "Vitalité", "operator": ">", "value": 60 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7070.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 22, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "775",
+    "name": {
+      "en": "Pospodrol Hammer",
+      "fr": "Marteau Pospodrol",
+      "de": "Hammer Gudglacht",
+      "es": "Martillo aerodinámico",
+      "it": "Martello Aerodinamico",
+      "pt": "Martelo Prado"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 17, "maxStat": 33 },
+      { "stat": "Strength", "minStat": 17, "maxStat": 33 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 26 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 26 },
+        { "stat": "Force", "operator": ">", "value": 26 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7005.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 22, "maxStat": 27, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5881",
+    "name": {
+      "en": "Polpullet Hammer",
+      "fr": "Marteau Polpoulette",
+      "de": "Polpouletten-Hammer",
+      "es": "Martillo Polpuleta",
+      "it": "Martello Poltiyetta",
+      "pt": "Martelo Polpulete"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 57,
+    "stats": [
+      { "stat": "Power", "minStat": 3, "maxStat": 7 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 20 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 60 },
+        { "stat": "Force", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7035.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 6,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 9, "stat": "Fire damage" },
+        { "minStat": 5, "maxStat": 9, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "774",
+    "name": {
+      "en": "[!EN] Petit Marteau Pospodrol",
+      "fr": "Petit Marteau Pospodrol",
+      "de": "[!DE] Petit Marteau Pospodrol",
+      "es": "[!ES] Petit Marteau Pospodrol",
+      "it": "[!IT] Petit Marteau Pospodrol",
+      "pt": "[!PT] Petit Marteau Pospodrol"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 55,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 25 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 25 },
+        { "stat": "Force", "operator": ">", "value": 25 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7005.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 25, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5891",
+    "name": {
+      "en": "Refactor Hammer",
+      "fr": "Marteau Réfacteur",
+      "de": "Wurmlochhammer",
+      "es": "Martillo Moledor",
+      "it": "Martello Macina",
+      "pt": "Martelo de Refator"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 55,
+    "stats": [
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 20 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7044.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 6,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1068",
+    "name": {
+      "en": "Tortoi Hammer",
+      "fr": "Marteau Re'Thu",
+      "de": "Schildzu Krötzschlag",
+      "es": "Martillo Konda",
+      "it": "Martello Re'Thu",
+      "pt": "Martelo Re’Thu"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 55,
+    "stats": [
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7005.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 8,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 30, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1078",
+    "name": {
+      "en": "The Metronome",
+      "fr": "Le Matronome",
+      "de": "Hammetronom",
+      "es": "El Matrónomo",
+      "it": "Il Martonomo",
+      "pt": "O Metronome"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 54,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 6, "maxStat": 15 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 62 },
+        { "stat": "Sagesse", "operator": ">", "value": 22 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7021.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 8,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 10, "maxStat": 13, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "9392",
+    "name": {
+      "en": "Klume's Hammer",
+      "fr": "Marteau de Klüme",
+      "de": "A.M.Boss Hammer",
+      "es": "Martillo de Kunye",
+      "it": "Martello di Cudine",
+      "pt": "Martelo de Klume"
+    },
+    "itemType": "Hammer",
+    "setID": "153",
+    "level": 51,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7724.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 19, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "773",
+    "name": {
+      "en": "[!EN] Puissante Masse Aj Taye",
+      "fr": "Puissante Masse Aj Taye",
+      "de": "[!DE] Puissante Masse Aj Taye",
+      "es": "[!ES] Puissante Masse Aj Taye",
+      "it": "[!IT] Puissante Masse Aj Taye",
+      "pt": "[!PT] Puissante Masse Aj Taye"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 51,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 27, "maxStat": 36 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": null, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 45 },
+        { "stat": "Force", "operator": ">", "value": 8 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 21, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8595",
+    "name": {
+      "en": "Hammer Rigoround",
+      "fr": "Marteau Reuh'Deuh'Piz'",
+      "de": "Hammer Lk'Hoenigh'",
+      "es": "Martillo Gurh",
+      "it": "Martello Tor'Dih'Piz'",
+      "pt": "Martelo Rigoround"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 50,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7072.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [{ "minStat": 9, "maxStat": 18, "stat": "Fire damage" }]
+    }
+  },
+  {
+    "dofusID": "5886",
+    "name": {
+      "en": "Pinambour Hammer",
+      "fr": "Marteau Pinambour",
+      "de": "Hammer von Meli",
+      "es": "Martillo Kolmillo",
+      "it": "Martello Zanna",
+      "pt": "Martelo Pinambour"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 50,
+    "stats": [
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7039.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 6,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 3, "maxStat": 7, "stat": "Fire steal" }]
+    }
+  },
+  {
+    "dofusID": "2739",
+    "name": {
+      "en": "Knuckle Rapping Hammer",
+      "fr": "Marteau Tape Doigts",
+      "de": "Fingerklopfer",
+      "es": "Martillo Golpea Dedos",
+      "it": "Martello Schiacciadita",
+      "pt": "Martelo do Castigo"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 49,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 },
+      { "stat": "Power", "minStat": 1, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 30 },
+        { "stat": "Intelligence", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7029.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 25, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "769",
+    "name": {
+      "en": "[!EN] Imposant Marteau Outar",
+      "fr": "Imposant Marteau Outar",
+      "de": "[!DE] Imposant Marteau Outar",
+      "es": "[!ES] Imposant Marteau Outar",
+      "it": "[!IT] Imposant Marteau Outar",
+      "pt": "[!PT] Imposant Marteau Outar"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 48,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": null, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 42 },
+        { "stat": "Intelligence", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7006.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 60,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 30, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "772",
+    "name": {
+      "en": "[!EN] Grande Masse Aj Taye",
+      "fr": "Grande Masse Aj Taye",
+      "de": "[!DE] Grande Masse Aj Taye",
+      "es": "[!ES] Grande Masse Aj Taye",
+      "it": "[!IT] Grande Masse Aj Taye",
+      "pt": "[!PT] Grande Masse Aj Taye"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 47,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 25, "maxStat": 34 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 42 },
+        { "stat": "Force", "operator": ">", "value": 8 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1164",
+    "name": {
+      "en": "The Cardboard Twot",
+      "fr": "Le Twote en Carton",
+      "de": "Hautscheputt",
+      "es": "El Twote de Cartón",
+      "it": "Tut An'Carton",
+      "pt": "Twot em Papelão"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 46,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 30 },
+      { "stat": "Agility", "minStat": null, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7006.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "768",
+    "name": {
+      "en": "[!EN] Grand Marteau Outar",
+      "fr": "Grand Marteau Outar",
+      "de": "[!DE] Grand Marteau Outar",
+      "es": "[!ES] Grand Marteau Outar",
+      "it": "[!IT] Grand Marteau Outar",
+      "pt": "[!PT] Grand Marteau Outar"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 44,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 38 },
+        { "stat": "Intelligence", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7006.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 60,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 19, "maxStat": 27, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "771",
+    "name": {
+      "en": "Aj Taye Mace",
+      "fr": "Masse Aj Taye",
+      "de": "Thay-Hammer „Massag Gea“",
+      "es": "Maza Getay",
+      "it": "Mazza Aj Té",
+      "pt": "Maça de Aj Taye"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 43,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 23, "maxStat": 32 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 42 },
+        { "stat": "Force", "operator": ">", "value": 8 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 19, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "765",
+    "name": {
+      "en": "[!EN] Redoutable Masse Tmosfer",
+      "fr": "Redoutable Masse Tmosfer",
+      "de": "[!DE] Redoutable Masse Tmosfer",
+      "es": "[!ES] Redoutable Masse Tmosfer",
+      "it": "[!IT] Redoutable Masse Tmosfer",
+      "pt": "[!PT] Redoutable Masse Tmosfer"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 43,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 10 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 21 },
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 2 },
+      { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 15 },
+        { "stat": "Force", "operator": ">", "value": 15 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7014.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7115",
+    "name": {
+      "en": "Gobkool Hammer",
+      "fr": "Marteau du Boufcoul",
+      "de": "Fresscool-Hammer",
+      "es": "Martillito de jalatranki",
+      "it": "Martello del Pappacool",
+      "pt": "Martelo do Papakool"
+    },
+    "itemType": "Hammer",
+    "setID": "43",
+    "level": 41,
+    "stats": [
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "Water Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7054.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 12, "stat": "Air damage" },
+        { "minStat": 5, "maxStat": 12, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8594",
+    "name": {
+      "en": "Hammer Rhor",
+      "fr": "Marteau Mah'Turj'",
+      "de": "Hammer Ih'Nehrughn'",
+      "es": "Martillo Rhi'Ka",
+      "it": "Martello Tau'Matur'Goh'",
+      "pt": "Martelo Rhor"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 40,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 40 },
+        { "stat": "Vitalité", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7071.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [{ "minStat": 10, "maxStat": 15, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "767",
+    "name": {
+      "en": "Outar Hammer",
+      "fr": "Marteau Outar",
+      "de": "Hammer Nüscht",
+      "es": "Martillo pacificador",
+      "it": "Martello Utar",
+      "pt": "Martelo Outar"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 40,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 36 },
+        { "stat": "Intelligence", "operator": ">", "value": 9 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7006.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 60,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 18, "maxStat": 25, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "764",
+    "name": {
+      "en": "[!EN] Longue Masse Tmosfer",
+      "fr": "Longue Masse Tmosfer",
+      "de": "[!DE] Longue Masse Tmosfer",
+      "es": "[!ES] Longue Masse Tmosfer",
+      "it": "[!IT] Longue Masse Tmosfer",
+      "pt": "[!PT] Longue Masse Tmosfer"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 40,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 9 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 19 },
+      { "stat": "Earth Resistance", "minStat": null, "maxStat": 1 },
+      { "stat": "Neutral Resistance", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 13 },
+        { "stat": "Force", "operator": ">", "value": 13 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7014.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 19, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "770",
+    "name": {
+      "en": "[!EN] Petite Masse Aj Taye",
+      "fr": "Petite Masse Aj Taye",
+      "de": "[!DE] Petite Masse Aj Taye",
+      "es": "[!ES] Petite Masse Aj Taye",
+      "it": "[!IT] Petite Masse Aj Taye",
+      "pt": "[!PT] Petite Masse Aj Taye"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 39,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 40 },
+        { "stat": "Force", "operator": ">", "value": 8 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 18, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "763",
+    "name": {
+      "en": "Mace Tmosfer",
+      "fr": "Masse Tmosfer",
+      "de": "Atmos Sphärenzerschlager",
+      "es": "Maza Damelklavel",
+      "it": "Mazza Meteo",
+      "pt": "Maça Tmosfer"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 37,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 8 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 17 },
+      { "stat": "Earth Resistance", "minStat": null, "maxStat": 1 },
+      { "stat": "Neutral Resistance", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 11 },
+        { "stat": "Force", "operator": ">", "value": 11 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7014.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 18, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "766",
+    "name": {
+      "en": "[!EN] Petit marteau Outar",
+      "fr": "Petit marteau Outar",
+      "de": "[!DE] Petit marteau Outar",
+      "es": "[!ES] Petit marteau Outar",
+      "it": "[!IT] Petit marteau Outar",
+      "pt": "[!PT] Petit marteau Outar"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 36,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 35 },
+        { "stat": "Intelligence", "operator": ">", "value": 8 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7006.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 60,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 17, "maxStat": 24, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1089",
+    "name": {
+      "en": "Toh'Lo Hammer",
+      "fr": "Marteau Toh'Lo",
+      "de": "Tonhammeri Minotororo",
+      "es": "Martillo Bestial",
+      "it": "Martello Toh'Lo",
+      "pt": "Martelo de Toh’Lo"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 35,
+    "stats": [{ "stat": "Summons", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 80 },
+        { "stat": "Sagesse", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7015.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 6,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1064",
+    "name": {
+      "en": "The Bhharnsheee Hammer",
+      "fr": "Le Scrounnchhh",
+      "de": "Skrunchhhhhhh",
+      "es": "El Skrunnchhh",
+      "it": "Lo Scrounnchhh",
+      "pt": "O Scrounnchhh"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 35,
+    "stats": [{ "stat": "Wisdom", "minStat": 3, "maxStat": 4 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 50 },
+        { "stat": "Agilité", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7009.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 8,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 25, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "762",
+    "name": {
+      "en": "[!EN] Petite Masse Tmosfer",
+      "fr": "Petite Masse Tmosfer",
+      "de": "[!DE] Petite Masse Tmosfer",
+      "es": "[!ES] Petite Masse Tmosfer",
+      "it": "[!IT] Petite Masse Tmosfer",
+      "pt": "[!PT] Petite Masse Tmosfer"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 34,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 8 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 15 },
+      { "stat": "Earth Resistance", "minStat": null, "maxStat": 1 },
+      { "stat": "Neutral Resistance", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 10 },
+        { "stat": "Force", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7014.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 17, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8593",
+    "name": {
+      "en": "Hammer Maid",
+      "fr": "Marteau Le'Stoye'",
+      "de": "Hammer Ihk'Rismesh'",
+      "es": "Tuh'Kum Martillo",
+      "it": "Martello Tol'Stoy'",
+      "pt": "Martelo Maid"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 30,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 30 },
+        { "stat": "Vitalité", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7069.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 13, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "761",
+    "name": {
+      "en": "[!EN] Imposant Marteau R'unique",
+      "fr": "Imposant Marteau R'unique",
+      "de": "[!DE] Imposant Marteau R'unique",
+      "es": "[!ES] Imposant Marteau R'unique",
+      "it": "[!IT] Imposant Marteau R'unique",
+      "pt": "[!PT] Imposant Marteau R'unique"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 30,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 34 },
+        { "stat": "Force", "operator": ">", "value": 6 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 16, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8362",
+    "name": {
+      "en": "[!EN] Masse O'dard",
+      "fr": "Masse O'dard",
+      "de": "[!DE] Masse O'dard",
+      "es": "[!ES] Masse O'dard",
+      "it": "[!IT] Masse O'dard",
+      "pt": "[!PT] Masse O'dard"
+    },
+    "itemType": "Hammer",
+    "setID": "112",
+    "level": 27,
+    "stats": [{ "stat": "Chance", "minStat": 21, "maxStat": 40 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 17 },
+        { "stat": "Chance", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7068.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "760",
+    "name": {
+      "en": "[!EN] Grand Marteau R'unique",
+      "fr": "Grand Marteau R'unique",
+      "de": "[!DE] Grand Marteau R'unique",
+      "es": "[!ES] Grand Marteau R'unique",
+      "it": "[!IT] Grand Marteau R'unique",
+      "pt": "[!PT] Grand Marteau R'unique"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 27,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 18 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 14 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 32 },
+        { "stat": "Force", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "119",
+    "name": {
+      "en": "Sargasse",
+      "fr": "Sargasse",
+      "de": "Sargass",
+      "es": "Sargas",
+      "it": "Sargas",
+      "pt": "Sargasse"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 27,
+    "stats": [{ "stat": "Chance", "minStat": 21, "maxStat": 40 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 17 },
+        { "stat": "Chance", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7008.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "316",
+    "name": {
+      "en": "Hammer of Dawn",
+      "fr": "Marteau de l'Aurore",
+      "de": "Hammer der Morgenröte",
+      "es": "Martillito de la aurora",
+      "it": "Martello dell'Aurora",
+      "pt": "Martelo da Alvorada"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 26,
+    "stats": [
+      { "stat": "Chance", "minStat": null, "maxStat": 10 },
+      { "stat": "Strength", "minStat": null, "maxStat": 10 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 10 },
+        { "stat": "Intelligence", "operator": ">", "value": 16 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 7, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "759",
+    "name": {
+      "en": "R'Unique Hammer",
+      "fr": "Marteau R'unique",
+      "de": "Singurunärer Hammer",
+      "es": "Martillo R'único",
+      "it": "Martello Runico",
+      "pt": "Martelo R’Único"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 24,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 16 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 12 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 30 },
+        { "stat": "Force", "operator": ">", "value": 4 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "757",
+    "name": {
+      "en": "[!EN] Incassable Masse d'Ha",
+      "fr": "Incassable Masse d'Ha",
+      "de": "[!DE] Incassable Masse d'Ha",
+      "es": "[!ES] Incassable Masse d'Ha",
+      "it": "[!IT] Incassable Masse d'Ha",
+      "pt": "[!PT] Incassable Masse d'Ha"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 24,
+    "stats": [
+      { "stat": "Strength", "minStat": null, "maxStat": 16 },
+      { "stat": "Chance", "minStat": null, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 24 },
+        { "stat": "Intelligence", "operator": ">", "value": 4 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7016.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 60,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 19, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "118",
+    "name": {
+      "en": "Barabas",
+      "fr": "Barabas",
+      "de": "Barabas",
+      "es": "Barabas",
+      "it": "Barabas",
+      "pt": "Barabas"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 23,
+    "stats": [{ "stat": "Agility", "minStat": 21, "maxStat": 30 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 13 },
+        { "stat": "Force", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7011.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1088",
+    "name": {
+      "en": "Ha Hammer",
+      "fr": "Marteau Tau",
+      "de": "Ottos Witzhammer",
+      "es": "Martillo Haimito",
+      "it": "Martello Tau",
+      "pt": "Martelo de Tau"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 23,
+    "stats": [
+      { "stat": "Strength", "minStat": 6, "maxStat": 15 },
+      { "stat": "Vitality", "minStat": 6, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7003.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 4,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 6, "maxStat": 17, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "756",
+    "name": {
+      "en": "[!EN] Solide Masse d'Ha",
+      "fr": "Solide Masse d'Ha",
+      "de": "[!DE] Solide Masse d'Ha",
+      "es": "[!ES] Solide Masse d'Ha",
+      "it": "[!IT] Solide Masse d'Ha",
+      "pt": "[!PT] Solide Masse d'Ha"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 22,
+    "stats": [
+      { "stat": "Strength", "minStat": null, "maxStat": 14 },
+      { "stat": "Chance", "minStat": null, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 22 },
+        { "stat": "Intelligence", "operator": ">", "value": 4 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7016.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 60,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 17, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "758",
+    "name": {
+      "en": "[!EN] Petit Marteau R'unique",
+      "fr": "Petit Marteau R'unique",
+      "de": "[!DE] Petit Marteau R'unique",
+      "es": "[!ES] Petit Marteau R'unique",
+      "it": "[!IT] Petit Marteau R'unique",
+      "pt": "[!PT] Petit Marteau R'unique"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 21,
+    "stats": [
+      { "stat": "Intelligence", "minStat": null, "maxStat": 14 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 12 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 28 },
+        { "stat": "Force", "operator": ">", "value": 3 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "147",
+    "name": {
+      "en": "The Chafer Hammer",
+      "fr": "Le Marteau du Chafer",
+      "de": "Chafer-Hammer",
+      "es": "Martillo de chafer",
+      "it": "Il Martello dello Chafer",
+      "pt": "Martelo do Chafer"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 21,
+    "stats": [{ "stat": "Critical", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 10 },
+        { "stat": "Intelligence", "operator": ">", "value": 11 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7009.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "755",
+    "name": {
+      "en": "Dha's Mace",
+      "fr": "Masse d'Ha",
+      "de": "Dualstreitkolben",
+      "es": "Maza Da",
+      "it": "Mazza di Ha",
+      "pt": "Maça de Ha"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 20,
+    "stats": [
+      { "stat": "Strength", "minStat": null, "maxStat": 12 },
+      { "stat": "Chance", "minStat": null, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 20 },
+        { "stat": "Intelligence", "operator": ">", "value": 3 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7016.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 60,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "114",
+    "name": {
+      "en": "[!EN] Puissant Marteau d'Ivoire",
+      "fr": "Puissant Marteau d'Ivoire",
+      "de": "[!DE] Puissant Marteau d'Ivoire",
+      "es": "[!ES] Puissant Marteau d'Ivoire",
+      "it": "[!IT] Puissant Marteau d'Ivoire",
+      "pt": "[!PT] Puissant Marteau d'Ivoire"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 19,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 11 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 10 },
+        { "stat": "Force", "operator": ">", "value": 9 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7003.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "754",
+    "name": {
+      "en": "[!EN] Petite Masse d'Ha",
+      "fr": "Petite Masse d'Ha",
+      "de": "[!DE] Petite Masse d'Ha",
+      "es": "[!ES] Petite Masse d'Ha",
+      "it": "[!IT] Petite Masse d'Ha",
+      "pt": "[!PT] Petite Masse d'Ha"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 18,
+    "stats": [
+      { "stat": "Strength", "minStat": null, "maxStat": 10 },
+      { "stat": "Chance", "minStat": null, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 18 },
+        { "stat": "Intelligence", "operator": ">", "value": 2 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7016.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 60,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "212",
+    "name": {
+      "en": "Birming Hammer",
+      "fr": "Marteau Pickeur",
+      "de": "Preslufts Hammer",
+      "es": "Martillo picador",
+      "it": "Martello Becco",
+      "pt": "Martelo Kispeta"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 18,
+    "stats": [{ "stat": "Strength", "minStat": 21, "maxStat": 25 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 12 },
+        { "stat": "Force", "operator": ">", "value": 6 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7012.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "113",
+    "name": {
+      "en": "[!EN] Grand Marteau d'Ivoire",
+      "fr": "Grand Marteau d'Ivoire",
+      "de": "[!DE] Grand Marteau d'Ivoire",
+      "es": "[!ES] Grand Marteau d'Ivoire",
+      "it": "[!IT] Grand Marteau d'Ivoire",
+      "pt": "[!PT] Grand Marteau d'Ivoire"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 18,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 9 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 10 },
+        { "stat": "Force", "operator": ">", "value": 8 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7003.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "117",
+    "name": {
+      "en": "Cerberus",
+      "fr": "Cerberus",
+      "de": "Cerberus",
+      "es": "Cerberus",
+      "it": "Cerberus",
+      "pt": "Cerberus"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 16,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 15 },
+        { "stat": "Force", "operator": ">", "value": 15 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7007.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "112",
+    "name": {
+      "en": "Ivory Hammer",
+      "fr": "Marteau d'Ivoire",
+      "de": "Elfenbein-Hammer",
+      "es": "Martillo de marfil",
+      "it": "Martello di Avorio",
+      "pt": "Martelo de marfim"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 15,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 7 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 10 },
+        { "stat": "Force", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7003.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "110",
+    "name": {
+      "en": "[!EN] Puissant Marteau de Raclage",
+      "fr": "Puissant Marteau de Raclage",
+      "de": "[!DE] Puissant Marteau de Raclage",
+      "es": "[!ES] Puissant Marteau de Raclage",
+      "it": "[!IT] Puissant Marteau de Raclage",
+      "pt": "[!PT] Puissant Marteau de Raclage"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 15,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 10 },
+        { "stat": "Force", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 18, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1084",
+    "name": {
+      "en": "Aclou Mallet",
+      "fr": "Maillet Aclou",
+      "de": "Elnags Schlägel",
+      "es": "Maza Clavito",
+      "it": "Mazza Kiodo",
+      "pt": "Aclou Mallet"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 15,
+    "stats": [{ "stat": "Damage", "minStat": 1, "maxStat": 3 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7012.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 8, "maxStat": 12, "stat": "Fire damage" }]
+    }
+  },
+  {
+    "dofusID": "109",
+    "name": {
+      "en": "[!EN] Grand Marteau de Raclage",
+      "fr": "Grand Marteau de Raclage",
+      "de": "[!DE] Grand Marteau de Raclage",
+      "es": "[!ES] Grand Marteau de Raclage",
+      "it": "[!IT] Grand Marteau de Raclage",
+      "pt": "[!PT] Grand Marteau de Raclage"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 14,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 10 },
+        { "stat": "Force", "operator": ">", "value": 4 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 17, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "111",
+    "name": {
+      "en": "[!EN] Petit Marteau d'Ivoire",
+      "fr": "Petit Marteau d'Ivoire",
+      "de": "[!DE] Petit Marteau d'Ivoire",
+      "es": "[!ES] Petit Marteau d'Ivoire",
+      "it": "[!IT] Petit Marteau d'Ivoire",
+      "pt": "[!PT] Petit Marteau d'Ivoire"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 10 },
+        { "stat": "Force", "operator": ">", "value": 3 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7003.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "108",
+    "name": {
+      "en": "Scraping Hammer",
+      "fr": "Marteau de Raclage",
+      "de": "Abkratzhammer",
+      "es": "Martillo de paliza",
+      "it": "Martello di Raschiatura",
+      "pt": "Martelo de raspagem"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 10 },
+        { "stat": "Force", "operator": ">", "value": 3 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 16, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "107",
+    "name": {
+      "en": "[!EN] Petit Marteau de Raclage",
+      "fr": "Petit Marteau de Raclage",
+      "de": "[!DE] Petit Marteau de Raclage",
+      "es": "[!ES] Petit Marteau de Raclage",
+      "it": "[!IT] Petit Marteau de Raclage",
+      "pt": "[!PT] Petit Marteau de Raclage"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 10 },
+        { "stat": "Force", "operator": ">", "value": 3 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2028",
+    "name": {
+      "en": "Gobball Hammer",
+      "fr": "Marteau du Bouftou",
+      "de": "Hammer des Fresssacks",
+      "es": "Martillo de jalató",
+      "it": "Martello del Pappatutto",
+      "pt": "Martelo do Papatudo"
+    },
+    "itemType": "Hammer",
+    "setID": "1",
+    "level": 10,
+    "stats": [{ "stat": "Summons", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7023.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 4, "maxStat": 8, "stat": "Fire damage" },
+        { "minStat": 4, "maxStat": 8, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "66",
+    "name": {
+      "en": "[!EN] Puissant Marteau de Boisaille",
+      "fr": "Puissant Marteau de Boisaille",
+      "de": "[!DE] Puissant Marteau de Boisaille",
+      "es": "[!ES] Puissant Marteau de Boisaille",
+      "it": "[!IT] Puissant Marteau de Boisaille",
+      "pt": "[!PT] Puissant Marteau de Boisaille"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 6,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 5 },
+        { "stat": "Force", "operator": ">", "value": 1 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 4, "maxStat": 8, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "65",
+    "name": {
+      "en": "[!EN] Grand Marteau de Boisaille",
+      "fr": "Grand Marteau de Boisaille",
+      "de": "[!DE] Grand Marteau de Boisaille",
+      "es": "[!ES] Grand Marteau de Boisaille",
+      "it": "[!IT] Grand Marteau de Boisaille",
+      "pt": "[!PT] Grand Marteau de Boisaille"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 4,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 3 },
+        { "stat": "Force", "operator": ">", "value": 1 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 7, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "64",
+    "name": {
+      "en": "Twiggy Hammer",
+      "fr": "Marteau de Boisaille",
+      "de": "Hölzerner Hammer",
+      "es": "Martillo de maderucha",
+      "it": "Martello di Legnuccio",
+      "pt": "Martelo de graveto"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 2,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 1 },
+        { "stat": "Force", "operator": ">", "value": 1 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 6, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8775",
+    "name": {
+      "en": "Scratcher Smith's Hammer",
+      "fr": "Marteau de Forgeur de Grattoir",
+      "de": "Schmiedehammer für Kratzer",
+      "es": "Martillo de forjador de rascador",
+      "it": "Martello da Forgiatore di Grattaschiena",
+      "pt": "Martelo de forjador de coçador"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Métier ="],
+      "fr": ["Métier ="],
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
+    },
+    "imageUrl": "/retro/item/7002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 3, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8764",
+    "name": {
+      "en": "Hurrian Hammer",
+      "fr": "Marteau Martel",
+      "de": "Martellhammer",
+      "es": "Martillo Martel",
+      "it": "Martello Martel",
+      "pt": "Martelo Martel"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 60,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": null, "maxStat": 1, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6901",
+    "name": {
+      "en": "[!EN] Marteau du Bricoleur",
+      "fr": "Marteau du Bricoleur",
+      "de": "[!DE] Marteau du Bricoleur",
+      "es": "[!ES] Marteau du Bricoleur",
+      "it": "[!IT] Marteau du Bricoleur",
+      "pt": "[!PT] Marteau du Bricoleur"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7002.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6393",
+    "name": {
+      "en": "[!EN] Marteau du Forgeur de Boucliers",
+      "fr": "Marteau du Forgeur de Boucliers",
+      "de": "[!DE] Marteau du Forgeur de Boucliers",
+      "es": "[!ES] Marteau du Forgeur de Boucliers",
+      "it": "[!IT] Marteau du Forgeur de Boucliers",
+      "pt": "[!PT] Marteau du Forgeur de Boucliers"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7002.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 3, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "633",
+    "name": {
+      "en": "[!EN] Marteau du Forgeur de Haches",
+      "fr": "Marteau du Forgeur de Haches",
+      "de": "[!DE] Marteau du Forgeur de Haches",
+      "es": "[!ES] Marteau du Forgeur de Haches",
+      "it": "[!IT] Marteau du Forgeur de Haches",
+      "pt": "[!PT] Marteau du Forgeur de Haches"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "63",
+    "name": {
+      "en": "[!EN] Petit Marteau de Boisaille",
+      "fr": "Petit Marteau de Boisaille",
+      "de": "[!DE] Petit Marteau de Boisaille",
+      "es": "[!ES] Petit Marteau de Boisaille",
+      "it": "[!IT] Petit Marteau de Boisaille",
+      "pt": "[!PT] Petit Marteau de Boisaille"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 1 },
+        { "stat": "Force", "operator": ">", "value": 1 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/7001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 5, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6118",
+    "name": {
+      "en": "Initiate's Hammer",
+      "fr": "Marteau de l'initié",
+      "de": "Hammer des Initiaten",
+      "es": "Martillo de debutante",
+      "it": "Martello dell'Iniziato",
+      "pt": "Martelo do Iniciado"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "354",
+    "name": {
+      "en": "[!EN] Marteau de Forgeur de Pelles",
+      "fr": "Marteau de Forgeur de Pelles",
+      "de": "[!DE] Marteau de Forgeur de Pelles",
+      "es": "[!ES] Marteau de Forgeur de Pelles",
+      "it": "[!IT] Marteau de Forgeur de Pelles",
+      "pt": "[!PT] Marteau de Forgeur de Pelles"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "353",
+    "name": {
+      "en": "[!EN] Marteau de Forgeur de Dagues",
+      "fr": "Marteau de Forgeur de Dagues",
+      "de": "[!DE] Marteau de Forgeur de Dagues",
+      "es": "[!ES] Marteau de Forgeur de Dagues",
+      "it": "[!IT] Marteau de Forgeur de Dagues",
+      "pt": "[!PT] Marteau de Forgeur de Dagues"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "352",
+    "name": {
+      "en": "[!EN] Marteau de Forgeur d'Epées",
+      "fr": "Marteau de Forgeur d'Epées",
+      "de": "[!DE] Marteau de Forgeur d'Epées",
+      "es": "[!ES] Marteau de Forgeur d'Epées",
+      "it": "[!IT] Marteau de Forgeur d'Epées",
+      "pt": "[!PT] Marteau de Forgeur d'Epées"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "351",
+    "name": {
+      "en": "[!EN] Marteau de Forgeur de Marteaux",
+      "fr": "Marteau de Forgeur de Marteaux",
+      "de": "[!DE] Marteau de Forgeur de Marteaux",
+      "es": "[!ES] Marteau de Forgeur de Marteaux",
+      "it": "[!IT] Marteau de Forgeur de Marteaux",
+      "pt": "[!PT] Marteau de Forgeur de Marteaux"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/7002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1240",
+    "name": {
+      "en": "[!EN] Marteau du Forgemage de Haches",
+      "fr": "Marteau du Forgemage de Haches",
+      "de": "[!DE] Marteau du Forgemage de Haches",
+      "es": "[!ES] Marteau du Forgemage de Haches",
+      "it": "[!IT] Marteau du Forgemage de Haches",
+      "pt": "[!PT] Marteau du Forgemage de Haches"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Métier ="],
+      "fr": ["Métier ="],
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
+    },
+    "imageUrl": "/retro/item/7022.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": null, "maxStat": 1, "stat": "Air damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Water damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Fire damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1239",
+    "name": {
+      "en": "[!EN] Marteau du Forgemage de Marteaux",
+      "fr": "Marteau du Forgemage de Marteaux",
+      "de": "[!DE] Marteau du Forgemage de Marteaux",
+      "es": "[!ES] Marteau du Forgemage de Marteaux",
+      "it": "[!IT] Marteau du Forgemage de Marteaux",
+      "pt": "[!PT] Marteau du Forgemage de Marteaux"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Métier ="],
+      "fr": ["Métier ="],
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
+    },
+    "imageUrl": "/retro/item/7022.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": null, "maxStat": 1, "stat": "Air damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Water damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Fire damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1238",
+    "name": {
+      "en": "[!EN] Marteau du Forgemage de Pelles",
+      "fr": "Marteau du Forgemage de Pelles",
+      "de": "[!DE] Marteau du Forgemage de Pelles",
+      "es": "[!ES] Marteau du Forgemage de Pelles",
+      "it": "[!IT] Marteau du Forgemage de Pelles",
+      "pt": "[!PT] Marteau du Forgemage de Pelles"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Métier ="],
+      "fr": ["Métier ="],
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
+    },
+    "imageUrl": "/retro/item/7022.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": null, "maxStat": 1, "stat": "Air damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Water damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Fire damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1220",
+    "name": {
+      "en": "[!EN] Marteau du Forgemage d'Epées",
+      "fr": "Marteau du Forgemage d'Epées",
+      "de": "[!DE] Marteau du Forgemage d'Epées",
+      "es": "[!ES] Marteau du Forgemage d'Epées",
+      "it": "[!IT] Marteau du Forgemage d'Epées",
+      "pt": "[!PT] Marteau du Forgemage d'Epées"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Métier ="],
+      "fr": ["Métier ="],
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
+    },
+    "imageUrl": "/retro/item/7022.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": null, "maxStat": 1, "stat": "Air damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Water damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Fire damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1202",
+    "name": {
+      "en": "[!EN] Marteau du Forgemage de Dagues",
+      "fr": "Marteau du Forgemage de Dagues",
+      "de": "[!DE] Marteau du Forgemage de Dagues",
+      "es": "[!ES] Marteau du Forgemage de Dagues",
+      "it": "[!IT] Marteau du Forgemage de Dagues",
+      "pt": "[!PT] Marteau du Forgemage de Dagues"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Métier ="],
+      "fr": ["Métier ="],
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
+    },
+    "imageUrl": "/retro/item/7022.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": null, "maxStat": 1, "stat": "Air damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Water damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Fire damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Earth damage" }
+      ]
+    }
+  }
+]

@@ -1,0 +1,126 @@
+[
+  {
+    "dofusID": "9195",
+    "name": {
+      "en": "Fyred Ampe's Pickaxe",
+      "fr": "Pioche de Grizou",
+      "de": "Wetterschlag-Spitzhacke",
+      "es": "Pico de Grizú",
+      "it": "Piccone di Grisup",
+      "pt": "Picareta de Grisu"
+    },
+    "itemType": "Pickaxe",
+    "setID": "149",
+    "level": 41,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/21002.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 25, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1124",
+    "name": {
+      "en": "Unlucky Pick",
+      "fr": "Mauvaise Pioche",
+      "de": "Unglückspickel",
+      "es": "Mal Pico",
+      "it": "Malo Piccone",
+      "pt": "Picareta azarada"
+    },
+    "itemType": "Pickaxe",
+    "setID": null,
+    "level": 25,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/21001.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 4,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1123",
+    "name": {
+      "en": "[!EN] Bonne Pioche",
+      "fr": "Bonne Pioche",
+      "de": "[!DE] Bonne Pioche",
+      "es": "[!ES] Bonne Pioche",
+      "it": "[!IT] Bonne Pioche",
+      "pt": "[!PT] Bonne Pioche"
+    },
+    "itemType": "Pickaxe",
+    "setID": null,
+    "level": 25,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/21001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 4,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "355",
+    "name": {
+      "en": "[!EN] Pioche du Mineur",
+      "fr": "Pioche du Mineur",
+      "de": "[!DE] Pioche du Mineur",
+      "es": "[!ES] Pioche du Mineur",
+      "it": "[!IT] Pioche du Mineur",
+      "pt": "[!PT] Pioche du Mineur"
+    },
+    "itemType": "Pickaxe",
+    "setID": null,
+    "level": 1,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/21001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  }
+]

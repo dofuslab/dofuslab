@@ -1,0 +1,4097 @@
+[
+  {
+    "dofusID": "8105",
+    "name": {
+      "en": "Blord Warrior's Cursed Sword",
+      "fr": "Epée Maudite du Saigneur Guerrier",
+      "de": "Verfluchtes Schwert des Blutkriegers",
+      "es": "Espada maldita del gran Desangrador Guerrero",
+      "it": "Spada Maledetta dello Sgozzatore Assassino",
+      "pt": "Espada maldita do Guerreiro Sangrento"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 200,
+    "stats": [
+      { "stat": "Chance", "minStat": 26, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 30 },
+      { "stat": "Strength", "minStat": 26, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 165 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6083.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 100,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 18, "stat": "Air damage" },
+        { "minStat": 9, "maxStat": 18, "stat": "Water damage" },
+        { "minStat": 9, "maxStat": 18, "stat": "Fire damage" },
+        { "minStat": 9, "maxStat": 18, "stat": "Neutral damage" },
+        { "minStat": 9, "maxStat": 18, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8046",
+    "name": {
+      "en": "Az'tech",
+      "fr": "Az'tech",
+      "de": "Aztacke",
+      "es": "Az'teqka",
+      "it": "Az'Tech",
+      "pt": "Az'teka"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 186,
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 200 },
+        { "stat": "Chance", "operator": ">", "value": 200 },
+        { "stat": "Force", "operator": ">", "value": 200 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6079.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 7,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 31, "maxStat": 50, "stat": "Neutral damage" },
+        { "minStat": 6, "maxStat": 8, "stat": "Air steal" },
+        { "minStat": 6, "maxStat": 8, "stat": "Water steal" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8391",
+    "name": {
+      "en": "Sword Indinz",
+      "fr": "Epée Loponèze",
+      "de": "Erregender Degen",
+      "es": "Espada Bama",
+      "it": "Spada Micotica",
+      "pt": "Espada Indinz"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 184,
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Initiative", "minStat": 401, "maxStat": 700 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 300 },
+        { "stat": "Agilité", "operator": ">", "value": 300 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6085.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 28, "stat": "Water damage" },
+        { "minStat": 6, "maxStat": 28, "stat": "Air damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8047",
+    "name": {
+      "en": "Kukri Kura",
+      "fr": "Kukri Kura",
+      "de": "Schwert des Teilens",
+      "es": "Kukri Kura",
+      "it": "Kubri Kura",
+      "pt": "Kukri Kura"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 179,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Initiative", "minStat": 301, "maxStat": 500 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 300 },
+        { "stat": "Agilité", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6080.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 10, "maxStat": 21, "stat": "Neutral damage" },
+        { "minStat": 10, "maxStat": 21, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7831",
+    "name": {
+      "en": "Sword Hikk",
+      "fr": "L'Épée Nice",
+      "de": "Unbe-Schwert",
+      "es": "Penispada",
+      "it": "La Spada Nis",
+      "pt": "Espada Hikk"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 177,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 6 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 200 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 8 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6076.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 30, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7307",
+    "name": {
+      "en": "Killarity Sword",
+      "fr": "L'Epée Rilleuse",
+      "de": "Schwert Ödlich",
+      "es": "La Espada Risueña",
+      "it": "La Spada Ridente",
+      "pt": "Espada de Killarious"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 169,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 300 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 450 },
+        { "stat": "Vitalité", "operator": ">", "value": 450 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6066.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 26, "maxStat": 50, "stat": "Neutral damage" },
+        { "minStat": 3, "maxStat": 4, "stat": "Earth steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8045",
+    "name": {
+      "en": "Fuchsia",
+      "fr": "Fuschia",
+      "de": "Fuchsiateufelswildchen",
+      "es": "Fucsia",
+      "it": "Fuchsia",
+      "pt": "Fúcsia"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 163,
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 8 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 8 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 300 },
+        { "stat": "Intelligence", "operator": ">", "value": 300 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6078.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 28, "stat": "Air damage" },
+        { "minStat": 16, "maxStat": 28, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6480",
+    "name": {
+      "en": "Furritung",
+      "fr": "Karnak",
+      "de": "Karnak",
+      "es": "Karnak",
+      "it": "Karnak",
+      "pt": "Karnak"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 158,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 8 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 300 },
+        { "stat": "Agilité", "operator": ">", "value": 300 },
+        { "stat": "Classe", "operator": "=", "value": null, "class": "Iop" }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6060.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 29, "maxStat": 47, "stat": "Neutral damage" },
+        { "minStat": 4, "maxStat": 6, "stat": "Air steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7739",
+    "name": {
+      "en": "Crimson Claw",
+      "fr": "Griffe Pourpre",
+      "de": "Purpur-Klaue",
+      "es": "Garra púrpura",
+      "it": "Artiglio Purpureo",
+      "pt": "Garra púrpura"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 145,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 8 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Power", "minStat": 31, "maxStat": 50 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 350 },
+        { "stat": "Vitalité", "operator": ">", "value": 400 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6072.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 8,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 36, "maxStat": 60, "stat": "Neutral damage" },
+        { "minStat": 3, "maxStat": 5, "stat": "Earth steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7308",
+    "name": {
+      "en": "Andy War Sword",
+      "fr": "Le Sabre Ayassalama",
+      "de": "Ayassalama-Säbel",
+      "es": "El Sable Ayasalama",
+      "it": "La Sciabola Ossacip",
+      "pt": "Sabre Triste"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 143,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 400 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 300 },
+        { "stat": "Force", "operator": ">", "value": 130 }
+      ]
+    },
+    "customConditions": {
+      "en": ["[!EN] Classe = encyclopedia.class-6|8|11"],
+      "fr": ["Classe = encyclopedia.class-6|8|11"],
+      "de": ["[!DE] Classe = encyclopedia.class-6|8|11"],
+      "es": ["[!ES] Classe = encyclopedia.class-6|8|11"],
+      "it": ["[!IT] Classe = encyclopedia.class-6|8|11"],
+      "pt": ["[!PT] Classe = encyclopedia.class-6|8|11"]
+    },
+    "imageUrl": "/retro/item/6067.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 80,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 26, "maxStat": 40, "stat": "Neutral damage" },
+        { "minStat": 4, "maxStat": 6, "stat": "Fire steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6483",
+    "name": {
+      "en": "Abatz Sword",
+      "fr": "Glaive Icération",
+      "de": "Buhs Bastardspießschwert",
+      "es": "Espada carnicera",
+      "it": "Gladio Deno",
+      "pt": "Espada de Metzger"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 135,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 300 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 200 },
+        { "stat": "Agilité", "operator": ">", "value": 120 },
+        { "stat": "Vitalité", "operator": ">", "value": 300 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6063.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Neutral damage" },
+        { "minStat": 11, "maxStat": 20, "stat": "Air damage" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7476",
+    "name": {
+      "en": "Dreggon Sword",
+      "fr": "Epée du Dragoeuf",
+      "de": "Drachei-Schwert",
+      "es": "Espada de dragohuevo",
+      "it": "Spada del Draguovo",
+      "pt": "Espada do Dragovo"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 127,
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 45 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 45 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 71, "maxStat": 100 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 8 },
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 8 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 200 },
+        { "stat": "Agilité", "operator": ">", "value": 200 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6068.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 8,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 25, "stat": "Earth damage" },
+        { "minStat": 16, "maxStat": 25, "stat": "Air damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6478",
+    "name": {
+      "en": "Dark Vlad Sword",
+      "fr": "Epée du Dark Vlad",
+      "de": "Klinge des Dark Vlad",
+      "es": "Espada de Dark Vlad",
+      "it": "Spada del Dark Vlad",
+      "pt": "Espada do Dark Vlad"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 126,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 40 },
+      { "stat": "Power", "minStat": 16, "maxStat": 20 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 250 },
+        { "stat": "Intelligence", "operator": ">", "value": 300 },
+        { "stat": "Classe", "operator": "=", "value": null, "class": "Iop" }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6061.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 12,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 18, "maxStat": 32, "stat": "Fire damage" },
+        { "minStat": 11, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6477",
+    "name": {
+      "en": "Grizmine Claw",
+      "fr": "Griffe de Grizmine",
+      "de": "Griesgrahms Kralle",
+      "es": "Garra de Grizmoh Guay",
+      "it": "Artiglio di Musol Ungo",
+      "pt": "Garra de Karafey"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 111,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 300 },
+        { "stat": "Agilité", "operator": ">", "value": 120 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6059.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 31, "maxStat": 48, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7621",
+    "name": {
+      "en": "White Rat Sword",
+      "fr": "Epée du Rat Blanc",
+      "de": "Weißes Rattenschwert",
+      "es": "Espada de la Rata Blanca",
+      "it": "Spada del Ratto Bianco",
+      "pt": "Espada do Rato Branco"
+    },
+    "itemType": "Sword",
+    "setID": "67",
+    "level": 109,
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 35 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 150 },
+        { "stat": "Force", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6071.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 23, "maxStat": 38, "stat": "Air damage" },
+        { "minStat": 3, "maxStat": 5, "stat": "Neutral steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6482",
+    "name": {
+      "en": "Evening Razor",
+      "fr": "Razoir du Soir",
+      "de": "Rasierklinge des Abends",
+      "es": "Afeitadora Nocturna",
+      "it": "Rasoio della Sera",
+      "pt": "Navalha Noturna"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 106,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Critical", "minStat": 5, "maxStat": 7 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 200 },
+        { "stat": "Agilité", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6062.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 23, "maxStat": 37, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8080",
+    "name": {
+      "en": "Perfect Ecaflip Paw",
+      "fr": "Patte d'Ecaflip Parfaite",
+      "de": "Ecaflips perfekte Tatze",
+      "es": "Pata de Zurcarák perfecta",
+      "it": "Zampa di Ecaflip Perfetta",
+      "pt": "Pata de Ecaflip perfeita"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 100,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 41, "maxStat": 70 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 60 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6081.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 31, "maxStat": 50, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7745",
+    "name": {
+      "en": "Stalk Sword",
+      "fr": "Epée Doncule",
+      "de": "Schnallauffall-Schwert",
+      "es": "Espadúnculo",
+      "it": "Spada Botanica",
+      "pt": "Espada Caule"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 100,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 250 },
+        { "stat": "Intelligence", "operator": "<", "value": 1 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6073.png",
+    "weaponStats": {
+      "apCost": 8,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 46, "maxStat": 65, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6132",
+    "name": {
+      "en": "Bwork Chief Blade",
+      "fr": "Lame du Chef Bwork",
+      "de": "Bworkling des Chefs",
+      "es": "Hoja de jefe bwork",
+      "it": "Lama del Capo Bwork",
+      "pt": "Lâmina do Chefe Bwork"
+    },
+    "itemType": "Sword",
+    "setID": "19",
+    "level": 100,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 200 },
+        { "stat": "Agilité", "operator": ">", "value": 200 },
+        { "stat": "Vitalité", "operator": ">", "value": 200 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6048.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 23, "maxStat": 57, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "3622",
+    "name": {
+      "en": "Pink Claw",
+      "fr": "Griffe Rose",
+      "de": "Die Rosarote Klaue",
+      "es": "Garra Rosa",
+      "it": "Artiglio Rosa",
+      "pt": "Garra Rosa"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 100,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 41, "maxStat": 70 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 60 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6041.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 31, "maxStat": 50, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7834",
+    "name": {
+      "en": "[!EN] Epée Choh",
+      "fr": "Epée Choh",
+      "de": "[!DE] Epée Choh",
+      "es": "[!ES] Epée Choh",
+      "it": "[!IT] Epée Choh",
+      "pt": "[!PT] Epée Choh"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 95,
+    "stats": [
+      { "stat": "Initiative", "minStat": 301, "maxStat": 400 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 45 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 45 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 45 },
+      { "stat": "Prospecting", "minStat": null, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 50 },
+        { "stat": "Agilité", "operator": ">", "value": 50 },
+        { "stat": "Force", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6077.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 40, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7814",
+    "name": {
+      "en": "[!EN] Epée qui Pète",
+      "fr": "Epée qui Pète",
+      "de": "[!DE] Epée qui Pète",
+      "es": "[!ES] Epée qui Pète",
+      "it": "[!IT] Epée qui Pète",
+      "pt": "[!PT] Epée qui Pète"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 95,
+    "stats": [
+      { "stat": "Initiative", "minStat": 301, "maxStat": 400 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 45 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 45 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 45 },
+      { "stat": "Prospecting", "minStat": null, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 50 },
+        { "stat": "Agilité", "operator": ">", "value": 50 },
+        { "stat": "Force", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6075.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 40, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2239",
+    "name": {
+      "en": "Fake Claw of Ceangal",
+      "fr": "Fausse Griffe de Ceangal",
+      "de": "Falsche Klaue von Ceangal",
+      "es": "Falsa Garra de Ceangal",
+      "it": "Falso Artiglio di Ceangal",
+      "pt": "Garra falsa de Ceangal"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 95,
+    "stats": [
+      { "stat": "Initiative", "minStat": 301, "maxStat": 400 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 45 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 45 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 45 },
+      { "stat": "Prospecting", "minStat": null, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 50 },
+        { "stat": "Agilité", "operator": ">", "value": 50 },
+        { "stat": "Force", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6035.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 40, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6487",
+    "name": {
+      "en": "Yondanwa Sabre",
+      "fr": "Sabre Yondanwa",
+      "de": "Yodanwa-Säbel",
+      "es": "Sable yondanwa",
+      "it": "Sciabola del Yondanwa",
+      "pt": "Sabre Yondanwa"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 93,
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Power", "minStat": 11, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6058.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 40, "stat": "Neutral damage" },
+        { "minStat": 3, "maxStat": 4, "stat": "Air steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "3763",
+    "name": {
+      "en": "Tyse Pick",
+      "fr": "Pic à Glace",
+      "de": "Eispick",
+      "es": "Pico",
+      "it": "Rompighiaccio",
+      "pt": "Picador de gelo"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 85,
+    "stats": [{ "stat": "Damage", "minStat": 6, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6014.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 26, "maxStat": 30, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6486",
+    "name": {
+      "en": "Sandanwa Sabre",
+      "fr": "Sabre Sandanwa",
+      "de": "Sandanwa-Säbel",
+      "es": "Sable sandanwa",
+      "it": "Sciabola del Sandanwa",
+      "pt": "Sabre Sandanwa"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 83,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 6 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6057.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 28, "maxStat": 41, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1194",
+    "name": {
+      "en": "Nine Tails",
+      "fr": "Neuf Queues",
+      "de": "Neunschwanz",
+      "es": "Nueve Colas",
+      "it": "Nove Code",
+      "pt": "Nove Caudas"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 80,
+    "stats": [
+      { "stat": "Chance", "minStat": null, "maxStat": 9 },
+      { "stat": "Strength", "minStat": null, "maxStat": 9 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 99 },
+        { "stat": "Agilité", "operator": ">", "value": 99 },
+        { "stat": "Vitalité", "operator": ">", "value": 99 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6019.png",
+    "weaponStats": {
+      "apCost": 9,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 20,
+      "critBonusDamage": 9,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 99, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6541",
+    "name": {
+      "en": "Feudala Sabre",
+      "fr": "Sabre Feudala",
+      "de": "Feudala-Säbel",
+      "es": "Sable Fuegodala",
+      "it": "Sciabola Focodala",
+      "pt": "Sabre Fogodala"
+    },
+    "itemType": "Sword",
+    "setID": "37",
+    "level": 76,
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 200 },
+        { "stat": "Agilité", "operator": ">", "value": 60 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6064.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 30, "stat": "Fire damage" },
+        { "minStat": 2, "maxStat": 3, "stat": "Fire steal" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "3623",
+    "name": {
+      "en": "Slicing Fan",
+      "fr": "Eventail Tranchant",
+      "de": "Klingenfächer",
+      "es": "Abanico Cortante",
+      "it": "Ventaglio Tranciante",
+      "pt": "Leque de Corte"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 75,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Sagesse", "operator": ">", "value": 40 },
+        { "stat": "Vitalité", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6024.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 26, "maxStat": 40, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7746",
+    "name": {
+      "en": "Rubber Sword",
+      "fr": "Epée Zervatif",
+      "de": "Gnadenspender",
+      "es": "Espada protectora",
+      "it": "Spada Zervativa",
+      "pt": "Espada de Borracha"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 73,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 35 },
+      { "stat": "Strength", "minStat": 26, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 80 },
+        { "stat": "Intelligence", "operator": ">", "value": 80 },
+        { "stat": "Agilité", "operator": ">", "value": 80 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6074.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 22, "stat": "Neutral damage" },
+        { "minStat": 6, "maxStat": 10, "stat": "Air damage" },
+        { "minStat": 6, "maxStat": 10, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8575",
+    "name": {
+      "en": "Sword Idd",
+      "fr": "Epée Cerp'Teurh'",
+      "de": "Schwert Uh'Ngh'",
+      "es": "Espada Nh'cing",
+      "it": "Spada Tang'Ibil'E",
+      "pt": "Espada Idd"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 70,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 35 },
+        { "stat": "Force", "operator": ">", "value": 35 },
+        { "stat": "Intelligence", "operator": ">", "value": 35 },
+        { "stat": "Chance", "operator": ">", "value": 35 },
+        { "stat": "Vitalité", "operator": ">", "value": 70 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6086.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 4,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 4, "maxStat": 8, "stat": "Air damage" },
+        { "minStat": 4, "maxStat": 8, "stat": "Water damage" },
+        { "minStat": 4, "maxStat": 8, "stat": "Fire damage" },
+        { "minStat": 4, "maxStat": 8, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6154",
+    "name": {
+      "en": "Crocodyl Chief Blade",
+      "fr": "Lame du Chef Crocodaille",
+      "de": "Klinge des Chef-Crocodylls",
+      "es": "Hoja de jefe cocodrail",
+      "it": "Lama del Capo Coccodrail",
+      "pt": "Lâmina do Chefe Crocodyl"
+    },
+    "itemType": "Sword",
+    "setID": "20",
+    "level": 70,
+    "stats": [
+      { "stat": "Vitality", "minStat": 26, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 150 },
+        { "stat": "Chance", "operator": ">", "value": 150 },
+        { "stat": "Vitalité", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6049.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 12,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 40, "stat": "Neutral damage" },
+        { "minStat": 1, "maxStat": 2, "stat": "Neutral steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2050",
+    "name": {
+      "en": "Royal Gobball's Sword",
+      "fr": "Epée Royale du Bouftou",
+      "de": "Schwert des königlichen Fresssacks",
+      "es": "Espada Real de Jalató",
+      "it": "Spada Reale del Pappatutto",
+      "pt": "Espada Real do Papatudo"
+    },
+    "itemType": "Sword",
+    "setID": "4",
+    "level": 70,
+    "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6030.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 4,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 4, "maxStat": 8, "stat": "Air damage" },
+        { "minStat": 4, "maxStat": 8, "stat": "Water damage" },
+        { "minStat": 4, "maxStat": 8, "stat": "Fire damage" },
+        { "minStat": 4, "maxStat": 8, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2238",
+    "name": {
+      "en": "The Sharp Claw",
+      "fr": "La Griffe Aiguisée",
+      "de": "Die geschärfte Klaue",
+      "es": "La Garra Afilada",
+      "it": "L'Artiglio Affilato",
+      "pt": "A Garra Afiada"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 68,
+    "stats": [
+      { "stat": "Initiative", "minStat": 201, "maxStat": 300 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 30 },
+        { "stat": "Agilité", "operator": ">", "value": 30 },
+        { "stat": "Force", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6034.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 12,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 30, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6485",
+    "name": {
+      "en": "Nidanwa Sabre",
+      "fr": "Sabre Nidanwa",
+      "de": "Nidanwa-Säbel",
+      "es": "Sable nidanwa",
+      "it": "Sciabola del Nidanwa",
+      "pt": "Sabre Nidanwa"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 66,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6056.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 26, "maxStat": 37, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1312",
+    "name": {
+      "en": "[!EN] Le Cutter Sanglant",
+      "fr": "Le Cutter Sanglant",
+      "de": "[!DE] Le Cutter Sanglant",
+      "es": "[!ES] Le Cutter Sanglant",
+      "it": "[!IT] Le Cutter Sanglant",
+      "pt": "[!PT] Le Cutter Sanglant"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 64,
+    "stats": [
+      { "stat": "Strength", "minStat": 36, "maxStat": 45 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 20 },
+      { "stat": "Chance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6023.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 17, "maxStat": 39, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "409",
+    "name": {
+      "en": "Kralove Cutting Sword",
+      "fr": "Découpeuse de Kralamoure",
+      "de": "Krakamorzersäbel",
+      "es": "Cortadora de kralamares",
+      "it": "Tranciakralamori",
+      "pt": "Espada de Corte de Kralamor"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 61,
+    "stats": [
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 60 },
+        { "stat": "Sagesse", "operator": ">", "value": 60 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6008.png",
+    "weaponStats": {
+      "apCost": 7,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 31, "maxStat": 45, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8574",
+    "name": {
+      "en": "Sword Onik",
+      "fr": "Epée Rnoh'Hel'",
+      "de": "Schwert Fel'Uhst'",
+      "es": "Espada H'Txín",
+      "it": "Spada Na'Tal'",
+      "pt": "Espada Onik"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 60,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 60 },
+        { "stat": "Vitalité", "operator": ">", "value": 60 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6087.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 35, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1251",
+    "name": {
+      "en": "Yench Cutting Sword",
+      "fr": "Découpeuse de Yench",
+      "de": "Yench-Schnitter",
+      "es": "Trinchadora de Canes",
+      "it": "Tranciacani",
+      "pt": "Faca de Corte Yench"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6021.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 26, "maxStat": 35, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1160",
+    "name": {
+      "en": "Pretty Blade",
+      "fr": "La Zulie Lame",
+      "de": "Das zöne Zwert von Zulie",
+      "es": "La Bunita Hoja",
+      "it": "La Zella Lama",
+      "pt": "Espada Elegante"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      { "stat": "Agility", "minStat": null, "maxStat": 10 },
+      { "stat": "Chance", "minStat": null, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 100 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6015.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 17, "maxStat": 31, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1311",
+    "name": {
+      "en": "[!EN] Le Grand Cutter",
+      "fr": "Le Grand Cutter",
+      "de": "[!DE] Le Grand Cutter",
+      "es": "[!ES] Le Grand Cutter",
+      "it": "[!IT] Le Grand Cutter",
+      "pt": "[!PT] Le Grand Cutter"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 58,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 20 },
+      { "stat": "Chance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6023.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 36, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "93",
+    "name": {
+      "en": "Raziel",
+      "fr": "Razielle",
+      "de": "Razielle",
+      "es": "Raciela",
+      "it": "Raziela",
+      "pt": "Raziela"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 52,
+    "stats": [
+      { "stat": "Strength", "minStat": null, "maxStat": 30 },
+      { "stat": "Agility", "minStat": null, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 104 },
+        { "stat": "Vitalité", "operator": ">", "value": 52 },
+        { "stat": "Agilité", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6016.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 26, "maxStat": 40, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1302",
+    "name": {
+      "en": "Craft Knife",
+      "fr": "Le Cutter",
+      "de": "Der Cutter",
+      "es": "El Cutter",
+      "it": "Il Cutter",
+      "pt": "Faca de Corte"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 52,
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6023.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 33, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1300",
+    "name": {
+      "en": "[!EN] Immortelle Etoile du soir",
+      "fr": "Immortelle Etoile du soir",
+      "de": "[!DE] Immortelle Etoile du soir",
+      "es": "[!ES] Immortelle Etoile du soir",
+      "it": "[!IT] Immortelle Etoile du soir",
+      "pt": "[!PT] Immortelle Etoile du soir"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 52,
+    "stats": [
+      { "stat": "Agility", "minStat": null, "maxStat": 22 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 22 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 13 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 40 },
+        { "stat": "Vitalité", "operator": ">", "value": 40 },
+        { "stat": "Force", "operator": ">", "value": 15 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6022.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 17, "maxStat": 26, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8573",
+    "name": {
+      "en": "Ascen Sword",
+      "fr": "Epée Dal'Douss'",
+      "de": "Schwert Uh'Theilh'",
+      "es": "Espada Ptah'Ble",
+      "it": "Spada Tran'Kil'",
+      "pt": "Espada Ascen"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 50,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6088.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 33, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1299",
+    "name": {
+      "en": "[!EN] Brillante Etoile du soir",
+      "fr": "Brillante Etoile du soir",
+      "de": "[!DE] Brillante Etoile du soir",
+      "es": "[!ES] Brillante Etoile du soir",
+      "it": "[!IT] Brillante Etoile du soir",
+      "pt": "[!PT] Brillante Etoile du soir"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 48,
+    "stats": [
+      { "stat": "Agility", "minStat": null, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 12 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 38 },
+        { "stat": "Vitalité", "operator": ">", "value": 38 },
+        { "stat": "Force", "operator": ">", "value": 13 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6022.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 24, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1301",
+    "name": {
+      "en": "[!EN] Le petit Cutter",
+      "fr": "Le petit Cutter",
+      "de": "[!DE] Le petit Cutter",
+      "es": "[!ES] Le petit Cutter",
+      "it": "[!IT] Le petit Cutter",
+      "pt": "[!PT] Le petit Cutter"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 46,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 6, "maxStat": 10 },
+      { "stat": "Chance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6023.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 30, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "638",
+    "name": {
+      "en": "Ogralimde's Sword",
+      "fr": "Lame d'Ogralimde",
+      "de": "Ogralimdes Klinge",
+      "es": "Hoja de Ogralimde",
+      "it": "Lama di Ogralimde",
+      "pt": "Espada de Ogralimde"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 45,
+    "stats": [{ "stat": "Strength", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6012.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 25,
+      "critBonusDamage": 2,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 28, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2145",
+    "name": {
+      "en": "Croblade",
+      "fr": "Corbalame",
+      "de": "Rabkling",
+      "es": "Cuerbokhoja",
+      "it": "Cuervolama",
+      "pt": "Corvolâmina"
+    },
+    "itemType": "Sword",
+    "setID": "8",
+    "level": 45,
+    "stats": [{ "stat": "Agility", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6032.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 20,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 50, "stat": "Neutral damage" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1298",
+    "name": {
+      "en": "[!EN] Etoile du Soir",
+      "fr": "Etoile du Soir",
+      "de": "[!DE] Etoile du Soir",
+      "es": "[!ES] Etoile du Soir",
+      "it": "[!IT] Etoile du Soir",
+      "pt": "[!PT] Etoile du Soir"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 44,
+    "stats": [
+      { "stat": "Agility", "minStat": null, "maxStat": 17 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 17 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 11 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 36 },
+        { "stat": "Vitalité", "operator": ">", "value": 36 },
+        { "stat": "Force", "operator": ">", "value": 12 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6022.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 22, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "9191",
+    "name": {
+      "en": "Stroy Zemol's Sword",
+      "fr": "Epée de Rekto Topi",
+      "de": "Piffpaffplumps-Schwert",
+      "es": "Espada de Panpun Pon",
+      "it": "Spada di Altap Eto",
+      "pt": "Espada de Stroy Zemol"
+    },
+    "itemType": "Sword",
+    "setID": "148",
+    "level": 41,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6093.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 3,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 25, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "9179",
+    "name": {
+      "en": "Koksiks's Sword",
+      "fr": "Epée de Kocksis",
+      "de": "Racknacknock-Schwert",
+      "es": "Espada de Koxys",
+      "it": "Spada di Koccid",
+      "pt": "Espada de Koksis"
+    },
+    "itemType": "Sword",
+    "setID": "145",
+    "level": 41,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6095.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 22, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "9175",
+    "name": {
+      "en": "Grute's Sword",
+      "fr": "Epée de Grüt",
+      "de": "Bwurgs Schwert",
+      "es": "Espada de Gruut",
+      "it": "Spada di Griut",
+      "pt": "Espada de Grute"
+    },
+    "itemType": "Sword",
+    "setID": "144",
+    "level": 41,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6094.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 18, "maxStat": 27, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6087",
+    "name": {
+      "en": "Wind Kwakblade",
+      "fr": "Kwaklame du Vent",
+      "de": "Luft-Kwacklinge",
+      "es": "Kwakhoja de viento",
+      "it": "Kwaklama di Vento",
+      "pt": "Kwakamina do Vento"
+    },
+    "itemType": "Sword",
+    "setID": "15",
+    "level": 41,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6050.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 16, "maxStat": 25, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "6086",
+    "name": {
+      "en": "Earth Kwakblade",
+      "fr": "Kwaklame de Terre",
+      "de": "Stein-Kwacklinge",
+      "es": "Kwakhoja de tierra",
+      "it": "Kwaklama di Terra",
+      "pt": "Kwakamina da Terra"
+    },
+    "itemType": "Sword",
+    "setID": "14",
+    "level": 41,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6053.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 25, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6085",
+    "name": {
+      "en": "Ice Kwakblade",
+      "fr": "Kwaklame de Glace",
+      "de": "Eis-Kwacklinge",
+      "es": "Kwakhoja de hielo",
+      "it": "Kwaklama di Ghiaccio",
+      "pt": "Kwaklâmina de Gelo"
+    },
+    "itemType": "Sword",
+    "setID": "13",
+    "level": 41,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6051.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 25, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2027",
+    "name": {
+      "en": "Fire Kwakblade",
+      "fr": "Kwaklame de Flammes",
+      "de": "Flammen-Kwacklinge",
+      "es": "Kwakhoja de llamas",
+      "it": "Kwaklama di Fiamma",
+      "pt": "Kwaklâmina do Fogo"
+    },
+    "itemType": "Sword",
+    "setID": "2",
+    "level": 41,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Prospecting", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6052.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 25, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8572",
+    "name": {
+      "en": "Nutyprofe Sword",
+      "fr": "Epée Hi'Zan'",
+      "de": "Schwert Ih'Gheith'",
+      "es": "Espada H'Rdó",
+      "it": "Spada Ru'Ral'",
+      "pt": "Espada Nutyprofe"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 40,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 40 },
+        { "stat": "Vitalité", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6090.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 24, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6484",
+    "name": {
+      "en": "Shodanwa Sabre",
+      "fr": "Sabre Shodanwa",
+      "de": "Shodanwa-Säbel",
+      "es": "Sable shodanwa",
+      "it": "Sciabola del Shodanwa",
+      "pt": "Sabre Shodanwa"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 40,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6055.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 22, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "19",
+    "name": {
+      "en": "Goultard",
+      "fr": "Goultard",
+      "de": "Goultard",
+      "es": "Gúltar",
+      "it": "Gultard",
+      "pt": "Gultar"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 40,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 30 },
+      { "stat": "Strength", "minStat": null, "maxStat": 30 },
+      { "stat": "Agility", "minStat": null, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 80 },
+        { "stat": "Vitalité", "operator": ">", "value": 40 },
+        { "stat": "Agilité", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6017.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 26, "maxStat": 30, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1297",
+    "name": {
+      "en": "[!EN] Petite Etoile du Soir",
+      "fr": "Petite Etoile du Soir",
+      "de": "[!DE] Petite Etoile du Soir",
+      "es": "[!ES] Petite Etoile du Soir",
+      "it": "[!IT] Petite Etoile du Soir",
+      "pt": "[!PT] Petite Etoile du Soir"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 40,
+    "stats": [
+      { "stat": "Agility", "minStat": null, "maxStat": 15 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 35 },
+        { "stat": "Vitalité", "operator": ">", "value": 35 },
+        { "stat": "Force", "operator": ">", "value": 11 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6022.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8742",
+    "name": {
+      "en": "[!EN] Sabroh",
+      "fr": "Sabroh",
+      "de": "[!DE] Sabroh",
+      "es": "[!ES] Sabroh",
+      "it": "[!IT] Sabroh",
+      "pt": "[!PT] Sabroh"
+    },
+    "itemType": "Sword",
+    "setID": "117",
+    "level": 38,
+    "stats": [
+      { "stat": "Strength", "minStat": 11, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 30 },
+        { "stat": "Force", "operator": ">", "value": 20 },
+        { "stat": "Sagesse", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6091.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6277",
+    "name": {
+      "en": "Crackler Blade",
+      "fr": "Lame du Craqueleur",
+      "de": "Krachlerschwert",
+      "es": "Hoja de crujidor",
+      "it": "Lama del Croccaroc",
+      "pt": "Lâmina do Smagador"
+    },
+    "itemType": "Sword",
+    "setID": "26",
+    "level": 37,
+    "stats": [
+      { "stat": "Strength", "minStat": 1, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 4 },
+      { "stat": "Initiative", "minStat": 1, "maxStat": 100 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6054.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 30, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8291",
+    "name": {
+      "en": "[!EN] Epée de Pym",
+      "fr": "Epée de Pym",
+      "de": "[!DE] Epée de Pym",
+      "es": "[!ES] Epée de Pym",
+      "it": "[!IT] Epée de Pym",
+      "pt": "[!PT] Epée de Pym"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 35,
+    "stats": [
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
+      { "stat": "Strength", "minStat": 1, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 10 },
+        { "stat": "Force", "operator": ">", "value": 10 },
+        { "stat": "Agilité", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6084.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2237",
+    "name": {
+      "en": "The Claw",
+      "fr": "La Griffe",
+      "de": "Die Klaue",
+      "es": "La Garra",
+      "it": "L'Artiglio",
+      "pt": "A Garra"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 35,
+    "stats": [
+      { "stat": "Initiative", "minStat": 101, "maxStat": 150 },
+      { "stat": "Strength", "minStat": 1, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 1, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 10 },
+        { "stat": "Force", "operator": ">", "value": 10 },
+        { "stat": "Agilité", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6033.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "20",
+    "name": {
+      "en": "Badoul's Mane",
+      "fr": "La crinière de Badoul",
+      "de": "Badouls Mähne",
+      "es": "Las crines de Badulo",
+      "it": "La Criniera di Badul",
+      "pt": "Crina de Badoul"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 33,
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6011.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8879",
+    "name": {
+      "en": "Swashbuckling Bandit Sword",
+      "fr": "Epée du bandit fine-lame",
+      "de": "Schwert des Banditen-Haudegens",
+      "es": "Espada de bandido espadachín",
+      "it": "Spada del Bandito Lama-Fine",
+      "pt": "Espada do Bandido Duelista"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 30,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6092.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 5, "stat": "Air damage" },
+        { "minStat": 1, "maxStat": 5, "stat": "Water damage" },
+        { "minStat": 1, "maxStat": 5, "stat": "Fire damage" },
+        { "minStat": 1, "maxStat": 5, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8571",
+    "name": {
+      "en": "Sword Inary",
+      "fr": "Epée Ta'Rad'",
+      "de": "Schwert Foh'hl'",
+      "es": "Espada H'Maï",
+      "it": "Spada Ru'Mor'",
+      "pt": "Espada Inary"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 30,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 30 },
+        { "stat": "Vitalité", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6089.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 35,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [{ "minStat": 11, "maxStat": 17, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "209",
+    "name": {
+      "en": "Chafer Blade",
+      "fr": "Lame du Chafer",
+      "de": "Schwert des Chafers",
+      "es": "Cuchilla de chafer",
+      "it": "Lama dello Chafer",
+      "pt": "Lâmina do Chafer"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 27,
+    "stats": [
+      { "stat": "Chance", "minStat": 16, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 54 },
+        { "stat": "Chance", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6005.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 15,
+      "critBonusDamage": 20,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "558",
+    "name": {
+      "en": "[!EN] Lame du Puissant Bwork",
+      "fr": "Lame du Puissant Bwork",
+      "de": "[!DE] Lame du Puissant Bwork",
+      "es": "[!ES] Lame du Puissant Bwork",
+      "it": "[!IT] Lame du Puissant Bwork",
+      "pt": "[!PT] Lame du Puissant Bwork"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 26,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 25 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 52 },
+        { "stat": "Agilité", "operator": ">", "value": 16 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6013.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 22, "maxStat": 26, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "555",
+    "name": {
+      "en": "[!EN] Epée du Puissant Chevalier",
+      "fr": "Epée du Puissant Chevalier",
+      "de": "[!DE] Epée du Puissant Chevalier",
+      "es": "[!ES] Epée du Puissant Chevalier",
+      "it": "[!IT] Epée du Puissant Chevalier",
+      "pt": "[!PT] Epée du Puissant Chevalier"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 26,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 16 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6009.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 4,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 17, "maxStat": 31, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "13",
+    "name": {
+      "en": "[!EN] Puissante Epée d'Alle",
+      "fr": "Puissante Epée d'Alle",
+      "de": "[!DE] Puissante Epée d'Alle",
+      "es": "[!ES] Puissante Epée d'Alle",
+      "it": "[!IT] Puissante Epée d'Alle",
+      "pt": "[!PT] Puissante Epée d'Alle"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 26,
+    "stats": [
+      { "stat": "Strength", "minStat": 12, "maxStat": 16 },
+      { "stat": "Intelligence", "minStat": 12, "maxStat": 16 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 52 },
+        { "stat": "Intelligence", "operator": ">", "value": 18 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 6,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "221",
+    "name": {
+      "en": "The Klebik",
+      "fr": "La Klebik",
+      "de": "Nüs Schwert",
+      "es": "La Klebik",
+      "it": "La Klebik",
+      "pt": "O Klebik"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 25,
+    "stats": [{ "stat": "Wisdom", "minStat": 16, "maxStat": 20 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 50 },
+        { "stat": "Sagesse", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6011.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 12,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "557",
+    "name": {
+      "en": "[!EN] Lame du Grand Bwork",
+      "fr": "Lame du Grand Bwork",
+      "de": "[!DE] Lame du Grand Bwork",
+      "es": "[!ES] Lame du Grand Bwork",
+      "it": "[!IT] Lame du Grand Bwork",
+      "pt": "[!PT] Lame du Grand Bwork"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 24,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 20 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 48 },
+        { "stat": "Agilité", "operator": ">", "value": 14 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6013.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 20, "maxStat": 24, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "554",
+    "name": {
+      "en": "[!EN] Epée du Grand Chevalier",
+      "fr": "Epée du Grand Chevalier",
+      "de": "[!DE] Epée du Grand Chevalier",
+      "es": "[!ES] Epée du Grand Chevalier",
+      "it": "[!IT] Epée du Grand Chevalier",
+      "pt": "[!PT] Epée du Grand Chevalier"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 24,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 14 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6009.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 4,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 29, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "12",
+    "name": {
+      "en": "[!EN] Grande Epée d'Alle",
+      "fr": "Grande Epée d'Alle",
+      "de": "[!DE] Grande Epée d'Alle",
+      "es": "[!ES] Grande Epée d'Alle",
+      "it": "[!IT] Grande Epée d'Alle",
+      "pt": "[!PT] Grande Epée d'Alle"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 24,
+    "stats": [
+      { "stat": "Strength", "minStat": 9, "maxStat": 13 },
+      { "stat": "Intelligence", "minStat": 9, "maxStat": 13 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 48 },
+        { "stat": "Intelligence", "operator": ">", "value": 14 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 6,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "556",
+    "name": {
+      "en": "Bwork Blade",
+      "fr": "Lame du Bwork",
+      "de": "Bworklinge",
+      "es": "Hoja de bwork",
+      "it": "Lama del Bwork",
+      "pt": "Lâmina do Bwork"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 23,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 15 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 46 },
+        { "stat": "Agilité", "operator": ">", "value": 8 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6013.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 18, "maxStat": 22, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "553",
+    "name": {
+      "en": "Knight Sword",
+      "fr": "Epée du Chevalier",
+      "de": "Schwert des Ritters",
+      "es": "Espada de caballero",
+      "it": "Spada del Cavaliere",
+      "pt": "Espada do Cavaleiro"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 23,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 12 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6009.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 4,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 27, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "21",
+    "name": {
+      "en": "Infernal Sharp",
+      "fr": "Le Tranchant Infernal",
+      "de": "Höllisch Scharf",
+      "es": "El Filo Infernal",
+      "it": "La Lama Infernale",
+      "pt": "Cortadora Infernal"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 22,
+    "stats": [{ "stat": "Agility", "minStat": 16, "maxStat": 25 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 44 },
+        { "stat": "Agilité", "operator": ">", "value": 15 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6013.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "11",
+    "name": {
+      "en": "Fwell Sword",
+      "fr": "Epée d'Alle",
+      "de": "Schwert Ragen",
+      "es": "Espada chifladora",
+      "it": "Spada di Alle",
+      "pt": "Espada Noza"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 22,
+    "stats": [
+      { "stat": "Strength", "minStat": 7, "maxStat": 11 },
+      { "stat": "Intelligence", "minStat": 7, "maxStat": 11 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 44 },
+        { "stat": "Intelligence", "operator": ">", "value": 12 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 6,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "225",
+    "name": {
+      "en": "The Infernal Tail",
+      "fr": "La Queue Infernale",
+      "de": "Höllenschwanz",
+      "es": "La Cola Infernal",
+      "it": "La Coda Infernale",
+      "pt": "A Cauda Infernal"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 21,
+    "stats": [{ "stat": "Agility", "minStat": 11, "maxStat": 15 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 42 },
+        { "stat": "Agilité", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 15,
+      "critBonusDamage": 20,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 35, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "220",
+    "name": {
+      "en": "[!EN] Epée du Petit Chevalier",
+      "fr": "Epée du Petit Chevalier",
+      "de": "[!DE] Epée du Petit Chevalier",
+      "es": "[!ES] Epée du Petit Chevalier",
+      "it": "[!IT] Epée du Petit Chevalier",
+      "pt": "[!PT] Epée du Petit Chevalier"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 21,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6009.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 4,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 25, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "208",
+    "name": {
+      "en": "[!EN] Lame du Petit Bwork",
+      "fr": "Lame du Petit Bwork",
+      "de": "[!DE] Lame du Petit Bwork",
+      "es": "[!ES] Lame du Petit Bwork",
+      "it": "[!IT] Lame du Petit Bwork",
+      "pt": "[!PT] Lame du Petit Bwork"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 21,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6013.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "14",
+    "name": {
+      "en": "The Sad Blade",
+      "fr": "La Triste Lame",
+      "de": "Traurikling",
+      "es": "La Triste Hoja",
+      "it": "La Triste Lama",
+      "pt": "A Lâmina Triste"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 21,
+    "stats": [{ "stat": "Critical", "minStat": 4, "maxStat": 6 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6005.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 20,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "10",
+    "name": {
+      "en": "[!EN] Petite Epée d'Alle",
+      "fr": "Petite Epée d'Alle",
+      "de": "[!DE] Petite Epée d'Alle",
+      "es": "[!ES] Petite Epée d'Alle",
+      "it": "[!IT] Petite Epée d'Alle",
+      "pt": "[!PT] Petite Epée d'Alle"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 21,
+    "stats": [
+      { "stat": "Strength", "minStat": 6, "maxStat": 10 },
+      { "stat": "Intelligence", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 42 },
+        { "stat": "Intelligence", "operator": ">", "value": 6 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 6,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "199",
+    "name": {
+      "en": "Slash",
+      "fr": "Koupe-koupe",
+      "de": "Schnipp-Schnapp",
+      "es": "Korta-Kotas",
+      "it": "Taj-Taj",
+      "pt": "Korta-korta"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 18,
+    "stats": [
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6004.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 20,
+      "critBonusDamage": 6,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "552",
+    "name": {
+      "en": "[!EN] Puissante Epée Sacrée",
+      "fr": "Puissante Epée Sacrée",
+      "de": "[!DE] Puissante Epée Sacrée",
+      "es": "[!ES] Puissante Epée Sacrée",
+      "it": "[!IT] Puissante Epée Sacrée",
+      "pt": "[!PT] Puissante Epée Sacrée"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 17,
+    "stats": [{ "stat": "Vitality", "minStat": 11, "maxStat": 15 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 34 },
+        { "stat": "Vitalité", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "18",
+    "name": {
+      "en": "[!EN] Puissante Epée d'Ha",
+      "fr": "Puissante Epée d'Ha",
+      "de": "[!DE] Puissante Epée d'Ha",
+      "es": "[!ES] Puissante Epée d'Ha",
+      "it": "[!IT] Puissante Epée d'Ha",
+      "pt": "[!PT] Puissante Epée d'Ha"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 17,
+    "stats": [{ "stat": "Vitality", "minStat": 14, "maxStat": 18 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 34 },
+        { "stat": "Vitalité", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6006.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 8,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "551",
+    "name": {
+      "en": "[!EN] Grande Epée Sacrée",
+      "fr": "Grande Epée Sacrée",
+      "de": "[!DE] Grande Epée Sacrée",
+      "es": "[!ES] Grande Epée Sacrée",
+      "it": "[!IT] Grande Epée Sacrée",
+      "pt": "[!PT] Grande Epée Sacrée"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 16,
+    "stats": [{ "stat": "Vitality", "minStat": 10, "maxStat": 14 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 32 },
+        { "stat": "Vitalité", "operator": ">", "value": 4 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "198",
+    "name": {
+      "en": "Karne Rider Blade",
+      "fr": "Lame du Chevaucheur de Karne",
+      "de": "Schwert des Raubritters von Kleppripp",
+      "es": "Hoja del cabalgador de karne",
+      "it": "Lama del Cavaliere di Karne",
+      "pt": "Lâmina do Cavaleiro de Karne"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 16,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 16 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6003.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "17",
+    "name": {
+      "en": "[!EN] Grande Epée d'Ha",
+      "fr": "Grande Epée d'Ha",
+      "de": "[!DE] Grande Epée d'Ha",
+      "es": "[!ES] Grande Epée d'Ha",
+      "it": "[!IT] Grande Epée d'Ha",
+      "pt": "[!PT] Grande Epée d'Ha"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 16,
+    "stats": [{ "stat": "Vitality", "minStat": 13, "maxStat": 17 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 32 },
+        { "stat": "Vitalité", "operator": ">", "value": 8 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6006.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 8,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "9",
+    "name": {
+      "en": "[!EN] Puissante Epée de Fouraille",
+      "fr": "Puissante Epée de Fouraille",
+      "de": "[!DE] Puissante Epée de Fouraille",
+      "es": "[!ES] Puissante Epée de Fouraille",
+      "it": "[!IT] Puissante Epée de Fouraille",
+      "pt": "[!PT] Puissante Epée de Fouraille"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 15,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 14 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 18, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "550",
+    "name": {
+      "en": "Holy Sword",
+      "fr": "Epée Sacrée",
+      "de": "Heiliges Schwert",
+      "es": "Espada sagrada",
+      "it": "Spada Sacra",
+      "pt": "Espada sagrada"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 15,
+    "stats": [{ "stat": "Vitality", "minStat": 9, "maxStat": 13 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 30 },
+        { "stat": "Vitalité", "operator": ">", "value": 3 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "16",
+    "name": {
+      "en": "Ha Sword",
+      "fr": "Epée d'Ha",
+      "de": "Dualschwert",
+      "es": "Espada Dha",
+      "it": "Spada di Ha",
+      "pt": "Espada de Ha"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 15,
+    "stats": [{ "stat": "Vitality", "minStat": 12, "maxStat": 16 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 30 },
+        { "stat": "Vitalité", "operator": ">", "value": 6 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6006.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 8,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8",
+    "name": {
+      "en": "[!EN] Grande Epée de Fouraille",
+      "fr": "Grande Epée de Fouraille",
+      "de": "[!DE] Grande Epée de Fouraille",
+      "es": "[!ES] Grande Epée de Fouraille",
+      "it": "[!IT] Grande Epée de Fouraille",
+      "pt": "[!PT] Grande Epée de Fouraille"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 14,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 13 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 17, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7",
+    "name": {
+      "en": "Smithy Sword",
+      "fr": "Epée de Fouraille",
+      "de": "Eisernes Schwert",
+      "es": "Espada de hierrucho",
+      "it": "Spada di Ferruccio",
+      "pt": "Espada de sucata"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 12 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 16, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6",
+    "name": {
+      "en": "[!EN] Petite Epée de Fouraille",
+      "fr": "Petite Epée de Fouraille",
+      "de": "[!DE] Petite Epée de Fouraille",
+      "es": "[!ES] Petite Epée de Fouraille",
+      "it": "[!IT] Petite Epée de Fouraille",
+      "pt": "[!PT] Petite Epée de Fouraille"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 11 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "224",
+    "name": {
+      "en": "The Tail",
+      "fr": "La Queue",
+      "de": "Schwanzus Longus",
+      "es": "La Cola",
+      "it": "La Coda",
+      "pt": "A Cauda"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 26 },
+        { "stat": "Agilité", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 15,
+      "critBonusDamage": 20,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 25, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "219",
+    "name": {
+      "en": "[!EN] Petite Epée Sacrée",
+      "fr": "Petite Epée Sacrée",
+      "de": "[!DE] Petite Epée Sacrée",
+      "es": "[!ES] Petite Epée Sacrée",
+      "it": "[!IT] Petite Epée Sacrée",
+      "pt": "[!PT] Petite Epée Sacrée"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Vitality", "minStat": 8, "maxStat": 12 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 26 },
+        { "stat": "Vitalité", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "15",
+    "name": {
+      "en": "[!EN] Petite Epée d'Ha",
+      "fr": "Petite Epée d'Ha",
+      "de": "[!DE] Petite Epée d'Ha",
+      "es": "[!ES] Petite Epée d'Ha",
+      "it": "[!IT] Petite Epée d'Ha",
+      "pt": "[!PT] Petite Epée d'Ha"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Vitality", "minStat": 11, "maxStat": 15 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 26 },
+        { "stat": "Vitalité", "operator": ">", "value": 4 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/6006.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 8,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6394",
+    "name": {
+      "en": "Ice Knight Sword",
+      "fr": "Epée du Chevalier de Glace",
+      "de": "Schwert des Eisritters",
+      "es": "Espada de Caballero de Hielo",
+      "it": "Spada del Cavaliere di Ghiaccio",
+      "pt": "Espada do Cavaleiro de Gelo"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 12,
+    "stats": [{ "stat": "Chance", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6051.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": []
+    }
+  },
+  {
+    "dofusID": "5",
+    "name": {
+      "en": "[!EN] Puissante Epée de Boisaille",
+      "fr": "Puissante Epée de Boisaille",
+      "de": "[!DE] Puissante Epée de Boisaille",
+      "es": "[!ES] Puissante Epée de Boisaille",
+      "it": "[!IT] Puissante Epée de Boisaille",
+      "pt": "[!PT] Puissante Epée de Boisaille"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 7,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6007.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 4, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "4",
+    "name": {
+      "en": "[!EN] Grande Epée de Boisaille",
+      "fr": "Grande Epée de Boisaille",
+      "de": "[!DE] Grande Epée de Boisaille",
+      "es": "[!ES] Grande Epée de Boisaille",
+      "it": "[!IT] Grande Epée de Boisaille",
+      "pt": "[!PT] Grande Epée de Boisaille"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 6,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6007.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 9, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "3",
+    "name": {
+      "en": "Twiggy Sword",
+      "fr": "Epée de Boisaille",
+      "de": "Hölzernes Schwert",
+      "es": "Espada de maderucha",
+      "it": "Spada di Legnuccio",
+      "pt": "Espada de graveto"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 3,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6007.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 8, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2",
+    "name": {
+      "en": "[!EN] Petite Epée de Boisaille",
+      "fr": "Petite Epée de Boisaille",
+      "de": "[!DE] Petite Epée de Boisaille",
+      "es": "[!ES] Petite Epée de Boisaille",
+      "it": "[!IT] Petite Epée de Boisaille",
+      "pt": "[!PT] Petite Epée de Boisaille"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 2,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6007.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 7, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6173",
+    "name": {
+      "en": "Yanguru Sword",
+      "fr": "Epée de Yanguru",
+      "de": "Schwert des Yangurus",
+      "es": "Espada de Yanguiciado",
+      "it": "Spada di Yanguru",
+      "pt": "Espada Yanguru"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Personnage = Féminin"],
+      "fr": ["Personnage = Féminin"],
+      "de": ["[!DE] Personnage = Féminin"],
+      "es": ["[!ES] Personnage = Féminin"],
+      "it": ["[!IT] Personnage = Féminin"],
+      "pt": ["[!PT] Personnage = Féminin"]
+    },
+    "imageUrl": "/retro/item/6018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 5, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6172",
+    "name": {
+      "en": "Yingnitiate Sword",
+      "fr": "Epée de Yingnitié",
+      "de": "Schwert des Yinglings",
+      "es": "Espada de Yinguiciado",
+      "it": "Spada di Yingnitié",
+      "pt": "Espada Yingnitiate"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Personnage = Masculin"],
+      "fr": ["Personnage = Masculin"],
+      "de": ["[!DE] Personnage = Masculin"],
+      "es": ["[!ES] Personnage = Masculin"],
+      "it": ["[!IT] Personnage = Masculin"],
+      "pt": ["[!PT] Personnage = Masculin"]
+    },
+    "imageUrl": "/retro/item/6018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 5, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6113",
+    "name": {
+      "en": "Initiate's Sword",
+      "fr": "Épée de l'initié",
+      "de": "Schwert des Initiaten",
+      "es": "Espada de debutante",
+      "it": "Spada dell'Iniziato",
+      "pt": "Espada do iniciado"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6096.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 5, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6030",
+    "name": {
+      "en": "Bouquet of Demonic Roses",
+      "fr": "Bouquet de Roses démoniaques",
+      "de": "Dämonenrosenstrauß",
+      "es": "Ramo de rosas demoníacas",
+      "it": "Mazzo di Rose Demoniache",
+      "pt": "Buquê de rosas demoníacas"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/6047.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 1,
+      "is2Handed": false,
+      "weapon_effects": []
+    }
+  }
+]

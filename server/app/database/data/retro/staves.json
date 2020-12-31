@@ -1,0 +1,3913 @@
+[
+  {
+    "dofusID": "8236",
+    "name": {
+      "en": "Mush Mishish Staff",
+      "fr": "Bâton Champmanique",
+      "de": "Schamorchel-Stab",
+      "es": "Báculo de Setador",
+      "it": "Bastone Fungmanico",
+      "pt": "Bastão Cogumânico"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 191,
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 200 },
+        { "stat": "Chance", "operator": ">", "value": 200 },
+        { "stat": "Intelligence", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4080.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 18, "maxStat": 27, "stat": "Neutral damage" },
+        { "minStat": 1, "maxStat": 8, "stat": "Earth steal" },
+        { "minStat": 1, "maxStat": 8, "stat": "Water steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7962",
+    "name": {
+      "en": "Tynril Rhizome",
+      "fr": "Rhizome du Tynril",
+      "de": "Tynril-Rhizom",
+      "es": "Rizoma de Tynril",
+      "it": "Rizoma del Tynril",
+      "pt": "Rizoma do Tynril"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 186,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 41, "maxStat": 60 },
+      { "stat": "Heals", "minStat": 5, "maxStat": 7 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 250 },
+        { "stat": "Force", "operator": ">", "value": 200 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4077.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Earth damage" },
+        { "minStat": 4, "maxStat": 6, "stat": "Fire steal" },
+        { "minStat": 13, "maxStat": 21, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6474",
+    "name": {
+      "en": "Thrusty Staff",
+      "fr": "Rod Gerse",
+      "de": "Rod Gerse",
+      "es": "Rod Gers",
+      "it": "Rod Gers",
+      "pt": "Rod Gers"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 176,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4059.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 7,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 21, "stat": "Fire damage" },
+        { "minStat": 9, "maxStat": 21, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7961",
+    "name": {
+      "en": "Zoth Master Staff",
+      "fr": "Bâton du Maître Zoth",
+      "de": "Stock des Zoth-Meisters",
+      "es": "Bastón de maestro zoth",
+      "it": "Bastone del Maestro Zoth",
+      "pt": "Bastão do Mestre Zoth"
+    },
+    "itemType": "Staff",
+    "setID": "94",
+    "level": 158,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 180 },
+        { "stat": "Force", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4076.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 40, "stat": "Neutral damage" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7459",
+    "name": {
+      "en": "Minotot Sceptre",
+      "fr": "Sceptre du Minotot",
+      "de": "Szepter des Minotots",
+      "es": "Cetro del Minotot",
+      "it": "Scettro del Minotot",
+      "pt": "Cetro do Minotot"
+    },
+    "itemType": "Staff",
+    "setID": "57",
+    "level": 151,
+    "stats": [
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 71, "maxStat": 120 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4067.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 27, "stat": "Neutral damage" },
+        { "minStat": 3, "maxStat": 5, "stat": "Water steal" },
+        { "minStat": 3, "maxStat": 5, "stat": "Fire steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7974",
+    "name": {
+      "en": "Floramor Root",
+      "fr": "Racine de Floribonde",
+      "de": "Floribond-Wurzel",
+      "es": "Raíz de floribundo",
+      "it": "Radice di Floribond",
+      "pt": "Raiz de Floramor"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 144,
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Agility", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 41, "maxStat": 60 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4079.png",
+    "weaponStats": {
+      "apCost": 2,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [{ "minStat": 1, "maxStat": 10, "stat": "Air steal" }]
+    }
+  },
+  {
+    "dofusID": "6462",
+    "name": {
+      "en": "Root Well",
+      "fr": "Racine Cithi",
+      "de": "Wurzel Triss",
+      "es": "Raíz Kyerda Unida",
+      "it": "Radice Cithy",
+      "pt": "Raiz do Bem"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 143,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 5, "maxStat": 6 },
+      { "stat": "Power", "minStat": 16, "maxStat": 20 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 150 },
+        { "stat": "Vitalité", "operator": ">", "value": 400 },
+        { "stat": "Intelligence", "operator": ">", "value": 50 },
+        { "stat": "Agilité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4053.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 16, "stat": "Neutral damage" },
+        { "minStat": 7, "maxStat": 16, "stat": "Neutral damage" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7973",
+    "name": {
+      "en": "Barkritter Root",
+      "fr": "Racine de Fécorce",
+      "de": "Rindent-Wurzel",
+      "es": "Raíz de diente pe-león",
+      "it": "Radice di Fecorza",
+      "pt": "Raiz de Tronks"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 138,
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4078.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 16, "stat": "Water damage" },
+        { "minStat": 9, "maxStat": 16, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7304",
+    "name": {
+      "en": "Palm Cane",
+      "fr": "La Canne Bière",
+      "de": "Tua Kwän-Stock",
+      "es": "El Bastón Rubé",
+      "it": "La Canna Birra",
+      "pt": "Taquara"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 134,
+    "stats": [
+      { "stat": "Agility", "minStat": 21, "maxStat": 35 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 150 },
+        { "stat": "Agilité", "operator": ">", "value": 150 },
+        { "stat": "Intelligence", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4065.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 150,
+      "critBonusDamage": 20,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 16, "stat": "Neutral damage" },
+        { "minStat": 7, "maxStat": 16, "stat": "Air damage" },
+        { "minStat": 3, "maxStat": 5, "stat": "Fire steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5897",
+    "name": {
+      "en": "Earlik Branch",
+      "fr": "Kelinobranche",
+      "de": "Kelinoast",
+      "es": "Kelinorrama",
+      "it": "Kelinoramo",
+      "pt": "Kelinobranch"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 129,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 250 },
+        { "stat": "Vitalité", "operator": ">", "value": 200 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4038.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 30, "stat": "Neutral damage" },
+        { "minStat": 3, "maxStat": 6, "stat": "Neutral steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7481",
+    "name": {
+      "en": "Dreggon Staff",
+      "fr": "Bâton du Dragoeuf",
+      "de": "Drachei-Stecken",
+      "es": "Bastón de dragohuevo",
+      "it": "Bastone del Draguovo",
+      "pt": "Bastão do Dragovo"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 124,
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 45 },
+      { "stat": "Vitality", "minStat": 81, "maxStat": 130 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 40 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 400 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 300 },
+        { "stat": "Agilité", "operator": ">", "value": 150 },
+        { "stat": "Vitalité", "operator": ">", "value": 300 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4066.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 24, "maxStat": 43, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6331",
+    "name": {
+      "en": "Sangroku's Staff",
+      "fr": "Bâton de Sangroku",
+      "de": "Stock von Sangroku",
+      "es": "Bastón de Sanchoku",
+      "it": "Bastone di Sangroku",
+      "pt": "Cajado de Sangroku"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 120,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 45 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 151, "maxStat": 200 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 250 },
+        { "stat": "Vitalité", "operator": ">", "value": 300 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4047.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 13, "stat": "Air damage" },
+        { "minStat": 10, "maxStat": 16, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5899",
+    "name": {
+      "en": "The Hagogue Root",
+      "fr": "La Racine Hagogue",
+      "de": "Biens Stock",
+      "es": "La Raíz Varreche",
+      "it": "La Radice Agoga",
+      "pt": "A Raiz Hagogue"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 120,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": 5, "maxStat": 6 },
+      { "stat": "Initiative", "minStat": 151, "maxStat": 250 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 200 },
+        { "stat": "Vitalité", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4040.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 30, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5898",
+    "name": {
+      "en": "Cinati Root",
+      "fr": "La Racine Cinati",
+      "de": "Cinatis Wurzel",
+      "es": "La Raíz Zinzinati",
+      "it": "La Radice Sinati",
+      "pt": "Raiz de Cinati"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 120,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 80 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 200 },
+        { "stat": "Force", "operator": ">", "value": 200 },
+        { "stat": "Vitalité", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4039.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 15, "stat": "Earth damage" },
+        { "minStat": 6, "maxStat": 15, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7960",
+    "name": {
+      "en": "Rotaflor Stem",
+      "fr": "Tige du Brouture",
+      "de": "Rindefix-Stängel",
+      "es": "Tallo de esquejika",
+      "it": "Stelo di Brutbrut",
+      "pt": "Caule de Rotaflor"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 119,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 45 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 45 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 200 },
+        { "stat": "Intelligence", "operator": ">", "value": 200 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4075.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 13, "stat": "Air damage" },
+        { "minStat": 7, "maxStat": 13, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7303",
+    "name": {
+      "en": "Caribbean Staff",
+      "fr": "Bâton des Caraïbes",
+      "de": "Stecken der Karibuik",
+      "es": "Barra del Caribe",
+      "it": "Bastone dei Caraibi",
+      "pt": "Bastão do Caribe"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 114,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 100 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 200 },
+        { "stat": "Agilité", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4064.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 35,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [{ "minStat": 9, "maxStat": 20, "stat": "Fire steal" }]
+    }
+  },
+  {
+    "dofusID": "3033",
+    "name": {
+      "en": "Marie Aigue's Staff",
+      "fr": "Bâton de Marie Aigue",
+      "de": "Marie Aigues Stock",
+      "es": "Bastón de María Pluma",
+      "it": "Bastone di Mary Eg",
+      "pt": "Cajado de Marie Aigue"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 112,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 250 },
+        { "stat": "Agilité", "operator": ">", "value": 100 },
+        { "stat": "Vitalité", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4030.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 30, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7748",
+    "name": {
+      "en": "Studded Staff",
+      "fr": "Le Bâton Cloutay",
+      "de": "Stagelnock",
+      "es": "El Bastón Claveado",
+      "it": "Il Bastone Chiodato",
+      "pt": "Cajado Pregado"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 107,
+    "stats": [
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 100 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 150 },
+        { "stat": "Intelligence", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4072.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 7,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 13, "stat": "Air damage" },
+        { "minStat": 9, "maxStat": 13, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6466",
+    "name": {
+      "en": "Red Root Chileepaperz",
+      "fr": "Racine Sémilla",
+      "de": "Apothecawurzlika",
+      "es": "Raíz Sin Semilla",
+      "it": "Radice Semilla",
+      "pt": "Raiz Vermelha Chileepaperz"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 106,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 250 },
+        { "stat": "Sagesse", "operator": ">", "value": 60 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4054.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 5, "stat": "Fire steal" },
+        { "minStat": 6, "maxStat": 18, "stat": "Neutral damage" },
+        { "minStat": 3, "maxStat": 5, "stat": "Earth steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6470",
+    "name": {
+      "en": "Root Een",
+      "fr": "Racine Hécure",
+      "de": "Schlagwurzel",
+      "es": "Raíz cúbica",
+      "it": "Radice Danient",
+      "pt": "Raiz Hécure"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 103,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Critical", "minStat": 5, "maxStat": 7 },
+      { "stat": "Power", "minStat": 16, "maxStat": 25 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 200 },
+        { "stat": "Sagesse", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4057.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 31, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6467",
+    "name": {
+      "en": "Black Mel Root",
+      "fr": "Racine Hécouanone",
+      "de": "Ers Druckwurzel",
+      "es": "Raíz Tziar",
+      "it": "Radice Hekuanone",
+      "pt": "Raiz Torquia"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 103,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 130 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Power", "minStat": 16, "maxStat": 20 },
+      { "stat": "Initiative", "minStat": 151, "maxStat": 200 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4060.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 25,
+      "critBonusDamage": 15,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 35, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6346",
+    "name": {
+      "en": "Granny Candy's Stick",
+      "fr": "Canne de Mamie Bonbon",
+      "de": "Oma Pralinchens Spazierstock",
+      "es": "Bastón de Abuelita Bombón",
+      "it": "Canna di Mamy Bonbon",
+      "pt": "Bastão da Vovó Bombom"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 98,
+    "stats": [
+      { "stat": "Vitality", "minStat": 81, "maxStat": 110 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 45 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 100 },
+        { "stat": "Vitalité", "operator": ">", "value": 300 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4048.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 40, "stat": "Neutral damage" },
+        { "minStat": 2, "maxStat": 3, "stat": "Neutral steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5901",
+    "name": {
+      "en": "Feca Staff",
+      "fr": "Bâton du Féca",
+      "de": "Stock des Fécas",
+      "es": "Bastón de Feca",
+      "it": "Bastone del Feca",
+      "pt": "Bastão do Feca"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 94,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "% Air Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 1, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4042.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 7,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 37, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6491",
+    "name": {
+      "en": "Yondanwa Staff",
+      "fr": "Bâton du Yondanwa",
+      "de": "Yodanwa-Stock",
+      "es": "Bastón yondanwa",
+      "it": "Bastone del Yondanwa",
+      "pt": "Cajado Yondanwa"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 93,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 5, "maxStat": 6 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4052.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 18, "maxStat": 27, "stat": "Neutral damage" },
+        { "minStat": 2, "maxStat": 3, "stat": "Earth steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6468",
+    "name": {
+      "en": "Lady Root",
+      "fr": "Racine Huzohide",
+      "de": "Sinusoidalgewurzel",
+      "es": "Raíz atractiva",
+      "it": "Radice Inusyt",
+      "pt": "Raiz sinuosa"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 88,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 8 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4055.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 30, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5835",
+    "name": {
+      "en": "Dark Treestaff",
+      "fr": "Abraton Sombre",
+      "de": "Schattenastecken",
+      "es": "Paloabra oscuro",
+      "it": "Alberastone Oscuro",
+      "pt": "Arvrastão Sombrio"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 87,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 35 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 150 },
+        { "stat": "Sagesse", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4023.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 29, "stat": "Neutral damage" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6469",
+    "name": {
+      "en": "Disast Root",
+      "fr": "Racine Histre",
+      "de": "Katastrowurzel",
+      "es": "Raíz siniestra",
+      "it": "Radice Taclisma",
+      "pt": "Raiz de Desastre"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 86,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4056.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 30, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6464",
+    "name": {
+      "en": "Froot Root",
+      "fr": "Racine Horodon",
+      "de": "YamYam-Wurzel",
+      "es": "Raíz Cynorrhodon",
+      "it": "Radice Ofrut",
+      "pt": "Raiz Mágica"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 86,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4058.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 11, "stat": "Neutral damage" },
+        { "minStat": 2, "maxStat": 3, "stat": "Fire steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7749",
+    "name": {
+      "en": "Scrap Staff",
+      "fr": "La Bastonneuze",
+      "de": "Klopps Stock",
+      "es": "Bastón de Fraye",
+      "it": "La Bastonatrice",
+      "pt": "Bastão de Fraye"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 85,
+    "stats": [
+      { "stat": "Power", "minStat": 21, "maxStat": 35 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 70 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Sagesse", "operator": ">", "value": 150 },
+        { "stat": "Vitalité", "operator": ">", "value": 200 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4073.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 35,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 28, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "408",
+    "name": {
+      "en": "Gobball Master Staff",
+      "fr": "Bâton du Maître des Bouftous",
+      "de": "Stecken der Fresssackhirten",
+      "es": "Bastón del Amo de los Jalatós",
+      "it": "Bastone dell'Allevatore di Pappatutto",
+      "pt": "Bastão do mestre dos Papatudos"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 85,
+    "stats": [
+      { "stat": "Critical", "minStat": 2, "maxStat": 6 },
+      { "stat": "Summons", "minStat": 3, "maxStat": 4 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 7 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 60 },
+        { "stat": "Sagesse", "operator": ">", "value": 20 },
+        { "stat": "Agilité", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4006.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5823",
+    "name": {
+      "en": "Aga Dou's Staff",
+      "fr": "Bâton d'Aga Dou",
+      "de": "Aga Dous Stock",
+      "es": "Bastón de Loh Doh",
+      "it": "Bastone d'Aga Dou",
+      "pt": "Bastão de Aga Duh"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 81,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 80 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4031.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 27, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7484",
+    "name": {
+      "en": "Shika's Staff",
+      "fr": "Bâton de Shika",
+      "de": "Shikas Stecken",
+      "es": "Bastón de Shika",
+      "it": "Bastone di Shika",
+      "pt": "Cajado de Shika"
+    },
+    "itemType": "Staff",
+    "setID": "53",
+    "level": 80,
+    "stats": [
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Power", "minStat": 4, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 31, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 26, "maxStat": 35 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4069.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 26, "stat": "Fire damage" },
+        { "minStat": 2, "maxStat": 3, "stat": "Water steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6490",
+    "name": {
+      "en": "Sandanwa Staff",
+      "fr": "Bâton du Sandanwa",
+      "de": "Sandanwa-Stock",
+      "es": "Bastón sandanwa",
+      "it": "Bastone del Sandanwa",
+      "pt": "Cajado de Sandanwa"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 80,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Heals", "minStat": 3, "maxStat": 4 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 200 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 100 },
+        { "stat": "Vitalité", "operator": ">", "value": 70 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4051.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 13, "stat": "Air damage" },
+        { "minStat": 9, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6104",
+    "name": {
+      "en": "Farle's Staff",
+      "fr": "Bâton de Farle",
+      "de": "Farles Stock",
+      "es": "Bastón de Farle",
+      "it": "Bastone di Farle",
+      "pt": "Bastão de Farle"
+    },
+    "itemType": "Staff",
+    "setID": "17",
+    "level": 80,
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 26, "maxStat": 35 },
+      { "stat": "Critical", "minStat": 1, "maxStat": 2 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Power", "minStat": 4, "maxStat": 5 },
+      { "stat": "Initiative", "minStat": 31, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 100 },
+        { "stat": "Vitalité", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4043.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 26, "stat": "Neutral damage" },
+        { "minStat": 2, "maxStat": 3, "stat": "Neutral steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7123",
+    "name": {
+      "en": "Koolich Staff",
+      "fr": "Bâton du Koulosse",
+      "de": "Stock des Kuhlosses",
+      "es": "Bastón de Trankitronko",
+      "it": "Bastone del Culosse",
+      "pt": "Bastão do Tronkoso"
+    },
+    "itemType": "Staff",
+    "setID": "44",
+    "level": 75,
+    "stats": [{ "stat": "Vitality", "minStat": 51, "maxStat": 150 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4062.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 20,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 4, "maxStat": 8, "stat": "Air steal" },
+        { "minStat": -1, "maxStat": -2, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8617",
+    "name": {
+      "en": "Staff Igraf",
+      "fr": "Bâton Lap'Louz'",
+      "de": "Stock Ho'Hlmh'",
+      "es": "Bastón Nell'Hada",
+      "it": "Bastone Ras'Agiar'Din'",
+      "pt": "Cajado Igraff"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 70,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 35 },
+        { "stat": "Force", "operator": ">", "value": 35 },
+        { "stat": "Chance", "operator": ">", "value": 35 },
+        { "stat": "Intelligence", "operator": ">", "value": 35 },
+        { "stat": "Vitalité", "operator": ">", "value": 70 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4087.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 2,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 4, "maxStat": 7, "stat": "Air damage" },
+        { "minStat": 4, "maxStat": 7, "stat": "Water damage" },
+        { "minStat": 4, "maxStat": 7, "stat": "Fire damage" },
+        { "minStat": 4, "maxStat": 7, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "91",
+    "name": {
+      "en": "God Rod",
+      "fr": "God Rod",
+      "de": "Gott-Stock",
+      "es": "God Rod",
+      "it": "God Rod",
+      "pt": "Vara de Deus"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 67,
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 25 },
+      { "stat": "Critical", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 60 },
+        { "stat": "Vitalité", "operator": ">", "value": 10 },
+        { "stat": "Sagesse", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4007.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6489",
+    "name": {
+      "en": "Nidanwa Staff",
+      "fr": "Bâton du Nidanwa",
+      "de": "Nidanwa-Stock",
+      "es": "Bastón nidanwa",
+      "it": "Bastone del Nidanwa",
+      "pt": "Cajado de Nidanwa"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 62,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4050.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8616",
+    "name": {
+      "en": "Staff Amished",
+      "fr": "Bâton Lav'Heur'",
+      "de": "Stock Weh'Rkh'",
+      "es": "Bastón Mar'Tinh",
+      "it": "Bastone Orset'Olav'Ator'",
+      "pt": "Cajado Esfomeado"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 60,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 60 },
+        { "stat": "Vitalité", "operator": ">", "value": 60 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4086.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 3,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 22, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "849",
+    "name": {
+      "en": "[!EN] Excellent Bâton des Rois",
+      "fr": "Excellent Bâton des Rois",
+      "de": "[!DE] Excellent Bâton des Rois",
+      "es": "[!ES] Excellent Bâton des Rois",
+      "it": "[!IT] Excellent Bâton des Rois",
+      "pt": "[!PT] Excellent Bâton des Rois"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 56, "maxStat": 75 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Earth Resistance", "minStat": 3, "maxStat": 4 },
+      { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 4 },
+      { "stat": "Water Resistance", "minStat": 3, "maxStat": 4 },
+      { "stat": "Air Resistance", "minStat": 3, "maxStat": 4 },
+      { "stat": "Fire Resistance", "minStat": 3, "maxStat": 4 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 10, "maxStat": 18, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5871",
+    "name": {
+      "en": "Wobot Staff",
+      "fr": "Bâton du Wobot",
+      "de": "Wobot-Stock",
+      "es": "Bastón de wobot",
+      "it": "Bastone del Wobot",
+      "pt": "Bastão do Wobot"
+    },
+    "itemType": "Staff",
+    "setID": "11",
+    "level": 60,
+    "stats": [
+      { "stat": "Agility", "minStat": 11, "maxStat": 20 },
+      { "stat": "Critical", "minStat": null, "maxStat": 1 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Earth Resistance", "minStat": 3, "maxStat": 4 },
+      { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 4 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 60 },
+        { "stat": "Vitalité", "operator": ">", "value": 60 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4037.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 23, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "95",
+    "name": {
+      "en": "Kryst O'Ball",
+      "fr": "Kryst O'Boul",
+      "de": "Kryst O'Boul",
+      "es": "Krystobola",
+      "it": "Kryst O'Bul",
+      "pt": "Krys O’boul"
+    },
+    "itemType": "Staff",
+    "setID": "38",
+    "level": 59,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 59 },
+        { "stat": "Agilité", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4063.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "205",
+    "name": {
+      "en": "Bwork Magus Staff",
+      "fr": "Bâton du Bwork Mage",
+      "de": "Stecken des Bwork Magus",
+      "es": "Bastón de bwork mago",
+      "it": "Bastone del Bwork Mago",
+      "pt": "Bastão do Bwork Mago"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 58,
+    "stats": [
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 5 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 30 },
+      { "stat": "Prospecting", "minStat": 2, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 58 },
+        { "stat": "Agilité", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4001.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "425",
+    "name": {
+      "en": "Tofu Master Staff",
+      "fr": "Bâton du Maître des Tofus",
+      "de": "Stecken der Tofuhirten",
+      "es": "Bastón del Amo de los Tofus",
+      "it": "Bastone dell'Allevatore di Tofu",
+      "pt": "Bastão do Mestre dos Tofus"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 56,
+    "stats": [
+      { "stat": "Summons", "minStat": null, "maxStat": 2 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 40 },
+        { "stat": "Sagesse", "operator": ">", "value": 10 },
+        { "stat": "Force", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4006.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "92",
+    "name": {
+      "en": "Hook",
+      "fr": "Hook",
+      "de": "Hook",
+      "es": "Hook",
+      "it": "Hook",
+      "pt": "Hook"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 55,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 40 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 30 },
+        { "stat": "Chance", "operator": ">", "value": 10 },
+        { "stat": "Force", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4004.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5900",
+    "name": {
+      "en": "Savage Root",
+      "fr": "Racine Sauvageonne",
+      "de": "Sauvages Wurzel",
+      "es": "Raíz del plantón salvaje",
+      "it": "Radice Scorbutica",
+      "pt": "Raiz Selvagem"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 54,
+    "stats": [
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Summons", "minStat": null, "maxStat": 2 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4041.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 4, "stat": "Neutral damage" },
+        { "minStat": 1, "maxStat": 2, "stat": "Neutral steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1701",
+    "name": {
+      "en": "Kaniger Staff",
+      "fr": "Bâton du Kanigrou",
+      "de": "Stecken des Kanigrous",
+      "es": "Bastón de kanugro",
+      "it": "Bastone del Kanigrù",
+      "pt": "Bastão do Kanigre"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 54,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 35 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 35 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 35 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 50 },
+        { "stat": "Agilité", "operator": ">", "value": 40 },
+        { "stat": "Chance", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4022.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 18, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "851",
+    "name": {
+      "en": "[!EN] Grand Bâton des Rois",
+      "fr": "Grand Bâton des Rois",
+      "de": "[!DE] Grand Bâton des Rois",
+      "es": "[!ES] Grand Bâton des Rois",
+      "it": "[!IT] Grand Bâton des Rois",
+      "pt": "[!PT] Grand Bâton des Rois"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 52,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 25 },
+      { "stat": "Earth Resistance", "minStat": null, "maxStat": 2 },
+      { "stat": "Neutral Resistance", "minStat": null, "maxStat": 2 },
+      { "stat": "Water Resistance", "minStat": null, "maxStat": 2 },
+      { "stat": "Air Resistance", "minStat": null, "maxStat": 2 },
+      { "stat": "Fire Resistance", "minStat": null, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 16, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "9433",
+    "name": {
+      "en": "Manitou Zoth's Staff",
+      "fr": "Bâton du Manitou Zoth",
+      "de": "Manitu Zoth Stock",
+      "es": "Bastón del zoth Manitú",
+      "it": "Bastone di Manitù Zoth",
+      "pt": "Bastão do Mandachuva Zoth"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 50,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4091.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 17, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8615",
+    "name": {
+      "en": "Staff Ternoon",
+      "fr": "Bâton Boh'La'",
+      "de": "Stock Eh'Nteh'",
+      "es": "Bastón Boh'La",
+      "it": "Bastone Tom'Boh'La'",
+      "pt": "Cajado Ternoon"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 50,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4085.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 19, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "847",
+    "name": {
+      "en": "[!EN] Omnicient bâton-boule de voyante",
+      "fr": "Omnicient bâton-boule de voyante",
+      "de": "[!DE] Omnicient bâton-boule de voyante",
+      "es": "[!ES] Omnicient bâton-boule de voyante",
+      "it": "[!IT] Omnicient bâton-boule de voyante",
+      "pt": "[!PT] Omnicient bâton-boule de voyante"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 50,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 20 },
+      { "stat": "Chance", "minStat": null, "maxStat": 25 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Sagesse", "operator": ">", "value": 18 },
+        { "stat": "Agilité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4018.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 8,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 10, "maxStat": 16, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "850",
+    "name": {
+      "en": "Kings' Staff",
+      "fr": "Bâton des Rois",
+      "de": "Königsstecken",
+      "es": "Bastón de los reyes",
+      "it": "Scettro dei Re",
+      "pt": "Bastão dos Reis"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 46,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 45 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 20 },
+      { "stat": "Earth Resistance", "minStat": null, "maxStat": 2 },
+      { "stat": "Neutral Resistance", "minStat": null, "maxStat": 2 },
+      { "stat": "Water Resistance", "minStat": null, "maxStat": 2 },
+      { "stat": "Air Resistance", "minStat": null, "maxStat": 2 },
+      { "stat": "Fire Resistance", "minStat": null, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6488",
+    "name": {
+      "en": "Shodanwa Staff",
+      "fr": "Bâton du Shodanwa",
+      "de": "Shodanwa-Stock",
+      "es": "Bastón shodanwa",
+      "it": "Bastone del Shodanwa",
+      "pt": "Cajado de Shodanwa"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 46,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 30 },
+        { "stat": "Sagesse", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4049.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 10, "maxStat": 19, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2029",
+    "name": {
+      "en": "Treestaff",
+      "fr": "Abraton",
+      "de": "Astecken",
+      "es": "Paloabra",
+      "it": "Alberastone",
+      "pt": "Arvrastão"
+    },
+    "itemType": "Staff",
+    "setID": "3",
+    "level": 45,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4023.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 3,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "9183",
+    "name": {
+      "en": "Goboff's Staff",
+      "fr": "Bâton de Gobeuf",
+      "de": "Gobschling-Stecken",
+      "es": "Bastón de Gobuevo",
+      "it": "Bastone di Gobluovo",
+      "pt": "Bastão de Gobovo"
+    },
+    "itemType": "Staff",
+    "setID": "146",
+    "level": 43,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4090.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 5, "maxStat": 13, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "6538",
+    "name": {
+      "en": "Akwadala Staff",
+      "fr": "Bâton Akwadala",
+      "de": "Akwadala-Stecken",
+      "es": "Bastón Akwadala",
+      "it": "Bastone Aksadala",
+      "pt": "Bastão Akwadala"
+    },
+    "itemType": "Staff",
+    "setID": "34",
+    "level": 43,
+    "stats": [
+      { "stat": "Chance", "minStat": 11, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4061.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 13, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8537",
+    "name": {
+      "en": "[!EN] Bâton Poupinateur",
+      "fr": "Bâton Poupinateur",
+      "de": "[!DE] Bâton Poupinateur",
+      "es": "[!ES] Bâton Poupinateur",
+      "it": "[!IT] Bâton Poupinateur",
+      "pt": "[!PT] Bâton Poupinateur"
+    },
+    "itemType": "Staff",
+    "setID": "140",
+    "level": 42,
+    "stats": [
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 60 },
+        { "stat": "Sagesse", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4082.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 10,
+      "critBonusDamage": 1,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "846",
+    "name": {
+      "en": "[!EN] Grand Bâton-Boule de Voyante",
+      "fr": "Grand Bâton-Boule de Voyante",
+      "de": "[!DE] Grand Bâton-Boule de Voyante",
+      "es": "[!ES] Grand Bâton-Boule de Voyante",
+      "it": "[!IT] Grand Bâton-Boule de Voyante",
+      "pt": "[!PT] Grand Bâton-Boule de Voyante"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 42,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 16 },
+      { "stat": "Chance", "minStat": null, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Sagesse", "operator": ">", "value": 15 },
+        { "stat": "Agilité", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4018.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "848",
+    "name": {
+      "en": "[!EN] Simple Bâton des Rois",
+      "fr": "Simple Bâton des Rois",
+      "de": "[!DE] Simple Bâton des Rois",
+      "es": "[!ES] Simple Bâton des Rois",
+      "it": "[!IT] Simple Bâton des Rois",
+      "pt": "[!PT] Simple Bâton des Rois"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 41,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 2 },
+      { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 2 },
+      { "stat": "Water Resistance", "minStat": 1, "maxStat": 2 },
+      { "stat": "Air Resistance", "minStat": 1, "maxStat": 2 },
+      { "stat": "Fire Resistance", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8614",
+    "name": {
+      "en": "Staff Ro",
+      "fr": "Bâton Bouk'Tou'",
+      "de": "Stock Beh'Sofnh'",
+      "es": "Bastón Buk'Tûh",
+      "it": "Bastone Tom'Buk'Tu'",
+      "pt": "Cajado Ro"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 40,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 40 },
+        { "stat": "Vitalité", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4084.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [{ "minStat": 11, "maxStat": 18, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "193",
+    "name": {
+      "en": "[!EN] Bâton du Puissant Tabi",
+      "fr": "Bâton du Puissant Tabi",
+      "de": "[!DE] Bâton du Puissant Tabi",
+      "es": "[!ES] Bâton du Puissant Tabi",
+      "it": "[!IT] Bâton du Puissant Tabi",
+      "pt": "[!PT] Bâton du Puissant Tabi"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 40,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 45 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4006.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1052",
+    "name": {
+      "en": "Staff of Dina Mite",
+      "fr": "Bâton de Dina, dit 'le Mythe'",
+      "de": "Dinas Mythosstock",
+      "es": "Bastón de Dina Mita",
+      "it": "Bastone di Dina, Detta \"La Mythe\"",
+      "pt": "Cajado de Dina 'Mite'"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 40,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 15, "maxStat": 22 },
+      { "stat": "Earth Resistance", "minStat": 5, "maxStat": 9 },
+      { "stat": "Neutral Resistance", "minStat": 5, "maxStat": 9 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 50 },
+        { "stat": "Agilité", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4006.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 6, "maxStat": 10, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "1048",
+    "name": {
+      "en": "Tont'Ata Staff",
+      "fr": "Bâton Tont'Ata",
+      "de": "Opiskrkrücks Stock",
+      "es": "Bastón Tontolonero",
+      "it": "Bastone Tont 'Olone",
+      "pt": "Cajado de Tont'Ata"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 40,
+    "stats": [{ "stat": "Wisdom", "minStat": 11, "maxStat": 30 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4005.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 5,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 30, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8743",
+    "name": {
+      "en": "[!EN] La Chaplanne",
+      "fr": "La Chaplanne",
+      "de": "[!DE] La Chaplanne",
+      "es": "[!ES] La Chaplanne",
+      "it": "[!IT] La Chaplanne",
+      "pt": "[!PT] La Chaplanne"
+    },
+    "itemType": "Staff",
+    "setID": "116",
+    "level": 37,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4088.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "843",
+    "name": {
+      "en": "[!EN] Enorme bâton Dakn",
+      "fr": "Enorme bâton Dakn",
+      "de": "[!DE] Enorme bâton Dakn",
+      "es": "[!ES] Enorme bâton Dakn",
+      "it": "[!IT] Enorme bâton Dakn",
+      "pt": "[!PT] Enorme bâton Dakn"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 37,
+    "stats": [{ "stat": "Strength", "minStat": 26, "maxStat": 40 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 40 },
+        { "stat": "Agilité", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4019.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 17, "maxStat": 21, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "192",
+    "name": {
+      "en": "[!EN] Bâton du Grand Tabi",
+      "fr": "Bâton du Grand Tabi",
+      "de": "[!DE] Bâton du Grand Tabi",
+      "es": "[!ES] Bâton du Grand Tabi",
+      "it": "[!IT] Bâton du Grand Tabi",
+      "pt": "[!PT] Bâton du Grand Tabi"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 37,
+    "stats": [
+      { "stat": "Vitality", "minStat": 16, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4006.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "845",
+    "name": {
+      "en": "Crystal Staff-Ball",
+      "fr": "Bâton-Boule de Voyante",
+      "de": "Kristalliner Kugelstock",
+      "es": "Bastón-bola de vidente",
+      "it": "Bastone-Sfera di Veggente",
+      "pt": "Bastão-Bola de Cristal"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 35,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 13 },
+      { "stat": "Chance", "minStat": null, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Sagesse", "operator": ">", "value": 10 },
+        { "stat": "Agilité", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4018.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 6,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "839",
+    "name": {
+      "en": "[!EN] Véritable bâton de fausse magie",
+      "fr": "Véritable bâton de fausse magie",
+      "de": "[!DE] Véritable bâton de fausse magie",
+      "es": "[!ES] Véritable bâton de fausse magie",
+      "it": "[!IT] Véritable bâton de fausse magie",
+      "pt": "[!PT] Véritable bâton de fausse magie"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 35,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 25 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4016.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "524",
+    "name": {
+      "en": "Treechnidis Vivitus",
+      "fr": "Abraknydi Vivitus",
+      "de": "Astaknydis Vivitus",
+      "es": "Abraknydi Vivitus",
+      "it": "Alberagnis Vivitus",
+      "pt": "Arvraknidis Vivitus"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 34,
+    "stats": [
+      { "stat": "Chance", "minStat": null, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": null, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 30 },
+        { "stat": "Intelligence", "operator": ">", "value": 34 },
+        { "stat": "Sagesse", "operator": ">", "value": 15 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4001.png",
+    "weaponStats": {
+      "apCost": 2,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "426",
+    "name": {
+      "en": "Tabi Master Staff",
+      "fr": "Bâton du Maître des Tabis",
+      "de": "Stecken der Tabihirten",
+      "es": "Bastón del Amo de los Tabis",
+      "it": "Bastone dell'Allevatore di Tabi",
+      "pt": "Cajado de Mestre Tabi"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 34,
+    "stats": [
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 20 },
+        { "stat": "Sagesse", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4006.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "191",
+    "name": {
+      "en": "Tabi Staff",
+      "fr": "Bâton du Tabi",
+      "de": "Tabistock",
+      "es": "Bastón del Tabi",
+      "it": "Bastone del Tabi",
+      "pt": "Bastão do Tabi"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 34,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 10 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 35 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4006.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "842",
+    "name": {
+      "en": "[!EN] Gros Bâton Dakn",
+      "fr": "Gros Bâton Dakn",
+      "de": "[!DE] Gros Bâton Dakn",
+      "es": "[!ES] Gros Bâton Dakn",
+      "it": "[!IT] Gros Bâton Dakn",
+      "pt": "[!PT] Gros Bâton Dakn"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 33,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 33 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 35 },
+        { "stat": "Agilité", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4019.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 19, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8376",
+    "name": {
+      "en": "[!EN] Pailleton",
+      "fr": "Pailleton",
+      "de": "[!DE] Pailleton",
+      "es": "[!ES] Pailleton",
+      "it": "[!IT] Pailleton",
+      "pt": "[!PT] Pailleton"
+    },
+    "itemType": "Staff",
+    "setID": "115",
+    "level": 32,
+    "stats": [{ "stat": "Critical", "minStat": null, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 32 },
+        { "stat": "Agilité", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4081.png",
+    "weaponStats": {
+      "apCost": 2,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 6, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6097",
+    "name": {
+      "en": "Ambusher-up",
+      "fr": "Fourbasse-Ton",
+      "de": "Heckenschützerstecken",
+      "es": "Mazoporrazo",
+      "it": "Furba-Ston",
+      "pt": "Bastarbustor"
+    },
+    "itemType": "Staff",
+    "setID": "16",
+    "level": 32,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4044.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 20,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 3, "stat": "Neutral steal" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "206",
+    "name": {
+      "en": "Gwandpa Wabbit's Staff",
+      "fr": "Bâton du Grand Pa Wabbit",
+      "de": "Stock des Wabbitopas",
+      "es": "Bastón de awelito wabbit",
+      "it": "Bastone del Nonno Wabbit",
+      "pt": "Bastão do Vovô Wabbit"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 32,
+    "stats": [{ "stat": "Critical", "minStat": null, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 32 },
+        { "stat": "Agilité", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4001.png",
+    "weaponStats": {
+      "apCost": 2,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 6, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8880",
+    "name": {
+      "en": "Wandering Bandit Staff",
+      "fr": "Bâton du bandit baroudeur",
+      "de": "Stock des Banditen-Glücksritters",
+      "es": "Bastón de bandido pendenciero",
+      "it": "Bastone del Bandito Battagliero",
+      "pt": "Cajado do Bandido Viajante"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 30,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4089.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 5, "stat": "Air damage" },
+        { "minStat": 1, "maxStat": 5, "stat": "Water damage" },
+        { "minStat": 1, "maxStat": 5, "stat": "Fire damage" },
+        { "minStat": 1, "maxStat": 5, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8613",
+    "name": {
+      "en": "Staff Renzi",
+      "fr": "Bâton Bah'Pik'",
+      "de": "Stock Eh'Lshuh'",
+      "es": "Bastón Gad'Has",
+      "it": "Bastone Perf'Et'Toh'",
+      "pt": "Cajado Renzi"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 30,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 30 },
+        { "stat": "Vitalité", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4083.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 15, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "803",
+    "name": {
+      "en": "[!EN] Grand bâton de fausse magie",
+      "fr": "Grand bâton de fausse magie",
+      "de": "[!DE] Grand bâton de fausse magie",
+      "es": "[!ES] Grand bâton de fausse magie",
+      "it": "[!IT] Grand bâton de fausse magie",
+      "pt": "[!PT] Grand bâton de fausse magie"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 30,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4016.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "300",
+    "name": {
+      "en": "Treechnid Root Staff",
+      "fr": "Bâton en Racine d'Abraknyde",
+      "de": "Stock aus Astaknydenwurzeln",
+      "es": "Bastón de raíz de abráknido",
+      "it": "Bastone in Radice di Alberagno",
+      "pt": "Bastão de Raiz de Arvraknídeo"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 30,
+    "stats": [
+      { "stat": "Critical", "minStat": null, "maxStat": 3 },
+      { "stat": "Chance", "minStat": null, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 30 },
+        { "stat": "Chance", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4001.png",
+    "weaponStats": {
+      "apCost": 2,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 20,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2240",
+    "name": {
+      "en": "Carnivorous Staff",
+      "fr": "Bâton Carnivore",
+      "de": "Fleischsteckender Fressen",
+      "es": "Bastón Carnívoro",
+      "it": "Bastone Carnivoro",
+      "pt": "Bastão Carnívoro"
+    },
+    "itemType": "Staff",
+    "setID": "7",
+    "level": 30,
+    "stats": [{ "stat": "Agility", "minStat": 1, "maxStat": 30 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4024.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 20,
+      "critBonusDamage": 3,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 4, "maxStat": 9, "stat": "Air steal" }]
+    }
+  },
+  {
+    "dofusID": "190",
+    "name": {
+      "en": "[!EN] Bâton du Petit Tabi",
+      "fr": "Bâton du Petit Tabi",
+      "de": "[!DE] Bâton du Petit Tabi",
+      "es": "[!ES] Bâton du Petit Tabi",
+      "it": "[!IT] Bâton du Petit Tabi",
+      "pt": "[!PT] Bâton du Petit Tabi"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 30,
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 10 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4006.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1049",
+    "name": {
+      "en": "Forgetfulness Staff",
+      "fr": "Bâton d'Oubli",
+      "de": "VergissmeinStocknicht",
+      "es": "Bastón del Olvido",
+      "it": "Bastone di Oblio",
+      "pt": "Bastão do esquecimento"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 30,
+    "stats": [
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4011.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 15, "stat": "Air damage" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "841",
+    "name": {
+      "en": "Dakn Staff",
+      "fr": "Bâton Dakn",
+      "de": "Aknefer-Stecken",
+      "es": "Bastón de Akné",
+      "it": "Bastone Dakn",
+      "pt": "Cajado de Dakn"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 29,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 28 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 30 },
+        { "stat": "Agilité", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4019.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 17, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "482",
+    "name": {
+      "en": "Horned Staff",
+      "fr": "Bâton Cornu",
+      "de": "Gehörnter Stecken",
+      "es": "Bastón cornudo",
+      "it": "Bastone Cornuto",
+      "pt": "Bastão Chifrudo"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 29,
+    "stats": [{ "stat": "Chance", "minStat": 26, "maxStat": 40 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 20 },
+        { "stat": "Intelligence", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1053",
+    "name": {
+      "en": "Arson Fire Staff",
+      "fr": "La Lance à un \"110\"",
+      "de": "112xSpritzstock",
+      "es": "Bastón Extintor",
+      "it": "La Lancia dei \"110\"",
+      "pt": "Cajado de Fogo do Incendiário"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 29,
+    "stats": [
+      { "stat": "Earth Resistance", "minStat": 2, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 2, "maxStat": 5 },
+      { "stat": "Chance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "844",
+    "name": {
+      "en": "[!EN] Petit Bâton-Boule de Voyante",
+      "fr": "Petit Bâton-Boule de Voyante",
+      "de": "[!DE] Petit Bâton-Boule de Voyante",
+      "es": "[!ES] Petit Bâton-Boule de Voyante",
+      "it": "[!IT] Petit Bâton-Boule de Voyante",
+      "pt": "[!PT] Petit Bâton-Boule de Voyante"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 28,
+    "stats": [
+      { "stat": "Chance", "minStat": null, "maxStat": 10 },
+      { "stat": "Wisdom", "minStat": null, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Sagesse", "operator": ">", "value": 10 },
+        { "stat": "Agilité", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4018.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "802",
+    "name": {
+      "en": "Fake Magic Staff",
+      "fr": "Bâton de fausse magie",
+      "de": "Magischeinstecken",
+      "es": "Bastón de magia falsa",
+      "it": "Bastone di Falsa Magia",
+      "pt": "Bastão de magia falsa"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 25,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4016.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "678",
+    "name": {
+      "en": "Wa Wabbit's Staff",
+      "fr": "Bâton du Wa Wabbit",
+      "de": "Wa Wabbit-Stecken",
+      "es": "Bastón del Wey Wabbit",
+      "it": "Scettro del We Wabbit",
+      "pt": "Bastão do Wei Wabbit"
+    },
+    "itemType": "Staff",
+    "setID": "40",
+    "level": 25,
+    "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 100 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4021.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 30, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "840",
+    "name": {
+      "en": "[!EN] Petit Bâton Dakn",
+      "fr": "Petit Bâton Dakn",
+      "de": "[!DE] Petit Bâton Dakn",
+      "es": "[!ES] Petit Bâton Dakn",
+      "it": "[!IT] Petit Bâton Dakn",
+      "pt": "[!PT] Petit Bâton Dakn"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 24,
+    "stats": [{ "stat": "Strength", "minStat": 21, "maxStat": 25 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 25 },
+        { "stat": "Agilité", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4019.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "801",
+    "name": {
+      "en": "[!EN] Petit bâton de fausse magie",
+      "fr": "Petit bâton de fausse magie",
+      "de": "[!DE] Petit bâton de fausse magie",
+      "es": "[!ES] Petit bâton de fausse magie",
+      "it": "[!IT] Petit bâton de fausse magie",
+      "pt": "[!PT] Petit bâton de fausse magie"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 20,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4016.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6068",
+    "name": {
+      "en": "Bearman's Staff",
+      "fr": "Bâton de l'Homme Ours",
+      "de": "Stecken des Bärenmannes",
+      "es": "Bastón del hombre oso",
+      "it": "Bastone dell'Uomo Orso",
+      "pt": "Bastão do Homem Urso"
+    },
+    "itemType": "Staff",
+    "setID": "12",
+    "level": 20,
+    "stats": [{ "stat": "Agility", "minStat": 11, "maxStat": 14 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/4046.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 8, "maxStat": 12, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "1050",
+    "name": {
+      "en": "Flatu Lance",
+      "fr": "La Canne Hête",
+      "de": "Woods Stock",
+      "es": "Bastón Torrón",
+      "it": "La Canna Ta",
+      "pt": "Cajado Leta"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 20,
+    "stats": [{ "stat": "Vitality", "minStat": 6, "maxStat": 15 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4068.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 8,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 6, "maxStat": 13, "stat": "Fire damage" }]
+    }
+  },
+  {
+    "dofusID": "90",
+    "name": {
+      "en": "Sacred Staff",
+      "fr": "Bâton Spirituel",
+      "de": "Spiritueller Stock",
+      "es": "Bastón Espiritual",
+      "it": "Bastone Spirituale",
+      "pt": "Bastão Espiritual"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 16,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4008.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 3,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "88",
+    "name": {
+      "en": "[!EN] Puissant Bâton Feuillu",
+      "fr": "Puissant Bâton Feuillu",
+      "de": "[!DE] Puissant Bâton Feuillu",
+      "es": "[!ES] Puissant Bâton Feuillu",
+      "it": "[!IT] Puissant Bâton Feuillu",
+      "pt": "[!PT] Puissant Bâton Feuillu"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 15,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 19, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "87",
+    "name": {
+      "en": "[!EN] Grand Bâton Feuillu",
+      "fr": "Grand Bâton Feuillu",
+      "de": "[!DE] Grand Bâton Feuillu",
+      "es": "[!ES] Grand Bâton Feuillu",
+      "it": "[!IT] Grand Bâton Feuillu",
+      "pt": "[!PT] Grand Bâton Feuillu"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 15,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 18, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "89",
+    "name": {
+      "en": "Staff Bonely",
+      "fr": "Bâton Kouyu",
+      "de": "Gehstock des Einsiedlerkrebses",
+      "es": "Bastón Cojomudo",
+      "it": "Bastone Kuyu",
+      "pt": "Cajado da Sorte"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 14,
+    "stats": [{ "stat": "Wisdom", "minStat": 6, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4003.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "86",
+    "name": {
+      "en": "Leafy Staff",
+      "fr": "Bâton Feuillu",
+      "de": "Laubstock",
+      "es": "Bastón Hojudo",
+      "it": "Bastone Frondoso",
+      "pt": "Bastão frondoso"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 14,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 17, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "85",
+    "name": {
+      "en": "[!EN] Petit Bâton Feuillu",
+      "fr": "Petit Bâton Feuillu",
+      "de": "[!DE] Petit Bâton Feuillu",
+      "es": "[!ES] Petit Bâton Feuillu",
+      "it": "[!IT] Petit Bâton Feuillu",
+      "pt": "[!PT] Petit Bâton Feuillu"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Intelligence", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 16, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1051",
+    "name": {
+      "en": "Gobbherd Staff",
+      "fr": "Bâton de Bouftier",
+      "de": "Hirtenstock für Fresssäcke",
+      "es": "Bastón de jalatero",
+      "it": "Bastone del Pappandriano",
+      "pt": "Cajado de Papastor"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 12,
+    "stats": [
+      { "stat": "Strength", "minStat": 1, "maxStat": 10 },
+      { "stat": "Vitality", "minStat": 1, "maxStat": 10 },
+      { "stat": "Intelligence", "minStat": 1, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4009.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6125",
+    "name": {
+      "en": "Deflower Staff",
+      "fr": "La Plantouze des Champs",
+      "de": "Das Planktock der Wiesen",
+      "es": "La Plantamaza de los Campos",
+      "it": "La Piantatrice dei Campi",
+      "pt": "O Plantador dos Campos"
+    },
+    "itemType": "Staff",
+    "setID": "18",
+    "level": 10,
+    "stats": [{ "stat": "Vitality", "minStat": 5, "maxStat": 6 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4045.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "62",
+    "name": {
+      "en": "[!EN] Puissant Bâton de Boisaille",
+      "fr": "Puissant Bâton de Boisaille",
+      "de": "[!DE] Puissant Bâton de Boisaille",
+      "es": "[!ES] Puissant Bâton de Boisaille",
+      "it": "[!IT] Puissant Bâton de Boisaille",
+      "pt": "[!PT] Puissant Bâton de Boisaille"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 9,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "61",
+    "name": {
+      "en": "[!EN] Grand Bâton de Boisaille",
+      "fr": "Grand Bâton de Boisaille",
+      "de": "[!DE] Grand Bâton de Boisaille",
+      "es": "[!ES] Grand Bâton de Boisaille",
+      "it": "[!IT] Grand Bâton de Boisaille",
+      "pt": "[!PT] Grand Bâton de Boisaille"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 7,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 9, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "60",
+    "name": {
+      "en": "Twiggy Staff",
+      "fr": "Bâton de Boisaille",
+      "de": "Hölzerner Stecken",
+      "es": "Bastón de maderucha",
+      "it": "Bastone di Legnuccio",
+      "pt": "Bastão de graveto"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 2,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 7, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6115",
+    "name": {
+      "en": "Initiate's Staff",
+      "fr": "Bâton de l'initié",
+      "de": "Stock des Initiaten",
+      "es": "Bastón de debutante",
+      "it": "Bastone dell'Iniziato",
+      "pt": "Bastão do Iniciado"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/4001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  }
+]

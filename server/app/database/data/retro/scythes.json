@@ -1,0 +1,174 @@
+[
+  {
+    "dofusID": "8104",
+    "name": {
+      "en": "[!EN] Faux maudite du Saigneur Guerrier",
+      "fr": "Faux maudite du Saigneur Guerrier",
+      "de": "[!DE] Faux maudite du Saigneur Guerrier",
+      "es": "[!ES] Faux maudite du Saigneur Guerrier",
+      "it": "[!IT] Faux maudite du Saigneur Guerrier",
+      "pt": "[!PT] Faux maudite du Saigneur Guerrier"
+    },
+    "itemType": "Scythe",
+    "setID": null,
+    "level": 200,
+    "stats": [
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/22003.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 100,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 18, "stat": "Air damage" },
+        { "minStat": 9, "maxStat": 18, "stat": "Water damage" },
+        { "minStat": 9, "maxStat": 18, "stat": "Fire damage" },
+        { "minStat": 9, "maxStat": 18, "stat": "Neutral damage" },
+        { "minStat": 9, "maxStat": 18, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7338",
+    "name": {
+      "en": "Damaged Farmer Scythe",
+      "fr": "Faux usée du Paysan",
+      "de": "Abgenutzte Bauernsense",
+      "es": "Guadaña gastada de campesino",
+      "it": "Falce Consumata del Contadino",
+      "pt": "Gadanha usada do fazendeiro"
+    },
+    "itemType": "Scythe",
+    "setID": "47",
+    "level": 17,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/22002.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 4, "maxStat": 5, "stat": "Water steal" }]
+    }
+  },
+  {
+    "dofusID": "500",
+    "name": {
+      "en": "Farle Ingalsse's Scythe",
+      "fr": "Faux de Farle Ingalsse",
+      "de": "Sense von Farle Ingalsse",
+      "es": "Guadaña de Farle Ingals",
+      "it": "Falce di Farle Ingals",
+      "pt": "Gadanha do Farle Ingals"
+    },
+    "itemType": "Scythe",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 11 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/22001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7707",
+    "name": {
+      "en": "[!EN] Faux de l'apprenti paysan",
+      "fr": "Faux de l'apprenti paysan",
+      "de": "[!DE] Faux de l'apprenti paysan",
+      "es": "[!ES] Faux de l'apprenti paysan",
+      "it": "[!IT] Faux de l'apprenti paysan",
+      "pt": "[!PT] Faux de l'apprenti paysan"
+    },
+    "itemType": "Scythe",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/22001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 3, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "387",
+    "name": {
+      "en": "[!EN] Faux du Paysan",
+      "fr": "Faux du Paysan",
+      "de": "[!DE] Faux du Paysan",
+      "es": "[!ES] Faux du Paysan",
+      "it": "[!IT] Faux du Paysan",
+      "pt": "[!PT] Faux du Paysan"
+    },
+    "itemType": "Scythe",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/22001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  }
+]

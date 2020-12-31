@@ -1,0 +1,3603 @@
+[
+  {
+    "dofusID": "8237",
+    "name": {
+      "en": "Mush Cuteers",
+      "fr": "Couteaux à Champignons",
+      "de": "Glissandolche",
+      "es": "Cuchillos corta-setas",
+      "it": "Coltello da Champignon",
+      "pt": "Cogu Cuteers"
+    },
+    "itemType": "Dagger",
+    "setID": "119",
+    "level": 187,
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Power (traps)", "minStat": 31, "maxStat": 50 },
+      { "stat": "Initiative", "minStat": 301, "maxStat": 400 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5069.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 8,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 14, "stat": "Neutral damage" },
+        { "minStat": 8, "maxStat": 14, "stat": "Air damage" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8276",
+    "name": {
+      "en": "Day'inda Knife",
+      "fr": "Lame Assacre",
+      "de": "Klaubtaubklinge",
+      "es": "Daga 'Mberra",
+      "it": "Lama Assacro",
+      "pt": "Faca Day'inda"
+    },
+    "itemType": "Dagger",
+    "setID": "108",
+    "level": 182,
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 200 },
+        { "stat": "Intelligence", "operator": ">", "value": 150 },
+        { "stat": "Chance", "operator": ">", "value": 150 },
+        { "stat": "Agilité", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5070.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 17, "stat": "Neutral damage" },
+        { "minStat": 6, "maxStat": 10, "stat": "Water damage" },
+        { "minStat": 6, "maxStat": 10, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8041",
+    "name": {
+      "en": "Dagger Doo",
+      "fr": "Dague Adou",
+      "de": "Okey-Do-Klinge",
+      "es": "Daga Duh",
+      "it": "Daga Duh",
+      "pt": "Dagg'Adou"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 175,
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Power (traps)", "minStat": 21, "maxStat": 30 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 250 },
+        { "stat": "Chance", "operator": ">", "value": 250 },
+        { "stat": "Force", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5065.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 7,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 13, "stat": "Air damage" },
+        { "minStat": 8, "maxStat": 13, "stat": "Water damage" },
+        { "minStat": 1, "maxStat": 2, "stat": "Neutral steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8042",
+    "name": {
+      "en": "Gaga Daggers",
+      "fr": "Dagues Eudin",
+      "de": "Gaga-Dolche",
+      "es": "Dagas de Unah Kabra",
+      "it": "Daghe Hood",
+      "pt": "Adagas Gaga"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 171,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 11, "maxStat": 20 },
+      { "stat": "Power (traps)", "minStat": 21, "maxStat": 30 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 400 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 350 },
+        { "stat": "Agilité", "operator": ">", "value": 200 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5066.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 10, "stat": "Earth damage" },
+        { "minStat": 9, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8043",
+    "name": {
+      "en": "Porkeez Daggers",
+      "fr": "Dagues Ruik",
+      "de": "Doingsch",
+      "es": "Dagas Roink",
+      "it": "Daghe Ruik",
+      "pt": "Adagas Roink"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 158,
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power (traps)", "minStat": 31, "maxStat": 40 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5067.png",
+    "weaponStats": {
+      "apCost": 2,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6293",
+    "name": {
+      "en": "Ice Daggers",
+      "fr": "Dagues Lassay",
+      "de": "Eisige Klingen",
+      "es": "Dagas Heladas",
+      "it": "Daghe Cyata",
+      "pt": "Adagas de Gelo"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 150,
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Damage", "minStat": 16, "maxStat": 20 },
+      { "stat": "Power (traps)", "minStat": 16, "maxStat": 25 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 300 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 250 },
+        { "stat": "Force", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5044.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 13, "stat": "Neutral damage" },
+        { "minStat": 8, "maxStat": 13, "stat": "Air damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8044",
+    "name": {
+      "en": "Kriss Tobal",
+      "fr": "Kriss Toubal",
+      "de": "Kris \"Tobal\"",
+      "es": "Kriss Tobal",
+      "it": "Kriss Tubal",
+      "pt": "Kriss Tobal"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 149,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Summons", "minStat": null, "maxStat": 2 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 250 },
+        { "stat": "Chance", "operator": ">", "value": 250 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5068.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 6, "stat": "Water steal" },
+        { "minStat": 3, "maxStat": 6, "stat": "Fire steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6295",
+    "name": {
+      "en": "Daggers Sives",
+      "fr": "Dagues Réceuses",
+      "de": "Aggs Messoren",
+      "es": "Dagas de agresión",
+      "it": "Daghe Ressive",
+      "pt": "Adagas Crivas"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 143,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Power", "minStat": 16, "maxStat": 25 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Neutral Resistance", "minStat": 5, "maxStat": 8 },
+      { "stat": "% Neutral Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 250 },
+        { "stat": "Agilité", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5047.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 22, "stat": "Neutral damage" },
+        { "minStat": 4, "maxStat": 5, "stat": "Air steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7305",
+    "name": {
+      "en": "Ostwogoth Daggers",
+      "fr": "Les Dagues du Bouwin",
+      "de": "Dolche des Prutalos",
+      "es": "Dagas de Aminal",
+      "it": "Le Daghe del Buwin",
+      "pt": "Adaga de Ostwogoth"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 135,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power (traps)", "minStat": 11, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 250 },
+        { "stat": "Agilité", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5056.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 25, "stat": "Neutral damage" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7594",
+    "name": {
+      "en": "Dreggon Daggers",
+      "fr": "Dagues du Dragoeuf",
+      "de": "Drachei-Dolche",
+      "es": "Dagas de dragohuevo",
+      "it": "Daghe del Draguovo",
+      "pt": "Adagas do Dragoeuf"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 128,
+    "stats": [
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Water Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 150 },
+        { "stat": "Intelligence", "operator": ">", "value": 150 },
+        { "stat": "Agilité", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5058.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 10, "stat": "Earth damage" },
+        { "minStat": 5, "maxStat": 10, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6476",
+    "name": {
+      "en": "Ramougre's Setter",
+      "fr": "Sertisseur de Ramougre",
+      "de": "Ramougres Einfassmesser",
+      "es": "Engastador de Ramugro",
+      "it": "Incastonatore di Ramug",
+      "pt": "Engastador do Ramugro"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 127,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Critical", "minStat": 5, "maxStat": 6 },
+      { "stat": "Damage", "minStat": 16, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 200 },
+        { "stat": "Force", "operator": ">", "value": 200 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5049.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 14, "stat": "Neutral damage" },
+        { "minStat": 5, "maxStat": 6, "stat": "Air steal" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5892",
+    "name": {
+      "en": "Dagger Manic",
+      "fr": "Dagues R'Hoh",
+      "de": "Dolchschlago grobis",
+      "es": "Dagas R'Hoh",
+      "it": "Daghe R'Hoh",
+      "pt": "Adagas R'Hoh"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 121,
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 150 },
+        { "stat": "Force", "operator": ">", "value": 100 },
+        { "stat": "Vitalité", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5041.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Neutral damage" },
+        { "minStat": 7, "maxStat": 11, "stat": "Air damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "3031",
+    "name": {
+      "en": "Regah Daggers",
+      "fr": "Dague Régah",
+      "de": "Kompromesser",
+      "es": "Daga Doble",
+      "it": "Daga Regazione",
+      "pt": "Adagas Regah"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 120,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 250 },
+        { "stat": "Force", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5034.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Air damage" },
+        { "minStat": 3, "maxStat": 4, "stat": "Neutral steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6473",
+    "name": {
+      "en": "Citrus Daggers",
+      "fr": "Dagues Rhumes",
+      "de": "Zitrolch",
+      "es": "Dagas exprimidoras",
+      "it": "Daghe Rumi",
+      "pt": "Adagas de Citrus"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 113,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 100 },
+        { "stat": "Intelligence", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5048.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 35,
+      "critBonusDamage": 8,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 18, "stat": "Neutral damage" },
+        { "minStat": 3, "maxStat": 4, "stat": "Fire steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6296",
+    "name": {
+      "en": "Gobbly Killer Apprentice Daggers",
+      "fr": "Dagues de l'Apprenti Tueur de Bouftons",
+      "de": "Dolche des angehenden Fresssäckchenjägers",
+      "es": "Dagas del aprendiz matador de jalatines",
+      "it": "Daghe dell'Apprendista Ammazza-Pappatutto",
+      "pt": "Adagas do aprendiz de matador de Paparneiros"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 113,
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 71, "maxStat": 100 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 300 },
+        { "stat": "Agilité", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5046.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 25,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 15, "stat": "Neutral damage" },
+        { "minStat": 3, "maxStat": 4, "stat": "Neutral steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7615",
+    "name": {
+      "en": "Black Rat Daggers",
+      "fr": "Dagues du Rat Noir",
+      "de": "Schwarze Rattendolche",
+      "es": "Dagas de la Rata Negra",
+      "it": "Daghe del Ratto Nero",
+      "pt": "Adagas do Rato Negro"
+    },
+    "itemType": "Dagger",
+    "setID": "68",
+    "level": 108,
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 60 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Power (traps)", "minStat": 21, "maxStat": 30 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 100 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 250 },
+        { "stat": "Sagesse", "operator": ">", "value": 100 },
+        { "stat": "Vitalité", "operator": ">", "value": 300 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5059.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 17, "maxStat": 20, "stat": "Air damage" },
+        { "minStat": 21, "maxStat": 30, "stat": "Kamas" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6475",
+    "name": {
+      "en": "Maydhyn China Daggers",
+      "fr": "Dagues Maydhyn China",
+      "de": "Maydhyn China-Dolche",
+      "es": "Dagas Maydhyn China",
+      "it": "Daghe Meydhyn China",
+      "pt": "Adagas Maydhyn China"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 100,
+    "stats": [
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 200 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 150 },
+        { "stat": "Agilité", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5045.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 35,
+      "critBonusDamage": 15,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "3030",
+    "name": {
+      "en": "Daguiero's Daggers",
+      "fr": "Dague Rafeuse",
+      "de": "Raffzahn",
+      "es": "Daga Lambres",
+      "it": "Daga Trice",
+      "pt": "Adagas de Daguiero"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 95,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 80 },
+        { "stat": "Force", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5033.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 9, "stat": "Neutral damage" },
+        { "minStat": 6, "maxStat": 9, "stat": "Air damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "3032",
+    "name": {
+      "en": "Lutination Daggers",
+      "fr": "Dague Lutination",
+      "de": "Agglutinadolch",
+      "es": "Daga Lomeración",
+      "it": "Daga Ingorgo",
+      "pt": "Adagas de Lutination"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 90,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 400 },
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 30 },
+        { "stat": "Agilité", "operator": ">", "value": 100 },
+        { "stat": "Force", "operator": ">", "value": 70 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5035.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 10, "maxStat": 14, "stat": "Neutral damage" },
+        { "minStat": 2, "maxStat": 4, "stat": "Air steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "3029",
+    "name": {
+      "en": "Captain Chafer's Small Daggers",
+      "fr": "Daguette du Captain Chafer",
+      "de": "Dolch des Chafer-Offiziers",
+      "es": "Daguita de Capitán Chafer",
+      "it": "Daghetta del Capitano Chafer",
+      "pt": "Pequena Adaga do Capitão Chafer"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 83,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 100 },
+        { "stat": "Force", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5032.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 22, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "3028",
+    "name": {
+      "en": "Dagger O'Hair",
+      "fr": "La Thor-Boyaux",
+      "de": "Rachenstutzer",
+      "es": "La Destripadora",
+      "it": "La Taver-Budella",
+      "pt": "O Thor-Boyaux"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 83,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 80 },
+        { "stat": "Force", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5031.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 23, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "734",
+    "name": {
+      "en": "Ortimus Contrari's Bloody Blades",
+      "fr": "Lames Sanglantes D'Ortimus Contrari",
+      "de": "Blutklingen von Ortimus Contrari",
+      "es": "Cuchillos sangrientos de Ortimus Contrari",
+      "it": "Lame Sanguinarie di Ortimus Contrari",
+      "pt": "Lâminas Sangrentas de Ortimus Contrari"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 80,
+    "stats": [
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 79 },
+        { "stat": "Force", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5019.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 20,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 18, "stat": "Neutral damage" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "5893",
+    "name": {
+      "en": "Hischantes Daggers",
+      "fr": "Dagues Hischantes",
+      "de": "Hischantes Dolch",
+      "es": "Dagas vibrantes",
+      "it": "Daghe Vibranti",
+      "pt": "Adagas Hischantes"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 80,
+    "stats": [
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 100 },
+        { "stat": "Force", "operator": ">", "value": 80 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5042.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 22, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "106",
+    "name": {
+      "en": "Chakra Style",
+      "fr": "Chakra Style",
+      "de": "Chakra Style",
+      "es": "Chakra Style",
+      "it": "Chakra Style",
+      "pt": "Estilo de Chakra"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 73,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 30 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Chance", "minStat": null, "maxStat": 30 },
+      { "stat": "Damage", "minStat": null, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 73 },
+        { "stat": "Chance", "operator": ">", "value": 15 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5008.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 10, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8582",
+    "name": {
+      "en": "Dagger Rilla",
+      "fr": "Dague Ho'Rille'",
+      "de": "Dolch Oh'Rhal'",
+      "es": "Daga Bah'Cho",
+      "it": "Daga Go'Rilla'",
+      "pt": "Adaga Rilla"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 70,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 35 },
+        { "stat": "Chance", "operator": ">", "value": 35 },
+        { "stat": "Force", "operator": ">", "value": 35 },
+        { "stat": "Intelligence", "operator": ">", "value": 35 },
+        { "stat": "Vitalité", "operator": ">", "value": 70 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5075.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 35,
+      "critBonusDamage": 2,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 5, "stat": "Air damage" },
+        { "minStat": 3, "maxStat": 5, "stat": "Water damage" },
+        { "minStat": 3, "maxStat": 5, "stat": "Fire damage" },
+        { "minStat": 3, "maxStat": 5, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7742",
+    "name": {
+      "en": "Clawettes",
+      "fr": "Griffettes",
+      "de": "Krallette",
+      "es": "Garritas",
+      "it": "Artiglietti",
+      "pt": "Garrettes"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 69,
+    "stats": [
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 100 },
+        { "stat": "Force", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5062.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 18, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7741",
+    "name": {
+      "en": "Emment Daggers",
+      "fr": "Dagues Ruyère",
+      "de": "Schweizer Dolch",
+      "es": "Emment Daga",
+      "it": "Daghe Rattugia",
+      "pt": "Adagas Emment"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 67,
+    "stats": [
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5061.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 4, "stat": "Neutral steal" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "733",
+    "name": {
+      "en": "[!EN] Hypnotique Dague Fourbesque",
+      "fr": "Hypnotique Dague Fourbesque",
+      "de": "[!DE] Hypnotique Dague Fourbesque",
+      "es": "[!ES] Hypnotique Dague Fourbesque",
+      "it": "[!IT] Hypnotique Dague Fourbesque",
+      "pt": "[!PT] Hypnotique Dague Fourbesque"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 67,
+    "stats": [
+      { "stat": "Agility", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": null, "maxStat": 4 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 67 },
+        { "stat": "Force", "operator": ">", "value": 25 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5011.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 17,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "105",
+    "name": {
+      "en": "Blessdags",
+      "fr": "Blessdags",
+      "de": "Blessurdolche",
+      "es": "Blessdags",
+      "it": "Blessdag",
+      "pt": "Blessadagas"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 64,
+    "stats": [
+      { "stat": "Chance", "minStat": 31, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 6 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 64 },
+        { "stat": "Vitalité", "operator": ">", "value": 10 },
+        { "stat": "Chance", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5055.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 17,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 18, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "732",
+    "name": {
+      "en": "[!EN] Superbe Dague Fourbesque",
+      "fr": "Superbe Dague Fourbesque",
+      "de": "[!DE] Superbe Dague Fourbesque",
+      "es": "[!ES] Superbe Dague Fourbesque",
+      "it": "[!IT] Superbe Dague Fourbesque",
+      "pt": "[!PT] Superbe Dague Fourbesque"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 63,
+    "stats": [
+      { "stat": "Agility", "minStat": 33, "maxStat": 52 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": null, "maxStat": 4 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 63 },
+        { "stat": "Force", "operator": ">", "value": 22 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5011.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 16,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6540",
+    "name": {
+      "en": "Aerdala Daggers",
+      "fr": "Dagues Aerdala",
+      "de": "Aerdala-Dolche",
+      "es": "Dagas Airedala",
+      "it": "Daghe Erdala",
+      "pt": "Adagas Ardala"
+    },
+    "itemType": "Dagger",
+    "setID": "35",
+    "level": 62,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Initiative", "minStat": 151, "maxStat": 200 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 150 },
+        { "stat": "Force", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5051.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 11, "maxStat": 16, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "8581",
+    "name": {
+      "en": "Dagger Khin",
+      "fr": "Dague Haih'Ri'Don'",
+      "de": "Dolch Roh'Nhisch'",
+      "es": "Daga Cha'Dih'Za",
+      "it": "Daga Ta'Vol'In'",
+      "pt": "Adaga Khin"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 60,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 60 },
+        { "stat": "Vitalité", "operator": ">", "value": 60 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5074.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 35,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [{ "minStat": 11, "maxStat": 16, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "731",
+    "name": {
+      "en": "[!EN] Dague Fourbesque",
+      "fr": "Dague Fourbesque",
+      "de": "[!DE] Dague Fourbesque",
+      "es": "[!ES] Dague Fourbesque",
+      "it": "[!IT] Dague Fourbesque",
+      "pt": "[!PT] Dague Fourbesque"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 58,
+    "stats": [
+      { "stat": "Agility", "minStat": 32, "maxStat": 46 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": null, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 58 },
+        { "stat": "Force", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5011.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "729",
+    "name": {
+      "en": "[!EN] Puissante lame de Fon",
+      "fr": "Puissante lame de Fon",
+      "de": "[!DE] Puissante lame de Fon",
+      "es": "[!ES] Puissante lame de Fon",
+      "it": "[!IT] Puissante lame de Fon",
+      "pt": "[!PT] Puissante lame de Fon"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 56,
+    "stats": [
+      { "stat": "Agility", "minStat": 18, "maxStat": 27 },
+      { "stat": "Chance", "minStat": 20, "maxStat": 24 },
+      { "stat": "Critical", "minStat": null, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 56 },
+        { "stat": "Chance", "operator": ">", "value": 12 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5014.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 13,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "730",
+    "name": {
+      "en": "[!EN] Petite Dague Fourbesque",
+      "fr": "Petite Dague Fourbesque",
+      "de": "[!DE] Petite Dague Fourbesque",
+      "es": "[!ES] Petite Dague Fourbesque",
+      "it": "[!IT] Petite Dague Fourbesque",
+      "pt": "[!PT] Petite Dague Fourbesque"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 53,
+    "stats": [
+      { "stat": "Agility", "minStat": 27, "maxStat": 36 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": null, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 53 },
+        { "stat": "Force", "operator": ">", "value": 18 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5011.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 14,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "728",
+    "name": {
+      "en": "[!EN] Grande Lame de Fon",
+      "fr": "Grande Lame de Fon",
+      "de": "[!DE] Grande Lame de Fon",
+      "es": "[!ES] Grande Lame de Fon",
+      "it": "[!IT] Grande Lame de Fon",
+      "pt": "[!PT] Grande Lame de Fon"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 52,
+    "stats": [
+      { "stat": "Agility", "minStat": 18, "maxStat": 27 },
+      { "stat": "Chance", "minStat": 15, "maxStat": 19 },
+      { "stat": "Critical", "minStat": null, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 52 },
+        { "stat": "Chance", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5014.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 13,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8578",
+    "name": {
+      "en": "Dagger Nica",
+      "fr": "Dague Hi'Mov'",
+      "de": "Dolch Oh'Rheogrpf'",
+      "es": "Daga Ti'Yah'Zo",
+      "it": "Daga Ten'Der'",
+      "pt": "Adaga Nica"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 50,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5073.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 35,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 15, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "727",
+    "name": {
+      "en": "Rowler Blade",
+      "fr": "Lame de Fon",
+      "de": "Unta deMers Klinge",
+      "es": "Hoja de parra",
+      "it": "Lama di Fon",
+      "pt": "Lâmina Val"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 48,
+    "stats": [
+      { "stat": "Agility", "minStat": 18, "maxStat": 27 },
+      { "stat": "Chance", "minStat": 12, "maxStat": 16 },
+      { "stat": "Critical", "minStat": null, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 48 },
+        { "stat": "Chance", "operator": ">", "value": 8 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5014.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 13,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6294",
+    "name": {
+      "en": "Daggers Oonies",
+      "fr": "Dagues Honies",
+      "de": "Agondolchie",
+      "es": "Dagas de la Agonía",
+      "it": "Daga Onia",
+      "pt": "Adagas Oni"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 46,
+    "stats": [
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5050.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 6, "maxStat": 15, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "211",
+    "name": {
+      "en": "Eurfolles Daggers",
+      "fr": "Dagues Eurfolles",
+      "de": "Verrückte Schwesterdolche",
+      "es": "Las dagas chifladas",
+      "it": "Daghe Eurfol",
+      "pt": "Adagas de Eurfolles"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 46,
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5010.png",
+    "weaponStats": {
+      "apCost": 2,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 7, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "726",
+    "name": {
+      "en": "[!EN] Petite Lame de Fon",
+      "fr": "Petite Lame de Fon",
+      "de": "[!DE] Petite Lame de Fon",
+      "es": "[!ES] Petite Lame de Fon",
+      "it": "[!IT] Petite Lame de Fon",
+      "pt": "[!PT] Petite Lame de Fon"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 44,
+    "stats": [
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Chance", "minStat": 9, "maxStat": 13 },
+      { "stat": "Critical", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 44 },
+        { "stat": "Chance", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5014.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 13,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1057",
+    "name": {
+      "en": "Otof'Mai'We Daggers",
+      "fr": "Dagues Aj'Deh'Là",
+      "de": "Dolche von Abdul Abhau",
+      "es": "Dagas Olina",
+      "it": "Daghe Asolio",
+      "pt": "Adagas Tritte"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 44,
+    "stats": [{ "stat": "MP", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5019.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 6, "maxStat": 10, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "8928",
+    "name": {
+      "en": "[!EN] Dagues de Noké",
+      "fr": "Dagues de Noké",
+      "de": "[!DE] Dagues de Noké",
+      "es": "[!ES] Dagues de Noké",
+      "it": "[!IT] Dagues de Noké",
+      "pt": "[!PT] Dagues de Noké"
+    },
+    "itemType": "Dagger",
+    "setID": "135",
+    "level": 41,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 50 },
+        { "stat": "Sagesse", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 80 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5076.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 12,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 9, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "723",
+    "name": {
+      "en": "[!EN] Large Couteau à Stek",
+      "fr": "Large Couteau à Stek",
+      "de": "[!DE] Large Couteau à Stek",
+      "es": "[!ES] Large Couteau à Stek",
+      "it": "[!IT] Large Couteau à Stek",
+      "pt": "[!PT] Large Couteau à Stek"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 41,
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 18, "maxStat": 22 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 41 },
+        { "stat": "Force", "operator": ">", "value": 16 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5013.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8577",
+    "name": {
+      "en": "Dagg' Heirs",
+      "fr": "Dague Hi'Bol'",
+      "de": "Dolch Roh'Mohsom'",
+      "es": "Daga Rü'Loh",
+      "it": "Daga M'Ba'",
+      "pt": "Adaga Heirs"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 40,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 40 },
+        { "stat": "Vitalité", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5071.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 35,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 15, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7680",
+    "name": {
+      "en": "Bworknroll's Scalpel",
+      "fr": "Scalpel de Bworknroll",
+      "de": "BworknRolls Skalpell",
+      "es": "Escalpelo de Bworknroll",
+      "it": "Scalpello di Bworknroll",
+      "pt": "Bisturi de Bworknroll"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 40,
+    "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5060.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "725",
+    "name": {
+      "en": "Elorie Entuwan's Cruel Daggers",
+      "fr": "Dagues Cruelles d'Elorie Entuwan",
+      "de": "Grausame Dolche von Elorie Entuwan",
+      "es": "Dagas Crueles de Elorie Entuwan",
+      "it": "Daghe Crudeli d'Elory Entuwan",
+      "pt": "Adagas Cruéis de Elorie Entuwan"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 40,
+    "stats": [
+      { "stat": "Agility", "minStat": 21, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5007.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 12,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1056",
+    "name": {
+      "en": "Eulasse Daggers",
+      "fr": "Dagues Eulasse",
+      "de": "Öhls Messer",
+      "es": "Dagas de Kaka",
+      "it": "Daghe Eulas",
+      "pt": "Adagas Tura"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 40,
+    "stats": [
+      { "stat": "Water Resistance", "minStat": 2, "maxStat": 5 },
+      { "stat": "Air Resistance", "minStat": 2, "maxStat": 5 },
+      { "stat": "Fire Resistance", "minStat": 2, "maxStat": 5 },
+      { "stat": "Earth Resistance", "minStat": 2, "maxStat": 5 },
+      { "stat": "Neutral Resistance", "minStat": 2, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5010.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 5, "stat": "Water damage" },
+        { "minStat": 3, "maxStat": 5, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "615",
+    "name": {
+      "en": "[!EN] Puissantes Dagues Eguisées",
+      "fr": "Puissantes Dagues Eguisées",
+      "de": "[!DE] Puissantes Dagues Eguisées",
+      "es": "[!ES] Puissantes Dagues Eguisées",
+      "it": "[!IT] Puissantes Dagues Eguisées",
+      "pt": "[!PT] Puissantes Dagues Eguisées"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 39,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 15 },
+      { "stat": "Critical", "minStat": null, "maxStat": 4 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 39 },
+        { "stat": "Sagesse", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5010.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "722",
+    "name": {
+      "en": "[!EN] Grand couteau à Stek",
+      "fr": "Grand couteau à Stek",
+      "de": "[!DE] Grand couteau à Stek",
+      "es": "[!ES] Grand couteau à Stek",
+      "it": "[!IT] Grand couteau à Stek",
+      "pt": "[!PT] Grand couteau à Stek"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 38,
+    "stats": [
+      { "stat": "Agility", "minStat": 29, "maxStat": 38 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 38 },
+        { "stat": "Force", "operator": ">", "value": 14 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5013.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 9, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "614",
+    "name": {
+      "en": "[!EN] Grandes Dagues Eguisées",
+      "fr": "Grandes Dagues Eguisées",
+      "de": "[!DE] Grandes Dagues Eguisées",
+      "es": "[!ES] Grandes Dagues Eguisées",
+      "it": "[!IT] Grandes Dagues Eguisées",
+      "pt": "[!PT] Grandes Dagues Eguisées"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 36,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 15 },
+      { "stat": "Critical", "minStat": null, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 36 },
+        { "stat": "Sagesse", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5010.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "735",
+    "name": {
+      "en": "Unlucky Knight's Broken Sword",
+      "fr": "Epée Cassée du Chevalier Malchanceux",
+      "de": "Geborstenes Schwert des Unglücksritters",
+      "es": "Espada rota del caballero Desafortunado",
+      "it": "Spada Rotta del Cavaliere Sfortunato",
+      "pt": "Espada quebrada do Cavaleiro Azarado"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 35,
+    "stats": [
+      { "stat": "Strength", "minStat": null, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": null, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5043.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 12, "maxStat": 26, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "721",
+    "name": {
+      "en": "Stek Knife",
+      "fr": "Couteau à Stek",
+      "de": "Stek-Messer",
+      "es": "Cuchillo de Stek",
+      "it": "Coltello di Stek",
+      "pt": "Faca de Bife"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 35,
+    "stats": [
+      { "stat": "Agility", "minStat": 25, "maxStat": 34 },
+      { "stat": "Vitality", "minStat": 13, "maxStat": 17 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 35 },
+        { "stat": "Force", "operator": ">", "value": 12 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5013.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 8, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "631",
+    "name": {
+      "en": "Ancestral Daggers",
+      "fr": "Dagues Ancestrales",
+      "de": "Ancestraler Ur-Dolch",
+      "es": "Dagas ancestrales",
+      "it": "Daghe Ancestrali",
+      "pt": "Adagas ancestrais"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 34,
+    "stats": [
+      { "stat": "Damage", "minStat": null, "maxStat": 1 },
+      { "stat": "Intelligence", "minStat": 41, "maxStat": 50 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 34 },
+        { "stat": "Intelligence", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5008.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "613",
+    "name": {
+      "en": "[!EN] Dagues Eguisées",
+      "fr": "Dagues Eguisées",
+      "de": "[!DE] Dagues Eguisées",
+      "es": "[!ES] Dagues Eguisées",
+      "it": "[!IT] Dagues Eguisées",
+      "pt": "[!PT] Dagues Eguisées"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 33,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 15 },
+      { "stat": "Critical", "minStat": null, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 33 },
+        { "stat": "Sagesse", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5010.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1054",
+    "name": {
+      "en": "Table Knives",
+      "fr": "Les Lames en Table",
+      "de": "Uneros Tischmesser",
+      "es": "Los Cuchillos Jinsu",
+      "it": "Le Lame da Tavola",
+      "pt": "Facas de Mesa"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 33,
+    "stats": [{ "stat": "Agility", "minStat": 6, "maxStat": 35 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 55 },
+        { "stat": "Chance", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5013.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 1, "maxStat": 15, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "720",
+    "name": {
+      "en": "[!EN] Petit couteau à Stek",
+      "fr": "Petit couteau à Stek",
+      "de": "[!DE] Petit couteau à Stek",
+      "es": "[!ES] Petit couteau à Stek",
+      "it": "[!IT] Petit couteau à Stek",
+      "pt": "[!PT] Petit couteau à Stek"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 32,
+    "stats": [
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 32 },
+        { "stat": "Force", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5013.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 4, "maxStat": 7, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8576",
+    "name": {
+      "en": "Dagg' Hers",
+      "fr": "Dague Hi'Don'",
+      "de": "Dolch Roh'Nhihst'",
+      "es": "Daga Muhsino'Doroh",
+      "it": "Daga Ster'Zon'",
+      "pt": "Adaga Hers"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 30,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 30 },
+        { "stat": "Vitalité", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5072.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 35,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [{ "minStat": 5, "maxStat": 12, "stat": "Fire damage" }]
+    }
+  },
+  {
+    "dofusID": "612",
+    "name": {
+      "en": "[!EN] Petites Dagues Eguisées",
+      "fr": "Petites Dagues Eguisées",
+      "de": "[!DE] Petites Dagues Eguisées",
+      "es": "[!ES] Petites Dagues Eguisées",
+      "it": "[!IT] Petites Dagues Eguisées",
+      "pt": "[!PT] Petites Dagues Eguisées"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 30,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 15 },
+      { "stat": "Critical", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 30 },
+        { "stat": "Sagesse", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5010.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1187",
+    "name": {
+      "en": "Billy-Ray's Daggers",
+      "fr": "Dagues O'Bert",
+      "de": "Dolch O'Bert",
+      "es": "Daga Yumbo",
+      "it": "Daghe O'Bert",
+      "pt": "Adagas de O'Bert"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 30,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5001.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1059",
+    "name": {
+      "en": "Penn Knives",
+      "fr": "Dagues Tylo",
+      "de": "Tints Killerdolch",
+      "es": "Daga Ligra Fía",
+      "it": "Daghe Tylo",
+      "pt": "Facas Penn"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 30,
+    "stats": [
+      { "stat": "Earth Resistance", "minStat": 1, "maxStat": 7 },
+      { "stat": "Neutral Resistance", "minStat": 1, "maxStat": 7 },
+      { "stat": "Strength", "minStat": 1, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5012.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 4, "maxStat": 9, "stat": "Earth damage" }]
+    }
+  },
+  {
+    "dofusID": "1058",
+    "name": {
+      "en": "The Infernal Razor",
+      "fr": "Le Rasoir Infernal",
+      "de": "Höllisches Rasiermesser",
+      "es": "La Afeitadora Infernal",
+      "it": "Il Rasoio Infernale",
+      "pt": "A Navalha Infernal"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 30,
+    "stats": [{ "stat": "Intelligence", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5017.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 8, "maxStat": 12, "stat": "Fire damage" }]
+    }
+  },
+  {
+    "dofusID": "104",
+    "name": {
+      "en": "Bashers",
+      "fr": "Bashers",
+      "de": "Basher",
+      "es": "Bashers",
+      "it": "Basher",
+      "pt": "Bashers"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 29,
+    "stats": [{ "stat": "Agility", "minStat": 31, "maxStat": 40 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5005.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 10, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "611",
+    "name": {
+      "en": "[!EN] Puissantes Dagues Sylvestres",
+      "fr": "Puissantes Dagues Sylvestres",
+      "de": "[!DE] Puissantes Dagues Sylvestres",
+      "es": "[!ES] Puissantes Dagues Sylvestres",
+      "it": "[!IT] Puissantes Dagues Sylvestres",
+      "pt": "[!PT] Puissantes Dagues Sylvestres"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 27,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 17, "maxStat": 21 },
+      { "stat": "Agility", "minStat": 17, "maxStat": 21 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 27 },
+        { "stat": "Intelligence", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5006.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "724",
+    "name": {
+      "en": "Kitten Tails",
+      "fr": "Queues de Chatons",
+      "de": "Dreißigschwänzige Katzendolche",
+      "es": "Colas de gatitos",
+      "it": "Code di Micetto",
+      "pt": "Rabos de gatinhos"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 25,
+    "stats": [
+      { "stat": "Agility", "minStat": 6, "maxStat": 20 },
+      { "stat": "Chance", "minStat": 6, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 40 },
+        { "stat": "Force", "operator": ">", "value": 20 },
+        { "stat": "Vitalité", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5020.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 7, "stat": "Air damage" },
+        { "minStat": 1, "maxStat": 7, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "610",
+    "name": {
+      "en": "[!EN] Grandes Dagues Sylvestres",
+      "fr": "Grandes Dagues Sylvestres",
+      "de": "[!DE] Grandes Dagues Sylvestres",
+      "es": "[!ES] Grandes Dagues Sylvestres",
+      "it": "[!IT] Grandes Dagues Sylvestres",
+      "pt": "[!PT] Grandes Dagues Sylvestres"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 25,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 15, "maxStat": 19 },
+      { "stat": "Agility", "minStat": 15, "maxStat": 19 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 25 },
+        { "stat": "Intelligence", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5006.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "609",
+    "name": {
+      "en": "Sylvan Daggers",
+      "fr": "Dagues Sylvestres",
+      "de": "Sylvandolche",
+      "es": "Dagas silvestres",
+      "it": "Daghe Silvestri",
+      "pt": "Adagas silvestres"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 23,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 13, "maxStat": 17 },
+      { "stat": "Agility", "minStat": 13, "maxStat": 17 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 23 },
+        { "stat": "Intelligence", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5006.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "608",
+    "name": {
+      "en": "[!EN] Petites Dagues Sylvestres",
+      "fr": "Petites Dagues Sylvestres",
+      "de": "[!DE] Petites Dagues Sylvestres",
+      "es": "[!ES] Petites Dagues Sylvestres",
+      "it": "[!IT] Petites Dagues Sylvestres",
+      "pt": "[!PT] Petites Dagues Sylvestres"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 20,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 15 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 20 },
+        { "stat": "Intelligence", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/5006.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1055",
+    "name": {
+      "en": "Ergot Mina",
+      "fr": "L'Ergot Mina",
+      "de": "Ergot Mina",
+      "es": "Ergot Mina",
+      "it": "L'Ergot Mina",
+      "pt": "Ergot Mina"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 20,
+    "stats": [{ "stat": "Chance", "minStat": 6, "maxStat": 15 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5014.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 8,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 6, "maxStat": 8, "stat": "Water steal" }]
+    }
+  },
+  {
+    "dofusID": "103",
+    "name": {
+      "en": "[!EN] Impressionantes Dagues de Croclage",
+      "fr": "Impressionantes Dagues de Croclage",
+      "de": "[!DE] Impressionantes Dagues de Croclage",
+      "es": "[!ES] Impressionantes Dagues de Croclage",
+      "it": "[!IT] Impressionantes Dagues de Croclage",
+      "pt": "[!PT] Impressionantes Dagues de Croclage"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 17,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 8 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5004.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 5, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "102",
+    "name": {
+      "en": "[!EN] Grandes Dagues de Croclage",
+      "fr": "Grandes Dagues de Croclage",
+      "de": "[!DE] Grandes Dagues de Croclage",
+      "es": "[!ES] Grandes Dagues de Croclage",
+      "it": "[!IT] Grandes Dagues de Croclage",
+      "pt": "[!PT] Grandes Dagues de Croclage"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 15,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 6 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5004.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "99",
+    "name": {
+      "en": "[!EN] Puissantes Dagues de Fouraille",
+      "fr": "Puissantes Dagues de Fouraille",
+      "de": "[!DE] Puissantes Dagues de Fouraille",
+      "es": "[!ES] Puissantes Dagues de Fouraille",
+      "it": "[!IT] Puissantes Dagues de Fouraille",
+      "pt": "[!PT] Puissantes Dagues de Fouraille"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5003.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 8, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "101",
+    "name": {
+      "en": "Croclage Daggers",
+      "fr": "Dagues de Croclage",
+      "de": "Zubeißender Dolch",
+      "es": "Dagas de Croclage",
+      "it": "Daghe di Croccaggio",
+      "pt": "Adagas de Croclage"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 13,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 4 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5004.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "98",
+    "name": {
+      "en": "[!EN] Grandes Dagues de Fouraille",
+      "fr": "Grandes Dagues de Fouraille",
+      "de": "[!DE] Grandes Dagues de Fouraille",
+      "es": "[!ES] Grandes Dagues de Fouraille",
+      "it": "[!IT] Grandes Dagues de Fouraille",
+      "pt": "[!PT] Grandes Dagues de Fouraille"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 12,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5003.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 5, "maxStat": 7, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6245",
+    "name": {
+      "en": "Robber Daggers",
+      "fr": "Dagues du Bandit",
+      "de": "Schurkendolche",
+      "es": "Dagas de bandido",
+      "it": "Daghe del Bandito",
+      "pt": "Adagas do Bandido"
+    },
+    "itemType": "Dagger",
+    "setID": "25",
+    "level": 12,
+    "stats": [{ "stat": "Power", "minStat": 3, "maxStat": 7 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5009.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 5, "stat": "Air damage" },
+        { "minStat": 6, "maxStat": 10, "stat": "Kamas" }
+      ]
+    }
+  },
+  {
+    "dofusID": "210",
+    "name": {
+      "en": "Leurnettes",
+      "fr": "Leurnettes",
+      "de": "Leurnetten",
+      "es": "Limpiadoras",
+      "it": "Ripulitrici",
+      "pt": "Farsadagas"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 12,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5009.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 3, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "97",
+    "name": {
+      "en": "Smithy Daggers",
+      "fr": "Dagues de Fouraille",
+      "de": "Eiserne Dolche",
+      "es": "Dagas de hierrucho",
+      "it": "Daghe di Ferruccio",
+      "pt": "Adagas de sucata"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 11,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5003.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 4, "maxStat": 7, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "96",
+    "name": {
+      "en": "[!EN] Petites Dagues de Fouraille",
+      "fr": "Petites Dagues de Fouraille",
+      "de": "[!DE] Petites Dagues de Fouraille",
+      "es": "[!ES] Petites Dagues de Fouraille",
+      "it": "[!IT] Petites Dagues de Fouraille",
+      "pt": "[!PT] Petites Dagues de Fouraille"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 10,
+    "stats": [{ "stat": "Strength", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5003.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 4, "maxStat": 6, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "100",
+    "name": {
+      "en": "[!EN] Petites Dagues de Croclage",
+      "fr": "Petites Dagues de Croclage",
+      "de": "[!DE] Petites Dagues de Croclage",
+      "es": "[!ES] Petites Dagues de Croclage",
+      "it": "[!IT] Petites Dagues de Croclage",
+      "pt": "[!PT] Petites Dagues de Croclage"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 10,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 2 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5004.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 3, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "40",
+    "name": {
+      "en": "[!EN] Puissantes Dagues de Boisaille",
+      "fr": "Puissantes Dagues de Boisaille",
+      "de": "[!DE] Puissantes Dagues de Boisaille",
+      "es": "[!ES] Puissantes Dagues de Boisaille",
+      "it": "[!IT] Puissantes Dagues de Boisaille",
+      "pt": "[!PT] Puissantes Dagues de Boisaille"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 7,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5010.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "39",
+    "name": {
+      "en": "[!EN] Grandes Dagues de Boisaille",
+      "fr": "Grandes Dagues de Boisaille",
+      "de": "[!DE] Grandes Dagues de Boisaille",
+      "es": "[!ES] Grandes Dagues de Boisaille",
+      "it": "[!IT] Grandes Dagues de Boisaille",
+      "pt": "[!PT] Grandes Dagues de Boisaille"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 6,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5010.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "38",
+    "name": {
+      "en": "Twiggy Daggers",
+      "fr": "Dagues de Boisaille",
+      "de": "Hölzerne Dolche",
+      "es": "Dagas de maderucha",
+      "it": "Daghe di Legnuccio",
+      "pt": "Adagas de graveto"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 4,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5010.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 3, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "37",
+    "name": {
+      "en": "[!EN] Petites Dagues de Boisaille",
+      "fr": "Petites Dagues de Boisaille",
+      "de": "[!DE] Petites Dagues de Boisaille",
+      "es": "[!ES] Petites Dagues de Boisaille",
+      "it": "[!IT] Petites Dagues de Boisaille",
+      "pt": "[!PT] Petites Dagues de Boisaille"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 2,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5010.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 3, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8777",
+    "name": {
+      "en": "Handle Slasher",
+      "fr": "Tailladeuse de Manche",
+      "de": "Handschnitzer",
+      "es": "Talladora de mangos",
+      "it": "Intagliatrice di Manici",
+      "pt": "Talhadora de cabo"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 1,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Métier ="],
+      "fr": ["Métier ="],
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
+    },
+    "imageUrl": "/retro/item/5017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 3, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6773",
+    "name": {
+      "en": "[!EN] Coupe Cuir du Cordomage",
+      "fr": "Coupe Cuir du Cordomage",
+      "de": "[!DE] Coupe Cuir du Cordomage",
+      "es": "[!ES] Coupe Cuir du Cordomage",
+      "it": "[!IT] Coupe Cuir du Cordomage",
+      "pt": "[!PT] Coupe Cuir du Cordomage"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Métier ="],
+      "fr": ["Métier ="],
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
+    },
+    "imageUrl": "/retro/item/5053.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": null, "maxStat": 1, "stat": "Air damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Water damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Fire damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6771",
+    "name": {
+      "en": "[!EN] Sertisseur du Joaillomage",
+      "fr": "Sertisseur du Joaillomage",
+      "de": "[!DE] Sertisseur du Joaillomage",
+      "es": "[!ES] Sertisseur du Joaillomage",
+      "it": "[!IT] Sertisseur du Joaillomage",
+      "pt": "[!PT] Sertisseur du Joaillomage"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Métier ="],
+      "fr": ["Métier ="],
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
+    },
+    "imageUrl": "/retro/item/5052.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": null, "maxStat": 1, "stat": "Air damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Water damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Fire damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6117",
+    "name": {
+      "en": "Initiate's Daggers",
+      "fr": "Dagues de l'initié",
+      "de": "Dolche des Initiaten",
+      "es": "Dagas de debutante",
+      "it": "Daghe dell'Iniziato",
+      "pt": "Adaga do iniciado"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5010.png",
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 3, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "389",
+    "name": {
+      "en": "[!EN] Coupe Cuir",
+      "fr": "Coupe Cuir",
+      "de": "[!DE] Coupe Cuir",
+      "es": "[!ES] Coupe Cuir",
+      "it": "[!IT] Coupe Cuir",
+      "pt": "[!PT] Coupe Cuir"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "358",
+    "name": {
+      "en": "[!EN] Tailladeuse d'Arc",
+      "fr": "Tailladeuse d'Arc",
+      "de": "[!DE] Tailladeuse d'Arc",
+      "es": "[!ES] Tailladeuse d'Arc",
+      "it": "[!IT] Tailladeuse d'Arc",
+      "pt": "[!PT] Tailladeuse d'Arc"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "357",
+    "name": {
+      "en": "[!EN] Tailladeuse de Baguette",
+      "fr": "Tailladeuse de Baguette",
+      "de": "[!DE] Tailladeuse de Baguette",
+      "es": "[!ES] Tailladeuse de Baguette",
+      "it": "[!IT] Tailladeuse de Baguette",
+      "pt": "[!PT] Tailladeuse de Baguette"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "356",
+    "name": {
+      "en": "[!EN] Tailladeuse de Bâton",
+      "fr": "Tailladeuse de Bâton",
+      "de": "[!DE] Tailladeuse de Bâton",
+      "es": "[!ES] Tailladeuse de Bâton",
+      "it": "[!IT] Tailladeuse de Bâton",
+      "pt": "[!PT] Tailladeuse de Bâton"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "349",
+    "name": {
+      "en": "[!EN] Sertisseur",
+      "fr": "Sertisseur",
+      "de": "[!DE] Sertisseur",
+      "es": "[!ES] Sertisseur",
+      "it": "[!IT] Sertisseur",
+      "pt": "[!PT] Sertisseur"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/5016.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1243",
+    "name": {
+      "en": "[!EN] Tailladeuse de Bâtons Magiques",
+      "fr": "Tailladeuse de Bâtons Magiques",
+      "de": "[!DE] Tailladeuse de Bâtons Magiques",
+      "es": "[!ES] Tailladeuse de Bâtons Magiques",
+      "it": "[!IT] Tailladeuse de Bâtons Magiques",
+      "pt": "[!PT] Tailladeuse de Bâtons Magiques"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Métier ="],
+      "fr": ["Métier ="],
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
+    },
+    "imageUrl": "/retro/item/5017.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": null, "maxStat": 1, "stat": "Air damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Water damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Fire damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1242",
+    "name": {
+      "en": "[!EN] Tailladeuse de Baguettes Magiques",
+      "fr": "Tailladeuse de Baguettes Magiques",
+      "de": "[!DE] Tailladeuse de Baguettes Magiques",
+      "es": "[!ES] Tailladeuse de Baguettes Magiques",
+      "it": "[!IT] Tailladeuse de Baguettes Magiques",
+      "pt": "[!PT] Tailladeuse de Baguettes Magiques"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Métier ="],
+      "fr": ["Métier ="],
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
+    },
+    "imageUrl": "/retro/item/5017.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": null, "maxStat": 1, "stat": "Air damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Water damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Fire damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1241",
+    "name": {
+      "en": "[!EN] Tailladeuse d'Arcs Magiques",
+      "fr": "Tailladeuse d'Arcs Magiques",
+      "de": "[!DE] Tailladeuse d'Arcs Magiques",
+      "es": "[!ES] Tailladeuse d'Arcs Magiques",
+      "it": "[!IT] Tailladeuse d'Arcs Magiques",
+      "pt": "[!PT] Tailladeuse d'Arcs Magiques"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Wisdom", "minStat": 1, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Métier ="],
+      "fr": ["Métier ="],
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
+    },
+    "imageUrl": "/retro/item/5017.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": null, "maxStat": 1, "stat": "Air damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Water damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Fire damage" },
+        { "minStat": null, "maxStat": 1, "stat": "Earth damage" }
+      ]
+    }
+  }
+]

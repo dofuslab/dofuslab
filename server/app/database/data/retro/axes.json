@@ -1,0 +1,2418 @@
+[
+  {
+    "dofusID": "8238",
+    "name": {
+      "en": "Canni Blade",
+      "fr": "Hache à Lamelles",
+      "de": "Lamellenaxt",
+      "es": "Hacha de Lamelas",
+      "it": "Ascia a Lamine",
+      "pt": "Lâmina Canni"
+    },
+    "itemType": "Axe",
+    "setID": "120",
+    "level": 176,
+    "stats": [
+      { "stat": "Chance", "minStat": 41, "maxStat": 60 },
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19051.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 23, "stat": "Water damage" },
+        { "minStat": 11, "maxStat": 23, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8048",
+    "name": {
+      "en": "Sick Axe",
+      "fr": "Hache Sueur Rance",
+      "de": "Chiropteraxt",
+      "es": "Hacha Sudor Rancio",
+      "it": "Ascia Sudore Rancido",
+      "pt": "Machado Enfermo"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 162,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 45 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Critical", "minStat": 5, "maxStat": 7 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Sagesse", "operator": ">", "value": 250 },
+        { "stat": "Force", "operator": ">", "value": 300 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19049.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": null, "maxStat": 10, "stat": "Earth steal" },
+        { "minStat": null, "maxStat": 30, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8049",
+    "name": {
+      "en": "Michael Dougle Axe",
+      "fr": "Hache Harnée",
+      "de": "Beil Ixt",
+      "es": "Hacha Parrada",
+      "it": "Ascia Rabbia",
+      "pt": "Machado Entio"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 158,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 40 },
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 20 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 150 },
+        { "stat": "Agilité", "operator": ">", "value": 150 },
+        { "stat": "Intelligence", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19050.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 7,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 19, "stat": "Air damage" },
+        { "minStat": 13, "maxStat": 19, "stat": "Fire damage" },
+        { "minStat": 13, "maxStat": 19, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7953",
+    "name": {
+      "en": "Zoth Warrior Axe",
+      "fr": "Hache du Guerrier Zoth",
+      "de": "Axt des Zoth-Kriegers",
+      "es": "Hacha de guerrero zoth",
+      "it": "Ascia del Guerriero Zoth",
+      "pt": "Machado do Guerreiro Zoth"
+    },
+    "itemType": "Axe",
+    "setID": "95",
+    "level": 139,
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 35 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Sagesse", "operator": ">", "value": 250 },
+        { "stat": "Vitalité", "operator": ">", "value": 500 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19047.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 60,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 13, "stat": "Air damage" },
+        { "minStat": 7, "maxStat": 13, "stat": "Water damage" },
+        { "minStat": 7, "maxStat": 13, "stat": "Fire damage" },
+        { "minStat": 7, "maxStat": 13, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7989",
+    "name": {
+      "en": "Cheeken Axe",
+      "fr": "Poolache",
+      "de": "Schnabelaxt",
+      "es": "Pohoyacha",
+      "it": "Poolascia",
+      "pt": "Machado do Phrango"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 137,
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19048.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 120,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 22, "stat": "Earth damage" },
+        { "minStat": 14, "maxStat": 22, "stat": "Fire damage" },
+        { "minStat": 3, "maxStat": 4, "stat": "Earth steal" },
+        { "minStat": 3, "maxStat": 4, "stat": "Fire steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7314",
+    "name": {
+      "en": "Kape Axe",
+      "fr": "Le Fendoir Tichaud",
+      "de": "Tischocken-Axt",
+      "es": "El Parte Tura",
+      "it": "La Fenditrice",
+      "pt": "Machado Tichok"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 128,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Damage", "minStat": 6, "maxStat": 10 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 6 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 230 },
+        { "stat": "Agilité", "operator": ">", "value": 60 },
+        { "stat": "Vitalité", "operator": ">", "value": 250 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19041.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 20,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 24, "maxStat": 42, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7477",
+    "name": {
+      "en": "Dreggon Axe",
+      "fr": "Hache du Dragoeuf",
+      "de": "Drachei-Axt",
+      "es": "Hacha de dragohuevo",
+      "it": "Ascia del Draguovo",
+      "pt": "Machado do Dragovo"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 126,
+    "stats": [
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 80 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Air Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "Earth Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 180 },
+        { "stat": "Sagesse", "operator": ">", "value": 80 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19043.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 23, "maxStat": 37, "stat": "Neutral damage" },
+        { "minStat": 4, "maxStat": 6, "stat": "Water steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7312",
+    "name": {
+      "en": "Axe of Lies",
+      "fr": "La Hache Menbien",
+      "de": "Axt im Walde",
+      "es": "Hacha Pronto",
+      "it": "La Ascia M'Bola",
+      "pt": "Machado de Mentiras"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 116,
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Air Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Water Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Fire Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Neutral Resistance", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Resistance", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 120 },
+        { "stat": "Vitalité", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19039.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 35,
+      "critBonusDamage": 7,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 32, "stat": "Neutral damage" },
+        { "minStat": 7, "maxStat": 16, "stat": "Air damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7313",
+    "name": {
+      "en": "The Warf Axe",
+      "fr": "La Hache Ticot",
+      "de": "Ohrop-Axt",
+      "es": "Hacha Kechilba",
+      "it": "L'Ascia Fischio",
+      "pt": "Machado Isca"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 112,
+    "stats": [
+      { "stat": "Vitality", "minStat": 51, "maxStat": 100 },
+      { "stat": "Initiative", "minStat": 201, "maxStat": 400 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Neutral Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Fire Resistance", "minStat": 4, "maxStat": 6 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 150 },
+        { "stat": "Sagesse", "operator": ">", "value": 150 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19040.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 9, "maxStat": 19, "stat": "Neutral damage" },
+        { "minStat": 9, "maxStat": 19, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7458",
+    "name": {
+      "en": "Minotoror Axe",
+      "fr": "Hache du Minotoror",
+      "de": "Axt des Minotorors",
+      "es": "Hacha del Minotauroro",
+      "it": "Ascia del Minotoror",
+      "pt": "Machado de Minotoro"
+    },
+    "itemType": "Axe",
+    "setID": "54",
+    "level": 109,
+    "stats": [
+      { "stat": "Vitality", "minStat": 51, "maxStat": 100 },
+      { "stat": "Power", "minStat": 16, "maxStat": 25 },
+      { "stat": "Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Summons", "minStat": 1, "maxStat": 2 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19044.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 40, "stat": "Neutral damage" },
+        { "minStat": 3, "maxStat": 5, "stat": "Earth steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2216",
+    "name": {
+      "en": "Bards' Hall",
+      "fr": "Halle de Barde",
+      "de": "Hallenbarde des Blutes",
+      "es": "Hala Barda",
+      "it": "Casa di Bardi",
+      "pt": "Inferno de Bardos"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 99,
+    "stats": [
+      { "stat": "Strength", "minStat": 51, "maxStat": 60 },
+      { "stat": "Vitality", "minStat": 51, "maxStat": 60 },
+      { "stat": "Power", "minStat": 6, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 100 },
+        { "stat": "Force", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19007.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 36, "maxStat": 40, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6495",
+    "name": {
+      "en": "Yondanwa Axe",
+      "fr": "Hache du Yondanwa",
+      "de": "Yodanwa-Axt",
+      "es": "Hacha yondanwa",
+      "it": "Ascia del Yondanwa",
+      "pt": "Machado Yondanwa"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 98,
+    "stats": [
+      { "stat": "Vitality", "minStat": 51, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 35 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 },
+      { "stat": "Damage", "minStat": 5, "maxStat": 6 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 150 },
+        { "stat": "Force", "operator": ">", "value": 75 },
+        { "stat": "Vitalité", "operator": ">", "value": 85 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19034.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 25, "stat": "Neutral damage" },
+        { "minStat": 6, "maxStat": 25, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2215",
+    "name": {
+      "en": "Lookabeer Axe",
+      "fr": "Hache de Lookabeer",
+      "de": "Lookabeer Axt",
+      "es": "Hacha de Lookabeer",
+      "it": "Ascia di Luk Abir",
+      "pt": "Machado de Lookabeer"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 96,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19008.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 31, "maxStat": 37, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "637",
+    "name": {
+      "en": "Ancestral Treechnid Splitter",
+      "fr": "Fendeuse d'Abraknyde Ancestral",
+      "de": "Ur-Astaknydenspalter",
+      "es": "Cortadora de Abráknido Ancestral",
+      "it": "Fenditrice di Alberagno Ancestrale",
+      "pt": "Rachador de Arvraknídeo Ancestral"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 93,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 35 },
+      { "stat": "Strength", "minStat": 26, "maxStat": 35 },
+      { "stat": "Critical", "minStat": null, "maxStat": 10 },
+      { "stat": "Power", "minStat": null, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 200 },
+        { "stat": "Intelligence", "operator": ">", "value": 100 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19013.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 35, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2214",
+    "name": {
+      "en": "Dame Zel Axe",
+      "fr": "Hache de Dame Oise",
+      "de": "Axt von Prinzessin Denhals",
+      "es": "Hacha Damesa",
+      "it": "Ascia di Donna Osa",
+      "pt": "Machado de Dame Oise"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 90,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 70 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 70 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 150 },
+        { "stat": "Sagesse", "operator": ">", "value": 50 },
+        { "stat": "Force", "operator": ">", "value": 250 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19005.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 31, "maxStat": 35, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2212",
+    "name": {
+      "en": "Pesc Axe",
+      "fr": "Vouge à Poisson",
+      "de": "Großfisch-Kuse",
+      "es": "Hacha Pesquera",
+      "it": "Roncola per Pesci",
+      "pt": "Machado de pesca"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 87,
+    "stats": [
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 50 },
+        { "stat": "Agilité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19004.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 31, "maxStat": 35, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2208",
+    "name": {
+      "en": "[!EN] Francique Basquaise",
+      "fr": "Francique Basquaise",
+      "de": "[!DE] Francique Basquaise",
+      "es": "[!ES] Francique Basquaise",
+      "it": "[!IT] Francique Basquaise",
+      "pt": "[!PT] Francique Basquaise"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 84,
+    "stats": [
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 100 },
+        { "stat": "Force", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 28, "maxStat": 32, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6539",
+    "name": {
+      "en": "Terrdala Axe",
+      "fr": "Hache Terrdala",
+      "de": "Teradala-Axt",
+      "es": "Hacha Tierradala",
+      "it": "Ascia Terradala",
+      "pt": "Machado Terradala"
+    },
+    "itemType": "Axe",
+    "setID": "36",
+    "level": 83,
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 4 },
+      { "stat": "Power", "minStat": 16, "maxStat": 20 },
+      { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19032.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 35, "stat": "Earth damage" },
+        { "minStat": 3, "maxStat": 4, "stat": "Fire steal" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6494",
+    "name": {
+      "en": "Sandanwa Axe",
+      "fr": "Hache du Sandanwa",
+      "de": "Sandawa-Axt",
+      "es": "Hacha sandanwa",
+      "it": "Ascia del Sandanwa",
+      "pt": "Machado de Sandanwa"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 83,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": 5, "maxStat": 6 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 100 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19035.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 45, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2206",
+    "name": {
+      "en": "Clever Axe",
+      "fr": "Hachette Savante",
+      "de": "Axt des Erfinders",
+      "es": "Hachilla Sabia",
+      "it": "Accetta Saggia",
+      "pt": "Machadinha Inteligente"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 81,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 50 },
+        { "stat": "Agilité", "operator": ">", "value": 50 },
+        { "stat": "Intelligence", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19004.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 23, "maxStat": 29, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7759",
+    "name": {
+      "en": "Koss Axe",
+      "fr": "Hache Eulouh",
+      "de": "Neckischer Nackenspalter",
+      "es": "Hacha Charear",
+      "it": "Ascia Euluh",
+      "pt": "Machado Eerie"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 80,
+    "stats": [
+      { "stat": "Chance", "minStat": 26, "maxStat": 40 },
+      { "stat": "Vitality", "minStat": 26, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 11, "maxStat": 20 },
+      { "stat": "Prospecting", "minStat": 6, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 101, "maxStat": 200 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 120 },
+        { "stat": "Agilité", "operator": ">", "value": 60 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19046.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 17, "stat": "Neutral damage" },
+        { "minStat": 11, "maxStat": 17, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2204",
+    "name": {
+      "en": "Militiaman Bardiche",
+      "fr": "Bardiche du Milicien",
+      "de": "Bart-Axt des Milizionärs",
+      "es": "Bardacha del Miliciano",
+      "it": "Alabarda del Miliziano",
+      "pt": "Bardiche do Miliciano"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 78,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 15 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 30 },
+        { "stat": "Force", "operator": ">", "value": 30 },
+        { "stat": "Sagesse", "operator": ">", "value": 30 },
+        { "stat": "Chance", "operator": ">", "value": 5 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19003.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 15,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 26, "maxStat": 32, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "634",
+    "name": {
+      "en": "Treechnid Splitter",
+      "fr": "Fendeuse d'Abraknyde",
+      "de": "Astaknydenabknicker",
+      "es": "Cortadora de abráknidos",
+      "it": "Fenditrice di Alberagno",
+      "pt": "Rachador de Arvraknídeo"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 74,
+    "stats": [
+      { "stat": "Power", "minStat": 6, "maxStat": 10 },
+      { "stat": "Wisdom", "minStat": 26, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 148 },
+        { "stat": "Sagesse", "operator": ">", "value": 10 },
+        { "stat": "Vitalité", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19012.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 35, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8612",
+    "name": {
+      "en": "Axe Vegax",
+      "fr": "Hache Per'Ge'",
+      "de": "Axt Hi'Bh'",
+      "es": "Hacha Tah'Rra",
+      "it": "Ascia Spruz'Zar'",
+      "pt": "Machado Vegax"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 70,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 35 },
+        { "stat": "Agilité", "operator": ">", "value": 35 },
+        { "stat": "Chance", "operator": ">", "value": 35 },
+        { "stat": "Intelligence", "operator": ">", "value": 35 },
+        { "stat": "Vitalité", "operator": ">", "value": 70 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19056.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 4,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 4, "maxStat": 8, "stat": "Air damage" },
+        { "minStat": 4, "maxStat": 8, "stat": "Water damage" },
+        { "minStat": 4, "maxStat": 8, "stat": "Fire damage" },
+        { "minStat": 4, "maxStat": 8, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2203",
+    "name": {
+      "en": "Limb Chopper",
+      "fr": "Trancheuse de Partie",
+      "de": "Größter gemeinster Arme-Teiler",
+      "es": "Troceadora de Partes",
+      "it": "Tagliatrice di Parti",
+      "pt": "Cortador de partes"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 66,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 50 },
+        { "stat": "Force", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 25, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2200",
+    "name": {
+      "en": "Whistle Cutter",
+      "fr": "Coupeuse de Sifflet",
+      "de": "Rauschende Bartabaxt",
+      "es": "Cortadora de palabra",
+      "it": "Tagliatrice di Parole",
+      "pt": "Cortador Estrondoso"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 66,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 16, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 30 },
+        { "stat": "Vitalité", "operator": ">", "value": 30 },
+        { "stat": "Agilité", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19017.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 30, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7758",
+    "name": {
+      "en": "Purrin Axe",
+      "fr": "Hache Ebbah",
+      "de": "Schopens Haueraxt",
+      "es": "Bast Hacha",
+      "it": "Ascia Ebbah",
+      "pt": "Machado Purrin"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 62,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 41, "maxStat": 70 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19045.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 20,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 23, "maxStat": 28, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "361",
+    "name": {
+      "en": "Boulgourde of the Glades",
+      "fr": "Boulgourde des Clairières",
+      "de": "Boulgourde der Lichtungen",
+      "es": "Bulgurda de los Claros",
+      "it": "Bolgurda delle Radure",
+      "pt": "Bulgurdo das Clareiras"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 62,
+    "stats": [
+      { "stat": "Critical", "minStat": 4, "maxStat": 5 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 124 },
+        { "stat": "Chance", "operator": ">", "value": 30 },
+        { "stat": "Vitalité", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19005.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 15,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 31, "maxStat": 45, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8611",
+    "name": {
+      "en": "Axe Hellerate",
+      "fr": "Hache Hev'Leu'",
+      "de": "Axt Hi'Ohm'",
+      "es": "Hacha Sinah'Mu'Sho",
+      "it": "Ascia Finish'Iloh'",
+      "pt": "Machado Hellerate"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 60,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Intelligence", "operator": ">", "value": 60 },
+        { "stat": "Vitalité", "operator": ">", "value": 60 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19053.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 30, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6493",
+    "name": {
+      "en": "Nidanwa Axe",
+      "fr": "Hache du Nidanwa",
+      "de": "Nidanwa-Axt",
+      "es": "Hacha nidanwa",
+      "it": "Ascia del Nidanwa",
+      "pt": "Machado de Nidanwa"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 59,
+    "stats": [
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Damage", "minStat": 3, "maxStat": 4 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 100 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19036.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 13, "maxStat": 37, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2201",
+    "name": {
+      "en": "Darsson's Axe",
+      "fr": "Hache Darsson",
+      "de": "Darssons Axt",
+      "es": "Hacha Darsson",
+      "it": "Ascia Darsson",
+      "pt": "Machado de Darsson"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 57,
+    "stats": [
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 20 },
+        { "stat": "Agilité", "operator": ">", "value": 20 },
+        { "stat": "Vitalité", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19018.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 12,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 18, "maxStat": 27, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7341",
+    "name": {
+      "en": "Boowolf Axe",
+      "fr": "Hache du Mulou",
+      "de": "WuWulf-Axt",
+      "es": "Hacha de mediulubo",
+      "it": "Ascia del Buulupo",
+      "pt": "Machado de Boolobo"
+    },
+    "itemType": "Axe",
+    "setID": "32",
+    "level": 55,
+    "stats": [
+      { "stat": "Strength", "minStat": 6, "maxStat": 30 },
+      { "stat": "Vitality", "minStat": 6, "maxStat": 55 },
+      { "stat": "Wisdom", "minStat": 1, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 2, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19042.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 35, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2197",
+    "name": {
+      "en": "Crack Axe",
+      "fr": "Hache de Brèche",
+      "de": "Breschenschläger",
+      "es": "Hacha de brecha",
+      "it": "Ascia di Breccia",
+      "pt": "Machado de Fenda"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 54,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19016.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 21, "maxStat": 25, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2195",
+    "name": {
+      "en": "Stone Axe",
+      "fr": "Hache de Pierre",
+      "de": "Steinaxt",
+      "es": "Hacha de piedra",
+      "it": "Ascia di Pietra",
+      "pt": "Machado de Pedra"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 51,
+    "stats": [
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 20 },
+      { "stat": "Initiative", "minStat": null, "maxStat": 50 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 60 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 25, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8610",
+    "name": {
+      "en": "Axe Ident",
+      "fr": "Hache Pi'Veuh'Nin'",
+      "de": "Axt Ih'Mwaldeh'",
+      "es": "Hacha H'Rlot",
+      "it": "Ascia As'Pir'Veh'Len'",
+      "pt": "Machado Ident"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 50,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Agilité", "operator": ">", "value": 50 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19055.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [{ "minStat": 19, "maxStat": 28, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "9391",
+    "name": {
+      "en": "Hulkrap's Axe",
+      "fr": "Hache d'Hulkrap",
+      "de": "Lerkstim-Axt",
+      "es": "Hacha de Ravelaca",
+      "it": "Ascia di Quentindel",
+      "pt": "Machado de Lápucra"
+    },
+    "itemType": "Axe",
+    "setID": "152",
+    "level": 47,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19058.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Fire damage" },
+        { "minStat": 4, "maxStat": 6, "stat": "Air damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "337",
+    "name": {
+      "en": "Hornbeam Pruner",
+      "fr": "Elagueuse de Charme",
+      "de": "Hainbuchenbestutzer",
+      "es": "Podadora de carpe",
+      "it": "Potatrice di Carpine",
+      "pt": "Podador de Cárpino"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 47,
+    "stats": [
+      { "stat": "Wisdom", "minStat": null, "maxStat": 20 },
+      { "stat": "Intelligence", "minStat": 26, "maxStat": 35 },
+      { "stat": "Chance", "minStat": 26, "maxStat": 35 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Sagesse", "operator": ">", "value": 20 },
+        { "stat": "Intelligence", "operator": ">", "value": 20 },
+        { "stat": "Chance", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19003.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2193",
+    "name": {
+      "en": "Oliviolet Pruner",
+      "fr": "Elagueuse d'Oliviolet",
+      "de": "Oliviolettas Beschneider",
+      "es": "Podadora de olivioleta",
+      "it": "Potatrice di Oliviola",
+      "pt": "Podador de Olivioleta"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 42,
+    "stats": [
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19014.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 22, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8609",
+    "name": {
+      "en": "Axe Enroziz",
+      "fr": "Hache Pira'Teur'",
+      "de": "Axt Wuh'Fh'",
+      "es": "Hacha Cha'Cháh",
+      "it": "Ascia Spir'Ator'",
+      "pt": "Machado Enroziz"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 40,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 40 },
+        { "stat": "Vitalité", "operator": ">", "value": 40 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19054.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 14, "maxStat": 23, "stat": "Earth damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8730",
+    "name": {
+      "en": "[!EN] Hache Téreau hache",
+      "fr": "Hache Téreau hache",
+      "de": "[!DE] Hache Téreau hache",
+      "es": "[!ES] Hache Téreau hache",
+      "it": "[!IT] Hache Téreau hache",
+      "pt": "[!PT] Hache Téreau hache"
+    },
+    "itemType": "Axe",
+    "setID": "139",
+    "level": 39,
+    "stats": [
+      { "stat": "Chance", "minStat": 6, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 60 },
+        { "stat": "Vitalité", "operator": ">", "value": 50 },
+        { "stat": "Sagesse", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19057.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 20,
+      "critBonusDamage": 3,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 17, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2192",
+    "name": {
+      "en": "Bombu Cutter",
+      "fr": "Coupeuse de Bombu",
+      "de": "Bombusschnitter",
+      "es": "Cortadora de bombú",
+      "it": "Tagliatrice di Bombù",
+      "pt": "Cortador de Bombu"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 39,
+    "stats": [
+      { "stat": "Intelligence", "minStat": 6, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 15 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Vitalité", "operator": ">", "value": 20 },
+        { "stat": "Sagesse", "operator": ">", "value": 20 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19015.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 15, "maxStat": 24, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6492",
+    "name": {
+      "en": "Shodanwa Axe",
+      "fr": "Hache du Shodanwa",
+      "de": "Shodanwa-Axt",
+      "es": "Hacha shodanwa",
+      "it": "Ascia del Shodanwa",
+      "pt": "Machado de Shodanwa"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 36,
+    "stats": [
+      { "stat": "Chance", "minStat": 11, "maxStat": 20 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19037.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 30, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1061",
+    "name": {
+      "en": "Huvant Axe",
+      "fr": "Hache Heuvante",
+      "de": "Axt Oni",
+      "es": "Hacha Kador",
+      "it": "Ascia di Grazia",
+      "pt": "Machado Heuvante"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 35,
+    "stats": [{ "stat": "Strength", "minStat": 11, "maxStat": 20 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19015.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 9, "maxStat": 18, "stat": "Fire damage" }]
+    }
+  },
+  {
+    "dofusID": "317",
+    "name": {
+      "en": "Oak Killer",
+      "fr": "Tueuse de Chênes",
+      "de": "Eichentod",
+      "es": "Exterminadora de robles",
+      "it": "Ammazzaquerce",
+      "pt": "Assassino de Carvalho"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 33,
+    "stats": [
+      { "stat": "Strength", "minStat": 26, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 35 }
+    ],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 66 },
+        { "stat": "Agilité", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19002.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "429",
+    "name": {
+      "en": "Cherry Splitter",
+      "fr": "Fendeuse de Merisier",
+      "de": "Spalter der Vogelkirschen",
+      "es": "Hendedora de cerezo silvestre",
+      "it": "Fenditrice di Ciliegio Selvatico",
+      "pt": "Rachador de cerejeira"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 32,
+    "stats": [
+      { "stat": "Critical", "minStat": null, "maxStat": 1 },
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19007.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 16, "maxStat": 20, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "8608",
+    "name": {
+      "en": "Tex Axe",
+      "fr": "Hache Hich'Ke'Bab'",
+      "de": "Axt Hi'Ahl'",
+      "es": "Hacha Oh'Lin",
+      "it": "Ascia Chechi'Ke'Bab'",
+      "pt": "Machado Tex"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 30,
+    "stats": [],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Chance", "operator": ">", "value": 30 },
+        { "stat": "Vitalité", "operator": ">", "value": 30 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19052.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": true,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 20, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1063",
+    "name": {
+      "en": "Jon Lemon",
+      "fr": "Francisque à Brêles",
+      "de": "Ramms Steinaxt",
+      "es": "La Rike Glesias",
+      "it": "Francisca Rikamartina",
+      "pt": "Miche Elteló"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 28,
+    "stats": [{ "stat": "Vitality", "minStat": 11, "maxStat": 20 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19017.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 8,
+      "is2Handed": false,
+      "weapon_effects": [{ "minStat": 11, "maxStat": 15, "stat": "Air damage" }]
+    }
+  },
+  {
+    "dofusID": "516",
+    "name": {
+      "en": "Agride",
+      "fr": "Agride",
+      "de": "Agrid",
+      "es": "Agrid",
+      "it": "Agrida",
+      "pt": "Agride"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 27,
+    "stats": [{ "stat": "Wisdom", "minStat": 11, "maxStat": 20 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19011.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 8, "maxStat": 12, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6496",
+    "name": {
+      "en": "Bamboo Slayer",
+      "fr": "La Trancheuse de Bambou",
+      "de": "Bambuschkayah",
+      "es": "La cortadora de bambú",
+      "it": "La Tagliatrice di Bambù",
+      "pt": "Assassino de Bambu"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 26,
+    "stats": [{ "stat": "Vitality", "minStat": 16, "maxStat": 25 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19033.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 20, "stat": "Fire damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "431",
+    "name": {
+      "en": "Maple Tree Eater",
+      "fr": "Mangeuse d'Erable",
+      "de": "Ahornesser",
+      "es": "Devoradora de arces",
+      "it": "Mangiatrice di Acero",
+      "pt": "Devorador de Árvore de Bordo"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 25,
+    "stats": [{ "stat": "Agility", "minStat": 21, "maxStat": 30 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19010.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1062",
+    "name": {
+      "en": "Samuel J. Axe",
+      "fr": "Hache Huré",
+      "de": "Schraxtfur",
+      "es": "Hacha Mahn",
+      "it": "Ascia Huré",
+      "pt": "Machado de Hure"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 22,
+    "stats": [{ "stat": "Intelligence", "minStat": 11, "maxStat": 30 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19016.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Water damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "430",
+    "name": {
+      "en": "Walnut Cutter",
+      "fr": "Trancheuse de Noyer",
+      "de": "Walnussknacker",
+      "es": "Cortadora de nogal",
+      "it": "Tranciatrice di Noce",
+      "pt": "Cortador de Nogueira"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 21,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 20 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19008.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "360",
+    "name": {
+      "en": "Yew Axe",
+      "fr": "Trancheuse d'If",
+      "de": "Spaltaxt der Eiben und Elben",
+      "es": "Cortadora de tejo",
+      "it": "Tranciatrice di Tasso",
+      "pt": "Cortador de Teixo"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 17,
+    "stats": [{ "stat": "Intelligence", "minStat": 21, "maxStat": 35 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 10 },
+        { "stat": "Intelligence", "operator": ">", "value": 35 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19004.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 11, "maxStat": 15, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1060",
+    "name": {
+      "en": "Terophyle Axe",
+      "fr": "Hache Térophyle",
+      "de": "Bodi Beilders Axt",
+      "es": "Hacha Al-Terófilo",
+      "it": "Ascia Terofilo",
+      "pt": "Machado de Terophyle"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 15,
+    "stats": [{ "stat": "Strength", "minStat": 21, "maxStat": 70 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 70 },
+        { "stat": "Intelligence", "operator": "<", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19014.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 3, "maxStat": 7, "stat": "Earth damage" },
+        { "minStat": null, "maxStat": -1, "stat": "AP" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2190",
+    "name": {
+      "en": "Vor'Om Axe",
+      "fr": "Hache Vôr'Om",
+      "de": "Vôr'Oms Axt",
+      "es": "Hacha Vor'Om",
+      "it": "Ascia Vor'Om",
+      "pt": "Machado Vôr’Om"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 12,
+    "stats": [
+      { "stat": "Vitality", "minStat": 6, "maxStat": 15 },
+      { "stat": "Agility", "minStat": null, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19013.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 10, "maxStat": 14, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "6235",
+    "name": {
+      "en": "Arachnee Cutter",
+      "fr": "La Trancheuse d'Arakne",
+      "de": "Arachneewehweh",
+      "es": "La cortadora de arakna",
+      "it": "La Tagliatrice di Arakni",
+      "pt": "Cortador de Arakne"
+    },
+    "itemType": "Axe",
+    "setID": "22",
+    "level": 8,
+    "stats": [{ "stat": "Vitality", "minStat": 1, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19031.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 7, "maxStat": 11, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "506",
+    "name": {
+      "en": "Ash Tree Eater",
+      "fr": "Mangeuse de Frêne",
+      "de": "Eschenzerbrecher",
+      "es": "Devoradora de fresnos",
+      "it": "Mangiatrice di Frassino",
+      "pt": "Devorador de Freixo"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 8,
+    "stats": [{ "stat": "Chance", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 10 },
+        { "stat": "Chance", "operator": ">", "value": 10 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19009.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "428",
+    "name": {
+      "en": "Chestnut Tree Eater",
+      "fr": "Mangeuse de Châtaignier",
+      "de": "Kastanienfresser",
+      "es": "Devoradora de castaños",
+      "it": "Mangiatrice di Castagno",
+      "pt": "Devoradora de castanheiro"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 8,
+    "stats": [{ "stat": "Agility", "minStat": null, "maxStat": 3 }],
+    "customStats": {},
+    "conditions": {
+      "and": [
+        { "stat": "Force", "operator": ">", "value": 8 },
+        { "stat": "Agilité", "operator": ">", "value": 3 }
+      ]
+    },
+    "customConditions": {},
+    "imageUrl": "/retro/item/19006.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2189",
+    "name": {
+      "en": "Hevlalav Hatchet",
+      "fr": "Hachette Hévlalav",
+      "de": "Hevlalavs Handaxt",
+      "es": "Hachita Ermundo",
+      "it": "Accetta Hevlalav",
+      "pt": "Machadinha Hevlalav"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 6,
+    "stats": [
+      { "stat": "Vitality", "minStat": null, "maxStat": 7 },
+      { "stat": "Strength", "minStat": null, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19007.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 10,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "2187",
+    "name": {
+      "en": "Lumberjack Hatchet",
+      "fr": "Hachette de Bûcheron",
+      "de": "Handbeil des Holzfällers",
+      "es": "Machete de leñador",
+      "it": "Accetta da Taglialegna",
+      "pt": "Machadinha de Lenhador"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 3,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 5 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19006.png",
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 30,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 4, "maxStat": 9, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "9361",
+    "name": {
+      "en": "Initiate's Axe",
+      "fr": "Hache de l'initié",
+      "de": "Anfänger-Axt",
+      "es": "Hacha de debutante",
+      "it": "Ascia dell'Iniziato",
+      "pt": "Machado do Iniciado"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 50,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "7706",
+    "name": {
+      "en": "[!EN] Hache de l'apprenti bûcheron",
+      "fr": "Hache de l'apprenti bûcheron",
+      "de": "[!DE] Hache de l'apprenti bûcheron",
+      "es": "[!ES] Hache de l'apprenti bûcheron",
+      "it": "[!IT] Hache de l'apprenti bûcheron",
+      "pt": "[!PT] Hache de l'apprenti bûcheron"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Initiative", "minStat": null, "maxStat": 10 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 1, "maxStat": 3, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "315",
+    "name": {
+      "en": "[!EN] Hache de Bûcheron",
+      "fr": "Hache de Bûcheron",
+      "de": "[!DE] Hache de Bûcheron",
+      "es": "[!ES] Hache de Bûcheron",
+      "it": "[!IT] Hache de Bûcheron",
+      "pt": "[!PT] Hache de Bûcheron"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 1,
+    "stats": [{ "stat": "Vitality", "minStat": null, "maxStat": 1 }],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {},
+    "imageUrl": "/retro/item/19001.png",
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 40,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 2, "maxStat": 4, "stat": "Neutral damage" }
+      ]
+    }
+  },
+  {
+    "dofusID": "1994",
+    "name": {
+      "en": "Hemal Axe",
+      "fr": "Hache Hémal",
+      "de": "Blutaxt des Grauens",
+      "es": "Hacha Kemata",
+      "it": "Ascia Hémal",
+      "pt": "Machado de Hemal"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 1,
+    "stats": [],
+    "customStats": {},
+    "conditions": {},
+    "customConditions": {
+      "en": ["[!EN] Métier ="],
+      "fr": ["Métier ="],
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
+    },
+    "imageUrl": "/retro/item/19018.png",
+    "weaponStats": {
+      "apCost": 6,
+      "usesPerTurn": null,
+      "minRange": null,
+      "maxRange": 1,
+      "critDenominator": 45,
+      "critBonusDamage": 5,
+      "is2Handed": false,
+      "weapon_effects": [
+        { "minStat": 6, "maxStat": 10, "stat": "Earth damage" }
+      ]
+    }
+  }
+]
