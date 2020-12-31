@@ -1544,30 +1544,12 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {
-      "en": [
-        "Alignement = Bonta\n                                \n                                ",
-        "\n                                \n                                  Alignement > 10"
-      ],
-      "fr": [
-        "Alignement = Bonta\n                                \n                                ",
-        "\n                                \n                                  Alignement > 10"
-      ],
-      "de": [
-        "Alignement = Bonta\n                                \n                                ",
-        "\n                                \n                                  Alignement > 10"
-      ],
-      "es": [
-        "Alignement = Bonta\n                                \n                                ",
-        "\n                                \n                                  Alignement > 10"
-      ],
-      "it": [
-        "Alignement = Bonta\n                                \n                                ",
-        "\n                                \n                                  Alignement > 10"
-      ],
-      "pt": [
-        "Alignement = Bonta\n                                \n                                ",
-        "\n                                \n                                  Alignement > 10"
-      ]
+      "en": ["[!EN] Alignement = Bonta", "[!EN] Alignement > 10"],
+      "fr": ["Alignement = Bonta", "Alignement > 10"],
+      "de": ["[!DE] Alignement = Bonta", "[!DE] Alignement > 10"],
+      "es": ["[!ES] Alignement = Bonta", "[!ES] Alignement > 10"],
+      "it": ["[!IT] Alignement = Bonta", "[!IT] Alignement > 10"],
+      "pt": ["[!PT] Alignement = Bonta", "[!PT] Alignement > 10"]
     },
     "imageUrl": "/retro/item/1023.png"
   },

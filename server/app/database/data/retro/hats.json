@@ -4971,12 +4971,12 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {
-      "en": ["Marié = non"],
+      "en": ["[!EN] Marié = non"],
       "fr": ["Marié = non"],
-      "de": ["Marié = non"],
-      "es": ["Marié = non"],
-      "it": ["Marié = non"],
-      "pt": ["Marié = non"]
+      "de": ["[!DE] Marié = non"],
+      "es": ["[!ES] Marié = non"],
+      "it": ["[!IT] Marié = non"],
+      "pt": ["[!PT] Marié = non"]
     },
     "imageUrl": "/retro/item/16231.png"
   },
@@ -5349,12 +5349,12 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {
-      "en": ["Personnage = Féminin"],
+      "en": ["[!EN] Personnage = Féminin"],
       "fr": ["Personnage = Féminin"],
-      "de": ["Personnage = Féminin"],
-      "es": ["Personnage = Féminin"],
-      "it": ["Personnage = Féminin"],
-      "pt": ["Personnage = Féminin"]
+      "de": ["[!DE] Personnage = Féminin"],
+      "es": ["[!ES] Personnage = Féminin"],
+      "it": ["[!IT] Personnage = Féminin"],
+      "pt": ["[!PT] Personnage = Féminin"]
     },
     "imageUrl": "/retro/item/16054.png"
   },
@@ -5375,12 +5375,12 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {
-      "en": ["Personnage = Masculin"],
+      "en": ["[!EN] Personnage = Masculin"],
       "fr": ["Personnage = Masculin"],
-      "de": ["Personnage = Masculin"],
-      "es": ["Personnage = Masculin"],
-      "it": ["Personnage = Masculin"],
-      "pt": ["Personnage = Masculin"]
+      "de": ["[!DE] Personnage = Masculin"],
+      "es": ["[!ES] Personnage = Masculin"],
+      "it": ["[!IT] Personnage = Masculin"],
+      "pt": ["[!PT] Personnage = Masculin"]
     },
     "imageUrl": "/retro/item/16053.png"
   },

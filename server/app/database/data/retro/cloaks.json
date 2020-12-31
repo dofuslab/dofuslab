@@ -2855,30 +2855,12 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {
-      "en": [
-        "Alignement = Bonta\n                                \n                                ",
-        "\n                                \n                                  Alignement > 20"
-      ],
-      "fr": [
-        "Alignement = Bonta\n                                \n                                ",
-        "\n                                \n                                  Alignement > 20"
-      ],
-      "de": [
-        "Alignement = Bonta\n                                \n                                ",
-        "\n                                \n                                  Alignement > 20"
-      ],
-      "es": [
-        "Alignement = Bonta\n                                \n                                ",
-        "\n                                \n                                  Alignement > 20"
-      ],
-      "it": [
-        "Alignement = Bonta\n                                \n                                ",
-        "\n                                \n                                  Alignement > 20"
-      ],
-      "pt": [
-        "Alignement = Bonta\n                                \n                                ",
-        "\n                                \n                                  Alignement > 20"
-      ]
+      "en": ["[!EN] Alignement = Bonta", "[!EN] Alignement > 20"],
+      "fr": ["Alignement = Bonta", "Alignement > 20"],
+      "de": ["[!DE] Alignement = Bonta", "[!DE] Alignement > 20"],
+      "es": ["[!ES] Alignement = Bonta", "[!ES] Alignement > 20"],
+      "it": ["[!IT] Alignement = Bonta", "[!IT] Alignement > 20"],
+      "pt": ["[!PT] Alignement = Bonta", "[!PT] Alignement > 20"]
     },
     "imageUrl": "/retro/item/17002.png"
   },
@@ -3550,30 +3532,12 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {
-      "en": [
-        "Alignement = Brâkmar\n                                \n                                ",
-        "\n                                \n                                  Alignement > 30"
-      ],
-      "fr": [
-        "Alignement = Brâkmar\n                                \n                                ",
-        "\n                                \n                                  Alignement > 30"
-      ],
-      "de": [
-        "Alignement = Brâkmar\n                                \n                                ",
-        "\n                                \n                                  Alignement > 30"
-      ],
-      "es": [
-        "Alignement = Brâkmar\n                                \n                                ",
-        "\n                                \n                                  Alignement > 30"
-      ],
-      "it": [
-        "Alignement = Brâkmar\n                                \n                                ",
-        "\n                                \n                                  Alignement > 30"
-      ],
-      "pt": [
-        "Alignement = Brâkmar\n                                \n                                ",
-        "\n                                \n                                  Alignement > 30"
-      ]
+      "en": ["[!EN] Alignement = Brâkmar", "[!EN] Alignement > 30"],
+      "fr": ["Alignement = Brâkmar", "Alignement > 30"],
+      "de": ["[!DE] Alignement = Brâkmar", "[!DE] Alignement > 30"],
+      "es": ["[!ES] Alignement = Brâkmar", "[!ES] Alignement > 30"],
+      "it": ["[!IT] Alignement = Brâkmar", "[!IT] Alignement > 30"],
+      "pt": ["[!PT] Alignement = Brâkmar", "[!PT] Alignement > 30"]
     },
     "imageUrl": "/retro/item/17011.png"
   },
@@ -3866,12 +3830,12 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {
-      "en": ["Alignement = Bonta"],
+      "en": ["[!EN] Alignement = Bonta"],
       "fr": ["Alignement = Bonta"],
-      "de": ["Alignement = Bonta"],
-      "es": ["Alignement = Bonta"],
-      "it": ["Alignement = Bonta"],
-      "pt": ["Alignement = Bonta"]
+      "de": ["[!DE] Alignement = Bonta"],
+      "es": ["[!ES] Alignement = Bonta"],
+      "it": ["[!IT] Alignement = Bonta"],
+      "pt": ["[!PT] Alignement = Bonta"]
     },
     "imageUrl": "/retro/item/17034.png"
   },
@@ -3892,12 +3856,12 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {
-      "en": ["Alignement = Brâkmar"],
+      "en": ["[!EN] Alignement = Brâkmar"],
       "fr": ["Alignement = Brâkmar"],
-      "de": ["Alignement = Brâkmar"],
-      "es": ["Alignement = Brâkmar"],
-      "it": ["Alignement = Brâkmar"],
-      "pt": ["Alignement = Brâkmar"]
+      "de": ["[!DE] Alignement = Brâkmar"],
+      "es": ["[!ES] Alignement = Brâkmar"],
+      "it": ["[!IT] Alignement = Brâkmar"],
+      "pt": ["[!PT] Alignement = Brâkmar"]
     },
     "imageUrl": "/retro/item/17020.png"
   }

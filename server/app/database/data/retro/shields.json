@@ -19,12 +19,12 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {
-      "en": ["Kamas > 790000"],
+      "en": ["[!EN] Kamas > 790000"],
       "fr": ["Kamas > 790000"],
-      "de": ["Kamas > 790000"],
-      "es": ["Kamas > 790000"],
-      "it": ["Kamas > 790000"],
-      "pt": ["Kamas > 790000"]
+      "de": ["[!DE] Kamas > 790000"],
+      "es": ["[!ES] Kamas > 790000"],
+      "it": ["[!IT] Kamas > 790000"],
+      "pt": ["[!PT] Kamas > 790000"]
     },
     "imageUrl": "/retro/item/82035.png"
   },

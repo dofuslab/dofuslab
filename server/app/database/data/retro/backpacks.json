@@ -174,12 +174,12 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {
-      "en": ["Métier ="],
+      "en": ["[!EN] Métier ="],
       "fr": ["Métier ="],
-      "de": ["Métier ="],
-      "es": ["Métier ="],
-      "it": ["Métier ="],
-      "pt": ["Métier ="]
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
     },
     "imageUrl": "/retro/item/81030.png"
   },
@@ -200,12 +200,12 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {
-      "en": ["Métier ="],
+      "en": ["[!EN] Métier ="],
       "fr": ["Métier ="],
-      "de": ["Métier ="],
-      "es": ["Métier ="],
-      "it": ["Métier ="],
-      "pt": ["Métier ="]
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
     },
     "imageUrl": "/retro/item/81029.png"
   },
@@ -289,12 +289,12 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {
-      "en": ["Métier ="],
+      "en": ["[!EN] Métier ="],
       "fr": ["Métier ="],
-      "de": ["Métier ="],
-      "es": ["Métier ="],
-      "it": ["Métier ="],
-      "pt": ["Métier ="]
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
     },
     "imageUrl": "/retro/item/81028.png"
   },
@@ -334,12 +334,12 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {
-      "en": ["Métier ="],
+      "en": ["[!EN] Métier ="],
       "fr": ["Métier ="],
-      "de": ["Métier ="],
-      "es": ["Métier ="],
-      "it": ["Métier ="],
-      "pt": ["Métier ="]
+      "de": ["[!DE] Métier ="],
+      "es": ["[!ES] Métier ="],
+      "it": ["[!IT] Métier ="],
+      "pt": ["[!PT] Métier ="]
     },
     "imageUrl": "/retro/item/81026.png"
   },
