@@ -1738,25 +1738,25 @@
     "bonuses": {
       "2": [
         { "stat": "Initiative", "value": 100, "altStat": null },
-        { "stat": "Pods", "value": 100, "altStat": null }
+        { "stat": "pods", "value": 100, "altStat": null }
       ],
       "3": [
         { "stat": "Vitality", "value": 20, "altStat": null },
         { "stat": "Initiative", "value": 120, "altStat": null },
-        { "stat": "Pods", "value": 200, "altStat": null }
+        { "stat": "pods", "value": 200, "altStat": null }
       ],
       "4": [
         { "stat": "Vitality", "value": 40, "altStat": null },
         { "stat": "Strength", "value": 20, "altStat": null },
         { "stat": "Initiative", "value": 140, "altStat": null },
-        { "stat": "Pods", "value": 300, "altStat": null }
+        { "stat": "pods", "value": 300, "altStat": null }
       ],
       "5": [
         { "stat": "Vitality", "value": 60, "altStat": null },
         { "stat": "Strength", "value": 40, "altStat": null },
         { "stat": "Agility", "value": 20, "altStat": null },
         { "stat": "Initiative", "value": 160, "altStat": null },
-        { "stat": "Pods", "value": 400, "altStat": null }
+        { "stat": "pods", "value": 400, "altStat": null }
       ],
       "6": [
         { "stat": "Vitality", "value": 80, "altStat": null },
@@ -1764,7 +1764,7 @@
         { "stat": "Strength", "value": 60, "altStat": null },
         { "stat": "Agility", "value": 40, "altStat": null },
         { "stat": "Initiative", "value": 180, "altStat": null },
-        { "stat": "Pods", "value": 500, "altStat": null }
+        { "stat": "pods", "value": 500, "altStat": null }
       ],
       "7": [
         { "stat": "Vitality", "value": 100, "altStat": null },
@@ -1772,7 +1772,7 @@
         { "stat": "Strength", "value": 80, "altStat": null },
         { "stat": "Agility", "value": 60, "altStat": null },
         { "stat": "Initiative", "value": 200, "altStat": null },
-        { "stat": "Pods", "value": 600, "altStat": null },
+        { "stat": "pods", "value": 600, "altStat": null },
         { "stat": "MP", "value": 1, "altStat": null }
       ]
     }
