@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 73d3d0d18ba3
+Revision ID: adeab773cab7
 Revises: 8b23da1cb2e1
-Create Date: 2020-12-29 20:01:07.345366
+Create Date: 2020-12-31 18:07:42.831182
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
-revision = "73d3d0d18ba3"
+revision = "adeab773cab7"
 down_revision = "8b23da1cb2e1"
 branch_labels = None
 depends_on = None
@@ -141,6 +141,8 @@ def upgrade():
             "AIR_RES_PVP",
             "PCT_AIR_RES_PVP",
             "HP",
+            "PHYSICAL_REDUCTION",
+            "MAGICAL_REDUCTION",
             name="stat",
         ),
         existing_nullable=False,
@@ -268,6 +270,8 @@ def upgrade():
             "AIR_RES_PVP",
             "PCT_AIR_RES_PVP",
             "HP",
+            "PHYSICAL_REDUCTION",
+            "MAGICAL_REDUCTION",
             name="stat",
         ),
         existing_nullable=False,
@@ -395,6 +399,8 @@ def upgrade():
             "AIR_RES_PVP",
             "PCT_AIR_RES_PVP",
             "HP",
+            "PHYSICAL_REDUCTION",
+            "MAGICAL_REDUCTION",
             name="stat",
         ),
         existing_nullable=True,
@@ -522,6 +528,8 @@ def upgrade():
             "AIR_RES_PVP",
             "PCT_AIR_RES_PVP",
             "HP",
+            "PHYSICAL_REDUCTION",
+            "MAGICAL_REDUCTION",
             name="stat",
         ),
         existing_nullable=True,
@@ -599,6 +607,8 @@ def downgrade():
             "AIR_RES_PVP",
             "PCT_AIR_RES_PVP",
             "HP",
+            "PHYSICAL_REDUCTION",
+            "MAGICAL_REDUCTION",
             name="stat",
         ),
         type_=postgresql.ENUM(
@@ -726,6 +736,8 @@ def downgrade():
             "AIR_RES_PVP",
             "PCT_AIR_RES_PVP",
             "HP",
+            "PHYSICAL_REDUCTION",
+            "MAGICAL_REDUCTION",
             name="stat",
         ),
         type_=postgresql.ENUM(
@@ -853,6 +865,8 @@ def downgrade():
             "AIR_RES_PVP",
             "PCT_AIR_RES_PVP",
             "HP",
+            "PHYSICAL_REDUCTION",
+            "MAGICAL_REDUCTION",
             name="stat",
         ),
         type_=postgresql.ENUM(
@@ -980,6 +994,8 @@ def downgrade():
             "AIR_RES_PVP",
             "PCT_AIR_RES_PVP",
             "HP",
+            "PHYSICAL_REDUCTION",
+            "MAGICAL_REDUCTION",
             name="stat",
         ),
         type_=postgresql.ENUM(

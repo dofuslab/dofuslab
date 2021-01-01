@@ -68,6 +68,8 @@ class Stat(Enum):
     AIR_RES_PVP = auto()
     PCT_AIR_RES_PVP = auto()
     HP = auto()
+    PHYSICAL_REDUCTION = auto()
+    MAGICAL_REDUCTION = auto()
 
 
 class WeaponEffectType(Enum):
