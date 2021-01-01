@@ -6,6 +6,7 @@ from app.database.model_set_translation import ModelSetTranslation
 from app.database.model_set_bonus import ModelSetBonus
 from app.database.model_set_bonus_translation import ModelSetBonusTranslation
 from oneoff.enums import to_stat_enum
+from oneoff.utils import prompt_game_version, get_relative_path_for_game_version
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -41,14 +42,16 @@ def create_set_translations(db_session, set_object, data):
             db_session.add(translation)
 
 
-def update_set(db_session, set_object, data):
+def update_set(
+    db_session, set_object, data,
+):
     db_session.query(ModelSetTranslation).filter(
-        ModelSetTranslation.set_id == set_object.uuid
+        ModelSetTranslation.set_id == set_object.uuid,
     ).delete()
     create_set_translations(db_session, set_object, data)
 
     db_session.query(ModelSetBonus).filter(
-        ModelSetBonus.set_id == set_object.uuid
+        ModelSetBonus.set_id == set_object.uuid,
     ).delete()
     create_set_bonuses(db_session, set_object, data)
 
@@ -62,11 +65,16 @@ def create_set(db_session, data, game_version):
     create_set_bonuses(db_session, set_object, data)
 
 
-def create_or_update_set(db_session, set_name, data, should_only_add_missing):
+def create_or_update_set(
+    db_session, set_name, data, should_only_add_missing, game_version
+):
     translations = (
         db_session.query(ModelSetTranslation)
+        .join(ModelSet)
         .filter(
-            ModelSetTranslation.locale == "en", ModelSetTranslation.name == set_name
+            ModelSetTranslation.locale == "en",
+            ModelSetTranslation.name == set_name,
+            ModelSet.game_version == game_version,
         )
         .all()
     )
@@ -77,17 +85,26 @@ def create_or_update_set(db_session, set_name, data, should_only_add_missing):
         print("The set {} currently exists. Updating the set.".format(set_name))
         set_object = (
             db_session.query(ModelSet)
-            .filter(ModelSet.uuid == translations[0].set_id)
+            .filter(
+                ModelSet.uuid == translations[0].set_id,
+                ModelSet.game_version == game_version,
+            )
             .one()
         )
         update_set(db_session, set_object, data)
     elif len(translations) == 0:
         print("No set was found for {}. Creating the set".format(set_name))
-        create_set(db_session, data)
+        create_set(db_session, data, game_version)
 
 
 def sync_set():
-    with open(os.path.join(app_root, "app/database/data/sets.json"), "r") as file:
+    game_version = prompt_game_version()
+    with open(
+        os.path.join(
+            app_root, get_relative_path_for_game_version(game_version), "sets.json"
+        ),
+        "r",
+    ) as file:
         data = json.load(file)
 
         name_to_record_map = {}
@@ -105,18 +122,28 @@ def sync_set():
                 if response == "update all":
                     for set_data in data:
                         create_or_update_set(
-                            db_session, set_data["name"]["en"], set_data, False
+                            db_session,
+                            set_data["name"]["en"],
+                            set_data,
+                            False,
+                            game_version,
                         )
                     break
                 elif response == "add missing sets":
                     for set_data in data:
                         create_or_update_set(
-                            db_session, set_data["name"]["en"], set_data, True
+                            db_session,
+                            set_data["name"]["en"],
+                            set_data,
+                            True,
+                            game_version,
                         )
                     break
                 elif response in name_to_record_map:
                     record = name_to_record_map[response]
-                    create_or_update_set(db_session, response, record, False)
+                    create_or_update_set(
+                        db_session, response, record, False, game_version
+                    )
                 else:
                     print(
                         "The set {} does not exist. Please try again.".format(response)

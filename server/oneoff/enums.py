@@ -53,6 +53,9 @@ to_stat_enum = {
     "% Ranged Resistance": enums.Stat.PCT_RANGED_RES,
     "% Melee Resistance": enums.Stat.PCT_MELEE_RES,
     "pods": enums.Stat.PODS,
+    "HP": enums.Stat.HP,
+    "Physical Reduction": enums.Stat.PHYSICAL_REDUCTION,
+    "Magical Reduction": enums.Stat.MAGICAL_REDUCTION,
 }
 
 to_effect_enum = {

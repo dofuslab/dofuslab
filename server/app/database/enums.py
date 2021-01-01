@@ -86,6 +86,7 @@ class WeaponEffectType(Enum):
     AP = auto()
     MP = auto()
     HP_RESTORED = auto()
+    KAMAS = auto()
 
 
 class SpellEffectType(Enum):
@@ -106,6 +107,7 @@ class SpellEffectType(Enum):
     PUSHBACK_DAMAGE = auto()
     BEST_ELEMENT_DAMAGE = auto()
     BEST_ELEMENT_STEAL = auto()
+    KAMAS = auto()
 
 
 class WeaponElementMage(Enum):
