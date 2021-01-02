@@ -16,8 +16,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18012.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18012.png"
   },
   {
     "dofusID": "9400",
@@ -36,8 +35,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18061.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18061.png"
   },
   {
     "dofusID": "9399",
@@ -56,8 +54,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18060.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18060.png"
   },
   {
     "dofusID": "9398",
@@ -76,8 +73,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18059.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18059.png"
   },
   {
     "dofusID": "9397",
@@ -96,8 +92,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18058.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18058.png"
   },
   {
     "dofusID": "9346",
@@ -116,8 +111,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18057.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18057.png"
   },
   {
     "dofusID": "9209",
@@ -136,8 +130,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18056.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18056.png"
   },
   {
     "dofusID": "9145",
@@ -156,8 +149,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18055.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18055.png"
   },
   {
     "dofusID": "8871",
@@ -172,12 +164,11 @@
     "itemType": "Pet",
     "setID": null,
     "level": 1,
-    "stats": [{ "stat": "Pods", "minStat": 10, "maxStat": 1000 }],
+    "stats": [{ "stat": "pods", "minStat": 10, "maxStat": 1000 }],
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18054.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18054.png"
   },
   {
     "dofusID": "8870",
@@ -196,8 +187,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18053.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18053.png"
   },
   {
     "dofusID": "8619",
@@ -216,8 +206,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18052.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18052.png"
   },
   {
     "dofusID": "8504",
@@ -236,8 +225,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18048.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18048.png"
   },
   {
     "dofusID": "8503",
@@ -256,8 +244,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18047.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18047.png"
   },
   {
     "dofusID": "8500",
@@ -276,8 +263,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18049.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18049.png"
   },
   {
     "dofusID": "8499",
@@ -296,8 +282,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18051.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18051.png"
   },
   {
     "dofusID": "8497",
@@ -316,8 +301,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18050.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18050.png"
   },
   {
     "dofusID": "8491",
@@ -336,8 +320,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18046.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18046.png"
   },
   {
     "dofusID": "7829",
@@ -356,8 +339,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18045.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18045.png"
   },
   {
     "dofusID": "7815",
@@ -376,8 +358,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18044.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18044.png"
   },
   {
     "dofusID": "7719",
@@ -396,8 +377,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18042.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18042.png"
   },
   {
     "dofusID": "7397",
@@ -416,8 +396,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18038.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18038.png"
   },
   {
     "dofusID": "7366",
@@ -436,8 +415,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18037.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18037.png"
   },
   {
     "dofusID": "7365",
@@ -462,8 +440,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18036.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18036.png"
   },
   {
     "dofusID": "7364",
@@ -482,8 +459,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18034.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18034.png"
   },
   {
     "dofusID": "7362",
@@ -502,8 +478,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18035.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18035.png"
   },
   {
     "dofusID": "7285",
@@ -522,8 +497,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18032.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18032.png"
   },
   {
     "dofusID": "7222",
@@ -538,12 +512,11 @@
     "itemType": "Pet",
     "setID": null,
     "level": 1,
-    "stats": [{ "stat": "Pods", "minStat": 10, "maxStat": 1000 }],
+    "stats": [{ "stat": "pods", "minStat": 10, "maxStat": 1000 }],
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18031.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18031.png"
   },
   {
     "dofusID": "7141",
@@ -562,8 +535,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18030.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18030.png"
   },
   {
     "dofusID": "7125",
@@ -582,8 +554,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18029.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18029.png"
   },
   {
     "dofusID": "7124",
@@ -607,8 +578,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18028.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18028.png"
   },
   {
     "dofusID": "6962",
@@ -630,8 +600,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18017.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18017.png"
   },
   {
     "dofusID": "6961",
@@ -650,8 +619,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18022.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18022.png"
   },
   {
     "dofusID": "6960",
@@ -670,8 +638,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18026.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18026.png"
   },
   {
     "dofusID": "6959",
@@ -690,8 +657,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18025.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18025.png"
   },
   {
     "dofusID": "6958",
@@ -710,8 +676,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18024.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18024.png"
   },
   {
     "dofusID": "6957",
@@ -730,8 +695,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18023.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18023.png"
   },
   {
     "dofusID": "6956",
@@ -750,8 +714,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18019.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18019.png"
   },
   {
     "dofusID": "6955",
@@ -770,8 +733,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18020.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18020.png"
   },
   {
     "dofusID": "6954",
@@ -790,8 +752,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18043.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18043.png"
   },
   {
     "dofusID": "6953",
@@ -810,8 +771,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18027.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18027.png"
   },
   {
     "dofusID": "6952",
@@ -830,8 +790,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18016.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18016.png"
   },
   {
     "dofusID": "6951",
@@ -850,8 +809,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18018.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18018.png"
   },
   {
     "dofusID": "6799",
@@ -870,8 +828,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18041.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18041.png"
   },
   {
     "dofusID": "6798",
@@ -890,8 +847,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18040.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18040.png"
   },
   {
     "dofusID": "6797",
@@ -910,8 +866,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18021.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18021.png"
   },
   {
     "dofusID": "6795",
@@ -936,8 +891,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18015.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18015.png"
   },
   {
     "dofusID": "6794",
@@ -956,8 +910,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18014.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18014.png"
   },
   {
     "dofusID": "6793",
@@ -976,8 +929,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18013.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18013.png"
   },
   {
     "dofusID": "6695",
@@ -996,8 +948,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18010.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18010.png"
   },
   {
     "dofusID": "6694",
@@ -1016,8 +967,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18009.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18009.png"
   },
   {
     "dofusID": "6061",
@@ -1036,8 +986,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18009.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18009.png"
   },
   {
     "dofusID": "6060",
@@ -1056,8 +1005,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18010.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18010.png"
   },
   {
     "dofusID": "6059",
@@ -1076,8 +1024,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18011.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18011.png"
   },
   {
     "dofusID": "5974",
@@ -1099,8 +1046,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18008.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18008.png"
   },
   {
     "dofusID": "1712",
@@ -1123,8 +1069,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18005.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18005.png"
   },
   {
     "dofusID": "1711",
@@ -1147,8 +1092,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18004.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18004.png"
   },
   {
     "dofusID": "1710",
@@ -1171,8 +1115,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18002.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18002.png"
   },
   {
     "dofusID": "1709",
@@ -1195,8 +1138,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18003.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18003.png"
   },
   {
     "dofusID": "1403",
@@ -1221,8 +1163,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18007.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18007.png"
   },
   {
     "dofusID": "1384",
@@ -1248,8 +1189,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18001.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18001.png"
   },
   {
     "dofusID": "1368",
@@ -1268,8 +1208,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18006.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18006.png"
   },
   {
     "dofusID": "10015",
@@ -1288,7 +1227,6 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/18062.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/18062.png"
   }
 ]

@@ -24,6 +24,7 @@ allowed_file_names = [
     "amulets",
     "backpacks",
     "belts",
+    "boots",
     "cloaks",
     "dofus",
     "dragoturkeys",
@@ -242,68 +243,78 @@ def sync_item():
     should_prompt_file = True
     while should_prompt_file:
         file_name = input(
-            "Enter JSON file name without extension ({}): ".format(
+            "Enter JSON file name without extension ({}) or 'all': ".format(
                 ", ".join(allowed_file_names)
             )
         )
         if file_name in allowed_file_names:
             should_prompt_file = False
+            read_item_file(file_name, game_version)
+        elif file_name == "all":
+            should_prompt_file = False
+            for file_name in allowed_file_names:
+                read_item_file(file_name, game_version)
         else:
             print("File name not allowed")
 
+
+def read_item_file(file_name, game_version):
     print("Loading and processing file...")
-    with open(
-        os.path.join(
-            app_root,
-            get_relative_path_for_game_version(game_version),
-            "{}.json".format(file_name),
-        ),
-        "r",
-    ) as file:
-        data = json.load(file)
-        name_to_record_map = {}
+    try:
+        with open(
+            os.path.join(
+                app_root,
+                get_relative_path_for_game_version(game_version),
+                "{}.json".format(file_name),
+            ),
+            "r",
+        ) as file:
+            data = json.load(file)
+            name_to_record_map = {}
 
-        for r in data:
-            name_to_record_map[r["name"]["en"]] = r
+            for r in data:
+                name_to_record_map[r["name"]["en"]] = r
 
-        should_prompt_item = True
-        create_all = False
-        while should_prompt_item:
-            item_name = input(
-                "Enter item name, e.g. 'Yellow Piwin', type 'update all' to update all items in file, type 'add missing items' to only add items that are missing, or 'q' to quit: "
-            )
-            if item_name == "q":
-                return
-            with session_scope() as db_session:
-                if item_name == "update all":
-                    should_prompt_item = False
+            should_prompt_item = True
+            create_all = False
+            while should_prompt_item:
+                item_name = input(
+                    "Enter item name, e.g. 'Yellow Piwin', type 'update all' to update all items in file, type 'add missing items' to only add items that are missing, or 'q' to quit: "
+                )
+                if item_name == "q":
+                    return
+                with session_scope() as db_session:
+                    if item_name == "update all":
+                        should_prompt_item = False
 
-                    for record in data:
-                        create_all = update_or_create_item(
-                            db_session,
-                            record["name"]["en"],
-                            record,
-                            False,
-                            game_version,
-                            create_all,
+                        for record in data:
+                            create_all = update_or_create_item(
+                                db_session,
+                                record["name"]["en"],
+                                record,
+                                False,
+                                game_version,
+                                create_all,
+                            )
+                    elif item_name == "add missing items":
+                        should_prompt_item = False
+
+                        for record in data:
+                            create_all = update_or_create_item(
+                                db_session,
+                                record["name"]["en"],
+                                record,
+                                True,
+                                game_version,
+                                create_all,
+                            )
+                    elif item_name in name_to_record_map:
+                        record = name_to_record_map[item_name]
+                        update_or_create_item(
+                            db_session, item_name, record, False, game_version, False
                         )
-                elif item_name == "add missing items":
-                    should_prompt_item = False
-
-                    for record in data:
-                        create_all = update_or_create_item(
-                            db_session,
-                            record["name"]["en"],
-                            record,
-                            True,
-                            game_version,
-                            create_all,
-                        )
-                elif item_name in name_to_record_map:
-                    record = name_to_record_map[item_name]
-                    update_or_create_item(
-                        db_session, item_name, record, False, game_version, False
-                    )
+    except FileNotFoundError:
+        print("File {}.json not found, skipping...".format(file_name))
 
 
 if __name__ == "__main__":

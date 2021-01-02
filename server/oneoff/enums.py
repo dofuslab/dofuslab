@@ -56,6 +56,16 @@ to_stat_enum = {
     "HP": enums.Stat.HP,
     "Physical Reduction": enums.Stat.PHYSICAL_REDUCTION,
     "Magical Reduction": enums.Stat.MAGICAL_REDUCTION,
+    "Neutral Resistance (PvP)": enums.Stat.NEUTRAL_RES_PVP,
+    "% Neutral Resistance (PvP)": enums.Stat.PCT_NEUTRAL_RES_PVP,
+    "Earth Resistance (PvP)": enums.Stat.EARTH_RES_PVP,
+    "% Earth Resistance (PvP)": enums.Stat.PCT_EARTH_RES_PVP,
+    "Fire Resistance (PvP)": enums.Stat.FIRE_RES_PVP,
+    "% Fire Resistance (PvP)": enums.Stat.PCT_FIRE_RES_PVP,
+    "Water Resistance (PvP)": enums.Stat.WATER_RES_PVP,
+    "% Water Resistance (PvP)": enums.Stat.PCT_WATER_RES_PVP,
+    "Air Resistance (PvP)": enums.Stat.AIR_RES_PVP,
+    "% Air Resistance (PvP)": enums.Stat.PCT_AIR_RES_PVP,
 }
 
 to_effect_enum = {

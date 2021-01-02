@@ -1492,7 +1492,10 @@ class Query(graphene.ObjectType):
     class_by_id = graphene.Field(Class, id=graphene.UUID(required=True))
 
     def resolve_class_by_id(self, info, id):
-        return db.session.query(ModelClass).get(id)
+        class_obj = db.session.query(ModelClass).get(id)
+        if class_obj.game_version != get_game_version(info.context):
+            raise GraphQLError(_("Invalid game version."))
+        return class_obj
 
     user_by_id = graphene.Field(User, id=graphene.UUID(required=True))
 
@@ -1502,17 +1505,26 @@ class Query(graphene.ObjectType):
     item_by_id = graphene.Field(Item, id=graphene.UUID(required=True))
 
     def resolve_item_by_id(self, info, id):
-        return db.session.query(ModelItem).get(id)
+        item = db.session.query(ModelItem).get(id)
+        if item.game_version != get_game_version(info.context):
+            raise GraphQLError(_("Invalid game version."))
+        return item
 
     set_by_id = graphene.Field(Set, id=graphene.UUID(required=True), required=True)
 
     def resolve_set_by_id(self, info, id):
-        return db.session.query(ModelSet).get(id)
+        set_obj = db.session.query(ModelSet).get(id)
+        if set_obj.game_version != get_game_version(info.context):
+            raise GraphQLError(_("Invalid game version."))
+        return set_obj
 
     custom_set_by_id = graphene.Field(CustomSet, id=graphene.UUID(required=True))
 
     def resolve_custom_set_by_id(self, info, id):
-        return db.session.query(ModelCustomSet).get(id)
+        custom_set = db.session.query(ModelCustomSet).get(id)
+        if custom_set.game_version != get_game_version(info.context):
+            raise GraphQLError(_("Invalid game version."))
+        return custom_set
 
     item_slots = graphene.NonNull(graphene.List(graphene.NonNull(ItemSlot)))
 

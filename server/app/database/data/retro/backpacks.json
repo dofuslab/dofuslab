@@ -17,15 +17,14 @@
       { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
       { "stat": "Agility", "minStat": 21, "maxStat": 30 },
       { "stat": "Critical", "minStat": 1, "maxStat": 2 },
-      { "stat": "Pods", "minStat": 301, "maxStat": 350 },
+      { "stat": "pods", "minStat": 301, "maxStat": 350 },
       { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/81058.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81058.png"
   },
   {
     "dofusID": "7121",
@@ -43,15 +42,14 @@
     "stats": [
       { "stat": "Vitality", "minStat": 51, "maxStat": 150 },
       { "stat": "Damage", "minStat": 5, "maxStat": 7 },
-      { "stat": "Pods", "minStat": 101, "maxStat": 500 },
+      { "stat": "pods", "minStat": 101, "maxStat": 500 },
       { "stat": "% Water Resistance", "minStat": 1, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 1, "maxStat": 5 }
     ],
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/81002.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81002.png"
   },
   {
     "dofusID": "5880",
@@ -67,15 +65,14 @@
     "setID": "11",
     "level": 60,
     "stats": [
-      { "stat": "Pods", "minStat": 501, "maxStat": 1000 },
+      { "stat": "pods", "minStat": 501, "maxStat": 1000 },
       { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
       { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 }
     ],
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/81057.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81057.png"
   },
   {
     "dofusID": "1365",
@@ -90,12 +87,11 @@
     "itemType": "Backpack",
     "setID": null,
     "level": 60,
-    "stats": [{ "stat": "Pods", "minStat": 501, "maxStat": 1000 }],
+    "stats": [{ "stat": "pods", "minStat": 501, "maxStat": 1000 }],
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/81032.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81032.png"
   },
   {
     "dofusID": "1364",
@@ -110,12 +106,11 @@
     "itemType": "Backpack",
     "setID": null,
     "level": 40,
-    "stats": [{ "stat": "Pods", "minStat": 251, "maxStat": 300 }],
+    "stats": [{ "stat": "pods", "minStat": 251, "maxStat": 300 }],
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/81031.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81031.png"
   },
   {
     "dofusID": "8749",
@@ -138,8 +133,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/81033.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81033.png"
   },
   {
     "dofusID": "6400",
@@ -161,8 +155,7 @@
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/81060.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81060.png"
   },
   {
     "dofusID": "1363",
@@ -177,7 +170,7 @@
     "itemType": "Backpack",
     "setID": null,
     "level": 20,
-    "stats": [{ "stat": "Pods", "minStat": 1001, "maxStat": 1500 }],
+    "stats": [{ "stat": "pods", "minStat": 1001, "maxStat": 1500 }],
     "customStats": {},
     "conditions": {},
     "customConditions": {
@@ -188,8 +181,7 @@
       "it": ["[!IT] Métier ="],
       "pt": ["[!PT] Métier ="]
     },
-    "imageUrl": "/retro/item/81030.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81030.png"
   },
   {
     "dofusID": "1362",
@@ -204,7 +196,7 @@
     "itemType": "Backpack",
     "setID": null,
     "level": 20,
-    "stats": [{ "stat": "Pods", "minStat": 601, "maxStat": 800 }],
+    "stats": [{ "stat": "pods", "minStat": 601, "maxStat": 800 }],
     "customStats": {},
     "conditions": {},
     "customConditions": {
@@ -215,8 +207,7 @@
       "it": ["[!IT] Métier ="],
       "pt": ["[!PT] Métier ="]
     },
-    "imageUrl": "/retro/item/81029.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81029.png"
   },
   {
     "dofusID": "10014",
@@ -231,12 +222,11 @@
     "itemType": "Backpack",
     "setID": null,
     "level": 20,
-    "stats": [{ "stat": "Pods", "minStat": 201, "maxStat": 250 }],
+    "stats": [{ "stat": "pods", "minStat": 201, "maxStat": 250 }],
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/81025.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81025.png"
   },
   {
     "dofusID": "7342",
@@ -253,13 +243,12 @@
     "level": 19,
     "stats": [
       { "stat": "Chance", "minStat": 6, "maxStat": 10 },
-      { "stat": "Pods", "minStat": 101, "maxStat": 200 }
+      { "stat": "pods", "minStat": 101, "maxStat": 200 }
     ],
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/81003.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81003.png"
   },
   {
     "dofusID": "6237",
@@ -276,13 +265,12 @@
     "level": 16,
     "stats": [
       { "stat": "Chance", "minStat": 1, "maxStat": 30 },
-      { "stat": "Pods", "minStat": 1, "maxStat": 100 }
+      { "stat": "pods", "minStat": 1, "maxStat": 100 }
     ],
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/81059.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81059.png"
   },
   {
     "dofusID": "1361",
@@ -297,7 +285,7 @@
     "itemType": "Backpack",
     "setID": null,
     "level": 15,
-    "stats": [{ "stat": "Pods", "minStat": 251, "maxStat": 400 }],
+    "stats": [{ "stat": "pods", "minStat": 251, "maxStat": 400 }],
     "customStats": {},
     "conditions": {},
     "customConditions": {
@@ -308,8 +296,7 @@
       "it": ["[!IT] Métier ="],
       "pt": ["[!PT] Métier ="]
     },
-    "imageUrl": "/retro/item/81028.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81028.png"
   },
   {
     "dofusID": "1358",
@@ -324,12 +311,11 @@
     "itemType": "Backpack",
     "setID": null,
     "level": 10,
-    "stats": [{ "stat": "Pods", "minStat": 151, "maxStat": 200 }],
+    "stats": [{ "stat": "pods", "minStat": 151, "maxStat": 200 }],
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/81027.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81027.png"
   },
   {
     "dofusID": "1357",
@@ -344,7 +330,7 @@
     "itemType": "Backpack",
     "setID": null,
     "level": 5,
-    "stats": [{ "stat": "Pods", "minStat": 151, "maxStat": 250 }],
+    "stats": [{ "stat": "pods", "minStat": 151, "maxStat": 250 }],
     "customStats": {},
     "conditions": {},
     "customConditions": {
@@ -355,8 +341,7 @@
       "it": ["[!IT] Métier ="],
       "pt": ["[!PT] Métier ="]
     },
-    "imageUrl": "/retro/item/81026.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81026.png"
   },
   {
     "dofusID": "6856",
@@ -371,12 +356,11 @@
     "itemType": "Backpack",
     "setID": null,
     "level": 1,
-    "stats": [{ "stat": "Pods", "minStat": 201, "maxStat": 400 }],
+    "stats": [{ "stat": "pods", "minStat": 201, "maxStat": 400 }],
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/81001.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81001.png"
   },
   {
     "dofusID": "1356",
@@ -391,11 +375,10 @@
     "itemType": "Backpack",
     "setID": null,
     "level": 1,
-    "stats": [{ "stat": "Pods", "minStat": 51, "maxStat": 100 }],
+    "stats": [{ "stat": "pods", "minStat": 51, "maxStat": 100 }],
     "customStats": {},
     "conditions": {},
     "customConditions": {},
-    "imageUrl": "/retro/item/81025.png",
-    "weaponStats": null
+    "imageUrl": "retro/item/81025.png"
   }
 ]

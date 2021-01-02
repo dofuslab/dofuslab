@@ -32,6 +32,8 @@ def get_or_create_custom_set(custom_set_id, db_session, game_version):
     owned_custom_sets = session.get("owned_custom_sets") or []
     if custom_set_id:
         custom_set = db_session.query(ModelCustomSet).get(custom_set_id)
+        if custom_set.game_version != game_version:
+            raise GraphQLError()
         if custom_set.owner_id and custom_set.owner_id != current_user.get_id():
             raise GraphQLError(_("You don't have permission to edit that build."))
         elif not custom_set.owner_id and custom_set.uuid not in owned_custom_sets:
