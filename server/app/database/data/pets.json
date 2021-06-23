@@ -5016,5 +5016,84 @@
       }
     },
     "imageUrl": "item/18038.png"
+  },
+  {
+    "dofusID": "880000008888000088000000",
+    "name": {
+      "en": "Teh'Niak",
+      "fr": "Teh'Niak",
+      "de": "Teh'Niak",
+      "es": "Teh'Niak",
+      "it": "Teh'Niak",
+      "pt": "Teh'Niak"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": null,
+        "maxStat": 15
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": null,
+        "maxStat": 15
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": null,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/880000008888000088000000.png"
+  },
+  {
+    "dofusID": "777700770707077070000077",
+    "name": {
+      "en": "Tortikoli",
+      "fr": "Tortikoli",
+      "de": "Tortikoli",
+      "es": "Tortikoli",
+      "it": "Tortikoli",
+      "pt": "Tortikoli"
+    },
+    "itemType": "Petsmount",
+    "setID": null,
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Lock",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 80
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/777700770707077070000077.png"
   }
 ]

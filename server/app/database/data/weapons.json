@@ -58871,5 +58871,234 @@
       "customConditions": {}
     },
     "imageUrl": "item/22007.png"
+  },
+  {
+    "dofusID": "553271100012837612195937",
+    "name": {
+      "en": "Pandamonium Wand",
+      "fr": "Baguette du Pandamonium",
+      "de": "Stab des Pandamoniums",
+      "es": "Varita de Pandamonium",
+      "it": "Bachetta del Pandamonium",
+      "pt": "Varinha do Pandamonium"
+    },
+    "itemType": "Wand",
+    "level": 200,
+    "setID": "009123111100000111",
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Strength",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Heal",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 16,
+        "maxStat": 20
+      }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": 1,
+      "minRange": 3,
+      "maxRange": 6,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        {
+          "stat": "Neutral steal",
+          "minStat": 18,
+          "maxStat": 21
+        },
+        {
+          "stat": "Earth steal",
+          "minStat": 18,
+          "maxStat": 21
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/553271100012837612195937.png"
+  },
+  {
+    "dofusID": "927360009900000000000",
+    "name": {
+      "en": "Possessed Hammer",
+      "fr": "Marteau Possédé",
+      "de": "Marteau Possédé",
+      "es": "Marteau Possédé",
+      "it": "Marteau Possédé",
+      "pt": "Martelo Possuído"
+    },
+    "itemType": "Hammer",
+    "level": 200,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 300
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Power",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Heals",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Initiative",
+        "minStat": null,
+        "maxStat": -300
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Lock",
+        "minStat": null,
+        "maxStat": -6
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": 2,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 20,
+      "critBonusDamage": 4,
+      "weapon_effects": [
+        {
+          "stat": "Neutral damage",
+          "minStat": 15,
+          "maxStat": 18
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 15,
+          "maxStat": 18
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 15,
+          "maxStat": 18
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 15,
+          "maxStat": 18
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/927360009900000000000.png"
   }
 ]
