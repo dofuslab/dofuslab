@@ -28329,5 +28329,129 @@
         }
       ]
     }
+  },
+  {
+    "id": "12873516725008882299",
+    "name": {
+      "en": "Possessed Set",
+      "fr": "Panoplie Possédée",
+      "de": "Set der Besessenen",
+      "es": "Set de los Poseídos",
+      "it": "Panoplia Posseduta",
+      "pt": "Conjunto Possuído"
+    },
+    "bonuses": {
+      "2": [
+        {
+          "stat": "MP Reduction",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Agility",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "Pushback Damage",
+          "value": 20,
+          "altStat": null
+        }
+      ],
+      "3": [
+        {
+          "stat": "MP Reduction",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Agility",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "Pushback Damage",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "AP",
+          "value": 1,
+          "altStat": null
+        }
+      ]
+    }
+  },
+  {
+    "id": "009123111100000111",
+    "name": {
+      "en": "Pandamonium Set",
+      "fr": "Panoplie du Pandamonium",
+      "de": "Set des Pandamoniums",
+      "es": "Set de Pandamonium",
+      "it": "Panoplia del Pandamonium",
+      "pt": "Conjunto do Pandamonium"
+    },
+    "bonuses": {
+      "2": [
+        {
+          "stat": "Heals",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "Dodge",
+          "value": 5,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "AP Parry",
+          "value": 5,
+          "altStat": null
+        }
+      ],
+      "3": [
+        {
+          "stat": "Heals",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "Dodge",
+          "value": 5,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "AP Parry",
+          "value": 5,
+          "altStat": null
+        },
+        {
+          "stat": "AP",
+          "value": 1,
+          "altStat": null
+        }
+      ]
+    }
   }
 ]
