@@ -89013,6 +89013,11 @@
         "stat": "AP Reduction",
         "minStat": null,
         "maxStat": 6
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": null,
+        "maxStat": -6
       }
     ],
     "customStats": {},
