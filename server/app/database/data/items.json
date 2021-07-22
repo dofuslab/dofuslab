@@ -36516,12 +36516,12 @@
       {
         "stat": "Pushback Resistance",
         "minStat": null,
-        "maxStat": 60
+        "maxStat": 80
       }
     ],
     "customStats": {
       "en": [
-        "Adds 150 shield points if the owner is moved by pushing, attraction, place switching or being carried by a Pandawa.\nOnly enemies can trigger this effect."
+        "Adds 150 shield points if the owner suffers pushback damage or is moved via pushing, attraction, position switching, teleportation, an Eliotrope portal, or being carried by a Pandawa.\n\nThe effect can only be triggered by enemies, and the shield can stack 2 times max."
       ],
       "fr": [
         "Ajoute 150 points de bouclier si le propriétaire est déplacé via une poussée, une attirance, un échange de position ou porté par un Pandawa.\nSeuls les ennemis peuvent déclencher cet effet."
