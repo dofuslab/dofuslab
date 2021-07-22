@@ -1781,16 +1781,6 @@
       ]
     },
     {
-      "name": "Ebony Dofus",
-      "buffs": [
-        {
-          "stat": "% Final Damage",
-          "incrementBy": 2,
-          "maxStacks": 5
-        }
-      ]
-    },
-    {
       "name": "Turquoise Dofus",
       "buffs": [
         {
