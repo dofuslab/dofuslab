@@ -38,6 +38,7 @@ const ClassicRightColumnStats: React.FC<Props> = ({ openBuffModal }) => {
       />
       <StatTable
         group={[
+          Stat.DAMAGE,
           Stat.NEUTRAL_DAMAGE,
           Stat.EARTH_DAMAGE,
           Stat.FIRE_DAMAGE,

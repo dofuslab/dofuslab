@@ -42,6 +42,7 @@ const statGroups = [
   [Stat.DODGE, Stat.LOCK],
   [Stat.AP_PARRY, Stat.AP_REDUCTION, Stat.MP_PARRY, Stat.MP_REDUCTION],
   [
+    Stat.DAMAGE,
     Stat.NEUTRAL_DAMAGE,
     Stat.EARTH_DAMAGE,
     Stat.FIRE_DAMAGE,
