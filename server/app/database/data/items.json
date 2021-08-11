@@ -22335,6 +22335,11 @@
         "maxStat": 8
       },
       {
+        "stat": "MP Parry",
+        "minStat": -5,
+        "maxStat": -4
+      },
+      {
         "stat": "Lock",
         "minStat": -10,
         "maxStat": -7
@@ -24309,6 +24314,11 @@
         "stat": "% Water Resistance",
         "minStat": 6,
         "maxStat": 8
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": -4,
+        "maxStat": -3
       },
       {
         "stat": "Lock",
@@ -27787,6 +27797,11 @@
         "stat": "% Fire Resistance",
         "minStat": 5,
         "maxStat": 7
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "Lock",
