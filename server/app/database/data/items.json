@@ -62822,39 +62822,59 @@
     "level": 105,
     "stats": [
       {
+        "stat": "Vitality",
+        "minStat": 51,
+        "maxStat": 100
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
         "stat": "Agility",
         "minStat": 31,
-        "maxStat": 40
+        "maxStat": 50
       },
       {
         "stat": "Wisdom",
         "minStat": 11,
-        "maxStat": 20
+        "maxStat": 15
       },
       {
-        "stat": "Damage",
+        "stat": "Neutral Damage",
         "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 6,
+        "maxStat": 10
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 3,
         "maxStat": 5
       },
       {
-        "stat": "Vitality",
-        "minStat": 41,
-        "maxStat": 70
+        "stat": "% Fire Resistance",
+        "minStat": 2,
+        "maxStat": 4
       },
       {
-        "stat": "Trap Damage",
-        "minStat": 6,
-        "maxStat": 8
-      },
-      {
-        "stat": "Power (traps)",
-        "minStat": 11,
-        "maxStat": 20
-      },
-      {
-        "stat": "% Neutral Resistance",
-        "minStat": 4,
-        "maxStat": 6
+        "stat": "% Water Resistance",
+        "minStat": 2,
+        "maxStat": 4
       }
     ],
     "customStats": {},
@@ -63003,49 +63023,44 @@
     "level": 105,
     "stats": [
       {
-        "stat": "Agility",
-        "minStat": 26,
-        "maxStat": 35
-      },
-      {
-        "stat": "Strength",
-        "minStat": 16,
-        "maxStat": 25
-      },
-      {
         "stat": "Vitality",
-        "minStat": 51,
-        "maxStat": 100
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 50
       },
       {
         "stat": "Wisdom",
         "minStat": 11,
-        "maxStat": 20
+        "maxStat": 15
       },
       {
-        "stat": "Critical",
-        "minStat": 2,
-        "maxStat": 3
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
       },
       {
-        "stat": "Damage",
+        "stat": "Fire Damage",
         "minStat": 4,
-        "maxStat": 6
+        "maxStat": 7
       },
       {
-        "stat": "Power",
-        "minStat": 6,
-        "maxStat": 10
-      },
-      {
-        "stat": "Initiative",
-        "minStat": 101,
-        "maxStat": 200
-      },
-      {
-        "stat": "Fire Resistance",
+        "stat": "Water Damage",
         "minStat": 4,
-        "maxStat": 6
+        "maxStat": 7
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 5,
+        "maxStat": 7
       }
     ],
     "customStats": {},
@@ -63755,9 +63770,24 @@
     "level": 103,
     "stats": [
       {
-        "stat": "Agility",
-        "minStat": 26,
+        "stat": "Vitality",
+        "minStat": 81,
+        "maxStat": 150
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
         "maxStat": 40
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
       },
       {
         "stat": "AP",
@@ -63765,29 +63795,29 @@
         "maxStat": 1
       },
       {
-        "stat": "Vitality",
-        "minStat": 41,
-        "maxStat": 70
+        "stat": "Neutral Damage",
+        "minStat": 2,
+        "maxStat": 4
       },
       {
-        "stat": "Wisdom",
-        "minStat": 16,
-        "maxStat": 25
+        "stat": "Earth Damage",
+        "minStat": 2,
+        "maxStat": 4
       },
       {
-        "stat": "Trap Damage",
-        "minStat": 6,
-        "maxStat": 10
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 4
       },
       {
-        "stat": "Power (traps)",
-        "minStat": 16,
-        "maxStat": 25
-      },
-      {
-        "stat": "Fire Resistance",
+        "stat": "Prospecting",
         "minStat": 4,
         "maxStat": 6
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 5
       }
     ],
     "customStats": {},
@@ -64254,49 +64284,49 @@
     "level": 102,
     "stats": [
       {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
         "stat": "Agility",
-        "minStat": 26,
-        "maxStat": 40
+        "minStat": 31,
+        "maxStat": 50
       },
       {
         "stat": "Wisdom",
-        "minStat": 16,
-        "maxStat": 25
-      },
-      {
-        "stat": "Vitality",
-        "minStat": 51,
-        "maxStat": 80
+        "minStat": 11,
+        "maxStat": 15
       },
       {
         "stat": "Critical",
-        "minStat": 3,
+        "minStat": 2,
         "maxStat": 4
       },
       {
-        "stat": "Trap Damage",
-        "minStat": 6,
-        "maxStat": 10
-      },
-      {
-        "stat": "Power",
-        "minStat": 6,
-        "maxStat": 10
-      },
-      {
-        "stat": "Power (traps)",
-        "minStat": 16,
-        "maxStat": 25
-      },
-      {
-        "stat": "Air Resistance",
+        "stat": "Neutral Damage",
         "minStat": 4,
-        "maxStat": 6
+        "maxStat": 7
       },
       {
-        "stat": "Earth Resistance",
+        "stat": "Earth Damage",
         "minStat": 4,
-        "maxStat": 6
+        "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 5,
+        "maxStat": 7
       }
     ],
     "customStats": {},
@@ -64321,29 +64351,24 @@
     "level": 102,
     "stats": [
       {
-        "stat": "Agility",
-        "minStat": 26,
-        "maxStat": 35
-      },
-      {
-        "stat": "Strength",
-        "minStat": 16,
-        "maxStat": 25
-      },
-      {
         "stat": "Vitality",
+        "minStat": 81,
+        "maxStat": 150
+      },
+      {
+        "stat": "Intelligence",
         "minStat": 31,
-        "maxStat": 50
+        "maxStat": 40
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 40
       },
       {
         "stat": "Wisdom",
-        "minStat": 11,
+        "minStat": 16,
         "maxStat": 20
-      },
-      {
-        "stat": "Damage",
-        "minStat": 4,
-        "maxStat": 6
       },
       {
         "stat": "AP",
@@ -64351,9 +64376,29 @@
         "maxStat": 1
       },
       {
-        "stat": "Initiative",
-        "minStat": null,
-        "maxStat": 200
+        "stat": "Fire Damage",
+        "minStat": 2,
+        "maxStat": 4
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 2,
+        "maxStat": 4
+      },
+      {
+        "stat": "Heals",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 3,
+        "maxStat": 5
       }
     ],
     "customStats": {},
@@ -64512,44 +64557,54 @@
     "level": 102,
     "stats": [
       {
-        "stat": "Agility",
-        "minStat": 26,
-        "maxStat": 40
-      },
-      {
-        "stat": "Strength",
-        "minStat": 21,
-        "maxStat": 30
-      },
-      {
         "stat": "Vitality",
-        "minStat": 41,
-        "maxStat": 70
+        "minStat": 51,
+        "maxStat": 100
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 50
       },
       {
         "stat": "Wisdom",
         "minStat": 11,
-        "maxStat": 20
+        "maxStat": 15
       },
       {
-        "stat": "Range",
-        "minStat": null,
-        "maxStat": 1
-      },
-      {
-        "stat": "Air Resistance",
+        "stat": "Fire Damage",
         "minStat": 4,
         "maxStat": 6
       },
       {
-        "stat": "Neutral Resistance",
+        "stat": "Water Damage",
         "minStat": 4,
         "maxStat": 6
       },
       {
-        "stat": "% Fire Resistance",
-        "minStat": 4,
-        "maxStat": 6
+        "stat": "Prospecting",
+        "minStat": 6,
+        "maxStat": 10
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 2,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 2,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 2,
+        "maxStat": 4
       }
     ],
     "customStats": {},
@@ -64574,39 +64629,54 @@
     "level": 102,
     "stats": [
       {
-        "stat": "Agility",
-        "minStat": 26,
-        "maxStat": 40
-      },
-      {
-        "stat": "Strength",
-        "minStat": 16,
-        "maxStat": 25
-      },
-      {
         "stat": "Vitality",
-        "minStat": 51,
-        "maxStat": 80
+        "minStat": 81,
+        "maxStat": 120
       },
       {
-        "stat": "Damage",
-        "minStat": 3,
-        "maxStat": 4
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 50
       },
       {
-        "stat": "Critical",
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Fire Damage",
         "minStat": 3,
-        "maxStat": 4
+        "maxStat": 5
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 3,
+        "maxStat": 5
       },
       {
         "stat": "Prospecting",
-        "minStat": 6,
-        "maxStat": 10
+        "minStat": 3,
+        "maxStat": 5
       },
       {
-        "stat": "% Earth Resistance",
-        "minStat": 4,
-        "maxStat": 6
+        "stat": "Initiative",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 2,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 5,
+        "maxStat": 7
       }
     ],
     "customStats": {},
@@ -64765,19 +64835,24 @@
     "level": 101,
     "stats": [
       {
-        "stat": "Agility",
-        "minStat": 21,
-        "maxStat": 35
+        "stat": "Vitality",
+        "minStat": 81,
+        "maxStat": 120
       },
       {
-        "stat": "Vitality",
-        "minStat": 41,
-        "maxStat": 60
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 40
       },
       {
         "stat": "Wisdom",
-        "minStat": 21,
-        "maxStat": 30
+        "minStat": 16,
+        "maxStat": 20
       },
       {
         "stat": "MP",
@@ -64785,18 +64860,28 @@
         "maxStat": 1
       },
       {
-        "stat": "Trap Damage",
+        "stat": "Neutral Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Prospecting",
         "minStat": 6,
         "maxStat": 10
       },
       {
-        "stat": "Power (traps)",
-        "minStat": 16,
-        "maxStat": 25
-      },
-      {
-        "stat": "% Fire Resistance",
-        "minStat": 3,
+        "stat": "Lock",
+        "minStat": 2,
         "maxStat": 4
       }
     ],
@@ -64822,54 +64907,59 @@
     "level": 101,
     "stats": [
       {
-        "stat": "Agility",
-        "minStat": 21,
-        "maxStat": 30
-      },
-      {
-        "stat": "Strength",
-        "minStat": 11,
-        "maxStat": 20
-      },
-      {
         "stat": "Vitality",
+        "minStat": 51,
+        "maxStat": 100
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Chance",
         "minStat": 31,
         "maxStat": 40
       },
       {
         "stat": "Wisdom",
         "minStat": 11,
-        "maxStat": 20
+        "maxStat": 15
       },
       {
-        "stat": "Damage",
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Heals",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "Dodge",
         "minStat": 3,
-        "maxStat": 4
-      },
-      {
-        "stat": "Air Resistance",
-        "minStat": 4,
-        "maxStat": 6
-      },
-      {
-        "stat": "Water Resistance",
-        "minStat": 4,
-        "maxStat": 6
-      },
-      {
-        "stat": "Fire Resistance",
-        "minStat": 4,
-        "maxStat": 6
-      },
-      {
-        "stat": "Neutral Resistance",
-        "minStat": 4,
-        "maxStat": 6
-      },
-      {
-        "stat": "Earth Resistance",
-        "minStat": 4,
-        "maxStat": 6
+        "maxStat": 5
       }
     ],
     "customStats": {},
@@ -65125,14 +65215,19 @@
     "level": 101,
     "stats": [
       {
-        "stat": "Agility",
-        "minStat": 31,
-        "maxStat": 45
+        "stat": "Vitality",
+        "minStat": 81,
+        "maxStat": 140
       },
       {
-        "stat": "Vitality",
-        "minStat": 41,
-        "maxStat": 60
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 50
       },
       {
         "stat": "Wisdom",
@@ -65140,34 +65235,39 @@
         "maxStat": 15
       },
       {
-        "stat": "Critical",
+        "stat": "Neutral Damage",
         "minStat": 3,
-        "maxStat": 4
+        "maxStat": 5
       },
       {
-        "stat": "Range",
-        "minStat": null,
-        "maxStat": 1
+        "stat": "Earth Damage",
+        "minStat": 3,
+        "maxStat": 5
       },
       {
-        "stat": "Trap Damage",
-        "minStat": 6,
-        "maxStat": 10
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 5
       },
       {
-        "stat": "Power (traps)",
-        "minStat": 16,
-        "maxStat": 25
+        "stat": "Prospecting",
+        "minStat": 3,
+        "maxStat": 5
       },
       {
         "stat": "Initiative",
         "minStat": 101,
-        "maxStat": 200
+        "maxStat": 150
       },
       {
-        "stat": "% Neutral Resistance",
+        "stat": "AP Parry",
         "minStat": 4,
         "maxStat": 6
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 5,
+        "maxStat": 7
       }
     ],
     "customStats": {},
@@ -69580,43 +69680,48 @@
     "stats": [
       {
         "stat": "Vitality",
-        "minStat": 41,
-        "maxStat": 60
+        "minStat": 81,
+        "maxStat": 120
       },
       {
-        "stat": "Strength",
-        "minStat": 21,
-        "maxStat": 30
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
       },
       {
-        "stat": "Agility",
-        "minStat": 36,
-        "maxStat": 45
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 40
       },
       {
         "stat": "Wisdom",
-        "minStat": 11,
-        "maxStat": 15
-      },
-      {
-        "stat": "Prospecting",
-        "minStat": 7,
-        "maxStat": 10
-      },
-      {
-        "stat": "Dodge",
-        "minStat": 4,
-        "maxStat": 5
-      },
-      {
-        "stat": "% Air Resistance",
-        "minStat": 2,
-        "maxStat": 3
+        "minStat": 16,
+        "maxStat": 20
       },
       {
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 6,
+        "maxStat": 10
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 2,
+        "maxStat": 4
       }
     ],
     "customStats": {},
@@ -69847,24 +69952,19 @@
     "level": 98,
     "stats": [
       {
-        "stat": "Initiative",
-        "minStat": 101,
-        "maxStat": 150
-      },
-      {
         "stat": "Vitality",
         "minStat": 51,
-        "maxStat": 70
+        "maxStat": 100
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 40
       },
       {
         "stat": "Agility",
-        "minStat": 41,
-        "maxStat": 50
-      },
-      {
-        "stat": "Power",
-        "minStat": 11,
-        "maxStat": 15
+        "minStat": 31,
+        "maxStat": 40
       },
       {
         "stat": "Wisdom",
@@ -69872,13 +69972,38 @@
         "maxStat": 15
       },
       {
-        "stat": "Prospecting",
-        "minStat": 4,
+        "stat": "Critical",
+        "minStat": 3,
         "maxStat": 5
       },
       {
-        "stat": "Damage",
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Neutral Damage",
         "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
         "maxStat": 5
       }
     ],
@@ -132514,5 +132639,1109 @@
       "customConditions": {}
     },
     "imageUrl": "item/9100108101000000009999.png"
+  }, {
+    "dofusID": "26018",
+    "name": {
+      "en": "Final Dawn",
+      "fr": "Dernière Aube",
+      "de": "[!] Dernière Aube",
+      "es": "[!] Dernière Aube",
+      "it": "[!] Dernière Aube",
+      "pt": "[!] Dernière Aube"
+    },
+    "itemType": "Ring",
+    "setID": "499",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Strength",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Lock",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Dodge",
+        "minStat": -6,
+        "maxStat": -6
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": -4,
+        "maxStat": -4
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": -24,
+        "maxStat": -24
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": -2,
+        "maxStat": -2
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": -2,
+        "maxStat": -2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9358.png"
+  },
+  {
+    "dofusID": "26021",
+    "name": {
+      "en": "Death of the Centoror",
+      "fr": "Mort du Centoror",
+      "de": "[!] Mort du Centoror",
+      "es": "[!] Mort du Centoror",
+      "it": "[!] Mort du Centoror",
+      "pt": "[!] Mort du Centoror"
+    },
+    "itemType": "Ring",
+    "setID": "499",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Chance",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Agility",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Lock",
+        "minStat": -6,
+        "maxStat": -6
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": -4,
+        "maxStat": -4
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": -24,
+        "maxStat": -24
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": -2,
+        "maxStat": -2
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": -2,
+        "maxStat": -2
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9359.png"
+  },
+  {
+    "dofusID": "26019",
+    "name": {
+      "en": "The Necromancer's Song",
+      "fr": "Chant du Nécromant",
+      "de": "[!] Chant du Nécromant",
+      "es": "[!] Chant du Nécromant",
+      "it": "[!] Chant du Nécromant",
+      "pt": "[!] Chant du Nécromant"
+    },
+    "itemType": "Amulet",
+    "setID": "499",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Strength",
+        "minStat": 26,
+        "maxStat": 35
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 26,
+        "maxStat": 35
+      },
+      {
+        "stat": "Chance",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Agility",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Dodge",
+        "minStat": -8,
+        "maxStat": -8
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": -8,
+        "maxStat": -8
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": -20,
+        "maxStat": -20
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": -4,
+        "maxStat": -4
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": -4,
+        "maxStat": -4
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/1320.png"
+  },
+  {
+    "dofusID": "26022",
+    "name": {
+      "en": "Skies of Black Lightning",
+      "fr": "Ciel de Foudre Noire",
+      "de": "[!] Ciel de Foudre Noire",
+      "es": "[!] Ciel de Foudre Noire",
+      "it": "[!] Ciel de Foudre Noire",
+      "pt": "[!] Ciel de Foudre Noire"
+    },
+    "itemType": "Boots",
+    "setID": "499",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Strength",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Chance",
+        "minStat": 26,
+        "maxStat": 35
+      },
+      {
+        "stat": "Agility",
+        "minStat": 26,
+        "maxStat": 35
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Lock",
+        "minStat": -8,
+        "maxStat": -8
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": -8,
+        "maxStat": -8
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": -20,
+        "maxStat": -20
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": -4,
+        "maxStat": -4
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": -4,
+        "maxStat": -4
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 6,
+        "maxStat": 8
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/11350.png"
+  },
+  {
+    "dofusID": "26023",
+    "name": {
+      "en": "Liche's Wood",
+      "fr": "Bois de la Liche",
+      "de": "[!] Bois de la Liche",
+      "es": "[!] Bois de la Liche",
+      "it": "[!] Bois de la Liche",
+      "pt": "[!] Bois de la Liche"
+    },
+    "itemType": "Belt",
+    "setID": "499",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 400
+      },
+      {
+        "stat": "Strength",
+        "minStat": 71,
+        "maxStat": 90
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 71,
+        "maxStat": 90
+      },
+      {
+        "stat": "Chance",
+        "minStat": 36,
+        "maxStat": 45
+      },
+      {
+        "stat": "Agility",
+        "minStat": 36,
+        "maxStat": 45
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Lock",
+        "minStat": -10,
+        "maxStat": -10
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": -6,
+        "maxStat": -6
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": -16,
+        "maxStat": -16
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": -3,
+        "maxStat": -3
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": -3,
+        "maxStat": -3
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 4,
+        "maxStat": 6
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/10350.png"
+  },
+  {
+    "dofusID": "26020",
+    "name": {
+      "en": "Gates of Bonta",
+      "fr": "Portes de Bonta",
+      "de": "[!] Portes de Bonta",
+      "es": "[!] Portes de Bonta",
+      "it": "[!] Portes de Bonta",
+      "pt": "[!] Portes de Bonta"
+    },
+    "itemType": "Hat",
+    "setID": "499",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 400
+      },
+      {
+        "stat": "Strength",
+        "minStat": 36,
+        "maxStat": 45
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 36,
+        "maxStat": 45
+      },
+      {
+        "stat": "Chance",
+        "minStat": 71,
+        "maxStat": 90
+      },
+      {
+        "stat": "Agility",
+        "minStat": 71,
+        "maxStat": 90
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Lock",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Dodge",
+        "minStat": -10,
+        "maxStat": -10
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": -6,
+        "maxStat": -6
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": -16,
+        "maxStat": -16
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": -3,
+        "maxStat": -3
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": -3,
+        "maxStat": -3
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16693.png"
+  },
+  {
+    "dofusID": "26066",
+    "name": {
+      "en": "Nightmare Dofus",
+      "fr": "Dofus du Cauchemar",
+      "de": "[!] Dofus du Cauchemar",
+      "es": "[!] Dofus du Cauchemar",
+      "it": "[!] Dofus du Cauchemar",
+      "pt": "[!] Dofus du Cauchemar"
+    },
+    "itemType": "Dofus",
+    "setID": null,
+    "level": 180,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 1000,
+        "maxStat": 1000
+      }
+    ],
+    "customStats": {
+      "en": [
+        "When the bearer applies a shield, allies within 3 cells or less are healed by 7% of their HP. If the bearer unbewitches a target, allies within 3 cells or less gain 150 Power for 1 turn (stacks 1 time, cannot be dissipated). Each effect can only be triggered once per turn, but if both are triggered in the same turn, the bearer receives 10% additional damage for 1 turn (cannot be disipated)."
+      ],
+      "fr": [
+        "Lorsque le porteur applique un bouclier, les alliés à 3 cases ou moins de lui sont soignés de 7% de leurs PV. S'il désenvoûte une cible, les alliés à 3 cases ou moins gagnent 150 Puissance pour 1 tour (cumul 1, non dissipable). Chaque effet ne peut être déclenché qu'une fois par tour, mais si les deux le sont dans le même tour, le porteur subit 10% de dommages supplémentaires pendant 1 tour (non dissipable)."
+      ],
+      "de": [
+        "[!] Lorsque le porteur applique un bouclier, les alliés à 3 cases ou moins de lui sont soignés de 7% de leurs PV. S'il désenvoûte une cible, les alliés à 3 cases ou moins gagnent 150 Puissance pour 1 tour (cumul 1, non dissipable). Chaque effet ne peut être déclenché qu'une fois par tour, mais si les deux le sont dans le même tour, le porteur subit 10% de dommages supplémentaires pendant 1 tour (non dissipable)."
+      ],
+      "es": [
+        "[!] Lorsque le porteur applique un bouclier, les alliés à 3 cases ou moins de lui sont soignés de 7% de leurs PV. S'il désenvoûte une cible, les alliés à 3 cases ou moins gagnent 150 Puissance pour 1 tour (cumul 1, non dissipable). Chaque effet ne peut être déclenché qu'une fois par tour, mais si les deux le sont dans le même tour, le porteur subit 10% de dommages supplémentaires pendant 1 tour (non dissipable)."
+      ],
+      "it": [
+        "[!] Lorsque le porteur applique un bouclier, les alliés à 3 cases ou moins de lui sont soignés de 7% de leurs PV. S'il désenvoûte une cible, les alliés à 3 cases ou moins gagnent 150 Puissance pour 1 tour (cumul 1, non dissipable). Chaque effet ne peut être déclenché qu'une fois par tour, mais si les deux le sont dans le même tour, le porteur subit 10% de dommages supplémentaires pendant 1 tour (non dissipable)."
+      ],
+      "pt": [
+        "[!] Lorsque le porteur applique un bouclier, les alliés à 3 cases ou moins de lui sont soignés de 7% de leurs PV. S'il désenvoûte une cible, les alliés à 3 cases ou moins gagnent 150 Puissance pour 1 tour (cumul 1, non dissipable). Chaque effet ne peut être déclenché qu'une fois par tour, mais si les deux le sont dans le même tour, le porteur subit 10% de dommages supplémentaires pendant 1 tour (non dissipable)."
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/23034.png"
+  },
+  {
+    "dofusID": "26007",
+    "name": {
+      "en": "Destroyer Cestus",
+      "fr": "Ceste de Ravageur",
+      "de": "[!] Ceste de Ravageur",
+      "es": "[!] Ceste de Ravageur",
+      "it": "[!] Ceste de Ravageur",
+      "pt": "[!] Ceste de Ravageur"
+    },
+    "itemType": "Ring",
+    "setID": "498",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 201,
+        "maxStat": 250
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Critical",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9360.png"
+  },
+  {
+    "dofusID": "26006",
+    "name": {
+      "en": "Destroyer Torc",
+      "fr": "Torque de Ravageur",
+      "de": "[!] Torque de Ravageur",
+      "es": "[!] Torque de Ravageur",
+      "it": "[!] Torque de Ravageur",
+      "pt": "[!] Torque de Ravageur"
+    },
+    "itemType": "Amulet",
+    "setID": "498",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 400
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/1321.png"
+  }, {
+    "dofusID": "25753",
+    "name": {
+      "en": "Bontarian Rat Ring",
+      "fr": "Anneau du Rat Bontarien",
+      "de": "[!] Anneau du Rat Bontarien",
+      "es": "[!] Anneau du Rat Bontarien",
+      "it": "[!] Anneau du Rat Bontarien",
+      "pt": "[!] Anneau du Rat Bontarien"
+    },
+    "itemType": "Ring",
+    "setID": null,
+    "level": 110,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 51,
+        "maxStat": 100
+      },
+      {
+        "stat": "Chance",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 11,
+        "maxStat": 20
+      },
+      {
+        "stat": "Power",
+        "minStat": 11,
+        "maxStat": 20
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": -8,
+        "maxStat": -11
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9362.png"
+  },
+  {
+    "dofusID": "25752",
+    "name": {
+      "en": "Brakmarian Rat Ring",
+      "fr": "Anneau du Rat Brâkmarien",
+      "de": "[!] Anneau du Rat Brâkmarien",
+      "es": "[!] Anneau du Rat Brâkmarien",
+      "it": "[!] Anneau du Rat Brâkmarien",
+      "pt": "[!] Anneau du Rat Brâkmarien"
+    },
+    "itemType": "Ring",
+    "setID": null,
+    "level": 110,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 51,
+        "maxStat": 100
+      },
+      {
+        "stat": "Agility",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 11,
+        "maxStat": 20
+      },
+      {
+        "stat": "Power",
+        "minStat": 11,
+        "maxStat": 20
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": -8,
+        "maxStat": -11
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9363.png"
   }
 ]
