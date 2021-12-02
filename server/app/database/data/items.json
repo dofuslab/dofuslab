@@ -132710,12 +132710,12 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -6,
+        "minStat": null,
         "maxStat": -6
       },
       {
         "stat": "AP Parry",
-        "minStat": -4,
+        "minStat": null,
         "maxStat": -4
       },
       {
@@ -132730,7 +132730,7 @@
       },
       {
         "stat": "Pushback Resistance",
-        "minStat": -24,
+        "minStat": null,
         "maxStat": -24
       },
       {
@@ -132745,12 +132745,12 @@
       },
       {
         "stat": "% Water Resistance",
-        "minStat": -2,
+        "minStat": null,
         "maxStat": -2
       },
       {
         "stat": "% Air Resistance",
-        "minStat": -2,
+        "minStat": null,
         "maxStat": -2
       }
     ],
@@ -132827,7 +132827,7 @@
       },
       {
         "stat": "Lock",
-        "minStat": -6,
+        "minStat": null,
         "maxStat": -6
       },
       {
@@ -132842,12 +132842,12 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -4,
+        "minStat": null,
         "maxStat": -4
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -24,
+        "minStat": null,
         "maxStat": -24
       },
       {
@@ -132857,12 +132857,12 @@
       },
       {
         "stat": "% Earth Resistance",
-        "minStat": -2,
+        "minStat": null,
         "maxStat": -2
       },
       {
         "stat": "% Fire Resistance",
-        "minStat": -2,
+        "minStat": null,
         "maxStat": -2
       },
       {
@@ -132959,12 +132959,12 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -8,
+        "minStat": null,
         "maxStat": -8
       },
       {
         "stat": "AP Parry",
-        "minStat": -8,
+        "minStat": null,
         "maxStat": -8
       },
       {
@@ -132979,7 +132979,7 @@
       },
       {
         "stat": "Pushback Resistance",
-        "minStat": -20,
+        "minStat": null,
         "maxStat": -20
       },
       {
@@ -132994,12 +132994,12 @@
       },
       {
         "stat": "% Water Resistance",
-        "minStat": -4,
+        "minStat": null,
         "maxStat": -4
       },
       {
         "stat": "% Air Resistance",
-        "minStat": -4,
+        "minStat": null,
         "maxStat": -4
       }
     ],
@@ -133081,7 +133081,7 @@
       },
       {
         "stat": "Lock",
-        "minStat": -8,
+        "minStat": null,
         "maxStat": -8
       },
       {
@@ -133096,12 +133096,12 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -8,
+        "minStat": null,
         "maxStat": -8
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -20,
+        "minStat": null,
         "maxStat": -20
       },
       {
@@ -133111,12 +133111,12 @@
       },
       {
         "stat": "% Earth Resistance",
-        "minStat": -4,
+        "minStat": null,
         "maxStat": -4
       },
       {
         "stat": "% Fire Resistance",
-        "minStat": -4,
+        "minStat": null,
         "maxStat": -4
       },
       {
@@ -133203,7 +133203,7 @@
       },
       {
         "stat": "Lock",
-        "minStat": -10,
+        "minStat": null,
         "maxStat": -10
       },
       {
@@ -133218,12 +133218,12 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -6,
+        "minStat": null,
         "maxStat": -6
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -16,
+        "minStat": null,
         "maxStat": -16
       },
       {
@@ -133233,12 +133233,12 @@
       },
       {
         "stat": "% Earth Resistance",
-        "minStat": -3,
+        "minStat": null,
         "maxStat": -3
       },
       {
         "stat": "% Fire Resistance",
-        "minStat": -3,
+        "minStat": null,
         "maxStat": -3
       },
       {
@@ -133330,12 +133330,12 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -10,
+        "minStat": null,
         "maxStat": -10
       },
       {
         "stat": "AP Parry",
-        "minStat": -6,
+        "minStat": null,
         "maxStat": -6
       },
       {
@@ -133350,7 +133350,7 @@
       },
       {
         "stat": "Pushback Resistance",
-        "minStat": -16,
+        "minStat": null,
         "maxStat": -16
       },
       {
@@ -133365,12 +133365,12 @@
       },
       {
         "stat": "% Water Resistance",
-        "minStat": -3,
+        "minStat": null,
         "maxStat": -3
       },
       {
         "stat": "% Air Resistance",
-        "minStat": -3,
+        "minStat": null,
         "maxStat": -3
       }
     ],
@@ -133397,7 +133397,7 @@
     "stats": [
       {
         "stat": "Initiative",
-        "minStat": 1000,
+        "minStat": null,
         "maxStat": 1000
       }
     ],
@@ -133651,8 +133651,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -8,
-        "maxStat": -11
+        "minStat": -11,
+        "maxStat": -8
       },
       {
         "stat": "% Water Resistance",
@@ -133728,8 +133728,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -8,
-        "maxStat": -11
+        "minStat": -11,
+        "maxStat": -8
       },
       {
         "stat": "% Air Resistance",

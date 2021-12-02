@@ -15692,19 +15692,19 @@
       "2": [
         {
           "stat": "Power",
-          "value": 40,
+          "value": 20,
           "altStat": null
         }
       ],
       "3": [
         {
           "stat": "Power",
-          "value": 40,
+          "value": 30,
           "altStat": null
         },
         {
           "stat": "AP Reduction",
-          "value": 7,
+          "value": 3,
           "altStat": null
         }
       ],
@@ -15721,7 +15721,7 @@
         },
         {
           "stat": "AP Reduction",
-          "value": 7,
+          "value": 5,
           "altStat": null
         }
       ],
@@ -15962,19 +15962,19 @@
       "2": [
         {
           "stat": "Power",
-          "value": 40,
+          "value": 20,
           "altStat": null
         }
       ],
       "3": [
         {
           "stat": "Power",
-          "value": 40,
+          "value": 30,
           "altStat": null
         },
         {
           "stat": "AP Parry",
-          "value": 7,
+          "value": 3,
           "altStat": null
         }
       ],
@@ -15991,7 +15991,7 @@
         },
         {
           "stat": "AP Parry",
-          "value": 7,
+          "value": 5,
           "altStat": null
         }
       ],

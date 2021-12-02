@@ -24056,7 +24056,7 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": 1,
+      "minRange": null,
       "maxRange": 1,
       "baseCritChance": 25,
       "critBonusDamage": 10,
@@ -24072,7 +24072,7 @@
           "maxStat": 28
         },
         {
-          "stat": "AP (target)",
+          "stat": "AP",
           "minStat": null,
           "maxStat": -1
         }
@@ -24241,9 +24241,14 @@
       "critBonusDamage": 10,
       "weapon_effects": [
         {
-          "stat": "Air damage",
-          "minStat": 17,
-          "maxStat": 20
+          "stat": "Neutral Damage",
+          "minStat": 13,
+          "maxStat": 22
+        },
+        {
+          "stat": "Air Steal",
+          "minStat": 4,
+          "maxStat": 6
         }
       ]
     },
@@ -59212,7 +59217,7 @@
     "weaponStats": {
       "apCost": 5,
       "usesPerTurn": 1,
-      "minRange": 1,
+      "minRange": null,
       "maxRange": 1,
       "baseCritChance": 5,
       "critBonusDamage": 6,
@@ -59441,7 +59446,7 @@
         "maxStat": 12
       },
       {
-        "stat": "% Air Resistance",
+        "stat": "% Neutral Resistance",
         "minStat": 5,
         "maxStat": 7
       },
@@ -59454,7 +59459,7 @@
     "weaponStats": {
       "apCost": 5,
       "usesPerTurn": 1,
-      "minRange": 1,
+      "minRange": null,
       "maxRange": 1,
       "baseCritChance": 10,
       "critBonusDamage": 5,
@@ -59470,8 +59475,8 @@
           "maxStat": 5
         },
         {
-          "stat": "MP (target)",
-          "minStat": -1,
+          "stat": "MP",
+          "minStat": null,
           "maxStat": -1
         }
       ]
@@ -59553,7 +59558,7 @@
         "maxStat": 12
       },
       {
-        "stat": "% Air Resistance",
+        "stat": "% Neutral Resistance",
         "minStat": 5,
         "maxStat": 7
       },
@@ -59582,7 +59587,7 @@
           "maxStat": 5
         },
         {
-          "stat": "AP (target)",
+          "stat": "AP",
           "minStat": null,
           "maxStat": -1
         }
