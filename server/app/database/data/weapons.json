@@ -23998,67 +23998,89 @@
     "setID": "67",
     "stats": [
       {
-        "stat": "Agility",
-        "minStat": 26,
-        "maxStat": 35
-      },
-      {
-        "stat": "Strength",
-        "minStat": 11,
-        "maxStat": 20
-      },
-      {
         "stat": "Vitality",
+        "minStat": 81,
+        "maxStat": 150
+      },
+      {
+        "stat": "Intelligence",
         "minStat": 31,
         "maxStat": 50
       },
       {
-        "stat": "Critical",
-        "minStat": 3,
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Heals",
+        "minStat": 2,
         "maxStat": 4
       },
       {
-        "stat": "Damage",
-        "minStat": 2,
-        "maxStat": 3
+        "stat": "Prospecting",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 3,
+        "maxStat": 5
       }
     ],
     "weaponStats": {
-      "apCost": 5,
+      "apCost": 4,
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 30,
+      "baseCritChance": 25,
       "critBonusDamage": 10,
       "weapon_effects": [
         {
-          "stat": "Air damage",
-          "minStat": 23,
-          "maxStat": 38
+          "stat": "Fire Damage",
+          "minStat": 16,
+          "maxStat": 28
         },
         {
-          "stat": "Neutral steal",
-          "minStat": 3,
-          "maxStat": 5
+          "stat": "Water Damage",
+          "minStat": 16,
+          "maxStat": 28
+        },
+        {
+          "stat": "AP",
+          "minStat": null,
+          "maxStat": -1
         }
       ]
     },
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "and": [
-          {
-            "stat": "AGILITY",
-            "operator": ">",
-            "value": 140
-          },
-          {
-            "stat": "STRENGTH",
-            "operator": ">",
-            "value": 90
-          }
-        ]
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/6071.png"
@@ -24150,39 +24172,64 @@
     "setID": "68",
     "stats": [
       {
-        "stat": "Agility",
-        "minStat": 26,
-        "maxStat": 40
+        "stat": "Vitality",
+        "minStat": 81,
+        "maxStat": 150
       },
       {
-        "stat": "Vitality",
-        "minStat": 41,
-        "maxStat": 60
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
       },
       {
         "stat": "Critical",
-        "minStat": 2,
-        "maxStat": 3
+        "minStat": 1,
+        "maxStat": 2
       },
       {
-        "stat": "Damage",
+        "stat": "Neutral Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
+        "stat": "AP Parry",
         "minStat": 3,
         "maxStat": 5
       },
       {
-        "stat": "Trap Damage",
-        "minStat": 6,
-        "maxStat": 10
-      },
-      {
-        "stat": "Power (traps)",
-        "minStat": 21,
-        "maxStat": 30
-      },
-      {
-        "stat": "Initiative",
-        "minStat": null,
-        "maxStat": 100
+        "stat": "MP Parry",
+        "minStat": 3,
+        "maxStat": 5
       }
     ],
     "weaponStats": {
@@ -24194,33 +24241,20 @@
       "critBonusDamage": 10,
       "weapon_effects": [
         {
-          "stat": "Air damage",
-          "minStat": 17,
-          "maxStat": 20
+          "stat": "Neutral Damage",
+          "minStat": 13,
+          "maxStat": 22
+        },
+        {
+          "stat": "Air Steal",
+          "minStat": 4,
+          "maxStat": 6
         }
       ]
     },
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "and": [
-          {
-            "stat": "AGILITY",
-            "operator": ">",
-            "value": 250
-          },
-          {
-            "stat": "WISDOM",
-            "operator": ">",
-            "value": 90
-          },
-          {
-            "stat": "VITALITY",
-            "operator": ">",
-            "value": 300
-          }
-        ]
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/5059.png"
@@ -59100,5 +59134,470 @@
       "customConditions": {}
     },
     "imageUrl": "item/927360009900000000000.png"
+  }, {
+    "dofusID": "26008",
+    "name": {
+      "en": "Destroyer Cleaver",
+      "fr": "Hachoir de Ravageur",
+      "de": "[!] Hachoir de Ravageur",
+      "es": "[!] Hachoir de Ravageur",
+      "it": "[!] Hachoir de Ravageur",
+      "pt": "[!] Hachoir de Ravageur"
+    },
+    "itemType": "Axe",
+    "level": 200,
+    "setID": "498",
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Chance",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Agility",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 5,
+      "critBonusDamage": 6,
+      "weapon_effects": [
+        {
+          "stat": "Water Damage",
+          "minStat": 16,
+          "maxStat": 22
+        },
+        {
+          "stat": "Air Damage",
+          "minStat": 16,
+          "maxStat": 22
+        },
+        {
+          "stat": "Water Steal",
+          "minStat": 4,
+          "maxStat": 6
+        },
+        {
+          "stat": "Air Steal",
+          "minStat": 4,
+          "maxStat": 6
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/19083.png"
+  },
+  {
+    "dofusID": "26011",
+    "name": {
+      "en": "Chaotic Scythe",
+      "fr": "Faux Chaotique",
+      "de": "[!] Faux Chaotique",
+      "es": "[!] Faux Chaotique",
+      "it": "[!] Faux Chaotique",
+      "pt": "[!] Faux Chaotique"
+    },
+    "itemType": "Scythe",
+    "level": 200,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 26,
+        "maxStat": 35
+      },
+      {
+        "stat": "Power",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": -1
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 14,
+        "maxStat": 18
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 14,
+        "maxStat": 18
+      },
+      {
+        "stat": "Heals",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 201,
+        "maxStat": 300
+      },
+      {
+        "stat": "Lock",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": -15,
+        "maxStat": -15
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": 1,
+      "maxRange": 2,
+      "baseCritChance": 10,
+      "critBonusDamage": 3,
+      "weapon_effects": [
+        {
+          "stat": "Neutral Damage",
+          "minStat": 21,
+          "maxStat": 25
+        },
+        {
+          "stat": "Fire Steal",
+          "minStat": 16,
+          "maxStat": 20
+        },
+        {
+          "stat": "Water Steal",
+          "minStat": 16,
+          "maxStat": 20
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {
+        "and": [
+          {
+            "stat": "AP",
+            "operator": "<",
+            "value": 12
+          }
+        ]
+      },
+      "customConditions": {}
+    },
+    "imageUrl": "item/22009.png"
+  },
+  {
+    "dofusID": "26010",
+    "name": {
+      "en": "Imp Sword",
+      "fr": "Épée Diablotine",
+      "de": "[!] Épée Diablotine",
+      "es": "[!] Épée Diablotine",
+      "it": "[!] Épée Diablotine",
+      "pt": "[!] Épée Diablotine"
+    },
+    "itemType": "Sword",
+    "level": 200,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Heals",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Lock",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 10,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        {
+          "stat": "Fire Damage",
+          "minStat": 45,
+          "maxStat": 50
+        },
+        {
+          "stat": "Fire Steal",
+          "minStat": 4,
+          "maxStat": 5
+        },
+        {
+          "stat": "MP",
+          "minStat": null,
+          "maxStat": -1
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/6753.png"
+  },
+  {
+    "dofusID": "26009",
+    "name": {
+      "en": "Seraphic Scythe",
+      "fr": "Faux Séraphine",
+      "de": "[!] Faux Séraphine",
+      "es": "[!] Faux Séraphine",
+      "it": "[!] Faux Séraphine",
+      "pt": "[!] Faux Séraphine"
+    },
+    "itemType": "Scythe",
+    "level": 200,
+    "setID": null,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Heals",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Lock",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": 1,
+      "maxRange": 2,
+      "baseCritChance": 10,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        {
+          "stat": "Water Damage",
+          "minStat": 38,
+          "maxStat": 45
+        },
+        {
+          "stat": "Water Steal",
+          "minStat": 4,
+          "maxStat": 5
+        },
+        {
+          "stat": "AP",
+          "minStat": null,
+          "maxStat": -1
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/22008.png"
   }
 ]
