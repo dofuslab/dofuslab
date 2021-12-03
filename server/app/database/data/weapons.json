@@ -24062,12 +24062,12 @@
       "critBonusDamage": 10,
       "weapon_effects": [
         {
-          "stat": "Fire Damage",
+          "stat": "Fire damage",
           "minStat": 16,
           "maxStat": 28
         },
         {
-          "stat": "Water Damage",
+          "stat": "Water damage",
           "minStat": 16,
           "maxStat": 28
         },
@@ -24241,12 +24241,12 @@
       "critBonusDamage": 10,
       "weapon_effects": [
         {
-          "stat": "Neutral Damage",
+          "stat": "Neutral damage",
           "minStat": 13,
           "maxStat": 22
         },
         {
-          "stat": "Air Steal",
+          "stat": "Air steal",
           "minStat": 4,
           "maxStat": 6
         }
@@ -59134,7 +59134,8 @@
       "customConditions": {}
     },
     "imageUrl": "item/927360009900000000000.png"
-  }, {
+  },
+  {
     "dofusID": "26008",
     "name": {
       "en": "Destroyer Cleaver",
@@ -59223,22 +59224,22 @@
       "critBonusDamage": 6,
       "weapon_effects": [
         {
-          "stat": "Water Damage",
+          "stat": "Water damage",
           "minStat": 16,
           "maxStat": 22
         },
         {
-          "stat": "Air Damage",
+          "stat": "Air damage",
           "minStat": 16,
           "maxStat": 22
         },
         {
-          "stat": "Water Steal",
+          "stat": "Water steal",
           "minStat": 4,
           "maxStat": 6
         },
         {
-          "stat": "Air Steal",
+          "stat": "Air steal",
           "minStat": 4,
           "maxStat": 6
         }
@@ -59345,17 +59346,17 @@
       "critBonusDamage": 3,
       "weapon_effects": [
         {
-          "stat": "Neutral Damage",
+          "stat": "Neutral damage",
           "minStat": 21,
           "maxStat": 25
         },
         {
-          "stat": "Fire Steal",
+          "stat": "Fire steal",
           "minStat": 16,
           "maxStat": 20
         },
         {
-          "stat": "Water Steal",
+          "stat": "Water steal",
           "minStat": 16,
           "maxStat": 20
         }
@@ -59465,12 +59466,12 @@
       "critBonusDamage": 5,
       "weapon_effects": [
         {
-          "stat": "Fire Damage",
+          "stat": "Fire damage",
           "minStat": 45,
           "maxStat": 50
         },
         {
-          "stat": "Fire Steal",
+          "stat": "Fire steal",
           "minStat": 4,
           "maxStat": 5
         },
@@ -59577,12 +59578,12 @@
       "critBonusDamage": 5,
       "weapon_effects": [
         {
-          "stat": "Water Damage",
+          "stat": "Water damage",
           "minStat": 38,
           "maxStat": 45
         },
         {
-          "stat": "Water Steal",
+          "stat": "Water steal",
           "minStat": 4,
           "maxStat": 5
         },
