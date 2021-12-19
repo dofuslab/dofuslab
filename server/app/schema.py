@@ -1503,6 +1503,11 @@ class Query(graphene.ObjectType):
         ),
     )
 
+    user_by_name = graphene.Field(User, username=graphene.String(required=True))
+
+    def resolve_user_by_name(self, info, username):
+        return ModelUserAccount.find_by_username(username)
+
     def resolve_items_by_name(self, info, **kwargs):
         item_name_objs = kwargs.get("item_name_objs")
         num_slots = db.session.query(ModelItemSlot).count()

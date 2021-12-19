@@ -1,0 +1,49 @@
+query userProfileSets(
+  $username: String!
+  $first: Int!
+  $after: String
+  $filters: CustomSetFilters!
+) {
+  userByName(username: $username) {
+    username
+    id
+    customSets(first: $first, after: $after, filters: $filters) {
+      edges {
+        node {
+          id
+          name
+          level
+          defaultClass {
+            id
+            name
+            faceImageUrl
+          }
+          equippedItems {
+            id
+            slot {
+              id
+              order
+            }
+            item {
+              id
+              imageUrl
+            }
+          }
+          tagAssociations {
+            id
+            associationDate
+            customSetTag {
+              id
+              name
+              imageUrl
+            }
+          }
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+}

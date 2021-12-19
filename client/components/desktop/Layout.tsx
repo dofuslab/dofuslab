@@ -168,6 +168,12 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
     </Select>
   );
 
+  const copyUserLinkToClipboard = () => {
+    navigator.clipboard.writeText(
+      `http://dev.localhost:3000/user/${data?.currentUser!.username}`,
+    );
+  };
+
   const theme = useTheme<Theme>();
 
   const classicSwitch = (
@@ -362,6 +368,16 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                               css={{ marginRight: 8 }}
                             />
                             {t('CHANGE_PASSWORD')}
+                          </Menu.Item>
+                          <Menu.Item
+                            key="get-user-link"
+                            onClick={copyUserLinkToClipboard}
+                          >
+                            <FontAwesomeIcon
+                              icon={faKey}
+                              css={{ marginRight: 8 }}
+                            />
+                            Copy public link
                           </Menu.Item>
                         </Menu.ItemGroup>
                       </Menu>
