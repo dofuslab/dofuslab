@@ -29,6 +29,7 @@ from app.database.model_spell_stat_translation import ModelSpellStatTranslation
 from app.database.model_spell_effect import ModelSpellEffect
 from app.database import base
 from oneoff.enums import to_stat_enum, to_effect_enum, to_spell_enum
+from oneoff.sync_custom_set_tag import load_and_create_all_custom_set_tags
 from oneoff.sync_spell import create_spell_stats
 from oneoff.sync_set import create_set
 import oneoff.sync_item
