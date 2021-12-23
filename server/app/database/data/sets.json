@@ -28570,6 +28570,26 @@
           "altStat": null
         },
         {
+          "stat": "Earth Damage",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Fire Damage",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Water Damage",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Air Damage",
+          "value": 10,
+          "altStat": null
+        },
+        {
           "stat": "Lock",
           "value": 8,
           "altStat": null
@@ -28649,6 +28669,26 @@
         {
           "stat": "Neutral Damage",
           "value": 60,
+          "altStat": null
+        },
+        {
+          "stat": "Earth Damage",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Fire Damage",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Water Damage",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Air Damage",
+          "value": 10,
           "altStat": null
         },
         {
