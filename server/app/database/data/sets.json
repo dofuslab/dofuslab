@@ -28530,6 +28530,26 @@
       ],
       "4": [
         {
+          "stat": "Strength",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Chance",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Agility",
+          "value": 100,
+          "altStat": null
+        },
+        {
           "stat": "Critical",
           "value": -40,
           "altStat": null
@@ -28541,7 +28561,7 @@
         },
         {
           "stat": "Range",
-          "value": 1,
+          "value": 2,
           "altStat": null
         },
         {
@@ -28591,6 +28611,26 @@
         }
       ],
       "5": [
+         {
+          "stat": "Strength",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Chance",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Agility",
+          "value": 100,
+          "altStat": null
+        },
         {
           "stat": "Critical",
           "value": -40,
@@ -28603,7 +28643,7 @@
         },
         {
           "stat": "Range",
-          "value": 1,
+          "value": 2,
           "altStat": null
         },
         {
@@ -28655,22 +28695,22 @@
       "6": [
         {
           "stat": "Strength",
-          "value": 200,
+          "value": 150,
           "altStat": null
         },
         {
           "stat": "Intelligence",
-          "value": 200,
+          "value": 150,
           "altStat": null
         },
         {
           "stat": "Chance",
-          "value": 200,
+          "value": 150,
           "altStat": null
         },
         {
           "stat": "Agility",
-          "value": 200,
+          "value": 150,
           "altStat": null
         },
         {
@@ -28690,7 +28730,7 @@
         },
         {
           "stat": "Range",
-          "value": 3,
+          "value": 2,
           "altStat": null
         },
         {
