@@ -103,11 +103,18 @@ const ItemSelector: React.FC<Props> = ({
         minWidth: 0,
         [mq[1]]: { gridGap: 12 },
       }}
+      loader={
+        <SkeletonCardsLoader
+          key="loader"
+          length={data && data.items.edges.length + data.itemSuggestions.length}
+          isClassic
+        />
+      }
     >
       {loading ? (
         <SkeletonCardsLoader
           key="loader"
-          length={data?.items.edges.length}
+          length={data && data.items.edges.length + data.itemSuggestions.length}
           isClassic
           multiplier={2}
         />
