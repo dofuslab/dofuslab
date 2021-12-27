@@ -9,29 +9,21 @@ import ItemsQuery from 'graphql/queries/items.graphql';
 import { items, itemsVariables } from 'graphql/queries/__generated__/items';
 import { getResponsiveGridStyle } from 'common/mixins';
 import { SharedFilters } from 'common/types';
-import { findEmptyOrOnlySlotId, findNextEmptySlotIds } from 'common/utils';
 import { mq, getSelectorNumCols } from 'common/constants';
-import { ItemSlot, CustomSet, ItemSet } from 'common/type-aliases';
-import ConfirmReplaceItemPopover from '../desktop/ConfirmReplaceItemPopover';
+import { ItemSet } from 'common/type-aliases';
 import SetModal from './SetModal';
-import ItemCard from './ItemCard';
 
 import SkeletonCardsLoader from './SkeletonCardsLoader';
+import ItemCardWithContext, { SharedProps } from './ItemCardWithContext';
 
 const PAGE_SIZE = 24;
 
 const THRESHOLD = 600;
 
-interface Props {
-  selectedItemSlot: ItemSlot | null;
-  customSet?: CustomSet | null;
-  selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
-  customSetItemIds: Set<string>;
+type Props = SharedProps & {
   filters: SharedFilters;
   itemTypeIds: Set<string>;
-  isMobile: boolean;
-  isClassic: boolean;
-}
+};
 
 const ItemSelector: React.FC<Props> = ({
   selectedItemSlot,
@@ -54,7 +46,12 @@ const ItemSelector: React.FC<Props> = ({
   const { data, loading, fetchMore } = useQuery<items, itemsVariables>(
     ItemsQuery,
     {
-      variables: { first: PAGE_SIZE, filters: queryFilters },
+      variables: {
+        first: PAGE_SIZE,
+        filters: queryFilters,
+        customSetId: customSet?.id,
+        itemSlotId: selectedItemSlot?.id,
+      },
     },
   );
 
@@ -86,17 +83,17 @@ const ItemSelector: React.FC<Props> = ({
     setSetModalVisible(false);
   }, [setSetModalVisible]);
 
+  const filtersUnchanged =
+    !filters.search &&
+    (!customSet || filters.maxLevel === customSet.level) &&
+    filters.stats.length === 0;
+
   return (
     <InfiniteScroll
       hasMore={data?.items.pageInfo.hasNextPage}
-      loader={
-        <SkeletonCardsLoader
-          key="loader"
-          length={data?.items.edges.length}
-          isClassic
-        />
-      }
       loadMore={onLoadMore}
+      useWindow={isMobile || isClassic}
+      threshold={THRESHOLD}
       css={{
         ...getResponsiveGridStyle(getSelectorNumCols(isClassic)),
         marginTop: 12,
@@ -106,53 +103,53 @@ const ItemSelector: React.FC<Props> = ({
         minWidth: 0,
         [mq[1]]: { gridGap: 12 },
       }}
-      useWindow={isMobile || isClassic}
-      threshold={THRESHOLD}
+      loader={
+        <SkeletonCardsLoader
+          key="loader"
+          length={data && data.items.edges.length + data.itemSuggestions.length}
+          isClassic
+        />
+      }
     >
       {loading ? (
-        <SkeletonCardsLoader key="initial-loader" multiplier={2} isClassic />
+        <SkeletonCardsLoader
+          key="loader"
+          length={data && data.items.edges.length + data.itemSuggestions.length}
+          isClassic
+          multiplier={2}
+        />
       ) : (
-        (data?.items.edges ?? [])
-          .map((edge) => edge.node)
-          .map((item) => {
-            const itemSlotId =
-              selectedItemSlot?.id ||
-              findEmptyOrOnlySlotId(item.itemType, customSet);
-            const remainingSlotIds = selectedItemSlot
-              ? findNextEmptySlotIds(
-                  item.itemType,
-                  selectedItemSlot.id,
-                  customSet,
-                )
-              : [];
-            const card = (
-              <ItemCard
-                key={`item-card-${item.id}`}
+        <>
+          {filtersUnchanged &&
+            data?.itemSuggestions.map((item) => (
+              <ItemCardWithContext
+                key={`suggestion-${item.id}`}
                 item={item}
-                itemSlotId={itemSlotId}
-                equipped={customSetItemIds.has(item.id)}
-                customSetId={customSet?.id ?? null}
+                selectedItemSlot={selectedItemSlot}
                 selectItemSlot={selectItemSlot}
+                isMobile={isMobile}
+                isClassic={isClassic}
+                customSetItemIds={customSetItemIds}
                 openSetModal={openSetModal}
-                shouldRedirect={isMobile || isClassic}
-                remainingSlotIds={remainingSlotIds}
-                notifyOnEquip={false}
+                isSuggestion
               />
-            );
-            return itemSlotId || !customSet ? (
-              card
-            ) : (
-              <ConfirmReplaceItemPopover
-                key={`confirm-replace-item-popover-${item.id}`}
+            ))}
+          {(data?.items.edges ?? [])
+            .map((edge) => edge.node)
+            .map((item) => (
+              <ItemCardWithContext
+                key={item.id}
                 item={item}
-                customSet={customSet}
-              >
-                {card}
-              </ConfirmReplaceItemPopover>
-            );
-          })
+                selectedItemSlot={selectedItemSlot}
+                selectItemSlot={selectItemSlot}
+                isMobile={isMobile}
+                isClassic={isClassic}
+                customSetItemIds={customSetItemIds}
+                openSetModal={openSetModal}
+              />
+            ))}
+        </>
       )}
-
       {selectedSet && (
         <SetModal
           setId={selectedSet.id}

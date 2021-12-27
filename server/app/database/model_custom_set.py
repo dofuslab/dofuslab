@@ -9,8 +9,9 @@ from .model_item_slot import ModelItemSlot
 from .model_custom_set_stat import ModelCustomSetStat
 from .model_custom_set_tag_association import ModelCustomSetTagAssociation
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, text, func
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import aliased, relationship
 from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.sql import exists
 from datetime import datetime
 
 
@@ -40,7 +41,9 @@ class ModelCustomSet(Base):
     )
     level = Column("level", Integer, server_default=text("200"), nullable=False)
     equipped_items = relationship(
-        "ModelEquippedItem", backref="custom_set", cascade="all, delete-orphan",
+        "ModelEquippedItem",
+        backref="custom_set",
+        cascade="all, delete-orphan",
     )
     stats = relationship(
         "ModelCustomSetStat",
@@ -63,6 +66,20 @@ class ModelCustomSet(Base):
         secondary="custom_set_tag_association",
         order_by="ModelCustomSetTagAssociation.association_date",
     )
+
+    def empty_item_slots(self):
+        slot_alias = aliased(ModelItemSlot)
+        subquery = (
+            ~db.session.query(slot_alias)
+            .join(slot_alias.equipped_items)
+            .filter(
+                ModelEquippedItem.custom_set_id == self.uuid,
+                ModelEquippedItem.item_slot_id == ModelItemSlot.uuid,
+            )
+            .exists()
+        )
+        empty_slots = db.session.query(ModelItemSlot).filter(subquery).all()
+        return empty_slots
 
     def empty_or_first_item_slot(self, item_type):
         eligible_item_slots = item_type.eligible_item_slots
@@ -169,7 +186,9 @@ class ModelCustomSet(Base):
             db_session.delete(equipped_item)
         elif item_id:
             equipped_item = ModelEquippedItem(
-                item_slot_id=item_slot.uuid, custom_set_id=self.uuid, item_id=item_id,
+                item_slot_id=item_slot.uuid,
+                custom_set_id=self.uuid,
+                item_id=item_id,
             )
             db_session.add(equipped_item)
         else:

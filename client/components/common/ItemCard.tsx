@@ -28,6 +28,7 @@ interface Props {
   shouldRedirect?: boolean;
   remainingSlotIds: Array<string>;
   notifyOnEquip: boolean;
+  isSuggestion?: boolean;
 }
 
 const ItemCard: React.FC<Props> = ({
@@ -40,6 +41,7 @@ const ItemCard: React.FC<Props> = ({
   shouldRedirect,
   remainingSlotIds,
   notifyOnEquip,
+  isSuggestion,
 }) => {
   const mutate = useEquipItemMutation(item);
   const { t, i18n } = useTranslation('common');
@@ -147,6 +149,7 @@ const ItemCard: React.FC<Props> = ({
           </a>
         )
       }
+      isSuggestion={isSuggestion}
     />
   );
 };
