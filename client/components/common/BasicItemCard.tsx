@@ -20,7 +20,6 @@ import { Theme } from 'common/types';
 import Card from 'components/common/Card';
 import { getImageUrl } from 'common/utils';
 import ItemStatsList from './ItemStatsList';
-import { Divider } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tooltip from './Tooltip';
 import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
