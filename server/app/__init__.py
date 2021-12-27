@@ -57,7 +57,9 @@ elif flask_env == "production":
 
 db = SQLAlchemy(app)
 CORS(
-    app, resources={r"/*": {"origins": origins}}, supports_credentials=True,
+    app,
+    resources={r"/*": {"origins": origins}},
+    supports_credentials=True,
 )
 
 from contextlib import contextmanager
@@ -118,6 +120,13 @@ cache_region = make_region().configure(
         "thread_local_lock": False,
     },
 )
+
+cache = redis.Redis(
+    host=os.environ.get("REDIS_HOST"),
+    port=os.environ.get("REDIS_PORT"),
+    decode_responses=True,
+)
+
 
 from app.schema import schema
 from app.loaders import (

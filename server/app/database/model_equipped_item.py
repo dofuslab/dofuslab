@@ -32,7 +32,7 @@ class ModelEquippedItem(Base):
     )
     item_id = Column(UUID(as_uuid=True), ForeignKey("item.uuid", ondelete="CASCADE"))
     item = relationship("ModelItem")
-    slot = relationship("ModelItemSlot")
+    slot = relationship("ModelItemSlot", backref="equipped_items")
     exos = relationship("ModelEquippedItemExo", cascade="all, delete-orphan")
     weapon_element_mage = Column("weapon_element_mage", WeaponElementMageEnum)
 

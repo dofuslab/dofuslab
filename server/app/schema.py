@@ -45,6 +45,7 @@ from app.database.model_spell_variant_pair import ModelSpellVariantPair
 from app.database.model_user_setting import ModelUserSetting
 from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_class import ModelClass
+from app.suggester.suggester import get_ordered_suggestions
 from app.tasks import send_email
 from app.utils import (
     get_or_create_custom_set,
@@ -58,6 +59,7 @@ from app.utils import (
     edit_custom_set_metadata,
 )
 from app.verify_email import verify_email_salt
+from functools import reduce
 from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 from app.database.base import Base
@@ -1334,7 +1336,8 @@ class Query(graphene.ObjectType):
                         func.count(ModelItemStat.uuid).label("num_stats_matched"),
                     )
                     .filter(
-                        ModelItemStat.stat.in_(stat_names), ModelItemStat.max_value > 0,
+                        ModelItemStat.stat.in_(stat_names),
+                        ModelItemStat.max_value > 0,
                     )
                     .group_by(ModelItemStat.item_id)
                     .subquery()
@@ -1530,6 +1533,50 @@ class Query(graphene.ObjectType):
 
     def resolve_custom_set_tags(self, info):
         return db.session.query(ModelCustomSetTag).all()
+
+    item_suggestions = graphene.NonNull(
+        graphene.List(graphene.NonNull(Item)),
+        custom_set_id=graphene.UUID(),
+        num_suggestions=graphene.Int(),
+        item_slot_id=graphene.UUID(),
+    )
+
+    def resolve_item_suggestions(self, info, num_suggestions=10, **kwargs):
+        custom_set_id = kwargs.get("custom_set_id")
+        item_slot_id = kwargs.get("item_slot_id")
+        if not custom_set_id:
+            return []
+        custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
+        eligible_item_type_ids = []
+        if item_slot_id:
+            eligible_item_type_ids = map(
+                lambda x: x.uuid,
+                db.session.query(ModelItemSlot).get(item_slot_id).item_types,
+            )
+        else:
+            eligible_item_type_ids = [
+                item_type.uuid
+                for item_slot in custom_set.empty_item_slots()
+                for item_type in item_slot.item_types
+            ]
+        if not eligible_item_type_ids:
+            return []
+        item_ids = [
+            equipped_item.item_id for equipped_item in custom_set.equipped_items
+        ]
+        suggested_item_ids = get_ordered_suggestions(item_ids)
+        suggested_items = (
+            db.session.query(ModelItem)
+            .filter(ModelItem.uuid.in_(suggested_item_ids))
+            .filter(ModelItem.item_type_id.in_(eligible_item_type_ids))
+            .filter(ModelItem.level <= custom_set.level)
+            .all()
+        )
+        results = sorted(
+            suggested_items,
+            key=lambda x: suggested_item_ids.index(str(x.uuid)),
+        )
+        return results[:num_suggestions]
 
 
 class Mutation(graphene.ObjectType):
