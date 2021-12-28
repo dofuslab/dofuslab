@@ -132,6 +132,7 @@ const ItemSelector: React.FC<Props> = ({
                 customSetItemIds={customSetItemIds}
                 openSetModal={openSetModal}
                 isSuggestion
+                customSet={customSet}
               />
             ))}
           {(data?.items.edges ?? [])
@@ -146,6 +147,7 @@ const ItemSelector: React.FC<Props> = ({
                 isClassic={isClassic}
                 customSetItemIds={customSetItemIds}
                 openSetModal={openSetModal}
+                customSet={customSet}
               />
             ))}
         </>
