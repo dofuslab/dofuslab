@@ -86,7 +86,8 @@ const ItemSelector: React.FC<Props> = ({
   const filtersUnchanged =
     !filters.search &&
     (!customSet || filters.maxLevel === customSet.level) &&
-    filters.stats.length === 0;
+    filters.stats.length === 0 &&
+    itemTypeIdsArr.length === 0;
 
   return (
     <InfiniteScroll
