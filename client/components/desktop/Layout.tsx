@@ -24,7 +24,7 @@ import NoSSR from 'react-no-ssr';
 import Link from 'next/link';
 import { TFunction } from 'next-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faKey, faMugHot } from '@fortawesome/free-solid-svg-icons';
+import { faKey, faMugHot, faLink } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { useTranslation, LANGUAGES, langToFullName } from 'i18n';
@@ -44,7 +44,11 @@ import ChangePasswordModal from 'components/common/ChangePasswordModal';
 import { LIGHT_THEME_NAME } from 'common/themes';
 import Tooltip from 'components/common/Tooltip';
 import { switchStyle } from 'common/mixins';
-import { ClassicContext, getImageUrl } from 'common/utils';
+import {
+  ClassicContext,
+  getImageUrl,
+  copyUserLinkToClipboard,
+} from 'common/utils';
 import { Theme } from 'common/types';
 import { DownOutlined } from '@ant-design/icons';
 import { Media } from 'components/common/Media';
@@ -168,11 +172,7 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
     </Select>
   );
 
-  const copyUserLinkToClipboard = () => {
-    navigator.clipboard.writeText(
-      `http://dev.localhost:3000/user/${data?.currentUser!.username}`,
-    );
-  };
+  const linkTextareaRef = React.useRef<HTMLTextAreaElement | null>(null);
 
   const theme = useTheme<Theme>();
 
@@ -371,13 +371,22 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                           </Menu.Item>
                           <Menu.Item
                             key="get-user-link"
-                            onClick={copyUserLinkToClipboard}
+                            onClick={() =>
+                              copyUserLinkToClipboard(data, t, linkTextareaRef)
+                            }
                           >
+                            <textarea
+                              css={{ display: 'none' }}
+                              id="classic-clipboard-link"
+                              ref={linkTextareaRef}
+                              contentEditable
+                              suppressContentEditableWarning
+                            />
                             <FontAwesomeIcon
-                              icon={faKey}
+                              icon={faLink}
                               css={{ marginRight: 8 }}
                             />
-                            Copy public link
+                            {t('COPY_PUBLIC_LINK', { ns: 'common' })}
                           </Menu.Item>
                         </Menu.ItemGroup>
                       </Menu>

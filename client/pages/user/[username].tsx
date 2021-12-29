@@ -12,10 +12,6 @@ import { Media } from 'components/common/Media';
 import DesktopLayout from 'components/desktop/Layout';
 import MobileLayout from 'components/mobile/Layout';
 
-// import userProfileCustomSets from 'graphql/queries/userProfileSets.graphql';
-// import { userProfileSets } from 'graphql/queries/__generated__/userProfileSets';
-// import { useQuery } from '@apollo/client';
-
 const UserProfilePage: NextPage = () => {
   const { t } = useTranslation('common');
 
@@ -23,14 +19,6 @@ const UserProfilePage: NextPage = () => {
   const username = Array.isArray(router.query.username)
     ? router.query.username[0]
     : router.query.username || null;
-
-  // const { data } = useQuery<userProfile>(userProfileSets);
-
-  // React.useEffect(() => {
-  //   if (!data?.userByName) {
-  //     Router.push('/');
-  //   }
-  // }, [data]);
 
   return (
     <>

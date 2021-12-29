@@ -5,7 +5,6 @@ import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/client';
 import { useTheme } from 'emotion-theming';
 import InfiniteScroll from 'react-infinite-scroller';
-import { Tabs } from 'antd';
 
 import { Theme } from 'common/types';
 import {
@@ -13,7 +12,7 @@ import {
   userProfileSetsVariables,
 } from 'graphql/queries/__generated__/userProfileSets';
 import userProfileSetsQuery from 'graphql/queries/userProfileSets.graphql';
-import { Input, Select } from 'antd';
+import { Input, Select, Tabs } from 'antd';
 import { useTranslation } from 'i18n';
 import { inputFontSize, itemCardStyle, selected } from 'common/mixins';
 import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
@@ -151,6 +150,7 @@ const UserCustomSets: React.FC<Props> = ({ username }) => {
         display: 'flex',
         flexDirection: 'column',
         maxWidth: 1036,
+        width: '100%',
         margin: '0 auto',
         [mq[1]]: { flexDirection: 'row' },
       }}
@@ -171,7 +171,7 @@ const UserCustomSets: React.FC<Props> = ({ username }) => {
         }}
       >
         <img
-          src="https://avatars.githubusercontent.com/u/61996301?v=4"
+          src="https://media.discordapp.net/attachments/645410912605437972/924539234709282866/Layer_9.png"
           alt="Avatar"
           css={{
             maxWidth: 120,
@@ -180,7 +180,7 @@ const UserCustomSets: React.FC<Props> = ({ username }) => {
             border: '4px solid black',
             outline: '1px solid #434343',
             [mq[1]]: {
-              maxWidth: 400,
+              maxWidth: 240,
               alignItems: 'flex-start',
             },
           }}
@@ -207,7 +207,7 @@ const UserCustomSets: React.FC<Props> = ({ username }) => {
         onChange={() => {}}
         css={{ gridArea: '4/1/4/3', width: '100%', padding: 10 }}
       >
-        <TabPane tab="Builds" key="1" css={{}}>
+        <TabPane tab="Builds" key="1">
           <InfiniteScroll
             hasMore={userBuilds?.userByName?.customSets.pageInfo.hasNextPage}
             loadMore={onLoadMore}
