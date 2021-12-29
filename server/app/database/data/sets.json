@@ -28416,12 +28416,12 @@
   },   {
     "id": "499",
     "name": {
-      "en": "[!] Reliques de l'Aurore Pourpre",
+      "en": "Relics of the Crimson Dawn",
       "fr": "Reliques de l'Aurore Pourpre",
-      "de": "[!] Reliques de l'Aurore Pourpre",
-      "es": "[!] Reliques de l'Aurore Pourpre",
-      "it": "[!] Reliques de l'Aurore Pourpre",
-      "pt": "[!] Reliques de l'Aurore Pourpre"
+      "de": "Reliquien der Purpurnen Morgenröte",
+      "es": "Reliquias de la Aurora Púrpura",
+      "it": "Reliquie dell'Aurora Purpurea",
+      "pt": "Relíquias da Aurora Púrpura"
     },
     "bonuses": {
       "2": [
@@ -28447,22 +28447,12 @@
         },
         {
           "stat": "AP Parry",
-          "value": 4,
+          "value": 2,
           "altStat": null
         },
         {
           "stat": "MP Parry",
-          "value": 4,
-          "altStat": null
-        },
-        {
-          "stat": "Critical Resistance",
-          "value": 10,
-          "altStat": null
-        },
-        {
-          "stat": "Pushback Resistance",
-          "value": 10,
+          "value": 2,
           "altStat": null
         },
         {
@@ -28509,22 +28499,12 @@
         },
         {
           "stat": "AP Parry",
-          "value": 4,
+          "value": 2,
           "altStat": null
         },
         {
           "stat": "MP Parry",
-          "value": 4,
-          "altStat": null
-        },
-        {
-          "stat": "Critical Resistance",
-          "value": 10,
-          "altStat": null
-        },
-        {
-          "stat": "Pushback Resistance",
-          "value": 10,
+          "value": 2,
           "altStat": null
         },
         {
@@ -28550,6 +28530,26 @@
       ],
       "4": [
         {
+          "stat": "Strength",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Chance",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Agility",
+          "value": 100,
+          "altStat": null
+        },
+        {
           "stat": "Critical",
           "value": -40,
           "altStat": null
@@ -28561,12 +28561,32 @@
         },
         {
           "stat": "Range",
-          "value": 1,
+          "value": 2,
           "altStat": null
         },
         {
           "stat": "Neutral Damage",
           "value": 60,
+          "altStat": null
+        },
+        {
+          "stat": "Earth Damage",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Fire Damage",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Water Damage",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Air Damage",
+          "value": 10,
           "altStat": null
         },
         {
@@ -28581,22 +28601,12 @@
         },
         {
           "stat": "AP Parry",
-          "value": 8,
+          "value": 4,
           "altStat": null
         },
         {
           "stat": "MP Parry",
-          "value": 8,
-          "altStat": null
-        },
-        {
-          "stat": "Critical Resistance",
-          "value": 20,
-          "altStat": null
-        },
-        {
-          "stat": "Pushback Resistance",
-          "value": 20,
+          "value": 4,
           "altStat": null
         },
         {
@@ -28622,6 +28632,26 @@
       ],
       "5": [
         {
+          "stat": "Strength",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Chance",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Agility",
+          "value": 100,
+          "altStat": null
+        },
+        {
           "stat": "Critical",
           "value": -40,
           "altStat": null
@@ -28633,12 +28663,32 @@
         },
         {
           "stat": "Range",
-          "value": 1,
+          "value": 2,
           "altStat": null
         },
         {
           "stat": "Neutral Damage",
           "value": 60,
+          "altStat": null
+        },
+        {
+          "stat": "Earth Damage",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Fire Damage",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Water Damage",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Air Damage",
+          "value": 10,
           "altStat": null
         },
         {
@@ -28653,22 +28703,12 @@
         },
         {
           "stat": "AP Parry",
-          "value": 8,
+          "value": 4,
           "altStat": null
         },
         {
           "stat": "MP Parry",
-          "value": 8,
-          "altStat": null
-        },
-        {
-          "stat": "Critical Resistance",
-          "value": 20,
-          "altStat": null
-        },
-        {
-          "stat": "Pushback Resistance",
-          "value": 20,
+          "value": 4,
           "altStat": null
         },
         {
@@ -28695,22 +28735,22 @@
       "6": [
         {
           "stat": "Strength",
-          "value": 200,
+          "value": 150,
           "altStat": null
         },
         {
           "stat": "Intelligence",
-          "value": 200,
+          "value": 150,
           "altStat": null
         },
         {
           "stat": "Chance",
-          "value": 200,
+          "value": 150,
           "altStat": null
         },
         {
           "stat": "Agility",
-          "value": 200,
+          "value": 150,
           "altStat": null
         },
         {
@@ -28720,7 +28760,7 @@
         },
         {
           "stat": "AP",
-          "value": 2,
+          "value": 1,
           "altStat": null
         },
         {
@@ -28730,7 +28770,7 @@
         },
         {
           "stat": "Range",
-          "value": 3,
+          "value": 2,
           "altStat": null
         },
         {
@@ -28770,22 +28810,12 @@
         },
         {
           "stat": "AP Parry",
-          "value": 12,
+          "value": 6,
           "altStat": null
         },
         {
           "stat": "MP Parry",
-          "value": 12,
-          "altStat": null
-        },
-        {
-          "stat": "Critical Resistance",
-          "value": 30,
-          "altStat": null
-        },
-        {
-          "stat": "Pushback Resistance",
-          "value": 30,
+          "value": 6,
           "altStat": null
         },
         {
@@ -28814,12 +28844,12 @@
   {
     "id": "498",
     "name": {
-      "en": "[!] Panoplie des Ravageurs",
+      "en": "Destroyers Set",
       "fr": "Panoplie des Ravageurs",
-      "de": "[!] Panoplie des Ravageurs",
-      "es": "[!] Panoplie des Ravageurs",
-      "it": "[!] Panoplie des Ravageurs",
-      "pt": "[!] Panoplie des Ravageurs"
+      "de": "Zerstörer-Set",
+      "es": "Set de Devastador",
+      "it": "Panoplia dei Devastatori",
+      "pt": "Conjunto dos Devastadores"
     },
     "bonuses": {
       "2": [

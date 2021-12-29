@@ -117,12 +117,97 @@ export interface items_items {
   pageInfo: items_items_pageInfo;
 }
 
+export interface items_itemSuggestions_stats {
+  __typename: "ItemStat";
+  id: any;
+  order: number;
+  maxValue: number | null;
+  stat: Stat | null;
+  customStat: string | null;
+}
+
+export interface items_itemSuggestions_weaponStats_weaponEffects {
+  __typename: "WeaponEffect";
+  id: any;
+  minDamage: number | null;
+  maxDamage: number;
+  effectType: WeaponEffectType;
+}
+
+export interface items_itemSuggestions_weaponStats {
+  __typename: "WeaponStat";
+  id: any;
+  apCost: number;
+  usesPerTurn: number;
+  minRange: number | null;
+  maxRange: number;
+  baseCritChance: number | null;
+  critBonusDamage: number | null;
+  weaponEffects: items_itemSuggestions_weaponStats_weaponEffects[];
+}
+
+export interface items_itemSuggestions_itemType_eligibleItemSlots {
+  __typename: "ItemSlot";
+  id: any;
+  order: number;
+}
+
+export interface items_itemSuggestions_itemType {
+  __typename: "ItemType";
+  id: any;
+  name: string;
+  enName: string;
+  eligibleItemSlots: items_itemSuggestions_itemType_eligibleItemSlots[];
+}
+
+export interface items_itemSuggestions_set_bonuses {
+  __typename: "SetBonus";
+  id: any;
+  numItems: number;
+  stat: Stat | null;
+  value: number | null;
+  customStat: string | null;
+}
+
+export interface items_itemSuggestions_set {
+  __typename: "Set";
+  id: any;
+  name: string;
+  bonuses: items_itemSuggestions_set_bonuses[];
+}
+
+export interface items_itemSuggestions_buffs {
+  __typename: "Buff";
+  id: any;
+  stat: Stat;
+  incrementBy: number | null;
+  critIncrementBy: number | null;
+  maxStacks: number | null;
+}
+
+export interface items_itemSuggestions {
+  __typename: "Item";
+  id: any;
+  name: string;
+  level: number;
+  imageUrl: string;
+  stats: items_itemSuggestions_stats[];
+  weaponStats: items_itemSuggestions_weaponStats | null;
+  conditions: any | null;
+  itemType: items_itemSuggestions_itemType;
+  set: items_itemSuggestions_set | null;
+  buffs: items_itemSuggestions_buffs[] | null;
+}
+
 export interface items {
   items: items_items;
+  itemSuggestions: items_itemSuggestions[];
 }
 
 export interface itemsVariables {
   first: number;
   after?: string | null;
   filters: ItemFilters;
+  customSetId?: any | null;
+  itemSlotId?: any | null;
 }

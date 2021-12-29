@@ -13,12 +13,16 @@ import {
   itemCardStyle,
   itemBoxDimensions,
   ITEM_BOX_WIDTH,
+  gold5,
 } from 'common/mixins';
 import { WeaponElementMage } from '__generated__/globalTypes';
 import { Theme } from 'common/types';
 import Card from 'components/common/Card';
 import { getImageUrl } from 'common/utils';
 import ItemStatsList from './ItemStatsList';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Tooltip from './Tooltip';
+import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
 
 interface Props {
   item: Item;
@@ -28,6 +32,7 @@ interface Props {
   showOnlyWeaponStats: boolean;
   weaponElementMage?: WeaponElementMage | null;
   favorite?: React.ReactNode;
+  isSuggestion?: boolean;
 }
 
 const BasicItemCard: React.FC<Props> = ({
@@ -38,6 +43,7 @@ const BasicItemCard: React.FC<Props> = ({
   showOnlyWeaponStats,
   weaponElementMage,
   favorite,
+  isSuggestion,
 }) => {
   const { t } = useTranslation(['common', 'stat', 'weapon_spell_effect']);
   const theme = useTheme<Theme>();
@@ -52,7 +58,24 @@ const BasicItemCard: React.FC<Props> = ({
           showBadge={equipped}
           badgeContent={t('EQUIPPED')}
           level={item.level}
-          rightAlignedContent={favorite}
+          rightAlignedContent={
+            <div>
+              {isSuggestion && (
+                <Tooltip title={t('SUGGESTED_DOFUSLAB_DATA')}>
+                  <FontAwesomeIcon
+                    icon={faLightbulb}
+                    css={{
+                      marginRight: 8,
+                      '&:hover': {
+                        color: gold5,
+                      },
+                    }}
+                  />
+                </Tooltip>
+              )}
+              {favorite}
+            </div>
+          }
         />
       }
       css={{

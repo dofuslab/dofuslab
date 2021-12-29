@@ -1,6 +1,12 @@
 #import "graphql/fragments/item.graphql"
 
-query items($first: Int!, $after: String, $filters: ItemFilters!) {
+query items(
+  $first: Int!
+  $after: String
+  $filters: ItemFilters!
+  $customSetId: UUID
+  $itemSlotId: UUID
+) {
   items(first: $first, after: $after, filters: $filters) {
     edges {
       node {
@@ -11,5 +17,9 @@ query items($first: Int!, $after: String, $filters: ItemFilters!) {
       hasNextPage
       endCursor
     }
+  }
+
+  itemSuggestions(customSetId: $customSetId, itemSlotId: $itemSlotId) {
+    ...item
   }
 }
