@@ -53,6 +53,7 @@
   "LEVEL_TOO_HIGH": "__STRING_NOT_TRANSLATED__",
   "LEVEL_TOO_HIGH_WITH_ITEM": "__STRING_NOT_TRANSLATED__",
   "MAX_NUM": "Máximo {{max}}",
+  "MEMBER_SINCE": "__STRING_NOT_TRANSLATED__",
   "MULTIPLE_AP_EXO": "Você tem vários exos PA.",
   "MULTIPLE_MP_EXO": "Você tem vários exos PM.",
   "MULTIPLE_PRYSMARADITES": "Você tem vários prismaraditas equipados.",
@@ -90,9 +91,9 @@
   "SHARE_BUILD": "Compartilhar",
   "STATS_PLACEHOLDER": "Características (ex. PA, Pods, Prospecção)",
   "SUCCESS": "Sucesso",
-  "USER_SETS": "Builds públicos de {{username}}",
   "SUGGESTED_DOFUSLAB_DATA": "__STRING_NOT_TRANSLATED__",
   "UNTITLED": "Sem Título",
+  "USER_SETS": "Builds públicos de {{username}}",
   "VIEW_ITEMS": "Ver itens",
   "VIEW_SETS": "Ver sets",
   "WEAPON_AND_SPELLS": "Armas e feitiços"
