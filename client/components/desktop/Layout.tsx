@@ -24,7 +24,7 @@ import NoSSR from 'react-no-ssr';
 import Link from 'next/link';
 import { TFunction } from 'next-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faKey, faMugHot, faLink } from '@fortawesome/free-solid-svg-icons';
+import { faKey, faMugHot } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { useTranslation, LANGUAGES, langToFullName } from 'i18n';
@@ -47,7 +47,6 @@ import { switchStyle } from 'common/mixins';
 import {
   ClassicContext,
   getImageUrl,
-  copyUserLinkToClipboard,
 } from 'common/utils';
 import { Theme } from 'common/types';
 import { DownOutlined } from '@ant-design/icons';
@@ -171,8 +170,6 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
       ))}
     </Select>
   );
-
-  const linkTextareaRef = React.useRef<HTMLTextAreaElement | null>(null);
 
   const theme = useTheme<Theme>();
 
@@ -368,25 +365,6 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                               css={{ marginRight: 8 }}
                             />
                             {t('CHANGE_PASSWORD')}
-                          </Menu.Item>
-                          <Menu.Item
-                            key="get-user-link"
-                            onClick={() =>
-                              copyUserLinkToClipboard(data, t, linkTextareaRef)
-                            }
-                          >
-                            <textarea
-                              css={{ display: 'none' }}
-                              id="classic-clipboard-link"
-                              ref={linkTextareaRef}
-                              contentEditable
-                              suppressContentEditableWarning
-                            />
-                            <FontAwesomeIcon
-                              icon={faLink}
-                              css={{ marginRight: 8 }}
-                            />
-                            {t('COPY_PUBLIC_LINK', { ns: 'common' })}
                           </Menu.Item>
                         </Menu.ItemGroup>
                       </Menu>

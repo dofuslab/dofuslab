@@ -24,7 +24,6 @@ import {
   faHome,
   faSignInAlt,
   faUserPlus,
-  faLink,
   faKey,
   faMugHot,
 } from '@fortawesome/free-solid-svg-icons';
@@ -44,7 +43,7 @@ import {
   BUY_ME_COFFEE_LINK,
 } from 'common/constants';
 import { Theme } from 'common/types';
-import { getImageUrl, copyUserLinkToClipboard } from 'common/utils';
+import { getImageUrl } from 'common/utils';
 import SignUpModal from '../common/SignUpModal';
 import LoginModal from '../common/LoginModal';
 
@@ -149,8 +148,6 @@ const Layout = ({ children }: LayoutProps) => {
     },
     [changeLocaleMutate, i18n, client],
   );
-
-  const linkTextareaRef = React.useRef<HTMLTextAreaElement | null>(null);
 
   const theme = useTheme<Theme>();
 
@@ -281,26 +278,6 @@ const Layout = ({ children }: LayoutProps) => {
                   <FontAwesomeIcon icon={faKey} />
                 </span>
                 {t('CHANGE_PASSWORD')}
-              </Menu.Item>
-            )}
-            {data?.currentUser && (
-              <Menu.Item
-                key="get-user-link"
-                onClick={() =>
-                  copyUserLinkToClipboard(data, t, linkTextareaRef)
-                }
-              >
-                <textarea
-                  css={{ display: 'none' }}
-                  id="classic-clipboard-link"
-                  ref={linkTextareaRef}
-                  contentEditable
-                  suppressContentEditableWarning
-                />
-                <span css={iconWrapper}>
-                  <FontAwesomeIcon icon={faLink} />
-                </span>
-                {t('COPY_PUBLIC_LINK', { ns: 'common' })}
               </Menu.Item>
             )}
             <SubMenu

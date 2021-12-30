@@ -36,7 +36,7 @@ const PAGE_SIZE = 20;
 const THRESHOLD = 600;
 
 interface Props {
-  username: string | null;
+  username: string;
 }
 
 const UserCustomSets: React.FC<Props> = ({ username }) => {
@@ -70,7 +70,7 @@ const UserCustomSets: React.FC<Props> = ({ username }) => {
     userProfileSetsVariables
   >(userProfileSetsQuery, {
     variables: {
-      username: username as string,
+      username: username,
       first: PAGE_SIZE,
       filters: { search, defaultClassId: dofusClassId, tagIds },
     },
@@ -197,7 +197,7 @@ const UserCustomSets: React.FC<Props> = ({ username }) => {
           }}
         >
           <h1 css={{ margin: '10px 0px 0px 0px', fontSize: 28 }}>{`${capitalize(
-            username as string,
+            username!,
           )}`}</h1>
           <span css={{ color: '#8b949e' }}>Member since 05/01/2021</span>
         </div>
@@ -207,7 +207,7 @@ const UserCustomSets: React.FC<Props> = ({ username }) => {
         onChange={() => {}}
         css={{ gridArea: '4/1/4/3', width: '100%', padding: 10 }}
       >
-        <TabPane tab="Builds" key="1">
+        <TabPane tab={t('BUILDS')} key="1">
           <InfiniteScroll
             hasMore={userBuilds?.userByName?.customSets.pageInfo.hasNextPage}
             loadMore={onLoadMore}
@@ -272,7 +272,7 @@ const UserCustomSets: React.FC<Props> = ({ username }) => {
                 ]}
                 showSearch
                 filterOption={(input, option) => {
-                  return (option?.children[1] as string)
+                  return (option?.children[1]! as string)
                     .toLocaleUpperCase()
                     .includes(input.toLocaleUpperCase());
                 }}

@@ -23,24 +23,20 @@ const UserProfilePage: NextPage = () => {
   return (
     <>
       <Head>
-        <style
-          type="text/css"
-          // eslint-disable-next-line react/no-danger
-        />
         <title>
           {getTitle(
-            t('USER_SETS', { username: capitalize(username as string) }),
+            t('USER_PROFILE', { username: capitalize(username!) }),
           )}
         </title>
       </Head>
       <Media lessThan="xs">
         <MobileLayout>
-          <UserCustomSets username={username} />
+          <UserCustomSets username={username!} />
         </MobileLayout>
       </Media>
       <Media greaterThanOrEqual="xs" css={{ height: '100%' }}>
         <DesktopLayout showSwitch={false}>
-          <UserCustomSets username={username} />
+          <UserCustomSets username={username!} />
         </DesktopLayout>
       </Media>
     </>
