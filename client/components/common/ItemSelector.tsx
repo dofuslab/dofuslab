@@ -15,6 +15,7 @@ import SetModal from './SetModal';
 
 import SkeletonCardsLoader from './SkeletonCardsLoader';
 import ItemCardWithContext, { SharedProps } from './ItemCardWithContext';
+import { isUUID } from 'common/utils';
 
 const PAGE_SIZE = 24;
 
@@ -50,7 +51,9 @@ const ItemSelector: React.FC<Props> = ({
         first: PAGE_SIZE,
         filters: queryFilters,
         itemSlotId: selectedItemSlot?.id,
-        equippedItemIds: customSet?.equippedItems.map((ei) => ei.id) ?? [],
+        // filter required because of optimistic equipped item IDs that have the form of `equipped-item-{item UUID}`
+        equippedItemIds:
+          customSet?.equippedItems.map((ei) => ei.id).filter(isUUID) ?? [],
         level: customSet?.level ?? 200,
       },
     },
