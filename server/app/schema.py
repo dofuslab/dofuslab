@@ -1536,17 +1536,21 @@ class Query(graphene.ObjectType):
 
     item_suggestions = graphene.NonNull(
         graphene.List(graphene.NonNull(Item)),
-        custom_set_id=graphene.UUID(),
         num_suggestions=graphene.Int(),
         item_slot_id=graphene.UUID(),
+        equipped_item_ids=graphene.NonNull(
+            graphene.List(graphene.NonNull(graphene.UUID))
+        ),
+        level=graphene.NonNull(graphene.Int),
     )
 
     def resolve_item_suggestions(self, info, num_suggestions=10, **kwargs):
-        custom_set_id = kwargs.get("custom_set_id")
         item_slot_id = kwargs.get("item_slot_id")
-        if not custom_set_id:
+        equipped_item_ids = kwargs.get("equipped_item_ids")
+        level = kwargs.get("level")
+        if not equipped_item_ids:
             return []
-        custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
+
         eligible_item_type_ids = []
         if item_slot_id:
             eligible_item_type_ids = map(
@@ -1554,22 +1558,40 @@ class Query(graphene.ObjectType):
                 db.session.query(ModelItemSlot).get(item_slot_id).item_types,
             )
         else:
+            slot_alias = aliased(ModelItemSlot)
+            subquery = (
+                ~db.session.query(slot_alias)
+                .join(slot_alias.equipped_items)
+                .filter(
+                    ModelEquippedItem.uuid.in_(equipped_item_ids),
+                    ModelEquippedItem.item_slot_id == ModelItemSlot.uuid,
+                )
+                .exists()
+            )
+            empty_slots = db.session.query(ModelItemSlot).filter(subquery).all()
+
             eligible_item_type_ids = [
                 item_type.uuid
-                for item_slot in custom_set.empty_item_slots()
+                for item_slot in empty_slots
                 for item_type in item_slot.item_types
             ]
+
         if not eligible_item_type_ids:
             return []
+
         item_ids = [
-            equipped_item.item_id for equipped_item in custom_set.equipped_items
+            t[0]
+            for t in db.session.query(ModelEquippedItem.item_id).filter(
+                ModelEquippedItem.uuid.in_(equipped_item_ids)
+            )
         ]
+
         suggested_item_ids = get_ordered_suggestions(item_ids)
         suggested_items = (
             db.session.query(ModelItem)
             .filter(ModelItem.uuid.in_(suggested_item_ids))
             .filter(ModelItem.item_type_id.in_(eligible_item_type_ids))
-            .filter(ModelItem.level <= custom_set.level)
+            .filter(ModelItem.level <= level)
             .all()
         )
         results = sorted(
