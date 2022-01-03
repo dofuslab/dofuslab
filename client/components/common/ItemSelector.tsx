@@ -49,8 +49,9 @@ const ItemSelector: React.FC<Props> = ({
       variables: {
         first: PAGE_SIZE,
         filters: queryFilters,
-        customSetId: customSet?.id,
         itemSlotId: selectedItemSlot?.id,
+        equippedItemIds: customSet?.equippedItems.map((ei) => ei.id) ?? [],
+        level: customSet?.level ?? 200,
       },
     },
   );
