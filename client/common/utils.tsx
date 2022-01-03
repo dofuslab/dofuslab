@@ -1862,3 +1862,8 @@ export const combineStatsWithBuffs = (
 export const selectOnFocus = (e: React.FocusEvent<HTMLInputElement>) => {
   e.currentTarget.setSelectionRange(0, e.currentTarget.value.length);
 };
+
+export const isUUID = (candidate: string) =>
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(
+    candidate,
+  );
