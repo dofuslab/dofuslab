@@ -1,43 +1,8 @@
+#import "graphql/fragments/userSets.graphql"
+
 query myCustomSets($first: Int!, $after: String, $filters: CustomSetFilters!) {
   currentUser {
     id
-    customSets(first: $first, after: $after, filters: $filters) {
-      edges {
-        node {
-          id
-          defaultClass {
-            id
-            name
-            faceImageUrl
-          }
-          name
-          level
-          equippedItems {
-            id
-            slot {
-              id
-              order
-            }
-            item {
-              id
-              imageUrl
-            }
-          }
-          tagAssociations {
-            id
-            associationDate
-            customSetTag {
-              id
-              name
-              imageUrl
-            }
-          }
-        }
-      }
-      pageInfo {
-        hasNextPage
-        endCursor
-      }
-    }
+    ...userSets
   }
 }

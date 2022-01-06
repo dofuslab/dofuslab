@@ -52,9 +52,9 @@ export interface userProfileSets_userByName_customSets_edges_node_tagAssociation
 export interface userProfileSets_userByName_customSets_edges_node {
   __typename: "CustomSet";
   id: any;
+  defaultClass: userProfileSets_userByName_customSets_edges_node_defaultClass | null;
   name: string | null;
   level: number;
-  defaultClass: userProfileSets_userByName_customSets_edges_node_defaultClass | null;
   equippedItems: userProfileSets_userByName_customSets_edges_node_equippedItems[];
   tagAssociations: userProfileSets_userByName_customSets_edges_node_tagAssociations[];
 }
