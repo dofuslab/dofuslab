@@ -230,6 +230,10 @@ const BuildList: React.FC<Props> = ({ username, onClose }) => {
       navigateToNewCustomSet(router, resultData.createCustomSet.customSet.id);
     }
   }, [customSetId, mutate, router, userBuilds, client, onClose]);
+
+  const getCustomSetPathname = () => {
+    return isEditable ? '/build' : '/view'
+  }
   
   return (
     <div css={{
@@ -333,6 +337,7 @@ const BuildList: React.FC<Props> = ({ username, onClose }) => {
       <InfiniteScroll
             hasMore={userBuilds?.userByName?.customSets.pageInfo.hasNextPage}
             loadMore={onLoadMore}
+            useWindow={false}
             threshold={THRESHOLD}
             css={{
               display: 'flex',
@@ -370,8 +375,8 @@ const BuildList: React.FC<Props> = ({ username, onClose }) => {
             )}
             {userBuilds?.userByName?.customSets.edges.map(({ node }) => (
               <Link
-                href={{ pathname: '/view', query: { customSetId: node.id } }}
-                as={`/view/${node.id}/`}
+                href={{ pathname: getCustomSetPathname(), query: { customSetId: node.id } }}
+                as={`${getCustomSetPathname()}/${node.id}/`}
                 key={node.id}
               >
                 <a key={node.id}>

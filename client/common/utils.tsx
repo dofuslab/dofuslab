@@ -1862,7 +1862,3 @@ export const combineStatsWithBuffs = (
 export const selectOnFocus = (e: React.FocusEvent<HTMLInputElement>) => {
   e.currentTarget.setSelectionRange(0, e.currentTarget.value.length);
 };
-
-export const capitalize = (string: string) => {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-};

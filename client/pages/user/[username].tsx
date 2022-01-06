@@ -5,7 +5,7 @@ import { jsx } from '@emotion/core';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { useTranslation } from 'i18n';
-import { capitalize, getTitle } from 'common/utils';
+import { getTitle } from 'common/utils';
 import UserCustomSets from 'components/common/UserCustomSets';
 import { useRouter } from 'next/router';
 import { Media } from 'components/common/Media';
@@ -25,7 +25,7 @@ const UserProfilePage: NextPage = () => {
       <Head>
         <title>
           {getTitle(
-            t('USER_PROFILE', { username: capitalize(username!) }),
+            t('USER_PROFILE', { username: (username!) }),
           )}
         </title>
       </Head>
