@@ -9,5 +9,17 @@ query currentUser {
     favoriteItems {
       ...item
     }
+    settings {
+      id
+      buildGender
+      buildClass {
+        id
+        maleFaceImageUrl
+        femaleFaceImageUrl
+        maleSpriteImageUrl
+        femaleSpriteImageUrl
+        name
+      }
+    }
   }
 }

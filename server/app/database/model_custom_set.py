@@ -1,6 +1,7 @@
 import sqlalchemy
 from app import db, session_scope
 from app.database.enums import Stat
+from .enums import BuildGenderEnum
 from .base import Base
 from .model_item import ModelItem
 from .model_equipped_item import ModelEquippedItem
@@ -31,6 +32,11 @@ class ModelCustomSet(Base):
     description = Column("description", String)
     owner_id = Column(UUID(as_uuid=True), ForeignKey("user_account.uuid"), index=True)
     default_class_id = Column(UUID(as_uuid=True), ForeignKey("class.uuid"), index=True)
+    build_gender = Column(
+        "build_gender",
+        BuildGenderEnum,
+        nullable=False,
+    )
     creation_date = Column("creation_date", DateTime, default=datetime.utcnow)
     last_modified = Column(
         "last_modified",

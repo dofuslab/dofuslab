@@ -19,6 +19,8 @@ import {
   VALID_START_END_REGEX,
 } from 'common/constants';
 import { inputFontSize } from 'common/mixins';
+import { BuildGender } from '__generated__/globalTypes';
+import { BuildSettingsForm } from './BuildSettingsForm';
 
 interface Props {
   visible: boolean;
@@ -43,6 +45,8 @@ const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
         email: values.email,
         password: values.password,
         username: values.username,
+        gender: values.gender,
+        buildDefaultClassId: values.buildDefaultClassId || null,
       },
     });
     form.resetFields();
@@ -95,7 +99,11 @@ const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
         form={form}
         name="sign-up"
         id="sign-up-form"
-        initialValues={{ remember: true }}
+        initialValues={{
+          remember: true,
+          gender: BuildGender.FEMALE,
+          buildDefaultClassId: '',
+        }}
         onFinish={handleOk}
         labelCol={{ span: 10 }}
         wrapperCol={{ span: 14 }}
@@ -189,6 +197,8 @@ const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
             placeholder={t('PASSWORD')}
           />
         </Form.Item>
+        <Divider />
+        <BuildSettingsForm />
       </Form>
       <Divider />
       <div css={{ fontSize: '0.75rem' }}>

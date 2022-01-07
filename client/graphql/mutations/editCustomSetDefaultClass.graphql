@@ -1,7 +1,12 @@
-mutation editCustomSetDefaultClass($customSetId: UUID, $defaultClassId: UUID) {
+mutation editCustomSetDefaultClass(
+  $customSetId: UUID
+  $defaultClassId: UUID
+  $buildGender: BuildGender!
+) {
   editCustomSetDefaultClass(
     customSetId: $customSetId
     defaultClassId: $defaultClassId
+    buildGender: $buildGender
   ) {
     customSet {
       id
@@ -10,9 +15,12 @@ mutation editCustomSetDefaultClass($customSetId: UUID, $defaultClassId: UUID) {
         id
         name
         enName
-        faceImageUrl
+        femaleFaceImageUrl
+        maleFaceImageUrl
+        femaleSpriteImageUrl
         maleSpriteImageUrl
       }
+      buildGender
     }
   }
 }

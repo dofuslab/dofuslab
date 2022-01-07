@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { CustomSetFilters } from "./../../../__generated__/globalTypes";
+import { CustomSetFilters, BuildGender } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: myCustomSets
@@ -13,7 +13,8 @@ export interface myCustomSets_currentUser_customSets_edges_node_defaultClass {
   __typename: "Class";
   id: any;
   name: string;
-  faceImageUrl: string;
+  maleFaceImageUrl: string;
+  femaleFaceImageUrl: string;
 }
 
 export interface myCustomSets_currentUser_customSets_edges_node_equippedItems_slot {
@@ -52,6 +53,7 @@ export interface myCustomSets_currentUser_customSets_edges_node_tagAssociations 
 export interface myCustomSets_currentUser_customSets_edges_node {
   __typename: "CustomSet";
   id: any;
+  buildGender: BuildGender;
   defaultClass: myCustomSets_currentUser_customSets_edges_node_defaultClass | null;
   name: string | null;
   level: number;

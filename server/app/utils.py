@@ -1,6 +1,7 @@
 from app import db, session_scope, cache_region, limiter
 from app.database.model_custom_set import ModelCustomSet, MAX_NAME_LENGTH
 from app.database.model_custom_set_stat import ModelCustomSetStat
+from app.database.enums import BuildGender
 from datetime import datetime
 from flask import session
 from flask_babel import _
@@ -25,6 +26,8 @@ scrolled_stat_list = [
     "scrolled_agility",
 ]
 
+DEFAULT_BUILD_GENDER = BuildGender.MALE
+
 
 @limiter.limit("3/second", error_message=_("Please wait a moment before trying again."))
 def get_or_create_custom_set(custom_set_id, db_session):
@@ -37,7 +40,16 @@ def get_or_create_custom_set(custom_set_id, db_session):
             raise GraphQLError(_("You don't have permission to edit that build."))
         custom_set.last_modified = datetime.utcnow()
     else:
-        custom_set = ModelCustomSet(owner_id=current_user.get_id())
+        build_gender = DEFAULT_BUILD_GENDER
+        build_class_id = None
+        if not current_user.is_anonymous:
+            build_gender = current_user.settings.build_gender
+            build_class_id = current_user.settings.build_class_id
+        custom_set = ModelCustomSet(
+            owner_id=current_user.get_id(),
+            build_gender=BuildGender(build_gender),
+            default_class_id=build_class_id,
+        )
         db_session.add(custom_set)
         db_session.flush()
         custom_set_stat = ModelCustomSetStat(custom_set_id=custom_set.uuid)

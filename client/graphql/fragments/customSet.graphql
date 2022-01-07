@@ -33,7 +33,9 @@ fragment customSet on CustomSet {
     id
     name
     enName
-    faceImageUrl
+    femaleFaceImageUrl
+    maleFaceImageUrl
+    femaleSpriteImageUrl
     maleSpriteImageUrl
   }
   creationDate
@@ -48,4 +50,5 @@ fragment customSet on CustomSet {
     }
   }
   hasEditPermission
+  buildGender
 }
