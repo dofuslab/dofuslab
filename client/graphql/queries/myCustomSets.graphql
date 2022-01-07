@@ -5,10 +5,12 @@ query myCustomSets($first: Int!, $after: String, $filters: CustomSetFilters!) {
       edges {
         node {
           id
+          buildGender
           defaultClass {
             id
             name
-            faceImageUrl
+            maleFaceImageUrl
+            femaleFaceImageUrl
           }
           name
           level

@@ -13,7 +13,8 @@ export interface classes_classes {
   name: string;
   enName: string;
   allNames: string[];
-  faceImageUrl: string;
+  maleFaceImageUrl: string;
+  femaleFaceImageUrl: string;
   maleSpriteImageUrl: string;
   femaleSpriteImageUrl: string;
 }

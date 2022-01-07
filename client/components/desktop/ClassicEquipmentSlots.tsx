@@ -9,7 +9,7 @@ import { itemSlots as ItemSlotsQueryType } from 'graphql/queries/__generated__/i
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 
 import { mq } from 'common/constants';
-import { getImageUrl, useSetModal } from 'common/utils';
+import { EditableContext, getImageUrl, useSetModal } from 'common/utils';
 import { BuildError } from 'common/types';
 import { CustomSet, EquippedItem } from 'common/type-aliases';
 import { TooltipPlacement } from 'antd/lib/tooltip';
@@ -17,10 +17,15 @@ import MageModal from '../common/MageModal';
 import SetModal from '../common/SetModal';
 import BonusStats from './BonusStats';
 import ClassicEquippedItem from './ClassicEquippedItem';
+import { BuildGender } from '__generated__/globalTypes';
+import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
+import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import DefaultClassModal from 'components/common/DefaultClassModal';
 
 interface Props {
   customSet?: CustomSet | null;
   errors: Array<BuildError>;
+  setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
 const NO_CLASS_IMG = getImageUrl('class/sprite/No_Class.png');
@@ -52,9 +57,17 @@ const getPopoverPlacement = (slotEnName: string): TooltipPlacement => {
   }
 };
 
-const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
+const ClassicEquipmentSlots: React.FC<Props> = ({
+  customSet,
+  errors,
+  setDofusClassId,
+}) => {
   const { data } = useQuery<ItemSlotsQueryType>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
+
+  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
+    currentUserQuery,
+  );
 
   const equippedItemsBySlotId: {
     [key: string]: EquippedItem;
@@ -68,6 +81,10 @@ const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
   const [equippedItem, setEquippedItem] = React.useState<EquippedItem | null>(
     null,
   );
+  const [
+    defaultClassModalVisible,
+    setDefaultClassModalVisible,
+  ] = React.useState(false);
   const openMageModal = React.useCallback(
     (ei) => {
       setEquippedItem(ei);
@@ -78,6 +95,15 @@ const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
   const closeMageModal = React.useCallback(() => {
     setMageModalVisible(false);
   }, [setMageModalVisible]);
+
+  const openDefaultClassModal = React.useCallback(() => {
+    setDefaultClassModalVisible(true);
+  }, []);
+  const closeDefaultClassModal = React.useCallback(() => {
+    setDefaultClassModalVisible(false);
+  }, []);
+
+  const isEditable = React.useContext(EditableContext);
 
   const {
     setModalVisible,
@@ -92,6 +118,27 @@ const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
     ? [...itemSlots].sort((s1, s2) => s1.order - s2.order)
     : [];
   const slotCounter: { [key: string]: number } = {};
+
+  let spriteImageUrl = NO_CLASS_IMG;
+
+  const userDefaultBuildClass =
+    currentUserData?.currentUser?.settings.buildClass;
+
+  if (customSet) {
+    if (customSet.defaultClass) {
+      spriteImageUrl = getImageUrl(
+        customSet.buildGender === BuildGender.MALE
+          ? customSet.defaultClass.maleSpriteImageUrl
+          : customSet.defaultClass.femaleSpriteImageUrl,
+      );
+    }
+  } else if (userDefaultBuildClass && currentUserData.currentUser) {
+    spriteImageUrl = getImageUrl(
+      currentUserData.currentUser.settings.buildGender === BuildGender.MALE
+        ? userDefaultBuildClass.maleSpriteImageUrl
+        : userDefaultBuildClass.femaleSpriteImageUrl,
+    );
+  }
 
   return (
     <div
@@ -164,12 +211,12 @@ const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
             alignItems: 'center',
             margin: '24px 0',
             minWidth: 0,
-            background: `transparent url('${
-              customSet?.defaultClass?.maleSpriteImageUrl ?? NO_CLASS_IMG
-            }') no-repeat scroll center center`,
+            background: `transparent url('${spriteImageUrl}') no-repeat scroll center center`,
             backgroundSize: 'contain',
             alignSelf: 'stretch',
+            cursor: isEditable ? 'pointer' : 'auto',
           }}
+          onClick={isEditable ? openDefaultClassModal : undefined}
         />
       </div>
       {customSet && equippedItem && (
@@ -188,6 +235,13 @@ const ClassicEquipmentSlots: React.FC<Props> = ({ customSet, errors }) => {
           visible={setModalVisible}
           onCancel={closeSetModal}
           customSet={customSet}
+        />
+      )}
+      {isEditable && (
+        <DefaultClassModal
+          visible={defaultClassModalVisible}
+          closeModal={closeDefaultClassModal}
+          setDofusClassId={setDofusClassId}
         />
       )}
     </div>
