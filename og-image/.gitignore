@@ -1,0 +1,7 @@
+.now
+node_modules
+api/dist
+public/dist
+
+
+.vercel
