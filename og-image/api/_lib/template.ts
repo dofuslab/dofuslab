@@ -1,5 +1,5 @@
 import { sanitizeHtml } from './sanitizer';
-import { ParsedRequest } from './types';
+import { ImageType, ParsedRequest } from './types';
 import { getTagImageUrl, getClassImageUrl, ROOT } from './utils';
 const twemoji = require('twemoji');
 const twOptions = { folder: 'svg', ext: '.svg' };
@@ -36,6 +36,10 @@ function getCss() {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .item-slot {
+        opacity: 0.4;
     }
 
     .spacer {
@@ -136,7 +140,10 @@ export function getHtml(parsedReq: ParsedRequest) {
         <div class="items-wrapper">
             ${images
               .map(
-                (imageUrl) => `<div class="item">${getImage(imageUrl)}</div>`,
+                ({ url, type }) =>
+                  `<div class="item${
+                    type === ImageType.SLOT ? ' item-slot' : ''
+                  }">${getImage(url)}</div>`,
               )
               .join('')}
             ${Array(16 - images.length)

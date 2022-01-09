@@ -1,4 +1,4 @@
-import { ParsedRequest } from "../api/_lib/types";
+import { ParsedRequest } from '../api/_lib/types';
 const { H, R, copee } = window as any;
 let timeout = -1;
 
@@ -18,14 +18,14 @@ const ImagePreview = ({
   loading,
 }: ImagePreviewProps) => {
   const style = {
-    filter: loading ? "blur(5px)" : "",
+    filter: loading ? 'blur(5px)' : '',
     opacity: loading ? 0.1 : 1,
   };
-  const title = "Click to copy image URL to clipboard";
+  const title = 'Click to copy image URL to clipboard';
   return H(
-    "a",
-    { className: "image-wrapper", href: src, onclick },
-    H("img", { src, onload, onerror, style, title })
+    'a',
+    { className: 'image-wrapper', href: src, onclick },
+    H('img', { src, onload, onerror, style, title }),
   );
 };
 
@@ -36,28 +36,28 @@ interface TextInputProps {
 
 const TextInput = ({ value, oninput }: TextInputProps) => {
   return H(
-    "div",
-    { className: "input-outer-wrapper" },
+    'div',
+    { className: 'input-outer-wrapper' },
     H(
-      "div",
-      { className: "input-inner-wrapper" },
-      H("input", {
-        type: "text",
+      'div',
+      { className: 'input-inner-wrapper' },
+      H('input', {
+        type: 'text',
         value,
         oninput: (e: any) => oninput(e.target.value),
-      })
-    )
+      }),
+    ),
   );
 };
 
-interface ButtonProps {
-  label: string;
-  onclick: () => void;
-}
+// interface ButtonProps {
+//   label: string;
+//   onclick: () => void;
+// }
 
-const Button = ({ label, onclick }: ButtonProps) => {
-  return H("button", { onclick }, label);
-};
+// const Button = ({ label, onclick }: ButtonProps) => {
+//   return H('button', { onclick }, label);
+// };
 
 interface FieldProps {
   label: string;
@@ -66,13 +66,13 @@ interface FieldProps {
 
 const Field = ({ label, input }: FieldProps) => {
   return H(
-    "div",
-    { className: "field" },
+    'div',
+    { className: 'field' },
     H(
-      "label",
-      H("div", { className: "field-label" }, label),
-      H("div", { className: "field-value" }, input)
-    )
+      'label',
+      H('div', { className: 'field-label' }, label),
+      H('div', { className: 'field-value' }, input),
+    ),
   );
 };
 
@@ -82,19 +82,19 @@ interface ToastProps {
 }
 
 const Toast = ({ show, message }: ToastProps) => {
-  const style = { transform: show ? "translate3d(0,-0px,-0px) scale(1)" : "" };
+  const style = { transform: show ? 'translate3d(0,-0px,-0px) scale(1)' : '' };
   return H(
-    "div",
-    { className: "toast-area" },
+    'div',
+    { className: 'toast-area' },
     H(
-      "div",
-      { className: "toast-outer", style },
+      'div',
+      { className: 'toast-outer', style },
       H(
-        "div",
-        { className: "toast-inner" },
-        H("div", { className: "toast-message" }, message)
-      )
-    )
+        'div',
+        { className: 'toast-inner' },
+        H('div', { className: 'toast-message' }, message),
+      ),
+    ),
   );
 };
 
@@ -122,67 +122,67 @@ const App = (_: any, state: AppState, setState: SetState) => {
     setState({ ...newState, loading: true });
   };
   const {
-    text = "**Hello** World",
-    items = [],
+    text = '**Hello** World',
+    // images = [],
     showToast = false,
-    messageToast = "",
+    messageToast = '',
     loading = true,
     overrideUrl = null,
   } = state;
   const url = new URL(window.location.origin);
   url.pathname = `${encodeURIComponent(text)}`;
-  for (let item of items) {
-    url.searchParams.append("items", item);
-  }
+  // for (let item of items) {
+  //   url.searchParams.append("items", item);
+  // }
 
   return H(
-    "div",
-    { className: "split" },
+    'div',
+    { className: 'split' },
     H(
-      "div",
-      { className: "pull-left" },
+      'div',
+      { className: 'pull-left' },
       H(
-        "div",
+        'div',
         H(Field, {
-          label: "Text Input",
+          label: 'Text Input',
           input: H(TextInput, {
             value: text,
             oninput: (val: string) => {
-              console.log("oninput " + val);
+              console.log('oninput ' + val);
               setLoadingState({ text: val, overrideUrl: url });
             },
           }),
         }),
-        ...items.map((item, i) =>
-          H(Field, {
-            label: `Image ${i + 1}`,
-            input: H(
-              "div",
-              H(TextInput, {
-                value: item,
-                oninput: (val: string) => {
-                  let clone = [...items];
-                  clone[i] = val;
-                  setLoadingState({ items: clone, overrideUrl: url });
-                },
-              })
-            ),
-          })
-        ),
-        H(Field, {
-          label: `Item ${items.length + 1}`,
-          input: H(Button, {
-            label: `Add Item ${items.length + 1}`,
-            onclick: () => {
-              setLoadingState({ items: [...items, ""] });
-            },
-          }),
-        })
-      )
+        // ...items.map((item, i) =>
+        //   H(Field, {
+        //     label: `Image ${i + 1}`,
+        //     input: H(
+        //       "div",
+        //       H(TextInput, {
+        //         value: item,
+        //         oninput: (val: string) => {
+        //           let clone = [...items];
+        //           clone[i] = val;
+        //           setLoadingState({ items: clone, overrideUrl: url });
+        //         },
+        //       })
+        //     ),
+        //   })
+        // ),
+        // H(Field, {
+        //   label: `Item ${items.length + 1}`,
+        //   input: H(Button, {
+        //     label: `Add Item ${items.length + 1}`,
+        //     onclick: () => {
+        //       setLoadingState({ items: [...items, ""] });
+        //     },
+        //   }),
+        // })
+      ),
     ),
     H(
-      "div",
-      { className: "pull-right" },
+      'div',
+      { className: 'pull-right' },
       H(ImagePreview, {
         src: overrideUrl ? overrideUrl.href : url.href,
         loading: loading,
@@ -190,7 +190,7 @@ const App = (_: any, state: AppState, setState: SetState) => {
         onerror: () => {
           setState({
             showToast: true,
-            messageToast: "Oops, an error occurred",
+            messageToast: 'Oops, an error occurred',
           });
           setTimeout(() => setState({ showToast: false }), 2000);
         },
@@ -200,21 +200,21 @@ const App = (_: any, state: AppState, setState: SetState) => {
           if (success) {
             setState({
               showToast: true,
-              messageToast: "Copied image URL to clipboard",
+              messageToast: 'Copied image URL to clipboard',
             });
             setTimeout(() => setState({ showToast: false }), 3000);
           } else {
-            window.open(url.href, "_blank");
+            window.open(url.href, '_blank');
           }
           return false;
         },
-      })
+      }),
     ),
     H(Toast, {
       message: messageToast,
       show: showToast,
-    })
+    }),
   );
 };
 
-R(H(App), document.getElementById("app"));
+R(H(App), document.getElementById('app'));

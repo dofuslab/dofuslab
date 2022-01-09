@@ -1,5 +1,5 @@
 import { APIGatewayEvent } from 'aws-lambda';
-import { ParsedRequest } from './types';
+import { Image, ImageType, ParsedRequest } from './types';
 import { getItemImageUrl, getSlotImageUrl } from './utils';
 
 const SLOTS = [
@@ -68,14 +68,23 @@ export function parseRequest(req: APIGatewayEvent): ParsedRequest {
   };
 
   if (items.length === 0) {
-    const images: Array<string> = [];
+    const images: Array<Image> = [];
     SLOTS.forEach((slot) => {
       if (slot === 'ring' || slot === 'dofus') {
         parseMultiParams(slot, req).forEach((itemId) => {
-          images.push(itemId ? getItemImageUrl(itemId) : getSlotImageUrl(slot));
+          images.push(
+            itemId
+              ? { url: getItemImageUrl(itemId), type: ImageType.ITEM }
+              : { url: getSlotImageUrl(slot), type: ImageType.SLOT },
+          );
         });
       } else {
-        images.push(req.queryStringParameters?.[slot] ?? getSlotImageUrl(slot));
+        const itemId = req.queryStringParameters?.[slot];
+        images.push(
+          itemId
+            ? { url: getItemImageUrl(itemId), type: ImageType.ITEM }
+            : { url: getSlotImageUrl(slot), type: ImageType.SLOT },
+        );
       }
     });
 
@@ -84,7 +93,10 @@ export function parseRequest(req: APIGatewayEvent): ParsedRequest {
 
   const parsedRequest = {
     ...parsedRequestBase,
-    images: items.map((itemId) => getItemImageUrl(itemId)),
+    images: items.map((itemId) => ({
+      url: getItemImageUrl(itemId),
+      type: ImageType.ITEM,
+    })),
   };
   return parsedRequest;
 }
