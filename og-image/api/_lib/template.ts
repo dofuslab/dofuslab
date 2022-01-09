@@ -1,13 +1,12 @@
-import { sanitizeHtml } from "./sanitizer";
-import { ParsedRequest } from "./types";
-const twemoji = require("twemoji");
-const twOptions = { folder: "svg", ext: ".svg" };
+import { sanitizeHtml } from './sanitizer';
+import { ParsedRequest } from './types';
+import { getTagImageUrl, getClassImageUrl, ROOT } from './utils';
+const twemoji = require('twemoji');
+const twOptions = { folder: 'svg', ext: '.svg' };
 const emojify = (text: string) => twemoji.parse(text, twOptions);
 
 function getCss() {
   return `
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-
     body {
         background: #1f1f1f;
         background-size: 100px 100px;
@@ -18,18 +17,6 @@ function getCss() {
         align-items: center;
         flex-direction: column;
         width: 100%;
-    }
-
-    code {
-        color: #D400FF;
-        font-family: 'Vera';
-        white-space: pre-wrap;
-        letter-spacing: -5px;
-    }
-
-    code:before,
-    code:after {
-        content: '\`';
     }
 
     .items-wrapper {
@@ -113,29 +100,10 @@ function getCss() {
     }`;
 }
 
-const ROOT = "https://d2iuiayak06k8j.cloudfront.net";
-
-const ITEM_IMAGE_DIR = `${ROOT}/item/`;
-const CLASS_IMAGE_DIR = `${ROOT}/class/face/`;
-const TAG_IMAGE_DIR = `${ROOT}/icon/`;
-
-const getItemImageUrl = (itemId: string) => {
-  return `${ITEM_IMAGE_DIR}${itemId}.png`;
-};
-
-const getClassImageUrl = (dofusClass: string | null) => {
-  return `${CLASS_IMAGE_DIR}${
-    dofusClass ? `${dofusClass}_M.png` : "No_Class.svg"
-  }`;
-};
-
-const getTagImageUrl = (tag: string | null) => {
-  return `${TAG_IMAGE_DIR}${tag}.svg`;
-};
-
 export function getHtml(parsedReq: ParsedRequest) {
-  const { text, items, dofusClass, tags } = parsedReq;
-  return `<!DOCTYPE html>
+  const { text, images, dofusClass, tags, gender } = parsedReq;
+  return `
+<!DOCTYPE html>
 <html>
     <meta charset="utf-8">
     <title>Generated Image</title>
@@ -145,7 +113,10 @@ export function getHtml(parsedReq: ParsedRequest) {
     </style>
     <body>
         <div class="class-title-wrapper">
-            <img class="class-image" src="${getClassImageUrl(dofusClass)}">
+            <img class="class-image" src="${getClassImageUrl(
+              dofusClass,
+              gender,
+            )}">
             <div class="title-wrapper">
                 ${emojify(text)}
             </div>
@@ -156,29 +127,27 @@ export function getHtml(parsedReq: ParsedRequest) {
                     ${tags
                       .map(
                         (tag) =>
-                          `<img src=${getTagImageUrl(tag)} class="tag-image">`
+                          `<img src=${getTagImageUrl(tag)} class="tag-image">`,
                       )
-                      .join("")}
+                      .join('')}
                 </div>`
-            : ""
+            : ''
         }
         <div class="items-wrapper">
-            ${items
+            ${images
               .map(
-                (itemId) =>
-                  `<div class="item">${getImage(
-                    `${getItemImageUrl(itemId)}`
-                  )}</div>`
+                (imageUrl) => `<div class="item">${getImage(imageUrl)}</div>`,
               )
-              .join("")}
-            ${Array(16 - items.length)
+              .join('')}
+            ${Array(16 - images.length)
               .fill(null)
               .map(() => '<div class="item"></div>')
-              .join("")}
+              .join('')}
         </div>
         <img src="${ROOT}/logo/DL-Full_Dark.svg" class="dofuslab-logo">
     </body>
-</html>`;
+</html>
+  `;
 }
 
 function getImage(src: string) {

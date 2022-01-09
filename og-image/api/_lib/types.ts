@@ -1,6 +1,7 @@
 export interface ParsedRequest {
   text: string;
-  items: string[];
+  images: Array<string>;
   dofusClass: string | null;
-  tags: string[];
+  tags: Array<string>;
+  gender: 'M' | 'F';
 }

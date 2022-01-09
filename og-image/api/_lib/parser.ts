@@ -1,41 +1,90 @@
-import { ParsedRequest } from "./types";
-import { APIGatewayEvent } from "aws-lambda";
+import { APIGatewayEvent } from 'aws-lambda';
+import { ParsedRequest } from './types';
+import { getItemImageUrl, getSlotImageUrl } from './utils';
 
-export function parseRequest(req: APIGatewayEvent) {
+const SLOTS = [
+  'hat',
+  'cloak',
+  'amulet',
+  'ring',
+  'belt',
+  'boots',
+  'weapon',
+  'shield',
+  'dofus',
+  'pet',
+] as const;
+
+const NUM_ITEMS = { ring: 2, dofus: 6 };
+
+function parseMultiParams(
+  key: 'items' | 'ring' | 'dofus' | 'tags',
+  req: APIGatewayEvent,
+) {
+  let result: Array<string> = [];
+  if (req.multiValueQueryStringParameters?.[key]) {
+    result = req.multiValueQueryStringParameters.items;
+  } else if (req.queryStringParameters?.[key]) {
+    result = req.queryStringParameters?.[key].split(',');
+  }
+  if (key in NUM_ITEMS && NUM_ITEMS[key as 'ring' | 'dofus'] > result.length) {
+    for (let i = result.length; i < NUM_ITEMS[key as 'ring' | 'dofus']; i++) {
+      result.push('');
+    }
+  }
+  return result;
+}
+
+export function parseRequest(req: APIGatewayEvent): ParsedRequest {
   const { path } = req;
   let items: string[] = [];
   let dofusClass = null;
   let tags: string[] = [];
 
-  if (req.multiValueQueryStringParameters?.items) {
-    items = req.multiValueQueryStringParameters.items;
-  } else if (req.queryStringParameters?.items) {
-    items = req.queryStringParameters.items.split(",");
-  }
+  items = parseMultiParams('items', req);
 
-  if (req.multiValueQueryStringParameters?.tags) {
-    tags = req.multiValueQueryStringParameters.tags;
-  } else if (req.queryStringParameters?.tags) {
-    tags = req.queryStringParameters.tags.split(",");
-  }
+  tags = parseMultiParams('tags', req) || [];
 
   dofusClass = req.queryStringParameters?.class || null;
 
-  const arr = (path || "/").slice(1).split(".");
-  let text = "";
+  const arr = (path || '/').slice(1).split('.');
+  let text = '';
   if (arr.length === 0) {
-    text = "";
+    text = '';
   } else if (arr.length === 1) {
     text = arr[0];
   } else {
-    text = arr.join(".");
+    text = arr.join('.');
   }
 
-  const parsedRequest: ParsedRequest = {
+  const parsedGender =
+    req.queryStringParameters?.gender === 'F' ? ('F' as const) : ('M' as const);
+
+  const parsedRequestBase = {
     text: decodeURIComponent(text),
-    items: items,
     dofusClass,
     tags,
+    gender: parsedGender,
+  };
+
+  if (items.length === 0) {
+    const images: Array<string> = [];
+    SLOTS.forEach((slot) => {
+      if (slot === 'ring' || slot === 'dofus') {
+        parseMultiParams(slot, req).forEach((itemId) => {
+          images.push(itemId ? getItemImageUrl(itemId) : getSlotImageUrl(slot));
+        });
+      } else {
+        images.push(req.queryStringParameters?.[slot] ?? getSlotImageUrl(slot));
+      }
+    });
+
+    return { ...parsedRequestBase, images };
+  }
+
+  const parsedRequest = {
+    ...parsedRequestBase,
+    images: items.map((itemId) => getItemImageUrl(itemId)),
   };
   return parsedRequest;
 }
