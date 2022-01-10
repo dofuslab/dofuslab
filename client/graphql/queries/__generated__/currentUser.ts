@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat, WeaponEffectType } from "./../../../__generated__/globalTypes";
+import { Stat, WeaponEffectType, BuildGender } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: currentUser
@@ -91,6 +91,23 @@ export interface currentUser_currentUser_favoriteItems {
   buffs: currentUser_currentUser_favoriteItems_buffs[] | null;
 }
 
+export interface currentUser_currentUser_settings_buildClass {
+  __typename: "Class";
+  id: any;
+  maleFaceImageUrl: string;
+  femaleFaceImageUrl: string;
+  maleSpriteImageUrl: string;
+  femaleSpriteImageUrl: string;
+  name: string;
+}
+
+export interface currentUser_currentUser_settings {
+  __typename: "UserSetting";
+  id: any;
+  buildGender: BuildGender;
+  buildClass: currentUser_currentUser_settings_buildClass | null;
+}
+
 export interface currentUser_currentUser {
   __typename: "User";
   id: any;
@@ -98,6 +115,7 @@ export interface currentUser_currentUser {
   email: string;
   verified: boolean;
   favoriteItems: currentUser_currentUser_favoriteItems[];
+  settings: currentUser_currentUser_settings;
 }
 
 export interface currentUser {

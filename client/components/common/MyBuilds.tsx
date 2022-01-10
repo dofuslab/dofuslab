@@ -30,12 +30,15 @@ import { createCustomSet } from 'graphql/mutations/__generated__/createCustomSet
 import createCustomSetMutation from 'graphql/mutations/createCustomSet.graphql';
 import { useDebounceCallback } from '@react-hook/debounce';
 import Card from 'components/common/Card';
-import { getImageUrl, navigateToNewCustomSet } from 'common/utils';
+import {
+  getFaceImageUrl,
+  getImageUrl,
+  navigateToNewCustomSet,
+} from 'common/utils';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
 import customSetTagsQuery from 'graphql/queries/customSetTags.graphql';
-import classesQuery from 'graphql/queries/classes.graphql';
-import { classes } from 'graphql/queries/__generated__/classes';
 import DeleteCustomSetModal from './DeleteCustomSetModal';
+import { ClassSelect } from './ClassSelect';
 
 const PAGE_SIZE = 20;
 const THRESHOLD = 600;
@@ -82,7 +85,6 @@ const MyBuilds: React.FC<Props> = ({ onClose, isMobile }) => {
   });
 
   const { data: tagsData } = useQuery<customSetTags>(customSetTagsQuery);
-  const { data: classesData } = useQuery<classes>(classesQuery);
 
   const router = useRouter();
   const { customSetId } = router.query;
@@ -170,44 +172,18 @@ const MyBuilds: React.FC<Props> = ({ onClose, isMobile }) => {
     setDeleteModalVisible(false);
   }, []);
 
-  const classSelect = classesData && (
-    <Select<string>
-      getPopupContainer={(node: HTMLElement) => {
-        if (node.parentElement) {
-          return node.parentElement;
-        }
-        return document && document.body;
-      }}
+  const classSelect = (
+    <ClassSelect
       css={[
         { ...inputFontSize },
         { marginTop: 20, [mq[1]]: { marginTop: 0, marginLeft: 20, flex: 1 } },
       ]}
-      showSearch
-      filterOption={(input, option) => {
-        return (option?.children[1] as string)
-          .toLocaleUpperCase()
-          .includes(input.toLocaleUpperCase());
-      }}
       value={dofusClassId}
       onChange={(value: string) => {
         setDofusClassId(value);
       }}
-      placeholder={t('SELECT_CLASS')}
       allowClear
-    >
-      {[...classesData.classes]
-        .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
-        .map((dofusClass) => (
-          <Select.Option key={dofusClass.id} value={dofusClass.id}>
-            <img
-              src={dofusClass.faceImageUrl}
-              alt={dofusClass.name}
-              css={{ width: 20, marginRight: 8 }}
-            />
-            {dofusClass.name}
-          </Select.Option>
-        ))}
-    </Select>
+    />
   );
 
   return (
@@ -377,10 +353,10 @@ const MyBuilds: React.FC<Props> = ({ onClose, isMobile }) => {
                       <FontAwesomeIcon icon={faTrashAlt} />
                     </div>
                   }
-                  leftImageUrl={
-                    node.defaultClass?.faceImageUrl ??
-                    getImageUrl('class/face/No_Class.svg')
-                  }
+                  leftImageUrl={getFaceImageUrl(
+                    node.defaultClass,
+                    node.buildGender,
+                  )}
                   leftImageAlt={node.defaultClass?.name}
                 />
               }

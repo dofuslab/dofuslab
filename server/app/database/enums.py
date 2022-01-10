@@ -3,6 +3,11 @@ from enum import auto, Enum
 import sqlalchemy
 
 
+class BuildGender(Enum):
+    MALE = auto()
+    FEMALE = auto()
+
+
 class Stat(Enum):
     VITALITY = auto()
     AP = auto()
@@ -109,6 +114,7 @@ class WeaponElementMage(Enum):
     AIR_50 = auto()
 
 
+BuildGenderEnum = sqlalchemy.Enum(BuildGender)
 StatEnum = sqlalchemy.Enum(Stat)
 WeaponEffectEnum = sqlalchemy.Enum(WeaponEffectType)
 SpellEffectEnum = sqlalchemy.Enum(SpellEffectType)

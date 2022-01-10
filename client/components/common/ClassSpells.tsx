@@ -2,7 +2,7 @@
 
 import { jsx } from '@emotion/core';
 
-import { Select, Card, Skeleton } from 'antd';
+import { Card, Skeleton } from 'antd';
 import { useQuery } from '@apollo/client';
 import { useTheme } from 'emotion-theming';
 
@@ -18,8 +18,9 @@ import { Theme } from 'common/types';
 import { CustomSet, Spell } from 'common/type-aliases';
 import { itemCardStyle } from 'common/mixins';
 import SpellCard from './SpellCard';
-
-const { Option } = Select;
+import { ClassSelect } from './ClassSelect';
+import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
+import currentUserQuery from 'graphql/queries/currentUser.graphql';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -35,6 +36,9 @@ const ClassSpells: React.FC<Props> = ({
   const { data } = useQuery<classes>(classesQuery);
   const { t } = useTranslation('common');
   const theme = useTheme<Theme>();
+  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
+    currentUserQuery,
+  );
 
   const { data: classData, loading: classDataLoading } = useQuery<
     classById,
@@ -99,40 +103,15 @@ const ClassSpells: React.FC<Props> = ({
 
   return data ? (
     <>
-      <Select<string>
-        getPopupContainer={(node: HTMLElement) => {
-          if (node.parentElement) {
-            return node.parentElement;
-          }
-          return document && document.body;
-        }}
-        size="large"
-        css={{ gridColumn: '1 / -1' }}
-        showSearch
-        filterOption={(input, option) => {
-          return (option?.children[1] as string)
-            .toLocaleUpperCase()
-            .includes(input.toLocaleUpperCase());
-        }}
+      <ClassSelect
         value={dofusClassId}
-        onChange={(value: string) => {
-          setDofusClassId(value);
-        }}
-        placeholder={t('SELECT_CLASS')}
-      >
-        {[...data.classes]
-          .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
-          .map((dofusClass) => (
-            <Option key={dofusClass.id} value={dofusClass.id}>
-              <img
-                src={dofusClass.faceImageUrl}
-                alt={dofusClass.name}
-                css={{ width: 20, marginRight: 8 }}
-              />
-              {dofusClass.name}
-            </Option>
-          ))}
-      </Select>
+        onChange={setDofusClassId}
+        css={{ gridColumn: '1 / -1' }}
+        buildGender={
+          customSet?.buildGender ||
+          currentUserData?.currentUser?.settings.buildGender
+        }
+      />
       {content}
     </>
   ) : null;

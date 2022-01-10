@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { jsx } from '@emotion/core';
-import { Divider, Modal } from 'antd';
+import { Divider, Modal, Tabs } from 'antd';
 import { useQuery } from '@apollo/client';
 
 import { CustomSet } from 'common/type-aliases';
@@ -12,6 +12,9 @@ import classesQuery from 'graphql/queries/classes.graphql';
 
 import { mq } from 'common/constants';
 import DefaultClassButton from './DefaultClassButton';
+import { BuildGender } from '__generated__/globalTypes';
+import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
+import currentUserQuery from 'graphql/queries/currentUser.graphql';
 
 interface Props {
   visible: boolean;
@@ -19,6 +22,16 @@ interface Props {
   customSet?: CustomSet | null;
   setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
+
+const classContainerStyle = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(4, 1fr)',
+  minHeight: 288,
+  gridGap: 16,
+  [mq[0]]: {
+    gridTemplateColumns: 'repeat(6, 1fr)',
+  },
+};
 
 const DefaultClassModal: React.FC<Props> = ({
   visible,
@@ -28,6 +41,19 @@ const DefaultClassModal: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation('common');
   const { data } = useQuery<classes>(classesQuery);
+  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
+    currentUserQuery,
+  );
+
+  const sortedClasses =
+    data &&
+    [...data.classes].sort(({ name: n1 }, { name: n2 }) =>
+      n1.localeCompare(n2),
+    );
+
+  const defaultBuildGender =
+    customSet?.buildGender ??
+    currentUserData?.currentUser?.settings.buildGender;
 
   return (
     <Modal
@@ -36,31 +62,46 @@ const DefaultClassModal: React.FC<Props> = ({
       footer={null}
       onCancel={closeModal}
     >
-      <div
-        css={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          minHeight: 288,
-          gridGap: 16,
-          [mq[0]]: {
-            gridTemplateColumns: 'repeat(6, 1fr)',
-          },
-        }}
-      >
-        {data &&
-          [...data.classes]
-            .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
-            .map((dofusClass) => (
-              <DefaultClassButton
-                key={dofusClass.id}
-                dofusClass={dofusClass}
-                setDofusClassId={setDofusClassId}
-                closeModal={closeModal}
-                customSetId={customSet?.id}
-                isSelected={customSet?.defaultClass?.id === dofusClass.id}
-              />
-            ))}
-      </div>
+      <Tabs defaultActiveKey={defaultBuildGender || BuildGender.FEMALE}>
+        <Tabs.TabPane tab={t('FEMALE')} key={BuildGender.FEMALE}>
+          <div css={classContainerStyle}>
+            {sortedClasses &&
+              sortedClasses.map((dofusClass) => (
+                <DefaultClassButton
+                  key={dofusClass.id}
+                  dofusClass={dofusClass}
+                  setDofusClassId={setDofusClassId}
+                  closeModal={closeModal}
+                  customSetId={customSet?.id}
+                  isSelected={
+                    customSet?.defaultClass?.id === dofusClass.id &&
+                    customSet?.buildGender === BuildGender.FEMALE
+                  }
+                  buildGender={BuildGender.FEMALE}
+                />
+              ))}
+          </div>
+        </Tabs.TabPane>
+        <Tabs.TabPane tab={t('MALE')} key={BuildGender.MALE}>
+          <div css={classContainerStyle}>
+            {sortedClasses &&
+              sortedClasses.map((dofusClass) => (
+                <DefaultClassButton
+                  key={dofusClass.id}
+                  dofusClass={dofusClass}
+                  setDofusClassId={setDofusClassId}
+                  closeModal={closeModal}
+                  customSetId={customSet?.id}
+                  isSelected={
+                    customSet?.defaultClass?.id === dofusClass.id &&
+                    customSet?.buildGender === BuildGender.MALE
+                  }
+                  buildGender={BuildGender.MALE}
+                />
+              ))}
+          </div>
+        </Tabs.TabPane>
+      </Tabs>
       <Divider />
       <div css={{ textAlign: 'center' }}>
         <DefaultClassButton
@@ -69,6 +110,7 @@ const DefaultClassModal: React.FC<Props> = ({
           closeModal={closeModal}
           customSetId={customSet?.id}
           isSelected={!customSet?.defaultClass?.id}
+          buildGender={defaultBuildGender || BuildGender.MALE}
         />
       </div>
     </Modal>

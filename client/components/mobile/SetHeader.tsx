@@ -12,7 +12,7 @@ import {
   EditableContext,
   useIsOwnerOfCustomSet,
   getBuildLink,
-  getImageUrl,
+  getFaceImageUrl,
 } from 'common/utils';
 
 import {
@@ -23,11 +23,14 @@ import {
 import { CustomSet } from 'common/type-aliases';
 import Link from 'next/link';
 import PublicBuildActions from 'components/common/PublicBuildActions';
+import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
+import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import BuildErrors from '../common/BuildErrors';
 import BuildActions from '../common/BuildActions';
 import DefaultClassModal from '../common/DefaultClassModal';
 import BuildTags from '../common/BuildTags';
 import CustomSetHeaderForm from '../common/CustomSetHeaderForm';
+import { useQuery } from '@apollo/client';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -70,6 +73,10 @@ const SetHeader: React.FC<Props> = ({
     name: customSet?.name || '',
     level: customSet?.level || 200,
   };
+
+  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
+    currentUserQuery,
+  );
 
   const isEditable = React.useContext(EditableContext);
 
@@ -155,24 +162,37 @@ const SetHeader: React.FC<Props> = ({
                 >
                   <img
                     src={
-                      customSet?.defaultClass?.faceImageUrl ??
-                      getImageUrl('class/face/No_Class.svg')
+                      customSet
+                        ? getFaceImageUrl(
+                            customSet.defaultClass,
+                            customSet.buildGender,
+                          )
+                        : getFaceImageUrl(
+                            currentUserData?.currentUser?.settings.buildClass ??
+                              null,
+                            currentUserData?.currentUser?.settings.buildGender,
+                          )
                     }
                     css={{
                       maxWidth: '100%',
                       width: 'auto',
                       height: 'auto',
                     }}
-                    alt={customSet?.defaultClass?.name ?? t('NO_CLASS')}
+                    alt={
+                      (customSet
+                        ? customSet.defaultClass?.name
+                        : currentUserData?.currentUser?.settings.buildClass
+                            ?.name) || t('NO_CLASS')
+                    }
                   />
                 </a>
               ) : (
                 <div css={{ flex: 1 }}>
                   <img
-                    src={
-                      customSet?.defaultClass?.faceImageUrl ??
-                      getImageUrl('class/face/No_Class.svg')
-                    }
+                    src={getFaceImageUrl(
+                      customSet?.defaultClass ?? null,
+                      currentUserData?.currentUser?.settings.buildGender,
+                    )}
                     css={{
                       maxWidth: '100%',
                       width: 'auto',

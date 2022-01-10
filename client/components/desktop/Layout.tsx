@@ -24,7 +24,7 @@ import NoSSR from 'react-no-ssr';
 import Link from 'next/link';
 import { TFunction } from 'next-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faKey, faMugHot } from '@fortawesome/free-solid-svg-icons';
+import { faKey, faMugHot, faWrench } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { useTranslation, LANGUAGES, langToFullName } from 'i18n';
@@ -51,6 +51,7 @@ import { Media } from 'components/common/Media';
 import MyBuilds from '../common/MyBuilds';
 import SignUpModal from '../common/SignUpModal';
 import LoginModal from '../common/LoginModal';
+import DefaultBuildSettingsModal from 'components/common/DefaultBuildSettingsModal';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -122,6 +123,14 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
   }, []);
   const closePasswordModal = React.useCallback(() => {
     setShowPasswordModal(false);
+  }, []);
+
+  const [showBuildSettings, setShowBuildSettings] = React.useState(false);
+  const openBuildSettings = React.useCallback(() => {
+    setShowBuildSettings(true);
+  }, []);
+  const closeBuildSettings = React.useCallback(() => {
+    setShowBuildSettings(false);
   }, []);
 
   const logoutHandler = React.useCallback(async () => {
@@ -363,6 +372,16 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                             />
                             {t('CHANGE_PASSWORD')}
                           </Menu.Item>
+                          <Menu.Item
+                            key="build-settings"
+                            onClick={openBuildSettings}
+                          >
+                            <FontAwesomeIcon
+                              icon={faWrench}
+                              css={{ marginRight: 8 }}
+                            />
+                            {t('DEFAULT_BUILD_SETTINGS', { ns: 'common' })}
+                          </Menu.Item>
                         </Menu.ItemGroup>
                       </Menu>
                     }
@@ -491,6 +510,10 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
       <ChangePasswordModal
         visible={showPasswordModal}
         onClose={closePasswordModal}
+      />
+      <DefaultBuildSettingsModal
+        visible={showBuildSettings}
+        onClose={closeBuildSettings}
       />
     </AntdLayout>
   );

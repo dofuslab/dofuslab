@@ -21,6 +21,7 @@ import {
   WeaponEffectType,
   SpellEffectType,
   WeaponElementMage,
+  BuildGender,
 } from '__generated__/globalTypes';
 import {
   updateCustomSetItem,
@@ -98,7 +99,9 @@ import {
 } from './type-aliases';
 
 export const getImageUrl = (suffix: string) =>
-  `https://d2iuiayak06k8j.cloudfront.net/${suffix}`;
+  suffix.startsWith('https://')
+    ? suffix
+    : `https://d2iuiayak06k8j.cloudfront.net/${suffix}`;
 
 export const navigateToNewCustomSet = (
   router: NextRouter,
@@ -1867,3 +1870,17 @@ export const isUUID = (candidate: string) =>
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(
     candidate,
   );
+
+export const getFaceImageUrl = (
+  dofusClass: { maleFaceImageUrl: string; femaleFaceImageUrl: string } | null,
+  gender: BuildGender = BuildGender.MALE,
+) => {
+  let imageUrl = 'class/face/No_Class.svg';
+  if (dofusClass) {
+    imageUrl =
+      gender === BuildGender.MALE
+        ? dofusClass.maleFaceImageUrl
+        : dofusClass.femaleFaceImageUrl;
+  }
+  return getImageUrl(imageUrl);
+};

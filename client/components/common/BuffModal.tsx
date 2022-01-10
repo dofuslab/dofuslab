@@ -10,7 +10,7 @@ import { useQuery } from '@apollo/client';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
 import { Select, Spin, Divider, Button } from 'antd';
-import { CustomSetContext, getImageUrl } from 'common/utils';
+import { CustomSetContext, getFaceImageUrl, getImageUrl } from 'common/utils';
 import {
   classBuffs,
   classBuffsVariables,
@@ -23,6 +23,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from 'emotion-theming';
 import { getModalStyle } from 'common/mixins';
+import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
+import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import SpellBuffCard from './SpellBuffCard';
 import ItemBuffCard from './ItemBuffCard';
 
@@ -51,6 +53,9 @@ const BuffModal: React.FC<Props> = ({
   const { appliedBuffs, dispatch } = React.useContext(CustomSetContext);
   const { t } = useTranslation(['stat', 'common']);
   const { data: classData } = useQuery<classes>(classesQuery);
+  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
+    currentUserQuery,
+  );
 
   const [selectedClassId, setSelectedClassId] = React.useState<
     string | undefined
@@ -179,7 +184,10 @@ const BuffModal: React.FC<Props> = ({
             .map((dofusClass) => (
               <Option key={dofusClass.id} value={dofusClass.id}>
                 <img
-                  src={dofusClass.faceImageUrl}
+                  src={getFaceImageUrl(
+                    dofusClass,
+                    currentUserData?.currentUser?.settings.buildGender,
+                  )}
                   alt={dofusClass.name}
                   css={{ width: 20, marginRight: 8 }}
                 />

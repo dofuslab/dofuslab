@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat, WeaponEffectType, WeaponElementMage } from "./../../../__generated__/globalTypes";
+import { Stat, WeaponEffectType, WeaponElementMage, BuildGender } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: restartCustomSet
@@ -142,7 +142,9 @@ export interface restartCustomSet_restartCustomSet_customSet_defaultClass {
   id: any;
   name: string;
   enName: string;
-  faceImageUrl: string;
+  femaleFaceImageUrl: string;
+  maleFaceImageUrl: string;
+  femaleSpriteImageUrl: string;
   maleSpriteImageUrl: string;
 }
 
@@ -173,6 +175,7 @@ export interface restartCustomSet_restartCustomSet_customSet {
   lastModified: any | null;
   tagAssociations: restartCustomSet_restartCustomSet_customSet_tagAssociations[];
   hasEditPermission: boolean;
+  buildGender: BuildGender;
 }
 
 export interface restartCustomSet_restartCustomSet {
