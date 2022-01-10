@@ -9,11 +9,21 @@ import { BuildGender } from "./../../../__generated__/globalTypes";
 // GraphQL mutation operation: editBuildSettings
 // ====================================================
 
+export interface editBuildSettings_editBuildSettings_userSetting_buildClass {
+  __typename: "Class";
+  id: any;
+  name: string;
+  maleFaceImageUrl: string;
+  femaleFaceImageUrl: string;
+  maleSpriteImageUrl: string;
+  femaleSpriteImageUrl: string;
+}
+
 export interface editBuildSettings_editBuildSettings_userSetting {
   __typename: "UserSetting";
   id: any;
   buildGender: BuildGender;
-  buildClassId: string | null;
+  buildClass: editBuildSettings_editBuildSettings_userSetting_buildClass | null;
 }
 
 export interface editBuildSettings_editBuildSettings {

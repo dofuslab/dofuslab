@@ -145,7 +145,7 @@ export function getHtml(parsedReq: ParsedRequest) {
             </div>
         </div>
         ${
-          tags.length
+          tags.length || level
             ? `<div class="tags-wrapper">
                   ${level ? `<span class="level">Level ${level}</span>` : ''}
                     ${tags
