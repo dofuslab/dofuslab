@@ -132,7 +132,7 @@ const ClassicEquipmentSlots: React.FC<Props> = ({
           : customSet.defaultClass.femaleSpriteImageUrl,
       );
     }
-  } else if (userDefaultBuildClass && currentUserData.currentUser) {
+  } else if (userDefaultBuildClass && currentUserData?.currentUser) {
     spriteImageUrl = getImageUrl(
       currentUserData.currentUser.settings.buildGender === BuildGender.MALE
         ? userDefaultBuildClass.maleSpriteImageUrl
