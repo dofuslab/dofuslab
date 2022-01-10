@@ -10,6 +10,18 @@ mutation login($email: String!, $password: String!, $remember: Boolean!) {
       username
       email
       verified
+      settings {
+        id
+        buildGender
+        buildClass {
+          id
+          maleFaceImageUrl
+          femaleFaceImageUrl
+          maleSpriteImageUrl
+          femaleSpriteImageUrl
+          name
+        }
+      }
     }
   }
 }
