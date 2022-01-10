@@ -1429,6 +1429,11 @@ export const getCustomSetMetaImage = (customSet?: CustomSet | null) => {
   if (customSet.defaultClass) {
     searchParams.set('class', customSet.defaultClass.enName);
   }
+  searchParams.set(
+    'gender',
+    customSet.buildGender === BuildGender.FEMALE ? 'F' : 'M',
+  );
+  searchParams.set('level', `${customSet.level}`);
   [...customSet.tagAssociations]
     .sort(
       (a1, a2) =>
@@ -1448,7 +1453,7 @@ export const getCustomSetMetaImage = (customSet?: CustomSet | null) => {
       const { imageUrl } = ei.item;
       const match = imageUrl.match(/item\/(\d+)\.png/);
       if (match && match[1]) {
-        searchParams.append('items', match[1]);
+        searchParams.append(ei.slot.enName.toLowerCase(), match[1]);
       }
     });
   return `https://32kom7xq5i.execute-api.us-east-2.amazonaws.com/${encodeURIComponent(
