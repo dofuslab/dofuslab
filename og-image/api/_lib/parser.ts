@@ -22,10 +22,9 @@ function parseMultiParams(
   req: APIGatewayEvent,
 ) {
   let result: Array<string> = [];
-  if (req.multiValueQueryStringParameters?.[key]) {
-    result = req.multiValueQueryStringParameters.items;
-  } else if (req.queryStringParameters?.[key]) {
-    result = req.queryStringParameters?.[key].split(',');
+  const paramsString = req.queryStringParameters?.[key];
+  if (paramsString) {
+    result = paramsString.split(',');
   }
   if (key in NUM_ITEMS && NUM_ITEMS[key as 'ring' | 'dofus'] > result.length) {
     for (let i = result.length; i < NUM_ITEMS[key as 'ring' | 'dofus']; i++) {
@@ -35,8 +34,11 @@ function parseMultiParams(
   return result;
 }
 
-export function parseRequest(req: APIGatewayEvent): ParsedRequest {
-  const { path } = req;
+export function parseRequest(
+  // type seems to be incorrect, rawPath provided instead of path
+  req: APIGatewayEvent & { rawPath?: string },
+): ParsedRequest {
+  const { rawPath } = req;
   let items: string[] = [];
   let dofusClass = null;
   let tags: string[] = [];
@@ -47,7 +49,7 @@ export function parseRequest(req: APIGatewayEvent): ParsedRequest {
 
   dofusClass = req.queryStringParameters?.class || null;
 
-  const arr = (path || '/').slice(1).split('.');
+  const arr = (rawPath || '/').slice(1).split('.');
   let text = '';
   if (arr.length === 0) {
     text = '';
@@ -60,11 +62,16 @@ export function parseRequest(req: APIGatewayEvent): ParsedRequest {
   const parsedGender =
     req.queryStringParameters?.gender === 'F' ? ('F' as const) : ('M' as const);
 
+  const levelParam = Number(req.queryStringParameters?.level);
+
+  const parsedLevel = Number.isInteger(levelParam) ? levelParam : undefined;
+
   const parsedRequestBase = {
     text: decodeURIComponent(text),
     dofusClass,
     tags,
     gender: parsedGender,
+    level: parsedLevel,
   };
 
   if (items.length === 0) {

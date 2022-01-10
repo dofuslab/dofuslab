@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@types/aws-lambda@8.10.51":
-  version "8.10.51"
-  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.51.tgz#7ad774507a3cf1d2e949ca305380c23b5af635a0"
-  integrity sha512-XK7RerpXj4r+IO0r7qIeNqUSU6L4qhPMwNhISxozJJiUX/jdXj9WYzTShRVisEcUQHXgJ4TTBqTArM8f9Mjb8g==
+"@types/aws-lambda@8.10.89":
+  version "8.10.89"
+  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.89.tgz#22617ecc1eef9571abebb50c947553362da6051b"
+  integrity sha512-jwtSuEZj4rY4R2pAEOXi+RutS8RWbwMzoGlRVukdyOpnfqA/XPkAf8QoGWmg4o/UaNpQ8Mj0Xhkp5SZ1t/Zq4Q==
 
 "@types/marked@0.7.3":
   version "0.7.3"

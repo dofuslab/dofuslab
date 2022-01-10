@@ -1,10 +1,10 @@
-import { APIGatewayProxyHandler } from "aws-lambda";
-import { parseRequest } from "./_lib/parser";
-import { getScreenshot } from "./_lib/chromium";
-import { getHtml } from "./_lib/template";
+import { APIGatewayProxyHandler } from 'aws-lambda';
+import { parseRequest } from './_lib/parser';
+import { getScreenshot } from './_lib/chromium';
+import { getHtml } from './_lib/template';
 
-const isDev = process.env.NOW_REGION === "dev1";
-const isHtmlDebug = process.env.OG_HTML_DEBUG === "1";
+const isDev = process.env.NOW_REGION === 'dev1';
+const isHtmlDebug = process.env.OG_HTML_DEBUG === '1';
 
 export const handler: APIGatewayProxyHandler = async (event) => {
   try {
@@ -14,7 +14,8 @@ export const handler: APIGatewayProxyHandler = async (event) => {
       return {
         statusCode: 200,
         headers: {
-          "Content-Type": "text/html",
+          'Content-Type': 'text/html',
+          'Cache-Control': 'no-cache',
         },
         body: JSON.stringify(html),
       };
@@ -25,18 +26,10 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     return {
       statusCode: 200,
       headers: {
-        "Content-Type": "image/png",
+        'Content-Type': 'image/png',
+        'Cache-Control': 'no-cache',
       },
-      multiValueHeaders: {
-        "Cache-Control": [
-          "public",
-          "immutable",
-          "no-transform",
-          "s-maxage=31536000",
-          "max-age=31536000",
-        ],
-      },
-      body: file.toString("base64"),
+      body: file.toString('base64'),
       isBase64Encoded: true,
     };
   } catch (e) {
@@ -44,10 +37,11 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     return {
       statusCode: 500,
       headers: {
-        "Content-Type": "text/html",
+        'Content-Type': 'text/html',
+        'Cache-Control': 'no-cache',
       },
       body: JSON.stringify(
-        "<h1>Internal Error</h1><p>Sorry, there was a problem</p>"
+        '<h1>Internal Error</h1><p>Sorry, there was a problem</p>',
       ),
     };
   }

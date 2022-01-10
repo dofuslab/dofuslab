@@ -9,7 +9,7 @@
     "serverless-deploy:prod": "yarn build && serverless deploy --stage prod"
   },
   "dependencies": {
-    "@types/aws-lambda": "8.10.51",
+    "@types/aws-lambda": "8.10.89",
     "chrome-aws-lambda": "2.1.1",
     "marked": "0.8.2",
     "puppeteer-core": "2.1.1",

@@ -11,4 +11,5 @@ export interface ParsedRequest {
   dofusClass: string | null;
   tags: Array<string>;
   gender: 'M' | 'F';
+  level?: number;
 }
