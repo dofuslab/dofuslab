@@ -19,7 +19,7 @@ body {
   align-items: center;
   flex-direction: column;
   width: 100vw;
-  margin-left: -8px;
+  margin: 0;
 }
 
 .items-wrapper {
