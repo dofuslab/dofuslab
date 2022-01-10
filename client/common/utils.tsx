@@ -1456,7 +1456,7 @@ export const getCustomSetMetaImage = (customSet?: CustomSet | null) => {
         searchParams.append(ei.slot.enName.toLowerCase(), match[1]);
       }
     });
-  return `https://32kom7xq5i.execute-api.us-east-2.amazonaws.com/${encodeURIComponent(
+  return `https://bdoioiouh7.execute-api.us-east-2.amazonaws.com/${encodeURIComponent(
     customSet.name || 'Untitled',
   )}?${searchParams.toString()}`;
 };
