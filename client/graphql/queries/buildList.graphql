@@ -1,14 +1,12 @@
-#import "graphql/fragments/userSets.graphql"
+#import "graphql/fragments/userCustomSets.graphql"
 
-query userProfileSets(
+query buildList(
   $username: String!
   $first: Int!
   $after: String
   $filters: CustomSetFilters!
 ) {
   userByName(username: $username) {
-    username
-    id
-    ...userSets
+    ...userCustomSets
   }
 }

@@ -191,7 +191,13 @@ const SetHeader: React.FC<Props> = ({
                 <div css={{ display: 'flex' }}>
                   <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
                   <div css={{ marginLeft: 8 }}>
-                    {customSet.owner?.username ?? t('ANONYMOUS')}
+                    {customSet.owner?.username ? (
+                      <Link href={`/user/${customSet.owner.username}`}>
+                        {customSet.owner.username}
+                      </Link>
+                    ) : (
+                      t('ANONYMOUS')
+                    )}
                   </div>
                 </div>
                 <div css={{ display: 'flex' }}>

@@ -54,7 +54,7 @@
   "LEVEL_TOO_HIGH": "El nivel de este objeto es mayor al del conjunto.",
   "LEVEL_TOO_HIGH_WITH_ITEM": "El nivel de este objeto <2>{{itemName}}</2> es mayor al del conjunto.",
   "MAX_NUM": "Max {{max}}",
-  "MEMBER_SINCE": "Miembro desde",
+  "MEMBER_SINCE": "Miembro desde {{date}}",
   "MULTIPLE_AP_EXO": "Tienes múltiples exo PA.",
   "MULTIPLE_MP_EXO": "Tienes múltiples exo PM.",
   "MULTIPLE_PRYSMARADITES": "Tienes múltiples prismaraditas equipadas.",

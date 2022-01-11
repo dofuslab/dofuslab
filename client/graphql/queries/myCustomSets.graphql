@@ -1,8 +1,8 @@
-#import "graphql/fragments/userSets.graphql"
+#import "graphql/fragments/userCustomSets.graphql"
 
 query myCustomSets($first: Int!, $after: String, $filters: CustomSetFilters!) {
   currentUser {
     id
-    ...userSets
+    ...userCustomSets
   }
 }

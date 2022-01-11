@@ -1,0 +1,5 @@
+query userProfile($username: String!) {
+  userByName(username: $username) {
+    creationDate
+  }
+}

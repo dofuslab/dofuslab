@@ -447,6 +447,7 @@ class User(SQLAlchemyObjectType):
             "custom_sets",
             "verified",
             "favorite_items",
+            "creation_date",
         )
 
 

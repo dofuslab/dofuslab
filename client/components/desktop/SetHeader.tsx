@@ -155,7 +155,15 @@ const SetHeader: React.FC<Props> = ({
             }}
           >
             <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
-            <div>{customSet.owner?.username ?? t('ANONYMOUS')}</div>
+            <div>
+              {customSet.owner?.username ? (
+                <Link href={`/user/${customSet.owner.username}`}>
+                  {customSet.owner.username}
+                </Link>
+              ) : (
+                t('ANONYMOUS')
+              )}
+            </div>
             <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
             <div>
               {creationDate.toLocaleDateString(undefined, {

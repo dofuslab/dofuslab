@@ -54,7 +54,7 @@
   "LEVEL_TOO_HIGH": "Il livello di quest'oggetto è superiore a quello della build.",
   "LEVEL_TOO_HIGH_WITH_ITEM": "Il livello dell'oggetto <2>{{itemName}}</2> è superiore a quello della build.",
   "MAX_NUM": "Max {{max}}",
-  "MEMBER_SINCE": "Inscritto dal",
+  "MEMBER_SINCE": "Inscritto dal {{date}}",
   "MULTIPLE_AP_EXO": "Hai più di un exo PA",
   "MULTIPLE_MP_EXO": "Hai più di un exo PM",
   "MULTIPLE_PRYSMARADITES": "Hai equipaggiato più di un prismaradite.",

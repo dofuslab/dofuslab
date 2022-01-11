@@ -44,14 +44,11 @@ import ChangePasswordModal from 'components/common/ChangePasswordModal';
 import { LIGHT_THEME_NAME } from 'common/themes';
 import Tooltip from 'components/common/Tooltip';
 import { switchStyle } from 'common/mixins';
-import {
-  ClassicContext,
-  getImageUrl,
-} from 'common/utils';
+import { ClassicContext, getImageUrl } from 'common/utils';
 import { Theme } from 'common/types';
 import { DownOutlined } from '@ant-design/icons';
 import { Media } from 'components/common/Media';
-import MyBuilds from '../common/MyBuilds';
+import BuildList from '../common/BuildList';
 import SignUpModal from '../common/SignUpModal';
 import LoginModal from '../common/LoginModal';
 
@@ -348,7 +345,10 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                     onClose={closeDrawer}
                     width="min(100%, 1000px)"
                   >
-                    <MyBuilds onClose={closeDrawer} username={data.currentUser.username} />
+                    <BuildList
+                      onClose={closeDrawer}
+                      username={data.currentUser.username}
+                    />
                   </Drawer>
                   <Dropdown
                     overlay={
