@@ -78,13 +78,14 @@ body {
 }
 
 .level {
-  background: #f0f0f0;
-  color: #262626;
+  background: #434343;
+  color: #f0f0f0;
   padding: 16px;
   border-radius: 8px;
   font-size: 48px;
   font-family: "Poppins", sans-serif;
   margin-right: 32px;
+  white-space: nowrap;
 }
 
 .tag-image {
@@ -171,7 +172,9 @@ export function getHtml(parsedReq: ParsedRequest) {
               .map(() => '<div class="item"></div>')
               .join('')}
         </div>
-        <img src="${ROOT}/logo/DL-Full_Dark.svg" class="dofuslab-logo">
+        <img src="${ROOT}/logo/${
+    Math.random() > 0.99 ? 'DL-Full_Dark_Crimson.svg' : 'DL-Full_Dark.svg'
+  }" class="dofuslab-logo">
     </body>
 </html>
   `;
