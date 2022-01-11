@@ -1,7 +1,20 @@
 import sqlalchemy
+from sqlalchemy.orm import relationship
+from sqlalchemy.sql.expression import null
 from .base import Base
-from sqlalchemy import Column, String, ForeignKey, Boolean
+from .enums import BuildGender, BuildGenderEnum
+from sqlalchemy import (
+    Column,
+    String,
+    ForeignKey,
+    Boolean,
+    Integer,
+    CheckConstraint,
+    text,
+)
 from sqlalchemy.dialects.postgresql import UUID
+
+MAX_LEVEL = 200
 
 
 class ModelUserSetting(Base):
@@ -21,3 +34,15 @@ class ModelUserSetting(Base):
     )
     locale = Column("locale", String, nullable=False)
     classic = Column("classic", Boolean, nullable=False)
+
+    # build defaults
+    build_gender = Column(
+        "build_gender",
+        BuildGenderEnum,
+        nullable=False,
+    )
+    build_class_id = Column(
+        UUID(as_uuid=True), ForeignKey("class.uuid"), nullable=True, index=True
+    )
+
+    build_class = relationship("ModelClass", uselist=False)

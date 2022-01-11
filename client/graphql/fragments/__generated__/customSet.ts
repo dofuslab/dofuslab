@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat, WeaponEffectType, WeaponElementMage } from "./../../../__generated__/globalTypes";
+import { Stat, WeaponEffectType, WeaponElementMage, BuildGender } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL fragment: customSet
@@ -12,6 +12,7 @@ import { Stat, WeaponEffectType, WeaponElementMage } from "./../../../__generate
 export interface customSet_equippedItems_slot {
   __typename: "ItemSlot";
   id: any;
+  enName: string;
   name: string;
   order: number;
 }
@@ -142,7 +143,9 @@ export interface customSet_defaultClass {
   id: any;
   name: string;
   enName: string;
-  faceImageUrl: string;
+  femaleFaceImageUrl: string;
+  maleFaceImageUrl: string;
+  femaleSpriteImageUrl: string;
   maleSpriteImageUrl: string;
 }
 
@@ -173,4 +176,5 @@ export interface customSet {
   lastModified: any | null;
   tagAssociations: customSet_tagAssociations[];
   hasEditPermission: boolean;
+  buildGender: BuildGender;
 }

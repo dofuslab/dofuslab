@@ -1,0 +1,17 @@
+org: lightyearsaway
+app: dofuslab-og-image
+service: dofuslab-og-image
+
+provider:
+  name: aws
+  region: us-east-2
+  runtime: nodejs12.x
+  memorySize: 2048
+  timeout: 10
+  cfnRole: arn:aws:iam::758535569037:role/CloudFormation
+
+functions:
+  dofuslab-og-image-service:
+    handler: api/dist/index.handler
+    events:
+      - httpApi: GET /{any+}

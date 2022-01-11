@@ -1,0 +1,10 @@
+.now
+node_modules
+api/dist
+public/dist
+
+
+.vercel
+.serverless
+
+output.zip

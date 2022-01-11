@@ -13,15 +13,19 @@ import { itemCardStyle } from 'common/mixins';
 import { useTheme } from 'emotion-theming';
 import { useTranslation } from 'i18n';
 import { Theme } from 'common/types';
+import { getFaceImageUrl } from 'common/utils';
+import { BuildGender } from '__generated__/globalTypes';
 
 interface Props {
   dofusClassId?: string;
   setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
+  buildGender: BuildGender;
 }
 
 const ClassicClassSelector: React.FC<Props> = ({
   dofusClassId,
   setDofusClassId,
+  buildGender,
 }) => {
   const { data } = useQuery<classes>(classesQuery);
 
@@ -41,7 +45,7 @@ const ClassicClassSelector: React.FC<Props> = ({
       }}
       title={t('SELECT_CLASS')}
     >
-      {data ? (
+      {data && (
         <div
           css={{
             display: 'grid',
@@ -70,7 +74,7 @@ const ClassicClassSelector: React.FC<Props> = ({
                     }}
                   >
                     <img
-                      src={dofusClass.faceImageUrl}
+                      src={getFaceImageUrl(dofusClass, buildGender)}
                       css={{
                         width: '100%',
                       }}
@@ -81,8 +85,6 @@ const ClassicClassSelector: React.FC<Props> = ({
               </Tooltip>
             ))}
         </div>
-      ) : (
-        <div />
       )}
     </Card>
   );

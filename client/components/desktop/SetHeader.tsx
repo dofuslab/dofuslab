@@ -12,7 +12,7 @@ import {
   EditableContext,
   useIsOwnerOfCustomSet,
   getBuildLink,
-  getImageUrl,
+  getFaceImageUrl,
 } from 'common/utils';
 import {
   BuildError,
@@ -28,6 +28,10 @@ import BuildActions from '../common/BuildActions';
 import DefaultClassModal from '../common/DefaultClassModal';
 import BuildTags from '../common/BuildTags';
 import CustomSetHeaderForm from '../common/CustomSetHeaderForm';
+import { useQuery } from '@apollo/client';
+import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
+import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import { MAX_LEVEL } from 'common/constants';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -65,13 +69,17 @@ const SetHeader: React.FC<Props> = ({
   setDofusClassId,
   customSetLoading,
 }) => {
+  const isEditable = React.useContext(EditableContext);
+
+  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
+    currentUserQuery,
+  );
+
   const originalState = {
     isEditing: false,
     name: customSet?.name || '',
-    level: customSet?.level || 200,
+    level: customSet?.level || MAX_LEVEL,
   };
-
-  const isEditable = React.useContext(EditableContext);
 
   const [metadataState, dispatch] = React.useReducer(reducer, originalState);
 
@@ -104,8 +112,12 @@ const SetHeader: React.FC<Props> = ({
   const defaultClassImg = (
     <img
       src={
-        customSet?.defaultClass?.faceImageUrl ??
-        getImageUrl('class/face/No_Class.svg')
+        customSet
+          ? getFaceImageUrl(customSet.defaultClass, customSet.buildGender)
+          : getFaceImageUrl(
+              currentUserData?.currentUser?.settings.buildClass ?? null,
+              currentUserData?.currentUser?.settings.buildGender,
+            )
       }
       css={{
         maxWidth: '100%',

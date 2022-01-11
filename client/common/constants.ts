@@ -136,3 +136,5 @@ export const getSelectorNumCols = (isClassic?: boolean) =>
   isClassic ? [2, 3, 4, 5, 6, 7, 8] : [2, 2, 2, 3, 4, 5, 6];
 
 export const IS_CLASSIC_STORAGE_KEY = 'isClassic';
+
+export const MAX_LEVEL = 200;

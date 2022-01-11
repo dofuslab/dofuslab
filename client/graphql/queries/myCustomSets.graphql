@@ -3,6 +3,45 @@
 query myCustomSets($first: Int!, $after: String, $filters: CustomSetFilters!) {
   currentUser {
     id
-    ...userCustomSets
+    customSets(first: $first, after: $after, filters: $filters) {
+      edges {
+        node {
+          id
+          buildGender
+          defaultClass {
+            id
+            name
+            maleFaceImageUrl
+            femaleFaceImageUrl
+          }
+          name
+          level
+          equippedItems {
+            id
+            slot {
+              id
+              order
+            }
+            item {
+              id
+              imageUrl
+            }
+          }
+          tagAssociations {
+            id
+            associationDate
+            customSetTag {
+              id
+              name
+              imageUrl
+            }
+          }
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
   }
 }

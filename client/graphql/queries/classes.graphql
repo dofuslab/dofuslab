@@ -4,7 +4,8 @@ query classes {
     name
     enName
     allNames
-    faceImageUrl
+    maleFaceImageUrl
+    femaleFaceImageUrl
     maleSpriteImageUrl
     femaleSpriteImageUrl
   }

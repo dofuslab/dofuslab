@@ -10,6 +10,14 @@
 /**
  * An enumeration.
  */
+export enum BuildGender {
+  FEMALE = "FEMALE",
+  MALE = "MALE",
+}
+
+/**
+ * An enumeration.
+ */
 export enum SpellEffectType {
   AIR_DAMAGE = "AIR_DAMAGE",
   AIR_STEAL = "AIR_STEAL",

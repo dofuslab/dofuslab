@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { Stat, WeaponEffectType } from "./../../../__generated__/globalTypes";
+import { Stat, WeaponEffectType, BuildGender } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: login
@@ -91,6 +91,23 @@ export interface login_loginUser_user_favoriteItems {
   buffs: login_loginUser_user_favoriteItems_buffs[] | null;
 }
 
+export interface login_loginUser_user_settings_buildClass {
+  __typename: "Class";
+  id: any;
+  maleFaceImageUrl: string;
+  femaleFaceImageUrl: string;
+  maleSpriteImageUrl: string;
+  femaleSpriteImageUrl: string;
+  name: string;
+}
+
+export interface login_loginUser_user_settings {
+  __typename: "UserSetting";
+  id: any;
+  buildGender: BuildGender;
+  buildClass: login_loginUser_user_settings_buildClass | null;
+}
+
 export interface login_loginUser_user {
   __typename: "User";
   id: any;
@@ -98,6 +115,7 @@ export interface login_loginUser_user {
   username: string;
   email: string;
   verified: boolean;
+  settings: login_loginUser_user_settings;
 }
 
 export interface login_loginUser {

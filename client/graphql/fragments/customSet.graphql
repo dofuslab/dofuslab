@@ -9,6 +9,7 @@ fragment customSet on CustomSet {
     id
     slot {
       id
+      enName
       name
       order
     }
@@ -33,7 +34,9 @@ fragment customSet on CustomSet {
     id
     name
     enName
-    faceImageUrl
+    femaleFaceImageUrl
+    maleFaceImageUrl
+    femaleSpriteImageUrl
     maleSpriteImageUrl
   }
   creationDate
@@ -48,4 +51,5 @@ fragment customSet on CustomSet {
     }
   }
   hasEditPermission
+  buildGender
 }

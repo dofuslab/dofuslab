@@ -26,6 +26,7 @@ import {
   faUserPlus,
   faKey,
   faMugHot,
+  faWrench,
 } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
@@ -46,6 +47,7 @@ import { Theme } from 'common/types';
 import { getImageUrl } from 'common/utils';
 import SignUpModal from '../common/SignUpModal';
 import LoginModal from '../common/LoginModal';
+import DefaultBuildSettingsModal from 'components/common/DefaultBuildSettingsModal';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -130,6 +132,14 @@ const Layout = ({ children }: LayoutProps) => {
   }, []);
   const closePasswordModal = React.useCallback(() => {
     setShowPasswordModal(false);
+  }, []);
+
+  const [showBuildSettings, setShowBuildSettings] = React.useState(false);
+  const openBuildSettings = React.useCallback(() => {
+    setShowBuildSettings(true);
+  }, []);
+  const closeBuildSettings = React.useCallback(() => {
+    setShowBuildSettings(false);
   }, []);
 
   const logoutHandler = React.useCallback(async () => {
@@ -280,6 +290,16 @@ const Layout = ({ children }: LayoutProps) => {
                 {t('CHANGE_PASSWORD')}
               </Menu.Item>
             )}
+
+            {data?.currentUser && (
+              <Menu.Item key="build-settings" onClick={openBuildSettings}>
+                <span css={iconWrapper}>
+                  <FontAwesomeIcon icon={faWrench} />
+                </span>
+                {t('DEFAULT_BUILD_SETTINGS', { ns: 'common' })}
+              </Menu.Item>
+            )}
+
             <SubMenu
               key="language"
               title={
@@ -376,6 +396,11 @@ const Layout = ({ children }: LayoutProps) => {
       <ChangePasswordModal
         visible={showPasswordModal}
         onClose={closePasswordModal}
+      />
+
+      <DefaultBuildSettingsModal
+        visible={showBuildSettings}
+        onClose={closeBuildSettings}
       />
     </AntdLayout>
   );

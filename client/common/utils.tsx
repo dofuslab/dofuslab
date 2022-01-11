@@ -21,6 +21,7 @@ import {
   WeaponEffectType,
   SpellEffectType,
   WeaponElementMage,
+  BuildGender,
 } from '__generated__/globalTypes';
 import {
   updateCustomSetItem,
@@ -98,7 +99,9 @@ import {
 } from './type-aliases';
 
 export const getImageUrl = (suffix: string) =>
-  `https://d2iuiayak06k8j.cloudfront.net/${suffix}`;
+  suffix.startsWith('https://')
+    ? suffix
+    : `https://d2iuiayak06k8j.cloudfront.net/${suffix}`;
 
 export const navigateToNewCustomSet = (
   router: NextRouter,
@@ -1426,6 +1429,11 @@ export const getCustomSetMetaImage = (customSet?: CustomSet | null) => {
   if (customSet.defaultClass) {
     searchParams.set('class', customSet.defaultClass.enName);
   }
+  searchParams.set(
+    'gender',
+    customSet.buildGender === BuildGender.FEMALE ? 'F' : 'M',
+  );
+  searchParams.set('level', `${customSet.level}`);
   [...customSet.tagAssociations]
     .sort(
       (a1, a2) =>
@@ -1445,10 +1453,10 @@ export const getCustomSetMetaImage = (customSet?: CustomSet | null) => {
       const { imageUrl } = ei.item;
       const match = imageUrl.match(/item\/(\d+)\.png/);
       if (match && match[1]) {
-        searchParams.append('items', match[1]);
+        searchParams.append(ei.slot.enName.toLowerCase(), match[1]);
       }
     });
-  return `https://32kom7xq5i.execute-api.us-east-2.amazonaws.com/${encodeURIComponent(
+  return `https://bdoioiouh7.execute-api.us-east-2.amazonaws.com/${encodeURIComponent(
     customSet.name || 'Untitled',
   )}?${searchParams.toString()}`;
 };
@@ -1861,4 +1869,23 @@ export const combineStatsWithBuffs = (
 
 export const selectOnFocus = (e: React.FocusEvent<HTMLInputElement>) => {
   e.currentTarget.setSelectionRange(0, e.currentTarget.value.length);
+};
+
+export const isUUID = (candidate: string) =>
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(
+    candidate,
+  );
+
+export const getFaceImageUrl = (
+  dofusClass: { maleFaceImageUrl: string; femaleFaceImageUrl: string } | null,
+  gender: BuildGender = BuildGender.MALE,
+) => {
+  let imageUrl = 'class/face/No_Class.svg';
+  if (dofusClass) {
+    imageUrl =
+      gender === BuildGender.MALE
+        ? dofusClass.maleFaceImageUrl
+        : dofusClass.femaleFaceImageUrl;
+  }
+  return getImageUrl(imageUrl);
 };

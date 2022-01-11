@@ -3,7 +3,7 @@
 import { jsx } from '@emotion/core';
 import { useMutation } from '@apollo/client';
 
-import { getImageUrl, navigateToNewCustomSet } from 'common/utils';
+import { getFaceImageUrl, navigateToNewCustomSet } from 'common/utils';
 import { Class } from 'common/type-aliases';
 import {
   editCustomSetDefaultClass,
@@ -13,6 +13,7 @@ import editCustomSetDefaultClassMutation from 'graphql/mutations/editCustomSetDe
 import { useTranslation } from 'i18n';
 import { useRouter } from 'next/router';
 import Tooltip from './Tooltip';
+import { BuildGender } from '__generated__/globalTypes';
 
 interface Props {
   customSetId?: string;
@@ -20,6 +21,7 @@ interface Props {
   setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
   closeModal: () => void;
   isSelected: boolean;
+  buildGender: BuildGender;
 }
 
 const DefaultClassButton: React.FC<Props> = ({
@@ -28,6 +30,7 @@ const DefaultClassButton: React.FC<Props> = ({
   setDofusClassId,
   closeModal,
   isSelected,
+  buildGender,
 }) => {
   const [mutate] = useMutation<
     editCustomSetDefaultClass,
@@ -36,6 +39,7 @@ const DefaultClassButton: React.FC<Props> = ({
     variables: {
       customSetId,
       defaultClassId: dofusClass?.id,
+      buildGender,
     },
     optimisticResponse: customSetId
       ? () => ({
@@ -47,10 +51,13 @@ const DefaultClassButton: React.FC<Props> = ({
                 id: dofusClass.id,
                 name: dofusClass.name,
                 enName: dofusClass.enName,
-                faceImageUrl: dofusClass.faceImageUrl,
+                femaleFaceImageUrl: dofusClass.femaleFaceImageUrl,
+                femaleSpriteImageUrl: dofusClass.femaleSpriteImageUrl,
+                maleFaceImageUrl: dofusClass.maleFaceImageUrl,
                 maleSpriteImageUrl: dofusClass.maleSpriteImageUrl,
                 __typename: 'Class',
               },
+              buildGender,
               __typename: 'CustomSet',
             },
             __typename: 'EditCustomSetDefaultClass',
@@ -97,9 +104,7 @@ const DefaultClassButton: React.FC<Props> = ({
           }}
         >
           <img
-            src={
-              dofusClass?.faceImageUrl ?? getImageUrl('class/face/No_Class.svg')
-            }
+            src={getFaceImageUrl(dofusClass, buildGender)}
             css={{
               width: '100%',
             }}

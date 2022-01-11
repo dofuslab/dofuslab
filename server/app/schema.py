@@ -68,6 +68,7 @@ from app.database.enums import (
     WeaponEffectType,
     SpellEffectType,
     WeaponElementMage,
+    BuildGender,
 )
 from app.token_utils import decode_token, encode_token, generate_url
 import app.mutation_validation_utils as validation
@@ -123,6 +124,7 @@ StatEnum = graphene.Enum.from_enum(Stat)
 WeaponEffectEnum = graphene.Enum.from_enum(WeaponEffectType)
 SpellEffectEnum = graphene.Enum.from_enum(SpellEffectType)
 WeaponElementMageEnum = graphene.Enum.from_enum(WeaponElementMage)
+BuildGenderEnum = graphene.Enum.from_enum(BuildGender)
 
 
 class ItemStat(SQLAlchemyObjectType):
@@ -381,6 +383,12 @@ class CustomSetFilters(graphene.InputObjectType):
     default_class_id = graphene.UUID()
 
 
+class UserSetting(SQLAlchemyObjectType):
+    class Meta:
+        model = ModelUserSetting
+        interfaces = (GlobalNode,)
+
+
 class User(SQLAlchemyObjectType):
     custom_sets = relay.ConnectionField(
         graphene.NonNull(CustomSetConnection),
@@ -437,6 +445,13 @@ class User(SQLAlchemyObjectType):
             raise GraphQLError(_("You are not authorized to make this request."))
         return map(lambda favorite: favorite.item, self.favorite_items)
 
+    settings = graphene.NonNull(UserSetting)
+
+    def resolve_settings(self, info):
+        if self.uuid != current_user.get_id():
+            raise GraphQLError(_("You are not authorized to make this request."))
+        return self.settings
+
     class Meta:
         model = ModelUserAccount
         interfaces = (GlobalNode,)
@@ -448,6 +463,7 @@ class User(SQLAlchemyObjectType):
             "verified",
             "favorite_items",
             "creation_date",
+            "settings",
         )
 
 
@@ -549,6 +565,7 @@ class Class(SQLAlchemyObjectType):
         graphene.List(graphene.NonNull(SpellVariantPair))
     )
     all_names = graphene.NonNull(graphene.List(graphene.NonNull(graphene.String)))
+    face_image_url = graphene.String(required=True)
 
     def resolve_name(self, info):
         locale = str(get_locale())
@@ -576,6 +593,9 @@ class Class(SQLAlchemyObjectType):
                 query.filter(ModelClassTranslation.class_id == self.uuid).all(),
             )
         )
+
+    def resolve_face_image_url(self, info):
+        return self.male_face_image_url
 
     class Meta:
         model = ModelClass
@@ -663,6 +683,7 @@ class EditCustomSetDefaultClass(graphene.Mutation):
     class Arguments:
         custom_set_id = graphene.UUID()
         default_class_id = graphene.UUID()
+        build_gender = graphene.NonNull(BuildGenderEnum)
 
     custom_set = graphene.Field(CustomSet, required=True)
 
@@ -671,8 +692,10 @@ class EditCustomSetDefaultClass(graphene.Mutation):
         with session_scope() as db_session:
             custom_set_id = kwargs.get("custom_set_id")
             default_class_id = kwargs.get("default_class_id")
+            build_gender = kwargs.get("build_gender")
             custom_set = get_or_create_custom_set(custom_set_id, db_session)
             custom_set.default_class_id = default_class_id
+            custom_set.build_gender = BuildGender(build_gender)
 
         return EditCustomSetDefaultClass(custom_set=custom_set)
 
@@ -1022,6 +1045,8 @@ class RegisterUser(graphene.Mutation):
         username = graphene.NonNull(graphene.String)
         email = graphene.NonNull(graphene.String)
         password = graphene.NonNull(graphene.String)
+        gender = graphene.NonNull(BuildGenderEnum)
+        build_default_class_id = graphene.UUID()
 
     user = graphene.Field(User)
     ok = graphene.Boolean(required=True)
@@ -1031,7 +1056,10 @@ class RegisterUser(graphene.Mutation):
             username = kwargs.get("username")
             email = kwargs.get("email")
             password = kwargs.get("password")
+            gender = kwargs.get("gender")
+            build_default_class_id = kwargs.get("build_default_class_id")
             validation.validate_registration(username, email, password)
+
             try:
                 if current_user.is_authenticated:
                     raise GraphQLError(_("You are already logged in."))
@@ -1050,6 +1078,8 @@ class RegisterUser(graphene.Mutation):
                     locale=str(get_locale()),
                     classic=session.get("classic", False),
                     user_id=user.uuid,
+                    build_gender=BuildGender(gender),
+                    build_class_id=build_default_class_id,
                 )
                 db_session.add(user_setting)
                 q.enqueue(
@@ -1281,6 +1311,30 @@ class ToggleFavoriteItem(graphene.Mutation):
                 db_session, user_account_id, item_id, is_favorite
             )
         return ToggleFavoriteItem(user=current_user._get_current_object())
+
+
+class EditBuildSettings(graphene.Mutation):
+    class Arguments:
+        gender = graphene.NonNull(BuildGenderEnum)
+        build_default_class_id = graphene.UUID()
+
+    user_setting = graphene.Field(UserSetting, required=True)
+
+    def mutate(self, info, **kwargs):
+        if not current_user.is_authenticated:
+            raise GraphQLError(_("You are not logged in."))
+        gender = kwargs.get("gender")
+        build_default_class_id = kwargs.get("build_default_class_id")
+        user_account_id = current_user.get_id()
+        with session_scope() as db_session:
+            user_setting = (
+                db_session.query(ModelUserSetting)
+                .filter_by(user_id=user_account_id)
+                .one()
+            )
+            user_setting.build_gender = BuildGender(gender)
+            user_setting.build_class_id = build_default_class_id
+        return EditBuildSettings(user_setting=user_setting)
 
 
 class ItemFilters(graphene.InputObjectType):
@@ -1542,17 +1596,21 @@ class Query(graphene.ObjectType):
 
     item_suggestions = graphene.NonNull(
         graphene.List(graphene.NonNull(Item)),
-        custom_set_id=graphene.UUID(),
         num_suggestions=graphene.Int(),
         item_slot_id=graphene.UUID(),
+        equipped_item_ids=graphene.NonNull(
+            graphene.List(graphene.NonNull(graphene.UUID))
+        ),
+        level=graphene.NonNull(graphene.Int),
     )
 
     def resolve_item_suggestions(self, info, num_suggestions=10, **kwargs):
-        custom_set_id = kwargs.get("custom_set_id")
         item_slot_id = kwargs.get("item_slot_id")
-        if not custom_set_id:
+        equipped_item_ids = kwargs.get("equipped_item_ids")
+        level = kwargs.get("level")
+        if not equipped_item_ids:
             return []
-        custom_set = db.session.query(ModelCustomSet).get(custom_set_id)
+
         eligible_item_type_ids = []
         if item_slot_id:
             eligible_item_type_ids = map(
@@ -1560,22 +1618,40 @@ class Query(graphene.ObjectType):
                 db.session.query(ModelItemSlot).get(item_slot_id).item_types,
             )
         else:
+            slot_alias = aliased(ModelItemSlot)
+            subquery = (
+                ~db.session.query(slot_alias)
+                .join(slot_alias.equipped_items)
+                .filter(
+                    ModelEquippedItem.uuid.in_(equipped_item_ids),
+                    ModelEquippedItem.item_slot_id == ModelItemSlot.uuid,
+                )
+                .exists()
+            )
+            empty_slots = db.session.query(ModelItemSlot).filter(subquery).all()
+
             eligible_item_type_ids = [
                 item_type.uuid
-                for item_slot in custom_set.empty_item_slots()
+                for item_slot in empty_slots
                 for item_type in item_slot.item_types
             ]
+
         if not eligible_item_type_ids:
             return []
+
         item_ids = [
-            equipped_item.item_id for equipped_item in custom_set.equipped_items
+            t[0]
+            for t in db.session.query(ModelEquippedItem.item_id).filter(
+                ModelEquippedItem.uuid.in_(equipped_item_ids)
+            )
         ]
+
         suggested_item_ids = get_ordered_suggestions(item_ids)
         suggested_items = (
             db.session.query(ModelItem)
             .filter(ModelItem.uuid.in_(suggested_item_ids))
             .filter(ModelItem.item_type_id.in_(eligible_item_type_ids))
-            .filter(ModelItem.level <= custom_set.level)
+            .filter(ModelItem.level <= level)
             .all()
         )
         results = sorted(
@@ -1612,6 +1688,7 @@ class Mutation(graphene.ObjectType):
     import_custom_set = ImportCustomSet.Field()
     add_tag_to_custom_set = AddTagToCustomSet.Field()
     remove_tag_from_custom_set = RemoveTagFromCustomSet.Field()
+    edit_build_settings = EditBuildSettings.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

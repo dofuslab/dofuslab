@@ -9,7 +9,7 @@ import { mq } from 'common/constants';
 import { getErrors, CustomSetContext } from 'common/utils';
 import { BuildError } from 'common/types';
 import StatTable from 'components/common/StatTable';
-import { Stat } from '__generated__/globalTypes';
+import { BuildGender, Stat } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
@@ -22,6 +22,9 @@ import ClassicLeftColumnStats from './ClassicLeftColumnStats';
 import ClassicEquipmentSlots from './ClassicEquipmentSlots';
 import SetHeader from './SetHeader';
 import ClassicClassSelector from './ClassicClassSelector';
+import { useQuery } from '@apollo/client';
+import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
+import currentUserQuery from 'graphql/queries/currentUser.graphql';
 
 const { TabPane } = Tabs;
 
@@ -36,9 +39,17 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
     customSetLoading,
   } = React.useContext(CustomSetContext);
 
+  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
+    currentUserQuery,
+  );
+
   const [dofusClassId, setDofusClassId] = React.useState<string | undefined>(
     customSet?.defaultClass?.id,
   );
+
+  React.useEffect(() => {
+    setDofusClassId(customSet?.defaultClass?.id);
+  }, [customSet?.id]);
 
   const { t } = useTranslation();
 
@@ -109,7 +120,11 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
             >
               <ClassicLeftColumnStats openBuffModal={openBuffModal} />
               <div css={{ flex: '1 1 auto' }}>
-                <ClassicEquipmentSlots customSet={customSet} errors={errors} />
+                <ClassicEquipmentSlots
+                  customSet={customSet}
+                  errors={errors}
+                  setDofusClassId={setDofusClassId}
+                />
                 <div
                   css={{
                     display: 'grid',
@@ -169,6 +184,11 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
               <ClassicClassSelector
                 dofusClassId={dofusClassId}
                 setDofusClassId={setDofusClassId}
+                buildGender={
+                  customSet?.buildGender ||
+                  currentUserData?.currentUser?.settings.buildGender ||
+                  BuildGender.MALE
+                }
               />
               {weapon && customSet && weapon.item.weaponStats && (
                 <>
