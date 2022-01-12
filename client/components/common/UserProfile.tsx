@@ -23,6 +23,8 @@ interface Props {
 const profilePicStyles = css`
   display: inline-block;
   position: relative;
+  width: 100%;
+  max-width: 100%;
   & > button {
     visibility: hidden;
     opacity: 0;
@@ -35,7 +37,7 @@ const profilePicStyles = css`
   }
 `;
 
-const UserCustomSets: React.FC<Props> = ({ username }) => {
+const UserProfile: React.FC<Props> = ({ username }) => {
   const { data: userProfileData } = useQuery<userProfile, userProfileVariables>(
     userProfileQuery,
     { variables: { username } },
@@ -74,7 +76,8 @@ const UserCustomSets: React.FC<Props> = ({ username }) => {
             flexDirection: 'column',
             margin: '10px 0px 0px 0px',
             padding: '0px 20px 20px 20px',
-            width: '25%',
+            width: '30%',
+            minWidth: '25%',
           },
         }}
       >
@@ -88,8 +91,9 @@ const UserCustomSets: React.FC<Props> = ({ username }) => {
               borderRadius: 6,
               border: '4px solid black',
               outline: '1px solid #434343',
+              display: 'block',
               [mq[1]]: {
-                maxWidth: 220,
+                maxWidth: '100%',
                 alignItems: 'flex-start',
               },
             }}
@@ -123,7 +127,14 @@ const UserCustomSets: React.FC<Props> = ({ username }) => {
             },
           }}
         >
-          <h1 css={{ margin: '10px 0px 0px 0px', fontSize: '1.6rem' }}>
+          <h1
+            css={{
+              margin: '10px 0px 0px 0px',
+              fontSize: '1.6rem',
+              textOverflow: 'ellipsis',
+              overflow: 'hidden',
+            }}
+          >
             {username}
           </h1>
           <span css={{ color: gray7 }}>
@@ -138,4 +149,4 @@ const UserCustomSets: React.FC<Props> = ({ username }) => {
   );
 };
 
-export default UserCustomSets;
+export default UserProfile;

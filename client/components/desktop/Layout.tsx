@@ -48,10 +48,10 @@ import { ClassicContext, getImageUrl } from 'common/utils';
 import { Theme } from 'common/types';
 import { DownOutlined } from '@ant-design/icons';
 import { Media } from 'components/common/Media';
+import DefaultBuildSettingsModal from 'components/common/DefaultBuildSettingsModal';
 import BuildList from '../common/BuildList';
 import SignUpModal from '../common/SignUpModal';
 import LoginModal from '../common/LoginModal';
-import DefaultBuildSettingsModal from 'components/common/DefaultBuildSettingsModal';
 
 interface LayoutProps {
   children: React.ReactNode;

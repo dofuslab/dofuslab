@@ -3,10 +3,12 @@ fragment userCustomSets on User {
     edges {
       node {
         id
+        buildGender
         defaultClass {
           id
           name
-          faceImageUrl
+          maleFaceImageUrl
+          femaleFaceImageUrl
         }
         name
         level

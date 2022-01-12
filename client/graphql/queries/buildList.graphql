@@ -1,5 +1,3 @@
-#import "graphql/fragments/userCustomSets.graphql"
-
 query buildList(
   $username: String!
   $first: Int!
@@ -7,6 +5,45 @@ query buildList(
   $filters: CustomSetFilters!
 ) {
   userByName(username: $username) {
-    ...userCustomSets
+    customSets(first: $first, after: $after, filters: $filters) {
+      edges {
+        node {
+          id
+          buildGender
+          defaultClass {
+            id
+            name
+            maleFaceImageUrl
+            femaleFaceImageUrl
+          }
+          name
+          level
+          equippedItems {
+            id
+            slot {
+              id
+              order
+            }
+            item {
+              id
+              imageUrl
+            }
+          }
+          tagAssociations {
+            id
+            associationDate
+            customSetTag {
+              id
+              name
+              imageUrl
+            }
+          }
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
   }
 }

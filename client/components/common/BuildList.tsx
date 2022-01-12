@@ -23,7 +23,11 @@ import {
 } from 'common/wrappers';
 import { useRouter } from 'next/router';
 import Card from 'components/common/Card';
-import { getImageUrl, navigateToNewCustomSet } from 'common/utils';
+import {
+  getImageUrl,
+  navigateToNewCustomSet,
+  getFaceImageUrl,
+} from 'common/utils';
 import { createCustomSet } from 'graphql/mutations/__generated__/createCustomSet';
 import createCustomSetMutation from 'graphql/mutations/createCustomSet.graphql';
 import { useQuery, useMutation, useApolloClient } from '@apollo/client';
@@ -41,11 +45,10 @@ import { DEBOUNCE_INTERVAL, mq } from 'common/constants';
 import { useDebounceCallback } from '@react-hook/debounce';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
 import customSetTagsQuery from 'graphql/queries/customSetTags.graphql';
-import classesQuery from 'graphql/queries/classes.graphql';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
-import { classes } from 'graphql/queries/__generated__/classes';
 import DeleteCustomSetModal from './DeleteCustomSetModal';
+import { ClassSelect } from './ClassSelect';
 
 const THRESHOLD = 600;
 const PAGE_SIZE = 20;
@@ -115,7 +118,6 @@ const BuildList: React.FC<Props> = ({ username, onClose }) => {
   });
 
   const { data: tagsData } = useQuery<customSetTags>(customSetTagsQuery);
-  const { data: classesData } = useQuery<classes>(classesQuery);
 
   const onLoadMore = React.useCallback(async () => {
     if (!userBuilds?.userByName?.customSets.pageInfo.hasNextPage) {
@@ -133,45 +135,20 @@ const BuildList: React.FC<Props> = ({ username, onClose }) => {
     return fetchMoreResult;
   }, [userBuilds, search]);
 
-  const classSelect = classesData && (
-    <Select<string>
-      getPopupContainer={(node: HTMLElement) => {
-        if (node.parentElement) {
-          return node.parentElement;
-        }
-        return document && document.body;
-      }}
+  const classSelect = (
+    <ClassSelect
       css={[
         { ...inputFontSize },
-        { marginTop: 20, [mq[1]]: { marginTop: 0, flex: 1 } },
+        { marginTop: 20, [mq[1]]: { marginTop: 0, marginLeft: 20, flex: 1 } },
       ]}
-      showSearch
-      filterOption={(input, option) => {
-        return (option?.children[1] as string)
-          .toLocaleUpperCase()
-          .includes(input.toLocaleUpperCase());
-      }}
       value={dofusClassId}
       onChange={(value: string) => {
         setDofusClassId(value);
       }}
-      placeholder={t('SELECT_CLASS')}
       allowClear
-    >
-      {[...classesData.classes]
-        .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
-        .map((dofusClass) => (
-          <Select.Option key={dofusClass.id} value={dofusClass.id}>
-            <img
-              src={dofusClass.faceImageUrl}
-              alt={dofusClass.name}
-              css={{ width: 20, marginRight: 8 }}
-            />
-            {dofusClass.name}
-          </Select.Option>
-        ))}
-    </Select>
+    />
   );
+
   const theme = useTheme<Theme>();
 
   const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
@@ -220,10 +197,6 @@ const BuildList: React.FC<Props> = ({ username, onClose }) => {
         }
       },
     });
-
-    if (resultData?.createCustomSet?.customSet) {
-      navigateToNewCustomSet(router, resultData.createCustomSet.customSet.id);
-    }
   }, [customSetId, mutate, router, userBuilds, client, onClose]);
 
   const getCustomSetPathname = () => {
@@ -285,7 +258,6 @@ const BuildList: React.FC<Props> = ({ username, onClose }) => {
               />
             </div>
             {classSelect}
-
             {tagsData && (
               <Select<Array<string>>
                 getPopupContainer={(node: HTMLElement) => {
@@ -435,10 +407,10 @@ const BuildList: React.FC<Props> = ({ username, onClose }) => {
                         </div>
                       )
                     }
-                    leftImageUrl={
-                      node.defaultClass?.faceImageUrl ??
-                      getImageUrl('class/face/No_Class.svg')
-                    }
+                    leftImageUrl={getFaceImageUrl(
+                      node.defaultClass,
+                      node.buildGender,
+                    )}
                     leftImageAlt={node.defaultClass?.name}
                   />
                 }

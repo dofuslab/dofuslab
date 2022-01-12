@@ -3,6 +3,8 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
+import { BuildGender } from "./../../../__generated__/globalTypes";
+
 // ====================================================
 // GraphQL fragment: userCustomSets
 // ====================================================
@@ -11,7 +13,8 @@ export interface userCustomSets_customSets_edges_node_defaultClass {
   __typename: "Class";
   id: any;
   name: string;
-  faceImageUrl: string;
+  maleFaceImageUrl: string;
+  femaleFaceImageUrl: string;
 }
 
 export interface userCustomSets_customSets_edges_node_equippedItems_slot {
@@ -50,6 +53,7 @@ export interface userCustomSets_customSets_edges_node_tagAssociations {
 export interface userCustomSets_customSets_edges_node {
   __typename: "CustomSet";
   id: any;
+  buildGender: BuildGender;
   defaultClass: userCustomSets_customSets_edges_node_defaultClass | null;
   name: string | null;
   level: number;

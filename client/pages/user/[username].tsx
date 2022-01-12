@@ -6,7 +6,7 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { useTranslation } from 'i18n';
 import { getTitle } from 'common/utils';
-import UserCustomSets from 'components/common/UserProfile';
+import UserProfile from 'components/common/UserProfile';
 import { useRouter } from 'next/router';
 import { Media } from 'components/common/Media';
 import DesktopLayout from 'components/desktop/Layout';
@@ -27,12 +27,12 @@ const UserProfilePage: NextPage = () => {
       </Head>
       <Media lessThan="xs">
         <MobileLayout>
-          <UserCustomSets username={username!} />
+          <UserProfile username={username!} />
         </MobileLayout>
       </Media>
       <Media greaterThanOrEqual="xs" css={{ height: '100%' }}>
         <DesktopLayout showSwitch={false}>
-          <UserCustomSets username={username!} />
+          <UserProfile username={username!} />
         </DesktopLayout>
       </Media>
     </>
