@@ -357,6 +357,7 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                     <BuildList
                       onClose={closeDrawer}
                       username={data.currentUser.username}
+                      isEditable={true}
                     />
                   </Drawer>
                   <Dropdown

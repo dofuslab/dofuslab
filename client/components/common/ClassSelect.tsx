@@ -46,7 +46,7 @@ export const ClassSelect = React.forwardRef<
           }
           return document && document.body;
         }}
-        size={size || 'large'}
+        size={size || 'middle'}
         className={className}
         showSearch
         filterOption={(input, option) => {

@@ -221,18 +221,22 @@ const SetHeader: React.FC<Props> = ({
                   </div>
                 </div>
                 <div css={{ display: 'flex' }}>
-                  <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-                  <div css={{ marginLeft: 8 }}>
-                    {creationDate.toLocaleDateString(undefined, {
-                      month: 'short',
-                      day: 'numeric',
-                      year: 'numeric',
-                    })}{' '}
-                    {creationDate.toLocaleTimeString(undefined, {
-                      hour: '2-digit',
-                      minute: '2-digit',
-                    })}
-                  </div>
+                  {isEditable && (
+                    <>
+                      <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
+                      <div css={{ marginLeft: 8 }}>
+                        {creationDate.toLocaleDateString(undefined, {
+                          month: 'short',
+                          day: 'numeric',
+                          year: 'numeric',
+                        })}{' '}
+                        {creationDate.toLocaleTimeString(undefined, {
+                          hour: '2-digit',
+                          minute: '2-digit',
+                        })}
+                      </div>
+                    </>
+                  )}
                 </div>
                 <div css={{ display: 'flex' }}>
                   <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>

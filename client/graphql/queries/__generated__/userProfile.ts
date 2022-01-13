@@ -9,6 +9,7 @@
 
 export interface userProfile_userByName {
   __typename: "User";
+  profilePicture: string;
   creationDate: any | null;
 }
 

@@ -1,5 +1,6 @@
 query userProfile($username: String!) {
   userByName(username: $username) {
+    profilePicture
     creationDate
   }
 }

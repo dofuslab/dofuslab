@@ -1,0 +1,5 @@
+mutation changeProfilePicture($picture: String!) {
+  changeProfilePicture(picture: $picture) {
+    ok
+  }
+}

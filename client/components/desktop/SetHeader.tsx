@@ -149,6 +149,42 @@ const SetHeader: React.FC<Props> = ({
 
   if (customSetLoading) {
     content = <Skeleton.Input active css={{ width: 200 }} />;
+  } else if (customSet && !isEditable) {
+    content = (
+      <div>
+        {formElement}
+        <div
+          css={{
+            display: 'grid',
+            gridTemplateColumns: 'auto auto',
+            gridColumnGap: 12,
+          }}
+        >
+          <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
+          <div>
+            {customSet.owner?.username ? (
+              <Link href={`/user/${customSet.owner.username}`}>
+                {customSet.owner.username}
+              </Link>
+            ) : (
+              t('ANONYMOUS')
+            )}
+          </div>
+          <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
+          <div>
+            {modifiedDate.toLocaleDateString(undefined, {
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric',
+            })}{' '}
+            {modifiedDate.toLocaleTimeString(undefined, {
+              hour: '2-digit',
+              minute: '2-digit',
+            })}
+          </div>
+        </div>
+      </div>
+    );
   } else if (customSet && !metadataState.isEditing) {
     content = (
       <Popover

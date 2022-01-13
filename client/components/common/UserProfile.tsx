@@ -1,48 +1,29 @@
 /** @jsx jsx */
 
 import React from 'react';
-import { jsx, css } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import { useTranslation } from 'i18n';
 import { mq } from 'common/constants';
-import { useQuery } from '@apollo/client';
-import userProfileQuery from 'graphql/queries/userProfile.graphql';
-import {
-  userProfile,
-  userProfileVariables,
-} from 'graphql/queries/__generated__/userProfile';
 import { Button } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
 import { gray7 } from '../../common/mixins';
 import BuildList from './BuildList';
 import ProfilePictureModal from './ProfilePictureModal';
+import { getImageUrl } from 'common/utils';
 
 interface Props {
   username: string;
+  creationDate: string;
+  profilePicture: string;
+  isEditable: boolean;
 }
 
-const profilePicStyles = css`
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  & > button {
-    visibility: hidden;
-    opacity: 0;
-  }
-  &:hover > button {
-    height: auto;
-    visibility: visible;
-    opacity: 1;
-    transition: visibility 0s, opacity 0.2s linear;
-  }
-`;
-
-const UserProfile: React.FC<Props> = ({ username }) => {
-  const { data: userProfileData } = useQuery<userProfile, userProfileVariables>(
-    userProfileQuery,
-    { variables: { username } },
-  );
-
+const UserProfile: React.FC<Props> = ({
+  username,
+  creationDate,
+  profilePicture,
+  isEditable,
+}) => {
   const [pictureModalVisible, setPictureModalVisible] = React.useState(false);
 
   const { t } = useTranslation('common');
@@ -81,9 +62,29 @@ const UserProfile: React.FC<Props> = ({ username }) => {
           },
         }}
       >
-        <div css={profilePicStyles}>
+        <div
+          css={{
+            display: 'inline-block',
+            position: 'relative',
+            width: 'auto',
+            maxWidth: '100%',
+            [mq[1]]: {
+              width: '100%',
+              '& > button': {
+                visibility: 'hidden',
+                opacity: 0,
+              },
+              '&:hover > button': {
+                height: 'auto',
+                visibility: 'visible',
+                opacity: 1,
+                transition: 'visibility 0s, opacity 0.2s linear',
+              },
+            },
+          }}
+        >
           <img
-            src="https://media.discordapp.net/attachments/645410912605437972/924539234709282866/Layer_9.png"
+            src={getImageUrl(profilePicture)}
             alt="Avatar"
             css={{
               maxWidth: 120,
@@ -98,23 +99,27 @@ const UserProfile: React.FC<Props> = ({ username }) => {
               },
             }}
           />
-          <Button
-            type="primary"
-            icon={<EditOutlined />}
-            shape="circle"
-            onClick={() => {
-              setPictureModalVisible(true);
-            }}
-            css={{
-              position: 'absolute',
-              bottom: -12,
-              right: -12,
-            }}
-          />
+          {isEditable && (
+            <Button
+              type="primary"
+              icon={<EditOutlined />}
+              shape="circle"
+              onClick={() => {
+                setPictureModalVisible(true);
+              }}
+              css={{
+                position: 'absolute',
+                bottom: -12,
+                right: -12,
+              }}
+            />
+          )}
         </div>
         <ProfilePictureModal
+          username={username}
           visible={pictureModalVisible}
           onCancel={() => setPictureModalVisible(false)}
+          currentlyActive={profilePicture}
         />
         <div
           css={{
@@ -134,17 +139,18 @@ const UserProfile: React.FC<Props> = ({ username }) => {
               textOverflow: 'ellipsis',
               overflow: 'hidden',
             }}
+            title={username}
           >
             {username}
           </h1>
           <span css={{ color: gray7 }}>
             {t('MEMBER_SINCE', {
-              date: getDate(userProfileData?.userByName?.creationDate),
+              date: getDate(creationDate),
             })}
           </span>
         </div>
       </div>
-      <BuildList username={username} />
+      <BuildList username={username} isEditable={isEditable} />
     </div>
   );
 };
