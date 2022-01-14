@@ -90,6 +90,7 @@ export interface myCustomSets_currentUser_customSets {
 export interface myCustomSets_currentUser {
   __typename: "User";
   id: any;
+  customSetCount: number | null;
   customSets: myCustomSets_currentUser_customSets;
 }
 

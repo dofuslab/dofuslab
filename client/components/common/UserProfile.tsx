@@ -3,12 +3,13 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import { useTranslation } from 'i18n';
+import { useTheme } from 'emotion-theming';
 import { mq } from 'common/constants';
 import { Button } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
-import { gray7 } from '../../common/mixins';
 import BuildList from './BuildList';
 import ProfilePictureModal from './ProfilePictureModal';
+import { Theme } from 'common/types';
 import { getImageUrl } from 'common/utils';
 
 interface Props {
@@ -27,6 +28,7 @@ const UserProfile: React.FC<Props> = ({
   const [pictureModalVisible, setPictureModalVisible] = React.useState(false);
 
   const { t } = useTranslation('common');
+  const theme = useTheme<Theme>();
 
   const getDate = (dateStr: string) =>
     new Date(dateStr).toLocaleDateString(undefined, {
@@ -116,7 +118,6 @@ const UserProfile: React.FC<Props> = ({
           )}
         </div>
         <ProfilePictureModal
-          username={username}
           visible={pictureModalVisible}
           onCancel={() => setPictureModalVisible(false)}
           currentlyActive={profilePicture}
@@ -138,12 +139,13 @@ const UserProfile: React.FC<Props> = ({
               fontSize: '1.6rem',
               textOverflow: 'ellipsis',
               overflow: 'hidden',
+              color: theme.text?.default,
             }}
             title={username}
           >
             {username}
           </h1>
-          <span css={{ color: gray7 }}>
+          <span css={{ color: theme.text?.default, fontSize: '0.75rem' }}>
             {t('MEMBER_SINCE', {
               date: getDate(creationDate),
             })}

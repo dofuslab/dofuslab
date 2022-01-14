@@ -89,8 +89,8 @@ export interface buildList_userByName_customSets {
 
 export interface buildList_userByName {
   __typename: "User";
-  username: string;
   id: any;
+  username: string;
   customSetCount: number | null;
   customSets: buildList_userByName_customSets;
 }

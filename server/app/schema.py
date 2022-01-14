@@ -433,6 +433,12 @@ class User(SQLAlchemyObjectType):
 
         return query.all()
 
+    custom_set_count = graphene.Int()
+
+    def resolve_custom_set_count(self, info):
+        query = db.session.query(ModelCustomSet).filter_by(owner_id=self.uuid).count()
+        return query
+
     def resolve_email(self, info):
         if self.uuid != current_user.get_id():
             raise GraphQLError(_("You are not authorized to make this request."))
@@ -462,6 +468,7 @@ class User(SQLAlchemyObjectType):
             "custom_sets",
             "verified",
             "favorite_items",
+            "profile_picture",
             "creation_date",
             "settings",
         )
@@ -1337,6 +1344,24 @@ class EditBuildSettings(graphene.Mutation):
         return EditBuildSettings(user_setting=user_setting)
 
 
+class ChangeProfilePicture(graphene.Mutation):
+    class Arguments:
+        picture = graphene.String(required=True)
+
+    ok = graphene.Boolean(required=True)
+    user = graphene.Field(User)
+
+    def mutate(self, info, **kwargs):
+
+        picture = kwargs.get("picture")
+        with session_scope() as db_session:
+            curr_user = current_user._get_current_object()
+            if not current_user.is_authenticated:
+                raise GraphQLError(_("You are not logged in."))
+            curr_user.profile_picture = picture
+            return ChangeProfilePicture(ok=True, user=curr_user)
+
+
 class ItemFilters(graphene.InputObjectType):
     stats = graphene.NonNull(graphene.List(graphene.NonNull(StatEnum)))
     max_level = graphene.NonNull(graphene.Int)
@@ -1391,8 +1416,7 @@ class Query(graphene.ObjectType):
                         func.count(ModelItemStat.uuid).label("num_stats_matched"),
                     )
                     .filter(
-                        ModelItemStat.stat.in_(stat_names),
-                        ModelItemStat.max_value > 0,
+                        ModelItemStat.stat.in_(stat_names), ModelItemStat.max_value > 0,
                     )
                     .group_by(ModelItemStat.item_id)
                     .subquery()
@@ -1566,6 +1590,9 @@ class Query(graphene.ObjectType):
     def resolve_user_by_name(self, info, username):
         return ModelUserAccount.find_by_username(username)
 
+    def resolve_set_count(self):
+        return ModelUserAccount.set_count()
+
     def resolve_items_by_name(self, info, **kwargs):
         item_name_objs = kwargs.get("item_name_objs")
         num_slots = db.session.query(ModelItemSlot).count()
@@ -1655,8 +1682,7 @@ class Query(graphene.ObjectType):
             .all()
         )
         results = sorted(
-            suggested_items,
-            key=lambda x: suggested_item_ids.index(str(x.uuid)),
+            suggested_items, key=lambda x: suggested_item_ids.index(str(x.uuid)),
         )
         return results[:num_suggestions]
 
@@ -1689,6 +1715,7 @@ class Mutation(graphene.ObjectType):
     add_tag_to_custom_set = AddTagToCustomSet.Field()
     remove_tag_from_custom_set = RemoveTagFromCustomSet.Field()
     edit_build_settings = EditBuildSettings.Field()
+    change_profile_picture = ChangeProfilePicture.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

@@ -19,6 +19,7 @@ import {
   userProfileVariables,
 } from 'graphql/queries/__generated__/userProfile';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
+import ErrorPage from 'pages/_error';
 
 const UserProfilePage: NextPage = () => {
   const { t } = useTranslation('common');
@@ -35,11 +36,9 @@ const UserProfilePage: NextPage = () => {
     { variables: { username } },
   );
 
-  React.useEffect(() => {
-    if (userProfileData?.userByName === null) {
-      router.push('/');
-    }
-  }, [userProfileData]);
+  if (userProfileData?.userByName === null) {
+    return <ErrorPage statusCode={404} />;
+  }
 
   return (
     <>

@@ -1,8 +1,19 @@
-#import "graphql/fragments/userCustomSets.graphql"
+#import "graphql/fragments/abbreviatedCustomSet.graphql"
 
 query myCustomSets($first: Int!, $after: String, $filters: CustomSetFilters!) {
   currentUser {
     id
-    ...userCustomSets
+    customSetCount
+    customSets(first: $first, after: $after, filters: $filters) {
+      edges {
+        node {
+          ...abbreviatedCustomSet
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
   }
 }

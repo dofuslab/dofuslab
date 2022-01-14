@@ -1,63 +1,42 @@
 /** @jsx jsx */
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { jsx } from '@emotion/core';
 import { Modal, notification } from 'antd';
+import { useTheme } from 'emotion-theming';
 import { useRouter } from 'next/router';
 
 import { useTranslation } from 'i18n';
 import { getImageUrl } from 'common/utils';
 import { PROFILE_PICTURES, mq } from '../../common/constants';
-import { gray7, blue6 } from 'common/mixins';
 import changeProfilePictureMutation from 'graphql/mutations/changeProfilePicture.graphql';
+import { Theme } from 'common/types';
 import {
   changeProfilePicture,
   changeProfilePictureVariables,
 } from 'graphql/mutations/__generated__/changeProfilePicture';
 import { useMutation } from '@apollo/client';
-import userProfileQuery from 'graphql/queries/userProfile.graphql';
-import buildListQuery from 'graphql/queries/buildList.graphql';
 
 interface Props {
-  username: string;
   visible: boolean;
   onCancel: () => void;
   currentlyActive: string;
 }
 
 const ProfilePictureModal: React.FC<Props> = ({
-  username,
   onCancel,
   visible,
   currentlyActive,
 }) => {
   const { t } = useTranslation('common');
-  const [active, setActive] = useState<any>('');
+  const [active, setActive] = useState<string>(currentlyActive);
+  const theme = useTheme<Theme>();
 
-  useEffect(() => {
-    setActive(currentlyActive);
-  }, []);
   const [profilePictureMutate, { loading: changePictureLoading }] = useMutation<
     changeProfilePicture,
     changeProfilePictureVariables
   >(changeProfilePictureMutation, {
     variables: { picture: active },
-    refetchQueries: () => [
-      {
-        query: userProfileQuery,
-        variables: {
-          username: username,
-        },
-      },
-      {
-        query: buildListQuery,
-        variables: {
-          username,
-          first: 20,
-          filters: { search: '', tagIds: [] },
-        },
-      },
-    ],
     awaitRefetchQueries: true,
   });
   const router = useRouter();
@@ -127,14 +106,14 @@ const ProfilePictureModal: React.FC<Props> = ({
             active === item
               ? {
                   borderRadius: 4,
-                  border: `2px solid ${blue6}`,
+                  border: `2px solid ${theme.border?.primarySelected}`,
                   '&:hover': {
                     cursor: 'pointer',
                   },
                 }
               : {
                   borderRadius: 4,
-                  border: `1px solid ${gray7}`,
+                  border: `1px solid ${theme.border?.light}`,
                   '&:hover': {
                     cursor: 'pointer',
                   },

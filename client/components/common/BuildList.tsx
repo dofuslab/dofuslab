@@ -39,7 +39,7 @@ import {
 } from 'graphql/queries/__generated__/myCustomSets';
 import { TabPane } from 'rc-tabs';
 import myCustomSetsQuery from 'graphql/queries/myCustomSets.graphql';
-import { Input, Select, Tabs, Button, Skeleton } from 'antd';
+import { Input, Select, Tabs, Button } from 'antd';
 import { DEBOUNCE_INTERVAL, mq } from 'common/constants';
 import { useDebounceCallback } from '@react-hook/debounce';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
@@ -201,6 +201,8 @@ const BuildList: React.FC<Props> = ({ username, onClose, isEditable }) => {
     return isEditable ? '/build' : '/view';
   };
 
+  const [buildAmount] = React.useState(userBuilds?.userByName?.customSetCount);
+
   return (
     <div
       css={{
@@ -212,103 +214,97 @@ const BuildList: React.FC<Props> = ({ username, onClose, isEditable }) => {
         onChange={() => {}}
         css={{ gridArea: '4/1/4/3', width: '100%' }}
       >
-        {queryLoading ? (
-          <Skeleton.Input />
-        ) : (
-          <TabPane
-            tab={`${t('BUILDS')} (${userBuilds?.userByName?.customSetCount})`}
-            key="1"
+        <TabPane tab={`${t('BUILDS')} (${buildAmount})`} key="1">
+          <div
+            css={{
+              display: 'flex',
+              flexDirection: 'column',
+              [mq[1]]: {
+                display: 'grid',
+                marginBottom: 16,
+                gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+                gridGap: 16,
+              },
+            }}
           >
-            <div
-              css={{
-                display: 'flex',
-                flexDirection: 'column',
-                [mq[1]]: {
-                  display: 'grid',
-                  marginBottom: 16,
-                  gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-                  gridGap: 16,
-                },
-              }}
-            >
-              <div css={{ display: 'flex', gridColumn: '1 / 1' }}>
-                {isEditable && (
-                  <Button
-                    type="primary"
-                    onClick={onCreate}
-                    disabled={queryLoading || createLoading}
-                    css={{ fontSize: '0.75rem', marginRight: 16 }}
-                  >
-                    <span css={{ marginRight: 12 }}>
-                      {createLoading ? (
-                        <LoadingOutlined />
-                      ) : (
-                        <FontAwesomeIcon icon={faPlus} />
-                      )}
-                    </span>
-                    {t('NEW_BUILD')}
-                  </Button>
-                )}
-                <Input.Search
-                  css={{
-                    flex: 1,
-                    ...inputFontSize,
-                    '.ant-input': inputFontSize,
-                    height: 32,
-                  }}
-                  onChange={onSearch}
-                  placeholder={t('SEARCH')}
-                />
-              </div>
-              {classSelect}
-              {tagsData && (
-                <Select<Array<string>>
-                  getPopupContainer={(node: HTMLElement) => {
-                    if (node.parentElement) {
-                      return node.parentElement;
-                    }
-                    return document && document.body;
-                  }}
-                  css={[
-                    inputFontSize,
-                    {
-                      gridColumn: '1 / -1',
-
-                      marginTop: 20,
-                      [mq[1]]: { marginTop: 0 },
-                    },
-                  ]}
-                  showSearch
-                  filterOption={(input, option) => {
-                    return (option?.children[1] as string)
-                      .toLocaleUpperCase()
-                      .includes(input.toLocaleUpperCase());
-                  }}
-                  value={tagIds}
-                  onChange={(value: Array<string>) => {
-                    setTagIds(value);
-                  }}
-                  placeholder={t('SELECT_TAGS')}
-                  mode="multiple"
-                  allowClear
+            <div css={{ display: 'flex', gridColumn: '1 / 1' }}>
+              {isEditable && (
+                <Button
+                  type="primary"
+                  onClick={onCreate}
+                  disabled={queryLoading || createLoading}
+                  css={{ fontSize: '0.75rem', marginRight: 16 }}
                 >
-                  {[...tagsData.customSetTags]
-                    .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
-                    .map((tag) => (
-                      <Select.Option key={tag.id} value={tag.id}>
-                        <img
-                          src={getImageUrl(tag.imageUrl)}
-                          alt={tag.name}
-                          css={{ width: 16, marginRight: 8 }}
-                        />
-                        {tag.name}
-                      </Select.Option>
-                    ))}
-                </Select>
+                  <span css={{ marginRight: 12 }}>
+                    {createLoading ? (
+                      <LoadingOutlined />
+                    ) : (
+                      <FontAwesomeIcon icon={faPlus} />
+                    )}
+                  </span>
+                  {t('NEW_BUILD')}
+                </Button>
               )}
+              <Input.Search
+                css={{
+                  flex: 1,
+                  ...inputFontSize,
+                  '.ant-input': inputFontSize,
+                  height: 32,
+                }}
+                onChange={onSearch}
+                placeholder={t('SEARCH')}
+              />
             </div>
-          </TabPane>
-        )}
+            {classSelect}
+            {tagsData && (
+              <Select<Array<string>>
+                getPopupContainer={(node: HTMLElement) => {
+                  if (node.parentElement) {
+                    return node.parentElement;
+                  }
+                  return document && document.body;
+                }}
+                css={[
+                  inputFontSize,
+                  {
+                    gridColumn: '1 / -1',
+
+                    marginTop: 20,
+                    [mq[1]]: { marginTop: 0 },
+                  },
+                ]}
+                showSearch
+                filterOption={(input, option) => {
+                  return (option?.children[1] as string)
+                    .toLocaleUpperCase()
+                    .includes(input.toLocaleUpperCase());
+                }}
+                value={tagIds}
+                onChange={(value: Array<string>) => {
+                  setTagIds(value);
+                }}
+                placeholder={t('SELECT_TAGS')}
+                mode="multiple"
+                allowClear
+              >
+                {[...tagsData.customSetTags]
+                  .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
+                  .map((tag) => (
+                    <Select.Option key={tag.id} value={tag.id}>
+                      <img
+                        src={getImageUrl(tag.imageUrl)}
+                        alt={tag.name}
+                        css={{ width: 16, marginRight: 8 }}
+                      />
+                      {tag.name}
+                    </Select.Option>
+                  ))}
+              </Select>
+            )}
+          </div>
+        </TabPane>
+        )
       </Tabs>
       <InfiniteScroll
         hasMore={userBuilds?.userByName?.customSets.pageInfo.hasNextPage}

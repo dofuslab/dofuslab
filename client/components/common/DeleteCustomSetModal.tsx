@@ -30,7 +30,7 @@ const DeleteCustomSetModal: React.FC<Props> = ({
     deleteCustomSetVariables
   >(deleteCustomSetMutation, {
     variables: { customSetId },
-    refetchQueries: () => ['myCustomSets'],
+    refetchQueries: () => ['buildList'],
     awaitRefetchQueries: true,
   });
   const router = useRouter();

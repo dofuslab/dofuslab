@@ -7,8 +7,15 @@
 // GraphQL mutation operation: changeProfilePicture
 // ====================================================
 
+export interface changeProfilePicture_changeProfilePicture_user {
+  __typename: "User";
+  id: any;
+  profilePicture: string;
+}
+
 export interface changeProfilePicture_changeProfilePicture {
   __typename: "ChangeProfilePicture";
+  user: changeProfilePicture_changeProfilePicture_user | null;
   ok: boolean;
 }
 

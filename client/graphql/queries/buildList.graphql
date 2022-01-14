@@ -1,4 +1,4 @@
-#import "graphql/fragments/userCustomSets.graphql"
+#import "graphql/fragments/abbreviatedCustomSet.graphql"
 
 query buildList(
   $username: String!
@@ -7,9 +7,19 @@ query buildList(
   $filters: CustomSetFilters!
 ) {
   userByName(username: $username) {
-    username
     id
+    username
     customSetCount
-    ...userCustomSets
+    customSets(first: $first, after: $after, filters: $filters) {
+      edges {
+        node {
+          ...abbreviatedCustomSet
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
   }
 }
