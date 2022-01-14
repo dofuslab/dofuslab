@@ -12,4 +12,5 @@ export interface ParsedRequest {
   tags: Array<string>;
   gender: 'M' | 'F';
   level?: number;
+  logoImage: string;
 }
