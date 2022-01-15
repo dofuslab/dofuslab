@@ -9,13 +9,13 @@ query buildList(
   userByName(username: $username) {
     id
     username
-    customSetCount
     customSets(first: $first, after: $after, filters: $filters) {
       edges {
         node {
           ...abbreviatedCustomSet
         }
       }
+      totalCount
       pageInfo {
         hasNextPage
         endCursor

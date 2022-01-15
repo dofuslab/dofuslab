@@ -119,6 +119,11 @@ class NonNullConnection(relay.Connection, abstract=True):
 
         super(NonNullConnection, cls).__init_subclass_with_meta__(node=_node, **kwargs)
 
+    total_count = graphene.Int()
+
+    def resolve_total_count(self, info, **kwargs):
+        return len(self.iterable)
+
 
 StatEnum = graphene.Enum.from_enum(Stat)
 WeaponEffectEnum = graphene.Enum.from_enum(WeaponEffectType)
@@ -432,12 +437,6 @@ class User(SQLAlchemyObjectType):
             ).filter(tag_sq.c.num_tags_matched == len(filters.tag_ids))
 
         return query.all()
-
-    custom_set_count = graphene.Int()
-
-    def resolve_custom_set_count(self, info):
-        query = db.session.query(ModelCustomSet).filter_by(owner_id=self.uuid).count()
-        return query
 
     def resolve_email(self, info):
         if self.uuid != current_user.get_id():
@@ -1348,8 +1347,7 @@ class ChangeProfilePicture(graphene.Mutation):
     class Arguments:
         picture = graphene.String(required=True)
 
-    ok = graphene.Boolean(required=True)
-    user = graphene.Field(User)
+    user = graphene.NonNull(User)
 
     def mutate(self, info, **kwargs):
 
@@ -1359,7 +1357,7 @@ class ChangeProfilePicture(graphene.Mutation):
             if not current_user.is_authenticated:
                 raise GraphQLError(_("You are not logged in."))
             curr_user.profile_picture = picture
-            return ChangeProfilePicture(ok=True, user=curr_user)
+            return ChangeProfilePicture(user=curr_user)
 
 
 class ItemFilters(graphene.InputObjectType):
@@ -1589,9 +1587,6 @@ class Query(graphene.ObjectType):
 
     def resolve_user_by_name(self, info, username):
         return ModelUserAccount.find_by_username(username)
-
-    def resolve_set_count(self):
-        return ModelUserAccount.set_count()
 
     def resolve_items_by_name(self, info, **kwargs):
         item_name_objs = kwargs.get("item_name_objs")

@@ -372,12 +372,13 @@ const Layout = ({ children }: LayoutProps) => {
 
       <AntdLayout.Content
         css={{
-          marginTop: 12,
+          paddingTop: 12,
           display: 'flex',
           flexDirection: 'column',
           paddingLeft: 8,
           paddingRight: 8,
           overflowAnchor: 'none',
+          position: 'relative',
         }}
       >
         {children}

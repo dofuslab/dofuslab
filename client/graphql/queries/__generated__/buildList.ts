@@ -81,6 +81,7 @@ export interface buildList_userByName_customSets_pageInfo {
 export interface buildList_userByName_customSets {
   __typename: "CustomSetConnection";
   edges: buildList_userByName_customSets_edges[];
+  totalCount: number | null;
   /**
    * Pagination data for this connection.
    */
@@ -91,7 +92,6 @@ export interface buildList_userByName {
   __typename: "User";
   id: any;
   username: string;
-  customSetCount: number | null;
   customSets: buildList_userByName_customSets;
 }
 

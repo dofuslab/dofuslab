@@ -139,6 +139,7 @@ const BuildList: React.FC<Props> = ({ username, onClose, isEditable }) => {
       onChange={(value: string) => {
         setDofusClassId(value);
       }}
+      size={'middle'}
       allowClear
     />
   );
@@ -201,7 +202,9 @@ const BuildList: React.FC<Props> = ({ username, onClose, isEditable }) => {
     return isEditable ? '/build' : '/view';
   };
 
-  const [buildAmount] = React.useState(userBuilds?.userByName?.customSetCount);
+  const [buildAmount] = React.useState(
+    userBuilds?.userByName?.customSets.totalCount,
+  );
 
   return (
     <div
@@ -259,17 +262,10 @@ const BuildList: React.FC<Props> = ({ username, onClose, isEditable }) => {
             {classSelect}
             {tagsData && (
               <Select<Array<string>>
-                getPopupContainer={(node: HTMLElement) => {
-                  if (node.parentElement) {
-                    return node.parentElement;
-                  }
-                  return document && document.body;
-                }}
                 css={[
                   inputFontSize,
                   {
-                    gridColumn: '1 / -1',
-
+                    gridArea: '2/3/3/1',
                     marginTop: 20,
                     [mq[1]]: { marginTop: 0 },
                   },

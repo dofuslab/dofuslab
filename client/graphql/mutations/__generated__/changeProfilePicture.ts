@@ -15,8 +15,7 @@ export interface changeProfilePicture_changeProfilePicture_user {
 
 export interface changeProfilePicture_changeProfilePicture {
   __typename: "ChangeProfilePicture";
-  user: changeProfilePicture_changeProfilePicture_user | null;
-  ok: boolean;
+  user: changeProfilePicture_changeProfilePicture_user;
 }
 
 export interface changeProfilePicture {

@@ -46,11 +46,11 @@ const ProfilePictureModal: React.FC<Props> = ({
       e.stopPropagation();
       const { data } = await profilePictureMutate();
       onCancel();
-      if (data?.changeProfilePicture?.ok) {
+      if (data?.changeProfilePicture?.user?.profilePicture) {
         notification.success({
           message: t('SUCCESS'),
           // Missing translation
-          description: t('Profile picture changed successfully'),
+          description: t('CHANGE_PICTURE_SUCCESS'),
         });
       }
     },
@@ -70,7 +70,7 @@ const ProfilePictureModal: React.FC<Props> = ({
     <Modal
       visible={visible}
       // Missing translation
-      title={'Change profile picture'}
+      title={t('CHANGE_PICTURE')}
       centered
       onOk={onChangePicture}
       onCancel={onCancelClick}
@@ -83,7 +83,7 @@ const ProfilePictureModal: React.FC<Props> = ({
         <img
           src={getImageUrl(active)}
           // Missing translation
-          alt="Currently selected profile picture"
+          alt={t('SELECTED_PROFILE_PICTURE')}
           css={{ maxWidth: 220, borderRadius: 4 }}
         />
       </div>
@@ -93,9 +93,10 @@ const ProfilePictureModal: React.FC<Props> = ({
           flexWrap: 'wrap',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '15px',
+          gap: '16px',
           maxHeight: '30vh',
           overflow: 'auto',
+          padding: 4,
           [mq[1]]: {
             maxHeight: 'auto',
           },
@@ -106,14 +107,14 @@ const ProfilePictureModal: React.FC<Props> = ({
             active === item
               ? {
                   borderRadius: 4,
-                  border: `2px solid ${theme.border?.primarySelected}`,
+                  boxShadow: `0px 0px 0px 2px ${theme.border?.primarySelected}`,
                   '&:hover': {
                     cursor: 'pointer',
                   },
                 }
               : {
                   borderRadius: 4,
-                  border: `1px solid ${theme.border?.light}`,
+                  boxShadow: `0px 0px 0px 1px ${theme.border?.light}`,
                   '&:hover': {
                     cursor: 'pointer',
                   },
@@ -124,7 +125,7 @@ const ProfilePictureModal: React.FC<Props> = ({
               src={getImageUrl(item)}
               key={`profile-pic-${index}`}
               // Missing translation
-              alt="Profile picture"
+              alt={t('PROFILE_PICTURE')}
               width={'100px'}
               onClick={() => {
                 setActive(item);

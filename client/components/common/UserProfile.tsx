@@ -51,16 +51,32 @@ const UserProfile: React.FC<Props> = ({
       <div
         css={{
           display: 'flex',
-          flexDirection: 'row',
-          margin: '0px 20px 20px 0px',
-          gridArea: '1 / 3 / 1 /1',
+          flexDirection: 'column',
+          margin: '0px 0px 20px 0px',
           borderRadius: 6,
+          textAlign: 'center',
+          alignItems: 'center',
           [mq[1]]: {
             flexDirection: 'column',
-            margin: '10px 0px 0px 0px',
+            margin: '12px 0px 0px 0px',
             padding: '0px 20px 20px 20px',
-            width: '30%',
-            minWidth: '25%',
+            minWidth: 240,
+            textAlign: 'left',
+            alignItems: 'flex-start',
+          },
+
+          '&::before': {
+            position: 'absolute',
+            left: 0,
+            top: 0,
+            width: '100%',
+            height: 72,
+            background: '#333',
+            content: "''",
+            zIndex: 0,
+            [mq[1]]: {
+              display: 'none',
+            },
           },
         }}
       >
@@ -91,9 +107,9 @@ const UserProfile: React.FC<Props> = ({
             css={{
               maxWidth: 120,
               alignItems: 'center',
-              borderRadius: 6,
-              border: '4px solid black',
-              outline: '1px solid #434343',
+              borderRadius: 4,
+              padding: 4,
+              outline: `1px solid ${theme.border?.light}`,
               display: 'block',
               [mq[1]]: {
                 maxWidth: '100%',
@@ -135,7 +151,7 @@ const UserProfile: React.FC<Props> = ({
         >
           <h1
             css={{
-              margin: '10px 0px 0px 0px',
+              margin: '12px 0px 0px 0px',
               fontSize: '1.6rem',
               textOverflow: 'ellipsis',
               overflow: 'hidden',

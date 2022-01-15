@@ -81,6 +81,7 @@ export interface myCustomSets_currentUser_customSets_pageInfo {
 export interface myCustomSets_currentUser_customSets {
   __typename: "CustomSetConnection";
   edges: myCustomSets_currentUser_customSets_edges[];
+  totalCount: number | null;
   /**
    * Pagination data for this connection.
    */
@@ -90,7 +91,6 @@ export interface myCustomSets_currentUser_customSets {
 export interface myCustomSets_currentUser {
   __typename: "User";
   id: any;
-  customSetCount: number | null;
   customSets: myCustomSets_currentUser_customSets;
 }
 
