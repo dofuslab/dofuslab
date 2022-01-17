@@ -33,6 +33,7 @@ from oneoff.sync_custom_set_tag import load_and_create_all_custom_set_tags
 from oneoff.sync_spell import create_spell_stats
 from oneoff.sync_set import create_set
 import oneoff.sync_item
+from oneoff.sync_custom_set_tag import load_and_create_all_custom_set_tags
 import oneoff.sync_buff
 from sqlalchemy.schema import MetaData
 from worker import redis_connection

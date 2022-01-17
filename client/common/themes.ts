@@ -65,6 +65,7 @@ export const lightTheme: Theme = {
 
 const darkColors = {
   defaultText: 'rgba(255, 255, 255, 0.65)',
+  brightText: 'rgba(255, 255, 255, 0.85)',
 };
 
 export const darkTheme: Theme = {

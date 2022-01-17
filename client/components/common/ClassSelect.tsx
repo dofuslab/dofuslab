@@ -40,12 +40,6 @@ export const ClassSelect = React.forwardRef<
     const { t } = useTranslation('common');
     return data ? (
       <Select<string>
-        getPopupContainer={(node: HTMLElement) => {
-          if (node.parentElement) {
-            return node.parentElement;
-          }
-          return document && document.body;
-        }}
         size={size || 'large'}
         className={className}
         showSearch

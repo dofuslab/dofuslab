@@ -8,7 +8,7 @@ import Layout from 'components/mobile/Layout';
 import { mediaStyles } from 'components/common/Media';
 import Head from 'next/head';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
-import MyBuilds from 'components/common/MyBuilds';
+import BuildList from 'components/common/BuildList';
 import { useTranslation } from 'i18n';
 import { getTitle } from 'common/utils';
 
@@ -32,7 +32,9 @@ const MyBuildsPage: NextPage = () => {
         />
         <title>{getTitle(t('MY_BUILDS'))}</title>
       </Head>
-      <MyBuilds isMobile />
+      {data?.currentUser && (
+        <BuildList username={data.currentUser.username} isEditable={true} />
+      )}
     </Layout>
   );
 };

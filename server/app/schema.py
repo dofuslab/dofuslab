@@ -1,3 +1,4 @@
+import random
 from app import (
     db,
     supported_languages,
@@ -57,6 +58,8 @@ from app.utils import (
     scrolled_stat_list,
     edit_custom_set_stats,
     edit_custom_set_metadata,
+    ALLOWED_PROFILE_PICTURE_URLS,
+    DEFAULT_PROFILE_PICTURE_URLS,
 )
 from app.verify_email import verify_email_salt
 from functools import reduce
@@ -118,6 +121,11 @@ class NonNullConnection(relay.Connection, abstract=True):
             )
 
         super(NonNullConnection, cls).__init_subclass_with_meta__(node=_node, **kwargs)
+
+    total_count = graphene.Int(required=True)
+
+    def resolve_total_count(self, info, **kwargs):
+        return len(self.iterable)
 
 
 StatEnum = graphene.Enum.from_enum(Stat)
@@ -462,6 +470,8 @@ class User(SQLAlchemyObjectType):
             "custom_sets",
             "verified",
             "favorite_items",
+            "profile_picture",
+            "creation_date",
             "settings",
         )
 
@@ -1066,6 +1076,7 @@ class RegisterUser(graphene.Mutation):
                     username=username,
                     email=email,
                     password=ModelUserAccount.generate_hash(password),
+                    profile_picture=(random.choice(DEFAULT_PROFILE_PICTURE_URLS)),
                 )
                 token = encode_token(user.email, verify_email_salt)
                 verify_url = generate_url("verify_email.verify_email", token)
@@ -1336,6 +1347,28 @@ class EditBuildSettings(graphene.Mutation):
         return EditBuildSettings(user_setting=user_setting)
 
 
+class ChangeProfilePicture(graphene.Mutation):
+    class Arguments:
+        picture = graphene.String(required=True)
+
+    user = graphene.NonNull(User)
+
+    def mutate(self, info, **kwargs):
+
+        picture = kwargs.get("picture")
+        with session_scope() as db_session:
+            curr_user = current_user._get_current_object()
+            if not current_user.is_authenticated:
+                raise GraphQLError(_("You are not logged in."))
+            if picture not in ALLOWED_PROFILE_PICTURE_URLS:
+                raise GraphQLError(
+                    _("An error has ocurred while changing the profile picture.")
+                )
+
+            curr_user.profile_picture = picture
+            return ChangeProfilePicture(user=curr_user)
+
+
 class ItemFilters(graphene.InputObjectType):
     stats = graphene.NonNull(graphene.List(graphene.NonNull(StatEnum)))
     max_level = graphene.NonNull(graphene.Int)
@@ -1390,8 +1423,7 @@ class Query(graphene.ObjectType):
                         func.count(ModelItemStat.uuid).label("num_stats_matched"),
                     )
                     .filter(
-                        ModelItemStat.stat.in_(stat_names),
-                        ModelItemStat.max_value > 0,
+                        ModelItemStat.stat.in_(stat_names), ModelItemStat.max_value > 0,
                     )
                     .group_by(ModelItemStat.item_id)
                     .subquery()
@@ -1560,6 +1592,11 @@ class Query(graphene.ObjectType):
         ),
     )
 
+    user_by_name = graphene.Field(User, username=graphene.String(required=True))
+
+    def resolve_user_by_name(self, info, username):
+        return ModelUserAccount.find_by_username(username)
+
     def resolve_items_by_name(self, info, **kwargs):
         item_name_objs = kwargs.get("item_name_objs")
         num_slots = db.session.query(ModelItemSlot).count()
@@ -1649,8 +1686,7 @@ class Query(graphene.ObjectType):
             .all()
         )
         results = sorted(
-            suggested_items,
-            key=lambda x: suggested_item_ids.index(str(x.uuid)),
+            suggested_items, key=lambda x: suggested_item_ids.index(str(x.uuid)),
         )
         return results[:num_suggestions]
 
@@ -1683,6 +1719,7 @@ class Mutation(graphene.ObjectType):
     add_tag_to_custom_set = AddTagToCustomSet.Field()
     remove_tag_from_custom_set = RemoveTagFromCustomSet.Field()
     edit_build_settings = EditBuildSettings.Field()
+    change_profile_picture = ChangeProfilePicture.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

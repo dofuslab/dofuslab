@@ -1,8 +1,14 @@
 #import "graphql/fragments/abbreviatedCustomSet.graphql"
 
-query myCustomSets($first: Int!, $after: String, $filters: CustomSetFilters!) {
-  currentUser {
+query buildList(
+  $username: String!
+  $first: Int!
+  $after: String
+  $filters: CustomSetFilters!
+) {
+  userByName(username: $username) {
     id
+    username
     customSets(first: $first, after: $after, filters: $filters) {
       edges {
         node {

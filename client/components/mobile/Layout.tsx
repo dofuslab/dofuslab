@@ -223,7 +223,9 @@ const Layout = ({ children }: LayoutProps) => {
               }}
             >
               {t('WELCOME')}
-              {data.currentUser.username}
+              <Link href={`/user/${data.currentUser.username}`}>
+                <a>{data.currentUser.username}</a>
+              </Link>
             </div>
           )}
           <Menu
@@ -372,12 +374,13 @@ const Layout = ({ children }: LayoutProps) => {
 
       <AntdLayout.Content
         css={{
-          marginTop: 12,
+          paddingTop: 12,
           display: 'flex',
           flexDirection: 'column',
           paddingLeft: 8,
           paddingRight: 8,
           overflowAnchor: 'none',
+          position: 'relative',
         }}
       >
         {children}

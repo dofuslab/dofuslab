@@ -1,0 +1,18 @@
+query userProfile($username: String!) {
+  userByName(username: $username) {
+    id
+    profilePicture
+    creationDate
+    customSets(filters: { search: "", tagIds: [] }) {
+      totalCount
+      edges {
+        node {
+          id
+        }
+      }
+      pageInfo {
+        hasNextPage
+      }
+    }
+  }
+}

@@ -26,6 +26,26 @@ scrolled_stat_list = [
     "scrolled_agility",
 ]
 
+DEFAULT_PROFILE_PICTURE_URLS = [
+    "profile-pictures/ProPic_Emerald_1.png",
+    "profile-pictures/ProPic_Crimson_1.png",
+    "profile-pictures/ProPic_Ebony_1.png",
+    "profile-pictures/ProPic_Ivory_1.png",
+    "profile-pictures/ProPic_Ochre_1.png",
+    "profile-pictures/ProPic_Turquoise_1.png",
+]
+
+ALLOWED_PROFILE_PICTURE_URLS = [
+    "profile-pictures/ProPic_Emerald_1.png",
+    "profile-pictures/ProPic_Crimson_1.png",
+    "profile-pictures/ProPic_Ebony_1.png",
+    "profile-pictures/ProPic_Ivory_1.png",
+    "profile-pictures/ProPic_Ochre_1.png",
+    "profile-pictures/ProPic_Turquoise_1.png",
+    "profile-pictures/ProPic_Iop_M.png",
+    "profile-pictures/ProPic_Iop_F.png",
+]
+
 DEFAULT_BUILD_GENDER = BuildGender.MALE
 
 

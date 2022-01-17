@@ -48,10 +48,10 @@ import { ClassicContext, getImageUrl } from 'common/utils';
 import { Theme } from 'common/types';
 import { DownOutlined } from '@ant-design/icons';
 import { Media } from 'components/common/Media';
-import MyBuilds from '../common/MyBuilds';
+import DefaultBuildSettingsModal from 'components/common/DefaultBuildSettingsModal';
+import BuildList from '../common/BuildList';
 import SignUpModal from '../common/SignUpModal';
 import LoginModal from '../common/LoginModal';
-import DefaultBuildSettingsModal from 'components/common/DefaultBuildSettingsModal';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -354,13 +354,28 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                     onClose={closeDrawer}
                     width="min(100%, 1000px)"
                   >
-                    <MyBuilds onClose={closeDrawer} isMobile={false} />
+                    <BuildList
+                      onClose={closeDrawer}
+                      username={data.currentUser.username}
+                      isEditable
+                    />
                   </Drawer>
                   <Dropdown
                     overlay={
                       <Menu>
                         <Menu.ItemGroup
-                          title={`${t('WELCOME')} ${data.currentUser.username}`}
+                          title={
+                            <>
+                              <span>
+                                {t('WELCOME')}{' '}
+                                <Link
+                                  href={`/user/${data.currentUser.username}`}
+                                >
+                                  <a>{data.currentUser.username}</a>
+                                </Link>
+                              </span>
+                            </>
+                          }
                         >
                           <Menu.Item
                             key="change-password"

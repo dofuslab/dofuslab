@@ -1421,6 +1421,27 @@ export const getCustomSetMetaDescription = (customSet?: CustomSet | null) => {
   return 'View this untitled build on DofusLab, the open-source set builder for the MMORPG Dofus';
 };
 
+export const getUserProfileMetaImage = (suffix?: string | null) => {
+  if (!suffix) {
+    return getImageUrl('logo/DL-Full_Dark_Filled_BG_1200x628.png');
+  } else {
+    return getImageUrl(suffix);
+  }
+};
+
+export const getUserProfileMetaDescription = (
+  username: string,
+  count: number,
+) => {
+  if (!count) {
+    return `Discover ${username}'s profile on DofusLab, the open-source set builder for the MMORPG Dofus.`;
+  } else if (count === 1) {
+    return `Discover ${username}'s profile on DofusLab, the open-source set builder for the MMORPG Dofus.`;
+  } else {
+    return `Discover ${username}'s ${count} builds on DofusLab, the open-source set builder for the MMORPG Dofus.`;
+  }
+};
+
 export const getCustomSetMetaImage = (customSet?: CustomSet | null) => {
   if (!customSet) {
     return getImageUrl('logo/DL-Full_Dark_Filled_BG_1200x628.png');
