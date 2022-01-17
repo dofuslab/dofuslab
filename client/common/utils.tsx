@@ -1588,7 +1588,7 @@ export const useClassic = () => {
     if (classic === null) {
       classic = sessionSettingsData?.classic ?? null;
     }
-    setIsClassic(classic || true);
+    setIsClassic(classic === null ? true : classic);
   }, []);
 
   const client = useApolloClient();
