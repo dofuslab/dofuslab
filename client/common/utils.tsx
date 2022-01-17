@@ -1429,11 +1429,16 @@ export const getUserProfileMetaImage = (suffix?: string | null) => {
   }
 };
 
-export const getUserProfileMetaBuildCount = (count: number) => {
+export const getUserProfileMetaDescription = (
+  username: string,
+  count: number,
+) => {
   if (!count) {
-    return 0;
+    return `Discover ${username}'s profile on DofusLab, the open-source set builder for the MMORPG Dofus.`;
+  } else if (count === 1) {
+    return `Discover ${username}'s profile on DofusLab, the open-source set builder for the MMORPG Dofus.`;
   } else {
-    return count;
+    return `Discover ${username}'s ${count} builds on DofusLab, the open-source set builder for the MMORPG Dofus.`;
   }
 };
 

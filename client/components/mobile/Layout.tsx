@@ -224,7 +224,7 @@ const Layout = ({ children }: LayoutProps) => {
             >
               {t('WELCOME')}
               <Link href={`/user/${data.currentUser.username}`}>
-                {data.currentUser.username}
+                <a>{data.currentUser.username}</a>
               </Link>
             </div>
           )}

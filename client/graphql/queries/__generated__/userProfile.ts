@@ -27,7 +27,7 @@ export interface userProfile_userByName_customSets_pageInfo {
 
 export interface userProfile_userByName_customSets {
   __typename: "CustomSetConnection";
-  totalCount: number | null;
+  totalCount: number;
   edges: userProfile_userByName_customSets_edges[];
   /**
    * Pagination data for this connection.

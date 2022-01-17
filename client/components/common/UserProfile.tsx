@@ -54,7 +54,6 @@ const UserProfile: React.FC<Props> = ({
         css={{
           display: 'flex',
           flexDirection: 'column',
-          borderRadius: 6,
           alignItems: 'flex-start',
           justifyContent: 'space-betweeen',
           [mq[1]]: {

@@ -371,7 +371,7 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                                 <Link
                                   href={`/user/${data.currentUser.username}`}
                                 >
-                                  {data.currentUser.username}
+                                  <a>{data.currentUser.username}</a>
                                 </Link>
                               </span>
                             </>

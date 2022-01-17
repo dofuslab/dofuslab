@@ -206,7 +206,7 @@ const SetHeader: React.FC<Props> = ({
             <div>
               {customSet.owner?.username ? (
                 <Link href={`/user/${customSet.owner.username}`}>
-                  {customSet.owner.username}
+                  <a>{customSet.owner.username}</a>
                 </Link>
               ) : (
                 t('ANONYMOUS')
