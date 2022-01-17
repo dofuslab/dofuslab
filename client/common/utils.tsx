@@ -1104,28 +1104,27 @@ export const statCalculators: { [key: string]: StatCalculator } = {
       : 0,
   [Stat.NEUTRAL_DAMAGE]: (statsFromCustomSet) =>
     statsFromCustomSet
-      ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
-        getStatWithDefault(statsFromCustomSet, Stat.NEUTRAL_DAMAGE)
+      ? getStatWithDefault(statsFromCustomSet, Stat.NEUTRAL_DAMAGE)
       : 0,
   [Stat.EARTH_DAMAGE]: (statsFromCustomSet) =>
     statsFromCustomSet
-      ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
-        getStatWithDefault(statsFromCustomSet, Stat.EARTH_DAMAGE)
+      ? getStatWithDefault(statsFromCustomSet, Stat.EARTH_DAMAGE)
       : 0,
   [Stat.FIRE_DAMAGE]: (statsFromCustomSet) =>
     statsFromCustomSet
-      ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
-        getStatWithDefault(statsFromCustomSet, Stat.FIRE_DAMAGE)
+      ? getStatWithDefault(statsFromCustomSet, Stat.FIRE_DAMAGE)
       : 0,
   [Stat.WATER_DAMAGE]: (statsFromCustomSet) =>
     statsFromCustomSet
-      ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
-        getStatWithDefault(statsFromCustomSet, Stat.WATER_DAMAGE)
+      ? getStatWithDefault(statsFromCustomSet, Stat.WATER_DAMAGE)
       : 0,
   [Stat.AIR_DAMAGE]: (statsFromCustomSet) =>
     statsFromCustomSet
-      ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE) +
-        getStatWithDefault(statsFromCustomSet, Stat.AIR_DAMAGE)
+      ? getStatWithDefault(statsFromCustomSet, Stat.AIR_DAMAGE)
+      : 0,
+  [Stat.DAMAGE]: (statsFromCustomSet) =>
+    statsFromCustomSet
+      ? getStatWithDefault(statsFromCustomSet, Stat.DAMAGE)
       : 0,
   [Stat.PODS]: (statsFromCustomSet) =>
     1000 +
