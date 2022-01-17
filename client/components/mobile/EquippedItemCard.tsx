@@ -82,7 +82,7 @@ const EquippedItemCard: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation(['common', 'mage', 'stat']);
 
-  const deleteItem = useDeleteItemMutation(itemSlotId, customSet);
+  const deleteItem = useDeleteItemMutation(customSet);
 
   const [quickExo] = useMutation<
     setEquippedItemExo,
@@ -110,12 +110,12 @@ const EquippedItemCard: React.FC<Props> = ({
   });
 
   const onDelete = React.useCallback(() => {
-    deleteItem();
+    deleteItem(itemSlotId);
     Router.push(
       { pathname: '/index', query: { customSetId: customSet.id } },
       customSet ? `/build/${customSet.id}/` : '/',
     );
-  }, [deleteItem, customSet]);
+  }, [deleteItem, customSet, itemSlotId]);
 
   const client = useApolloClient();
 

@@ -24,7 +24,15 @@ module.exports = {
       component: 'Trans',
     },
     lngs: ['en', 'es', 'de', 'fr', 'it', 'pt'],
-    ns: ['auth', 'common', 'mage', 'stat', 'status', 'weapon_spell_effect'],
+    ns: [
+      'auth',
+      'common',
+      'mage',
+      'stat',
+      'status',
+      'weapon_spell_effect',
+      'keyboard_shortcuts',
+    ],
     defaultLng: 'en',
     defaultNs: DEFAULT_NS,
     defaultValue: '__STRING_NOT_TRANSLATED__',
@@ -63,15 +71,19 @@ module.exports = {
         fileName: path.basename(file.path),
       });
 
-      parser.parseFuncFromString(outputText, { list: ['t'] }, (key, options) => {
-        parser.set(key, {
-          ns: ns || DEFAULT_NS,
-          nsSeparator: false,
-          keySeparator: '.',
-          ...options,
-        });
-        count += 1;
-      });
+      parser.parseFuncFromString(
+        outputText,
+        { list: ['t'] },
+        (key, options) => {
+          parser.set(key, {
+            ns: ns || DEFAULT_NS,
+            nsSeparator: false,
+            keySeparator: '.',
+            ...options,
+          });
+          count += 1;
+        },
+      );
       parser.parseTransFromString(
         outputText,
         { component: 'Trans', i18nKey: 'i18nKey' },

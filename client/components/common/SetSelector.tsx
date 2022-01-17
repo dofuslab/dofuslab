@@ -73,6 +73,26 @@ const SetSelector: React.FC<Props> = ({
     };
   }, [data]);
 
+  React.useEffect(() => {
+    const listener = (e: KeyboardEvent) => {
+      const keyIndex = Number(e.key) - 1;
+
+      if (!data) return;
+
+      if (Number.isInteger(keyIndex) && keyIndex >= 0 && keyIndex <= 8) {
+        if (keyIndex < data.sets.edges.length) {
+          setSelectedSet(data.sets.edges[keyIndex].node);
+          setSetModalVisible(true);
+        }
+      }
+    };
+    document.addEventListener('keydown', listener);
+
+    return () => {
+      document.removeEventListener('keydown', listener);
+    };
+  }, [data]);
+
   return (
     <InfiniteScroll
       hasMore={data?.sets.pageInfo.hasNextPage}

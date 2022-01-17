@@ -5,7 +5,7 @@ import { jsx } from '@emotion/core';
 import { Tabs } from 'antd';
 import { useTheme } from 'emotion-theming';
 
-import { mq, SEARCH_BAR_ID } from 'common/constants';
+import { mq } from 'common/constants';
 import { ResponsiveGrid, BuffButton } from 'common/wrappers';
 
 import { getErrors, CustomSetContext } from 'common/utils';
@@ -24,6 +24,7 @@ import StatEditor from '../common/StatEditor';
 import EquipmentSlots from '../common/EquipmentSlots';
 import SetHeader from './SetHeader';
 import StatTable from '../common/StatTable';
+import SetBuilderKeyboardShortcuts from './SetBuilderKeyboardShortcuts';
 
 const { TabPane } = Tabs;
 
@@ -102,27 +103,6 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
   const closeBuffModal = React.useCallback(() => {
     setBuffModalOpen(false);
   }, []);
-
-  React.useEffect(() => {
-    function onKeyDown(e: KeyboardEvent) {
-      if (e.keyCode === 27 || e.code === 'Escape') {
-        // escape key
-        selectItemSlot(null);
-      }
-    }
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
-  }, []);
-
-  React.useEffect(() => {
-    const searchBar = document.getElementById(
-      SEARCH_BAR_ID,
-    ) as HTMLInputElement;
-    if (searchBar) {
-      searchBar.focus();
-      searchBar.setSelectionRange(0, searchBar.value.length);
-    }
-  }, [selectedItemSlot?.id]);
 
   const [dofusClassId, setDofusClassId] = React.useState<string | undefined>(
     customSet?.defaultClass?.id,
@@ -274,6 +254,11 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
         visible={buffModalOpen}
         closeBuffModal={closeBuffModal}
         customSet={customSet}
+      />
+      <SetBuilderKeyboardShortcuts
+        selectItemSlot={selectItemSlot}
+        customSet={customSet}
+        selectedItemSlot={selectedItemSlot}
       />
     </>
   );

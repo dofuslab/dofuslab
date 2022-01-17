@@ -1,6 +1,7 @@
 {
   "ACTIONS": "Actions",
   "ADD_TAG": "Add tag",
+  "ADVANCED_MODE": "Advanced mode",
   "ANONYMOUS": "Anonymous",
   "AVAILABLE_AT_LEVEL": "Available at level {{level}}",
   "BACK": "Back",
@@ -35,7 +36,6 @@
   "DELETE": "Delete",
   "DELETE_BUILD": "Delete",
   "DELETE_BUILD_SUCCESS": "Build successfully deleted.",
-  "DOFUSLAB_CLASSIC": "DofusLab Classic",
   "DUPLICATE_DOFUS_OR_TROPHY": "You have equipped multiple copies of the same Dofus, trophy, or prysmaradite.",
   "DUPLICATE_ITEM_IN_SET": "You have equipped multiple copies of the same item in a set.",
   "EDIT_BUILD": "Edit",
@@ -62,6 +62,7 @@
   "MALE": "Male",
   "MAX_NUM": "Max {{max}}",
   "MEMBER_SINCE": "Member since {{date}}",
+  "MENU": "Menu",
   "MULTIPLE_AP_EXO": "You have multiple AP exos.",
   "MULTIPLE_MP_EXO": "You have multiple MP exos.",
   "MULTIPLE_PRYSMARADITES": "You have multiple prysmaradites equipped.",

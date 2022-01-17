@@ -80,7 +80,7 @@ const EquippedItemCard: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation(['common', 'mage', 'stat']);
 
-  const deleteItem = useDeleteItemMutation(itemSlotId, customSet);
+  const deleteItem = useDeleteItemMutation(customSet);
 
   const [quickExo] = useMutation<
     setEquippedItemExo,
@@ -108,8 +108,8 @@ const EquippedItemCard: React.FC<Props> = ({
   });
 
   const onDelete = React.useCallback(() => {
-    deleteItem();
-  }, [deleteItem]);
+    deleteItem(itemSlotId);
+  }, [deleteItem, itemSlotId]);
 
   const client = useApolloClient();
 

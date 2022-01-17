@@ -1,6 +1,7 @@
 {
   "ACTIONS": "Actions",
   "ADD_TAG": "Ajouter un tag",
+  "ADVANCED_MODE": "Mode avancé",
   "ANONYMOUS": "Anonyme",
   "AVAILABLE_AT_LEVEL": "Disponible au niveau {{level}}",
   "BACK": "Retour",
@@ -35,7 +36,6 @@
   "DELETE": "Supprimer",
   "DELETE_BUILD": "Supprimer",
   "DELETE_BUILD_SUCCESS": "Ensemble supprimé",
-  "DOFUSLAB_CLASSIC": "DofusLab Classic",
   "DUPLICATE_DOFUS_OR_TROPHY": "Tu as équipé plusieurs fois le même dofus, trophée ou prysmaradite.",
   "DUPLICATE_ITEM_IN_SET": "Tu as équipé plusieurs fois le même item d'une panoplie.",
   "EDIT_BUILD": "Modifier l'ensemble",
@@ -63,6 +63,7 @@
   "MALE": "Homme",
   "MAX_NUM": "Max {{max}}",
   "MEMBER_SINCE": "Membre depuis {{date}}",
+  "MENU": "Menu",
   "MULTIPLE_AP_EXO": "Tu as plusieurs exos PA.",
   "MULTIPLE_MP_EXO": "Tu as plusieurs exos PM.",
   "MULTIPLE_PRYSMARADITES": "Tu as plusieurs prysmaradites équipés.",

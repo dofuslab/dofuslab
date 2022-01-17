@@ -1,6 +1,7 @@
 {
   "ACTIONS": "Ações",
   "ADD_TAG": "__STRING_NOT_TRANSLATED__",
+  "ADVANCED_MODE": "__STRING_NOT_TRANSLATED__",
   "ANONYMOUS": "Anônimo",
   "AVAILABLE_AT_LEVEL": "Disponível no nível {{level}}",
   "BACK": "Voltar",
@@ -35,7 +36,6 @@
   "DELETE": "Apagar",
   "DELETE_BUILD": "Apagar",
   "DELETE_BUILD_SUCCESS": "Build apagado com sucesso.",
-  "DOFUSLAB_CLASSIC": "DofusLab Clássico",
   "DUPLICATE_DOFUS_OR_TROPHY": "Você equipou várias cópias do mesmo Dofus, troféu ou prismaradita.",
   "DUPLICATE_ITEM_IN_SET": "Você equipou várias cópias do mesmo item em um set.",
   "EDIT_BUILD": "Editar build",
@@ -62,6 +62,7 @@
   "MALE": "__STRING_NOT_TRANSLATED__",
   "MAX_NUM": "Máximo {{max}}",
   "MEMBER_SINCE": "__STRING_NOT_TRANSLATED__",
+  "MENU": "__STRING_NOT_TRANSLATED__",
   "MULTIPLE_AP_EXO": "Você tem vários exos PA.",
   "MULTIPLE_MP_EXO": "Você tem vários exos PM.",
   "MULTIPLE_PRYSMARADITES": "Você tem vários prismaraditas equipados.",

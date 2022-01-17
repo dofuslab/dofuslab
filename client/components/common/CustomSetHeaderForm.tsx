@@ -175,6 +175,7 @@ const CustomSetHeaderForm: React.FC<Props> = ({
             fontSize: '1.2rem',
             fontWeight: 500,
             maxWidth: '100%',
+            color: 'rgba(255, 255, 255, 0.85)',
             [mq[1]]: {
               flex: '0 1 auto',
               fontSize: '1.5rem',
