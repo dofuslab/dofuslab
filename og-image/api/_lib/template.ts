@@ -125,7 +125,15 @@ body {
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
-  const { text, images, dofusClass, tags, gender, level } = parsedReq;
+  const {
+    text,
+    images,
+    dofusClass,
+    tags,
+    gender,
+    level,
+    logoImage,
+  } = parsedReq;
   const result = `
 <!DOCTYPE html>
 <html>
@@ -172,9 +180,7 @@ export function getHtml(parsedReq: ParsedRequest) {
               .map(() => '<div class="item"></div>')
               .join('')}
         </div>
-        <img src="${ROOT}/logo/${
-    Math.random() > 0.99 ? 'DL-Full_Dark_Crimson.svg' : 'DL-Full_Dark.svg'
-  }" class="dofuslab-logo">
+        <img src="${ROOT}/logo/${logoImage}" class="dofuslab-logo">
     </body>
 </html>
   `;

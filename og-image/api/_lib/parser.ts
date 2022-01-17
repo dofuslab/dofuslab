@@ -34,6 +34,17 @@ function parseMultiParams(
   return result;
 }
 
+function stringToNumber(str: string) {
+  if (Number.isInteger(Number(str))) return Number(str);
+  return str.split('').reduce((acc, curr) => {
+    return acc + curr.charCodeAt(0);
+  }, 0);
+}
+
+function getLogoUrlFromHash(hash: number) {
+  return hash % 100 > 99 ? 'DL-Full_Dark_Crimson.svg' : 'DL-Full_Dark.svg';
+}
+
 export function parseRequest(
   // type seems to be incorrect, rawPath provided instead of path
   req: APIGatewayEvent & { rawPath?: string },
@@ -48,6 +59,8 @@ export function parseRequest(
   tags = parseMultiParams('tags', req) || [];
 
   dofusClass = req.queryStringParameters?.class || null;
+
+  let hash = 0;
 
   const arr = (rawPath || '/').slice(1).split('.');
   let text = '';
@@ -66,6 +79,17 @@ export function parseRequest(
 
   const parsedLevel = Number.isInteger(levelParam) ? levelParam : undefined;
 
+  hash = [text, ...tags].reduce(
+    (acc, curr) => acc + stringToNumber(curr),
+    parsedLevel || 0,
+  );
+
+  if (parsedGender === 'M') {
+    hash += 1;
+  } else if (parsedGender === 'F') {
+    hash += 2;
+  }
+
   const parsedRequestBase = {
     text: decodeURIComponent(text),
     dofusClass,
@@ -79,6 +103,9 @@ export function parseRequest(
     SLOTS.forEach((slot) => {
       if (slot === 'ring' || slot === 'dofus') {
         parseMultiParams(slot, req).forEach((itemId) => {
+          if (itemId) {
+            hash += stringToNumber(itemId);
+          }
           images.push(
             itemId
               ? { url: getItemImageUrl(itemId), type: ImageType.ITEM }
@@ -87,6 +114,9 @@ export function parseRequest(
         });
       } else {
         const itemId = req.queryStringParameters?.[slot];
+        if (itemId) {
+          hash += stringToNumber(itemId);
+        }
         images.push(
           itemId
             ? { url: getItemImageUrl(itemId), type: ImageType.ITEM }
@@ -95,7 +125,11 @@ export function parseRequest(
       }
     });
 
-    return { ...parsedRequestBase, images };
+    return {
+      ...parsedRequestBase,
+      images,
+      logoImage: getLogoUrlFromHash(hash),
+    };
   }
 
   const parsedRequest = {
@@ -104,6 +138,8 @@ export function parseRequest(
       url: getItemImageUrl(itemId),
       type: ImageType.ITEM,
     })),
+    logoImage: getLogoUrlFromHash(hash),
   };
+
   return parsedRequest;
 }
