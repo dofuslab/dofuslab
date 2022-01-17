@@ -158,6 +158,7 @@ const SetHeader: React.FC<Props> = ({
             display: 'grid',
             gridTemplateColumns: 'auto auto',
             gridColumnGap: 12,
+            fontSize: '0.75rem',
           }}
         >
           <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
@@ -200,6 +201,7 @@ const SetHeader: React.FC<Props> = ({
               display: 'grid',
               gridTemplateColumns: 'auto auto',
               gridColumnGap: 12,
+              fontSize: '0.75rem',
             }}
           >
             <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
@@ -315,12 +317,15 @@ const SetHeader: React.FC<Props> = ({
                 isClassic={isClassic}
               />
             )}
-            {customSet && isOwner && !isEditable && editBuildButton}
+
             {customSet && (
-              <PublicBuildActions
-                customSet={customSet}
-                css={{ marginLeft: 'auto' }}
-              />
+              <div css={{ marginLeft: 'auto', display: 'flex' }}>
+                {isOwner && !isEditable && editBuildButton}
+                <PublicBuildActions
+                  customSet={customSet}
+                  css={{ marginLeft: 12 }}
+                />
+              </div>
             )}
           </div>
           <DefaultClassModal
