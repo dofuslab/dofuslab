@@ -98,7 +98,7 @@ const getDonateElement = (t: TFunction) => {
 };
 
 const Layout = ({ children, showSwitch }: LayoutProps) => {
-  const { t, i18n } = useTranslation(['auth', 'common']);
+  const { t, i18n } = useTranslation(['auth', 'common', 'keyboard_shortcuts']);
   const client = useApolloClient();
   const { data } = useQuery<CurrentUserQueryType>(currentUserQuery);
   const [logout] = useMutation<LogoutMutationType>(logoutMutation);
@@ -228,27 +228,11 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
         );
         return (
           <div css={{ display: 'flex', marginRight: 12, alignItems: 'center' }}>
-            {/* <a
-              css={{
-                color: theme.text?.default,
-                opacity: isClassic ? 0.3 : 1,
-                transition: 'all 0.3s ease-in-out',
-                '&:hover': {
-                  opacity: 1,
-                },
-                display: 'none',
-                [mq[2]]: {
-                  display: 'inline',
-                },
-              }}
-              onClick={() => {
-                setIsClassic(true);
-              }}
-            >
-              DofusLab
-            </a> */}
             <Media lessThan="sm">
-              <Tooltip title={t('ADVANCED_MODE', { ns: 'common' })}>
+              <Tooltip
+                css={{ fontSize: '0.75rem' }}
+                title={t('ADVANCED_MODE', { ns: 'common' })}
+              >
                 {switchElement}
               </Tooltip>
             </Media>
@@ -442,7 +426,9 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                               icon={faKeyboard}
                               css={{ marginRight: 8 }}
                             />
-                            {t('KEYBOARD_SHORTCUTS', { ns: 'common' })}
+                            {t('KEYBOARD_SHORTCUTS', {
+                              ns: 'keyboard_shortcuts',
+                            })}
                           </Menu.Item>
                         </Menu.ItemGroup>
                       </Menu>
@@ -467,6 +453,9 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
             </div>
           ) : (
             <div css={{ display: 'flex', alignItems: 'center' }}>
+              <Button onClick={openKeyboardShortcuts}>
+                {t('SHORTCUTS', { ns: 'keyboard_shortcuts' })}
+              </Button>
               {langSelect}
               <Button
                 onClick={openLoginModal}

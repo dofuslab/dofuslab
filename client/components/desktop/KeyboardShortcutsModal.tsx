@@ -1,49 +1,108 @@
 /** @jsx jsx */
 
 import React from 'react';
-import { ClassNames, jsx } from '@emotion/core';
-import { Modal, Table } from 'antd';
+import { jsx } from '@emotion/core';
+import { Divider, List, Modal, Table } from 'antd';
+import { ColumnType } from 'antd/lib/table';
 
 import { useTranslation } from 'i18n';
 import { useTheme } from 'emotion-theming';
 import { Theme } from 'common/types';
+import { TFunction } from 'next-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 interface Props {
   visible: boolean;
   onClose: () => void;
 }
 
+const expandableShortcuts = [
+  { slot: 'HAT', key: 'H' },
+  { slot: 'CLOAK', key: 'C' },
+  { slot: 'AMULET', key: 'A' },
+  { slot: 'RING', key: 'R' },
+  { slot: 'BELT', key: 'B' },
+  { slot: 'BOOTS', key: 'O' },
+  { slot: 'WEAPON', key: 'W' },
+  { slot: 'SHIELD', key: 'S' },
+  { slot: 'DOFUS', key: 'D' },
+  { slot: 'PET', key: 'P' },
+];
+
 const shortcuts = [
   { operation: 'SELECT_SEARCH_BAR', shortcuts: { keys: ['ENTER', 'SPACE'] } },
   { operation: 'DESELECT_SEARCH_BAR', shortcuts: { keys: ['ESCAPE'] } },
   { operation: 'DESELECT_ITEM_SLOT', shortcuts: { keys: ['ESCAPE'] } },
   {
-    operation: 'SELECT_ITEM_SLOTS',
-    shortcuts: { keys: ['ESCAPE'] },
-    expandableShortcuts: [
-      { slot: 'HAT', key: 'H' },
-      { slot: 'CLOAK', key: 'C' },
-      { slot: 'AMULET', key: 'A' },
-      { slot: 'RING', key: 'R' },
-      { slot: 'BELT', key: 'B' },
-      { slot: 'BOOTS', key: 'O' },
-      { slot: 'WEAPON', key: 'W' },
-      { slot: 'SHIELD', key: 'S' },
-      { slot: 'DOFUS', key: 'D' },
-      { slot: 'PET', key: 'P' },
-    ],
+    operation: 'SELECT_ITEM_SLOT',
+    shortcuts: { letterKeys: expandableShortcuts.map((s) => s.key) },
+    expandableShortcuts,
   },
   {
     operation: 'NAVIGATE_ITEM_SLOTS',
-    shortcuts: { keysElement: <div>1...9</div> },
+    shortcuts: {
+      keysElement: (
+        <div css={{ display: 'flex', gap: 4 }}>
+          <KeyboardKey>
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </KeyboardKey>
+          <KeyboardKey>
+            <FontAwesomeIcon icon={faArrowRight} />
+          </KeyboardKey>
+        </div>
+      ),
+    },
   },
   {
     operation: 'EQUIP_NTH_ITEM_SET',
-    shortcuts: { keysElement: <div>1...9</div> },
+    shortcuts: {
+      keysElement: (
+        <div>
+          {Array(9)
+            .fill(null)
+            .map((_, idx) => (
+              <KeyboardKey>{idx + 1}</KeyboardKey>
+            ))}
+        </div>
+      ),
+    },
   },
   {
     operation: 'DELETE_SELECTED_ITEM',
     shortcuts: { keys: ['BACKSPACE', 'DELETE'] },
+  },
+];
+
+const getColumns: (t: TFunction) => Array<ColumnType<typeof shortcuts[0]>> = (
+  t: TFunction,
+) => [
+  {
+    dataIndex: 'shortcuts',
+    render: (v) => {
+      if (v.keysElement) {
+        return v.keysElement;
+      }
+
+      return (
+        <div css={{ display: 'flex', gap: 4 }}>
+          {v.keys?.map((k: string) => (
+            <KeyboardKey key={k}>{t(`KEYS.${k}`)}</KeyboardKey>
+          ))}
+          {v.letterKeys?.map((k: string) => (
+            <KeyboardKey key={k}>{k}</KeyboardKey>
+          ))}
+        </div>
+      );
+    },
+    width: 120,
+  },
+  Table.EXPAND_COLUMN,
+  {
+    dataIndex: 'operation',
+    render: (k) => {
+      return t(`OPERATIONS.${k}`);
+    },
   },
 ];
 
@@ -76,54 +135,40 @@ const KeyboardShortcutsModal: React.FC<Props> = ({ visible, onClose }) => {
       onCancel={onClose}
       footer={null}
     >
-      {/* <div
-        css={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 4 }}
-      >
-        {shortcuts.map(({ operation, keys, keysElement }) => (
-          <React.Fragment key={operation}>
-            <div>{t(`OPERATIONS.${operation}`)}</div>
-            <div>
-              {keysElement ||
-                keys?.map((k) => (
-                  <KeyboardKey key={k}>{t(`KEYS.${k}`)}</KeyboardKey>
-                ))}
-            </div>
-          </React.Fragment>
-        ))}
-      </div> */}
-
+      <div>{t('ONLY_AVAILABLE_ADVANCED_MODE')}</div>
+      <Divider css={{ margin: '16px 0 0' }} />
       <Table
         dataSource={shortcuts}
         pagination={{ hideOnSinglePage: true }}
-        expandable={{ rowExpandable: (record) => !!record.expandableShortcuts }}
-      >
-        <Table.Column
-          title={t('KEYBOARD_SHORTCUT')}
-          dataIndex="shortcuts"
-          key="shortcut"
-          render={(v) => {
-            if (v.keysElement) {
-              return v.keysElement;
-            }
-
-            return (
-              <div css={{ display: 'flex', gap: 4 }}>
-                {v.keys?.map((k) => (
-                  <KeyboardKey key={k}>{t(`KEYS.${k}`)}</KeyboardKey>
-                ))}
-              </div>
-            );
-          }}
-        />
-        <Table.Column
-          title={t('DESCRIPTION')}
-          dataIndex={['operation']}
-          key="description"
-          render={(k) => {
-            return t(`OPERATIONS.${k}`);
-          }}
-        />
-      </Table>
+        expandable={{
+          defaultExpandAllRows: true,
+          rowExpandable: (record) => !!record.expandableShortcuts,
+          expandedRowRender: (record) => (
+            <List
+              grid={{ gutter: 8, column: 3 }}
+              dataSource={record.expandableShortcuts}
+              renderItem={(es) => (
+                <List.Item
+                  css={{
+                    display: 'flex !important',
+                    justifyContent: 'flex-start',
+                    gap: 8,
+                    alignItems: 'center',
+                  }}
+                >
+                  <div>
+                    <KeyboardKey>{es.key}</KeyboardKey>
+                  </div>
+                  <div>{t(`SLOTS.${es.slot}`)}</div>
+                </List.Item>
+              )}
+              size="small"
+            />
+          ),
+        }}
+        showHeader={false}
+        columns={getColumns(t)}
+      ></Table>
     </Modal>
   );
 };
