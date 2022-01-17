@@ -1,0 +1,36 @@
+{
+  "DESCRIPTION": "Description",
+  "KEYBOARD_SHORTCUT": "Keyboard shortcut",
+  "KEYBOARD_SHORTCUTS": "Keyboard shortcuts",
+  "KEYS": {
+    "BACKSPACE": "Backspace",
+    "DELETE": "Del",
+    "ENTER": "Enter",
+    "ESCAPE": "Esc",
+    "SPACE": "Space"
+  },
+  "ONLY_AVAILABLE_ADVANCED_MODE": "Keyboard shortcuts are available only in advanced mode.",
+  "OPERATIONS": {
+    "DELETE_SELECTED_ITEM": "Delete selected item",
+    "DESELECT_ITEM_SLOT": "Deselect item slot",
+    "DESELECT_SEARCH_BAR": "Deselect search bar",
+    "EQUIP_NTH_ITEM_SET": "Equip nth item/set",
+    "NAVIGATE_ITEM_SLOTS": "Navigate item slots",
+    "SELECT_ITEM_SLOT": "Select item slot",
+    "SELECT_SEARCH_BAR": "Select search bar",
+    "TOGGLE_ITEM_SET_SWITCH": "Toggle item/set switch"
+  },
+  "SHORTCUTS": "Shortcuts",
+  "SLOTS": {
+    "AMULET": "Amulet",
+    "BELT": "Belt",
+    "BOOTS": "Boots",
+    "CLOAK": "Cloak",
+    "DOFUS": "Dofus",
+    "HAT": "Hat",
+    "PET": "Pet",
+    "RING": "Ring",
+    "SHIELD": "Shield",
+    "WEAPON": "Weapon"
+  }
+}

@@ -98,7 +98,7 @@ const getDonateElement = (t: TFunction) => {
 };
 
 const Layout = ({ children, showSwitch }: LayoutProps) => {
-  const { t, i18n } = useTranslation(['auth', 'common', 'keyboard_shortcuts']);
+  const { t, i18n } = useTranslation(['auth', 'common', 'keyboard_shortcut']);
   const client = useApolloClient();
   const { data } = useQuery<CurrentUserQueryType>(currentUserQuery);
   const [logout] = useMutation<LogoutMutationType>(logoutMutation);
@@ -427,7 +427,7 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                               css={{ marginRight: 8 }}
                             />
                             {t('KEYBOARD_SHORTCUTS', {
-                              ns: 'keyboard_shortcuts',
+                              ns: 'keyboard_shortcut',
                             })}
                           </Menu.Item>
                         </Menu.ItemGroup>
@@ -454,7 +454,7 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
           ) : (
             <div css={{ display: 'flex', alignItems: 'center' }}>
               <Button onClick={openKeyboardShortcuts}>
-                {t('SHORTCUTS', { ns: 'keyboard_shortcuts' })}
+                {t('SHORTCUTS', { ns: 'keyboard_shortcut' })}
               </Button>
               {langSelect}
               <Button

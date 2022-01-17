@@ -31,7 +31,7 @@ module.exports = {
       'stat',
       'status',
       'weapon_spell_effect',
-      'keyboard_shortcuts',
+      'keyboard_shortcut',
     ],
     defaultLng: 'en',
     defaultNs: DEFAULT_NS,
