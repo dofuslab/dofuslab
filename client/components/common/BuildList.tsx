@@ -54,9 +54,15 @@ interface Props {
   username: string;
   onClose?: () => void;
   isEditable: boolean;
+  getScrollParent?: () => HTMLElement | null;
 }
 
-const BuildList: React.FC<Props> = ({ username, onClose, isEditable }) => {
+const BuildList: React.FC<Props> = ({
+  username,
+  onClose,
+  isEditable,
+  getScrollParent,
+}) => {
   const { t } = useTranslation();
 
   const [mutate, { loading: createLoading }] = useMutation<createCustomSet>(
@@ -310,7 +316,7 @@ const BuildList: React.FC<Props> = ({ username, onClose, isEditable }) => {
       <InfiniteScroll
         hasMore={userBuilds?.userByName?.customSets.pageInfo.hasNextPage}
         loadMore={onLoadMore}
-        useWindow={false}
+        useWindow={!getScrollParent}
         threshold={THRESHOLD}
         css={{
           display: 'flex',
@@ -325,6 +331,7 @@ const BuildList: React.FC<Props> = ({ username, onClose, isEditable }) => {
             margin: '0 auto',
           },
         }}
+        getScrollParent={getScrollParent}
         loader={
           <React.Fragment key="frag">
             {Array(4)

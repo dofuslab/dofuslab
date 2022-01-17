@@ -133,6 +133,8 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
     setShowBuildSettings(false);
   }, []);
 
+  const [isReady, setIsReady] = React.useState(false);
+
   const logoutHandler = React.useCallback(async () => {
     const { data: logoutData } = await logout();
     if (logoutData?.logoutUser?.ok) {
@@ -178,6 +180,20 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
   );
 
   const theme = useTheme<Theme>();
+
+  const drawerBody = React.useRef<HTMLDivElement | null>(null);
+
+  React.useEffect(() => {
+    if (!isReady) {
+      drawerBody.current = document.getElementsByClassName(
+        'ant-drawer-body',
+      )[0] as HTMLDivElement;
+
+      if (drawerBody.current) {
+        setIsReady(true);
+      }
+    }
+  });
 
   const classicSwitch = (
     <ClassicContext.Consumer>
@@ -353,12 +369,18 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                     closable
                     onClose={closeDrawer}
                     width="min(100%, 1000px)"
+                    forceRender
                   >
-                    <BuildList
-                      onClose={closeDrawer}
-                      username={data.currentUser.username}
-                      isEditable
-                    />
+                    {isReady && (
+                      <BuildList
+                        onClose={closeDrawer}
+                        username={data.currentUser.username}
+                        isEditable
+                        getScrollParent={() => {
+                          return drawerBody.current;
+                        }}
+                      />
+                    )}
                   </Drawer>
                   <Dropdown
                     overlay={

@@ -33,7 +33,7 @@ const MyBuildsPage: NextPage = () => {
         <title>{getTitle(t('MY_BUILDS'))}</title>
       </Head>
       {data?.currentUser && (
-        <BuildList username={data.currentUser.username} isEditable={true} />
+        <BuildList username={data.currentUser.username} isEditable />
       )}
     </Layout>
   );

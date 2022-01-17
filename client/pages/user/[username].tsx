@@ -52,7 +52,7 @@ const UserProfilePage: NextPage = () => {
     <>
       <Head>
         <title>{getTitle(t('USER_PROFILE', { username: username }))}</title>
-        <meta property="og:site_name" content="Dofuslab" />
+        <meta property="og:site_name" content="DofusLab" />
         <meta property="og:type" content="profile" />
         <meta
           property="og:image:url"
