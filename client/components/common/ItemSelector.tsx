@@ -10,12 +10,19 @@ import { items, itemsVariables } from 'graphql/queries/__generated__/items';
 import { getResponsiveGridStyle } from 'common/mixins';
 import { SharedFilters } from 'common/types';
 import { mq, getSelectorNumCols } from 'common/constants';
-import { ItemSet } from 'common/type-aliases';
+import { Item, ItemSet } from 'common/type-aliases';
 import SetModal from './SetModal';
 
 import SkeletonCardsLoader from './SkeletonCardsLoader';
 import ItemCardWithContext, { SharedProps } from './ItemCardWithContext';
-import { isUUID } from 'common/utils';
+import {
+  findEmptyOrOnlySlotId,
+  findNextEmptySlotIds,
+  isUUID,
+  useEquipItemMutation,
+} from 'common/utils';
+import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 
 const PAGE_SIZE = 24;
 
@@ -59,6 +66,8 @@ const ItemSelector: React.FC<Props> = ({
     },
   );
 
+  const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);
+
   const onLoadMore = React.useCallback(async () => {
     if (!data || !data.items.pageInfo.hasNextPage) {
       return () => {
@@ -86,6 +95,61 @@ const ItemSelector: React.FC<Props> = ({
   const closeSetModal = React.useCallback(() => {
     setSetModalVisible(false);
   }, [setSetModalVisible]);
+
+  const mutate = useEquipItemMutation();
+
+  const equipItem = React.useCallback(
+    (item: Item) => {
+      if (isClassic || isMobile) return;
+      const remainingSlotIds = selectedItemSlot
+        ? findNextEmptySlotIds(item.itemType, selectedItemSlot.id, customSet)
+        : [];
+      const itemSlotId =
+        selectedItemSlot?.id || findEmptyOrOnlySlotId(item.itemType, customSet);
+      const nextSlotId = remainingSlotIds[0];
+      if (itemSlotId) {
+        let nextSlot = null;
+        if (nextSlotId && itemSlotsData) {
+          nextSlot =
+            itemSlotsData.itemSlots.find((slot) => slot.id === nextSlotId) ||
+            null;
+        }
+        if (selectItemSlot) {
+          selectItemSlot(nextSlot);
+        }
+
+        mutate(itemSlotId, item);
+      }
+    },
+    [mutate, selectItemSlot, selectedItemSlot, customSet, isClassic],
+  );
+
+  React.useEffect(() => {
+    const listener = (e: KeyboardEvent) => {
+      const keyIndex = Number(e.key) - 1;
+
+      if (!data) return;
+
+      const numSuggestions = data.itemSuggestions.length;
+
+      if (Number.isInteger(keyIndex) && keyIndex >= 0 && keyIndex <= 8) {
+        if (keyIndex < numSuggestions) {
+          equipItem(data.itemSuggestions[keyIndex]);
+        } else {
+          const idx = keyIndex - numSuggestions;
+
+          if (data.items.edges[idx]) {
+            equipItem(data.items.edges[idx].node);
+          }
+        }
+      }
+    };
+    document.addEventListener('keydown', listener);
+
+    return () => {
+      document.removeEventListener('keydown', listener);
+    };
+  }, [data]);
 
   const filtersUnchanged =
     !filters.search &&
@@ -140,21 +204,22 @@ const ItemSelector: React.FC<Props> = ({
                 customSet={customSet}
               />
             ))}
-          {(data?.items.edges ?? [])
-            .map((edge) => edge.node)
-            .map((item) => (
-              <ItemCardWithContext
-                key={item.id}
-                item={item}
-                selectedItemSlot={selectedItemSlot}
-                selectItemSlot={selectItemSlot}
-                isMobile={isMobile}
-                isClassic={isClassic}
-                customSetItemIds={customSetItemIds}
-                openSetModal={openSetModal}
-                customSet={customSet}
-              />
-            ))}
+          {data &&
+            data.items.edges
+              .map((edge) => edge.node)
+              .map((item) => (
+                <ItemCardWithContext
+                  key={item.id}
+                  item={item}
+                  selectedItemSlot={selectedItemSlot}
+                  selectItemSlot={selectItemSlot}
+                  isMobile={isMobile}
+                  isClassic={isClassic}
+                  customSetItemIds={customSetItemIds}
+                  openSetModal={openSetModal}
+                  customSet={customSet}
+                />
+              ))}
         </>
       )}
       {selectedSet && (

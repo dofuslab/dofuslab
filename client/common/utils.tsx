@@ -14,6 +14,7 @@ import groupBy from 'lodash/groupBy';
 import { TFunction } from 'next-i18next';
 import CustomSetFragment from 'graphql/fragments/customSet.graphql';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import ItemFragment from 'graphql/fragments/item.graphql';
 import Lockr from 'lockr';
 
 import {
@@ -311,6 +312,24 @@ export const getStatsFromCustomSet = (customSet?: CustomSet | null) => {
   return mergeStatObjs(statsFromSetBonuses, statsFromCustomSet);
 };
 
+export const findFirstEmptySlot = (
+  itemTypeEnName: 'Ring' | 'Dofus',
+  itemSlots: Array<ItemSlot>,
+  customSet?: CustomSet | null,
+): ItemSlot | undefined => {
+  let orderedFilteredSlots = itemSlots
+    .filter((s) => s.enName === itemTypeEnName)
+    .sort((s1, s2) => s1.order - s2.order);
+
+  customSet?.equippedItems.forEach((ei) => {
+    orderedFilteredSlots = orderedFilteredSlots.filter(
+      (s) => s.id !== ei.slot.id,
+    );
+  });
+
+  return orderedFilteredSlots[0];
+};
+
 export const findNextEmptySlotIds = (
   itemType: ItemTypeWithSlots,
   currentSlotId: string,
@@ -412,7 +431,7 @@ export const getCustomSet = (
   return customSet;
 };
 
-export const useEquipItemMutation = (item: Item) => {
+export const useEquipItemMutation = (item?: Item) => {
   const router = useRouter();
   const { customSetId: routerCustomSetId } = router.query;
 
@@ -431,7 +450,12 @@ export const useEquipItemMutation = (item: Item) => {
     refetchQueries: () => ['myCustomSets'],
     optimisticResponse:
       customSetId && itemSlotsData
-        ? ({ itemSlotId }) => {
+        ? ({ itemSlotId, itemId }) => {
+            const cachedItem = client.readFragment({
+              fragment: ItemFragment,
+              id: `Item:${itemId}`,
+              fragmentName: 'item',
+            });
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             const customSet = getCustomSet(client, customSetId)!;
 
@@ -452,14 +476,14 @@ export const useEquipItemMutation = (item: Item) => {
 
               equippedItems.splice(oldEquippedItemIdx, 1, {
                 ...oldEquippedItem,
-                item,
+                item: cachedItem,
               });
             } else {
               equippedItems.push({
                 id: `equipped-item-${slot.id}`,
                 exos: [],
                 slot,
-                item,
+                item: cachedItem,
                 weaponElementMage: null,
                 __typename: 'EquippedItem',
               });
@@ -481,7 +505,7 @@ export const useEquipItemMutation = (item: Item) => {
   const { t } = useTranslation('common');
 
   const onClick = useCallback(
-    async (itemSlotId?: string) => {
+    async (itemSlotId?: string, item1?: Item) => {
       if (!itemSlotId) return;
       const customSet = customSetId ? getCustomSet(client, customSetId) : null;
       const ok = await checkAuthentication(client, t, customSet);
@@ -489,7 +513,7 @@ export const useEquipItemMutation = (item: Item) => {
       const { data } = await updateCustomSetItemMutate({
         variables: {
           customSetId,
-          itemId: item.id,
+          itemId: item1?.id || item?.id,
           itemSlotId,
         },
       });
@@ -583,43 +607,44 @@ export const useEquipSetMutation = (
   return [onClick, { data, loading, error }];
 };
 
-export const useDeleteItemMutation = (
-  itemSlotId: string,
-  customSet: CustomSet,
-) => {
+export const useDeleteItemMutation = (customSet?: CustomSet | null) => {
   const [mutate] = useMutation<
     deleteCustomSetItem,
     deleteCustomSetItemVariables
   >(DeleteCustomSetItemMutation, {
-    variables: { itemSlotId, customSetId: customSet.id },
-    optimisticResponse: ({ itemSlotId: slotId }) => ({
-      deleteCustomSetItem: {
-        customSet: {
-          id: customSet.id,
-          lastModified: Date.now(),
-          equippedItems: [
-            ...customSet.equippedItems
-              .filter((equippedItem) => equippedItem.slot.id !== slotId)
-              .map(({ id }) => ({
-                id,
-                __typename: 'EquippedItem' as const,
-              })),
-          ],
-          __typename: 'CustomSet',
-        },
-        __typename: 'DeleteCustomSetItem',
-      },
-    }),
+    optimisticResponse: customSet
+      ? ({ itemSlotId: slotId }) => ({
+          deleteCustomSetItem: {
+            customSet: {
+              id: customSet.id,
+              lastModified: Date.now(),
+              equippedItems: [
+                ...customSet.equippedItems
+                  .filter((equippedItem) => equippedItem.slot.id !== slotId)
+                  .map(({ id }) => ({
+                    id,
+                    __typename: 'EquippedItem' as const,
+                  })),
+              ],
+              __typename: 'CustomSet',
+            },
+            __typename: 'DeleteCustomSetItem',
+          },
+        })
+      : undefined,
   });
 
   const client = useApolloClient();
   const { t } = useTranslation('common');
 
-  const onDelete = useCallback(async () => {
-    const ok = await checkAuthentication(client, t, customSet);
-    if (!ok) return null;
-    return mutate();
-  }, [mutate, customSet]);
+  const onDelete = useCallback(
+    async (itemSlotId: string) => {
+      const ok = await checkAuthentication(client, t, customSet);
+      if (!ok || !customSet) return null;
+      return mutate({ variables: { itemSlotId, customSetId: customSet.id } });
+    },
+    [mutate, customSet],
+  );
   return onDelete;
 };
 
@@ -1517,7 +1542,7 @@ export const stripQueryString = (asPath: string) => {
 export const ClassicContext = React.createContext<
   [boolean, (v: boolean) => void]
 >([
-  false,
+  true,
   () => {
     // no-op
   },
@@ -1563,7 +1588,7 @@ export const useClassic = () => {
     if (classic === null) {
       classic = sessionSettingsData?.classic ?? null;
     }
-    setIsClassic(classic || false);
+    setIsClassic(classic || true);
   }, []);
 
   const client = useApolloClient();

@@ -24,7 +24,12 @@ import NoSSR from 'react-no-ssr';
 import Link from 'next/link';
 import { TFunction } from 'next-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faKey, faMugHot, faWrench } from '@fortawesome/free-solid-svg-icons';
+import {
+  faKey,
+  faKeyboard,
+  faMugHot,
+  faWrench,
+} from '@fortawesome/free-solid-svg-icons';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { useTranslation, LANGUAGES, langToFullName } from 'i18n';
@@ -52,6 +57,7 @@ import DefaultBuildSettingsModal from 'components/common/DefaultBuildSettingsMod
 import BuildList from '../common/BuildList';
 import SignUpModal from '../common/SignUpModal';
 import LoginModal from '../common/LoginModal';
+import KeyboardShortcutsModal from './KeyboardShortcutsModal';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -134,6 +140,15 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
   }, []);
 
   const [isReady, setIsReady] = React.useState(false);
+  const [showKeyboardShortcuts, setShowKeyboardShortcuts] = React.useState(
+    false,
+  );
+  const openKeyboardShortcuts = React.useCallback(() => {
+    setShowKeyboardShortcuts(true);
+  }, []);
+  const closeKeyboardShortcuts = React.useCallback(() => {
+    setShowKeyboardShortcuts(false);
+  }, []);
 
   const logoutHandler = React.useCallback(async () => {
     const { data: logoutData } = await logout();
@@ -207,12 +222,37 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                 marginRight: 8,
               },
             }}
-            checked={isClassic}
-            onChange={setIsClassic}
+            checked={!isClassic}
+            onChange={(v) => setIsClassic(!v)}
           />
         );
         return (
           <div css={{ display: 'flex', marginRight: 12, alignItems: 'center' }}>
+            {/* <a
+              css={{
+                color: theme.text?.default,
+                opacity: isClassic ? 0.3 : 1,
+                transition: 'all 0.3s ease-in-out',
+                '&:hover': {
+                  opacity: 1,
+                },
+                display: 'none',
+                [mq[2]]: {
+                  display: 'inline',
+                },
+              }}
+              onClick={() => {
+                setIsClassic(true);
+              }}
+            >
+              DofusLab
+            </a> */}
+            <Media lessThan="sm">
+              <Tooltip title={t('ADVANCED_MODE', { ns: 'common' })}>
+                {switchElement}
+              </Tooltip>
+            </Media>
+            <Media greaterThanOrEqual="sm">{switchElement}</Media>
             <a
               css={{
                 color: theme.text?.default,
@@ -230,32 +270,7 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                 setIsClassic(false);
               }}
             >
-              DofusLab
-            </a>
-            <Media lessThan="sm">
-              <Tooltip title={t('DOFUSLAB_CLASSIC', { ns: 'common' })}>
-                {switchElement}
-              </Tooltip>
-            </Media>
-            <Media greaterThanOrEqual="sm">{switchElement}</Media>
-            <a
-              css={{
-                color: theme.text?.default,
-                opacity: isClassic ? 1 : 0.3,
-                transition: 'all 0.3s ease-in-out',
-                '&:hover': {
-                  opacity: 1,
-                },
-                display: 'none',
-                [mq[2]]: {
-                  display: 'inline',
-                },
-              }}
-              onClick={() => {
-                setIsClassic(true);
-              }}
-            >
-              DofusLab Classic
+              {t('ADVANCED_MODE', { ns: 'common' })}
             </a>
           </div>
         );
@@ -419,13 +434,23 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                             />
                             {t('DEFAULT_BUILD_SETTINGS', { ns: 'common' })}
                           </Menu.Item>
+                          <Menu.Item
+                            key="keyboard-shortcuts"
+                            onClick={openKeyboardShortcuts}
+                          >
+                            <FontAwesomeIcon
+                              icon={faKeyboard}
+                              css={{ marginRight: 8 }}
+                            />
+                            {t('KEYBOARD_SHORTCUTS', { ns: 'common' })}
+                          </Menu.Item>
                         </Menu.ItemGroup>
                       </Menu>
                     }
                   >
                     <span>
                       <Button css={{ marginLeft: 12 }}>
-                        {t('MY_ACCOUNT')}{' '}
+                        {t('MENU', { ns: 'common' })}{' '}
                         <DownOutlined css={{ fontSize: '12px' }} />
                       </Button>
                     </span>
@@ -551,6 +576,10 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
       <DefaultBuildSettingsModal
         visible={showBuildSettings}
         onClose={closeBuildSettings}
+      />
+      <KeyboardShortcutsModal
+        visible={showKeyboardShortcuts}
+        onClose={closeKeyboardShortcuts}
       />
     </AntdLayout>
   );

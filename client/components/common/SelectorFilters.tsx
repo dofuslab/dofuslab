@@ -61,6 +61,7 @@ const SelectorFilters: React.FC<Props> = ({
     : customSetIdParam;
   const [search, setSearch] = React.useState('');
   const [maxLevel, setMaxLevel] = React.useState(customSet?.level || 200);
+  const searchRef = React.useRef<Input>(null);
   const handleSearchChange = React.useCallback(
     (searchValue: string) => {
       dispatch({ type: 'SEARCH', search: searchValue });
@@ -120,15 +121,32 @@ const SelectorFilters: React.FC<Props> = ({
 
   const theme = useTheme<Theme>();
 
-  React.useEffect(() => {
-    const searchBar = document.getElementById(SEARCH_BAR_ID);
-    if (searchBar && !isMobile) {
-      searchBar.focus();
-    }
-  }, [isMobile]);
-
   let searchId = showSets ? 'sets-search' : SEARCH_BAR_ID;
   if (isMobile) searchId = `${searchId}-mobile`;
+
+  React.useEffect(() => {
+    const searchBar = searchRef.current?.input;
+    const searchOnKeyDown = (e: KeyboardEvent) => {
+      e.stopPropagation();
+      if (e.altKey || e.ctrlKey || e.shiftKey || e.metaKey) {
+        return;
+      }
+
+      if (e.key === 'Escape' && searchBar) {
+        searchBar.blur();
+      }
+    };
+
+    if (searchBar) {
+      searchBar.addEventListener('keydown', searchOnKeyDown);
+    }
+
+    return () => {
+      if (searchBar) {
+        searchBar.removeEventListener('keydown', searchOnKeyDown);
+      }
+    };
+  }, []);
 
   const buildLink = getBuildLink(customSetId);
 
@@ -223,6 +241,7 @@ const SelectorFilters: React.FC<Props> = ({
               '.ant-input': inputFontSize,
               '.ant-input-suffix': { display: 'flex', alignItems: 'center' },
             }}
+            ref={searchRef}
           />
           <InputNumber
             placeholder={t('LEVEL')}

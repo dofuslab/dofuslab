@@ -76,7 +76,7 @@ const EquippedItemWithStats: React.FC<Props> = ({
   className,
   popoverPlacement,
 }) => {
-  const deleteItem = useDeleteItemMutation(equippedItem.slot.id, customSet);
+  const deleteItem = useDeleteItemMutation(customSet);
   const stopPropagationCallback = React.useCallback(
     (e: React.MouseEvent<HTMLElement>) => {
       // prevent selection of item slot
@@ -89,10 +89,10 @@ const EquippedItemWithStats: React.FC<Props> = ({
       e.stopPropagation();
       e.preventDefault();
       if (deleteItem) {
-        deleteItem();
+        deleteItem(equippedItem.slot.id);
       }
     },
-    [deleteItem],
+    [deleteItem, equippedItem],
   );
 
   const { t } = useTranslation('common');

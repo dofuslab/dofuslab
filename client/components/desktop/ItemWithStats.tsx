@@ -20,15 +20,15 @@ const ItemWithStats: React.FC<Props> = ({
   deletable,
   customSet,
 }) => {
-  const deleteItem = useDeleteItemMutation(equippedItem.slot.id, customSet);
+  const deleteItem = useDeleteItemMutation(customSet);
   const onDelete = React.useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       e.stopPropagation();
       if (deleteItem) {
-        deleteItem();
+        deleteItem(equippedItem.slot.id);
       }
     },
-    [deleteItem],
+    [deleteItem, equippedItem],
   );
   return (
     <BasicItemWithStats

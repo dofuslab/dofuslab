@@ -75,6 +75,20 @@ const SetModal: React.FC<Props> = ({
     }
   }, [data, loading, isEditable]);
 
+  React.useEffect(() => {
+    const listener = (e: KeyboardEvent) => {
+      if (!data || !visible) return;
+      if (e.key === 'Enter') {
+        onOk();
+      }
+    };
+    document.addEventListener('keydown', listener);
+
+    return () => {
+      document.removeEventListener('keydown', listener);
+    };
+  }, [data, visible, onOk]);
+
   let bodyContent = null;
 
   if (loading) {

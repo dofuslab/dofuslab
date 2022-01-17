@@ -1086,7 +1086,7 @@ class RegisterUser(graphene.Mutation):
                 db_session.flush()
                 user_setting = ModelUserSetting(
                     locale=str(get_locale()),
-                    classic=session.get("classic", False),
+                    classic=session.get("classic", True),
                     user_id=user.uuid,
                     build_gender=BuildGender(gender),
                     build_class_id=build_default_class_id,

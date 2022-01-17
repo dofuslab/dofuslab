@@ -1,6 +1,7 @@
 {
   "ACTIONS": "Azioni",
   "ADD_TAG": "Aggiungi tag",
+  "ADVANCED_MODE": "Modo avançado",
   "ANONYMOUS": "Anonimo",
   "AVAILABLE_AT_LEVEL": "Disponibile a partire dal livello {{level}}",
   "BACK": "Indietro",
@@ -35,7 +36,6 @@
   "DELETE": "Elimina",
   "DELETE_BUILD": "Elimina",
   "DELETE_BUILD_SUCCESS": "Build eliminata con successo",
-  "DOFUSLAB_CLASSIC": "DofusLab Classico",
   "DUPLICATE_DOFUS_OR_TROPHY": "Hai equipaggiato Dofus, trofei o prismaraditi doppioni.",
   "DUPLICATE_ITEM_IN_SET": "Hai equipaggiato oggetti doppioni facenti parte della stessa panoplia.",
   "EDIT_BUILD": "Modifica build",
@@ -63,6 +63,7 @@
   "MALE": "Uomo",
   "MAX_NUM": "Max {{max}}",
   "MEMBER_SINCE": "Inscritto dal {{date}}",
+  "MENU": "Menu",
   "MULTIPLE_AP_EXO": "Hai più di un exo PA",
   "MULTIPLE_MP_EXO": "Hai più di un exo PM",
   "MULTIPLE_PRYSMARADITES": "Hai equipaggiato più di un prismaradite.",

@@ -70,6 +70,7 @@ Index.getInitialProps = async () => {
       'weapon_spell_effect',
       'status',
       'mage',
+      'keyboard_shortcuts',
     ],
   };
 };

@@ -88,6 +88,19 @@ const Selector: React.FC<Props> = ({
     }
   }, [dispatch, customSet, isMobile]);
 
+  React.useEffect(() => {
+    const listener = (e: KeyboardEvent) => {
+      if (e.key === 'i') {
+        setShowSetsState((prev) => !prev);
+      }
+    };
+    document.addEventListener('keydown', listener);
+
+    return () => {
+      document.removeEventListener('keydown', listener);
+    };
+  }, []);
+
   const theme = useTheme<Theme>();
 
   return (
