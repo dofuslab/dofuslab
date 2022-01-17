@@ -41,7 +41,7 @@ const MyBuildsPage: NextPage = () => {
 
 MyBuildsPage.getInitialProps = async () => {
   return {
-    namespacesRequired: ['common', 'auth', 'status', 'keyboard_shortcuts'],
+    namespacesRequired: ['common', 'auth', 'status', 'keyboard_shortcut'],
   };
 };
 

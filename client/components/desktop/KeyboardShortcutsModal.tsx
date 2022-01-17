@@ -54,6 +54,7 @@ const shortcuts = [
       ),
     },
   },
+  { operation: 'TOGGLE_ITEM_SET_SWITCH', shortcuts: { letterKeys: ['I'] } },
   {
     operation: 'EQUIP_NTH_ITEM_SET',
     shortcuts: {
@@ -126,7 +127,7 @@ function KeyboardKey({ children }: { children: React.ReactNode }) {
 }
 
 const KeyboardShortcutsModal: React.FC<Props> = ({ visible, onClose }) => {
-  const { t } = useTranslation('keyboard_shortcuts');
+  const { t } = useTranslation('keyboard_shortcut');
 
   return (
     <Modal

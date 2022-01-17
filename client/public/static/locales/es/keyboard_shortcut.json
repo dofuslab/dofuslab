@@ -1,0 +1,36 @@
+{
+  "DESCRIPTION": "Descripción",
+  "KEYBOARD_SHORTCUT": "Atajo del teclado",
+  "KEYBOARD_SHORTCUTS": "Atajos del teclado",
+  "KEYS": {
+    "BACKSPACE": "Retroceso",
+    "DELETE": "Del",
+    "ENTER": "Enter",
+    "ESCAPE": "Esc",
+    "SPACE": "Espacio"
+  },
+  "OPERATIONS": {
+    "DELETE_SELECTED_ITEM": "Eliminar el objeto seleccionado",
+    "DESELECT_ITEM_SLOT": "Deseleccionar ranura",
+    "DESELECT_SEARCH_BAR": "Deseleccionar barra de búsqueda",
+    "EQUIP_NTH_ITEM_SET": "Equipar nth objeto/conjunto",
+    "NAVIGATE_ITEM_SLOTS": "Navegar entre ranuras",
+    "SELECT_ITEM_SLOT": "Seleccionar ranura",
+    "SELECT_SEARCH_BAR": "Seleccionar barra de búsqueda",
+    "TOGGLE_ITEM_SET_SWITCH": "Alternar entre objetos/conjuntos"
+  },
+  "ONLY_AVAILABLE_ADVANCED_MODE": "Los atajos del teclado solo están disponibles en el modo avanzado.",
+  "SHORTCUTS": "Atajos",
+  "SLOTS": {
+    "AMULET": "Amuleto",
+    "BELT": "Cinturón",
+    "BOOTS": "Botas",
+    "CLOAK": "Capa",
+    "DOFUS": "Dofus",
+    "HAT": "Sombrero",
+    "PET": "Mascota",
+    "RING": "Anillo",
+    "SHIELD": "Escudo",
+    "WEAPON": "Arma"
+  }
+}
