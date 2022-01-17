@@ -122,7 +122,7 @@ class NonNullConnection(relay.Connection, abstract=True):
 
         super(NonNullConnection, cls).__init_subclass_with_meta__(node=_node, **kwargs)
 
-    total_count = graphene.Int()
+    total_count = graphene.Int(required=True)
 
     def resolve_total_count(self, info, **kwargs):
         return len(self.iterable)

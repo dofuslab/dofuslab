@@ -172,6 +172,7 @@ const BuildList: React.FC<Props> = ({ username, onClose, isEditable }) => {
                 },
                 ...oldData.currentUser.customSets.edges,
               ],
+              totalCount: oldData.currentUser.customSets.totalCount + 1,
             },
           },
         };
@@ -206,6 +207,7 @@ const BuildList: React.FC<Props> = ({ username, onClose, isEditable }) => {
     <div
       css={{
         width: '100%',
+        marginBottom: 60,
       }}
     >
       <Tabs
@@ -456,6 +458,7 @@ const BuildList: React.FC<Props> = ({ username, onClose, isEditable }) => {
                           />
                         ) : (
                           <div
+                            key={`equipped-item-${id}`}
                             css={{
                               position: 'relative',
                               '&::before': {
@@ -466,7 +469,6 @@ const BuildList: React.FC<Props> = ({ username, onClose, isEditable }) => {
                             }}
                           >
                             <img
-                              key={`equipped-item-${id}`}
                               src={getImageUrl(item.imageUrl)}
                               css={{
                                 position: 'absolute',

@@ -8,7 +8,7 @@ import { useTranslation } from 'i18n';
 import {
   getTitle,
   getUserProfileMetaImage,
-  getUserProfileMetaBuildCount,
+  getUserProfileMetaDescription,
 } from 'common/utils';
 import UserProfile from 'components/common/UserProfile';
 import { useRouter } from 'next/router';
@@ -32,6 +32,10 @@ const UserProfilePage: NextPage = () => {
   const username = Array.isArray(router.query.username)
     ? router.query.username[0]
     : router.query.username!;
+
+  if (!username) {
+    throw new Error('no username provided');
+  }
 
   const { data: currentUser } = useQuery<currentUser>(currentUserQuery);
 
@@ -63,9 +67,10 @@ const UserProfilePage: NextPage = () => {
         />
         <meta
           property="og:description"
-          content={`Discover ${username}'s ${getUserProfileMetaBuildCount(
+          content={getUserProfileMetaDescription(
+            username,
             userProfileData?.userByName.customSets.totalCount!,
-          )} build(s) on DofusLab, the open-source set builder for the MMORPG Dofus.`}
+          )}
         />
         <meta
           property="twitter:title"
@@ -73,9 +78,10 @@ const UserProfilePage: NextPage = () => {
         />
         <meta
           property="twitter:description"
-          content={`Discover ${username}'s ${getUserProfileMetaBuildCount(
+          content={getUserProfileMetaDescription(
+            username,
             userProfileData?.userByName.customSets.totalCount!,
-          )} build(s) on DofusLab, the open-source set builder for the MMORPG Dofus.`}
+          )}
         />
         <meta
           property="twitter:image"
@@ -103,7 +109,7 @@ const UserProfilePage: NextPage = () => {
           {userProfileData?.userByName && (
             <UserProfile
               username={username}
-              creationDate={userProfileData?.userByName?.creationDate}
+              creationDate={userProfileData.userByName.creationDate}
               profilePicture={userProfileData.userByName.profilePicture}
               isEditable={currentUser?.currentUser?.username === username}
             />
