@@ -19,7 +19,8 @@
     "SELECT_SEARCH_BAR": "Select search bar",
     "TOGGLE_ITEM_SET_SWITCH": "Toggle item/set switch"
   },
-  "ONLY_AVAILABLE_ADVANCED_MODE": "Only available in advanced mode",
+  "ONLY_AVAILABLE_ADVANCED_MODE": "Keyboard shortcuts are available only in advanced mode.",
+  "SHORTCUTS": "Shortcuts",
   "SLOTS": {
     "AMULET": "Amulet",
     "BELT": "Belt",
