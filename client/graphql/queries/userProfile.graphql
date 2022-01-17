@@ -3,5 +3,16 @@ query userProfile($username: String!) {
     id
     profilePicture
     creationDate
+    customSets(filters: { search: "", tagIds: [] }) {
+      totalCount
+      edges {
+        node {
+          id
+        }
+      }
+      pageInfo {
+        hasNextPage
+      }
+    }
   }
 }

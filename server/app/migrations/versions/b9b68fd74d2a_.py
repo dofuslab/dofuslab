@@ -5,8 +5,10 @@ Revises: 4180ddd14d6a
 Create Date: 2022-01-13 18:50:41.696776
 
 """
+import random
 from alembic import op
 import sqlalchemy as sa
+from app.utils import DEFAULT_PROFILE_PICTURE_URLS
 
 
 # revision identifiers, used by Alembic.
@@ -22,9 +24,15 @@ def upgrade():
         "user_account",
         sa.Column("profile_picture", sa.String(length=120), nullable=True),
     )
-    op.execute(
-        "UPDATE user_account SET profile_picture = 'profile-pictures/ProPic_Emerald_1.png'"
-    )
+    conn = op.get_bind()
+    res = conn.execute("SELECT uuid, profile_picture FROM user_account")
+    users = res.fetchall()
+    for user in users:
+        conn.execute(
+            "UPDATE user_account SET profile_picture = '{}' WHERE uuid='{}'".format(
+                random.choice(DEFAULT_PROFILE_PICTURE_URLS), user[0]
+            )
+        )
     op.alter_column("user_account", "profile_picture", nullable=False)
     # ### end Alembic commands ###
 

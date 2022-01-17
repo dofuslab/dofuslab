@@ -106,6 +106,7 @@ export type Theme = {
   };
   text?: {
     default?: string;
+    brightText?: string;
     light?: string;
     link?: {
       default?: string;

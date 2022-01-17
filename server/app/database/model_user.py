@@ -36,12 +36,7 @@ class ModelUserAccount(UserMixin, Base):
     custom_sets = relationship("ModelCustomSet", backref="owner")
     favorite_items = relationship("ModelFavoriteItem", back_populates="user_account")
     settings = relationship("ModelUserSetting", backref="user", uselist=False)
-    profile_picture = Column(
-        "profile_picture",
-        String(120),
-        nullable=False,
-        default="profile-pictures/ProPic_Emerald_1.png",
-    )
+    profile_picture = Column("profile_picture", String(120), nullable=False,)
     creation_date = Column("creation_date", DateTime, default=datetime.now)
     verification_email_sent = Column(
         "verification_email_sent", Boolean, nullable=False, default=False

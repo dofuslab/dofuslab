@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { jsx } from '@emotion/core';
-import { Modal, notification } from 'antd';
+import { Divider, Modal, notification } from 'antd';
 import { useTheme } from 'emotion-theming';
 import { useRouter } from 'next/router';
 
@@ -87,14 +87,13 @@ const ProfilePictureModal: React.FC<Props> = ({
           css={{ maxWidth: 220, borderRadius: 4 }}
         />
       </div>
+      <Divider />
       <div
         css={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          alignItems: 'center',
-          justifyContent: 'center',
+          display: 'grid',
           gap: '16px',
           maxHeight: '30vh',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(84px, 1fr))',
           overflow: 'auto',
           padding: 4,
           [mq[1]]: {
@@ -108,6 +107,8 @@ const ProfilePictureModal: React.FC<Props> = ({
               ? {
                   borderRadius: 4,
                   boxShadow: `0px 0px 0px 2px ${theme.border?.primarySelected}`,
+                  width: '100%',
+                  height: '100%',
                   '&:hover': {
                     cursor: 'pointer',
                   },
@@ -115,6 +116,8 @@ const ProfilePictureModal: React.FC<Props> = ({
               : {
                   borderRadius: 4,
                   boxShadow: `0px 0px 0px 1px ${theme.border?.light}`,
+                  width: '100%',
+                  height: '100%',
                   '&:hover': {
                     cursor: 'pointer',
                   },
@@ -126,7 +129,6 @@ const ProfilePictureModal: React.FC<Props> = ({
               key={`profile-pic-${index}`}
               // Missing translation
               alt={t('PROFILE_PICTURE')}
-              width={'100px'}
               onClick={() => {
                 setActive(item);
               }}

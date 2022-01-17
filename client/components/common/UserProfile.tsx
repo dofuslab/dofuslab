@@ -17,6 +17,7 @@ interface Props {
   creationDate: string;
   profilePicture: string;
   isEditable: boolean;
+  isMobile?: boolean;
 }
 
 const UserProfile: React.FC<Props> = ({
@@ -24,6 +25,7 @@ const UserProfile: React.FC<Props> = ({
   creationDate,
   profilePicture,
   isEditable,
+  isMobile,
 }) => {
   const [pictureModalVisible, setPictureModalVisible] = React.useState(false);
 
@@ -52,86 +54,73 @@ const UserProfile: React.FC<Props> = ({
         css={{
           display: 'flex',
           flexDirection: 'column',
-          margin: '0px 0px 20px 0px',
           borderRadius: 6,
-          textAlign: 'center',
-          alignItems: 'center',
+          alignItems: 'flex-start',
+          justifyContent: 'space-betweeen',
           [mq[1]]: {
             flexDirection: 'column',
             margin: '12px 0px 0px 0px',
             padding: '0px 20px 20px 20px',
+            maxWidth: 240,
             minWidth: 240,
             textAlign: 'left',
             alignItems: 'flex-start',
           },
-
-          '&::before': {
-            position: 'absolute',
-            left: 0,
-            top: 0,
-            width: '100%',
-            height: 72,
-            background: '#333',
-            content: "''",
-            zIndex: 0,
-            [mq[1]]: {
-              display: 'none',
-            },
-          },
         }}
       >
-        <div
-          css={{
-            display: 'inline-block',
-            position: 'relative',
-            width: 'auto',
-            maxWidth: '100%',
-            [mq[1]]: {
-              width: '100%',
-              '& > button': {
-                visibility: 'hidden',
-                opacity: 0,
-              },
-              '&:hover > button': {
-                height: 'auto',
-                visibility: 'visible',
-                opacity: 1,
-                transition: 'visibility 0s, opacity 0.2s linear',
-              },
-            },
-          }}
-        >
-          <img
-            src={getImageUrl(profilePicture)}
-            alt="Avatar"
+        <div>
+          <div
             css={{
-              maxWidth: 120,
-              alignItems: 'center',
-              borderRadius: 4,
-              padding: 4,
-              outline: `1px solid ${theme.border?.light}`,
-              display: 'block',
+              display: 'inline-block',
+              position: 'relative',
+              width: 'auto',
+              maxWidth: '100%',
               [mq[1]]: {
-                maxWidth: '100%',
-                alignItems: 'flex-start',
+                width: '100%',
+                '& > button': {
+                  visibility: 'hidden',
+                  opacity: 0,
+                },
+                '&:hover > button': {
+                  height: 'auto',
+                  visibility: 'visible',
+                  opacity: 1,
+                  transition: 'visibility 0s, opacity 0.2s linear',
+                },
               },
             }}
-          />
-          {isEditable && (
-            <Button
-              type="primary"
-              icon={<EditOutlined />}
-              shape="circle"
-              onClick={() => {
-                setPictureModalVisible(true);
-              }}
+          >
+            <img
+              src={getImageUrl(profilePicture)}
+              alt="Avatar"
               css={{
-                position: 'absolute',
-                bottom: -12,
-                right: -12,
+                maxWidth: 80,
+                alignItems: 'center',
+                borderRadius: '50%',
+                border: `1px solid ${theme.border?.light}`,
+                display: 'block',
+                [mq[1]]: {
+                  maxWidth: '100%',
+                  alignItems: 'flex-start',
+                },
               }}
             />
-          )}
+            {isEditable && !isMobile && (
+              <Button
+                type="primary"
+                icon={<EditOutlined />}
+                shape="circle"
+                onClick={() => {
+                  setPictureModalVisible(true);
+                }}
+                css={{
+                  position: 'absolute',
+                  bottom: 24,
+                  right: 8,
+                }}
+              />
+            )}
+          </div>
         </div>
         <ProfilePictureModal
           visible={pictureModalVisible}
@@ -141,31 +130,56 @@ const UserProfile: React.FC<Props> = ({
         <div
           css={{
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            marginLeft: 20,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginLeft: 0,
+            width: '100%',
+            alignItems: 'center',
             [mq[1]]: {
               marginLeft: 0,
             },
           }}
         >
-          <h1
+          <div
             css={{
-              margin: '12px 0px 0px 0px',
-              fontSize: '1.6rem',
-              textOverflow: 'ellipsis',
-              overflow: 'hidden',
-              color: theme.text?.default,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              minWidth: 0,
             }}
-            title={username}
           >
-            {username}
-          </h1>
-          <span css={{ color: theme.text?.default, fontSize: '0.75rem' }}>
-            {t('MEMBER_SINCE', {
-              date: getDate(creationDate),
-            })}
-          </span>
+            <h1
+              css={{
+                margin: '0px',
+                fontSize: '1.6rem',
+                textOverflow: 'ellipsis',
+                overflow: 'hidden',
+                width: '100%',
+                color: theme.text?.brightText,
+              }}
+              title={username}
+            >
+              {username}
+            </h1>
+            <span css={{ color: theme.text?.default, fontSize: '0.75rem' }}>
+              {t('MEMBER_SINCE', {
+                date: getDate(creationDate),
+              })}
+            </span>
+          </div>
+          {isMobile && isEditable && (
+            <Button
+              onClick={() => {
+                setPictureModalVisible(true);
+              }}
+              css={{ fontSize: '0.75rem' }}
+            >
+              <span css={{ marginRight: 12 }}>
+                <EditOutlined />
+              </span>
+              {t('CHANGE_PHOTO')}
+            </Button>
+          )}
         </div>
       </div>
       <BuildList username={username} isEditable={isEditable} />

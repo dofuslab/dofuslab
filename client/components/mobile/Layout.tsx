@@ -223,7 +223,9 @@ const Layout = ({ children }: LayoutProps) => {
               }}
             >
               {t('WELCOME')}
-              {data.currentUser.username}
+              <Link href={`/user/${data.currentUser.username}`}>
+                {data.currentUser.username}
+              </Link>
             </div>
           )}
           <Menu

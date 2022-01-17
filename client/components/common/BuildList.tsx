@@ -202,10 +202,6 @@ const BuildList: React.FC<Props> = ({ username, onClose, isEditable }) => {
     return isEditable ? '/build' : '/view';
   };
 
-  const [buildAmount] = React.useState(
-    userBuilds?.userByName?.customSets.totalCount,
-  );
-
   return (
     <div
       css={{
@@ -217,7 +213,14 @@ const BuildList: React.FC<Props> = ({ username, onClose, isEditable }) => {
         onChange={() => {}}
         css={{ gridArea: '4/1/4/3', width: '100%' }}
       >
-        <TabPane tab={`${t('BUILDS')} (${buildAmount})`} key="1">
+        <TabPane
+          tab={`${t('BUILDS')} ${
+            userBuilds?.userByName?.customSets
+              ? `(${userBuilds?.userByName?.customSets.totalCount})`
+              : ''
+          }`}
+          key="1"
+        >
           <div
             css={{
               display: 'flex',

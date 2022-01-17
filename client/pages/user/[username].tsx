@@ -5,7 +5,11 @@ import { jsx } from '@emotion/core';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { useTranslation } from 'i18n';
-import { getTitle } from 'common/utils';
+import {
+  getTitle,
+  getUserProfileMetaImage,
+  getUserProfileMetaBuildCount,
+} from 'common/utils';
 import UserProfile from 'components/common/UserProfile';
 import { useRouter } from 'next/router';
 import { Media } from 'components/common/Media';
@@ -43,7 +47,43 @@ const UserProfilePage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{getTitle(t('USER_PROFILE', { username: username! }))}</title>
+        <title>{getTitle(t('USER_PROFILE', { username: username }))}</title>
+        <meta property="og:site_name" content="Dofuslab" />
+        <meta property="og:type" content="profile" />
+        <meta
+          property="og:image:url"
+          content={getUserProfileMetaImage(
+            userProfileData?.userByName.profilePicture,
+          )}
+        />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:title"
+          content={getTitle(t('USER_PROFILE', { username: username }))}
+        />
+        <meta
+          property="og:description"
+          content={`Discover ${username}'s ${getUserProfileMetaBuildCount(
+            userProfileData?.userByName.customSets.totalCount!,
+          )} build(s) on DofusLab, the open-source set builder for the MMORPG Dofus.`}
+        />
+        <meta
+          property="twitter:title"
+          content={getTitle(t('USER_PROFILE', { username: username }))}
+        />
+        <meta
+          property="twitter:description"
+          content={`Discover ${username}'s ${getUserProfileMetaBuildCount(
+            userProfileData?.userByName.customSets.totalCount!,
+          )} build(s) on DofusLab, the open-source set builder for the MMORPG Dofus.`}
+        />
+        <meta
+          property="twitter:image"
+          content={getUserProfileMetaImage(
+            userProfileData?.userByName.profilePicture,
+          )}
+        />
+        <meta property="twitter:card" content="summary" />
       </Head>
       <Media lessThan="xs">
         <MobileLayout>
@@ -53,6 +93,7 @@ const UserProfilePage: NextPage = () => {
               creationDate={userProfileData?.userByName?.creationDate}
               profilePicture={userProfileData.userByName.profilePicture}
               isEditable={currentUser?.currentUser?.username === username}
+              isMobile
             />
           )}
         </MobileLayout>

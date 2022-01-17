@@ -364,7 +364,18 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
                     overlay={
                       <Menu>
                         <Menu.ItemGroup
-                          title={`${t('WELCOME')} ${data.currentUser.username}`}
+                          title={
+                            <>
+                              <span>
+                                {t('WELCOME')}{' '}
+                                <Link
+                                  href={`/user/${data.currentUser.username}`}
+                                >
+                                  {data.currentUser.username}
+                                </Link>
+                              </span>
+                            </>
+                          }
                         >
                           <Menu.Item
                             key="change-password"

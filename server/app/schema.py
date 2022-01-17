@@ -1,3 +1,4 @@
+import random
 from app import (
     db,
     supported_languages,
@@ -57,6 +58,8 @@ from app.utils import (
     scrolled_stat_list,
     edit_custom_set_stats,
     edit_custom_set_metadata,
+    ALLOWED_PROFILE_PICTURE_URLS,
+    DEFAULT_PROFILE_PICTURE_URLS,
 )
 from app.verify_email import verify_email_salt
 from functools import reduce
@@ -1073,6 +1076,7 @@ class RegisterUser(graphene.Mutation):
                     username=username,
                     email=email,
                     password=ModelUserAccount.generate_hash(password),
+                    profile_picture=(random.choice(DEFAULT_PROFILE_PICTURE_URLS)),
                 )
                 token = encode_token(user.email, verify_email_salt)
                 verify_url = generate_url("verify_email.verify_email", token)
@@ -1356,6 +1360,11 @@ class ChangeProfilePicture(graphene.Mutation):
             curr_user = current_user._get_current_object()
             if not current_user.is_authenticated:
                 raise GraphQLError(_("You are not logged in."))
+            if picture not in ALLOWED_PROFILE_PICTURE_URLS:
+                raise GraphQLError(
+                    _("An error has ocurred while changing the profile picture.")
+                )
+
             curr_user.profile_picture = picture
             return ChangeProfilePicture(user=curr_user)
 
