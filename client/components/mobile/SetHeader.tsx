@@ -31,6 +31,7 @@ import DefaultClassModal from '../common/DefaultClassModal';
 import BuildTags from '../common/BuildTags';
 import CustomSetHeaderForm from '../common/CustomSetHeaderForm';
 import { useQuery } from '@apollo/client';
+import SetHeaderMetadata from '../common/SetHeaderMetadata';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -126,6 +127,14 @@ const SetHeader: React.FC<Props> = ({
     </Link>
   );
 
+  const owner = customSet?.owner?.username ? (
+    <Link href={`/user/${customSet.owner.username}`}>
+      <a>{customSet.owner.username}</a>
+    </Link>
+  ) : (
+    t('ANONYMOUS')
+  );
+
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -209,50 +218,17 @@ const SetHeader: React.FC<Props> = ({
           <>
             {customSet && (
               <div css={{ fontSize: '0.75rem' }}>
-                <div css={{ display: 'flex' }}>
-                  <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
-                  <div css={{ marginLeft: 8 }}>
-                    {customSet.owner?.username ? (
-                      <Link href={`/user/${customSet.owner.username}`}>
-                        <a>{customSet.owner.username}</a>
-                      </Link>
-                    ) : (
-                      t('ANONYMOUS')
-                    )}
-                  </div>
-                </div>
-                <div css={{ display: 'flex' }}>
-                  {isEditable && (
-                    <>
-                      <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-                      <div css={{ marginLeft: 8 }}>
-                        {creationDate.toLocaleDateString(undefined, {
-                          month: 'short',
-                          day: 'numeric',
-                          year: 'numeric',
-                        })}{' '}
-                        {creationDate.toLocaleTimeString(undefined, {
-                          hour: '2-digit',
-                          minute: '2-digit',
-                        })}
-                      </div>
-                    </>
-                  )}
-                </div>
-                <div css={{ display: 'flex' }}>
-                  <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-                  <div css={{ marginLeft: 8 }}>
-                    {modifiedDate.toLocaleDateString(undefined, {
-                      month: 'short',
-                      day: 'numeric',
-                      year: 'numeric',
-                    })}{' '}
-                    {modifiedDate.toLocaleTimeString(undefined, {
-                      hour: '2-digit',
-                      minute: '2-digit',
-                    })}
-                  </div>
-                </div>
+                <SetHeaderMetadata translationLabelId="OWNER" value={owner} />
+                {isEditable && (
+                  <SetHeaderMetadata
+                    translationLabelId="CREATED"
+                    value={creationDate}
+                  />
+                )}
+                <SetHeaderMetadata
+                  translationLabelId="LAST_MODIFIED"
+                  value={modifiedDate}
+                />
               </div>
             )}
             <Divider css={{ margin: '12px 0' }} />

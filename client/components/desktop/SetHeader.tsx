@@ -32,6 +32,7 @@ import { useQuery } from '@apollo/client';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { MAX_LEVEL } from 'common/constants';
+import SetHeaderMetadata from 'components/common/SetHeaderMetadata';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -147,43 +148,38 @@ const SetHeader: React.FC<Props> = ({
   const creationDate = new Date(customSet?.creationDate);
   const modifiedDate = new Date(customSet?.lastModified);
 
+  const owner = customSet?.owner?.username ? (
+    <Link href={`/user/${customSet.owner.username}`}>
+      <a>{customSet.owner.username}</a>
+    </Link>
+  ) : (
+    t('ANONYMOUS')
+  );
+
+  const metadata = (
+    <div
+      css={{
+        fontSize: '0.75rem',
+      }}
+    >
+      <SetHeaderMetadata translationLabelId="OWNER" value={owner} />
+      {isEditable && (
+        <SetHeaderMetadata translationLabelId="CREATED" value={creationDate} />
+      )}
+      <SetHeaderMetadata
+        translationLabelId="LAST_MODIFIED"
+        value={modifiedDate}
+      />
+    </div>
+  );
+
   if (customSetLoading) {
     content = <Skeleton.Input active css={{ width: 200 }} />;
   } else if (customSet && !isEditable) {
     content = (
       <div>
         {formElement}
-        <div
-          css={{
-            display: 'grid',
-            gridTemplateColumns: 'auto auto',
-            gridColumnGap: 12,
-            fontSize: '0.75rem',
-          }}
-        >
-          <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
-          <div>
-            {customSet.owner?.username ? (
-              <Link href={`/user/${customSet.owner.username}`}>
-                {customSet.owner.username}
-              </Link>
-            ) : (
-              t('ANONYMOUS')
-            )}
-          </div>
-          <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-          <div>
-            {modifiedDate.toLocaleDateString(undefined, {
-              month: 'short',
-              day: 'numeric',
-              year: 'numeric',
-            })}{' '}
-            {modifiedDate.toLocaleTimeString(undefined, {
-              hour: '2-digit',
-              minute: '2-digit',
-            })}
-          </div>
-        </div>
+        {metadata}
       </div>
     );
   } else if (customSet && !metadataState.isEditing) {
@@ -195,51 +191,7 @@ const SetHeader: React.FC<Props> = ({
             {customSet.name || t('UNTITLED')}
           </div>
         }
-        content={
-          <div
-            css={{
-              display: 'grid',
-              gridTemplateColumns: 'auto auto',
-              gridColumnGap: 12,
-              fontSize: '0.75rem',
-            }}
-          >
-            <div css={{ fontWeight: 500 }}>{t('OWNER')}</div>
-            <div>
-              {customSet.owner?.username ? (
-                <Link href={`/user/${customSet.owner.username}`}>
-                  <a>{customSet.owner.username}</a>
-                </Link>
-              ) : (
-                t('ANONYMOUS')
-              )}
-            </div>
-            <div css={{ fontWeight: 500 }}>{t('CREATED')}</div>
-            <div>
-              {creationDate.toLocaleDateString(undefined, {
-                month: 'short',
-                day: 'numeric',
-                year: 'numeric',
-              })}{' '}
-              {creationDate.toLocaleTimeString(undefined, {
-                hour: '2-digit',
-                minute: '2-digit',
-              })}
-            </div>
-            <div css={{ fontWeight: 500 }}>{t('LAST_MODIFIED')}</div>
-            <div>
-              {modifiedDate.toLocaleDateString(undefined, {
-                month: 'short',
-                day: 'numeric',
-                year: 'numeric',
-              })}{' '}
-              {modifiedDate.toLocaleTimeString(undefined, {
-                hour: '2-digit',
-                minute: '2-digit',
-              })}
-            </div>
-          </div>
-        }
+        content={metadata}
       >
         {formElement}
       </Popover>
