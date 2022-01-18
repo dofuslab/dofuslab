@@ -58,10 +58,8 @@ const UserProfile: React.FC<Props> = ({
           justifyContent: 'space-betweeen',
           [mq[1]]: {
             flexDirection: 'column',
-            margin: '12px 0px 0px 0px',
-            padding: '0px 20px 20px 20px',
-            maxWidth: 240,
-            minWidth: 240,
+            margin: '12px 32px 0px 0px',
+            flex: '0 0 240px',
             textAlign: 'left',
             alignItems: 'flex-start',
           },
@@ -136,6 +134,8 @@ const UserProfile: React.FC<Props> = ({
             alignItems: 'center',
             [mq[1]]: {
               marginLeft: 0,
+              textAlign: 'center',
+              justifyContent: 'center',
             },
           }}
         >
