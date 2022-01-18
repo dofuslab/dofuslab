@@ -1,7 +1,6 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import dynamic from 'next/dynamic';
 import { ClassNames, jsx } from '@emotion/core';
 import { Stat } from '__generated__/globalTypes';
 import { mq, DEBOUNCE_INTERVAL, SEARCH_BAR_ID } from 'common/constants';
@@ -20,15 +19,13 @@ import { useTheme } from 'emotion-theming';
 import { Theme, SharedFilterAction, SharedFilters } from 'common/types';
 import { useTranslation } from 'i18n';
 import Tooltip from 'components/common/Tooltip';
-import { getBuildLink } from 'common/utils';
+import { antdSelectFilterOption, getBuildLink } from 'common/utils';
 import { ItemSlot, CustomSet } from 'common/type-aliases';
 import { inputFontSize } from 'common/mixins';
 
 import ResetAllButton from './ResetAllButton';
 import FavoritesButton from './FavoritesButton';
-
-// https://github.com/ant-design/ant-design/issues/30396
-const DynamicSelect = dynamic(() => import('antd/lib/select'), { ssr: false });
+import NoSSR from 'react-no-ssr';
 
 const { Search } = Input;
 const { Option } = Select;
@@ -280,57 +277,56 @@ const SelectorFilters: React.FC<Props> = ({
       >
         <ClassNames>
           {({ css }) => (
-            <DynamicSelect
-              getPopupContainer={(node: HTMLElement) => {
-                if (node.parentElement) {
-                  return node.parentElement;
-                }
-                return document && document.body;
-              }}
-              mode="multiple"
-              css={{
-                fontSize: '0.9rem',
-                flex: '1 1 0%',
-                height: 42,
-                [mq[1]]: {
-                  fontSize: '0.75rem',
-                  height: 'auto',
-                },
-                '.ant-select-selector': {
-                  height: '100%',
-                },
-              }}
-              placeholder={t('STATS_PLACEHOLDER')}
-              value={stats.map((stat) => ({
-                label: t(stat, { ns: 'stat' }),
-                key: stat,
-                value: stat,
-              }))}
-              onChange={onChangeStats}
-              dropdownClassName={css({
-                '.ant-select-item': { fontSize: '0.75rem' },
-              })}
-              filterOption={(input, option) =>
-                (option?.children as string)
-                  .toLocaleUpperCase()
-                  .includes(input.toLocaleUpperCase())
-              }
-              labelInValue
-            >
-              {Object.values(Stat)
-                .sort((s1, s2) =>
-                  t(s1, { ns: 'stat' }).localeCompare(
-                    t(s2, { ns: 'stat' }),
-                    undefined,
-                    { ignorePunctuation: true },
-                  ),
-                )
-                .map((stat) => (
-                  <Option key={stat} value={stat}>
-                    {t(stat, { ns: 'stat' })}
-                  </Option>
-                ))}
-            </DynamicSelect>
+            // https://github.com/ant-design/ant-design/issues/30396
+            <NoSSR>
+              <Select
+                getPopupContainer={(node: HTMLElement) => {
+                  if (node.parentElement) {
+                    return node.parentElement;
+                  }
+                  return document && document.body;
+                }}
+                mode="multiple"
+                css={{
+                  fontSize: '0.9rem',
+                  flex: '1 1 0%',
+                  height: 42,
+                  [mq[1]]: {
+                    fontSize: '0.75rem',
+                    height: 'auto',
+                  },
+                  '.ant-select-selector': {
+                    height: '100%',
+                  },
+                }}
+                placeholder={t('STATS_PLACEHOLDER')}
+                value={stats.map((stat) => ({
+                  label: t(stat, { ns: 'stat' }),
+                  key: stat,
+                  value: stat,
+                }))}
+                onChange={onChangeStats}
+                dropdownClassName={css({
+                  '.ant-select-item': { fontSize: '0.75rem' },
+                })}
+                filterOption={antdSelectFilterOption}
+                labelInValue
+              >
+                {Object.values(Stat)
+                  .sort((s1, s2) =>
+                    t(s1, { ns: 'stat' }).localeCompare(
+                      t(s2, { ns: 'stat' }),
+                      undefined,
+                      { ignorePunctuation: true },
+                    ),
+                  )
+                  .map((stat) => (
+                    <Option key={stat} value={stat}>
+                      {t(stat, { ns: 'stat' })}
+                    </Option>
+                  ))}
+              </Select>
+            </NoSSR>
           )}
         </ClassNames>
         <ResetAllButton
