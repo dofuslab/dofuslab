@@ -18,6 +18,7 @@ import addTagToCustomSetMutation from 'graphql/mutations/addTagToCustomSet.graph
 import customSetTagsQuery from 'graphql/queries/customSetTags.graphql';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
 import {
+  antdSelectFilterOption,
   EditableContext,
   getImageUrl,
   navigateToNewCustomSet,
@@ -157,11 +158,7 @@ const BuildTags: React.FC<Props> = ({
       ]}
       placeholder={t('ADD_TAG')}
       labelInValue
-      filterOption={(input, option) => {
-        return (option?.children[1] as string)
-          .toLocaleUpperCase()
-          .includes(input.toLocaleUpperCase());
-      }}
+      filterOption={antdSelectFilterOption}
     >
       {data &&
         [...data.customSetTags]
