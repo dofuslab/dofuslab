@@ -248,8 +248,19 @@ const SelectorFilters: React.FC<Props> = ({
             }}
             css={{
               maxHeight: 'none',
+              display: 'inline-flex',
               '.ant-input': inputFontSize,
               '.ant-input-suffix': { display: 'flex', alignItems: 'center' },
+              '.ant-input-group': {
+                display: 'flex',
+                '.ant-input-group-addon': {
+                  display: 'flex',
+                  width: 'auto',
+                  '> button': {
+                    height: 'auto',
+                  },
+                },
+              },
             }}
             ref={searchRef}
           />

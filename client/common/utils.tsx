@@ -1940,7 +1940,12 @@ export function antdSelectFilterOption(
   input: string,
   option: DefaultOptionType | undefined,
 ) {
-  return String(option?.children ? option.children[1] : null)
-    .toLocaleUpperCase()
-    .includes(input.toLocaleUpperCase());
+  if (!option?.children) {
+    return false;
+  }
+  let value = option.children[1];
+  if (typeof option.children === 'string') {
+    value = option.children;
+  }
+  return String(value).toUpperCase().includes(input.toUpperCase());
 }
