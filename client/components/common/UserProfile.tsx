@@ -143,7 +143,7 @@ const UserProfile: React.FC<Props> = ({
             css={{
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'flex-start',
+              alignItems: 'center',
               minWidth: 0,
             }}
           >
