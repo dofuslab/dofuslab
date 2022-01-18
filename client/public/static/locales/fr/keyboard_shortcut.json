@@ -1,36 +1,36 @@
 {
-  "DESCRIPTION": "__STRING_NOT_TRANSLATED__",
-  "KEYBOARD_SHORTCUT": "__STRING_NOT_TRANSLATED__",
-  "KEYBOARD_SHORTCUTS": "__STRING_NOT_TRANSLATED__",
+  "DESCRIPTION": "Description",
+  "KEYBOARD_SHORTCUT": "Raccourci clavier",
+  "KEYBOARD_SHORTCUTS": "Raccourcis clavier",
   "KEYS": {
-    "BACKSPACE": "__STRING_NOT_TRANSLATED__",
-    "DELETE": "__STRING_NOT_TRANSLATED__",
-    "ENTER": "__STRING_NOT_TRANSLATED__",
-    "ESCAPE": "__STRING_NOT_TRANSLATED__",
-    "SPACE": "__STRING_NOT_TRANSLATED__"
+    "BACKSPACE": "Retour arrière",
+    "DELETE": "Sup",
+    "ENTER": "Entrée",
+    "ESCAPE": "Echap",
+    "SPACE": "Espace"
   },
-  "ONLY_AVAILABLE_ADVANCED_MODE": "__STRING_NOT_TRANSLATED__",
   "OPERATIONS": {
-    "DELETE_SELECTED_ITEM": "__STRING_NOT_TRANSLATED__",
-    "DESELECT_ITEM_SLOT": "__STRING_NOT_TRANSLATED__",
-    "DESELECT_SEARCH_BAR": "__STRING_NOT_TRANSLATED__",
-    "EQUIP_NTH_ITEM_SET": "__STRING_NOT_TRANSLATED__",
-    "NAVIGATE_ITEM_SLOTS": "__STRING_NOT_TRANSLATED__",
-    "SELECT_ITEM_SLOT": "__STRING_NOT_TRANSLATED__",
-    "SELECT_SEARCH_BAR": "__STRING_NOT_TRANSLATED__",
-    "TOGGLE_ITEM_SET_SWITCH": "__STRING_NOT_TRANSLATED__"
+    "DELETE_SELECTED_ITEM": "Supprimer l'item sélectionné",
+    "DESELECT_ITEM_SLOT": "Désélectionner le slot d'item",
+    "DESELECT_SEARCH_BAR": "Désélectionner la barre de recherche",
+    "EQUIP_NTH_ITEM_SET": "Equiper le n-ième item/panoplie",
+    "NAVIGATE_ITEM_SLOTS": "Naviguer entre les slots d'items",
+    "SELECT_ITEM_SLOT": "Sélectionner le slot d'item",
+    "SELECT_SEARCH_BAR": "Sélectionner la barre de recherche",
+    "TOGGLE_ITEM_SET_SWITCH": "Basculer entre item et panoplie"
   },
-  "SHORTCUTS": "__STRING_NOT_TRANSLATED__",
+  "ONLY_AVAILABLE_ADVANCED_MODE": "Les raccourcis clavier sont seulement disponibles en mode avancé.",
+  "SHORTCUTS": "Raccourcis",
   "SLOTS": {
-    "AMULET": "__STRING_NOT_TRANSLATED__",
-    "BELT": "__STRING_NOT_TRANSLATED__",
-    "BOOTS": "__STRING_NOT_TRANSLATED__",
-    "CLOAK": "__STRING_NOT_TRANSLATED__",
-    "DOFUS": "__STRING_NOT_TRANSLATED__",
-    "HAT": "__STRING_NOT_TRANSLATED__",
-    "PET": "__STRING_NOT_TRANSLATED__",
-    "RING": "__STRING_NOT_TRANSLATED__",
-    "SHIELD": "__STRING_NOT_TRANSLATED__",
-    "WEAPON": "__STRING_NOT_TRANSLATED__"
+    "AMULET": "Amulette",
+    "BELT": "Ceinture",
+    "BOOTS": "Bottes",
+    "CLOAK": "Capes",
+    "DOFUS": "Dofus",
+    "HAT": "Chapeau",
+    "PET": "Familier",
+    "RING": "Anneau",
+    "SHIELD": "Bouclier",
+    "WEAPON": "Arme"
   }
 }
