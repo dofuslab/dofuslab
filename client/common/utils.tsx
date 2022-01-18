@@ -1581,7 +1581,7 @@ export const useClassic = () => {
   );
 
   const [isClassic, setIsClassic] = React.useState<boolean>(
-    sessionSettingsData?.classic ?? false,
+    sessionSettingsData?.classic ?? true,
   );
 
   React.useEffect(() => {
