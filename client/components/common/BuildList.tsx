@@ -340,6 +340,11 @@ const BuildList: React.FC<Props> = ({
                 <CardSkeleton
                   // eslint-disable-next-line react/no-array-index-key
                   key={`card-skeleton-${idx}`}
+                  css={{
+                    marginTop: 20,
+                    [mq[1]]: { marginTop: 0 },
+                    backgroundColor: theme.layer?.backgroundLight,
+                  }}
                   numRows={2}
                 />
               ))}
