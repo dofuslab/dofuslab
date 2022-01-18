@@ -63,7 +63,7 @@ const shortcuts = [
           {Array(9)
             .fill(null)
             .map((_, idx) => (
-              <KeyboardKey>{idx + 1}</KeyboardKey>
+              <KeyboardKey key={idx}>{idx + 1}</KeyboardKey>
             ))}
         </div>
       ),

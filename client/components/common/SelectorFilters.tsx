@@ -1,6 +1,7 @@
 /** @jsx jsx */
 
 import * as React from 'react';
+import dynamic from 'next/dynamic';
 import { ClassNames, jsx } from '@emotion/core';
 import { Stat } from '__generated__/globalTypes';
 import { mq, DEBOUNCE_INTERVAL, SEARCH_BAR_ID } from 'common/constants';
@@ -25,6 +26,9 @@ import { inputFontSize } from 'common/mixins';
 
 import ResetAllButton from './ResetAllButton';
 import FavoritesButton from './FavoritesButton';
+
+// https://github.com/ant-design/ant-design/issues/30396
+const DynamicSelect = dynamic(() => import('antd/lib/select'), { ssr: false });
 
 const { Search } = Input;
 const { Option } = Select;
@@ -276,7 +280,7 @@ const SelectorFilters: React.FC<Props> = ({
       >
         <ClassNames>
           {({ css }) => (
-            <Select
+            <DynamicSelect
               getPopupContainer={(node: HTMLElement) => {
                 if (node.parentElement) {
                   return node.parentElement;
@@ -326,7 +330,7 @@ const SelectorFilters: React.FC<Props> = ({
                     {t(stat, { ns: 'stat' })}
                   </Option>
                 ))}
-            </Select>
+            </DynamicSelect>
           )}
         </ClassNames>
         <ResetAllButton

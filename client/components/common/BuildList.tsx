@@ -479,6 +479,7 @@ const BuildList: React.FC<Props> = ({
                                 paddingTop: '100%',
                               },
                             }}
+                            key={`equipped-item-${id}`}
                           >
                             <img
                               src={getImageUrl(item.imageUrl)}

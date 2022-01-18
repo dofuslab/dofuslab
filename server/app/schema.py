@@ -1423,7 +1423,8 @@ class Query(graphene.ObjectType):
                         func.count(ModelItemStat.uuid).label("num_stats_matched"),
                     )
                     .filter(
-                        ModelItemStat.stat.in_(stat_names), ModelItemStat.max_value > 0,
+                        ModelItemStat.stat.in_(stat_names),
+                        ModelItemStat.max_value > 0,
                     )
                     .group_by(ModelItemStat.item_id)
                     .subquery()
@@ -1686,7 +1687,8 @@ class Query(graphene.ObjectType):
             .all()
         )
         results = sorted(
-            suggested_items, key=lambda x: suggested_item_ids.index(str(x.uuid)),
+            suggested_items,
+            key=lambda x: suggested_item_ids.index(str(x.uuid)),
         )
         return results[:num_suggestions]
 
