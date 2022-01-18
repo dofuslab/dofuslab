@@ -106,8 +106,11 @@ const SetBuilderKeyboardShortcuts: React.FC<Props> = ({
 
       if ((e.key === ' ' || e.key === 'Enter') && searchBar) {
         searchBar.focus();
-        if (e.key === 'Enter') {
-          searchBar.setSelectionRange(0, searchBar.value.length);
+        searchBar.setSelectionRange(0, searchBar.value.length);
+
+        // prevents spacebar input from removing selection
+        if (e.key === ' ') {
+          e.preventDefault();
         }
       }
     };
