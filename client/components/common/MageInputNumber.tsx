@@ -47,6 +47,10 @@ const MageInputNumber: React.FC<Props> = ({ stat, value, dispatch, isExo }) => {
             alignItems: 'center',
             flex: '0 0 60px',
           })}
+          onKeyDown={(e) => {
+            // prevents triggering SetBuilderKeyboardShortcuts
+            e.nativeEvent.stopPropagation();
+          }}
         />
       )}
     </ClassNames>

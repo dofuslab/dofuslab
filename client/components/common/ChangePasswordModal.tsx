@@ -108,6 +108,10 @@ const ChangePasswordModal: React.FC<Props> = ({ visible, onClose }) => {
               '.ant-input': inputFontSize,
             }}
             placeholder={t('PASSWORD')}
+            onKeyDown={(e) => {
+              // prevents triggering SetBuilderKeyboardShortcuts
+              e.nativeEvent.stopPropagation();
+            }}
           />
         </Form.Item>
         <Form.Item
@@ -126,6 +130,10 @@ const ChangePasswordModal: React.FC<Props> = ({ visible, onClose }) => {
           <Input.Password
             css={{ '.ant-input': inputFontSize }}
             placeholder={t('PASSWORD')}
+            onKeyDown={(e) => {
+              // prevents triggering SetBuilderKeyboardShortcuts
+              e.nativeEvent.stopPropagation();
+            }}
           />
         </Form.Item>
         <Form.Item
@@ -151,6 +159,10 @@ const ChangePasswordModal: React.FC<Props> = ({ visible, onClose }) => {
           <Input.Password
             css={{ '.ant-input': inputFontSize }}
             placeholder={t('PASSWORD')}
+            onKeyDown={(e) => {
+              // prevents triggering SetBuilderKeyboardShortcuts
+              e.nativeEvent.stopPropagation();
+            }}
           />
         </Form.Item>
       </Form>

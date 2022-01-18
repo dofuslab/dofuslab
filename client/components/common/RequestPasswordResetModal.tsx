@@ -99,7 +99,14 @@ const RequestPasswordResetModal: React.FC<Props> = ({ visible, onClose }) => {
           ]}
           validateTrigger="onSubmit"
         >
-          <Input placeholder={t('EMAIL')} css={inputFontSize} />
+          <Input
+            placeholder={t('EMAIL')}
+            css={inputFontSize}
+            onKeyDown={(e) => {
+              // prevents triggering SetBuilderKeyboardShortcuts
+              e.nativeEvent.stopPropagation();
+            }}
+          />
         </Form.Item>
       </Form>
     </Modal>

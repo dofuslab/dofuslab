@@ -301,6 +301,10 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
                     dispatch({ type: 'edit', stat: baseKey, value: newValue });
                     debouncedCheckAndMutate();
                   }}
+                  onKeyDown={(e) => {
+                    // prevents triggering SetBuilderKeyboardShortcuts
+                    e.nativeEvent.stopPropagation();
+                  }}
                 />
               ) : (
                 <div
@@ -326,6 +330,10 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
                       value: newValue,
                     });
                     debouncedCheckAndMutate();
+                  }}
+                  onKeyDown={(e) => {
+                    // prevents triggering SetBuilderKeyboardShortcuts
+                    e.nativeEvent.stopPropagation();
                   }}
                 />
               ) : (

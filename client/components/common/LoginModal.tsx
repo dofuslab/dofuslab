@@ -124,7 +124,14 @@ const LoginModal: React.FC<Props> = ({ visible, onClose, openSignUpModal }) => {
             ]}
             validateTrigger="onSubmit"
           >
-            <Input placeholder={t('EMAIL')} css={inputFontSize} />
+            <Input
+              placeholder={t('EMAIL')}
+              css={inputFontSize}
+              onKeyDown={(e) => {
+                // prevents triggering SetBuilderKeyboardShortcuts
+                e.nativeEvent.stopPropagation();
+              }}
+            />
           </Form.Item>
           <Form.Item
             name="password"
@@ -142,6 +149,10 @@ const LoginModal: React.FC<Props> = ({ visible, onClose, openSignUpModal }) => {
             <Input.Password
               placeholder={t('PASSWORD')}
               css={{ '.ant-input': inputFontSize }}
+              onKeyDown={(e) => {
+                // prevents triggering SetBuilderKeyboardShortcuts
+                e.nativeEvent.stopPropagation();
+              }}
             />
           </Form.Item>
           <Form.Item

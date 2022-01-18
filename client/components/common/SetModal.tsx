@@ -82,10 +82,10 @@ const SetModal: React.FC<Props> = ({
         onOk();
       }
     };
-    document.addEventListener('keydown', listener);
+    window.addEventListener('keydown', listener);
 
     return () => {
-      document.removeEventListener('keydown', listener);
+      window.removeEventListener('keydown', listener);
     };
   }, [data, visible, onOk]);
 

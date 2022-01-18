@@ -117,6 +117,7 @@ export const classicStatGroups = [
 ];
 
 export const SEARCH_BAR_ID = 'search-bar';
+export const SETS_SEARCH_BAR_ID = 'sets-search';
 
 export const DISCORD_SERVER_LINK = 'https://discord.gg/S4TvSfa';
 export const GITHUB_REPO_LINK = 'https://github.com/dofuslab/dofuslab';

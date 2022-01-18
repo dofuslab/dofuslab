@@ -126,7 +126,14 @@ const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
           ]}
           validateTrigger="onSubmit"
         >
-          <Input css={inputFontSize} placeholder={t('EMAIL')} />
+          <Input
+            css={inputFontSize}
+            placeholder={t('EMAIL')}
+            onKeyDown={(e) => {
+              // prevents triggering SetBuilderKeyboardShortcuts
+              e.nativeEvent.stopPropagation();
+            }}
+          />
         </Form.Item>
         <Form.Item
           name="username"
@@ -152,6 +159,10 @@ const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
             css={inputFontSize}
             placeholder={t('DISPLAY_NAME')}
             maxLength={20}
+            onKeyDown={(e) => {
+              // prevents triggering SetBuilderKeyboardShortcuts
+              e.nativeEvent.stopPropagation();
+            }}
           />
         </Form.Item>
         <Form.Item
@@ -170,6 +181,10 @@ const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
           <Input.Password
             css={{ '.ant-input': inputFontSize }}
             placeholder={t('PASSWORD')}
+            onKeyDown={(e) => {
+              // prevents triggering SetBuilderKeyboardShortcuts
+              e.nativeEvent.stopPropagation();
+            }}
           />
         </Form.Item>
         <Form.Item
@@ -195,6 +210,10 @@ const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
           <Input.Password
             css={{ '.ant-input': inputFontSize }}
             placeholder={t('PASSWORD')}
+            onKeyDown={(e) => {
+              // prevents triggering SetBuilderKeyboardShortcuts
+              e.nativeEvent.stopPropagation();
+            }}
           />
         </Form.Item>
         <Divider />

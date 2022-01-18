@@ -269,6 +269,10 @@ const BuildList: React.FC<Props> = ({
                 }}
                 onChange={onSearch}
                 placeholder={t('SEARCH')}
+                onKeyDown={(e) => {
+                  // prevents triggering SetBuilderKeyboardShortcuts
+                  e.nativeEvent.stopPropagation();
+                }}
               />
             </div>
             {classSelect}

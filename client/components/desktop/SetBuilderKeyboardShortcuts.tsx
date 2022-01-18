@@ -5,7 +5,7 @@ import { itemSlots as ItemSlots } from 'graphql/queries/__generated__/itemSlots'
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { useQuery } from '@apollo/client';
 import { CustomSet, ItemSlot } from 'common/type-aliases';
-import { SEARCH_BAR_ID } from 'common/constants';
+import { SEARCH_BAR_ID, SETS_SEARCH_BAR_ID } from 'common/constants';
 import { findFirstEmptySlot, useDeleteItemMutation } from 'common/utils';
 
 interface Props {
@@ -42,9 +42,8 @@ const SetBuilderKeyboardShortcuts: React.FC<Props> = ({
 
   React.useEffect(() => {
     const listener = (e: KeyboardEvent) => {
-      const searchBar = document.getElementById(
-        SEARCH_BAR_ID,
-      ) as HTMLInputElement;
+      const searchBar = (document.getElementById(SEARCH_BAR_ID) ||
+        document.getElementById(SETS_SEARCH_BAR_ID)) as HTMLInputElement;
 
       if (e.altKey || e.ctrlKey || e.shiftKey || e.metaKey || !itemSlots) {
         return;
@@ -114,10 +113,10 @@ const SetBuilderKeyboardShortcuts: React.FC<Props> = ({
         }
       }
     };
-    document.addEventListener('keydown', listener);
+    window.addEventListener('keydown', listener);
 
     return () => {
-      document.removeEventListener('keydown', listener);
+      window.removeEventListener('keydown', listener);
     };
   }, [itemSlots, selectItemSlot, customSet, selectedItemSlot]);
 

@@ -3,7 +3,12 @@
 import * as React from 'react';
 import { ClassNames, jsx } from '@emotion/core';
 import { Stat } from '__generated__/globalTypes';
-import { mq, DEBOUNCE_INTERVAL, SEARCH_BAR_ID } from 'common/constants';
+import {
+  mq,
+  DEBOUNCE_INTERVAL,
+  SEARCH_BAR_ID,
+  SETS_SEARCH_BAR_ID,
+} from 'common/constants';
 import { Select, Input, InputNumber, Button, Switch } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
@@ -122,7 +127,7 @@ const SelectorFilters: React.FC<Props> = ({
 
   const theme = useTheme<Theme>();
 
-  let searchId = showSets ? 'sets-search' : SEARCH_BAR_ID;
+  let searchId = showSets ? SETS_SEARCH_BAR_ID : SEARCH_BAR_ID;
   if (isMobile) searchId = `${searchId}-mobile`;
 
   React.useEffect(() => {
@@ -258,6 +263,10 @@ const SelectorFilters: React.FC<Props> = ({
               [mq[4]]: { marginLeft: 16 },
               display: 'flex',
               alignItems: 'center',
+            }}
+            onKeyDown={(e) => {
+              // prevents triggering SetBuilderKeyboardShortcuts
+              e.nativeEvent.stopPropagation();
             }}
           />
         </div>

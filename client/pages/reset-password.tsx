@@ -130,6 +130,10 @@ const RequestPasswordResetPage: NextPage = () => {
             <Input.Password
               css={{ '.ant-input': inputFontSize }}
               placeholder={t('PASSWORD')}
+              onKeyDown={(e) => {
+                // prevents triggering SetBuilderKeyboardShortcuts
+                e.nativeEvent.stopPropagation();
+              }}
             />
           </Form.Item>
           <Form.Item
@@ -155,6 +159,10 @@ const RequestPasswordResetPage: NextPage = () => {
             <Input.Password
               css={{ '.ant-input': inputFontSize }}
               placeholder={t('PASSWORD')}
+              onKeyDown={(e) => {
+                // prevents triggering SetBuilderKeyboardShortcuts
+                e.nativeEvent.stopPropagation();
+              }}
             />
           </Form.Item>
           <Form.Item

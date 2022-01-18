@@ -166,6 +166,10 @@ const CustomSetHeaderForm: React.FC<Props> = ({
               },
             }}
             maxLength={50}
+            onKeyDown={(e) => {
+              // prevents triggering SetBuilderKeyboardShortcuts
+              e.nativeEvent.stopPropagation();
+            }}
           />
         </Form.Item>
       ) : (
@@ -218,6 +222,10 @@ const CustomSetHeaderForm: React.FC<Props> = ({
                 type="number"
                 max={200}
                 min={1}
+                onKeyDown={(e) => {
+                  // prevents triggering SetBuilderKeyboardShortcuts
+                  e.nativeEvent.stopPropagation();
+                }}
               />
             </Form.Item>
           ) : (
