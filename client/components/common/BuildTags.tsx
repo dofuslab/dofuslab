@@ -159,6 +159,10 @@ const BuildTags: React.FC<Props> = ({
       placeholder={t('ADD_TAG')}
       labelInValue
       filterOption={antdSelectFilterOption}
+      onKeyDown={(e) => {
+        // prevents triggering SetBuilderKeyboardShortcuts
+        e.nativeEvent.stopPropagation();
+      }}
     >
       {data &&
         [...data.customSetTags]

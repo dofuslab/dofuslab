@@ -242,6 +242,10 @@ const SelectorFilters: React.FC<Props> = ({
             placeholder={t('SEARCH')}
             value={search}
             onChange={onSearch}
+            onKeyDown={(e) => {
+              // prevents triggering SetBuilderKeyboardShortcuts
+              e.nativeEvent.stopPropagation();
+            }}
             css={{
               maxHeight: 'none',
               '.ant-input': inputFontSize,
@@ -320,6 +324,10 @@ const SelectorFilters: React.FC<Props> = ({
                 })}
                 filterOption={antdSelectFilterOption}
                 labelInValue
+                onKeyDown={(e) => {
+                  // prevents triggering SetBuilderKeyboardShortcuts
+                  e.nativeEvent.stopPropagation();
+                }}
               >
                 {Object.values(Stat)
                   .sort((s1, s2) =>

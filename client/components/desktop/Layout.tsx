@@ -183,6 +183,10 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
       css={{
         '&.ant-select': { marginLeft: 12 },
       }}
+      onKeyDown={(e) => {
+        // prevents triggering SetBuilderKeyboardShortcuts
+        e.nativeEvent.stopPropagation();
+      }}
     >
       {LANGUAGES.map((lang) => (
         <Option key={lang} value={lang}>

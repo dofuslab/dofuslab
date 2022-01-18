@@ -295,6 +295,10 @@ const BuildList: React.FC<Props> = ({
                 placeholder={t('SELECT_TAGS')}
                 mode="multiple"
                 allowClear
+                onKeyDown={(e) => {
+                  // prevents triggering SetBuilderKeyboardShortcuts
+                  e.nativeEvent.stopPropagation();
+                }}
               >
                 {[...tagsData.customSetTags]
                   .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))

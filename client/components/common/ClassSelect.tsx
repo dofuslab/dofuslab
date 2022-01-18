@@ -40,6 +40,10 @@ export const ClassSelect = ({
       onChange={onChange}
       placeholder={t('SELECT_CLASS')}
       allowClear={allowClear}
+      onKeyDown={(e) => {
+        // prevents triggering SetBuilderKeyboardShortcuts
+        e.nativeEvent.stopPropagation();
+      }}
     >
       {allowNoClass && (
         <Select.Option key="NO_CLASS" value="">

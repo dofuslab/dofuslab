@@ -278,6 +278,10 @@ const MageModal: React.FC<Props> = ({
                       onChange={setWeaponElementMage}
                       dropdownClassName={css({ zIndex: 1062 })}
                       css={{ width: '100%', fontSize: '0.75rem' }}
+                      onKeyDown={(e) => {
+                        // prevents triggering SetBuilderKeyboardShortcuts
+                        e.nativeEvent.stopPropagation();
+                      }}
                     >
                       {Object.values(WeaponElementMage).map((v) => (
                         <Option key={v} value={v}>
@@ -385,6 +389,10 @@ const MageModal: React.FC<Props> = ({
                 labelInValue
                 filterOption={antdSelectFilterOption}
                 dropdownClassName={css({ zIndex: 1062 })} // higher than modal (1061)
+                onKeyDown={(e) => {
+                  // prevents triggering SetBuilderKeyboardShortcuts
+                  e.nativeEvent.stopPropagation();
+                }}
               >
                 {Object.values(Stat)
                   .sort((s1, s2) =>

@@ -339,6 +339,10 @@ const SpellCardContent: React.FC<Props> = ({
                 defaultValue={selectedCondition || undefined}
                 onChange={(v) => setSelectedCondition(v)}
                 css={{ width: '100%' }}
+                onKeyDown={(e) => {
+                  // prevents triggering SetBuilderKeyboardShortcuts
+                  e.nativeEvent.stopPropagation();
+                }}
               >
                 {conditions.map((c) => (
                   <Select.Option key={c} value={c}>

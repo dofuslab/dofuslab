@@ -178,6 +178,10 @@ const BuffModal: React.FC<Props> = ({
         value={selectedClassId}
         onChange={onSelectClass}
         placeholder={t('SELECT_CLASS', { ns: 'common' })}
+        onKeyDown={(e) => {
+          // prevents triggering SetBuilderKeyboardShortcuts
+          e.nativeEvent.stopPropagation();
+        }}
       >
         {classData &&
           [...classData?.classes]
