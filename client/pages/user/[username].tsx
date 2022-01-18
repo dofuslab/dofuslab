@@ -48,6 +48,9 @@ const UserProfilePage: NextPage = () => {
     return <ErrorPage statusCode={404} />;
   }
 
+  const isEditable =
+    currentUser?.currentUser?.username.toLowerCase() === username.toLowerCase();
+
   return (
     <>
       <Head>
@@ -95,10 +98,10 @@ const UserProfilePage: NextPage = () => {
         <MobileLayout>
           {userProfileData?.userByName && (
             <UserProfile
-              username={username}
-              creationDate={userProfileData?.userByName?.creationDate}
+              username={userProfileData.userByName.username}
+              creationDate={userProfileData.userByName.creationDate}
               profilePicture={userProfileData.userByName.profilePicture}
-              isEditable={currentUser?.currentUser?.username === username}
+              isEditable={isEditable}
               isMobile
             />
           )}
@@ -108,10 +111,10 @@ const UserProfilePage: NextPage = () => {
         <DesktopLayout showSwitch={false}>
           {userProfileData?.userByName && (
             <UserProfile
-              username={username}
+              username={userProfileData.userByName.username}
               creationDate={userProfileData.userByName.creationDate}
               profilePicture={userProfileData.userByName.profilePicture}
-              isEditable={currentUser?.currentUser?.username === username}
+              isEditable={isEditable}
             />
           )}
         </DesktopLayout>

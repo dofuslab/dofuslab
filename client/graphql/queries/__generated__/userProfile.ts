@@ -38,6 +38,7 @@ export interface userProfile_userByName_customSets {
 export interface userProfile_userByName {
   __typename: "User";
   id: any;
+  username: string;
   profilePicture: string;
   creationDate: any | null;
   customSets: userProfile_userByName_customSets;
