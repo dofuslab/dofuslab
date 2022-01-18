@@ -136,10 +136,6 @@ const Selector: React.FC<Props> = ({
           isClassic={isClassic}
           selectedItemSlot={selectedItemSlot}
           selectItemSlot={selectItemSlot}
-          onKeyDown={(e) => {
-            // prevents triggering SetBuilderKeyboardShortcuts
-            e.nativeEvent.stopPropagation();
-          }}
         />
         {slots && !showSetsState && (
           <ItemTypeFilter
