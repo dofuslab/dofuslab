@@ -227,7 +227,14 @@ const Layout = ({ children, showSwitch }: LayoutProps) => {
           />
         );
         return (
-          <div css={{ display: 'flex', marginRight: 12, alignItems: 'center' }}>
+          <div
+            css={{
+              display: 'flex',
+              marginRight: 12,
+              alignItems: 'center',
+              fontSize: '0.75rem',
+            }}
+          >
             <Media lessThan="sm">
               <Tooltip
                 css={{ fontSize: '0.75rem' }}
