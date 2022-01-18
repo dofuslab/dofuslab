@@ -205,7 +205,7 @@ const SetHeader: React.FC<Props> = ({
             </div>
             {formElement}
           </div>
-          <Divider css={{ margin: '12px 0' }} />
+          {customSet && <Divider css={{ margin: '12px 0' }} />}
           <>
             {customSet && (
               <div css={{ fontSize: '0.75rem' }}>
