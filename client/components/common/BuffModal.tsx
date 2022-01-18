@@ -10,7 +10,12 @@ import { useQuery } from '@apollo/client';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
 import { Select, Spin, Divider, Button } from 'antd';
-import { CustomSetContext, getFaceImageUrl, getImageUrl } from 'common/utils';
+import {
+  antdSelectFilterOption,
+  CustomSetContext,
+  getFaceImageUrl,
+  getImageUrl,
+} from 'common/utils';
 import {
   classBuffs,
   classBuffsVariables,
@@ -169,11 +174,7 @@ const BuffModal: React.FC<Props> = ({
         size="large"
         css={{ width: '100%', marginBottom: 12 }}
         showSearch
-        filterOption={(input, option) => {
-          return (option?.children[1] as string)
-            .toLocaleUpperCase()
-            .includes(input.toLocaleUpperCase());
-        }}
+        filterOption={antdSelectFilterOption}
         value={selectedClassId}
         onChange={onSelectClass}
         placeholder={t('SELECT_CLASS', { ns: 'common' })}

@@ -12,6 +12,7 @@ import {
   effectToIconUrl,
   elementMageToWeaponEffect,
   getImageUrl,
+  antdSelectFilterOption,
 } from 'common/utils';
 import {
   Stat,
@@ -382,11 +383,7 @@ const MageModal: React.FC<Props> = ({
                 onSelect={onAddStat}
                 css={{ fontSize: '0.75rem', width: '100%' }}
                 labelInValue
-                filterOption={(input, option) =>
-                  (option?.children as string)
-                    .toLocaleUpperCase()
-                    .includes(input.toLocaleUpperCase())
-                }
+                filterOption={antdSelectFilterOption}
                 dropdownClassName={css({ zIndex: 1062 })} // higher than modal (1061)
               >
                 {Object.values(Stat)

@@ -98,6 +98,7 @@ import {
   ItemTypeWithSlots,
   EquippedItem,
 } from './type-aliases';
+import { DefaultOptionType } from 'antd/lib/select';
 
 export const getImageUrl = (suffix: string) =>
   suffix.startsWith('https://')
@@ -1934,3 +1935,12 @@ export const getFaceImageUrl = (
   }
   return getImageUrl(imageUrl);
 };
+
+export function antdSelectFilterOption(
+  input: string,
+  option: DefaultOptionType | undefined,
+) {
+  return String(option?.children ? option.children[1] : null)
+    .toLocaleUpperCase()
+    .includes(input.toLocaleUpperCase());
+}

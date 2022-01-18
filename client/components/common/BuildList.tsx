@@ -27,6 +27,7 @@ import {
   getImageUrl,
   navigateToNewCustomSet,
   getFaceImageUrl,
+  antdSelectFilterOption,
 } from 'common/utils';
 import { createCustomSet } from 'graphql/mutations/__generated__/createCustomSet';
 import createCustomSetMutation from 'graphql/mutations/createCustomSet.graphql';
@@ -282,11 +283,7 @@ const BuildList: React.FC<Props> = ({
                   },
                 ]}
                 showSearch
-                filterOption={(input, option) => {
-                  return (option?.children[1] as string)
-                    .toLocaleUpperCase()
-                    .includes(input.toLocaleUpperCase());
-                }}
+                filterOption={antdSelectFilterOption}
                 value={tagIds}
                 onChange={(value: Array<string>) => {
                   setTagIds(value);
@@ -479,7 +476,6 @@ const BuildList: React.FC<Props> = ({
                                 paddingTop: '100%',
                               },
                             }}
-                            key={`equipped-item-${id}`}
                           >
                             <img
                               src={getImageUrl(item.imageUrl)}
