@@ -124,6 +124,12 @@ const ItemSelector: React.FC<Props> = ({
     [mutate, selectItemSlot, selectedItemSlot, customSet, isClassic],
   );
 
+  const filtersUnchanged =
+    !filters.search &&
+    (!customSet || filters.maxLevel === customSet.level) &&
+    filters.stats.length === 0 &&
+    itemTypeIdsArr.length === 0;
+
   React.useEffect(() => {
     const listener = (e: KeyboardEvent) => {
       const keyIndex = Number(e.key) - 1;
@@ -133,13 +139,19 @@ const ItemSelector: React.FC<Props> = ({
       const numSuggestions = data.itemSuggestions.length;
 
       if (Number.isInteger(keyIndex) && keyIndex >= 0 && keyIndex <= 8) {
-        if (keyIndex < numSuggestions) {
-          equipItem(data.itemSuggestions[keyIndex]);
-        } else {
-          const idx = keyIndex - numSuggestions;
+        if (filtersUnchanged) {
+          if (keyIndex < numSuggestions) {
+            equipItem(data.itemSuggestions[keyIndex]);
+          } else {
+            const idx = keyIndex - numSuggestions;
 
-          if (data.items.edges[idx]) {
-            equipItem(data.items.edges[idx].node);
+            if (data.items.edges[idx]) {
+              equipItem(data.items.edges[idx].node);
+            }
+          }
+        } else {
+          if (data.items.edges[keyIndex]) {
+            equipItem(data.items.edges[keyIndex].node);
           }
         }
       }
@@ -149,13 +161,7 @@ const ItemSelector: React.FC<Props> = ({
     return () => {
       window.removeEventListener('keydown', listener);
     };
-  }, [data]);
-
-  const filtersUnchanged =
-    !filters.search &&
-    (!customSet || filters.maxLevel === customSet.level) &&
-    filters.stats.length === 0 &&
-    itemTypeIdsArr.length === 0;
+  }, [data, filtersUnchanged]);
 
   return (
     <InfiniteScroll
