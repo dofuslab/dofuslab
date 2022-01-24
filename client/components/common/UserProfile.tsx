@@ -1,16 +1,15 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import React from 'react';
-import { jsx } from '@emotion/core';
+
 import { useTranslation } from 'i18n';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 import { mq } from 'common/constants';
 import { Button } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
+import { getImageUrl } from 'common/utils';
 import BuildList from './BuildList';
 import ProfilePictureModal from './ProfilePictureModal';
-import { Theme } from 'common/types';
-import { getImageUrl } from 'common/utils';
 
 interface Props {
   username: string;
@@ -30,7 +29,7 @@ const UserProfile: React.FC<Props> = ({
   const [pictureModalVisible, setPictureModalVisible] = React.useState(false);
 
   const { t } = useTranslation('common');
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   const getDate = (dateStr: string) =>
     new Date(dateStr).toLocaleDateString(undefined, {

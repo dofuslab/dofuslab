@@ -1,16 +1,14 @@
 import React from 'react';
-import { ClassNames } from '@emotion/core';
-import { useTheme } from 'emotion-theming';
+import { ClassNames, useTheme } from '@emotion/react';
+
 import { Tooltip as AntdTooltip } from 'antd';
 import { TooltipProps } from 'antd/lib/tooltip';
-
-import { Theme } from 'common/types';
 
 const Tooltip: React.FC<TooltipProps> = ({
   overlayClassName,
   ...restProps
 }) => {
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
   return (
     <ClassNames>
       {({ css, cx }) => (

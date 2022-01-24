@@ -1,9 +1,8 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
 import { Tabs } from 'antd';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 
 import { mq } from 'common/constants';
 import { ResponsiveGrid, BuffButton } from 'common/wrappers';
@@ -14,7 +13,7 @@ import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
 import { useTranslation } from 'i18n';
-import { BuildError, Theme } from 'common/types';
+import { BuildError } from 'common/types';
 import { Stat } from '__generated__/globalTypes';
 import { CustomSet, ItemSlot } from 'common/type-aliases';
 import BuffModal from 'components/common/BuffModal';
@@ -87,11 +86,8 @@ interface Props {
 }
 
 const SetBuilder: React.FC<Props> = ({ customSet }) => {
-  const {
-    appliedBuffs,
-    statsFromCustomSet,
-    customSetLoading,
-  } = React.useContext(CustomSetContext);
+  const { appliedBuffs, statsFromCustomSet, customSetLoading } =
+    React.useContext(CustomSetContext);
   const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(
     null,
   );
@@ -120,7 +116,7 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
 
   const { t } = useTranslation('common');
 
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   return (
     <>

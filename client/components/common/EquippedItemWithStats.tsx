@@ -1,9 +1,8 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
-import { jsx, ClassNames } from '@emotion/core';
+import React from 'react';
+import { ClassNames, useTheme } from '@emotion/react';
 import { Popover } from 'antd';
-import { useTheme } from 'emotion-theming';
 
 import {
   popoverTitleStyle,
@@ -28,7 +27,7 @@ import {
 import { useTranslation } from 'i18n';
 import { mq } from 'common/constants';
 import { Media } from 'components/common/Media';
-import { BuildError, Theme } from 'common/types';
+import { BuildError } from 'common/types';
 
 import { BrokenImagePlaceholder } from 'common/wrappers';
 import { EquippedItem, CustomSet, ItemSet } from 'common/type-aliases';
@@ -36,7 +35,7 @@ import { TooltipPlacement } from 'antd/lib/tooltip';
 import EquippedItemCard from '../desktop/EquippedItemCard';
 
 const wrapperStyles = {
-  position: 'absolute' as 'absolute',
+  position: 'absolute' as const,
   right: 6,
   top: 6,
   fontSize: '1rem',
@@ -96,7 +95,7 @@ const EquippedItemWithStats: React.FC<Props> = ({
   );
 
   const { t } = useTranslation('common');
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
   const [brokenImage, setBrokenImage] = React.useState(false);
   const contentRef = React.useRef<HTMLDivElement | null>(null);
 

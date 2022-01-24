@@ -1,9 +1,9 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
+
 import { Divider, notification, Select, Radio } from 'antd';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 
 import {
   damageHeaderStyle,
@@ -25,7 +25,6 @@ import {
 } from 'common/utils';
 import {
   TEffectLine,
-  Theme,
   ConditionalSpellEffect,
   UnconditionalSpellEffect,
 } from 'common/types';
@@ -43,9 +42,8 @@ const SpellCardContent: React.FC<Props> = ({
   spell,
   selectedSpellLevelIdx,
 }) => {
-  const { customSet, statsFromCustomSetWithBuffs } = React.useContext(
-    CustomSetContext,
-  );
+  const { customSet, statsFromCustomSetWithBuffs } =
+    React.useContext(CustomSetContext);
   const { t } = useTranslation(['weapon_spell_effect', 'stat', 'common']);
   const customSetLevel = customSet?.level || 200;
 
@@ -86,7 +84,7 @@ const SpellCardContent: React.FC<Props> = ({
 
   let content = null;
 
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   const addDamageIncrease = React.useCallback(
     (damageIncrease: number) => {
@@ -221,7 +219,7 @@ const SpellCardContent: React.FC<Props> = ({
     let critRate =
       typeof spellStats.baseCritChance === 'number'
         ? getStatWithDefault(statsFromCustomSetWithBuffs, Stat.CRITICAL) +
-          spellStats?.baseCritChance
+          (spellStats?.baseCritChance ?? 0)
         : null;
     critRate = critRate === null ? null : Math.min(Math.max(critRate, 0), 100);
 

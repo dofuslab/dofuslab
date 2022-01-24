@@ -1,6 +1,4 @@
-/** @jsx jsx */
-
-import { jsx } from '@emotion/core';
+/** @jsxImportSource @emotion/react */
 
 import { Select, SelectProps } from 'antd';
 import { useQuery } from '@apollo/client';
@@ -11,7 +9,7 @@ import classesQuery from 'graphql/queries/classes.graphql';
 import { antdSelectFilterOption, getFaceImageUrl } from 'common/utils';
 import { BuildGender } from '__generated__/globalTypes';
 
-export const ClassSelect = ({
+export default function ClassSelect({
   value,
   onChange,
   className,
@@ -27,7 +25,7 @@ export const ClassSelect = ({
   allowNoClass?: boolean;
   buildGender?: BuildGender;
   allowClear?: boolean;
-}) => {
+}) {
   const { data } = useQuery<classes>(classesQuery);
   const { t } = useTranslation('common');
   return data ? (
@@ -69,4 +67,4 @@ export const ClassSelect = ({
         ))}
     </Select>
   ) : null;
-};
+}

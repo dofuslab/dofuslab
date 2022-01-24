@@ -1,10 +1,9 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import React from 'react';
-import { jsx } from '@emotion/core';
-import { useTheme } from 'emotion-theming';
 
-import { Theme } from 'common/types';
+import { useTheme } from '@emotion/react';
+
 import { useTranslation } from 'i18n';
 import {
   SetBonuses,
@@ -29,7 +28,7 @@ const SetCard: React.FC<Props> = ({ set, onClick }) => {
     0,
   );
 
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
 
@@ -38,81 +37,79 @@ const SetCard: React.FC<Props> = ({ set, onClick }) => {
   }, [onClick, set]);
 
   return (
-    <>
-      <Card
-        hoverable
-        size="small"
-        onClick={openSetModal}
-        title={
-          <CardTitleWithLevel
-            title={set.name}
-            level={set.items?.reduce(
-              (currentMax, item) => Math.max(item?.level || 0, currentMax),
-              0,
-            )}
-          />
-        }
-        css={{
-          ...itemCardStyle,
-          ':hover': {
-            border: `1px solid ${theme.border?.default}`,
-          },
+    <Card
+      hoverable
+      size="small"
+      onClick={openSetModal}
+      title={
+        <CardTitleWithLevel
+          title={set.name}
+          level={set.items?.reduce(
+            (currentMax, item) => Math.max(item?.level || 0, currentMax),
+            0,
+          )}
+        />
+      }
+      css={{
+        ...itemCardStyle,
+        ':hover': {
           border: `1px solid ${theme.border?.default}`,
-        }}
-      >
-        <div>
-          <div
-            css={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              margin: '0px auto 12px',
-            }}
-          >
-            {set.items.map((item) =>
-              brokenImages.includes(item.id) ? (
-                <BrokenImagePlaceholder
-                  key={`item-${item.id}`}
-                  css={{
-                    width: 84,
-                    height: 84,
-                    [mq[1]]: {
-                      width: 60,
-                      height: 60,
-                    },
-                    ':not:first-of-type': { marginLeft: 12 },
-                  }}
-                />
-              ) : (
-                <img
-                  src={getImageUrl(item.imageUrl)}
-                  key={`item-${item.id}`}
-                  css={{
-                    width: 84,
-                    height: 84,
-                    [mq[1]]: {
-                      width: 60,
-                      height: 60,
-                    },
-                    ':not:first-of-type': { marginLeft: 12 },
-                  }}
-                  onError={() => {
-                    setBrokenImages((prev) => [...prev, item.id]);
-                  }}
-                  alt={item.name}
-                />
-              ),
-            )}
-          </div>
-          <SetBonuses
-            bonuses={set.bonuses.filter(
-              (bonus) => bonus.numItems === maxSetBonusItems,
-            )}
-            count={maxSetBonusItems}
-            t={t}
-          />
+        },
+        border: `1px solid ${theme.border?.default}`,
+      }}
+    >
+      <div>
+        <div
+          css={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            margin: '0px auto 12px',
+          }}
+        >
+          {set.items.map((item) =>
+            brokenImages.includes(item.id) ? (
+              <BrokenImagePlaceholder
+                key={`item-${item.id}`}
+                css={{
+                  width: 84,
+                  height: 84,
+                  [mq[1]]: {
+                    width: 60,
+                    height: 60,
+                  },
+                  ':not:first-of-type': { marginLeft: 12 },
+                }}
+              />
+            ) : (
+              <img
+                src={getImageUrl(item.imageUrl)}
+                key={`item-${item.id}`}
+                css={{
+                  width: 84,
+                  height: 84,
+                  [mq[1]]: {
+                    width: 60,
+                    height: 60,
+                  },
+                  ':not:first-of-type': { marginLeft: 12 },
+                }}
+                onError={() => {
+                  setBrokenImages((prev) => [...prev, item.id]);
+                }}
+                alt={item.name}
+              />
+            ),
+          )}
         </div>
-      </Card>
-    </>
+        <SetBonuses
+          bonuses={set.bonuses.filter(
+            (bonus) => bonus.numItems === maxSetBonusItems,
+          )}
+          count={maxSetBonusItems}
+          t={t}
+        />
+      </div>
+    </Card>
   );
 };
 

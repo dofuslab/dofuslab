@@ -1,7 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import React from 'react';
-import { jsx } from '@emotion/core';
+
 import { useQuery } from '@apollo/client';
 import InfiniteScroll from 'react-infinite-scroller';
 

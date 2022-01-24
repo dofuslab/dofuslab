@@ -1,7 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
+
 import { Buff, ClassBuffSpell, Item } from 'common/type-aliases';
 import { useTranslation } from 'i18n';
 import { AppliedBuffActionType } from 'common/types';

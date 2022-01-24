@@ -1,14 +1,13 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import React from 'react';
-import { jsx } from '@emotion/core';
+
 import { Modal, Divider, Skeleton } from 'antd';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 import groupBy from 'lodash/groupBy';
 
-import { Theme } from 'common/types';
 import { set, setVariables } from 'graphql/queries/__generated__/set';
 import setQuery from 'graphql/queries/set.graphql';
 import { useTranslation } from 'i18n';
@@ -42,7 +41,7 @@ const SetModal: React.FC<Props> = ({
 
   const router = useRouter();
   const { t } = useTranslation('common');
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
   const [itemIds, setItemIds] = React.useState<Array<string>>([]);
 
   const [mutate, { loading: mutationLoading }] = useEquipItemsMutation(

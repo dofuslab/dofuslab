@@ -1,14 +1,13 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import React from 'react';
-import { jsx } from '@emotion/core';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 import { useTranslation } from 'i18n';
 import { Stat, WeaponElementMage } from '__generated__/globalTypes';
 import { Divider } from 'antd';
 import { WeaponEffectsList, BrokenImagePlaceholder } from 'common/wrappers';
 import { TFunction } from 'next-i18next';
-import { BuildError, Theme } from 'common/types';
+import { BuildError } from 'common/types';
 import { getImageUrl, renderErrors } from 'common/utils';
 
 import { Exo, ItemSet, Item } from 'common/type-aliases';
@@ -17,7 +16,6 @@ interface Props {
   readonly item: Item;
   readonly className?: string;
   readonly exos?: ReadonlyArray<Exo> | null;
-  readonly hideSet?: boolean;
   readonly openSetModal?: (set: ItemSet) => void;
   readonly showImg?: boolean;
   readonly showOnlyWeaponStats?: boolean;
@@ -79,7 +77,7 @@ const ItemStatsList: React.FC<Props> = ({
   errors,
 }) => {
   const { t, i18n } = useTranslation(['stat', 'weapon_spell_effect', 'common']);
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   const statsMap: {
     [key: string]: { value: number; maged: boolean };

@@ -1,7 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
+
 import { Button, Input, InputNumber, Form } from 'antd';
 
 import {
