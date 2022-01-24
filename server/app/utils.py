@@ -8,6 +8,7 @@ from flask_babel import _
 from graphql import GraphQLError
 from flask_login import current_user
 from sqlalchemy import update
+import time
 
 base_stat_list = [
     "base_vitality",
@@ -150,3 +151,13 @@ def edit_custom_set_metadata(custom_set, name, level):
         raise GraphQLError(_("Invalid set level (must be 1-200)."))
     custom_set.name = name
     custom_set.level = level
+
+
+def time_execution(func):
+    def wrapper(*args, **kwargs):
+        t = time.process_time()
+        result = func(*args, **kwargs)
+        print("execution time: {}".format(time.process_time() - t))
+        return result
+
+    return wrapper
