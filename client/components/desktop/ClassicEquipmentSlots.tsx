@@ -1,7 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
+
 import { useQuery } from '@apollo/client';
 import groupBy from 'lodash/groupBy';
 
@@ -13,14 +13,14 @@ import { EditableContext, getImageUrl, useSetModal } from 'common/utils';
 import { BuildError } from 'common/types';
 import { CustomSet, EquippedItem } from 'common/type-aliases';
 import { TooltipPlacement } from 'antd/lib/tooltip';
-import MageModal from '../common/MageModal';
-import SetModal from '../common/SetModal';
-import BonusStats from './BonusStats';
-import ClassicEquippedItem from './ClassicEquippedItem';
 import { BuildGender } from '__generated__/globalTypes';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import DefaultClassModal from 'components/common/DefaultClassModal';
+import MageModal from '../common/MageModal';
+import SetModal from '../common/SetModal';
+import BonusStats from './BonusStats';
+import ClassicEquippedItem from './ClassicEquippedItem';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -65,9 +65,8 @@ const ClassicEquipmentSlots: React.FC<Props> = ({
   const { data } = useQuery<ItemSlotsQueryType>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
 
-  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
-    currentUserQuery,
-  );
+  const { data: currentUserData } =
+    useQuery<CurrentUserQueryType>(currentUserQuery);
 
   const equippedItemsBySlotId: {
     [key: string]: EquippedItem;
@@ -81,10 +80,8 @@ const ClassicEquipmentSlots: React.FC<Props> = ({
   const [equippedItem, setEquippedItem] = React.useState<EquippedItem | null>(
     null,
   );
-  const [
-    defaultClassModalVisible,
-    setDefaultClassModalVisible,
-  ] = React.useState(false);
+  const [defaultClassModalVisible, setDefaultClassModalVisible] =
+    React.useState(false);
   const openMageModal = React.useCallback(
     (ei) => {
       setEquippedItem(ei);
@@ -105,12 +102,8 @@ const ClassicEquipmentSlots: React.FC<Props> = ({
 
   const isEditable = React.useContext(EditableContext);
 
-  const {
-    setModalVisible,
-    selectedSet,
-    openSetModal,
-    closeSetModal,
-  } = useSetModal();
+  const { setModalVisible, selectedSet, openSetModal, closeSetModal } =
+    useSetModal();
 
   const groupedErrors = groupBy(errors, ({ equippedItem: ei }) => ei.id);
 

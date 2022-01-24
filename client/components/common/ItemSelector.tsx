@@ -1,7 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import React from 'react';
-import { jsx } from '@emotion/core';
+
 import { useQuery } from '@apollo/client';
 import InfiniteScroll from 'react-infinite-scroller';
 
@@ -11,10 +11,6 @@ import { getResponsiveGridStyle } from 'common/mixins';
 import { SharedFilters } from 'common/types';
 import { mq, getSelectorNumCols } from 'common/constants';
 import { Item, ItemSet } from 'common/type-aliases';
-import SetModal from './SetModal';
-
-import SkeletonCardsLoader from './SkeletonCardsLoader';
-import ItemCardWithContext, { SharedProps } from './ItemCardWithContext';
 import {
   findEmptyOrOnlySlotId,
   findNextEmptySlotIds,
@@ -23,6 +19,10 @@ import {
 } from 'common/utils';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import SetModal from './SetModal';
+
+import SkeletonCardsLoader from './SkeletonCardsLoader';
+import ItemCardWithContext, { SharedProps } from './ItemCardWithContext';
 
 const PAGE_SIZE = 24;
 
@@ -149,10 +149,8 @@ const ItemSelector: React.FC<Props> = ({
               equipItem(data.items.edges[idx].node);
             }
           }
-        } else {
-          if (data.items.edges[keyIndex]) {
-            equipItem(data.items.edges[keyIndex].node);
-          }
+        } else if (data.items.edges[keyIndex]) {
+          equipItem(data.items.edges[keyIndex].node);
         }
       }
     };

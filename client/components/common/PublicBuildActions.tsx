@@ -1,7 +1,8 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx, ClassNames } from '@emotion/core';
+
+import { ClassNames } from '@emotion/react';
 import { Button } from 'antd';
 import { useTranslation } from 'i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,12 +19,8 @@ interface Props {
 
 const PublicBuildActions: React.FC<Props> = ({ customSet, className }) => {
   const { t } = useTranslation('common');
-  const {
-    copyLoading,
-    onCopyLink,
-    onCopyBuild,
-    linkTextareaRef,
-  } = usePublicBuildActions(customSet);
+  const { copyLoading, onCopyLink, onCopyBuild, linkTextareaRef } =
+    usePublicBuildActions(customSet);
   return (
     <ClassNames>
       {({ css, cx }) => (

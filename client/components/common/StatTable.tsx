@@ -1,12 +1,11 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import React from 'react';
-import { jsx, ClassNames } from '@emotion/core';
+import { ClassNames, useTheme } from '@emotion/react';
 import { useTranslation } from 'i18n';
 import { List } from 'antd';
-import { useTheme } from 'emotion-theming';
 
-import { StatsFromCustomSet, Theme } from 'common/types';
+import { StatsFromCustomSet } from 'common/types';
 import { statCalculators, CustomSetContext, getImageUrl } from 'common/utils';
 import { Stat } from '__generated__/globalTypes';
 import { statIcons } from 'common/constants';
@@ -34,13 +33,10 @@ interface Props {
 }
 
 const StatTable: React.FC<Props> = ({ group, className, openBuffModal }) => {
-  const {
-    customSet,
-    statsFromCustomSet,
-    statsFromAppliedBuffs,
-  } = React.useContext(CustomSetContext);
+  const { customSet, statsFromCustomSet, statsFromAppliedBuffs } =
+    React.useContext(CustomSetContext);
   const { t } = useTranslation('stat');
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   const statsFromCustomSetWithBuffs = React.useMemo(
     () =>

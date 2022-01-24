@@ -1,12 +1,11 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx, ClassNames } from '@emotion/core';
+
+import { ClassNames, useTheme } from '@emotion/react';
 import { Popover, Divider } from 'antd';
 import { useTranslation } from 'i18n';
-import { useTheme } from 'emotion-theming';
 
-import { Theme } from 'common/types';
 import { popoverTitleStyle, popoverShadow } from 'common/mixins';
 import { getBonusesFromCustomSet, getImageUrl } from 'common/utils';
 import { SetBonuses, BrokenImagePlaceholder } from 'common/wrappers';
@@ -33,7 +32,7 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
     {},
   ) as { [key: string]: number };
 
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
 
@@ -58,10 +57,9 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
     return null;
   }
 
-  const sortedSetBonuses = Object.values(
-    setBonuses,
-  ).sort(({ set: { name: name1 } }, { set: { name: name2 } }) =>
-    name1.localeCompare(name2),
+  const sortedSetBonuses = Object.values(setBonuses).sort(
+    ({ set: { name: name1 } }, { set: { name: name2 } }) =>
+      name1.localeCompare(name2),
   );
 
   const expandedContent = (

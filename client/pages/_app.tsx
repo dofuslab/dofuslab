@@ -10,7 +10,7 @@ import withApollo from 'common/apollo';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { MediaContextProvider } from 'components/common/Media';
 import Router, { useRouter } from 'next/router';
-import { ThemeProvider } from 'emotion-theming';
+import { ThemeProvider } from '@emotion/react';
 
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import {
@@ -30,6 +30,7 @@ import {
 import { AppliedBuffActionType } from 'common/types';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import 'antd/dist/antd.dark.css';
 
 Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 config.autoAddCss = false;
@@ -78,22 +79,33 @@ const DofusLabApp: React.FC<Props> = ({
     dispatch({ type: AppliedBuffActionType.CLEAR_ALL });
   }, [customSetId]);
 
+  const customSetContextValue = React.useMemo(
+    () => ({
+      dispatch,
+      appliedBuffs,
+      customSet,
+      customSetLoading,
+      statsFromCustomSet,
+      statsFromAppliedBuffs,
+      statsFromCustomSetWithBuffs,
+    }),
+    [
+      dispatch,
+      appliedBuffs,
+      customSet,
+      customSetLoading,
+      statsFromCustomSet,
+      statsFromAppliedBuffs,
+      statsFromCustomSetWithBuffs,
+    ],
+  );
+
   /* eslint-disable react/jsx-props-no-spreading */
   return (
     <ApolloProvider client={apolloClient}>
       <MediaContextProvider>
         <ThemeProvider theme={darkTheme}>
-          <CustomSetContext.Provider
-            value={{
-              dispatch,
-              appliedBuffs,
-              customSet,
-              customSetLoading,
-              statsFromCustomSet,
-              statsFromAppliedBuffs,
-              statsFromCustomSetWithBuffs,
-            }}
-          >
+          <CustomSetContext.Provider value={customSetContextValue}>
             <Component {...pageProps} />
           </CustomSetContext.Provider>
         </ThemeProvider>

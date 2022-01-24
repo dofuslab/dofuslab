@@ -1,6 +1,5 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
-import { jsx } from '@emotion/core';
 import { NextPage } from 'next';
 import EquipPage from 'components/common/EquipPage';
 import { useRouter } from 'next/router';

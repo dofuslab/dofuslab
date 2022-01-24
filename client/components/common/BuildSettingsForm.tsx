@@ -1,13 +1,11 @@
-/** @jsx jsx */
-import React from 'react';
-import { jsx } from '@emotion/core';
+/** @jsxImportSource @emotion/react */
 
 import { Form, Radio } from 'antd';
 import { BuildGender } from '__generated__/globalTypes';
-import { ClassSelect } from './ClassSelect';
 import { useTranslation } from 'i18n';
+import ClassSelect from './ClassSelect';
 
-export function BuildSettingsForm() {
+export default function BuildSettingsForm() {
   const { t } = useTranslation('common');
   return (
     <>

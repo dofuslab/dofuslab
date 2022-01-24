@@ -1,7 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx, ClassNames } from '@emotion/core';
+import { ClassNames } from '@emotion/react';
 import { Button, Divider, Skeleton } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
@@ -25,20 +25,18 @@ import Link from 'next/link';
 import PublicBuildActions from 'components/common/PublicBuildActions';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import { useQuery } from '@apollo/client';
 import BuildErrors from '../common/BuildErrors';
 import BuildActions from '../common/BuildActions';
 import DefaultClassModal from '../common/DefaultClassModal';
 import BuildTags from '../common/BuildTags';
 import CustomSetHeaderForm from '../common/CustomSetHeaderForm';
-import { useQuery } from '@apollo/client';
 import SetHeaderMetadata from '../common/SetHeaderMetadata';
 
 interface Props {
   customSet?: CustomSet | null;
   customSetLoading: boolean;
-  isMobile: boolean;
   errors: Array<BuildError>;
-  isClassic: boolean;
   className?: string;
   setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
@@ -75,9 +73,8 @@ const SetHeader: React.FC<Props> = ({
     level: customSet?.level || 200,
   };
 
-  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
-    currentUserQuery,
-  );
+  const { data: currentUserData } =
+    useQuery<CurrentUserQueryType>(currentUserQuery);
 
   const isEditable = React.useContext(EditableContext);
 
@@ -85,10 +82,8 @@ const SetHeader: React.FC<Props> = ({
 
   const { t } = useTranslation('common');
 
-  const [
-    defaultClassModalVisible,
-    setDefaultClassModalVisible,
-  ] = React.useState(false);
+  const [defaultClassModalVisible, setDefaultClassModalVisible] =
+    React.useState(false);
 
   const openDefaultClassModal = React.useCallback(() => {
     setDefaultClassModalVisible(true);
@@ -215,43 +210,35 @@ const SetHeader: React.FC<Props> = ({
             {formElement}
           </div>
           {customSet && <Divider css={{ margin: '12px 0' }} />}
-          <>
-            {customSet && (
-              <div css={{ fontSize: '0.75rem' }}>
-                <SetHeaderMetadata translationLabelId="OWNER" value={owner} />
-                {isEditable && (
-                  <SetHeaderMetadata
-                    translationLabelId="CREATED"
-                    value={creationDate}
-                  />
-                )}
+          {customSet && (
+            <div css={{ fontSize: '0.75rem' }}>
+              <SetHeaderMetadata translationLabelId="OWNER" value={owner} />
+              {isEditable && (
                 <SetHeaderMetadata
-                  translationLabelId="LAST_MODIFIED"
-                  value={modifiedDate}
-                />
-              </div>
-            )}
-            <Divider css={{ margin: '12px 0' }} />
-            <BuildTags
-              customSetId={customSet?.id}
-              tagAssociations={customSet?.tagAssociations}
-              isMobile
-            />
-            <div>
-              {isEditable && customSet && (
-                <BuildActions
-                  customSet={customSet}
-                  isMobile
-                  isClassic={false}
+                  translationLabelId="CREATED"
+                  value={creationDate}
                 />
               )}
-              {customSet && <PublicBuildActions customSet={customSet} />}
+              <SetHeaderMetadata
+                translationLabelId="LAST_MODIFIED"
+                value={modifiedDate}
+              />
             </div>
-            {isOwner && !isEditable && editBuildButton}
-            {customSet && (
-              <BuildErrors customSet={customSet} errors={errors} isMobile />
-            )}
-          </>
+          )}
+          <Divider css={{ margin: '12px 0' }} />
+          <BuildTags
+            customSetId={customSet?.id}
+            tagAssociations={customSet?.tagAssociations}
+            isMobile
+          />
+          <div>
+            {isEditable && customSet && <BuildActions customSet={customSet} />}
+            {customSet && <PublicBuildActions customSet={customSet} />}
+          </div>
+          {isOwner && !isEditable && editBuildButton}
+          {customSet && (
+            <BuildErrors customSet={customSet} errors={errors} isMobile />
+          )}
           <DefaultClassModal
             closeModal={closeDefaultClassModal}
             visible={defaultClassModalVisible}

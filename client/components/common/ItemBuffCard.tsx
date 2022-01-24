@@ -1,13 +1,12 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
-import { useTheme } from 'emotion-theming';
+
+import { useTheme } from '@emotion/react';
 
 import { CardTitleWithLevel } from 'common/wrappers';
 import { itemCardStyle } from 'common/mixins';
 import Card from 'components/common/Card';
-import { Theme } from 'common/types';
 import { Item } from 'common/type-aliases';
 import { getImageUrl } from 'common/utils';
 import AddBuffLink from './AddBuffLink';
@@ -17,7 +16,7 @@ interface Props {
 }
 
 const ItemBuffCard: React.FC<Props> = ({ item }) => {
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   return (
     <Card

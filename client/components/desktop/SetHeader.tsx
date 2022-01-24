@@ -1,7 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx, ClassNames } from '@emotion/core';
+import { ClassNames } from '@emotion/react';
 import { Button, Popover, Skeleton } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
@@ -22,17 +22,17 @@ import {
 import { CustomSet } from 'common/type-aliases';
 import Link from 'next/link';
 import PublicBuildActions from 'components/common/PublicBuildActions';
+import { useQuery } from '@apollo/client';
+import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
+import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import { MAX_LEVEL } from 'common/constants';
+import SetHeaderMetadata from 'components/common/SetHeaderMetadata';
 import BonusStats from './BonusStats';
 import BuildErrors from '../common/BuildErrors';
 import BuildActions from '../common/BuildActions';
 import DefaultClassModal from '../common/DefaultClassModal';
 import BuildTags from '../common/BuildTags';
 import CustomSetHeaderForm from '../common/CustomSetHeaderForm';
-import { useQuery } from '@apollo/client';
-import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
-import { MAX_LEVEL } from 'common/constants';
-import SetHeaderMetadata from 'components/common/SetHeaderMetadata';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -72,9 +72,8 @@ const SetHeader: React.FC<Props> = ({
 }) => {
   const isEditable = React.useContext(EditableContext);
 
-  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
-    currentUserQuery,
-  );
+  const { data: currentUserData } =
+    useQuery<CurrentUserQueryType>(currentUserQuery);
 
   const originalState = {
     isEditing: false,
@@ -86,10 +85,8 @@ const SetHeader: React.FC<Props> = ({
 
   const { t } = useTranslation('common');
 
-  const [
-    defaultClassModalVisible,
-    setDefaultClassModalVisible,
-  ] = React.useState(false);
+  const [defaultClassModalVisible, setDefaultClassModalVisible] =
+    React.useState(false);
 
   const openDefaultClassModal = React.useCallback(() => {
     setDefaultClassModalVisible(true);
@@ -262,13 +259,7 @@ const SetHeader: React.FC<Props> = ({
                 isMobile={false}
               />
             )}
-            {customSet && isEditable && (
-              <BuildActions
-                customSet={customSet}
-                isMobile={false}
-                isClassic={isClassic}
-              />
-            )}
+            {customSet && isEditable && <BuildActions customSet={customSet} />}
 
             {customSet && (
               <div css={{ marginLeft: 'auto', display: 'flex' }}>

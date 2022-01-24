@@ -24,8 +24,7 @@
     "@ant-design/icons": "^4.2.1",
     "@apollo/client": "^3.1.2",
     "@artsy/fresnel": "^1.1.0",
-    "@emotion/core": "^10.0.22",
-    "@emotion/styled": "^10.0.22",
+    "@emotion/react": "^11.7.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
     "@fortawesome/free-brands-svg-icons": "^5.13.1",
     "@fortawesome/free-regular-svg-icons": "^5.13.1",
@@ -45,16 +44,17 @@
     "less-vars-to-js": "^1.3.0",
     "lockr": "^0.8.5",
     "lodash": "^4.17.19",
-    "next": "^9.4.4",
+    "next": "^12.0.8",
     "next-fonts": "^1.2.0",
     "next-i18next": "^4.5.0",
     "next-with-apollo": "^5.0.1",
     "null-loader": "^4.0.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-i18next": "^11.15.3",
     "react-infinite-scroller": "^1.2.4",
     "react-no-ssr": "^1.1.0",
-    "webpack": "^4.43.0"
+    "webpack": "^5.67.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
@@ -76,6 +76,16 @@
     "nodemon": "^2.0.4",
     "sort-keys": "^4.0.0",
     "ts-node": "^8.10.2",
-    "typescript": "^4.0.2"
+    "typescript": "^4.5.5"
+  },
+  "lint-staged": {
+    "*.tsx": [
+      "npx prettier --write",
+      "eslint --fix-dry-run"
+    ],
+    "*.ts": [
+      "npx prettier --write",
+      "eslint --fix-dry-run"
+    ]
   }
 }
