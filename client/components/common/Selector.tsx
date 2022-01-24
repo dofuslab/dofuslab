@@ -1,13 +1,14 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import React from 'react';
+import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/client';
 import { BackTop } from 'antd';
-import { useTheme } from '@emotion/react';
+import { useTheme } from 'emotion-theming';
 import uniqWith from 'lodash/uniqWith';
 import isEqual from 'lodash/isEqual';
 
-import { SharedFilters, SharedFilterAction } from 'common/types';
+import { Theme, SharedFilters, SharedFilterAction } from 'common/types';
 
 import { topMarginStyle } from 'common/mixins';
 import { mq, SEARCH_BAR_ID } from 'common/constants';
@@ -100,27 +101,27 @@ const Selector: React.FC<Props> = ({
     };
   }, []);
 
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
 
   return (
     <>
       <div
         key={`div-${selectedItemSlot?.name}`} // re-render so div loses scroll position on selectedItemSlot change
-        css={[
-          {
-            padding: '0 12px',
-            [mq[1]]: {
-              padding: '0 14px',
-              overflowY: 'auto',
-              overflowAnchor: 'none',
-              flex: 1,
-            },
-            [mq[4]]: {
-              padding: '0 20px',
-            },
+        css={{
+          padding: '0 12px',
+          ...topMarginStyle,
+          [mq[1]]: {
+            padding: '0 14px',
+            overflowY: 'auto',
+            overflowAnchor: 'none',
+            flex: 1,
+            ...(topMarginStyle[mq[1]] as {}),
           },
-          topMarginStyle,
-        ]}
+          [mq[4]]: {
+            padding: '0 20px',
+            ...(topMarginStyle[mq[4]] as {}),
+          },
+        }}
         ref={selectorDivRef}
       >
         <SelectorFilters

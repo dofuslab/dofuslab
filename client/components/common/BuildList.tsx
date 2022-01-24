@@ -1,10 +1,11 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import React from 'react';
-
-import { useTheme } from '@emotion/react';
+import { jsx } from '@emotion/core';
+import { useTheme } from 'emotion-theming';
 import InfiniteScroll from 'react-infinite-scroller';
 
+import { Theme } from 'common/types';
 import {
   buildList,
   buildListVariables,
@@ -37,6 +38,7 @@ import {
   myCustomSets,
   myCustomSetsVariables,
 } from 'graphql/queries/__generated__/myCustomSets';
+import { TabPane } from 'rc-tabs';
 import myCustomSetsQuery from 'graphql/queries/myCustomSets.graphql';
 import { Input, Select, Tabs, Button } from 'antd';
 import { DEBOUNCE_INTERVAL, mq } from 'common/constants';
@@ -44,12 +46,10 @@ import { useDebounceCallback } from '@react-hook/debounce';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
 import customSetTagsQuery from 'graphql/queries/customSetTags.graphql';
 import DeleteCustomSetModal from './DeleteCustomSetModal';
-import ClassSelect from './ClassSelect';
+import { ClassSelect } from './ClassSelect';
 
 const THRESHOLD = 600;
 const PAGE_SIZE = 20;
-
-const { TabPane } = Tabs;
 
 interface Props {
   username: string;
@@ -107,11 +107,10 @@ const BuildList: React.FC<Props> = ({
     [debouncedSearch, setSearch],
   );
 
-  const {
-    data: userBuilds,
-    loading: queryLoading,
-    fetchMore,
-  } = useQuery<buildList, buildListVariables>(buildListQuery, {
+  const { data: userBuilds, loading: queryLoading, fetchMore } = useQuery<
+    buildList,
+    buildListVariables
+  >(buildListQuery, {
     variables: {
       username,
       first: PAGE_SIZE,
@@ -147,12 +146,12 @@ const BuildList: React.FC<Props> = ({
       onChange={(value: string) => {
         setDofusClassId(value);
       }}
-      size="middle"
+      size={'middle'}
       allowClear
     />
   );
 
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
 
   const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
 
@@ -218,7 +217,11 @@ const BuildList: React.FC<Props> = ({
         marginBottom: 60,
       }}
     >
-      <Tabs defaultActiveKey="1" css={{ gridArea: '4/1/4/3', width: '100%' }}>
+      <Tabs
+        defaultActiveKey="1"
+        onChange={() => {}}
+        css={{ gridArea: '4/1/4/3', width: '100%' }}
+      >
         <TabPane
           tab={`${t('BUILDS')} ${
             userBuilds?.userByName?.customSets

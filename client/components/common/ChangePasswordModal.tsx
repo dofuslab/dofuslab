@@ -1,7 +1,6 @@
-/** @jsxImportSource @emotion/react */
-
+/** @jsx jsx */
 import React from 'react';
-
+import { jsx } from '@emotion/core';
 import { Button, Form, Input, Modal, notification } from 'antd';
 
 import { useMutation, useApolloClient } from '@apollo/client';

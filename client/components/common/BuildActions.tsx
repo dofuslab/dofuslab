@@ -1,7 +1,7 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import * as React from 'react';
-
+import { jsx } from '@emotion/core';
 // import { DownOutlined, LoadingOutlined } from '@ant-design/icons';
 
 import { customSet as CustomSet } from 'graphql/fragments/__generated__/customSet';
@@ -25,6 +25,8 @@ import DeleteCustomSetModal from './DeleteCustomSetModal';
 
 interface Props {
   customSet: CustomSet;
+  isMobile: boolean;
+  isClassic: boolean;
 }
 
 const BuildActions: React.FC<Props> = ({ customSet }) => {
@@ -85,20 +87,22 @@ const BuildActions: React.FC<Props> = ({ customSet }) => {
         [mq[4]]: { marginLeft: 20, marginRight: 12 },
       }}
     >
-      <Button onClick={openRestartModal}>
-        {t('RESTART_BUILD')}
-        <FontAwesomeIcon icon={faRedoAlt} css={optionalIconCss} />
-      </Button>
-      <Button
-        onClick={openDeleteModal}
-        css={{
-          marginLeft: 12,
-        }}
-        danger
-      >
-        {t('DELETE_BUILD')}
-        <FontAwesomeIcon icon={faTrashAlt} css={optionalIconCss} />
-      </Button>
+      <>
+        <Button onClick={openRestartModal}>
+          {t('RESTART_BUILD')}
+          <FontAwesomeIcon icon={faRedoAlt} css={optionalIconCss} />
+        </Button>
+        <Button
+          onClick={openDeleteModal}
+          css={{
+            marginLeft: 12,
+          }}
+          danger
+        >
+          {t('DELETE_BUILD')}
+          <FontAwesomeIcon icon={faTrashAlt} css={optionalIconCss} />
+        </Button>
+      </>
 
       <Modal
         visible={restartModalVisible}

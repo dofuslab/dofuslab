@@ -1,11 +1,12 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import React from 'react';
-import { ClassNames, useTheme } from '@emotion/react';
+import { jsx, ClassNames } from '@emotion/core';
+import { useTheme } from 'emotion-theming';
 
 import { itemBox, itemImageBox } from 'common/mixins';
 
-import { BuildError } from 'common/types';
+import { BuildError, Theme } from 'common/types';
 import Link from 'next/link';
 import {
   ItemSlot,
@@ -38,7 +39,7 @@ const ClassicEquippedItem: React.FC<Props> = ({
   className,
   popoverPlacement,
 }) => {
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
 
   const isEditable = React.useContext(EditableContext);
 

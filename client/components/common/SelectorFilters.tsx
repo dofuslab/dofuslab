@@ -1,7 +1,7 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import * as React from 'react';
-import { ClassNames, useTheme } from '@emotion/react';
+import { ClassNames, jsx } from '@emotion/core';
 import { Stat } from '__generated__/globalTypes';
 import {
   mq,
@@ -19,17 +19,18 @@ import {
   faArrowLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import { useDebounceCallback } from '@react-hook/debounce';
+import { useTheme } from 'emotion-theming';
 
-import { SharedFilterAction, SharedFilters } from 'common/types';
+import { Theme, SharedFilterAction, SharedFilters } from 'common/types';
 import { useTranslation } from 'i18n';
 import Tooltip from 'components/common/Tooltip';
 import { antdSelectFilterOption, getBuildLink } from 'common/utils';
 import { ItemSlot, CustomSet } from 'common/type-aliases';
 import { inputFontSize } from 'common/mixins';
 
-import NoSSR from 'react-no-ssr';
 import ResetAllButton from './ResetAllButton';
 import FavoritesButton from './FavoritesButton';
+import NoSSR from 'react-no-ssr';
 
 const { Search } = Input;
 const { Option } = Select;
@@ -124,7 +125,7 @@ const SelectorFilters: React.FC<Props> = ({
 
   const { t } = useTranslation(['common', 'stat']);
 
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
 
   let searchId = showSets ? SETS_SEARCH_BAR_ID : SEARCH_BAR_ID;
   if (isMobile) searchId = `${searchId}-mobile`;

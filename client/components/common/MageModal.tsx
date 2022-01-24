@@ -1,8 +1,7 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import React from 'react';
-
-import { ClassNames } from '@emotion/react';
+import { jsx, ClassNames } from '@emotion/core';
 import { Modal, Select, Divider, Button } from 'antd';
 import { LabeledValue } from 'antd/lib/select';
 
@@ -56,7 +55,7 @@ interface MageState {
 }
 
 const statLineCss = {
-  position: 'relative' as const,
+  position: 'relative' as 'relative',
   display: 'flex',
   alignItems: 'center',
   height: 42,
@@ -65,7 +64,7 @@ const statLineCss = {
 };
 
 const deleteStatWrapper = {
-  position: 'absolute' as const,
+  position: 'absolute' as 'absolute',
   left: -24,
   top: 3,
   padding: 8,

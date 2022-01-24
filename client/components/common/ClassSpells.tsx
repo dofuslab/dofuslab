@@ -1,8 +1,10 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
+
+import { jsx } from '@emotion/core';
 
 import { Card, Skeleton } from 'antd';
 import { useQuery } from '@apollo/client';
-import { useTheme } from '@emotion/react';
+import { useTheme } from 'emotion-theming';
 
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
@@ -12,12 +14,13 @@ import {
   classByIdVariables,
 } from 'graphql/queries/__generated__/classById';
 import classByIdQuery from 'graphql/queries/classById.graphql';
+import { Theme } from 'common/types';
 import { CustomSet, Spell } from 'common/type-aliases';
 import { itemCardStyle } from 'common/mixins';
+import SpellCard from './SpellCard';
+import { ClassSelect } from './ClassSelect';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
-import SpellCard from './SpellCard';
-import ClassSelect from './ClassSelect';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -32,9 +35,10 @@ const ClassSpells: React.FC<Props> = ({
 }) => {
   const { data } = useQuery<classes>(classesQuery);
   const { t } = useTranslation('common');
-  const theme = useTheme();
-  const { data: currentUserData } =
-    useQuery<CurrentUserQueryType>(currentUserQuery);
+  const theme = useTheme<Theme>();
+  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
+    currentUserQuery,
+  );
 
   const { data: classData, loading: classDataLoading } = useQuery<
     classById,

@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import React from 'react';
 import { useRouter } from 'next/router';
@@ -16,6 +16,7 @@ type StatusObj = {
   messageKey: string;
 };
 
+/* eslint-disable @typescript-eslint/camelcase */
 const statusMap = {
   reset_password: {
     messageKey: 'RESET_PASSWORD',
@@ -52,6 +53,7 @@ const statusMap = {
     [key: string]: StatusObj | string;
   };
 };
+/* eslint-enable @typescript-eslint/camelcase */
 
 function isStatusObj(value: string | StatusObj): value is StatusObj {
   return typeof value === 'object';
@@ -63,8 +65,9 @@ const StatusChecker: React.FC = () => {
   const { t, i18n } = useTranslation('status');
   const client = useApolloClient();
   const { data } = useQuery<currentUser>(currentUserQuery);
-  const { data: settingsData } =
-    useQuery<sessionSettings>(sessionSettingsQuery);
+  const { data: settingsData } = useQuery<sessionSettings>(
+    sessionSettingsQuery,
+  );
 
   const processQueryEntry = React.useCallback(
     (statusType: string, statusValue: string) => {

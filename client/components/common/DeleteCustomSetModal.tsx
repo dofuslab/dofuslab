@@ -1,6 +1,7 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import React from 'react';
+import { jsx } from '@emotion/core';
 import { Modal, notification } from 'antd';
 import { useMutation } from '@apollo/client';
 import { useRouter } from 'next/router';

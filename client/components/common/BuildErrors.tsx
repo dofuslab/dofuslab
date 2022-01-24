@@ -1,7 +1,8 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import * as React from 'react';
-import { ClassNames, useTheme } from '@emotion/react';
+import { jsx, ClassNames } from '@emotion/core';
+import { useTheme } from 'emotion-theming';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { Popover } from 'antd';
@@ -11,6 +12,7 @@ import {
   baseStats,
   scrolledStats,
   BuildError,
+  Theme,
   BuildErrorType,
 } from 'common/types';
 import { calcPointCost, renderErrors } from 'common/utils';
@@ -27,7 +29,7 @@ interface Props {
 
 const BuildErrors: React.FC<Props> = ({ customSet, errors, isMobile }) => {
   const { t } = useTranslation(['common']);
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
 
   const groupedErrors = groupBy(errors, ({ reason }) => reason);
 

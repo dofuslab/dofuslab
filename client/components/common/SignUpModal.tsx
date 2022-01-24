@@ -1,7 +1,6 @@
-/** @jsxImportSource @emotion/react */
-
+/** @jsx jsx */
 import React from 'react';
-
+import { jsx } from '@emotion/core';
 import { Button, Divider, Form, Input, Modal } from 'antd';
 
 import { useMutation, useApolloClient } from '@apollo/client';
@@ -21,7 +20,7 @@ import {
 } from 'common/constants';
 import { inputFontSize } from 'common/mixins';
 import { BuildGender } from '__generated__/globalTypes';
-import BuildSettingsForm from './BuildSettingsForm';
+import { BuildSettingsForm } from './BuildSettingsForm';
 
 interface Props {
   visible: boolean;

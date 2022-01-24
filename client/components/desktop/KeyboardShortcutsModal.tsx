@@ -1,12 +1,13 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import React from 'react';
-
+import { jsx } from '@emotion/core';
 import { Divider, List, Modal, Table } from 'antd';
 import { ColumnType } from 'antd/lib/table';
 
 import { useTranslation } from 'i18n';
-import { useTheme } from '@emotion/react';
+import { useTheme } from 'emotion-theming';
+import { Theme } from 'common/types';
 import { TFunction } from 'next-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -29,44 +30,7 @@ const expandableShortcuts = [
   { slot: 'PET', key: 'P' },
 ];
 
-function KeyboardKey({ children }: { children: React.ReactNode }) {
-  const theme = useTheme();
-  return (
-    <span
-      css={{
-        display: 'inline-block',
-        border: `1px solid ${theme.border?.light}`,
-        textTransform: 'uppercase',
-        fontSize: '0.6rem',
-        borderRadius: 4,
-        padding: '1px 4px',
-        boxShadow: `inset 0 -1px 0 ${theme.border?.light}`,
-      }}
-    >
-      {children}
-    </span>
-  );
-}
-
-type Shortcut = {
-  operation:
-    | 'SELECT_SEARCH_BAR'
-    | 'DESELECT_SEARCH_BAR'
-    | 'DESELECT_ITEM_SLOT'
-    | 'SELECT_ITEM_SLOT'
-    | 'NAVIGATE_ITEM_SLOTS'
-    | 'TOGGLE_ITEM_SET_SWITCH'
-    | 'EQUIP_NTH_ITEM_SET'
-    | 'DELETE_SELECTED_ITEM';
-  shortcuts: {
-    keys?: Array<string>;
-    keysElement?: React.ReactNode;
-    letterKeys?: Array<string>;
-  };
-  expandableShortcuts?: typeof expandableShortcuts;
-};
-
-const shortcuts: Array<Shortcut> = [
+const shortcuts = [
   { operation: 'SELECT_SEARCH_BAR', shortcuts: { keys: ['ENTER', 'SPACE'] } },
   { operation: 'DESELECT_SEARCH_BAR', shortcuts: { keys: ['ESCAPE'] } },
   { operation: 'DESELECT_ITEM_SLOT', shortcuts: { keys: ['ESCAPE'] } },
@@ -95,11 +59,10 @@ const shortcuts: Array<Shortcut> = [
     operation: 'EQUIP_NTH_ITEM_SET',
     shortcuts: {
       keysElement: (
-        <div css={{ display: 'flex', gap: 4 }}>
+        <div>
           {Array(9)
             .fill(null)
             .map((_, idx) => (
-              // eslint-disable-next-line react/no-array-index-key
               <KeyboardKey key={idx}>{idx + 1}</KeyboardKey>
             ))}
         </div>
@@ -144,34 +107,27 @@ const getColumns: (t: TFunction) => Array<ColumnType<typeof shortcuts[0]>> = (
   },
 ];
 
+function KeyboardKey({ children }: { children: React.ReactNode }) {
+  const theme = useTheme<Theme>();
+  return (
+    <span
+      css={{
+        display: 'inline-block',
+        border: `1px solid ${theme.border?.light}`,
+        textTransform: 'uppercase',
+        fontSize: '0.6rem',
+        borderRadius: 4,
+        padding: '1px 4px',
+        boxShadow: `inset 0 -1px 0 ${theme.border?.light}`,
+      }}
+    >
+      {children}
+    </span>
+  );
+}
+
 const KeyboardShortcutsModal: React.FC<Props> = ({ visible, onClose }) => {
   const { t } = useTranslation('keyboard_shortcut');
-
-  const memoizedExpandableRow = React.useCallback(
-    (record: Shortcut) => (
-      <List
-        grid={{ gutter: 8, column: 3 }}
-        dataSource={record.expandableShortcuts}
-        renderItem={(es) => (
-          <List.Item
-            css={{
-              display: 'flex !important',
-              justifyContent: 'flex-start',
-              gap: 8,
-              alignItems: 'center',
-            }}
-          >
-            <div>
-              <KeyboardKey>{es.key}</KeyboardKey>
-            </div>
-            <div>{t(`SLOTS.${es.slot}`)}</div>
-          </List.Item>
-        )}
-        size="small"
-      />
-    ),
-    [],
-  );
 
   return (
     <Modal
@@ -182,17 +138,38 @@ const KeyboardShortcutsModal: React.FC<Props> = ({ visible, onClose }) => {
     >
       <div>{t('ONLY_AVAILABLE_ADVANCED_MODE')}</div>
       <Divider css={{ margin: '16px 0 0' }} />
-      <Table<Shortcut>
+      <Table
         dataSource={shortcuts}
         pagination={{ hideOnSinglePage: true }}
         expandable={{
           defaultExpandAllRows: true,
           rowExpandable: (record) => !!record.expandableShortcuts,
-          expandedRowRender: memoizedExpandableRow,
+          expandedRowRender: (record) => (
+            <List
+              grid={{ gutter: 8, column: 3 }}
+              dataSource={record.expandableShortcuts}
+              renderItem={(es) => (
+                <List.Item
+                  css={{
+                    display: 'flex !important',
+                    justifyContent: 'flex-start',
+                    gap: 8,
+                    alignItems: 'center',
+                  }}
+                >
+                  <div>
+                    <KeyboardKey>{es.key}</KeyboardKey>
+                  </div>
+                  <div>{t(`SLOTS.${es.slot}`)}</div>
+                </List.Item>
+              )}
+              size="small"
+            />
+          ),
         }}
         showHeader={false}
         columns={getColumns(t)}
-      />
+      ></Table>
     </Modal>
   );
 };

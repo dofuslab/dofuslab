@@ -14,11 +14,12 @@ import {
   red8,
   red5,
 } from './mixins';
+import { Theme } from './types';
 
 export const DARK_THEME_NAME = 'DARK';
 export const LIGHT_THEME_NAME = 'LIGHT';
 
-export const lightTheme = {
+export const lightTheme: Theme = {
   name: LIGHT_THEME_NAME,
   text: {
     link: {
@@ -67,7 +68,7 @@ const darkColors = {
   brightText: 'rgba(255, 255, 255, 0.85)',
 };
 
-export const darkTheme = {
+export const darkTheme: Theme = {
   name: DARK_THEME_NAME,
   body: {
     background: gray12,

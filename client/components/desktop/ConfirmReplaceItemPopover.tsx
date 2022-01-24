@@ -1,8 +1,7 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import * as React from 'react';
-
-import { ClassNames } from '@emotion/react';
+import { jsx, ClassNames } from '@emotion/core';
 import { Popover } from 'antd';
 
 import { useTranslation } from 'i18n';

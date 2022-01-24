@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-props-no-spreading */
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
-import React from 'react';
-import { CSSObject, ClassNames, useTheme } from '@emotion/react';
+import { jsx, CSSObject, ClassNames } from '@emotion/core';
+import styled from '@emotion/styled';
+import { useTheme } from 'emotion-theming';
 import Head from 'next/head';
 
 import { Skeleton, Switch, Button } from 'antd';
@@ -25,7 +26,7 @@ import {
 import Tooltip from 'components/common/Tooltip';
 import { Media } from 'components/common/Media';
 import { mq } from './constants';
-import { AppliedBuff } from './types';
+import { Theme, AppliedBuff } from './types';
 import {
   effectToIconUrl,
   getSimpleEffect,
@@ -46,19 +47,15 @@ import {
 } from './mixins';
 import { SetBonus, WeaponStats, CustomSet } from './type-aliases';
 
-export const ResponsiveGrid: React.FC<
-  {
-    numColumns: ReadonlyArray<number>;
-  } & React.HTMLAttributes<HTMLDivElement>
-> = ({ numColumns, ...restProps }) => (
-  <div css={getResponsiveGridStyle(numColumns)} {...restProps} />
+export const ResponsiveGrid = styled.div<{ numColumns: ReadonlyArray<number> }>(
+  ({ numColumns }) => getResponsiveGridStyle(numColumns),
 );
 
 export const Badge: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
   children,
   ...restProps
 }) => {
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
   return (
     <span
       css={{
@@ -79,10 +76,7 @@ export const Badge: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
   );
 };
 
-export const TruncatableText: React.FC<{ className?: string }> = ({
-  children,
-  ...restProps
-}) => (
+export const TruncatableText: React.FC = ({ children, ...restProps }) => (
   <span
     css={ellipsis}
     title={typeof children === 'string' ? children : undefined}
@@ -96,7 +90,7 @@ export const CardSkeleton: React.FC<{
   numRows?: number;
   className?: string;
 }> = ({ numRows, className, ...restProps }) => {
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
   return (
     <ClassNames>
       {({ css, cx }) => (
@@ -338,9 +332,9 @@ export const WeaponEffectsList: React.FC<{
   );
 };
 
-export const BrokenImagePlaceholder: React.FC<
-  React.HTMLAttributes<HTMLDivElement>
-> = ({ className, ...restProps }) => (
+export const BrokenImagePlaceholder: React.FC<React.HTMLAttributes<
+  HTMLDivElement
+>> = ({ className, ...restProps }) => (
   <ClassNames>
     {({ css, cx }) => (
       <div
@@ -416,7 +410,7 @@ export const DamageTypeToggle: React.FC<{
   readonly setShowRanged: React.Dispatch<React.SetStateAction<boolean>>;
 }> = ({ showRanged, setShowRanged }) => {
   const { t } = useTranslation('weapon_spell_effect');
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
 
   const toggleSwitch = (
     <Switch
@@ -467,7 +461,7 @@ export const DamageTypeToggle: React.FC<{
   );
 };
 
-export function TotalDamageLine({
+export const TotalDamageLine = ({
   totalObj,
   imageUrl,
   imageAlt,
@@ -478,7 +472,7 @@ export function TotalDamageLine({
   };
   imageUrl: string;
   imageAlt: string;
-}) {
+}) => {
   return (
     <div css={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 8 }}>
       <div css={{ display: 'flex', alignItems: 'center' }}>
@@ -501,9 +495,9 @@ export function TotalDamageLine({
       )}
     </div>
   );
-}
+};
 
-export function BuffButton({
+export const BuffButton = ({
   openBuffModal,
   appliedBuffs,
   className,
@@ -512,7 +506,7 @@ export function BuffButton({
   appliedBuffs: Array<AppliedBuff>;
   // eslint-disable-next-line react/require-default-props
   className?: string;
-}) {
+}) => {
   const { t } = useTranslation('common');
   return (
     <Button
@@ -527,4 +521,4 @@ export function BuffButton({
         : t('BUFFS')}
     </Button>
   );
-}
+};

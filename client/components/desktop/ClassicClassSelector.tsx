@@ -1,6 +1,7 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import * as React from 'react';
+import { jsx } from '@emotion/core';
 
 import { useQuery } from '@apollo/client';
 
@@ -9,8 +10,9 @@ import classesQuery from 'graphql/queries/classes.graphql';
 import Tooltip from 'components/common/Tooltip';
 import { Card } from 'antd';
 import { itemCardStyle } from 'common/mixins';
-import { useTheme } from '@emotion/react';
+import { useTheme } from 'emotion-theming';
 import { useTranslation } from 'i18n';
+import { Theme } from 'common/types';
 import { getFaceImageUrl } from 'common/utils';
 import { BuildGender } from '__generated__/globalTypes';
 
@@ -27,7 +29,7 @@ const ClassicClassSelector: React.FC<Props> = ({
 }) => {
   const { data } = useQuery<classes>(classesQuery);
 
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
   const { t } = useTranslation('common');
 
   return (

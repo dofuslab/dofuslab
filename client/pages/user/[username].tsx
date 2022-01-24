@@ -1,5 +1,7 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
+import React from 'react';
+import { jsx } from '@emotion/core';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { useTranslation } from 'i18n';
@@ -29,7 +31,7 @@ const UserProfilePage: NextPage = () => {
   const router = useRouter();
   const username = Array.isArray(router.query.username)
     ? router.query.username[0]
-    : router.query.username;
+    : router.query.username!;
 
   if (!username) {
     throw new Error('no username provided');
@@ -52,7 +54,7 @@ const UserProfilePage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{getTitle(t('USER_PROFILE', { username }))}</title>
+        <title>{getTitle(t('USER_PROFILE', { username: username }))}</title>
         <meta property="og:site_name" content="DofusLab" />
         <meta property="og:type" content="profile" />
         <meta
@@ -64,30 +66,26 @@ const UserProfilePage: NextPage = () => {
         <meta property="og:image:type" content="image/png" />
         <meta
           property="og:title"
-          content={getTitle(t('USER_PROFILE', { username }))}
+          content={getTitle(t('USER_PROFILE', { username: username }))}
         />
-        {userProfileData && (
-          <meta
-            property="og:description"
-            content={getUserProfileMetaDescription(
-              username,
-              userProfileData.userByName.customSets.totalCount,
-            )}
-          />
-        )}
+        <meta
+          property="og:description"
+          content={getUserProfileMetaDescription(
+            username,
+            userProfileData?.userByName.customSets.totalCount!,
+          )}
+        />
         <meta
           property="twitter:title"
-          content={getTitle(t('USER_PROFILE', { username }))}
+          content={getTitle(t('USER_PROFILE', { username: username }))}
         />
-        {userProfileData && (
-          <meta
-            property="twitter:description"
-            content={getUserProfileMetaDescription(
-              username,
-              userProfileData.userByName.customSets.totalCount,
-            )}
-          />
-        )}
+        <meta
+          property="twitter:description"
+          content={getUserProfileMetaDescription(
+            username,
+            userProfileData?.userByName.customSets.totalCount!,
+          )}
+        />
         <meta
           property="twitter:image"
           content={getUserProfileMetaImage(

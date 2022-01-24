@@ -1,9 +1,9 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import * as React from 'react';
-
-import { ClassNames, useTheme } from '@emotion/react';
+import { jsx, ClassNames } from '@emotion/core';
 import { Popover } from 'antd';
+import { useTheme } from 'emotion-theming';
 
 import {
   popoverTitleStyle,
@@ -14,13 +14,14 @@ import {
 } from 'common/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagic, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Theme } from 'common/types';
 import { CardTitleWithLevel, BrokenImagePlaceholder } from 'common/wrappers';
 import { Exo, Item } from 'common/type-aliases';
 import { getImageUrl } from 'common/utils';
 import ItemStatsList from '../common/ItemStatsList';
 
 const wrapperStyles = {
-  position: 'absolute' as const,
+  position: 'absolute' as 'absolute',
   right: 6,
   top: 6,
   fontSize: '0.75rem',
@@ -50,7 +51,7 @@ const BasicItemWithStats: React.FC<Props> = ({
   selected,
   overlayCSS,
 }) => {
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
   const [brokenImage, setBrokenImage] = React.useState(false);
   const contentRef = React.useRef<HTMLDivElement | null>(null);
 

@@ -1,8 +1,7 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import * as React from 'react';
-
-import { Global, ClassNames, useTheme } from '@emotion/react';
+import { jsx, Global, ClassNames } from '@emotion/core';
 import {
   Layout as AntdLayout,
   Button,
@@ -14,6 +13,7 @@ import {
   Switch,
 } from 'antd';
 import { useRouter } from 'next/router';
+import { useTheme } from 'emotion-theming';
 
 import { useQuery, useMutation, useApolloClient } from '@apollo/client';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
@@ -50,6 +50,7 @@ import { LIGHT_THEME_NAME } from 'common/themes';
 import Tooltip from 'components/common/Tooltip';
 import { switchStyle } from 'common/mixins';
 import { ClassicContext, getImageUrl } from 'common/utils';
+import { Theme } from 'common/types';
 import { DownOutlined } from '@ant-design/icons';
 import { Media } from 'components/common/Media';
 import DefaultBuildSettingsModal from 'components/common/DefaultBuildSettingsModal';
@@ -96,7 +97,7 @@ const getDonateElement = (t: TFunction) => {
   );
 };
 
-function Layout({ children, showSwitch }: LayoutProps) {
+const Layout = ({ children, showSwitch }: LayoutProps) => {
   const { t, i18n } = useTranslation(['auth', 'common', 'keyboard_shortcut']);
   const client = useApolloClient();
   const { data } = useQuery<CurrentUserQueryType>(currentUserQuery);
@@ -139,8 +140,9 @@ function Layout({ children, showSwitch }: LayoutProps) {
   }, []);
 
   const [isReady, setIsReady] = React.useState(false);
-  const [showKeyboardShortcuts, setShowKeyboardShortcuts] =
-    React.useState(false);
+  const [showKeyboardShortcuts, setShowKeyboardShortcuts] = React.useState(
+    false,
+  );
   const openKeyboardShortcuts = React.useCallback(() => {
     setShowKeyboardShortcuts(true);
   }, []);
@@ -196,7 +198,7 @@ function Layout({ children, showSwitch }: LayoutProps) {
     </Select>
   );
 
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
 
   const drawerBody = React.useRef<HTMLDivElement | null>(null);
 
@@ -395,12 +397,16 @@ function Layout({ children, showSwitch }: LayoutProps) {
                       <Menu>
                         <Menu.ItemGroup
                           title={
-                            <span>
-                              {t('WELCOME')}{' '}
-                              <Link href={`/user/${data.currentUser.username}`}>
-                                <a>{data.currentUser.username}</a>
-                              </Link>
-                            </span>
+                            <>
+                              <span>
+                                {t('WELCOME')}{' '}
+                                <Link
+                                  href={`/user/${data.currentUser.username}`}
+                                >
+                                  <a>{data.currentUser.username}</a>
+                                </Link>
+                              </span>
+                            </>
                           }
                         >
                           <Menu.Item
@@ -577,6 +583,6 @@ function Layout({ children, showSwitch }: LayoutProps) {
       />
     </AntdLayout>
   );
-}
+};
 
 export default Layout;

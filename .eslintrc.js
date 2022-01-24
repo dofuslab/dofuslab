@@ -7,10 +7,11 @@ module.exports = {
     'airbnb',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
-    'prettier',
+    'prettier/react',
+    'prettier/@typescript-eslint',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', '@emotion/eslint-plugin'],
+  plugins: ['@typescript-eslint'],
   settings: {
     'import/parsers': { '@typescript-eslint/parser': ['.ts', '.tsx'] },
     'import/resolver': {
@@ -35,13 +36,9 @@ module.exports = {
       files: ['**/*.tsx'],
       rules: {
         'react/prop-types': 'off',
-        'react/require-default-props': 'off',
         'jsx-a11y/anchor-is-valid': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
-        // next.js doesn't require react
-        'react/react-in-jsx-scope': 'off',
-        'react/function-component-definition': 'off',
       },
     },
   ],
@@ -79,9 +76,5 @@ module.exports = {
         endOfLine: 'lf',
       },
     ],
-    '@emotion/no-vanilla': 'error',
-    '@emotion/import-from-emotion': 'error',
-    '@emotion/styled-import': 'error',
-    '@emotion/pkg-renaming': 'error',
   },
 };

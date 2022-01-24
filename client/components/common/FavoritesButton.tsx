@@ -1,8 +1,7 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import React from 'react';
-
-import { ClassNames, useTheme } from '@emotion/react';
+import { jsx, ClassNames } from '@emotion/core';
 import { Button, Modal } from 'antd';
 import { useTranslation } from 'i18n';
 import { mq, BREAKPOINTS } from 'common/constants';
@@ -18,6 +17,8 @@ import {
   useSetModal,
 } from 'common/utils';
 import ConfirmReplaceItemPopover from 'components/desktop/ConfirmReplaceItemPopover';
+import { useTheme } from 'emotion-theming';
+import { Theme } from 'common/types';
 import { getModalStyle } from 'common/mixins';
 import ItemCard from './ItemCard';
 import SetModal from './SetModal';
@@ -48,10 +49,14 @@ const FavoritesButton: React.FC<Props> = ({
     setModalOpen(false);
   }, []);
   const { data } = useQuery<CurrentUserQueryType>(currentUserQuery);
-  const { setModalVisible, selectedSet, openSetModal, closeSetModal } =
-    useSetModal();
+  const {
+    setModalVisible,
+    selectedSet,
+    openSetModal,
+    closeSetModal,
+  } = useSetModal();
 
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
 
   if (!data?.currentUser || showSets) {
     return null;
