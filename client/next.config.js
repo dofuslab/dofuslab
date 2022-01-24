@@ -1,21 +1,13 @@
 /* eslint-disable */
 
-const withCSS = require('@zeit/next-css');
-const withLess = require('@zeit/next-less');
-const withFonts = require('next-fonts');
 const webpack = require('webpack');
-const darkTheme = require('@ant-design/dark-theme').default;
 require('dotenv').config();
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
-if (typeof require !== 'undefined') {
-  require.extensions['.less'] = (file) => {};
-}
-
-module.exports = {
+module.exports = withBundleAnalyzer({
   webpack: (config) => {
     const env = Object.keys(process.env).reduce((acc, curr) => {
       acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
@@ -32,7 +24,7 @@ module.exports = {
 
     return config;
   },
-};
+});
 
 // module.exports = withBundleAnalyzer(
 // withFonts(
