@@ -78,7 +78,6 @@ const UserProfile: React.FC<Props> = ({
                   opacity: 0,
                 },
                 '&:hover > button': {
-                  height: 'auto',
                   visibility: 'visible',
                   opacity: 1,
                   transition: 'visibility 0s, opacity 0.2s linear',
