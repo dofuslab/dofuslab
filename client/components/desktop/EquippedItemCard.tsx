@@ -1,8 +1,7 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import React from 'react';
-
-import { css } from '@emotion/react';
+import { jsx, css } from '@emotion/core';
 import { useMutation, useApolloClient } from '@apollo/client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {

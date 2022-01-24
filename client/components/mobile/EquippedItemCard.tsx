@@ -1,7 +1,7 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import React from 'react';
-import { css, useTheme } from '@emotion/react';
+import { jsx, css } from '@emotion/core';
 import { Button, Switch, Divider } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,8 +11,9 @@ import {
   faStar,
   faArrowLeft,
 } from '@fortawesome/free-solid-svg-icons';
+import { useTheme } from 'emotion-theming';
 
-import { BuildError } from 'common/types';
+import { Theme, BuildError } from 'common/types';
 import { useTranslation } from 'i18n';
 import { itemCardStyle, switchStyle } from 'common/mixins';
 import {
@@ -118,7 +119,7 @@ const EquippedItemCard: React.FC<Props> = ({
 
   const client = useApolloClient();
 
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
 
   const onQuickMage = React.useCallback(
     async (checked: boolean, stat: Stat) => {

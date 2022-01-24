@@ -1,7 +1,7 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
-import React from 'react';
-
+import * as React from 'react';
+import { jsx } from '@emotion/core';
 import { useQuery } from '@apollo/client';
 import groupBy from 'lodash/groupBy';
 
@@ -59,8 +59,12 @@ const EquipmentSlots: React.FC<Props> = ({
     setMageModalVisible(false);
   }, [setMageModalVisible]);
 
-  const { setModalVisible, selectedSet, openSetModal, closeSetModal } =
-    useSetModal();
+  const {
+    setModalVisible,
+    selectedSet,
+    openSetModal,
+    closeSetModal,
+  } = useSetModal();
 
   const groupedErrors = groupBy(errors, ({ equippedItem: ei }) => ei.id);
 
@@ -92,6 +96,7 @@ const EquipmentSlots: React.FC<Props> = ({
                 slot={slot}
                 key={slot.id}
                 equippedItem={ei}
+                selected={selectedItemSlotId === slot.id}
                 customSet={customSet}
                 openMageModal={openMageModal}
                 openSetModal={openSetModal}

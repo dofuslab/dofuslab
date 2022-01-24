@@ -1,9 +1,10 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import React from 'react';
-import { ClassNames, useTheme, Theme } from '@emotion/react';
+import { jsx, ClassNames } from '@emotion/core';
+import { useTheme } from 'emotion-theming';
 
-import { StatKey, scrolledStats, baseStats } from 'common/types';
+import { Theme, StatKey, scrolledStats, baseStats } from 'common/types';
 import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
 import { Stat } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
@@ -62,33 +63,33 @@ const defaultInitialState = {
 const statDisplayArray = [
   {
     stat: Stat.VITALITY,
-    baseKey: 'baseVitality' as const,
-    scrolledKey: 'scrolledVitality' as const,
+    baseKey: 'baseVitality' as 'baseVitality',
+    scrolledKey: 'scrolledVitality' as 'scrolledVitality',
   },
   {
     stat: Stat.WISDOM,
-    baseKey: 'baseWisdom' as const,
-    scrolledKey: 'scrolledWisdom' as const,
+    baseKey: 'baseWisdom' as 'baseWisdom',
+    scrolledKey: 'scrolledWisdom' as 'scrolledWisdom',
   },
   {
     stat: Stat.AGILITY,
-    baseKey: 'baseAgility' as const,
-    scrolledKey: 'scrolledAgility' as const,
+    baseKey: 'baseAgility' as 'baseAgility',
+    scrolledKey: 'scrolledAgility' as 'scrolledAgility',
   },
   {
     stat: Stat.CHANCE,
-    baseKey: 'baseChance' as const,
-    scrolledKey: 'scrolledChance' as const,
+    baseKey: 'baseChance' as 'baseChance',
+    scrolledKey: 'scrolledChance' as 'scrolledChance',
   },
   {
     stat: Stat.STRENGTH,
-    baseKey: 'baseStrength' as const,
-    scrolledKey: 'scrolledStrength' as const,
+    baseKey: 'baseStrength' as 'baseStrength',
+    scrolledKey: 'scrolledStrength' as 'scrolledStrength',
   },
   {
     stat: Stat.INTELLIGENCE,
-    baseKey: 'baseIntelligence' as const,
-    scrolledKey: 'scrolledIntelligence' as const,
+    baseKey: 'baseIntelligence' as 'baseIntelligence',
+    scrolledKey: 'scrolledIntelligence' as 'scrolledIntelligence',
   },
 ];
 
@@ -115,7 +116,7 @@ const reducer = (state: StatState, action: StatStateAction) => {
 
 const getStatDisplayStyle = (title: string, theme: Theme) => ({
   '&::before': {
-    position: 'absolute' as const,
+    position: 'absolute' as 'absolute',
     content: `"${title}"`,
     left: 0,
     top: -42,
@@ -133,7 +134,7 @@ const getStatDisplayStyle = (title: string, theme: Theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    pointerEvents: 'none' as const,
+    pointerEvents: 'none' as 'none',
     fontSize: '0.75rem',
   },
 });
@@ -143,7 +144,7 @@ const getInputNumberStyle = (baseKey: string, title: string, theme: Theme) => ({
   maxWidth: '100%',
   display: 'flex',
   alignItems: 'center',
-  position: 'relative' as const,
+  position: 'relative' as 'relative',
   ...(baseKey === 'baseVitality' && getStatDisplayStyle(title, theme)),
 });
 
@@ -155,7 +156,7 @@ const getReadonlyStatDisplayStyle = (
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  position: 'relative' as const,
+  position: 'relative' as 'relative',
   background: theme.layer?.backgroundLight,
   borderRadius: 4,
   ...(baseKey === 'baseVitality' && getStatDisplayStyle(title, theme)),
@@ -228,7 +229,7 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
     checkAndMutate();
   }, [dispatch, checkAndMutate]);
 
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
 
   const isEditable = React.useContext(EditableContext);
 

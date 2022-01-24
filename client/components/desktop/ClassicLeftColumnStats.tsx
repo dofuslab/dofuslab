@@ -1,8 +1,7 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import * as React from 'react';
-
-import { ClassNames } from '@emotion/react';
+import { jsx, ClassNames } from '@emotion/core';
 import StatTable from 'components/common/StatTable';
 import { Stat } from '__generated__/globalTypes';
 import { CustomSetContext } from 'common/utils';

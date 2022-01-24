@@ -1,7 +1,7 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import * as React from 'react';
-
+import { jsx } from '@emotion/core';
 import { Tabs } from 'antd';
 
 import { mq } from 'common/constants';
@@ -17,14 +17,14 @@ import ClassicClassSpells from 'components/desktop/ClassicClassSpells';
 import { CustomSet } from 'common/type-aliases';
 import BuffModal from 'components/common/BuffModal';
 import { BuffButton } from 'common/wrappers';
-import { useQuery } from '@apollo/client';
-import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import ClassicRightColumnStats from './ClassicRightColumnStats';
 import ClassicLeftColumnStats from './ClassicLeftColumnStats';
 import ClassicEquipmentSlots from './ClassicEquipmentSlots';
 import SetHeader from './SetHeader';
 import ClassicClassSelector from './ClassicClassSelector';
+import { useQuery } from '@apollo/client';
+import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
+import currentUserQuery from 'graphql/queries/currentUser.graphql';
 
 const { TabPane } = Tabs;
 
@@ -33,11 +33,15 @@ interface Props {
 }
 
 const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
-  const { appliedBuffs, statsFromCustomSet, customSetLoading } =
-    React.useContext(CustomSetContext);
+  const {
+    appliedBuffs,
+    statsFromCustomSet,
+    customSetLoading,
+  } = React.useContext(CustomSetContext);
 
-  const { data: currentUserData } =
-    useQuery<CurrentUserQueryType>(currentUserQuery);
+  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
+    currentUserQuery,
+  );
 
   const [dofusClassId, setDofusClassId] = React.useState<string | undefined>(
     customSet?.defaultClass?.id,

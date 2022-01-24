@@ -1,11 +1,12 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import React from 'react';
+import { jsx } from '@emotion/core';
 import { Divider, Radio } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
-import { useTheme } from '@emotion/react';
+import { useTheme } from 'emotion-theming';
 
-import { TEffectLine } from 'common/types';
+import { Theme, TEffectLine } from 'common/types';
 import {
   CardTitleWithLevel,
   damageHeaderStyle,
@@ -78,89 +79,88 @@ const WeaponDamage: React.FC<Props> = ({
       : null;
   critRate = critRate === null ? null : Math.min(Math.max(critRate, 0), 100);
 
-  const weaponEffectSummaries: Array<TEffectLine> =
-    weaponStats.weaponEffects.map(
-      ({ minDamage, maxDamage, effectType, id }) => {
-        let min = minDamage;
-        let max = maxDamage;
-        let type = effectType;
-        if (type === WeaponEffectType.NEUTRAL_DAMAGE && weaponElementMage) {
-          ({ minDamage: min, maxDamage: max } = calcElementMage(
-            weaponElementMage,
-            min || max,
+  const weaponEffectSummaries: Array<TEffectLine> = weaponStats.weaponEffects.map(
+    ({ minDamage, maxDamage, effectType, id }) => {
+      let min = minDamage;
+      let max = maxDamage;
+      let type = effectType;
+      if (type === WeaponEffectType.NEUTRAL_DAMAGE && weaponElementMage) {
+        ({ minDamage: min, maxDamage: max } = calcElementMage(
+          weaponElementMage,
+          min || max,
+          max,
+        ));
+        type = elementMageToWeaponEffect(weaponElementMage);
+      }
+      return {
+        id,
+        type,
+        nonCrit: {
+          min: min
+            ? calcEffect(
+                min,
+                type,
+                customSet.level,
+                statsFromCustomSetWithBuffs,
+                { isWeapon: true },
+                damageTypeKey,
+                weaponSkillPower,
+              )
+            : null,
+          max: calcEffect(
             max,
-          ));
-          type = elementMageToWeaponEffect(weaponElementMage);
-        }
-        return {
-          id,
-          type,
-          nonCrit: {
-            min: min
-              ? calcEffect(
-                  min,
+            type,
+            customSet.level,
+            statsFromCustomSetWithBuffs,
+            { isWeapon: true },
+            damageTypeKey,
+            weaponSkillPower,
+          ),
+          baseMax: max,
+        },
+        crit:
+          weaponStats.baseCritChance === null ||
+          weaponStats.critBonusDamage === null
+            ? null
+            : {
+                min: min
+                  ? calcEffect(
+                      min +
+                        (getSimpleEffect(type) === 'damage' ||
+                        getSimpleEffect(type) === 'heal'
+                          ? weaponStats.critBonusDamage
+                          : 0),
+                      type,
+                      customSet.level,
+                      statsFromCustomSetWithBuffs,
+                      { isWeapon: true, isCrit: true },
+                      damageTypeKey,
+                      weaponSkillPower,
+                    )
+                  : null,
+                max: calcEffect(
+                  max +
+                    (getSimpleEffect(type) === 'damage' ||
+                    getSimpleEffect(type) === 'heal'
+                      ? weaponStats.critBonusDamage
+                      : 0),
                   type,
                   customSet.level,
                   statsFromCustomSetWithBuffs,
-                  { isWeapon: true },
+                  { isWeapon: true, isCrit: true },
                   damageTypeKey,
                   weaponSkillPower,
-                )
-              : null,
-            max: calcEffect(
-              max,
-              type,
-              customSet.level,
-              statsFromCustomSetWithBuffs,
-              { isWeapon: true },
-              damageTypeKey,
-              weaponSkillPower,
-            ),
-            baseMax: max,
-          },
-          crit:
-            weaponStats.baseCritChance === null ||
-            weaponStats.critBonusDamage === null
-              ? null
-              : {
-                  min: min
-                    ? calcEffect(
-                        min +
-                          (getSimpleEffect(type) === 'damage' ||
-                          getSimpleEffect(type) === 'heal'
-                            ? weaponStats.critBonusDamage
-                            : 0),
-                        type,
-                        customSet.level,
-                        statsFromCustomSetWithBuffs,
-                        { isWeapon: true, isCrit: true },
-                        damageTypeKey,
-                        weaponSkillPower,
-                      )
-                    : null,
-                  max: calcEffect(
-                    max +
-                      (getSimpleEffect(type) === 'damage' ||
-                      getSimpleEffect(type) === 'heal'
-                        ? weaponStats.critBonusDamage
-                        : 0),
-                    type,
-                    customSet.level,
-                    statsFromCustomSetWithBuffs,
-                    { isWeapon: true, isCrit: true },
-                    damageTypeKey,
-                    weaponSkillPower,
-                  ),
-                  baseMax:
-                    max +
-                    (getSimpleEffect(type) === 'damage' ||
-                    getSimpleEffect(type) === 'heal'
-                      ? 0
-                      : weaponStats.critBonusDamage),
-                },
-        };
-      },
-    );
+                ),
+                baseMax:
+                  max +
+                  (getSimpleEffect(type) === 'damage' ||
+                  getSimpleEffect(type) === 'heal'
+                    ? 0
+                    : weaponStats.critBonusDamage),
+              },
+      };
+    },
+  );
 
   const { weightedAverageDamage, weightedAverageHeal } = getWeightedAverages(
     weaponEffectSummaries,
@@ -196,7 +196,7 @@ const WeaponDamage: React.FC<Props> = ({
         }
       : null;
 
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
 
   return (
     <Card

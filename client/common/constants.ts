@@ -1,8 +1,8 @@
 import { Stat } from '__generated__/globalTypes';
 
-export const DEBOUNCE_INTERVAL = 300 as const;
+export const DEBOUNCE_INTERVAL = 300;
 
-export const BREAKPOINTS = [600, 900, 1200, 1450, 1650, 1900, 2100] as const;
+export const BREAKPOINTS = [600, 900, 1200, 1450, 1650, 1900, 2100];
 
 export const mq = BREAKPOINTS.map((bp) => `@media (min-width: ${bp}px)`);
 

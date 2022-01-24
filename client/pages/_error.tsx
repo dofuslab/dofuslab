@@ -1,12 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import Error, { ErrorProps } from 'next/error';
+import { jsx } from '@emotion/core';
+import { useTheme } from 'emotion-theming';
+import { Theme } from 'common/types';
 
-import { useTheme } from '@emotion/react';
-
-function ErrorPage(props: ErrorProps) {
-  const theme = useTheme();
+const ErrorPage = (props: ErrorProps) => {
+  const theme = useTheme<Theme>();
   return (
     <div
       css={{
@@ -22,7 +23,7 @@ function ErrorPage(props: ErrorProps) {
       <Error {...props} />
     </div>
   );
-}
+};
 
 ErrorPage.getInitialProps = async () => {
   return {

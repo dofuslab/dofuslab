@@ -1,14 +1,16 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import * as React from 'react';
+import { jsx } from '@emotion/core';
 
 import { RadioChangeEvent } from 'antd/lib/radio';
-import { useTheme } from '@emotion/react';
+import { useTheme } from 'emotion-theming';
 
 import { itemCardStyle } from 'common/mixins';
 import Card from 'components/common/Card';
 import SpellLevelRadio from 'components/common/SpellLevelRadio';
 import { CustomSet, Spell, SpellVariantPair } from 'common/type-aliases';
+import { Theme } from 'common/types';
 import SpellCardContent from '../common/SpellCardContent';
 
 interface Props {
@@ -31,7 +33,7 @@ const SpellVariantPairCard: React.FC<Props> = ({
   spellVariantPair,
   customSet,
 }) => {
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
 
   const spells = [...spellVariantPair.spells].sort(
     (a, b) => getLowestSpellLevel(a) - getLowestSpellLevel(b),
@@ -44,8 +46,9 @@ const SpellVariantPairCard: React.FC<Props> = ({
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const spell = spells.find(({ id }) => id === selectedSpellId)!;
   const spellLevelIdx = getSpellLevelIdx(spell, customSetLevel);
-  const [selectedSpellLevelIdx, selectSpellLevelIdx] =
-    React.useState<number>(spellLevelIdx);
+  const [selectedSpellLevelIdx, selectSpellLevelIdx] = React.useState<number>(
+    spellLevelIdx,
+  );
 
   const tabList = spells.map((currSpell) => ({
     key: currSpell.id,

@@ -12,6 +12,7 @@ import {
 
 import { onError } from '@apollo/client/link/error';
 import { NextPage, NextPageContext } from 'next';
+import Head from 'next/head';
 import { notification } from 'antd';
 import { IncomingHttpHeaders } from 'http';
 import { AppContext } from 'next/app';
@@ -125,7 +126,7 @@ export default (App: NextPage<any>) =>
         } catch (err) {
           console.error('Error while running `getDataFromTree`', err);
         }
-        // Head.rewind();
+        Head.rewind();
       }
       const apolloState = apollo.cache.extract();
       return {

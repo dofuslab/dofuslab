@@ -1,5 +1,5 @@
-import { Theme } from '@emotion/react';
 import { mq, BREAKPOINTS } from './constants';
+import { Theme } from './types';
 
 export const shadow = '0 2px 8px rgba(0, 0, 0, 0.15)';
 

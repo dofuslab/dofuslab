@@ -1,9 +1,10 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import * as React from 'react';
-import { Global, ClassNames, useTheme } from '@emotion/react';
+import { jsx, Global, ClassNames } from '@emotion/core';
 import { Layout as AntdLayout, Button, Menu, Drawer } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
+import { useTheme } from 'emotion-theming';
 import NoSSR from 'react-no-ssr';
 import { useRouter } from 'next/router';
 import { TFunction } from 'next-i18next';
@@ -42,10 +43,11 @@ import {
   GITHUB_REPO_LINK,
   BUY_ME_COFFEE_LINK,
 } from 'common/constants';
+import { Theme } from 'common/types';
 import { getImageUrl } from 'common/utils';
-import DefaultBuildSettingsModal from 'components/common/DefaultBuildSettingsModal';
 import SignUpModal from '../common/SignUpModal';
 import LoginModal from '../common/LoginModal';
+import DefaultBuildSettingsModal from 'components/common/DefaultBuildSettingsModal';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -56,7 +58,7 @@ const { SubMenu } = Menu;
 const iconWrapper = {
   marginRight: 12,
   width: 20,
-  textAlign: 'center' as const,
+  textAlign: 'center' as 'center',
   display: 'inline-block',
 };
 
@@ -90,7 +92,7 @@ const getDonateElement = (t: TFunction) =>
     </ClassNames>
   );
 
-function Layout({ children }: LayoutProps) {
+const Layout = ({ children }: LayoutProps) => {
   const { t, i18n } = useTranslation(['auth', 'common']);
   const client = useApolloClient();
   const { data } = useQuery<ICurrentUser>(currentUserQuery);
@@ -157,7 +159,7 @@ function Layout({ children }: LayoutProps) {
     [changeLocaleMutate, i18n, client],
   );
 
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
 
   return (
     <AntdLayout css={{ height: '100%', minHeight: '100vh' }}>
@@ -230,11 +232,10 @@ function Layout({ children }: LayoutProps) {
             mode="inline"
             css={{
               border: 'none',
-              '.ant-menu-item, .ant-menu-submenu-title, .ant-menu-item:not(:last-child)':
-                {
-                  fontSize: '0.8rem',
-                  margin: 0,
-                },
+              '.ant-menu-item, .ant-menu-submenu-title, .ant-menu-item:not(:last-child)': {
+                fontSize: '0.8rem',
+                margin: 0,
+              },
               '.ant-menu-item::after': {
                 left: 0,
                 right: 'auto',
@@ -406,6 +407,6 @@ function Layout({ children }: LayoutProps) {
       />
     </AntdLayout>
   );
-}
+};
 
 export default Layout;

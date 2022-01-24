@@ -1,7 +1,7 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import React, { useContext } from 'react';
-
+import { jsx } from '@emotion/core';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -36,17 +36,12 @@ const Index: NextPage = () => {
     }
   }, []);
 
-  const contextValue = React.useMemo(
-    () => [isClassic, setIsClassic] as const,
-    [isClassic, setIsClassic],
-  );
-
   if (customSetId && !customSet && !customSetLoading) {
     return <ErrorPage statusCode={404} />;
   }
 
   return (
-    <ClassicContext.Provider value={contextValue}>
+    <ClassicContext.Provider value={[isClassic, setIsClassic]}>
       <div className="App" css={{ height: '100%' }}>
         <Head>
           <style

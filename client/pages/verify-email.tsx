@@ -1,8 +1,8 @@
-/** @jsxImportSource @emotion/react */
-
+/** @jsx jsx */
 import React from 'react';
 import { NextPage } from 'next';
 import { useQuery, useMutation } from '@apollo/client';
+import { jsx } from '@emotion/core';
 
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import { mediaStyles } from 'components/common/Media';
@@ -35,6 +35,7 @@ const VerifyEmailPage: NextPage = () => {
     if (data?.currentUser?.verified) {
       router.replace('/', {
         pathname: '/',
+        // eslint-disable-next-line @typescript-eslint/camelcase
         query: { verify_email: 'already_verified' },
       });
     }

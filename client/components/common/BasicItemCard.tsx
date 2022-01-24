@@ -1,13 +1,14 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
 
 import React from 'react';
+import { jsx } from '@emotion/core';
 import { CardTitleWithLevel, BrokenImagePlaceholder } from 'common/wrappers';
 import {
   item as Item,
   item_set as ItemSet,
 } from 'graphql/fragments/__generated__/item';
 import { useTranslation } from 'i18n';
-import { useTheme } from '@emotion/react';
+import { useTheme } from 'emotion-theming';
 import {
   itemCardStyle,
   itemBoxDimensions,
@@ -15,12 +16,13 @@ import {
   gold5,
 } from 'common/mixins';
 import { WeaponElementMage } from '__generated__/globalTypes';
+import { Theme } from 'common/types';
 import Card from 'components/common/Card';
 import { getImageUrl } from 'common/utils';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
 import ItemStatsList from './ItemStatsList';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tooltip from './Tooltip';
+import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
 
 interface Props {
   item: Item;
@@ -44,7 +46,7 @@ const BasicItemCard: React.FC<Props> = ({
   isSuggestion,
 }) => {
   const { t } = useTranslation(['common', 'stat', 'weapon_spell_effect']);
-  const theme = useTheme();
+  const theme = useTheme<Theme>();
   const [brokenImage, setBrokenImage] = React.useState(false);
   return (
     <Card
