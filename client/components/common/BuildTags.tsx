@@ -1,7 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
+
 import { Divider, Select, Tag } from 'antd';
 import { useRouter } from 'next/router';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';

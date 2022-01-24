@@ -1,6 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
+
 import React from 'react';
-import { jsx } from '@emotion/core';
+
 import { Modal, Input, Form, Button, Checkbox, Divider } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/client';
 import {
@@ -58,10 +59,8 @@ const LoginModal: React.FC<Props> = ({ visible, onClose, openSignUpModal }) => {
     openSignUpModal();
   }, [onClose, openSignUpModal]);
 
-  const [
-    showRequestPasswordResetModal,
-    setRequestPasswordResetModal,
-  ] = React.useState(false);
+  const [showRequestPasswordResetModal, setRequestPasswordResetModal] =
+    React.useState(false);
   const openRequestPasswordResetModal = React.useCallback(() => {
     onClose();
     setRequestPasswordResetModal(true);

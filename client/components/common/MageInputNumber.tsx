@@ -2,7 +2,7 @@ import React from 'react';
 import { InputNumber } from 'antd';
 import { Stat } from '__generated__/globalTypes';
 import { MageAction } from 'common/types';
-import { ClassNames } from '@emotion/core';
+import { ClassNames } from '@emotion/react';
 import { inputFontSize } from 'common/mixins';
 
 interface Props {

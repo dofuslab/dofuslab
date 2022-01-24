@@ -1,7 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
+
 import { useEquipItemMutation, useToggleFavoriteMutation } from 'common/utils';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { useRouter } from 'next/router';

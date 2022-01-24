@@ -1,4 +1,5 @@
 import { ParsedRequest } from '../api/_lib/types';
+
 const { H, R, copee } = window as any;
 let timeout = -1;
 
@@ -148,7 +149,7 @@ const App = (_: any, state: AppState, setState: SetState) => {
           input: H(TextInput, {
             value: text,
             oninput: (val: string) => {
-              console.log('oninput ' + val);
+              console.log(`oninput ${val}`);
               setLoadingState({ text: val, overrideUrl: url });
             },
           }),
@@ -185,7 +186,7 @@ const App = (_: any, state: AppState, setState: SetState) => {
       { className: 'pull-right' },
       H(ImagePreview, {
         src: overrideUrl ? overrideUrl.href : url.href,
-        loading: loading,
+        loading,
         onload: () => setState({ loading: false }),
         onerror: () => {
           setState({

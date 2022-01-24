@@ -1,7 +1,6 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import React from 'react';
-import { jsx } from '@emotion/core';
 import Head from 'next/head';
 import { mediaStyles, Media } from 'components/common/Media';
 import Selector from 'components/common/Selector';
@@ -53,6 +52,11 @@ const EquipPage: React.FC<Props> = ({ customSetId }) => {
     customSetVariables
   >(CustomSetQuery, { variables: { id: customSetId }, skip: !customSetId });
 
+  const contextValue = React.useMemo(
+    () => [isClassic, onIsClassicChange] as const,
+    [isClassic, onIsClassicChange],
+  );
+
   const customSet = customSetData?.customSetById ?? null;
 
   if (!itemSlot) {
@@ -81,7 +85,7 @@ const EquipPage: React.FC<Props> = ({ customSetId }) => {
         </MobileLayout>
       </Media>
       <Media greaterThanOrEqual="xs">
-        <ClassicContext.Provider value={[isClassic, onIsClassicChange]}>
+        <ClassicContext.Provider value={contextValue}>
           <DesktopLayout showSwitch>
             <Head>
               <style

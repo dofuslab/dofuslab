@@ -1,6 +1,5 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
-import { jsx } from '@emotion/core';
 import { useMutation } from '@apollo/client';
 
 import { getFaceImageUrl, navigateToNewCustomSet } from 'common/utils';
@@ -12,8 +11,8 @@ import {
 import editCustomSetDefaultClassMutation from 'graphql/mutations/editCustomSetDefaultClass.graphql';
 import { useTranslation } from 'i18n';
 import { useRouter } from 'next/router';
-import Tooltip from './Tooltip';
 import { BuildGender } from '__generated__/globalTypes';
+import Tooltip from './Tooltip';
 
 interface Props {
   customSetId?: string;

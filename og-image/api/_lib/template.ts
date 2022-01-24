@@ -1,7 +1,9 @@
 import { sanitizeHtml } from './sanitizer';
 import { ImageType, ParsedRequest } from './types';
 import { getTagImageUrl, getClassImageUrl, ROOT } from './utils';
+
 const twemoji = require('twemoji');
+
 const twOptions = { folder: 'svg', ext: '.svg' };
 const emojify = (text: string) => twemoji.parse(text, twOptions);
 

@@ -1,7 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
+
 import { Button, Form, Modal } from 'antd';
 import { useMutation, useQuery } from '@apollo/client';
 
@@ -14,7 +14,7 @@ import {
 import editBuildSettingsMutation from 'graphql/mutations/editBuildSettings.graphql';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
-import { BuildSettingsForm } from './BuildSettingsForm';
+import BuildSettingsForm from './BuildSettingsForm';
 
 interface Props {
   visible: boolean;
@@ -24,9 +24,8 @@ interface Props {
 const DefaultBuildSettingsModal: React.FC<Props> = ({ visible, onClose }) => {
   const { t } = useTranslation('common');
 
-  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
-    currentUserQuery,
-  );
+  const { data: currentUserData } =
+    useQuery<CurrentUserQueryType>(currentUserQuery);
 
   const [form] = Form.useForm();
 
