@@ -1,7 +1,6 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
 
 import { useDeleteItemMutation } from 'common/utils';
 import { EquippedItem, CustomSet } from 'common/type-aliases';

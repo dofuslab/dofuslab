@@ -1,8 +1,8 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
+
 import React from 'react';
 import { NextPage } from 'next';
 import { useQuery, useMutation } from '@apollo/client';
-import { jsx } from '@emotion/core';
 
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import { mediaStyles } from 'components/common/Media';

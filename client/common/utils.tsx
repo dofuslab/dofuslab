@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import React, { useCallback } from 'react';
 import {
   useMutation,
@@ -68,6 +70,7 @@ import {
   toggleFavoriteItemVariables,
 } from 'graphql/mutations/__generated__/toggleFavoriteItem';
 import toggleFavoriteItemMutation from 'graphql/mutations/toggleFavoriteItem.graphql';
+import { DefaultOptionType } from 'antd/lib/select';
 import {
   StatsFromCustomSet,
   SetCounter,
@@ -98,7 +101,6 @@ import {
   ItemTypeWithSlots,
   EquippedItem,
 } from './type-aliases';
-import { DefaultOptionType } from 'antd/lib/select';
 
 export const getImageUrl = (suffix: string) =>
   suffix.startsWith('https://')
@@ -1168,9 +1170,9 @@ function isLeafCondition(
   );
 }
 
-const getDefaultStatCalculator = (stat: Stat) => (
-  statsFromCustomSet: StatsFromCustomSet,
-) => getStatWithDefault(statsFromCustomSet, stat);
+const getDefaultStatCalculator =
+  (stat: Stat) => (statsFromCustomSet: StatsFromCustomSet) =>
+    getStatWithDefault(statsFromCustomSet, stat);
 
 const evaluateLeafCondition = (
   customSet: CustomSet,
@@ -1449,9 +1451,8 @@ export const getCustomSetMetaDescription = (customSet?: CustomSet | null) => {
 export const getUserProfileMetaImage = (suffix?: string | null) => {
   if (!suffix) {
     return getImageUrl('logo/DL-Full_Dark_Filled_BG_1200x628.png');
-  } else {
-    return getImageUrl(suffix);
   }
+  return getImageUrl(suffix);
 };
 
 export const getUserProfileMetaDescription = (
@@ -1460,11 +1461,11 @@ export const getUserProfileMetaDescription = (
 ) => {
   if (!count) {
     return `Discover ${username}'s profile on DofusLab, the open-source set builder for the MMORPG Dofus.`;
-  } else if (count === 1) {
-    return `Discover ${username}'s profile on DofusLab, the open-source set builder for the MMORPG Dofus.`;
-  } else {
-    return `Discover ${username}'s ${count} builds on DofusLab, the open-source set builder for the MMORPG Dofus.`;
   }
+  if (count === 1) {
+    return `Discover ${username}'s profile on DofusLab, the open-source set builder for the MMORPG Dofus.`;
+  }
+  return `Discover ${username}'s ${count} builds on DofusLab, the open-source set builder for the MMORPG Dofus.`;
 };
 
 export const getCustomSetMetaImage = (customSet?: CustomSet | null) => {
@@ -1541,7 +1542,7 @@ export const stripQueryString = (asPath: string) => {
 };
 
 export const ClassicContext = React.createContext<
-  [boolean, (v: boolean) => void]
+  readonly [boolean, (v: boolean) => void]
 >([
   true,
   () => {
@@ -1572,9 +1573,8 @@ export const CustomSetContext = React.createContext<{
 });
 
 export const useClassic = () => {
-  const { data: sessionSettingsData } = useQuery<sessionSettings>(
-    sessionSettingsQuery,
-  );
+  const { data: sessionSettingsData } =
+    useQuery<sessionSettings>(sessionSettingsQuery);
 
   const [mutate] = useMutation<changeClassic, changeClassicVariables>(
     changeClassicMutation,

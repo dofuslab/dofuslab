@@ -1,10 +1,9 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
 import Modal from 'antd/lib/modal/Modal';
 
-import { AppliedBuff, AppliedBuffActionType, Theme } from 'common/types';
+import { AppliedBuff, AppliedBuffActionType } from 'common/types';
 import { useTranslation } from 'i18n';
 import { useQuery } from '@apollo/client';
 import { classes } from 'graphql/queries/__generated__/classes';
@@ -26,7 +25,7 @@ import { mq } from 'common/constants';
 import { CustomSet } from 'common/type-aliases';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 import { getModalStyle } from 'common/mixins';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
@@ -58,9 +57,8 @@ const BuffModal: React.FC<Props> = ({
   const { appliedBuffs, dispatch } = React.useContext(CustomSetContext);
   const { t } = useTranslation(['stat', 'common']);
   const { data: classData } = useQuery<classes>(classesQuery);
-  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
-    currentUserQuery,
-  );
+  const { data: currentUserData } =
+    useQuery<CurrentUserQueryType>(currentUserQuery);
 
   const [selectedClassId, setSelectedClassId] = React.useState<
     string | undefined
@@ -81,7 +79,7 @@ const BuffModal: React.FC<Props> = ({
     dispatch({ type: AppliedBuffActionType.CLEAR_ALL });
   }, []);
 
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   const flattenedSpells =
     data?.classById?.spellVariantPairs.reduce(
@@ -184,7 +182,7 @@ const BuffModal: React.FC<Props> = ({
         }}
       >
         {classData &&
-          [...classData?.classes]
+          [...(classData?.classes ?? [])]
             .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
             .map((dofusClass) => (
               <Option key={dofusClass.id} value={dofusClass.id}>

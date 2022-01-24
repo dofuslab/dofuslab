@@ -14,6 +14,7 @@ export const event = ({
   label,
   value,
 }: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   action: any;
   category?: string;
   label?: string;
@@ -22,6 +23,6 @@ export const event = ({
   window.gtag('event', action, {
     event_category: category,
     event_label: label,
-    value: value,
+    value,
   });
 };

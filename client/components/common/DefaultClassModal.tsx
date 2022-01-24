@@ -1,7 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
+
 import { Divider, Modal, Tabs } from 'antd';
 import { useQuery } from '@apollo/client';
 
@@ -11,10 +11,10 @@ import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
 
 import { mq } from 'common/constants';
-import DefaultClassButton from './DefaultClassButton';
 import { BuildGender } from '__generated__/globalTypes';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import DefaultClassButton from './DefaultClassButton';
 
 interface Props {
   visible: boolean;
@@ -41,9 +41,8 @@ const DefaultClassModal: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation('common');
   const { data } = useQuery<classes>(classesQuery);
-  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
-    currentUserQuery,
-  );
+  const { data: currentUserData } =
+    useQuery<CurrentUserQueryType>(currentUserQuery);
 
   const sortedClasses =
     data &&

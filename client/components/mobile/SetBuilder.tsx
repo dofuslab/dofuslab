@@ -1,11 +1,10 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
-import { jsx } from '@emotion/core';
 import { Tabs } from 'antd';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 
-import { Theme, BuildError } from 'common/types';
+import { BuildError } from 'common/types';
 import { classicStatGroups } from 'common/constants';
 import { ResponsiveGrid, BuffButton } from 'common/wrappers';
 import { topMarginStyle } from 'common/mixins';
@@ -30,11 +29,8 @@ interface Props {
 }
 
 const SetBuilder: React.FC<Props> = ({ customSet }) => {
-  const {
-    appliedBuffs,
-    statsFromCustomSet,
-    customSetLoading,
-  } = React.useContext(CustomSetContext);
+  const { appliedBuffs, statsFromCustomSet, customSetLoading } =
+    React.useContext(CustomSetContext);
   const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(
     null,
   );
@@ -62,7 +58,7 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
   }
   const { t } = useTranslation('common');
 
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   return (
     <>
@@ -71,8 +67,6 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
         customSet={customSet}
         customSetLoading={customSetLoading}
         errors={errors}
-        isMobile
-        isClassic={false}
         setDofusClassId={setDofusClassId}
       />
       <EquipmentSlots

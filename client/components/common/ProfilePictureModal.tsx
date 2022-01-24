@@ -1,21 +1,20 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import React, { useState } from 'react';
-import { jsx } from '@emotion/core';
+
 import { Divider, Modal, notification } from 'antd';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '@emotion/react';
 import { useRouter } from 'next/router';
 
 import { useTranslation } from 'i18n';
 import { getImageUrl } from 'common/utils';
-import { PROFILE_PICTURES, mq } from '../../common/constants';
 import changeProfilePictureMutation from 'graphql/mutations/changeProfilePicture.graphql';
-import { Theme } from 'common/types';
 import {
   changeProfilePicture,
   changeProfilePictureVariables,
 } from 'graphql/mutations/__generated__/changeProfilePicture';
 import { useMutation } from '@apollo/client';
+import { PROFILE_PICTURES, mq } from '../../common/constants';
 
 interface Props {
   visible: boolean;
@@ -30,7 +29,7 @@ const ProfilePictureModal: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation('common');
   const [active, setActive] = useState<string>(currentlyActive);
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   const [profilePictureMutate, { loading: changePictureLoading }] = useMutation<
     changeProfilePicture,
@@ -49,7 +48,6 @@ const ProfilePictureModal: React.FC<Props> = ({
       if (data?.changeProfilePicture?.user?.profilePicture) {
         notification.success({
           message: t('SUCCESS'),
-          // Missing translation
           description: t('CHANGE_PICTURE_SUCCESS'),
         });
       }
@@ -69,7 +67,6 @@ const ProfilePictureModal: React.FC<Props> = ({
   return (
     <Modal
       visible={visible}
-      // Missing translation
       title={t('CHANGE_PICTURE')}
       centered
       onOk={onChangePicture}
@@ -82,7 +79,6 @@ const ProfilePictureModal: React.FC<Props> = ({
       >
         <img
           src={getImageUrl(active)}
-          // Missing translation
           alt={t('SELECTED_PROFILE_PICTURE')}
           css={{ maxWidth: 220, borderRadius: 4 }}
         />
@@ -101,9 +97,9 @@ const ProfilePictureModal: React.FC<Props> = ({
           },
         }}
       >
-        {PROFILE_PICTURES.map((item, index) => {
+        {PROFILE_PICTURES.map((pictureUrlSuffix) => {
           const activeStyle =
-            active === item
+            active === pictureUrlSuffix
               ? {
                   borderRadius: 4,
                   boxShadow: `0px 0px 0px 2px ${theme.border?.primarySelected}`,
@@ -124,16 +120,19 @@ const ProfilePictureModal: React.FC<Props> = ({
                 };
 
           return (
-            <img
-              src={getImageUrl(item)}
-              key={`profile-pic-${index}`}
-              // Missing translation
-              alt={t('PROFILE_PICTURE')}
+            <a
               onClick={() => {
-                setActive(item);
+                setActive(pictureUrlSuffix);
               }}
-              css={activeStyle}
-            />
+            >
+              <img
+                src={getImageUrl(pictureUrlSuffix)}
+                key={`profile-pic-${pictureUrlSuffix}`}
+                // Missing translation
+                alt={t('PROFILE_PICTURE')}
+                css={activeStyle}
+              />
+            </a>
           );
         })}
       </div>

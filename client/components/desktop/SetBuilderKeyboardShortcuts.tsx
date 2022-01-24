@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/react */
 
 import * as React from 'react';
 import { itemSlots as ItemSlots } from 'graphql/queries/__generated__/itemSlots';
@@ -71,7 +71,7 @@ const SetBuilderKeyboardShortcuts: React.FC<Props> = ({
           }
 
           if (!slot) {
-            slot = filteredSlots[0];
+            [slot] = filteredSlots;
           }
         }
 
