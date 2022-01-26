@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
+import BuildPageComponent from 'components/common/BuildPage';
 import { GetServerSideProps, NextPage } from 'next';
 
 import { createApolloClient } from 'common/apollo';
@@ -18,53 +19,22 @@ import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
 import { SSRConfig } from 'next-i18next';
 import { NormalizedCacheObject } from '@apollo/client';
 import {
-  customSet as customSetQueryType,
+  customSet,
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import { EditableContext } from 'common/utils';
-import Head from 'next/head';
-import { Media, mediaStyles } from 'components/common/Media';
-import MobileSetBuilder from 'components/mobile/SetBuilder';
-import ClassicSetBuilder from 'components/desktop/ClassicSetBuilder';
-import { CustomSet } from 'common/type-aliases';
-import { CustomSetHead } from 'common/wrappers';
-import MobileLayout from 'components/mobile/Layout';
-import DesktopLayout from 'components/desktop/Layout';
 
-interface Props {
-  customSet: CustomSet;
-}
-
-const ViewPage: NextPage<Props> = ({ customSet }) => {
+const BuildPage: NextPage = () => {
   return (
-    <div className="App" css={{ height: '100%' }}>
-      <Head>
-        <style
-          type="text/css"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: mediaStyles }}
-        />
-      </Head>
-      <CustomSetHead customSet={customSet} />
-      <EditableContext.Provider value={false}>
-        <Media lessThan="xs">
-          <MobileLayout>
-            <MobileSetBuilder customSet={customSet} />
-          </MobileLayout>
-        </Media>
-        <Media greaterThanOrEqual="xs" css={{ height: '100%' }}>
-          <DesktopLayout showSwitch={false}>
-            <ClassicSetBuilder customSet={customSet} />
-          </DesktopLayout>
-        </Media>
-      </EditableContext.Provider>
-    </div>
+    <EditableContext.Provider value>
+      <BuildPageComponent />
+    </EditableContext.Provider>
   );
 };
 
 export const getServerSideProps: GetServerSideProps<
-  SSRConfig & Props & { apolloState: NormalizedCacheObject },
+  SSRConfig & { apolloState: NormalizedCacheObject },
   {
     customSetId: string;
   }
@@ -77,17 +47,15 @@ export const getServerSideProps: GetServerSideProps<
   );
 
   if (!params?.customSetId) {
-    return {
-      notFound: true,
-    };
+    return { notFound: true };
   }
 
   try {
     // populate server-side apollo cache
     const results = await Promise.all([
-      ssrClient.query<customSetQueryType, customSetVariables>({
+      ssrClient.query<customSet, customSetVariables>({
         query: CustomSetQuery,
-        variables: { id: params.customSetId },
+        variables: { id: params?.customSetId },
       }),
       ssrClient.query<itemSlots>({ query: ItemSlotsQuery }),
       ssrClient.query<customSetTags>({ query: CustomSetTagsQuery }),
@@ -99,8 +67,18 @@ export const getServerSideProps: GetServerSideProps<
     const customSet = results[0].data.customSetById;
 
     if (!customSet) {
+      return { notFound: true };
+    }
+
+    if (!customSet.hasEditPermission) {
       return {
-        notFound: true,
+        redirect: {
+          destination:
+            locale === defaultLocale
+              ? `/view/${params.customSetId}`
+              : `/${locale}/view/${params.customSetId}/`,
+          permanent: false,
+        },
       };
     }
 
@@ -117,15 +95,12 @@ export const getServerSideProps: GetServerSideProps<
         ])),
         // extracts data from the server-side apollo cache to hydrate frontend cache
         apolloState: ssrClient.cache.extract(),
-        customSet,
       },
     };
   } catch (e) {
     // TODO: improve error handling
-    return {
-      notFound: true,
-    };
+    return { notFound: true };
   }
 };
 
-export default ViewPage;
+export default BuildPage;

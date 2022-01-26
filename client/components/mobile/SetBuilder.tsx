@@ -13,7 +13,7 @@ import BonusStats from 'components/desktop/BonusStats';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 
 import { ItemSlot, CustomSet } from 'common/type-aliases';
 import BuffModal from 'components/common/BuffModal';

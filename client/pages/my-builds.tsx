@@ -9,7 +9,7 @@ import { mediaStyles } from 'components/common/Media';
 import Head from 'next/head';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import BuildList from 'components/common/BuildList';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { getTitle } from 'common/utils';
 
 const MyBuildsPage: NextPage = () => {

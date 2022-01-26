@@ -6,7 +6,7 @@ import { useTheme } from '@emotion/react';
 
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import {
   classById,
   classByIdVariables,

@@ -4,7 +4,7 @@ import * as React from 'react';
 import Modal from 'antd/lib/modal/Modal';
 
 import { AppliedBuff, AppliedBuffActionType } from 'common/types';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { useQuery } from '@apollo/client';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';

@@ -4,7 +4,7 @@ import React from 'react';
 
 import { Button } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { faRedo } from '@fortawesome/free-solid-svg-icons';
 import { mq } from 'common/constants';
 

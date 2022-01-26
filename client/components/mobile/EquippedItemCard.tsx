@@ -13,7 +13,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { BuildError } from 'common/types';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { itemCardStyle, switchStyle } from 'common/mixins';
 import {
   useDeleteItemMutation,

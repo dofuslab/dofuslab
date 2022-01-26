@@ -12,7 +12,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { LoadingOutlined } from '@ant-design/icons';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { itemCardStyle, selected, inputFontSize } from 'common/mixins';
 import Link from 'next/link';
 import {

@@ -2,11 +2,10 @@
 
 import React from 'react';
 import { useTheme } from '@emotion/react';
-import { useTranslation } from 'i18n';
+import { useTranslation, TFunction } from 'next-i18next';
 import { Stat, WeaponElementMage } from '__generated__/globalTypes';
 import { Divider } from 'antd';
 import { WeaponEffectsList, BrokenImagePlaceholder } from 'common/wrappers';
-import { TFunction } from 'next-i18next';
 import { BuildError } from 'common/types';
 import { getImageUrl, renderErrors } from 'common/utils';
 

@@ -3,7 +3,7 @@
 import * as React from 'react';
 
 import { Buff, ClassBuffSpell, Item } from 'common/type-aliases';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { AppliedBuffActionType } from 'common/types';
 import { Badge } from 'common/wrappers';
 import { blue6, blue8 } from 'common/mixins';

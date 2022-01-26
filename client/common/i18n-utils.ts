@@ -1,6 +1,4 @@
-import NextI18Next from 'next-i18next';
-
-const DEFAULT_LANGUAGE = 'en';
+export const DEFAULT_LANGUAGE = 'en';
 const OTHER_LANGUAGES = ['fr', 'it', 'es'];
 // const OTHER_LANGUAGES = ['fr', 'de', 'pt', 'it', 'es'] as const;
 
@@ -8,12 +6,6 @@ export const LANGUAGES = [DEFAULT_LANGUAGE, ...OTHER_LANGUAGES] as const;
 // export const LANGUAGES = [DEFAULT_LANGUAGE] as const;
 
 export type TLanguage = typeof LANGUAGES[number];
-
-const NextI18NextInstance = new NextI18Next({
-  defaultLanguage: DEFAULT_LANGUAGE,
-  otherLanguages: OTHER_LANGUAGES,
-  // otherLanguages: ['fr', 'de', 'pt', 'it', 'es'],
-});
 
 export const langToFullName = (language: TLanguage) => {
   switch (language) {
@@ -62,13 +54,13 @@ export const prependDe = (language: string, stringToTranslate: string) => {
   return `de ${stringToTranslate}`;
 };
 
-export default NextI18NextInstance;
+// export default NextI18NextInstance;
 
 /* Optionally, export class methods as named exports */
-export const {
-  appWithTranslation,
-  withTranslation,
-  useTranslation,
-  Trans,
-  i18n,
-} = NextI18NextInstance;
+// export const {
+//   appWithTranslation,
+//   withTranslation,
+//   useTranslation,
+//   Trans,
+//   i18n,
+// } = NextI18NextInstance;

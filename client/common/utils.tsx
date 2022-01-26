@@ -13,7 +13,7 @@ import { useRouter, NextRouter } from 'next/router';
 import { notification } from 'antd';
 import cloneDeep from 'lodash/cloneDeep';
 import groupBy from 'lodash/groupBy';
-import { TFunction } from 'next-i18next';
+import { TFunction, useTranslation, Trans } from 'next-i18next';
 import CustomSetFragment from 'graphql/fragments/customSet.graphql';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import ItemFragment from 'graphql/fragments/item.graphql';
@@ -42,7 +42,6 @@ import {
   currentUser as CurrentUserQueryType,
 } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
-import { useTranslation, Trans } from 'i18n';
 import {
   equipSet,
   equipSetVariables,

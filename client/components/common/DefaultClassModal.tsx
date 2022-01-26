@@ -6,7 +6,7 @@ import { Divider, Modal, Tabs } from 'antd';
 import { useQuery } from '@apollo/client';
 
 import { CustomSet } from 'common/type-aliases';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
 

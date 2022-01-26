@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ClassNames, useTheme } from '@emotion/react';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { List } from 'antd';
 
 import { StatsFromCustomSet } from 'common/types';

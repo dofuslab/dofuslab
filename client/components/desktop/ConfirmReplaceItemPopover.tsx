@@ -5,7 +5,7 @@ import * as React from 'react';
 import { ClassNames } from '@emotion/react';
 import { Popover } from 'antd';
 
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { itemBox, popoverTitleStyle } from 'common/mixins';
 import { useEquipItemMutation } from 'common/utils';
 import { mq } from 'common/constants';

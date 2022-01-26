@@ -8,7 +8,7 @@ import { CardTitleWithLevel, damageHeaderStyle } from 'common/wrappers';
 import { itemCardStyle } from 'common/mixins';
 import Card from 'components/common/Card';
 import { classBuffs_classById_spellVariantPairs_spells as ClassBuffSpell } from 'graphql/queries/__generated__/classBuffs';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { getImageUrl } from 'common/utils';
 import SpellLevelRadio from './SpellLevelRadio';
 import AddBuffLink from './AddBuffLink';

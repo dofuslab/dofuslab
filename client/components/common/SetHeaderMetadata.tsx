@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 
 function SetHeaderMetadata({
   translationLabelId,

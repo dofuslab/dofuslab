@@ -5,7 +5,7 @@ import * as React from 'react';
 import { Button, Form, Modal } from 'antd';
 import { useMutation, useQuery } from '@apollo/client';
 
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 
 import {
   editBuildSettings,

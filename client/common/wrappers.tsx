@@ -6,8 +6,7 @@ import { CSSObject, ClassNames, useTheme } from '@emotion/react';
 import Head from 'next/head';
 
 import { Skeleton, Switch, Button } from 'antd';
-import { TFunction } from 'next-i18next';
-import { useTranslation } from 'i18n';
+import { TFunction, useTranslation } from 'next-i18next';
 import {
   WeaponEffectType,
   SpellEffectType,

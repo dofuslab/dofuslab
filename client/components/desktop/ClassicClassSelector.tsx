@@ -10,7 +10,7 @@ import Tooltip from 'components/common/Tooltip';
 import { Card } from 'antd';
 import { itemCardStyle } from 'common/mixins';
 import { useTheme } from '@emotion/react';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { getFaceImageUrl } from 'common/utils';
 import { BuildGender } from '__generated__/globalTypes';
 

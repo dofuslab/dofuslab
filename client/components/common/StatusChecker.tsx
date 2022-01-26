@@ -3,13 +3,13 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { notification } from 'antd';
-import { useQuery, useApolloClient } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
-import sessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
-import { sessionSettings } from 'graphql/queries/__generated__/sessionSettings';
+import Cookies from 'js-cookie';
+import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
 
 type StatusObj = {
   type: 'info' | 'success' | 'warn' | 'error';
@@ -60,11 +60,8 @@ function isStatusObj(value: string | StatusObj): value is StatusObj {
 const StatusChecker: React.FC = () => {
   const router = useRouter();
   const { query } = router;
-  const { t, i18n } = useTranslation('status');
-  const client = useApolloClient();
+  const { t } = useTranslation('status');
   const { data } = useQuery<currentUser>(currentUserQuery);
-  const { data: settingsData } =
-    useQuery<sessionSettings>(sessionSettingsQuery);
 
   const processQueryEntry = React.useCallback(
     (statusType: string, statusValue: string) => {
@@ -99,11 +96,13 @@ const StatusChecker: React.FC = () => {
   }, [data]);
 
   React.useEffect(() => {
-    if (settingsData?.locale && settingsData.locale !== i18n.language) {
-      i18n.changeLanguage(settingsData?.locale);
-      client.resetStore();
+    if (!Cookies.get('NEXT_LOCALE')) {
+      Cookies.set(
+        'NEXT_LOCALE',
+        router.locale || router.defaultLocale || DEFAULT_LANGUAGE,
+      );
     }
-  }, [settingsData, client, i18n]);
+  }, [router]);
 
   return null;
 };

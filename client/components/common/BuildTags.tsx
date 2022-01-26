@@ -29,7 +29,7 @@ import {
   removeTagFromCustomSetVariables,
 } from 'graphql/mutations/__generated__/removeTagFromCustomSet';
 import removeTagFromCustomSetMutation from 'graphql/mutations/removeTagFromCustomSet.graphql';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { smallInputFontSize } from 'common/mixins';
 
 interface Props {

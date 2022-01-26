@@ -6,7 +6,7 @@ import { Divider, Modal, notification } from 'antd';
 import { useTheme } from '@emotion/react';
 import { useRouter } from 'next/router';
 
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { getImageUrl } from 'common/utils';
 import changeProfilePictureMutation from 'graphql/mutations/changeProfilePicture.graphql';
 import {

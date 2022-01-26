@@ -1,7 +1,7 @@
 import React from 'react';
 import { Radio } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import Tooltip from './Tooltip';
 
 interface Props {

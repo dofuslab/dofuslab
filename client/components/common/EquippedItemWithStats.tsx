@@ -24,7 +24,7 @@ import {
   ClassicContext,
   getImageUrl,
 } from 'common/utils';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { mq } from 'common/constants';
 import { Media } from 'components/common/Media';
 import { BuildError } from 'common/types';

@@ -21,7 +21,7 @@ import {
 import { useDebounceCallback } from '@react-hook/debounce';
 
 import { SharedFilterAction, SharedFilters } from 'common/types';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import Tooltip from 'components/common/Tooltip';
 import { antdSelectFilterOption, getBuildLink } from 'common/utils';
 import { ItemSlot, CustomSet } from 'common/type-aliases';

@@ -31,7 +31,7 @@ import {
   WeaponElementMage,
   WeaponEffectType,
 } from '__generated__/globalTypes';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import Card from 'components/common/Card';
 import { WeaponStats, CustomSet } from 'common/type-aliases';
 

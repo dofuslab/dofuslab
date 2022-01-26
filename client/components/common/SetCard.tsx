@@ -4,7 +4,7 @@ import React from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import {
   SetBonuses,
   CardTitleWithLevel,

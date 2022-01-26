@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { ItemSlot, ItemSet, Item } from 'common/type-aliases';
 import { notification } from 'antd';
-import { useTranslation, prependDe } from 'i18n';
+import { useTranslation, prependDe } from 'next-i18next';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';

@@ -18,7 +18,7 @@ import {
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
 import { darkTheme } from 'common/themes';
-import { appWithTranslation } from 'i18n';
+import { appWithTranslation } from 'next-i18next';
 import * as gtag from 'gtag';
 import {
   appliedBuffsReducer,

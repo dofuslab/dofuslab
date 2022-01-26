@@ -21,7 +21,7 @@ import {
   WeaponEffectType,
 } from '__generated__/globalTypes';
 import { MageAction } from 'common/types';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { blue6 } from 'common/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faRedo } from '@fortawesome/free-solid-svg-icons';

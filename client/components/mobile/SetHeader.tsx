@@ -6,7 +6,7 @@ import { Button, Divider, Skeleton } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 
 import {
   EditableContext,

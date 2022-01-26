@@ -10,7 +10,7 @@ import Head from 'next/head';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { useRouter } from 'next/router';
 import { Button, Form, Input, notification } from 'antd';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import {
   resetPassword,
   resetPasswordVariables,
