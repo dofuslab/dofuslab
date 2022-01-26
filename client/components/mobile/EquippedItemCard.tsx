@@ -52,16 +52,6 @@ const quickMageStats = [
   },
 ];
 
-// const ACTION_PADDING = 12;
-
-// const actionWrapper = {
-//   margin: -ACTION_PADDING,
-//   padding: ACTION_PADDING,
-//   transition: 'color 0.3s ease-in-out',
-//   [':hover']: { color },
-//   fontSize: '0.8rem',
-// };
-
 interface Props {
   equippedItem: EquippedItem;
   itemSlotId: string;

@@ -56,6 +56,15 @@ export function createApolloClient(
             },
           },
         },
+        EquippedItem: {
+          fields: {
+            exos: {
+              merge(_ignored, incoming) {
+                return incoming;
+              },
+            },
+          },
+        },
         User: {
           fields: {
             customSets: relayStylePagination(['filters']),

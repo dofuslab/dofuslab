@@ -16,7 +16,7 @@ import { sessionSettings } from 'graphql/queries/__generated__/sessionSettings';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
 import { SSRConfig } from 'next-i18next';
-import { NormalizedCacheObject } from '@apollo/client';
+import { NormalizedCacheObject, useQuery } from '@apollo/client';
 import {
   customSet as customSetQueryType,
   customSetVariables,
@@ -27,16 +27,32 @@ import Head from 'next/head';
 import { Media, mediaStyles } from 'components/common/Media';
 import MobileSetBuilder from 'components/mobile/SetBuilder';
 import ClassicSetBuilder from 'components/desktop/ClassicSetBuilder';
-import { CustomSet } from 'common/type-aliases';
 import { CustomSetHead } from 'common/wrappers';
 import MobileLayout from 'components/mobile/Layout';
 import DesktopLayout from 'components/desktop/Layout';
+import { useRouter } from 'next/router';
 
-interface Props {
-  customSet: CustomSet;
-}
+const ViewPage: NextPage = () => {
+  const router = useRouter();
+  const { customSetId: csIdParam } = router.query;
 
-const ViewPage: NextPage<Props> = ({ customSet }) => {
+  const customSetId = Array.isArray(csIdParam) ? csIdParam[0] : csIdParam;
+
+  if (!customSetId) {
+    throw new Error(`customSetId not found: ${customSetId}`);
+  }
+
+  const { data } = useQuery<customSetQueryType, customSetVariables>({
+    query: CustomSetQuery,
+    variables: { customSetId },
+  });
+
+  if (!data?.customSetById) {
+    return null;
+  }
+
+  const customSet = data.customSetById;
+
   return (
     <div className="App" css={{ height: '100%' }}>
       <Head>
@@ -64,7 +80,7 @@ const ViewPage: NextPage<Props> = ({ customSet }) => {
 };
 
 export const getServerSideProps: GetServerSideProps<
-  SSRConfig & Props & { apolloState: NormalizedCacheObject },
+  SSRConfig & { apolloState: NormalizedCacheObject },
   {
     customSetId: string;
   }
@@ -117,7 +133,6 @@ export const getServerSideProps: GetServerSideProps<
         ])),
         // extracts data from the server-side apollo cache to hydrate frontend cache
         apolloState: ssrClient.cache.extract(),
-        customSet,
       },
     };
   } catch (e) {
