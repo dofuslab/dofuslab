@@ -155,7 +155,7 @@ function Layout({ children }: LayoutProps) {
       Cookies.set('NEXT_LOCALE', locale);
       await router.push({ pathname, query }, asPath, { locale });
       await changeLocaleMutate({ variables: { locale } });
-      await client.resetStore();
+      window.location.reload();
     },
     [changeLocaleMutate, router, client],
   );

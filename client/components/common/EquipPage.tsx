@@ -33,12 +33,7 @@ const EquipPage: React.FC<Props> = ({ customSetId }) => {
     (value: boolean) => {
       setIsClassic(value);
       if (!value) {
-        const { itemSlotId: oldItemSlotId, ...restQuery } = router.query;
-
-        router.push(
-          { pathname: '/', query: restQuery },
-          customSetId ? `/build/${customSetId}/` : '/',
-        );
+        router.push(customSetId ? `/build/${customSetId}/` : '/');
       }
     },
     [router],

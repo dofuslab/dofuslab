@@ -58,13 +58,7 @@ const SetModal: React.FC<Props> = ({
     await mutate();
     onCancel();
     if (shouldRedirect && customSet) {
-      router.push(
-        {
-          pathname: '/',
-          query: { customSetId: customSet.id },
-        },
-        customSet ? `/build/${customSet.id}/` : '/',
-      );
+      router.push(customSet ? `/build/${customSet.id}/` : '/');
     }
   }, [mutate, onCancel, customSet, shouldRedirect, router, isEditable]);
 

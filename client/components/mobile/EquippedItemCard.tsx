@@ -100,10 +100,7 @@ const EquippedItemCard: React.FC<Props> = ({
 
   const onDelete = React.useCallback(() => {
     deleteItem(itemSlotId);
-    Router.push(
-      { pathname: '/index', query: { customSetId: customSet.id } },
-      customSet ? `/build/${customSet.id}/` : '/',
-    );
+    Router.push(customSet ? `/build/${customSet.id}/` : '/');
   }, [deleteItem, customSet, itemSlotId]);
 
   const client = useApolloClient();

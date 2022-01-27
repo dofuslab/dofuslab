@@ -10,11 +10,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { ItemSlot, ItemSet, Item } from 'common/type-aliases';
 import { notification } from 'antd';
-import { useTranslation, prependDe } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
+import { prependDe } from 'common/i18n-utils';
 
 import BasicItemCard from './BasicItemCard';
 
@@ -95,26 +96,11 @@ const ItemCard: React.FC<Props> = ({
 
       if (shouldRedirect && customSetId) {
         if (nextSlot) {
-          router.replace(
-            {
-              pathname: '/equip/[itemSlotId]/[customSetId]',
-              query: {
-                itemSlotId: nextSlot.id,
-                customSetId,
-              },
-            },
-            `/equip/${nextSlot.id}/${customSetId}`,
-          );
+          router.replace(`/equip/${nextSlot.id}/${customSetId}`);
         } else {
-          router.push(
-            {
-              pathname: '/',
-              query: { customSetId },
-            },
-            {
-              pathname: customSetId ? `/build/${customSetId}` : '/',
-            },
-          );
+          router.push({
+            pathname: customSetId ? `/build/${customSetId}` : '/',
+          });
         }
       }
       mutate(itemSlotId);
