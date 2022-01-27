@@ -8,12 +8,12 @@
 // ====================================================
 
 export interface userProfile_userByName_customSets {
-  __typename: 'CustomSetConnection';
+  __typename: "CustomSetConnection";
   totalCount: number;
 }
 
 export interface userProfile_userByName {
-  __typename: 'User';
+  __typename: "User";
   id: any;
   username: string;
   profilePicture: string;
