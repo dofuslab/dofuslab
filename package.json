@@ -32,5 +32,15 @@
     "prettier": "^2.1.1",
     "typescript": "^4.0.2"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "lint-staged": {
+    "client/**/*.tsx": [
+      "npx prettier --write",
+      "eslint --fix-dry-run"
+    ],
+    "client/**/*.ts": [
+      "npx prettier --write",
+      "eslint --fix-dry-run"
+    ]
+  }
 }
