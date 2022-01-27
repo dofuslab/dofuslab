@@ -47,7 +47,7 @@ const CustomSetHeaderForm: React.FC<Props> = ({
   const [mutate] = useMutation<
     editCustomSetMetadata,
     editCustomSetMetadataVariables
-  >(EditCustomSetMetadataMutation, { refetchQueries: () => ['myCustomSets'] });
+  >(EditCustomSetMetadataMutation, { refetchQueries: () => ['buildList'] });
 
   const [form] = Form.useForm();
 

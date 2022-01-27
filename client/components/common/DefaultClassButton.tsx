@@ -63,7 +63,7 @@ const DefaultClassButton: React.FC<Props> = ({
           },
         })
       : undefined,
-    refetchQueries: () => ['myCustomSets'],
+    refetchQueries: () => ['buildList'],
   });
 
   const router = useRouter();

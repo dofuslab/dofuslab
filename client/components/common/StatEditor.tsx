@@ -184,7 +184,7 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
     editCustomSetStatsMutation,
     {
       variables: { customSetId: customSet?.id, stats: statState },
-      refetchQueries: () => ['myCustomSets'],
+      refetchQueries: () => ['buildList'],
     },
   );
 

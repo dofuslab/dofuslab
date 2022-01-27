@@ -449,7 +449,7 @@ export const useEquipItemMutation = (item?: Item) => {
     updateCustomSetItem,
     updateCustomSetItemVariables
   >(UpdateCustomSetItemMutation, {
-    refetchQueries: () => ['myCustomSets'],
+    refetchQueries: () => ['buildList'],
     optimisticResponse:
       customSetId && itemSlotsData
         ? ({ itemSlotId, itemId }) => {
@@ -548,7 +548,7 @@ export const useEquipItemsMutation = (
       itemIds,
       customSetId: customSet?.id,
     },
-    refetchQueries: () => ['myCustomSets'],
+    refetchQueries: () => ['buildList'],
   });
 
   const client = useApolloClient();
@@ -589,7 +589,7 @@ export const useEquipSetMutation = (
       setId,
       customSetId: customSet?.id,
     },
-    refetchQueries: () => ['myCustomSets'],
+    refetchQueries: () => ['buildList'],
   });
 
   const client = useApolloClient();
@@ -1618,7 +1618,7 @@ export const usePublicBuildActions = (customSet: CustomSet) => {
     copyCustomSetVariables
   >(copyCustomSetMutation, {
     variables: { customSetId: customSet.id },
-    refetchQueries: () => ['myCustomSets'],
+    refetchQueries: () => ['buildList'],
   });
   const router = useRouter();
 
