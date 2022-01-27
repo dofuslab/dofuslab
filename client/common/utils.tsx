@@ -1444,7 +1444,7 @@ export const getCustomSetMetaDescription = (customSet?: CustomSet | null) => {
   if (customSet.name) {
     return `View the build ${customSet.name} on DofusLab, the open-source set builder for the MMORPG Dofus.`;
   }
-  return 'View this untitled build on DofusLab, the open-source set builder for the MMORPG Dofus';
+  return 'View this untitled build on DofusLab, the open-source set builder for the MMORPG Dofus.';
 };
 
 export const getUserProfileMetaImage = (suffix?: string | null) => {

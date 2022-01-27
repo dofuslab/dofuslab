@@ -9,6 +9,7 @@
     "ESCAPE": "Esc",
     "SPACE": "Espacio"
   },
+  "ONLY_AVAILABLE_ADVANCED_MODE": "Los atajos del teclado solo están disponibles en el modo avanzado.",
   "OPERATIONS": {
     "DELETE_SELECTED_ITEM": "Eliminar el objeto seleccionado",
     "DESELECT_ITEM_SLOT": "Deseleccionar ranura",
@@ -19,7 +20,6 @@
     "SELECT_SEARCH_BAR": "Seleccionar barra de búsqueda",
     "TOGGLE_ITEM_SET_SWITCH": "Alternar entre objetos/conjuntos"
   },
-  "ONLY_AVAILABLE_ADVANCED_MODE": "Los atajos del teclado solo están disponibles en el modo avanzado.",
   "SHORTCUTS": "Atajos",
   "SLOTS": {
     "AMULET": "Amuleto",

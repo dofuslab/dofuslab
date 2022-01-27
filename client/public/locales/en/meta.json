@@ -1,0 +1,13 @@
+{
+  "BUILD": {
+    "NO_NAME_NO_OWNER": "View this untitled build on DofusLab, the open-source equipment playground for the MMORPG Dofus.",
+    "NO_NAME_WITH_OWNER": "View {{username}}'s untitled build on DofusLab, the open-source equipment playground for the MMORPG Dofus.",
+    "WITH_NAME_NO_OWNER": "View the build {{buildName}} on DofusLab, the open-source equipment playground for the MMORPG Dofus.",
+    "WITH_NAME_WITH_OWNER": "View {{username}}'s build {{buildName}} on DofusLab, the open-source equipment playground for the MMORPG Dofus."
+  },
+  "EQUIP": "Find your next {{slot}} at DofusLab, the open-source equipment playground for the MMORPG Dofus.",
+  "HOME": "Experiment with your equipment at DofusLab, the open-source equipment playground for the MMORPG Dofus.",
+  "USER_PROFILE_one": "Discover {{username}}'s profile on DofusLab, the open-source equipment playground for the MMORPG Dofus.",
+  "USER_PROFILE_other": "Discover {{username}}'s {{count}} builds on DofusLab, the open-source equipment playground for the MMORPG Dofus.",
+  "USER_PROFILE_zero": "Discover {{username}}'s profile on DofusLab, the open-source equipment playground for the MMORPG Dofus."
+}

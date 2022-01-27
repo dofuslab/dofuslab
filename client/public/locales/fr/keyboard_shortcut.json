@@ -9,6 +9,7 @@
     "ESCAPE": "Echap",
     "SPACE": "Espace"
   },
+  "ONLY_AVAILABLE_ADVANCED_MODE": "Les raccourcis clavier sont seulement disponibles en mode avancé.",
   "OPERATIONS": {
     "DELETE_SELECTED_ITEM": "Supprimer l'item sélectionné",
     "DESELECT_ITEM_SLOT": "Désélectionner le slot d'item",
@@ -19,7 +20,6 @@
     "SELECT_SEARCH_BAR": "Sélectionner la barre de recherche",
     "TOGGLE_ITEM_SET_SWITCH": "Basculer entre item et panoplie"
   },
-  "ONLY_AVAILABLE_ADVANCED_MODE": "Les raccourcis clavier sont seulement disponibles en mode avancé.",
   "SHORTCUTS": "Raccourcis",
   "SLOTS": {
     "AMULET": "Amulette",
