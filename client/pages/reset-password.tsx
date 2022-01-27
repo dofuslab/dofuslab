@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import React from 'react';
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import { useQuery, useMutation } from '@apollo/client';
 
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
@@ -21,6 +21,8 @@ import ErrorPage from 'pages/_error';
 import { mq, PASSWORD_REGEX } from 'common/constants';
 import { getImageUrl, getTitle } from 'common/utils';
 import { inputFontSize } from 'common/mixins';
+import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const RequestPasswordResetPage: NextPage = () => {
   const { data } = useQuery<currentUser>(currentUserQuery);
@@ -179,9 +181,17 @@ const RequestPasswordResetPage: NextPage = () => {
   );
 };
 
-RequestPasswordResetPage.getInitialProps = async () => {
+export const getStaticProps: GetStaticProps = async ({
+  locale,
+  defaultLocale,
+}) => {
+  const selectedLocale = locale || defaultLocale || DEFAULT_LANGUAGE;
+
   return {
-    namespacesRequired: ['auth'],
+    props: {
+      ...(await serverSideTranslations(selectedLocale, ['auth'])),
+      // extracts data from the server-side apollo cache to hydrate frontend cache
+    },
   };
 };
 

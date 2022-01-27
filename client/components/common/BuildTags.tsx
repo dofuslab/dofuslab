@@ -128,7 +128,7 @@ const BuildTags: React.FC<Props> = ({
           ? tagAssociations[tagAssociations.length - 1].id
           : undefined
       }
-      size={isMobile ? 'middle' : 'small'}
+      size={isMobile ? 'large' : 'small'}
       onSelect={async (selectedValue: LabeledValue) => {
         const { data: addMutateData } = await addMutate({
           variables: { customSetTagId: selectedValue.value, customSetId },
