@@ -1,8 +1,22 @@
 /** @jsxImportSource @emotion/react */
 
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import EquipPage from 'components/common/EquipPage';
 import { useRouter } from 'next/router';
+import { SSRConfig } from 'next-i18next';
+import { NormalizedCacheObject } from '@apollo/client';
+import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
+import { createApolloClient } from 'common/apollo';
+import {
+  customSet,
+  customSetVariables,
+} from 'graphql/queries/__generated__/customSet';
+import CustomSetQuery from 'graphql/queries/customSet.graphql';
+import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import { currentUser } from 'graphql/queries/__generated__/currentUser';
+import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const EquipWithCustomSetPage: NextPage = () => {
   const router = useRouter();
@@ -12,18 +26,71 @@ const EquipWithCustomSetPage: NextPage = () => {
   return <EquipPage customSetId={customSetId} />;
 };
 
-EquipWithCustomSetPage.getInitialProps = async () => {
-  return {
-    namespacesRequired: [
-      'common',
-      'stat',
-      'auth',
-      'weapon_spell_effect',
-      'status',
-      'mage',
-      'keyboard_shortcut',
-    ],
-  };
+export const getServerSideProps: GetServerSideProps<
+  SSRConfig & { apolloState: NormalizedCacheObject },
+  {
+    itemSlotId: string;
+    customSetId: string;
+  }
+> = async ({ locale, defaultLocale, req: { headers }, params }) => {
+  const selectedLocale = locale || defaultLocale || DEFAULT_LANGUAGE;
+  const ssrClient = createApolloClient(
+    {},
+    { ...headers, 'accept-language': selectedLocale },
+    true,
+  );
+
+  if (!params?.customSetId) {
+    return { notFound: true };
+  }
+
+  try {
+    // populate server-side apollo cache
+    const results = await Promise.all([
+      ssrClient.query<customSet, customSetVariables>({
+        query: CustomSetQuery,
+        variables: { id: params?.customSetId },
+      }),
+      ssrClient.query<itemSlots>({ query: ItemSlotsQuery }),
+      ssrClient.query<currentUser>({ query: CurrentUserQuery }),
+    ]);
+
+    const customSet = results[0].data.customSetById;
+
+    if (!customSet) {
+      return { notFound: true };
+    }
+
+    if (!customSet.hasEditPermission) {
+      return {
+        redirect: {
+          destination:
+            locale === defaultLocale
+              ? `/view/${params.customSetId}`
+              : `/${locale}/view/${params.customSetId}/`,
+          permanent: false,
+        },
+      };
+    }
+
+    return {
+      props: {
+        ...(await serverSideTranslations(selectedLocale, [
+          'auth',
+          'common',
+          'mage',
+          'stat',
+          'status',
+          'weapon_spell_effect',
+        ])),
+        // extracts data from the server-side apollo cache to hydrate frontend cache
+        apolloState: ssrClient.cache.extract(),
+      },
+    };
+  } catch (e) {
+    // TODO: improve error handling
+    return { notFound: true };
+  }
 };
 
 export default EquipWithCustomSetPage;

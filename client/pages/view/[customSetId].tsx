@@ -16,13 +16,13 @@ import { sessionSettings } from 'graphql/queries/__generated__/sessionSettings';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
 import { SSRConfig } from 'next-i18next';
-import { NormalizedCacheObject, useQuery } from '@apollo/client';
+import { NormalizedCacheObject } from '@apollo/client';
 import {
   customSet as customSetQueryType,
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
-import { EditableContext } from 'common/utils';
+import { CustomSetContext, EditableContext } from 'common/utils';
 import Head from 'next/head';
 import { Media, mediaStyles } from 'components/common/Media';
 import MobileSetBuilder from 'components/mobile/SetBuilder';
@@ -31,6 +31,7 @@ import { CustomSetHead } from 'common/wrappers';
 import MobileLayout from 'components/mobile/Layout';
 import DesktopLayout from 'components/desktop/Layout';
 import { useRouter } from 'next/router';
+import { useContext } from 'react';
 
 const ViewPage: NextPage = () => {
   const router = useRouter();
@@ -42,16 +43,11 @@ const ViewPage: NextPage = () => {
     throw new Error(`customSetId not found: ${customSetId}`);
   }
 
-  const { data } = useQuery<customSetQueryType, customSetVariables>({
-    query: CustomSetQuery,
-    variables: { customSetId },
-  });
+  const { customSet, customSetLoading } = useContext(CustomSetContext);
 
-  if (!data?.customSetById) {
-    return null;
+  if (!customSet && !customSetLoading) {
+    throw new Error('No custom set found');
   }
-
-  const customSet = data.customSetById;
 
   return (
     <div className="App" css={{ height: '100%' }}>
