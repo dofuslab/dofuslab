@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
-import { useTranslation } from 'next-i18next';
+import { SSRConfig, useTranslation } from 'next-i18next';
 import {
   getTitle,
   getUserProfileMetaImage,
@@ -13,20 +13,34 @@ import { useRouter } from 'next/router';
 import { Media } from 'components/common/Media';
 import DesktopLayout from 'components/desktop/Layout';
 import MobileLayout from 'components/mobile/Layout';
-import { useQuery } from '@apollo/client';
+import { NormalizedCacheObject, useQuery } from '@apollo/client';
 import userProfileQuery from 'graphql/queries/userProfile.graphql';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
 import {
   userProfile,
   userProfileVariables,
 } from 'graphql/queries/__generated__/userProfile';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import ErrorPage from 'pages/_error';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { createApolloClient } from 'common/apollo';
+import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
+import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
+import CustomSetTagsQuery from 'graphql/queries/customSetTags.graphql';
+import { classes } from 'graphql/queries/__generated__/classes';
+import ClassesQuery from 'graphql/queries/classes.graphql';
+import {
+  buildList,
+  buildListVariables,
+} from 'graphql/queries/__generated__/buildList';
+import BuildListQuery from 'graphql/queries/buildList.graphql';
+import { BUILD_LIST_PAGE_SIZE } from 'common/constants';
 
 const UserProfilePage: NextPage = () => {
   const { t } = useTranslation('common');
 
   const router = useRouter();
+
   const username = Array.isArray(router.query.username)
     ? router.query.username[0]
     : router.query.username;
@@ -35,7 +49,7 @@ const UserProfilePage: NextPage = () => {
     throw new Error('no username provided');
   }
 
-  const { data: currentUser } = useQuery<currentUser>(currentUserQuery);
+  const { data: currentUser } = useQuery<currentUser>(CurrentUserQuery);
 
   const { data: userProfileData } = useQuery<userProfile, userProfileVariables>(
     userProfileQuery,
@@ -125,10 +139,65 @@ const UserProfilePage: NextPage = () => {
   );
 };
 
-UserProfilePage.getInitialProps = async () => {
-  return {
-    namespacesRequired: ['common', 'auth', 'status'],
-  };
+export const getServerSideProps: GetServerSideProps<
+  SSRConfig & { apolloState: NormalizedCacheObject },
+  {
+    username: string;
+  }
+> = async ({ locale, defaultLocale, req: { headers }, params }) => {
+  const selectedLocale = locale || defaultLocale || DEFAULT_LANGUAGE;
+  const ssrClient = createApolloClient(
+    {},
+    { ...headers, 'accept-language': selectedLocale },
+    true,
+  );
+
+  if (!params?.username) {
+    return { notFound: true };
+  }
+
+  try {
+    // populate server-side apollo cache
+    const results = await Promise.all([
+      ssrClient.query<userProfile, userProfileVariables>({
+        query: userProfileQuery,
+        variables: { username: params.username },
+      }),
+      ssrClient.query<buildList, buildListVariables>({
+        query: BuildListQuery,
+        variables: {
+          username: params.username,
+          first: BUILD_LIST_PAGE_SIZE,
+          filters: { search: '', tagIds: [] },
+        },
+      }),
+      ssrClient.query<customSetTags>({ query: CustomSetTagsQuery }),
+      ssrClient.query<classes>({ query: ClassesQuery }),
+      ssrClient.query<currentUser>({ query: CurrentUserQuery }),
+    ]);
+
+    const user = results[0].data.userByName;
+
+    if (!user) {
+      return { notFound: true };
+    }
+
+    return {
+      props: {
+        ...(await serverSideTranslations(selectedLocale, [
+          'common',
+          'auth',
+          'status',
+          'keyboard_shortcut',
+        ])),
+        // extracts data from the server-side apollo cache to hydrate frontend cache
+        apolloState: ssrClient.cache.extract(),
+      },
+    };
+  } catch (e) {
+    // TODO: improve error handling
+    return { notFound: true };
+  }
 };
 
 export default UserProfilePage;

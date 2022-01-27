@@ -392,6 +392,7 @@ function Layout({ children, showSwitch }: LayoutProps) {
                         getScrollParent={() => {
                           return drawerBody.current;
                         }}
+                        isMobile={false}
                       />
                     )}
                   </Drawer>

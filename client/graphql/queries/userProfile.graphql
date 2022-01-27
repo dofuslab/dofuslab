@@ -6,14 +6,6 @@ query userProfile($username: String!) {
     creationDate
     customSets(filters: { search: "", tagIds: [] }) {
       totalCount
-      edges {
-        node {
-          id
-        }
-      }
-      pageInfo {
-        hasNextPage
-      }
     }
   }
 }

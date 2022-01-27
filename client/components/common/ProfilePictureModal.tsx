@@ -124,11 +124,10 @@ const ProfilePictureModal: React.FC<Props> = ({
               onClick={() => {
                 setActive(pictureUrlSuffix);
               }}
+              key={`profile-pic-${pictureUrlSuffix}`}
             >
               <img
                 src={getImageUrl(pictureUrlSuffix)}
-                key={`profile-pic-${pictureUrlSuffix}`}
-                // Missing translation
                 alt={t('PROFILE_PICTURE')}
                 css={activeStyle}
               />

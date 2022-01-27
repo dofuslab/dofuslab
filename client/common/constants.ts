@@ -153,3 +153,4 @@ export const PROFILE_PICTURES = [
 ];
 
 export const ITEMS_PAGE_SIZE = 24;
+export const BUILD_LIST_PAGE_SIZE = 20;
