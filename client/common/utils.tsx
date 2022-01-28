@@ -1278,6 +1278,26 @@ export const calcPointCost = (value: number, statKey: BaseStatKey) => {
   return numPoints;
 };
 
+export const getMaxStat = (statKey: BaseStatKey, points: number) => {
+  if (statKey === 'baseVitality') {
+    return points;
+  }
+  if (statKey === 'baseWisdom') {
+    return Math.floor(points / 3);
+  }
+  let cost = 1;
+  let remainingPoints = points;
+  let statValue = 0;
+
+  while (remainingPoints >= cost * 100) {
+    statValue += 100;
+    remainingPoints -= cost * 100;
+    cost += 1;
+  }
+
+  return statValue + Math.floor(remainingPoints / cost);
+};
+
 const findMultipleExoErrors = (customSet: CustomSet, stat: Stat) => {
   const equippedItemsWithExo = customSet.equippedItems.filter((equippedItem) =>
     equippedItem.exos.some(
