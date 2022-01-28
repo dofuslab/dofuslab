@@ -220,6 +220,7 @@ const CustomSetHeaderForm: React.FC<Props> = ({
               <InputNumber
                 css={{ marginLeft: 8, width: 64, ...inputFontSize }}
                 type="number"
+                inputMode="numeric"
                 max={200}
                 min={1}
                 onKeyDown={(e) => {

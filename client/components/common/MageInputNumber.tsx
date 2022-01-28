@@ -37,6 +37,7 @@ const MageInputNumber: React.FC<Props> = ({ stat, value, dispatch, isExo }) => {
           value={value}
           onChange={onChange}
           type="number"
+          inputMode="numeric"
           max={MAX}
           min={-MAX}
           className={css({

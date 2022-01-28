@@ -3,11 +3,11 @@
 import React from 'react';
 import { ClassNames, useTheme, Theme } from '@emotion/react';
 
-import { StatKey, scrolledStats, baseStats } from 'common/types';
+import { StatKey, scrolledStats, baseStats, BaseStatKey } from 'common/types';
 import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
 import { Stat } from '__generated__/globalTypes';
 import { useTranslation } from 'i18n';
-import { InputNumber, Button } from 'antd';
+import { Button, Input, Popover } from 'antd';
 
 import { inputFontSize, red6 } from 'common/mixins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -25,6 +25,7 @@ import {
   navigateToNewCustomSet,
   EditableContext,
   selectOnFocus,
+  getMaxStat,
 } from 'common/utils';
 import { useRouter } from 'next/router';
 import { CustomSet } from 'common/type-aliases';
@@ -141,6 +142,7 @@ const getStatDisplayStyle = (title: string, theme: Theme) => ({
 const getInputNumberStyle = (baseKey: string, title: string, theme: Theme) => ({
   ...inputFontSize,
   maxWidth: '100%',
+  height: '100%',
   display: 'flex',
   alignItems: 'center',
   position: 'relative' as const,
@@ -187,6 +189,55 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
       refetchQueries: () => ['myCustomSets'],
     },
   );
+
+  const quickEditStat = (baseKey: StatKey, amount: number) => {
+    dispatch({
+      type: 'edit',
+      stat: baseKey,
+      value: amount,
+    });
+    debouncedCheckAndMutate();
+  };
+
+  const getQuickStatButtons = (baseKey: BaseStatKey) => {
+    const getButtonValues = (level: number) => {
+      if (level > 150) {
+        return [200, 300];
+      } else if (level > 100) {
+        return [100, 200];
+      } else if (level > 50) {
+        return [100];
+      } else {
+        return [];
+      }
+    };
+
+    const maxStats = getMaxStat(baseKey, remainingPoints);
+    const buttonValues = getButtonValues(customSet?.level ?? 200);
+
+    return (
+      <>
+        <div css={{ display: 'flex', gap: 8 }}>
+          {buttonValues.map((value) => {
+            return (
+              <Button
+                key={`stat-button-${value}`}
+                onClick={() => quickEditStat(baseKey, value)}
+              >
+                {value}
+              </Button>
+            );
+          })}
+          <Button
+            disabled={maxStats <= 0}
+            onClick={() => quickEditStat(baseKey, maxStats)}
+          >
+            {maxStats <= 0 ? 0 : maxStats}
+          </Button>
+        </div>
+      </>
+    );
+  };
 
   const remainingPoints = baseStats.reduce(
     (acc, statKey) => acc - calcPointCost(statState[statKey], statKey),
@@ -287,24 +338,37 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
                 {t(stat, { ns: 'stat' })}
               </div>
               {isEditable ? (
-                <InputNumber
-                  value={statState[baseKey]}
-                  max={999}
-                  min={0}
-                  size="small"
-                  css={getInputNumberStyle(baseKey, t('BASE'), theme)}
-                  onFocus={selectOnFocus}
-                  onChange={(value: number | string | undefined) => {
-                    if (typeof value === 'string') return;
-                    const newValue = value || 0;
-                    dispatch({ type: 'edit', stat: baseKey, value: newValue });
-                    debouncedCheckAndMutate();
-                  }}
-                  onKeyDown={(e) => {
-                    // prevents triggering SetBuilderKeyboardShortcuts
-                    e.nativeEvent.stopPropagation();
-                  }}
-                />
+                <Popover
+                  placement="left"
+                  content={() => getQuickStatButtons(baseKey)}
+                >
+                  {/* Extra div had to be added since input doesn't support ::before */}
+                  <div css={getInputNumberStyle(baseKey, t('BASE'), theme)}>
+                    <Input
+                      value={statState[baseKey]}
+                      inputMode="numeric"
+                      size="small"
+                      css={getInputNumberStyle(baseKey, t('BASE'), theme)}
+                      onFocus={selectOnFocus}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        const regex = /^[0-9]{1,3}$|^$|^\s$/;
+                        if (!value.match(regex)) return;
+                        const newValue = Number(value) || 0;
+                        dispatch({
+                          type: 'edit',
+                          stat: baseKey,
+                          value: newValue,
+                        });
+                        debouncedCheckAndMutate();
+                      }}
+                      onKeyDown={(e) => {
+                        // prevents triggering SetBuilderKeyboardShortcuts
+                        e.nativeEvent.stopPropagation();
+                      }}
+                    />
+                  </div>
+                </Popover>
               ) : (
                 <div
                   css={getReadonlyStatDisplayStyle(baseKey, t('BASE'), theme)}
@@ -313,28 +377,33 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
                 </div>
               )}
               {isEditable ? (
-                <InputNumber
-                  value={statState[scrolledKey]}
-                  max={100}
-                  min={0}
-                  size="small"
-                  css={getInputNumberStyle(baseKey, t('SCROLLED'), theme)}
-                  onFocus={selectOnFocus}
-                  onChange={(value: number | string | undefined) => {
-                    if (typeof value === 'string') return;
-                    const newValue = value || 0;
-                    dispatch({
-                      type: 'edit',
-                      stat: scrolledKey,
-                      value: newValue,
-                    });
-                    debouncedCheckAndMutate();
-                  }}
-                  onKeyDown={(e) => {
-                    // prevents triggering SetBuilderKeyboardShortcuts
-                    e.nativeEvent.stopPropagation();
-                  }}
-                />
+                <div css={getInputNumberStyle(baseKey, t('SCROLLED'), theme)}>
+                  <Input
+                    value={statState[scrolledKey]}
+                    inputMode="numeric"
+                    max={100}
+                    min={0}
+                    size="small"
+                    css={getInputNumberStyle(baseKey, t('SCROLLED'), theme)}
+                    onFocus={selectOnFocus}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      const regex = /^[0-9][0-9]?$|^100$|^$/;
+                      if (!value.match(regex)) return;
+                      const newValue = Number(value) || 0;
+                      dispatch({
+                        type: 'edit',
+                        stat: scrolledKey,
+                        value: newValue,
+                      });
+                      debouncedCheckAndMutate();
+                    }}
+                    onKeyDown={(e) => {
+                      // prevents triggering SetBuilderKeyboardShortcuts
+                      e.nativeEvent.stopPropagation();
+                    }}
+                  />
+                </div>
               ) : (
                 <div
                   css={getReadonlyStatDisplayStyle(

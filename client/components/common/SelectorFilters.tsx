@@ -268,6 +268,7 @@ const SelectorFilters: React.FC<Props> = ({
             value={maxLevel}
             onChange={onChangeMaxLevel}
             type="number"
+            inputMode="numeric"
             max={200}
             min={1}
             css={{
