@@ -11,7 +11,6 @@ import { useTranslation } from 'next-i18next';
 import {
   EditableContext,
   useIsOwnerOfCustomSet,
-  getBuildLink,
   getFaceImageUrl,
 } from 'common/utils';
 
@@ -109,10 +108,8 @@ const SetHeader: React.FC<Props> = ({
   const creationDate = new Date(customSet?.creationDate);
   const modifiedDate = new Date(customSet?.lastModified);
 
-  const buildLink = getBuildLink(customSet?.id);
-
   const editBuildButton = (
-    <Link href={buildLink.href} as={buildLink.as}>
+    <Link href={customSet?.id ? `/build/${customSet.id}/` : '/'}>
       <a>
         <Button css={{ marginBottom: 12 }}>
           {t('EDIT_BUILD')}

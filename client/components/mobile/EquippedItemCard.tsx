@@ -19,6 +19,7 @@ import {
   useDeleteItemMutation,
   checkAuthentication,
   EditableContext,
+  slotToUrlString,
 } from 'common/utils';
 import { Stat } from '__generated__/globalTypes';
 import setEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.graphql';
@@ -35,6 +36,7 @@ import Card from 'components/common/Card';
 import { mq } from 'common/constants';
 import { EquippedItem, ItemSet, CustomSet } from 'common/type-aliases';
 import AddBuffLink from 'components/common/AddBuffLink';
+import { customSet_equippedItems_slot as EquippedItemSlot } from 'graphql/fragments/__generated__/customSet';
 import ItemStatsList from '../common/ItemStatsList';
 
 const quickMageStats = [
@@ -54,7 +56,7 @@ const quickMageStats = [
 
 interface Props {
   equippedItem: EquippedItem;
-  itemSlotId: string;
+  itemSlot: EquippedItemSlot;
   customSet: CustomSet;
   openMageModal: (equippedItem: EquippedItem) => void;
   openSetModal: (set: ItemSet) => void;
@@ -63,7 +65,7 @@ interface Props {
 
 const EquippedItemCard: React.FC<Props> = ({
   equippedItem,
-  itemSlotId,
+  itemSlot,
   customSet,
   openMageModal,
   openSetModal,
@@ -99,9 +101,9 @@ const EquippedItemCard: React.FC<Props> = ({
   });
 
   const onDelete = React.useCallback(() => {
-    deleteItem(itemSlotId);
+    deleteItem(itemSlot.id);
     Router.push(customSet ? `/build/${customSet.id}/` : '/');
-  }, [deleteItem, customSet, itemSlotId]);
+  }, [deleteItem, customSet, itemSlot]);
 
   const client = useApolloClient();
 
@@ -150,24 +152,17 @@ const EquippedItemCard: React.FC<Props> = ({
 
   const isEditable = React.useContext(EditableContext);
 
-  let asPath = '/';
+  let path = '/';
   if (customSet && isEditable) {
-    asPath = `/build/${customSet.id}`;
+    path = `/build/${customSet.id}/`;
   } else if (customSet) {
-    asPath = `/view/${customSet.id}`;
+    path = `/view/${customSet.id}/`;
   }
 
   return (
     <div css={{ padding: '0 12px', marginTop: 12 }}>
       <Media lessThan="xs">
-        <Link
-          href={{
-            pathname: isEditable ? '/' : '/view/[customSetId]',
-            query: { customSetId: customSet.id },
-          }}
-          as={asPath}
-          passHref
-        >
+        <Link href={path} passHref>
           <a>
             <Button size="large" css={{ fontSize: '0.75rem' }}>
               <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
@@ -256,16 +251,7 @@ const EquippedItemCard: React.FC<Props> = ({
           <>
             <Divider css={{ margin: '12px 0' }} />
             <Link
-              href={{
-                pathname: customSet
-                  ? '/equip/[itemSlotId]/[customSetId]'
-                  : '/equip/[itemSlotId]/',
-                query: {
-                  itemSlotId: equippedItem.slot.id,
-                  customSetId: customSet?.id,
-                },
-              }}
-              as={`/equip/${equippedItem.slot.id}/${
+              href={`/equip/${slotToUrlString(itemSlot)}/${
                 customSet ? customSet.id : ''
               }`}
               passHref

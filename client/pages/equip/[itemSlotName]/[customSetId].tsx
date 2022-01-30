@@ -17,19 +17,25 @@ import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { ItemSlot } from 'common/type-aliases';
+import { formatNameForUrl } from 'common/utils';
 
-const EquipWithCustomSetPage: NextPage = () => {
+type Props = {
+  itemSlotId: string;
+};
+
+const EquipWithCustomSetPage: NextPage<Props> = ({ itemSlotId }) => {
   const router = useRouter();
   const customSetId = Array.isArray(router.query.customSetId)
     ? router.query.customSetId[0]
     : router.query.customSetId || null;
-  return <EquipPage customSetId={customSetId} />;
+  return <EquipPage customSetId={customSetId} itemSlotId={itemSlotId} />;
 };
 
 export const getServerSideProps: GetServerSideProps<
-  SSRConfig & { apolloState: NormalizedCacheObject },
+  SSRConfig & Props & { apolloState: NormalizedCacheObject },
   {
-    itemSlotId: string;
+    itemSlotName: string;
     customSetId: string;
   }
 > = async ({ locale, defaultLocale, req: { headers }, params }) => {
@@ -73,6 +79,37 @@ export const getServerSideProps: GetServerSideProps<
       };
     }
 
+    let itemSlot: ItemSlot | undefined;
+
+    try {
+      itemSlot = results[1].data.itemSlots.find((slot) => {
+        const match = params.itemSlotName.match(
+          /(?<slotName>[a-z]+)(-(?<slotOrder>\d+))?/,
+        );
+
+        if (!match?.groups) {
+          throw new Error(`Invalid itemSlotName ${params.itemSlotName}`);
+        }
+
+        const urlSafeSlotName = formatNameForUrl(slot.name);
+
+        if (urlSafeSlotName === match.groups.slotName) {
+          return (
+            match.groups.slotOrder === undefined ||
+            match.groups.slotOrder === String(slot.order)
+          );
+        }
+
+        return false;
+      });
+    } catch (e) {
+      return { notFound: true };
+    }
+
+    if (!itemSlot) {
+      return { notFound: true };
+    }
+
     return {
       props: {
         ...(await serverSideTranslations(selectedLocale, [
@@ -82,9 +119,11 @@ export const getServerSideProps: GetServerSideProps<
           'stat',
           'status',
           'weapon_spell_effect',
+          'meta',
         ])),
         // extracts data from the server-side apollo cache to hydrate frontend cache
         apolloState: ssrClient.cache.extract(),
+        itemSlotId: itemSlot.id,
       },
     };
   } catch (e) {

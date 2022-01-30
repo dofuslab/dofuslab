@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { useApolloClient, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import InfiniteScroll from 'react-infinite-scroller';
 
 import ItemsQuery from 'graphql/queries/items.graphql';

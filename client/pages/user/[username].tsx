@@ -3,11 +3,7 @@
 import { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import { SSRConfig, useTranslation } from 'next-i18next';
-import {
-  getTitle,
-  getUserProfileMetaImage,
-  getUserProfileMetaDescription,
-} from 'common/utils';
+import { getTitle, getUserProfileMetaImage } from 'common/utils';
 import UserProfile from 'components/common/UserProfile';
 import { useRouter } from 'next/router';
 import { Media } from 'components/common/Media';
@@ -24,7 +20,7 @@ import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import ErrorPage from 'pages/_error';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { createApolloClient } from 'common/apollo';
-import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
+import { DEFAULT_LANGUAGE, prependDe } from 'common/i18n-utils';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
 import CustomSetTagsQuery from 'graphql/queries/customSetTags.graphql';
 import { classes } from 'graphql/queries/__generated__/classes';
@@ -37,9 +33,11 @@ import BuildListQuery from 'graphql/queries/buildList.graphql';
 import { BUILD_LIST_PAGE_SIZE } from 'common/constants';
 
 const UserProfilePage: NextPage = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation(['common', 'meta']);
 
   const router = useRouter();
+
+  const locale = router.locale || router.defaultLocale || DEFAULT_LANGUAGE;
 
   const username = Array.isArray(router.query.username)
     ? router.query.username[0]
@@ -66,7 +64,11 @@ const UserProfilePage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{getTitle(t('USER_PROFILE', { username }))}</title>
+        <title>
+          {getTitle(
+            t('USER_PROFILE', { username: prependDe(locale, username) }),
+          )}
+        </title>
         <meta property="og:site_name" content="DofusLab" />
         <meta property="og:type" content="profile" />
         <meta
@@ -78,28 +80,34 @@ const UserProfilePage: NextPage = () => {
         <meta property="og:image:type" content="image/png" />
         <meta
           property="og:title"
-          content={getTitle(t('USER_PROFILE', { username }))}
+          content={getTitle(
+            t('USER_PROFILE', { username: prependDe(locale, username) }),
+          )}
         />
         {userProfileData && (
           <meta
             property="og:description"
-            content={getUserProfileMetaDescription(
-              username,
-              userProfileData.userByName.customSets.totalCount,
-            )}
+            content={t('USER_PROFILE', {
+              ns: 'meta',
+              username: prependDe(locale, username),
+              count: userProfileData.userByName.customSets.totalCount,
+            })}
           />
         )}
         <meta
           property="twitter:title"
-          content={getTitle(t('USER_PROFILE', { username }))}
+          content={getTitle(
+            t('USER_PROFILE', { username: prependDe(locale, username) }),
+          )}
         />
         {userProfileData && (
           <meta
             property="twitter:description"
-            content={getUserProfileMetaDescription(
-              username,
-              userProfileData.userByName.customSets.totalCount,
-            )}
+            content={t('USER_PROFILE', {
+              ns: 'meta',
+              username: prependDe(locale, username),
+              count: userProfileData.userByName.customSets.totalCount,
+            })}
           />
         )}
         <meta
@@ -189,6 +197,7 @@ export const getServerSideProps: GetServerSideProps<
           'auth',
           'status',
           'keyboard_shortcut',
+          'meta',
         ])),
         // extracts data from the server-side apollo cache to hydrate frontend cache
         apolloState: ssrClient.cache.extract(),

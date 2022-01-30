@@ -92,6 +92,7 @@ export const getServerSideProps: GetServerSideProps<
           'status',
           'weapon_spell_effect',
           'keyboard_shortcut',
+          'meta',
         ])),
         // extracts data from the server-side apollo cache to hydrate frontend cache
         apolloState: ssrClient.cache.extract(),

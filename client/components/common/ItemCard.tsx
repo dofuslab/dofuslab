@@ -2,7 +2,11 @@
 
 import * as React from 'react';
 
-import { useEquipItemMutation, useToggleFavoriteMutation } from 'common/utils';
+import {
+  slotToUrlString,
+  useEquipItemMutation,
+  useToggleFavoriteMutation,
+} from 'common/utils';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import { useRouter } from 'next/router';
 import { useApolloClient, useQuery } from '@apollo/client';
@@ -96,7 +100,7 @@ const ItemCard: React.FC<Props> = ({
 
       if (shouldRedirect && customSetId) {
         if (nextSlot) {
-          router.replace(`/equip/${nextSlot.id}/${customSetId}`);
+          router.replace(`/equip/${slotToUrlString(nextSlot)}/${customSetId}`);
         } else {
           router.push({
             pathname: customSetId ? `/build/${customSetId}` : '/',

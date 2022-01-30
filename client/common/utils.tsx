@@ -70,6 +70,7 @@ import {
 } from 'graphql/mutations/__generated__/toggleFavoriteItem';
 import toggleFavoriteItemMutation from 'graphql/mutations/toggleFavoriteItem.graphql';
 import { DefaultOptionType } from 'antd/lib/select';
+import { customSet_equippedItems_slot as EquippedItemSlot } from 'graphql/fragments/__generated__/customSet';
 import {
   StatsFromCustomSet,
   SetCounter,
@@ -100,6 +101,7 @@ import {
   ItemTypeWithSlots,
   EquippedItem,
 } from './type-aliases';
+import { prependDe } from './i18n-utils';
 
 export const getImageUrl = (suffix: string) =>
   suffix.startsWith('https://')
@@ -1431,20 +1433,34 @@ export const getTitle = (title?: string | null) => {
   return `${title} - DofusLab`;
 };
 
-export const getCustomSetMetaDescription = (customSet?: CustomSet | null) => {
+export const getCustomSetMetaDescription = (
+  t: TFunction,
+  locale: string,
+  customSet?: CustomSet | null,
+) => {
   if (!customSet) {
     return META_DESCRIPTION;
   }
   if (customSet.owner && customSet.name) {
-    return `View ${customSet.owner.username}'s build ${customSet.name} on DofusLab, the open-source set builder for the MMORPG Dofus.`;
+    return t('BUILD.WITH_NAME_WITH_OWNER', {
+      ns: 'meta',
+      username: prependDe(locale, customSet.owner.username),
+      buildName: customSet.name,
+    });
   }
   if (customSet.owner) {
-    return `View ${customSet.owner.username}'s untitled build on DofusLab, the open-source set builder for the MMORPG Dofus.`;
+    return t('BUILD.NO_NAME_WITH_OWNER', {
+      ns: 'meta',
+      username: prependDe(locale, customSet.owner.username),
+    });
   }
   if (customSet.name) {
-    return `View the build ${customSet.name} on DofusLab, the open-source set builder for the MMORPG Dofus.`;
+    return t('BUILD.WITH_NAME_NO_OWNER', {
+      ns: 'meta',
+      buildName: customSet.name,
+    });
   }
-  return 'View this untitled build on DofusLab, the open-source set builder for the MMORPG Dofus.';
+  return t('BUILD.NO_NAME_NO_OWNER', { ns: 'meta' });
 };
 
 export const getUserProfileMetaImage = (suffix?: string | null) => {
@@ -1509,7 +1525,7 @@ export const getCustomSetMetaImage = (customSet?: CustomSet | null) => {
 
 export const getCanonicalUrl = (customSet?: CustomSet | null) => {
   if (customSet) {
-    return `https://dofuslab.io/build/${customSet.id}`;
+    return `https://dofuslab.io/view/${customSet.id}/`;
   }
   return 'https://dofuslab.io';
 };
@@ -1947,4 +1963,21 @@ export function antdSelectFilterOption(
     value = option.children;
   }
   return String(value).toUpperCase().includes(input.toUpperCase());
+}
+
+export function formatNameForUrl(itemSlotName: string) {
+  return itemSlotName
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase();
+}
+
+export function slotToUrlString(itemSlot: EquippedItemSlot) {
+  const name = formatNameForUrl(itemSlot.name);
+
+  if (itemSlot.enName === 'Ring' || itemSlot.enName === 'Dofus') {
+    return `${name}-${itemSlot.order}`;
+  }
+
+  return name;
 }

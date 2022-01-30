@@ -53,14 +53,3 @@ export const prependDe = (language: string, stringToTranslate: string) => {
 
   return `de ${stringToTranslate}`;
 };
-
-// export default NextI18NextInstance;
-
-/* Optionally, export class methods as named exports */
-// export const {
-//   appWithTranslation,
-//   withTranslation,
-//   useTranslation,
-//   Trans,
-//   i18n,
-// } = NextI18NextInstance;

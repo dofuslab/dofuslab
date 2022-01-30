@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { useApolloClient, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import groupBy from 'lodash/groupBy';
 
 import { itemSlots as ItemSlots } from 'graphql/queries/__generated__/itemSlots';

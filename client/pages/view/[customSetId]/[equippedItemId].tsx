@@ -76,6 +76,7 @@ export const getServerSideProps: GetServerSideProps<
           'mage',
           'stat',
           'weapon_spell_effect',
+          'meta',
         ])),
         // extracts data from the server-side apollo cache to hydrate frontend cache
         apolloState: ssrClient.cache.extract(),

@@ -265,7 +265,10 @@ const BuildList: React.FC<Props> = ({
                   flex: 1,
                   ...inputFontSize,
                   '.ant-input': inputFontSize,
-                  height: 32,
+                  height: 40,
+                  [mq[1]]: {
+                    height: 32,
+                  },
                 }}
                 onChange={onSearch}
                 placeholder={t('SEARCH')}
@@ -366,15 +369,8 @@ const BuildList: React.FC<Props> = ({
           />
         )}
         {userBuilds?.userByName?.customSets.edges.map(({ node }) => (
-          <Link
-            href={{
-              pathname: getCustomSetPathname(),
-              query: { customSetId: node.id },
-            }}
-            as={`${getCustomSetPathname()}/${node.id}/`}
-            key={node.id}
-          >
-            <a key={node.id}>
+          <Link href={`${getCustomSetPathname()}/${node.id}/`} key={node.id}>
+            <a>
               <Card
                 hoverable
                 title={

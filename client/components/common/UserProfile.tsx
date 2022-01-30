@@ -183,7 +183,7 @@ const UserProfile: React.FC<Props> = ({
       <Media lessThan="xs">
         <BuildList username={username} isEditable={isEditable} isMobile />
       </Media>
-      <Media greaterThanOrEqual="xs">
+      <Media greaterThanOrEqual="xs" css={{ flex: '1 1 auto' }}>
         <BuildList
           username={username}
           isEditable={isEditable}
