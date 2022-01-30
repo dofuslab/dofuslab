@@ -1,13 +1,13 @@
 {
   "BUILD": {
-    "NO_NAME_NO_OWNER": "__STRING_NOT_TRANSLATED__",
-    "NO_NAME_WITH_OWNER": "__STRING_NOT_TRANSLATED__",
-    "WITH_NAME_NO_OWNER": "__STRING_NOT_TRANSLATED__",
-    "WITH_NAME_WITH_OWNER": "__STRING_NOT_TRANSLATED__"
+    "NO_NAME_NO_OWNER": "Echa un vistazo a este conjunto sin título en DofusLab, el simulador de codigo abierto para equipamientos del MMORPG Dofus.",
+    "NO_NAME_WITH_OWNER": "Echa un vistazo a este conjunto sin título de {{username}} en DofusLab, el simulador de codigo abierto para equipamientos del MMORPG Dofus.",
+    "WITH_NAME_NO_OWNER": "Echa un vistazo al conjunto {{buildName}} en DofusLab, el simulador de codigo abierto para equipamientos del MMORPG Dofus.",
+    "WITH_NAME_WITH_OWNER": "Echa un vistazo al conjunto {{buildName}} de {{username}} en DofusLab, el simulador de codigo abierto para equipamientos del MMORPG Dofus."
   },
-  "EQUIP": "__STRING_NOT_TRANSLATED__",
-  "HOME": "__STRING_NOT_TRANSLATED__",
-  "USER_PROFILE_one": "__STRING_NOT_TRANSLATED__",
-  "USER_PROFILE_other": "__STRING_NOT_TRANSLATED__",
-  "USER_PROFILE_zero": "__STRING_NOT_TRANSLATED__"
+  "EQUIP": "Encuentra tu próximo {{slot}} en DofusLab, el simulador de codigo abierto para equipamientos del MMORPG Dofus.",
+  "HOME": "Experimenta con tus equipamentos en DofusLab, el simulador de codigo abierto para equipamientos del MMORPG Dofus.",
+  "USER_PROFILE_one": "Explora el perfil de {{username}} en DofusLab, el simulador de codigo abierto para equipamientos del MMORPG Dofus.",
+  "USER_PROFILE_other": "Explora los {{count}} conjuntos de {{username}} en DofusLab, el simulador de codigo abierto para equipamientos del MMORPG Dofus.",
+  "USER_PROFILE_zero": "Explora el perfil de {{username}} en DofusLab, el simulador de codigo abierto para equipamientos del MMORPG Dofus."
 }

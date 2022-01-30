@@ -1,13 +1,13 @@
 {
   "BUILD": {
-    "NO_NAME_NO_OWNER": "__STRING_NOT_TRANSLATED__",
-    "NO_NAME_WITH_OWNER": "__STRING_NOT_TRANSLATED__",
-    "WITH_NAME_NO_OWNER": "__STRING_NOT_TRANSLATED__",
-    "WITH_NAME_WITH_OWNER": "__STRING_NOT_TRANSLATED__"
+    "NO_NAME_NO_OWNER": "Vedi questa build senza titolo su DofusLab, il creatore di set open-source per il MMORPG Dofus.",
+    "NO_NAME_WITH_OWNER": "Vedi la build senza titolo di {{username}} su DofusLab, il creatore di set open-source per il MMORPG Dofus.",
+    "WITH_NAME_NO_OWNER": "Vedi la build {{buildName}} su DofusLab, il creatore di set open-source per il MMORPG Dofus.",
+    "WITH_NAME_WITH_OWNER": "Vedi la build {{buildName}} di {{username}} su DofusLab, il creatore di set open-source per il MMORPG Dofus."
   },
-  "EQUIP": "__STRING_NOT_TRANSLATED__",
-  "HOME": "__STRING_NOT_TRANSLATED__",
-  "USER_PROFILE_one": "__STRING_NOT_TRANSLATED__",
-  "USER_PROFILE_other": "__STRING_NOT_TRANSLATED__",
-  "USER_PROFILE_zero": "__STRING_NOT_TRANSLATED__"
+  "EQUIP": "Trova il tuo prossimo {{slot}} su DofusLab, il creatore di set open-source per il MMORPG Dofus.",
+  "HOME": "Sperimenta il tuo equipaggiamento su DofusLab, il creatore di set open-source per il MMORPG Dofus.",
+  "USER_PROFILE_one": "Guarda il profilo di {{username}} su DofusLab, il creatore di set open-source per il MMORPG Dofus.",
+  "USER_PROFILE_other": "Scopri le 5 build di {{username}} su DofusLab, il creatore di set open-source per il MMORPG Dofus.",
+  "USER_PROFILE_zero": "Guarda il profilo di {{username}} su DofusLab, il creatore di set open-source per il MMORPG Dofus."
 }
