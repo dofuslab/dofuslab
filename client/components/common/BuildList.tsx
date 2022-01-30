@@ -12,7 +12,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { LoadingOutlined } from '@ant-design/icons';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { itemCardStyle, selected, inputFontSize } from 'common/mixins';
 import Link from 'next/link';
 import {
@@ -39,7 +39,7 @@ import {
 } from 'graphql/queries/__generated__/myCustomSets';
 import myCustomSetsQuery from 'graphql/queries/myCustomSets.graphql';
 import { Input, Select, Tabs, Button } from 'antd';
-import { DEBOUNCE_INTERVAL, mq } from 'common/constants';
+import { BUILD_LIST_PAGE_SIZE, DEBOUNCE_INTERVAL, mq } from 'common/constants';
 import { useDebounceCallback } from '@react-hook/debounce';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
 import customSetTagsQuery from 'graphql/queries/customSetTags.graphql';
@@ -56,6 +56,7 @@ interface Props {
   onClose?: () => void;
   isEditable: boolean;
   getScrollParent?: () => HTMLElement | null;
+  isMobile: boolean;
 }
 
 const BuildList: React.FC<Props> = ({
@@ -63,6 +64,7 @@ const BuildList: React.FC<Props> = ({
   onClose,
   isEditable,
   getScrollParent,
+  isMobile,
 }) => {
   const { t } = useTranslation();
 
@@ -114,7 +116,7 @@ const BuildList: React.FC<Props> = ({
   } = useQuery<buildList, buildListVariables>(buildListQuery, {
     variables: {
       username,
-      first: PAGE_SIZE,
+      first: BUILD_LIST_PAGE_SIZE,
       filters: { search, defaultClassId: dofusClassId, tagIds },
     },
   });
@@ -147,7 +149,7 @@ const BuildList: React.FC<Props> = ({
       onChange={(value: string) => {
         setDofusClassId(value);
       }}
-      size="middle"
+      size={isMobile ? 'large' : 'middle'}
       allowClear
     />
   );
@@ -246,6 +248,7 @@ const BuildList: React.FC<Props> = ({
                   onClick={onCreate}
                   disabled={queryLoading || createLoading}
                   css={{ fontSize: '0.75rem', marginRight: 16 }}
+                  size={isMobile ? 'large' : 'middle'}
                 >
                   <span css={{ marginRight: 12 }}>
                     {createLoading ? (
@@ -262,7 +265,10 @@ const BuildList: React.FC<Props> = ({
                   flex: 1,
                   ...inputFontSize,
                   '.ant-input': inputFontSize,
-                  height: 32,
+                  height: 40,
+                  [mq[1]]: {
+                    height: 32,
+                  },
                 }}
                 onChange={onSearch}
                 placeholder={t('SEARCH')}
@@ -270,6 +276,7 @@ const BuildList: React.FC<Props> = ({
                   // prevents triggering SetBuilderKeyboardShortcuts
                   e.nativeEvent.stopPropagation();
                 }}
+                size={isMobile ? 'large' : 'middle'}
               />
             </div>
             {classSelect}
@@ -296,6 +303,7 @@ const BuildList: React.FC<Props> = ({
                   // prevents triggering SetBuilderKeyboardShortcuts
                   e.nativeEvent.stopPropagation();
                 }}
+                size={isMobile ? 'large' : undefined}
               >
                 {[...tagsData.customSetTags]
                   .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
@@ -361,15 +369,8 @@ const BuildList: React.FC<Props> = ({
           />
         )}
         {userBuilds?.userByName?.customSets.edges.map(({ node }) => (
-          <Link
-            href={{
-              pathname: getCustomSetPathname(),
-              query: { customSetId: node.id },
-            }}
-            as={`${getCustomSetPathname()}/${node.id}/`}
-            key={node.id}
-          >
-            <a key={node.id}>
+          <Link href={`${getCustomSetPathname()}/${node.id}/`} key={node.id}>
+            <a>
               <Card
                 hoverable
                 title={
@@ -526,7 +527,7 @@ const BuildList: React.FC<Props> = ({
             </div>
           )}
         {queryLoading &&
-          Array(4)
+          Array(BUILD_LIST_PAGE_SIZE)
             .fill(null)
             .map((_, idx) => (
               <CardSkeleton

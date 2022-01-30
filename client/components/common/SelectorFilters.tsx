@@ -21,9 +21,9 @@ import {
 import { useDebounceCallback } from '@react-hook/debounce';
 
 import { SharedFilterAction, SharedFilters } from 'common/types';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import Tooltip from 'components/common/Tooltip';
-import { antdSelectFilterOption, getBuildLink } from 'common/utils';
+import { antdSelectFilterOption } from 'common/utils';
 import { ItemSlot, CustomSet } from 'common/type-aliases';
 import { inputFontSize } from 'common/mixins';
 
@@ -153,8 +153,6 @@ const SelectorFilters: React.FC<Props> = ({
     };
   }, []);
 
-  const buildLink = getBuildLink(customSetId);
-
   return (
     <div
       css={{
@@ -189,7 +187,7 @@ const SelectorFilters: React.FC<Props> = ({
           }}
         >
           {(isMobile || isClassic) && (
-            <Link href={buildLink.href} as={buildLink.as} passHref>
+            <Link href={customSetId ? `/build/${customSetId}` : '/'} passHref>
               <a>
                 <Button
                   size="large"

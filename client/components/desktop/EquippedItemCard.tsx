@@ -15,7 +15,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
 
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { itemCardStyle, blue6 } from 'common/mixins';
 import {
   useDeleteItemMutation,

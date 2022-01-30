@@ -20,7 +20,7 @@ import {
 import { CustomSetMetadata, CustomSetMetadataAction } from 'common/types';
 import { useRouter } from 'next/router';
 import { mq } from 'common/constants';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { ellipsis, inputFontSize } from 'common/mixins';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -47,7 +47,7 @@ const CustomSetHeaderForm: React.FC<Props> = ({
   const [mutate] = useMutation<
     editCustomSetMetadata,
     editCustomSetMetadataVariables
-  >(EditCustomSetMetadataMutation, { refetchQueries: () => ['myCustomSets'] });
+  >(EditCustomSetMetadataMutation, { refetchQueries: () => ['buildList'] });
 
   const [form] = Form.useForm();
 

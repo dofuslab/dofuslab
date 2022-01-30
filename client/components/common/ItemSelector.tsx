@@ -9,7 +9,7 @@ import ItemsQuery from 'graphql/queries/items.graphql';
 import { items, itemsVariables } from 'graphql/queries/__generated__/items';
 import { getResponsiveGridStyle } from 'common/mixins';
 import { SharedFilters } from 'common/types';
-import { mq, getSelectorNumCols } from 'common/constants';
+import { mq, getSelectorNumCols, ITEMS_PAGE_SIZE } from 'common/constants';
 import { Item, ItemSet } from 'common/type-aliases';
 import {
   findEmptyOrOnlySlotId,
@@ -23,8 +23,6 @@ import SetModal from './SetModal';
 
 import SkeletonCardsLoader from './SkeletonCardsLoader';
 import ItemCardWithContext, { SharedProps } from './ItemCardWithContext';
-
-const PAGE_SIZE = 24;
 
 const THRESHOLD = 600;
 
@@ -55,7 +53,7 @@ const ItemSelector: React.FC<Props> = ({
     ItemsQuery,
     {
       variables: {
-        first: PAGE_SIZE,
+        first: ITEMS_PAGE_SIZE,
         filters: queryFilters,
         itemSlotId: selectedItemSlot?.id,
         // filter required because of optimistic equipped item IDs that have the form of `equipped-item-{item UUID}`

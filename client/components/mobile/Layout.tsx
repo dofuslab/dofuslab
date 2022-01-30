@@ -6,7 +6,9 @@ import { Layout as AntdLayout, Button, Menu, Drawer } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import NoSSR from 'react-no-ssr';
 import { useRouter } from 'next/router';
-import { TFunction } from 'next-i18next';
+import { TFunction, useTranslation } from 'next-i18next';
+import Cookies from 'js-cookie';
+import { LANGUAGES, langToFullName } from 'common/i18n-utils';
 
 import { useQuery, useMutation, useApolloClient } from '@apollo/client';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
@@ -14,7 +16,6 @@ import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import logoutMutation from 'graphql/mutations/logout.graphql';
 
-import { useTranslation, LANGUAGES, langToFullName } from 'i18n';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTshirt,
@@ -91,7 +92,7 @@ const getDonateElement = (t: TFunction) =>
   );
 
 function Layout({ children }: LayoutProps) {
-  const { t, i18n } = useTranslation(['auth', 'common']);
+  const { t } = useTranslation(['auth', 'common']);
   const client = useApolloClient();
   const { data } = useQuery<ICurrentUser>(currentUserQuery);
   const [logout] = useMutation<ILogout>(logoutMutation);
@@ -99,6 +100,7 @@ function Layout({ children }: LayoutProps) {
     changeLocaleMutation,
   );
   const router = useRouter();
+  const { pathname, asPath, query } = router;
 
   const [showDrawer, setShowDrawer] = React.useState(false);
   const openDrawer = React.useCallback(() => {
@@ -150,11 +152,12 @@ function Layout({ children }: LayoutProps) {
 
   const changeLocaleHandler = React.useCallback(
     async (locale: string) => {
-      i18n.changeLanguage(locale);
+      Cookies.set('NEXT_LOCALE', locale);
+      await router.push({ pathname, query }, asPath, { locale });
       await changeLocaleMutate({ variables: { locale } });
-      await client.resetStore();
+      window.location.reload();
     },
-    [changeLocaleMutate, i18n, client],
+    [changeLocaleMutate, router, client],
   );
 
   const theme = useTheme();

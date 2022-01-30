@@ -6,7 +6,7 @@ import {
   item as Item,
   item_set as ItemSet,
 } from 'graphql/fragments/__generated__/item';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { useTheme } from '@emotion/react';
 import {
   itemCardStyle,

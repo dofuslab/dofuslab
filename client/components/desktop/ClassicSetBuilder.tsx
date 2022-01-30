@@ -10,7 +10,7 @@ import { getErrors, CustomSetContext } from 'common/utils';
 import { BuildError } from 'common/types';
 import StatTable from 'components/common/StatTable';
 import { BuildGender, Stat } from '__generated__/globalTypes';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassicClassSpells from 'components/desktop/ClassicClassSpells';

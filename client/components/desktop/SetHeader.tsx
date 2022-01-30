@@ -6,12 +6,11 @@ import { Button, Popover, Skeleton } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 
 import {
   EditableContext,
   useIsOwnerOfCustomSet,
-  getBuildLink,
   getFaceImageUrl,
 } from 'common/utils';
 import {
@@ -195,10 +194,8 @@ const SetHeader: React.FC<Props> = ({
     );
   }
 
-  const buildLink = getBuildLink(customSet?.id);
-
   const editBuildButton = (
-    <Link href={buildLink.href} as={buildLink.as}>
+    <Link href={customSet?.id ? `/build/${customSet.id}/` : '/'}>
       <a
         css={{
           alignSelf: 'center',

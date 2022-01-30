@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import React from 'react';
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import { useQuery, useMutation } from '@apollo/client';
 
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
@@ -10,12 +10,14 @@ import Head from 'next/head';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { useRouter } from 'next/router';
 import { Button } from 'antd';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { resendVerificationEmail } from 'graphql/mutations/__generated__/resendVerificationEmail';
 import resendVerificationEmailMutation from 'graphql/mutations/resendVerificationEmail.graphql';
 import CommonLayout from 'components/common/CommonLayout';
 import { mq } from 'common/constants';
 import { getImageUrl } from 'common/utils';
+import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const VerifyEmailPage: NextPage = () => {
   const { data } = useQuery<currentUser>(currentUserQuery);
@@ -78,9 +80,17 @@ const VerifyEmailPage: NextPage = () => {
   );
 };
 
-VerifyEmailPage.getInitialProps = async () => {
+export const getStaticProps: GetStaticProps = async ({
+  locale,
+  defaultLocale,
+}) => {
+  const selectedLocale = locale || defaultLocale || DEFAULT_LANGUAGE;
+
   return {
-    namespacesRequired: ['auth'],
+    props: {
+      ...(await serverSideTranslations(selectedLocale, ['auth'])),
+      // extracts data from the server-side apollo cache to hydrate frontend cache
+    },
   };
 };
 

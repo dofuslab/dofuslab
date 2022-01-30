@@ -1,7 +1,4 @@
-/* eslint-disable */
-
 import React from 'react';
-import { getDataFromTree } from '@apollo/client/react/ssr';
 import {
   InMemoryCache,
   NormalizedCacheObject,
@@ -11,20 +8,11 @@ import {
 } from '@apollo/client';
 
 import { onError } from '@apollo/client/link/error';
-import { NextPage, NextPageContext } from 'next';
+import { NextPage } from 'next';
 import { notification } from 'antd';
 import { IncomingHttpHeaders } from 'http';
-import { AppContext } from 'next/app';
 import { relayStylePagination } from '@apollo/client/utilities';
-
-interface ExtendedAppContext extends AppContext {
-  ctx: NextPageContext & { apolloClient: ApolloClient<NormalizedCacheObject> };
-}
-
-interface Props {
-  apolloState: any;
-  headers: IncomingHttpHeaders;
-}
+import { useRouter } from 'next/router';
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 
@@ -41,20 +29,36 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
   }
 });
 
-const getHttpLink = (headers: IncomingHttpHeaders) =>
+const getHttpLink = (headers?: IncomingHttpHeaders) =>
   new HttpLink({
     uri: process.env.GRAPHQL_URI,
     credentials: 'include',
     headers,
   });
 
-function create(initialState: any, headers: IncomingHttpHeaders) {
+const getLink = (headers?: IncomingHttpHeaders) =>
+  from([errorLink, getHttpLink(headers)]);
+
+export function createApolloClient(
+  initialState: NormalizedCacheObject,
+  headers?: IncomingHttpHeaders,
+  ssrMode?: boolean,
+) {
   return new ApolloClient<NormalizedCacheObject>({
     cache: new InMemoryCache({
       typePolicies: {
         CustomSet: {
           fields: {
             tagAssociations: {
+              merge(_ignored, incoming) {
+                return incoming;
+              },
+            },
+          },
+        },
+        EquippedItem: {
+          fields: {
+            exos: {
               merge(_ignored, incoming) {
                 return incoming;
               },
@@ -74,70 +78,41 @@ function create(initialState: any, headers: IncomingHttpHeaders) {
         },
       },
     }).restore(initialState || {}),
-    link: from([errorLink, getHttpLink(headers)]),
+    link: getLink(headers),
+    ssrMode,
   });
 }
 
-const initApollo = (initialState: any, headers: IncomingHttpHeaders) => {
+const initApollo = (
+  initialState: NormalizedCacheObject,
+  headers: IncomingHttpHeaders,
+) => {
   if (typeof window === 'undefined') {
-    return create(initialState, headers);
+    return createApolloClient(initialState, headers);
   }
 
   if (!apolloClient) {
-    apolloClient = create(initialState, headers);
+    apolloClient = createApolloClient(initialState, headers);
   }
 
   return apolloClient;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default (App: NextPage<any>) =>
-  class withApollo extends React.Component<Props> {
-    static displayName = `withApollo(${App.displayName})`;
+  function withApollo(props: {
+    pageProps: { apolloState: Record<string, NormalizedCacheObject> };
+    headers?: IncomingHttpHeaders;
+  }) {
+    const headers = props.headers || {};
 
-    static defaultProps = { apolloState: {} };
+    const router = useRouter();
+    headers['accept-language'] = router.locale;
 
-    static async getInitialProps(ctx: ExtendedAppContext) {
-      const {
-        AppTree,
-        ctx: { req, res },
-      } = ctx;
+    const client = React.useRef<ApolloClient<NormalizedCacheObject>>(
+      initApollo(props.pageProps.apolloState, headers),
+    );
 
-      const headers = req ? req.headers : {};
-      const apollo = initApollo({}, headers);
-      ctx.ctx.apolloClient = apollo;
-
-      let pageProps = {};
-      if (App.getInitialProps) {
-        try {
-          pageProps = await App.getInitialProps(ctx as any);
-        } catch (err) {
-          console.error(err);
-        }
-      }
-      if (res && res.writableEnded) {
-        return {};
-      }
-      if (typeof window === 'undefined') {
-        try {
-          await getDataFromTree(
-            <AppTree pageProps={pageProps} apolloClient={apollo} />,
-          );
-        } catch (err) {
-          console.error('Error while running `getDataFromTree`', err);
-        }
-        // Head.rewind();
-      }
-      const apolloState = apollo.cache.extract();
-      return {
-        ...pageProps,
-        headers,
-        apolloState,
-      };
-    }
-
-    apolloClient = initApollo(this.props.apolloState, this.props.headers);
-
-    render() {
-      return <App apolloClient={this.apolloClient} {...this.props} />;
-    }
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    return <App apolloClient={client.current} {...props} />;
   };

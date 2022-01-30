@@ -6,7 +6,7 @@ import { Divider, Modal, notification } from 'antd';
 import { useTheme } from '@emotion/react';
 import { useRouter } from 'next/router';
 
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { getImageUrl } from 'common/utils';
 import changeProfilePictureMutation from 'graphql/mutations/changeProfilePicture.graphql';
 import {
@@ -124,11 +124,10 @@ const ProfilePictureModal: React.FC<Props> = ({
               onClick={() => {
                 setActive(pictureUrlSuffix);
               }}
+              key={`profile-pic-${pictureUrlSuffix}`}
             >
               <img
                 src={getImageUrl(pictureUrlSuffix)}
-                key={`profile-pic-${pictureUrlSuffix}`}
-                // Missing translation
                 alt={t('PROFILE_PICTURE')}
                 css={activeStyle}
               />

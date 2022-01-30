@@ -1,0 +1,13 @@
+{
+  "BUILD": {
+    "NO_NAME_NO_OWNER": "Veja esta build sem título no DofusLab, o playground open-source para equipamentos do MMORPG Dofus.",
+    "NO_NAME_WITH_OWNER": "Veja a uild sem título de {{username}} no DofusLab, o playground open-source para equipamentos do MMORPG Dofus.",
+    "WITH_NAME_NO_OWNER": "Veja a build {{buildName}} no DofusLab, o playground open-source para equipamentos do MMORPG Dofus.",
+    "WITH_NAME_WITH_OWNER": "Veja a build {{buildName}} de {{username}} no DofusLab, o playground open-source para equipamentos do MMORPG Dofus."
+  },
+  "EQUIP": "Encontre seu próximo {{slot}} no DofusLab, o playground open-source para equipamentos do MMORPG Dofus.",
+  "HOME": "Experimente com seus equipamentos no DofusLab, o playground open-source para equipamentos do MMORPG Dofus.",
+  "USER_PROFILE_one": "Explore o perfil de {{username}} no DofusLab, o playground open-source para equipamentos do MMORPG Dofus.",
+  "USER_PROFILE_other": "Explore as {{count}} builds de {{username}} no DofusLab, o playground open-source para equipamentos do MMORPG Dofus.",
+  "USER_PROFILE_zero": "Explore o perfil de {{username}} no DofusLab, o playground open-source para equipamentos do MMORPG Dofus."
+}

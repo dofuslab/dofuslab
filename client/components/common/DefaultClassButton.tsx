@@ -9,7 +9,7 @@ import {
   editCustomSetDefaultClassVariables,
 } from 'graphql/mutations/__generated__/editCustomSetDefaultClass';
 import editCustomSetDefaultClassMutation from 'graphql/mutations/editCustomSetDefaultClass.graphql';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { BuildGender } from '__generated__/globalTypes';
 import Tooltip from './Tooltip';
@@ -63,7 +63,7 @@ const DefaultClassButton: React.FC<Props> = ({
           },
         })
       : undefined,
-    refetchQueries: () => ['myCustomSets'],
+    refetchQueries: () => ['buildList'],
   });
 
   const router = useRouter();

@@ -5,7 +5,7 @@ import { ClassNames, useTheme } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { Popover } from 'antd';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { popoverTitleStyle, gold5 } from 'common/mixins';
 import {
   baseStats,

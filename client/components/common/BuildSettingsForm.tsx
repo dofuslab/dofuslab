@@ -2,7 +2,7 @@
 
 import { Form, Radio } from 'antd';
 import { BuildGender } from '__generated__/globalTypes';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import ClassSelect from './ClassSelect';
 
 export default function BuildSettingsForm() {

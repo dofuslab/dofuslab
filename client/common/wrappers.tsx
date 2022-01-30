@@ -6,8 +6,7 @@ import { CSSObject, ClassNames, useTheme } from '@emotion/react';
 import Head from 'next/head';
 
 import { Skeleton, Switch, Button } from 'antd';
-import { TFunction } from 'next-i18next';
-import { useTranslation } from 'i18n';
+import { TFunction, useTranslation } from 'next-i18next';
 import {
   WeaponEffectType,
   SpellEffectType,
@@ -24,6 +23,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Tooltip from 'components/common/Tooltip';
 import { Media } from 'components/common/Media';
+import { useRouter } from 'next/router';
 import { mq } from './constants';
 import { AppliedBuff } from './types';
 import {
@@ -45,6 +45,7 @@ import {
   gray6,
 } from './mixins';
 import { SetBonus, WeaponStats, CustomSet } from './type-aliases';
+import { DEFAULT_LANGUAGE } from './i18n-utils';
 
 export const ResponsiveGrid: React.FC<
   {
@@ -367,29 +368,31 @@ export const CustomSetHead: React.FC<{ customSet?: CustomSet | null }> = ({
 }) => {
   const { t } = useTranslation('common');
 
+  const router = useRouter();
+
+  const locale = router.locale || router.defaultLocale || DEFAULT_LANGUAGE;
+
   return (
     <Head>
       <title>
         {getTitle(customSet ? customSet.name || t('UNTITLED') : null)}
       </title>
-
       <meta
         name="title"
         content={getTitle(customSet ? customSet.name || t('UNTITLED') : null)}
       />
       <meta
         name="description"
-        lang="en"
-        content={getCustomSetMetaDescription(customSet)}
+        lang={locale}
+        content={getCustomSetMetaDescription(t, locale, customSet)}
       />
-
       <meta
         property="og:title"
         content={getTitle(customSet ? customSet.name || t('UNTITLED') : null)}
       />
       <meta
         property="og:description"
-        content={getCustomSetMetaDescription(customSet)}
+        content={getCustomSetMetaDescription(t, locale, customSet)}
       />
       <meta property="og:url" content={getCanonicalUrl(customSet)} />
       <meta property="og:image" content={getCustomSetMetaImage(customSet)} />
@@ -400,7 +403,7 @@ export const CustomSetHead: React.FC<{ customSet?: CustomSet | null }> = ({
       />
       <meta
         property="twitter:description"
-        content={getCustomSetMetaDescription(customSet)}
+        content={getCustomSetMetaDescription(t, locale, customSet)}
       />
       <meta property="twitter:url" content={getCanonicalUrl(customSet)} />
       <meta

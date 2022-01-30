@@ -13,7 +13,7 @@ import {
   ItemSet,
   CustomSet,
 } from 'common/type-aliases';
-import { EditableContext, getImageUrl } from 'common/utils';
+import { EditableContext, getImageUrl, slotToUrlString } from 'common/utils';
 import { TooltipPlacement } from 'antd/lib/tooltip';
 import EquippedItemWithStats from '../common/EquippedItemWithStats';
 
@@ -88,18 +88,9 @@ const ClassicEquippedItem: React.FC<Props> = ({
 
         return isEditable ? (
           <Link
-            href={{
-              pathname: customSet
-                ? '/equip/[itemSlotId]/[customSetId]'
-                : '/equip/[itemSlotId]',
-              query: {
-                itemSlotId: slot.id,
-                customSetId: customSet?.id,
-              },
-            }}
-            as={{
-              pathname: `/equip/${slot.id}/${customSet ? customSet.id : ''}`,
-            }}
+            href={`/equip/${slotToUrlString(slot)}/${
+              customSet ? customSet.id : ''
+            }`}
           >
             <a>{content}</a>
           </Link>

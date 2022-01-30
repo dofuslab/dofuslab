@@ -8,5 +8,5 @@
     "noEmit": false,
     "lib": ["es2017"]
   },
-  "include": ["next.config.js", "server/**/*.ts"]
+  "include": ["next.config.js"]
 }

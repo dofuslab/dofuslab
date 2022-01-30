@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import { ClassNames, useTheme } from '@emotion/react';
 import { Popover, Divider } from 'antd';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 
 import { popoverTitleStyle, popoverShadow } from 'common/mixins';
 import { getBonusesFromCustomSet, getImageUrl } from 'common/utils';

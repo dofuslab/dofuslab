@@ -1183,7 +1183,6 @@ class ChangeLocale(graphene.Mutation):
             user = current_user._get_current_object()
             if current_user.is_authenticated:
                 user.settings.locale = locale
-            session["locale"] = locale
             refresh()
             return ChangeLocale(ok=True)
 
@@ -1531,12 +1530,16 @@ class Query(graphene.ObjectType):
             level_sq.c.level.desc(), current_locale_translations.name.asc()
         ).all()
 
-        return get_sets(locale, filters)
+    custom_sets = relay.ConnectionField(
+        graphene.NonNull(CustomSetConnection),
+    )
 
-    custom_sets = graphene.List(CustomSet)
-
-    def resolve_custom_sets(self, info):
-        return db.session.query(ModelCustomSet).all()
+    def resolve_custom_sets(self, info, **kwargs):
+        return (
+            db.session.query(ModelCustomSet)
+            .order_by(ModelCustomSet.last_modified.desc())
+            .all()
+        )
 
     classes = graphene.NonNull(graphene.List(graphene.NonNull(Class)))
 

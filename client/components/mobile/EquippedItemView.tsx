@@ -92,7 +92,7 @@ const EquippedItemView: React.FC = () => {
       <EquippedItemCard
         equippedItem={equippedItem}
         customSet={customSet}
-        itemSlotId={equippedItem.slot.id}
+        itemSlot={equippedItem.slot}
         openSetModal={openSetModal}
         openMageModal={openMageModal}
         errors={equippedItemErrors}

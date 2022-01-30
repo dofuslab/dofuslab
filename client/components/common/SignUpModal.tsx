@@ -8,7 +8,7 @@ import { useMutation, useApolloClient } from '@apollo/client';
 import registerMutation from 'graphql/mutations/register.graphql';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
-import { useTranslation, Trans } from 'i18n';
+import { useTranslation, Trans } from 'next-i18next';
 import {
   register,
   registerVariables,

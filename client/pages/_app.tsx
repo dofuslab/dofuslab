@@ -18,7 +18,7 @@ import {
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
 import { darkTheme } from 'common/themes';
-import { appWithTranslation } from 'i18n';
+import { appWithTranslation } from 'next-i18next';
 import * as gtag from 'gtag';
 import {
   appliedBuffsReducer,
@@ -31,6 +31,7 @@ import { AppliedBuffActionType } from 'common/types';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'antd/dist/antd.dark.css';
+import Head from 'next/head';
 
 Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 config.autoAddCss = false;
@@ -106,6 +107,12 @@ const DofusLabApp: React.FC<Props> = ({
       <MediaContextProvider>
         <ThemeProvider theme={darkTheme}>
           <CustomSetContext.Provider value={customSetContextValue}>
+            <Head>
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+              />
+            </Head>
             <Component {...pageProps} />
           </CustomSetContext.Provider>
         </ThemeProvider>
