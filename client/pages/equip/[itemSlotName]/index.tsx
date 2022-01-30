@@ -101,6 +101,20 @@ export const getStaticProps: GetStaticProps<
   }
 
   if (!itemSlot) {
+    // to support redirect URLs that used item slot ID as param
+    const foundItemSlot = itemSlotsData.itemSlots.find(
+      (slot) => slot.id === params.itemSlotName,
+    );
+
+    if (foundItemSlot) {
+      return {
+        redirect: {
+          destination: `/${slotToUrlString(foundItemSlot)}/`,
+          permanent: true,
+        },
+      };
+    }
+
     return { notFound: true };
   }
 

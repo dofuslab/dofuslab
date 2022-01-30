@@ -5,12 +5,11 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "main": "server/index.js",
   "license": "MIT",
   "scripts": {
     "dev": "yarn && yarn apollo-codegen && next dev",
     "build": "next build && tsc --project tsconfig.server.json",
-    "start": "NODE_ENV=production node .build/server",
+    "start": "next start",
     "type-check": "tsc",
     "apollo-codegen": "apollo client:codegen --target typescript --endpoint=http://localhost:5000/api/graphql",
     "publish-heroku": "cd ../ && git subtree push --prefix client heroku-client master || true",

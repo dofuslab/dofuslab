@@ -18,7 +18,7 @@ import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ItemSlot } from 'common/type-aliases';
-import { formatNameForUrl } from 'common/utils';
+import { formatNameForUrl, slotToUrlString } from 'common/utils';
 
 type Props = {
   itemSlotId: string;
@@ -79,10 +79,11 @@ export const getServerSideProps: GetServerSideProps<
       };
     }
 
+    const itemSlotsData = results[1].data;
     let itemSlot: ItemSlot | undefined;
 
     try {
-      itemSlot = results[1].data.itemSlots.find((slot) => {
+      itemSlot = itemSlotsData.itemSlots.find((slot) => {
         const match = params.itemSlotName.match(
           /(?<slotName>[a-z]+)(-(?<slotOrder>\d+))?/,
         );
@@ -107,6 +108,25 @@ export const getServerSideProps: GetServerSideProps<
     }
 
     if (!itemSlot) {
+      // to support redirect URLs that used item slot ID as param
+      const foundItemSlot = itemSlotsData.itemSlots.find(
+        (slot) => slot.id === params.itemSlotName,
+      );
+
+      if (foundItemSlot) {
+        return {
+          redirect: {
+            destination:
+              locale === defaultLocale
+                ? `/${slotToUrlString(foundItemSlot)}/${customSet.id}/`
+                : `/${locale}/${slotToUrlString(foundItemSlot)}/${
+                    customSet.id
+                  }/`,
+            permanent: true,
+          },
+        };
+      }
+
       return { notFound: true };
     }
 
