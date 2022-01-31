@@ -128,9 +128,11 @@ export const getStaticProps: GetStaticProps<
         search: '',
         itemTypeIds: itemSlot.itemTypes.map((type) => type.id),
       },
-      itemSlotId: itemSlot.id,
+      suggestionFilters: {
+        maxLevel: 200,
+        itemTypeIds: [],
+      },
       equippedItemIds: [],
-      level: 200,
     },
   });
 

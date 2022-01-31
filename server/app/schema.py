@@ -1381,6 +1381,11 @@ class SetFilters(graphene.InputObjectType):
     search = graphene.String(required=True)
 
 
+class ItemSuggestionFilters(graphene.InputObjectType):
+    max_level = graphene.NonNull(graphene.Int)
+    item_type_ids = graphene.NonNull(graphene.List(graphene.NonNull(graphene.UUID)))
+
+
 class ItemNameObject(graphene.InputObjectType):
     name = graphene.String()
     image_id = graphene.String(required=True)
@@ -1632,27 +1637,25 @@ class Query(graphene.ObjectType):
     item_suggestions = graphene.NonNull(
         graphene.List(graphene.NonNull(Item)),
         num_suggestions=graphene.Int(),
-        item_slot_id=graphene.UUID(),
         equipped_item_ids=graphene.NonNull(
             graphene.List(graphene.NonNull(graphene.UUID))
         ),
-        level=graphene.NonNull(graphene.Int),
+        filters=graphene.Argument(ItemSuggestionFilters),
     )
 
     def resolve_item_suggestions(self, info, num_suggestions=10, **kwargs):
-        item_slot_id = kwargs.get("item_slot_id")
         equipped_item_ids = kwargs.get("equipped_item_ids")
-        level = kwargs.get("level")
+        filters = kwargs.get("filters")
+
+        item_type_ids = filters.item_type_ids
+        level = filters.max_level
         if not equipped_item_ids:
             return []
 
-        eligible_item_type_ids = []
-        if item_slot_id:
-            eligible_item_type_ids = map(
-                lambda x: x.uuid,
-                db.session.query(ModelItemSlot).get(item_slot_id).item_types,
-            )
-        else:
+        print(item_type_ids)
+
+        eligible_item_type_ids = item_type_ids
+        if not item_type_ids:
             slot_alias = aliased(ModelItemSlot)
             subquery = (
                 ~db.session.query(slot_alias)
@@ -1670,6 +1673,7 @@ class Query(graphene.ObjectType):
                 for item_slot in empty_slots
                 for item_type in item_slot.item_types
             ]
+        print(eligible_item_type_ids)
 
         if not eligible_item_type_ids:
             return []

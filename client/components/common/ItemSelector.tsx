@@ -41,6 +41,11 @@ const ItemSelector: React.FC<Props> = ({
   isMobile,
   isClassic,
 }) => {
+  // memoized to prevent re-fetch when user is equipping multiple items of same type
+  // filter required because of optimistic equipped item IDs that have the form of `equipped-item-{item UUID}`
+  const equippedItemIds = React.useMemo(() => {
+    return customSet?.equippedItems.map((ei) => ei.id).filter(isUUID) ?? [];
+  }, [itemTypeIds]);
   const itemTypeIdsArr = Array.from(itemTypeIds);
   const queryFilters = {
     ...filters,
@@ -55,11 +60,14 @@ const ItemSelector: React.FC<Props> = ({
       variables: {
         first: ITEMS_PAGE_SIZE,
         filters: queryFilters,
-        itemSlotId: selectedItemSlot?.id,
-        // filter required because of optimistic equipped item IDs that have the form of `equipped-item-{item UUID}`
-        equippedItemIds:
-          customSet?.equippedItems.map((ei) => ei.id).filter(isUUID) ?? [],
-        level: customSet?.level ?? 200,
+        equippedItemIds,
+        suggestionFilters: {
+          maxLevel: queryFilters.maxLevel,
+          itemTypeIds:
+            selectedItemSlot && itemTypeIdsArr.length === 0
+              ? selectedItemSlot.itemTypes.map((type) => type.id)
+              : itemTypeIdsArr,
+        },
       },
     },
   );
