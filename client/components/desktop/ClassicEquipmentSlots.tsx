@@ -17,6 +17,7 @@ import { BuildGender } from '__generated__/globalTypes';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import DefaultClassModal from 'components/common/DefaultClassModal';
+import EquipSetLink from 'components/common/EquipSetLink';
 import MageModal from '../common/MageModal';
 import SetModal from '../common/SetModal';
 import BonusStats from './BonusStats';
@@ -193,8 +194,10 @@ const ClassicEquipmentSlots: React.FC<Props> = ({
         <div
           css={{ flex: '0 0 120px', maxWidth: 320, [mq[4]]: { maxWidth: 360 } }}
         >
-          {customSet && (
+          {customSet ? (
             <BonusStats customSet={customSet} isMobile={false} isClassic />
+          ) : (
+            <EquipSetLink />
           )}
         </div>
         <div
