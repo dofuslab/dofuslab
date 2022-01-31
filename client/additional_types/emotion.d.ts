@@ -19,13 +19,13 @@ declare module '@emotion/react' {
       danger?: string;
       primary?: string;
     };
-    border?: {
+    border: {
       default?: string;
       selected?: string;
       primarySelected?: string;
       light?: string;
     };
-    layer?: {
+    layer: {
       background?: string;
       backgroundLight?: string;
     };

@@ -336,6 +336,7 @@ const SelectorFilters: React.FC<Props> = ({
                   // prevents triggering SetBuilderKeyboardShortcuts
                   e.nativeEvent.stopPropagation();
                 }}
+                size={isMobile ? 'large' : undefined}
               >
                 {Object.values(Stat)
                   .sort((s1, s2) =>

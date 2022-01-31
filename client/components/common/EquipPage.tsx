@@ -13,31 +13,21 @@ import {
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import ErrorPage from 'pages/_error';
 import MobileLayout from 'components/mobile/Layout';
 import DesktopLayout from 'components/desktop/Layout';
 import { CustomSetHead } from 'common/wrappers';
-import {
-  ClassicContext,
-  getCustomSetMetaImage,
-  getTitle,
-  useClassic,
-} from 'common/utils';
-import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
-import { useTranslation } from 'react-i18next';
+import { ClassicContext, useClassic } from 'common/utils';
 
-interface Props {
+import EquipHead from './EquipHead';
+
+type Props = {
   customSetId: string | null;
-  itemSlotId: string;
-}
-
-export const getItemSlotCanonicalUrl = (itemSlotId: string) => {
-  return `https://dofuslab.io/equip/${itemSlotId}/`;
+  // if itemSlotId is undefined, then show sets
+  itemSlotId?: string;
 };
 
 const EquipPage: React.FC<Props> = ({ customSetId, itemSlotId }) => {
   const router = useRouter();
-  const locale = router.locale || router.defaultLocale || DEFAULT_LANGUAGE;
 
   const [isClassic, setIsClassic] = useClassic();
 
@@ -66,12 +56,6 @@ const EquipPage: React.FC<Props> = ({ customSetId, itemSlotId }) => {
 
   const customSet = customSetData?.customSetById ?? null;
 
-  const { t } = useTranslation('meta');
-
-  if (!itemSlot) {
-    return <ErrorPage statusCode={404} />;
-  }
-
   return (
     <>
       <Media lessThan="xs">
@@ -86,46 +70,12 @@ const EquipPage: React.FC<Props> = ({ customSetId, itemSlotId }) => {
           {customSet ? (
             <CustomSetHead customSet={customSet} />
           ) : (
-            <>
-              <title>{getTitle(itemSlot.name)}</title>
-              <meta name="title" content={getTitle(itemSlot.name)} />
-              <meta
-                name="description"
-                lang={locale}
-                content={t('EQUIP', { slot: itemSlot.name })}
-              />
-              <meta property="og:title" content={getTitle(itemSlot.name)} />
-              <meta
-                property="og:description"
-                content={t('EQUIP', { slot: itemSlot.name })}
-              />
-              <meta
-                property="og:url"
-                content={getItemSlotCanonicalUrl(itemSlot.id)}
-              />
-              <meta property="og:image" content={getCustomSetMetaImage(null)} />
-              <meta
-                property="twitter:title"
-                content={getTitle(itemSlot.name)}
-              />
-              <meta
-                property="twitter:description"
-                content={t('EQUIP', { slot: itemSlot.name })}
-              />
-              <meta
-                property="twitter:url"
-                content={getItemSlotCanonicalUrl(itemSlot.id)}
-              />
-              <meta
-                property="twitter:image"
-                content={getCustomSetMetaImage(null)}
-              />
-            </>
+            <EquipHead itemSlot={itemSlot} />
           )}
           <Selector
             customSet={customSet}
-            selectedItemSlot={itemSlot}
-            showSets={false}
+            selectedItemSlot={itemSlot || null}
+            showSets={!itemSlot}
             isMobile
             isClassic={false}
           />
@@ -144,8 +94,8 @@ const EquipPage: React.FC<Props> = ({ customSetId, itemSlotId }) => {
             <CustomSetHead customSet={customSet} />
             <Selector
               customSet={customSet}
-              selectedItemSlot={itemSlot}
-              showSets={false}
+              selectedItemSlot={itemSlot || null}
+              showSets={!itemSlot}
               isClassic
               isMobile={false}
             />
