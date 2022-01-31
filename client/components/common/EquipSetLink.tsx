@@ -28,12 +28,20 @@ export default function EquipSetLink({
           type="dashed"
           css={{
             margin: 6,
+            '&:first-of-type': {
+              marginLeft: 0,
+            },
             padding: 12,
             display: 'flex',
             alignItems: 'center',
             gap: 8,
             height: 'auto',
-            [mq[1]]: { margin: 4 },
+            [mq[1]]: {
+              margin: 4,
+              ':first-of-type': {
+                marginLeft: 0,
+              },
+            },
           }}
         >
           <FontAwesomeIcon icon={faPlus} />

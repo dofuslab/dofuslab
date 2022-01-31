@@ -17,6 +17,7 @@ import { useTranslation } from 'next-i18next';
 
 import { ItemSlot, CustomSet } from 'common/type-aliases';
 import BuffModal from 'components/common/BuffModal';
+import EquipSetLink from 'components/common/EquipSetLink';
 import StatTable from '../common/StatTable';
 import StatEditor from '../common/StatEditor';
 import EquipmentSlots from '../common/EquipmentSlots';
@@ -76,8 +77,10 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
         errors={errors}
         isMobile
       />
-      {customSet && (
+      {customSet ? (
         <BonusStats customSet={customSet} isMobile isClassic={false} />
+      ) : (
+        <EquipSetLink />
       )}
       <div
         css={{
