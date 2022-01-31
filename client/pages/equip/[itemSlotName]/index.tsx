@@ -144,6 +144,7 @@ export const getStaticProps: GetStaticProps<
         'status',
         'mage',
         'meta',
+        'keyboard_shortcut',
       ])),
       // extracts data from the server-side apollo cache to hydrate frontend cache
       apolloState: ssrClient.cache.extract(),
