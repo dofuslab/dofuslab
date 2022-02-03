@@ -1,0 +1,11 @@
+FROM dofuslab-server
+
+USER root
+
+RUN apk add --no-cache --upgrade bash postgresql-client
+
+COPY entrypoint.sh .
+
+USER appuser
+
+ENTRYPOINT ["./entrypoint.sh"]

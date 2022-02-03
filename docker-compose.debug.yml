@@ -1,0 +1,46 @@
+# 5500 - Frontend
+# 5501 - Backend
+# 5502 - postgres
+# 5503 - redis
+
+# You can initialize the database with data using the "Docker.initdb" image
+# Make sure when creating the container that you specify the --network dofuslab_default switch
+
+version: '3.4'
+
+services:
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "5503:6379"
+
+  postgres:
+    image: "postgres:alpine"
+    environment:
+      POSTGRES_USER: dofuslab
+      POSTGRES_PASSWORD: do-not-use-in-production
+      POSTGRES_DB: dofuslab
+    ports:
+      - "5502:5432"
+    depends_on:
+      - redis
+  
+  server:
+    image: dofuslab-server
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "5501:5501"
+    depends_on:
+      - postgres
+  
+  client:
+    image: dofuslab-client
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "5500:3000"
+    depends_on:
+      - server
