@@ -1652,8 +1652,6 @@ class Query(graphene.ObjectType):
         if not equipped_item_ids:
             return []
 
-        print(item_type_ids)
-
         eligible_item_type_ids = item_type_ids
         if not item_type_ids:
             slot_alias = aliased(ModelItemSlot)
@@ -1673,7 +1671,6 @@ class Query(graphene.ObjectType):
                 for item_slot in empty_slots
                 for item_type in item_slot.item_types
             ]
-        print(eligible_item_type_ids)
 
         if not eligible_item_type_ids:
             return []

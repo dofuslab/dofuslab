@@ -43,9 +43,11 @@ const ItemSelector: React.FC<Props> = ({
 }) => {
   // memoized to prevent re-fetch when user is equipping multiple items of same type
   // filter required because of optimistic equipped item IDs that have the form of `equipped-item-{item UUID}`
-  const equippedItemIds = React.useMemo(() => {
-    return customSet?.equippedItems.map((ei) => ei.id).filter(isUUID) ?? [];
-  }, [itemTypeIds]);
+  const equippedItemIds =
+    customSet?.equippedItems
+      .filter((ei) => isUUID(ei.id) && ei.slot.enName !== 'Dofus')
+      .map((ei) => ei.id) ?? [];
+
   const itemTypeIdsArr = Array.from(itemTypeIds);
   const queryFilters = {
     ...filters,
