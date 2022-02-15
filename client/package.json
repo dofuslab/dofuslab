@@ -9,10 +9,12 @@
   "license": "MIT",
   "scripts": {
     "dev": "yarn && yarn apollo-codegen && nodemon --exec ts-node --project tsconfig.server.json server",
+    "dev-docker" : "yarn && yarn apollo-codegen-docker && nodemon --exec ts-node --project tsconfig.server.json server",
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node .build/server",
     "type-check": "tsc",
     "apollo-codegen": "apollo client:codegen --target typescript --endpoint=http://localhost:5000/api/graphql",
+    "apollo-codegen-docker": "apollo client:codegen --target typescript --endpoint=http://server:5000/api/graphql",
     "publish-heroku": "cd ../ && git subtree push --prefix client heroku-client master || true",
     "deploy-production": "pm2 deploy ecosystem.config.js production --force",
     "reload-production": "pm2 deploy ecosystem.config.js production exec 'pm2 reload app'",

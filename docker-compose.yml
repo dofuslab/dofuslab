@@ -1,0 +1,49 @@
+version: "3"
+services:
+  postgres:
+    # https://hub.docker.com/_/postgres
+    image: postgres:14.1
+    restart: on-failure
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_DB: dofuslab
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/
+      - pgdata:/var/lib/postgresql/data
+  redis:
+    # https://hub.docker.com/_/redis
+    image: redis:6.2
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  client:
+    build: ./client/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+    restart: on-failure
+  server:
+    build: ./server/
+    ports:
+      - "5000:5000"
+    # healthcheck:
+    #   test: curl -s http://localhost:5000/
+    #   interval: 150s
+    #   timeout: 30s
+    #   retries: 5
+    restart: on-failure
+volumes:
+  pgdata:
