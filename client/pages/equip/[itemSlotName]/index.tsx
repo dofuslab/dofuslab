@@ -128,7 +128,7 @@ export const getStaticProps: GetStaticProps<
         search: '',
         itemTypeIds: itemSlot.itemTypes.map((type) => type.id),
       },
-      itemSlotId: itemSlot.id,
+      eligibleItemTypeIds: itemSlot.itemTypes.map((type) => type.id),
       equippedItemIds: [],
       level: 200,
     },
