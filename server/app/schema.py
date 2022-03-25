@@ -1632,9 +1632,7 @@ class Query(graphene.ObjectType):
     item_suggestions = graphene.NonNull(
         graphene.List(graphene.NonNull(Item)),
         num_suggestions=graphene.Int(),
-        eligible_item_type_ids=graphene.NonNull(
-            graphene.List(graphene.NonNull(graphene.UUID))
-        ),
+        eligible_item_type_ids=graphene.List(graphene.NonNull(graphene.UUID)),
         equipped_item_ids=graphene.NonNull(
             graphene.List(graphene.NonNull(graphene.UUID))
         ),

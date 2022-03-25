@@ -209,6 +209,6 @@ export interface itemsVariables {
   after?: string | null;
   filters: ItemFilters;
   equippedItemIds: any[];
-  eligibleItemTypeIds: any[];
+  eligibleItemTypeIds?: any[] | null;
   level: number;
 }

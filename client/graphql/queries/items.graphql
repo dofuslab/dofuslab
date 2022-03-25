@@ -5,7 +5,7 @@ query items(
   $after: String
   $filters: ItemFilters!
   $equippedItemIds: [UUID!]!
-  $eligibleItemTypeIds: [UUID!]!
+  $eligibleItemTypeIds: [UUID!]
   $level: Int!
 ) {
   items(first: $first, after: $after, filters: $filters) {
