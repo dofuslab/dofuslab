@@ -4,9 +4,8 @@ query items(
   $first: Int!
   $after: String
   $filters: ItemFilters!
-  $itemSlotId: UUID
   $equippedItemIds: [UUID!]!
-  $level: Int!
+  $suggestionFilters: ItemSuggestionFilters!
 ) {
   items(first: $first, after: $after, filters: $filters) {
     edges {
@@ -22,8 +21,7 @@ query items(
 
   itemSuggestions(
     equippedItemIds: $equippedItemIds
-    itemSlotId: $itemSlotId
-    level: $level
+    filters: $suggestionFilters
   ) {
     ...item
   }

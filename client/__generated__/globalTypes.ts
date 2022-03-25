@@ -166,6 +166,11 @@ export interface ItemFilters {
   itemTypeIds: any[];
 }
 
+export interface ItemSuggestionFilters {
+  maxLevel: number;
+  itemTypeIds: any[];
+}
+
 export interface SetFilters {
   stats: Stat[];
   maxLevel: number;

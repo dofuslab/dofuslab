@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ItemFilters, Stat, WeaponEffectType } from "./../../../__generated__/globalTypes";
+import { ItemFilters, ItemSuggestionFilters, Stat, WeaponEffectType } from "./../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: items
@@ -208,7 +208,6 @@ export interface itemsVariables {
   first: number;
   after?: string | null;
   filters: ItemFilters;
-  itemSlotId?: any | null;
   equippedItemIds: any[];
-  level: number;
+  suggestionFilters: ItemSuggestionFilters;
 }
