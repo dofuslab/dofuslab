@@ -56,7 +56,8 @@ const ItemSelector: React.FC<Props> = ({
       variables: {
         first: ITEMS_PAGE_SIZE,
         filters: queryFilters,
-        itemSlotId: selectedItemSlot?.id,
+        eligibleItemTypeIds:
+          selectedItemSlot?.itemTypes.map((type) => type.id) ?? [],
         // filter required because of optimistic equipped item IDs that have the form of `equipped-item-{item UUID}`
         // and to prevent dofuses from being used in item suggestion algorithm
         equippedItemIds:
