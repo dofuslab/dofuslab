@@ -28413,7 +28413,8 @@
         }
       ]
     }
-  },   {
+  },
+  {
     "id": "499",
     "name": {
       "en": "Relics of the Crimson Dawn",
@@ -28900,6 +28901,88 @@
           "value": 20,
           "altStat": null
         }
+      ]
+    }
+  },
+  {
+    "id": "500",
+    "name": {
+      "en": "Malter Set",
+      "fr": "Panoplie des Malters",
+      "de": "Malter-Set",
+      "es": "Set de los Malters",
+      "it": "Panoplia dei Malter",
+      "pt": "Conjunto dos Malters"
+    },
+    "bonuses": {
+      "2": [
+        { "stat": "Heals", "value": 30, "altStat": null },
+        { "stat": "AP Reduction", "value": 7, "altStat": null },
+        { "stat": "MP Reduction", "value": 7, "altStat": null }
+      ],
+      "3": [
+        { "stat": "AP", "value": 1, "altStat": null },
+        { "stat": "Heals", "value": 30, "altStat": null },
+        { "stat": "AP Reduction", "value": 7, "altStat": null },
+        { "stat": "MP Reduction", "value": 7, "altStat": null }
+      ]
+    }
+  },
+  {
+    "id": "501",
+    "name": {
+      "en": "Hell Mina Set",
+      "fr": "Panoplie d'Hell Mina",
+      "de": "Hell Mina-Set",
+      "es": "Set de Hell Mina",
+      "it": "Panoplia di Mina Harcher",
+      "pt": "Conjunto de Hell Mina"
+    },
+    "bonuses": {
+      "2": [
+        { "stat": "Intelligence", "value": 40, "altStat": null },
+        { "stat": "Pushback Damage", "value": 30, "altStat": null }
+      ],
+      "3": [
+        { "stat": "Intelligence", "value": 40, "altStat": null },
+        { "stat": "AP", "value": 1, "altStat": null },
+        { "stat": "Pushback Damage", "value": 30, "altStat": null }
+      ]
+    }
+  },
+  {
+    "id": "502",
+    "name": {
+      "en": "Director Grunob Set",
+      "fr": "Panoplie du Directeur Grunob",
+      "de": "Set des Direktors Grunob",
+      "es": "Set del Director Grunob",
+      "it": "Panoplia del Direttore Grunob",
+      "pt": "Conjunto do Diretor Grunob"
+    },
+    "bonuses": {
+      "2": [
+        { "stat": "Power", "value": 20, "altStat": null },
+        { "stat": "Pushback Damage", "value": 10, "altStat": null }
+      ],
+      "3": [
+        { "stat": "Power", "value": 20, "altStat": null },
+        { "stat": "Neutral Damage", "value": 5, "altStat": null },
+        { "stat": "Earth Damage", "value": 5, "altStat": null },
+        { "stat": "Fire Damage", "value": 5, "altStat": null },
+        { "stat": "Water Damage", "value": 5, "altStat": null },
+        { "stat": "Air Damage", "value": 5, "altStat": null },
+        { "stat": "Pushback Damage", "value": 10, "altStat": null }
+      ],
+      "4": [
+        { "stat": "Power", "value": 20, "altStat": null },
+        { "stat": "AP", "value": 1, "altStat": null },
+        { "stat": "Neutral Damage", "value": 5, "altStat": null },
+        { "stat": "Earth Damage", "value": 5, "altStat": null },
+        { "stat": "Fire Damage", "value": 5, "altStat": null },
+        { "stat": "Water Damage", "value": 5, "altStat": null },
+        { "stat": "Air Damage", "value": 5, "altStat": null },
+        { "stat": "Pushback Damage", "value": 10, "altStat": null }
       ]
     }
   }

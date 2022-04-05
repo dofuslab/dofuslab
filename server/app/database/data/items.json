@@ -132639,7 +132639,8 @@
       "customConditions": {}
     },
     "imageUrl": "item/9100108101000000009999.png"
-  }, {
+  },
+  {
     "dofusID": "26018",
     "name": {
       "en": "Final Dawn",
@@ -133585,7 +133586,8 @@
       "customConditions": {}
     },
     "imageUrl": "item/1321.png"
-  }, {
+  },
+  {
     "dofusID": "25753",
     "name": {
       "en": "Bontarian Rat Ring",
@@ -133743,5 +133745,186 @@
       "customConditions": {}
     },
     "imageUrl": "item/9363.png"
+  },
+  {
+    "dofusID": "26311",
+    "name": {
+      "en": "Hell Mina's Wedding Ring",
+      "fr": "Alliance d'Hell Mina",
+      "de": "Hell Minas Trauring",
+      "es": "Alianza de Hell Mina",
+      "it": "Fede di Mina Harcher",
+      "pt": "Aliança de Hell Mina"
+    },
+    "itemType": "Ring",
+    "setID": "501",
+    "level": 146,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Lock", "minStat": 5, "maxStat": 7 },
+      { "stat": "Pushback Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9365.png"
+  },
+  {
+    "dofusID": "26313",
+    "name": {
+      "en": "Hell Mina's Cape",
+      "fr": "Cape d'Hell Mina",
+      "de": "Hell Minas Umhang",
+      "es": "Capa de Hell Mina",
+      "it": "Mantello di Mina Harcher",
+      "pt": "Capa de Hell Mina"
+    },
+    "itemType": "Cloak",
+    "setID": "501",
+    "level": 148,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Fire Damage", "minStat": 8, "maxStat": 12 },
+      { "stat": "Initiative", "minStat": 251, "maxStat": 400 },
+      { "stat": "Lock", "minStat": 3, "maxStat": 5 },
+      { "stat": "MP Parry", "minStat": 5, "maxStat": 8 },
+      { "stat": "Pushback Damage", "minStat": 16, "maxStat": 20 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/17525.png"
+  },
+  {
+    "dofusID": "26308",
+    "name": {
+      "en": "Polished Malter Ring",
+      "fr": "Anneau Poli de Malter",
+      "de": "Polierter Malter-Ring",
+      "es": "Anillo pulido de malter",
+      "it": "Anello Levigato di Malter",
+      "pt": "Anel Polido de Malter"
+    },
+    "itemType": "Ring",
+    "setID": "500",
+    "level": 146,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Heals", "minStat": 7, "maxStat": 10 },
+      { "stat": "Lock", "minStat": 7, "maxStat": 10 },
+      { "stat": "Dodge", "minStat": null, "maxStat": -10 },
+      { "stat": "AP Reduction", "minStat": 5, "maxStat": 7 },
+      { "stat": "MP Reduction", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9364.png"
+  },
+  {
+    "dofusID": "26309",
+    "name": {
+      "en": "Rustling Malter Boots",
+      "fr": "Bottes Crépitantes de Malter",
+      "de": "Knisternde Malter-Stiefel",
+      "es": "Botas crepitantes de malter",
+      "it": "Stivali Crepitanti di Malter",
+      "pt": "Botas Crepitantes de Malter"
+    },
+    "itemType": "Boots",
+    "setID": "500",
+    "level": 148,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Heals", "minStat": 16, "maxStat": 20 },
+      { "stat": "AP Reduction", "minStat": 3, "maxStat": 5 },
+      { "stat": "MP Reduction", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/11373.png"
+  },
+  {
+    "dofusID": "26336",
+    "name": {
+      "en": "Director Grunob's Hat",
+      "fr": "Chapeau du Directeur Grunob",
+      "de": "Hut des Direktors Grunob",
+      "es": "Sombrero del director Grunob",
+      "it": "Cappello del Direttore Grunob",
+      "pt": "Chapéu do Diretor Grunob"
+    },
+    "itemType": "Hat",
+    "setID": "502",
+    "level": 40,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Power", "minStat": 16, "maxStat": 25 },
+      { "stat": "Critical", "minStat": null, "maxStat": -3 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Pushback Damage", "minStat": 6, "maxStat": 8 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/16707.png"
+  },
+  {
+    "dofusID": "26337",
+    "name": {
+      "en": "Director Grunob's Boots",
+      "fr": "Bottes du Directeur Grunob",
+      "de": "Stiefel des Direktors Grunob",
+      "es": "Botas del director Grunob",
+      "it": "Stivali del Direttore Grunob",
+      "pt": "Botas do Diretor Grunob"
+    },
+    "itemType": "Boots",
+    "setID": "502",
+    "level": 42,
+    "stats": [
+      { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
+      { "stat": "Power", "minStat": 11, "maxStat": 15 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Lock", "minStat": null, "maxStat": -15 },
+      { "stat": "Pushback Damage", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/11374.png"
+  },
+  {
+    "dofusID": "26343",
+    "name": {
+      "en": "Director Grunob's Belt",
+      "fr": "Ceinture du Directeur Grunob",
+      "de": "Gürtel des Direktors Grunob",
+      "es": "Cinturón del director Grunob",
+      "it": "Cintura del Direttore Grunob",
+      "pt": "Cinto do Diretor Grunob"
+    },
+    "itemType": "Belt",
+    "setID": "502",
+    "level": 36,
+    "stats": [
+      { "stat": "Vitality", "minStat": 41, "maxStat": 50 },
+      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 60 },
+      { "stat": "Dodge", "minStat": 4, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/10351.png"
   }
 ]
