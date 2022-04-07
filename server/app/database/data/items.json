@@ -118470,27 +118470,6 @@
     "imageUrl": "item/1120.png"
   },
   {
-    "dofusID": "9234",
-    "name": {
-      "en": "Livitinem Hat",
-      "fr": "Chapeau Obvijevan",
-      "de": "Lebending: Hut",
-      "es": "Sombrero objevivo",
-      "it": "Cappello Vivoggetto",
-      "pt": "Chapéu Ovivmeti"
-    },
-    "itemType": "Living object",
-    "setID": "",
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/113211.png"
-  },
-  {
     "dofusID": "10159",
     "name": {
       "en": "Trophy Moon Shield",
@@ -118577,69 +118556,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/1163.png"
-  },
-  {
-    "dofusID": "12425",
-    "name": {
-      "en": "Parasymbic Cape",
-      "fr": "Cape Parabiote",
-      "de": "Parabiotischer Umhang",
-      "es": "Capa parabiótica",
-      "it": "Mantello Parabio",
-      "pt": "Capa Parabiótica"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102160.png"
-  },
-  {
-    "dofusID": "13210",
-    "name": {
-      "en": "Alyverol Boots",
-      "fr": "Bottes Rolivan",
-      "de": "Rolleb-Stiefel",
-      "es": "Botas rolevivas",
-      "it": "Stivali Ruoliventi",
-      "pt": "Botas Rolevivas"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102440.png"
-  },
-  {
-    "dofusID": "18154",
-    "name": {
-      "en": "Shushivin Hat",
-      "fr": "Chapeau Shushivan",
-      "de": "Shushending-Hut",
-      "es": "Sombrero fab’huvivo",
-      "it": "Cappello Shushente",
-      "pt": "Chapéu Shushuvivo"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102480.png"
   },
   {
     "dofusID": "21711",
@@ -118817,27 +118733,6 @@
     "imageUrl": "item/9125.png"
   },
   {
-    "dofusID": "9255",
-    "name": {
-      "en": "Livitinem Amulet",
-      "fr": "Amulette Obvijevan",
-      "de": "Lebending: Amulett",
-      "es": "Amuleto Objevivo",
-      "it": "Amuleto Vivoggetto",
-      "pt": "Amuleto Ovivmeti"
-    },
-    "itemType": "Living object",
-    "setID": "",
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/113139.png"
-  },
-  {
     "dofusID": "10160",
     "name": {
       "en": "Trophy Soft Oak Shield",
@@ -118954,27 +118849,6 @@
     "imageUrl": "item/11155.png"
   },
   {
-    "dofusID": "12427",
-    "name": {
-      "en": "Parasymbic Boots",
-      "fr": "Bottes Parabiotes",
-      "de": "Parabiotische Stiefel",
-      "es": "Botas parabióticas",
-      "it": "Stivali Parabio",
-      "pt": "Botas Parabióticas"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102280.png"
-  },
-  {
     "dofusID": "12660",
     "name": {
       "en": "Incarnam Shield",
@@ -119002,48 +118876,6 @@
     "imageUrl": "item/82063.png"
   },
   {
-    "dofusID": "13211",
-    "name": {
-      "en": "Alyverol Cape",
-      "fr": "Cape Rolivan",
-      "de": "Rolleb-Umhang",
-      "es": "Capa roleviva",
-      "it": "Mantello Ruolivente",
-      "pt": "Capa Roleviva"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102320.png"
-  },
-  {
-    "dofusID": "13213",
-    "name": {
-      "en": "Alyverol Hat",
-      "fr": "Chapeau Rolivan",
-      "de": "Rolleb-Hut",
-      "es": "Sombrero rolevivo",
-      "it": "Cappello Ruolivente",
-      "pt": "Chapéu Rolevivo"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102360.png"
-  },
-  {
     "dofusID": "15241",
     "name": {
       "en": "Kamabelt",
@@ -119069,48 +118901,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/10267.png"
-  },
-  {
-    "dofusID": "18155",
-    "name": {
-      "en": "Shushivin Cape",
-      "fr": "Cape Shushivan",
-      "de": "Shushending-Umhang",
-      "es": "Capa fab’huviva",
-      "it": "Mantello Shushente",
-      "pt": "Capa Shushuviva"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102520.png"
-  },
-  {
-    "dofusID": "21794",
-    "name": {
-      "en": "Monstralive Hat",
-      "fr": "Chapeau Monstrivan",
-      "de": "Lebmonster-Hut",
-      "es": "Sombrero monstruvivo",
-      "it": "Cappello Mostrivente",
-      "pt": "Chapéu Monstrivivo"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16605.png"
   },
   {
     "dofusID": "789",
@@ -119488,48 +119278,6 @@
     "imageUrl": "item/10114.png"
   },
   {
-    "dofusID": "9233",
-    "name": {
-      "en": "Livitinem Cape",
-      "fr": "Cape Obvijevan",
-      "de": "Lebending: Umhang",
-      "es": "Capa objeviva",
-      "it": "Mantello Vivoggetto",
-      "pt": "Capa Ovivmeti"
-    },
-    "itemType": "Living object",
-    "setID": "",
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/113149.png"
-  },
-  {
-    "dofusID": "9256",
-    "name": {
-      "en": "Livitinem Ring",
-      "fr": "Anneau Obvijevan",
-      "de": "Lebending: Ring",
-      "es": "Anillo objevivo",
-      "it": "Anello Vivoggetto",
-      "pt": "Anel Ovivmeti"
-    },
-    "itemType": "Living object",
-    "setID": "",
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/113161.png"
-  },
-  {
     "dofusID": "10158",
     "name": {
       "en": "Trophy Dark Vlad Shield",
@@ -119710,27 +119458,6 @@
     "imageUrl": "item/16264.png"
   },
   {
-    "dofusID": "12426",
-    "name": {
-      "en": "Parasymbic Belt",
-      "fr": "Ceinture Parabiote",
-      "de": "Parabiotischer Gürtel",
-      "es": "Cinturón parabiótico",
-      "it": "Cintura Parabio",
-      "pt": "Cinto Parabiótico"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102240.png"
-  },
-  {
     "dofusID": "13687",
     "name": {
       "en": "Kwismas Treetop",
@@ -119777,27 +119504,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/82004.png"
-  },
-  {
-    "dofusID": "19526",
-    "name": {
-      "en": "Coulive Hat",
-      "fr": "Chapeau Colorivant",
-      "de": "Farbenfroher Hut",
-      "es": "Sombrero colorivante",
-      "it": "Cappello Colorvivo",
-      "pt": "Chapéu Colorvivo"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102560.png"
   },
   {
     "dofusID": "21712",
@@ -120055,27 +119761,6 @@
     "imageUrl": "item/82055.png"
   },
   {
-    "dofusID": "13212",
-    "name": {
-      "en": "Alyverol Belt",
-      "fr": "Ceinture Rolivan",
-      "de": "Rolleb-Gürtel",
-      "es": "Cinturón rolevivo",
-      "it": "Cintura Ruolivente",
-      "pt": "Cinto Rolevivo"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102400.png"
-  },
-  {
     "dofusID": "15240",
     "name": {
       "en": "Kamaflops",
@@ -120101,48 +119786,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/11257.png"
-  },
-  {
-    "dofusID": "19524",
-    "name": {
-      "en": "Coulive Cape",
-      "fr": "Cape Colorivante",
-      "de": "Farbenfroher Umhang",
-      "es": "Capa colorivante",
-      "it": "Mantello Colorvivo",
-      "pt": "Capa Colorviva"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102579.png"
-  },
-  {
-    "dofusID": "19525",
-    "name": {
-      "en": "Coulive Shield",
-      "fr": "Bouclier Colorivant",
-      "de": "Farbenfroher Schild",
-      "es": "Escudo colorivante",
-      "it": "Scudo Colorvivo",
-      "pt": "Escudo Colorvivo"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102580.png"
   },
   {
     "dofusID": "19622",
@@ -120347,27 +119990,6 @@
       }
     },
     "imageUrl": "item/16005.png"
-  },
-  {
-    "dofusID": "12424",
-    "name": {
-      "en": "Parasymbic Hat",
-      "fr": "Chapeau Parabiote",
-      "de": "Parabiotischer Hut",
-      "es": "Gorro parabiótico",
-      "it": "Cappello Parabio",
-      "pt": "Chapéu Parabiótico"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102200.png"
   },
   {
     "dofusID": "19985",
