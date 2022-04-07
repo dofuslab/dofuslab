@@ -120469,7 +120469,7 @@
       "pt": "Prismaparecido"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer becomes invisible (1 turn) at the start of their first round."
@@ -120504,7 +120504,7 @@
       "pt": "Prisada"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains the Gravity state as long as they have not suffered any damage."
@@ -120539,7 +120539,7 @@
       "pt": "Priora Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "At the end of their first turn, the bearer reduces damage by 20% (1 turn) for each enemy within 2 cells."
@@ -120574,7 +120574,7 @@
       "pt": "Aprissar Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 9 cells away and loses 2 AP (2 turns) per enemy within 9 cells."
@@ -120609,7 +120609,7 @@
       "pt": "Prigen Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "Heals 100% of the enemy damage suffered until the end of the first turn."
@@ -120644,7 +120644,7 @@
       "pt": "Golprisma Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 300 Power (1 turn) if they suffer an enemy hit before playing."
@@ -120679,7 +120679,7 @@
       "pt": "Pricipitada Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains +4 AP for their first round but also loses 4 MP."
@@ -120714,7 +120714,7 @@
       "pt": "Prissão Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer gains 4 AP for 1 turn but inflicts -50% damage."],
       "fr": [
@@ -120745,7 +120745,7 @@
       "pt": "Pritek Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 10% of their current life in shield points for their first turn, 15% on the second turn and 20% on the third."
@@ -120780,7 +120780,7 @@
       "pt": "Surprisma Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer gains 50 Critial for 1 turn."],
       "fr": ["Le porteur gagne 50 Critique pendant 1 tour."],
@@ -120805,7 +120805,7 @@
       "pt": "Priora"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "At the end of their first turn, the bearer reduces damage by 5% (3 turns) for each enemy within 2 cells."
@@ -120840,7 +120840,7 @@
       "pt": "Aprissar"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 15 cells away."
@@ -120873,7 +120873,7 @@
       "pt": "Prigen"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "Heals 15% of the enemy damage suffered until the end of the third turn."
@@ -120906,7 +120906,7 @@
       "pt": "Primune"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer reduces damage suffered by 80% before playing."],
       "fr": ["Le porteur réduit les dommages subis de 80% avant d'avoir joué."],
@@ -120933,7 +120933,7 @@
       "pt": "Golprisma"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 100 Power (3 turns) if they suffer an enemy hit before playing."
@@ -120968,7 +120968,7 @@
       "pt": "Prismeiros"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 100% of their level in shield points (infinite) for each opponent (excluding summons) that plays before them."
@@ -121003,7 +121003,7 @@
       "pt": "Korpris"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 250 MP Parry before playing, then 50 MP Parry for 1 turn."
@@ -121038,7 +121038,7 @@
       "pt": "Pricipitada"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer gains +2 AP for their first round."],
       "fr": ["Le porteur gagne +2 PA pendant son premier tour de jeu."],
@@ -121063,7 +121063,7 @@
       "pt": "Prissão"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer gains 1 AP for 3 turns but inflicts -10% damage."],
       "fr": [
@@ -121096,7 +121096,7 @@
       "pt": "Pritek"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 20% of their current life in shield points for their first turn, 15% on the second turn and 10% on the third."
@@ -121131,7 +121131,7 @@
       "pt": "Prismencanto"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "Reduces the duration of active effects on the bearer by 4 at the start of their first round."
@@ -121166,7 +121166,7 @@
       "pt": "Priximidade"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "At the start of their first round, the bearer gains 200% of their level in shield (infinite) for each enemy within 2 cells."
@@ -121201,7 +121201,7 @@
       "pt": "Priora brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "At the end of their first turn, the bearer reduces damage by 10% (2 turns) for each enemy within 2 cells."
@@ -121236,7 +121236,7 @@
       "pt": "Aprissar Brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 12 cells away and loses 1 AP (2 turns) per enemy within 12 cells."
@@ -121271,7 +121271,7 @@
       "pt": "Prigen Brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "Heals 30% of enemy damage suffered until the end of the second turn."
@@ -121304,7 +121304,7 @@
       "pt": "Golprisma Brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 200 Power (2 turns) if they suffer an enemy hit before playing."
@@ -121339,7 +121339,7 @@
       "pt": "Pricipitada Brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains +3 AP for their first round but also loses 2 MP."
@@ -121374,7 +121374,7 @@
       "pt": "Prissão Brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer gains 2 AP for 2 turns but inflicts -20% damage."],
       "fr": [
@@ -121407,7 +121407,7 @@
       "pt": "Pritek Brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 15% of their current life in shield points for their first turn, 15% on the second turn and 15% on the third."
@@ -121442,7 +121442,7 @@
       "pt": "Surprisma Brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer gains 20 Critical for 2 turns."],
       "fr": ["Le porteur gagne 20 Critique pendant 2 tours."],
@@ -121467,7 +121467,7 @@
       "pt": "Esprírito"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 250 AP Parry before playing, then 50 AP Parry for 1 turn."
@@ -121502,7 +121502,7 @@
       "pt": "Surprisma"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer gains 8 Critical for 3 turns."],
       "fr": ["Le porteur gagne 8 Critique pendant 3 tours."],
@@ -133760,16 +133760,47 @@
     "setID": "501",
     "level": 146,
     "stats": [
-      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
-      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
-      { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
-      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
-      { "stat": "Lock", "minStat": 5, "maxStat": 7 },
-      { "stat": "Pushback Damage", "minStat": 11, "maxStat": 15 },
-      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 }
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Lock",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      }
     ],
     "customStats": {},
-    "conditions": { "conditions": {}, "customConditions": {} },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
     "imageUrl": "item/9365.png"
   },
   {
@@ -133786,19 +133817,62 @@
     "setID": "501",
     "level": 148,
     "stats": [
-      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
-      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
-      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
-      { "stat": "Range", "minStat": null, "maxStat": 1 },
-      { "stat": "Fire Damage", "minStat": 8, "maxStat": 12 },
-      { "stat": "Initiative", "minStat": 251, "maxStat": 400 },
-      { "stat": "Lock", "minStat": 3, "maxStat": 5 },
-      { "stat": "MP Parry", "minStat": 5, "maxStat": 8 },
-      { "stat": "Pushback Damage", "minStat": 16, "maxStat": 20 },
-      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 }
+      {
+        "stat": "Vitality",
+        "minStat": 201,
+        "maxStat": 250
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 251,
+        "maxStat": 400
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      }
     ],
     "customStats": {},
-    "conditions": { "conditions": {}, "customConditions": {} },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
     "imageUrl": "item/17525.png"
   },
   {
@@ -133815,18 +133889,57 @@
     "setID": "500",
     "level": 146,
     "stats": [
-      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
-      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
-      { "stat": "Range", "minStat": null, "maxStat": 1 },
-      { "stat": "Heals", "minStat": 7, "maxStat": 10 },
-      { "stat": "Lock", "minStat": 7, "maxStat": 10 },
-      { "stat": "Dodge", "minStat": null, "maxStat": -10 },
-      { "stat": "AP Reduction", "minStat": 5, "maxStat": 7 },
-      { "stat": "MP Reduction", "minStat": 5, "maxStat": 7 },
-      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 }
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Heals",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Lock",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      }
     ],
     "customStats": {},
-    "conditions": { "conditions": {}, "customConditions": {} },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
     "imageUrl": "item/9364.png"
   },
   {
@@ -133843,17 +133956,52 @@
     "setID": "500",
     "level": 148,
     "stats": [
-      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
-      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
-      { "stat": "MP", "minStat": null, "maxStat": 1 },
-      { "stat": "Heals", "minStat": 16, "maxStat": 20 },
-      { "stat": "AP Reduction", "minStat": 3, "maxStat": 5 },
-      { "stat": "MP Reduction", "minStat": 3, "maxStat": 5 },
-      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 },
-      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
+      {
+        "stat": "Vitality",
+        "minStat": 201,
+        "maxStat": 250
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Heals",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      }
     ],
     "customStats": {},
-    "conditions": { "conditions": {}, "customConditions": {} },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
     "imageUrl": "item/11373.png"
   },
   {
@@ -133870,14 +134018,37 @@
     "setID": "502",
     "level": 40,
     "stats": [
-      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
-      { "stat": "Power", "minStat": 16, "maxStat": 25 },
-      { "stat": "Critical", "minStat": null, "maxStat": -3 },
-      { "stat": "Range", "minStat": null, "maxStat": 1 },
-      { "stat": "Pushback Damage", "minStat": 6, "maxStat": 8 }
+      {
+        "stat": "Vitality",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Power",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": -3
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 6,
+        "maxStat": 8
+      }
     ],
     "customStats": {},
-    "conditions": { "conditions": {}, "customConditions": {} },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
     "imageUrl": "item/16707.png"
   },
   {
@@ -133894,14 +134065,37 @@
     "setID": "502",
     "level": 42,
     "stats": [
-      { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
-      { "stat": "Power", "minStat": 11, "maxStat": 15 },
-      { "stat": "MP", "minStat": null, "maxStat": 1 },
-      { "stat": "Lock", "minStat": null, "maxStat": -15 },
-      { "stat": "Pushback Damage", "minStat": 3, "maxStat": 5 }
+      {
+        "stat": "Vitality",
+        "minStat": 11,
+        "maxStat": 20
+      },
+      {
+        "stat": "Power",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Lock",
+        "minStat": null,
+        "maxStat": -15
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 3,
+        "maxStat": 5
+      }
     ],
     "customStats": {},
-    "conditions": { "conditions": {}, "customConditions": {} },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
     "imageUrl": "item/11374.png"
   },
   {
@@ -133918,13 +134112,32 @@
     "setID": "502",
     "level": 36,
     "stats": [
-      { "stat": "Vitality", "minStat": 41, "maxStat": 50 },
-      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
-      { "stat": "Initiative", "minStat": 51, "maxStat": 60 },
-      { "stat": "Dodge", "minStat": 4, "maxStat": 5 }
+      {
+        "stat": "Vitality",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 51,
+        "maxStat": 60
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 4,
+        "maxStat": 5
+      }
     ],
     "customStats": {},
-    "conditions": { "conditions": {}, "customConditions": {} },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
     "imageUrl": "item/10351.png"
   }
 ]
