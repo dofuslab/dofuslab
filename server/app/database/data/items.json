@@ -118470,27 +118470,6 @@
     "imageUrl": "item/1120.png"
   },
   {
-    "dofusID": "9234",
-    "name": {
-      "en": "Livitinem Hat",
-      "fr": "Chapeau Obvijevan",
-      "de": "Lebending: Hut",
-      "es": "Sombrero objevivo",
-      "it": "Cappello Vivoggetto",
-      "pt": "Chapéu Ovivmeti"
-    },
-    "itemType": "Living object",
-    "setID": "",
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/113211.png"
-  },
-  {
     "dofusID": "10159",
     "name": {
       "en": "Trophy Moon Shield",
@@ -118577,69 +118556,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/1163.png"
-  },
-  {
-    "dofusID": "12425",
-    "name": {
-      "en": "Parasymbic Cape",
-      "fr": "Cape Parabiote",
-      "de": "Parabiotischer Umhang",
-      "es": "Capa parabiótica",
-      "it": "Mantello Parabio",
-      "pt": "Capa Parabiótica"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102160.png"
-  },
-  {
-    "dofusID": "13210",
-    "name": {
-      "en": "Alyverol Boots",
-      "fr": "Bottes Rolivan",
-      "de": "Rolleb-Stiefel",
-      "es": "Botas rolevivas",
-      "it": "Stivali Ruoliventi",
-      "pt": "Botas Rolevivas"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102440.png"
-  },
-  {
-    "dofusID": "18154",
-    "name": {
-      "en": "Shushivin Hat",
-      "fr": "Chapeau Shushivan",
-      "de": "Shushending-Hut",
-      "es": "Sombrero fab’huvivo",
-      "it": "Cappello Shushente",
-      "pt": "Chapéu Shushuvivo"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102480.png"
   },
   {
     "dofusID": "21711",
@@ -118817,27 +118733,6 @@
     "imageUrl": "item/9125.png"
   },
   {
-    "dofusID": "9255",
-    "name": {
-      "en": "Livitinem Amulet",
-      "fr": "Amulette Obvijevan",
-      "de": "Lebending: Amulett",
-      "es": "Amuleto Objevivo",
-      "it": "Amuleto Vivoggetto",
-      "pt": "Amuleto Ovivmeti"
-    },
-    "itemType": "Living object",
-    "setID": "",
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/113139.png"
-  },
-  {
     "dofusID": "10160",
     "name": {
       "en": "Trophy Soft Oak Shield",
@@ -118954,27 +118849,6 @@
     "imageUrl": "item/11155.png"
   },
   {
-    "dofusID": "12427",
-    "name": {
-      "en": "Parasymbic Boots",
-      "fr": "Bottes Parabiotes",
-      "de": "Parabiotische Stiefel",
-      "es": "Botas parabióticas",
-      "it": "Stivali Parabio",
-      "pt": "Botas Parabióticas"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102280.png"
-  },
-  {
     "dofusID": "12660",
     "name": {
       "en": "Incarnam Shield",
@@ -119002,48 +118876,6 @@
     "imageUrl": "item/82063.png"
   },
   {
-    "dofusID": "13211",
-    "name": {
-      "en": "Alyverol Cape",
-      "fr": "Cape Rolivan",
-      "de": "Rolleb-Umhang",
-      "es": "Capa roleviva",
-      "it": "Mantello Ruolivente",
-      "pt": "Capa Roleviva"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102320.png"
-  },
-  {
-    "dofusID": "13213",
-    "name": {
-      "en": "Alyverol Hat",
-      "fr": "Chapeau Rolivan",
-      "de": "Rolleb-Hut",
-      "es": "Sombrero rolevivo",
-      "it": "Cappello Ruolivente",
-      "pt": "Chapéu Rolevivo"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102360.png"
-  },
-  {
     "dofusID": "15241",
     "name": {
       "en": "Kamabelt",
@@ -119069,48 +118901,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/10267.png"
-  },
-  {
-    "dofusID": "18155",
-    "name": {
-      "en": "Shushivin Cape",
-      "fr": "Cape Shushivan",
-      "de": "Shushending-Umhang",
-      "es": "Capa fab’huviva",
-      "it": "Mantello Shushente",
-      "pt": "Capa Shushuviva"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102520.png"
-  },
-  {
-    "dofusID": "21794",
-    "name": {
-      "en": "Monstralive Hat",
-      "fr": "Chapeau Monstrivan",
-      "de": "Lebmonster-Hut",
-      "es": "Sombrero monstruvivo",
-      "it": "Cappello Mostrivente",
-      "pt": "Chapéu Monstrivivo"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/16605.png"
   },
   {
     "dofusID": "789",
@@ -119488,48 +119278,6 @@
     "imageUrl": "item/10114.png"
   },
   {
-    "dofusID": "9233",
-    "name": {
-      "en": "Livitinem Cape",
-      "fr": "Cape Obvijevan",
-      "de": "Lebending: Umhang",
-      "es": "Capa objeviva",
-      "it": "Mantello Vivoggetto",
-      "pt": "Capa Ovivmeti"
-    },
-    "itemType": "Living object",
-    "setID": "",
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/113149.png"
-  },
-  {
-    "dofusID": "9256",
-    "name": {
-      "en": "Livitinem Ring",
-      "fr": "Anneau Obvijevan",
-      "de": "Lebending: Ring",
-      "es": "Anillo objevivo",
-      "it": "Anello Vivoggetto",
-      "pt": "Anel Ovivmeti"
-    },
-    "itemType": "Living object",
-    "setID": "",
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/113161.png"
-  },
-  {
     "dofusID": "10158",
     "name": {
       "en": "Trophy Dark Vlad Shield",
@@ -119710,27 +119458,6 @@
     "imageUrl": "item/16264.png"
   },
   {
-    "dofusID": "12426",
-    "name": {
-      "en": "Parasymbic Belt",
-      "fr": "Ceinture Parabiote",
-      "de": "Parabiotischer Gürtel",
-      "es": "Cinturón parabiótico",
-      "it": "Cintura Parabio",
-      "pt": "Cinto Parabiótico"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102240.png"
-  },
-  {
     "dofusID": "13687",
     "name": {
       "en": "Kwismas Treetop",
@@ -119777,27 +119504,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/82004.png"
-  },
-  {
-    "dofusID": "19526",
-    "name": {
-      "en": "Coulive Hat",
-      "fr": "Chapeau Colorivant",
-      "de": "Farbenfroher Hut",
-      "es": "Sombrero colorivante",
-      "it": "Cappello Colorvivo",
-      "pt": "Chapéu Colorvivo"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102560.png"
   },
   {
     "dofusID": "21712",
@@ -120055,27 +119761,6 @@
     "imageUrl": "item/82055.png"
   },
   {
-    "dofusID": "13212",
-    "name": {
-      "en": "Alyverol Belt",
-      "fr": "Ceinture Rolivan",
-      "de": "Rolleb-Gürtel",
-      "es": "Cinturón rolevivo",
-      "it": "Cintura Ruolivente",
-      "pt": "Cinto Rolevivo"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102400.png"
-  },
-  {
     "dofusID": "15240",
     "name": {
       "en": "Kamaflops",
@@ -120101,48 +119786,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/11257.png"
-  },
-  {
-    "dofusID": "19524",
-    "name": {
-      "en": "Coulive Cape",
-      "fr": "Cape Colorivante",
-      "de": "Farbenfroher Umhang",
-      "es": "Capa colorivante",
-      "it": "Mantello Colorvivo",
-      "pt": "Capa Colorviva"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102579.png"
-  },
-  {
-    "dofusID": "19525",
-    "name": {
-      "en": "Coulive Shield",
-      "fr": "Bouclier Colorivant",
-      "de": "Farbenfroher Schild",
-      "es": "Escudo colorivante",
-      "it": "Scudo Colorvivo",
-      "pt": "Escudo Colorvivo"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102580.png"
   },
   {
     "dofusID": "19622",
@@ -120349,27 +119992,6 @@
     "imageUrl": "item/16005.png"
   },
   {
-    "dofusID": "12424",
-    "name": {
-      "en": "Parasymbic Hat",
-      "fr": "Chapeau Parabiote",
-      "de": "Parabiotischer Hut",
-      "es": "Gorro parabiótico",
-      "it": "Cappello Parabio",
-      "pt": "Chapéu Parabiótico"
-    },
-    "itemType": "Living object",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "customStats": [],
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/102200.png"
-  },
-  {
     "dofusID": "19985",
     "name": {
       "en": "Rhineetle Ring",
@@ -120469,7 +120091,7 @@
       "pt": "Prismaparecido"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer becomes invisible (1 turn) at the start of their first round."
@@ -120504,7 +120126,7 @@
       "pt": "Prisada"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains the Gravity state as long as they have not suffered any damage."
@@ -120539,7 +120161,7 @@
       "pt": "Priora Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "At the end of their first turn, the bearer reduces damage by 20% (1 turn) for each enemy within 2 cells."
@@ -120574,7 +120196,7 @@
       "pt": "Aprissar Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 9 cells away and loses 2 AP (2 turns) per enemy within 9 cells."
@@ -120609,7 +120231,7 @@
       "pt": "Prigen Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "Heals 100% of the enemy damage suffered until the end of the first turn."
@@ -120644,7 +120266,7 @@
       "pt": "Golprisma Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 300 Power (1 turn) if they suffer an enemy hit before playing."
@@ -120679,7 +120301,7 @@
       "pt": "Pricipitada Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains +4 AP for their first round but also loses 4 MP."
@@ -120714,7 +120336,7 @@
       "pt": "Prissão Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer gains 4 AP for 1 turn but inflicts -50% damage."],
       "fr": [
@@ -120745,7 +120367,7 @@
       "pt": "Pritek Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 10% of their current life in shield points for their first turn, 15% on the second turn and 20% on the third."
@@ -120780,7 +120402,7 @@
       "pt": "Surprisma Iridescente"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer gains 50 Critial for 1 turn."],
       "fr": ["Le porteur gagne 50 Critique pendant 1 tour."],
@@ -120805,7 +120427,7 @@
       "pt": "Priora"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "At the end of their first turn, the bearer reduces damage by 5% (3 turns) for each enemy within 2 cells."
@@ -120840,7 +120462,7 @@
       "pt": "Aprissar"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 15 cells away."
@@ -120873,7 +120495,7 @@
       "pt": "Prigen"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "Heals 15% of the enemy damage suffered until the end of the third turn."
@@ -120906,7 +120528,7 @@
       "pt": "Primune"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer reduces damage suffered by 80% before playing."],
       "fr": ["Le porteur réduit les dommages subis de 80% avant d'avoir joué."],
@@ -120933,7 +120555,7 @@
       "pt": "Golprisma"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 100 Power (3 turns) if they suffer an enemy hit before playing."
@@ -120968,7 +120590,7 @@
       "pt": "Prismeiros"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 100% of their level in shield points (infinite) for each opponent (excluding summons) that plays before them."
@@ -121003,7 +120625,7 @@
       "pt": "Korpris"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 250 MP Parry before playing, then 50 MP Parry for 1 turn."
@@ -121038,7 +120660,7 @@
       "pt": "Pricipitada"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer gains +2 AP for their first round."],
       "fr": ["Le porteur gagne +2 PA pendant son premier tour de jeu."],
@@ -121063,7 +120685,7 @@
       "pt": "Prissão"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer gains 1 AP for 3 turns but inflicts -10% damage."],
       "fr": [
@@ -121096,7 +120718,7 @@
       "pt": "Pritek"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 20% of their current life in shield points for their first turn, 15% on the second turn and 10% on the third."
@@ -121131,7 +120753,7 @@
       "pt": "Prismencanto"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "Reduces the duration of active effects on the bearer by 4 at the start of their first round."
@@ -121166,7 +120788,7 @@
       "pt": "Priximidade"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "At the start of their first round, the bearer gains 200% of their level in shield (infinite) for each enemy within 2 cells."
@@ -121201,7 +120823,7 @@
       "pt": "Priora brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "At the end of their first turn, the bearer reduces damage by 10% (2 turns) for each enemy within 2 cells."
@@ -121236,7 +120858,7 @@
       "pt": "Aprissar Brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 1 MP (2 turns) per enemy more than 12 cells away and loses 1 AP (2 turns) per enemy within 12 cells."
@@ -121271,7 +120893,7 @@
       "pt": "Prigen Brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "Heals 30% of enemy damage suffered until the end of the second turn."
@@ -121304,7 +120926,7 @@
       "pt": "Golprisma Brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 200 Power (2 turns) if they suffer an enemy hit before playing."
@@ -121339,7 +120961,7 @@
       "pt": "Pricipitada Brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains +3 AP for their first round but also loses 2 MP."
@@ -121374,7 +120996,7 @@
       "pt": "Prissão Brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer gains 2 AP for 2 turns but inflicts -20% damage."],
       "fr": [
@@ -121407,7 +121029,7 @@
       "pt": "Pritek Brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 15% of their current life in shield points for their first turn, 15% on the second turn and 15% on the third."
@@ -121442,7 +121064,7 @@
       "pt": "Surprisma Brilhante"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer gains 20 Critical for 2 turns."],
       "fr": ["Le porteur gagne 20 Critique pendant 2 tours."],
@@ -121467,7 +121089,7 @@
       "pt": "Esprírito"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": [
         "The bearer gains 250 AP Parry before playing, then 50 AP Parry for 1 turn."
@@ -121502,7 +121124,7 @@
       "pt": "Surprisma"
     },
     "itemType": "Prysmaradite",
-    "level": 180,
+    "level": 200,
     "customStats": {
       "en": ["The bearer gains 8 Critical for 3 turns."],
       "fr": ["Le porteur gagne 8 Critique pendant 3 tours."],
@@ -133760,16 +133382,47 @@
     "setID": "501",
     "level": 146,
     "stats": [
-      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
-      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
-      { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
-      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
-      { "stat": "Lock", "minStat": 5, "maxStat": 7 },
-      { "stat": "Pushback Damage", "minStat": 11, "maxStat": 15 },
-      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 }
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Lock",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      }
     ],
     "customStats": {},
-    "conditions": { "conditions": {}, "customConditions": {} },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
     "imageUrl": "item/9365.png"
   },
   {
@@ -133786,19 +133439,62 @@
     "setID": "501",
     "level": 148,
     "stats": [
-      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
-      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
-      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
-      { "stat": "Range", "minStat": null, "maxStat": 1 },
-      { "stat": "Fire Damage", "minStat": 8, "maxStat": 12 },
-      { "stat": "Initiative", "minStat": 251, "maxStat": 400 },
-      { "stat": "Lock", "minStat": 3, "maxStat": 5 },
-      { "stat": "MP Parry", "minStat": 5, "maxStat": 8 },
-      { "stat": "Pushback Damage", "minStat": 16, "maxStat": 20 },
-      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 }
+      {
+        "stat": "Vitality",
+        "minStat": 201,
+        "maxStat": 250
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 251,
+        "maxStat": 400
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      }
     ],
     "customStats": {},
-    "conditions": { "conditions": {}, "customConditions": {} },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
     "imageUrl": "item/17525.png"
   },
   {
@@ -133815,18 +133511,57 @@
     "setID": "500",
     "level": 146,
     "stats": [
-      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
-      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
-      { "stat": "Range", "minStat": null, "maxStat": 1 },
-      { "stat": "Heals", "minStat": 7, "maxStat": 10 },
-      { "stat": "Lock", "minStat": 7, "maxStat": 10 },
-      { "stat": "Dodge", "minStat": null, "maxStat": -10 },
-      { "stat": "AP Reduction", "minStat": 5, "maxStat": 7 },
-      { "stat": "MP Reduction", "minStat": 5, "maxStat": 7 },
-      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 }
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Heals",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Lock",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      }
     ],
     "customStats": {},
-    "conditions": { "conditions": {}, "customConditions": {} },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
     "imageUrl": "item/9364.png"
   },
   {
@@ -133843,17 +133578,52 @@
     "setID": "500",
     "level": 148,
     "stats": [
-      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
-      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
-      { "stat": "MP", "minStat": null, "maxStat": 1 },
-      { "stat": "Heals", "minStat": 16, "maxStat": 20 },
-      { "stat": "AP Reduction", "minStat": 3, "maxStat": 5 },
-      { "stat": "MP Reduction", "minStat": 3, "maxStat": 5 },
-      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 },
-      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
+      {
+        "stat": "Vitality",
+        "minStat": 201,
+        "maxStat": 250
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Heals",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      }
     ],
     "customStats": {},
-    "conditions": { "conditions": {}, "customConditions": {} },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
     "imageUrl": "item/11373.png"
   },
   {
@@ -133870,14 +133640,37 @@
     "setID": "502",
     "level": 40,
     "stats": [
-      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
-      { "stat": "Power", "minStat": 16, "maxStat": 25 },
-      { "stat": "Critical", "minStat": null, "maxStat": -3 },
-      { "stat": "Range", "minStat": null, "maxStat": 1 },
-      { "stat": "Pushback Damage", "minStat": 6, "maxStat": 8 }
+      {
+        "stat": "Vitality",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Power",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": -3
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 6,
+        "maxStat": 8
+      }
     ],
     "customStats": {},
-    "conditions": { "conditions": {}, "customConditions": {} },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
     "imageUrl": "item/16707.png"
   },
   {
@@ -133894,14 +133687,37 @@
     "setID": "502",
     "level": 42,
     "stats": [
-      { "stat": "Vitality", "minStat": 11, "maxStat": 20 },
-      { "stat": "Power", "minStat": 11, "maxStat": 15 },
-      { "stat": "MP", "minStat": null, "maxStat": 1 },
-      { "stat": "Lock", "minStat": null, "maxStat": -15 },
-      { "stat": "Pushback Damage", "minStat": 3, "maxStat": 5 }
+      {
+        "stat": "Vitality",
+        "minStat": 11,
+        "maxStat": 20
+      },
+      {
+        "stat": "Power",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Lock",
+        "minStat": null,
+        "maxStat": -15
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 3,
+        "maxStat": 5
+      }
     ],
     "customStats": {},
-    "conditions": { "conditions": {}, "customConditions": {} },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
     "imageUrl": "item/11374.png"
   },
   {
@@ -133918,13 +133734,32 @@
     "setID": "502",
     "level": 36,
     "stats": [
-      { "stat": "Vitality", "minStat": 41, "maxStat": 50 },
-      { "stat": "Damage", "minStat": 2, "maxStat": 3 },
-      { "stat": "Initiative", "minStat": 51, "maxStat": 60 },
-      { "stat": "Dodge", "minStat": 4, "maxStat": 5 }
+      {
+        "stat": "Vitality",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 51,
+        "maxStat": 60
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 4,
+        "maxStat": 5
+      }
     ],
     "customStats": {},
-    "conditions": { "conditions": {}, "customConditions": {} },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
     "imageUrl": "item/10351.png"
   }
 ]
