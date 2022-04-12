@@ -160,8 +160,8 @@
               {
                 "stat": "Damage",
                 "incrementBy": 10,
-                "critIncrementBy": 13,
-                "maxStacks": 2
+                "critIncrementBy": 10,
+                "maxStacks": 1
               }
             ]
           },
@@ -170,9 +170,9 @@
             "buffs": [
               {
                 "stat": "Damage",
-                "incrementBy": 15,
-                "critIncrementBy": 18,
-                "maxStacks": 2
+                "incrementBy": 20,
+                "critIncrementBy": 20,
+                "maxStacks": 1
               }
             ]
           },
@@ -181,9 +181,9 @@
             "buffs": [
               {
                 "stat": "Damage",
-                "incrementBy": 20,
-                "critIncrementBy": 23,
-                "maxStacks": 2
+                "incrementBy": 30,
+                "critIncrementBy": 30,
+                "maxStacks": 1
               }
             ]
           }
