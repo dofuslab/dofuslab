@@ -65,7 +65,7 @@ promise==2.2.1
 psycopg2==2.8.4
 pycodestyle==2.5.0
 pycparser==2.19
-PyJWT==1.7.1
+PyJWT==2.4.0
 pylint==2.4.4
 pylint-flask==0.6
 pylint-plugin-utils==0.6
