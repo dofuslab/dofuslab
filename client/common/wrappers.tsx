@@ -20,6 +20,7 @@ import {
   faPeopleArrows,
   faFistRaised,
   faBolt,
+  faExclamationCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import Tooltip from 'components/common/Tooltip';
 import { Media } from 'components/common/Media';
@@ -417,9 +418,13 @@ export const CustomSetHead: React.FC<{ customSet?: CustomSet | null }> = ({
 export const DamageTypeToggle: React.FC<{
   readonly showRanged: boolean;
   readonly setShowRanged: React.Dispatch<React.SetStateAction<boolean>>;
-}> = ({ showRanged, setShowRanged }) => {
+  readonly rangedOnly: boolean;
+  readonly meleeOnly: boolean;
+}> = ({ showRanged, setShowRanged, rangedOnly, meleeOnly }) => {
   const { t } = useTranslation('weapon_spell_effect');
   const theme = useTheme();
+
+  const showPortalsOnly = (rangedOnly && !showRanged) || (meleeOnly && showRanged);
 
   const toggleSwitch = (
     <Switch
@@ -443,6 +448,7 @@ export const DamageTypeToggle: React.FC<{
     <div
       css={{
         display: 'flex',
+        alignItems: 'center',
         marginBottom: 8,
       }}
     >
@@ -466,6 +472,15 @@ export const DamageTypeToggle: React.FC<{
       <span css={{ marginLeft: 8, [mq[1]]: { display: 'none' } }}>
         {t('RANGED')}
       </span>
+      {showPortalsOnly &&
+      <span css={{ marginLeft: 8}}>
+        <Tooltip
+          css={{ textAlign: 'center' }}
+          title={(showRanged ? 'Ranged' : 'Melee') + ' damage is only possible in special situations (e.g. with portals).'}
+        >
+          <FontAwesomeIcon icon={faExclamationCircle} />
+        </Tooltip>
+      </span>}
     </div>
   );
 };
