@@ -58,5 +58,7 @@
     "WATER_68": "Eau 68%",
     "WATER_85": "Eau 85%"
   },
-  "WEAPON_SKILL": "Maîtrise d'arme"
+  "WEAPON_SKILL": "Maîtrise d'arme",
+  "RANGED_NOT_POSSIBLE": "__STRING_NOT_TRANSLATED__",
+  "MELEE_NOT_POSSIBLE": "__STRING_NOT_TRANSLATED__"
 }

@@ -58,5 +58,7 @@
     "WATER_68": "Water 68%",
     "WATER_85": "Water 85%"
   },
-  "WEAPON_SKILL": "Weapon Skill"
+  "WEAPON_SKILL": "Weapon Skill",
+  "RANGED_NOT_POSSIBLE": "Ranged damage may not be possible.",
+  "MELEE_NOT_POSSIBLE": "Melee damage may not be possible."
 }

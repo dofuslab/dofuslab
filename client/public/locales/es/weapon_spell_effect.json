@@ -58,5 +58,7 @@
     "WATER_68": "Agua 68%",
     "WATER_85": "Agua 85%"
   },
-  "WEAPON_SKILL": "Habilidad de Arma"
+  "WEAPON_SKILL": "Habilidad de Arma",
+  "RANGED_NOT_POSSIBLE": "__STRING_NOT_TRANSLATED__",
+  "MELEE_NOT_POSSIBLE": "__STRING_NOT_TRANSLATED__"
 }
