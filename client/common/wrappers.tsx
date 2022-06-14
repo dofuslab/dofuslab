@@ -424,7 +424,17 @@ export const DamageTypeToggle: React.FC<{
   const { t } = useTranslation('weapon_spell_effect');
   const theme = useTheme();
 
-  const showPortalsOnly = (rangedOnly && !showRanged) || (meleeOnly && showRanged);
+  const notPossibleWarning = (
+    <span css={{ marginLeft: 8}}>
+        <Tooltip
+          css={{ textAlign: 'center' }}
+          title={showRanged ? t('RANGED_NOT_POSSIBLE') : t('MELEE_NOT_POSSIBLE')}
+          arrowPointAtCenter={true}
+        >
+          <FontAwesomeIcon icon={faExclamationCircle} />
+        </Tooltip>
+      </span>
+  );
 
   const toggleSwitch = (
     <Switch
@@ -454,6 +464,7 @@ export const DamageTypeToggle: React.FC<{
     >
       <span css={{ marginRight: 8, [mq[1]]: { display: 'none' } }}>
         {t('MELEE')}
+        {rangedOnly && notPossibleWarning}
       </span>
       <Media lessThan="xs">{toggleSwitch}</Media>
       <Media greaterThanOrEqual="xs">
@@ -471,16 +482,11 @@ export const DamageTypeToggle: React.FC<{
       </Media>
       <span css={{ marginLeft: 8, [mq[1]]: { display: 'none' } }}>
         {t('RANGED')}
+        {meleeOnly && notPossibleWarning}
       </span>
-      {showPortalsOnly &&
-      <span css={{ marginLeft: 8}}>
-        <Tooltip
-          css={{ textAlign: 'center' }}
-          title={showRanged ? t('RANGED_NOT_POSSIBLE') : t('MELEE_NOT_POSSIBLE')}
-        >
-          <FontAwesomeIcon icon={faExclamationCircle} />
-        </Tooltip>
-      </span>}
+      <span css={{ display: 'none', [mq[1]]: {display: 'inline' } }}>
+        {((rangedOnly && !showRanged) || (meleeOnly && showRanged)) && notPossibleWarning}
+      </span>
     </div>
   );
 };

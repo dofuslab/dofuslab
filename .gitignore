@@ -25,3 +25,5 @@ node_modules/
 *.DS_Store
 
 **.vercel
+
+.vscode/*.log
