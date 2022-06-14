@@ -59,6 +59,6 @@
     "WATER_85": "Agua 85%"
   },
   "WEAPON_SKILL": "Habilidad de Arma",
-  "RANGED_NOT_POSSIBLE": "__STRING_NOT_TRANSLATED__",
-  "MELEE_NOT_POSSIBLE": "__STRING_NOT_TRANSLATED__"
+  "RANGED_NOT_POSSIBLE": "Daños a distancia podrían no ser posibles.",
+  "MELEE_NOT_POSSIBLE": "Daños cuerpo a cuerpo podrían no ser posibles."
 }
