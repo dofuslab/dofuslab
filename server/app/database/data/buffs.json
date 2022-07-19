@@ -1132,7 +1132,7 @@
         "name": "Psychopath Mask",
         "levels": [
           {
-            "level": 25,
+            "level": 10,
             "buffs": [
               {
                 "stat": "% Melee Damage",
@@ -1143,7 +1143,7 @@
             ]
           },
           {
-            "level": 92,
+            "level": 70,
             "buffs": [
               {
                 "stat": "% Melee Damage",
@@ -1154,7 +1154,7 @@
             ]
           },
           {
-            "level": 159,
+            "level": 144,
             "buffs": [
               {
                 "stat": "% Melee Damage",
@@ -1170,7 +1170,7 @@
         "name": "Furia",
         "levels": [
           {
-            "level": 30,
+            "level": 15,
             "buffs": [
               {
                 "stat": "Damage",
@@ -1181,7 +1181,7 @@
             ]
           },
           {
-            "level": 97,
+            "level": 82,
             "buffs": [
               {
                 "stat": "Damage",
@@ -1192,7 +1192,7 @@
             ]
           },
           {
-            "level": 164,
+            "level": 149,
             "buffs": [
               {
                 "stat": "Damage",
