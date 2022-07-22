@@ -8,7 +8,7 @@ import { useTranslation } from 'next-i18next';
 import { useQuery } from '@apollo/client';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
-import { Select, Divider, Button, List } from 'antd';
+import { Select, Divider, Button } from 'antd';
 import {
   antdSelectFilterOption,
   CustomSetContext,
