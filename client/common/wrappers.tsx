@@ -339,9 +339,9 @@ export const WeaponEffectsList: React.FC<{
   );
 };
 
-export const BrokenImagePlaceholder: React.FC<
-  React.HTMLAttributes<HTMLDivElement>
-> = ({ className, ...restProps }) => (
+export const BrokenImagePlaceholder: React.FC<React.HTMLAttributes<
+  HTMLDivElement
+>> = ({ className, ...restProps }) => (
   <ClassNames>
     {({ css, cx }) => (
       <div
@@ -529,5 +529,29 @@ export function BuffButton({
           })
         : t('BUFFS')}
     </Button>
+  );
+}
+
+export function EmptyState(
+  props: React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  >,
+) {
+  const theme = useTheme();
+  return (
+    <div
+      css={{
+        padding: 64,
+        backgroundColor: theme.layer?.backgroundLight,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        borderRadius: 4,
+        wordWrap: 'break-word',
+      }}
+      {...props}
+    ></div>
   );
 }
