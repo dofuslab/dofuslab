@@ -428,7 +428,7 @@ export const DamageTypeToggle: React.FC<{
     <span css={{ marginLeft: 8}}>
         <Tooltip
           css={{ textAlign: 'center' }}
-          title={showRanged ? t('RANGED_NOT_POSSIBLE') : t('MELEE_NOT_POSSIBLE')}
+          title={meleeOnly ? t('RANGED_NOT_POSSIBLE') : t('MELEE_NOT_POSSIBLE')}
           arrowPointAtCenter={true}
         >
           <FontAwesomeIcon icon={faExclamationCircle} />
