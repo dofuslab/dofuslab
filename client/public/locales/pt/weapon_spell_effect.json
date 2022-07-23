@@ -34,11 +34,13 @@
   "LINEAR": "Linear",
   "MAX_STACKS_APPLIED": "Máximo de acúmulos aplicados.",
   "MELEE": "Corpo a Corpo",
+  "MELEE_NOT_POSSIBLE": "Danos de corpo a corpo podem não ser possíveis.",
   "MODIFIABLE": "Modificável",
   "NON_CRIT": "Não crítico",
   "NO_LOS": "Não necessita de linha de visão",
   "NO_WEAPON_SKILL": "Sem domínio de arma",
   "RANGED": "Distância",
+  "RANGED_NOT_POSSIBLE": "Danos variados podem não ser possíveis.",
   "TOTAL": "Total",
   "UNAVAILABLE_SPELL": "Este feitiço só está disponível no nível {{level}}",
   "USE_PER_TURN_one": "{{count}} uso/turno",
@@ -58,7 +60,5 @@
     "WATER_68": "Água 68%",
     "WATER_85": "Água 85%"
   },
-  "WEAPON_SKILL": "Domínio de Arma",
-  "RANGED_NOT_POSSIBLE": "__STRING_NOT_TRANSLATED__",
-  "MELEE_NOT_POSSIBLE": "__STRING_NOT_TRANSLATED__"
+  "WEAPON_SKILL": "Domínio de Arma"
 }

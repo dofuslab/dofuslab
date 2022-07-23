@@ -34,11 +34,13 @@
   "LINEAR": "In linea",
   "MAX_STACKS_APPLIED": "Bonus massimo già applicato.",
   "MELEE": "Mischia",
+  "MELEE_NOT_POSSIBLE": "I danni da mischia potrebbero non essere possibili.",
   "MODIFIABLE": "Modificabile",
   "NON_CRIT": "Senza CC",
   "NO_LOS": "Non necessita di linea di tiro",
   "NO_WEAPON_SKILL": "Senza Padronanza dell'Arma",
   "RANGED": "Distanza",
+  "RANGED_NOT_POSSIBLE": "I danni a distanza potrebbero non essere possibili.",
   "TOTAL": "Totale",
   "UNAVAILABLE_SPELL": "Questo incantesimo è disponibile a partire dal livello {{level}}.",
   "USE_PER_TURN_one": "{{count}} utilizzo/turno",
@@ -58,7 +60,5 @@
     "WATER_68": "Acqua 68%",
     "WATER_85": "Acqua 85%"
   },
-  "WEAPON_SKILL": "Padronanza dell'Arma",
-  "RANGED_NOT_POSSIBLE": "__STRING_NOT_TRANSLATED__",
-  "MELEE_NOT_POSSIBLE": "__STRING_NOT_TRANSLATED__"
+  "WEAPON_SKILL": "Padronanza dell'Arma"
 }

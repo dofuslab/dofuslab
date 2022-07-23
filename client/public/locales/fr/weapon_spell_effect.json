@@ -34,11 +34,13 @@
   "LINEAR": "Linéaire",
   "MAX_STACKS_APPLIED": "Nombre de cumuls maximal atteint.",
   "MELEE": "Mélée",
+  "MELEE_NOT_POSSIBLE": "Les dégâts de mêlée peuvent ne pas être possibles.",
   "MODIFIABLE": "Modifiable",
   "NON_CRIT": "Sans CC",
   "NO_LOS": "Pas besoin de ligne de vue",
   "NO_WEAPON_SKILL": "Sans Maîtrise d'arme",
   "RANGED": "A distance",
+  "RANGED_NOT_POSSIBLE": "Les dégâts à distance peuvent ne pas être possibles.",
   "TOTAL": "Total",
   "UNAVAILABLE_SPELL": "Ce sort est disponible au niveau {{level}}.",
   "USE_PER_TURN_one": "{{count}} utilisation par tour",
@@ -58,7 +60,5 @@
     "WATER_68": "Eau 68%",
     "WATER_85": "Eau 85%"
   },
-  "WEAPON_SKILL": "Maîtrise d'arme",
-  "RANGED_NOT_POSSIBLE": "__STRING_NOT_TRANSLATED__",
-  "MELEE_NOT_POSSIBLE": "__STRING_NOT_TRANSLATED__"
+  "WEAPON_SKILL": "Maîtrise d'arme"
 }

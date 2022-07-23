@@ -34,11 +34,13 @@
   "LINEAR": "Lineal",
   "MAX_STACKS_APPLIED": "Has llegado al límite de acumulaciones.",
   "MELEE": "CaC",
+  "MELEE_NOT_POSSIBLE": "Daños cuerpo a cuerpo podrían no ser posibles.",
   "MODIFIABLE": "Modificable",
   "NON_CRIT": "No critico",
   "NO_LOS": "No requiere línea de visión",
   "NO_WEAPON_SKILL": "Sin Dominio del Arma",
   "RANGED": "Rango",
+  "RANGED_NOT_POSSIBLE": "Daños a distancia podrían no ser posibles.",
   "TOTAL": "Total",
   "UNAVAILABLE_SPELL": "Éste hechizo no está disponible al nivel {{level}}.",
   "USE_PER_TURN_one": "{{count}} uso/turo",
@@ -58,7 +60,5 @@
     "WATER_68": "Agua 68%",
     "WATER_85": "Agua 85%"
   },
-  "WEAPON_SKILL": "Habilidad de Arma",
-  "RANGED_NOT_POSSIBLE": "Daños a distancia podrían no ser posibles.",
-  "MELEE_NOT_POSSIBLE": "Daños cuerpo a cuerpo podrían no ser posibles."
+  "WEAPON_SKILL": "Habilidad de Arma"
 }
