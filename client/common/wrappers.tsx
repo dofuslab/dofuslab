@@ -20,7 +20,7 @@ import {
   faPeopleArrows,
   faFistRaised,
   faBolt,
-  faExclamationCircle,
+  faExclamationTriangle,
 } from '@fortawesome/free-solid-svg-icons';
 import Tooltip from 'components/common/Tooltip';
 import { Media } from 'components/common/Media';
@@ -44,6 +44,7 @@ import {
   itemCardStyle,
   blue6,
   gray6,
+  gold5,
 } from './mixins';
 import { SetBonus, WeaponStats, CustomSet } from './type-aliases';
 import { DEFAULT_LANGUAGE } from './i18n-utils';
@@ -425,15 +426,15 @@ export const DamageTypeToggle: React.FC<{
   const theme = useTheme();
 
   const notPossibleWarning = (
-    <span css={{ marginLeft: 8}}>
-        <Tooltip
-          css={{ textAlign: 'center' }}
-          title={meleeOnly ? t('RANGED_NOT_POSSIBLE') : t('MELEE_NOT_POSSIBLE')}
-          arrowPointAtCenter={true}
-        >
-          <FontAwesomeIcon icon={faExclamationCircle} />
-        </Tooltip>
-      </span>
+    <span css={{ marginLeft: 8 }}>
+      <Tooltip
+        css={{ textAlign: 'center' }}
+        title={meleeOnly ? t('RANGED_NOT_POSSIBLE') : t('MELEE_NOT_POSSIBLE')}
+        arrowPointAtCenter={true}
+      >
+        <FontAwesomeIcon icon={faExclamationTriangle} css={{ color: gold5 }} />
+      </Tooltip>
+    </span>
   );
 
   const toggleSwitch = (
@@ -484,8 +485,9 @@ export const DamageTypeToggle: React.FC<{
         {t('RANGED')}
         {meleeOnly && notPossibleWarning}
       </span>
-      <span css={{ display: 'none', [mq[1]]: {display: 'inline' } }}>
-        {((rangedOnly && !showRanged) || (meleeOnly && showRanged)) && notPossibleWarning}
+      <span css={{ display: 'none', [mq[1]]: { display: 'inline' } }}>
+        {((rangedOnly && !showRanged) || (meleeOnly && showRanged)) &&
+          notPossibleWarning}
       </span>
     </div>
   );
