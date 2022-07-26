@@ -75,8 +75,6 @@ const SpellCardContent: React.FC<Props> = ({
   const damageTypeKey = showRanged ? 'ranged' : 'melee';
 
   const showToggle =
-    !rangedOnly &&
-    !meleeOnly &&
     (spellStats?.spellEffects.some(
       (effect) => getSimpleEffect(effect.effectType) === 'damage',
     ) ??
@@ -377,6 +375,8 @@ const SpellCardContent: React.FC<Props> = ({
               <DamageTypeToggle
                 setShowRanged={setShowRanged}
                 showRanged={showRanged}
+                rangedOnly={rangedOnly}
+                meleeOnly={meleeOnly}
               />
             )}
             <div
