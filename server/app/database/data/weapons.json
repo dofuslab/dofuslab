@@ -59600,5 +59600,123 @@
       "customConditions": {}
     },
     "imageUrl": "item/22008.png"
+  },
+  {
+    "dofusID": "26314",
+    "name": {
+      "en": "Hell Mina's Partisan",
+      "fr": "Pertuisane d'Hell Mina",
+      "de": "Hell Minas Partisane",
+      "es": "Partesana de Hell Mina",
+      "it": "Partigiana di Mina Harcher",
+      "pt": "Partazana de Hell Mina"
+    },
+    "itemType": "Staff",
+    "level": 150,
+    "setID": "501",
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Intelligence", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Lock", "minStat": 3, "maxStat": 5 },
+      { "stat": "Pushback Damage", "minStat": 21, "maxStat": 25 },
+      { "stat": "% Fire Resistance", "minStat": 7, "maxStat": 10 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 1,
+      "baseCritChance": 30,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        { "stat": "Fire damage", "minStat": 16, "maxStat": 22 },
+        { "stat": "Fire steal", "minStat": 4, "maxStat": 6 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/4142.png"
+  },
+  {
+    "dofusID": "26310",
+    "name": {
+      "en": "Rooted Malter Scythe",
+      "fr": "Faux Enracinée de Malter",
+      "de": "Verwurzelte Malter-Sense",
+      "es": "Guadaña enraizada de malter",
+      "it": "Finta Radicata di Malter",
+      "pt": "Foice Enraizada de Malter"
+    },
+    "itemType": "Scythe",
+    "level": 150,
+    "setID": "500",
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Heals", "minStat": 21, "maxStat": 30 },
+      { "stat": "Initiative", "minStat": 251, "maxStat": 400 },
+      { "stat": "AP Reduction", "minStat": 2, "maxStat": 4 },
+      { "stat": "MP Reduction", "minStat": 2, "maxStat": 4 },
+      { "stat": "AP Parry", "minStat": null, "maxStat": -4 },
+      { "stat": "MP Parry", "minStat": null, "maxStat": -4 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "minRange": 1,
+      "maxRange": 2,
+      "usesPerTurn": 1,
+      "baseCritChance": 10,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        { "stat": "HP restored", "minStat": 7, "maxStat": 10 },
+        { "stat": "HP restored", "minStat": 7, "maxStat": 10 },
+        { "stat": "HP restored", "minStat": 7, "maxStat": 10 },
+        { "stat": "HP restored", "minStat": 7, "maxStat": 10 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/22010.png"
+  },
+  {
+    "dofusID": "26344",
+    "name": {
+      "en": "Director Grunob's Scythe",
+      "fr": "Faux du Directeur Grunob",
+      "de": "Sense des Direktors Grunob",
+      "es": "Guadaña del director Grunob",
+      "it": "Falce del Direttore Grunob",
+      "pt": "Foice do Diretor Grunob"
+    },
+    "itemType": "Scythe",
+    "level": 38,
+    "setID": "502",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
+      { "stat": "Power", "minStat": 26, "maxStat": 35 },
+      { "stat": "Initiative", "minStat": 51, "maxStat": 100 },
+      { "stat": "Pushback Damage", "minStat": 7, "maxStat": 10 }
+    ],
+    "weaponStats": {
+      "apCost": 3,
+      "minRange": 1,
+      "maxRange": 2,
+      "usesPerTurn": 1,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        { "stat": "Neutral steal", "minStat": 5, "maxStat": 8 },
+        { "stat": "Neutral steal", "minStat": 5, "maxStat": 8 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/22011.png"
   }
 ]

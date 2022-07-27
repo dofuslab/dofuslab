@@ -49,16 +49,21 @@ const ItemSelector: React.FC<Props> = ({
         ? selectedItemSlot.itemTypes.map((type) => type.id)
         : itemTypeIdsArr,
   };
+
   const { data, loading, fetchMore } = useQuery<items, itemsVariables>(
     ItemsQuery,
     {
       variables: {
         first: ITEMS_PAGE_SIZE,
         filters: queryFilters,
-        itemSlotId: selectedItemSlot?.id,
+        eligibleItemTypeIds:
+          selectedItemSlot?.itemTypes.map((type) => type.id) ?? [],
         // filter required because of optimistic equipped item IDs that have the form of `equipped-item-{item UUID}`
+        // and to prevent dofuses from being used in item suggestion algorithm
         equippedItemIds:
-          customSet?.equippedItems.map((ei) => ei.id).filter(isUUID) ?? [],
+          customSet?.equippedItems
+            .filter((ei) => isUUID(ei.id) && ei.slot.enName !== 'Dofus')
+            .map((ei) => ei.id) ?? [],
         level: customSet?.level ?? 200,
       },
     },

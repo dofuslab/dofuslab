@@ -1632,7 +1632,7 @@ class Query(graphene.ObjectType):
     item_suggestions = graphene.NonNull(
         graphene.List(graphene.NonNull(Item)),
         num_suggestions=graphene.Int(),
-        item_slot_id=graphene.UUID(),
+        eligible_item_type_ids=graphene.List(graphene.NonNull(graphene.UUID)),
         equipped_item_ids=graphene.NonNull(
             graphene.List(graphene.NonNull(graphene.UUID))
         ),
@@ -1640,19 +1640,13 @@ class Query(graphene.ObjectType):
     )
 
     def resolve_item_suggestions(self, info, num_suggestions=10, **kwargs):
-        item_slot_id = kwargs.get("item_slot_id")
+        eligible_item_type_ids = kwargs.get("eligible_item_type_ids")
         equipped_item_ids = kwargs.get("equipped_item_ids")
         level = kwargs.get("level")
         if not equipped_item_ids:
             return []
 
-        eligible_item_type_ids = []
-        if item_slot_id:
-            eligible_item_type_ids = map(
-                lambda x: x.uuid,
-                db.session.query(ModelItemSlot).get(item_slot_id).item_types,
-            )
-        else:
+        if not eligible_item_type_ids:
             slot_alias = aliased(ModelItemSlot)
             subquery = (
                 ~db.session.query(slot_alias)

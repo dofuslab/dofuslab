@@ -4,8 +4,8 @@ query items(
   $first: Int!
   $after: String
   $filters: ItemFilters!
-  $itemSlotId: UUID
   $equippedItemIds: [UUID!]!
+  $eligibleItemTypeIds: [UUID!]
   $level: Int!
 ) {
   items(first: $first, after: $after, filters: $filters) {
@@ -21,8 +21,8 @@ query items(
   }
 
   itemSuggestions(
+    eligibleItemTypeIds: $eligibleItemTypeIds
     equippedItemIds: $equippedItemIds
-    itemSlotId: $itemSlotId
     level: $level
   ) {
     ...item

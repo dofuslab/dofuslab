@@ -20,6 +20,7 @@ import {
   faPeopleArrows,
   faFistRaised,
   faBolt,
+  faExclamationTriangle,
 } from '@fortawesome/free-solid-svg-icons';
 import Tooltip from 'components/common/Tooltip';
 import { Media } from 'components/common/Media';
@@ -43,6 +44,7 @@ import {
   itemCardStyle,
   blue6,
   gray6,
+  gold5,
 } from './mixins';
 import { SetBonus, WeaponStats, CustomSet } from './type-aliases';
 import { DEFAULT_LANGUAGE } from './i18n-utils';
@@ -339,9 +341,9 @@ export const WeaponEffectsList: React.FC<{
   );
 };
 
-export const BrokenImagePlaceholder: React.FC<
-  React.HTMLAttributes<HTMLDivElement>
-> = ({ className, ...restProps }) => (
+export const BrokenImagePlaceholder: React.FC<React.HTMLAttributes<
+  HTMLDivElement
+>> = ({ className, ...restProps }) => (
   <ClassNames>
     {({ css, cx }) => (
       <div
@@ -417,9 +419,23 @@ export const CustomSetHead: React.FC<{ customSet?: CustomSet | null }> = ({
 export const DamageTypeToggle: React.FC<{
   readonly showRanged: boolean;
   readonly setShowRanged: React.Dispatch<React.SetStateAction<boolean>>;
-}> = ({ showRanged, setShowRanged }) => {
+  readonly rangedOnly: boolean;
+  readonly meleeOnly: boolean;
+}> = ({ showRanged, setShowRanged, rangedOnly, meleeOnly }) => {
   const { t } = useTranslation('weapon_spell_effect');
   const theme = useTheme();
+
+  const notPossibleWarning = (
+    <span css={{ marginLeft: 8 }}>
+      <Tooltip
+        css={{ textAlign: 'center' }}
+        title={meleeOnly ? t('RANGED_NOT_POSSIBLE') : t('MELEE_NOT_POSSIBLE')}
+        arrowPointAtCenter={true}
+      >
+        <FontAwesomeIcon icon={faExclamationTriangle} css={{ color: gold5 }} />
+      </Tooltip>
+    </span>
+  );
 
   const toggleSwitch = (
     <Switch
@@ -443,11 +459,13 @@ export const DamageTypeToggle: React.FC<{
     <div
       css={{
         display: 'flex',
+        alignItems: 'center',
         marginBottom: 8,
       }}
     >
       <span css={{ marginRight: 8, [mq[1]]: { display: 'none' } }}>
         {t('MELEE')}
+        {rangedOnly && notPossibleWarning}
       </span>
       <Media lessThan="xs">{toggleSwitch}</Media>
       <Media greaterThanOrEqual="xs">
@@ -465,6 +483,11 @@ export const DamageTypeToggle: React.FC<{
       </Media>
       <span css={{ marginLeft: 8, [mq[1]]: { display: 'none' } }}>
         {t('RANGED')}
+        {meleeOnly && notPossibleWarning}
+      </span>
+      <span css={{ display: 'none', [mq[1]]: { display: 'inline' } }}>
+        {((rangedOnly && !showRanged) || (meleeOnly && showRanged)) &&
+          notPossibleWarning}
       </span>
     </div>
   );
@@ -529,5 +552,29 @@ export function BuffButton({
           })
         : t('BUFFS')}
     </Button>
+  );
+}
+
+export function EmptyState(
+  props: React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  >,
+) {
+  const theme = useTheme();
+  return (
+    <div
+      css={{
+        padding: 64,
+        backgroundColor: theme.layer?.backgroundLight,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        borderRadius: 4,
+        wordWrap: 'break-word',
+      }}
+      {...props}
+    ></div>
   );
 }

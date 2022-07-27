@@ -29,8 +29,9 @@ const SpellBuffCard: React.FC<Props> = ({ spell, level }) => {
     return max;
   }, -1);
 
-  const [selectedSpellLevelIdx, selectSpellLevelIdx] =
-    React.useState<number>(spellLevelIdx);
+  const [selectedSpellLevelIdx, selectSpellLevelIdx] = React.useState<number>(
+    spellLevelIdx,
+  );
 
   const onChange = React.useCallback(
     (e: RadioChangeEvent) => {
@@ -82,10 +83,10 @@ const SpellBuffCard: React.FC<Props> = ({ spell, level }) => {
         css={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
-          gridColumnGap: 8,
+          gridColumnGap: 12,
         }}
       >
-        <div>
+        <div css={{ minWidth: 0 }}>
           <div css={damageHeaderStyle}>{t('NON_CRIT')}</div>
           {filteredNonCritBuffs.length > 0
             ? filteredNonCritBuffs.map((b) => (
@@ -93,7 +94,7 @@ const SpellBuffCard: React.FC<Props> = ({ spell, level }) => {
               ))
             : t('N/A', { ns: 'common' })}
         </div>
-        <div>
+        <div css={{ minWidth: 0 }}>
           <div css={damageHeaderStyle}>{t('CRIT')}</div>
           {filteredCritBuffs.length > 0
             ? filteredCritBuffs.map((b) => (
