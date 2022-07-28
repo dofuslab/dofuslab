@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { useTheme } from '@emotion/react';
 import { mq } from 'common/constants';
 import { Button } from 'antd';
@@ -10,6 +10,7 @@ import { EditOutlined } from '@ant-design/icons';
 import { getImageUrl } from 'common/utils';
 import BuildList from './BuildList';
 import ProfilePictureModal from './ProfilePictureModal';
+import { Media } from './Media';
 
 interface Props {
   username: string;
@@ -141,7 +142,7 @@ const UserProfile: React.FC<Props> = ({
             css={{
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center',
+              alignItems: 'flex-start',
               minWidth: 0,
             }}
           >
@@ -179,7 +180,16 @@ const UserProfile: React.FC<Props> = ({
           )}
         </div>
       </div>
-      <BuildList username={username} isEditable={isEditable} />
+      <Media lessThan="xs">
+        <BuildList username={username} isEditable={isEditable} isMobile />
+      </Media>
+      <Media greaterThanOrEqual="xs" css={{ flex: '1 1 auto' }}>
+        <BuildList
+          username={username}
+          isEditable={isEditable}
+          isMobile={false}
+        />
+      </Media>
     </div>
   );
 };

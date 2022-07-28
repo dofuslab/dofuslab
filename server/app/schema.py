@@ -1183,7 +1183,6 @@ class ChangeLocale(graphene.Mutation):
             user = current_user._get_current_object()
             if current_user.is_authenticated:
                 user.settings.locale = locale
-            session["locale"] = locale
             refresh()
             return ChangeLocale(ok=True)
 
@@ -1531,12 +1530,16 @@ class Query(graphene.ObjectType):
             level_sq.c.level.desc(), current_locale_translations.name.asc()
         ).all()
 
-        return get_sets(locale, filters)
+    custom_sets = relay.ConnectionField(
+        graphene.NonNull(CustomSetConnection),
+    )
 
-    custom_sets = graphene.List(CustomSet)
-
-    def resolve_custom_sets(self, info):
-        return db.session.query(ModelCustomSet).all()
+    def resolve_custom_sets(self, info, **kwargs):
+        return (
+            db.session.query(ModelCustomSet)
+            .order_by(ModelCustomSet.last_modified.desc())
+            .all()
+        )
 
     classes = graphene.NonNull(graphene.List(graphene.NonNull(Class)))
 
@@ -1629,7 +1632,7 @@ class Query(graphene.ObjectType):
     item_suggestions = graphene.NonNull(
         graphene.List(graphene.NonNull(Item)),
         num_suggestions=graphene.Int(),
-        item_slot_id=graphene.UUID(),
+        eligible_item_type_ids=graphene.List(graphene.NonNull(graphene.UUID)),
         equipped_item_ids=graphene.NonNull(
             graphene.List(graphene.NonNull(graphene.UUID))
         ),
@@ -1637,19 +1640,13 @@ class Query(graphene.ObjectType):
     )
 
     def resolve_item_suggestions(self, info, num_suggestions=10, **kwargs):
-        item_slot_id = kwargs.get("item_slot_id")
+        eligible_item_type_ids = kwargs.get("eligible_item_type_ids")
         equipped_item_ids = kwargs.get("equipped_item_ids")
         level = kwargs.get("level")
         if not equipped_item_ids:
             return []
 
-        eligible_item_type_ids = []
-        if item_slot_id:
-            eligible_item_type_ids = map(
-                lambda x: x.uuid,
-                db.session.query(ModelItemSlot).get(item_slot_id).item_types,
-            )
-        else:
+        if not eligible_item_type_ids:
             slot_alias = aliased(ModelItemSlot)
             subquery = (
                 ~db.session.query(slot_alias)

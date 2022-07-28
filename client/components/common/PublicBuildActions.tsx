@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import { ClassNames } from '@emotion/react';
 import { Button } from 'antd';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClone, faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { CustomSet } from 'common/type-aliases';

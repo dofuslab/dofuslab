@@ -1,0 +1,13 @@
+{
+  "BUILD": {
+    "NO_NAME_NO_OWNER": "Voir ce build sans titre sur DofusLab, le créateur d'ensembles open-source pour le MMORPG Dofus.",
+    "NO_NAME_WITH_OWNER": "Voir le build sans titre {{username}} sur DofusLab, le créateur d'ensembles open-source pour le MMORPG Dofus.",
+    "WITH_NAME_NO_OWNER": "Voir le build {{buildName}} sur DofusLab, le créateur d'ensembles open-source pour le MMORPG Dofus.",
+    "WITH_NAME_WITH_OWNER": "Voir le build {{buildName}} {{username}} sur DofusLab, le créateur d'ensembles open-source pour le MMORPG Dofus."
+  },
+  "EQUIP": "Trouvez votre prochain {{slot}} sur DofusLab, le créateur d'ensembles open-source pour le MMORPG Dofus.",
+  "HOME": "Expérimentez avec votre équipement sur DofusLab, le créateur d'ensembles open-source pour le MMORPG Dofus.",
+  "USER_PROFILE_one": "Découvrez le profil {{username}} sur DofusLab, le créateur d'ensembles open-source pour le MMORPG Dofus.",
+  "USER_PROFILE_other": "Découvrez les {{count}} builds {{username}} sur DofusLab, le créateur d'ensembles open-source pour le MMORPG Dofus.",
+  "USER_PROFILE_zero": "Découvrez le profil {{username}} sur DofusLab, le créateur d'ensembles open-source pour le MMORPG Dofus."
+}

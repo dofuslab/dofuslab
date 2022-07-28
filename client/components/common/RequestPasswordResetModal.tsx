@@ -4,7 +4,7 @@ import React from 'react';
 
 import { Modal, Input, Form, Button, notification } from 'antd';
 import { useMutation } from '@apollo/client';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { mq } from 'common/constants';
 import {
   requestPasswordReset,

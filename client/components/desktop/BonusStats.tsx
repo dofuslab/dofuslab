@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import { ClassNames, useTheme } from '@emotion/react';
 import { Popover, Divider } from 'antd';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 
 import { popoverTitleStyle, popoverShadow } from 'common/mixins';
 import { getBonusesFromCustomSet, getImageUrl } from 'common/utils';
@@ -15,6 +15,7 @@ import { CustomSet, ItemSet } from 'common/type-aliases';
 import { Media } from 'components/common/Media';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCubes } from '@fortawesome/free-solid-svg-icons';
+import EquipSetLink from 'components/common/EquipSetLink';
 
 const DISPLAY_ITEM_LIMIT = 3;
 
@@ -54,7 +55,7 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
   const contentRef = React.useRef<HTMLDivElement | null>(null);
 
   if (Object.values(setBonuses).length === 0) {
-    return null;
+    return isMobile || isClassic ? <EquipSetLink /> : null;
   }
 
   const sortedSetBonuses = Object.values(setBonuses).sort(
@@ -205,6 +206,7 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
           )
         }
       </ClassNames>
+      {(isMobile || isClassic) && <EquipSetLink customSetId={customSet.id} />}
       {selectedSet && !isMobile && (
         <SetModal
           setId={selectedSet?.id}

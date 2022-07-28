@@ -7,32 +7,9 @@
 // GraphQL query operation: userProfile
 // ====================================================
 
-export interface userProfile_userByName_customSets_edges_node {
-  __typename: "CustomSet";
-  id: any;
-}
-
-export interface userProfile_userByName_customSets_edges {
-  __typename: "CustomSetEdge";
-  node: userProfile_userByName_customSets_edges_node;
-}
-
-export interface userProfile_userByName_customSets_pageInfo {
-  __typename: "PageInfo";
-  /**
-   * When paginating forwards, are there more items?
-   */
-  hasNextPage: boolean;
-}
-
 export interface userProfile_userByName_customSets {
   __typename: "CustomSetConnection";
   totalCount: number;
-  edges: userProfile_userByName_customSets_edges[];
-  /**
-   * Pagination data for this connection.
-   */
-  pageInfo: userProfile_userByName_customSets_pageInfo;
 }
 
 export interface userProfile_userByName {

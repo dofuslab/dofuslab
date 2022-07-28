@@ -11,7 +11,7 @@ import {
 import loginMutation from 'graphql/mutations/login.graphql';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
-import { useTranslation, Trans } from 'i18n';
+import { useTranslation, Trans } from 'next-i18next';
 import { mq, PASSWORD_REGEX, EMAIL_REGEX } from 'common/constants';
 import sessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
 import { inputFontSize } from 'common/mixins';

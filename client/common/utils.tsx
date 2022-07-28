@@ -13,7 +13,7 @@ import { useRouter, NextRouter } from 'next/router';
 import { notification } from 'antd';
 import cloneDeep from 'lodash/cloneDeep';
 import groupBy from 'lodash/groupBy';
-import { TFunction } from 'next-i18next';
+import { TFunction, useTranslation, Trans } from 'next-i18next';
 import CustomSetFragment from 'graphql/fragments/customSet.graphql';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import ItemFragment from 'graphql/fragments/item.graphql';
@@ -42,7 +42,6 @@ import {
   currentUser as CurrentUserQueryType,
 } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
-import { useTranslation, Trans } from 'i18n';
 import {
   equipSet,
   equipSetVariables,
@@ -71,6 +70,7 @@ import {
 } from 'graphql/mutations/__generated__/toggleFavoriteItem';
 import toggleFavoriteItemMutation from 'graphql/mutations/toggleFavoriteItem.graphql';
 import { DefaultOptionType } from 'antd/lib/select';
+import { customSet_equippedItems_slot as EquippedItemSlot } from 'graphql/fragments/__generated__/customSet';
 import {
   StatsFromCustomSet,
   SetCounter,
@@ -101,6 +101,7 @@ import {
   ItemTypeWithSlots,
   EquippedItem,
 } from './type-aliases';
+import { prependDe } from './i18n-utils';
 
 export const getImageUrl = (suffix: string) =>
   suffix.startsWith('https://')
@@ -450,7 +451,7 @@ export const useEquipItemMutation = (item?: Item) => {
     updateCustomSetItem,
     updateCustomSetItemVariables
   >(UpdateCustomSetItemMutation, {
-    refetchQueries: () => ['myCustomSets'],
+    refetchQueries: () => ['buildList'],
     optimisticResponse:
       customSetId && itemSlotsData
         ? ({ itemSlotId, itemId }) => {
@@ -549,7 +550,7 @@ export const useEquipItemsMutation = (
       itemIds,
       customSetId: customSet?.id,
     },
-    refetchQueries: () => ['myCustomSets'],
+    refetchQueries: () => ['buildList'],
   });
 
   const client = useApolloClient();
@@ -590,7 +591,7 @@ export const useEquipSetMutation = (
       setId,
       customSetId: customSet?.id,
     },
-    refetchQueries: () => ['myCustomSets'],
+    refetchQueries: () => ['buildList'],
   });
 
   const client = useApolloClient();
@@ -1432,20 +1433,34 @@ export const getTitle = (title?: string | null) => {
   return `${title} - DofusLab`;
 };
 
-export const getCustomSetMetaDescription = (customSet?: CustomSet | null) => {
+export const getCustomSetMetaDescription = (
+  t: TFunction,
+  locale: string,
+  customSet?: CustomSet | null,
+) => {
   if (!customSet) {
     return META_DESCRIPTION;
   }
   if (customSet.owner && customSet.name) {
-    return `View ${customSet.owner.username}'s build ${customSet.name} on DofusLab, the open-source set builder for the MMORPG Dofus.`;
+    return t('BUILD.WITH_NAME_WITH_OWNER', {
+      ns: 'meta',
+      username: prependDe(locale, customSet.owner.username),
+      buildName: customSet.name,
+    });
   }
   if (customSet.owner) {
-    return `View ${customSet.owner.username}'s untitled build on DofusLab, the open-source set builder for the MMORPG Dofus.`;
+    return t('BUILD.NO_NAME_WITH_OWNER', {
+      ns: 'meta',
+      username: prependDe(locale, customSet.owner.username),
+    });
   }
   if (customSet.name) {
-    return `View the build ${customSet.name} on DofusLab, the open-source set builder for the MMORPG Dofus.`;
+    return t('BUILD.WITH_NAME_NO_OWNER', {
+      ns: 'meta',
+      buildName: customSet.name,
+    });
   }
-  return 'View this untitled build on DofusLab, the open-source set builder for the MMORPG Dofus';
+  return t('BUILD.NO_NAME_NO_OWNER', { ns: 'meta' });
 };
 
 export const getUserProfileMetaImage = (suffix?: string | null) => {
@@ -1510,7 +1525,7 @@ export const getCustomSetMetaImage = (customSet?: CustomSet | null) => {
 
 export const getCanonicalUrl = (customSet?: CustomSet | null) => {
   if (customSet) {
-    return `https://dofuslab.io/build/${customSet.id}`;
+    return `https://dofuslab.io/view/${customSet.id}/`;
   }
   return 'https://dofuslab.io';
 };
@@ -1619,7 +1634,7 @@ export const usePublicBuildActions = (customSet: CustomSet) => {
     copyCustomSetVariables
   >(copyCustomSetMutation, {
     variables: { customSetId: customSet.id },
-    refetchQueries: () => ['myCustomSets'],
+    refetchQueries: () => ['buildList'],
   });
   const router = useRouter();
 
@@ -1948,4 +1963,21 @@ export function antdSelectFilterOption(
     value = option.children;
   }
   return String(value).toUpperCase().includes(input.toUpperCase());
+}
+
+export function formatNameForUrl(itemSlotName: string) {
+  return itemSlotName
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase();
+}
+
+export function slotToUrlString(itemSlot: EquippedItemSlot) {
+  const name = formatNameForUrl(itemSlot.name);
+
+  if (itemSlot.enName === 'Ring' || itemSlot.enName === 'Dofus') {
+    return `${name}-${itemSlot.order}`;
+  }
+
+  return name;
 }

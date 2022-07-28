@@ -208,7 +208,7 @@ export interface itemsVariables {
   first: number;
   after?: string | null;
   filters: ItemFilters;
-  itemSlotId?: any | null;
   equippedItemIds: any[];
+  eligibleItemTypeIds?: any[] | null;
   level: number;
 }

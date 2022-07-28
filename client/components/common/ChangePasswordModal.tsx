@@ -5,7 +5,7 @@ import React from 'react';
 import { Button, Form, Input, Modal, notification } from 'antd';
 
 import { useMutation, useApolloClient } from '@apollo/client';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import {
   changePassword as ChangePassword,
   changePasswordVariables as ChangePasswordVariables,

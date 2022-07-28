@@ -13,19 +13,21 @@ import {
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import ErrorPage from 'pages/_error';
 import MobileLayout from 'components/mobile/Layout';
 import DesktopLayout from 'components/desktop/Layout';
 import { CustomSetHead } from 'common/wrappers';
 import { ClassicContext, useClassic } from 'common/utils';
 
-interface Props {
-  customSetId: string | null;
-}
+import EquipHead from './EquipHead';
 
-const EquipPage: React.FC<Props> = ({ customSetId }) => {
+type Props = {
+  customSetId: string | null;
+  // if itemSlotId is undefined, then show sets
+  itemSlotId?: string;
+};
+
+const EquipPage: React.FC<Props> = ({ customSetId, itemSlotId }) => {
   const router = useRouter();
-  const { itemSlotId } = router.query;
 
   const [isClassic, setIsClassic] = useClassic();
 
@@ -33,12 +35,7 @@ const EquipPage: React.FC<Props> = ({ customSetId }) => {
     (value: boolean) => {
       setIsClassic(value);
       if (!value) {
-        const { itemSlotId: oldItemSlotId, ...restQuery } = router.query;
-
-        router.push(
-          { pathname: '/', query: restQuery },
-          customSetId ? `/build/${customSetId}/` : '/',
-        );
+        router.push(customSetId ? `/build/${customSetId}/` : '/');
       }
     },
     [router],
@@ -59,10 +56,6 @@ const EquipPage: React.FC<Props> = ({ customSetId }) => {
 
   const customSet = customSetData?.customSetById ?? null;
 
-  if (!itemSlot) {
-    return <ErrorPage statusCode={404} />;
-  }
-
   return (
     <>
       <Media lessThan="xs">
@@ -74,11 +67,15 @@ const EquipPage: React.FC<Props> = ({ customSetId }) => {
               dangerouslySetInnerHTML={{ __html: mediaStyles }}
             />
           </Head>
-          <CustomSetHead customSet={customSet} />
+          {customSet ? (
+            <CustomSetHead customSet={customSet} />
+          ) : (
+            <EquipHead itemSlot={itemSlot} />
+          )}
           <Selector
             customSet={customSet}
-            selectedItemSlot={itemSlot}
-            showSets={false}
+            selectedItemSlot={itemSlot || null}
+            showSets={!itemSlot}
             isMobile
             isClassic={false}
           />
@@ -97,8 +94,8 @@ const EquipPage: React.FC<Props> = ({ customSetId }) => {
             <CustomSetHead customSet={customSet} />
             <Selector
               customSet={customSet}
-              selectedItemSlot={itemSlot}
-              showSets={false}
+              selectedItemSlot={itemSlot || null}
+              showSets={!itemSlot}
               isClassic
               isMobile={false}
             />

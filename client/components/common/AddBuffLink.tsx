@@ -3,7 +3,7 @@
 import * as React from 'react';
 
 import { Buff, ClassBuffSpell, Item } from 'common/type-aliases';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { AppliedBuffActionType } from 'common/types';
 import { Badge } from 'common/wrappers';
 import { blue6, blue8 } from 'common/mixins';
@@ -85,14 +85,24 @@ const AddBuffLink: React.FC<Props> = ({
   }, [isCrit, buff, spell, item, maxStacksApplied]);
 
   return (
-    <div>
-      <a onClick={onAddBuff} css={{ marginRight: 4 }}>
+    <div css={{ display: 'flex', alignItems: 'center', gap: 4, minWidth: 0 }}>
+      <a
+        onClick={onAddBuff}
+        css={{ display: 'flex', alignItems: 'center', gap: 8, minWidth: 0 }}
+        title={`${buff[key]} ${t(buff.stat)}`}
+      >
         <img
           src={getImageUrl(statIcons[buff.stat])}
           alt={t(buff.stat)}
-          css={{ marginRight: 8, width: 16 }}
+          css={{ width: 16 }}
         />
-        <span>
+        <span
+          css={{
+            textOverflow: 'ellipsis',
+            overflow: 'hidden',
+            whiteSpace: 'nowrap',
+          }}
+        >
           {buff[key]} {t(buff.stat)}
         </span>
       </a>
@@ -104,6 +114,7 @@ const AddBuffLink: React.FC<Props> = ({
             cursor: 'pointer',
             transition: 'background 0.2s ease-in-out',
             '&:hover': { background: blue6 },
+            whiteSpace: 'nowrap',
           }}
           role="button"
           onClick={onAddMax}

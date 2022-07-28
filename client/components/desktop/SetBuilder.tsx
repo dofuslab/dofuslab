@@ -12,7 +12,7 @@ import { topMarginStyle } from 'common/mixins';
 import BasicItemCard from 'components/common/BasicItemCard';
 import WeaponDamage from 'components/common/WeaponDamage';
 import ClassSpells from 'components/common/ClassSpells';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { BuildError } from 'common/types';
 import { Stat } from '__generated__/globalTypes';
 import { CustomSet, ItemSlot } from 'common/type-aliases';

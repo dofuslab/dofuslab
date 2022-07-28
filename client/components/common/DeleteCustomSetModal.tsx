@@ -5,7 +5,7 @@ import { Modal, notification } from 'antd';
 import { useMutation } from '@apollo/client';
 import { useRouter } from 'next/router';
 
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import {
   deleteCustomSet,
   deleteCustomSetVariables,

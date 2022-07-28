@@ -1,0 +1,36 @@
+{
+  "DESCRIPTION": "Description",
+  "KEYBOARD_SHORTCUT": "Raccourci clavier",
+  "KEYBOARD_SHORTCUTS": "Raccourcis clavier",
+  "KEYS": {
+    "BACKSPACE": "Retour arrière",
+    "DELETE": "Sup",
+    "ENTER": "Entrée",
+    "ESCAPE": "Echap",
+    "SPACE": "Espace"
+  },
+  "ONLY_AVAILABLE_ADVANCED_MODE": "Les raccourcis clavier sont seulement disponibles en mode avancé.",
+  "OPERATIONS": {
+    "DELETE_SELECTED_ITEM": "Supprimer l'item sélectionné",
+    "DESELECT_ITEM_SLOT": "Désélectionner le slot d'item",
+    "DESELECT_SEARCH_BAR": "Désélectionner la barre de recherche",
+    "EQUIP_NTH_ITEM_SET": "Equiper le n-ième item/panoplie",
+    "NAVIGATE_ITEM_SLOTS": "Naviguer entre les slots d'items",
+    "SELECT_ITEM_SLOT": "Sélectionner le slot d'item",
+    "SELECT_SEARCH_BAR": "Sélectionner la barre de recherche",
+    "TOGGLE_ITEM_SET_SWITCH": "Basculer entre item et panoplie"
+  },
+  "SHORTCUTS": "Raccourcis",
+  "SLOTS": {
+    "AMULET": "Amulette",
+    "BELT": "Ceinture",
+    "BOOTS": "Bottes",
+    "CLOAK": "Capes",
+    "DOFUS": "Dofus",
+    "HAT": "Chapeau",
+    "PET": "Familier",
+    "RING": "Anneau",
+    "SHIELD": "Bouclier",
+    "WEAPON": "Arme"
+  }
+}

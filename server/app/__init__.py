@@ -82,13 +82,6 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale():
-    # if a user is logged in, use the locale from the user settings
-    if current_user.is_authenticated:
-        user = current_user._get_current_object()
-        return user.settings.locale
-    locale = session.get("locale")
-    if locale:
-        return locale
     return request.accept_languages.best_match(supported_languages)
 
 

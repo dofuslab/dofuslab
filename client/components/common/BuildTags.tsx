@@ -29,7 +29,7 @@ import {
   removeTagFromCustomSetVariables,
 } from 'graphql/mutations/__generated__/removeTagFromCustomSet';
 import removeTagFromCustomSetMutation from 'graphql/mutations/removeTagFromCustomSet.graphql';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { smallInputFontSize } from 'common/mixins';
 
 interface Props {
@@ -128,7 +128,7 @@ const BuildTags: React.FC<Props> = ({
           ? tagAssociations[tagAssociations.length - 1].id
           : undefined
       }
-      size={isMobile ? 'middle' : 'small'}
+      size={isMobile ? 'large' : 'small'}
       onSelect={async (selectedValue: LabeledValue) => {
         const { data: addMutateData } = await addMutate({
           variables: { customSetTagId: selectedValue.value, customSetId },

@@ -10,22 +10,16 @@ import {
   buildListVariables,
 } from 'graphql/queries/__generated__/buildList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { LoadingOutlined } from '@ant-design/icons';
-import { useTranslation } from 'i18n';
-import { itemCardStyle, selected, inputFontSize } from 'common/mixins';
+import { useTranslation } from 'next-i18next';
+import { inputFontSize } from 'common/mixins';
 import Link from 'next/link';
-import {
-  CardTitleWithLevel,
-  BrokenImagePlaceholder,
-  CardSkeleton,
-} from 'common/wrappers';
+import { CardSkeleton } from 'common/wrappers';
 import { useRouter } from 'next/router';
-import Card from 'components/common/Card';
 import {
   getImageUrl,
   navigateToNewCustomSet,
-  getFaceImageUrl,
   antdSelectFilterOption,
 } from 'common/utils';
 import { createCustomSet } from 'graphql/mutations/__generated__/createCustomSet';
@@ -39,12 +33,13 @@ import {
 } from 'graphql/queries/__generated__/myCustomSets';
 import myCustomSetsQuery from 'graphql/queries/myCustomSets.graphql';
 import { Input, Select, Tabs, Button } from 'antd';
-import { DEBOUNCE_INTERVAL, mq } from 'common/constants';
+import { BUILD_LIST_PAGE_SIZE, DEBOUNCE_INTERVAL, mq } from 'common/constants';
 import { useDebounceCallback } from '@react-hook/debounce';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
 import customSetTagsQuery from 'graphql/queries/customSetTags.graphql';
 import DeleteCustomSetModal from './DeleteCustomSetModal';
 import ClassSelect from './ClassSelect';
+import BuildCard from './BuildCard';
 
 const THRESHOLD = 600;
 const PAGE_SIZE = 20;
@@ -56,6 +51,7 @@ interface Props {
   onClose?: () => void;
   isEditable: boolean;
   getScrollParent?: () => HTMLElement | null;
+  isMobile: boolean;
 }
 
 const BuildList: React.FC<Props> = ({
@@ -63,8 +59,9 @@ const BuildList: React.FC<Props> = ({
   onClose,
   isEditable,
   getScrollParent,
+  isMobile,
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
 
   const [mutate, { loading: createLoading }] = useMutation<createCustomSet>(
     createCustomSetMutation,
@@ -114,7 +111,7 @@ const BuildList: React.FC<Props> = ({
   } = useQuery<buildList, buildListVariables>(buildListQuery, {
     variables: {
       username,
-      first: PAGE_SIZE,
+      first: BUILD_LIST_PAGE_SIZE,
       filters: { search, defaultClassId: dofusClassId, tagIds },
     },
   });
@@ -147,17 +144,14 @@ const BuildList: React.FC<Props> = ({
       onChange={(value: string) => {
         setDofusClassId(value);
       }}
-      size="middle"
+      size={isMobile ? 'large' : 'middle'}
       allowClear
     />
   );
 
   const theme = useTheme();
 
-  const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
-
   const router = useRouter();
-  const { customSetId } = router.query;
 
   const onCreate = React.useCallback(async () => {
     const { data: resultData } = await mutate({
@@ -205,7 +199,7 @@ const BuildList: React.FC<Props> = ({
     if (resultData?.createCustomSet?.customSet) {
       navigateToNewCustomSet(router, resultData.createCustomSet.customSet.id);
     }
-  }, [customSetId, mutate, router, userBuilds, client, onClose]);
+  }, [mutate, router, userBuilds, client, onClose]);
 
   const getCustomSetPathname = () => {
     return isEditable ? '/build' : '/view';
@@ -246,6 +240,7 @@ const BuildList: React.FC<Props> = ({
                   onClick={onCreate}
                   disabled={queryLoading || createLoading}
                   css={{ fontSize: '0.75rem', marginRight: 16 }}
+                  size={isMobile ? 'large' : 'middle'}
                 >
                   <span css={{ marginRight: 12 }}>
                     {createLoading ? (
@@ -262,7 +257,10 @@ const BuildList: React.FC<Props> = ({
                   flex: 1,
                   ...inputFontSize,
                   '.ant-input': inputFontSize,
-                  height: 32,
+                  height: 40,
+                  [mq[1]]: {
+                    height: 32,
+                  },
                 }}
                 onChange={onSearch}
                 placeholder={t('SEARCH')}
@@ -270,6 +268,7 @@ const BuildList: React.FC<Props> = ({
                   // prevents triggering SetBuilderKeyboardShortcuts
                   e.nativeEvent.stopPropagation();
                 }}
+                size={isMobile ? 'large' : 'middle'}
               />
             </div>
             {classSelect}
@@ -296,6 +295,7 @@ const BuildList: React.FC<Props> = ({
                   // prevents triggering SetBuilderKeyboardShortcuts
                   e.nativeEvent.stopPropagation();
                 }}
+                size={isMobile ? 'large' : undefined}
               >
                 {[...tagsData.customSetTags]
                   .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
@@ -361,153 +361,14 @@ const BuildList: React.FC<Props> = ({
           />
         )}
         {userBuilds?.userByName?.customSets.edges.map(({ node }) => (
-          <Link
-            href={{
-              pathname: getCustomSetPathname(),
-              query: { customSetId: node.id },
-            }}
-            as={`${getCustomSetPathname()}/${node.id}/`}
-            key={node.id}
-          >
-            <a key={node.id}>
-              <Card
-                hoverable
-                title={
-                  <CardTitleWithLevel
-                    title={node.name || t('UNTITLED')}
-                    level={node.level}
-                    afterLevel={
-                      <div css={{ display: 'flex', alignItems: 'center' }}>
-                        {[...node.tagAssociations]
-                          .sort(
-                            (a1, a2) =>
-                              new Date(a1.associationDate).getTime() -
-                              new Date(a2.associationDate).getTime(),
-                          )
-                          .map(({ customSetTag: tag }) => {
-                            return (
-                              <img
-                                title={tag.name}
-                                key={tag.id}
-                                src={getImageUrl(tag.imageUrl)}
-                                css={{
-                                  width: 14,
-                                  height: 'auto',
-                                  marginLeft: 4,
-                                }}
-                                alt={tag.name}
-                              />
-                            );
-                          })}
-                      </div>
-                    }
-                    rightAlignedContent={
-                      isEditable && (
-                        <div
-                          css={{
-                            padding: '0px 4px 0px 8px',
-                            marginLeft: 4,
-                            opacity: 0.3,
-                            transition: '0.3s opacity ease-in-out',
-                            '&:hover': { opacity: 1 },
-                          }}
-                          onClick={(e: React.MouseEvent<HTMLDivElement>) => {
-                            e.stopPropagation();
-                            e.preventDefault();
-                            setCustomSetIdToDelete(node.id);
-                            setDeleteModalVisible(true);
-                          }}
-                        >
-                          <FontAwesomeIcon icon={faTrashAlt} />
-                        </div>
-                      )
-                    }
-                    leftImageUrl={getFaceImageUrl(
-                      node.defaultClass,
-                      node.buildGender,
-                    )}
-                    leftImageAlt={node.defaultClass?.name}
-                  />
-                }
-                size="small"
-                css={{
-                  ...itemCardStyle,
-                  marginTop: 20,
-                  [mq[1]]: {
-                    marginTop: 0,
-                  },
-                  height: '100%',
-                  ':hover': {
-                    ...(node.id === customSetId && selected(theme)),
-                  },
-                  ...(node.id === customSetId && selected(theme)),
-                  transition: 'all 0.3s ease-in-out',
-                  '&.ant-card': {
-                    background: theme.layer?.backgroundLight,
-                  },
-                }}
-              >
-                {node.equippedItems.length > 0 ? (
-                  <div
-                    css={{
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(8, 1fr)',
-                      gridAutoRows: '1fr 1fr',
-                    }}
-                  >
-                    {[...node.equippedItems]
-                      .sort(
-                        ({ slot: { order: i } }, { slot: { order: j } }) =>
-                          i - j,
-                      )
-                      .map(({ id, item }) =>
-                        brokenImages.includes(id) ? (
-                          <BrokenImagePlaceholder
-                            key={`broken-image-${id}`}
-                            css={{
-                              width: 40,
-                              height: 40,
-                              display: 'inline-flex',
-                            }}
-                          />
-                        ) : (
-                          <div
-                            key={`equipped-item-${id}`}
-                            css={{
-                              position: 'relative',
-                              '&::before': {
-                                content: "''",
-                                display: 'block',
-                                paddingTop: '100%',
-                              },
-                            }}
-                          >
-                            <img
-                              src={getImageUrl(item.imageUrl)}
-                              css={{
-                                position: 'absolute',
-                                top: 0,
-                                left: 0,
-                                right: 0,
-                                bottom: 0,
-                                width: '100%',
-                                height: '100%',
-                              }}
-                              onError={() => {
-                                setBrokenImages((prev) => [...prev, id]);
-                              }}
-                              alt={id}
-                            />
-                          </div>
-                        ),
-                      )}
-                  </div>
-                ) : (
-                  <div css={{ fontStyle: 'italic', color: theme.text?.light }}>
-                    {t('NO_ITEMS_EQUIPPED')}
-                  </div>
-                )}
-              </Card>
+          <Link href={`${getCustomSetPathname()}/${node.id}/`} key={node.id}>
+            <a>
+              <BuildCard
+                customSet={node}
+                setDeleteModalVisible={setDeleteModalVisible}
+                setCustomSetIdToDelete={setCustomSetIdToDelete}
+                isEditable={isEditable}
+              />
             </a>
           </Link>
         ))}
@@ -526,7 +387,7 @@ const BuildList: React.FC<Props> = ({
             </div>
           )}
         {queryLoading &&
-          Array(4)
+          Array(BUILD_LIST_PAGE_SIZE)
             .fill(null)
             .map((_, idx) => (
               <CardSkeleton

@@ -5,7 +5,7 @@ import path from 'path';
 import cloneDeep from 'lodash/cloneDeep';
 import merge from 'lodash/merge';
 
-const LOCALES_PATH = 'public/static/locales';
+const LOCALES_PATH = 'public/locales';
 const BASE_LOCALE = 'en';
 const DEFAULT_STRING = '__STRING_NOT_TRANSLATED__';
 

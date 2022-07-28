@@ -6,7 +6,7 @@ import { ClassNames, useTheme, Theme } from '@emotion/react';
 import { StatKey, scrolledStats, baseStats } from 'common/types';
 import { mq, DEBOUNCE_INTERVAL } from 'common/constants';
 import { Stat } from '__generated__/globalTypes';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { InputNumber, Button } from 'antd';
 
 import { inputFontSize, red6 } from 'common/mixins';
@@ -184,7 +184,7 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
     editCustomSetStatsMutation,
     {
       variables: { customSetId: customSet?.id, stats: statState },
-      refetchQueries: () => ['myCustomSets'],
+      refetchQueries: () => ['buildList'],
     },
   );
 

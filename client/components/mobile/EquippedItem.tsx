@@ -13,7 +13,7 @@ import {
   EquippedItem as EquippedItemType,
   CustomSet,
 } from 'common/type-aliases';
-import { EditableContext, getImageUrl } from 'common/utils';
+import { EditableContext, getImageUrl, slotToUrlString } from 'common/utils';
 import EquippedItemWithStats from '../common/EquippedItemWithStats';
 
 interface Props {
@@ -61,13 +61,7 @@ const EquippedItem: React.FC<Props> = ({
 
   const content = isEditable ? (
     <Link
-      href={{
-        pathname: customSet
-          ? '/equip/[itemSlotId]/[customSetId]'
-          : '/equip/[itemSlotId]/',
-        query: { itemSlotId: slot.id, customSetId: customSet?.id },
-      }}
-      as={`/equip/${slot.id}/${customSet ? `${customSet.id}/` : ''}`}
+      href={`/equip/${slotToUrlString(slot)}/${customSet ? customSet.id : ''}`}
     >
       <a>{emptyItemSlot}</a>
     </Link>

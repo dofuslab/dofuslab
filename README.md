@@ -168,6 +168,15 @@ $ make compile-translations
 
 Run `make freeze` to update requirements.txt (https://stackoverflow.com/questions/39577984/what-is-pkg-resources-0-0-0-in-output-of-pip-freeze-command)
 
+## Adding new items
+
+After all changes to the .json files inside `server/app/database/data` are made, it will be necessary to sync the database in order to include them.
+
+```bash
+$ cd server
+$ python -m oneoff.sync_item
+```
+
 </p>
 </details>
 

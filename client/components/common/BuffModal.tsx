@@ -4,33 +4,35 @@ import * as React from 'react';
 import Modal from 'antd/lib/modal/Modal';
 
 import { AppliedBuff, AppliedBuffActionType } from 'common/types';
-import { useTranslation } from 'i18n';
+import { useTranslation } from 'next-i18next';
 import { useQuery } from '@apollo/client';
 import { classes } from 'graphql/queries/__generated__/classes';
 import classesQuery from 'graphql/queries/classes.graphql';
-import { Select, Spin, Divider, Button } from 'antd';
+import { Select, Divider, Button } from 'antd';
 import {
   antdSelectFilterOption,
   CustomSetContext,
   getFaceImageUrl,
   getImageUrl,
 } from 'common/utils';
+import { CardSkeleton, EmptyState } from 'common/wrappers';
 import {
   classBuffs,
   classBuffsVariables,
   classBuffs_classById_spellVariantPairs_spells as ClassBuffSpell,
 } from 'graphql/queries/__generated__/classBuffs';
 import classBuffsQuery from 'graphql/queries/classBuffs.graphql';
-import { mq } from 'common/constants';
+import { mq, statIcons } from 'common/constants';
 import { CustomSet } from 'common/type-aliases';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '@emotion/react';
-import { getModalStyle } from 'common/mixins';
+import { getModalStyle, itemCardStyle } from 'common/mixins';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import SpellBuffCard from './SpellBuffCard';
 import ItemBuffCard from './ItemBuffCard';
+import Card from './Card';
 
 const { Option } = Select;
 
@@ -57,8 +59,9 @@ const BuffModal: React.FC<Props> = ({
   const { appliedBuffs, dispatch } = React.useContext(CustomSetContext);
   const { t } = useTranslation(['stat', 'common']);
   const { data: classData } = useQuery<classes>(classesQuery);
-  const { data: currentUserData } =
-    useQuery<CurrentUserQueryType>(currentUserQuery);
+  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
+    currentUserQuery,
+  );
 
   const [selectedClassId, setSelectedClassId] = React.useState<
     string | undefined
@@ -81,11 +84,13 @@ const BuffModal: React.FC<Props> = ({
 
   const theme = useTheme();
 
-  const flattenedSpells =
-    data?.classById?.spellVariantPairs.reduce(
-      (acc, { spells: [s1, s2] }) => [...acc, s1, s2],
-      [] as Array<ClassBuffSpell>,
-    ) ?? [];
+  const flattenedSpellsWithBuffs =
+    data?.classById?.spellVariantPairs
+      .reduce(
+        (acc, { spells: [s1, s2] }) => [...acc, s1, s2],
+        [] as Array<ClassBuffSpell>,
+      )
+      .filter((s) => !!s.spellStats.some((ss) => !!ss.buffs?.length)) ?? [];
 
   const itemsWithBuffs =
     customSet?.equippedItems
@@ -104,46 +109,66 @@ const BuffModal: React.FC<Props> = ({
       }}
     >
       {appliedBuffs.length > 0 && (
-        <Button
-          css={{ float: 'right', marginBottom: 12, marginLeft: 12 }}
-          icon={<FontAwesomeIcon icon={faRedoAlt} css={{ marginRight: 8 }} />}
-          onClick={onResetAll}
-        >
-          {t('RESET_ALL', { ns: 'common' })}
-        </Button>
-      )}
-      {appliedBuffs.map((ab) => {
-        const buffName = getBuffName(ab);
-        const buffImgSuffix = getBuffImage(ab);
-        return (
-          <div
-            key={ab.buff.id}
-            css={{ ':not(:first-of-type)': { marginTop: 4 } }}
-          >
-            <a
-              key={ab.buff.id}
-              onClick={() => {
-                dispatch({
-                  type: AppliedBuffActionType.REMOVE_BUFF,
-                  buffId: ab.buff.id,
-                });
-              }}
+        <div>
+          <div css={{ textAlign: 'right' }}>
+            <Button
+              css={{ marginBottom: 12 }}
+              icon={
+                <FontAwesomeIcon icon={faRedoAlt} css={{ marginRight: 8 }} />
+              }
+              onClick={onResetAll}
             >
-              {buffName && buffImgSuffix && (
-                <img
-                  src={getImageUrl(buffImgSuffix)}
-                  css={{ width: 24, height: 24, marginRight: 8 }}
-                  alt={buffName}
-                />
-              )}
-              {getBuffName(ab)}:{' '}
-              {ab.numStacks * (ab.buff.incrementBy || 0) +
-                ab.numCritStacks * (ab.buff.critIncrementBy || 0)}{' '}
-              {t(ab.buff.stat)}
-            </a>
+              {t('RESET_ALL', { ns: 'common' })}
+            </Button>
           </div>
-        );
-      })}
+          <div
+            css={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}
+          >
+            {appliedBuffs.map((ab) => {
+              const buffName = getBuffName(ab);
+              const buffImgSuffix = getBuffImage(ab);
+              return (
+                <Card
+                  css={itemCardStyle}
+                  key={ab.buff.id}
+                  size="small"
+                  hoverable
+                  title={
+                    <div>
+                      {buffName && buffImgSuffix && (
+                        <img
+                          src={getImageUrl(buffImgSuffix)}
+                          css={{ width: 24, height: 24, marginRight: 8 }}
+                          alt={buffName}
+                        />
+                      )}
+                      {buffName}
+                    </div>
+                  }
+                  onClick={() => {
+                    dispatch({
+                      type: AppliedBuffActionType.REMOVE_BUFF,
+                      buffId: ab.buff.id,
+                    });
+                  }}
+                >
+                  <div css={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                    <img
+                      src={getImageUrl(statIcons[ab.buff.stat])}
+                      alt={t(ab.buff.stat)}
+                      css={{ width: 16 }}
+                    />
+                    {ab.numStacks * (ab.buff.incrementBy || 0) +
+                      ab.numCritStacks * (ab.buff.critIncrementBy || 0)}{' '}
+                    {t(ab.buff.stat)}
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       {appliedBuffs.length > 0 && <Divider css={{ margin: '12px 0' }} />}
       {itemsWithBuffs.length > 0 && (
         <>
@@ -205,14 +230,28 @@ const BuffModal: React.FC<Props> = ({
           gridGap: 12,
         }}
       >
-        {loading ? (
-          <Spin css={{ marginTop: 24, gridColumn: '1 / -1' }} />
-        ) : (
-          flattenedSpells
-            .filter((s) => !!s.spellStats.some((ss) => !!ss.buffs?.length))
-            .map((s) => <SpellBuffCard key={s.id} spell={s} level={200} />)
-        )}
+        {loading
+          ? Array(4)
+              .fill(null)
+              .map((_, idx) => (
+                <CardSkeleton
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={`card-skeleton-${idx}`}
+                  css={{
+                    marginTop: 20,
+                    [mq[1]]: { marginTop: 0 },
+                    backgroundColor: theme.layer?.backgroundLight,
+                  }}
+                  numRows={2}
+                />
+              ))
+          : flattenedSpellsWithBuffs.map((s) => (
+              <SpellBuffCard key={s.id} spell={s} level={200} />
+            ))}
       </div>
+      {selectedClassId && !loading && flattenedSpellsWithBuffs.length === 0 && (
+        <EmptyState>{t('NO_BUFFS_FOUND', { ns: 'common' })}</EmptyState>
+      )}
     </Modal>
   );
 };

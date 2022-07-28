@@ -5,9 +5,8 @@ import React from 'react';
 import { Divider, List, Modal, Table } from 'antd';
 import { ColumnType } from 'antd/lib/table';
 
-import { useTranslation } from 'i18n';
+import { useTranslation, TFunction } from 'next-i18next';
 import { useTheme } from '@emotion/react';
-import { TFunction } from 'next-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 

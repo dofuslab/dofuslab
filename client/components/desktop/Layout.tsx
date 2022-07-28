@@ -22,7 +22,8 @@ import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import logoutMutation from 'graphql/mutations/logout.graphql';
 import NoSSR from 'react-no-ssr';
 import Link from 'next/link';
-import { TFunction } from 'next-i18next';
+import { TFunction, useTranslation } from 'next-i18next';
+import { LANGUAGES, langToFullName } from 'common/i18n-utils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faKey,
@@ -31,8 +32,7 @@ import {
   faWrench,
 } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
-
-import { useTranslation, LANGUAGES, langToFullName } from 'i18n';
+import Cookies from 'js-cookie';
 import {
   mq,
   DISCORD_SERVER_LINK,
@@ -105,6 +105,8 @@ function Layout({ children, showSwitch }: LayoutProps) {
     changeLocaleMutation,
   );
   const router = useRouter();
+  const [isChangingLocale, setIsChangingLocale] = React.useState(false);
+  const { pathname, asPath, query } = router;
 
   const [showLoginModal, setShowLoginModal] = React.useState(false);
   const openLoginModal = React.useCallback(() => {
@@ -158,11 +160,13 @@ function Layout({ children, showSwitch }: LayoutProps) {
 
   const changeLocaleHandler = React.useCallback(
     async (locale: string) => {
-      i18n.changeLanguage(locale);
+      setIsChangingLocale(true);
+      Cookies.set('NEXT_LOCALE', locale);
       await changeLocaleMutate({ variables: { locale } });
-      await client.resetStore();
+      await router.push({ pathname, query }, asPath, { locale });
+      window.location.reload();
     },
-    [changeLocaleMutate, i18n, client],
+    [changeLocaleMutate, router, client],
   );
 
   const [drawerVisible, setDrawerVisible] = React.useState(false);
@@ -185,6 +189,7 @@ function Layout({ children, showSwitch }: LayoutProps) {
         // prevents triggering SetBuilderKeyboardShortcuts
         e.nativeEvent.stopPropagation();
       }}
+      loading={isChangingLocale}
     >
       {LANGUAGES.map((lang) => (
         <Option key={lang} value={lang}>
@@ -387,6 +392,7 @@ function Layout({ children, showSwitch }: LayoutProps) {
                         getScrollParent={() => {
                           return drawerBody.current;
                         }}
+                        isMobile={false}
                       />
                     )}
                   </Drawer>

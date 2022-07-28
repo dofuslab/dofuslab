@@ -10,11 +10,6 @@ export default class extends Document {
       <Html lang={this.props.__NEXT_DATA__.props.initialLanguage}>
         <Head>
           <meta property="og:type" content="website" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-          />
-
           <meta property="twitter:card" content="summary_large_image" />
           <link
             rel="apple-touch-icon"
