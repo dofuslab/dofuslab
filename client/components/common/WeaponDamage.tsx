@@ -64,8 +64,6 @@ const WeaponDamage: React.FC<Props> = ({
       (equippedItem) => equippedItem.item.itemType.enName === 'Axe',
     );
 
-  const showToggle = !rangedOnly && !meleeOnly;
-
   const [showRanged, setShowRanged] = React.useState(
     getInitialRangedState(meleeOnly, rangedOnly, statsFromCustomSetWithBuffs),
   );
@@ -222,12 +220,12 @@ const WeaponDamage: React.FC<Props> = ({
         </Radio>
       </Radio.Group>
       <Divider css={{ margin: '12px 0' }} />
-      {showToggle && (
-        <DamageTypeToggle
-          setShowRanged={setShowRanged}
-          showRanged={showRanged}
-        />
-      )}
+      <DamageTypeToggle
+        setShowRanged={setShowRanged}
+        showRanged={showRanged}
+        rangedOnly={rangedOnly}
+        meleeOnly={meleeOnly}
+      />
       <div css={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
         <div css={damageHeaderStyle}>{t('NON_CRIT')}</div>
         {weaponStats.baseCritChance ? (
