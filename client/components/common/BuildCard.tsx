@@ -53,6 +53,7 @@ export default function BuildCard({
                         width: 14,
                         height: 'auto',
                         marginLeft: 4,
+                        maxHeight: 14,
                       }}
                       alt={tag.name}
                     />
