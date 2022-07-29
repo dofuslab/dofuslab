@@ -262,5 +262,16 @@
       "pt": "12 PA"
     },
     "imageUrl": "icon/12AP.svg"
+  },
+  {
+    "name": {
+      "en": "Opti",
+      "fr": "Opti",
+      "de": "Opti",
+      "es": "Opti",
+      "it": "Opti",
+      "pt": "Opti"
+    },
+    "imageUrl": "icon/Opti.svg"
   }
 ]

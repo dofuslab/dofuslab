@@ -304,7 +304,7 @@ const BuildList: React.FC<Props> = ({
                       <img
                         src={getImageUrl(tag.imageUrl)}
                         alt={tag.name}
-                        css={{ width: 16, marginRight: 8 }}
+                        css={{ width: 16, marginRight: 8, maxHeight: 16 }}
                       />
                       {tag.name}
                     </Select.Option>
