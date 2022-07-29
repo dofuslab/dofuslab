@@ -187,6 +187,7 @@ const BuildTags: React.FC<Props> = ({
                   width: 14,
                   height: 'auto',
                   marginRight: 6,
+                  maxHeight: 14,
                 }}
               />
               {tag.name}
@@ -253,6 +254,7 @@ const BuildTags: React.FC<Props> = ({
                         width: 14,
                         height: 'auto',
                         marginRight: 4,
+                        maxHeight: 14,
                       }}
                     />
                     {tag.name}
