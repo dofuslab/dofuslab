@@ -1,36 +1,36 @@
 {
-  "DESCRIPTION": "__STRING_NOT_TRANSLATED__",
-  "KEYBOARD_SHORTCUT": "__STRING_NOT_TRANSLATED__",
-  "KEYBOARD_SHORTCUTS": "__STRING_NOT_TRANSLATED__",
+  "DESCRIPTION": "Descrição",
+  "KEYBOARD_SHORTCUT": "Atalho do teclado",
+  "KEYBOARD_SHORTCUTS": "Atalhos do teclado",
   "KEYS": {
-    "BACKSPACE": "__STRING_NOT_TRANSLATED__",
-    "DELETE": "__STRING_NOT_TRANSLATED__",
-    "ENTER": "__STRING_NOT_TRANSLATED__",
-    "ESCAPE": "__STRING_NOT_TRANSLATED__",
-    "SPACE": "__STRING_NOT_TRANSLATED__"
+    "BACKSPACE": "Backspace",
+    "DELETE": "Delete",
+    "ENTER": "Enter",
+    "ESCAPE": "Esc",
+    "SPACE": "Espaço"
   },
-  "ONLY_AVAILABLE_ADVANCED_MODE": "__STRING_NOT_TRANSLATED__",
+  "ONLY_AVAILABLE_ADVANCED_MODE": "Disponível apenas no modo avançado",
   "OPERATIONS": {
-    "DELETE_SELECTED_ITEM": "__STRING_NOT_TRANSLATED__",
-    "DESELECT_ITEM_SLOT": "__STRING_NOT_TRANSLATED__",
-    "DESELECT_SEARCH_BAR": "__STRING_NOT_TRANSLATED__",
-    "EQUIP_NTH_ITEM_SET": "__STRING_NOT_TRANSLATED__",
-    "NAVIGATE_ITEM_SLOTS": "__STRING_NOT_TRANSLATED__",
-    "SELECT_ITEM_SLOT": "__STRING_NOT_TRANSLATED__",
-    "SELECT_SEARCH_BAR": "__STRING_NOT_TRANSLATED__",
-    "TOGGLE_ITEM_SET_SWITCH": "__STRING_NOT_TRANSLATED__"
+    "DELETE_SELECTED_ITEM": "Remove o item selecionado",
+    "DESELECT_ITEM_SLOT": "Desseleciona o espaço de item",
+    "DESELECT_SEARCH_BAR": "Desseleciona a barra de pesquisa",
+    "EQUIP_NTH_ITEM_SET": "Equipa o n-ésimo item/conjunto",
+    "NAVIGATE_ITEM_SLOTS": "Navega entre os espaços de itens",
+    "SELECT_ITEM_SLOT": "Seleciona o espaço de item",
+    "SELECT_SEARCH_BAR": "Seleciona a barra de pesquisa",
+    "TOGGLE_ITEM_SET_SWITCH": "Alterna entre item/conjunto"
   },
-  "SHORTCUTS": "__STRING_NOT_TRANSLATED__",
+  "SHORTCUTS": "Atalhos",
   "SLOTS": {
-    "AMULET": "__STRING_NOT_TRANSLATED__",
-    "BELT": "__STRING_NOT_TRANSLATED__",
-    "BOOTS": "__STRING_NOT_TRANSLATED__",
-    "CLOAK": "__STRING_NOT_TRANSLATED__",
-    "DOFUS": "__STRING_NOT_TRANSLATED__",
-    "HAT": "__STRING_NOT_TRANSLATED__",
-    "PET": "__STRING_NOT_TRANSLATED__",
-    "RING": "__STRING_NOT_TRANSLATED__",
-    "SHIELD": "__STRING_NOT_TRANSLATED__",
-    "WEAPON": "__STRING_NOT_TRANSLATED__"
+    "AMULET": "Amuleto",
+    "BELT": "Cinto",
+    "BOOTS": "Botas",
+    "CLOAK": "Capa",
+    "DOFUS": "Dofus",
+    "HAT": "Chapéu",
+    "PET": "Mascote",
+    "RING": "Anel",
+    "SHIELD": "Escudo",
+    "WEAPON": "Arma"
   }
 }
