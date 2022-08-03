@@ -306,7 +306,7 @@ const SelectorFilters: React.FC<Props> = ({
               flexDirection: 'row',
               height: isClassic ? 40 : 'auto',
             },
-            [mq[3]]: { marginLeft: 12, maxWidth: 600, flex: '2 1 0' },
+            [mq[3]]: { marginLeft: 12, flex: '2 1 0' },
             [mq[4]]: { marginLeft: 16 },
           }}
         >
