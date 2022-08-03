@@ -30,6 +30,15 @@ const reducer = (state: SharedFilters, action: SharedFilterAction) => {
       return { ...state, maxLevel: action.maxLevel };
     case 'STATS':
       return { ...state, stats: action.stats };
+    case 'QUICK_STATS':
+      return {
+        ...state,
+        stats: action.stats.map((s) => ({
+          stat: s,
+          minValue: 1,
+          maxValue: null,
+        })),
+      };
     case 'RESET':
       return {
         search: '',

@@ -1,3 +1,5 @@
+from json.encoder import INFINITY
+from math import inf
 import random
 from app import (
     db,
@@ -83,8 +85,9 @@ from flask import session, render_template, g
 from flask_babel import _, get_locale, refresh
 from flask_login import login_required, login_user, current_user, logout_user
 from functools import lru_cache
-from sqlalchemy import func, distinct
+from sqlalchemy import func, distinct, or_, and_
 from sqlalchemy.orm import aliased
+from sqlalchemy.sql.expression import true
 from datetime import datetime
 
 # workaround from https://github.com/graphql-python/graphene-sqlalchemy/issues/211
@@ -1368,15 +1371,21 @@ class ChangeProfilePicture(graphene.Mutation):
             return ChangeProfilePicture(user=curr_user)
 
 
+class StatFilter(graphene.InputObjectType):
+    stat = graphene.NonNull(StatEnum)
+    min_value = graphene.Int()
+    max_value = graphene.Int()
+
+
 class ItemFilters(graphene.InputObjectType):
-    stats = graphene.NonNull(graphene.List(graphene.NonNull(StatEnum)))
+    stats = graphene.NonNull(graphene.List(graphene.NonNull(StatFilter)))
     max_level = graphene.NonNull(graphene.Int)
     search = graphene.String(required=True)
     item_type_ids = graphene.NonNull(graphene.List(graphene.NonNull(graphene.UUID)))
 
 
 class SetFilters(graphene.InputObjectType):
-    stats = graphene.NonNull(graphene.List(graphene.NonNull(StatEnum)))
+    stats = graphene.NonNull(graphene.List(graphene.NonNull(StatFilter)))
     max_level = graphene.NonNull(graphene.Int)
     search = graphene.String(required=True)
 
@@ -1415,22 +1424,43 @@ class Query(graphene.ObjectType):
             search = filters.search.strip()
             if filters.stats:
                 items_query = items_query.join(ModelItemStat)
-                stat_names = set(map(lambda x: Stat(x).name, filters.stats))
                 stat_sq = (
                     db.session.query(
                         ModelItemStat.item_id,
                         func.count(ModelItemStat.uuid).label("num_stats_matched"),
                     )
                     .filter(
-                        ModelItemStat.stat.in_(stat_names),
-                        ModelItemStat.max_value > 0,
+                        or_(
+                            and_(
+                                ModelItemStat.stat == Stat(stat_filter.stat).name,
+                                or_(
+                                    ModelItemStat.max_value.between(
+                                        stat_filter.min_value
+                                        if stat_filter.min_value != None
+                                        else float(-inf),
+                                        stat_filter.max_value
+                                        if stat_filter.max_value != None
+                                        else float(inf),
+                                    ),
+                                    ModelItemStat.min_value.between(
+                                        stat_filter.min_value
+                                        if stat_filter.min_value != None
+                                        else float(-inf),
+                                        stat_filter.max_value
+                                        if stat_filter.max_value != None
+                                        else float(inf),
+                                    ),
+                                ),
+                            )
+                            for stat_filter in filters.stats
+                        )
                     )
                     .group_by(ModelItemStat.item_id)
                     .subquery()
                 )
                 items_query = items_query.join(
                     stat_sq, ModelItem.uuid == stat_sq.c.item_id
-                ).filter(stat_sq.c.num_stats_matched == len(stat_names))
+                ).filter(stat_sq.c.num_stats_matched == len(filters.stats))
             if filters.max_level != None:
                 items_query = items_query.filter(ModelItem.level <= filters.max_level)
             if filters.search:
@@ -1482,15 +1512,30 @@ class Query(graphene.ObjectType):
         set_query = set_query.join(level_sq, ModelSet.uuid == level_sq.c.set_id)
 
         if filters:
-            search = filters.search.strip()
             if filters.stats:
                 set_query = set_query.join(ModelSetBonus)
-                stat_names = set(map(lambda x: Stat(x).name, filters.stats))
                 stat_sq = (
                     db.session.query(ModelSetBonus.set_id, ModelSetBonus.stat)
+                    .filter(
+                        or_(
+                            and_(
+                                ModelSetBonus.stat == Stat(stat_filter.stat).name,
+                                ModelSetBonus.value.between(
+                                    stat_filter.min_value
+                                    if stat_filter.min_value != None
+                                    else float(-inf),
+                                    stat_filter.max_value
+                                    if stat_filter.max_value != None
+                                    else float(inf),
+                                ),
+                            )
+                            for stat_filter in filters.stats
+                        )
+                    )
                     .group_by(ModelSetBonus.set_id, ModelSetBonus.stat)
-                    .filter(ModelSetBonus.stat.in_(stat_names), ModelSetBonus.value > 0)
-                ).subquery()
+                    .subquery()
+                )
+
                 bonus_sq = (
                     db.session.query(
                         ModelSetBonus.set_id,
@@ -1500,9 +1545,10 @@ class Query(graphene.ObjectType):
                     .group_by(ModelSetBonus.set_id)
                     .subquery()
                 )
+
                 set_query = set_query.join(
                     bonus_sq, ModelSet.uuid == bonus_sq.c.set_id
-                ).filter(bonus_sq.c.num_stats_matched == len(stat_names))
+                ).filter(bonus_sq.c.num_stats_matched == len(filters.stats))
             if filters.max_level != None:
                 set_query = set_query.filter(level_sq.c.level <= filters.max_level)
             if filters.search:
@@ -1530,9 +1576,7 @@ class Query(graphene.ObjectType):
             level_sq.c.level.desc(), current_locale_translations.name.asc()
         ).all()
 
-    custom_sets = relay.ConnectionField(
-        graphene.NonNull(CustomSetConnection),
-    )
+    custom_sets = relay.ConnectionField(graphene.NonNull(CustomSetConnection),)
 
     def resolve_custom_sets(self, info, **kwargs):
         return (
@@ -1684,8 +1728,7 @@ class Query(graphene.ObjectType):
             .all()
         )
         results = sorted(
-            suggested_items,
-            key=lambda x: suggested_item_ids.index(str(x.uuid)),
+            suggested_items, key=lambda x: suggested_item_ids.index(str(x.uuid)),
         )
         return results[:num_suggestions]
 

@@ -41,7 +41,6 @@ const MageInputNumber: React.FC<Props> = ({ stat, value, dispatch, isExo }) => {
           min={-MAX}
           className={css({
             ...inputFontSize,
-            marginRight: 8,
             height: '100%',
             display: 'flex',
             alignItems: 'center',
