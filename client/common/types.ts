@@ -3,6 +3,7 @@ import {
   ItemFilters,
   WeaponEffectType,
   SpellEffectType,
+  StatFilter,
 } from '__generated__/globalTypes';
 import {
   ItemSet,
@@ -44,7 +45,8 @@ export type SetCounter = {
 export type SharedFilterAction =
   | { type: 'SEARCH'; search: string }
   | { type: 'MAX_LEVEL'; maxLevel: number }
-  | { type: 'STATS'; stats: Array<Stat> }
+  | { type: 'QUICK_STATS'; stats: Array<Stat> }
+  | { type: 'STATS'; stats: Array<StatFilter> }
   | { type: 'RESET'; maxLevel: number };
 
 export type MageAction =
