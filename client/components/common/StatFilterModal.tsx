@@ -92,7 +92,7 @@ export default function StatFilterModal({
 
   return (
     <Modal
-      title={t('FILTER_ITEMS_BY_STATS')}
+      title={t('FILTER_BY_STATS')}
       visible={visible}
       onCancel={onClose}
       okText={t('OK')}
