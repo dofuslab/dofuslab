@@ -336,7 +336,9 @@ const SelectorFilters: React.FC<Props> = ({
                   }}
                   placeholder={t('STATS_PLACEHOLDER')}
                   value={statFilters.map((statFilter) => ({
-                    label: t(statFilter.stat, { ns: 'stat' }),
+                    label: `${statFilter.minValue}+ ${t(statFilter.stat, {
+                      ns: 'stat',
+                    })}`,
                     key: statFilter.stat,
                     value: statFilter.stat,
                   }))}
@@ -399,6 +401,7 @@ const SelectorFilters: React.FC<Props> = ({
         </div>
       </div>
       <StatFilterModal
+        key={JSON.stringify(statFilters)}
         visible={isStatFilterModalVisible}
         onClose={closeStatFilterModal}
         dispatch={dispatch}

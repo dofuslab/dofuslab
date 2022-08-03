@@ -1512,15 +1512,30 @@ class Query(graphene.ObjectType):
         set_query = set_query.join(level_sq, ModelSet.uuid == level_sq.c.set_id)
 
         if filters:
-            search = filters.search.strip()
             if filters.stats:
                 set_query = set_query.join(ModelSetBonus)
-                stat_names = set(map(lambda x: Stat(x).name, filters.stats))
                 stat_sq = (
                     db.session.query(ModelSetBonus.set_id, ModelSetBonus.stat)
+                    .filter(
+                        or_(
+                            and_(
+                                ModelSetBonus.stat == Stat(stat_filter.stat).name,
+                                ModelSetBonus.value.between(
+                                    stat_filter.min_value
+                                    if stat_filter.min_value != None
+                                    else float(-inf),
+                                    stat_filter.max_value
+                                    if stat_filter.max_value != None
+                                    else float(inf),
+                                ),
+                            )
+                            for stat_filter in filters.stats
+                        )
+                    )
                     .group_by(ModelSetBonus.set_id, ModelSetBonus.stat)
-                    .filter(ModelSetBonus.stat.in_(stat_names), ModelSetBonus.value > 0)
-                ).subquery()
+                    .subquery()
+                )
+
                 bonus_sq = (
                     db.session.query(
                         ModelSetBonus.set_id,
@@ -1530,9 +1545,10 @@ class Query(graphene.ObjectType):
                     .group_by(ModelSetBonus.set_id)
                     .subquery()
                 )
+
                 set_query = set_query.join(
                     bonus_sq, ModelSet.uuid == bonus_sq.c.set_id
-                ).filter(bonus_sq.c.num_stats_matched == len(stat_names))
+                ).filter(bonus_sq.c.num_stats_matched == len(filters.stats))
             if filters.max_level != None:
                 set_query = set_query.filter(level_sq.c.level <= filters.max_level)
             if filters.search:
