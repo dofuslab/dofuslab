@@ -335,12 +335,10 @@ const SelectorFilters: React.FC<Props> = ({
                     },
                   }}
                   placeholder={t('STATS_PLACEHOLDER')}
-                  value={statFilters.map((statFilter) => ({
-                    label: `${statFilter.minValue}+ ${t(statFilter.stat, {
-                      ns: 'stat',
-                    })}`,
-                    key: statFilter.stat,
-                    value: statFilter.stat,
+                  value={statFilters.map(({ stat, minValue }) => ({
+                    label: `+${minValue} ${t(stat, { ns: 'stat' })}`,
+                    key: stat,
+                    value: stat,
                   }))}
                   onChange={onChangeStats}
                   dropdownClassName={css({
@@ -355,6 +353,7 @@ const SelectorFilters: React.FC<Props> = ({
                   size={isMobile ? 'large' : undefined}
                   showArrow
                   maxTagCount="responsive"
+                  autoFocus
                   suffixIcon={
                     <a onClick={openStatFilterModal}>
                       <NumberOutlined />
