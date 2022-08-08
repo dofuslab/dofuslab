@@ -9,23 +9,33 @@ from mlxtend.preprocessing import TransactionEncoder
 import pandas as pd
 import datetime
 
+import argparse
 
-DATE_30_DAYS_AGO = (datetime.datetime.now() - datetime.timedelta(days=30)).strftime(
-    "%Y-%m-%d"
+parser = argparse.ArgumentParser()
+
+parser.add_argument(
+    "-d",
+    "--days",
+    help="Number of days ago of builds to use (default 180)",
+    type=int,
+    default=180,
 )
 
 
-def train_suggestion_model():
+def get_relative_date(days):
+    return (datetime.datetime.now() - datetime.timedelta(days=days)).strftime(
+        "%Y-%m-%d"
+    )
+
+
+DATE_180_DAYS_AGO = get_relative_date(180)
+
+
+def train_suggestion_model(date):
     item_lists = [
         [str(uuid) for uuid in result_tuple[0]]
-        for result_tuple in db.session.query(
-            func.array_agg(ModelEquippedItem.item_id),
-        )
-        .filter(
-            ModelEquippedItem.custom_set.has(
-                ModelCustomSet.last_modified > DATE_30_DAYS_AGO
-            )
-        )
+        for result_tuple in db.session.query(func.array_agg(ModelEquippedItem.item_id),)
+        .filter(ModelEquippedItem.custom_set.has(ModelCustomSet.last_modified > date))
         .group_by(ModelEquippedItem.custom_set_id)
         .all()
     ]
@@ -71,9 +81,7 @@ def train_suggestion_model():
     )
     for k, v in lookup_table.items():
         cache.hset(
-            "suggestion_lookup_table:{}".format(new_version),
-            k,
-            json.dumps(v),
+            "suggestion_lookup_table:{}".format(new_version), k, json.dumps(v),
         )
     cache.set("suggestion_lookup_table_version", new_version)
     cache.delete("suggestion_lookup_table:{}".format(old_version))
@@ -82,4 +90,5 @@ def train_suggestion_model():
 
 
 if __name__ == "__main__":
-    train_suggestion_model()
+    args = parser.parse_args()
+    train_suggestion_model(get_relative_date(args.days))
