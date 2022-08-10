@@ -2,6 +2,7 @@ FROM node:16-alpine
 
 # RUN useradd -m -s /bin/bash dofuslab
 # Alpine specific:
+# https://wiki.alpinelinux.org/wiki/Setting_up_a_new_user
 RUN addgroup -S dofuslab && adduser -h /home/dofuslab -S dofuslab -G dofuslab
 USER dofuslab
 WORKDIR /home/dofuslab
