@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "yarn && yarn apollo-codegen && next dev",
-    "dev-docker" : "yarn && yarn apollo-codegen-docker && next dev",
+    "dev-docker" : "yarn apollo-codegen-docker && next dev",
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "next start",
     "type-check": "tsc",
