@@ -28,4 +28,4 @@ COPY --chown=dofuslab:dofuslab . .
 COPY --chown=dofuslab:dofuslab .env.docker .env
 
 # run flask on all interfaces:
-CMD python -m flask run --host=0.0.0.0
+CMD flask run --host=0.0.0.0

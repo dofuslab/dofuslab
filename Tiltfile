@@ -36,7 +36,7 @@ docker_build(
 
 dc_resource('redis', labels=["database"])
 dc_resource('postgres', labels=["database"])
-dc_resource('server', labels=["server"])
+dc_resource('server', labels=["server"], links = ["http://localhost:5000/api/graphql"])
 dc_resource('client', labels=["client"])
 
 # Run local commands
