@@ -9,29 +9,23 @@ ENV FLASK_ENV $flask_env
 RUN apt-get update
 RUN apt-get install -y libopenblas-dev python3-dev libffi-dev gcc gfortran python3-dev liblapack-dev libblis-dev
 
-# install requirements:
-RUN pip3 install --upgrade pip
-
-WORKDIR /opt/dofuslab
-COPY requirements.txt .
-
-# install from our dofuslab requirements:
-RUN pip3 install -r requirements.txt
-
 # set up user to prevent sandbox escapes:
-RUN useradd -m -s /bin/bash dofuslab
+RUN useradd -m -U -s /bin/bash dofuslab
+# https://manpages.debian.org/jessie/passwd/useradd.8.en.html
 USER dofuslab
+WORKDIR /home/dofuslab
+
+# install requirements:
+# RUN pip3 install --user --upgrade pip
+COPY --chown=dofuslab:dofuslab requirements.txt .
+# install from our dofuslab requirements:
+RUN pip3 install --user -r requirements.txt
+ENV PYTHONPATH='/home/dofuslab/.local/bin'
+ENV PATH="${PATH}:/home/dofuslab/.local/bin"
 
 # copy over server files:
-WORKDIR /home/dofuslab
-ENV PYTHONPATH='/home/dofuslab/.local/bin'
-COPY . .
-COPY .env.docker .env
+COPY --chown=dofuslab:dofuslab . .
+COPY --chown=dofuslab:dofuslab .env.docker .env
 
-# should only be run once, perhaps in a separate init image
-# RUN flask db upgrade
-# RUN python -m oneoff.database_setup
-# RUN python -m oneoff.update_image_urls
-
-# run flask on all interfaces since otherwise publishing the port won't do anything:
-CMD flask run --host=0.0.0.0
+# run flask on all interfaces:
+CMD python -m flask run --host=0.0.0.0

@@ -24,8 +24,9 @@ docker_build(
     './server',
     build_args = {'flask_env': 'development'},
     live_update = [
-        sync('./server', '/opt/dofuslab'),
-        run('cd /opt/dofuslab && pip install -r requirements.txt',
+        sync('./server/.env.docker', '/home/dofuslab/.env'),
+        sync('./server', '/home/dofuslab'),
+        run('cd /home/dofuslab && pip install -r requirements.txt',
             trigger='./requirements.txt'),
         restart_container(),
     ],
