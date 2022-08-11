@@ -28,7 +28,7 @@
       "de": "Str",
       "es": "Fo",
       "it": "Fo",
-      "pt": "Str"
+      "pt": "Força"
     },
     "imageUrl": "icon/Strength.svg"
   },
@@ -50,7 +50,7 @@
       "de": "Cha",
       "es": "Suerte",
       "it": "Cha",
-      "pt": "Cha"
+      "pt": "Sorte"
     },
     "imageUrl": "icon/Chance.svg"
   },
@@ -94,7 +94,7 @@
       "de": "Ranged",
       "es": "Distancia",
       "it": "Distanza",
-      "pt": "Ranged"
+      "pt": "Distância"
     },
     "imageUrl": "icon/Ranged.svg"
   },
@@ -105,7 +105,7 @@
       "de": "Melee",
       "es": "CaC",
       "it": "CaC",
-      "pt": "Melee"
+      "pt": "CaC"
     },
     "imageUrl": "icon/Melee.svg"
   },
@@ -138,7 +138,7 @@
       "de": "Wis",
       "es": "Sab",
       "it": "Sag",
-      "pt": "Wis"
+      "pt": "Sab"
     },
     "imageUrl": "icon/Wisdom.svg"
   },
@@ -160,7 +160,7 @@
       "de": "PB",
       "es": "Empujes",
       "it": "Da Spi",
-      "pt": "PB"
+      "pt": "Empurrão"
     },
     "imageUrl": "icon/Pushback_Damage.svg"
   },
@@ -171,7 +171,7 @@
       "de": "AP Red",
       "es": "Ret PA",
       "it": "Rid PA",
-      "pt": "AP Red"
+      "pt": "Ret PA"
     },
     "imageUrl": "icon/AP_Reduction.svg"
   },
@@ -182,7 +182,7 @@
       "de": "MP Red",
       "es": "Ret PM",
       "it": "Rid PM",
-      "pt": "MP Red"
+      "pt": "Ret PM"
     },
     "imageUrl": "icon/MP_Reduction.svg"
   },
@@ -193,7 +193,7 @@
       "de": "Heal",
       "es": "Curas",
       "it": "Cure",
-      "pt": "Heal"
+      "pt": "Curas"
     },
     "imageUrl": "icon/Heals.svg"
   },
@@ -204,7 +204,7 @@
       "de": "Summon",
       "es": "Invos",
       "it": "Evoc",
-      "pt": "Summon"
+      "pt": "Invoc"
     },
     "imageUrl": "icon/Summon.svg"
   },
@@ -248,7 +248,7 @@
       "de": "Budget",
       "es": "Barato",
       "it": "Economico",
-      "pt": "Budget"
+      "pt": "Econômico"
     },
     "imageUrl": "icon/Budget.svg"
   },
@@ -262,5 +262,16 @@
       "pt": "12 PA"
     },
     "imageUrl": "icon/12AP.svg"
+  },
+  {
+    "name": {
+      "en": "Opti",
+      "fr": "Opti",
+      "de": "Opti",
+      "es": "Opti",
+      "it": "Opti",
+      "pt": "Opti"
+    },
+    "imageUrl": "icon/Opti.svg"
   }
 ]
