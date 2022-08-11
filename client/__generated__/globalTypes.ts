@@ -160,16 +160,22 @@ export interface CustomSetStatsInput {
 }
 
 export interface ItemFilters {
-  stats: Stat[];
+  stats: StatFilter[];
   maxLevel: number;
   search: string;
   itemTypeIds: any[];
 }
 
 export interface SetFilters {
-  stats: Stat[];
+  stats: StatFilter[];
   maxLevel: number;
   search: string;
+}
+
+export interface StatFilter {
+  stat: Stat;
+  minValue?: number | null;
+  maxValue?: number | null;
 }
 
 //==============================================================
