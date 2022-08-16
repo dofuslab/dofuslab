@@ -1,5 +1,5 @@
 export const DEFAULT_LANGUAGE = 'en';
-const OTHER_LANGUAGES = ['fr', 'it', 'es'];
+const OTHER_LANGUAGES = ['fr', 'it', 'es', 'pt'];
 // const OTHER_LANGUAGES = ['fr', 'de', 'pt', 'it', 'es'] as const;
 
 export const LANGUAGES = [DEFAULT_LANGUAGE, ...OTHER_LANGUAGES] as const;
