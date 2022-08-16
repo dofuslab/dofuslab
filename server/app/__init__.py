@@ -36,7 +36,7 @@ flask_env = os.getenv("FLASK_ENV")
 reset_password_salt = "reset-password-salt"
 
 # supported_languages = ["en", "fr", "pt", "it", "de", "es"]
-supported_languages = ["en", "fr", "it", "es"]
+supported_languages = ["en", "fr", "it", "es", "pt"]
 
 origins = []
 if flask_env == "development":
@@ -57,9 +57,7 @@ elif flask_env == "production":
 
 db = SQLAlchemy(app)
 CORS(
-    app,
-    resources={r"/*": {"origins": origins}},
-    supports_credentials=True,
+    app, resources={r"/*": {"origins": origins}}, supports_credentials=True,
 )
 
 from contextlib import contextmanager
