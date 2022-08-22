@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+
+import json
+import os
 from app import session_scope
 from app.database.model_spell_translation import ModelSpellTranslation
 from app.database.model_spell_stats import ModelSpellStats
@@ -5,8 +9,6 @@ from app.database.model_item_translation import ModelItemTranslation
 from app.database.model_buff import ModelBuff
 from app.database.model_item import ModelItem
 from oneoff.enums import to_stat_enum
-import os
-import json
 
 root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

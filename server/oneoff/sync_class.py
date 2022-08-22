@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+
+import json
+import os
 from app import db
 from app import session_scope
 from app.database.model_item_translation import ModelItemTranslation
@@ -11,8 +15,6 @@ from app.database.model_buff import ModelBuff
 from oneoff.sync_spell import create_spell_stats
 import oneoff.sync_item
 import oneoff.sync_buff
-import json
-import os
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
