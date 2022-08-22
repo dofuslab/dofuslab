@@ -14,7 +14,9 @@ docker_build(
     live_update = [
         sync('./client/.env.docker', '/home/dofuslab/.env'),
         sync('./client', '/home/dofuslab'),
-        run('cd /app && yarn install', trigger=['./package.json', './yarn.lock']),
+        run('cd /home/dofuslab && yarn install', trigger=['./client/package.json', './client/yarn.lock']),
+        # we might need to be slower on this one:
+        run('cd /home/dofuslab && yarn apollo-codegen-docker', trigger=['./server/app/schema.py', './client/graphql/']),
         restart_container()
     ]
 )
@@ -27,18 +29,18 @@ docker_build(
         sync('./server/.env.docker', '/home/dofuslab/.env'),
         sync('./server', '/home/dofuslab'),
         run('cd /home/dofuslab && pip install -r requirements.txt',
-            trigger='./requirements.txt'),
+            trigger='./server/requirements.txt'),
         restart_container(),
     ],
 )
 
-# local_resource('db_setup', cmd='bash server/setup_db.sh')
 
 dc_resource('redis', labels=["database"])
 dc_resource('postgres', labels=["database"])
 dc_resource('server', labels=["server"], links = ["http://localhost:5000/api/graphql"])
 dc_resource('client', labels=["client"])
 
+local_resource("setup-db", cmd="docker compose exec server /home/dofuslab/oneoff/setup_db.sh", auto_init=False, labels=['utilities'])
 # Run local commands
 #   Local commands can be helpful for one-time tasks like installing
 #   project prerequisites. They can also manage long-lived processes
@@ -63,7 +65,6 @@ dc_resource('client', labels=["client"])
 #   More info: https://github.com/tilt-dev/tilt-extensions
 #
 load('ext://git_resource', 'git_checkout')
-
 
 # Organize logic into functions
 #   Tiltfiles are written in Starlark, a Python-inspired language, so
