@@ -15,6 +15,7 @@ docker_build(
         sync('./client/.env.docker', '/home/dofuslab/.env'),
         sync('./client', '/home/dofuslab'),
         run('cd /home/dofuslab && yarn install', trigger=['./client/package.json', './client/yarn.lock']),
+        run('cd /home/dofuslab && yarn sync-i18n', trigger='/client/public/locales/en/'),
         # we might need to be slower on this one:
         run('cd /home/dofuslab && yarn apollo-codegen-docker', trigger=['./server/app/schema.py', './client/graphql/']),
         restart_container()
@@ -30,6 +31,13 @@ docker_build(
         sync('./server', '/home/dofuslab'),
         run('cd /home/dofuslab && pip install -r requirements.txt',
             trigger='./server/requirements.txt'),
+        run('cd /home/dofuslab && flask db migrate', trigger='./server/app/database/model_*.py'),
+        run('cd /home/dofuslab && make update-translations && make compile-translations', 
+            trigger=['./server/app/translations/es/LC_MESSAGES/messages.po',
+                     './server/app/translations/fr/LC_MESSAGES/messages.po',
+                     './server/app/translations/de/LC_MESSAGES/messages.po',
+                     './server/app/translations/it/LC_MESSAGES/messages.po',
+                     './server/app/translations/pt/LC_MESSAGES/messages.po']),
         restart_container(),
     ],
 )
