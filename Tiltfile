@@ -45,10 +45,11 @@ docker_build(
 
 dc_resource('redis', labels=["database"])
 dc_resource('postgres', labels=["database"])
-dc_resource('server', labels=["server"], links = ["http://localhost:5000/api/graphql"])
-dc_resource('client', labels=["client"])
+dc_resource('server', labels=["server"], links = ["http://dev.localhost:5000/api/graphql"])
+dc_resource('client', labels=["client"], links = ["http://dev.localhost:3000/"])
 
-local_resource("setup-db", cmd="docker compose exec server /home/dofuslab/oneoff/setup_db.sh", auto_init=False, labels=['utilities'])
+local_resource("setup-db", cmd="./db/reset-db.sh", cmd_bat="cd db && reset-db.bat", auto_init=False, labels=['utilities'], trigger_mode=TRIGGER_MODE_MANUAL)
+
 # Run local commands
 #   Local commands can be helpful for one-time tasks like installing
 #   project prerequisites. They can also manage long-lived processes
