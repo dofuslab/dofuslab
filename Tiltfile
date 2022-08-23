@@ -38,6 +38,24 @@ docker_build(
                      './server/app/translations/de/LC_MESSAGES/messages.po',
                      './server/app/translations/it/LC_MESSAGES/messages.po',
                      './server/app/translations/pt/LC_MESSAGES/messages.po']),
+        # info on database live update triggers:
+        # https://discord.com/channels/644349465859325972/705459723608260649/1006971343767609404
+        # per Germy:
+        # sync_buff => buffs.json
+        # sync_class => spells.json, buffs.json
+        # sync_custom_set_tag => custom_set_tags.json
+        # sync_item => items.json, pets.json, weapons.json, mounts.json, rhineetles.json
+        # sync_item_type => item_types.json
+        # sync_set => sets.json
+        # sync_spell => spells.json
+        # run('python -m /home/dofuslab/oneoff/sync_buff', trigger='./app/database/data/buffs.json'),
+        # run('python -m /home/dofuslab/oneoff/sync_class', trigger=['./app/database/data/buffs.json', './app/database/data/spells.json']),
+        # run('python -m /home/dofuslab/oneoff/sync_custom_set_tag', trigger='./app/database/data/custom_set_tags.json'),
+        # run('python -m /home/dofuslab/oneoff/sync_item', trigger=['./app/database/data/items.json', './app/database/data/pets.json', './app/database/data/weapons.json', './app/database/data/mounts.json', './app/database/data/rhineetles.json']),
+        # run('python -m /home/dofuslab/oneoff/sync_item_type', trigger='./app/database/data/item_types.json'),
+        # run('python -m /home/dofuslab/oneoff/sync_set', trigger='./app/database/data/sets.json'),
+        # run('python -m /home/dofuslab/oneoff/sync_spell', trigger='./app/database/data/spells.json'),
+        # we don't really need to restart the container for most of these, so it might make more sense to have local_resources down below?
         restart_container(),
     ],
 )
