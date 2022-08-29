@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+# set -e
 set -x
 
 flask db upgrade

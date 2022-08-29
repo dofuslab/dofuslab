@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+
+import json
+import os
 import re
 from app import app, db
 from app.database import base
@@ -7,8 +11,6 @@ from app.database.model_set import ModelSet
 from app.database.model_item import ModelItem
 from app.database.model_spell import ModelSpell
 from app.database.model_item_slot import ModelItemSlot
-import json
-import os
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

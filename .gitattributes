@@ -1,0 +1,3 @@
+# Make sure .sh files check out with unix line endings (LF, not CRLF)
+*.sh text eol=lf
+*.py text eol=lf
