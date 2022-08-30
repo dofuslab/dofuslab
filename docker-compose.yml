@@ -16,7 +16,7 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - ./db:/docker-entrypoint-initdb.d/
+      - ./db/01-init-psql.sh:/docker-entrypoint-initdb.d/01-init-psql.sh
       - pgdata:/var/lib/postgresql/data
   redis:
     # https://hub.docker.com/_/redis
