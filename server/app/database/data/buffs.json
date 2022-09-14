@@ -715,7 +715,7 @@
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 150,
+                "incrementBy": 100,
                 "critIncrementBy": null,
                 "maxStacks": 1
               }
@@ -726,7 +726,7 @@
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 200,
+                "incrementBy": 150,
                 "critIncrementBy": null,
                 "maxStacks": 1
               }
@@ -778,6 +778,44 @@
     ],
     "Enutrof": [
       {
+        "name": "Opportuneness",
+        "levels": [
+          {
+            "level": 6,
+            "buffs": [
+              {
+                "stat": "Power",
+                "incrementBy": 50,
+                "critIncrementBy": 55,
+                "maxStacks": 1
+              }
+            ]
+          },
+          {
+            "level": 71,
+            "buffs": [
+              {
+                "stat": "Power",
+                "incrementBy": 60,
+                "critIncrementBy": 65,
+                "maxStacks": 1
+              }
+            ]
+          },
+          {
+            "level": 138,
+            "buffs": [
+              {
+                "stat": "Power",
+                "incrementBy": 75,
+                "critIncrementBy": 80,
+                "maxStacks": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
         "name": "Greed",
         "levels": [
           {
@@ -785,9 +823,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 50,
-                "critIncrementBy": 60,
-                "maxStacks": 1
+                "incrementBy": 10,
+                "critIncrementBy": 15,
+                "maxStacks": 10
               }
             ]
           },
@@ -796,9 +834,9 @@
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 100,
-                "critIncrementBy": 110,
-                "maxStacks": 1
+                "incrementBy": 25,
+                "critIncrementBy": 30,
+                "maxStacks": 10
               }
             ]
           },
@@ -807,61 +845,23 @@
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": 160,
-                "maxStacks": 1
+                "incrementBy": 40,
+                "critIncrementBy": 45,
+                "maxStacks": 10
               }
             ]
           }
         ]
       },
       {
-        "name": "Opportuneness",
+        "name": "Golden Age",
         "levels": [
           {
-            "level": 60,
+            "level": 160,
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 50,
-                "critIncrementBy": 55,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 127,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 60,
-                "critIncrementBy": 65,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 194,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 75,
-                "critIncrementBy": 80,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Fortune",
-        "levels": [
-          {
-            "level": 170,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 300,
+                "incrementBy": 200,
                 "critIncrementBy": null,
                 "maxStacks": 1
               }
@@ -877,7 +877,7 @@
             "buffs": [
               {
                 "stat": "% Final Damage",
-                "incrementBy": 15,
+                "incrementBy": 1,
                 "critIncrementBy": null,
                 "maxStacks": 1
               }
@@ -918,7 +918,7 @@
         "name": "Cut-Throat",
         "levels": [
           {
-            "level": 120,
+            "level": 100,
             "buffs": [
               {
                 "stat": "Power",
@@ -929,7 +929,7 @@
             ]
           },
           {
-            "level": 187,
+            "level": 167,
             "buffs": [
               {
                 "stat": "Power",
@@ -960,6 +960,22 @@
             "buffs": [
               {
                 "stat": "Chance",
+                "incrementBy": 80,
+                "critIncrementBy": 100,
+                "maxStacks": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Furrow",
+        "levels": [
+          {
+            "level": 150,
+            "buffs": [
+              {
+                "stat": "Intelligence",
                 "incrementBy": 80,
                 "critIncrementBy": 100,
                 "maxStacks": 2
@@ -1060,46 +1076,7 @@
         ]
       }
     ],
-    "Rogue": [
-      {
-        "name": "Last Breath",
-        "levels": [
-          {
-            "level": 60,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 70,
-                "critIncrementBy": 90,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 127,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 110,
-                "critIncrementBy": 130,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 194,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": 170,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      }
-    ],
+    "Rogue": [],
     "Masqueraider": [
       {
         "name": "Poltroon Mask",
@@ -1378,6 +1355,71 @@
     ],
     "Eliotrope": [
       {
+        "name": "Portal",
+        "levels": [
+          {
+            "level": 1,
+            "buffs": [
+              {
+                "stat": "% Spell Damage",
+                "incrementBy": 15,
+                "critIncrementBy": null,
+                "maxStacks": 4
+              }
+            ]
+          },
+          {
+            "level": 66,
+            "buffs": [
+              {
+                "stat": "% Spell Damage",
+                "incrementBy": 20,
+                "critIncrementBy": null,
+                "maxStacks": 4
+              }
+            ]
+          },
+          {
+            "level": 132,
+            "buffs": [
+              {
+                "stat": "% Spell Damage",
+                "incrementBy": 25,
+                "critIncrementBy": null,
+                "maxStacks": 4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Flexible Portal",
+        "levels": [
+          {
+            "level": 95,
+            "buffs": [
+              {
+                "stat": "% Spell Damage",
+                "incrementBy": 5,
+                "critIncrementBy": null,
+                "maxStacks": 4
+              }
+            ]
+          },
+          {
+            "level": 162,
+            "buffs": [
+              {
+                "stat": "% Spell Damage",
+                "incrementBy": 5,
+                "critIncrementBy": null,
+                "maxStacks": 4
+              }
+            ]
+          }
+        ]
+      },
+      {
         "name": "Focus",
         "levels": [
           {
@@ -1578,59 +1620,10 @@
     ],
     "Ouginak": [
       {
-        "name": "Jaw",
+        "name": "Beaten",
         "levels": [
           {
-            "level": 100,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 200,
-                "critIncrementBy": 200,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 167,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 200,
-                "critIncrementBy": 200,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Bloodhound",
-        "levels": [
-          {
-            "level": 35,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 70,
-                "critIncrementBy": 70,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 102,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 110,
-                "critIncrementBy": 110,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 169,
+            "level": 145,
             "buffs": [
               {
                 "stat": "Power",
@@ -1661,7 +1654,7 @@
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 150,
+                "incrementBy": 125,
                 "critIncrementBy": null,
                 "maxStacks": 1
               }
@@ -1672,7 +1665,7 @@
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 200,
+                "incrementBy": 150,
                 "critIncrementBy": null,
                 "maxStacks": 1
               }
@@ -1696,7 +1689,35 @@
                 "stat": "Pushback Damage",
                 "incrementBy": 40,
                 "critIncrementBy": null,
+                "maxStacks": 1
+              },
+              {
+                "stat": "Power",
+                "incrementBy": 15,
+                "critIncrementBy": null,
                 "maxStacks": 10
+              },
+              {
+                "stat": "Power",
+                "incrementBy": 80,
+                "critIncrementBy": null,
+                "maxStacks": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Doggedness",
+        "levels": [
+          {
+            "level": 195,
+            "buffs": [
+              {
+                "stat": "% Final Damage",
+                "incrementBy": 20,
+                "critIncrementBy": null,
+                "maxStacks": 1
               }
             ]
           }
