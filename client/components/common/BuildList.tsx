@@ -123,8 +123,11 @@ const BuildList: React.FC<Props> = ({
     Object.entries(obj)
       .filter(([, val]) => val !== undefined && val !== '' && val !== username)
       .reduce((result, [key, val]) => {
-        result[key] = val;
-        return result;
+        const newResult = {
+          ...result,
+          [key]: val,
+        };
+        return newResult;
       }, {} as ProfileQueryParams);
 
   const formatQueryString = () => {
@@ -151,7 +154,8 @@ const BuildList: React.FC<Props> = ({
   React.useEffect(() => {
     if (!isProfile) {
       return;
-    } else if (!didMount.current) {
+    }
+    if (!didMount.current) {
       didMount.current = true;
     } else {
       router.replace(`${username}${formatQueryString()}`);
