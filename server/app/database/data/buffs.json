@@ -877,7 +877,7 @@
             "buffs": [
               {
                 "stat": "% Final Damage",
-                "incrementBy": 1,
+                "incrementBy": 10,
                 "critIncrementBy": null,
                 "maxStacks": 1
               }
