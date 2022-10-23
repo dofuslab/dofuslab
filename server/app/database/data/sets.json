@@ -16707,7 +16707,7 @@
       "pt": "Conjunto Medóbora"
     },
     "bonuses": {
-      "2": [
+      "1": [
         {
           "stat": null,
           "value": null,
@@ -16721,7 +16721,7 @@
           }
         }
       ],
-      "3": [
+      "2": [
         {
           "stat": "Intelligence",
           "value": 30,
@@ -16750,7 +16750,7 @@
           }
         }
       ],
-      "4": [
+      "3": [
         {
           "stat": null,
           "value": null,
@@ -16784,7 +16784,7 @@
           "altStat": null
         }
       ],
-      "5": [
+      "4": [
         {
           "stat": null,
           "value": null,

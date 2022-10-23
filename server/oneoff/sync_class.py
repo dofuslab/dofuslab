@@ -83,6 +83,7 @@ def add_buffs():
         with session_scope() as db_session:
             for class_name in all_classes:
                 for spell in all_classes[class_name]:
+                    print(spell["name"])
                     spell_id = (
                         db_session.query(ModelSpellTranslation)
                         .filter_by(name=spell["name"], locale="en")
