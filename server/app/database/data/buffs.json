@@ -877,7 +877,7 @@
             "buffs": [
               {
                 "stat": "% Final Damage",
-                "incrementBy": 1,
+                "incrementBy": 10,
                 "critIncrementBy": null,
                 "maxStacks": 1
               }
@@ -1011,63 +1011,7 @@
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Zatoishwan's Wrath",
-        "levels": [
-          {
-            "level": 65,
-            "buffs": [
-              {
-                "stat": "Power",
                 "incrementBy": 100,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Damage",
-                "incrementBy": 5,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 131,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Damage",
-                "incrementBy": 10,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 198,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 200,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Damage",
-                "incrementBy": 15,
                 "critIncrementBy": null,
                 "maxStacks": 1
               }

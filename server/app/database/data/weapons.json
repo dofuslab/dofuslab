@@ -23995,7 +23995,7 @@
     },
     "itemType": "Sword",
     "level": 109,
-    "setID": "67",
+    "setID": null,
     "stats": [
       {
         "stat": "Vitality",
@@ -24169,7 +24169,7 @@
     },
     "itemType": "Dagger",
     "level": 108,
-    "setID": "68",
+    "setID": null,
     "stats": [
       {
         "stat": "Vitality",
@@ -36421,11 +36421,6 @@
           "stat": "Fire damage",
           "minStat": 8,
           "maxStat": 20
-        },
-        {
-          "stat": "MP",
-          "minStat": null,
-          "maxStat": -5
         }
       ]
     },
