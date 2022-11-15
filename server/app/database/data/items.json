@@ -133761,5 +133761,683 @@
       "customConditions": {}
     },
     "imageUrl": "item/10351.png"
+  },
+  {
+    "dofusID": "27544",
+    "name": {
+      "en": "[!] Mur de Ronces",
+      "fr": "Mur de Ronces",
+      "de": "[!] Mur de Ronces",
+      "es": "[!] Mur de Ronces",
+      "it": "[!] Mur de Ronces",
+      "pt": "[!] Mur de Ronces"
+    },
+    "itemType": "Shield",
+    "setID": "514",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Power", "minStat": 21, "maxStat": 30 },
+      { "stat": "Range", "minStat": null, "maxStat": -2 },
+      { "stat": "% Weapon Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical Resistance", "minStat": 16, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/82432.png"
+  },
+  {
+    "dofusID": "27547",
+    "name": {
+      "en": "[!] Cruauté de Belladone",
+      "fr": "Cruauté de Belladone",
+      "de": "[!] Cruauté de Belladone",
+      "es": "[!] Cruauté de Belladone",
+      "it": "[!] Cruauté de Belladone",
+      "pt": "[!] Cruauté de Belladone"
+    },
+    "itemType": "Ring",
+    "setID": "514",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Power", "minStat": 41, "maxStat": 60 },
+      { "stat": "Earth Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Fire Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Air Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Initiative", "minStat": 401, "maxStat": 500 },
+      { "stat": "Dodge", "minStat": null, "maxStat": -10 },
+      { "stat": "Critical Resistance", "minStat": 7, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9376.png"
+  },
+  {
+    "dofusID": "27548",
+    "name": {
+      "en": "[!] Amertume de Belladone",
+      "fr": "Amertume de Belladone",
+      "de": "[!] Amertume de Belladone",
+      "es": "[!] Amertume de Belladone",
+      "it": "[!] Amertume de Belladone",
+      "pt": "[!] Amertume de Belladone"
+    },
+    "itemType": "Ring",
+    "setID": "514",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Power", "minStat": 21, "maxStat": 40 },
+      { "stat": "Lock", "minStat": null, "maxStat": -10 },
+      { "stat": "Dodge", "minStat": 11, "maxStat": 15 },
+      { "stat": "AP Reduction", "minStat": 7, "maxStat": 10 },
+      { "stat": "MP Reduction", "minStat": 7, "maxStat": 10 },
+      { "stat": "Critical Resistance", "minStat": 7, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 6 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9374.png"
+  },
+  {
+    "dofusID": "27549",
+    "name": {
+      "en": "[!] Tendresse de Belladone",
+      "fr": "Tendresse de Belladone",
+      "de": "[!] Tendresse de Belladone",
+      "es": "[!] Tendresse de Belladone",
+      "it": "[!] Tendresse de Belladone",
+      "pt": "[!] Tendresse de Belladone"
+    },
+    "itemType": "Ring",
+    "setID": "514",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Power", "minStat": 21, "maxStat": 40 },
+      { "stat": "Lock", "minStat": 7, "maxStat": 10 },
+      { "stat": "Dodge", "minStat": null, "maxStat": -10 },
+      { "stat": "AP Parry", "minStat": 7, "maxStat": 10 },
+      { "stat": "MP Parry", "minStat": 7, "maxStat": 10 },
+      { "stat": "Critical Resistance", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9377.png"
+  },
+  {
+    "dofusID": "27527",
+    "name": {
+      "en": "[!] Casquette de Rakoopeur",
+      "fr": "Casquette de Rakoopeur",
+      "de": "[!] Casquette de Rakoopeur",
+      "es": "[!] Casquette de Rakoopeur",
+      "it": "[!] Casquette de Rakoopeur",
+      "pt": "[!] Casquette de Rakoopeur"
+    },
+    "itemType": "Hat",
+    "setID": "509",
+    "level": 48,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": -1 },
+      { "stat": "Earth Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Air Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/16752.png"
+  },
+  {
+    "dofusID": "27529",
+    "name": {
+      "en": "[!] Queue de Rakoopeur",
+      "fr": "Queue de Rakoopeur",
+      "de": "[!] Queue de Rakoopeur",
+      "es": "[!] Queue de Rakoopeur",
+      "it": "[!] Queue de Rakoopeur",
+      "pt": "[!] Queue de Rakoopeur"
+    },
+    "itemType": "Cloak",
+    "setID": "509",
+    "level": 50,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 40 },
+      { "stat": "Range", "minStat": null, "maxStat": -1 },
+      { "stat": "Earth Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Air Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/17566.png"
+  },
+  {
+    "dofusID": "27522",
+    "name": {
+      "en": "[!] Bottes des Rebelles",
+      "fr": "Bottes des Rebelles",
+      "de": "[!] Bottes des Rebelles",
+      "es": "[!] Bottes des Rebelles",
+      "it": "[!] Bottes des Rebelles",
+      "pt": "[!] Bottes des Rebelles"
+    },
+    "itemType": "Boots",
+    "setID": "508",
+    "level": 52,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": null, "maxStat": -10 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/11377.png"
+  },
+  {
+    "dofusID": "27523",
+    "name": {
+      "en": "[!] Cape des Rebelles",
+      "fr": "Cape des Rebelles",
+      "de": "[!] Cape des Rebelles",
+      "es": "[!] Cape des Rebelles",
+      "it": "[!] Cape des Rebelles",
+      "pt": "[!] Cape des Rebelles"
+    },
+    "itemType": "Cloak",
+    "setID": "508",
+    "level": 50,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Critical", "minStat": null, "maxStat": -9 },
+      { "stat": "Earth Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Fire Damage", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/17565.png"
+  },
+  {
+    "dofusID": "27524",
+    "name": {
+      "en": "[!] Alliance des Rebelles",
+      "fr": "Alliance des Rebelles",
+      "de": "[!] Alliance des Rebelles",
+      "es": "[!] Alliance des Rebelles",
+      "it": "[!] Alliance des Rebelles",
+      "pt": "[!] Alliance des Rebelles"
+    },
+    "itemType": "Ring",
+    "setID": "508",
+    "level": 48,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": null, "maxStat": -11 },
+      { "stat": "Earth Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "Fire Damage", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9379.png"
+  },
+  {
+    "dofusID": "27535",
+    "name": {
+      "en": "[!] Ceinture de trappeur albueran",
+      "fr": "Ceinture de trappeur albueran",
+      "de": "[!] Ceinture de trappeur albueran",
+      "es": "[!] Ceinture de trappeur albueran",
+      "it": "[!] Ceinture de trappeur albueran",
+      "pt": "[!] Ceinture de trappeur albueran"
+    },
+    "itemType": "Belt",
+    "setID": "512",
+    "level": 52,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "Dodge", "minStat": null, "maxStat": -10 },
+      { "stat": "AP Reduction", "minStat": null, "maxStat": -10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/10353.png"
+  },
+  {
+    "dofusID": "27536",
+    "name": {
+      "en": "[!] Bottes de trappeur albueran",
+      "fr": "Bottes de trappeur albueran",
+      "de": "[!] Bottes de trappeur albueran",
+      "es": "[!] Bottes de trappeur albueran",
+      "it": "[!] Bottes de trappeur albueran",
+      "pt": "[!] Bottes de trappeur albueran"
+    },
+    "itemType": "Boots",
+    "setID": "512",
+    "level": 54,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Dodge", "minStat": null, "maxStat": -10 },
+      { "stat": "AP Reduction", "minStat": null, "maxStat": -10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/11378.png"
+  },
+  {
+    "dofusID": "27537",
+    "name": {
+      "en": "[!] Bouclier Gris",
+      "fr": "Bouclier Gris",
+      "de": "[!] Bouclier Gris",
+      "es": "[!] Bouclier Gris",
+      "it": "[!] Bouclier Gris",
+      "pt": "[!] Bouclier Gris"
+    },
+    "itemType": "Shield",
+    "setID": "516",
+    "level": 188,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Power", "minStat": 21, "maxStat": 30 },
+      { "stat": "% Spell Damage", "minStat": null, "maxStat": -10 },
+      { "stat": "% Weapon Damage", "minStat": 16, "maxStat": 20 },
+      { "stat": "Lock", "minStat": 7, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/82433.png"
+  },
+  {
+    "dofusID": "27538",
+    "name": {
+      "en": "[!] Collier Gris",
+      "fr": "Collier Gris",
+      "de": "[!] Collier Gris",
+      "es": "[!] Collier Gris",
+      "it": "[!] Collier Gris",
+      "pt": "[!] Collier Gris"
+    },
+    "itemType": "Amulet",
+    "setID": "516",
+    "level": 192,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Strength", "minStat": 51, "maxStat": 70 },
+      { "stat": "Chance", "minStat": 51, "maxStat": 70 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Water Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Lock", "minStat": 7, "maxStat": 10 },
+      { "stat": "Dodge", "minStat": null, "maxStat": -10 },
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/1325.png"
+  },
+  {
+    "dofusID": "27541",
+    "name": {
+      "en": "[!] Berylbell Bells",
+      "de": "[!] Berylbell Bells",
+      "es": "[!] Berylbell Bells",
+      "it": "[!] Berylbell Bells",
+      "pt": "[!] Berylbell Bells"
+    },
+    "itemType": "Hat",
+    "setID": "513",
+    "level": 188,
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Chance", "minStat": 51, "maxStat": 70 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 6 },
+      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Prospecting", "minStat": 7, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 301, "maxStat": 400 },
+      { "stat": "Dodge", "minStat": 3, "maxStat": 5 },
+      { "stat": "Critical Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 8 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/16754.png"
+  },
+  {
+    "dofusID": "27542",
+    "name": {
+      "en": "[!] Subligar de Barbéryl",
+      "fr": "Subligar de Barbéryl",
+      "de": "[!] Subligar de Barbéryl",
+      "es": "[!] Subligar de Barbéryl",
+      "it": "[!] Subligar de Barbéryl",
+      "pt": "[!] Subligar de Barbéryl"
+    },
+    "itemType": "Belt",
+    "setID": "513",
+    "level": 190,
+    "stats": [
+      { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
+      { "stat": "Chance", "minStat": 61, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 5, "maxStat": 7 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Water Damage", "minStat": 10, "maxStat": 13 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 20 },
+      { "stat": "Dodge", "minStat": 5, "maxStat": 7 },
+      { "stat": "Critical Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/10355.png"
+  },
+  {
+    "dofusID": "27525",
+    "name": {
+      "en": "[!] Heaume Clochecuivre",
+      "fr": "Heaume Clochecuivre",
+      "de": "[!] Heaume Clochecuivre",
+      "es": "[!] Heaume Clochecuivre",
+      "it": "[!] Heaume Clochecuivre",
+      "pt": "[!] Heaume Clochecuivre"
+    },
+    "itemType": "Hat",
+    "setID": "510",
+    "level": 198,
+    "stats": [
+      { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
+      { "stat": "Strength", "minStat": 41, "maxStat": 60 },
+      { "stat": "Intelligence", "minStat": 51, "maxStat": 70 },
+      { "stat": "Agility", "minStat": 41, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Range", "minStat": null, "maxStat": -1 },
+      { "stat": "Neutral Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Fire Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Air Damage", "minStat": 5, "maxStat": 8 },
+      { "stat": "Heals", "minStat": 11, "maxStat": 14 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Initiative", "minStat": null, "maxStat": -300 },
+      { "stat": "Lock", "minStat": 5, "maxStat": 8 },
+      { "stat": "Pushback Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 7 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/16755.png"
+  },
+  {
+    "dofusID": "27526",
+    "name": {
+      "en": "[!] Anneau Clochecuivre",
+      "fr": "Anneau Clochecuivre",
+      "de": "[!] Anneau Clochecuivre",
+      "es": "[!] Anneau Clochecuivre",
+      "it": "[!] Anneau Clochecuivre",
+      "pt": "[!] Anneau Clochecuivre"
+    },
+    "itemType": "Ring",
+    "setID": "510",
+    "level": 194,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 41, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
+      { "stat": "Neutral Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Earth Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Fire Damage", "minStat": 5, "maxStat": 8 },
+      { "stat": "Air Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Heals", "minStat": 7, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 7, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": null, "maxStat": -200 },
+      { "stat": "Pushback Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9382.png"
+  },
+  {
+    "dofusID": "27511",
+    "name": {
+      "en": "[!] Chagrin de Cire",
+      "fr": "Chagrin de Cire",
+      "de": "[!] Chagrin de Cire",
+      "es": "[!] Chagrin de Cire",
+      "it": "[!] Chagrin de Cire",
+      "pt": "[!] Chagrin de Cire"
+    },
+    "itemType": "Hat",
+    "setID": "507",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 451, "maxStat": 500 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Power", "minStat": 41, "maxStat": 50 },
+      { "stat": "Earth Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Fire Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Air Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Initiative", "minStat": 301, "maxStat": 400 },
+      { "stat": "Lock", "minStat": 16, "maxStat": 20 },
+      { "stat": "Pushback Resistance", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Neutral Resistance", "minStat": 7, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/16751.png"
+  },
+  {
+    "dofusID": "27512",
+    "name": {
+      "en": "[!] Âmes Hurlantes",
+      "fr": "Âmes Hurlantes",
+      "de": "[!] Âmes Hurlantes",
+      "es": "[!] Âmes Hurlantes",
+      "it": "[!] Âmes Hurlantes",
+      "pt": "[!] Âmes Hurlantes"
+    },
+    "itemType": "Cloak",
+    "setID": "507",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 451, "maxStat": 500 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Power", "minStat": 41, "maxStat": 50 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Water Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Air Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Initiative", "minStat": 501, "maxStat": 600 },
+      { "stat": "Lock", "minStat": 11, "maxStat": 15 },
+      { "stat": "Pushback Resistance", "minStat": 21, "maxStat": 25 },
+      { "stat": "% Air Resistance", "minStat": 7, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/17564.png"
+  },
+  {
+    "dofusID": "27513",
+    "name": {
+      "en": "[!] Lourd Fardeau",
+      "fr": "Lourd Fardeau",
+      "de": "[!] Lourd Fardeau",
+      "es": "[!] Lourd Fardeau",
+      "it": "[!] Lourd Fardeau",
+      "pt": "[!] Lourd Fardeau"
+    },
+    "itemType": "Amulet",
+    "setID": "507",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 351, "maxStat": 400 },
+      { "stat": "Wisdom", "minStat": 41, "maxStat": 50 },
+      { "stat": "Power", "minStat": 41, "maxStat": 50 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Water Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Air Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 7, "maxStat": 10 },
+      { "stat": "Lock", "minStat": 16, "maxStat": 20 },
+      { "stat": "Pushback Resistance", "minStat": 16, "maxStat": 20 },
+      { "stat": "% Water Resistance", "minStat": 7, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/1323.png"
+  },
+  {
+    "dofusID": "27514",
+    "name": {
+      "en": "[!] Éternelle Poursuite",
+      "fr": "Éternelle Poursuite",
+      "de": "[!] Éternelle Poursuite",
+      "es": "[!] Éternelle Poursuite",
+      "it": "[!] Éternelle Poursuite",
+      "pt": "[!] Éternelle Poursuite"
+    },
+    "itemType": "Boots",
+    "setID": "507",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 351, "maxStat": 400 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Power", "minStat": 41, "maxStat": 50 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Earth Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Fire Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Water Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Air Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 7, "maxStat": 10 },
+      { "stat": "Lock", "minStat": 7, "maxStat": 10 },
+      { "stat": "Pushback Resistance", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Fire Resistance", "minStat": 7, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/11376.png"
+  },
+  {
+    "dofusID": "27515",
+    "name": {
+      "en": "[!] Triste Sceau",
+      "fr": "Triste Sceau",
+      "de": "[!] Triste Sceau",
+      "es": "[!] Triste Sceau",
+      "it": "[!] Triste Sceau",
+      "pt": "[!] Triste Sceau"
+    },
+    "itemType": "Ring",
+    "setID": "507",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
+      { "stat": "Power", "minStat": 31, "maxStat": 40 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Water Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Air Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 7, "maxStat": 10 },
+      { "stat": "Lock", "minStat": 5, "maxStat": 7 },
+      { "stat": "Pushback Resistance", "minStat": 7, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 7, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9378.png"
+  },
+  {
+    "dofusID": "27531",
+    "name": {
+      "en": "[!] Amulette de guerrier albueran",
+      "fr": "Amulette de guerrier albueran",
+      "de": "[!] Amulette de guerrier albueran",
+      "es": "[!] Amulette de guerrier albueran",
+      "it": "[!] Amulette de guerrier albueran",
+      "pt": "[!] Amulette de guerrier albueran"
+    },
+    "itemType": "Amulet",
+    "setID": "511",
+    "level": 54,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 20 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 20 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Lock", "minStat": null, "maxStat": -10 },
+      { "stat": "MP Reduction", "minStat": null, "maxStat": -10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/1324.png"
+  },
+  {
+    "dofusID": "27532",
+    "name": {
+      "en": "[!] Anneau de guerrier albueran",
+      "fr": "Anneau de guerrier albueran",
+      "de": "[!] Anneau de guerrier albueran",
+      "es": "[!] Anneau de guerrier albueran",
+      "it": "[!] Anneau de guerrier albueran",
+      "pt": "[!] Anneau de guerrier albueran"
+    },
+    "itemType": "Ring",
+    "setID": "511",
+    "level": 52,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Lock", "minStat": null, "maxStat": -10 },
+      { "stat": "MP Reduction", "minStat": null, "maxStat": -10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9380.png"
   }
 ]

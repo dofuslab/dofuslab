@@ -613,7 +613,7 @@
       "it": "Lancia Corrotta",
       "pt": "Lança Corrompida"
     },
-    "itemType": "Staff",
+    "itemType": "Lance",
     "level": 200,
     "setID": null,
     "stats": [
@@ -3292,7 +3292,7 @@
       "it": "Lancia Stregata",
       "pt": "Lança Bracadabra"
     },
-    "itemType": "Staff",
+    "itemType": "Lance",
     "level": 200,
     "setID": null,
     "stats": [
@@ -14949,10 +14949,10 @@
     "name": {
       "en": "Harpy Pirate Lance",
       "fr": "Bâton du Harpirate",
-      "de": "Stecken des Phantomharpiraten",
+      "de": "Phantomharpirats Wurfspeer",
       "es": "Lanza de harpirata",
-      "it": "Bastone di Fantarpione",
-      "pt": "Bastão do Arpirata"
+      "it": "Lancia di Fantarpione",
+      "pt": "Lança do Arpirata"
     },
     "itemType": "Staff",
     "level": 154,
@@ -31679,12 +31679,12 @@
   {
     "dofusID": "6442",
     "name": {
-      "en": "Aga Dou's Staff",
-      "fr": "Bâton d'Aga Dou",
-      "de": "Aga Dous Stock",
-      "es": "Bastón de Loh Doh",
-      "it": "Bastone d'Aga Dou",
-      "pt": "Bastão de Aga Duh"
+      "en": "Aga Dou's Lance",
+      "fr": "Lance d'Aga Dou",
+      "de": "Aga Dous Wurfspeer",
+      "es": "Lanza de Loh Doh",
+      "it": "Lancia di Aga Dou",
+      "pt": "Lança de Aga Duh"
     },
     "itemType": "Staff",
     "level": 81,
@@ -32994,12 +32994,12 @@
   {
     "dofusID": "6769",
     "name": {
-      "en": "Farle's Staff",
-      "fr": "Bâton de Farle",
-      "de": "Farles Stock",
-      "es": "Bastón de Farle",
-      "it": "Bastone di Farle",
-      "pt": "Bastão de Farle"
+      "en": "Farle's Pitchfork",
+      "fr": "Fourche de Farle",
+      "de": "Farles Gabel",
+      "es": "Horca de Farle",
+      "it": "Forcone di Farle",
+      "pt": "Forquilha de Farle"
     },
     "itemType": "Staff",
     "level": 76,
@@ -39822,12 +39822,12 @@
   {
     "dofusID": "2066",
     "name": {
-      "en": "Kaniger Staff",
-      "fr": "Bâton du Kanigrou",
-      "de": "Stecken des Kanigrous",
-      "es": "Bastón de kanugro",
-      "it": "Bastone del Kanigrù",
-      "pt": "Bastão do Kanigre"
+      "en": "Kaniger Trident",
+      "fr": "Trident du Kanigrou",
+      "de": "Kanigrous Dreizack",
+      "es": "Tridente de kanugro",
+      "it": "Tridente del Kanigrù",
+      "pt": "Tridente do Kanigre"
     },
     "itemType": "Staff",
     "level": 53,
@@ -49527,7 +49527,7 @@
       "it": "La Lancia dei \"110\"",
       "pt": "Cajado de Fogo do Incendiário"
     },
-    "itemType": "Staff",
+    "itemType": "Lance",
     "level": 29,
     "setID": null,
     "stats": [
@@ -59611,7 +59611,7 @@
       "it": "Partigiana di Mina Harcher",
       "pt": "Partazana de Hell Mina"
     },
-    "itemType": "Staff",
+    "itemType": "Lance",
     "level": 150,
     "setID": "501",
     "stats": [
@@ -59718,5 +59718,485 @@
     "customStats": {},
     "conditions": { "conditions": {}, "customConditions": {} },
     "imageUrl": "item/22011.png"
+  },
+  {
+    "dofusID": "27545",
+    "name": {
+      "en": "[!] Potence d'Ephedrya",
+      "fr": "Potence d'Ephedrya",
+      "de": "[!] Potence d'Ephedrya",
+      "es": "[!] Potence d'Ephedrya",
+      "it": "[!] Potence d'Ephedrya",
+      "pt": "[!] Potence d'Ephedrya"
+    },
+    "itemType": "Axe",
+    "level": 200,
+    "setID": "514",
+    "stats": [
+      { "stat": "Vitality", "minStat": 451, "maxStat": 500 },
+      { "stat": "Wisdom", "minStat": 41, "maxStat": 50 },
+      { "stat": "Power", "minStat": 61, "maxStat": 80 },
+      { "stat": "Critical", "minStat": null, "maxStat": -10 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Water Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Air Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Critical Resistance", "minStat": 21, "maxStat": 25 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 1,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        { "stat": "Neutral damage", "minStat": 68, "maxStat": 75 },
+        { "stat": "AP", "minStat": null, "maxStat": -1 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/19084.png"
+  },
+  {
+    "dofusID": "27530",
+    "name": {
+      "en": "[!] Raccooper's Billhook",
+      "de": "[!] Raccooper's Billhook",
+      "es": "[!] Raccooper's Billhook",
+      "it": "[!] Raccooper's Billhook",
+      "pt": "[!] Raccooper's Billhook"
+    },
+    "itemType": "Scythe",
+    "level": 38,
+    "setID": "509",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Strength", "minStat": 26, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": -2 },
+      { "stat": "Earth Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "Air Damage", "minStat": 3, "maxStat": 5 }
+    ],
+    "weaponStats": {
+      "apCost": 3,
+      "minRange": 1,
+      "maxRange": 2,
+      "usesPerTurn": 1,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        { "stat": "Earth damage", "minStat": 5, "maxStat": 8 },
+        { "stat": "Air damage", "minStat": 5, "maxStat": 8 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/22012.png"
+  },
+  {
+    "dofusID": "27539",
+    "name": {
+      "en": "[!] Serpe Aigrie",
+      "fr": "Serpe Aigrie",
+      "de": "[!] Serpe Aigrie",
+      "es": "[!] Serpe Aigrie",
+      "it": "[!] Serpe Aigrie",
+      "pt": "[!] Serpe Aigrie"
+    },
+    "itemType": "Scythe",
+    "level": 190,
+    "setID": "516",
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Strength", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Power", "minStat": 21, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 6 },
+      { "stat": "Earth Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Lock", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "weaponStats": {
+      "apCost": 6,
+      "minRange": 1,
+      "maxRange": 2,
+      "usesPerTurn": 1,
+      "baseCritChance": 10,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        { "stat": "Neutral damage", "minStat": 28, "maxStat": 32 },
+        { "stat": "Earth damage", "minStat": 18, "maxStat": 22 },
+        { "stat": "Water steal", "minStat": 6, "maxStat": 10 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/22013.png"
+  },
+  {
+    "dofusID": "27540",
+    "name": {
+      "en": "[!] Marteau Aigri",
+      "fr": "Marteau Aigri",
+      "de": "[!] Marteau Aigri",
+      "es": "[!] Marteau Aigri",
+      "it": "[!] Marteau Aigri",
+      "pt": "[!] Marteau Aigri"
+    },
+    "itemType": "Hammer",
+    "level": 190,
+    "setID": "516",
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Chance", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Power", "minStat": 21, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 6 },
+      { "stat": "Earth Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Lock", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "weaponStats": {
+      "apCost": 6,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 1,
+      "baseCritChance": 15,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        { "stat": "Neutral damage", "minStat": 34, "maxStat": 38 },
+        { "stat": "Water damage", "minStat": 24, "maxStat": 28 },
+        { "stat": "Earth steal", "minStat": 6, "maxStat": 10 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/7089.png"
+  },
+  {
+    "dofusID": "27543",
+    "name": {
+      "en": "[!] Tonfas de Barbéryl",
+      "fr": "Tonfas de Barbéryl",
+      "de": "[!] Tonfas de Barbéryl",
+      "es": "[!] Tonfas de Barbéryl",
+      "it": "[!] Tonfas de Barbéryl",
+      "pt": "[!] Tonfas de Barbéryl"
+    },
+    "itemType": "Dagger",
+    "level": 192,
+    "setID": "513",
+    "stats": [
+      { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
+      { "stat": "Chance", "minStat": 61, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 5, "maxStat": 7 },
+      { "stat": "Water Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Initiative", "minStat": 501, "maxStat": 600 },
+      { "stat": "Dodge", "minStat": 7, "maxStat": 10 },
+      { "stat": "Critical Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "weaponStats": {
+      "apCost": 3,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 2,
+      "baseCritChance": 15,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        { "stat": "Water damage", "minStat": 9, "maxStat": 12 },
+        { "stat": "Water steal", "minStat": 7, "maxStat": 10 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/5102.png"
+  },
+  {
+    "dofusID": "27528",
+    "name": {
+      "en": "[!] Masse Clochecuivre",
+      "fr": "Masse Clochecuivre",
+      "de": "[!] Masse Clochecuivre",
+      "es": "[!] Masse Clochecuivre",
+      "it": "[!] Masse Clochecuivre",
+      "pt": "[!] Masse Clochecuivre"
+    },
+    "itemType": "Hammer",
+    "level": 196,
+    "setID": "510",
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Strength", "minStat": 41, "maxStat": 60 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 41, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Neutral Damage", "minStat": 11, "maxStat": 14 },
+      { "stat": "Earth Damage", "minStat": 11, "maxStat": 14 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Air Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Prospecting", "minStat": 9, "maxStat": 12 },
+      { "stat": "Initiative", "minStat": null, "maxStat": -300 },
+      { "stat": "Lock", "minStat": 4, "maxStat": 7 },
+      { "stat": "Dodge", "minStat": null, "maxStat": -7 },
+      { "stat": "Pushback Damage", "minStat": 11, "maxStat": 14 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 7 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 7 }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 1,
+      "baseCritChance": 15,
+      "critBonusDamage": 4,
+      "weapon_effects": [
+        { "stat": "Neutral damage", "minStat": 15, "maxStat": 18 },
+        { "stat": "Fire damage", "minStat": 15, "maxStat": 18 },
+        { "stat": "Air damage", "minStat": 15, "maxStat": 18 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/7090.png"
+  },
+  {
+    "dofusID": "27644",
+    "name": {
+      "en": "[!] Yaularc",
+      "fr": "Yaularc",
+      "de": "[!] Yaularc",
+      "es": "[!] Yaularc",
+      "it": "[!] Yaularc",
+      "pt": "[!] Yaularc"
+    },
+    "itemType": "Bow",
+    "level": 200,
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
+      { "stat": "Strength", "minStat": 51, "maxStat": 70 },
+      { "stat": "Intelligence", "minStat": 51, "maxStat": 70 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Neutral Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Earth Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Fire Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 20 },
+      { "stat": "Lock", "minStat": null, "maxStat": -10 },
+      { "stat": "Dodge", "minStat": 7, "maxStat": 10 },
+      { "stat": "Critical Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Pushback Resistance", "minStat": null, "maxStat": -15 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "minRange": 4,
+      "maxRange": 7,
+      "usesPerTurn": 1,
+      "baseCritChance": 15,
+      "critBonusDamage": 6,
+      "weapon_effects": [
+        { "stat": "Earth damage", "minStat": 23, "maxStat": 28 },
+        { "stat": "Fire damage", "minStat": 23, "maxStat": 28 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/2092.png"
+  },
+  {
+    "dofusID": "27510",
+    "name": {
+      "en": "[!] Claymomore",
+      "fr": "Claymomore",
+      "de": "[!] Claymomore",
+      "es": "[!] Claymomore",
+      "it": "[!] Claymomore",
+      "pt": "[!] Claymomore"
+    },
+    "itemType": "Sword",
+    "level": 200,
+    "setID": "507",
+    "stats": [
+      { "stat": "Vitality", "minStat": 451, "maxStat": 500 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Power", "minStat": 41, "maxStat": 50 },
+      { "stat": "Earth Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Fire Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Air Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Lock", "minStat": 11, "maxStat": 15 },
+      { "stat": "Pushback Resistance", "minStat": 16, "maxStat": 20 },
+      { "stat": "% Neutral Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Earth Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Fire Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Water Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Air Resistance", "minStat": 2, "maxStat": 3 }
+    ],
+    "weaponStats": {
+      "apCost": 6,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 1,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        { "stat": "Earth damage", "minStat": 18, "maxStat": 22 },
+        { "stat": "Fire damage", "minStat": 18, "maxStat": 22 },
+        { "stat": "Water damage", "minStat": 18, "maxStat": 22 },
+        { "stat": "Air damage", "minStat": 18, "maxStat": 22 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/6755.png"
+  },
+  {
+    "dofusID": "27533",
+    "name": {
+      "en": "[!] Lance de guerrier albueran",
+      "fr": "Lance de guerrier albueran",
+      "de": "[!] Lance de guerrier albueran",
+      "es": "[!] Lance de guerrier albueran",
+      "it": "[!] Lance de guerrier albueran",
+      "pt": "[!] Lance de guerrier albueran"
+    },
+    "itemType": "Lance",
+    "level": 50,
+    "setID": "511",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Water Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Neutral Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 1,
+      "baseCritChance": 30,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        { "stat": "Neutral damage", "minStat": 10, "maxStat": 14 },
+        { "stat": "Water steal", "minStat": 3, "maxStat": 4 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/183001.png"
+  },
+  {
+    "dofusID": "27534",
+    "name": {
+      "en": "[!] Lance de trappeur albueran",
+      "fr": "Lance de trappeur albueran",
+      "de": "[!] Lance de trappeur albueran",
+      "es": "[!] Lance de trappeur albueran",
+      "it": "[!] Lance de trappeur albueran",
+      "pt": "[!] Lance de trappeur albueran"
+    },
+    "itemType": "Lance",
+    "level": 50,
+    "setID": "512",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 7 }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 1,
+      "baseCritChance": 30,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        {
+          "stat": "HP restored",
+          "minStat": 8,
+          "maxStat": 12
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 8,
+          "maxStat": 12
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/183002.png"
+  },
+  {
+    "dofusID": "27546",
+    "name": {
+      "en": "[!] Pilier d'Ephedrya",
+      "fr": "Pilier d'Ephedrya",
+      "de": "[!] Pilier d'Ephedrya",
+      "es": "[!] Pilier d'Ephedrya",
+      "it": "[!] Pilier d'Ephedrya",
+      "pt": "[!] Pilier d'Ephedrya"
+    },
+    "itemType": "Lance",
+    "level": 200,
+    "setID": "514",
+    "stats": [
+      { "stat": "Vitality", "minStat": 401, "maxStat": 450 },
+      { "stat": "Wisdom", "minStat": 41, "maxStat": 50 },
+      { "stat": "Power", "minStat": 71, "maxStat": 90 },
+      { "stat": "Critical", "minStat": null, "maxStat": -10 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Water Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Air Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "Critical Resistance", "minStat": 21, "maxStat": 25 }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 1,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        {
+          "stat": "Neutral damage",
+          "minStat": 58,
+          "maxStat": 65
+        },
+        {
+          "stat": "MP",
+          "minStat": null,
+          "maxStat": -1
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/183003.png"
   }
 ]
