@@ -41,6 +41,7 @@ export interface items_items_edges_node_weaponStats {
 export interface items_items_edges_node_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  enName: string;
   order: number;
 }
 
@@ -149,6 +150,7 @@ export interface items_itemSuggestions_weaponStats {
 export interface items_itemSuggestions_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  enName: string;
   order: number;
 }
 

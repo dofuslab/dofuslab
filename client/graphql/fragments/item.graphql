@@ -34,6 +34,7 @@ fragment item on Item {
     enName
     eligibleItemSlots {
       id
+      enName
       order
     }
   }

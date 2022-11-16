@@ -50,6 +50,7 @@ export interface sets_sets_edges_node_items_weaponStats {
 export interface sets_sets_edges_node_items_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  enName: string;
   order: number;
 }
 

@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { Modal, Divider, Skeleton } from 'antd';
+import { Modal, Divider, Skeleton, Alert } from 'antd';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 import { useTheme } from '@emotion/react';
@@ -27,6 +27,37 @@ interface Props {
   shouldRedirect?: boolean;
 }
 
+function checkIfItemsCanAllBeEquipped(
+  data: set | undefined,
+  itemIds: Array<string>,
+) {
+  if (!data) {
+    return true;
+  }
+
+  const equippedItemSlotIds = new Set<string>();
+
+  const selectedItems = data.setById.items.filter((item) =>
+    itemIds.includes(item.id),
+  );
+
+  let result = true;
+
+  selectedItems.forEach((item) => {
+    const slotToEquip = item.itemType.eligibleItemSlots.find(
+      (slot) => !equippedItemSlotIds.has(slot.id),
+    );
+
+    if (slotToEquip) {
+      equippedItemSlotIds.add(slotToEquip.id);
+    } else {
+      result = false;
+    }
+  });
+
+  return result;
+}
+
 const SetModal: React.FC<Props> = ({
   setId,
   setName,
@@ -43,6 +74,8 @@ const SetModal: React.FC<Props> = ({
   const { t } = useTranslation('common');
   const theme = useTheme();
   const [itemIds, setItemIds] = React.useState<Array<string>>([]);
+
+  const canAllItemsBeEquipped = checkIfItemsCanAllBeEquipped(data, itemIds);
 
   const [mutate, { loading: mutationLoading }] = useEquipItemsMutation(
     itemIds,
@@ -126,6 +159,13 @@ const SetModal: React.FC<Props> = ({
             </div>
           ))}
         </div>
+        {!canAllItemsBeEquipped && (
+          <Alert
+            css={{ marginTop: 20 }}
+            message={t('SELECTED_ITEMS_CANNOT_BE_EQUIPPED')}
+            type="error"
+          />
+        )}
         <Divider />
         <div
           css={{
@@ -168,7 +208,9 @@ const SetModal: React.FC<Props> = ({
       zIndex={1031}
       confirmLoading={mutationLoading}
       onOk={onOk}
-      okButtonProps={{ disabled: !itemIds.length || !isEditable }}
+      okButtonProps={{
+        disabled: !itemIds.length || !isEditable || !canAllItemsBeEquipped,
+      }}
       okText={
         <span css={{ fontSize: '0.75rem' }}>
           {t('EQUIP_ITEMS', { count: itemIds.length })}

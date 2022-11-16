@@ -41,6 +41,7 @@ export interface item_weaponStats {
 export interface item_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  enName: string;
   order: number;
 }
 

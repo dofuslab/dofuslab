@@ -49,6 +49,7 @@ export interface createCustomSet_createCustomSet_customSet_equippedItems_item_we
 export interface createCustomSet_createCustomSet_customSet_equippedItems_item_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  enName: string;
   order: number;
 }
 

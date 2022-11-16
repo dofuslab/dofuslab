@@ -49,6 +49,7 @@ export interface restartCustomSet_restartCustomSet_customSet_equippedItems_item_
 export interface restartCustomSet_restartCustomSet_customSet_equippedItems_item_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  enName: string;
   order: number;
 }
 
