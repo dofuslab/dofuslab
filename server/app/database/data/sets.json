@@ -29885,5 +29885,327 @@
         }
       ]
     }
+  },
+  {
+    "id": "514",
+    "name": {
+      "en": "Evils of Ephedrya",
+      "fr": "Maléfices d'Ephedrya",
+      "de": "[!] Evils of Ephedrya",
+      "es": "[!] Evils of Ephedrya",
+      "it": "[!] Evils of Ephedrya",
+      "pt": "[!] Evils of Ephedrya"
+    },
+    "bonuses": {
+      "2": [
+        { "stat": "Power", "value": 30, "altStat": null },
+        { "stat": "Critical", "value": -30, "altStat": null },
+        { "stat": "Neutral Damage", "value": -200, "altStat": null },
+        { "stat": "Earth Damage", "value": 20, "altStat": null },
+        { "stat": "Fire Damage", "value": 20, "altStat": null },
+        { "stat": "Water Damage", "value": 20, "altStat": null },
+        { "stat": "Air Damage", "value": 20, "altStat": null },
+        { "stat": "Critical Resistance", "value": 10, "altStat": null }
+      ],
+      "3": [
+        { "stat": "Power", "value": 30, "altStat": null },
+        { "stat": "Critical", "value": -30, "altStat": null },
+        { "stat": "AP", "value": 1, "altStat": null },
+        { "stat": "Neutral Damage", "value": -200, "altStat": null },
+        { "stat": "Earth Damage", "value": 20, "altStat": null },
+        { "stat": "Fire Damage", "value": 20, "altStat": null },
+        { "stat": "Water Damage", "value": 20, "altStat": null },
+        { "stat": "Air Damage", "value": 20, "altStat": null },
+        { "stat": "Critical Resistance", "value": 10, "altStat": null }
+      ]
+    }
+  },
+  {
+    "id": "507",
+    "name": {
+      "en": "Cire Momore's Curse",
+      "fr": "Malédiction de Cire Momore",
+      "de": "[!] Cire Momore's Curse",
+      "es": "[!] Cire Momore's Curse",
+      "it": "[!] Cire Momore's Curse",
+      "pt": "[!] Cire Momore's Curse"
+    },
+    "bonuses": {
+      "2": [
+        { "stat": "Power", "value": 30, "altStat": null },
+        { "stat": "Range", "value": -1, "altStat": null },
+        { "stat": "Initiative", "value": 250, "altStat": null },
+        { "stat": "Lock", "value": 5, "altStat": null },
+        { "stat": "Dodge", "value": -20, "altStat": null },
+        { "stat": "MP Parry", "value": 25, "altStat": null },
+        { "stat": "Pushback Resistance", "value": 5, "altStat": null },
+        { "stat": "% Air Resistance", "value": 3, "altStat": null },
+        { "stat": "% Earth Resistance", "value": 3, "altStat": null },
+        { "stat": "% Fire Resistance", "value": 3, "altStat": null },
+        { "stat": "% Water Resistance", "value": 3, "altStat": null },
+        { "stat": "% Air Resistance", "value": 3, "altStat": null },
+        { "stat": "Neutral Resistance", "value": 40, "altStat": null },
+        { "stat": "Earth Resistance", "value": 40, "altStat": null },
+        { "stat": "Fire Resistance", "value": 40, "altStat": null },
+        { "stat": "Water Resistance", "value": 40, "altStat": null },
+        { "stat": "Air Resistance", "value": 40, "altStat": null }
+      ],
+      "3": [
+        { "stat": "Power", "value": 100, "altStat": null },
+        { "stat": "AP", "value": 1, "altStat": null },
+        { "stat": "Range", "value": -2, "altStat": null },
+        { "stat": "Initiative", "value": 500, "altStat": null },
+        { "stat": "Lock", "value": 10, "altStat": null },
+        { "stat": "Dodge", "value": -30, "altStat": null },
+        { "stat": "MP Parry", "value": 50, "altStat": null },
+        { "stat": "Pushback Resistance", "value": 10, "altStat": null },
+        { "stat": "% Air Resistance", "value": 6, "altStat": null },
+        { "stat": "% Earth Resistance", "value": 6, "altStat": null },
+        { "stat": "% Fire Resistance", "value": 6, "altStat": null },
+        { "stat": "% Water Resistance", "value": 6, "altStat": null },
+        { "stat": "% Air Resistance", "value": 6, "altStat": null },
+        { "stat": "Neutral Resistance", "value": 75, "altStat": null },
+        { "stat": "Earth Resistance", "value": 75, "altStat": null },
+        { "stat": "Fire Resistance", "value": 75, "altStat": null },
+        { "stat": "Water Resistance", "value": 75, "altStat": null },
+        { "stat": "Air Resistance", "value": 75, "altStat": null }
+      ],
+      "4": [
+        { "stat": "Power", "value": 100, "altStat": null },
+        { "stat": "AP", "value": 1, "altStat": null },
+        { "stat": "Range", "value": -2, "altStat": null },
+        { "stat": "Initiative", "value": 500, "altStat": null },
+        { "stat": "Lock", "value": 10, "altStat": null },
+        { "stat": "Dodge", "value": -30, "altStat": null },
+        { "stat": "MP Parry", "value": 50, "altStat": null },
+        { "stat": "Pushback Resistance", "value": 10, "altStat": null },
+        { "stat": "% Air Resistance", "value": 6, "altStat": null },
+        { "stat": "% Earth Resistance", "value": 6, "altStat": null },
+        { "stat": "% Fire Resistance", "value": 6, "altStat": null },
+        { "stat": "% Water Resistance", "value": 6, "altStat": null },
+        { "stat": "% Air Resistance", "value": 6, "altStat": null },
+        { "stat": "Neutral Resistance", "value": 75, "altStat": null },
+        { "stat": "Earth Resistance", "value": 75, "altStat": null },
+        { "stat": "Fire Resistance", "value": 75, "altStat": null },
+        { "stat": "Water Resistance", "value": 75, "altStat": null },
+        { "stat": "Air Resistance", "value": 75, "altStat": null }
+      ],
+      "5": [
+        { "stat": "Power", "value": 100, "altStat": null },
+        { "stat": "AP", "value": 1, "altStat": null },
+        { "stat": "Range", "value": -2, "altStat": null },
+        { "stat": "Initiative", "value": 500, "altStat": null },
+        { "stat": "Lock", "value": 10, "altStat": null },
+        { "stat": "Dodge", "value": -30, "altStat": null },
+        { "stat": "MP Parry", "value": 50, "altStat": null },
+        { "stat": "Pushback Resistance", "value": 10, "altStat": null },
+        { "stat": "% Air Resistance", "value": 6, "altStat": null },
+        { "stat": "% Earth Resistance", "value": 6, "altStat": null },
+        { "stat": "% Fire Resistance", "value": 6, "altStat": null },
+        { "stat": "% Water Resistance", "value": 6, "altStat": null },
+        { "stat": "% Air Resistance", "value": 6, "altStat": null },
+        { "stat": "Neutral Resistance", "value": 75, "altStat": null },
+        { "stat": "Earth Resistance", "value": 75, "altStat": null },
+        { "stat": "Fire Resistance", "value": 75, "altStat": null },
+        { "stat": "Water Resistance", "value": 75, "altStat": null },
+        { "stat": "Air Resistance", "value": 75, "altStat": null }
+      ],
+      "6": [
+        { "stat": "Power", "value": 200, "altStat": null },
+        { "stat": "AP", "value": 2, "altStat": null },
+        { "stat": "Range", "value": -3, "altStat": null },
+        { "stat": "Initiative", "value": 1000, "altStat": null },
+        { "stat": "Lock", "value": 20, "altStat": null },
+        { "stat": "Dodge", "value": -60, "altStat": null },
+        { "stat": "MP Parry", "value": 100, "altStat": null },
+        { "stat": "Pushback Resistance", "value": 20, "altStat": null },
+        { "stat": "% Air Resistance", "value": 12, "altStat": null },
+        { "stat": "% Earth Resistance", "value": 12, "altStat": null },
+        { "stat": "% Fire Resistance", "value": 12, "altStat": null },
+        { "stat": "% Water Resistance", "value": 12, "altStat": null },
+        { "stat": "% Air Resistance", "value": 12, "altStat": null },
+        { "stat": "Neutral Resistance", "value": 150, "altStat": null },
+        { "stat": "Earth Resistance", "value": 150, "altStat": null },
+        { "stat": "Fire Resistance", "value": 150, "altStat": null },
+        { "stat": "Water Resistance", "value": 150, "altStat": null },
+        { "stat": "Air Resistance", "value": 150, "altStat": null }
+      ]
+    }
+  },
+  {
+    "id": "509",
+    "name": {
+      "en": "Raccooper Set",
+      "fr": "Panoplie de Rakoopeur",
+      "de": "[!] Raccooper Set",
+      "es": "[!] Raccooper Set",
+      "it": "[!] Raccooper Set",
+      "pt": "[!] Raccooper Set"
+    },
+    "bonuses": {
+      "2": [
+        { "stat": "Strength", "value": 20, "altStat": null },
+        { "stat": "Agility", "value": 20, "altStat": null },
+        { "stat": "Lock", "value": 10, "altStat": null }
+      ],
+      "3": [
+        { "stat": "Strength", "value": 20, "altStat": null },
+        { "stat": "Agility", "value": 20, "altStat": null },
+        { "stat": "AP", "value": 1, "altStat": null },
+        { "stat": "Lock", "value": 10, "altStat": null }
+      ]
+    }
+  },
+  {
+    "id": "508",
+    "name": {
+      "en": "Rebel Set",
+      "fr": "Panoplie des Rebelles",
+      "de": "[!] Rebel Set",
+      "es": "[!] Rebel Set",
+      "it": "[!] Rebel Set",
+      "pt": "[!] Rebel Set"
+    },
+    "bonuses": {
+      "2": [
+        { "stat": "Strength", "value": 20, "altStat": null },
+        { "stat": "Intelligence", "value": 20, "altStat": null },
+        { "stat": "Dodge", "value": 10, "altStat": null }
+      ],
+      "3": [
+        { "stat": "Strength", "value": 20, "altStat": null },
+        { "stat": "Intelligence", "value": 20, "altStat": null },
+        { "stat": "AP", "value": 1, "altStat": null },
+        { "stat": "Dodge", "value": 10, "altStat": null }
+      ]
+    }
+  },
+  {
+    "id": "512",
+    "name": {
+      "en": "Albueran Trapper Set",
+      "fr": "Panoplie de trappeur albueran",
+      "de": "[!] Albueran Trapper Set",
+      "es": "[!] Albueran Trapper Set",
+      "it": "[!] Albueran Trapper Set",
+      "pt": "[!] Albueran Trapper Set"
+    },
+    "bonuses": {
+      "2": [
+        { "stat": "Intelligence", "value": 20, "altStat": null },
+        { "stat": "Agility", "value": 20, "altStat": null },
+        { "stat": "Heals", "value": 10, "altStat": null }
+      ],
+      "3": [
+        { "stat": "Intelligence", "value": 20, "altStat": null },
+        { "stat": "Agility", "value": 20, "altStat": null },
+        { "stat": "AP", "value": 1, "altStat": null },
+        { "stat": "Heals", "value": 10, "altStat": null }
+      ]
+    }
+  },
+  {
+    "id": "511",
+    "name": {
+      "en": "Albueran Warrior Set",
+      "fr": "Panoplie de guerrier albueran",
+      "de": "[!] Albueran Warrior Set",
+      "es": "[!] Albueran Warrior Set",
+      "it": "[!] Albueran Warrior Set",
+      "pt": "[!] Albueran Warrior Set"
+    },
+    "bonuses": {
+      "2": [
+        { "stat": "Strength", "value": 20, "altStat": null },
+        { "stat": "Chance", "value": 20, "altStat": null },
+        { "stat": "Neutral Damage", "value": 5, "altStat": null },
+        { "stat": "Earth Damage", "value": 5, "altStat": null },
+        { "stat": "Water Damage", "value": 5, "altStat": null }
+      ],
+      "3": [
+        { "stat": "Strength", "value": 20, "altStat": null },
+        { "stat": "Chance", "value": 20, "altStat": null },
+        { "stat": "AP", "value": 1, "altStat": null },
+        { "stat": "Neutral Damage", "value": 5, "altStat": null },
+        { "stat": "Earth Damage", "value": 5, "altStat": null },
+        { "stat": "Water Damage", "value": 5, "altStat": null }
+      ]
+    }
+  },
+  {
+    "id": "516",
+    "name": {
+      "en": "Bitter-Hammer Set",
+      "fr": "Panoplie des Marteaux-Aigris",
+      "de": "[!] Bitter-Hammer Set",
+      "es": "[!] Bitter-Hammer Set",
+      "it": "[!] Bitter-Hammer Set",
+      "pt": "[!] Bitter-Hammer Set"
+    },
+    "bonuses": {
+      "2": [
+        { "stat": "Strength", "value": 40, "altStat": null },
+        { "stat": "Chance", "value": 40, "altStat": null },
+        { "stat": "Earth Damage", "value": 15, "altStat": null },
+        { "stat": "Water Damage", "value": 15, "altStat": null }
+      ],
+      "3": [
+        { "stat": "Strength", "value": 40, "altStat": null },
+        { "stat": "Chance", "value": 40, "altStat": null },
+        { "stat": "MP", "value": 1, "altStat": null },
+        { "stat": "Earth Damage", "value": 15, "altStat": null },
+        { "stat": "Water Damage", "value": 15, "altStat": null }
+      ]
+    }
+  },
+  {
+    "id": "513",
+    "name": {
+      "en": "Berylbell Set",
+      "fr": "Panoplie de Barbéryl",
+      "de": "[!] Berylbell Set",
+      "es": "[!] Berylbell Set",
+      "it": "[!] Berylbell Set",
+      "pt": "[!] Berylbell Set"
+    },
+    "bonuses": {
+      "2": [
+        { "stat": "Chance", "value": 40, "altStat": null },
+        { "stat": "Critical Damage", "value": 10, "altStat": null }
+      ],
+      "3": [
+        { "stat": "Chance", "value": 40, "altStat": null },
+        { "stat": "AP", "value": 1, "altStat": null },
+        { "stat": "Critical Damage", "value": 10, "altStat": null }
+      ]
+    }
+  },
+  {
+    "id": "510",
+    "name": {
+      "en": "Copperbeard Set",
+      "fr": "Panoplie Clochecuivre",
+      "de": "[!] Copperbeard Set",
+      "es": "[!] Copperbeard Set",
+      "it": "[!] Copperbeard Set",
+      "pt": "[!] Copperbeard Set"
+    },
+    "bonuses": {
+      "2": [
+        { "stat": "Strength", "value": 30, "altStat": null },
+        { "stat": "Intelligence", "value": 30, "altStat": null },
+        { "stat": "Agility", "value": 30, "altStat": null },
+        { "stat": "Heals", "value": 20, "altStat": null },
+        { "stat": "Pushback Damage", "value": 30, "altStat": null }
+      ],
+      "3": [
+        { "stat": "Strength", "value": 30, "altStat": null },
+        { "stat": "Intelligence", "value": 30, "altStat": null },
+        { "stat": "Agility", "value": 30, "altStat": null },
+        { "stat": "AP", "value": 1, "altStat": null },
+        { "stat": "Heals", "value": 20, "altStat": null },
+        { "stat": "Pushback Damage", "value": 30, "altStat": null }
+      ]
+    }
   }
 ]
