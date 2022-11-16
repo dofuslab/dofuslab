@@ -99749,7 +99749,7 @@
       "pt": "Espírito de Crocoburio"
     },
     "itemType": "Boots",
-    "setID": "",
+    "setID": null,
     "level": 42,
     "stats": [
       {
@@ -103062,7 +103062,7 @@
       "pt": "Força de Crocoburio"
     },
     "itemType": "Ring",
-    "setID": "",
+    "setID": null,
     "level": 40,
     "stats": [
       {
@@ -105424,7 +105424,7 @@
       "pt": "Poder de Crocoburio"
     },
     "itemType": "Belt",
-    "setID": "",
+    "setID": null,
     "level": 34,
     "stats": [
       {
