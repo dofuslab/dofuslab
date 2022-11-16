@@ -41,6 +41,7 @@ export interface currentUser_currentUser_favoriteItems_weaponStats {
 export interface currentUser_currentUser_favoriteItems_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  enName: string;
   order: number;
 }
 

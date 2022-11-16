@@ -41,6 +41,7 @@ export interface toggleFavoriteItem_toggleFavoriteItem_user_favoriteItems_weapon
 export interface toggleFavoriteItem_toggleFavoriteItem_user_favoriteItems_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  enName: string;
   order: number;
 }
 
