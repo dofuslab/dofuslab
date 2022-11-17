@@ -1658,6 +1658,24 @@
           }
         ]
       }
+    ],
+    "Forgelance": [
+      {
+        "name": "[!] Prélude au Fer",
+        "levels": [
+          {
+            "level": 135,
+            "buffs": [
+              {
+                "stat": "Power",
+                "incrementBy": 250,
+                "critIncrementBy": null,
+                "maxStacks": 1
+              }
+            ]
+          }
+        ]
+      }
     ]
   },
   "items": [
