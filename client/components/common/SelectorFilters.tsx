@@ -105,7 +105,7 @@ const SelectorFilters: React.FC<Props> = ({
   );
 
   const onChangeMaxLevel = React.useCallback(
-    (max: number | string | undefined) => {
+    (max: number | null) => {
       if (typeof max !== 'number') {
         return;
       }
@@ -274,6 +274,7 @@ const SelectorFilters: React.FC<Props> = ({
                 },
               }}
               ref={searchRef}
+              autoFocus
             />
             <InputNumber
               placeholder={t('LEVEL')}
@@ -353,7 +354,6 @@ const SelectorFilters: React.FC<Props> = ({
                   size={isMobile ? 'large' : undefined}
                   showArrow
                   maxTagCount="responsive"
-                  autoFocus
                   suffixIcon={
                     <a onClick={openStatFilterModal}>
                       <NumberOutlined />
