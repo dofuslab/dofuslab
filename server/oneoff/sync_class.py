@@ -12,6 +12,7 @@ from app.database.model_spell import ModelSpell
 from app.database.model_spell_translation import ModelSpellTranslation
 from app.database.model_spell_stats import ModelSpellStats
 from app.database.model_buff import ModelBuff
+from oneoff.update_class_list import add_class_to_classes
 from oneoff.sync_spell import create_spell_stats
 import oneoff.sync_item
 import oneoff.sync_buff
@@ -113,6 +114,7 @@ def add_buffs():
                 oneoff.sync_buff.add_item_buffs(db_session, item_id, item)
 
 
+add_class_to_classes()
 wipeSpellsAndBuffs()
 add_classes_and_spells()
 add_buffs()
