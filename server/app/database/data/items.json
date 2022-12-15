@@ -133765,12 +133765,12 @@
   {
     "dofusID": "27544",
     "name": {
-      "en": "[!] Mur de Ronces",
+      "en": "Bramble Wall",
       "fr": "Mur de Ronces",
-      "de": "[!] Mur de Ronces",
-      "es": "[!] Mur de Ronces",
-      "it": "[!] Mur de Ronces",
-      "pt": "[!] Mur de Ronces"
+      "de": "Brombimsmauer",
+      "es": "Pared de zarzas",
+      "it": "Muro di Rovi",
+      "pt": "Muro de Sarças"
     },
     "itemType": "Shield",
     "setID": "514",
@@ -133779,7 +133779,8 @@
       { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
       { "stat": "Power", "minStat": 21, "maxStat": 30 },
       { "stat": "Range", "minStat": null, "maxStat": -2 },
-      { "stat": "% Weapon Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Weapon Damage", "minStat": 16, "maxStat": 20 },
+      { "stat": "% Weapon Resistance", "minStat": null, "maxStat": -20 },
       { "stat": "Critical Resistance", "minStat": 16, "maxStat": 20 }
     ],
     "customStats": {},
@@ -133789,12 +133790,12 @@
   {
     "dofusID": "27547",
     "name": {
-      "en": "[!] Cruauté de Belladone",
+      "en": "Belladonna's Cruelty",
       "fr": "Cruauté de Belladone",
-      "de": "[!] Cruauté de Belladone",
-      "es": "[!] Cruauté de Belladone",
-      "it": "[!] Cruauté de Belladone",
-      "pt": "[!] Cruauté de Belladone"
+      "de": "Grausamkeit von Tollkirsche",
+      "es": "Crueldad de Belladona",
+      "it": "Crudeltà di Belladonna",
+      "pt": "Crueldade de Beladona"
     },
     "itemType": "Ring",
     "setID": "514",
@@ -133803,14 +133804,14 @@
       { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
       { "stat": "Power", "minStat": 41, "maxStat": 60 },
-      { "stat": "Earth Damage", "minStat": 9, "maxStat": 12 },
-      { "stat": "Fire Damage", "minStat": 9, "maxStat": 12 },
-      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
-      { "stat": "Air Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Water Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Air Damage", "minStat": 7, "maxStat": 10 },
       { "stat": "Initiative", "minStat": 401, "maxStat": 500 },
       { "stat": "Dodge", "minStat": null, "maxStat": -10 },
       { "stat": "Critical Resistance", "minStat": 7, "maxStat": 10 },
-      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 }
+      { "stat": "% Neutral Resistance", "minStat": 7, "maxStat": 10 }
     ],
     "customStats": {},
     "conditions": { "conditions": {}, "customConditions": {} },
@@ -133819,26 +133820,26 @@
   {
     "dofusID": "27548",
     "name": {
-      "en": "[!] Amertume de Belladone",
+      "en": "Belladonna's Bitterness",
       "fr": "Amertume de Belladone",
-      "de": "[!] Amertume de Belladone",
-      "es": "[!] Amertume de Belladone",
-      "it": "[!] Amertume de Belladone",
-      "pt": "[!] Amertume de Belladone"
+      "de": "Bitterkeit von Tollkirsche",
+      "es": "Amargura de Belladona",
+      "it": "Amarezza di Belladonna",
+      "pt": "Amargor de Beladona"
     },
     "itemType": "Ring",
     "setID": "514",
     "level": 200,
     "stats": [
       { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
-      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
-      { "stat": "Power", "minStat": 21, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 36, "maxStat": 45 },
+      { "stat": "Power", "minStat": 21, "maxStat": 30 },
       { "stat": "Lock", "minStat": null, "maxStat": -10 },
-      { "stat": "Dodge", "minStat": 11, "maxStat": 15 },
-      { "stat": "AP Reduction", "minStat": 7, "maxStat": 10 },
-      { "stat": "MP Reduction", "minStat": 7, "maxStat": 10 },
+      { "stat": "Dodge", "minStat": 7, "maxStat": 10 },
+      { "stat": "AP Reduction", "minStat": 16, "maxStat": 20 },
       { "stat": "Critical Resistance", "minStat": 7, "maxStat": 10 },
-      { "stat": "% Neutral Resistance", "minStat": 4, "maxStat": 6 }
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
     ],
     "customStats": {},
     "conditions": { "conditions": {}, "customConditions": {} },
@@ -133847,12 +133848,12 @@
   {
     "dofusID": "27549",
     "name": {
-      "en": "[!] Tendresse de Belladone",
+      "en": "Belladonna's Tenderness",
       "fr": "Tendresse de Belladone",
-      "de": "[!] Tendresse de Belladone",
-      "es": "[!] Tendresse de Belladone",
-      "it": "[!] Tendresse de Belladone",
-      "pt": "[!] Tendresse de Belladone"
+      "de": "Zärtlichkeit der Tollkirsche",
+      "es": "Ternura de Belladona",
+      "it": "Tenerezza di Belladonna",
+      "pt": "Ternura de Beladona"
     },
     "itemType": "Ring",
     "setID": "514",
@@ -133860,13 +133861,13 @@
     "stats": [
       { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
-      { "stat": "Power", "minStat": 21, "maxStat": 40 },
+      { "stat": "Power", "minStat": 21, "maxStat": 30 },
       { "stat": "Lock", "minStat": 7, "maxStat": 10 },
       { "stat": "Dodge", "minStat": null, "maxStat": -10 },
-      { "stat": "AP Parry", "minStat": 7, "maxStat": 10 },
-      { "stat": "MP Parry", "minStat": 7, "maxStat": 10 },
-      { "stat": "Critical Resistance", "minStat": 11, "maxStat": 15 },
-      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 }
+      { "stat": "AP Parry", "minStat": 16, "maxStat": 20 },
+      { "stat": "Critical Resistance", "minStat": 7, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
     ],
     "customStats": {},
     "conditions": { "conditions": {}, "customConditions": {} },
@@ -133875,12 +133876,12 @@
   {
     "dofusID": "27527",
     "name": {
-      "en": "[!] Casquette de Rakoopeur",
+      "en": "Raccooper Cap",
       "fr": "Casquette de Rakoopeur",
-      "de": "[!] Casquette de Rakoopeur",
-      "es": "[!] Casquette de Rakoopeur",
-      "it": "[!] Casquette de Rakoopeur",
-      "pt": "[!] Casquette de Rakoopeur"
+      "de": "Racoopers Mütze",
+      "es": "Gorra de Rakooper",
+      "it": "Copricapo di Rakooper",
+      "pt": "Boné de Rakooper"
     },
     "itemType": "Hat",
     "setID": "509",
@@ -133901,12 +133902,12 @@
   {
     "dofusID": "27529",
     "name": {
-      "en": "[!] Queue de Rakoopeur",
+      "en": "Raccooper's Tail",
       "fr": "Queue de Rakoopeur",
-      "de": "[!] Queue de Rakoopeur",
-      "es": "[!] Queue de Rakoopeur",
-      "it": "[!] Queue de Rakoopeur",
-      "pt": "[!] Queue de Rakoopeur"
+      "de": "Racoopers Schwanz",
+      "es": "Cola de Rakooper",
+      "it": "Coda di Rakooper",
+      "pt": "Rabo de Rakooper"
     },
     "itemType": "Cloak",
     "setID": "509",
@@ -133926,12 +133927,12 @@
   {
     "dofusID": "27522",
     "name": {
-      "en": "[!] Bottes des Rebelles",
+      "en": "Rebel Boots",
       "fr": "Bottes des Rebelles",
-      "de": "[!] Bottes des Rebelles",
-      "es": "[!] Bottes des Rebelles",
-      "it": "[!] Bottes des Rebelles",
-      "pt": "[!] Bottes des Rebelles"
+      "de": "Rebellenstiefel",
+      "es": "Botas de los rebeldes",
+      "it": "Stivali dei Ribelli",
+      "pt": "Botas dos Rebeldes"
     },
     "itemType": "Boots",
     "setID": "508",
@@ -133951,12 +133952,12 @@
   {
     "dofusID": "27523",
     "name": {
-      "en": "[!] Cape des Rebelles",
+      "en": "Rebel Cape",
       "fr": "Cape des Rebelles",
-      "de": "[!] Cape des Rebelles",
-      "es": "[!] Cape des Rebelles",
-      "it": "[!] Cape des Rebelles",
-      "pt": "[!] Cape des Rebelles"
+      "de": "Rebellenumhang",
+      "es": "Capa de los rebeldes",
+      "it": "Mantello dei Ribelli",
+      "pt": "Capa dos Rebeldes"
     },
     "itemType": "Cloak",
     "setID": "508",
@@ -133977,12 +133978,12 @@
   {
     "dofusID": "27524",
     "name": {
-      "en": "[!] Alliance des Rebelles",
+      "en": "Rebels' Ring",
       "fr": "Alliance des Rebelles",
-      "de": "[!] Alliance des Rebelles",
-      "es": "[!] Alliance des Rebelles",
-      "it": "[!] Alliance des Rebelles",
-      "pt": "[!] Alliance des Rebelles"
+      "de": "Rebellenring",
+      "es": "Alianza de los rebeldes",
+      "it": "Fede dei Ribelli",
+      "pt": "Aliança dos Rebeldes"
     },
     "itemType": "Ring",
     "setID": "508",
@@ -134003,12 +134004,12 @@
   {
     "dofusID": "27535",
     "name": {
-      "en": "[!] Ceinture de trappeur albueran",
+      "en": "Albueran Trapper Belt",
       "fr": "Ceinture de trappeur albueran",
-      "de": "[!] Ceinture de trappeur albueran",
-      "es": "[!] Ceinture de trappeur albueran",
-      "it": "[!] Ceinture de trappeur albueran",
-      "pt": "[!] Ceinture de trappeur albueran"
+      "de": "Albueranischer Fallenstellergürtel",
+      "es": "Cinturón de trampero albuereño",
+      "it": "Cintura di Ranger di Albuera",
+      "pt": "Cinto de Caçador Albuerano"
     },
     "itemType": "Belt",
     "setID": "512",
@@ -134029,12 +134030,12 @@
   {
     "dofusID": "27536",
     "name": {
-      "en": "[!] Bottes de trappeur albueran",
+      "en": "Albueran Trapper Boots",
       "fr": "Bottes de trappeur albueran",
-      "de": "[!] Bottes de trappeur albueran",
-      "es": "[!] Bottes de trappeur albueran",
-      "it": "[!] Bottes de trappeur albueran",
-      "pt": "[!] Bottes de trappeur albueran"
+      "de": "Albueranische Fallenstellerstiefel",
+      "es": "Botas de trampero albuereño",
+      "it": "Stivali di Ranger di Albuera",
+      "pt": "Botas de Caçador Albuerano"
     },
     "itemType": "Boots",
     "setID": "512",
@@ -134054,12 +134055,12 @@
   {
     "dofusID": "27537",
     "name": {
-      "en": "[!] Bouclier Gris",
+      "en": "Bitter-Shield",
       "fr": "Bouclier Gris",
-      "de": "[!] Bouclier Gris",
-      "es": "[!] Bouclier Gris",
-      "it": "[!] Bouclier Gris",
-      "pt": "[!] Bouclier Gris"
+      "de": "Saugrauer Schild",
+      "es": "Escudo seco",
+      "it": "Scudo Grigio",
+      "pt": "Escudo Amargo"
     },
     "itemType": "Shield",
     "setID": "516",
@@ -134078,12 +134079,12 @@
   {
     "dofusID": "27538",
     "name": {
-      "en": "[!] Collier Gris",
+      "en": "Bitter-Collar",
       "fr": "Collier Gris",
-      "de": "[!] Collier Gris",
-      "es": "[!] Collier Gris",
-      "it": "[!] Collier Gris",
-      "pt": "[!] Collier Gris"
+      "de": "Saugraue Halskette",
+      "es": "Collar seco",
+      "it": "Collana Grigia",
+      "pt": "Colar Amargo"
     },
     "itemType": "Amulet",
     "setID": "516",
@@ -134110,12 +134111,12 @@
   {
     "dofusID": "27541",
     "name": {
-      "en": "[!] Berylbell Bells",
+      "en": "Berylbell Bells",
       "fr": "Grelots de Barbéryl",
-      "de": "[!] Berylbell Bells",
-      "es": "[!] Berylbell Bells",
-      "it": "[!] Berylbell Bells",
-      "pt": "[!] Berylbell Bells"
+      "de": "Schellen von Barberyl",
+      "es": "Cascabeles de Demena",
+      "it": "Sonaglio di Barberilla",
+      "pt": "Guizos de Barberilo"
     },
     "itemType": "Hat",
     "setID": "513",
@@ -134129,7 +134130,7 @@
       { "stat": "Prospecting", "minStat": 7, "maxStat": 10 },
       { "stat": "Initiative", "minStat": 301, "maxStat": 400 },
       { "stat": "Dodge", "minStat": 3, "maxStat": 5 },
-      { "stat": "Critical Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Critical Damage", "minStat": 6, "maxStat": 8 },
       { "stat": "% Water Resistance", "minStat": 6, "maxStat": 8 },
       { "stat": "% Air Resistance", "minStat": 6, "maxStat": 8 }
     ],
@@ -134140,12 +134141,12 @@
   {
     "dofusID": "27542",
     "name": {
-      "en": "[!] Subligar de Barbéryl",
+      "en": "Berylbell's Subligar",
       "fr": "Subligar de Barbéryl",
-      "de": "[!] Subligar de Barbéryl",
-      "es": "[!] Subligar de Barbéryl",
-      "it": "[!] Subligar de Barbéryl",
-      "pt": "[!] Subligar de Barbéryl"
+      "de": "Barberyls Subligaculum",
+      "es": "Subligar de Demena",
+      "it": "Perizomar di Barberilla",
+      "pt": "Subligar de Barberila"
     },
     "itemType": "Belt",
     "setID": "513",
@@ -134154,12 +134155,12 @@
       { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
       { "stat": "Chance", "minStat": 61, "maxStat": 80 },
       { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
-      { "stat": "Critical", "minStat": 5, "maxStat": 7 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 },
       { "stat": "Range", "minStat": null, "maxStat": 1 },
-      { "stat": "Water Damage", "minStat": 10, "maxStat": 13 },
+      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
       { "stat": "Prospecting", "minStat": 16, "maxStat": 20 },
       { "stat": "Dodge", "minStat": 5, "maxStat": 7 },
-      { "stat": "Critical Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Critical Damage", "minStat": 7, "maxStat": 10 },
       { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
     ],
@@ -134170,12 +134171,12 @@
   {
     "dofusID": "27525",
     "name": {
-      "en": "[!] Heaume Clochecuivre",
+      "en": "Copperbeard Helm",
       "fr": "Heaume Clochecuivre",
-      "de": "[!] Heaume Clochecuivre",
-      "es": "[!] Heaume Clochecuivre",
-      "it": "[!] Heaume Clochecuivre",
-      "pt": "[!] Heaume Clochecuivre"
+      "de": "Glockenleder-Helm",
+      "es": "Yelmo Decobre",
+      "it": "Elmo Rametista",
+      "pt": "Elmo Sinocobre"
     },
     "itemType": "Hat",
     "setID": "510",
@@ -134206,12 +134207,12 @@
   {
     "dofusID": "27526",
     "name": {
-      "en": "[!] Anneau Clochecuivre",
+      "en": "Copperbeard Ring",
       "fr": "Anneau Clochecuivre",
-      "de": "[!] Anneau Clochecuivre",
-      "es": "[!] Anneau Clochecuivre",
-      "it": "[!] Anneau Clochecuivre",
-      "pt": "[!] Anneau Clochecuivre"
+      "de": "Glockenleder-Ring",
+      "es": "Anillo Decobre",
+      "it": "Anello Rametista",
+      "pt": "Anel Sinocobre"
     },
     "itemType": "Ring",
     "setID": "510",
@@ -134240,12 +134241,12 @@
   {
     "dofusID": "27511",
     "name": {
-      "en": "[!] Chagrin de Cire",
+      "en": "Cire's Sorrow",
       "fr": "Chagrin de Cire",
-      "de": "[!] Chagrin de Cire",
-      "es": "[!] Chagrin de Cire",
-      "it": "[!] Chagrin de Cire",
-      "pt": "[!] Chagrin de Cire"
+      "de": "Cires Kummer",
+      "es": "Aflicción de Cire",
+      "it": "Dolore di Cire",
+      "pt": "Tristeza de Cire"
     },
     "itemType": "Hat",
     "setID": "507",
@@ -134271,12 +134272,12 @@
   {
     "dofusID": "27512",
     "name": {
-      "en": "[!] Âmes Hurlantes",
+      "en": "Howling Souls",
       "fr": "Âmes Hurlantes",
-      "de": "[!] Âmes Hurlantes",
-      "es": "[!] Âmes Hurlantes",
-      "it": "[!] Âmes Hurlantes",
-      "pt": "[!] Âmes Hurlantes"
+      "de": "Schreiende Seelen",
+      "es": "Almas Chillonas",
+      "it": "Anime Urlanti",
+      "pt": "Almas Urrantes"
     },
     "itemType": "Cloak",
     "setID": "507",
@@ -134303,12 +134304,12 @@
   {
     "dofusID": "27513",
     "name": {
-      "en": "[!] Lourd Fardeau",
+      "en": "Heavy Burden",
       "fr": "Lourd Fardeau",
-      "de": "[!] Lourd Fardeau",
-      "es": "[!] Lourd Fardeau",
-      "it": "[!] Lourd Fardeau",
-      "pt": "[!] Lourd Fardeau"
+      "de": "Schwere Bürde",
+      "es": "Pesada Carga",
+      "it": "Grave Fardello",
+      "pt": "Fardo Pesado"
     },
     "itemType": "Amulet",
     "setID": "507",
@@ -134334,12 +134335,12 @@
   {
     "dofusID": "27514",
     "name": {
-      "en": "[!] Éternelle Poursuite",
+      "en": "Eternal Chase",
       "fr": "Éternelle Poursuite",
-      "de": "[!] Éternelle Poursuite",
-      "es": "[!] Éternelle Poursuite",
-      "it": "[!] Éternelle Poursuite",
-      "pt": "[!] Éternelle Poursuite"
+      "de": "Ewige Verfolgung",
+      "es": "Eterna Persecución",
+      "it": "Eterno Inseguimento",
+      "pt": "Eterna Perseguição"
     },
     "itemType": "Boots",
     "setID": "507",
@@ -134365,12 +134366,12 @@
   {
     "dofusID": "27515",
     "name": {
-      "en": "[!] Triste Sceau",
+      "en": "Signet of Fate",
       "fr": "Triste Sceau",
-      "de": "[!] Triste Sceau",
-      "es": "[!] Triste Sceau",
-      "it": "[!] Triste Sceau",
-      "pt": "[!] Triste Sceau"
+      "de": "Trauriger Siegelring",
+      "es": "Triste Sello",
+      "it": "Triste Sigillo",
+      "pt": "Triste Selo"
     },
     "itemType": "Ring",
     "setID": "507",
@@ -134395,12 +134396,12 @@
   {
     "dofusID": "27531",
     "name": {
-      "en": "[!] Amulette de guerrier albueran",
+      "en": "Albueran Warrior Amulet",
       "fr": "Amulette de guerrier albueran",
-      "de": "[!] Amulette de guerrier albueran",
-      "es": "[!] Amulette de guerrier albueran",
-      "it": "[!] Amulette de guerrier albueran",
-      "pt": "[!] Amulette de guerrier albueran"
+      "de": "Amulett eines Albueraner-Kriegers",
+      "es": "Amuleto de guerrero albuereño",
+      "it": "Amuleto di guerriero di Albuera",
+      "pt": "Amuleto de Guerreiro Albuerano"
     },
     "itemType": "Amulet",
     "setID": "511",
@@ -134420,12 +134421,12 @@
   {
     "dofusID": "27532",
     "name": {
-      "en": "[!] Anneau de guerrier albueran",
+      "en": "Albueran Warrior Ring",
       "fr": "Anneau de guerrier albueran",
-      "de": "[!] Anneau de guerrier albueran",
-      "es": "[!] Anneau de guerrier albueran",
-      "it": "[!] Anneau de guerrier albueran",
-      "pt": "[!] Anneau de guerrier albueran"
+      "de": "Albueranischer Kriegerring",
+      "es": "Anillo de guerrero albuereño",
+      "it": "Anello di Guerriero di Albuera",
+      "pt": "Anel de Guerreiro Albuerano"
     },
     "itemType": "Ring",
     "setID": "511",

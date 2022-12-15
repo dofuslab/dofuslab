@@ -55,5 +55,52 @@ def add_class_to_classes():
                     print("Class existed already")
 
 
+def update_class_translations(db_session, en_name, all_names):
+    translations = (
+        db_session.query(ModelClassTranslation)
+        .filter(
+            ModelClassTranslation.locale == "en", ModelClassTranslation.name == en_name
+        )
+        .one_or_none()
+    )
+    if translations:
+        print("Updating translation")
+        db_session.query(ModelClassTranslation).filter_by(
+            class_id=translations.class_id
+        ).delete()
+    else:
+        return
+    for locale in all_names:
+        translation = ModelClassTranslation(
+            class_id=translations.class_id, locale=locale, name=all_names[locale]
+        )
+        db_session.add(translation)
+
+
+def update_class_list():
+    print("Loading and processing file...")
+    with open(os.path.join(app_root, "app/database/data/spells.json"), "r",) as file:
+        data = json.load(file)
+        name_to_record_map = {}
+
+        for r in data:
+            name_to_record_map[r["names"]["en"]] = r
+
+        should_prompt_class = True
+        while should_prompt_class:
+            class_name = input(
+                "Enter class name, e.g. 'Osamodas' to update translations, type 'add new' to add new classes, or 'q' to quit: "
+            )
+            if class_name == "q":
+                return
+            with session_scope() as db_session:
+                if class_name == "add new":
+                    should_prompt_class = False
+                    add_class_to_classes()
+                elif class_name in name_to_record_map:
+                    record = name_to_record_map[class_name]
+                    update_class_translations(db_session, class_name, record["names"])
+
+
 if __name__ == "__main__":
-    add_class_to_classes()
+    update_class_list()

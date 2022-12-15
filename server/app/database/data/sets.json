@@ -29891,10 +29891,10 @@
     "name": {
       "en": "Evils of Ephedrya",
       "fr": "Maléfices d'Ephedrya",
-      "de": "[!] Evils of Ephedrya",
-      "es": "[!] Evils of Ephedrya",
-      "it": "[!] Evils of Ephedrya",
-      "pt": "[!] Evils of Ephedrya"
+      "de": "Verhexung von Ephedrya",
+      "es": "Maleficios de Efedria",
+      "it": "Malefici di Efedria",
+      "pt": "Maldições de Ephedrya"
     },
     "bonuses": {
       "2": [
@@ -29925,110 +29925,110 @@
     "name": {
       "en": "Cire Momore's Curse",
       "fr": "Malédiction de Cire Momore",
-      "de": "[!] Cire Momore's Curse",
-      "es": "[!] Cire Momore's Curse",
-      "it": "[!] Cire Momore's Curse",
-      "pt": "[!] Cire Momore's Curse"
+      "de": "Fluch von Cire Momore",
+      "es": "Maldición de Cire Momore",
+      "it": "Maledizione di Cire Momore",
+      "pt": "Maldição de Cire Momore"
     },
     "bonuses": {
       "2": [
         { "stat": "Power", "value": 30, "altStat": null },
         { "stat": "Range", "value": -1, "altStat": null },
-        { "stat": "Initiative", "value": 250, "altStat": null },
-        { "stat": "Lock", "value": 5, "altStat": null },
-        { "stat": "Dodge", "value": -20, "altStat": null },
+        { "stat": "Initiative", "value": 300, "altStat": null },
+        { "stat": "Lock", "value": 7, "altStat": null },
+        { "stat": "Dodge", "value": -10, "altStat": null },
         { "stat": "MP Parry", "value": 25, "altStat": null },
-        { "stat": "Pushback Resistance", "value": 5, "altStat": null },
-        { "stat": "% Air Resistance", "value": 3, "altStat": null },
+        { "stat": "Pushback Resistance", "value": 10, "altStat": null },
+        { "stat": "% Neutral Resistance", "value": 3, "altStat": null },
         { "stat": "% Earth Resistance", "value": 3, "altStat": null },
         { "stat": "% Fire Resistance", "value": 3, "altStat": null },
         { "stat": "% Water Resistance", "value": 3, "altStat": null },
         { "stat": "% Air Resistance", "value": 3, "altStat": null },
-        { "stat": "Neutral Resistance", "value": 40, "altStat": null },
-        { "stat": "Earth Resistance", "value": 40, "altStat": null },
-        { "stat": "Fire Resistance", "value": 40, "altStat": null },
-        { "stat": "Water Resistance", "value": 40, "altStat": null },
-        { "stat": "Air Resistance", "value": 40, "altStat": null }
+        { "stat": "Neutral Resistance", "value": 25, "altStat": null },
+        { "stat": "Earth Resistance", "value": 25, "altStat": null },
+        { "stat": "Fire Resistance", "value": 25, "altStat": null },
+        { "stat": "Water Resistance", "value": 25, "altStat": null },
+        { "stat": "Air Resistance", "value": 25, "altStat": null }
       ],
       "3": [
-        { "stat": "Power", "value": 100, "altStat": null },
+        { "stat": "Power", "value": 75, "altStat": null },
         { "stat": "AP", "value": 1, "altStat": null },
         { "stat": "Range", "value": -2, "altStat": null },
-        { "stat": "Initiative", "value": 500, "altStat": null },
-        { "stat": "Lock", "value": 10, "altStat": null },
-        { "stat": "Dodge", "value": -30, "altStat": null },
+        { "stat": "Initiative", "value": 750, "altStat": null },
+        { "stat": "Lock", "value": 15, "altStat": null },
+        { "stat": "Dodge", "value": -25, "altStat": null },
         { "stat": "MP Parry", "value": 50, "altStat": null },
-        { "stat": "Pushback Resistance", "value": 10, "altStat": null },
-        { "stat": "% Air Resistance", "value": 6, "altStat": null },
-        { "stat": "% Earth Resistance", "value": 6, "altStat": null },
-        { "stat": "% Fire Resistance", "value": 6, "altStat": null },
-        { "stat": "% Water Resistance", "value": 6, "altStat": null },
-        { "stat": "% Air Resistance", "value": 6, "altStat": null },
-        { "stat": "Neutral Resistance", "value": 75, "altStat": null },
-        { "stat": "Earth Resistance", "value": 75, "altStat": null },
-        { "stat": "Fire Resistance", "value": 75, "altStat": null },
-        { "stat": "Water Resistance", "value": 75, "altStat": null },
-        { "stat": "Air Resistance", "value": 75, "altStat": null }
+        { "stat": "Pushback Resistance", "value": 25, "altStat": null },
+        { "stat": "% Neutral Resistance", "value": 5, "altStat": null },
+        { "stat": "% Earth Resistance", "value": 5, "altStat": null },
+        { "stat": "% Fire Resistance", "value": 5, "altStat": null },
+        { "stat": "% Water Resistance", "value": 5, "altStat": null },
+        { "stat": "% Air Resistance", "value": 5, "altStat": null },
+        { "stat": "Neutral Resistance", "value": 50, "altStat": null },
+        { "stat": "Earth Resistance", "value": 50, "altStat": null },
+        { "stat": "Fire Resistance", "value": 50, "altStat": null },
+        { "stat": "Water Resistance", "value": 50, "altStat": null },
+        { "stat": "Air Resistance", "value": 50, "altStat": null }
       ],
       "4": [
-        { "stat": "Power", "value": 100, "altStat": null },
+        { "stat": "Power", "value": 75, "altStat": null },
         { "stat": "AP", "value": 1, "altStat": null },
         { "stat": "Range", "value": -2, "altStat": null },
-        { "stat": "Initiative", "value": 500, "altStat": null },
-        { "stat": "Lock", "value": 10, "altStat": null },
-        { "stat": "Dodge", "value": -30, "altStat": null },
+        { "stat": "Initiative", "value": 750, "altStat": null },
+        { "stat": "Lock", "value": 15, "altStat": null },
+        { "stat": "Dodge", "value": -25, "altStat": null },
         { "stat": "MP Parry", "value": 50, "altStat": null },
-        { "stat": "Pushback Resistance", "value": 10, "altStat": null },
-        { "stat": "% Air Resistance", "value": 6, "altStat": null },
-        { "stat": "% Earth Resistance", "value": 6, "altStat": null },
-        { "stat": "% Fire Resistance", "value": 6, "altStat": null },
-        { "stat": "% Water Resistance", "value": 6, "altStat": null },
-        { "stat": "% Air Resistance", "value": 6, "altStat": null },
-        { "stat": "Neutral Resistance", "value": 75, "altStat": null },
-        { "stat": "Earth Resistance", "value": 75, "altStat": null },
-        { "stat": "Fire Resistance", "value": 75, "altStat": null },
-        { "stat": "Water Resistance", "value": 75, "altStat": null },
-        { "stat": "Air Resistance", "value": 75, "altStat": null }
+        { "stat": "Pushback Resistance", "value": 25, "altStat": null },
+        { "stat": "% Neutral Resistance", "value": 5, "altStat": null },
+        { "stat": "% Earth Resistance", "value": 5, "altStat": null },
+        { "stat": "% Fire Resistance", "value": 5, "altStat": null },
+        { "stat": "% Water Resistance", "value": 5, "altStat": null },
+        { "stat": "% Air Resistance", "value": 5, "altStat": null },
+        { "stat": "Neutral Resistance", "value": 50, "altStat": null },
+        { "stat": "Earth Resistance", "value": 50, "altStat": null },
+        { "stat": "Fire Resistance", "value": 50, "altStat": null },
+        { "stat": "Water Resistance", "value": 50, "altStat": null },
+        { "stat": "Air Resistance", "value": 50, "altStat": null }
       ],
       "5": [
-        { "stat": "Power", "value": 100, "altStat": null },
+        { "stat": "Power", "value": 75, "altStat": null },
         { "stat": "AP", "value": 1, "altStat": null },
         { "stat": "Range", "value": -2, "altStat": null },
-        { "stat": "Initiative", "value": 500, "altStat": null },
-        { "stat": "Lock", "value": 10, "altStat": null },
-        { "stat": "Dodge", "value": -30, "altStat": null },
+        { "stat": "Initiative", "value": 750, "altStat": null },
+        { "stat": "Lock", "value": 15, "altStat": null },
+        { "stat": "Dodge", "value": -25, "altStat": null },
         { "stat": "MP Parry", "value": 50, "altStat": null },
-        { "stat": "Pushback Resistance", "value": 10, "altStat": null },
-        { "stat": "% Air Resistance", "value": 6, "altStat": null },
-        { "stat": "% Earth Resistance", "value": 6, "altStat": null },
-        { "stat": "% Fire Resistance", "value": 6, "altStat": null },
-        { "stat": "% Water Resistance", "value": 6, "altStat": null },
-        { "stat": "% Air Resistance", "value": 6, "altStat": null },
-        { "stat": "Neutral Resistance", "value": 75, "altStat": null },
-        { "stat": "Earth Resistance", "value": 75, "altStat": null },
-        { "stat": "Fire Resistance", "value": 75, "altStat": null },
-        { "stat": "Water Resistance", "value": 75, "altStat": null },
-        { "stat": "Air Resistance", "value": 75, "altStat": null }
+        { "stat": "Pushback Resistance", "value": 25, "altStat": null },
+        { "stat": "% Neutral Resistance", "value": 5, "altStat": null },
+        { "stat": "% Earth Resistance", "value": 5, "altStat": null },
+        { "stat": "% Fire Resistance", "value": 5, "altStat": null },
+        { "stat": "% Water Resistance", "value": 5, "altStat": null },
+        { "stat": "% Air Resistance", "value": 5, "altStat": null },
+        { "stat": "Neutral Resistance", "value": 50, "altStat": null },
+        { "stat": "Earth Resistance", "value": 50, "altStat": null },
+        { "stat": "Fire Resistance", "value": 50, "altStat": null },
+        { "stat": "Water Resistance", "value": 50, "altStat": null },
+        { "stat": "Air Resistance", "value": 50, "altStat": null }
       ],
       "6": [
-        { "stat": "Power", "value": 200, "altStat": null },
+        { "stat": "Power", "value": 150, "altStat": null },
         { "stat": "AP", "value": 2, "altStat": null },
         { "stat": "Range", "value": -3, "altStat": null },
-        { "stat": "Initiative", "value": 1000, "altStat": null },
-        { "stat": "Lock", "value": 20, "altStat": null },
-        { "stat": "Dodge", "value": -60, "altStat": null },
+        { "stat": "Initiative", "value": 1500, "altStat": null },
+        { "stat": "Lock", "value": 30, "altStat": null },
+        { "stat": "Dodge", "value": -50, "altStat": null },
         { "stat": "MP Parry", "value": 100, "altStat": null },
-        { "stat": "Pushback Resistance", "value": 20, "altStat": null },
-        { "stat": "% Air Resistance", "value": 12, "altStat": null },
-        { "stat": "% Earth Resistance", "value": 12, "altStat": null },
-        { "stat": "% Fire Resistance", "value": 12, "altStat": null },
-        { "stat": "% Water Resistance", "value": 12, "altStat": null },
-        { "stat": "% Air Resistance", "value": 12, "altStat": null },
-        { "stat": "Neutral Resistance", "value": 150, "altStat": null },
-        { "stat": "Earth Resistance", "value": 150, "altStat": null },
-        { "stat": "Fire Resistance", "value": 150, "altStat": null },
-        { "stat": "Water Resistance", "value": 150, "altStat": null },
-        { "stat": "Air Resistance", "value": 150, "altStat": null }
+        { "stat": "Pushback Resistance", "value": 50, "altStat": null },
+        { "stat": "% Neutral Resistance", "value": 10, "altStat": null },
+        { "stat": "% Earth Resistance", "value": 10, "altStat": null },
+        { "stat": "% Fire Resistance", "value": 10, "altStat": null },
+        { "stat": "% Water Resistance", "value": 10, "altStat": null },
+        { "stat": "% Air Resistance", "value": 10, "altStat": null },
+        { "stat": "Neutral Resistance", "value": 100, "altStat": null },
+        { "stat": "Earth Resistance", "value": 100, "altStat": null },
+        { "stat": "Fire Resistance", "value": 100, "altStat": null },
+        { "stat": "Water Resistance", "value": 100, "altStat": null },
+        { "stat": "Air Resistance", "value": 100, "altStat": null }
       ]
     }
   },
@@ -30037,10 +30037,10 @@
     "name": {
       "en": "Raccooper Set",
       "fr": "Panoplie de Rakoopeur",
-      "de": "[!] Raccooper Set",
-      "es": "[!] Raccooper Set",
-      "it": "[!] Raccooper Set",
-      "pt": "[!] Raccooper Set"
+      "de": "Racooper-Set",
+      "es": "Set de Rakooper",
+      "it": "Panoplia di Rakooper",
+      "pt": "Conjunto de Rakooper"
     },
     "bonuses": {
       "2": [
@@ -30061,10 +30061,10 @@
     "name": {
       "en": "Rebel Set",
       "fr": "Panoplie des Rebelles",
-      "de": "[!] Rebel Set",
-      "es": "[!] Rebel Set",
-      "it": "[!] Rebel Set",
-      "pt": "[!] Rebel Set"
+      "de": "Rebellen-Set",
+      "es": "Set de los rebeldes",
+      "it": "Panoplia dei Ribelli",
+      "pt": "Conjunto dos Rebeldes"
     },
     "bonuses": {
       "2": [
@@ -30085,10 +30085,10 @@
     "name": {
       "en": "Albueran Trapper Set",
       "fr": "Panoplie de trappeur albueran",
-      "de": "[!] Albueran Trapper Set",
-      "es": "[!] Albueran Trapper Set",
-      "it": "[!] Albueran Trapper Set",
-      "pt": "[!] Albueran Trapper Set"
+      "de": "Albuera-Fallensteller-Set",
+      "es": "Set de trampero albuereño",
+      "it": "Panoplia del Ranger di Albuera",
+      "pt": "Conjuntos de Caçador Albuerano"
     },
     "bonuses": {
       "2": [
@@ -30109,10 +30109,10 @@
     "name": {
       "en": "Albueran Warrior Set",
       "fr": "Panoplie de guerrier albueran",
-      "de": "[!] Albueran Warrior Set",
-      "es": "[!] Albueran Warrior Set",
-      "it": "[!] Albueran Warrior Set",
-      "pt": "[!] Albueran Warrior Set"
+      "de": "Albuera-Krieger-Set",
+      "es": "Set de guerrero albuereño",
+      "it": "Panoplia del Guerriero di Albuera",
+      "pt": "Conjunto de Guerreiro Albuerano"
     },
     "bonuses": {
       "2": [
@@ -30137,10 +30137,10 @@
     "name": {
       "en": "Bitter-Hammer Set",
       "fr": "Panoplie des Marteaux-Aigris",
-      "de": "[!] Bitter-Hammer Set",
-      "es": "[!] Bitter-Hammer Set",
-      "it": "[!] Bitter-Hammer Set",
-      "pt": "[!] Bitter-Hammer Set"
+      "de": "Sauerhammer-Set",
+      "es": "Set de los Martilloseco",
+      "it": "Panoplia dei Martelli-Rancorosi",
+      "pt": "Conjunto dos Martelos Amargos"
     },
     "bonuses": {
       "2": [
@@ -30163,10 +30163,10 @@
     "name": {
       "en": "Berylbell Set",
       "fr": "Panoplie de Barbéryl",
-      "de": "[!] Berylbell Set",
-      "es": "[!] Berylbell Set",
-      "it": "[!] Berylbell Set",
-      "pt": "[!] Berylbell Set"
+      "de": "Barberyl-Set",
+      "es": "Set de Demena",
+      "it": "Panoplia di Barberilla",
+      "pt": "Conjunto de Barberila"
     },
     "bonuses": {
       "2": [
@@ -30185,10 +30185,10 @@
     "name": {
       "en": "Copperbeard Set",
       "fr": "Panoplie Clochecuivre",
-      "de": "[!] Copperbeard Set",
-      "es": "[!] Copperbeard Set",
-      "it": "[!] Copperbeard Set",
-      "pt": "[!] Copperbeard Set"
+      "de": "Glockenleder-Set",
+      "es": "Set Decobre",
+      "it": "Panoplia Rametista",
+      "pt": "Conjunto Sinocobre"
     },
     "bonuses": {
       "2": [
