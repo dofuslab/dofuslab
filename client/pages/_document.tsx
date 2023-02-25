@@ -5,6 +5,8 @@ import { GA_TRACKING_ID } from '../gtag';
 
 export default class extends Document {
   render() {
+    console.log(this.props.__NEXT_DATA__.props.initialLanguage);
+
     return (
       // eslint-disable-next-line no-underscore-dangle
       <Html lang={this.props.__NEXT_DATA__.props.initialLanguage}>

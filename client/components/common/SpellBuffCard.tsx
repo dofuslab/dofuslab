@@ -29,9 +29,8 @@ const SpellBuffCard: React.FC<Props> = ({ spell, level }) => {
     return max;
   }, -1);
 
-  const [selectedSpellLevelIdx, selectSpellLevelIdx] = React.useState<number>(
-    spellLevelIdx,
-  );
+  const [selectedSpellLevelIdx, selectSpellLevelIdx] =
+    React.useState<number>(spellLevelIdx);
 
   const onChange = React.useCallback(
     (e: RadioChangeEvent) => {

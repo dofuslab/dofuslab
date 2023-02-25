@@ -88,7 +88,10 @@ export const getStaticProps: GetStaticProps = async ({
 
   return {
     props: {
-      ...(await serverSideTranslations(selectedLocale, ['auth'])),
+      ...(await serverSideTranslations(selectedLocale, [
+        'auth',
+        'keyboard_shortcut',
+      ])),
       // extracts data from the server-side apollo cache to hydrate frontend cache
     },
   };
