@@ -36,11 +36,13 @@ def update_name(db_session, name_to_record_map, file_name, old_name, new_name):
         raise ValueError("Invalid file name")
 
     if new_name not in name_to_record_map:
-        print("Error: The new name does not exist within the data files.")
+        raise ValueError("Error: The new name does not exist within the data files.")
     elif len(translations) > 1:
-        print("Error: Multiple records with the old name exist in the db.")
+        raise ValueError("Error: Multiple records with the old name exist in the db.")
     elif len(translations) == 0:
-        print("Error: Record with the provided old name does not exist in the db")
+        raise ValueError(
+            "Error: Record with the provided old name does not exist in the db"
+        )
     else:
         print("Updating names for {}".format(new_name))
         if file_name in item_file_names:
