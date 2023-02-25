@@ -4,12 +4,13 @@ import json
 import os
 from app import session_scope
 from app.database.model_item_translation import ModelItemTranslation
+from app.database.model_set_translation import ModelSetTranslation
 from app.database.model_spell_translation import ModelSpellTranslation
 from oneoff.sync_item import allowed_file_names as item_file_names
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-allowed_file_names = item_file_names + ["spells"]
+allowed_file_names = item_file_names + ["sets", "spells"]
 
 
 def update_name(db_session, name_to_record_map, file_name, old_name, new_name):
@@ -20,6 +21,15 @@ def update_name(db_session, name_to_record_map, file_name, old_name, new_name):
             .filter(
                 ModelItemTranslation.locale == "en",
                 ModelItemTranslation.name == old_name,
+            )
+            .all()
+        )
+    elif file_name == "sets":
+        translations = (
+            db_session.query(ModelSetTranslation)
+            .filter(
+                ModelSetTranslation.locale == "en",
+                ModelSetTranslation.name == old_name,
             )
             .all()
         )
@@ -55,6 +65,16 @@ def update_name(db_session, name_to_record_map, file_name, old_name, new_name):
                         item_id=item.uuid, locale=locale, name=record["name"][locale],
                     )
                     db_session.add(item_translation)
+        elif file_name == "sets":
+            set = translations[0].set
+            record = name_to_record_map[new_name]
+            db_session.query(ModelSetTranslation).filter_by(set_id=set.uuid).delete()
+            for locale in name_to_record_map[new_name]["name"]:
+                if record["name"].get(locale):
+                    set_translation = ModelSetTranslation(
+                        set_id=set.uuid, locale=locale, name=record["name"][locale],
+                    )
+                    db_session.add(set_translation)
         elif file_name == "spells":
             spell = translations[0].spell
             record = name_to_record_map[new_name]
@@ -81,7 +101,7 @@ def get_name_to_record_map(file_name):
         data = json.load(file)
         name_to_record_map = {}
 
-        if file_name in item_file_names:
+        if file_name in item_file_names or file_name == "sets":
             for r in data:
                 name_to_record_map[r["name"]["en"]] = r
         elif file_name == "spells":
