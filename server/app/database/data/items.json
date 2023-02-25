@@ -121146,7 +121146,7 @@
       "de": null,
       "es": "Caparapeto",
       "it": "Mantello Paravento",
-      "pt": null
+      "pt": "Caparavento"
     },
     "itemType": "Cloak",
     "setID": "9675435",
@@ -121213,7 +121213,7 @@
       "de": null,
       "es": "Collar de perlucas",
       "it": "Collana di Perloffe",
-      "pt": null
+      "pt": "Colar de Peidolas"
     },
     "itemType": "Amulet",
     "setID": "9675435",
@@ -121285,7 +121285,7 @@
       "de": null,
       "es": "Kwapamela",
       "it": "Kwappicacpo",
-      "pt": null
+      "pt": "Kwapoçaete"
     },
     "itemType": "Hat",
     "setID": "13378161",
@@ -121352,7 +121352,7 @@
       "de": null,
       "es": "Kuaparazón",
       "it": "Kwapparapace",
-      "pt": null
+      "pt": "Kwarapaça"
     },
     "itemType": "Backpack",
     "setID": "13378161",
@@ -121424,7 +121424,7 @@
       "de": null,
       "es": "Lágrima de Nagate",
       "it": "Lacrima di Nagate, la Dama delle Acque",
-      "pt": null
+      "pt": "Lágrima de Nagate"
     },
     "itemType": "Amulet",
     "setID": null,
@@ -121496,7 +121496,7 @@
       "de": null,
       "es": "Bulbescudo",
       "it": "Bulboscudo",
-      "pt": null
+      "pt": "Bulbescudo"
     },
     "itemType": "Shield",
     "setID": null,
@@ -121548,7 +121548,7 @@
       "de": null,
       "es": "Capistillo",
       "it": "Cappistillo",
-      "pt": null
+      "pt": "Capistilo"
     },
     "itemType": "Cloak",
     "setID": null,
@@ -121655,7 +121655,7 @@
       "de": null,
       "es": "Esquejes",
       "it": "Stivali Talea",
-      "pt": null
+      "pt": "Botamudas"
     },
     "itemType": "Boots",
     "setID": null,
@@ -121727,7 +121727,7 @@
       "de": null,
       "es": "Plantamuleto",
       "it": "Piandamuleto",
-      "pt": null
+      "pt": "Plantamuleto"
     },
     "itemType": "Amulet",
     "setID": null,
@@ -121795,11 +121795,11 @@
     "dofusID": 81071,
     "name": {
       "en": "Firefoux Bag",
-      "fr": "Sac de Firefoux",
+      "fr": "Sac des Firefoux",
       "de": null,
       "es": "Saco Firefux",
       "it": "Zaino dei Focopaz",
-      "pt": null
+      "pt": "Saco dos Fogofox"
     },
     "itemType": "Backpack",
     "setID": "87342329",
@@ -121866,7 +121866,7 @@
       "de": null,
       "es": "Alianza Firefux",
       "it": "Anello dei Focopaz",
-      "pt": null
+      "pt": "Aliança dos Fogofox"
     },
     "itemType": "Ring",
     "setID": "87342329",
@@ -121938,7 +121938,7 @@
       "de": null,
       "es": "Escupefuegos Firefux",
       "it": "Sputa-fuoco Focopaz",
-      "pt": null
+      "pt": "Cospe-Fogo Fogofox"
     },
     "itemType": "Backpack",
     "setID": null,
@@ -122015,7 +122015,7 @@
       "de": null,
       "es": "Cinturón de Artificio",
       "it": "Cintura d'Artificio",
-      "pt": null
+      "pt": "Cinto de Artifício"
     },
     "itemType": "Belt",
     "setID": "87342329",
@@ -122083,11 +122083,11 @@
     "dofusID": 9345,
     "name": {
       "en": "Nutcrackers",
-      "fr": "Les Casse-noiesttes",
+      "fr": "Les Casse-noisettes",
       "de": null,
       "es": "Cascanueces",
       "it": "Gli Spacca-nocciole",
-      "pt": null
+      "pt": "Quebra-Ovos"
     },
     "itemType": "Ring",
     "setID": "933618",
@@ -122154,7 +122154,7 @@
       "de": null,
       "es": "Bacía Vacía",
       "it": "Copricapo Vasorotto",
-      "pt": null
+      "pt": "Chapote Kebradu"
     },
     "itemType": "Hat",
     "setID": "933618",
@@ -122226,7 +122226,7 @@
       "de": null,
       "es": "Cinto Fensa",
       "it": "Cinturpitudine",
-      "pt": null
+      "pt": "Cinto Orpeza"
     },
     "itemType": "Belt",
     "setID": "933618",
@@ -122409,7 +122409,7 @@
         "À partir du tour 5, le lanceur gagne jusqu'à 64 dommages pour le reste du combat selon le nombre d'attaques, qui infligent des dommages directs, occasionnées à chacun des tours précédents.\nAucune attaque : 16 dommages\n1 attaque : 8 dommages.\n2 attaques et + : 0 dommage."
       ],
       "de": [
-        "Ab Runde 5 erhält der Zaubernde abhängig von der Anzahl der Angriffe, die in den vorangegangenen Runden direkten Schaden verursacht haben, bis zu 64 Schaden für den Rest des Kampfes.\nKein Angriff: 16 Schaden\n1 Angriff: 8 Schaden\nAb 2 Angriffen: 0 Schaden."
+        "Ab Runde 5 erhält der Zaubernde abhängig von der Anzahl der Angriffe, die in den vorangegangenen Runden direkten Schaden verursacht haben, bis zu 64 Schaden für den Rest des Kampfes.\nKein Angriff: 16 Schaden\n1 Angriff: 8 Schaden\nAb 2 Angriffen: 0 Schaden."
       ],
       "es": [
         "A partir del turno 5, el lanzador gana hasta 64 de daño durante el resto del combate según el número de ataques con daños directos ocasionados en cada uno de los turnos anteriores.\nNingún ataque: 16 de daño\n1 ataque: 8 de daño\n2 o más ataques: 0 de daño."
@@ -123346,7 +123346,7 @@
         "Pendant les 5 premiers tours, le lanceur gagne 100% de son niveau en bouclier pour 1 tour à chaque début de tour. Tuer une invocation ennemie ajoute 150% du niveau en bouclier pour 1 tour, et 300% pour un monstre ou joueur ennemi.\nNe fonctionne que pendant le tour du lanceur."
       ],
       "de": [
-        "Verleiht während der ersten 5 Runden zu Rundenbeginn 100 % der Schildstufe.\nWährend dieser 5 Runden erhält der Zaubernde 1 Runde lang 100 % seiner Schildstufe (max. 4 Mal), wenn er eine Beschwörung tötet, und 300 % (max. 2 Mal), wenn er ein Monster oder einen Spieler tötet.\nDie Schilde werden nur in der Spielrunde des Zaubernden verliehen."
+        "Verleiht während der ersten 5 Runden zu Rundenbeginn 100 % der Schildstufe.\nWährend dieser 5 Runden erhält der Zaubernde 1 Runde lang 100 % seiner Schildstufe (max. 4 Mal), wenn er eine Beschwörung tötet, und 300 % (max. 2 Mal), wenn er ein Monster oder einen Spieler tötet.\nDie Schilde werden nur in der Spielrunde des Zaubernden verliehen."
       ],
       "es": [
         "Aplica el 100% del nivel en escudo en cada inicio de turno durante los 5 primeros turnos.\nDurante estos 5 turnos, si el lanzador mata a una invocación, gana el 100% de su nivel en escudo durante 1 turno (4 veces máx.), y el 300% (2 veces máx.) para un monstruo o un jugador.\nLos escudos se obtienen solo durante el turno de juego del lanzador."
@@ -133765,12 +133765,12 @@
   {
     "dofusID": "27544",
     "name": {
-      "en": "[!] Mur de Ronces",
+      "en": "Bramble Wall",
       "fr": "Mur de Ronces",
-      "de": "[!] Mur de Ronces",
-      "es": "[!] Mur de Ronces",
-      "it": "[!] Mur de Ronces",
-      "pt": "[!] Mur de Ronces"
+      "de": "Brombimsmauer",
+      "es": "Pared de zarzas",
+      "it": "Muro di Rovi",
+      "pt": "Muro de Sarças"
     },
     "itemType": "Shield",
     "setID": "514",
@@ -133789,12 +133789,12 @@
   {
     "dofusID": "27547",
     "name": {
-      "en": "[!] Cruauté de Belladone",
+      "en": "Belladonna's Cruelty",
       "fr": "Cruauté de Belladone",
-      "de": "[!] Cruauté de Belladone",
-      "es": "[!] Cruauté de Belladone",
-      "it": "[!] Cruauté de Belladone",
-      "pt": "[!] Cruauté de Belladone"
+      "de": "Grausamkeit von Tollkirsche",
+      "es": "Crueldad de Belladona",
+      "it": "Crudeltà di Belladonna",
+      "pt": "Crueldade de Beladona"
     },
     "itemType": "Ring",
     "setID": "514",
@@ -133819,12 +133819,12 @@
   {
     "dofusID": "27548",
     "name": {
-      "en": "[!] Amertume de Belladone",
+      "en": "Belladonna's Bitterness",
       "fr": "Amertume de Belladone",
-      "de": "[!] Amertume de Belladone",
-      "es": "[!] Amertume de Belladone",
-      "it": "[!] Amertume de Belladone",
-      "pt": "[!] Amertume de Belladone"
+      "de": "Bitterkeit von Tollkirsche",
+      "es": "Amargura de Belladona",
+      "it": "Amarezza di Belladonna",
+      "pt": "Amargor de Beladona"
     },
     "itemType": "Ring",
     "setID": "514",
@@ -133847,12 +133847,12 @@
   {
     "dofusID": "27549",
     "name": {
-      "en": "[!] Tendresse de Belladone",
+      "en": "Belladonna's Tenderness",
       "fr": "Tendresse de Belladone",
-      "de": "[!] Tendresse de Belladone",
-      "es": "[!] Tendresse de Belladone",
-      "it": "[!] Tendresse de Belladone",
-      "pt": "[!] Tendresse de Belladone"
+      "de": "Zärtlichkeit der Tollkirsche",
+      "es": "Ternura de Belladona",
+      "it": "Tenerezza di Belladonna",
+      "pt": "Ternura de Beladona"
     },
     "itemType": "Ring",
     "setID": "514",
@@ -133875,12 +133875,12 @@
   {
     "dofusID": "27527",
     "name": {
-      "en": "[!] Casquette de Rakoopeur",
+      "en": "Raccooper Cap",
       "fr": "Casquette de Rakoopeur",
-      "de": "[!] Casquette de Rakoopeur",
-      "es": "[!] Casquette de Rakoopeur",
-      "it": "[!] Casquette de Rakoopeur",
-      "pt": "[!] Casquette de Rakoopeur"
+      "de": "Racoopers Mütze",
+      "es": "Gorra de Rakooper",
+      "it": "Copricapo di Rakooper",
+      "pt": "Boné de Rakooper"
     },
     "itemType": "Hat",
     "setID": "509",
@@ -133901,12 +133901,12 @@
   {
     "dofusID": "27529",
     "name": {
-      "en": "[!] Queue de Rakoopeur",
+      "en": "Raccooper's Tail",
       "fr": "Queue de Rakoopeur",
-      "de": "[!] Queue de Rakoopeur",
-      "es": "[!] Queue de Rakoopeur",
-      "it": "[!] Queue de Rakoopeur",
-      "pt": "[!] Queue de Rakoopeur"
+      "de": "Racoopers Schwanz",
+      "es": "Cola de Rakooper",
+      "it": "Coda di Rakooper",
+      "pt": "Rabo de Rakooper"
     },
     "itemType": "Cloak",
     "setID": "509",
@@ -133926,12 +133926,12 @@
   {
     "dofusID": "27522",
     "name": {
-      "en": "[!] Bottes des Rebelles",
+      "en": "Rebel Boots",
       "fr": "Bottes des Rebelles",
-      "de": "[!] Bottes des Rebelles",
-      "es": "[!] Bottes des Rebelles",
-      "it": "[!] Bottes des Rebelles",
-      "pt": "[!] Bottes des Rebelles"
+      "de": "Rebellenstiefel",
+      "es": "Botas de los rebeldes",
+      "it": "Stivali dei Ribelli",
+      "pt": "Botas dos Rebeldes"
     },
     "itemType": "Boots",
     "setID": "508",
@@ -133951,12 +133951,12 @@
   {
     "dofusID": "27523",
     "name": {
-      "en": "[!] Cape des Rebelles",
+      "en": "Rebel Cape",
       "fr": "Cape des Rebelles",
-      "de": "[!] Cape des Rebelles",
-      "es": "[!] Cape des Rebelles",
-      "it": "[!] Cape des Rebelles",
-      "pt": "[!] Cape des Rebelles"
+      "de": "Rebellenumhang",
+      "es": "Capa de los rebeldes",
+      "it": "Mantello dei Ribelli",
+      "pt": "Capa dos Rebeldes"
     },
     "itemType": "Cloak",
     "setID": "508",
@@ -133977,12 +133977,12 @@
   {
     "dofusID": "27524",
     "name": {
-      "en": "[!] Alliance des Rebelles",
+      "en": "Rebels' Ring",
       "fr": "Alliance des Rebelles",
-      "de": "[!] Alliance des Rebelles",
-      "es": "[!] Alliance des Rebelles",
-      "it": "[!] Alliance des Rebelles",
-      "pt": "[!] Alliance des Rebelles"
+      "de": "Rebellenring",
+      "es": "Alianza de los rebeldes",
+      "it": "Fede dei Ribelli",
+      "pt": "Aliança dos Rebeldes"
     },
     "itemType": "Ring",
     "setID": "508",
@@ -134003,12 +134003,12 @@
   {
     "dofusID": "27535",
     "name": {
-      "en": "[!] Ceinture de trappeur albueran",
+      "en": "Albueran Trapper Belt",
       "fr": "Ceinture de trappeur albueran",
-      "de": "[!] Ceinture de trappeur albueran",
-      "es": "[!] Ceinture de trappeur albueran",
-      "it": "[!] Ceinture de trappeur albueran",
-      "pt": "[!] Ceinture de trappeur albueran"
+      "de": "Albueranischer Fallenstellergürtel",
+      "es": "Cinturón de trampero albuereño",
+      "it": "Cintura di Ranger di Albuera",
+      "pt": "Cinto de Caçador Albuerano"
     },
     "itemType": "Belt",
     "setID": "512",
@@ -134029,12 +134029,12 @@
   {
     "dofusID": "27536",
     "name": {
-      "en": "[!] Bottes de trappeur albueran",
+      "en": "Albueran Trapper Boots",
       "fr": "Bottes de trappeur albueran",
-      "de": "[!] Bottes de trappeur albueran",
-      "es": "[!] Bottes de trappeur albueran",
-      "it": "[!] Bottes de trappeur albueran",
-      "pt": "[!] Bottes de trappeur albueran"
+      "de": "Albueranische Fallenstellerstiefel",
+      "es": "Botas de trampero albuereño",
+      "it": "Stivali di Ranger di Albuera",
+      "pt": "Botas de Caçador Albuerano"
     },
     "itemType": "Boots",
     "setID": "512",
@@ -134054,12 +134054,12 @@
   {
     "dofusID": "27537",
     "name": {
-      "en": "[!] Bouclier Gris",
+      "en": "Bitter-Shield",
       "fr": "Bouclier Gris",
-      "de": "[!] Bouclier Gris",
-      "es": "[!] Bouclier Gris",
-      "it": "[!] Bouclier Gris",
-      "pt": "[!] Bouclier Gris"
+      "de": "Saugrauer Schild",
+      "es": "Escudo seco",
+      "it": "Scudo Grigio",
+      "pt": "Escudo Amargo"
     },
     "itemType": "Shield",
     "setID": "516",
@@ -134078,12 +134078,12 @@
   {
     "dofusID": "27538",
     "name": {
-      "en": "[!] Collier Gris",
+      "en": "Bitter-Collar",
       "fr": "Collier Gris",
-      "de": "[!] Collier Gris",
-      "es": "[!] Collier Gris",
-      "it": "[!] Collier Gris",
-      "pt": "[!] Collier Gris"
+      "de": "Saugraue Halskette",
+      "es": "Collar seco",
+      "it": "Collana Grigia",
+      "pt": "Colar Amargo"
     },
     "itemType": "Amulet",
     "setID": "516",
@@ -134110,12 +134110,12 @@
   {
     "dofusID": "27541",
     "name": {
-      "en": "[!] Berylbell Bells",
+      "en": "Berylbell Bells",
       "fr": "Grelots de Barbéryl",
-      "de": "[!] Berylbell Bells",
-      "es": "[!] Berylbell Bells",
-      "it": "[!] Berylbell Bells",
-      "pt": "[!] Berylbell Bells"
+      "de": "Schellen von Barberyl",
+      "es": "Cascabeles de Demena",
+      "it": "Sonaglio di Barberilla",
+      "pt": "Guizos de Barberilo"
     },
     "itemType": "Hat",
     "setID": "513",
@@ -134140,12 +134140,12 @@
   {
     "dofusID": "27542",
     "name": {
-      "en": "[!] Subligar de Barbéryl",
+      "en": "Berylbell's Subligar",
       "fr": "Subligar de Barbéryl",
-      "de": "[!] Subligar de Barbéryl",
-      "es": "[!] Subligar de Barbéryl",
-      "it": "[!] Subligar de Barbéryl",
-      "pt": "[!] Subligar de Barbéryl"
+      "de": "Barberyls Subligaculum",
+      "es": "Subligar de Demena",
+      "it": "Perizomar di Barberilla",
+      "pt": "Subligar de Barberila"
     },
     "itemType": "Belt",
     "setID": "513",
@@ -134170,12 +134170,12 @@
   {
     "dofusID": "27525",
     "name": {
-      "en": "[!] Heaume Clochecuivre",
+      "en": "Copperbeard Helm",
       "fr": "Heaume Clochecuivre",
-      "de": "[!] Heaume Clochecuivre",
-      "es": "[!] Heaume Clochecuivre",
-      "it": "[!] Heaume Clochecuivre",
-      "pt": "[!] Heaume Clochecuivre"
+      "de": "Glockenleder-Helm",
+      "es": "Yelmo Decobre",
+      "it": "Elmo Rametista",
+      "pt": "Elmo Sinocobre"
     },
     "itemType": "Hat",
     "setID": "510",
@@ -134206,12 +134206,12 @@
   {
     "dofusID": "27526",
     "name": {
-      "en": "[!] Anneau Clochecuivre",
+      "en": "Copperbeard Ring",
       "fr": "Anneau Clochecuivre",
-      "de": "[!] Anneau Clochecuivre",
-      "es": "[!] Anneau Clochecuivre",
-      "it": "[!] Anneau Clochecuivre",
-      "pt": "[!] Anneau Clochecuivre"
+      "de": "Glockenleder-Ring",
+      "es": "Anillo Decobre",
+      "it": "Anello Rametista",
+      "pt": "Anel Sinocobre"
     },
     "itemType": "Ring",
     "setID": "510",
@@ -134240,12 +134240,12 @@
   {
     "dofusID": "27511",
     "name": {
-      "en": "[!] Chagrin de Cire",
+      "en": "Cire's Sorrow",
       "fr": "Chagrin de Cire",
-      "de": "[!] Chagrin de Cire",
-      "es": "[!] Chagrin de Cire",
-      "it": "[!] Chagrin de Cire",
-      "pt": "[!] Chagrin de Cire"
+      "de": "Cires Kummer",
+      "es": "Aflicción de Cire",
+      "it": "Dolore di Cire",
+      "pt": "Tristeza de Cire"
     },
     "itemType": "Hat",
     "setID": "507",
@@ -134271,12 +134271,12 @@
   {
     "dofusID": "27512",
     "name": {
-      "en": "[!] Âmes Hurlantes",
+      "en": "Howling Souls",
       "fr": "Âmes Hurlantes",
-      "de": "[!] Âmes Hurlantes",
-      "es": "[!] Âmes Hurlantes",
-      "it": "[!] Âmes Hurlantes",
-      "pt": "[!] Âmes Hurlantes"
+      "de": "Schreiende Seelen",
+      "es": "Almas Chillonas",
+      "it": "Anime Urlanti",
+      "pt": "Almas Urrantes"
     },
     "itemType": "Cloak",
     "setID": "507",
@@ -134303,12 +134303,12 @@
   {
     "dofusID": "27513",
     "name": {
-      "en": "[!] Lourd Fardeau",
+      "en": "Heavy Burden",
       "fr": "Lourd Fardeau",
-      "de": "[!] Lourd Fardeau",
-      "es": "[!] Lourd Fardeau",
-      "it": "[!] Lourd Fardeau",
-      "pt": "[!] Lourd Fardeau"
+      "de": "Schwere Bürde",
+      "es": "Pesada Carga",
+      "it": "Grave Fardello",
+      "pt": "Fardo Pesado"
     },
     "itemType": "Amulet",
     "setID": "507",
@@ -134334,12 +134334,12 @@
   {
     "dofusID": "27514",
     "name": {
-      "en": "[!] Éternelle Poursuite",
+      "en": "Eternal Chase",
       "fr": "Éternelle Poursuite",
-      "de": "[!] Éternelle Poursuite",
-      "es": "[!] Éternelle Poursuite",
-      "it": "[!] Éternelle Poursuite",
-      "pt": "[!] Éternelle Poursuite"
+      "de": "Ewige Verfolgung",
+      "es": "Eterna Persecución",
+      "it": "Eterno Inseguimento",
+      "pt": "Eterna Perseguição"
     },
     "itemType": "Boots",
     "setID": "507",
@@ -134365,12 +134365,12 @@
   {
     "dofusID": "27515",
     "name": {
-      "en": "[!] Triste Sceau",
+      "en": "Signet of Fate",
       "fr": "Triste Sceau",
-      "de": "[!] Triste Sceau",
-      "es": "[!] Triste Sceau",
-      "it": "[!] Triste Sceau",
-      "pt": "[!] Triste Sceau"
+      "de": "Trauriger Siegelring",
+      "es": "Triste Sello",
+      "it": "Triste Sigillo",
+      "pt": "Triste Selo"
     },
     "itemType": "Ring",
     "setID": "507",
@@ -134395,12 +134395,12 @@
   {
     "dofusID": "27531",
     "name": {
-      "en": "[!] Amulette de guerrier albueran",
+      "en": "Albueran Warrior Amulet",
       "fr": "Amulette de guerrier albueran",
-      "de": "[!] Amulette de guerrier albueran",
-      "es": "[!] Amulette de guerrier albueran",
-      "it": "[!] Amulette de guerrier albueran",
-      "pt": "[!] Amulette de guerrier albueran"
+      "de": "Amulett eines Albueraner-Kriegers",
+      "es": "Amuleto de guerrero albuereño",
+      "it": "Amuleto di guerriero di Albuera",
+      "pt": "Amuleto de Guerreiro Albuerano"
     },
     "itemType": "Amulet",
     "setID": "511",
@@ -134420,12 +134420,12 @@
   {
     "dofusID": "27532",
     "name": {
-      "en": "[!] Anneau de guerrier albueran",
+      "en": "Albueran Warrior Ring",
       "fr": "Anneau de guerrier albueran",
-      "de": "[!] Anneau de guerrier albueran",
-      "es": "[!] Anneau de guerrier albueran",
-      "it": "[!] Anneau de guerrier albueran",
-      "pt": "[!] Anneau de guerrier albueran"
+      "de": "Albueranischer Kriegerring",
+      "es": "Anillo de guerrero albuereño",
+      "it": "Anello di Guerriero di Albuera",
+      "pt": "Anel de Guerreiro Albuerano"
     },
     "itemType": "Ring",
     "setID": "511",

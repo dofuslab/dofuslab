@@ -59717,12 +59717,12 @@
   {
     "dofusID": "27545",
     "name": {
-      "en": "[!] Potence d'Ephedrya",
+      "en": "Gallows of Ephedrya",
       "fr": "Potence d'Ephedrya",
-      "de": "[!] Potence d'Ephedrya",
-      "es": "[!] Potence d'Ephedrya",
-      "it": "[!] Potence d'Ephedrya",
-      "pt": "[!] Potence d'Ephedrya"
+      "de": "Potenz von Ephedrya",
+      "es": "Horca de Efedria",
+      "it": "Potenza di Efedria",
+      "pt": "Potência de Ephedrya"
     },
     "itemType": "Axe",
     "level": 200,
@@ -59759,11 +59759,12 @@
   {
     "dofusID": "27530",
     "name": {
-      "en": "[!] Raccooper's Billhook",
-      "de": "[!] Raccooper's Billhook",
-      "es": "[!] Raccooper's Billhook",
-      "it": "[!] Raccooper's Billhook",
-      "pt": "[!] Raccooper's Billhook"
+      "en": "Raccooper's Billhook",
+      "fr": "Serpe de Rakoopeur",
+      "de": "Racooper-Hippe",
+      "es": "Hoz de Rakooper",
+      "it": "Roncola di Rakooper",
+      "pt": "Podadeira de Rakooper"
     },
     "itemType": "Scythe",
     "level": 38,
@@ -59796,12 +59797,12 @@
   {
     "dofusID": "27539",
     "name": {
-      "en": "[!] Serpe Aigrie",
+      "en": "Bitter Billhook",
       "fr": "Serpe Aigrie",
-      "de": "[!] Serpe Aigrie",
-      "es": "[!] Serpe Aigrie",
-      "it": "[!] Serpe Aigrie",
-      "pt": "[!] Serpe Aigrie"
+      "de": "Sauersichel",
+      "es": "Hoz seca",
+      "it": "Roncola Rancorosa",
+      "pt": "Podadeira Amarga"
     },
     "itemType": "Scythe",
     "level": 190,
@@ -59838,12 +59839,12 @@
   {
     "dofusID": "27540",
     "name": {
-      "en": "[!] Marteau Aigri",
+      "en": "Bitter Hammer",
       "fr": "Marteau Aigri",
-      "de": "[!] Marteau Aigri",
-      "es": "[!] Marteau Aigri",
-      "it": "[!] Marteau Aigri",
-      "pt": "[!] Marteau Aigri"
+      "de": "Sauerhammer",
+      "es": "Martillo seco",
+      "it": "Martello Rancoroso",
+      "pt": "Martelo Amargo"
     },
     "itemType": "Hammer",
     "level": 190,
@@ -59880,12 +59881,12 @@
   {
     "dofusID": "27543",
     "name": {
-      "en": "[!] Tonfas de Barbéryl",
+      "en": "Berylbell's Tonfas",
       "fr": "Tonfas de Barbéryl",
-      "de": "[!] Tonfas de Barbéryl",
-      "es": "[!] Tonfas de Barbéryl",
-      "it": "[!] Tonfas de Barbéryl",
-      "pt": "[!] Tonfas de Barbéryl"
+      "de": "Barberyls Tonfas",
+      "es": "Tonfas de Demena",
+      "it": "Tonfa di Barberilla",
+      "pt": "Tonfas de Barberila"
     },
     "itemType": "Dagger",
     "level": 192,
@@ -59922,12 +59923,12 @@
   {
     "dofusID": "27528",
     "name": {
-      "en": "[!] Masse Clochecuivre",
+      "en": "Copperbeard Mace",
       "fr": "Masse Clochecuivre",
-      "de": "[!] Masse Clochecuivre",
-      "es": "[!] Masse Clochecuivre",
-      "it": "[!] Masse Clochecuivre",
-      "pt": "[!] Masse Clochecuivre"
+      "de": "Glockenleder-Hammer",
+      "es": "Maza Decobre",
+      "it": "Mazza Rametista",
+      "pt": "Maça Sinocobre"
     },
     "itemType": "Hammer",
     "level": 196,
@@ -59970,12 +59971,12 @@
   {
     "dofusID": "27644",
     "name": {
-      "en": "[!] Yaularc",
+      "en": "Yaulbow",
       "fr": "Yaularc",
-      "de": "[!] Yaularc",
-      "es": "[!] Yaularc",
-      "it": "[!] Yaularc",
-      "pt": "[!] Yaularc"
+      "de": "Yaularc",
+      "es": "Yaularco",
+      "it": "Yaularca",
+      "pt": "Yaularco"
     },
     "itemType": "Bow",
     "level": 200,
@@ -60017,12 +60018,12 @@
   {
     "dofusID": "27510",
     "name": {
-      "en": "[!] Claymomore",
+      "en": "Claymomore",
       "fr": "Claymomore",
-      "de": "[!] Claymomore",
-      "es": "[!] Claymomore",
-      "it": "[!] Claymomore",
-      "pt": "[!] Claymomore"
+      "de": "Claymomore",
+      "es": "Claymomore",
+      "it": "Funestanera",
+      "pt": "Claymomore"
     },
     "itemType": "Sword",
     "level": 200,
@@ -60065,12 +60066,12 @@
   {
     "dofusID": "27533",
     "name": {
-      "en": "[!] Lance de guerrier albueran",
+      "en": "Albueran Warrior Lance",
       "fr": "Lance de guerrier albueran",
-      "de": "[!] Lance de guerrier albueran",
-      "es": "[!] Lance de guerrier albueran",
-      "it": "[!] Lance de guerrier albueran",
-      "pt": "[!] Lance de guerrier albueran"
+      "de": "Albueranischer Kriegerspeer",
+      "es": "Lanza de guerrero albuereño",
+      "it": "Lancia di Guerriero di Albuera",
+      "pt": "Lança de Guerreiro Albuerano"
     },
     "itemType": "Lance",
     "level": 50,
@@ -60103,12 +60104,12 @@
   {
     "dofusID": "27534",
     "name": {
-      "en": "[!] Lance de trappeur albueran",
+      "en": "Albueran Trapper Lance",
       "fr": "Lance de trappeur albueran",
-      "de": "[!] Lance de trappeur albueran",
-      "es": "[!] Lance de trappeur albueran",
-      "it": "[!] Lance de trappeur albueran",
-      "pt": "[!] Lance de trappeur albueran"
+      "de": "Wurfspeer eines Albueraner-Fallenstellers",
+      "es": "Lanza de trampero albuereño",
+      "it": "Lancia del Ranger di Albuera",
+      "pt": "Lança de Caçador Albuerano"
     },
     "itemType": "Lance",
     "level": 50,
@@ -60147,12 +60148,12 @@
   {
     "dofusID": "27546",
     "name": {
-      "en": "[!] Pilier d'Ephedrya",
+      "en": "Pillar of Ephedrya",
       "fr": "Pilier d'Ephedrya",
-      "de": "[!] Pilier d'Ephedrya",
-      "es": "[!] Pilier d'Ephedrya",
-      "it": "[!] Pilier d'Ephedrya",
-      "pt": "[!] Pilier d'Ephedrya"
+      "de": "Säule von Ephedrya",
+      "es": "Picota de Efedria",
+      "it": "Pilastro di Efedria",
+      "pt": "Pilar de Ephedrya"
     },
     "itemType": "Lance",
     "level": 200,
