@@ -28,6 +28,6 @@ export function middleware(request: NextRequest) {
   return NextResponse.redirect(
     suggestedLocale === request.nextUrl.defaultLocale
       ? request.nextUrl.pathname
-      : `/${suggestedLocale}${request.nextUrl.pathname}`,
+      : `/${suggestedLocale}${request.nextUrl.pathname}${request.nextUrl.search}`,
   );
 }
