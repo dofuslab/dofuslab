@@ -55,7 +55,9 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
   const contentRef = React.useRef<HTMLDivElement | null>(null);
 
   if (Object.values(setBonuses).length === 0) {
-    return isMobile || isClassic ? <EquipSetLink /> : null;
+    return isMobile || isClassic ? (
+      <EquipSetLink customSetId={customSet && customSet.id} />
+    ) : null;
   }
 
   const sortedSetBonuses = Object.values(setBonuses).sort(
