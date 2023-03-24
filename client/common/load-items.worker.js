@@ -1,15 +1,29 @@
-import Dexie from 'dexie';
+import { db } from './db';
 
 self.onmessage = async () => {
   const res = await fetch(
-    'https://dofus-lab.s3.us-east-2.amazonaws.com/db_dump/dofuslab-items-dump.json',
+    'https://dofus-lab.s3.us-east-2.amazonaws.com/db_dump/dofuslab_items_dump.json',
   );
 
-  console.log(await res.json());
+  const result = await res.json();
 
-  console.log('hi');
+  await db.transaction('rw', db.item, db.itemStat, async () => {
+    db.item.clear();
+    db.itemStat.clear();
 
-  const db = new Dexie();
+    const itemStats = [];
 
-  console.log({ db });
+    db.item.bulkPut(
+      result.data.items.edges.map(({ node }) => {
+        itemStats.push(...node.stats.map((s) => ({ ...s, itemId: node.id })));
+        const { stats, ...rest } = node;
+        return {
+          ...rest,
+          allNames: JSON.parse(node.allNames),
+        };
+      }),
+    );
+
+    db.itemStat.bulkPut(itemStats);
+  });
 };

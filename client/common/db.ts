@@ -1,23 +1,36 @@
 // db.ts
 import Dexie, { Table } from 'dexie';
+import { item_stats as ItemStat } from 'graphql/fragments/__generated__/item';
+import { Item } from './type-aliases';
+import { ALL_LANGUAGES_INCLUDING_UNSUPPORTED } from './i18n-utils';
 
-export interface Friend {
-  id?: number;
-  name: string;
-  age: number;
-}
+const allLocaleNamesString = ALL_LANGUAGES_INCLUDING_UNSUPPORTED.map(
+  (lang) => `allNames.${lang}`,
+).join(', ');
 
-export class MySubClassedDexie extends Dexie {
-  // 'friends' is added by dexie when declaring the stores()
-  // We just tell the typing system this is the case
-  friends!: Table<Friend>;
+export type DbItem = Omit<Item, 'set' | 'itemType' | 'stats'> & {
+  set?: { id: string };
+  itemType: { id: string };
+};
+
+export type DbItemStat = ItemStat;
+
+export class DofusLabDexie extends Dexie {
+  item!: Table<DbItem>;
+
+  itemStat!: Table<DbItemStat>;
 
   constructor() {
-    super('myDatabase');
+    super('dofusLabData');
     this.version(1).stores({
-      friends: '++id, name, age', // Primary key and indexed props
+      itemStat: `id, itemId, stat, maxValue`,
+      item: `id, ${allLocaleNamesString},  level, itemSlotId, itemTypeId, setId`,
+      set: `id, ${allLocaleNamesString}, level`,
+      itemType: `id, ${allLocaleNamesString}`,
+      itemSlot: `id, ${allLocaleNamesString}`,
+      itemTypeInItemSlot: `itemTypeId, itemSlotId`,
     });
   }
 }
 
-export const db = new MySubClassedDexie();
+export const db = new DofusLabDexie();
