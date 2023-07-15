@@ -59997,7 +59997,8 @@
       { "stat": "Critical Damage", "minStat": 9, "maxStat": 12 },
       { "stat": "Pushback Resistance", "minStat": null, "maxStat": -15 },
       { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
-      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 }
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 }
     ],
     "weaponStats": {
       "apCost": 5,
