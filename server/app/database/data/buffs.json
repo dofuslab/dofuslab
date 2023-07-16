@@ -1690,6 +1690,16 @@
           "maxStacks": 8
         }
       ]
+    },
+    {
+      "name": "Black-Spotted Dofus",
+      "buffs": [
+        {
+          "stat": "Damage",
+          "incrementBy": 20,
+          "maxStacks": 1
+        }
+      ]
     }
   ]
 }
