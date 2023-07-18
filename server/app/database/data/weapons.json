@@ -13356,11 +13356,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Unequippable item"],
-        "fr": ["Objet non équipable"],
-        "de": ["Nicht ausrüstbarer Gegenstand"],
+        "fr": ["Objet non équipable"],
+        "de": ["Nicht ausrüstbarer Gegenstand"],
         "es": ["Objeto no equipable"],
         "it": ["Oggetto non equipaggiabile"],
-        "pt": ["Item que não pode ser equipado"]
+        "pt": ["Item que não pode ser equipado"]
       }
     },
     "imageUrl": "item/4111.png"
@@ -13945,10 +13945,10 @@
       "customConditions": {
         "en": ["Quest 'Food, Folks and Fungus' in progress"],
         "fr": ["Map : [ -14 : 34 ] et"],
-        "de": ["Quest 'Pilze für alle' am Laufen"],
-        "es": ["Misión 'Limpieza de funguis' en curso"],
+        "de": ["Quest 'Pilze für alle' am Laufen"],
+        "es": ["Misión 'Limpieza de funguis' en curso"],
         "it": ["Missione \"Passa il Fungus intorno a te\" in corso"],
-        "pt": ["Missão \"Bênção fúngica\" em andamento"]
+        "pt": ["Missão \"Bênção fúngica\" em andamento"]
       }
     },
     "imageUrl": "item/6061.png"
@@ -14124,10 +14124,10 @@
       "customConditions": {
         "en": ["Quest 'Food, Folks and Fungus' in progress"],
         "fr": ["Map : [ -14 : 34 ] et"],
-        "de": ["Quest 'Pilze für alle' am Laufen"],
-        "es": ["Misión 'Limpieza de funguis' en curso"],
+        "de": ["Quest 'Pilze für alle' am Laufen"],
+        "es": ["Misión 'Limpieza de funguis' en curso"],
         "it": ["Missione \"Passa il Fungus intorno a te\" in corso"],
-        "pt": ["Missão \"Bênção fúngica\" em andamento"]
+        "pt": ["Missão \"Bênção fúngica\" em andamento"]
       }
     },
     "imageUrl": "item/6061.png"
@@ -23529,11 +23529,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Break One's Chains' in progress"],
-        "fr": ["Quête 'Briser ses chaines' en cours"],
+        "fr": ["Quête 'Briser ses chaines' en cours"],
         "de": ["Quest 'Die Ketten zerbrechen' am Laufen"],
-        "es": ["Misión 'Romper las cadenas' en curso"],
+        "es": ["Misión 'Romper las cadenas' en curso"],
         "it": ["Missione \"Spezzare le catene\" in corso"],
-        "pt": ["Missão \"Quebrar as correntes\" em andamento"]
+        "pt": ["Missão \"Quebrar as correntes\" em andamento"]
       }
     },
     "imageUrl": "item/7001.png"
@@ -26411,11 +26411,11 @@
       },
       "customConditions": {
         "en": ["Quest 'The Icefields' complete"],
-        "fr": ["Quête 'La terre banquise.' achevée"],
+        "fr": ["Quête 'La terre banquise.' achevée"],
         "de": ["Quest 'Packeis - Ein eisiges Pack' beendet"],
-        "es": ["Misión 'La tierra banquisa' completada"],
+        "es": ["Misión 'La tierra banquisa' completada"],
         "it": ["Missione \"La terra banchisa\" compiuta"],
-        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
+        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
       }
     },
     "imageUrl": "item/6108.png"
@@ -26474,11 +26474,11 @@
       },
       "customConditions": {
         "en": ["Quest 'The Icefields' complete"],
-        "fr": ["Quête 'La terre banquise.' achevée"],
+        "fr": ["Quête 'La terre banquise.' achevée"],
         "de": ["Quest 'Packeis - Ein eisiges Pack' beendet"],
-        "es": ["Misión 'La tierra banquisa' completada"],
+        "es": ["Misión 'La tierra banquisa' completada"],
         "it": ["Missione \"La terra banchisa\" compiuta"],
-        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
+        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
       }
     },
     "imageUrl": "item/8062.png"
@@ -26532,11 +26532,11 @@
       },
       "customConditions": {
         "en": ["Quest 'The Icefields' complete"],
-        "fr": ["Quête 'La terre banquise.' achevée"],
+        "fr": ["Quête 'La terre banquise.' achevée"],
         "de": ["Quest 'Packeis - Ein eisiges Pack' beendet"],
-        "es": ["Misión 'La tierra banquisa' completada"],
+        "es": ["Misión 'La tierra banquisa' completada"],
         "it": ["Missione \"La terra banchisa\" compiuta"],
-        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
+        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
       }
     },
     "imageUrl": "item/7082.png"
@@ -26595,11 +26595,11 @@
       },
       "customConditions": {
         "en": ["Quest 'The Icefields' complete"],
-        "fr": ["Quête 'La terre banquise.' achevée"],
+        "fr": ["Quête 'La terre banquise.' achevée"],
         "de": ["Quest 'Packeis - Ein eisiges Pack' beendet"],
-        "es": ["Misión 'La tierra banquisa' completada"],
+        "es": ["Misión 'La tierra banquisa' completada"],
         "it": ["Missione \"La terra banchisa\" compiuta"],
-        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
+        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
       }
     },
     "imageUrl": "item/5082.png"
@@ -41322,19 +41322,19 @@
           "Quest 'Day of the Assassins' in progress or Quest 'Day of the Assassins' complete"
         ],
         "fr": [
-          "Quête 'Le jour des assassins' en cours ou Quête 'Le jour des assassins' achevée"
+          "Quête 'Le jour des assassins' en cours ou Quête 'Le jour des assassins' achevée"
         ],
         "de": [
           "Quest 'Der Tag der Assassinen' am Laufen oder Quest 'Der Tag der Assassinen' beendet"
         ],
         "es": [
-          "Misión 'El día de los asesinos' en curso o Misión 'El día de los asesinos' completada"
+          "Misión 'El día de los asesinos' en curso o Misión 'El día de los asesinos' completada"
         ],
         "it": [
           "Missione \"Il giorno degli assassini\" in corso o Missione \"Il giorno degli assassini\" compiuta"
         ],
         "pt": [
-          "Missão \"O dia dos assassinos\" em andamento ou Missão \"O dia dos assassinos\" concluída"
+          "Missão \"O dia dos assassinos\" em andamento ou Missão \"O dia dos assassinos\" concluída"
         ]
       }
     },
@@ -45786,11 +45786,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Lack of Mussels' in progress"],
-        "fr": ["Quête 'Manque de moule' en cours"],
+        "fr": ["Quête 'Manque de moule' en cours"],
         "de": ["Quest 'Muschelmangel' am Laufen"],
-        "es": ["Misión 'A por almejillones' en curso"],
+        "es": ["Misión 'A por almejillones' en curso"],
         "it": ["Missione \"Mancanza di cozze\" in corso"],
-        "pt": ["Missão \"Falta de mexilhões\" em andamento"]
+        "pt": ["Missão \"Falta de mexilhões\" em andamento"]
       }
     },
     "imageUrl": "item/5060.png"
@@ -55670,9 +55670,9 @@
       "conditions": {},
       "customConditions": {
         "en": ["Ecaflip only and", "Male only"],
-        "fr": ["Être un Ecaflip et", "Être de sexe masculin"],
-        "de": ["Ein(e) Ecaflip sein und", "Männlich sein"],
-        "es": ["Ser un Zurcarák y", "Ser de sexo masculino"],
+        "fr": ["Être un Ecaflip et", "Être de sexe masculin"],
+        "de": ["Ein(e) Ecaflip sein und", "Männlich sein"],
+        "es": ["Ser un Zurcarák y", "Ser de sexo masculino"],
         "it": ["Essere Ecaflip e", "Essere di sesso Maschile"],
         "pt": ["Ser um Ecaflip e", "Ser do sexo masculino"]
       }
@@ -55719,9 +55719,9 @@
       "conditions": {},
       "customConditions": {
         "en": ["Ecaflip only and", "Female only"],
-        "fr": ["Être un Ecaflip et", "Être de sexe féminin"],
+        "fr": ["Être un Ecaflip et", "Être de sexe féminin"],
         "de": ["Ein(e) Ecaflip sein und", "Weiblich sein"],
-        "es": ["Ser un Zurcarák y", "Ser de sexo femenino"],
+        "es": ["Ser un Zurcarák y", "Ser de sexo femenino"],
         "it": ["Essere Ecaflip e", "Essere di sesso Femminile"],
         "pt": ["Ser um Ecaflip e", "Ser do sexo feminino"]
       }
@@ -56159,11 +56159,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'An Eternal Harvest' in progress"],
-        "fr": ["Quête 'L'éternelle moisson.' en cours"],
+        "fr": ["Quête 'L'éternelle moisson.' en cours"],
         "de": ["Quest 'Die Ewige Ernte' am Laufen"],
-        "es": ["Misión 'La eterna cosecha' en curso"],
+        "es": ["Misión 'La eterna cosecha' en curso"],
         "it": ["Missione \"L'eterna mietitura\" in corso"],
-        "pt": ["Missão \"Colheita eterna\" em andamento"]
+        "pt": ["Missão \"Colheita eterna\" em andamento"]
       }
     },
     "imageUrl": "item/83024.png"
@@ -56286,11 +56286,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Algaeorhythm' in progress"],
-        "fr": ["Quête 'Algue au rythme' en cours"],
+        "fr": ["Quête 'Algue au rythme' en cours"],
         "de": ["Quest 'Alg-o-rhythmus' am Laufen"],
-        "es": ["Misión 'Alga y ritmo' en curso"],
+        "es": ["Misión 'Alga y ritmo' en curso"],
         "it": ["Missione \"Alga al ritmo\" in corso"],
-        "pt": ["Missão \"Alga ao ritmo\" em andamento"]
+        "pt": ["Missão \"Alga ao ritmo\" em andamento"]
       }
     },
     "imageUrl": "item/20005.png"
@@ -57490,11 +57490,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Gokwa: Path of the Staff' complete"],
-        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
+        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
         "de": ["Quest 'Gokwa: Der Weg des Steckens' beendet"],
-        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
+        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
         "it": ["Missione \"Gokwa: via del bastone\" compiuta"],
-        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
+        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
       }
     },
     "imageUrl": "item/6743.png"
@@ -57581,11 +57581,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Gokwa: Path of the Staff' complete"],
-        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
+        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
         "de": ["Quest 'Gokwa: Der Weg des Steckens' beendet"],
-        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
+        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
         "it": ["Missione \"Gokwa: via del bastone\" compiuta"],
-        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
+        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
       }
     },
     "imageUrl": "item/6744.png"
@@ -57672,11 +57672,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Gokwa: Path of the Staff' complete"],
-        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
+        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
         "de": ["Quest 'Gokwa: Der Weg des Steckens' beendet"],
-        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
+        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
         "it": ["Missione \"Gokwa: via del bastone\" compiuta"],
-        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
+        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
       }
     },
     "imageUrl": "item/6745.png"
@@ -57793,11 +57793,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Gokwa: Path of the Staff' complete"],
-        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
+        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
         "de": ["Quest 'Gokwa: Der Weg des Steckens' beendet"],
-        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
+        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
         "it": ["Missione \"Gokwa: via del bastone\" compiuta"],
-        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
+        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
       }
     },
     "imageUrl": "item/6747.png"
@@ -57884,11 +57884,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Gokwa: Path of the Staff' complete"],
-        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
+        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
         "de": ["Quest 'Gokwa: Der Weg des Steckens' beendet"],
-        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
+        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
         "it": ["Missione \"Gokwa: via del bastone\" compiuta"],
-        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
+        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
       }
     },
     "imageUrl": "item/6746.png"
@@ -57980,11 +57980,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Rokwa: Path of the Fist' complete"],
-        "fr": ["Quête 'Rokwa : Voie du poing' achevée"],
+        "fr": ["Quête 'Rokwa : Voie du poing' achevée"],
         "de": ["Quest 'Rokwa: Der Weg der Faust' beendet"],
-        "es": ["Misión 'Rokwa: Vía del puño' completada"],
+        "es": ["Misión 'Rokwa: Vía del puño' completada"],
         "it": ["Missione \"Rokwa: via del pugno\" compiuta"],
-        "pt": ["Missão \"Rokwa: Via do punho\" concluída"]
+        "pt": ["Missão \"Rokwa: Via do punho\" concluída"]
       }
     },
     "imageUrl": "item/4108.png"
@@ -58225,19 +58225,19 @@
           "Quest 'Shodanwa: Martial Perfection' complete or Quest 'Shodanwa: Martial Perfection' in progress"
         ],
         "fr": [
-          "Quête 'Shodanwa : Perfection martiale' en cours ou Quête 'Shodanwa : Perfection martiale' achevée"
+          "Quête 'Shodanwa : Perfection martiale' en cours ou Quête 'Shodanwa : Perfection martiale' achevée"
         ],
         "de": [
           "Quest Shodanwa: 'Kämpferische Vollkommenheit' am Laufen oder Quest Shodanwa: 'Kämpferische Vollkommenheit' beendet"
         ],
         "es": [
-          "Misión 'Shodanwa: perfección marcial' en curso o Misión 'Shodanwa: perfección marcial' completada"
+          "Misión 'Shodanwa: perfección marcial' en curso o Misión 'Shodanwa: perfección marcial' completada"
         ],
         "it": [
           "Missione \"Shodanwa: perfezione marziale\" in corso o Missione \"Shodanwa: perfezione marziale\" compiuta"
         ],
         "pt": [
-          "Missão \"Shodanwa: Perfeição marcial\" em andamento ou Missão \"Shodanwa: Perfeição marcial\" concluída"
+          "Missão \"Shodanwa: Perfeição marcial\" em andamento ou Missão \"Shodanwa: Perfeição marcial\" concluída"
         ]
       }
     },
@@ -59895,8 +59895,8 @@
       { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
       { "stat": "Chance", "minStat": 61, "maxStat": 80 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
-      { "stat": "Critical", "minStat": 5, "maxStat": 7 },
-      { "stat": "Water Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 6 },
+      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
       { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
       { "stat": "Initiative", "minStat": 501, "maxStat": 600 },
       { "stat": "Dodge", "minStat": 7, "maxStat": 10 },
@@ -59982,7 +59982,7 @@
     "level": 200,
     "setID": null,
     "stats": [
-      { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
       { "stat": "Strength", "minStat": 51, "maxStat": 70 },
       { "stat": "Intelligence", "minStat": 51, "maxStat": 70 },
       { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
@@ -59996,7 +59996,8 @@
       { "stat": "Dodge", "minStat": 7, "maxStat": 10 },
       { "stat": "Critical Damage", "minStat": 9, "maxStat": 12 },
       { "stat": "Pushback Resistance", "minStat": null, "maxStat": -15 },
-      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 },
       { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 }
     ],
     "weaponStats": {
