@@ -5,13 +5,14 @@ import {
   ApolloClient,
   from,
   HttpLink,
+  ApolloLink,
 } from '@apollo/client';
 
 import { onError } from '@apollo/client/link/error';
 import { NextPage } from 'next';
 import { notification } from 'antd';
 import { IncomingHttpHeaders } from 'http';
-import { relayStylePagination } from '@apollo/client/utilities';
+import { Observable, relayStylePagination } from '@apollo/client/utilities';
 import { useRouter } from 'next/router';
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
@@ -36,8 +37,37 @@ const getHttpLink = (headers?: IncomingHttpHeaders) =>
     headers,
   });
 
+const indexedDbLink = new ApolloLink((operation) => {
+  console.log({ operation });
+
+  return new Observable((observer) => {
+    observer.next({
+      data: {
+        items: {
+          edges: [],
+          pageInfo: {
+            endCursor: 'YXJyYXljb25uZWN0aW9uOjIz',
+            hasNextPage: true,
+            __typename: 'PageInfo',
+          },
+          __typename: 'ItemConnection',
+        },
+        itemSuggestions: [],
+      },
+    });
+    observer.complete();
+  });
+});
+
+const getDirectionalLink = (headers?: IncomingHttpHeaders) =>
+  errorLink.split(
+    (operation) => operation.operationName === 'items',
+    indexedDbLink,
+    getHttpLink(headers),
+  );
+
 const getLink = (headers?: IncomingHttpHeaders) =>
-  from([errorLink, getHttpLink(headers)]);
+  from([errorLink, getDirectionalLink(headers)]);
 
 export function createApolloClient(
   initialState: NormalizedCacheObject,
@@ -71,6 +101,7 @@ export function createApolloClient(
           },
         },
         Query: {
+          queryType: true,
           fields: {
             items: relayStylePagination(['filters']),
             sets: relayStylePagination(['filters']),

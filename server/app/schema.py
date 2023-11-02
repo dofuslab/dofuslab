@@ -244,6 +244,11 @@ class Item(SQLAlchemyObjectType):
     def resolve_name(self, info):
         return g.dataloaders.get("item_name_loader").load(self.uuid)
 
+    all_names = graphene.JSONString(required=True)
+
+    def resolve_all_names(self, info):
+        return g.dataloaders.get("all_item_name_loader").load(self.uuid)
+
     # https://github.com/graphql-python/graphene/issues/110#issuecomment-366515268
     set = graphene.Field(lambda: Set)
 

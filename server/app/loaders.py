@@ -70,6 +70,22 @@ def load_item_names(item_ids):
     return Promise.resolve([name_by_item_id.get(item_id, []) for item_id in item_ids])
 
 
+class AllItemNameLoader(DataLoader):
+    def batch_load_fn(self, item_ids):
+        return load_all_item_names(item_ids)
+
+
+def load_all_item_names(item_ids):
+    all_names_by_item_id = defaultdict(lambda: {})
+    for translation in db.session.query(ModelItemTranslation).filter(
+        ModelItemTranslation.item_id.in_(item_ids)
+    ):
+        all_names_by_item_id[translation.item_id][translation.locale] = translation.name
+    return Promise.resolve(
+        [all_names_by_item_id.get(item_id, {}) for item_id in item_ids]
+    )
+
+
 class ItemNameLoader(DataLoader):
     def batch_load_fn(self, item_ids):
         return load_item_names(item_ids)
