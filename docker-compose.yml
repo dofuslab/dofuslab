@@ -5,7 +5,7 @@ services:
     image: postgres:14.1
     restart: on-failure
     ports:
-      - "5432:5432"
+      - 5432:5432
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_USER: postgres
@@ -22,7 +22,7 @@ services:
     # https://hub.docker.com/_/redis
     image: redis:6.2
     ports:
-      - "6379:6379"
+      - 6379:6379
     healthcheck:
       test: [ "CMD", "redis-cli", "ping" ]
       interval: 10s
@@ -31,14 +31,16 @@ services:
   client:
     build: ./client/
     ports:
-      - "3000:3000"
+      - 3000:3000
     depends_on:
       - server
     restart: on-failure
+    environment:
+      - NODE_ENV=development
   server:
     build: ./server/
     ports:
-      - "5000:5000"
+      - 5000:5000
     # healthcheck:
     #   test: curl -s http://localhost:5000/
     #   interval: 150s
