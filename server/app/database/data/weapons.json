@@ -8695,14 +8695,14 @@
     "customStats": {},
     "conditions": {
       "conditions": {
-        "and": [
+        "or": [
           {
             "stat": "MP",
             "operator": "<",
             "value": 6
           },
           {
-            "stat": "MP",
+            "stat": "AP",
             "operator": "<",
             "value": 12
           }
