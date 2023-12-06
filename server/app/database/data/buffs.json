@@ -1700,6 +1700,16 @@
           "maxStacks": 1
         }
       ]
+    },
+    {
+      "name": "Sylvan Dofus",
+      "buffs": [
+        {
+          "stat": "Power",
+          "incrementBy": 8,
+          "maxStacks": 20
+        }
+      ]
     }
   ]
 }

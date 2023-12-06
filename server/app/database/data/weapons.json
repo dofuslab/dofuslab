@@ -8702,9 +8702,9 @@
             "value": 6
           },
           {
-            "stat": "WISDOM",
-            "operator": ">",
-            "value": 350
+            "stat": "MP",
+            "operator": "<",
+            "value": 12
           }
         ]
       },
@@ -26374,7 +26374,7 @@
     },
     "itemType": "Sword",
     "level": 100,
-    "setID": "266",
+    "setID": null,
     "stats": [],
     "weaponStats": {
       "apCost": 5,
@@ -26432,7 +26432,7 @@
     },
     "itemType": "Shovel",
     "level": 100,
-    "setID": "267",
+    "setID": null,
     "stats": [],
     "weaponStats": {
       "apCost": 4,
@@ -26495,7 +26495,7 @@
     },
     "itemType": "Hammer",
     "level": 100,
-    "setID": "268",
+    "setID": null,
     "stats": [],
     "weaponStats": {
       "apCost": 6,
@@ -26553,7 +26553,7 @@
     },
     "itemType": "Dagger",
     "level": 100,
-    "setID": "269",
+    "setID": null,
     "stats": [],
     "weaponStats": {
       "apCost": 3,
