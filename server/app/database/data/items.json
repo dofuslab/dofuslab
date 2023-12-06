@@ -22705,25 +22705,7 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "and": [
-          {
-            "stat": "INTELLIGENCE",
-            "operator": "<",
-            "value": 560
-          },
-          {
-            "stat": "CHANCE",
-            "operator": "<",
-            "value": 560
-          },
-          {
-            "stat": "AGILITY",
-            "operator": "<",
-            "value": 560
-          }
-        ]
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/1181.png"
@@ -28736,7 +28718,12 @@
       "conditions": {
         "and": [
           {
-            "stat": "AP",
+            "stat": "MP",
+            "operator": "<",
+            "value": 6
+          },
+          {
+            "stat": "MP",
             "operator": "<",
             "value": 12
           }
@@ -30539,6 +30526,11 @@
             "stat": "MP",
             "operator": "<",
             "value": 6
+          },
+          {
+            "stat": "MP",
+            "operator": "<",
+            "value": 12
           }
         ]
       },
@@ -31552,6 +31544,11 @@
             "stat": "MP",
             "operator": "<",
             "value": 6
+          },
+          {
+            "stat": "MP",
+            "operator": "<",
+            "value": 12
           }
         ]
       },
@@ -32680,7 +32677,12 @@
       "conditions": {
         "and": [
           {
-            "stat": "AP",
+            "stat": "MP",
+            "operator": "<",
+            "value": 6
+          },
+          {
+            "stat": "MP",
             "operator": "<",
             "value": 12
           }
@@ -33363,15 +33365,7 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "and": [
-          {
-            "stat": "AGILITY",
-            "operator": "<",
-            "value": 600
-          }
-        ]
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/11192.png"
@@ -33816,15 +33810,7 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "and": [
-          {
-            "stat": "INTELLIGENCE",
-            "operator": "<",
-            "value": 600
-          }
-        ]
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/16304.png"
@@ -34447,15 +34433,7 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "and": [
-          {
-            "stat": "STRENGTH",
-            "operator": "<",
-            "value": 600
-          }
-        ]
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/10204.png"
@@ -34825,15 +34803,7 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "and": [
-          {
-            "stat": "CHANCE",
-            "operator": "<",
-            "value": 600
-          }
-        ]
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/9228.png"
@@ -134443,5 +134413,52 @@
     "customStats": {},
     "conditions": { "conditions": {}, "customConditions": {} },
     "imageUrl": "item/9380.png"
+  },
+  {
+    "dofusID": "29134",
+    "name": {
+      "en": "Sylvan Dofus",
+      "fr": "Dofus Sylvestre",
+      "de": "Wald-Dofus",
+      "es": "Dofus silvestre",
+      "it": "[!] Sylvan Dofus",
+      "pt": "Dofus Silvestre"
+    },
+    "itemType": "Dofus",
+    "setID": null,
+    "level": 180,
+    "stats": [
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {
+      "en": [
+        "For each MP used, the bearer gains 8 Power for 2 turns, stackable 20 times. If the bearer does not use any MP, they are healed for 10% of their HP at the end of their turn."
+      ],
+      "fr": [
+        "À chaque PM utilisé, le porteur gagne 8 Puissance pour 2 tours, cumulable 20 fois. Si au contraire il n'utilise aucun PM, il est soigné de 10% de ses PV à la fin de son tour.",
+        "Attitude Dofus Turquoise"
+      ],
+      "de": [
+        "[!] For each MP used, the bearer gains 8 Power for 2 turns, stackable 20 times. If the bearer does not use any MP, they are healed for 10% of their HP at the end of their turn."
+      ],
+      "es": [
+        "[!] For each MP used, the bearer gains 8 Power for 2 turns, stackable 20 times. If the bearer does not use any MP, they are healed for 10% of their HP at the end of their turn."
+      ],
+      "it": [
+        "[!] For each MP used, the bearer gains 8 Power for 2 turns, stackable 20 times. If the bearer does not use any MP, they are healed for 10% of their HP at the end of their turn."
+      ],
+      "pt": [
+        "[!] For each MP used, the bearer gains 8 Power for 2 turns, stackable 20 times. If the bearer does not use any MP, they are healed for 10% of their HP at the end of their turn."
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/23036.png"
   }
 ]
