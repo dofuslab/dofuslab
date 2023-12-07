@@ -3,7 +3,7 @@ services:
   postgres:
     # https://hub.docker.com/_/postgres
     image: postgres:14.1
-    restart: on-failure
+    restart: always
     ports:
       - 5432:5432
     environment:
@@ -21,6 +21,7 @@ services:
   redis:
     # https://hub.docker.com/_/redis
     image: redis:6.2
+    restart: always
     ports:
       - 6379:6379
     healthcheck:
@@ -34,11 +35,12 @@ services:
       - 3000:3000
     depends_on:
       - server
-    restart: on-failure
+    restart: always
     environment:
       - NODE_ENV=development
   server:
     build: ./server/
+    restart: always
     ports:
       - 5000:5000
     # healthcheck:
@@ -46,6 +48,14 @@ services:
     #   interval: 150s
     #   timeout: 30s
     #   retries: 5
-    restart: on-failure
+  nginx:
+  # https://hub.docker.com/_/nginx
+    build: ./nginx/
+    ports:
+      - 8080:80
+    depends_on:
+      - client
+    restart: always
+
 volumes:
   pgdata:
