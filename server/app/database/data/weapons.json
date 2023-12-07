@@ -613,7 +613,7 @@
       "it": "Lancia Corrotta",
       "pt": "Lança Corrompida"
     },
-    "itemType": "Staff",
+    "itemType": "Lance",
     "level": 200,
     "setID": null,
     "stats": [
@@ -3292,7 +3292,7 @@
       "it": "Lancia Stregata",
       "pt": "Lança Bracadabra"
     },
-    "itemType": "Staff",
+    "itemType": "Lance",
     "level": 200,
     "setID": null,
     "stats": [
@@ -8695,16 +8695,16 @@
     "customStats": {},
     "conditions": {
       "conditions": {
-        "and": [
+        "or": [
           {
             "stat": "MP",
             "operator": "<",
             "value": 6
           },
           {
-            "stat": "WISDOM",
-            "operator": ">",
-            "value": 350
+            "stat": "AP",
+            "operator": "<",
+            "value": 12
           }
         ]
       },
@@ -13356,11 +13356,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Unequippable item"],
-        "fr": ["Objet non équipable"],
-        "de": ["Nicht ausrüstbarer Gegenstand"],
+        "fr": ["Objet non équipable"],
+        "de": ["Nicht ausrüstbarer Gegenstand"],
         "es": ["Objeto no equipable"],
         "it": ["Oggetto non equipaggiabile"],
-        "pt": ["Item que não pode ser equipado"]
+        "pt": ["Item que não pode ser equipado"]
       }
     },
     "imageUrl": "item/4111.png"
@@ -13945,10 +13945,10 @@
       "customConditions": {
         "en": ["Quest 'Food, Folks and Fungus' in progress"],
         "fr": ["Map : [ -14 : 34 ] et"],
-        "de": ["Quest 'Pilze für alle' am Laufen"],
-        "es": ["Misión 'Limpieza de funguis' en curso"],
+        "de": ["Quest 'Pilze für alle' am Laufen"],
+        "es": ["Misión 'Limpieza de funguis' en curso"],
         "it": ["Missione \"Passa il Fungus intorno a te\" in corso"],
-        "pt": ["Missão \"Bênção fúngica\" em andamento"]
+        "pt": ["Missão \"Bênção fúngica\" em andamento"]
       }
     },
     "imageUrl": "item/6061.png"
@@ -14124,10 +14124,10 @@
       "customConditions": {
         "en": ["Quest 'Food, Folks and Fungus' in progress"],
         "fr": ["Map : [ -14 : 34 ] et"],
-        "de": ["Quest 'Pilze für alle' am Laufen"],
-        "es": ["Misión 'Limpieza de funguis' en curso"],
+        "de": ["Quest 'Pilze für alle' am Laufen"],
+        "es": ["Misión 'Limpieza de funguis' en curso"],
         "it": ["Missione \"Passa il Fungus intorno a te\" in corso"],
-        "pt": ["Missão \"Bênção fúngica\" em andamento"]
+        "pt": ["Missão \"Bênção fúngica\" em andamento"]
       }
     },
     "imageUrl": "item/6061.png"
@@ -14949,10 +14949,10 @@
     "name": {
       "en": "Harpy Pirate Lance",
       "fr": "Bâton du Harpirate",
-      "de": "Stecken des Phantomharpiraten",
+      "de": "Phantomharpirats Wurfspeer",
       "es": "Lanza de harpirata",
-      "it": "Bastone di Fantarpione",
-      "pt": "Bastão do Arpirata"
+      "it": "Lancia di Fantarpione",
+      "pt": "Lança do Arpirata"
     },
     "itemType": "Staff",
     "level": 154,
@@ -23529,11 +23529,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Break One's Chains' in progress"],
-        "fr": ["Quête 'Briser ses chaines' en cours"],
+        "fr": ["Quête 'Briser ses chaines' en cours"],
         "de": ["Quest 'Die Ketten zerbrechen' am Laufen"],
-        "es": ["Misión 'Romper las cadenas' en curso"],
+        "es": ["Misión 'Romper las cadenas' en curso"],
         "it": ["Missione \"Spezzare le catene\" in corso"],
-        "pt": ["Missão \"Quebrar as correntes\" em andamento"]
+        "pt": ["Missão \"Quebrar as correntes\" em andamento"]
       }
     },
     "imageUrl": "item/7001.png"
@@ -23995,7 +23995,7 @@
     },
     "itemType": "Sword",
     "level": 109,
-    "setID": "67",
+    "setID": null,
     "stats": [
       {
         "stat": "Vitality",
@@ -24169,7 +24169,7 @@
     },
     "itemType": "Dagger",
     "level": 108,
-    "setID": "68",
+    "setID": null,
     "stats": [
       {
         "stat": "Vitality",
@@ -26374,7 +26374,7 @@
     },
     "itemType": "Sword",
     "level": 100,
-    "setID": "266",
+    "setID": null,
     "stats": [],
     "weaponStats": {
       "apCost": 5,
@@ -26411,11 +26411,11 @@
       },
       "customConditions": {
         "en": ["Quest 'The Icefields' complete"],
-        "fr": ["Quête 'La terre banquise.' achevée"],
+        "fr": ["Quête 'La terre banquise.' achevée"],
         "de": ["Quest 'Packeis - Ein eisiges Pack' beendet"],
-        "es": ["Misión 'La tierra banquisa' completada"],
+        "es": ["Misión 'La tierra banquisa' completada"],
         "it": ["Missione \"La terra banchisa\" compiuta"],
-        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
+        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
       }
     },
     "imageUrl": "item/6108.png"
@@ -26432,7 +26432,7 @@
     },
     "itemType": "Shovel",
     "level": 100,
-    "setID": "267",
+    "setID": null,
     "stats": [],
     "weaponStats": {
       "apCost": 4,
@@ -26474,11 +26474,11 @@
       },
       "customConditions": {
         "en": ["Quest 'The Icefields' complete"],
-        "fr": ["Quête 'La terre banquise.' achevée"],
+        "fr": ["Quête 'La terre banquise.' achevée"],
         "de": ["Quest 'Packeis - Ein eisiges Pack' beendet"],
-        "es": ["Misión 'La tierra banquisa' completada"],
+        "es": ["Misión 'La tierra banquisa' completada"],
         "it": ["Missione \"La terra banchisa\" compiuta"],
-        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
+        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
       }
     },
     "imageUrl": "item/8062.png"
@@ -26495,7 +26495,7 @@
     },
     "itemType": "Hammer",
     "level": 100,
-    "setID": "268",
+    "setID": null,
     "stats": [],
     "weaponStats": {
       "apCost": 6,
@@ -26532,11 +26532,11 @@
       },
       "customConditions": {
         "en": ["Quest 'The Icefields' complete"],
-        "fr": ["Quête 'La terre banquise.' achevée"],
+        "fr": ["Quête 'La terre banquise.' achevée"],
         "de": ["Quest 'Packeis - Ein eisiges Pack' beendet"],
-        "es": ["Misión 'La tierra banquisa' completada"],
+        "es": ["Misión 'La tierra banquisa' completada"],
         "it": ["Missione \"La terra banchisa\" compiuta"],
-        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
+        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
       }
     },
     "imageUrl": "item/7082.png"
@@ -26553,7 +26553,7 @@
     },
     "itemType": "Dagger",
     "level": 100,
-    "setID": "269",
+    "setID": null,
     "stats": [],
     "weaponStats": {
       "apCost": 3,
@@ -26595,11 +26595,11 @@
       },
       "customConditions": {
         "en": ["Quest 'The Icefields' complete"],
-        "fr": ["Quête 'La terre banquise.' achevée"],
+        "fr": ["Quête 'La terre banquise.' achevée"],
         "de": ["Quest 'Packeis - Ein eisiges Pack' beendet"],
-        "es": ["Misión 'La tierra banquisa' completada"],
+        "es": ["Misión 'La tierra banquisa' completada"],
         "it": ["Missione \"La terra banchisa\" compiuta"],
-        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
+        "pt": ["Missão \"Os Campos de Gelo\" concluída"]
       }
     },
     "imageUrl": "item/5082.png"
@@ -31679,12 +31679,12 @@
   {
     "dofusID": "6442",
     "name": {
-      "en": "Aga Dou's Staff",
-      "fr": "Bâton d'Aga Dou",
-      "de": "Aga Dous Stock",
-      "es": "Bastón de Loh Doh",
-      "it": "Bastone d'Aga Dou",
-      "pt": "Bastão de Aga Duh"
+      "en": "Aga Dou's Lance",
+      "fr": "Lance d'Aga Dou",
+      "de": "Aga Dous Wurfspeer",
+      "es": "Lanza de Loh Doh",
+      "it": "Lancia di Aga Dou",
+      "pt": "Lança de Aga Duh"
     },
     "itemType": "Staff",
     "level": 81,
@@ -32994,12 +32994,12 @@
   {
     "dofusID": "6769",
     "name": {
-      "en": "Farle's Staff",
-      "fr": "Bâton de Farle",
-      "de": "Farles Stock",
-      "es": "Bastón de Farle",
-      "it": "Bastone di Farle",
-      "pt": "Bastão de Farle"
+      "en": "Farle's Pitchfork",
+      "fr": "Fourche de Farle",
+      "de": "Farles Gabel",
+      "es": "Horca de Farle",
+      "it": "Forcone di Farle",
+      "pt": "Forquilha de Farle"
     },
     "itemType": "Staff",
     "level": 76,
@@ -36421,11 +36421,6 @@
           "stat": "Fire damage",
           "minStat": 8,
           "maxStat": 20
-        },
-        {
-          "stat": "MP",
-          "minStat": null,
-          "maxStat": -5
         }
       ]
     },
@@ -39822,12 +39817,12 @@
   {
     "dofusID": "2066",
     "name": {
-      "en": "Kaniger Staff",
-      "fr": "Bâton du Kanigrou",
-      "de": "Stecken des Kanigrous",
-      "es": "Bastón de kanugro",
-      "it": "Bastone del Kanigrù",
-      "pt": "Bastão do Kanigre"
+      "en": "Kaniger Trident",
+      "fr": "Trident du Kanigrou",
+      "de": "Kanigrous Dreizack",
+      "es": "Tridente de kanugro",
+      "it": "Tridente del Kanigrù",
+      "pt": "Tridente do Kanigre"
     },
     "itemType": "Staff",
     "level": 53,
@@ -41327,19 +41322,19 @@
           "Quest 'Day of the Assassins' in progress or Quest 'Day of the Assassins' complete"
         ],
         "fr": [
-          "Quête 'Le jour des assassins' en cours ou Quête 'Le jour des assassins' achevée"
+          "Quête 'Le jour des assassins' en cours ou Quête 'Le jour des assassins' achevée"
         ],
         "de": [
           "Quest 'Der Tag der Assassinen' am Laufen oder Quest 'Der Tag der Assassinen' beendet"
         ],
         "es": [
-          "Misión 'El día de los asesinos' en curso o Misión 'El día de los asesinos' completada"
+          "Misión 'El día de los asesinos' en curso o Misión 'El día de los asesinos' completada"
         ],
         "it": [
           "Missione \"Il giorno degli assassini\" in corso o Missione \"Il giorno degli assassini\" compiuta"
         ],
         "pt": [
-          "Missão \"O dia dos assassinos\" em andamento ou Missão \"O dia dos assassinos\" concluída"
+          "Missão \"O dia dos assassinos\" em andamento ou Missão \"O dia dos assassinos\" concluída"
         ]
       }
     },
@@ -45791,11 +45786,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Lack of Mussels' in progress"],
-        "fr": ["Quête 'Manque de moule' en cours"],
+        "fr": ["Quête 'Manque de moule' en cours"],
         "de": ["Quest 'Muschelmangel' am Laufen"],
-        "es": ["Misión 'A por almejillones' en curso"],
+        "es": ["Misión 'A por almejillones' en curso"],
         "it": ["Missione \"Mancanza di cozze\" in corso"],
-        "pt": ["Missão \"Falta de mexilhões\" em andamento"]
+        "pt": ["Missão \"Falta de mexilhões\" em andamento"]
       }
     },
     "imageUrl": "item/5060.png"
@@ -49527,7 +49522,7 @@
       "it": "La Lancia dei \"110\"",
       "pt": "Cajado de Fogo do Incendiário"
     },
-    "itemType": "Staff",
+    "itemType": "Lance",
     "level": 29,
     "setID": null,
     "stats": [
@@ -55675,9 +55670,9 @@
       "conditions": {},
       "customConditions": {
         "en": ["Ecaflip only and", "Male only"],
-        "fr": ["Être un Ecaflip et", "Être de sexe masculin"],
-        "de": ["Ein(e) Ecaflip sein und", "Männlich sein"],
-        "es": ["Ser un Zurcarák y", "Ser de sexo masculino"],
+        "fr": ["Être un Ecaflip et", "Être de sexe masculin"],
+        "de": ["Ein(e) Ecaflip sein und", "Männlich sein"],
+        "es": ["Ser un Zurcarák y", "Ser de sexo masculino"],
         "it": ["Essere Ecaflip e", "Essere di sesso Maschile"],
         "pt": ["Ser um Ecaflip e", "Ser do sexo masculino"]
       }
@@ -55724,9 +55719,9 @@
       "conditions": {},
       "customConditions": {
         "en": ["Ecaflip only and", "Female only"],
-        "fr": ["Être un Ecaflip et", "Être de sexe féminin"],
+        "fr": ["Être un Ecaflip et", "Être de sexe féminin"],
         "de": ["Ein(e) Ecaflip sein und", "Weiblich sein"],
-        "es": ["Ser un Zurcarák y", "Ser de sexo femenino"],
+        "es": ["Ser un Zurcarák y", "Ser de sexo femenino"],
         "it": ["Essere Ecaflip e", "Essere di sesso Femminile"],
         "pt": ["Ser um Ecaflip e", "Ser do sexo feminino"]
       }
@@ -56164,11 +56159,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'An Eternal Harvest' in progress"],
-        "fr": ["Quête 'L'éternelle moisson.' en cours"],
+        "fr": ["Quête 'L'éternelle moisson.' en cours"],
         "de": ["Quest 'Die Ewige Ernte' am Laufen"],
-        "es": ["Misión 'La eterna cosecha' en curso"],
+        "es": ["Misión 'La eterna cosecha' en curso"],
         "it": ["Missione \"L'eterna mietitura\" in corso"],
-        "pt": ["Missão \"Colheita eterna\" em andamento"]
+        "pt": ["Missão \"Colheita eterna\" em andamento"]
       }
     },
     "imageUrl": "item/83024.png"
@@ -56291,11 +56286,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Algaeorhythm' in progress"],
-        "fr": ["Quête 'Algue au rythme' en cours"],
+        "fr": ["Quête 'Algue au rythme' en cours"],
         "de": ["Quest 'Alg-o-rhythmus' am Laufen"],
-        "es": ["Misión 'Alga y ritmo' en curso"],
+        "es": ["Misión 'Alga y ritmo' en curso"],
         "it": ["Missione \"Alga al ritmo\" in corso"],
-        "pt": ["Missão \"Alga ao ritmo\" em andamento"]
+        "pt": ["Missão \"Alga ao ritmo\" em andamento"]
       }
     },
     "imageUrl": "item/20005.png"
@@ -57495,11 +57490,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Gokwa: Path of the Staff' complete"],
-        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
+        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
         "de": ["Quest 'Gokwa: Der Weg des Steckens' beendet"],
-        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
+        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
         "it": ["Missione \"Gokwa: via del bastone\" compiuta"],
-        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
+        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
       }
     },
     "imageUrl": "item/6743.png"
@@ -57586,11 +57581,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Gokwa: Path of the Staff' complete"],
-        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
+        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
         "de": ["Quest 'Gokwa: Der Weg des Steckens' beendet"],
-        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
+        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
         "it": ["Missione \"Gokwa: via del bastone\" compiuta"],
-        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
+        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
       }
     },
     "imageUrl": "item/6744.png"
@@ -57677,11 +57672,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Gokwa: Path of the Staff' complete"],
-        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
+        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
         "de": ["Quest 'Gokwa: Der Weg des Steckens' beendet"],
-        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
+        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
         "it": ["Missione \"Gokwa: via del bastone\" compiuta"],
-        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
+        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
       }
     },
     "imageUrl": "item/6745.png"
@@ -57798,11 +57793,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Gokwa: Path of the Staff' complete"],
-        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
+        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
         "de": ["Quest 'Gokwa: Der Weg des Steckens' beendet"],
-        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
+        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
         "it": ["Missione \"Gokwa: via del bastone\" compiuta"],
-        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
+        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
       }
     },
     "imageUrl": "item/6747.png"
@@ -57889,11 +57884,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Gokwa: Path of the Staff' complete"],
-        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
+        "fr": ["Quête 'Gokwa : Voie du bâton' achevée"],
         "de": ["Quest 'Gokwa: Der Weg des Steckens' beendet"],
-        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
+        "es": ["Misión 'Gokwa: Vía del bastón' completada"],
         "it": ["Missione \"Gokwa: via del bastone\" compiuta"],
-        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
+        "pt": ["Missão \"Gokwa: Via do bastão\" concluída"]
       }
     },
     "imageUrl": "item/6746.png"
@@ -57985,11 +57980,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Quest 'Rokwa: Path of the Fist' complete"],
-        "fr": ["Quête 'Rokwa : Voie du poing' achevée"],
+        "fr": ["Quête 'Rokwa : Voie du poing' achevée"],
         "de": ["Quest 'Rokwa: Der Weg der Faust' beendet"],
-        "es": ["Misión 'Rokwa: Vía del puño' completada"],
+        "es": ["Misión 'Rokwa: Vía del puño' completada"],
         "it": ["Missione \"Rokwa: via del pugno\" compiuta"],
-        "pt": ["Missão \"Rokwa: Via do punho\" concluída"]
+        "pt": ["Missão \"Rokwa: Via do punho\" concluída"]
       }
     },
     "imageUrl": "item/4108.png"
@@ -58230,19 +58225,19 @@
           "Quest 'Shodanwa: Martial Perfection' complete or Quest 'Shodanwa: Martial Perfection' in progress"
         ],
         "fr": [
-          "Quête 'Shodanwa : Perfection martiale' en cours ou Quête 'Shodanwa : Perfection martiale' achevée"
+          "Quête 'Shodanwa : Perfection martiale' en cours ou Quête 'Shodanwa : Perfection martiale' achevée"
         ],
         "de": [
           "Quest Shodanwa: 'Kämpferische Vollkommenheit' am Laufen oder Quest Shodanwa: 'Kämpferische Vollkommenheit' beendet"
         ],
         "es": [
-          "Misión 'Shodanwa: perfección marcial' en curso o Misión 'Shodanwa: perfección marcial' completada"
+          "Misión 'Shodanwa: perfección marcial' en curso o Misión 'Shodanwa: perfección marcial' completada"
         ],
         "it": [
           "Missione \"Shodanwa: perfezione marziale\" in corso o Missione \"Shodanwa: perfezione marziale\" compiuta"
         ],
         "pt": [
-          "Missão \"Shodanwa: Perfeição marcial\" em andamento ou Missão \"Shodanwa: Perfeição marcial\" concluída"
+          "Missão \"Shodanwa: Perfeição marcial\" em andamento ou Missão \"Shodanwa: Perfeição marcial\" concluída"
         ]
       }
     },
@@ -59611,7 +59606,7 @@
       "it": "Partigiana di Mina Harcher",
       "pt": "Partazana de Hell Mina"
     },
-    "itemType": "Staff",
+    "itemType": "Lance",
     "level": 150,
     "setID": "501",
     "stats": [
@@ -59718,5 +59713,487 @@
     "customStats": {},
     "conditions": { "conditions": {}, "customConditions": {} },
     "imageUrl": "item/22011.png"
+  },
+  {
+    "dofusID": "27545",
+    "name": {
+      "en": "Gallows of Ephedrya",
+      "fr": "Potence d'Ephedrya",
+      "de": "Potenz von Ephedrya",
+      "es": "Horca de Efedria",
+      "it": "Potenza di Efedria",
+      "pt": "Potência de Ephedrya"
+    },
+    "itemType": "Axe",
+    "level": 200,
+    "setID": "514",
+    "stats": [
+      { "stat": "Vitality", "minStat": 451, "maxStat": 500 },
+      { "stat": "Wisdom", "minStat": 41, "maxStat": 50 },
+      { "stat": "Power", "minStat": 61, "maxStat": 80 },
+      { "stat": "Critical", "minStat": null, "maxStat": -10 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Water Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Air Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Critical Resistance", "minStat": 21, "maxStat": 25 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 1,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        { "stat": "Neutral damage", "minStat": 68, "maxStat": 75 },
+        { "stat": "AP", "minStat": null, "maxStat": -1 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/19084.png"
+  },
+  {
+    "dofusID": "27530",
+    "name": {
+      "en": "Raccooper's Billhook",
+      "fr": "Serpe de Rakoopeur",
+      "de": "Racooper-Hippe",
+      "es": "Hoz de Rakooper",
+      "it": "Roncola di Rakooper",
+      "pt": "Podadeira de Rakooper"
+    },
+    "itemType": "Scythe",
+    "level": 38,
+    "setID": "509",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Strength", "minStat": 26, "maxStat": 35 },
+      { "stat": "Agility", "minStat": 26, "maxStat": 35 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": -2 },
+      { "stat": "Earth Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "Air Damage", "minStat": 3, "maxStat": 5 }
+    ],
+    "weaponStats": {
+      "apCost": 3,
+      "minRange": 1,
+      "maxRange": 2,
+      "usesPerTurn": 1,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        { "stat": "Earth damage", "minStat": 5, "maxStat": 8 },
+        { "stat": "Air damage", "minStat": 5, "maxStat": 8 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/22012.png"
+  },
+  {
+    "dofusID": "27539",
+    "name": {
+      "en": "Bitter Billhook",
+      "fr": "Serpe Aigrie",
+      "de": "Sauersichel",
+      "es": "Hoz seca",
+      "it": "Roncola Rancorosa",
+      "pt": "Podadeira Amarga"
+    },
+    "itemType": "Scythe",
+    "level": 190,
+    "setID": "516",
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Strength", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Power", "minStat": 21, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 6 },
+      { "stat": "Earth Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Lock", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "weaponStats": {
+      "apCost": 6,
+      "minRange": 1,
+      "maxRange": 2,
+      "usesPerTurn": 1,
+      "baseCritChance": 10,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        { "stat": "Neutral damage", "minStat": 28, "maxStat": 32 },
+        { "stat": "Earth damage", "minStat": 18, "maxStat": 22 },
+        { "stat": "Water steal", "minStat": 6, "maxStat": 10 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/22013.png"
+  },
+  {
+    "dofusID": "27540",
+    "name": {
+      "en": "Bitter Hammer",
+      "fr": "Marteau Aigri",
+      "de": "Sauerhammer",
+      "es": "Martillo seco",
+      "it": "Martello Rancoroso",
+      "pt": "Martelo Amargo"
+    },
+    "itemType": "Hammer",
+    "level": 190,
+    "setID": "516",
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Chance", "minStat": 41, "maxStat": 60 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Power", "minStat": 21, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 6 },
+      { "stat": "Earth Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Lock", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Neutral Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "weaponStats": {
+      "apCost": 6,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 1,
+      "baseCritChance": 15,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        { "stat": "Neutral damage", "minStat": 34, "maxStat": 38 },
+        { "stat": "Water damage", "minStat": 24, "maxStat": 28 },
+        { "stat": "Earth steal", "minStat": 6, "maxStat": 10 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/7089.png"
+  },
+  {
+    "dofusID": "27543",
+    "name": {
+      "en": "Berylbell's Tonfas",
+      "fr": "Tonfas de Barbéryl",
+      "de": "Barberyls Tonfas",
+      "es": "Tonfas de Demena",
+      "it": "Tonfa di Barberilla",
+      "pt": "Tonfas de Barberila"
+    },
+    "itemType": "Dagger",
+    "level": 192,
+    "setID": "513",
+    "stats": [
+      { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
+      { "stat": "Chance", "minStat": 61, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 4, "maxStat": 6 },
+      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Initiative", "minStat": 501, "maxStat": 600 },
+      { "stat": "Dodge", "minStat": 7, "maxStat": 10 },
+      { "stat": "Critical Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "weaponStats": {
+      "apCost": 3,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 2,
+      "baseCritChance": 15,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        { "stat": "Water damage", "minStat": 9, "maxStat": 12 },
+        { "stat": "Water steal", "minStat": 7, "maxStat": 10 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/5102.png"
+  },
+  {
+    "dofusID": "27528",
+    "name": {
+      "en": "Copperbeard Mace",
+      "fr": "Masse Clochecuivre",
+      "de": "Glockenleder-Hammer",
+      "es": "Maza Decobre",
+      "it": "Mazza Rametista",
+      "pt": "Maça Sinocobre"
+    },
+    "itemType": "Hammer",
+    "level": 196,
+    "setID": "510",
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Strength", "minStat": 41, "maxStat": 60 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 41, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 25 },
+      { "stat": "Neutral Damage", "minStat": 11, "maxStat": 14 },
+      { "stat": "Earth Damage", "minStat": 11, "maxStat": 14 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Air Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Prospecting", "minStat": 9, "maxStat": 12 },
+      { "stat": "Initiative", "minStat": null, "maxStat": -300 },
+      { "stat": "Lock", "minStat": 4, "maxStat": 7 },
+      { "stat": "Dodge", "minStat": null, "maxStat": -7 },
+      { "stat": "Pushback Damage", "minStat": 11, "maxStat": 14 },
+      { "stat": "% Earth Resistance", "minStat": 4, "maxStat": 7 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 7 }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 1,
+      "baseCritChance": 15,
+      "critBonusDamage": 4,
+      "weapon_effects": [
+        { "stat": "Neutral damage", "minStat": 15, "maxStat": 18 },
+        { "stat": "Fire damage", "minStat": 15, "maxStat": 18 },
+        { "stat": "Air damage", "minStat": 15, "maxStat": 18 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/7090.png"
+  },
+  {
+    "dofusID": "27644",
+    "name": {
+      "en": "Yaulbow",
+      "fr": "Yaularc",
+      "de": "Yaularc",
+      "es": "Yaularco",
+      "it": "Yaularca",
+      "pt": "Yaularco"
+    },
+    "itemType": "Bow",
+    "level": 200,
+    "setID": null,
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Strength", "minStat": 51, "maxStat": 70 },
+      { "stat": "Intelligence", "minStat": 51, "maxStat": 70 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Neutral Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Earth Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Fire Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 20 },
+      { "stat": "Lock", "minStat": null, "maxStat": -10 },
+      { "stat": "Dodge", "minStat": 7, "maxStat": 10 },
+      { "stat": "Critical Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Pushback Resistance", "minStat": null, "maxStat": -15 },
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "minRange": 4,
+      "maxRange": 7,
+      "usesPerTurn": 1,
+      "baseCritChance": 15,
+      "critBonusDamage": 6,
+      "weapon_effects": [
+        { "stat": "Earth damage", "minStat": 23, "maxStat": 28 },
+        { "stat": "Fire damage", "minStat": 23, "maxStat": 28 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/2092.png"
+  },
+  {
+    "dofusID": "27510",
+    "name": {
+      "en": "Claymomore",
+      "fr": "Claymomore",
+      "de": "Claymomore",
+      "es": "Claymomore",
+      "it": "Funestanera",
+      "pt": "Claymomore"
+    },
+    "itemType": "Sword",
+    "level": 200,
+    "setID": "507",
+    "stats": [
+      { "stat": "Vitality", "minStat": 451, "maxStat": 500 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Power", "minStat": 41, "maxStat": 50 },
+      { "stat": "Earth Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Fire Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Air Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Lock", "minStat": 11, "maxStat": 15 },
+      { "stat": "Pushback Resistance", "minStat": 16, "maxStat": 20 },
+      { "stat": "% Neutral Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Earth Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Fire Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Water Resistance", "minStat": 2, "maxStat": 3 },
+      { "stat": "% Air Resistance", "minStat": 2, "maxStat": 3 }
+    ],
+    "weaponStats": {
+      "apCost": 6,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 1,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        { "stat": "Earth damage", "minStat": 18, "maxStat": 22 },
+        { "stat": "Fire damage", "minStat": 18, "maxStat": 22 },
+        { "stat": "Water damage", "minStat": 18, "maxStat": 22 },
+        { "stat": "Air damage", "minStat": 18, "maxStat": 22 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/6755.png"
+  },
+  {
+    "dofusID": "27533",
+    "name": {
+      "en": "Albueran Warrior Lance",
+      "fr": "Lance de guerrier albueran",
+      "de": "Albueranischer Kriegerspeer",
+      "es": "Lanza de guerrero albuereño",
+      "it": "Lancia di Guerriero di Albuera",
+      "pt": "Lança de Guerreiro Albuerano"
+    },
+    "itemType": "Lance",
+    "level": 50,
+    "setID": "511",
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Chance", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Earth Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Water Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Neutral Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 1,
+      "baseCritChance": 30,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        { "stat": "Neutral damage", "minStat": 10, "maxStat": 14 },
+        { "stat": "Water steal", "minStat": 3, "maxStat": 4 }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/183001.png"
+  },
+  {
+    "dofusID": "27534",
+    "name": {
+      "en": "Albueran Trapper Lance",
+      "fr": "Lance de trappeur albueran",
+      "de": "Wurfspeer eines Albueraner-Fallenstellers",
+      "es": "Lanza de trampero albuereño",
+      "it": "Lancia del Ranger di Albuera",
+      "pt": "Lança de Caçador Albuerano"
+    },
+    "itemType": "Lance",
+    "level": 50,
+    "setID": "512",
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 40 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Heals", "minStat": 4, "maxStat": 7 }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 1,
+      "baseCritChance": 30,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        {
+          "stat": "HP restored",
+          "minStat": 8,
+          "maxStat": 12
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 8,
+          "maxStat": 12
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/183002.png"
+  },
+  {
+    "dofusID": "27546",
+    "name": {
+      "en": "Pillar of Ephedrya",
+      "fr": "Pilier d'Ephedrya",
+      "de": "Säule von Ephedrya",
+      "es": "Picota de Efedria",
+      "it": "Pilastro di Efedria",
+      "pt": "Pilar de Ephedrya"
+    },
+    "itemType": "Lance",
+    "level": 200,
+    "setID": "514",
+    "stats": [
+      { "stat": "Vitality", "minStat": 401, "maxStat": 450 },
+      { "stat": "Wisdom", "minStat": 41, "maxStat": 50 },
+      { "stat": "Power", "minStat": 71, "maxStat": 90 },
+      { "stat": "Critical", "minStat": null, "maxStat": -10 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Water Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Air Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Fire Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "Critical Resistance", "minStat": 21, "maxStat": 25 }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "minRange": null,
+      "maxRange": 1,
+      "usesPerTurn": 1,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        {
+          "stat": "Neutral damage",
+          "minStat": 58,
+          "maxStat": 65
+        },
+        {
+          "stat": "MP",
+          "minStat": null,
+          "maxStat": -1
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/183003.png"
   }
 ]

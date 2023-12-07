@@ -1,11 +1,8 @@
 {
-  "python.pythonPath": "venv/bin/python3",
   "python.linting.pylintArgs": ["--load-plugins", "pylint-flask"],
   "python.formatting.provider": "black",
+  "editor.formatOnSave": true,
   "eslint.workingDirectories": ["./client"],
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

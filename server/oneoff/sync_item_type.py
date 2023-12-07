@@ -16,17 +16,22 @@ def recreate_item_type_translations(db_session, en_name, all_names):
             ModelItemTypeTranslation.locale == "en",
             ModelItemTypeTranslation.name == en_name,
         )
-        .one()
+        .one_or_none()
     )
-    item_type = translations.item_type
-    db_session.query(ModelItemTypeTranslation).filter_by(
-        item_type_id=item_type.uuid
-    ).delete()
+    if translations:
+        item_type = translations.item_type
+        db_session.query(ModelItemTypeTranslation).filter_by(
+            item_type_id=item_type.uuid
+        ).delete()
+    else:
+        item_type = ModelItemType()
+        db_session.add(item_type)
+        db_session.flush()
     for locale in all_names:
-        new_translation = ModelItemTypeTranslation(
+        translation = ModelItemTypeTranslation(
             item_type_id=item_type.uuid, locale=locale, name=all_names[locale]
         )
-        db_session.add(new_translation)
+        db_session.add(translation)
 
 
 def sync_item_type():

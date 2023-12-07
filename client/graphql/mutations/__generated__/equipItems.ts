@@ -49,6 +49,7 @@ export interface equipItems_equipMultipleItems_customSet_equippedItems_item_weap
 export interface equipItems_equipMultipleItems_customSet_equippedItems_item_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  enName: string;
   order: number;
 }
 

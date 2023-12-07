@@ -50,6 +50,7 @@ export interface set_setById_items_weaponStats {
 export interface set_setById_items_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  enName: string;
   order: number;
 }
 

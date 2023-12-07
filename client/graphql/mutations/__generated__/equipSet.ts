@@ -49,6 +49,7 @@ export interface equipSet_equipSet_customSet_equippedItems_item_weaponStats {
 export interface equipSet_equipSet_customSet_equippedItems_item_itemType_eligibleItemSlots {
   __typename: "ItemSlot";
   id: any;
+  enName: string;
   order: number;
 }
 

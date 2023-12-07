@@ -16,10 +16,7 @@ const MAX = 9999;
 
 const MageInputNumber: React.FC<Props> = ({ stat, value, dispatch, isExo }) => {
   const onChange = React.useCallback(
-    (v: number | string | undefined) => {
-      if (typeof v !== 'number') {
-        return;
-      }
+    (v: number | null) => {
       dispatch({
         type: 'EDIT',
         stat,

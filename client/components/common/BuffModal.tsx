@@ -59,9 +59,8 @@ const BuffModal: React.FC<Props> = ({
   const { appliedBuffs, dispatch } = React.useContext(CustomSetContext);
   const { t } = useTranslation(['stat', 'common']);
   const { data: classData } = useQuery<classes>(classesQuery);
-  const { data: currentUserData } = useQuery<CurrentUserQueryType>(
-    currentUserQuery,
-  );
+  const { data: currentUserData } =
+    useQuery<CurrentUserQueryType>(currentUserQuery);
 
   const [selectedClassId, setSelectedClassId] = React.useState<
     string | undefined

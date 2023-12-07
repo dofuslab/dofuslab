@@ -22705,25 +22705,7 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "and": [
-          {
-            "stat": "INTELLIGENCE",
-            "operator": "<",
-            "value": 560
-          },
-          {
-            "stat": "CHANCE",
-            "operator": "<",
-            "value": 560
-          },
-          {
-            "stat": "AGILITY",
-            "operator": "<",
-            "value": 560
-          }
-        ]
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/1181.png"
@@ -28734,7 +28716,12 @@
     "customStats": {},
     "conditions": {
       "conditions": {
-        "and": [
+        "or": [
+          {
+            "stat": "MP",
+            "operator": "<",
+            "value": 6
+          },
           {
             "stat": "AP",
             "operator": "<",
@@ -30534,11 +30521,16 @@
     "customStats": {},
     "conditions": {
       "conditions": {
-        "and": [
+        "or": [
           {
             "stat": "MP",
             "operator": "<",
             "value": 6
+          },
+          {
+            "stat": "AP",
+            "operator": "<",
+            "value": 12
           }
         ]
       },
@@ -31547,11 +31539,16 @@
     "customStats": {},
     "conditions": {
       "conditions": {
-        "and": [
+        "or": [
           {
             "stat": "MP",
             "operator": "<",
             "value": 6
+          },
+          {
+            "stat": "AP",
+            "operator": "<",
+            "value": 12
           }
         ]
       },
@@ -32678,7 +32675,12 @@
     "customStats": {},
     "conditions": {
       "conditions": {
-        "and": [
+        "or": [
+          {
+            "stat": "MP",
+            "operator": "<",
+            "value": 6
+          },
           {
             "stat": "AP",
             "operator": "<",
@@ -33363,15 +33365,7 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "and": [
-          {
-            "stat": "AGILITY",
-            "operator": "<",
-            "value": 600
-          }
-        ]
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/11192.png"
@@ -33816,15 +33810,7 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "and": [
-          {
-            "stat": "INTELLIGENCE",
-            "operator": "<",
-            "value": 600
-          }
-        ]
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/16304.png"
@@ -34447,15 +34433,7 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "and": [
-          {
-            "stat": "STRENGTH",
-            "operator": "<",
-            "value": 600
-          }
-        ]
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/10204.png"
@@ -34825,15 +34803,7 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "and": [
-          {
-            "stat": "CHANCE",
-            "operator": "<",
-            "value": 600
-          }
-        ]
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/9228.png"
@@ -42495,19 +42465,19 @@
     ],
     "customStats": {
       "en": [
-        "Gives 1 AP if no damage-inflicting attack has been suffered since the last game turn.",
+        "Gives 1 AP for 1 turn if the bearer has suffered no damage from enemies since the last turn.\nOtherwise, gives 20 Dodge.",
         "Ochre Dofus emote"
       ],
       "fr": [
-        "Donne 1 PA si aucune attaque occasionnant des dommages n'a été subie depuis le précédent tour de jeu.",
+        "Donne 1 PA pour 1 tour si le porteur n'a subi aucun dommages ennemis depuis le précédent tour de jeu.\nSinon, donne 20 Fuite.",
         "Attitude Dofus Ocre"
       ],
       "de": [
-        "Verleiht 1 AP, wenn seit der letzten Spielrunde durch keinen Angriff Schaden erlitten wurde.",
+        "Verleiht 1 Runde lang 1 AP, wenn der Träger seit der vorangegangenen Runde keinen Schaden durch Gegner erlitten hat.\nAndernfalls wird der Ausweichwert um 20 erhöht.",
         "Emote Ocker-Dofus"
       ],
       "es": [
-        "Da 1 PA si no se ha sufrido ningún ataque que cause daños desde el turno de juego anterior.",
+        "Da 1 PA durante 1 turno si el portador no ha sufrido ningún daño enemigo desde el turno anterior de juego.\nSi no, da 20 de fuga.",
         "Actitud Dofus Ocre"
       ],
       "it": [
@@ -42515,7 +42485,7 @@
         "Emote \"Dofus Ocra\""
       ],
       "pt": [
-        "Dá 1 PA se não tiver sofrido danos durante um ataque desde o turno anterior de jogo.",
+        "Concede 1 PA durante 1 turno se o carregador não tiver sofrido danos inimigos desde o turno anterior.\nCaso contrário, concede 20 de fuga.",
         "Emote Dofus Ocre"
       ]
     },
@@ -61624,19 +61594,19 @@
     ],
     "customStats": {
       "en": [
-        "For each distance attack suffered, the final damage inflicted is increased by 1% for 1 turns.\nThe effects are stackable 10 times.",
+        "For each attack suffered, the final damage inflicted is increased by 1% for 1 turn.\nThe effects can stack 10 times.",
         "Crimson Dofus emote"
       ],
       "fr": [
-        "Pour chaque attaque à distance reçue, les dommages finaux occasionnés sont augmentés de 1% pendant 1 tour.\nLes effets peuvent se cumuler 10 fois.",
+        "Pour chaque attaque reçue, les dommages finaux occasionnés sont augmentés de 1% pendant 1 tour.\nLes effets peuvent se cumuler 10 fois.",
         "Attitude Dofus Pourpre"
       ],
       "de": [
-        "Für jeden erlittenen Fernkampfangriff wird 1 Runde lang der verursachte Endschaden um 1 % erhöht.\nDie Wirkungen sind bis zu 10 Mal kumulierbar.",
+        "Für jeden erlittenen Fernkampfangriff wird der verursachte Endschaden 1 Runde lang um 1 % erhöht.\nDie Wirkungen sind bis zu 10 Mal kumulierbar.",
         "Emote Purpur-Dofus"
       ],
       "es": [
-        "Por cada ataque a distancia recibido, los daños finales que se ocasionan aumentan un 1% durante 1 turno.\nLos efectos pueden acumularse 10 veces.",
+        "Por cada ataque recibido, los daños finales que se ocasionan aumentan un 1% durante 1 turno.\nEste efecto puede acumularse 10 veces.",
         "Actitud Dofus Púrpura"
       ],
       "it": [
@@ -61644,7 +61614,7 @@
         "Emote \"Dofus Porpora\""
       ],
       "pt": [
-        "Para cada ataque a distância recebido, os danos finais infligidos aumentam em 1% durante 1 turno.\nOs efeitos podem ser acumulados 10 vezes.",
+        "Para cada ataque recebido, os danos finais infligidos aumentam em 1% durante 1 turno.\nOs efeitos podem ser acumulados 10 vezes.",
         "Emote Dofus Púrpura"
       ]
     },
@@ -66950,22 +66920,22 @@
       {
         "stat": "Chance",
         "minStat": null,
-        "maxStat": 50
+        "maxStat": 70
       },
       {
         "stat": "Intelligence",
         "minStat": null,
-        "maxStat": 50
+        "maxStat": 70
       },
       {
         "stat": "Strength",
         "minStat": null,
-        "maxStat": 50
+        "maxStat": 70
       },
       {
         "stat": "Agility",
         "minStat": null,
-        "maxStat": 50
+        "maxStat": 70
       }
     ],
     "customStats": {},
@@ -67887,21 +67857,19 @@
     "level": 100,
     "stats": [],
     "customStats": {
-      "en": [
-        "At the start of the turn, heals 7% of health points of aligned allies."
-      ],
-      "fr": ["En début de tour, rend 7% de points de vie aux alliés alignés."],
+      "en": ["At the end of the turn, returns 7% HP to aligned allies."],
+      "fr": ["En fin de tour, rend 7% de points de vie aux alliés alignés."],
       "de": [
-        "Heilt zu Beginn der Runde 7 % der LP von Verbündeten in linearer Ausrichtung."
+        "Am Ende der Runde werden den in einer Linie stehenden Verbündeten 7 % der Lebenspunkte zurückgegeben."
       ],
       "es": [
-        "Al principio del turno, devuelve el 7% de los puntos de vida a los aliados alineados."
+        "Al final del turno, devuelve el 7% de los puntos de vida a los aliados alineados."
       ],
       "it": [
         "All'inizio del turno cura il 7% dei Punti Vita agli alleati allineati."
       ],
       "pt": [
-        "No início do turno, devolve 7% dos pontos de vida aos aliados que estiverem alinhados."
+        "No fim do turno, devolve 7% dos pontos de vida aos aliados que estiverem alinhados."
       ]
     },
     "conditions": {
@@ -69963,8 +69931,8 @@
       },
       {
         "stat": "Agility",
-        "minStat": 31,
-        "maxStat": 40
+        "minStat": 21,
+        "maxStat": 30
       },
       {
         "stat": "Wisdom",
@@ -73141,7 +73109,7 @@
       "conditions": {},
       "customConditions": {
         "en": ["Enutrof only"],
-        "fr": ["Être un Enutrof"],
+        "fr": ["Être un Enutrof"],
         "de": ["Ein(e) Enutrof sein"],
         "es": ["Ser un Anutrof"],
         "it": ["Essere Anutrof"],
@@ -76064,22 +76032,22 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Every 3 turns starting on turn 4, returns 10% of their maximum health points."
+        "Every 3 turns starting on turn 3, returns 10% of their maximum health points."
       ],
       "fr": [
-        "Tous les 3 tours à partir du tour 4, rend 10% de ses points de vie maximum."
+        "Tous les 3 tours à partir du tour 3, rend 10% de ses points de vie maximum."
       ],
       "de": [
-        "Mit Beginn der 4. Runde werden nach jeder 3. Runde 10 % der maximalen Lebenspunkte zurückgeben."
+        "Ab Runde 3 werden jede 3. Runde 10 % der maximalen Lebenspunkte zurückgegeben."
       ],
       "es": [
-        "Cada 3 turnos a partir del turno 4, devuelve un 10% de los puntos de vida máximos."
+        "Cada 3 turnos a partir del turno 3, devuelve un 10% de los puntos de vida máximos."
       ],
       "it": [
-        "Ogni 3 turni, partendo dal turno n°4, restituisce il 10% dei suoi Punti Vita massimi."
+        "Ogni 3 turni, partendo dal turno n°3, restituisce il 10% dei suoi Punti Vita massimi."
       ],
       "pt": [
-        "A cada 3 turnos a partir do 4º turno, devolve 10% do máximo de seus pontos de vida."
+        "A cada 3 turnos a partir do 3º turno, devolve 10% do máximo de seus pontos de vida."
       ]
     },
     "conditions": {
@@ -80494,22 +80462,22 @@
     ],
     "customStats": {
       "en": [
-        "Gives 25 AP Parry if an MP penalty is suffered, or 25 MP Parry if an AP penalty is suffered.\nThe two effects do not stack, and last 1 turn."
+        "Gives 25 AP Parry if an AP penalty is suffered, or 25 MP Parry if an MP penalty is suffered. \nThe two effects last 1 turn and do not stack."
       ],
       "fr": [
-        "Donne 25 esquive PA si un malus de PM est subi, ou 25 esquive PM si un malus PA est subi.\nLes deux effets ne sont pas cumulables et durent 1 tour."
+        "Donne 25 esquive PA si un malus de PA est subi, ou 25 esquive PM si un malus PM est subi. \nLes deux effets ne sont pas cumulables et durent 1 tour."
       ],
       "de": [
-        "Gewährt beim Erleiden eines BP-Malus 25 Resistenz auf AP-Entzug bzw. beim Erleiden eines AP-Malus 25 Resistenz auf BP-Entzug.\nDie beiden Wirkungen sind nicht kumulierbar und halten 1 Runde an."
+        "Verleiht 25 Resistenz gegen AP-Entzug, wenn ein AP-Malus erlitten wurde, bzw. 25 Resistenz gegen BP-Entzug, wenn ein BP-Malus erlitten wurde. \nDie beiden Wirkungen sind nicht kumulierbar und bleiben 1 Runde lang aufrecht."
       ],
       "es": [
-        "Da 25 de esquiva de PA si se sufre un malus de PM, o 25 de esquiva de PM si se sufre un malus de PA.\nLos dos efectos no son acumulables y duran 1 turno."
+        "Da 25 de esquiva de PA si se sufre un malus de PA, o 25 de esquiva de PM si se sufre un malus de PM. \nLos dos efectos no son acumulables y duran 1 turno."
       ],
       "it": [
         "Conferisce 25 Schivata PA se si subisce un malus PM o 25 Schivata PM se si subisce un malus PA.\nI due effetti non sono cumulabili e durano 1 turno."
       ],
       "pt": [
-        "Dá 25 de esquiva PA se sofrer penalidade de PM ou 25 de esquiva PM se sofrer penalidade de PA.\nOs dois efeitos não são acumuláveis e duram 1 turno."
+        "Concede 25 de esquiva PA se sofrer penalidade de PA ou 25 de esquiva PM se sofrer penalidade de PM. \nOs dois efeitos não são cumulativos e duram 1 turno."
       ]
     },
     "conditions": {
@@ -80645,16 +80613,16 @@
       "customConditions": {
         "en": ["Male only and", "Quest 'Flower Power' complete"],
         "fr": [
-          "Être de sexe masculin et",
-          "Quête 'Le pouvoir des fleurs.' achevée"
+          "Être de sexe masculin et",
+          "Quête 'Le pouvoir des fleurs.' achevée"
         ],
         "de": [
-          "Männlich sein und",
-          "Quest 'Bei der Macht von ... Blümchen!' beendet"
+          "Männlich sein und",
+          "Quest 'Bei der Macht von ... Blümchen!' beendet"
         ],
         "es": [
           "Ser de sexo masculino y",
-          "Misión 'El poder de las flores' completada"
+          "Misión 'El poder de las flores' completada"
         ],
         "it": [
           "Essere di sesso Maschile e",
@@ -80662,7 +80630,7 @@
         ],
         "pt": [
           "Ser do sexo masculino e",
-          "Missão \"O poder das flores\" concluída"
+          "Missão \"O poder das flores\" concluída"
         ]
       }
     },
@@ -81040,16 +81008,16 @@
       "customConditions": {
         "en": ["Female only and", "Quest 'Flower Power' complete"],
         "fr": [
-          "Être de sexe féminin et",
-          "Quête 'Le pouvoir des fleurs.' achevée"
+          "Être de sexe féminin et",
+          "Quête 'Le pouvoir des fleurs.' achevée"
         ],
         "de": [
           "Weiblich sein und",
-          "Quest 'Bei der Macht von ... Blümchen!' beendet"
+          "Quest 'Bei der Macht von ... Blümchen!' beendet"
         ],
         "es": [
           "Ser de sexo femenino y",
-          "Misión 'El poder de las flores' completada"
+          "Misión 'El poder de las flores' completada"
         ],
         "it": [
           "Essere di sesso Femminile e",
@@ -81057,7 +81025,7 @@
         ],
         "pt": [
           "Ser do sexo feminino e",
-          "Missão \"O poder das flores\" concluída"
+          "Missão \"O poder das flores\" concluída"
         ]
       }
     },
@@ -82025,7 +81993,7 @@
       "conditions": {},
       "customConditions": {
         "en": ["Enutrof only"],
-        "fr": ["Être un Enutrof"],
+        "fr": ["Être un Enutrof"],
         "de": ["Ein(e) Enutrof sein"],
         "es": ["Ser un Anutrof"],
         "it": ["Essere Anutrof"],
@@ -87649,7 +87617,7 @@
         "de": ["Gesinnung 1 und", "Gesinnungsstufe > 10"],
         "es": ["Alineamiento 1 y", "Nivel de alineamiento > 10"],
         "it": ["Allineamento 1 e", "Livello dell'allineamento > 10"],
-        "pt": ["Alinhamento 1 e", "Nível de alinhamento > 10"]
+        "pt": ["Alinhamento 1 e", "Nível de alinhamento > 10"]
       }
     },
     "imageUrl": "item/1023.png"
@@ -88081,6 +88049,11 @@
         "stat": "MP Reduction",
         "minStat": null,
         "maxStat": 6
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": null,
+        "maxStat": -6
       }
     ],
     "customStats": {},
@@ -96169,11 +96142,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Not in possession of 'Ghoulified'"],
-        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
+        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
         "de": ["Den Gegenstand 'Ghulifiziert' nicht besitzen"],
         "es": ["No poseer el objeto 'Ghulificado'"],
         "it": ["Non possedere l'oggetto \"Gulifiato\""],
-        "pt": ["Não possuir o item \"Ghoulificado\""]
+        "pt": ["Não possuir o item \"Ghoulificado\""]
       }
     },
     "imageUrl": "item/1146.png"
@@ -98850,11 +98823,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Not in possession of 'Ghoulified'"],
-        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
+        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
         "de": ["Den Gegenstand 'Ghulifiziert' nicht besitzen"],
         "es": ["No poseer el objeto 'Ghulificado'"],
         "it": ["Non possedere l'oggetto \"Gulifiato\""],
-        "pt": ["Não possuir o item \"Ghoulificado\""]
+        "pt": ["Não possuir o item \"Ghoulificado\""]
       }
     },
     "imageUrl": "item/16244.png"
@@ -99193,11 +99166,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Not in possession of 'Ghoulified'"],
-        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
+        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
         "de": ["Den Gegenstand 'Ghulifiziert' nicht besitzen"],
         "es": ["No poseer el objeto 'Ghulificado'"],
         "it": ["Non possedere l'oggetto \"Gulifiato\""],
-        "pt": ["Não possuir o item \"Ghoulificado\""]
+        "pt": ["Não possuir o item \"Ghoulificado\""]
       }
     },
     "imageUrl": "item/10156.png"
@@ -99749,7 +99722,7 @@
       "pt": "Espírito de Crocoburio"
     },
     "itemType": "Boots",
-    "setID": "",
+    "setID": null,
     "level": 42,
     "stats": [
       {
@@ -99902,11 +99875,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Not in possession of 'Ghoulified'"],
-        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
+        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
         "de": ["Den Gegenstand 'Ghulifiziert' nicht besitzen"],
         "es": ["No poseer el objeto 'Ghulificado'"],
         "it": ["Non possedere l'oggetto \"Gulifiato\""],
-        "pt": ["Não possuir o item \"Ghoulificado\""]
+        "pt": ["Não possuir o item \"Ghoulificado\""]
       }
     },
     "imageUrl": "item/9171.png"
@@ -100067,11 +100040,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Not in possession of 'Ghoulified'"],
-        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
+        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
         "de": ["Den Gegenstand 'Ghulifiziert' nicht besitzen"],
         "es": ["No poseer el objeto 'Ghulificado'"],
         "it": ["Non possedere l'oggetto \"Gulifiato\""],
-        "pt": ["Não possuir o item \"Ghoulificado\""]
+        "pt": ["Não possuir o item \"Ghoulificado\""]
       }
     },
     "imageUrl": "item/17168.png"
@@ -101545,11 +101518,11 @@
       "conditions": {},
       "customConditions": {
         "en": ["Not in possession of 'Ghoulified'"],
-        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
+        "fr": ["Ne pas posséder l'objet 'Goulyfié'"],
         "de": ["Den Gegenstand 'Ghulifiziert' nicht besitzen"],
         "es": ["No poseer el objeto 'Ghulificado'"],
         "it": ["Non possedere l'oggetto \"Gulifiato\""],
-        "pt": ["Não possuir o item \"Ghoulificado\""]
+        "pt": ["Não possuir o item \"Ghoulificado\""]
       }
     },
     "imageUrl": "item/11139.png"
@@ -103062,7 +103035,7 @@
       "pt": "Força de Crocoburio"
     },
     "itemType": "Ring",
-    "setID": "",
+    "setID": null,
     "level": 40,
     "stats": [
       {
@@ -105424,7 +105397,7 @@
       "pt": "Poder de Crocoburio"
     },
     "itemType": "Belt",
-    "setID": "",
+    "setID": null,
     "level": 34,
     "stats": [
       {
@@ -107961,7 +107934,7 @@
         "de": ["Gesinnung 1 und", "Gesinnungsstufe > 20"],
         "es": ["Alineamiento 1 y", "Nivel de alineamiento > 20"],
         "it": ["Allineamento 1 e", "Livello dell'allineamento > 20"],
-        "pt": ["Alinhamento 1 e", "Nível de alinhamento > 20"]
+        "pt": ["Alinhamento 1 e", "Nível de alinhamento > 20"]
       }
     },
     "imageUrl": "item/17002.png"
@@ -109262,7 +109235,7 @@
       "conditions": {},
       "customConditions": {
         "en": ["Sadida only"],
-        "fr": ["Être un Sadida"],
+        "fr": ["Être un Sadida"],
         "de": ["Ein(e) Sadida sein"],
         "es": ["Ser un Sadida"],
         "it": ["Essere Sadida"],
@@ -111382,23 +111355,23 @@
           "Hunter > Lvl. 180"
         ],
         "fr": [
-          "Bûcheron > Niv. 180 ou",
+          "Bûcheron > Niv. 180 ou",
           "Mineur > Niv. 180 ou",
-          "Pêcheur > Niv. 180 ou",
+          "Pêcheur > Niv. 180 ou",
           "Paysan > Niv. 180 ou",
           "Alchimiste > Niv. 180 ou",
           "Chasseur > Niv. 180"
         ],
         "de": [
-          "Holzfäller > Lvl. 180 oder",
+          "Holzfäller > Lvl. 180 oder",
           "Bergmann > Lvl. 180 oder",
           "Fischer > Lvl. 180 oder",
           "Bauer > Lvl. 180 oder",
           "Alchemist > Lvl. 180 oder",
-          "Jäger > Lvl. 180"
+          "Jäger > Lvl. 180"
         ],
         "es": [
-          "Leñador > Niv. 180 o",
+          "Leñador > Niv. 180 o",
           "Minero > Niv. 180 o",
           "Pescador > Niv. 180 o",
           "Campesino > Niv. 180 o",
@@ -111414,12 +111387,12 @@
           "Cacciatore > Lv. 180"
         ],
         "pt": [
-          "Lenhador > Nív. 180 ou",
-          "Mineiro > Nív. 180 ou",
-          "Pescador > Nív. 180 ou",
-          "Fazendeiro > Nív. 180 ou",
-          "Alquimista > Nív. 180 ou",
-          "Caçador > Nív. 180"
+          "Lenhador > Nív. 180 ou",
+          "Mineiro > Nív. 180 ou",
+          "Pescador > Nív. 180 ou",
+          "Fazendeiro > Nív. 180 ou",
+          "Alquimista > Nív. 180 ou",
+          "Caçador > Nív. 180"
         ]
       }
     },
@@ -111899,23 +111872,23 @@
           "Hunter > Lvl. 120"
         ],
         "fr": [
-          "Bûcheron > Niv. 120 ou",
+          "Bûcheron > Niv. 120 ou",
           "Mineur > Niv. 120 ou",
-          "Pêcheur > Niv. 120 ou",
+          "Pêcheur > Niv. 120 ou",
           "Paysan > Niv. 120 ou",
           "Alchimiste > Niv. 120 ou",
           "Chasseur > Niv. 120"
         ],
         "de": [
-          "Holzfäller > Lvl. 120 oder",
+          "Holzfäller > Lvl. 120 oder",
           "Bergmann > Lvl. 120 oder",
           "Fischer > Lvl. 120 oder",
           "Bauer > Lvl. 120 oder",
           "Alchemist > Lvl. 120 oder",
-          "Jäger > Lvl. 120"
+          "Jäger > Lvl. 120"
         ],
         "es": [
-          "Leñador > Niv. 120 o",
+          "Leñador > Niv. 120 o",
           "Minero > Niv. 120 o",
           "Pescador > Niv. 120 o",
           "Campesino > Niv. 120 o",
@@ -111931,12 +111904,12 @@
           "Cacciatore > Lv. 120"
         ],
         "pt": [
-          "Lenhador > Nív. 120 ou",
-          "Mineiro > Nív. 120 ou",
-          "Pescador > Nív. 120 ou",
-          "Fazendeiro > Nív. 120 ou",
-          "Alquimista > Nív. 120 ou",
-          "Caçador > Nív. 120"
+          "Lenhador > Nív. 120 ou",
+          "Mineiro > Nív. 120 ou",
+          "Pescador > Nív. 120 ou",
+          "Fazendeiro > Nív. 120 ou",
+          "Alquimista > Nív. 120 ou",
+          "Caçador > Nív. 120"
         ]
       }
     },
@@ -112883,23 +112856,23 @@
           "Hunter > Lvl. 80"
         ],
         "fr": [
-          "Bûcheron > Niv. 80 ou",
+          "Bûcheron > Niv. 80 ou",
           "Mineur > Niv. 80 ou",
-          "Pêcheur > Niv. 80 ou",
+          "Pêcheur > Niv. 80 ou",
           "Paysan > Niv. 80 ou",
           "Alchimiste > Niv. 80 ou",
           "Chasseur > Niv. 80"
         ],
         "de": [
-          "Holzfäller > Lvl. 80 oder",
+          "Holzfäller > Lvl. 80 oder",
           "Bergmann > Lvl. 80 oder",
           "Fischer > Lvl. 80 oder",
           "Bauer > Lvl. 80 oder",
           "Alchemist > Lvl. 80 oder",
-          "Jäger > Lvl. 80"
+          "Jäger > Lvl. 80"
         ],
         "es": [
-          "Leñador > Niv. 80 o",
+          "Leñador > Niv. 80 o",
           "Minero > Niv. 80 o",
           "Pescador > Niv. 80 o",
           "Campesino > Niv. 80 o",
@@ -112915,12 +112888,12 @@
           "Cacciatore > Lv. 80"
         ],
         "pt": [
-          "Lenhador > Nív. 80 ou",
-          "Mineiro > Nív. 80 ou",
-          "Pescador > Nív. 80 ou",
-          "Fazendeiro > Nív. 80 ou",
-          "Alquimista > Nív. 80 ou",
-          "Caçador > Nív. 80"
+          "Lenhador > Nív. 80 ou",
+          "Mineiro > Nív. 80 ou",
+          "Pescador > Nív. 80 ou",
+          "Fazendeiro > Nív. 80 ou",
+          "Alquimista > Nív. 80 ou",
+          "Caçador > Nív. 80"
         ]
       }
     },
@@ -115526,7 +115499,7 @@
         "en": ["months = Aperirel and", "day(s) < 9"],
         "fr": ["Mois = Aperirel et", "Jour(s) < 9"],
         "de": ["Monat = Aperirel und", "Tag(e) < 9"],
-        "es": ["Mes = Aperirel y", "día(s) < 9"],
+        "es": ["Mes = Aperirel y", "día(s) < 9"],
         "it": ["mesi = Aperir e", "giorn(o/i) < 9"],
         "pt": ["meses = Aperirel e", "dia(s) < 9"]
       }
@@ -117652,23 +117625,23 @@
           "Hunter > Lvl. 40"
         ],
         "fr": [
-          "Bûcheron > Niv. 40 ou",
+          "Bûcheron > Niv. 40 ou",
           "Mineur > Niv. 40 ou",
-          "Pêcheur > Niv. 40 ou",
+          "Pêcheur > Niv. 40 ou",
           "Paysan > Niv. 40 ou",
           "Alchimiste > Niv. 40 ou",
           "Chasseur > Niv. 40"
         ],
         "de": [
-          "Holzfäller > Lvl. 40 oder",
+          "Holzfäller > Lvl. 40 oder",
           "Bergmann > Lvl. 40 oder",
           "Fischer > Lvl. 40 oder",
           "Bauer > Lvl. 40 oder",
           "Alchemist > Lvl. 40 oder",
-          "Jäger > Lvl. 40"
+          "Jäger > Lvl. 40"
         ],
         "es": [
-          "Leñador > Niv. 40 o",
+          "Leñador > Niv. 40 o",
           "Minero > Niv. 40 o",
           "Pescador > Niv. 40 o",
           "Campesino > Niv. 40 o",
@@ -117684,12 +117657,12 @@
           "Cacciatore > Lv. 40"
         ],
         "pt": [
-          "Lenhador > Nív. 40 ou",
-          "Mineiro > Nív. 40 ou",
-          "Pescador > Nív. 40 ou",
-          "Fazendeiro > Nív. 40 ou",
-          "Alquimista > Nív. 40 ou",
-          "Caçador > Nív. 40"
+          "Lenhador > Nív. 40 ou",
+          "Mineiro > Nív. 40 ou",
+          "Pescador > Nív. 40 ou",
+          "Fazendeiro > Nív. 40 ou",
+          "Alquimista > Nív. 40 ou",
+          "Caçador > Nív. 40"
         ]
       }
     },
@@ -117729,7 +117702,7 @@
         "de": ["Gesinnung 2 und", "Gesinnungsstufe > 30"],
         "es": ["Alineamiento 2 y", "Nivel de alineamiento > 30"],
         "it": ["Allineamento 2 e", "Livello dell'allineamento > 30"],
-        "pt": ["Alinhamento 2 e", "Nível de alinhamento > 30"]
+        "pt": ["Alinhamento 2 e", "Nível de alinhamento > 30"]
       }
     },
     "imageUrl": "item/17184.png"
@@ -118659,7 +118632,7 @@
       "conditions": {},
       "customConditions": {
         "en": ["Female only"],
-        "fr": ["Être de sexe féminin"],
+        "fr": ["Être de sexe féminin"],
         "de": ["Weiblich sein"],
         "es": ["Ser de sexo femenino"],
         "it": ["Essere di sesso Femminile"],
@@ -119162,8 +119135,8 @@
       "conditions": {},
       "customConditions": {
         "en": ["Male only"],
-        "fr": ["Être de sexe masculin"],
-        "de": ["Männlich sein"],
+        "fr": ["Être de sexe masculin"],
+        "de": ["Männlich sein"],
         "es": ["Ser de sexo masculino"],
         "it": ["Essere di sesso Maschile"],
         "pt": ["Ser do sexo masculino"]
@@ -121146,7 +121119,7 @@
       "de": null,
       "es": "Caparapeto",
       "it": "Mantello Paravento",
-      "pt": null
+      "pt": "Caparavento"
     },
     "itemType": "Cloak",
     "setID": "9675435",
@@ -121213,7 +121186,7 @@
       "de": null,
       "es": "Collar de perlucas",
       "it": "Collana di Perloffe",
-      "pt": null
+      "pt": "Colar de Peidolas"
     },
     "itemType": "Amulet",
     "setID": "9675435",
@@ -121285,7 +121258,7 @@
       "de": null,
       "es": "Kwapamela",
       "it": "Kwappicacpo",
-      "pt": null
+      "pt": "Kwapoçaete"
     },
     "itemType": "Hat",
     "setID": "13378161",
@@ -121352,7 +121325,7 @@
       "de": null,
       "es": "Kuaparazón",
       "it": "Kwapparapace",
-      "pt": null
+      "pt": "Kwarapaça"
     },
     "itemType": "Backpack",
     "setID": "13378161",
@@ -121424,7 +121397,7 @@
       "de": null,
       "es": "Lágrima de Nagate",
       "it": "Lacrima di Nagate, la Dama delle Acque",
-      "pt": null
+      "pt": "Lágrima de Nagate"
     },
     "itemType": "Amulet",
     "setID": null,
@@ -121496,7 +121469,7 @@
       "de": null,
       "es": "Bulbescudo",
       "it": "Bulboscudo",
-      "pt": null
+      "pt": "Bulbescudo"
     },
     "itemType": "Shield",
     "setID": null,
@@ -121548,7 +121521,7 @@
       "de": null,
       "es": "Capistillo",
       "it": "Cappistillo",
-      "pt": null
+      "pt": "Capistilo"
     },
     "itemType": "Cloak",
     "setID": null,
@@ -121655,7 +121628,7 @@
       "de": null,
       "es": "Esquejes",
       "it": "Stivali Talea",
-      "pt": null
+      "pt": "Botamudas"
     },
     "itemType": "Boots",
     "setID": null,
@@ -121727,7 +121700,7 @@
       "de": null,
       "es": "Plantamuleto",
       "it": "Piandamuleto",
-      "pt": null
+      "pt": "Plantamuleto"
     },
     "itemType": "Amulet",
     "setID": null,
@@ -121795,11 +121768,11 @@
     "dofusID": 81071,
     "name": {
       "en": "Firefoux Bag",
-      "fr": "Sac de Firefoux",
+      "fr": "Sac des Firefoux",
       "de": null,
       "es": "Saco Firefux",
       "it": "Zaino dei Focopaz",
-      "pt": null
+      "pt": "Saco dos Fogofox"
     },
     "itemType": "Backpack",
     "setID": "87342329",
@@ -121866,7 +121839,7 @@
       "de": null,
       "es": "Alianza Firefux",
       "it": "Anello dei Focopaz",
-      "pt": null
+      "pt": "Aliança dos Fogofox"
     },
     "itemType": "Ring",
     "setID": "87342329",
@@ -121938,7 +121911,7 @@
       "de": null,
       "es": "Escupefuegos Firefux",
       "it": "Sputa-fuoco Focopaz",
-      "pt": null
+      "pt": "Cospe-Fogo Fogofox"
     },
     "itemType": "Backpack",
     "setID": null,
@@ -122015,7 +121988,7 @@
       "de": null,
       "es": "Cinturón de Artificio",
       "it": "Cintura d'Artificio",
-      "pt": null
+      "pt": "Cinto de Artifício"
     },
     "itemType": "Belt",
     "setID": "87342329",
@@ -122083,11 +122056,11 @@
     "dofusID": 9345,
     "name": {
       "en": "Nutcrackers",
-      "fr": "Les Casse-noiesttes",
+      "fr": "Les Casse-noisettes",
       "de": null,
       "es": "Cascanueces",
       "it": "Gli Spacca-nocciole",
-      "pt": null
+      "pt": "Quebra-Ovos"
     },
     "itemType": "Ring",
     "setID": "933618",
@@ -122154,7 +122127,7 @@
       "de": null,
       "es": "Bacía Vacía",
       "it": "Copricapo Vasorotto",
-      "pt": null
+      "pt": "Chapote Kebradu"
     },
     "itemType": "Hat",
     "setID": "933618",
@@ -122226,7 +122199,7 @@
       "de": null,
       "es": "Cinto Fensa",
       "it": "Cinturpitudine",
-      "pt": null
+      "pt": "Cinto Orpeza"
     },
     "itemType": "Belt",
     "setID": "933618",
@@ -122409,7 +122382,7 @@
         "À partir du tour 5, le lanceur gagne jusqu'à 64 dommages pour le reste du combat selon le nombre d'attaques, qui infligent des dommages directs, occasionnées à chacun des tours précédents.\nAucune attaque : 16 dommages\n1 attaque : 8 dommages.\n2 attaques et + : 0 dommage."
       ],
       "de": [
-        "Ab Runde 5 erhält der Zaubernde abhängig von der Anzahl der Angriffe, die in den vorangegangenen Runden direkten Schaden verursacht haben, bis zu 64 Schaden für den Rest des Kampfes.\nKein Angriff: 16 Schaden\n1 Angriff: 8 Schaden\nAb 2 Angriffen: 0 Schaden."
+        "Ab Runde 5 erhält der Zaubernde abhängig von der Anzahl der Angriffe, die in den vorangegangenen Runden direkten Schaden verursacht haben, bis zu 64 Schaden für den Rest des Kampfes.\nKein Angriff: 16 Schaden\n1 Angriff: 8 Schaden\nAb 2 Angriffen: 0 Schaden."
       ],
       "es": [
         "A partir del turno 5, el lanzador gana hasta 64 de daño durante el resto del combate según el número de ataques con daños directos ocasionados en cada uno de los turnos anteriores.\nNingún ataque: 16 de daño\n1 ataque: 8 de daño\n2 o más ataques: 0 de daño."
@@ -123346,7 +123319,7 @@
         "Pendant les 5 premiers tours, le lanceur gagne 100% de son niveau en bouclier pour 1 tour à chaque début de tour. Tuer une invocation ennemie ajoute 150% du niveau en bouclier pour 1 tour, et 300% pour un monstre ou joueur ennemi.\nNe fonctionne que pendant le tour du lanceur."
       ],
       "de": [
-        "Verleiht während der ersten 5 Runden zu Rundenbeginn 100 % der Schildstufe.\nWährend dieser 5 Runden erhält der Zaubernde 1 Runde lang 100 % seiner Schildstufe (max. 4 Mal), wenn er eine Beschwörung tötet, und 300 % (max. 2 Mal), wenn er ein Monster oder einen Spieler tötet.\nDie Schilde werden nur in der Spielrunde des Zaubernden verliehen."
+        "Verleiht während der ersten 5 Runden zu Rundenbeginn 100 % der Schildstufe.\nWährend dieser 5 Runden erhält der Zaubernde 1 Runde lang 100 % seiner Schildstufe (max. 4 Mal), wenn er eine Beschwörung tötet, und 300 % (max. 2 Mal), wenn er ein Monster oder einen Spieler tötet.\nDie Schilde werden nur in der Spielrunde des Zaubernden verliehen."
       ],
       "es": [
         "Aplica el 100% del nivel en escudo en cada inicio de turno durante los 5 primeros turnos.\nDurante estos 5 turnos, si el lanzador mata a una invocación, gana el 100% de su nivel en escudo durante 1 turno (4 veces máx.), y el 300% (2 veces máx.) para un monstruo o un jugador.\nLos escudos se obtienen solo durante el turno de juego del lanzador."
@@ -133761,5 +133734,731 @@
       "customConditions": {}
     },
     "imageUrl": "item/10351.png"
+  },
+  {
+    "dofusID": "27544",
+    "name": {
+      "en": "Bramble Wall",
+      "fr": "Mur de Ronces",
+      "de": "Brombimsmauer",
+      "es": "Pared de zarzas",
+      "it": "Muro di Rovi",
+      "pt": "Muro de Sarças"
+    },
+    "itemType": "Shield",
+    "setID": "514",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 151, "maxStat": 200 },
+      { "stat": "Power", "minStat": 21, "maxStat": 30 },
+      { "stat": "% Weapon Damage", "minStat": 16, "maxStat": 20 },
+      { "stat": "Critical Resistance", "minStat": 16, "maxStat": 20 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/82432.png"
+  },
+  {
+    "dofusID": "27547",
+    "name": {
+      "en": "Belladonna's Cruelty",
+      "fr": "Cruauté de Belladone",
+      "de": "Grausamkeit von Tollkirsche",
+      "es": "Crueldad de Belladona",
+      "it": "Crudeltà di Belladonna",
+      "pt": "Crueldade de Beladona"
+    },
+    "itemType": "Ring",
+    "setID": "514",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Power", "minStat": 41, "maxStat": 60 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Water Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Air Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 401, "maxStat": 500 },
+      { "stat": "Dodge", "minStat": null, "maxStat": -10 },
+      { "stat": "Lock", "minStat": null, "maxStat": -10 },
+      { "stat": "Critical Resistance", "minStat": 7, "maxStat": 10 },
+      { "stat": "% Neutral Resistance", "minStat": 7, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9376.png"
+  },
+  {
+    "dofusID": "27548",
+    "name": {
+      "en": "Belladonna's Bitterness",
+      "fr": "Amertume de Belladone",
+      "de": "Bitterkeit von Tollkirsche",
+      "es": "Amargura de Belladona",
+      "it": "Amarezza di Belladonna",
+      "pt": "Amargor de Beladona"
+    },
+    "itemType": "Ring",
+    "setID": "514",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Wisdom", "minStat": 36, "maxStat": 45 },
+      { "stat": "Power", "minStat": 21, "maxStat": 30 },
+      { "stat": "Lock", "minStat": null, "maxStat": -10 },
+      { "stat": "Dodge", "minStat": 7, "maxStat": 10 },
+      { "stat": "AP Reduction", "minStat": 16, "maxStat": 20 },
+      { "stat": "Critical Resistance", "minStat": 7, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Air Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9374.png"
+  },
+  {
+    "dofusID": "27549",
+    "name": {
+      "en": "Belladonna's Tenderness",
+      "fr": "Tendresse de Belladone",
+      "de": "Zärtlichkeit der Tollkirsche",
+      "es": "Ternura de Belladona",
+      "it": "Tenerezza di Belladonna",
+      "pt": "Ternura de Beladona"
+    },
+    "itemType": "Ring",
+    "setID": "514",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Power", "minStat": 21, "maxStat": 30 },
+      { "stat": "Lock", "minStat": 7, "maxStat": 10 },
+      { "stat": "Dodge", "minStat": null, "maxStat": -10 },
+      { "stat": "AP Parry", "minStat": 16, "maxStat": 20 },
+      { "stat": "Critical Resistance", "minStat": 7, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9377.png"
+  },
+  {
+    "dofusID": "27527",
+    "name": {
+      "en": "Raccooper Cap",
+      "fr": "Casquette de Rakoopeur",
+      "de": "Racoopers Mütze",
+      "es": "Gorra de Rakooper",
+      "it": "Copricapo di Rakooper",
+      "pt": "Boné de Rakooper"
+    },
+    "itemType": "Hat",
+    "setID": "509",
+    "level": 48,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Agility", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Range", "minStat": null, "maxStat": -1 },
+      { "stat": "Earth Damage", "minStat": 2, "maxStat": 3 },
+      { "stat": "Air Damage", "minStat": 2, "maxStat": 3 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/16752.png"
+  },
+  {
+    "dofusID": "27529",
+    "name": {
+      "en": "Raccooper's Tail",
+      "fr": "Queue de Rakoopeur",
+      "de": "Racoopers Schwanz",
+      "es": "Cola de Rakooper",
+      "it": "Coda di Rakooper",
+      "pt": "Rabo de Rakooper"
+    },
+    "itemType": "Cloak",
+    "setID": "509",
+    "level": 50,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 40 },
+      { "stat": "Range", "minStat": null, "maxStat": -1 },
+      { "stat": "Earth Damage", "minStat": 1, "maxStat": 2 },
+      { "stat": "Air Damage", "minStat": 1, "maxStat": 2 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/17566.png"
+  },
+  {
+    "dofusID": "27522",
+    "name": {
+      "en": "Rebel Boots",
+      "fr": "Bottes des Rebelles",
+      "de": "Rebellenstiefel",
+      "es": "Botas de los rebeldes",
+      "it": "Stivali dei Ribelli",
+      "pt": "Botas dos Rebeldes"
+    },
+    "itemType": "Boots",
+    "setID": "508",
+    "level": 52,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 15 },
+      { "stat": "Intelligence", "minStat": 11, "maxStat": 15 },
+      { "stat": "Wisdom", "minStat": 6, "maxStat": 10 },
+      { "stat": "Critical", "minStat": null, "maxStat": -10 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/11377.png"
+  },
+  {
+    "dofusID": "27523",
+    "name": {
+      "en": "Rebel Cape",
+      "fr": "Cape des Rebelles",
+      "de": "Rebellenumhang",
+      "es": "Capa de los rebeldes",
+      "it": "Mantello dei Ribelli",
+      "pt": "Capa dos Rebeldes"
+    },
+    "itemType": "Cloak",
+    "setID": "508",
+    "level": 50,
+    "stats": [
+      { "stat": "Vitality", "minStat": 31, "maxStat": 50 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 21, "maxStat": 30 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 20 },
+      { "stat": "Critical", "minStat": null, "maxStat": -9 },
+      { "stat": "Earth Damage", "minStat": 5, "maxStat": 7 },
+      { "stat": "Fire Damage", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/17565.png"
+  },
+  {
+    "dofusID": "27524",
+    "name": {
+      "en": "Rebels' Ring",
+      "fr": "Alliance des Rebelles",
+      "de": "Rebellenring",
+      "es": "Alianza de los rebeldes",
+      "it": "Fede dei Ribelli",
+      "pt": "Aliança dos Rebeldes"
+    },
+    "itemType": "Ring",
+    "setID": "508",
+    "level": 48,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 16, "maxStat": 25 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Critical", "minStat": null, "maxStat": -11 },
+      { "stat": "Earth Damage", "minStat": 3, "maxStat": 5 },
+      { "stat": "Fire Damage", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9379.png"
+  },
+  {
+    "dofusID": "27535",
+    "name": {
+      "en": "Albueran Trapper Belt",
+      "fr": "Ceinture de trappeur albueran",
+      "de": "Albueranischer Fallenstellergürtel",
+      "es": "Cinturón de trampero albuereño",
+      "it": "Cintura di Ranger di Albuera",
+      "pt": "Cinto de Caçador Albuerano"
+    },
+    "itemType": "Belt",
+    "setID": "512",
+    "level": 52,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 50 },
+      { "stat": "Agility", "minStat": 31, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 11, "maxStat": 15 },
+      { "stat": "Heals", "minStat": 6, "maxStat": 10 },
+      { "stat": "Dodge", "minStat": null, "maxStat": -10 },
+      { "stat": "AP Reduction", "minStat": null, "maxStat": -10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/10353.png"
+  },
+  {
+    "dofusID": "27536",
+    "name": {
+      "en": "Albueran Trapper Boots",
+      "fr": "Bottes de trappeur albueran",
+      "de": "Albueranische Fallenstellerstiefel",
+      "es": "Botas de trampero albuereño",
+      "it": "Stivali di Ranger di Albuera",
+      "pt": "Botas de Caçador Albuerano"
+    },
+    "itemType": "Boots",
+    "setID": "512",
+    "level": 54,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 16, "maxStat": 25 },
+      { "stat": "Agility", "minStat": 16, "maxStat": 25 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Dodge", "minStat": null, "maxStat": -10 },
+      { "stat": "AP Reduction", "minStat": null, "maxStat": -10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/11378.png"
+  },
+  {
+    "dofusID": "27537",
+    "name": {
+      "en": "Bitter-Shield",
+      "fr": "Bouclier Gris",
+      "de": "Saugrauer Schild",
+      "es": "Escudo seco",
+      "it": "Scudo Grigio",
+      "pt": "Escudo Amargo"
+    },
+    "itemType": "Shield",
+    "setID": "516",
+    "level": 188,
+    "stats": [
+      { "stat": "Vitality", "minStat": 101, "maxStat": 150 },
+      { "stat": "Power", "minStat": 21, "maxStat": 30 },
+      { "stat": "% Spell Damage", "minStat": null, "maxStat": -10 },
+      { "stat": "% Weapon Damage", "minStat": 16, "maxStat": 20 },
+      { "stat": "Lock", "minStat": 7, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/82433.png"
+  },
+  {
+    "dofusID": "27538",
+    "name": {
+      "en": "Bitter-Collar",
+      "fr": "Collier Gris",
+      "de": "Saugraue Halskette",
+      "es": "Collar seco",
+      "it": "Collana Grigia",
+      "pt": "Colar Amargo"
+    },
+    "itemType": "Amulet",
+    "setID": "516",
+    "level": 192,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Strength", "minStat": 51, "maxStat": 70 },
+      { "stat": "Chance", "minStat": 51, "maxStat": 70 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Water Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Lock", "minStat": 7, "maxStat": 10 },
+      { "stat": "Dodge", "minStat": null, "maxStat": -10 },
+      { "stat": "% Neutral Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Water Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/1325.png"
+  },
+  {
+    "dofusID": "27541",
+    "name": {
+      "en": "Berylbell Bells",
+      "fr": "Grelots de Barbéryl",
+      "de": "Schellen von Barberyl",
+      "es": "Cascabeles de Demena",
+      "it": "Sonaglio di Barberilla",
+      "pt": "Guizos de Barberilo"
+    },
+    "itemType": "Hat",
+    "setID": "513",
+    "level": 188,
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Chance", "minStat": 51, "maxStat": 70 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 },
+      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Prospecting", "minStat": 7, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": 301, "maxStat": 400 },
+      { "stat": "Dodge", "minStat": 3, "maxStat": 5 },
+      { "stat": "Critical Damage", "minStat": 6, "maxStat": 8 },
+      { "stat": "% Water Resistance", "minStat": 6, "maxStat": 8 },
+      { "stat": "% Air Resistance", "minStat": 6, "maxStat": 8 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/16754.png"
+  },
+  {
+    "dofusID": "27542",
+    "name": {
+      "en": "Berylbell's Subligar",
+      "fr": "Subligar de Barbéryl",
+      "de": "Barberyls Subligaculum",
+      "es": "Subligar de Demena",
+      "it": "Perizomar di Barberilla",
+      "pt": "Subligar de Barberila"
+    },
+    "itemType": "Belt",
+    "setID": "513",
+    "level": 190,
+    "stats": [
+      { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
+      { "stat": "Chance", "minStat": 61, "maxStat": 80 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Critical", "minStat": 3, "maxStat": 5 },
+      { "stat": "Range", "minStat": null, "maxStat": 1 },
+      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Prospecting", "minStat": 16, "maxStat": 20 },
+      { "stat": "Dodge", "minStat": 5, "maxStat": 7 },
+      { "stat": "Critical Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "% Water Resistance", "minStat": 5, "maxStat": 7 },
+      { "stat": "% Air Resistance", "minStat": 5, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/10355.png"
+  },
+  {
+    "dofusID": "27525",
+    "name": {
+      "en": "Copperbeard Helm",
+      "fr": "Heaume Clochecuivre",
+      "de": "Glockenleder-Helm",
+      "es": "Yelmo Decobre",
+      "it": "Elmo Rametista",
+      "pt": "Elmo Sinocobre"
+    },
+    "itemType": "Hat",
+    "setID": "510",
+    "level": 198,
+    "stats": [
+      { "stat": "Vitality", "minStat": 301, "maxStat": 350 },
+      { "stat": "Strength", "minStat": 41, "maxStat": 60 },
+      { "stat": "Intelligence", "minStat": 51, "maxStat": 70 },
+      { "stat": "Agility", "minStat": 41, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 21, "maxStat": 30 },
+      { "stat": "Range", "minStat": null, "maxStat": -1 },
+      { "stat": "Neutral Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Fire Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Air Damage", "minStat": 5, "maxStat": 8 },
+      { "stat": "Heals", "minStat": 11, "maxStat": 14 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Initiative", "minStat": null, "maxStat": -300 },
+      { "stat": "Lock", "minStat": 5, "maxStat": 8 },
+      { "stat": "Pushback Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "% Fire Resistance", "minStat": 4, "maxStat": 7 },
+      { "stat": "% Air Resistance", "minStat": 4, "maxStat": 7 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/16755.png"
+  },
+  {
+    "dofusID": "27526",
+    "name": {
+      "en": "Copperbeard Ring",
+      "fr": "Anneau Clochecuivre",
+      "de": "Glockenleder-Ring",
+      "es": "Anillo Decobre",
+      "it": "Anello Rametista",
+      "pt": "Anel Sinocobre"
+    },
+    "itemType": "Ring",
+    "setID": "510",
+    "level": 194,
+    "stats": [
+      { "stat": "Vitality", "minStat": 201, "maxStat": 250 },
+      { "stat": "Strength", "minStat": 21, "maxStat": 30 },
+      { "stat": "Intelligence", "minStat": 31, "maxStat": 40 },
+      { "stat": "Agility", "minStat": 41, "maxStat": 50 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
+      { "stat": "Neutral Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Earth Damage", "minStat": 4, "maxStat": 6 },
+      { "stat": "Fire Damage", "minStat": 5, "maxStat": 8 },
+      { "stat": "Air Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Heals", "minStat": 7, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 7, "maxStat": 10 },
+      { "stat": "Initiative", "minStat": null, "maxStat": -200 },
+      { "stat": "Pushback Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 3, "maxStat": 5 },
+      { "stat": "% Fire Resistance", "minStat": 3, "maxStat": 5 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9382.png"
+  },
+  {
+    "dofusID": "27511",
+    "name": {
+      "en": "Cire's Sorrow",
+      "fr": "Chagrin de Cire",
+      "de": "Cires Kummer",
+      "es": "Aflicción de Cire",
+      "it": "Dolore di Cire",
+      "pt": "Tristeza de Cire"
+    },
+    "itemType": "Hat",
+    "setID": "507",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 451, "maxStat": 500 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Power", "minStat": 41, "maxStat": 50 },
+      { "stat": "Earth Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Fire Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Water Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Air Damage", "minStat": 9, "maxStat": 12 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Initiative", "minStat": 301, "maxStat": 400 },
+      { "stat": "Lock", "minStat": 16, "maxStat": 20 },
+      { "stat": "Pushback Resistance", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Neutral Resistance", "minStat": 7, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/16751.png"
+  },
+  {
+    "dofusID": "27512",
+    "name": {
+      "en": "Howling Souls",
+      "fr": "Âmes Hurlantes",
+      "de": "Schreiende Seelen",
+      "es": "Almas Chillonas",
+      "it": "Anime Urlanti",
+      "pt": "Almas Urrantes"
+    },
+    "itemType": "Cloak",
+    "setID": "507",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 451, "maxStat": 500 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Power", "minStat": 41, "maxStat": 50 },
+      { "stat": "Summons", "minStat": null, "maxStat": 1 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Water Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Air Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 11, "maxStat": 15 },
+      { "stat": "Initiative", "minStat": 501, "maxStat": 600 },
+      { "stat": "Lock", "minStat": 11, "maxStat": 15 },
+      { "stat": "Pushback Resistance", "minStat": 21, "maxStat": 25 },
+      { "stat": "% Air Resistance", "minStat": 7, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/17564.png"
+  },
+  {
+    "dofusID": "27513",
+    "name": {
+      "en": "Heavy Burden",
+      "fr": "Lourd Fardeau",
+      "de": "Schwere Bürde",
+      "es": "Pesada Carga",
+      "it": "Grave Fardello",
+      "pt": "Fardo Pesado"
+    },
+    "itemType": "Amulet",
+    "setID": "507",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 351, "maxStat": 400 },
+      { "stat": "Wisdom", "minStat": 41, "maxStat": 50 },
+      { "stat": "Power", "minStat": 41, "maxStat": 50 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Water Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Air Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 7, "maxStat": 10 },
+      { "stat": "Lock", "minStat": 16, "maxStat": 20 },
+      { "stat": "Pushback Resistance", "minStat": 16, "maxStat": 20 },
+      { "stat": "% Water Resistance", "minStat": 7, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/1323.png"
+  },
+  {
+    "dofusID": "27514",
+    "name": {
+      "en": "Eternal Chase",
+      "fr": "Éternelle Poursuite",
+      "de": "Ewige Verfolgung",
+      "es": "Eterna Persecución",
+      "it": "Eterno Inseguimento",
+      "pt": "Eterna Perseguição"
+    },
+    "itemType": "Boots",
+    "setID": "507",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 351, "maxStat": 400 },
+      { "stat": "Wisdom", "minStat": 31, "maxStat": 40 },
+      { "stat": "Power", "minStat": 41, "maxStat": 50 },
+      { "stat": "MP", "minStat": null, "maxStat": 1 },
+      { "stat": "Earth Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Fire Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Water Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Air Damage", "minStat": 11, "maxStat": 15 },
+      { "stat": "Prospecting", "minStat": 7, "maxStat": 10 },
+      { "stat": "Lock", "minStat": 7, "maxStat": 10 },
+      { "stat": "Pushback Resistance", "minStat": 11, "maxStat": 15 },
+      { "stat": "% Fire Resistance", "minStat": 7, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/11376.png"
+  },
+  {
+    "dofusID": "27515",
+    "name": {
+      "en": "Signet of Fate",
+      "fr": "Triste Sceau",
+      "de": "Trauriger Siegelring",
+      "es": "Triste Sello",
+      "it": "Triste Sigillo",
+      "pt": "Triste Selo"
+    },
+    "itemType": "Ring",
+    "setID": "507",
+    "level": 200,
+    "stats": [
+      { "stat": "Vitality", "minStat": 251, "maxStat": 300 },
+      { "stat": "Wisdom", "minStat": 16, "maxStat": 20 },
+      { "stat": "Power", "minStat": 31, "maxStat": 40 },
+      { "stat": "Earth Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Fire Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Water Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Air Damage", "minStat": 7, "maxStat": 10 },
+      { "stat": "Prospecting", "minStat": 7, "maxStat": 10 },
+      { "stat": "Lock", "minStat": 5, "maxStat": 7 },
+      { "stat": "Pushback Resistance", "minStat": 7, "maxStat": 10 },
+      { "stat": "% Earth Resistance", "minStat": 7, "maxStat": 10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9378.png"
+  },
+  {
+    "dofusID": "27531",
+    "name": {
+      "en": "Albueran Warrior Amulet",
+      "fr": "Amulette de guerrier albueran",
+      "de": "Amulett eines Albueraner-Kriegers",
+      "es": "Amuleto de guerrero albuereño",
+      "it": "Amuleto di guerriero di Albuera",
+      "pt": "Amuleto de Guerreiro Albuerano"
+    },
+    "itemType": "Amulet",
+    "setID": "511",
+    "level": 54,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 40 },
+      { "stat": "Strength", "minStat": 11, "maxStat": 20 },
+      { "stat": "Chance", "minStat": 11, "maxStat": 20 },
+      { "stat": "AP", "minStat": null, "maxStat": 1 },
+      { "stat": "Lock", "minStat": null, "maxStat": -10 },
+      { "stat": "MP Reduction", "minStat": null, "maxStat": -10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/1324.png"
+  },
+  {
+    "dofusID": "27532",
+    "name": {
+      "en": "Albueran Warrior Ring",
+      "fr": "Anneau de guerrier albueran",
+      "de": "Albueranischer Kriegerring",
+      "es": "Anillo de guerrero albuereño",
+      "it": "Anello di Guerriero di Albuera",
+      "pt": "Anel de Guerreiro Albuerano"
+    },
+    "itemType": "Ring",
+    "setID": "511",
+    "level": 52,
+    "stats": [
+      { "stat": "Vitality", "minStat": 21, "maxStat": 30 },
+      { "stat": "Strength", "minStat": 31, "maxStat": 50 },
+      { "stat": "Chance", "minStat": 31, "maxStat": 50 },
+      { "stat": "Lock", "minStat": null, "maxStat": -10 },
+      { "stat": "MP Reduction", "minStat": null, "maxStat": -10 }
+    ],
+    "customStats": {},
+    "conditions": { "conditions": {}, "customConditions": {} },
+    "imageUrl": "item/9380.png"
+  },
+  {
+    "dofusID": "29134",
+    "name": {
+      "en": "Sylvan Dofus",
+      "fr": "Dofus Sylvestre",
+      "de": "Wald-Dofus",
+      "es": "Dofus silvestre",
+      "it": "[!] Sylvan Dofus",
+      "pt": "Dofus Silvestre"
+    },
+    "itemType": "Dofus",
+    "setID": null,
+    "level": 180,
+    "stats": [
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {
+      "en": [
+        "For each MP used, the bearer gains 8 Power for 2 turns, stackable 20 times. If the bearer does not use any MP, they are healed for 10% of their HP at the end of their turn."
+      ],
+      "fr": [
+        "À chaque PM utilisé, le porteur gagne 8 Puissance pour 2 tours, cumulable 20 fois. Si au contraire il n'utilise aucun PM, il est soigné de 10% de ses PV à la fin de son tour.",
+        "Attitude Dofus Turquoise"
+      ],
+      "de": [
+        "[!] For each MP used, the bearer gains 8 Power for 2 turns, stackable 20 times. If the bearer does not use any MP, they are healed for 10% of their HP at the end of their turn."
+      ],
+      "es": [
+        "[!] For each MP used, the bearer gains 8 Power for 2 turns, stackable 20 times. If the bearer does not use any MP, they are healed for 10% of their HP at the end of their turn."
+      ],
+      "it": [
+        "[!] For each MP used, the bearer gains 8 Power for 2 turns, stackable 20 times. If the bearer does not use any MP, they are healed for 10% of their HP at the end of their turn."
+      ],
+      "pt": [
+        "[!] For each MP used, the bearer gains 8 Power for 2 turns, stackable 20 times. If the bearer does not use any MP, they are healed for 10% of their HP at the end of their turn."
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/23036.png"
   }
 ]

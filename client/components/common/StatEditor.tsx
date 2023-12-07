@@ -294,8 +294,7 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
                   size="small"
                   css={getInputNumberStyle(baseKey, t('BASE'), theme)}
                   onFocus={selectOnFocus}
-                  onChange={(value: number | string | undefined) => {
-                    if (typeof value === 'string') return;
+                  onChange={(value: number | null) => {
                     const newValue = value || 0;
                     dispatch({ type: 'edit', stat: baseKey, value: newValue });
                     debouncedCheckAndMutate();
@@ -320,8 +319,7 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
                   size="small"
                   css={getInputNumberStyle(baseKey, t('SCROLLED'), theme)}
                   onFocus={selectOnFocus}
-                  onChange={(value: number | string | undefined) => {
-                    if (typeof value === 'string') return;
+                  onChange={(value: number | null) => {
                     const newValue = value || 0;
                     dispatch({
                       type: 'edit',
