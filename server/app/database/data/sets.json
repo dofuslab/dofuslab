@@ -4052,38 +4052,6 @@
     }
   },
   {
-    "id": "455",
-    "name": {
-      "en": "Submerged Set",
-      "fr": "Panoplie Submergée",
-      "de": "Versunkenes Set",
-      "es": "Set sumergido",
-      "it": "Panoplia Annegata",
-      "pt": "Conjunto Submerso"
-    },
-    "bonuses": {
-      "2": [
-        {
-          "stat": "AP Parry",
-          "value": 20,
-          "altStat": null
-        }
-      ],
-      "3": [
-        {
-          "stat": "AP Parry",
-          "value": 20,
-          "altStat": null
-        },
-        {
-          "stat": "AP",
-          "value": 1,
-          "altStat": null
-        }
-      ]
-    }
-  },
-  {
     "id": "459",
     "name": {
       "en": "Freezammer Set",
@@ -15748,6 +15716,272 @@
         },
         {
           "stat": "Chance",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Agility",
+          "value": 100,
+          "altStat": null
+        }
+      ]
+    }
+  },
+  {
+    "id": "250",
+    "name": {
+      "en": "Submersible Set",
+      "fr": "Panoplie Submersible",
+      "de": "Tauch-Set",
+      "es": "Set sumergible",
+      "it": "Panoplia Sommergibile",
+      "pt": "Conjunto Submarino"
+    },
+    "bonuses": {
+      "2": [
+        {
+          "stat": "Agility",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Prospecting",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Heals",
+          "value": 3,
+          "altStat": null
+        },
+        {
+          "stat": "Damage",
+          "value": 3,
+          "altStat": null
+        },
+        {
+          "stat": "Vitality",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Wisdom",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Chance",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
+          "value": 20,
+          "altStat": null
+        }
+      ],
+      "3": [
+        {
+          "stat": "Prospecting",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Heals",
+          "value": 7,
+          "altStat": null
+        },
+        {
+          "stat": "Damage",
+          "value": 7,
+          "altStat": null
+        },
+        {
+          "stat": "Vitality",
+          "value": 200,
+          "altStat": null
+        },
+        {
+          "stat": "Wisdom",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "Chance",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "Agility",
+          "value": 40,
+          "altStat": null
+        }
+      ],
+      "4": [
+        {
+          "stat": "% Earth Resistance",
+          "value": 5,
+          "altStat": null
+        },
+        {
+          "stat": "% Neutral Resistance",
+          "value": 5,
+          "altStat": null
+        },
+        {
+          "stat": "% Fire Resistance",
+          "value": 5,
+          "altStat": null
+        },
+        {
+          "stat": "% Water Resistance",
+          "value": 5,
+          "altStat": null
+        },
+        {
+          "stat": "% Air Resistance",
+          "value": 5,
+          "altStat": null
+        },
+        {
+          "stat": "Summons",
+          "value": 1,
+          "altStat": null
+        },
+        {
+          "stat": "Prospecting",
+          "value": 30,
+          "altStat": null
+        },
+        {
+          "stat": "Heals",
+          "value": 12,
+          "altStat": null
+        },
+        {
+          "stat": "Damage",
+          "value": 12,
+          "altStat": null
+        },
+        {
+          "stat": "Vitality",
+          "value": 500,
+          "altStat": null
+        },
+        {
+          "stat": "Wisdom",
+          "value": 70,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
+          "value": 70,
+          "altStat": null
+        },
+        {
+          "stat": "Chance",
+          "value": 70,
+          "altStat": null
+        },
+        {
+          "stat": "Intelligence",
+          "value": 70,
+          "altStat": null
+        },
+        {
+          "stat": "Agility",
+          "value": 70,
+          "altStat": null
+        }
+      ],
+      "5": [
+        {
+          "stat": "% Earth Resistance",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "% Neutral Resistance",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "% Fire Resistance",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "% Water Resistance",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "% Air Resistance",
+          "value": 10,
+          "altStat": null
+        },
+        {
+          "stat": "Prospecting",
+          "value": 40,
+          "altStat": null
+        },
+        {
+          "stat": "AP",
+          "value": 1,
+          "altStat": null
+        },
+        {
+          "stat": "Summons",
+          "value": 1,
+          "altStat": null
+        },
+        {
+          "stat": "Heals",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Damage",
+          "value": 20,
+          "altStat": null
+        },
+        {
+          "stat": "Vitality",
+          "value": 800,
+          "altStat": null
+        },
+        {
+          "stat": "Wisdom",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Chance",
+          "value": 100,
+          "altStat": null
+        },
+        {
+          "stat": "Strength",
           "value": 100,
           "altStat": null
         },
