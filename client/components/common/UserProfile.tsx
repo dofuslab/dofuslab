@@ -188,6 +188,7 @@ const UserProfile: React.FC<Props> = ({
           username={username}
           isEditable={isEditable}
           isMobile={false}
+          isProfile
         />
       </Media>
     </div>
