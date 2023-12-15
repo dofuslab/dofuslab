@@ -112,7 +112,7 @@ Open http://dev.localhost:3000/ and test away!
 
 ## Installing software
 
-To get started, you'll need to install [Docker Desktop](https://www.docker.com/products/docker-desktop/), and optionally (but highly recommended) [Tilt](https://docs.tilt.dev/install.html).
+To get started, you'll need to install [Docker Desktop](https://www.docker.com/products/docker-desktop/), and optionally [Tilt](https://docs.tilt.dev/install.html). Tilt is being [integrated into Docker Compose](https://www.docker.com/blog/docker-compose-experiment-sync-files-and-automatically-rebuild-services-with-watch-mode/) and it may not be necessary to set it up independently in the future. It also adds additional complexity to your environment, and should only be used once you've confirmed the vanilla Docker Compose build is working.
 
 Note that you may need to configure your git client to check out "as-is" to avoid converting scripts to CRLF, which will result in errors like:
 
@@ -121,9 +121,29 @@ dofuslab@ac1658cacb7a:~/oneoff$ ./setup_db.sh
 bash: ./setup_db.sh: /bin/sh^M: bad interpreter: No such file or directory
 ```
 
+## Running the development environment (Docker Compose)
+
+Once you have Docker Desktop installed you can run the DofusLab environment by opening a terminal to the project directory and running:
+
+```bash
+$ docker compose build
+$ docker compose up -d
+```
+
+This should result in something that looks like this, after the build completes and the containers start:
+
+```bash
+[+] Running 5/5
+ ✔ Container dofuslab-postgres-1  Running
+ ✔ Container dofuslab-redis-1     Running
+ ✔ Container dofuslab-server-1    Started
+ ✔ Container dofuslab-client-1    Started
+ ✔ Container dofuslab-nginx-1     Started
+```
+
 ## Running the development environment (Tilt)
 
-Once you have Docker Desktop and Tilt installed, you can run the Dofuslab environment by simply opening a terminal to the project directory, and running:
+Once you have Docker Desktop and Tilt installed, you can run the DofusLab environment by opening a terminal to the project directory, and running:
 
 ```bash
 $ tilt up
@@ -144,17 +164,11 @@ v0.30.7, built 2022-08-12
 
 At this point, you can press the spacebar to open Tilt in the browser to see service status and logs (or `s` to stream logs, etc). Dofuslab should now be building, and doing most of the steps in the manual setup section automatically.
 
-It'll probably take a few minutes to build the containers the first time, due to how big the client and server containers are. 
-
-If you only have Docker and aren't using Tilt:
-
-```bash
-$ docker compose up -d
-```
+It'll probably take a few minutes to build the containers the first time, due to how big the client and server containers are.
 
 ## Populate database
 
-Once you have the docker compose/tilt environment running, you need to get the database populated.
+Once you have the Docker Compose/Tilt environment running, you need to get the database populated.
 
 You can do this several ways. You can either run:
 
@@ -162,13 +176,13 @@ You can do this several ways. You can either run:
 $ docker compose exec server /home/dofuslab/oneoff/setup_db.sh
 ```
 
-Note that re-running this action can create duplicate items in the database, so just running it once is recommended. If you mess up your database, it's simple to reinitialize it. The simplest way is to bring your environment down (`tilt down`), and remove the postgres volume:
+Note that re-running this action can create duplicate items in the database, so just running it once is recommended. If you mess up your database, it's simple to reinitialize it. The simplest way is to bring your environment down (`docker compose down` or `tilt down` depending on how you're running things), and remove the postgres volume:
 
 ```bash
 $ docker volume rm dofuslab_pgdata
 ```
 
-Once you have your database populated, you should be able to access your development Dofuslab instance at http://localhost:3000/.
+Once you have your database populated, you should be able to access your development Dofuslab instance at http://host.docker.internal:8080/.
 
 </p>
 </details>
