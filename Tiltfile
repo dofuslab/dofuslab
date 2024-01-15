@@ -32,7 +32,7 @@ docker_build(
         run('cd /home/dofuslab && pip install -r requirements.txt',
             trigger='./server/requirements.txt'),
         run('cd /home/dofuslab && flask db migrate', trigger='./server/app/database/model_*.py'),
-        run('cd /home/dofuslab && make update-translations && make compile-translations', 
+        run('cd /home/dofuslab && make update-translations && make compile-translations',
             trigger=['./server/app/translations/es/LC_MESSAGES/messages.po',
                      './server/app/translations/fr/LC_MESSAGES/messages.po',
                      './server/app/translations/de/LC_MESSAGES/messages.po',
@@ -60,11 +60,21 @@ docker_build(
     ],
 )
 
+docker_build(
+    'dofuslab_nginx',
+    './nginx',
+    live_update = [
+        sync('./nginx/nginx.conf', '/etc/nginx/conf.d/default.conf'),
+        restart_container()
+    ]
+)
+
 
 dc_resource('redis', labels=["database"])
 dc_resource('postgres', labels=["database"])
-dc_resource('server', labels=["server"], links = ["http://dev.localhost:5000/api/graphql"])
-dc_resource('client', labels=["client"], links = ["http://dev.localhost:3000/"])
+dc_resource('server', labels=["server"], links = ["http://host.docker.internal:5000/api/graphql"])
+dc_resource('client', labels=["client"], links = ["http://host.docker.internal:3000/"])
+dc_resource('nginx', labels="proxy", links = ["http://host.docker.internal:8080/"])
 
 local_resource("setup-db", cmd="./db/reset-db.sh", cmd_bat="cd db && reset-db.bat", auto_init=False, labels=['utilities'], trigger_mode=TRIGGER_MODE_MANUAL)
 

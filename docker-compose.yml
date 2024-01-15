@@ -3,9 +3,9 @@ services:
   postgres:
     # https://hub.docker.com/_/postgres
     image: postgres:14.1
-    restart: on-failure
+    restart: always
     ports:
-      - "5432:5432"
+      - 5432:5432
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_USER: postgres
@@ -16,13 +16,14 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - ./db:/docker-entrypoint-initdb.d/
+      - ./db/01-init-psql.sh:/docker-entrypoint-initdb.d/01-init-psql.sh
       - pgdata:/var/lib/postgresql/data
   redis:
     # https://hub.docker.com/_/redis
     image: redis:6.2
+    restart: always
     ports:
-      - "6379:6379"
+      - 6379:6379
     healthcheck:
       test: [ "CMD", "redis-cli", "ping" ]
       interval: 10s
@@ -31,19 +32,30 @@ services:
   client:
     build: ./client/
     ports:
-      - "3000:3000"
+      - 3000:3000
     depends_on:
       - server
-    restart: on-failure
+    restart: always
+    environment:
+      - NODE_ENV=development
   server:
     build: ./server/
+    restart: always
     ports:
-      - "5000:5000"
+      - 5000:5000
     # healthcheck:
     #   test: curl -s http://localhost:5000/
     #   interval: 150s
     #   timeout: 30s
     #   retries: 5
-    restart: on-failure
+  nginx:
+  # https://hub.docker.com/_/nginx
+    build: ./nginx/
+    ports:
+      - 8080:80
+    depends_on:
+      - client
+    restart: always
+
 volumes:
   pgdata:

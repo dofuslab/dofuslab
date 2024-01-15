@@ -7,15 +7,19 @@ RUN addgroup -S dofuslab && adduser -h /home/dofuslab -S dofuslab -G dofuslab
 USER dofuslab
 WORKDIR /home/dofuslab
 
-# Default value; will be overridden by build_args, if passed
-ARG node_env=production
-ENV NODE_ENV $node_env
-
 ADD package.json .
 ADD yarn.lock .
-RUN yarn
 
 COPY --chown=dofuslab:dofuslab . .
 COPY --chown=dofuslab:dofuslab .env.docker .env
 
+# Default value; will be overridden by build_args, if passed
+# ARG node_env=production
+ARG node_env=development
+ENV NODE_ENV $node_env
+
+RUN yarn
+
 CMD yarn dev-docker
+# Useful if you just want the container to start and wait while you exec into it:
+# CMD /bin/sh -c -- "while true; do sleep 30; done;"
