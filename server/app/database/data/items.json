@@ -1948,7 +1948,26 @@
         "customStats": {},
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Sadida only"
+                ],
+                "fr": [
+                    "Être un Sadida"
+                ],
+                "de": [
+                    "Ein(e) Sadida sein"
+                ],
+                "es": [
+                    "Ser un Sadida"
+                ],
+                "it": [
+                    "Essere Sadida"
+                ],
+                "pt": [
+                    "Ser um Sadida"
+                ]
+            }
         },
         "imageUrl": "item/16017.png"
     },
@@ -2329,15 +2348,36 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "ALIGNMENT_LEVEL",
-                        "operator": ">",
-                        "value": 20
-                    }
-                ]
+                "stat": "ALIGNMENT_LEVEL",
+                "operator": ">",
+                "value": 20
             },
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Alignment 1 and",
+                    "Alignment level > 20"
+                ],
+                "fr": [
+                    "Alignement 1 et",
+                    "Niveau d'alignement > 20"
+                ],
+                "de": [
+                    "Gesinnung 1 und",
+                    "Gesinnungsstufe > 20"
+                ],
+                "es": [
+                    "Alineamiento 1 y",
+                    "Nivel de alineamiento > 20"
+                ],
+                "it": [
+                    "Allineamento 1 e",
+                    "Livello dell'allineamento > 20"
+                ],
+                "pt": [
+                    "Alinhamento 1 e",
+                    "Nível de alinhamento > 20"
+                ]
+            }
         },
         "imageUrl": "item/17002.png"
     },
@@ -2761,15 +2801,36 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "ALIGNMENT_LEVEL",
-                        "operator": ">",
-                        "value": 30
-                    }
-                ]
+                "stat": "ALIGNMENT_LEVEL",
+                "operator": ">",
+                "value": 30
             },
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Alignment 2 and",
+                    "Alignment level > 30"
+                ],
+                "fr": [
+                    "Alignement 2 et",
+                    "Niveau d'alignement > 30"
+                ],
+                "de": [
+                    "Gesinnung 2 und",
+                    "Gesinnungsstufe > 30"
+                ],
+                "es": [
+                    "Alineamiento 2 y",
+                    "Nivel de alineamiento > 30"
+                ],
+                "it": [
+                    "Allineamento 2 e",
+                    "Livello dell'allineamento > 30"
+                ],
+                "pt": [
+                    "Alinhamento 2 e",
+                    "Nível de alinhamento > 30"
+                ]
+            }
         },
         "imageUrl": "item/17184.png"
     },
@@ -5087,15 +5148,36 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "ALIGNMENT_LEVEL",
-                        "operator": ">",
-                        "value": 10
-                    }
-                ]
+                "stat": "ALIGNMENT_LEVEL",
+                "operator": ">",
+                "value": 10
             },
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Alignment 1 and",
+                    "Alignment level > 10"
+                ],
+                "fr": [
+                    "Alignement 1 et",
+                    "Niveau d'alignement > 10"
+                ],
+                "de": [
+                    "Gesinnung 1 und",
+                    "Gesinnungsstufe > 10"
+                ],
+                "es": [
+                    "Alineamiento 1 y",
+                    "Nivel de alineamiento > 10"
+                ],
+                "it": [
+                    "Allineamento 1 e",
+                    "Livello dell'allineamento > 10"
+                ],
+                "pt": [
+                    "Alinhamento 1 e",
+                    "Nível de alinhamento > 10"
+                ]
+            }
         },
         "imageUrl": "item/1023.png"
     },
@@ -5530,13 +5612,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "CHANCE",
-                        "operator": ">",
-                        "value": 10
-                    }
-                ]
+                "stat": "CHANCE",
+                "operator": ">",
+                "value": 10
             },
             "customConditions": {}
         },
@@ -6039,7 +6117,26 @@
         "customStats": {},
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Enutrof only"
+                ],
+                "fr": [
+                    "Être un Enutrof"
+                ],
+                "de": [
+                    "Ein(e) Enutrof sein"
+                ],
+                "es": [
+                    "Ser un Anutrof"
+                ],
+                "it": [
+                    "Essere Anutrof"
+                ],
+                "pt": [
+                    "Ser um Enutrof"
+                ]
+            }
         },
         "imageUrl": "item/9039.png"
     },
@@ -7213,7 +7310,56 @@
         "customStats": {},
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Lumberjack > Lvl. 40 or",
+                    "Miner > Lvl. 40 or",
+                    "Fisherman > Lvl. 40 or",
+                    "Farmer > Lvl. 40 or",
+                    "Alchemist > Lvl. 40 or",
+                    "Hunter > Lvl. 40"
+                ],
+                "fr": [
+                    "Bûcheron > Niv. 40 ou",
+                    "Mineur > Niv. 40 ou",
+                    "Pêcheur > Niv. 40 ou",
+                    "Paysan > Niv. 40 ou",
+                    "Alchimiste > Niv. 40 ou",
+                    "Chasseur > Niv. 40"
+                ],
+                "de": [
+                    "Holzfäller > Lvl. 40 oder",
+                    "Bergmann > Lvl. 40 oder",
+                    "Fischer > Lvl. 40 oder",
+                    "Bauer > Lvl. 40 oder",
+                    "Alchemist > Lvl. 40 oder",
+                    "Jäger > Lvl. 40"
+                ],
+                "es": [
+                    "Leñador > Niv. 40 o",
+                    "Minero > Niv. 40 o",
+                    "Pescador > Niv. 40 o",
+                    "Campesino > Niv. 40 o",
+                    "Alquimista > Niv. 40 o",
+                    "Cazador > Niv. 40"
+                ],
+                "it": [
+                    "Taglialegna > Lv. 40 o",
+                    "Minatore > Lv. 40 o",
+                    "Pescatore > Lv. 40 o",
+                    "Contadino > Lv. 40 o",
+                    "Alchimista > Lv. 40 o",
+                    "Cacciatore > Lv. 40"
+                ],
+                "pt": [
+                    "Lenhador > Nív. 40 ou",
+                    "Mineiro > Nív. 40 ou",
+                    "Pescador > Nív. 40 ou",
+                    "Fazendeiro > Nív. 40 ou",
+                    "Alquimista > Nív. 40 ou",
+                    "Caçador > Nív. 40"
+                ]
+            }
         },
         "imageUrl": "item/81026.png"
     },
@@ -7341,7 +7487,56 @@
         "customStats": {},
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Lumberjack > Lvl. 80 or",
+                    "Miner > Lvl. 80 or",
+                    "Fisherman > Lvl. 80 or",
+                    "Farmer > Lvl. 80 or",
+                    "Alchemist > Lvl. 80 or",
+                    "Hunter > Lvl. 80"
+                ],
+                "fr": [
+                    "Bûcheron > Niv. 80 ou",
+                    "Mineur > Niv. 80 ou",
+                    "Pêcheur > Niv. 80 ou",
+                    "Paysan > Niv. 80 ou",
+                    "Alchimiste > Niv. 80 ou",
+                    "Chasseur > Niv. 80"
+                ],
+                "de": [
+                    "Holzfäller > Lvl. 80 oder",
+                    "Bergmann > Lvl. 80 oder",
+                    "Fischer > Lvl. 80 oder",
+                    "Bauer > Lvl. 80 oder",
+                    "Alchemist > Lvl. 80 oder",
+                    "Jäger > Lvl. 80"
+                ],
+                "es": [
+                    "Leñador > Niv. 80 o",
+                    "Minero > Niv. 80 o",
+                    "Pescador > Niv. 80 o",
+                    "Campesino > Niv. 80 o",
+                    "Alquimista > Niv. 80 o",
+                    "Cazador > Niv. 80"
+                ],
+                "it": [
+                    "Taglialegna > Lv. 80 o",
+                    "Minatore > Lv. 80 o",
+                    "Pescatore > Lv. 80 o",
+                    "Contadino > Lv. 80 o",
+                    "Alchimista > Lv. 80 o",
+                    "Cacciatore > Lv. 80"
+                ],
+                "pt": [
+                    "Lenhador > Nív. 80 ou",
+                    "Mineiro > Nív. 80 ou",
+                    "Pescador > Nív. 80 ou",
+                    "Fazendeiro > Nív. 80 ou",
+                    "Alquimista > Nív. 80 ou",
+                    "Caçador > Nív. 80"
+                ]
+            }
         },
         "imageUrl": "item/81028.png"
     },
@@ -7368,7 +7563,56 @@
         "customStats": {},
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Lumberjack > Lvl. 120 or",
+                    "Miner > Lvl. 120 or",
+                    "Fisherman > Lvl. 120 or",
+                    "Farmer > Lvl. 120 or",
+                    "Alchemist > Lvl. 120 or",
+                    "Hunter > Lvl. 120"
+                ],
+                "fr": [
+                    "Bûcheron > Niv. 120 ou",
+                    "Mineur > Niv. 120 ou",
+                    "Pêcheur > Niv. 120 ou",
+                    "Paysan > Niv. 120 ou",
+                    "Alchimiste > Niv. 120 ou",
+                    "Chasseur > Niv. 120"
+                ],
+                "de": [
+                    "Holzfäller > Lvl. 120 oder",
+                    "Bergmann > Lvl. 120 oder",
+                    "Fischer > Lvl. 120 oder",
+                    "Bauer > Lvl. 120 oder",
+                    "Alchemist > Lvl. 120 oder",
+                    "Jäger > Lvl. 120"
+                ],
+                "es": [
+                    "Leñador > Niv. 120 o",
+                    "Minero > Niv. 120 o",
+                    "Pescador > Niv. 120 o",
+                    "Campesino > Niv. 120 o",
+                    "Alquimista > Niv. 120 o",
+                    "Cazador > Niv. 120"
+                ],
+                "it": [
+                    "Taglialegna > Lv. 120 o",
+                    "Minatore > Lv. 120 o",
+                    "Pescatore > Lv. 120 o",
+                    "Contadino > Lv. 120 o",
+                    "Alchimista > Lv. 120 o",
+                    "Cacciatore > Lv. 120"
+                ],
+                "pt": [
+                    "Lenhador > Nív. 120 ou",
+                    "Mineiro > Nív. 120 ou",
+                    "Pescador > Nív. 120 ou",
+                    "Fazendeiro > Nív. 120 ou",
+                    "Alquimista > Nív. 120 ou",
+                    "Caçador > Nív. 120"
+                ]
+            }
         },
         "imageUrl": "item/81029.png"
     },
@@ -7395,7 +7639,56 @@
         "customStats": {},
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Lumberjack > Lvl. 180 or",
+                    "Miner > Lvl. 180 or",
+                    "Fisherman > Lvl. 180 or",
+                    "Farmer > Lvl. 180 or",
+                    "Alchemist > Lvl. 180 or",
+                    "Hunter > Lvl. 180"
+                ],
+                "fr": [
+                    "Bûcheron > Niv. 180 ou",
+                    "Mineur > Niv. 180 ou",
+                    "Pêcheur > Niv. 180 ou",
+                    "Paysan > Niv. 180 ou",
+                    "Alchimiste > Niv. 180 ou",
+                    "Chasseur > Niv. 180"
+                ],
+                "de": [
+                    "Holzfäller > Lvl. 180 oder",
+                    "Bergmann > Lvl. 180 oder",
+                    "Fischer > Lvl. 180 oder",
+                    "Bauer > Lvl. 180 oder",
+                    "Alchemist > Lvl. 180 oder",
+                    "Jäger > Lvl. 180"
+                ],
+                "es": [
+                    "Leñador > Niv. 180 o",
+                    "Minero > Niv. 180 o",
+                    "Pescador > Niv. 180 o",
+                    "Campesino > Niv. 180 o",
+                    "Alquimista > Niv. 180 o",
+                    "Cazador > Niv. 180"
+                ],
+                "it": [
+                    "Taglialegna > Lv. 180 o",
+                    "Minatore > Lv. 180 o",
+                    "Pescatore > Lv. 180 o",
+                    "Contadino > Lv. 180 o",
+                    "Alchimista > Lv. 180 o",
+                    "Cacciatore > Lv. 180"
+                ],
+                "pt": [
+                    "Lenhador > Nív. 180 ou",
+                    "Mineiro > Nív. 180 ou",
+                    "Pescador > Nív. 180 ou",
+                    "Fazendeiro > Nív. 180 ou",
+                    "Alquimista > Nív. 180 ou",
+                    "Caçador > Nív. 180"
+                ]
+            }
         },
         "imageUrl": "item/81030.png"
     },
@@ -7491,13 +7784,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "STRENGTH",
-                        "operator": ">",
-                        "value": 59
-                    }
-                ]
+                "stat": "STRENGTH",
+                "operator": ">",
+                "value": 59
             },
             "customConditions": {}
         },
@@ -7536,13 +7825,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "INTELLIGENCE",
-                        "operator": ">",
-                        "value": 49
-                    }
-                ]
+                "stat": "INTELLIGENCE",
+                "operator": ">",
+                "value": 49
             },
             "customConditions": {}
         },
@@ -7581,13 +7866,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "VITALITY",
-                        "operator": ">",
-                        "value": 119
-                    }
-                ]
+                "stat": "VITALITY",
+                "operator": ">",
+                "value": 119
             },
             "customConditions": {}
         },
@@ -8342,15 +8623,30 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "WISDOM",
-                        "operator": ">",
-                        "value": 49
-                    }
-                ]
+                "stat": "WISDOM",
+                "operator": ">",
+                "value": 49
             },
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Alignment 1"
+                ],
+                "fr": [
+                    "Alignement 1"
+                ],
+                "de": [
+                    "Gesinnung 1"
+                ],
+                "es": [
+                    "Alineamiento 1"
+                ],
+                "it": [
+                    "Allineamento 1"
+                ],
+                "pt": [
+                    "Alinhamento 1"
+                ]
+            }
         },
         "imageUrl": "item/10021.png"
     },
@@ -8402,15 +8698,30 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "WISDOM",
-                        "operator": ">",
-                        "value": 49
-                    }
-                ]
+                "stat": "WISDOM",
+                "operator": ">",
+                "value": 49
             },
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Alignment 2"
+                ],
+                "fr": [
+                    "Alignement 2"
+                ],
+                "de": [
+                    "Gesinnung 2"
+                ],
+                "es": [
+                    "Alineamiento 2"
+                ],
+                "it": [
+                    "Allineamento 2"
+                ],
+                "pt": [
+                    "Alinhamento 2"
+                ]
+            }
         },
         "imageUrl": "item/10022.png"
     },
@@ -8504,13 +8815,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AGILITY",
-                        "operator": ">",
-                        "value": 50
-                    }
-                ]
+                "stat": "AGILITY",
+                "operator": ">",
+                "value": 50
             },
             "customConditions": {}
         },
@@ -8606,13 +8913,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "CHANCE",
-                        "operator": ">",
-                        "value": 50
-                    }
-                ]
+                "stat": "CHANCE",
+                "operator": ">",
+                "value": 50
             },
             "customConditions": {}
         },
@@ -8864,13 +9167,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "INTELLIGENCE",
-                        "operator": ">",
-                        "value": 90
-                    }
-                ]
+                "stat": "INTELLIGENCE",
+                "operator": ">",
+                "value": 90
             },
             "customConditions": {}
         },
@@ -8961,13 +9260,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "STRENGTH",
-                        "operator": ">",
-                        "value": 90
-                    }
-                ]
+                "stat": "STRENGTH",
+                "operator": ">",
+                "value": 90
             },
             "customConditions": {}
         },
@@ -12933,7 +13228,26 @@
         "customStats": {},
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Alignment 1"
+                ],
+                "fr": [
+                    "Alignement 1"
+                ],
+                "de": [
+                    "Gesinnung 1"
+                ],
+                "es": [
+                    "Alineamiento 1"
+                ],
+                "it": [
+                    "Allineamento 1"
+                ],
+                "pt": [
+                    "Alinhamento 1"
+                ]
+            }
         },
         "imageUrl": "item/10037.png"
     },
@@ -12975,7 +13289,26 @@
         "customStats": {},
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Alignment 2"
+                ],
+                "fr": [
+                    "Alignement 2"
+                ],
+                "de": [
+                    "Gesinnung 2"
+                ],
+                "es": [
+                    "Alineamiento 2"
+                ],
+                "it": [
+                    "Allineamento 2"
+                ],
+                "pt": [
+                    "Alinhamento 2"
+                ]
+            }
         },
         "imageUrl": "item/10038.png"
     },
@@ -13550,13 +13883,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "CHANCE",
-                        "operator": ">",
-                        "value": 30
-                    }
-                ]
+                "stat": "CHANCE",
+                "operator": ">",
+                "value": 30
             },
             "customConditions": {}
         },
@@ -14898,7 +15227,26 @@
         "customStats": {},
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Enutrof only"
+                ],
+                "fr": [
+                    "Être un Enutrof"
+                ],
+                "de": [
+                    "Ein(e) Enutrof sein"
+                ],
+                "es": [
+                    "Ser un Anutrof"
+                ],
+                "it": [
+                    "Essere Anutrof"
+                ],
+                "pt": [
+                    "Ser um Enutrof"
+                ]
+            }
         },
         "imageUrl": "item/9040.png"
     },
@@ -20600,13 +20948,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "STRENGTH",
-                        "operator": ">",
-                        "value": 90
-                    }
-                ]
+                "stat": "STRENGTH",
+                "operator": ">",
+                "value": 90
             },
             "customConditions": {}
         },
@@ -39815,7 +40159,26 @@
         "customStats": {},
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Server = Shika"
+                ],
+                "fr": [
+                    "Serveur = Shika"
+                ],
+                "de": [
+                    "Server = Shika"
+                ],
+                "es": [
+                    "Servidor = Shika"
+                ],
+                "it": [
+                    "Server = Shika"
+                ],
+                "pt": [
+                    "Servidor = Shika"
+                ]
+            }
         },
         "imageUrl": "item/16005.png"
     },
@@ -46604,7 +46967,26 @@
         },
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Not in possession of 'Ghoulified'"
+                ],
+                "fr": [
+                    "Ne pas posséder l'objet 'Goulyfié'"
+                ],
+                "de": [
+                    "Den Gegenstand 'Ghulifiziert' nicht besitzen"
+                ],
+                "es": [
+                    "No poseer el objeto 'Ghulificado'"
+                ],
+                "it": [
+                    "Non possedere l'oggetto \"Gulifiato\""
+                ],
+                "pt": [
+                    "Não possuir o item \"Ghoulificado\""
+                ]
+            }
         },
         "imageUrl": "item/9171.png"
     },
@@ -46665,7 +47047,26 @@
         },
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Not in possession of 'Ghoulified'"
+                ],
+                "fr": [
+                    "Ne pas posséder l'objet 'Goulyfié'"
+                ],
+                "de": [
+                    "Den Gegenstand 'Ghulifiziert' nicht besitzen"
+                ],
+                "es": [
+                    "No poseer el objeto 'Ghulificado'"
+                ],
+                "it": [
+                    "Non possedere l'oggetto \"Gulifiato\""
+                ],
+                "pt": [
+                    "Não possuir o item \"Ghoulificado\""
+                ]
+            }
         },
         "imageUrl": "item/1146.png"
     },
@@ -46726,7 +47127,26 @@
         },
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Not in possession of 'Ghoulified'"
+                ],
+                "fr": [
+                    "Ne pas posséder l'objet 'Goulyfié'"
+                ],
+                "de": [
+                    "Den Gegenstand 'Ghulifiziert' nicht besitzen"
+                ],
+                "es": [
+                    "No poseer el objeto 'Ghulificado'"
+                ],
+                "it": [
+                    "Non possedere l'oggetto \"Gulifiato\""
+                ],
+                "pt": [
+                    "Não possuir o item \"Ghoulificado\""
+                ]
+            }
         },
         "imageUrl": "item/10156.png"
     },
@@ -46782,7 +47202,26 @@
         },
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Not in possession of 'Ghoulified'"
+                ],
+                "fr": [
+                    "Ne pas posséder l'objet 'Goulyfié'"
+                ],
+                "de": [
+                    "Den Gegenstand 'Ghulifiziert' nicht besitzen"
+                ],
+                "es": [
+                    "No poseer el objeto 'Ghulificado'"
+                ],
+                "it": [
+                    "Non possedere l'oggetto \"Gulifiato\""
+                ],
+                "pt": [
+                    "Não possuir o item \"Ghoulificado\""
+                ]
+            }
         },
         "imageUrl": "item/17168.png"
     },
@@ -46843,7 +47282,26 @@
         },
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Not in possession of 'Ghoulified'"
+                ],
+                "fr": [
+                    "Ne pas posséder l'objet 'Goulyfié'"
+                ],
+                "de": [
+                    "Den Gegenstand 'Ghulifiziert' nicht besitzen"
+                ],
+                "es": [
+                    "No poseer el objeto 'Ghulificado'"
+                ],
+                "it": [
+                    "Non possedere l'oggetto \"Gulifiato\""
+                ],
+                "pt": [
+                    "Não possuir o item \"Ghoulificado\""
+                ]
+            }
         },
         "imageUrl": "item/11139.png"
     },
@@ -46899,7 +47357,26 @@
         },
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Not in possession of 'Ghoulified'"
+                ],
+                "fr": [
+                    "Ne pas posséder l'objet 'Goulyfié'"
+                ],
+                "de": [
+                    "Den Gegenstand 'Ghulifiziert' nicht besitzen"
+                ],
+                "es": [
+                    "No poseer el objeto 'Ghulificado'"
+                ],
+                "it": [
+                    "Non possedere l'oggetto \"Gulifiato\""
+                ],
+                "pt": [
+                    "Não possuir o item \"Ghoulificado\""
+                ]
+            }
         },
         "imageUrl": "item/16244.png"
     },
@@ -52849,12 +53326,7 @@
             "conditions": {
                 "and": [
                     {
-                        "stat": "STRENGTH",
-                        "operator": ">",
-                        "value": 200
-                    },
-                    {
-                        "stat": "INTELLIGENCE",
+                        "stat": "AGILITY",
                         "operator": ">",
                         "value": 200
                     },
@@ -52864,7 +53336,12 @@
                         "value": 200
                     },
                     {
-                        "stat": "AGILITY",
+                        "stat": "STRENGTH",
+                        "operator": ">",
+                        "value": 200
+                    },
+                    {
+                        "stat": "INTELLIGENCE",
                         "operator": ">",
                         "value": 200
                     }
@@ -58724,13 +59201,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -59151,12 +59624,7 @@
             "conditions": {
                 "and": [
                     {
-                        "stat": "STRENGTH",
-                        "operator": ">",
-                        "value": 250
-                    },
-                    {
-                        "stat": "INTELLIGENCE",
+                        "stat": "AGILITY",
                         "operator": ">",
                         "value": 250
                     },
@@ -59166,7 +59634,12 @@
                         "value": 250
                     },
                     {
-                        "stat": "AGILITY",
+                        "stat": "STRENGTH",
+                        "operator": ">",
+                        "value": 250
+                    },
+                    {
+                        "stat": "INTELLIGENCE",
                         "operator": ">",
                         "value": 250
                     }
@@ -72333,13 +72806,9 @@
         },
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -73560,31 +74029,37 @@
             "en": [
                 "Changes speech",
                 "Linked to the character",
+                "Title: Sailor of the 107 Oceans",
                 "Remaining uses: 20/20"
             ],
             "fr": [
                 "Change les paroles",
                 "Lié au personnage",
+                "Titre : Écumeur des 107 océans",
                 "Utilisations restantes : 20 / 20"
             ],
             "de": [
                 "Die Worte ändern",
                 "An den Charakter gebunden",
+                "Titel: Seeräuber der 107 Weltmeere",
                 "Verbleib. Anwendungen: 20 / 20"
             ],
             "it": [
                 "Cambia le parole",
                 "Legato al personaggio",
+                "Titolo: Schiumatore dei 107 mari",
                 "Utilizzi rimanenti: 20/20"
             ],
             "es": [
                 "Cambia las palabras",
                 "Ligado a un personaje",
+                "Título: Pirata de los 107 mares.",
                 "Utilizaciones restantes: 20 / 20"
             ],
             "pt": [
                 "Muda as palavras",
                 "Vinculado ao personagem",
+                "Título: Pirata dos 107 mares",
                 "Usos restantes: 20 / 20"
             ]
         },
@@ -75962,13 +76437,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -76052,13 +76523,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -76147,13 +76614,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -78764,13 +79227,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "MP",
-                        "operator": "<",
-                        "value": 6
-                    }
-                ]
+                "stat": "MP",
+                "operator": "<",
+                "value": 6
             },
             "customConditions": {}
         },
@@ -81201,13 +81660,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -84126,13 +84581,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -84492,13 +84943,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -84664,13 +85111,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -84918,13 +85361,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -89292,13 +89731,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -90413,7 +90848,32 @@
         },
         "conditions": {
             "conditions": {},
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "months = Aperirel and",
+                    "day(s) < 9"
+                ],
+                "fr": [
+                    "Mois = Aperirel et",
+                    "Jour(s) < 9"
+                ],
+                "de": [
+                    "Monat = Aperirel und",
+                    "Tag(e) < 9"
+                ],
+                "es": [
+                    "Mes = Aperirel y",
+                    "día(s) < 9"
+                ],
+                "it": [
+                    "mesi = Aperir e",
+                    "giorn(o/i) < 9"
+                ],
+                "pt": [
+                    "meses = Aperirel e",
+                    "dia(s) < 9"
+                ]
+            }
         },
         "imageUrl": "item/16410.png"
     },
@@ -95486,13 +95946,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -95581,13 +96037,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -95671,13 +96123,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -95776,13 +96224,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -95861,13 +96305,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -95951,13 +96391,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -96021,13 +96457,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -96111,13 +96543,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -96191,13 +96619,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -96271,13 +96695,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -100152,13 +100572,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100187,13 +100603,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100222,13 +100634,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100257,13 +100665,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100292,13 +100696,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100327,13 +100727,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100362,13 +100758,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100397,13 +100789,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100432,13 +100820,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100467,13 +100851,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100502,13 +100882,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100537,13 +100913,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100572,13 +100944,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100607,13 +100975,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100642,13 +101006,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100677,13 +101037,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100712,13 +101068,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100747,13 +101099,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100933,13 +101281,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -100968,13 +101312,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101003,13 +101343,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101038,13 +101374,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101073,13 +101405,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101108,13 +101436,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101143,13 +101467,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101178,13 +101498,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101213,13 +101529,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101248,13 +101560,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101283,13 +101591,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101318,13 +101622,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101353,13 +101653,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101388,13 +101684,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101423,13 +101715,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101458,13 +101746,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101493,13 +101777,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101528,13 +101808,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101563,13 +101839,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101598,13 +101870,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101633,13 +101901,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101668,13 +101932,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101703,13 +101963,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101738,13 +101994,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101773,13 +102025,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101808,13 +102056,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101843,13 +102087,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101878,13 +102118,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101913,13 +102149,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101948,13 +102180,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -101983,13 +102211,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102018,13 +102242,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102053,13 +102273,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102088,13 +102304,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102123,13 +102335,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102158,13 +102366,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102193,13 +102397,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102228,13 +102428,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102263,13 +102459,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102298,13 +102490,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102333,13 +102521,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102368,13 +102552,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102403,13 +102583,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102438,13 +102614,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102473,13 +102645,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102508,13 +102676,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102543,13 +102707,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102578,13 +102738,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102613,13 +102769,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102648,13 +102800,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102683,13 +102831,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102718,13 +102862,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102753,13 +102893,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102788,13 +102924,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102823,13 +102955,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102858,13 +102986,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102893,13 +103017,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102928,13 +103048,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102963,13 +103079,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -102998,13 +103110,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -103033,13 +103141,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -103068,13 +103172,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -103103,13 +103203,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -103143,13 +103239,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -103183,13 +103275,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -103218,13 +103306,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -103253,13 +103337,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -103288,13 +103368,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -103323,13 +103399,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": "<",
-                        "value": 2
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": "<",
+                "value": 2
             },
             "customConditions": {}
         },
@@ -109169,13 +109241,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -109316,13 +109384,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -109597,13 +109661,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -109801,13 +109861,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -112415,13 +112471,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -115749,15 +115801,30 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "SET_BONUS",
-                        "operator": ">",
-                        "value": 100000
-                    }
-                ]
+                "stat": "SET_BONUS",
+                "operator": ">",
+                "value": 100000
             },
-            "customConditions": {}
+            "customConditions": {
+                "en": [
+                    "Kamas > 100000"
+                ],
+                "fr": [
+                    "Kamas > 100000"
+                ],
+                "de": [
+                    "Kamas > 100000"
+                ],
+                "es": [
+                    "kamas > 100000"
+                ],
+                "it": [
+                    "Kama > 100000"
+                ],
+                "pt": [
+                    "Kamas > 100000"
+                ]
+            }
         },
         "imageUrl": "item/82035.png"
     },
@@ -121156,13 +121223,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -121246,13 +121309,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -121932,13 +121991,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -121992,13 +122047,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -122067,13 +122118,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -122172,13 +122219,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -123456,13 +123499,9 @@
         },
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -124651,13 +124690,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -125048,13 +125083,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -126755,13 +126786,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -126845,13 +126872,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -127030,13 +127053,9 @@
         },
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -129198,13 +129217,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -129308,13 +129323,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
@@ -130750,13 +130761,9 @@
         "customStats": {},
         "conditions": {
             "conditions": {
-                "and": [
-                    {
-                        "stat": "AP",
-                        "operator": "<",
-                        "value": 12
-                    }
-                ]
+                "stat": "AP",
+                "operator": "<",
+                "value": 12
             },
             "customConditions": {}
         },
