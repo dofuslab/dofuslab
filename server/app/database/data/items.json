@@ -1338,33 +1338,6 @@
         "imageUrl": "item/1022.png"
     },
     {
-        "dofusID": "677",
-        "name": {
-            "en": "Pirate Cloak",
-            "fr": "Cape du Pirate",
-            "de": "Piratenumhang",
-            "it": "Mantello del Pirata",
-            "es": "Capa de pirata",
-            "pt": "Capa do Pirata"
-        },
-        "itemType": "Cloak",
-        "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "MP",
-                "minStat": null,
-                "maxStat": -1
-            }
-        ],
-        "customStats": {},
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/17011.png"
-    },
-    {
         "dofusID": "694",
         "name": {
             "en": "Crimson Dofus",
@@ -6502,198 +6475,6 @@
         "imageUrl": "item/11016.png"
     },
     {
-        "dofusID": "1628",
-        "name": {
-            "en": "Fire Artefact",
-            "fr": "Artefact Feu",
-            "de": "Feuer-Artefakt",
-            "it": "Artefatto Fuoco",
-            "es": "Artefacto fuego",
-            "pt": "Artefato Fogo"
-        },
-        "itemType": "Ring",
-        "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "Intelligence",
-                "minStat": null,
-                "maxStat": 1
-            },
-            {
-                "stat": "Strength",
-                "minStat": null,
-                "maxStat": -10
-            }
-        ],
-        "customStats": {},
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/9018.png"
-    },
-    {
-        "dofusID": "1629",
-        "name": {
-            "en": "Earth Artefact",
-            "fr": "Artefact Terre",
-            "de": "Erd-Artefakt",
-            "it": "Artefatto Terra",
-            "es": "Artefacto tierra",
-            "pt": "Artefato Terra"
-        },
-        "itemType": "Ring",
-        "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "Strength",
-                "minStat": null,
-                "maxStat": 1
-            },
-            {
-                "stat": "Intelligence",
-                "minStat": null,
-                "maxStat": -10
-            }
-        ],
-        "customStats": {},
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/9019.png"
-    },
-    {
-        "dofusID": "1630",
-        "name": {
-            "en": "Air Artefact",
-            "fr": "Artefact Air",
-            "de": "Luft-Artefakt",
-            "it": "Artefatto Aria",
-            "es": "Artefacto Aire",
-            "pt": "Artefato Ar"
-        },
-        "itemType": "Ring",
-        "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "Agility",
-                "minStat": null,
-                "maxStat": 1
-            },
-            {
-                "stat": "Wisdom",
-                "minStat": null,
-                "maxStat": -10
-            }
-        ],
-        "customStats": {},
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/9020.png"
-    },
-    {
-        "dofusID": "1631",
-        "name": {
-            "en": "Water Artefact",
-            "fr": "Artefact Eau",
-            "de": "Wasser-Artefakt",
-            "it": "Artefatto Acqua",
-            "es": "Artefacto Agua",
-            "pt": "Artefato Água"
-        },
-        "itemType": "Ring",
-        "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "Chance",
-                "minStat": null,
-                "maxStat": 1
-            },
-            {
-                "stat": "Vitality",
-                "minStat": null,
-                "maxStat": -10
-            }
-        ],
-        "customStats": {},
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/9021.png"
-    },
-    {
-        "dofusID": "1632",
-        "name": {
-            "en": "Light Artefact",
-            "fr": "Artefact Lumière",
-            "de": "Licht-Artefakt",
-            "it": "Artefatto Luce",
-            "es": "Artefacto Luz",
-            "pt": "Artefato Luz"
-        },
-        "itemType": "Ring",
-        "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "Wisdom",
-                "minStat": null,
-                "maxStat": 1
-            },
-            {
-                "stat": "Agility",
-                "minStat": null,
-                "maxStat": -10
-            }
-        ],
-        "customStats": {},
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/9022.png"
-    },
-    {
-        "dofusID": "1633",
-        "name": {
-            "en": "Life Artefact",
-            "fr": "Artefact Vie",
-            "de": "Lebens-Artefakt",
-            "it": "Artefatto Vita",
-            "es": "Artefacto Vida",
-            "pt": "Artefato Vida"
-        },
-        "itemType": "Ring",
-        "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "Vitality",
-                "minStat": null,
-                "maxStat": 1
-            },
-            {
-                "stat": "Chance",
-                "minStat": null,
-                "maxStat": -10
-            }
-        ],
-        "customStats": {},
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/9023.png"
-    },
-    {
         "dofusID": "1656",
         "name": {
             "en": "Magus Fecalizer",
@@ -8430,85 +8211,6 @@
             "customConditions": {}
         },
         "imageUrl": "item/16037.png"
-    },
-    {
-        "dofusID": "2154",
-        "name": {
-            "en": "De Sendar's Ring",
-            "fr": "Bague De Sendar",
-            "de": "Ring von Sendar",
-            "it": "Anello di Sendar",
-            "es": "Anillo De Mecenero",
-            "pt": "Anel de Sendar"
-        },
-        "itemType": "Ring",
-        "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "Water Resistance",
-                "minStat": null,
-                "maxStat": 100
-            },
-            {
-                "stat": "Air Resistance",
-                "minStat": null,
-                "maxStat": 100
-            },
-            {
-                "stat": "Fire Resistance",
-                "minStat": null,
-                "maxStat": 100
-            },
-            {
-                "stat": "Earth Resistance",
-                "minStat": null,
-                "maxStat": 100
-            },
-            {
-                "stat": "Neutral Resistance",
-                "minStat": null,
-                "maxStat": 100
-            }
-        ],
-        "customStats": {},
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/9007.png"
-    },
-    {
-        "dofusID": "2155",
-        "name": {
-            "en": "Jiva Necklace",
-            "fr": "Amulette de Jiva",
-            "de": "Jiva Medaillon",
-            "it": "Amuleto di Jiva",
-            "es": "Amuleto de Jiva",
-            "pt": "Amuleto de Jiva"
-        },
-        "itemType": "Amulet",
-        "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "AP",
-                "minStat": null,
-                "maxStat": 4
-            },
-            {
-                "stat": "Vitality",
-                "minStat": null,
-                "maxStat": 400
-            }
-        ],
-        "customStats": {},
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/1019.png"
     },
     {
         "dofusID": "2233",
@@ -16718,38 +16420,6 @@
         "imageUrl": "item/9061.png"
     },
     {
-        "dofusID": "6773",
-        "name": {
-            "en": "Tude Amulet",
-            "fr": "Amulette Tude",
-            "de": "Halskette Tude",
-            "it": "Amuleto Tude",
-            "es": "Amuleto Incakodo",
-            "pt": "Amuleto Tude"
-        },
-        "itemType": "Amulet",
-        "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "Intelligence",
-                "minStat": null,
-                "maxStat": 1
-            },
-            {
-                "stat": "Initiative",
-                "minStat": null,
-                "maxStat": 5
-            }
-        ],
-        "customStats": {},
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/1019.png"
-    },
-    {
         "dofusID": "6774",
         "name": {
             "en": "Farle's Clogs",
@@ -17190,46 +16860,6 @@
             "customConditions": {}
         },
         "imageUrl": "item/16070.png"
-    },
-    {
-        "dofusID": "6800",
-        "name": {
-            "en": "Basic Cloak",
-            "fr": "Cape Banale",
-            "de": "Capa Banala",
-            "it": "Mantello Banale",
-            "es": "Capa Banal",
-            "pt": "Manto Básico"
-        },
-        "itemType": "Cloak",
-        "setID": null,
-        "level": 1,
-        "stats": [],
-        "customStats": {
-            "en": [
-                "Linked to the character"
-            ],
-            "fr": [
-                "Lié au personnage"
-            ],
-            "de": [
-                "An den Charakter gebunden"
-            ],
-            "it": [
-                "Legato al personaggio"
-            ],
-            "es": [
-                "Ligado a un personaje"
-            ],
-            "pt": [
-                "Vinculado ao personagem"
-            ]
-        },
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/17198.png"
     },
     {
         "dofusID": "6804",
@@ -21289,46 +20919,6 @@
             "customConditions": {}
         },
         "imageUrl": "item/16096.png"
-    },
-    {
-        "dofusID": "7097",
-        "name": {
-            "en": "Training Shield",
-            "fr": "Bouclier d'entraînement",
-            "de": "Übungsschild",
-            "it": "Scudo di Allenamento",
-            "es": "Escudo de Entrenamiento",
-            "pt": "Escudo de treinamento"
-        },
-        "itemType": "Shield",
-        "setID": null,
-        "level": 1,
-        "stats": [],
-        "customStats": {
-            "en": [
-                "Remaining uses: 1/1"
-            ],
-            "fr": [
-                "Utilisations restantes : 1 / 1"
-            ],
-            "de": [
-                "Verbleib. Anwendungen: 1 / 1"
-            ],
-            "it": [
-                "Utilizzi rimanenti: 1/1"
-            ],
-            "es": [
-                "Utilizaciones restantes: 1 / 1"
-            ],
-            "pt": [
-                "Usos restantes: 1 / 1"
-            ]
-        },
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/82001.png"
     },
     {
         "dofusID": "7104",
@@ -40137,52 +39727,6 @@
         "imageUrl": "item/16208.png"
     },
     {
-        "dofusID": "8854",
-        "name": {
-            "en": "Crack Sparrow's Own Withered Hat",
-            "fr": "Crack Sparrow's Own Withered Hat",
-            "de": "Crack Sparrows abgetragener Hut",
-            "it": "Crack Sparrow's Own Withered Hat",
-            "es": "x",
-            "pt": "Chapéu Encolhido de Crack Sparrow"
-        },
-        "itemType": "Hat",
-        "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "Vitality",
-                "minStat": null,
-                "maxStat": 61
-            }
-        ],
-        "customStats": {},
-        "conditions": {
-            "conditions": {},
-            "customConditions": {
-                "en": [
-                    "Server = Shika"
-                ],
-                "fr": [
-                    "Serveur = Shika"
-                ],
-                "de": [
-                    "Server = Shika"
-                ],
-                "es": [
-                    "Servidor = Shika"
-                ],
-                "it": [
-                    "Server = Shika"
-                ],
-                "pt": [
-                    "Servidor = Shika"
-                ]
-            }
-        },
-        "imageUrl": "item/16005.png"
-    },
-    {
         "dofusID": "8856",
         "name": {
             "en": "Bherbal Bherb Belt",
@@ -41659,78 +41203,6 @@
             "customConditions": {}
         },
         "imageUrl": "item/9145.png"
-    },
-    {
-        "dofusID": "9031",
-        "name": {
-            "en": "Gore Master's Ring (Gms Only)",
-            "fr": "Annobusé de Maître Jarbo",
-            "de": "Aufgeblasener Düsenring von Meister Knalldurch",
-            "it": "Anelloprofitto del Maestro Jarbo",
-            "es": "Anillote del Maestro Jambo",
-            "pt": "Anel do Mestre Jorgo"
-        },
-        "itemType": "Ring",
-        "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "Strength",
-                "minStat": null,
-                "maxStat": 300
-            },
-            {
-                "stat": "Intelligence",
-                "minStat": null,
-                "maxStat": 300
-            },
-            {
-                "stat": "Chance",
-                "minStat": null,
-                "maxStat": 300
-            },
-            {
-                "stat": "Agility",
-                "minStat": null,
-                "maxStat": 300
-            },
-            {
-                "stat": "MP",
-                "minStat": null,
-                "maxStat": 1
-            },
-            {
-                "stat": "AP",
-                "minStat": null,
-                "maxStat": 2
-            },
-            {
-                "stat": "Damage",
-                "minStat": null,
-                "maxStat": 10
-            },
-            {
-                "stat": "Summons",
-                "minStat": null,
-                "maxStat": 5
-            },
-            {
-                "stat": "Vitality",
-                "minStat": null,
-                "maxStat": 300
-            },
-            {
-                "stat": "Wisdom",
-                "minStat": null,
-                "maxStat": 300
-            }
-        ],
-        "customStats": {},
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/9001.png"
     },
     {
         "dofusID": "9122",
@@ -45310,27 +44782,6 @@
         "imageUrl": "item/16223.png"
     },
     {
-        "dofusID": "9396",
-        "name": {
-            "en": "Zawooin's Seal",
-            "fr": "Le sceau des Zewouan",
-            "de": "Zewouan-Ring",
-            "it": "Il Sigillo degli Zewuan",
-            "es": "El sello de los Dewuan",
-            "pt": "O selo dos Dewan"
-        },
-        "itemType": "Ring",
-        "setID": null,
-        "level": 1,
-        "stats": [],
-        "customStats": {},
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/9007.png"
-    },
-    {
         "dofusID": "9402",
         "name": {
             "en": "Beezers",
@@ -46445,46 +45896,6 @@
             "customConditions": {}
         },
         "imageUrl": "item/11134.png"
-    },
-    {
-        "dofusID": "9919",
-        "name": {
-            "en": "Owl Ring",
-            "fr": "Bague du hibou",
-            "de": "Mento-Ring",
-            "it": "Anello del Gufo",
-            "es": "Anillo de búho",
-            "pt": "Anel da Coruja"
-        },
-        "itemType": "Ring",
-        "setID": null,
-        "level": 1,
-        "stats": [],
-        "customStats": {
-            "en": [
-                "Changes appearance"
-            ],
-            "fr": [
-                "Change l'apparence"
-            ],
-            "de": [
-                "Verändert das Aussehen"
-            ],
-            "it": [
-                "Cambia l'aspetto"
-            ],
-            "es": [
-                "Cambia la apariencia"
-            ],
-            "pt": [
-                "Muda a aparência"
-            ]
-        },
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/9007.png"
     },
     {
         "dofusID": "9921",
@@ -90807,77 +90218,6 @@
         "imageUrl": "item/11256.png"
     },
     {
-        "dofusID": "15157",
-        "name": {
-            "en": "Questhead",
-            "fr": "Casquête",
-            "de": "Questrohut",
-            "it": "Missionappello",
-            "es": "Sombrero del misionero",
-            "pt": "Chapéu Missioneiro"
-        },
-        "itemType": "Hat",
-        "setID": null,
-        "level": 10,
-        "stats": [],
-        "customStats": {
-            "en": [
-                "Linked to the character",
-                "Remaining uses: 20/20"
-            ],
-            "fr": [
-                "Lié au personnage",
-                "Utilisations restantes : 20 / 20"
-            ],
-            "de": [
-                "An den Charakter gebunden",
-                "Verbleib. Anwendungen: 20 / 20"
-            ],
-            "it": [
-                "Legato al personaggio",
-                "Utilizzi rimanenti: 20/20"
-            ],
-            "es": [
-                "Ligado a un personaje",
-                "Utilizaciones restantes: 20 / 20"
-            ],
-            "pt": [
-                "Vinculado ao personagem",
-                "Usos restantes: 20 / 20"
-            ]
-        },
-        "conditions": {
-            "conditions": {},
-            "customConditions": {
-                "en": [
-                    "months = Aperirel and",
-                    "day(s) < 9"
-                ],
-                "fr": [
-                    "Mois = Aperirel et",
-                    "Jour(s) < 9"
-                ],
-                "de": [
-                    "Monat = Aperirel und",
-                    "Tag(e) < 9"
-                ],
-                "es": [
-                    "Mes = Aperirel y",
-                    "día(s) < 9"
-                ],
-                "it": [
-                    "mesi = Aperir e",
-                    "giorn(o/i) < 9"
-                ],
-                "pt": [
-                    "meses = Aperirel e",
-                    "dia(s) < 9"
-                ]
-            }
-        },
-        "imageUrl": "item/16410.png"
-    },
-    {
         "dofusID": "15183",
         "name": {
             "en": "Staruman Mask",
@@ -122295,86 +121635,6 @@
         "imageUrl": "item/23025.png"
     },
     {
-        "dofusID": "19639",
-        "name": {
-            "en": "Syllabu Shield",
-            "fr": "Écu Rikulome",
-            "de": "Schlagfertiger Schild",
-            "it": "Scudo Riculum",
-            "es": "Kur Ríkulo",
-            "pt": "Escudo Kumento"
-        },
-        "itemType": "Shield",
-        "setID": null,
-        "level": 1,
-        "stats": [],
-        "customStats": {
-            "en": [
-                "Cooperative crafting impossible"
-            ],
-            "fr": [
-                "Craft coopératif impossible."
-            ],
-            "de": [
-                "Gemeinsames Herstellen nicht möglich."
-            ],
-            "it": [
-                "Craft cooperativo impossibile."
-            ],
-            "es": [
-                "Craft cooperativo imposible."
-            ],
-            "pt": [
-                "Fabricação cooperativa impossível."
-            ]
-        },
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/82001.png"
-    },
-    {
-        "dofusID": "19641",
-        "name": {
-            "en": "Nackle Tabard",
-            "fr": "Tabard Nak",
-            "de": "Taber Nakl",
-            "it": "Cotta d'Armi",
-            "es": "Tubarnékalo",
-            "pt": "Tabahdo"
-        },
-        "itemType": "Cloak",
-        "setID": null,
-        "level": 1,
-        "stats": [],
-        "customStats": {
-            "en": [
-                "Cooperative crafting impossible"
-            ],
-            "fr": [
-                "Craft coopératif impossible."
-            ],
-            "de": [
-                "Gemeinsames Herstellen nicht möglich."
-            ],
-            "it": [
-                "Craft cooperativo impossibile."
-            ],
-            "es": [
-                "Craft cooperativo imposible."
-            ],
-            "pt": [
-                "Fabricação cooperativa impossível."
-            ]
-        },
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/17356.png"
-    },
-    {
         "dofusID": "19976",
         "name": {
             "en": "Grithril Belt",
@@ -125591,98 +124851,6 @@
         "imageUrl": "item/16581.png"
     },
     {
-        "dofusID": "21711",
-        "name": {
-            "en": "Weighted Wooden Wings",
-            "fr": "Ailes en bois alourdies",
-            "de": "Schwere hölzerne Flügel",
-            "it": "Ali di Legno Appesantite",
-            "es": "Alas de madera recargadas",
-            "pt": "Asas de Madeira Pesadas"
-        },
-        "itemType": "Cloak",
-        "setID": null,
-        "level": 1,
-        "stats": [],
-        "customStats": {
-            "en": [
-                "Cooperative crafting impossible",
-                "Linked to the character"
-            ],
-            "fr": [
-                "Craft coopératif impossible.",
-                "Lié au personnage"
-            ],
-            "de": [
-                "Gemeinsames Herstellen nicht möglich.",
-                "An den Charakter gebunden"
-            ],
-            "it": [
-                "Craft cooperativo impossibile.",
-                "Legato al personaggio"
-            ],
-            "es": [
-                "Craft cooperativo imposible.",
-                "Ligado a un personaje"
-            ],
-            "pt": [
-                "Fabricação cooperativa impossível.",
-                "Vinculado ao personagem"
-            ]
-        },
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/17022.png"
-    },
-    {
-        "dofusID": "21712",
-        "name": {
-            "en": "Weighted Helmet",
-            "fr": "Casque alourdi",
-            "de": "Schwerer Helm",
-            "it": "Elmo Appesantito",
-            "es": "Casco recargado",
-            "pt": "Capacete Pesado"
-        },
-        "itemType": "Hat",
-        "setID": null,
-        "level": 1,
-        "stats": [],
-        "customStats": {
-            "en": [
-                "Cooperative crafting impossible",
-                "Linked to the character"
-            ],
-            "fr": [
-                "Craft coopératif impossible.",
-                "Lié au personnage"
-            ],
-            "de": [
-                "Gemeinsames Herstellen nicht möglich.",
-                "An den Charakter gebunden"
-            ],
-            "it": [
-                "Craft cooperativo impossibile.",
-                "Legato al personaggio"
-            ],
-            "es": [
-                "Craft cooperativo imposible.",
-                "Ligado a un personaje"
-            ],
-            "pt": [
-                "Fabricação cooperativa impossível.",
-                "Vinculado ao personagem"
-            ]
-        },
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/16025.png"
-    },
-    {
         "dofusID": "22186",
         "name": {
             "en": "Misery's Greed",
@@ -127060,52 +126228,6 @@
             "customConditions": {}
         },
         "imageUrl": "item/10343.png"
-    },
-    {
-        "dofusID": "23094",
-        "name": {
-            "en": "Panduckler",
-            "fr": "Pandaclier",
-            "de": "Pandaschild",
-            "it": "Pandascudo",
-            "es": "Pandascudo",
-            "pt": "Pandescudo"
-        },
-        "itemType": "Shield",
-        "setID": null,
-        "level": 10,
-        "stats": [],
-        "customStats": {
-            "en": [
-                "Linked to the character",
-                "Cooperative crafting impossible"
-            ],
-            "fr": [
-                "Lié au personnage",
-                "Craft coopératif impossible."
-            ],
-            "de": [
-                "An den Charakter gebunden",
-                "Gemeinsames Herstellen nicht möglich."
-            ],
-            "it": [
-                "Legato al personaggio",
-                "Craft cooperativo impossibile."
-            ],
-            "es": [
-                "Ligado a un personaje",
-                "Craft cooperativo imposible."
-            ],
-            "pt": [
-                "Vinculado ao personagem",
-                "Fabricação cooperativa impossível."
-            ]
-        },
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/82276.png"
     },
     {
         "dofusID": "23237",
