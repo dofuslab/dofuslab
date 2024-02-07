@@ -6664,33 +6664,6 @@
         "imageUrl": "item/121069.png"
     },
     {
-        "dofusID": "27431",
-        "name": {
-            "en": "Young Celestial Gobbly",
-            "fr": "Jeune Boufton Céleste",
-            "de": "Junger himmlischer Fresssack",
-            "it": "Giovane Pappaton Celeste",
-            "es": "Joven jalatín celestial",
-            "pt": "Paparneiro Celestial Jovem"
-        },
-        "itemType": "Pet",
-        "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "Vitality",
-                "minStat": null,
-                "maxStat": 15
-            }
-        ],
-        "customStats": {},
-        "conditions": {
-            "conditions": {},
-            "customConditions": {}
-        },
-        "imageUrl": "item/18271.png"
-    },
-    {
         "dofusID": "29430",
         "name": {
             "en": "Mamukil Kolophant",
