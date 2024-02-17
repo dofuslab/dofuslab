@@ -16,7 +16,10 @@ def create_set_bonuses(db_session, set_object, data):
     for num_items in data["bonuses"]:
         bonuses = data["bonuses"][num_items]
         for bonus in bonuses:
-            bonus_obj = ModelSetBonus(set_id=set_object.uuid, num_items=int(num_items),)
+            bonus_obj = ModelSetBonus(
+                set_id=set_object.uuid,
+                num_items=int(num_items),
+            )
             if bonus["stat"]:
                 bonus_obj.stat = to_stat_enum[bonus["stat"]]
                 bonus_obj.value = bonus["value"]
@@ -44,6 +47,8 @@ def create_set_translations(db_session, set_object, data):
 
 
 def update_set(db_session, set_object, data):
+    set_object.dofus_db_id = data["id"]
+    db_session.commit() # Wonder if I really do need to commit here?
     db_session.query(ModelSetTranslation).filter(
         ModelSetTranslation.set_id == set_object.uuid
     ).delete()
