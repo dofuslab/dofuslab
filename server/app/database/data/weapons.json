@@ -19703,78 +19703,6 @@
     "imageUrl": "item/8033.png"
   },
   {
-    "dofusID": "6713",
-    "name": {
-      "en": "Lordsoth Daggers",
-      "fr": "Lorsotheuses",
-      "de": "Lorsotheuse",
-      "it": "Lorsothisa",
-      "es": "Lorsothisas",
-      "pt": "Adagas de Lordsoth"
-    },
-    "itemType": "Dagger",
-    "setID": null,
-    "level": 100,
-    "stats": [
-      {
-        "stat": "Vitality",
-        "minStat": 51,
-        "maxStat": 70
-      },
-      {
-        "stat": "Strength",
-        "minStat": 51,
-        "maxStat": 70
-      },
-      {
-        "stat": "Agility",
-        "minStat": 31,
-        "maxStat": 40
-      },
-      {
-        "stat": "Dodge",
-        "minStat": 5,
-        "maxStat": 7
-      },
-      {
-        "stat": "Critical",
-        "minStat": 2,
-        "maxStat": 3
-      },
-      {
-        "stat": "AP",
-        "minStat": null,
-        "maxStat": 1
-      }
-    ],
-    "weaponStats": {
-      "apCost": 3,
-      "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
-      "baseCritChance": 25,
-      "critBonusDamage": 10,
-      "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 6,
-          "maxStat": 15
-        },
-        {
-          "stat": "Earth damage",
-          "minStat": 6,
-          "maxStat": 15
-        }
-      ]
-    },
-    "customStats": {},
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/5034.png"
-  },
-  {
     "dofusID": "6725",
     "name": {
       "en": "Bearman's Staff",
@@ -29502,7 +29430,7 @@
   {
     "dofusID": "8450",
     "name": {
-      "en": "White Rat Rapier",
+      "en": "White Rat Sword",
       "fr": "Rapière du Rat Blanc",
       "de": "Rapier der Weißen Ratte",
       "it": "Spada del Ratto Bianco",
@@ -29652,93 +29580,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/5060.png"
-  },
-  {
-    "dofusID": "8575",
-    "name": {
-      "en": "First Blood Staff",
-      "fr": "Le Ramboton",
-      "de": "Ramboton",
-      "it": "Il Ramboton",
-      "es": "El Rambotón",
-      "pt": "Primeiro Cajado Sangrento"
-    },
-    "itemType": "Staff",
-    "setID": null,
-    "level": 200,
-    "stats": [
-      {
-        "stat": "Vitality",
-        "minStat": null,
-        "maxStat": 250
-      },
-      {
-        "stat": "Intelligence",
-        "minStat": null,
-        "maxStat": 50
-      },
-      {
-        "stat": "Agility",
-        "minStat": null,
-        "maxStat": 30
-      },
-      {
-        "stat": "Wisdom",
-        "minStat": null,
-        "maxStat": 40
-      },
-      {
-        "stat": "Range",
-        "minStat": null,
-        "maxStat": 1
-      },
-      {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
-      },
-      {
-        "stat": "Damage",
-        "minStat": null,
-        "maxStat": 10
-      },
-      {
-        "stat": "Power",
-        "minStat": null,
-        "maxStat": 25
-      },
-      {
-        "stat": "Critical",
-        "minStat": null,
-        "maxStat": 5
-      }
-    ],
-    "weaponStats": {
-      "apCost": 3,
-      "usesPerTurn": 2,
-      "minRange": 1,
-      "maxRange": 2,
-      "baseCritChance": 13,
-      "critBonusDamage": 7,
-      "weapon_effects": [
-        {
-          "stat": "Fire damage",
-          "minStat": 13,
-          "maxStat": 20
-        },
-        {
-          "stat": "Fire steal",
-          "minStat": 4,
-          "maxStat": 6
-        }
-      ]
-    },
-    "customStats": {},
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/4071.png"
   },
   {
     "dofusID": "8596",
@@ -31175,86 +31016,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/6076.png"
-  },
-  {
-    "dofusID": "8701",
-    "name": {
-      "en": "Nicked Sword",
-      "fr": "Épée Choh",
-      "de": "Choh-Schwert",
-      "it": "Spada Beccata",
-      "es": "Espada Jikote",
-      "pt": "Espada Conhecida"
-    },
-    "itemType": "Sword",
-    "setID": null,
-    "level": 95,
-    "stats": [
-      {
-        "stat": "Initiative",
-        "minStat": 301,
-        "maxStat": 400
-      },
-      {
-        "stat": "Strength",
-        "minStat": 31,
-        "maxStat": 45
-      },
-      {
-        "stat": "Agility",
-        "minStat": 31,
-        "maxStat": 45
-      },
-      {
-        "stat": "Vitality",
-        "minStat": 31,
-        "maxStat": 45
-      },
-      {
-        "stat": "Prospecting",
-        "minStat": null,
-        "maxStat": 5
-      }
-    ],
-    "weaponStats": {
-      "apCost": 4,
-      "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
-      "baseCritChance": 15,
-      "critBonusDamage": 10,
-      "weapon_effects": [
-        {
-          "stat": "Neutral damage",
-          "minStat": 21,
-          "maxStat": 40
-        }
-      ]
-    },
-    "customStats": {},
-    "conditions": {
-      "conditions": {
-        "and": [
-          {
-            "stat": "STRENGTH",
-            "operator": ">",
-            "value": 50
-          },
-          {
-            "stat": "VITALITY",
-            "operator": ">",
-            "value": 50
-          },
-          {
-            "stat": "AGILITY",
-            "operator": ">",
-            "value": 50
-          }
-        ]
-      },
-      "customConditions": {}
-    },
-    "imageUrl": "item/6077.png"
   },
   {
     "dofusID": "8825",
@@ -35821,48 +35582,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/5017.png"
-  },
-  {
-    "dofusID": "10223",
-    "name": {
-      "en": "Dontase Mebro Shovel",
-      "fr": "Pelle Hectrochoc",
-      "de": "Elektroschockschaufel",
-      "it": "Pala Lectrochoc",
-      "es": "Pala Heliktrochok",
-      "pt": "Pá Letrochoque"
-    },
-    "itemType": "Shovel",
-    "setID": null,
-    "level": 179,
-    "stats": [
-      {
-        "stat": "AP",
-        "minStat": null,
-        "maxStat": -1
-      }
-    ],
-    "weaponStats": {
-      "apCost": 5,
-      "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
-      "baseCritChance": 5,
-      "critBonusDamage": 5,
-      "weapon_effects": [
-        {
-          "stat": "Neutral damage",
-          "minStat": 6,
-          "maxStat": 10
-        }
-      ]
-    },
-    "customStats": {},
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/8010.png"
   },
   {
     "dofusID": "10797",
@@ -46714,42 +46433,6 @@
     "imageUrl": "item/4126.png"
   },
   {
-    "dofusID": "17460",
-    "name": {
-      "en": "Bony Wand",
-      "fr": "Baguette Osseuse",
-      "de": "Knochenstab",
-      "it": "Bacchetta Ossuta",
-      "es": "Varita ósea",
-      "pt": "Varinha óssea"
-    },
-    "itemType": "Wand",
-    "setID": null,
-    "level": 173,
-    "stats": [],
-    "weaponStats": {
-      "apCost": 4,
-      "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 2,
-      "baseCritChance": 5,
-      "critBonusDamage": 1,
-      "weapon_effects": [
-        {
-          "stat": "Neutral damage",
-          "minStat": 6,
-          "maxStat": 8
-        }
-      ]
-    },
-    "customStats": {},
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/3003.png"
-  },
-  {
     "dofusID": "17525",
     "name": {
       "en": "Bouquet of Demonic Roses",
@@ -47155,7 +46838,7 @@
   {
     "dofusID": "17682",
     "name": {
-      "en": "King Playa's Scepta",
+      "en": "King Playa’s Scepta",
       "fr": "Sceptre du Roi Joueur",
       "de": "Spielerkönig-Zepter",
       "it": "Scettro del Re Giocatore",
@@ -47393,64 +47076,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/19075.png"
-  },
-  {
-    "dofusID": "17809",
-    "name": {
-      "en": "Ereziah's Hammer",
-      "fr": "Marteau d'Ereziah",
-      "de": "Ereziahs Hammer",
-      "it": "Martello di Ereziah",
-      "es": "Martillo de Ereziah",
-      "pt": "Martelo de Ereziah"
-    },
-    "itemType": "Hammer",
-    "setID": null,
-    "level": 100,
-    "stats": [],
-    "weaponStats": {
-      "apCost": 7,
-      "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
-      "baseCritChance": 50,
-      "critBonusDamage": 5,
-      "weapon_effects": [
-        {
-          "stat": "Water damage",
-          "minStat": 1,
-          "maxStat": 2
-        },
-        {
-          "stat": "Earth damage",
-          "minStat": 1,
-          "maxStat": 2
-        },
-        {
-          "stat": "Fire damage",
-          "minStat": 1,
-          "maxStat": 2
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 1,
-          "maxStat": 2
-        }
-      ]
-    },
-    "customStats": {
-      "en": ["Linked to the character"],
-      "fr": ["Lié au personnage"],
-      "de": ["An den Charakter gebunden"],
-      "it": ["Legato al personaggio"],
-      "es": ["Ligado a un personaje"],
-      "pt": ["Vinculado ao personagem"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/7737.png"
   },
   {
     "dofusID": "18010",
@@ -50162,49 +49787,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/4134.png"
-  },
-  {
-    "dofusID": "19637",
-    "name": {
-      "en": "Weapon Curse",
-      "fr": "Fléau d'armes",
-      "de": "Streitdreschflegel",
-      "it": "Flagello d'Armi",
-      "es": "Mayal de armas",
-      "pt": "Mangual"
-    },
-    "itemType": "Hammer",
-    "setID": null,
-    "level": 1,
-    "stats": [],
-    "weaponStats": {
-      "apCost": 7,
-      "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
-      "baseCritChance": 0,
-      "critBonusDamage": 0,
-      "weapon_effects": [
-        {
-          "stat": "Neutral damage",
-          "minStat": 2,
-          "maxStat": 3
-        }
-      ]
-    },
-    "customStats": {
-      "en": ["Cooperative crafting impossible"],
-      "fr": ["Craft coopératif impossible."],
-      "de": ["Gemeinsames Herstellen nicht möglich."],
-      "it": ["Craft cooperativo impossibile."],
-      "es": ["Craft cooperativo imposible."],
-      "pt": ["Fabricação cooperativa impossível."]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/15945.png"
   },
   {
     "dofusID": "19986",
@@ -53565,74 +53147,6 @@
       "customConditions": {}
     },
     "imageUrl": "item/7745.png"
-  },
-  {
-    "dofusID": "25235",
-    "name": {
-      "en": "Danaba's Blade",
-      "fr": "Lame de Danaba",
-      "de": "Danabas Klinge",
-      "it": "Lama di Danaba",
-      "es": "Hoja de Danaba",
-      "pt": "Espada de Danaba"
-    },
-    "itemType": "Sword",
-    "setID": null,
-    "level": 180,
-    "stats": [
-      {
-        "stat": "Vitality",
-        "minStat": null,
-        "maxStat": 250
-      },
-      {
-        "stat": "% Neutral Resistance",
-        "minStat": null,
-        "maxStat": 5
-      },
-      {
-        "stat": "% Fire Resistance",
-        "minStat": null,
-        "maxStat": 5
-      },
-      {
-        "stat": "% Water Resistance",
-        "minStat": null,
-        "maxStat": 5
-      },
-      {
-        "stat": "% Earth Resistance",
-        "minStat": null,
-        "maxStat": 5
-      },
-      {
-        "stat": "% Air Resistance",
-        "minStat": null,
-        "maxStat": 5
-      }
-    ],
-    "weaponStats": {
-      "apCost": 5,
-      "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
-      "baseCritChance": 20,
-      "critBonusDamage": 7,
-      "weapon_effects": []
-    },
-    "customStats": {
-      "en": ["Linked to the character"],
-      "fr": ["Lié au personnage"],
-      "de": ["An den Charakter gebunden"],
-      "it": ["Legato al personaggio"],
-      "es": ["Ligado a un personaje"],
-      "pt": ["Vinculado ao personagem"]
-    },
-    "conditions": {
-      "conditions": {},
-      "customConditions": {}
-    },
-    "imageUrl": "item/6749.png"
   },
   {
     "dofusID": "26008",
