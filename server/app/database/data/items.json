@@ -129843,6 +129843,202 @@
     "imageUrl": "item/10351.png"
   },
   {
+    "dofusID": "27265",
+    "name": {
+      "en": "Khardboard Celestial Brooch",
+      "fr": "La Broche Céleste Ankarton",
+      "de": "Die Himmlische Ankarton-Brosche",
+      "it": "La Spilla Celeste Ankartone",
+      "es": "El Broche Celeste Ankartón",
+      "pt": "Broche Celestial Ankarton"
+    },
+    "itemType": "Amulet",
+    "setID": "505",
+    "level": 175,
+    "stats": [],
+    "customStats": {
+      "en": ["Remaining uses: 1000/1000"],
+      "fr": ["Utilisations restantes : 1000 / 1000"],
+      "de": ["Verbleib. Anwendungen: 1000 / 1000"],
+      "it": ["Utilizzi rimanenti: 1000/1000"],
+      "es": ["Utilizaciones restantes: 1000 / 1000"],
+      "pt": ["Usos restantes: 1000 / 1000"]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/1322.png"
+  },
+  {
+    "dofusID": "27266",
+    "name": {
+      "en": "Khardboard Moowolf Belt",
+      "fr": "Ceinture du Meulou Ankarton",
+      "de": "Ankarton-MuWulf-Gürtel",
+      "it": "Cintura del Muulupo Ankartone",
+      "es": "Cinturón de Maxilubo Ankartón",
+      "pt": "Cinto do Mulobo Ankarton"
+    },
+    "itemType": "Belt",
+    "setID": "505",
+    "level": 150,
+    "stats": [],
+    "customStats": {
+      "en": ["Remaining uses: 1000/1000"],
+      "fr": ["Utilisations restantes : 1000 / 1000"],
+      "de": ["Verbleib. Anwendungen: 1000 / 1000"],
+      "it": ["Utilizzi rimanenti: 1000/1000"],
+      "es": ["Utilizaciones restantes: 1000 / 1000"],
+      "pt": ["Usos restantes: 1000 / 1000"]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/10352.png"
+  },
+  {
+    "dofusID": "27267",
+    "name": {
+      "en": "Khardboard Dazzling Cloak",
+      "fr": "Cape Fulgurante Ankarton",
+      "de": "Schillernder Ankarton-Umhang",
+      "it": "Mantello Folgorante Ankartone",
+      "es": "Capa Fulgurante Ankartón",
+      "pt": "Capa Fulgurante Ankarton"
+    },
+    "itemType": "Cloak",
+    "setID": "505",
+    "level": 75,
+    "stats": [],
+    "customStats": {
+      "en": ["Remaining uses: 1000/1000"],
+      "fr": ["Utilisations restantes : 1000 / 1000"],
+      "de": ["Verbleib. Anwendungen: 1000 / 1000"],
+      "it": ["Utilizzi rimanenti: 1000/1000"],
+      "es": ["Utilizaciones restantes: 1000 / 1000"],
+      "pt": ["Usos restantes: 1000 / 1000"]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/17553.png"
+  },
+  {
+    "dofusID": "27278",
+    "name": {
+      "en": "Khardboard Getas",
+      "fr": "Geta Ankarton",
+      "de": "Ankarton-Geta",
+      "it": "Geta Ankartone",
+      "es": "Geta Ankartón",
+      "pt": "Tamanca Ankarton"
+    },
+    "itemType": "Boots",
+    "setID": "505",
+    "level": 125,
+    "stats": [],
+    "customStats": {
+      "en": ["Remaining uses: 1000/1000"],
+      "fr": ["Utilisations restantes : 1000 / 1000"],
+      "de": ["Verbleib. Anwendungen: 1000 / 1000"],
+      "it": ["Utilizzi rimanenti: 1000/1000"],
+      "es": ["Utilizaciones restantes: 1000 / 1000"],
+      "pt": ["Usos restantes: 1000 / 1000"]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/11375.png"
+  },
+  {
+    "dofusID": "27280",
+    "name": {
+      "en": "Khardboard Bowisse's Shield",
+      "fr": "Bouclier de Bowisse Ankarton",
+      "de": "Ankarton-Bowissen-Schild",
+      "it": "Scudo di Bowis Ankartone",
+      "es": "Escudo de Bowis Ankartón",
+      "pt": "Escudo de Bowis Ankarton"
+    },
+    "itemType": "Shield",
+    "setID": "505",
+    "level": 100,
+    "stats": [],
+    "customStats": {
+      "en": ["Remaining uses: 1000/1000"],
+      "fr": ["Utilisations restantes : 1000 / 1000"],
+      "de": ["Verbleib. Anwendungen: 1000 / 1000"],
+      "it": ["Utilizzi rimanenti: 1000/1000"],
+      "es": ["Utilizaciones restantes: 1000 / 1000"],
+      "pt": ["Usos restantes: 1000 / 1000"]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/82418.png"
+  },
+  {
+    "dofusID": "27282",
+    "name": {
+      "en": "Khardboard Gobball Headgear",
+      "fr": "Coiffe du Bouftou Ankarton",
+      "de": "Ankarton-Fresssackkapp",
+      "it": "Copricapo del Pappatutto Ankartone",
+      "es": "Sombrero de jalató Ankartón",
+      "pt": "Chapéu do Papatudo Celestial Ankarton"
+    },
+    "itemType": "Hat",
+    "setID": "505",
+    "level": 50,
+    "stats": [],
+    "customStats": {
+      "en": ["Remaining uses: 1000/1000"],
+      "fr": ["Utilisations restantes : 1000 / 1000"],
+      "de": ["Verbleib. Anwendungen: 1000 / 1000"],
+      "it": ["Utilizzi rimanenti: 1000/1000"],
+      "es": ["Utilizaciones restantes: 1000 / 1000"],
+      "pt": ["Usos restantes: 1000 / 1000"]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16739.png"
+  },
+  {
+    "dofusID": "27284",
+    "name": {
+      "en": "Khardboard Gelano",
+      "fr": "Gelano Ankarton",
+      "de": "Ankarton-Gelano",
+      "it": "Gelanello Ankartone",
+      "es": "Gelanillo Ankartón",
+      "pt": "Gelano Ankarton"
+    },
+    "itemType": "Ring",
+    "setID": "505",
+    "level": 200,
+    "stats": [],
+    "customStats": {
+      "en": ["Remaining uses: 1000/1000"],
+      "fr": ["Utilisations restantes : 1000 / 1000"],
+      "de": ["Verbleib. Anwendungen: 1000 / 1000"],
+      "it": ["Utilizzi rimanenti: 1000/1000"],
+      "es": ["Utilizaciones restantes: 1000 / 1000"],
+      "pt": ["Usos restantes: 1000 / 1000"]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9371.png"
+  },
+  {
     "dofusID": "27511",
     "name": {
       "en": "Cire's Sorrow",
