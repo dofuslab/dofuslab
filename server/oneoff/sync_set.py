@@ -48,7 +48,7 @@ def create_set_translations(db_session, set_object, data):
 
 def update_set(db_session, set_object, data):
     set_object.dofus_db_id = data["id"]
-    db_session.commit() # Wonder if I really do need to commit here?
+    db_session.flush()
     db_session.query(ModelSetTranslation).filter(
         ModelSetTranslation.set_id == set_object.uuid
     ).delete()
