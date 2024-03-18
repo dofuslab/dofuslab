@@ -5,10 +5,17 @@ from .model_item_stat import ModelItemStat
 from sqlalchemy import Column, ForeignKey, Integer, String, JSON
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.schema import CheckConstraint
 
 
 class ModelItem(Base):
     __tablename__ = "item"
+    __table_args__ = (
+        CheckConstraint(
+            "(dofus_db_id IS NULL) <> (dofus_db_mount_id IS NULL)",
+            name="dofus_id_xor",
+        ),
+    )
 
     uuid = Column(
         UUID(as_uuid=True),
@@ -16,9 +23,12 @@ class ModelItem(Base):
         primary_key=True,
         nullable=False,
     )
-    dofus_db_id = Column("dofus_db_id", String, nullable=False)
+    dofus_db_id = Column("dofus_db_id", String, nullable=True)
+    dofus_db_mount_id = Column("dofus_db_mount_id", String, nullable=True)
     item_translations = relationship(
-        "ModelItemTranslation", backref="item", cascade="all, delete-orphan",
+        "ModelItemTranslation",
+        backref="item",
+        cascade="all, delete-orphan",
     )
     item_type_id = Column(
         UUID(as_uuid=True),
