@@ -113812,12 +113812,15 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "stat": "SET_BONUS",
-        "operator": ">",
-        "value": 100000
-      },
-      "customConditions": {}
+      "conditions": {},
+      "customConditions": {
+        "en": ["Kamas > 100000"],
+        "fr": ["Kamas > 100000"],
+        "de": ["Kamas > 100000"],
+        "es": ["kamas > 100000"],
+        "it": ["Kama > 100000"],
+        "pt": ["Kamas > 100000"]
+      }
     },
     "imageUrl": "item/82035.png"
   },
