@@ -1,128 +1,151 @@
 [
-  {
-    "name": {
-      "en": "Hat",
-      "fr": "Chapeau",
-      "de": "Hut",
-      "es": "Sombrero",
-      "it": "Cappello",
-      "pt": "Chapéu"
+    {
+        "name": {
+            "en": "Hat",
+            "fr": "Chapeau",
+            "de": "Hut",
+            "es": "Sombrero",
+            "it": "Cappello",
+            "pt": "Chapéu"
+        },
+        "types": [
+            "Hat"
+        ]
     },
-    "types": ["Hat"]
-  },
-  {
-    "name": {
-      "en": "Cloak",
-      "fr": "Cape",
-      "de": "Umhang",
-      "es": "Capa",
-      "it": "Mantello",
-      "pt": "Capa"
+    {
+        "name": {
+            "en": "Cloak",
+            "fr": "Cape",
+            "de": "Umhang",
+            "es": "Capa",
+            "it": "Mantello",
+            "pt": "Capa"
+        },
+        "types": [
+            "Backpack",
+            "Cloak"
+        ]
     },
-    "types": ["Backpack", "Cloak"]
-  },
-  {
-    "name": {
-      "en": "Amulet",
-      "fr": "Amulette",
-      "de": "Amulett",
-      "es": "Amuleto",
-      "it": "Amuleto",
-      "pt": "Amuleto"
+    {
+        "name": {
+            "en": "Amulet",
+            "fr": "Amulette",
+            "de": "Amulett",
+            "es": "Amuleto",
+            "it": "Amuleto",
+            "pt": "Amuleto"
+        },
+        "types": [
+            "Amulet"
+        ]
     },
-    "types": ["Amulet"]
-  },
-  {
-    "name": {
-      "en": "Ring",
-      "fr": "Anneau",
-      "de": "Ring",
-      "es": "Anillo",
-      "it": "Anello",
-      "pt": "Anel"
+    {
+        "name": {
+            "en": "Ring",
+            "fr": "Anneau",
+            "de": "Ring",
+            "es": "Anillo",
+            "it": "Anello",
+            "pt": "Anel"
+        },
+        "types": [
+            "Ring"
+        ],
+        "quantity": 2
     },
-    "types": ["Ring"],
-    "quantity": 2
-  },
-  {
-    "name": {
-      "en": "Belt",
-      "fr": "Ceinture",
-      "de": "Gürtel",
-      "es": "Cinturón",
-      "it": "Cintura",
-      "pt": "Cinto"
+    {
+        "name": {
+            "en": "Belt",
+            "fr": "Ceinture",
+            "de": "Gürtel",
+            "es": "Cinturón",
+            "it": "Cintura",
+            "pt": "Cinto"
+        },
+        "types": [
+            "Belt"
+        ]
     },
-    "types": ["Belt"]
-  },
-  {
-    "name": {
-      "en": "Boots",
-      "fr": "Bottes",
-      "de": "Stiefel",
-      "es": "Bota",
-      "it": "Stivali",
-      "pt": "Botas"
+    {
+        "name": {
+            "en": "Boots",
+            "fr": "Bottes",
+            "de": "Stiefel",
+            "es": "Bota",
+            "it": "Stivali",
+            "pt": "Botas"
+        },
+        "types": [
+            "Boots"
+        ]
     },
-    "types": ["Boots"]
-  },
-  {
-    "name": {
-      "en": "Weapon",
-      "fr": "Arme",
-      "de": "Waffe",
-      "es": "Arma",
-      "it": "Arma",
-      "pt": "Arma"
+    {
+        "name": {
+            "en": "Weapon",
+            "fr": "Arme",
+            "de": "Waffe",
+            "es": "Arma",
+            "it": "Arma",
+            "pt": "Arma"
+        },
+        "types": [
+            "Axe",
+            "Bow",
+            "Dagger",
+            "Hammer",
+            "Lance",
+            "Pickaxe",
+            "Scythe",
+            "Shovel",
+            "Soul stone",
+            "Staff",
+            "Sword",
+            "Tool",
+            "Wand"
+        ]
     },
-    "types": [
-      "Axe",
-      "Bow",
-      "Dagger",
-      "Hammer",
-      "Lance",
-      "Pickaxe",
-      "Scythe",
-      "Shovel",
-      "Soul stone",
-      "Staff",
-      "Sword",
-      "Tool",
-      "Wand"
-    ]
-  },
-  {
-    "name": {
-      "en": "Shield",
-      "fr": "Bouclier",
-      "de": "Schild",
-      "es": "Escudo",
-      "it": "Scudo",
-      "pt": "Escudo"
+    {
+        "name": {
+            "en": "Shield",
+            "fr": "Bouclier",
+            "de": "Schild",
+            "es": "Escudo",
+            "it": "Scudo",
+            "pt": "Escudo"
+        },
+        "types": [
+            "Shield"
+        ]
     },
-    "types": ["Shield"]
-  },
-  {
-    "name": {
-      "en": "Dofus",
-      "fr": "Dofus",
-      "de": "Dofus",
-      "es": "Dofus",
-      "it": "Dofus",
-      "pt": "Dofus"
+    {
+        "name": {
+            "en": "Dofus",
+            "fr": "Dofus",
+            "de": "Dofus",
+            "es": "Dofus",
+            "it": "Dofus",
+            "pt": "Dofus"
+        },
+        "types": [
+            "Dofus",
+            "Trophy",
+            "Prysmaradite"
+        ],
+        "quantity": 6
     },
-    "types": ["Dofus", "Trophy", "Prysmaradite"],
-    "quantity": 6
-  },
-  {
-    "name": {
-      "en": "Pet",
-      "fr": "Familier",
-      "de": "Vertrauter",
-      "es": "Mascota",
-      "it": "Famiglio",
-      "pt": "Mascote"
-    },
-    "types": ["Pet", "Petsmount", "Mount"]
-  }
+    {
+        "name": {
+            "en": "Pet",
+            "fr": "Familier",
+            "de": "Vertrauter",
+            "es": "Mascota",
+            "it": "Famiglio",
+            "pt": "Mascote"
+        },
+        "types": [
+            "Pet",
+            "Petsmount",
+            "Mount"
+        ]
+    }
 ]

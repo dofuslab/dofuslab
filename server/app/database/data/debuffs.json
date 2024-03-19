@@ -1,615 +1,615 @@
 {
-  "spells": {
-    "Ecaflip": [],
-    "Eniripsa": [],
-    "Iop": [
-      {
-        "name": "Jump",
-        "levels": [
-          {
-            "level": 1,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 15,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 20,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 67,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 15,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 20,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 133,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 15,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 20,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          }
+    "spells": {
+        "Ecaflip": [],
+        "Eniripsa": [],
+        "Iop": [
+            {
+                "name": "Jump",
+                "levels": [
+                    {
+                        "level": 1,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 15,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": 20,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 67,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 15,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": 20,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 133,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 15,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": 20,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Cra": [],
+        "Feca": [],
+        "Sacrier": [],
+        "Sadida": [],
+        "Osamodas": [],
+        "Enutrof": [],
+        "Sram": [],
+        "Xelor": [],
+        "Pandawa": [
+            {
+                "name": "Vulnerability",
+                "levels": [
+                    {
+                        "level": 55,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 15,
+                                "incrementBy": 15,
+                                "maxStacks": 2,
+                                "critMinValue": 17,
+                                "critIncrementBy": 17,
+                                "critMaxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 122,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 15,
+                                "incrementBy": 15,
+                                "maxStacks": 2,
+                                "critMinValue": 17,
+                                "critIncrementBy": 17,
+                                "critMaxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 189,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 15,
+                                "incrementBy": 15,
+                                "maxStacks": 2,
+                                "critMinValue": 17,
+                                "critIncrementBy": 17,
+                                "critMaxStacks": 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Rogue": [],
+        "Masqueraider": [],
+        "Foggernaut": [],
+        "Eliotrope": [
+            {
+                "name": "Conjuration",
+                "levels": [
+                    {
+                        "level": 155,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 30,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Huppermage": [
+            {
+                "name": "Telluric Wave",
+                "levels": [
+                    {
+                        "level": 1,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 67,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 133,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Celestial Wave",
+                "levels": [
+                    {
+                        "level": 100,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 167,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Flamethrower",
+                "levels": [
+                    {
+                        "level": 3,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 69,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 136,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Cataract",
+                "levels": [
+                    {
+                        "level": 110,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 177,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Storm",
+                "levels": [
+                    {
+                        "level": 15,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 82,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 149,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Tectonic Breach",
+                "levels": [
+                    {
+                        "level": 125,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 192,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Telluric Blade",
+                "levels": [
+                    {
+                        "level": 130,
+                        "buffs": [
+                            {
+                                "stat": "Critical",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": 25,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            },
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 197,
+                        "buffs": [
+                            {
+                                "stat": "Critical",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": 25,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            },
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Burning Stroke",
+                "levels": [
+                    {
+                        "level": 30,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 97,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 164,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Volcano",
+                "levels": [
+                    {
+                        "level": 140,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Deflagration",
+                "levels": [
+                    {
+                        "level": 50,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 117,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 184,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Sun Lance",
+                "levels": [
+                    {
+                        "level": 170,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Striking Meteor",
+                "levels": [
+                    {
+                        "level": 80,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 147,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Ouginak": [
+            {
+                "name": "Doggedness",
+                "levels": [
+                    {
+                        "level": 195,
+                        "buffs": [
+                            {
+                                "stat": "Final Damage",
+                                "minValue": 20,
+                                "incrementBy": null,
+                                "maxStacks": null,
+                                "critMinValue": null,
+                                "critIncrementBy": null,
+                                "critMaxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            }
         ]
-      }
-    ],
-    "Cra": [],
-    "Feca": [],
-    "Sacrier": [],
-    "Sadida": [],
-    "Osamodas": [],
-    "Enutrof": [],
-    "Sram": [],
-    "Xelor": [],
-    "Pandawa": [
-      {
-        "name": "Vulnerability",
-        "levels": [
-          {
-            "level": 55,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 15,
-                "incrementBy": 15,
-                "maxStacks": 2,
-                "critMinValue": 17,
-                "critIncrementBy": 17,
-                "critMaxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 122,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 15,
-                "incrementBy": 15,
-                "maxStacks": 2,
-                "critMinValue": 17,
-                "critIncrementBy": 17,
-                "critMaxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 189,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 15,
-                "incrementBy": 15,
-                "maxStacks": 2,
-                "critMinValue": 17,
-                "critIncrementBy": 17,
-                "critMaxStacks": 2
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Rogue": [],
-    "Masqueraider": [],
-    "Foggernaut": [],
-    "Eliotrope": [
-      {
-        "name": "Conjuration",
-        "levels": [
-          {
-            "level": 155,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 30,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Huppermage": [
-      {
-        "name": "Telluric Wave",
-        "levels": [
-          {
-            "level": 1,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 67,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 133,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Celestial Wave",
-        "levels": [
-          {
-            "level": 100,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 167,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Flamethrower",
-        "levels": [
-          {
-            "level": 3,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 69,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 136,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Cataract",
-        "levels": [
-          {
-            "level": 110,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 177,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Storm",
-        "levels": [
-          {
-            "level": 15,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 82,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 149,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Tectonic Breach",
-        "levels": [
-          {
-            "level": 125,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 192,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Telluric Blade",
-        "levels": [
-          {
-            "level": 130,
-            "buffs": [
-              {
-                "stat": "Critical",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 25,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              },
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 197,
-            "buffs": [
-              {
-                "stat": "Critical",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": 25,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              },
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Burning Stroke",
-        "levels": [
-          {
-            "level": 30,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 97,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 164,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Volcano",
-        "levels": [
-          {
-            "level": 140,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Deflagration",
-        "levels": [
-          {
-            "level": 50,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 117,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 184,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Sun Lance",
-        "levels": [
-          {
-            "level": 170,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Striking Meteor",
-        "levels": [
-          {
-            "level": 80,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 147,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Ouginak": [
-      {
-        "name": "Doggedness",
-        "levels": [
-          {
-            "level": 195,
-            "buffs": [
-              {
-                "stat": "Final Damage",
-                "minValue": 20,
-                "incrementBy": null,
-                "maxStacks": null,
-                "critMinValue": null,
-                "critIncrementBy": null,
-                "critMaxStacks": null
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+    }
 }

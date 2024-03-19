@@ -1,218 +1,218 @@
 [
-  {
-    "en": "Hat",
-    "fr": "Chapeau",
-    "de": "Hut",
-    "es": "Sombrero",
-    "it": "Cappello",
-    "pt": "Chapéu"
-  },
-  {
-    "en": "Backpack",
-    "fr": "Sac à dos",
-    "de": "Rucksack",
-    "es": "Mochila",
-    "it": "Zaino",
-    "pt": "Mochila"
-  },
-  {
-    "en": "Cloak",
-    "fr": "Cape",
-    "de": "Umhang",
-    "es": "Capa",
-    "it": "Mantello",
-    "pt": "Capa"
-  },
-  {
-    "en": "Amulet",
-    "fr": "Amulette",
-    "de": "Amulett",
-    "es": "Amuleto",
-    "it": "Amuleto",
-    "pt": "Amuleto"
-  },
-  {
-    "en": "Ring",
-    "fr": "Anneau",
-    "de": "Ring",
-    "es": "Anillo",
-    "it": "Anello",
-    "pt": "Anel"
-  },
-  {
-    "en": "Belt",
-    "fr": "Ceinture",
-    "de": "Gürtel",
-    "es": "Cinturón",
-    "it": "Cintura",
-    "pt": "Cinto"
-  },
-  {
-    "en": "Boots",
-    "fr": "Bottes",
-    "de": "Stiefel",
-    "es": "Bota",
-    "it": "Stivali",
-    "pt": "Botas"
-  },
-  {
-    "en": "Axe",
-    "fr": "Hache",
-    "de": "Axt",
-    "es": "Hacha",
-    "it": "Ascia",
-    "pt": "Machado"
-  },
-  {
-    "en": "Bow",
-    "fr": "Arc",
-    "de": "Bogen",
-    "es": "Arco",
-    "it": "Arco",
-    "pt": "Arco"
-  },
-  {
-    "en": "Dagger",
-    "fr": "Dague",
-    "de": "Dolch",
-    "es": "Daga",
-    "it": "Daga",
-    "pt": "Adaga"
-  },
-  {
-    "en": "Hammer",
-    "fr": "Marteau",
-    "de": "Hammer",
-    "es": "Martillo",
-    "it": "Martello",
-    "pt": "Martelo"
-  },
-  {
-    "en": "Lance",
-    "fr": "Lance",
-    "de": "[!] Lance",
-    "es": "[!] Lance",
-    "it": "[!] Lance",
-    "pt": "[!] Lance"
-  },
-  {
-    "en": "Pickaxe",
-    "fr": "Pioche",
-    "de": "Spitzhacke",
-    "es": "Pico",
-    "it": "Piccone",
-    "pt": "Picareta"
-  },
-  {
-    "en": "Scythe",
-    "fr": "Faux",
-    "de": "Sense",
-    "es": "Guadaña",
-    "it": "Falce",
-    "pt": "Gadanha"
-  },
-  {
-    "en": "Shovel",
-    "fr": "Pelle",
-    "de": "Schaufel",
-    "es": "Pala",
-    "it": "Pala",
-    "pt": "Pá"
-  },
-  {
-    "en": "Staff",
-    "fr": "Baton",
-    "de": "Stecken",
-    "es": "Bastón",
-    "it": "Bastone",
-    "pt": "Bastão"
-  },
-  {
-    "en": "Sword",
-    "fr": "Epée",
-    "de": "Schwert",
-    "es": "Espada",
-    "it": "Spada",
-    "pt": "Espada"
-  },
-  {
-    "en": "Tool",
-    "fr": "Outil",
-    "de": "Werkzeug",
-    "es": "Herramienta",
-    "it": "Attrezzo",
-    "pt": "Ferramenta"
-  },
-  {
-    "en": "Wand",
-    "fr": "Baguette",
-    "de": "Stab",
-    "es": "Varita",
-    "it": "Bacchetta",
-    "pt": "Varinha"
-  },
-  {
-    "en": "Shield",
-    "fr": "Bouclier",
-    "de": "Schild",
-    "es": "Escudo",
-    "it": "Scudo",
-    "pt": "Escudo"
-  },
-  {
-    "en": "Dofus",
-    "fr": "Dofus",
-    "de": "Dofus",
-    "es": "Dofus",
-    "it": "Dofus",
-    "pt": "Dofus"
-  },
-  {
-    "en": "Trophy",
-    "fr": "Trophée",
-    "de": "Trophäe",
-    "es": "Trofeo",
-    "it": "Trofeo",
-    "pt": "Troféu"
-  },
-  {
-    "en": "Prysmaradite",
-    "fr": "Prysmaradite",
-    "de": "Prysmaradit",
-    "es": "Prismaradita",
-    "it": "Prismaradite",
-    "pt": "Prismaradita"
-  },
-  {
-    "en": "Pet",
-    "fr": "Familier",
-    "de": "Vertrauter",
-    "es": "Mascota",
-    "it": "Famiglio",
-    "pt": "Mascote"
-  },
-  {
-    "en": "Petsmount",
-    "fr": "Montilier",
-    "de": "Reitbegleiter",
-    "es": "Mascotura",
-    "it": "Destriglio",
-    "pt": "Montascote"
-  },
-  {
-    "en": "Mount",
-    "fr": "Monture",
-    "de": "Reittiere",
-    "es": "Montura",
-    "it": "Cavalcature",
-    "pt": "Montarias"
-  },
-  {
-    "en": "Soul stone",
-    "fr": "Pierre d'âme",
-    "de": "Seelenstein",
-    "es": "Piedra de alma",
-    "it": "Pietra d'anima",
-    "pt": "Pedra de alma"
-  }
+    {
+        "en": "Hat",
+        "fr": "Chapeau",
+        "de": "Hut",
+        "es": "Sombrero",
+        "it": "Cappello",
+        "pt": "Chapéu"
+    },
+    {
+        "en": "Backpack",
+        "fr": "Sac à dos",
+        "de": "Rucksack",
+        "es": "Mochila",
+        "it": "Zaino",
+        "pt": "Mochila"
+    },
+    {
+        "en": "Cloak",
+        "fr": "Cape",
+        "de": "Umhang",
+        "es": "Capa",
+        "it": "Mantello",
+        "pt": "Capa"
+    },
+    {
+        "en": "Amulet",
+        "fr": "Amulette",
+        "de": "Amulett",
+        "es": "Amuleto",
+        "it": "Amuleto",
+        "pt": "Amuleto"
+    },
+    {
+        "en": "Ring",
+        "fr": "Anneau",
+        "de": "Ring",
+        "es": "Anillo",
+        "it": "Anello",
+        "pt": "Anel"
+    },
+    {
+        "en": "Belt",
+        "fr": "Ceinture",
+        "de": "Gürtel",
+        "es": "Cinturón",
+        "it": "Cintura",
+        "pt": "Cinto"
+    },
+    {
+        "en": "Boots",
+        "fr": "Bottes",
+        "de": "Stiefel",
+        "es": "Bota",
+        "it": "Stivali",
+        "pt": "Botas"
+    },
+    {
+        "en": "Axe",
+        "fr": "Hache",
+        "de": "Axt",
+        "es": "Hacha",
+        "it": "Ascia",
+        "pt": "Machado"
+    },
+    {
+        "en": "Bow",
+        "fr": "Arc",
+        "de": "Bogen",
+        "es": "Arco",
+        "it": "Arco",
+        "pt": "Arco"
+    },
+    {
+        "en": "Dagger",
+        "fr": "Dague",
+        "de": "Dolch",
+        "es": "Daga",
+        "it": "Daga",
+        "pt": "Adaga"
+    },
+    {
+        "en": "Hammer",
+        "fr": "Marteau",
+        "de": "Hammer",
+        "es": "Martillo",
+        "it": "Martello",
+        "pt": "Martelo"
+    },
+    {
+        "en": "Lance",
+        "fr": "Lance",
+        "de": "[!] Lance",
+        "es": "[!] Lance",
+        "it": "[!] Lance",
+        "pt": "[!] Lance"
+    },
+    {
+        "en": "Pickaxe",
+        "fr": "Pioche",
+        "de": "Spitzhacke",
+        "es": "Pico",
+        "it": "Piccone",
+        "pt": "Picareta"
+    },
+    {
+        "en": "Scythe",
+        "fr": "Faux",
+        "de": "Sense",
+        "es": "Guadaña",
+        "it": "Falce",
+        "pt": "Gadanha"
+    },
+    {
+        "en": "Shovel",
+        "fr": "Pelle",
+        "de": "Schaufel",
+        "es": "Pala",
+        "it": "Pala",
+        "pt": "Pá"
+    },
+    {
+        "en": "Staff",
+        "fr": "Baton",
+        "de": "Stecken",
+        "es": "Bastón",
+        "it": "Bastone",
+        "pt": "Bastão"
+    },
+    {
+        "en": "Sword",
+        "fr": "Epée",
+        "de": "Schwert",
+        "es": "Espada",
+        "it": "Spada",
+        "pt": "Espada"
+    },
+    {
+        "en": "Tool",
+        "fr": "Outil",
+        "de": "Werkzeug",
+        "es": "Herramienta",
+        "it": "Attrezzo",
+        "pt": "Ferramenta"
+    },
+    {
+        "en": "Wand",
+        "fr": "Baguette",
+        "de": "Stab",
+        "es": "Varita",
+        "it": "Bacchetta",
+        "pt": "Varinha"
+    },
+    {
+        "en": "Shield",
+        "fr": "Bouclier",
+        "de": "Schild",
+        "es": "Escudo",
+        "it": "Scudo",
+        "pt": "Escudo"
+    },
+    {
+        "en": "Dofus",
+        "fr": "Dofus",
+        "de": "Dofus",
+        "es": "Dofus",
+        "it": "Dofus",
+        "pt": "Dofus"
+    },
+    {
+        "en": "Trophy",
+        "fr": "Trophée",
+        "de": "Trophäe",
+        "es": "Trofeo",
+        "it": "Trofeo",
+        "pt": "Troféu"
+    },
+    {
+        "en": "Prysmaradite",
+        "fr": "Prysmaradite",
+        "de": "Prysmaradit",
+        "es": "Prismaradita",
+        "it": "Prismaradite",
+        "pt": "Prismaradita"
+    },
+    {
+        "en": "Pet",
+        "fr": "Familier",
+        "de": "Vertrauter",
+        "es": "Mascota",
+        "it": "Famiglio",
+        "pt": "Mascote"
+    },
+    {
+        "en": "Petsmount",
+        "fr": "Montilier",
+        "de": "Reitbegleiter",
+        "es": "Mascotura",
+        "it": "Destriglio",
+        "pt": "Montascote"
+    },
+    {
+        "en": "Mount",
+        "fr": "Monture",
+        "de": "Reittiere",
+        "es": "Montura",
+        "it": "Cavalcature",
+        "pt": "Montarias"
+    },
+    {
+        "en": "Soul stone",
+        "fr": "Pierre d'âme",
+        "de": "Seelenstein",
+        "es": "Piedra de alma",
+        "it": "Pietra d'anima",
+        "pt": "Pedra de alma"
+    }
 ]

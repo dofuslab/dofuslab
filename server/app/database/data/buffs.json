@@ -1,1715 +1,1715 @@
 {
-  "spells": {
-    "Ecaflip": [
-      {
-        "name": "Roar",
-        "levels": [
-          {
-            "level": 130,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 50,
-                "critIncrementBy": null,
-                "maxStacks": 7
-              }
-            ]
-          },
-          {
-            "level": 197,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 70,
-                "critIncrementBy": null,
-                "maxStacks": 7
-              }
-            ]
-          }
+    "spells": {
+        "Ecaflip": [
+            {
+                "name": "Roar",
+                "levels": [
+                    {
+                        "level": 130,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 50,
+                                "critIncrementBy": null,
+                                "maxStacks": 7
+                            }
+                        ]
+                    },
+                    {
+                        "level": 197,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 70,
+                                "critIncrementBy": null,
+                                "maxStacks": 7
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Wheel of Fortune",
+                "levels": [
+                    {
+                        "level": 45,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 100,
+                                "critIncrementBy": 140,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 112,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 175,
+                                "critIncrementBy": 245,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 179,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 250,
+                                "critIncrementBy": 350,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Bravado",
+                "levels": [
+                    {
+                        "level": 175,
+                        "buffs": [
+                            {
+                                "stat": "Pushback Damage",
+                                "incrementBy": 100,
+                                "critIncrementBy": 100,
+                                "maxStacks": 2
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Ecaflip's Audacity",
+                "levels": [
+                    {
+                        "level": 200,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": 180,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Eniripsa": [
+            {
+                "name": "Galvanising Word",
+                "levels": [
+                    {
+                        "level": 140,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 200,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Iop": [
+            {
+                "name": "Divine Sword",
+                "levels": [
+                    {
+                        "level": 3,
+                        "buffs": [
+                            {
+                                "stat": "Damage",
+                                "incrementBy": 10,
+                                "critIncrementBy": 10,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 69,
+                        "buffs": [
+                            {
+                                "stat": "Damage",
+                                "incrementBy": 20,
+                                "critIncrementBy": 20,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 136,
+                        "buffs": [
+                            {
+                                "stat": "Damage",
+                                "incrementBy": 30,
+                                "critIncrementBy": 30,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Violence",
+                "levels": [
+                    {
+                        "level": 125,
+                        "buffs": [
+                            {
+                                "stat": "Pushback Damage",
+                                "incrementBy": 40,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 192,
+                        "buffs": [
+                            {
+                                "stat": "Pushback Damage",
+                                "incrementBy": 50,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Power",
+                "levels": [
+                    {
+                        "level": 55,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 100,
+                                "critIncrementBy": 120,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 122,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 200,
+                                "critIncrementBy": 240,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 189,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 300,
+                                "critIncrementBy": 350,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Cra": [
+            {
+                "name": "Assailing Arrow",
+                "levels": [
+                    {
+                        "level": 140,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 100,
+                                "critIncrementBy": 100,
+                                "maxStacks": 3
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Powerful Shooting",
+                "levels": [
+                    {
+                        "level": 40,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": 170,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Critical",
+                                "incrementBy": 6,
+                                "critIncrementBy": 8,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 107,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 200,
+                                "critIncrementBy": 230,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Critical",
+                                "incrementBy": 8,
+                                "critIncrementBy": 10,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 174,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 250,
+                                "critIncrementBy": 290,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Critical",
+                                "incrementBy": 10,
+                                "critIncrementBy": 12,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Bow Skill",
+                "levels": [
+                    {
+                        "level": 25,
+                        "buffs": [
+                            {
+                                "stat": "Damage",
+                                "incrementBy": 20,
+                                "critIncrementBy": 25,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 92,
+                        "buffs": [
+                            {
+                                "stat": "Damage",
+                                "incrementBy": 40,
+                                "critIncrementBy": 50,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 159,
+                        "buffs": [
+                            {
+                                "stat": "Damage",
+                                "incrementBy": 60,
+                                "critIncrementBy": 70,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Vendetta",
+                "levels": [
+                    {
+                        "level": 90,
+                        "buffs": [
+                            {
+                                "stat": "Critical",
+                                "incrementBy": 10,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 157,
+                        "buffs": [
+                            {
+                                "stat": "Critical",
+                                "incrementBy": 15,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Sentinel",
+                "levels": [
+                    {
+                        "level": 200,
+                        "buffs": [
+                            {
+                                "stat": "% Spell Damage",
+                                "incrementBy": 30,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Feca": [
+            {
+                "name": "Natural Attack",
+                "levels": [
+                    {
+                        "level": 1,
+                        "buffs": [
+                            {
+                                "stat": "Intelligence",
+                                "incrementBy": 20,
+                                "critIncrementBy": 30,
+                                "maxStacks": 3
+                            }
+                        ]
+                    },
+                    {
+                        "level": 67,
+                        "buffs": [
+                            {
+                                "stat": "Intelligence",
+                                "incrementBy": 40,
+                                "critIncrementBy": 50,
+                                "maxStacks": 3
+                            }
+                        ]
+                    },
+                    {
+                        "level": 133,
+                        "buffs": [
+                            {
+                                "stat": "Intelligence",
+                                "incrementBy": 60,
+                                "critIncrementBy": 70,
+                                "maxStacks": 3
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Typhoon",
+                "levels": [
+                    {
+                        "level": 3,
+                        "buffs": [
+                            {
+                                "stat": "Agility",
+                                "incrementBy": 20,
+                                "critIncrementBy": 30,
+                                "maxStacks": 3
+                            }
+                        ]
+                    },
+                    {
+                        "level": 69,
+                        "buffs": [
+                            {
+                                "stat": "Agility",
+                                "incrementBy": 40,
+                                "critIncrementBy": 50,
+                                "maxStacks": 3
+                            }
+                        ]
+                    },
+                    {
+                        "level": 136,
+                        "buffs": [
+                            {
+                                "stat": "Agility",
+                                "incrementBy": 60,
+                                "critIncrementBy": 70,
+                                "maxStacks": 3
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Fulminating Glyph",
+                "levels": [
+                    {
+                        "level": 125,
+                        "buffs": [
+                            {
+                                "stat": "% Melee Damage",
+                                "incrementBy": 20,
+                                "critIncrementBy": null,
+                                "maxStacks": null
+                            }
+                        ]
+                    },
+                    {
+                        "level": 192,
+                        "buffs": [
+                            {
+                                "stat": "% Melee Damage",
+                                "incrementBy": 20,
+                                "critIncrementBy": null,
+                                "maxStacks": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Lifelessness",
+                "levels": [
+                    {
+                        "level": 130,
+                        "buffs": [
+                            {
+                                "stat": "Intelligence",
+                                "incrementBy": 120,
+                                "critIncrementBy": 140,
+                                "maxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 197,
+                        "buffs": [
+                            {
+                                "stat": "Intelligence",
+                                "incrementBy": 150,
+                                "critIncrementBy": 170,
+                                "maxStacks": 2
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Cloudy Attack",
+                "levels": [
+                    {
+                        "level": 25,
+                        "buffs": [
+                            {
+                                "stat": "Chance",
+                                "incrementBy": 40,
+                                "critIncrementBy": 60,
+                                "maxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 92,
+                        "buffs": [
+                            {
+                                "stat": "Chance",
+                                "incrementBy": 60,
+                                "critIncrementBy": 80,
+                                "maxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 159,
+                        "buffs": [
+                            {
+                                "stat": "Chance",
+                                "incrementBy": 80,
+                                "critIncrementBy": 100,
+                                "maxStacks": 2
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Bastion",
+                "levels": [
+                    {
+                        "level": 30,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 80,
+                                "critIncrementBy": null,
+                                "maxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 97,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 120,
+                                "critIncrementBy": null,
+                                "maxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 164,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": null,
+                                "maxStacks": 2
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Backlash",
+                "levels": [
+                    {
+                        "level": 35,
+                        "buffs": [
+                            {
+                                "stat": "Strength",
+                                "incrementBy": 40,
+                                "critIncrementBy": 60,
+                                "maxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 102,
+                        "buffs": [
+                            {
+                                "stat": "Strength",
+                                "incrementBy": 60,
+                                "critIncrementBy": 80,
+                                "maxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 169,
+                        "buffs": [
+                            {
+                                "stat": "Strength",
+                                "incrementBy": 80,
+                                "critIncrementBy": 100,
+                                "maxStacks": 2
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Reinforced Protection",
+                "levels": [
+                    {
+                        "level": 75,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 120,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Power",
+                                "incrementBy": 160,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 142,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 200,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Power",
+                                "incrementBy": 250,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Sacrier": [
+            {
+                "name": "Mutilation",
+                "levels": [
+                    {
+                        "level": 10,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 50,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 77,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 100,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 144,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Sadida": [],
+        "Osamodas": [],
+        "Enutrof": [
+            {
+                "name": "Opportuneness",
+                "levels": [
+                    {
+                        "level": 6,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 50,
+                                "critIncrementBy": 55,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 71,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 60,
+                                "critIncrementBy": 65,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 138,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 75,
+                                "critIncrementBy": 80,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Greed",
+                "levels": [
+                    {
+                        "level": 40,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 10,
+                                "critIncrementBy": 15,
+                                "maxStacks": 10
+                            }
+                        ]
+                    },
+                    {
+                        "level": 107,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 25,
+                                "critIncrementBy": 30,
+                                "maxStacks": 10
+                            }
+                        ]
+                    },
+                    {
+                        "level": 174,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 40,
+                                "critIncrementBy": 45,
+                                "maxStacks": 10
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Golden Age",
+                "levels": [
+                    {
+                        "level": 160,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 200,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Decadence",
+                "levels": [
+                    {
+                        "level": 190,
+                        "buffs": [
+                            {
+                                "stat": "% Final Damage",
+                                "incrementBy": 10,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Sram": [
+            {
+                "name": "Con",
+                "levels": [
+                    {
+                        "level": 115,
+                        "buffs": [
+                            {
+                                "stat": "Agility",
+                                "incrementBy": 60,
+                                "critIncrementBy": 80,
+                                "maxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 182,
+                        "buffs": [
+                            {
+                                "stat": "Agility",
+                                "incrementBy": 100,
+                                "critIncrementBy": 120,
+                                "maxStacks": 2
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Cut-Throat",
+                "levels": [
+                    {
+                        "level": 100,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 100,
+                                "critIncrementBy": 100,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 167,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": 150,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Larceny",
+                "levels": [
+                    {
+                        "level": 130,
+                        "buffs": [
+                            {
+                                "stat": "Chance",
+                                "incrementBy": 40,
+                                "critIncrementBy": 60,
+                                "maxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 197,
+                        "buffs": [
+                            {
+                                "stat": "Chance",
+                                "incrementBy": 80,
+                                "critIncrementBy": 100,
+                                "maxStacks": 2
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Furrow",
+                "levels": [
+                    {
+                        "level": 150,
+                        "buffs": [
+                            {
+                                "stat": "Intelligence",
+                                "incrementBy": 80,
+                                "critIncrementBy": 100,
+                                "maxStacks": 2
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Shakedown",
+                "levels": [
+                    {
+                        "level": 135,
+                        "buffs": [
+                            {
+                                "stat": "Strength",
+                                "incrementBy": 100,
+                                "critIncrementBy": 120,
+                                "maxStacks": 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Xelor": [],
+        "Pandawa": [
+            {
+                "name": "Inebriation",
+                "levels": [
+                    {
+                        "level": 140,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 100,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Rogue": [],
+        "Masqueraider": [
+            {
+                "name": "Poltroon Mask",
+                "levels": [
+                    {
+                        "level": 95,
+                        "buffs": [
+                            {
+                                "stat": "% Ranged Damage",
+                                "incrementBy": 7,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 162,
+                        "buffs": [
+                            {
+                                "stat": "% Ranged Damage",
+                                "incrementBy": 10,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Psychopath Mask",
+                "levels": [
+                    {
+                        "level": 6,
+                        "buffs": [
+                            {
+                                "stat": "% Melee Damage",
+                                "incrementBy": 7,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 71,
+                        "buffs": [
+                            {
+                                "stat": "% Melee Damage",
+                                "incrementBy": 7,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 138,
+                        "buffs": [
+                            {
+                                "stat": "% Melee Damage",
+                                "incrementBy": 10,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Furia",
+                "levels": [
+                    {
+                        "level": 50,
+                        "buffs": [
+                            {
+                                "stat": "Damage",
+                                "incrementBy": 20,
+                                "critIncrementBy": 22,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 117,
+                        "buffs": [
+                            {
+                                "stat": "Damage",
+                                "incrementBy": 30,
+                                "critIncrementBy": 33,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 184,
+                        "buffs": [
+                            {
+                                "stat": "Damage",
+                                "incrementBy": 40,
+                                "critIncrementBy": 44,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Neurosis",
+                "levels": [
+                    {
+                        "level": 175,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 200,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Bocciara",
+                "levels": [
+                    {
+                        "level": 160,
+                        "buffs": [
+                            {
+                                "stat": "Pushback Damage",
+                                "incrementBy": 80,
+                                "critIncrementBy": 80,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Inferno",
+                "levels": [
+                    {
+                        "level": 35,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 100,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 102,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 169,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 200,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Foggernaut": [
+            {
+                "name": "Evolution",
+                "levels": [
+                    {
+                        "level": 3,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 70,
+                                "critIncrementBy": null,
+                                "maxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 69,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 110,
+                                "critIncrementBy": null,
+                                "maxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 136,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": null,
+                                "maxStacks": 2
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Transition",
+                "levels": [
+                    {
+                        "level": 110,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 177,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Scaphander",
+                "levels": [
+                    {
+                        "level": 15,
+                        "buffs": [
+                            {
+                                "stat": "Damage",
+                                "incrementBy": 12,
+                                "critIncrementBy": 16,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Pushback Damage",
+                                "incrementBy": 25,
+                                "critIncrementBy": 30,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 82,
+                        "buffs": [
+                            {
+                                "stat": "Damage",
+                                "incrementBy": 19,
+                                "critIncrementBy": 23,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Pushback Damage",
+                                "incrementBy": 35,
+                                "critIncrementBy": 40,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 149,
+                        "buffs": [
+                            {
+                                "stat": "Damage",
+                                "incrementBy": 25,
+                                "critIncrementBy": 30,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Pushback Damage",
+                                "incrementBy": 40,
+                                "critIncrementBy": 50,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Eliotrope": [
+            {
+                "name": "Focus",
+                "levels": [
+                    {
+                        "level": 70,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 75,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 137,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 100,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Power",
+                                "incrementBy": 200,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Huppermage": [
+            {
+                "name": "Elemental Drain",
+                "levels": [
+                    {
+                        "level": 10,
+                        "buffs": [
+                            {
+                                "stat": "Intelligence",
+                                "incrementBy": 50,
+                                "critIncrementBy": 60,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Chance",
+                                "incrementBy": 50,
+                                "critIncrementBy": 60,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Strength",
+                                "incrementBy": 50,
+                                "critIncrementBy": 60,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Agility",
+                                "incrementBy": 50,
+                                "critIncrementBy": 60,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 77,
+                        "buffs": [
+                            {
+                                "stat": "Intelligence",
+                                "incrementBy": 100,
+                                "critIncrementBy": 120,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Chance",
+                                "incrementBy": 100,
+                                "critIncrementBy": 120,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Strength",
+                                "incrementBy": 100,
+                                "critIncrementBy": 120,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Agility",
+                                "incrementBy": 100,
+                                "critIncrementBy": 120,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 144,
+                        "buffs": [
+                            {
+                                "stat": "Intelligence",
+                                "incrementBy": 180,
+                                "critIncrementBy": 200,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Chance",
+                                "incrementBy": 180,
+                                "critIncrementBy": 200,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Strength",
+                                "incrementBy": 180,
+                                "critIncrementBy": 200,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Agility",
+                                "incrementBy": 180,
+                                "critIncrementBy": 200,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Contribution",
+                "levels": [
+                    {
+                        "level": 55,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": null,
+                                "maxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 122,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": null,
+                                "maxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 189,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": null,
+                                "maxStacks": 2
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Tribute",
+                "levels": [
+                    {
+                        "level": 90,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": null,
+                                "maxStacks": 2
+                            }
+                        ]
+                    },
+                    {
+                        "level": 157,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": null,
+                                "maxStacks": 2
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Ouginak": [
+            {
+                "name": "Beaten",
+                "levels": [
+                    {
+                        "level": 150,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 75,
+                                "critIncrementBy": 75,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": 150,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "R-Canine",
+                "levels": [
+                    {
+                        "level": 30,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 50,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 97,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 70,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 164,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 100,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Gnaw",
+                "levels": [
+                    {
+                        "level": 185,
+                        "buffs": [
+                            {
+                                "stat": "Pushback Damage",
+                                "incrementBy": 10,
+                                "critIncrementBy": null,
+                                "maxStacks": 10
+                            },
+                            {
+                                "stat": "Pushback Damage",
+                                "incrementBy": 40,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            },
+                            {
+                                "stat": "Power",
+                                "incrementBy": 15,
+                                "critIncrementBy": null,
+                                "maxStacks": 10
+                            },
+                            {
+                                "stat": "Power",
+                                "incrementBy": 80,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Doggedness",
+                "levels": [
+                    {
+                        "level": 195,
+                        "buffs": [
+                            {
+                                "stat": "% Final Damage",
+                                "incrementBy": 20,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Forgelance": [
+            {
+                "name": "Iron Prelude",
+                "levels": [
+                    {
+                        "level": 60,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 70,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 127,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 100,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    },
+                    {
+                        "level": 194,
+                        "buffs": [
+                            {
+                                "stat": "Power",
+                                "incrementBy": 150,
+                                "critIncrementBy": null,
+                                "maxStacks": 1
+                            }
+                        ]
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "name": "Wheel of Fortune",
-        "levels": [
-          {
-            "level": 45,
+    },
+    "items": [
+        {
+            "name": "Crimson Dofus",
+            "buffs": [
+                {
+                    "stat": "% Final Damage",
+                    "incrementBy": 1,
+                    "maxStacks": 10
+                }
+            ]
+        },
+        {
+            "name": "Turquoise Dofus",
+            "buffs": [
+                {
+                    "stat": "% Final Damage",
+                    "incrementBy": 1,
+                    "maxStacks": 10
+                }
+            ]
+        },
+        {
+            "name": "Vulbis Dofus",
+            "buffs": [
+                {
+                    "stat": "% Final Damage",
+                    "incrementBy": 10,
+                    "maxStacks": 1
+                }
+            ]
+        },
+        {
+            "name": "Dofusteuse",
+            "buffs": [
+                {
+                    "stat": "Chance",
+                    "incrementBy": 300,
+                    "maxStacks": 1
+                },
+                {
+                    "stat": "Strength",
+                    "incrementBy": 300,
+                    "maxStacks": 1
+                },
+                {
+                    "stat": "Agility",
+                    "incrementBy": 300,
+                    "maxStacks": 1
+                },
+                {
+                    "stat": "Intelligence",
+                    "incrementBy": 300,
+                    "maxStacks": 1
+                }
+            ]
+        },
+        {
+            "name": "Sparkling Silver Dofus",
+            "buffs": [
+                {
+                    "stat": "% Final Damage",
+                    "incrementBy": 20,
+                    "maxStacks": 1
+                }
+            ]
+        },
+        {
+            "name": "Cloudy Dofus",
+            "buffs": [
+                {
+                    "stat": "% Final Damage",
+                    "incrementBy": 20,
+                    "maxStacks": 1
+                },
+                {
+                    "stat": "% Final Damage",
+                    "incrementBy": -10,
+                    "maxStacks": 1
+                }
+            ]
+        },
+        {
+            "name": "Domakuro",
+            "buffs": [
+                {
+                    "stat": "Damage",
+                    "incrementBy": 8,
+                    "maxStacks": 8
+                }
+            ]
+        },
+        {
+            "name": "Black-Spotted Dofus",
+            "buffs": [
+                {
+                    "stat": "Damage",
+                    "incrementBy": 20,
+                    "maxStacks": 1
+                }
+            ]
+        },
+        {
+            "name": "Sylvan Dofus",
             "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 100,
-                "critIncrementBy": 140,
-                "maxStacks": 1
-              }
+                {
+                    "stat": "Power",
+                    "incrementBy": 8,
+                    "maxStacks": 20
+                }
             ]
-          },
-          {
-            "level": 112,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 175,
-                "critIncrementBy": 245,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 179,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 250,
-                "critIncrementBy": 350,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Bravado",
-        "levels": [
-          {
-            "level": 175,
-            "buffs": [
-              {
-                "stat": "Pushback Damage",
-                "incrementBy": 100,
-                "critIncrementBy": 100,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Ecaflip's Audacity",
-        "levels": [
-          {
-            "level": 200,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": 180,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Eniripsa": [
-      {
-        "name": "Galvanising Word",
-        "levels": [
-          {
-            "level": 140,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 200,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Iop": [
-      {
-        "name": "Divine Sword",
-        "levels": [
-          {
-            "level": 3,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 10,
-                "critIncrementBy": 10,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 69,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 20,
-                "critIncrementBy": 20,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 136,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 30,
-                "critIncrementBy": 30,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Violence",
-        "levels": [
-          {
-            "level": 125,
-            "buffs": [
-              {
-                "stat": "Pushback Damage",
-                "incrementBy": 40,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 192,
-            "buffs": [
-              {
-                "stat": "Pushback Damage",
-                "incrementBy": 50,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Power",
-        "levels": [
-          {
-            "level": 55,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 100,
-                "critIncrementBy": 120,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 122,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 200,
-                "critIncrementBy": 240,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 189,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 300,
-                "critIncrementBy": 350,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Cra": [
-      {
-        "name": "Assailing Arrow",
-        "levels": [
-          {
-            "level": 140,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 100,
-                "critIncrementBy": 100,
-                "maxStacks": 3
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Powerful Shooting",
-        "levels": [
-          {
-            "level": 40,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": 170,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Critical",
-                "incrementBy": 6,
-                "critIncrementBy": 8,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 107,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 200,
-                "critIncrementBy": 230,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Critical",
-                "incrementBy": 8,
-                "critIncrementBy": 10,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 174,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 250,
-                "critIncrementBy": 290,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Critical",
-                "incrementBy": 10,
-                "critIncrementBy": 12,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Bow Skill",
-        "levels": [
-          {
-            "level": 25,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 20,
-                "critIncrementBy": 25,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 92,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 40,
-                "critIncrementBy": 50,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 159,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 60,
-                "critIncrementBy": 70,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Vendetta",
-        "levels": [
-          {
-            "level": 90,
-            "buffs": [
-              {
-                "stat": "Critical",
-                "incrementBy": 10,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 157,
-            "buffs": [
-              {
-                "stat": "Critical",
-                "incrementBy": 15,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Sentinel",
-        "levels": [
-          {
-            "level": 200,
-            "buffs": [
-              {
-                "stat": "% Spell Damage",
-                "incrementBy": 30,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Feca": [
-      {
-        "name": "Natural Attack",
-        "levels": [
-          {
-            "level": 1,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": 20,
-                "critIncrementBy": 30,
-                "maxStacks": 3
-              }
-            ]
-          },
-          {
-            "level": 67,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": 40,
-                "critIncrementBy": 50,
-                "maxStacks": 3
-              }
-            ]
-          },
-          {
-            "level": 133,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": 60,
-                "critIncrementBy": 70,
-                "maxStacks": 3
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Typhoon",
-        "levels": [
-          {
-            "level": 3,
-            "buffs": [
-              {
-                "stat": "Agility",
-                "incrementBy": 20,
-                "critIncrementBy": 30,
-                "maxStacks": 3
-              }
-            ]
-          },
-          {
-            "level": 69,
-            "buffs": [
-              {
-                "stat": "Agility",
-                "incrementBy": 40,
-                "critIncrementBy": 50,
-                "maxStacks": 3
-              }
-            ]
-          },
-          {
-            "level": 136,
-            "buffs": [
-              {
-                "stat": "Agility",
-                "incrementBy": 60,
-                "critIncrementBy": 70,
-                "maxStacks": 3
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Fulminating Glyph",
-        "levels": [
-          {
-            "level": 125,
-            "buffs": [
-              {
-                "stat": "% Melee Damage",
-                "incrementBy": 20,
-                "critIncrementBy": null,
-                "maxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 192,
-            "buffs": [
-              {
-                "stat": "% Melee Damage",
-                "incrementBy": 20,
-                "critIncrementBy": null,
-                "maxStacks": null
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Lifelessness",
-        "levels": [
-          {
-            "level": 130,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": 120,
-                "critIncrementBy": 140,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 197,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": 150,
-                "critIncrementBy": 170,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Cloudy Attack",
-        "levels": [
-          {
-            "level": 25,
-            "buffs": [
-              {
-                "stat": "Chance",
-                "incrementBy": 40,
-                "critIncrementBy": 60,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 92,
-            "buffs": [
-              {
-                "stat": "Chance",
-                "incrementBy": 60,
-                "critIncrementBy": 80,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 159,
-            "buffs": [
-              {
-                "stat": "Chance",
-                "incrementBy": 80,
-                "critIncrementBy": 100,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Bastion",
-        "levels": [
-          {
-            "level": 30,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 80,
-                "critIncrementBy": null,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 97,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 120,
-                "critIncrementBy": null,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 164,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Backlash",
-        "levels": [
-          {
-            "level": 35,
-            "buffs": [
-              {
-                "stat": "Strength",
-                "incrementBy": 40,
-                "critIncrementBy": 60,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 102,
-            "buffs": [
-              {
-                "stat": "Strength",
-                "incrementBy": 60,
-                "critIncrementBy": 80,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 169,
-            "buffs": [
-              {
-                "stat": "Strength",
-                "incrementBy": 80,
-                "critIncrementBy": 100,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Reinforced Protection",
-        "levels": [
-          {
-            "level": 75,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 120,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Power",
-                "incrementBy": 160,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 142,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 200,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Power",
-                "incrementBy": 250,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Sacrier": [
-      {
-        "name": "Mutilation",
-        "levels": [
-          {
-            "level": 10,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 50,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 77,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 100,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 144,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Sadida": [],
-    "Osamodas": [],
-    "Enutrof": [
-      {
-        "name": "Opportuneness",
-        "levels": [
-          {
-            "level": 6,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 50,
-                "critIncrementBy": 55,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 71,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 60,
-                "critIncrementBy": 65,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 138,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 75,
-                "critIncrementBy": 80,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Greed",
-        "levels": [
-          {
-            "level": 40,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 10,
-                "critIncrementBy": 15,
-                "maxStacks": 10
-              }
-            ]
-          },
-          {
-            "level": 107,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 25,
-                "critIncrementBy": 30,
-                "maxStacks": 10
-              }
-            ]
-          },
-          {
-            "level": 174,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 40,
-                "critIncrementBy": 45,
-                "maxStacks": 10
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Golden Age",
-        "levels": [
-          {
-            "level": 160,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 200,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Decadence",
-        "levels": [
-          {
-            "level": 190,
-            "buffs": [
-              {
-                "stat": "% Final Damage",
-                "incrementBy": 10,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Sram": [
-      {
-        "name": "Con",
-        "levels": [
-          {
-            "level": 115,
-            "buffs": [
-              {
-                "stat": "Agility",
-                "incrementBy": 60,
-                "critIncrementBy": 80,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 182,
-            "buffs": [
-              {
-                "stat": "Agility",
-                "incrementBy": 100,
-                "critIncrementBy": 120,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Cut-Throat",
-        "levels": [
-          {
-            "level": 100,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 100,
-                "critIncrementBy": 100,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 167,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": 150,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Larceny",
-        "levels": [
-          {
-            "level": 130,
-            "buffs": [
-              {
-                "stat": "Chance",
-                "incrementBy": 40,
-                "critIncrementBy": 60,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 197,
-            "buffs": [
-              {
-                "stat": "Chance",
-                "incrementBy": 80,
-                "critIncrementBy": 100,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Furrow",
-        "levels": [
-          {
-            "level": 150,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": 80,
-                "critIncrementBy": 100,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Shakedown",
-        "levels": [
-          {
-            "level": 135,
-            "buffs": [
-              {
-                "stat": "Strength",
-                "incrementBy": 100,
-                "critIncrementBy": 120,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Xelor": [],
-    "Pandawa": [
-      {
-        "name": "Inebriation",
-        "levels": [
-          {
-            "level": 140,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 100,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Rogue": [],
-    "Masqueraider": [
-      {
-        "name": "Poltroon Mask",
-        "levels": [
-          {
-            "level": 95,
-            "buffs": [
-              {
-                "stat": "% Ranged Damage",
-                "incrementBy": 7,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 162,
-            "buffs": [
-              {
-                "stat": "% Ranged Damage",
-                "incrementBy": 10,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Psychopath Mask",
-        "levels": [
-          {
-            "level": 6,
-            "buffs": [
-              {
-                "stat": "% Melee Damage",
-                "incrementBy": 7,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 71,
-            "buffs": [
-              {
-                "stat": "% Melee Damage",
-                "incrementBy": 7,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 138,
-            "buffs": [
-              {
-                "stat": "% Melee Damage",
-                "incrementBy": 10,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Furia",
-        "levels": [
-          {
-            "level": 50,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 20,
-                "critIncrementBy": 22,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 117,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 30,
-                "critIncrementBy": 33,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 184,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 40,
-                "critIncrementBy": 44,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Neurosis",
-        "levels": [
-          {
-            "level": 175,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 200,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Bocciara",
-        "levels": [
-          {
-            "level": 160,
-            "buffs": [
-              {
-                "stat": "Pushback Damage",
-                "incrementBy": 80,
-                "critIncrementBy": 80,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Inferno",
-        "levels": [
-          {
-            "level": 35,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 100,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 102,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 169,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 200,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Foggernaut": [
-      {
-        "name": "Evolution",
-        "levels": [
-          {
-            "level": 3,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 70,
-                "critIncrementBy": null,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 69,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 110,
-                "critIncrementBy": null,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 136,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Transition",
-        "levels": [
-          {
-            "level": 110,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 177,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Scaphander",
-        "levels": [
-          {
-            "level": 15,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 12,
-                "critIncrementBy": 16,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Pushback Damage",
-                "incrementBy": 25,
-                "critIncrementBy": 30,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 82,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 19,
-                "critIncrementBy": 23,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Pushback Damage",
-                "incrementBy": 35,
-                "critIncrementBy": 40,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 149,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 25,
-                "critIncrementBy": 30,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Pushback Damage",
-                "incrementBy": 40,
-                "critIncrementBy": 50,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Eliotrope": [
-      {
-        "name": "Focus",
-        "levels": [
-          {
-            "level": 70,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 75,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 137,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 100,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Power",
-                "incrementBy": 200,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Huppermage": [
-      {
-        "name": "Elemental Drain",
-        "levels": [
-          {
-            "level": 10,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": 50,
-                "critIncrementBy": 60,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Chance",
-                "incrementBy": 50,
-                "critIncrementBy": 60,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Strength",
-                "incrementBy": 50,
-                "critIncrementBy": 60,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Agility",
-                "incrementBy": 50,
-                "critIncrementBy": 60,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 77,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": 100,
-                "critIncrementBy": 120,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Chance",
-                "incrementBy": 100,
-                "critIncrementBy": 120,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Strength",
-                "incrementBy": 100,
-                "critIncrementBy": 120,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Agility",
-                "incrementBy": 100,
-                "critIncrementBy": 120,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 144,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": 180,
-                "critIncrementBy": 200,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Chance",
-                "incrementBy": 180,
-                "critIncrementBy": 200,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Strength",
-                "incrementBy": 180,
-                "critIncrementBy": 200,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Agility",
-                "incrementBy": 180,
-                "critIncrementBy": 200,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Contribution",
-        "levels": [
-          {
-            "level": 55,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 122,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 189,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Tribute",
-        "levels": [
-          {
-            "level": 90,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 157,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Ouginak": [
-      {
-        "name": "Beaten",
-        "levels": [
-          {
-            "level": 150,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 75,
-                "critIncrementBy": 75,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": 150,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "R-Canine",
-        "levels": [
-          {
-            "level": 30,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 50,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 97,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 70,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 164,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 100,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Gnaw",
-        "levels": [
-          {
-            "level": 185,
-            "buffs": [
-              {
-                "stat": "Pushback Damage",
-                "incrementBy": 10,
-                "critIncrementBy": null,
-                "maxStacks": 10
-              },
-              {
-                "stat": "Pushback Damage",
-                "incrementBy": 40,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Power",
-                "incrementBy": 15,
-                "critIncrementBy": null,
-                "maxStacks": 10
-              },
-              {
-                "stat": "Power",
-                "incrementBy": 80,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Doggedness",
-        "levels": [
-          {
-            "level": 195,
-            "buffs": [
-              {
-                "stat": "% Final Damage",
-                "incrementBy": 20,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "Forgelance": [
-      {
-        "name": "Iron Prelude",
-        "levels": [
-          {
-            "level": 60,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 70,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 127,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 100,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 194,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      }
+        }
     ]
-  },
-  "items": [
-    {
-      "name": "Crimson Dofus",
-      "buffs": [
-        {
-          "stat": "% Final Damage",
-          "incrementBy": 1,
-          "maxStacks": 10
-        }
-      ]
-    },
-    {
-      "name": "Turquoise Dofus",
-      "buffs": [
-        {
-          "stat": "% Final Damage",
-          "incrementBy": 1,
-          "maxStacks": 10
-        }
-      ]
-    },
-    {
-      "name": "Vulbis Dofus",
-      "buffs": [
-        {
-          "stat": "% Final Damage",
-          "incrementBy": 10,
-          "maxStacks": 1
-        }
-      ]
-    },
-    {
-      "name": "Dofusteuse",
-      "buffs": [
-        {
-          "stat": "Chance",
-          "incrementBy": 300,
-          "maxStacks": 1
-        },
-        {
-          "stat": "Strength",
-          "incrementBy": 300,
-          "maxStacks": 1
-        },
-        {
-          "stat": "Agility",
-          "incrementBy": 300,
-          "maxStacks": 1
-        },
-        {
-          "stat": "Intelligence",
-          "incrementBy": 300,
-          "maxStacks": 1
-        }
-      ]
-    },
-    {
-      "name": "Sparkling Silver Dofus",
-      "buffs": [
-        {
-          "stat": "% Final Damage",
-          "incrementBy": 20,
-          "maxStacks": 1
-        }
-      ]
-    },
-    {
-      "name": "Cloudy Dofus",
-      "buffs": [
-        {
-          "stat": "% Final Damage",
-          "incrementBy": 20,
-          "maxStacks": 1
-        },
-        {
-          "stat": "% Final Damage",
-          "incrementBy": -10,
-          "maxStacks": 1
-        }
-      ]
-    },
-    {
-      "name": "Domakuro",
-      "buffs": [
-        {
-          "stat": "Damage",
-          "incrementBy": 8,
-          "maxStacks": 8
-        }
-      ]
-    },
-    {
-      "name": "Black-Spotted Dofus",
-      "buffs": [
-        {
-          "stat": "Damage",
-          "incrementBy": 20,
-          "maxStacks": 1
-        }
-      ]
-    },
-    {
-      "name": "Sylvan Dofus",
-      "buffs": [
-        {
-          "stat": "Power",
-          "incrementBy": 8,
-          "maxStacks": 20
-        }
-      ]
-    }
-  ]
 }
