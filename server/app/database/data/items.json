@@ -3971,7 +3971,7 @@
       {
         "stat": "Strength",
         "minStat": -1,
-        "maxStat": 10
+        "maxStat": -10
       }
     ],
     "customStats": {},
@@ -4200,12 +4200,12 @@
       {
         "stat": "Intelligence",
         "minStat": -1,
-        "maxStat": 300
+        "maxStat": -300
       },
       {
         "stat": "Strength",
         "minStat": -1,
-        "maxStat": 300
+        "maxStat": -300
       },
       {
         "stat": "Vitality",
@@ -4215,12 +4215,12 @@
       {
         "stat": "Chance",
         "minStat": -1,
-        "maxStat": 300
+        "maxStat": -300
       },
       {
         "stat": "Agility",
         "minStat": -1,
-        "maxStat": 300
+        "maxStat": -300
       }
     ],
     "customStats": {},
@@ -6695,7 +6695,7 @@
       {
         "stat": "Agility",
         "minStat": -21,
-        "maxStat": 30
+        "maxStat": -30
       }
     ],
     "customStats": {},
@@ -12703,22 +12703,22 @@
       {
         "stat": "Intelligence",
         "minStat": -21,
-        "maxStat": 50
+        "maxStat": -50
       },
       {
         "stat": "Agility",
         "minStat": -21,
-        "maxStat": 50
+        "maxStat": -50
       },
       {
         "stat": "Chance",
         "minStat": -21,
-        "maxStat": 50
+        "maxStat": -50
       },
       {
         "stat": "Strength",
         "minStat": -21,
-        "maxStat": 50
+        "maxStat": -50
       },
       {
         "stat": "MP",
@@ -14647,22 +14647,22 @@
       {
         "stat": "Agility",
         "minStat": -101,
-        "maxStat": 200
+        "maxStat": -200
       },
       {
         "stat": "Chance",
         "minStat": -101,
-        "maxStat": 200
+        "maxStat": -200
       },
       {
         "stat": "Strength",
         "minStat": -101,
-        "maxStat": 200
+        "maxStat": -200
       },
       {
         "stat": "Intelligence",
         "minStat": -101,
-        "maxStat": 200
+        "maxStat": -200
       }
     ],
     "customStats": {},
@@ -36653,22 +36653,22 @@
       {
         "stat": "Intelligence",
         "minStat": -11,
-        "maxStat": 30
+        "maxStat": -30
       },
       {
         "stat": "Agility",
         "minStat": -11,
-        "maxStat": 30
+        "maxStat": -30
       },
       {
         "stat": "Chance",
         "minStat": -11,
-        "maxStat": 30
+        "maxStat": -30
       },
       {
         "stat": "Strength",
         "minStat": -11,
-        "maxStat": 30
+        "maxStat": -30
       },
       {
         "stat": "Prospecting",
@@ -38231,7 +38231,7 @@
       {
         "stat": "Agility",
         "minStat": -21,
-        "maxStat": 30
+        "maxStat": -30
       },
       {
         "stat": "Damage",
@@ -38546,7 +38546,7 @@
       {
         "stat": "Vitality",
         "minStat": -101,
-        "maxStat": 150
+        "maxStat": -150
       },
       {
         "stat": "Critical",
@@ -38623,7 +38623,7 @@
       {
         "stat": "Vitality",
         "minStat": -101,
-        "maxStat": 150
+        "maxStat": -150
       },
       {
         "stat": "Critical",
@@ -38700,7 +38700,7 @@
       {
         "stat": "Vitality",
         "minStat": -101,
-        "maxStat": 150
+        "maxStat": -150
       },
       {
         "stat": "Critical",
@@ -38777,7 +38777,7 @@
       {
         "stat": "Vitality",
         "minStat": -101,
-        "maxStat": 150
+        "maxStat": -150
       },
       {
         "stat": "Critical",
@@ -38854,12 +38854,12 @@
       {
         "stat": "Agility",
         "minStat": -26,
-        "maxStat": 40
+        "maxStat": -40
       },
       {
         "stat": "Intelligence",
         "minStat": -26,
-        "maxStat": 40
+        "maxStat": -40
       },
       {
         "stat": "Vitality",
@@ -71214,7 +71214,7 @@
       {
         "stat": "Vitality",
         "minStat": -251,
-        "maxStat": 300
+        "maxStat": -300
       },
       {
         "stat": "Wisdom",
@@ -101996,7 +101996,7 @@
       {
         "stat": "Vitality",
         "minStat": -101,
-        "maxStat": 150
+        "maxStat": -150
       },
       {
         "stat": "Critical",

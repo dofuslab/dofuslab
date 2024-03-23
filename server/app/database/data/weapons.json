@@ -875,7 +875,7 @@
       {
         "stat": "Strength",
         "minStat": -11,
-        "maxStat": 40
+        "maxStat": -40
       },
       {
         "stat": "Wisdom",
@@ -1261,7 +1261,7 @@
       {
         "stat": "Strength",
         "minStat": -1,
-        "maxStat": 20
+        "maxStat": -20
       }
     ],
     "weaponStats": {
@@ -1422,7 +1422,7 @@
       {
         "stat": "Vitality",
         "minStat": -11,
-        "maxStat": 20
+        "maxStat": -20
       },
       {
         "stat": "Agility",
@@ -1655,7 +1655,7 @@
       {
         "stat": "Strength",
         "minStat": -11,
-        "maxStat": 20
+        "maxStat": -20
       },
       {
         "stat": "Agility",
@@ -3767,7 +3767,7 @@
       {
         "stat": "Intelligence",
         "minStat": -1,
-        "maxStat": 20
+        "maxStat": -20
       }
     ],
     "weaponStats": {
@@ -4194,7 +4194,7 @@
       {
         "stat": "Vitality",
         "minStat": -6,
-        "maxStat": 15
+        "maxStat": -15
       }
     ],
     "weaponStats": {
@@ -4796,7 +4796,7 @@
       {
         "stat": "Intelligence",
         "minStat": -1,
-        "maxStat": 20
+        "maxStat": -20
       }
     ],
     "weaponStats": {
@@ -5282,7 +5282,7 @@
       {
         "stat": "Agility",
         "minStat": -1,
-        "maxStat": 10
+        "maxStat": -10
       }
     ],
     "weaponStats": {
@@ -9406,7 +9406,7 @@
       {
         "stat": "Agility",
         "minStat": -1,
-        "maxStat": 30
+        "maxStat": -30
       },
       {
         "stat": "Wisdom",
@@ -9488,6 +9488,11 @@
       "weapon_effects": [
         {
           "stat": "Air damage",
+          "minStat": 12,
+          "maxStat": 42
+        },
+        {
+          "stat": "HP restored",
           "minStat": 12,
           "maxStat": 42
         }
@@ -10794,7 +10799,7 @@
       {
         "stat": "Strength",
         "minStat": -11,
-        "maxStat": 20
+        "maxStat": -20
       }
     ],
     "weaponStats": {
@@ -17671,6 +17676,11 @@
           "stat": "Fire steal",
           "minStat": 3,
           "maxStat": 7
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 7,
+          "maxStat": 11
         }
       ]
     },
@@ -18245,6 +18255,11 @@
           "stat": "Neutral damage",
           "minStat": 13,
           "maxStat": 22
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 13,
+          "maxStat": 22
         }
       ]
     },
@@ -18410,6 +18425,11 @@
           "stat": "Neutral damage",
           "minStat": 13,
           "maxStat": 27
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 9,
+          "maxStat": 23
         }
       ]
     },
@@ -19589,6 +19609,11 @@
           "stat": "Neutral damage",
           "minStat": 21,
           "maxStat": 40
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 1,
+          "maxStat": 80
         }
       ]
     },
@@ -21437,6 +21462,11 @@
       "critBonusDamage": 15,
       "weapon_effects": [
         {
+          "stat": "HP restored",
+          "minStat": 1,
+          "maxStat": 10
+        },
+        {
           "stat": "Fire damage",
           "minStat": 1,
           "maxStat": 30
@@ -21492,7 +21522,13 @@
       "maxRange": 1,
       "baseCritChance": 30,
       "critBonusDamage": 5,
-      "weapon_effects": []
+      "weapon_effects": [
+        {
+          "stat": "HP restored",
+          "minStat": 11,
+          "maxStat": 15
+        }
+      ]
     },
     "customStats": {},
     "conditions": {
@@ -21632,7 +21668,12 @@
         {
           "stat": "AP",
           "minStat": -1,
-          "maxStat": 2
+          "maxStat": -2
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 8,
+          "maxStat": 12
         }
       ]
     },
@@ -21845,7 +21886,7 @@
         {
           "stat": "AP",
           "minStat": -1,
-          "maxStat": 2
+          "maxStat": -2
         }
       ]
     },
@@ -21916,6 +21957,11 @@
           "stat": "Neutral damage",
           "minStat": 1,
           "maxStat": 20
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 1,
+          "maxStat": 80
         }
       ]
     },
@@ -23112,6 +23158,11 @@
           "maxStat": 15
         },
         {
+          "stat": "HP restored",
+          "minStat": 1,
+          "maxStat": 100
+        },
+        {
           "stat": "Fire steal",
           "minStat": 1,
           "maxStat": 10
@@ -23502,6 +23553,11 @@
           "stat": "Neutral damage",
           "minStat": 11,
           "maxStat": 35
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 1,
+          "maxStat": 100
         }
       ]
     },
@@ -23779,7 +23835,7 @@
         {
           "stat": "AP",
           "minStat": -2,
-          "maxStat": 3
+          "maxStat": -3
         }
       ]
     },
@@ -26275,7 +26331,7 @@
         {
           "stat": "AP",
           "minStat": -1,
-          "maxStat": 2
+          "maxStat": -2
         },
         {
           "stat": "Air steal",
@@ -27782,7 +27838,13 @@
       "maxRange": 4,
       "baseCritChance": 25,
       "critBonusDamage": 10,
-      "weapon_effects": []
+      "weapon_effects": [
+        {
+          "stat": "HP restored",
+          "minStat": 11,
+          "maxStat": 30
+        }
+      ]
     },
     "customStats": {},
     "conditions": {
@@ -29552,7 +29614,7 @@
       {
         "stat": "Strength",
         "minStat": -21,
-        "maxStat": 40
+        "maxStat": -40
       },
       {
         "stat": "Vitality",
@@ -29842,17 +29904,17 @@
       {
         "stat": "Intelligence",
         "minStat": -31,
-        "maxStat": 50
+        "maxStat": -50
       },
       {
         "stat": "Chance",
         "minStat": -31,
-        "maxStat": 50
+        "maxStat": -50
       },
       {
         "stat": "Agility",
         "minStat": -31,
-        "maxStat": 50
+        "maxStat": -50
       },
       {
         "stat": "% Fire Resistance",
@@ -32842,6 +32904,11 @@
           "stat": "Water steal",
           "minStat": 3,
           "maxStat": 6
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 1,
+          "maxStat": 20
         },
         {
           "stat": "Fire steal",
@@ -38993,6 +39060,11 @@
           "stat": "Neutral damage",
           "minStat": 28,
           "maxStat": 44
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 51,
+          "maxStat": 100
         }
       ]
     },
@@ -40575,6 +40647,26 @@
           "stat": "Fire steal",
           "minStat": 11,
           "maxStat": 20
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 8,
+          "maxStat": 12
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 8,
+          "maxStat": 12
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 8,
+          "maxStat": 12
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 8,
+          "maxStat": 12
         }
       ]
     },
@@ -42095,22 +42187,22 @@
       {
         "stat": "Strength",
         "minStat": -71,
-        "maxStat": 100
+        "maxStat": -100
       },
       {
         "stat": "Intelligence",
         "minStat": -71,
-        "maxStat": 100
+        "maxStat": -100
       },
       {
         "stat": "Chance",
         "minStat": -71,
-        "maxStat": 100
+        "maxStat": -100
       },
       {
         "stat": "Agility",
         "minStat": -71,
-        "maxStat": 100
+        "maxStat": -100
       },
       {
         "stat": "Wisdom",
@@ -44711,6 +44803,16 @@
           "stat": "Fire steal",
           "minStat": 9,
           "maxStat": 12
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 12,
+          "maxStat": 17
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 12,
+          "maxStat": 17
         }
       ]
     },
@@ -44808,6 +44910,16 @@
           "stat": "Fire steal",
           "minStat": 11,
           "maxStat": 15
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 26,
+          "maxStat": 30
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 26,
+          "maxStat": 30
         }
       ]
     },
@@ -46460,7 +46572,13 @@
       "maxRange": 1,
       "baseCritChance": 5,
       "critBonusDamage": 1,
-      "weapon_effects": []
+      "weapon_effects": [
+        {
+          "stat": "HP restored",
+          "minStat": 11,
+          "maxStat": 15
+        }
+      ]
     },
     "customStats": {},
     "conditions": {
@@ -53139,6 +53257,21 @@
           "stat": "Neutral damage",
           "minStat": 15,
           "maxStat": 18
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 15,
+          "maxStat": 18
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 15,
+          "maxStat": 18
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 15,
+          "maxStat": 18
         }
       ]
     },
@@ -53688,7 +53821,28 @@
       "maxRange": 2,
       "baseCritChance": 10,
       "critBonusDamage": 5,
-      "weapon_effects": []
+      "weapon_effects": [
+        {
+          "stat": "HP restored",
+          "minStat": 7,
+          "maxStat": 10
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 7,
+          "maxStat": 10
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 7,
+          "maxStat": 10
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 7,
+          "maxStat": 10
+        }
+      ]
     },
     "customStats": {},
     "conditions": {
@@ -54354,7 +54508,18 @@
       "maxRange": 1,
       "baseCritChance": 0,
       "critBonusDamage": 0,
-      "weapon_effects": []
+      "weapon_effects": [
+        {
+          "stat": "HP restored",
+          "minStat": 8,
+          "maxStat": 12
+        },
+        {
+          "stat": "HP restored",
+          "minStat": 8,
+          "maxStat": 12
+        }
+      ]
     },
     "customStats": {},
     "conditions": {
