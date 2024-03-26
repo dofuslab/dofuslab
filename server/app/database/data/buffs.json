@@ -48,7 +48,7 @@
               {
                 "stat": "Power",
                 "incrementBy": 175,
-                "critIncrementBy": 245,
+                "critIncrementBy": 225,
                 "maxStacks": 1
               }
             ]
@@ -59,7 +59,7 @@
               {
                 "stat": "Power",
                 "incrementBy": 250,
-                "critIncrementBy": 350,
+                "critIncrementBy": 300,
                 "maxStacks": 1
               }
             ]
@@ -911,73 +911,7 @@
         ]
       }
     ],
-    "Foggernaut": [
-      {
-        "name": "Evolution",
-        "levels": [
-          {
-            "level": 3,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 50,
-                "critIncrementBy": null,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 69,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 100,
-                "critIncrementBy": null,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 136,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Hypertension",
-        "levels": [
-          {
-            "level": 110,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 177,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 150,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      }
-    ],
+    "Foggernaut": [],
     "Eliotrope": [
       {
         "name": "Focus",
