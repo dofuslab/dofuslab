@@ -379,168 +379,16 @@
     ],
     "Feca": [
       {
-        "name": "Natural Attack",
+        "name": "Pastureland",
         "levels": [
           {
-            "level": 1,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": 20,
-                "critIncrementBy": 30,
-                "maxStacks": 3
-              }
-            ]
-          },
-          {
-            "level": 67,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": 40,
-                "critIncrementBy": 50,
-                "maxStacks": 3
-              }
-            ]
-          },
-          {
-            "level": 133,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": 60,
-                "critIncrementBy": 70,
-                "maxStacks": 3
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Typhoon",
-        "levels": [
-          {
-            "level": 3,
-            "buffs": [
-              {
-                "stat": "Agility",
-                "incrementBy": 20,
-                "critIncrementBy": 30,
-                "maxStacks": 3
-              }
-            ]
-          },
-          {
-            "level": 69,
-            "buffs": [
-              {
-                "stat": "Agility",
-                "incrementBy": 40,
-                "critIncrementBy": 50,
-                "maxStacks": 3
-              }
-            ]
-          },
-          {
-            "level": 136,
-            "buffs": [
-              {
-                "stat": "Agility",
-                "incrementBy": 60,
-                "critIncrementBy": 70,
-                "maxStacks": 3
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Fulminating Glyph",
-        "levels": [
-          {
-            "level": 125,
+            "level": 170,
             "buffs": [
               {
                 "stat": "% Melee Damage",
-                "incrementBy": 20,
+                "incrementBy": 15,
                 "critIncrementBy": null,
                 "maxStacks": null
-              }
-            ]
-          },
-          {
-            "level": 192,
-            "buffs": [
-              {
-                "stat": "% Melee Damage",
-                "incrementBy": 20,
-                "critIncrementBy": null,
-                "maxStacks": null
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Lifelessness",
-        "levels": [
-          {
-            "level": 130,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": 120,
-                "critIncrementBy": 140,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 197,
-            "buffs": [
-              {
-                "stat": "Intelligence",
-                "incrementBy": 150,
-                "critIncrementBy": 170,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Cloudy Attack",
-        "levels": [
-          {
-            "level": 25,
-            "buffs": [
-              {
-                "stat": "Chance",
-                "incrementBy": 40,
-                "critIncrementBy": 60,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 92,
-            "buffs": [
-              {
-                "stat": "Chance",
-                "incrementBy": 60,
-                "critIncrementBy": 80,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 159,
-            "buffs": [
-              {
-                "stat": "Chance",
-                "incrementBy": 80,
-                "critIncrementBy": 100,
-                "maxStacks": 2
               }
             ]
           }
@@ -550,7 +398,7 @@
         "name": "Bastion",
         "levels": [
           {
-            "level": 30,
+            "level": 25,
             "buffs": [
               {
                 "stat": "Power",
@@ -561,7 +409,7 @@
             ]
           },
           {
-            "level": 97,
+            "level": 92,
             "buffs": [
               {
                 "stat": "Power",
@@ -572,50 +420,12 @@
             ]
           },
           {
-            "level": 164,
+            "level": 159,
             "buffs": [
               {
                 "stat": "Power",
                 "incrementBy": 150,
                 "critIncrementBy": null,
-                "maxStacks": 2
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Backlash",
-        "levels": [
-          {
-            "level": 35,
-            "buffs": [
-              {
-                "stat": "Strength",
-                "incrementBy": 40,
-                "critIncrementBy": 60,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 102,
-            "buffs": [
-              {
-                "stat": "Strength",
-                "incrementBy": 60,
-                "critIncrementBy": 80,
-                "maxStacks": 2
-              }
-            ]
-          },
-          {
-            "level": 169,
-            "buffs": [
-              {
-                "stat": "Strength",
-                "incrementBy": 80,
-                "critIncrementBy": 100,
                 "maxStacks": 2
               }
             ]
@@ -626,34 +436,11 @@
         "name": "Reinforced Protection",
         "levels": [
           {
-            "level": 75,
+            "level": 200,
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 120,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Power",
-                "incrementBy": 160,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 142,
-            "buffs": [
-              {
-                "stat": "Power",
-                "incrementBy": 200,
-                "critIncrementBy": null,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Power",
-                "incrementBy": 250,
+                "incrementBy": 400,
                 "critIncrementBy": null,
                 "maxStacks": 1
               }
