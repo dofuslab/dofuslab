@@ -920,7 +920,7 @@
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 70,
+                "incrementBy": 50,
                 "critIncrementBy": null,
                 "maxStacks": 2
               }
@@ -931,7 +931,7 @@
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 110,
+                "incrementBy": 100,
                 "critIncrementBy": null,
                 "maxStacks": 2
               }
@@ -951,7 +951,7 @@
         ]
       },
       {
-        "name": "Transition",
+        "name": "Hypertension",
         "levels": [
           {
             "level": 110,
@@ -971,62 +971,6 @@
                 "stat": "Power",
                 "incrementBy": 150,
                 "critIncrementBy": null,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Scaphander",
-        "levels": [
-          {
-            "level": 15,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 12,
-                "critIncrementBy": 16,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Pushback Damage",
-                "incrementBy": 25,
-                "critIncrementBy": 30,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 82,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 19,
-                "critIncrementBy": 23,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Pushback Damage",
-                "incrementBy": 35,
-                "critIncrementBy": 40,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 149,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 25,
-                "critIncrementBy": 30,
-                "maxStacks": 1
-              },
-              {
-                "stat": "Pushback Damage",
-                "incrementBy": 40,
-                "critIncrementBy": 50,
                 "maxStacks": 1
               }
             ]
