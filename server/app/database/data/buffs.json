@@ -1233,7 +1233,7 @@
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 70,
+                "incrementBy": 100,
                 "critIncrementBy": null,
                 "maxStacks": 1
               }
@@ -1244,7 +1244,7 @@
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 100,
+                "incrementBy": 150,
                 "critIncrementBy": null,
                 "maxStacks": 1
               }
@@ -1255,7 +1255,7 @@
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 150,
+                "incrementBy": 200,
                 "critIncrementBy": null,
                 "maxStacks": 1
               }
