@@ -606,23 +606,34 @@
         "name": "Con",
         "levels": [
           {
-            "level": 115,
+            "level": 45,
             "buffs": [
               {
                 "stat": "Agility",
-                "incrementBy": 60,
-                "critIncrementBy": 80,
+                "incrementBy": 40,
+                "critIncrementBy": 40,
                 "maxStacks": 2
               }
             ]
           },
           {
-            "level": 182,
+            "level": 112,
+            "buffs": [
+              {
+                "stat": "Agility",
+                "incrementBy": 60,
+                "critIncrementBy": 60,
+                "maxStacks": 2
+              }
+            ]
+          },
+          {
+            "level": 179,
             "buffs": [
               {
                 "stat": "Agility",
                 "incrementBy": 100,
-                "critIncrementBy": 120,
+                "critIncrementBy": 100,
                 "maxStacks": 2
               }
             ]
@@ -660,22 +671,33 @@
         "name": "Larceny",
         "levels": [
           {
-            "level": 130,
+            "level": 50,
             "buffs": [
               {
                 "stat": "Chance",
                 "incrementBy": 40,
+                "critIncrementBy": 40,
+                "maxStacks": 2
+              }
+            ]
+          },
+          {
+            "level": 117,
+            "buffs": [
+              {
+                "stat": "Chance",
+                "incrementBy": 60,
                 "critIncrementBy": 60,
                 "maxStacks": 2
               }
             ]
           },
           {
-            "level": 197,
+            "level": 184,
             "buffs": [
               {
                 "stat": "Chance",
-                "incrementBy": 80,
+                "incrementBy": 100,
                 "critIncrementBy": 100,
                 "maxStacks": 2
               }
@@ -687,11 +709,33 @@
         "name": "Furrow",
         "levels": [
           {
-            "level": 150,
+            "level": 55,
             "buffs": [
               {
                 "stat": "Intelligence",
-                "incrementBy": 80,
+                "incrementBy": 40,
+                "critIncrementBy": 40,
+                "maxStacks": 2
+              }
+            ]
+          },
+          {
+            "level": 122,
+            "buffs": [
+              {
+                "stat": "Intelligence",
+                "incrementBy": 60,
+                "critIncrementBy": 60,
+                "maxStacks": 2
+              }
+            ]
+          },
+          {
+            "level": 189,
+            "buffs": [
+              {
+                "stat": "Intelligence",
+                "incrementBy": 100,
                 "critIncrementBy": 100,
                 "maxStacks": 2
               }
@@ -703,12 +747,34 @@
         "name": "Shakedown",
         "levels": [
           {
-            "level": 135,
+            "level": 40,
+            "buffs": [
+              {
+                "stat": "Strength",
+                "incrementBy": 40,
+                "critIncrementBy": 40,
+                "maxStacks": 2
+              }
+            ]
+          },
+          {
+            "level": 107,
+            "buffs": [
+              {
+                "stat": "Strength",
+                "incrementBy": 60,
+                "critIncrementBy": 60,
+                "maxStacks": 2
+              }
+            ]
+          },
+          {
+            "level": 174,
             "buffs": [
               {
                 "stat": "Strength",
                 "incrementBy": 100,
-                "critIncrementBy": 120,
+                "critIncrementBy": 100,
                 "maxStacks": 2
               }
             ]
