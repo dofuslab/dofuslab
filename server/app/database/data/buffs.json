@@ -962,25 +962,25 @@
             "buffs": [
               {
                 "stat": "Intelligence",
-                "incrementBy": 50,
+                "incrementBy": 60,
                 "critIncrementBy": 60,
                 "maxStacks": 1
               },
               {
                 "stat": "Chance",
-                "incrementBy": 50,
+                "incrementBy": 60,
                 "critIncrementBy": 60,
                 "maxStacks": 1
               },
               {
                 "stat": "Strength",
-                "incrementBy": 50,
+                "incrementBy": 60,
                 "critIncrementBy": 60,
                 "maxStacks": 1
               },
               {
                 "stat": "Agility",
-                "incrementBy": 50,
+                "incrementBy": 60,
                 "critIncrementBy": 60,
                 "maxStacks": 1
               }
@@ -991,25 +991,25 @@
             "buffs": [
               {
                 "stat": "Intelligence",
-                "incrementBy": 100,
+                "incrementBy": 120,
                 "critIncrementBy": 120,
                 "maxStacks": 1
               },
               {
                 "stat": "Chance",
-                "incrementBy": 100,
+                "incrementBy": 120,
                 "critIncrementBy": 120,
                 "maxStacks": 1
               },
               {
                 "stat": "Strength",
-                "incrementBy": 100,
+                "incrementBy": 120,
                 "critIncrementBy": 120,
                 "maxStacks": 1
               },
               {
                 "stat": "Agility",
-                "incrementBy": 100,
+                "incrementBy": 120,
                 "critIncrementBy": 120,
                 "maxStacks": 1
               }
@@ -1020,25 +1020,25 @@
             "buffs": [
               {
                 "stat": "Intelligence",
-                "incrementBy": 180,
+                "incrementBy": 200,
                 "critIncrementBy": 200,
                 "maxStacks": 1
               },
               {
                 "stat": "Chance",
-                "incrementBy": 180,
+                "incrementBy": 200,
                 "critIncrementBy": 200,
                 "maxStacks": 1
               },
               {
                 "stat": "Strength",
-                "incrementBy": 180,
+                "incrementBy": 200,
                 "critIncrementBy": 200,
                 "maxStacks": 1
               },
               {
                 "stat": "Agility",
-                "incrementBy": 180,
+                "incrementBy": 200,
                 "critIncrementBy": 200,
                 "maxStacks": 1
               }
