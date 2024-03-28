@@ -509,6 +509,33 @@
             ]
           }
         ]
+      },
+      {
+        "name": "Berserk",
+        "levels": [
+          {
+            "level": 85,
+            "buffs": [
+              {
+                "stat": "% Spell Damage",
+                "incrementBy": 7,
+                "critIncrementBy": null,
+                "maxStacks": 1
+              }
+            ]
+          },
+          {
+            "level": 152,
+            "buffs": [
+              {
+                "stat": "% Spell Damage",
+                "incrementBy": 10,
+                "critIncrementBy": null,
+                "maxStacks": 1
+              }
+            ]
+          }
+        ]
       }
     ],
     "Sadida": [],
