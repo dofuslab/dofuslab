@@ -224,23 +224,83 @@
     ],
     "Cra": [
       {
-        "name": "Assailing Arrow",
+        "name": "Absolute Acuteness",
         "levels": [
           {
-            "level": 140,
+            "level": 120,
+            "buffs": [
+              {
+                "stat": "Critical",
+                "incrementBy": 10,
+                "critIncrementBy": 12,
+                "maxStacks": 1
+              }
+            ]
+          },
+          {
+            "level": 187,
             "buffs": [
               {
                 "stat": "Power",
-                "incrementBy": 100,
-                "critIncrementBy": 100,
-                "maxStacks": 3
+                "incrementBy": 10,
+                "critIncrementBy": 12,
+                "maxStacks": 1
               }
             ]
           }
         ]
       },
       {
-        "name": "Powerful Shooting",
+        "name": "Assailing Arrow",
+        "levels": [
+          {
+            "level": 125,
+            "buffs": [
+              {
+                "stat": "Power",
+                "incrementBy": 100,
+                "critIncrementBy": 100,
+                "maxStacks": 5
+              }
+            ]
+          },
+          {
+            "level": 192,
+            "buffs": [
+              {
+                "stat": "Power",
+                "incrementBy": 100,
+                "critIncrementBy": 100,
+                "maxStacks": 5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Piercing Shots",
+        "levels": [
+          {
+            "level": 150,
+            "buffs": [
+              {
+                "stat": "Critical",
+                "incrementBy": 15,
+                "critIncrementBy": 17,
+                "maxStacks": 1
+              },
+              {
+                "stat": "Damage",
+                "incrementBy": 60,
+                "critIncrementBy": 70,
+                "maxStacks": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Powerful Shots",
         "levels": [
           {
             "level": 40,
@@ -252,9 +312,9 @@
                 "maxStacks": 1
               },
               {
-                "stat": "Critical",
-                "incrementBy": 6,
-                "critIncrementBy": 8,
+                "stat": "Pushback Damage",
+                "incrementBy": 40,
+                "critIncrementBy": 70,
                 "maxStacks": 1
               }
             ]
@@ -269,9 +329,9 @@
                 "maxStacks": 1
               },
               {
-                "stat": "Critical",
-                "incrementBy": 8,
-                "critIncrementBy": 10,
+                "stat": "Pushback Damage",
+                "incrementBy": 80,
+                "critIncrementBy": 120,
                 "maxStacks": 1
               }
             ]
@@ -286,47 +346,9 @@
                 "maxStacks": 1
               },
               {
-                "stat": "Critical",
-                "incrementBy": 10,
-                "critIncrementBy": 12,
-                "maxStacks": 1
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Bow Skill",
-        "levels": [
-          {
-            "level": 25,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 20,
-                "critIncrementBy": 25,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 92,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 40,
-                "critIncrementBy": 50,
-                "maxStacks": 1
-              }
-            ]
-          },
-          {
-            "level": 159,
-            "buffs": [
-              {
-                "stat": "Damage",
-                "incrementBy": 60,
-                "critIncrementBy": 70,
+                "stat": "Pushback Damage",
+                "incrementBy": 100,
+                "critIncrementBy": 150,
                 "maxStacks": 1
               }
             ]
@@ -341,7 +363,7 @@
             "buffs": [
               {
                 "stat": "Critical",
-                "incrementBy": 10,
+                "incrementBy": 15,
                 "critIncrementBy": null,
                 "maxStacks": 1
               }
@@ -368,7 +390,7 @@
             "buffs": [
               {
                 "stat": "% Spell Damage",
-                "incrementBy": 30,
+                "incrementBy": 20,
                 "critIncrementBy": null,
                 "maxStacks": 1
               }
