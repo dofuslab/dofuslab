@@ -3970,8 +3970,8 @@
       },
       {
         "stat": "Strength",
-        "minStat": -1,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -1
       }
     ],
     "customStats": {},
@@ -4199,13 +4199,13 @@
       },
       {
         "stat": "Intelligence",
-        "minStat": -1,
-        "maxStat": -300
+        "minStat": -300,
+        "maxStat": -1
       },
       {
         "stat": "Strength",
-        "minStat": -1,
-        "maxStat": -300
+        "minStat": -300,
+        "maxStat": -1
       },
       {
         "stat": "Vitality",
@@ -4214,13 +4214,13 @@
       },
       {
         "stat": "Chance",
-        "minStat": -1,
-        "maxStat": -300
+        "minStat": -300,
+        "maxStat": -1
       },
       {
         "stat": "Agility",
-        "minStat": -1,
-        "maxStat": -300
+        "minStat": -300,
+        "maxStat": -1
       }
     ],
     "customStats": {},
@@ -6694,8 +6694,8 @@
       },
       {
         "stat": "Agility",
-        "minStat": -21,
-        "maxStat": -30
+        "minStat": -30,
+        "maxStat": -21
       }
     ],
     "customStats": {},
@@ -12702,23 +12702,23 @@
     "stats": [
       {
         "stat": "Intelligence",
-        "minStat": -21,
-        "maxStat": -50
+        "minStat": -50,
+        "maxStat": -21
       },
       {
         "stat": "Agility",
-        "minStat": -21,
-        "maxStat": -50
+        "minStat": -50,
+        "maxStat": -21
       },
       {
         "stat": "Chance",
-        "minStat": -21,
-        "maxStat": -50
+        "minStat": -50,
+        "maxStat": -21
       },
       {
         "stat": "Strength",
-        "minStat": -21,
-        "maxStat": -50
+        "minStat": -50,
+        "maxStat": -21
       },
       {
         "stat": "MP",
@@ -14646,23 +14646,23 @@
       },
       {
         "stat": "Agility",
-        "minStat": -101,
-        "maxStat": -200
+        "minStat": -200,
+        "maxStat": -101
       },
       {
         "stat": "Chance",
-        "minStat": -101,
-        "maxStat": -200
+        "minStat": -200,
+        "maxStat": -101
       },
       {
         "stat": "Strength",
-        "minStat": -101,
-        "maxStat": -200
+        "minStat": -200,
+        "maxStat": -101
       },
       {
         "stat": "Intelligence",
-        "minStat": -101,
-        "maxStat": -200
+        "minStat": -200,
+        "maxStat": -101
       }
     ],
     "customStats": {},
@@ -16771,8 +16771,8 @@
       },
       {
         "stat": "% Fire Resistance",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "% Water Resistance",
@@ -21526,8 +21526,8 @@
       },
       {
         "stat": "Prospecting",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "% Fire Resistance",
@@ -22446,8 +22446,8 @@
       },
       {
         "stat": "% Air Resistance",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       }
     ],
     "customStats": {
@@ -24081,8 +24081,8 @@
       },
       {
         "stat": "% Water Resistance",
-        "minStat": -6,
-        "maxStat": -8
+        "minStat": -8,
+        "maxStat": -6
       },
       {
         "stat": "Initiative",
@@ -25083,8 +25083,8 @@
       },
       {
         "stat": "% Earth Resistance",
-        "minStat": -6,
-        "maxStat": -8
+        "minStat": -8,
+        "maxStat": -6
       },
       {
         "stat": "% Air Resistance",
@@ -28166,13 +28166,13 @@
       },
       {
         "stat": "% Water Resistance",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "% Earth Resistance",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       }
     ],
     "customStats": {},
@@ -28397,8 +28397,8 @@
       },
       {
         "stat": "% Earth Resistance",
-        "minStat": -4,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -4
       },
       {
         "stat": "Initiative",
@@ -28561,8 +28561,8 @@
       },
       {
         "stat": "% Air Resistance",
-        "minStat": -4,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -4
       }
     ],
     "customStats": {},
@@ -29174,8 +29174,8 @@
       },
       {
         "stat": "% Air Resistance",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       }
     ],
     "customStats": {},
@@ -34027,7 +34027,7 @@
         "Reduces the Slow Down Arrow spell's AP cost by 1",
         "Reduces the Repulsive Shot spell's AP cost by 1",
         "Reduces the Burning Arrows spell's AP cost by 1",
-        "Reduces the Erosive Arrow spell's AP cost by 1",
+        "Reduces the Lashing Arrow spell's AP cost by 1",
         "Reduces the Covering Fire spell's AP cost by 1"
       ],
       "fr": [
@@ -34103,52 +34103,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Reduces the Barricade spell's AP cost by 1",
-        "Increases the Natural Attack spell's maximum range by 2",
-        "Reduces the Aggressive Glyph spell's AP cost by 1",
-        "Blindness no longer requires a line of sight",
-        "Natural Attraction is no longer linear",
-        "Reduces the Pavise spell's cooldown period by 1"
+        "Drowsiness no longer requires a line of sight",
+        "Reduces the Manœuvre spell's AP cost by 1",
+        "Bubble no longer requires a line of sight",
+        "Reduces the Cowbell spell's AP cost by 1",
+        "Increases the Rampart spell's maximum range by 3",
+        "Makes the Fortification spell's range modifiable",
+        "Barricade no longer requires a line of sight",
+        "Reduces the Pavise spell's AP cost by 1"
       ],
       "fr": [
-        "Réduit le coût en PA du sort Barricade de 1",
-        "Augmente la portée maximale du sort Attaque Naturelle de 2",
-        "Réduit le coût en PA du sort Barricade de 1",
-        "Désactive la ligne de vue du sort Aveuglement",
-        "Désactive le lancer en ligne du sort Attraction Naturelle",
-        "Réduit l'intervalle de relance du sort Pavois de 1"
+        "Désactive la ligne de vue du sort Somnolence",
+        "Réduit le coût en PA du sort Manœuvre de 1",
+        "Désactive la ligne de vue du sort Somnolence",
+        "Réduit le coût en PA du sort Manœuvre de 1",
+        "Augmente la portée maximale du sort Rempart de 3",
+        "Rend la portée du sort Fortification modifiable",
+        "Désactive la ligne de vue du sort Somnolence",
+        "Réduit le coût en PA du sort Manœuvre de 1"
       ],
       "de": [
-        "Senkt die AP-Kosten des Zauberspruchs Barrikade um 1.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Natürlicher Angriff um 2.",
-        "Senkt die AP-Kosten des Zauberspruchs Barrikade um 1.",
-        "Deaktiviert die Sichtlinie für den Zauber Blindheit",
-        "Deaktiviert die lineare Wirkungsweise für den Zauber Natürliche Anziehungskraft",
-        "Verringert die Abklingzeit des Zauberspruchs Pavese um 1."
+        "Deaktiviert die Sichtlinie für den Zauber Schlaftrunkenheit",
+        "Senkt die AP-Kosten des Zauberspruchs Manöver um 1.",
+        "Deaktiviert die Sichtlinie für den Zauber Schlaftrunkenheit",
+        "Senkt die AP-Kosten des Zauberspruchs Manöver um 1.",
+        "Erhöht die maximale Reichweite des Zauberspruchs Bollwerk um 3.",
+        "Die Reichweite des Zaubers Fortifikatzion wird steigerbar",
+        "Deaktiviert die Sichtlinie für den Zauber Schlaftrunkenheit",
+        "Senkt die AP-Kosten des Zauberspruchs Manöver um 1."
       ],
       "it": [
-        "[!] Reduces the Barricata spell's AP cost by 1",
-        "Aumenta la Portata massima dell'incantesimo Attacco Naturale di 2",
-        "[!] Reduces the Barricata spell's AP cost by 1",
         "Disattiva la linea di tiro dell'incantesimo Accecamento",
-        "Disattiva il lancio in linea dell'incantesimo Attrazione Naturale",
-        "[!] Reduces the Palvese spell's cooldown period by 1"
+        "[!] Reduces the Manovra spell's AP cost by 1",
+        "Disattiva la linea di tiro dell'incantesimo Accecamento",
+        "[!] Reduces the Manovra spell's AP cost by 1",
+        "Aumenta la Portata massima dell'incantesimo Bastione di 3",
+        "Rende modificabile la portata dell'incantesimo Fortificazione",
+        "Disattiva la linea di tiro dell'incantesimo Accecamento",
+        "[!] Reduces the Manovra spell's AP cost by 1"
       ],
       "es": [
-        "Reduce el coste en PA del hechizo Barricada en 1",
-        "Aumenta en 2 el alcance máximo del hechizo Ataque Natural.",
-        "Reduce el coste en PA del hechizo Barricada en 1",
-        "Desactiva la línea de visión del hechizo Ceguera",
-        "Desactiva el lanzamiento en línea recta del hechizo Atracción Natural",
-        "Reduce el intervalo de lanzamiento del hechizo Pavés en 1"
+        "Desactiva la línea de visión del hechizo Somnolencia",
+        "Reduce el coste en PA del hechizo Maniobra en 1",
+        "Desactiva la línea de visión del hechizo Somnolencia",
+        "Reduce el coste en PA del hechizo Maniobra en 1",
+        "Aumenta en 3 el alcance máximo del hechizo Murallón.",
+        "Vuelve modificable el alcance del hechizo Fortificación",
+        "Desactiva la línea de visión del hechizo Somnolencia",
+        "Reduce el coste en PA del hechizo Maniobra en 1"
       ],
       "pt": [
-        "Reduz o custo em PA do feitiço Barricada em 1",
-        "Aumenta o alcance máximo do feitiço Ataque Natural em 2",
-        "Reduz o custo em PA do feitiço Barricada em 1",
-        "Desativa a linha de visão do feitiço Cegueira",
-        "Desativa o lançamento em linha do feitiço Atração Natural",
-        "Reduz o intervalo de relançamento do feitiço Broquel em 1"
+        "Desativa a linha de visão do feitiço Lassidão",
+        "Reduz o custo em PA do feitiço Manobra  em 1",
+        "Desativa a linha de visão do feitiço Lassidão",
+        "Reduz o custo em PA do feitiço Manobra  em 1",
+        "Aumenta o alcance máximo do feitiço Muralha em 3",
+        "Torna possível mudar o alcance do feitiço Fortificação",
+        "Desativa a linha de visão do feitiço Lassidão",
+        "Reduz o custo em PA do feitiço Manobra  em 1"
       ]
     },
     "conditions": {
@@ -34466,7 +34478,7 @@
         "Augmente la portée maximale du sort Démotivation de 2",
         "Augmente la portée maximale du sort Démotivation de 2",
         "Augmente la portée maximale du sort Démotivation de 2",
-        "Réduit le coût en PA du sort Vingt-Cinquième Heure de 1"
+        "Réduit le coût en PA du sort Vingt-cinquième Heure de 1"
       ],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Motivationsmangel um 2.",
@@ -34856,57 +34868,57 @@
     "customStats": {
       "en": [
         "Reduces the Assailing Arrow spell's AP cost by 1",
-        "Retreating Shot is no longer linear",
+        "Retreating Shot no longer requires a line of sight",
         "Barricade Shot no longer requires a line of sight",
-        "Reduces the Lashing Arrows spell's AP cost by 1",
+        "Reduces the Erosive Arrows spell's AP cost by 1",
         "Withdrawal Arrows is no longer linear",
         "Lark Mirror no longer requires a line of sight",
         "Eye for Eye no longer requires a line of sight"
       ],
       "fr": [
         "Réduit le coût en PA du sort Flèche Assaillante de 1",
-        "Désactive le lancer en ligne du sort Tir de Recul",
-        "Désactive la ligne de vue du sort Tir de Barrage",
+        "Désactive la ligne de vue du sort Tir de Recul",
+        "Désactive la ligne de vue du sort Tir de Recul",
         "Réduit le coût en PA du sort Flèche Assaillante de 1",
-        "Désactive le lancer en ligne du sort Tir de Recul",
-        "Désactive la ligne de vue du sort Tir de Barrage",
-        "Désactive la ligne de vue du sort Tir de Barrage"
+        "Désactive le lancer en ligne du sort Flèches de Repli",
+        "Désactive la ligne de vue du sort Tir de Recul",
+        "Désactive la ligne de vue du sort Tir de Recul"
       ],
       "de": [
         "Senkt die AP-Kosten des Zauberspruchs Angriffspfeil um 1.",
-        "Deaktiviert die lineare Wirkungsweise für den Zauber Rückstoßschuss",
-        "Deaktiviert die Sichtlinie für den Zauber Sperrfeuer",
+        "Deaktiviert die Sichtlinie für den Zauber Rückstoßschuss",
+        "Deaktiviert die Sichtlinie für den Zauber Rückstoßschuss",
         "Senkt die AP-Kosten des Zauberspruchs Angriffspfeil um 1.",
-        "Deaktiviert die lineare Wirkungsweise für den Zauber Rückstoßschuss",
-        "Deaktiviert die Sichtlinie für den Zauber Sperrfeuer",
-        "Deaktiviert die Sichtlinie für den Zauber Sperrfeuer"
+        "Deaktiviert die lineare Wirkungsweise für den Zauber Rückzugspfeile",
+        "Deaktiviert die Sichtlinie für den Zauber Rückstoßschuss",
+        "Deaktiviert die Sichtlinie für den Zauber Rückstoßschuss"
       ],
       "it": [
         "[!] Reduces the Freccia Assalente spell's AP cost by 1",
-        "Disattiva il lancio in linea dell'incantesimo Freccia Respingente",
-        "Disattiva la linea di tiro dell'incantesimo Tiro di Sbarramento",
+        "Disattiva la linea di tiro dell'incantesimo Freccia Respingente",
+        "Disattiva la linea di tiro dell'incantesimo Freccia Respingente",
         "[!] Reduces the Freccia Assalente spell's AP cost by 1",
-        "Disattiva il lancio in linea dell'incantesimo Freccia Respingente",
-        "Disattiva la linea di tiro dell'incantesimo Tiro di Sbarramento",
-        "Disattiva la linea di tiro dell'incantesimo Tiro di Sbarramento"
+        "Disattiva il lancio in linea dell'incantesimo Freccia di Ripiego",
+        "Disattiva la linea di tiro dell'incantesimo Freccia Respingente",
+        "Disattiva la linea di tiro dell'incantesimo Freccia Respingente"
       ],
       "es": [
         "Reduce el coste en PA del hechizo Flecha Asaltante en 1",
-        "Desactiva el lanzamiento en línea recta del hechizo Disparo de Retroceso",
-        "Desactiva la línea de visión del hechizo Tiro Peleón",
+        "Desactiva la línea de visión del hechizo Disparo de Retroceso",
+        "Desactiva la línea de visión del hechizo Disparo de Retroceso",
         "Reduce el coste en PA del hechizo Flecha Asaltante en 1",
-        "Desactiva el lanzamiento en línea recta del hechizo Disparo de Retroceso",
-        "Desactiva la línea de visión del hechizo Tiro Peleón",
-        "Desactiva la línea de visión del hechizo Tiro Peleón"
+        "Desactiva el lanzamiento en línea recta del hechizo Flechas de Repliegue",
+        "Desactiva la línea de visión del hechizo Disparo de Retroceso",
+        "Desactiva la línea de visión del hechizo Disparo de Retroceso"
       ],
       "pt": [
         "Reduz o custo em PA do feitiço Flecha Agressora em 1",
-        "Desativa o lançamento em linha do feitiço Tiro de Recuo",
-        "Desativa a linha de visão do feitiço Tiro de Barricada",
+        "Desativa a linha de visão do feitiço Tiro de Recuo",
+        "Desativa a linha de visão do feitiço Tiro de Recuo",
         "Reduz o custo em PA do feitiço Flecha Agressora em 1",
-        "Desativa o lançamento em linha do feitiço Tiro de Recuo",
-        "Desativa a linha de visão do feitiço Tiro de Barricada",
-        "Desativa a linha de visão do feitiço Tiro de Barricada"
+        "Desativa o lançamento em linha do feitiço Flechas de Retirada",
+        "Desativa a linha de visão do feitiço Tiro de Recuo",
+        "Desativa a linha de visão do feitiço Tiro de Recuo"
       ]
     },
     "conditions": {
@@ -34931,52 +34943,58 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Reduces the Teleglyph spell's cooldown period by 1",
-        "Increases the Lateral Flame spell's maximum range by 1",
-        "Increases the Torpor spell's maximum range by 1",
-        "Increases the Aegis spell's maximum range by 3",
-        "Increases the Burning Glyph spell's maximum range by 1",
-        "Increases the Blinding Glyph spell's maximum range by 1"
+        "Lethargy no longer requires a line of sight",
+        "Reduces the Gather the Flock spell's AP cost by 1",
+        "Gust no longer requires a line of sight",
+        "Reduces the Getaway spell's AP cost by 1",
+        "Reduces the Ataraxia spell's AP cost by 1",
+        "Reduces the Bastion spell's AP cost by 1",
+        "Reduces the Truce spell's AP cost by 1"
       ],
       "fr": [
-        "Réduit l'intervalle de relance du sort Téléglyphe de 1",
-        "Augmente la portée maximale du sort Flamme Latérale de 1",
-        "Augmente la portée maximale du sort Flamme Latérale de 1",
-        "Augmente la portée maximale du sort Flamme Latérale de 1",
-        "Augmente la portée maximale du sort Flamme Latérale de 1",
-        "Augmente la portée maximale du sort Flamme Latérale de 1"
+        "Désactive la ligne de vue du sort Léthargie",
+        "Réduit le coût en PA du sort Regroupement de 1",
+        "Désactive la ligne de vue du sort Léthargie",
+        "Réduit le coût en PA du sort Regroupement de 1",
+        "Réduit le coût en PA du sort Regroupement de 1",
+        "Réduit le coût en PA du sort Regroupement de 1",
+        "Réduit le coût en PA du sort Regroupement de 1"
       ],
       "de": [
-        "Verringert die Abklingzeit des Zauberspruchs Teleglyphation um 1.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Laterale Flamme um 1.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Laterale Flamme um 1.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Laterale Flamme um 1.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Laterale Flamme um 1.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Laterale Flamme um 1."
+        "Deaktiviert die Sichtlinie für den Zauber Lethargie",
+        "Senkt die AP-Kosten des Zauberspruchs Versammeln um 1.",
+        "Deaktiviert die Sichtlinie für den Zauber Lethargie",
+        "Senkt die AP-Kosten des Zauberspruchs Versammeln um 1.",
+        "Senkt die AP-Kosten des Zauberspruchs Versammeln um 1.",
+        "Senkt die AP-Kosten des Zauberspruchs Versammeln um 1.",
+        "Senkt die AP-Kosten des Zauberspruchs Versammeln um 1."
       ],
       "it": [
-        "[!] Reduces the Teleglifo spell's cooldown period by 1",
-        "Aumenta la Portata massima dell'incantesimo Fiamma Laterale di 1",
-        "Aumenta la Portata massima dell'incantesimo Fiamma Laterale di 1",
-        "Aumenta la Portata massima dell'incantesimo Fiamma Laterale di 1",
-        "Aumenta la Portata massima dell'incantesimo Fiamma Laterale di 1",
-        "Aumenta la Portata massima dell'incantesimo Fiamma Laterale di 1"
+        "Disattiva la linea di tiro dell'incantesimo Letargia",
+        "[!] Reduces the Abbagliamento spell's AP cost by 1",
+        "Disattiva la linea di tiro dell'incantesimo Letargia",
+        "[!] Reduces the Abbagliamento spell's AP cost by 1",
+        "[!] Reduces the Abbagliamento spell's AP cost by 1",
+        "[!] Reduces the Abbagliamento spell's AP cost by 1",
+        "[!] Reduces the Abbagliamento spell's AP cost by 1"
       ],
       "es": [
-        "Reduce el intervalo de lanzamiento del hechizo Teleglifo en 1",
-        "Aumenta en 1 el alcance máximo del hechizo Llama Lateral.",
-        "Aumenta en 1 el alcance máximo del hechizo Llama Lateral.",
-        "Aumenta en 1 el alcance máximo del hechizo Llama Lateral.",
-        "Aumenta en 1 el alcance máximo del hechizo Llama Lateral.",
-        "Aumenta en 1 el alcance máximo del hechizo Llama Lateral."
+        "Desactiva la línea de visión del hechizo Letargo",
+        "Reduce el coste en PA del hechizo Reagrupamiento en 1",
+        "Desactiva la línea de visión del hechizo Letargo",
+        "Reduce el coste en PA del hechizo Reagrupamiento en 1",
+        "Reduce el coste en PA del hechizo Reagrupamiento en 1",
+        "Reduce el coste en PA del hechizo Reagrupamiento en 1",
+        "Reduce el coste en PA del hechizo Reagrupamiento en 1"
       ],
       "pt": [
-        "Reduz o intervalo de relançamento do feitiço Teleglifo em 1",
-        "Aumenta o alcance máximo do feitiço Chama Lateral em 1",
-        "Aumenta o alcance máximo do feitiço Chama Lateral em 1",
-        "Aumenta o alcance máximo do feitiço Chama Lateral em 1",
-        "Aumenta o alcance máximo do feitiço Chama Lateral em 1",
-        "Aumenta o alcance máximo do feitiço Chama Lateral em 1"
+        "Desativa a linha de visão do feitiço Letargia",
+        "Reduz o custo em PA do feitiço Agrupamento em 1",
+        "Desativa a linha de visão do feitiço Letargia",
+        "Reduz o custo em PA do feitiço Agrupamento em 1",
+        "Reduz o custo em PA do feitiço Agrupamento em 1",
+        "Reduz o custo em PA do feitiço Agrupamento em 1",
+        "Reduz o custo em PA do feitiço Agrupamento em 1"
       ]
     },
     "conditions": {
@@ -35540,7 +35558,7 @@
     "customStats": {
       "en": [
         "Increases the Transfusion spell's maximum range by 2",
-        "Reduces the Riposte spell's cooldown period by 1",
+        "Reduces the Blood Ties spell's cooldown period by 1",
         "Increases the Condensation spell's maximum range by 1",
         "Increases the Torture spell's maximum range by 1",
         "Reduces the Blood Bath spell's AP cost by 1",
@@ -35548,19 +35566,19 @@
       ],
       "fr": [
         "Augmente la portée maximale du sort Transfusion de 2",
-        "Réduit l'intervalle de relance du sort Riposte de 1",
+        "Réduit l'intervalle de relance du sort Liens du Sang de 1",
         "Augmente la portée maximale du sort Transfusion de 2",
         "Augmente la portée maximale du sort Transfusion de 2",
         "Réduit le coût en PA du sort Bain de Sang de 1",
-        "Réduit l'intervalle de relance du sort Riposte de 1"
+        "Réduit l'intervalle de relance du sort Liens du Sang de 1"
       ],
       "de": [
         "Erhöht die maximale Reichweite des Zauberspruchs Transfusion um 2.",
-        "Verringert die Abklingzeit des Zauberspruchs Gegenschlag um 1.",
+        "Verringert die Abklingzeit des Zauberspruchs Blutsbande um 1.",
         "Erhöht die maximale Reichweite des Zauberspruchs Transfusion um 2.",
         "Erhöht die maximale Reichweite des Zauberspruchs Transfusion um 2.",
         "Senkt die AP-Kosten des Zauberspruchs Blutbad um 1.",
-        "Verringert die Abklingzeit des Zauberspruchs Gegenschlag um 1."
+        "Verringert die Abklingzeit des Zauberspruchs Blutsbande um 1."
       ],
       "it": [
         "Aumenta la Portata massima dell'incantesimo Trasfusione di 2",
@@ -35572,19 +35590,19 @@
       ],
       "es": [
         "Aumenta en 2 el alcance máximo del hechizo Transfusión.",
-        "Reduce el intervalo de lanzamiento del hechizo Reflejo en 1",
+        "Reduce el intervalo de lanzamiento del hechizo Lazos de Sangre en 1",
         "Aumenta en 2 el alcance máximo del hechizo Transfusión.",
         "Aumenta en 2 el alcance máximo del hechizo Transfusión.",
         "Reduce el coste en PA del hechizo Baño de Sangre en 1",
-        "Reduce el intervalo de lanzamiento del hechizo Reflejo en 1"
+        "Reduce el intervalo de lanzamiento del hechizo Lazos de Sangre en 1"
       ],
       "pt": [
         "Aumenta o alcance máximo do feitiço Transfusão em 2",
-        "Reduz o intervalo de relançamento do feitiço Contra-Ataque em 1",
+        "Reduz o intervalo de relançamento do feitiço Laços de Sangue em 1",
         "Aumenta o alcance máximo do feitiço Transfusão em 2",
         "Aumenta o alcance máximo do feitiço Transfusão em 2",
         "Reduz o custo em PA do feitiço Banho de Sangue em 1",
-        "Reduz o intervalo de relançamento do feitiço Contra-Ataque em 1"
+        "Reduz o intervalo de relançamento do feitiço Laços de Sangue em 1"
       ]
     },
     "conditions": {
@@ -35755,46 +35773,52 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Reduces the Powerful Shots spell's AP cost by 1",
+        "Reduces the Powerful Shots spell's cooldown period by 1",
         "Reduces the Tormenting Arrow spell's AP cost by 1",
         "Reduces the Piercing Shot spell's AP cost by 1",
         "Increases the Explosive Arrow spell's maximum range by 2",
-        "Increases the Fulminating Arrow spell's maximum range by 2"
+        "Increases the Fulminating Arrow spell's maximum range by 2",
+        "Reduces the Piercing Shots spell's cooldown period by 1"
       ],
       "fr": [
-        "Réduit le coût en PA du sort Tirs Puissants de 1",
-        "Réduit le coût en PA du sort Tirs Puissants de 1",
-        "Réduit le coût en PA du sort Tirs Puissants de 1",
+        "Réduit l'intervalle de relance du sort Tirs Puissants de 1",
+        "Réduit le coût en PA du sort Flèche de Tourment de 1",
+        "Réduit le coût en PA du sort Flèche de Tourment de 1",
         "Augmente la portée maximale du sort Flèche Explosive de 2",
-        "Augmente la portée maximale du sort Flèche Explosive de 2"
+        "Augmente la portée maximale du sort Flèche Explosive de 2",
+        "Réduit l'intervalle de relance du sort Tirs Puissants de 1"
       ],
       "de": [
-        "Senkt die AP-Kosten des Zauberspruchs Powerschüsse um 1.",
-        "Senkt die AP-Kosten des Zauberspruchs Powerschüsse um 1.",
-        "Senkt die AP-Kosten des Zauberspruchs Powerschüsse um 1.",
+        "Verringert die Abklingzeit des Zauberspruchs Powerschüsse um 1.",
+        "Senkt die AP-Kosten des Zauberspruchs Peinigender Pfeil um 1.",
+        "Senkt die AP-Kosten des Zauberspruchs Peinigender Pfeil um 1.",
         "Erhöht die maximale Reichweite des Zauberspruchs Explosionspfeil um 2.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Explosionspfeil um 2."
+        "Erhöht die maximale Reichweite des Zauberspruchs Explosionspfeil um 2.",
+        "Verringert die Abklingzeit des Zauberspruchs Powerschüsse um 1."
       ],
       "it": [
-        "[!] Reduces the Tiro Potente spell's AP cost by 1",
-        "[!] Reduces the Tiro Potente spell's AP cost by 1",
-        "[!] Reduces the Tiro Potente spell's AP cost by 1",
+        "[!] Reduces the Tiro Potente spell's cooldown period by 1",
+        "[!] Reduces the Freccia Assorbente spell's AP cost by 1",
+        "[!] Reduces the Freccia Assorbente spell's AP cost by 1",
         "Aumenta la Portata massima dell'incantesimo Freccia Esplosiva di 2",
-        "Aumenta la Portata massima dell'incantesimo Freccia Esplosiva di 2"
+        "Aumenta la Portata massima dell'incantesimo Freccia Esplosiva di 2",
+        "[!] Reduces the Tiro Potente spell's cooldown period by 1"
       ],
       "es": [
-        "Reduce el coste en PA del hechizo Tiros Potentes en 1",
-        "Reduce el coste en PA del hechizo Tiros Potentes en 1",
-        "Reduce el coste en PA del hechizo Tiros Potentes en 1",
+        "Reduce el intervalo de lanzamiento del hechizo Tiros Potentes en 1",
+        "Reduce el coste en PA del hechizo Flecha de Tormento en 1",
+        "Reduce el coste en PA del hechizo Flecha de Tormento en 1",
         "Aumenta en 2 el alcance máximo del hechizo Flecha Explosiva.",
-        "Aumenta en 2 el alcance máximo del hechizo Flecha Explosiva."
+        "Aumenta en 2 el alcance máximo del hechizo Flecha Explosiva.",
+        "Reduce el intervalo de lanzamiento del hechizo Tiros Potentes en 1"
       ],
       "pt": [
-        "Reduz o custo em PA do feitiço Tiros Poderosos em 1",
-        "Reduz o custo em PA do feitiço Tiros Poderosos em 1",
-        "Reduz o custo em PA do feitiço Tiros Poderosos em 1",
+        "Reduz o intervalo de relançamento do feitiço Tiros Poderosos em 1",
+        "Reduz o custo em PA do feitiço Flecha de Tormento em 1",
+        "Reduz o custo em PA do feitiço Flecha de Tormento em 1",
         "Aumenta o alcance máximo do feitiço Flecha Explosiva em 2",
-        "Aumenta o alcance máximo do feitiço Flecha Explosiva em 2"
+        "Aumenta o alcance máximo do feitiço Flecha Explosiva em 2",
+        "Reduz o intervalo de relançamento do feitiço Tiros Poderosos em 1"
       ]
     },
     "conditions": {
@@ -35819,52 +35843,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Increases the Typhoon spell's maximum range by 1",
-        "Reduces the Truce spell's AP cost by 1",
-        "Repulsion Glyph no longer requires a line of sight",
-        "Increases the Backlash spell's maximum range by 1",
-        "Increases the Gust spell's maximum range by 2",
-        "Barrier no longer requires a line of sight"
+        "Increases the Backlash spell's maximum range by 3",
+        "Increases the Tetany spell's maximum range by 2",
+        "Reduces the Dirt Floor spell's AP cost by 1",
+        "Refuge no longer requires a line of sight",
+        "Typhoon no longer requires a line of sight",
+        "Reduces the Silbo spell's AP cost by 1",
+        "Reduces the Prairie spell's AP cost by 1",
+        "Pastureland no longer requires a line of sight"
       ],
       "fr": [
-        "Augmente la portée maximale du sort Typhon de 1",
-        "Réduit le coût en PA du sort Trêve de 1",
-        "Désactive la ligne de vue du sort Glyphe de Répulsion",
-        "Augmente la portée maximale du sort Typhon de 1",
-        "Augmente la portée maximale du sort Typhon de 1",
-        "Désactive la ligne de vue du sort Glyphe de Répulsion"
+        "Augmente la portée maximale du sort Retour du Bâton de 3",
+        "Augmente la portée maximale du sort Retour du Bâton de 3",
+        "Réduit le coût en PA du sort Terre Battue de 1",
+        "Désactive la ligne de vue du sort Refuge",
+        "Désactive la ligne de vue du sort Refuge",
+        "Réduit le coût en PA du sort Terre Battue de 1",
+        "Réduit le coût en PA du sort Terre Battue de 1",
+        "Désactive la ligne de vue du sort Refuge"
       ],
       "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Taifun um 1.",
-        "Senkt die AP-Kosten des Zauberspruchs Waffenstillstand um 1.",
-        "Deaktiviert die Sichtlinie für den Zauber Glyphe der Abstoßung",
-        "Erhöht die maximale Reichweite des Zauberspruchs Taifun um 1.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Taifun um 1.",
-        "Deaktiviert die Sichtlinie für den Zauber Glyphe der Abstoßung"
+        "Erhöht die maximale Reichweite des Zauberspruchs Gegenangriff um 3.",
+        "Erhöht die maximale Reichweite des Zauberspruchs Gegenangriff um 3.",
+        "Senkt die AP-Kosten des Zauberspruchs Gestampfte Erde um 1.",
+        "Deaktiviert die Sichtlinie für den Zauber Schutzhütte",
+        "Deaktiviert die Sichtlinie für den Zauber Schutzhütte",
+        "Senkt die AP-Kosten des Zauberspruchs Gestampfte Erde um 1.",
+        "Senkt die AP-Kosten des Zauberspruchs Gestampfte Erde um 1.",
+        "Deaktiviert die Sichtlinie für den Zauber Schutzhütte"
       ],
       "it": [
-        "Aumenta la Portata massima dell'incantesimo Tifone di 1",
-        "[!] Reduces the Tregua spell's AP cost by 1",
-        "Disattiva la linea di tiro dell'incantesimo Glifo di Repulsione",
-        "Aumenta la Portata massima dell'incantesimo Tifone di 1",
-        "Aumenta la Portata massima dell'incantesimo Tifone di 1",
-        "Disattiva la linea di tiro dell'incantesimo Glifo di Repulsione"
+        "Aumenta la Portata massima dell'incantesimo Ritorno del Bastone di 3",
+        "Aumenta la Portata massima dell'incantesimo Ritorno del Bastone di 3",
+        "[!] Reduces the Glifo di Accecamento spell's AP cost by 1",
+        "Disattiva la linea di tiro dell'incantesimo Glifo Protettore",
+        "Disattiva la linea di tiro dell'incantesimo Glifo Protettore",
+        "[!] Reduces the Glifo di Accecamento spell's AP cost by 1",
+        "[!] Reduces the Glifo di Accecamento spell's AP cost by 1",
+        "Disattiva la linea di tiro dell'incantesimo Glifo Protettore"
       ],
       "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Tifón.",
-        "Reduce el coste en PA del hechizo Tregua en 1",
-        "Desactiva la línea de visión del hechizo Glifo de Repulsión",
-        "Aumenta en 1 el alcance máximo del hechizo Tifón.",
-        "Aumenta en 1 el alcance máximo del hechizo Tifón.",
-        "Desactiva la línea de visión del hechizo Glifo de Repulsión"
+        "Aumenta en 3 el alcance máximo del hechizo Puñalada.",
+        "Aumenta en 3 el alcance máximo del hechizo Puñalada.",
+        "Reduce el coste en PA del hechizo Tierra Batida en 1",
+        "Desactiva la línea de visión del hechizo Refugio",
+        "Desactiva la línea de visión del hechizo Refugio",
+        "Reduce el coste en PA del hechizo Tierra Batida en 1",
+        "Reduce el coste en PA del hechizo Tierra Batida en 1",
+        "Desactiva la línea de visión del hechizo Refugio"
       ],
       "pt": [
-        "Aumenta o alcance máximo do feitiço Tufão em 1",
-        "Reduz o custo em PA do feitiço Trégua em 1",
-        "Desativa a linha de visão do feitiço Glifo de Repulsão",
-        "Aumenta o alcance máximo do feitiço Tufão em 1",
-        "Aumenta o alcance máximo do feitiço Tufão em 1",
-        "Desativa a linha de visão do feitiço Glifo de Repulsão"
+        "Aumenta o alcance máximo do feitiço Retrocesso em 3",
+        "Aumenta o alcance máximo do feitiço Retrocesso em 3",
+        "Reduz o custo em PA do feitiço Terra Batida em 1",
+        "Desativa a linha de visão do feitiço Refúgio",
+        "Desativa a linha de visão do feitiço Refúgio",
+        "Reduz o custo em PA do feitiço Terra Batida em 1",
+        "Reduz o custo em PA do feitiço Terra Batida em 1",
+        "Desativa a linha de visão do feitiço Refúgio"
       ]
     },
     "conditions": {
@@ -36652,23 +36688,23 @@
       },
       {
         "stat": "Intelligence",
-        "minStat": -11,
-        "maxStat": -30
+        "minStat": -30,
+        "maxStat": -11
       },
       {
         "stat": "Agility",
-        "minStat": -11,
-        "maxStat": -30
+        "minStat": -30,
+        "maxStat": -11
       },
       {
         "stat": "Chance",
-        "minStat": -11,
-        "maxStat": -30
+        "minStat": -30,
+        "maxStat": -11
       },
       {
         "stat": "Strength",
-        "minStat": -11,
-        "maxStat": -30
+        "minStat": -30,
+        "maxStat": -11
       },
       {
         "stat": "Prospecting",
@@ -36872,51 +36908,51 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Reduces the Piercing Shots spell's cooldown period by 1",
         "Recall Beacon no longer requires a line of sight",
         "Reduces the Destructive Bolts spell's AP cost by 1",
         "Reduces the Bat's Eye spell's AP cost by 1",
         "Reduces the Crushing Arrow spell's AP cost by 1",
+        "Persecuting Arrow is no longer linear",
         "Reduces the Tyrannical Arrow spell's AP cost by 1"
       ],
       "fr": [
-        "Réduit l'intervalle de relance du sort Tirs Perçants de 1",
         "Désactive la ligne de vue du sort Balise de Rappel",
         "Réduit le coût en PA du sort Carreaux Destructeurs de 1",
         "Réduit le coût en PA du sort Carreaux Destructeurs de 1",
         "Réduit le coût en PA du sort Carreaux Destructeurs de 1",
+        "Désactive le lancer en ligne du sort Flèche Persécutrice",
         "Réduit le coût en PA du sort Carreaux Destructeurs de 1"
       ],
       "de": [
-        "Verringert die Abklingzeit des Zauberspruchs Durchbohrende Schüsse um 1.",
         "Deaktiviert die Sichtlinie für den Zauber Leitmarkierung der Erinnerung",
         "Senkt die AP-Kosten des Zauberspruchs Zerstörerische Karos um 1.",
         "Senkt die AP-Kosten des Zauberspruchs Zerstörerische Karos um 1.",
         "Senkt die AP-Kosten des Zauberspruchs Zerstörerische Karos um 1.",
+        "Deaktiviert die lineare Wirkungsweise für den Zauber Heimsuchender Pfeil",
         "Senkt die AP-Kosten des Zauberspruchs Zerstörerische Karos um 1."
       ],
       "it": [
-        "[!] Reduces the Padronanza dell'Arco spell's cooldown period by 1",
         "Disattiva la linea di tiro dell'incantesimo Elementale di Richiamo",
         "[!] Reduces the Freccia Distruttrice spell's AP cost by 1",
         "[!] Reduces the Freccia Distruttrice spell's AP cost by 1",
         "[!] Reduces the Freccia Distruttrice spell's AP cost by 1",
+        "Disattiva il lancio in linea dell'incantesimo Freccia Persecutrice",
         "[!] Reduces the Freccia Distruttrice spell's AP cost by 1"
       ],
       "es": [
-        "Reduce el intervalo de lanzamiento del hechizo Tiros Perforantes en 1",
         "Desactiva la línea de visión del hechizo Baliza de Recuerdo",
         "Reduce el coste en PA del hechizo Diamantes Destructores en 1",
         "Reduce el coste en PA del hechizo Diamantes Destructores en 1",
         "Reduce el coste en PA del hechizo Diamantes Destructores en 1",
+        "Desactiva el lanzamiento en línea recta del hechizo Flecha Perseguidora",
         "Reduce el coste en PA del hechizo Diamantes Destructores en 1"
       ],
       "pt": [
-        "Reduz o intervalo de relançamento do feitiço Tiros Perfurantes em 1",
         "Desativa a linha de visão do feitiço Baliza de Recuo",
         "Reduz o custo em PA do feitiço Ladrilhos Destruidores em 1",
         "Reduz o custo em PA do feitiço Ladrilhos Destruidores em 1",
         "Reduz o custo em PA do feitiço Ladrilhos Destruidores em 1",
+        "Desativa o lançamento em linha do feitiço Flecha Perseguidora",
         "Reduz o custo em PA do feitiço Ladrilhos Destruidores em 1"
       ]
     },
@@ -37176,52 +37212,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Lethargy no longer requires a line of sight",
-        "Feca Shield is no longer linear",
-        "Increases the Gravitational Glyph spell's maximum range by 2",
-        "Increases the Inertia spell's maximum range by 1",
-        "Excursion Glyph no longer requires a line of sight",
-        "Increases the Swelling spell's maximum range by 2"
+        "Shepherd's Crook no longer requires a line of sight",
+        "Reduces the Shiver spell's AP cost by 1",
+        "Makes the Torpor spell's range modifiable",
+        "Reduces the Sudden Shower spell's AP cost by 1",
+        "Distrust no longer requires a line of sight",
+        "Barrier no longer requires a line of sight",
+        "Reduces the Greener Pastures spell's cooldown period by 1",
+        "Makes the Aegis spell's range modifiable"
       ],
       "fr": [
-        "Désactive la ligne de vue du sort Léthargie",
-        "Désactive le lancer en ligne du sort Bouclier Féca",
-        "Augmente la portée maximale du sort Glyphe Gravitationnel de 2",
-        "Augmente la portée maximale du sort Glyphe Gravitationnel de 2",
-        "Désactive la ligne de vue du sort Léthargie",
-        "Augmente la portée maximale du sort Glyphe Gravitationnel de 2"
+        "Désactive la ligne de vue du sort Houlette",
+        "Réduit le coût en PA du sort Frisson de 1",
+        "Rend la portée du sort Torpeur modifiable",
+        "Réduit le coût en PA du sort Frisson de 1",
+        "Désactive la ligne de vue du sort Houlette",
+        "Désactive la ligne de vue du sort Houlette",
+        "Réduit l'intervalle de relance du sort Transhumance de 1",
+        "Rend la portée du sort Torpeur modifiable"
       ],
       "de": [
-        "Deaktiviert die Sichtlinie für den Zauber Lethargie",
-        "Deaktiviert die lineare Wirkungsweise für den Zauber Féca Schild",
-        "Erhöht die maximale Reichweite des Zauberspruchs Gravitationsglyphe um 2.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Gravitationsglyphe um 2.",
-        "Deaktiviert die Sichtlinie für den Zauber Lethargie",
-        "Erhöht die maximale Reichweite des Zauberspruchs Gravitationsglyphe um 2."
+        "Deaktiviert die Sichtlinie für den Zauber Hirtenstab",
+        "Senkt die AP-Kosten des Zauberspruchs Schauder um 1.",
+        "Die Reichweite des Zaubers Dahindämmern wird steigerbar",
+        "Senkt die AP-Kosten des Zauberspruchs Schauder um 1.",
+        "Deaktiviert die Sichtlinie für den Zauber Hirtenstab",
+        "Deaktiviert die Sichtlinie für den Zauber Hirtenstab",
+        "Verringert die Abklingzeit des Zauberspruchs Vermenschwandlung um 1.",
+        "Die Reichweite des Zaubers Dahindämmern wird steigerbar"
       ],
       "it": [
-        "Disattiva la linea di tiro dell'incantesimo Letargia",
-        "Disattiva il lancio in linea dell'incantesimo Scudo Feca",
-        "Aumenta la Portata massima dell'incantesimo Glifo Gravitazionale di 2",
-        "Aumenta la Portata massima dell'incantesimo Glifo Gravitazionale di 2",
-        "Disattiva la linea di tiro dell'incantesimo Letargia",
-        "Aumenta la Portata massima dell'incantesimo Glifo Gravitazionale di 2"
+        "Disattiva la linea di tiro dell'incantesimo Attrazione Naturale",
+        "[!] Reduces the Brivido spell's AP cost by 1",
+        "Rende modificabile la portata dell'incantesimo Torpore",
+        "[!] Reduces the Brivido spell's AP cost by 1",
+        "Disattiva la linea di tiro dell'incantesimo Attrazione Naturale",
+        "Disattiva la linea di tiro dell'incantesimo Attrazione Naturale",
+        "[!] Reduces the Teleglifo spell's cooldown period by 1",
+        "Rende modificabile la portata dell'incantesimo Torpore"
       ],
       "es": [
-        "Desactiva la línea de visión del hechizo Letargo",
-        "Desactiva el lanzamiento en línea recta del hechizo Escudo feca",
-        "Aumenta en 2 el alcance máximo del hechizo Glifo Gravitacional.",
-        "Aumenta en 2 el alcance máximo del hechizo Glifo Gravitacional.",
-        "Desactiva la línea de visión del hechizo Letargo",
-        "Aumenta en 2 el alcance máximo del hechizo Glifo Gravitacional."
+        "Desactiva la línea de visión del hechizo Cayado",
+        "Reduce el coste en PA del hechizo Escalofrío en 1",
+        "Vuelve modificable el alcance del hechizo Sopor",
+        "Reduce el coste en PA del hechizo Escalofrío en 1",
+        "Desactiva la línea de visión del hechizo Cayado",
+        "Desactiva la línea de visión del hechizo Cayado",
+        "Reduce el intervalo de lanzamiento del hechizo Trashumancia en 1",
+        "Vuelve modificable el alcance del hechizo Sopor"
       ],
       "pt": [
-        "Desativa a linha de visão do feitiço Letargia",
-        "Desativa o lançamento em linha do feitiço Escudo Feca",
-        "Aumenta o alcance máximo do feitiço Glifo Gravitacional em 2",
-        "Aumenta o alcance máximo do feitiço Glifo Gravitacional em 2",
-        "Desativa a linha de visão do feitiço Letargia",
-        "Aumenta o alcance máximo do feitiço Glifo Gravitacional em 2"
+        "Desativa a linha de visão do feitiço Cajado",
+        "Reduz o custo em PA do feitiço Calafrio em 1",
+        "Torna possível mudar o alcance do feitiço Torpor",
+        "Reduz o custo em PA do feitiço Calafrio em 1",
+        "Desativa a linha de visão do feitiço Cajado",
+        "Desativa a linha de visão do feitiço Cajado",
+        "Reduz o intervalo de relançamento do feitiço Transumância em 1",
+        "Torna possível mudar o alcance do feitiço Torpor"
       ]
     },
     "conditions": {
@@ -37830,58 +37878,64 @@
     ],
     "customStats": {
       "en": [
-        "Increases the Shiver spell's maximum range by 1",
-        "Reduces the Bastion spell's cooldown period by 1",
-        "Cloudy Attack is no longer linear",
-        "Reduces the Paralysing Glyph spell's AP cost by 1",
-        "Reduces the Tension spell's AP cost by 1",
-        "Roaming Glyph no longer requires a line of sight",
-        "Increases the Manœuvre spell's maximum range by 2"
+        "Languor no longer requires a line of sight",
+        "Reduces the Lifelessness spell's AP cost by 1",
+        "Reduces the Scorched Dirt spell's AP cost by 1",
+        "Lookout no longer requires a line of sight",
+        "Increases the Nimbus spell's maximum range by 2",
+        "Reduces the Stratus spell's AP cost by 1",
+        "Reduces the Valley spell's AP cost by 1",
+        "Black Ice no longer requires a line of sight"
       ],
       "fr": [
-        "Augmente la portée maximale du sort Frisson de 1",
-        "Réduit l'intervalle de relance du sort Bastion de 1",
-        "Désactive le lancer en ligne du sort Attaque Nuageuse",
-        "Réduit le coût en PA du sort Glyphe Optique de 1",
-        "Réduit le coût en PA du sort Glyphe Optique de 1",
-        "Désactive la ligne de vue du sort Glyphe d'Itinérance",
-        "Augmente la portée maximale du sort Frisson de 1"
+        "Désactive la ligne de vue du sort Langueur",
+        "Réduit le coût en PA du sort Atonie de 1",
+        "Réduit le coût en PA du sort Atonie de 1",
+        "Désactive la ligne de vue du sort Langueur",
+        "Augmente la portée maximale du sort Nimbus de 2",
+        "Réduit le coût en PA du sort Atonie de 1",
+        "Réduit le coût en PA du sort Atonie de 1",
+        "Désactive la ligne de vue du sort Langueur"
       ],
       "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Schauder um 1.",
-        "Verringert die Abklingzeit des Zauberspruchs Bastion um 1.",
-        "Deaktiviert die lineare Wirkungsweise für den Zauber Nebelhafter Angriff",
-        "Senkt die AP-Kosten des Zauberspruchs Zerroptik-Glyphe um 1.",
-        "Senkt die AP-Kosten des Zauberspruchs Zerroptik-Glyphe um 1.",
-        "Deaktiviert die Sichtlinie für den Zauber Glyphe des Umherwanderns",
-        "Erhöht die maximale Reichweite des Zauberspruchs Schauder um 1."
+        "Deaktiviert die Sichtlinie für den Zauber Mattheit",
+        "Senkt die AP-Kosten des Zauberspruchs Mattigkeit um 1.",
+        "Senkt die AP-Kosten des Zauberspruchs Mattigkeit um 1.",
+        "Deaktiviert die Sichtlinie für den Zauber Mattheit",
+        "Erhöht die maximale Reichweite des Zauberspruchs Nimbus um 2.",
+        "Senkt die AP-Kosten des Zauberspruchs Mattigkeit um 1.",
+        "Senkt die AP-Kosten des Zauberspruchs Mattigkeit um 1.",
+        "Deaktiviert die Sichtlinie für den Zauber Mattheit"
       ],
       "it": [
-        "Aumenta la Portata massima dell'incantesimo Brivido di 1",
-        "[!] Reduces the Baluardo spell's cooldown period by 1",
-        "Disattiva il lancio in linea dell'incantesimo Attacco Nuvoloso",
-        "[!] Reduces the Glifo Ottico spell's AP cost by 1",
-        "[!] Reduces the Glifo Ottico spell's AP cost by 1",
-        "Disattiva la linea di tiro dell'incantesimo Glifo di Itineranza",
-        "Aumenta la Portata massima dell'incantesimo Brivido di 1"
+        "Disattiva la linea di tiro dell'incantesimo Attacco Naturale",
+        "[!] Reduces the Atonia spell's AP cost by 1",
+        "[!] Reduces the Atonia spell's AP cost by 1",
+        "Disattiva la linea di tiro dell'incantesimo Attacco Naturale",
+        "Aumenta la Portata massima dell'incantesimo Attacco Nuvoloso di 2",
+        "[!] Reduces the Atonia spell's AP cost by 1",
+        "[!] Reduces the Atonia spell's AP cost by 1",
+        "Disattiva la linea di tiro dell'incantesimo Attacco Naturale"
       ],
       "es": [
-        "Aumenta en 1 el alcance máximo del hechizo Escalofrío.",
-        "Reduce el intervalo de lanzamiento del hechizo Bastión en 1",
-        "Desactiva el lanzamiento en línea recta del hechizo Ataque Nuboso",
-        "Reduce el coste en PA del hechizo Glifo Óptico en 1",
-        "Reduce el coste en PA del hechizo Glifo Óptico en 1",
-        "Desactiva la línea de visión del hechizo Glifo de Itinerancia",
-        "Aumenta en 1 el alcance máximo del hechizo Escalofrío."
+        "Desactiva la línea de visión del hechizo Languidez",
+        "Reduce el coste en PA del hechizo Atonía en 1",
+        "Reduce el coste en PA del hechizo Atonía en 1",
+        "Desactiva la línea de visión del hechizo Languidez",
+        "Aumenta en 2 el alcance máximo del hechizo Nimbo.",
+        "Reduce el coste en PA del hechizo Atonía en 1",
+        "Reduce el coste en PA del hechizo Atonía en 1",
+        "Desactiva la línea de visión del hechizo Languidez"
       ],
       "pt": [
-        "Aumenta o alcance máximo do feitiço Calafrio em 1",
-        "Reduz o intervalo de relançamento do feitiço Bastião em 1",
-        "Desativa o lançamento em linha do feitiço Ataque Nebuloso",
-        "Reduz o custo em PA do feitiço Glifo Óptico em 1",
-        "Reduz o custo em PA do feitiço Glifo Óptico em 1",
-        "Desativa a linha de visão do feitiço Glifo de Itinerância",
-        "Aumenta o alcance máximo do feitiço Calafrio em 1"
+        "Desativa a linha de visão do feitiço Languidez",
+        "Reduz o custo em PA do feitiço Atonia em 1",
+        "Reduz o custo em PA do feitiço Atonia em 1",
+        "Desativa a linha de visão do feitiço Languidez",
+        "Aumenta o alcance máximo do feitiço Nimbus em 2",
+        "Reduz o custo em PA do feitiço Atonia em 1",
+        "Reduz o custo em PA do feitiço Atonia em 1",
+        "Desativa a linha de visão do feitiço Languidez"
       ]
     },
     "conditions": {
@@ -38178,8 +38232,8 @@
       },
       {
         "stat": "% Neutral Resistance",
-        "minStat": -6,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -6
       },
       {
         "stat": "% Water Resistance",
@@ -38230,8 +38284,8 @@
       },
       {
         "stat": "Agility",
-        "minStat": -21,
-        "maxStat": -30
+        "minStat": -30,
+        "maxStat": -21
       },
       {
         "stat": "Damage",
@@ -38250,8 +38304,8 @@
       },
       {
         "stat": "% Air Resistance",
-        "minStat": -6,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -6
       },
       {
         "stat": "% Fire Resistance",
@@ -38545,8 +38599,8 @@
       },
       {
         "stat": "Vitality",
-        "minStat": -101,
-        "maxStat": -150
+        "minStat": -150,
+        "maxStat": -101
       },
       {
         "stat": "Critical",
@@ -38622,8 +38676,8 @@
       },
       {
         "stat": "Vitality",
-        "minStat": -101,
-        "maxStat": -150
+        "minStat": -150,
+        "maxStat": -101
       },
       {
         "stat": "Critical",
@@ -38699,8 +38753,8 @@
       },
       {
         "stat": "Vitality",
-        "minStat": -101,
-        "maxStat": -150
+        "minStat": -150,
+        "maxStat": -101
       },
       {
         "stat": "Critical",
@@ -38776,8 +38830,8 @@
       },
       {
         "stat": "Vitality",
-        "minStat": -101,
-        "maxStat": -150
+        "minStat": -150,
+        "maxStat": -101
       },
       {
         "stat": "Critical",
@@ -38853,13 +38907,13 @@
       },
       {
         "stat": "Agility",
-        "minStat": -26,
-        "maxStat": -40
+        "minStat": -40,
+        "maxStat": -26
       },
       {
         "stat": "Intelligence",
-        "minStat": -26,
-        "maxStat": -40
+        "minStat": -40,
+        "maxStat": -26
       },
       {
         "stat": "Vitality",
@@ -39131,8 +39185,8 @@
       },
       {
         "stat": "% Neutral Resistance",
-        "minStat": -6,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -6
       },
       {
         "stat": "Earth Resistance",
@@ -46669,8 +46723,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Critical Resistance",
@@ -52086,8 +52140,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Critical Resistance",
@@ -52531,8 +52585,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Critical Resistance",
@@ -53155,8 +53209,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Critical Resistance",
@@ -53662,8 +53716,8 @@
       },
       {
         "stat": "Pushback Damage",
-        "minStat": -5,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -5
       },
       {
         "stat": "Critical Resistance",
@@ -54030,8 +54084,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       }
     ],
     "customStats": {},
@@ -54077,8 +54131,8 @@
       },
       {
         "stat": "Critical",
-        "minStat": -1,
-        "maxStat": -2
+        "minStat": -2,
+        "maxStat": -1
       },
       {
         "stat": "AP",
@@ -54281,8 +54335,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       }
     ],
     "customStats": {},
@@ -54373,8 +54427,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Dodge",
@@ -54465,8 +54519,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       }
     ],
     "customStats": {},
@@ -54723,8 +54777,8 @@
       },
       {
         "stat": "Neutral Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Neutral Resistance",
@@ -54825,8 +54879,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       },
       {
         "stat": "Critical Resistance",
@@ -54917,8 +54971,8 @@
       },
       {
         "stat": "Pushback Damage",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       }
     ],
     "customStats": {},
@@ -56722,8 +56776,8 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "AP Reduction",
@@ -56732,8 +56786,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Dodge",
@@ -56839,8 +56893,8 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -5,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -5
       },
       {
         "stat": "MP Reduction",
@@ -56849,8 +56903,8 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -5,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -5
       }
     ],
     "customStats": {},
@@ -57269,8 +57323,8 @@
       },
       {
         "stat": "Critical",
-        "minStat": -3,
-        "maxStat": -4
+        "minStat": -4,
+        "maxStat": -3
       },
       {
         "stat": "Range",
@@ -57304,8 +57358,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "Pushback Damage",
@@ -57473,8 +57527,8 @@
       },
       {
         "stat": "MP Reduction",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       }
     ],
     "customStats": {},
@@ -57545,8 +57599,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Critical Resistance",
@@ -57790,8 +57844,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       }
     ],
     "customStats": {},
@@ -58376,18 +58430,18 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -6,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -6
       },
       {
         "stat": "Lock",
-        "minStat": -6,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -6
       },
       {
         "stat": "Dodge",
-        "minStat": -6,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -6
       }
     ],
     "customStats": {},
@@ -59838,8 +59892,8 @@
       },
       {
         "stat": "Pushback Damage",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       }
     ],
     "customStats": {},
@@ -60401,8 +60455,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "Dodge",
@@ -60478,8 +60532,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "Pushback Damage",
@@ -63159,64 +63213,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Explobomb no longer requires a line of sight",
-        "Resilient Explobomb no longer requires a line of sight",
-        "Increases the Pulsar spell's maximum range by 1",
-        "Increases the Shrapnel spell's maximum range by 1",
-        "Reduces the Dirty Trick spell's cooldown period by 1",
-        "Increases the Walking Bomb spell's maximum range by 2",
-        "Reduces the Magnet spell's AP cost by 1",
-        "Makes the Crossing spell's range modifiable"
+        "Seismobomb no longer requires a line of sight",
+        "Resilient Seismobomb no longer requires a line of sight",
+        "Bombard no longer requires a line of sight",
+        "Increases the Machine Gun spell's maximum range by 1",
+        "Grenado no longer requires a line of sight",
+        "Resilient Grenado no longer requires a line of sight",
+        "Carbine no longer requires a line of sight",
+        "Increases the Obliteration spell's maximum range by 1"
       ],
       "fr": [
-        "Désactive la ligne de vue du sort Explobombe",
-        "Désactive la ligne de vue du sort Explobombe",
-        "Augmente la portée maximale du sort Pulsar de 1",
-        "Augmente la portée maximale du sort Pulsar de 1",
-        "Réduit l'intervalle de relance du sort Entourloupe de 1",
-        "Augmente la portée maximale du sort Pulsar de 1",
-        "Réduit le coût en PA du sort Aimantation de 1",
-        "Rend la portée du sort Croisement modifiable"
+        "Désactive la ligne de vue du sort Sismobombe",
+        "Désactive la ligne de vue du sort Sismobombe",
+        "Désactive la ligne de vue du sort Sismobombe",
+        "Augmente la portée maximale du sort Mitraille de 1",
+        "Désactive la ligne de vue du sort Sismobombe",
+        "Désactive la ligne de vue du sort Sismobombe",
+        "Désactive la ligne de vue du sort Sismobombe",
+        "Augmente la portée maximale du sort Mitraille de 1"
       ],
       "de": [
-        "Deaktiviert die Sichtlinie für den Zauber Explobombe",
-        "Deaktiviert die Sichtlinie für den Zauber Explobombe",
-        "Erhöht die maximale Reichweite des Zauberspruchs Quasar um 1.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Quasar um 1.",
-        "Verringert die Abklingzeit des Zauberspruchs Fauler Trick um 1.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Quasar um 1.",
-        "Senkt die AP-Kosten des Zauberspruchs Magnetisierung um 1.",
-        "Die Reichweite des Zaubers Kreuzung wird steigerbar"
+        "Deaktiviert die Sichtlinie für den Zauber Seismobombe",
+        "Deaktiviert die Sichtlinie für den Zauber Seismobombe",
+        "Deaktiviert die Sichtlinie für den Zauber Seismobombe",
+        "Erhöht die maximale Reichweite des Zauberspruchs Kugelschauer um 1.",
+        "Deaktiviert die Sichtlinie für den Zauber Seismobombe",
+        "Deaktiviert die Sichtlinie für den Zauber Seismobombe",
+        "Deaktiviert die Sichtlinie für den Zauber Seismobombe",
+        "Erhöht die maximale Reichweite des Zauberspruchs Kugelschauer um 1."
       ],
       "it": [
-        "Disattiva la linea di tiro dell'incantesimo Esplobomba",
-        "Disattiva la linea di tiro dell'incantesimo Esplobomba",
-        "Aumenta la Portata massima dell'incantesimo Pulsar di 1",
-        "Aumenta la Portata massima dell'incantesimo Pulsar di 1",
-        "[!] Reduces the Presingiro spell's cooldown period by 1",
-        "Aumenta la Portata massima dell'incantesimo Pulsar di 1",
-        "[!] Reduces the Magnetizzazione spell's AP cost by 1",
-        "Rende modificabile la portata dell'incantesimo Incrocio"
+        "Disattiva la linea di tiro dell'incantesimo Sismobomba",
+        "Disattiva la linea di tiro dell'incantesimo Sismobomba",
+        "Disattiva la linea di tiro dell'incantesimo Sismobomba",
+        "Aumenta la Portata massima dell'incantesimo Mitraglia di 1",
+        "Disattiva la linea di tiro dell'incantesimo Sismobomba",
+        "Disattiva la linea di tiro dell'incantesimo Sismobomba",
+        "Disattiva la linea di tiro dell'incantesimo Sismobomba",
+        "Aumenta la Portata massima dell'incantesimo Mitraglia di 1"
       ],
       "es": [
-        "Desactiva la línea de visión del hechizo Explobomba",
-        "Desactiva la línea de visión del hechizo Explobomba",
-        "Aumenta en 1 el alcance máximo del hechizo Púlsar.",
-        "Aumenta en 1 el alcance máximo del hechizo Púlsar.",
-        "Reduce el intervalo de lanzamiento del hechizo Jugarreta en 1",
-        "Aumenta en 1 el alcance máximo del hechizo Púlsar.",
-        "Reduce el coste en PA del hechizo Imantación en 1",
-        "Vuelve modificable el alcance del hechizo Cruce"
+        "Desactiva la línea de visión del hechizo Sismobomba",
+        "Desactiva la línea de visión del hechizo Sismobomba",
+        "Desactiva la línea de visión del hechizo Sismobomba",
+        "Aumenta en 1 el alcance máximo del hechizo Metralla.",
+        "Desactiva la línea de visión del hechizo Sismobomba",
+        "Desactiva la línea de visión del hechizo Sismobomba",
+        "Desactiva la línea de visión del hechizo Sismobomba",
+        "Aumenta en 1 el alcance máximo del hechizo Metralla."
       ],
       "pt": [
-        "Desativa a linha de visão do feitiço Explobomba",
-        "Desativa a linha de visão do feitiço Explobomba",
-        "Aumenta o alcance máximo do feitiço Pulsar em 1",
-        "Aumenta o alcance máximo do feitiço Pulsar em 1",
-        "Reduz o intervalo de relançamento do feitiço Truque Sujo em 1",
-        "Aumenta o alcance máximo do feitiço Pulsar em 1",
-        "Reduz o custo em PA do feitiço Imantação em 1",
-        "Torna possível mudar o alcance do feitiço Cruzamento"
+        "Desativa a linha de visão do feitiço Sismobomba",
+        "Desativa a linha de visão do feitiço Sismobomba",
+        "Desativa a linha de visão do feitiço Sismobomba",
+        "Aumenta o alcance máximo do feitiço Metralha em 1",
+        "Desativa a linha de visão do feitiço Sismobomba",
+        "Desativa a linha de visão do feitiço Sismobomba",
+        "Desativa a linha de visão do feitiço Sismobomba",
+        "Aumenta o alcance máximo do feitiço Metralha em 1"
       ]
     },
     "conditions": {
@@ -63326,55 +63380,61 @@
         "Water Bomb no longer requires a line of sight",
         "Resilient Water Bomb no longer requires a line of sight",
         "Increases the Stolen Goods spell's maximum range by 1",
-        "Increases the Machine Gun spell's maximum range by 1",
-        "Reduces the Roguery spell's cooldown period by 1",
-        "Increases the Strategy spell's maximum range by 2",
-        "Reduces the Last Breath spell's AP cost by 1"
+        "Increases the Weigh Down spell's maximum range by 2",
+        "Explobomb no longer requires a line of sight",
+        "Resilient Explobomb no longer requires a line of sight",
+        "Increases the Pulsar spell's maximum range by 1",
+        "Increases the Shrapnel spell's maximum range by 1"
       ],
       "fr": [
         "Désactive la ligne de vue du sort Bombe à Eau",
         "Désactive la ligne de vue du sort Bombe à Eau",
         "Augmente la portée maximale du sort Recel de 1",
         "Augmente la portée maximale du sort Recel de 1",
-        "Réduit l'intervalle de relance du sort Roublardise de 1",
+        "Désactive la ligne de vue du sort Bombe à Eau",
+        "Désactive la ligne de vue du sort Bombe à Eau",
         "Augmente la portée maximale du sort Recel de 1",
-        "Réduit le coût en PA du sort Dernier Souffle de 1"
+        "Augmente la portée maximale du sort Recel de 1"
       ],
       "de": [
         "Deaktiviert die Sichtlinie für den Zauber Wasserbombe",
         "Deaktiviert die Sichtlinie für den Zauber Wasserbombe",
         "Erhöht die maximale Reichweite des Zauberspruchs Hehlerei um 1.",
         "Erhöht die maximale Reichweite des Zauberspruchs Hehlerei um 1.",
-        "Verringert die Abklingzeit des Zauberspruchs Halsabschneiderei um 1.",
+        "Deaktiviert die Sichtlinie für den Zauber Wasserbombe",
+        "Deaktiviert die Sichtlinie für den Zauber Wasserbombe",
         "Erhöht die maximale Reichweite des Zauberspruchs Hehlerei um 1.",
-        "Senkt die AP-Kosten des Zauberspruchs Letzter Atemzug um 1."
+        "Erhöht die maximale Reichweite des Zauberspruchs Hehlerei um 1."
       ],
       "it": [
         "Disattiva la linea di tiro dell'incantesimo Bomba d'Acqua",
         "Disattiva la linea di tiro dell'incantesimo Bomba d'Acqua",
         "Aumenta la Portata massima dell'incantesimo Ricettazione di 1",
         "Aumenta la Portata massima dell'incantesimo Ricettazione di 1",
-        "[!] Reduces the Ladrurbizia spell's cooldown period by 1",
+        "Disattiva la linea di tiro dell'incantesimo Bomba d'Acqua",
+        "Disattiva la linea di tiro dell'incantesimo Bomba d'Acqua",
         "Aumenta la Portata massima dell'incantesimo Ricettazione di 1",
-        "[!] Reduces the Ultimo Soffio spell's AP cost by 1"
+        "Aumenta la Portata massima dell'incantesimo Ricettazione di 1"
       ],
       "es": [
         "Desactiva la línea de visión del hechizo Bombas de agua",
         "Desactiva la línea de visión del hechizo Bombas de agua",
         "Aumenta en 1 el alcance máximo del hechizo Receptación.",
         "Aumenta en 1 el alcance máximo del hechizo Receptación.",
-        "Reduce el intervalo de lanzamiento del hechizo Tymadura en 1",
+        "Desactiva la línea de visión del hechizo Bombas de agua",
+        "Desactiva la línea de visión del hechizo Bombas de agua",
         "Aumenta en 1 el alcance máximo del hechizo Receptación.",
-        "Reduce el coste en PA del hechizo Último Aliento en 1"
+        "Aumenta en 1 el alcance máximo del hechizo Receptación."
       ],
       "pt": [
         "Desativa a linha de visão do feitiço Bomba d'Água",
         "Desativa a linha de visão do feitiço Bomba d'Água",
         "Aumenta o alcance máximo do feitiço Encobrimento em 1",
         "Aumenta o alcance máximo do feitiço Encobrimento em 1",
-        "Reduz o intervalo de relançamento do feitiço Ladinagem em 1",
+        "Desativa a linha de visão do feitiço Bomba d'Água",
+        "Desativa a linha de visão do feitiço Bomba d'Água",
         "Aumenta o alcance máximo do feitiço Encobrimento em 1",
-        "Reduz o custo em PA do feitiço Último Suspiro em 1"
+        "Aumenta o alcance máximo do feitiço Encobrimento em 1"
       ]
     },
     "conditions": {
@@ -63487,64 +63547,58 @@
     ],
     "customStats": {
       "en": [
-        "Grenado no longer requires a line of sight",
-        "Resilient Grenado no longer requires a line of sight",
-        "Carbine no longer requires a line of sight",
-        "Increases the Obliteration spell's maximum range by 1",
         "Increases the Musket spell's maximum range by 2",
         "Increases the Shot Pellets spell's maximum range by 1",
         "Reduces the Kickback spell's AP cost by 1",
-        "Increases the Ruse spell's maximum range by 2"
+        "Increases the Ruse spell's maximum range by 2",
+        "Reduces the Magnet spell's AP cost by 1",
+        "Makes the Crossing spell's range modifiable",
+        "Increases the Blunderbuss spell's maximum range by 1"
       ],
       "fr": [
-        "Désactive la ligne de vue du sort Tornabombe",
-        "Désactive la ligne de vue du sort Tornabombe",
-        "Désactive la ligne de vue du sort Tornabombe",
-        "Augmente la portée maximale du sort Oblitération de 1",
-        "Augmente la portée maximale du sort Oblitération de 1",
-        "Augmente la portée maximale du sort Oblitération de 1",
+        "Augmente la portée maximale du sort Mousquet de 2",
+        "Augmente la portée maximale du sort Mousquet de 2",
         "Réduit le coût en PA du sort Botte de 1",
-        "Augmente la portée maximale du sort Oblitération de 1"
+        "Augmente la portée maximale du sort Mousquet de 2",
+        "Réduit le coût en PA du sort Botte de 1",
+        "Rend la portée du sort Croisement modifiable",
+        "Augmente la portée maximale du sort Mousquet de 2"
       ],
       "de": [
-        "Deaktiviert die Sichtlinie für den Zauber Tornabombe",
-        "Deaktiviert die Sichtlinie für den Zauber Tornabombe",
-        "Deaktiviert die Sichtlinie für den Zauber Tornabombe",
-        "Erhöht die maximale Reichweite des Zauberspruchs Eingehen um 1.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Eingehen um 1.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Eingehen um 1.",
+        "Erhöht die maximale Reichweite des Zauberspruchs Mus Kete um 2.",
+        "Erhöht die maximale Reichweite des Zauberspruchs Mus Kete um 2.",
         "Senkt die AP-Kosten des Zauberspruchs Stiefeln um 1.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Eingehen um 1."
+        "Erhöht die maximale Reichweite des Zauberspruchs Mus Kete um 2.",
+        "Senkt die AP-Kosten des Zauberspruchs Stiefeln um 1.",
+        "Die Reichweite des Zaubers Kreuzung wird steigerbar",
+        "Erhöht die maximale Reichweite des Zauberspruchs Mus Kete um 2."
       ],
       "it": [
-        "Disattiva la linea di tiro dell'incantesimo Tornabomba",
-        "Disattiva la linea di tiro dell'incantesimo Tornabomba",
-        "Disattiva la linea di tiro dell'incantesimo Tornabomba",
-        "Aumenta la Portata massima dell'incantesimo Obliterazione di 1",
-        "Aumenta la Portata massima dell'incantesimo Obliterazione di 1",
-        "Aumenta la Portata massima dell'incantesimo Obliterazione di 1",
+        "Aumenta la Portata massima dell'incantesimo Moschetto di 2",
+        "Aumenta la Portata massima dell'incantesimo Moschetto di 2",
         "[!] Reduces the Calcio spell's AP cost by 1",
-        "Aumenta la Portata massima dell'incantesimo Obliterazione di 1"
+        "Aumenta la Portata massima dell'incantesimo Moschetto di 2",
+        "[!] Reduces the Calcio spell's AP cost by 1",
+        "Rende modificabile la portata dell'incantesimo Incrocio",
+        "Aumenta la Portata massima dell'incantesimo Moschetto di 2"
       ],
       "es": [
-        "Desactiva la línea de visión del hechizo Tornabombas",
-        "Desactiva la línea de visión del hechizo Tornabombas",
-        "Desactiva la línea de visión del hechizo Tornabombas",
-        "Aumenta en 1 el alcance máximo del hechizo Obliteración.",
-        "Aumenta en 1 el alcance máximo del hechizo Obliteración.",
-        "Aumenta en 1 el alcance máximo del hechizo Obliteración.",
+        "Aumenta en 2 el alcance máximo del hechizo Mosquete.",
+        "Aumenta en 2 el alcance máximo del hechizo Mosquete.",
         "Reduce el coste en PA del hechizo Patada en 1",
-        "Aumenta en 1 el alcance máximo del hechizo Obliteración."
+        "Aumenta en 2 el alcance máximo del hechizo Mosquete.",
+        "Reduce el coste en PA del hechizo Patada en 1",
+        "Vuelve modificable el alcance del hechizo Cruce",
+        "Aumenta en 2 el alcance máximo del hechizo Mosquete."
       ],
       "pt": [
-        "Desativa a linha de visão do feitiço Tornabomba",
-        "Desativa a linha de visão do feitiço Tornabomba",
-        "Desativa a linha de visão do feitiço Tornabomba",
-        "Aumenta o alcance máximo do feitiço Obliteração em 1",
-        "Aumenta o alcance máximo do feitiço Obliteração em 1",
-        "Aumenta o alcance máximo do feitiço Obliteração em 1",
+        "Aumenta o alcance máximo do feitiço Mosquete em 2",
+        "Aumenta o alcance máximo do feitiço Mosquete em 2",
         "Reduz o custo em PA do feitiço Repelente em 1",
-        "Aumenta o alcance máximo do feitiço Obliteração em 1"
+        "Aumenta o alcance máximo do feitiço Mosquete em 2",
+        "Reduz o custo em PA do feitiço Repelente em 1",
+        "Torna possível mudar o alcance do feitiço Cruzamento",
+        "Aumenta o alcance máximo do feitiço Mosquete em 2"
       ]
     },
     "conditions": {
@@ -63797,58 +63851,58 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Seismobomb no longer requires a line of sight",
-        "Resilient Seismobomb no longer requires a line of sight",
-        "Bombard no longer requires a line of sight",
-        "Increases the Machine Gun spell's maximum range by 1",
-        "Increases the Blunderbuss spell's maximum range by 1",
         "Reduces the Kaboom spell's cooldown period by 1",
-        "Increases the Imposture spell's maximum range by 1"
+        "Increases the Imposture spell's maximum range by 1",
+        "Reduces the Dirty Trick spell's cooldown period by 1",
+        "Increases the Walking Bomb spell's maximum range by 2",
+        "Reduces the Roguery spell's cooldown period by 1",
+        "Increases the Strategy spell's maximum range by 2",
+        "Reduces the Last Breath spell's AP cost by 1"
       ],
       "fr": [
-        "Désactive la ligne de vue du sort Sismobombe",
-        "Désactive la ligne de vue du sort Sismobombe",
-        "Désactive la ligne de vue du sort Sismobombe",
-        "Augmente la portée maximale du sort Mitraille de 1",
-        "Augmente la portée maximale du sort Mitraille de 1",
         "Réduit l'intervalle de relance du sort Kaboom de 1",
-        "Augmente la portée maximale du sort Mitraille de 1"
+        "Augmente la portée maximale du sort Imposture de 1",
+        "Réduit l'intervalle de relance du sort Kaboom de 1",
+        "Augmente la portée maximale du sort Imposture de 1",
+        "Réduit l'intervalle de relance du sort Kaboom de 1",
+        "Augmente la portée maximale du sort Imposture de 1",
+        "Réduit le coût en PA du sort Dernier Souffle de 1"
       ],
       "de": [
-        "Deaktiviert die Sichtlinie für den Zauber Seismobombe",
-        "Deaktiviert die Sichtlinie für den Zauber Seismobombe",
-        "Deaktiviert die Sichtlinie für den Zauber Seismobombe",
-        "Erhöht die maximale Reichweite des Zauberspruchs Kugelschauer um 1.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Kugelschauer um 1.",
         "Verringert die Abklingzeit des Zauberspruchs Kaboom um 1.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Kugelschauer um 1."
+        "Erhöht die maximale Reichweite des Zauberspruchs Vorgaukelung um 1.",
+        "Verringert die Abklingzeit des Zauberspruchs Kaboom um 1.",
+        "Erhöht die maximale Reichweite des Zauberspruchs Vorgaukelung um 1.",
+        "Verringert die Abklingzeit des Zauberspruchs Kaboom um 1.",
+        "Erhöht die maximale Reichweite des Zauberspruchs Vorgaukelung um 1.",
+        "Senkt die AP-Kosten des Zauberspruchs Letzter Atemzug um 1."
       ],
       "it": [
-        "Disattiva la linea di tiro dell'incantesimo Sismobomba",
-        "Disattiva la linea di tiro dell'incantesimo Sismobomba",
-        "Disattiva la linea di tiro dell'incantesimo Sismobomba",
-        "Aumenta la Portata massima dell'incantesimo Mitraglia di 1",
-        "Aumenta la Portata massima dell'incantesimo Mitraglia di 1",
         "[!] Reduces the Kaboom spell's cooldown period by 1",
-        "Aumenta la Portata massima dell'incantesimo Mitraglia di 1"
+        "Aumenta la Portata massima dell'incantesimo Impostura di 1",
+        "[!] Reduces the Kaboom spell's cooldown period by 1",
+        "Aumenta la Portata massima dell'incantesimo Impostura di 1",
+        "[!] Reduces the Kaboom spell's cooldown period by 1",
+        "Aumenta la Portata massima dell'incantesimo Impostura di 1",
+        "[!] Reduces the Ultimo Soffio spell's AP cost by 1"
       ],
       "es": [
-        "Desactiva la línea de visión del hechizo Sismobomba",
-        "Desactiva la línea de visión del hechizo Sismobomba",
-        "Desactiva la línea de visión del hechizo Sismobomba",
-        "Aumenta en 1 el alcance máximo del hechizo Metralla.",
-        "Aumenta en 1 el alcance máximo del hechizo Metralla.",
         "Reduce el intervalo de lanzamiento del hechizo Kabúm en 1",
-        "Aumenta en 1 el alcance máximo del hechizo Metralla."
+        "Aumenta en 1 el alcance máximo del hechizo Impostura.",
+        "Reduce el intervalo de lanzamiento del hechizo Kabúm en 1",
+        "Aumenta en 1 el alcance máximo del hechizo Impostura.",
+        "Reduce el intervalo de lanzamiento del hechizo Kabúm en 1",
+        "Aumenta en 1 el alcance máximo del hechizo Impostura.",
+        "Reduce el coste en PA del hechizo Último Aliento en 1"
       ],
       "pt": [
-        "Desativa a linha de visão do feitiço Sismobomba",
-        "Desativa a linha de visão do feitiço Sismobomba",
-        "Desativa a linha de visão do feitiço Sismobomba",
-        "Aumenta o alcance máximo do feitiço Metralha em 1",
-        "Aumenta o alcance máximo do feitiço Metralha em 1",
         "Reduz o intervalo de relançamento do feitiço Kaboom em 1",
-        "Aumenta o alcance máximo do feitiço Metralha em 1"
+        "Aumenta o alcance máximo do feitiço Impostura em 1",
+        "Reduz o intervalo de relançamento do feitiço Kaboom em 1",
+        "Aumenta o alcance máximo do feitiço Impostura em 1",
+        "Reduz o intervalo de relançamento do feitiço Kaboom em 1",
+        "Aumenta o alcance máximo do feitiço Impostura em 1",
+        "Reduz o custo em PA do feitiço Último Suspiro em 1"
       ]
     },
     "conditions": {
@@ -64618,8 +64672,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       }
     ],
     "customStats": {},
@@ -68039,8 +68093,8 @@
       },
       {
         "stat": "AP Reduction",
-        "minStat": -3,
-        "maxStat": -4
+        "minStat": -4,
+        "maxStat": -3
       },
       {
         "stat": "Lock",
@@ -71213,8 +71267,8 @@
     "stats": [
       {
         "stat": "Vitality",
-        "minStat": -251,
-        "maxStat": -300
+        "minStat": -300,
+        "maxStat": -251
       },
       {
         "stat": "Wisdom",
@@ -71307,58 +71361,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Increases the Pilfer spell's maximum range by 2",
-        "Harpooner no longer requires a line of sight",
-        "Reduces the Scaphander spell's AP cost by 1",
-        "Increases the Scuttle spell's maximum range by 2",
-        "Trawler no longer requires a line of sight",
-        "Increases the Armour-Plating spell's maximum range by 3",
-        "Makes the Vapour spell's range modifiable"
+        "Makes the Hoofbeat spell's range modifiable",
+        "Reduces the Periscope spell's AP cost by 1",
+        "Tide no longer requires a line of sight",
+        "Short-Circuit no longer requires a line of sight",
+        "Reduces the Scaphander spell's cooldown period by 1",
+        "Reduces the Armour-Plating spell's cooldown period by 1",
+        "Makes the Evolution spell's range modifiable",
+        "Makes the Hypertension spell's range modifiable"
       ],
       "fr": [
-        "Augmente la portée maximale du sort Flibuste de 2",
-        "Désactive la ligne de vue du sort Harponneuse",
-        "Réduit le coût en PA du sort Scaphandre de 1",
-        "Augmente la portée maximale du sort Flibuste de 2",
-        "Désactive la ligne de vue du sort Harponneuse",
-        "Augmente la portée maximale du sort Flibuste de 2",
-        "Rend la portée du sort Vapor modifiable"
+        "Rend la portée du sort Sabotage modifiable",
+        "Réduit le coût en PA du sort Périscope de 1",
+        "Désactive la ligne de vue du sort Marée",
+        "Désactive la ligne de vue du sort Marée",
+        "Réduit l'intervalle de relance du sort Scaphandre de 1",
+        "Réduit l'intervalle de relance du sort Scaphandre de 1",
+        "Rend la portée du sort Sabotage modifiable",
+        "Rend la portée du sort Sabotage modifiable"
       ],
       "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Bukanier um 2.",
-        "Deaktiviert die Sichtlinie für den Zauber Geschützturm",
-        "Senkt die AP-Kosten des Zauberspruchs Taucheranzug um 1.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Bukanier um 2.",
-        "Deaktiviert die Sichtlinie für den Zauber Geschützturm",
-        "Erhöht die maximale Reichweite des Zauberspruchs Bukanier um 2.",
-        "Die Reichweite des Zaubers Vapor wird steigerbar"
+        "Die Reichweite des Zaubers Sabotage wird steigerbar",
+        "Senkt die AP-Kosten des Zauberspruchs Periskop um 1.",
+        "Deaktiviert die Sichtlinie für den Zauber Gezeiten",
+        "Deaktiviert die Sichtlinie für den Zauber Gezeiten",
+        "Verringert die Abklingzeit des Zauberspruchs Taucheranzug um 1.",
+        "Verringert die Abklingzeit des Zauberspruchs Taucheranzug um 1.",
+        "Die Reichweite des Zaubers Sabotage wird steigerbar",
+        "Die Reichweite des Zaubers Sabotage wird steigerbar"
       ],
       "it": [
-        "Aumenta la Portata massima dell'incantesimo Filibusta di 2",
-        "Disattiva la linea di tiro dell'incantesimo Arpionatrice",
-        "[!] Reduces the Scafandro spell's AP cost by 1",
-        "Aumenta la Portata massima dell'incantesimo Filibusta di 2",
-        "Disattiva la linea di tiro dell'incantesimo Arpionatrice",
-        "Aumenta la Portata massima dell'incantesimo Filibusta di 2",
-        "Rende modificabile la portata dell'incantesimo Vapor"
+        "Rende modificabile la portata dell'incantesimo Scarpembaggio",
+        "[!] Reduces the Periscopio spell's AP cost by 1",
+        "Disattiva la linea di tiro dell'incantesimo Marea",
+        "Disattiva la linea di tiro dell'incantesimo Marea",
+        "[!] Reduces the Scafandro spell's cooldown period by 1",
+        "[!] Reduces the Scafandro spell's cooldown period by 1",
+        "Rende modificabile la portata dell'incantesimo Scarpembaggio",
+        "Rende modificabile la portata dell'incantesimo Scarpembaggio"
       ],
       "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Piratería.",
-        "Desactiva la línea de visión del hechizo Arponeras",
-        "Reduce el coste en PA del hechizo Escafandra en 1",
-        "Aumenta en 2 el alcance máximo del hechizo Piratería.",
-        "Desactiva la línea de visión del hechizo Arponeras",
-        "Aumenta en 2 el alcance máximo del hechizo Piratería.",
-        "Vuelve modificable el alcance del hechizo Vapor"
+        "Vuelve modificable el alcance del hechizo Sabotaje",
+        "Reduce el coste en PA del hechizo Periscopio en 1",
+        "Desactiva la línea de visión del hechizo Marea",
+        "Desactiva la línea de visión del hechizo Marea",
+        "Reduce el intervalo de lanzamiento del hechizo Escafandra en 1",
+        "Reduce el intervalo de lanzamiento del hechizo Escafandra en 1",
+        "Vuelve modificable el alcance del hechizo Sabotaje",
+        "Vuelve modificable el alcance del hechizo Sabotaje"
       ],
       "pt": [
-        "Aumenta o alcance máximo do feitiço Pirataria em 2",
-        "Desativa a linha de visão do feitiço Arpoadora",
-        "Reduz o custo em PA do feitiço Escafandro em 1",
-        "Aumenta o alcance máximo do feitiço Pirataria em 2",
-        "Desativa a linha de visão do feitiço Arpoadora",
-        "Aumenta o alcance máximo do feitiço Pirataria em 2",
-        "Torna possível mudar o alcance do feitiço Vapor"
+        "Torna possível mudar o alcance do feitiço Sabotagem",
+        "Reduz o custo em PA do feitiço Periscópio em 1",
+        "Desativa a linha de visão do feitiço Maré",
+        "Desativa a linha de visão do feitiço Maré",
+        "Reduz o intervalo de relançamento do feitiço Escafandro em 1",
+        "Reduz o intervalo de relançamento do feitiço Escafandro em 1",
+        "Torna possível mudar o alcance do feitiço Sabotagem",
+        "Torna possível mudar o alcance do feitiço Sabotagem"
       ]
     },
     "conditions": {
@@ -71383,58 +71443,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Reduces the Salt Armour spell's cooldown period by 1",
-        "Lifesaver no longer requires a line of sight",
-        "Reduces the Assistance spell's cooldown period by 1",
-        "Drill no longer requires a line of sight",
-        "Reduces the Tide spell's AP cost by 1",
-        "Reduces the Corrosion spell's AP cost by 1",
-        "Reduces the Short-Circuit spell's AP cost by 1"
+        "Makes the Anchor spell's range modifiable",
+        "Makes the Vapour spell's range modifiable",
+        "Mooring no longer requires a line of sight",
+        "Valve no longer requires a line of sight",
+        "Grapnel no longer requires a line of sight",
+        "Increases the Piston spell's maximum range by 2",
+        "Compass no longer requires a line of sight",
+        "Reduces the Breakwater spell's cooldown period by 1"
       ],
       "fr": [
-        "Réduit l'intervalle de relance du sort Armure de Sel de 1",
-        "Désactive la ligne de vue du sort Gardienne",
-        "Réduit l'intervalle de relance du sort Armure de Sel de 1",
-        "Désactive la ligne de vue du sort Gardienne",
-        "Réduit le coût en PA du sort Marée de 1",
-        "Réduit le coût en PA du sort Marée de 1",
-        "Réduit le coût en PA du sort Marée de 1"
+        "Rend la portée du sort Ancrage modifiable",
+        "Rend la portée du sort Ancrage modifiable",
+        "Désactive la ligne de vue du sort Amarrage",
+        "Désactive la ligne de vue du sort Amarrage",
+        "Désactive la ligne de vue du sort Amarrage",
+        "Augmente la portée maximale du sort Piston de 2",
+        "Désactive la ligne de vue du sort Amarrage",
+        "Réduit l'intervalle de relance du sort Brise l'Âme de 1"
       ],
       "de": [
-        "Verringert die Abklingzeit des Zauberspruchs Salz-Rüstung um 1.",
-        "Deaktiviert die Sichtlinie für den Zauber Wachturm",
-        "Verringert die Abklingzeit des Zauberspruchs Salz-Rüstung um 1.",
-        "Deaktiviert die Sichtlinie für den Zauber Wachturm",
-        "Senkt die AP-Kosten des Zauberspruchs Gezeiten um 1.",
-        "Senkt die AP-Kosten des Zauberspruchs Gezeiten um 1.",
-        "Senkt die AP-Kosten des Zauberspruchs Gezeiten um 1."
+        "Die Reichweite des Zaubers Verankern wird steigerbar",
+        "Die Reichweite des Zaubers Verankern wird steigerbar",
+        "Deaktiviert die Sichtlinie für den Zauber Vertäuen",
+        "Deaktiviert die Sichtlinie für den Zauber Vertäuen",
+        "Deaktiviert die Sichtlinie für den Zauber Vertäuen",
+        "Erhöht die maximale Reichweite des Zauberspruchs Kolben um 2.",
+        "Deaktiviert die Sichtlinie für den Zauber Vertäuen",
+        "Verringert die Abklingzeit des Zauberspruchs Wellenbrecher um 1."
       ],
       "it": [
-        "[!] Reduces the Armatura di Sale spell's cooldown period by 1",
-        "Disattiva la linea di tiro dell'incantesimo Guardiana",
-        "[!] Reduces the Armatura di Sale spell's cooldown period by 1",
-        "Disattiva la linea di tiro dell'incantesimo Guardiana",
-        "[!] Reduces the Marea spell's AP cost by 1",
-        "[!] Reduces the Marea spell's AP cost by 1",
-        "[!] Reduces the Marea spell's AP cost by 1"
+        "Rende modificabile la portata dell'incantesimo Ancoramento",
+        "Rende modificabile la portata dell'incantesimo Ancoramento",
+        "Disattiva la linea di tiro dell'incantesimo Ammaraggio",
+        "Disattiva la linea di tiro dell'incantesimo Ammaraggio",
+        "Disattiva la linea di tiro dell'incantesimo Ammaraggio",
+        "Aumenta la Portata massima dell'incantesimo Pistone di 2",
+        "Disattiva la linea di tiro dell'incantesimo Ammaraggio",
+        "[!] Reduces the Frangiflutti spell's cooldown period by 1"
       ],
       "es": [
-        "Reduce el intervalo de lanzamiento del hechizo Coraza Salina en 1",
-        "Desactiva la línea de visión del hechizo Guardianas",
-        "Reduce el intervalo de lanzamiento del hechizo Coraza Salina en 1",
-        "Desactiva la línea de visión del hechizo Guardianas",
-        "Reduce el coste en PA del hechizo Marea en 1",
-        "Reduce el coste en PA del hechizo Marea en 1",
-        "Reduce el coste en PA del hechizo Marea en 1"
+        "Vuelve modificable el alcance del hechizo Anclaje",
+        "Vuelve modificable el alcance del hechizo Anclaje",
+        "Desactiva la línea de visión del hechizo Amarre",
+        "Desactiva la línea de visión del hechizo Amarre",
+        "Desactiva la línea de visión del hechizo Amarre",
+        "Aumenta en 2 el alcance máximo del hechizo Pistón.",
+        "Desactiva la línea de visión del hechizo Amarre",
+        "Reduce el intervalo de lanzamiento del hechizo Albarrama en 1"
       ],
       "pt": [
-        "Reduz o intervalo de relançamento do feitiço Armadura de Sal em 1",
-        "Desativa a linha de visão do feitiço Guardiã",
-        "Reduz o intervalo de relançamento do feitiço Armadura de Sal em 1",
-        "Desativa a linha de visão do feitiço Guardiã",
-        "Reduz o custo em PA do feitiço Maré em 1",
-        "Reduz o custo em PA do feitiço Maré em 1",
-        "Reduz o custo em PA do feitiço Maré em 1"
+        "Torna possível mudar o alcance do feitiço Ancoragem",
+        "Torna possível mudar o alcance do feitiço Ancoragem",
+        "Desativa a linha de visão do feitiço Amarras",
+        "Desativa a linha de visão do feitiço Amarras",
+        "Desativa a linha de visão do feitiço Amarras",
+        "Aumenta o alcance máximo do feitiço Pistão em 2",
+        "Desativa a linha de visão do feitiço Amarras",
+        "Reduz o intervalo de relançamento do feitiço Dique em 1"
       ]
     },
     "conditions": {
@@ -71465,58 +71531,64 @@
     ],
     "customStats": {
       "en": [
-        "Increases the Grapnel spell's maximum range by 2",
-        "Tacturret no longer requires a line of sight",
-        "Increases the Trident spell's maximum range by 2",
-        "Hypertension no longer requires a line of sight",
-        "Bathyscaphe no longer requires a line of sight",
-        "Reduces the Seizing spell's AP cost by 1",
-        "Increases Anchor's basic damage by 3"
+        "Makes the Trident spell's range modifiable",
+        "Rudder no longer requires a line of sight",
+        "Reduces the Torpedo spell's AP cost by 1",
+        "Makes the Capstan spell's range modifiable",
+        "Reduces the First Aid spell's AP cost by 1",
+        "Reduces the Rescue spell's AP cost by 1",
+        "Lifesaver no longer requires a line of sight",
+        "Drill no longer requires a line of sight"
       ],
       "fr": [
-        "Augmente la portée maximale du sort Aspiration de 2",
-        "Désactive la ligne de vue du sort Tactirelle",
-        "Augmente la portée maximale du sort Aspiration de 2",
-        "Désactive la ligne de vue du sort Tactirelle",
-        "Désactive la ligne de vue du sort Tactirelle",
-        "Réduit le coût en PA du sort Arraisonnage de 1",
-        "Augmente les dégâts de base du sort Ancrage de 3"
+        "Rend la portée du sort Foène modifiable",
+        "Désactive la ligne de vue du sort Gouvernail",
+        "Réduit le coût en PA du sort Torpille de 1",
+        "Rend la portée du sort Foène modifiable",
+        "Réduit le coût en PA du sort Torpille de 1",
+        "Réduit le coût en PA du sort Torpille de 1",
+        "Désactive la ligne de vue du sort Gouvernail",
+        "Désactive la ligne de vue du sort Gouvernail"
       ],
       "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Greifer um 2.",
-        "Deaktiviert die Sichtlinie für den Zauber Kontrollturm",
-        "Erhöht die maximale Reichweite des Zauberspruchs Greifer um 2.",
-        "Deaktiviert die Sichtlinie für den Zauber Kontrollturm",
-        "Deaktiviert die Sichtlinie für den Zauber Kontrollturm",
-        "Senkt die AP-Kosten des Zauberspruchs Ergreifen um 1.",
-        "Erhöht den Grundschaden des Zaubers Verankern um 3"
+        "Die Reichweite des Zaubers Lyster wird steigerbar",
+        "Deaktiviert die Sichtlinie für den Zauber Steuerruder",
+        "Senkt die AP-Kosten des Zauberspruchs Torpedo um 1.",
+        "Die Reichweite des Zaubers Lyster wird steigerbar",
+        "Senkt die AP-Kosten des Zauberspruchs Torpedo um 1.",
+        "Senkt die AP-Kosten des Zauberspruchs Torpedo um 1.",
+        "Deaktiviert die Sichtlinie für den Zauber Steuerruder",
+        "Deaktiviert die Sichtlinie für den Zauber Steuerruder"
       ],
       "it": [
-        "Aumenta la Portata massima dell'incantesimo Aspirazione di 2",
-        "Disattiva la linea di tiro dell'incantesimo Tattica",
-        "Aumenta la Portata massima dell'incantesimo Aspirazione di 2",
-        "Disattiva la linea di tiro dell'incantesimo Tattica",
-        "Disattiva la linea di tiro dell'incantesimo Tattica",
-        "[!] Reduces the Ispezione spell's AP cost by 1",
-        "Aumenta i danni di base dell'incantesimo Ancoramento di 3"
+        "Rende modificabile la portata dell'incantesimo Salnitro",
+        "Disattiva la linea di tiro dell'incantesimo Fiocina",
+        "[!] Reduces the Siluro spell's AP cost by 1",
+        "Rende modificabile la portata dell'incantesimo Salnitro",
+        "[!] Reduces the Siluro spell's AP cost by 1",
+        "[!] Reduces the Siluro spell's AP cost by 1",
+        "Disattiva la linea di tiro dell'incantesimo Fiocina",
+        "Disattiva la linea di tiro dell'incantesimo Fiocina"
       ],
       "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Aspiración.",
-        "Desactiva la línea de visión del hechizo Tactiquillas",
-        "Aumenta en 2 el alcance máximo del hechizo Aspiración.",
-        "Desactiva la línea de visión del hechizo Tactiquillas",
-        "Desactiva la línea de visión del hechizo Tactiquillas",
-        "Reduce el coste en PA del hechizo Reconocimiento en 1",
-        "Aumenta los daños de base del hechizo Anclaje en 3"
+        "Vuelve modificable el alcance del hechizo Tridente",
+        "Desactiva la línea de visión del hechizo Timón",
+        "Reduce el coste en PA del hechizo Torpedo en 1",
+        "Vuelve modificable el alcance del hechizo Tridente",
+        "Reduce el coste en PA del hechizo Torpedo en 1",
+        "Reduce el coste en PA del hechizo Torpedo en 1",
+        "Desactiva la línea de visión del hechizo Timón",
+        "Desactiva la línea de visión del hechizo Timón"
       ],
       "pt": [
-        "Aumenta o alcance máximo do feitiço Aspiração em 2",
-        "Desativa a linha de visão do feitiço Estratorre",
-        "Aumenta o alcance máximo do feitiço Aspiração em 2",
-        "Desativa a linha de visão do feitiço Estratorre",
-        "Desativa a linha de visão do feitiço Estratorre",
-        "Reduz o custo em PA do feitiço Abalroar em 1",
-        "Aumenta o dano básico de feitiço Ancoragem em 3"
+        "Torna possível mudar o alcance do feitiço Arpéu",
+        "Desativa a linha de visão do feitiço Leme",
+        "Reduz o custo em PA do feitiço Torpedo em 1",
+        "Torna possível mudar o alcance do feitiço Arpéu",
+        "Reduz o custo em PA do feitiço Torpedo em 1",
+        "Reduz o custo em PA do feitiço Torpedo em 1",
+        "Desativa a linha de visão do feitiço Leme",
+        "Desativa a linha de visão do feitiço Leme"
       ]
     },
     "conditions": {
@@ -71541,52 +71613,58 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Increases the Evolution spell's maximum range by 2",
+        "Makes the Turbine spell's range modifiable",
+        "Makes the Pilfer spell's range modifiable",
+        "Reduces the Froth spell's AP cost by 1",
+        "Backwash no longer requires a line of sight",
         "Makes the Ambush spell's range modifiable",
-        "Transition no longer requires a line of sight",
-        "Increases the Torrent spell's maximum range by 2",
-        "Increases the Harmattan spell's maximum range by 1",
-        "Reduces the Surge spell's AP cost by 1"
+        "Harpooner no longer requires a line of sight",
+        "Trawler no longer requires a line of sight"
       ],
       "fr": [
-        "Augmente la portée maximale du sort Évolution de 2",
-        "Rend la portée du sort Embuscade modifiable",
-        "Désactive la ligne de vue du sort Transition",
-        "Augmente la portée maximale du sort Évolution de 2",
-        "Augmente la portée maximale du sort Évolution de 2",
-        "Réduit le coût en PA du sort Selpâtre de 1"
+        "Rend la portée du sort Turbine modifiable",
+        "Rend la portée du sort Turbine modifiable",
+        "Réduit le coût en PA du sort Écume de 1",
+        "Désactive la ligne de vue du sort Ressac",
+        "Rend la portée du sort Turbine modifiable",
+        "Désactive la ligne de vue du sort Ressac",
+        "Désactive la ligne de vue du sort Ressac"
       ],
       "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Evolution um 2.",
-        "Die Reichweite des Zaubers Hinterhalt wird steigerbar",
-        "Deaktiviert die Sichtlinie für den Zauber Übergang",
-        "Erhöht die maximale Reichweite des Zauberspruchs Evolution um 2.",
-        "Erhöht die maximale Reichweite des Zauberspruchs Evolution um 2.",
-        "Senkt die AP-Kosten des Zauberspruchs Pater Sel um 1."
+        "Die Reichweite des Zaubers Turbine wird steigerbar",
+        "Die Reichweite des Zaubers Turbine wird steigerbar",
+        "Senkt die AP-Kosten des Zauberspruchs Gischt um 1.",
+        "Deaktiviert die Sichtlinie für den Zauber Brandung",
+        "Die Reichweite des Zaubers Turbine wird steigerbar",
+        "Deaktiviert die Sichtlinie für den Zauber Brandung",
+        "Deaktiviert die Sichtlinie für den Zauber Brandung"
       ],
       "it": [
-        "Aumenta la Portata massima dell'incantesimo Evoluzione di 2",
-        "Rende modificabile la portata dell'incantesimo Imboscata",
-        "Disattiva la linea di tiro dell'incantesimo Transizione",
-        "Aumenta la Portata massima dell'incantesimo Evoluzione di 2",
-        "Aumenta la Portata massima dell'incantesimo Evoluzione di 2",
-        "[!] Reduces the Salnitro spell's AP cost by 1"
+        "Rende modificabile la portata dell'incantesimo Nautilo",
+        "Rende modificabile la portata dell'incantesimo Nautilo",
+        "[!] Reduces the Schiuma spell's AP cost by 1",
+        "Disattiva la linea di tiro dell'incantesimo Risacca",
+        "Rende modificabile la portata dell'incantesimo Nautilo",
+        "Disattiva la linea di tiro dell'incantesimo Risacca",
+        "Disattiva la linea di tiro dell'incantesimo Risacca"
       ],
       "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Evolución.",
-        "Vuelve modificable el alcance del hechizo Emboscada",
-        "Desactiva la línea de visión del hechizo Transición",
-        "Aumenta en 2 el alcance máximo del hechizo Evolución.",
-        "Aumenta en 2 el alcance máximo del hechizo Evolución.",
-        "Reduce el coste en PA del hechizo Salitre en 1"
+        "Vuelve modificable el alcance del hechizo Turbina",
+        "Vuelve modificable el alcance del hechizo Turbina",
+        "Reduce el coste en PA del hechizo Espuma de Mar en 1",
+        "Desactiva la línea de visión del hechizo Resacón",
+        "Vuelve modificable el alcance del hechizo Turbina",
+        "Desactiva la línea de visión del hechizo Resacón",
+        "Desactiva la línea de visión del hechizo Resacón"
       ],
       "pt": [
-        "Aumenta o alcance máximo do feitiço Evolução em 2",
-        "Torna possível mudar o alcance do feitiço Emboscada",
-        "Desativa a linha de visão do feitiço Transição",
-        "Aumenta o alcance máximo do feitiço Evolução em 2",
-        "Aumenta o alcance máximo do feitiço Evolução em 2",
-        "Reduz o custo em PA do feitiço Salitre em 1"
+        "Torna possível mudar o alcance do feitiço Turbina",
+        "Torna possível mudar o alcance do feitiço Turbina",
+        "Reduz o custo em PA do feitiço Espuma em 1",
+        "Desativa a linha de visão do feitiço Refluxo",
+        "Torna possível mudar o alcance do feitiço Turbina",
+        "Desativa a linha de visão do feitiço Refluxo",
+        "Desativa a linha de visão do feitiço Refluxo"
       ]
     },
     "conditions": {
@@ -71611,58 +71689,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Increases the Spyglass spell's maximum range by 2",
-        "Compass no longer requires a line of sight",
-        "Increases the Periscope spell's maximum range by 1",
-        "Reduces the Rescue spell's AP cost by 1",
-        "Makes the First Aid spell's range modifiable",
-        "Reduces the Breakwater spell's AP cost by 1",
-        "Froth no longer requires a line of sight"
+        "Reduces the Spyglass spell's AP cost by 1",
+        "Reduces the Corrosion spell's AP cost by 1",
+        "Reduces the Harmattan spell's AP cost by 1",
+        "Torrent no longer requires a line of sight",
+        "Reduces the Dive spell's AP cost by 1",
+        "Reduces the Submersion spell's AP cost by 1",
+        "Tacturret no longer requires a line of sight",
+        "Bathyscaphe no longer requires a line of sight"
       ],
       "fr": [
-        "Augmente la portée maximale du sort Longue Vue de 2",
-        "Désactive la ligne de vue du sort Compas",
-        "Augmente la portée maximale du sort Longue Vue de 2",
-        "Réduit le coût en PA du sort Sauvetage de 1",
-        "Rend la portée du sort Secourisme modifiable",
-        "Réduit le coût en PA du sort Sauvetage de 1",
-        "Désactive la ligne de vue du sort Compas"
+        "Réduit le coût en PA du sort Longue-vue de 1",
+        "Réduit le coût en PA du sort Longue-vue de 1",
+        "Réduit le coût en PA du sort Longue-vue de 1",
+        "Désactive la ligne de vue du sort Courant",
+        "Réduit le coût en PA du sort Longue-vue de 1",
+        "Réduit le coût en PA du sort Longue-vue de 1",
+        "Désactive la ligne de vue du sort Courant",
+        "Désactive la ligne de vue du sort Courant"
       ],
       "de": [
-        "Erhöht die maximale Reichweite des Zauberspruchs Fernrohr um 2.",
-        "Deaktiviert die Sichtlinie für den Zauber Kompass",
-        "Erhöht die maximale Reichweite des Zauberspruchs Fernrohr um 2.",
-        "Senkt die AP-Kosten des Zauberspruchs Rettung um 1.",
-        "Die Reichweite des Zaubers Erste Hilfe wird steigerbar",
-        "Senkt die AP-Kosten des Zauberspruchs Rettung um 1.",
-        "Deaktiviert die Sichtlinie für den Zauber Kompass"
+        "Senkt die AP-Kosten des Zauberspruchs Fernrohr um 1.",
+        "Senkt die AP-Kosten des Zauberspruchs Fernrohr um 1.",
+        "Senkt die AP-Kosten des Zauberspruchs Fernrohr um 1.",
+        "Deaktiviert die Sichtlinie für den Zauber Strömung",
+        "Senkt die AP-Kosten des Zauberspruchs Fernrohr um 1.",
+        "Senkt die AP-Kosten des Zauberspruchs Fernrohr um 1.",
+        "Deaktiviert die Sichtlinie für den Zauber Strömung",
+        "Deaktiviert die Sichtlinie für den Zauber Strömung"
       ],
       "it": [
-        "Aumenta la Portata massima dell'incantesimo Cannocchiale di 2",
-        "Disattiva la linea di tiro dell'incantesimo Bussola",
-        "Aumenta la Portata massima dell'incantesimo Cannocchiale di 2",
-        "[!] Reduces the Salvataggio spell's AP cost by 1",
-        "Rende modificabile la portata dell'incantesimo Soccorso",
-        "[!] Reduces the Salvataggio spell's AP cost by 1",
-        "Disattiva la linea di tiro dell'incantesimo Bussola"
+        "[!] Reduces the Cannocchiale spell's AP cost by 1",
+        "[!] Reduces the Cannocchiale spell's AP cost by 1",
+        "[!] Reduces the Cannocchiale spell's AP cost by 1",
+        "Disattiva la linea di tiro dell'incantesimo Corrente",
+        "[!] Reduces the Cannocchiale spell's AP cost by 1",
+        "[!] Reduces the Cannocchiale spell's AP cost by 1",
+        "Disattiva la linea di tiro dell'incantesimo Corrente",
+        "Disattiva la linea di tiro dell'incantesimo Corrente"
       ],
       "es": [
-        "Aumenta en 2 el alcance máximo del hechizo Catalejo.",
-        "Desactiva la línea de visión del hechizo Compás",
-        "Aumenta en 2 el alcance máximo del hechizo Catalejo.",
-        "Reduce el coste en PA del hechizo Salvamento en 1",
-        "Vuelve modificable el alcance del hechizo Socorrismo",
-        "Reduce el coste en PA del hechizo Salvamento en 1",
-        "Desactiva la línea de visión del hechizo Compás"
+        "Reduce el coste en PA del hechizo Catalejo en 1",
+        "Reduce el coste en PA del hechizo Catalejo en 1",
+        "Reduce el coste en PA del hechizo Catalejo en 1",
+        "Desactiva la línea de visión del hechizo Corriente",
+        "Reduce el coste en PA del hechizo Catalejo en 1",
+        "Reduce el coste en PA del hechizo Catalejo en 1",
+        "Desactiva la línea de visión del hechizo Corriente",
+        "Desactiva la línea de visión del hechizo Corriente"
       ],
       "pt": [
-        "Aumenta o alcance máximo do feitiço Luneta em 2",
-        "Desativa a linha de visão do feitiço Bússola",
-        "Aumenta o alcance máximo do feitiço Luneta em 2",
-        "Reduz o custo em PA do feitiço Salvamento em 1",
-        "Torna possível mudar o alcance do feitiço Primeiros Socorros",
-        "Reduz o custo em PA do feitiço Salvamento em 1",
-        "Desativa a linha de visão do feitiço Bússola"
+        "Reduz o custo em PA do feitiço Luneta em 1",
+        "Reduz o custo em PA do feitiço Luneta em 1",
+        "Reduz o custo em PA do feitiço Luneta em 1",
+        "Desativa a linha de visão do feitiço Corrente",
+        "Reduz o custo em PA do feitiço Luneta em 1",
+        "Reduz o custo em PA do feitiço Luneta em 1",
+        "Desativa a linha de visão do feitiço Corrente",
+        "Desativa a linha de visão do feitiço Corrente"
       ]
     },
     "conditions": {
@@ -72979,8 +73063,8 @@
       },
       {
         "stat": "MP Reduction",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "Dodge",
@@ -72989,8 +73073,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       }
     ],
     "customStats": {},
@@ -73081,8 +73165,8 @@
       },
       {
         "stat": "MP Reduction",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       },
       {
         "stat": "Dodge",
@@ -73091,8 +73175,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       }
     ],
     "customStats": {},
@@ -73464,8 +73548,8 @@
       },
       {
         "stat": "Critical Damage",
-        "minStat": -16,
-        "maxStat": -25
+        "minStat": -25,
+        "maxStat": -16
       }
     ],
     "customStats": {},
@@ -73546,8 +73630,8 @@
       },
       {
         "stat": "Critical Damage",
-        "minStat": -21,
-        "maxStat": -30
+        "minStat": -30,
+        "maxStat": -21
       }
     ],
     "customStats": {},
@@ -73623,8 +73707,8 @@
       },
       {
         "stat": "Critical Damage",
-        "minStat": -16,
-        "maxStat": -25
+        "minStat": -25,
+        "maxStat": -16
       }
     ],
     "customStats": {},
@@ -73715,8 +73799,8 @@
       },
       {
         "stat": "Critical Damage",
-        "minStat": -16,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -16
       }
     ],
     "customStats": {},
@@ -73812,8 +73896,8 @@
       },
       {
         "stat": "Critical Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       }
     ],
     "customStats": {},
@@ -73894,8 +73978,8 @@
       },
       {
         "stat": "Critical Damage",
-        "minStat": -16,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -16
       }
     ],
     "customStats": {},
@@ -73991,13 +74075,13 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Lock",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       },
       {
         "stat": "Critical Damage",
@@ -74088,13 +74172,13 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -3,
-        "maxStat": -4
+        "minStat": -4,
+        "maxStat": -3
       },
       {
         "stat": "Lock",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "Critical Damage",
@@ -74185,13 +74269,13 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "Lock",
-        "minStat": -6,
-        "maxStat": -8
+        "minStat": -8,
+        "maxStat": -6
       },
       {
         "stat": "Pushback Damage",
@@ -74257,8 +74341,8 @@
       },
       {
         "stat": "Initiative",
-        "minStat": -301,
-        "maxStat": -400
+        "minStat": -400,
+        "maxStat": -301
       },
       {
         "stat": "Prospecting",
@@ -74282,8 +74366,8 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "MP Parry",
@@ -74292,8 +74376,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -10,
-        "maxStat": -14
+        "minStat": -14,
+        "maxStat": -10
       },
       {
         "stat": "Pushback Damage",
@@ -74359,8 +74443,8 @@
       },
       {
         "stat": "Initiative",
-        "minStat": -301,
-        "maxStat": -400
+        "minStat": -400,
+        "maxStat": -301
       },
       {
         "stat": "Water Damage",
@@ -74389,8 +74473,8 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Lock",
@@ -74399,8 +74483,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -8,
-        "maxStat": -12
+        "minStat": -12,
+        "maxStat": -8
       },
       {
         "stat": "Critical Resistance",
@@ -74461,8 +74545,8 @@
       },
       {
         "stat": "Initiative",
-        "minStat": -201,
-        "maxStat": -300
+        "minStat": -300,
+        "maxStat": -201
       },
       {
         "stat": "Prospecting",
@@ -74486,13 +74570,13 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Dodge",
-        "minStat": -12,
-        "maxStat": -16
+        "minStat": -16,
+        "maxStat": -12
       },
       {
         "stat": "Pushback Resistance",
@@ -74548,28 +74632,28 @@
       },
       {
         "stat": "Neutral Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Earth Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Fire Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Water Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Air Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "% Neutral Resistance",
@@ -74645,28 +74729,28 @@
       },
       {
         "stat": "Neutral Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Earth Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Fire Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Water Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Air Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "% Neutral Resistance",
@@ -74777,8 +74861,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       }
     ],
     "customStats": {},
@@ -74838,8 +74922,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -6,
-        "maxStat": -8
+        "minStat": -8,
+        "maxStat": -6
       },
       {
         "stat": "Heals",
@@ -78357,8 +78441,8 @@
       },
       {
         "stat": "% Water Resistance",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       }
     ],
     "customStats": {},
@@ -78434,8 +78518,8 @@
       },
       {
         "stat": "% Fire Resistance",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       }
     ],
     "customStats": {},
@@ -78511,8 +78595,8 @@
       },
       {
         "stat": "% Air Resistance",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       }
     ],
     "customStats": {},
@@ -78588,8 +78672,8 @@
       },
       {
         "stat": "% Earth Resistance",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       }
     ],
     "customStats": {},
@@ -78655,8 +78739,8 @@
       },
       {
         "stat": "% Water Resistance",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       }
     ],
     "customStats": {},
@@ -78722,8 +78806,8 @@
       },
       {
         "stat": "% Fire Resistance",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       }
     ],
     "customStats": {},
@@ -78789,8 +78873,8 @@
       },
       {
         "stat": "% Air Resistance",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       }
     ],
     "customStats": {},
@@ -78856,8 +78940,8 @@
       },
       {
         "stat": "% Earth Resistance",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       }
     ],
     "customStats": {},
@@ -79809,8 +79893,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       },
       {
         "stat": "Critical Damage",
@@ -79876,8 +79960,8 @@
       },
       {
         "stat": "Initiative",
-        "minStat": -201,
-        "maxStat": -300
+        "minStat": -300,
+        "maxStat": -201
       },
       {
         "stat": "Prospecting",
@@ -79988,8 +80072,8 @@
       },
       {
         "stat": "Critical Damage",
-        "minStat": -16,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -16
       }
     ],
     "customStats": {},
@@ -80742,8 +80826,8 @@
       },
       {
         "stat": "MP Reduction",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "Lock",
@@ -80839,8 +80923,8 @@
       },
       {
         "stat": "Pushback Resistance",
-        "minStat": -16,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -16
       }
     ],
     "customStats": {},
@@ -80906,8 +80990,8 @@
       },
       {
         "stat": "Initiative",
-        "minStat": -301,
-        "maxStat": -400
+        "minStat": -400,
+        "maxStat": -301
       },
       {
         "stat": "Fire Damage",
@@ -81003,28 +81087,28 @@
       },
       {
         "stat": "% Neutral Resistance",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "% Earth Resistance",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "% Fire Resistance",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "% Water Resistance",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "% Air Resistance",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "AP Reduction",
@@ -81080,8 +81164,8 @@
       },
       {
         "stat": "Initiative",
-        "minStat": -401,
-        "maxStat": -500
+        "minStat": -500,
+        "maxStat": -401
       },
       {
         "stat": "Neutral Damage",
@@ -81157,8 +81241,8 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       },
       {
         "stat": "Lock",
@@ -81629,8 +81713,8 @@
       },
       {
         "stat": "Earth Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Water Damage",
@@ -81716,8 +81800,8 @@
       },
       {
         "stat": "Earth Damage",
-        "minStat": -16,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -16
       },
       {
         "stat": "Water Damage",
@@ -81803,8 +81887,8 @@
       },
       {
         "stat": "Earth Damage",
-        "minStat": -16,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -16
       },
       {
         "stat": "Water Damage",
@@ -82166,8 +82250,8 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -6,
-        "maxStat": -8
+        "minStat": -8,
+        "maxStat": -6
       },
       {
         "stat": "Lock",
@@ -82345,8 +82429,8 @@
       },
       {
         "stat": "Pushback Damage",
-        "minStat": -21,
-        "maxStat": -30
+        "minStat": -30,
+        "maxStat": -21
       },
       {
         "stat": "Critical Damage",
@@ -82427,8 +82511,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -16,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -16
       }
     ],
     "customStats": {},
@@ -82524,8 +82608,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -16,
-        "maxStat": -25
+        "minStat": -25,
+        "maxStat": -16
       }
     ],
     "customStats": {},
@@ -82606,8 +82690,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -16,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -16
       }
     ],
     "customStats": {},
@@ -82648,8 +82732,8 @@
       },
       {
         "stat": "Critical",
-        "minStat": -5,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -5
       },
       {
         "stat": "AP",
@@ -82827,8 +82911,8 @@
       },
       {
         "stat": "Critical Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       }
     ],
     "customStats": {},
@@ -82904,8 +82988,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -16,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -16
       },
       {
         "stat": "Critical Resistance",
@@ -82995,8 +83079,8 @@
       },
       {
         "stat": "% Neutral Resistance",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "% Fire Resistance",
@@ -83097,8 +83181,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       }
     ],
     "customStats": {},
@@ -83179,8 +83263,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       }
     ],
     "customStats": {},
@@ -83236,8 +83320,8 @@
       },
       {
         "stat": "Initiative",
-        "minStat": -301,
-        "maxStat": -400
+        "minStat": -400,
+        "maxStat": -301
       },
       {
         "stat": "Prospecting",
@@ -83256,8 +83340,8 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -6,
-        "maxStat": -8
+        "minStat": -8,
+        "maxStat": -6
       },
       {
         "stat": "Lock",
@@ -83352,8 +83436,8 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -6,
-        "maxStat": -8
+        "minStat": -8,
+        "maxStat": -6
       },
       {
         "stat": "MP Parry",
@@ -83367,8 +83451,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       }
     ],
     "customStats": {},
@@ -84038,8 +84122,8 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       }
     ],
     "customStats": {},
@@ -84294,8 +84378,8 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       }
     ],
     "customStats": {},
@@ -84896,8 +84980,8 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "MP Reduction",
@@ -84963,8 +85047,8 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -6,
-        "maxStat": -8
+        "minStat": -8,
+        "maxStat": -6
       },
       {
         "stat": "MP Reduction",
@@ -85035,8 +85119,8 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "MP Reduction",
@@ -86061,8 +86145,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Air Damage",
@@ -86143,8 +86227,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Air Damage",
@@ -86225,8 +86309,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Air Damage",
@@ -86623,8 +86707,8 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -5,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -5
       },
       {
         "stat": "Lock",
@@ -86638,8 +86722,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -21,
-        "maxStat": -30
+        "minStat": -30,
+        "maxStat": -21
       },
       {
         "stat": "Prospecting",
@@ -86730,8 +86814,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -21,
-        "maxStat": -30
+        "minStat": -30,
+        "maxStat": -21
       },
       {
         "stat": "Lock",
@@ -86802,8 +86886,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -21,
-        "maxStat": -30
+        "minStat": -30,
+        "maxStat": -21
       },
       {
         "stat": "Range",
@@ -86909,8 +86993,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       },
       {
         "stat": "Critical Damage",
@@ -87011,8 +87095,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -5,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -5
       },
       {
         "stat": "Critical Damage",
@@ -87108,8 +87192,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       }
     ],
     "customStats": {},
@@ -87185,13 +87269,13 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "Dodge",
-        "minStat": -9,
-        "maxStat": -12
+        "minStat": -12,
+        "maxStat": -9
       },
       {
         "stat": "Pushback Resistance",
@@ -87287,13 +87371,13 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -9,
-        "maxStat": -12
+        "minStat": -12,
+        "maxStat": -9
       },
       {
         "stat": "Critical Damage",
-        "minStat": -16,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -16
       },
       {
         "stat": "Critical Resistance",
@@ -87379,8 +87463,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -9,
-        "maxStat": -12
+        "minStat": -12,
+        "maxStat": -9
       },
       {
         "stat": "Pushback Resistance",
@@ -87389,8 +87473,8 @@
       },
       {
         "stat": "Critical Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Critical Resistance",
@@ -87476,8 +87560,8 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "AP Parry",
@@ -87578,8 +87662,8 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "AP Parry",
@@ -87675,8 +87759,8 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "AP Parry",
@@ -88079,8 +88163,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "Fire Damage",
@@ -88191,8 +88275,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Fire Damage",
@@ -88268,8 +88352,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "Fire Damage",
@@ -88985,8 +89069,8 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -5,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -5
       },
       {
         "stat": "Critical",
@@ -89146,8 +89230,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       },
       {
         "stat": "Air Damage",
@@ -89228,8 +89312,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       },
       {
         "stat": "Air Damage",
@@ -89613,8 +89697,8 @@
       },
       {
         "stat": "Pushback Resistance",
-        "minStat": -21,
-        "maxStat": -30
+        "minStat": -30,
+        "maxStat": -21
       },
       {
         "stat": "Critical Resistance",
@@ -89864,8 +89948,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -21,
-        "maxStat": -25
+        "minStat": -25,
+        "maxStat": -21
       },
       {
         "stat": "Wisdom",
@@ -90120,8 +90204,8 @@
       },
       {
         "stat": "Pushback Resistance",
-        "minStat": -21,
-        "maxStat": -30
+        "minStat": -30,
+        "maxStat": -21
       },
       {
         "stat": "Critical Resistance",
@@ -90135,8 +90219,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -5,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -5
       },
       {
         "stat": "Air Damage",
@@ -90212,8 +90296,8 @@
       },
       {
         "stat": "Pushback Resistance",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Critical Resistance",
@@ -90237,8 +90321,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -10,
-        "maxStat": -13
+        "minStat": -13,
+        "maxStat": -10
       },
       {
         "stat": "Air Damage",
@@ -91264,9 +91348,9 @@
     "level": 110,
     "stats": [
       {
-        "stat": "Power",
+        "stat": "Heals",
         "minStat": null,
-        "maxStat": 20
+        "maxStat": 25
       }
     ],
     "customStats": {},
@@ -98266,7 +98350,7 @@
         "Increases the Lightning Fist spell's maximum range by 2",
         "Makes the Insolence spell's range modifiable",
         "Increases the Therapy spell's maximum range by 1",
-        "Makes the Snub spell's range modifiable",
+        "Reduces the Snub spell's AP cost by 1",
         "Increases the Parasite spell's maximum range by 2",
         "Virus is no longer linear"
       ],
@@ -98276,7 +98360,7 @@
         "Augmente la portée maximale du sort Poing Fulgurant de 2",
         "Rend la portée du sort Insolence modifiable",
         "Augmente la portée maximale du sort Poing Fulgurant de 2",
-        "Rend la portée du sort Insolence modifiable",
+        "Réduit le coût en PA du sort Sermon de 1",
         "Augmente la portée maximale du sort Poing Fulgurant de 2",
         "Désactive le lancer en ligne du sort Brimade"
       ],
@@ -98286,7 +98370,7 @@
         "Erhöht die maximale Reichweite des Zauberspruchs Blitzfaust um 2.",
         "Die Reichweite des Zaubers Unverfrorenheit wird steigerbar",
         "Erhöht die maximale Reichweite des Zauberspruchs Blitzfaust um 2.",
-        "Die Reichweite des Zaubers Unverfrorenheit wird steigerbar",
+        "Senkt die AP-Kosten des Zauberspruchs Predigt um 1.",
         "Erhöht die maximale Reichweite des Zauberspruchs Blitzfaust um 2.",
         "Deaktiviert die lineare Wirkungsweise für den Zauber Schikane"
       ],
@@ -98296,7 +98380,7 @@
         "Aumenta la Portata massima dell'incantesimo Pugno Folgorante di 2",
         "Rende modificabile la portata dell'incantesimo Insolenza",
         "Aumenta la Portata massima dell'incantesimo Pugno Folgorante di 2",
-        "Rende modificabile la portata dell'incantesimo Insolenza",
+        "[!] Reduces the Sermone spell's AP cost by 1",
         "Aumenta la Portata massima dell'incantesimo Pugno Folgorante di 2",
         "Disattiva il lancio in linea dell'incantesimo Prepotenza"
       ],
@@ -98306,7 +98390,7 @@
         "Aumenta en 2 el alcance máximo del hechizo Puño Relámpago.",
         "Vuelve modificable el alcance del hechizo Insolencia",
         "Aumenta en 2 el alcance máximo del hechizo Puño Relámpago.",
-        "Vuelve modificable el alcance del hechizo Insolencia",
+        "Reduce el coste en PA del hechizo Sermón en 1",
         "Aumenta en 2 el alcance máximo del hechizo Puño Relámpago.",
         "Desactiva el lanzamiento en línea recta del hechizo Acoso"
       ],
@@ -98316,7 +98400,7 @@
         "Aumenta o alcance máximo do feitiço Punho Fulminante em 2",
         "Torna possível mudar o alcance do feitiço Insolência",
         "Aumenta o alcance máximo do feitiço Punho Fulminante em 2",
-        "Torna possível mudar o alcance do feitiço Insolência",
+        "Reduz o custo em PA do feitiço Sermão em 1",
         "Aumenta o alcance máximo do feitiço Punho Fulminante em 2",
         "Desativa o lançamento em linha do feitiço Implicância"
       ]
@@ -101553,7 +101637,27 @@
     "level": 50,
     "stats": [
       {
-        "stat": "Damage",
+        "stat": "Neutral Damage",
+        "minStat": null,
+        "maxStat": 3
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": null,
+        "maxStat": 3
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": null,
+        "maxStat": 3
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": null,
+        "maxStat": 3
+      },
+      {
+        "stat": "Air Damage",
         "minStat": null,
         "maxStat": 3
       }
@@ -101584,7 +101688,27 @@
     "level": 100,
     "stats": [
       {
-        "stat": "Damage",
+        "stat": "Neutral Damage",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Air Damage",
         "minStat": null,
         "maxStat": 6
       }
@@ -101615,7 +101739,27 @@
     "level": 150,
     "stats": [
       {
-        "stat": "Damage",
+        "stat": "Neutral Damage",
+        "minStat": null,
+        "maxStat": 12
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": null,
+        "maxStat": 12
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": null,
+        "maxStat": 12
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": null,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": null,
         "maxStat": 12
       }
@@ -101995,8 +102139,8 @@
       },
       {
         "stat": "Vitality",
-        "minStat": -101,
-        "maxStat": -150
+        "minStat": -150,
+        "maxStat": -101
       },
       {
         "stat": "Critical",
@@ -102599,8 +102743,8 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -5,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -5
       },
       {
         "stat": "Critical Damage",
@@ -102686,8 +102830,8 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -5,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -5
       },
       {
         "stat": "Critical Damage",
@@ -109488,8 +109632,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -2,
-        "maxStat": -3
+        "minStat": -3,
+        "maxStat": -2
       }
     ],
     "customStats": {},
@@ -122818,22 +122962,22 @@
     ],
     "customStats": {
       "en": [
-        "Each ranged attack suffered while you are in close combat with an enemy grants a chocolate mark.\n\nThese marks are consumed at the end of your turn; each one gives 25% of your level in shield for 1 turn."
+        "Each ranged attack suffered by the bearer when adjacent to an enemy applies a chocolate mark.\n\nThese marks are consumed at the end of its turn; each one gives 25% of its level as shield for 1 turn."
       ],
       "fr": [
-        "Chaque attaque à distance subie lorsque vous êtes au corps à corps d'un ennemi confère une marque chocolatée.\n\nCes marques sont consommées à la fin de votre tour et donnent chacune 25% de votre niveau en bouclier pendant 1 tour."
+        "Chaque attaque à distance subie par le porteur s'il est au contact d'un ennemi confère une marque chocolatée.\n\nCes marques sont consommées à la fin de son tour et donnent chacune 25% de son niveau en bouclier pendant 1 tour."
       ],
       "de": [
-        "Für jeden Fernangriff, der bei euch Schaden verursacht, während ihr euch im Nahkampf mit einem Gegner befindet, gibt es einen Schokomarker.\n\nDiese Abzeichen werden am Ende eures Zugs verbraucht und verleihen für die Dauer von 1 Runde je 25 % eurer Schildstufe."
+        "Jeder vom Träger erlittene Fernkampfangriff verleiht einen Schokomarker, wenn er in Nahkampfentfernung eines Gegners ist.\n\nDiese Marker werden am Ende seiner Runde aufgebraucht und verleihen pro Marker 1 Runde lang Schildpunkte in Höhe von 25 % seiner Stufe."
       ],
       "it": [
         "Ogni attacco a distanza subito mentre sei in corpo a corpo con un nemico ti conferisce un marchio di cioccolato.\n\nI marchi sono consumati alla fine del tuo turno e conferiscono ognuno il 25% del tuo livello in Punti Scudo per 1 turno."
       ],
       "es": [
-        "Cada ataque a distancia sufrido mientras estás en cuerpo a cuerpo con un enemigo confiere una marca de chocolate.\n\nEstas marcas se consumen al final de tu turno y dan cada una un 25% de tu nivel en escudo durante 1 turno."
+        "Cada ataque a distancia sufrido por el portador, si está en contacto con un enemigo, confiere una marca de chocolate.\n\nEstas marcas se consumen al final de su turno y dan cada una un 25% de su nivel en escudo durante 1 turno."
       ],
       "pt": [
-        "Cada ataque a distância sofrido quando você está em uma célula adjacente a um inimigo concede uma marca achocolatada.\n\nEssas marcas são consumidas ao fim do seu turno, e cada uma delas dá um escudo equivalente a 25% do seu nível durante 1 turno."
+        "Cada ataque a distância sofrido pelo portador em contato com um inimigo confere uma marca achocolatada.\n\nEssas marcas são consumidas ao fim de seu turno, e cada uma delas dá um escudo equivalente a 25% de seu nível durante 1 turno."
       ]
     },
     "conditions": {
@@ -130655,22 +130799,22 @@
     ],
     "customStats": {
       "en": [
-        "If the bearer applies or receives a shield, allies within 3 cells or less of the bearer are healed by 7% of their HP. \nIf the bearer unbewitches a target, allies within 3 cells or less gain 150 Power for 1 turn (stacks 1 time, cannot be dissipated). \nEach effect can only be triggered once per turn, but if both are triggered in the same turn, the bearer receives 10% additional damage for 1 turn (cannot be dissipated)."
+        "Bontarian Shield: if the bearer applies or receives a shield, allies within 3 cells or less of the bearer are healed by 7% of their HP.\n\nBrakmarian Power: if the bearer unbewitches a target, allies within 3 cells or less gain 150 Power for 1 turn (stacks 1 time, cannot be dissipated). \n\nEach effect can only be triggered once per turn, but if both are triggered in the same turn, the bearer receives 10% additional damage for 1 turn (cannot be dissipated)."
       ],
       "fr": [
-        "Si le porteur applique ou reçoit un bouclier, les alliés à 3 cases ou moins de lui sont soignés de 7% de leurs PV. \nS'il désenvoûte une cible, les alliés à 3 cases ou moins gagnent 150 Puissance pour 1 tour (cumul 1, non dissipable). \nChaque effet ne peut être déclenché qu'une fois par tour, mais si les deux le sont dans le même tour, le porteur subit 10% de dommages supplémentaires pendant 1 tour (non dissipable)."
+        "Bouclier Bontarien : si le porteur applique ou reçoit un bouclier, les alliés à 3 cases ou moins de lui sont soignés de 7% de leurs PV.\n\nPuissance Brâkmarienne : s'il désenvoûte une cible, les alliés à 3 cases ou moins gagnent 150 Puissance pour 1 tour (cumul 1, non dissipable). \n\nChaque effet ne peut être déclenché qu'une fois par tour, mais si les deux le sont dans le même tour, le porteur subit 10% de dommages supplémentaires pendant 1 tour (non dissipable)."
       ],
       "de": [
-        "Wenn der Träger einen Schild anwendet oder erhält, bekommen Verbündete im Umkreis von höchstens 3 Feldern 7 % ihrer LP zurück. \nWenn er einen Gegner entzaubert, erhalten die Verbündeten im Umkreis von 3 Feldern für 1 Runde zusätzlich 150 Schlagkraft (Kumulierung = 1, nicht zerstreubar). \nJeder Effekt kann pro Runde nur einmal ausgelöst werden. Wenn beide während derselben Runde ausgelöst werden, erleidet der Träger 1 Runde lang 10 % zusätzlichen Schaden (nicht zerstreubar)."
+        "Bonta-Schild: Wenn der Träger einen Schild anwendet oder erhält, bekommen Verbündete im Umkreis von höchstens 3 Feldern 7 % ihrer LP zurück.\n\nBrâk-Schlagkraft: Wenn er einen Gegner entzaubert, erhalten die Verbündeten im Umkreis von 3 Feldern für 1 Runde zusätzlich 150 Schlagkraft (Kumulierung = 1, nicht zerstreubar). \n\nJeder Effekt kann pro Runde nur einmal ausgelöst werden. Wenn beide während derselben Runde ausgelöst werden, erleidet der Träger 1 Runde lang 10 % zusätzlichen Schaden (nicht zerstreubar)."
       ],
       "it": [
         "Se il portatore applica o riceve uno scudo, gli alleati che si trovano a 3 caselle o meno da lui sono curati del 7% dei loro PV. \nSe rimuove gli effetti da un bersaglio, gli alleati che si trovano a 3 caselle o meno ottengono 150 Potenza per 1 turno (cumulo 1, non dissipabile). \nOgni effetto può essere attivato una sola volta per turno, ma se entrambi vengono attivati nello stesso turno, il portatore subisce il 10% dei danni supplementari per 1 turno (non dissipabile)."
       ],
       "es": [
-        "Si el portador aplica o recibe un escudo, los aliados a 3 casillas o menos de él se curan un 7% de sus PdV. \nSi desembruja a un objetivo, los aliados a 3 casillas o menos ganan 150 de potencia durante 1 turno (acumulación de 1, no disipable). \nCada efecto solo puede activarse una vez por turno, pero, si los dos se activan en el mismo turno, el portador sufre un 10% de daño adicional durante 1 turno (no disipable)."
+        "Escudo Bontariano: si el portador aplica o recibe un escudo, los aliados a 3 casillas o menos de él se curan un 7% de sus PdV.\n\nPotencia Brakmariana: si desembruja a un objetivo, los aliados a 3 casillas o menos ganan 150 de potencia durante 1 turno (acumulación de 1, no disipable). \n\nCada efecto solo puede activarse una vez por turno, pero, si los dos se activan en el mismo turno, el portador sufre un 10% de daño adicional durante 1 turno (no disipable)."
       ],
       "pt": [
-        "Se o portador aplica ou recebe um escudo, os aliados a até 3 células dele são curados em 7% dos PV. \nSe ele desencantar um alvo, os aliados a até 3 células ganharão 150 de potência por 1 turno (1 acúmulo, não dissipável). \nCada efeito só pode ser acionado uma vez por turno, mas se os dois forem no mesmo turno, o portador sofrerá 10% de danos extras durante 1 turno (não dissipável)."
+        "Escudo Bontariano: se o portador aplica ou recebe um escudo, os aliados a até 3 células dele são curados em 7% dos PV.\n\nPotência Brakmariana: se ele desencantar um alvo, os aliados a até 3 células ganharão 150 de potência por 1 turno (1 acúmulo, não dissipável). \n\nCada efeito só pode ser acionado uma vez por turno, mas se os dois forem no mesmo turno, o portador sofrerá 10% de danos extras durante 1 turno (não dissipável)."
       ]
     },
     "conditions": {
@@ -133331,5 +133475,32 @@
       "customConditions": {}
     },
     "imageUrl": "item/23036.png"
+  },
+  {
+    "dofusID": "29463",
+    "name": {
+      "en": "Tonbarian Shield",
+      "fr": "Bouclier Tonbarien",
+      "de": "Tonba-Schild",
+      "it": "[!] Tonbarian Shield",
+      "es": "Escudo tombariano",
+      "pt": "Escudo Tonbariano"
+    },
+    "itemType": "Shield",
+    "setID": null,
+    "level": 15,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 101,
+        "maxStat": 150
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/82475.png"
   }
 ]

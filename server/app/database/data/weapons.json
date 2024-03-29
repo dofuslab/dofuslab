@@ -874,8 +874,8 @@
       },
       {
         "stat": "Strength",
-        "minStat": -11,
-        "maxStat": -40
+        "minStat": -40,
+        "maxStat": -11
       },
       {
         "stat": "Wisdom",
@@ -1260,8 +1260,8 @@
       },
       {
         "stat": "Strength",
-        "minStat": -1,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -1
       }
     ],
     "weaponStats": {
@@ -1421,8 +1421,8 @@
       },
       {
         "stat": "Vitality",
-        "minStat": -11,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -11
       },
       {
         "stat": "Agility",
@@ -1654,8 +1654,8 @@
       },
       {
         "stat": "Strength",
-        "minStat": -11,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -11
       },
       {
         "stat": "Agility",
@@ -3766,8 +3766,8 @@
       },
       {
         "stat": "Intelligence",
-        "minStat": -1,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -1
       }
     ],
     "weaponStats": {
@@ -4193,8 +4193,8 @@
       },
       {
         "stat": "Vitality",
-        "minStat": -6,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -6
       }
     ],
     "weaponStats": {
@@ -4795,8 +4795,8 @@
       },
       {
         "stat": "Intelligence",
-        "minStat": -1,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -1
       }
     ],
     "weaponStats": {
@@ -5281,8 +5281,8 @@
       },
       {
         "stat": "Agility",
-        "minStat": -1,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -1
       }
     ],
     "weaponStats": {
@@ -7958,8 +7958,8 @@
       },
       {
         "stat": "Range",
-        "minStat": -1,
-        "maxStat": -2
+        "minStat": -2,
+        "maxStat": -1
       }
     ],
     "weaponStats": {
@@ -9405,8 +9405,8 @@
       },
       {
         "stat": "Agility",
-        "minStat": -1,
-        "maxStat": -30
+        "minStat": -30,
+        "maxStat": -1
       },
       {
         "stat": "Wisdom",
@@ -10798,8 +10798,8 @@
       },
       {
         "stat": "Strength",
-        "minStat": -11,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -11
       }
     ],
     "weaponStats": {
@@ -17038,13 +17038,13 @@
       },
       {
         "stat": "% Air Resistance",
-        "minStat": -6,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -6
       },
       {
         "stat": "% Earth Resistance",
-        "minStat": -6,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -6
       }
     ],
     "weaponStats": {
@@ -21667,8 +21667,8 @@
       "weapon_effects": [
         {
           "stat": "AP",
-          "minStat": -1,
-          "maxStat": -2
+          "minStat": -2,
+          "maxStat": -1
         },
         {
           "stat": "HP restored",
@@ -21885,8 +21885,8 @@
         },
         {
           "stat": "AP",
-          "minStat": -1,
-          "maxStat": -2
+          "minStat": -2,
+          "maxStat": -1
         }
       ]
     },
@@ -23834,8 +23834,8 @@
         },
         {
           "stat": "AP",
-          "minStat": -2,
-          "maxStat": -3
+          "minStat": -3,
+          "maxStat": -2
         }
       ]
     },
@@ -26330,8 +26330,8 @@
       "weapon_effects": [
         {
           "stat": "AP",
-          "minStat": -1,
-          "maxStat": -2
+          "minStat": -2,
+          "maxStat": -1
         },
         {
           "stat": "Air steal",
@@ -29157,13 +29157,13 @@
       },
       {
         "stat": "% Fire Resistance",
-        "minStat": -5,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -5
       },
       {
         "stat": "% Neutral Resistance",
-        "minStat": -5,
-        "maxStat": -7
+        "minStat": -7,
+        "maxStat": -5
       },
       {
         "stat": "Earth Resistance",
@@ -29608,13 +29608,13 @@
     "stats": [
       {
         "stat": "Initiative",
-        "minStat": -51,
-        "maxStat": -150
+        "minStat": -150,
+        "maxStat": -51
       },
       {
         "stat": "Strength",
-        "minStat": -21,
-        "maxStat": -40
+        "minStat": -40,
+        "maxStat": -21
       },
       {
         "stat": "Vitality",
@@ -29903,18 +29903,18 @@
       },
       {
         "stat": "Intelligence",
-        "minStat": -31,
-        "maxStat": -50
+        "minStat": -50,
+        "maxStat": -31
       },
       {
         "stat": "Chance",
-        "minStat": -31,
-        "maxStat": -50
+        "minStat": -50,
+        "maxStat": -31
       },
       {
         "stat": "Agility",
-        "minStat": -31,
-        "maxStat": -50
+        "minStat": -50,
+        "maxStat": -31
       },
       {
         "stat": "% Fire Resistance",
@@ -31981,13 +31981,13 @@
       },
       {
         "stat": "% Air Resistance",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "% Earth Resistance",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       }
     ],
     "weaponStats": {
@@ -35982,8 +35982,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Critical Resistance",
@@ -36730,8 +36730,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       },
       {
         "stat": "Critical Resistance",
@@ -37326,8 +37326,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Critical Resistance",
@@ -38682,8 +38682,8 @@
       },
       {
         "stat": "AP Reduction",
-        "minStat": -3,
-        "maxStat": -4
+        "minStat": -4,
+        "maxStat": -3
       },
       {
         "stat": "MP Reduction",
@@ -39415,8 +39415,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Pushback Damage",
@@ -40026,8 +40026,8 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       },
       {
         "stat": "AP Reduction",
@@ -40631,8 +40631,8 @@
       },
       {
         "stat": "Pushback Damage",
-        "minStat": -16,
-        "maxStat": -20
+        "minStat": -20,
+        "maxStat": -16
       }
     ],
     "weaponStats": {
@@ -40876,8 +40876,8 @@
       },
       {
         "stat": "MP Parry",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Dodge",
@@ -41748,8 +41748,8 @@
       },
       {
         "stat": "% Fire Resistance",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "MP Reduction",
@@ -42106,8 +42106,8 @@
       },
       {
         "stat": "MP Reduction",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       },
       {
         "stat": "Dodge",
@@ -42116,8 +42116,8 @@
       },
       {
         "stat": "Critical Resistance",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       }
     ],
     "weaponStats": {
@@ -42186,23 +42186,23 @@
       },
       {
         "stat": "Strength",
-        "minStat": -71,
-        "maxStat": -100
+        "minStat": -100,
+        "maxStat": -71
       },
       {
         "stat": "Intelligence",
-        "minStat": -71,
-        "maxStat": -100
+        "minStat": -100,
+        "maxStat": -71
       },
       {
         "stat": "Chance",
-        "minStat": -71,
-        "maxStat": -100
+        "minStat": -100,
+        "maxStat": -71
       },
       {
         "stat": "Agility",
-        "minStat": -71,
-        "maxStat": -100
+        "minStat": -100,
+        "maxStat": -71
       },
       {
         "stat": "Wisdom",
@@ -42256,8 +42256,8 @@
       },
       {
         "stat": "Critical Damage",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       }
     ],
     "weaponStats": {
@@ -42353,8 +42353,8 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -2,
-        "maxStat": -3
+        "minStat": -3,
+        "maxStat": -2
       },
       {
         "stat": "Lock",
@@ -42479,8 +42479,8 @@
       },
       {
         "stat": "Pushback Resistance",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       }
     ],
     "weaponStats": {
@@ -42569,8 +42569,8 @@
       },
       {
         "stat": "Initiative",
-        "minStat": -301,
-        "maxStat": -400
+        "minStat": -400,
+        "maxStat": -301
       },
       {
         "stat": "Prospecting",
@@ -42689,8 +42689,8 @@
       },
       {
         "stat": "Critical",
-        "minStat": -6,
-        "maxStat": -8
+        "minStat": -8,
+        "maxStat": -6
       },
       {
         "stat": "Initiative",
@@ -42902,8 +42902,8 @@
       },
       {
         "stat": "Heals",
-        "minStat": -7,
-        "maxStat": -10
+        "minStat": -10,
+        "maxStat": -7
       },
       {
         "stat": "Range",
@@ -43272,8 +43272,8 @@
       },
       {
         "stat": "Critical",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "Heals",
@@ -43397,8 +43397,8 @@
       },
       {
         "stat": "Initiative",
-        "minStat": -301,
-        "maxStat": -400
+        "minStat": -400,
+        "maxStat": -301
       },
       {
         "stat": "Prospecting",
@@ -43498,8 +43498,8 @@
       },
       {
         "stat": "Critical",
-        "minStat": -6,
-        "maxStat": -9
+        "minStat": -9,
+        "maxStat": -6
       },
       {
         "stat": "Power",
@@ -43649,8 +43649,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Pushback Resistance",
@@ -43793,8 +43793,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Pushback Damage",
@@ -43913,8 +43913,8 @@
       },
       {
         "stat": "AP Parry",
-        "minStat": -4,
-        "maxStat": -5
+        "minStat": -5,
+        "maxStat": -4
       },
       {
         "stat": "% Fire Resistance",
@@ -44132,8 +44132,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "AP Parry",
@@ -44435,8 +44435,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -9,
-        "maxStat": -12
+        "minStat": -12,
+        "maxStat": -9
       },
       {
         "stat": "Pushback Damage",
@@ -44512,8 +44512,8 @@
       },
       {
         "stat": "Lock",
-        "minStat": -4,
-        "maxStat": -6
+        "minStat": -6,
+        "maxStat": -4
       },
       {
         "stat": "Air Damage",
@@ -44677,8 +44677,8 @@
       },
       {
         "stat": "Pushback Resistance",
-        "minStat": -21,
-        "maxStat": -30
+        "minStat": -30,
+        "maxStat": -21
       },
       {
         "stat": "Prospecting",
@@ -45326,8 +45326,8 @@
       },
       {
         "stat": "Dodge",
-        "minStat": -11,
-        "maxStat": -15
+        "minStat": -15,
+        "maxStat": -11
       },
       {
         "stat": "Air Damage",
