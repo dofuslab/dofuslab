@@ -24,13 +24,14 @@ def wipeSpellsAndBuffs():
     db.session.query(ModelSpell).delete()
     db.session.query(ModelSpellVariantPair).delete()
     db.session.query(ModelBuff).delete()
-    db.session.commit()
+    db.session.flush()
 
 
 def add_classes_and_spells():
     print("Adding new class spells to database")
     with open(os.path.join(app_root, "app/database/data/spells.json"), "r") as file:
         with session_scope() as db_session:
+            wipeSpellsAndBuffs()
             data = json.load(file)
             for record in data:
                 en_name = record["names"]["en"]
@@ -115,6 +116,5 @@ def add_buffs():
 
 
 add_class_to_classes()
-wipeSpellsAndBuffs()
 add_classes_and_spells()
 add_buffs()
