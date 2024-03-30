@@ -784,21 +784,30 @@ const getStats = (
   switch (effectType) {
     case SpellEffectType.BEST_ELEMENT_DAMAGE:
     case SpellEffectType.BEST_ELEMENT_STEAL:
+    case SpellEffectType.BEST_ELEMENT_HEALING:
       return getDamageObjectFromElement(getBestStat(statsFromCustomSet));
     case WeaponEffectType.AIR_DAMAGE:
     case WeaponEffectType.AIR_STEAL:
     case SpellEffectType.AIR_DAMAGE:
     case SpellEffectType.AIR_STEAL:
+    case WeaponEffectType.AIR_HEALING:
+    case SpellEffectType.AIR_HEALING:
       return { multiplier: Stat.AGILITY, damage: Stat.AIR_DAMAGE };
     case WeaponEffectType.EARTH_DAMAGE:
     case WeaponEffectType.EARTH_STEAL:
     case SpellEffectType.EARTH_DAMAGE:
     case SpellEffectType.EARTH_STEAL:
+    case WeaponEffectType.EARTH_HEALING:
+    case SpellEffectType.EARTH_HEALING:
       return { multiplier: Stat.STRENGTH, damage: Stat.EARTH_DAMAGE };
     case WeaponEffectType.FIRE_DAMAGE:
     case WeaponEffectType.FIRE_STEAL:
     case SpellEffectType.FIRE_DAMAGE:
     case SpellEffectType.FIRE_STEAL:
+    case WeaponEffectType.FIRE_HEALING:
+    case SpellEffectType.FIRE_HEALING:
+    case WeaponEffectType.HP_RESTORED:
+    case SpellEffectType.HP_RESTORED:
       return { multiplier: Stat.INTELLIGENCE, damage: Stat.FIRE_DAMAGE };
     case WeaponEffectType.NEUTRAL_DAMAGE:
     case WeaponEffectType.NEUTRAL_STEAL:
@@ -809,6 +818,8 @@ const getStats = (
     case WeaponEffectType.WATER_STEAL:
     case SpellEffectType.WATER_DAMAGE:
     case SpellEffectType.WATER_STEAL:
+    case WeaponEffectType.WATER_HEALING:
+    case SpellEffectType.WATER_HEALING:
       return { multiplier: Stat.CHANCE, damage: Stat.WATER_DAMAGE };
     default:
       throw new Error('Improper effectType passed to getStats');
@@ -880,11 +891,14 @@ export const calcPushbackDamage = (
 
 export const calcHeal = (
   baseHeal: number,
+  effectType: WeaponEffectType | SpellEffectType,
   stats: StatsFromCustomSet | null,
   weaponSkillPower?: number,
 ) => {
+  const statTypes = getStats(effectType, stats);
+  const { multiplier: multiplierType } = statTypes;
   const multiplierValue =
-    getStatWithDefault(stats, Stat.INTELLIGENCE) + (weaponSkillPower || 0);
+    getStatWithDefault(stats, multiplierType) + (weaponSkillPower || 0);
   const flatBonus = getStatWithDefault(stats, Stat.HEALS);
   return Math.floor(baseHeal * (1 + multiplierValue / 100) + flatBonus);
 };
@@ -928,6 +942,15 @@ export const effectToIconUrl = (effect: WeaponEffectType | SpellEffectType) => {
       return 'icon/Movement_Point.svg';
     case WeaponEffectType.HP_RESTORED:
     case SpellEffectType.HP_RESTORED:
+    case SpellEffectType.BEST_ELEMENT_HEALING:
+    case WeaponEffectType.EARTH_HEALING:
+    case SpellEffectType.EARTH_HEALING:
+    case WeaponEffectType.FIRE_HEALING:
+    case SpellEffectType.FIRE_HEALING:
+    case WeaponEffectType.WATER_HEALING:
+    case SpellEffectType.WATER_HEALING:
+    case WeaponEffectType.AIR_HEALING:
+    case SpellEffectType.AIR_HEALING:
       return 'icon/Health_Point.svg';
     case SpellEffectType.SHIELD:
       return 'icon/Shield_Point.svg';
@@ -967,6 +990,15 @@ export const getSimpleEffect: (
       return 'damage';
     case WeaponEffectType.HP_RESTORED:
     case SpellEffectType.HP_RESTORED:
+    case SpellEffectType.BEST_ELEMENT_HEALING:
+    case WeaponEffectType.EARTH_HEALING:
+    case SpellEffectType.EARTH_HEALING:
+    case WeaponEffectType.FIRE_HEALING:
+    case SpellEffectType.FIRE_HEALING:
+    case WeaponEffectType.WATER_HEALING:
+    case SpellEffectType.WATER_HEALING:
+    case WeaponEffectType.AIR_HEALING:
+    case SpellEffectType.AIR_HEALING:
       return 'heal';
     case SpellEffectType.PUSHBACK_DAMAGE:
       return 'pushback_damage';
@@ -995,7 +1027,7 @@ export const calcEffect = (
   const simpleEffect = getSimpleEffect(effectType);
 
   if (simpleEffect === 'heal') {
-    return calcHeal(baseDamage, stats, weaponSkillPower);
+    return calcHeal(baseDamage, effectType, stats, weaponSkillPower);
   }
   if (simpleEffect === 'pushback_damage') {
     return calcPushbackDamage(baseDamage, level, stats);

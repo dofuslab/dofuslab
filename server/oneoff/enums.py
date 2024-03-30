@@ -69,6 +69,11 @@ to_effect_enum = {
     "AP": enums.WeaponEffectType.AP,
     "MP": enums.WeaponEffectType.MP,
     "HP restored": enums.WeaponEffectType.HP_RESTORED,
+    "Air healing": enums.WeaponEffectType.AIR_HEALING,
+    "Earth healing": enums.WeaponEffectType.EARTH_HEALING,
+    "Fire healing": enums.WeaponEffectType.FIRE_HEALING,
+    "Water healing": enums.WeaponEffectType.WATER_HEALING,
+    "Neutral healing": enums.WeaponEffectType.NEUTRAL_HEALING,
 }
 
 to_spell_enum = {
@@ -87,4 +92,10 @@ to_spell_enum = {
     "Pushback damage": enums.SpellEffectType.PUSHBACK_DAMAGE,
     "Best element damage": enums.SpellEffectType.BEST_ELEMENT_DAMAGE,
     "Best element steal": enums.SpellEffectType.BEST_ELEMENT_STEAL,
+    "Best element healing": enums.SpellEffectType.BEST_ELEMENT_HEALING,
+    "Air healing": enums.SpellEffectType.AIR_HEALING,
+    "Earth healing": enums.SpellEffectType.EARTH_HEALING,
+    "Fire healing": enums.SpellEffectType.FIRE_HEALING,
+    "Water healing": enums.SpellEffectType.WATER_HEALING,
+    "Neutral healing": enums.SpellEffectType.NEUTRAL_HEALING,
 }
