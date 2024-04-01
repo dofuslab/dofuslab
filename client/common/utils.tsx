@@ -808,6 +808,7 @@ const getStats = (
     case SpellEffectType.FIRE_HEALING:
     case WeaponEffectType.HP_RESTORED:
     case SpellEffectType.HP_RESTORED:
+      // HP restored is now deprecated in favor of Fire healing
       return { multiplier: Stat.INTELLIGENCE, damage: Stat.FIRE_DAMAGE };
     case WeaponEffectType.NEUTRAL_DAMAGE:
     case WeaponEffectType.NEUTRAL_STEAL:
@@ -940,8 +941,6 @@ export const effectToIconUrl = (effect: WeaponEffectType | SpellEffectType) => {
     case WeaponEffectType.MP:
     case SpellEffectType.MP:
       return 'icon/Movement_Point.svg';
-    case WeaponEffectType.HP_RESTORED:
-    case SpellEffectType.HP_RESTORED:
     case SpellEffectType.BEST_ELEMENT_HEALING:
     case WeaponEffectType.EARTH_HEALING:
     case SpellEffectType.EARTH_HEALING:
@@ -951,6 +950,9 @@ export const effectToIconUrl = (effect: WeaponEffectType | SpellEffectType) => {
     case SpellEffectType.WATER_HEALING:
     case WeaponEffectType.AIR_HEALING:
     case SpellEffectType.AIR_HEALING:
+    case WeaponEffectType.HP_RESTORED:
+    case SpellEffectType.HP_RESTORED:
+      // HP restored is now deprecated in favor of Fire healing
       return 'icon/Health_Point.svg';
     case SpellEffectType.SHIELD:
       return 'icon/Shield_Point.svg';
@@ -988,8 +990,6 @@ export const getSimpleEffect: (
     case SpellEffectType.BEST_ELEMENT_DAMAGE:
     case SpellEffectType.BEST_ELEMENT_STEAL:
       return 'damage';
-    case WeaponEffectType.HP_RESTORED:
-    case SpellEffectType.HP_RESTORED:
     case SpellEffectType.BEST_ELEMENT_HEALING:
     case WeaponEffectType.EARTH_HEALING:
     case SpellEffectType.EARTH_HEALING:
@@ -999,6 +999,9 @@ export const getSimpleEffect: (
     case SpellEffectType.WATER_HEALING:
     case WeaponEffectType.AIR_HEALING:
     case SpellEffectType.AIR_HEALING:
+    case WeaponEffectType.HP_RESTORED:
+    case SpellEffectType.HP_RESTORED:
+      // HP restored is now deprecated in favor of Fire healing
       return 'heal';
     case SpellEffectType.PUSHBACK_DAMAGE:
       return 'pushback_damage';
