@@ -32,6 +32,7 @@ import { AppliedBuffActionType } from 'common/types';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'antd/dist/antd.dark.css';
 import Head from 'next/head';
+import loadItems from 'common/load-items';
 
 Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 config.autoAddCss = false;
@@ -40,11 +41,7 @@ interface Props extends AppProps {
   apolloClient: ApolloClient<NormalizedCacheObject>;
 }
 
-const DofusLabApp: React.FC<Props> = ({
-  Component,
-  apolloClient,
-  pageProps,
-}) => {
+const DofusLabApp = ({ Component, apolloClient, pageProps }: Props) => {
   const router = useRouter();
   const { customSetId } = router.query;
 
@@ -79,6 +76,17 @@ const DofusLabApp: React.FC<Props> = ({
   React.useEffect(() => {
     dispatch({ type: AppliedBuffActionType.CLEAR_ALL });
   }, [customSetId]);
+
+  React.useEffect(() => {
+    const worker = new Worker(
+      new URL('../common/load-items.worker.js', import.meta.url),
+      { type: 'module' },
+    );
+    worker.postMessage('mounted');
+    return () => {
+      worker.terminate();
+    };
+  }, []);
 
   const customSetContextValue = React.useMemo(
     () => ({
