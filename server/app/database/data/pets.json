@@ -1040,12 +1040,12 @@
         "level": 1,
         "stats": [
             {
-                "stat": "Intelligence",
+                "stat": "Agility",
                 "minStat": null,
                 "maxStat": 120
             },
             {
-                "stat": "Agility",
+                "stat": "Intelligence",
                 "minStat": null,
                 "maxStat": 120
             }
@@ -1205,11 +1205,6 @@
                 "maxStat": 5
             },
             {
-                "stat": "% Water Resistance",
-                "minStat": null,
-                "maxStat": 5
-            },
-            {
                 "stat": "% Earth Resistance",
                 "minStat": null,
                 "maxStat": 5
@@ -1221,6 +1216,11 @@
             },
             {
                 "stat": "% Neutral Resistance",
+                "minStat": null,
+                "maxStat": 5
+            },
+            {
+                "stat": "% Water Resistance",
                 "minStat": null,
                 "maxStat": 5
             }
@@ -1370,14 +1370,14 @@
         "level": 1,
         "stats": [
             {
-                "stat": "AP",
-                "minStat": null,
-                "maxStat": 1
-            },
-            {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 50
+            },
+            {
+                "stat": "AP",
+                "minStat": null,
+                "maxStat": 1
             }
         ],
         "customStats": {},
@@ -1717,14 +1717,14 @@
         "level": 1,
         "stats": [
             {
-                "stat": "Pushback Damage",
-                "minStat": null,
-                "maxStat": 80
-            },
-            {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 70
+            },
+            {
+                "stat": "Pushback Damage",
+                "minStat": null,
+                "maxStat": 80
             }
         ],
         "customStats": {
@@ -1923,14 +1923,14 @@
         "level": 1,
         "stats": [
             {
-                "stat": "Critical",
-                "minStat": null,
-                "maxStat": 15
-            },
-            {
                 "stat": "Pushback Resistance",
                 "minStat": null,
                 "maxStat": 100
+            },
+            {
+                "stat": "Critical",
+                "minStat": null,
+                "maxStat": 15
             }
         ],
         "customStats": {},
@@ -1982,14 +1982,14 @@
         "level": 1,
         "stats": [
             {
-                "stat": "AP",
-                "minStat": null,
-                "maxStat": 1
-            },
-            {
                 "stat": "AP Parry",
                 "minStat": null,
                 "maxStat": 50
+            },
+            {
+                "stat": "AP",
+                "minStat": null,
+                "maxStat": 1
             }
         ],
         "customStats": {},
@@ -4362,14 +4362,14 @@
         "level": 60,
         "stats": [
             {
-                "stat": "MP Reduction",
-                "minStat": null,
-                "maxStat": 40
-            },
-            {
                 "stat": "Dodge",
                 "minStat": null,
                 "maxStat": 50
+            },
+            {
+                "stat": "MP Reduction",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
