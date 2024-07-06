@@ -50127,8 +50127,8 @@
     "stats": [
       {
         "stat": "Vitality",
-        "minStat": 401,
-        "maxStat": 450
+        "minStat": 451,
+        "maxStat": 500
       },
       {
         "stat": "Strength",
@@ -50153,12 +50153,7 @@
       {
         "stat": "AP Parry",
         "minStat": null,
-        "maxStat": -20
-      },
-      {
-        "stat": "% Ranged Resistance",
-        "minStat": null,
-        "maxStat": -10
+        "maxStat": -30
       },
       {
         "stat": "Air Damage",
@@ -50184,6 +50179,16 @@
         "stat": "Neutral Damage",
         "minStat": 16,
         "maxStat": 20
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": null,
+        "maxStat": -30
       }
     ],
     "weaponStats": {
@@ -50213,22 +50218,22 @@
     },
     "customStats": {
       "en": [
-        "At the start of each turn, the bearer inflicts damage on themself in their best attack element to steal health from adjacent entities at the end of the caster's turn."
+        "Crocobur's Appetite:\n• At the start of each turn, the bearer inflicts 11 to 15 damage on themself in their best attack element to steal 11 to 15 health from adjacent entities at the end of the bearer's turn."
       ],
       "fr": [
-        "À chaque début de tour, le porteur s'inflige des dommages dans son meilleur élément d'attaque pour voler de la vie aux entités à son contact à la fin de son tour."
+        "Appétit de Crocobur :\n• À chaque début de tour, le porteur s'inflige 11 à 15 de dommages dans son meilleur élément d'attaque pour voler 11 à 15 de la vie aux entités à son contact à la fin de son tour."
       ],
       "de": [
-        "Zu Rundenbeginn fügt sich der Träger selbst Schaden in seinem besten Angriffselement zu, um Einheiten in Reichweite am Ende seiner Runde Leben zu entziehen."
+        "Appetit von Crocobur:\n• Zu Rundenbeginn fügt sich der Träger selbst 11 bis 15 Schaden in seinem besten Angriffselement zu, um Einheiten in Reichweite am Ende seiner Runde 11 bis 15 Leben zu entziehen."
       ],
       "it": [
         "Il portatore ruba PV nel suo miglior elemento di attacco alla fine del turno alle entità a contatto con lui."
       ],
       "es": [
-        "Al principio de cada turno, el portador se inflige daños en su mejor elemento de ataque para robarle vida a las entidades en contacto con él al final de su turno."
+        "Apetito de Cocobur:\n• Al principio de cada turno, el portador se inflige 11-15 de daño con su mejor elemento de ataque y roba 11-15 de vida a las entidades en contacto con él al final de su turno."
       ],
       "pt": [
-        "No início de cada turno, o portador inflige a si mesmo danos de seu melhor elemento de ataque, para roubar vida de todas as entidades em contato no final do turno."
+        "Apetite da Crocálibur:\n• No início de cada turno, o carregador inflige a si mesmo de 11 a 15 de danos de seu melhor elemento de ataque para roubar de 11 a 15 de vida de todas as entidades em contato no final do turno."
       ]
     },
     "conditions": {
@@ -50236,6 +50241,203 @@
       "customConditions": {}
     },
     "imageUrl": "item/6740.png"
+  },
+  {
+    "dofusID": "20354",
+    "name": {
+      "en": "Scissors of Destiny",
+      "fr": "Ciseaux du Destin",
+      "de": "Schere des Schicksals",
+      "it": "[!] Scissors of Destiny",
+      "es": "Tijeras del destino",
+      "pt": "Tesoura do Destino"
+    },
+    "itemType": "Dagger",
+    "setID": null,
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 450
+      },
+      {
+        "stat": "Strength",
+        "minStat": 81,
+        "maxStat": 120
+      },
+      {
+        "stat": "% Melee Resistance",
+        "minStat": null,
+        "maxStat": -5
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -20
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Lock",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 301,
+        "maxStat": 400
+      }
+    ],
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": 2,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        {
+          "stat": "Neutral steal",
+          "minStat": null,
+          "maxStat": 26
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Fateful Destiny:\n• At the start of each turn, the bearer gains 15% weapon damage if adjacent to an enemy.\n• When the bearer locks, they become Rooted until the start of their next turn."
+      ],
+      "fr": [
+        "Destin Fatidique :\n• À chaque début de tour, le porteur gagne 15% de dommages d'armes s'il est contact d'un ennemi.\n• Lorsque le porteur tacle, il est Enraciné jusqu'au début de son prochain tour."
+      ],
+      "de": [
+        "Schicksalhafte Bestimmung:\n• Zu Beginn jeder Runde erhält der Träger 15 % Waffenschaden, wenn sich ein Gegner in Reichweite befindet.\n• Wenn der Träger blockiert, wird er bis zu Beginn seiner nächsten Runde verwurzelt."
+      ],
+      "it": [
+        "Quando il portatore uccide un bersaglio, quest'ultimo cura del 10% della loro vita le entità ad area intorno a sé."
+      ],
+      "es": [
+        "Destino Fatídico:\n• Al principio de cada turno, el portador gana un 15% de daños de armas si está en contacto con un enemigo.\n• Cuando el portador placa, es arraigado hasta el inicio de su próximo turno."
+      ],
+      "pt": [
+        "Destino Fatídico:\n• No início de cada turno, o carregador ganha 15% de danos de arma se entrar em contato com um inimigo.\n• Quando o carregador bloqueia, ele fica Enraizado até o início de seu próximo turno."
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/5100.png"
+  },
+  {
+    "dofusID": "20355",
+    "name": {
+      "en": "Brumaire's Shiver",
+      "fr": "Frisson de Brumaire",
+      "de": "Brumaires Schauder",
+      "it": "[!] Brumaire's Shiver",
+      "es": "Escalofrío de Brumario",
+      "pt": "Calafrio de Brumário"
+    },
+    "itemType": "Wand",
+    "setID": null,
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 400
+      },
+      {
+        "stat": "Chance",
+        "minStat": 81,
+        "maxStat": 120
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": -60
+      },
+      {
+        "stat": "Lock",
+        "minStat": null,
+        "maxStat": -40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": 1,
+      "minRange": 1,
+      "maxRange": 5,
+      "baseCritChance": 15,
+      "critBonusDamage": 3,
+      "weapon_effects": [
+        {
+          "stat": "Water damage",
+          "minStat": 38,
+          "maxStat": 44
+        },
+        {
+          "stat": "AP",
+          "minStat": null,
+          "maxStat": -1
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Novamaire Cold:\n• At the start of each turn, the bearer gains 20 AP Reduction if adjacent to an enemy. Otherwise, the bearer gains 20 Dodge. \n• When the bearer finishes off an enemy fighter during their turn, they become invisible for 1 turn."
+      ],
+      "fr": [
+        "Froid de Novamaire :\n• À chaque début de tour, le porteur gagne 20 de Retrait PA s'il est au contact d'un ennemi. Sinon, il gagne 20 de Fuite. \n• Lorsque le porteur achève un combattant ennemi durant son tour, il devient invisible pendant 1 tour."
+      ],
+      "de": [
+        "Kälte von Novamaire:\n• Zu Beginn jeder Runde erhält der Träger 20 AP-Entzug, wenn sich ein Gegner in Reichweite befindet. Wenn nicht, erhält er 20 Flucht. \n• Wenn der Träger während seiner Runde einen gegnerischen Kämpfer besiegt, wird er 1 Runde lang unsichtbar."
+      ],
+      "it": [
+        "Quando il portatore uccide un bersaglio, quest'ultimo infligge danni Aria e Acqua in funzione della sua vita mancante e sottrae 1 PM per 1 turno ad area intorno a sé."
+      ],
+      "es": [
+        "Frío de Novimiembro:\n• Al principio de cada turno, el portador gana 20 de retirada de PA si está en contacto con un enemigo. Si no, gana 20 de huida. \n• Cuando el portador acaba con un luchador enemigo durante su turno, se vuelve invisible durante 1 turno."
+      ],
+      "pt": [
+        "Frio de Novemeiro:\n• No início de cada turno, o carregador recebe 20% de retirada de PA se estiver em contato com um inimigo. Do contrário, ganha 20 de fuga. \n• Quando o carregador elimina um combatente inimigo durante seu turno, ele fica invisível por 1 turno."
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/4135.png"
   },
   {
     "dofusID": "20356",
@@ -50277,9 +50479,14 @@
         "maxStat": 1
       },
       {
-        "stat": "MP",
-        "minStat": null,
-        "maxStat": 1
+        "stat": "% Air Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 7,
+        "maxStat": 10
       }
     ],
     "weaponStats": {
@@ -50299,30 +50506,26 @@
     },
     "customStats": {
       "en": [
-        "Whenever the bearer inflicts Critical Hits, they gain pushback damage for 2 turns, stackable 5 times."
+        "Buhorado Feather:\n• When the bearer lands a critical hit, they gain 10 Pushback Damage for 3 turns, stackable 10 times."
       ],
       "fr": [
-        "Quand le porteur occasionne un coup critique, il gagne des dommages de poussée pour 2 tours, cumulable 5 fois."
+        "Plume de Buhorado :\n• Lorsque le porteur effectue un coup critique, il gagne 10 de Dommages Poussée pendant 3 tours, cumulable 10 fois."
       ],
       "de": [
-        "Wenn der Träger einen kritischen Treffer landet, gewinnt er 2 Runden lang Schubsschaden, der bis zu 5 Mal kumulierbar ist."
+        "Buhorado-Feder:\n• Wenn der Träger einen kritischen Treffer ausführt, erhält er 3 Runden lang 10 Schubsschaden; 10-mal kumulierbar."
       ],
       "it": [
         "Quando il portatore causa un Colpo Critico, ottiene danni da spinta per 2 turni, cumulabile 5 volte."
       ],
       "es": [
-        "Cuando el portador ocasiona un golpe crítico, gana daños de empuje durante 2 turnos, acumulable 5 veces."
+        "Pluma de Buhorado:\n• Cuando el portador asesta un golpe crítico, gana 10 de daños de empuje durante 3 turnos, acumulable 10 veces."
       ],
       "pt": [
-        "Quando o portador causa um golpe crítico, ele ganha danos de empurrão por 2 turnos. Acumula até 5 vezes."
+        "Pena de Buhorado:\n• Quando o portador efetua um golpe crítico, ele recebe 10 danos de empurrão por 3 turnos, que podem ser acumulados 10 vezes."
       ]
     },
     "conditions": {
-      "conditions": {
-        "stat": "AP",
-        "operator": "<",
-        "value": 12
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/2087.png"
@@ -50934,29 +51137,34 @@
         "maxStat": 20
       },
       {
-        "stat": "Fire Damage",
-        "minStat": 16,
-        "maxStat": 20
-      },
-      {
         "stat": "MP Reduction",
         "minStat": 11,
         "maxStat": 15
       },
       {
-        "stat": "% Ranged Damage",
-        "minStat": null,
-        "maxStat": -15
-      },
-      {
-        "stat": "Dodge",
-        "minStat": null,
-        "maxStat": -20
-      },
-      {
         "stat": "% Fire Resistance",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": -2
+      },
+      {
+        "stat": "Heals",
+        "minStat": null,
+        "maxStat": -40
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 5
       }
     ],
     "weaponStats": {
@@ -50969,7 +51177,7 @@
       "weapon_effects": [
         {
           "stat": "Fire damage",
-          "minStat": 41,
+          "minStat": 46,
           "maxStat": 50
         },
         {
@@ -50981,22 +51189,22 @@
     },
     "customStats": {
       "en": [
-        "If the bearer is in close contact with an enemy at the start of their turn, they gain 20 MP Reduction for 1 turn; if not, they gain 30 Lock. When the bearer kills an opponent (excluding summons) with direct damage, they gain 1 MP until the end of the fight, stackable max. 3 times."
+        "Attrition Warfare:\n• At the start of each turn, the bearer gains 20 MP Reduction if adjacent to an enemy. Otherwise, the bearer gains 30 Lock. \n• When the bearer finishes off an enemy fighter during their turn, they gain 1 MP until the end of the fight (stackable 5 times)."
       ],
       "fr": [
-        "Si le porteur est au contact d'un ennemi au début de son tour, il gagne 20 Retrait PM pour 1 tour, sinon, il gagne 30 Tacle. Quand le porteur tue un adversaire (hors invocations) avec des dommages directs, il gagne 1 PM jusqu'à la fin du combat, cumulable 3 fois maximum."
+        "Guerre de positions :\n• À chaque début de tour, le porteur gagne 20 de Retrait PM s'il est au contact d'un ennemi. Sinon, il gagne 30 de Tacle. \n• Lorsque le porteur achève un combattant ennemi durant son tour, il gagne 1 PM jusqu'à la fin du combat (cumulable 5 fois)."
       ],
       "de": [
-        "Steht der Träger zu Beginn seiner Runde in Nahkampfentfernung zu einem Gegner, erhält er 1 Runde lang 20 BP-Entzug. Falls nicht, erhält er 30 Blocken. Tötet der Träger einen Gegner durch direkten Schaden (Beschwörungen ausgenommen), erhält er bis zum Ende des Kampfes 1 BP, der maximal 3 Mal kumulierbar ist."
+        "Stellungskrieg:\n• Zu Beginn jeder Runde erhält der Träger 20 BP-Entzug, wenn sich ein Gegner in Reichweite befindet. Wenn nicht, erhält er 30 Blockieren. \n• Wenn der Träger in seiner Runde einen gegnerischen Kämpfer besiegt, erhält er bis zum Ende des Kampfes 1 BP. (5-mal kumulierbar)"
       ],
       "it": [
         "Se il portatore è a contatto con un nemico all'inizio del suo turno, ottiene 20 Sottrazione PM per 1 turno, altrimenti ottiene 30 Contrasto. Quando il portatore uccide un avversario (tranne le evocazioni) con danni diretti, ottiene 1 PM fino alla fine del combattimento, cumulabile al massimo 3 volte."
       ],
       "es": [
-        "Si el portador está en contacto con un enemigo al principio de su turno, gana 20 de retirada de PM durante 1 turno, si no, gana 30 de placaje. Cuando el portador mata a un adversario (salvo invocaciones) con daños directos, gana 1 PM hasta el final del combate, acumulable un máximo de 3 veces."
+        "Guerra de Desgaste:\n• Al principio de cada turno, el portador gana 20 de retirada de PM si está en contacto con un enemigo. Si no, gana 30 de placaje. \n• Cuando el portador acaba con un luchador enemigo durante su turno, gana 1 PM hasta el final del combate (acumulable 5 veces)."
       ],
       "pt": [
-        "Se o portador estiver em contato com um inimigo no começo de seu turno, ele ganha 20 de retirada de PM durante 1 turno. Do contrário, ganha 30 de bloqueio. Quando o portador mata um adversário (exceto invocações) com danos diretos, ele ganha 1 PM até o fim do combate. Acumula até 3 vezes."
+        "Guerra de Posição:\n• No início de cada turno, o carregador recebe 20% de retirada de PM se estiver em contato com um inimigo. Do contrário, ganha 30 de bloqueio. \n• Quando o carregador elimina um combatente inimigo durante seu turno, ele ganha 1 PM até o final do combate (acumula 5 vezes)."
       ]
     },
     "conditions": {
@@ -51030,9 +51238,9 @@
         "maxStat": 100
       },
       {
-        "stat": "Lock",
+        "stat": "Dodge",
         "minStat": null,
-        "maxStat": -30
+        "maxStat": -20
       },
       {
         "stat": "MP Parry",
@@ -51055,15 +51263,30 @@
         "maxStat": 5
       },
       {
-        "stat": "% Spell Damage",
+        "stat": "% Water Resistance",
         "minStat": null,
-        "maxStat": -10
+        "maxStat": -5
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": -1
+      },
+      {
+        "stat": "Initiative",
+        "minStat": null,
+        "maxStat": -300
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 7,
+        "maxStat": 10
       }
     ],
     "weaponStats": {
       "apCost": 5,
       "usesPerTurn": 1,
-      "minRange": 2,
+      "minRange": 1,
       "maxRange": 5,
       "baseCritChance": 10,
       "critBonusDamage": 2,
@@ -51092,22 +51315,22 @@
     },
     "customStats": {
       "en": [
-        "When the bearer suffers an AP, MP or Range reduction, the damage they suffer is reduced by 4% for 2 turns. Damage suffered by the attacker is increased by 4% for 2 turns. Stackable max. 3 times."
+        "Trial of the Scales:\n• When the bearer suffers an attempted AP, MP or Range removal, the damage they suffer is reduced by 4% for 2 turns, and the damage suffered by their attacker is increased by 4% for 2 turns (stackable 3 times)."
       ],
       "fr": [
-        "Quand le porteur subit du retrait PA, PM ou PO, les dommages qu'il subit sont réduits de 4% pour 2 tours. Les dommages subis par l'attaquant sont augmentés de 4% pour 2 tours. Cumulable 3 fois maximum."
+        "Épreuve de la Balance :\n• Lorsque le porteur subit une tentative de retrait de PA, de PM ou de Portée, les dommages qu'il subit sont réduits de 4% pour 2 tours et les dommages subis par son attaquant sont augmentés de 4% pour 2 tours (cumulable 3 fois)."
       ],
       "de": [
-        "Werden dem Träger AP, BP oder RW entzogen, wird der erlittene Schaden 2 Runden lang um 4 % reduziert. Der vom Angreifer erlittene Schaden wird 2 Runden lang um 4 % erhöht. Maximal 3 Mal kumulierbar."
+        "Prüfung der Waage:\n• Wenn der Träger dem Versuch eines AP-, BP- oder RW-Entzugs ausgesetzt wird, wird sein erlittener Schaden 2 Runden lang um 4 % verringert, und der von seinem Angreifer erlittene Schaden wird 2 Runden lang um 4 % erhöht. (3-mal kumulierbar)"
       ],
       "it": [
         "Quando il portatore subisce sottrazione PA, PM o PO, i danni che subisce sono ridotti del 4% per 2 turni. I danni subiti dall'attaccante sono aumentati del 4% per 2 turni. Cumulabile al massimo 3 volte."
       ],
       "es": [
-        "Cuando el portador sufre una retirada de PA, PM o AL, los daños que sufre se reducen un 4% durante 2 turnos. Los daños sufridos por el atacante aumentan un 4% durante 2 turnos. Acumulable 3 veces como máximo."
+        "Prueba de la Balanza:\n• Cuando el portador sufre un intento de retirada de PA, de PM o de alcance, los daños que sufre se reducen un 4% durante 2 turnos y los daños que sufre su atacante aumentan un 4% durante 2 turnos (acumulable 3 veces)."
       ],
       "pt": [
-        "Quando o portador sofre retirada de PA, PM ou AL, os danos que ele sofre são reduzidos em 4% por 2 turnos. Os danos sofridos pelo atacante aumentam em 4% por 2 turnos. Acumula até 3 vezes."
+        "Prova da Balança:\n• Quando o carregador sofre uma tentativa de retirada de PA, PM ou de alcance, o dano que ele sofre é reduzido em 4% por 2 turnos e o dano sofrido pelo atacante é aumentado em 4% por 2 turnos (acumula 3 vezes)."
       ]
     },
     "conditions": {
@@ -51116,22 +51339,22 @@
           {
             "stat": "STRENGTH",
             "operator": ">",
-            "value": 350
+            "value": 299
           },
           {
             "stat": "INTELLIGENCE",
             "operator": ">",
-            "value": 350
+            "value": 299
           },
           {
             "stat": "AGILITY",
             "operator": ">",
-            "value": 350
+            "value": 299
           },
           {
             "stat": "CHANCE",
             "operator": ">",
-            "value": 350
+            "value": 299
           }
         ]
       },
