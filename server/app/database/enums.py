@@ -77,6 +77,11 @@ class WeaponEffectType(Enum):
     AP = auto()
     MP = auto()
     HP_RESTORED = auto()
+    AIR_HEALING = auto()
+    EARTH_HEALING = auto()
+    FIRE_HEALING = auto()
+    WATER_HEALING = auto()
+    NEUTRAL_HEALING = auto()
 
 
 class SpellEffectType(Enum):
@@ -97,6 +102,12 @@ class SpellEffectType(Enum):
     PUSHBACK_DAMAGE = auto()
     BEST_ELEMENT_DAMAGE = auto()
     BEST_ELEMENT_STEAL = auto()
+    BEST_ELEMENT_HEALING = auto()
+    AIR_HEALING = auto()
+    EARTH_HEALING = auto()
+    FIRE_HEALING = auto()
+    WATER_HEALING = auto()
+    NEUTRAL_HEALING = auto()
 
 
 class WeaponElementMage(Enum):

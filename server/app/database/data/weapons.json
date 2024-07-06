@@ -9492,7 +9492,7 @@
           "maxStat": 42
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 12,
           "maxStat": 42
         }
@@ -17678,7 +17678,7 @@
           "maxStat": 7
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 7,
           "maxStat": 11
         }
@@ -18257,7 +18257,7 @@
           "maxStat": 22
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 13,
           "maxStat": 22
         }
@@ -18427,7 +18427,7 @@
           "maxStat": 27
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 9,
           "maxStat": 23
         }
@@ -19611,7 +19611,7 @@
           "maxStat": 40
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 1,
           "maxStat": 80
         }
@@ -21462,7 +21462,7 @@
       "critBonusDamage": 15,
       "weapon_effects": [
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 1,
           "maxStat": 10
         },
@@ -21524,7 +21524,7 @@
       "critBonusDamage": 5,
       "weapon_effects": [
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 11,
           "maxStat": 15
         }
@@ -21671,7 +21671,7 @@
           "maxStat": -1
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 8,
           "maxStat": 12
         }
@@ -21959,7 +21959,7 @@
           "maxStat": 20
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 1,
           "maxStat": 80
         }
@@ -23158,7 +23158,7 @@
           "maxStat": 15
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 1,
           "maxStat": 100
         },
@@ -23555,7 +23555,7 @@
           "maxStat": 35
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 1,
           "maxStat": 100
         }
@@ -27840,7 +27840,7 @@
       "critBonusDamage": 10,
       "weapon_effects": [
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 11,
           "maxStat": 30
         }
@@ -32906,7 +32906,7 @@
           "maxStat": 6
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 1,
           "maxStat": 20
         },
@@ -39062,7 +39062,7 @@
           "maxStat": 44
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 51,
           "maxStat": 100
         }
@@ -40649,22 +40649,22 @@
           "maxStat": 20
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 8,
           "maxStat": 12
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 8,
           "maxStat": 12
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 8,
           "maxStat": 12
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 8,
           "maxStat": 12
         }
@@ -44805,12 +44805,12 @@
           "maxStat": 12
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 12,
           "maxStat": 17
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 12,
           "maxStat": 17
         }
@@ -44912,12 +44912,12 @@
           "maxStat": 15
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 26,
           "maxStat": 30
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 26,
           "maxStat": 30
         }
@@ -46574,7 +46574,7 @@
       "critBonusDamage": 1,
       "weapon_effects": [
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 11,
           "maxStat": 15
         }
@@ -53259,17 +53259,17 @@
           "maxStat": 18
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 15,
           "maxStat": 18
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 15,
           "maxStat": 18
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 15,
           "maxStat": 18
         }
@@ -53823,22 +53823,22 @@
       "critBonusDamage": 5,
       "weapon_effects": [
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 7,
           "maxStat": 10
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 7,
           "maxStat": 10
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 7,
           "maxStat": 10
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 7,
           "maxStat": 10
         }
@@ -54510,12 +54510,12 @@
       "critBonusDamage": 0,
       "weapon_effects": [
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 8,
           "maxStat": 12
         },
         {
-          "stat": "HP restored",
+          "stat": "Fire healing",
           "minStat": 8,
           "maxStat": 12
         }
