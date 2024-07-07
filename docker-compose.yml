@@ -57,5 +57,20 @@ services:
       - client
     restart: always
 
+# Dev tools:
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    ports:
+      - 8888:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: dl@dofuslab.io
+      PGADMIN_DEFAULT_PASSWORD: dofuslab
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+      - ./db/pgadmin-servers.json:/pgadmin4/servers.json
+
 volumes:
   pgdata:
+  pgadmin-data:
