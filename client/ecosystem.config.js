@@ -22,7 +22,7 @@ module.exports = {
 
   deploy: {
     production: {
-      key: '/home/jeremy/.ssh/id_rsa.pub',
+      key: '/home/jeremy/.ssh/dofuslab_deploy_key.pub',
       user: 'jeremy',
       host: '134.209.168.215',
       ref: 'origin/master',
@@ -34,7 +34,6 @@ module.exports = {
         GRAPHQL_URI: 'https://dofuslab.io/api/graphql',
         GA_TRACKING_ID: 'UA-104212417-3',
       },
-      ssh_options: 'StrictHostKeyChecking=no',
     },
     branch: {
       key: '/home/jeremy/.ssh/id_rsa.pub',
