@@ -34,6 +34,7 @@ module.exports = {
         GRAPHQL_URI: 'https://dofuslab.io/api/graphql',
         GA_TRACKING_ID: 'UA-104212417-3',
       },
+      ssh_options: 'StrictHostKeyChecking=no',
     },
     branch: {
       key: '/home/jeremy/.ssh/id_rsa.pub',
