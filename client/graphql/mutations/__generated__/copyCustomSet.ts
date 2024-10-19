@@ -178,6 +178,7 @@ export interface copyCustomSet_copyCustomSet_customSet {
   tagAssociations: copyCustomSet_copyCustomSet_customSet_tagAssociations[];
   hasEditPermission: boolean;
   buildGender: BuildGender;
+  private: boolean;
 }
 
 export interface copyCustomSet_copyCustomSet {

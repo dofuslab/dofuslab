@@ -1,5 +1,6 @@
 fragment abbreviatedCustomSet on CustomSet {
   id
+  private
   buildGender
   defaultClass {
     id

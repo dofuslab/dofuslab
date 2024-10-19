@@ -178,6 +178,7 @@ export interface equipItems_equipMultipleItems_customSet {
   tagAssociations: equipItems_equipMultipleItems_customSet_tagAssociations[];
   hasEditPermission: boolean;
   buildGender: BuildGender;
+  private: boolean;
 }
 
 export interface equipItems_equipMultipleItems {
