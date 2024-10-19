@@ -1,0 +1,10 @@
+#import "graphql/fragments/customSet.graphql"
+
+mutation togglePrivateCustomSet($customSetId: UUID!) {
+  togglePrivateCustomSet(customSetId: $customSetId) {
+    ok
+    customSet {
+      ...customSet
+    }
+  }
+}

@@ -53,6 +53,7 @@ export interface abbreviatedCustomSet_tagAssociations {
 export interface abbreviatedCustomSet {
   __typename: "CustomSet";
   id: any;
+  private: boolean;
   buildGender: BuildGender;
   defaultClass: abbreviatedCustomSet_defaultClass | null;
   name: string | null;
