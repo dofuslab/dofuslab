@@ -5,9 +5,9 @@
             "en": "Bow Wow",
             "fr": "Chienchien",
             "de": "SchnuffWuff",
-            "it": "Baubau",
             "es": "Wauwau",
-            "pt": "Awaw"
+            "pt": "Awaw",
+            "it": "Bow Wow"
         },
         "itemType": "Pet",
         "setID": null,
@@ -32,13 +32,13 @@
             "en": "Bow Meow",
             "fr": "Chacha",
             "de": "Maunzmiez",
-            "it": "Maomao",
             "es": "Miaumiau",
-            "pt": "Miaw"
+            "pt": "Miaw",
+            "it": "Bow Meow"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Power",
@@ -64,13 +64,13 @@
             "en": "Wabbit",
             "fr": "Wabbit",
             "de": "Wabbit",
-            "it": "Wabbit",
             "es": "Wabbit",
-            "pt": "Wabbit"
+            "pt": "Wabbit",
+            "it": "Wabbit"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Power",
@@ -96,23 +96,23 @@
             "en": "Fire Bwak",
             "fr": "Bwak de Feu",
             "de": "Feuer-Bwack",
-            "it": "Bwak di Fuoco",
             "es": "Bwak de fuego",
-            "pt": "Bwak de Fogo"
+            "pt": "Bwak de Fogo",
+            "it": "Fire Bwak"
         },
         "itemType": "Pet",
-        "setID": "2",
-        "level": 1,
+        "setID": null,
+        "level": 20,
         "stats": [
-            {
-                "stat": "% Fire Resistance",
-                "minStat": null,
-                "maxStat": 25
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 50
+            },
+            {
+                "stat": "% Fire Resistance",
+                "minStat": null,
+                "maxStat": 25
             }
         ],
         "customStats": {},
@@ -128,13 +128,13 @@
             "en": "Water Bwak",
             "fr": "Bwak d'Eau",
             "de": "Wasser-Bwack",
-            "it": "Bwak di Acqua",
             "es": "Bwak de agua",
-            "pt": "Bwak de Água"
+            "pt": "Bwak de Água",
+            "it": "Water Bwak"
         },
         "itemType": "Pet",
-        "setID": "13",
-        "level": 1,
+        "setID": null,
+        "level": 20,
         "stats": [
             {
                 "stat": "Power",
@@ -160,13 +160,13 @@
             "en": "Air Bwak",
             "fr": "Bwak d'Air",
             "de": "Luft-Bwack",
-            "it": "Bwak di Aria",
             "es": "Bwak de aire",
-            "pt": "Bwak de Ar"
+            "pt": "Bwak de Ar",
+            "it": "Air Bwak"
         },
         "itemType": "Pet",
-        "setID": "15",
-        "level": 1,
+        "setID": null,
+        "level": 20,
         "stats": [
             {
                 "stat": "Power",
@@ -192,13 +192,13 @@
             "en": "Earth Bwak",
             "fr": "Bwak de Terre",
             "de": "Erd-Bwack",
-            "it": "Bwak di Terra",
             "es": "Bwak de tierra",
-            "pt": "Bwak de Terra"
+            "pt": "Bwak de Terra",
+            "it": "Earth Bwak"
         },
         "itemType": "Pet",
-        "setID": "14",
-        "level": 1,
+        "setID": null,
+        "level": 20,
         "stats": [
             {
                 "stat": "Power",
@@ -224,13 +224,13 @@
             "en": "Quaquack",
             "fr": "Kouin-Kouin",
             "de": "Quark-Quak",
-            "it": "Quaquà",
             "es": "Kuakuá",
-            "pt": "Quaquá"
+            "pt": "Quaquá",
+            "it": "Quaquack"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Prospecting",
@@ -256,13 +256,13 @@
             "en": "Nomoon",
             "fr": "Nomoon",
             "de": "Nomoon",
-            "it": "Nomoon",
             "es": "Nomoon",
-            "pt": "Nomoon"
+            "pt": "Nomoon",
+            "it": "Nomoon"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Prospecting",
@@ -283,13 +283,13 @@
             "en": "Black Bow Wow",
             "fr": "Chienchien Noir",
             "de": "Schwarzer SchnuffWuff",
-            "it": "Baubau Nero",
             "es": "Wauwau negro",
-            "pt": "Awaw Negro"
+            "pt": "Awaw Negro",
+            "it": "Black Bow Wow"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Vitality",
@@ -310,13 +310,13 @@
             "en": "White Bow Meow",
             "fr": "Chacha Blanc",
             "de": "Weiße Maunzmiez",
-            "it": "Maomao Bianco",
             "es": "Miaumiau blanco",
-            "pt": "Miaw branco"
+            "pt": "Miaw branco",
+            "it": "White Bow Meow"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Vitality",
@@ -337,13 +337,13 @@
             "en": "Peki",
             "fr": "Péki",
             "de": "Péki",
-            "it": "Peki",
             "es": "Peki",
-            "pt": "Peki"
+            "pt": "Peki",
+            "it": "Peki"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
             {
                 "stat": "Vitality",
@@ -353,7 +353,7 @@
             {
                 "stat": "Pushback Damage",
                 "minStat": null,
-                "maxStat": 60
+                "maxStat": 80
             }
         ],
         "customStats": {},
@@ -369,13 +369,13 @@
             "en": "Little White Bow Meow",
             "fr": "Petit Chacha Blanc",
             "de": "Kleine weiße Maunzmiez",
-            "it": "Piccolo Maomao Bianco",
             "es": "Pequeño miaumiau blanco",
-            "pt": "Pequeno Miaw Branco"
+            "pt": "Pequeno Miaw Branco",
+            "it": "Little White Bow Meow"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "AP Parry",
@@ -401,23 +401,23 @@
             "en": "Little Black Bow Wow",
             "fr": "Petit Chienchien Noir",
             "de": "Kleiner schwarzer Schnuffwuff",
-            "it": "Piccolo Baubau Nero",
             "es": "Pequeño wauwau negro",
-            "pt": "Pequeno Awaw Negro"
+            "pt": "Pequeno Awaw Negro",
+            "it": "Little Black Bow Wow"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Pushback Damage",
-                "minStat": null,
-                "maxStat": 80
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 70
+            },
+            {
+                "stat": "Pushback Damage",
+                "minStat": null,
+                "maxStat": 80
             }
         ],
         "customStats": {},
@@ -433,23 +433,23 @@
             "en": "Ghast",
             "fr": "Fotome",
             "de": "Phantöffelchen",
-            "it": "Fotasma",
             "es": "Fotasma",
-            "pt": "Fotasma"
+            "pt": "Fotasma",
+            "it": "Ghast"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Dodge",
-                "minStat": null,
-                "maxStat": 30
-            },
             {
                 "stat": "Vitality",
                 "minStat": null,
                 "maxStat": 400
+            },
+            {
+                "stat": "Dodge",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -465,23 +465,23 @@
             "en": "Pink Dragoone",
             "fr": "Dragoune Rose",
             "de": "Rosa Dragooner",
-            "it": "Dragona Rosa",
             "es": "Dragún rosa",
-            "pt": "Draguna Rosa"
+            "pt": "Draguna Rosa",
+            "it": "Pink Dragoone"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Dodge",
-                "minStat": null,
-                "maxStat": 50
-            },
             {
                 "stat": "AP Reduction",
                 "minStat": null,
                 "maxStat": 40
+            },
+            {
+                "stat": "Dodge",
+                "minStat": null,
+                "maxStat": 50
             }
         ],
         "customStats": {},
@@ -497,13 +497,13 @@
             "en": "Croum",
             "fr": "Croum",
             "de": "Croum",
-            "it": "Crum",
             "es": "Crum",
-            "pt": "Crum"
+            "pt": "Crum",
+            "it": "Croum"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Power",
@@ -529,23 +529,23 @@
             "en": "Minimino",
             "fr": "Minimino",
             "de": "Minimino",
-            "it": "Minimino",
             "es": "Minimino",
-            "pt": "Minimino"
+            "pt": "Minimino",
+            "it": "Minimino"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "AP Reduction",
-                "minStat": null,
-                "maxStat": 40
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 70
+            },
+            {
+                "stat": "AP Reduction",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -561,9 +561,9 @@
             "en": "Ginger Bow Meowette",
             "fr": "Chachatte Rousse",
             "de": "Rote Maunzmiez",
-            "it": "Maomicina Rossa",
             "es": "Miaumiau pelirroja",
-            "pt": "Miawa ruiva"
+            "pt": "Miawa ruiva",
+            "it": "Ginger Bow Meowette"
         },
         "itemType": "Pet",
         "setID": null,
@@ -588,13 +588,13 @@
             "en": "Tabby Bow Meow",
             "fr": "Chacha Tigré",
             "de": "Getigerte Maunzmiez",
-            "it": "Maomao Tigrato",
             "es": "Miaumiau atigrado",
-            "pt": "Miaw tigrado"
+            "pt": "Miaw tigrado",
+            "it": "Tabby Bow Meow"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Power",
@@ -620,13 +620,13 @@
             "en": "Baby Crowdzilla",
             "fr": "Vilain Petit Corbac",
             "de": "Kleiner böser Rabling",
-            "it": "Cattivo Piccolo Cuervoc",
             "es": "Cuerbokito Feo",
-            "pt": "Corvoquinho Feio"
+            "pt": "Corvoquinho Feio",
+            "it": "Baby Crowdzilla"
         },
         "itemType": "Pet",
-        "setID": "8",
-        "level": 1,
+        "setID": null,
+        "level": 20,
         "stats": [
             {
                 "stat": "Prospecting",
@@ -647,23 +647,23 @@
             "en": "Mischievous Squirrel",
             "fr": "Écureuil Chenapan",
             "de": "Wuseliges Eichhörnchen",
-            "it": "Scoiattolo Furfante",
             "es": "Ardilla pilla",
-            "pt": "Esquilo Travesso"
+            "pt": "Esquilo Travesso",
+            "it": "Mischievous Squirrel"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Dodge",
-                "minStat": null,
-                "maxStat": 40
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 70
+            },
+            {
+                "stat": "Dodge",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -679,23 +679,23 @@
             "en": "Leopardo",
             "fr": "Léopardo",
             "de": "Feuerfux",
-            "it": "Leopardo",
             "es": "Leopardo",
-            "pt": "Leopardo"
+            "pt": "Leopardo",
+            "it": "Leopardo"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "MP Reduction",
-                "minStat": null,
-                "maxStat": 40
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 70
+            },
+            {
+                "stat": "MP Reduction",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -711,13 +711,13 @@
             "en": "Bilby",
             "fr": "Bilby",
             "de": "Bilby",
-            "it": "Bilby",
             "es": "Bilby",
-            "pt": "Bilby"
+            "pt": "Bilby",
+            "it": "Bilby"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Heals",
@@ -743,23 +743,23 @@
             "en": "Young Wild Boar",
             "fr": "Marcassin",
             "de": "Frischling",
-            "it": "Cinghialetto",
             "es": "Cochino jabato",
-            "pt": "Javalino"
+            "pt": "Javalino",
+            "it": "Young Wild Boar"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Lock",
-                "minStat": null,
-                "maxStat": 40
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 70
+            },
+            {
+                "stat": "Lock",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -775,13 +775,13 @@
             "en": "Blue Piwin",
             "fr": "Pioute bleu",
             "de": "Blauer Piepmatz",
-            "it": "Pìut Blu",
             "es": "Piotín azul",
-            "pt": "Piuta Azul"
+            "pt": "Piuta Azul",
+            "it": "Blue Piwin"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Chance",
@@ -807,13 +807,13 @@
             "en": "Yellow Piwin",
             "fr": "Pioute jaune",
             "de": "Gelber Piepmatz",
-            "it": "Pìut Giallo",
             "es": "Piotín amarillo",
-            "pt": "Piuta Amarela"
+            "pt": "Piuta Amarela",
+            "it": "Yellow Piwin"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Agility",
@@ -839,23 +839,23 @@
             "en": "Pink Piwin",
             "fr": "Pioute rose",
             "de": "Rosa Piepmatz",
-            "it": "Pìut Rosa",
             "es": "Piotín rosa",
-            "pt": "Piuta Rosa"
+            "pt": "Piuta Rosa",
+            "it": "Pink Piwin"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Power",
-                "minStat": null,
-                "maxStat": 70
-            },
             {
                 "stat": "Range",
                 "minStat": null,
                 "maxStat": 2
+            },
+            {
+                "stat": "Power",
+                "minStat": null,
+                "maxStat": 70
             }
         ],
         "customStats": {},
@@ -871,23 +871,23 @@
             "en": "Red Piwin",
             "fr": "Pioute rouge",
             "de": "Roter Piepmatz",
-            "it": "Pìut Rosso",
             "es": "Piotín rojo",
-            "pt": "Piuta Vermelho"
+            "pt": "Piuta Vermelho",
+            "it": "Red Piwin"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Critical Damage",
-                "minStat": null,
-                "maxStat": 40
-            },
             {
                 "stat": "Intelligence",
                 "minStat": null,
                 "maxStat": 120
+            },
+            {
+                "stat": "Critical Damage",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -903,23 +903,23 @@
             "en": "Green Piwin",
             "fr": "Pioute vert",
             "de": "Grüner Piepmatz",
-            "it": "Pìut Verde",
             "es": "Piotín verde",
-            "pt": "Piuta Verde"
+            "pt": "Piuta Verde",
+            "it": "Green Piwin"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Critical Damage",
-                "minStat": null,
-                "maxStat": 40
-            },
             {
                 "stat": "Strength",
                 "minStat": null,
                 "maxStat": 120
+            },
+            {
+                "stat": "Critical Damage",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -935,23 +935,23 @@
             "en": "Purple Piwin",
             "fr": "Pioute violet",
             "de": "Violetter Piepmatz",
-            "it": "Pìut Viola",
             "es": "Piotín violeta",
-            "pt": "Piuta Violeta"
+            "pt": "Piuta Violeta",
+            "it": "Purple Piwin"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Power",
-                "minStat": null,
-                "maxStat": 70
-            },
             {
                 "stat": "Summons",
                 "minStat": null,
                 "maxStat": 2
+            },
+            {
+                "stat": "Power",
+                "minStat": null,
+                "maxStat": 70
             }
         ],
         "customStats": {},
@@ -967,13 +967,13 @@
             "en": "Atooin",
             "fr": "Atouin",
             "de": "Krötschild",
-            "it": "Atuin",
             "es": "Tortuga",
-            "pt": "Atuin"
+            "pt": "Atuin",
+            "it": "Atooin"
         },
         "itemType": "Pet",
-        "setID": "9",
-        "level": 1,
+        "setID": null,
+        "level": 20,
         "stats": [
             {
                 "stat": "Heals",
@@ -999,13 +999,13 @@
             "en": "Mini Wa",
             "fr": "Mini Wa",
             "de": "Mini Wa",
-            "it": "Mini We",
             "es": "Mini wey",
-            "pt": "Mini Wei"
+            "pt": "Mini Wei",
+            "it": "Mini Wa"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Chance",
@@ -1031,21 +1031,21 @@
             "en": "Willy Peninzias",
             "fr": "Willy le Relou",
             "de": "Willy Wirrwolf",
-            "it": "Willy il Rompi",
             "es": "Willy, el Plasta",
-            "pt": "Willy, o Mala"
+            "pt": "Willy, o Mala",
+            "it": "Willy Peninzias"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
-                "stat": "Agility",
+                "stat": "Intelligence",
                 "minStat": null,
                 "maxStat": 120
             },
             {
-                "stat": "Intelligence",
+                "stat": "Agility",
                 "minStat": null,
                 "maxStat": 120
             }
@@ -1063,23 +1063,23 @@
             "en": "Bloody Koalak",
             "fr": "Koalak Sanguin",
             "de": "Blutrünstiger Koalak",
-            "it": "Koalak Sanguigno",
             "es": "Koalak sanguíneo",
-            "pt": "Koalak Sanguíneo"
+            "pt": "Koalak Sanguíneo",
+            "it": "Bloody Koalak"
         },
         "itemType": "Pet",
-        "setID": "46",
-        "level": 1,
+        "setID": null,
+        "level": 20,
         "stats": [
-            {
-                "stat": "AP Reduction",
-                "minStat": null,
-                "maxStat": 40
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 70
+            },
+            {
+                "stat": "AP Reduction",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -1095,20 +1095,14 @@
             "en": "Bworky",
             "fr": "Bworky",
             "de": "Bworky",
-            "it": "Bworky",
             "es": "Bworky",
-            "pt": "Bworky"
+            "pt": "Bworky",
+            "it": "Bworky"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "pods",
-                "minStat": null,
-                "maxStat": 2000
-            }
-        ],
+        "level": 20,
+        "stats": [],
         "customStats": {},
         "conditions": {
             "conditions": {},
@@ -1122,23 +1116,23 @@
             "en": "Gobtubby",
             "fr": "Bouloute",
             "de": "Fresskügelchen",
-            "it": "Palladineve",
             "es": "Boluto",
-            "pt": "Boloto"
+            "pt": "Boloto",
+            "it": "Gobtubby"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
-            {
-                "stat": "AP Parry",
-                "minStat": null,
-                "maxStat": 30
-            },
             {
                 "stat": "Vitality",
                 "minStat": null,
                 "maxStat": 400
+            },
+            {
+                "stat": "AP Parry",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -1154,23 +1148,23 @@
             "en": "Treechster",
             "fr": "Abra Kadabra",
             "de": "Astaknydasta",
-            "it": "Arbre Magic",
             "es": "Abra kadabra",
-            "pt": "Abra Kadabra"
+            "pt": "Abra Kadabra",
+            "it": "Treechster"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "MP Parry",
-                "minStat": null,
-                "maxStat": 50
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 70
+            },
+            {
+                "stat": "MP Parry",
+                "minStat": null,
+                "maxStat": 50
             }
         ],
         "customStats": {},
@@ -1186,13 +1180,13 @@
             "en": "El Scarador",
             "fr": "El Scarador",
             "de": "El Scarador",
-            "it": "El Scarador",
             "es": "Escarador",
-            "pt": "El Scarador"
+            "pt": "El Scarador",
+            "it": "El Scarador"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Power",
@@ -1238,13 +1232,13 @@
             "en": "Minifoux",
             "fr": "Tifoux",
             "de": "Minifux",
-            "it": "Tifux",
             "es": "Pekefux",
-            "pt": "Pekefox"
+            "pt": "Pekefox",
+            "it": "Minifoux"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Prospecting",
@@ -1265,13 +1259,13 @@
             "en": "Pingoku",
             "fr": "Walk",
             "de": "Ping",
-            "it": "Walk",
             "es": "Walk",
-            "pt": "Walk"
+            "pt": "Walk",
+            "it": "Pingoku"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Chance",
@@ -1297,13 +1291,13 @@
             "en": "Pandawa Cub",
             "fr": "Bébé Pandawa",
             "de": "Pandawa-Baby",
-            "it": "Bebé Pandawa",
             "es": "Bebé pandawa",
-            "pt": "Bebê Pandawa"
+            "pt": "Bebê Pandawa",
+            "it": "Pandawa Cub"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Strength",
@@ -1329,23 +1323,23 @@
             "en": "Ross",
             "fr": "Ross",
             "de": "Surr",
-            "it": "Ross",
             "es": "Ross",
-            "pt": "Ross"
+            "pt": "Ross",
+            "it": "Ross"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Heals",
-                "minStat": null,
-                "maxStat": 50
-            },
             {
                 "stat": "AP Reduction",
                 "minStat": null,
                 "maxStat": 40
+            },
+            {
+                "stat": "Heals",
+                "minStat": null,
+                "maxStat": 50
             }
         ],
         "customStats": {},
@@ -1361,13 +1355,13 @@
             "en": "Feanor",
             "fr": "Fëanor",
             "de": "Felidan",
-            "it": "Feanor",
             "es": "Feanor",
-            "pt": "Feanor"
+            "pt": "Feanor",
+            "it": "Feanor"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Power",
@@ -1393,13 +1387,13 @@
             "en": "The Godfather's Gobtubby",
             "fr": "Bouloute du Parrain",
             "de": "Fresskügelchen des Paten",
-            "it": "Palladineve del Padrino",
             "es": "Boluto del padrino",
-            "pt": "Boloto do Padrinho"
+            "pt": "Boloto do Padrinho",
+            "it": "The Godfather's Gobtubby"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
             {
                 "stat": "Vitality",
@@ -1409,7 +1403,7 @@
             {
                 "stat": "AP Parry",
                 "minStat": null,
-                "maxStat": 30
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -1425,23 +1419,23 @@
             "en": "Angora Bow Meow",
             "fr": "Chacha Angora",
             "de": "Angora Maunzmiez",
-            "it": "Maomao Angora",
             "es": "Miaumiau de Angora",
-            "pt": "Miaw angorá"
+            "pt": "Miaw angorá",
+            "it": "Angora Bow Meow"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Critical Damage",
-                "minStat": null,
-                "maxStat": 40
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 70
+            },
+            {
+                "stat": "Critical Damage",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -1457,23 +1451,23 @@
             "en": "Tiwabbit Wosungwee",
             "fr": "Tiwabbit Kiafin",
             "de": "Tiwabbit Ischungrig",
-            "it": "Piccolo Wabbit Keafam",
             "es": "Pekewabbit hambriento",
-            "pt": "Pekewabbit Kofome"
+            "pt": "Pekewabbit Kofome",
+            "it": "Tiwabbit Wosungwee"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Air Resistance",
-                "minStat": null,
-                "maxStat": 80
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 50
+            },
+            {
+                "stat": "Air Resistance",
+                "minStat": null,
+                "maxStat": 80
             }
         ],
         "customStats": {},
@@ -1489,13 +1483,13 @@
             "en": "Miniminotot",
             "fr": "Miniminotot",
             "de": "Miniminotot",
-            "it": "Miniminotot",
             "es": "Miniminotot",
-            "pt": "Miniminotot"
+            "pt": "Miniminotot",
+            "it": "Miniminotot"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
             {
                 "stat": "Power",
@@ -1521,23 +1515,23 @@
             "en": "Crocodyl",
             "fr": "Crocodaille",
             "de": "Crocodyll",
-            "it": "Coccodrail",
             "es": "Cocodrail",
-            "pt": "Crocodyl"
+            "pt": "Crocodyl",
+            "it": "Crocodyl"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Fire Resistance",
-                "minStat": null,
-                "maxStat": 80
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 50
+            },
+            {
+                "stat": "Fire Resistance",
+                "minStat": null,
+                "maxStat": 80
             }
         ],
         "customStats": {},
@@ -1553,23 +1547,23 @@
             "en": "Black Dragoone",
             "fr": "Dragoune Noire",
             "de": "Schwarzer Dragooner",
-            "it": "Dragona Nera",
             "es": "Dragún negro",
-            "pt": "Draguna Negra"
+            "pt": "Draguna Negra",
+            "it": "Black Dragoone"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "MP Parry",
-                "minStat": null,
-                "maxStat": 50
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 70
+            },
+            {
+                "stat": "MP Parry",
+                "minStat": null,
+                "maxStat": 50
             }
         ],
         "customStats": {},
@@ -1585,23 +1579,23 @@
             "en": "Rushu's Shushu",
             "fr": "Shushu de Rushu",
             "de": "Shushu von Rushu",
-            "it": "Shushu di Rushu",
             "es": "Fab'huritu de Rushu",
-            "pt": "Shushu de Rushu"
+            "pt": "Shushu de Rushu",
+            "it": "Rushu's Shushu"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Initiative",
-                "minStat": null,
-                "maxStat": 2000
-            },
             {
                 "stat": "Summons",
                 "minStat": null,
                 "maxStat": 2
+            },
+            {
+                "stat": "Initiative",
+                "minStat": null,
+                "maxStat": 2000
             }
         ],
         "customStats": {},
@@ -1617,23 +1611,23 @@
             "en": "Vampyrina",
             "fr": "Vampyrette",
             "de": "Vampyrella",
-            "it": "Vampyretta",
             "es": "Vampyrilla",
-            "pt": "Vampyrina"
+            "pt": "Vampyrina",
+            "it": "Vampyrina"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Dodge",
-                "minStat": null,
-                "maxStat": 30
-            },
             {
                 "stat": "Vitality",
                 "minStat": null,
                 "maxStat": 400
+            },
+            {
+                "stat": "Dodge",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -1649,20 +1643,14 @@
             "en": "Borbat",
             "fr": "Chauffe-souris",
             "de": "Fleddermaus",
-            "it": "Pipì-Strello",
             "es": "Murciego",
-            "pt": "Borcego"
+            "pt": "Borcego",
+            "it": "Borbat"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "pods",
-                "minStat": null,
-                "maxStat": 2000
-            }
-        ],
+        "level": 20,
+        "stats": [],
         "customStats": {},
         "conditions": {
             "conditions": {},
@@ -1676,13 +1664,13 @@
             "en": "Jellufo",
             "fr": "Gelutin",
             "de": "Gelutine",
-            "it": "Gellufo",
             "es": "Gelutín",
-            "pt": "Jellufo"
+            "pt": "Jellufo",
+            "it": "Jellufo"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
             {
                 "stat": "Vitality",
@@ -1692,7 +1680,7 @@
             {
                 "stat": "Pushback Damage",
                 "minStat": null,
-                "maxStat": 60
+                "maxStat": 80
             }
         ],
         "customStats": {},
@@ -1708,13 +1696,13 @@
             "en": "Ogrine Seeker",
             "fr": "Chercheur d'Ogrines",
             "de": "Ogrinenjäger",
-            "it": "Cercatore di Ogrin",
             "es": "Buscador de ogrinas",
-            "pt": "Caçador de Ogrinas"
+            "pt": "Caçador de Ogrinas",
+            "it": "Ogrine Seeker"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Power",
@@ -1737,14 +1725,14 @@
             "de": [
                 "Titel: Stöberer von Otomaï"
             ],
-            "it": [
-                "Titolo: Cercatore di Otomai"
-            ],
             "es": [
                 "Título: Rebuscador de Otomai."
             ],
             "pt": [
                 "Título: Explorador de Otomai"
+            ],
+            "it": [
+                "Title: Otomai Rummager"
             ]
         },
         "conditions": {
@@ -1759,23 +1747,23 @@
             "en": "Golden Dragoone",
             "fr": "Dragoune Dorée",
             "de": "Goldener Dragooner",
-            "it": "Dragona Dorata",
             "es": "Dragún dorado",
-            "pt": "Draguna Dourada"
+            "pt": "Draguna Dourada",
+            "it": "Golden Dragoone"
         },
         "itemType": "Pet",
         "setID": "151",
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "AP Parry",
-                "minStat": null,
-                "maxStat": 40
-            },
             {
                 "stat": "Range",
                 "minStat": null,
                 "maxStat": 2
+            },
+            {
+                "stat": "AP Parry",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -1791,13 +1779,13 @@
             "en": "Tarzantula",
             "fr": "Raknaille",
             "de": "Arachnaille",
-            "it": "Sgarbarakne",
             "es": "Araknuza",
-            "pt": "Tarzântula"
+            "pt": "Tarzântula",
+            "it": "Tarzantula"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "AP Parry",
@@ -1823,13 +1811,13 @@
             "en": "Smush",
             "fr": "Meuch",
             "de": "Pfefferling",
-            "it": "Fuuung Fuuung",
             "es": "Miscaludo",
-            "pt": "Coguzim"
+            "pt": "Coguzim",
+            "it": "Smush"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Dodge",
@@ -1855,23 +1843,23 @@
             "en": "Tofrazzle",
             "fr": "Tofoudre",
             "de": "Blitzofu",
-            "it": "Tofulmine",
             "es": "Tofucilazo",
-            "pt": "Tofulminado"
+            "pt": "Tofulminado",
+            "it": "Tofrazzle"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Pushback Damage",
-                "minStat": null,
-                "maxStat": 80
-            },
             {
                 "stat": "Agility",
                 "minStat": null,
                 "maxStat": 120
+            },
+            {
+                "stat": "Pushback Damage",
+                "minStat": null,
+                "maxStat": 80
             }
         ],
         "customStats": {},
@@ -1887,13 +1875,13 @@
             "en": "Sting",
             "fr": "Pykur",
             "de": "Prespieks",
-            "it": "Prespina",
             "es": "Otazo",
-            "pt": "Pikada"
+            "pt": "Pikada",
+            "it": "Sting"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Prospecting",
@@ -1914,13 +1902,13 @@
             "en": "Snow Bow Meow",
             "fr": "Chacha des Glaces",
             "de": "Eismaunzmiez",
-            "it": "Maomao dei Ghiacci",
             "es": "Miaumiau de las nieves",
-            "pt": "Miaw do gelo"
+            "pt": "Miaw do gelo",
+            "it": "Snow Bow Meow"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Pushback Resistance",
@@ -1946,13 +1934,13 @@
             "en": "Brindled Minifoux",
             "fr": "Tifoux Tigré",
             "de": "Gescheckter Minifux",
-            "it": "Tifux Tigrato",
             "es": "Pekefux atigrado",
-            "pt": "Pekefox Tigrado"
+            "pt": "Pekefox Tigrado",
+            "it": "Brindled Minifoux"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Prospecting",
@@ -1973,13 +1961,13 @@
             "en": "Brindled Bow Wow",
             "fr": "Chienchien Tigré",
             "de": "Gescheckter Schnuffwuff",
-            "it": "Baubau Tigrato",
             "es": "Wauwau atigrado",
-            "pt": "Awaw malhado"
+            "pt": "Awaw malhado",
+            "it": "Brindled Bow Wow"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "AP Parry",
@@ -2005,13 +1993,13 @@
             "en": "Black Quaquack",
             "fr": "Kouin-Kouin Noir",
             "de": "Schwarzes Quark-Quak",
-            "it": "Quaquà Nero",
             "es": "Kuakuá negro",
-            "pt": "Quaquá negro"
+            "pt": "Quaquá negro",
+            "it": "Black Quaquack"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "AP Reduction",
@@ -2037,13 +2025,13 @@
             "en": "Stone-washed Borbat",
             "fr": "Chauffe-souris Délavée",
             "de": "Ausgebleichte Fleddermaus",
-            "it": "Pipì-Strello Slavato",
             "es": "Murciego pálido",
-            "pt": "Borcego desbotado"
+            "pt": "Borcego desbotado",
+            "it": "Stone-washed Borbat"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Critical Damage",
@@ -2069,23 +2057,23 @@
             "en": "Gupin",
             "fr": "Gupin",
             "de": "Gnupi",
-            "it": "Gupin",
             "es": "Gupin",
-            "pt": "Gupin"
+            "pt": "Gupin",
+            "it": "Gupin"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
-            {
-                "stat": "% Neutral Resistance",
-                "minStat": null,
-                "maxStat": 10
-            },
             {
                 "stat": "Vitality",
                 "minStat": null,
                 "maxStat": 400
+            },
+            {
+                "stat": "% Neutral Resistance",
+                "minStat": null,
+                "maxStat": 10
             }
         ],
         "customStats": {},
@@ -2101,13 +2089,13 @@
             "en": "Improved Quaquack",
             "fr": "Kouin-Kouin amélioré",
             "de": "Verbesserter Quark-Quak",
-            "it": "Quaquà Migliorato",
             "es": "Kuakuá mejorado",
-            "pt": "Quaquá melhorado"
+            "pt": "Quaquá melhorado",
+            "it": "Improved Quaquack"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Prospecting",
@@ -2133,13 +2121,13 @@
             "en": "Cromigmite",
             "fr": "Cromeugnon",
             "de": "Cromagnum",
-            "it": "Cromognomo",
             "es": "Cromiñoncito",
-            "pt": "Cromignomo"
+            "pt": "Cromignomo",
+            "it": "Cromigmite"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Intelligence",
@@ -2165,23 +2153,23 @@
             "en": "Jellifrost",
             "fr": "Médugivre",
             "de": "Frostquall",
-            "it": "Ghiaccedusa",
             "es": "Fridusa",
-            "pt": "Gelusa"
+            "pt": "Gelusa",
+            "it": "Jellifrost"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Heals",
-                "minStat": null,
-                "maxStat": 50
-            },
             {
                 "stat": "MP Reduction",
                 "minStat": null,
                 "maxStat": 40
+            },
+            {
+                "stat": "Heals",
+                "minStat": null,
+                "maxStat": 50
             }
         ],
         "customStats": {},
@@ -2197,13 +2185,13 @@
             "en": "Cromagmunk",
             "fr": "Écumouth",
             "de": "Skratsmut",
-            "it": "Scoiattobuk",
             "es": "Ardilla de las nieves",
-            "pt": "Eskimute"
+            "pt": "Eskimute",
+            "it": "Cromagmunk"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Chance",
@@ -2229,23 +2217,23 @@
             "en": "Snowfoux",
             "fr": "Givrefoux",
             "de": "Eisfux",
-            "it": "Ghiacciopaz",
             "es": "Gélifux",
-            "pt": "Gelifox"
+            "pt": "Gelifox",
+            "it": "Snowfoux"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Initiative",
-                "minStat": null,
-                "maxStat": 2000
-            },
             {
                 "stat": "Lock",
                 "minStat": null,
                 "maxStat": 50
+            },
+            {
+                "stat": "Initiative",
+                "minStat": null,
+                "maxStat": 2000
             }
         ],
         "customStats": {},
@@ -2261,23 +2249,23 @@
             "en": "Plump Tofurby",
             "fr": "Gwo Tofu Ventripotent",
             "de": "Gepolsterter Tofurby",
-            "it": "Gwo Tofu Panzeton",
             "es": "Gwan tofu gowdinflón",
-            "pt": "Tofu Panceps Gowdo"
+            "pt": "Tofu Panceps Gowdo",
+            "it": "Plump Tofurby"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "MP Reduction",
-                "minStat": null,
-                "maxStat": 40
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 70
+            },
+            {
+                "stat": "MP Reduction",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -2293,23 +2281,23 @@
             "en": "Kanigloopy",
             "fr": "Kanigloups",
             "de": "Kanitubby",
-            "it": "Kanigloops",
             "es": "Kaniglúps",
-            "pt": "Kaniglups"
+            "pt": "Kaniglups",
+            "it": "Kanigloopy"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 80,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Chance",
-                "minStat": null,
-                "maxStat": 120
-            },
             {
                 "stat": "Water Damage",
                 "minStat": null,
                 "maxStat": 20
+            },
+            {
+                "stat": "Chance",
+                "minStat": null,
+                "maxStat": 120
             }
         ],
         "customStats": {},
@@ -2325,23 +2313,23 @@
             "en": "Bulbisou",
             "fr": "Bulbisou",
             "de": "Bulbikuss",
-            "it": "Bulbacino",
             "es": "Bulbesor",
-            "pt": "Bulbitoca"
+            "pt": "Bulbitoca",
+            "it": "Bulbisou"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 80,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Strength",
-                "minStat": null,
-                "maxStat": 120
-            },
             {
                 "stat": "Earth Damage",
                 "minStat": null,
                 "maxStat": 20
+            },
+            {
+                "stat": "Strength",
+                "minStat": null,
+                "maxStat": 120
             }
         ],
         "customStats": {},
@@ -2357,19 +2345,14 @@
             "en": "Brockheart",
             "fr": "Blérodoudou",
             "de": "Daxchibäre",
-            "it": "Tassolottolo",
             "es": "Tejaluche",
-            "pt": "Texofo"
+            "pt": "Texofo",
+            "it": "Brockheart"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 80,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Air Damage",
-                "minStat": null,
-                "maxStat": 20
-            },
             {
                 "stat": "Agility",
                 "minStat": null,
@@ -2389,23 +2372,23 @@
             "en": "Teddybearbarian",
             "fr": "Bisouglours",
             "de": "Gummibarbär",
-            "it": "Bacinmielorso",
             "es": "Besosete",
-            "pt": "Amiglurso"
+            "pt": "Amiglurso",
+            "it": "Teddybearbarian"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 80,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Fire Damage",
-                "minStat": null,
-                "maxStat": 20
-            },
             {
                 "stat": "Intelligence",
                 "minStat": null,
                 "maxStat": 120
+            },
+            {
+                "stat": "Fire Damage",
+                "minStat": null,
+                "maxStat": 20
             }
         ],
         "customStats": {},
@@ -2421,13 +2404,13 @@
             "en": "Platypus",
             "fr": "Platypus",
             "de": "Platypus",
-            "it": "Ornitorinco",
             "es": "Orni",
-            "pt": "Ornito"
+            "pt": "Ornito",
+            "it": "Platypus"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
             {
                 "stat": "Vitality",
@@ -2437,7 +2420,7 @@
             {
                 "stat": "Lock",
                 "minStat": null,
-                "maxStat": 30
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -2453,23 +2436,23 @@
             "en": "Solid Plissken",
             "fr": "Serpète",
             "de": "Schlingelchen",
-            "it": "Serpino",
             "es": "Serpeta",
-            "pt": "Serpeta"
+            "pt": "Serpeta",
+            "it": "Solid Plissken"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Neutral Resistance",
-                "minStat": null,
-                "maxStat": 80
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 50
+            },
+            {
+                "stat": "Neutral Resistance",
+                "minStat": null,
+                "maxStat": 80
             }
         ],
         "customStats": {},
@@ -2485,13 +2468,13 @@
             "en": "Tofume",
             "fr": "Tofüm",
             "de": "Tofuzius",
-            "it": "Malefico Piccolo Tofu",
             "es": "Tofuma",
-            "pt": "Tofuma"
+            "pt": "Tofuma",
+            "it": "Tofume"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
             {
                 "stat": "Vitality",
@@ -2501,7 +2484,7 @@
             {
                 "stat": "Critical Damage",
                 "minStat": null,
-                "maxStat": 30
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -2517,23 +2500,23 @@
             "en": "Madreggon",
             "fr": "Dragouf",
             "de": "Dracstar",
-            "it": "Dragopazzo",
             "es": "Dragrillado",
-            "pt": "Dragoloko"
+            "pt": "Dragoloko",
+            "it": "Madreggon"
         },
         "itemType": "Petsmount",
         "setID": null,
-        "level": 100,
+        "level": 60,
         "stats": [
-            {
-                "stat": "Power",
-                "minStat": null,
-                "maxStat": 70
-            },
             {
                 "stat": "Summons",
                 "minStat": null,
                 "maxStat": 2
+            },
+            {
+                "stat": "Power",
+                "minStat": null,
+                "maxStat": 70
             }
         ],
         "customStats": {},
@@ -2549,9 +2532,9 @@
             "en": "Slayhound",
             "fr": "Hurledent",
             "de": "Schreizahn",
-            "it": "Tempestoso",
             "es": "Dekarbón",
-            "pt": "Metiodent"
+            "pt": "Metiodent",
+            "it": "Slayhound"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -2576,23 +2559,23 @@
             "en": "Frozen Tofu",
             "fr": "Tofu Givré",
             "de": "Frost-Tofu",
-            "it": "Tofu Gelato",
             "es": "Tofu helado",
-            "pt": "Tofu Congelado"
+            "pt": "Tofu Congelado",
+            "it": "Frozen Tofu"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Initiative",
-                "minStat": null,
-                "maxStat": 2000
-            },
             {
                 "stat": "Dodge",
                 "minStat": null,
                 "maxStat": 50
+            },
+            {
+                "stat": "Initiative",
+                "minStat": null,
+                "maxStat": 2000
             }
         ],
         "customStats": {},
@@ -2608,23 +2591,23 @@
             "en": "Mouselet",
             "fr": "Sourisette",
             "de": "Pima-Daumaus",
-            "it": "Topolinottina",
             "es": "Raratontilla",
-            "pt": "Ratazete"
+            "pt": "Ratazete",
+            "it": "Mouselet"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Initiative",
-                "minStat": null,
-                "maxStat": 2000
-            },
             {
                 "stat": "Range",
                 "minStat": null,
                 "maxStat": 2
+            },
+            {
+                "stat": "Initiative",
+                "minStat": null,
+                "maxStat": 2000
             }
         ],
         "customStats": {},
@@ -2640,13 +2623,13 @@
             "en": "Scarakiri",
             "fr": "Scarakiri",
             "de": "Scarakiri",
-            "it": "Scarakiri",
             "es": "Escarakiri",
-            "pt": "Scarakiri"
+            "pt": "Scarakiri",
+            "it": "Scarakiri"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Intelligence",
@@ -2672,23 +2655,23 @@
             "en": "Grauler",
             "fr": "Rauleur",
             "de": "Rolfi Mopsi",
-            "it": "Rauletto",
             "es": "Kejicón",
-            "pt": "Raulor"
+            "pt": "Raulor",
+            "it": "Grauler"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "AP Parry",
-                "minStat": null,
-                "maxStat": 50
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 70
+            },
+            {
+                "stat": "AP Parry",
+                "minStat": null,
+                "maxStat": 50
             }
         ],
         "customStats": {},
@@ -2704,13 +2687,13 @@
             "en": "Moowitty",
             "fr": "Meulourd",
             "de": "SchmuWulf",
-            "it": "Muulupesante",
             "es": "Lubesado",
-            "pt": "Mulerdo"
+            "pt": "Mulerdo",
+            "it": "Moowitty"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "MP Parry",
@@ -2736,13 +2719,13 @@
             "en": "Mekrab",
             "fr": "Mékrabe",
             "de": "Mechkrabb",
-            "it": "Meccranchio",
             "es": "Mekrangrejo",
-            "pt": "Mekaranguejo"
+            "pt": "Mekaranguejo",
+            "it": "Mekrab"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Strength",
@@ -2768,13 +2751,13 @@
             "en": "Plop",
             "fr": "Ploup",
             "de": "Suptoko",
-            "it": "Plup",
             "es": "Pulp",
-            "pt": "Pulp"
+            "pt": "Pulp",
+            "it": "Plop"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "MP Parry",
@@ -2800,9 +2783,9 @@
             "en": "Karmeleon",
             "fr": "Kramkram",
             "de": "Chamcham",
-            "it": "Kramkram",
             "es": "Kramkram",
-            "pt": "Kramkram"
+            "pt": "Kramkram",
+            "it": "Karmeleon"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -2852,23 +2835,23 @@
             "en": "Krolimea",
             "fr": "Kroliméa",
             "de": "Krolimea",
-            "it": "Krolimera",
             "es": "Kolimira",
-            "pt": "Krolimera"
+            "pt": "Krolimera",
+            "it": "Krolimea"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Power",
-                "minStat": null,
-                "maxStat": 70
-            },
             {
                 "stat": "Range",
                 "minStat": null,
                 "maxStat": 2
+            },
+            {
+                "stat": "Power",
+                "minStat": null,
+                "maxStat": 70
             }
         ],
         "customStats": {},
@@ -2884,23 +2867,23 @@
             "en": "Boarhog",
             "fr": "Sakochère",
             "de": "Hauknotscha",
-            "it": "Zainghialocero",
             "es": "Sakóquero",
-            "pt": "Javóquero"
+            "pt": "Javóquero",
+            "it": "Boarhog"
         },
         "itemType": "Petsmount",
         "setID": null,
         "level": 60,
         "stats": [
             {
-                "stat": "AP",
-                "minStat": null,
-                "maxStat": 1
-            },
-            {
                 "stat": "Critical Damage",
                 "minStat": null,
                 "maxStat": 50
+            },
+            {
+                "stat": "AP",
+                "minStat": null,
+                "maxStat": 1
             }
         ],
         "customStats": {},
@@ -2916,9 +2899,9 @@
             "en": "Razorbuck",
             "fr": "Balafreux",
             "de": "Schreckschmiss",
-            "it": "Sfregiorrendo",
             "es": "Suskrofa",
-            "pt": "Cicatorpe"
+            "pt": "Cicatorpe",
+            "it": "Razorbuck"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -2948,13 +2931,13 @@
             "en": "Snickermite",
             "fr": "Kafarce",
             "de": "Schlabbernack",
-            "it": "Puljaz",
             "es": "Kraxiste",
-            "pt": "Kafarsa"
+            "pt": "Kafarsa",
+            "it": "Snickermite"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Pushback Damage",
@@ -2980,20 +2963,14 @@
             "en": "Bulbutting",
             "fr": "Bulbouture",
             "de": "Bulbistecklim",
-            "it": "Bulbimba",
             "es": "Bulbeskeje",
-            "pt": "Bulbenxerta"
+            "pt": "Bulbenxerta",
+            "it": "Bulbutting"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "pods",
-                "minStat": null,
-                "maxStat": 2000
-            }
-        ],
+        "level": 20,
+        "stats": [],
         "customStats": {},
         "conditions": {
             "conditions": {},
@@ -3007,23 +2984,23 @@
             "en": "Snailmate",
             "fr": "Kokulte",
             "de": "Schnelmyst",
-            "it": "Kaskrastuni",
             "es": "Lokulto",
-            "pt": "Kokulto"
+            "pt": "Kokulto",
+            "it": "Snailmate"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Critical",
-                "minStat": null,
-                "maxStat": 15
-            },
             {
                 "stat": "Critical Damage",
                 "minStat": null,
                 "maxStat": 40
+            },
+            {
+                "stat": "Critical",
+                "minStat": null,
+                "maxStat": 15
             }
         ],
         "customStats": {},
@@ -3039,23 +3016,23 @@
             "en": "Toucantankerous",
             "fr": "Toukancre",
             "de": "Tukanix",
-            "it": "Tucaos",
             "es": "Tukankón",
-            "pt": "Tukaos"
+            "pt": "Tukaos",
+            "it": "Toucantankerous"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Earth Resistance",
-                "minStat": null,
-                "maxStat": 80
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 50
+            },
+            {
+                "stat": "Earth Resistance",
+                "minStat": null,
+                "maxStat": 80
             }
         ],
         "customStats": {},
@@ -3071,23 +3048,23 @@
             "en": "Tubskito",
             "fr": "Boskito",
             "de": "Boskito",
-            "it": "Bomboskito",
             "es": "Moskitorro",
-            "pt": "Boskito"
+            "pt": "Boskito",
+            "it": "Tubskito"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "AP Reduction",
-                "minStat": null,
-                "maxStat": 40
-            },
             {
                 "stat": "Power",
                 "minStat": null,
                 "maxStat": 70
+            },
+            {
+                "stat": "AP Reduction",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -3103,20 +3080,14 @@
             "en": "Fosfor",
             "fr": "Fosfo",
             "de": "Fosfo",
-            "it": "Fosfo",
             "es": "Fosfo",
-            "pt": "Fosfo"
+            "pt": "Fosfo",
+            "it": "Fosfor"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "pods",
-                "minStat": null,
-                "maxStat": 2000
-            }
-        ],
+        "level": 20,
+        "stats": [],
         "customStats": {},
         "conditions": {
             "conditions": {},
@@ -3130,9 +3101,9 @@
             "en": "Kwyness",
             "fr": "Kwaltess",
             "de": "Kwackoheit",
-            "it": "Re Kwak",
             "es": "Kwalteza",
-            "pt": "Kwalteza"
+            "pt": "Kwalteza",
+            "it": "Kwyness"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -3162,9 +3133,9 @@
             "en": "Sirocco",
             "fr": "Siroko",
             "de": "Schirocko",
-            "it": "Kwak Libeccio",
             "es": "Siroko",
-            "pt": "Siroko"
+            "pt": "Siroko",
+            "it": "Sirocco"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -3189,9 +3160,9 @@
             "en": "Dehluge",
             "fr": "Dehluge",
             "de": "Ressaw",
-            "it": "Kwak Diluvio",
             "es": "Xaparón",
-            "pt": "Alagah"
+            "pt": "Alagah",
+            "it": "Dehluge"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -3216,9 +3187,9 @@
             "en": "Kompost",
             "fr": "Kompost",
             "de": "Kompost",
-            "it": "Kwak Frana",
             "es": "Kompost",
-            "pt": "Oduba"
+            "pt": "Oduba",
+            "it": "Kompost"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -3243,9 +3214,9 @@
             "en": "Brulay",
             "fr": "Brûlih",
             "de": "Reuef",
-            "it": "Kwak Scirocco",
             "es": "Hardo",
-            "pt": "Kema"
+            "pt": "Kema",
+            "it": "Brulay"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -3270,13 +3241,13 @@
             "en": "Bowzai",
             "fr": "Chachyène",
             "de": "Maunzyäne",
-            "it": "Sciakiena",
             "es": "Miaumiena",
-            "pt": "Miawyena"
+            "pt": "Miawyena",
+            "it": "Bowzai"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
             {
                 "stat": "Summons",
@@ -3302,23 +3273,23 @@
             "en": "Black Tiwabbit",
             "fr": "Black Tiwabbit",
             "de": "Black Tiwabbit",
-            "it": "Piccolo Wabbit Newo",
             "es": "Black pekewabbit",
-            "pt": "Black Pekewabbit"
+            "pt": "Black Pekewabbit",
+            "it": "Black Tiwabbit"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Pushback Damage",
-                "minStat": null,
-                "maxStat": 80
-            },
             {
                 "stat": "Strength",
                 "minStat": null,
                 "maxStat": 120
+            },
+            {
+                "stat": "Pushback Damage",
+                "minStat": null,
+                "maxStat": 80
             }
         ],
         "customStats": {},
@@ -3334,9 +3305,9 @@
             "en": "Drhexler",
             "fr": "Phorror",
             "de": "Griesbrabbel",
-            "it": "Talporrore",
             "es": "Perforror",
-            "pt": "Perforror"
+            "pt": "Perforror",
+            "it": "Drhexler"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -3366,13 +3337,13 @@
             "en": "Snoofle",
             "fr": "Snouffle",
             "de": "Schnuffel",
-            "it": "Annusatore",
             "es": "Snoofle",
-            "pt": "Snufle"
+            "pt": "Snufle",
+            "it": "Snoofle"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Prospecting",
@@ -3393,13 +3364,13 @@
             "en": "Drhellbert",
             "fr": "Phortiche",
             "de": "Grieskribbel",
-            "it": "Talprospero",
             "es": "Perforábil",
-            "pt": "Perfofo"
+            "pt": "Perfofo",
+            "it": "Drhellbert"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
             {
                 "stat": "Range",
@@ -3425,13 +3396,13 @@
             "en": "Homlett",
             "fr": "Homlett",
             "de": "Homlet",
-            "it": "Tescamleto",
             "es": "Jamlet",
-            "pt": "Homlett"
+            "pt": "Homlett",
+            "it": "Homlett"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
             {
                 "stat": "Vitality",
@@ -3441,7 +3412,7 @@
             {
                 "stat": "MP Parry",
                 "minStat": null,
-                "maxStat": 30
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -3457,13 +3428,13 @@
             "en": "Tatouh",
             "fr": "Tatouf",
             "de": "Eutatu",
-            "it": "Sonidillo",
             "es": "Armadinho",
-            "pt": "Tubola"
+            "pt": "Tubola",
+            "it": "Tatouh"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Critical Resistance",
@@ -3489,23 +3460,23 @@
             "en": "Blokus",
             "fr": "Blokus",
             "de": "Blokus-Pokus",
-            "it": "Blocco",
             "es": "Blokus",
-            "pt": "Blokus"
+            "pt": "Blokus",
+            "it": "Blokus"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Lock",
-                "minStat": null,
-                "maxStat": 50
-            },
             {
                 "stat": "MP Reduction",
                 "minStat": null,
                 "maxStat": 40
+            },
+            {
+                "stat": "Lock",
+                "minStat": null,
+                "maxStat": 50
             }
         ],
         "customStats": {},
@@ -3521,23 +3492,23 @@
             "en": "Eliom",
             "fr": "Eliôme",
             "de": "Eliotöffelchen",
-            "it": "Eliotasma",
             "es": "Selotasma",
-            "pt": "Eliotasma"
+            "pt": "Eliotasma",
+            "it": "Eliom"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
-            {
-                "stat": "% Fire Resistance",
-                "minStat": null,
-                "maxStat": 10
-            },
             {
                 "stat": "Vitality",
                 "minStat": null,
                 "maxStat": 400
+            },
+            {
+                "stat": "% Fire Resistance",
+                "minStat": null,
+                "maxStat": 10
             }
         ],
         "customStats": {},
@@ -3553,23 +3524,23 @@
             "en": "Friendrake",
             "fr": "Drakopin",
             "de": "Drakumpel",
-            "it": "Dragamico",
             "es": "Drakolega",
-            "pt": "Drakomparsa"
+            "pt": "Drakomparsa",
+            "it": "Friendrake"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Lock",
-                "minStat": null,
-                "maxStat": 50
-            },
             {
                 "stat": "AP Reduction",
                 "minStat": null,
                 "maxStat": 40
+            },
+            {
+                "stat": "Lock",
+                "minStat": null,
+                "maxStat": 50
             }
         ],
         "customStats": {},
@@ -3585,23 +3556,23 @@
             "en": "Tanuk",
             "fr": "Tanuk",
             "de": "Tanuk",
-            "it": "Tanuk",
             "es": "Tanuk",
-            "pt": "Tanuk"
+            "pt": "Tanuk",
+            "it": "Tanuk"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "AP",
-                "minStat": null,
-                "maxStat": 1
-            },
             {
                 "stat": "MP Parry",
                 "minStat": null,
                 "maxStat": 50
+            },
+            {
+                "stat": "AP",
+                "minStat": null,
+                "maxStat": 1
             }
         ],
         "customStats": {},
@@ -3617,13 +3588,13 @@
             "en": "Bloalak",
             "fr": "Bloalak",
             "de": "Bloalak",
-            "it": "Blualak",
             "es": "Bloalak",
-            "pt": "Bloalak"
+            "pt": "Bloalak",
+            "it": "Bloalak"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Prospecting",
@@ -3644,13 +3615,13 @@
             "en": "Mastostroke",
             "fr": "Moumoute",
             "de": "Wuschel",
-            "it": "Maodente",
             "es": "Peluso",
-            "pt": "Juba"
+            "pt": "Juba",
+            "it": "Mastostroke"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
             {
                 "stat": "Vitality",
@@ -3660,7 +3631,7 @@
             {
                 "stat": "AP Parry",
                 "minStat": null,
-                "maxStat": 30
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -3676,13 +3647,13 @@
             "en": "Bontick",
             "fr": "Bontique",
             "de": "Bontecke",
-            "it": "Bonzecca",
             "es": "Bontapata",
-            "pt": "Bontarrapato"
+            "pt": "Bontarrapato",
+            "it": "Bontick"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
             {
                 "stat": "Critical Resistance",
@@ -3708,23 +3679,23 @@
             "en": "Brakarina",
             "fr": "Brâkarien",
             "de": "Brâkmilbe",
-            "it": "Brakaro",
             "es": "Brakmákaro",
-            "pt": "Brákaro"
+            "pt": "Brákaro",
+            "it": "Brakarina"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Vitality",
-                "minStat": null,
-                "maxStat": 400
-            },
             {
                 "stat": "Pushback Resistance",
                 "minStat": null,
                 "maxStat": 50
+            },
+            {
+                "stat": "Vitality",
+                "minStat": null,
+                "maxStat": 400
             }
         ],
         "customStats": {},
@@ -3740,13 +3711,13 @@
             "en": "Groogler",
             "fr": "Titard",
             "de": "Quappler",
-            "it": "Gruglo",
             "es": "Pekenacuajo",
-            "pt": "Girinim"
+            "pt": "Girinim",
+            "it": "Groogler"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
             {
                 "stat": "Vitality",
@@ -3772,23 +3743,23 @@
             "en": "Minikron",
             "fr": "Minikrone",
             "de": "Miniainkhürn",
-            "it": "Minicorno",
             "es": "Minikornio",
-            "pt": "Minikrônio"
+            "pt": "Minikrônio",
+            "it": "Minikron"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
-            {
-                "stat": "MP Parry",
-                "minStat": null,
-                "maxStat": 40
-            },
             {
                 "stat": "Summons",
                 "minStat": null,
                 "maxStat": 2
+            },
+            {
+                "stat": "MP Parry",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -3804,13 +3775,13 @@
             "en": "Maulleycat",
             "fr": "Chaperlipopette",
             "de": "Wuschelmaunz",
-            "it": "Perdincigatto",
             "es": "Maullino",
-            "pt": "Gatzgrila"
+            "pt": "Gatzgrila",
+            "it": "Maulleycat"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Initiative",
@@ -3836,20 +3807,14 @@
             "en": "Kerubaby",
             "fr": "Tirubim",
             "de": "Tirubim",
-            "it": "Tirubim",
             "es": "Kerubebé",
-            "pt": "Tirubim"
+            "pt": "Tirubim",
+            "it": "Kerubaby"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
-        "stats": [
-            {
-                "stat": "pods",
-                "minStat": null,
-                "maxStat": 2000
-            }
-        ],
+        "level": 20,
+        "stats": [],
         "customStats": {},
         "conditions": {
             "conditions": {},
@@ -3863,13 +3828,13 @@
             "en": "Glub",
             "fr": "Glub",
             "de": "Blub",
-            "it": "Glub",
             "es": "Glub",
-            "pt": "Glub"
+            "pt": "Glub",
+            "it": "Glub"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 1,
+        "level": 20,
         "stats": [
             {
                 "stat": "Prospecting",
@@ -3890,13 +3855,13 @@
             "en": "Ratcham",
             "fr": "Titcham",
             "de": "Ratzchen",
-            "it": "Ticham",
             "es": "Pekatcham",
-            "pt": "Ticham"
+            "pt": "Ticham",
+            "it": "Ratcham"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
             {
                 "stat": "Vitality",
@@ -3906,7 +3871,7 @@
             {
                 "stat": "MP Parry",
                 "minStat": null,
-                "maxStat": 30
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -3922,23 +3887,23 @@
             "en": "Skrot",
             "fr": "Kougnard",
             "de": "Klötmuus",
-            "it": "Svampirello",
             "es": "Mortiélago",
-            "pt": "Katomor"
+            "pt": "Katomor",
+            "it": "Skrot"
         },
         "itemType": "Petsmount",
         "setID": null,
         "level": 60,
         "stats": [
             {
-                "stat": "AP",
-                "minStat": null,
-                "maxStat": 1
-            },
-            {
                 "stat": "Initiative",
                 "minStat": null,
                 "maxStat": 2000
+            },
+            {
+                "stat": "AP",
+                "minStat": null,
+                "maxStat": 1
             }
         ],
         "customStats": {},
@@ -3954,23 +3919,23 @@
             "en": "Dauge",
             "fr": "Dauge",
             "de": "Dotsch",
-            "it": "Doggy",
             "es": "Dog",
-            "pt": "Dógui"
+            "pt": "Dógui",
+            "it": "Dauge"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
-            {
-                "stat": "% Water Resistance",
-                "minStat": null,
-                "maxStat": 10
-            },
             {
                 "stat": "Vitality",
                 "minStat": null,
                 "maxStat": 400
+            },
+            {
+                "stat": "% Water Resistance",
+                "minStat": null,
+                "maxStat": 10
             }
         ],
         "customStats": {},
@@ -3986,9 +3951,9 @@
             "en": "Alabaster Skrot",
             "fr": "Kougnard Albâtre",
             "de": "Alabaster-Klötmuus",
-            "it": "Svampirello Alabastro",
             "es": "Mortiélago alabastrado",
-            "pt": "Katomor de Alabastro"
+            "pt": "Katomor de Alabastro",
+            "it": "Alabaster Skrot"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -4018,23 +3983,23 @@
             "en": "Thing",
             "fr": "La Chose",
             "de": "Das Ding",
-            "it": "Cosa",
             "es": "Cosa",
-            "pt": "Mãozinha"
+            "pt": "Mãozinha",
+            "it": "Thing"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
-            {
-                "stat": "% Air Resistance",
-                "minStat": null,
-                "maxStat": 10
-            },
             {
                 "stat": "Vitality",
                 "minStat": null,
                 "maxStat": 400
+            },
+            {
+                "stat": "% Air Resistance",
+                "minStat": null,
+                "maxStat": 10
             }
         ],
         "customStats": {},
@@ -4050,9 +4015,9 @@
             "en": "Gobbalator",
             "fr": "Bouftor",
             "de": "Frestor",
-            "it": "Pappacastore",
             "es": "Jalacástor",
-            "pt": "Pacastor"
+            "pt": "Pacastor",
+            "it": "Gobbalator"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -4082,9 +4047,9 @@
             "en": "Gobbalux",
             "fr": "Bouflux",
             "de": "Freslux",
-            "it": "Pappolluce",
             "es": "Jalapólux",
-            "pt": "Papólux"
+            "pt": "Papólux",
+            "it": "Gobbalux"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -4098,7 +4063,7 @@
             {
                 "stat": "Pushback Damage",
                 "minStat": null,
-                "maxStat": 80
+                "maxStat": 100
             }
         ],
         "customStats": {},
@@ -4114,23 +4079,23 @@
             "en": "Molekound",
             "fr": "Molosk",
             "de": "Molocher",
-            "it": "Molocco",
             "es": "Molocán",
-            "pt": "Molosk"
+            "pt": "Molosk",
+            "it": "Molekound"
         },
         "itemType": "Pet",
         "setID": null,
-        "level": 60,
+        "level": 20,
         "stats": [
-            {
-                "stat": "Critical Damage",
-                "minStat": null,
-                "maxStat": 30
-            },
             {
                 "stat": "Vitality",
                 "minStat": null,
                 "maxStat": 400
+            },
+            {
+                "stat": "Critical Damage",
+                "minStat": null,
+                "maxStat": 40
             }
         ],
         "customStats": {},
@@ -4146,21 +4111,21 @@
             "en": "Tae'Niak",
             "fr": "Teh'Niak",
             "de": "Taeh'Niak",
-            "it": "Teh' Niak",
             "es": "Tae'Niak",
-            "pt": "Teh'Niak"
+            "pt": "Teh'Niak",
+            "it": "Tae'Niak"
         },
         "itemType": "Petsmount",
         "setID": null,
         "level": 60,
         "stats": [
             {
-                "stat": "Fire Damage",
+                "stat": "Summons",
                 "minStat": null,
-                "maxStat": 15
+                "maxStat": 2
             },
             {
-                "stat": "Air Damage",
+                "stat": "Fire Damage",
                 "minStat": null,
                 "maxStat": 15
             },
@@ -4173,11 +4138,6 @@
                 "stat": "Water Damage",
                 "minStat": null,
                 "maxStat": 15
-            },
-            {
-                "stat": "Summons",
-                "minStat": null,
-                "maxStat": 2
             }
         ],
         "customStats": {},
@@ -4193,9 +4153,9 @@
             "en": "Tortikoli",
             "fr": "Tortikoli",
             "de": "Tortikoli",
-            "it": "Torcikolo",
             "es": "Tortikoli",
-            "pt": "Tarticoli"
+            "pt": "Tarticoli",
+            "it": "Tortikoli"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -4225,9 +4185,9 @@
             "en": "Mamukil Kolophant",
             "fr": "Koliphant Mamukil",
             "de": "Mamukil-Kolifant",
-            "it": "[!] Mamukil Kolophant",
             "es": "Kolifante mamuk",
-            "pt": "Kolifante Mamukil"
+            "pt": "Kolifante Mamukil",
+            "it": "Mamukil Kolophant"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -4257,9 +4217,9 @@
             "en": "Lexander's Kolophant",
             "fr": "Koliphant de Lexandre",
             "de": "Kolifant von Lexander",
-            "it": "[!] Lexander's Kolophant",
             "es": "Kolifante de Lejandro",
-            "pt": "Kolifante de Lexandre"
+            "pt": "Kolifante de Lexandre",
+            "it": "Lexander's Kolophant"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -4289,9 +4249,9 @@
             "en": "Tarkaj Kolophant",
             "fr": "Koliphant de Tarkaj",
             "de": "Kolifant von Tarkago",
-            "it": "[!] Tarkaj Kolophant",
             "es": "Kolifante de Kartago",
-            "pt": "Kolifante de Tarkago"
+            "pt": "Kolifante de Tarkago",
+            "it": "Tarkaj Kolophant"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -4321,9 +4281,9 @@
             "en": "Zenusha Kolophant",
             "fr": "Koliphant Zenusha",
             "de": "Zenusha-Kolifant",
-            "it": "[!] Zenusha Kolophant",
             "es": "Kolifante zenusha",
-            "pt": "Kolifante Zenusha"
+            "pt": "Kolifante Zenusha",
+            "it": "Zenusha Kolophant"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -4353,23 +4313,23 @@
             "en": "Ziplizard",
             "fr": "Zarfuyar",
             "de": "Flinkidechse",
-            "it": "[!] Ziplizard",
             "es": "Lagartiro",
-            "pt": "Fugarto"
+            "pt": "Fugarto",
+            "it": "Ziplizard"
         },
         "itemType": "Petsmount",
         "setID": null,
         "level": 60,
         "stats": [
             {
-                "stat": "Dodge",
-                "minStat": null,
-                "maxStat": 50
-            },
-            {
                 "stat": "MP Reduction",
                 "minStat": null,
                 "maxStat": 40
+            },
+            {
+                "stat": "Dodge",
+                "minStat": null,
+                "maxStat": 50
             }
         ],
         "customStats": {},
@@ -4385,9 +4345,9 @@
             "en": "Kobrapid",
             "fr": "Kobrapid",
             "de": "Kobrasch",
-            "it": "[!] Kobrapid",
             "es": "Kobraviva",
-            "pt": "Kobrápida"
+            "pt": "Kobrápida",
+            "it": "Kobrapid"
         },
         "itemType": "Petsmount",
         "setID": null,
@@ -4417,18 +4377,44 @@
             "en": "Kwismas Gull",
             "fr": "Gowelan",
             "de": "Möhve",
-            "it": "[!] Kwismas Gull",
             "es": "Gavioto",
-            "pt": "Taivoga"
+            "pt": "Taivoga",
+            "it": "Kwismas Gull"
         },
         "itemType": "Petsmount",
         "setID": null,
         "level": 60,
+        "stats": [],
+        "customStats": {},
+        "conditions": {
+            "conditions": {},
+            "customConditions": {}
+        },
+        "imageUrl": "item/121135.png"
+    },
+    {
+        "dofusID": "30957",
+        "name": {
+            "en": "[!] Booftrool blanc",
+            "fr": "Booftrool blanc",
+            "de": "Weißer Fresstrool",
+            "es": "[!] Booftrool blanc",
+            "pt": "[!] Booftrool blanc",
+            "it": "[!] Booftrool blanc"
+        },
+        "itemType": "Pet",
+        "setID": null,
+        "level": 20,
         "stats": [
             {
-                "stat": "pods",
+                "stat": "Critical",
                 "minStat": null,
-                "maxStat": 2000
+                "maxStat": 15
+            },
+            {
+                "stat": "Power",
+                "minStat": null,
+                "maxStat": 70
             }
         ],
         "customStats": {},
@@ -4436,6 +4422,6 @@
             "conditions": {},
             "customConditions": {}
         },
-        "imageUrl": "item/121135.png"
+        "imageUrl": "item/18308.png"
     }
 ]
