@@ -6,7 +6,8 @@
       "fr": "Épée de Boisaille",
       "de": "Hölzernes Schwert",
       "es": "Espada de maderucha",
-      "pt": "Espada de graveto"
+      "pt": "Espada de graveto",
+      "it": "Twiggy Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -52,7 +53,8 @@
       "fr": "Épée de Fouraille",
       "de": "Eisernes Schwert",
       "es": "Espada de hierrucho",
-      "pt": "Espada de sucata"
+      "pt": "Espada de sucata",
+      "it": "Smithy Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -108,7 +110,8 @@
       "fr": "Épée d'Alle",
       "de": "Schwert Ragen",
       "es": "Espada chifladora",
-      "pt": "Espada Noza"
+      "pt": "Espada Noza",
+      "it": "Fwell Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -164,7 +167,8 @@
       "fr": "La Triste Lame",
       "de": "Traurikling",
       "es": "La Triste Hoja",
-      "pt": "A Lâmina Triste"
+      "pt": "A Lâmina Triste",
+      "it": "The Sad Blade"
     },
     "itemType": "Sword",
     "setID": null,
@@ -206,6 +210,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -221,7 +228,8 @@
       "fr": "Épée d'Ha",
       "de": "Dualschwert",
       "es": "Espada Dha",
-      "pt": "Espada de Ha"
+      "pt": "Espada de Ha",
+      "it": "Ha Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -272,7 +280,8 @@
       "fr": "Goultard",
       "de": "Goultard",
       "es": "Gúltar",
-      "pt": "Gultar"
+      "pt": "Gultar",
+      "it": "Goultard"
     },
     "itemType": "Sword",
     "setID": null,
@@ -328,7 +337,8 @@
       "fr": "La crinière de Badoul",
       "de": "Badouls Mähne",
       "es": "Las crines de Badulo",
-      "pt": "Crina de Badoul"
+      "pt": "Crina de Badoul",
+      "it": "Badoul's Mane"
     },
     "itemType": "Sword",
     "setID": null,
@@ -383,7 +393,8 @@
       "fr": "Le Tranchant Infernal",
       "de": "Höllisch Scharf",
       "es": "El Filo Infernal",
-      "pt": "Cortadora Infernal"
+      "pt": "Cortadora Infernal",
+      "it": "Infernal Sharp"
     },
     "itemType": "Sword",
     "setID": null,
@@ -439,7 +450,8 @@
       "fr": "Arc de Boisaille",
       "de": "Hölzerner Bogen",
       "es": "Arco de maderucha",
-      "pt": "Arco de graveto"
+      "pt": "Arco de graveto",
+      "it": "Twiggy Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -485,7 +497,8 @@
       "fr": "Dagues de Boisaille",
       "de": "Hölzerne Dolche",
       "es": "Dagas de maderucha",
-      "pt": "Adagas de graveto"
+      "pt": "Adagas de graveto",
+      "it": "Twiggy Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -531,7 +544,8 @@
       "fr": "Baguette de Boisaille",
       "de": "Hölzernes Stäbchen",
       "es": "Varita de maderucha",
-      "pt": "Varinha de graveto"
+      "pt": "Varinha de graveto",
+      "it": "Twiggy Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -572,7 +586,8 @@
       "fr": "Bâton de Boisaille",
       "de": "Hölzerner Stecken",
       "es": "Bastón de maderucha",
-      "pt": "Bastão de graveto"
+      "pt": "Bastão de graveto",
+      "it": "Twiggy Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -618,7 +633,8 @@
       "fr": "Marteau de Boisaille",
       "de": "Hölzerner Hammer",
       "es": "Martillo de maderucha",
-      "pt": "Martelo de graveto"
+      "pt": "Martelo de graveto",
+      "it": "Twiggy Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -664,7 +680,8 @@
       "fr": "Pelle de Boisaille",
       "de": "Hölzerne Schaufel",
       "es": "Pala de maderucha",
-      "pt": "Pá de graveto"
+      "pt": "Pá de graveto",
+      "it": "Twiggy Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -705,7 +722,8 @@
       "fr": "Baguette de Glace",
       "de": "Eisstab",
       "es": "Varita de hielo",
-      "pt": "Varinha de gelo"
+      "pt": "Varinha de gelo",
+      "it": "Ice Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -751,7 +769,8 @@
       "fr": "La Baguette des Limbes",
       "de": "Stab des Limbos",
       "es": "La Varita del Limbo",
-      "pt": "Varinha do Limbo"
+      "pt": "Varinha do Limbo",
+      "it": "Limbo Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -835,7 +854,8 @@
       "fr": "Baguette des Cieux",
       "de": "Himmlischer Stab",
       "es": "Varita de los Cielos",
-      "pt": "Varinha Mágica do Céu"
+      "pt": "Varinha Mágica do Céu",
+      "it": "Sky Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -911,7 +931,8 @@
       "fr": "Bâton Feuillu",
       "de": "Laubstock",
       "es": "Bastón Hojudo",
-      "pt": "Bastão frondoso"
+      "pt": "Bastão frondoso",
+      "it": "Leafy Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -957,7 +978,8 @@
       "fr": "Bâton Kouyu",
       "de": "Gehstock des Einsiedlerkrebses",
       "es": "Bastón Cojomudo",
-      "pt": "Cajado da Sorte"
+      "pt": "Cajado da Sorte",
+      "it": "Staff Bonely"
     },
     "itemType": "Staff",
     "setID": null,
@@ -998,7 +1020,8 @@
       "fr": "Bâton Spirituel",
       "de": "Spiritueller Stock",
       "es": "Bastón Espiritual",
-      "pt": "Bastão Espiritual"
+      "pt": "Bastão Espiritual",
+      "it": "Sacred Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -1049,7 +1072,8 @@
       "fr": "God Rod",
       "de": "Gott-Stock",
       "es": "God Rod",
-      "pt": "Vara de Deus"
+      "pt": "Vara de Deus",
+      "it": "God Rod"
     },
     "itemType": "Staff",
     "setID": null,
@@ -1114,7 +1138,8 @@
       "fr": "Hook",
       "de": "Hook",
       "es": "Hook",
-      "pt": "Hook"
+      "pt": "Hook",
+      "it": "Hook"
     },
     "itemType": "Staff",
     "setID": null,
@@ -1170,7 +1195,8 @@
       "fr": "Razielle",
       "de": "Razielle",
       "es": "Raciela",
-      "pt": "Raziela"
+      "pt": "Raziela",
+      "it": "Raziel"
     },
     "itemType": "Sword",
     "setID": null,
@@ -1251,7 +1277,8 @@
       "fr": "Kryst O'Boul",
       "de": "Kryst O'Boul",
       "es": "Krystobola",
-      "pt": "Krys O'boul"
+      "pt": "Krys O'boul",
+      "it": "Kryst O'Ball"
     },
     "itemType": "Staff",
     "setID": "38",
@@ -1317,7 +1344,8 @@
       "fr": "Dagues de Fouraille",
       "de": "Eiserne Dolche",
       "es": "Dagas de hierrucho",
-      "pt": "Adagas de sucata"
+      "pt": "Adagas de sucata",
+      "it": "Smithy Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -1368,7 +1396,8 @@
       "fr": "Dagues de Croclage",
       "de": "Zubeißender Dolch",
       "es": "Dagas de Croclage",
-      "pt": "Adagas de Croclage"
+      "pt": "Adagas de Croclage",
+      "it": "Croclage Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -1414,7 +1443,8 @@
       "fr": "Bashers",
       "de": "Basher",
       "es": "Bashers",
-      "pt": "Bashers"
+      "pt": "Bashers",
+      "it": "Bashers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -1460,7 +1490,8 @@
       "fr": "Blessdags",
       "de": "Blessurdolche",
       "es": "Blessdags",
-      "pt": "Blessadagas"
+      "pt": "Blessadagas",
+      "it": "Blessdags"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -1521,7 +1552,8 @@
       "fr": "Chakra Style",
       "de": "Chakra Style",
       "es": "Chakra Style",
-      "pt": "Estilo de Chakra"
+      "pt": "Estilo de Chakra",
+      "it": "Chakra Style"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -1586,7 +1618,8 @@
       "fr": "Marteau de Raclage",
       "de": "Abkratzhammer",
       "es": "Martillo de paliza",
-      "pt": "Martelo de raspagem"
+      "pt": "Martelo de raspagem",
+      "it": "Scraping Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -1637,7 +1670,8 @@
       "fr": "Marteau d'Ivoire",
       "de": "Elfenbein-Hammer",
       "es": "Martillo de marfil",
-      "pt": "Martelo de marfim"
+      "pt": "Martelo de marfim",
+      "it": "Ivory Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -1698,7 +1732,8 @@
       "fr": "Kaiser",
       "de": "Kaiser",
       "es": "Kaiser",
-      "pt": "Kaiser"
+      "pt": "Kaiser",
+      "it": "Kaiser"
     },
     "itemType": "Hammer",
     "setID": "58",
@@ -1789,7 +1824,8 @@
       "fr": "Ragnarok",
       "de": "Ragnarok",
       "es": "Ragnarok",
-      "pt": "Ragnarok"
+      "pt": "Ragnarok",
+      "it": "Ragnarok"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -1845,7 +1881,8 @@
       "fr": "Cerberus",
       "de": "Cerberus",
       "es": "Cerberus",
-      "pt": "Cerberus"
+      "pt": "Cerberus",
+      "it": "Cerberus"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -1891,7 +1928,8 @@
       "fr": "Barabas",
       "de": "Barabas",
       "es": "Barabas",
-      "pt": "Barabas"
+      "pt": "Barabas",
+      "it": "Barabas"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -1937,7 +1975,8 @@
       "fr": "Sargasse",
       "de": "Sargass",
       "es": "Sargas",
-      "pt": "Sargasse"
+      "pt": "Sargasse",
+      "it": "Sargasse"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -1993,7 +2032,8 @@
       "fr": "Pelle de Crapouille",
       "de": "Kehrschaufel",
       "es": "Pala de Crapullo",
-      "pt": "Pá de Crapulino"
+      "pt": "Pá de Crapulino",
+      "it": "Crapouille's Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -2039,7 +2079,8 @@
       "fr": "Pelle de Rapage",
       "de": "Schürfschaufel",
       "es": "Pala de raspadura",
-      "pt": "Pá de raspagem"
+      "pt": "Pá de raspagem",
+      "it": "Scratchy Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -2090,7 +2131,8 @@
       "fr": "Ares",
       "de": "Ares",
       "es": "Ares",
-      "pt": "Ares"
+      "pt": "Ares",
+      "it": "Axel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -2155,7 +2197,8 @@
       "fr": "Barbe Grise",
       "de": "Graubart",
       "es": "Barba Gris",
-      "pt": "Barba Cinza"
+      "pt": "Barba Cinza",
+      "it": "Greybeard"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -2202,6 +2245,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -2217,7 +2263,8 @@
       "fr": "Arc Déroutant",
       "de": "Nerviger Bogen",
       "es": "Arco desconcertante",
-      "pt": "Arco desconcertante"
+      "pt": "Arco desconcertante",
+      "it": "Disconcerting Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -2273,7 +2320,8 @@
       "fr": "Xaveur",
       "de": "Xaveur",
       "es": "Javiador",
-      "pt": "Xaveur"
+      "pt": "Xaveur",
+      "it": "Xaver"
     },
     "itemType": "Bow",
     "setID": null,
@@ -2344,7 +2392,8 @@
       "fr": "Le Marteau du Chafer",
       "de": "Chafer-Hammer",
       "es": "Martillo de chafer",
-      "pt": "Martelo do Chafer"
+      "pt": "Martelo do Chafer",
+      "it": "The Chafer Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -2386,6 +2435,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -2401,7 +2453,8 @@
       "fr": "Nomoon",
       "de": "Nomoon",
       "es": "Nomoon",
-      "pt": "Nomoon"
+      "pt": "Nomoon",
+      "it": "Nomoon"
     },
     "itemType": "Bow",
     "setID": null,
@@ -2467,7 +2520,8 @@
       "fr": "La Corde de Yamato",
       "de": "Yamatos Sehne",
       "es": "La Cuerda de Yamato",
-      "pt": "A Corda de Yamato"
+      "pt": "A Corda de Yamato",
+      "it": "Yamato String"
     },
     "itemType": "Bow",
     "setID": null,
@@ -2518,7 +2572,8 @@
       "fr": "Pelle du Craqueleur",
       "de": "Krachlerschaufel",
       "es": "Pala de crujidor",
-      "pt": "Pá do Smagador"
+      "pt": "Pá do Smagador",
+      "it": "Crackler Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -2569,7 +2624,8 @@
       "fr": "Bâton du Tabi",
       "de": "Tabistock",
       "es": "Bastón del Tabi",
-      "pt": "Bastão do Tabi"
+      "pt": "Bastão do Tabi",
+      "it": "Tabi Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -2620,7 +2676,8 @@
       "fr": "Lame du Gob-Trotteur",
       "de": "Klinge des Gobtrotters",
       "es": "Hoja de gobletrotter",
-      "pt": "Lâmina do Gobtrote"
+      "pt": "Lâmina do Gobtrote",
+      "it": "Gob-Trotter Blade"
     },
     "itemType": "Sword",
     "setID": null,
@@ -2666,7 +2723,8 @@
       "fr": "Koupe-koupe",
       "de": "Schnipp-Schnapp",
       "es": "Korta-Kotas",
-      "pt": "Korta-korta"
+      "pt": "Korta-korta",
+      "it": "Slash"
     },
     "itemType": "Sword",
     "setID": null,
@@ -2712,7 +2770,8 @@
       "fr": "Arc de Triomphe",
       "de": "Der Triumph-Bogen",
       "es": "Arco de Triunfo",
-      "pt": "Arco do Triunfo"
+      "pt": "Arco do Triunfo",
+      "it": "The Arc de Triomphe"
     },
     "itemType": "Bow",
     "setID": null,
@@ -2783,7 +2842,8 @@
       "fr": "Arc Hancihaile",
       "de": "Regen-Bogen",
       "es": "Arco Yris",
-      "pt": "Arco de Chuva"
+      "pt": "Arco de Chuva",
+      "it": "Rain Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -2829,7 +2889,8 @@
       "fr": "Arc de Jeanne",
       "de": "Jeannes Bogen",
       "es": "Arco de Juana",
-      "pt": "Arco de Joana"
+      "pt": "Arco de Joana",
+      "it": "Joan's Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -2871,6 +2932,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -2886,7 +2950,8 @@
       "fr": "Baguette Deuh-Pain",
       "de": "Brotstab",
       "es": "Varita Depan",
-      "pt": "Bastão Bre Ad"
+      "pt": "Bastão Bre Ad",
+      "it": "Ber Ed Stick"
     },
     "itemType": "Wand",
     "setID": null,
@@ -2947,7 +3012,8 @@
       "fr": "Baguette de Liriel",
       "de": "Liriels Stab",
       "es": "Varita de Liriel",
-      "pt": "Varinha Mágica de Liriel"
+      "pt": "Varinha Mágica de Liriel",
+      "it": "Liriel's Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -2994,6 +3060,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -3009,7 +3078,8 @@
       "fr": "Bâton du Bwork Mage",
       "de": "Stecken des Bwork Magus",
       "es": "Bastón de bwork mago",
-      "pt": "Bastão do Bwork Mago"
+      "pt": "Bastão do Bwork Mago",
+      "it": "Bwork Magus Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -3075,7 +3145,8 @@
       "fr": "Bâton du Grand Pa Wabbit",
       "de": "Stock des Wabbitopas",
       "es": "Bastón de awelito wabbit",
-      "pt": "Bastão do Vovô Wabbit"
+      "pt": "Bastão do Vovô Wabbit",
+      "it": "Gwandpa Wabbit's Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -3126,7 +3197,8 @@
       "fr": "Arc du Bwork Archer",
       "de": "Bogen des Bwork-Bogenschützen",
       "es": "Arco de bwork arquero",
-      "pt": "Arco do Bwork Arqueiro"
+      "pt": "Arco do Bwork Arqueiro",
+      "it": "Bwork Archer Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -3172,7 +3244,8 @@
       "fr": "Lame du Chafer",
       "de": "Schwert des Chafers",
       "es": "Cuchilla de chafer",
-      "pt": "Lâmina do Chafer"
+      "pt": "Lâmina do Chafer",
+      "it": "Chafer Blade"
     },
     "itemType": "Sword",
     "setID": null,
@@ -3228,7 +3301,8 @@
       "fr": "Leurnettes",
       "de": "Leurnetten",
       "es": "Limpiadoras",
-      "pt": "Farsadagas"
+      "pt": "Farsadagas",
+      "it": "Leurnettes"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -3274,7 +3348,8 @@
       "fr": "Dagues Eurfolles",
       "de": "Verrückte Schwesterdolche",
       "es": "Las dagas chifladas",
-      "pt": "Adagas de Eurfolles"
+      "pt": "Adagas de Eurfolles",
+      "it": "Eurfolles Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -3319,7 +3394,8 @@
       "fr": "Marteau Pickeur",
       "de": "Preslufts Hammer",
       "es": "Martillo picador",
-      "pt": "Martelo Kispeta"
+      "pt": "Martelo Kispeta",
+      "it": "Birming Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -3365,7 +3441,8 @@
       "fr": "Rhizome Doré",
       "de": "Goldenes Rhizom",
       "es": "Rhizoma dorado",
-      "pt": "Rizoma dourada"
+      "pt": "Rizoma dourada",
+      "it": "Golden Rhizome"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -3417,6 +3494,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -3432,7 +3512,8 @@
       "fr": "La Klebik",
       "de": "Nüs Schwert",
       "es": "La Klebik",
-      "pt": "O Klebik"
+      "pt": "O Klebik",
+      "it": "The Klebik"
     },
     "itemType": "Sword",
     "setID": null,
@@ -3493,7 +3574,8 @@
       "fr": "La Queue",
       "de": "Schwanzus Longus",
       "es": "La Cola",
-      "pt": "A Cauda"
+      "pt": "A Cauda",
+      "it": "The Tail"
     },
     "itemType": "Sword",
     "setID": null,
@@ -3544,7 +3626,8 @@
       "fr": "La Queue Infernale",
       "de": "Höllenschwanz",
       "es": "La Cola Infernal",
-      "pt": "A Cauda Infernal"
+      "pt": "A Cauda Infernal",
+      "it": "The Infernal Tail"
     },
     "itemType": "Sword",
     "setID": null,
@@ -3600,7 +3683,8 @@
       "fr": "Bâton en Racine d'Abraknyde",
       "de": "Stock aus Astaknydenwurzeln",
       "es": "Bastón de raíz de abráknido",
-      "pt": "Bastão de Raiz de Arvraknídeo"
+      "pt": "Bastão de Raiz de Arvraknídeo",
+      "it": "Treechnid Root Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -3651,7 +3735,8 @@
       "fr": "Marteau de l'Aurore",
       "de": "Hammer der Morgenröte",
       "es": "Martillito de la aurora",
-      "pt": "Martelo da Alvorada"
+      "pt": "Martelo da Alvorada",
+      "it": "Hammer of Dawn"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -3717,7 +3802,8 @@
       "fr": "Tueuse de Chênes",
       "de": "Eichentod",
       "es": "Exterminadora de robles",
-      "pt": "Assassino de Carvalho"
+      "pt": "Assassino de Carvalho",
+      "it": "Oak Killer"
     },
     "itemType": "Axe",
     "setID": null,
@@ -3768,7 +3854,8 @@
       "fr": "Arc en Racine d'Abraknyde",
       "de": "Bogen aus Astaknydenwurzeln",
       "es": "Arco hecho con la raíz de abráknido",
-      "pt": "Arco de Raiz de Arvraknídeo"
+      "pt": "Arco de Raiz de Arvraknídeo",
+      "it": "Treechnid Root Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -3828,7 +3915,8 @@
       "fr": "Baguette en Racine d'Abraknyde",
       "de": "Stab aus Astaknydenwurzeln",
       "es": "Varita de raíz de abráknido",
-      "pt": "Varinha de Raiz de Arvraknídeo"
+      "pt": "Varinha de Raiz de Arvraknídeo",
+      "it": "Treechnid Root Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -3894,7 +3982,8 @@
       "fr": "Élagueuse de Charme",
       "de": "Hainbuchenbestutzer",
       "es": "Podadora de carpe",
-      "pt": "Podador de Cárpino"
+      "pt": "Podador de Cárpino",
+      "it": "Hornbeam Pruner"
     },
     "itemType": "Axe",
     "setID": null,
@@ -3955,7 +4044,8 @@
       "fr": "Pelle Teuze",
       "de": "Baggers Schaufel",
       "es": "Pala apaleadora",
-      "pt": "Pá Garmico"
+      "pt": "Pá Garmico",
+      "it": "Pushn Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -4006,7 +4096,8 @@
       "fr": "Trancheuse d'If",
       "de": "Spaltaxt der Eiben und Elben",
       "es": "Cortadora de tejo",
-      "pt": "Cortador de Teixo"
+      "pt": "Cortador de Teixo",
+      "it": "Yew Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -4047,7 +4138,8 @@
       "fr": "Boulgourde des Clairières",
       "de": "Boulgourde der Lichtungen",
       "es": "Bulgurda de los Claros",
-      "pt": "Bulgurdo das Clareiras"
+      "pt": "Bulgurdo das Clareiras",
+      "it": "Boulgourde of the Glades"
     },
     "itemType": "Axe",
     "setID": null,
@@ -4108,7 +4200,8 @@
       "fr": "Corde d'Ivan Nowé",
       "de": "Ivan Haus-Sehne",
       "es": "Cuerda de Ivan Nowé",
-      "pt": "Corda de Ivan Nowé"
+      "pt": "Corda de Ivan Nowé",
+      "it": "Ivan Nowe String"
     },
     "itemType": "Bow",
     "setID": null,
@@ -4164,7 +4257,8 @@
       "fr": "Bâton du Maître des Bouftous",
       "de": "Stecken der Fresssackhirten",
       "es": "Bastón del Amo de los Jalatós",
-      "pt": "Bastão do mestre dos Papatudos"
+      "pt": "Bastão do mestre dos Papatudos",
+      "it": "Gobball Master Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -4230,7 +4324,8 @@
       "fr": "Découpeuse de Kralamoure",
       "de": "Krakamorzersäbel",
       "es": "Cortadora de kralamares",
-      "pt": "Espada de Corte de Kralamor"
+      "pt": "Espada de Corte de Kralamor",
+      "it": "Kralove Cutting Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -4286,7 +4381,8 @@
       "fr": "Arc des Rivages",
       "de": "Küstenbogen",
       "es": "Arco de las Costas",
-      "pt": "Arco de Praia"
+      "pt": "Arco de Praia",
+      "it": "Rento Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -4342,7 +4438,8 @@
       "fr": "Bâton du Maître des Tofus",
       "de": "Stecken der Tofuhirten",
       "es": "Bastón del Amo de los Tofus",
-      "pt": "Bastão do Mestre dos Tofus"
+      "pt": "Bastão do Mestre dos Tofus",
+      "it": "Tofu Master Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -4403,7 +4500,8 @@
       "fr": "Bâton du Maître des Tabis",
       "de": "Stecken der Tabihirten",
       "es": "Bastón del Amo de los Tabis",
-      "pt": "Cajado de Mestre Tabi"
+      "pt": "Cajado de Mestre Tabi",
+      "it": "Tabi Master Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -4454,7 +4552,8 @@
       "fr": "Mangeuse de Châtaignier",
       "de": "Kastanienfresser",
       "es": "Devoradora de castaños",
-      "pt": "Devoradora de castanheiro"
+      "pt": "Devoradora de castanheiro",
+      "it": "Chestnut Tree Eater"
     },
     "itemType": "Axe",
     "setID": null,
@@ -4500,7 +4599,8 @@
       "fr": "Fendeuse de Merisier",
       "de": "Spalter der Vogelkirschen",
       "es": "Hendedora de cerezo silvestre",
-      "pt": "Rachador de cerejeira"
+      "pt": "Rachador de cerejeira",
+      "it": "Cherry Splitter"
     },
     "itemType": "Axe",
     "setID": null,
@@ -4556,7 +4656,8 @@
       "fr": "Trancheuse de Noyer",
       "de": "Walnussknacker",
       "es": "Cortadora de nogal",
-      "pt": "Cortador de Nogueira"
+      "pt": "Cortador de Nogueira",
+      "it": "Walnut Cutter"
     },
     "itemType": "Axe",
     "setID": null,
@@ -4612,7 +4713,8 @@
       "fr": "Mangeuse d'Érable",
       "de": "Ahornzerbrecher",
       "es": "Devoradora de arces",
-      "pt": "Devoradora de Bordo"
+      "pt": "Devoradora de Bordo",
+      "it": "Maple Tree Eater"
     },
     "itemType": "Axe",
     "setID": null,
@@ -4663,7 +4765,8 @@
       "fr": "Bâton Cornu",
       "de": "Gehörnter Stecken",
       "es": "Bastón cornudo",
-      "pt": "Bastão Chifrudo"
+      "pt": "Bastão Chifrudo",
+      "it": "Horned Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -4710,6 +4813,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -4725,7 +4831,8 @@
       "fr": "Faux de Farle Ingalsse",
       "de": "Sense von Farle Ingalsse",
       "es": "Guadaña de Farle Ingals",
-      "pt": "Gadanha do Farle Ingals"
+      "pt": "Gadanha do Farle Ingals",
+      "it": "Farle Ingalsse's Scythe"
     },
     "itemType": "Scythe",
     "setID": null,
@@ -4771,7 +4878,8 @@
       "fr": "Mangeuse de Frêne",
       "de": "Eschenzerbrecher",
       "es": "Devoradora de fresnos",
-      "pt": "Devorador de Freixo"
+      "pt": "Devorador de Freixo",
+      "it": "Ash Tree Eater"
     },
     "itemType": "Axe",
     "setID": null,
@@ -4817,7 +4925,8 @@
       "fr": "Agride",
       "de": "Agrid",
       "es": "Agrid",
-      "pt": "Agride"
+      "pt": "Agride",
+      "it": "Agride"
     },
     "itemType": "Axe",
     "setID": null,
@@ -4868,7 +4977,8 @@
       "fr": "Abraknydi Vivitus",
       "de": "Astaknydis Vivitus",
       "es": "Abraknydi Vivitus",
-      "pt": "Arvraknidis Vivitus"
+      "pt": "Arvraknidis Vivitus",
+      "it": "Treechnidis Vivitus"
     },
     "itemType": "Staff",
     "setID": null,
@@ -4924,7 +5034,8 @@
       "fr": "Épée Sacrée",
       "de": "Heiliges Schwert",
       "es": "Espada sagrada",
-      "pt": "Espada Sagrada"
+      "pt": "Espada Sagrada",
+      "it": "Holy Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -4970,7 +5081,8 @@
       "fr": "Épée du Chevalier",
       "de": "Schwert des Ritters",
       "es": "Espada de caballero",
-      "pt": "Espada do Cavaleiro"
+      "pt": "Espada do Cavaleiro",
+      "it": "Knight Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -5021,7 +5133,8 @@
       "fr": "Lame du Bwork",
       "de": "Bworklinge",
       "es": "Hoja de bwork",
-      "pt": "Lâmina do Bwork"
+      "pt": "Lâmina do Bwork",
+      "it": "Bwork Blade"
     },
     "itemType": "Sword",
     "setID": null,
@@ -5082,7 +5195,8 @@
       "fr": "Arc Sifflant",
       "de": "Pfeifender Bogen",
       "es": "Arco silbante",
-      "pt": "Arco Estrondoso"
+      "pt": "Arco Estrondoso",
+      "it": "Whistling Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -5128,7 +5242,8 @@
       "fr": "Arc Hade",
       "de": "Bogen Ghang",
       "es": "Arco Nada",
-      "pt": "Arco de Ade"
+      "pt": "Arco de Ade",
+      "it": "Com Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -5169,7 +5284,8 @@
       "fr": "Baguette d'Intelligence",
       "de": "Intelligenzstäbchen",
       "es": "Varita de inteligencia",
-      "pt": "Varinha de inteligência"
+      "pt": "Varinha de inteligência",
+      "it": "Intelligence Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -5230,7 +5346,8 @@
       "fr": "Baguette de Sagesse",
       "de": "Weisheitsstäbchen",
       "es": "Varita de sabiduría",
-      "pt": "Varinha de sabedoria"
+      "pt": "Varinha de sabedoria",
+      "it": "Wisdom Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -5306,7 +5423,8 @@
       "fr": "Dagues Sylvestres",
       "de": "Sylvandolche",
       "es": "Dagas silvestres",
-      "pt": "Adagas silvestres"
+      "pt": "Adagas silvestres",
+      "it": "Sylvan Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -5362,7 +5480,8 @@
       "fr": "Dagues Aiguisées",
       "de": "Gewetzte Dolche",
       "es": "Dagas afiladas",
-      "pt": "Adagas Pontiagudas"
+      "pt": "Adagas Pontiagudas",
+      "it": "Dasguised"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -5423,7 +5542,8 @@
       "fr": "Dagues Ancestrales",
       "de": "Ancestraler Ur-Dolch",
       "es": "Dagas ancestrales",
-      "pt": "Adagas ancestrais"
+      "pt": "Adagas ancestrais",
+      "it": "Ancestral Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -5489,7 +5609,8 @@
       "fr": "Fendeuse d'Abraknyde",
       "de": "Astaknydenabknicker",
       "es": "Cortadora de abráknidos",
-      "pt": "Rachador de Arvraknídeo"
+      "pt": "Rachador de Arvraknídeo",
+      "it": "Treechnid Splitter"
     },
     "itemType": "Axe",
     "setID": null,
@@ -5565,7 +5686,8 @@
       "fr": "Fendeuse d'Abraknyde Ancestral",
       "de": "Ur-Astaknydenspalter",
       "es": "Cortadora de Abráknido Ancestral",
-      "pt": "Rachador de Arvraknídeo Ancestral"
+      "pt": "Rachador de Arvraknídeo Ancestral",
+      "it": "Ancestral Treechnid Splitter"
     },
     "itemType": "Axe",
     "setID": null,
@@ -5631,7 +5753,8 @@
       "fr": "Lame d'Ogralimde",
       "de": "Ogralimdes Klinge",
       "es": "Hoja de Ogralimde",
-      "pt": "Espada de Ogralimde"
+      "pt": "Espada de Ogralimde",
+      "it": "Ogralimde's Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -5677,7 +5800,8 @@
       "fr": "Bâton du Wa Wabbit",
       "de": "Wa Wabbit-Stecken",
       "es": "Bastón del Wey Wabbit",
-      "pt": "Bastão do Wei Wabbit"
+      "pt": "Bastão do Wei Wabbit",
+      "it": "Wa Wabbit's Staff"
     },
     "itemType": "Staff",
     "setID": "40",
@@ -5753,7 +5877,8 @@
       "fr": "Couteau à Stek",
       "de": "Stek-Messer",
       "es": "Cuchillo de Stek",
-      "pt": "Faca de Bife"
+      "pt": "Faca de Bife",
+      "it": "Stek Knife"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -5814,7 +5939,8 @@
       "fr": "Queues de Chatons",
       "de": "Dreißigschwänzige Katzendolche",
       "es": "Colas de gatitos",
-      "pt": "Rabos de gatinhos"
+      "pt": "Rabos de gatinhos",
+      "it": "Kitten Tails"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -5870,7 +5996,8 @@
       "fr": "Dagues Cruelles d'Elorie Entuwan",
       "de": "Grausame Dolche von Elorie Entuwan",
       "es": "Dagas Crueles de Elorie Entuwan",
-      "pt": "Adagas Cruéis de Elorie Entuwan"
+      "pt": "Adagas Cruéis de Elorie Entuwan",
+      "it": "Elorie Entuwan's Cruel Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -5926,7 +6053,8 @@
       "fr": "Lame de Fon",
       "de": "Unta deMers Klinge",
       "es": "Hoja de parra",
-      "pt": "Lâmina Val"
+      "pt": "Lâmina Val",
+      "it": "Rowler Blade"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -5992,7 +6120,8 @@
       "fr": "Dagues Fourbesques",
       "de": "Hinterhältige Dolche",
       "es": "Dagas engañadoras",
-      "pt": "Adagas Enganadoras"
+      "pt": "Adagas Enganadoras",
+      "it": "Deceitful Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -6068,7 +6197,8 @@
       "fr": "Lames sanglantes d'Ortimus Contrari",
       "de": "Blutklingen von Ortimus Contrari",
       "es": "Cuchillos sangrientos de Ortimus Contrari",
-      "pt": "Lâminas Sangrentas de Ortimus Contrari"
+      "pt": "Lâminas Sangrentas de Ortimus Contrari",
+      "it": "Ortimus Contrari's Bloody Blades"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -6143,7 +6273,8 @@
       "fr": "Épée Cassée du Chevalier Malchanceux",
       "de": "Geborstenes Schwert des Unglücksritters",
       "es": "Espada rota del caballero Desafortunado",
-      "pt": "Espada quebrada do Cavaleiro Azarado"
+      "pt": "Espada quebrada do Cavaleiro Azarado",
+      "it": "Unlucky Knight's Broken Sword"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -6194,7 +6325,8 @@
       "fr": "Pelle de Bois Dormant",
       "de": "Dornengespickte rosa Schaufel",
       "es": "Pala de Vello Durmiente",
-      "pt": "Pá Dormente"
+      "pt": "Pá Dormente",
+      "it": "Sleeping Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -6265,7 +6397,8 @@
       "fr": "Pelle Melle",
       "de": "Mischmaschaufel",
       "es": "Pala enredaderada",
-      "pt": "Pá Gunça"
+      "pt": "Pá Gunça",
+      "it": "Mishmashovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -6341,7 +6474,8 @@
       "fr": "Pelle Woukuis",
       "de": "Schaufelding „Wookil Ltd.“",
       "es": "Pala de Wukis",
-      "pt": "Pá Woukuis"
+      "pt": "Pá Woukuis",
+      "it": "Woukuis Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -6412,7 +6546,8 @@
       "fr": "Cruelle Pelle-Truelle",
       "de": "Kill-Schrills Schaufelkelle",
       "es": "Cruel Pala Paleta",
-      "pt": "Espátula-Pá Cruel"
+      "pt": "Espátula-Pá Cruel",
+      "it": "Cruel Trovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -6477,7 +6612,8 @@
       "fr": "Pelle de Koutoulou",
       "de": "Schaufel von Kutuluh",
       "es": "Pala de Kutulú",
-      "pt": "Pá de Katulu"
+      "pt": "Pá de Katulu",
+      "it": "Koutoulou's Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -6538,7 +6674,8 @@
       "fr": "Pelle des Champs",
       "de": "Grabund Schaufel",
       "es": "Pala de los Campos",
-      "pt": "Pá dos Campos"
+      "pt": "Pá dos Campos",
+      "it": "Field Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -6584,7 +6721,8 @@
       "fr": "Masse d'Ha",
       "de": "Dualstreitkolben",
       "es": "Maza Da",
-      "pt": "Maça de Ha"
+      "pt": "Maça de Ha",
+      "it": "Dha's Mace"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -6640,7 +6778,8 @@
       "fr": "Marteau R'unique",
       "de": "Singurunärer Hammer",
       "es": "Martillo R'único",
-      "pt": "Martelo R'Único"
+      "pt": "Martelo R'Único",
+      "it": "R'Unique Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -6691,7 +6830,8 @@
       "fr": "Masse Tmosfer",
       "de": "Atmos Sphärenzerschlager",
       "es": "Maza Damelklavel",
-      "pt": "Maça Tmosfer"
+      "pt": "Maça Tmosfer",
+      "it": "Mace Tmosfer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -6762,7 +6902,8 @@
       "fr": "Marteau Outar",
       "de": "Hammer Nüscht",
       "es": "Martillo pacificador",
-      "pt": "Martelo Outar"
+      "pt": "Martelo Outar",
+      "it": "Outar Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -6823,7 +6964,8 @@
       "fr": "Masse Aj Taye",
       "de": "Thay-Hammer „Massag Gea“",
       "es": "Maza Getay",
-      "pt": "Maça de Aj Taye"
+      "pt": "Maça de Aj Taye",
+      "it": "Aj Taye Mace"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -6884,7 +7026,8 @@
       "fr": "Marteau Pospodrol",
       "de": "Hammer Gudglacht",
       "es": "Martillo aerodinámico",
-      "pt": "Martelo Prado"
+      "pt": "Martelo Prado",
+      "it": "Pospodrol Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -6955,7 +7098,8 @@
       "fr": "Marteau à Torts",
       "de": "Tors Hammer",
       "es": "Martillo Tohrero",
-      "pt": "Martelo Errante"
+      "pt": "Martelo Errante",
+      "it": "Hammer of Wrongs"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -7021,7 +7165,8 @@
       "fr": "Marteau des Falistos",
       "de": "Falistos Hammer",
       "es": "Martillo de los Falistos",
-      "pt": "Martelo dos Falistos"
+      "pt": "Martelo dos Falistos",
+      "it": "Falistos's Maul"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -7078,6 +7223,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -7093,7 +7241,8 @@
       "fr": "Arc Buse",
       "de": "Bussardbogen",
       "es": "Arco Buz",
-      "pt": "Arco Buz"
+      "pt": "Arco Buz",
+      "it": "Buzzard Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -7154,7 +7303,8 @@
       "fr": "Baguette Heure",
       "de": "Stab für gewisse Stunden",
       "es": "Varita Hora",
-      "pt": "Varinha Hora"
+      "pt": "Varinha Hora",
+      "it": "Hour Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -7200,7 +7350,8 @@
       "fr": "Arc en Corne de Bouftou",
       "de": "Fresssackhornbogen",
       "es": "Arco de cuerno de jalató",
-      "pt": "Arco de Chifre de Papatudo"
+      "pt": "Arco de Chifre de Papatudo",
+      "it": "Gobball Horn Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -7251,7 +7402,8 @@
       "fr": "Arc dit Kéha, version standard",
       "de": "„I Kea nit gern“-Bogen, Standardversion",
       "es": "Arco Diquea, versión estándar",
-      "pt": "Arco Toquestoque, Modelo Padrão"
+      "pt": "Arco Toquestoque, Modelo Padrão",
+      "it": "I Kea Bow, Standard Model"
     },
     "itemType": "Bow",
     "setID": null,
@@ -7307,7 +7459,8 @@
       "fr": "Arc Ecologique",
       "de": "Archeobogie",
       "es": "Arco ecológico",
-      "pt": "Arco ecológico"
+      "pt": "Arco ecológico",
+      "it": "Eco Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -7368,7 +7521,8 @@
       "fr": "Arc de Cristal",
       "de": "Kristallbogen",
       "es": "Arco de cristal",
-      "pt": "Arco de Cristal"
+      "pt": "Arco de Cristal",
+      "it": "Crystal Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -7444,7 +7598,8 @@
       "fr": "Arc du Roi des Borins",
       "de": "Bogen des Borinkönigs",
       "es": "Arco de Roberto del Monte",
-      "pt": "Arco do Rei de Borins"
+      "pt": "Arco do Rei de Borins",
+      "it": "King of Borins Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -7510,7 +7665,8 @@
       "fr": "Baguette d'Eglise",
       "de": "Kirchenstab",
       "es": "Varita de iglesia",
-      "pt": "Varinha Clériga"
+      "pt": "Varinha Clériga",
+      "it": "Clergy Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -7566,7 +7722,8 @@
       "fr": "Baguette Ni'Ninnin",
       "de": "Ni'Ninnin Stab",
       "es": "Varita Ni'Ninnin",
-      "pt": "Varinha Mágica Ni'Ninnin"
+      "pt": "Varinha Mágica Ni'Ninnin",
+      "it": "Ni'Ninnin Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -7626,7 +7783,8 @@
       "fr": "Baguette à Pans",
       "de": "Einwegrute",
       "es": "Varita plumero",
-      "pt": "Varinha Madilha"
+      "pt": "Varinha Madilha",
+      "it": "Inacleft Stick"
     },
     "itemType": "Wand",
     "setID": null,
@@ -7682,7 +7840,8 @@
       "fr": "Baguette d'Houvette",
       "de": "Houvrett-Stab",
       "es": "Varita de Huveta",
-      "pt": "Varinha Teza"
+      "pt": "Varinha Teza",
+      "it": "Houvette's Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -7743,7 +7902,8 @@
       "fr": "Baguette Meneuse",
       "de": "Stab der Beherrschung",
       "es": "Varita de líder",
-      "pt": "Varinha de Líder"
+      "pt": "Varinha de Líder",
+      "it": "Iron Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -7814,7 +7974,8 @@
       "fr": "Bâton de fausse magie",
       "de": "Magischeinstecken",
       "es": "Bastón de magia falsa",
-      "pt": "Bastão de magia falsa"
+      "pt": "Bastão de magia falsa",
+      "it": "Fake Magic Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -7860,7 +8021,8 @@
       "fr": "Bâton Dakn",
       "de": "Aknefer-Stecken",
       "es": "Bastón de Akné",
-      "pt": "Cajado de Dakn"
+      "pt": "Cajado de Dakn",
+      "it": "Dakn Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -7926,7 +8088,8 @@
       "fr": "Bâton-Boule de Voyante",
       "de": "Kristalliner Kugelstock",
       "es": "Bastón-bola de vidente",
-      "pt": "Bastão-Bola de Cristal"
+      "pt": "Bastão-Bola de Cristal",
+      "it": "Crystal Staff-Ball"
     },
     "itemType": "Staff",
     "setID": null,
@@ -7982,7 +8145,8 @@
       "fr": "Bâton des Rois",
       "de": "Königsstecken",
       "es": "Bastón de los reyes",
-      "pt": "Bastão dos Reis"
+      "pt": "Bastão dos Reis",
+      "it": "Kings' Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -8058,7 +8222,8 @@
       "fr": "Arc Holic",
       "de": "Alkobog-Lich",
       "es": "Arco Hólico",
-      "pt": "Arco Forte"
+      "pt": "Arco Forte",
+      "it": "Strong Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -8104,7 +8269,8 @@
       "fr": "Arc du Xueluom",
       "de": "Bogen des Bösen Klicks",
       "es": "Arco de Charra",
-      "pt": "Arco Ykulf"
+      "pt": "Arco Ykulf",
+      "it": "Ykulf Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -8155,7 +8321,8 @@
       "fr": "Arc de Boo",
       "de": "Boos Bogen",
       "es": "Arco de Boo",
-      "pt": "Arco de Bawo"
+      "pt": "Arco de Bawo",
+      "it": "Mushd Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -8241,7 +8408,8 @@
       "fr": "Arc à Poulie Sciée",
       "de": "PolyPfeil-Bogen",
       "es": "Arco de Madero",
-      "pt": "Arco de Polia"
+      "pt": "Arco de Polia",
+      "it": "Sawn-Off Pulley Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -8302,7 +8470,8 @@
       "fr": "L'Arc à Hick",
       "de": "Hicks Bogen",
       "es": "El Arco Hips",
-      "pt": "Arco de Hick"
+      "pt": "Arco de Hick",
+      "it": "Hickory Tree"
     },
     "itemType": "Bow",
     "setID": null,
@@ -8359,6 +8528,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -8374,7 +8546,8 @@
       "fr": "Arc Hidsad",
       "de": "Hidsad-Bogen",
       "es": "Arco Desade",
-      "pt": "Arco de Hidsad"
+      "pt": "Arco de Hidsad",
+      "it": "Hidsad Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -8435,7 +8608,8 @@
       "fr": "Demi-Baguette",
       "de": "1/2-Stäbchenbaguette",
       "es": "Bio Varita",
-      "pt": "Meia-varinha"
+      "pt": "Meia-varinha",
+      "it": "Half Loaf"
     },
     "itemType": "Wand",
     "setID": null,
@@ -8476,7 +8650,8 @@
       "fr": "Daguette",
       "de": "Stolche",
       "es": "Varidaga",
-      "pt": "Pequenas Adagas"
+      "pt": "Pequenas Adagas",
+      "it": "Wangs"
     },
     "itemType": "Wand",
     "setID": null,
@@ -8547,7 +8722,8 @@
       "fr": "Le Tison Fûté",
       "de": "Ast \"Geh Auf'm Weg\"",
       "es": "El Tizón Zippón",
-      "pt": "Astuto"
+      "pt": "Astuto",
+      "it": "Wily Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -8623,7 +8799,8 @@
       "fr": "L'Hyldegarde",
       "de": "Hyldegarde",
       "es": "La Hyldegard",
-      "pt": "O Hyldegarde"
+      "pt": "O Hyldegarde",
+      "it": "The Hyldegarde"
     },
     "itemType": "Wand",
     "setID": null,
@@ -8689,7 +8866,8 @@
       "fr": "Baguette Sylvien",
       "de": "Stab der Sylvan",
       "es": "Varita Prismática",
-      "pt": "Varinha Mágica Sylvian"
+      "pt": "Varinha Mágica Sylvian",
+      "it": "Sylvian Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -8750,7 +8928,8 @@
       "fr": "Pieu Vampirique",
       "de": "Vampirpflock",
       "es": "Estaca vampírica",
-      "pt": "Estaca Vampírica"
+      "pt": "Estaca Vampírica",
+      "it": "Vampiric Stake"
     },
     "itemType": "Wand",
     "setID": null,
@@ -8811,7 +8990,8 @@
       "fr": "Bâton Tont'Ata",
       "de": "Opiskrkrücks Stock",
       "es": "Bastón Tontolonero",
-      "pt": "Cajado de Tont'Ata"
+      "pt": "Cajado de Tont'Ata",
+      "it": "Tont'Ata Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -8877,7 +9057,8 @@
       "fr": "Bâton d'Oubli",
       "de": "VergissmeinStocknicht",
       "es": "Bastón del Olvido",
-      "pt": "Bastão do esquecimento"
+      "pt": "Bastão do esquecimento",
+      "it": "Forgetfulness Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -8938,7 +9119,8 @@
       "fr": "La Canne Hête",
       "de": "Woods Stock",
       "es": "Bastón Torrón",
-      "pt": "Cajado Leta"
+      "pt": "Cajado Leta",
+      "it": "Flatu Lance"
     },
     "itemType": "Staff",
     "setID": null,
@@ -8989,7 +9171,8 @@
       "fr": "Bâton de Bouftier",
       "de": "Hirtenstock für Fresssäcke",
       "es": "Bastón de jalatero",
-      "pt": "Cajado de Papastor"
+      "pt": "Cajado de Papastor",
+      "it": "Gobbherd Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -9040,7 +9223,8 @@
       "fr": "Bâton de Dina, dit 'le Mythe'",
       "de": "Dinas Mythosstock",
       "es": "Bastón de Dina Mita",
-      "pt": "Cajado de Dina 'Mite'"
+      "pt": "Cajado de Dina 'Mite'",
+      "it": "Staff of Dina Mite"
     },
     "itemType": "Staff",
     "setID": null,
@@ -9096,7 +9280,8 @@
       "fr": "Lance à un 110",
       "de": "Wurfspeer eines 110ers",
       "es": "Lanza Extintora",
-      "pt": "Lança de Fogo Incendiário"
+      "pt": "Lança de Fogo Incendiário",
+      "it": "Arson Fire Lance"
     },
     "itemType": "Lance",
     "setID": null,
@@ -9147,7 +9332,8 @@
       "fr": "Les Lames en Table",
       "de": "Uneros Tischmesser",
       "es": "Los Cuchillos Jinsu",
-      "pt": "Facas de Mesa"
+      "pt": "Facas de Mesa",
+      "it": "Table Knives"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -9203,7 +9389,8 @@
       "fr": "L'Ergot Mina",
       "de": "Ergot Mina",
       "es": "Ergot Mina",
-      "pt": "Ergot Mina"
+      "pt": "Ergot Mina",
+      "it": "Ergot Mina"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -9254,7 +9441,8 @@
       "fr": "Dagues Eulasse",
       "de": "Öhls Messer",
       "es": "Dagas de Kaka",
-      "pt": "Adagas Tura"
+      "pt": "Adagas Tura",
+      "it": "Eulasse Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -9320,7 +9508,8 @@
       "fr": "Dagues Aj'Deh'Là",
       "de": "Dolche von Abdul Abhau",
       "es": "Dagas Olina",
-      "pt": "Adagas Tritte"
+      "pt": "Adagas Tritte",
+      "it": "Otof'Mai'We Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -9375,7 +9564,8 @@
       "fr": "Le Rasoir Infernal",
       "de": "Höllisches Rasiermesser",
       "es": "La Afeitadora Infernal",
-      "pt": "A Navalha Infernal"
+      "pt": "A Navalha Infernal",
+      "it": "The Infernal Razor"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -9431,7 +9621,8 @@
       "fr": "Dagues Tylo",
       "de": "Tints Killerdolch",
       "es": "Daga Ligra Fía",
-      "pt": "Facas Penn"
+      "pt": "Facas Penn",
+      "it": "Penn Knives"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -9502,7 +9693,8 @@
       "fr": "Hache Térophyle",
       "de": "Bodi Beilders Axt",
       "es": "Hacha Al-Terófilo",
-      "pt": "Machado de Terophyle"
+      "pt": "Machado de Terophyle",
+      "it": "Terophyle Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -9543,7 +9735,8 @@
       "fr": "Hache Heuvante",
       "de": "Axt Oni",
       "es": "Hacha Kador",
-      "pt": "Machado Heuvante"
+      "pt": "Machado Heuvante",
+      "it": "Huvant Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -9604,7 +9797,8 @@
       "fr": "Hache Huré",
       "de": "Schraxtfur",
       "es": "Hacha Mahn",
-      "pt": "Machado de Hure"
+      "pt": "Machado de Hure",
+      "it": "Samuel J. Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -9651,6 +9845,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -9666,7 +9863,8 @@
       "fr": "Francisque à Brêles",
       "de": "Ramms Steinaxt",
       "es": "La Rike Glesias",
-      "pt": "Miche Elteló"
+      "pt": "Miche Elteló",
+      "it": "Jon Lemon"
     },
     "itemType": "Axe",
     "setID": null,
@@ -9717,7 +9915,8 @@
       "fr": "Le Scrounnchhh",
       "de": "Skrunchhhhhhh",
       "es": "El Skrunnchhh",
-      "pt": "O Scrounnchhh"
+      "pt": "O Scrounnchhh",
+      "it": "The Bhharnsheee Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -9778,7 +9977,8 @@
       "fr": "Marteau Re'Thu",
       "de": "Schildzu Krötzschlag",
       "es": "Martillo Konda",
-      "pt": "Martelo Re'Thu"
+      "pt": "Martelo Re'Thu",
+      "it": "Tortoi Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -9864,7 +10064,8 @@
       "fr": "Le Matronome",
       "de": "Hammetronom",
       "es": "El Matrónomo",
-      "pt": "O Metronome"
+      "pt": "O Metronome",
+      "it": "The Metronome"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -9920,7 +10121,8 @@
       "fr": "Maillet Aclou",
       "de": "Elnags Schlägel",
       "es": "Maza Clavito",
-      "pt": "Aclou Mallet"
+      "pt": "Aclou Mallet",
+      "it": "Aclou Mallet"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -9981,7 +10183,8 @@
       "fr": "Marteau Tau",
       "de": "Ottos Witzhammer",
       "es": "Martillo Haimito",
-      "pt": "Martelo de Tau"
+      "pt": "Martelo de Tau",
+      "it": "Ha Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -10037,7 +10240,8 @@
       "fr": "Marteau Toh'Lo",
       "de": "Tonhammeri Minotororo",
       "es": "Martillo Bestial",
-      "pt": "Martelo de Toh'Lo"
+      "pt": "Martelo de Toh'Lo",
+      "it": "Toh'Lo Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -10093,7 +10297,8 @@
       "fr": "Pelle à Thart'",
       "de": "Kuch Henwegs Schaufel",
       "es": "Pala Patarta",
-      "pt": "Cortadora de Thart"
+      "pt": "Cortadora de Thart",
+      "it": "Layte's Slicer"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -10149,7 +10354,8 @@
       "fr": "Pelle Zébuth",
       "de": "Zebubs Schaufel",
       "es": "Pala Zebuth",
-      "pt": "Pá Zebuth"
+      "pt": "Pá Zebuth",
+      "it": "Zebuth Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -10220,7 +10426,8 @@
       "fr": "Pelle Mechba",
       "de": "Deils Schippe",
       "es": "Pala frutera",
-      "pt": "Pá de Mechba"
+      "pt": "Pá de Mechba",
+      "it": "Mechba Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -10301,7 +10508,8 @@
       "fr": "Pelle Houze",
       "de": "Fels Gartenschau",
       "es": "Pala de Kolokón",
-      "pt": "Pá de Houze"
+      "pt": "Pá de Houze",
+      "it": "Houze Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -10362,7 +10570,8 @@
       "fr": "Pelle Sécutrice",
       "de": "Hins Richterschaufel",
       "es": "Pala defensiva",
-      "pt": "Pá defensiva"
+      "pt": "Pá defensiva",
+      "it": "Security Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -10428,7 +10637,8 @@
       "fr": "La Pelle du Large",
       "de": "Lockruf der Schwere",
       "es": "La Pala Gorda",
-      "pt": "A Pá Pesada"
+      "pt": "A Pá Pesada",
+      "it": "The Fat Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -10504,7 +10714,8 @@
       "fr": "Pelle Ikan",
       "de": "Schippe Hansi",
       "es": "Pala Kran",
-      "pt": "Pá Ikan"
+      "pt": "Pá Ikan",
+      "it": "Ikan Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -10570,7 +10781,8 @@
       "fr": "La Zulie Lame",
       "de": "Das zöne Zwert von Zulie",
       "es": "La Bunita Hoja",
-      "pt": "Espada Elegante"
+      "pt": "Espada Elegante",
+      "it": "Pretty Blade"
     },
     "itemType": "Sword",
     "setID": null,
@@ -10636,7 +10848,8 @@
       "fr": "Le Twote en Carton",
       "de": "Hautscheputt",
       "es": "El Twote de Cartón",
-      "pt": "Twot em Papelão"
+      "pt": "Twot em Papelão",
+      "it": "The Cardboard Twot"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -10707,7 +10920,8 @@
       "fr": "Baguette de Feu Follesque",
       "de": "Stab des Irrlichts",
       "es": "Varita de fuego fatuo",
-      "pt": "Varinha do Fogo Fátuo"
+      "pt": "Varinha do Fogo Fátuo",
+      "it": "Will-o'-the-Wisp's Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -10753,7 +10967,8 @@
       "fr": "Dagues O'Bert",
       "de": "Dolch O'Bert",
       "es": "Daga Yumbo",
-      "pt": "Adagas de O'Bert"
+      "pt": "Adagas de O'Bert",
+      "it": "Billy-Ray's Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -10800,6 +11015,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -10815,7 +11033,8 @@
       "fr": "Neuf Queues",
       "de": "Neunschwanz",
       "es": "Nueve Colas",
-      "pt": "Nove Caudas"
+      "pt": "Nove Caudas",
+      "it": "Nine Tails"
     },
     "itemType": "Sword",
     "setID": null,
@@ -10909,7 +11128,8 @@
       "fr": "Découpeuse de Yench",
       "de": "Yench-Schnitter",
       "es": "Trinchadora de Canes",
-      "pt": "Faca de Corte Yench"
+      "pt": "Faca de Corte Yench",
+      "it": "Yench Cutting Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -10990,7 +11210,8 @@
       "fr": "Abrarc",
       "de": "Astabog",
       "es": "Abrarco",
-      "pt": "Arvrarco"
+      "pt": "Arvrarco",
+      "it": "Treebow"
     },
     "itemType": "Bow",
     "setID": "966",
@@ -11041,7 +11262,8 @@
       "fr": "Étoile du soir",
       "de": "Abendstern",
       "es": "Estrella de la noche",
-      "pt": "Estrela Noturna"
+      "pt": "Estrela Noturna",
+      "it": "Evening Star"
     },
     "itemType": "Sword",
     "setID": null,
@@ -11112,7 +11334,8 @@
       "fr": "Le Cutter",
       "de": "Der Cutter",
       "es": "El Cutter",
-      "pt": "Faca de Corte"
+      "pt": "Faca de Corte",
+      "it": "Craft Knife"
     },
     "itemType": "Sword",
     "setID": null,
@@ -11178,7 +11401,8 @@
       "fr": "Baguette Affeulante",
       "de": "Glühstäbchen",
       "es": "Varita Fogosa",
-      "pt": "Varinha fervente"
+      "pt": "Varinha fervente",
+      "it": "Red-Hot Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -11249,7 +11473,8 @@
       "fr": "Couteau de Chasse",
       "de": "Jagdmesser",
       "es": "Cuchillo de caza",
-      "pt": "Faca de caça"
+      "pt": "Faca de caça",
+      "it": "Hunting Knife"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -11285,6 +11510,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -11300,7 +11528,8 @@
       "fr": "Arc de Chasse",
       "de": "Jagdbogen",
       "es": "Arco de caza",
-      "pt": "Arco de Caça"
+      "pt": "Arco de Caça",
+      "it": "Hunting Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -11336,6 +11565,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -11351,7 +11583,8 @@
       "fr": "Trident du Kanigrou",
       "de": "Kanigrous Dreizack",
       "es": "Tridente de kanugro",
-      "pt": "Tridente do Kanigre"
+      "pt": "Tridente do Kanigre",
+      "it": "Kaniger Trident"
     },
     "itemType": "Lance",
     "setID": null,
@@ -11407,7 +11640,8 @@
       "fr": "Hache Hémal",
       "de": "Blutaxt des Grauens",
       "es": "Hacha Kemata",
-      "pt": "Machado de Hemal"
+      "pt": "Machado de Hemal",
+      "it": "Hemal Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -11442,7 +11676,8 @@
       "fr": "Kwaklame de Flammes",
       "de": "Flammen-Kwacklinge",
       "es": "Kwakhoja de llamas",
-      "pt": "Kwaklâmina do Fogo"
+      "pt": "Kwaklâmina do Fogo",
+      "it": "Fire Kwakblade"
     },
     "itemType": "Sword",
     "setID": "2",
@@ -11498,7 +11733,8 @@
       "fr": "Marteau du Bouftou",
       "de": "Hammer des Fresssacks",
       "es": "Martillo de jalató",
-      "pt": "Martelo do Papatudo"
+      "pt": "Martelo do Papatudo",
+      "it": "Gobball Hammer"
     },
     "itemType": "Hammer",
     "setID": "1",
@@ -11549,7 +11785,8 @@
       "fr": "Abraton",
       "de": "Astecken",
       "es": "Paloabra",
-      "pt": "Arvrastão"
+      "pt": "Arvrastão",
+      "it": "Treestaff"
     },
     "itemType": "Staff",
     "setID": "3",
@@ -11620,7 +11857,8 @@
       "fr": "Épée Royale du Bouftou",
       "de": "Schwert des königlichen Fresssacks",
       "es": "Espada Real de Jalató",
-      "pt": "Espada Real do Papatudo"
+      "pt": "Espada Real do Papatudo",
+      "it": "Royal Gobball's Sword"
     },
     "itemType": "Sword",
     "setID": "4",
@@ -11686,7 +11924,8 @@
       "fr": "Corbalame",
       "de": "Rabkling",
       "es": "Cuerbokhoja",
-      "pt": "Corvolâmina"
+      "pt": "Corvolâmina",
+      "it": "Croblade"
     },
     "itemType": "Sword",
     "setID": "8",
@@ -11777,7 +12016,8 @@
       "fr": "Hachette de Bûcheron",
       "de": "Handbeil des Holzfällers",
       "es": "Machete de leñador",
-      "pt": "Machadinha de Lenhador"
+      "pt": "Machadinha de Lenhador",
+      "it": "Lumberjack Hatchet"
     },
     "itemType": "Axe",
     "setID": null,
@@ -11818,7 +12058,8 @@
       "fr": "Hachette Hévlalav",
       "de": "Hevlalavs Handaxt",
       "es": "Hachita Ermundo",
-      "pt": "Machadinha Hevlalav"
+      "pt": "Machadinha Hevlalav",
+      "it": "Hevlalav Hatchet"
     },
     "itemType": "Axe",
     "setID": null,
@@ -11864,7 +12105,8 @@
       "fr": "Hache Vôr'Om",
       "de": "Vôr'Oms Axt",
       "es": "Hacha Vor'Om",
-      "pt": "Machado Vôr'Om"
+      "pt": "Machado Vôr'Om",
+      "it": "Vor'Om Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -11910,7 +12152,8 @@
       "fr": "Coupeuse de Bombu",
       "de": "Bombusschnitter",
       "es": "Cortadora de bombú",
-      "pt": "Cortador de Bombu"
+      "pt": "Cortador de Bombu",
+      "it": "Bombu Cutter"
     },
     "itemType": "Axe",
     "setID": null,
@@ -11966,7 +12209,8 @@
       "fr": "Elagueuse d'Oliviolet",
       "de": "Oliviolettas Beschneider",
       "es": "Podadora de olivioleta",
-      "pt": "Podador de Olivioleta"
+      "pt": "Podador de Olivioleta",
+      "it": "Oliviolet Pruner"
     },
     "itemType": "Axe",
     "setID": null,
@@ -12027,7 +12271,8 @@
       "fr": "Hache de Pierre",
       "de": "Steinaxt",
       "es": "Hacha de piedra",
-      "pt": "Machado de Pedra"
+      "pt": "Machado de Pedra",
+      "it": "Stone Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -12088,7 +12333,8 @@
       "fr": "Hache de Brèche",
       "de": "Breschenschläger",
       "es": "Hacha de brecha",
-      "pt": "Machado de Fenda"
+      "pt": "Machado de Fenda",
+      "it": "Crack Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -12154,7 +12400,8 @@
       "fr": "Coupeuse de Sifflet",
       "de": "Rauschende Bartabaxt",
       "es": "Cortadora de palabra",
-      "pt": "Cortador Estrondoso"
+      "pt": "Cortador Estrondoso",
+      "it": "Whistle Cutter"
     },
     "itemType": "Axe",
     "setID": null,
@@ -12215,7 +12462,8 @@
       "fr": "Hache Darsson",
       "de": "Darssons Axt",
       "es": "Hacha Darsson",
-      "pt": "Machado de Darsson"
+      "pt": "Machado de Darsson",
+      "it": "Darsson's Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -12291,7 +12539,8 @@
       "fr": "Trancheuse de Partie",
       "de": "Größter gemeinster Arme-Teiler",
       "es": "Troceadora de Partes",
-      "pt": "Cortador de partes"
+      "pt": "Cortador de partes",
+      "it": "Limb Chopper"
     },
     "itemType": "Axe",
     "setID": null,
@@ -12357,7 +12606,8 @@
       "fr": "Bardiche du Milicien",
       "de": "Bart-Axt des Milizionärs",
       "es": "Bardacha del Miliciano",
-      "pt": "Bardiche do Miliciano"
+      "pt": "Bardiche do Miliciano",
+      "it": "Militiaman Bardiche"
     },
     "itemType": "Axe",
     "setID": null,
@@ -12433,7 +12683,8 @@
       "fr": "Hachette Savante",
       "de": "Axt des Erfinders",
       "es": "Hachilla Sabia",
-      "pt": "Machadinha Inteligente"
+      "pt": "Machadinha Inteligente",
+      "it": "Clever Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -12514,7 +12765,8 @@
       "fr": "Francisque Basquaise",
       "de": "Grob-Axt der Straßenjungen",
       "es": "Hacha Chachi",
-      "pt": "Francisca Dora"
+      "pt": "Francisca Dora",
+      "it": "Pole Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -12585,7 +12837,8 @@
       "fr": "Vouge à Poisson",
       "de": "Großfisch-Kuse",
       "es": "Hacha Pesquera",
-      "pt": "Machado de pesca"
+      "pt": "Machado de pesca",
+      "it": "Pesc Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -12656,7 +12909,8 @@
       "fr": "Hache de Dame Oise",
       "de": "Axt von Prinzessin Denhals",
       "es": "Hacha Damesa",
-      "pt": "Machado de Dame Oise"
+      "pt": "Machado de Dame Oise",
+      "it": "Dame Zel Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -12732,7 +12986,8 @@
       "fr": "Hache de Lookabeer",
       "de": "Lookabeer Axt",
       "es": "Hacha de Lookabeer",
-      "pt": "Machado de Lookabeer"
+      "pt": "Machado de Lookabeer",
+      "it": "Lookabeer Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -12808,7 +13063,8 @@
       "fr": "Halle de Barde",
       "de": "Hallenbarde des Blutes",
       "es": "Hala Barda",
-      "pt": "Inferno de Bardos"
+      "pt": "Inferno de Bardos",
+      "it": "Bards' Hall"
     },
     "itemType": "Axe",
     "setID": null,
@@ -12884,7 +13140,8 @@
       "fr": "La Griffe",
       "de": "Die Klaue",
       "es": "La Garra",
-      "pt": "A Garra"
+      "pt": "A Garra",
+      "it": "The Claw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -12940,7 +13197,8 @@
       "fr": "La Griffe Aiguisée",
       "de": "Die geschärfte Klaue",
       "es": "La Garra Afilada",
-      "pt": "A Garra Afiada"
+      "pt": "A Garra Afiada",
+      "it": "The Sharp Claw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -13006,7 +13264,8 @@
       "fr": "Fausse Griffe de Ceangal",
       "de": "Falsche Klaue von Ceangal",
       "es": "Falsa Garra de Ceangal",
-      "pt": "Garra falsa de Ceangal"
+      "pt": "Garra falsa de Ceangal",
+      "it": "Fake Claw of Ceangal"
     },
     "itemType": "Sword",
     "setID": null,
@@ -13077,7 +13336,8 @@
       "fr": "Bâton Carnivore",
       "de": "Fleischsteckender Fressen",
       "es": "Bastón Carnívoro",
-      "pt": "Bastão Carnívoro"
+      "pt": "Bastão Carnívoro",
+      "it": "Carnivorous Staff"
     },
     "itemType": "Staff",
     "setID": "7",
@@ -13133,7 +13393,8 @@
       "fr": "Pelle Doudesque",
       "de": "Die Schaufel des Dudes",
       "es": "Pala Canastensa",
-      "pt": "Pá de Doudish"
+      "pt": "Pá de Doudish",
+      "it": "Doudish Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -13204,7 +13465,8 @@
       "fr": "Marteau Tape Doigts",
       "de": "Fingerklopfer",
       "es": "Martillo Golpea Dedos",
-      "pt": "Martelo do Castigo"
+      "pt": "Martelo do Castigo",
+      "it": "Knuckle Rapping Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -13265,7 +13527,8 @@
       "fr": "La Thor-Boyaux",
       "de": "Rachenstutzer",
       "es": "La Destripadora",
-      "pt": "O Thor-Boyaux"
+      "pt": "O Thor-Boyaux",
+      "it": "Dagger O'Hair"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -13331,7 +13594,8 @@
       "fr": "Daguette du Captain Chafer",
       "de": "Dolch des Chafer-Offiziers",
       "es": "Daguita de Capitán Chafer",
-      "pt": "Pequena Adaga do Capitão Chafer"
+      "pt": "Pequena Adaga do Capitão Chafer",
+      "it": "Captain Chafer's Small Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -13402,7 +13666,8 @@
       "fr": "Dague Rafeuse",
       "de": "Raffzahn",
       "es": "Daga Lambres",
-      "pt": "Adagas de Daguiero"
+      "pt": "Adagas de Daguiero",
+      "it": "Daguiero's Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -13478,7 +13743,8 @@
       "fr": "Dague Régah",
       "de": "Kompromesser",
       "es": "Daga Doble",
-      "pt": "Adagas Regah"
+      "pt": "Adagas Regah",
+      "it": "Regah Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -13549,7 +13815,8 @@
       "fr": "Dague Lutination",
       "de": "Agglutinadolch",
       "es": "Daga Lomeración",
-      "pt": "Adagas de Lutination"
+      "pt": "Adagas de Lutination",
+      "it": "Lutination Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -13620,7 +13887,8 @@
       "fr": "Bâton de Marie Aigue",
       "de": "Marie Aigues Stock",
       "es": "Bastón de María Pluma",
-      "pt": "Cajado de Marie Aigue"
+      "pt": "Cajado de Marie Aigue",
+      "it": "Marie Aigue's Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -13691,7 +13959,8 @@
       "fr": "Griffe Rose",
       "de": "Die Rosarote Klaue",
       "es": "Garra Rosa",
-      "pt": "Garra Rosa"
+      "pt": "Garra Rosa",
+      "it": "Pink Claw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -13767,7 +14036,8 @@
       "fr": "Eventail Tranchant",
       "de": "Klingenfächer",
       "es": "Abanico Cortante",
-      "pt": "Leque de Corte"
+      "pt": "Leque de Corte",
+      "it": "Slicing Fan"
     },
     "itemType": "Sword",
     "setID": null,
@@ -13833,7 +14103,8 @@
       "fr": "Pic à Glace",
       "de": "Eispick",
       "es": "Pico",
-      "pt": "Picador de gelo"
+      "pt": "Picador de gelo",
+      "it": "Tyse Pick"
     },
     "itemType": "Sword",
     "setID": null,
@@ -13909,7 +14180,8 @@
       "fr": "Baguette Helles",
       "de": "Stab der Hölle",
       "es": "Varita Infernal",
-      "pt": "Varinha Mágica Helles"
+      "pt": "Varinha Mágica Helles",
+      "it": "Hell's Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -13975,7 +14247,8 @@
       "fr": "Baguette Molle",
       "de": "Wabbel",
       "es": "Varita Blanda",
-      "pt": "Varinha Mole"
+      "pt": "Varinha Mole",
+      "it": "Limp Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -14046,7 +14319,8 @@
       "fr": "Baguette Irréelle",
       "de": "Fremdding",
       "es": "Varita Irreal",
-      "pt": "Varinha Irreal"
+      "pt": "Varinha Irreal",
+      "it": "Unreal Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -14122,7 +14396,8 @@
       "fr": "Baguette Velue",
       "de": "Haarastabi",
       "es": "Varita Velluda",
-      "pt": "Varinha Mágica Peluda"
+      "pt": "Varinha Mágica Peluda",
+      "it": "Hairy Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -14193,7 +14468,8 @@
       "fr": "Lance d'Aga Dou",
       "de": "Aga Dous Wurfspeer",
       "es": "Lanza de Loh Doh",
-      "pt": "Lança de Aga Duh"
+      "pt": "Lança de Aga Duh",
+      "it": "Aga Dou's Lance"
     },
     "itemType": "Lance",
     "setID": null,
@@ -14259,7 +14535,8 @@
       "fr": "Arc Boutant",
       "de": "Arche-Bogen",
       "es": "Arco Botante",
-      "pt": "Arco Curvado"
+      "pt": "Arco Curvado",
+      "it": "Arch Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -14325,7 +14602,8 @@
       "fr": "Arc Chiduc",
       "de": "Chiducs Bogen",
       "es": "Arco Tiko",
-      "pt": "Arco de Chiduc"
+      "pt": "Arco de Chiduc",
+      "it": "Chiduc's Arc"
     },
     "itemType": "Bow",
     "setID": null,
@@ -14396,7 +14674,8 @@
       "fr": "Arc Ange",
       "de": "Engel'Erz-Bogen",
       "es": "Arco Ángel",
-      "pt": "Arco de Anjo"
+      "pt": "Arco de Anjo",
+      "it": "Angel Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -14472,7 +14751,8 @@
       "fr": "Arc Chitecte",
       "de": "Bogen des Architekten",
       "es": "Arki Tekto",
-      "pt": "Arco de Arquiteto"
+      "pt": "Arco de Arquiteto",
+      "it": "Draught Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -14543,7 +14823,8 @@
       "fr": "Arc du Pêcheur",
       "de": "Fischermanns Freund",
       "es": "Arco de pescador",
-      "pt": "Arco do Pescador"
+      "pt": "Arco do Pescador",
+      "it": "Fishing Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -14604,7 +14885,8 @@
       "fr": "Abraton Sombre",
       "de": "Schattenastecken",
       "es": "Paloabra oscuro",
-      "pt": "Arvrastão Sombrio"
+      "pt": "Arvrastão Sombrio",
+      "it": "Dark Treestaff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -14671,6 +14953,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -14686,7 +14971,8 @@
       "fr": "Arc du Sram Archer",
       "de": "Bogen des Sram-Bogenschützen",
       "es": "Arco de sram arquero",
-      "pt": "Arco do Sram Arqueiro"
+      "pt": "Arco do Sram Arqueiro",
+      "it": "Sram Archer Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -14772,7 +15058,8 @@
       "fr": "Arc du Chafer Archer",
       "de": "Bogen des Chafer-Bogenschützen",
       "es": "Arco de chafer arquero",
-      "pt": "Arco do Chafer arqueiro"
+      "pt": "Arco do Chafer arqueiro",
+      "it": "Chafer Archer Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -14843,7 +15130,8 @@
       "fr": "Le Tronknydum",
       "de": "Trunknydum",
       "es": "El Tronkónidum",
-      "pt": "Tronknydum"
+      "pt": "Tronknydum",
+      "it": "Trunknydum"
     },
     "itemType": "Bow",
     "setID": null,
@@ -14904,7 +15192,8 @@
       "fr": "Taille-haie primitif du Wobot",
       "de": "Wobots primitiver Heckenstutzer",
       "es": "Cizalla para cortar setos de Wobot",
-      "pt": "Corta-sebes Primitivo do Wobot"
+      "pt": "Corta-sebes Primitivo do Wobot",
+      "it": "Wobot Primitive Hedge-Trimmer"
     },
     "itemType": "Lance",
     "setID": "293",
@@ -14965,7 +15254,8 @@
       "fr": "Baguette d'Elya Wood",
       "de": "Stab von Elya Wood",
       "es": "Varita de Elya Wood",
-      "pt": "Varinha de Elya Wood"
+      "pt": "Varinha de Elya Wood",
+      "it": "Elya Wood's Wand"
     },
     "itemType": "Wand",
     "setID": "39",
@@ -15036,7 +15326,8 @@
       "fr": "Baguette du Chêne Mou",
       "de": "Stab von Weich-Eich",
       "es": "Varita de Roble Blando",
-      "pt": "Varinha do Carvalho Mole"
+      "pt": "Varinha do Carvalho Mole",
+      "it": "Soft Oak Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -15128,6 +15419,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -15156,7 +15450,8 @@
       "fr": "Baguette en Racine d'Abraknyde Sombre",
       "de": "Stab aus Schattenastaknydenwurzeln",
       "es": "Varita de raíz de abráknido oscuro",
-      "pt": "Varinha de Raiz de Arvraknídeo Sombrio"
+      "pt": "Varinha de Raiz de Arvraknídeo Sombrio",
+      "it": "Dark Treechnid Root Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -15237,7 +15532,8 @@
       "fr": "Balgourde des Clairettes",
       "de": "Lichte Balgourde",
       "es": "Balgurda de las disculpas",
-      "pt": "Balgourde dos Esclarecidos"
+      "pt": "Balgourde dos Esclarecidos",
+      "it": "Clearing Balgourde"
     },
     "itemType": "Wand",
     "setID": null,
@@ -15303,7 +15599,8 @@
       "fr": "Marteau Polpoulette",
       "de": "Polpouletten-Hammer",
       "es": "Martillo Polpuleta",
-      "pt": "Martelo Polpulete"
+      "pt": "Martelo Polpulete",
+      "it": "Polpullet Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -15374,7 +15671,8 @@
       "fr": "Marteau Fantal",
       "de": "Fantals Hammer",
       "es": "Martillo Fantal",
-      "pt": "Martelo Fantal"
+      "pt": "Martelo Fantal",
+      "it": "Fantal Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -15445,7 +15743,8 @@
       "fr": "Marteau Réhadaure",
       "de": "Stierhammerkämpfer",
       "es": "Martillo Taurino",
-      "pt": "Martelo Rehadaure"
+      "pt": "Martelo Rehadaure",
+      "it": "Rehadaure Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -15521,7 +15820,8 @@
       "fr": "Marteau de la Terps",
       "de": "Hammer der Terps",
       "es": "Martillo de la Terps",
-      "pt": "Martelo de Terps"
+      "pt": "Martelo de Terps",
+      "it": "Terps Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -15607,7 +15907,8 @@
       "fr": "Marteau Pinambour",
       "de": "Hammer von Meli",
       "es": "Martillo Kolmillo",
-      "pt": "Martelo Pinambour"
+      "pt": "Martelo Pinambour",
+      "it": "Pinambour Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -15658,7 +15959,8 @@
       "fr": "Marteau R'Ticolis",
       "de": "Hammer-Star \"Rernacken\"",
       "es": "Martillo Trotícolis",
-      "pt": "Martelo R'Ticolis"
+      "pt": "Martelo R'Ticolis",
+      "it": "Crick Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -15729,7 +16031,8 @@
       "fr": "Marteau Kahr",
       "de": "Scheufäusteligkeit",
       "es": "Martillo Puka",
-      "pt": "Martelo de Kahr"
+      "pt": "Martelo de Kahr",
+      "it": "Castr Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -15810,7 +16113,8 @@
       "fr": "Marteau Ridhe",
       "de": "Der Verwüster",
       "es": "Martillo Kaxondo",
-      "pt": "Martelo Ridhe"
+      "pt": "Martelo Ridhe",
+      "it": "Blarney Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -15886,7 +16190,8 @@
       "fr": "Marteau Nitruhant",
       "de": "Smerz' Hammerkopf",
       "es": "Martillo Xelorillo",
-      "pt": "Martelo de Nitruhant"
+      "pt": "Martelo de Nitruhant",
+      "it": "Pog Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -15952,7 +16257,8 @@
       "fr": "Marteau Réfacteur",
       "de": "Wurmlochhammer",
       "es": "Martillo Moledor",
-      "pt": "Martelo de Refator"
+      "pt": "Martelo de Refator",
+      "it": "Refactor Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -16018,7 +16324,8 @@
       "fr": "Dagues R'Hoh",
       "de": "Dolchschlago grobis",
       "es": "Dagas R'Hoh",
-      "pt": "Adagas R'Hoh"
+      "pt": "Adagas R'Hoh",
+      "it": "Dagger Manic"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -16089,7 +16396,8 @@
       "fr": "Dagues Hischantes",
       "de": "Hischantes Dolch",
       "es": "Dagas vibrantes",
-      "pt": "Adagas Hischantes"
+      "pt": "Adagas Hischantes",
+      "it": "Hischantes Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -16160,7 +16468,8 @@
       "fr": "Amrothiline",
       "de": "Amothirilin",
       "es": "Amrothilina",
-      "pt": "Amrothilina"
+      "pt": "Amrothilina",
+      "it": "Amrothiline"
     },
     "itemType": "Wand",
     "setID": null,
@@ -16235,7 +16544,8 @@
       "fr": "Baguette de Kouartz",
       "de": "Kwuarzstab",
       "es": "Varita de Kuarzo",
-      "pt": "Varinha de Kuartzo"
+      "pt": "Varinha de Kuartzo",
+      "it": "Kouartz Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -16306,7 +16616,8 @@
       "fr": "La Migraine",
       "de": "Migräne",
       "es": "La Migraña",
-      "pt": "A Enxaqueca"
+      "pt": "A Enxaqueca",
+      "it": "The Migraine"
     },
     "itemType": "Wand",
     "setID": null,
@@ -16377,7 +16688,8 @@
       "fr": "Kelinobranche",
       "de": "Kelinoast",
       "es": "Kelinorrama",
-      "pt": "Kelinobranch"
+      "pt": "Kelinobranch",
+      "it": "Earlik Branch"
     },
     "itemType": "Staff",
     "setID": null,
@@ -16448,7 +16760,8 @@
       "fr": "La Racine Cinati",
       "de": "Cinatis Wurzel",
       "es": "La Raíz Zinzinati",
-      "pt": "Raiz de Cinati"
+      "pt": "Raiz de Cinati",
+      "it": "Cinati Root"
     },
     "itemType": "Staff",
     "setID": null,
@@ -16519,7 +16832,8 @@
       "fr": "La Racine Hagogue",
       "de": "Biens Stock",
       "es": "La Raíz Varreche",
-      "pt": "A Raiz Hagogue"
+      "pt": "A Raiz Hagogue",
+      "it": "The Hagogue Root"
     },
     "itemType": "Staff",
     "setID": null,
@@ -16590,7 +16904,8 @@
       "fr": "Racine Sauvageonne",
       "de": "Sauvages Wurzel",
       "es": "Raíz del plantón salvaje",
-      "pt": "Raiz Selvagem"
+      "pt": "Raiz Selvagem",
+      "it": "Savage Root"
     },
     "itemType": "Staff",
     "setID": null,
@@ -16646,7 +16961,8 @@
       "fr": "Bâton du Féca",
       "de": "Stock des Fécas",
       "es": "Bastón de Feca",
-      "pt": "Bastão do Feca"
+      "pt": "Bastão do Feca",
+      "it": "Feca Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -16722,7 +17038,8 @@
       "fr": "Pelle Hébuse",
       "de": "Hebus' Schaufel",
       "es": "Pala Hebuso",
-      "pt": "Pá de Hebuse"
+      "pt": "Pá de Hebuse",
+      "it": "Hebuse Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -16793,7 +17110,8 @@
       "fr": "Pelle Musicale",
       "de": "Schaufel der Musik",
       "es": "Pala Musical",
-      "pt": "Pá musical"
+      "pt": "Pá musical",
+      "it": "Uftoon Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -16854,7 +17172,8 @@
       "fr": "Pelle Rinage",
       "de": "Wanderschaufel",
       "es": "Pala Grino",
-      "pt": "Pá de Viagem"
+      "pt": "Pá de Viagem",
+      "it": "Travel Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -16945,7 +17264,8 @@
       "fr": "Pelle Hikule",
       "de": "Schupp-Schipp",
       "es": "Pala Antikaspa",
-      "pt": "Pá de Hikule"
+      "pt": "Pá de Hikule",
+      "it": "Hikule Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -17011,7 +17331,8 @@
       "fr": "Pelle du Mineur Sombre",
       "de": "Schaufel des Schattenbergmannes",
       "es": "Pala de minero oscuro",
-      "pt": "Pá do Mineiro Sombrio"
+      "pt": "Pá do Mineiro Sombrio",
+      "it": "Dark Miner Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -17082,7 +17403,8 @@
       "fr": "Pelle Mairhe",
       "de": "Schwiegrige Mutterschaufel",
       "es": "Pala suegra",
-      "pt": "Pá de Mairhe"
+      "pt": "Pá de Mairhe",
+      "it": "Mairhe Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -17153,7 +17475,8 @@
       "fr": "Pelle Vaidaire",
       "de": "Aussichts-Plattschaufel",
       "es": "Pala Mirador",
-      "pt": "Pá Vaidaire"
+      "pt": "Pá Vaidaire",
+      "it": "Vaidaire Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -17214,7 +17537,8 @@
       "fr": "Pelle Gicque",
       "de": "Die Schaufel von Bella Ghiena",
       "es": "Pala Blega",
-      "pt": "Pá de Gicque"
+      "pt": "Pá de Gicque",
+      "it": "Truffle Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -17285,7 +17609,8 @@
       "fr": "La Pelle Hélabète",
       "de": "Die Schaufel Untasbist",
       "es": "La Pala Enamorada",
-      "pt": "Pá Helabete"
+      "pt": "Pá Helabete",
+      "it": "Helabete Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -17361,7 +17686,8 @@
       "fr": "Bâton de l'Homme Ours",
       "de": "Stecken des Bärenmannes",
       "es": "Bastón del hombre oso",
-      "pt": "Bastão do Homem Urso"
+      "pt": "Bastão do Homem Urso",
+      "it": "Bearman's Staff"
     },
     "itemType": "Staff",
     "setID": "12",
@@ -17407,7 +17733,8 @@
       "fr": "Kwaklame de Glace",
       "de": "Eis-Kwacklinge",
       "es": "Kwakhoja de hielo",
-      "pt": "Kwaklâmina de Gelo"
+      "pt": "Kwaklâmina de Gelo",
+      "it": "Ice Kwakblade"
     },
     "itemType": "Sword",
     "setID": "13",
@@ -17463,7 +17790,8 @@
       "fr": "Kwaklame de Terre",
       "de": "Stein-Kwacklinge",
       "es": "Kwakhoja de tierra",
-      "pt": "Kwakamina da Terra"
+      "pt": "Kwakamina da Terra",
+      "it": "Earth Kwakblade"
     },
     "itemType": "Sword",
     "setID": "14",
@@ -17519,7 +17847,8 @@
       "fr": "Kwaklame de Vent",
       "de": "Luft-Kwacklinge",
       "es": "Kwakhoja de viento",
-      "pt": "Kwakamina do Vento"
+      "pt": "Kwakamina do Vento",
+      "it": "Wind Kwakblade"
     },
     "itemType": "Sword",
     "setID": "15",
@@ -17575,7 +17904,8 @@
       "fr": "Fourbasse-Ton",
       "de": "Heckenschützerstecken",
       "es": "Mazoporrazo",
-      "pt": "Bastarbustor"
+      "pt": "Bastarbustor",
+      "it": "Ambusher-Up"
     },
     "itemType": "Lance",
     "setID": "16",
@@ -17671,7 +18001,8 @@
       "fr": "Fourche de Farle",
       "de": "Farles Gabel",
       "es": "Horca de Farle",
-      "pt": "Forquilha de Farle"
+      "pt": "Forquilha de Farle",
+      "it": "Farle's Pitchfork"
     },
     "itemType": "Lance",
     "setID": "17",
@@ -17742,7 +18073,8 @@
       "fr": "Épée de l'initié",
       "de": "Schwert des Initiaten",
       "es": "Espada de debutante",
-      "pt": "Espada do iniciado"
+      "pt": "Espada do iniciado",
+      "it": "Initiate's Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -17788,7 +18120,8 @@
       "fr": "Baguette de l'initié",
       "de": "Stab des Initiaten",
       "es": "Varita de debutante",
-      "pt": "Varinha do Iniciado"
+      "pt": "Varinha do Iniciado",
+      "it": "Initiate's Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -17834,7 +18167,8 @@
       "fr": "Bâton de l'initié",
       "de": "Stock des Initiaten",
       "es": "Bastón de debutante",
-      "pt": "Bastão do Iniciado"
+      "pt": "Bastão do Iniciado",
+      "it": "Initiate's Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -17880,7 +18214,8 @@
       "fr": "Arc de l'initié",
       "de": "Bogen des Initiaten",
       "es": "Arco de debutante",
-      "pt": "Arco do Iniciado"
+      "pt": "Arco do Iniciado",
+      "it": "Initiate's Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -17926,7 +18261,8 @@
       "fr": "Dagues de l'initié",
       "de": "Dolche des Initiaten",
       "es": "Dagas de debutante",
-      "pt": "Adaga do iniciado"
+      "pt": "Adaga do iniciado",
+      "it": "Initiate's Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -17972,7 +18308,8 @@
       "fr": "Marteau de l'initié",
       "de": "Hammer des Initiaten",
       "es": "Martillo de debutante",
-      "pt": "Martelo do Iniciado"
+      "pt": "Martelo do Iniciado",
+      "it": "Initiate's Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -18018,7 +18355,8 @@
       "fr": "Pelle de l'initié",
       "de": "Schaufel des Initiaten",
       "es": "Pala de debutante",
-      "pt": "Pá do Iniciado"
+      "pt": "Pá do Iniciado",
+      "it": "Initiate's Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -18064,7 +18402,8 @@
       "fr": "La Plantouze des Champs",
       "de": "Das Planktock der Wiesen",
       "es": "La Plantamaza de los Campos",
-      "pt": "O Plantador dos Campos"
+      "pt": "O Plantador dos Campos",
+      "it": "Deflower Staff"
     },
     "itemType": "Staff",
     "setID": "18",
@@ -18115,7 +18454,8 @@
       "fr": "Lame du Chef Bwork",
       "de": "Bworkling des Chefs",
       "es": "Hoja de jefe bwork",
-      "pt": "Lâmina do Chefe Bwork"
+      "pt": "Lâmina do Chefe Bwork",
+      "it": "Bwork Chief Blade"
     },
     "itemType": "Sword",
     "setID": "19",
@@ -18191,7 +18531,8 @@
       "fr": "Lame du Chef Crocodaille",
       "de": "Klinge des Chef-Crocodylls",
       "es": "Hoja de jefe cocodrail",
-      "pt": "Lâmina do Chefe Crocodyl"
+      "pt": "Lâmina do Chefe Crocodyl",
+      "it": "Crocodyl Chief Blade"
     },
     "itemType": "Sword",
     "setID": "20",
@@ -18257,7 +18598,8 @@
       "fr": "La Trancheuse d'Arakne",
       "de": "Arachneewehweh",
       "es": "La cortadora de arakna",
-      "pt": "Cortador de Arakne"
+      "pt": "Cortador de Arakne",
+      "it": "Arachnee Cutter"
     },
     "itemType": "Axe",
     "setID": "22",
@@ -18303,7 +18645,8 @@
       "fr": "Dagues du Bandit",
       "de": "Schurkendolche",
       "es": "Dagas de bandido",
-      "pt": "Adagas do Bandido"
+      "pt": "Adagas do Bandido",
+      "it": "Robber Daggers"
     },
     "itemType": "Dagger",
     "setID": "25",
@@ -18349,7 +18692,8 @@
       "fr": "Lame du Craqueleur",
       "de": "Krachlerschwert",
       "es": "Hoja de crujidor",
-      "pt": "Lâmina do Smagador"
+      "pt": "Lâmina do Smagador",
+      "it": "Crackler Blade"
     },
     "itemType": "Sword",
     "setID": "26",
@@ -18435,7 +18779,8 @@
       "fr": "Dagues Lassay",
       "de": "Eisige Klingen",
       "es": "Dagas Heladas",
-      "pt": "Adagas de Gelo"
+      "pt": "Adagas de Gelo",
+      "it": "Ice Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -18512,6 +18857,9 @@
       ],
       "pt": [
         "16 a 20 de danos de armadilha"
+      ],
+      "it": [
+        "16 to 20 Trap Damage"
       ]
     },
     "conditions": {
@@ -18540,7 +18888,8 @@
       "fr": "Dagues Honies",
       "de": "Agondolchie",
       "es": "Dagas de la Agonía",
-      "pt": "Adagas Oni"
+      "pt": "Adagas Oni",
+      "it": "Daggers Oonies"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -18601,7 +18950,8 @@
       "fr": "Dagues Réceuses",
       "de": "Aggs Messoren",
       "es": "Dagas de agresión",
-      "pt": "Adagas Crivas"
+      "pt": "Adagas Crivas",
+      "it": "Daggers Sives"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -18677,7 +19027,8 @@
       "fr": "Dagues de l'Apprenti Tueur de Bouftons",
       "de": "Dolche des angehenden Fresssäckchenjägers",
       "es": "Dagas del aprendiz matador de jalatines",
-      "pt": "Adagas do aprendiz de matador de Paparneiros"
+      "pt": "Adagas do aprendiz de matador de Paparneiros",
+      "it": "Gobbly Killer Apprentice Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -18743,7 +19094,8 @@
       "fr": "Bâton de Sangroku",
       "de": "Stock von Sangroku",
       "es": "Bastón de Sanchoku",
-      "pt": "Cajado de Sangroku"
+      "pt": "Cajado de Sangroku",
+      "it": "Sangroku's Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -18819,7 +19171,8 @@
       "fr": "Canne de Mamie Bonbon",
       "de": "Oma Pralinchens Spazierstock",
       "es": "Bastón de Abuelita Bombón",
-      "pt": "Bastão da Vovó Bombom"
+      "pt": "Bastão da Vovó Bombom",
+      "it": "Granny Candy's Stick"
     },
     "itemType": "Staff",
     "setID": null,
@@ -18900,7 +19253,8 @@
       "fr": "Arc de Kuri",
       "de": "Kuris Bogen",
       "es": "Arco de Kuri",
-      "pt": "Arco de Kuri"
+      "pt": "Arco de Kuri",
+      "it": "Kuri's Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -18966,7 +19320,8 @@
       "fr": "Épée du Chevalier de Glace",
       "de": "Schwert des Eisritters",
       "es": "Espada del Caballero de Hielo",
-      "pt": "Espada do Cavaleiro de Gelo"
+      "pt": "Espada do Cavaleiro de Gelo",
+      "it": "Ice Knight Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -19022,7 +19377,8 @@
       "fr": "La Xyothine",
       "de": "Rutoxine",
       "es": "La Xyothina",
-      "pt": "O Xyothine"
+      "pt": "O Xyothine",
+      "it": "The Xyothine"
     },
     "itemType": "Wand",
     "setID": null,
@@ -19093,7 +19449,8 @@
       "fr": "Baguette Larvesque",
       "de": "Larvuta",
       "es": "Varita larvesca",
-      "pt": "Varinha Larvesca"
+      "pt": "Varinha Larvesca",
+      "it": "Larval Wand"
     },
     "itemType": "Wand",
     "setID": "33",
@@ -19154,7 +19511,8 @@
       "fr": "Marteau Hubohu",
       "de": "Bohus Hammer des Tohuwers",
       "es": "Martillo Bombo",
-      "pt": "Martelo de Hubohu"
+      "pt": "Martelo de Hubohu",
+      "it": "Metal Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -19220,7 +19578,8 @@
       "fr": "Marteau M'Pouce",
       "de": "Däumlingsklopfer",
       "es": "Martillo Polgarcito",
-      "pt": "Martelo de Brinquedo"
+      "pt": "Martelo de Brinquedo",
+      "it": "Toy Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -19286,7 +19645,8 @@
       "fr": "Marteau Nairedeubrest",
       "de": "Hammer des Donnerwetters",
       "es": "Martillo de Capitán Kodah",
-      "pt": "Martelo Ingthaiphoons"
+      "pt": "Martelo Ingthaiphoons",
+      "it": "Hammer Ingthaiphoons"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -19342,7 +19702,8 @@
       "fr": "Marteau Ronto",
       "de": "Hammer der Burg",
       "es": "Martillito Ronto",
-      "pt": "Martelo Ican"
+      "pt": "Martelo Ican",
+      "it": "Hammer Ican"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -19403,7 +19764,8 @@
       "fr": "Marteau Ksain",
       "de": "Stürmischer Glockenklöppel",
       "es": "Martillito Holón",
-      "pt": "Martelo de Toksin"
+      "pt": "Martelo de Toksin",
+      "it": "Toll Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -19474,7 +19836,8 @@
       "fr": "Marteau Lahre",
       "de": "Gehs Fanghammer",
       "es": "Martillo Katraz",
-      "pt": "Martelo de Luhene"
+      "pt": "Martelo de Luhene",
+      "it": "Trikidiki Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -19545,7 +19908,8 @@
       "fr": "Marteau Pinière",
       "de": "Mauls Wurfhammer",
       "es": "Martillo Escarbador",
-      "pt": "Martelo da Colina"
+      "pt": "Martelo da Colina",
+      "it": "Cogito Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -19621,7 +19985,8 @@
       "fr": "Arc Hanne",
       "de": "Arkaner Bogen",
       "es": "Arco Mático",
-      "pt": "Arco Doozi"
+      "pt": "Arco Doozi",
+      "it": "Doozi Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -19697,7 +20062,8 @@
       "fr": "Arc Assin",
       "de": "Frischpling",
       "es": "Arco Jabato",
-      "pt": "Arco Selvagem"
+      "pt": "Arco Selvagem",
+      "it": "Young Wild Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -19769,6 +20135,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -19784,7 +20153,8 @@
       "fr": "Arc Lavoine",
       "de": "Place-Bogen",
       "es": "Arco Mustabante",
-      "pt": "Arco Musical"
+      "pt": "Arco Musical",
+      "it": "Placee Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -19840,7 +20210,8 @@
       "fr": "Arc Huledela",
       "de": "Weglaufbogen",
       "es": "Arco Disuasivo",
-      "pt": "Arco Fugitivo"
+      "pt": "Arco Fugitivo",
+      "it": "Runaway Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -19906,7 +20277,8 @@
       "fr": "Arc Hisedaisange",
       "de": "Guter Bogen, kein schlechter Bogen",
       "es": "Arco Angélico",
-      "pt": "Arco Angelical"
+      "pt": "Arco Angelical",
+      "it": "Marilyn Mun Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -19987,7 +20359,8 @@
       "fr": "Baguette Nah",
       "de": "Killniemand-Stabo",
       "es": "Varita Eide",
-      "pt": "Varinha Mágica Jaro Kilih"
+      "pt": "Varinha Mágica Jaro Kilih",
+      "it": "Kilih Wand Jaro"
     },
     "itemType": "Wand",
     "setID": null,
@@ -20048,7 +20421,8 @@
       "fr": "Baguette Cetera",
       "de": "Endlosschleifstab",
       "es": "Varita Cétera",
-      "pt": "Varinha Anelar"
+      "pt": "Varinha Anelar",
+      "it": "Wand Hering"
     },
     "itemType": "Wand",
     "setID": null,
@@ -20104,7 +20478,8 @@
       "fr": "Baguette Hylique",
       "de": "Alkos Hohlstab",
       "es": "Varita Kacikera",
-      "pt": "Varinha Mágica Pintada"
+      "pt": "Varinha Mágica Pintada",
+      "it": "Pinted Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -20175,7 +20550,8 @@
       "fr": "Baguette Hincelle",
       "de": "Freds Feuerstab",
       "es": "Varita Chispera",
-      "pt": "Varinha Mágica Fagulhante"
+      "pt": "Varinha Mágica Fagulhante",
+      "it": "Sparkly Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -20251,7 +20627,8 @@
       "fr": "Baguette Houffe-Craitien",
       "de": "Verfrut und Zugestäbt",
       "es": "Varita Rosca",
-      "pt": "Varinha Mágica de Creizy-Stufh"
+      "pt": "Varinha Mágica de Creizy-Stufh",
+      "it": "Creizy-Stufh Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -20326,7 +20703,8 @@
       "fr": "Baguette Ourderie",
       "de": "Stab der Kopflosigkeit",
       "es": "Varita Despistada",
-      "pt": "Varinha Heroff"
+      "pt": "Varinha Heroff",
+      "it": "Wand Heroff"
     },
     "itemType": "Wand",
     "setID": null,
@@ -20415,7 +20793,8 @@
       "fr": "Baguette Rhon",
       "de": "Stapopel",
       "es": "Varita Fekal",
-      "pt": "Varinha Mágica de Boogey"
+      "pt": "Varinha Mágica de Boogey",
+      "it": "Boogey Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -20476,7 +20855,8 @@
       "fr": "Baguette Rangleuse",
       "de": "Würgrut",
       "es": "Varita estranguladora",
-      "pt": "Varinha sufocante"
+      "pt": "Varinha sufocante",
+      "it": "Strangly Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -20527,7 +20907,8 @@
       "fr": "Racine Cithi",
       "de": "Wurzel Triss",
       "es": "Raíz Kyerda Unida",
-      "pt": "Raiz do Bem"
+      "pt": "Raiz do Bem",
+      "it": "Root Well"
     },
     "itemType": "Staff",
     "setID": null,
@@ -20603,7 +20984,8 @@
       "fr": "Racine Horodon",
       "de": "YamYam-Wurzel",
       "es": "Raíz Cynorrhodon",
-      "pt": "Raiz Mágica"
+      "pt": "Raiz Mágica",
+      "it": "Froot Root"
     },
     "itemType": "Staff",
     "setID": null,
@@ -20679,7 +21061,8 @@
       "fr": "Racine Sémilla",
       "de": "Apothecawurzlika",
       "es": "Raíz Sin Semilla",
-      "pt": "Raiz Vermelha Chileepaperz"
+      "pt": "Raiz Vermelha Chileepaperz",
+      "it": "Red Root Chileepaperz"
     },
     "itemType": "Staff",
     "setID": null,
@@ -20735,7 +21118,8 @@
       "fr": "Racine Hécouanone",
       "de": "Ers Druckwurzel",
       "es": "Raíz Tziar",
-      "pt": "Raiz Torquia"
+      "pt": "Raiz Torquia",
+      "it": "Black Mel Root"
     },
     "itemType": "Staff",
     "setID": null,
@@ -20806,7 +21190,8 @@
       "fr": "Racine Huzohide",
       "de": "Sinusoidalgewurzel",
       "es": "Raíz atractiva",
-      "pt": "Raiz sinuosa"
+      "pt": "Raiz sinuosa",
+      "it": "Lady Root"
     },
     "itemType": "Staff",
     "setID": null,
@@ -20877,7 +21262,8 @@
       "fr": "Racine Histre",
       "de": "Katastrowurzel",
       "es": "Raíz siniestra",
-      "pt": "Raiz de Desastre"
+      "pt": "Raiz de Desastre",
+      "it": "Disast Root"
     },
     "itemType": "Staff",
     "setID": null,
@@ -20938,7 +21324,8 @@
       "fr": "Racine Hécure",
       "de": "Schlagwurzel",
       "es": "Raíz cúbica",
-      "pt": "Raiz Hécure"
+      "pt": "Raiz Hécure",
+      "it": "Root Een"
     },
     "itemType": "Staff",
     "setID": null,
@@ -20999,7 +21386,8 @@
       "fr": "Jakchir Arc",
       "de": "Bogris EltzIhn",
       "es": "Jakchir Arco",
-      "pt": "Arco Lordimelo"
+      "pt": "Arco Lordimelo",
+      "it": "Dubya Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -21055,7 +21443,8 @@
       "fr": "Dagues Rhumes",
       "de": "Zitrolch",
       "es": "Dagas exprimidoras",
-      "pt": "Adagas de Citrus"
+      "pt": "Adagas de Citrus",
+      "it": "Citrus Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -21126,7 +21515,8 @@
       "fr": "Rod Gerse",
       "de": "Rod Gerse",
       "es": "Rod Gers",
-      "pt": "Rod Gers"
+      "pt": "Rod Gers",
+      "it": "Thrusty Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -21211,7 +21601,8 @@
       "fr": "Dagues Maydhyn China",
       "de": "Maydhyn China-Dolche",
       "es": "Dagas Maydhyn China",
-      "pt": "Adagas Maydhyn China"
+      "pt": "Adagas Maydhyn China",
+      "it": "Maydhyn China Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -21286,7 +21677,8 @@
       "fr": "Sertisseur de Ramougre",
       "de": "Ramougres Einfassmesser",
       "es": "Engastador de Ramugro",
-      "pt": "Engastador do Ramugro"
+      "pt": "Engastador do Ramugro",
+      "it": "Ramougre's Setter"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -21353,6 +21745,9 @@
       ],
       "pt": [
         "16 a 20 de danos de armadilha"
+      ],
+      "it": [
+        "16 to 20 Trap Damage"
       ]
     },
     "conditions": {
@@ -21368,7 +21763,8 @@
       "fr": "Griffe de Grizmine",
       "de": "Griesgrahms Kralle",
       "es": "Garra de Grizmoh Guay",
-      "pt": "Garra de Karafey"
+      "pt": "Garra de Karafey",
+      "it": "Grizmine Claw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -21429,7 +21825,8 @@
       "fr": "Épée du Dark Vlad",
       "de": "Klinge des Dark Vlad",
       "es": "Espada de Dark Vlad",
-      "pt": "Espada do Dark Vlad"
+      "pt": "Espada do Dark Vlad",
+      "it": "Dark Vlad Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -21505,7 +21902,8 @@
       "fr": "Arc Anum",
       "de": "Arkanum-Bogen",
       "es": "Arc Anum",
-      "pt": "Arco de Arkanum"
+      "pt": "Arco de Arkanum",
+      "it": "Arkanum Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -21586,7 +21984,8 @@
       "fr": "Karnak",
       "de": "Karnak",
       "es": "Karnak",
-      "pt": "Karnak"
+      "pt": "Karnak",
+      "it": "Furritung"
     },
     "itemType": "Sword",
     "setID": null,
@@ -21666,7 +22065,8 @@
       "fr": "Marteau Bleuronne",
       "de": "Xocoatlkrachl",
       "es": "Martillito Blerón",
-      "pt": "Martelo Sheys"
+      "pt": "Martelo Sheys",
+      "it": "Hammer Sheys"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -21728,6 +22128,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -21743,7 +22146,8 @@
       "fr": "Razoir du Soir",
       "de": "Rasierklinge des Abends",
       "es": "Afeitadora Nocturna",
-      "pt": "Navalha Noturna"
+      "pt": "Navalha Noturna",
+      "it": "Evening Razor"
     },
     "itemType": "Sword",
     "setID": null,
@@ -21804,7 +22208,8 @@
       "fr": "Glaive Icération",
       "de": "Buhs Bastardspießschwert",
       "es": "Espada carnicera",
-      "pt": "Espada de Metzger"
+      "pt": "Espada de Metzger",
+      "it": "Abatz Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -21885,7 +22290,8 @@
       "fr": "Sabre Shodanwa",
       "de": "Shodanwa-Säbel",
       "es": "Sable shodanwa",
-      "pt": "Sabre Shodanwa"
+      "pt": "Sabre Shodanwa",
+      "it": "Shodanwa Sabre"
     },
     "itemType": "Sword",
     "setID": null,
@@ -21936,7 +22342,8 @@
       "fr": "Sabre Nidanwa",
       "de": "Nidanwa-Säbel",
       "es": "Sable nidanwa",
-      "pt": "Sabre Nidanwa"
+      "pt": "Sabre Nidanwa",
+      "it": "Nidanwa Sabre"
     },
     "itemType": "Sword",
     "setID": null,
@@ -21997,7 +22404,8 @@
       "fr": "Sabre Sandanwa",
       "de": "Sandanwa-Säbel",
       "es": "Sable sandanwa",
-      "pt": "Sabre Sandanwa"
+      "pt": "Sabre Sandanwa",
+      "it": "Sandanwa Sabre"
     },
     "itemType": "Sword",
     "setID": null,
@@ -22058,7 +22466,8 @@
       "fr": "Sabre Yondanwa",
       "de": "Yodanwa-Säbel",
       "es": "Sable yondanwa",
-      "pt": "Sabre Yondanwa"
+      "pt": "Sabre Yondanwa",
+      "it": "Yondanwa Sabre"
     },
     "itemType": "Sword",
     "setID": null,
@@ -22139,7 +22548,8 @@
       "fr": "Bâton du Shodanwa",
       "de": "Shodanwa-Stock",
       "es": "Bastón shodanwa",
-      "pt": "Cajado de Shodanwa"
+      "pt": "Cajado de Shodanwa",
+      "it": "Shodanwa Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -22195,7 +22605,8 @@
       "fr": "Bâton du Nidanwa",
       "de": "Nidanwa-Stock",
       "es": "Bastón nidanwa",
-      "pt": "Cajado de Nidanwa"
+      "pt": "Cajado de Nidanwa",
+      "it": "Nidanwa Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -22251,7 +22662,8 @@
       "fr": "Bâton du Sandanwa",
       "de": "Sandanwa-Stock",
       "es": "Bastón sandanwa",
-      "pt": "Cajado de Sandanwa"
+      "pt": "Cajado de Sandanwa",
+      "it": "Sandanwa Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -22322,7 +22734,8 @@
       "fr": "Bâton du Yondanwa",
       "de": "Yodanwa-Stock",
       "es": "Bastón yondanwa",
-      "pt": "Cajado Yondanwa"
+      "pt": "Cajado Yondanwa",
+      "it": "Yondanwa Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -22393,7 +22806,8 @@
       "fr": "Hache du Shodanwa",
       "de": "Shodanwa-Axt",
       "es": "Hacha shodanwa",
-      "pt": "Machado de Shodanwa"
+      "pt": "Machado de Shodanwa",
+      "it": "Shodanwa Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -22454,7 +22868,8 @@
       "fr": "Hache du Nidanwa",
       "de": "Nidanwa-Axt",
       "es": "Hacha nidanwa",
-      "pt": "Machado de Nidanwa"
+      "pt": "Machado de Nidanwa",
+      "it": "Nidanwa Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -22506,6 +22921,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -22521,7 +22939,8 @@
       "fr": "Hache du Sandanwa",
       "de": "Sandawa-Axt",
       "es": "Hacha sandanwa",
-      "pt": "Machado de Sandanwa"
+      "pt": "Machado de Sandanwa",
+      "it": "Sandanwa Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -22587,7 +23006,8 @@
       "fr": "Hache du Yondanwa",
       "de": "Yodanwa-Axt",
       "es": "Hacha yondanwa",
-      "pt": "Machado Yondanwa"
+      "pt": "Machado Yondanwa",
+      "it": "Yondanwa Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -22658,7 +23078,8 @@
       "fr": "La Trancheuse de Bambou",
       "de": "Bambuschkayah",
       "es": "La cortadora de bambú",
-      "pt": "Assassino de Bambu"
+      "pt": "Assassino de Bambu",
+      "it": "Bamboo Slayer"
     },
     "itemType": "Axe",
     "setID": null,
@@ -22709,7 +23130,8 @@
       "fr": "Pelle Rhon",
       "de": "Ahnz Triebschaufel",
       "es": "Pala Ancefálica",
-      "pt": "Pá Penetrante"
+      "pt": "Pá Penetrante",
+      "it": "Splitting Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -22775,7 +23197,8 @@
       "fr": "Bâton Akwadala",
       "de": "Akwadala-Stecken",
       "es": "Bastón Akwadala",
-      "pt": "Bastão Akwadala"
+      "pt": "Bastão Akwadala",
+      "it": "Akwadala Staff"
     },
     "itemType": "Staff",
     "setID": "34",
@@ -22831,7 +23254,8 @@
       "fr": "Hache Terrdala",
       "de": "Teradala-Axt",
       "es": "Hacha Tierradala",
-      "pt": "Machado Terradala"
+      "pt": "Machado Terradala",
+      "it": "Terrdala Axe"
     },
     "itemType": "Axe",
     "setID": "36",
@@ -22902,7 +23326,8 @@
       "fr": "Dagues Aerdala",
       "de": "Aerdala-Dolche",
       "es": "Dagas Airedala",
-      "pt": "Adagas Ardala"
+      "pt": "Adagas Ardala",
+      "it": "Aerdala Daggers"
     },
     "itemType": "Dagger",
     "setID": "35",
@@ -22968,7 +23393,8 @@
       "fr": "Sabre Feudala",
       "de": "Feudala-Säbel",
       "es": "Sable Fuegodala",
-      "pt": "Sabre Fogodala"
+      "pt": "Sabre Fogodala",
+      "it": "Feudala Sabre"
     },
     "itemType": "Sword",
     "setID": "37",
@@ -23039,7 +23465,8 @@
       "fr": "Baguette Houalle",
       "de": "Stärnbchen",
       "es": "Varita Strella",
-      "pt": "Varinha Mágica Estelar"
+      "pt": "Varinha Mágica Estelar",
+      "it": "Star Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -23111,6 +23538,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -23126,7 +23556,8 @@
       "fr": "Marteau du Boufcoul",
       "de": "Fresscool-Hammer",
       "es": "Martillito de jalatranki",
-      "pt": "Martelo do Papakool"
+      "pt": "Martelo do Papakool",
+      "it": "Gobkool Hammer"
     },
     "itemType": "Hammer",
     "setID": "43",
@@ -23232,7 +23663,8 @@
       "fr": "Bâton du Koulosse",
       "de": "Stock des Kuhlosses",
       "es": "Bastón de Trankitronko",
-      "pt": "Bastão do Tronkoso"
+      "pt": "Bastão do Tronkoso",
+      "it": "Koolich Staff"
     },
     "itemType": "Staff",
     "setID": "44",
@@ -23328,7 +23760,8 @@
       "fr": "Arc du Koalak",
       "de": "Koalak-Bogen",
       "es": "Arco de koalak",
-      "pt": "Arco do Koalak"
+      "pt": "Arco do Koalak",
+      "it": "Koalak Bow"
     },
     "itemType": "Bow",
     "setID": "46",
@@ -23389,7 +23822,8 @@
       "fr": "Baguette Gyver",
       "de": "Gyver-Stab",
       "es": "Varita Gyver",
-      "pt": "Varinha Gyver"
+      "pt": "Varinha Gyver",
+      "it": "Gyver Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -23460,7 +23894,8 @@
       "fr": "Baguette Iots",
       "de": "Stoi-Stab",
       "es": "Varita Aleyx",
-      "pt": "Varinha Mágica Iots"
+      "pt": "Varinha Mágica Iots",
+      "it": "Iots Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -23584,7 +24019,8 @@
       "fr": "Bâton des Caraïbes",
       "de": "Stecken der Karibuik",
       "es": "Barra del Caribe",
-      "pt": "Bastão do Caribe"
+      "pt": "Bastão do Caribe",
+      "it": "Caribbean Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -23651,6 +24087,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -23666,7 +24105,8 @@
       "fr": "La Canne Bière",
       "de": "Tua Kwän-Stock",
       "es": "El Bastón Rubé",
-      "pt": "Taquara"
+      "pt": "Taquara",
+      "it": "Palm Cane"
     },
     "itemType": "Staff",
     "setID": null,
@@ -23747,7 +24187,8 @@
       "fr": "Les Dagues du Bouwin",
       "de": "Dolche des Prutalos",
       "es": "Dagas de Aminal",
-      "pt": "Adaga de Ostwogoth"
+      "pt": "Adaga de Ostwogoth",
+      "it": "Ostwogoth Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -23828,7 +24269,8 @@
       "fr": "L'Epée Rilleuse",
       "de": "Schwert Ödlich",
       "es": "La Espada Risueña",
-      "pt": "Espada de Killarious"
+      "pt": "Espada de Killarious",
+      "it": "Killarity Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -23898,7 +24340,8 @@
       "fr": "Le Sabre Ayassalama",
       "de": "Ayassalama-Säbel",
       "es": "El Sable Ayasalama",
-      "pt": "Sabre Triste"
+      "pt": "Sabre Triste",
+      "it": "Andy War Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -23969,7 +24412,8 @@
       "fr": "Marteau Mawoque",
       "de": "Toms Mahok-Hammer",
       "es": "Martillo Kosner",
-      "pt": "Martelo de Dunb"
+      "pt": "Martelo de Dunb",
+      "it": "Dunb Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -24045,7 +24489,8 @@
       "fr": "Marteau Xiko",
       "de": "Liebestöter",
       "es": "Martillo Xiko",
-      "pt": "Martelo Oin"
+      "pt": "Martelo Oin",
+      "it": "Hammer O'In"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -24121,7 +24566,8 @@
       "fr": "La Hache Menbien",
       "de": "Axt im Walde",
       "es": "Hacha Pronto",
-      "pt": "Machado de Mentiras"
+      "pt": "Machado de Mentiras",
+      "it": "Axe of Lies"
     },
     "itemType": "Axe",
     "setID": null,
@@ -24207,7 +24653,8 @@
       "fr": "La Hache Ticot",
       "de": "Ohrop-Axt",
       "es": "Hacha Kechilba",
-      "pt": "Machado Isca"
+      "pt": "Machado Isca",
+      "it": "The Warf Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -24298,7 +24745,8 @@
       "fr": "Le Fendoir Tichaud",
       "de": "Tischocken-Axt",
       "es": "El Parte Tura",
-      "pt": "Machado Tichok"
+      "pt": "Machado Tichok",
+      "it": "Kape Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -24364,7 +24812,8 @@
       "fr": "Arc Rainier",
       "de": "Bogen der Gespinndichkeit",
       "es": "Arco Telaraña",
-      "pt": "Arco de Bew"
+      "pt": "Arco de Bew",
+      "it": "Web Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -24445,7 +24894,8 @@
       "fr": "Arc Chtelion",
       "de": "Chtelion-Bogen",
       "es": "Arco Chtelión",
-      "pt": "Arco de Chetlion"
+      "pt": "Arco de Chetlion",
+      "it": "Chtelion Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -24526,7 +24976,8 @@
       "fr": "Baguette du Tofu",
       "de": "Tofu-Stab",
       "es": "Varita de tofu",
-      "pt": "Varinha do Tofu"
+      "pt": "Varinha do Tofu",
+      "it": "Tofu Wand"
     },
     "itemType": "Wand",
     "setID": "50",
@@ -24578,6 +25029,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -24593,7 +25047,8 @@
       "fr": "Baguette du Scarabosse Doré",
       "de": "Stab des goldenen Scarabiestes",
       "es": "Varita de Escarajefe Dorado",
-      "pt": "Varinha do Scarachefe Dourado"
+      "pt": "Varinha do Scarachefe Dourado",
+      "it": "Golden Scarabugly Wand"
     },
     "itemType": "Wand",
     "setID": "51",
@@ -24654,7 +25109,8 @@
       "fr": "Faux usée du Paysan",
       "de": "Abgenutzte Bauernsense",
       "es": "Guadaña gastada de campesino",
-      "pt": "Gadanha usada do fazendeiro"
+      "pt": "Gadanha usada do fazendeiro",
+      "it": "Damaged Farmer Scythe"
     },
     "itemType": "Scythe",
     "setID": "47",
@@ -24705,7 +25161,8 @@
       "fr": "Hache du Mulou",
       "de": "WuWulf-Axt",
       "es": "Hacha de milubo",
-      "pt": "Machado de Boolobo"
+      "pt": "Machado de Boolobo",
+      "it": "Boowolf Axe"
     },
     "itemType": "Axe",
     "setID": "32",
@@ -24771,7 +25228,8 @@
       "fr": "Marteau du Craqueleur Légendaire",
       "de": "Hammer des Legendären Mega-Krachlers",
       "es": "Martillo de Crujidor Legendario",
-      "pt": "Martelo do Smagador Legendário"
+      "pt": "Martelo do Smagador Legendário",
+      "it": "Legendary Crackler Hammer"
     },
     "itemType": "Hammer",
     "setID": "52",
@@ -24842,7 +25300,8 @@
       "fr": "Pelle en Mousse",
       "de": "Schwammaufel",
       "es": "Pala de esponja",
-      "pt": "Pá de esponja"
+      "pt": "Pá de esponja",
+      "it": "Sponge Shovel"
     },
     "itemType": "Shovel",
     "setID": "63",
@@ -24893,7 +25352,8 @@
       "fr": "Hache du Minotoror",
       "de": "Axt des Minotorors",
       "es": "Hacha del Minotauroro",
-      "pt": "Machado de Minotoro"
+      "pt": "Machado de Minotoro",
+      "it": "Minotoror Axe"
     },
     "itemType": "Axe",
     "setID": "54",
@@ -24984,7 +25444,8 @@
       "fr": "Sceptre du Minotot",
       "de": "Szepter des Minotots",
       "es": "Cetro del Minotot",
-      "pt": "Cetro do Minotot"
+      "pt": "Cetro do Minotot",
+      "it": "Minotot Sceptre"
     },
     "itemType": "Staff",
     "setID": null,
@@ -25065,7 +25526,8 @@
       "fr": "Épée du Dragoeuf",
       "de": "Drachei-Schwert",
       "es": "Espada de dragohuevo",
-      "pt": "Espada do Dragovo"
+      "pt": "Espada do Dragovo",
+      "it": "Dreggon Sword"
     },
     "itemType": "Sword",
     "setID": "473",
@@ -25156,7 +25618,8 @@
       "fr": "Hache du Dragoeuf",
       "de": "Drachei-Axt",
       "es": "Hacha de dragohuevo",
-      "pt": "Machado do Dragovo"
+      "pt": "Machado do Dragovo",
+      "it": "Dreggon Axe"
     },
     "itemType": "Axe",
     "setID": "473",
@@ -25257,7 +25720,8 @@
       "fr": "Marteau du Dragoeuf",
       "de": "Drachei-Hammer",
       "es": "Martillo de dragohuevo",
-      "pt": "Martelo do Dragovo"
+      "pt": "Martelo do Dragovo",
+      "it": "Dreggon Hammer"
     },
     "itemType": "Hammer",
     "setID": "473",
@@ -25353,7 +25817,8 @@
       "fr": "Arc du Dragoeuf",
       "de": "Drachei-Bogen",
       "es": "Arco de dragohuevo",
-      "pt": "Arco do Dragovo"
+      "pt": "Arco do Dragovo",
+      "it": "Dreggon Bow"
     },
     "itemType": "Bow",
     "setID": "56",
@@ -25444,7 +25909,8 @@
       "fr": "Baguette du Dragoeuf",
       "de": "Drachei-Stab",
       "es": "Varita de dragohuevo",
-      "pt": "Varinha do Dragovo"
+      "pt": "Varinha do Dragovo",
+      "it": "Dreggon Wand"
     },
     "itemType": "Wand",
     "setID": "56",
@@ -25545,7 +26011,8 @@
       "fr": "Bâton du Dragoeuf",
       "de": "Drachei-Stecken",
       "es": "Bastón de dragohuevo",
-      "pt": "Bastão do Dragovo"
+      "pt": "Bastão do Dragovo",
+      "it": "Dreggon Staff"
     },
     "itemType": "Staff",
     "setID": "56",
@@ -25641,7 +26108,8 @@
       "fr": "Binette de Shika",
       "de": "Shikas Hacke",
       "es": "Binador de Shika",
-      "pt": "Enxada de Shika"
+      "pt": "Enxada de Shika",
+      "it": "Shika's Hoe"
     },
     "itemType": "Lance",
     "setID": "53",
@@ -25717,7 +26185,8 @@
       "fr": "Marteau du Mominotor",
       "de": "Muminotoror-Hammer",
       "es": "Martillo de mominotauro",
-      "pt": "Martelo Mumminotor"
+      "pt": "Martelo Mumminotor",
+      "it": "Mumminotor Hammer"
     },
     "itemType": "Hammer",
     "setID": "59",
@@ -25813,7 +26282,8 @@
       "fr": "Dagues du Dragoeuf",
       "de": "Drachei-Dolche",
       "es": "Dagas de dragohuevo",
-      "pt": "Adagas do Dragoeuf"
+      "pt": "Adagas do Dragoeuf",
+      "it": "Dreggon Daggers"
     },
     "itemType": "Dagger",
     "setID": "56",
@@ -25941,7 +26411,8 @@
       "fr": "Pelle à Gâteau",
       "de": "Kuchenschaufel",
       "es": "Pala para pasteles",
-      "pt": "Pá de bolo"
+      "pt": "Pá de bolo",
+      "it": "Cake Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -26037,7 +26508,8 @@
       "fr": "Pelle Moh",
       "de": "Moh-Schaufel",
       "es": "Pala Moh",
-      "pt": "Pá de Moh"
+      "pt": "Pá de Moh",
+      "it": "Shovel Ijah"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -26098,7 +26570,8 @@
       "fr": "Pelle Dragoeuf",
       "de": "Drachei-Schaufel",
       "es": "Pala dragohuevo",
-      "pt": "Pá de Dragovo"
+      "pt": "Pá de Dragovo",
+      "it": "Dreggon Shovel"
     },
     "itemType": "Shovel",
     "setID": "473",
@@ -26204,7 +26677,8 @@
       "fr": "Dagues du Rat Noir",
       "de": "Schwarze Rattendolche",
       "es": "Dagas de la Rata Negra",
-      "pt": "Adagas do Rato Negro"
+      "pt": "Adagas do Rato Negro",
+      "it": "Black Rat Daggers"
     },
     "itemType": "Dagger",
     "setID": "68",
@@ -26305,7 +26779,8 @@
       "fr": "Rapière du Rat Blanc",
       "de": "Rapier der Weißen Ratte",
       "es": "Ropera de la Rata Blanca",
-      "pt": "Rapieira do Rato Branco"
+      "pt": "Rapieira do Rato Branco",
+      "it": "White Rat Rapier"
     },
     "itemType": "Sword",
     "setID": "67",
@@ -26406,7 +26881,8 @@
       "fr": "Scalpel de Bworknroll",
       "de": "BworknRolls Skalpell",
       "es": "Escalpelo de Bworknroll",
-      "pt": "Bisturi de Bworknroll"
+      "pt": "Bisturi de Bworknroll",
+      "it": "Bworknroll's Scalpel"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -26457,7 +26933,8 @@
       "fr": "Griffe Pourpre",
       "de": "Purpur-Klaue",
       "es": "Garra púrpura",
-      "pt": "Garra púrpura"
+      "pt": "Garra púrpura",
+      "it": "Crimson Claw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -26528,7 +27005,8 @@
       "fr": "Dagues Ruyère",
       "de": "Schweizer Dolch",
       "es": "Emment Daga",
-      "pt": "Adagas Emment"
+      "pt": "Adagas Emment",
+      "it": "Emment Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -26589,7 +27067,8 @@
       "fr": "Griffettes",
       "de": "Krallette",
       "es": "Garritas",
-      "pt": "Garrettes"
+      "pt": "Garrettes",
+      "it": "Clawettes"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -26646,6 +27125,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -26661,7 +27143,8 @@
       "fr": "Épée Doncule",
       "de": "Schnallauffall-Schwert",
       "es": "Espadúnculo",
-      "pt": "Espada Caule"
+      "pt": "Espada Caule",
+      "it": "Stalk Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -26733,6 +27216,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -26748,7 +27234,8 @@
       "fr": "Épée Zervatif",
       "de": "Gnadenspender",
       "es": "Espada protectora",
-      "pt": "Espada de Borracha"
+      "pt": "Espada de Borracha",
+      "it": "Rubber Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -26824,7 +27311,8 @@
       "fr": "Le Bâton Cloutay",
       "de": "Stagelnock",
       "es": "El Bastón Claveado",
-      "pt": "Cajado Pregado"
+      "pt": "Cajado Pregado",
+      "it": "Studded Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -26895,7 +27383,8 @@
       "fr": "La Bastonneuze",
       "de": "Klopps Stock",
       "es": "Bastón de Fraye",
-      "pt": "Bastão de Fraye"
+      "pt": "Bastão de Fraye",
+      "it": "Scrap Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -26956,7 +27445,8 @@
       "fr": "Geish'Arc",
       "de": "Bogen der Geisha",
       "es": "Geish'Arco",
-      "pt": "Bushi'Arco"
+      "pt": "Bushi'Arco",
+      "it": "Bushi'Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -27022,7 +27512,8 @@
       "fr": "Le Kikoularc",
       "de": "Monnesond & Ernest-Bogen",
       "es": "El Arco Astral",
-      "pt": "Arco Liwood"
+      "pt": "Arco Liwood",
+      "it": "Bow Liwood"
     },
     "itemType": "Bow",
     "setID": null,
@@ -27101,7 +27592,8 @@
       "fr": "Bagdette Café",
       "de": "Bastab Café",
       "es": "Vagdita Café",
-      "pt": "Xicarinha de Café"
+      "pt": "Xicarinha de Café",
+      "it": "Wand Else?"
     },
     "itemType": "Wand",
     "setID": null,
@@ -27177,7 +27669,8 @@
       "fr": "La Bidjiz",
       "de": "Ill-Yeah-Richter-Stab",
       "es": "El Bidyiz",
-      "pt": "O Bidjiz"
+      "pt": "O Bidjiz",
+      "it": "The Bidjiz"
     },
     "itemType": "Wand",
     "setID": null,
@@ -27242,7 +27735,8 @@
       "fr": "Pelle Minstère",
       "de": "Spatzack",
       "es": "Pala Minsterio",
-      "pt": "Pá do Convento"
+      "pt": "Pá do Convento",
+      "it": "Shovel Minster"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -27308,7 +27802,8 @@
       "fr": "Pelle Ripe",
       "de": "RIP-Schipp",
       "es": "R.I.Pala",
-      "pt": "Pá Tumba"
+      "pt": "Pá Tumba",
+      "it": "RIP Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -27374,7 +27869,8 @@
       "fr": "Marteau Mato",
       "de": "Weichklopfer",
       "es": "Martillo rojo",
-      "pt": "Martelo Vermelho"
+      "pt": "Martelo Vermelho",
+      "it": "Red Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -27440,7 +27936,8 @@
       "fr": "Marteau Minokers",
       "de": "Tommys Klopfer",
       "es": "Mart'IT'llo",
-      "pt": "Martelo Zery"
+      "pt": "Martelo Zery",
+      "it": "Stephammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -27515,7 +28012,8 @@
       "fr": "Hache Ebbah",
       "de": "Schopens Haueraxt",
       "es": "Bast Hacha",
-      "pt": "Machado Purrin"
+      "pt": "Machado Purrin",
+      "it": "Purrin Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -27576,7 +28074,8 @@
       "fr": "Hache Eulouh",
       "de": "Neckischer Nackenspalter",
       "es": "Hacha Charear",
-      "pt": "Machado Eerie"
+      "pt": "Machado Eerie",
+      "it": "Koss Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -27652,7 +28151,8 @@
       "fr": "L'Épée Nice",
       "de": "Unbe-Schwert",
       "es": "Penispada",
-      "pt": "Espada Hikk"
+      "pt": "Espada Hikk",
+      "it": "Sword Hikk"
     },
     "itemType": "Sword",
     "setID": null,
@@ -27743,7 +28243,8 @@
       "fr": "Masse du Corailleur Magistral",
       "de": "Mächtige korallatorige Donnerkralle",
       "es": "Maza de Coralador Magistral",
-      "pt": "Maça do Coralador Magistral"
+      "pt": "Maça do Coralador Magistral",
+      "it": "Great Coralator Mace"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -27819,7 +28320,8 @@
       "fr": "Marteau de la Gamine Zoth",
       "de": "Hammer des Zoth-Mädels",
       "es": "Martillo de la chavala zoth",
-      "pt": "Martelo da Garota Zoth"
+      "pt": "Martelo da Garota Zoth",
+      "it": "Zoth Girl Hammer"
     },
     "itemType": "Hammer",
     "setID": "93",
@@ -27895,7 +28397,8 @@
       "fr": "Hache du Guerrier Zoth",
       "de": "Axt des Zoth-Kriegers",
       "es": "Hacha de guerrero zoth",
-      "pt": "Machado do Guerreiro Zoth"
+      "pt": "Machado do Guerreiro Zoth",
+      "it": "Zoth Warrior Axe"
     },
     "itemType": "Axe",
     "setID": "95",
@@ -27993,7 +28496,8 @@
       "fr": "Masse du Corailleur",
       "de": "Korallatorige Donnerkralle",
       "es": "Maza de coralador",
-      "pt": "Maça do Coralador"
+      "pt": "Maça do Coralador",
+      "it": "Coralator Mace"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -28064,7 +28568,8 @@
       "fr": "Branche de l'Abrakleur sombre",
       "de": "Ast des dunklen Astakrachler",
       "es": "Rama de abrajidor oscuro",
-      "pt": "Galho do Arvorador Sombrio"
+      "pt": "Galho do Arvorador Sombrio",
+      "it": "Dark Treeckler Branch"
     },
     "itemType": "Wand",
     "setID": "80",
@@ -28145,7 +28650,8 @@
       "fr": "Branche de l'Abrakleur clair",
       "de": "Ast des hellen Astakrachler",
       "es": "Rama de abrajidor claro",
-      "pt": "Galho do Arvorador Claro"
+      "pt": "Galho do Arvorador Claro",
+      "it": "Light Treeckler Branch"
     },
     "itemType": "Wand",
     "setID": "79",
@@ -28226,7 +28732,8 @@
       "fr": "Tige du Brouture",
       "de": "Rindefix-Stängel",
       "es": "Tallo de esquejika",
-      "pt": "Caule de Rotaflor"
+      "pt": "Caule de Rotaflor",
+      "it": "Rotaflor Stem"
     },
     "itemType": "Staff",
     "setID": null,
@@ -28302,7 +28809,8 @@
       "fr": "Bâton du Maître Zoth",
       "de": "Stock des Zoth-Meisters",
       "es": "Bastón de maestro zoth",
-      "pt": "Bastão do Mestre Zoth"
+      "pt": "Bastão do Mestre Zoth",
+      "it": "Zoth Master Staff"
     },
     "itemType": "Staff",
     "setID": "94",
@@ -28378,7 +28886,8 @@
       "fr": "Rhizome du Tynril",
       "de": "Tynril-Rhizom",
       "es": "Rizoma de Tynril",
-      "pt": "Rizoma do Tynril"
+      "pt": "Rizoma do Tynril",
+      "it": "Tynril Rhizome"
     },
     "itemType": "Staff",
     "setID": "962",
@@ -28499,7 +29008,8 @@
       "fr": "Racine de Fécorce",
       "de": "Rindent-Wurzel",
       "es": "Raíz de diente pe-león",
-      "pt": "Raiz de Tronks"
+      "pt": "Raiz de Tronks",
+      "it": "Barkritter Root"
     },
     "itemType": "Staff",
     "setID": null,
@@ -28605,7 +29115,8 @@
       "fr": "Racine de Floribonde",
       "de": "Floribond-Wurzel",
       "es": "Raíz de floribundo",
-      "pt": "Raiz de Floramor"
+      "pt": "Raiz de Floramor",
+      "it": "Floramor Root"
     },
     "itemType": "Staff",
     "setID": null,
@@ -28666,7 +29177,8 @@
       "fr": "Kask'Arc Go",
       "de": "Schnelm-Bogen",
       "es": "Kasr'Arkol",
-      "pt": "Krarkol"
+      "pt": "Krarkol",
+      "it": "Snailmet Bow"
     },
     "itemType": "Bow",
     "setID": "96",
@@ -28752,7 +29264,8 @@
       "fr": "Poolache",
       "de": "Schnabelaxt",
       "es": "Pohoyacha",
-      "pt": "Machado do Phrango"
+      "pt": "Machado do Phrango",
+      "it": "Cheeken Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -28838,7 +29351,8 @@
       "fr": "Kidorteau",
       "de": "Kido-Klopfer",
       "es": "Kidortillo",
-      "pt": "Kidormmer"
+      "pt": "Kidormmer",
+      "it": "Kidommer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -28909,7 +29423,8 @@
       "fr": "Arc à Chon",
       "de": "Rambo Zam-Bogen",
       "es": "Arco de Lafrontera",
-      "pt": "Arco Rahm"
+      "pt": "Arco Rahm",
+      "it": "Rahm Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -28985,7 +29500,8 @@
       "fr": "Arc Oleptik",
       "de": "Ellens Bogen",
       "es": "Arco Léptico",
-      "pt": "Pequeno Arco do Sono"
+      "pt": "Pequeno Arco do Sono",
+      "it": "Little Bow Sleep"
     },
     "itemType": "Bow",
     "setID": null,
@@ -29089,7 +29605,8 @@
       "fr": "Dagues Adou",
       "de": "Okey-Do-Klinge",
       "es": "Daga Duh",
-      "pt": "Dagg'Adou"
+      "pt": "Dagg'Adou",
+      "it": "Dagger Doo"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -29198,7 +29715,8 @@
       "fr": "Dagues Eudin",
       "de": "Gaga-Dolche",
       "es": "Dagas de Unah Kabra",
-      "pt": "Adagas Gaga"
+      "pt": "Adagas Gaga",
+      "it": "Gaga Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -29285,6 +29803,9 @@
       ],
       "pt": [
         "11 a 20 de danos de armadilha"
+      ],
+      "it": [
+        "11 to 20 Trap Damage"
       ]
     },
     "conditions": {
@@ -29313,7 +29834,8 @@
       "fr": "Dagues Ruik",
       "de": "Doingsch",
       "es": "Dagas Roink",
-      "pt": "Adagas Roink"
+      "pt": "Adagas Roink",
+      "it": "Porkeez Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -29393,7 +29915,8 @@
       "fr": "Kriss Toubal",
       "de": "Kris \"Tobal\"",
       "es": "Kriss Tobal",
-      "pt": "Kriss Tobal"
+      "pt": "Kriss Tobal",
+      "it": "Kriss Tobal"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -29489,7 +30012,8 @@
       "fr": "Fuschia",
       "de": "Fuchsiateufelswildchen",
       "es": "Fucsia",
-      "pt": "Fúcsia"
+      "pt": "Fúcsia",
+      "it": "Fuchsia"
     },
     "itemType": "Sword",
     "setID": null,
@@ -29583,7 +30107,8 @@
       "fr": "Az'tech",
       "de": "Aztacke",
       "es": "Az'teqka",
-      "pt": "Az'teka"
+      "pt": "Az'teka",
+      "it": "Az'tech"
     },
     "itemType": "Sword",
     "setID": null,
@@ -29697,7 +30222,8 @@
       "fr": "Kukri Kura",
       "de": "Schwert des Teilens",
       "es": "Kukri Kura",
-      "pt": "Kukri Kura"
+      "pt": "Kukri Kura",
+      "it": "Kukri Kura"
     },
     "itemType": "Sword",
     "setID": null,
@@ -29801,7 +30327,8 @@
       "fr": "Hache Sueur Rance",
       "de": "Chiropteraxt",
       "es": "Hacha Sudor Rancio",
-      "pt": "Machado Enfermo"
+      "pt": "Machado Enfermo",
+      "it": "Sick Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -29876,7 +30403,8 @@
       "fr": "Hache Harnée",
       "de": "Beil Ixt",
       "es": "Hacha Parrada",
-      "pt": "Machado Entio"
+      "pt": "Machado Entio",
+      "it": "Michael Dougle Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -29973,6 +30501,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -29988,7 +30519,8 @@
       "fr": "La Bêche à Mel",
       "de": "Schuppen-Schippe",
       "es": "La Pala de Mel",
-      "pt": "Pá Hickory"
+      "pt": "Pá Hickory",
+      "it": "Hickory Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -30087,7 +30619,8 @@
       "fr": "Pelle Shattkitou",
       "de": "Allesfürdiekatz",
       "es": "Pala Shattkitou",
-      "pt": "Pá Shattkitou"
+      "pt": "Pá Shattkitou",
+      "it": "Shovel Shattkitou"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -30179,6 +30712,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -30194,7 +30730,8 @@
       "fr": "Pelle Aigante",
       "de": "Rokokokette Schaufel",
       "es": "Pala Garbosa",
-      "pt": "Pá de Egant"
+      "pt": "Pá de Egant",
+      "it": "Shovel Egant"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -30298,7 +30835,8 @@
       "fr": "Patte d'Ecaflip",
       "de": "Ecaflips Tatze",
       "es": "Pata de Zurcarák",
-      "pt": "Pata de Ecaflip"
+      "pt": "Pata de Ecaflip",
+      "it": "Ecaflip Paw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -30353,7 +30891,8 @@
       "fr": "Patte d'Ecaflip",
       "de": "Ecaflips Tatze",
       "es": "Pata de Zurcarák",
-      "pt": "Pata de Ecaflip"
+      "pt": "Pata de Ecaflip",
+      "it": "Ecaflip Paw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -30408,7 +30947,8 @@
       "fr": "Patte d'Ecaflip",
       "de": "Ecaflips Tatze",
       "es": "Pata de Zurcarák",
-      "pt": "Pata de Ecaflip"
+      "pt": "Pata de Ecaflip",
+      "it": "Ecaflip Paw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -30463,7 +31003,8 @@
       "fr": "Patte d'Ecaflip",
       "de": "Ecaflips Tatze",
       "es": "Pata de Zurcarák",
-      "pt": "Pata de Ecaflip"
+      "pt": "Pata de Ecaflip",
+      "it": "Ecaflip Paw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -30518,7 +31059,8 @@
       "fr": "Patte d'Ecaflip",
       "de": "Ecaflips Tatze",
       "es": "Pata de Zurcarák",
-      "pt": "Pata de Ecaflip"
+      "pt": "Pata de Ecaflip",
+      "it": "Ecaflip Paw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -30573,7 +31115,8 @@
       "fr": "Patte d'Ecaflip",
       "de": "Ecaflips Tatze",
       "es": "Pata de Zurcarák",
-      "pt": "Pata de Ecaflip"
+      "pt": "Pata de Ecaflip",
+      "it": "Ecaflip Paw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -30628,7 +31171,8 @@
       "fr": "Patte d'Ecaflip",
       "de": "Ecaflips Tatze",
       "es": "Pata de Zurcarák",
-      "pt": "Pata de Ecaflip"
+      "pt": "Pata de Ecaflip",
+      "it": "Ecaflip Paw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -30683,7 +31227,8 @@
       "fr": "Patte d'Ecaflip",
       "de": "Ecaflips Tatze",
       "es": "Pata de Zurcarák",
-      "pt": "Pata de Ecaflip"
+      "pt": "Pata de Ecaflip",
+      "it": "Ecaflip Paw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -30738,7 +31283,8 @@
       "fr": "Patte d'Ecaflip",
       "de": "Ecaflips Tatze",
       "es": "Pata de Zurcarák",
-      "pt": "Pata de Ecaflip"
+      "pt": "Pata de Ecaflip",
+      "it": "Ecaflip Paw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -30793,7 +31339,8 @@
       "fr": "Patte d'Ecaflip",
       "de": "Ecaflips Tatze",
       "es": "Pata de Zurcarák",
-      "pt": "Pata de Ecaflip"
+      "pt": "Pata de Ecaflip",
+      "it": "Ecaflip Paw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -30848,7 +31395,8 @@
       "fr": "Patte d'Ecaflip",
       "de": "Ecaflips Tatze",
       "es": "Pata de Zurcarák",
-      "pt": "Pata de Ecaflip"
+      "pt": "Pata de Ecaflip",
+      "it": "Ecaflip Paw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -30903,7 +31451,8 @@
       "fr": "Patte d'Ecaflip Parfaite",
       "de": "Ecaflips perfekte Tatze",
       "es": "Pata de Zurcarák perfecta",
-      "pt": "Pata de Ecaflip perfeita"
+      "pt": "Pata de Ecaflip perfeita",
+      "it": "Perfect Ecaflip Paw"
     },
     "itemType": "Sword",
     "setID": null,
@@ -30958,7 +31507,8 @@
       "fr": "Faux Maudite du Saigneur Guerrier",
       "de": "Verfluchte Sense des Blutkriegers",
       "es": "Hoz maldita del gran Desangrador Guerrero",
-      "pt": "Foice maldita do Guerreiro Sangrento"
+      "pt": "Foice maldita do Guerreiro Sangrento",
+      "it": "Blord Warrior's Cursed Scythe"
     },
     "itemType": "Scythe",
     "setID": null,
@@ -31069,7 +31619,8 @@
       "fr": "Épée Maudite du Saigneur Guerrier",
       "de": "Verfluchtes Schwert des Blutkriegers",
       "es": "Espada maldita del gran Desangrador Guerrero",
-      "pt": "Espada Maldita do Guerreiro Sangrento"
+      "pt": "Espada Maldita do Guerreiro Sangrento",
+      "it": "Blord Warrior's Cursed Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -31180,7 +31731,8 @@
       "fr": "Ougarteau",
       "de": "Stinkelingshammer",
       "es": "Ugartillo",
-      "pt": "Ugahrtelo"
+      "pt": "Ugahrtelo",
+      "it": "Ougaammer"
     },
     "itemType": "Hammer",
     "setID": "118",
@@ -31246,7 +31798,8 @@
       "fr": "Arc à Lamelles",
       "de": "Lamellenbogen",
       "es": "Arco de Lamelas",
-      "pt": "Arco Camal"
+      "pt": "Arco Camal",
+      "it": "Beddy Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -31340,7 +31893,8 @@
       "fr": "Baguetterelle",
       "de": "Trompetenknüppel",
       "es": "Variterela",
-      "pt": "Varinherelle"
+      "pt": "Varinherelle",
+      "it": "Wanderelle"
     },
     "itemType": "Wand",
     "setID": null,
@@ -31444,7 +31998,8 @@
       "fr": "Bâton Champmanique",
       "de": "Schamorchel-Stab",
       "es": "Báculo de Setador",
-      "pt": "Bastão Cogumânico"
+      "pt": "Bastão Cogumânico",
+      "it": "Mush Mishish Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -31548,7 +32103,8 @@
       "fr": "Couteaux à Champignons",
       "de": "Glissandolche",
       "es": "Cuchillos corta-setas",
-      "pt": "Cogu Cuteers"
+      "pt": "Cogu Cuteers",
+      "it": "Mush Cuteers"
     },
     "itemType": "Dagger",
     "setID": "119",
@@ -31634,7 +32190,8 @@
       "fr": "Hache à Lamelles",
       "de": "Lamellenaxt",
       "es": "Hacha de Lamelas",
-      "pt": "Lâmina Canni"
+      "pt": "Lâmina Canni",
+      "it": "Canni Blade"
     },
     "itemType": "Axe",
     "setID": "120",
@@ -31715,7 +32272,8 @@
       "fr": "Lame Assacre",
       "de": "Klaubtaubklinge",
       "es": "Daga 'Mberra",
-      "pt": "Faca Day'inda"
+      "pt": "Faca Day'inda",
+      "it": "Day'inda Knife"
     },
     "itemType": "Dagger",
     "setID": "109",
@@ -31809,7 +32367,8 @@
       "fr": "Pelle Emélaka",
       "de": "Seltsame Schaufel",
       "es": "Pala Emélaka",
-      "pt": "Pá Emlaka"
+      "pt": "Pá Emlaka",
+      "it": "Shovel Emlaka"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -31884,7 +32443,8 @@
       "fr": "Épée Loponèze",
       "de": "Erregender Degen",
       "es": "Espada Bama",
-      "pt": "Espada Indinz"
+      "pt": "Espada Indinz",
+      "it": "Sword Indinz"
     },
     "itemType": "Sword",
     "setID": null,
@@ -31983,7 +32543,8 @@
       "fr": "Marteau Martel",
       "de": "Martellhammer",
       "es": "Martillo Martel",
-      "pt": "Martelo Martel"
+      "pt": "Martelo Martel",
+      "it": "Hurrian Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -32029,7 +32590,8 @@
       "fr": "Marteau de Forgeur de Grattoir",
       "de": "Schmiedehammer für Kratzer",
       "es": "Martillo de forjador de rascador",
-      "pt": "Martelo de forjador de coçador"
+      "pt": "Martelo de forjador de coçador",
+      "it": "Scratcher Smith's Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -32075,7 +32637,8 @@
       "fr": "Tailladeuse de Manche",
       "de": "Handschnitzer",
       "es": "Talladora de mangos",
-      "pt": "Talhadora de cabo"
+      "pt": "Talhadora de cabo",
+      "it": "Handle Slasher"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -32116,7 +32679,8 @@
       "fr": "Épée Tulante",
       "de": "Ungestümes Schwert",
       "es": "Espada Nsiosa",
-      "pt": "Espada Trevida"
+      "pt": "Espada Trevida",
+      "it": "Exuberant Sword"
     },
     "itemType": "Sword",
     "setID": "150",
@@ -32163,6 +32727,9 @@
       ],
       "pt": [
         "Vinculado ao personagem"
+      ],
+      "it": [
+        "Linked to the character"
       ]
     },
     "conditions": {
@@ -32178,7 +32745,8 @@
       "fr": "Hache de l'initié",
       "de": "Anfänger-Axt",
       "es": "Hacha de debutante",
-      "pt": "Machado do Iniciado"
+      "pt": "Machado do Iniciado",
+      "it": "Initiate's Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -32224,7 +32792,8 @@
       "fr": "Épée Tillante",
       "de": "Schwert Vol",
       "es": "Espada de Shirvud",
-      "pt": "Espada Efferves"
+      "pt": "Espada Efferves",
+      "it": "Efferves Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -32285,7 +32854,8 @@
       "fr": "Grésilosceptre",
       "de": "Hagelszepter",
       "es": "Granizetro",
-      "pt": "Cetro de Granizo"
+      "pt": "Cetro de Granizo",
+      "it": "Hail Sceptre"
     },
     "itemType": "Staff",
     "setID": null,
@@ -32386,7 +32956,8 @@
       "fr": "Sabre de Ben le Ripate",
       "de": "Schwert von Ben dem Ripaten",
       "es": "Espada de Ben el Ripata",
-      "pt": "Sabre de Ben, o Ripata"
+      "pt": "Sabre de Ben, o Ripata",
+      "it": "Buck Anear's Sabre"
     },
     "itemType": "Sword",
     "setID": "178",
@@ -32487,7 +33058,8 @@
       "fr": "Sabre Heutelle",
       "de": "Zerreißender Schlusssäbel",
       "es": "Sable Heutelle",
-      "pt": "Sabre Alas"
+      "pt": "Sabre Alas",
+      "it": "Sabre Aces"
     },
     "itemType": "Sword",
     "setID": null,
@@ -32598,7 +33170,8 @@
       "fr": "Hache Haimenu",
       "de": "Kleine Geh-Axt \"S\"",
       "es": "Hacha Haimenu",
-      "pt": "Machado Loso"
+      "pt": "Machado Loso",
+      "it": "Axe Cidental"
     },
     "itemType": "Axe",
     "setID": null,
@@ -32708,7 +33281,8 @@
       "fr": "Hache du Fancrôme",
       "de": "Axt der Phantomabbe",
       "es": "Hacha de fanclasma",
-      "pt": "Machado de Pirata Talklyka"
+      "pt": "Machado de Pirata Talklyka",
+      "it": "Talklyka Pirate Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -32818,7 +33392,8 @@
       "fr": "Arc Tangente",
       "de": "Arkus Tangens",
       "es": "Arco Tangente",
-      "pt": "Arco Arctangent"
+      "pt": "Arco Arctangent",
+      "it": "Arctangent Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -32925,6 +33500,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -32958,7 +33536,8 @@
       "fr": "Pelle Tonedjone",
       "de": "Schaufel Tonjon",
       "es": "Pala Tonhdjons",
-      "pt": "Pá Tonjon"
+      "pt": "Pá Tonjon",
+      "it": "Shovel Tonjon"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -33069,7 +33648,8 @@
       "fr": "Youyettes",
       "de": "Yoyo-Dolch",
       "es": "Yuyetas",
-      "pt": "Youyettes"
+      "pt": "Youyettes",
+      "it": "Youyettes"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -33202,7 +33782,8 @@
       "fr": "Marteau R'Gnole",
       "de": "Handliches Patschämmerchen",
       "es": "Martillo R'Gnole",
-      "pt": "Martelo Slammer"
+      "pt": "Martelo Slammer",
+      "it": "Walloping Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -33326,7 +33907,8 @@
       "fr": "Marteau de la Vigie Pirate",
       "de": "Hammer der Phantomwache",
       "es": "Martillo de Piratalaya",
-      "pt": "Martelo do Vigi Pirata"
+      "pt": "Martelo do Vigi Pirata",
+      "it": "Vigi Pirate Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -33426,7 +34008,8 @@
       "fr": "Baguette Hernuement",
       "de": "Stab Niesn",
       "es": "Varita Estornudera",
-      "pt": "Varinha Estimulatória"
+      "pt": "Varinha Estimulatória",
+      "it": "Sternutatory Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -33550,7 +34133,8 @@
       "fr": "Bâton K'Tueuh",
       "de": "Sahne-Keulchen",
       "es": "Bastón K'Tueuh",
-      "pt": "Cajado Unchewa"
+      "pt": "Cajado Unchewa",
+      "it": "Unchewa Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -33660,7 +34244,8 @@
       "fr": "Bâton du Shamansot",
       "de": "Stecken des Ping Schamanen",
       "es": "Bastón de chamángüino",
-      "pt": "Bastão do Xamagwin"
+      "pt": "Bastão do Xamagwin",
+      "it": "Shaman Pingwin Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -33766,7 +34351,8 @@
       "fr": "Lance du Harpirate",
       "de": "Phantomharpirats Wurfspeer",
       "es": "Lanza de harpirata",
-      "pt": "Lança do Arpirata"
+      "pt": "Lança do Arpirata",
+      "it": "Harpy Pirate Lance"
     },
     "itemType": "Lance",
     "setID": "193",
@@ -33880,7 +34466,8 @@
       "fr": "Hache du Korriandre",
       "de": "Versteinerte Korrianderaxt",
       "es": "Hacha de Cil",
-      "pt": "Machado do Kwentro"
+      "pt": "Machado do Kwentro",
+      "it": "Korriander Axe"
     },
     "itemType": "Axe",
     "setID": "187",
@@ -33994,7 +34581,8 @@
       "fr": "Épée Kadille",
       "de": "Kehrwert-Schwert",
       "es": "Espada Kadilla",
-      "pt": "Lâmina de Pecadilho"
+      "pt": "Lâmina de Pecadilho",
+      "it": "Peccadillo Blade"
     },
     "itemType": "Sword",
     "setID": null,
@@ -34108,7 +34696,8 @@
       "fr": "Épée Kari",
       "de": "Viech-Schwert",
       "es": "Espada Karie",
-      "pt": "Lâmina de Pecari"
+      "pt": "Lâmina de Pecari",
+      "it": "Peccary Blade"
     },
     "itemType": "Sword",
     "setID": null,
@@ -34183,7 +34772,8 @@
       "fr": "Épée Toche",
       "de": "Zitterschwert",
       "es": "Espada Lingüe",
-      "pt": "Espada Marela"
+      "pt": "Espada Marela",
+      "it": "Giger's Nightmare Blade"
     },
     "itemType": "Sword",
     "setID": null,
@@ -34307,7 +34897,8 @@
       "fr": "Marteau Racle",
       "de": "Futur-Hammer",
       "es": "Martillo Ráculo",
-      "pt": "Martelo Ráculo"
+      "pt": "Martelo Ráculo",
+      "it": "Oracular Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -34426,7 +35017,8 @@
       "fr": "Marteau Reine",
       "de": "Königin der Hämmer",
       "es": "Martillo Reina",
-      "pt": "Martelo Thunderbuff"
+      "pt": "Martelo Thunderbuff",
+      "it": "Thunderbuff Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -34545,7 +35137,8 @@
       "fr": "Marteau du Glouragan",
       "de": "Barbärischamahammer",
       "es": "Martillo de golornado",
-      "pt": "Martelo de Glursonado"
+      "pt": "Martelo de Glursonado",
+      "it": "Rampant Bearbarian Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -34674,7 +35267,8 @@
       "fr": "Bâton Brelle",
       "de": "Schirmstock",
       "es": "Bastón Pauls",
-      "pt": "Cajado Guarda-Sol"
+      "pt": "Cajado Guarda-Sol",
+      "it": "Sunshade Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -34774,7 +35368,8 @@
       "fr": "Bâton Brageut",
       "de": "Schattenstock",
       "es": "Bastón Tería",
-      "pt": "Cajado Cúmulo-Nimbo"
+      "pt": "Cajado Cúmulo-Nimbo",
+      "it": "Stormcloud Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -34884,7 +35479,8 @@
       "fr": "Dagues Imauve",
       "de": "Doppelklingen-Dolche",
       "es": "Dagas Malvadiscas",
-      "pt": "Adagas Marchimelou"
+      "pt": "Adagas Marchimelou",
+      "it": "Mallow Marsh Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -34974,7 +35570,8 @@
       "fr": "Dagues Açantes",
       "de": "Nervtöt-Dolch",
       "es": "Dagas Ultimátum",
-      "pt": "Adagas Tura"
+      "pt": "Adagas Tura",
+      "it": "Aggravating Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -35080,7 +35677,8 @@
       "fr": "Dagues Hirr",
       "de": "Owi-Dolche",
       "es": "Dagas Hirr",
-      "pt": "Adagas Daguirre"
+      "pt": "Adagas Daguirre",
+      "it": "Godswrath Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -35199,7 +35797,8 @@
       "fr": "Arc Ontanporin",
       "de": "Mos Dern-Bogen",
       "es": "Arco Traficante",
-      "pt": "Arco Temporâneo"
+      "pt": "Arco Temporâneo",
+      "it": "Contemporary Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -35319,7 +35918,8 @@
       "fr": "Arc Hétype",
       "de": "Bogen Erisch",
       "es": "Arco coa",
-      "pt": "Arco Hétipo"
+      "pt": "Arco Hétipo",
+      "it": "Archetypal Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -35420,7 +36020,8 @@
       "fr": "Arc Ahique",
       "de": "Ristuks Kahl-Bogen",
       "es": "Arc aico",
-      "pt": "Arco Arcaico"
+      "pt": "Arco Arcaico",
+      "it": "Archaic Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -35549,7 +36150,8 @@
       "fr": "Baguette Nolog",
       "de": "Offizier-Stab",
       "es": "Varita M'pón",
-      "pt": "Varinha Etnologista"
+      "pt": "Varinha Etnologista",
+      "it": "Ethnologist Wand"
     },
     "itemType": "Wand",
     "setID": "965",
@@ -35673,7 +36275,8 @@
       "fr": "Baguette Hernelle",
       "de": "Ewigerte",
       "es": "Varita Bakera",
-      "pt": "Varinha Eterna"
+      "pt": "Varinha Eterna",
+      "it": "Eternal Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -35802,7 +36405,8 @@
       "fr": "Baguette Hique",
       "de": "Gerte \"Thiek\"",
       "es": "Varita Liana",
-      "pt": "Varinha Ética"
+      "pt": "Varinha Ética",
+      "it": "Ethical Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -35926,7 +36530,8 @@
       "fr": "Hache Achinecride",
       "de": "Axt Assinskrid",
       "es": "Hacha Chinscryd",
-      "pt": "Machado Assinscrede"
+      "pt": "Machado Assinscrede",
+      "it": "Assinscrede Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -36050,7 +36655,8 @@
       "fr": "Hache Téroïde",
       "de": "Axt Heroid",
       "es": "Hacha Teroyde",
-      "pt": "Machado Teroid"
+      "pt": "Machado Teroid",
+      "it": "Teroid Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -36179,7 +36785,8 @@
       "fr": "Pelle Dorado",
       "de": "Schaufel Dorado",
       "es": "Pala dorada",
-      "pt": "Pá Dourada"
+      "pt": "Pá Dourada",
+      "it": "Dorado Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -36289,7 +36896,8 @@
       "fr": "Pelle Fik",
       "de": "Schaufel 'Bisch'",
       "es": "Pala elfica",
-      "pt": "Pá Gnoma"
+      "pt": "Pá Gnoma",
+      "it": "Elven Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -36399,7 +37007,8 @@
       "fr": "Pelle Vétik",
       "de": "Schaufel Vetia",
       "es": "Pala Usana",
-      "pt": "Pá Vetic"
+      "pt": "Pá Vetic",
+      "it": "Vetic Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -36528,7 +37137,8 @@
       "fr": "Pelle de Stroud émoussée",
       "de": "Struuts stumpfe Schaufel",
       "es": "Pala desafilada de Stroud",
-      "pt": "Pá de Stroud desgastada"
+      "pt": "Pá de Stroud desgastada",
+      "it": "Stroud's Blunt Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -36591,7 +37201,8 @@
       "fr": "Hache Hélème",
       "de": "Rabb-Axt",
       "es": "Hacha Depé",
-      "pt": "Machado Brado"
+      "pt": "Machado Brado",
+      "it": "Projects Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -36705,7 +37316,8 @@
       "fr": "Sceptre du Kanniboul Ebil",
       "de": "Kanniball Aahdes Zepter",
       "es": "Cetro del kaníbola Daldrrak",
-      "pt": "Cetro do Kanibola Phora"
+      "pt": "Cetro do Kanibola Phora",
+      "it": "Kanniball Andchain's Sceptre"
     },
     "itemType": "Staff",
     "setID": "194",
@@ -36771,7 +37383,8 @@
       "fr": "Kwakwalame",
       "de": "Kwackatauklinge",
       "es": "Espada de Kwoknan",
-      "pt": "Lâmina de Kwakwa"
+      "pt": "Lâmina de Kwakwa",
+      "it": "Kwakwa Blade"
     },
     "itemType": "Sword",
     "setID": "196",
@@ -36847,7 +37460,8 @@
       "fr": "Le Thanos",
       "de": "Der Thanos",
       "es": "Bastón Yka",
-      "pt": "Bastão de Thanos"
+      "pt": "Bastão de Thanos",
+      "it": "Thanos's Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -36973,7 +37587,8 @@
       "fr": "Mourtheau",
       "de": "Wollgemuthammer",
       "es": "Marmutillo",
-      "pt": "Martelo Mastic"
+      "pt": "Martelo Mastic",
+      "it": "Mastic Hammer"
     },
     "itemType": "Hammer",
     "setID": "205",
@@ -37069,7 +37684,8 @@
       "fr": "Baguette de Frigostine",
       "de": "Frigostinchenstäbchen",
       "es": "Varita de Frigostina",
-      "pt": "Varinha de Frigostina"
+      "pt": "Varinha de Frigostina",
+      "it": "Frigostine's Wand"
     },
     "itemType": "Wand",
     "setID": "206",
@@ -37185,7 +37801,8 @@
       "fr": "Bâton des Prophètes",
       "de": "Stock des Propheten",
       "es": "Bastón de los profetas",
-      "pt": "Bastão dos Profetas"
+      "pt": "Bastão dos Profetas",
+      "it": "Staff of the Prophets"
     },
     "itemType": "Staff",
     "setID": "208",
@@ -37296,7 +37913,8 @@
       "fr": "Arc de Guten Tak",
       "de": "Guten Tarks Bogen",
       "es": "Arco de Gwen Astarde",
-      "pt": "Arco de Guten Tak"
+      "pt": "Arco de Guten Tak",
+      "it": "Guten Tak's Bow"
     },
     "itemType": "Bow",
     "setID": "209",
@@ -37412,7 +38030,8 @@
       "fr": "Pelle du Professeur Xa",
       "de": "Professor Xas Schaufel",
       "es": "Pala del profesor Xa",
-      "pt": "Pá do Professor Xa"
+      "pt": "Pá do Professor Xa",
+      "it": "Professor Xa's Shovel"
     },
     "itemType": "Shovel",
     "setID": "211",
@@ -37541,7 +38160,8 @@
       "fr": "Épée Gloursonne",
       "de": "Barbärenstarkes Schwert",
       "es": "Espada golosona",
-      "pt": "Espada Glursa"
+      "pt": "Espada Glursa",
+      "it": "Bearbaric Sword"
     },
     "itemType": "Sword",
     "setID": "212",
@@ -37647,7 +38267,8 @@
       "fr": "Bâton de Daïgoro",
       "de": "Daigoros Wanderstock",
       "es": "Bastón de Daigorobo",
-      "pt": "Bastão de Daigoro"
+      "pt": "Bastão de Daigoro",
+      "it": "Daggero's Staff"
     },
     "itemType": "Staff",
     "setID": "229",
@@ -37728,7 +38349,8 @@
       "fr": "Marteau du Chafer Draugr",
       "de": "Hammer des Draugr-Chafers",
       "es": "Martillo de chafer draugr",
-      "pt": "Martelo do Chafer Draugr"
+      "pt": "Martelo do Chafer Draugr",
+      "it": "Draugur Chafer Hammer"
     },
     "itemType": "Hammer",
     "setID": "239",
@@ -37794,7 +38416,8 @@
       "fr": "Épée d'Otomaï",
       "de": "Otomaïs Schwert",
       "es": "Espada de Otomai",
-      "pt": "Espada de Otomai"
+      "pt": "Espada de Otomai",
+      "it": "Otomai's Sword"
     },
     "itemType": "Sword",
     "setID": "241",
@@ -37895,7 +38518,8 @@
       "fr": "Canne Hassukre",
       "de": "Zukas Stange",
       "es": "Caña Dashuka",
-      "pt": "Bastão Diassukar"
+      "pt": "Bastão Diassukar",
+      "it": "Splinter Sprinter"
     },
     "itemType": "Staff",
     "setID": null,
@@ -38010,7 +38634,8 @@
       "fr": "Râtrouille",
       "de": "Rechüwbiss",
       "es": "Rastrillo calabafobia",
-      "pt": "Ancimedo"
+      "pt": "Ancimedo",
+      "it": "Punkirake"
     },
     "itemType": "Shovel",
     "setID": "252",
@@ -38111,7 +38736,8 @@
       "fr": "Baguette du Grand Glucid",
       "de": "Stab des Scharfsinnigen Gwichtels",
       "es": "Varita glucídica",
-      "pt": "Varinha do Grande Glucid"
+      "pt": "Varinha do Grande Glucid",
+      "it": "Great Sweet Gum Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -38213,6 +38839,9 @@
       ],
       "pt": [
         "Alguém está te seguindo!"
+      ],
+      "it": [
+        "Someone's following you!"
       ]
     },
     "conditions": {
@@ -38228,7 +38857,8 @@
       "fr": "Marteau d'Henual",
       "de": "Henuals Hammer",
       "es": "Martillo de Henual",
-      "pt": "Martelo de Henual"
+      "pt": "Martelo de Henual",
+      "it": "Henual's Hammer"
     },
     "itemType": "Hammer",
     "setID": "256",
@@ -38362,7 +38992,8 @@
       "fr": "Rouleau à Pâtisserie d'Aermyne",
       "de": "Aermynes Nudelholz",
       "es": "Rodillo de pastelero de Aermyn",
-      "pt": "Rolo de Massa de Armyna"
+      "pt": "Rolo de Massa de Armyna",
+      "it": "Aermyne's Rolling Pin"
     },
     "itemType": "Staff",
     "setID": "262",
@@ -38488,7 +39119,8 @@
       "fr": "Couteau de Mer",
       "de": "Meeresmesser",
       "es": "Navaja",
-      "pt": "Faca Marinha"
+      "pt": "Faca Marinha",
+      "it": "Sea Knife"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -38589,7 +39221,8 @@
       "fr": "Canne Harr",
       "de": "Stock \"Ente\"",
       "es": "Bastoncito Feho",
-      "pt": "Bastão Patinfey"
+      "pt": "Bastão Patinfey",
+      "it": "Mallard's Mallet"
     },
     "itemType": "Staff",
     "setID": null,
@@ -38718,7 +39351,8 @@
       "fr": "Hache Ériphe",
       "de": "Axt des Sheriffs",
       "es": "Hacha Riff",
-      "pt": "Machado Nerrobado"
+      "pt": "Machado Nerrobado",
+      "it": "Riff Hatchet"
     },
     "itemType": "Axe",
     "setID": null,
@@ -38847,7 +39481,8 @@
       "fr": "Bêche Asse",
       "de": "Spaten des Asselschlamms",
       "es": "Laya zonca",
-      "pt": "Pá Tife"
+      "pt": "Pá Tife",
+      "it": "Stilted Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -38957,7 +39592,8 @@
       "fr": "Épée du Granduk",
       "de": "Obu-Bobub - Schwert",
       "es": "Espada de bubobubo",
-      "pt": "Espada do Bububo"
+      "pt": "Espada do Bububo",
+      "it": "Bubotron Sword"
     },
     "itemType": "Sword",
     "setID": "276",
@@ -39058,7 +39694,8 @@
       "fr": "Dagues Ricol",
       "de": "Bauernmesser",
       "es": "Dagas Grícolas",
-      "pt": "Adaga Grícola"
+      "pt": "Adaga Grícola",
+      "it": "Joyous Seizers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -39173,7 +39810,8 @@
       "fr": "Dagues Érhy",
       "de": "Dolche des Veteranen",
       "es": "Dagas Guerridas",
-      "pt": "Adaga Guerrida"
+      "pt": "Adaga Guerrida",
+      "it": "Flinty Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -39297,7 +39935,8 @@
       "fr": "Hache Euvale",
       "de": "Axt \"Ritt\"",
       "es": "Hacha Ballo",
-      "pt": "Machado Mado"
+      "pt": "Machado Mado",
+      "it": "Tomahorse"
     },
     "itemType": "Axe",
     "setID": null,
@@ -39416,7 +40055,8 @@
       "fr": "Pelle Vice",
       "de": "Schaufel Wiss",
       "es": "Pala Pelvis Ley",
-      "pt": "Pá Pélvis"
+      "pt": "Pá Pélvis",
+      "it": "Ground Dog"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -39535,7 +40175,8 @@
       "fr": "Rapière aux Glyphes",
       "de": "Rapier O'Glyphe",
       "es": "Alfanje Roglifico",
-      "pt": "Rapieira Oglifos"
+      "pt": "Rapieira Oglifos",
+      "it": "Gilbert G. Rapier"
     },
     "itemType": "Sword",
     "setID": null,
@@ -39645,7 +40286,8 @@
       "fr": "Arc Honte",
       "de": "Bogen des Archonten",
       "es": "Arco Honte",
-      "pt": "Arco Honte"
+      "pt": "Arco Honte",
+      "it": "Archon's Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -39784,7 +40426,8 @@
       "fr": "Bâton Beau",
       "de": "Grabstock",
       "es": "Bastón Ba",
-      "pt": "Bastumba"
+      "pt": "Bastumba",
+      "it": "Sepulchral Sceptre"
     },
     "itemType": "Staff",
     "setID": null,
@@ -39907,7 +40550,8 @@
       "fr": "Masse Ossiale",
       "de": "Hammer \"Laizosa\"",
       "es": "Maza Tixosial",
-      "pt": "Bastão Associal"
+      "pt": "Bastão Associal",
+      "it": "Sanockout Stick"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -40036,7 +40680,8 @@
       "fr": "Bâton Fracass",
       "de": "Schmetterstecken",
       "es": "Bastón Kaskador",
-      "pt": "Bastão Strondo"
+      "pt": "Bastão Strondo",
+      "it": "Crashbang Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -40148,6 +40793,9 @@
       ],
       "pt": [
         "Alguém está te seguindo!"
+      ],
+      "it": [
+        "Someone's following you!"
       ]
     },
     "conditions": {
@@ -40163,7 +40811,8 @@
       "fr": "Bâtonnet Ronien",
       "de": "Despostock",
       "es": "Varita Nairoen",
-      "pt": "Bastão Neroniano"
+      "pt": "Bastão Neroniano",
+      "it": "Nerotic Wand"
     },
     "itemType": "Wand",
     "setID": "288",
@@ -40282,7 +40931,8 @@
       "fr": "Hache Rot",
       "de": "Axt Solution",
       "es": "Hacha Jazo",
-      "pt": "Machado Afiado"
+      "pt": "Machado Afiado",
+      "it": "Slashen Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -40373,7 +41023,8 @@
       "fr": "Marteau du Juge Lou",
       "de": "Hammer der Richterin Lu",
       "es": "Mazo de la jueza Lu",
-      "pt": "Martelo da Juíza Lu"
+      "pt": "Martelo da Juíza Lu",
+      "it": "Judge Lou's Gavel"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -40475,6 +41126,9 @@
       ],
       "pt": [
         "Alguém está te seguindo!"
+      ],
+      "it": [
+        "Someone's following you!"
       ]
     },
     "conditions": {
@@ -40490,7 +41144,8 @@
       "fr": "Arc Lequin",
       "de": "Harlekinetischer Bogen",
       "es": "Arco Lombina",
-      "pt": "Arclequim"
+      "pt": "Arclequim",
+      "it": "Bowfoon"
     },
     "itemType": "Bow",
     "setID": "300",
@@ -40576,7 +41231,8 @@
       "fr": "Clef à Molette",
       "de": "Schlüssel des Schraubenverdrehers",
       "es": "Llave fija",
-      "pt": "Chave Diboka"
+      "pt": "Chave Diboka",
+      "it": "Spanner's Wrench"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -40677,7 +41333,8 @@
       "fr": "Kalypsoton",
       "de": "Nautilustecken",
       "es": "Basnórquel",
-      "pt": "Bastonáutico"
+      "pt": "Bastonáutico",
+      "it": "Seestaff"
     },
     "itemType": "Staff",
     "setID": "313",
@@ -40778,7 +41435,8 @@
       "fr": "Marteau des Anciens Steamers",
       "de": "Hammer der Ur-Steamer",
       "es": "Martillo de los antiguos steamers",
-      "pt": "Martelo dos Antigos Steamers"
+      "pt": "Martelo dos Antigos Steamers",
+      "it": "Ancient Foggernaut Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -40917,7 +41575,8 @@
       "fr": "Arc de Flèche Mauve",
       "de": "Mauve Arrow - Bogen",
       "es": "Arco de Flecha Malva",
-      "pt": "Arco do Arqueiro Violeta"
+      "pt": "Arco do Arqueiro Violeta",
+      "it": "Violet Arrow Bow"
     },
     "itemType": "Bow",
     "setID": "324",
@@ -41008,7 +41667,8 @@
       "fr": "Baguette de Malléfisk",
       "de": "Unruhtruhs Stab",
       "es": "Varita de Malefíscof",
-      "pt": "Varinha de Malefisko"
+      "pt": "Varinha de Malefisko",
+      "it": "Brutatax Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -41114,7 +41774,8 @@
       "fr": "Marteau Phossile",
       "de": "Griesengads Hammer",
       "es": "Martillo de Perfósil",
-      "pt": "Martelo do Perfuror"
+      "pt": "Martelo do Perfuror",
+      "it": "Drhossil Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -41228,7 +41889,8 @@
       "fr": "Pelle de Nidas",
       "de": "König Nidas' Schaufel",
       "es": "Pala de Nidas",
-      "pt": "Pá de Nidas"
+      "pt": "Pá de Nidas",
+      "it": "Nidas Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -41357,7 +42019,8 @@
       "fr": "Dagues de Srambad",
       "de": "Srambad-Dolche",
       "es": "Dagas de Sramvil",
-      "pt": "Adagas de Sramvil"
+      "pt": "Adagas de Sramvil",
+      "it": "Srambad Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -41466,7 +42129,8 @@
       "fr": "Pelle de la Cour Sombre",
       "de": "Schaufel aus Düsterhof",
       "es": "Pala de cortesano tenebroso",
-      "pt": "Pá da Corte Sombria"
+      "pt": "Pá da Corte Sombria",
+      "it": "Dark Court Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -41562,7 +42226,8 @@
       "fr": "Arc Nécrotique",
       "de": "Nekrotenbogen",
       "es": "Arco necrótico",
-      "pt": "Arco Entomortis"
+      "pt": "Arco Entomortis",
+      "it": "Necrotick Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -41686,7 +42351,8 @@
       "fr": "Épée de la Reine des Voleurs",
       "de": "Schwert der Königin der Diebe",
       "es": "Espada de la Reina de los Ladrones",
-      "pt": "Espada da Rainha dos Ladrões"
+      "pt": "Espada da Rainha dos Ladrões",
+      "it": "Queen of Thieves' Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -41810,7 +42476,8 @@
       "fr": "Baguette des égarés",
       "de": "Stab der Verlorenen",
       "es": "Varita de los idos",
-      "pt": "Varinha dos Perdidos"
+      "pt": "Varinha dos Perdidos",
+      "it": "Fugitive Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -41929,7 +42596,8 @@
       "fr": "Marteau des égarés",
       "de": "Hammer der Verlorenen",
       "es": "Martillo de los idos",
-      "pt": "Martelo dos perdidos"
+      "pt": "Martelo dos perdidos",
+      "it": "Fugitive Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -42078,7 +42746,8 @@
       "fr": "Plumeau Bil",
       "de": "Staubwedel \"Mutierbar\"",
       "es": "Pluma Bil",
-      "pt": "Pluma Bil"
+      "pt": "Pluma Bil",
+      "it": "Plumobile"
     },
     "itemType": "Axe",
     "setID": null,
@@ -42179,7 +42848,8 @@
       "fr": "Baguette Rikiki",
       "de": "Winzlingsstab",
       "es": "Varita pitusa",
-      "pt": "Varinha Miúda"
+      "pt": "Varinha Miúda",
+      "it": "Rikiki Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -42245,7 +42915,8 @@
       "fr": "Vieille Branche du Chêne Mou",
       "de": "Stock Weich-Eichs",
       "es": "Bastón del Roble Blando",
-      "pt": "Bastão do Carvalho Mole"
+      "pt": "Bastão do Carvalho Mole",
+      "it": "Soft Oak Staff"
     },
     "itemType": "Staff",
     "setID": "66",
@@ -42346,7 +43017,8 @@
       "fr": "Marteau de Hargnok",
       "de": "Xankipus Hammer",
       "es": "Martillo de Likantrabioso",
-      "pt": "Martelo de Fenrigor"
+      "pt": "Martelo de Fenrigor",
+      "it": "Hargnok's Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -42397,7 +43069,8 @@
       "fr": "Marteau de Moon",
       "de": "Moons Hammer",
       "es": "Martillo de Moon",
-      "pt": "Martelo de Moon"
+      "pt": "Martelo de Moon",
+      "it": "Moon Hammer"
     },
     "itemType": "Hammer",
     "setID": "379",
@@ -42468,7 +43141,8 @@
       "fr": "Épée du Bretteur Céleste",
       "de": "Schwert des Himmlischen Haudegens",
       "es": "Espada de espadachín celeste",
-      "pt": "Espada do Espadachim Celeste"
+      "pt": "Espada do Espadachim Celeste",
+      "it": "Celestial Swashbuckler Sword"
     },
     "itemType": "Sword",
     "setID": "381",
@@ -42569,7 +43243,8 @@
       "fr": "Bâton de Zatoïshwan",
       "de": "Zatoïshwans Stecken",
       "es": "Bastón de Zatoïshwan",
-      "pt": "Bastão de Zatoishwan"
+      "pt": "Bastão de Zatoishwan",
+      "it": "Zatoishwan's Staff"
     },
     "itemType": "Staff",
     "setID": "380",
@@ -42675,7 +43350,8 @@
       "fr": "Bouquet de Roses démoniaques",
       "de": "Dämonenrosenstrauß",
       "es": "Ramo de rosas demoníacas",
-      "pt": "Buquê de rosas demoníacas"
+      "pt": "Buquê de rosas demoníacas",
+      "it": "Bouquet of Demonic Roses"
     },
     "itemType": "Sword",
     "setID": null,
@@ -42716,7 +43392,8 @@
       "fr": "Sabres d'Atcham",
       "de": "Atchams Säbel",
       "es": "Sables de Atcham",
-      "pt": "Sabres do Atcham"
+      "pt": "Sabres do Atcham",
+      "it": "Atcham Sabres"
     },
     "itemType": "Sword",
     "setID": "406",
@@ -42860,7 +43537,8 @@
       "fr": "Épée de Ush",
       "de": "Ushs Schwert",
       "es": "Espada de Ush",
-      "pt": "Espada do Ush"
+      "pt": "Espada do Ush",
+      "it": "Ush's Sword"
     },
     "itemType": "Sword",
     "setID": "407",
@@ -42966,7 +43644,8 @@
       "fr": "Arc du Chalœil",
       "de": "Maunzaugs Bogen",
       "es": "Arco de Miauvizor",
-      "pt": "Arco do Gatolho"
+      "pt": "Arco do Gatolho",
+      "it": "Catseye Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -43067,7 +43746,8 @@
       "fr": "Sceptre du Roi Joueur",
       "de": "Spielerkönig-Zepter",
       "es": "Cetro del rey jugador",
-      "pt": "Cetro do Rei Jogador"
+      "pt": "Cetro do Rei Jogador",
+      "it": "King Playa's Scepta"
     },
     "itemType": "Staff",
     "setID": null,
@@ -43168,7 +43848,8 @@
       "fr": "Hache du Chalœil",
       "de": "Maunzaug-Axt",
       "es": "Hacha de Miauvizor",
-      "pt": "Machado do Gatolho"
+      "pt": "Machado do Gatolho",
+      "it": "Catseye Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -43307,7 +43988,8 @@
       "fr": "Bâthon",
       "de": "Thunstock",
       "es": "Basthón",
-      "pt": "Bastum"
+      "pt": "Bastum",
+      "it": "Bitrydent"
     },
     "itemType": "Staff",
     "setID": null,
@@ -43431,7 +44113,8 @@
       "fr": "Baguette Range",
       "de": "Seltsamer Stab",
       "es": "Varita Nómala",
-      "pt": "Varinha esquisita"
+      "pt": "Varinha esquisita",
+      "it": "Strange Wand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -43550,7 +44233,8 @@
       "fr": "Arc de Koutoulou",
       "de": "Bogen von Kutuluh",
       "es": "Arco de Kutulú",
-      "pt": "Arco do Katulu"
+      "pt": "Arco do Katulu",
+      "it": "Koutoulou Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -43664,7 +44348,8 @@
       "fr": "Harpelle",
       "de": "Schippune",
       "es": "Palarpón",
-      "pt": "Parpão"
+      "pt": "Parpão",
+      "it": "Shorpoon"
     },
     "itemType": "Shovel",
     "setID": "959",
@@ -43760,7 +44445,8 @@
       "fr": "Manthache",
       "de": "Mantaxt",
       "es": "Hachamanta",
-      "pt": "Macharraia"
+      "pt": "Macharraia",
+      "it": "Mantax"
     },
     "itemType": "Axe",
     "setID": "956",
@@ -43841,7 +44527,8 @@
       "fr": "Épouvante",
       "de": "Gruselschwert",
       "es": "Espadantesca",
-      "pt": "Espavorida"
+      "pt": "Espavorida",
+      "it": "Terrord"
     },
     "itemType": "Sword",
     "setID": null,
@@ -43955,7 +44642,8 @@
       "fr": "Dagoulinantes",
       "de": "Glibberdolche",
       "es": "Dagoteras",
-      "pt": "Adagosmentas"
+      "pt": "Adagosmentas",
+      "it": "Daguanos"
     },
     "itemType": "Dagger",
     "setID": "958",
@@ -44036,7 +44724,8 @@
       "fr": "Marteau R'ture",
       "de": "Kwaalhammer",
       "es": "Martillo Martirio",
-      "pt": "Martelo martírio"
+      "pt": "Martelo martírio",
+      "it": "Hammerture"
     },
     "itemType": "Hammer",
     "setID": "957",
@@ -44122,7 +44811,8 @@
       "fr": "Hache du Mantiscore",
       "de": "Mantiskor-Axt",
       "es": "Hacha de Mantícoro",
-      "pt": "Machado do Mantiscorp"
+      "pt": "Machado do Mantiscorp",
+      "it": "Mantiscore Axe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -44193,7 +44883,8 @@
       "fr": "Masse Boulépique",
       "de": "Pieksballkeule",
       "es": "Mazo de bolapincho",
-      "pt": "Marreta Bolespinho"
+      "pt": "Marreta Bolespinho",
+      "it": "Spykbal Mace"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -44279,7 +44970,8 @@
       "fr": "Dagues Cacterre",
       "de": "Kakteendolche",
       "es": "Dagas cacterras",
-      "pt": "Adagas de Cacterra"
+      "pt": "Adagas de Cacterra",
+      "it": "Castuc Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -44365,7 +45057,8 @@
       "fr": "Maracassabre",
       "de": "Maracadegen",
       "es": "Maracasable",
-      "pt": "Maracassabre"
+      "pt": "Maracassabre",
+      "it": "Maracassabre"
     },
     "itemType": "Sword",
     "setID": null,
@@ -44461,7 +45154,8 @@
       "fr": "Pyraguette",
       "de": "Pyrastab",
       "es": "Piramvarita",
-      "pt": "Varinhâmide"
+      "pt": "Varinhâmide",
+      "it": "Pyraring"
     },
     "itemType": "Wand",
     "setID": "955",
@@ -44572,7 +45266,8 @@
       "fr": "Héqache",
       "de": "Heqaxt",
       "es": "Hekacha",
-      "pt": "Heqachado"
+      "pt": "Heqachado",
+      "it": "Heqaxe"
     },
     "itemType": "Axe",
     "setID": "954",
@@ -44693,7 +45388,8 @@
       "fr": "Hachoirs de Viandargh",
       "de": "Hackmesser von Mätzgargh",
       "es": "Machetes de carghnicero",
-      "pt": "Moedores de Carnargh"
+      "pt": "Moedores de Carnargh",
+      "it": "Hunderp Cleavers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -44789,7 +45485,8 @@
       "fr": "Épée Langue de Feu",
       "de": "Feuerzungenschwert",
       "es": "Espada lengua de fuego",
-      "pt": "Espada Língua Ardente"
+      "pt": "Espada Língua Ardente",
+      "it": "Fiery Tongue Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -44851,6 +45548,10 @@
       "pt": [
         "Vinculado ao personagem",
         ""
+      ],
+      "it": [
+        "Linked to the character",
+        ""
       ]
     },
     "conditions": {
@@ -44866,7 +45567,8 @@
       "fr": "Pelle de Katrepat",
       "de": "Vierpfötchen-Schaufel",
       "es": "Pala de Kuatropatas",
-      "pt": "Pá de Dezist"
+      "pt": "Pá de Dezist",
+      "it": "Forfut Shovel"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -44980,7 +45682,8 @@
       "fr": "Marteau de Katrepat",
       "de": "Vierpfötchen-Hammer",
       "es": "Martillo de Kuatropatas",
-      "pt": "Martelo de Dezist"
+      "pt": "Martelo de Dezist",
+      "it": "Forfut Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -45109,7 +45812,8 @@
       "fr": "Épée Langue de Feu Réanimée",
       "de": "Wiederbelebtes Feuerzungenschwert",
       "es": "Espada lengua de fuego reanimada",
-      "pt": "Espada Língua Ardente Reanimada"
+      "pt": "Espada Língua Ardente Reanimada",
+      "it": "Revived Fiery Tongue Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -45145,6 +45849,9 @@
       ],
       "pt": [
         "Vinculado ao personagem"
+      ],
+      "it": [
+        "Linked to the character"
       ]
     },
     "conditions": {
@@ -45160,7 +45867,8 @@
       "fr": "Lance corrompue",
       "de": "Verdorbener Wurfspeer",
       "es": "Lanza corrupta",
-      "pt": "Lança Corrompida"
+      "pt": "Lança Corrompida",
+      "it": "Corrupted Spear"
     },
     "itemType": "Lance",
     "setID": null,
@@ -45284,7 +45992,8 @@
       "fr": "Dagues d'Ilyzaelle",
       "de": "Ilyzaelles Dolche",
       "es": "Dagas de Ilyzaelle",
-      "pt": "Adagas de Ilyzaelle"
+      "pt": "Adagas de Ilyzaelle",
+      "it": "Ilyzaelle Daggers"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -45385,7 +46094,8 @@
       "fr": "Épée Brûlâme",
       "de": "Schwert der Brennenden Seele",
       "es": "Espada quemaalmas",
-      "pt": "Espada de Almardente"
+      "pt": "Espada de Almardente",
+      "it": "Soul-Blaze Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -45509,7 +46219,8 @@
       "fr": "Arc corrompu",
       "de": "Verdorbener Bogen",
       "es": "Arco corrupto",
-      "pt": "Arco Corrompido"
+      "pt": "Arco Corrompido",
+      "it": "Corrupted Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -45610,7 +46321,8 @@
       "fr": "Épée Nécronyx",
       "de": "Nekronyxschwert",
       "es": "Espada de necrónix",
-      "pt": "Espada de Necrônix"
+      "pt": "Espada de Necrônix",
+      "it": "Necronyx Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -45645,6 +46357,10 @@
       "pt": [
         "Vinculado ao personagem",
         "Adicionar um feitiço temporário"
+      ],
+      "it": [
+        "Linked to the character",
+        "Add a temporary spell"
       ]
     },
     "conditions": {
@@ -45660,7 +46376,8 @@
       "fr": "Lav'Hache",
       "de": "Lavaxt",
       "es": "Lavacha",
-      "pt": "Lavachado"
+      "pt": "Lavachado",
+      "it": "Lavaxe"
     },
     "itemType": "Axe",
     "setID": "952",
@@ -45761,7 +46478,8 @@
       "fr": "Massier",
       "de": "Omniknacker",
       "es": "Mazacero",
-      "pt": "Açoclava"
+      "pt": "Açoclava",
+      "it": "Steelymace"
     },
     "itemType": "Hammer",
     "setID": "953",
@@ -45847,7 +46565,8 @@
       "fr": "Baguette Héroclite",
       "de": "Bunt zusammengewürfelter Stab",
       "es": "Varita Malgama",
-      "pt": "Varinha Vale-Tudo"
+      "pt": "Varinha Vale-Tudo",
+      "it": "Mishmash Wand"
     },
     "itemType": "Wand",
     "setID": "950",
@@ -45928,7 +46647,8 @@
       "fr": "Lance Horselé",
       "de": "Leckerschmeckerstecken",
       "es": "Lanza Horí",
-      "pt": "Lança Bracadabra"
+      "pt": "Lança Bracadabra",
+      "it": "Ensorcel Lance"
     },
     "itemType": "Lance",
     "setID": "455",
@@ -46024,7 +46744,8 @@
       "fr": "Arc Volkorne",
       "de": "Naskäfer-Bogen",
       "es": "Arco de vueloceronte",
-      "pt": "Arco de Vulkórnio"
+      "pt": "Arco de Vulkórnio",
+      "it": "Rhineetle Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -46153,7 +46874,8 @@
       "fr": "Crocobur",
       "de": "Crocobur",
       "es": "Cocobur",
-      "pt": "Crocálibur"
+      "pt": "Crocálibur",
+      "it": "Crocobur"
     },
     "itemType": "Sword",
     "setID": null,
@@ -46183,6 +46905,9 @@
       ],
       "pt": [
         "Vinculado ao personagem"
+      ],
+      "it": [
+        "Linked to the character"
       ]
     },
     "conditions": {
@@ -46198,7 +46923,8 @@
       "fr": "Crocobur",
       "de": "Crocobur",
       "es": "Cocobur",
-      "pt": "Crocálibur"
+      "pt": "Crocálibur",
+      "it": "Crocobur"
     },
     "itemType": "Sword",
     "setID": null,
@@ -46228,6 +46954,9 @@
       ],
       "pt": [
         "Vinculado ao personagem"
+      ],
+      "it": [
+        "Linked to the character"
       ]
     },
     "conditions": {
@@ -46243,7 +46972,8 @@
       "fr": "Crocobur",
       "de": "Crocobur",
       "es": "Cocobur",
-      "pt": "Crocálibur"
+      "pt": "Crocálibur",
+      "it": "Crocobur"
     },
     "itemType": "Sword",
     "setID": null,
@@ -46360,6 +47090,9 @@
       ],
       "pt": [
         "Apetite da Crocálibur:\n• No início de cada turno, o carregador inflige a si mesmo de 11 a 15 de danos de seu melhor elemento de ataque para roubar de 11 a 15 de vida de todas as entidades em contato no final do turno."
+      ],
+      "it": [
+        "Crocobur's Appetite:\n• At the start of each turn, the bearer inflicts 11 to 15 damage on themself in their best attack element to steal 11 to 15 health from adjacent entities at the end of the bearer's turn."
       ]
     },
     "conditions": {
@@ -46375,7 +47108,8 @@
       "fr": "Ciseaux du Destin",
       "de": "Schere des Schicksals",
       "es": "Tijeras del destino",
-      "pt": "Tesoura do Destino"
+      "pt": "Tesoura do Destino",
+      "it": "Scissors of Destiny"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -46457,6 +47191,9 @@
       ],
       "pt": [
         "Destino Fatídico:\n• No início de cada turno, o portador ganha 20% de danos de arma se estiver em contato com um inimigo.\n• Quando o portador bloqueia, ele fica Irremovível até o início de seu próximo turno."
+      ],
+      "it": [
+        "Fateful Destiny:\n• At the start of each turn, the bearer gains 20% weapon damage if adjacent to an enemy.\n• When the bearer locks, they become Unmovable until the start of their next turn."
       ]
     },
     "conditions": {
@@ -46472,7 +47209,8 @@
       "fr": "Frisson de Brumaire",
       "de": "Brumaires Schauder",
       "es": "Escalofrío de Brumario",
-      "pt": "Calafrio de Brumário"
+      "pt": "Calafrio de Brumário",
+      "it": "Brumaire's Shiver"
     },
     "itemType": "Wand",
     "setID": null,
@@ -46559,6 +47297,9 @@
       ],
       "pt": [
         "Frio de Novemeiro:\n• No início de cada turno, o carregador recebe 20% de retirada de PA se estiver em contato com um inimigo. Do contrário, ganha 20 de fuga. \n• Quando o carregador elimina um combatente inimigo durante seu turno, ele fica invisível por 1 turno."
+      ],
+      "it": [
+        "Novamaire Cold:\n• At the start of each turn, the bearer gains 20 AP Reduction if adjacent to an enemy. Otherwise, the bearer gains 20 Dodge. \n• When the bearer finishes off an enemy fighter during their turn, they become invisible for 1 turn."
       ]
     },
     "conditions": {
@@ -46574,7 +47315,8 @@
       "fr": "Plume de Buhorado",
       "de": "Buhorado-Feder",
       "es": "Pluma de Buhorado",
-      "pt": "Pena de Buhorado"
+      "pt": "Pena de Buhorado",
+      "it": "Buhorado Feather"
     },
     "itemType": "Bow",
     "setID": null,
@@ -46651,6 +47393,9 @@
       ],
       "pt": [
         "Pena de Buhorado:\n• Quando o portador efetua um golpe crítico, ele recebe 10 de danos de empurrão por 3 turnos, que podem ser acumulados 10 vezes."
+      ],
+      "it": [
+        "Buhorado Feather:\n• When the bearer lands a critical hit, they gain 10 Pushback Damage for 3 turns (stackable 10 times)."
       ]
     },
     "conditions": {
@@ -46666,7 +47411,8 @@
       "fr": "Couteaux Sacrificiels",
       "de": "Opfermesser",
       "es": "Cuchillos sacrificiales",
-      "pt": "Facas Sacrificiais"
+      "pt": "Facas Sacrificiais",
+      "it": "Sacrificial Knives"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -46777,7 +47523,8 @@
       "fr": "Sceptre Zor",
       "de": "Zor-Zepter",
       "es": "Cetro Fleik",
-      "pt": "Cetro Zouro"
+      "pt": "Cetro Zouro",
+      "it": "Copiou Sceptre"
     },
     "itemType": "Staff",
     "setID": null,
@@ -46843,7 +47590,8 @@
       "fr": "Spatule Tranche-Gourmands",
       "de": "Naschkatzen-Schneidspachtel",
       "es": "Espátula Rebanagolosos",
-      "pt": "Espátula Corta-Guloso"
+      "pt": "Espátula Corta-Guloso",
+      "it": "Foodie-Slicer Spatula"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -46954,7 +47702,8 @@
       "fr": "Baguette de Torkélonia",
       "de": "Stab von Torkélonia",
       "es": "Varita de Torkelonia",
-      "pt": "Varinha de Torkelônia"
+      "pt": "Varinha de Torkelônia",
+      "it": "Turtelonia Wand"
     },
     "itemType": "Wand",
     "setID": "472",
@@ -47073,7 +47822,8 @@
       "fr": "Marteau de boisaille fortifié",
       "de": "Verstärkter hölzerner Hammer",
       "es": "Martillo de maderucha fortalecido",
-      "pt": "Martelo de Graveto Fortificado"
+      "pt": "Martelo de Graveto Fortificado",
+      "it": "Fortified Twiggy Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -47120,6 +47870,9 @@
       ],
       "pt": [
         "Vinculado ao personagem"
+      ],
+      "it": [
+        "Linked to the character"
       ]
     },
     "conditions": {
@@ -47135,7 +47888,8 @@
       "fr": "Bêche de Corruption",
       "de": "Verderbnis' Spaten",
       "es": "Laya de Corrupción",
-      "pt": "Enxada de Corrupção"
+      "pt": "Enxada de Corrupção",
+      "it": "Corruption's Spade"
     },
     "itemType": "Shovel",
     "setID": null,
@@ -47246,7 +48000,8 @@
       "fr": "Hachebarde de Guerre",
       "de": "Kriegs Hackebarde",
       "es": "Hachabarda de Guerra",
-      "pt": "Machabarda de Guerra"
+      "pt": "Machabarda de Guerra",
+      "it": "War's Halbaxe"
     },
     "itemType": "Axe",
     "setID": null,
@@ -47343,6 +48098,9 @@
       ],
       "pt": [
         "Guerra de Posição:\n• No início de cada turno, o carregador recebe 20% de retirada de PM se estiver em contato com um inimigo. Do contrário, ganha 30 de bloqueio. \n• Quando o carregador elimina um combatente inimigo durante seu turno, ele ganha 1 PM até o final do combate (acumula 5 vezes)."
+      ],
+      "it": [
+        "Attrition Warfare:\n• At the start of each turn, the bearer gains 20 MP Reduction if adjacent to an enemy. Otherwise, the bearer gains 30 Lock. \n• When the bearer finishes off an enemy fighter during their turn, they gain 1 MP until the end of the fight (stackable 5 times)."
       ]
     },
     "conditions": {
@@ -47358,7 +48116,8 @@
       "fr": "Balance-Fléau de Misère",
       "de": "Elends Waagengeißel",
       "es": "Balanza-mangual de Miseria",
-      "pt": "Balança-Flagelo de Miséria"
+      "pt": "Balança-Flagelo de Miséria",
+      "it": "Misery's Flail-Scale"
     },
     "itemType": "Wand",
     "setID": null,
@@ -47470,6 +48229,9 @@
       ],
       "pt": [
         "Prova da Balança:\n• Quando o portador sofre uma tentativa de retirada de PA, PM ou AL, ele rouba 2% de resistência a seu ataque por 2 turnos (acumula 5 vezes)."
+      ],
+      "it": [
+        "Trial of the Scales:\n• When the bearer suffers an attempted AP, MP or Range removal, they steal 2% resistance from their attacker for 2 turns (stackable 5 times)."
       ]
     },
     "conditions": {
@@ -47508,7 +48270,8 @@
       "fr": "Kwache",
       "de": "Kwaxt",
       "es": "Kuapacha",
-      "pt": "Kwachado"
+      "pt": "Kwachado",
+      "it": "Kwaxe"
     },
     "itemType": "Axe",
     "setID": "481",
@@ -47599,7 +48362,8 @@
       "fr": "Nun-Charang",
       "de": "Nun-Charang",
       "es": "Nuncharán",
-      "pt": "Nun-Cherangue"
+      "pt": "Nun-Cherangue",
+      "it": "Nun-Charang"
     },
     "itemType": "Staff",
     "setID": "482",
@@ -47690,7 +48454,8 @@
       "fr": "Baguette Bainkuite",
       "de": "Kross gebackenes Baguette",
       "es": "Varita Tolozana",
-      "pt": "Baspão Benhassado"
+      "pt": "Baspão Benhassado",
+      "it": "Roasty Breadstick"
     },
     "itemType": "Wand",
     "setID": null,
@@ -47801,7 +48566,8 @@
       "fr": "Bâton de Hanshi",
       "de": "Hanshis Stecken",
       "es": "Bastón de Hanshi",
-      "pt": "Bastão de Hanshi"
+      "pt": "Bastão de Hanshi",
+      "it": "Hanshi Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -47892,7 +48658,8 @@
       "fr": "Éventails de Shihan",
       "de": "Shihans Fächer",
       "es": "Abanicos de Shihan",
-      "pt": "Leques de Shihan"
+      "pt": "Leques de Shihan",
+      "it": "Shihan Fans"
     },
     "itemType": "Dagger",
     "setID": null,
@@ -47993,7 +48760,8 @@
       "fr": "Katana de la Flamme",
       "de": "Flammenkatana",
       "es": "Katana de la llama",
-      "pt": "Katana da Chama"
+      "pt": "Katana da Chama",
+      "it": "Fire Katana"
     },
     "itemType": "Sword",
     "setID": null,
@@ -48070,6 +48838,9 @@
       ],
       "pt": [
         "Fabricação cooperativa impossível"
+      ],
+      "it": [
+        "Cooperative crafting impossible"
       ]
     },
     "conditions": {
@@ -48085,7 +48856,8 @@
       "fr": "Katana de la Tempête",
       "de": "Sturmkatana",
       "es": "Katana de la tempestad",
-      "pt": "Katana da Tempestade"
+      "pt": "Katana da Tempestade",
+      "it": "Storm Katana"
     },
     "itemType": "Sword",
     "setID": null,
@@ -48162,6 +48934,9 @@
       ],
       "pt": [
         "Fabricação cooperativa impossível"
+      ],
+      "it": [
+        "Cooperative crafting impossible"
       ]
     },
     "conditions": {
@@ -48177,7 +48952,8 @@
       "fr": "Katana de la Marée",
       "de": "Gezeitenkatana",
       "es": "Katana de la marea",
-      "pt": "Katana da Maré"
+      "pt": "Katana da Maré",
+      "it": "Tidal Katana"
     },
     "itemType": "Sword",
     "setID": null,
@@ -48254,6 +49030,9 @@
       ],
       "pt": [
         "Fabricação cooperativa impossível"
+      ],
+      "it": [
+        "Cooperative crafting impossible"
       ]
     },
     "conditions": {
@@ -48269,7 +49048,8 @@
       "fr": "Katana de la Roche",
       "de": "Felskatana",
       "es": "Katana de la roca",
-      "pt": "Katana da Rocha"
+      "pt": "Katana da Rocha",
+      "it": "Rock Katana"
     },
     "itemType": "Sword",
     "setID": null,
@@ -48346,6 +49126,9 @@
       ],
       "pt": [
         "Fabricação cooperativa impossível"
+      ],
+      "it": [
+        "Cooperative crafting impossible"
       ]
     },
     "conditions": {
@@ -48361,7 +49144,8 @@
       "fr": "Katana de la Feuille",
       "de": "Blattkatana",
       "es": "Katana de la hoja",
-      "pt": "Katana da Folha"
+      "pt": "Katana da Folha",
+      "it": "Leaf Katana"
     },
     "itemType": "Sword",
     "setID": null,
@@ -48468,6 +49252,9 @@
       ],
       "pt": [
         "Fabricação cooperativa impossível"
+      ],
+      "it": [
+        "Cooperative crafting impossible"
       ]
     },
     "conditions": {
@@ -48483,7 +49270,8 @@
       "fr": "Bâton en bambou spirituel",
       "de": "Stecken aus spirituellem Bambus",
       "es": "Bastón en bambú espiritual",
-      "pt": "Bastão de Bambu Espiritual"
+      "pt": "Bastão de Bambu Espiritual",
+      "it": "Spirit Bamboo Staff"
     },
     "itemType": "Staff",
     "setID": null,
@@ -48565,6 +49353,9 @@
       ],
       "pt": [
         "Fabricação cooperativa impossível"
+      ],
+      "it": [
+        "Cooperative crafting impossible"
       ]
     },
     "conditions": {
@@ -48580,7 +49371,8 @@
       "fr": "Musamune",
       "de": "Musamune",
       "es": "Musamune",
-      "pt": "Musamune"
+      "pt": "Musamune",
+      "it": "Musamune"
     },
     "itemType": "Sword",
     "setID": null,
@@ -48675,7 +49467,8 @@
       "fr": "Katana de Spiritueur",
       "de": "Geistreichen-Katana",
       "es": "Katana de espiritasesino",
-      "pt": "Katana de Assassispírito"
+      "pt": "Katana de Assassispírito",
+      "it": "Slayspirit Katana"
     },
     "itemType": "Sword",
     "setID": "960",
@@ -48801,7 +49594,8 @@
       "fr": "Faux Nème",
       "de": "Silbensense",
       "es": "Origadaña",
-      "pt": "Foice Nema"
+      "pt": "Foice Nema",
+      "it": "Phonemenal Scythe"
     },
     "itemType": "Scythe",
     "setID": "489",
@@ -48922,7 +49716,8 @@
       "fr": "Arc de Wulan",
       "de": "Wulans Bogen",
       "es": "Arco de Wulán",
-      "pt": "Arco de Wulan"
+      "pt": "Arco de Wulan",
+      "it": "Wulan's Bow"
     },
     "itemType": "Bow",
     "setID": "491",
@@ -49051,7 +49846,8 @@
       "fr": "Kanji Jirark",
       "de": "Kanjimca",
       "es": "Dimbow",
-      "pt": "Kanji Jirark"
+      "pt": "Kanji Jirark",
+      "it": "Jobimcarl Bow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -49142,7 +49938,8 @@
       "fr": "Faux Nétik",
       "de": "Okklusense",
       "es": "Tintarela picuda",
-      "pt": "Foice Nética"
+      "pt": "Foice Nética",
+      "it": "Faux Netic Scythe"
     },
     "itemType": "Scythe",
     "setID": null,
@@ -49243,7 +50040,8 @@
       "fr": "Baguette Imologie",
       "de": "Etymologehstock",
       "es": "Palote Timológico",
-      "pt": "Varinha Timológica"
+      "pt": "Varinha Timológica",
+      "it": "Etymolowand"
     },
     "itemType": "Wand",
     "setID": null,
@@ -49344,7 +50142,8 @@
       "fr": "Maillet Pitaf",
       "de": "Walhallammer",
       "es": "Martillo Menaje",
-      "pt": "Martelo Pitáfio"
+      "pt": "Martelo Pitáfio",
+      "it": "Bledger"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -49440,7 +50239,8 @@
       "fr": "Baguette du Pandamonium",
       "de": "Stab des Pandamoniums",
       "es": "Varita de Pandamonium",
-      "pt": "Varinha do Pandamonium"
+      "pt": "Varinha do Pandamonium",
+      "it": "Pandamonium Wand"
     },
     "itemType": "Wand",
     "setID": "496",
@@ -49541,7 +50341,8 @@
       "fr": "Marteau Possédé",
       "de": "Besessener Hammer",
       "es": "Martillo poseído",
-      "pt": "Martelo Possuído"
+      "pt": "Martelo Possuído",
+      "it": "Possessed Hammer"
     },
     "itemType": "Hammer",
     "setID": null,
@@ -49667,7 +50468,8 @@
       "fr": "Hachoir de Ravageur",
       "de": "Hackebeil des Zerstörers",
       "es": "Hacha de devastador",
-      "pt": "Moedor de Devastador"
+      "pt": "Moedor de Devastador",
+      "it": "Destroyer Cleaver"
     },
     "itemType": "Axe",
     "setID": "498",
@@ -49783,7 +50585,8 @@
       "fr": "Faux Séraphine",
       "de": "Seraphimsense",
       "es": "Guadaña serafina",
-      "pt": "Foice Seráfica"
+      "pt": "Foice Seráfica",
+      "it": "Seraphic Scythe"
     },
     "itemType": "Scythe",
     "setID": null,
@@ -49894,7 +50697,8 @@
       "fr": "Épée Diablotine",
       "de": "Koboldhaftes Schwert",
       "es": "Espada diablina",
-      "pt": "Espada Diabrete"
+      "pt": "Espada Diabrete",
+      "it": "Imp Sword"
     },
     "itemType": "Sword",
     "setID": null,
@@ -50005,7 +50809,8 @@
       "fr": "Faux Chaotique",
       "de": "Sense des Chaos",
       "es": "Guadaña caótica",
-      "pt": "Foice Caótica"
+      "pt": "Foice Caótica",
+      "it": "Chaotic Scythe"
     },
     "itemType": "Scythe",
     "setID": null,
@@ -50121,7 +50926,8 @@
       "fr": "Faux Enracinée de Malter",
       "de": "Verwurzelte Malter-Sense",
       "es": "Guadaña enraizada de malter",
-      "pt": "Foice Enraizada de Malter"
+      "pt": "Foice Enraizada de Malter",
+      "it": "Rooted Malter Scythe"
     },
     "itemType": "Scythe",
     "setID": "500",
@@ -50227,7 +51033,8 @@
       "fr": "Pertuisane d'Hell Mina",
       "de": "Hell Minas Partisane",
       "es": "Partesana de Hell Mina",
-      "pt": "Partazana de Hell Mina"
+      "pt": "Partazana de Hell Mina",
+      "it": "Hell Mina's Partisan"
     },
     "itemType": "Lance",
     "setID": "501",
@@ -50308,7 +51115,8 @@
       "fr": "Faux du Directeur Grunob",
       "de": "Sense des Direktors Grunob",
       "es": "Guadaña del director Grunob",
-      "pt": "Foice do Diretor Grunob"
+      "pt": "Foice do Diretor Grunob",
+      "it": "Director Grunob's Scythe"
     },
     "itemType": "Scythe",
     "setID": "502",
@@ -50369,7 +51177,8 @@
       "fr": "Goultard Ankarton",
       "de": "Ankarton-Goultard",
       "es": "Gúltar Ankartón",
-      "pt": "Gultar Ankarton"
+      "pt": "Gultar Ankarton",
+      "it": "Khardboard Goultard"
     },
     "itemType": "Sword",
     "setID": "505",
@@ -50419,7 +51228,8 @@
       "fr": "Claymomore",
       "de": "Claymomore",
       "es": "Claymomore",
-      "pt": "Claymomore"
+      "pt": "Claymomore",
+      "it": "Claymomore"
     },
     "itemType": "Sword",
     "setID": "507",
@@ -50545,7 +51355,8 @@
       "fr": "Masse Clochecuivre",
       "de": "Glockenleder-Hammer",
       "es": "Maza Decobre",
-      "pt": "Maça Sinocobre"
+      "pt": "Maça Sinocobre",
+      "it": "Copperbeard Mace"
     },
     "itemType": "Hammer",
     "setID": "510",
@@ -50671,7 +51482,8 @@
       "fr": "Serpe de Rakoopeur",
       "de": "Racooper-Hippe",
       "es": "Hoz de Rakooper",
-      "pt": "Podadeira de Rakooper"
+      "pt": "Podadeira de Rakooper",
+      "it": "Raccooper's Billhook"
     },
     "itemType": "Scythe",
     "setID": "509",
@@ -50747,7 +51559,8 @@
       "fr": "Lance de guerrier albueran",
       "de": "Albueranischer Kriegerspeer",
       "es": "Lanza de guerrero albuereño",
-      "pt": "Lança de Guerreiro Albuerano"
+      "pt": "Lança de Guerreiro Albuerano",
+      "it": "Albueran Warrior Lance"
     },
     "itemType": "Lance",
     "setID": "511",
@@ -50823,7 +51636,8 @@
       "fr": "Lance de trappeur albueran",
       "de": "Wurfspeer eines Albueraner-Fallenstellers",
       "es": "Lanza de trampero albuereño",
-      "pt": "Lança de Caçador Albuerano"
+      "pt": "Lança de Caçador Albuerano",
+      "it": "Albueran Trapper Lance"
     },
     "itemType": "Lance",
     "setID": "512",
@@ -50889,7 +51703,8 @@
       "fr": "Serpe Aigrie",
       "de": "Sauersichel",
       "es": "Hoz seca",
-      "pt": "Podadeira Amarga"
+      "pt": "Podadeira Amarga",
+      "it": "Bitter Billhook"
     },
     "itemType": "Scythe",
     "setID": "516",
@@ -50985,7 +51800,8 @@
       "fr": "Marteau Aigri",
       "de": "Sauerhammer",
       "es": "Martillo seco",
-      "pt": "Martelo Amargo"
+      "pt": "Martelo Amargo",
+      "it": "Bitter Hammer"
     },
     "itemType": "Hammer",
     "setID": "516",
@@ -51081,7 +51897,8 @@
       "fr": "Tonfas de Barbéryl",
       "de": "Barberyls Tonfas",
       "es": "Tonfas de Demena",
-      "pt": "Tonfas de Barberila"
+      "pt": "Tonfas de Barberila",
+      "it": "Berylbell's Tonfas"
     },
     "itemType": "Dagger",
     "setID": "513",
@@ -51177,7 +51994,8 @@
       "fr": "Potence d'Ephedrya",
       "de": "Potenz von Ephedrya",
       "es": "Horca de Efedria",
-      "pt": "Potência de Ephedrya"
+      "pt": "Potência de Ephedrya",
+      "it": "Gallows of Ephedrya"
     },
     "itemType": "Axe",
     "setID": "514",
@@ -51278,7 +52096,8 @@
       "fr": "Pilier d'Ephedrya",
       "de": "Säule von Ephedrya",
       "es": "Picota de Efedria",
-      "pt": "Pilar de Ephedrya"
+      "pt": "Pilar de Ephedrya",
+      "it": "Pillar of Ephedrya"
     },
     "itemType": "Lance",
     "setID": "514",
@@ -51379,7 +52198,8 @@
       "fr": "Yaularc",
       "de": "Yaularc",
       "es": "Yaularco",
-      "pt": "Yaularco"
+      "pt": "Yaularco",
+      "it": "Yaulbow"
     },
     "itemType": "Bow",
     "setID": null,
@@ -51518,7 +52338,8 @@
       "fr": "Bounihimée",
       "de": "Buhnihime",
       "es": "Bunihima",
-      "pt": "Boonihime"
+      "pt": "Boonihime",
+      "it": "Bounihime"
     },
     "itemType": "Sword",
     "setID": "69",
@@ -51560,6 +52381,9 @@
       ],
       "pt": [
         "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
       ]
     },
     "conditions": {
@@ -51575,7 +52399,8 @@
       "fr": "Poignards du Captain Chafer",
       "de": "Dolche des Chafer-Offiziers",
       "es": "[!] Poignards du Captain Chafer",
-      "pt": "Adagas do Capitão Chafer"
+      "pt": "Adagas do Capitão Chafer",
+      "it": "[!] Poignards du Captain Chafer"
     },
     "itemType": "Dagger",
     "setID": "938",
@@ -51686,7 +52511,8 @@
       "fr": "Rouleau de Mama Ayuto",
       "de": "Mama Ayutos Nudelholz",
       "es": "Rodillo de Mami Ayuto",
-      "pt": "Rolo da Mama Ayuto"
+      "pt": "Rolo da Mama Ayuto",
+      "it": "Mama Ayuto's Rolling Pin"
     },
     "itemType": "Hammer",
     "setID": "941",
@@ -51786,7 +52612,8 @@
       "fr": "Flamberge du Dark Vlad",
       "de": "Dark Vlads Flamberg",
       "es": "Espada flamígera de Dark Vlad",
-      "pt": "Flambérgia do Dark Vlad"
+      "pt": "Flambérgia do Dark Vlad",
+      "it": "Dark Vlad's Flamberge"
     },
     "itemType": "Sword",
     "setID": "943",
@@ -51881,7 +52708,8 @@
       "fr": "Masse Étacée",
       "de": "Streitwal-Kolben",
       "es": "[!] Masse Étacée",
-      "pt": "[!] Masse Étacée"
+      "pt": "[!] Masse Étacée",
+      "it": "[!] Masse Étacée"
     },
     "itemType": "Hammer",
     "setID": "949",

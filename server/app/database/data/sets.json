@@ -6,7 +6,8 @@
             "fr": "Panoplie du Bouftou",
             "de": "Fresssack-Set",
             "es": "Set de jalató",
-            "pt": "Conjunto do Papatudo"
+            "pt": "Conjunto do Papatudo",
+            "it": "Gobball Set"
         },
         "bonuses": {
             "2": [
@@ -222,7 +223,8 @@
             "fr": "Panoplie du Kwak de Flammes",
             "de": "Flammen-Kwack-Set",
             "es": "Set del kwak de llamas",
-            "pt": "Conjunto do Kwak de Chamas"
+            "pt": "Conjunto do Kwak de Chamas",
+            "it": "Fire Kwak Set"
         },
         "bonuses": {
             "2": [
@@ -421,7 +423,8 @@
             "fr": "Panoplie de l'Abraknyde",
             "de": "Astaknyden-Set",
             "es": "Set de abráknido",
-            "pt": "Conjunto do Arvraknídeo"
+            "pt": "Conjunto do Arvraknídeo",
+            "it": "Treechnid Set"
         },
         "bonuses": {
             "2": [
@@ -645,7 +648,8 @@
             "fr": "Panoplie du Bouftou Royal",
             "de": "Königliches Fresssack-Set",
             "es": "Set de Jalató Real",
-            "pt": "Conjunto do Papatudo Real"
+            "pt": "Conjunto do Papatudo Real",
+            "it": "Royal Gobball's Set"
         },
         "bonuses": {
             "2": [
@@ -816,7 +820,8 @@
             "fr": "Panoplie du Jeune Aventurier",
             "de": "Abenteurer-Set",
             "es": "Set de aventurero",
-            "pt": "Conjunto do Jovem Aventureiro"
+            "pt": "Conjunto do Jovem Aventureiro",
+            "it": "Young Adventurer Set"
         },
         "bonuses": {
             "2": [
@@ -998,7 +1003,8 @@
             "fr": "Panoplie Gelax",
             "de": "König Gelax-Set",
             "es": "Set Gelax",
-            "pt": "Conjunto Gelax"
+            "pt": "Conjunto Gelax",
+            "it": "Jellix Set"
         },
         "bonuses": {
             "2": [
@@ -1065,7 +1071,8 @@
             "fr": "Panoplie de Toady",
             "de": "Toady-Set",
             "es": "Set de Toady",
-            "pt": "Conjunto do Toady"
+            "pt": "Conjunto do Toady",
+            "it": "Toady Set"
         },
         "bonuses": {
             "2": [
@@ -1089,7 +1096,8 @@
             "fr": "Panoplie du Corbac",
             "de": "Rabling-Set",
             "es": "Set de cuerbok",
-            "pt": "Conjunto do Corvoc"
+            "pt": "Conjunto do Corvoc",
+            "it": "Crobak Set"
         },
         "bonuses": {
             "2": [
@@ -1207,7 +1215,8 @@
             "fr": "Panoplie Tortue",
             "de": "Schildkröt-Set",
             "es": "Set tortuga",
-            "pt": "Conjunto Tartaruga"
+            "pt": "Conjunto Tartaruga",
+            "it": "Turtle Set"
         },
         "bonuses": {
             "2": [
@@ -1253,7 +1262,8 @@
             "fr": "Panoplie Végétatif",
             "de": "Vegetations-Set",
             "es": "Set vegetativo",
-            "pt": "Conjunto Vegetativo"
+            "pt": "Conjunto Vegetativo",
+            "it": "Vegetative Set"
         },
         "bonuses": {
             "2": [
@@ -1294,7 +1304,8 @@
             "fr": "Panoplie de la Cawotte",
             "de": "Kawotten-Set",
             "es": "Set zanahowio",
-            "pt": "Conjunto da Cenouwa"
+            "pt": "Conjunto da Cenouwa",
+            "it": "Cawwot Set"
         },
         "bonuses": {
             "2": [
@@ -1355,7 +1366,8 @@
             "fr": "Panoplie de l'Homme Ours",
             "de": "Bärenmann-Set",
             "es": "Set del hombre oso",
-            "pt": "Conjunto do Homem Urso"
+            "pt": "Conjunto do Homem Urso",
+            "it": "Bearman Set"
         },
         "bonuses": {
             "2": [
@@ -1569,7 +1581,8 @@
             "fr": "Panoplie du Kwak de Glace",
             "de": "Eis-Kwack-Set",
             "es": "Set del kwak de hielo",
-            "pt": "Conjunto do Kwak de Gelo"
+            "pt": "Conjunto do Kwak de Gelo",
+            "it": "Ice Kwak Set"
         },
         "bonuses": {
             "2": [
@@ -1768,7 +1781,8 @@
             "fr": "Panoplie du Kwak de Terre",
             "de": "Stein-Kwack-Set",
             "es": "Set del kwak de tierra",
-            "pt": "Conjunto do Kwak de Terra"
+            "pt": "Conjunto do Kwak de Terra",
+            "it": "Earth Kwak Set"
         },
         "bonuses": {
             "2": [
@@ -1967,7 +1981,8 @@
             "fr": "Panoplie du Kwak de Vent",
             "de": "Wind-Kwack-Set",
             "es": "Set del kwak de viento",
-            "pt": "Conjunto do Kwak de Vento"
+            "pt": "Conjunto do Kwak de Vento",
+            "it": "Wind Kwak Set"
         },
         "bonuses": {
             "2": [
@@ -2166,7 +2181,8 @@
             "fr": "Panoplie Fourbasse",
             "de": "Heckenschützer-Set",
             "es": "Set mazorral",
-            "pt": "Conjunto Pérfido"
+            "pt": "Conjunto Pérfido",
+            "it": "Ambusher Set"
         },
         "bonuses": {
             "2": [
@@ -2244,7 +2260,8 @@
             "fr": "Panoplie de Farle Ingalsse",
             "de": "Farle Ingalsse-Set",
             "es": "Set de Farle Ingals",
-            "pt": "Conjunto de Farle Ingals"
+            "pt": "Conjunto de Farle Ingals",
+            "it": "Farle Ingalsse Set"
         },
         "bonuses": {
             "2": [
@@ -2433,7 +2450,8 @@
             "fr": "Panoplie Champêtre",
             "de": "Feldhüter-Set",
             "es": "Set campestre",
-            "pt": "Conjunto Campestre"
+            "pt": "Conjunto Campestre",
+            "it": "Country Set"
         },
         "bonuses": {
             "2": [
@@ -2587,7 +2605,8 @@
             "fr": "Panoplie du Chef Bwork",
             "de": "Bwork-Chef-Set",
             "es": "Set de jefe bwork",
-            "pt": "Conjunto do Chefe Bwork"
+            "pt": "Conjunto do Chefe Bwork",
+            "it": "Bwork Chief Set"
         },
         "bonuses": {
             "2": [
@@ -2791,7 +2810,8 @@
             "fr": "Panoplie du Chef Crocodaille",
             "de": "Chef Crocodyll-Set",
             "es": "Set de jefe cocodrail",
-            "pt": "Conjunto do Chefe Crocodyl"
+            "pt": "Conjunto do Chefe Crocodyl",
+            "it": "Crocodyl Chief Set"
         },
         "bonuses": {
             "2": [
@@ -3042,7 +3062,8 @@
             "fr": "Panoplie du Sanglier",
             "de": "Keiler-Set",
             "es": "Set del jabalí",
-            "pt": "Conjunto do Javali"
+            "pt": "Conjunto do Javali",
+            "it": "Boar Set"
         },
         "bonuses": {
             "2": [
@@ -3098,7 +3119,8 @@
             "fr": "Panoplie Arakne",
             "de": "Arachnee-Set",
             "es": "Set arakna",
-            "pt": "Conjunto Arakne"
+            "pt": "Conjunto Arakne",
+            "it": "Arachnee Set"
         },
         "bonuses": {
             "2": [
@@ -3146,7 +3168,8 @@
             "fr": "Panoplie Moskito",
             "de": "Moskito-Set",
             "es": "Set moskito",
-            "pt": "Conjunto Moskito"
+            "pt": "Conjunto Moskito",
+            "it": "Moskito Set"
         },
         "bonuses": {
             "2": [
@@ -3209,7 +3232,8 @@
             "fr": "Panoplie Champ Champ",
             "de": "Pilzling-Set",
             "es": "Set champi champ",
-            "pt": "Conjunto do Cogu Cogu"
+            "pt": "Conjunto do Cogu Cogu",
+            "it": "Mush Mush Set"
         },
         "bonuses": {
             "2": [
@@ -3262,7 +3286,8 @@
             "fr": "Panoplie du Bandit",
             "de": "Halsabschneider-Set",
             "es": "Set de bandido",
-            "pt": "Conjunto do Bandido"
+            "pt": "Conjunto do Bandido",
+            "it": "Bandit Set"
         },
         "bonuses": {
             "2": [
@@ -3370,7 +3395,8 @@
             "fr": "Panoplie du Craqueleur",
             "de": "Krachler-Set",
             "es": "Set de crujidor",
-            "pt": "Conjunto do Smagador"
+            "pt": "Conjunto do Smagador",
+            "it": "Crackler Set"
         },
         "bonuses": {
             "2": [
@@ -3659,7 +3685,8 @@
             "fr": "Panoplie du Scarafeuille Vert",
             "de": "Grünes Scarablatt-Set",
             "es": "Set de escarahoja verde",
-            "pt": "Conjunto do Scarafolha Verde"
+            "pt": "Conjunto do Scarafolha Verde",
+            "it": "Green Scaraleaf Set"
         },
         "bonuses": {
             "2": [
@@ -3737,7 +3764,8 @@
             "fr": "Panoplie du Scarafeuille Rouge",
             "de": "Rotes Scarablatt-Set",
             "es": "Set de escarahoja rojo",
-            "pt": "Conjunto do Scarafolha Vermelho"
+            "pt": "Conjunto do Scarafolha Vermelho",
+            "it": "Red Scaraleaf Set"
         },
         "bonuses": {
             "2": [
@@ -3815,7 +3843,8 @@
             "fr": "Panoplie du Scarafeuille Blanc",
             "de": "Weißes Scarablatt-Set",
             "es": "Set de escarahoja blanco",
-            "pt": "Conjunto de Scarafolha Branco"
+            "pt": "Conjunto de Scarafolha Branco",
+            "it": "White Scaraleaf Set"
         },
         "bonuses": {
             "2": [
@@ -3893,7 +3922,8 @@
             "fr": "Panoplie du Scarafeuille Bleu",
             "de": "Blaues Scarablatt-Set",
             "es": "Set de escarahoja azul",
-            "pt": "Conjunto da Scarafolha Azul"
+            "pt": "Conjunto da Scarafolha Azul",
+            "it": "Blue Scaraleaf Set"
         },
         "bonuses": {
             "2": [
@@ -3971,7 +4001,8 @@
             "fr": "Panoplie du Prespic",
             "de": "Prespik-Set",
             "es": "Set de prespic",
-            "pt": "Conjunto do Prespic"
+            "pt": "Conjunto do Prespic",
+            "it": "Prespic Set"
         },
         "bonuses": {
             "2": [
@@ -4051,7 +4082,8 @@
             "fr": "Panoplie du Mulou",
             "de": "WuWulf-Set",
             "es": "Set de milubo",
-            "pt": "Conjunto do Milobo"
+            "pt": "Conjunto do Milobo",
+            "it": "Boowolf Set"
         },
         "bonuses": {
             "2": [
@@ -4255,7 +4287,8 @@
             "fr": "Panoplie Larvesque",
             "de": "Larven-Set",
             "es": "Set larvesco",
-            "pt": "Conjunto Larvesco"
+            "pt": "Conjunto Larvesco",
+            "it": "Larval Set"
         },
         "bonuses": {
             "2": [
@@ -4380,7 +4413,8 @@
             "fr": "Panoplie Akwadala",
             "de": "Akwadala-Set",
             "es": "Set Akwadala",
-            "pt": "Conjunto Akwadala"
+            "pt": "Conjunto Akwadala",
+            "it": "Akwadala Set"
         },
         "bonuses": {
             "2": [
@@ -4556,7 +4590,8 @@
             "fr": "Panoplie Aerdala",
             "de": "Aerdala-Set",
             "es": "Set Airedala",
-            "pt": "Conjunto Ardala"
+            "pt": "Conjunto Ardala",
+            "it": "Aerdala Set"
         },
         "bonuses": {
             "2": [
@@ -4767,7 +4802,8 @@
             "fr": "Panoplie Terrdala",
             "de": "Teradala-Set",
             "es": "Set Tierradala",
-            "pt": "Conjunto Terradala"
+            "pt": "Conjunto Terradala",
+            "it": "Terrdala Set"
         },
         "bonuses": {
             "2": [
@@ -5038,7 +5074,8 @@
             "fr": "Panoplie Feudala",
             "de": "Feudala-Set",
             "es": "Set Fuegodala",
-            "pt": "Conjunto Fogodala"
+            "pt": "Conjunto Fogodala",
+            "it": "Feudala Set"
         },
         "bonuses": {
             "2": [
@@ -5274,7 +5311,8 @@
             "fr": "Panoplie O'Boul",
             "de": "O'Boul-Set",
             "es": "Set Pelotero",
-            "pt": "Conjunto Obol"
+            "pt": "Conjunto Obol",
+            "it": "O'Ball Set"
         },
         "bonuses": {
             "2": [
@@ -5372,7 +5410,8 @@
             "fr": "Panoplie d'Elya Wood",
             "de": "Elya Wood-Set",
             "es": "Set de Elya Wood",
-            "pt": "Conjunto de Elya Wood"
+            "pt": "Conjunto de Elya Wood",
+            "it": "Elya Wood Set"
         },
         "bonuses": {
             "2": [
@@ -5450,7 +5489,8 @@
             "fr": "Panoplie du Wa",
             "de": "Wa-Set",
             "es": "Set del Wey",
-            "pt": "Conjunto do Wei"
+            "pt": "Conjunto do Wei",
+            "it": "Wa Set"
         },
         "bonuses": {
             "2": [
@@ -5531,7 +5571,8 @@
             "fr": "Panoplie du Kitsou",
             "de": "Kitsou-Set",
             "es": "Set de kitsu",
-            "pt": "Conjunto do Kitsu"
+            "pt": "Conjunto do Kitsu",
+            "it": "Kitsou Set"
         },
         "bonuses": {
             "2": [
@@ -5644,7 +5685,8 @@
             "fr": "Panoplie Dindo",
             "de": "Truter-Set",
             "es": "Set Pavuesco",
-            "pt": "Conjunto Perueiro"
+            "pt": "Conjunto Perueiro",
+            "it": "Turko Set"
         },
         "bonuses": {
             "2": [
@@ -5757,7 +5799,8 @@
             "fr": "Panoplie du Boufcoul",
             "de": "Fresscool-Set",
             "es": "Set de jalatranki",
-            "pt": "Conjunto do Papakool"
+            "pt": "Conjunto do Papakool",
+            "it": "Gobkool Set"
         },
         "bonuses": {
             "2": [
@@ -5996,7 +6039,8 @@
             "fr": "Panoplie du Koulosse",
             "de": "Kuhloss-Set",
             "es": "Set de Trankitronko",
-            "pt": "Conjunto do Tronkoso"
+            "pt": "Conjunto do Tronkoso",
+            "it": "Koolich Set"
         },
         "bonuses": {
             "2": [
@@ -6094,7 +6138,8 @@
             "fr": "Panoplie du Koalak",
             "de": "Koalak-Set",
             "es": "Set de koalak",
-            "pt": "Conjunto do Koalak"
+            "pt": "Conjunto do Koalak",
+            "it": "Koalak Set"
         },
         "bonuses": {
             "2": [
@@ -6293,7 +6338,8 @@
             "fr": "Panoplie du Paysan",
             "de": "Bauern-Set",
             "es": "Set de campesino",
-            "pt": "Conjunto do Fazendeiro"
+            "pt": "Conjunto do Fazendeiro",
+            "it": "Farmer Set"
         },
         "bonuses": {
             "2": [
@@ -6417,7 +6463,8 @@
             "fr": "Panoplie du Scarafeuille Noir",
             "de": "Schwarzes Scarablatt-Set",
             "es": "Set de escarahoja negro",
-            "pt": "Conjunto do Scarafolha Negro"
+            "pt": "Conjunto do Scarafolha Negro",
+            "it": "Black Scaraleaf Set"
         },
         "bonuses": {
             "2": [
@@ -6495,7 +6542,8 @@
             "fr": "Panoplie du Tofu",
             "de": "Tofu-Set",
             "es": "Set de tofu",
-            "pt": "Conjunto do Tofu"
+            "pt": "Conjunto do Tofu",
+            "it": "Tofu Set"
         },
         "bonuses": {
             "2": [
@@ -6599,7 +6647,8 @@
             "fr": "Panoplie Scarabosse Doré",
             "de": "Goldenes Scarabiest-Set",
             "es": "Set de Escarajefe Dorado",
-            "pt": "Conjunto do Scarachefe Dourado"
+            "pt": "Conjunto do Scarachefe Dourado",
+            "it": "Golden Scarabugly Set"
         },
         "bonuses": {
             "2": [
@@ -6798,7 +6847,8 @@
             "fr": "Panoplie du Craqueleur Légendaire",
             "de": "Legendäres MegaKrachler-Set",
             "es": "Set de Crujidor Legendario",
-            "pt": "Conjunto do Smagador Legendário"
+            "pt": "Conjunto do Smagador Legendário",
+            "it": "Legendary Crackler Set"
         },
         "bonuses": {
             "2": [
@@ -7027,7 +7077,8 @@
             "fr": "Panoplie de Shika Ingalsse",
             "de": "Shika Ingalsse-Set",
             "es": "Set de Shika Ingals",
-            "pt": "Conjunto de Shika Ingals"
+            "pt": "Conjunto de Shika Ingals",
+            "it": "Shika Ingalsse Set"
         },
         "bonuses": {
             "2": [
@@ -7216,7 +7267,8 @@
             "fr": "Panoplie du Minotoror",
             "de": "Minotoror-Set",
             "es": "Set del Minotauroro",
-            "pt": "Conjunto do Minotoror"
+            "pt": "Conjunto do Minotoror",
+            "it": "Minotoror Set"
         },
         "bonuses": {
             "2": [
@@ -7420,7 +7472,8 @@
             "fr": "Panoplie du Meulou",
             "de": "MuWulf-Set",
             "es": "Set de Maxilubo",
-            "pt": "Conjunto do Mulobo"
+            "pt": "Conjunto do Mulobo",
+            "it": "Moowolf Set"
         },
         "bonuses": {
             "2": [
@@ -7532,7 +7585,8 @@
             "fr": "Panoplie du Dragoeuf Vagabond",
             "de": "Vagabunden-Drachei-Set",
             "es": "Set de dragohuevo vagabundo",
-            "pt": "Conjunto do Dragovo Andarilho"
+            "pt": "Conjunto do Dragovo Andarilho",
+            "it": "Vagabond Dreggon Set"
         },
         "bonuses": {
             "2": [
@@ -7650,7 +7704,8 @@
             "fr": "Panoplie du Minotot",
             "de": "Minotot-Set",
             "es": "Set del Minotot",
-            "pt": "Conjunto do Minotot"
+            "pt": "Conjunto do Minotot",
+            "it": "Minotot Set"
         },
         "bonuses": {
             "2": [
@@ -7842,7 +7897,8 @@
             "fr": "Panoplie du Dragon Cochon",
             "de": "Schweinedrachen-Set",
             "es": "Set de Dragocerdo",
-            "pt": "Conjunto do Dragão-Porco"
+            "pt": "Conjunto do Dragão-Porco",
+            "it": "Dragon Pig Set"
         },
         "bonuses": {
             "2": [
@@ -8061,7 +8117,8 @@
             "fr": "Panoplie du Mominotor",
             "de": "Mominotor-Set",
             "es": "Set de mominotauro",
-            "pt": "Conjunto Muminotor"
+            "pt": "Conjunto Muminotor",
+            "it": "Mumminotor Set"
         },
         "bonuses": {
             "2": [
@@ -8265,7 +8322,8 @@
             "fr": "Panoplie du Piou Rouge",
             "de": "Rotes Piepmatz-Set",
             "es": "Set de pío rojo",
-            "pt": "Conjunto do Piu Vermelho"
+            "pt": "Conjunto do Piu Vermelho",
+            "it": "Red Piwi Set"
         },
         "bonuses": {
             "2": [
@@ -8327,7 +8385,8 @@
             "fr": "Panoplie du Piou Bleu",
             "de": "Blaues Piepmatz-Set",
             "es": "Set de pío azul",
-            "pt": "Conjunto do Piu Azul"
+            "pt": "Conjunto do Piu Azul",
+            "it": "Blue Piwi Set"
         },
         "bonuses": {
             "2": [
@@ -8389,7 +8448,8 @@
             "fr": "Panoplie du Piou Violet",
             "de": "Violettes Piepmatz-Set",
             "es": "Set de pío violeta",
-            "pt": "Conjunto do Piu Violeta"
+            "pt": "Conjunto do Piu Violeta",
+            "it": "Purple Piwi Set"
         },
         "bonuses": {
             "2": [
@@ -8441,7 +8501,8 @@
             "fr": "Panoplie en Mousse",
             "de": "Schwamm-Set",
             "es": "Set de esponja",
-            "pt": "Conjunto de Espuma"
+            "pt": "Conjunto de Espuma",
+            "it": "Sponge Set"
         },
         "bonuses": {
             "2": [
@@ -8632,7 +8693,8 @@
             "fr": "Panoplie Cérémoniale",
             "de": "Zeremonien Set",
             "es": "Set Ceremonial",
-            "pt": "Conjunto Cerimonial"
+            "pt": "Conjunto Cerimonial",
+            "it": "Ceremonial Set"
         },
         "bonuses": {
             "2": [
@@ -8794,7 +8856,8 @@
             "fr": "Panoplie Ancestrale",
             "de": "Ur-Astaknyden-Set",
             "es": "Set Ancestral",
-            "pt": "Conjunto Ancestral"
+            "pt": "Conjunto Ancestral",
+            "it": "Ancestral Set"
         },
         "bonuses": {
             "2": [
@@ -8956,7 +9019,8 @@
             "fr": "Panoplie du Chêne Mou",
             "de": "Weich-Eich-Set",
             "es": "Set del Roble Blando",
-            "pt": "Conjunto do Carvalho Mole"
+            "pt": "Conjunto do Carvalho Mole",
+            "it": "Soft Oak Set"
         },
         "bonuses": {
             "2": [
@@ -9110,7 +9174,8 @@
             "fr": "Panoplie du Rat Blanc",
             "de": "Weißes Ratten-Set",
             "es": "Set de la Rata Blanca",
-            "pt": "Conjunto do Rato Branco"
+            "pt": "Conjunto do Rato Branco",
+            "it": "White Rat Set"
         },
         "bonuses": {
             "2": [
@@ -9304,7 +9369,8 @@
             "fr": "Panoplie du Rat Noir",
             "de": "Set der schwarzen Ratte",
             "es": "Set de la Rata Negra",
-            "pt": "Conjunto do Rato Negro"
+            "pt": "Conjunto do Rato Negro",
+            "it": "Black Rat Set"
         },
         "bonuses": {
             "2": [
@@ -9498,7 +9564,8 @@
             "fr": "Panoplie du Boune",
             "de": "Buhn-Set",
             "es": "Set del Bun",
-            "pt": "Conjunto do Boon"
+            "pt": "Conjunto do Boon",
+            "it": "Boon Set"
         },
         "bonuses": {
             "2": [
@@ -9734,7 +9801,8 @@
             "fr": "Panoplie du Piou Rose",
             "de": "Rosa Piepmatz-Set",
             "es": "Set de pío rosa",
-            "pt": "Conjunto do Piu Rosa"
+            "pt": "Conjunto do Piu Rosa",
+            "it": "Pink Piwi Set"
         },
         "bonuses": {
             "2": [
@@ -9811,7 +9879,8 @@
             "fr": "Panoplie du Piou Vert",
             "de": "Grünes Piepmatz-Set",
             "es": "Set de pío verde",
-            "pt": "Conjunto do Piu Verde"
+            "pt": "Conjunto do Piu Verde",
+            "it": "Green Piwi Set"
         },
         "bonuses": {
             "2": [
@@ -9863,7 +9932,8 @@
             "fr": "Panoplie du Piou Jaune",
             "de": "Gelbes Piepmatz-Set",
             "es": "Set de pío amarillo",
-            "pt": "Conjunto de Piu Amarelo"
+            "pt": "Conjunto de Piu Amarelo",
+            "it": "Yellow Piwi Set"
         },
         "bonuses": {
             "2": [
@@ -9925,7 +9995,8 @@
             "fr": "Panoplie Vassale",
             "de": "Lehnsmann-Set",
             "es": "Set del vasallo",
-            "pt": "Conjunto Vassalo"
+            "pt": "Conjunto Vassalo",
+            "it": "Vassal Set"
         },
         "bonuses": {
             "2": [
@@ -10073,7 +10144,8 @@
             "fr": "Panoplie Souveraine",
             "de": "Lehnsherren-Set",
             "es": "Set del soberano",
-            "pt": "Conjunto Soberano"
+            "pt": "Conjunto Soberano",
+            "it": "Sovereign Set"
         },
         "bonuses": {
             "2": [
@@ -10144,7 +10216,8 @@
             "fr": "Panoplie Claire",
             "de": "Licht-Set",
             "es": "Set del abrajidor claro",
-            "pt": "Conjunto Claro"
+            "pt": "Conjunto Claro",
+            "it": "Light Set"
         },
         "bonuses": {
             "2": [
@@ -10237,7 +10310,8 @@
             "fr": "Panoplie Sombre",
             "de": "Schatten-Set",
             "es": "Set del abrajidor oscuro",
-            "pt": "Conjunto Sombrio"
+            "pt": "Conjunto Sombrio",
+            "it": "Dark Set"
         },
         "bonuses": {
             "2": [
@@ -10308,7 +10382,8 @@
             "fr": "Panoplie Téméraire",
             "de": "Heldenmut-Set",
             "es": "Set Temerario",
-            "pt": "Conjunto Temerário"
+            "pt": "Conjunto Temerário",
+            "it": "Reckless Set"
         },
         "bonuses": {
             "2": [
@@ -10573,7 +10648,8 @@
             "fr": "Panoplie du Prince des voleurs",
             "de": "Set des Prinzen der Diebe",
             "es": "Set del Príncipe de los ladrones",
-            "pt": "Conjunto do Príncipe dos Ladrões"
+            "pt": "Conjunto do Príncipe dos Ladrões",
+            "it": "Prince of Thieves Set"
         },
         "bonuses": {
             "2": [
@@ -10838,7 +10914,8 @@
             "fr": "Panoplie Altruiste",
             "de": "Set des Menschenfreundes",
             "es": "Set Altruista",
-            "pt": "Conjunto Altruísta"
+            "pt": "Conjunto Altruísta",
+            "it": "Altruistic Set"
         },
         "bonuses": {
             "2": [
@@ -11103,7 +11180,8 @@
             "fr": "Panoplie de l'Innombrable",
             "de": "Zahlloses Set",
             "es": "Set del Innumerable",
-            "pt": "Conjunto do Inumerável"
+            "pt": "Conjunto do Inumerável",
+            "it": "Innumerable Set"
         },
         "bonuses": {
             "2": [
@@ -11368,7 +11446,8 @@
             "fr": "Panoplie Vénérable",
             "de": "Ehrwürdiges Set",
             "es": "Set venerable",
-            "pt": "Conjunto Venerável"
+            "pt": "Conjunto Venerável",
+            "it": "Venerable Set"
         },
         "bonuses": {
             "2": [
@@ -11633,7 +11712,8 @@
             "fr": "Panoplie Intemporelle",
             "de": "Zeitloses Set",
             "es": "Set intemporal",
-            "pt": "Conjunto Eterno"
+            "pt": "Conjunto Eterno",
+            "it": "Timeless Set"
         },
         "bonuses": {
             "2": [
@@ -11898,7 +11978,8 @@
             "fr": "Panoplie Exsangue",
             "de": "Blutleeres Set",
             "es": "Set exangüe",
-            "pt": "Conjunto Exangue"
+            "pt": "Conjunto Exangue",
+            "it": "Bloodless Set"
         },
         "bonuses": {
             "2": [
@@ -12163,7 +12244,8 @@
             "fr": "Panoplie de Gouttière",
             "de": "Regenrinnen-Set",
             "es": "Set del Caza Ratones",
-            "pt": "Conjunto Diazar"
+            "pt": "Conjunto Diazar",
+            "it": "Gutter Set"
         },
         "bonuses": {
             "2": [
@@ -12428,7 +12510,8 @@
             "fr": "Panoplie Criminelle",
             "de": "Kriminelles Set",
             "es": "Set criminal",
-            "pt": "Conjunto Criminal"
+            "pt": "Conjunto Criminal",
+            "it": "Criminal Set"
         },
         "bonuses": {
             "2": [
@@ -12693,7 +12776,8 @@
             "fr": "Panoplie Sauvage",
             "de": "Wildes Set",
             "es": "Set salvaje",
-            "pt": "Conjunto Selvagem"
+            "pt": "Conjunto Selvagem",
+            "it": "Wild Set"
         },
         "bonuses": {
             "2": [
@@ -12958,7 +13042,8 @@
             "fr": "Panoplie Indestructible",
             "de": "Unzerstörbares Set",
             "es": "Set Indestructible",
-            "pt": "Conjunto Indestrutível"
+            "pt": "Conjunto Indestrutível",
+            "it": "Indestructible Set"
         },
         "bonuses": {
             "2": [
@@ -13223,7 +13308,8 @@
             "fr": "Panoplie Ethylique",
             "de": "Ethylgruppen-Set",
             "es": "Set etílico",
-            "pt": "Conjunto Etílico"
+            "pt": "Conjunto Etílico",
+            "it": "Alcoholic Set"
         },
         "bonuses": {
             "2": [
@@ -13488,7 +13574,8 @@
             "fr": "Panoplie du Zoth Zotheur",
             "de": "Mundzoth-Set",
             "es": "Set del zoth zotheador",
-            "pt": "Conjunto do Zoth Zotheador"
+            "pt": "Conjunto do Zoth Zotheador",
+            "it": "Lispzoth Set"
         },
         "bonuses": {
             "2": [
@@ -13517,7 +13604,8 @@
             "fr": "Panoplie du Zothuliste",
             "de": "Set des zothigen Zoths",
             "es": "Set zothulista",
-            "pt": "Conjunto do Zothulista"
+            "pt": "Conjunto do Zothulista",
+            "it": "Zothulist Set"
         },
         "bonuses": {
             "2": [
@@ -13556,7 +13644,8 @@
             "fr": "Panoplie du Zothicien",
             "de": "Zothales Set",
             "es": "Set zothico",
-            "pt": "Conjunto do Zothico"
+            "pt": "Conjunto do Zothico",
+            "it": "Zothician Set"
         },
         "bonuses": {
             "2": [
@@ -13595,7 +13684,8 @@
             "fr": "Panoplie Baveuse",
             "de": "Sabber-Set",
             "es": "Set Babeante",
-            "pt": "Conjunto Babante"
+            "pt": "Conjunto Babante",
+            "it": "Sloppy Set"
         },
         "bonuses": {
             "2": [
@@ -13676,7 +13766,8 @@
             "fr": "Panoplie Ventouse",
             "de": "Saugnapf-Set",
             "es": "Set ventosa",
-            "pt": "Conjunto Ventosa"
+            "pt": "Conjunto Ventosa",
+            "it": "Sucker Set"
         },
         "bonuses": {
             "2": [
@@ -13797,7 +13888,8 @@
             "fr": "Panoplie Blop Griotte",
             "de": "Kirsch Blob-Set",
             "es": "Set de blop guinda",
-            "pt": "Conjunto Blop Cereja"
+            "pt": "Conjunto Blop Cereja",
+            "it": "Morello Cherry Blop Set"
         },
         "bonuses": {
             "2": [
@@ -13925,7 +14017,8 @@
             "fr": "Panoplie Blop Reinette",
             "de": "Apfel Blob-Set",
             "es": "Set de blop reineta",
-            "pt": "Conjunto Blop Maçã"
+            "pt": "Conjunto Blop Maçã",
+            "it": "Pippin Blop Set"
         },
         "bonuses": {
             "2": [
@@ -14053,7 +14146,8 @@
             "fr": "Panoplie Blop Coco",
             "de": "Kokos Blob-Set",
             "es": "Set de blop coco",
-            "pt": "Conjunto Blop Coco"
+            "pt": "Conjunto Blop Coco",
+            "it": "Coco Blop Set"
         },
         "bonuses": {
             "2": [
@@ -14181,7 +14275,8 @@
             "fr": "Panoplie Blop Indigo",
             "de": "Indigo Blob-Set",
             "es": "Set de blop índigo",
-            "pt": "Conjunto Blop Índigo"
+            "pt": "Conjunto Blop Índigo",
+            "it": "Indigo Blop Set"
         },
         "bonuses": {
             "2": [
@@ -14309,7 +14404,8 @@
             "fr": "Panoplie Blop Griotte Royale",
             "de": "Königliches Kirsch Blob-Set",
             "es": "Set de Blop Guinda Real",
-            "pt": "Conjunto Blop Cereja Real"
+            "pt": "Conjunto Blop Cereja Real",
+            "it": "Royal Morello Cherry Blop Set"
         },
         "bonuses": {
             "2": [
@@ -14377,7 +14473,8 @@
             "fr": "Panoplie Blop Reinette Royale",
             "de": "Königliches Apfel Blob-Set",
             "es": "Set de Blop Reineta Real",
-            "pt": "Conjunto Blop Maçã Real"
+            "pt": "Conjunto Blop Maçã Real",
+            "it": "Royal Pippin Blop Set"
         },
         "bonuses": {
             "2": [
@@ -14445,7 +14542,8 @@
             "fr": "Panoplie Blop Coco Royale",
             "de": "Königliches Kokos Blob-Set",
             "es": "Set de Blop Coco Real",
-            "pt": "Conjunto Blop Coco Real"
+            "pt": "Conjunto Blop Coco Real",
+            "it": "Royal Coco Blop Set"
         },
         "bonuses": {
             "2": [
@@ -14513,7 +14611,8 @@
             "fr": "Panoplie Blop Indigo Royale",
             "de": "Königliches Indigo Blob-Set",
             "es": "Set de Blop Índigo Real",
-            "pt": "Conjunto Blop Índigo Real"
+            "pt": "Conjunto Blop Índigo Real",
+            "it": "Royal Indigo Blop Set"
         },
         "bonuses": {
             "2": [
@@ -14581,7 +14680,8 @@
             "fr": "Panoplie Blop Multicolore Royale",
             "de": "Königliches Multiblob-Set",
             "es": "Set de Blop Multicolor Real",
-            "pt": "Conjunto Blop Arco-Íris Real"
+            "pt": "Conjunto Blop Arco-Íris Real",
+            "it": "Royal Rainbow Blop Set"
         },
         "bonuses": {
             "2": [
@@ -14674,7 +14774,8 @@
             "fr": "Panoplie Tue-Mouche",
             "de": "Fliegentöter-Set",
             "es": "Set Muscario",
-            "pt": "Conjunto Mata-Mosca"
+            "pt": "Conjunto Mata-Mosca",
+            "it": "Stringsecticide Set"
         },
         "bonuses": {
             "2": [
@@ -14777,7 +14878,8 @@
             "fr": "Panoplie du Bworker Berserker",
             "de": "BerserkBworker-Set",
             "es": "Set de Bworker Berserker",
-            "pt": "Conjunto do Bworker Berserker"
+            "pt": "Conjunto do Bworker Berserker",
+            "it": "Berserker Bworker Set"
         },
         "bonuses": {
             "2": [
@@ -14838,7 +14940,8 @@
             "fr": "Panoplie du Bworker Gladiateur",
             "de": "GladiaBworker-Set",
             "es": "Set de Bworker Gladiador",
-            "pt": "Conjunto do Bworker Gladiador"
+            "pt": "Conjunto do Bworker Gladiador",
+            "it": "Gladiator Bworker Set"
         },
         "bonuses": {
             "2": [
@@ -14958,7 +15061,8 @@
             "fr": "Panoplie du Ougah",
             "de": "Stinkeling-Set",
             "es": "Set de Ugah",
-            "pt": "Conjunto de Ugah"
+            "pt": "Conjunto de Ugah",
+            "it": "Ougaa Set"
         },
         "bonuses": {
             "2": [
@@ -15061,7 +15165,8 @@
             "fr": "Panoplignon",
             "de": "Fungal-Set",
             "es": "Set'As",
-            "pt": "Conjuntomelo"
+            "pt": "Conjuntomelo",
+            "it": "Shroom Set"
         },
         "bonuses": {
             "2": [
@@ -15139,7 +15244,8 @@
             "fr": "Panoplie des Sous-bois",
             "de": "Unterholz-Set",
             "es": "Set del sotobosque",
-            "pt": "Conjunto do sub-bosque"
+            "pt": "Conjunto do sub-bosque",
+            "it": "Undergrowth Set"
         },
         "bonuses": {
             "2": [
@@ -15200,7 +15306,8 @@
             "fr": "Panoplycélium",
             "de": "Mycel-Set",
             "es": "Setiñón",
-            "pt": "Conjunto Fungo"
+            "pt": "Conjunto Fungo",
+            "it": "Funguset"
         },
         "bonuses": {
             "2": [
@@ -15261,7 +15368,8 @@
             "fr": "Panoplie de Grüt",
             "de": "Bwurgs-Set",
             "es": "Set de Gruut",
-            "pt": "Conjunto de Grute"
+            "pt": "Conjunto de Grute",
+            "it": "Grute Set"
         },
         "bonuses": {
             "2": [
@@ -15322,7 +15430,8 @@
             "fr": "Panoplie de Kocksis",
             "de": "Racknacknock-Set",
             "es": "Set de Koxys",
-            "pt": "Conjunto de Koksis"
+            "pt": "Conjunto de Koksis",
+            "it": "Koksiks Set"
         },
         "bonuses": {
             "2": [
@@ -15363,7 +15472,8 @@
             "fr": "Panoplie de Gobeuf",
             "de": "Gobschling-Set",
             "es": "Set de Gobuevo",
-            "pt": "Conjunto de Gobovo"
+            "pt": "Conjunto de Gobovo",
+            "it": "Goboff Set"
         },
         "bonuses": {
             "2": [
@@ -15419,7 +15529,8 @@
             "fr": "Panoplie de Laikteur",
             "de": "Terlec-Set",
             "es": "Set de Retkel",
-            "pt": "Conjunto de Lektor"
+            "pt": "Conjunto de Lektor",
+            "it": "Lektor Set"
         },
         "bonuses": {
             "2": [
@@ -15470,7 +15581,8 @@
             "fr": "Panoplie de Rekto Topi",
             "de": "Piffpaffplumps-Set",
             "es": "Set de Panpun Pon",
-            "pt": "Conjunto de Kaos"
+            "pt": "Conjunto de Kaos",
+            "it": "Stroy Zemol Set"
         },
         "bonuses": {
             "2": [
@@ -15531,7 +15643,8 @@
             "fr": "Panoplie de Grizou",
             "de": "Wetterschlag-Set",
             "es": "Set de Grizú",
-            "pt": "Conjunto de Grisu"
+            "pt": "Conjunto de Grisu",
+            "it": "Fyred Ampe Set"
         },
         "bonuses": {
             "2": [
@@ -15572,7 +15685,8 @@
             "fr": "Panoplie de l'intrépide",
             "de": "Set des Furchtlosen",
             "es": "Set del intrépido",
-            "pt": "Conjunto do Intrépido"
+            "pt": "Conjunto do Intrépido",
+            "it": "Intrepid Set"
         },
         "bonuses": {
             "2": [
@@ -15668,7 +15782,8 @@
             "fr": "Panoplie du Roks Or",
             "de": "Goldiges Set",
             "es": "Set Goldpex",
-            "pt": "Conjunto do Roksor"
+            "pt": "Conjunto do Roksor",
+            "it": "Hax Or Set"
         },
         "bonuses": {
             "2": [
@@ -15738,7 +15853,8 @@
             "fr": "Panoplie d'Hulkrap",
             "de": "Lerkstim Set",
             "es": "Set Ravelaca",
-            "pt": "Conjunto Lápucra"
+            "pt": "Conjunto Lápucra",
+            "it": "Hulkrap Set"
         },
         "bonuses": {
             "2": [
@@ -15779,7 +15895,8 @@
             "fr": "Panoplie de Klüme",
             "de": "A.M.Boss Set",
             "es": "Set Kunye",
-            "pt": "Conjunto de Klume"
+            "pt": "Conjunto de Klume",
+            "it": "Klume Set"
         },
         "bonuses": {
             "2": [
@@ -15820,7 +15937,8 @@
             "fr": "Panoplie de Kloug",
             "de": "Äkebäker Set",
             "es": "Set Napazam",
-            "pt": "Conjunto de Napizram"
+            "pt": "Conjunto de Napizram",
+            "it": "Kloug Set"
         },
         "bonuses": {
             "2": [
@@ -15861,7 +15979,8 @@
             "fr": "Panoplie de Rapine",
             "de": "Raubsaug Set",
             "es": "Set rapiñoso",
-            "pt": "Conjunto de Rapina"
+            "pt": "Conjunto de Rapina",
+            "it": "Plunder Set"
         },
         "bonuses": {
             "2": [
@@ -15917,7 +16036,8 @@
             "fr": "Panoplie d'Hectaupe",
             "de": "Ma Äktoplas Set",
             "es": "Set de Hectopp",
-            "pt": "Conjunto de Ektope"
+            "pt": "Conjunto de Ektope",
+            "it": "Ektope Set"
         },
         "bonuses": {
             "2": [
@@ -15963,7 +16083,8 @@
             "fr": "Frimanoplie",
             "de": "Raureifset",
             "es": "Set congelado",
-            "pt": "Conjunto Gelado"
+            "pt": "Conjunto Gelado",
+            "it": "Sleet Set"
         },
         "bonuses": {
             "2": [
@@ -16141,7 +16262,8 @@
             "fr": "Panoplie Grésil",
             "de": "Hagelset",
             "es": "Set Granizado",
-            "pt": "Conjunto Granizo"
+            "pt": "Conjunto Granizo",
+            "it": "Hail Set"
         },
         "bonuses": {
             "2": [
@@ -16232,7 +16354,8 @@
             "fr": "Panoplie du Royalmouth",
             "de": "Königliches Fressmutset",
             "es": "Set de Jalamut Real",
-            "pt": "Conjunto do Papamute Real"
+            "pt": "Conjunto do Papamute Real",
+            "it": "Royal Mastogob Set"
         },
         "bonuses": {
             "2": [
@@ -16305,7 +16428,8 @@
             "fr": "Panoplie du Mansot Royal",
             "de": "King Ping Set",
             "es": "Set de Morsagüino Real",
-            "pt": "Conjunto do Pingwin Real"
+            "pt": "Conjunto do Pingwin Real",
+            "it": "Royal Pingwin Set"
         },
         "bonuses": {
             "2": [
@@ -16356,7 +16480,8 @@
             "fr": "Panoplie de Ben le Ripate",
             "de": "Set von Ben dem Ripaten",
             "es": "Set de Ben el Ripata",
-            "pt": "Conjunto do Ben, o Ripata"
+            "pt": "Conjunto do Ben, o Ripata",
+            "it": "Buck Anear Set"
         },
         "bonuses": {
             "2": [
@@ -16464,7 +16589,8 @@
             "fr": "Panoplie de l'Obsidiantre",
             "de": "Obsidianter-Set",
             "es": "Set de Obsidiantre",
-            "pt": "Conjunto do Obsidemônio"
+            "pt": "Conjunto do Obsidemônio",
+            "it": "Obsidemon Set"
         },
         "bonuses": {
             "2": [
@@ -16594,7 +16720,8 @@
             "fr": "Panoplie de Grouillot",
             "de": "Griesgrob-Set",
             "es": "Set de Grolot",
-            "pt": "Conjunto de Grullo"
+            "pt": "Conjunto de Grullo",
+            "it": "Grouillot Set"
         },
         "bonuses": {
             "2": [
@@ -16645,7 +16772,8 @@
             "fr": "Panoplie de Karotz",
             "de": "Karottigz-Set",
             "es": "Set de Blackarotz",
-            "pt": "Conjunto de Kerotz"
+            "pt": "Conjunto de Kerotz",
+            "it": "Karotz Set"
         },
         "bonuses": {
             "2": [
@@ -16691,7 +16819,8 @@
             "fr": "Panoplie de Rapiat",
             "de": "Rattgier-Set",
             "es": "Set de Rapiat",
-            "pt": "Conjunto de Rapiat"
+            "pt": "Conjunto de Rapiat",
+            "it": "Rapiat Set"
         },
         "bonuses": {
             "2": [
@@ -16737,7 +16866,8 @@
             "fr": "Panoplie de Kubitus",
             "de": "Ellerton Dschonn-Set",
             "es": "Set de Cúbitus",
-            "pt": "Conjunto de Kubitus"
+            "pt": "Conjunto de Kubitus",
+            "it": "Kubitus Set"
         },
         "bonuses": {
             "2": [
@@ -16783,7 +16913,8 @@
             "fr": "Panoplie de Piggy Paupe",
             "de": "Piggy Pop - Set",
             "es": "Set de Piggy Pope",
-            "pt": "Conjunto de Piggy Pop"
+            "pt": "Conjunto de Piggy Pop",
+            "it": "Piggy Paupe Set"
         },
         "bonuses": {
             "2": [
@@ -16834,7 +16965,8 @@
             "fr": "Panoplie d'Ougicle",
             "de": "Ouginassi-Set",
             "es": "Set de Ugicle",
-            "pt": "Conjunto de Ugiclo"
+            "pt": "Conjunto de Ugiclo",
+            "it": "Ougicle Set"
         },
         "bonuses": {
             "2": [
@@ -16885,7 +17017,8 @@
             "fr": "Panoplie du Tengu Givrefoux",
             "de": "Tengu Eisfux - Set",
             "es": "Set de Tengu Gélifux",
-            "pt": "Conjunto do Tengu Gelifox"
+            "pt": "Conjunto do Tengu Gelifox",
+            "it": "Tengu Snowfoux Set"
         },
         "bonuses": {
             "2": [
@@ -16973,7 +17106,8 @@
             "fr": "Panoplie du Korriandre",
             "de": "Korriander-Set",
             "es": "Set de Cil",
-            "pt": "Conjunto do Kwentro"
+            "pt": "Conjunto do Kwentro",
+            "it": "Korriander Set"
         },
         "bonuses": {
             "2": [
@@ -17061,7 +17195,8 @@
             "fr": "Panoplie de Kolosso",
             "de": "Daxolossus-Set",
             "es": "Set de Tejossus",
-            "pt": "Conjunto do Kolosso"
+            "pt": "Conjunto do Kolosso",
+            "it": "Kolosso Set"
         },
         "bonuses": {
             "2": [
@@ -17132,7 +17267,8 @@
             "fr": "Panoplie du Glourséleste",
             "de": "Set des Himmlischen Barbären",
             "es": "Set del Golosotrón Real",
-            "pt": "Conjunto do Glurseleste"
+            "pt": "Conjunto do Glurseleste",
+            "it": "Celestial Bearbarian Set"
         },
         "bonuses": {
             "2": [
@@ -17362,7 +17498,8 @@
             "fr": "Panoplie du Harpirate",
             "de": "Phantomharpiraten-Set",
             "es": "Set de Harpirata",
-            "pt": "Conjunto do Arpirata"
+            "pt": "Conjunto do Arpirata",
+            "it": "Harpy Pirate Set"
         },
         "bonuses": {
             "2": [
@@ -17431,7 +17568,8 @@
             "fr": "Panoplie du Kanniboul Ebil",
             "de": "Kanniball Aahde - Set",
             "es": "Set del kaníbola Daldrrak",
-            "pt": "Conjunto do Kanibola Phora"
+            "pt": "Conjunto do Kanibola Phora",
+            "it": "Kanniball Andchain Set"
         },
         "bonuses": {
             "2": [
@@ -17514,7 +17652,8 @@
             "fr": "Panoplie du Boostache",
             "de": "Bartaboo-Set",
             "es": "Set de Boostacho",
-            "pt": "Conjunto do Boostache"
+            "pt": "Conjunto do Boostache",
+            "it": "Boostache Set"
         },
         "bonuses": {
             "2": [
@@ -17597,7 +17736,8 @@
             "fr": "Panoplie du Kwakwa",
             "de": "Kwackatau-Set",
             "es": "Set de Kwoknan",
-            "pt": "Conjunto do Kwakwa"
+            "pt": "Conjunto do Kwakwa",
+            "it": "Kwakwa Set"
         },
         "bonuses": {
             "2": [
@@ -17735,7 +17875,8 @@
             "fr": "Panoplie de Traçon",
             "de": "Cooles Traschal - Set",
             "es": "Set de Gramm",
-            "pt": "Conjunto de Traçon"
+            "pt": "Conjunto de Traçon",
+            "it": "Tracon Set"
         },
         "bonuses": {
             "2": [
@@ -17786,7 +17927,8 @@
             "fr": "Panoplie de Mirh",
             "de": "Traumstar Tion Mihr - Set",
             "es": "Set de Mirh",
-            "pt": "Conjunto de Mirh"
+            "pt": "Conjunto de Mirh",
+            "it": "Mirh Set"
         },
         "bonuses": {
             "2": [
@@ -17832,7 +17974,8 @@
             "fr": "Panoplie de Kalkanéus",
             "de": "Kalkaneus-Set",
             "es": "Set de Dicardya",
-            "pt": "Conjunto Kalkaneano"
+            "pt": "Conjunto Kalkaneano",
+            "it": "Kalkaneus Set"
         },
         "bonuses": {
             "2": [
@@ -17883,7 +18026,8 @@
             "fr": "Panoplie d'Hichète",
             "de": "Abian-Set",
             "es": "Set de Nillo",
-            "pt": "Conjunto de Hichete"
+            "pt": "Conjunto de Hichete",
+            "it": "Hichete Set"
         },
         "bonuses": {
             "2": [
@@ -17939,7 +18083,8 @@
             "fr": "Panoplie d'Haku",
             "de": "Haku-Set",
             "es": "Set de Haku",
-            "pt": "Conjunto de Haku"
+            "pt": "Conjunto de Haku",
+            "it": "Haku Set"
         },
         "bonuses": {
             "2": [
@@ -17985,7 +18130,8 @@
             "fr": "Panoplie de Nelween",
             "de": "Nelwynn-Set",
             "es": "Set de Nelwynn",
-            "pt": "Conjunto de Nelween"
+            "pt": "Conjunto de Nelween",
+            "it": "Nelween Set"
         },
         "bonuses": {
             "2": [
@@ -18098,7 +18244,8 @@
             "fr": "Panoplie Moutheuze",
             "de": "Wollgemut-Set",
             "es": "Set mutesco",
-            "pt": "Conjunto Mutoso"
+            "pt": "Conjunto Mutoso",
+            "it": "Mastic Set"
         },
         "bonuses": {
             "2": [
@@ -18176,7 +18323,8 @@
             "fr": "Panoplie de Frigostine",
             "de": "Frigostinchens Set",
             "es": "Set de Frigostina",
-            "pt": "Conjunto de Frigostina"
+            "pt": "Conjunto de Frigostina",
+            "it": "Frigostine Set"
         },
         "bonuses": {
             "2": [
@@ -18281,7 +18429,8 @@
             "fr": "Panoplie de Cantile",
             "de": "Bürgherr-Set",
             "es": "Set de Lario",
-            "pt": "Conjunto de Berna"
+            "pt": "Conjunto de Berna",
+            "it": "Cantile Set"
         },
         "bonuses": {
             "2": [
@@ -18399,7 +18548,8 @@
             "fr": "Panoplie des Prophètes",
             "de": "Set des Propheten",
             "es": "Set de los profetas",
-            "pt": "Conjunto dos Profetas"
+            "pt": "Conjunto dos Profetas",
+            "it": "Set of the Prophets"
         },
         "bonuses": {
             "2": [
@@ -18450,7 +18600,8 @@
             "fr": "Panoplie de Guten Tak",
             "de": "Guten Tark - Set",
             "es": "Set de Gwen Astarde",
-            "pt": "Conjunto de Guten Tak"
+            "pt": "Conjunto de Guten Tak",
+            "it": "Guten Tak Set"
         },
         "bonuses": {
             "2": [
@@ -18538,7 +18689,8 @@
             "fr": "Panoplie de Boréale",
             "de": "Bohrealis-Set",
             "es": "Set de Boreal",
-            "pt": "Conjunto de Boreal"
+            "pt": "Conjunto de Boreal",
+            "it": "Borealis Set"
         },
         "bonuses": {
             "2": [
@@ -18686,7 +18838,8 @@
             "fr": "Panoplie du Professeur Xa",
             "de": "Set von Professor Xa",
             "es": "Set del profesor Xa",
-            "pt": "Conjunto do Professor Xa"
+            "pt": "Conjunto do Professor Xa",
+            "it": "Professor Xa Set"
         },
         "bonuses": {
             "2": [
@@ -18826,7 +18979,8 @@
             "fr": "Panoplie Gloursonne",
             "de": "Barbärenstarkes Set",
             "es": "Set golosón",
-            "pt": "Conjunto Glursão"
+            "pt": "Conjunto Glursão",
+            "it": "Bearbaric Set"
         },
         "bonuses": {
             "2": [
@@ -18917,7 +19071,8 @@
             "fr": "Panoplie de la Fuji Givrefoux",
             "de": "Fuji Eisfux - Set",
             "es": "Set de Fuji Gélifux",
-            "pt": "Conjunto da Fuji Gelifox"
+            "pt": "Conjunto da Fuji Gelifox",
+            "it": "Fuji Snowfoux Set"
         },
         "bonuses": {
             "2": [
@@ -19020,7 +19175,8 @@
             "fr": "Panoplie de Nowel",
             "de": "Weißnachts-Set",
             "es": "Set de Nawidad",
-            "pt": "Conjunto de Nataw"
+            "pt": "Conjunto de Nataw",
+            "it": "Kwismas Set"
         },
         "bonuses": {
             "2": [
@@ -19039,7 +19195,8 @@
             "fr": "Panoplie du Gorgouille",
             "de": "Gorgoyl-Set",
             "es": "Set de marranárgola",
-            "pt": "Conjunto do Górgula"
+            "pt": "Conjunto do Górgula",
+            "it": "Gorgoyle Set"
         },
         "bonuses": {
             "2": [
@@ -19132,7 +19289,8 @@
             "fr": "Panoplie Explosive",
             "de": "Explosives Set",
             "es": "Set explosivo",
-            "pt": "Conjunto Explosivo"
+            "pt": "Conjunto Explosivo",
+            "it": "Explosive Set"
         },
         "bonuses": {
             "2": [
@@ -19397,7 +19555,8 @@
             "fr": "Panoplie Lunatique",
             "de": "Launisches Set",
             "es": "Set lunático",
-            "pt": "Conjunto Lunático"
+            "pt": "Conjunto Lunático",
+            "it": "Moody Set"
         },
         "bonuses": {
             "2": [
@@ -19662,7 +19821,8 @@
             "fr": "Panoplie du Vulkain",
             "de": "Vulkan-Set",
             "es": "Set de vulkaniano",
-            "pt": "Conjunto Vulkaniano"
+            "pt": "Conjunto Vulkaniano",
+            "it": "Vulkanno Set"
         },
         "bonuses": {
             "2": [
@@ -19772,7 +19932,8 @@
             "fr": "Panoplie du Krokilleur",
             "de": "Schocker-Set",
             "es": "Set de cascasauriador",
-            "pt": "Conjunto do Kaskador"
+            "pt": "Conjunto do Kaskador",
+            "it": "Saurosheller Set"
         },
         "bonuses": {
             "2": [
@@ -19823,7 +19984,8 @@
             "fr": "Panoplie de Grozilla",
             "de": "Grozilla-Set",
             "es": "Set de Grozilla",
-            "pt": "Conjunto de Grozilla"
+            "pt": "Conjunto de Grozilla",
+            "it": "Grozilla Set"
         },
         "bonuses": {
             "2": [
@@ -19911,7 +20073,8 @@
             "fr": "Panoplie de Daïgoro",
             "de": "Daigoro-Set",
             "es": "Set de Daigorobo",
-            "pt": "Conjunto de Daigoro"
+            "pt": "Conjunto de Daigoro",
+            "it": "Daggero's Set"
         },
         "bonuses": {
             "2": [
@@ -19994,7 +20157,8 @@
             "fr": "Panoplie du Glutin",
             "de": "Gwichtel-Set",
             "es": "Set de duendecillo",
-            "pt": "Conjunto do Gluende"
+            "pt": "Conjunto do Gluende",
+            "it": "Goblimp Set"
         },
         "bonuses": {
             "2": [
@@ -20062,7 +20226,8 @@
             "fr": "Panoplie de Redolphe",
             "de": "Rotolph-Set",
             "es": "Set de Renodolfo",
-            "pt": "Conjunto do Redolph"
+            "pt": "Conjunto do Redolph",
+            "it": "Redolph Set"
         },
         "bonuses": {
             "2": [
@@ -20150,7 +20315,8 @@
             "fr": "Panoplie du Nowel Cauchemardesque",
             "de": "Weißnachtshorror-Set",
             "es": "Set de las pesadillas nawideñas de Jack",
-            "pt": "Conjunto do Pesadelo de Nataw"
+            "pt": "Conjunto do Pesadelo de Nataw",
+            "it": "Kwismas Nightmare Set"
         },
         "bonuses": {
             "2": [
@@ -20303,7 +20469,8 @@
             "fr": "Panoplie des Anciens Chafers",
             "de": "Ur-Chafer - Set",
             "es": "Set de los Chafers Ancianos",
-            "pt": "Conjunto dos Antigos Chaferes"
+            "pt": "Conjunto dos Antigos Chaferes",
+            "it": "Ancient Chafer Set"
         },
         "bonuses": {
             "2": [
@@ -20371,7 +20538,8 @@
             "fr": "Panoplie de Brouce Boulgoure",
             "de": "Bruce Bulgour - Set",
             "es": "Set de Brus Bulguro",
-            "pt": "Conjunto do Bruce Bulgur"
+            "pt": "Conjunto do Bruce Bulgur",
+            "it": "Brouce Boulgoure Set"
         },
         "bonuses": {
             "2": [
@@ -20479,7 +20647,8 @@
             "fr": "Panoplie d'Otomaï",
             "de": "Otomaï-Set",
             "es": "Set de Otomai",
-            "pt": "Conjunto de Otomai"
+            "pt": "Conjunto de Otomai",
+            "it": "Otomai Set"
         },
         "bonuses": {
             "2": [
@@ -20572,7 +20741,8 @@
             "fr": "Panoplie de Danathor",
             "de": "Danathor-Set",
             "es": "Set de Danathor",
-            "pt": "Conjunto de Danathor"
+            "pt": "Conjunto de Danathor",
+            "it": "Danathor Set"
         },
         "bonuses": {
             "2": [
@@ -20665,7 +20835,8 @@
             "fr": "Panoplie d'Allister",
             "de": "Allister-Set",
             "es": "Set de Allister",
-            "pt": "Conjunto de Allister"
+            "pt": "Conjunto de Allister",
+            "it": "Allister Set"
         },
         "bonuses": {
             "2": [
@@ -20758,7 +20929,8 @@
             "fr": "Panoplie de Léthaline",
             "de": "Lethalina-Set",
             "es": "Set de Letalina",
-            "pt": "Conjunto de Letalina"
+            "pt": "Conjunto de Letalina",
+            "it": "Lethaline Set"
         },
         "bonuses": {
             "2": [
@@ -20839,7 +21011,8 @@
             "fr": "Panoplie d'Ogivol",
             "de": "Ogivol-Set",
             "es": "Set de Ogivol",
-            "pt": "Conjunto de Ogivol"
+            "pt": "Conjunto de Ogivol",
+            "it": "Ogivol Set"
         },
         "bonuses": {
             "2": [
@@ -21010,7 +21183,8 @@
             "fr": "Panoplie Coffre",
             "de": "Truhen-Set",
             "es": "Set cofre",
-            "pt": "Conjunto Baú"
+            "pt": "Conjunto Baú",
+            "it": "Chest Set"
         },
         "bonuses": {
             "2": [
@@ -21088,7 +21262,8 @@
             "fr": "Panoplie Submersible",
             "de": "Tauch-Set",
             "es": "Set sumergible",
-            "pt": "Conjunto Submarino"
+            "pt": "Conjunto Submarino",
+            "it": "Submersible Set"
         },
         "bonuses": {
             "2": [
@@ -21353,7 +21528,8 @@
             "fr": "Panoplitrouille",
             "de": "Kürbängliches Set",
             "es": "Set calabafobia",
-            "pt": "Conjunto Medóbora"
+            "pt": "Conjunto Medóbora",
+            "it": "Punkin' Set"
         },
         "bonuses": {
             "1": [],
@@ -21432,7 +21608,8 @@
             "fr": "Panoplie Rose",
             "de": "Rosa-Set",
             "es": "Set rosa",
-            "pt": "Conjunto Rosa"
+            "pt": "Conjunto Rosa",
+            "it": "Pink Set"
         },
         "bonuses": {
             "2": [
@@ -21456,7 +21633,8 @@
             "fr": "Panoplie d'Henual",
             "de": "Henual-Set",
             "es": "Set de Henual",
-            "pt": "Conjunto de Henual"
+            "pt": "Conjunto de Henual",
+            "it": "Henual Set"
         },
         "bonuses": {
             "2": [
@@ -21537,7 +21715,8 @@
             "fr": "Panoplie d'Oshimo",
             "de": "Oshimo-Set",
             "es": "Set de Yokashi",
-            "pt": "Conjunto de Oshimo"
+            "pt": "Conjunto de Oshimo",
+            "it": "Oshimo Set"
         },
         "bonuses": {
             "2": [
@@ -21648,7 +21827,8 @@
             "fr": "Panoplie de Nevark",
             "de": "Newark-Set",
             "es": "Set de Nevark",
-            "pt": "Conjunto do Nevark"
+            "pt": "Conjunto do Nevark",
+            "it": "Nevark Set"
         },
         "bonuses": {
             "2": [
@@ -21709,7 +21889,8 @@
             "fr": "Panoplie de Théodoran Ax",
             "de": "Theodoran X - Set",
             "es": "Set de Ontoral Zo",
-            "pt": "Conjunto de Theodorant Ax"
+            "pt": "Conjunto de Theodorant Ax",
+            "it": "Antyklime Ax Set"
         },
         "bonuses": {
             "2": [
@@ -21820,7 +22001,8 @@
             "fr": "Panoplie de Padgref",
             "de": "Set des Knöchernen Marks",
             "es": "Set de Noai Aludem",
-            "pt": "Conjunto de Nondome"
+            "pt": "Conjunto de Nondome",
+            "it": "Nomarow Set"
         },
         "bonuses": {
             "2": [
@@ -21901,7 +22083,8 @@
             "fr": "Panoplie d'Hel Munster",
             "de": "Hel Münster - Set",
             "es": "Set de Hel Munster",
-            "pt": "Conjunto de Hel Munster"
+            "pt": "Conjunto de Hel Munster",
+            "it": "Hel Munster Set"
         },
         "bonuses": {
             "2": [
@@ -22002,7 +22185,8 @@
             "fr": "Panoplie d'Aermyne",
             "de": "Aermyne-Set",
             "es": "Set de Aermyn",
-            "pt": "Conjunto de Armyna"
+            "pt": "Conjunto de Armyna",
+            "it": "Aermyne Set"
         },
         "bonuses": {
             "2": [
@@ -22063,7 +22247,8 @@
             "fr": "Panoplie du Frelon Noir",
             "de": "Set der Schwarzen Hornisse",
             "es": "Set de Los Abejorros Negros",
-            "pt": "Conjunto do Vespa Negra"
+            "pt": "Conjunto do Vespa Negra",
+            "it": "Black Hornet Set"
         },
         "bonuses": {
             "2": [
@@ -22102,7 +22287,8 @@
             "fr": "Panoplie Infernale",
             "de": "Inferno-Set",
             "es": "Set infernal",
-            "pt": "Conjunto Infernal"
+            "pt": "Conjunto Infernal",
+            "it": "Infernal Set"
         },
         "bonuses": {
             "2": [
@@ -22136,7 +22322,8 @@
             "fr": "Panoplie Fluviale",
             "de": "Fluss-Set",
             "es": "Set fluvial",
-            "pt": "Conjunto Fluvial"
+            "pt": "Conjunto Fluvial",
+            "it": "Fluvial Set"
         },
         "bonuses": {
             "2": [
@@ -22170,7 +22357,8 @@
             "fr": "Panoplie Contrebandière",
             "de": "Schmuggler-Set",
             "es": "Set de contrabandista",
-            "pt": "Conjunto Contrabandista"
+            "pt": "Conjunto Contrabandista",
+            "it": "Contrabanned Set"
         },
         "bonuses": {
             "2": [
@@ -22204,7 +22392,8 @@
             "fr": "Panoplie Meurtrière",
             "de": "Mörderisches Set",
             "es": "Set asesino",
-            "pt": "Conjunto Assassino"
+            "pt": "Conjunto Assassino",
+            "it": "Murderous Set"
         },
         "bonuses": {
             "2": [
@@ -22233,7 +22422,8 @@
             "fr": "Panoplie du Comte Harebourg",
             "de": "Set von Graf Primzahl",
             "es": "Set del conde Kontatrás",
-            "pt": "Conjunto do Conde Traspafrent"
+            "pt": "Conjunto do Conde Traspafrent",
+            "it": "Count Harebourg Set"
         },
         "bonuses": {
             "2": [
@@ -22374,7 +22564,8 @@
             "fr": "Panoplie Séculaire",
             "de": "Säkular-Set",
             "es": "Set secular",
-            "pt": "Conjunto Secular"
+            "pt": "Conjunto Secular",
+            "it": "Age-Old Set"
         },
         "bonuses": {
             "2": [
@@ -22480,7 +22671,8 @@
             "fr": "Panoplie Cryochrone",
             "de": "Cryochron-Set",
             "es": "Set criocrono",
-            "pt": "Conjunto Criocrono"
+            "pt": "Conjunto Criocrono",
+            "it": "Cryochrone Set"
         },
         "bonuses": {
             "2": [
@@ -22581,7 +22773,8 @@
             "fr": "Panoplie du Cycloïde",
             "de": "Zykloid-Set",
             "es": "Set de kukoloide",
-            "pt": "Conjunto do Cicloide"
+            "pt": "Conjunto do Cicloide",
+            "it": "Cycloid Set"
         },
         "bonuses": {
             "2": [
@@ -22749,7 +22942,8 @@
             "fr": "Panoplie du Strigide",
             "de": "Stringid-Set",
             "es": "Set de estrígido",
-            "pt": "Conjunto do Strígido"
+            "pt": "Conjunto do Strígido",
+            "it": "Treadfast Set"
         },
         "bonuses": {
             "2": [
@@ -22815,7 +23009,8 @@
             "fr": "Panoplie du Sinistrofu",
             "de": "Sinistrofu-Set",
             "es": "Set de buhotofu",
-            "pt": "Conjunto do Sinistrofu"
+            "pt": "Conjunto do Sinistrofu",
+            "it": "Sinistrofu Set"
         },
         "bonuses": {
             "2": [
@@ -22886,7 +23081,8 @@
             "fr": "Panoplie du Granduk",
             "de": "Obu-Bobub - Set",
             "es": "Set de bubobubo",
-            "pt": "Conjunto do Bububo"
+            "pt": "Conjunto do Bububo",
+            "it": "Bubotron Set"
         },
         "bonuses": {
             "2": [
@@ -22972,7 +23168,8 @@
             "fr": "Panoplie du Nocturlabe",
             "de": "Nokturnal-Set",
             "es": "Set de nocturlabiúho",
-            "pt": "Conjunto do Nocturlábio"
+            "pt": "Conjunto do Nocturlábio",
+            "it": "Nocturnowl Set"
         },
         "bonuses": {
             "2": [
@@ -23103,7 +23300,8 @@
             "fr": "Panoplie de Klime",
             "de": "Set von R.Klimm",
             "es": "Set de Klim",
-            "pt": "Conjunto do Klim"
+            "pt": "Conjunto do Klim",
+            "it": "Klime Set"
         },
         "bonuses": {
             "2": [
@@ -23184,7 +23382,8 @@
             "fr": "Panoplie Vicieuse",
             "de": "Heimtückisches Set",
             "es": "Set traicionero",
-            "pt": "Conjunto Vicioso"
+            "pt": "Conjunto Vicioso",
+            "it": "Vicious Set"
         },
         "bonuses": {
             "2": [
@@ -23305,7 +23504,8 @@
             "fr": "Panoplie Glaciale",
             "de": "Eiskaltes Set",
             "es": "Set glacial",
-            "pt": "Conjunto Glacial"
+            "pt": "Conjunto Glacial",
+            "it": "Glacial Set"
         },
         "bonuses": {
             "2": [
@@ -23366,7 +23566,8 @@
             "fr": "Panoplie de Missiz Frizz",
             "de": "Set von Missiz Frizz",
             "es": "Set de Mizz Frizz",
-            "pt": "Conjunto da Missiz Frizz"
+            "pt": "Conjunto da Missiz Frizz",
+            "it": "Missiz Freezz Set"
         },
         "bonuses": {
             "2": [
@@ -23467,7 +23668,8 @@
             "fr": "Panoplie de Nileza",
             "de": "Nileza-Set",
             "es": "Set de Nileza",
-            "pt": "Conjunto de Nileza"
+            "pt": "Conjunto de Nileza",
+            "it": "Nileza Set"
         },
         "bonuses": {
             "2": [
@@ -23528,7 +23730,8 @@
             "fr": "Panoplie Instable",
             "de": "Labiles Set",
             "es": "Set inestable",
-            "pt": "Conjunto Instável"
+            "pt": "Conjunto Instável",
+            "it": "Unstable Set"
         },
         "bonuses": {
             "2": [
@@ -23734,7 +23937,8 @@
             "fr": "Panoplie de Sylargh",
             "de": "Sylargh-Set",
             "es": "Set de Sylargh",
-            "pt": "Conjunto do Sylargh"
+            "pt": "Conjunto do Sylargh",
+            "it": "Sylargh Set"
         },
         "bonuses": {
             "2": [
@@ -23805,7 +24009,8 @@
             "fr": "Panoplie du Kanimate",
             "de": "Kanimat-Set",
             "es": "Set de kanitómata",
-            "pt": "Conjunto do Kanibot"
+            "pt": "Conjunto do Kanibot",
+            "it": "Kan-O-Mat Set"
         },
         "bonuses": {
             "2": [
@@ -23916,7 +24121,8 @@
             "fr": "Panoplie de Maître Nabur",
             "de": "Set von Meister Nabur",
             "es": "Set del maestro Nabur",
-            "pt": "Conjunto do Mestre Nabur"
+            "pt": "Conjunto do Mestre Nabur",
+            "it": "Master Nabur Set"
         },
         "bonuses": {
             "2": [
@@ -23945,7 +24151,8 @@
             "fr": "Panoplie Magmatique",
             "de": "Magma-Set",
             "es": "Set magmático",
-            "pt": "Conjunto Magmático"
+            "pt": "Conjunto Magmático",
+            "it": "Magmatic Set"
         },
         "bonuses": {
             "2": [
@@ -24016,7 +24223,8 @@
             "fr": "Panoplie Quartzésienne",
             "de": "Quarzesianisches Set",
             "es": "Set Cuarzosiano",
-            "pt": "Conjunto Quartzesiano"
+            "pt": "Conjunto Quartzesiano",
+            "it": "Quartzotic Set"
         },
         "bonuses": {
             "2": [
@@ -24107,7 +24315,8 @@
             "fr": "Panoplie du Wabbit",
             "de": "Wabbit-Set",
             "es": "Set wabbit",
-            "pt": "Conjunto do Wabbit"
+            "pt": "Conjunto do Wabbit",
+            "it": "Wabbit Set"
         },
         "bonuses": {
             "2": [
@@ -24188,7 +24397,8 @@
             "fr": "Panoplie du Wa Wobot",
             "de": "Wa Wobot - Set",
             "es": "Set del Wey Wobot",
-            "pt": "Conjunto do Wei Wobot"
+            "pt": "Conjunto do Wei Wobot",
+            "it": "Wa Wobot Set"
         },
         "bonuses": {
             "2": [
@@ -24259,7 +24469,8 @@
             "fr": "Panoplie du Blanc Pa Wabbit",
             "de": "White Grand Pa Wabbit - Set",
             "es": "Set de awelito wabbit blanco",
-            "pt": "Conjunto do Vovô Wabbit Branco"
+            "pt": "Conjunto do Vovô Wabbit Branco",
+            "it": "Whitepaw Wabbit Set"
         },
         "bonuses": {
             "2": [
@@ -24320,7 +24531,8 @@
             "fr": "Panoplie du Wabbit Céphale",
             "de": "Wabbit Terbös - Set",
             "es": "Set de wabbit céfalo",
-            "pt": "Conjunto do Wabbit Céfalo"
+            "pt": "Conjunto do Wabbit Céfalo",
+            "it": "Janus Wabbit Set"
         },
         "bonuses": {
             "2": [
@@ -24371,7 +24583,8 @@
             "fr": "Panoplie du Wabbit Garou",
             "de": "WerWabbit-Set",
             "es": "Set de wabbit lobo",
-            "pt": "Conjunto do Lobiwabbit"
+            "pt": "Conjunto do Lobiwabbit",
+            "it": "Wewe-Wabbit Set"
         },
         "bonuses": {
             "2": [
@@ -24412,7 +24625,8 @@
             "fr": "Panoplie Dramatik",
             "de": "Dramaktisches Set",
             "es": "Set dramátiko",
-            "pt": "Conjunto Dramátiko"
+            "pt": "Conjunto Dramátiko",
+            "it": "Dramatik Set"
         },
         "bonuses": {
             "2": [
@@ -24463,7 +24677,8 @@
             "fr": "Panoplie Talienne",
             "de": "Neilati-Set",
             "es": "Set Aliano",
-            "pt": "Conjunto Teatral"
+            "pt": "Conjunto Teatral",
+            "it": "Talian Set"
         },
         "bonuses": {
             "2": [
@@ -24514,7 +24729,8 @@
             "fr": "Panoplie Engloutie",
             "de": "Versunkenes Set",
             "es": "Set submarino",
-            "pt": "Conjunto Submerso"
+            "pt": "Conjunto Submerso",
+            "it": "Sunken Set"
         },
         "bonuses": {
             "2": [
@@ -24597,7 +24813,8 @@
             "fr": "Pikoplie",
             "de": "Pickollo-Set",
             "es": "Pikoset",
-            "pt": "Pikonjunto"
+            "pt": "Pikonjunto",
+            "it": "Barbakle Set"
         },
         "bonuses": {
             "2": [
@@ -24678,7 +24895,8 @@
             "fr": "Panoplie du Cartographe",
             "de": "Kartographen-Set",
             "es": "Set del cartógrafo",
-            "pt": "Conjunto do Cartógrafo"
+            "pt": "Conjunto do Cartógrafo",
+            "it": "Cartographer Set"
         },
         "bonuses": {
             "2": [
@@ -24819,7 +25037,8 @@
             "fr": "Panoplie des Abysses",
             "de": "Abgründiges Set",
             "es": "Set de los abismos",
-            "pt": "Conjunto dos Abismos"
+            "pt": "Conjunto dos Abismos",
+            "it": "Abyss Set"
         },
         "bonuses": {
             "2": [
@@ -24915,7 +25134,8 @@
             "fr": "Panoplie Obscure",
             "de": "Dunkelset",
             "es": "Set obscuro",
-            "pt": "Conjunto Obscuro"
+            "pt": "Conjunto Obscuro",
+            "it": "Lost Set"
         },
         "bonuses": {
             "2": [
@@ -24996,7 +25216,8 @@
             "fr": "Panoplie d'Ombre",
             "de": "Schattenset",
             "es": "Set de Sombra",
-            "pt": "Conjunto do Sombra"
+            "pt": "Conjunto do Sombra",
+            "it": "Shadow Set"
         },
         "bonuses": {
             "2": [
@@ -25077,7 +25298,8 @@
             "fr": "Panoplie du Père Fwetar",
             "de": "Rubrächer, der Knechter - Set",
             "es": "Set de Papa No-es",
-            "pt": "Conjunto do Papai Cruel"
+            "pt": "Conjunto do Papai Cruel",
+            "it": "Father Whupper Set"
         },
         "bonuses": {
             "2": [
@@ -25128,7 +25350,8 @@
             "fr": "Panoplie de Flèche Mauve",
             "de": "Mauve Arrow - Set",
             "es": "Set de Flecha Malva",
-            "pt": "Conjunto do Arqueiro Violeta"
+            "pt": "Conjunto do Arqueiro Violeta",
+            "it": "Violet Arrow Set"
         },
         "bonuses": {
             "2": [
@@ -25179,7 +25402,8 @@
             "fr": "Panoplie d'Ambi Guman",
             "de": "Zwiedolin-Set",
             "es": "Set de Ceboyix",
-            "pt": "Conjunto do Cebonoso"
+            "pt": "Conjunto do Cebonoso",
+            "it": "Veg Antilleze Set"
         },
         "bonuses": {
             "2": [
@@ -25235,7 +25459,8 @@
             "fr": "Panoplie du Kaniblou",
             "de": "Kaniguar-Set",
             "es": "Set de kanublú",
-            "pt": "Conjunto do Kaniblu"
+            "pt": "Conjunto do Kaniblu",
+            "it": "Kanazure Set"
         },
         "bonuses": {
             "2": [
@@ -25286,7 +25511,8 @@
             "fr": "Panoplie de l'Orfélin",
             "de": "Goldeoparden-Set",
             "es": "Set de huerfelino",
-            "pt": "Conjunto do Orfelino"
+            "pt": "Conjunto do Orfelino",
+            "it": "Orfan Set"
         },
         "bonuses": {
             "2": [
@@ -25337,7 +25563,8 @@
             "fr": "Panoplie du Barbétoal",
             "de": "Bartagon-Set",
             "es": "Set de barbestrella",
-            "pt": "Conjunto do Barbastrela"
+            "pt": "Conjunto do Barbastrela",
+            "it": "Staruman Set"
         },
         "bonuses": {
             "2": [
@@ -25418,7 +25645,8 @@
             "fr": "Panoplie de Nidas",
             "de": "Nidas-Set",
             "es": "Set de Nidas",
-            "pt": "Conjunto de Nidas"
+            "pt": "Conjunto de Nidas",
+            "it": "Nidas Set"
         },
         "bonuses": {
             "2": [
@@ -25509,7 +25737,8 @@
             "fr": "Panoplie du Piloztère",
             "de": "Haarraff-Set",
             "es": "Set de melenutrof",
-            "pt": "Conjunto do Pelutrof"
+            "pt": "Conjunto do Pelutrof",
+            "it": "Hairsh Set"
         },
         "bonuses": {
             "2": [
@@ -25600,7 +25829,8 @@
             "fr": "Panoplie du Lévitrof",
             "de": "Levitrof-Set",
             "es": "Set de levitrof",
-            "pt": "Conjunto do Levitrof"
+            "pt": "Conjunto do Levitrof",
+            "it": "Levitrof Set"
         },
         "bonuses": {
             "2": [
@@ -25741,7 +25971,8 @@
             "fr": "Panoplie du Kamasterisk",
             "de": "Kamasterisk-Set",
             "es": "Set de kamasterix",
-            "pt": "Conjunto do Kamasterisko"
+            "pt": "Conjunto do Kamasterisko",
+            "it": "Kamasterisk Set"
         },
         "bonuses": {
             "2": [
@@ -25842,7 +26073,8 @@
             "fr": "Panoplie Phossile",
             "de": "Griesengad-Set",
             "es": "Set de Perfósil",
-            "pt": "Conjunto do Perfuror"
+            "pt": "Conjunto do Perfuror",
+            "it": "Drhossil Set"
         },
         "bonuses": {
             "2": [
@@ -25883,7 +26115,8 @@
             "fr": "Panoplie du Père Phorreur",
             "de": "Griesgramratt-Set",
             "es": "Set de papatroz",
-            "pt": "Conjunto do Papatroz"
+            "pt": "Conjunto do Papatroz",
+            "it": "Powa Drhell Set"
         },
         "bonuses": {
             "2": [
@@ -25934,7 +26167,8 @@
             "fr": "Panoplie Précieuse",
             "de": "Nimezatsch-Set",
             "es": "Set atesorado",
-            "pt": "Conjunto Precioso"
+            "pt": "Conjunto Precioso",
+            "it": "Precious Set"
         },
         "bonuses": {
             "2": [
@@ -25985,7 +26219,8 @@
             "fr": "Panoplie du Berserkoffre",
             "de": "Berserkist-Set",
             "es": "Set de berserkofre",
-            "pt": "Conjunto do Berserkofre"
+            "pt": "Conjunto do Berserkofre",
+            "it": "Hurtful Locker Set"
         },
         "bonuses": {
             "2": [
@@ -26036,7 +26271,8 @@
             "fr": "Panoplie Truche",
             "de": "Kamelspatzen-Set",
             "es": "Set de pestruz",
-            "pt": "Conjunto Truz"
+            "pt": "Conjunto Truz",
+            "it": "Strich Set"
         },
         "bonuses": {
             "2": [
@@ -26077,7 +26313,8 @@
             "fr": "Gruchoplie",
             "de": "Kranmelspatzen-Set",
             "es": "Set de grullestruz",
-            "pt": "Conjunto do Guindastruz"
+            "pt": "Conjunto do Guindastruz",
+            "it": "Stretch Set"
         },
         "bonuses": {
             "2": [
@@ -26128,7 +26365,8 @@
             "fr": "Panoplie de la Cour Sombre",
             "de": "Düsterhof-Set",
             "es": "Set de cortesano tenebroso",
-            "pt": "Conjunto da Corte Sombria"
+            "pt": "Conjunto da Corte Sombria",
+            "it": "Dark Court Set"
         },
         "bonuses": {
             "2": [
@@ -26199,7 +26437,8 @@
             "fr": "Panoplie de Gein",
             "de": "Gain-Set",
             "es": "Set de Lonyon",
-            "pt": "Conjunto do Gein"
+            "pt": "Conjunto do Gein",
+            "it": "Gein Set"
         },
         "bonuses": {
             "2": [
@@ -26260,7 +26499,8 @@
             "fr": "Panoplie de la Reine des Voleurs",
             "de": "Set der Königin der Diebe",
             "es": "Set de la Reina de los Ladrones",
-            "pt": "Conjunto da Rainha dos Ladrões"
+            "pt": "Conjunto da Rainha dos Ladrões",
+            "it": "Queen of Thieves Set"
         },
         "bonuses": {
             "2": [
@@ -26361,7 +26601,8 @@
             "fr": "Panoplie des Malveilleurs",
             "de": "Garstibö-Set",
             "es": "Set de maligilante",
-            "pt": "Conjunto dos Malevigiantes"
+            "pt": "Conjunto dos Malevigiantes",
+            "it": "Malitiamen Set"
         },
         "bonuses": {
             "2": [
@@ -26452,7 +26693,8 @@
             "fr": "Panoplie du Katcheur",
             "de": "Wresseln-Set",
             "es": "Set de luchador de presinkach",
-            "pt": "Conjunto do lutador de Ketch"
+            "pt": "Conjunto do lutador de Ketch",
+            "it": "Rassler Set"
         },
         "bonuses": {
             "2": [
@@ -26543,7 +26785,8 @@
             "fr": "Panoplie Nécrotique",
             "de": "Nekroten-Set",
             "es": "Set necrótico",
-            "pt": "Conjunto dos Entomortis"
+            "pt": "Conjunto dos Entomortis",
+            "it": "Necrotick Set"
         },
         "bonuses": {
             "2": [
@@ -26614,7 +26857,8 @@
             "fr": "Panoplie de Dremoan",
             "de": "Dremoan-Set",
             "es": "Set de Dremoan",
-            "pt": "Conjunto do Dermoan"
+            "pt": "Conjunto do Dermoan",
+            "it": "Dremoan Set"
         },
         "bonuses": {
             "2": [
@@ -26665,7 +26909,8 @@
             "fr": "Panoplie du Capitaine Ekarlatte",
             "de": "Hauptmann Rot-Teka - Set",
             "es": "Set del Capitán Eskarlata",
-            "pt": "Conjunto do Capitão Skarlat"
+            "pt": "Conjunto do Capitão Skarlat",
+            "it": "Captain Scarlight Set"
         },
         "bonuses": {
             "2": [
@@ -26746,7 +26991,8 @@
             "fr": "Panoplie d'Ali Grothor",
             "de": "Ali Grothor - Set",
             "es": "Set de Ali Grothor",
-            "pt": "Conjunto do Ali Grothor"
+            "pt": "Conjunto do Ali Grothor",
+            "it": "Mastigator Set"
         },
         "bonuses": {
             "2": [
@@ -26837,7 +27083,8 @@
             "fr": "Panoplie de Frakacia Leukocytine",
             "de": "Frakassura Leukocytina - Set",
             "es": "Set de Tortacia Leukocitina",
-            "pt": "Conjunto da Kebra Leukocytina"
+            "pt": "Conjunto da Kebra Leukocytina",
+            "it": "Stellia Blutzell Set"
         },
         "bonuses": {
             "2": [
@@ -26873,7 +27120,8 @@
             "fr": "Panoplibou",
             "de": "Eulen-Set",
             "es": "Buhoset",
-            "pt": "Corujunto"
+            "pt": "Corujunto",
+            "it": "Lwo Set"
         },
         "bonuses": {
             "2": [
@@ -26964,7 +27212,8 @@
             "fr": "Panoplie des égarés",
             "de": "Set der Verlorenen",
             "es": "Set de los idos",
-            "pt": "Conjunto dos Perdidos"
+            "pt": "Conjunto dos Perdidos",
+            "it": "Fugitive Set"
         },
         "bonuses": {
             "2": [
@@ -27035,7 +27284,8 @@
             "fr": "Panoplie de Vortex",
             "de": "Vortex-Set",
             "es": "Set de Vórtex",
-            "pt": "Conjunto de Vórtex"
+            "pt": "Conjunto de Vórtex",
+            "it": "Vortex Set"
         },
         "bonuses": {
             "2": [
@@ -27096,7 +27346,8 @@
             "fr": "Harpinoplie",
             "de": "Harpy-Set",
             "es": "Set de arpilla",
-            "pt": "Conjunto Harpilha"
+            "pt": "Conjunto Harpilha",
+            "it": "Harpiset"
         },
         "bonuses": {
             "2": [
@@ -27212,7 +27463,8 @@
             "fr": "Panoplie Pnose",
             "de": "Hype Nose - Set",
             "es": "Hipnoset",
-            "pt": "Hipnojunto"
+            "pt": "Hipnojunto",
+            "it": "Mesm Set"
         },
         "bonuses": {
             "2": [
@@ -27293,7 +27545,8 @@
             "fr": "Panoplie de XLII",
             "de": "XLII-Set",
             "es": "Set de XLII",
-            "pt": "Conjunto de XLII"
+            "pt": "Conjunto de XLII",
+            "it": "XLII Set"
         },
         "bonuses": {
             "2": [
@@ -27394,7 +27647,8 @@
             "fr": "Panoplie de Soissanth",
             "de": "Gizesch-Set",
             "es": "Set de sesenth",
-            "pt": "Conjunto de Secentah"
+            "pt": "Conjunto de Secentah",
+            "it": "Siks-T Set"
         },
         "bonuses": {
             "2": [
@@ -27455,7 +27709,8 @@
             "fr": "Panoplie de Fraktale",
             "de": "Fraktal-Set",
             "es": "Set de Fraktal",
-            "pt": "Conjunto de Fraktal"
+            "pt": "Conjunto de Fraktal",
+            "it": "Fraktal Set"
         },
         "bonuses": {
             "2": [
@@ -27516,7 +27771,8 @@
             "fr": "Panoplie Xélomorphe",
             "de": "Xélomorph-Set",
             "es": "Set xeloforme",
-            "pt": "Conjunto Xelomorfo"
+            "pt": "Conjunto Xelomorfo",
+            "it": "Xelomorph Set"
         },
         "bonuses": {
             "2": [
@@ -27577,7 +27833,8 @@
             "fr": "Panoplie Fouduglen",
             "de": "Scratsahorntas-Set",
             "es": "Set de Peazo Beyota",
-            "pt": "Conjunto Nozoiado"
+            "pt": "Conjunto Nozoiado",
+            "it": "Akornaddikt Set"
         },
         "bonuses": {
             "2": [
@@ -27613,7 +27870,8 @@
             "fr": "Microplie",
             "de": "Mikro-Set",
             "es": "Microset",
-            "pt": "Micronjunto"
+            "pt": "Micronjunto",
+            "it": "Microset"
         },
         "bonuses": {
             "2": [
@@ -27756,7 +28014,8 @@
             "fr": "Panoplie Palliative",
             "de": "Palliativ-Set",
             "es": "Set paliativo",
-            "pt": "Conjunto Paliativo"
+            "pt": "Conjunto Paliativo",
+            "it": "Palliative Set"
         },
         "bonuses": {
             "2": [
@@ -27812,7 +28071,8 @@
             "fr": "Panoplie de la Voleuse",
             "de": "Set der Diebin",
             "es": "Set de la ladrona",
-            "pt": "Conjunto da Ladra"
+            "pt": "Conjunto da Ladra",
+            "it": "Thief Set"
         },
         "bonuses": {
             "2": [
@@ -27883,7 +28143,8 @@
             "fr": "Panoplie des Fonds marins",
             "de": "Meeresgrund-Set",
             "es": "Set de los fondos marinos",
-            "pt": "Conjunto do Fundo do Mar"
+            "pt": "Conjunto do Fundo do Mar",
+            "it": "Deep Sea Set"
         },
         "bonuses": {
             "2": [
@@ -27944,7 +28205,8 @@
             "fr": "Panoplie Transcendante",
             "de": "Transzendenz-Set",
             "es": "Set transcendente",
-            "pt": "Conjunto Transcendental"
+            "pt": "Conjunto Transcendental",
+            "it": "Transcendent Set"
         },
         "bonuses": {
             "2": [
@@ -28209,7 +28471,8 @@
             "fr": "Panoplie de la Tisseuse",
             "de": "Set der Weberin",
             "es": "Set de la tejedora",
-            "pt": "Conjunto da Tecelã"
+            "pt": "Conjunto da Tecelã",
+            "it": "Spynner Set"
         },
         "bonuses": {
             "2": [
@@ -28260,7 +28523,8 @@
             "fr": "Panoplie de la Pondeuse",
             "de": "Set der Spinnerin",
             "es": "Set de la ponedora",
-            "pt": "Conjunto da Poedeira"
+            "pt": "Conjunto da Poedeira",
+            "it": "Broody Set"
         },
         "bonuses": {
             "2": [
@@ -28311,7 +28575,8 @@
             "fr": "Panoplie Invisible",
             "de": "Unsichtbares Set",
             "es": "Set invisible",
-            "pt": "Conjunto Invisível"
+            "pt": "Conjunto Invisível",
+            "it": "Invisible Set"
         },
         "bonuses": {
             "2": [
@@ -28337,7 +28602,8 @@
             "fr": "Panoplie de Kardorim",
             "de": "Kardorim-Set",
             "es": "Set de Chadalid",
-            "pt": "Conjunto do Kardorim"
+            "pt": "Conjunto do Kardorim",
+            "it": "Kardorim Set"
         },
         "bonuses": {
             "2": [
@@ -28383,7 +28649,8 @@
             "fr": "Panoplie des Âmes",
             "de": "Seelen-Set",
             "es": "Set de las almas",
-            "pt": "Conjunto das Almas"
+            "pt": "Conjunto das Almas",
+            "it": "Soul Set"
         },
         "bonuses": {
             "2": [
@@ -28409,7 +28676,8 @@
             "fr": "Panoplie du Capitaine Pirate",
             "de": "Piratenkapitän-Set",
             "es": "Set de capitán pirata",
-            "pt": "Conjunto do Capitão Pirata"
+            "pt": "Conjunto do Capitão Pirata",
+            "it": "Pirate Captain Set"
         },
         "bonuses": {
             "2": [
@@ -28502,7 +28770,8 @@
             "fr": "Panoplie de Moon",
             "de": "Moon-Set",
             "es": "Set de Moon",
-            "pt": "Conjunto de Moon"
+            "pt": "Conjunto de Moon",
+            "it": "Moon Set"
         },
         "bonuses": {
             "2": [
@@ -28553,7 +28822,8 @@
             "fr": "Panoplie de Zatoïshwan",
             "de": "Zatoïshwan-Set",
             "es": "Set de Zatoïshwan",
-            "pt": "Conjunto do Zatoishwan"
+            "pt": "Conjunto do Zatoishwan",
+            "it": "Zatoishwan Set"
         },
         "bonuses": {
             "2": [
@@ -28614,7 +28884,8 @@
             "fr": "Panoplie du Bretteur Céleste",
             "de": "Himmlischer Haudegen - Set",
             "es": "Set de espadachín celeste",
-            "pt": "Conjunto do Espadachim Celeste"
+            "pt": "Conjunto do Espadachim Celeste",
+            "it": "Celestial Swashbuckler Set"
         },
         "bonuses": {
             "2": [
@@ -28725,7 +28996,8 @@
             "fr": "Panoplie du K.O.",
             "de": "K.O.-Set",
             "es": "Set de Kaos",
-            "pt": "Conjunto do K.O."
+            "pt": "Conjunto do K.O.",
+            "it": "K.O. Set"
         },
         "bonuses": {
             "2": [
@@ -28796,7 +29068,8 @@
             "fr": "Panoplie de Voldelor",
             "de": "Goldehort-Set",
             "es": "Set de Dambeldoro",
-            "pt": "Conjunto do Vouromort"
+            "pt": "Conjunto do Vouromort",
+            "it": "Voldelor Set"
         },
         "bonuses": {
             "2": [
@@ -28902,7 +29175,8 @@
             "fr": "Panoplie de Kongoku",
             "de": "Kongoku-Set",
             "es": "Set de Kongoku",
-            "pt": "Conjunto do Kongoku"
+            "pt": "Conjunto do Kongoku",
+            "it": "Kongoku Set"
         },
         "bonuses": {
             "2": [
@@ -28983,7 +29257,8 @@
             "fr": "Panoplie du Chasseur Embusqué",
             "de": "Hinterhaltsjäger-Set",
             "es": "Set de cazador emboscado",
-            "pt": "Conjunto do Caçador Emboscado"
+            "pt": "Conjunto do Caçador Emboscado",
+            "it": "Ambushing Hunter Set"
         },
         "bonuses": {
             "2": [
@@ -29034,7 +29309,8 @@
             "fr": "Panoplie Quadramentale",
             "de": "Quadrelementar-Set",
             "es": "Set cuadramental",
-            "pt": "Conjunto Quadramental"
+            "pt": "Conjunto Quadramental",
+            "it": "Quadramental Set"
         },
         "bonuses": {
             "2": [
@@ -29299,7 +29575,8 @@
             "fr": "Panoplie du Roi Joueur",
             "de": "Spielerkönig-Set",
             "es": "Set del rey jugador",
-            "pt": "Conjunto do Rei Jogador"
+            "pt": "Conjunto do Rei Jogador",
+            "it": "King Playa Set"
         },
         "bonuses": {
             "2": [
@@ -29380,7 +29657,8 @@
             "fr": "Panoplie de la Dame du Hasard",
             "de": "Glücksdame-Set",
             "es": "Set de la reina del azar",
-            "pt": "Conjunto da Dama do Azar"
+            "pt": "Conjunto da Dama do Azar",
+            "it": "Queen of Fate Set"
         },
         "bonuses": {
             "2": [
@@ -29461,7 +29739,8 @@
             "fr": "Panoplie du Chalœil",
             "de": "Maunzaug-Set",
             "es": "Set de Miauvizor",
-            "pt": "Conjunto do Gatolho"
+            "pt": "Conjunto do Gatolho",
+            "it": "Catseye Set"
         },
         "bonuses": {
             "2": [
@@ -29582,7 +29861,8 @@
             "fr": "Panoplie du Valet Veinard",
             "de": "Glücksbube-Set",
             "es": "Set de la sota afortunada",
-            "pt": "Conjunto do Valete Venturoso"
+            "pt": "Conjunto do Valete Venturoso",
+            "it": "Jammy Jack Set"
         },
         "bonuses": {
             "2": [
@@ -29623,7 +29903,8 @@
             "fr": "Panoplie d'Atcham",
             "de": "Atcham-Set",
             "es": "Set de Atcham",
-            "pt": "Conjunto do Atcham"
+            "pt": "Conjunto do Atcham",
+            "it": "Atcham Set"
         },
         "bonuses": {
             "2": [
@@ -29734,7 +30015,8 @@
             "fr": "Panoplie de Ush",
             "de": "Ush-Set",
             "es": "Set de Ush",
-            "pt": "Conjunto do Ush"
+            "pt": "Conjunto do Ush",
+            "it": "Ush Set"
         },
         "bonuses": {
             "2": [
@@ -29785,7 +30067,8 @@
             "fr": "Panoplie des Matougarous",
             "de": "Werkater-Set",
             "es": "Set de los micholobos",
-            "pt": "Conjunto dos Lobichanos"
+            "pt": "Conjunto dos Lobichanos",
+            "it": "Weremoggies Set"
         },
         "bonuses": {
             "2": [
@@ -29846,7 +30129,8 @@
             "fr": "Panoplie du Pounicheur",
             "de": "Flohzilla-Set",
             "es": "Set de Piojoporojo",
-            "pt": "Conjunto do Repulgnante"
+            "pt": "Conjunto do Repulgnante",
+            "it": "Colousses Set"
         },
         "bonuses": {
             "2": [
@@ -29907,7 +30191,8 @@
             "fr": "Panoplie des Ecaflipuces",
             "de": "Ecafloh-Set",
             "es": "Set de las zurcapulgas",
-            "pt": "Conjunto das Ecaflipulgas"
+            "pt": "Conjunto das Ecaflipulgas",
+            "it": "Ecaflees Set"
         },
         "bonuses": {
             "2": [
@@ -29968,7 +30253,8 @@
             "fr": "Poulplie",
             "de": "Krakset",
             "es": "Set pulpil",
-            "pt": "Polvunto"
+            "pt": "Polvunto",
+            "it": "Octoset"
         },
         "bonuses": {
             "2": [
@@ -30049,7 +30335,8 @@
             "fr": "Panoplie Trithon",
             "de": "Trithun-Set",
             "es": "Set trithón",
-            "pt": "Conjunto de Triatum"
+            "pt": "Conjunto de Triatum",
+            "it": "Tritun Set"
         },
         "bonuses": {
             "2": [
@@ -30130,7 +30417,8 @@
             "fr": "Panoplie de Meno",
             "de": "Meno-Set",
             "es": "Set de Meno",
-            "pt": "Conjunto de Meno"
+            "pt": "Conjunto de Meno",
+            "it": "Meno Set"
         },
         "bonuses": {
             "2": [
@@ -30221,7 +30509,8 @@
             "fr": "Panoplie de l'Indicible",
             "de": "Set des Unaussprechlichen",
             "es": "Set de lo indecible",
-            "pt": "Conjunto do indizível"
+            "pt": "Conjunto do indizível",
+            "it": "Unspeakable Set"
         },
         "bonuses": {
             "2": [
@@ -30312,7 +30601,8 @@
             "fr": "Panoplie Luminescente",
             "de": "Lumineszierendes Set",
             "es": "Set luminiscente",
-            "pt": "Conjunto luminescente"
+            "pt": "Conjunto luminescente",
+            "it": "Luminescent Set"
         },
         "bonuses": {
             "2": [
@@ -30413,7 +30703,8 @@
             "fr": "Panoplie de R'lyugluglu",
             "de": "R'lyuhgurgl-Set",
             "es": "Set de Rylugluglú",
-            "pt": "Conjunto de R'lyugluglu"
+            "pt": "Conjunto de R'lyugluglu",
+            "it": "Rygurgal Set"
         },
         "bonuses": {
             "2": [
@@ -30494,7 +30785,8 @@
             "fr": "Panoplie Ouroboulos",
             "de": "Ouroballos-Set",
             "es": "Set de uróbolo",
-            "pt": "Conjunto Ourobolados"
+            "pt": "Conjunto Ourobolados",
+            "it": "Ourobubble Set"
         },
         "bonuses": {
             "2": [
@@ -30545,7 +30837,8 @@
             "fr": "Panoplie du Désert",
             "de": "Wüstenset",
             "es": "Set del desierto",
-            "pt": "Conjunto do Deserto"
+            "pt": "Conjunto do Deserto",
+            "it": "Desert Set"
         },
         "bonuses": {
             "2": [
@@ -30596,7 +30889,8 @@
             "fr": "Panoplie Cacterre",
             "de": "Kakteen-Set",
             "es": "Set de cacterro",
-            "pt": "Conjunto Cacterra"
+            "pt": "Conjunto Cacterra",
+            "it": "Castuc Set"
         },
         "bonuses": {
             "2": [
@@ -30657,7 +30951,8 @@
             "fr": "Panoplie d'El Piko",
             "de": "El Piekso-Set",
             "es": "Set de El Piko",
-            "pt": "Conjunto de El Piko"
+            "pt": "Conjunto de El Piko",
+            "it": "El Piko Set"
         },
         "bonuses": {
             "2": [
@@ -30728,7 +31023,8 @@
             "fr": "Vernoplie",
             "de": "Grünes Set",
             "es": "Set gusanesco",
-            "pt": "Conjunto de Verme"
+            "pt": "Conjunto de Verme",
+            "it": "Worm Set"
         },
         "bonuses": {
             "2": [
@@ -30799,7 +31095,8 @@
             "fr": "Pernoplie",
             "de": "Vater Wurm-Set",
             "es": "Set de Anelidón",
-            "pt": "Conjunto de Ver Medo"
+            "pt": "Conjunto de Ver Medo",
+            "it": "Wurmlord Set"
         },
         "bonuses": {
             "2": [
@@ -30860,7 +31157,8 @@
             "fr": "Panoplie de Tal Kasha",
             "de": "Tal Kashas Set",
             "es": "Set de Tal Kasha",
-            "pt": "Conjunto de Tal Kasha"
+            "pt": "Conjunto de Tal Kasha",
+            "it": "Tal Kasha Set"
         },
         "bonuses": {
             "2": [
@@ -30921,7 +31219,8 @@
             "fr": "Panoplistik",
             "de": "Mumford-Set",
             "es": "Set momístico",
-            "pt": "Conjunto de Mumístika"
+            "pt": "Conjunto de Mumístika",
+            "it": "Setstik"
         },
         "bonuses": {
             "2": [
@@ -31012,7 +31311,8 @@
             "fr": "Panoplie Enragée",
             "de": "Wütendes Set",
             "es": "Set rabioso",
-            "pt": "Conjunto Raivoso"
+            "pt": "Conjunto Raivoso",
+            "it": "Enraged Set"
         },
         "bonuses": {
             "2": [
@@ -31277,7 +31577,8 @@
             "fr": "Panoplie du Comte Razof",
             "de": "Graf Razoff-Set",
             "es": "Set del conde Razof",
-            "pt": "Conjunto do Conde Razof"
+            "pt": "Conjunto do Conde Razof",
+            "it": "Count Razof Set"
         },
         "bonuses": {
             "2": [
@@ -31388,7 +31689,8 @@
             "fr": "Panoplie des Chassouilleurs",
             "de": "Hinterwäldler-Set",
             "es": "Set de los grescazadores",
-            "pt": "Conjunto dos Caçamadores"
+            "pt": "Conjunto dos Caçamadores",
+            "it": "Chassulliers Set"
         },
         "bonuses": {
             "2": [
@@ -31459,7 +31761,8 @@
             "fr": "Panoplie d'Anerice",
             "de": "Anerice-Set",
             "es": "Set de Anerice",
-            "pt": "Conjunto de Anerrais"
+            "pt": "Conjunto de Anerrais",
+            "it": "Anerice Set"
         },
         "bonuses": {
             "2": [
@@ -31550,7 +31853,8 @@
             "fr": "Panoplie de la Goule",
             "de": "Ghul-Set",
             "es": "Set de ghul",
-            "pt": "Conjunto do Carniçal"
+            "pt": "Conjunto do Carniçal",
+            "it": "Ghoul Set"
         },
         "bonuses": {
             "2": [
@@ -31631,7 +31935,8 @@
             "fr": "Panoplie du Scorbute",
             "de": "Skorpiut-Set",
             "es": "Set de scorbuto",
-            "pt": "Conjunto do Scorbuto"
+            "pt": "Conjunto do Scorbuto",
+            "it": "Scurvion Set"
         },
         "bonuses": {
             "2": [
@@ -31692,7 +31997,8 @@
             "fr": "Panoplie de Choudini",
             "de": "Helmukol-Set",
             "es": "Set de Judini",
-            "pt": "Conjunto de Couvefield"
+            "pt": "Conjunto de Couvefield",
+            "it": "Cauldini Set"
         },
         "bonuses": {
             "2": [
@@ -31753,7 +32059,8 @@
             "fr": "Panoplie Riktus",
             "de": "Riktanz-Set",
             "es": "Set Riktus",
-            "pt": "Conjunto de Riktus"
+            "pt": "Conjunto de Riktus",
+            "it": "Riktus Set"
         },
         "bonuses": {
             "2": [
@@ -31814,7 +32121,8 @@
             "fr": "Panoplie du Muloubar",
             "de": "BullyWuWulf-Set",
             "es": "Set de milubándalo",
-            "pt": "Conjunto do Milobandido"
+            "pt": "Conjunto do Milobandido",
+            "it": "Moowoldlum Set"
         },
         "bonuses": {
             "2": [
@@ -31875,7 +32183,8 @@
             "fr": "Panoplie du Cœur Vaillant",
             "de": "Set des Tapferen Herzens",
             "es": "Set del Corazón Valiente",
-            "pt": "Conjunto do Coração Valente"
+            "pt": "Conjunto do Coração Valente",
+            "it": "Valiant Heart Set"
         },
         "bonuses": {
             "2": [
@@ -32006,7 +32315,8 @@
             "fr": "Panoplie du Cœur Saignant",
             "de": "Set des Blutenden Herzens",
             "es": "Set del Corazón Sangriento",
-            "pt": "Conjunto do Coração Sangrento"
+            "pt": "Conjunto do Coração Sangrento",
+            "it": "Bleeding Heart Set"
         },
         "bonuses": {
             "2": [
@@ -32067,7 +32377,8 @@
             "fr": "Panoplie de l'Esprit Salvateur",
             "de": "Set des Rettenden Geistes",
             "es": "Set del Espíritu de la Salvación",
-            "pt": "Conjunto do Espírito Salvador"
+            "pt": "Conjunto do Espírito Salvador",
+            "it": "Salvatory Spirit Set"
         },
         "bonuses": {
             "2": [
@@ -32138,7 +32449,8 @@
             "fr": "Panoplie de l'Esprit Malsain",
             "de": "Set des Kranken Geistes",
             "es": "Set del Espíritu Insano",
-            "pt": "Conjunto do Espírito Doentio"
+            "pt": "Conjunto do Espírito Doentio",
+            "it": "Unsound Mind Set"
         },
         "bonuses": {
             "2": [
@@ -32259,7 +32571,8 @@
             "fr": "Panoplie de l'Œil Attentif",
             "de": "Set des Allsehenden Auges",
             "es": "Set del Ojo Atento",
-            "pt": "Conjunto do Olho Observador"
+            "pt": "Conjunto do Olho Observador",
+            "it": "Sharp Eye Set"
         },
         "bonuses": {
             "2": [
@@ -32330,7 +32643,8 @@
             "fr": "Panoplie de l'Œil Putride",
             "de": "Set des Eitrigen Auges",
             "es": "Set del Ojo Putrefacto",
-            "pt": "Conjunto do Olho Pútrido"
+            "pt": "Conjunto do Olho Pútrido",
+            "it": "Putrid Eye Set"
         },
         "bonuses": {
             "2": [
@@ -32441,7 +32755,8 @@
             "fr": "Panoplie d'Ilyzaelle",
             "de": "Set von Ilyzaelle",
             "es": "Set de Ilyzaelle",
-            "pt": "Conjunto da Ilyzaelle"
+            "pt": "Conjunto da Ilyzaelle",
+            "it": "Ilyzaelle Set"
         },
         "bonuses": {
             "2": [
@@ -32502,7 +32817,8 @@
             "fr": "Panoplie Brûlâme",
             "de": "Set der Brennenden Seelen",
             "es": "Set de quemaalmas",
-            "pt": "Conjunto Almardente"
+            "pt": "Conjunto Almardente",
+            "it": "Soul-Blaze Set"
         },
         "bonuses": {
             "2": [
@@ -32593,7 +32909,8 @@
             "fr": "Panoplie Ardente",
             "de": "Feuriges Set",
             "es": "Set ardiente",
-            "pt": "Conjunto Ardente"
+            "pt": "Conjunto Ardente",
+            "it": "Burning Set"
         },
         "bonuses": {
             "2": [
@@ -32674,7 +32991,8 @@
             "fr": "Panoplie Volcanique",
             "de": "Vulkanisches Set",
             "es": "Set volcánico",
-            "pt": "Conjunto Vulcânico"
+            "pt": "Conjunto Vulcânico",
+            "it": "Volcanic Set"
         },
         "bonuses": {
             "2": [
@@ -32827,7 +33145,8 @@
             "fr": "Panoplie Submergée",
             "de": "Versunkenes Set",
             "es": "Set sumergido",
-            "pt": "Conjunto Submerso"
+            "pt": "Conjunto Submerso",
+            "it": "Submerged Set"
         },
         "bonuses": {
             "2": [
@@ -32920,7 +33239,8 @@
             "fr": "Panoplie de Bethel",
             "de": "Bethels Set",
             "es": "Set de Bethel",
-            "pt": "Conjunto de Bethel"
+            "pt": "Conjunto de Bethel",
+            "it": "Bethel Set"
         },
         "bonuses": {
             "2": [
@@ -33021,7 +33341,8 @@
             "fr": "Grithriloplie",
             "de": "Grithril-Set",
             "es": "Set de grithril",
-            "pt": "Conjunto de Mithrinza"
+            "pt": "Conjunto de Mithrinza",
+            "it": "Grithril Set"
         },
         "bonuses": {
             "2": [
@@ -33102,7 +33423,8 @@
             "fr": "Panoplie Martegel",
             "de": "Eishämmer-Set",
             "es": "Set de Martillelo",
-            "pt": "Conjunto Martegelo"
+            "pt": "Conjunto Martegelo",
+            "it": "Freezammer Set"
         },
         "bonuses": {
             "2": [
@@ -33173,7 +33495,8 @@
             "fr": "Panoplie Volkorne",
             "de": "Naskäfer-Set",
             "es": "Set de vueloceronte",
-            "pt": "Conjunto de Vulkórnio"
+            "pt": "Conjunto de Vulkórnio",
+            "it": "Rhineetle Set"
         },
         "bonuses": {
             "2": [
@@ -33346,7 +33669,8 @@
             "fr": "Panoplie du Vampyre maudit",
             "de": "Verfluchter-Vampyr-Set",
             "es": "Set del vampyro maldito",
-            "pt": "Conjunto do Vampyro Maldito"
+            "pt": "Conjunto do Vampyro Maldito",
+            "it": "Cursed Vampire set"
         },
         "bonuses": {
             "1": [],
@@ -33434,7 +33758,8 @@
             "fr": "Panoplie Paztek",
             "de": "Paztek-Set",
             "es": "Set pazteka",
-            "pt": "Conjunto Melazteca"
+            "pt": "Conjunto Melazteca",
+            "it": "Paztek Set"
         },
         "bonuses": {
             "2": [
@@ -33495,7 +33820,8 @@
             "fr": "Panoplie des Chocomanciens",
             "de": "Schokomanten-Set",
             "es": "Set de los chocomantes",
-            "pt": "Conjunto dos Chocomantes"
+            "pt": "Conjunto dos Chocomantes",
+            "it": "Chocomancer Set"
         },
         "bonuses": {
             "2": [
@@ -33586,7 +33912,8 @@
             "fr": "Panoplie du Mawabouaino",
             "de": "Mawabueno-Set",
             "es": "Set del Zahowí",
-            "pt": "Conjunto do Mawabueno"
+            "pt": "Conjunto do Mawabueno",
+            "it": "Mawabouwaino Set"
         },
         "bonuses": {
             "2": [
@@ -33642,7 +33969,8 @@
             "fr": "Panoplie Croquante",
             "de": "Knusper-Set",
             "es": "Set crujiente",
-            "pt": "Conjunto Crocante"
+            "pt": "Conjunto Crocante",
+            "it": "Chocruncher Set"
         },
         "bonuses": {
             "2": [
@@ -33693,7 +34021,8 @@
             "fr": "Panoplie Lunaire",
             "de": "Mondset",
             "es": "Set lunar",
-            "pt": "Conjunto Lunar"
+            "pt": "Conjunto Lunar",
+            "it": "Lunar Set"
         },
         "bonuses": {
             "2": [
@@ -33789,7 +34118,8 @@
             "fr": "Panoplie de Torkélonia",
             "de": "Torkélonia-Set",
             "es": "Set de Torkelonia",
-            "pt": "Conjunto de Torkelônia"
+            "pt": "Conjunto de Torkelônia",
+            "it": "Turtelonia Set"
         },
         "bonuses": {
             "2": [
@@ -33840,7 +34170,8 @@
             "fr": "Panoplie du Dragoeuf Cuirassé",
             "de": "Panzer-Drachei-Set",
             "es": "Set de dragohuevo blindado",
-            "pt": "Conjunto do Dragovo Encouraçado"
+            "pt": "Conjunto do Dragovo Encouraçado",
+            "it": "Armoured Dreggon Set"
         },
         "bonuses": {
             "2": [
@@ -33913,7 +34244,8 @@
             "fr": "Panoplie de Misère",
             "de": "Elend-Set",
             "es": "Set de Miseria",
-            "pt": "Conjunto de Miséria"
+            "pt": "Conjunto de Miséria",
+            "it": "Misery Set"
         },
         "bonuses": {
             "2": [
@@ -34004,7 +34336,8 @@
             "fr": "Panoplie de Guerre",
             "de": "Krieg-Set",
             "es": "Set de Guerra",
-            "pt": "Conjunto de Guerra"
+            "pt": "Conjunto de Guerra",
+            "it": "War Set"
         },
         "bonuses": {
             "2": [
@@ -34075,7 +34408,8 @@
             "fr": "Panoplie de Servitude",
             "de": "Knechtschaft-Set",
             "es": "Set de Servidumbre",
-            "pt": "Conjunto de Servidão"
+            "pt": "Conjunto de Servidão",
+            "it": "Servitude Set"
         },
         "bonuses": {
             "2": [
@@ -34126,7 +34460,8 @@
             "fr": "Panoplie de Corruption",
             "de": "Verderbnis-Set",
             "es": "Set de Corrupción",
-            "pt": "Conjunto de Corrupção"
+            "pt": "Conjunto de Corrupção",
+            "it": "Corruption Set"
         },
         "bonuses": {
             "2": [
@@ -34187,7 +34522,8 @@
             "fr": "Panoplie Plantala",
             "de": "Pflanzala-Set",
             "es": "Set plantala",
-            "pt": "Conjunto Plantala"
+            "pt": "Conjunto Plantala",
+            "it": "Plantala Set"
         },
         "bonuses": {
             "2": [
@@ -34310,7 +34646,8 @@
             "fr": "Panoplie Kwapa",
             "de": "Kwappa-Set",
             "es": "Set kuapa",
-            "pt": "Conjunto Kwapa"
+            "pt": "Conjunto Kwapa",
+            "it": "Kwapa Set"
         },
         "bonuses": {
             "2": [
@@ -34361,7 +34698,8 @@
             "fr": "Panoplie Kozaru",
             "de": "Kozaru-Set",
             "es": "Set kozaru",
-            "pt": "Conjunto Kozaru"
+            "pt": "Conjunto Kozaru",
+            "it": "Kozaru Set"
         },
         "bonuses": {
             "2": [
@@ -34412,7 +34750,8 @@
             "fr": "Panoplie Tanuki",
             "de": "Tanuki-Set",
             "es": "Set tanuki",
-            "pt": "Conjunto Tanuki"
+            "pt": "Conjunto Tanuki",
+            "it": "Tanuki Set"
         },
         "bonuses": {
             "2": [
@@ -34463,7 +34802,8 @@
             "fr": "Panoplie Firefoux",
             "de": "Feuerfux-Set",
             "es": "Set firefux",
-            "pt": "Conjunto Fogofox"
+            "pt": "Conjunto Fogofox",
+            "it": "Firefoux Set"
         },
         "bonuses": {
             "2": [
@@ -34514,7 +34854,8 @@
             "fr": "Panoplie des Tombeaux",
             "de": "Grabmal-Set",
             "es": "Set de las tumbas",
-            "pt": "Conjunto das Tumbas"
+            "pt": "Conjunto das Tumbas",
+            "it": "Tomb Set"
         },
         "bonuses": {
             "2": [
@@ -34637,7 +34978,8 @@
             "fr": "Panoplie de Brume",
             "de": "Nebel-Set",
             "es": "Set de bruma",
-            "pt": "Conjunto de Bruma"
+            "pt": "Conjunto de Bruma",
+            "it": "Mist Set"
         },
         "bonuses": {
             "2": [
@@ -34745,7 +35087,8 @@
             "fr": "Panoplie du Wukin",
             "de": "Wukin-Set",
             "es": "Set del wukin",
-            "pt": "Conjunto do Wukin"
+            "pt": "Conjunto do Wukin",
+            "it": "Wukin Set"
         },
         "bonuses": {
             "2": [
@@ -34848,7 +35191,8 @@
             "fr": "Panoplie du Wukang",
             "de": "Wukang-Set",
             "es": "Set del wukang",
-            "pt": "Conjunto do Wukang"
+            "pt": "Conjunto do Wukang",
+            "it": "Wukang Set"
         },
         "bonuses": {
             "2": [
@@ -34951,7 +35295,8 @@
             "fr": "Panoplie de Wulan",
             "de": "Wulan-Set",
             "es": "Set de Wulán",
-            "pt": "Conjunto de Wulan"
+            "pt": "Conjunto de Wulan",
+            "it": "Wulan Set"
         },
         "bonuses": {
             "2": [
@@ -35012,7 +35357,8 @@
             "fr": "Panoplie Possédée",
             "de": "Set der Besessenen",
             "es": "Set de los poseídos",
-            "pt": "Conjunto Possuído"
+            "pt": "Conjunto Possuído",
+            "it": "Possessed Set"
         },
         "bonuses": {
             "2": [
@@ -35105,7 +35451,8 @@
             "fr": "Panoplie du Pandamonium",
             "de": "Set des Pandamoniums",
             "es": "Set de Pandamonium",
-            "pt": "Conjunto do Pandamonium"
+            "pt": "Conjunto do Pandamonium",
+            "it": "Pandamonium Set"
         },
         "bonuses": {
             "2": [
@@ -35166,7 +35513,8 @@
             "fr": "Panoplie des Ravageurs",
             "de": "Zerstörer-Set",
             "es": "Set de devastador",
-            "pt": "Conjunto dos Devastadores"
+            "pt": "Conjunto dos Devastadores",
+            "it": "Destroyers Set"
         },
         "bonuses": {
             "2": [
@@ -35227,7 +35575,8 @@
             "fr": "Reliques de l'Aurore Pourpre",
             "de": "Reliquien der Purpurnen Morgenröte",
             "es": "Reliquias de la Aurora Púrpura",
-            "pt": "Relíquias da Aurora Púrpura"
+            "pt": "Relíquias da Aurora Púrpura",
+            "it": "Relics of the Crimson Dawn"
         },
         "bonuses": {
             "2": [
@@ -35639,7 +35988,8 @@
             "fr": "Panoplie des Malters",
             "de": "Malter-Set",
             "es": "Set de los malters",
-            "pt": "Conjunto dos Malters"
+            "pt": "Conjunto dos Malters",
+            "it": "Malter Set"
         },
         "bonuses": {
             "2": [
@@ -35690,7 +36040,8 @@
             "fr": "Panoplie d'Hell Mina",
             "de": "Hell Mina-Set",
             "es": "Set de Hell Mina",
-            "pt": "Conjunto de Hell Mina"
+            "pt": "Conjunto de Hell Mina",
+            "it": "Hell Mina Set"
         },
         "bonuses": {
             "2": [
@@ -35731,7 +36082,8 @@
             "fr": "Panoplie du Directeur Grunob",
             "de": "Set des Direktors Grunob",
             "es": "Set del director Grunob",
-            "pt": "Conjunto do Diretor Grunob"
+            "pt": "Conjunto do Diretor Grunob",
+            "it": "Director Grunob Set"
         },
         "bonuses": {
             "2": [
@@ -35824,7 +36176,8 @@
             "fr": "Panoplie Ankarton",
             "de": "Ankarton-Ausrüstungsset",
             "es": "Set Ankartón",
-            "pt": "Conjunto Dikartolina"
+            "pt": "Conjunto Dikartolina",
+            "it": "Khardboard Set"
         },
         "bonuses": {
             "2": [
@@ -36535,7 +36888,8 @@
             "fr": "Malédiction de Cire Momore",
             "de": "Fluch von Cire Momore",
             "es": "Maldición de Cire Momore",
-            "pt": "Maldição de Cire Momore"
+            "pt": "Maldição de Cire Momore",
+            "it": "Cire Momore's Curse"
         },
         "bonuses": {
             "2": [
@@ -37002,7 +37356,8 @@
             "fr": "Panoplie des Rebelles",
             "de": "Rebellen-Set",
             "es": "Set de los rebeldes",
-            "pt": "Conjunto dos Rebeldes"
+            "pt": "Conjunto dos Rebeldes",
+            "it": "Rebel Set"
         },
         "bonuses": {
             "2": [
@@ -37048,7 +37403,8 @@
             "fr": "Panoplie de Rakoopeur",
             "de": "Racooper-Set",
             "es": "Set de Rakooper",
-            "pt": "Conjunto de Rakooper"
+            "pt": "Conjunto de Rakooper",
+            "it": "Raccooper Set"
         },
         "bonuses": {
             "2": [
@@ -37094,7 +37450,8 @@
             "fr": "Panoplie Clochecuivre",
             "de": "Glockenleder-Set",
             "es": "Set Decobre",
-            "pt": "Conjunto Sinocobre"
+            "pt": "Conjunto Sinocobre",
+            "it": "Copperbeard Set"
         },
         "bonuses": {
             "2": [
@@ -37165,7 +37522,8 @@
             "fr": "Panoplie de guerrier albueran",
             "de": "Albuera-Krieger-Set",
             "es": "Set de guerrero albuereño",
-            "pt": "Conjunto de Guerreiro Albuerano"
+            "pt": "Conjunto de Guerreiro Albuerano",
+            "it": "Albueran Warrior Set"
         },
         "bonuses": {
             "2": [
@@ -37216,7 +37574,8 @@
             "fr": "Panoplie de trappeur albueran",
             "de": "Albuera-Fallensteller-Set",
             "es": "Set de trampero albuereño",
-            "pt": "Conjuntos de Caçador Albuerano"
+            "pt": "Conjuntos de Caçador Albuerano",
+            "it": "Albueran Trapper Set"
         },
         "bonuses": {
             "2": [
@@ -37267,7 +37626,8 @@
             "fr": "Panoplie de Barbéryl",
             "de": "Barberyl-Set",
             "es": "Set de Demena",
-            "pt": "Conjunto de Barberila"
+            "pt": "Conjunto de Barberila",
+            "it": "Berylbell Set"
         },
         "bonuses": {
             "2": [
@@ -37318,7 +37678,8 @@
             "fr": "Maléfices d'Ephedrya",
             "de": "Verhexung von Ephedrya",
             "es": "Maleficios de Efedria",
-            "pt": "Maldições de Ephedrya"
+            "pt": "Maldições de Ephedrya",
+            "it": "Evils of Ephedrya"
         },
         "bonuses": {
             "2": [
@@ -37436,7 +37797,8 @@
             "fr": "Panoplie de l'Héritage",
             "de": "Vermächtnis-Set",
             "es": "Set del Legado",
-            "pt": "Conjunto da Herança"
+            "pt": "Conjunto da Herança",
+            "it": "Heritage Set"
         },
         "bonuses": {
             "2": [
@@ -37701,7 +38063,8 @@
             "fr": "Panoplie des Marteaux-Aigris",
             "de": "Sauerhammer-Set",
             "es": "Set de los Martilloseco",
-            "pt": "Conjunto dos Martelos Amargos"
+            "pt": "Conjunto dos Martelos Amargos",
+            "it": "Bitter-Hammer Set"
         },
         "bonuses": {
             "2": [
@@ -37772,7 +38135,8 @@
             "fr": "Panoplie Tétriste",
             "de": "Tetrist-Set",
             "es": "Set tetrista",
-            "pt": "Conjunto Tetrista"
+            "pt": "Conjunto Tetrista",
+            "it": "Tetra Set"
         },
         "bonuses": {
             "2": [
@@ -37796,7 +38160,8 @@
             "fr": "Panoplie de l'Envahisseur",
             "de": "Set des Angreifers",
             "es": "Set del invasor del espacio",
-            "pt": "Conjunto do Invasor"
+            "pt": "Conjunto do Invasor",
+            "it": "Spacevader Set"
         },
         "bonuses": {
             "2": [
@@ -37830,7 +38195,8 @@
             "fr": "Pacmanoplie",
             "de": "Pacman-Set",
             "es": "Set Pacmano",
-            "pt": "Pacmanjunto"
+            "pt": "Pacmanjunto",
+            "it": "Pacmanic Set"
         },
         "bonuses": {
             "2": [
@@ -37854,7 +38220,8 @@
             "fr": "Panoplong",
             "de": "Pong-Set",
             "es": "Set Ponguno",
-            "pt": "Pongonjunto"
+            "pt": "Pongonjunto",
+            "it": "King Pong Set"
         },
         "bonuses": {
             "2": [
@@ -37878,7 +38245,8 @@
             "fr": "Panoplie de Khan Karkass",
             "de": "Set von Khan Karkass",
             "es": "Set de Khan Karkasa",
-            "pt": "Conjunto do Khan Karkass"
+            "pt": "Conjunto do Khan Karkass",
+            "it": "Khan Karkass Set"
         },
         "bonuses": {
             "2": [
@@ -37902,7 +38270,8 @@
             "fr": "Panoplie de Bowisse",
             "de": "Bowisse-Set",
             "es": "Set de Bowis",
-            "pt": "Conjunto de Bowis"
+            "pt": "Conjunto de Bowis",
+            "it": "Bowisse Set"
         },
         "bonuses": {
             "2": [
@@ -37958,7 +38327,8 @@
             "fr": "Panoplie Karnaval",
             "de": "Karneval-Set",
             "es": "Set karnavalesco",
-            "pt": "Conjunto de Karnaval"
+            "pt": "Conjunto de Karnaval",
+            "it": "Karnaval Set"
         },
         "bonuses": {
             "2": [
@@ -37997,7 +38367,8 @@
             "fr": "Panoplie prototype du pilote",
             "de": "Prototyp-Set des Piloten",
             "es": "Set prototipo de piloto",
-            "pt": "Conjunto Protótipo do Piloto"
+            "pt": "Conjunto Protótipo do Piloto",
+            "it": "Prototype Pilot Set"
         },
         "bonuses": {
             "2": [
@@ -38026,7 +38397,8 @@
             "fr": "Panoplie de Boufbowl",
             "de": "Fressball-Set",
             "es": "Set de jálabol",
-            "pt": "Conjunto de Papabol"
+            "pt": "Conjunto de Papabol",
+            "it": "Gobbowl Set"
         },
         "bonuses": {
             "2": [
@@ -38082,7 +38454,8 @@
             "fr": "Pompanoplie",
             "de": "Pompon-Set",
             "es": "Set pomposo",
-            "pt": "Pomponjunto"
+            "pt": "Pomponjunto",
+            "it": "Bobble Set"
         },
         "bonuses": {
             "2": [
@@ -38106,7 +38479,8 @@
             "fr": "Panoplie améliorée du pilote",
             "de": "Verbessertes Set des Piloten",
             "es": "Set mejorado de piloto",
-            "pt": "Conjunto Melhorado do Piloto"
+            "pt": "Conjunto Melhorado do Piloto",
+            "it": "Enhanced Pilot Set"
         },
         "bonuses": {
             "2": [
@@ -38135,7 +38509,8 @@
             "fr": "Panoplie Verréhor",
             "de": "Grünugol-Set",
             "es": "Set verdoro",
-            "pt": "Conjunto Canarim"
+            "pt": "Conjunto Canarim",
+            "it": "Greenengol Set"
         },
         "bonuses": {
             "2": [
@@ -38169,7 +38544,8 @@
             "fr": "Panoplie des Grocoricos",
             "de": "Kikeriki-Set",
             "es": "Set de los Gallikirikí",
-            "pt": "Conjunto dos Crocoricós"
+            "pt": "Conjunto dos Crocoricós",
+            "it": "Bigoks Set"
         },
         "bonuses": {
             "2": [
@@ -38203,7 +38579,8 @@
             "fr": "Panoplie des Pamous",
             "de": "Pamous-Set",
             "es": "Set de los Pamus",
-            "pt": "Conjunto dos Pamus"
+            "pt": "Conjunto dos Pamus",
+            "it": "Pamus Set"
         },
         "bonuses": {
             "2": [
@@ -38237,7 +38614,8 @@
             "fr": "Panoplie des Zoblaks",
             "de": "Zoblaks-Set",
             "es": "Set de los Hakalblak",
-            "pt": "Conjunto dos Olbleks"
+            "pt": "Conjunto dos Olbleks",
+            "it": "Zalblaks Set"
         },
         "bonuses": {
             "2": [
@@ -38271,7 +38649,8 @@
             "fr": "Panoplie des Redroz",
             "de": "Redroz-Set",
             "es": "Set de los Redrous",
-            "pt": "Conjunto dos Redenrose"
+            "pt": "Conjunto dos Redenrose",
+            "it": "Redroz Set"
         },
         "bonuses": {
             "2": [
@@ -38305,7 +38684,8 @@
             "fr": "Panoplie du Molosse",
             "de": "Molosser-Set",
             "es": "Set de moloso",
-            "pt": "Conjunto do Molosso"
+            "pt": "Conjunto do Molosso",
+            "it": "Watchdog Set"
         },
         "bonuses": {
             "2": [
@@ -38334,7 +38714,8 @@
             "fr": "Panoplie du Corbeau Noir",
             "de": "Set des Schwarzen Raben",
             "es": "Set del Cuervo Negro",
-            "pt": "Conjunto do Corvo Negro"
+            "pt": "Conjunto do Corvo Negro",
+            "it": "Black Crow Set"
         },
         "bonuses": {
             "2": [
@@ -38353,7 +38734,8 @@
             "fr": "Clémentopanoplie",
             "de": "Clementiset",
             "es": "Setmentina",
-            "pt": "Clementonjunto"
+            "pt": "Clementonjunto",
+            "it": "Satsuma Set"
         },
         "bonuses": {
             "2": [
@@ -38377,7 +38759,8 @@
             "fr": "Givranoplie",
             "de": "Vereiset",
             "es": "Set escarchado",
-            "pt": "Conjunto Congelado"
+            "pt": "Conjunto Congelado",
+            "it": "Frost Set"
         },
         "bonuses": {
             "2": [
@@ -38401,7 +38784,8 @@
             "fr": "Panoplie de la Denrée",
             "de": "Morgentau-Set",
             "es": "Set del amigo extraterrestre",
-            "pt": "Conjunto Kinor"
+            "pt": "Conjunto Kinor",
+            "it": "Oxo Set"
         },
         "bonuses": {
             "2": [
@@ -38457,7 +38841,8 @@
             "fr": "Panoplie du Monarque",
             "de": "Set des Monarchen",
             "es": "Set del Monarca",
-            "pt": "Conjunto do Monarca"
+            "pt": "Conjunto do Monarca",
+            "it": "Monarch Set"
         },
         "bonuses": {
             "2": [
@@ -38498,7 +38883,8 @@
             "fr": "Panoplie du Parrain",
             "de": "Paten-Set",
             "es": "Set del padrino",
-            "pt": "Conjunto do Padrinho"
+            "pt": "Conjunto do Padrinho",
+            "it": "The Godfather Set"
         },
         "bonuses": {
             "2": [
@@ -38554,7 +38940,8 @@
             "fr": "Panoplie de Logram",
             "de": "Logram-Set",
             "es": "Set de Logram",
-            "pt": "Conjunto de Logram"
+            "pt": "Conjunto de Logram",
+            "it": "Logram Set"
         },
         "bonuses": {
             "2": [
@@ -38610,7 +38997,8 @@
             "fr": "Panoplie des 1001 Griffes",
             "de": "Set der 1001 Krallen",
             "es": "Set de las 1001 garras",
-            "pt": "Conjunto das 1001 Garras"
+            "pt": "Conjunto das 1001 Garras",
+            "it": "1001 Claws Set"
         },
         "bonuses": {
             "2": [
@@ -38671,7 +39059,8 @@
             "fr": "Panoplie du Garde Royal",
             "de": "Königswachen-Set",
             "es": "Set del guardia real",
-            "pt": "Conjunto do Guarda Real"
+            "pt": "Conjunto do Guarda Real",
+            "it": "Royal Guard Set"
         },
         "bonuses": {
             "2": [
@@ -38705,7 +39094,8 @@
             "fr": "Panoplie Dragocourse",
             "de": "Dracorennen-Set",
             "es": "Set de dragocarrera",
-            "pt": "Conjunto Dragocorrida"
+            "pt": "Conjunto Dragocorrida",
+            "it": "Dragorace Set"
         },
         "bonuses": {
             "2": [
@@ -38734,7 +39124,8 @@
             "fr": "Panoplie de Peggy la Porkass",
             "de": "Set von Aimy Airwutz",
             "es": "Set de Peggy la Puerkaza",
-            "pt": "Conjunto de Peggy, a Porkassa"
+            "pt": "Conjunto de Peggy, a Porkassa",
+            "it": "Miss Lousy Piggy Set"
         },
         "bonuses": {
             "2": [
@@ -38763,7 +39154,8 @@
             "fr": "Ma petite panoplie",
             "de": "My little Set",
             "es": "Mi pequeño set",
-            "pt": "Meu Pequeno Conjunto"
+            "pt": "Meu Pequeno Conjunto",
+            "it": "MLP Set"
         },
         "bonuses": {
             "2": [
@@ -38792,7 +39184,8 @@
             "fr": "Panoplie Siks Won Naïne",
             "de": "Set von Siks Won Nain",
             "es": "Set de Tor Nyquete",
-            "pt": "Conjunto Siks Wonn Ein"
+            "pt": "Conjunto Siks Wonn Ein",
+            "it": "Siks Wonn Ein Set"
         },
         "bonuses": {
             "2": [
@@ -38821,7 +39214,8 @@
             "fr": "Panoplie Mace",
             "de": "Schnecksel-Set",
             "es": "Set Asobab",
-            "pt": "Conjunto Gosmento"
+            "pt": "Conjunto Gosmento",
+            "it": "Slugly Set"
         },
         "bonuses": {
             "2": [
@@ -38850,7 +39244,8 @@
             "fr": "Panoplie Sleump",
             "de": "Slump-Set",
             "es": "Set Slump",
-            "pt": "Conjunto Slump"
+            "pt": "Conjunto Slump",
+            "it": "Slump Set"
         },
         "bonuses": {
             "2": [
@@ -38884,7 +39279,8 @@
             "fr": "Panoplie de Slait",
             "de": "Slait-Set",
             "es": "Set Sliat",
-            "pt": "Conjunto de Slait"
+            "pt": "Conjunto de Slait",
+            "it": "Slait Set"
         },
         "bonuses": {
             "2": [
@@ -38918,7 +39314,8 @@
             "fr": "Chapanoplie",
             "de": "Chap-Set",
             "es": "Chistoset",
-            "pt": "Conjaplin"
+            "pt": "Conjaplin",
+            "it": "Chapplynn Set"
         },
         "bonuses": {
             "2": [
@@ -38947,7 +39344,8 @@
             "fr": "Panoplie du Real Boitar",
             "de": "FC Humpelstilz-Set",
             "es": "Set del Atleticojos de Bonta",
-            "pt": "Conjunto do Paparcelona"
+            "pt": "Conjunto do Paparcelona",
+            "it": "Real Gobbly Set"
         },
         "bonuses": {
             "2": [
@@ -38981,7 +39379,8 @@
             "fr": "Panoplie des Bouftons Rouges",
             "de": "Set der Roten Fresssäckchen",
             "es": "Set del Sporting Jalatín",
-            "pt": "Conjunto Papachester United"
+            "pt": "Conjunto Papachester United",
+            "it": "Lamechester United Set"
         },
         "bonuses": {
             "2": [
@@ -39005,7 +39404,8 @@
             "fr": "Yugoplie",
             "de": "Yago-Set",
             "es": "Yugoset",
-            "pt": "Conjuntyugo"
+            "pt": "Conjuntyugo",
+            "it": "Yugo Set"
         },
         "bonuses": {
             "2": [
@@ -39051,7 +39451,8 @@
             "fr": "Panoplie Pomdeupin",
             "de": "Zapfentann-Set",
             "es": "Set Estróbilo",
-            "pt": "Conjunto Pinha"
+            "pt": "Conjunto Pinha",
+            "it": "Pynekone Set"
         },
         "bonuses": {
             "2": [
@@ -39075,7 +39476,8 @@
             "fr": "Chispanoplie",
             "de": "Chisp-Set",
             "es": "Chispset",
-            "pt": "Chisponjunto"
+            "pt": "Chisponjunto",
+            "it": "Chisp Set"
         },
         "bonuses": {
             "2": [
@@ -39099,7 +39501,8 @@
             "fr": "Golpanoplie",
             "de": "Goldo-Set",
             "es": "Goldoset",
-            "pt": "Conjuntorak"
+            "pt": "Conjuntorak",
+            "it": "Trolvon Set"
         },
         "bonuses": {
             "2": [
@@ -39128,7 +39531,8 @@
             "fr": "Panoplie Paupayahn",
             "de": "Paupayahn-Set",
             "es": "Set Saymassa",
-            "pt": "Conjunto Robusto"
+            "pt": "Conjunto Robusto",
+            "it": "Beanie Set"
         },
         "bonuses": {
             "2": [
@@ -39162,7 +39566,8 @@
             "fr": "Méganoplie",
             "de": "Megaman-Set",
             "es": "Megaset",
-            "pt": "Conjunto Megaman"
+            "pt": "Conjunto Megaman",
+            "it": "Manmega Set"
         },
         "bonuses": {
             "2": [
@@ -39196,7 +39601,8 @@
             "fr": "Panoplie Vioutifoule",
             "de": "Viewtifule-Set",
             "es": "Set Viewtiful",
-            "pt": "Conjunto Viutiful"
+            "pt": "Conjunto Viutiful",
+            "it": "Viootifool Set"
         },
         "bonuses": {
             "2": [
@@ -39230,7 +39636,8 @@
             "fr": "Panoplie de Stroud",
             "de": "Struut-Set",
             "es": "Set de Stroud",
-            "pt": "Conjunto de Stroud"
+            "pt": "Conjunto de Stroud",
+            "it": "Stroud Set"
         },
         "bonuses": {
             "2": [
@@ -39264,7 +39671,8 @@
             "fr": "Gladianoplie",
             "de": "Gladiaset",
             "es": "Gladiaset",
-            "pt": "Conjunto Gladiador"
+            "pt": "Conjunto Gladiador",
+            "it": "Gladiator Set"
         },
         "bonuses": {
             "2": [
@@ -39288,7 +39696,8 @@
             "fr": "Panoplie du Tétounik",
             "de": "Tetonik-Set",
             "es": "Set de taktikonik",
-            "pt": "Conjunto da Confusão"
+            "pt": "Conjunto da Confusão",
+            "it": "Slamdance Set"
         },
         "bonuses": {
             "2": [
@@ -39339,7 +39748,8 @@
             "fr": "Printanoplie",
             "de": "Frühlingset",
             "es": "Setmavera",
-            "pt": "Conjunto Primavera"
+            "pt": "Conjunto Primavera",
+            "it": "Springtide Set"
         },
         "bonuses": {
             "2": [
@@ -39373,7 +39783,8 @@
             "fr": "Panoplie Mijotée",
             "de": "Gemü-Set",
             "es": "Set cocido",
-            "pt": "Conjunto Ensopado"
+            "pt": "Conjunto Ensopado",
+            "it": "Simmered Set"
         },
         "bonuses": {
             "2": [
@@ -39407,7 +39818,8 @@
             "fr": "Panoplienlaine",
             "de": "Woll-Set",
             "es": "Set lanudo",
-            "pt": "Conjundilã"
+            "pt": "Conjundilã",
+            "it": "Woollen Set"
         },
         "bonuses": {
             "2": [
@@ -39436,7 +39848,8 @@
             "fr": "Panoplie du Black Wab",
             "de": "Black Wab-Set",
             "es": "Set black wab",
-            "pt": "Conjunto do Black Wab"
+            "pt": "Conjunto do Black Wab",
+            "it": "Black Wab Set"
         },
         "bonuses": {
             "2": [
@@ -39470,7 +39883,8 @@
             "fr": "Panoplie Cristalline",
             "de": "Kristallklares Set",
             "es": "Set cristalino",
-            "pt": "Conjunto Cristalino"
+            "pt": "Conjunto Cristalino",
+            "it": "Cristalline Set"
         },
         "bonuses": {
             "2": [
@@ -39504,7 +39918,8 @@
             "fr": "Panoplie Papayou",
             "de": "Papayo-Set",
             "es": "Set del director Kuno",
-            "pt": "Conjunto Aloha"
+            "pt": "Conjunto Aloha",
+            "it": "Alowa Set"
         },
         "bonuses": {
             "2": [
@@ -39533,7 +39948,8 @@
             "fr": "Panoplie de Gadjète",
             "de": "Gedschet-Set",
             "es": "Set de Gadjèt",
-            "pt": "Conjunto Bugiganga"
+            "pt": "Conjunto Bugiganga",
+            "it": "Gadjet Set"
         },
         "bonuses": {
             "2": [
@@ -39562,7 +39978,8 @@
             "fr": "Panoplie de Féline",
             "de": "Féline-Set",
             "es": "Set de Felín",
-            "pt": "Conjunto de Feline"
+            "pt": "Conjunto de Feline",
+            "it": "Maria Kitty Set"
         },
         "bonuses": {
             "2": [
@@ -39591,7 +40008,8 @@
             "fr": "Panoplie de ronces",
             "de": "Ranken-Set",
             "es": "Set de zarzas",
-            "pt": "Conjunto de Sarças"
+            "pt": "Conjunto de Sarças",
+            "it": "Bramble Set"
         },
         "bonuses": {
             "2": [
@@ -39620,7 +40038,8 @@
             "fr": "Panoplie de Danioule",
             "de": "Howies Set",
             "es": "Setbina",
-            "pt": "Conjunto do Vandja"
+            "pt": "Conjunto do Vandja",
+            "it": "Davyd's Set"
         },
         "bonuses": {
             "2": [
@@ -39644,7 +40063,8 @@
             "fr": "Panokami",
             "de": "Okami-Set",
             "es": "Setokami",
-            "pt": "Conjuntokami"
+            "pt": "Conjuntokami",
+            "it": "Imako Set"
         },
         "bonuses": {
             "2": [
@@ -39678,7 +40098,8 @@
             "fr": "Panoplilozité",
             "de": "B-Haartes Set",
             "es": "Set peloso",
-            "pt": "Conjunto Peludo"
+            "pt": "Conjunto Peludo",
+            "it": "Hir Suit"
         },
         "bonuses": {
             "2": [
@@ -39712,7 +40133,8 @@
             "fr": "Glaglanoplie",
             "de": "FroFrostring-Set",
             "es": "Set jabajonillo",
-            "pt": "Conjunto Polar"
+            "pt": "Conjunto Polar",
+            "it": "Brrrbli Set"
         },
         "bonuses": {
             "2": [
@@ -39741,7 +40163,8 @@
             "fr": "Diplanoplie",
             "de": "Diplo-Set",
             "es": "Diplodoset",
-            "pt": "Diplonjunto"
+            "pt": "Diplonjunto",
+            "it": "Diplodo Set"
         },
         "bonuses": {
             "2": [
@@ -39775,7 +40198,8 @@
             "fr": "Panoplisonnier",
             "de": "Häftling-Set",
             "es": "Set del prisionero",
-            "pt": "Conjunto do Prisioneiro"
+            "pt": "Conjunto do Prisioneiro",
+            "it": "Prisoner Set"
         },
         "bonuses": {
             "2": [
@@ -39809,7 +40233,8 @@
             "fr": "Panoplinokio",
             "de": "Pinokio-Set",
             "es": "Set de pino kío",
-            "pt": "Conjunto Pinokio"
+            "pt": "Conjunto Pinokio",
+            "it": "Pinokio Set"
         },
         "bonuses": {
             "2": [
@@ -39838,7 +40263,8 @@
             "fr": "Panoplie Stroplante",
             "de": "Jaycset",
             "es": "Set Onstruoplanta",
-            "pt": "Conjunto Stroide"
+            "pt": "Conjunto Stroide",
+            "it": "World Worrier Set"
         },
         "bonuses": {
             "2": [
@@ -39867,7 +40293,8 @@
             "fr": "Plumoplie",
             "de": "Federset",
             "es": "Plumoset",
-            "pt": "Penojunto"
+            "pt": "Penojunto",
+            "it": "Ploom Set"
         },
         "bonuses": {
             "2": [
@@ -39891,7 +40318,8 @@
             "fr": "Panoppinz",
             "de": "Popinset",
             "es": "Set poppinz",
-            "pt": "Conjunto Poppinz"
+            "pt": "Conjunto Poppinz",
+            "it": "Poppinz Set"
         },
         "bonuses": {
             "2": [
@@ -39920,7 +40348,8 @@
             "fr": "Panoplie Chauffe-souris",
             "de": "Fleddermaus-Set",
             "es": "Set murciego",
-            "pt": "Conjunto Borcego"
+            "pt": "Conjunto Borcego",
+            "it": "Borbat Set"
         },
         "bonuses": {
             "2": [
@@ -39949,7 +40378,8 @@
             "fr": "Panopapier",
             "de": "Papierset",
             "es": "Setpapel",
-            "pt": "Conjunto de Papel"
+            "pt": "Conjunto de Papel",
+            "it": "Paper Set"
         },
         "bonuses": {
             "2": [
@@ -39973,7 +40403,8 @@
             "fr": "Panoplie à plumes",
             "de": "Gefiedertes Set",
             "es": "Set de plumas",
-            "pt": "Conjunto de Penas"
+            "pt": "Conjunto de Penas",
+            "it": "Feather Set"
         },
         "bonuses": {
             "2": [
@@ -40012,7 +40443,8 @@
             "fr": "Krosmanoplie",
             "de": "Krosmoset",
             "es": "Set Krosmaster",
-            "pt": "Krosjunto"
+            "pt": "Krosjunto",
+            "it": "Krosmaset"
         },
         "bonuses": {
             "2": [
@@ -40061,7 +40493,8 @@
             "fr": "Panoplie des Justiciers",
             "de": "Set der Ritter der Gerechtigkeit",
             "es": "Set de los justicieros",
-            "pt": "Conjunto dos Justiceiros"
+            "pt": "Conjunto dos Justiceiros",
+            "it": "Vigilante Set"
         },
         "bonuses": {
             "2": [
@@ -40125,7 +40558,8 @@
             "fr": "Panoplie du Captain Chafer",
             "de": "Set des Chafer-Offiziers",
             "es": "[!] Panoplie du Captain Chafer",
-            "pt": "Conjunto do Capitão Chafer"
+            "pt": "Conjunto do Capitão Chafer",
+            "it": "[!] Panoplie du Captain Chafer"
         },
         "bonuses": {
             "2": [
@@ -40226,7 +40660,8 @@
             "fr": "Panoplie de Mama Ayuto",
             "de": "Mama Ayutos Set",
             "es": "[!] Panoplie de Mama Ayuto",
-            "pt": "Conjunto da Mama Ayuto"
+            "pt": "Conjunto da Mama Ayuto",
+            "it": "[!] Panoplie de Mama Ayuto"
         },
         "bonuses": {
             "2": [
@@ -40287,7 +40722,8 @@
             "fr": "Panoplie du Dark Vlad",
             "de": "Set von Dark Vlad",
             "es": "[!] Panoplie du Dark Vlad",
-            "pt": "Conjunto do Dark Vlad"
+            "pt": "Conjunto do Dark Vlad",
+            "it": "[!] Panoplie du Dark Vlad"
         },
         "bonuses": {
             "2": [
@@ -40348,7 +40784,8 @@
             "fr": "Panoplie de Phong Huss",
             "de": "Phung-Huss-Set",
             "es": "[!] Panoplie de Phong Huss",
-            "pt": "[!] Panoplie de Phong Huss"
+            "pt": "[!] Panoplie de Phong Huss",
+            "it": "[!] Panoplie de Phong Huss"
         },
         "bonuses": {
             "2": [
@@ -40394,7 +40831,8 @@
             "fr": "Panoplie de Grilliane",
             "de": "Grilliane-Set",
             "es": "[!] Panoplie de Grilliane",
-            "pt": "[!] Panoplie de Grilliane"
+            "pt": "[!] Panoplie de Grilliane",
+            "it": "[!] Panoplie de Grilliane"
         },
         "bonuses": {
             "2": [
@@ -40433,7 +40871,8 @@
             "fr": "Panoplie de Crocuzko",
             "de": "Crocuzko-Set",
             "es": "[!] Panoplie de Crocuzko",
-            "pt": "[!] Panoplie de Crocuzko"
+            "pt": "[!] Panoplie de Crocuzko",
+            "it": "[!] Panoplie de Crocuzko"
         },
         "bonuses": {
             "2": [
@@ -40477,7 +40916,8 @@
             "fr": "Panoplie de Pol Ouatnos",
             "de": "Pol-Watnos-Set",
             "es": "[!] Panoplie de Pol Ouatnos",
-            "pt": "[!] Panoplie de Pol Ouatnos"
+            "pt": "[!] Panoplie de Pol Ouatnos",
+            "it": "[!] Panoplie de Pol Ouatnos"
         },
         "bonuses": {
             "2": [
@@ -40511,7 +40951,8 @@
             "fr": "Panoplie des Krobes",
             "de": "Kroben-Set",
             "es": "[!] Panoplie des Krobes",
-            "pt": "[!] Panoplie des Krobes"
+            "pt": "[!] Panoplie des Krobes",
+            "it": "[!] Panoplie des Krobes"
         },
         "bonuses": {
             "2": [
@@ -40644,7 +41085,8 @@
             "fr": "Panoplie de la Baleine",
             "de": "Wal-Set",
             "es": "[!] Panoplie de la Baleine",
-            "pt": "[!] Panoplie de la Baleine"
+            "pt": "[!] Panoplie de la Baleine",
+            "it": "[!] Panoplie de la Baleine"
         },
         "bonuses": {
             "2": [
@@ -40809,7 +41251,8 @@
             "fr": "Panoplie Ensevelie",
             "de": "Set des Bestatteten",
             "es": "[!] Panoplie Ensevelie",
-            "pt": "[!] Panoplie Ensevelie"
+            "pt": "[!] Panoplie Ensevelie",
+            "it": "[!] Panoplie Ensevelie"
         },
         "bonuses": {
             "2": [
@@ -40843,7 +41286,8 @@
             "fr": "Panoplie Noyée",
             "de": "Set des Ertrunkenen",
             "es": "[!] Panoplie Noyée",
-            "pt": "[!] Panoplie Noyée"
+            "pt": "[!] Panoplie Noyée",
+            "it": "[!] Panoplie Noyée"
         },
         "bonuses": {
             "2": [
@@ -40877,7 +41321,8 @@
             "fr": "Panoplie du Fourneau",
             "de": "Hochofen-Set",
             "es": "[!] Panoplie du Fourneau",
-            "pt": "[!] Panoplie du Fourneau"
+            "pt": "[!] Panoplie du Fourneau",
+            "it": "[!] Panoplie du Fourneau"
         },
         "bonuses": {
             "2": [
@@ -40911,7 +41356,8 @@
             "fr": "Panoplie de la Fournaise",
             "de": "Schmelzofen-Set",
             "es": "[!] Panoplie de la Fournaise",
-            "pt": "[!] Panoplie de la Fournaise"
+            "pt": "[!] Panoplie de la Fournaise",
+            "it": "[!] Panoplie de la Fournaise"
         },
         "bonuses": {
             "2": [
@@ -40945,7 +41391,8 @@
             "fr": "Panoplie de la Pyramide",
             "de": "Pyramiden-Set",
             "es": "[!] Panoplie de la Pyramide",
-            "pt": "[!] Panoplie de la Pyramide"
+            "pt": "[!] Panoplie de la Pyramide",
+            "it": "[!] Panoplie de la Pyramide"
         },
         "bonuses": {
             "2": [
@@ -41016,7 +41463,8 @@
             "fr": "Panoplie des Maudits",
             "de": "Set der Verfluchten",
             "es": "[!] Panoplie des Maudits",
-            "pt": "[!] Panoplie des Maudits"
+            "pt": "[!] Panoplie des Maudits",
+            "it": "[!] Panoplie des Maudits"
         },
         "bonuses": {
             "2": [
@@ -41097,7 +41545,8 @@
             "fr": "Panoplie des Abîmes",
             "de": "Set des Abgrunds",
             "es": "[!] Panoplie des Abîmes",
-            "pt": "[!] Panoplie des Abîmes"
+            "pt": "[!] Panoplie des Abîmes",
+            "it": "[!] Panoplie des Abîmes"
         },
         "bonuses": {
             "2": [
@@ -41158,7 +41607,8 @@
             "fr": "Panoplie des Tréfonds",
             "de": "Set der Untiefen",
             "es": "[!] Panoplie des Tréfonds",
-            "pt": "[!] Panoplie des Tréfonds"
+            "pt": "[!] Panoplie des Tréfonds",
+            "it": "[!] Panoplie des Tréfonds"
         },
         "bonuses": {
             "2": [
@@ -41219,7 +41669,8 @@
             "fr": "Panoplie de la Fosse",
             "de": "Gruben-Set",
             "es": "[!] Panoplie de la Fosse",
-            "pt": "[!] Panoplie de la Fosse"
+            "pt": "[!] Panoplie de la Fosse",
+            "it": "[!] Panoplie de la Fosse"
         },
         "bonuses": {
             "2": [
@@ -41280,7 +41731,8 @@
             "fr": "Panoplie des Profondeurs",
             "de": "Set der Tiefen",
             "es": "[!] Panoplie des Profondeurs",
-            "pt": "[!] Panoplie des Profondeurs"
+            "pt": "[!] Panoplie des Profondeurs",
+            "it": "[!] Panoplie des Profondeurs"
         },
         "bonuses": {
             "2": [
@@ -41341,7 +41793,8 @@
             "fr": "Panoplie des Spiritueurs",
             "de": "Geistreichen-Set",
             "es": "[!] Panoplie des Spiritueurs",
-            "pt": "[!] Panoplie des Spiritueurs"
+            "pt": "[!] Panoplie des Spiritueurs",
+            "it": "[!] Panoplie des Spiritueurs"
         },
         "bonuses": {
             "2": [
@@ -41427,7 +41880,8 @@
             "fr": "Panoplit",
             "de": "Betten-Set",
             "es": "[!] Panoplit",
-            "pt": "[!] Panoplit"
+            "pt": "[!] Panoplit",
+            "it": "[!] Panoplit"
         },
         "bonuses": {
             "2": [
@@ -41528,7 +41982,8 @@
             "fr": "Panoplie du Tynril",
             "de": "Tynril-Set",
             "es": "[!] Panoplie du Tynril",
-            "pt": "[!] Panoplie du Tynril"
+            "pt": "[!] Panoplie du Tynril",
+            "it": "[!] Panoplie du Tynril"
         },
         "bonuses": {
             "2": [
@@ -41582,7 +42037,8 @@
             "fr": "Panoplie du Kimbo",
             "de": "Kimbo-Set",
             "es": "[!] Panoplie du Kimbo",
-            "pt": "[!] Panoplie du Kimbo"
+            "pt": "[!] Panoplie du Kimbo",
+            "it": "[!] Panoplie du Kimbo"
         },
         "bonuses": {
             "2": [
@@ -41631,7 +42087,8 @@
             "fr": "Panoplie de l'Apiculteur",
             "de": "Set des Imkers",
             "es": "[!] Panoplie de l'Apiculteur",
-            "pt": "[!] Panoplie de l'Apiculteur"
+            "pt": "[!] Panoplie de l'Apiculteur",
+            "it": "[!] Panoplie de l'Apiculteur"
         },
         "bonuses": {
             "2": [
@@ -41680,7 +42137,8 @@
             "fr": "Panoplie du frigostien curieux",
             "de": "Set des neugierigen Frigostianers",
             "es": "[!] Panoplie du frigostien curieux",
-            "pt": "[!] Panoplie du frigostien curieux"
+            "pt": "[!] Panoplie du frigostien curieux",
+            "it": "[!] Panoplie du frigostien curieux"
         },
         "bonuses": {
             "2": [
@@ -41714,7 +42172,8 @@
             "fr": "Abranoplie",
             "de": "Astaknyset",
             "es": "[!] Abranoplie",
-            "pt": "[!] Abranoplie"
+            "pt": "[!] Abranoplie",
+            "it": "[!] Abranoplie"
         },
         "bonuses": {
             "2": [
