@@ -885,6 +885,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 2,
+                    "altStat": null
+                },
+                {
                     "stat": "Fire Damage",
                     "value": 2,
                     "altStat": null
@@ -927,6 +932,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 2,
+                    "altStat": null
+                },
+                {
                     "stat": "Fire Damage",
                     "value": 2,
                     "altStat": null
@@ -965,6 +975,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 3,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 3,
                     "altStat": null
                 },
@@ -1079,6 +1094,11 @@
                 {
                     "stat": "Agility",
                     "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 2,
                     "altStat": null
                 },
                 {
@@ -3145,9 +3165,19 @@
                     "stat": "Critical",
                     "value": 4,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 2,
+                    "altStat": null
                 }
             ],
             "4": [
+                {
+                    "stat": "Air Damage",
+                    "value": 2,
+                    "altStat": null
+                },
                 {
                     "stat": "Critical",
                     "value": 6,
@@ -3317,6 +3347,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 3,
+                    "altStat": null
+                },
+                {
                     "stat": "Fire Damage",
                     "value": 3,
                     "altStat": null
@@ -3349,6 +3384,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
                     "stat": "Fire Damage",
                     "value": 5,
                     "altStat": null
@@ -3377,6 +3417,11 @@
                 },
                 {
                     "stat": "Neutral Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 10,
                     "altStat": null
                 },
@@ -5605,6 +5650,11 @@
                     "stat": "Water Damage",
                     "value": 2,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 2,
+                    "altStat": null
                 }
             ],
             "3": [
@@ -5616,6 +5666,11 @@
                 {
                     "stat": "Power",
                     "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 5,
                     "altStat": null
                 },
                 {
@@ -5653,6 +5708,11 @@
                 {
                     "stat": "AP",
                     "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
                     "altStat": null
                 },
                 {
@@ -6548,6 +6608,11 @@
         "bonuses": {
             "2": [
                 {
+                    "stat": "Air Damage",
+                    "value": 2,
+                    "altStat": null
+                },
+                {
                     "stat": "Initiative",
                     "value": 50,
                     "altStat": null
@@ -6559,6 +6624,11 @@
                 }
             ],
             "3": [
+                {
+                    "stat": "Air Damage",
+                    "value": 3,
+                    "altStat": null
+                },
                 {
                     "stat": "Initiative",
                     "value": 100,
@@ -6572,6 +6642,11 @@
             ],
             "4": [
                 {
+                    "stat": "Air Damage",
+                    "value": 4,
+                    "altStat": null
+                },
+                {
                     "stat": "Initiative",
                     "value": 150,
                     "altStat": null
@@ -6583,6 +6658,11 @@
                 }
             ],
             "5": [
+                {
+                    "stat": "Air Damage",
+                    "value": 4,
+                    "altStat": null
+                },
                 {
                     "stat": "Initiative",
                     "value": 150,
@@ -6601,6 +6681,11 @@
             ],
             "6": [
                 {
+                    "stat": "Air Damage",
+                    "value": 6,
+                    "altStat": null
+                },
+                {
                     "stat": "Initiative",
                     "value": 200,
                     "altStat": null
@@ -6617,6 +6702,11 @@
                 }
             ],
             "7": [
+                {
+                    "stat": "Air Damage",
+                    "value": 7,
+                    "altStat": null
+                },
                 {
                     "stat": "Initiative",
                     "value": 300,
@@ -7601,6 +7691,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
                     "stat": "Water Damage",
                     "value": 15,
                     "altStat": null
@@ -7648,6 +7743,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
                     "stat": "Pushback Damage",
                     "value": 15,
                     "altStat": null
@@ -7681,6 +7781,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 20,
                     "altStat": null
                 },
@@ -8561,6 +8666,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
                     "stat": "Dodge",
                     "value": 1,
                     "altStat": null
@@ -8584,6 +8694,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 2,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 2,
                     "altStat": null
                 },
@@ -8618,6 +8733,11 @@
                     "stat": "Water Damage",
                     "value": 3,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 3,
+                    "altStat": null
                 }
             ],
             "7": [
@@ -8643,6 +8763,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 3,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 3,
                     "altStat": null
                 },
@@ -8680,6 +8805,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 5,
                     "altStat": null
                 }
@@ -9909,12 +10039,22 @@
                     "stat": "Agility",
                     "value": 30,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 3,
+                    "altStat": null
                 }
             ],
             "6": [
                 {
                     "stat": "Agility",
                     "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 3,
                     "altStat": null
                 },
                 {
@@ -10232,6 +10372,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 8,
+                    "altStat": null
+                },
+                {
                     "stat": "Earth Damage",
                     "value": 8,
                     "altStat": null
@@ -10246,6 +10391,11 @@
                 {
                     "stat": "AP",
                     "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 8,
                     "altStat": null
                 },
                 {
@@ -10278,6 +10428,11 @@
                 {
                     "stat": "Range",
                     "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 8,
                     "altStat": null
                 },
                 {
@@ -13655,6 +13810,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "Neutral Damage",
                     "value": 10,
                     "altStat": null
@@ -15176,6 +15336,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
                     "stat": "Prospecting",
                     "value": 20,
                     "altStat": null
@@ -15198,6 +15363,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
                     "stat": "Range",
                     "value": 1,
                     "altStat": null
@@ -15217,6 +15387,11 @@
                 {
                     "stat": "Prospecting",
                     "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 5,
                     "altStat": null
                 },
                 {
@@ -15605,6 +15780,11 @@
                     "stat": "Fire Damage",
                     "value": 3,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 3,
+                    "altStat": null
                 }
             ],
             "3": [
@@ -15625,6 +15805,11 @@
                 },
                 {
                     "stat": "Fire Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 5,
                     "altStat": null
                 },
@@ -16055,12 +16240,22 @@
                     "stat": "Summons",
                     "value": 1,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 3,
+                    "altStat": null
                 }
             ],
             "3": [
                 {
                     "stat": "Vitality",
                     "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 5,
                     "altStat": null
                 },
                 {
@@ -16129,6 +16324,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "Initiative",
                     "value": 300,
                     "altStat": null
@@ -16181,6 +16381,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "Initiative",
                     "value": 300,
                     "altStat": null
@@ -16209,6 +16414,11 @@
                 },
                 {
                     "stat": "Fire Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 15,
                     "altStat": null
                 },
@@ -17544,6 +17754,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
                     "stat": "Agility",
                     "value": 30,
                     "altStat": null
@@ -18151,6 +18366,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
                     "stat": "Vitality",
                     "value": 50,
                     "altStat": null
@@ -18183,6 +18403,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "Vitality",
                     "value": 100,
                     "altStat": null
@@ -18211,6 +18436,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 15,
                     "altStat": null
                 },
@@ -18310,6 +18540,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 10,
                     "altStat": null
                 }
@@ -18455,6 +18690,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
                     "stat": "Agility",
                     "value": 30,
                     "altStat": null
@@ -18497,6 +18737,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
                     "stat": "AP",
                     "value": 1,
                     "altStat": null
@@ -18531,6 +18776,11 @@
                 {
                     "stat": "Critical",
                     "value": 8,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
                     "altStat": null
                 },
                 {
@@ -18705,6 +18955,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "Water Damage",
                     "value": 10,
                     "altStat": null
@@ -18772,6 +19027,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
                     "stat": "AP",
                     "value": 1,
                     "altStat": null
@@ -18815,6 +19075,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 20,
                     "altStat": null
                 },
@@ -18995,6 +19260,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
                     "stat": "Water Damage",
                     "value": 15,
                     "altStat": null
@@ -19014,6 +19284,11 @@
                 {
                     "stat": "AP",
                     "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 20,
                     "altStat": null
                 },
                 {
@@ -19995,6 +20270,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
                     "stat": "Water Damage",
                     "value": 5,
                     "altStat": null
@@ -20027,6 +20307,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
                     "stat": "Dodge",
                     "value": 5,
                     "altStat": null
@@ -20050,6 +20335,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 10,
                     "altStat": null
                 },
@@ -20359,6 +20649,11 @@
                     "stat": "Water Damage",
                     "value": 10,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
                 }
             ],
             "3": [
@@ -20399,6 +20694,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 10,
                     "altStat": null
                 },
@@ -20446,6 +20746,11 @@
                 },
                 {
                     "stat": "Fire Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 10,
                     "altStat": null
                 },
@@ -21047,6 +21352,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "Water Damage",
                     "value": 10,
                     "altStat": null
@@ -21111,6 +21421,11 @@
                 {
                     "stat": "Range",
                     "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 15,
                     "altStat": null
                 },
                 {
@@ -22398,6 +22713,11 @@
         "bonuses": {
             "2": [
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "Agility",
                     "value": 40,
                     "altStat": null
@@ -22617,6 +22937,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
                     "stat": "Dodge",
                     "value": 15,
                     "altStat": null
@@ -22789,6 +23114,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "Fire Damage",
                     "value": 10,
                     "altStat": null
@@ -22825,6 +23155,11 @@
                 }
             ],
             "3": [
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
                 {
                     "stat": "Fire Damage",
                     "value": 10,
@@ -22877,6 +23212,11 @@
                 }
             ],
             "4": [
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
                 {
                     "stat": "Fire Damage",
                     "value": 10,
@@ -23212,6 +23552,11 @@
                     "stat": "Strength",
                     "value": 30,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 30,
+                    "altStat": null
                 }
             ],
             "3": [
@@ -23262,6 +23607,11 @@
                 },
                 {
                     "stat": "Strength",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 50,
                     "altStat": null
                 },
@@ -24030,6 +24380,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
                     "stat": "Water Damage",
                     "value": 20,
                     "altStat": null
@@ -24069,6 +24424,11 @@
                 {
                     "stat": "Critical",
                     "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 20,
                     "altStat": null
                 },
                 {
@@ -24349,6 +24709,11 @@
                     "stat": "Water Damage",
                     "value": 5,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
                 }
             ],
             "3": [
@@ -24379,6 +24744,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 5,
                     "altStat": null
                 },
@@ -24946,6 +25316,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
                     "stat": "Critical Resistance",
                     "value": 20,
                     "altStat": null
@@ -25013,6 +25388,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
                     "stat": "Critical Resistance",
                     "value": 20,
                     "altStat": null
@@ -25048,6 +25428,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "Water Damage",
                     "value": 10,
                     "altStat": null
@@ -25079,6 +25464,11 @@
                 }
             ],
             "3": [
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
                 {
                     "stat": "Water Damage",
                     "value": 10,
@@ -26525,6 +26915,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
                     "stat": "Earth Damage",
                     "value": 20,
                     "altStat": null
@@ -26563,6 +26958,11 @@
                 },
                 {
                     "stat": "Critical Resistance",
+                    "value": 25,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 25,
                     "altStat": null
                 },
@@ -26811,6 +27211,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
                     "stat": "AP Reduction",
                     "value": 7,
                     "altStat": null
@@ -26829,6 +27234,11 @@
                 },
                 {
                     "stat": "Earth Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 5,
                     "altStat": null
                 },
@@ -27891,6 +28301,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 3,
+                    "altStat": null
+                },
+                {
                     "stat": "Power",
                     "value": 10,
                     "altStat": null
@@ -27928,6 +28343,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 6,
+                    "altStat": null
+                },
+                {
                     "stat": "Fire Damage",
                     "value": 6,
                     "altStat": null
@@ -27961,6 +28381,11 @@
             "4": [
                 {
                     "stat": "Earth Damage",
+                    "value": 6,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 6,
                     "altStat": null
                 },
@@ -28077,6 +28502,11 @@
         "bonuses": {
             "2": [
                 {
+                    "stat": "Air Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
                     "stat": "Water Damage",
                     "value": 20,
                     "altStat": null
@@ -28125,6 +28555,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 20,
                     "altStat": null
                 },
@@ -29850,6 +30285,11 @@
                     "stat": "Water Damage",
                     "value": 10,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
                 }
             ]
         }
@@ -29872,12 +30312,22 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "MP Parry",
                     "value": 10,
                     "altStat": null
                 }
             ],
             "3": [
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
                 {
                     "stat": "Agility",
                     "value": 50,
@@ -30545,6 +30995,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
                     "stat": "Water Damage",
                     "value": 15,
                     "altStat": null
@@ -30574,6 +31029,11 @@
                 {
                     "stat": "Dodge",
                     "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 25,
                     "altStat": null
                 },
                 {
@@ -31163,6 +31623,11 @@
         "bonuses": {
             "2": [
                 {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
                     "stat": "Water Damage",
                     "value": 15,
                     "altStat": null
@@ -31187,6 +31652,11 @@
                 {
                     "stat": "AP Reduction",
                     "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 15,
                     "altStat": null
                 },
                 {
@@ -31705,6 +32175,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "Water Damage",
                     "value": 10,
                     "altStat": null
@@ -31724,6 +32199,11 @@
                 {
                     "stat": "AP",
                     "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
                     "altStat": null
                 },
                 {
@@ -32761,6 +33241,11 @@
         "bonuses": {
             "2": [
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "Water Damage",
                     "value": 10,
                     "altStat": null
@@ -32782,6 +33267,11 @@
                 }
             ],
             "3": [
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
                 {
                     "stat": "Water Damage",
                     "value": 10,
@@ -33166,6 +33656,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
                     "stat": "Critical",
                     "value": 5,
                     "altStat": null
@@ -33193,6 +33688,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
                     "stat": "Critical",
                     "value": 5,
                     "altStat": null
@@ -33217,6 +33717,11 @@
                 {
                     "stat": "Pushback Resistance",
                     "value": 25,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 15,
                     "altStat": null
                 },
                 {
@@ -33526,6 +34031,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "Earth Damage",
                     "value": 10,
                     "altStat": null
@@ -33554,6 +34064,11 @@
                 },
                 {
                     "stat": "Earth Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 15,
                     "altStat": null
                 },
@@ -33601,6 +34116,11 @@
                 },
                 {
                     "stat": "Earth Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 20,
                     "altStat": null
                 },
@@ -34107,6 +34627,11 @@
                     "stat": "Water Damage",
                     "value": 12,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
                 }
             ]
         }
@@ -34556,6 +35081,11 @@
                     "stat": "Water Damage",
                     "value": 10,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
                 }
             ],
             "3": [
@@ -34593,6 +35123,11 @@
                     "stat": "Water Damage",
                     "value": 10,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
                 }
             ],
             "4": [
@@ -34628,6 +35163,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 10,
                     "altStat": null
                 },
@@ -35760,6 +36300,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "Strength",
                     "value": 100,
                     "altStat": null
@@ -35853,6 +36398,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 10,
                     "altStat": null
                 },
@@ -35975,6 +36525,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 20,
                     "altStat": null
                 }
@@ -36120,6 +36675,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
                     "stat": "Earth Damage",
                     "value": 5,
                     "altStat": null
@@ -36148,6 +36708,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 5,
                     "altStat": null
                 },
@@ -36339,6 +36904,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
                     "stat": "Neutral Damage",
                     "value": 5,
                     "altStat": null
@@ -36442,6 +37012,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 10,
                     "altStat": null
                 },
@@ -36553,6 +37128,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
                     "stat": "Neutral Damage",
                     "value": 15,
                     "altStat": null
@@ -36656,6 +37236,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 20,
                     "altStat": null
                 },
@@ -36767,6 +37352,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
                     "stat": "Neutral Damage",
                     "value": 40,
                     "altStat": null
@@ -36870,6 +37460,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 60,
                     "altStat": null
                 },
@@ -37615,6 +38210,11 @@
                     "stat": "Agility",
                     "value": 20,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 3,
+                    "altStat": null
                 }
             ]
         }
@@ -37694,6 +38294,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "Water Damage",
                     "value": 10,
                     "altStat": null
@@ -37713,6 +38318,11 @@
                 {
                     "stat": "MP",
                     "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 15,
                     "altStat": null
                 },
                 {
@@ -37745,6 +38355,11 @@
                 {
                     "stat": "MP",
                     "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 15,
                     "altStat": null
                 },
                 {
@@ -38356,6 +38971,11 @@
                     "stat": "Water Damage",
                     "value": 5,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
                 }
             ]
         }
@@ -38722,6 +39342,11 @@
                 {
                     "stat": "Wisdom",
                     "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 2,
                     "altStat": null
                 }
             ]
@@ -39140,6 +39765,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
                     "stat": "Summons",
                     "value": 1,
                     "altStat": null
@@ -39303,6 +39933,11 @@
                     "stat": "Range",
                     "value": 1,
                     "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 3,
+                    "altStat": null
                 }
             ]
         }
@@ -39391,6 +40026,11 @@
                 },
                 {
                     "stat": "Fire Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 5,
                     "altStat": null
                 }
@@ -40084,6 +40724,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 4,
+                    "altStat": null
+                },
+                {
                     "stat": "MP Reduction",
                     "value": 5,
                     "altStat": null
@@ -40504,6 +41149,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "% Air Resistance",
                     "value": 5,
                     "altStat": null
@@ -40589,6 +41239,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
                     "stat": "Dodge",
                     "value": 10,
                     "altStat": null
@@ -40627,6 +41282,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 20,
                     "altStat": null
                 },
@@ -41023,6 +41683,11 @@
                 {
                     "stat": "Fire Damage",
                     "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 22,
                     "altStat": null
                 },
                 {
@@ -41435,6 +42100,11 @@
                 },
                 {
                     "stat": "MP Parry",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 10,
                     "altStat": null
                 },
@@ -41958,6 +42628,11 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Air Damage",
+                    "value": 2,
+                    "altStat": null
+                },
+                {
                     "stat": "Dodge",
                     "value": 15,
                     "altStat": null
@@ -42019,6 +42694,11 @@
                 },
                 {
                     "stat": "Water Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
                     "value": 20,
                     "altStat": null
                 },

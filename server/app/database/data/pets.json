@@ -2357,6 +2357,11 @@
                 "stat": "Agility",
                 "minStat": null,
                 "maxStat": 120
+            },
+            {
+                "stat": "Air Damage",
+                "minStat": null,
+                "maxStat": 20
             }
         ],
         "customStats": {},
@@ -4126,6 +4131,11 @@
             },
             {
                 "stat": "Fire Damage",
+                "minStat": null,
+                "maxStat": 15
+            },
+            {
+                "stat": "Air Damage",
                 "minStat": null,
                 "maxStat": 15
             },

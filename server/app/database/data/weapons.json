@@ -508,6 +508,11 @@
         "stat": "Agility",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 1
       }
     ],
     "weaponStats": {
@@ -522,11 +527,6 @@
           "stat": "Neutral damage",
           "minStat": 3,
           "maxStat": 4
-        },
-        {
-          "stat": "Air damage",
-          "minStat": null,
-          "maxStat": 1
         }
       ]
     },
@@ -1233,6 +1233,11 @@
         "maxStat": 3
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 2,
         "maxStat": 3
@@ -1255,11 +1260,6 @@
           "stat": "Neutral damage",
           "minStat": 26,
           "maxStat": 40
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 2,
-          "maxStat": 3
         }
       ]
     },
@@ -2798,6 +2798,11 @@
         "maxStat": 20
       },
       {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 2
+      },
+      {
         "stat": "Water Damage",
         "minStat": null,
         "maxStat": 2
@@ -2820,11 +2825,6 @@
           "stat": "Neutral damage",
           "minStat": 8,
           "maxStat": 12
-        },
-        {
-          "stat": "Air damage",
-          "minStat": null,
-          "maxStat": 2
         }
       ]
     },
@@ -3590,6 +3590,11 @@
         "stat": "Agility",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 1
       }
     ],
     "weaponStats": {
@@ -3604,11 +3609,6 @@
           "stat": "Neutral damage",
           "minStat": 1,
           "maxStat": 25
-        },
-        {
-          "stat": "Air damage",
-          "minStat": null,
-          "maxStat": 1
         }
       ]
     },
@@ -4563,6 +4563,11 @@
         "stat": "Agility",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 1
       }
     ],
     "weaponStats": {
@@ -4577,11 +4582,6 @@
           "stat": "Neutral damage",
           "minStat": 6,
           "maxStat": 10
-        },
-        {
-          "stat": "Air damage",
-          "minStat": null,
-          "maxStat": 1
         }
       ]
     },
@@ -5156,6 +5156,11 @@
         "maxStat": 3
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "Neutral Damage",
         "minStat": 2,
         "maxStat": 3
@@ -5173,11 +5178,6 @@
           "stat": "Air damage",
           "minStat": 22,
           "maxStat": 26
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 2,
-          "maxStat": 3
         }
       ]
     },
@@ -6017,6 +6017,11 @@
         "stat": "Dodge",
         "minStat": 4,
         "maxStat": 5
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 5
       }
     ],
     "weaponStats": {
@@ -6031,11 +6036,6 @@
           "stat": "Neutral damage",
           "minStat": 16,
           "maxStat": 20
-        },
-        {
-          "stat": "Air damage",
-          "minStat": null,
-          "maxStat": 5
         }
       ]
     },
@@ -6076,6 +6076,11 @@
         "maxStat": 3
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "Water Damage",
         "minStat": 2,
         "maxStat": 3
@@ -6098,11 +6103,6 @@
           "stat": "Neutral damage",
           "minStat": 8,
           "maxStat": 14
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 2,
-          "maxStat": 3
         }
       ]
     },
@@ -6220,6 +6220,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "Neutral Damage",
         "minStat": 2,
         "maxStat": 3
@@ -6247,11 +6252,6 @@
           "stat": "Neutral damage",
           "minStat": 11,
           "maxStat": 18
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 2,
-          "maxStat": 3
         }
       ]
     },
@@ -6569,6 +6569,11 @@
         "maxStat": 60
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
         "stat": "MP",
         "minStat": null,
         "maxStat": 1
@@ -6586,11 +6591,6 @@
           "stat": "Neutral damage",
           "minStat": 6,
           "maxStat": 10
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 4,
-          "maxStat": 6
         }
       ]
     },
@@ -9879,6 +9879,11 @@
         "stat": "Agility",
         "minStat": 21,
         "maxStat": 30
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 3
       }
     ],
     "weaponStats": {
@@ -9893,11 +9898,6 @@
           "stat": "Air damage",
           "minStat": 11,
           "maxStat": 15
-        },
-        {
-          "stat": "Air damage",
-          "minStat": null,
-          "maxStat": 3
         }
       ]
     },
@@ -10010,6 +10010,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 2
+      },
+      {
         "stat": "Earth Damage",
         "minStat": null,
         "maxStat": 2
@@ -10042,11 +10047,6 @@
           "stat": "Water damage",
           "minStat": 16,
           "maxStat": 30
-        },
-        {
-          "stat": "Air damage",
-          "minStat": null,
-          "maxStat": 2
         }
       ]
     },
@@ -10147,6 +10147,11 @@
         "stat": "Neutral Damage",
         "minStat": null,
         "maxStat": 2
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 2
       }
     ],
     "weaponStats": {
@@ -10161,11 +10166,6 @@
           "stat": "Fire damage",
           "minStat": 12,
           "maxStat": 16
-        },
-        {
-          "stat": "Air damage",
-          "minStat": null,
-          "maxStat": 2
         }
       ]
     },
@@ -10804,6 +10804,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "Water Damage",
         "minStat": 2,
         "maxStat": 3
@@ -10826,11 +10831,6 @@
           "stat": "Neutral damage",
           "minStat": 17,
           "maxStat": 31
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 2,
-          "maxStat": 3
         }
       ]
     },
@@ -10881,6 +10881,11 @@
         "maxStat": 3
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "Neutral Damage",
         "minStat": 2,
         "maxStat": 3
@@ -10898,11 +10903,6 @@
           "stat": "Neutral damage",
           "minStat": 11,
           "maxStat": 15
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 2,
-          "maxStat": 3
         }
       ]
     },
@@ -11957,6 +11957,11 @@
         "maxStat": 6
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
         "stat": "Pushback Damage",
         "minStat": 9,
         "maxStat": 12
@@ -11985,11 +11990,6 @@
       "baseCritChance": 30,
       "critBonusDamage": 15,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 4,
-          "maxStat": 6
-        },
         {
           "stat": "Fire damage",
           "minStat": 18,
@@ -15004,6 +15004,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Neutral Damage",
         "minStat": 7,
         "maxStat": 10
@@ -15036,11 +15041,6 @@
           "stat": "Neutral damage",
           "minStat": 16,
           "maxStat": 23
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -15210,6 +15210,11 @@
         "maxStat": 20
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 7,
         "maxStat": 10
@@ -15232,11 +15237,6 @@
           "stat": "Neutral damage",
           "minStat": 14,
           "maxStat": 23
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -21624,6 +21624,11 @@
         "maxStat": 60
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "Neutral Damage",
         "minStat": 4,
         "maxStat": 5
@@ -21651,11 +21656,6 @@
           "stat": "Neutral damage",
           "minStat": 15,
           "maxStat": 20
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 4,
-          "maxStat": 5
         }
       ]
     },
@@ -23604,6 +23604,11 @@
         "maxStat": 3
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 2,
         "maxStat": 3
@@ -23627,11 +23632,6 @@
       "baseCritChance": 30,
       "critBonusDamage": 7,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 2,
-          "maxStat": 3
-        },
         {
           "stat": "Earth damage",
           "minStat": 6,
@@ -25952,6 +25952,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 3,
         "maxStat": 4
@@ -25989,11 +25994,6 @@
           "stat": "Air steal",
           "minStat": 5,
           "maxStat": 8
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 4,
-          "maxStat": 5
         }
       ]
     },
@@ -26049,6 +26049,11 @@
         "maxStat": 3
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 4,
         "maxStat": 6
@@ -26086,11 +26091,6 @@
           "stat": "Air damage",
           "minStat": 12,
           "maxStat": 22
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 2,
-          "maxStat": 3
         }
       ]
     },
@@ -26320,6 +26320,11 @@
         "maxStat": 2
       },
       {
+        "stat": "Air Damage",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
         "stat": "Heals",
         "minStat": 4,
         "maxStat": 6
@@ -26357,11 +26362,6 @@
           "stat": "Air damage",
           "minStat": 5,
           "maxStat": 10
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 1,
-          "maxStat": 2
         }
       ]
     },
@@ -26715,6 +26715,11 @@
         "maxStat": 6
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 4,
         "maxStat": 6
@@ -26750,11 +26755,6 @@
       "weapon_effects": [
         {
           "stat": "Air steal",
-          "minStat": 4,
-          "maxStat": 6
-        },
-        {
-          "stat": "Air damage",
           "minStat": 4,
           "maxStat": 6
         },
@@ -32989,6 +32989,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Fire Damage",
         "minStat": 7,
         "maxStat": 10
@@ -33036,11 +33041,6 @@
           "stat": "Air steal",
           "minStat": 2,
           "maxStat": 3
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -33111,6 +33111,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Earth Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -33148,11 +33153,6 @@
           "stat": "AP",
           "minStat": null,
           "maxStat": -1
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -33324,6 +33324,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Earth Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -33366,11 +33371,6 @@
           "stat": "Air steal",
           "minStat": 5,
           "maxStat": 7
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -33701,6 +33701,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "% Air Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -33733,11 +33738,6 @@
           "stat": "Earth steal",
           "minStat": 4,
           "maxStat": 6
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -33835,6 +33835,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -33872,11 +33877,6 @@
           "stat": "Air damage",
           "minStat": 8,
           "maxStat": 12
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -33950,6 +33950,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Earth Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -33982,11 +33987,6 @@
           "stat": "Neutral steal",
           "minStat": 3,
           "maxStat": 4
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -34399,6 +34399,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Fire Damage",
         "minStat": 5,
         "maxStat": 7
@@ -34431,11 +34436,6 @@
           "stat": "Air damage",
           "minStat": 16,
           "maxStat": 22
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -34509,6 +34509,11 @@
         "maxStat": 30
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -34546,11 +34551,6 @@
           "stat": "AP",
           "minStat": null,
           "maxStat": -1
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -34950,6 +34950,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Air Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -34982,11 +34987,6 @@
           "stat": "Air damage",
           "minStat": 9,
           "maxStat": 15
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -35065,6 +35065,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -35102,11 +35107,6 @@
           "stat": "Air steal",
           "minStat": 6,
           "maxStat": 10
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 8,
-          "maxStat": 12
         }
       ]
     },
@@ -35185,6 +35185,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Fire Damage",
         "minStat": 7,
         "maxStat": 10
@@ -35227,11 +35232,6 @@
           "stat": "Air damage",
           "minStat": 11,
           "maxStat": 15
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -35310,6 +35310,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -35342,11 +35347,6 @@
           "stat": "Air steal",
           "minStat": 5,
           "maxStat": 7
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 8,
-          "maxStat": 12
         }
       ]
     },
@@ -35730,6 +35730,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -35762,11 +35767,6 @@
           "stat": "Air damage",
           "minStat": 10,
           "maxStat": 16
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 8,
-          "maxStat": 12
         }
       ]
     },
@@ -35845,6 +35845,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -35892,11 +35897,6 @@
           "stat": "AP",
           "minStat": null,
           "maxStat": -1
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -36068,6 +36068,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -36115,11 +36120,6 @@
           "stat": "Water steal",
           "minStat": 3,
           "maxStat": 4
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -36323,6 +36323,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Earth Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -36370,11 +36375,6 @@
           "stat": "Air steal",
           "minStat": 6,
           "maxStat": 9
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -36578,6 +36578,11 @@
         "maxStat": 8
       },
       {
+        "stat": "Air Damage",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
         "stat": "Fire Damage",
         "minStat": 6,
         "maxStat": 8
@@ -36620,11 +36625,6 @@
           "stat": "Air damage",
           "minStat": 8,
           "maxStat": 16
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 6,
-          "maxStat": 8
         }
       ]
     },
@@ -37070,6 +37070,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "AP Parry",
         "minStat": 4,
         "maxStat": 5
@@ -37095,11 +37100,6 @@
         },
         {
           "stat": "Fire steal",
-          "minStat": 7,
-          "maxStat": 10
-        },
-        {
-          "stat": "Air damage",
           "minStat": 7,
           "maxStat": 10
         }
@@ -37244,6 +37244,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
         "stat": "Earth Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -37281,11 +37286,6 @@
           "stat": "Air steal",
           "minStat": 6,
           "maxStat": 12
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 6,
-          "maxStat": 8
         }
       ]
     },
@@ -37406,6 +37406,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 4,
         "maxStat": 5
@@ -37438,11 +37443,6 @@
           "stat": "AP",
           "minStat": null,
           "maxStat": -1
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 4,
-          "maxStat": 5
         }
       ]
     },
@@ -37513,6 +37513,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Air Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -37565,11 +37570,6 @@
           "stat": "Fire healing",
           "minStat": 8,
           "maxStat": 12
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -37732,6 +37732,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -37779,11 +37784,6 @@
           "stat": "Air damage",
           "minStat": 4,
           "maxStat": 6
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 6,
-          "maxStat": 8
         }
       ]
     },
@@ -38571,6 +38571,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "Neutral Damage",
         "minStat": 8,
         "maxStat": 12
@@ -38608,11 +38613,6 @@
           "stat": "Neutral steal",
           "minStat": 3,
           "maxStat": 5
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 8,
-          "maxStat": 12
         }
       ]
     },
@@ -38789,6 +38789,11 @@
         "maxStat": 8
       },
       {
+        "stat": "Air Damage",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -38816,11 +38821,6 @@
           "stat": "Fire steal",
           "minStat": 2,
           "maxStat": 3
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 6,
-          "maxStat": 8
         }
       ]
     },
@@ -39269,6 +39269,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 14,
+        "maxStat": 18
+      },
+      {
         "stat": "Air Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -39316,11 +39321,6 @@
           "stat": "Fire steal",
           "minStat": 5,
           "maxStat": 7
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 14,
-          "maxStat": 18
         }
       ]
     },
@@ -39404,6 +39404,11 @@
         "maxStat": 18
       },
       {
+        "stat": "Air Damage",
+        "minStat": 14,
+        "maxStat": 18
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -39446,11 +39451,6 @@
           "stat": "Earth steal",
           "minStat": 8,
           "maxStat": 11
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 14,
-          "maxStat": 18
         }
       ]
     },
@@ -39635,6 +39635,11 @@
         "maxStat": 20
       },
       {
+        "stat": "Air Damage",
+        "minStat": 14,
+        "maxStat": 18
+      },
+      {
         "stat": "Fire Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -39672,11 +39677,6 @@
           "stat": "Air damage",
           "minStat": 9,
           "maxStat": 14
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 14,
-          "maxStat": 18
         }
       ]
     },
@@ -39863,6 +39863,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "% Water Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -39895,11 +39900,6 @@
           "stat": "Fire damage",
           "minStat": 10,
           "maxStat": 14
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 11,
-          "maxStat": 15
         }
       ]
     },
@@ -40339,6 +40339,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 6,
         "maxStat": 8
@@ -40386,11 +40391,6 @@
           "stat": "Air steal",
           "minStat": 4,
           "maxStat": 7
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 8,
-          "maxStat": 12
         }
       ]
     },
@@ -40859,6 +40859,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Fire Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -40887,11 +40892,6 @@
       "baseCritChance": 10,
       "critBonusDamage": 4,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 9,
-          "maxStat": 12
-        },
         {
           "stat": "Air damage",
           "minStat": 10,
@@ -41264,6 +41264,11 @@
         "maxStat": 1
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
         "stat": "% Earth Resistance",
         "minStat": 4,
         "maxStat": 6
@@ -41311,11 +41316,6 @@
           "stat": "Air steal",
           "minStat": 3,
           "maxStat": 4
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 4,
-          "maxStat": 6
         }
       ]
     },
@@ -41366,6 +41366,11 @@
         "maxStat": -4
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Water Damage",
         "minStat": 5,
         "maxStat": 7
@@ -41413,11 +41418,6 @@
           "stat": "Water steal",
           "minStat": 4,
           "maxStat": 6
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 5,
-          "maxStat": 7
         }
       ]
     },
@@ -41483,6 +41483,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Fire Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -41540,11 +41545,6 @@
           "stat": "Air steal",
           "minStat": 6,
           "maxStat": 8
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -41827,6 +41827,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "% Earth Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -41854,11 +41859,6 @@
           "stat": "Fire damage",
           "minStat": 31,
           "maxStat": 35
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 11,
-          "maxStat": 15
         }
       ]
     },
@@ -41932,6 +41932,11 @@
         "maxStat": 40
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 9,
         "maxStat": 12
@@ -41984,11 +41989,6 @@
           "stat": "Water steal",
           "minStat": 4,
           "maxStat": 6
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 9,
-          "maxStat": 12
         }
       ]
     },
@@ -42167,6 +42167,11 @@
         "maxStat": -11
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "% Earth Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -42204,11 +42209,6 @@
           "stat": "Air damage",
           "minStat": 61,
           "maxStat": 70
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 9,
-          "maxStat": 12
         }
       ]
     },
@@ -42384,6 +42384,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 11,
         "maxStat": 15
@@ -42441,11 +42446,6 @@
           "stat": "Air steal",
           "minStat": 7,
           "maxStat": 12
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 11,
-          "maxStat": 15
         }
       ]
     },
@@ -42644,6 +42644,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 9,
         "maxStat": 12
@@ -42699,11 +42704,6 @@
         },
         {
           "stat": "Earth steal",
-          "minStat": 9,
-          "maxStat": 12
-        },
-        {
-          "stat": "Air damage",
           "minStat": 9,
           "maxStat": 12
         }
@@ -43194,6 +43194,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "MP Parry",
         "minStat": 4,
         "maxStat": 5
@@ -43212,11 +43217,6 @@
       "baseCritChance": 25,
       "critBonusDamage": 7,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
-        },
         {
           "stat": "Neutral damage",
           "minStat": 30,
@@ -43440,6 +43440,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -43497,11 +43502,6 @@
           "stat": "AP",
           "minStat": null,
           "maxStat": -1
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
         }
       ]
     },
@@ -43580,6 +43580,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Pushback Damage",
         "minStat": 9,
         "maxStat": 12
@@ -43608,11 +43613,6 @@
       "baseCritChance": 5,
       "critBonusDamage": 5,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
-        },
         {
           "stat": "Neutral damage",
           "minStat": 19,
@@ -44156,6 +44156,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "% Earth Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -44198,11 +44203,6 @@
           "stat": "Fire steal",
           "minStat": 2,
           "maxStat": 3
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 9,
-          "maxStat": 12
         }
       ]
     },
@@ -44266,6 +44266,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Water Damage",
         "minStat": 11,
         "maxStat": 15
@@ -44313,11 +44318,6 @@
           "stat": "Water steal",
           "minStat": 20,
           "maxStat": 25
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 11,
-          "maxStat": 15
         }
       ]
     },
@@ -44478,6 +44478,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "% Water Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -44505,11 +44510,6 @@
           "stat": "Air steal",
           "minStat": 16,
           "maxStat": 20
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 11,
-          "maxStat": 15
         }
       ]
     },
@@ -44916,6 +44916,11 @@
         "maxStat": 3
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "Heals",
         "minStat": 4,
         "maxStat": 5
@@ -44948,11 +44953,6 @@
           "stat": "Fire damage",
           "minStat": 11,
           "maxStat": 15
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 2,
-          "maxStat": 3
         }
       ]
     },
@@ -45095,6 +45095,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 5,
         "maxStat": 7
@@ -45132,11 +45137,6 @@
           "stat": "Earth damage",
           "minStat": 16,
           "maxStat": 20
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 5,
-          "maxStat": 7
         }
       ]
     },
@@ -45304,6 +45304,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 9,
         "maxStat": 12
@@ -45366,11 +45371,6 @@
           "stat": "Air steal",
           "minStat": 10,
           "maxStat": 15
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 9,
-          "maxStat": 12
         }
       ]
     },
@@ -45421,6 +45421,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Pushback Damage",
         "minStat": 21,
         "maxStat": 30
@@ -45463,11 +45468,6 @@
           "stat": "Air steal",
           "minStat": 4,
           "maxStat": 5
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 11,
-          "maxStat": 15
         }
       ]
     },
@@ -45725,6 +45725,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 11,
         "maxStat": 15
@@ -45772,11 +45777,6 @@
           "stat": "Earth damage",
           "minStat": 18,
           "maxStat": 21
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 11,
-          "maxStat": 15
         }
       ]
     },
@@ -45905,6 +45905,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 16,
         "maxStat": 20
@@ -45957,11 +45962,6 @@
           "stat": "Earth steal",
           "minStat": 6,
           "maxStat": 8
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 16,
-          "maxStat": 20
         }
       ]
     },
@@ -46680,6 +46680,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -46722,11 +46727,6 @@
           "stat": "Air damage",
           "minStat": 20,
           "maxStat": 25
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 9,
-          "maxStat": 12
         }
       ]
     },
@@ -46773,6 +46773,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 11,
         "maxStat": 15
       },
@@ -46827,11 +46832,6 @@
         },
         {
           "stat": "Fire damage",
-          "minStat": 11,
-          "maxStat": 15
-        },
-        {
-          "stat": "Air damage",
           "minStat": 11,
           "maxStat": 15
         }
@@ -47010,6 +47010,11 @@
         "maxStat": -30
       },
       {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
         "stat": "Water Damage",
         "minStat": 16,
         "maxStat": 20
@@ -47067,11 +47072,6 @@
           "stat": "Water steal",
           "minStat": 6,
           "maxStat": 9
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 16,
-          "maxStat": 20
         }
       ]
     },
@@ -47633,6 +47633,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Neutral Damage",
         "minStat": 7,
         "maxStat": 10
@@ -47666,11 +47671,6 @@
       "baseCritChance": 15,
       "critBonusDamage": 8,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
-        },
         {
           "stat": "Earth damage",
           "minStat": 23,
@@ -47735,6 +47735,11 @@
         "maxStat": 40
       },
       {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 16,
         "maxStat": 20
@@ -47778,11 +47783,6 @@
       "baseCritChance": 10,
       "critBonusDamage": 10,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 16,
-          "maxStat": 20
-        },
         {
           "stat": "Air damage",
           "minStat": 24,
@@ -48395,6 +48395,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 4,
         "maxStat": 6
@@ -48423,11 +48428,6 @@
       "baseCritChance": 15,
       "critBonusDamage": 7,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 4,
-          "maxStat": 7
-        },
         {
           "stat": "Air damage",
           "minStat": 4,
@@ -48604,6 +48604,11 @@
         "maxStat": 6
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 3,
         "maxStat": 4
@@ -48632,11 +48637,6 @@
       "baseCritChance": 25,
       "critBonusDamage": 4,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 4,
-          "maxStat": 6
-        },
         {
           "stat": "Air damage",
           "minStat": 36,
@@ -48691,6 +48691,11 @@
         "maxStat": 6
       },
       {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
         "stat": "Water Damage",
         "minStat": 3,
         "maxStat": 4
@@ -48729,11 +48734,6 @@
       "baseCritChance": 10,
       "critBonusDamage": 5,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 3,
-          "maxStat": 4
-        },
         {
           "stat": "Air damage",
           "minStat": 14,
@@ -48879,6 +48879,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "% Air Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -48911,11 +48916,6 @@
           "stat": "Air damage",
           "minStat": 35,
           "maxStat": 52
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 9,
-          "maxStat": 12
         }
       ]
     },
@@ -49172,6 +49172,11 @@
         "maxStat": 4
       },
       {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 3,
         "maxStat": 4
@@ -49210,11 +49215,6 @@
       "baseCritChance": 20,
       "critBonusDamage": 5,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 3,
-          "maxStat": 4
-        },
         {
           "stat": "Air damage",
           "minStat": 7,
@@ -49515,6 +49515,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 4,
         "maxStat": 5
@@ -49558,11 +49563,6 @@
       "baseCritChance": 20,
       "critBonusDamage": 7,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 4,
-          "maxStat": 5
-        },
         {
           "stat": "Air damage",
           "minStat": 10,
@@ -49637,6 +49637,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": 3,
         "maxStat": 5
@@ -49680,11 +49685,6 @@
       "baseCritChance": 0,
       "critBonusDamage": 0,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 11,
-          "maxStat": 15
-        },
         {
           "stat": "Earth damage",
           "minStat": 25,
@@ -49971,6 +49971,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -50018,11 +50023,6 @@
           "stat": "Air steal",
           "minStat": 35,
           "maxStat": 42
-        },
-        {
-          "stat": "Air damage",
-          "minStat": 16,
-          "maxStat": 20
         }
       ]
     },
@@ -50501,6 +50501,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -50544,11 +50549,6 @@
       "baseCritChance": 5,
       "critBonusDamage": 6,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
-        },
         {
           "stat": "Water damage",
           "minStat": 16,
@@ -51271,6 +51271,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Fire Damage",
         "minStat": 9,
         "maxStat": 12
@@ -51314,11 +51319,6 @@
       "baseCritChance": 0,
       "critBonusDamage": 0,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 9,
-          "maxStat": 12
-        },
         {
           "stat": "Earth damage",
           "minStat": 18,
@@ -51413,6 +51413,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 11,
         "maxStat": 14
@@ -51446,11 +51451,6 @@
       "baseCritChance": 15,
       "critBonusDamage": 4,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 9,
-          "maxStat": 12
-        },
         {
           "stat": "Air damage",
           "minStat": 15,
@@ -51515,6 +51515,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
         "stat": "Range",
         "minStat": null,
         "maxStat": -2
@@ -51528,11 +51533,6 @@
       "baseCritChance": 0,
       "critBonusDamage": 0,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 3,
-          "maxStat": 5
-        },
         {
           "stat": "Air damage",
           "minStat": 5,
@@ -52042,6 +52042,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "% Water Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -52065,11 +52070,6 @@
       "baseCritChance": 0,
       "critBonusDamage": 0,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
-        },
         {
           "stat": "AP",
           "minStat": null,
@@ -52144,6 +52144,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "% Earth Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -52167,11 +52172,6 @@
       "baseCritChance": 0,
       "critBonusDamage": 0,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 7,
-          "maxStat": 10
-        },
         {
           "stat": "MP",
           "minStat": null,
@@ -52457,6 +52457,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "% Water Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -52475,11 +52480,6 @@
       "baseCritChance": 0,
       "critBonusDamage": 0,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 11,
-          "maxStat": 15
-        },
         {
           "stat": "Fire damage",
           "minStat": 13,
@@ -52751,6 +52751,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Water Damage",
         "minStat": 9,
         "maxStat": 12
@@ -52804,11 +52809,6 @@
       "baseCritChance": 10,
       "critBonusDamage": 3,
       "weapon_effects": [
-        {
-          "stat": "Air damage",
-          "minStat": 11,
-          "maxStat": 15
-        },
         {
           "stat": "Neutral steal",
           "minStat": 16,
