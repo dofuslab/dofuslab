@@ -243,6 +243,11 @@
         "maxStat": -10
       },
       {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 2
+      },
+      {
         "stat": "Earth Damage",
         "minStat": null,
         "maxStat": 2
@@ -606,6 +611,11 @@
         "stat": "Agility",
         "minStat": 9,
         "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 1
       }
     ],
     "customStats": {},
@@ -852,6 +862,11 @@
         "stat": "Agility",
         "minStat": 5,
         "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 2
       }
     ],
     "customStats": {},
@@ -2027,6 +2042,11 @@
         "maxStat": -2
       },
       {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": -2
+      },
+      {
         "stat": "Earth Damage",
         "minStat": null,
         "maxStat": -2
@@ -2423,6 +2443,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Air Damage",
         "minStat": null,
         "maxStat": 1
       },
@@ -4533,6 +4558,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 7,
         "maxStat": 10
@@ -5020,6 +5050,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 5,
         "maxStat": 7
       },
@@ -10883,6 +10918,11 @@
         "stat": "Prospecting",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 2
       }
     ],
     "customStats": {},
@@ -11460,6 +11500,11 @@
         "maxStat": 6
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
         "stat": "Pushback Damage",
         "minStat": 5,
         "maxStat": 8
@@ -11518,6 +11563,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 4,
         "maxStat": 6
       },
@@ -13913,6 +13963,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Pushback Damage",
         "minStat": 4,
         "maxStat": 5
@@ -15153,6 +15208,11 @@
         "maxStat": 6
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
         "stat": "% Water Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -15826,6 +15886,11 @@
         "stat": "Summons",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
       }
     ],
     "customStats": {},
@@ -15881,6 +15946,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 4,
         "maxStat": 5
       },
@@ -17655,6 +17725,11 @@
         "maxStat": 1
       },
       {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
         "stat": "Earth Damage",
         "minStat": null,
         "maxStat": 1
@@ -17703,6 +17778,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Air Damage",
         "minStat": null,
         "maxStat": 1
       },
@@ -18932,6 +19012,11 @@
         "stat": "Prospecting",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
       },
       {
         "stat": "Summons",
@@ -20386,6 +20471,11 @@
     "setID": null,
     "level": 180,
     "stats": [
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 25
+      },
       {
         "stat": "Water Damage",
         "minStat": null,
@@ -23051,6 +23141,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "% Water Resistance",
         "minStat": 2,
         "maxStat": 3
@@ -23751,6 +23846,11 @@
         "stat": "Agility",
         "minStat": 21,
         "maxStat": 30
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
       },
       {
         "stat": "AP",
@@ -24613,6 +24713,11 @@
         "maxStat": 2
       },
       {
+        "stat": "Air Damage",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
         "stat": "Heals",
         "minStat": 4,
         "maxStat": 6
@@ -24809,6 +24914,11 @@
         "maxStat": 3
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "% Air Resistance",
         "minStat": 2,
         "maxStat": 3
@@ -24886,6 +24996,11 @@
         "maxStat": 3
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "% Air Resistance",
         "minStat": 2,
         "maxStat": 3
@@ -24954,6 +25069,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 2,
         "maxStat": 3
       },
@@ -27040,6 +27160,11 @@
         "stat": "Vitality",
         "minStat": 16,
         "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 1
       }
     ],
     "customStats": {},
@@ -27227,6 +27352,11 @@
         "stat": "Wisdom",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 1
       }
     ],
     "customStats": {},
@@ -27798,6 +27928,11 @@
         "stat": "Agility",
         "minStat": 16,
         "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 1
       }
     ],
     "customStats": {},
@@ -28123,6 +28258,11 @@
         "stat": "Dodge",
         "minStat": null,
         "maxStat": 2
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
       }
     ],
     "customStats": {},
@@ -31426,6 +31566,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 4,
         "maxStat": 7
@@ -31498,6 +31643,11 @@
         "maxStat": 6
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": 2,
         "maxStat": 4
@@ -31565,6 +31715,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 4
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 2,
         "maxStat": 4
@@ -31630,6 +31785,11 @@
         "stat": "Lock",
         "minStat": 2,
         "maxStat": 4
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
       },
       {
         "stat": "Earth Damage",
@@ -31704,6 +31864,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 3,
         "maxStat": 5
@@ -31764,6 +31929,11 @@
         "stat": "Wisdom",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 5
       },
       {
         "stat": "Earth Damage",
@@ -43550,6 +43720,11 @@
         "maxStat": 30
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "Heals",
         "minStat": 4,
         "maxStat": 5
@@ -44236,6 +44411,11 @@
         "stat": "Wisdom",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
       }
     ],
     "customStats": {},
@@ -46538,6 +46718,11 @@
         "maxStat": 3
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "Critical Resistance",
         "minStat": 4,
         "maxStat": 5
@@ -47917,6 +48102,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Fire Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -48881,6 +49071,11 @@
         "stat": "Chance",
         "minStat": 16,
         "maxStat": 25
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
       },
       {
         "stat": "MP Parry",
@@ -50104,6 +50299,11 @@
         "stat": "Agility",
         "minStat": 16,
         "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
       }
     ],
     "customStats": {},
@@ -50141,6 +50341,11 @@
         "stat": "Power",
         "minStat": 6,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
       }
     ],
     "customStats": {},
@@ -51213,6 +51418,11 @@
         "maxStat": 150
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "Lock",
         "minStat": 2,
         "maxStat": 3
@@ -51263,6 +51473,11 @@
         "stat": "Summons",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
       }
     ],
     "customStats": {},
@@ -51606,6 +51821,11 @@
         "maxStat": 1
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "Lock",
         "minStat": null,
         "maxStat": -10
@@ -51651,6 +51871,11 @@
         "stat": "Initiative",
         "minStat": 101,
         "maxStat": 150
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 4
       },
       {
         "stat": "Dodge",
@@ -52322,6 +52547,11 @@
       },
       {
         "stat": "Heals",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 3,
         "maxStat": 4
       },
@@ -53053,6 +53283,11 @@
         "maxStat": 1
       },
       {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 3
+      },
+      {
         "stat": "Water Damage",
         "minStat": null,
         "maxStat": 3
@@ -53337,6 +53572,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -53779,6 +54019,11 @@
         "stat": "Prospecting",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
       },
       {
         "stat": "Fire Damage",
@@ -54405,6 +54650,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Fire Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -54483,6 +54733,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -54676,6 +54931,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Neutral Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -54811,6 +55071,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -54989,6 +55254,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "Fire Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -55062,6 +55332,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 8,
         "maxStat": 12
       },
@@ -55151,6 +55426,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
       },
       {
         "stat": "Water Damage",
@@ -55245,6 +55525,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Earth Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -55332,6 +55617,11 @@
         "maxStat": 8
       },
       {
+        "stat": "Air Damage",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
         "stat": "Fire Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -55405,6 +55695,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 5,
         "maxStat": 7
       },
@@ -55573,6 +55868,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Earth Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -55658,6 +55958,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
       },
       {
         "stat": "Air Resistance",
@@ -55807,6 +56112,11 @@
         "stat": "Prospecting",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
       },
       {
         "stat": "Neutral Resistance",
@@ -56204,6 +56514,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -56282,6 +56597,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -56373,6 +56693,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "% Air Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -56446,6 +56771,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 8,
         "maxStat": 12
       },
@@ -56542,6 +56872,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Fire Resistance",
         "minStat": 8,
         "maxStat": 12
@@ -56617,6 +56952,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
       },
       {
         "stat": "Water Damage",
@@ -56701,6 +57041,11 @@
         "maxStat": 20
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "Water Damage",
         "minStat": 8,
         "maxStat": 12
@@ -56771,6 +57116,11 @@
         "stat": "Critical",
         "minStat": 3,
         "maxStat": 4
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
       },
       {
         "stat": "Water Damage",
@@ -57106,6 +57456,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "Water Damage",
         "minStat": 8,
         "maxStat": 12
@@ -57184,6 +57539,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 8,
         "maxStat": 12
       },
@@ -57290,6 +57650,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -57368,6 +57733,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -57489,6 +57859,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "Water Damage",
         "minStat": 8,
         "maxStat": 12
@@ -57586,6 +57961,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "Lock",
         "minStat": 4,
         "maxStat": 5
@@ -57644,6 +58024,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 8,
         "maxStat": 12
       },
@@ -57944,6 +58329,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Water Damage",
         "minStat": 5,
         "maxStat": 7
@@ -58047,6 +58437,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 8,
         "maxStat": 12
       },
@@ -58332,6 +58727,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "AP Parry",
         "minStat": 4,
         "maxStat": 5
@@ -58397,6 +58797,11 @@
         "stat": "Prospecting",
         "minStat": 16,
         "maxStat": 25
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
       },
       {
         "stat": "Water Damage",
@@ -58559,6 +58964,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -58779,6 +59189,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Water Damage",
         "minStat": 5,
         "maxStat": 7
@@ -58870,6 +59285,11 @@
       },
       {
         "stat": "Earth Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 8,
         "maxStat": 12
       },
@@ -58971,6 +59391,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -59068,6 +59493,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Water Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -59158,6 +59588,11 @@
         "stat": "Range",
         "minStat": 1,
         "maxStat": 2
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 5
       },
       {
         "stat": "Water Damage",
@@ -59280,6 +59715,11 @@
       },
       {
         "stat": "Earth Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -59783,6 +60223,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
         "stat": "Lock",
         "minStat": 4,
         "maxStat": 6
@@ -59823,6 +60268,11 @@
         "stat": "Pushback Resistance",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
       },
       {
         "stat": "Pushback Damage",
@@ -59912,6 +60362,11 @@
         "stat": "Vitality",
         "minStat": 16,
         "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
       },
       {
         "stat": "Earth Damage",
@@ -60019,6 +60474,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 4,
         "maxStat": 5
       },
@@ -60206,6 +60666,11 @@
         "maxStat": 25
       },
       {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
         "stat": "MP Parry",
         "minStat": 3,
         "maxStat": 4
@@ -60251,6 +60716,11 @@
         "stat": "Prospecting",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
       },
       {
         "stat": "Critical",
@@ -60612,6 +61082,11 @@
         "stat": "Critical",
         "minStat": 2,
         "maxStat": 3
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 4
       },
       {
         "stat": "Dodge",
@@ -61181,6 +61656,11 @@
         "maxStat": 20
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -61305,6 +61785,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -61370,6 +61855,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
       },
       {
         "stat": "Fire Damage",
@@ -61459,6 +61949,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Neutral Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -61524,6 +62019,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
       },
       {
         "stat": "Air Resistance",
@@ -61618,6 +62118,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Fire Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -61701,6 +62206,11 @@
       },
       {
         "stat": "Earth Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -61797,6 +62307,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Critical Resistance",
         "minStat": 8,
         "maxStat": 12
@@ -61879,6 +62394,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "Neutral Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -61957,6 +62477,11 @@
       },
       {
         "stat": "Earth Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -62629,6 +63154,11 @@
         "maxStat": 25
       },
       {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
         "stat": "Water Resistance",
         "minStat": 16,
         "maxStat": 25
@@ -63122,6 +63652,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -63398,6 +63933,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -63495,6 +64035,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -63582,6 +64127,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "Neutral Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -63660,6 +64210,11 @@
       },
       {
         "stat": "Earth Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 8,
         "maxStat": 12
       },
@@ -65082,6 +65637,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "Earth Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -65291,6 +65851,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -65583,6 +66148,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "Neutral Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -65708,6 +66278,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 6,
         "maxStat": 8
       },
@@ -65863,6 +66438,11 @@
         "maxStat": 25
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "Fire Resistance",
         "minStat": 4,
         "maxStat": 5
@@ -65960,6 +66540,11 @@
         "stat": "Initiative",
         "minStat": 101,
         "maxStat": 150
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
       },
       {
         "stat": "Lock",
@@ -67261,6 +67846,11 @@
         "maxStat": 3
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
         "stat": "% Water Resistance",
         "minStat": null,
         "maxStat": 2
@@ -67641,7 +68231,13 @@
     "itemType": "Trophy",
     "setID": null,
     "level": 100,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 6
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {},
@@ -67662,7 +68258,13 @@
     "itemType": "Trophy",
     "setID": null,
     "level": 150,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 12
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {},
@@ -67683,7 +68285,13 @@
     "itemType": "Trophy",
     "setID": null,
     "level": 50,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 3
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {},
@@ -68833,6 +69441,11 @@
         "maxStat": 6
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
         "stat": "Neutral Resistance",
         "minStat": 6,
         "maxStat": 8
@@ -69146,6 +69759,11 @@
       },
       {
         "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 11,
         "maxStat": 15
       },
@@ -69490,6 +70108,11 @@
         "maxStat": 8
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 5,
         "maxStat": 8
@@ -69550,6 +70173,11 @@
         "stat": "Critical Resistance",
         "minStat": 4,
         "maxStat": 5
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 2
       },
       {
         "stat": "Earth Damage",
@@ -69790,6 +70418,11 @@
         "stat": "Vitality",
         "minStat": 31,
         "maxStat": 40
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
       },
       {
         "stat": "MP Parry",
@@ -70985,6 +71618,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
         "stat": "% Air Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -71048,6 +71686,11 @@
       },
       {
         "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 11,
         "maxStat": 15
       },
@@ -71117,6 +71760,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 14,
+        "maxStat": 18
       },
       {
         "stat": "Neutral Resistance",
@@ -71427,6 +72075,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "% Water Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -71514,6 +72167,11 @@
         "maxStat": 8
       },
       {
+        "stat": "Air Damage",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
         "stat": "Fire Resistance",
         "minStat": 8,
         "maxStat": 12
@@ -71592,6 +72250,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -71900,6 +72563,11 @@
         "maxStat": -10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "MP Parry",
         "minStat": 2,
         "maxStat": 3
@@ -72148,6 +72816,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 16,
         "maxStat": 20
       },
@@ -72684,6 +73357,11 @@
         "stat": "Summons",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
       }
     ],
     "customStats": {},
@@ -72966,6 +73644,11 @@
         "stat": "Initiative",
         "minStat": 101,
         "maxStat": 150
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
       },
       {
         "stat": "Dodge",
@@ -73612,6 +74295,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "Dodge",
         "minStat": 3,
         "maxStat": 4
@@ -73680,6 +74368,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 4,
         "maxStat": 5
       },
@@ -74374,6 +75067,11 @@
         "maxStat": 20
       },
       {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
         "stat": "% Earth Resistance",
         "minStat": 6,
         "maxStat": 8
@@ -74461,6 +75159,11 @@
         "maxStat": 25
       },
       {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
         "stat": "Water Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -74529,6 +75232,11 @@
       },
       {
         "stat": "Earth Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 16,
         "maxStat": 20
       },
@@ -74891,6 +75599,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Resistance",
         "minStat": 8,
         "maxStat": 12
@@ -74979,6 +75692,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 5,
         "maxStat": 7
       },
@@ -75080,6 +75798,11 @@
         "maxStat": 8
       },
       {
+        "stat": "Air Damage",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -75177,6 +75900,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Fire Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -75265,6 +75993,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 8,
         "maxStat": 12
       },
@@ -75371,6 +76104,11 @@
         "maxStat": 14
       },
       {
+        "stat": "Air Damage",
+        "minStat": 10,
+        "maxStat": 14
+      },
+      {
         "stat": "Earth Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -75454,6 +76192,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": -15,
+        "maxStat": -11
+      },
+      {
+        "stat": "Air Damage",
         "minStat": -15,
         "maxStat": -11
       },
@@ -75550,6 +76293,11 @@
         "maxStat": -11
       },
       {
+        "stat": "Air Damage",
+        "minStat": -15,
+        "maxStat": -11
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -75610,6 +76358,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
       },
       {
         "stat": "Water Damage",
@@ -75713,6 +76466,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -77034,6 +77792,11 @@
     "level": 50,
     "stats": [
       {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": null,
         "maxStat": -2
@@ -77061,6 +77824,11 @@
     "level": 100,
     "stats": [
       {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 10
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": null,
         "maxStat": -4
@@ -77087,6 +77855,11 @@
     "setID": null,
     "level": 150,
     "stats": [
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 20
+      },
       {
         "stat": "% Fire Resistance",
         "minStat": null,
@@ -78550,6 +79323,11 @@
         "maxStat": 3
       },
       {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 3
+      },
+      {
         "stat": "Earth Damage",
         "minStat": null,
         "maxStat": 3
@@ -78597,6 +79375,11 @@
         "maxStat": 6
       },
       {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
         "stat": "Earth Damage",
         "minStat": null,
         "maxStat": 6
@@ -78640,6 +79423,11 @@
       },
       {
         "stat": "Neutral Damage",
+        "minStat": null,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": null,
         "maxStat": 12
       },
@@ -78726,6 +79514,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "% Water Resistance",
         "minStat": 6,
         "maxStat": 8
@@ -78808,6 +79601,11 @@
         "maxStat": 8
       },
       {
+        "stat": "Air Damage",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -78863,6 +79661,11 @@
         "stat": "Critical",
         "minStat": 3,
         "maxStat": 4
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
       }
     ],
     "customStats": {},
@@ -79411,6 +80214,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "Air Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -79679,6 +80487,11 @@
         "maxStat": 350
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Air Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -79874,6 +80687,11 @@
         "maxStat": 25
       },
       {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
         "stat": "Water Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -79951,6 +80769,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 14,
+        "maxStat": 18
+      },
+      {
         "stat": "% Water Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -80006,6 +80829,11 @@
         "stat": "Prospecting",
         "minStat": 16,
         "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
       },
       {
         "stat": "Fire Resistance",
@@ -80095,6 +80923,11 @@
         "maxStat": 8
       },
       {
+        "stat": "Air Damage",
+        "minStat": 12,
+        "maxStat": 16
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": 6,
         "maxStat": 8
@@ -80165,6 +80998,11 @@
         "stat": "Initiative",
         "minStat": 301,
         "maxStat": 400
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
       },
       {
         "stat": "Earth Resistance",
@@ -80247,6 +81085,11 @@
         "stat": "Earth Damage",
         "minStat": 4,
         "maxStat": 6
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
       },
       {
         "stat": "Neutral Resistance",
@@ -81094,6 +81937,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "AP Parry",
         "minStat": 8,
         "maxStat": 12
@@ -81551,6 +82399,11 @@
         "maxStat": 8
       },
       {
+        "stat": "Air Damage",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
         "stat": "% Water Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -81634,6 +82487,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -81726,6 +82584,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 6,
         "maxStat": 8
       },
@@ -82038,6 +82901,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Air Resistance",
         "minStat": 11,
         "maxStat": 15
@@ -82106,6 +82974,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 8,
         "maxStat": 12
       },
@@ -82264,6 +83137,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 14,
+        "maxStat": 18
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 6,
         "maxStat": 8
@@ -82337,6 +83215,11 @@
       },
       {
         "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 11,
         "maxStat": 15
       },
@@ -82935,6 +83818,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 6,
         "maxStat": 8
@@ -83013,6 +83901,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -83100,6 +83993,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -83273,6 +84171,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 6,
         "maxStat": 8
@@ -83351,6 +84254,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 9,
+        "maxStat": 13
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 9,
         "maxStat": 13
       },
@@ -83492,6 +84400,11 @@
         "stat": "Prospecting",
         "minStat": 16,
         "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
       },
       {
         "stat": "Earth Resistance",
@@ -83648,6 +84561,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "MP Parry",
         "minStat": 6,
         "maxStat": 8
@@ -83734,6 +84652,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 8,
         "maxStat": 12
       },
@@ -83826,6 +84749,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 8,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 8,
         "maxStat": 12
       },
@@ -84077,6 +85005,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 14,
+        "maxStat": 18
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 14,
         "maxStat": 18
       },
@@ -84933,6 +85866,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Air Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -85021,6 +85959,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 9,
         "maxStat": 12
       },
@@ -85196,6 +86139,11 @@
         "stat": "Critical",
         "minStat": 2,
         "maxStat": 3
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 4
       },
       {
         "stat": "Dodge",
@@ -85617,6 +86565,11 @@
         "maxStat": 1
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -85677,6 +86630,11 @@
         "stat": "AP",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
       },
       {
         "stat": "Water Damage",
@@ -86212,6 +87170,11 @@
         "stat": "Water Damage",
         "minStat": 4,
         "maxStat": 6
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
       }
     ],
     "customStats": {},
@@ -86400,6 +87363,11 @@
         "stat": "Agility",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 1,
+        "maxStat": 2
       }
     ],
     "customStats": {},
@@ -86789,6 +87757,11 @@
         "maxStat": -4
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Water Damage",
         "minStat": 4,
         "maxStat": 5
@@ -86866,6 +87839,11 @@
         "maxStat": -4
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Water Damage",
         "minStat": 9,
         "maxStat": 12
@@ -86941,6 +87919,11 @@
         "stat": "Lock",
         "minStat": -5,
         "maxStat": -4
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
       },
       {
         "stat": "Water Damage",
@@ -87143,6 +88126,11 @@
         "maxStat": 8
       },
       {
+        "stat": "Air Damage",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
         "stat": "Neutral Damage",
         "minStat": 6,
         "maxStat": 8
@@ -87320,6 +88308,11 @@
         "maxStat": 4
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Fire Damage",
         "minStat": 4,
         "maxStat": 6
@@ -87420,6 +88413,11 @@
         "stat": "Range",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
       },
       {
         "stat": "Fire Damage",
@@ -87532,6 +88530,11 @@
         "stat": "Prospecting",
         "minStat": 16,
         "maxStat": 25
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
       },
       {
         "stat": "Fire Damage",
@@ -87882,6 +88885,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "% Earth Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -87979,6 +88987,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -88062,6 +89075,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 9,
         "maxStat": 12
       },
@@ -88685,6 +89703,11 @@
         "maxStat": 40
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -88786,6 +89809,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -88897,6 +89925,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 7,
         "maxStat": 10
@@ -88965,6 +89998,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -89502,6 +90540,11 @@
         "maxStat": 20
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Pushback Damage",
         "minStat": 9,
         "maxStat": 12
@@ -89567,6 +90610,11 @@
         "stat": "Wisdom",
         "minStat": 21,
         "maxStat": 30
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
       },
       {
         "stat": "Pushback Damage",
@@ -89639,6 +90687,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
       },
       {
         "stat": "Pushback Damage",
@@ -89750,6 +90803,11 @@
         "maxStat": 2
       },
       {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 2
+      },
+      {
         "stat": "Water Damage",
         "minStat": null,
         "maxStat": 2
@@ -89815,6 +90873,11 @@
         "stat": "Dodge",
         "minStat": -10,
         "maxStat": -7
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
       },
       {
         "stat": "Water Damage",
@@ -89894,6 +90957,11 @@
         "maxStat": -7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Water Damage",
         "minStat": 9,
         "maxStat": 12
@@ -89969,6 +91037,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
       },
       {
         "stat": "Water Damage",
@@ -90791,6 +91864,11 @@
         "maxStat": -5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 9,
         "maxStat": 12
@@ -90888,6 +91966,11 @@
         "maxStat": -10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Neutral Damage",
         "minStat": 9,
         "maxStat": 12
@@ -90963,6 +92046,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
       },
       {
         "stat": "Neutral Damage",
@@ -91042,6 +92130,11 @@
         "maxStat": 6
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 4,
         "maxStat": 6
@@ -91112,6 +92205,11 @@
         "stat": "Pushback Resistance",
         "minStat": 16,
         "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 6,
+        "maxStat": 8
       },
       {
         "stat": "Earth Damage",
@@ -91715,6 +92813,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Heals",
         "minStat": 4,
         "maxStat": 6
@@ -91782,6 +92885,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "% Earth Resistance",
         "minStat": 2,
         "maxStat": 3
@@ -91835,6 +92943,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 4,
         "maxStat": 6
       },
@@ -92188,6 +93301,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -92255,6 +93373,11 @@
         "maxStat": 20
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "AP Parry",
         "minStat": 4,
         "maxStat": 6
@@ -92315,6 +93438,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
       },
       {
         "stat": "% Earth Resistance",
@@ -92958,6 +94086,11 @@
         "maxStat": 50
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Water Damage",
         "minStat": 11,
         "maxStat": 15
@@ -93026,6 +94159,11 @@
       },
       {
         "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 11,
         "maxStat": 15
       },
@@ -93112,6 +94250,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Water Damage",
         "minStat": 9,
         "maxStat": 12
@@ -93190,6 +94333,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 9,
         "maxStat": 12
       },
@@ -93276,6 +94424,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Water Damage",
         "minStat": 9,
         "maxStat": 12
@@ -93358,6 +94511,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 7,
         "maxStat": 10
@@ -93431,6 +94589,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 9,
         "maxStat": 12
       },
@@ -93527,6 +94690,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Neutral Damage",
         "minStat": 9,
         "maxStat": 12
@@ -93595,6 +94763,11 @@
       },
       {
         "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 11,
         "maxStat": 15
       },
@@ -93676,6 +94849,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 11,
         "maxStat": 15
@@ -93746,6 +94924,11 @@
         "stat": "Dodge",
         "minStat": 4,
         "maxStat": 5
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
       },
       {
         "stat": "Earth Damage",
@@ -94046,6 +95229,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Neutral Damage",
         "minStat": 5,
         "maxStat": 7
@@ -94119,6 +95307,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 5,
         "maxStat": 7
       },
@@ -94668,6 +95861,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 9,
         "maxStat": 12
@@ -94958,6 +96156,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 9,
         "maxStat": 12
@@ -95108,6 +96311,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 11,
         "maxStat": 15
       },
@@ -95500,6 +96708,11 @@
         "maxStat": -10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Pushback Damage",
         "minStat": 16,
         "maxStat": 20
@@ -95592,6 +96805,11 @@
         "maxStat": -10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
         "stat": "Pushback Damage",
         "minStat": 16,
         "maxStat": 20
@@ -95674,6 +96892,11 @@
         "maxStat": -10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Pushback Damage",
         "minStat": 16,
         "maxStat": 20
@@ -95751,6 +96974,11 @@
         "maxStat": 40
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 9,
         "maxStat": 12
@@ -95821,6 +97049,11 @@
         "stat": "Dodge",
         "minStat": 4,
         "maxStat": 5
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
       },
       {
         "stat": "Earth Damage",
@@ -95896,6 +97129,11 @@
       },
       {
         "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 11,
         "maxStat": 15
       },
@@ -95982,6 +97220,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "% Water Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -96055,6 +97298,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 11,
         "maxStat": 15
       },
@@ -96137,6 +97385,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 11,
         "maxStat": 15
       },
@@ -96650,6 +97903,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 5,
         "maxStat": 7
@@ -96723,6 +97981,11 @@
       },
       {
         "stat": "Lock",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 5,
         "maxStat": 7
       },
@@ -96807,6 +98070,11 @@
         "stat": "Lock",
         "minStat": 5,
         "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
       },
       {
         "stat": "Earth Damage",
@@ -97979,6 +99247,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Water Damage",
         "minStat": 11,
         "maxStat": 15
@@ -98041,6 +99314,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Water Damage",
         "minStat": 11,
         "maxStat": 15
@@ -98099,6 +99377,11 @@
       },
       {
         "stat": "Neutral Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -99078,6 +100361,11 @@
         "maxStat": 30
       },
       {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 2
+      },
+      {
         "stat": "Earth Damage",
         "minStat": null,
         "maxStat": 2
@@ -99145,6 +100433,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 4,
         "maxStat": 5
@@ -99200,6 +100493,11 @@
         "stat": "Wisdom",
         "minStat": 21,
         "maxStat": 25
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
       },
       {
         "stat": "Earth Damage",
@@ -100602,7 +101900,13 @@
     "itemType": "Trophy",
     "setID": null,
     "level": 50,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 5
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {
@@ -100627,7 +101931,13 @@
     "itemType": "Trophy",
     "setID": null,
     "level": 100,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 10
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {
@@ -100652,7 +101962,13 @@
     "itemType": "Trophy",
     "setID": null,
     "level": 150,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 20
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {
@@ -101999,6 +103315,11 @@
         "stat": "Water Damage",
         "minStat": null,
         "maxStat": 3
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 3
       }
     ],
     "customStats": {},
@@ -102045,6 +103366,11 @@
         "stat": "Water Damage",
         "minStat": null,
         "maxStat": 6
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 6
       }
     ],
     "customStats": {},
@@ -102089,6 +103415,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": null,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": null,
         "maxStat": 12
       }
@@ -102717,6 +104048,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Critical",
         "minStat": 4,
         "maxStat": 5
@@ -102795,6 +104131,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 5,
         "maxStat": 7
       },
@@ -103035,6 +104376,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Water Damage",
         "minStat": 9,
         "maxStat": 12
@@ -103117,6 +104463,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Water Damage",
         "minStat": 11,
         "maxStat": 15
@@ -103197,6 +104548,11 @@
         "stat": "Dodge",
         "minStat": 5,
         "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
       },
       {
         "stat": "Water Damage",
@@ -103502,6 +104858,11 @@
         "maxStat": 25
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "Water Damage",
         "minStat": 4,
         "maxStat": 5
@@ -103574,6 +104935,11 @@
         "maxStat": 3
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "Water Damage",
         "minStat": 4,
         "maxStat": 5
@@ -103637,6 +105003,11 @@
       },
       {
         "stat": "Dodge",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 2,
         "maxStat": 3
       },
@@ -105877,6 +107248,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 7,
         "maxStat": 10
@@ -105989,6 +107365,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 7,
         "maxStat": 10
@@ -106081,6 +107462,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 7,
         "maxStat": 10
@@ -106156,6 +107542,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
       },
       {
         "stat": "% Water Resistance",
@@ -106235,6 +107626,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "% Earth Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -106300,6 +107696,11 @@
         "stat": "Lock",
         "minStat": 5,
         "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
       },
       {
         "stat": "% Neutral Resistance",
@@ -106385,6 +107786,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 9,
         "maxStat": 12
       },
@@ -106476,6 +107882,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -106553,6 +107964,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Pushback Damage",
         "minStat": 9,
         "maxStat": 12
@@ -106626,6 +108042,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -107154,6 +108575,11 @@
         "maxStat": 6
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
         "stat": "% Earth Resistance",
         "minStat": 4,
         "maxStat": 6
@@ -107207,6 +108633,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 5,
         "maxStat": 7
       },
@@ -107284,6 +108715,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 5,
         "maxStat": 7
       },
@@ -108123,6 +109559,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -108185,6 +109626,11 @@
         "maxStat": 60
       },
       {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -108240,6 +109686,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
       },
       {
         "stat": "% Earth Resistance",
@@ -108320,6 +109771,11 @@
         "stat": "Lock",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
       },
       {
         "stat": "Earth Damage",
@@ -108404,6 +109860,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Neutral Damage",
         "minStat": 11,
         "maxStat": 15
@@ -108479,6 +109940,11 @@
         "stat": "Lock",
         "minStat": 5,
         "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
       },
       {
         "stat": "Earth Damage",
@@ -108834,6 +110300,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 11,
         "maxStat": 15
@@ -108936,6 +110407,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Water Damage",
         "minStat": 9,
         "maxStat": 12
@@ -109014,6 +110490,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 16,
         "maxStat": 20
       },
@@ -109592,6 +111073,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "% Earth Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -109669,6 +111155,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "% Air Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -109737,6 +111228,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 5,
         "maxStat": 7
       },
@@ -110185,6 +111681,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": 2,
         "maxStat": 3
@@ -110240,6 +111741,11 @@
         "stat": "Prospecting",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
       },
       {
         "stat": "% Neutral Resistance",
@@ -110314,6 +111820,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 5,
         "maxStat": 7
@@ -110374,6 +111885,11 @@
         "stat": "Wisdom",
         "minStat": 26,
         "maxStat": 35
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
       },
       {
         "stat": "Earth Damage",
@@ -110449,6 +111965,11 @@
       },
       {
         "stat": "Dodge",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 4,
         "maxStat": 5
       },
@@ -110545,6 +112066,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Water Damage",
         "minStat": 5,
         "maxStat": 7
@@ -110618,6 +112144,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 4,
         "maxStat": 5
       },
@@ -110762,6 +112293,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -110950,6 +112486,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -111027,6 +112568,11 @@
         "maxStat": 30
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Water Damage",
         "minStat": 5,
         "maxStat": 7
@@ -111097,6 +112643,11 @@
         "stat": "Wisdom",
         "minStat": 21,
         "maxStat": 30
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
       },
       {
         "stat": "Water Damage",
@@ -111417,6 +112968,11 @@
         "maxStat": -7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
         "stat": "Water Damage",
         "minStat": 16,
         "maxStat": 20
@@ -111492,6 +113048,11 @@
         "stat": "Wisdom",
         "minStat": 21,
         "maxStat": 30
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
       },
       {
         "stat": "Water Damage",
@@ -111579,6 +113140,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
       },
       {
         "stat": "Water Damage",
@@ -111927,6 +113493,11 @@
         "stat": "Dodge",
         "minStat": null,
         "maxStat": -30
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
       },
       {
         "stat": "% Water Resistance",
@@ -112656,6 +114227,11 @@
         "stat": "Range",
         "minStat": null,
         "maxStat": -1
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
       }
     ],
     "customStats": {},
@@ -115972,6 +117548,11 @@
         "maxStat": 40
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -116049,6 +117630,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -116124,6 +117710,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
       },
       {
         "stat": "Water Damage",
@@ -116682,6 +118273,11 @@
         "maxStat": 2
       },
       {
+        "stat": "Air Damage",
+        "minStat": null,
+        "maxStat": 2
+      },
+      {
         "stat": "Critical",
         "minStat": null,
         "maxStat": 2
@@ -116739,6 +118335,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "Heals",
         "minStat": 7,
         "maxStat": 10
@@ -116787,6 +118388,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": null,
+        "maxStat": 2
+      },
+      {
+        "stat": "Air Damage",
         "minStat": null,
         "maxStat": 2
       },
@@ -117210,6 +118816,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 4,
         "maxStat": 5
@@ -117282,6 +118893,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 2,
         "maxStat": 3
@@ -117347,6 +118963,11 @@
         "stat": "Lock",
         "minStat": 4,
         "maxStat": 5
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
       },
       {
         "stat": "Earth Damage",
@@ -117483,6 +119104,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 9,
         "maxStat": 12
@@ -117558,6 +119184,11 @@
         "stat": "Wisdom",
         "minStat": 31,
         "maxStat": 40
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
       },
       {
         "stat": "Earth Damage",
@@ -117640,6 +119271,11 @@
         "stat": "Wisdom",
         "minStat": 21,
         "maxStat": 30
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
       },
       {
         "stat": "Earth Damage",
@@ -117995,6 +119631,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 11,
         "maxStat": 15
@@ -118082,6 +119723,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Water Damage",
         "minStat": 11,
         "maxStat": 15
@@ -118165,6 +119811,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 11,
         "maxStat": 15
       },
@@ -118733,6 +120384,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -118815,6 +120471,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Water Damage",
         "minStat": 11,
         "maxStat": 15
@@ -118893,6 +120554,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -119098,6 +120764,11 @@
         "maxStat": 30
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Water Damage",
         "minStat": 11,
         "maxStat": 15
@@ -119176,6 +120847,11 @@
       },
       {
         "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 11,
         "maxStat": 15
       },
@@ -119329,6 +121005,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 5,
         "maxStat": 7
@@ -119407,6 +121088,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 9,
         "maxStat": 12
       },
@@ -119494,6 +121180,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 9,
         "maxStat": 12
       },
@@ -120427,6 +122118,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "% Earth Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -120504,6 +122200,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "% Earth Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -120569,6 +122270,11 @@
         "stat": "Wisdom",
         "minStat": 31,
         "maxStat": 40
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
       },
       {
         "stat": "% Earth Resistance",
@@ -121536,6 +123242,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "% Earth Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -121609,6 +123320,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 11,
         "maxStat": 15
       },
@@ -121700,6 +123416,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "% Air Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -121765,6 +123486,11 @@
         "stat": "Prospecting",
         "minStat": 11,
         "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
       },
       {
         "stat": "% Air Resistance",
@@ -123466,6 +125192,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -123710,6 +125441,11 @@
         "stat": "Lock",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
       },
       {
         "stat": "Water Damage",
@@ -124402,6 +126138,11 @@
         "maxStat": 250
       },
       {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
         "stat": "Neutral Damage",
         "minStat": 16,
         "maxStat": 20
@@ -124526,6 +126267,11 @@
         "maxStat": 30
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 11,
         "maxStat": 15
@@ -124611,6 +126357,11 @@
         "stat": "Critical",
         "minStat": 4,
         "maxStat": 5
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 8,
+        "maxStat": 12
       },
       {
         "stat": "Earth Damage",
@@ -125965,6 +127716,11 @@
         "maxStat": -10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Water Damage",
         "minStat": 7,
         "maxStat": 10
@@ -126033,6 +127789,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -127203,6 +128964,11 @@
         "maxStat": -10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
         "stat": "Agility",
         "minStat": 61,
         "maxStat": 70
@@ -127913,6 +129679,11 @@
         "maxStat": 3
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 2,
         "maxStat": 3
@@ -128117,6 +129888,11 @@
         "stat": "Prospecting",
         "minStat": 6,
         "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 5
       },
       {
         "stat": "% Neutral Resistance",
@@ -129375,6 +131151,11 @@
         "maxStat": 7
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 5,
         "maxStat": 7
@@ -129481,6 +131262,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 6,
+        "maxStat": 9
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 6,
         "maxStat": 9
       },
@@ -129893,6 +131679,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "% Fire Resistance",
         "minStat": 7,
         "maxStat": 10
@@ -129971,6 +131762,11 @@
       },
       {
         "stat": "Earth Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 9,
         "maxStat": 12
       },
@@ -130241,6 +132037,11 @@
         "maxStat": -10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Pushback Damage",
         "minStat": 16,
         "maxStat": 25
@@ -130319,6 +132120,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 6,
+        "maxStat": 9
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 6,
         "maxStat": 9
       },
@@ -130410,6 +132216,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Pushback Damage",
         "minStat": 21,
         "maxStat": 30
@@ -130492,6 +132303,11 @@
         "maxStat": 8
       },
       {
+        "stat": "Air Damage",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
         "stat": "% Neutral Resistance",
         "minStat": 5,
         "maxStat": 7
@@ -130565,6 +132381,11 @@
       },
       {
         "stat": "Earth Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 11,
         "maxStat": 15
       },
@@ -130872,6 +132693,11 @@
         "maxStat": -15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 15,
+        "maxStat": 18
+      },
+      {
         "stat": "% Water Resistance",
         "minStat": 6,
         "maxStat": 8
@@ -130950,6 +132776,11 @@
         "stat": "Wisdom",
         "minStat": 11,
         "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 5
       },
       {
         "stat": "Range",
@@ -131086,6 +132917,11 @@
         "maxStat": 5
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Water Damage",
         "minStat": 9,
         "maxStat": 12
@@ -131156,6 +132992,11 @@
         "stat": "Chance",
         "minStat": 41,
         "maxStat": 60
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
       },
       {
         "stat": "Water Damage",
@@ -131261,6 +133102,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 5,
         "maxStat": 8
       },
@@ -131378,6 +133224,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 9,
         "maxStat": 12
       },
@@ -131500,6 +133351,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 16,
         "maxStat": 20
       },
@@ -131631,6 +133487,11 @@
         "maxStat": 4
       },
       {
+        "stat": "Air Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
         "stat": "% Water Resistance",
         "minStat": 3,
         "maxStat": 4
@@ -131744,6 +133605,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 4,
         "maxStat": 6
       },
@@ -131866,6 +133732,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -132544,6 +134415,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
         "stat": "Fire Damage",
         "minStat": 9,
         "maxStat": 12
@@ -132617,6 +134493,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -132703,6 +134584,11 @@
         "maxStat": 10
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Fire Damage",
         "minStat": 7,
         "maxStat": 10
@@ -132780,6 +134666,11 @@
         "maxStat": 15
       },
       {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
         "stat": "Fire Damage",
         "minStat": 11,
         "maxStat": 15
@@ -132853,6 +134744,11 @@
       },
       {
         "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -133105,6 +135001,11 @@
         "maxStat": 12
       },
       {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 7,
         "maxStat": 10
@@ -133202,6 +135103,11 @@
         "maxStat": 8
       },
       {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
         "stat": "Earth Damage",
         "minStat": 4,
         "maxStat": 6
@@ -133279,6 +135185,11 @@
         "maxStat": 3
       },
       {
+        "stat": "Air Damage",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
         "stat": "Range",
         "minStat": null,
         "maxStat": -1
@@ -133322,6 +135233,11 @@
       },
       {
         "stat": "Earth Damage",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 1,
         "maxStat": 2
       },
@@ -133957,6 +135873,11 @@
       },
       {
         "stat": "Earth Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -135933,6 +137854,11 @@
       },
       {
         "stat": "Fire Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
         "minStat": 11,
         "maxStat": 15
       },
