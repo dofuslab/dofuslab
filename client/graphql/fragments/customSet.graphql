@@ -52,4 +52,5 @@ fragment customSet on CustomSet {
   }
   hasEditPermission
   buildGender
+  private
 }

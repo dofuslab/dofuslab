@@ -53,6 +53,7 @@ export interface buildList_userByName_customSets_edges_node_tagAssociations {
 export interface buildList_userByName_customSets_edges_node {
   __typename: "CustomSet";
   id: any;
+  private: boolean;
   buildGender: BuildGender;
   defaultClass: buildList_userByName_customSets_edges_node_defaultClass | null;
   name: string | null;

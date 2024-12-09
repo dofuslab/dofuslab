@@ -391,6 +391,7 @@ class CustomSetConnection(NonNullConnection):
 class CustomSetFilters(graphene.InputObjectType):
     search = graphene.String(required=True)
     tag_ids = graphene.NonNull(graphene.List(graphene.NonNull(graphene.UUID)))
+    private = graphene.Boolean()
     default_class_id = graphene.UUID()
 
 
@@ -423,6 +424,9 @@ class User(SQLAlchemyObjectType):
 
         if filters.default_class_id:
             query = query.filter_by(default_class_id=filters.default_class_id)
+
+        if filters.private is not None:
+            query = query.filter_by(private=filters.private)
 
         if filters.tag_ids:
             tag_sq = (
@@ -905,6 +909,23 @@ class SetEquippedItemExo(graphene.Mutation):
 
         return SetEquippedItemExo(equipped_item=equipped_item)
 
+
+class TogglePrivateCustomSet(graphene.Mutation):
+    class Arguments:
+        custom_set_id = graphene.UUID(required=True)
+
+    custom_set = graphene.Field(CustomSet, required=True)
+    ok = graphene.Boolean(required=True)
+
+    @anonymous_or_verified
+    def mutate(self, info, **kwargs):
+        with session_scope() as db_session:
+            custom_set_id = kwargs.get("custom_set_id")
+            custom_set = db_session.query(ModelCustomSet).get(custom_set_id)
+            check_owner(custom_set)
+            custom_set.private = not custom_set.private
+
+        return TogglePrivateCustomSet(custom_set=custom_set, ok=True)
 
 class DeleteCustomSetItem(graphene.Mutation):
     class Arguments:
@@ -1747,6 +1768,7 @@ class Mutation(graphene.ObjectType):
     equip_set = EquipSet.Field()
     equip_multiple_items = EquipMultipleItems.Field()
     create_custom_set = CreateCustomSet.Field()
+    toggle_private_custom_set = TogglePrivateCustomSet.Field()
     resend_verification_email = ResendVerificationEmail.Field()
     change_locale = ChangeLocale.Field()
     change_classic = ChangeClassic.Field()

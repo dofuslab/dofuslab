@@ -178,6 +178,7 @@ export interface equipSet_equipSet_customSet {
   tagAssociations: equipSet_equipSet_customSet_tagAssociations[];
   hasEditPermission: boolean;
   buildGender: BuildGender;
+  private: boolean;
 }
 
 export interface equipSet_equipSet {
