@@ -17845,9 +17845,9 @@
     "name": {
       "en": "Wind Kwakblade",
       "fr": "Kwaklame de Vent",
-      "de": "Luft-Kwacklinge",
+      "de": "Wind-Kwacklinge",
       "es": "Kwakhoja de viento",
-      "pt": "Kwakamina do Vento",
+      "pt": "Kwaklâmina do Vento",
       "it": "Wind Kwakblade"
     },
     "itemType": "Sword",
@@ -33285,7 +33285,7 @@
       "it": "Talklyka Pirate Axe"
     },
     "itemType": "Axe",
-    "setID": null,
+    "setID": "979",
     "level": 153,
     "stats": [
       {
@@ -33911,7 +33911,7 @@
       "it": "Vigi Pirate Hammer"
     },
     "itemType": "Hammer",
-    "setID": null,
+    "setID": "979",
     "level": 156,
     "stats": [
       {
@@ -42911,12 +42911,12 @@
   {
     "dofusID": "16169",
     "name": {
-      "en": "Soft Oak Staff",
+      "en": "Old Soft Oak Branch",
       "fr": "Vieille Branche du Chêne Mou",
-      "de": "Stock Weich-Eichs",
-      "es": "Bastón del Roble Blando",
-      "pt": "Bastão do Carvalho Mole",
-      "it": "Soft Oak Staff"
+      "de": "Alter Ast von Weich-Eich",
+      "es": "Vieja rama de Roble Blando",
+      "pt": "Velho Galho do Carvalho Mole",
+      "it": "Old Soft Oak Branch"
     },
     "itemType": "Staff",
     "setID": "66",
@@ -43716,8 +43716,8 @@
       "apCost": 5,
       "usesPerTurn": 1,
       "minRange": 4,
-      "maxRange": 7,
-      "baseCritChance": 5,
+      "maxRange": 8,
+      "baseCritChance": 10,
       "critBonusDamage": 5,
       "weapon_effects": [
         {
@@ -48225,10 +48225,10 @@
         "Prüfung der Waage:\n• Wenn versucht wird, dem Träger AP, BP oder Reichweite zu entziehen, verringert er die Resistenzen seines Angreifers 2 Runden lang um 2 % (5-mal kumulierbar)."
       ],
       "es": [
-        "Prueba de la Balanza:\n• Cuando el portador sufre un intento de retirada de PA, PM o alcance, gana un 2% de resistencias a su atacante durante 2 turnos (acumulable 5 veces)."
+        "Prueba de la Balanza:\n• Cuando el portador sufre un intento de retirada de PA, PM o alcance, roba un 2% de resistencias a su atacante durante 2 turnos (acumulable 5 veces)."
       ],
       "pt": [
-        "Prova da Balança:\n• Quando o portador sofre uma tentativa de retirada de PA, PM ou AL, ele rouba 2% de resistência a seu ataque por 2 turnos (acumula 5 vezes)."
+        "Prova da Balança:\n• Quando o portador sofre uma tentativa de retirada de PA, PM ou AL, ele rouba 2% de resistência a seu atacante por 2 turnos (acumula 5 vezes)."
       ],
       "it": [
         "Trial of the Scales:\n• When the bearer suffers an attempted AP, MP or Range removal, they steal 2% resistance from their attacker for 2 turns (stackable 5 times)."
@@ -49795,12 +49795,12 @@
       }
     ],
     "weaponStats": {
-      "apCost": 5,
+      "apCost": 4,
       "usesPerTurn": 1,
       "minRange": 4,
       "maxRange": 7,
       "baseCritChance": 15,
-      "critBonusDamage": 10,
+      "critBonusDamage": 7,
       "weapon_effects": [
         {
           "stat": "Earth damage",
@@ -52395,12 +52395,12 @@
   {
     "dofusID": "30855",
     "name": {
-      "en": "[!] Poignards du Captain Chafer",
+      "en": "Captain Chafer's Daggers",
       "fr": "Poignards du Captain Chafer",
       "de": "Dolche des Chafer-Offiziers",
-      "es": "[!] Poignards du Captain Chafer",
-      "pt": "Adagas do Capitão Chafer",
-      "it": "[!] Poignards du Captain Chafer"
+      "es": "Puñales del Capitán Chafer",
+      "pt": "Punhais do Capitão Chafer",
+      "it": "Captain Chafer's Daggers"
     },
     "itemType": "Dagger",
     "setID": "938",
@@ -52704,12 +52704,12 @@
   {
     "dofusID": "30949",
     "name": {
-      "en": "[!] Masse Étacée",
+      "en": "Macetacean",
       "fr": "Masse Étacée",
       "de": "Streitwal-Kolben",
-      "es": "[!] Masse Étacée",
-      "pt": "[!] Masse Étacée",
-      "it": "[!] Masse Étacée"
+      "es": "Mazallena",
+      "pt": "MaCetácea",
+      "it": "Macetacean"
     },
     "itemType": "Hammer",
     "setID": "949",

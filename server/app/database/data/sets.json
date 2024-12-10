@@ -2000,7 +2000,7 @@
             "en": "Wind Kwak Set",
             "fr": "Panoplie du Kwak de Vent",
             "de": "Wind-Kwack-Set",
-            "es": "Set del kwak de viento",
+            "es": "Set de kwak de viento",
             "pt": "Conjunto do Kwak de Vento",
             "it": "Wind Kwak Set"
         },
@@ -34666,13 +34666,8 @@
             ],
             "3": [
                 {
-                    "stat": "Critical",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Strength",
-                    "value": 40,
+                    "stat": "AP",
+                    "value": 1,
                     "altStat": null
                 },
                 {
@@ -34681,8 +34676,13 @@
                     "altStat": null
                 },
                 {
-                    "stat": "MP",
-                    "value": 1,
+                    "stat": "Strength",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 10,
                     "altStat": null
                 }
             ]
@@ -34877,40 +34877,20 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Dodge",
-                    "value": -20,
+                    "stat": "Lock",
+                    "value": 20,
                     "altStat": null
                 },
                 {
                     "stat": "Critical Damage",
                     "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Lock",
-                    "value": 20,
                     "altStat": null
                 }
             ],
             "3": [
                 {
-                    "stat": "Dodge",
-                    "value": -20,
-                    "altStat": null
-                },
-                {
-                    "stat": "Intelligence",
-                    "value": 60,
-                    "altStat": null
-                },
-                {
-                    "stat": "MP Reduction",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical Damage",
-                    "value": 10,
+                    "stat": "Lock",
+                    "value": 20,
                     "altStat": null
                 },
                 {
@@ -34919,8 +34899,18 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Lock",
-                    "value": 20,
+                    "stat": "Critical Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 60,
                     "altStat": null
                 }
             ]
@@ -34997,12 +34987,7 @@
                 },
                 {
                     "stat": "Critical Damage",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP Parry",
-                    "value": -5,
+                    "value": 15,
                     "altStat": null
                 },
                 {
@@ -35013,18 +34998,8 @@
             ],
             "3": [
                 {
-                    "stat": "MP",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP Parry",
-                    "value": -5,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical Damage",
-                    "value": 10,
+                    "stat": "Strength",
+                    "value": 60,
                     "altStat": null
                 },
                 {
@@ -35033,8 +35008,13 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Strength",
-                    "value": 60,
+                    "stat": "Critical Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
                     "altStat": null
                 }
             ]
@@ -41204,12 +41184,12 @@
     {
         "id": "938",
         "name": {
-            "en": "[!] Panoplie du Captain Chafer",
+            "en": "Captain Chafer Set",
             "fr": "Panoplie du Captain Chafer",
             "de": "Set des Chafer-Offiziers",
-            "es": "[!] Panoplie du Captain Chafer",
+            "es": "Set del Capitán Chafer",
             "pt": "Conjunto do Capitão Chafer",
-            "it": "[!] Panoplie du Captain Chafer"
+            "it": "Captain Chafer Set"
         },
         "bonuses": {
             "2": [
@@ -41316,12 +41296,12 @@
     {
         "id": "941",
         "name": {
-            "en": "[!] Panoplie de Mama Ayuto",
+            "en": "Mama Ayuto Set",
             "fr": "Panoplie de Mama Ayuto",
             "de": "Mama Ayutos Set",
-            "es": "[!] Panoplie de Mama Ayuto",
+            "es": "Set de Mami Ayuto",
             "pt": "Conjunto da Mama Ayuto",
-            "it": "[!] Panoplie de Mama Ayuto"
+            "it": "Mama Ayuto Set"
         },
         "bonuses": {
             "2": [
@@ -41378,12 +41358,12 @@
     {
         "id": "943",
         "name": {
-            "en": "[!] Panoplie du Dark Vlad",
+            "en": "Dark Vlad Set",
             "fr": "Panoplie du Dark Vlad",
             "de": "Set von Dark Vlad",
-            "es": "[!] Panoplie du Dark Vlad",
+            "es": "Set de Dark Vlad",
             "pt": "Conjunto do Dark Vlad",
-            "it": "[!] Panoplie du Dark Vlad"
+            "it": "Dark Vlad Set"
         },
         "bonuses": {
             "2": [
@@ -41440,12 +41420,12 @@
     {
         "id": "944",
         "name": {
-            "en": "[!] Panoplie de Phong Huss",
+            "en": "Phong Huss Set",
             "fr": "Panoplie de Phong Huss",
             "de": "Phung-Huss-Set",
-            "es": "[!] Panoplie de Phong Huss",
-            "pt": "[!] Panoplie de Phong Huss",
-            "it": "[!] Panoplie de Phong Huss"
+            "es": "Set de Phong Huss",
+            "pt": "Conjunto de Phong Huss",
+            "it": "Phong Huss Set"
         },
         "bonuses": {
             "2": [
@@ -41487,12 +41467,12 @@
     {
         "id": "945",
         "name": {
-            "en": "[!] Panoplie de Grilliane",
+            "en": "Grillian Set",
             "fr": "Panoplie de Grilliane",
             "de": "Grilliane-Set",
-            "es": "[!] Panoplie de Grilliane",
-            "pt": "[!] Panoplie de Grilliane",
-            "it": "[!] Panoplie de Grilliane"
+            "es": "Set de Grilyan",
+            "pt": "Conjunto de Grillian",
+            "it": "Grillian Set"
         },
         "bonuses": {
             "2": [
@@ -41527,12 +41507,12 @@
     {
         "id": "946",
         "name": {
-            "en": "[!] Panoplie de Crocuzko",
+            "en": "Crocuzko Set",
             "fr": "Panoplie de Crocuzko",
             "de": "Crocuzko-Set",
-            "es": "[!] Panoplie de Crocuzko",
-            "pt": "[!] Panoplie de Crocuzko",
-            "it": "[!] Panoplie de Crocuzko"
+            "es": "Set de Cocuzko",
+            "pt": "Conjunto de Crocuzko",
+            "it": "Crocuzko Set"
         },
         "bonuses": {
             "2": [
@@ -41572,12 +41552,12 @@
     {
         "id": "947",
         "name": {
-            "en": "[!] Panoplie de Pol Ouatnos",
+            "en": "Pawl Ouatnos Set",
             "fr": "Panoplie de Pol Ouatnos",
             "de": "Pol-Watnos-Set",
-            "es": "[!] Panoplie de Pol Ouatnos",
-            "pt": "[!] Panoplie de Pol Ouatnos",
-            "it": "[!] Panoplie de Pol Ouatnos"
+            "es": "Set de Pol Guatson",
+            "pt": "Conjunto do Pow Uatisson",
+            "it": "Pawl Ouatnos Set"
         },
         "bonuses": {
             "2": [
@@ -41607,12 +41587,12 @@
     {
         "id": "948",
         "name": {
-            "en": "[!] Panoplie des Krobes",
+            "en": "Krobe Set",
             "fr": "Panoplie des Krobes",
             "de": "Kroben-Set",
-            "es": "[!] Panoplie des Krobes",
-            "pt": "[!] Panoplie des Krobes",
-            "it": "[!] Panoplie des Krobes"
+            "es": "Set de los krobios",
+            "pt": "Conjunto dos Króbios",
+            "it": "Krobe Set"
         },
         "bonuses": {
             "2": [
@@ -41746,12 +41726,12 @@
     {
         "id": "949",
         "name": {
-            "en": "[!] Panoplie de la Baleine",
+            "en": "Whale Set",
             "fr": "Panoplie de la Baleine",
             "de": "Wal-Set",
-            "es": "[!] Panoplie de la Baleine",
-            "pt": "[!] Panoplie de la Baleine",
-            "it": "[!] Panoplie de la Baleine"
+            "es": "Set de la ballena",
+            "pt": "Conjunto da Baleia",
+            "it": "Whale Set"
         },
         "bonuses": {
             "2": [
@@ -41912,12 +41892,12 @@
     {
         "id": "950",
         "name": {
-            "en": "[!] Panoplie Ensevelie",
+            "en": "Snowbound Set",
             "fr": "Panoplie Ensevelie",
             "de": "Set des Bestatteten",
-            "es": "[!] Panoplie Ensevelie",
-            "pt": "[!] Panoplie Ensevelie",
-            "it": "[!] Panoplie Ensevelie"
+            "es": "Set sepultado",
+            "pt": "Conjunto Soterrado",
+            "it": "Snowbound Set"
         },
         "bonuses": {
             "2": [
@@ -41947,12 +41927,12 @@
     {
         "id": "951",
         "name": {
-            "en": "[!] Panoplie Noyée",
+            "en": "Drowned Set",
             "fr": "Panoplie Noyée",
             "de": "Set des Ertrunkenen",
-            "es": "[!] Panoplie Noyée",
-            "pt": "[!] Panoplie Noyée",
-            "it": "[!] Panoplie Noyée"
+            "es": "Set ahogado",
+            "pt": "Conjunto Afogado",
+            "it": "Drowned Set"
         },
         "bonuses": {
             "2": [
@@ -41982,12 +41962,12 @@
     {
         "id": "952",
         "name": {
-            "en": "[!] Panoplie du Fourneau",
+            "en": "Oven Set",
             "fr": "Panoplie du Fourneau",
             "de": "Hochofen-Set",
-            "es": "[!] Panoplie du Fourneau",
-            "pt": "[!] Panoplie du Fourneau",
-            "it": "[!] Panoplie du Fourneau"
+            "es": "Set del horno",
+            "pt": "Conjunto do Forno",
+            "it": "Oven Set"
         },
         "bonuses": {
             "2": [
@@ -42017,12 +41997,12 @@
     {
         "id": "953",
         "name": {
-            "en": "[!] Panoplie de la Fournaise",
+            "en": "Furnace Set",
             "fr": "Panoplie de la Fournaise",
             "de": "Schmelzofen-Set",
-            "es": "[!] Panoplie de la Fournaise",
-            "pt": "[!] Panoplie de la Fournaise",
-            "it": "[!] Panoplie de la Fournaise"
+            "es": "Set de la fogata",
+            "pt": "Conjunto da Fornalha",
+            "it": "Furnace Set"
         },
         "bonuses": {
             "2": [
@@ -42052,12 +42032,12 @@
     {
         "id": "954",
         "name": {
-            "en": "[!] Panoplie de la Pyramide",
+            "en": "Pyramid Set",
             "fr": "Panoplie de la Pyramide",
             "de": "Pyramiden-Set",
-            "es": "[!] Panoplie de la Pyramide",
-            "pt": "[!] Panoplie de la Pyramide",
-            "it": "[!] Panoplie de la Pyramide"
+            "es": "Set de la pirámide",
+            "pt": "Conjunto da Pirâmide",
+            "it": "Pyramid Set"
         },
         "bonuses": {
             "2": [
@@ -42129,12 +42109,12 @@
     {
         "id": "955",
         "name": {
-            "en": "[!] Panoplie des Maudits",
+            "en": "Cursed Set",
             "fr": "Panoplie des Maudits",
             "de": "Set der Verfluchten",
-            "es": "[!] Panoplie des Maudits",
-            "pt": "[!] Panoplie des Maudits",
-            "it": "[!] Panoplie des Maudits"
+            "es": "Set de los malditos",
+            "pt": "Conjunto dos Malditos",
+            "it": "Cursed Set"
         },
         "bonuses": {
             "2": [
@@ -42211,12 +42191,12 @@
     {
         "id": "956",
         "name": {
-            "en": "[!] Panoplie des Abîmes",
+            "en": "Abyss Set",
             "fr": "Panoplie des Abîmes",
             "de": "Set des Abgrunds",
-            "es": "[!] Panoplie des Abîmes",
-            "pt": "[!] Panoplie des Abîmes",
-            "it": "[!] Panoplie des Abîmes"
+            "es": "Set del precipicio",
+            "pt": "Conjunto dos Abismos",
+            "it": "Abyss Set"
         },
         "bonuses": {
             "2": [
@@ -42273,12 +42253,12 @@
     {
         "id": "957",
         "name": {
-            "en": "[!] Panoplie des Tréfonds",
+            "en": "Depths Set",
             "fr": "Panoplie des Tréfonds",
             "de": "Set der Untiefen",
-            "es": "[!] Panoplie des Tréfonds",
-            "pt": "[!] Panoplie des Tréfonds",
-            "it": "[!] Panoplie des Tréfonds"
+            "es": "Set de la sima",
+            "pt": "Conjunto das Entranhas",
+            "it": "Depths Set"
         },
         "bonuses": {
             "2": [
@@ -42335,12 +42315,12 @@
     {
         "id": "958",
         "name": {
-            "en": "[!] Panoplie de la Fosse",
+            "en": "Pit Set",
             "fr": "Panoplie de la Fosse",
             "de": "Gruben-Set",
-            "es": "[!] Panoplie de la Fosse",
-            "pt": "[!] Panoplie de la Fosse",
-            "it": "[!] Panoplie de la Fosse"
+            "es": "Set de la fosa",
+            "pt": "Conjunto da Fossa",
+            "it": "Pit Set"
         },
         "bonuses": {
             "2": [
@@ -42397,12 +42377,12 @@
     {
         "id": "959",
         "name": {
-            "en": "[!] Panoplie des Profondeurs",
+            "en": "Deep Set",
             "fr": "Panoplie des Profondeurs",
             "de": "Set der Tiefen",
-            "es": "[!] Panoplie des Profondeurs",
-            "pt": "[!] Panoplie des Profondeurs",
-            "it": "[!] Panoplie des Profondeurs"
+            "es": "Set de las profundidades",
+            "pt": "Conjunto das Profundezas",
+            "it": "Deep Set"
         },
         "bonuses": {
             "2": [
@@ -42459,12 +42439,12 @@
     {
         "id": "960",
         "name": {
-            "en": "[!] Panoplie des Spiritueurs",
+            "en": "Slayspirit Set",
             "fr": "Panoplie des Spiritueurs",
             "de": "Geistreichen-Set",
-            "es": "[!] Panoplie des Spiritueurs",
-            "pt": "[!] Panoplie des Spiritueurs",
-            "it": "[!] Panoplie des Spiritueurs"
+            "es": "Set de los espiritasesinos",
+            "pt": "Conjunto dos Assassispíritos",
+            "it": "Slayspirit Set"
         },
         "bonuses": {
             "2": [
@@ -42546,12 +42526,12 @@
     {
         "id": "961",
         "name": {
-            "en": "[!] Panoplit",
+            "en": "Bed Set",
             "fr": "Panoplit",
             "de": "Betten-Set",
-            "es": "[!] Panoplit",
-            "pt": "[!] Panoplit",
-            "it": "[!] Panoplit"
+            "es": "Set camero",
+            "pt": "Camonjunto",
+            "it": "Bed Set"
         },
         "bonuses": {
             "2": [
@@ -42653,12 +42633,12 @@
     {
         "id": "962",
         "name": {
-            "en": "[!] Panoplie du Tynril",
+            "en": "Tynril Set",
             "fr": "Panoplie du Tynril",
             "de": "Tynril-Set",
-            "es": "[!] Panoplie du Tynril",
-            "pt": "[!] Panoplie du Tynril",
-            "it": "[!] Panoplie du Tynril"
+            "es": "Set del Tynril",
+            "pt": "Conjunto do Tynril",
+            "it": "Tynril Set"
         },
         "bonuses": {
             "2": [
@@ -42713,12 +42693,12 @@
     {
         "id": "963",
         "name": {
-            "en": "[!] Panoplie du Kimbo",
+            "en": "Kimbo Set",
             "fr": "Panoplie du Kimbo",
             "de": "Kimbo-Set",
-            "es": "[!] Panoplie du Kimbo",
-            "pt": "[!] Panoplie du Kimbo",
-            "it": "[!] Panoplie du Kimbo"
+            "es": "Set del Kimbo",
+            "pt": "Conjunto do Kimbo",
+            "it": "Kimbo Set"
         },
         "bonuses": {
             "2": [
@@ -42763,12 +42743,12 @@
     {
         "id": "964",
         "name": {
-            "en": "[!] Panoplie de l'Apiculteur",
+            "en": "Beekeeper Set",
             "fr": "Panoplie de l'Apiculteur",
             "de": "Set des Imkers",
-            "es": "[!] Panoplie de l'Apiculteur",
-            "pt": "[!] Panoplie de l'Apiculteur",
-            "it": "[!] Panoplie de l'Apiculteur"
+            "es": "Set de apicultor",
+            "pt": "Conjunto do Apicultor",
+            "it": "Beekeeper Set"
         },
         "bonuses": {
             "2": [
@@ -42813,12 +42793,12 @@
     {
         "id": "965",
         "name": {
-            "en": "[!] Panoplie du frigostien curieux",
+            "en": "Curious Frigostian Set",
             "fr": "Panoplie du frigostien curieux",
             "de": "Set des neugierigen Frigostianers",
-            "es": "[!] Panoplie du frigostien curieux",
-            "pt": "[!] Panoplie du frigostien curieux",
-            "it": "[!] Panoplie du frigostien curieux"
+            "es": "Set de frigosteño curioso",
+            "pt": "Conjunto do Frigostiano Curioso",
+            "it": "Curious Frigostian Set"
         },
         "bonuses": {
             "2": [
@@ -42848,12 +42828,12 @@
     {
         "id": "966",
         "name": {
-            "en": "[!] Abranoplie",
+            "en": "Treechnid Set",
             "fr": "Abranoplie",
             "de": "Astaknyset",
-            "es": "[!] Abranoplie",
-            "pt": "[!] Abranoplie",
-            "it": "[!] Abranoplie"
+            "es": "Set abráknido",
+            "pt": "Arvrakonjunto",
+            "it": "Treechnid Set"
         },
         "bonuses": {
             "2": [
@@ -42976,6 +42956,301 @@
                 {
                     "stat": "Range",
                     "value": 2,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "973",
+        "name": {
+            "en": "Sceptical Frigostian Set",
+            "fr": "Panoplie du frigostien sceptique",
+            "de": "Ausrüstungsset des skeptischen Frigostianers",
+            "es": "Set de frigosteño escéptico",
+            "pt": "Conjunto do Frigostiano Cético",
+            "it": "Sceptical Frigostian Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "MP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 22,
+                    "altStat": null
+                },
+                {
+                    "stat": "Heals",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 22,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Prospecting",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 50,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "975",
+        "name": {
+            "en": "Dubious Frigostian Set",
+            "fr": "Panoplie du frigostien douteux",
+            "de": "Ausrüstungsset des zweifelhaften Frigostianers",
+            "es": "Set de frigosteño dudoso",
+            "pt": "Conjunto do Frigostiano Desconfiado",
+            "it": "Dubious Frigostian Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Neutral Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Wisdom",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Summons",
+                    "value": 1,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "976",
+        "name": {
+            "en": "Abbreviated Set",
+            "fr": "Panoplie Abrégée",
+            "de": "Gekürztes Ausrüstungsset",
+            "es": "Set abreviado",
+            "pt": "Conjunto Abreviado",
+            "it": "Abbreviated Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Neutral Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Prospecting",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Wisdom",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Summons",
+                    "value": 1,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "977",
+        "name": {
+            "en": "Vague Frigostian Set",
+            "fr": "Panoplie du frigostien approximatif",
+            "de": "Ausrüstungsset des nachlässigen Frigostianers",
+            "es": "Set de frigosteño aproximativo",
+            "pt": "Conjunto do Frigostiano Aproximativo",
+            "it": "Vague Frigostian Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "978",
+        "name": {
+            "en": "Enchanting Frigostian Set",
+            "fr": "Panoplie du frigostien envoûtant",
+            "de": "Ausrüstungsset des bezaubernden Frigostianers",
+            "es": "Set de frigosteño cautivador",
+            "pt": "Conjunto do Frigostiano Hipnotizante",
+            "it": "Enchanting Frigostian Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Strength",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Wisdom",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 30,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "979",
+        "name": {
+            "en": "Hesperus Set",
+            "fr": "Panoplie du Grolandais",
+            "de": "Black Roggs Ausrüstungsset",
+            "es": "Set del Roca Negra",
+            "pt": "Conjunto do Ogrolandês",
+            "it": "Hesperus Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "MP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 10,
                     "altStat": null
                 }
             ]

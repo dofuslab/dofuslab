@@ -15354,9 +15354,9 @@
     "name": {
       "en": "Wind Kwakamulet",
       "fr": "Amukwak de Vent",
-      "de": "Windiges Amukwack",
+      "de": "Wind-Amukwack",
       "es": "Amukwak de viento",
-      "pt": "Kwakamuleto de vento",
+      "pt": "Kwakamuleto do Vento",
       "it": "Wind Kwakamulet"
     },
     "itemType": "Amulet",
@@ -35357,7 +35357,7 @@
       ],
       "es": [
         "Engranaje: -1 PA",
-        "[!] Dropper: lanzamiento en línea desactivado",
+        "Cuentagotas: lanzamiento en línea desactivado",
         "Reloj: lanzamiento en línea desactivado",
         "Reloj de Agua: -1 PA",
         "Desincronización: -1 PA",
@@ -37338,7 +37338,7 @@
       "es": [
         "Desecamiento: -1 PA",
         "Distorsión: -1 PA",
-        "[!] Sands of Time: -1 PA",
+        "Arenas del Tiempo: -1 PA",
         "Borroso Temporal: -1 PA",
         "Conservación: -1 de reactivación",
         "El Tiempo Vuela: +1 lanzamiento(s) por objetivo",
@@ -38753,7 +38753,7 @@
     "customStats": {
       "en": [
         "Teleportation: -1 AP",
-        "Spontaneous Return: -1 AP",
+        "Astrolabe: -1 AP",
         "Accomplice: modifiable Range",
         "Xelor's Dial: modifiable Range",
         "Paradox: -1 AP",
@@ -38783,7 +38783,7 @@
       ],
       "es": [
         "Teletransportación: -1 PA",
-        "[!] Spontaneous Return: -1 PA",
+        "Astrolabio: -1 PA",
         "Cómplice: alcance modificable",
         "Esfera de Xelor: alcance modificable",
         "Paradoja: -1 PA",
@@ -38803,7 +38803,7 @@
       ],
       "it": [
         "Teleportation: -1 AP",
-        "Spontaneous Return: -1 AP",
+        "Astrolabe: -1 AP",
         "Accomplice: modifiable Range",
         "Xelor's Dial: modifiable Range",
         "Paradox: -1 AP",
@@ -54872,7 +54872,7 @@
       "it": "Yuara Pirate Mask"
     },
     "itemType": "Hat",
-    "setID": null,
+    "setID": "979",
     "level": 156,
     "stats": [
       {
@@ -55036,7 +55036,7 @@
       "it": "Pope Ory Hat"
     },
     "itemType": "Hat",
-    "setID": null,
+    "setID": "975",
     "level": 174,
     "stats": [
       {
@@ -55302,7 +55302,7 @@
       "it": "Cape Tivate"
     },
     "itemType": "Cloak",
-    "setID": null,
+    "setID": "978",
     "level": 161,
     "stats": [
       {
@@ -55737,7 +55737,7 @@
       "it": "Pants Fordamemory"
     },
     "itemType": "Belt",
-    "setID": null,
+    "setID": "978",
     "level": 162,
     "stats": [
       {
@@ -56199,7 +56199,7 @@
       "it": "Notewell Ring"
     },
     "itemType": "Ring",
-    "setID": null,
+    "setID": "976",
     "level": 166,
     "stats": [
       {
@@ -58275,7 +58275,7 @@
       "it": "Rough Lee Robe"
     },
     "itemType": "Cloak",
-    "setID": null,
+    "setID": "977",
     "level": 182,
     "stats": [
       {
@@ -58484,7 +58484,7 @@
       "it": "Amulet Cetera"
     },
     "itemType": "Amulet",
-    "setID": null,
+    "setID": "976",
     "level": 173,
     "stats": [
       {
@@ -59337,7 +59337,7 @@
       "it": "Odourless Boots"
     },
     "itemType": "Boots",
-    "setID": null,
+    "setID": "975",
     "level": 181,
     "stats": [
       {
@@ -61327,7 +61327,7 @@
       "it": "Turbine Belt"
     },
     "itemType": "Belt",
-    "setID": null,
+    "setID": "977",
     "level": 183,
     "stats": [
       {
@@ -80586,7 +80586,7 @@
       "it": "Copper Nickus Ring"
     },
     "itemType": "Ring",
-    "setID": null,
+    "setID": "973",
     "level": 196,
     "stats": [
       {
@@ -84709,7 +84709,7 @@
       "it": "Gilded Choker"
     },
     "itemType": "Amulet",
-    "setID": null,
+    "setID": "973",
     "level": 196,
     "stats": [
       {
@@ -133800,10 +133800,10 @@
     ],
     "customStats": {
       "en": [
-        "Bontarian Shield:\n• When the bearer is unbewitched or hindered, the bearer gains 100% of their level as shield for 1 turn.\n\nBrakmarian Power: \n• Whenever the bearer inflicts or suffers pushback damage, the bearer gain 100 Power for 1 turn. \n\nNightmare Eye:\n• If the bearer triggers the Bontarian Shield and the Brakmarian Power in the same turn, the damage they suffer and inflict increases by 10% for 1 turn.\n\nThe effects can only be triggered once per turn."
+        "Bontarian Shield:\n• When the bearer is unbewitched or hindered, the bearer gains 100% of their level as shield for 1 turn.\n\nBrakmarian Power: \n• Whenever the bearer inflicts or suffers pushback damage, the bearer gain 100 Power for 1 turn. \n\nNightmare Eye:\n• If the bearer triggers Bontarian Shield and Brakmarian Power in the same turn, the damage they suffer and inflict increases by 10% for 1 turn.\n\nThe effects can only be triggered once per turn."
       ],
       "fr": [
-        "Bouclier Bontarien :\n• Lorsque le porteur est désenvoûté ou entravé, il gagne 100% de son niveau en bouclier pour 1 tour.\n\nPuissance Brâkmarienne : \n• Lorsque le porteur occasionne ou subit des dommages de poussée, il gagne 100 de Puissance pour 1 tour. \n\nŒil du Cauchemar :\n• Si le porteur déclenche le Bouclier Bontarien et la Puissance Brâkmarienne dans le même tour, leurs effets sont retirés et les dommages que le porteur subit et occasionne sont augmentés de 10% pendant 1 tour.\n\nLes effets ne peuvent être déclenchés qu'une seule fois par tour."
+        "Bouclier Bontarien :\n• Lorsque le porteur est désenvoûté ou entravé, il gagne 100% de son niveau en bouclier pour 1 tour.\n\nPuissance Brâkmarienne : \n• Lorsque le porteur occasionne ou subit des dommages de poussée, il gagne 100 de Puissance pour 1 tour. \n\nŒil du Cauchemar :\n• Si le porteur déclenche le Bouclier Bontarien et la Puissance Brâkmarienne dans le même tour, les dommages qu'il subit et occasionne sont augmentés de 10% pendant 1 tour.\n\nLes effets ne peuvent être déclenchés qu'une seule fois par tour."
       ],
       "de": [
         "Bonta-Schild:\n• Wenn der Träger entzaubert oder gefesselt ist, erhält er 1 Runde lang 100 % Schildstufe.\n\nBrâk-Schlagkraft: \n• Wenn der Träger Schubsschaden verursacht oder erleidet, erhält er 1 Runde lang 100 Schlagkraft. \n\nAuge des Alptraums:\n• Löst der Träger den Bonta-Schild und die Brâk-Schlagkraft in derselben Runde aus, erhöht sich der von ihm erlittene und verursachte Schaden 1 Runde lang um 10 %.\n\nWirkungen können nur einmal pro Runde ausgelöst werden."
@@ -133815,7 +133815,7 @@
         "Escudo Bontariano:\n• Quando o portador é desencantado ou entravado, ele ganha em escudo o equivalente a 100% de seu nível durante 1 turno.\n\nPotência Brakmariana: \n• Quando o portador inflige ou sofre danos de empurrão, ele ganha 100 de potência durante 1 turno. \n\nOlho do Pesadelo:\n• Se o portador aciona o Escudo Bontariano e a Potência Brakmariana no mesmo turno, os danos que ele sofre e inflige aumentam em 10% durante 1 turno.\n\nOs efeitos só podem ser acionados uma vez por turno."
       ],
       "it": [
-        "Bontarian Shield:\n• When the bearer is unbewitched or hindered, the bearer gains 100% of their level as shield for 1 turn.\n\nBrakmarian Power: \n• Whenever the bearer inflicts or suffers pushback damage, the bearer gain 100 Power for 1 turn. \n\nNightmare Eye:\n• If the bearer triggers the Bontarian Shield and the Brakmarian Power in the same turn, the damage they suffer and inflict increases by 10% for 1 turn.\n\nThe effects can only be triggered once per turn."
+        "Bontarian Shield:\n• When the bearer is unbewitched or hindered, the bearer gains 100% of their level as shield for 1 turn.\n\nBrakmarian Power: \n• Whenever the bearer inflicts or suffers pushback damage, the bearer gain 100 Power for 1 turn. \n\nNightmare Eye:\n• If the bearer triggers Bontarian Shield and Brakmarian Power in the same turn, the damage they suffer and inflict increases by 10% for 1 turn.\n\nThe effects can only be triggered once per turn."
       ]
     },
     "conditions": {
@@ -136530,12 +136530,12 @@
   {
     "dofusID": "30060",
     "name": {
-      "en": "[!] Égide d'Allister",
+      "en": "Allister's Aegis",
       "fr": "Égide d'Allister",
       "de": "Allisters Ägide",
       "es": "Égida de Allister",
       "pt": "Égide de Allister",
-      "it": "[!] Égide d'Allister"
+      "it": "Allister's Aegis"
     },
     "itemType": "Shield",
     "setID": "243",
@@ -137709,12 +137709,12 @@
   {
     "dofusID": "30856",
     "name": {
-      "en": "[!] Slip du Captain Chafer",
+      "en": "Captain Chafer's Briefs",
       "fr": "Slip du Captain Chafer",
       "de": "Slip des Chafer-Offiziers",
-      "es": "[!] Slip du Captain Chafer",
-      "pt": "Cinto do Capitão Chafer",
-      "it": "[!] Slip du Captain Chafer"
+      "es": "Calzón del Capitán Chafer",
+      "pt": "Cueca do Capitão Chafer",
+      "it": "Captain Chafer's Briefs"
     },
     "itemType": "Belt",
     "setID": "938",
