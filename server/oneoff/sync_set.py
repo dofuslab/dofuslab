@@ -48,7 +48,6 @@ def create_set_translations(db_session, set_object, data):
 
 def update_set(db_session, set_object, data):
     set_object.dofus_db_id = data["id"]
-    db_session.flush()
     db_session.query(ModelSetTranslation).filter(
         ModelSetTranslation.set_id == set_object.uuid
     ).delete()
@@ -69,27 +68,34 @@ def create_set(db_session, data):
     create_set_bonuses(db_session, set_object, data)
 
 
-def create_or_update_set(db_session, set_name, data, should_only_add_missing):
-    translations = (
-        db_session.query(ModelSetTranslation)
-        .filter(
-            ModelSetTranslation.locale == "en", ModelSetTranslation.name == set_name
-        )
-        .all()
+def create_or_update_set(
+    db_session, set_id, data, should_only_add_missing, new_sets_list=[]
+):
+    database_set = (
+        db_session.query(ModelSet).filter(ModelSet.dofus_db_id == set_id).all()
     )
-    if len(translations) > 1:
+    if len(database_set) > 1:
         print("Multiple sets with that name exist, skipping it.")
         return
-    elif len(translations) == 1 and not should_only_add_missing:
-        print("The set {} currently exists. Updating the set.".format(set_name))
+    elif len(database_set) == 1 and not should_only_add_missing:
+        print(
+            "The set [{}]: {} currently exists. Updating the set.".format(
+                set_id, data["name"]["en"]
+            )
+        )
         set_object = (
             db_session.query(ModelSet)
-            .filter(ModelSet.uuid == translations[0].set_id)
+            .filter(ModelSet.uuid == database_set[0].uuid)
             .one()
         )
         update_set(db_session, set_object, data)
-    elif len(translations) == 0:
-        print("No set was found for {}. Creating the set".format(set_name))
+    elif len(database_set) == 0:
+        print(
+            "No set was found for [{}]: {}. Creating the set".format(
+                set_id, data["name"]["en"]
+            )
+        )
+        new_sets_list.append("[{}]: {}".format(set_id, data["name"]["en"]))
         create_set(db_session, data)
 
 
@@ -97,14 +103,16 @@ def sync_set():
     with open(os.path.join(app_root, "app/database/data/sets.json"), "r") as file:
         data = json.load(file)
 
-        name_to_record_map = {}
+        id_to_record_map = {}
 
         for set_data in data:
-            name_to_record_map[set_data["name"]["en"]] = set_data
+            id_to_record_map[set_data["id"]] = set_data
+
+        new_sets_list = []
 
         while True:
             response = input(
-                "Enter a set name, type 'update all' to update all sets, type 'add missing sets' to only add sets that are missing, or type 'q' to quit: "
+                "Enter a set ID, type 'update all' to update all sets, type 'add missing sets' to only add sets that are missing, or type 'q' to quit: "
             )
             if response == "q":
                 break
@@ -112,22 +120,35 @@ def sync_set():
                 if response == "update all":
                     for set_data in data:
                         create_or_update_set(
-                            db_session, set_data["name"]["en"], set_data, False
+                            db_session, set_data["id"], set_data, False, new_sets_list
                         )
-                    break
                 elif response == "add missing sets":
                     for set_data in data:
                         create_or_update_set(
-                            db_session, set_data["name"]["en"], set_data, True
+                            db_session, set_data["id"], set_data, True, new_sets_list
                         )
-                    break
-                elif response in name_to_record_map:
-                    record = name_to_record_map[response]
-                    create_or_update_set(db_session, response, record, False)
+                elif response in id_to_record_map:
+                    record = id_to_record_map[response]
+                    create_or_update_set(
+                        db_session, response, record, False, new_sets_list
+                    )
                 else:
                     print(
-                        "The set {} does not exist. Please try again.".format(response)
+                        "The set with ID {} does not exist. Please try again.".format(
+                            response
+                        )
                     )
+                prompt_commit = True if len(new_sets_list) > 0 else False
+                while prompt_commit == True:
+                    print(
+                        "The following items were added: \n"
+                        + "\n".join(str(new_item) for new_item in new_sets_list)
+                    )
+                    should_commit = input("Commit changes? (Y/n): ")
+                    if should_commit == "Y" or should_commit == "":
+                        prompt_commit = False
+                    elif should_commit == "n":
+                        raise Exception("Aborted changes. No changes were committed.")
 
 
 if __name__ == "__main__":

@@ -21,37 +21,52 @@ allowed_file_names = [
     "mounts",
     "pets",
     "weapons",
-    "rhineetles",
 ]
 languages = ["en", "fr", "pt", "it", "es", "de"]
 
 
 def update_or_create_item(
-    db_session, item_name, record, should_only_add_missing, create_all=False
+    db_session,
+    item_id,
+    record,
+    should_only_add_missing,
+    create_all=False,
+    new_items_list=[],
 ):
-    print(item_name)
-    translations = (
-        db_session.query(ModelItemTranslation)
-        .filter(
-            ModelItemTranslation.locale == "en", ModelItemTranslation.name == item_name,
+    print("[{}]: {}".format(item_id, record["name"]["en"]))
+    if record["mountDofusID"]:
+        database_item = (
+            db_session.query(ModelItem)
+            .filter(ModelItem.dofus_db_mount_id == item_id)
+            .all()
         )
-        .all()
-    )
-    if len(translations) > 1:
-        print("Error: Multiple items with that name exist in the database")
-    elif len(translations) == 1 and not should_only_add_missing:
-        print("Item already exists in database. Updating item...")
-        item = translations[0].item
-        item.dofus_db_id = record["dofusID"]
+    else:
+        database_item = (
+            db_session.query(ModelItem).filter(ModelItem.dofus_db_id == item_id).all()
+        )
+    if len(database_item) > 1:
+        print("Error: Multiple items with that ID exist in the database")
+    elif len(database_item) == 1 and not should_only_add_missing:
+        print(
+            "Item [{}]: {} already exists in database. Updating item...".format(
+                item_id, record["name"]["en"]
+            )
+        )
+        item = database_item[0]
+        item.dofus_db_id = record.get("dofusID", None)
+        item.dofus_db_mount_id = record.get("mountDofusID", None)
         item.level = record["level"]
         item.image_url = record["imageUrl"]
         new_set_id = record.get("setID", None)
         new_set_db_id = (
-            db_session.query(ModelSet)
-            .filter(ModelSet.dofus_db_id == record["setID"])
-            .one()
-        ).uuid if new_set_id != None else None
-        print(item.set_id, new_set_db_id)
+            (
+                db_session.query(ModelSet)
+                .filter(ModelSet.dofus_db_id == record["setID"])
+                .one()
+            ).uuid
+            if new_set_id != None
+            else None
+        )
         if item.set_id != new_set_db_id:
             item.set_id = new_set_db_id
             print("Updated item set")
@@ -70,9 +85,10 @@ def update_or_create_item(
         if "weaponStats" in record:
             create_weapon_stat(db_session, record, item)
         print("Item weapon stats successfully updated")
-    elif len(translations) == 0:
+    elif len(database_item) == 0:
         if create_all:
             create_item(db_session, record)
+            new_items_list.append("[{}]: {}".format(item_id, record["name"]["en"]))
             return True
         should_create_response = input(
             "Item does not exist in database. Would you like to create it? (Y/n/YYY to create all): "
@@ -80,6 +96,7 @@ def update_or_create_item(
         if should_create_response == "Y" or should_create_response == "YYY":
             result = create_item(db_session, record)
             if result:
+                new_items_list.append("[{}]: {}".format(item_id, record["name"]["en"]))
                 print("Item successfully created")
             else:
                 print("Something went wrong, item skipped")
@@ -103,7 +120,8 @@ def create_item(db_session, record):
     if record["itemType"] == "Living object":
         return False
     item = ModelItem(
-        dofus_db_id=record["dofusID"],
+        dofus_db_id=record.get("dofusID", None),
+        dofus_db_mount_id=record.get("mountDofusID", None),
         item_type_id=item_types[record["itemType"]].uuid,
         level=record["level"],
         image_url=record["imageUrl"],
@@ -130,7 +148,9 @@ def create_item(db_session, record):
         if record["name"][locale] == None:
             continue
         item_translations = ModelItemTranslation(
-            item_id=item.uuid, locale=locale, name=record["name"][locale],
+            item_id=item.uuid,
+            locale=locale,
+            name=record["name"][locale],
         )
         db_session.add(item_translations)
     create_item_stats(db_session, record, item)
@@ -141,7 +161,8 @@ def create_item(db_session, record):
 def create_item_stats(db_session, record, item):
     i = 0
 
-    item.dofus_db_id = record["dofusID"]
+    ## Needed? Doesn't seem to be doing much?
+    item.dofus_db_id = record.get("dofusID", None)
 
     for stat in record.get("stats", []):
         item_stat = ModelItemStat(
@@ -163,7 +184,9 @@ def create_item_stats(db_session, record, item):
             for locale in record["customStats"]:
                 custom_stat = record["customStats"][locale][j]
                 stat_translation = ModelItemStatTranslation(
-                    item_stat_id=item_stat.uuid, locale=locale, custom_stat=custom_stat,
+                    item_stat_id=item_stat.uuid,
+                    locale=locale,
+                    custom_stat=custom_stat,
                 )
                 db_session.add(stat_translation)
 
@@ -175,7 +198,6 @@ def create_item_translations(db_session, record, item):
             item_translation = ModelItemTranslation(
                 item_id=item.uuid, locale=locale, name=record["name"][locale]
             )
-            print(record["name"][locale])
             db_session.add(item_translation)
 
 
@@ -227,37 +249,89 @@ def sync_item():
         os.path.join(app_root, "app/database/data/{}.json".format(file_name)), "r"
     ) as file:
         data = json.load(file)
-        name_to_record_map = {}
+        id_to_record_map = {}
 
         for r in data:
-            name_to_record_map[r["name"]["en"]] = r
+            if file_name == "mounts":
+                id_to_record_map[r["mountDofusID"]] = r
+            else:
+                id_to_record_map[r["dofusID"]] = r
 
         should_prompt_item = True
         create_all = False
+        new_items_list = []
         while should_prompt_item:
-            item_name = input(
-                "Enter item name, e.g. 'Yellow Piwin', type 'update all' to update all items in file, type 'add missing items' to only add items that are missing, or 'q' to quit: "
+            item_dofus_id = input(
+                "Enter item Dofus ID, e.g. '12069', type 'update all' to update all items in file, type 'add missing items' to only add items that are missing, or 'q' to quit: "
             )
-            if item_name == "q":
+            if item_dofus_id == "q":
                 return
             with session_scope() as db_session:
-                if item_name == "update all":
+                if item_dofus_id == "update all":
                     should_prompt_item = False
 
                     for record in data:
-                        create_all = update_or_create_item(
-                            db_session, record["name"]["en"], record, False, create_all
-                        )
-                elif item_name == "add missing items":
+                        if file_name == "mounts":
+                            create_all = update_or_create_item(
+                                db_session,
+                                record["mountDofusID"],
+                                record,
+                                False,
+                                create_all,
+                                new_items_list,
+                            )
+
+                        else:
+                            create_all = update_or_create_item(
+                                db_session,
+                                record["dofusID"],
+                                record,
+                                False,
+                                create_all,
+                                new_items_list,
+                            )
+
+                elif item_dofus_id == "add missing items":
                     should_prompt_item = False
 
                     for record in data:
-                        create_all = update_or_create_item(
-                            db_session, record["name"]["en"], record, True, create_all
-                        )
-                elif item_name in name_to_record_map:
-                    record = name_to_record_map[item_name]
-                    update_or_create_item(db_session, item_name, record, False, False)
+                        if file_name == "mounts":
+                            create_all = update_or_create_item(
+                                db_session,
+                                record["mountDofusID"],
+                                record,
+                                True,
+                                create_all,
+                                new_items_list,
+                            )
+
+                        else:
+                            create_all = update_or_create_item(
+                                db_session,
+                                record["dofusID"],
+                                record,
+                                True,
+                                create_all,
+                                new_items_list,
+                            )
+
+                elif item_dofus_id in id_to_record_map:
+                    record = id_to_record_map[item_dofus_id]
+                    update_or_create_item(
+                        db_session, item_dofus_id, record, False, False, new_items_list
+                    )
+
+                prompt_commit = True if len(new_items_list) > 0 else False
+                while prompt_commit == True:
+                    print(
+                        "The following items were added: \n"
+                        + "\n".join(str(new_item) for new_item in new_items_list)
+                    )
+                    should_commit = input("Commit changes? (Y/n): ")
+                    if should_commit == "Y" or should_commit == "":
+                        prompt_commit = False
+                    elif should_commit == "n":
+                        raise Exception("Aborted changes. No changes were committed.")
 
 
 if __name__ == "__main__":

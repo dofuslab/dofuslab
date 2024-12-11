@@ -1,6 +1,6 @@
 [
   {
-    "dofusID": "41",
+    "mountDofusID": "41",
     "name": {
       "en": "Almond and Crimson Dragoturkey",
       "fr": "Dragodinde Amande et Pourpre",
@@ -32,7 +32,7 @@
     "imageUrl": "item/41.png"
   },
   {
-    "dofusID": "34",
+    "mountDofusID": "34",
     "name": {
       "en": "Almond and Ebony Dragoturkey",
       "fr": "Dragodinde Amande et Ebène",
@@ -64,7 +64,7 @@
     "imageUrl": "item/34.png"
   },
   {
-    "dofusID": "35",
+    "mountDofusID": "35",
     "name": {
       "en": "Almond and Emerald Dragoturkey",
       "fr": "Dragodinde Amande et Emeraude",
@@ -96,7 +96,7 @@
     "imageUrl": "item/35.png"
   },
   {
-    "dofusID": "162",
+    "mountDofusID": "162",
     "name": {
       "en": "Almond and Emerald Seemyool",
       "fr": "Muldo Amande et Emeraude",
@@ -128,7 +128,7 @@
     "imageUrl": "item/162.png"
   },
   {
-    "dofusID": "38",
+    "mountDofusID": "38",
     "name": {
       "en": "Almond and Ginger Dragoturkey",
       "fr": "Dragodinde Amande et Rousse",
@@ -160,7 +160,7 @@
     "imageUrl": "item/38.png"
   },
   {
-    "dofusID": "33",
+    "mountDofusID": "33",
     "name": {
       "en": "Almond and Golden Dragoturkey",
       "fr": "Dragodinde Amande et Dorée",
@@ -192,7 +192,7 @@
     "imageUrl": "item/33.png"
   },
   {
-    "dofusID": "36",
+    "mountDofusID": "36",
     "name": {
       "en": "Almond and Indigo Dragoturkey",
       "fr": "Dragodinde Amande et Indigo",
@@ -224,7 +224,7 @@
     "imageUrl": "item/36.png"
   },
   {
-    "dofusID": "37",
+    "mountDofusID": "37",
     "name": {
       "en": "Almond and Ivory Dragoturkey",
       "fr": "Dragodinde Amande et Ivoire",
@@ -256,7 +256,7 @@
     "imageUrl": "item/37.png"
   },
   {
-    "dofusID": "138",
+    "mountDofusID": "138",
     "name": {
       "en": "Almond and Ivory Seemyool",
       "fr": "Muldo Amande et Ivoire",
@@ -288,7 +288,7 @@
     "imageUrl": "item/138.png"
   },
   {
-    "dofusID": "40",
+    "mountDofusID": "40",
     "name": {
       "en": "Almond and Orchid Dragoturkey",
       "fr": "Dragodinde Amande et Orchidée",
@@ -320,7 +320,7 @@
     "imageUrl": "item/40.png"
   },
   {
-    "dofusID": "39",
+    "mountDofusID": "39",
     "name": {
       "en": "Almond and Turquoise Dragoturkey",
       "fr": "Dragodinde Amande et Turquoise",
@@ -352,7 +352,7 @@
     "imageUrl": "item/39.png"
   },
   {
-    "dofusID": "20",
+    "mountDofusID": "20",
     "name": {
       "en": "Almond Dragoturkey",
       "fr": "Dragodinde Amande",
@@ -379,7 +379,7 @@
     "imageUrl": "item/20.png"
   },
   {
-    "dofusID": "96",
+    "mountDofusID": "96",
     "name": {
       "en": "Almond Seemyool",
       "fr": "Muldo Amande",
@@ -406,7 +406,7 @@
     "imageUrl": "item/96.png"
   },
   {
-    "dofusID": "88",
+    "mountDofusID": "88",
     "name": {
       "en": "Armoured Dragoturkey",
       "fr": "Dragodinde en armure",
@@ -453,7 +453,7 @@
     "imageUrl": "item/88.png"
   },
   {
-    "dofusID": "117",
+    "mountDofusID": "117",
     "name": {
       "en": "Crimson and Almond Seemyool",
       "fr": "Muldo Pourpre et Amande",
@@ -485,7 +485,7 @@
     "imageUrl": "item/117.png"
   },
   {
-    "dofusID": "156",
+    "mountDofusID": "156",
     "name": {
       "en": "Crimson and Emerald Seemyool",
       "fr": "Muldo Pourpre et Emeraude",
@@ -517,7 +517,7 @@
     "imageUrl": "item/156.png"
   },
   {
-    "dofusID": "71",
+    "mountDofusID": "71",
     "name": {
       "en": "Crimson and Ginger Dragoturkey",
       "fr": "Dragodinde Pourpre et Rousse",
@@ -549,7 +549,7 @@
     "imageUrl": "item/71.png"
   },
   {
-    "dofusID": "122",
+    "mountDofusID": "122",
     "name": {
       "en": "Crimson and Ivory Seemyool",
       "fr": "Muldo Pourpre et Ivoire",
@@ -581,7 +581,7 @@
     "imageUrl": "item/122.png"
   },
   {
-    "dofusID": "19",
+    "mountDofusID": "19",
     "name": {
       "en": "Crimson Dragoturkey",
       "fr": "Dragodinde Pourpre",
@@ -608,7 +608,7 @@
     "imageUrl": "item/19.png"
   },
   {
-    "dofusID": "93",
+    "mountDofusID": "93",
     "name": {
       "en": "Crimson Seemyool",
       "fr": "Muldo Pourpre",
@@ -635,7 +635,7 @@
     "imageUrl": "item/93.png"
   },
   {
-    "dofusID": "120",
+    "mountDofusID": "120",
     "name": {
       "en": "Ebony and Almond Seemyool",
       "fr": "Muldo Ebène et Amande",
@@ -667,7 +667,7 @@
     "imageUrl": "item/120.png"
   },
   {
-    "dofusID": "54",
+    "mountDofusID": "54",
     "name": {
       "en": "Ebony and Crimson Dragoturkey",
       "fr": "Dragodinde Ebène et Pourpre",
@@ -699,7 +699,7 @@
     "imageUrl": "item/54.png"
   },
   {
-    "dofusID": "103",
+    "mountDofusID": "103",
     "name": {
       "en": "Ebony and Crimson Seemyool",
       "fr": "Muldo Ebène et Pourpre",
@@ -731,7 +731,7 @@
     "imageUrl": "item/103.png"
   },
   {
-    "dofusID": "50",
+    "mountDofusID": "50",
     "name": {
       "en": "Ebony and Emerald Dragoturkey",
       "fr": "Dragodinde Ebène et Emeraude",
@@ -763,7 +763,7 @@
     "imageUrl": "item/50.png"
   },
   {
-    "dofusID": "159",
+    "mountDofusID": "159",
     "name": {
       "en": "Ebony and Emerald Seemyool",
       "fr": "Muldo Ebène et Emeraude",
@@ -795,7 +795,7 @@
     "imageUrl": "item/159.png"
   },
   {
-    "dofusID": "12",
+    "mountDofusID": "12",
     "name": {
       "en": "Ebony and Ginger Dragoturkey",
       "fr": "Dragodinde Ebène et Rousse",
@@ -827,7 +827,7 @@
     "imageUrl": "item/12.png"
   },
   {
-    "dofusID": "51",
+    "mountDofusID": "51",
     "name": {
       "en": "Ebony and Indigo Dragoturkey",
       "fr": "Dragodinde Ebène et Indigo",
@@ -859,7 +859,7 @@
     "imageUrl": "item/51.png"
   },
   {
-    "dofusID": "109",
+    "mountDofusID": "109",
     "name": {
       "en": "Ebony and Indigo Seemyool",
       "fr": "Muldo Ebène et Indigo",
@@ -891,7 +891,7 @@
     "imageUrl": "item/109.png"
   },
   {
-    "dofusID": "9",
+    "mountDofusID": "9",
     "name": {
       "en": "Ebony and Ivory Dragoturkey",
       "fr": "Dragodinde Ebène et Ivoire",
@@ -923,7 +923,7 @@
     "imageUrl": "item/9.png"
   },
   {
-    "dofusID": "125",
+    "mountDofusID": "125",
     "name": {
       "en": "Ebony and Ivory Seemyool",
       "fr": "Muldo Ebène et Ivoire",
@@ -955,7 +955,7 @@
     "imageUrl": "item/125.png"
   },
   {
-    "dofusID": "53",
+    "mountDofusID": "53",
     "name": {
       "en": "Ebony and Orchid Dragoturkey",
       "fr": "Dragodinde Ebène et Orchidée",
@@ -987,7 +987,7 @@
     "imageUrl": "item/53.png"
   },
   {
-    "dofusID": "107",
+    "mountDofusID": "107",
     "name": {
       "en": "Ebony and Orchid Seemyool",
       "fr": "Muldo Ebène et Orchidée",
@@ -1019,7 +1019,7 @@
     "imageUrl": "item/107.png"
   },
   {
-    "dofusID": "52",
+    "mountDofusID": "52",
     "name": {
       "en": "Ebony and Turquoise Dragoturkey",
       "fr": "Dragodinde Ebène et Turquoise",
@@ -1051,7 +1051,7 @@
     "imageUrl": "item/52.png"
   },
   {
-    "dofusID": "3",
+    "mountDofusID": "3",
     "name": {
       "en": "Ebony Dragoturkey",
       "fr": "Dragodinde Ebène",
@@ -1078,7 +1078,7 @@
     "imageUrl": "item/3.png"
   },
   {
-    "dofusID": "91",
+    "mountDofusID": "91",
     "name": {
       "en": "Ebony Seemyool",
       "fr": "Muldo Ebène",
@@ -1105,7 +1105,7 @@
     "imageUrl": "item/91.png"
   },
   {
-    "dofusID": "60",
+    "mountDofusID": "60",
     "name": {
       "en": "Emerald and Crimson Dragoturkey",
       "fr": "Dragodinde Emeraude et Pourpre",
@@ -1137,7 +1137,7 @@
     "imageUrl": "item/60.png"
   },
   {
-    "dofusID": "57",
+    "mountDofusID": "57",
     "name": {
       "en": "Emerald and Ginger Dragoturkey",
       "fr": "Dragodinde Emeraude et Rousse",
@@ -1169,7 +1169,7 @@
     "imageUrl": "item/57.png"
   },
   {
-    "dofusID": "55",
+    "mountDofusID": "55",
     "name": {
       "en": "Emerald and Indigo Dragoturkey",
       "fr": "Dragodinde Emeraude et Indigo",
@@ -1201,7 +1201,7 @@
     "imageUrl": "item/55.png"
   },
   {
-    "dofusID": "56",
+    "mountDofusID": "56",
     "name": {
       "en": "Emerald and Ivory Dragoturkey",
       "fr": "Dragodinde Emeraude et Ivoire",
@@ -1233,7 +1233,7 @@
     "imageUrl": "item/56.png"
   },
   {
-    "dofusID": "59",
+    "mountDofusID": "59",
     "name": {
       "en": "Emerald and Orchid Dragoturkey",
       "fr": "Dragodinde Emeraude et Orchidée",
@@ -1265,7 +1265,7 @@
     "imageUrl": "item/59.png"
   },
   {
-    "dofusID": "58",
+    "mountDofusID": "58",
     "name": {
       "en": "Emerald and Turquoise Dragoturkey",
       "fr": "Dragodinde Emeraude et Turquoise",
@@ -1297,7 +1297,7 @@
     "imageUrl": "item/58.png"
   },
   {
-    "dofusID": "21",
+    "mountDofusID": "21",
     "name": {
       "en": "Emerald Dragoturkey",
       "fr": "Dragodinde Emeraude",
@@ -1324,7 +1324,7 @@
     "imageUrl": "item/21.png"
   },
   {
-    "dofusID": "100",
+    "mountDofusID": "100",
     "name": {
       "en": "Emerald Seemyool",
       "fr": "Muldo Emeraude",
@@ -1351,7 +1351,7 @@
     "imageUrl": "item/100.png"
   },
   {
-    "dofusID": "89",
+    "mountDofusID": "89",
     "name": {
       "en": "Feathered Dragoturkey",
       "fr": "Dragodinde à Plumes",
@@ -1378,7 +1378,7 @@
     "imageUrl": "item/89.png"
   },
   {
-    "dofusID": "116",
+    "mountDofusID": "116",
     "name": {
       "en": "Ginger and Almond Seemyool",
       "fr": "Muldo Roux et Amande",
@@ -1410,7 +1410,7 @@
     "imageUrl": "item/116.png"
   },
   {
-    "dofusID": "111",
+    "mountDofusID": "111",
     "name": {
       "en": "Ginger and Crimson Seemyool",
       "fr": "Muldo Roux et Pourpre",
@@ -1442,7 +1442,7 @@
     "imageUrl": "item/111.png"
   },
   {
-    "dofusID": "114",
+    "mountDofusID": "114",
     "name": {
       "en": "Ginger and Ebony Seemyool",
       "fr": "Muldo Roux et Ebène",
@@ -1474,7 +1474,7 @@
     "imageUrl": "item/114.png"
   },
   {
-    "dofusID": "161",
+    "mountDofusID": "161",
     "name": {
       "en": "Ginger and Emerald Seemyool",
       "fr": "Muldo Roux et Emeraude",
@@ -1506,7 +1506,7 @@
     "imageUrl": "item/161.png"
   },
   {
-    "dofusID": "115",
+    "mountDofusID": "115",
     "name": {
       "en": "Ginger and Golden Seemyool",
       "fr": "Muldo Roux et Doré",
@@ -1538,7 +1538,7 @@
     "imageUrl": "item/115.png"
   },
   {
-    "dofusID": "113",
+    "mountDofusID": "113",
     "name": {
       "en": "Ginger and Indigo Seemyool",
       "fr": "Muldo Roux et Indigo",
@@ -1570,7 +1570,7 @@
     "imageUrl": "item/113.png"
   },
   {
-    "dofusID": "127",
+    "mountDofusID": "127",
     "name": {
       "en": "Ginger and Ivory Seemyool",
       "fr": "Muldo Roux et Ivoire",
@@ -1602,7 +1602,7 @@
     "imageUrl": "item/127.png"
   },
   {
-    "dofusID": "112",
+    "mountDofusID": "112",
     "name": {
       "en": "Ginger and Orchid Seemyool",
       "fr": "Muldo Roux et Orchidée",
@@ -1634,7 +1634,7 @@
     "imageUrl": "item/112.png"
   },
   {
-    "dofusID": "10",
+    "mountDofusID": "10",
     "name": {
       "en": "Ginger Dragoturkey",
       "fr": "Dragodinde Rousse",
@@ -1661,7 +1661,7 @@
     "imageUrl": "item/10.png"
   },
   {
-    "dofusID": "95",
+    "mountDofusID": "95",
     "name": {
       "en": "Ginger Seemyool",
       "fr": "Muldo Roux",
@@ -1688,7 +1688,7 @@
     "imageUrl": "item/95.png"
   },
   {
-    "dofusID": "121",
+    "mountDofusID": "121",
     "name": {
       "en": "Golden and Almond Seemyool",
       "fr": "Muldo Doré et Amande",
@@ -1720,7 +1720,7 @@
     "imageUrl": "item/121.png"
   },
   {
-    "dofusID": "49",
+    "mountDofusID": "49",
     "name": {
       "en": "Golden and Crimson Dragoturkey",
       "fr": "Dragodinde Dorée et Pourpre",
@@ -1752,7 +1752,7 @@
     "imageUrl": "item/49.png"
   },
   {
-    "dofusID": "101",
+    "mountDofusID": "101",
     "name": {
       "en": "Golden and Crimson Seemyool",
       "fr": "Muldo Doré et Pourpre",
@@ -1784,7 +1784,7 @@
     "imageUrl": "item/101.png"
   },
   {
-    "dofusID": "42",
+    "mountDofusID": "42",
     "name": {
       "en": "Golden and Ebony Dragoturkey",
       "fr": "Dragodinde Dorée et Ebène",
@@ -1816,7 +1816,7 @@
     "imageUrl": "item/42.png"
   },
   {
-    "dofusID": "110",
+    "mountDofusID": "110",
     "name": {
       "en": "Golden and Ebony Seemyool",
       "fr": "Muldo Doré et Ebène",
@@ -1848,7 +1848,7 @@
     "imageUrl": "item/110.png"
   },
   {
-    "dofusID": "43",
+    "mountDofusID": "43",
     "name": {
       "en": "Golden and Emerald Dragoturkey",
       "fr": "Dragodinde Dorée et Emeraude",
@@ -1880,7 +1880,7 @@
     "imageUrl": "item/43.png"
   },
   {
-    "dofusID": "160",
+    "mountDofusID": "160",
     "name": {
       "en": "Golden and Emerald Seemyool",
       "fr": "Muldo Doré et Emeraude",
@@ -1912,7 +1912,7 @@
     "imageUrl": "item/160.png"
   },
   {
-    "dofusID": "46",
+    "mountDofusID": "46",
     "name": {
       "en": "Golden and Ginger Dragoturkey",
       "fr": "Dragodinde Dorée et Rousse",
@@ -1944,7 +1944,7 @@
     "imageUrl": "item/46.png"
   },
   {
-    "dofusID": "44",
+    "mountDofusID": "44",
     "name": {
       "en": "Golden and Indigo Dragoturkey",
       "fr": "Dragodinde Dorée et Indigo",
@@ -1976,7 +1976,7 @@
     "imageUrl": "item/44.png"
   },
   {
-    "dofusID": "108",
+    "mountDofusID": "108",
     "name": {
       "en": "Golden and Indigo Seemyool",
       "fr": "Muldo Doré et Indigo",
@@ -2008,7 +2008,7 @@
     "imageUrl": "item/108.png"
   },
   {
-    "dofusID": "45",
+    "mountDofusID": "45",
     "name": {
       "en": "Golden and Ivory Dragoturkey",
       "fr": "Dragodinde Dorée et Ivoire",
@@ -2040,7 +2040,7 @@
     "imageUrl": "item/45.png"
   },
   {
-    "dofusID": "126",
+    "mountDofusID": "126",
     "name": {
       "en": "Golden and Ivory Seemyool",
       "fr": "Muldo Doré et Ivoire",
@@ -2072,7 +2072,7 @@
     "imageUrl": "item/126.png"
   },
   {
-    "dofusID": "48",
+    "mountDofusID": "48",
     "name": {
       "en": "Golden and Orchid Dragoturkey",
       "fr": "Dragodinde Dorée et Orchidée",
@@ -2104,7 +2104,7 @@
     "imageUrl": "item/48.png"
   },
   {
-    "dofusID": "105",
+    "mountDofusID": "105",
     "name": {
       "en": "Golden and Orchid Seemyool",
       "fr": "Muldo Doré et Orchidée",
@@ -2136,7 +2136,7 @@
     "imageUrl": "item/105.png"
   },
   {
-    "dofusID": "47",
+    "mountDofusID": "47",
     "name": {
       "en": "Golden and Turquoise Dragoturkey",
       "fr": "Dragodinde Dorée et Turquoise",
@@ -2168,7 +2168,7 @@
     "imageUrl": "item/47.png"
   },
   {
-    "dofusID": "18",
+    "mountDofusID": "18",
     "name": {
       "en": "Golden Dragoturkey",
       "fr": "Dragodinde Dorée",
@@ -2195,7 +2195,7 @@
     "imageUrl": "item/18.png"
   },
   {
-    "dofusID": "94",
+    "mountDofusID": "94",
     "name": {
       "en": "Golden Seemyool",
       "fr": "Muldo Doré",
@@ -2222,7 +2222,7 @@
     "imageUrl": "item/94.png"
   },
   {
-    "dofusID": "119",
+    "mountDofusID": "119",
     "name": {
       "en": "Indigo and Almond Seemyool",
       "fr": "Muldo Indigo et Amande",
@@ -2254,7 +2254,7 @@
     "imageUrl": "item/119.png"
   },
   {
-    "dofusID": "65",
+    "mountDofusID": "65",
     "name": {
       "en": "Indigo and Crimson Dragoturkey",
       "fr": "Dragodinde Indigo et Pourpre",
@@ -2286,7 +2286,7 @@
     "imageUrl": "item/65.png"
   },
   {
-    "dofusID": "102",
+    "mountDofusID": "102",
     "name": {
       "en": "Indigo and Crimson Seemyool",
       "fr": "Muldo Indigo et Pourpre",
@@ -2318,7 +2318,7 @@
     "imageUrl": "item/102.png"
   },
   {
-    "dofusID": "158",
+    "mountDofusID": "158",
     "name": {
       "en": "Indigo and Emerald Seemyool",
       "fr": "Muldo Indigo et Emeraude",
@@ -2350,7 +2350,7 @@
     "imageUrl": "item/158.png"
   },
   {
-    "dofusID": "62",
+    "mountDofusID": "62",
     "name": {
       "en": "Indigo and Ginger Dragoturkey",
       "fr": "Dragodinde Indigo et Rousse",
@@ -2382,7 +2382,7 @@
     "imageUrl": "item/62.png"
   },
   {
-    "dofusID": "61",
+    "mountDofusID": "61",
     "name": {
       "en": "Indigo and Ivory Dragoturkey",
       "fr": "Dragodinde Indigo et Ivoire",
@@ -2414,7 +2414,7 @@
     "imageUrl": "item/61.png"
   },
   {
-    "dofusID": "124",
+    "mountDofusID": "124",
     "name": {
       "en": "Indigo and Ivory Seemyool",
       "fr": "Muldo Indigo et Ivoire",
@@ -2446,7 +2446,7 @@
     "imageUrl": "item/124.png"
   },
   {
-    "dofusID": "64",
+    "mountDofusID": "64",
     "name": {
       "en": "Indigo and Orchid Dragoturkey",
       "fr": "Dragodinde Indigo et Orchidée",
@@ -2478,7 +2478,7 @@
     "imageUrl": "item/64.png"
   },
   {
-    "dofusID": "106",
+    "mountDofusID": "106",
     "name": {
       "en": "Indigo and Orchid Seemyool",
       "fr": "Muldo Indigo et Orchidée",
@@ -2510,7 +2510,7 @@
     "imageUrl": "item/106.png"
   },
   {
-    "dofusID": "63",
+    "mountDofusID": "63",
     "name": {
       "en": "Indigo and Turquoise Dragoturkey",
       "fr": "Dragodinde Indigo et Turquoise",
@@ -2542,7 +2542,7 @@
     "imageUrl": "item/63.png"
   },
   {
-    "dofusID": "17",
+    "mountDofusID": "17",
     "name": {
       "en": "Indigo Dragoturkey",
       "fr": "Dragodinde Indigo",
@@ -2569,7 +2569,7 @@
     "imageUrl": "item/17.png"
   },
   {
-    "dofusID": "92",
+    "mountDofusID": "92",
     "name": {
       "en": "Indigo Seemyool",
       "fr": "Muldo Indigo",
@@ -2596,7 +2596,7 @@
     "imageUrl": "item/92.png"
   },
   {
-    "dofusID": "68",
+    "mountDofusID": "68",
     "name": {
       "en": "Ivory and Crimson Dragoturkey",
       "fr": "Dragodinde Ivoire et Pourpre",
@@ -2628,7 +2628,7 @@
     "imageUrl": "item/68.png"
   },
   {
-    "dofusID": "163",
+    "mountDofusID": "163",
     "name": {
       "en": "Ivory and Emerald Seemyool",
       "fr": "Muldo Ivoire et Emeraude",
@@ -2660,7 +2660,7 @@
     "imageUrl": "item/163.png"
   },
   {
-    "dofusID": "11",
+    "mountDofusID": "11",
     "name": {
       "en": "Ivory and Ginger Dragoturkey",
       "fr": "Dragodinde Ivoire et Rousse",
@@ -2692,7 +2692,7 @@
     "imageUrl": "item/11.png"
   },
   {
-    "dofusID": "67",
+    "mountDofusID": "67",
     "name": {
       "en": "Ivory and Orchid Dragoturkey",
       "fr": "Dragodinde Ivoire et Orchidée",
@@ -2724,7 +2724,7 @@
     "imageUrl": "item/67.png"
   },
   {
-    "dofusID": "66",
+    "mountDofusID": "66",
     "name": {
       "en": "Ivory and Turquoise Dragoturkey",
       "fr": "Dragodinde Ivoire et Turquoise",
@@ -2756,7 +2756,7 @@
     "imageUrl": "item/66.png"
   },
   {
-    "dofusID": "16",
+    "mountDofusID": "16",
     "name": {
       "en": "Ivory Dragoturkey",
       "fr": "Dragodinde Ivoire",
@@ -2783,7 +2783,7 @@
     "imageUrl": "item/16.png"
   },
   {
-    "dofusID": "97",
+    "mountDofusID": "97",
     "name": {
       "en": "Ivory Seemyool",
       "fr": "Muldo Ivoire",
@@ -2810,7 +2810,7 @@
     "imageUrl": "item/97.png"
   },
   {
-    "dofusID": "118",
+    "mountDofusID": "118",
     "name": {
       "en": "Orchid and Almond Seemyool",
       "fr": "Muldo Orchidée et Amande",
@@ -2842,7 +2842,7 @@
     "imageUrl": "item/118.png"
   },
   {
-    "dofusID": "76",
+    "mountDofusID": "76",
     "name": {
       "en": "Orchid and Crimson Dragoturkey",
       "fr": "Dragodinde Orchidée et Pourpre",
@@ -2874,7 +2874,7 @@
     "imageUrl": "item/76.png"
   },
   {
-    "dofusID": "104",
+    "mountDofusID": "104",
     "name": {
       "en": "Orchid and Crimson Seemyool",
       "fr": "Muldo Orchidée et Pourpre",
@@ -2906,7 +2906,7 @@
     "imageUrl": "item/104.png"
   },
   {
-    "dofusID": "157",
+    "mountDofusID": "157",
     "name": {
       "en": "Orchid and Emerald Seemyool",
       "fr": "Muldo Orchidée et Emeraude",
@@ -2938,7 +2938,7 @@
     "imageUrl": "item/157.png"
   },
   {
-    "dofusID": "70",
+    "mountDofusID": "70",
     "name": {
       "en": "Orchid and Ginger Dragoturkey",
       "fr": "Dragodinde Orchidée et Rousse",
@@ -2970,7 +2970,7 @@
     "imageUrl": "item/70.png"
   },
   {
-    "dofusID": "123",
+    "mountDofusID": "123",
     "name": {
       "en": "Orchid and Ivory Seemyool",
       "fr": "Muldo Orchidée et Ivoire",
@@ -3002,7 +3002,7 @@
     "imageUrl": "item/123.png"
   },
   {
-    "dofusID": "22",
+    "mountDofusID": "22",
     "name": {
       "en": "Orchid Dragoturkey",
       "fr": "Dragodinde Orchidée",
@@ -3029,7 +3029,7 @@
     "imageUrl": "item/22.png"
   },
   {
-    "dofusID": "90",
+    "mountDofusID": "90",
     "name": {
       "en": "Orchid Seemyool",
       "fr": "Muldo Orchidée",
@@ -3056,7 +3056,7 @@
     "imageUrl": "item/90.png"
   },
   {
-    "dofusID": "77",
+    "mountDofusID": "77",
     "name": {
       "en": "Plum and Almond Dragoturkey",
       "fr": "Dragodinde Prune et Amande",
@@ -3088,7 +3088,7 @@
     "imageUrl": "item/77.png"
   },
   {
-    "dofusID": "152",
+    "mountDofusID": "152",
     "name": {
       "en": "Plum and Almond Seemyool",
       "fr": "Muldo Prune et Amande",
@@ -3120,7 +3120,7 @@
     "imageUrl": "item/152.png"
   },
   {
-    "dofusID": "87",
+    "mountDofusID": "87",
     "name": {
       "en": "Plum and Crimson Dragoturkey",
       "fr": "Dragodinde Prune et Pourpre",
@@ -3152,7 +3152,7 @@
     "imageUrl": "item/87.png"
   },
   {
-    "dofusID": "146",
+    "mountDofusID": "146",
     "name": {
       "en": "Plum and Crimson Seemyool",
       "fr": "Muldo Prune et Pourpre",
@@ -3184,7 +3184,7 @@
     "imageUrl": "item/146.png"
   },
   {
-    "dofusID": "79",
+    "mountDofusID": "79",
     "name": {
       "en": "Plum and Ebony Dragoturkey",
       "fr": "Dragodinde Prune et Ebène",
@@ -3216,7 +3216,7 @@
     "imageUrl": "item/79.png"
   },
   {
-    "dofusID": "149",
+    "mountDofusID": "149",
     "name": {
       "en": "Plum and Ebony Seemyool",
       "fr": "Muldo Prune et Ebène",
@@ -3248,7 +3248,7 @@
     "imageUrl": "item/149.png"
   },
   {
-    "dofusID": "80",
+    "mountDofusID": "80",
     "name": {
       "en": "Plum and Emerald Dragoturkey",
       "fr": "Dragodinde Prune et Emeraude",
@@ -3280,7 +3280,7 @@
     "imageUrl": "item/80.png"
   },
   {
-    "dofusID": "155",
+    "mountDofusID": "155",
     "name": {
       "en": "Plum and Emerald Seemyool",
       "fr": "Muldo Prune et Emeraude",
@@ -3312,7 +3312,7 @@
     "imageUrl": "item/155.png"
   },
   {
-    "dofusID": "84",
+    "mountDofusID": "84",
     "name": {
       "en": "Plum and Ginger Dragoturkey",
       "fr": "Dragodinde Prune et Rousse",
@@ -3344,7 +3344,7 @@
     "imageUrl": "item/84.png"
   },
   {
-    "dofusID": "151",
+    "mountDofusID": "151",
     "name": {
       "en": "Plum and Ginger Seemyool",
       "fr": "Muldo Prune et Roux",
@@ -3376,7 +3376,7 @@
     "imageUrl": "item/151.png"
   },
   {
-    "dofusID": "78",
+    "mountDofusID": "78",
     "name": {
       "en": "Plum and Golden Dragoturkey",
       "fr": "Dragodinde Prune et Dorée",
@@ -3408,7 +3408,7 @@
     "imageUrl": "item/78.png"
   },
   {
-    "dofusID": "150",
+    "mountDofusID": "150",
     "name": {
       "en": "Plum and Golden Seemyool",
       "fr": "Muldo Prune et Doré",
@@ -3440,7 +3440,7 @@
     "imageUrl": "item/150.png"
   },
   {
-    "dofusID": "82",
+    "mountDofusID": "82",
     "name": {
       "en": "Plum and Indigo Dragoturkey",
       "fr": "Dragodinde Prune et Indigo",
@@ -3472,7 +3472,7 @@
     "imageUrl": "item/82.png"
   },
   {
-    "dofusID": "148",
+    "mountDofusID": "148",
     "name": {
       "en": "Plum and Indigo Seemyool",
       "fr": "Muldo Prune et Indigo",
@@ -3504,7 +3504,7 @@
     "imageUrl": "item/148.png"
   },
   {
-    "dofusID": "83",
+    "mountDofusID": "83",
     "name": {
       "en": "Plum and Ivory Dragoturkey",
       "fr": "Dragodinde Prune et Ivoire",
@@ -3536,7 +3536,7 @@
     "imageUrl": "item/83.png"
   },
   {
-    "dofusID": "153",
+    "mountDofusID": "153",
     "name": {
       "en": "Plum and Ivory Seemyool",
       "fr": "Muldo Prune et Ivoire",
@@ -3568,7 +3568,7 @@
     "imageUrl": "item/153.png"
   },
   {
-    "dofusID": "86",
+    "mountDofusID": "86",
     "name": {
       "en": "Plum and Orchid Dragoturkey",
       "fr": "Dragodinde Prune et Orchidée",
@@ -3600,7 +3600,7 @@
     "imageUrl": "item/86.png"
   },
   {
-    "dofusID": "147",
+    "mountDofusID": "147",
     "name": {
       "en": "Plum and Orchid Seemyool",
       "fr": "Muldo Prune et Orchidée",
@@ -3632,7 +3632,7 @@
     "imageUrl": "item/147.png"
   },
   {
-    "dofusID": "85",
+    "mountDofusID": "85",
     "name": {
       "en": "Plum and Turquoise Dragoturkey",
       "fr": "Dragodinde Prune et Turquoise",
@@ -3664,7 +3664,7 @@
     "imageUrl": "item/85.png"
   },
   {
-    "dofusID": "154",
+    "mountDofusID": "154",
     "name": {
       "en": "Plum and Turquoise Seemyool",
       "fr": "Muldo Prune et Turquoise",
@@ -3696,7 +3696,7 @@
     "imageUrl": "item/154.png"
   },
   {
-    "dofusID": "23",
+    "mountDofusID": "23",
     "name": {
       "en": "Plum Dragoturkey",
       "fr": "Dragodinde Prune",
@@ -3723,7 +3723,7 @@
     "imageUrl": "item/23.png"
   },
   {
-    "dofusID": "99",
+    "mountDofusID": "99",
     "name": {
       "en": "Plum Seemyool",
       "fr": "Muldo Prune",
@@ -3750,7 +3750,7 @@
     "imageUrl": "item/99.png"
   },
   {
-    "dofusID": "144",
+    "mountDofusID": "144",
     "name": {
       "en": "Turquoise and Almond Seemyool",
       "fr": "Muldo Turquoise et Amande",
@@ -3782,7 +3782,7 @@
     "imageUrl": "item/144.png"
   },
   {
-    "dofusID": "73",
+    "mountDofusID": "73",
     "name": {
       "en": "Turquoise and Crimson Dragoturkey",
       "fr": "Dragodinde Turquoise et Pourpre",
@@ -3814,7 +3814,7 @@
     "imageUrl": "item/73.png"
   },
   {
-    "dofusID": "140",
+    "mountDofusID": "140",
     "name": {
       "en": "Turquoise and Crimson Seemyool",
       "fr": "Muldo Turquoise et Pourpre",
@@ -3846,7 +3846,7 @@
     "imageUrl": "item/140.png"
   },
   {
-    "dofusID": "142",
+    "mountDofusID": "142",
     "name": {
       "en": "Turquoise and Ebony Seemyool",
       "fr": "Muldo Turquoise et Ebène",
@@ -3878,7 +3878,7 @@
     "imageUrl": "item/142.png"
   },
   {
-    "dofusID": "164",
+    "mountDofusID": "164",
     "name": {
       "en": "Turquoise and Emerald Seemyool",
       "fr": "Muldo Turquoise et Emeraude",
@@ -3910,7 +3910,7 @@
     "imageUrl": "item/164.png"
   },
   {
-    "dofusID": "69",
+    "mountDofusID": "69",
     "name": {
       "en": "Turquoise and Ginger Dragoturkey",
       "fr": "Dragodinde Turquoise et Rousse",
@@ -3942,7 +3942,7 @@
     "imageUrl": "item/69.png"
   },
   {
-    "dofusID": "143",
+    "mountDofusID": "143",
     "name": {
       "en": "Turquoise and Ginger Seemyool",
       "fr": "Muldo Turquoise et Roux",
@@ -3974,7 +3974,7 @@
     "imageUrl": "item/143.png"
   },
   {
-    "dofusID": "145",
+    "mountDofusID": "145",
     "name": {
       "en": "Turquoise and Golden Seemyool",
       "fr": "Muldo Turquoise et Doré",
@@ -4006,7 +4006,7 @@
     "imageUrl": "item/145.png"
   },
   {
-    "dofusID": "141",
+    "mountDofusID": "141",
     "name": {
       "en": "Turquoise and Indigo Seemyool",
       "fr": "Muldo Turquoise et Indigo",
@@ -4038,7 +4038,7 @@
     "imageUrl": "item/141.png"
   },
   {
-    "dofusID": "139",
+    "mountDofusID": "139",
     "name": {
       "en": "Turquoise and Ivory Seemyool",
       "fr": "Muldo Turquoise et Ivoire",
@@ -4070,7 +4070,7 @@
     "imageUrl": "item/139.png"
   },
   {
-    "dofusID": "72",
+    "mountDofusID": "72",
     "name": {
       "en": "Turquoise and Orchid Dragoturkey",
       "fr": "Dragodinde Turquoise et Orchidée",
@@ -4102,7 +4102,7 @@
     "imageUrl": "item/72.png"
   },
   {
-    "dofusID": "165",
+    "mountDofusID": "165",
     "name": {
       "en": "Turquoise and Orchid Seemyool",
       "fr": "Muldo Turquoise et Orchidée",
@@ -4134,7 +4134,7 @@
     "imageUrl": "item/165.png"
   },
   {
-    "dofusID": "15",
+    "mountDofusID": "15",
     "name": {
       "en": "Turquoise Dragoturkey",
       "fr": "Dragodinde Turquoise",
@@ -4161,7 +4161,7 @@
     "imageUrl": "item/15.png"
   },
   {
-    "dofusID": "98",
+    "mountDofusID": "98",
     "name": {
       "en": "Turquoise Seemyool",
       "fr": "Muldo Turquoise",
@@ -4186,5 +4186,3557 @@
     ],
     "customStats": {},
     "imageUrl": "item/98.png"
+  },
+  {
+    "mountDofusID": "197",
+    "name": {
+      "en": "Almond and Crimson Rhineetle",
+      "fr": "Volkorne Amande et Pourpre",
+      "it": "Scaraceronte Mandorla e Porpora",
+      "pt": "Vulkórnio Amêndoa e Púrpura",
+      "es": "Vueloceronte Almendrado y Púrpura"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/197.png"
+  },
+  {
+    "mountDofusID": "200",
+    "name": {
+      "en": "Almond and Ebony Rhineetle",
+      "fr": "Volkorne Amande et Ebène",
+      "it": "Scaraceronte Mandorla ed Ebano",
+      "pt": "Vulkórnio Amêndoa e Ébano",
+      "es": "Vueloceronte Almendrado y Ébano"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/200.png"
+  },
+  {
+    "mountDofusID": "201",
+    "name": {
+      "en": "Almond and Ginger Rhineetle",
+      "fr": "Volkorne Amande et Roux",
+      "it": "Scaraceronte Mandorla e Rosso",
+      "pt": "Vulkórnio Amêndoa e Escarlate",
+      "es": "Vueloceronte Almendrado y Pelirrojo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/201.png"
+  },
+  {
+    "mountDofusID": "199",
+    "name": {
+      "en": "Almond and Indigo Rhineetle",
+      "fr": "Volkorne Amande et Indigo",
+      "it": "Scaraceronte Mandorla e Indaco",
+      "pt": "Vulkórnio Amêndoa e Índigo",
+      "es": "Vueloceronte Almendrado e Índigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/199.png"
+  },
+  {
+    "mountDofusID": "202",
+    "name": {
+      "en": "Almond and Ivory Rhineetle",
+      "fr": "Volkorne Amande et Ivoire",
+      "it": "Scaraceronte Mandorla e Avorio",
+      "pt": "Vulkórnio Amêndoa e Marfim",
+      "es": "Vueloceronte Almendrado y Marfil"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/202.png"
+  },
+  {
+    "mountDofusID": "198",
+    "name": {
+      "en": "Almond and Orchid Rhineetle",
+      "fr": "Volkorne Amande et Orchidée",
+      "it": "Scaraceronte Mandorla e Orchidea",
+      "pt": "Vulkórnio Amêndoa e Orquídea",
+      "es": "Vueloceronte Almendrado y Orquídeo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/198.png"
+  },
+  {
+    "mountDofusID": "203",
+    "name": {
+      "en": "Almond and Turquoise Rhineetle",
+      "fr": "Volkorne Amande et Turquoise",
+      "it": "Scaraceronte Mandorla e Turchese",
+      "pt": "Vulkórnio Amêndoa e Turquesa",
+      "es": "Vueloceronte Almendrado y Turquesa"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/203.png"
+  },
+  {
+    "mountDofusID": "181",
+    "name": {
+      "en": "Almond Rhineetle",
+      "fr": "Volkorne Amande",
+      "it": "Scaraceronte Mandorla",
+      "pt": "Vulkórnio Amêndoa",
+      "es": "Vueloceronte Almendrado"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 80
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/181.png"
+  },
+  {
+    "mountDofusID": "280",
+    "name": {
+      "en": "Amethyst and Almond Rhineetle",
+      "fr": "Volkorne Améthyste et Amande",
+      "it": "Scaraceronte Ametista e Mandorla",
+      "pt": "Vulkórnio Ametista e Amêndoa",
+      "es": "Vueloceronte Amatista y Almendrado"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/280.png"
+  },
+  {
+    "mountDofusID": "276",
+    "name": {
+      "en": "Amethyst and Crimson Rhineetle",
+      "fr": "Volkorne Améthyste et Pourpre",
+      "it": "Scaraceronte Ametista e Porpora",
+      "pt": "Vulkórnio Ametista e Púrpura",
+      "es": "Vueloceronte Amatista y Púrpura"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/276.png"
+  },
+  {
+    "mountDofusID": "279",
+    "name": {
+      "en": "Amethyst and Ebony Rhineetle",
+      "fr": "Volkorne Améthyste et Ebène",
+      "it": "Scaraceronte Ametista ed Ebano",
+      "pt": "Vulkórnio Ametista e Ébano",
+      "es": "Vueloceronte Amatista y Ébano"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/279.png"
+  },
+  {
+    "mountDofusID": "285",
+    "name": {
+      "en": "Amethyst and Emerald Rhineetle",
+      "fr": "Volkorne Améthyste et Emeraude",
+      "it": "Scaraceronte Ametista e Smeraldo",
+      "pt": "Vulkórnio Ametista e Esmeralda",
+      "es": "Vueloceronte Amatista y Esmeralda"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/285.png"
+  },
+  {
+    "mountDofusID": "281",
+    "name": {
+      "en": "Amethyst and Ginger Rhineetle",
+      "fr": "Volkorne Améthyste et Roux",
+      "it": "Scaraceronte Ametista e Rosso",
+      "pt": "Vulkórnio Ametista e Escarlate",
+      "es": "Vueloceronte Amatista y Pelirrojo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/281.png"
+  },
+  {
+    "mountDofusID": "286",
+    "name": {
+      "en": "Amethyst and Golden Rhineetle",
+      "fr": "Volkorne Améthyste et Doré",
+      "it": "Scaraceronte Ametista e Dorato",
+      "pt": "Vulkórnio Ametista e Dourado",
+      "es": "Vueloceronte Amatista y Dorado"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/286.png"
+  },
+  {
+    "mountDofusID": "278",
+    "name": {
+      "en": "Amethyst and Indigo Rhineetle",
+      "fr": "Volkorne Améthyste et Indigo",
+      "it": "Scaraceronte Ametista e Indaco",
+      "pt": "Vulkórnio Ametista e Índigo",
+      "es": "Vueloceronte Amatista e Índigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/278.png"
+  },
+  {
+    "mountDofusID": "282",
+    "name": {
+      "en": "Amethyst and Ivory Rhineetle",
+      "fr": "Volkorne Améthyste et Ivoire",
+      "it": "Scaraceronte Ametista e Avorio",
+      "pt": "Vulkórnio Ametista e Marfim",
+      "es": "Vueloceronte Amatista y Marfil"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/282.png"
+  },
+  {
+    "mountDofusID": "277",
+    "name": {
+      "en": "Amethyst and Orchid Rhineetle",
+      "fr": "Volkorne Améthyste et Orchidée",
+      "it": "Scaraceronte Ametista e Orchidea",
+      "pt": "Vulkórnio Ametista e Orquídea",
+      "es": "Vueloceronte Amatista y Orquídeo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/277.png"
+  },
+  {
+    "mountDofusID": "284",
+    "name": {
+      "en": "Amethyst and Plum Rhineetle",
+      "fr": "Volkorne Améthyste et Prune",
+      "it": "Scaraceronte Ametista e Prugna",
+      "pt": "Vulkórnio Ametista e Ameixa",
+      "es": "Vueloceronte Amatista y Ciruela"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/284.png"
+  },
+  {
+    "mountDofusID": "283",
+    "name": {
+      "en": "Amethyst and Turquoise Rhineetle",
+      "fr": "Volkorne Améthyste et Turquoise",
+      "it": "Scaraceronte Ametista e Turchese",
+      "pt": "Vulkórnio Ametista e Turquesa",
+      "es": "Vueloceronte Amatista y Turquesa"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/283.png"
+  },
+  {
+    "mountDofusID": "190",
+    "name": {
+      "en": "Amethyst Rhineetle",
+      "fr": "Volkorne Améthyste",
+      "it": "Scaraceronte Ametista",
+      "pt": "Vulkórnio Ametista",
+      "es": "Vueloceronte Amatista"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 12
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/190.png"
+  },
+  {
+    "mountDofusID": "193",
+    "name": {
+      "en": "Crimson and Ebony Rhineetle",
+      "fr": "Volkorne Pourpre et Ebène",
+      "it": "Scaraceronte Porpora ed Ebano",
+      "pt": "Vulkórnio Púrpura e Ébano",
+      "es": "Vueloceronte Púrpura y Ébano"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/193.png"
+  },
+  {
+    "mountDofusID": "192",
+    "name": {
+      "en": "Crimson and Indigo Rhineetle",
+      "fr": "Volkorne Pourpre et Indigo",
+      "it": "Scaraceronte Porpora e Indaco",
+      "pt": "Vulkórnio Púrpura e Índigo",
+      "es": "Vueloceronte Púrpura e Índigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/192.png"
+  },
+  {
+    "mountDofusID": "191",
+    "name": {
+      "en": "Crimson and Orchid Rhineetle",
+      "fr": "Volkorne Pourpre et Orchidée",
+      "it": "Scaraceronte Porpora e Orchidea",
+      "pt": "Vulkórnio Púrpura e Orquídea",
+      "es": "Vueloceronte Púrpura y Orquídeo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/191.png"
+  },
+  {
+    "mountDofusID": "178",
+    "name": {
+      "en": "Crimson Rhineetle",
+      "fr": "Volkorne Pourpre",
+      "it": "Scaraceronte Porpora",
+      "pt": "Vulkórnio Púrpura",
+      "es": "Vueloceronte Púrpura"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/178.png"
+  },
+  {
+    "mountDofusID": "177",
+    "name": {
+      "en": "Ebony Rhineetle",
+      "fr": "Volkorne Ebène",
+      "it": "Scaraceronte Ebano",
+      "pt": "Vulkórnio Ébano",
+      "es": "Vueloceronte Ébano"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/177.png"
+  },
+  {
+    "mountDofusID": "230",
+    "name": {
+      "en": "Emerald and Almond Rhineetle",
+      "fr": "Volkorne Emeraude et Amande",
+      "it": "Scaraceronte Smeraldo e Mandorla",
+      "pt": "Vulkórnio Esmeralda e Amêndoa",
+      "es": "Vueloceronte Esmeralda y Almendrado"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/230.png"
+  },
+  {
+    "mountDofusID": "226",
+    "name": {
+      "en": "Emerald and Crimson Rhineetle",
+      "fr": "Volkorne Emeraude et Pourpre",
+      "it": "Scaraceronte Smeraldo e Porpora",
+      "pt": "Vulkórnio Esmeralda e Púrpura",
+      "es": "Vueloceronte Esmeralda y Púrpura"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/226.png"
+  },
+  {
+    "mountDofusID": "229",
+    "name": {
+      "en": "Emerald and Ebony Rhineetle",
+      "fr": "Volkorne Emeraude et Ebène",
+      "it": "Scaraceronte Smeraldo ed Ebano",
+      "pt": "Vulkórnio Esmeralda e Ébano",
+      "es": "Vueloceronte Esmeralda y Ébano"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/229.png"
+  },
+  {
+    "mountDofusID": "231",
+    "name": {
+      "en": "Emerald and Ginger Rhineetle",
+      "fr": "Volkorne Emeraude et Roux",
+      "it": "Scaraceronte Smeraldo e Rosso",
+      "pt": "Vulkórnio Esmeralda e Escarlate",
+      "es": "Vueloceronte Esmeralda y Pelirrojo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/231.png"
+  },
+  {
+    "mountDofusID": "228",
+    "name": {
+      "en": "Emerald and Indigo Rhineetle",
+      "fr": "Volkorne Emeraude et Indigo",
+      "it": "Scaraceronte Smeraldo e Indaco",
+      "pt": "Vulkórnio Esmeralda e Índigo",
+      "es": "Vueloceronte Esmeralda e Índigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/228.png"
+  },
+  {
+    "mountDofusID": "233",
+    "name": {
+      "en": "Emerald and Ivory Rhineetle",
+      "fr": "Volkorne Emeraude et Ivoire",
+      "it": "Scaraceronte Smeraldo e Avorio",
+      "pt": "Vulkórnio Esmeralda e Marfim",
+      "es": "Vueloceronte Esmeralda y Marfil"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/233.png"
+  },
+  {
+    "mountDofusID": "227",
+    "name": {
+      "en": "Emerald and Orchid Rhineetle",
+      "fr": "Volkorne Emeraude et Orchidée",
+      "it": "Scaraceronte Smeraldo e Orchidea",
+      "pt": "Vulkórnio Esmeralda e Orquídea",
+      "es": "Vueloceronte Esmeralda y Orquídeo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/227.png"
+  },
+  {
+    "mountDofusID": "234",
+    "name": {
+      "en": "Emerald and Turquoise Rhineetle",
+      "fr": "Volkorne Emeraude et Turquoise",
+      "it": "Scaraceronte Smeraldo e Turchese",
+      "pt": "Vulkórnio Esmeralda e Turquesa",
+      "es": "Vueloceronte Esmeralda y Turquesa"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/234.png"
+  },
+  {
+    "mountDofusID": "185",
+    "name": {
+      "en": "Emerald Rhineetle",
+      "fr": "Volkorne Emeraude",
+      "it": "Scaraceronte Smeraldo",
+      "pt": "Vulkórnio Esmeralda",
+      "es": "Vueloceronte Esmeralda"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 7
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/185.png"
+  },
+  {
+    "mountDofusID": "204",
+    "name": {
+      "en": "Ginger and Crimson Rhineetle",
+      "fr": "Volkorne Roux et Pourpre",
+      "it": "Scaraceronte Rosso e Porpora",
+      "pt": "Vulkórnio Escarlate e Púrpura",
+      "es": "Vueloceronte Escarlata y Púrpura"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/204.png"
+  },
+  {
+    "mountDofusID": "207",
+    "name": {
+      "en": "Ginger and Ebony Rhineetle",
+      "fr": "Volkorne Roux et Ebène",
+      "it": "Scaraceronte Rosso ed Ebano",
+      "pt": "Vulkórnio Escarlate e Ébano",
+      "es": "Vueloceronte Escarlata y Ébano"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/207.png"
+  },
+  {
+    "mountDofusID": "206",
+    "name": {
+      "en": "Ginger and Indigo Rhineetle",
+      "fr": "Volkorne Roux et Indigo",
+      "it": "Scaraceronte Rosso e Indaco",
+      "pt": "Vulkórnio Escarlate e Índigo",
+      "es": "Vueloceronte Escarlata e Índigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/206.png"
+  },
+  {
+    "mountDofusID": "208",
+    "name": {
+      "en": "Ginger and Ivory Rhineetle",
+      "fr": "Volkorne Roux et Ivoire",
+      "it": "Scaraceronte Rosso e Avorio",
+      "pt": "Vulkórnio Escarlate e Marfim",
+      "es": "Vueloceronte Escarlata y Marfil"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/208.png"
+  },
+  {
+    "mountDofusID": "205",
+    "name": {
+      "en": "Ginger and Orchid Rhineetle",
+      "fr": "Volkorne Roux et Orchidée",
+      "it": "Scaraceronte Rosso e Orchidea",
+      "pt": "Vulkórnio Escarlate e Orquídea",
+      "es": "Vueloceronte Escarlata y Orquídeo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/205.png"
+  },
+  {
+    "mountDofusID": "209",
+    "name": {
+      "en": "Ginger and Turquoise Rhineetle",
+      "fr": "Volkorne Roux et Turquoise",
+      "it": "Scaraceronte Rosso e Turchese",
+      "pt": "Vulkórnio Escarlate e Turquesa",
+      "es": "Vueloceronte Escarlata y Turquesa"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/209.png"
+  },
+  {
+    "mountDofusID": "180",
+    "name": {
+      "en": "Ginger Rhineetle",
+      "fr": "Volkorne Roux",
+      "it": "Scaraceronte Rosso",
+      "pt": "Vulkórnio Escarlate",
+      "es": "Vueloceronte Escarlata"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/180.png"
+  },
+  {
+    "mountDofusID": "292",
+    "name": {
+      "en": "Golden and Almond Rhineetle",
+      "fr": "Volkorne Doré et Amande",
+      "it": "Scaraceronte Dorato e Mandorla",
+      "pt": "Vulkórnio Dourado e Amêndoa",
+      "es": "Vueloceronte Dorado y Almendrado"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/292.png"
+  },
+  {
+    "mountDofusID": "235",
+    "name": {
+      "en": "Golden and Crimson Rhineetle",
+      "fr": "Volkorne Doré et Pourpre",
+      "it": "Scaraceronte Dorato e Porpora",
+      "pt": "Vulkórnio Dourado e Púrpura",
+      "es": "Vueloceronte Dorado y Púrpura"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/235.png"
+  },
+  {
+    "mountDofusID": "238",
+    "name": {
+      "en": "Golden and Ebony Rhineetle",
+      "fr": "Volkorne Doré et Ebène",
+      "it": "Scaraceronte Dorato ed Ebano",
+      "pt": "Vulkórnio Dourado e Ébano",
+      "es": "Vueloceronte Dorado y Ébano"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/238.png"
+  },
+  {
+    "mountDofusID": "296",
+    "name": {
+      "en": "Golden and Emerald Rhineetle",
+      "fr": "Volkorne Doré et Emeraude",
+      "it": "Scaraceronte Dorato e Smeraldo",
+      "pt": "Vulkórnio Dourado e Esmeralda",
+      "es": "Vueloceronte Dorado y Esmeralda"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/296.png"
+  },
+  {
+    "mountDofusID": "291",
+    "name": {
+      "en": "Golden and Ginger Rhineetle",
+      "fr": "Volkorne Doré et Roux",
+      "it": "Scaraceronte Dorato e Rosso",
+      "pt": "Vulkórnio Dourado e Escarlate",
+      "es": "Vueloceronte Dorado y Escarlata"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/291.png"
+  },
+  {
+    "mountDofusID": "237",
+    "name": {
+      "en": "Golden and Indigo Rhineetle",
+      "fr": "Volkorne Doré et Indigo",
+      "it": "Scaraceronte Dorato e Indaco",
+      "pt": "Vulkórnio Dourado e Índigo",
+      "es": "Vueloceronte Dorado e Índigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/237.png"
+  },
+  {
+    "mountDofusID": "293",
+    "name": {
+      "en": "Golden and Ivory Rhineetle",
+      "fr": "Volkorne Doré et Ivoire",
+      "it": "Scaraceronte Dorato e Avorio",
+      "pt": "Vulkórnio Dourado e Marfim",
+      "es": "Vueloceronte Dorado y Marfil"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/293.png"
+  },
+  {
+    "mountDofusID": "236",
+    "name": {
+      "en": "Golden and Orchid Rhineetle",
+      "fr": "Volkorne Doré et Orchidée",
+      "it": "Scaraceronte Dorato e Orchidea",
+      "pt": "Vulkórnio Dourado e Orquídea",
+      "es": "Vueloceronte Dorado y Orquídeo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/236.png"
+  },
+  {
+    "mountDofusID": "295",
+    "name": {
+      "en": "Golden and Plum Rhineetle",
+      "fr": "Volkorne Doré et Prune",
+      "it": "Scaraceronte Dorato e Prugna",
+      "pt": "Vulkórnio Dourado e Ameixa",
+      "es": "Vueloceronte Dorado y Ciruela"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/295.png"
+  },
+  {
+    "mountDofusID": "294",
+    "name": {
+      "en": "Golden and Turquoise Rhineetle",
+      "fr": "Volkorne Doré et Turquoise",
+      "it": "Scaraceronte Dorato e Turchese",
+      "pt": "Vulkórnio Dourado e Turquesa",
+      "es": "Vueloceronte Dorado y Turquesa"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/294.png"
+  },
+  {
+    "mountDofusID": "186",
+    "name": {
+      "en": "Golden Rhineetle",
+      "fr": "Volkorne Doré",
+      "it": "Scaraceronte Dorato",
+      "pt": "Vulkórnio Dourado",
+      "es": "Vueloceronte Dorado"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 150
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/186.png"
+  },
+  {
+    "mountDofusID": "196",
+    "name": {
+      "en": "Indigo and Ebony Rhineetle",
+      "fr": "Volkorne Indigo et Ebène",
+      "it": "Scaraceronte Indaco ed Ebano",
+      "pt": "Vulkórnio Índigo e Ébano",
+      "es": "Vueloceronte Índigo y Ébano"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/196.png"
+  },
+  {
+    "mountDofusID": "176",
+    "name": {
+      "en": "Indigo Rhineetle",
+      "fr": "Volkorne Indigo",
+      "it": "Scaraceronte Indaco",
+      "pt": "Vulkórnio Índigo",
+      "es": "Vueloceronte Índigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/176.png"
+  },
+  {
+    "mountDofusID": "210",
+    "name": {
+      "en": "Ivory and Crimson Rhineetle",
+      "fr": "Volkorne Ivoire et Pourpre",
+      "it": "Scaraceronte Avorio e Porpora",
+      "pt": "Vulkórnio Marfim e Púrpura",
+      "es": "Vueloceronte Marfil y Púrpura"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/210.png"
+  },
+  {
+    "mountDofusID": "213",
+    "name": {
+      "en": "Ivory and Ebony Rhineetle",
+      "fr": "Volkorne Ivoire et Ebène",
+      "it": "Scaraceronte Avorio ed Ebano",
+      "pt": "Vulkórnio Marfim e Ébano",
+      "es": "Vueloceronte Marfil y Ébano"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/213.png"
+  },
+  {
+    "mountDofusID": "212",
+    "name": {
+      "en": "Ivory and Indigo Rhineetle",
+      "fr": "Volkorne Ivoire et Indigo",
+      "it": "Scaraceronte Avorio e Indaco",
+      "pt": "Vulkórnio Marfim e Índigo",
+      "es": "Vueloceronte Marfil e Índigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/212.png"
+  },
+  {
+    "mountDofusID": "211",
+    "name": {
+      "en": "Ivory and Orchid Rhineetle",
+      "fr": "Volkorne Ivoire et Orchidée",
+      "it": "Scaraceronte Avorio e Orchidea",
+      "pt": "Vulkórnio Marfim e Orquídea",
+      "es": "Vueloceronte Marfil y Orquídeo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/211.png"
+  },
+  {
+    "mountDofusID": "214",
+    "name": {
+      "en": "Ivory and Turquoise Rhineetle",
+      "fr": "Volkorne Ivoire et Turquoise",
+      "it": "Scaraceronte Avorio e Turchese",
+      "pt": "Vulkórnio Marfim e Turquesa",
+      "es": "Vueloceronte Marfil y Turquesa"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/214.png"
+  },
+  {
+    "mountDofusID": "182",
+    "name": {
+      "en": "Ivory Rhineetle",
+      "fr": "Volkorne Ivoire",
+      "it": "Scaraceronte Avorio",
+      "pt": "Vulkórnio Marfim",
+      "es": "Vueloceronte Marfil"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 30
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/182.png"
+  },
+  {
+    "mountDofusID": "243",
+    "name": {
+      "en": "Jade and Almond Rhineetle",
+      "fr": "Volkorne Jade et Amande",
+      "it": "Scaraceronte Giada e Mandorla",
+      "pt": "Vulkórnio Jade e Amêndoa",
+      "es": "Vueloceronte Jade y Almendrado"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/243.png"
+  },
+  {
+    "mountDofusID": "252",
+    "name": {
+      "en": "Jade and Amethyst Rhineetle",
+      "fr": "Volkorne Jade et Améthyste",
+      "it": "Scaraceronte Giada e Ametista",
+      "pt": "Vulkórnio Jade e Ametista",
+      "es": "Vueloceronte Jade y Amatista"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/252.png"
+  },
+  {
+    "mountDofusID": "239",
+    "name": {
+      "en": "Jade and Crimson Rhineetle",
+      "fr": "Volkorne Jade et Pourpre",
+      "it": "Scaraceronte Giada e Porpora",
+      "pt": "Vulkórnio Jade e Púrpura",
+      "es": "Vueloceronte Jade y Púrpura"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/239.png"
+  },
+  {
+    "mountDofusID": "242",
+    "name": {
+      "en": "Jade and Ebony Rhineetle",
+      "fr": "Volkorne Jade et Ebène",
+      "it": "Scaraceronte Giada ed Ebano",
+      "pt": "Vulkórnio Jade e Ébano",
+      "es": "Vueloceronte Jade y Ébano"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/242.png"
+  },
+  {
+    "mountDofusID": "248",
+    "name": {
+      "en": "Jade and Emerald Rhineetle",
+      "fr": "Volkorne Jade et Emeraude",
+      "it": "Scaraceronte Giada e Smeraldo",
+      "pt": "Vulkórnio Jade e Esmeralda",
+      "es": "Vueloceronte Jade y Esmeralda"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/248.png"
+  },
+  {
+    "mountDofusID": "244",
+    "name": {
+      "en": "Jade and Ginger Rhineetle",
+      "fr": "Volkorne Jade et Roux",
+      "it": "Scaraceronte Giada e Rosso",
+      "pt": "Vulkórnio Jade e Escarlate",
+      "es": "Vueloceronte Jade y Escarlata"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/244.png"
+  },
+  {
+    "mountDofusID": "249",
+    "name": {
+      "en": "Jade and Golden Rhineetle",
+      "fr": "Volkorne Jade et Doré",
+      "it": "Scaraceronte Giada e Dorato",
+      "pt": "Vulkórnio Jade e Dourado",
+      "es": "Vueloceronte Jade y Dorado"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/249.png"
+  },
+  {
+    "mountDofusID": "241",
+    "name": {
+      "en": "Jade and Indigo Rhineetle",
+      "fr": "Volkorne Jade et Indigo",
+      "it": "Scaraceronte Giada e Indaco",
+      "pt": "Vulkórnio Jade e Índigo",
+      "es": "Vueloceronte Jade e Índigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/241.png"
+  },
+  {
+    "mountDofusID": "245",
+    "name": {
+      "en": "Jade and Ivory Rhineetle",
+      "fr": "Volkorne Jade et Ivoire",
+      "it": "Scaraceronte Giada e Avorio",
+      "pt": "Vulkórnio Jade e Marfim",
+      "es": "Vueloceronte Jade y Marfil"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/245.png"
+  },
+  {
+    "mountDofusID": "240",
+    "name": {
+      "en": "Jade and Orchid Rhineetle",
+      "fr": "Volkorne Jade et Orchidée",
+      "it": "Scaraceronte Giada e Orchidea",
+      "pt": "Vulkórnio Jade e Orquídea",
+      "es": "Vueloceronte Jade y Orquídeo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/240.png"
+  },
+  {
+    "mountDofusID": "247",
+    "name": {
+      "en": "Jade and Plum Rhineetle",
+      "fr": "Volkorne Jade et Prune",
+      "it": "Scaraceronte Giada e Prugna",
+      "pt": "Vulkórnio Jade e Ameixa",
+      "es": "Vueloceronte Jade y Ciruela"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/247.png"
+  },
+  {
+    "mountDofusID": "250",
+    "name": {
+      "en": "Jade and Ruby Rhineetle",
+      "fr": "Volkorne Jade et Rubis",
+      "it": "Scaraceronte Giada e Rubino",
+      "pt": "Vulkórnio Jade e Rubi",
+      "es": "Vueloceronte Jade y Rubí"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/250.png"
+  },
+  {
+    "mountDofusID": "251",
+    "name": {
+      "en": "Jade and Sapphire Rhineetle",
+      "fr": "Volkorne Jade et Saphir",
+      "it": "Scaraceronte Giada e Zaffiro",
+      "pt": "Vulkórnio Jade e Safira",
+      "es": "Vueloceronte Jade y Zafiro"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/251.png"
+  },
+  {
+    "mountDofusID": "246",
+    "name": {
+      "en": "Jade and Turquoise Rhineetle",
+      "fr": "Volkorne Jade et Turquoise",
+      "it": "Scaraceronte Giada e Turchese",
+      "pt": "Vulkórnio Jade e Turquesa",
+      "es": "Vueloceronte Jade y Turquesa"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/246.png"
+  },
+  {
+    "mountDofusID": "187",
+    "name": {
+      "en": "Jade Rhineetle",
+      "fr": "Volkorne Jade",
+      "it": "Scaraceronte Giada",
+      "pt": "Vulkórnio Jade",
+      "es": "Vueloceronte Jade"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Earth Resistance",
+        "minStat": null,
+        "maxStat": 12
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/187.png"
+  },
+  {
+    "mountDofusID": "195",
+    "name": {
+      "en": "Orchid and Ebony Rhineetle",
+      "fr": "Volkorne Orchidée et Ebène",
+      "it": "Scaraceronte Orchidea ed Ebano",
+      "pt": "Vulkórnio Orquídea e Ébano",
+      "es": "Vueloceronte Orquídeo y Ébano"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/195.png"
+  },
+  {
+    "mountDofusID": "194",
+    "name": {
+      "en": "Orchid and Indigo Rhineetle",
+      "fr": "Volkorne Orchidée et Indigo",
+      "it": "Scaraceronte Orchidea e Indaco",
+      "pt": "Vulkórnio Orquídea e Índigo",
+      "es": "Vueloceronte Orquídeo y Índigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/194.png"
+  },
+  {
+    "mountDofusID": "179",
+    "name": {
+      "en": "Orchid Rhineetle",
+      "fr": "Volkorne Orchidée",
+      "it": "Scaraceronte Orchidea",
+      "pt": "Vulkórnio Orquídea",
+      "es": "Vueloceronte Orquídeo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 70
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/179.png"
+  },
+  {
+    "mountDofusID": "223",
+    "name": {
+      "en": "Plum and Almond Rhineetle",
+      "fr": "Volkorne Prune et Amande",
+      "it": "Scaraceronte Prugna e Mandorla",
+      "pt": "Vulkórnio Ameixa e Amêndoa",
+      "es": "Vueloceronte Ciruela y Almendrado"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/223.png"
+  },
+  {
+    "mountDofusID": "219",
+    "name": {
+      "en": "Plum and Crimson Rhineetle",
+      "fr": "Volkorne Prune et Pourpre",
+      "it": "Scaraceronte Prugna e Porpora",
+      "pt": "Vulkórnio Ameixa e Púrpura",
+      "es": "Vueloceronte Ciruela y Púrpura"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/219.png"
+  },
+  {
+    "mountDofusID": "222",
+    "name": {
+      "en": "Plum and Ebony Rhineetle",
+      "fr": "Volkorne Prune et Ebène",
+      "it": "Scaraceronte Prugna ed Ebano",
+      "pt": "Vulkórnio Ameixa e Ébano",
+      "es": "Vueloceronte Ciruela y Ébano"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/222.png"
+  },
+  {
+    "mountDofusID": "225",
+    "name": {
+      "en": "Plum and Emerald Rhineetle",
+      "fr": "Volkorne Prune et Emeraude",
+      "it": "Scaraceronte Prugna e Smeraldo",
+      "pt": "Vulkórnio Ameixa e Esmeralda",
+      "es": "Vueloceronte Ciruela y Esmeralda"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/225.png"
+  },
+  {
+    "mountDofusID": "287",
+    "name": {
+      "en": "Plum and Ginger Rhineetle",
+      "fr": "Volkorne Prune et Roux",
+      "it": "Scaraceronte Prugna e Rosso",
+      "pt": "Vulkórnio Ameixa e Escarlate",
+      "es": "Vueloceronte Ciruela y Escarlata"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/287.png"
+  },
+  {
+    "mountDofusID": "221",
+    "name": {
+      "en": "Plum and Indigo Rhineetle",
+      "fr": "Volkorne Prune et Indigo",
+      "it": "Scaraceronte Prugna e Indaco",
+      "pt": "Vulkórnio Ameixa e Índigo",
+      "es": "Vueloceronte Ciruela e Índigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/221.png"
+  },
+  {
+    "mountDofusID": "288",
+    "name": {
+      "en": "Plum and Ivory Rhineetle",
+      "fr": "Volkorne Prune et Ivoire",
+      "it": "Scaraceronte Prugna e Avorio",
+      "pt": "Vulkórnio Ameixa e Marfim",
+      "es": "Vueloceronte Ciruela y Marfil"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/288.png"
+  },
+  {
+    "mountDofusID": "220",
+    "name": {
+      "en": "Plum and Orchid Rhineetle",
+      "fr": "Volkorne Prune et Orchidée",
+      "it": "Scaraceronte Prugna e Orchidea",
+      "pt": "Vulkórnio Ameixa e Orquídea",
+      "es": "Vueloceronte Ciruela y Orquídeo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/220.png"
+  },
+  {
+    "mountDofusID": "224",
+    "name": {
+      "en": "Plum and Turquoise Rhineetle",
+      "fr": "Volkorne Prune et Turquoise",
+      "it": "Scaraceronte Prugna e Turchese",
+      "pt": "Vulkórnio Ameixa e Turquesa",
+      "es": "Vueloceronte Ciruela y Turquesa"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/224.png"
+  },
+  {
+    "mountDofusID": "184",
+    "name": {
+      "en": "Plum Rhineetle",
+      "fr": "Volkorne Prune",
+      "it": "Scaraceronte Prugna",
+      "pt": "Vulkórnio Ameixa",
+      "es": "Vueloceronte Ciruela"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/184.png"
+  },
+  {
+    "mountDofusID": "257",
+    "name": {
+      "en": "Ruby and Almond Rhineetle",
+      "fr": "Volkorne Rubis et Amande",
+      "it": "Scaraceronte Rubino e Mandorla",
+      "pt": "Vulkórnio Rubi e Amêndoa",
+      "es": "Vueloceronte Rubí y Almendrado"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/257.png"
+  },
+  {
+    "mountDofusID": "290",
+    "name": {
+      "en": "Ruby and Amethyst Rhineetle",
+      "fr": "Volkorne Rubis et Améthyste",
+      "it": "Scaraceronte Rubino e Ametista",
+      "pt": "Vulkórnio Rubi e Ametista",
+      "es": "Vueloceronte Rubí y Amatista"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/290.png"
+  },
+  {
+    "mountDofusID": "253",
+    "name": {
+      "en": "Ruby and Crimson Rhineetle",
+      "fr": "Volkorne Rubis et Pourpre",
+      "it": "Scaraceronte Rubino e Porpora",
+      "pt": "Vulkórnio Rubi e Púrpura",
+      "es": "Vueloceronte Rubí y Púrpura"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/253.png"
+  },
+  {
+    "mountDofusID": "256",
+    "name": {
+      "en": "Ruby and Ebony Rhineetle",
+      "fr": "Volkorne Rubis et Ebène",
+      "it": "Scaraceronte Rubino ed Ebano",
+      "pt": "Vulkórnio Rubi e Ébano",
+      "es": "Vueloceronte Rubí y Ébano"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/256.png"
+  },
+  {
+    "mountDofusID": "262",
+    "name": {
+      "en": "Ruby and Emerald Rhineetle",
+      "fr": "Volkorne Rubis et Emeraude",
+      "it": "Scaraceronte Rubino e Smeraldo",
+      "pt": "Vulkórnio Rubi e Esmeralda",
+      "es": "Vueloceronte Rubí y Esmeralda"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/262.png"
+  },
+  {
+    "mountDofusID": "258",
+    "name": {
+      "en": "Ruby and Ginger Rhineetle",
+      "fr": "Volkorne Rubis et Roux",
+      "it": "Scaraceronte Rubino e Rosso",
+      "pt": "Vulkórnio Rubi e Escarlate",
+      "es": "Vueloceronte Rubí y Escarlata"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/258.png"
+  },
+  {
+    "mountDofusID": "263",
+    "name": {
+      "en": "Ruby and Golden Rhineetle",
+      "fr": "Volkorne Rubis et Doré",
+      "it": "Scaraceronte Rubino e Dorato",
+      "pt": "Vulkórnio Rubi e Dourado",
+      "es": "Vueloceronte Rubí y Dorado"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/263.png"
+  },
+  {
+    "mountDofusID": "255",
+    "name": {
+      "en": "Ruby and Indigo Rhineetle",
+      "fr": "Volkorne Rubis et Indigo",
+      "it": "Scaraceronte Rubino e Indaco",
+      "pt": "Vulkórnio Rubi e Índigo",
+      "es": "Vueloceronte Rubí e Índigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/255.png"
+  },
+  {
+    "mountDofusID": "259",
+    "name": {
+      "en": "Ruby and Ivory Rhineetle",
+      "fr": "Volkorne Rubis et Ivoire",
+      "it": "Scaraceronte Rubino e Avorio",
+      "pt": "Vulkórnio Rubi e Marfim",
+      "es": "Vueloceronte Rubí y Marfil"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/259.png"
+  },
+  {
+    "mountDofusID": "254",
+    "name": {
+      "en": "Ruby and Orchid Rhineetle",
+      "fr": "Volkorne Rubis et Orchidée",
+      "it": "Scaraceronte Rubino e Orchidea",
+      "pt": "Vulkórnio Rubi e Orquídea",
+      "es": "Vueloceronte Rubí y Orquídeo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/254.png"
+  },
+  {
+    "mountDofusID": "261",
+    "name": {
+      "en": "Ruby and Plum Rhineetle",
+      "fr": "Volkorne Rubis et Prune",
+      "it": "Scaraceronte Rubino e Prugna",
+      "pt": "Vulkórnio Rubi e Ameixa",
+      "es": "Vueloceronte Rubí y Ciruela"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/261.png"
+  },
+  {
+    "mountDofusID": "289",
+    "name": {
+      "en": "Ruby and Sapphire Rhineetle",
+      "fr": "Volkorne Rubis et Saphir",
+      "it": "Scaraceronte Rubino e Zaffiro",
+      "pt": "Vulkórnio Rubi e Safira",
+      "es": "Vueloceronte Rubí y Zafiro"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/289.png"
+  },
+  {
+    "mountDofusID": "260",
+    "name": {
+      "en": "Ruby and Turquoise Rhineetle",
+      "fr": "Volkorne Rubis et Turquoise",
+      "it": "Scaraceronte Rubino e Turchese",
+      "pt": "Vulkórnio Rubi e Turquesa",
+      "es": "Vueloceronte Rubí y Turquesa"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/260.png"
+  },
+  {
+    "mountDofusID": "188",
+    "name": {
+      "en": "Ruby Rhineetle",
+      "fr": "Volkorne Rubis",
+      "it": "Scaraceronte Rubino",
+      "pt": "Vulkórnio Rubi",
+      "es": "Vueloceronte Rubí"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Fire Resistance",
+        "minStat": null,
+        "maxStat": 12
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/188.png"
+  },
+  {
+    "mountDofusID": "268",
+    "name": {
+      "en": "Sapphire and Almond Rhineetle",
+      "fr": "Volkorne Saphir et Amande",
+      "it": "Scaraceronte Zaffiro e Mandorla",
+      "pt": "Vulkórnio Safira e Amêndoa",
+      "es": "Vueloceronte Zafiro y Almendrado"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": 60
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/268.png"
+  },
+  {
+    "mountDofusID": "275",
+    "name": {
+      "en": "Sapphire and Amethyst Rhineetle",
+      "fr": "Volkorne Saphir et Améthyste",
+      "it": "Scaraceronte Zaffiro e Ametista",
+      "pt": "Vulkórnio Safira e Ametista",
+      "es": "Vueloceronte Zafiro y Amatista"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Air Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/275.png"
+  },
+  {
+    "mountDofusID": "264",
+    "name": {
+      "en": "Sapphire and Crimson Rhineetle",
+      "fr": "Volkorne Saphir et Pourpre",
+      "it": "Scaraceronte Zaffiro e Porpora",
+      "pt": "Vulkórnio Safira e Púrpura",
+      "es": "Vueloceronte Zafiro y Púrpura"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/264.png"
+  },
+  {
+    "mountDofusID": "269",
+    "name": {
+      "en": "Sapphire and Ginger Rhineetle",
+      "fr": "Volkorne Saphir et Roux",
+      "it": "Scaraceronte Zaffiro e Rosso",
+      "pt": "Vulkórnio Safira e Escarlate",
+      "es": "Vueloceronte Zafiro y Escarlata"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Pushback Damage",
+        "minStat": null,
+        "maxStat": 40
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/269.png"
+  },
+  {
+    "mountDofusID": "274",
+    "name": {
+      "en": "Sapphire and Golden Rhineetle",
+      "fr": "Volkorne Saphir et Doré",
+      "it": "Scaraceronte Zaffiro e Dorato",
+      "pt": "Vulkórnio Safira e Dourado",
+      "es": "Vueloceronte Zafiro y Dorado"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 100
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/274.png"
+  },
+  {
+    "mountDofusID": "266",
+    "name": {
+      "en": "Sapphire and Indigo Rhineetle",
+      "fr": "Volkorne Saphir et Indigo",
+      "it": "Scaraceronte Zaffiro e Indaco",
+      "pt": "Vulkórnio Safira e Índigo",
+      "es": "Vueloceronte Zafiro e Índigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/266.png"
+  },
+  {
+    "mountDofusID": "270",
+    "name": {
+      "en": "Sapphire and Ivory Rhineetle",
+      "fr": "Volkorne Saphir et Ivoire",
+      "it": "Scaraceronte Zaffiro e Avorio",
+      "pt": "Vulkórnio Safira e Marfim",
+      "es": "Vueloceronte Zafiro y Marfil"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "AP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/270.png"
+  },
+  {
+    "mountDofusID": "272",
+    "name": {
+      "en": "Sapphire and Plum Rhineetle",
+      "fr": "Volkorne Saphir et Prune",
+      "it": "Scaraceronte Zaffiro e Prugna",
+      "pt": "Vulkórnio Safira e Ameixa",
+      "es": "Vueloceronte Zafiro y Ciruela"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": 35
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/272.png"
+  },
+  {
+    "mountDofusID": "271",
+    "name": {
+      "en": "Sapphire and Turquoise Rhineetle",
+      "fr": "Volkorne Saphir et Turquoise",
+      "it": "Scaraceronte Zaffiro e Turchese",
+      "pt": "Vulkórnio Safira e Turquesa",
+      "es": "Vueloceronte Zafiro y Turquesa"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/271.png"
+  },
+  {
+    "mountDofusID": "189",
+    "name": {
+      "en": "Sapphire Rhineetle",
+      "fr": "Volkorne Saphir",
+      "it": "Scaraceronte Zaffiro",
+      "pt": "Vulkórnio Safira",
+      "es": "Vueloceronte Zafiro"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "% Water Resistance",
+        "minStat": null,
+        "maxStat": 12
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/189.png"
+  },
+  {
+    "mountDofusID": "215",
+    "name": {
+      "en": "Turquoise and Crimson Rhineetle",
+      "fr": "Volkorne Turquoise et Pourpre",
+      "it": "Scaraceronte Turchese e Porpora",
+      "pt": "Vulkórnio Turquesa e Púrpura",
+      "es": "Vueloceronte Turquesa y Púrpura"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Strength",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/215.png"
+  },
+  {
+    "mountDofusID": "218",
+    "name": {
+      "en": "Turquoise and Ebony Rhineetle",
+      "fr": "Volkorne Turquoise et Ebène",
+      "it": "Scaraceronte Turchese ed Ebano",
+      "pt": "Vulkórnio Turquesa e Ébano",
+      "es": "Vueloceronte Turquesa y Ébano"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Agility",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/218.png"
+  },
+  {
+    "mountDofusID": "217",
+    "name": {
+      "en": "Turquoise and Indigo Rhineetle",
+      "fr": "Volkorne Turquoise et Indigo",
+      "it": "Scaraceronte Turchese e Indaco",
+      "pt": "Vulkórnio Turquesa e Índigo",
+      "es": "Vueloceronte Turquesa e Índigo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Chance",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/217.png"
+  },
+  {
+    "mountDofusID": "216",
+    "name": {
+      "en": "Turquoise and Orchid Rhineetle",
+      "fr": "Volkorne Turquoise et Orchidée",
+      "it": "Scaraceronte Turchese e Orchidea",
+      "pt": "Vulkórnio Turquesa e Orquídea",
+      "es": "Vueloceronte Turquesa y Orquídeo"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 20
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": null,
+        "maxStat": 50
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/216.png"
+  },
+  {
+    "mountDofusID": "183",
+    "name": {
+      "en": "Turquoise Rhineetle",
+      "fr": "Volkorne Turquoise",
+      "it": "Scaraceronte Turchese",
+      "pt": "Vulkórnio Turquesa",
+      "es": "Vueloceronte Turquesa"
+    },
+    "itemType": "Mount",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "MP Reduction",
+        "minStat": null,
+        "maxStat": 30
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "imageUrl": "item/183.png"
   }
 ]
