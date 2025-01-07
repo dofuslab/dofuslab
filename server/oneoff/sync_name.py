@@ -12,6 +12,17 @@ app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 allowed_file_names = item_file_names + ["sets", "spells"]
 
+"""
+*********
+
+[DEPRECATED]:
+This script is no longer necessary in the project. It was used to update the database 
+with new translations from the data files to enable other scripts to work. The script was 
+replaced by the sync scripts for items, sets and class, which can now handle name changes automatically.
+
+*********
+"""
+
 
 def update_name(db_session, name_to_record_map, file_name, old_name, new_name):
     translations = None
@@ -62,7 +73,9 @@ def update_name(db_session, name_to_record_map, file_name, old_name, new_name):
             for locale in name_to_record_map[new_name]["name"]:
                 if record["name"].get(locale):
                     item_translation = ModelItemTranslation(
-                        item_id=item.uuid, locale=locale, name=record["name"][locale],
+                        item_id=item.uuid,
+                        locale=locale,
+                        name=record["name"][locale],
                     )
                     db_session.add(item_translation)
         elif file_name == "sets":
@@ -72,7 +85,9 @@ def update_name(db_session, name_to_record_map, file_name, old_name, new_name):
             for locale in name_to_record_map[new_name]["name"]:
                 if record["name"].get(locale):
                     set_translation = ModelSetTranslation(
-                        set_id=set.uuid, locale=locale, name=record["name"][locale],
+                        set_id=set.uuid,
+                        locale=locale,
+                        name=record["name"][locale],
                     )
                     db_session.add(set_translation)
         elif file_name == "spells":
@@ -158,7 +173,7 @@ def sync_name():
                         name_to_record_map = get_name_to_record_map(
                             item_or_spell_file_name
                         )
-                        for (old_name, new_name) in translations.items():
+                        for old_name, new_name in translations.items():
                             update_name(
                                 db_session,
                                 name_to_record_map,
