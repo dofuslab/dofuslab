@@ -25,9 +25,22 @@ from flask_babel import get_locale
 
 
 def load_item_types_from_items(item_ids):
-    return Promise.resolve([
-        item.item_type for item in db.session.query(ModelItem).join(ModelItem.item_type).join(ModelItemType.eligible_item_slots).filter(ModelItem.uuid.in_(item_ids)).options(joinedload(ModelItem.item_type).options(joinedload(ModelItemType.eligible_item_slots))).all()
-    ])
+    return Promise.resolve(
+        [
+            item.item_type
+            for item in db.session.query(ModelItem)
+            .join(ModelItem.item_type)
+            .join(ModelItemType.eligible_item_slots)
+            .filter(ModelItem.uuid.in_(item_ids))
+            .options(
+                joinedload(ModelItem.item_type).options(
+                    joinedload(ModelItemType.eligible_item_slots)
+                )
+            )
+            .all()
+        ]
+    )
+
 
 class ItemToItemTypeLoader(DataLoader):
     def batch_load_fn(self, item_ids):
@@ -36,15 +49,19 @@ class ItemToItemTypeLoader(DataLoader):
 
 def load_item_types_from_item_slots(item_slot_ids):
     item_types_by_slot_id = defaultdict(list)
-    for item_type in db.session.query(ModelItemType).join(ModelItemType.eligible_item_slots).filter(
-        ModelItemSlot.uuid.in_(item_slot_ids)
-    ).options(joinedload(ModelItemType.eligible_item_slots)):
+    for item_type in (
+        db.session.query(ModelItemType)
+        .join(ModelItemType.eligible_item_slots)
+        .filter(ModelItemSlot.uuid.in_(item_slot_ids))
+        .options(joinedload(ModelItemType.eligible_item_slots))
+    ):
         for slot in item_type.eligible_item_slots:
             if slot.uuid in item_slot_ids:
                 item_types_by_slot_id[slot.uuid].append(item_type)
     return Promise.resolve(
         [item_types_by_slot_id.get(item_slot_id, []) for item_slot_id in item_slot_ids]
     )
+
 
 class ItemSlotToItemTypeLoader(DataLoader):
     def batch_load_fn(self, item_slot_ids):
@@ -53,24 +70,21 @@ class ItemSlotToItemTypeLoader(DataLoader):
 
 def load_all_class_translations(class_ids):
     translation_by_class_id = defaultdict(list)
-    for translation in (
-        db.session.query(ModelClassTranslation)
-        .filter(ModelClassTranslation.class_id.in_(class_ids))
+    for translation in db.session.query(ModelClassTranslation).filter(
+        ModelClassTranslation.class_id.in_(class_ids)
     ):
         translation_by_class_id[translation.class_id].append(translation.name)
     return Promise.resolve(
-        [
-            translation_by_class_id.get(class_id, None)
-            for class_id in class_ids
-        ]
+        [translation_by_class_id.get(class_id, None) for class_id in class_ids]
     )
+
 
 class AllClassTranslationLoader(DataLoader):
     def batch_load_fn(self, class_ids):
         return load_all_class_translations(class_ids)
 
 
-def load_class_translations(class_ids, locale = None):
+def load_class_translations(class_ids, locale=None):
     translation_by_class_id = {}
     for translation in (
         db.session.query(ModelClassTranslation)
@@ -79,22 +93,21 @@ def load_class_translations(class_ids, locale = None):
     ):
         translation_by_class_id[translation.class_id] = translation.name
     return Promise.resolve(
-        [
-            translation_by_class_id.get(class_id, None)
-            for class_id in class_ids
-        ]
+        [translation_by_class_id.get(class_id, None) for class_id in class_ids]
     )
+
 
 class EnClassTranslationLoader(DataLoader):
     def batch_load_fn(self, item_slot_ids):
         return load_class_translations(item_slot_ids, "en")
+
 
 class ClassTranslationLoader(DataLoader):
     def batch_load_fn(self, item_slot_ids):
         return load_class_translations(item_slot_ids)
 
 
-def load_item_slot_translations(item_slot_ids, locale = None):
+def load_item_slot_translations(item_slot_ids, locale=None):
     locale = str(get_locale())
     translation_by_slot_id = defaultdict(list)
     for translation in (
@@ -110,16 +123,18 @@ def load_item_slot_translations(item_slot_ids, locale = None):
         ]
     )
 
+
 class EnItemSlotTranslationLoader(DataLoader):
     def batch_load_fn(self, item_slot_ids):
         return load_item_slot_translations(item_slot_ids, "en")
+
 
 class ItemSlotTranslationLoader(DataLoader):
     def batch_load_fn(self, item_slot_ids):
         return load_item_slot_translations(item_slot_ids)
 
 
-def load_item_type_translations(item_type_ids, locale = None):
+def load_item_type_translations(item_type_ids, locale=None):
     translation_by_stat_id = defaultdict(list)
     for translation in (
         db.session.query(ModelItemTypeTranslation)
@@ -133,6 +148,7 @@ def load_item_type_translations(item_type_ids, locale = None):
             for item_type_id in item_type_ids
         ]
     )
+
 
 class EnItemTypeTranslationLoader(DataLoader):
     def batch_load_fn(self, item_type_ids):
