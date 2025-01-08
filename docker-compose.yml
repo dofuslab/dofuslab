@@ -37,6 +37,11 @@ services:
     restart: always
     environment:
       - NODE_ENV=development
+    develop:
+      watch:
+        - action: sync
+          path: ./client
+          target: /home/dofuslab
   server:
     build: ./server/
     restart: always
@@ -47,6 +52,11 @@ services:
     #   interval: 150s
     #   timeout: 30s
     #   retries: 5
+    develop:
+      watch:
+        - action: sync
+          path: ./server
+          target: /home/dofuslab
   nginx:
   # https://hub.docker.com/_/nginx
     build: ./nginx/

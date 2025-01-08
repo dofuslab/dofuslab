@@ -2,7 +2,7 @@ FROM python:3.8-bullseye
 # note: this is based on bullseye (a debian based image) because alpine can take a long time to build python requirements: https://stackoverflow.com/a/49057289
 
 # Default value; will be overridden by build-args, if passed
-ARG flask_env=production
+ARG flask_env=development
 ENV FLASK_ENV $flask_env
 
 # install packages required for installing python requirements
