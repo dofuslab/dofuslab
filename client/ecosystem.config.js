@@ -22,7 +22,7 @@ module.exports = {
 
   deploy: {
     production: {
-      key: '/home/jeremy/.ssh/dofuslab_deploy_key.pub',
+      key: '/home/jeremy/.ssh/dofuslab_deploy_key',
       user: 'jeremy',
       host: '134.209.168.215',
       ref: 'origin/master',
