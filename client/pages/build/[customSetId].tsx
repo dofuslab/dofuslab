@@ -4,12 +4,6 @@ import BuildPageComponent from 'components/common/BuildPage';
 import { GetServerSideProps, NextPage } from 'next';
 
 import { createApolloClient } from 'common/apollo';
-import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
-import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
-import CustomSetTagsQuery from 'graphql/queries/customSetTags.graphql';
-import { classes } from 'graphql/queries/__generated__/classes';
-import ClassesQuery from 'graphql/queries/classes.graphql';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
 import SessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
@@ -57,9 +51,6 @@ export const getServerSideProps: GetServerSideProps<
         query: CustomSetQuery,
         variables: { id: params?.customSetId },
       }),
-      ssrClient.query<itemSlots>({ query: ItemSlotsQuery }),
-      ssrClient.query<customSetTags>({ query: CustomSetTagsQuery }),
-      ssrClient.query<classes>({ query: ClassesQuery }),
       ssrClient.query<sessionSettings>({ query: SessionSettingsQuery }),
       ssrClient.query<currentUser>({ query: CurrentUserQuery }),
     ]);
