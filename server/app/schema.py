@@ -234,9 +234,9 @@ class Item(SQLAlchemyObjectType):
             return None
         return g.dataloaders.get("set_loader").load(self.set_id)
 
-    weapon_stat = graphene.Field(lambda: WeaponStat)
+    weapon_stats = graphene.Field(lambda: WeaponStat)
 
-    def resolve_weapon_stat(self, info):
+    def resolve_weapon_stats(self, info):
         return g.dataloaders.get("weapon_stat_loader").load(self.uuid)
 
     buffs = graphene.List(graphene.NonNull(Buff))
@@ -1540,7 +1540,9 @@ class Query(graphene.ObjectType):
             level_sq.c.level.desc(), current_locale_translations.name.asc()
         ).all()
 
-    custom_sets = relay.ConnectionField(graphene.NonNull(CustomSetConnection),)
+    custom_sets = relay.ConnectionField(
+        graphene.NonNull(CustomSetConnection),
+    )
 
     def resolve_custom_sets(self, info, **kwargs):
         return (
@@ -1692,7 +1694,8 @@ class Query(graphene.ObjectType):
             .all()
         )
         results = sorted(
-            suggested_items, key=lambda x: suggested_item_ids.index(str(x.uuid)),
+            suggested_items,
+            key=lambda x: suggested_item_ids.index(str(x.uuid)),
         )
         return results[:num_suggestions]
 
