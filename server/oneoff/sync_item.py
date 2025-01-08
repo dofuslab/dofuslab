@@ -34,7 +34,7 @@ def update_or_create_item(
     new_items_list=[],
 ):
     print("[{}]: {}".format(item_id, record["name"]["en"]))
-    if record["mountDofusID"]:
+    if "mountDofusID" in record:
         database_item = (
             db_session.query(ModelItem)
             .filter(ModelItem.dofus_db_mount_id == item_id)
