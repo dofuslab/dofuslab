@@ -127,7 +127,7 @@ Once you have Docker Desktop installed you can run the DofusLab environment by o
 
 ```bash
 $ docker compose build
-$ docker compose up -d
+$ docker compose up --watch
 ```
 
 This should result in something that looks like this, after the build completes and the containers start:
