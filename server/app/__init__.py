@@ -18,11 +18,11 @@ from rq import Queue
 from jinja2 import Environment, FileSystemLoader
 from dogpile.cache import make_region
 
-import logging
+# import logging
 
-logging.basicConfig()
-logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
-print("LOGGING")
+# logging.basicConfig()
+# logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
+# print("LOGGING")
 
 
 load_dotenv()
@@ -59,7 +59,9 @@ elif flask_env == "production":
 
 db = SQLAlchemy(app)
 CORS(
-    app, resources={r"/*": {"origins": origins}}, supports_credentials=True,
+    app,
+    resources={r"/*": {"origins": origins}},
+    supports_credentials=True,
 )
 
 from contextlib import contextmanager
