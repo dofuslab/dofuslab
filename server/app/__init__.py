@@ -18,10 +18,12 @@ from rq import Queue
 from jinja2 import Environment, FileSystemLoader
 from dogpile.cache import make_region
 
-# import logging
+import logging
 
-# logging.basicConfig()
-# logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
+logging.basicConfig()
+logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
+print("LOGGING")
+
 
 load_dotenv()
 
@@ -134,6 +136,15 @@ from app.loaders import (
     ItemBuffLoader,
     CustomSetTagAssociationLoader,
     CustomSetTagTranslationLoader,
+    ItemSlotTranslationLoader,
+    ItemTypeTranslationLoader,
+    ClassTranslationLoader,
+    ItemSlotToItemTypeLoader,
+    EnClassTranslationLoader,
+    EnItemSlotTranslationLoader,
+    EnItemTypeTranslationLoader,
+    ItemToItemTypeLoader,
+    AllClassTranslationLoader,
 )
 
 
@@ -153,6 +164,15 @@ def construct_dataloaders():
         "item_buff_loader": ItemBuffLoader(),
         "custom_set_tag_association_loader": CustomSetTagAssociationLoader(),
         "custom_set_tag_translation_loader": CustomSetTagTranslationLoader(),
+        "item_slot_translation_loader": ItemSlotTranslationLoader(),
+        "item_type_translation_loader": ItemTypeTranslationLoader(),
+        "class_translation_loader": ClassTranslationLoader(),
+        "item_slot_to_item_type_loader": ItemSlotToItemTypeLoader(),
+        "en_class_translation_loader": EnClassTranslationLoader(),
+        "en_item_slot_translation_loader": EnItemSlotTranslationLoader(),
+        "en_item_type_translation_loader": EnItemTypeTranslationLoader(),
+        "item_to_item_type_loader": ItemToItemTypeLoader(),
+        "all_class_translation_loader": AllClassTranslationLoader(),
     }
 
 

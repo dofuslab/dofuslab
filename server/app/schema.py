@@ -152,28 +152,19 @@ class ItemStat(SQLAlchemyObjectType):
 class ItemSlot(SQLAlchemyObjectType):
     # https://github.com/graphql-python/graphene/issues/110
     item_types = graphene.NonNull(graphene.List(graphene.NonNull(lambda: ItemType)))
+
+    def resolve_item_types(self, info):
+        return g.dataloaders.get("item_slot_to_item_type_loader").load(self.uuid)
+
     name = graphene.String(required=True)
 
     def resolve_name(self, info):
-        locale = str(get_locale())
-        query = db.session.query(ModelItemSlotTranslation)
-        return (
-            query.filter(ModelItemSlotTranslation.locale == locale)
-            .filter(ModelItemSlotTranslation.item_slot_id == self.uuid)
-            .one()
-            .name
-        )
+        return g.dataloaders.get("item_slot_translation_loader").load(self.uuid)
 
     en_name = graphene.String(required=True)
 
     def resolve_en_name(self, info):
-        query = db.session.query(ModelItemSlotTranslation)
-        return (
-            query.filter(ModelItemSlotTranslation.locale == "en")
-            .filter(ModelItemSlotTranslation.item_slot_id == self.uuid)
-            .one()
-            .name
-        )
+        return g.dataloaders.get("en_item_slot_translation_loader").load(self.uuid)
 
     class Meta:
         model = ModelItemSlot
@@ -186,23 +177,10 @@ class ItemType(SQLAlchemyObjectType):
     en_name = graphene.String(required=True)
 
     def resolve_name(self, info):
-        locale = str(get_locale())
-        query = db.session.query(ModelItemTypeTranslation)
-        return (
-            query.filter(ModelItemTypeTranslation.locale == locale)
-            .filter(ModelItemTypeTranslation.item_type_id == self.uuid)
-            .one()
-            .name
-        )
+        return g.dataloaders.get("item_type_translation_loader").load(self.uuid)
 
     def resolve_en_name(self, info):
-        query = db.session.query(ModelItemTypeTranslation)
-        return (
-            query.filter(ModelItemTypeTranslation.locale == "en")
-            .filter(ModelItemTypeTranslation.item_type_id == self.uuid)
-            .one()
-            .name
-        )
+        return g.dataloaders.get("en_item_type_translation_loader").load(self.uuid)
 
     class Meta:
         model = ModelItemType
@@ -239,6 +217,10 @@ class Item(SQLAlchemyObjectType):
         return g.dataloaders.get("item_stats_loader").load(self.uuid)
 
     item_type = graphene.NonNull(ItemType)
+
+    def resolve_item_type(self, info):
+        return g.dataloaders.get("item_to_item_type_loader").load(self.uuid)
+
     name = graphene.String(required=True)
 
     def resolve_name(self, info):
@@ -580,31 +562,13 @@ class Class(SQLAlchemyObjectType):
     face_image_url = graphene.String(required=True)
 
     def resolve_name(self, info):
-        locale = str(get_locale())
-        query = db.session.query(ModelClassTranslation)
-        return (
-            query.filter(ModelClassTranslation.locale == locale)
-            .filter(ModelClassTranslation.class_id == self.uuid)
-            .one()
-            .name
-        )
+        return g.dataloaders.get("class_translation_loader").load(self.uuid)
 
     def resolve_en_name(self, info):
-        return (
-            db.session.query(ModelClassTranslation)
-            .filter_by(class_id=self.uuid, locale="en")
-            .one()
-            .name
-        )
+        return g.dataloaders.get("en_class_translation_loader").load(self.uuid)
 
     def resolve_all_names(self, info):
-        query = db.session.query(ModelClassTranslation)
-        return set(
-            map(
-                lambda x: x.name,
-                query.filter(ModelClassTranslation.class_id == self.uuid).all(),
-            )
-        )
+        return g.dataloaders.get("all_class_translation_loader").load(self.uuid)
 
     def resolve_face_image_url(self, info):
         return self.male_face_image_url
