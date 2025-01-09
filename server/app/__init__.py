@@ -22,6 +22,7 @@ from dogpile.cache import make_region
 
 # logging.basicConfig()
 # logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
+# logging.getLogger().setLevel(logging.INFO)
 # print("LOGGING")
 
 
@@ -147,6 +148,7 @@ from app.loaders import (
     EnItemTypeTranslationLoader,
     ItemToItemTypeLoader,
     AllClassTranslationLoader,
+    SetToItemLoader,
 )
 
 
@@ -175,6 +177,7 @@ def construct_dataloaders():
         "en_item_type_translation_loader": EnItemTypeTranslationLoader(),
         "item_to_item_type_loader": ItemToItemTypeLoader(),
         "all_class_translation_loader": AllClassTranslationLoader(),
+        "set_to_item_loader": SetToItemLoader(),
     }
 
 

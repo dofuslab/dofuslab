@@ -22,9 +22,32 @@ from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_custom_set_tag_association import ModelCustomSetTagAssociation
 from app.database.model_custom_set_tag_translation import ModelCustomSetTagTranslation
 from flask_babel import get_locale
+from sqlalchemy.dialects.postgresql import JSONB, TEXT
+from sqlalchemy.sql import cast
+
+
+def load_items_from_sets(set_ids):
+    id_order = {str(v): k for k, v in enumerate(set_ids)}
+    result = [
+        list(item_set.items)
+        for item_set in db.session.query(ModelSet)
+        .join(ModelSet.items)
+        .filter(ModelSet.uuid.in_(set_ids))
+        .options(joinedload(ModelSet.items))
+        .order_by(cast(id_order, JSONB)[cast(ModelSet.uuid, TEXT)])
+        .all()
+    ]
+
+    return Promise.resolve(result)
+
+
+class SetToItemLoader(DataLoader):
+    def batch_load_fn(self, set_ids):
+        return load_items_from_sets(set_ids)
 
 
 def load_item_types_from_items(item_ids):
+    id_order = {str(v): k for k, v in enumerate(item_ids)}
     return Promise.resolve(
         [
             item.item_type
@@ -37,6 +60,7 @@ def load_item_types_from_items(item_ids):
                     joinedload(ModelItemType.eligible_item_slots)
                 )
             )
+            .order_by(cast(id_order, JSONB)[cast(ModelItem.uuid, TEXT)])
             .all()
         ]
     )

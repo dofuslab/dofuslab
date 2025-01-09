@@ -270,6 +270,10 @@ class SetBonus(SQLAlchemyObjectType):
 
 class Set(SQLAlchemyObjectType):
     items = graphene.NonNull(graphene.List(graphene.NonNull(Item)))
+
+    def resolve_items(self, info):
+        return g.dataloaders.get("set_to_item_loader").load(self.uuid)
+
     bonuses = graphene.NonNull(graphene.List(graphene.NonNull(SetBonus)))
 
     def resolve_bonuses(self, info):
