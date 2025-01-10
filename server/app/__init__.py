@@ -20,10 +20,9 @@ from dogpile.cache import make_region
 
 import logging
 
-logging.basicConfig()
-logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
-logging.getLogger().setLevel(logging.INFO)
-# print("LOGGING")
+# logging.basicConfig()
+# logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
+# logging.getLogger().setLevel(logging.INFO)
 
 
 load_dotenv()
