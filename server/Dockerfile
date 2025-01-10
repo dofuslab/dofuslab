@@ -4,6 +4,7 @@ FROM python:3.8-bullseye
 # Default value; will be overridden by build-args, if passed
 ARG flask_env=development
 ENV FLASK_ENV $flask_env
+ENV DATADOG_ENV=server
 
 # install packages required for installing python requirements
 RUN apt-get update
@@ -28,4 +29,4 @@ COPY --chown=dofuslab:dofuslab . .
 COPY --chown=dofuslab:dofuslab .env.docker .env
 
 # run flask on all interfaces:
-CMD flask run --host=0.0.0.0
+CMD ddtrace-run flask run --host=0.0.0.0
