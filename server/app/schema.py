@@ -79,6 +79,7 @@ from app.token_utils import decode_token, encode_token, generate_url
 import app.mutation_validation_utils as validation
 import graphene
 import pytz
+import uuid
 from graphql import GraphQLError
 from flask import session, render_template, g
 from flask_babel import _, get_locale, refresh
@@ -88,7 +89,6 @@ from sqlalchemy import func, distinct, or_, and_
 from sqlalchemy.orm import aliased
 from sqlalchemy.sql.expression import true
 from datetime import datetime
-from ddtrace import tracer
 
 # workaround from https://github.com/graphql-python/graphene-sqlalchemy/issues/211
 # without this workaround, graphene complains that there are multiple
@@ -141,7 +141,6 @@ BuildGenderEnum = graphene.Enum.from_enum(BuildGender)
 class ItemStat(SQLAlchemyObjectType):
     custom_stat = graphene.String()
 
-    @tracer.wrap(name="ItemStat.resolve_custom_stat")
     def resolve_custom_stat(self, info):
         return g.dataloaders.get("item_stat_translation_loader").load(self.uuid)
 
@@ -154,19 +153,16 @@ class ItemSlot(SQLAlchemyObjectType):
     # https://github.com/graphql-python/graphene/issues/110
     item_types = graphene.NonNull(graphene.List(graphene.NonNull(lambda: ItemType)))
 
-    @tracer.wrap(name="ItemSlot.resolve_item_types")
     def resolve_item_types(self, info):
         return g.dataloaders.get("item_slot_to_item_type_loader").load(self.uuid)
 
     name = graphene.String(required=True)
 
-    @tracer.wrap(name="ItemSlot.resolve_name")
     def resolve_name(self, info):
         return g.dataloaders.get("item_slot_translation_loader").load(self.uuid)
 
     en_name = graphene.String(required=True)
 
-    @tracer.wrap(name="ItemSlot.resolve_en_name")
     def resolve_en_name(self, info):
         return g.dataloaders.get("en_item_slot_translation_loader").load(self.uuid)
 
@@ -184,11 +180,9 @@ class ItemType(SQLAlchemyObjectType):
     name = graphene.String(required=True)
     en_name = graphene.String(required=True)
 
-    @tracer.wrap(name="ItemType.resolve_name")
     def resolve_name(self, info):
         return g.dataloaders.get("item_type_translation_loader").load(self.uuid)
 
-    @tracer.wrap(name="ItemType.resolve_en_name")
     def resolve_en_name(self, info):
         return g.dataloaders.get("en_item_type_translation_loader").load(self.uuid)
 
@@ -206,7 +200,6 @@ class WeaponEffect(SQLAlchemyObjectType):
 class WeaponStat(SQLAlchemyObjectType):
     weapon_effects = graphene.NonNull(graphene.List(graphene.NonNull(WeaponEffect)))
 
-    @tracer.wrap(name="WeaponStat.resolve_weapon_effects")
     def resolve_weapon_effects(self, info):
         return g.dataloaders.get("weapon_effect_loader").load(self.uuid)
 
@@ -224,26 +217,22 @@ class Buff(SQLAlchemyObjectType):
 class Item(SQLAlchemyObjectType):
     stats = graphene.NonNull(graphene.List(graphene.NonNull(ItemStat)))
 
-    @tracer.wrap(name="Item.resolve_stats")
     def resolve_stats(self, info):
         return g.dataloaders.get("item_stats_loader").load(self.uuid)
 
     item_type = graphene.NonNull(ItemType)
 
-    @tracer.wrap(name="Item.resolve_item_type")
     def resolve_item_type(self, info):
         return g.dataloaders.get("item_to_item_type_loader").load(self.uuid)
 
     name = graphene.String(required=True)
 
-    @tracer.wrap(name="Item.resolve_name")
     def resolve_name(self, info):
         return g.dataloaders.get("item_name_loader").load(self.uuid)
 
     # https://github.com/graphql-python/graphene/issues/110#issuecomment-366515268
     set = graphene.Field(lambda: Set)
 
-    @tracer.wrap(name="Item.resolve_set")
     def resolve_set(self, info):
         if not self.set_id:
             return None
@@ -251,13 +240,11 @@ class Item(SQLAlchemyObjectType):
 
     weapon_stats = graphene.Field(lambda: WeaponStat)
 
-    @tracer.wrap(name="Item.resolve_weapon_stats")
     def resolve_weapon_stats(self, info):
         return g.dataloaders.get("weapon_stat_loader").load(self.uuid)
 
     buffs = graphene.List(graphene.NonNull(Buff))
 
-    @tracer.wrap(name="Item.resolve_buffs")
     def resolve_buffs(self, info):
         # query = db.session.query(ModelBuff).filter(ModelBuff.item_id == self.uuid)
         # return query
@@ -277,7 +264,6 @@ class ItemConnection(NonNullConnection):
 class SetBonus(SQLAlchemyObjectType):
     custom_stat = graphene.String()
 
-    @tracer.wrap(name="SetBonus.resolve_custom_stat")
     def resolve_custom_stat(self, info):
         return g.dataloaders.get("set_bonus_translation_loader").load(self.uuid)
 
@@ -289,19 +275,16 @@ class SetBonus(SQLAlchemyObjectType):
 class Set(SQLAlchemyObjectType):
     items = graphene.NonNull(graphene.List(graphene.NonNull(Item)))
 
-    @tracer.wrap(name="Set.resolve_items")
     def resolve_items(self, info):
         return g.dataloaders.get("set_to_item_loader").load(self.uuid)
 
     bonuses = graphene.NonNull(graphene.List(graphene.NonNull(SetBonus)))
 
-    @tracer.wrap(name="Set.resolve_bonuses")
     def resolve_bonuses(self, info):
         return g.dataloaders.get("set_bonus_loader").load(self.uuid)
 
     name = graphene.String(required=True)
 
-    @tracer.wrap(name="Set.resolve_name")
     def resolve_name(self, info):
         return g.dataloaders.get("set_translation_loader").load(self.uuid)
 
@@ -353,7 +336,6 @@ class CustomSetTag(SQLAlchemyObjectType):
     name = graphene.String(required=True)
     image_url = graphene.String(required=True)
 
-    @tracer.wrap(name="CustomSetTag.resolve_name")
     def resolve_name(self, info):
         return g.dataloaders.get("custom_set_tag_translation_loader").load(self.uuid)
 
@@ -366,7 +348,6 @@ class CustomSetTagAssociation(SQLAlchemyObjectType):
     id = graphene.String(required=True)
     custom_set_tag = graphene.NonNull(CustomSetTag)
 
-    @tracer.wrap(name="CustomSetTagAssociation.resolve_custom_set_tag")
     def resolve_id(self, info):
         return "{}:{}".format(self.custom_set_id, self.custom_set_tag_id)
 
@@ -386,19 +367,15 @@ class CustomSet(SQLAlchemyObjectType):
     )
     has_edit_permission = graphene.Boolean(required=True)
 
-    @tracer.wrap(name="CustomSet.resolve_creation_date")
     def resolve_creation_date(self, info):
         return pytz.utc.localize(self.creation_date)
 
-    @tracer.wrap(name="CustomSet.resolve_last_modified")
     def resolve_last_modified(self, info):
         return pytz.utc.localize(self.last_modified)
 
-    @tracer.wrap(name="CustomSet.resolve_tag_associations")
     def resolve_tag_associations(self, info):
         return g.dataloaders.get("custom_set_tag_association_loader").load(self.uuid)
 
-    @tracer.wrap(name="CustomSet.resolve_equipped_items")
     def resolve_has_edit_permission(self, info):
         try:
             check_owner(self)
@@ -434,7 +411,6 @@ class User(SQLAlchemyObjectType):
         filters=graphene.Argument(CustomSetFilters),
     )
 
-    @tracer.wrap(name="User.resolve_custom_sets")
     def resolve_custom_sets(self, info, **kwargs):
         filters = kwargs.get("filters")
         search = filters.search.strip()
@@ -473,7 +449,6 @@ class User(SQLAlchemyObjectType):
 
         return query.all()
 
-    @tracer.wrap(name="User.resolve_email")
     def resolve_email(self, info):
         if self.uuid != current_user.get_id():
             raise GraphQLError(_("You are not authorized to make this request."))
@@ -481,7 +456,6 @@ class User(SQLAlchemyObjectType):
 
     favorite_items = graphene.NonNull(graphene.List(graphene.NonNull(Item)))
 
-    @tracer.wrap(name="User.resolve_favorite_items")
     def resolve_favorite_items(self, info):
         if self.uuid != current_user.get_id():
             raise GraphQLError(_("You are not authorized to make this request."))
@@ -489,7 +463,6 @@ class User(SQLAlchemyObjectType):
 
     settings = graphene.NonNull(UserSetting)
 
-    @tracer.wrap(name="User.resolve_settings")
     def resolve_settings(self, info):
         if self.uuid != current_user.get_id():
             raise GraphQLError(_("You are not authorized to make this request."))
@@ -515,7 +488,6 @@ class SpellEffects(SQLAlchemyObjectType):
 
     condition = graphene.String()
 
-    @tracer.wrap(name="SpellEffects.resolve_condition")
     def resolve_condition(self, info):
         return g.dataloaders.get("spell_effect_condition_translation_loader").load(
             self.uuid
@@ -535,7 +507,6 @@ class SpellDamageIncrease(SQLAlchemyObjectType):
 class SpellStats(SQLAlchemyObjectType):
     aoe = graphene.String()
 
-    @tracer.wrap(name="SpellStats.resolve_aoe")
     def resolve_aoe(self, info):
         locale = str(get_locale())
         query = (
@@ -555,7 +526,6 @@ class SpellStats(SQLAlchemyObjectType):
 
     buffs = graphene.List(graphene.NonNull(Buff))
 
-    @tracer.wrap(name="SpellStats.resolve_buffs")
     def resolve_buffs(self, info):
         return g.dataloaders.get("spell_buff_loader").load(self.uuid)
 
@@ -574,11 +544,9 @@ class Spell(SQLAlchemyObjectType):
     description = graphene.String(required=True)
     spell_stats = graphene.NonNull(graphene.List(graphene.NonNull(SpellStats)))
 
-    @tracer.wrap(name="Spell.resolve_spell_stats")
     def resolve_name(self, info):
         return g.dataloaders.get("spell_name_loader").load(self.uuid)
 
-    @tracer.wrap(name="Spell.resolve_description")
     def resolve_description(self, info):
         return g.dataloaders.get("spell_description_loader").load(self.uuid)
 
@@ -611,19 +579,15 @@ class Class(SQLAlchemyObjectType):
     all_names = graphene.NonNull(graphene.List(graphene.NonNull(graphene.String)))
     face_image_url = graphene.String(required=True)
 
-    @tracer.wrap(name="Class.resolve_name")
     def resolve_name(self, info):
         return g.dataloaders.get("class_translation_loader").load(self.uuid)
 
-    @tracer.wrap(name="Class.resolve_en_name")
     def resolve_en_name(self, info):
         return g.dataloaders.get("en_class_translation_loader").load(self.uuid)
 
-    @tracer.wrap(name="Class.resolve_spell_variant_pairs")
     def resolve_all_names(self, info):
         return g.dataloaders.get("all_class_translation_loader").load(self.uuid)
 
-    @tracer.wrap(name="Class.resolve_face_image_url")
     def resolve_face_image_url(self, info):
         return self.male_face_image_url
 
@@ -663,7 +627,6 @@ class CustomSetImportedItemInput(graphene.InputObjectType):
 class CreateCustomSet(graphene.Mutation):
     custom_set = graphene.Field(CustomSet, required=True)
 
-    @tracer.wrap(name="CreateCustomSet.mutate")
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
@@ -679,7 +642,6 @@ class EditCustomSetStats(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
-    @tracer.wrap(name="EditCustomSetStats.mutate")
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
@@ -699,7 +661,6 @@ class EditCustomSetMetadata(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
-    @tracer.wrap(name="EditCustomSetMetadata.mutate")
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
@@ -720,7 +681,6 @@ class EditCustomSetDefaultClass(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
-    @tracer.wrap(name="EditCustomSetDefaultClass.mutate")
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
@@ -743,7 +703,6 @@ class UpdateCustomSetItem(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
-    @tracer.wrap(name="UpdateCustomSetItem.mutate")
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
@@ -763,7 +722,6 @@ class EquipSet(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
-    @tracer.wrap(name="EquipSet.mutate")
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
@@ -783,7 +741,6 @@ class AddTagToCustomSet(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
-    @tracer.wrap(name="AddTagToCustomSet.mutate")
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
@@ -808,7 +765,6 @@ class RemoveTagFromCustomSet(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
-    @tracer.wrap(name="RemoveTagFromCustomSet.mutate")
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
@@ -829,7 +785,6 @@ class EquipMultipleItems(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
-    @tracer.wrap(name="EquipMultipleItems.mutate")
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
@@ -857,7 +812,6 @@ class MageEquippedItem(graphene.Mutation):
 
     equipped_item = graphene.Field(EquippedItem, required=True)
 
-    @tracer.wrap(name="MageEquippedItem.mutate")
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
@@ -907,7 +861,6 @@ class SetEquippedItemExo(graphene.Mutation):
 
     equipped_item = graphene.Field(EquippedItem, required=True)
 
-    @tracer.wrap(name="SetEquippedItemExo.mutate")
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
@@ -942,7 +895,6 @@ class DeleteCustomSetItem(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
-    @tracer.wrap(name="DeleteCustomSetItem.mutate")
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
@@ -961,7 +913,6 @@ class CopyCustomSet(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
-    @tracer.wrap(name="CopyCustomSet.mutate")
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         custom_set_id = kwargs.get("custom_set_id")
@@ -1011,7 +962,6 @@ class RestartCustomSet(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
-    @tracer.wrap(name="RestartCustomSet.mutate")
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         custom_set_id = kwargs.get("custom_set_id")
@@ -1037,7 +987,6 @@ class DeleteCustomSet(graphene.Mutation):
 
     ok = graphene.Boolean(required=True)
 
-    @tracer.wrap(name="DeleteCustomSet.mutate")
     @anonymous_or_verified
     def mutate(self, info, **kwargs):
         custom_set_id = kwargs.get("custom_set_id")
@@ -1060,7 +1009,6 @@ class ImportCustomSet(graphene.Mutation):
 
     custom_set = graphene.Field(CustomSet, required=True)
 
-    @tracer.wrap(name="ImportCustomSet.mutate")
     @verified
     def mutate(self, info, **kwargs):
         item_objs = kwargs.get("items")
@@ -1097,7 +1045,6 @@ class RegisterUser(graphene.Mutation):
     user = graphene.Field(User)
     ok = graphene.Boolean(required=True)
 
-    @tracer.wrap(name="RegisterUser.mutate")
     def mutate(self, info, **kwargs):
         with session_scope() as db_session:
             username = kwargs.get("username")
@@ -1150,7 +1097,6 @@ class LoginUser(graphene.Mutation):
     user = graphene.Field(User)
     ok = graphene.Boolean(required=True)
 
-    @tracer.wrap(name="LoginUser.mutate")
     def mutate(self, info, **kwargs):
         if current_user.is_authenticated:
             raise GraphQLError(_("You are already logged in."))
@@ -1173,7 +1119,6 @@ class LoginUser(graphene.Mutation):
 class LogoutUser(graphene.Mutation):
     ok = graphene.Boolean(required=True)
 
-    @tracer.wrap(name="LogoutUser.mutate")
     def mutate(self, info):
         if current_user.is_authenticated:
             logout_user()
@@ -1183,7 +1128,6 @@ class LogoutUser(graphene.Mutation):
 class ResendVerificationEmail(graphene.Mutation):
     ok = graphene.Boolean(required=True)
 
-    @tracer.wrap(name="ResendVerificationEmail.mutate")
     @limiter.limit(
         "2/minute", error_message=_("Please wait a minute before trying again.")
     )
@@ -1216,7 +1160,6 @@ class ChangeLocale(graphene.Mutation):
 
     ok = graphene.Boolean(required=True)
 
-    @tracer.wrap(name="ChangeLocale.mutate")
     def mutate(self, info, **kwargs):
         locale = kwargs.get("locale")
         if not locale in supported_languages:
@@ -1235,7 +1178,6 @@ class ChangeClassic(graphene.Mutation):
 
     ok = graphene.Boolean(required=True)
 
-    @tracer.wrap(name="ChangeClassic.mutate")
     def mutate(self, info, **kwargs):
         with session_scope():
             user = current_user._get_current_object()
@@ -1254,7 +1196,6 @@ class ChangePassword(graphene.Mutation):
 
     ok = graphene.Boolean(required=True)
 
-    @tracer.wrap(name="ChangePassword.mutate")
     def mutate(self, info, **kwargs):
         if not current_user.is_authenticated:
             raise GraphQLError(_("You are not logged in."))
@@ -1282,7 +1223,6 @@ class RequestPasswordReset(graphene.Mutation):
 
     ok = graphene.Boolean(required=True)
 
-    @tracer.wrap(name="RequestPasswordReset.mutate")
     @limiter.limit(
         "2/minute", error_message=_("Please wait a minute before trying again.")
     )
@@ -1319,7 +1259,6 @@ class ResetPassword(graphene.Mutation):
 
     ok = graphene.Boolean(required=True)
 
-    @tracer.wrap(name="ResetPassword.mutate")
     def mutate(self, info, **kwargs):
         if current_user.is_authenticated:
             raise GraphQLError(_("You are already logged in."))
@@ -1355,7 +1294,6 @@ class ToggleFavoriteItem(graphene.Mutation):
 
     user = graphene.Field(User, required=True)
 
-    @tracer.wrap(name="ToggleFavoriteItem.mutate")
     def mutate(self, info, **kwargs):
         if not current_user.is_authenticated:
             raise GraphQLError(_("You are not logged in."))
@@ -1376,7 +1314,6 @@ class EditBuildSettings(graphene.Mutation):
 
     user_setting = graphene.Field(UserSetting, required=True)
 
-    @tracer.wrap(name="EditBuildSettings.mutate")
     def mutate(self, info, **kwargs):
         if not current_user.is_authenticated:
             raise GraphQLError(_("You are not logged in."))
@@ -1400,7 +1337,6 @@ class ChangeProfilePicture(graphene.Mutation):
 
     user = graphene.NonNull(User)
 
-    @tracer.wrap(name="ChangeProfilePicture.mutate")
     def mutate(self, info, **kwargs):
 
         picture = kwargs.get("picture")
@@ -1444,7 +1380,6 @@ class ItemNameObject(graphene.InputObjectType):
 class Query(graphene.ObjectType):
     current_user = graphene.Field(User)
 
-    @tracer.wrap(name="Query.resolve_current_user")
     def resolve_current_user(self, info):
         if current_user.is_authenticated:
             return current_user._get_current_object()
@@ -1455,7 +1390,6 @@ class Query(graphene.ObjectType):
         graphene.NonNull(ItemConnection), filters=graphene.Argument(ItemFilters)
     )
 
-    @tracer.wrap(name="Query.resolve_items")
     def resolve_items(self, info, **kwargs):
         locale = str(get_locale())
         filters = kwargs.get("filters")
@@ -1541,7 +1475,6 @@ class Query(graphene.ObjectType):
         graphene.NonNull(SetConnection), filters=graphene.Argument(SetFilters)
     )
 
-    @tracer.wrap(name="Query.resolve_sets")
     def resolve_sets(self, info, **kwargs):
         locale = str(get_locale())
         filters = kwargs.get("filters")
@@ -1629,7 +1562,6 @@ class Query(graphene.ObjectType):
         graphene.NonNull(CustomSetConnection),
     )
 
-    @tracer.wrap(name="Query.resolve_custom_sets")
     def resolve_custom_sets(self, info, **kwargs):
         return (
             db.session.query(ModelCustomSet)
@@ -1639,56 +1571,47 @@ class Query(graphene.ObjectType):
 
     classes = graphene.NonNull(graphene.List(graphene.NonNull(Class)))
 
-    @tracer.wrap(name="Query.resolve_classes")
     def resolve_classes(self, info):
         return db.session.query(ModelClass).all()
 
     # Retrieve record by uuid
     class_by_id = graphene.Field(Class, id=graphene.UUID(required=True))
 
-    @tracer.wrap(name="Query.resolve_class_by_id")
     def resolve_class_by_id(self, info, id):
         return db.session.query(ModelClass).get(id)
 
     user_by_id = graphene.Field(User, id=graphene.UUID(required=True))
 
-    @tracer.wrap(name="Query.resolve_user_by_id")
     def resolve_user_by_id(self, info, id):
         return db.session.query(ModelUserAccount).get(id)
 
     item_by_id = graphene.Field(Item, id=graphene.UUID(required=True))
 
-    @tracer.wrap(name="Query.resolve_item_by_id")
     def resolve_item_by_id(self, info, id):
         return db.session.query(ModelItem).get(id)
 
     set_by_id = graphene.Field(Set, id=graphene.UUID(required=True), required=True)
 
-    @tracer.wrap(name="Query.resolve_set_by_id")
     def resolve_set_by_id(self, info, id):
         return db.session.query(ModelSet).get(id)
 
     custom_set_by_id = graphene.Field(CustomSet, id=graphene.UUID(required=True))
 
-    @tracer.wrap(name="Query.resolve_custom_set_by_id")
     def resolve_custom_set_by_id(self, info, id):
         return db.session.query(ModelCustomSet).get(id)
 
     item_slots = graphene.NonNull(graphene.List(graphene.NonNull(ItemSlot)))
 
-    @tracer.wrap(name="Query.resolve_item_slots")
     def resolve_item_slots(self, info):
         return db.session.query(ModelItemSlot).order_by(ModelItemSlot.order).all()
 
     locale = graphene.NonNull(graphene.String)
 
-    @tracer.wrap(name="Query.resolve_locale")
     def resolve_locale(self, info):
         return str(get_locale())
 
     classic = graphene.NonNull(graphene.Boolean)
 
-    @tracer.wrap(name="Query.resolve_classic")
     def resolve_classic(self, info):
         if current_user.is_authenticated:
             return current_user.settings.classic
@@ -1703,11 +1626,9 @@ class Query(graphene.ObjectType):
 
     user_by_name = graphene.Field(User, username=graphene.String(required=True))
 
-    @tracer.wrap(name="Query.resolve_user_by_name")
     def resolve_user_by_name(self, info, username):
         return ModelUserAccount.find_by_username(username)
 
-    @tracer.wrap(name="Query.resolve_items_by_name")
     def resolve_items_by_name(self, info, **kwargs):
         item_name_objs = kwargs.get("item_name_objs")
         num_slots = db.session.query(ModelItemSlot).count()
@@ -1733,7 +1654,6 @@ class Query(graphene.ObjectType):
 
     custom_set_tags = graphene.NonNull(graphene.List(graphene.NonNull(CustomSetTag)))
 
-    @tracer.wrap(name="Query.resolve_custom_set_tags")
     def resolve_custom_set_tags(self, info):
         return db.session.query(ModelCustomSetTag).all()
 
@@ -1747,7 +1667,6 @@ class Query(graphene.ObjectType):
         level=graphene.NonNull(graphene.Int),
     )
 
-    @tracer.wrap(name="Query.resolve_item_suggestions")
     def resolve_item_suggestions(self, info, num_suggestions=10, **kwargs):
         eligible_item_type_ids = kwargs.get("eligible_item_type_ids")
         equipped_item_ids = kwargs.get("equipped_item_ids")
