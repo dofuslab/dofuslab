@@ -21,9 +21,267 @@ from app.database.model_weapon_stat import ModelWeaponStat
 from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_custom_set_tag_association import ModelCustomSetTagAssociation
 from app.database.model_custom_set_tag_translation import ModelCustomSetTagTranslation
+from app.database.model_equipped_item import ModelEquippedItem
+from app.database.model_equipped_item_exo import ModelEquippedItemExo
+from app.database.model_spell_variant_pair import ModelSpellVariantPair
+from app.database.model_spell_stats import ModelSpellStats
+from app.database.model_spell_effect import ModelSpellEffect
+from app.database.model_spell import ModelSpell
+from app.database.model_spell_translation import ModelSpellTranslation
+from app.database.model_spell_damage_increase import ModelSpellDamageIncrease
+from app.database.model_spell_effect_condition_translation import (
+    ModelSpellEffectConditionTranslation,
+)
 from flask_babel import get_locale
 from sqlalchemy.dialects.postgresql import JSONB, TEXT
 from sqlalchemy.sql import cast
+
+
+class EligibleItemSlotLoader(DataLoader):
+    def batch_load_fn(self, item_type_ids):
+        item_slots_by_item_type_id = defaultdict(list)
+        for item_type in (
+            db.session.query(ModelItemType)
+            .join(ModelItemType.eligible_item_slots)
+            .filter(ModelItemType.uuid.in_(item_type_ids))
+            .options(joinedload(ModelItemType.eligible_item_slots))
+        ):
+            for item_slot in item_type.eligible_item_slots:
+                item_slots_by_item_type_id[item_type.uuid].append(item_slot)
+        return Promise.resolve(
+            [
+                item_slots_by_item_type_id.get(item_type_id, [])
+                for item_type_id in item_type_ids
+            ]
+        )
+
+
+class SpellEffectConditionTranslationLoader(DataLoader):
+    def batch_load_fn(self, spell_effect_ids):
+        locale = str(get_locale())
+        translation_by_spell_effect_id = {}
+        for translation in (
+            db.session.query(ModelSpellEffectConditionTranslation)
+            .filter(
+                ModelSpellEffectConditionTranslation.spell_effect_id.in_(
+                    spell_effect_ids
+                )
+            )
+            .filter_by(locale=locale)
+        ):
+            translation_by_spell_effect_id[
+                translation.spell_effect_id
+            ] = translation.condition
+        return Promise.resolve(
+            [
+                translation_by_spell_effect_id.get(spell_effect_condition_id, None)
+                for spell_effect_condition_id in spell_effect_ids
+            ]
+        )
+
+
+class SpellDamageIncreaseLoader(DataLoader):
+    def batch_load_fn(self, spell_stat_ids):
+        damage_increase_by_spell_stat_id = {}
+        for damage_increase in db.session.query(ModelSpellDamageIncrease).filter(
+            ModelSpellDamageIncrease.spell_stat_id.in_(spell_stat_ids)
+        ):
+            damage_increase_by_spell_stat_id[
+                damage_increase.spell_stat_id
+            ] = damage_increase
+        return Promise.resolve(
+            [
+                damage_increase_by_spell_stat_id.get(spell_stat_id, None)
+                for spell_stat_id in spell_stat_ids
+            ]
+        )
+
+
+class SpellLoader(DataLoader):
+    def batch_load_fn(self, spell_variant_pair_ids):
+        spells_by_spell_variant_pair_id = defaultdict(list)
+
+        for spell in (
+            db.session.query(ModelSpell)
+            .join(ModelSpell.spell_variant_pair)
+            .filter(ModelSpellVariantPair.uuid.in_(spell_variant_pair_ids))
+            .options(joinedload(ModelSpell.spell_variant_pair))
+        ):
+            spells_by_spell_variant_pair_id[spell.spell_variant_pair_id].append(spell)
+
+        return Promise.resolve(
+            [
+                spells_by_spell_variant_pair_id.get(spell_variant_pair_id, [])
+                for spell_variant_pair_id in spell_variant_pair_ids
+            ]
+        )
+
+
+def load_spell_translations(spell_ids, get_description):
+    locale = str(get_locale())
+    translations_by_spell_id = {}
+    for translation in db.session.query(ModelSpellTranslation).filter(
+        ModelSpellTranslation.spell_id.in_(spell_ids),
+        ModelSpellTranslation.locale == locale,
+    ):
+        translations_by_spell_id[translation.spell_id] = (
+            translation.description if get_description else translation.name
+        )
+
+    return Promise.resolve(
+        [translations_by_spell_id.get(spell_id, None) for spell_id in spell_ids]
+    )
+
+
+class SpellNameLoader(DataLoader):
+    def batch_load_fn(self, spell_ids):
+        return load_spell_translations(spell_ids, False)
+
+
+class SpellDescriptionLoader(DataLoader):
+    def batch_load_fn(self, spell_ids):
+        return load_spell_translations(spell_ids, True)
+
+
+class SpellVariantPairLoader(DataLoader):
+    def batch_load_fn(self, class_ids):
+        spell_variant_pairs_by_class_id = defaultdict(list)
+        for spell_variant_pair in (
+            db.session.query(ModelSpellVariantPair)
+            .join(ModelSpellVariantPair.spells)
+            .join(ModelSpell.spell_stats)
+            .join(ModelSpell.spell_translation)
+            .filter(ModelSpellVariantPair.class_id.in_(class_ids))
+            .options(
+                joinedload(ModelSpellVariantPair.spells).options(
+                    joinedload(ModelSpell.spell_stats),
+                    joinedload(ModelSpell.spell_translation),
+                )
+            )
+        ):
+            spell_variant_pairs_by_class_id[spell_variant_pair.class_id].append(
+                spell_variant_pair
+            )
+        return Promise.resolve(
+            [
+                spell_variant_pairs_by_class_id.get(class_id, [])
+                for class_id in class_ids
+            ]
+        )
+
+
+class SpellEffectLoader(DataLoader):
+    def batch_load_fn(self, spell_stats_ids):
+        spell_effects_by_spell_stats_id = defaultdict(list)
+        for spell_effect in (
+            db.session.query(ModelSpellEffect)
+            .join(ModelSpellEffect.spell_stats)
+            .filter(ModelSpellStats.uuid.in_(spell_stats_ids))
+            .options(joinedload(ModelSpellEffect.spell_stats))
+        ):
+            spell_effects_by_spell_stats_id[spell_effect.spell_stat_id].append(
+                spell_effect
+            )
+        return Promise.resolve(
+            [
+                spell_effects_by_spell_stats_id.get(spell_stat_id, [])
+                for spell_stat_id in spell_stats_ids
+            ]
+        )
+
+
+def load_item_slots_from_equipped_items(equipped_item_ids):
+    item_slot_by_equipped_item_id = {}
+
+    for equipped_item in (
+        db.session.query(ModelEquippedItem)
+        .join(ModelEquippedItem.slot)
+        .filter(ModelEquippedItem.uuid.in_(equipped_item_ids))
+        .options(joinedload(ModelEquippedItem.slot))
+    ):
+        item_slot_by_equipped_item_id[equipped_item.uuid] = equipped_item.slot
+
+    return Promise.resolve(
+        [
+            item_slot_by_equipped_item_id.get(equipped_item_id, None)
+            for equipped_item_id in equipped_item_ids
+        ]
+    )
+
+
+class EquippedItemToItemSlotLoader(DataLoader):
+    def batch_load_fn(self, equipped_item_ids):
+        return load_item_slots_from_equipped_items(equipped_item_ids)
+
+
+def load_items_from_equipped_items(equipped_item_ids):
+    item_by_equipped_item_id = {}
+
+    for equipped_item in (
+        db.session.query(ModelEquippedItem)
+        .join(ModelEquippedItem.item)
+        .filter(ModelEquippedItem.uuid.in_(equipped_item_ids))
+        .options(joinedload(ModelEquippedItem.item))
+    ):
+        item_by_equipped_item_id[equipped_item.uuid] = equipped_item.item
+
+    import logging
+
+    logging.info(
+        f"item_by_equipped_item_id: {item_by_equipped_item_id}; equipped_item_ids: {equipped_item_ids}"
+    )
+
+    return Promise.resolve(
+        [
+            item_by_equipped_item_id.get(equipped_item_id, None)
+            for equipped_item_id in equipped_item_ids
+        ]
+    )
+
+
+class EquippedItemToItemLoader(DataLoader):
+    def batch_load_fn(self, equipped_item_ids):
+        return load_items_from_equipped_items(equipped_item_ids)
+
+
+def load_equipped_items_from_custom_sets(custom_set_ids):
+    equipped_items_by_custom_set_id = defaultdict(list)
+    for equipped_item in db.session.query(ModelEquippedItem).filter(
+        ModelEquippedItem.custom_set_id.in_(custom_set_ids)
+    ):
+        equipped_items_by_custom_set_id[equipped_item.custom_set_id].append(
+            equipped_item
+        )
+    return Promise.resolve(
+        [
+            equipped_items_by_custom_set_id.get(custom_set_id, [])
+            for custom_set_id in custom_set_ids
+        ]
+    )
+
+
+class EquippedItemLoader(DataLoader):
+    def batch_load_fn(self, custom_set_ids):
+        return load_equipped_items_from_custom_sets(custom_set_ids)
+
+
+def load_exos_from_equipped_items(equipped_item_ids):
+    exos_by_equipped_item_id = defaultdict(list)
+    for exo in db.session.query(ModelEquippedItemExo).filter(
+        ModelEquippedItemExo.equipped_item_id.in_(equipped_item_ids)
+    ):
+        exos_by_equipped_item_id[exo.equipped_item_id].append(exo)
+    return Promise.resolve(
+        [
+            exos_by_equipped_item_id.get(equipped_item_id, [])
+            for equipped_item_id in equipped_item_ids
+        ]
+    )
+
+
+class ExoLoader(DataLoader):
+    def batch_load_fn(self, equipped_item_ids):
+        return load_exos_from_equipped_items(equipped_item_ids)
 
 
 def load_items_from_sets(set_ids):
