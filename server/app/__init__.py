@@ -18,11 +18,11 @@ from rq import Queue
 from jinja2 import Environment, FileSystemLoader
 from dogpile.cache import make_region
 
-# import logging
+import logging
 
-# logging.basicConfig()
-# logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
-# logging.getLogger().setLevel(logging.INFO)
+logging.basicConfig()
+logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
+logging.getLogger().setLevel(logging.INFO)
 # print("LOGGING")
 
 
@@ -153,7 +153,14 @@ from app.loaders import (
     EquippedItemLoader,
     EquippedItemToItemLoader,
     EquippedItemToItemSlotLoader,
+    SpellVariantPairLoader,
+    SpellEffectLoader,
+    SpellNameLoader,
     SpellLoader,
+    SpellEffectConditionTranslationLoader,
+    SpellDamageIncreaseLoader,
+    EligibleItemSlotLoader,
+    SpellDescriptionLoader,
 )
 
 
@@ -187,7 +194,14 @@ def construct_dataloaders():
         "equipped_item_loader": EquippedItemLoader(),
         "equipped_item_to_item_loader": EquippedItemToItemLoader(),
         "equipped_item_to_item_slot_loader": EquippedItemToItemSlotLoader(),
+        "spell_variant_pair_loader": SpellVariantPairLoader(),
+        "spell_effect_loader": SpellEffectLoader(),
+        "spell_name_loader": SpellNameLoader(),
         "spell_loader": SpellLoader(),
+        "spell_effect_condition_translation_loader": SpellEffectConditionTranslationLoader(),
+        "spell_damage_increase_loader": SpellDamageIncreaseLoader(),
+        "eligible_item_slot_loader": EligibleItemSlotLoader(),
+        "spell_description_loader": SpellDescriptionLoader(),
     }
 
 

@@ -173,6 +173,10 @@ class ItemSlot(SQLAlchemyObjectType):
 
 class ItemType(SQLAlchemyObjectType):
     eligible_item_slots = graphene.NonNull(graphene.List(graphene.NonNull(ItemSlot)))
+
+    def resolve_eligible_item_slots(self, info):
+        return g.dataloaders.get("eligible_item_slot_loader").load(self.uuid)
+
     name = graphene.String(required=True)
     en_name = graphene.String(required=True)
 
@@ -485,13 +489,9 @@ class SpellEffects(SQLAlchemyObjectType):
     condition = graphene.String()
 
     def resolve_condition(self, info):
-        locale = str(get_locale())
-        condition_obj = (
-            db.session.query(ModelSpellEffectConditionTranslation)
-            .filter_by(locale=locale, spell_effect_id=self.uuid)
-            .one_or_none()
+        return g.dataloaders.get("spell_effect_condition_translation_loader").load(
+            self.uuid
         )
-        return condition_obj.condition if condition_obj else None
 
     class Meta:
         model = ModelSpellEffect
@@ -506,7 +506,6 @@ class SpellDamageIncrease(SQLAlchemyObjectType):
 
 class SpellStats(SQLAlchemyObjectType):
     aoe = graphene.String()
-    spell_effects = graphene.NonNull(graphene.List(graphene.NonNull(SpellEffects)))
 
     def resolve_aoe(self, info):
         locale = str(get_locale())
@@ -520,13 +519,20 @@ class SpellStats(SQLAlchemyObjectType):
         if query:
             return query.aoe_type
 
+    spell_effects = graphene.NonNull(graphene.List(graphene.NonNull(SpellEffects)))
+
+    def resolve_spell_effects(self, info):
+        return g.dataloaders.get("spell_effect_loader").load(self.uuid)
+
     buffs = graphene.List(graphene.NonNull(Buff))
 
     def resolve_buffs(self, info):
-        # query = db.session.query(ModelBuff).filter(ModelBuff.spell_stat_id == self.uuid)
-        # return query
-
         return g.dataloaders.get("spell_buff_loader").load(self.uuid)
+
+    spell_damage_increase = graphene.Field(SpellDamageIncrease)
+
+    def resolve_spell_damage_increase(self, info):
+        return g.dataloaders.get("spell_damage_increase_loader").load(self.uuid)
 
     class Meta:
         model = ModelSpellStats
@@ -539,24 +545,10 @@ class Spell(SQLAlchemyObjectType):
     spell_stats = graphene.NonNull(graphene.List(graphene.NonNull(SpellStats)))
 
     def resolve_name(self, info):
-        locale = str(get_locale())
-        query = db.session.query(ModelSpellTranslation)
-        return (
-            query.filter(ModelSpellTranslation.locale == locale)
-            .filter(ModelSpellTranslation.spell_id == self.uuid)
-            .one()
-            .name
-        )
+        return g.dataloaders.get("spell_name_loader").load(self.uuid)
 
     def resolve_description(self, info):
-        locale = str(get_locale())
-        query = db.session.query(ModelSpellTranslation)
-        return (
-            query.filter(ModelSpellTranslation.locale == locale)
-            .filter(ModelSpellTranslation.spell_id == self.uuid)
-            .one()
-            .description
-        )
+        return g.dataloaders.get("spell_description_loader").load(self.uuid)
 
     class Meta:
         model = ModelSpell
@@ -565,6 +557,9 @@ class Spell(SQLAlchemyObjectType):
 
 class SpellVariantPair(SQLAlchemyObjectType):
     spells = graphene.NonNull(graphene.List(graphene.NonNull(Spell)))
+
+    def resolve_spells(self, info):
+        return g.dataloaders.get("spell_loader").load(self.uuid)
 
     class Meta:
         model = ModelSpellVariantPair
@@ -577,6 +572,10 @@ class Class(SQLAlchemyObjectType):
     spell_variant_pairs = graphene.NonNull(
         graphene.List(graphene.NonNull(SpellVariantPair))
     )
+
+    def resolve_spell_variant_pairs(self, info):
+        return g.dataloaders.get("spell_variant_pair_loader").load(self.uuid)
+
     all_names = graphene.NonNull(graphene.List(graphene.NonNull(graphene.String)))
     face_image_url = graphene.String(required=True)
 
