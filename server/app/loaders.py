@@ -132,7 +132,6 @@ class ClassTranslationLoader(DataLoader):
 
 
 def load_item_slot_translations(item_slot_ids, locale=None):
-    locale = str(get_locale())
     translation_by_slot_id = defaultdict(list)
     for translation in (
         db.session.query(ModelItemSlotTranslation)
