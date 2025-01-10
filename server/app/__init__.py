@@ -149,6 +149,11 @@ from app.loaders import (
     ItemToItemTypeLoader,
     AllClassTranslationLoader,
     SetToItemLoader,
+    ExoLoader,
+    EquippedItemLoader,
+    EquippedItemToItemLoader,
+    EquippedItemToItemSlotLoader,
+    SpellLoader,
 )
 
 
@@ -178,6 +183,11 @@ def construct_dataloaders():
         "item_to_item_type_loader": ItemToItemTypeLoader(),
         "all_class_translation_loader": AllClassTranslationLoader(),
         "set_to_item_loader": SetToItemLoader(),
+        "exo_loader": ExoLoader(),
+        "equipped_item_loader": EquippedItemLoader(),
+        "equipped_item_to_item_loader": EquippedItemToItemLoader(),
+        "equipped_item_to_item_slot_loader": EquippedItemToItemSlotLoader(),
+        "spell_loader": SpellLoader(),
     }
 
 

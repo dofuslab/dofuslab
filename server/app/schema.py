@@ -302,8 +302,19 @@ class EquippedItemExo(SQLAlchemyObjectType):
 
 class EquippedItem(SQLAlchemyObjectType):
     item = graphene.NonNull(Item)
+
+    def resolve_item(self, info):
+        return g.dataloaders.get("equipped_item_to_item_loader").load(self.uuid)
+
     slot = graphene.NonNull(ItemSlot)
+
+    def resolve_slot(self, info):
+        return g.dataloaders.get("equipped_item_to_item_slot_loader").load(self.uuid)
+
     exos = graphene.NonNull(graphene.List(graphene.NonNull(EquippedItemExo)))
+
+    def resolve_exos(self, info):
+        return g.dataloaders.get("exo_loader").load(self.uuid)
 
     class Meta:
         model = ModelEquippedItem
@@ -342,6 +353,10 @@ class CustomSetTagAssociation(SQLAlchemyObjectType):
 
 class CustomSet(SQLAlchemyObjectType):
     equipped_items = graphene.NonNull(graphene.List(graphene.NonNull(EquippedItem)))
+
+    def resolve_equipped_items(self, info):
+        return g.dataloaders.get("equipped_item_loader").load(self.uuid)
+
     stats = graphene.NonNull(CustomSetStats)
     tag_associations = graphene.NonNull(
         graphene.List(graphene.NonNull(CustomSetTagAssociation))
