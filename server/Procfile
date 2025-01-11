@@ -1,1 +1,1 @@
-web: gunicorn --statsd-host "localhost:8125" app:app
+web: DD_PROFILING_ENABLED=true DD_ENV=production DD_SERVICE=dofus-lab DD_VERSION=1.0 ddtrace-run gunicorn --statsd-host "localhost:8125" app:app
