@@ -56,6 +56,9 @@ elif flask_env == "production":
         "chrome-extension://gplnfnclffeoogcfibnjiiekmpohjibk",
         "chrome-extension://nnajljfdkjbhhgbfjbnnkmbkediobfjn",
     ]
+    from ddtrace.runtime import RuntimeMetrics
+
+    RuntimeMetrics.enable()
 
 db = SQLAlchemy(app)
 CORS(
