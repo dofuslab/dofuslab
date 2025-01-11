@@ -110,4 +110,4 @@ virtualenv==16.7.12
 Werkzeug==0.16.0
 wrapt==1.11.2
 xmltodict==0.14.2
-zipp==3.1.0
+zipp==3.19.1
